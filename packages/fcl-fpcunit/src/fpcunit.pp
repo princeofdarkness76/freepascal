@@ -81,6 +81,7 @@ type
   public
     class procedure Fail(const AMessage: string; AErrorAddrs: Pointer = nil);
     class procedure Fail(const AFmt: string; Args : Array of const);
+    class procedure FailNotEquals(const expected, actual: string; const ErrorMsg: string = ''; AErrorAddrs: Pointer = nil);
     class procedure AssertTrue(const AMessage: string; ACondition: boolean); overload;
     class procedure AssertTrue(ACondition: boolean); overload;
     class procedure AssertFalse(const AMessage: string; ACondition: boolean); overload;
@@ -531,6 +532,11 @@ end;
 class procedure TAssert.Fail(const AFmt: string; Args: array of const);
 begin
   raise EAssertionFailedError.CreateFmt(AFmt,Args);
+end;
+
+class procedure TAssert.FailNotEquals(const expected, actual: string; const ErrorMsg: string; AErrorAddrs: Pointer);
+begin
+  Fail(NotEqualsErrorMessage(expected, actual, ErrorMsg), AErrorAddrs);
 end;
 
 
