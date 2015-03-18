@@ -1352,7 +1352,7 @@ begin
 //unlock mutex
 end;
 
-function TTestResult.SkipTest(ATestCase: TTestCase): Boolean;
+function TTestResult.SkipTest(ATestCase: TTestCase): boolean;
 var
   i: integer;
 begin
@@ -1365,7 +1365,7 @@ begin
   else
     for i := 0 to FSkippedTests.Count - 1 do
     begin
-      if PtrInt(FSkippedTests[i]) = PtrInt(ATestCase) then
+      if PtrUInt(FSkippedTests[i]) = PtrUInt(ATestCase) then
       begin
         Result := true;
         Exit;
