@@ -121,6 +121,7 @@ implementation
 { Functions, different from the one in sysutils }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     procedure fpc_pchar_to_shortstr(var res : openstring;p:pchar);[external name 'FPC_PCHAR_TO_SHORTSTR'];
 
@@ -129,6 +130,8 @@ implementation
       begin
         fpc_pchar_to_shortstr(strpas,p);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_STRTOSHORTSTRINGPROC}
 
     { also define alias which can be used inside the system unit }
@@ -148,7 +151,10 @@ implementation
     {$else FPC_STRTOSHORTSTRINGPROC}
         fpc_pchar_to_shortstr(strpas,p);
     {$endif FPC_STRTOSHORTSTRINGPROC}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
     function stralloc(L : SizeInt) : pchar;

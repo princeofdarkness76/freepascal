@@ -76,12 +76,16 @@ type
     procedure CreateIdx;
     function  GetPChar(nr:longint):pchar;
 <<<<<<< HEAD
+<<<<<<< HEAD
     { function  ClearVerbosity(nr:longint):boolean; not used anymore }
     function  SetVerbosity(nr:longint;newstate:tmsgstate):boolean;
     function  Get(nr:longint;const args:array of TMsgStr):ansistring;
 =======
     function  Get(nr:longint;const args:array of string):ansistring;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function  Get(nr:longint;const args:array of string):ansistring;
+>>>>>>> origin/fixes_2_2
   end;
 
 { this will read a line until #10 or #0 and also increase p }
@@ -96,18 +100,24 @@ uses
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function MsgReplace(const s:TMsgStr;const args:array of TMsgStr):ansistring;
 var
   last,
   i  : longint;
   hs : TMsgStr;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function MsgReplace(const s:string;const args:array of string):ansistring;
 var
   last,
   i  : longint;
   hs : ansistring;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
   if s='' then
@@ -505,10 +515,14 @@ end;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TMessage.Get(nr:longint;const args:array of TMsgStr):ansistring;
 =======
 function TMessage.Get(nr:longint;const args:array of string):ansistring;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TMessage.Get(nr:longint;const args:array of string):ansistring;
+>>>>>>> origin/fixes_2_2
 var
   hp : pchar;
 begin
@@ -522,6 +536,9 @@ begin
   else
     Get:=MsgReplace(system.strpas(hp),args);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TMessage.ResetStates;

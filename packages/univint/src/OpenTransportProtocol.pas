@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       OSServices/OpenTransportProtocol.h
  
      Contains:   *** DEPRECATED *** Definitions likely to be used by low-level protocol stack implementation.
@@ -30,6 +31,8 @@
      Copyright:  © 1993-2008 by Apple Computer, Inc. and Mentat Inc., all rights reserved.
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       OT/OpenTransportProtocol.h
  
      Contains:   Definitions likely to be used by low-level protocol stack implementation.
@@ -37,11 +40,15 @@
      Version:    OpenTransport-97~544
  
      Copyright:  © 1993-2005 by Apple Computer, Inc. and Mentat Inc., all rights reserved.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -69,6 +76,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -79,7 +88,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -89,12 +101,17 @@
 unit OpenTransportProtocol;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -108,14 +125,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -124,11 +146,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -166,6 +191,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -173,6 +200,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -448,6 +476,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -456,7 +486,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -483,9 +516,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -497,6 +534,7 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,ConditionalMacros,Files,CodeFragments,OpenTransport;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -507,6 +545,8 @@ uses MacTypes,ConditionalMacros,Files,CodeFragments,OpenTransport;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN MAC68K}
 
 { ***** Setup Default Compiler Variables *****}
@@ -578,18 +618,24 @@ type
 	module_statPtr = ^module_stat;
 	module_stat = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		ms_pcnt: SIGNEDLONG;                { count of calls to put proc }
 		ms_scnt: SIGNEDLONG;                { count of calls to service proc }
 		ms_ocnt: SIGNEDLONG;                { count of calls to open proc }
 		ms_ccnt: SIGNEDLONG;                { count of calls to close proc }
 		ms_acnt: SIGNEDLONG;                { count of calls to admin proc }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		ms_pcnt: SInt32;                { count of calls to put proc }
 		ms_scnt: SInt32;                { count of calls to service proc }
 		ms_ocnt: SInt32;                { count of calls to open proc }
 		ms_ccnt: SInt32;                { count of calls to close proc }
 		ms_acnt: SInt32;                { count of calls to admin proc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		ms_xptr: UnivPtr;                { pointer to private statistics }
 		ms_xsize: SInt16;               { length of private statistics buffer }
 	end;
@@ -769,16 +815,21 @@ type
    Asm).
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc TARGET_CPU_PPC}
 {$ALIGN POWER}
 {$endc} {TARGET_CPU_PPC}
 =======
 {$ALIGN POWER}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ALIGN POWER}
+>>>>>>> origin/fixes_2_2
 type
 	module_info = record
 		mi_idnum: UInt16;               { module ID number }
 		mi_idname: UnivPtr;              { module name }
+<<<<<<< HEAD
 <<<<<<< HEAD
 		mi_minpsz: SIGNEDLONG;              { min pkt size, for developer use }
 		mi_maxpsz: SIGNEDLONG;              { max pkt size, for developer use }
@@ -790,6 +841,8 @@ type
 {$ALIGN MAC68K}
 {$endc} {TARGET_CPU_PPC}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		mi_minpsz: SInt32;              { min pkt size, for developer use }
 		mi_maxpsz: SInt32;              { max pkt size, for developer use }
 		mi_hiwat: UInt32;               { hi-water mark, for flow control }
@@ -797,12 +850,16 @@ type
 	end;
 	module_infoPtr = ^module_info;
 {$ALIGN MAC68K}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
 	queuePtr = ^queue;
 	admin_t = function: OTInt32;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	bufcall_t = procedure( size: SIGNEDLONG );
 	bufcallp_t = procedure( size: SIGNEDLONG );
@@ -810,6 +867,10 @@ type
 	bufcall_t = procedure( size: SInt32 );
 	bufcallp_t = procedure( size: SInt32 );
 >>>>>>> graemeg/fixes_2_2
+=======
+	bufcall_t = procedure( size: SInt32 );
+	bufcallp_t = procedure( size: SInt32 );
+>>>>>>> origin/fixes_2_2
 	closep_t = function( q: queuePtr; foo: OTInt32; var cred: cred_t ): OTInt32;
 	old_closep_t = function( q: queuePtr ): OTInt32;
 	openp_t = function( q: queuePtr; var dev: dev_t; foo: OTInt32; bar: OTInt32; var cred: cred_t ): OTInt32;
@@ -840,18 +901,24 @@ type
 	qband = record
 		qb_next: struct qband *;                { next band for this queue }
 <<<<<<< HEAD
+<<<<<<< HEAD
 		qb_count: UNSIGNEDLONG;               { weighted count of characters in this band }
 		qb_first: msgbPtr;               { head of message queue }
 		qb_last: msgbPtr;                { tail of message queue }
 		qb_hiwat: UNSIGNEDLONG;               { high water mark }
 		qb_lowat: UNSIGNEDLONG;               { low water mark }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		qb_count: UInt32;               { weighted count of characters in this band }
 		qb_first: msgbPtr;               { head of message queue }
 		qb_last: msgbPtr;                { tail of message queue }
 		qb_hiwat: UInt32;               { high water mark }
 		qb_lowat: UInt32;               { low water mark }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		qb_flag: UInt16;                { ¥¥¥Êstate }
 		qb_pad1: SInt16;                { ¥¥¥ reserved }
 	end;
@@ -875,18 +942,24 @@ type
 		q_u: queue_q_u;
 		q_ptr: UnivPtr;                  { to private data structure }
 <<<<<<< HEAD
+<<<<<<< HEAD
 		q_count: UNSIGNEDLONG;                { weighted count of characters on q }
 		q_minpsz: SIGNEDLONG;               { min packet size accepted }
 		q_maxpsz: SIGNEDLONG;               { max packet size accepted }
 		q_hiwat: UNSIGNEDLONG;                { high water mark, for flow control }
 		q_lowat: UNSIGNEDLONG;                { low water mark }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		q_count: UInt32;                { weighted count of characters on q }
 		q_minpsz: SInt32;               { min packet size accepted }
 		q_maxpsz: SInt32;               { max packet size accepted }
 		q_hiwat: UInt32;                { high water mark, for flow control }
 		q_lowat: UInt32;                { low water mark }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		q_bandp: qbandPtr;                { band information }
 		q_flag: UInt16;                 { ¥¥¥ queue state }
 		q_nband: UInt8;                { ¥¥¥ number of bands }
@@ -992,19 +1065,27 @@ type
 		l_qbot: queue_tPtr;                 { highest level write queue of lower stream }
 		l_index: SInt32;                { system-unique index for lower stream }
 <<<<<<< HEAD
+<<<<<<< HEAD
   	l_pad: array [0..4] of SIGNEDLONG;
 =======
   	l_pad: array [0..4] of SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+  	l_pad: array [0..4] of SInt32;
+>>>>>>> origin/fixes_2_2
 	end;
 { structure contained in an M_PASSFP message block }
 type
 	strpfp = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		pass_file_cookie: UNSIGNEDLONG;       { file 'pointer' }
 =======
 		pass_file_cookie: UInt32;       { file 'pointer' }
 >>>>>>> graemeg/fixes_2_2
+=======
+		pass_file_cookie: UInt32;       { file 'pointer' }
+>>>>>>> origin/fixes_2_2
 		pass_uid: UInt16;               { user id of sending stream }
 		pass_gid: UInt16;
 		pass_sth: sth_sPtr;               { Stream head pointer of passed stream }
@@ -1012,6 +1093,7 @@ type
 { structure contained in an M_SETOPTS message block }
 type
 	stroptions = packed record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		so_flags: UNSIGNEDLONG;               { options to set }
 		so_readopt: SInt16;             { read option }
@@ -1025,6 +1107,8 @@ type
 		so_poll_set: UNSIGNEDLONG;            { poll events to set }
 		so_poll_clr: UNSIGNEDLONG;            { poll events to clear }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		so_flags: UInt32;               { options to set }
 		so_readopt: SInt16;             { read option }
 		so_wroff: UInt16;               { write offset }
@@ -1036,7 +1120,10 @@ type
   	so_filler: packed array [0..2] of UInt8;           { added for alignment }
 		so_poll_set: UInt32;            { poll events to set }
 		so_poll_clr: UInt32;            { poll events to clear }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 { definitions for so_flags field }
 const
@@ -1187,10 +1274,14 @@ type
 	bandinfoPtr = ^bandinfo;
 	bandinfo = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		bi_pri: UInt8;                 { Band to flush }
 =======
 		bi_pri: SInt8;                 { Band to flush }
 >>>>>>> graemeg/fixes_2_2
+=======
+		bi_pri: SInt8;                 { Band to flush }
+>>>>>>> origin/fixes_2_2
 		pad1: SInt8;
 		bi_flag: SInt32;                { One of the above flush requests }
 	end;
@@ -1245,12 +1336,17 @@ type
 		ctlbuf: strbuf;
 		databuf: strbuf;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		flags: SIGNEDLONG;                  { type of message, 0 or RS_HIPRI }
 		fildes: SIGNEDLONG;                 { fd of other stream (FDCELL) }
 =======
 		flags: SInt32;                  { type of message, 0 or RS_HIPRI }
 		fildes: SInt32;                 { fd of other stream (FDCELL) }
 >>>>>>> graemeg/fixes_2_2
+=======
+		flags: SInt32;                  { type of message, 0 or RS_HIPRI }
+		fildes: SInt32;                 { fd of other stream (FDCELL) }
+>>>>>>> origin/fixes_2_2
 		offset: SInt32;                 { where to put other stream read qp }
 	end;
 { I_LIST structures }
@@ -1272,10 +1368,14 @@ type
 		ctlbuf: strbuf;
 		databuf: strbuf;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		flags: SIGNEDLONG;                  { if RS_HIPRI, get priority messages only }
 =======
 		flags: SInt32;                  { if RS_HIPRI, get priority messages only }
 >>>>>>> graemeg/fixes_2_2
+=======
+		flags: SInt32;                  { if RS_HIPRI, get priority messages only }
+>>>>>>> origin/fixes_2_2
 	end;
 { structure for getpmsg and putpmsg }
 type
@@ -1285,20 +1385,28 @@ type
 		databuf: strbuf;
 		band: SInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		flags: SIGNEDLONG;
 =======
 		flags: SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		flags: SInt32;
+>>>>>>> origin/fixes_2_2
 	end;
 { structure of ioctl data on I_RECVFD }
 type
 	strrecvfdPtr = ^strrecvfd;
 	strrecvfd = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		fd: SIGNEDLONG;                     { new file descriptor (FDCELL) }
 =======
 		fd: SInt32;                     { new file descriptor (FDCELL) }
 >>>>>>> graemeg/fixes_2_2
+=======
+		fd: SInt32;                     { new file descriptor (FDCELL) }
+>>>>>>> origin/fixes_2_2
 		uid: UInt16;                    { user id of sending stream }
 		gid: UInt16;
 		fill: packed array [0..7] of char;
@@ -1323,12 +1431,17 @@ type
 		pad1: SInt8;
 		flags: SInt16;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		ltime: SIGNEDLONG;
 		ttime: SIGNEDLONG;
 =======
 		ltime: SInt32;
 		ttime: SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		ltime: SInt32;
+		ttime: SInt32;
+>>>>>>> origin/fixes_2_2
 		seq_no: SInt32;
 	end;
 const
@@ -1469,61 +1582,84 @@ type
 	T_addr_ackPtr = ^T_addr_ack;
 	T_addr_ack = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_ADDR_ACK }
 		LOCADDR_length: SIGNEDLONG;
 		LOCADDR_offset: SIGNEDLONG;
 		REMADDR_length: SIGNEDLONG;
 		REMADDR_offset: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { Always T_ADDR_ACK }
 		LOCADDR_length: SInt32;
 		LOCADDR_offset: SInt32;
 		REMADDR_length: SInt32;
 		REMADDR_offset: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_addr_reqPtr = ^T_addr_req;
 	T_addr_req = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_ADDR_REQ }
 =======
 		PRIM_type: SInt32;              { Always T_ADDR_REQ }
 >>>>>>> graemeg/fixes_2_2
+=======
+		PRIM_type: SInt32;              { Always T_ADDR_REQ }
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_bind_ackPtr = ^T_bind_ack;
 	T_bind_ack = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_BIND_ACK }
 		ADDR_length: SIGNEDLONG;
 		ADDR_offset: SIGNEDLONG;
 		CONIND_number: UNSIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_BIND_ACK }
 		ADDR_length: SInt32;
 		ADDR_offset: SInt32;
 		CONIND_number: UInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_bind_reqPtr = ^T_bind_req;
 	T_bind_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_BIND_REQ }
 		ADDR_length: SIGNEDLONG;
 		ADDR_offset: SIGNEDLONG;
 		CONIND_number: UNSIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_BIND_REQ }
 		ADDR_length: SInt32;
 		ADDR_offset: SInt32;
 		CONIND_number: UInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_conn_conPtr = ^T_conn_con;
 	T_conn_con = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_CONN_CON }
 		RES_length: SIGNEDLONG;             { responding address length }
@@ -1531,16 +1667,22 @@ type
 		OPT_length: SIGNEDLONG;
 		OPT_offset: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_CONN_CON }
 		RES_length: SInt32;             { responding address length }
 		RES_offset: SInt32;
 		OPT_length: SInt32;
 		OPT_offset: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_conn_indPtr = ^T_conn_ind;
 	T_conn_ind = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_CONN_IND }
 		SRC_length: SIGNEDLONG;
@@ -1549,17 +1691,23 @@ type
 		OPT_offset: SIGNEDLONG;
 		SEQ_number: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_CONN_IND }
 		SRC_length: SInt32;
 		SRC_offset: SInt32;
 		OPT_length: SInt32;
 		OPT_offset: SInt32;
 		SEQ_number: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_conn_reqPtr = ^T_conn_req;
 	T_conn_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_CONN_REQ }
 		DEST_length: SIGNEDLONG;
@@ -1567,16 +1715,22 @@ type
 		OPT_length: SIGNEDLONG;
 		OPT_offset: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_CONN_REQ }
 		DEST_length: SInt32;
 		DEST_offset: SInt32;
 		OPT_length: SInt32;
 		OPT_offset: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_conn_resPtr = ^T_conn_res;
 	T_conn_res = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_CONN_RES }
 		QUEUE_ptr: queue_tPtr;
@@ -1584,16 +1738,22 @@ type
 		OPT_offset: SIGNEDLONG;
 		SEQ_number: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_CONN_RES }
 		QUEUE_ptr: queue_tPtr;
 		OPT_length: SInt32;
 		OPT_offset: SInt32;
 		SEQ_number: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_data_indPtr = ^T_data_ind;
 	T_data_ind = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_DATA_IND }
 		MORE_flag: SIGNEDLONG;
@@ -1601,10 +1761,15 @@ type
 		PRIM_type: SInt32;              { always T_DATA_IND }
 		MORE_flag: SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		PRIM_type: SInt32;              { always T_DATA_IND }
+		MORE_flag: SInt32;
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_data_reqPtr = ^T_data_req;
 	T_data_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_DATA_REQ }
 		MORE_flag: SIGNEDLONG;
@@ -1612,10 +1777,15 @@ type
 		PRIM_type: SInt32;              { always T_DATA_REQ }
 		MORE_flag: SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		PRIM_type: SInt32;              { always T_DATA_REQ }
+		MORE_flag: SInt32;
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_discon_indPtr = ^T_discon_ind;
 	T_discon_ind = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_DISCON_IND }
 		DISCON_reason: SIGNEDLONG;
@@ -1625,10 +1795,16 @@ type
 		DISCON_reason: SInt32;
 		SEQ_number: SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		PRIM_type: SInt32;              { always T_DISCON_IND }
+		DISCON_reason: SInt32;
+		SEQ_number: SInt32;
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_discon_reqPtr = ^T_discon_req;
 	T_discon_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_DISCON_REQ }
 		SEQ_number: SIGNEDLONG;
@@ -1636,10 +1812,15 @@ type
 		PRIM_type: SInt32;              { always T_DISCON_REQ }
 		SEQ_number: SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		PRIM_type: SInt32;              { always T_DISCON_REQ }
+		SEQ_number: SInt32;
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_exdata_indPtr = ^T_exdata_ind;
 	T_exdata_ind = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_EXDATA_IND }
 		MORE_flag: SIGNEDLONG;
@@ -1647,10 +1828,15 @@ type
 		PRIM_type: SInt32;              { always T_EXDATA_IND }
 		MORE_flag: SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		PRIM_type: SInt32;              { always T_EXDATA_IND }
+		MORE_flag: SInt32;
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_exdata_reqPtr = ^T_exdata_req;
 	T_exdata_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_EXDATA_REQ }
 		MORE_flag: SIGNEDLONG;
@@ -1658,25 +1844,36 @@ type
 		PRIM_type: SInt32;              { always T_EXDATA_REQ }
 		MORE_flag: SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		PRIM_type: SInt32;              { always T_EXDATA_REQ }
+		MORE_flag: SInt32;
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_error_ackPtr = ^T_error_ack;
 	T_error_ack = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_ERROR_ACK }
 		ERROR_prim: SIGNEDLONG;             { primitive in error }
 		TLI_error: SIGNEDLONG;
 		UNIX_error: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_ERROR_ACK }
 		ERROR_prim: SInt32;             { primitive in error }
 		TLI_error: SInt32;
 		UNIX_error: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_info_ackPtr = ^T_info_ack;
 	T_info_ack = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_INFO_ACK }
 		TSDU_size: SIGNEDLONG;              { max TSDU size }
@@ -1690,6 +1887,8 @@ type
 		CURRENT_state: SIGNEDLONG;          { current state }
 		PROVIDER_flag: SIGNEDLONG;          { provider flags (see xti.h for defines) }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_INFO_ACK }
 		TSDU_size: SInt32;              { max TSDU size }
 		ETSDU_size: SInt32;             { max ETSDU size }
@@ -1701,7 +1900,10 @@ type
 		SERV_type: SInt32;              { service type }
 		CURRENT_state: SInt32;          { current state }
 		PROVIDER_flag: SInt32;          { provider flags (see xti.h for defines) }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 { Provider flags }
 const
@@ -1712,14 +1914,19 @@ type
 	T_info_reqPtr = ^T_info_req;
 	T_info_req = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_INFO_REQ }
 =======
 		PRIM_type: SInt32;              { always T_INFO_REQ }
 >>>>>>> graemeg/fixes_2_2
+=======
+		PRIM_type: SInt32;              { always T_INFO_REQ }
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_ok_ackPtr = ^T_ok_ack;
 	T_ok_ack = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_OK_ACK }
 		CORRECT_prim: SIGNEDLONG;
@@ -1727,67 +1934,96 @@ type
 		PRIM_type: SInt32;              { always T_OK_ACK }
 		CORRECT_prim: SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		PRIM_type: SInt32;              { always T_OK_ACK }
+		CORRECT_prim: SInt32;
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_optmgmt_ackPtr = ^T_optmgmt_ack;
 	T_optmgmt_ack = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_OPTMGMT_ACK }
 		OPT_length: SIGNEDLONG;
 		OPT_offset: SIGNEDLONG;
 		MGMT_flags: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_OPTMGMT_ACK }
 		OPT_length: SInt32;
 		OPT_offset: SInt32;
 		MGMT_flags: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_optmgmt_reqPtr = ^T_optmgmt_req;
 	T_optmgmt_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_OPTMGMT_REQ }
 		OPT_length: SIGNEDLONG;
 		OPT_offset: SIGNEDLONG;
 		MGMT_flags: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_OPTMGMT_REQ }
 		OPT_length: SInt32;
 		OPT_offset: SInt32;
 		MGMT_flags: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_ordrel_indPtr = ^T_ordrel_ind;
 	T_ordrel_ind = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_ORDREL_IND }
 =======
 		PRIM_type: SInt32;              { always T_ORDREL_IND }
 >>>>>>> graemeg/fixes_2_2
+=======
+		PRIM_type: SInt32;              { always T_ORDREL_IND }
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_ordrel_reqPtr = ^T_ordrel_req;
 	T_ordrel_req = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_ORDREL_REQ }
 =======
 		PRIM_type: SInt32;              { always T_ORDREL_REQ }
 >>>>>>> graemeg/fixes_2_2
+=======
+		PRIM_type: SInt32;              { always T_ORDREL_REQ }
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_unbind_reqPtr = ^T_unbind_req;
 	T_unbind_req = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_UNBIND_REQ }
 =======
 		PRIM_type: SInt32;              { always T_UNBIND_REQ }
 >>>>>>> graemeg/fixes_2_2
+=======
+		PRIM_type: SInt32;              { always T_UNBIND_REQ }
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_uderror_indPtr = ^T_uderror_ind;
 	T_uderror_ind = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_UDERROR_IND }
 		DEST_length: SIGNEDLONG;
@@ -1796,17 +2032,23 @@ type
 		OPT_offset: SIGNEDLONG;
 		ERROR_type: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_UDERROR_IND }
 		DEST_length: SInt32;
 		DEST_offset: SInt32;
 		OPT_length: SInt32;
 		OPT_offset: SInt32;
 		ERROR_type: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_unitdata_indPtr = ^T_unitdata_ind;
 	T_unitdata_ind = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_UNITDATA_IND }
 		SRC_length: SIGNEDLONG;
@@ -1814,16 +2056,22 @@ type
 		OPT_length: SIGNEDLONG;
 		OPT_offset: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_UNITDATA_IND }
 		SRC_length: SInt32;
 		SRC_offset: SInt32;
 		OPT_length: SInt32;
 		OPT_offset: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_unitdata_reqPtr = ^T_unitdata_req;
 	T_unitdata_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_UNITDATA_REQ }
 		DEST_length: SIGNEDLONG;
@@ -1831,16 +2079,22 @@ type
 		OPT_length: SIGNEDLONG;
 		OPT_offset: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_UNITDATA_REQ }
 		DEST_length: SInt32;
 		DEST_offset: SInt32;
 		OPT_length: SInt32;
 		OPT_offset: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_resolveaddr_ackPtr = ^T_resolveaddr_ack;
 	T_resolveaddr_ack = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_RESOLVEADDR_ACK }
 		SEQ_number: SIGNEDLONG;
@@ -1851,6 +2105,8 @@ type
 		TLI_error: SIGNEDLONG;
 		UNIX_error: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_RESOLVEADDR_ACK }
 		SEQ_number: SInt32;
 		ADDR_length: SInt32;
@@ -1859,11 +2115,15 @@ type
 		ORIG_data: SInt32;
 		TLI_error: SInt32;
 		UNIX_error: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_resolveaddr_reqPtr = ^T_resolveaddr_req;
 	T_resolveaddr_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_RESOLVEADDR_REQ }
 		SEQ_number: SIGNEDLONG;
@@ -1873,6 +2133,8 @@ type
 		ORIG_data: SIGNEDLONG;
 		MAX_milliseconds: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_RESOLVEADDR_REQ }
 		SEQ_number: SInt32;
 		ADDR_length: SInt32;
@@ -1880,11 +2142,15 @@ type
 		ORIG_client: SInt32;
 		ORIG_data: SInt32;
 		MAX_milliseconds: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_unitreply_indPtr = ^T_unitreply_ind;
 	T_unitreply_ind = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_UREPLY_IND }
 		SEQ_number: SIGNEDLONG;
@@ -1894,6 +2160,8 @@ type
 		TLI_error: SIGNEDLONG;
 		UNIX_error: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { Always T_UREPLY_IND }
 		SEQ_number: SInt32;
 		OPT_length: SInt32;
@@ -1901,11 +2169,15 @@ type
 		REP_flags: SInt32;
 		TLI_error: SInt32;
 		UNIX_error: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_unitrequest_indPtr = ^T_unitrequest_ind;
 	T_unitrequest_ind = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_UREQUEST_IND }
 		SEQ_number: SIGNEDLONG;
@@ -1915,6 +2187,8 @@ type
 		OPT_offset: SIGNEDLONG;
 		REQ_flags: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { Always T_UREQUEST_IND }
 		SEQ_number: SInt32;
 		SRC_length: SInt32;
@@ -1922,11 +2196,15 @@ type
 		OPT_length: SInt32;
 		OPT_offset: SInt32;
 		REQ_flags: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_unitrequest_reqPtr = ^T_unitrequest_req;
 	T_unitrequest_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_UREQUEST_REQ }
 		SEQ_number: SIGNEDLONG;
@@ -1936,6 +2214,8 @@ type
 		OPT_offset: SIGNEDLONG;
 		REQ_flags: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { Always T_UREQUEST_REQ }
 		SEQ_number: SInt32;
 		DEST_length: SInt32;
@@ -1943,11 +2223,15 @@ type
 		OPT_length: SInt32;
 		OPT_offset: SInt32;
 		REQ_flags: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_unitreply_reqPtr = ^T_unitreply_req;
 	T_unitreply_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_UREPLY_REQ }
 		SEQ_number: SIGNEDLONG;
@@ -1955,31 +2239,43 @@ type
 		OPT_offset: SIGNEDLONG;
 		REP_flags: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { Always T_UREPLY_REQ }
 		SEQ_number: SInt32;
 		OPT_length: SInt32;
 		OPT_offset: SInt32;
 		REP_flags: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_unitreply_ackPtr = ^T_unitreply_ack;
 	T_unitreply_ack = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_UREPLY_ACK }
 		SEQ_number: SIGNEDLONG;
 		TLI_error: SIGNEDLONG;
 		UNIX_error: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { Always T_UREPLY_ACK }
 		SEQ_number: SInt32;
 		TLI_error: SInt32;
 		UNIX_error: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_cancelrequest_reqPtr = ^T_cancelrequest_req;
 	T_cancelrequest_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_CANCELREQUEST_REQ }
 		SEQ_number: SIGNEDLONG;
@@ -1987,10 +2283,15 @@ type
 		PRIM_type: SInt32;              { Always T_CANCELREQUEST_REQ }
 		SEQ_number: SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		PRIM_type: SInt32;              { Always T_CANCELREQUEST_REQ }
+		SEQ_number: SInt32;
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_cancelreply_reqPtr = ^T_cancelreply_req;
 	T_cancelreply_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_CANCELREPLY_REQ }
 		SEQ_number: SIGNEDLONG;
@@ -1998,10 +2299,15 @@ type
 		PRIM_type: SInt32;              { Always T_CANCELREPLY_REQ }
 		SEQ_number: SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		PRIM_type: SInt32;              { Always T_CANCELREPLY_REQ }
+		SEQ_number: SInt32;
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_reply_indPtr = ^T_reply_ind;
 	T_reply_ind = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_REPLY_IND }
 		SEQ_number: SIGNEDLONG;
@@ -2011,6 +2317,8 @@ type
 		TLI_error: SIGNEDLONG;
 		UNIX_error: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { Always T_REPLY_IND }
 		SEQ_number: SInt32;
 		OPT_length: SInt32;
@@ -2018,11 +2326,15 @@ type
 		REP_flags: SInt32;
 		TLI_error: SInt32;
 		UNIX_error: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_request_indPtr = ^T_request_ind;
 	T_request_ind = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_REQUEST_IND }
 		SEQ_number: SIGNEDLONG;
@@ -2030,16 +2342,22 @@ type
 		OPT_offset: SIGNEDLONG;
 		REQ_flags: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { Always T_REQUEST_IND }
 		SEQ_number: SInt32;
 		OPT_length: SInt32;
 		OPT_offset: SInt32;
 		REQ_flags: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_request_reqPtr = ^T_request_req;
 	T_request_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_REQUEST_REQ }
 		SEQ_number: SIGNEDLONG;
@@ -2047,16 +2365,22 @@ type
 		OPT_offset: SIGNEDLONG;
 		REQ_flags: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { Always T_REQUEST_REQ }
 		SEQ_number: SInt32;
 		OPT_length: SInt32;
 		OPT_offset: SInt32;
 		REQ_flags: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_reply_reqPtr = ^T_reply_req;
 	T_reply_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_REPLY_REQ }
 		SEQ_number: SIGNEDLONG;
@@ -2064,31 +2388,43 @@ type
 		OPT_offset: SIGNEDLONG;
 		REP_flags: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { Always T_REPLY_REQ }
 		SEQ_number: SInt32;
 		OPT_length: SInt32;
 		OPT_offset: SInt32;
 		REP_flags: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_reply_ackPtr = ^T_reply_ack;
 	T_reply_ack = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_REPLY_ACK }
 		SEQ_number: SIGNEDLONG;
 		TLI_error: SIGNEDLONG;
 		UNIX_error: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { Always T_REPLY_ACK }
 		SEQ_number: SInt32;
 		TLI_error: SInt32;
 		UNIX_error: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_regname_reqPtr = ^T_regname_req;
 	T_regname_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_REGNAME_REQ }
 		SEQ_number: SIGNEDLONG;             { Reply is sequence ack }
@@ -2098,6 +2434,8 @@ type
 		ADDR_offset: SIGNEDLONG;
 		REQ_flags: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { Always T_REGNAME_REQ }
 		SEQ_number: SInt32;             { Reply is sequence ack }
 		NAME_length: SInt32;
@@ -2105,11 +2443,15 @@ type
 		ADDR_length: SInt32;
 		ADDR_offset: SInt32;
 		REQ_flags: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_regname_ackPtr = ^T_regname_ack;
 	T_regname_ack = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_REGNAME_ACK     }
 		SEQ_number: SIGNEDLONG;
@@ -2117,31 +2459,43 @@ type
 		ADDR_length: SIGNEDLONG;
 		ADDR_offset: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_REGNAME_ACK     }
 		SEQ_number: SInt32;
 		REG_id: SInt32;
 		ADDR_length: SInt32;
 		ADDR_offset: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_delname_reqPtr = ^T_delname_req;
 	T_delname_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_DELNAME_REQ }
 		SEQ_number: SIGNEDLONG;             { Reply is sequence ack }
 		NAME_length: SIGNEDLONG;
 		NAME_offset: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { Always T_DELNAME_REQ }
 		SEQ_number: SInt32;             { Reply is sequence ack }
 		NAME_length: SInt32;
 		NAME_offset: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_lkupname_reqPtr = ^T_lkupname_req;
 	T_lkupname_req = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Always T_LKUPNAME_REQ }
 		SEQ_number: SIGNEDLONG;             { Reply is sequence ack }
@@ -2153,6 +2507,8 @@ type
 		MAX_milliseconds: SIGNEDLONG;
 		REQ_flags: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { Always T_LKUPNAME_REQ }
 		SEQ_number: SInt32;             { Reply is sequence ack }
 		NAME_length: SInt32;            { ... or T_LKUPNAME_CON }
@@ -2162,11 +2518,15 @@ type
 		MAX_number: SInt32;
 		MAX_milliseconds: SInt32;
 		REQ_flags: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_lkupname_conPtr = ^T_lkupname_con;
 	T_lkupname_con = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { Either T_LKUPNAME_CON }
 		SEQ_number: SIGNEDLONG;             { Or T_LKUPNAME_RES }
@@ -2175,17 +2535,23 @@ type
 		RSP_count: SIGNEDLONG;
 		RSP_cumcount: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { Either T_LKUPNAME_CON }
 		SEQ_number: SInt32;             { Or T_LKUPNAME_RES }
 		NAME_length: SInt32;
 		NAME_offset: SInt32;
 		RSP_count: SInt32;
 		RSP_cumcount: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_sequence_ackPtr = ^T_sequence_ack;
 	T_sequence_ack = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_SEQUENCED_ACK     }
 		ORIG_prim: SIGNEDLONG;              { original primitive        }
@@ -2193,16 +2559,22 @@ type
 		TLI_error: SIGNEDLONG;
 		UNIX_error: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PRIM_type: SInt32;              { always T_SEQUENCED_ACK     }
 		ORIG_prim: SInt32;              { original primitive        }
 		SEQ_number: SInt32;
 		TLI_error: SInt32;
 		UNIX_error: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 type
 	T_event_indPtr = ^T_event_ind;
 	T_event_ind = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		PRIM_type: SIGNEDLONG;              { always T_EVENT_IND        }
 		EVENT_code: SIGNEDLONG;
@@ -2212,16 +2584,25 @@ type
 		EVENT_code: SInt32;
 		EVENT_cookie: SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		PRIM_type: SInt32;              { always T_EVENT_IND        }
+		EVENT_code: SInt32;
+		EVENT_cookie: SInt32;
+>>>>>>> origin/fixes_2_2
 	end;
 	T_primitivesPtr = ^T_primitives;
 	T_primitives = record
 		case SInt16 of
 		0: (
 <<<<<<< HEAD
+<<<<<<< HEAD
 			primType:			SIGNEDLONG;
 =======
 			primType:			SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+			primType:			SInt32;
+>>>>>>> origin/fixes_2_2
 			);
 		1: (
 			taddrack:			T_addr_ack;
@@ -4386,23 +4767,31 @@ type
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	OTTimerTask = SIGNEDLONG;
 =======
 	OTTimerTask = SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+	OTTimerTask = SInt32;
+>>>>>>> origin/fixes_2_2
 {
    Under Carbon, OTCreateTimerTask takes a client context pointer.  Applications may pass NULL
    after calling InitOpenTransport(kInitOTForApplicationMask, ...).  Non-applications must always pass a
    valid client context.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  OTCreateTimerTaskInContext()   *** DEPRECATED ***
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -4435,6 +4824,8 @@ function OTCreateTimerTaskInContext( upp: OTProcessUPP; arg: UnivPtr; clientCont
 
 {$endc} {not TARGET_CPU_64}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
@@ -4442,7 +4833,10 @@ function OTCreateTimerTaskInContext( upp: OTProcessUPP; arg: UnivPtr; clientCont
 function OTCreateTimerTaskInContext( upp: OTProcessUPP; arg: UnivPtr; clientContext: OTClientContextPtr ): SInt32; external name '_OTCreateTimerTaskInContext';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  OTCreateTimerTask()
@@ -4455,27 +4849,38 @@ function OTCreateTimerTaskInContext( upp: OTProcessUPP; arg: UnivPtr; clientCont
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  OTCancelTimerTask()   *** DEPRECATED ***
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
 function OTCancelTimerTask( timerTask: OTTimerTask ): Boolean; external name '_OTCancelTimerTask';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -4483,19 +4888,27 @@ function OTCancelTimerTask( timerTask: OTTimerTask ): Boolean; external name '_O
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
 procedure OTDestroyTimerTask( timerTask: OTTimerTask ); external name '_OTDestroyTimerTask';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -4503,14 +4916,19 @@ procedure OTDestroyTimerTask( timerTask: OTTimerTask ); external name '_OTDestro
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
 function OTScheduleTimerTask( timerTask: OTTimerTask; milliSeconds: OTTimeout ): Boolean; external name '_OTScheduleTimerTask';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 
@@ -4524,6 +4942,10 @@ function OTScheduleTimerTask( timerTask: OTTimerTask; milliSeconds: OTTimeout ):
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/fixes_2_2
 
 { The following macro may be used by applications only.}
 // #define OTCreateTimerTask(upp, arg) OTCreateTimerTaskInContext(upp, arg, NULL)
@@ -4540,27 +4962,38 @@ function OTScheduleTimerTask( timerTask: OTTimerTask; milliSeconds: OTTimeout ):
    See "Open Tranport Advanced Client Programming" for documentation.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  OTBufferDataSize()   *** DEPRECATED ***
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in OTUtilityLib 1.0 and later
  }
 function OTBufferDataSize( var buffer: OTBuffer ): OTByteCount; external name '_OTBufferDataSize';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -4568,19 +5001,27 @@ function OTBufferDataSize( var buffer: OTBuffer ): OTByteCount; external name '_
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in OTUtilityLib 1.0 and later
  }
 function OTReadBuffer( var buffer: OTBufferInfo; dest: UnivPtr; var len: OTByteCount ): Boolean; external name '_OTReadBuffer';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -4588,19 +5029,27 @@ function OTReadBuffer( var buffer: OTBufferInfo; dest: UnivPtr; var len: OTByteC
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in OTUtilityLib 1.0 and later
  }
 procedure OTReleaseBuffer( var buffer: OTBuffer ); external name '_OTReleaseBuffer';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -5515,19 +5964,27 @@ type
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in OTUtilityLib 1.0 and later
  }
 function OTSetFirstClearBit( bitMap: UInt8Ptr; startBit: OTByteCount; numBits: OTByteCount ): OTResult; external name '_OTSetFirstClearBit';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/fixes_2_2
 
 
 { Standard clear, set and test bit functions}
@@ -5536,19 +5993,27 @@ function OTSetFirstClearBit( bitMap: UInt8Ptr; startBit: OTByteCount; numBits: O
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in OTUtilityLib 1.0 and later
  }
 function OTClearBit( bitMap: UInt8Ptr; bitNo: OTByteCount ): Boolean; external name '_OTClearBit';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -5556,19 +6021,27 @@ function OTClearBit( bitMap: UInt8Ptr; bitNo: OTByteCount ): Boolean; external n
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in OTUtilityLib 1.0 and later
  }
 function OTSetBit( bitMap: UInt8Ptr; bitNo: OTByteCount ): Boolean; external name '_OTSetBit';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -5576,19 +6049,27 @@ function OTSetBit( bitMap: UInt8Ptr; bitNo: OTByteCount ): Boolean; external nam
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in OTUtilityLib 1.0 and later
  }
 function OTTestBit( bitMap: UInt8Ptr; bitNo: OTByteCount ): Boolean; external name '_OTTestBit';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/fixes_2_2
 
 
 { OTHashList}
@@ -5599,10 +6080,13 @@ function OTTestBit( bitMap: UInt8Ptr; bitNo: OTByteCount ): Boolean; external na
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type
 	OTHashProcPtr = function( var linkToHash: OTLink ): UInt32;
 	OTHashSearchProcPtr = function( ref: {const} UnivPtr; var linkToCheck: OTLink ): Boolean;
@@ -5963,6 +6447,7 @@ type
 {$endc} { CALL_NOT_IN_CARBON }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC and TARGET_CPU_PPC}
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
@@ -5974,3 +6459,8 @@ end.
 
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+
+
+end.
+>>>>>>> origin/fixes_2_2

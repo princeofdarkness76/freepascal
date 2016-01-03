@@ -47,8 +47,11 @@ const
  AllowDirectorySeparators : set of char = ['\','/'];
  AllowDriveSeparators : set of char = [':'];
 <<<<<<< HEAD
+<<<<<<< HEAD
 { FileNameCaseSensitive and FileNameCasePreserving are defined separately below!!! }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { FileNameCaseSensitive is defined separately below!!! }
 >>>>>>> graemeg/fixes_2_2
  maxExitCode = 65535;
@@ -75,7 +78,10 @@ const
   FileNameCasePreserving: boolean = true;
 =======
   FileNameCaseSensitive : boolean = true;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   CtrlZMarksEOF: boolean = true; (* #26 is considered as end of file *)
 
   sLineBreak = LineEnding;
@@ -534,6 +540,7 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
 {$else}
         movl %eax,_SS
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
         xorq %rbp,%rbp
 <<<<<<< HEAD
@@ -547,6 +554,8 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
         xorl %rbp,%rbp
 >>>>>>> graemeg/fixes_2_2
         call PASCALMAIN
@@ -883,7 +892,10 @@ procedure Win32Ansi2WideMove(source:pchar;var dest:widestring;len:SizeInt);
     setlength(dest, destlen);
     MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, source, len, @dest[1], destlen);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
 
@@ -1019,7 +1031,44 @@ function CheckInitialStkLen(stklen : SizeUInt) : SizeUInt;
   end;
 
 begin
+<<<<<<< HEAD
 =======
+=======
+  { Setup stdin, stdout and stderr, for GUI apps redirect stderr,stdout to be
+    displayed in a messagebox }
+  StdInputHandle:=THandle(GetStdHandle(STD_INPUT_HANDLE));
+  StdOutputHandle:=THandle(GetStdHandle(STD_OUTPUT_HANDLE));
+  StdErrorHandle:=THandle(GetStdHandle(STD_ERROR_HANDLE));
+  if not IsConsole then
+   begin
+     AssignError(stderr);
+     AssignError(stdout);
+     Assign(Output,'');
+     Assign(Input,'');
+     Assign(ErrOutput,'');
+   end
+  else
+   begin
+     OpenStdIO(Input,fmInput,StdInputHandle);
+     OpenStdIO(Output,fmOutput,StdOutputHandle);
+     OpenStdIO(ErrOutput,fmOutput,StdErrorHandle);
+     OpenStdIO(StdOut,fmOutput,StdOutputHandle);
+     OpenStdIO(StdErr,fmOutput,StdErrorHandle);
+   end;
+end;
+
+(* ProcessID cached to avoid repeated calls to GetCurrentProcess. *)
+
+var
+  ProcessID: SizeUInt;
+
+function GetProcessID: SizeUInt;
+begin
+ GetProcessID := ProcessID;
+end;
+
+
+>>>>>>> origin/fixes_2_2
 function CheckInitialStkLen(stklen : SizeUInt) : SizeUInt;assembler;
 asm
   movq  %gs:(8),%rax
@@ -1031,7 +1080,10 @@ begin
   SysResetFPU;
   if not(IsLibrary) then
     SysInitFPU;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { pass dummy value }
   StackLength := CheckInitialStkLen($1000000);
   StackBottom := StackTop - StackLength;

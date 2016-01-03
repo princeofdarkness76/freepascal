@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
 <<<<<<< HEAD
      File:       UTType.h
@@ -25,6 +26,8 @@
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {     File:       UTType.p(.pas)																	    }
 { 																										}
@@ -75,11 +78,15 @@
      Version:    LaunchServices-98~1
  
      Copyright:  © 2003 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
 }
@@ -108,6 +115,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -119,7 +128,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -129,12 +141,17 @@
 unit UTType;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -148,14 +165,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -164,11 +186,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -206,6 +231,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -213,6 +240,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -459,6 +487,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -467,7 +497,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -494,9 +527,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -507,6 +544,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -543,6 +581,11 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 {$ALIGN POWER}
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+{$ALIGN POWER}
+
+>>>>>>> origin/fixes_2_2
 { ======================================================================================================== }
 { Uniform Type Identification API                                                                          }
 { ======================================================================================================== }
@@ -551,27 +594,37 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 
     Uniform Type Identifiers (or UTIs) are strings which uniquely identify
 <<<<<<< HEAD
+<<<<<<< HEAD
     abstract types. They can be used to describe a file format or an
     in-memory data type, but can also be used to describe the type of
 =======
     abstract types. They can be used to describe a file format or
     data type, but can also be used to describe type information for
 >>>>>>> graemeg/fixes_2_2
+=======
+    abstract types. They can be used to describe a file format or
+    data type, but can also be used to describe type information for
+>>>>>>> origin/fixes_2_2
     other sorts of entities, such as directories, volumes, or packages.
 
     The syntax of a uniform type identifier looks like a bundle identifier.
     It has the form of a reversed DNS name, although some special top-level 
 <<<<<<< HEAD
+<<<<<<< HEAD
     UTI domains are reserved by Apple and are outside the current IANA 
 =======
     UTI domains are reserved by Apple and are outside the currect IANA 
 >>>>>>> graemeg/fixes_2_2
+=======
+    UTI domains are reserved by Apple and are outside the currect IANA 
+>>>>>>> origin/fixes_2_2
     top-level Internet domain name space.
 
     Examples:
 
         public.jpeg
         public.utf16-plain-text
+<<<<<<< HEAD
 <<<<<<< HEAD
         com.apple.xml-property-list
 <<<<<<< HEAD
@@ -591,6 +644,10 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
         com.apple.xml-plist
         com.apple.appleworks.doc
 >>>>>>> graemeg/fixes_2_2
+=======
+        com.apple.xml-plist
+        com.apple.appleworks.doc
+>>>>>>> origin/fixes_2_2
 
     Types which are standard or not controlled by any one organization 
     are declared in the "public" domain. Currently, public types may  
@@ -609,12 +666,17 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 
     A type may "conform" to one or more other types. For example, the
 <<<<<<< HEAD
+<<<<<<< HEAD
     type com.apple.xml-property-list conforms to both the
     com.apple.property-list and public.xml types. The public.xml 
 =======
     type com.apple.macos.xml-property-list conforms to both the
     com.apple.macos.property-list and public.xml types. The public.xml 
 >>>>>>> graemeg/fixes_2_2
+=======
+    type com.apple.macos.xml-property-list conforms to both the
+    com.apple.macos.property-list and public.xml types. The public.xml 
+>>>>>>> origin/fixes_2_2
     type in turn conforms to type public.text. Finally, type public.text  
     conforms to public.data, which is the base type for all types 
     describing bytes stream formats. Conformance relationships between 
@@ -623,19 +685,27 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
     Conformance relationships establish a multiple inheritanace hierarchy
     between types. Type property values may be inherited at runtime
 <<<<<<< HEAD
+<<<<<<< HEAD
     according to the conformance relationships for each type. When a type's 
 =======
     according to the conformance relationships each type. When a type's 
 >>>>>>> graemeg/fixes_2_2
+=======
+    according to the conformance relationships each type. When a type's 
+>>>>>>> origin/fixes_2_2
     declaration does not include a value for particular type property, 
     then the type's supertypes are searched for a value. Supertypes are 
     searched depth-first, in the order given in the type declaration. 
     This is the only way in which the declared order of the conforms-to 
 <<<<<<< HEAD
+<<<<<<< HEAD
     supertypes is significant.
 =======
     supertypes is signitificant.
 >>>>>>> graemeg/fixes_2_2
+=======
+    supertypes is signitificant.
+>>>>>>> origin/fixes_2_2
 
     Tags
 
@@ -661,10 +731,14 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 
     Exported vs. Imported Type Declarations
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> graemeg/fixes_2_2
+=======
+    
+>>>>>>> origin/fixes_2_2
     Type declarations are either exported or imported. An exported
     type declaration means that the type itself is defined or owned 
     by the organization making the declaration. For example, a propietary
@@ -672,10 +746,14 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
     which controls the document format.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     An imported declaration is for applications which depend on the
 =======
     An imported declatation is for applications which depend on the
 >>>>>>> graemeg/fixes_2_2
+=======
+    An imported declatation is for applications which depend on the
+>>>>>>> origin/fixes_2_2
     existence of someone else's type declaration. If application A can
     open application B's document format, then application A makes
     an imported declaration of application B's document type so that
@@ -696,32 +774,44 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
                 <key>UTTypeIdentifier</key>
                 <string>public.jpeg</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <key>UTTypeDescription</key>
                 <string>JPEG image</string>
                 <key>UTTypeIconFile</key>
 =======
+=======
+>>>>>>> origin/fixes_2_2
                 <key>UTTypeReferenceURL</key>
                 <string>http://www.w3.org/Graphics/JPEG/</string>
                 <key>UTTypeDescription</key>
                 <string>JPEG image</string>
                 <key>UTTypeIconName</key>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 <string>public.jpeg.icns</string>
                 <key>UTTypeConformsTo</key>
                 <array>
                     <string>public.image</string>
+<<<<<<< HEAD
 <<<<<<< HEAD
                 </array>
                 <key>UTTypeTagSpecification</key>
                 <dict>
                     <key>com.apple.ostype</key>
 =======
+=======
+>>>>>>> origin/fixes_2_2
                     <string>public.data</string>
                 </array>
                 <key>UTTypeTagSpecification</key>
                 <dict>
                     <key>com.apple.macos.ostype</key>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                     <string>JPEG</string>
                     <key>public.filename-extension</key>
                     <array>
@@ -780,6 +870,7 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 {
  *  kUTExportedTypeDeclarationsKey
 <<<<<<< HEAD
+<<<<<<< HEAD
  }
 var kUTExportedTypeDeclarationsKey: CFStringRef; external name '_kUTExportedTypeDeclarationsKey'; (* attribute const *)
 <<<<<<< HEAD
@@ -801,6 +892,8 @@ var kUTImportedTypeDeclarationsKey: CFStringRef; external name '_kUTImportedType
 >>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
@@ -811,7 +904,10 @@ var kUTImportedTypeDeclarationsKey: CFStringRef; external name '_kUTImportedType
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 var kUTExportedTypeDeclarationsKey: CFStringRef; external name '_kUTExportedTypeDeclarationsKey'; (* attribute const *)
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  kUTImportedTypeDeclarationsKey
  *  
@@ -819,6 +915,7 @@ var kUTExportedTypeDeclarationsKey: CFStringRef; external name '_kUTExportedType
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
+<<<<<<< HEAD
 <<<<<<< HEAD
  }
 var kUTImportedTypeDeclarationsKey: CFStringRef; external name '_kUTImportedTypeDeclarationsKey'; (* attribute const *)
@@ -877,6 +974,8 @@ var kUTTypeConformsToKey: CFStringRef; external name '_kUTTypeConformsToKey'; (*
 >>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 }
 
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
@@ -906,7 +1005,10 @@ var kUTTypeIdentifierKey: CFStringRef; external name '_kUTTypeIdentifierKey'; (*
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 var kUTTypeTagSpecificationKey: CFStringRef; external name '_kUTTypeTagSpecificationKey'; (* attribute const *)
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  kUTTypeConformsToKey
  *  
@@ -914,6 +1016,7 @@ var kUTTypeTagSpecificationKey: CFStringRef; external name '_kUTTypeTagSpecifica
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
+<<<<<<< HEAD
 <<<<<<< HEAD
  }
 var kUTTypeConformsToKey: CFStringRef; external name '_kUTTypeConformsToKey'; (* attribute const *)
@@ -1013,6 +1116,8 @@ var kUTTypeVersionKey: CFStringRef; external name '_kUTTypeVersionKey'; (* attri
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  } 
  
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
@@ -1065,7 +1170,10 @@ var kUTTypeReferenceURLKey: CFStringRef; external name '_kUTTypeReferenceURLKey'
  
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 var kUTTypeVersionKey: CFStringRef; external name '_kUTTypeVersionKey'; (* attribute const *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1077,6 +1185,7 @@ var kUTTypeVersionKey: CFStringRef; external name '_kUTTypeVersionKey'; (* attri
 }
 {
  *  kUTTagClassFilenameExtension
+<<<<<<< HEAD
 <<<<<<< HEAD
  }
 var kUTTagClassFilenameExtension: CFStringRef; external name '_kUTTagClassFilenameExtension'; (* attribute const *)
@@ -1161,6 +1270,8 @@ var kUTTagClassOSType: CFStringRef; external name '_kUTTagClassOSType'; (* attri
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
@@ -1206,7 +1317,10 @@ var kUTTagClassNSPboardType: CFStringRef; external name '_kUTTagClassNSPboardTyp
 
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 var kUTTagClassOSType: CFStringRef; external name '_kUTTagClassOSType'; (* attribute const *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  UTTypeCreatePreferredIdentifierForTag()
@@ -1231,10 +1345,14 @@ var kUTTagClassOSType: CFStringRef; external name '_kUTTagClassOSType'; (* attri
  *    multiple public types or multiple non-public types, the selection
  *    rules are undefined. Clients needing finer control should use
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    UTTypeCreateAllIdentifiersForTag. If no declared type is
 =======
  *    UTTypeCreateAllIdentifiersWithTag. If no declared type is
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    UTTypeCreateAllIdentifiersWithTag. If no declared type is
+>>>>>>> origin/fixes_2_2
  *    indicated, a dynamic type identifier is generated which satisfies
  *    the parameters.
  *  
@@ -1250,15 +1368,20 @@ var kUTTagClassOSType: CFStringRef; external name '_kUTTagClassOSType'; (* attri
  *      the tag string
  *    
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    inConformingToUTI:
 =======
  *    inConformingToTypeIdentifier:
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    inConformingToTypeIdentifier:
+>>>>>>> origin/fixes_2_2
  *      the identifier of a type to which the result must conform
  *  
  *  Result:
  *    a new CFStringRef containing the type identifier, or NULL if
  *    inTagClass is not a known tag class
+<<<<<<< HEAD
 <<<<<<< HEAD
  }
 function UTTypeCreatePreferredIdentifierForTag( inTagClass: CFStringRef; inTag: CFStringRef; inConformingToUTI: CFStringRef { can be NULL } ): CFStringRef; external name '_UTTypeCreatePreferredIdentifierForTag';
@@ -1280,6 +1403,8 @@ function UTTypeCreatePreferredIdentifierForTag( inTagClass: CFStringRef; inTag: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
@@ -1292,7 +1417,10 @@ function UTTypeCreatePreferredIdentifierForTag(
   inTagClass: CFStringRef;
   inTag: CFStringRef;
   inConformingToTypeIdentifier: CFStringRef): CFStringRef; external name '_UTTypeCreatePreferredIdentifierForTag'; { can be NULL }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1327,15 +1455,20 @@ function UTTypeCreatePreferredIdentifierForTag(
  *      the tag string
  *    
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    inConformingToUTI:
 =======
  *    inConformingToTypeIdentifier:
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    inConformingToTypeIdentifier:
+>>>>>>> origin/fixes_2_2
  *      the identifier of a type to which the results must conform
  *  
  *  Result:
  *    An array of uniform type identifiers, or NULL if inTagClass is
  *    not a known tag class
+<<<<<<< HEAD
 <<<<<<< HEAD
  }
 function UTTypeCreateAllIdentifiersForTag( inTagClass: CFStringRef; inTag: CFStringRef; inConformingToUTI: CFStringRef { can be NULL } ): CFArrayRef; external name '_UTTypeCreateAllIdentifiersForTag';
@@ -1357,6 +1490,8 @@ function UTTypeCreateAllIdentifiersForTag( inTagClass: CFStringRef; inTag: CFStr
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
@@ -1369,7 +1504,10 @@ function UTTypeCreateAllIdentifiersForTag(
   inTagClass: CFStringRef;
   inTag: CFStringRef;
   inConformingToTypeIdentifier: CFStringRef): CFArrayRef; external name '_UTTypeCreateAllIdentifiersForTag'; { can be NULL } 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1378,10 +1516,14 @@ function UTTypeCreateAllIdentifiersForTag(
  *  Discussion:
  *    Returns the identified type's preferred tag with the specified
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    tag class as a CFString. This is the primary function to use for
 =======
  *    tag class as a CSString. This is the primary function to use for
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    tag class as a CSString. This is the primary function to use for
+>>>>>>> origin/fixes_2_2
  *    going from uniform type identifier to tag. If the type
  *    declaration included more than one tag with the specified class,
  *    the first tag in the declared tag array is the preferred tag.
@@ -1392,16 +1534,21 @@ function UTTypeCreateAllIdentifiersForTag(
  *  Parameters:
  *    
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    inUTI:
 =======
  *    inTypeIdentifier:
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    inTypeIdentifier:
+>>>>>>> origin/fixes_2_2
  *      the uniform type identifier
  *    
  *    inTagClass:
  *      the class of tags to return
  *  
  *  Result:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    the tag string, or NULL if there is no tag of the specified class.
 <<<<<<< HEAD
@@ -1422,12 +1569,17 @@ function UTTypeCopyPreferredTagWithClass( inUTI: CFStringRef; inTagClass: CFStri
  *    an array of tags (as CFStrings), or NULL if there are no tags
  *    with the specified class.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    an array of tags (as CFStrings), or NULL if there are no tags
+ *    with the specified class.
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function UTTypeCopyPreferredTagWithClass( inUTI: CFStringRef; inTagClass: CFStringRef ): CFStringRef; external name '_UTTypeCopyPreferredTagWithClass';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
@@ -1442,12 +1594,17 @@ function UTTypeCopyPreferredTagWithClass( inUTI: CFStringRef; inTagClass: CFStri
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function UTTypeCopyPreferredTagWithClass(
   inTypeIdentifier: CFStringRef;
   inTagClass: CFStringRef): CFStringRef; external name '_UTTypeCopyPreferredTagWithClass';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1466,6 +1623,7 @@ function UTTypeCopyPreferredTagWithClass(
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    inUTI1:
  *      a uniform type identifier
@@ -1492,6 +1650,8 @@ function UTTypeEqual( inUTI1: CFStringRef; inUTI2: CFStringRef ): Boolean; exter
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    inTypeIdentifier1:
  *      a uniform type identifier
  *    
@@ -1508,7 +1668,10 @@ function UTTypeEqual( inUTI1: CFStringRef; inUTI2: CFStringRef ): Boolean; exter
 function UTTypeEqual(
   inTypeIdentifier1: CFStringRef;
   inTypeIdentifier2: CFStringRef): Boolean; external name '_UTTypeEqual';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1524,6 +1687,7 @@ function UTTypeEqual(
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    inUTI:
  *      the uniform type identifier to test
@@ -1550,6 +1714,8 @@ function UTTypeConformsTo( inUTI: CFStringRef; inConformsToUTI: CFStringRef ): B
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    inTypeIdentifier:
  *      the uniform type identifier to test
  *    
@@ -1566,7 +1732,10 @@ function UTTypeConformsTo( inUTI: CFStringRef; inConformsToUTI: CFStringRef ): B
 function UTTypeConformsTo(
   inTypeIdentifier: CFStringRef;
   inConformsToTypeIdentifier: CFStringRef): Boolean; external name '_UTTypeConformsTo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1581,14 +1750,19 @@ function UTTypeConformsTo(
  *  Parameters:
  *    
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    inUTI:
 =======
  *    inTypeIdentifier:
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    inTypeIdentifier:
+>>>>>>> origin/fixes_2_2
  *      the uniform type identifier
  *  
  *  Result:
  *    a localized string, or NULL of no type description is available
+<<<<<<< HEAD
 <<<<<<< HEAD
  }
 function UTTypeCopyDescription( inUTI: CFStringRef ): CFStringRef; external name '_UTTypeCopyDescription';
@@ -1610,6 +1784,8 @@ function UTTypeCopyDescription( inUTI: CFStringRef ): CFStringRef; external name
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
@@ -1619,7 +1795,10 @@ function UTTypeCopyDescription( inUTI: CFStringRef ): CFStringRef; external name
 
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function UTTypeCopyDescription(inTypeIdentifier: CFStringRef): CFStringRef; external name '_UTTypeCopyDescription';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1637,14 +1816,19 @@ function UTTypeCopyDescription(inTypeIdentifier: CFStringRef): CFStringRef; exte
  *  Parameters:
  *    
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    inUTI:
 =======
  *    inTypeIdentifier:
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    inTypeIdentifier:
+>>>>>>> origin/fixes_2_2
  *      the uniform type identifier
  *  
  *  Result:
  *    a tag declaration dictionary, or NULL if the type is not declared
+<<<<<<< HEAD
 <<<<<<< HEAD
  }
 function UTTypeCopyDeclaration( inUTI: CFStringRef ): CFDictionaryRef; external name '_UTTypeCopyDeclaration';
@@ -1666,6 +1850,8 @@ function UTTypeCopyDeclaration( inUTI: CFStringRef ): CFDictionaryRef; external 
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
@@ -1675,7 +1861,10 @@ function UTTypeCopyDeclaration( inUTI: CFStringRef ): CFDictionaryRef; external 
 
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function UTTypeCopyDeclaration(inTypeIdentifier: CFStringRef): CFDictionaryRef; external name '_UTTypeCopyDeclaration';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1691,14 +1880,19 @@ function UTTypeCopyDeclaration(inTypeIdentifier: CFStringRef): CFDictionaryRef; 
  *  Parameters:
  *    
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    inUTI:
 =======
  *    inTypeIdentifier:
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    inTypeIdentifier:
+>>>>>>> origin/fixes_2_2
  *      the uniform type identifier
  *  
  *  Result:
  *    a URL, or NULL if the bundle cannot be located.
+<<<<<<< HEAD
 <<<<<<< HEAD
  }
 function UTTypeCopyDeclaringBundleURL( inUTI: CFStringRef ): CFURLRef; external name '_UTTypeCopyDeclaringBundleURL';
@@ -1720,6 +1914,8 @@ function UTTypeCopyDeclaringBundleURL( inUTI: CFStringRef ): CFURLRef; external 
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
@@ -1729,7 +1925,10 @@ function UTTypeCopyDeclaringBundleURL( inUTI: CFStringRef ): CFURLRef; external 
 
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function UTTypeCopyDeclaringBundleURL(inTypeIdentifier: CFStringRef): CFURLRef; external name '_UTTypeCopyDeclaringBundleURL';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1753,6 +1952,7 @@ function UTTypeCopyDeclaringBundleURL(inTypeIdentifier: CFStringRef): CFURLRef; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    a new CFString representing the OSType
  }
 function UTCreateStringForOSType( inOSType: OSType ): CFStringRef; external name '_UTCreateStringForOSType';
@@ -1770,12 +1970,17 @@ function UTCreateStringForOSType( inOSType: OSType ): CFStringRef; external name
  *    a new CFString representing the OSType, or NULL if the argument
  *    is 0 or '????'
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    a new CFString representing the OSType, or NULL if the argument
+ *    is 0 or '????'
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function UTCreateStringForOSType( inOSType: OSType ): CFStringRef; external name '_UTCreateStringForOSType';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
@@ -1794,6 +1999,11 @@ function UTCreateStringForOSType( inOSType: OSType ): CFStringRef; external name
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function UTCreateStringForOSType(inOSType: OSType): CFStringRef; external name '_UTCreateStringForOSType';
 >>>>>>> graemeg/fixes_2_2
+=======
+
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function UTCreateStringForOSType(inOSType: OSType): CFStringRef; external name '_UTCreateStringForOSType';
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1814,6 +2024,7 @@ function UTCreateStringForOSType(inOSType: OSType): CFStringRef; external name '
  *  Result:
  *    the OSType value encoded in the string, or 0 if the string is not
  *    a valid encoding of an OSType
+<<<<<<< HEAD
 <<<<<<< HEAD
  }
 function UTGetOSTypeFromString( inString: CFStringRef ): OSType; external name '_UTGetOSTypeFromString';
@@ -1840,6 +2051,8 @@ function UTGetOSTypeFromString( inString: CFStringRef ): OSType; external name '
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
@@ -1855,4 +2068,7 @@ function UTGetOSTypeFromString(inString: CFStringRef): OSType; external name '_U
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -100,6 +101,8 @@ begin
   Inc(xpitch, 3);
   xpitch := xpitch and (not 3);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Const
 {$WARNING this belongs to the ipc unit}
   IPC_PRIVATE = 0;
@@ -127,13 +130,17 @@ Begin
   xpitch := AWidth * AFormat.Bits Div 8;
   Inc(xpitch, 3);
   xpitch := xpitch And (Not 3);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FPixels := GetMem(xpitch * AHeight);
   Pointer(tmp_FPixels) := Pointer(FPixels);
   FImage := XCreateImage(ADisplay, DefaultVisual(ADisplay, AScreen),
                          DefaultDepth(ADisplay, AScreen),
                          ZPixmap, 0, tmp_FPixels,
                          AWidth, AHeight, xpad, 0);
+<<<<<<< HEAD
 <<<<<<< HEAD
   if FImage = nil then
     raise TPTCError.Create('cannot create XImage');
@@ -219,6 +226,8 @@ constructor TX11ShmImage.Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: In
 begin
   inherited;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   If FImage = Nil Then
     Raise TPTCError.Create('cannot create XImage');
 End;
@@ -294,13 +303,17 @@ Constructor TX11ShmImage.Create(ADisplay : PDisplay; AScreen, AWidth, AHeight : 
 
 Begin
   Inherited;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   FShmInfo.shmid := -1;
   FShmInfo.shmaddr := Pointer(-1);
   FImage := XShmCreateImage(ADisplay, DefaultVisual(ADisplay, AScreen),
                             DefaultDepth(ADisplay, AScreen),
                             ZPixmap, Nil, @FShmInfo, AWidth, AHeight);
+<<<<<<< HEAD
 <<<<<<< HEAD
   if FImage = nil then
     raise TPTCError.Create('cannot create SHM image');
@@ -379,6 +392,8 @@ begin
   Result := 'MIT-Shm';
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   If FImage = Nil Then
     Raise TPTCError.Create('cannot create SHM image');
 
@@ -461,5 +476,8 @@ Function TX11ShmImage.Name : String;
 Begin
   Result := 'MIT-Shm';
 End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF ENABLE_X11_EXTENSION_XSHM}

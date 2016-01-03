@@ -286,6 +286,7 @@ end;
     ElInfo: Pointer;
   end;
 
+<<<<<<< HEAD
 
 function RTTIArraySize(typeInfo: Pointer): SizeInt;
 begin
@@ -320,6 +321,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { if you modify this procedure, fpc_copy must be probably modified as well }
 procedure RecordRTTI(Data,TypeInfo:Pointer;rttiproc:TRTTIProc);
 var
@@ -356,9 +359,12 @@ end;
 
 { if you modify this procedure, fpc_copy must be probably modified as well }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef VER2_6}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure ArrayRTTI(Data,TypeInfo:Pointer;rttiproc:TRTTIProc);
 var
 <<<<<<< HEAD
@@ -530,6 +536,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -541,6 +548,8 @@ begin
 {$ifdef FPC_HAS_FEATURE_VARIANTS}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     tkVariant:
       variant_clear(PVarData(Data)^);
 {$endif FPC_HAS_FEATURE_VARIANTS}
@@ -656,9 +665,12 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { define alias for internal use in the system unit }
 Function fpc_Copy_internal (Src, Dest, TypeInfo : Pointer) : SizeInt;[external name 'FPC_COPY'];
 
@@ -688,11 +700,15 @@ var
 >>>>>>> origin/cpstrnew
 =======
   namelen : byte;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   copiedsize,
   expectedoffset,
   count,
   offset,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -710,6 +726,9 @@ var
 =======
   size,
 >>>>>>> graemeg/fixes_2_2
+=======
+  size,
+>>>>>>> origin/fixes_2_2
   i : SizeInt;
   info : pointer;
 >>>>>>> graemeg/cpstrnew
@@ -741,6 +760,7 @@ begin
   {$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
     tkWstring:
       fpc_WideStr_Assign(PPointer(Dest)^,PPointer(Src)^);
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
 <<<<<<< HEAD
@@ -806,6 +826,10 @@ begin
 =======
     tkArray:
       begin
+=======
+    tkArray:
+      begin
+>>>>>>> origin/fixes_2_2
         Temp:=PByte(TypeInfo);
         inc(Temp);
         { Skip Name }
@@ -826,7 +850,10 @@ begin
         for I:=0 to Count-1 do
           fpc_Copy_internal(Src+(I*size),Dest+(I*size),Info);
         Result:=size*count;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 {$ifdef FPC_HAS_FEATURE_OBJECTS}
     tkobject,
@@ -855,7 +882,10 @@ begin
         { Element count }
         Count:=PLongint(Temp)^;
         inc(Temp,sizeof(longint));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         expectedoffset:=0;
         { Process elements with rtti }
         for i:=1 to count Do
@@ -873,7 +903,10 @@ begin
             if Offset>expectedoffset then
               move((Src+expectedoffset)^,(Dest+expectedoffset)^,Offset-expectedoffset);
             inc(Temp,sizeof(longint));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             copiedsize:=fpc_Copy_internal(Src+Offset,Dest+Offset,Info);
             expectedoffset:=Offset+copiedsize;
           end;
@@ -882,9 +915,12 @@ begin
           move((Src+expectedoffset)^,(Dest+expectedoffset)^,Result-expectedoffset);
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_HAS_FEATURE_DYNARRAYS}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     tkDynArray:
 <<<<<<< HEAD
       fpc_dynarray_assign(PPointer(Dest)^,PPointer(Src)^,typeinfo);
@@ -921,12 +957,26 @@ begin
         result:=sizeof(tvardata);
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif FPC_HAS_FEATURE_VARIANTS}
   end;
 end;
 =======
   end;
 end;
+=======
+  end;
+end;
+
+
+{ For internal use by the compiler, because otherwise $x- can cause trouble. }
+{ Generally disabling extended syntax checking for all compilerprocs may     }
+{ have unintended side-effects                                               }
+procedure fpc_Copy_proc (Src, Dest, TypeInfo : Pointer);compilerproc; inline;
+begin
+  fpc_copy_internal(src,dest,typeinfo);
+end;
+>>>>>>> origin/fixes_2_2
 
 
 { For internal use by the compiler, because otherwise $x- can cause trouble. }

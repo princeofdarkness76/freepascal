@@ -1,5 +1,6 @@
 { CoreGraphics - CGImage.h
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2000-2008 Apple Inc.
  * All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -28,6 +29,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  * Copyright (c) 2000-2004 Apple Computer, Inc.
  * All rights reserved.
  }
@@ -40,7 +43,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -50,12 +56,17 @@
 unit CGImage;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -69,14 +80,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -85,11 +101,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -127,6 +146,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -134,6 +155,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -360,6 +382,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -368,7 +392,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -395,9 +422,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -409,14 +440,18 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CGBase,CGGeometry,CGColorSpace,CGDataProvider;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -439,6 +474,9 @@ type
 =======
 	CGImageRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	CGImageRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 
 
 type
@@ -457,12 +495,17 @@ const
 	kCGBitmapAlphaInfoMask = $1F;
 	kCGBitmapFloatComponents = 1 shl 8;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kCGBitmapByteOrderMask = $7000;
 	kCGBitmapByteOrderDefault = 0 shl 12;
 =======
     
 	kCGBitmapByteOrderMask = $7000;
 >>>>>>> graemeg/fixes_2_2
+=======
+    
+	kCGBitmapByteOrderMask = $7000;
+>>>>>>> origin/fixes_2_2
 	kCGBitmapByteOrder16Little = 1 shl 12;
 	kCGBitmapByteOrder32Little = 2 shl 12;
 	kCGBitmapByteOrder16Big = 3 shl 12;
@@ -481,6 +524,7 @@ const
 
 { Return the CFTypeID for CGImageRefs. }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function CGImageGetTypeID: CFTypeID; external name '_CGImageGetTypeID';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
@@ -591,6 +635,8 @@ function CGImageCreateWithMaskingColors( image: CGImageRef; {const} components: 
 function CGImageCreateCopyWithColorSpace( image: CGImageRef; space: CGColorSpaceRef ): CGImageRef; external name '_CGImageCreateCopyWithColorSpace';
 (* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function CGImageGetTypeID: CFTypeID; external name '_CGImageGetTypeID'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 { Create an image. }
@@ -689,67 +735,92 @@ function CGImageCreateWithMaskingColors( image: CGImageRef; {const} components: 
  * components of the colorspace of `image'. }
 
 function CGImageCreateCopyWithColorSpace( image: CGImageRef; colorspace: CGColorSpaceRef ): CGImageRef; external name '_CGImageCreateCopyWithColorSpace'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Equivalent to `CFRetain(image)'. }
 
 function CGImageRetain( image: CGImageRef ): CGImageRef; external name '_CGImageRetain';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Equivalent to `CFRelease(image)'. }
 
 procedure CGImageRelease( image: CGImageRef ); external name '_CGImageRelease';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return true if `image' is an image mask, false otherwise. }
 
 function CGImageIsMask( image: CGImageRef ): CBool; external name '_CGImageIsMask';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the width of `image'. }
 
 function CGImageGetWidth( image: CGImageRef ): size_t; external name '_CGImageGetWidth';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the height of `image'. }
 
 function CGImageGetHeight( image: CGImageRef ): size_t; external name '_CGImageGetHeight';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the number of bits/component of `image'. }
 
 function CGImageGetBitsPerComponent( image: CGImageRef ): size_t; external name '_CGImageGetBitsPerComponent';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the number of bits/pixel of `image'. }
 
 function CGImageGetBitsPerPixel( image: CGImageRef ): size_t; external name '_CGImageGetBitsPerPixel';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the number of bytes/row of `image'. }
 
 function CGImageGetBytesPerRow( image: CGImageRef ): size_t; external name '_CGImageGetBytesPerRow';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
@@ -759,24 +830,33 @@ function CGImageGetBytesPerRow( image: CGImageRef ): size_t; external name '_CGI
 function CGImageGetColorSpace( image: CGImageRef ): CGColorSpaceRef; external name '_CGImageGetColorSpace';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the colorspace of `image', or NULL if `image' is an image
  * mask. }
 
 function CGImageGetColorSpace( image: CGImageRef ): CGColorSpaceRef; external name '_CGImageGetColorSpace';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the alpha info of `image'. }
 
 function CGImageGetAlphaInfo( image: CGImageRef ): CGImageAlphaInfo; external name '_CGImageGetAlphaInfo';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the data provider of `image'. }
 
 function CGImageGetDataProvider( image: CGImageRef ): CGDataProviderRef; external name '_CGImageGetDataProvider';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
@@ -785,23 +865,32 @@ function CGImageGetDataProvider( image: CGImageRef ): CGDataProviderRef; externa
 function CGImageGetDecode( image: CGImageRef ): CGFloatPtr; external name '_CGImageGetDecode';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the decode array of `image'. }
 
 function CGImageGetDecode( image: CGImageRef ): Float32Ptr; external name '_CGImageGetDecode';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the interpolation parameter of `image'. }
 
 function CGImageGetShouldInterpolate( image: CGImageRef ): CBool; external name '_CGImageGetShouldInterpolate';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the rendering intent of `image'. }
 
 function CGImageGetRenderingIntent( image: CGImageRef ): CGColorRenderingIntent; external name '_CGImageGetRenderingIntent';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
@@ -815,6 +904,8 @@ function CGImageGetBitmapInfo( image: CGImageRef ): CGBitmapInfo; external name 
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the bitmap info of `image'. }
 
@@ -822,4 +913,7 @@ function CGImageGetBitmapInfo( image: CGImageRef ): CGBitmapInfo; external name 
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

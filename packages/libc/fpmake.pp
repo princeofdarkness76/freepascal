@@ -15,6 +15,7 @@ begin
     P:=AddPackage('libc');
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -29,11 +30,16 @@ begin
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');
 =======
+=======
+>>>>>>> origin/fixes_2_2
     P.Directory:='libc';
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
     P.SourcePath.Add('src');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     P.OSES:=[linux];
     p.cpus:=[i386];
     T:=P.Targets.AddUnit('kerneldefs.pp');
@@ -273,10 +279,14 @@ begin
           AddUnit('kernelioctl');
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
      p.Sources.Adddoc('README.txt');
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

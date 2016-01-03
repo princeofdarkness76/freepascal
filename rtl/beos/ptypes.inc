@@ -87,11 +87,15 @@ type
 
     time_t   = clong;           { used for returning the time  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     // TTime    = time_t;    // Not allowed in system unit, -> unixtype
 =======
     TTime    = time_t; 
 >>>>>>> graemeg/fixes_2_2
+=======
+    TTime    = time_t; 
+>>>>>>> origin/fixes_2_2
     pTime    = ^time_t;
     ptime_t =  ^time_t;
     

@@ -43,7 +43,10 @@ implicitunits=exeinfo \
       strutils convutil stdconvs fmtbcd so32dll sockets
 rsts=math varutils typinfo variants pmhelp classes sysconst dateutil stdconvs
 implicitunits=exeinfo
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [require]
 nortl=y
@@ -229,16 +232,23 @@ stdconvs$(PPUEXT) : $(OBJPASDIR)/stdconvs.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUE
 fmtbcd$(PPUEXT) : $(OBJPASDIR)/fmtbcd.pp objpas$(PPUEXT) sysutils$(PPUEXT) variants$(PPUEXT) classes$(PPUEXT) system$(PPUEXT)
         $(COMPILER) $(OBJPASDIR)/fmtbcd.pp
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 #
 # Mac Pascal Model
 #
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) math$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
 =======
 macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) math$(PPUEXT)
 >>>>>>> graemeg/fixes_2_2
+=======
+macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) math$(PPUEXT)
+>>>>>>> origin/fixes_2_2
         $(COMPILER) $(INC)/macpas.pp $(REDIR)
 
 #

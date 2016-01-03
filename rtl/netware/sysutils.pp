@@ -31,6 +31,7 @@ uses DOS;
 {$DEFINE HAS_SLEEP}
 {$DEFINE HAS_OSERROR}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 { used OS file system APIs use ansistring }
 {$define SYSUTILS_HAS_ANSISTR_FILEUTIL_IMPL}
@@ -38,6 +39,8 @@ uses DOS;
 {$define SYSUTILS_HAS_ANSISTR_ENVVAR_IMPL}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 TYPE
   TNetwareFindData =

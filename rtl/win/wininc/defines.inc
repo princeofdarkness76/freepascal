@@ -1193,6 +1193,7 @@
   { EnumResLangProc  }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   // layout
    LAYOUT_RTL                         = 1; // Right to left
    LAYOUT_BTT                         = 2; // Bottom to top
@@ -1206,6 +1207,8 @@
      DMDFO_CENTER  = 2;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   //
   // Predefined Resource Types
@@ -1720,6 +1723,7 @@
      SIF_DISABLENOSCROLL = 8;
   { GetStdHandle  }
 <<<<<<< HEAD
+<<<<<<< HEAD
   { !!! The 3 following constants are NOT handles. They remain 32-bit on Win64. }
      STD_INPUT_HANDLE = DWORD(-10);
      STD_OUTPUT_HANDLE = DWORD(-11);
@@ -1749,6 +1753,13 @@
 
      INVALID_HANDLE_VALUE = HANDLE(-1);
 >>>>>>> graemeg/fixes_2_2
+=======
+     STD_INPUT_HANDLE = HANDLE(-10);
+     STD_OUTPUT_HANDLE = HANDLE(-11);
+     STD_ERROR_HANDLE = HANDLE(-12);
+
+     INVALID_HANDLE_VALUE = HANDLE(-1);
+>>>>>>> origin/fixes_2_2
 
   { GetStockObject  }
 
@@ -2382,6 +2393,7 @@
      RDW_NOCHILDREN = 64;
   { RegCreateKey  }
 <<<<<<< HEAD
+<<<<<<< HEAD
      HKEY_CLASSES_ROOT = HKEY(longint($80000000));
      HKEY_CURRENT_USER = HKEY(longint($80000001));
      HKEY_LOCAL_MACHINE = HKEY(longint($80000002));
@@ -2390,6 +2402,8 @@
      HKEY_CURRENT_CONFIG = HKEY(longint($80000005));
      HKEY_DYN_DATA = HKEY(longint($80000006));
 =======
+=======
+>>>>>>> origin/fixes_2_2
      HKEY_CLASSES_ROOT = HKEY($80000000);
      HKEY_CURRENT_USER = HKEY($80000001);
      HKEY_LOCAL_MACHINE = HKEY($80000002);
@@ -2397,7 +2411,10 @@
      HKEY_PERFORMANCE_DATA = HKEY($80000004);
      HKEY_CURRENT_CONFIG = HKEY($80000005);	
      HKEY_DYN_DATA = HKEY($80000006);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 Type
     SE_OBJECT_TYPE = (   // enum in Delphi apparantly.
@@ -2927,10 +2944,14 @@ Type
      TPM_TOPALIGN    = 0;
      TPM_VCENTERALIGN= $10;
 <<<<<<< HEAD
+<<<<<<< HEAD
      TPM_BOTTOMALIGN = $20;
 =======
      TPM_BOOTOMALIGN = $20;
 >>>>>>> graemeg/fixes_2_2
+=======
+     TPM_BOOTOMALIGN = $20;
+>>>>>>> origin/fixes_2_2
      TPM_NONOTIFY    = $80;
      TPM_RETURNCMD   = $100;
      TPM_RECURSE         = $0001;
@@ -5909,6 +5930,7 @@ const
   DMDO_270        = 3;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   FIND_FIRST_EX_CASE_SENSITIVE   = $00000001;
   FIND_FIRST_EX_LARGE_FETCH      = $00000002;
 
@@ -6108,6 +6130,8 @@ const
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif read_interface}
 
 {$ifdef read_implementation}

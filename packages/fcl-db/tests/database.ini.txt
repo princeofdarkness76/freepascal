@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ; This file contains several sections, one for each database type. 
 
 ; Select here which section is to be used currently, 
@@ -62,6 +63,8 @@ hostname=
 [mysql40]
 ; MySQL 4.0 database:
 =======
+=======
+>>>>>>> origin/fixes_2_2
 ; This file contains several sections, one for each database-type. Select here
 ; which section has to be used currently.
 [Database]
@@ -93,7 +96,10 @@ password=
 hostname=127.0.0.1
 
 [mysql40]
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 connector=sql
 connectorparams=mysql40
 name=testdb
@@ -103,9 +109,12 @@ hostname=127.0.0.1
 
 [mysql41]
 <<<<<<< HEAD
+<<<<<<< HEAD
 ; MySQL 4.1 database:
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 connector=sql
 connectorparams=mysql41
 name=testdb
@@ -115,9 +124,12 @@ hostname=127.0.0.1
 
 [mysql50]
 <<<<<<< HEAD
+<<<<<<< HEAD
 ; MySQL 5.0 database:
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 connector=sql
 connectorparams=mysql50
 name=testdb
@@ -125,6 +137,7 @@ user=root
 password=
 hostname=127.0.0.1
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [mysql51]
 ; MySQL 5.1 database:
@@ -188,11 +201,17 @@ connectorparams=oracle
 connector=sql
 connectorparams=oracle
 >>>>>>> graemeg/fixes_2_2
+=======
+[oracle]
+connector=sql
+connectorparams=oracle
+>>>>>>> origin/fixes_2_2
 name=xe
 user=system
 password=
 hostname=127.0.0.1
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [postgresql]
 ; PostgreSQL database:
@@ -283,6 +302,8 @@ connector=sqlite3ds
 ; datafile
 name=testsqlite3ds.db
 =======
+=======
+>>>>>>> origin/fixes_2_2
 [interbase]
 connector=sql
 connectorparams=interbase
@@ -311,4 +332,7 @@ name=/tmp
 [memds]
 connector=memds
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

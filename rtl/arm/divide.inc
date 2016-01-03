@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     This file is part of the Free Pascal run time library.
     Copyright (c) 2014 by the Free Pascal development team.
 
@@ -695,6 +696,8 @@ function fpc_mod_longint(n,z:longint):longint;external name 'FPC_MOD_LONGINT';
 
 {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  Divide/modulo for Acorn RISC Machine
 
  ... taken from a GP2X Ogg Tremor port by Dzz and converted to
@@ -851,4 +854,7 @@ end;
 {It is a compilerproc (systemh.inc), make an alias for internal use.}
 function fpc_mod_longint(n,z:longint):longint;external name 'FPC_MOD_LONGINT';
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

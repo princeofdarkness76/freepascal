@@ -917,7 +917,10 @@ var
 =======
   SLen : longint;
   a: ansistring;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   If (pointer(S)=nil) or (InOutRes<>0) then
    exit;
@@ -927,6 +930,7 @@ begin
         SLen:=Length(s);
         If Len>SLen Then
           fpc_WriteBlanks(f,Len-SLen);
+<<<<<<< HEAD
 <<<<<<< HEAD
         {$ifdef FPC_HAS_CPSTRING}
         WideStringManager.Unicode2AnsiMoveProc(PUnicodeChar(S),a,TextRec(f).CodePage,SLen);
@@ -940,6 +944,11 @@ begin
         { length(a) can be > slen, e.g. after utf-16 -> utf-8 }
         fpc_WriteBuffer(f,pchar(a)^,length(a));
 >>>>>>> graemeg/fixes_2_2
+=======
+        a:=s;
+        { length(a) can be > slen, e.g. after utf-16 -> utf-8 }
+        fpc_WriteBuffer(f,pchar(a)^,length(a));
+>>>>>>> origin/fixes_2_2
       end;
     fmInput: InOutRes:=105
     else InOutRes:=103;
@@ -1187,6 +1196,7 @@ Procedure fpc_Write_Text_Float_iso(rt,fixkomma,Len : Longint;var t : Text;r : Va
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   s : String;
 Begin
   If (InOutRes<>0) then
@@ -1392,6 +1402,9 @@ Procedure fpc_Write_Text_Char(Len : Longint;var t : Text;c : Char); iocheck; com
 =======
   a : ansistring;
 >>>>>>> graemeg/fixes_2_2
+=======
+  a : ansistring;
+>>>>>>> origin/fixes_2_2
 Begin
   If (InOutRes<>0) then
     exit;
@@ -1407,6 +1420,7 @@ Begin
     fpc_WriteBlanks(t,Len-1);
   If TextRec(t).BufPos>=TextRec(t).BufSize Then
     FileFunc(TextRec(t).InOutFunc)(TextRec(t));
+<<<<<<< HEAD
 <<<<<<< HEAD
   TextRec(t).Bufptr^[TextRec(t).BufPos]:=c;
   Inc(TextRec(t).BufPos);
@@ -1470,6 +1484,11 @@ Begin
   a:=c;
   {$endif}
   fpc_WriteBuffer(t,PAnsiChar(a)^,Length(a));
+=======
+  { a widechar can be translated into more than a single ansichar }
+  a:=c;
+  fpc_WriteBuffer(t,pchar(a)^,length(a));
+>>>>>>> origin/fixes_2_2
 End;
 {$endif FPC_HAS_FEATURE_WIDESTRINGS}
 
@@ -1809,11 +1828,14 @@ var
   end_of_string:boolean;
 Begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef EXCLUDE_COMPLEX_PROCS}
   runerror(219);
 {$else EXCLUDE_COMPLEX_PROCS}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   ReadPCharLen:=0;
   If not CheckRead(f) then
     exit;

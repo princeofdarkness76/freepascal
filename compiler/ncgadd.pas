@@ -192,6 +192,7 @@ interface
         if pushedfpu then
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
             if use_vectorfpu(left.resultdef) then
               begin
                 tmpreg := cg.getmmregister(current_asmdata.CurrAsmList,left.location.size);
@@ -232,6 +233,28 @@ interface
                   toggleflag(nf_swapped);
 {$endif x86}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifdef x86}
+            if use_sse(left.resultdef) then
+              begin
+                tmpreg := cg.getmmregister(current_asmdata.CurrAsmList,left.location.size);
+                cg.a_loadmm_loc_reg(current_asmdata.CurrAsmList,left.location.size,left.location,tmpreg,mms_movescalar);
+                location_reset(left.location,LOC_MMREGISTER,left.location.size);
+                left.location.register := tmpreg;
+              end
+            else
+{$endif x86}
+              begin
+                tmpreg := cg.getfpuregister(current_asmdata.CurrAsmList,left.location.size);
+                cg.a_loadfpu_loc_reg(current_asmdata.CurrAsmList,left.location.size,left.location,tmpreg);
+                location_reset(left.location,LOC_FPUREGISTER,left.location.size);
+                left.location.register := tmpreg;
+{$ifdef x86}
+                { left operand is now on top of the stack, instead of the right one! }
+                if (right.location.loc=LOC_FPUREGISTER) then
+                  toggleflag(nf_swapped);
+{$endif x86}
+>>>>>>> origin/fixes_2_2
               end;
           end;
 <<<<<<< HEAD
@@ -331,6 +354,7 @@ interface
       begin
         { when a setdef is passed, it has to be a smallset }
 <<<<<<< HEAD
+<<<<<<< HEAD
         if not(
                ((left.nodetype=setelementn) or is_smallset(left.resultdef)) and
                ((right.nodetype=setelementn) or is_smallset(right.resultdef))
@@ -340,6 +364,8 @@ interface
           second_addsmallsetelement
         else if nodetype in [equaln,unequaln,gtn,gten,lten,ltn] then
 =======
+=======
+>>>>>>> origin/fixes_2_2
         if is_varset(left.resultdef) or
           is_varset(right.resultdef) then
           internalerror(200203302);
@@ -355,12 +381,18 @@ interface
     procedure tcgaddnode.second_addsmallset;
       var
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
         tmpreg : tregister;
         mask,
         setbase : aint;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         cgop    : TOpCg;
         opdone  : boolean;
       begin
@@ -369,10 +401,13 @@ interface
         force_reg_left_right(true,true);
         set_result_location_reg;
 <<<<<<< HEAD
+<<<<<<< HEAD
         case nodetype of
           addn :
             cgop:=OP_OR;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         if (left.resultdef.typ=setdef) then
           setbase:=tsetdef(left.resultdef).setbase
         else

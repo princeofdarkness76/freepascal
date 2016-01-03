@@ -19,10 +19,15 @@ uses
 
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   ZLIB_VERSION = '1.1.3';
 
 >>>>>>> graemeg/fixes_2_2
+=======
+  ZLIB_VERSION = '1.1.3';
+
+>>>>>>> origin/fixes_2_2
 {$ifdef netware}  {zlib.nlm comes with netware6}
   libz='zlib';
 {$else}
@@ -37,6 +42,7 @@ const
 {$linklib libz}
 {$endif windows}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 (*
      The 'zlib' compression library provides in-memory compression and
@@ -191,6 +197,8 @@ const
   Z_BLOCK = 5;
 (* Allowed flush values; see deflate() and inflate() below for details *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type
   { Compatible with paszlib }
   Uint    = cuint;
@@ -235,11 +243,15 @@ const
   Z_SYNC_FLUSH = 2;
   Z_FULL_FLUSH = 3;
   Z_FINISH = 4;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   Z_OK = 0;
   Z_STREAM_END = 1;
   Z_NEED_DICT = 2;
+<<<<<<< HEAD
 <<<<<<< HEAD
   Z_ERRNO = (-1);
   Z_STREAM_ERROR = (-2);
@@ -251,18 +263,24 @@ const
  * values are errors, positive values are used for special but normal events.
  *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Z_ERRNO = -(1);
   Z_STREAM_ERROR = -(2);
   Z_DATA_ERROR = -(3);
   Z_MEM_ERROR = -(4);
   Z_BUF_ERROR = -(5);
   Z_VERSION_ERROR = -(6);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   Z_NO_COMPRESSION = 0;
   Z_BEST_SPEED = 1;
   Z_BEST_COMPRESSION = 9;
   Z_DEFAULT_COMPRESSION = -(1);
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* compression levels *)
 
@@ -1276,6 +1294,8 @@ function get_crc_table: pointer; cdecl; external libz name 'get_crc_table';
 
 function zlibAllocMem(AppData: Pointer; Items, Size: UInt): Pointer; cdecl;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
   Z_FILTERED = 1;
   Z_HUFFMAN_ONLY = 2;
@@ -1338,11 +1358,15 @@ function inflateSyncPoint(z:PZstream):longint;cdecl;external libz name 'inflateS
 function get_crc_table:pointer;cdecl;external libz name 'get_crc_table';
 
 function zlibAllocMem(AppData: Pointer; Items, Size: Integer): Pointer; cdecl;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure zlibFreeMem(AppData, Block: Pointer);  cdecl;
 
 implementation
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function deflateInit(var strm: z_stream; level: cint): cint;
 begin
@@ -1371,6 +1395,8 @@ end;
 
 function zlibAllocMem(AppData: Pointer; Items, Size: UInt): Pointer; cdecl;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses
   strings;
 
@@ -1405,17 +1431,24 @@ function zError(err:longint):string;
   end;
 
 function zlibAllocMem(AppData: Pointer; Items, Size: Integer): Pointer; cdecl;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   begin
     Result := AllocMem(Items * Size);
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure zlibFreeMem(AppData, Block: Pointer); cdecl;
 =======
 procedure zlibFreeMem(AppData, Block: Pointer);  cdecl;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure zlibFreeMem(AppData, Block: Pointer);  cdecl;
+>>>>>>> origin/fixes_2_2
 
   begin
     FreeMem(Block);

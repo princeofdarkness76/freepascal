@@ -25,11 +25,14 @@ uses
   baseunix,
   termio,
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef linux}
   linuxvcs,
 {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif}
   video,Objects;
 
@@ -488,12 +491,16 @@ begin
       VIDEBufferSize:=IDEVideoInfo.ScreenSize;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   HideMouse;
   DosmemGet(VSeg,SOfs,VIDEBuffer^,IDEVideoInfo.ScreenSize);
   ShowMouse;
 =======
   DosmemGet(VSeg,SOfs,VIDEBuffer^,IDEVideoInfo.ScreenSize);
 >>>>>>> graemeg/fixes_2_2
+=======
+  DosmemGet(VSeg,SOfs,VIDEBuffer^,IDEVideoInfo.ScreenSize);
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TDosScreen.SaveConsoleScreen;
@@ -778,6 +785,7 @@ begin
                 FName:='/dev/vcsa' + ThisTTY[9];
                 TTYFd:=fpOpen(FName, &666, O_RdWr); { open console }
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if TTYFd = -1 then
                 begin
                   if try_grab_vcsa then
@@ -785,6 +793,8 @@ begin
                 end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 If TTYFd <>-1 Then
                   Console:=ttyLinux;
 {$endif}

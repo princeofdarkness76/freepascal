@@ -1,13 +1,18 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for nds units
 >>>>>>> graemeg/fixes_2_2
+=======
+#   Makefile.fpc for nds units
+>>>>>>> origin/fixes_2_2
 #
 
 [package]
 name=libndsfpc
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -30,6 +35,8 @@ version=2.5.1
 [require]
 packages=rtl fpmkunit
 =======
+=======
+>>>>>>> origin/fixes_2_2
 version=2.2.5
 
 [target]
@@ -41,12 +48,16 @@ options=
 includedir=src src/dswifi src/fat src/libmikmod
 sourcedir=src tests
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [install]
 fpcpackage=y
 
 [default]
+<<<<<<< HEAD
 <<<<<<< HEAD
 fpcdir=../..
 
@@ -136,6 +147,8 @@ else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
 =======
+=======
+>>>>>>> origin/fixes_2_2
 cpu=arm
 target=nds
 fpcdir=../..
@@ -146,4 +159,7 @@ nortl=y
 [rules]
 .NOTPARALLEL:
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

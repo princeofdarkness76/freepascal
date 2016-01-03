@@ -59,6 +59,7 @@ type
 
   THTMLAttributeTag = (
 <<<<<<< HEAD
+<<<<<<< HEAD
       atabbr, atalink, atacceptcharset, ataccept, ataccesskey, ataction, atalign, atalt, atarchive,
       ataxis, atbackground, atbgcolor, atborder, atcellpadding, atcellspacing, atchar, atcharoff, atcharset,
       atchecked, atcite, atclass, atclassid, atclear, atcode, atcodebase, atcodetype, atcolor, atcols,
@@ -75,6 +76,8 @@ type
       attabindex, attarget, attext, attitle, attype, atusemap, atvalign, atvalue,
       atvaluetype, atversion, atvlink, atvspace, atwidth
 =======
+=======
+>>>>>>> origin/fixes_2_2
       atabbr, atacceptcharset, ataccept, ataccesskey, ataction, atalign, atalt, atarchive,
       ataxis, atborder, atcellpadding, atcellspacing, atchar, atcharoff, atcharset,
       atchecked, atcite, atclass, atclassid, atcodebase, atcodetype, atcols,
@@ -90,7 +93,10 @@ type
       atselected, atshape, atsize, atspan, atsrc, atstandby, atstyle, atsummary,
       attabindex, attarget, attitle, attype, atusemap, atvalign, atvalue,
       atvaluetype, atwidth
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       );
   THTMLAttributeSet = set of THTMLAttributeTag;
 
@@ -116,6 +122,7 @@ type
     efPreserveWhitespace,               // preserve all whitespace
     efDeprecated,                       // can be dropped in future versions
 <<<<<<< HEAD
+<<<<<<< HEAD
     efNoChecks,                         // Checks (attributes,subtags,...) can only be implemented in descendants
     efEndTagOptional
   );
@@ -123,6 +130,10 @@ type
     efNoChecks                          // Checks (attributes,subtags,...) can only be implemented in descendants
     );
 >>>>>>> graemeg/fixes_2_2
+=======
+    efNoChecks                          // Checks (attributes,subtags,...) can only be implemented in descendants
+    );
+>>>>>>> origin/fixes_2_2
   THTMLElementFlags = set of THTMLElementFlag;
 
   PHTMLElementProps = ^THTMLElementProps;
@@ -139,12 +150,15 @@ const
                     atmultiple,atreadonly,atselected];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DeprecatedAttributes = [atalink, atbackground, atbgcolor, atclear, atcode, atcolor,
     atcompact, atface, athspace, atlink, atnoshade, atnowrap, atobject, atprompt,
     atstart, attext, atvlink, atversion, atvspace];
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   efSubcontent = [efSubelementContent, efPCDATAContent];
 
   atsi18n = [atlang, atdir];
@@ -216,16 +230,22 @@ const
      Attributes: atsattrs+atscellhalign+[atvalign,atspan,atwidth]),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     (Name: 'colgroup';  Flags: [efSubelementContent, efEndTagOptional];
      Attributes: atsattrs+atscellhalign+[atvalign,atspan,atwidth]),
 
     (Name: 'dd';        Flags: efSubcontent+[efEndTagOptional]; Attributes: atsattrs),
 =======
+=======
+>>>>>>> origin/fixes_2_2
     (Name: 'colgroup';  Flags: [efSubelementContent];
      Attributes: atsattrs+atscellhalign+[atvalign,atspan,atwidth]),
 
     (Name: 'dd';        Flags: efSubcontent; Attributes: atsattrs),
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     (Name: 'del';       Flags: [efSubelementContent]; Attributes: atsattrs+[atcite,atdatetime]),
 
@@ -234,18 +254,24 @@ const
     (Name: 'dir';       Flags: [efSubelementContent,efDeprecated]; Attributes: atsattrs),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     (Name: 'div';       Flags: efSubContent; Attributes: atsattrs),
 
     (Name: 'dl';        Flags: [efSubelementContent]; Attributes: atsattrs),
 
     (Name: 'dt';        Flags: [efPCDataContent, efEndTagOptional]; Attributes: atsattrs),
 =======
+=======
+>>>>>>> origin/fixes_2_2
     (Name: 'div';       Flags: [efSubelementContent]; Attributes: atsattrs),
 
     (Name: 'dl';        Flags: [efSubelementContent]; Attributes: atsattrs),
 
     (Name: 'dt';        Flags: [efPCDataContent]; Attributes: atsattrs),
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     (Name: 'em';        Flags: efSubcontent; Attributes: atsattrs),
 
@@ -307,10 +333,14 @@ const
     (Name: 'legend';    Flags: efSubcontent; Attributes: atsattrs+[ataccesskey]),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     (Name: 'li';        Flags: efSubcontent+[efEndTagOptional]; Attributes: atsattrs),
 =======
     (Name: 'li';        Flags: efSubcontent; Attributes: atsattrs),
 >>>>>>> graemeg/fixes_2_2
+=======
+    (Name: 'li';        Flags: efSubcontent; Attributes: atsattrs),
+>>>>>>> origin/fixes_2_2
 
     (Name: 'link';      Flags: [];
      Attributes: atsattrs+[atcharset,athref,athreflang,attype,atrel,atrev,atmedia]),
@@ -334,16 +364,22 @@ const
     (Name: 'optgroup';  Flags: efSubcontent; Attributes: atsattrs+[atdisabled,atlabel]),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     (Name: 'option';    Flags: efSubcontent+[efEndTagOptional];
      Attributes: atsattrs+[atselected,atdisabled,atlabel,atvalue]),
 
     (Name: 'p';         Flags: efSubcontent+[efEndTagOptional]; Attributes: atsattrs),
 =======
+=======
+>>>>>>> origin/fixes_2_2
     (Name: 'option';    Flags: efSubcontent;
      Attributes: atsattrs+[atselected,atdisabled,atlabel,atvalue]),
 
     (Name: 'p';         Flags: efSubcontent; Attributes: atsattrs),
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     (Name: 'param';     Flags: []; Attributes: [atid,atname,atvalue,atvaluetype,attype]),
 
@@ -382,16 +418,21 @@ const
     (Name: 'tbody';     Flags: [efSubelementContent]; Attributes: atsattrs+atscellhalign+[atvalign]),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     (Name: 'td';        Flags: efSubcontent+[efEndTagOptional];
 =======
     (Name: 'td';        Flags: efSubcontent;
 >>>>>>> graemeg/fixes_2_2
+=======
+    (Name: 'td';        Flags: efSubcontent;
+>>>>>>> origin/fixes_2_2
      Attributes: atsattrs+atscellhalign+[atvalign,atabbr,ataxis,atheaders,atscope,atrowspan,atcolspan]),
 
     (Name: 'textarea';  Flags: [efPCDATAContent];
      Attributes: atsattrs+[atname,atrows,atcols,atdisabled,atreadonly,attabindex,
                  ataccesskey,atonfocus,atonblur,atonselect,atonchange]),
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     (Name: 'tfoot';     Flags: [efSubelementContent,efEndTagOptional]; Attributes: atsattrs+atscellhalign+[atvalign]),
 
@@ -404,6 +445,8 @@ const
 
     (Name: 'tr';        Flags: [efSubelementContent, efEndTagOptional];
 =======
+=======
+>>>>>>> origin/fixes_2_2
     (Name: 'tfoot';     Flags: [efSubelementContent]; Attributes: atsattrs+atscellhalign+[atvalign]),
 
     (Name: 'th';        Flags: efSubcontent;
@@ -414,7 +457,10 @@ const
     (Name: 'title';     Flags: efSubcontent; Attributes: atsi18n),
 
     (Name: 'tr';        Flags: [efSubelementContent];
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      Attributes: atsattrs+atscellhalign+[atvalign]),
 
     (Name: 'tt';        Flags: efSubcontent; Attributes: atsattrs),
@@ -431,6 +477,7 @@ const
 
     );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   HTMLAttributeTag : array [THTMLAttributeTag] of String = (
       'abbr', 'alink', 'accept-charset', 'accept', 'accesskey', 'action', 'align', 'alt', 'archive',
@@ -449,6 +496,8 @@ const
       'tabindex', 'target', 'text', 'title', 'type', 'usemap', 'valign', 'value',
       'valuetype', 'version', 'vlink', 'vspace', 'width');
 =======
+=======
+>>>>>>> origin/fixes_2_2
   HTMLAttributeTag : array [THTMLAttributeTag] of string = (
       'abbr', 'accept-charset', 'accept', 'accesskey', 'action', 'align', 'alt', 'archive',
       'axis', 'border', 'cellpadding', 'cellspacing', 'char', 'charoff', 'charset',
@@ -465,7 +514,10 @@ const
       'selected', 'shape', 'size', 'span', 'src', 'standby', 'style', 'summary',
       'tabindex', 'target', 'title', 'type', 'usemap', 'valign', 'value',
       'valuetype', 'width');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   HTMLColor : array [THTMLColor] of string =
     ('Black', 'Silver', 'Gray', 'White', 'Maroon', 'Red', 'Purple', 'Fuchsia',
@@ -482,6 +534,7 @@ const
       'radio','submit','reset','file','hidden','image','button');
   HTMLbuttontype : array [THTMLbuttontype] of string = ('','submit','reset','button');
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function ResolveHTMLEntityReference(const Name: WideString;
   var Entity: WideChar): Boolean;
@@ -948,6 +1001,8 @@ begin
       Exit;
     end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
   // ISO8859-1 mapping:
   HTMLEntities: array[#160..#255] of String = (
@@ -1172,7 +1227,10 @@ begin
       end;
     Result := False;
   end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 end.

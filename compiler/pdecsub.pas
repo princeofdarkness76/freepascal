@@ -79,7 +79,10 @@ interface
         pd_notprocvar,   { directive can not be used procvar declaration }
         pd_dispinterface,{ directive can be used with dispinterface methods }
         pd_cppobject     { directive can be used with cppclass }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       );
       tpdflags=set of tpdflag;
 
@@ -455,7 +458,10 @@ implementation
             { Generate self variable }
             vs:=tparavarsym.create('$self',paranr_self,vs_value,voidpointertype,[vo_is_self,vo_is_hidden_para]);
             vs.symoptions:=[sp_public];
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             pd.parast.insert(vs);
           end
         else if (pd.typ=procvardef) and
@@ -481,11 +487,16 @@ implementation
               begin
                 { static class methods have no hidden self/vmt pointer }
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if pd.no_self_node then
 =======
                 if (po_staticmethod in pd.procoptions) and
                    (po_classmethod in pd.procoptions) then
 >>>>>>> graemeg/fixes_2_2
+=======
+                if (po_staticmethod in pd.procoptions) and
+                   (po_classmethod in pd.procoptions) then
+>>>>>>> origin/fixes_2_2
                    exit;
 
                 storepos:=current_tokenpos;
@@ -493,11 +504,15 @@ implementation
 
                 { Generate VMT variable for constructor/destructor }
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (pd.proctypeoption in [potype_constructor,potype_destructor]) and
                    not(is_cppclass(tprocdef(pd).struct) or is_record(tprocdef(pd).struct)) then
 =======
                 if (pd.proctypeoption in [potype_constructor,potype_destructor]) and not(is_cppclass(tprocdef(pd)._class)) then
 >>>>>>> graemeg/fixes_2_2
+=======
+                if (pd.proctypeoption in [potype_constructor,potype_destructor]) and not(is_cppclass(tprocdef(pd)._class)) then
+>>>>>>> origin/fixes_2_2
                  begin
                    { can't use classrefdef as type because inheriting
                      will then always file because of a type mismatch }
@@ -605,10 +620,14 @@ implementation
              begin
                hvs:=tparavarsym.create('$high'+name,paranr+1,vs_const,sinttype,[vo_is_high_para,vo_is_hidden_para]);
 <<<<<<< HEAD
+<<<<<<< HEAD
                hvs.symoptions:=[];
 =======
                hvs.symoptions:=[sp_public];
 >>>>>>> graemeg/fixes_2_2
+=======
+               hvs.symoptions:=[sp_public];
+>>>>>>> origin/fixes_2_2
                owner.insert(hvs);
              end
            else
@@ -733,7 +752,10 @@ implementation
 <<<<<<< HEAD
 =======
         old_object_option : tsymoptions;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         old_block_type : tblock_type;
         currparast : tparasymtable;
         parseprocvar : tppv;
@@ -804,9 +826,13 @@ implementation
 >>>>>>> origin/cpstrnew
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         old_object_option:=current_object_option;
 >>>>>>> graemeg/fixes_2_2
+=======
+        old_object_option:=current_object_option;
+>>>>>>> origin/fixes_2_2
         old_block_type:=block_type;
         explicit_paraloc:=false;
         consume(_LKLAMMER);
@@ -829,7 +855,10 @@ implementation
         current_object_option:=[sp_public];
         inc(testcurobject);
         block_type:=bt_type;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         repeat
           parseprocvar:=pv_none;
           if try_to_consume(_VAR) then
@@ -1145,7 +1174,10 @@ implementation
 =======
         dec(testcurobject);
         current_object_option:=old_object_option;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         block_type:=old_block_type;
         consume(_RKLAMMER);
       end;
@@ -1200,6 +1232,7 @@ implementation
         popclass : integer;
         ImplIntf : TImplementedInterface;
         old_parse_generic : boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
         old_current_structdef: tabstractrecorddef;
         old_current_genericdef,
@@ -1614,6 +1647,8 @@ implementation
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
         sp:='';
         orgsp:='';
@@ -2159,23 +2194,32 @@ implementation
 
         { methods inherit df_generic or df_specialization from the objectdef }
 <<<<<<< HEAD
+<<<<<<< HEAD
         if assigned(pd.struct) and
            (pd.parast.symtablelevel=normal_function_level) then
           begin
             if (df_generic in pd.struct.defoptions) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
         if assigned(pd._class) and
            (pd.parast.symtablelevel=normal_function_level) then
           begin
             if (df_generic in pd._class.defoptions) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               begin
                 include(pd.defoptions,df_generic);
                 parse_generic:=true;
               end;
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (df_specialization in pd.struct.defoptions) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
             if (df_specialization in pd._class.defoptions) then
 >>>>>>> graemeg/fixes_2_2
               begin
@@ -2396,6 +2440,7 @@ implementation
 >>>>>>> origin/cpstrnew
         locationstr: string;
 <<<<<<< HEAD
+<<<<<<< HEAD
         i: integer;
         found: boolean;
 
@@ -2503,6 +2548,8 @@ implementation
           end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
         old_parse_generic,
         popclass : boolean;
 >>>>>>> graemeg/fixes_2_2
@@ -2738,8 +2785,11 @@ implementation
                       if try_to_consume(_COLON) then
                        begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                          read_returndef(pd);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                          old_parse_generic:=parse_generic;
                          inc(testcurobject);
                          { Add ObjectSymtable to be able to find generic type definitions }
@@ -3035,6 +3085,7 @@ implementation
             end;
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         if recover and not(check_proc_directive(false)) then
           begin
@@ -3053,6 +3104,8 @@ implementation
           current_scanner.stoprecordtokens;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
         { file types can't be function results }
         if assigned(pd) and
            (pd.returndef.typ=filedef) then
@@ -4168,6 +4221,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_implemen,pd_interface,pd_notobject,pd_notobjintf,pd_cppobject,pd_notrecord,pd_nothelper,pd_javaclass,pd_intfjava];
 =======
       pd_flags : [pd_implemen,pd_interface,pd_notobject,pd_notobjintf,pd_cppobject,pd_notrecord];
@@ -4188,6 +4242,8 @@ const
       { allowed for external cpp classes }
       mutexclpotype : [{potype_constructor,potype_destructor}potype_class_constructor,potype_class_destructor];
 =======
+=======
+>>>>>>> origin/fixes_2_2
       pd_flags : [pd_implemen,pd_interface,pd_notobject,pd_notobjintf,pd_cppobject];
       handler  : @pd_external;
       pocall   : pocall_none;
@@ -4195,7 +4251,10 @@ const
       mutexclpocall : [pocall_internproc,pocall_syscall];
       { allowed for external cpp classes }
       mutexclpotype : [{potype_constructor,potype_destructor}];
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       mutexclpo     : [po_public,po_exports,po_interrupt,po_assembler,po_inline]
     ),(
       idtok:_FAR;
@@ -4623,6 +4682,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_interface,pd_implemen,pd_body,pd_object,pd_record,pd_javaclass,pd_notobjintf];
 =======
       pd_flags : [pd_interface,pd_implemen,pd_body,pd_object,pd_record,pd_notobjintf];
@@ -4639,6 +4699,9 @@ const
 =======
       pd_flags : [pd_interface,pd_implemen,pd_body,pd_object,pd_notobjintf];
 >>>>>>> graemeg/fixes_2_2
+=======
+      pd_flags : [pd_interface,pd_implemen,pd_body,pd_object,pd_notobjintf];
+>>>>>>> origin/fixes_2_2
       handler  : @pd_static;
       pocall   : pocall_none;
       pooption : [po_staticmethod];
@@ -4916,6 +4979,7 @@ const
            (symtablestack.top.symtabletype=ObjectSymtable) and
            { directive allowed for cpp classes? }
 <<<<<<< HEAD
+<<<<<<< HEAD
            not((pd_cppobject in proc_direcdata[p].pd_flags) and is_cppclass(tdef(symtablestack.top.defowner))) and
            not((pd_javaclass in proc_direcdata[p].pd_flags) and is_javaclass(tdef(symtablestack.top.defowner))) and
            not((pd_intfjava in proc_direcdata[p].pd_flags) and is_javainterface(tdef(symtablestack.top.defowner))) then
@@ -4956,6 +5020,9 @@ const
 =======
            not(is_cppclass(tdef(symtablestack.top.defowner)) and (pd_cppobject in proc_direcdata[p].pd_flags)) then
 >>>>>>> graemeg/fixes_2_2
+=======
+           not(is_cppclass(tdef(symtablestack.top.defowner)) and (pd_cppobject in proc_direcdata[p].pd_flags)) then
+>>>>>>> origin/fixes_2_2
            exit;
 
         { Conflicts between directives ? }
@@ -5112,10 +5179,14 @@ const
                 if assigned(pd.import_name) then
                   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if target_info.system in (systems_all_windows + systems_nativent +
 =======
                     if target_info.system in (system_all_windows +
 >>>>>>> graemeg/fixes_2_2
+=======
+                    if target_info.system in (system_all_windows +
+>>>>>>> origin/fixes_2_2
                                        [system_i386_emx, system_i386_os2]) then
                    { cprefix is not used in DLL imports under Windows or OS/2 }
                       result:=pd.import_name^
@@ -5224,7 +5295,10 @@ const
                             Replace(s,'?','__q$$');
                             Replace(s,'@','__a$$');
                           end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                         pd.setmangledname(s);
                       end;
                     { since this is an external declaration, there won't be an
@@ -5677,6 +5751,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                (compare_paras(fwpd.paras,currpd.paras,cp_none,[cpo_ignorehidden,cpo_openequalisexact,cpo_ignoreuniv])=te_exact) and
 =======
                (compare_paras(currpd.paras,fwpd.paras,cp_none,[cpo_comparedefaultvalue,cpo_ignorehidden,cpo_openequalisexact,cpo_ignoreuniv])=te_exact) and
@@ -5695,6 +5770,10 @@ const
                (compare_paras(currpd.paras,fwpd.paras,cp_none,[cpo_comparedefaultvalue,cpo_ignorehidden,cpo_openequalisexact])=te_exact) and
                (fwpd.returndef=currpd.returndef)
 >>>>>>> graemeg/fixes_2_2
+=======
+               (compare_paras(currpd.paras,fwpd.paras,cp_none,[cpo_comparedefaultvalue,cpo_ignorehidden,cpo_openequalisexact])=te_exact) and
+               (fwpd.returndef=currpd.returndef)
+>>>>>>> origin/fixes_2_2
               ) then
              begin
                { Check if we've found the forwarddef, if found then
@@ -5707,6 +5786,7 @@ const
                    if not(m_repeat_forward in current_settings.modeswitches) and
                       (fwpd.proccalloption<>currpd.proccalloption) then
 <<<<<<< HEAD
+<<<<<<< HEAD
                      paracompopt:=[cpo_ignorehidden,cpo_comparedefaultvalue,cpo_openequalisexact,cpo_ignoreuniv]
                    else
                      paracompopt:=[cpo_comparedefaultvalue,cpo_openequalisexact,cpo_ignoreuniv];
@@ -5715,6 +5795,11 @@ const
                    else
                      paracompopt:=[cpo_comparedefaultvalue,cpo_openequalisexact];
 >>>>>>> graemeg/fixes_2_2
+=======
+                     paracompopt:=[cpo_ignorehidden,cpo_comparedefaultvalue,cpo_openequalisexact]
+                   else
+                     paracompopt:=[cpo_comparedefaultvalue,cpo_openequalisexact];
+>>>>>>> origin/fixes_2_2
 
                    { Check calling convention }
                    if (fwpd.proccalloption<>currpd.proccalloption) then
@@ -5775,6 +5860,7 @@ const
                        not is_bareprocdef(currpd)) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        (
                          (
                            fwpd.is_generic and
@@ -5809,6 +5895,10 @@ const
                       ((compare_paras(currpd.paras,fwpd.paras,cp_all,paracompopt)<>te_exact) or
                        (fwpd.returndef<>currpd.returndef)) then
 >>>>>>> graemeg/fixes_2_2
+=======
+                      ((compare_paras(currpd.paras,fwpd.paras,cp_all,paracompopt)<>te_exact) or
+                       (fwpd.returndef<>currpd.returndef)) then
+>>>>>>> origin/fixes_2_2
                      begin
                        MessagePos1(currpd.fileinfo,parser_e_header_dont_match_forward,
                                    fwpd.fullprocname(false));

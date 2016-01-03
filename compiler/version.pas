@@ -29,6 +29,7 @@ interface
        { version string }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        version_nr = '3';
        release_nr = '1';
 =======
@@ -47,6 +48,8 @@ interface
        patch_nr   = '1';
        minorpatch = '-cps';
 =======
+=======
+>>>>>>> origin/fixes_2_2
        version_nr = '2';
        release_nr = '2';
        patch_nr   = '5';

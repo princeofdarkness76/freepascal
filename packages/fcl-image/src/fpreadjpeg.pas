@@ -233,6 +233,7 @@ var
     MinColor: word;
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     // accuracy not 100%
     if C.red<C.green then MinColor:=C.red
     else MinColor:= C.green;
@@ -249,6 +250,8 @@ var
   begin
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     if C.red<C.green then MinColor:=C.red
     else MinColor:= C.green;
     if C.blue<MinColor then MinColor:= C.blue;
@@ -268,6 +271,7 @@ var
     x: Integer;
     y: Integer;
     c: word;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Status,Scan: integer;
     ReturnValue,RestartLoop: Boolean;
@@ -324,6 +328,8 @@ var
     end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   begin
     InitReadingPixels;
 

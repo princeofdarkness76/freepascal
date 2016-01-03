@@ -132,7 +132,10 @@ begin
 <<<<<<< HEAD
 =======
     BYTE(dir[0]) := i;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     DoDirSeparators(dir);
     // fix / after volume, the compiler needs that
     // normaly root of a volumes is SERVERNAME/SYS:, change that

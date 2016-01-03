@@ -50,8 +50,11 @@ const
  AllowDirectorySeparators : set of char = ['\','/'];
  AllowDriveSeparators : set of char = [':'];
 <<<<<<< HEAD
+<<<<<<< HEAD
 { FileNameCaseSensitive and FileNameCasePreserving are defined separately below!!! }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { FileNameCaseSensitive is defined separately below!!! }
 >>>>>>> graemeg/fixes_2_2
  maxExitCode = $ffff;

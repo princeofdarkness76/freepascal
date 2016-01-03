@@ -44,12 +44,16 @@ end;
 procedure fpc_cpuinit;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   { don't let libraries influence the FPU cw set by the host program }
   if not IsLibrary then
     fpc_enable_ppc_fpu_exceptions;
 =======
   fpc_enable_ppc_fpu_exceptions;
 >>>>>>> graemeg/fixes_2_2
+=======
+  fpc_enable_ppc_fpu_exceptions;
+>>>>>>> origin/fixes_2_2
 end;
 
 {****************************************************************************
@@ -497,6 +501,7 @@ end;
 {$ifndef FPC_SYSTEM_HAS_FPC_PCHAR_TO_SHORTSTR}
 {$define FPC_SYSTEM_HAS_FPC_PCHAR_TO_SHORTSTR}
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_pchar_to_shortstr(out res : shortstring;p:pchar);[public,alias:'FPC_PCHAR_TO_SHORTSTR']; compilerproc;
 assembler; nostackframe;
 {
@@ -541,6 +546,8 @@ asm
         stb     r10,0(r3)
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_STRTOSHORTSTRINGPROC}
 function fpc_pchar_to_shortstr(p:pchar):shortstring;[public,alias:'FPC_PCHAR_TO_SHORTSTR']; compilerproc;
 assembler; nostackframe;
@@ -551,7 +558,10 @@ assembler; nostackframe;
 {$endif FPC_STRTOSHORTSTRINGPROC}
 {$include strpas.inc}
 {$undef FPC_STRPASPROC}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif FPC_SYSTEM_HAS_FPC_PCHAR_TO_SHORTSTR}
 
 (*
@@ -571,10 +581,14 @@ end;
 
 {$define FPC_SYSTEM_HAS_GET_CALLER_ADDR}
 <<<<<<< HEAD
+<<<<<<< HEAD
 function get_caller_addr(framebp:pointer;addr:pointer=nil):pointer;assembler;{$ifdef SYSTEMINLINE}inline;{$endif} nostackframe;
 =======
 function get_caller_addr(framebp:pointer):pointer;assembler;{$ifdef SYSTEMINLINE}inline;{$endif} nostackframe;
 >>>>>>> graemeg/fixes_2_2
+=======
+function get_caller_addr(framebp:pointer):pointer;assembler;{$ifdef SYSTEMINLINE}inline;{$endif} nostackframe;
+>>>>>>> origin/fixes_2_2
 asm
   cmpldi  r3,0
   beq     .Lcaller_addr_frame_null
@@ -589,10 +603,14 @@ end;
 
 {$define FPC_SYSTEM_HAS_GET_CALLER_FRAME}
 <<<<<<< HEAD
+<<<<<<< HEAD
 function get_caller_frame(framebp:pointer;addr:pointer=nil):pointer;assembler;{$ifdef SYSTEMINLINE}inline;{$endif} nostackframe;
 =======
 function get_caller_frame(framebp:pointer):pointer;assembler;{$ifdef SYSTEMINLINE}inline;{$endif} nostackframe;
 >>>>>>> graemeg/fixes_2_2
+=======
+function get_caller_frame(framebp:pointer):pointer;assembler;{$ifdef SYSTEMINLINE}inline;{$endif} nostackframe;
+>>>>>>> origin/fixes_2_2
 asm
   cmpldi  r3,0
   beq     .Lcaller_frame_null
@@ -735,15 +753,19 @@ asm
 .LInterlockedCompareExchangeLoop:
   lwarx  r10,0,r3
 <<<<<<< HEAD
+<<<<<<< HEAD
   // lwarx performs an unsigned load -> sign extend since arguments are
   // longints
   extsw  r10,r10
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   sub    r9,r10,r5
   addic  r9,r9,-1
   subfe  r9,r9,r9
   and    r8,r4,r9
+<<<<<<< HEAD
 <<<<<<< HEAD
   andc   r7,r10,r9
   or     r6,r7,r8
@@ -751,12 +773,17 @@ asm
   bne .LInterlockedCompareExchangeLoop
   mr     r3, r10
 =======
+=======
+>>>>>>> origin/fixes_2_2
   andc   r7,r5,r9
   or     r6,r7,r8
   stwcx. r6,0,r3
   bne .LInterlockedCompareExchangeLoop
   mr     r3, r6
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function InterLockedDecrement64(var Target: Int64) : Int64; assembler; nostackframe;
@@ -825,18 +852,24 @@ asm
   subfe  r9,r9,r9
   and    r8,r4,r9
 <<<<<<< HEAD
+<<<<<<< HEAD
   andc   r7,r10,r9
   or     r6,r7,r8
   stdcx. r6,0,r3
   bne .LInterlockedCompareExchangeLoop
   mr     r3, r10
 =======
+=======
+>>>>>>> origin/fixes_2_2
   andc   r7,r5,r9
   or     r6,r7,r8
   stdcx. r6,0,r3
   bne .LInterlockedCompareExchangeLoop
   mr     r3, r6
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 {$ifndef FPC_SYSTEM_HAS_MEM_BARRIER}
@@ -845,12 +878,18 @@ end;
 procedure ReadBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
 asm
 <<<<<<< HEAD
+<<<<<<< HEAD
   isync
 =======
 {$ifdef FPC_HAS_LWSYNC}
   lwsync
 {$endif}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifdef FPC_HAS_LWSYNC}
+  lwsync
+{$endif}
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure ReadDependencyBarrier;{$ifdef SYSTEMINLINE}inline;{$endif}
@@ -861,6 +900,7 @@ end;
 procedure ReadWriteBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
 asm
 <<<<<<< HEAD
+<<<<<<< HEAD
   isync
 {$ifdef FPC_HAS_LWSYNC}
   lwsync
@@ -868,10 +908,14 @@ asm
 =======
   sync
 >>>>>>> graemeg/fixes_2_2
+=======
+  sync
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure WriteBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
 asm
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef FPC_HAS_LWSYNC}
   lwsync
@@ -879,6 +923,9 @@ asm
 =======
   eieio
 >>>>>>> graemeg/fixes_2_2
+=======
+  eieio
+>>>>>>> origin/fixes_2_2
 end;
 
 {$endif}

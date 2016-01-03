@@ -33,9 +33,12 @@ type
   TCustomSQLScript = class(TComponent)
   private
 <<<<<<< HEAD
+<<<<<<< HEAD
     FAutoCommit: Boolean;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FLine: Integer;
     FCol: Integer;
     FDefines: TStrings;
@@ -51,6 +54,7 @@ type
     FTerminator: AnsiString;
     FSQL: TStrings;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FCurrentStripped,
     FCurrentStatement: TStrings;
     FDirectives: TStrings;
@@ -59,6 +63,10 @@ type
     FCurrentStatement: TStrings;
     FDirectives: TStrings;
 >>>>>>> graemeg/fixes_2_2
+=======
+    FCurrentStatement: TStrings;
+    FDirectives: TStrings;
+>>>>>>> origin/fixes_2_2
     FEmitLine: Boolean;
     procedure SetDefines(const Value: TStrings);
     function FindNextSeparator(sep: array of string): AnsiString;
@@ -67,6 +75,7 @@ type
     procedure SetSQL(value: TStrings);
     procedure SQLChange(Sender: TObject);
     function GetLine: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
   protected
     procedure ClearStatement; virtual;
@@ -84,6 +93,8 @@ type
     // Executes commit. If possible and CommitRetaining, use CommitRetaining, else
     procedure ExecuteCommit(CommitRetaining: boolean=true); virtual; abstract;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Function ProcessConditional(Directive : String; Param : String) : Boolean; virtual;
     function NextStatement: AnsiString;
     procedure ProcessStatement;
@@ -96,7 +107,10 @@ type
     procedure ExecuteStatement (Statement: TStrings; var StopExecution: Boolean); virtual; abstract;
     procedure ExecuteDirective (Directive, Argument: String; var StopExecution: Boolean); virtual; abstract;
     procedure ExecuteCommit; virtual; abstract;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   public
     constructor Create (AnOwner: TComponent); override;
     destructor Destroy; override;
@@ -105,9 +119,12 @@ type
     property Aborted: Boolean read FAborted;
     property Line: Integer read GetLine;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property AutoCommit : Boolean Read FAutoCommit Write FAutoCommit;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property CommentsInSQL: Boolean read FCommentsInSQL write FCommentsInSQL;
     property UseSetTerm: Boolean read FUseSetTerm write FUseSetTerm;
     property UseCommit: Boolean read FUseCommit write FUseCommit;
@@ -132,10 +149,14 @@ type
     procedure ExecuteStatement (SQLStatement: TStrings; var StopExecution: Boolean); override;
     procedure ExecuteDirective (Directive, Argument: String; var StopExecution: Boolean); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure ExecuteCommit(CommitRetaining: boolean=true); override;
 =======
     procedure ExecuteCommit; override;
 >>>>>>> graemeg/fixes_2_2
+=======
+    procedure ExecuteCommit; override;
+>>>>>>> origin/fixes_2_2
   public
     procedure Execute; override;
     property Aborted;
@@ -213,7 +234,10 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function DeleteComments(SQL_Text: AnsiString; ATerminator: AnsiString = ';'): AnsiString;
 
 begin
@@ -229,7 +253,10 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { ---------------------------------------------------------------------
     TSQLScript
   ---------------------------------------------------------------------}
@@ -275,6 +302,7 @@ end;
 procedure TCustomSQLScript.AddToStatement(value: AnsiString; ForceNewLine : Boolean);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   Procedure DA(L : TStrings);
 
   begin
@@ -290,13 +318,18 @@ begin
   if Not FComment then
     DA(FCurrentStripped);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 begin
   With FCurrentStatement do
     if ForceNewLine or (Count=0) then
       Add(value)
     else
       Strings[Count-1]:=Strings[Count-1] + value;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function TCustomSQLScript.FindNextSeparator(Sep: array of string): AnsiString;
@@ -318,10 +351,14 @@ begin
       begin
       if FEmitLine then
 <<<<<<< HEAD
+<<<<<<< HEAD
         AddToStatement(S,(FCol<=1));
 =======
         AddToStatement(S,(FCol=1));
 >>>>>>> graemeg/fixes_2_2
+=======
+        AddToStatement(S,(FCol=1));
+>>>>>>> origin/fixes_2_2
       FCol:=1;
       FLine:=FLine+1;
       end
@@ -338,6 +375,7 @@ end;
 function TCustomSQLScript.Available: Boolean;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   With FSQL do
     Result:=(FLine<Count) or
@@ -346,6 +384,8 @@ begin
               ( FCol < Length(Strings[Count-1] ) )
             );
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var 
   SCol, 
   SLine: Integer;
@@ -359,7 +399,10 @@ begin
     FCol:=SCol;
     FLine:=SLine;
   end;  
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TCustomSQLScript.InternalStatement(Statement: TStrings;  var StopExecution: Boolean);
@@ -414,10 +457,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomSQLScript.InternalCommit(CommitRetaining: boolean=true);
 =======
 procedure TCustomSQLScript.InternalCommit;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TCustomSQLScript.InternalCommit;
+>>>>>>> origin/fixes_2_2
 
 var 
   cont : boolean;
@@ -426,10 +473,14 @@ var
 begin
   try
 <<<<<<< HEAD
+<<<<<<< HEAD
     ExecuteCommit(CommitRetaining);
 =======
     ExecuteCommit;
 >>>>>>> graemeg/fixes_2_2
+=======
+    ExecuteCommit;
+>>>>>>> origin/fixes_2_2
   except
     on E : Exception do
       begin
@@ -451,6 +502,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomSQLScript.ClearStatement;
 
 begin
@@ -460,6 +512,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure TCustomSQLScript.ProcessStatement;
 
 Var
@@ -471,10 +525,14 @@ begin
   if (FCurrentStatement.Count=0) then
     Exit;
 <<<<<<< HEAD
+<<<<<<< HEAD
   S:=Trim(FCurrentStripped.Text);
 =======
   S:=DeleteComments(FCurrentStatement.Text, Terminator);
 >>>>>>> graemeg/fixes_2_2
+=======
+  S:=DeleteComments(FCurrentStatement.Text, Terminator);
+>>>>>>> origin/fixes_2_2
   I:=0;
   Directive:='';
   While (i<FDirectives.Count) and (Directive='') do
@@ -495,6 +553,7 @@ begin
     else If Not FIsSkipping then
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       // If AutoCommit, skip any explicit commits.
       if FUseCommit
         and ((Directive = 'COMMIT') or (Directive = 'COMMIT WORK' {SQL standard}))
@@ -511,6 +570,11 @@ begin
         InternalCommit
       else if FUseSetTerm and (Directive = 'SET TERM') then
 >>>>>>> graemeg/fixes_2_2
+=======
+      if FUseCommit and (Directive = 'COMMIT') then
+        InternalCommit
+      else if FUseSetTerm and (Directive = 'SET TERM') then
+>>>>>>> origin/fixes_2_2
         FTerminator:=S
       else
         InternalDirective (Directive,S,FAborted)
@@ -518,6 +582,7 @@ begin
     end
   else
     if (not FIsSkipping) then
+<<<<<<< HEAD
 <<<<<<< HEAD
       begin
       InternalStatement(FCurrentStatement,FAborted);
@@ -527,6 +592,9 @@ begin
 =======
       InternalStatement(FCurrentStatement,FAborted);
 >>>>>>> graemeg/fixes_2_2
+=======
+      InternalStatement(FCurrentStatement,FAborted);
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TCustomSQLScript.Execute;
@@ -538,18 +606,24 @@ begin
   Faborted:=False;
   DefaultDirectives;
 <<<<<<< HEAD
+<<<<<<< HEAD
   Repeat
     NextStatement();
     if Length(Trim(FCurrentStripped.Text))>0 then
       ProcessStatement;
   Until FAborted or Not Available;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   while not FAborted and Available() do
     begin
     NextStatement();
     ProcessStatement;
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function TCustomSQLScript.NextStatement: AnsiString;
@@ -561,16 +635,22 @@ var
 begin
   terminator_found:=False;
 <<<<<<< HEAD
+<<<<<<< HEAD
   ClearStatement;
   while FLine <= FSQL.Count do
     begin
     pnt:=FindNextSeparator([FTerminator, '/*', '"', '''', '--']);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FCurrentStatement.Clear;
   while FLine <= FSQL.Count do
     begin
     pnt:=FindNextSeparator([FTerminator, '/*', '"', '''']);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     if (pnt=FTerminator) then
       begin
       FCol:=FCol + length(pnt);
@@ -580,9 +660,12 @@ begin
     else if pnt = '/*' then
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       FComment:=True;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       if FCommentsInSQL then
         AddToStatement(pnt,false)
       else
@@ -594,6 +677,7 @@ begin
       else
         FEmitLine:=True;
       FCol:=FCol + length(pnt);
+<<<<<<< HEAD
 <<<<<<< HEAD
       FComment:=False;
       end
@@ -607,6 +691,8 @@ begin
       FComment:=False;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end
     else if pnt = '"' then
       begin
@@ -627,6 +713,7 @@ begin
     end;
   if not terminator_found then
 <<<<<<< HEAD
+<<<<<<< HEAD
     ClearStatement;
   while (FCurrentStatement.Count > 0) and (trim(FCurrentStatement.Strings[0]) = '') do
     FCurrentStatement.Delete(0);
@@ -637,6 +724,11 @@ begin
   while (FCurrentStatement.Count > 0) and (trim(FCurrentStatement.Strings[0]) = '') do
     FCurrentStatement.Delete(0);
 >>>>>>> graemeg/fixes_2_2
+=======
+    FCurrentStatement.Clear();
+  while (FCurrentStatement.Count > 0) and (trim(FCurrentStatement.Strings[0]) = '') do
+    FCurrentStatement.Delete(0);
+>>>>>>> origin/fixes_2_2
   Result:=FCurrentStatement.Text;
 end;
 
@@ -661,9 +753,12 @@ begin
   FSQL:=L;
   FDirectives:=TStringList.Create();
 <<<<<<< HEAD
+<<<<<<< HEAD
   FCurrentStripped:=TStringList.Create();
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FCurrentStatement:=TStringList.Create();
   FLine:=1;
   FCol:=1;
@@ -676,12 +771,16 @@ end;
 
 destructor TCustomSQLScript.Destroy;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 begin
   FreeAndNil(FCurrentStripped);
 =======
 begin
 >>>>>>> graemeg/fixes_2_2
+=======
+begin
+>>>>>>> origin/fixes_2_2
   FreeAndNil(FCurrentStatement);
   FreeAndNil(FSQL);
   FreeAndNil(FDirectives);
@@ -699,6 +798,7 @@ begin
   With FDirectives do
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Insertion order matters as testing for directives will be done with StartsWith
     if FUseSetTerm then
       Add('SET TERM');
@@ -709,11 +809,16 @@ begin
       Add('COMMIT'); {Shorthand used in many dbs, e.g. Firebird}
     end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     if FUseSetTerm then
       Add('SET TERM');
     if FUseCommit then
       Add('COMMIT');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     if FUseDefines then
       begin
       Add('#IFDEF');
@@ -821,10 +926,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TEventSQLScript.ExecuteCommit(CommitRetaining: boolean=true);
 =======
 procedure TEventSQLScript.ExecuteCommit;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TEventSQLScript.ExecuteCommit;
+>>>>>>> origin/fixes_2_2
 begin
   if assigned (FOnCommit) then
     FOnCommit (Self);

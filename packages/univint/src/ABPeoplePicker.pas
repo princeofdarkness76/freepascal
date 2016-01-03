@@ -1,11 +1,15 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 //
 //  ABPeoplePickerC.h
 //  AddressBook Framework
 //
+<<<<<<< HEAD
 <<<<<<< HEAD
 //  Copyright (c) 2003-2007 Apple Inc.  All rights reserved.
 //
@@ -21,6 +25,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 //  Copyright (c) 2003 Apple Computer. All rights reserved.
 //
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
@@ -32,7 +38,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -42,12 +51,17 @@
 unit ABPeoplePicker;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -61,14 +75,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -77,11 +96,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -119,6 +141,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -126,6 +150,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
@@ -331,6 +356,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -339,7 +366,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -366,9 +396,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -378,6 +412,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,ABAddressBook,CFBase,CFArray,CGGeometry,HIGeometry,CarbonEventsCore;
 {$endc} {not MACOSALLINCLUDE}
@@ -392,12 +427,17 @@ type
 	ABPickerRef = ^OpaqueABPicker; { an opaque type }
 	OpaqueABPicker = record end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,ABAddressBook,CFBase,CFArray,CGGeometry,Drag,HIObjectCore,HIGeometry;
 {$ALIGN MAC68K}
 
 type
 	ABPickerRef							= ^SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Picker creation and manipulation
@@ -405,6 +445,7 @@ type
 
 // Creates an ABPickerRef. Release with CFRelease(). The window is created hidden. Call
 // ABPickerSetVisibility() to show it.
+<<<<<<< HEAD
 <<<<<<< HEAD
 function ABPickerCreate: ABPickerRef; external name '_ABPickerCreate';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
@@ -420,6 +461,8 @@ procedure ABPickerSetVisibility( inPicker: ABPickerRef; visible: CBool ); extern
 function ABPickerIsVisible( inPicker: ABPickerRef ): CBool; external name '_ABPickerIsVisible';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function ABPickerCreate: ABPickerRef; external name '_ABPickerCreate';
 
@@ -433,13 +476,17 @@ procedure ABPickerGetFrame( inPicker: ABPickerRef; var outFrame: HIRect ); exter
 procedure ABPickerSetVisibility( inPicker: ABPickerRef; visible: Boolean ); external name '_ABPickerSetVisibility';
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function ABPickerIsVisible( inPicker: ABPickerRef ): Boolean; external name '_ABPickerIsVisible';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Look and Feel
  }
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 // Choose the selection behavior for the value column. If multiple behaviors are selected,
     // the most restrictive behavior will be used. Defaults to kABPickerSingleValueSelection set
@@ -462,6 +509,8 @@ function ABPickerGetAttributes( inPicker: ABPickerRef ): ABPickerAttributes; ext
 procedure ABPickerChangeAttributes( inPicker: ABPickerRef; inAttributesToSet: ABPickerAttributes; inAttributesToClear: ABPickerAttributes ); external name '_ABPickerChangeAttributes';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
     // Choose the selection behavior for the value column. If multiple behaviors are selected,
     // the most restrictive behavior will be used. Defaults to kABPickerSingleValueSelection set
     // to TRUE.
@@ -481,7 +530,10 @@ type ABPickerAttributes = OptionBits;
 function ABPickerGetAttributes( inPicker: ABPickerRef ): ABPickerAttributes; external name '_ABPickerGetAttributes';
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 procedure ABPickerChangeAttributes( inPicker: ABPickerRef; inAttributesToSet: ABPickerAttributes; inAttributesToClear: ABPickerAttributes ); external name '_ABPickerChangeAttributes';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Value column
@@ -491,6 +543,7 @@ procedure ABPickerChangeAttributes( inPicker: ABPickerRef; inAttributesToSet: AB
     // display if an AB property is added. A popup button in the column header will be used if more
     // than one property is added. Titles for built in properties will localized automatically. A
     // list of AB properties can be found in <AddressBook/ABGlobals.h>.
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure ABPickerAddProperty( inPicker: ABPickerRef; inProperty: CFStringRef ); external name '_ABPickerAddProperty';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
@@ -512,6 +565,8 @@ procedure ABPickerSetDisplayedProperty( inPicker: ABPickerRef; inProperty: CFStr
 function ABPickerCopyDisplayedProperty( inPicker: ABPickerRef ): CFStringRef; external name '_ABPickerCopyDisplayedProperty';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 procedure ABPickerAddProperty( inPicker: ABPickerRef; inProperty: CFStringRef ); external name '_ABPickerAddProperty';
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
@@ -531,13 +586,17 @@ function ABPickerCopyColumnTitle( inPicker: ABPickerRef; inProperty: CFStringRef
 procedure ABPickerSetDisplayedProperty( inPicker: ABPickerRef; inProperty: CFStringRef ); external name '_ABPickerSetDisplayedProperty';
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function ABPickerCopyDisplayedProperty( inPicker: ABPickerRef ): CFStringRef; external name '_ABPickerCopyDisplayedProperty';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Selection
  }
 
     // Returns group column selection as an array of ABGroupRef objects.
+<<<<<<< HEAD
 <<<<<<< HEAD
 function ABPickerCopySelectedGroups( inPicker: ABPickerRef ): CFArrayRef; external name '_ABPickerCopySelectedGroups';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
@@ -575,6 +634,8 @@ procedure ABPickerDeselectIdentifier( inPicker: ABPickerRef; inPerson: ABPersonR
 procedure ABPickerDeselectAll( inPicker: ABPickerRef ); external name '_ABPickerDeselectAll';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function ABPickerCopySelectedGroups( inPicker: ABPickerRef ): CFArrayRef; external name '_ABPickerCopySelectedGroups';
 
@@ -610,7 +671,10 @@ procedure ABPickerDeselectIdentifier( inPicker: ABPickerRef; inPerson: ABPersonR
 
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 procedure ABPickerDeselectAll( inPicker: ABPickerRef ); external name '_ABPickerDeselectAll';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Events and Actions
@@ -627,12 +691,17 @@ procedure ABPickerDeselectAll( inPicker: ABPickerRef ); external name '_ABPicker
 
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Carbon Event class for People Picker
 	kEventClassABPeoplePicker = FourCharCode('abpp');
 =======
     // Carbon Event class for People Picker
     kEventClassABPeoplePicker = FourCharCode('abpp');
 >>>>>>> graemeg/fixes_2_2
+=======
+    // Carbon Event class for People Picker
+    kEventClassABPeoplePicker = FourCharCode('abpp');
+>>>>>>> origin/fixes_2_2
 
 const
     // Carbon Event kinds for People Picker
@@ -645,6 +714,7 @@ const
     kEventABPeoplePickerNameDoubleClicked         = 6;
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 // Carbon Event parameter name
 	kEventParamABPickerRef = FourCharCode('abpp');
@@ -671,6 +741,8 @@ procedure ABPickerSelectInAddressBook( inPicker: ABPickerRef ); external name '_
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
     // Carbon Event parameter name
     kEventParamABPickerRef	=  FourCharCode('abpp');
 
@@ -691,4 +763,7 @@ procedure ABPickerEditInAddressBook( inPicker: ABPickerRef ); external name '_AB
 procedure ABPickerSelectInAddressBook( inPicker: ABPickerRef ); external name '_ABPickerSelectInAddressBook';
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/Multiprocessing.h
  
      Contains:   Multiprocessing interfaces
@@ -22,6 +23,8 @@
  
      Copyright:  © 1995-2008 DayStar Digital, Inc.
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       Multiprocessing.p
  
      Contains:   Multiprocessing interfaces
@@ -30,7 +33,10 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1995-2002 DayStar Digital, Inc.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -38,6 +44,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
@@ -58,6 +65,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -74,7 +83,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -84,12 +96,17 @@
 unit Multiprocessing;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -103,14 +120,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -119,11 +141,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -161,6 +186,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -168,6 +195,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -404,6 +432,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -412,7 +442,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -439,9 +472,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -452,6 +489,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -483,12 +521,15 @@ uses MacTypes;
 }
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {$ALIGN POWER}
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
    ======================================= NOTICE ============================================
    As of Mac OS X v10.6, the APIs in this header file are discouraged. These APIs are slated
@@ -531,6 +572,10 @@ uses MacTypes;
    ===========================================================================================
    This is the header file for version 2.4 of the Mac OS multiprocessing support.  This version
 >>>>>>> graemeg/fixes_2_2
+=======
+   ===========================================================================================
+   This is the header file for version 2.4 of the Mac OS multiprocessing support.  This version
+>>>>>>> origin/fixes_2_2
    has been totally reimplemented and has significant new services.  The main goal of the
    reimplementation has been to transfer task management into the core operating system to provide
    much more reliable and more efficient operation, including on single processor machines.
@@ -667,6 +712,7 @@ uses MacTypes;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
   MPCopyrightNotice = 'Copyright © 1995-2000 Apple Computer, Inc.';
 const
@@ -681,16 +727,22 @@ const
 	MPLibrary_MinorVersion = 3;    { !  used in the startup check in MPInitializeAPI!}
 	MPLibrary_Release = 1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 const
 	MPLibrary_MajorVersion		= 2;							{  ! When these change be sure to update the build versions }
 	MPLibrary_MinorVersion		= 4;							{  !  used in the startup check in MPInitializeAPI! }
 	MPLibrary_Release			= 1;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	MPLibrary_DevelopmentRevision = 1;
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -973,6 +1025,8 @@ function MPProcessorsScheduled: ItemCount; external name '_MPProcessorsScheduled
 
 { Those currently in use.}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	MPProcessID    = ^SInt32; { an opaque 32-bit type }
 	MPProcessIDPtr = ^MPProcessID;  { when a var xx:MPProcessID parameter can be nil, it is changed to xx: MPProcessIDPtr }
 	MPTaskID    = ^SInt32; { an opaque 32-bit type }
@@ -1079,7 +1133,10 @@ function MPProcessors: ItemCount; external name '_MPProcessors';
 function MPProcessorsScheduled: ItemCount; external name '_MPProcessorsScheduled';
 
 {  Those currently in use. }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
    ¤
@@ -1090,6 +1147,7 @@ function MPProcessorsScheduled: ItemCount; external name '_MPProcessorsScheduled
 
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 { For MPCreateTask options}
 	kMPCreateTaskSuspendedMask = 1 shl 0; {    not supported on Mac OS X}
@@ -1522,6 +1580,8 @@ function MPCurrentTaskID: MPTaskID; external name '_MPCurrentTaskID';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 																{  For MPCreateTask options }
 	kMPCreateTaskTakesAllExceptionsMask = $00000002;
 	kMPCreateTaskNotDebuggableMask = $00000004;
@@ -1615,12 +1675,16 @@ procedure MPYield; external name '_MPYield';
  *    Mac OS X:         in version 10.0 and later
  }
 function MPCurrentTaskID: MPTaskID; external name '_MPCurrentTaskID';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  MPSetTaskType()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe
@@ -1652,6 +1716,8 @@ function MPSetTaskType( task: MPTaskID; taskType: OSType ): OSStatus; external n
 
 { -------------------------------------------------------------------------------------------}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in MPLibrary 2.3 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1661,7 +1727,10 @@ function MPSetTaskType(task: MPTaskID; taskType: OSType): OSStatus; external nam
 
 
 {  ------------------------------------------------------------------------------------------- }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1671,6 +1740,7 @@ function MPSetTaskType(task: MPTaskID; taskType: OSType): OSStatus; external nam
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  MPAllocateTaskStorageIndex()   *** DEPRECATED ***
  *  
@@ -1929,6 +1999,31 @@ function MPDeallocateTaskStorageIndex(index: TaskStorageIndex): OSStatus; extern
 
 {
  *  MPSetTaskStorageValue()
+=======
+ *  MPAllocateTaskStorageIndex()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPAllocateTaskStorageIndex(var index: TaskStorageIndex): OSStatus; external name '_MPAllocateTaskStorageIndex';
+
+
+{
+ *  MPDeallocateTaskStorageIndex()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPDeallocateTaskStorageIndex(index: TaskStorageIndex): OSStatus; external name '_MPDeallocateTaskStorageIndex';
+
+
+{
+ *  MPSetTaskStorageValue()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
@@ -1947,7 +2042,10 @@ function MPSetTaskStorageValue(index: TaskStorageIndex; value: TaskStorageValue)
  *    Mac OS X:         in version 10.0 and later
  }
 function MPGetTaskStorageValue(index: TaskStorageIndex): TaskStorageValue; external name '_MPGetTaskStorageValue';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1959,6 +2057,7 @@ function MPGetTaskStorageValue(index: TaskStorageIndex): TaskStorageValue; exter
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  MPCreateQueue()   *** DEPRECATED ***
  *  
@@ -2972,6 +3071,8 @@ function MPWaitForEvent( event: MPEventID; flags: MPEventFlagsPtr; timeout: Dura
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  MPCreateQueue()
  *  
  *  Availability:
@@ -3165,7 +3266,10 @@ function MPSetEvent(event: MPEventID; flags: MPEventFlags): OSStatus; external n
  *    Mac OS X:         in version 10.0 and later
  }
 function MPWaitForEvent(event: MPEventID; flags: MPEventFlagsPtr; timeout: Duration): OSStatus; external name '_MPWaitForEvent';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
    ¤
@@ -3178,6 +3282,7 @@ function MPWaitForEvent(event: MPEventID; flags: MPEventFlagsPtr; timeout: Durat
 {
  *  MPCreateNotification()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe
@@ -3456,6 +3561,8 @@ function MPCauseNotification( notificationID: MPNotificationID ): OSStatus; exte
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in MPLibrary 2.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3506,7 +3613,10 @@ function MPModifyNotificationParameters(notificationID: MPNotificationID; kind: 
  *    Mac OS X:         in version 10.0 and later
  }
 function MPCauseNotification(notificationID: MPNotificationID): OSStatus; external name '_MPCauseNotification';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -3523,6 +3633,7 @@ function MPCauseNotification(notificationID: MPNotificationID): OSStatus; extern
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 { For MPArmTimer options}
@@ -3595,6 +3706,8 @@ function MPDelayUntil( var expirationTime: AbsoluteTime ): OSStatus; external na
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
    Utilities you might want to use from DriverServices
     extern AbsoluteTime UpTime              ( void );
@@ -3619,6 +3732,7 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function MPDelayUntil(var expirationTime: AbsoluteTime): OSStatus; external name '_MPDelayUntil';
+<<<<<<< HEAD
 
 
 {$ifc CALL_NOT_IN_CARBON}
@@ -3943,6 +4057,15 @@ function MPCancelTimer( timerID: MPTimerID; timeRemaining: AbsoluteTimePtr ): OS
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+
+
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  MPDelayUntilSys()
+ *  
+ *  Availability:
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in MPLibrary 2.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -4005,7 +4128,10 @@ function MPArmTimer(timerID: MPTimerID; var expirationTime: AbsoluteTime; option
  *    Mac OS X:         in version 10.0 and later
  }
 function MPCancelTimer(timerID: MPTimerID; timeRemaining: AbsoluteTimePtr): OSStatus; external name '_MPCancelTimer';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -4017,6 +4143,7 @@ function MPCancelTimer(timerID: MPTimerID; timeRemaining: AbsoluteTimePtr): OSSt
 
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 { Maximum allocation request size is 1GB.}
 	kMPMaxAllocSize = 1073741824;
@@ -4576,6 +4703,8 @@ procedure MPDataToCode( address: LogicalAddress; size: ByteCount ); external nam
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 																{  Maximum allocation request size is 1GB. }
 	kMPMaxAllocSize				= 1073741824;
 
@@ -4687,7 +4816,10 @@ procedure MPBlockClear(address: LogicalAddress; size: ByteCount); external name 
 procedure MPDataToCode(address: LogicalAddress; size: ByteCount); external name '_MPDataToCode';
 
 {  ! MPDataToCode is new in version 2.0. }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
    ¤
    ===========================================================================================
@@ -4717,6 +4849,7 @@ procedure MPDataToCode(address: LogicalAddress; size: ByteCount); external name 
         kMPTaskState32BitMemoryException    -> ExceptionInfo for old-style 32-bit memory exceptions
    
     For reference, on PowerPC the MachineExceptions types contain:
+<<<<<<< HEAD
    
         RegisterInformation -> The GPRs, 32 values of 64 bits each.
         FPUInformation      -> The FPRs plus FPSCR, 32 values of 64 bits each, one value of
@@ -5078,6 +5211,23 @@ function MPSetExceptionHandler( task: MPTaskID; exceptionQ: MPQueueID ): OSStatu
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 =======
+=======
+   
+        RegisterInformation -> The GPRs, 32 values of 64 bits each.
+        FPUInformation      -> The FPRs plus FPSCR, 32 values of 64 bits each, one value of
+                                32 bits.
+        VectorInformation   -> The AltiVec vector registers plus VSCR and VRSave, 32 values
+                                of 128 bits each, one value of 128 bits, and one 32 bit value.
+        MachineInformation  -> The CTR, LR, PC, each of 64 bits.  The CR, XER, MSR, MQ,
+                                exception kind, and DSISR, each of 32 bits.  The 64 bit DAR.
+        ExceptionInfo       -> Only memory exceptions are specified, 4 fields of 32 bits each.
+                                Note that this type only covers memory exceptions on 32-bit CPUs!
+   The following types are declared here:
+        kMPTaskStateTaskInfo                -> MPTaskInfo
+}
+
+
+>>>>>>> origin/fixes_2_2
 const
 																{  Values for the TaskStateKind to MPExtractTaskState and MPSetTaskState. }
 	kMPTaskStateRegisters		= 0;							{  The task general registers. }
@@ -5151,11 +5301,15 @@ type
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function MPSetExceptionHandler(task: MPTaskID; exceptionQ: MPQueueID): OSStatus; external name '_MPSetExceptionHandler';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  MPDisposeTaskException()
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> origin/cpstrnew
  *  
@@ -5532,6 +5686,8 @@ function MPUnregisterDebugger( queue: MPQueueID ): OSStatus; external name '_MPU
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
@@ -5605,7 +5761,10 @@ function MPRegisterDebugger(queue: MPQueueID; level: MPDebuggerLevel): OSStatus;
  *    Mac OS X:         in version 10.0 and later
  }
 function MPUnregisterDebugger(queue: MPQueueID): OSStatus; external name '_MPUnregisterDebugger';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -5617,6 +5776,7 @@ function MPUnregisterDebugger(queue: MPQueueID): OSStatus; external name '_MPUnr
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 	MPRemoteProcedure = function( parameter: UnivPtr ): UnivPtr;
 
@@ -5861,6 +6021,8 @@ function MPRemoteCallCFM( remoteProc: MPRemoteProcedure; parameter: UnivPtr; con
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc TYPED_FUNCTION_POINTERS}
 	MPRemoteProcedure = function(parameter: UnivPtr): Ptr;
 {$elsec}
@@ -5887,7 +6049,10 @@ const
 function MPRemoteCall(remoteProc: MPRemoteProcedure; parameter: UnivPtr; context: ByteParameter): Ptr; external name '_MPRemoteCall';
 
 {  ! MPRemoteCall is new in version 2.0. }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
    ¤
    ===========================================================================================
@@ -5953,6 +6118,7 @@ function MPRemoteCall(remoteProc: MPRemoteProcedure; parameter: UnivPtr; context
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  _MPIsFullyInitialized()   *** DEPRECATED ***
  *  
@@ -6086,6 +6252,8 @@ procedure _MPLibraryVersion( versionCString: ConstCStringPtrPtr; major: UInt32Pt
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  _MPIsFullyInitialized()
  *  
  *  Availability:
@@ -6128,7 +6296,10 @@ type
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 procedure _MPLibraryVersion(versionCString: ConstCStringPtrPtr; major: UInt32Ptr; minor: UInt32Ptr; release: UInt32Ptr; revision: UInt32Ptr); external name '__MPLibraryVersion';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -6151,13 +6322,18 @@ procedure _MPLibraryVersion(versionCString: ConstCStringPtrPtr; major: UInt32Ptr
 
 {$ifc CALL_NOT_IN_CARBON}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifc CALL_NOT_IN_CARBON}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc CALL_NOT_IN_CARBON}
+>>>>>>> origin/fixes_2_2
 {
  *  _MPAllocateSys()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -6167,6 +6343,8 @@ procedure _MPLibraryVersion(versionCString: ConstCStringPtrPtr; major: UInt32Ptr
 
 { Use MPAllocateAligned instead.}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -6174,11 +6352,15 @@ procedure _MPLibraryVersion(versionCString: ConstCStringPtrPtr; major: UInt32Ptr
 function _MPAllocateSys(size: ByteCount): LogicalAddress; external name '__MPAllocateSys';
 
 {  Use MPAllocateAligned instead. }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  _MPRPC()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -6188,6 +6370,8 @@ function _MPAllocateSys(size: ByteCount): LogicalAddress; external name '__MPAll
 
 { Use _MPRemoteCall instead.}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -6195,11 +6379,15 @@ function _MPAllocateSys(size: ByteCount): LogicalAddress; external name '__MPAll
 function _MPRPC(remoteProc: MPRemoteProcedure; parameter: UnivPtr): Ptr; external name '__MPRPC';
 
 {  Use _MPRemoteCall instead. }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  _MPTaskIsToolboxSafe()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -6252,6 +6440,8 @@ function _MPLibraryIsCompatible( versionCString: ConstCStringPtr; major: UInt32;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -6271,7 +6461,10 @@ function _MPTaskIsToolboxSafe(task: MPTaskID): boolean; external name '__MPTaskI
  }
 function _MPLibraryIsCompatible(versionCString: ConstCStringPtr; major: UInt32; minor: UInt32; release: UInt32; revision: UInt32): boolean; external name '__MPLibraryIsCompatible';
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
    ¤
@@ -6286,13 +6479,18 @@ function _MPLibraryIsCompatible(versionCString: ConstCStringPtr; major: UInt32; 
 {$endc}
 {$ifc MPIncludeDefunctServices}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifc CALL_NOT_IN_CARBON}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc CALL_NOT_IN_CARBON}
+>>>>>>> origin/fixes_2_2
 {
  *  _MPDebugStr()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -6300,35 +6498,47 @@ function _MPLibraryIsCompatible(versionCString: ConstCStringPtr; major: UInt32; 
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in MPLibraryObsolete 1.0 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 procedure _MPDebugStr(const (*var*) msg: Str255); external name '__MPDebugStr';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  _MPStatusPString()
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in MPLibraryObsolete 1.0 and later
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in MPLibraryObsolete 1.0 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function _MPStatusPString(status: OSStatus): StringPtr; external name '__MPStatusPString';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  _MPStatusCString()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -6369,6 +6579,8 @@ type
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in MPLibraryObsolete 1.0 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -6387,4 +6599,7 @@ function _MPStatusCString(status: OSStatus): ConstCStringPtr; external name '__M
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

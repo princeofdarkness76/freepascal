@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -35,6 +36,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	Copyright (c) 1998-2005, Apple, Inc. All rights reserved.
 }
 {   Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
@@ -44,7 +47,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -54,12 +60,17 @@
 unit CFPropertyList;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -73,14 +84,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -89,11 +105,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -131,6 +150,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -138,6 +159,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -386,6 +408,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -394,7 +418,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -421,9 +448,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -434,16 +465,21 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,CFBase,CFData,CFError,CFString,CFStream;
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 uses MacTypes,CFBase,CFData,CFString,CFStream;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,CFBase,CFData,CFString,CFStream;
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -465,6 +501,9 @@ type
 =======
 	CFPropertyListMutabilityOptions = SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+	CFPropertyListMutabilityOptions = SInt32;
+>>>>>>> origin/fixes_2_2
 const
 	kCFPropertyListImmutable = 0;
 	kCFPropertyListMutableContainers = 1;
@@ -477,6 +516,7 @@ const
 	and errorString is non-NULL, a human-readable description of the failure
 	is returned in errorString. It is the caller's responsibility to release
 	either the returned object or the error string, whichever is applicable.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -502,6 +542,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 }
 function CFPropertyListCreateFromXMLData( allocator: CFAllocatorRef; xmlData: CFDataRef; mutabilityOption: CFOptionFlags; errorString: CFStringRefPtr ): CFPropertyListRef; external name '_CFPropertyListCreateFromXMLData';
 
@@ -514,6 +556,7 @@ function CFPropertyListCreateFromXMLData( allocator: CFAllocatorRef; xmlData: CF
 	appropriate for writing out to an XML file. Note that a data, not a
 	string, is returned because the bytes contain in them a description
 	of the string encoding used.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -539,6 +582,8 @@ function CFPropertyListCreateFromXMLData( allocator: CFAllocatorRef; xmlData: CF
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 }
 function CFPropertyListCreateXMLData( allocator: CFAllocatorRef; propertyList: CFPropertyListRef ): CFDataRef; external name '_CFPropertyListCreateXMLData';
 
@@ -553,6 +598,7 @@ function CFPropertyListCreateDeepCopy( allocator: CFAllocatorRef; propertyList: 
 {#if MAC_OS_X_VERSION_10_2 <= MAC_OS_X_VERSION_MAX_ALLOWED}
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -576,27 +622,40 @@ type
 =======
 	CFPropertyListFormat = SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+	CFPropertyListFormat = SInt32;
+>>>>>>> origin/fixes_2_2
 const
     kCFPropertyListOpenStepFormat = 1;
     kCFPropertyListXMLFormat_v1_0 = 100;
     kCFPropertyListBinaryFormat_v1_0 = 200;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 function CFPropertyListIsValid( plist: CFPropertyListRef; format: CFPropertyListFormat ): Boolean; external name '_CFPropertyListIsValid';
 
 >>>>>>> graemeg/fixes_2_2
+=======
+function CFPropertyListIsValid( plist: CFPropertyListRef; format: CFPropertyListFormat ): Boolean; external name '_CFPropertyListIsValid';
+
+>>>>>>> origin/fixes_2_2
 { Returns true if the object graph rooted at plist is a valid property list
  * graph -- that is, no cycles, containing only plist objects, and dictionary
  * keys are strings. The debugging library version spits out some messages
  * to be helpful. The plist structure which is to be allowed is given by
  * the format parameter. }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CFPropertyListIsValid( plist: CFPropertyListRef; format: CFPropertyListFormat ): Boolean; external name '_CFPropertyListIsValid';
 =======
 
 function CFPropertyListWriteToStream( propertyList: CFPropertyListRef; stream: CFWriteStreamRef; format: CFPropertyListFormat; var errorString: CFStringRef ): CFIndex; external name '_CFPropertyListWriteToStream';
 >>>>>>> graemeg/fixes_2_2
+=======
+
+function CFPropertyListWriteToStream( propertyList: CFPropertyListRef; stream: CFWriteStreamRef; format: CFPropertyListFormat; var errorString: CFStringRef ): CFIndex; external name '_CFPropertyListWriteToStream';
+>>>>>>> origin/fixes_2_2
 
 { Writes the bytes of a plist serialization out to the stream.  The
  * stream must be opened and configured -- the function simply writes
@@ -605,6 +664,7 @@ function CFPropertyListWriteToStream( propertyList: CFPropertyListRef; stream: C
  * reading stream to end wherever the writing ended, so that the
  * end of the plist data can be identified. Returns the number of bytes
  * written, or 0 on error. Error messages are not currently localized, but
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -641,6 +701,11 @@ function CFPropertyListWriteToStream( propertyList: CFPropertyListRef; stream: C
 
 function CFPropertyListCreateFromStream( allocator: CFAllocatorRef; stream: CFReadStreamRef; streamLength: CFIndex; mutabilityOption: CFOptionFlags; var format: CFPropertyListFormat; var errorString: CFStringRef ): CFPropertyListRef; external name '_CFPropertyListCreateFromStream';
 >>>>>>> graemeg/fixes_2_2
+=======
+ * may be in the future, so they are not suitable for comparison. }
+
+function CFPropertyListCreateFromStream( allocator: CFAllocatorRef; stream: CFReadStreamRef; streamLength: CFIndex; mutabilityOption: CFOptionFlags; var format: CFPropertyListFormat; var errorString: CFStringRef ): CFPropertyListRef; external name '_CFPropertyListCreateFromStream';
+>>>>>>> origin/fixes_2_2
 
 { Same as current function CFPropertyListCreateFromXMLData()
  * but takes a stream instead of data, and works on any plist file format.
@@ -650,6 +715,7 @@ function CFPropertyListCreateFromStream( allocator: CFAllocatorRef; stream: CFRe
  * of the stream, which is expected to be the end of the plist, or up to the
  * number of bytes given by the length parameter if it is not 0. Error messages
  * are not currently localized, but may be in the future, so they are not
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -817,10 +883,15 @@ function CFPropertyListCreateData( allocator: CFAllocatorRef; propertyList: CFPr
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  * suitable for comparison. }
 
 {#endif}
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

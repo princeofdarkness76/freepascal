@@ -78,7 +78,10 @@ const
     procedure SetSSECSR(w : dword);
       begin
         mxcsr:=w;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         asm
           ldmxcsr w
         end;

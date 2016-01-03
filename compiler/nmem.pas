@@ -951,7 +951,10 @@ implementation
         // don't put records from which we load fields which aren't regable in integer registers
         if (left.resultdef.typ = recorddef) and
            not(tstoreddef(resultdef).is_intregable) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           make_not_regable(left,[ra_addr_regable]);
       end;
 
@@ -1026,9 +1029,12 @@ implementation
       var
          hightree: tnode;
 <<<<<<< HEAD
+<<<<<<< HEAD
          htype,elementdef,elementptrdef : tdef;
          newordtyp: tordtype;
 =======
+=======
+>>>>>>> origin/fixes_2_2
          htype,elementdef : tdef;
 >>>>>>> graemeg/fixes_2_2
          valid : boolean;
@@ -1148,10 +1154,14 @@ implementation
            do not convert enums, char (why not? (JM))
            and do not convert range nodes }
 <<<<<<< HEAD
+<<<<<<< HEAD
          if (right.nodetype<>rangen) and (is_integer(right.resultdef) or is_boolean(right.resultdef) or (left.resultdef.typ<>arraydef)) then
 =======
          if (right.nodetype<>rangen) and (is_integer(right.resultdef) or (left.resultdef.typ<>arraydef)) then
 >>>>>>> graemeg/fixes_2_2
+=======
+         if (right.nodetype<>rangen) and (is_integer(right.resultdef) or (left.resultdef.typ<>arraydef)) then
+>>>>>>> origin/fixes_2_2
            case left.resultdef.typ of
              arraydef:
                if ado_isvariant in Tarraydef(left.resultdef).arrayoptions then
@@ -1165,11 +1175,14 @@ implementation
                   convert indexes into these arrays to aword.}
                  inserttypeconv(right,uinttype)
 <<<<<<< HEAD
+<<<<<<< HEAD
                { convert between pasbool and cbool if necessary }
                else if is_boolean(right.resultdef) then
                  inserttypeconv(right,tarraydef(left.resultdef).rangedef)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                else
                  {Convert array indexes to low_bound..high_bound.}
                  inserttypeconv(right,Torddef.create(Torddef(sinttype).ordtype,
@@ -1177,14 +1190,18 @@ implementation
                                                      int64(Tarraydef(left.resultdef).highrange)
                                                     ));
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
              stringdef:
                if is_open_string(left.resultdef) then
                  inserttypeconv(right,u8inttype)
                else if is_shortstring(left.resultdef) then
                  {Convert shortstring indexes to 0..length.}
+<<<<<<< HEAD
 <<<<<<< HEAD
                  inserttypeconv(right,corddef.create(u8bit,0,int64(Tstringdef(left.resultdef).len),true))
                else
@@ -1195,13 +1212,18 @@ implementation
              else
                {Others, (are there any?) indexes to aint.}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                  inserttypeconv(right,Torddef.create(u8bit,0,int64(Tstringdef(left.resultdef).len)))
                else
                  {Convert indexes into dynamically allocated strings to aword.}
                  inserttypeconv(right,uinttype);
              else
                {Others, i.e. pointer indexes to aint.}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                inserttypeconv(right,sinttype);
            end;
 
@@ -1241,6 +1263,7 @@ implementation
                   (is_open_array(left.resultdef) or
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    is_array_of_const(left.resultdef)) then
 =======
                    is_array_of_const(left.resultdef)) and
@@ -1271,6 +1294,8 @@ implementation
                        end;
                    end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
                    is_array_of_const(left.resultdef)) and
                   { cdecl functions don't have high() so we can not check the range }
                   { (can't use current_procdef, since it may be a nested procedure) }
@@ -1282,7 +1307,10 @@ implementation
                    end;
       
       
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
              end;
            pointerdef :
              begin

@@ -41,7 +41,10 @@ units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
 rsts=math rtlconsts typinfo classes sysconst
 =======
 rsts=math rtlconsts varutils typinfo variants classes sysconst dateutil
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 #implicitunits=exeinfo
 
 [require]

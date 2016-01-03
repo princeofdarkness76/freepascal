@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: video.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -40,11 +43,15 @@
 
 *)
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef ARM9}
   {$error Video is only available on the ARM9}
 {$endif ARM9}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 var
@@ -84,6 +91,8 @@ function RGB8(r, g, b: cint): cuint8; inline;
 function ARGB16(a, r, g, b: cint): cuint16; inline;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef NDS_IMPLEMENTATION}
 function RGB15(r, g, b: cint): cuint16; 
 begin
@@ -102,7 +111,10 @@ end;
 {$endif NDS_IMPLEMENTATION}
 
 {$ifdef NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
   SCREEN_HEIGHT = 192;
   SCREEN_WIDTH  = 256;
@@ -114,9 +126,12 @@ const
   VRAM_C_CR		: pcuint8 = pointer($04000242);
   VRAM_D_CR		: pcuint8 = pointer($04000243);
 <<<<<<< HEAD
+<<<<<<< HEAD
   VRAM_EFG_CR	: pcuint8 = pointer($04000244);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   VRAM_E_CR		: pcuint8 = pointer($04000244);
   VRAM_F_CR		: pcuint8 = pointer($04000245);
   VRAM_G_CR		: pcuint8 = pointer($04000246);
@@ -125,6 +140,7 @@ const
   VRAM_I_CR		: pcuint8 = pointer($04000249);
 
   VRAM_ENABLE	= (1 shl 7);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 function  VRAM_OFFSET(n: cint): cint; inline;	
@@ -147,6 +163,8 @@ const
   VRAM_A_TEXTURE_SLOT2          : VRAM_A_TYPE = 3 or (2 shl 3);
   VRAM_A_TEXTURE_SLOT3          : VRAM_A_TYPE = 3 or (3 shl 3);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}
 
 {$ifdef NDS_IMPLEMENTATION}
@@ -174,11 +192,15 @@ const
   VRAM_A_TEXTURE_SLOT1      : VRAM_A_TYPE = 3 or (1 shl 3);
   VRAM_A_TEXTURE_SLOT2      : VRAM_A_TYPE = 3 or (2 shl 3);
   VRAM_A_TEXTURE_SLOT3      : VRAM_A_TYPE = 3 or (3 shl 3);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
   VRAM_B_TYPE = cint;
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
   VRAM_B_LCD                    : VRAM_B_TYPE = 0;
   VRAM_B_MAIN_BG                : VRAM_B_TYPE = 1 or (1 shl 3);
@@ -195,6 +217,8 @@ const
   VRAM_B_TEXTURE_SLOT2          : VRAM_B_TYPE = 3 or (2 shl 3);
   VRAM_B_TEXTURE_SLOT3          : VRAM_B_TYPE = 3 or (3 shl 3);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   VRAM_B_LCD                : VRAM_B_TYPE = 0;
   VRAM_B_MAIN_BG            : VRAM_B_TYPE = 1 or (1 shl 3);
   VRAM_B_MAIN_BG_0x06000000  : VRAM_B_TYPE = 1 or (0 shl 3);
@@ -209,7 +233,10 @@ const
   VRAM_B_TEXTURE_SLOT1      : VRAM_B_TYPE = 3 or (1 shl 3);
   VRAM_B_TEXTURE_SLOT2      : VRAM_B_TYPE = 3 or (2 shl 3);
   VRAM_B_TEXTURE_SLOT3      : VRAM_B_TYPE = 3 or (3 shl 3);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
@@ -217,6 +244,7 @@ type
 const
   VRAM_C_LCD                : VRAM_C_TYPE = 0;
   VRAM_C_MAIN_BG            : VRAM_C_TYPE = 1 or (2 shl 3);
+<<<<<<< HEAD
 <<<<<<< HEAD
   VRAM_C_MAIN_BG_0x06000000 : VRAM_C_TYPE = 1 or (0 shl 3);
   VRAM_C_MAIN_BG_0x06020000 : VRAM_C_TYPE = 1 or (1 shl 3);
@@ -228,6 +256,8 @@ const
   VRAM_C_SUB_BG             : VRAM_C_TYPE = 4;
   VRAM_C_SUB_BG_0x06200000  : VRAM_C_TYPE = 4 or (0 shl 3);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   VRAM_C_MAIN_BG_0x06000000  : VRAM_C_TYPE = 1 or (0 shl 3);
   VRAM_C_MAIN_BG_0x06020000  : VRAM_C_TYPE = 1 or (1 shl 3);
   VRAM_C_MAIN_BG_0x06040000  : VRAM_C_TYPE = 1 or (2 shl 3);
@@ -240,7 +270,10 @@ const
   VRAM_C_SUB_BG_0x06220000   : VRAM_C_TYPE = 4 or (1 shl 3);
   VRAM_C_SUB_BG_0x06240000   : VRAM_C_TYPE = 4 or (2 shl 3);
   VRAM_C_SUB_BG_0x06260000   : VRAM_C_TYPE = 4 or (3 shl 3);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   VRAM_C_TEXTURE            : VRAM_C_TYPE = 3 or (2 shl 3);
   VRAM_C_TEXTURE_SLOT0      : VRAM_C_TYPE = 3 or (0 shl 3);
   VRAM_C_TEXTURE_SLOT1      : VRAM_C_TYPE = 3 or (1 shl 3);
@@ -254,6 +287,7 @@ const
   VRAM_D_LCD                : VRAM_D_TYPE = 0;
   VRAM_D_MAIN_BG            : VRAM_D_TYPE = 1 or (3 shl 3);
 <<<<<<< HEAD
+<<<<<<< HEAD
   VRAM_D_MAIN_BG_0x06000000 : VRAM_D_TYPE = 1 or (0 shl 3);
   VRAM_D_MAIN_BG_0x06020000 : VRAM_D_TYPE = 1 or (1 shl 3);
   VRAM_D_MAIN_BG_0x06040000 : VRAM_D_TYPE = 1 or (2 shl 3);
@@ -262,6 +296,8 @@ const
   VRAM_D_ARM7_0x06000000    : VRAM_D_TYPE = 2;
   VRAM_D_ARM7_0x06020000    : VRAM_D_TYPE = 2 or (1 shl 3);  
 =======
+=======
+>>>>>>> origin/fixes_2_2
   VRAM_D_MAIN_BG_0x06000000  : VRAM_D_TYPE = 1 or (0 shl 3);
   VRAM_D_MAIN_BG_0x06020000  : VRAM_D_TYPE = 1 or (1 shl 3);
   VRAM_D_MAIN_BG_0x06040000  : VRAM_D_TYPE = 1 or (2 shl 3);
@@ -269,7 +305,10 @@ const
   VRAM_D_ARM7               : VRAM_D_TYPE = 2 or (1 shl 3);
   VRAM_D_ARM7_0x06000000     : VRAM_D_TYPE = 2;
   VRAM_D_ARM7_0x06020000     : VRAM_D_TYPE = 2 or (1 shl 3);  
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   VRAM_D_SUB_SPRITE         : VRAM_D_TYPE = 4;
   VRAM_D_TEXTURE            : VRAM_D_TYPE = 3 or (3 shl 3);
   VRAM_D_TEXTURE_SLOT0      : VRAM_D_TYPE = 3 or (0 shl 3);
@@ -281,23 +320,30 @@ type
   VRAM_E_TYPE = cint;
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
   VRAM_E_LCD            : VRAM_E_TYPE = 0;
   VRAM_E_MAIN_BG        : VRAM_E_TYPE = 1;
   VRAM_E_MAIN_SPRITE    : VRAM_E_TYPE = 2;
   VRAM_E_TEX_PALETTE    : VRAM_E_TYPE = 3;
   VRAM_E_BG_EXT_PALETTE : VRAM_E_TYPE = 4;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   VRAM_E_LCD                : VRAM_E_TYPE = 0;
   VRAM_E_MAIN_BG            : VRAM_E_TYPE = 1;
   VRAM_E_MAIN_SPRITE        : VRAM_E_TYPE = 2;
   VRAM_E_TEX_PALETTE        : VRAM_E_TYPE = 3;
   VRAM_E_BG_EXT_PALETTE     : VRAM_E_TYPE = 4;
   VRAM_E_OBJ_EXT_PALETTE    : VRAM_E_TYPE = 5;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
   VRAM_F_TYPE = cint;
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
   VRAM_F_LCD                    : VRAM_F_TYPE = 0;
   VRAM_F_MAIN_BG                : VRAM_F_TYPE = 1;
@@ -320,6 +366,8 @@ const
   VRAM_F_BG_EXT_PALETTE_SLOT23  : VRAM_F_TYPE = 4 or (1 shl 3);
   VRAM_F_SPRITE_EXT_PALETTE     : VRAM_F_TYPE = 5;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   VRAM_F_LCD                : VRAM_F_TYPE = 0;
   VRAM_F_MAIN_BG            : VRAM_F_TYPE = 1;
   VRAM_F_MAIN_SPRITE        : VRAM_F_TYPE = 2;
@@ -330,11 +378,15 @@ const
   VRAM_F_TEX_PALETTE        : VRAM_F_TYPE = 3;
   VRAM_F_BG_EXT_PALETTE     : VRAM_F_TYPE = 4;
   VRAM_F_OBJ_EXT_PALETTE    : VRAM_F_TYPE = 5;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
   VRAM_G_TYPE = cint;
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
   VRAM_G_LCD                    : VRAM_G_TYPE = 0;
   VRAM_G_MAIN_BG                : VRAM_G_TYPE = 1;
@@ -357,6 +409,8 @@ const
   VRAM_G_BG_EXT_PALETTE_SLOT23  : VRAM_G_TYPE = 4 or (1 shl 3);  
   VRAM_G_SPRITE_EXT_PALETTE     : VRAM_G_TYPE = 5;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   VRAM_G_LCD                : VRAM_G_TYPE = 0;
   VRAM_G_MAIN_BG            : VRAM_G_TYPE = 1;
   VRAM_G_MAIN_SPRITE        : VRAM_G_TYPE = 2;
@@ -367,7 +421,10 @@ const
   VRAM_G_TEX_PALETTE        : VRAM_G_TYPE = 3;
   VRAM_G_BG_EXT_PALETTE     : VRAM_G_TYPE = 4;
   VRAM_G_OBJ_EXT_PALETTE    : VRAM_G_TYPE = 5;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
   VRAM_H_TYPE = cint;
@@ -381,14 +438,19 @@ type
 const
   VRAM_I_LCD                    : VRAM_I_TYPE = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   VRAM_I_SUB_BG_0x06208000      : VRAM_I_TYPE = 1;
 =======
   VRAM_I_SUB_BG                 : VRAM_I_TYPE = 1;
 >>>>>>> graemeg/fixes_2_2
+=======
+  VRAM_I_SUB_BG                 : VRAM_I_TYPE = 1;
+>>>>>>> origin/fixes_2_2
   VRAM_I_SUB_SPRITE             : VRAM_I_TYPE = 2;
   VRAM_I_SUB_SPRITE_EXT_PALETTE : VRAM_I_TYPE = 3;
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
   _palette = array [0..255] of cuint16;
   _ext_palette = array [0..15] of _palette;
@@ -425,6 +487,8 @@ const
   ENABLE_3D      = (1 shl 3);
   DISPLAY_ENABLE_SHIFT = 8;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   TPalette = array [0..255] of cuint16;
   TExtPalette = array [0..15] of TPalette;
   PPalette = ^TPalette;
@@ -468,7 +532,10 @@ const
 
   ENABLE_3D      = (1 shl 3);
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   DISPLAY_BG0_ACTIVE    = (1 shl 8);
   DISPLAY_BG1_ACTIVE    = (1 shl 9);
   DISPLAY_BG2_ACTIVE    = (1 shl 10);
@@ -478,6 +545,7 @@ const
   DISPLAY_WIN1_ON       = (1 shl 14);
   DISPLAY_SPR_WIN_ON    = (1 shl 15);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
  
 type
@@ -503,6 +571,8 @@ const
   MODE_FB2 : VideoMode = ($000A0000);
   MODE_FB3 : VideoMode = ($000E0000);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 // Main display only
   MODE_0_3D   = (MODE_0_2D or DISPLAY_BG0_ACTIVE or ENABLE_3D);
@@ -517,7 +587,10 @@ const
   MODE_FB1    = ($00060000);
   MODE_FB2	  = ($000A0000);
   MODE_FB3	  = ($000E0000);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   DISPLAY_SPR_HBLANK	  = (1 shl 23);
 
@@ -538,14 +611,18 @@ const
   DISPLAY_SPR_1D_BMP_SIZE_256	= (1 shl 22);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DISPLAY_SPRITE_ATTR_MASK = ((7 shl 4) or (7 shl 20) or (1 shl 31));
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   DISPLAY_SPR_EXT_PALETTE		  = (1 shl 31);
   DISPLAY_BG_EXT_PALETTE		  = (1 shl 30);
 
   DISPLAY_SCREEN_OFF     = (1 shl 7);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 function DISPLAY_CHAR_BASE(n: cuint32): cuint32; inline;
@@ -569,6 +646,8 @@ const
   REG_MASTER_BRIGHT     : pcuint16 = pointer($0400006C);
   REG_MASTER_BRIGHT_SUB : pcuint16 = pointer($0400106C);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}
   
   
@@ -795,7 +874,10 @@ const
   SUB_BG3_YDY    : pcuint16 = pointer($04001036);
   SUB_BG3_CX     : pcuint32 = pointer($04001038);
   SUB_BG3_CY     : pcuint32 = pointer($0400103C);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 // Window 0
   WIN0_X0        : pcuint8 = pointer($04000041);
@@ -805,12 +887,17 @@ const
 
 // Window 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   WIN1_X0        : pcuint8 = pointer($04000043);
   WIN1_X1        : pcuint8 = pointer($04000042);
 =======
   WIN1_X0        : pcuint8 = pointer($04000042);
   WIN1_X1        : pcuint8 = pointer($04000043);
 >>>>>>> graemeg/fixes_2_2
+=======
+  WIN1_X0        : pcuint8 = pointer($04000042);
+  WIN1_X1        : pcuint8 = pointer($04000043);
+>>>>>>> origin/fixes_2_2
   WIN1_Y0        : pcuint8 = pointer($04000047);
   WIN1_Y1        : pcuint8 = pointer($04000046);
 
@@ -825,18 +912,24 @@ const
 
 // Window 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   SUB_WIN1_X0    : pcuint8 = pointer($04001043);
   SUB_WIN1_X1    : pcuint8 = pointer($04001042);
 =======
   SUB_WIN1_X0    : pcuint8 = pointer($04001042);
   SUB_WIN1_X1    : pcuint8 = pointer($04001043);
 >>>>>>> graemeg/fixes_2_2
+=======
+  SUB_WIN1_X0    : pcuint8 = pointer($04001042);
+  SUB_WIN1_X1    : pcuint8 = pointer($04001043);
+>>>>>>> origin/fixes_2_2
   SUB_WIN1_Y0    : pcuint8 = pointer($04001047);
   SUB_WIN1_Y1    : pcuint8 = pointer($04001046);
 
   SUB_WIN_IN     : pcuint16 = pointer($04001048);
   SUB_WIN_OUT    : pcuint16 = pointer($0400104A);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   REG_MOSAIC     : pcuint16 = pointer($0400004C);
   REG_MOSAIC_SUB : pcuint16 = pointer($0400104C);
@@ -849,6 +942,8 @@ const
   REG_BLDALPHA_SUB  : pcuint16 = pointer($04001052);
   REG_BLDY_SUB      : pcuint16 = pointer($04001054);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   MOSAIC_CR      : pcuint16 = pointer($0400004C);
   SUB_MOSAIC_CR  : pcuint16 = pointer($0400104C);
 
@@ -859,7 +954,10 @@ const
   SUB_BLEND_CR   : pcuint16 = pointer($04001050);
   SUB_BLEND_AB   : pcuint16 = pointer($04001052);
   SUB_BLEND_Y    : pcuint16 = pointer($04001054);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   BLEND_NONE          = (0 shl 6);
   BLEND_ALPHA         = (1 shl 6);
@@ -881,14 +979,20 @@ const
   BLEND_DST_BACKDROP  = (1 shl 13);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 // Display capture control
 
 >>>>>>> graemeg/fixes_2_2
+=======
+// Display capture control
+
+>>>>>>> origin/fixes_2_2
   REG_DISPCAPCNT: pcuint32 = pointer($04000064);
   REG_DISP_MMEM_FIFO: pcuint32 = pointer($04000068);
 
   DCAP_ENABLE    = (1 shl 31);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 function DCAP_MODE(n: cint): cint; inline;   
@@ -940,6 +1044,8 @@ const
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}
 
 {$ifdef NDS_IMPLEMENTATION}
@@ -986,7 +1092,10 @@ end;
 
 {$ifdef NDS_INTERFACE}
 // 3D core control
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
   GFX_CONTROL           : pcuint16 = pointer($04000060);
 
@@ -1032,12 +1141,15 @@ const
   GFX_POS_TEST          : pcint32 = pointer($040005C4);
   GFX_POS_RESULT        : pcint32 = pointer($04000620);
 <<<<<<< HEAD
+<<<<<<< HEAD
   GFX_VEC_TEST          : pcuint32 = pointer($040005C8);
   GFX_VEC_RESULT        : pcint16 = pointer($04000630);
 
 function GFX_BUSY: boolean; inline;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}
   
 {$ifdef NDS_IMPLEMENTATION}
@@ -1049,7 +1161,10 @@ end;
 
 
 {$ifdef NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
   GFX_VERTEX_RAM_USAGE	: pcuint16 = pointer($04000606);
   GFX_POLYGON_RAM_USAGE	: pcuint16 = pointer($04000604);
@@ -1077,6 +1192,7 @@ const
   MATRIX_READ_VECTOR : pcint32 = pointer($04000680);
   POINT_RESULT       : pcint32 = pointer($04000620);
   VECTOR_RESULT      : pcuint16 = pointer($04000630);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {$endif NDS_INTERFACE}
@@ -1274,6 +1390,8 @@ end;
 
 {$endif NDS_IMPLEMENTATION}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}
 
 {$ifdef NDS_INTERFACE}
@@ -1305,4 +1423,7 @@ function DCAP_B(n: cint): cint; inline;
 function DCAP_A(n: cint): cint; inline;      
 function GFX_BUSY: boolean; inline;
 {$endif NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

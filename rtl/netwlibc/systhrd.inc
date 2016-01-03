@@ -96,7 +96,10 @@
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 >>>>>>> graemeg/fixes_2_2
     function ThreadMain(param : pointer) : pointer;cdecl;

@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -28,10 +29,16 @@
  
      Copyright:  © 1985-2005 by Apple Computer, Inc., all rights reserved.
 >>>>>>> graemeg/fixes_2_2
+=======
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 1985-2005 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -59,6 +66,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -69,7 +78,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -79,12 +91,17 @@
 unit Menus;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -98,14 +115,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -114,11 +136,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -156,6 +181,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -163,6 +190,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -376,6 +404,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -384,7 +414,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -411,9 +444,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -421,6 +458,7 @@ interface
 {$setc TARGET_RT_MAC_MACHO := TRUE}
 {$setc TYPED_FUNCTION_POINTERS := TRUE}
 {$setc TYPE_BOOL := FALSE}
+<<<<<<< HEAD
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
@@ -13657,6 +13695,22 @@ function LMGetTheMenu: MenuID; external name '_LMGetTheMenu';
 {--------------------------------------------------------------------------------------}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TYPE_EXTENDED := FALSE}
+{$setc TYPE_LONGLONG := TRUE}
+uses MacTypes,AEDataModel,CFBase,CGContext,ATSTypes,Events,Quickdraw,Fonts,TextCommon,Processes,AppleEvents,Collections,MacErrors,CFString,CFUUID,CarbonEventsCore;
+
+
+{$ALIGN MAC68K}
+
+
+{
+ *  Menu Manager
+ }
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{  ¥ Menu Constants                                                                    }
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+>>>>>>> origin/fixes_2_2
 {
     A Short Course on Menu Definition Functions
     
@@ -13671,10 +13725,13 @@ function LMGetTheMenu: MenuID; external name '_LMGetTheMenu';
     definition does not support, please mail <toolbox@apple.com> and describe your requirements;
     we would much rather enhance the system menu definition than have you write a custom one.
 <<<<<<< HEAD
+<<<<<<< HEAD
     The use of menu definition functions is deprecated in Mac OS X; in Mac OS X 10.3 and
     later, Apple recommends that you use a custom HIView to draw menu content.
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     
     Menu definition functions before Carbon used the following messages:
     
@@ -13921,6 +13978,7 @@ function LMGetTheMenu: MenuID; external name '_LMGetTheMenu';
             MenuDisable is now set automatically by the Menu Manager using the value returned in the
             itemUnderMouse field of the MenuTrackingData structure passed to kMenuFindItemMsg.
             
+<<<<<<< HEAD
         TopMenuItem
         AtMenuBottom
         
@@ -14162,6 +14220,36 @@ const
  *  Summary:
  *    Creates a new menu.
 =======
+=======
+        TopMenuItem
+        AtMenuBottom
+        
+            TopMenuItem and AtMenuBottom are now set automatically by the Menu Manager using the
+            values returned in the virtualMenuTop and virtualMenuBottom fields of the MenuTrackingData
+            structure passed to kMenuDrawMsg and kMenuFindItemMsg.
+            
+        mbSaveLoc
+    
+            This undocumented low-memory global was used by pre-Carbon menu definitions to store
+            the bounding rect of the currently selected item and to avoid drawing glitches while
+            the menu definition was scrolling the contents of a menu that had submenus. The Menu
+            Manager now automatically sets the selected item bounds using the value returned in
+            the itemRect field of the MenuTrackingData structure passed to kMenuFindItemMsg. In
+            order to correctly support scrolling of menus with submenus, a menu definition should
+            verify, before scrolling the menu contents, that no submenus of the scrolling menu are
+            currently visible. A menu definition can use GetMenuTrackingData to verify this condition,
+            as follows:
+            
+                Boolean SafeToScroll( MenuRef menuBeingScrolled )
+                (
+                    MenuTrackingData lastMenuData;
+                    return GetMenuTrackingData( NULL, &lastMenuData ) == noErr
+                           && lastMenuData.menu == menuBeingScrolled;
+                )
+            
+            If SafeToScroll returns false, the menu definition should not scroll the menu.
+}
+>>>>>>> origin/fixes_2_2
 const
 { menu defProc messages }
 	kMenuDrawMsg = 0;
@@ -17711,11 +17799,15 @@ function SetMenuItemHierarchicalMenu( inMenu: MenuRef; inItem: MenuItemIndex; in
  *    only case where GetMenuItemHierarchicalMenu will fail to return
  *    the item's submenu is when the submenu is specified by menu ID,
  *    but the submenu is not currently inserted in the menu bar.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -17735,6 +17827,8 @@ function NewMenu( menuID_: MenuID; const (*var*) menuTitle: Str255 ): MenuRef; e
  *  Summary:
  *    Retrieves the title of a menu as a Pascal string.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -17760,11 +17854,15 @@ function GetMenuItemHierarchicalMenu( inMenu: MenuRef; inItem: MenuItemIndex; va
  *  
  *  Summary:
  *    Returns a CFString containing the text of a menu item.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -17801,6 +17899,8 @@ function SetMenuTitle( menu: MenuRef; const (*var*) title: Str255 ): OSStatus; e
  *    item's text.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -17836,11 +17936,15 @@ function CopyMenuItemTextAsCFString( inMenu: MenuRef; inItem: MenuItemIndex; var
  *    string after calling SetMenuItemTextWithCFString will have no
  *    effect on the menu item's actual text. The caller may release the
  *    string after calling SetMenuItemTextWithCFString.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -17879,6 +17983,8 @@ procedure MacAppendMenu( menu: MenuRef; const (*var*) data: Str255 ); external n
  *    text.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -17911,11 +18017,15 @@ function SetMenuItemTextWithCFString( inMenu: MenuRef; inItem: MenuItemIndex; in
  *    number, starting at zero, which the Menu Manager multiplies by a
  *    constant to get the indent in pixels. The default indent level is
  *    zero.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -17977,6 +18087,8 @@ procedure MacInsertMenuItem( theMenu: MenuRef; const (*var*) itemString: Str255;
  *  AppendMenuItemText()
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -18009,11 +18121,15 @@ function GetMenuItemIndent( inMenu: MenuRef; inItem: MenuItemIndex; var outInden
  *    number, starting at zero, which the Menu Manager multiplies by a
  *    constant to get the indent in pixels. The default indent level is
  *    zero.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Parameters:
@@ -18041,6 +18157,8 @@ procedure InsertMenuItem( theMenu: MenuRef; const (*var*) itemString: Str255; af
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 procedure MacInsertMenuItem( theMenu: MenuRef; const (*var*) itemString: Str255; afterItem: MenuItemIndex ); external name '_InsertMenuItem';
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -18058,11 +18176,15 @@ procedure MacInsertMenuItem( theMenu: MenuRef; const (*var*) itemString: Str255;
  *    Non-Carbon CFM:   not available
  }
 function SetMenuItemIndent( inMenu: MenuRef; inItem: MenuItemIndex; inIndent: UInt32 ): OSStatus; external name '_SetMenuItemIndent';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  AppendMenuItemText()   *** DEPRECATED ***
@@ -18097,6 +18219,8 @@ function AppendMenuItemText( menu: MenuRef; const (*var*) inString: Str255 ): OS
  *    text.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  GetMenuItemCommandKey()
  *  
  *  Summary:
@@ -18115,11 +18239,15 @@ function AppendMenuItemText( menu: MenuRef; const (*var*) inString: Str255 ): OS
  *    you cannot test the returned keycode against zero to determine if
  *    the item is using a virtual keycode equivalent. You must test the
  *    kMenuItemAttrUseVirtualKey attribute.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
@@ -18181,6 +18309,8 @@ function InsertMenuItemText( menu: MenuRef; const (*var*) inString: Str255; afte
  *    Sets the text of a menu item using a Pascal string.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -18202,6 +18332,7 @@ function InsertMenuItemText( menu: MenuRef; const (*var*) inString: Str255; afte
  *    Non-Carbon CFM:   not available
  }
 function GetMenuItemCommandKey( inMenu: MenuRef; inItem: MenuItemIndex; inGetVirtualKey: Boolean; var outKey: UInt16 ): OSStatus; external name '_GetMenuItemCommandKey';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -18284,6 +18415,34 @@ procedure SetMenuItemText( theMenu: MenuRef; item: MenuItemIndex; const (*var*) 
  *    Retrieves the text of a menu item as a Pascal string.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  SetMenuItemCommandKey()
+ *  
+ *  Summary:
+ *    Sets the keyboard equivalent of a menu item.
+ *  
+ *  Discussion:
+ *    A menu item's keyboard equivalent may be either a character code
+ *    or a virtual keycode. The character code is always used to draw
+ *    the item's keyboard equivalent in the menu, but either may be
+ *    used for keyboard equivalent matching by MenuEvent and
+ *    IsMenuKeyEvent, depending on whether the
+ *    kMenuItemAttrUseVirtualKey item attribute is set. If
+ *    SetMenuItemCommandKey is used to set the virtual keycode
+ *    equivalent for a menu item, it also automatically sets the
+ *    kMenuItemAttrUseVirtualKey item attribute. To make the menu item
+ *    stop using the virtual keycode equivalent and use the character
+ *    code equivalent instead, use ChangeMenuItemAttributes to clear
+ *    the kMenuItemAttrUseVirtualKey item attribute.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -18315,12 +18474,16 @@ function SetMenuItemCommandKey( inMenu: MenuRef; inItem: MenuItemIndex; inSetVir
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {
  *  DeleteMCEntries()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -18355,6 +18518,8 @@ procedure GetMenuItemText( theMenu: MenuRef; item: MenuItemIndex; var itemString
  *    item's Pascal string-based text.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -18365,12 +18530,16 @@ procedure DeleteMCEntries( menuID_: MenuID; menuItem: SInt16 ); external name '_
 
 {
  *  GetMCInfo()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -18409,6 +18578,8 @@ function SetMenuItemTextEncoding( inMenu: MenuRef; inItem: MenuItemIndex; inScri
  *    menu item's Pascal string-based text.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -18419,12 +18590,16 @@ function GetMCInfo: MCTableHandle; external name '_GetMCInfo';
 
 {
  *  SetMCInfo()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -18460,6 +18635,8 @@ function GetMenuItemTextEncoding( inMenu: MenuRef; inItem: MenuItemIndex; var ou
  *    menu item.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -18470,12 +18647,16 @@ procedure SetMCInfo( menuCTbl: MCTableHandle ); external name '_SetMCInfo';
 
 {
  *  DisposeMCInfo()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -18512,6 +18693,8 @@ procedure SetItemIcon( theMenu: MenuRef; item: MenuItemIndex; iconIndex: SInt16 
  *    a menu item.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -18522,12 +18705,16 @@ procedure DisposeMCInfo( menuCTbl: MCTableHandle ); external name '_DisposeMCInf
 
 {
  *  GetMCEntry()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -18562,6 +18749,8 @@ procedure GetItemIcon( theMenu: MenuRef; item: MenuItemIndex; var iconIndex: SIn
  *    Sets the menu ID of the submenu of a menu item.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -18572,12 +18761,16 @@ function GetMCEntry( menuID_: MenuID; menuItem: SInt16 ): MCEntryPtr; external n
 
 {
  *  SetMCEntries()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -18614,6 +18807,8 @@ function SetMenuItemHierarchicalID( inMenu: MenuRef; inItem: MenuItemIndex; inHi
  *    Retrieves the menu ID of the submenu of a menu item.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -18633,12 +18828,16 @@ const
 
 {
  *  GetMenuItemProperty()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -18673,6 +18872,8 @@ function GetMenuItemHierarchicalID( inMenu: MenuRef; inItem: MenuItemIndex; var 
  *    Returns the retain count of a menu.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MenusLib 8.5 and later
@@ -18683,11 +18884,15 @@ function GetMenuItemProperty( menu: MenuRef; item: MenuItemIndex; propertyCreato
 
 {
  *  GetMenuItemPropertySize()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
@@ -18732,6 +18937,8 @@ function GetMenuRetainCount( inMenu: MenuRef ): ItemCount; external name '_GetMe
  *    Increments the retain count of a menu.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -18743,11 +18950,15 @@ function GetMenuItemPropertySize( menu: MenuRef; item: MenuItemIndex; propertyCr
 
 {
  *  SetMenuItemProperty()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Parameters:
  *    
@@ -18790,6 +19001,8 @@ function RetainMenu( inMenu: MenuRef ): OSStatus; external name '_RetainMenu';
  *    Decrements the retain count of a menu.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -18801,11 +19014,15 @@ function SetMenuItemProperty( menu: MenuRef; item: MenuItemIndex; propertyCreato
 
 {
  *  RemoveMenuItemProperty()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Parameters:
  *    
@@ -18853,6 +19070,8 @@ function ReleaseMenu( inMenu: MenuRef ): OSStatus; external name '_ReleaseMenu';
  *    specified resource type.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -18867,11 +19086,15 @@ function RemoveMenuItemProperty( menu: MenuRef; item: MenuItemIndex; propertyCre
  *  
  *  Summary:
  *    Gets the attributes of a menu item property.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Parameters:
@@ -18918,6 +19141,8 @@ procedure InsertResMenu( theMenu: MenuRef; theType: ResType; afterItem: MenuItem
 >>>>>>> graemeg/cpstrnew
  *    specified resource type.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    menu:
@@ -18949,6 +19174,7 @@ function GetMenuItemPropertyAttributes( menu: MenuRef; item: MenuItemIndex; prop
  *  
  *  Summary:
  *    Changes the attributes of a menu item property.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
@@ -19032,6 +19258,12 @@ procedure InsertFontResMenu( theMenu: MenuRef; afterItem: MenuItemIndex; scriptF
  *    specified resource type.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    menu:
@@ -19070,11 +19302,15 @@ function ChangeMenuItemPropertyAttributes( menu: MenuRef; item: MenuItemIndex; p
  *  
  *  Summary:
  *    Gets the attributes of a menu.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -19113,6 +19349,8 @@ procedure InsertIntlResMenu( theMenu: MenuRef; theType: ResType; afterItem: Menu
  *    Determines if a character matches a menu item command key.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    menu:
@@ -19135,11 +19373,15 @@ function GetMenuAttributes( menu: MenuRef; var outAttributes: MenuAttributes ): 
  *  
  *  Summary:
  *    Changes the attributes of a menu.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -19174,6 +19416,8 @@ function MenuKey( ch: CharParameter ): SInt32; external name '_MenuKey';
  *    Sets the number of times that a selected menu item will blink.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    menu:
@@ -19199,11 +19443,15 @@ function ChangeMenuAttributes( menu: MenuRef; setTheseAttributes: MenuAttributes
  *  
  *  Summary:
  *    Gets the attributes of a menu item.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -19249,6 +19497,8 @@ procedure SetMenuFlashCount( count: SInt16 ); external name '_SetMenuFlashCount'
  *    ProcessIsContextualMenuClient to return an incorrect value.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    menu:
@@ -19274,6 +19524,7 @@ function GetMenuItemAttributes( menu: MenuRef; item: MenuItemIndex; var outAttri
  *  
  *  Summary:
  *    Changes the attributes of a menu item.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
@@ -19334,6 +19585,12 @@ function InitContextualMenus: OSStatus; external name '_InitContextualMenus';
  *    parameter and always returns whether the current process is
  *    registered with the Contextual Menu Manager.
 =======
+=======
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    menu:
@@ -19372,13 +19629,17 @@ function ChangeMenuItemAttributes( menu: MenuRef; item: MenuItemIndex; setTheseA
  *    enableFlags field of the MenuInfo with 0x01. It disables all
  *    items (including items past item 31) but does not affect the
  *    state of the menu title.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    inPSN:
  *      The process to examine.
@@ -19424,6 +19685,8 @@ function ProcessIsContextualMenuClient( var inPSN: ProcessSerialNumber ): Boolea
  *    parameter and always returns whether the current process is
  *    registered with the Contextual Menu Manager.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    theMenu:
  *      The menu whose items to disable.
  *  
@@ -19447,13 +19710,17 @@ procedure DisableAllMenuItems( theMenu: MenuRef ); external name '_DisableAllMen
  *    enableFlags field of the MenuInfo with 0xFFFFFFFE. It enables all
  *    items (including items past item 31) but does not affect the
  *    state of the menu title.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    inPSN:
  *      The process to examine.
@@ -19539,6 +19806,8 @@ procedure DeleteMCEntries( menuID_: MenuID; menuItem: SInt16 ); external name '_
  *    Retrieves color table entries for the current process.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    theMenu:
  *      The menu whose items to enable.
  *  
@@ -19597,11 +19866,15 @@ function MenuHasEnabledItems( theMenu: MenuRef ): Boolean; external name '_MenuH
  *    TopMenuItem, AtMenuBottom, MenuDisable, and mbSaveLoc. It is only
  *    valid to call this API while menu tracking is occurring. This API
  *    will most commonly be used by custom MDEFs.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -19634,6 +19907,8 @@ function GetMCInfo: MCTableHandle; external name '_GetMCInfo';
  *    Sets color table info for the current process.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    theMenu:
@@ -19669,11 +19944,15 @@ function GetMenuTrackingData( theMenu: MenuRef; var outData: MenuTrackingData ):
  *    type of a menu may vary from one menu tracking session to
  *    another; for example, the same menu might be displayed as a
  *    pulldown menu and as a popup menu.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -19706,6 +19985,8 @@ procedure SetMCInfo( menuCTbl: MCTableHandle ); external name '_SetMCInfo';
  *    Releases the memory used by a menu color table.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    theMenu:
@@ -19749,11 +20030,15 @@ function GetMenuType( theMenu: MenuRef; var outType: UInt16 ): OSStatus; externa
  *    (for example, it does not search menus that are inserted for use
  *    in a popup menu control). In Mac OS X 10.1 and CarbonLib 1.5 and
  *    later, this API also searches inserted hierarchical menus.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -19786,6 +20071,8 @@ procedure DisposeMCInfo( menuCTbl: MCTableHandle ); external name '_DisposeMCInf
  *    Returns a pointer to the menu color table entry for a menu item.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -19825,11 +20112,15 @@ function CountMenuItemsWithCommandID( inMenu: MenuRef; inCommandID: MenuCommand 
  *    it does not search menus that are inserted for use in a popup
  *    menu control). In Mac OS X 10.1 and CarbonLib 1.5 and later, this
  *    API also searches inserted hierarchical menus.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -19862,6 +20153,8 @@ function GetMCEntry( menuID_: MenuID; menuItem: SInt16 ): MCEntryPtr; external n
  *    Sets entries in the menu color table for the current process.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -19901,6 +20194,7 @@ function GetIndMenuItemWithCommandID( inMenu: MenuRef; inCommandID: MenuCommand;
  *  
  *  Summary:
  *    Enables the menu item with a specified command ID.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
@@ -19952,6 +20246,12 @@ procedure SetMCEntries( numEntries: SInt16; menuCEntries: MCTablePtr ); external
  *    of the old image will show through the menu background.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -19977,7 +20277,10 @@ procedure EnableMenuCommand( inMenu: MenuRef; inCommandID: MenuCommand ); extern
  *  
  *  Summary:
  *    Disables the menu item with a specified command ID.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -19985,6 +20288,7 @@ procedure EnableMenuCommand( inMenu: MenuRef; inCommandID: MenuCommand ); extern
  *  Parameters:
  *    
  *    inMenu:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *      The menu whose background to erase.
  *    
@@ -20051,6 +20355,8 @@ function EraseMenuBackground( inMenu: MenuRef; const (*var*) inEraseRect: Rect; 
  *    preserving the alpha channel.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *      The menu in which to begin searching for the item. Pass NULL to
  *      begin searching with the root menu. The search will descend
  *      into all submenus of this menu.
@@ -20074,7 +20380,10 @@ procedure DisableMenuCommand( inMenu: MenuRef; inCommandID: MenuCommand ); exter
  *  Summary:
  *    Determines if the menu item with a specified command ID is
  *    enabled.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -20082,6 +20391,7 @@ procedure DisableMenuCommand( inMenu: MenuRef; inCommandID: MenuCommand ); exter
  *  Parameters:
  *    
  *    inMenu:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *      The menu whose background to erase.
@@ -20141,6 +20451,8 @@ procedure AppendResMenu( theMenu: MenuRef; theType: ResType ); external name '_A
  *  Summary:
  *    Inserts menu items containing the names of font resources.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *      The menu in which to begin searching for the item. Pass NULL to
  *      begin searching with the root menu. The search will descend
  *      into all submenus of this menu.
@@ -20164,11 +20476,15 @@ function IsMenuCommandEnabled( inMenu: MenuRef; inCommandID: MenuCommand ): Bool
  *  Summary:
  *    Locates the menu item with a specified command ID and sets its
  *    mark character.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -20220,6 +20536,8 @@ type
  *    Inserts menu items containing the names of resources of a
  *    specified resource type.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -20285,11 +20603,15 @@ function GetMenuCommandMark( inMenu: MenuRef; inCommandID: MenuCommand; var outM
  *  Summary:
  *    Retrives property data for a menu item with a specified command
  *    ID.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -20334,6 +20656,8 @@ function RetainMenu( inMenu: MenuRef ): OSStatus; external name '_RetainMenu';
  *  NewMenuBarDefUPP()
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -20380,11 +20704,15 @@ function GetMenuCommandProperty( inMenu: MenuRef; inCommandID: MenuCommand; inPr
  *  
  *  Mac OS X threading:
  *    Not thread safe
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Parameters:
  *    
  *    inMenu:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *      The menu whose image to scroll.
@@ -20468,6 +20796,8 @@ function ReleaseMenu( inMenu: MenuRef ): OSStatus; external name '_ReleaseMenu';
  *    specified resource type.
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *      The menu in which to begin searching for the item. Pass NULL to
  *      begin searching with the root menu. The search will descend
  *      into all submenus of this menu.
@@ -20500,11 +20830,15 @@ function GetMenuCommandPropertySize( inMenu: MenuRef; inCommandID: MenuCommand; 
  *  
  *  Summary:
  *    Sets property data for a menu item with a specified command ID.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -20580,6 +20914,8 @@ procedure InsertResMenu( theMenu: MenuRef; theType: ResType; afterItem: MenuItem
  *    Appends menu items containing the names of resources of a
  *    specified resource type.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -20663,6 +20999,7 @@ function RemoveMenuCommandProperty( inMenu: MenuRef; inCommandID: MenuCommand; i
  *    accessor functions for the individual attributes of the menu.
  *    This function returns a copy of the data in the menu, so any data
  *    in the MenuItemDataRec that is dynamically allocated (for
+<<<<<<< HEAD
  *    example, the CFString item text) should be released by the caller.
 >>>>>>> graemeg/fixes_2_2
  *  
@@ -20689,6 +21026,13 @@ procedure AppendResMenu( theMenu: MenuRef; theType: ResType ); external name '_A
  *  Summary:
  *    Inserts menu items containing the names of font resources.
 =======
+=======
+ *    example, the CFString item text) should be released by the caller.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -20736,11 +21080,15 @@ function CopyMenuItemData( inMenu: MenuRef { can be NULL }; inItem: MenuItemID; 
  *    simultaneously. It is more efficient to use this function than to
  *    use the accessor functions for the individual attributes of the
  *    menu.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -20764,6 +21112,8 @@ procedure InsertFontResMenu( theMenu: MenuRef; afterItem: MenuItemIndex; scriptF
  *    Inserts menu items containing the names of resources of a
  *    specified resource type.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -20855,11 +21205,15 @@ function SetMenuItemData( inMenu: MenuRef; inItem: MenuItemID; inIsCommandID: Bo
  *  
  *  Summary:
  *    Determines if a menu item is invalid and should be redrawn.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -20881,6 +21235,8 @@ procedure InsertIntlResMenu( theMenu: MenuRef; theType: ResType; afterItem: Menu
  *    Determines if a character matches a menu item command key.
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -20910,11 +21266,15 @@ function IsMenuItemInvalid( inMenu: MenuRef; inItem: MenuItemIndex ): Boolean; e
  *    changed using Menu Manager APIs while the menu is open. However,
  *    you might need to use this API if you have a custom MDEF that
  *    draws using state not contained in the menu.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -20956,6 +21316,8 @@ function InitContextualMenus: OSStatus; external name '_InitContextualMenus';
  *    parameter and always returns whether the current process is
  *    registered with the Contextual Menu Manager.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -20990,13 +21352,17 @@ function InvalidateMenuItems( inMenu: MenuRef; inFirstItem: MenuItemIndex; inNum
  *    UpdateInvalidMenuItems after completing your modifications for a
  *    single menu. It will redraw any items that have been marked as
  *    invalid, and clear the invalid flag for those items.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    inPSN:
  *      The process to examine.
@@ -21018,6 +21384,8 @@ function MenuKey( ch: CharParameter ): SInt32; external name '_MenuKey';
  *  Summary:
  *    Sets the number of times that a selected menu item will blink.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    inMenu:
  *      The menu to update.
  *  
@@ -21039,6 +21407,7 @@ const
 
 {
  *  CreateStandardFontMenu()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
@@ -21119,6 +21488,13 @@ function InitContextualMenus: OSStatus; external name '_InitContextualMenus';
  *    parameter and always returns whether the current process is
  *    registered with the Contextual Menu Manager.
 =======
+=======
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
@@ -21144,6 +21520,7 @@ function UpdateStandardFontMenu( menu: MenuRef; outHierMenuCount: ItemCountPtr {
 
 {
  *  GetFontFamilyFromMenuSelection()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
@@ -21203,11 +21580,14 @@ function ProcessIsContextualMenuClient( var inPSN: ProcessSerialNumber ): Boolea
  *  
  *  Summary:
  *    Removes color table entries for a menu.
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -21269,6 +21649,8 @@ function GetMCInfo: MCTableHandle; external name '_GetMCInfo';
 >>>>>>> origin/cpstrnew
 =======
  *  Availability:
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
@@ -21424,12 +21806,16 @@ const
  *    registering your program may also cause
  *    ProcessIsContextualMenuClient to return an incorrect value. On
  *    Mac OS X, it is not necessary to call InitContextualMenus.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -21461,6 +21847,8 @@ procedure SetMCInfo( menuCTbl: MCTableHandle ); external name '_SetMCInfo';
  *    Releases the memory used by a menu color table.
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ContextualMenu 1.0 and later
@@ -21488,11 +21876,15 @@ function InitContextualMenus: OSStatus; external name '_InitContextualMenus';
  *    software that returns a control-left click in place of a right
  *    click. For proper recognition of a right-click gesture, you must
  *    use the IsShowContextualMenuEvent API.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -21525,6 +21917,8 @@ procedure DisposeMCInfo( menuCTbl: MCTableHandle ); external name '_DisposeMCInf
  *    Returns a pointer to the menu color table entry for a menu item.
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inEvent:
@@ -21564,11 +21958,15 @@ function IsShowContextualMenuClick( const (*var*) inEvent: EventRecord ): Boolea
  *    API no longer requires a specific event kind; it only requires
  *    that the event contain kEventParamMouseButton and
  *    kEventParamKeyModifiers parameters.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -21601,6 +21999,8 @@ function GetMCEntry( menuID_: MenuID; menuItem: SInt16 ): MCEntryPtr; external n
  *    Sets entries in the menu color table for the current process.
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inEvent:
@@ -21644,6 +22044,7 @@ function IsShowContextualMenuEvent( inEvent: EventRef ): Boolean; external name 
  *    application should provide visual feedback indicating the item
  *    that was clicked upon. For example, a click on an icon should
  *    highlight the icon, while a click on editable text should not
+<<<<<<< HEAD
  *    eliminate the current selection. If the outUserSelectionType
  *    parameter contains kCMMenuItemSelected, you should look at the
  *    outMenuID and outMenuItem parameters to determine what menu item
@@ -21701,6 +22102,18 @@ procedure SetMCEntries( numEntries: SInt16; menuCEntries: MCTablePtr ); external
  *    of the old image will show through the menu background.
 >>>>>>> origin/cpstrnew
 =======
+=======
+ *    eliminate the current selection. If the outUserSelectionType
+ *    parameter contains kCMMenuItemSelected, you should look at the
+ *    outMenuID and outMenuItem parameters to determine what menu item
+ *    the user chose and handle it appropriately. If the user selected
+ *    kCMHelpItemSelected, you should open the proper Apple Guide
+ *    sequence or other form of custom help.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inMenu:
@@ -21776,6 +22189,7 @@ function ContextualMenuSelect( inMenu: MenuRef; inGlobalLocation: Point; inReser
  *    InitContextualMenus. On Mac OS X, this API ignores the inPSN
  *    parameter and always returns whether the current process is
  *    registered with the Contextual Menu Manager.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
@@ -21985,6 +22399,14 @@ type
  *  NewMenuHookUPP()
 >>>>>>> origin/cpstrnew
 =======
+=======
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+>>>>>>> origin/fixes_2_2
  *    inPSN:
  *      The process to examine.
  *  
@@ -22102,11 +22524,15 @@ function LMGetTheMenu: MenuID; external name '_LMGetTheMenu';
 
 {
  *  appendmenu()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         not available
  *    CarbonLib:        not available
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
@@ -22121,17 +22547,23 @@ function LMGetTheMenu: MenuID; external name '_LMGetTheMenu';
  *  NewMBarHookUPP()
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
 {
  *  insertmenuitem()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         not available
  *    CarbonLib:        not available
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
@@ -22144,17 +22576,23 @@ function LMGetTheMenu: MenuID; external name '_LMGetTheMenu';
  *  DisposeMenuBarDefUPP()
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
 {
  *  menuselect()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         not available
  *    CarbonLib:        not available
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
@@ -22173,17 +22611,23 @@ function LMGetTheMenu: MenuID; external name '_LMGetTheMenu';
  *  DisposeMenuHookUPP()
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
 {
  *  setmenuitemtext()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         not available
  *    CarbonLib:        not available
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
@@ -22195,12 +22639,15 @@ function LMGetTheMenu: MenuID; external name '_LMGetTheMenu';
  *  DisposeMBarHookUPP()
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
 {
  *  getmenuitemtext()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
  *  
  *  Availability:
@@ -22260,10 +22707,13 @@ function LMGetTheMenu: MenuID; external name '_LMGetTheMenu';
 {
 >>>>>>> graemeg/cpstrnew
  *  InvokeMBarHookUPP()
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         not available
  *    CarbonLib:        not available
+<<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
 =======
 >>>>>>> origin/cpstrnew
@@ -22277,6 +22727,8 @@ implementation
 {$ifc TARGET_OS_MAC}
 {$ifc not TARGET_CPU_64}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
@@ -22456,7 +22908,10 @@ function SetMenuDefinition( menu: MenuRef; const (*var*) defSpec: MenuDefSpec ):
 
 
 implementation
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 
@@ -22478,6 +22933,7 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 {$endc} {TARGET_OS_MAC}
@@ -22489,3 +22945,7 @@ end.
 
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+
+end.
+>>>>>>> origin/fixes_2_2

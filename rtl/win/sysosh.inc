@@ -59,6 +59,7 @@ const
 {$endif WINCE}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function OleStrToString(source: PWideChar) : UnicodeString;inline;
 procedure OleStrToStrVar(source : PWideChar;var dest : UnicodeString);inline;
 procedure OleStrToStrVar(source : PWideChar;var dest : AnsiString);inline;
@@ -103,6 +104,11 @@ function OleStrToString(source: PWideChar) : ansistring;inline;
 procedure OleStrToStrVar(source : PWideChar;var dest : ansistring);inline;
 function StringToOleStr(const source : ansistring) : PWideChar;inline;
 >>>>>>> graemeg/fixes_2_2
+=======
+function OleStrToString(source: PWideChar) : ansistring;inline;
+procedure OleStrToStrVar(source : PWideChar;var dest : ansistring);inline;
+function StringToOleStr(const source : ansistring) : PWideChar;inline;
+>>>>>>> origin/fixes_2_2
 
 { package stuff }
 type
@@ -119,6 +125,7 @@ type
 var
   LibModuleList: PLibModule = nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifdef FPC_USE_WIN64_SEH}
 procedure _fpc_local_unwind(frame,target: Pointer);compilerproc;
@@ -129,3 +136,5 @@ function fpc_tls_add(addr: pointer):pointer;compilerproc;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

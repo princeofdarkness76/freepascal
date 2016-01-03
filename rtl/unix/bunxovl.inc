@@ -171,6 +171,7 @@ Begin
 End;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function  fpLstat   (const path: RawByteString; Info: pstat):cint; inline;
 var
   SystemPath: RawByteString;
@@ -182,6 +183,11 @@ Function  fpLstat   (path: Ansistring; Info: pstat):cint; inline;
 begin
   fplstat:=fplstat(pchar(path), info);
 >>>>>>> graemeg/fixes_2_2
+=======
+Function  fpLstat   (path: Ansistring; Info: pstat):cint; inline;
+begin
+  fplstat:=fplstat(pchar(path), info);
+>>>>>>> origin/fixes_2_2
 end;
 
 Function  fpLstat   (path:pchar;var Info:stat):cint; inline;
@@ -191,8 +197,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function  fpLstat   (const Filename: RawByteString;var Info:stat):cint; inline;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function  fpLstat   (Filename: ansistring;var Info:stat):cint; inline;
 
 begin

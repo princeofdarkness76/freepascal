@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 2000-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -42,6 +43,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  * Copyright (c) 2000-2002 Apple Computer, Inc.
  * All rights reserved.
  }
@@ -52,7 +55,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -62,12 +68,17 @@
 unit CGPattern;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -81,14 +92,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -97,11 +113,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -139,6 +158,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -146,6 +167,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -360,6 +382,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -368,7 +392,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -395,9 +422,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -409,10 +440,13 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CGGeometry,CGAffineTransforms,CGBase,CGContext;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -420,6 +454,7 @@ uses MacTypes,CFBase,CGGeometry,CGAffineTransforms,CGBase,CGContext;
 
 
 { kCGPatternTilingNoDistortion: The pattern cell is not distorted when
+<<<<<<< HEAD
 <<<<<<< HEAD
    painted, however the spacing between pattern cells may vary by as much as
    1 device pixel.
@@ -433,6 +468,8 @@ uses MacTypes,CFBase,CGGeometry,CGAffineTransforms,CGBase,CGContext;
    pattern cell may be distorted additionally to permit a more efficient
    implementation. }
 =======
+=======
+>>>>>>> origin/fixes_2_2
  * painted, however the spacing between pattern cells may vary by as much
  * as 1 device pixel.
  *
@@ -444,7 +481,10 @@ uses MacTypes,CFBase,CGGeometry,CGAffineTransforms,CGBase,CGContext;
  * as with kCGPatternTilingConstantSpacingMinimalDistortion, however the
  * pattern cell may be distorted additionally to permit a more efficient
  * implementation. }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	CGPatternTiling = SInt32;
@@ -453,6 +493,7 @@ const
 	kCGPatternTilingConstantSpacingMinimalDistortion = 1;
 	kCGPatternTilingConstantSpacing = 2;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { The drawing of the pattern is delegated to the callbacks. The callbacks
    may be called one or many times to draw the pattern.
@@ -466,6 +507,8 @@ const
 type
 	CGPatternDrawPatternCallback = procedure( info: UnivPtr; c: CGContextRef );
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 { The drawing of the pattern is delegated to the callbacks.  The callbacks
  * may be called one or many times to draw the pattern.
@@ -482,7 +525,10 @@ type
 type
 	CGPatternDrawPatternCallback = procedure( info: UnivPtr; c: CGContextRef );
 type
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	CGPatternReleaseInfoCallback = procedure( info: UnivPtr );
 
 type
@@ -490,17 +536,21 @@ type
 	CGPatternCallbacks = record
 		version: UInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc TARGET_CPU_64}
 		__alignment_dummy: UInt32;
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		drawPattern: CGPatternDrawPatternCallback;
 		releaseInfo: CGPatternReleaseInfoCallback;
 	end;
 
 { Return the CFTypeID for CGPatternRefs. }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function CGPatternGetTypeID: CFTypeID; external name '_CGPatternGetTypeID';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
@@ -543,6 +593,8 @@ procedure CGPatternRelease( pattern: CGPatternRef ); external name '_CGPatternRe
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function CGPatternGetTypeID: CFTypeID; external name '_CGPatternGetTypeID'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 { Create a pattern. }
@@ -561,4 +613,7 @@ procedure CGPatternRelease( pattern: CGPatternRef ); external name '_CGPatternRe
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 function BoxTest(x, y, z, width, height, depth: v16): cint; cdecl; external;
 
@@ -6,6 +7,8 @@ function BoxTestf(x, y, z, width, height, depth: cfloat): cint; cdecl; external;
 
 procedure BoxTest_Asynch(x, y, z, width, height, depth: v16); cdecl; external;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: boxtest.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -53,7 +56,10 @@ function BoxTest(x, y, z, width, height, depth: {v16}cuint16): cint; cdecl; exte
 function BoxTestf(x, y, z, width, height, depth: cfloat): cint; cdecl; external;
 
 procedure BoxTest_Asynch(x, y, z, width, height, depth: {v16}cuint16); cdecl; external;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure BoxTestf_Asynch(x, y, z, width, height, depth: cfloat); cdecl; external;
 

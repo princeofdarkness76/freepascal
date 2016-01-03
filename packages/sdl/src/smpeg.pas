@@ -135,12 +135,16 @@ uses
   gpc,
 {$ENDIF}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF MORPHOS}
   exec,
 {$ENDIF}
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
   sdl;
 
 const
@@ -161,12 +165,15 @@ const
 {$ENDIF}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF MORPHOS}
   SmpegLibName = 'smpeg.library';
 {$ENDIF}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 //------------------------------------------------------------------------------
 // MPEGFilter.h
 //------------------------------------------------------------------------------
@@ -209,10 +216,13 @@ type
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFNDEF MORPHOS}
 {* This part is a bit confusing in PowerSDL includes, fix later. KB *}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { The null filter (default). It simply copies the source rectangle to the video overlay. }
 function SMPEGfilter_null: PSMPEG_Filter;
 cdecl; external {$IFDEF __GPC__}name 'SMPEGfilter_null'{$ELSE} SmpegLibName{$ENDIF __GPC__};
@@ -225,9 +235,12 @@ cdecl; external {$IFDEF __GPC__}name 'SMPEGfilter_bilinear'{$ELSE} SmpegLibName{
 function SMPEGfilter_deblocking: PSMPEG_Filter;
 cdecl; external {$IFDEF __GPC__}name 'SMPEGfilter_deblocking'{$ELSE} SmpegLibName{$ENDIF __GPC__};
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 //------------------------------------------------------------------------------
 // SMPEG.h
@@ -292,11 +305,14 @@ type
   {$ENDIF}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF MORPHOS}
 {$INCLUDE powersdl_smpeg.inc}
 {$ELSE MORPHOS}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Create a new SMPEG object from an MPEG file.
   On return, if 'info' is not NULL, it will be filled with information
@@ -363,10 +379,15 @@ procedure SMPEG_scale(mpeg: PSMPEG; scale: Integer);
 cdecl; external {$IFDEF __GPC__}name 'SMPEG_scale'{$ELSE} SmpegLibName{$ENDIF __GPC__};
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 procedure SMPEG_Double(mpeg : PSMPEG; doubleit : Boolean );
 
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure SMPEG_Double(mpeg : PSMPEG; doubleit : Boolean );
+
+>>>>>>> origin/fixes_2_2
 { Move the video display area within the destination surface }
 procedure SMPEG_move(mpeg: PSMPEG; x, y: Integer);
 cdecl; external {$IFDEF __GPC__}name 'SMPEG_move'{$ELSE} SmpegLibName{$ENDIF __GPC__};
@@ -439,19 +460,25 @@ procedure SMPEG_actualSpec(mpeg: PSMPEG; spec: PSDL_AudioSpec);
 cdecl; external {$IFDEF __GPC__}name 'SMPEG_actualSpec'{$ELSE} SmpegLibName{$ENDIF __GPC__};
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF MORPHOS}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { This macro can be used to fill a version structure with the compile-time
   version of the SDL library. }
 procedure SMPEG_GETVERSION( var X : TSMPEG_version );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SMPEG_Double(mpeg : PSMPEG; doubleit : Boolean );
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 implementation
 
 {$IFDEF __GPC__}

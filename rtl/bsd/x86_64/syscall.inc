@@ -320,7 +320,10 @@ asm
   jge .LSyscOK            { branch to exit if ok, errorhandler otherwise}
 
  movq  %rax,%rdx
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC_PIC}
   movq  fpc_threadvar_relocate_proc@GOTPCREL(%rip),%rax
   movq  (%rax),%rax
@@ -346,6 +349,7 @@ asm
 
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function fp_sysCall(sysnr,param1,param2,param3,param4,param5,param6,param7 : TSysParam):TSysResult; assembler;[public,alias:'FPC_DOSYS7'];
 
@@ -370,6 +374,44 @@ asm
 =======
 //                    edi   esi   edx 	 ecx    r8      r9   stack
 function fp_sysCall(sysnr,param1,param2,param3,param4,param5,param6 : TSysParam):TSysResult; assembler;[public,alias:'FPC__DOSYS'];
+=======
+//                    edi   esi   edx 	 ecx    r8      r9   stack
+function fp_sysCall(sysnr,param1,param2,param3,param4,param5,param6 : TSysParam):TSysResult; assembler;[public,alias:'FPC__DOSYS'];
+
+asm
+  sub    $0x18,%rsp
+  movq   param6,%rax	// from caller stack to mine.	
+  movq   %rax,0x8(%rsp)
+  movl   $0, 0(%rsp)    // dummy or caller frame because ?
+  mov    $0xc6,%rax	// __syscall
+  mov    %rcx,%r10
+  syscall                 { Do the system call. }
+  jge .LSyscOK            { branch to exit if ok, errorhandler otherwise}
+  movq  %rax,%rdx
+{$ifdef FPC_PIC}
+  movq  fpc_threadvar_relocate_proc@GOTPCREL(%rip),%rax
+  movq  (%rax),%rax
+  movq  Errno@GOTPCREL(%rip),%r11
+{$else FPC_PIC}
+  movq  fpc_threadvar_relocate_proc,%rax
+  leaq  Errno,%r11
+{$endif FPC_PIC}
+  testq %rax,%rax
+  jne   .LThread
+  movl  %edx,8(%r11)
+  jmp   .LNoThread
+.LThread:
+  pushq %rdx
+  movq  (%r11),%rdi
+  call  *%rax
+  popq  %rdx
+  movl  %edx,(%rax)
+.LNoThread:
+  movq  $-1,%rax
+.LSyscOK:
+  add    $0x18,%rsp
+end;
+>>>>>>> origin/fixes_2_2
 
 asm
   sub    $0x18,%rsp

@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2000, 2001, 2003-2009 Apple Inc. All rights reserved.
 =======
  * Copyright (c) 2000, 2001, 2003-2008 Apple Inc. All rights reserved.
@@ -20,6 +21,9 @@
 =======
  * Copyright (c) 2000-2003 Apple Computer, Inc. All rights reserved.
 >>>>>>> graemeg/fixes_2_2
+=======
+ * Copyright (c) 2000-2003 Apple Computer, Inc. All rights reserved.
+>>>>>>> origin/fixes_2_2
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -32,6 +36,7 @@
  * 
  * The Original Code and all software distributed under the License are
 <<<<<<< HEAD
+<<<<<<< HEAD
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
@@ -40,12 +45,18 @@
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES of MERCHANTABILITY,
 >>>>>>> graemeg/fixes_2_2
+=======
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY of ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES of MERCHANTABILITY,
+>>>>>>> origin/fixes_2_2
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
  * 
  * @APPLE_LICENSE_HEADER_END@
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
@@ -72,6 +83,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 
 
@@ -81,7 +94,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -91,12 +107,17 @@
 unit SCNetwork;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -110,14 +131,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -126,11 +152,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -168,6 +197,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -175,6 +206,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -396,6 +428,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -404,7 +438,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -431,9 +468,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -444,6 +485,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,MacOSXPosix;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -476,6 +518,8 @@ uses MacTypes,CFBase,MacOSXPosix;
 		computer.  Note that reachability does <i>not</i> guarantee
 		that the data packet will actually be received by the host.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN MAC68K}
 
 {!
@@ -502,12 +546,16 @@ uses MacTypes,CFBase,MacOSXPosix;
 	immediately rather than waiting until its timeout has expired.
 	The utility of this API is to allow the caller to give a hint to
 	the system that the network infrastructure/configuration has changed.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  }
 
 {!
 	@enum SCNetworkConnectionFlags
 	@discussion Flags that indicate whether the specified network
+<<<<<<< HEAD
 <<<<<<< HEAD
 		nodename or address is reachable, whether a connection is
 		required, and whether some user intervention may be required
@@ -574,6 +622,8 @@ type
 { until the __IPHONE_NA are automatically translated }
 {$ifc TARGET_OS_MAC}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		nodename/address is reachable, requires a connection,
 		requires some user intervention in establishing the
 		connection, and whether the calling application must
@@ -630,12 +680,16 @@ const
 	kSCNetworkFlagsInterventionRequired	= 1 shl 4;
 	kSCNetworkFlagsIsLocalAddress		= 1 shl 16;
 	kSCNetworkFlagsIsDirect			= 1 shl 17;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {!
 	@function SCNetworkCheckReachabilityByAddress
 	@discussion Determines if the given network address is
 		reachable using the current network configuration.
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 		Note: this API has been deprecated but you can
@@ -651,11 +705,14 @@ const
 </pre>
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	@param address The network address of the desired host.
 	@param addrlen The length, in bytes, of the address.
 	@param flags A pointer to memory that will be filled with a
 		set of SCNetworkConnectionFlags detailing the reachability
 		of the specified address.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@result Returns TRUE if the network connection flags are valid;
 		FALSE if the status could not be determined.
@@ -712,6 +769,8 @@ function SCNetworkCheckReachabilityByName( nodename: ConstCStringPtr; var flags:
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@result TRUE if the network connection flags are valid; FALSE if the
 		status could not be determined.
  }
@@ -730,12 +789,16 @@ function SCNetworkCheckReachabilityByAddress( address: sockaddr_ptr; addrlen: SI
 		status could not be determined.
  }
 function SCNetworkCheckReachabilityByName( nodename: CStringPtr; var flags: SCNetworkConnectionFlags ): Boolean; external name '_SCNetworkCheckReachabilityByName';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {!
 	@function SCNetworkInterfaceRefreshConfiguration
 	@discussion Sends a notification to interested configuration agents
 		to have them immediately retry their configuration over a
 		particular network interface.
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 		Note: This function must be invoked by root (uid == 0).
@@ -753,6 +816,8 @@ function SCNetworkInterfaceRefreshConfiguration( ifName: CFStringRef ): Boolean;
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		Note: This API must be invoked by root (uid == 0).
 
 	@param ifName The BSD name of the network interface e.g. CFSTR("en0").
@@ -761,4 +826,7 @@ end.
 function SCNetworkInterfaceRefreshConfiguration( ifName: CFStringRef ): Boolean; external name '_SCNetworkInterfaceRefreshConfiguration';
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

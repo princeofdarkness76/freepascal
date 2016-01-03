@@ -1681,6 +1681,7 @@ end;
 procedure TLinearWriter.WriteEndDocument;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   // do nothing
 end;
 
@@ -1755,5 +1756,9 @@ end;
 end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+end;
+
+>>>>>>> origin/fixes_2_2
 end.
 

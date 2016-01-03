@@ -1,10 +1,14 @@
 { Utility routines for HTTP server component
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   Copyright (C) 2006-2008 by Micha Nelissen
 =======
   Copyright (C) 2006-2007 Micha Nelissen
 >>>>>>> graemeg/fixes_2_2
+=======
+  Copyright (C) 2006-2007 Micha Nelissen
+>>>>>>> origin/fixes_2_2
 
   This library is Free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -56,10 +60,14 @@ type
   function HexToNum(AChar: char): byte;
   
 <<<<<<< HEAD
+<<<<<<< HEAD
   function DecomposeURL(const URL: string; out Host, URI: string; out Port: Word): Boolean;
 =======
   procedure DecomposeURL(const URL: string; out Host, URI: string; out Port: Word);
 >>>>>>> graemeg/fixes_2_2
+=======
+  procedure DecomposeURL(const URL: string; out Host, URI: string; out Port: Word);
+>>>>>>> origin/fixes_2_2
   function ComposeURL(Host, URI: string; const Port: Word): string;
 
 implementation
@@ -241,6 +249,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function DecomposeURL(const URL: string; out Host, URI: string; out Port: Word): Boolean;
 var
   n: Integer;
@@ -283,6 +292,8 @@ begin
     Port := 0;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure DecomposeURL(const URL: string; out Host, URI: string; out Port: Word);
 var
   index: Integer;
@@ -298,17 +309,24 @@ begin
     SetLength(Host, index-1);
   end else
     Port := 80;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function ComposeURL(Host, URI: string; const Port: Word): string;
 begin
   Host := Trim(Host);
 <<<<<<< HEAD
+<<<<<<< HEAD
   URI := StringReplace(Trim(URI), '%20', ' ', [rfReplaceAll]);
 =======
   URI := Trim(URI);
 >>>>>>> graemeg/fixes_2_2
+=======
+  URI := Trim(URI);
+>>>>>>> origin/fixes_2_2
 
   if (Pos('http://', Host) <> 1)
   and (Pos('https://', Host) <> 1) then

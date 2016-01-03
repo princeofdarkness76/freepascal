@@ -46,10 +46,14 @@ unit cpupi;
       cutils,
       systems,globals,globtype,
 <<<<<<< HEAD
+<<<<<<< HEAD
       cgobj,tgobj,paramgr,
 =======
       cgobj,tgobj,
 >>>>>>> graemeg/fixes_2_2
+=======
+      cgobj,tgobj,
+>>>>>>> origin/fixes_2_2
       cpubase,
       cgutils,
       symconst;
@@ -120,6 +124,7 @@ unit cpupi;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (cs_create_pic in current_settings.moduleswitches) then
 =======
 =======
@@ -135,6 +140,10 @@ unit cpupi;
         if (target_info.system = system_i386_darwin) and
            (cs_create_pic in current_settings.moduleswitches) then
 >>>>>>> graemeg/fixes_2_2
+=======
+        if (target_info.system = system_i386_darwin) and
+           (cs_create_pic in current_settings.moduleswitches) then
+>>>>>>> origin/fixes_2_2
           begin
             got := cg.getaddressregister(list);
           end;

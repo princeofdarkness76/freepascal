@@ -25,7 +25,15 @@ begin
   Raise EVariantError.CreateCode(VAR_TYPEMISMATCH);
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure VariantTypeMismatch; overload;
+begin
+  Raise EVariantError.CreateCode(VAR_TYPEMISMATCH);
+end;
+
+>>>>>>> origin/fixes_2_2
 Procedure VariantTypeMismatch(const SourceType, DestType: TVarType);
 begin
   { ignore the types for now ... }
@@ -67,6 +75,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function UStrToSmallInt(p: Pointer): SmallInt;
 var
   Error: Word;
@@ -90,6 +99,14 @@ begin
   end; {$ENDIF}
 
 >>>>>>> graemeg/fixes_2_2
+=======
+Function VariantToSmallInt(const VargSrc : TVarData) : SmallInt;
+begin
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  DumpVariant('VariantToSmallInt', VargSrc);
+  end; {$ENDIF}
+
+>>>>>>> origin/fixes_2_2
   with VargSrc do
     case vType and not varTypeMask of
       0: case vType of
@@ -98,6 +115,7 @@ begin
         varShortInt : Result := vShortInt;
         varInteger  : Result := smallint(vInteger);
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
         varSingle   : Result := smallint(Round(vSingle));
         varDouble   : Result := smallint(Round(vDouble));
@@ -105,11 +123,16 @@ begin
 {$endif}
         varCurrency : Result := smallint(Round(vCurrency));
 =======
+=======
+>>>>>>> origin/fixes_2_2
         varSingle   : Result := smallint(Round(vSingle));
         varDouble   : Result := smallint(Round(vDouble));
         varCurrency : Result := smallint(Round(vCurrency));
         varDate     : Result := smallint(Round(vDate));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         varBoolean  : Result := smallint(SmallInt(vBoolean));
         varVariant  : Result := VariantToSmallInt(PVarData(vPointer)^);
         varByte     : Result := vByte;
@@ -119,6 +142,7 @@ begin
         varQword    : Result := smallint(vQWord);
         varOleStr   : Result := WStrToSmallInt(vOleStr);
         varString   : Result := LStrToSmallInt(vString);
+<<<<<<< HEAD
 <<<<<<< HEAD
         varUString  : Result := UStrToSmallInt(vString);
       else
@@ -135,6 +159,8 @@ begin
 {$endif}
         varCurrency : Result := smallint(Round(PCurrency(vPointer)^));
 =======
+=======
+>>>>>>> origin/fixes_2_2
       else
         VariantTypeMismatch(vType, varSmallInt);
       end;
@@ -146,7 +172,10 @@ begin
         varDouble   : Result := smallint(Round(PDouble(vPointer)^));
         varCurrency : Result := smallint(Round(PCurrency(vPointer)^));
         varDate     : Result := smallint(Round(PDate(vPointer)^));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         varBoolean  : Result := SmallInt(PWordBool(vPointer)^);
         varVariant  : Result := VariantToSmallInt(PVarData(vPointer)^);
         varByte     : Result := PByte(vPointer)^;
@@ -157,9 +186,12 @@ begin
         varOleStr   : Result := WStrToSmallInt(PPointer(vPointer)^);
         varString   : Result := LStrToSmallInt(PPointer(vPointer)^);
 <<<<<<< HEAD
+<<<<<<< HEAD
         varUString  : Result := UStrToSmallInt(PPointer(vPointer)^);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       else { other vtype }
         VariantTypeMismatch(vType, varSmallInt);
       end else { pointer is nil }
@@ -172,6 +204,7 @@ begin
   WriteLn('VariantToSmallInt -> ', Result);
   end; {$ENDIF}
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {--- ShortInt ---}
@@ -326,11 +359,27 @@ begin
 end;
 
 Function LStrToLongInt(p: Pointer) : LongInt;
+=======
+
+{--- ShortInt ---}
+
+Function WStrToShortInt(p: Pointer) : ShortInt;
+var
+  Error : Word;
+begin
+  Val(WideString(p), Result, Error);
+  if Error <> 0 then
+    VariantTypeMismatch(varOleStr, varShortInt);
+end;
+
+Function LStrToShortInt(p: Pointer) : ShortInt;
+>>>>>>> origin/fixes_2_2
 var
   Error : Word;
 begin
   Val(AnsiString(p), Result, Error);
   if Error <> 0 then
+<<<<<<< HEAD
     VariantTypeMismatch(varString, varInteger);
 end;
 
@@ -350,12 +399,22 @@ Function VariantToLongInt(const VargSrc : TVarData) : LongInt;
 begin
   {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
   DumpVariant('VariantToLongInt', VargSrc);
+=======
+    VariantTypeMismatch(varString, varShortInt);
+end;
+
+Function VariantToShortInt(const VargSrc : TVarData) : ShortInt;
+begin
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  DumpVariant('VariantToShortInt', VargSrc);
+>>>>>>> origin/fixes_2_2
   end; {$ENDIF}
 
   with VargSrc do
     case vType and not varTypeMask of
       0: case vType of
         varEmpty    : Result := 0;
+<<<<<<< HEAD
         varSmallInt : Result := vSmallInt;
         varShortInt : Result := vShortInt;
         varInteger  : Result := vInteger;
@@ -439,20 +498,82 @@ end;
 <<<<<<< HEAD
 
 Function WStrToCardinal(p: Pointer) : Cardinal;
+=======
+        varSmallInt : Result := shortint(vSmallInt);
+        varShortInt : Result := vShortInt;
+        varInteger  : Result := shortint(vInteger);
+        varSingle   : Result := shortint(Round(vSingle));
+        varDouble   : Result := shortint(Round(vDouble));
+        varCurrency : Result := shortint(Round(vCurrency));
+        varDate     : Result := shortint(Round(vDate));
+        varBoolean  : Result := SmallInt(vBoolean);
+        varVariant  : Result := VariantToShortInt(PVarData(vPointer)^);
+        varByte     : Result := shortint(vByte);
+        varWord     : Result := shortint(vWord);
+        varLongWord : Result := shortint(vLongWord);
+        varInt64    : Result := shortint(vInt64);
+        varQword    : Result := shortint(vQWord);
+        varOleStr   : Result := WStrToShortInt(vOleStr);
+        varString   : Result := LStrToShortInt(vString);
+      else
+        VariantTypeMismatch(vType, varShortInt);
+      end;
+      varByRef: if Assigned(vPointer) then case vType of
+        varSmallInt : Result := shortint(PSmallInt(vPointer)^);
+        varShortInt : Result := PShortInt(vPointer)^;
+        varInteger  : Result := shortint(PInteger(vPointer)^);
+        varSingle   : Result := shortint(Round(PSingle(vPointer)^));
+        varDouble   : Result := shortint(Round(PDouble(vPointer)^));
+        varCurrency : Result := shortint(Round(PCurrency(vPointer)^));
+        varDate     : Result := shortint(Round(PDate(vPointer)^));
+        varBoolean  : Result := SmallInt(PWordBool(vPointer)^);
+        varVariant  : Result := VariantToShortInt(PVarData(vPointer)^);
+        varByte     : Result := shortint(PByte(vPointer)^);
+        varWord     : Result := shortint(PWord(vPointer)^);
+        varLongWord : Result := shortint(PLongWord(vPointer)^);
+        varInt64    : Result := shortint(PInt64(vPointer)^);
+        varQword    : Result := shortint(PQWord(vPointer)^);
+        varOleStr   : Result := WStrToShortInt(PPointer(vPointer)^);
+        varString   : Result := LStrToShortInt(PPointer(vPointer)^);
+      else { other vtype }
+        VariantTypeMismatch(vType, varShortInt);
+      end else { pointer is nil }
+        VariantTypeMismatch(vType, varShortInt);
+    else { array or something like that }
+      VariantTypeMismatch(vType, varShortInt);
+    end;
+
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  WriteLn('VariantToShortInt -> ', Result);
+  end; {$ENDIF}
+end;
+
+{--- LongInt ---}
+
+Function WStrToLongInt(p: Pointer) : LongInt;
+>>>>>>> origin/fixes_2_2
 var
   Error : Word;
 begin
   Val(WideString(p), Result, Error);
   if Error <> 0 then
+<<<<<<< HEAD
     VariantTypeMismatch(varOleStr, varLongWord);
 end;
 
 Function LStrToCardinal(p: Pointer) : Cardinal;
+=======
+    VariantTypeMismatch(varOleStr, varInteger);
+end;
+
+Function LStrToLongInt(p: Pointer) : LongInt;
+>>>>>>> origin/fixes_2_2
 var
   Error : Word;
 begin
   Val(AnsiString(p), Result, Error);
   if Error <> 0 then
+<<<<<<< HEAD
     VariantTypeMismatch(varString, varLongWord);
 end;
 
@@ -498,12 +619,24 @@ begin
   end; {$ENDIF}
 
 >>>>>>> graemeg/fixes_2_2
+=======
+    VariantTypeMismatch(varString, varInteger);
+end;
+
+Function VariantToLongInt(const VargSrc : TVarData) : LongInt;
+begin
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  DumpVariant('VariantToLongInt', VargSrc);
+  end; {$ENDIF}
+
+>>>>>>> origin/fixes_2_2
   with VargSrc do
     case vType and not varTypeMask of
       0: case vType of
         varEmpty    : Result := 0;
         varSmallInt : Result := vSmallInt;
         varShortInt : Result := vShortInt;
+<<<<<<< HEAD
         varInteger  : Result := cardinal(vInteger);
 <<<<<<< HEAD
 {$ifndef FPUNONE}
@@ -737,35 +870,198 @@ end;
 {--- Double ---}
 
 Function WStrToDouble(p: Pointer) : Double;
+=======
+        varInteger  : Result := vInteger;
+        varSingle   : Result := longint(Round(vSingle));
+        varDouble   : Result := longint(Round(vDouble));
+        varCurrency : Result := longint(Round(vCurrency));
+        varDate     : Result := longint(Round(vDate));
+        varBoolean  : Result := SmallInt(vBoolean);
+        varVariant  : Result := VariantToLongInt(PVarData(vPointer)^);
+        varByte     : Result := vByte;
+        varWord     : Result := vWord;
+        varLongWord : Result := longint(vLongWord);
+        varInt64    : Result := longint(vInt64);
+        varQword    : Result := longint(vQWord);
+        varOleStr   : Result := WStrToLongInt(vOleStr);
+        varString   : Result := LStrToLongInt(vString);
+      else
+        VariantTypeMismatch(vType, varInteger);
+      end;
+      varByRef: if Assigned(vPointer) then case vType of
+        varSmallInt : Result := PSmallInt(vPointer)^;
+        varShortInt : Result := PShortInt(vPointer)^;
+        varInteger  : Result := PInteger(vPointer)^;
+        varSingle   : Result := longint(Round(PSingle(vPointer)^));
+        varDouble   : Result := longint(Round(PDouble(vPointer)^));
+        varCurrency : Result := longint(Round(PCurrency(vPointer)^));
+        varDate     : Result := longint(Round(PDate(vPointer)^));
+        varBoolean  : Result := SmallInt(PWordBool(vPointer)^);
+        varVariant  : Result := VariantToLongInt(PVarData(vPointer)^);
+        varByte     : Result := PByte(vPointer)^;
+        varWord     : Result := PWord(vPointer)^;
+        varLongWord : Result := longint(PLongWord(vPointer)^);
+        varInt64    : Result := longint(PInt64(vPointer)^);
+        varQword    : Result := longint(PQWord(vPointer)^);
+        varOleStr   : Result := WStrToLongInt(PPointer(vPointer)^);
+        varString   : Result := LStrToLongInt(PPointer(vPointer)^);
+      else { other vtype }
+        VariantTypeMismatch(vType, varInteger);
+      end else { pointer is nil }
+        VariantTypeMismatch(vType, varInteger);
+    else { array or something like that }
+      VariantTypeMismatch(vType, varInteger);
+    end;
+
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  WriteLn('VariantToLongInt -> ', Result);
+  end; {$ENDIF}
+end;
+
+{--- Cardinal ---}
+
+Function WStrToCardinal(p: Pointer) : Cardinal;
+var
+  Error : Word;
+begin
+  Val(WideString(p), Result, Error);
+  if Error <> 0 then
+    VariantTypeMismatch(varOleStr, varLongWord);
+end;
+
+Function LStrToCardinal(p: Pointer) : Cardinal;
+var
+  Error : Word;
+begin
+  Val(AnsiString(p), Result, Error);
+  if Error <> 0 then
+    VariantTypeMismatch(varString, varLongWord);
+end;
+
+Function VariantToCardinal(const VargSrc : TVarData) : Cardinal;
+begin
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  DumpVariant('VariantToCardinal', VargSrc);
+  end; {$ENDIF}
+
+  with VargSrc do
+    case vType and not varTypeMask of
+      0: case vType of
+        varEmpty    : Result := 0;
+        varSmallInt : Result := vSmallInt;
+        varShortInt : Result := vShortInt;
+        varInteger  : Result := cardinal(vInteger);
+        varSingle   : Result := cardinal(Round(vSingle));
+        varDouble   : Result := cardinal(Round(vDouble));
+        varCurrency : Result := cardinal(Round(vCurrency));
+        varDate     : Result := cardinal(Round(vDate));
+        varBoolean  : Result := SmallInt(vBoolean);
+        varVariant  : Result := VariantToCardinal(PVarData(vPointer)^);
+        varByte     : Result := vByte;
+        varWord     : Result := vWord;
+        varLongWord : Result := vLongWord;
+        varInt64    : Result := cardinal(vInt64);
+        varQword    : Result := cardinal(vQWord);
+        varOleStr   : Result := WStrToCardinal(vOleStr);
+        varString   : Result := LStrToCardinal(vString);
+      else
+        VariantTypeMismatch(vType, varLongWord);
+      end;
+      varByRef: if Assigned(vPointer) then case vType of
+        varSmallInt : Result := cardinal(PSmallInt(vPointer)^);
+        varShortInt : Result := cardinal(PShortInt(vPointer)^);
+        varInteger  : Result := cardinal(PInteger(vPointer)^);
+        varSingle   : Result := cardinal(Round(PSingle(vPointer)^));
+        varDouble   : Result := cardinal(Round(PDouble(vPointer)^));
+        varCurrency : Result := cardinal(Round(PCurrency(vPointer)^));
+        varDate     : Result := cardinal(Round(PDate(vPointer)^));
+        varBoolean  : Result := SmallInt(PWordBool(vPointer)^);
+        varVariant  : Result := VariantToCardinal(PVarData(vPointer)^);
+        varByte     : Result := PByte(vPointer)^;
+        varWord     : Result := PWord(vPointer)^;
+        varLongWord : Result := PLongWord(vPointer)^;
+        varInt64    : Result := cardinal(PInt64(vPointer)^);
+        varQword    : Result := cardinal(PQWord(vPointer)^);
+        varOleStr   : Result := WStrToCardinal(PPointer(vPointer)^);
+        varString   : Result := LStrToCardinal(PPointer(vPointer)^);
+      else { other vtype }
+        VariantTypeMismatch(vType, varLongWord);
+      end else { pointer is nil }
+        VariantTypeMismatch(vType, varLongWord);
+    else { array or something like that }
+      VariantTypeMismatch(vType, varLongWord);
+    end;
+
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  WriteLn('VariantToCardinal -> ', Result);
+  end; {$ENDIF}
+end;
+
+procedure PrepareFloatStr(var s: ShortString);
+var
+  i, j  : Byte;
+begin
+  j := 1;
+  for i := 1 to Length(s) do
+    if s[i] <> ThousandSeparator then begin
+      if s[i] = DecimalSeparator then
+        s[j] := '.'
+      else
+        s[j] := s[i];
+      Inc(j);
+    end;
+  SetLength(s, Pred(j));
+end;
+
+{--- Single ---}
+
+Function WStrToSingle(p: Pointer) : Single;
+>>>>>>> origin/fixes_2_2
 var
   s     : ShortString;
   Error : Word;
 begin
   if Length(WideString(p)) > 255 then
+<<<<<<< HEAD
     VariantTypeMismatch(varOleStr, varDouble);
+=======
+    VariantTypeMismatch(varOleStr, varSingle);
+>>>>>>> origin/fixes_2_2
 
   s := WideString(p);
   PrepareFloatStr(s);
 
   Val(s, Result, Error);
   if Error <> 0 then
+<<<<<<< HEAD
     VariantTypeMismatch(varOleStr, varDouble);
 <<<<<<< HEAD
 end;
 
 Function LStrToDouble(p: Pointer) : Double;
+=======
+    VariantTypeMismatch(varOleStr, varSingle);
+end;
+
+Function LStrToSingle(p: Pointer) : Single;
+>>>>>>> origin/fixes_2_2
 var
   s     : ShortString;
   Error : Word;
 begin
   if Length(AnsiString(p)) > 255 then
+<<<<<<< HEAD
     VariantTypeMismatch(varString, varDouble);
+=======
+    VariantTypeMismatch(varString, varSingle);
+>>>>>>> origin/fixes_2_2
 
   s := AnsiString(p);
   PrepareFloatStr(s);
 
   Val(s, Result, Error);
   if Error <> 0 then
+<<<<<<< HEAD
     VariantTypeMismatch(varString, varDouble);
 end;
 
@@ -789,6 +1085,15 @@ Function VariantToDouble(const VargSrc : TVarData) : Double;
 begin
   {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
   DumpVariant('VariantToDouble', VargSrc);
+=======
+    VariantTypeMismatch(varString, varSingle);
+end;
+
+Function VariantToSingle(const VargSrc : TVarData) : Single;
+begin
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  DumpVariant('VariantToSingle', VargSrc);
+>>>>>>> origin/fixes_2_2
   end; {$ENDIF}
 
   with VargSrc do
@@ -803,12 +1108,17 @@ begin
         varCurrency : Result := vCurrency;
         varDate     : Result := vDate;
         varBoolean  : Result := SmallInt(vBoolean);
+<<<<<<< HEAD
         varVariant  : Result := VariantToDouble(PVarData(vPointer)^);
+=======
+        varVariant  : Result := VariantToSingle(PVarData(vPointer)^);
+>>>>>>> origin/fixes_2_2
         varByte     : Result := vByte;
         varWord     : Result := vWord;
         varLongWord : Result := vLongWord;
         varInt64    : Result := vInt64;
         varQword    : Result := vQWord;
+<<<<<<< HEAD
         varOleStr   : Result := WStrToDouble(vOleStr);
         varString   : Result := LStrToDouble(vString);
         varUString  : Result := UStrToDouble(vString);
@@ -816,6 +1126,14 @@ begin
         VariantTypeMismatch(vType, varDouble);
       end;
       varByRef: if Assigned(vPointer) then case vType and varTypeMask of
+=======
+        varOleStr   : Result := WStrToSingle(vOleStr);
+        varString   : Result := LStrToSingle(vString);
+      else
+        VariantTypeMismatch(vType, varSingle);
+      end;
+      varByRef: if Assigned(vPointer) then case vType of
+>>>>>>> origin/fixes_2_2
         varSmallInt : Result := PSmallInt(vPointer)^;
         varShortInt : Result := PShortInt(vPointer)^;
         varInteger  : Result := PInteger(vPointer)^;
@@ -824,12 +1142,17 @@ begin
         varCurrency : Result := PCurrency(vPointer)^;
         varDate     : Result := PDate(vPointer)^;
         varBoolean  : Result := SmallInt(PWordBool(vPointer)^);
+<<<<<<< HEAD
         varVariant  : Result := VariantToDouble(PVarData(vPointer)^);
+=======
+        varVariant  : Result := VariantToSingle(PVarData(vPointer)^);
+>>>>>>> origin/fixes_2_2
         varByte     : Result := PByte(vPointer)^;
         varWord     : Result := PWord(vPointer)^;
         varLongWord : Result := PLongWord(vPointer)^;
         varInt64    : Result := PInt64(vPointer)^;
         varQword    : Result := PQWord(vPointer)^;
+<<<<<<< HEAD
         varOleStr   : Result := WStrToDouble(PPointer(vPointer)^);
         varString   : Result := LStrToDouble(PPointer(vPointer)^);
         varUString  : Result := UStrToDouble(PPointer(vPointer)^);
@@ -849,6 +1172,39 @@ end;
 {$endif FPUNONE}
 
 =======
+=======
+        varOleStr   : Result := WStrToSingle(PPointer(vPointer)^);
+        varString   : Result := LStrToSingle(PPointer(vPointer)^);
+      else { other vtype }
+        VariantTypeMismatch(vType, varSingle);
+      end else { pointer is nil }
+        VariantTypeMismatch(vType, varSingle);
+    else { array or something like that }
+      VariantTypeMismatch(vType, varSingle);
+    end;
+
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  WriteLn('VariantToSingle -> ', Result);
+  end; {$ENDIF}
+end;
+
+{--- Double ---}
+
+Function WStrToDouble(p: Pointer) : Double;
+var
+  s     : ShortString;
+  Error : Word;
+begin
+  if Length(WideString(p)) > 255 then
+    VariantTypeMismatch(varOleStr, varDouble);
+
+  s := WideString(p);
+  PrepareFloatStr(s);
+
+  Val(s, Result, Error);
+  if Error <> 0 then
+    VariantTypeMismatch(varOleStr, varDouble);
+>>>>>>> origin/fixes_2_2
 end;
 
 Function LStrToDouble(p: Pointer) : Double;
@@ -926,7 +1282,10 @@ begin
   end; {$ENDIF}
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {--- Currency ---}
 
 Function WStrToCurrency(p: Pointer) : Currency;
@@ -980,6 +1339,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function UStrToCurrency(p: Pointer) : Currency;
 var
   s     : ShortString;
@@ -1007,6 +1367,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Function VariantToCurrency(const VargSrc : TVarData) : Currency;
 begin
   {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
@@ -1021,9 +1383,12 @@ begin
         varShortInt : Result := vShortInt;
         varInteger  : Result := vInteger;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         varSingle   : begin
           if (vSingle > MaxCurrency) or (vSingle < MinCurrency) then
             VariantTypeMismatch(vType, varCurrency);
@@ -1035,6 +1400,7 @@ begin
           Result := vDouble;
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
         varDate     : begin
           if (vDate > MaxCurrency) or (vDate < MinCurrency) then
             VariantTypeMismatch(vType, varCurrency);
@@ -1043,13 +1409,18 @@ begin
 {$endif}
         varCurrency : Result := vCurrency;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         varCurrency : Result := vCurrency;
         varDate     : begin
           if (varDate > MaxCurrency) or (varDate < MinCurrency) then
             VariantTypeMismatch(vType, varCurrency);
           Result := vDate;
         end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         varBoolean  : Result := SmallInt(vBoolean);
         varVariant  : Result := VariantToCurrency(PVarData(vPointer)^);
         varByte     : Result := vByte;
@@ -1059,6 +1430,7 @@ begin
         varQword    : Result := currency(vQWord);
         varOleStr   : Result := WStrToCurrency(vOleStr);
         varString   : Result := LStrToCurrency(vString);
+<<<<<<< HEAD
 <<<<<<< HEAD
         varUString  : Result := UStrToCurrency(vString);
       else
@@ -1070,6 +1442,8 @@ begin
         varInteger  : Result := PInteger(vPointer)^;
 {$ifndef FPUNONE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
       else
         VariantTypeMismatch(vType, varCurrency);
       end;
@@ -1077,7 +1451,10 @@ begin
         varSmallInt : Result := PSmallInt(vPointer)^;
         varShortInt : Result := PShortInt(vPointer)^;
         varInteger  : Result := PInteger(vPointer)^;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         varSingle   : begin
           if (PSingle(vPointer)^ > MaxCurrency) or (PSingle(vPointer)^ < MinCurrency) then
             VariantTypeMismatch(vType, varCurrency);
@@ -1089,19 +1466,26 @@ begin
           Result := PDouble(vPointer)^;
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         varCurrency : Result := PCurrency(vPointer)^;
 >>>>>>> graemeg/fixes_2_2
+=======
+        varCurrency : Result := PCurrency(vPointer)^;
+>>>>>>> origin/fixes_2_2
         varDate     : begin
           if (PDate(vPointer)^ > MaxCurrency) or (PDate(vPointer)^ < MinCurrency) then
             VariantTypeMismatch(vType, varCurrency);
           Result := PDate(vPointer)^;
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
         varCurrency : Result := PCurrency(vPointer)^;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         varBoolean  : Result := SmallInt(PWordBool(vPointer)^);
         varVariant  : Result := VariantToCurrency(PVarData(vPointer)^);
         varByte     : Result := PByte(vPointer)^;
@@ -1112,9 +1496,12 @@ begin
         varOleStr   : Result := WStrToCurrency(PPointer(vPointer)^);
         varString   : Result := LStrToCurrency(PPointer(vPointer)^);
 <<<<<<< HEAD
+<<<<<<< HEAD
         varUString  : Result := UStrToCurrency(PPointer(vPointer)^);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       else { other vtype }
         VariantTypeMismatch(vType, varCurrency);
       end else { pointer is nil }
@@ -1131,10 +1518,13 @@ end;
 {--- Date ---}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Function WStrToDate(p: Pointer) : TDateTime;
 var
   s: string;
@@ -1142,17 +1532,24 @@ begin
   s := WideString(p);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not TryStrToDateTime(s, Result) then
 =======
   if not (TryStrToDateTime(s, Result) or
     TryStrToDate(s, Result) or
     TryStrToTime(s, Result)) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if not (TryStrToDateTime(s, Result) or
+    TryStrToDate(s, Result) or
+    TryStrToTime(s, Result)) then
+>>>>>>> origin/fixes_2_2
     VariantTypeMismatch(varOleStr, varDate);
 end;
 
 Function LStrToDate(p: Pointer) : TDateTime;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if not TryStrToDateTime(AnsiString(p), Result) then
     VariantTypeMismatch(varString, varDate);
@@ -1165,13 +1562,18 @@ begin
 end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if not (TryStrToDateTime(AnsiString(p), Result) or
     TryStrToDate(AnsiString(p), Result) or
     TryStrToTime(AnsiString(p), Result)) then
     VariantTypeMismatch(varString, varDate);
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Function VariantToDate(const VargSrc : TVarData) : TDateTime;
 begin
   {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
@@ -1199,17 +1601,23 @@ begin
         varOleStr   : Result := WStrToDate(vOleStr);
         varString   : Result := LStrToDate(vString);
 <<<<<<< HEAD
+<<<<<<< HEAD
         varUString  : Result := UStrToDate(vString);
       else
         VariantTypeMismatch(vType, varDate);
       end;
       varByRef: if Assigned(vPointer) then case vType and varTypeMask of
 =======
+=======
+>>>>>>> origin/fixes_2_2
       else
         VariantTypeMismatch(vType, varDate);
       end;
       varByRef: if Assigned(vPointer) then case vType of
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         varSmallInt : Result := PSmallInt(vPointer)^;
         varShortInt : Result := PShortInt(vPointer)^;
         varInteger  : Result := PInteger(vPointer)^;
@@ -1227,9 +1635,12 @@ begin
         varOleStr   : Result := WStrToDate(PPointer(vPointer)^);
         varString   : Result := LStrToDate(PPointer(vPointer)^);
 <<<<<<< HEAD
+<<<<<<< HEAD
         varUString  : Result := UStrToDate(PPointer(vPointer)^);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       else { other vtype }
         VariantTypeMismatch(vType, varDate);
       end else { pointer is nil }
@@ -1246,10 +1657,13 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {--- Boolean ---}
 
 Function WStrToBoolean(p: Pointer) : Boolean;
@@ -1265,6 +1679,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function UStrToBoolean(p: Pointer) : Boolean;
 begin
   if not TryStrToBool(UnicodeString(p), Result) then
@@ -1273,6 +1688,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Function VariantToBoolean(const VargSrc : TVarData) : Boolean;
 begin
   {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
@@ -1287,17 +1704,23 @@ begin
         varShortInt : Result := vShortInt <> 0;
         varInteger  : Result := vInteger <> 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         varSingle   : Result := vSingle <> 0;
         varDouble   : Result := vDouble <> 0;
         varCurrency : Result := vCurrency <> 0;
         varDate     : Result := vDate <> 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         varBoolean  : Result := vBoolean;
         varVariant  : Result := VariantToBoolean(PVarData(vPointer)^);
         varByte     : Result := vByte <> 0;
@@ -1307,6 +1730,7 @@ begin
         varQword    : Result := vQWord <> 0;
         varOleStr   : Result := WStrToBoolean(vOleStr);
         varString   : Result := LStrToBoolean(vString);
+<<<<<<< HEAD
 <<<<<<< HEAD
         varUString  : Result := UStrToBoolean(vString);
       else
@@ -1318,6 +1742,8 @@ begin
         varInteger  : Result := PInteger(vPointer)^ <> 0;
 {$ifndef FPUNONE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
       else
         VariantTypeMismatch(vType, varBoolean);
       end;
@@ -1325,15 +1751,21 @@ begin
         varSmallInt : Result := PSmallInt(vPointer)^ <> 0;
         varShortInt : Result := PShortInt(vPointer)^ <> 0;
         varInteger  : Result := PInteger(vPointer)^ <> 0;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         varSingle   : Result := PSingle(vPointer)^ <> 0;
         varDouble   : Result := PDouble(vPointer)^ <> 0;
         varCurrency : Result := PCurrency(vPointer)^ <> 0;
         varDate     : Result := PDate(vPointer)^ <> 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         varBoolean  : Result := SmallInt(PWordBool(vPointer)^) <> 0;
         varVariant  : Result := VariantToBoolean(PVarData(vPointer)^);
         varByte     : Result := PByte(vPointer)^ <> 0;
@@ -1344,9 +1776,12 @@ begin
         varOleStr   : Result := WStrToBoolean(PPointer(vPointer)^);
         varString   : Result := LStrToBoolean(PPointer(vPointer)^);
 <<<<<<< HEAD
+<<<<<<< HEAD
         varUString  : Result := UStrToBoolean(PPointer(vPointer)^);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       else { other vtype }
         VariantTypeMismatch(vType, varBoolean);
       end else { pointer is nil }
@@ -1354,6 +1789,18 @@ begin
     else { array or something like that }
       VariantTypeMismatch(vType, varBoolean);
 <<<<<<< HEAD
+<<<<<<< HEAD
+    end;
+
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  WriteLn('VariantToBoolean -> ', Result);
+  end; {$ENDIF}
+end;
+
+{--- Byte ---}
+
+Function WStrToByte(p: Pointer) : Byte;
+=======
     end;
 
   {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
@@ -1380,6 +1827,166 @@ var
 begin
   Val(WideString(p), Result, Error);
   if Error <> 0 then
+    VariantTypeMismatch(varOleStr, varByte);
+end;
+
+Function LStrToByte(p: Pointer) : Byte;
+var
+  Error : Word;
+begin
+  Val(AnsiString(p), Result, Error);
+  if Error <> 0 then
+    VariantTypeMismatch(varString, varByte);
+end;
+
+Function VariantToByte(const VargSrc : TVarData) : Byte;
+begin
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  DumpVariant('VariantToByte', VargSrc);
+  end; {$ENDIF}
+
+  with VargSrc do
+    case vType and not varTypeMask of
+      0: case vType of
+        varEmpty    : Result := 0;
+        varSmallInt : Result := byte(vSmallInt);
+        varShortInt : Result := byte(vShortInt);
+        varInteger  : Result := byte(vInteger);
+        varSingle   : Result := byte(Round(vSingle));
+        varDouble   : Result := byte(Round(vDouble));
+        varCurrency : Result := byte(Round(vCurrency));
+        varDate     : Result := byte(Round(vDate));
+        varBoolean  : Result := SmallInt(vBoolean);
+        varVariant  : Result := VariantToByte(PVarData(vPointer)^);
+        varByte     : Result := vByte;
+        varWord     : Result := byte(vWord);
+        varLongWord : Result := byte(vLongWord);
+        varInt64    : Result := byte(vInt64);
+        varQword    : Result := byte(vQWord);
+        varOleStr   : Result := WStrToByte(vOleStr);
+        varString   : Result := LStrToByte(vString);
+      else
+        VariantTypeMismatch(vType, varByte);
+      end;
+      varByRef: if Assigned(vPointer) then case vType of
+        varSmallInt : Result := byte(PSmallInt(vPointer)^);
+        varShortInt : Result := byte(PShortInt(vPointer)^);
+        varInteger  : Result := byte(PInteger(vPointer)^);
+        varSingle   : Result := byte(Round(PSingle(vPointer)^));
+        varDouble   : Result := byte(Round(PDouble(vPointer)^));
+        varCurrency : Result := byte(Round(PCurrency(vPointer)^));
+        varDate     : Result := byte(Round(PDate(vPointer)^));
+        varBoolean  : Result := byte(SmallInt(PWordBool(vPointer)^));
+        varVariant  : Result := byte(VariantToByte(PVarData(vPointer)^));
+        varByte     : Result := PByte(vPointer)^;
+        varWord     : Result := byte(PWord(vPointer)^);
+        varLongWord : Result := byte(PLongWord(vPointer)^);
+        varInt64    : Result := byte(PInt64(vPointer)^);
+        varQword    : Result := byte(PQWord(vPointer)^);
+        varOleStr   : Result := WStrToByte(PPointer(vPointer)^);
+        varString   : Result := LStrToByte(PPointer(vPointer)^);
+      else { other vtype }
+        VariantTypeMismatch(vType, varByte);
+      end else { pointer is nil }
+        VariantTypeMismatch(vType, varByte);
+    else { array or something like that }
+      VariantTypeMismatch(vType, varByte);
+    end;
+
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  WriteLn('VariantToByte -> ', Result);
+  end; {$ENDIF}
+end;
+
+{--- Int64 ---}
+
+Function WStrToInt64(p: Pointer) : Int64;
+var
+  Error : Word;
+begin
+  Val(WideString(p), Result, Error);
+  if Error <> 0 then
+    VariantTypeMismatch(varOleStr, varInt64);
+end;
+
+Function LStrToInt64(p: Pointer) : Int64;
+var
+  Error : Word;
+begin
+  Val(AnsiString(p), Result, Error);
+  if Error <> 0 then
+    VariantTypeMismatch(varString, varInt64);
+end;
+
+Function VariantToInt64(const VargSrc : TVarData) : Int64;
+begin
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  DumpVariant('VariantToInt64', VargSrc);
+  end; {$ENDIF}
+
+  with VargSrc do
+    case vType and not varTypeMask of
+      0: case vType of
+        varEmpty    : Result := 0;
+        varSmallInt : Result := vSmallInt;
+        varShortInt : Result := vShortInt;
+        varInteger  : Result := vInteger;
+        varSingle   : Result := Round(vSingle);
+        varDouble   : Result := Round(vDouble);
+        varCurrency : Result := Round(vCurrency);
+        varDate     : Result := Round(vDate);
+        varBoolean  : Result := SmallInt(vBoolean);
+        varVariant  : Result := VariantToInt64(PVarData(vPointer)^);
+        varByte     : Result := vByte;
+        varWord     : Result := vWord;
+        varLongWord : Result := vLongWord;
+        varInt64    : Result := vInt64;
+        varQword    : Result := int64(vQWord);
+        varOleStr   : Result := WStrToInt64(vOleStr);
+        varString   : Result := LStrToInt64(vString);
+      else
+        VariantTypeMismatch(vType, varInt64);
+      end;
+      varByRef: if Assigned(vPointer) then case vType of
+        varSmallInt : Result := PSmallInt(vPointer)^;
+        varShortInt : Result := PShortInt(vPointer)^;
+        varInteger  : Result := PInteger(vPointer)^;
+        varSingle   : Result := Round(PSingle(vPointer)^);
+        varDouble   : Result := Round(PDouble(vPointer)^);
+        varCurrency : Result := Round(PCurrency(vPointer)^);
+        varDate     : Result := Round(PDate(vPointer)^);
+        varBoolean  : Result := SmallInt(PWordBool(vPointer)^);
+        varVariant  : Result := VariantToInt64(PVarData(vPointer)^);
+        varByte     : Result := PByte(vPointer)^;
+        varWord     : Result := PWord(vPointer)^;
+        varLongWord : Result := PLongWord(vPointer)^;
+        varInt64    : Result := PInt64(vPointer)^;
+        varQword    : Result := PQWord(vPointer)^;
+        varOleStr   : Result := WStrToInt64(PPointer(vPointer)^);
+        varString   : Result := LStrToInt64(PPointer(vPointer)^);
+      else { other vtype }
+        VariantTypeMismatch(vType, varInt64);
+      end else { pointer is nil }
+        VariantTypeMismatch(vType, varInt64);
+    else { array or something like that }
+      VariantTypeMismatch(vType, varInt64);
+    end;
+
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  WriteLn('VariantToInt64 -> ', Result);
+  end; {$ENDIF}
+end;
+
+{--- QWord ---}
+
+Function WStrToQWord(p: Pointer) : QWord;
+>>>>>>> origin/fixes_2_2
+var
+  Error : Word;
+begin
+  Val(WideString(p), Result, Error);
+  if Error <> 0 then
+<<<<<<< HEAD
     VariantTypeMismatch(varOleStr, varByte);
 end;
 
@@ -1502,12 +2109,31 @@ begin
   {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
   DumpVariant('VariantToInt64', VargSrc);
 >>>>>>> graemeg/fixes_2_2
+=======
+    VariantTypeMismatch(varOleStr, varQWord);
+end;
+
+Function LStrToQWord(p: Pointer) : QWord;
+var
+  Error : Word;
+begin
+  Val(AnsiString(p), Result, Error);
+  if Error <> 0 then
+    VariantTypeMismatch(varString, varQWord);
+end;
+
+Function VariantToQWord(const VargSrc : TVarData) : QWord;
+begin
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  DumpVariant('VariantToQWord', VargSrc);
+>>>>>>> origin/fixes_2_2
   end; {$ENDIF}
 
   with VargSrc do
     case vType and not varTypeMask of
       0: case vType of
         varEmpty    : Result := 0;
+<<<<<<< HEAD
 <<<<<<< HEAD
         varSmallInt : Result := byte(vSmallInt);
         varShortInt : Result := byte(vShortInt);
@@ -2047,6 +2673,122 @@ end;
 
 Function VariantToAnsiString(const VargSrc : TVarData) : AnsiString;
 begin
+=======
+        varSmallInt : Result := qword(vSmallInt);
+        varShortInt : Result := qword(vShortInt);
+        varInteger  : Result := qword(vInteger);
+        varSingle   : Result := qword(Round(vSingle));
+        varDouble   : Result := qword(Round(vDouble));
+        varCurrency : Result := qword(Round(vCurrency));
+        varDate     : Result := qword(Round(vDate));
+        varBoolean  : Result := SmallInt(vBoolean);
+        varVariant  : Result := VariantToQWord(PVarData(vPointer)^);
+        varByte     : Result := vByte;
+        varWord     : Result := vWord;
+        varLongWord : Result := vLongWord;
+        varInt64    : Result := qword(vInt64);
+        varQword    : Result := vQWord;
+        varOleStr   : Result := WStrToQWord(vOleStr);
+        varString   : Result := LStrToQWord(vString);
+      else
+        VariantTypeMismatch(vType, varQWord);
+      end;
+      varByRef: if Assigned(vPointer) then case vType of
+        varSmallInt : Result := qword(PSmallInt(vPointer)^);
+        varShortInt : Result := qword(PShortInt(vPointer)^);
+        varInteger  : Result := qword(PInteger(vPointer)^);
+        varSingle   : Result := qword(Round(PSingle(vPointer)^));
+        varDouble   : Result := qword(Round(PDouble(vPointer)^));
+        varCurrency : Result := qword(Round(PCurrency(vPointer)^));
+        varDate     : Result := qword(Round(PDate(vPointer)^));
+        varBoolean  : Result := SmallInt(PWordBool(vPointer)^);
+        varVariant  : Result := VariantToQWord(PVarData(vPointer)^);
+        varByte     : Result := PByte(vPointer)^;
+        varWord     : Result := PWord(vPointer)^;
+        varLongWord : Result := PLongWord(vPointer)^;
+        varInt64    : Result := qword(PInt64(vPointer)^);
+        varQword    : Result := PQWord(vPointer)^;
+        varOleStr   : Result := WStrToQWord(PPointer(vPointer)^);
+        varString   : Result := LStrToQWord(PPointer(vPointer)^);
+      else { other vtype }
+        VariantTypeMismatch(vType, varQWord);
+      end else { pointer is nil }
+        VariantTypeMismatch(vType, varQWord);
+    else { array or something like that }
+      VariantTypeMismatch(vType, varQWord);
+    end;
+
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  WriteLn('VariantToQWord -> ', Result);
+  end; {$ENDIF}
+end;
+
+{--- WideString ---}
+
+Function VariantToWideString(const VargSrc : TVarData) : WideString;
+begin
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  DumpVariant('VariantToWideString', VargSrc);
+  end; {$ENDIF}
+
+  with VargSrc do
+    case vType and not varTypeMask of
+      0: case vType of
+        varEmpty    : Result := '';
+        varSmallInt : Result := IntToStr(vSmallInt);
+        varShortInt : Result := IntToStr(vShortInt);
+        varInteger  : Result := IntToStr(vInteger);
+        varSingle   : Result := FloatToStr(vSingle);
+        varDouble   : Result := FloatToStr(vDouble);
+        varCurrency : Result := FloatToStr(vCurrency);
+        varDate     : Result := FloatToStr(vDate);
+        varBoolean  : Result := BoolToStr(vBoolean, True);
+        varVariant  : Result := VariantToWideString(PVarData(vPointer)^);
+        varByte     : Result := IntToStr(vByte);
+        varWord     : Result := IntToStr(vWord);
+        varLongWord : Result := IntToStr(vLongWord);
+        varInt64    : Result := IntToStr(vInt64);
+        varQword    : Result := IntToStr(vQWord);
+        varOleStr   : Result := WideString(Pointer(vOleStr));
+        varString   : Result := AnsiString(vString);
+      else
+        VariantTypeMismatch(vType, varOleStr);
+      end;
+      varByRef: if Assigned(vPointer) then case vType of
+        varSmallInt : Result := IntToStr(PSmallInt(vPointer)^);
+        varShortInt : Result := IntToStr(PShortInt(vPointer)^);
+        varInteger  : Result := IntToStr(PInteger(vPointer)^);
+        varSingle   : Result := FloatToStr(PSingle(vPointer)^);
+        varDouble   : Result := FloatToStr(PDouble(vPointer)^);
+        varCurrency : Result := FloatToStr(PCurrency(vPointer)^);
+        varDate     : Result := FloatToStr(PDate(vPointer)^);
+        varBoolean  : Result := BoolToStr(PWordBool(vPointer)^, True);
+        varVariant  : Result := VariantToWideString(PVarData(vPointer)^);
+        varByte     : Result := IntToStr(PByte(vPointer)^);
+        varWord     : Result := IntToStr(PWord(vPointer)^);
+        varLongWord : Result := IntToStr(PLongWord(vPointer)^);
+        varInt64    : Result := IntToStr(PInt64(vPointer)^);
+        varQword    : Result := IntToStr(PQWord(vPointer)^);
+        varOleStr   : Result := WideString(PPointer(vPointer)^);
+        varString   : Result := AnsiString(PPointer(vPointer)^);
+      else { other vtype }
+        VariantTypeMismatch(vType, varOleStr);
+      end else { pointer is nil }
+        VariantTypeMismatch(vType, varOleStr);
+    else { array or something like that }
+      VariantTypeMismatch(vType, varOleStr);
+    end;
+
+  {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
+  WriteLn('VariantToWideString -> ', Result);
+  end; {$ENDIF}
+end;
+
+{--- AnsiString ---}
+
+Function VariantToAnsiString(const VargSrc : TVarData) : AnsiString;
+begin
+>>>>>>> origin/fixes_2_2
   {$IFDEF DEBUG_VARUTILS} if __DEBUG_VARUTILS then begin
   DumpVariant('VariantToAnsiString', VargSrc);
   end; {$ENDIF}
@@ -2107,7 +2849,10 @@ end;
 
 Function VariantToShortString(const VargSrc : TVarData) : ShortString;
 begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Result:=VariantToAnsiString(VargSrc);
 end;
 
@@ -2131,6 +2876,7 @@ begin
   DumpVariant(F, '', TVarData(VSrc));
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure DumpVariant(var F : Text; const aName: string; const VSrc : Variant); 
 begin
@@ -2148,6 +2894,8 @@ begin
 end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure DumpVariant(var F : Text; const aName: string; const VSrc : Variant); 
 begin
@@ -2164,7 +2912,10 @@ begin
   DumpVariant(Output, aName, VargSrc);
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Procedure DumpVariant(Var F : Text; const VargSrc : TVarData);
 begin
   DumpVariant(F, '', VargSrc);
@@ -2202,10 +2953,14 @@ Var
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Writeln(F,'---> ', aName, ' at $', HexStr(@VargSrc), ' <----------------');
 =======
   Writeln(F,'---> ', aName, ' at $', IntToHex(Cardinal(@VargSrc), 8), ' <----------------');
 >>>>>>> graemeg/fixes_2_2
+=======
+  Writeln(F,'---> ', aName, ' at $', IntToHex(Cardinal(@VargSrc), 8), ' <----------------');
+>>>>>>> origin/fixes_2_2
   with VargSrc do begin
 
     if vType and varByRef = varByRef then
@@ -2223,10 +2978,13 @@ begin
     else If (vType and varTypeMask) = varString then
       Writeln(F,'Variant has type : string')
 <<<<<<< HEAD
+<<<<<<< HEAD
     else if (vType and varTypeMask) = varUString then
       Writeln(F,'Variant has type : UnicodeString')
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     else
       Writeln(F,'Variant has unknown type : $', IntToHex(vType and varTypeMask, 4));
 
@@ -2237,10 +2995,14 @@ begin
 
     if vType and varArray = varArray then begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       Writeln(F,'---< ', aName, ' at $', HexStr(@VargSrc), ' >----------------');
 =======
       Writeln(F,'---< ', aName, ' at $', IntToHex(Cardinal(@VargSrc), 8), ' >----------------');
 >>>>>>> graemeg/fixes_2_2
+=======
+      Writeln(F,'---< ', aName, ' at $', IntToHex(Cardinal(@VargSrc), 8), ' >----------------');
+>>>>>>> origin/fixes_2_2
       Writeln(F);
       Exit;
     end;
@@ -2252,10 +3014,14 @@ begin
         if not Assigned(vPointer) then begin
           WriteLn(F, 'nil]');
 <<<<<<< HEAD
+<<<<<<< HEAD
           Writeln(F,'---< ', aName, ' at $', HexStr(@VargSrc), ' >----------------');
 =======
           Writeln(F,'---< ', aName, ' at $', IntToHex(Cardinal(@VargSrc), 8), ' >----------------');
 >>>>>>> graemeg/fixes_2_2
+=======
+          Writeln(F,'---< ', aName, ' at $', IntToHex(Cardinal(@VargSrc), 8), ' >----------------');
+>>>>>>> origin/fixes_2_2
           Writeln(F);
           Exit;
         end;
@@ -2265,17 +3031,23 @@ begin
         varSmallInt             : Write(F, vSmallInt);
         varInteger              : Write(F, vInteger);
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         varSingle               : Write(F, vSingle);
         varDouble               : Write(F, vDouble);
         varCurrency             : Write(F, vCurrency);
         varDate                 : Write(F, vDate);
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         varOleStr               : Write(F, WideString(Pointer(vOleStr)));
         varError                : Write(F, IntToHex(Cardinal(vError), 8));
         varBoolean              : Write(F, vBoolean);
@@ -2295,17 +3067,23 @@ begin
         varSmallInt or varByRef : Write(F, PSmallInt(vPointer)^);
         varInteger  or varByRef : Write(F, PInteger(vPointer)^);
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         varSingle   or varByRef : Write(F, PSingle(vPointer)^);
         varDouble   or varByRef : Write(F, PDouble(vPointer)^);
         varCurrency or varByRef : Write(F, PCurrency(vPointer)^);
         varDate     or varByRef : Write(F, PDate(vPointer)^);
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         varOleStr   or varByRef : Write(F, WideString(PPointer(vPointer)^));
         varError    or varByRef : Write(F, IntToHex(Cardinal(PLongWord(vPointer)^), 8));
         varBoolean  or varByRef : Write(F, PWordBool(vPointer)^);
@@ -2324,10 +3102,14 @@ begin
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   Writeln(F,'---< ', aName, ' at $', HexStr(@VargSrc), ' >----------------');
 =======
   Writeln(F,'---< ', aName, ' at $', IntToHex(Cardinal(@VargSrc), 8), ' >----------------');
 >>>>>>> graemeg/fixes_2_2
+=======
+  Writeln(F,'---< ', aName, ' at $', IntToHex(Cardinal(@VargSrc), 8), ' >----------------');
+>>>>>>> origin/fixes_2_2
   Writeln(F);
 end;
 

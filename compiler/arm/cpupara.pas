@@ -893,6 +893,7 @@ unit cpupara;
             paraloc^.loc:=LOC_VOID;
             exit;
           end;
+<<<<<<< HEAD
         { Constructors return self instead of a boolean }
         if (p.proctypeoption=potype_constructor) then
           begin
@@ -960,6 +961,8 @@ unit cpupara;
 
         paraloc:=result.add_location;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         { Return is passed as var parameter }
         if ret_in_param(p.returndef,p.proccalloption) then
           begin
@@ -967,7 +970,10 @@ unit cpupara;
             p.funcretloc[side].size:=retcgsize;
             exit;
           end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         { Return in FPU register? }
         if def.typ=floatdef then
           begin
@@ -1209,9 +1215,13 @@ unit cpupara;
 >>>>>>> origin/cpstrnew
               end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
           end;
       end;
 

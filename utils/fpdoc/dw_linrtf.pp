@@ -112,6 +112,7 @@ type
     procedure StartChapter(ChapterName : String); override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure StartOverview(Const What : String; WithAccess : Boolean); override;
 =======
     procedure StartOverview(WithAccess : Boolean); override;
@@ -129,12 +130,17 @@ type
     procedure WriteOverviewMember(const ALabel,AName,ADescr : String); override;
     procedure EndOverview; override;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure StartOverview(WithAccess : Boolean); override;
     procedure WriteOverviewMember(ALabel,AName,Access,ADescr : String); override;
     procedure WriteOverviewMember(ALabel,AName,ADescr : String); override;
     procedure EndOverview; override;
     Class Function FileNameExtension : String; override;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     // Description node conversion
     procedure DescrBeginBold; override;
     procedure DescrEndBold; override;
@@ -183,10 +189,13 @@ type
     // TFPDocWriter class methods
     Function InterPretOption(Const Cmd,Arg : String) : boolean; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
   public
     Class Function FileNameExtension : String; override;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
 
@@ -210,10 +219,14 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TRTFWriter.EscapeText(S: String): String;
 =======
 Function TRTFWriter.EscapeText(S : String) : String;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function TRTFWriter.EscapeText(S : String) : String;
+>>>>>>> origin/fixes_2_2
 
 var
   i: Integer;
@@ -235,10 +248,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TRTFWriter.StripText(S: String): String;
 =======
 Function TRTFWriter.StripText(S : String) : String;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function TRTFWriter.StripText(S : String) : String;
+>>>>>>> origin/fixes_2_2
 
 var
   I: Integer;
@@ -591,10 +608,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TRTFWriter.WriteLabel(const S: String);
 =======
 procedure TRTFWriter.WriteLabel(const s: String);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TRTFWriter.WriteLabel(const s: String);
+>>>>>>> origin/fixes_2_2
 var b: string;
 begin
   b := LowerCase(StripText(s));
@@ -602,10 +623,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TRTFWriter.WriteIndex(const S: String);
 =======
 procedure TRTFWriter.WriteIndex(const s : String);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TRTFWriter.WriteIndex(const s : String);
+>>>>>>> origin/fixes_2_2
 begin
   Write('{\xe{\v '+EscapeText(s)+'}}');
 end;
@@ -673,100 +698,144 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TRTFWriter.StartProcedure;
 =======
 Procedure TRTFWriter.StartProcedure;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TRTFWriter.StartProcedure;
+>>>>>>> origin/fixes_2_2
 begin
   Write('{\pard');
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TRTFWriter.StartProperty;
 =======
 Procedure TRTFWriter.StartProperty;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TRTFWriter.StartProperty;
+>>>>>>> origin/fixes_2_2
 begin
   Write('{\pard');
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TRTFWriter.Header(text: string; font: integer);
 =======
 Procedure TRTFWriter.Header(text:string; font:integer);
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TRTFWriter.Header(text:string; font:integer);
+>>>>>>> origin/fixes_2_2
 begin
   WriteF('\par\s9 %s\pard\par\s10\f%d ',[text, font]);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TRTFWriter.StartSynopsis;
 =======
 Procedure TRTFWriter.StartSynopsis;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TRTFWriter.StartSynopsis;
+>>>>>>> origin/fixes_2_2
 begin
   Header(SDocSynopsis,2);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TRTFWriter.StartDeclaration;
 =======
 Procedure TRTFWriter.StartDeclaration;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TRTFWriter.StartDeclaration;
+>>>>>>> origin/fixes_2_2
 begin
   Header(SDocDeclaration,1);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TRTFWriter.StartVisibility;
 =======
 Procedure TRTFWriter.StartVisibility;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TRTFWriter.StartVisibility;
+>>>>>>> origin/fixes_2_2
 begin
   Header(SDocVisibility,2);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TRTFWriter.StartDescription;
 =======
 Procedure TRTFWriter.StartDescription;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TRTFWriter.StartDescription;
+>>>>>>> origin/fixes_2_2
 begin
   Header(SDocDescription,2);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TRTFWriter.StartErrors;
 =======
 Procedure TRTFWriter.StartErrors;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TRTFWriter.StartErrors;
+>>>>>>> origin/fixes_2_2
 begin
   Header(SDocErrors,2);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TRTFWriter.StartAccess;
 =======
 Procedure TRTFWriter.StartAccess;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TRTFWriter.StartAccess;
+>>>>>>> origin/fixes_2_2
 begin
   Header(SDocAccess,2)
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TRTFWriter.EndProcedure;
 =======
 Procedure TRTFWriter.EndProcedure;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TRTFWriter.EndProcedure;
+>>>>>>> origin/fixes_2_2
 begin
   Write('}');
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TRTFWriter.EndProperty;
 =======
 Procedure TRTFWriter.EndProperty;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TRTFWriter.EndProperty;
+>>>>>>> origin/fixes_2_2
 begin
   Write('}');
 end;
@@ -790,6 +859,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TRTFWriter.StartOverview(const What: String; WithAccess: Boolean);
 begin
   If WithAccess then
@@ -802,6 +872,8 @@ end;
 
 procedure TRTFWriter.WriteOverviewMember(const ALabel,AName,Access,ADescr : String);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TRTFWriter.StartOverview(WithAccess : Boolean);
 begin
   If WithAccess then
@@ -813,7 +885,10 @@ begin
 end;
 
 procedure TRTFWriter.WriteOverviewMember(ALabel,AName,Access,ADescr : String);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   //TODO: Translate Latex \pageref to RTF
   //WriteLnF('\pageref{%s} & %s  & %s & %s \\',[ALabel,AName,Access,ADescr]);
@@ -822,10 +897,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TRTFWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
 =======
 procedure TRTFWriter.WriteOverviewMember(ALabel,AName,ADescr : String);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TRTFWriter.WriteOverviewMember(ALabel,AName,ADescr : String);
+>>>>>>> origin/fixes_2_2
 begin
   //TODO: Translate Latex \pageref to RTF
   //WriteLnF('\pageref{%s} & %s  & %s \\',[ALabel,AName,ADescr]);
@@ -839,10 +918,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TRTFWriter.StartSeealso;
 =======
 Procedure TRTFWriter.StartSeeAlso;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TRTFWriter.StartSeeAlso;
+>>>>>>> origin/fixes_2_2
 begin
   Header(SDocSeeAlso, 2);
 end;
@@ -883,10 +966,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TRTFWriter.InterPretOption(const Cmd, Arg: String): boolean;
 =======
 Function TRTFWriter.InterPretOption(Const Cmd,Arg : String) : boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function TRTFWriter.InterPretOption(Const Cmd,Arg : String) : boolean;
+>>>>>>> origin/fixes_2_2
 begin
   if Cmd = '--RTF-extension' then
     begin

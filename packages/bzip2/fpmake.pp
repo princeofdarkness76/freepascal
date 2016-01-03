@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('bzip2');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ShortName:='bz2';
 
 {$ifdef ALLPACKAGES}
@@ -37,6 +38,8 @@ begin
 
     T:=P.Targets.AddUnit('bzip2comn.pp');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ALLPACKAGES}
     P.Directory:='bzip2';
 {$endif ALLPACKAGES}
@@ -44,11 +47,15 @@ begin
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('bzip2.pas');
       with T.Dependencies do
         begin
           AddInclude('bzip2i386.inc',[i386],AllOSes);
+<<<<<<< HEAD
 <<<<<<< HEAD
           AddUnit('bzip2comn');
         end;
@@ -66,6 +73,9 @@ begin
 =======
         end;
 >>>>>>> graemeg/fixes_2_2
+=======
+        end;
+>>>>>>> origin/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

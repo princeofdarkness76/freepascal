@@ -18,6 +18,7 @@
 { precision and we need extended precision if supported  }
 {$ifndef FPC_HAS_TYPE_EXTENDED}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifdef aix}
     { aix math library routines don't raise exceptions, you have to manually
@@ -80,6 +81,8 @@
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifndef SOLARIS}
 
@@ -173,10 +176,13 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { buggy on aix, sets DIV_BY_ZERO flag for some valid inputs }
 {$ifndef aix}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_SYSTEM_HAS_LN}
 {$define FPC_SYSTEM_HAS_LN}
 

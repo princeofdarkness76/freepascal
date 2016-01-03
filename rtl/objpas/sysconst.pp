@@ -100,6 +100,7 @@ const
   SNoError               = 'No error.';
   SNoThreadSupport       = 'Threads not supported. Recompile program with thread driver.';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SNoDynLibsSupport      = 'Dynamic libraries not supported. Recompile program with dynamic library driver.';
   SMissingWStringManager = 'Widestring manager not available. Recompile program with appropriate manager.';
   SSigQuit               = 'SIGQUIT signal received.';
@@ -107,6 +108,9 @@ const
 =======
   SMissingWStringManager = 'Widestring manager not available. Recompile program with appropiate manager.';
 >>>>>>> graemeg/fixes_2_2
+=======
+  SMissingWStringManager = 'Widestring manager not available. Recompile program with appropiate manager.';
+>>>>>>> origin/fixes_2_2
   SOSError               = 'System error, (OS Code %d):'+LineEnding+'%s';
   SOutOfMemory           = 'Out of memory';
   SOverflow              = 'Floating point overflow';
@@ -149,6 +153,7 @@ const
   SNoToolserver                 = 'Toolserver is not installed, cannot execute Tool';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   SNotValidCodePageName         = '%s is not a valid code page name';
   SInvalidCount                 = 'invalid count [%d]';
   SCharacterIndexOutOfBounds    = 'character index out of bounds [%d]';
@@ -157,6 +162,8 @@ const
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   SNoArrayMatch                 = 'Can''t match any allowed value at pattern position %d, string position %d.';
   SNoCharMatch                  = 'Mismatch char "%s" <> "%s" at pattern position %d, string position %d.';
   SHHMMError                    = 'mm in a sequence hh:mm is interpreted as minutes. No longer versions allowed! (Position : %d).' ;
@@ -256,9 +263,12 @@ begin
      232 : Result:=SNoThreadSupport;
      233 : Result:=SMissingWStringManager;
 <<<<<<< HEAD
+<<<<<<< HEAD
      235 : Result:=SNoDynLibsSupport;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
      255 : Result:=SFallbackError;
 

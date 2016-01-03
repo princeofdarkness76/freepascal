@@ -253,6 +253,7 @@ const
 =======
 {$ifdef linux}
     function  FpPrCtl(options : cInt; const args : ptruint) : cint; cdecl; external clib name 'prctl';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 {$endif}
 {$endif solaris}
@@ -296,6 +297,8 @@ const
     function  FpSigaction (sig: cint;var act : sigactionrec; var oact : sigactionrec): cint; cdecl; external clib name 'sigaction';
 {$if not defined(darwin) and not defined(haiku)}
     Function  FpSigTimedWait (Const sigset : TSigSet; info : Psiginfo; var timeout:Ttimespec): cInt; cdecl; external clib name 'sigtimedwait';
+=======
+>>>>>>> origin/fixes_2_2
 {$endif}
     function  FpTime       (tloc:ptime_t): time_t; cdecl; external clib name 'time';
 

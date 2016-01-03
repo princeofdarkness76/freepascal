@@ -2,17 +2,23 @@
 <CONFIG>
   <ProjectOptions>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="9"/>
     <PathDelim Value="\"/>
 =======
     <PathDelim Value="\"/>
     <Version Value="5"/>
 >>>>>>> graemeg/fixes_2_2
+=======
+    <PathDelim Value="\"/>
+    <Version Value="5"/>
+>>>>>>> origin/fixes_2_2
     <General>
       <Flags>
         <MainUnitHasUsesSectionForAllUnits Value="False"/>
         <MainUnitHasCreateFormStatements Value="False"/>
         <MainUnitHasTitleStatement Value="False"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <LRSInOutputDirectory Value="False"/>
       </Flags>
@@ -24,6 +30,8 @@
       <Item1 Name="default" Default="True"/>
     </BuildModes>
 =======
+=======
+>>>>>>> origin/fixes_2_2
       </Flags>
       <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
@@ -31,7 +39,10 @@
       <TargetFileExt Value=".exe"/>
       <Title Value="pp"/>
     </General>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     <PublishOptions>
       <Version Value="2"/>
       <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
@@ -58,15 +69,20 @@
   </ProjectOptions>
   <CompilerOptions>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="11"/>
 =======
     <Version Value="5"/>
 >>>>>>> graemeg/fixes_2_2
+=======
+    <Version Value="5"/>
+>>>>>>> origin/fixes_2_2
     <PathDelim Value="\"/>
     <Target>
       <Filename Value="sparc\pp"/>
     </Target>
     <SearchPaths>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <IncludeFiles Value="sparc"/>
       <OtherUnitFiles Value="sparc;systems"/>
@@ -74,10 +90,15 @@
       <IncludeFiles Value="sparc\"/>
       <OtherUnitFiles Value="sparc\;systems\"/>
 >>>>>>> graemeg/fixes_2_2
+=======
+      <IncludeFiles Value="sparc\"/>
+      <OtherUnitFiles Value="sparc\;systems\"/>
+>>>>>>> origin/fixes_2_2
       <UnitOutputDirectory Value="sparc\lazbuild"/>
     </SearchPaths>
     <Parsing>
       <SyntaxOptions>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <CStyleOperator Value="False"/>
         <AllowLabel Value="False"/>
@@ -86,6 +107,8 @@
       </SyntaxOptions>
     </Parsing>
 =======
+=======
+>>>>>>> origin/fixes_2_2
         <D2Extensions Value="False"/>
         <CStyleOperator Value="False"/>
         <AllowLabel Value="False"/>
@@ -97,7 +120,10 @@
         <GenerateDebugInfo Value="True"/>
       </Debugging>
     </Linking>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     <Other>
       <Verbosity>
         <ShowWarn Value="False"/>
@@ -108,11 +134,16 @@
         <StopAfterErrCount Value="50"/>
       </ConfigFile>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <CustomOptions Value="-dsparc"/>
 =======
       <CustomOptions Value="-dsparc
 "/>
 >>>>>>> graemeg/fixes_2_2
+=======
+      <CustomOptions Value="-dsparc
+"/>
+>>>>>>> origin/fixes_2_2
       <CompilerPath Value="$(CompPath)"/>
     </Other>
   </CompilerOptions>

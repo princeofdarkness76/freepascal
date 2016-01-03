@@ -42,6 +42,7 @@
  ****************************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}
 {$codealign constmin=16}
 const
@@ -51,6 +52,8 @@ const
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure Set8087CW(cw:word);
       begin
         { pic-safe ; cw will not be a regvar because it's accessed from }
@@ -79,7 +82,10 @@ const
     procedure SetSSECSR(w : dword);
       begin
         mxcsr:=w;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         asm
           ldmxcsr w
         end;
@@ -248,7 +254,10 @@ const
 <<<<<<< HEAD
 =======
         fclex
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      end;
 
 

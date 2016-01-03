@@ -59,19 +59,27 @@ end;
 procedure TTestDatasources.SetUp;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   DBConnector.StartTest(TestName);
 =======
   DBConnector.StartTest;
 >>>>>>> graemeg/fixes_2_2
+=======
+  DBConnector.StartTest;
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TTestDatasources.TearDown;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   DBConnector.StopTest(TestName);
 =======
   DBConnector.StopTest;
 >>>>>>> graemeg/fixes_2_2
+=======
+  DBConnector.StopTest;
+>>>>>>> origin/fixes_2_2
 end;
 
 {procedure TTestDatasources.TestDataEventsResync;
@@ -374,10 +382,14 @@ begin
     AssertTrue(THackDataset(ds).InternalCalcFields);
     // If there are InternalCalcFields and 'normal' Calculated fields, only
 <<<<<<< HEAD
+<<<<<<< HEAD
     // RefreshInternalCalcFields is called
 =======
     // RefreshIntenralCalcFields is called
 >>>>>>> graemeg/fixes_2_2
+=======
+    // RefreshIntenralCalcFields is called
+>>>>>>> origin/fixes_2_2
     AFld := FieldByName('id');
     DataEvents := '';
     THackDataset(ds).DataEvent(deFieldChange,PtrInt(AFld));
@@ -390,10 +402,14 @@ begin
     AssertEquals('deFieldChange:NAME;',DataEvents);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     // If the TDataset.State is dsSetKey then InternalCalcFields shoudn't get called
 =======
     // If the TDataset.State is dsSetKey then IntenralCalcFields shoudn't get called
 >>>>>>> graemeg/fixes_2_2
+=======
+    // If the TDataset.State is dsSetKey then IntenralCalcFields shoudn't get called
+>>>>>>> origin/fixes_2_2
     THackDataset(ds).SetState(dsSetKey);
     AFld := FieldByName('id');
     DataEvents := '';

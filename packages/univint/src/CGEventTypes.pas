@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 { CoreGraphics - CGEventTypes.h
    Copyright (c) 2004-2008 Apple Inc.
    All rights reserved. }
@@ -26,6 +27,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
 *  CGEventTypes.h
 *  CoreGraphics
@@ -40,7 +43,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -50,12 +56,17 @@
 unit CGEventTypes;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -69,14 +80,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -85,11 +101,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -127,6 +146,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -134,6 +155,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -397,6 +419,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -405,7 +429,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -432,9 +459,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -445,6 +476,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,MacOSXPosix,CGRemoteOperation,CGBase;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -506,6 +538,8 @@ type
 
 { Constants that specify buttons on a one, two, or three-button mouse. }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -522,7 +556,10 @@ type
  }
 type
 	_CGMouseButton = SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kCGMouseButtonLeft = 0;
 	kCGMouseButtonRight = 1;
@@ -530,6 +567,7 @@ const
 type
 	CGMouseButton = UInt32;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { Constants that specify the unit of measurement for a scrolling event. }
 const
@@ -594,6 +632,8 @@ type
 
    Any bits not specified are reserved for future use. }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  * The flags field includes both modifier key state at the time the event was created,
  * as well as other event related state.
@@ -602,22 +642,30 @@ type
  }
 type
 	_CGEventFlags = SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 (*
 Uncomment when IOKit is translated
 
 const { Masks for the bits in event flags }
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Device-independent modifier key bits. }
 =======
 { device-independent modifier key bits }
 >>>>>>> graemeg/fixes_2_2
+=======
+{ device-independent modifier key bits }
+>>>>>>> origin/fixes_2_2
 	kCGEventFlagMaskAlphaShift = NX_ALPHASHIFTMASK;
 	kCGEventFlagMaskShift = NX_SHIFTMASK;
 	kCGEventFlagMaskControl = NX_CONTROLMASK;
 	kCGEventFlagMaskAlternate = NX_ALTERNATEMASK;
 	kCGEventFlagMaskCommand = NX_COMMANDMASK;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   { Special key identifiers. }
 	kCGEventFlagMaskHelp = NX_HELPMASK;
@@ -641,6 +689,8 @@ type
 >>>>>>> origin/cpstrnew
 { Constants that specify the different types of input events. }
 =======
+=======
+>>>>>>> origin/fixes_2_2
     { Special key identifiers }
 	kCGEventFlagMaskHelp = NX_HELPMASK;
 	kCGEventFlagMaskSecondaryFn = NX_SECONDARYFNMASK;
@@ -667,7 +717,10 @@ type
  *	events as mouse events allow tablets to be used with programs
  *	which are not tablet-aware.
  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Event types }
 type
@@ -711,6 +764,7 @@ const
 type
 	CGEventType = UInt32;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { Event timestamp; roughly, nanoseconds since startup. }
 type
@@ -1018,6 +1072,8 @@ type
 
 { Constants used with the `kCGMouseEventSubtype' event field. }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	CGEventTimestamp = UInt64;  { Event timestamp, roughly, nanoseconds since startup }
@@ -1183,7 +1239,10 @@ type
 { Values used with the kCGMouseEventSubtype }
 type
 	_CGEventMouseSubtype = SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kCGEventMouseSubtypeDefault = 0;
 	kCGEventMouseSubtypeTabletPoint = 1;
@@ -1192,8 +1251,11 @@ type
 	CGEventMouseSubtype = UInt32;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Constants that specify possible tapping points for events. }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  * Event Taps
  *
@@ -1233,7 +1295,10 @@ type
 { Possible tapping points for events }
 type
 	_CGEventTapLocation = SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kCGHIDEventTap = 0;
 	kCGSessionEventTap = 1;
@@ -1242,18 +1307,24 @@ type
 	CGEventTapLocation = UInt32;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Constants that specify where a new event tap is inserted into the list of
    active event taps. }
 =======
 type
 	_CGEventTapPlacement = SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+type
+	_CGEventTapPlacement = SInt32;
+>>>>>>> origin/fixes_2_2
 const
 	kCGHeadInsertEventTap = 0;
 	kCGTailAppendEventTap = 1;
 type
 	CGEventTapPlacement = UInt32;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { Constants that specify whether a new event tap is an active filter or a
    passive listener. }
@@ -1264,10 +1335,16 @@ type
 	_CGEventTapOptions = SInt32;
 const
 >>>>>>> graemeg/fixes_2_2
+=======
+type
+	_CGEventTapOptions = SInt32;
+const
+>>>>>>> origin/fixes_2_2
 	kCGEventTapOptionListenOnly = $00000001;
 type
 	CGEventTapOptions = UInt32;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { A mask that identifies the set of Quartz events to be observed in an
    event tap. }
@@ -1413,6 +1490,8 @@ type
    notify(3) and notify.h for details. }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	CGEventMask = UInt64;
@@ -1444,12 +1523,16 @@ type
  * is posted via the notify_post() API.  See notify (3) and
  * notify.h for details.
  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kCGNotifyEventTapAdded = 'com.apple.coregraphics.eventTapAdded';
 const
 	kCGNotifyEventTapRemoved = 'com.apple.coregraphics.eventTapRemoved';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { The structure used to report information about event taps. }
 
@@ -1458,11 +1541,17 @@ const
  * Structure used to report information on event taps
  }
 >>>>>>> graemeg/fixes_2_2
+=======
+{
+ * Structure used to report information on event taps
+ }
+>>>>>>> origin/fixes_2_2
 type
 	CGEventTapInformationPtr = ^CGEventTapInformation;
 	CGEventTapInformation = record
 		eventTapID: UInt32;
 		tapPoint: CGEventTapLocation;		{ HID, session, annotated session }
+<<<<<<< HEAD
 <<<<<<< HEAD
 		options: CGEventTapOptions;		{ Listener, filter }
 {$ifc TARGET_CPU_64}
@@ -1471,6 +1560,9 @@ type
 =======
 		options: CGEventTapOptions;		{ Listener, Filter }
 >>>>>>> graemeg/fixes_2_2
+=======
+		options: CGEventTapOptions;		{ Listener, Filter }
+>>>>>>> origin/fixes_2_2
 		eventsOfInterest: CGEventMask;	{ Mask of events being tapped }
 		tappingProcess: pid_t;		{ Process that is tapping events }
 		processBeingTapped: pid_t;	{ Zero if not a per-process tap }
@@ -1479,6 +1571,7 @@ type
 		avgUsecLatency: Float32;		{ Average latency in microseconds }
 		maxUsecLatency: Float32;		{ Maximum latency in microseconds }
 	end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	__CGEventTapInformation = CGEventTapInformation;
 
@@ -1514,6 +1607,8 @@ type
 >>>>>>> origin/cpstrnew
 { Constants that specify the possible source states of an event source. }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1527,11 +1622,15 @@ type
 
 type
 	CGEventSourceStateID = UInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kCGEventSourceStatePrivate = -1;
 	kCGEventSourceStateCombinedSessionState = 0;
 	kCGEventSourceStateHIDSystemState = 1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	CGEventSourceStateID = UInt32;
@@ -1566,6 +1665,8 @@ const
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	CGEventSourceKeyboardType = UInt32;
@@ -1575,4 +1676,7 @@ const
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

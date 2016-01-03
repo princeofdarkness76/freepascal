@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       NSLCore/NSLCore.h
  
      Contains:   Interface to API for using the NSL Manager
@@ -8,6 +9,8 @@
  
      Copyright:  © 2000-2008 by Apple Computer, Inc., all rights reserved
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       NSLCore.p
  
      Contains:   Interface to API for using the NSL Manager
@@ -16,11 +19,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -34,6 +41,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -45,7 +54,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -55,12 +67,17 @@
 unit NSLCore;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -74,14 +91,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -90,11 +112,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -132,6 +157,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -139,6 +166,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -404,6 +432,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -412,7 +442,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -439,9 +472,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -452,6 +489,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,MacErrors,CodeFragments,Files,Threads;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -460,11 +498,15 @@ uses MacTypes,MacErrors,CodeFragments,Files,Threads;
 =======
 uses MacTypes,CodeFragments,Files,Threads;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,CodeFragments,Files,Threads;
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
 
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kNSLMinSystemVersion = $0900; { equivalent to 9.0}
 	kNSLMinOTVersion = $0130; { equivalent to 1.3}
@@ -590,6 +632,8 @@ function NewNSLMgrNotifyUPP( userRoutine: NSLMgrNotifyProcPtr ): NSLMgrNotifyUPP
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kNSLMinSystemVersion		= $0900;						{  equivalent to 9.0 }
 	kNSLMinOTVersion			= $0130;						{  equivalent to 1.3 }
 
@@ -728,11 +772,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewNSLMgrNotifyUPP(userRoutine: NSLMgrNotifyProcPtr): NSLMgrNotifyUPP; external name '_NewNSLMgrNotifyUPP'; { old name was NewNSLMgrNotifyProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewNSLClientNotifyUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -742,16 +790,22 @@ function NewNSLClientNotifyUPP( userRoutine: NSLClientNotifyProcPtr ): NSLClient
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewNSLClientNotifyUPP(userRoutine: NSLClientNotifyProcPtr): NSLClientNotifyUPP; external name '_NewNSLClientNotifyUPP'; { old name was NewNSLClientNotifyProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeNSLMgrNotifyUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -761,16 +815,22 @@ procedure DisposeNSLMgrNotifyUPP( userUPP: NSLMgrNotifyUPP ); external name '_Di
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeNSLMgrNotifyUPP(userUPP: NSLMgrNotifyUPP); external name '_DisposeNSLMgrNotifyUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeNSLClientNotifyUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -780,16 +840,22 @@ procedure DisposeNSLClientNotifyUPP( userUPP: NSLClientNotifyUPP ); external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeNSLClientNotifyUPP(userUPP: NSLClientNotifyUPP); external name '_DisposeNSLClientNotifyUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeNSLMgrNotifyUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -799,16 +865,22 @@ procedure InvokeNSLMgrNotifyUPP( var thePluginAsyncInfo: NSLPluginAsyncInfo; use
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure InvokeNSLMgrNotifyUPP(var thePluginAsyncInfo: NSLPluginAsyncInfo; userRoutine: NSLMgrNotifyUPP); external name '_InvokeNSLMgrNotifyUPP'; { old name was CallNSLMgrNotifyProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeNSLClientNotifyUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -819,16 +891,22 @@ procedure InvokeNSLClientNotifyUPP( var theClientAsyncInfo: NSLClientAsyncInfo; 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure InvokeNSLClientNotifyUPP(var theClientAsyncInfo: NSLClientAsyncInfo; userRoutine: NSLClientNotifyUPP); external name '_InvokeNSLClientNotifyUPP'; { old name was CallNSLClientNotifyProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
    this struct is a format for dealing with our internal data representation.  Typed data will be contiguous chunk of
    memory, with the first 4 bytes being a data "descriptor".
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	NSLTypedData = record
@@ -915,6 +993,8 @@ function NSLLibraryVersion: UInt32; external name '_NSLLibraryVersion';
    
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	NSLTypedDataPtr = ^NSLTypedData;
@@ -976,7 +1056,10 @@ function NSLLibraryVersion: UInt32; external name '_NSLLibraryVersion';
 {
     NSLLibraryPresent() is a macro available only in C/C++.  
 }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
   -----------------------------------------------------------------------------
     High level API calls: the following two calls are ALL an application needs
@@ -992,6 +1075,7 @@ function NSLLibraryVersion: UInt32; external name '_NSLLibraryVersion';
 { ---> neighborhoodToRegisterIn is an optional parameter for explicitly defining a neighborhood to register in.
             If parameter is NULL, then the plugins will determine where to register the service }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 {
  *  NSLStandardRegisterURL()   *** DEPRECATED ***
@@ -1005,6 +1089,8 @@ function NSLStandardRegisterURL( urlToRegister: NSLPath; neighborhoodToRegisterI
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NSLStandardRegisterURL()
  *  
@@ -1014,7 +1100,10 @@ function NSLStandardRegisterURL( urlToRegister: NSLPath; neighborhoodToRegisterI
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLStandardRegisterURL(urlToRegister: NSLPath; neighborhoodToRegisterIn: NSLNeighborhood): NSLError; external name '_NSLStandardRegisterURL';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { <--- error code from registration }
 { ---> urlToRegister is a null terminated url that has only legal characters defined for URLs.  Use HexEncodeText to encode}
@@ -1022,6 +1111,7 @@ function NSLStandardRegisterURL(urlToRegister: NSLPath; neighborhoodToRegisterIn
 { ---> neighborhoodToDeregisterIn is an optional parameter for explicitly defining a neighborhood to register in.
             If parameter is NULL, then the plugins will determine where to register the service }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLStandardDeregisterURL()   *** DEPRECATED ***
  *  
@@ -1060,6 +1150,8 @@ function NSLHexDecodeText( encodedText: ConstCStringPtr; encodedTextLen: UInt16;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLStandardDeregisterURL()
  *  
  *  Availability:
@@ -1091,7 +1183,10 @@ function NSLHexEncodeText(rawText: ConstCStringPtr; rawTextLen: UInt16; newTextB
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLHexDecodeText(encodedText: ConstCStringPtr; encodedTextLen: UInt16; decodedTextBuffer: CStringPtr; var decodedTextBufferLen: UInt16; var textChanged: boolean): OSStatus; external name '_NSLHexDecodeText';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
   -----------------------------------------------------------------------------
@@ -1100,6 +1195,7 @@ function NSLHexDecodeText(encodedText: ConstCStringPtr; encodedTextLen: UInt16; 
 }
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLMakeNewServicesList()   *** DEPRECATED ***
  *  
@@ -1136,6 +1232,8 @@ procedure NSLDisposeServicesList( theList: NSLServicesList ); external name '_NS
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLMakeNewServicesList()
  *  
  *  Availability:
@@ -1164,7 +1262,10 @@ function NSLAddServiceToServicesList(serviceList: NSLServicesList; serviceType: 
  *    Mac OS X:         in version 10.0 and later
  }
 procedure NSLDisposeServicesList(theList: NSLServicesList); external name '_NSLDisposeServicesList';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     The name reflects the name of the Neighborhood, i.e. "apple.com." or "AppleTalk Zone One".
@@ -1173,6 +1274,7 @@ procedure NSLDisposeServicesList(theList: NSLServicesList); external name '_NSLD
     of by the user by calling NSLFreeNeighborhood.
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLMakeNewNeighborhood()   *** DEPRECATED ***
  *  
@@ -1222,6 +1324,8 @@ procedure NSLGetNameFromNeighborhood( neighborhood: NSLNeighborhood; var name: C
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLMakeNewNeighborhood()
  *  
  *  Availability:
@@ -1261,13 +1365,17 @@ function NSLFreeNeighborhood(neighborhood: NSLNeighborhood): NSLNeighborhood; ex
  *    Mac OS X:         in version 10.0 and later
  }
 procedure NSLGetNameFromNeighborhood(neighborhood: NSLNeighborhood; var name: CStringPtr; var length: SInt32); external name '_NSLGetNameFromNeighborhood';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
    create a block of formatted data, pointed to by newDataPtr.  This will be used
    in calls (typically request-related calls) for plug-ins that handle the NSL data type.
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLMakeServicesRequestPB()   *** DEPRECATED ***
  *  
@@ -1313,6 +1421,8 @@ function NSLFreeTypedDataPtr( nslTypeData: NSLTypedDataPtr ): NSLTypedDataPtr; e
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLMakeServicesRequestPB()
  *  
  *  Availability:
@@ -1332,13 +1442,17 @@ function NSLMakeServicesRequestPB(serviceList: NSLServicesList; var newDataPtr: 
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLFreeTypedDataPtr(nslTypeData: NSLTypedDataPtr): NSLTypedDataPtr; external name '_NSLFreeTypedDataPtr';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
    utility function that returns whether a url was found, a pointer to the beginning
    of the url, and the length of the URL.
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLGetNextUrl()   *** DEPRECATED ***
  *  
@@ -1351,6 +1465,8 @@ function NSLGetNextUrl( infoPtr: NSLClientAsyncInfoPtr; var urlPtr: CStringPtr; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLGetNextUrl()
  *  
  *  Availability:
@@ -1359,13 +1475,17 @@ function NSLGetNextUrl( infoPtr: NSLClientAsyncInfoPtr; var urlPtr: CStringPtr; 
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLGetNextUrl(infoPtr: NSLClientAsyncInfoPtr; var urlPtr: CStringPtr; var urlLength: SInt32): boolean; external name '_NSLGetNextUrl';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
    utility function that returns whether a Neighborhood was found, a pointer to the beginning
    of the Neighborhood, and the length of the Neighborhood.
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLGetNextNeighborhood()   *** DEPRECATED ***
  *  
@@ -1377,6 +1497,8 @@ function NSLGetNextUrl(infoPtr: NSLClientAsyncInfoPtr; var urlPtr: CStringPtr; v
 function NSLGetNextNeighborhood( infoPtr: NSLClientAsyncInfoPtr; var neighborhood: NSLNeighborhood; var neighborhoodLength: SIGNEDLONG ): Boolean; external name '_NSLGetNextNeighborhood';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLGetNextNeighborhood()
  *  
  *  Availability:
@@ -1385,7 +1507,10 @@ function NSLGetNextNeighborhood( infoPtr: NSLClientAsyncInfoPtr; var neighborhoo
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLGetNextNeighborhood(infoPtr: NSLClientAsyncInfoPtr; var neighborhood: NSLNeighborhood; var neighborhoodLength: SInt32): boolean; external name '_NSLGetNextNeighborhood';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1398,6 +1523,7 @@ function NSLGetNextNeighborhood(infoPtr: NSLClientAsyncInfoPtr; var neighborhood
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  NSLErrorToString()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1408,6 +1534,8 @@ function NSLGetNextNeighborhood(infoPtr: NSLClientAsyncInfoPtr; var neighborhood
 function NSLErrorToString( theErr: NSLError; errorString: CStringPtr; solutionString: CStringPtr ): OSStatus; external name '_NSLErrorToString';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLErrorToString()
  *  
  *  Availability:
@@ -1416,7 +1544,10 @@ function NSLErrorToString( theErr: NSLError; errorString: CStringPtr; solutionSt
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLErrorToString(theErr: NSLError; errorString: CStringPtr; solutionString: CStringPtr): OSStatus; external name '_NSLErrorToString';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1426,6 +1557,7 @@ function NSLErrorToString(theErr: NSLError; errorString: CStringPtr; solutionStr
 }
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLOpenNavigationAPI()   *** DEPRECATED ***
  *  
@@ -1450,6 +1582,8 @@ procedure NSLCloseNavigationAPI( theClient: NSLClientRef ); external name '_NSLC
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLOpenNavigationAPI()
  *  
  *  Availability:
@@ -1468,7 +1602,10 @@ function NSLOpenNavigationAPI(var newRef: NSLClientRef): OSStatus; external name
  *    Mac OS X:         in version 10.0 and later
  }
 procedure NSLCloseNavigationAPI(theClient: NSLClientRef); external name '_NSLCloseNavigationAPI';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     NSLPrepareRequest:  creates an NSLRequestRef, sets up some internal data
@@ -1488,6 +1625,7 @@ procedure NSLCloseNavigationAPI(theClient: NSLClientRef); external name '_NSLClo
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  NSLPrepareRequest()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1498,6 +1636,8 @@ procedure NSLCloseNavigationAPI(theClient: NSLClientRef); external name '_NSLClo
 function NSLPrepareRequest( notifier: NSLClientNotifyUPP; contextPtr: UnivPtr; theClient: NSLClientRef; var ref: NSLRequestRef; bufPtr: CStringPtr; bufLen: UNSIGNEDLONG; var infoPtr: NSLClientAsyncInfoPtr ): NSLError; external name '_NSLPrepareRequest';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLPrepareRequest()
  *  
  *  Availability:
@@ -1506,7 +1646,10 @@ function NSLPrepareRequest( notifier: NSLClientNotifyUPP; contextPtr: UnivPtr; t
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLPrepareRequest(notifier: NSLClientNotifyUPP; contextPtr: UnivPtr; theClient: NSLClientRef; var ref: NSLRequestRef; bufPtr: CStringPtr; bufLen: UInt32; var infoPtr: NSLClientAsyncInfoPtr): NSLError; external name '_NSLPrepareRequest';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1516,6 +1659,7 @@ function NSLPrepareRequest(notifier: NSLClientNotifyUPP; contextPtr: UnivPtr; th
 }
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLStartNeighborhoodLookup()   *** DEPRECATED ***
  *  
@@ -1528,6 +1672,8 @@ function NSLStartNeighborhoodLookup( ref: NSLRequestRef; neighborhood: NSLNeighb
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLStartNeighborhoodLookup()
  *  
  *  Availability:
@@ -1536,7 +1682,10 @@ function NSLStartNeighborhoodLookup( ref: NSLRequestRef; neighborhood: NSLNeighb
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLStartNeighborhoodLookup(ref: NSLRequestRef; neighborhood: NSLNeighborhood; var asyncInfo: NSLClientAsyncInfo): NSLError; external name '_NSLStartNeighborhoodLookup';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
    NSLStartServicesLookup: starts looking for entities if the specified type in the specified neighborhood
@@ -1544,6 +1693,7 @@ function NSLStartNeighborhoodLookup(ref: NSLRequestRef; neighborhood: NSLNeighbo
 }
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLStartServicesLookup()   *** DEPRECATED ***
  *  
@@ -1584,6 +1734,8 @@ function NSLCancelRequest( ref: NSLRequestRef ): NSLError; external name '_NSLCa
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLStartServicesLookup()
  *  
  *  Availability:
@@ -1618,7 +1770,10 @@ function NSLContinueLookup(var asyncInfo: NSLClientAsyncInfo): NSLError; externa
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLCancelRequest(ref: NSLRequestRef): NSLError; external name '_NSLCancelRequest';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
    NSLDeleteRequest: deletes info associated with this ref.  The ClientAsyncInfoPtr will no longer be valid
@@ -1626,6 +1781,7 @@ function NSLCancelRequest(ref: NSLRequestRef): NSLError; external name '_NSLCanc
 }
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLDeleteRequest()   *** DEPRECATED ***
  *  
@@ -1637,6 +1793,8 @@ function NSLCancelRequest(ref: NSLRequestRef): NSLError; external name '_NSLCanc
 function NSLDeleteRequest( ref: NSLRequestRef ): NSLError; external name '_NSLDeleteRequest';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLDeleteRequest()
  *  
  *  Availability:
@@ -1645,7 +1803,10 @@ function NSLDeleteRequest( ref: NSLRequestRef ): NSLError; external name '_NSLDe
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLDeleteRequest(ref: NSLRequestRef): NSLError; external name '_NSLDeleteRequest';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1655,15 +1816,20 @@ function NSLDeleteRequest(ref: NSLRequestRef): NSLError; external name '_NSLDele
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { NSLParseServicesRequestPB provides the inverse of NSLMakeRequestPB, filling out the offsets found within newDataPtr}
 =======
 {  NSLParseServicesRequestPB provides the inverse of NSLMakeRequestPB, filling out the offsets found within newDataPtr }
 >>>>>>> graemeg/fixes_2_2
+=======
+{  NSLParseServicesRequestPB provides the inverse of NSLMakeRequestPB, filling out the offsets found within newDataPtr }
+>>>>>>> origin/fixes_2_2
 { <--- returns an OSStatus if any errors occur parsing the data }
 { <--- newDataPtr is the construct passed to the plugin }
 { ---> serviceListPtr is the address of a pointer which will be set to point at the portion of the newDataPtr that holds the serviceList to be searched }
 { ---> serviceListLen is the length of the serviceListPtr data pointed to by serviceListPtr }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLParseServicesRequestPB()   *** DEPRECATED ***
  *  
@@ -1675,6 +1841,8 @@ function NSLDeleteRequest(ref: NSLRequestRef): NSLError; external name '_NSLDele
 function NSLParseServicesRequestPB( newDataPtr: NSLTypedDataPtr; var serviceListPtr: CStringPtr; var serviceListLen: UInt16 ): OSStatus; external name '_NSLParseServicesRequestPB';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLParseServicesRequestPB()
  *  
  *  Availability:
@@ -1683,7 +1851,10 @@ function NSLParseServicesRequestPB( newDataPtr: NSLTypedDataPtr; var serviceList
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLParseServicesRequestPB(newDataPtr: NSLTypedDataPtr; var serviceListPtr: CStringPtr; var serviceListLen: UInt16): OSStatus; external name '_NSLParseServicesRequestPB';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { NSLParseServiceRegistrationPB provides for breaking apart a registration request from a client to a plugin }
@@ -1694,6 +1865,7 @@ function NSLParseServicesRequestPB(newDataPtr: NSLTypedDataPtr; var serviceListP
 { ---> urlPtr is the address of a pointer which will be set to point at the portion of the newDataPtr that holds the url to be registered }
 { ---> urlLen is the length of the url data pointed to by urlPtr }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLParseServiceRegistrationPB()   *** DEPRECATED ***
  *  
@@ -1706,6 +1878,8 @@ function NSLParseServiceRegistrationPB( newDataPtr: NSLTypedDataPtr; var neighbo
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLParseServiceRegistrationPB()
  *  
  *  Availability:
@@ -1714,7 +1888,10 @@ function NSLParseServiceRegistrationPB( newDataPtr: NSLTypedDataPtr; var neighbo
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLParseServiceRegistrationPB(newDataPtr: NSLTypedDataPtr; var neighborhoodPtr: NSLNeighborhood; var neighborhoodLen: UInt16; var urlPtr: CStringPtr; var urlLen: UInt16): OSStatus; external name '_NSLParseServiceRegistrationPB';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { NSLGetErrorStringsFromResource is obsolete in X.  It will ignore the fileSpecPtr }
 { and errorResID parameters and return the standard error strings. }
@@ -1728,6 +1905,7 @@ function NSLParseServiceRegistrationPB(newDataPtr: NSLTypedDataPtr; var neighbor
 { <--> solutionString is a pointer to valid memory of at least 256 bytes which will be filled out by the solution portion of the error string }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  NSLGetErrorStringsFromResource()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1739,6 +1917,8 @@ function NSLGetErrorStringsFromResource( theErr: OSStatus; const (*var*) fileSpe
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLGetErrorStringsFromResource()
  *  
  *  Availability:
@@ -1747,12 +1927,16 @@ function NSLGetErrorStringsFromResource( theErr: OSStatus; const (*var*) fileSpe
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLGetErrorStringsFromResource(theErr: OSStatus; const (*var*) fileSpecPtr: FSSpec; errorResID: SInt16; errorString: CStringPtr; solutionString: CStringPtr): OSStatus; external name '_NSLGetErrorStringsFromResource';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { <--- Returns true if given service is in the given service list }
 { ---> serviceList is a valid NSLServicesList containing information about services to be searched }
 { ---> svcToFind is an NSLServiceType of a particular service to check if it is in the serviceList }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLServiceIsInServiceList()   *** DEPRECATED ***
  *  
@@ -1765,6 +1949,8 @@ function NSLServiceIsInServiceList( serviceList: NSLServicesList; svcToFind: NSL
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLServiceIsInServiceList()
  *  
  *  Availability:
@@ -1773,12 +1959,16 @@ function NSLServiceIsInServiceList( serviceList: NSLServicesList; svcToFind: NSL
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLServiceIsInServiceList(serviceList: NSLServicesList; svcToFind: NSLServiceType): boolean; external name '_NSLServiceIsInServiceList';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { <--- returns an OSStatus if any errors occur parsing the data }
 { ---> svcString is the address of a pointer which will be set to point at the portion of theURL that holds the serviceType of theURL }
 { ---> svcLen is the length of the serviceType pointed to by svcString }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLGetServiceFromURL()   *** DEPRECATED ***
  *  
@@ -1791,6 +1981,8 @@ function NSLGetServiceFromURL( theURL: CStringPtr; var svcString: CStringPtr; va
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLGetServiceFromURL()
  *  
  *  Availability:
@@ -1799,11 +1991,15 @@ function NSLGetServiceFromURL( theURL: CStringPtr; var svcString: CStringPtr; va
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLGetServiceFromURL(theURL: CStringPtr; var svcString: CStringPtr; var svcLen: UInt16): OSStatus; external name '_NSLGetServiceFromURL';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { <--- returns the length of a Neighborhood data structure }
 { ---> neighborhood is a valid NSLNeighborhood }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLGetNeighborhoodLength()   *** DEPRECATED ***
  *  
@@ -1816,6 +2012,8 @@ function NSLGetNeighborhoodLength( neighborhood: NSLNeighborhood ): SIGNEDLONG; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLGetNeighborhoodLength()
  *  
  *  Availability:
@@ -1824,7 +2022,10 @@ function NSLGetNeighborhoodLength( neighborhood: NSLNeighborhood ): SIGNEDLONG; 
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLGetNeighborhoodLength(neighborhood: NSLNeighborhood): SInt32; external name '_NSLGetNeighborhoodLength';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
   -------------------------------------------------------------------------------------
@@ -1835,6 +2036,7 @@ function NSLGetNeighborhoodLength(neighborhood: NSLNeighborhood): SInt32; extern
 { this routine works the same as the Thread manager's routine NewThread, except }
 { that the thread is added to the NSL manager's thread list. }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLNewThread()   *** DEPRECATED ***
  *  
@@ -1847,6 +2049,8 @@ function NSLNewThread( threadStyle_: ThreadStyle; threadEntry: ThreadEntryProcPt
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLNewThread()
  *  
  *  Availability:
@@ -1855,11 +2059,15 @@ function NSLNewThread( threadStyle_: ThreadStyle; threadEntry: ThreadEntryProcPt
  *    Mac OS X:         in version 10.0 and later
  }
 function NSLNewThread(threadStyle_: ThreadStyle; threadEntry: ThreadEntryProcPtr; threadParam: UnivPtr; stackSize: Size; options: ThreadOptions; var threadResult: UnivPtr; var threadMade: ThreadID): OSErr; external name '_NSLNewThread';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { this routine works the same as the Thread manager's routine DisposeThread, except }
 { that the thread is removed from the NSL manager's thread list. }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  NSLDisposeThread()   *** DEPRECATED ***
  *  
@@ -1893,6 +2101,8 @@ type
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NSLDisposeThread()
  *  
  *  Availability:
@@ -1920,4 +2130,7 @@ type
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

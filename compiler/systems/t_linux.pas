@@ -113,6 +113,7 @@ implementation
           routine in regular code can get "smart" linked away -> reference it
           just like the debug info }
 <<<<<<< HEAD
+<<<<<<< HEAD
         new_section(list,sec_fpc,'links',0);
 =======
         list.concat(Tai_section.create(sec_fpc,'links',0));
@@ -215,12 +216,19 @@ begin
 {$ifdef m68k}
   const defdynlinker='/lib/ld.so.1';
 {$endif m68k}
+=======
+        list.concat(Tai_section.create(sec_fpc,'links',0));
+        list.concat(Tai_const.Createname(s,0));
+        inherited setfininame(list,s);
+      end;
+>>>>>>> origin/fixes_2_2
 
 {$ifdef i386}
   const defdynlinker='/lib/ld-linux.so.2';
 {$endif}
 
 {$ifdef x86_64}
+<<<<<<< HEAD
   const defdynlinker='/lib64/ld-linux-x86-64.so.2';
 {$endif x86_64}
 
@@ -236,6 +244,14 @@ begin
   const defdynlinkerv1='/lib64/ld64.so.1';
   const defdynlinkerv2='/lib64/ld64.so.2';
   var defdynlinker: string;
+=======
+   LibrarySearchPath.AddPath(sysrootpath,'/lib64;/usr/lib64;/usr/X11R6/lib64',true);
+{$else}
+{$ifdef powerpc64}
+   LibrarySearchPath.AddPath(sysrootpath,'/lib64;/usr/lib64;/usr/X11R6/lib64',true);
+{$else powerpc64}
+   LibrarySearchPath.AddPath(sysrootpath,'/lib;/usr/lib;/usr/X11R6/lib',true);
+>>>>>>> origin/fixes_2_2
 {$endif powerpc64}
 
 {$ifdef arm}
@@ -362,7 +378,11 @@ const
 {$endif}
 
 var
+<<<<<<< HEAD
   platformopt: string;
+=======
+  defdynlinker: string;
+>>>>>>> origin/fixes_2_2
 begin
   platformopt:='';
 {$ifdef powerpc64}
@@ -374,6 +394,7 @@ begin
 {$endif powerpc64}
   with Info do
    begin
+<<<<<<< HEAD
      ExeCmd[1]:='ld '+platform_select+platformopt+' $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -L. -o $EXE';
      DllCmd[1]:='ld '+platform_select+' $OPT $INIT $FINI $SONAME -shared -L. -o $EXE';
      { when we want to cross-link we need to override default library paths;
@@ -388,14 +409,25 @@ begin
        end;
      ExeCmd[1]:=ExeCmd[1]+' $RES';
      DllCmd[1]:=DllCmd[1]+' $RES';
+=======
+     ExeCmd[1]:='ld '+platform_select+' $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -L. -o $EXE';
+     { when we want to cross-link we need to override default library paths }
+     if length(sysrootpath) > 0 then
+       ExeCmd[1]:=ExeCmd[1]+' -T';
+     ExeCmd[1]:=ExeCmd[1]+' $RES';
+     DllCmd[1]:='ld '+platform_select+' $OPT $INIT $FINI $SONAME -shared -L. -o $EXE $RES';
+>>>>>>> origin/fixes_2_2
      DllCmd[2]:='strip --strip-unneeded $EXE';
      ExtDbgCmd[1]:='objcopy --only-keep-debug $EXE $DBG';
      ExtDbgCmd[2]:='objcopy --add-gnu-debuglink=$DBG $EXE';
      ExtDbgCmd[3]:='strip --strip-unneeded $EXE';
 
+<<<<<<< HEAD
      SetupDynlinker(DynamicLinker,libctype);
 =======
 
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef m68k}
      { experimental, is this correct? }
      defdynlinker:='/lib/ld-linux.so.2';
@@ -472,7 +504,10 @@ begin
          libctype:=glibc2;
 {$endif i386}
        end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
    end;
 end;
 
@@ -594,6 +629,7 @@ begin
       if linklibc and (libctype<>uclibc) then
        begin
 <<<<<<< HEAD
+<<<<<<< HEAD
          { crti.o must come first }
          if librarysearchpath.FindFile('crti.o',false,s) then
 <<<<<<< HEAD
@@ -659,6 +695,8 @@ begin
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
          { x86_64 requires this to use entry/exit code with pic,
            see also issue #8210 regarding a discussion
            no idea about the other non i386 CPUs (FK)
@@ -675,7 +713,10 @@ begin
              AddFileName(s);
          if librarysearchpath.FindFile('crti.o',false,s) then
            AddFileName(s);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        end;
       { main objectfiles }
       while not ObjectFiles.Empty do
@@ -782,6 +823,7 @@ begin
       if linklibc and (libctype<>uclibc) then
        begin
 <<<<<<< HEAD
+<<<<<<< HEAD
          if cs_create_pic in current_settings.moduleswitches then
            begin
              found1:=librarysearchpath.FindFile('crtendS.o',false,s1);
@@ -796,6 +838,8 @@ begin
            end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
          { x86_64 requires this to use entry/exit code with pic,
            see also issue #8210 regarding a discussion
            no idea about the other non i386 CPUs (FK)
@@ -806,7 +850,10 @@ begin
          else
 {$endif x86_64}
            found1:=librarysearchpath.FindFile('crtend.o',false,s1);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          found2:=librarysearchpath.FindFile('crtn.o',false,s2);
          if not(found2) then
            Message1(exec_w_init_file_not_found,'crtn.o');
@@ -1808,7 +1855,10 @@ begin
 =======
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
   if create_smartlink_sections then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
    GCSectionsStr:='--gc-sections';
   If (cs_profile in current_settings.moduleswitches) or
      ((Info.DynamicLinker<>'') and (not SharedLibFiles.Empty)) then
@@ -1846,6 +1896,7 @@ begin
         begin
           SplitBinCmd(Info.ExtDbgCmd[i],binstr,cmdstr);
 <<<<<<< HEAD
+<<<<<<< HEAD
           Replace(cmdstr,'$EXE',maybequoted(current_module.exefilename));
           Replace(cmdstr,'$DBGFN',maybequoted(extractfilename(current_module.dbgfilename)));
           Replace(cmdstr,'$DBG',maybequoted(current_module.dbgfilename));
@@ -1854,6 +1905,11 @@ begin
           Replace(cmdstr,'$DBGFN',maybequoted(extractfilename(current_module.dbgfilename^)));
           Replace(cmdstr,'$DBG',maybequoted(current_module.dbgfilename^));
 >>>>>>> graemeg/fixes_2_2
+=======
+          Replace(cmdstr,'$EXE',maybequoted(current_module.exefilename^));
+          Replace(cmdstr,'$DBGFN',maybequoted(extractfilename(current_module.dbgfilename^)));
+          Replace(cmdstr,'$DBG',maybequoted(current_module.dbgfilename^));
+>>>>>>> origin/fixes_2_2
           success:=DoExec(FindUtil(utilsprefix+BinStr),CmdStr,true,false);
           if not success then
             break;
@@ -1887,8 +1943,11 @@ begin
  { Create some replacements }
  { note: linux does not use exportlib.initname/fininame due to the custom startup code }
 <<<<<<< HEAD
+<<<<<<< HEAD
   InitStr:='-init FPC_SHARED_LIB_START';
 =======
+=======
+>>>>>>> origin/fixes_2_2
   InitStr:='-init FPC_LIB_START';
 >>>>>>> graemeg/fixes_2_2
   FiniStr:='-fini FPC_LIB_EXIT';
@@ -2260,7 +2319,10 @@ initialization
   RegisterExport(system_i386_linux,texportliblinux);
   RegisterTarget(system_i386_linux_info);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
   RegisterRes(res_elf32_info,TWinLikeResourceFile);
 
   RegisterExternalLinker(system_x86_6432_linux_info,TLinkerLinux);
@@ -2295,9 +2357,13 @@ initialization
   RegisterExport(system_x86_64_linux,texportliblinux);
   RegisterTarget(system_x86_64_linux_info);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   RegisterRes(res_elf64_info,TWinLikeResourceFile);
 >>>>>>> graemeg/fixes_2_2
+=======
+  RegisterRes(res_elf64_info,TWinLikeResourceFile);
+>>>>>>> origin/fixes_2_2
 {$endif x86_64}
 {$ifdef SPARC}
   RegisterImport(system_SPARC_linux,timportliblinux);

@@ -3,6 +3,7 @@ function DoCheck(Key:WideChar):boolean;
 begin
  DoCheck:=(Key in [WideChar(#0), WideChar(#8), WideChar(#10),
 <<<<<<< HEAD
+<<<<<<< HEAD
     WideChar(#13), WideChar(#27)
 {$IFNDEF OS2}
 { OS/2 Unicode support uses #127 as replacement character for translation
@@ -13,6 +14,9 @@ begin
 =======
     WideChar(#13), WideChar(#27), WideChar(#127)]);
 >>>>>>> graemeg/fixes_2_2
+=======
+    WideChar(#13), WideChar(#27), WideChar(#127)]);
+>>>>>>> origin/fixes_2_2
 end;
 
 var

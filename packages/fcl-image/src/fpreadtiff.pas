@@ -1,10 +1,14 @@
 {
     This file is part of the Free Pascal run time library.
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2012-2013 by the Free Pascal development team
 =======
     Copyright (c) 2008 by the Free Pascal development team
 >>>>>>> graemeg/fixes_2_2
+=======
+    Copyright (c) 2008 by the Free Pascal development team
+>>>>>>> origin/fixes_2_2
 
     Tiff reader for fpImage.
 
@@ -17,6 +21,7 @@
 
  **********************************************************************
 
+<<<<<<< HEAD
 <<<<<<< HEAD
  Working:
    Black and white 1 bit,
@@ -40,6 +45,8 @@
    ICC profile tag 34675
    orientation with rotation
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Working:
     Grayscale 8,16bit (optional alpha),
     RGB 8,16bit (optional alpha),
@@ -57,12 +64,16 @@
     pages
     fillorder - not needed by baseline tiff reader
     bigtiff 64bit offsets
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 }
 unit FPReadTiff;
 
 {$mode objfpc}{$H+}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$inline on}
 
@@ -71,16 +82,22 @@ interface
 uses
   Math, Classes, SysUtils, ctypes, zinflate, zbase, FPimage, FPTiffCmn;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 interface
 
 uses
   Math, Classes, SysUtils, FPimage, ctypes, FPTiffCmn;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
   TFPReaderTiff = class;
 
   TTiffCreateCompatibleImgEvent = procedure(Sender: TFPReaderTiff;
+<<<<<<< HEAD
 <<<<<<< HEAD
                                             ImgFileDir: TTiffIFD) of object;
 
@@ -92,11 +109,15 @@ type
 =======
                                         var NewImage: TFPCustomImage) of object;
 >>>>>>> graemeg/fixes_2_2
+=======
+                                        var NewImage: TFPCustomImage) of object;
+>>>>>>> origin/fixes_2_2
 
   { TFPReaderTiff }
 
   TFPReaderTiff = class(TFPCustomImageReader)
   private
+<<<<<<< HEAD
 <<<<<<< HEAD
     FCheckIFDOrder: TTiffCheckIFDOrder;
     FFirstIFDStart: DWord;
@@ -107,15 +128,21 @@ type
     FDebug: boolean;
     {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FOnCreateImage: TTiffCreateCompatibleImgEvent;
     FReverserEndian: boolean;
     IDF: TTiffIDF;
     FDebug: boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     fIFDStarts: TFPList;
     FReverseEndian: Boolean;
     fStartPos: int64;
     s: TStream;
+<<<<<<< HEAD
 <<<<<<< HEAD
     function GetImages(Index: integer): TTiffIFD;
     procedure TiffError(Msg: string);
@@ -123,11 +150,16 @@ type
     function ReadTiffHeader(QuickTest: boolean; out IFDStart: DWord): boolean; // returns IFD: offset to first IFD
     function ReadIFD(Start: DWord): DWord;// Image File Directory
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure TiffError(Msg: string);
     procedure SetStreamPos(p: DWord);
     function ReadTiffHeader(QuickTest: boolean; out IFD: DWord): boolean; // returns IFD: offset to first IFD
     function ReadIFD(Start: dword): DWord;// Image File Directory
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure ReadDirectoryEntry(var EntryTag: Word);
     function ReadEntryUnsigned: DWord;
     function ReadEntrySigned: Cint32;
@@ -143,6 +175,7 @@ type
                                     out Buffer: PDWord; out Count: DWord);
     procedure ReadShortValues(StreamPos: DWord;
                               out Buffer: PWord; out Count: DWord);
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure ReadImageProperties(
       out RedBits, GreenBits, BlueBits, GrayBits, AlphaBits: Word;
@@ -173,6 +206,8 @@ type
     property Debug: boolean read FDebug write FDebug;
     {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure ReadImage(Index: integer);
     function FixEndian(w: Word): Word; inline;
     function FixEndian(d: DWord): DWord; inline;
@@ -188,12 +223,16 @@ type
     procedure Clear;
     procedure LoadFromStream(aStream: TStream);
     property Debug: boolean read FDebug write FDebug;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property StartPos: int64 read fStartPos;
     property ReverserEndian: boolean read FReverserEndian;
     property TheStream: TStream read s;
     property OnCreateImage: TTiffCreateCompatibleImgEvent read FOnCreateImage
                                                           write FOnCreateImage;
+<<<<<<< HEAD
 <<<<<<< HEAD
     property CheckIFDOrder: TTiffCheckIFDOrder read FCheckIFDOrder write FCheckIFDOrder;
     function FirstImg: TTiffIFD;
@@ -228,10 +267,17 @@ end ;
 implementation
 
 >>>>>>> graemeg/fixes_2_2
+=======
+  end;
+
+implementation
+
+>>>>>>> origin/fixes_2_2
 procedure TFPReaderTiff.TiffError(Msg: string);
 begin
   Msg:=Msg+' at position '+IntToStr(s.Position);
   if fStartPos>0 then
+<<<<<<< HEAD
 <<<<<<< HEAD
     Msg:=Msg+' (TiffPosition='+IntToStr(fStartPos)+')';
   raise Exception.Create(Msg);
@@ -494,11 +540,16 @@ begin
 end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Msg:=Msg+'(TiffPosition='+IntToStr(fStartPos)+')';
   raise Exception.Create(Msg);
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure TFPReaderTiff.SetStreamPos(p: DWord);
 var
   NewPosition: int64;
@@ -509,6 +560,7 @@ begin
   s.Position:=NewPosition;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TFPReaderTiff.LoadFromStream(aStream: TStream; AutoClear: boolean);
 var
@@ -599,6 +651,8 @@ end;
 
 function TFPReaderTiff.ReadTiffHeader(QuickTest: boolean; out IFDStart: DWord): boolean;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TFPReaderTiff.LoadFromStream(aStream: TStream);
 var
   IFDStart: LongWord;
@@ -622,7 +676,10 @@ begin
 end;
 
 function TFPReaderTiff.ReadTiffHeader(QuickTest: boolean; out IFD: DWord): boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   ByteOrder: String;
   BigEndian: Boolean;
@@ -642,6 +699,7 @@ begin
   else
     TiffError('expected II or MM');
 <<<<<<< HEAD
+<<<<<<< HEAD
   FReverseEndian:={$ifdef FPC_BIG_ENDIAN}not{$endif} BigEndian;
   {$ifdef FPC_Debug_Image}
   if Debug then
@@ -652,6 +710,11 @@ begin
   if Debug then
     writeln('TFPReaderTiff.ReadTiffHeader Endian Big=',BigEndian,' ReverseEndian=',FReverseEndian);
 >>>>>>> graemeg/fixes_2_2
+=======
+  FReverseEndian:={$IFDEF FPC_BIG_ENDIAN}not{$ENDIF} BigEndian;
+  if Debug then
+    writeln('TFPReaderTiff.ReadTiffHeader Endian Big=',BigEndian,' ReverseEndian=',FReverseEndian);
+>>>>>>> origin/fixes_2_2
   // read magic number 42
   FortyTwo:=ReadWord;
   if FortyTwo<>42 then begin
@@ -661,27 +724,37 @@ begin
       TiffError('expected 42, because of its deep philosophical impact, but found '+IntToStr(FortyTwo));
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   // read offset to first IFD
   IFDStart:=ReadDWord;
 =======
   // read offset to first IDF
   IFD:=ReadDWord;
 >>>>>>> graemeg/fixes_2_2
+=======
+  // read offset to first IDF
+  IFD:=ReadDWord;
+>>>>>>> origin/fixes_2_2
   //debugln(['TForm1.ReadTiffHeader IFD=',IFD]);
   Result:=true;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TFPReaderTiff.ReadIFD(Start: DWord): DWord;
 =======
 function TFPReaderTiff.ReadIFD(Start: dword): DWord;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TFPReaderTiff.ReadIFD(Start: dword): DWord;
+>>>>>>> origin/fixes_2_2
 var
   Count: Word;
   i: Integer;
   EntryTag: Word;
   p: Int64;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$ifdef FPC_Debug_Image}
   if Debug then
@@ -697,6 +770,10 @@ begin
   Result:=0;
   SetStreamPos(Start);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=0;
+  SetStreamPos(Start);
+>>>>>>> origin/fixes_2_2
   Count:=ReadWord;
   EntryTag:=0;
   p:=s.Position;
@@ -708,13 +785,17 @@ begin
   // read start of next IFD
   Result:=ReadDWord;
 <<<<<<< HEAD
+<<<<<<< HEAD
   IFD.IFDNext:=Result;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   if (Result<>0) and (Result<Start) then begin
     // backward jump: check for loops
     if fIFDStarts=nil then
       fIFDStarts:=TFPList.Create
+<<<<<<< HEAD
 <<<<<<< HEAD
     else if fIFDStarts.IndexOf({%H-}Pointer(PtrUInt(Result)))>0 then
       TiffError('endless loop in Image File Descriptors');
@@ -724,6 +805,11 @@ begin
       TiffError('endless loop in Image File Descriptors');
     fIFDStarts.Add(Pointer(PtrUInt(Result)));
 >>>>>>> graemeg/fixes_2_2
+=======
+    else if fIFDStarts.IndexOf(Pointer(PtrUInt(Result)))>0 then
+      TiffError('endless loop in Image File Descriptors');
+    fIFDStarts.Add(Pointer(PtrUInt(Result)));
+>>>>>>> origin/fixes_2_2
   end;
 end;
 
@@ -731,20 +817,27 @@ procedure TFPReaderTiff.ReadDirectoryEntry(var EntryTag: Word);
 var
   EntryType: Word;
 <<<<<<< HEAD
+<<<<<<< HEAD
   EntryCount: DWord;
   EntryStart: DWord;
   NewEntryTag: Word;
   UValue: DWord;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   EntryCount: LongWord;
   EntryStart: LongWord;
   NewEntryTag: Word;
   UValue: LongWord;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   SValue: integer;
   WordBuffer: PWord;
   Count: DWord;
   i: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   function GetPos: DWord;
@@ -771,17 +864,23 @@ begin
     end;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 begin
   NewEntryTag:=ReadWord;
   if NewEntryTag<EntryTag then
     TiffError('Tags must be in ascending order');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   EntryTag:=NewEntryTag;
   case EntryTag of
   254:
     begin
       // NewSubFileType
       UValue:=ReadEntryUnsigned;
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.ImageIsThumbNail:=UValue and 1<>0;
       IFD.ImageIsPage:=UValue and 2<>0;
@@ -791,17 +890,23 @@ begin
         writeln('TFPReaderTiff.ReadDirectoryEntry Tag 254: NewSubFileType ThumbNail=',IFD.ImageIsThumbNail,' Page=',IFD.ImageIsPage,' Mask=',IFD.ImageIsMask);
       {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
       IDF.ImageIsThumbNail:=UValue and 1<>0;
       IDF.ImageIsPage:=UValue and 2<>0;
       IDF.ImageIsMask:=UValue and 4<>0;
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry NewSubFileType ThumbNail=',IDF.ImageIsThumbNail,' Page=',IDF.ImageIsPage,' Mask=',IDF.ImageIsMask);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   255:
     begin
       // SubFileType (deprecated)
       UValue:=ReadEntryUnsigned;
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.ImageIsThumbNail:=false;
       IFD.ImageIsPage:=false;
@@ -818,6 +923,8 @@ begin
         writeln('TFPReaderTiff.ReadDirectoryEntry Tag 255: SubFileType ThumbNail=',IFD.ImageIsThumbNail,' Page=',IFD.ImageIsPage,' Mask=',IFD.ImageIsMask);
       {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
       IDF.ImageIsThumbNail:=false;
       IDF.ImageIsPage:=false;
       IDF.ImageIsMask:=false;
@@ -830,11 +937,15 @@ begin
       end;
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry SubFileType ThumbNail=',IDF.ImageIsThumbNail,' Page=',IDF.ImageIsPage,' Mask=',IDF.ImageIsMask);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   256:
     begin
       // fImageWidth
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.ImageWidth:=ReadEntryUnsigned;
       {$ifdef FPC_Debug_Image}
@@ -851,6 +962,8 @@ begin
         writeln('TFPReaderTiff.ReadDirectoryEntry Tag 257: ImageHeight=',IFD.ImageHeight);
       {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
       IDF.ImageWidth:=ReadEntryUnsigned;
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry ImageWidth=',IDF.ImageWidth);
@@ -861,11 +974,15 @@ begin
       IDF.ImageHeight:=ReadEntryUnsigned;
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry ImageHeight=',IDF.ImageHeight);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   258:
     begin
       // BitsPerSample
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.BitsPerSample:=GetPos;
       ReadShortValues(IFD.BitsPerSample,WordBuffer,Count);
@@ -873,15 +990,21 @@ begin
       if Debug then begin
         write('TFPReaderTiff.ReadDirectoryEntry Tag 258: BitsPerSample: ');
 =======
+=======
+>>>>>>> origin/fixes_2_2
       IDF.BitsPerSample:=DWord(s.Position-fStartPos-2);
       ReadShortValues(IDF.BitsPerSample,WordBuffer,Count);
       if Debug then begin
         write('TFPReaderTiff.ReadDirectoryEntry BitsPerSample: ');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         for i:=0 to Count-1 do
           write(IntToStr(WordBuffer[i]),' ');
         writeln;
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
       {$endif}
       try
@@ -889,17 +1012,23 @@ begin
         for i:=0 to Count-1 do
           IFD.BitsPerSampleArray[i]:=WordBuffer[i];
 =======
+=======
+>>>>>>> origin/fixes_2_2
       try
         SetLength(IDF.BitsPerSampleArray,Count);
         for i:=0 to Count-1 do
           IDF.BitsPerSampleArray[i]:=WordBuffer[i];
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       finally
         ReAllocMem(WordBuffer,0);
       end;
     end;
   259:
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
       // Compression
       UValue:=ReadEntryUnsigned;
@@ -939,6 +1068,8 @@ begin
         writeln('TFPReaderTiff.ReadDirectoryEntry Tag 259: Compression=',IntToStr(IFD.Compression),'=',TiffCompressionName(IFD.Compression));
       {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
       // fCompression
       UValue:=ReadEntryUnsigned;
       case UValue of
@@ -969,7 +1100,10 @@ begin
         end;
         writeln;
       end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   262:
     begin
@@ -986,17 +1120,23 @@ begin
         TiffError('expected PhotometricInterpretation, but found '+IntToStr(UValue));
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
       IFD.PhotoMetricInterpretation:=UValue;
       {$ifdef FPC_Debug_Image}
       if Debug then begin
         write('TFPReaderTiff.ReadDirectoryEntry Tag 262: PhotometricInterpretation=');
         case IFD.PhotoMetricInterpretation of
 =======
+=======
+>>>>>>> origin/fixes_2_2
       IDF.PhotoMetricInterpretation:=UValue;
       if Debug then begin
         write('TFPReaderTiff.ReadDirectoryEntry PhotometricInterpretation=');
         case IDF.PhotoMetricInterpretation of
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         0: write('0=bilevel grayscale 0 is white');
         1: write('1=bilevel grayscale 0 is black');
         2: write('2=RGB 0,0,0 is black');
@@ -1007,23 +1147,30 @@ begin
         writeln;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
       {$endif}
     end;
   263:
     begin
       // Tresholding
 =======
+=======
+>>>>>>> origin/fixes_2_2
     end;
   263:
     begin
       // Treshholding
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       UValue:=ReadEntryUnsigned;
       case UValue of
       1: ; // no dithering or halftoning was applied
       2: ; // an ordered dithering or halftoning was applied
       3: ; // a randomized dithering or halftoning was applied
       else
+<<<<<<< HEAD
 <<<<<<< HEAD
         TiffError('expected Tresholding, but found '+IntToStr(UValue));
       end;
@@ -1033,16 +1180,22 @@ begin
         writeln('TFPReaderTiff.ReadDirectoryEntry Tag 263: Tresholding=',IFD.Tresholding);
       {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
         TiffError('expected Treshholding, but found '+IntToStr(UValue));
       end;
       IDF.Treshholding:=UValue;
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry Treshholding=',IDF.Treshholding);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   264:
     begin
       // CellWidth
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.CellWidth:=ReadEntryUnsigned;
       {$ifdef FPC_Debug_Image}
@@ -1054,10 +1207,16 @@ begin
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry CellWidth=',IDF.CellWidth);
 >>>>>>> graemeg/fixes_2_2
+=======
+      IDF.CellWidth:=ReadEntryUnsigned;
+      if Debug then
+        writeln('TFPReaderTiff.ReadDirectoryEntry CellWidth=',IDF.CellWidth);
+>>>>>>> origin/fixes_2_2
     end;
   265:
     begin
       // CellLength
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.CellLength:=ReadEntryUnsigned;
       {$ifdef FPC_Debug_Image}
@@ -1069,12 +1228,18 @@ begin
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry CellLength=',IDF.CellLength);
 >>>>>>> graemeg/fixes_2_2
+=======
+      IDF.CellLength:=ReadEntryUnsigned;
+      if Debug then
+        writeln('TFPReaderTiff.ReadDirectoryEntry CellLength=',IDF.CellLength);
+>>>>>>> origin/fixes_2_2
     end;
   266:
     begin
       // FillOrder
       UValue:=ReadEntryUnsigned;
       case UValue of
+<<<<<<< HEAD
 <<<<<<< HEAD
       1: IFD.FillOrder:=1; // left to right = high to low
       2: IFD.FillOrder:=2; // left to right = low to high
@@ -1086,6 +1251,8 @@ begin
         write('TFPReaderTiff.ReadDirectoryEntry Tag 266: FillOrder=',IntToStr(IFD.FillOrder),'=');
         case IFD.FillOrder of
 =======
+=======
+>>>>>>> origin/fixes_2_2
       1: IDF.FillOrder:=1; // left to right = high to low
       2: IDF.FillOrder:=2; // left to right = low to high
       else
@@ -1094,20 +1261,27 @@ begin
       if Debug then begin
         write('TFPReaderTiff.ReadDirectoryEntry FillOrder=',IntToStr(IDF.FillOrder),'=');
         case IDF.FillOrder of
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         1: write('left to right = high to low');
         2: write('left to right = low to high');
         end;
         writeln;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
       {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   269:
     begin
       // DocumentName
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.DocumentName:=ReadEntryString;
       {$ifdef FPC_Debug_Image}
@@ -1119,10 +1293,16 @@ begin
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry DocumentName=',IDF.DocumentName);
 >>>>>>> graemeg/fixes_2_2
+=======
+      IDF.DocumentName:=ReadEntryString;
+      if Debug then
+        writeln('TFPReaderTiff.ReadDirectoryEntry DocumentName=',IDF.DocumentName);
+>>>>>>> origin/fixes_2_2
     end;
   270:
     begin
       // ImageDescription
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.ImageDescription:=ReadEntryString;
       {$ifdef FPC_Debug_Image}
@@ -1134,10 +1314,16 @@ begin
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry ImageDescription=',IDF.ImageDescription);
 >>>>>>> graemeg/fixes_2_2
+=======
+      IDF.ImageDescription:=ReadEntryString;
+      if Debug then
+        writeln('TFPReaderTiff.ReadDirectoryEntry ImageDescription=',IDF.ImageDescription);
+>>>>>>> origin/fixes_2_2
     end;
   271:
     begin
       // Make - scanner manufacturer
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.Make_ScannerManufacturer:=ReadEntryString;
       {$ifdef FPC_Debug_Image}
@@ -1149,10 +1335,16 @@ begin
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry Make_ScannerManufacturer=',IDF.Make_ScannerManufacturer);
 >>>>>>> graemeg/fixes_2_2
+=======
+      IDF.Make_ScannerManufacturer:=ReadEntryString;
+      if Debug then
+        writeln('TFPReaderTiff.ReadDirectoryEntry Make_ScannerManufacturer=',IDF.Make_ScannerManufacturer);
+>>>>>>> origin/fixes_2_2
     end;
   272:
     begin
       // Model - scanner model
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.Model_Scanner:=ReadEntryString;
       {$ifdef FPC_Debug_Image}
@@ -1169,6 +1361,8 @@ begin
         writeln('TFPReaderTiff.ReadDirectoryEntry Tag 273: StripOffsets, offset for entry=',IFD.StripOffsets);
       {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
       IDF.Model_Scanner:=ReadEntryString;
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry Model_Scanner=',IDF.Model_Scanner);
@@ -1179,7 +1373,10 @@ begin
       IDF.StripOffsets:=DWord(s.Position-fStartPos-2);
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry StripOffsets=',IDF.StripOffsets);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   274:
     begin
@@ -1198,17 +1395,23 @@ begin
         TiffError('expected Orientation, but found '+IntToStr(UValue));
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
       IFD.Orientation:=UValue;
       {$ifdef FPC_Debug_Image}
       if Debug then begin
         write('TFPReaderTiff.ReadDirectoryEntry Tag 274: Orientation=',IntToStr(IFD.Orientation),'=');
         case IFD.Orientation of
 =======
+=======
+>>>>>>> origin/fixes_2_2
       IDF.Orientation:=UValue;
       if Debug then begin
         write('TFPReaderTiff.ReadDirectoryEntry Orientation=',IntToStr(IDF.Orientation),'=');
         case IDF.Orientation of
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         1: write('0,0 is left, top');
         2: write('0,0 is right, top');
         3: write('0,0 is right, bottom');
@@ -1221,13 +1424,17 @@ begin
         writeln;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
       {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   277:
     begin
       // SamplesPerPixel
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.SamplesPerPixel:=ReadEntryUnsigned;
       {$ifdef FPC_Debug_Image}
@@ -1239,6 +1446,11 @@ begin
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry SamplesPerPixel=',IDF.SamplesPerPixel);
 >>>>>>> graemeg/fixes_2_2
+=======
+      IDF.SamplesPerPixel:=ReadEntryUnsigned;
+      if Debug then
+        writeln('TFPReaderTiff.ReadDirectoryEntry SamplesPerPixel=',IDF.SamplesPerPixel);
+>>>>>>> origin/fixes_2_2
     end;
   278:
     begin
@@ -1246,6 +1458,7 @@ begin
       UValue:=ReadEntryUnsigned;
       if UValue=0 then
         TiffError('expected RowsPerStrip, but found '+IntToStr(UValue));
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.RowsPerStrip:=UValue;
       {$ifdef FPC_Debug_Image}
@@ -1263,6 +1476,8 @@ begin
         writeln('TFPReaderTiff.ReadDirectoryEntry Tag 279: StripByteCounts, offset for entry=',IFD.StripByteCounts);
       {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
       IDF.RowsPerStrip:=UValue;
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry RowsPerStrip=',IDF.RowsPerStrip);
@@ -1273,11 +1488,15 @@ begin
       IDF.StripByteCounts:=DWord(s.Position-fStartPos-2);
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry StripByteCounts=',IDF.StripByteCounts);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   280:
     begin
       // MinSampleValue
+<<<<<<< HEAD
 <<<<<<< HEAD
       {$ifdef FPC_Debug_Image}
       if Debug then
@@ -1285,10 +1504,13 @@ begin
       {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   281:
     begin
       // MaxSampleValue
+<<<<<<< HEAD
 <<<<<<< HEAD
       {$ifdef FPC_Debug_Image}
       if Debug then
@@ -1296,10 +1518,13 @@ begin
       {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   282:
     begin
       // XResolution
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.XResolution:=ReadEntryRational;
       {$ifdef FPC_Debug_Image}
@@ -1315,10 +1540,16 @@ begin
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry XResolution=',IDF.XResolution.Numerator,',',IDF.XResolution.Denominator);
 >>>>>>> graemeg/fixes_2_2
+=======
+      IDF.XResolution:=ReadEntryRational;
+      if Debug then
+        writeln('TFPReaderTiff.ReadDirectoryEntry XResolution=',IDF.XResolution.Numerator,',',IDF.XResolution.Denominator);
+>>>>>>> origin/fixes_2_2
     end;
   283:
     begin
       // YResolution
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.YResolution:=ReadEntryRational;
       {$ifdef FPC_Debug_Image}
@@ -1333,12 +1564,18 @@ begin
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry YResolution=',IDF.YResolution.Numerator,',',IDF.YResolution.Denominator);
 >>>>>>> graemeg/fixes_2_2
+=======
+      IDF.YResolution:=ReadEntryRational;
+      if Debug then
+        writeln('TFPReaderTiff.ReadDirectoryEntry YResolution=',IDF.YResolution.Numerator,',',IDF.YResolution.Denominator);
+>>>>>>> origin/fixes_2_2
     end;
   284:
     begin
       // PlanarConfiguration
       SValue:=ReadEntrySigned;
       case SValue of
+<<<<<<< HEAD
 <<<<<<< HEAD
       TiffPlanarConfigurationChunky: ; // 1
       TiffPlanarConfigurationPlanar: ; // 2
@@ -1366,6 +1603,8 @@ begin
         writeln('TFPReaderTiff.ReadDirectoryEntry Tag 285: PageName="'+IFD.PageName+'"');
       {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
       1: ; // chunky format
       2: ; // planar format
       else
@@ -1380,12 +1619,16 @@ begin
         end;
         writeln;
       end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   288:
     begin
       // FreeOffsets
       // The free bytes in a tiff file are described with FreeByteCount and FreeOffsets
+<<<<<<< HEAD
 <<<<<<< HEAD
       {$ifdef FPC_Debug_Image}
       if Debug then
@@ -1393,11 +1636,14 @@ begin
       {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   289:
     begin
       // FreeByteCount
       // The free bytes in a tiff file are described with FreeByteCount and FreeOffsets
+<<<<<<< HEAD
 <<<<<<< HEAD
       {$ifdef FPC_Debug_Image}
       if Debug then
@@ -1405,11 +1651,14 @@ begin
       {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   290:
     begin
       // GrayResponseUnit
       // precision of GrayResponseCurve
+<<<<<<< HEAD
 <<<<<<< HEAD
       {$ifdef FPC_Debug_Image}
       if Debug then
@@ -1417,11 +1666,14 @@ begin
       {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   291:
     begin
       // GrayResponseCurve
       // the optical density for each possible pixel value
+<<<<<<< HEAD
 <<<<<<< HEAD
       {$ifdef FPC_Debug_Image}
       if Debug then
@@ -1429,12 +1681,15 @@ begin
       {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   296:
     begin
       // fResolutionUnit
       UValue:=ReadEntryUnsigned;
       case UValue of
+<<<<<<< HEAD
 <<<<<<< HEAD
       1: IFD.ResolutionUnit:=1; // none
       2: IFD.ResolutionUnit:=2; // inch
@@ -1447,6 +1702,8 @@ begin
         write('TFPReaderTiff.ReadDirectoryEntry Tag 296: ResolutionUnit=');
         case IFD.ResolutionUnit of
 =======
+=======
+>>>>>>> origin/fixes_2_2
       1: IDF.ResolutionUnit:=1; // none
       2: IDF.ResolutionUnit:=2; // inch
       3: IDF.ResolutionUnit:=3; // centimeter
@@ -1456,13 +1713,17 @@ begin
       if Debug then begin
         write('TFPReaderTiff.ReadDirectoryEntry ResolutionUnit=');
         case IDF.ResolutionUnit of
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         1: write('none');
         2: write('inch');
         3: write('centimeter');
         end;
         writeln;
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
       {$endif}
     end;
@@ -1501,10 +1762,13 @@ begin
       {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   305:
     begin
       // Software
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.Software:=ReadEntryString;
       {$ifdef FPC_Debug_Image}
@@ -1516,10 +1780,16 @@ begin
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry Software="',IDF.Software,'"');
 >>>>>>> graemeg/fixes_2_2
+=======
+      IDF.Software:=ReadEntryString;
+      if Debug then
+        writeln('TFPReaderTiff.ReadDirectoryEntry Software="',IDF.Software,'"');
+>>>>>>> origin/fixes_2_2
     end;
   306:
     begin
       // DateAndTime
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.DateAndTime:=ReadEntryString;
       {$ifdef FPC_Debug_Image}
@@ -1778,10 +2048,54 @@ begin
       {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+      IDF.DateAndTime:=ReadEntryString;
+      if Debug then
+        writeln('TFPReaderTiff.ReadDirectoryEntry DateAndTime="',IDF.DateAndTime,'"');
+    end;
+  315:
+    begin
+      // Artist
+      IDF.Artist:=ReadEntryString;
+      if Debug then
+        writeln('TFPReaderTiff.ReadDirectoryEntry Artist="',IDF.Artist,'"');
+    end;
+  316:
+    begin
+      // HostComputer
+      IDF.HostComputer:=ReadEntryString;
+      if Debug then
+        writeln('TFPReaderTiff.ReadDirectoryEntry HostComputer="',IDF.HostComputer,'"');
+    end;
+  320:
+    begin
+      // ColorMap: N = 3*2^BitsPerSample
+      IDF.ColorMap:=DWord(s.Position-fStartPos-2);
+      if Debug then
+        writeln('TFPReaderTiff.ReadDirectoryEntry ColorMap');
+    end;
+  338:
+    begin
+      // ExtraSamples: if SamplesPerPixel is bigger than PhotometricInterpretation
+      // then ExtraSamples is an array defining the extra samples
+      // 0=unspecified
+      // 1=alpha (premultiplied)
+      // 2=alpha (unassociated)
+      IDF.ExtraSamples:=DWord(s.Position-fStartPos-2);
+      if Debug then begin
+        ReadShortValues(IDF.ExtraSamples,WordBuffer,Count);
+        write('TFPReaderTiff.ReadDirectoryEntry ExtraSamples: ');
+        for i:=0 to Count-1 do
+          write(IntToStr(WordBuffer[i]),' ');
+        writeln;
+        ReAllocMem(WordBuffer,0);
+      end;
+>>>>>>> origin/fixes_2_2
     end;
   33432:
     begin
       // Copyright
+<<<<<<< HEAD
 <<<<<<< HEAD
       IFD.Copyright:=ReadEntryString;
       {$ifdef FPC_Debug_Image}
@@ -1801,12 +2115,18 @@ begin
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry Copyright="',IDF.Copyright,'"');
 >>>>>>> graemeg/fixes_2_2
+=======
+      IDF.Copyright:=ReadEntryString;
+      if Debug then
+        writeln('TFPReaderTiff.ReadDirectoryEntry Copyright="',IDF.Copyright,'"');
+>>>>>>> origin/fixes_2_2
     end;
   else
     begin
       EntryType:=ReadWord;
       EntryCount:=ReadDWord;
       EntryStart:=ReadDWord;
+<<<<<<< HEAD
 <<<<<<< HEAD
       if (EntryType=0) and (EntryCount=0) and (EntryStart=0) then ;
       {$ifdef FPC_Debug_Image}
@@ -1817,6 +2137,10 @@ begin
       if Debug then
         writeln('TFPReaderTiff.ReadDirectoryEntry Tag=',EntryTag,' Type=',EntryType,' Count=',EntryCount,' ValuesStart=',EntryStart);
 >>>>>>> graemeg/fixes_2_2
+=======
+      if Debug then
+        writeln('TFPReaderTiff.ReadDirectoryEntry Tag=',EntryTag,' Type=',EntryType,' Count=',EntryCount,' ValuesStart=',EntryStart);
+>>>>>>> origin/fixes_2_2
     end;
   end;
 end;
@@ -1941,6 +2265,7 @@ begin
     TiffError('asciiz expected, but found '+IntToStr(EntryType));
   EntryCount:=ReadDWord;
 <<<<<<< HEAD
+<<<<<<< HEAD
   SetLength(Result,EntryCount-1);
   if EntryCount>4 then begin
     // long string -> next 4 DWord is the offset
@@ -1956,12 +2281,17 @@ begin
       s.Read(EntryStart,4-length(Result));
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   EntryStart:=ReadDWord;
   SetStreamPos(EntryStart);
   SetLength(Result,EntryCount-1);
   if EntryCount>1 then
     s.Read(Result[1],EntryCount-1);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function TFPReaderTiff.ReadByte: Byte;
@@ -2077,6 +2407,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TFPReaderTiff.LoadImageFromStream(Index: integer);
 var
   ChunkOffsets: PDWord;
@@ -2153,6 +2484,8 @@ begin
   ChunkByteCounts:=nil;
   Chunk:=nil;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TFPReaderTiff.ReadImage(Index: integer);
 var
   StripCount: DWord;
@@ -2214,11 +2547,15 @@ begin
   StripOffsets:=nil;
   StripByteCounts:=nil;
   Strip:=nil;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   ExtraSamples:=nil;
   SampleBits:=nil;
   ExtraSampleCnt:=0;
   try
+<<<<<<< HEAD
 <<<<<<< HEAD
     // read chunk starts and sizes
     if ChunkType=tctTile then begin
@@ -2368,6 +2705,8 @@ begin
                 if ExtraSamples[i] in [1,2] then begin
                   ReadImgValue(AlphaBits,Run,cx,IFD.Predictor,LastAlphaValue,AlphaValue);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     ReadShortOrLongValues(IDF.StripOffsets,StripOffsets,SOCount);
     if SOCount<>StripCount then
       TiffError('number of StripCounts is wrong');
@@ -2561,7 +2900,10 @@ begin
                     AlphaValue:=FixEndian(PCUInt16(@Strip[Run])^);
                     inc(Run,2);
                   end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 end else begin
                   inc(Run,ExtraSamples[i] div 8);
                 end;
@@ -2571,6 +2913,7 @@ begin
 
           2: // RGB(A)
             begin
+<<<<<<< HEAD
 <<<<<<< HEAD
               ReadImgValue(RedBits,Run,cx,IFD.Predictor,LastRedValue,RedValue);
               ReadImgValue(GreenBits,Run,cx,IFD.Predictor,LastGreenValue,GreenValue);
@@ -2583,6 +2926,8 @@ begin
                 if ExtraSamples[i] in [1,2] then begin
                   ReadImgValue(AlphaBits,Run,cx,IFD.Predictor,LastAlphaValue,AlphaValue);
 =======
+=======
+>>>>>>> origin/fixes_2_2
               if RedBits=8 then begin
                 RedValue:=PCUInt8(Strip)[Run];
                 RedValue:=RedValue shl 8+RedValue;
@@ -2618,13 +2963,17 @@ begin
                     AlphaValue:=FixEndian(PCUInt16(@Strip[Run])^);
                     inc(Run,2);
                   end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 end else begin
                   inc(Run,ExtraSamples[i] div 8);
                 end;
               end;
               Col:=FPColor(RedValue,GreenValue,BlueValue,AlphaValue);
             end;
+<<<<<<< HEAD
 <<<<<<< HEAD
           //3 Palette/color map indexed
           //4 Mask/holdout mask (obsolete by TIFF 6.0 specification)
@@ -2639,6 +2988,8 @@ begin
                 if ExtraSamples[i] in [1,2] then begin
                   ReadImgValue(AlphaBits,Run,cx,IFD.Predictor,LastAlphaValue,AlphaValue);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
           5: // CMYK plus optional alpha
             begin
@@ -2685,12 +3036,16 @@ begin
                     AlphaValue:=FixEndian(PCUInt16(@Strip[Run])^);
                     inc(Run,2);
                   end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 end else begin
                   inc(Run,ExtraSamples[i] div 8);
                 end;
               end;
               // CMYK to RGB
+<<<<<<< HEAD
 <<<<<<< HEAD
               Col:=CMYKToFPColor(RedValue,GreenValue,BlueValue,GrayValue);
             end;
@@ -2714,6 +3069,8 @@ begin
       end;
       // next chunk
 =======
+=======
+>>>>>>> origin/fixes_2_2
               RedValue:=Max(0,integer($ffff)-RedValue-GrayBits);
               GreenValue:=Max(0,integer($ffff)-GreenValue-GrayBits);
               BlueValue:=Max(0,integer($ffff)-BlueValue-GrayBits);
@@ -2740,21 +3097,30 @@ begin
         end;
         inc(y);
       end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   finally
     ReAllocMem(ExtraSamples,0);
     ReAllocMem(SampleBits,0);
 <<<<<<< HEAD
+<<<<<<< HEAD
     ReAllocMem(ChunkOffsets,0);
     ReAllocMem(ChunkByteCounts,0);
     ReAllocMem(Chunk,0);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     ReAllocMem(StripOffsets,0);
     ReAllocMem(StripByteCounts,0);
     ReAllocMem(Strip,0);
     FirstImg.Assign(IDF);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 end;
 
@@ -2775,6 +3141,7 @@ begin
           or (Result shr 24);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TFPReaderTiff.DecodePackBits(var Buffer: Pointer; var Count: PtrInt);
 var
@@ -2976,6 +3343,8 @@ end;
 procedure DecompressLZW(Buffer: Pointer; Count: PtrInt; out NewBuffer: PByte;
   out NewCount: PtrInt);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TFPReaderTiff.DecompressPackBits(var Buffer: Pointer; var Count: PtrInt
   );
 var
@@ -3044,7 +3413,10 @@ begin
 end;
 
 procedure TFPReaderTiff.DecompressLZW(var Buffer: Pointer; var Count: PtrInt);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type
   TLZWString = packed record
     Count: integer;
@@ -3053,16 +3425,22 @@ type
   PLZWString = ^TLZWString;
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
   ClearCode = 256; // clear table, start with 9bit codes
   EoiCode = 257; // end of input
 var
 =======
+=======
+>>>>>>> origin/fixes_2_2
   EoiCode = 257;
   ClearCode = 256;
 var
   NewBuffer: PByte;
   NewCount: PtrInt;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   NewCapacity: PtrInt;
   SrcPos: PtrInt;
   SrcPosBit: integer;
@@ -3074,6 +3452,7 @@ var
   OldCode: Word;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   procedure Error(const Msg: string);
   begin
     raise Exception.Create(Msg);
@@ -3081,6 +3460,8 @@ var
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   function GetNextCode: Word;
   var
     v: Integer;
@@ -3088,18 +3469,24 @@ var
     Result:=0;
     // CurBitLength can be 9 to 12
 <<<<<<< HEAD
+<<<<<<< HEAD
     //writeln('GetNextCode CurBitLength=',CurBitLength,' SrcPos=',SrcPos,' SrcPosBit=',SrcPosBit,' ',hexstr(PByte(Buffer)[SrcPos],2),' ',hexstr(PByte(Buffer)[SrcPos+1],2),' ',hexstr(PByte(Buffer)[SrcPos+2],2));
     // read two or three bytes
     if CurBitLength+SrcPosBit>16 then begin
       // read from three bytes
       if SrcPos+3>Count then Error('LZW stream overrun');
 =======
+=======
+>>>>>>> origin/fixes_2_2
     writeln('GetNextCode CurBitLength=',CurBitLength,' SrcPos=',SrcPos,' SrcPosBit=',SrcPosBit,' ',hexstr(PByte(Buffer)[SrcPos],2),' ',hexstr(PByte(Buffer)[SrcPos+1],2),' ',hexstr(PByte(Buffer)[SrcPos+2],2));
     // read two or three bytes
     if CurBitLength+SrcPosBit>16 then begin
       // read from three bytes
       if SrcPos+3>Count then TiffError('LZW stream overrun');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       v:=PByte(Buffer)[SrcPos];
       inc(SrcPos);
       v:=(v shl 8)+PByte(Buffer)[SrcPos];
@@ -3109,10 +3496,14 @@ var
     end else begin
       // read from two bytes
 <<<<<<< HEAD
+<<<<<<< HEAD
       if SrcPos+2>Count then Error('LZW stream overrun');
 =======
       if SrcPos+2>Count then TiffError('LZW stream overrun');
 >>>>>>> graemeg/fixes_2_2
+=======
+      if SrcPos+2>Count then TiffError('LZW stream overrun');
+>>>>>>> origin/fixes_2_2
       v:=PByte(Buffer)[SrcPos];
       inc(SrcPos);
       v:=(v shl 8)+PByte(Buffer)[SrcPos];
@@ -3123,10 +3514,14 @@ var
     Result:=v and ((1 shl CurBitLength)-1);
     SrcPosBit:=(SrcPosBit+CurBitLength) and 7;
 <<<<<<< HEAD
+<<<<<<< HEAD
     //writeln('GetNextCode END SrcPos=',SrcPos,' SrcPosBit=',SrcPosBit,' Result=',Result,' Result=',hexstr(Result,4));
 =======
     writeln('GetNextCode END SrcPos=',SrcPos,' SrcPosBit=',SrcPosBit,' Result=',Result,' Result=',hexstr(Result,4));
 >>>>>>> graemeg/fixes_2_2
+=======
+    writeln('GetNextCode END SrcPos=',SrcPos,' SrcPosBit=',SrcPosBit,' Result=',Result,' Result=',hexstr(Result,4));
+>>>>>>> origin/fixes_2_2
   end;
 
   procedure ClearTable;
@@ -3154,6 +3549,7 @@ var
     s: TLZWString;
     b: byte;
 <<<<<<< HEAD
+<<<<<<< HEAD
   begin
     //WriteLn('WriteStringFromCode Code=',Code,' AddFirstChar=',AddFirstChar,' x=',(NewCount div 4) mod IFD.ImageWidth,' y=',(NewCount div 4) div IFD.ImageWidth,' PixelByte=',NewCount mod 4);
 =======
@@ -3161,11 +3557,17 @@ var
   begin
     WriteLn('WriteStringFromCode Code=',Code,' AddFirstChar=',AddFirstChar);
 >>>>>>> graemeg/fixes_2_2
+=======
+    i: Integer;
+  begin
+    WriteLn('WriteStringFromCode Code=',Code,' AddFirstChar=',AddFirstChar);
+>>>>>>> origin/fixes_2_2
     if Code<256 then begin
       // write byte
       b:=Code;
       s.Data:=@b;
       s.Count:=1;
+<<<<<<< HEAD
 <<<<<<< HEAD
     end else if Code>=258 then begin
       // write string
@@ -3175,18 +3577,24 @@ var
     end else
       Error('LZW code out of bounds');
 =======
+=======
+>>>>>>> origin/fixes_2_2
     end else begin
       // write string
       if Code-258>=TableCount then
         TiffError('LZW code out of bounds');
       s:=Table[Code-258];
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     if NewCount+s.Count+1>NewCapacity then begin
       NewCapacity:=NewCapacity*2+8;
       ReAllocMem(NewBuffer,NewCapacity);
     end;
     System.Move(s.Data^,NewBuffer[NewCount],s.Count);
+<<<<<<< HEAD
 <<<<<<< HEAD
     //for i:=0 to s.Count-1 do write(HexStr(NewBuffer[NewCount+i],2)); // debug
     inc(NewCount,s.Count);
@@ -3197,6 +3605,8 @@ var
     end;
     //writeln(',WriteStringFromCode'); // debug
 =======
+=======
+>>>>>>> origin/fixes_2_2
     for i:=0 to s.Count-1 do
       write(HexStr(NewBuffer[NewCount+i],2));
     inc(NewCount,s.Count);
@@ -3206,12 +3616,16 @@ var
       inc(NewCount);
     end;
     writeln(',WriteStringFromCode');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   procedure AddStringToTable(Code, AddFirstCharFromCode: integer);
   // add string from code plus first character of string from code as new string
   var
+<<<<<<< HEAD
 <<<<<<< HEAD
     b1, b2: byte;
     s1, s2: TLZWString;
@@ -3221,12 +3635,17 @@ var
     if TableCount=4096-259 then
       Error('LZW too many codes');
 =======
+=======
+>>>>>>> origin/fixes_2_2
     b: byte;
     s1, s2: TLZWString;
     p: PByte;
   begin
     WriteLn('AddStringToTable Code=',Code,' FCFCode=',AddFirstCharFromCode,' TableCount=',TableCount,' TableCapacity=',TableCapacity);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     // grow table
     if TableCount>=TableCapacity then begin
       TableCapacity:=TableCapacity*2+128;
@@ -3235,6 +3654,7 @@ var
     // find string 1
     if Code<256 then begin
       // string is byte
+<<<<<<< HEAD
 <<<<<<< HEAD
       b1:=Code;
       s1.Data:=@b1;
@@ -3252,6 +3672,8 @@ var
       b2:=AddFirstCharFromCode;
       s2.Data:=@b2;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       b:=Code;
       s1.Data:=@b;
       s1.Count:=1;
@@ -3266,16 +3688,23 @@ var
       // string is byte
       b:=AddFirstCharFromCode;
       s2.Data:=@b;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       s2.Count:=1;
     end else begin
       // normal string
       if AddFirstCharFromCode-258>=TableCount then
 <<<<<<< HEAD
+<<<<<<< HEAD
         Error('LZW code out of bounds');
 =======
         TiffError('LZW code out of bounds');
 >>>>>>> graemeg/fixes_2_2
+=======
+        TiffError('LZW code out of bounds');
+>>>>>>> origin/fixes_2_2
       s2:=Table[AddFirstCharFromCode-258];
     end;
     // set new table entry
@@ -3289,6 +3718,7 @@ var
     // increase TableCount
     inc(TableCount);
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ((SrcPos+3=Count) and (CurBitLength+SrcPosBit>16)) or
        ((SrcPos+2=Count) and (CurBitLength+SrcPosBit<=16)) then exit;
     case TableCount+259 of
@@ -3298,10 +3728,16 @@ var
     512,1024,2048: inc(CurBitLength);
     4096: TiffError('LZW too many codes');
 >>>>>>> graemeg/fixes_2_2
+=======
+    case TableCount+259 of
+    512,1024,2048: inc(CurBitLength);
+    4096: TiffError('LZW too many codes');
+>>>>>>> origin/fixes_2_2
     end;
   end;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   NewBuffer:=nil;
   NewCount:=0;
@@ -3312,6 +3748,8 @@ begin
   //writeln();
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   WriteLn('TFPReaderTiff.DecompressLZW START Count=',Count);
   for SrcPos:=0 to 19 do
     write(HexStr(PByte(Buffer)[SrcPos],2));
@@ -3319,7 +3757,10 @@ begin
 
   NewBuffer:=nil;
   NewCount:=0;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   NewCapacity:=Count*2;
   ReAllocMem(NewBuffer,NewCapacity);
 
@@ -3333,14 +3774,19 @@ begin
     repeat
       Code:=GetNextCode;
 <<<<<<< HEAD
+<<<<<<< HEAD
       //WriteLn('DecompressLZW Code=',Code);
 =======
       WriteLn('TFPReaderTiff.DecompressLZW Code=',Code);
 >>>>>>> graemeg/fixes_2_2
+=======
+      WriteLn('TFPReaderTiff.DecompressLZW Code=',Code);
+>>>>>>> origin/fixes_2_2
       if Code=EoiCode then break;
       if Code=ClearCode then begin
         InitializeTable;
         Code:=GetNextCode;
+<<<<<<< HEAD
 <<<<<<< HEAD
         //WriteLn('DecompressLZW after clear Code=',Code);
         if Code=EoiCode then break;
@@ -3349,6 +3795,9 @@ begin
 =======
         if Code=EoiCode then break;
 >>>>>>> graemeg/fixes_2_2
+=======
+        if Code=EoiCode then break;
+>>>>>>> origin/fixes_2_2
         WriteStringFromCode(Code);
         OldCode:=Code;
       end else begin
@@ -3362,10 +3811,14 @@ begin
           OldCode:=Code;
         end else
 <<<<<<< HEAD
+<<<<<<< HEAD
           Error('LZW code out of bounds');
 =======
           TiffError('LZW code out of bounds');
 >>>>>>> graemeg/fixes_2_2
+=======
+          TiffError('LZW code out of bounds');
+>>>>>>> origin/fixes_2_2
       end;
     until false;
   finally
@@ -3374,6 +3827,7 @@ begin
   end;
 
   ReAllocMem(NewBuffer,NewCount);
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -3454,6 +3908,8 @@ initialization
   if ImageHandlers.ImageReader[TiffHandlerName]=nil then
     ImageHandlers.RegisterImageReader (TiffHandlerName, 'tif;tiff', TFPReaderTiff);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FreeMem(Buffer);
   Buffer:=NewBuffer;
   Count:=NewCount;
@@ -3505,6 +3961,9 @@ begin
   FreeAndNil(fIFDStarts);
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.
 

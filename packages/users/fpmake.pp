@@ -15,6 +15,7 @@ begin
     P:=AddPackage('users');
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -33,6 +34,8 @@ begin
     T:=P.Targets.AddUnit('pwd.pp');
     T:=P.Targets.AddUnit('shadow.pp',[linux]);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     P.Directory:='users';
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
@@ -41,11 +44,15 @@ begin
     T:=P.Targets.AddUnit('grp.pp');
     T:=P.Targets.AddUnit('pwd.pp');
     T:=P.Targets.AddUnit('shadow.pp');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('users.pp');
       with T.Dependencies do
         begin
           AddUnit('pwd');
+<<<<<<< HEAD
 <<<<<<< HEAD
           AddUnit('shadow',[linux]);
           AddUnit('grp');
@@ -61,6 +68,11 @@ begin
           AddUnit('grp');
         end;
 >>>>>>> graemeg/fixes_2_2
+=======
+          AddUnit('shadow');
+          AddUnit('grp');
+        end;
+>>>>>>> origin/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

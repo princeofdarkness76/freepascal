@@ -333,8 +333,11 @@ begin
   AddMask('*.dcu *.dcp *.bpl');
   AddMask('*.log *.bak *.~pas *.~pp *.*~');
 <<<<<<< HEAD
+<<<<<<< HEAD
   AddMask('*.ppu *.o *.a *.s *.or *.compiled');
 =======
+=======
+>>>>>>> origin/fixes_2_2
   AddMask('*.ppu *.o *.a *.s');
 >>>>>>> graemeg/fixes_2_2
   AddMask('*.pp1 *.o1 *.a1 *.s1');

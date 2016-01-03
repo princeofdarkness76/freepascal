@@ -963,16 +963,20 @@ end;
 {$ifdef powerpc}
   {$define USE_TasmCondFlag}
 <<<<<<< HEAD
+<<<<<<< HEAD
   { powerpc only has A_B prefix }
   const
     CondAsmOps = 1;
     CondAsmOpStr : array [0..CondAsmOps-1] of string[2] = ('b');
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$define Use_gas_op2str}
 {$endif}
 {$ifdef powerpc64}
   {$define USE_TasmCondFlag}
+<<<<<<< HEAD
 <<<<<<< HEAD
   { powerpc64 only has A_B prefix }
   const
@@ -980,6 +984,8 @@ end;
     CondAsmOpStr : array [0..CondAsmOps-1] of string[2] = ('b');
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$define Use_gas_op2str}
 {$endif}
 {$ifdef i386}
@@ -2705,10 +2711,14 @@ var
 begin
    if AAddress<>0 then
 <<<<<<< HEAD
+<<<<<<< HEAD
      inherited AddLine('$'+hexstr(AAddress,sizeof(CORE_ADDR)*2)+S)
 =======
      inherited AddLine('$'+hexstr(AAddress,sizeof(PtrUInt)*2)+S)
 >>>>>>> graemeg/fixes_2_2
+=======
+     inherited AddLine('$'+hexstr(AAddress,sizeof(PtrUInt)*2)+S)
+>>>>>>> origin/fixes_2_2
    else
      inherited AddLine(S);
    PL:=DisasLines^.At(DisasLines^.count-1);
@@ -4026,10 +4036,14 @@ begin
  while (DosError=0) do
    begin
 <<<<<<< HEAD
+<<<<<<< HEAD
      ITryToOpenFile(Bounds,dir+srec.name,CurX,CurY,tryexts,true,false);
 =======
      ITryToOpenFile(Bounds,dir+srec.name,CurX,CurY,tryexts,true,false);    
 >>>>>>> graemeg/fixes_2_2
+=======
+     ITryToOpenFile(Bounds,dir+srec.name,CurX,CurY,tryexts,true,false);    
+>>>>>>> origin/fixes_2_2
      FindNext(srec);
    end;
   FindClose(srec);
@@ -4297,6 +4311,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Insert(New(PStaticText, Init(R2, ^C'Copyright (C) 1998-2014 by')));
 =======
   Insert(New(PStaticText, Init(R2, ^C'Copyright (C) 1998-2009 by')));
@@ -4313,6 +4328,9 @@ begin
 =======
   Insert(New(PStaticText, Init(R2, ^C'Copyright (C) 1998-2008 by')));
 >>>>>>> graemeg/fixes_2_2
+=======
+  Insert(New(PStaticText, Init(R2, ^C'Copyright (C) 1998-2008 by')));
+>>>>>>> origin/fixes_2_2
   R2.Move(0,2);
   Insert(New(PStaticText, Init(R2, ^C'B‚rczi G bor')));
   R2.Move(0,1);

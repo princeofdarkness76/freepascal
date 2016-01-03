@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       ATS/ATSLayoutTypes.h
  
      Contains:   Apple Type Services layout public structures and constants.
@@ -113,6 +114,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       ATSLayoutTypes.p
  
      Contains:   Apple Type Services layout public structures and constants.
@@ -136,7 +139,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -146,12 +152,17 @@
 unit ATSLayoutTypes;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -165,14 +176,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -181,11 +197,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -223,6 +242,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -230,6 +251,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -468,6 +490,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -476,7 +500,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -503,9 +530,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -516,6 +547,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,SFNTLayoutTypes,ATSTypes;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -551,10 +583,16 @@ uses MacTypes,SFNTLayoutTypes,ATSTypes;
 
 {$ALIGN MAC68K}
 >>>>>>> graemeg/fixes_2_2
+=======
+
+
+{$ALIGN MAC68K}
+>>>>>>> origin/fixes_2_2
 
 { --------------------------------------------------------------------------- }
 { CONSTANTS and related scalar types }
 { --------------------------------------------------------------------------- }
+<<<<<<< HEAD
 <<<<<<< HEAD
 { --------------------------------------------------------------------------- }
 { Miscellaneous Constants }
@@ -607,13 +645,18 @@ const
 
 { ---------------------------------------------------------------------------- }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { Miscellaneous constants }
 
 const
   kATSUseGlyphAdvance   = $7FFFFFFF;					{ assignment to use natural glyph advance value }
 	kATSUseLineHeight			= $7FFFFFFF;					{  assignment to use natural line ascent/descent values  }
 	kATSNoTracking				= $80000000;					{  negativeInfinity  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  ATSULayoutOperationSelector
@@ -623,6 +666,7 @@ const
  *    operation is currently being run.
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	ATSULayoutOperationSelector = UInt32;
 const
@@ -631,6 +675,8 @@ const
    }
 	kATSULayoutOperationNone = $00000000;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type ATSULayoutOperationSelector = UInt32;
 const
 
@@ -638,57 +684,81 @@ const
    * No Layout operation is currently selected.
    }
   kATSULayoutOperationNone      = $00000000;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   {
    * Select the Justification operation.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSULayoutOperationJustification = $00000001;
 =======
   kATSULayoutOperationJustification = $00000001;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSULayoutOperationJustification = $00000001;
+>>>>>>> origin/fixes_2_2
 
   {
    * Select the character morphing operation.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSULayoutOperationMorph = $00000002;
 =======
   kATSULayoutOperationMorph     = $00000002;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSULayoutOperationMorph     = $00000002;
+>>>>>>> origin/fixes_2_2
 
   {
    * Select the kerning adjustment operation.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSULayoutOperationKerningAdjustment = $00000004;
 =======
   kATSULayoutOperationKerningAdjustment = $00000004;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSULayoutOperationKerningAdjustment = $00000004;
+>>>>>>> origin/fixes_2_2
 
   {
    * Select the baseline adjustment operation.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSULayoutOperationBaselineAdjustment = $00000008;
 =======
   kATSULayoutOperationBaselineAdjustment = $00000008;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSULayoutOperationBaselineAdjustment = $00000008;
+>>>>>>> origin/fixes_2_2
 
   {
    * Select the tracking adjustment operation.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSULayoutOperationTrackingAdjustment = $00000010;
 =======
   kATSULayoutOperationTrackingAdjustment = $00000010;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSULayoutOperationTrackingAdjustment = $00000010;
+>>>>>>> origin/fixes_2_2
 
   {
    * Select the period of time after ATSUI has finished all of it's
    * layout operations.
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kATSULayoutOperationPostLayoutAdjustment = $00000020;
 	kATSULayoutOperationAppleReserved = $FFFFFFC0;
@@ -696,6 +766,10 @@ const
   kATSULayoutOperationPostLayoutAdjustment = $00000020;
   kATSULayoutOperationAppleReserved = $FFFFFFC0;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSULayoutOperationPostLayoutAdjustment = $00000020;
+  kATSULayoutOperationAppleReserved = $FFFFFFC0;
+>>>>>>> origin/fixes_2_2
 
 { ---------------------------------------------------------------------------- }
 
@@ -708,25 +782,35 @@ const
  *    indicate ATSUI's status.
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	ATSULayoutOperationCallbackStatus = UInt32;
 const
 {
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type ATSULayoutOperationCallbackStatus = UInt32;
 const
 
   {
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
    * Return this if the callback function has totally handled the
    * operation which triggered the callback and does not need ATSUI to
    * run any further processing for the operation.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSULayoutOperationCallbackStatusHandled = $00000000;
 =======
   kATSULayoutOperationCallbackStatusHandled = $00000000;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSULayoutOperationCallbackStatusHandled = $00000000;
+>>>>>>> origin/fixes_2_2
 
   {
    * Return this if the callback function has not totally handled the
@@ -734,11 +818,16 @@ const
    * own processing.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSULayoutOperationCallbackStatusContinue = $00000001;
 =======
   kATSULayoutOperationCallbackStatusContinue = $00000001;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSULayoutOperationCallbackStatusContinue = $00000001;
+
+>>>>>>> origin/fixes_2_2
 
 { ---------------------------------------------------------------------------- }
 
@@ -751,6 +840,7 @@ const
  *    can also be set in an ATSLineLayoutParams structure.
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	ATSLineLayoutOptions = UInt32;
 const
@@ -759,6 +849,8 @@ const
    }
 	kATSLineNoLayoutOptions = $00000000;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type ATSLineLayoutOptions = UInt32;
 const
 
@@ -766,107 +858,151 @@ const
    * No options specified.
    }
   kATSLineNoLayoutOptions       = $00000000;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   {
    * This line option is no longer used.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineIsDisplayOnly = $00000001; { obsolete option}
 =======
   kATSLineIsDisplayOnly         = $00000001; { obsolete option }
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineIsDisplayOnly         = $00000001; { obsolete option }
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that no hangers to be formed on the line.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineHasNoHangers = $00000002;
 =======
   kATSLineHasNoHangers          = $00000002;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineHasNoHangers          = $00000002;
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that no optical alignment to be performed on the line.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineHasNoOpticalAlignment = $00000004;
 =======
   kATSLineHasNoOpticalAlignment = $00000004;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineHasNoOpticalAlignment = $00000004;
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that space charcters should not be treated as hangers.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineKeepSpacesOutOfMargin = $00000008;
 =======
   kATSLineKeepSpacesOutOfMargin = $00000008;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineKeepSpacesOutOfMargin = $00000008;
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies no post-compensation justification is to be performed.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineNoSpecialJustification = $00000010;
 =======
   kATSLineNoSpecialJustification = $00000010;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineNoSpecialJustification = $00000010;
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that if the line is the last of a paragraph, it will not
    * get justified.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineLastNoJustification = $00000020;
 =======
   kATSLineLastNoJustification   = $00000020;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineLastNoJustification   = $00000020;
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that the displayed line glyphs will adjust for device
    * metrics.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineFractDisable = $00000040;
 =======
   kATSLineFractDisable          = $00000040;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineFractDisable          = $00000040;
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that the carets at the ends of the line will be
    * guarenteed to be perpendicular to the baseline.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineImposeNoAngleForEnds = $00000080;
 =======
   kATSLineImposeNoAngleForEnds  = $00000080;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineImposeNoAngleForEnds  = $00000080;
+>>>>>>> origin/fixes_2_2
 
   {
    * Highlights for the line end characters will be extended to 0 and
    * the specified line width.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineFillOutToWidth = $00000100;
 =======
   kATSLineFillOutToWidth        = $00000100;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineFillOutToWidth        = $00000100;
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that the tab character width will be automatically
    * adjusted to fit the specified line width.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineTabAdjustEnabled = $00000200;
 =======
   kATSLineTabAdjustEnabled      = $00000200;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineTabAdjustEnabled      = $00000200;
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that any leading value specified by a font will be
    * ignored.
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kATSLineIgnoreFontLeading = $00000400;
 
@@ -882,6 +1018,8 @@ const
    }
 	kATSLineNoAntiAliasing = $00001000;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   kATSLineIgnoreFontLeading     = $00000400;
 
   {
@@ -896,7 +1034,10 @@ const
    * kATSLineApplyAntiAliasing bit if set).
    }
   kATSLineNoAntiAliasing        = $00001000;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that if the line width is not sufficient to hold all its
@@ -904,10 +1045,14 @@ const
    * assigned width so negative justification is not used.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineDisableNegativeJustification = $00002000;
 =======
   kATSLineDisableNegativeJustification = $00002000;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineDisableNegativeJustification = $00002000;
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that lines with any integer glyph positioning (due to
@@ -915,6 +1060,7 @@ const
    * specified), not automatically esthetically adjust individual
    * character positions while rendering to display.
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kATSLineDisableAutoAdjustDisplayPos = $00004000;
 
@@ -924,6 +1070,8 @@ const
    }
 	kATSLineUseQDRendering = $00008000;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   kATSLineDisableAutoAdjustDisplayPos = $00004000;
 
   {
@@ -931,71 +1079,102 @@ const
    * rendering in ATSUI is through CoreGraphics on MacOSX).
    }
   kATSLineUseQDRendering        = $00008000;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that any Justification operations will not be run.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineDisableAllJustification = $00010000;
 =======
   kATSLineDisableAllJustification = $00010000;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineDisableAllJustification = $00010000;
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that any glyph morphing operations will not be run.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineDisableAllGlyphMorphing = $00020000;
 =======
   kATSLineDisableAllGlyphMorphing = $00020000;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineDisableAllGlyphMorphing = $00020000;
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that any kerning adjustment operations will not be run.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineDisableAllKerningAdjustments = $00040000;
 =======
   kATSLineDisableAllKerningAdjustments = $00040000;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineDisableAllKerningAdjustments = $00040000;
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that any baseline adjustment operations will not be run.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineDisableAllBaselineAdjustments = $00080000;
 =======
   kATSLineDisableAllBaselineAdjustments = $00080000;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineDisableAllBaselineAdjustments = $00080000;
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that any tracking adjustment operations will not be run.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineDisableAllTrackingAdjustments = $00100000;
 =======
   kATSLineDisableAllTrackingAdjustments = $00100000;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineDisableAllTrackingAdjustments = $00100000;
+>>>>>>> origin/fixes_2_2
 
   {
    * Convenience constant for turning-off all adjustments.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineDisableAllLayoutOperations = kATSLineDisableAllJustification or kATSLineDisableAllGlyphMorphing or kATSLineDisableAllKerningAdjustments or kATSLineDisableAllBaselineAdjustments or kATSLineDisableAllTrackingAdjustments;
 =======
   kATSLineDisableAllLayoutOperations = kATSLineDisableAllJustification or kATSLineDisableAllGlyphMorphing or kATSLineDisableAllKerningAdjustments or kATSLineDisableAllBaselineAdjustments or kATSLineDisableAllTrackingAdjustments;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineDisableAllLayoutOperations = kATSLineDisableAllJustification or kATSLineDisableAllGlyphMorphing or kATSLineDisableAllKerningAdjustments or kATSLineDisableAllBaselineAdjustments or kATSLineDisableAllTrackingAdjustments;
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies to optimize for displaying text only.  Note, rounded
    * device metrics will be used instead of fractional path metrics.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineUseDeviceMetrics = $01000000;
 =======
   kATSLineUseDeviceMetrics      = $01000000;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineUseDeviceMetrics      = $01000000;
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that line breaking should occur at the nearest
@@ -1003,21 +1182,30 @@ const
    * multiple lines.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineBreakToNearestCharacter = $02000000;
 =======
   kATSLineBreakToNearestCharacter = $02000000;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineBreakToNearestCharacter = $02000000;
+>>>>>>> origin/fixes_2_2
 
   {
    * These bits are reserved by Apple and will result in a invalid
    * value error if attemped to set. Obsolete constants:
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSLineAppleReserved = $FCE00000;
 =======
   kATSLineAppleReserved         = $FCE00000;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSLineAppleReserved         = $FCE00000;
+
+>>>>>>> origin/fixes_2_2
 
 { --------------------------------------------------------------------------- }
 
@@ -1030,6 +1218,7 @@ const
  *    control over how the style is rendered.
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	ATSStyleRenderingOptions = UInt32;
 const
@@ -1038,6 +1227,8 @@ const
    }
 	kATSStyleNoOptions = $00000000;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type ATSStyleRenderingOptions = UInt32;
 const
 
@@ -1045,12 +1236,16 @@ const
    * No options specified.
    }
   kATSStyleNoOptions            = $00000000;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   {
    * Specifies that ATS produce "unhinted" glyph outlines (default is
    * hinted glyph outlines).
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kATSStyleNoHinting = $00000001;
 
@@ -1068,6 +1263,8 @@ const
    }
 	kATSStyleNoAntiAliasing = $00000004;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   kATSStyleNoHinting            = $00000001;
 
   {
@@ -1082,23 +1279,31 @@ const
    * kATSStyleApplyAntiAliasing bit if set).
    }
   kATSStyleNoAntiAliasing       = $00000004;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   {
    * These bits are reserved by Apple and will result in a invalid
    * value error if attemped to set.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSStyleAppleReserved = $FFFFFFF8;
 =======
   kATSStyleAppleReserved        = $FFFFFFF8;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSStyleAppleReserved        = $FFFFFFF8;
+>>>>>>> origin/fixes_2_2
 
   {
    * (OBSOLETE) Specifies that ATS produce "hinted" glyph outlines (the
    * default behavior). THIS NAME IS OBSOLETE. DO NOT USE. It's only
    * left in for backwards compatibility.
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kATSStyleApplyHints = kATSStyleNoOptions;
 
@@ -1107,6 +1312,9 @@ const
 =======
   kATSStyleApplyHints           = kATSStyleNoOptions;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSStyleApplyHints           = kATSStyleNoOptions;
+>>>>>>> origin/fixes_2_2
 
 {
  *  ATSGlyphInfoFlags
@@ -1118,6 +1326,7 @@ const
  *    properties.
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	ATSGlyphInfoFlags = UInt32;
 const
@@ -1127,6 +1336,8 @@ const
    }
 	kATSGlyphInfoAppleReserved = $1FFBFFE8;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type ATSGlyphInfoFlags = UInt32;
 const
 
@@ -1135,62 +1346,89 @@ const
    * error if attempted to set.
    }
   kATSGlyphInfoAppleReserved    = $1FFBFFE8;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   {
    * The glyph attaches to another glyph.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSGlyphInfoIsAttachment = $80000000;
 =======
   kATSGlyphInfoIsAttachment     = $80000000;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSGlyphInfoIsAttachment     = $80000000;
+>>>>>>> origin/fixes_2_2
 
   {
    * The glyph can hang off left/top edge of line.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSGlyphInfoIsLTHanger = $40000000;
 =======
   kATSGlyphInfoIsLTHanger       = $40000000;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSGlyphInfoIsLTHanger       = $40000000;
+>>>>>>> origin/fixes_2_2
 
   {
    * The glyph can hang off right/bottom edge of line.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSGlyphInfoIsRBHanger = $20000000;
 =======
   kATSGlyphInfoIsRBHanger       = $20000000;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSGlyphInfoIsRBHanger       = $20000000;
+>>>>>>> origin/fixes_2_2
 
   {
    * The glyph is not really a glyph at all, but an end-marker designed
    * to allow the calculation of the previous glyph's advance.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSGlyphInfoTerminatorGlyph = $00080000;
 =======
   kATSGlyphInfoTerminatorGlyph  = $00080000;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSGlyphInfoTerminatorGlyph  = $00080000;
+>>>>>>> origin/fixes_2_2
 
   {
    * The glyph is a white space glyph.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSGlyphInfoIsWhiteSpace = $00040000;
 =======
   kATSGlyphInfoIsWhiteSpace     = $00040000;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSGlyphInfoIsWhiteSpace     = $00040000;
+>>>>>>> origin/fixes_2_2
 
   {
    * Glyph has a style specified imposed width (i.e. advance)
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSGlyphInfoHasImposedWidth = $00000010;
 =======
   kATSGlyphInfoHasImposedWidth  = $00000010;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kATSGlyphInfoHasImposedWidth  = $00000010;
+>>>>>>> origin/fixes_2_2
 
   {
    * A three-bit mask, that can be used to get the size of the original
@@ -1198,6 +1436,7 @@ const
    * with this mask and an ATSGlyphInfoFlags variable, it will yield
    * the size in bytes of the original character (0 - 7 bytes possible).
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kATSGlyphInfoByteSizeMask = $00000007;
 
@@ -1368,6 +1607,8 @@ type
 	
 { ---------------------------------------------------------------------------- }
 =======
+=======
+>>>>>>> origin/fixes_2_2
   kATSGlyphInfoByteSizeMask     = $00000007;
 
 
@@ -1445,7 +1686,10 @@ type
 	{	 The JustPriorityOverrides type is an array of 4 width delta records, one per priority level override. 	}
 	ATSJustPriorityWidthDeltaOverrides	= array [0..3] of ATSJustWidthDeltaEntryOverride;
 	{	 --------------------------------------------------------------------------- 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  ATSULineRef
@@ -1459,11 +1703,15 @@ type
  }
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ATSGlyphVector = record end;
 	ATSULineRef = ^ATSGlyphVector;
 =======
 	ATSULineRef    = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	ATSULineRef    = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 { ---------------------------------------------------------------------------- }
 { DirectAccess Layout Callback Definitions                                     }
 { ---------------------------------------------------------------------------- }
@@ -1503,16 +1751,22 @@ type
  *    ATSULayoutOperationCallbackStatus are defined in ATSLayoutTypes.i.
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	ATSUDirectLayoutOperationOverrideProcPtr = function( iCurrentOperation: ATSULayoutOperationSelector; iLineRef: ATSULineRef; iRefCon: URefCon; iOperationCallbackParameterPtr: UnivPtr; var oCallbackStatus: ATSULayoutOperationCallbackStatus ): OSStatus;
 	ATSUDirectLayoutOperationOverrideUPP = ATSUDirectLayoutOperationOverrideProcPtr;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type ATSUDirectLayoutOperationOverrideProcPtr = function( iCurrentOperation: ATSULayoutOperationSelector; iLineRef: ATSULineRef; iRefCon: UInt32; iOperationCallbackParameterPtr: UnivPtr; var oCallbackStatus: ATSULayoutOperationCallbackStatus ): OSStatus;
 // Beats me what this translates to.  If someone finds out they can tell me and we'll update it
 // typedef STACK_UPP_TYPE(ATSUDirectLayoutOperationOverrideProcPtr)  ATSUDirectLayoutOperationOverrideUPP;
 type ATSUDirectLayoutOperationOverrideUPP = Ptr;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewATSUDirectLayoutOperationOverrideUPP()
  *  
@@ -1521,6 +1775,7 @@ type ATSUDirectLayoutOperationOverrideUPP = Ptr;
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function NewATSUDirectLayoutOperationOverrideUPP( userRoutine: ATSUDirectLayoutOperationOverrideProcPtr ): ATSUDirectLayoutOperationOverrideUPP; external name '_NewATSUDirectLayoutOperationOverrideUPP';
 <<<<<<< HEAD
@@ -1544,6 +1799,10 @@ function NewATSUDirectLayoutOperationOverrideUPP( userRoutine: ATSUDirectLayoutO
 // AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
 function NewATSUDirectLayoutOperationOverrideUPP( userRoutine: ATSUDirectLayoutOperationOverrideProcPtr ): ATSUDirectLayoutOperationOverrideUPP; external name '_NewATSUDirectLayoutOperationOverrideUPP';
 >>>>>>> graemeg/fixes_2_2
+=======
+// AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+function NewATSUDirectLayoutOperationOverrideUPP( userRoutine: ATSUDirectLayoutOperationOverrideProcPtr ): ATSUDirectLayoutOperationOverrideUPP; external name '_NewATSUDirectLayoutOperationOverrideUPP';
+>>>>>>> origin/fixes_2_2
 
 {
  *  DisposeATSUDirectLayoutOperationOverrideUPP()
@@ -1554,6 +1813,7 @@ function NewATSUDirectLayoutOperationOverrideUPP( userRoutine: ATSUDirectLayoutO
  *    Non-Carbon CFM:   available as macro/inline
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure DisposeATSUDirectLayoutOperationOverrideUPP( userUPP: ATSUDirectLayoutOperationOverrideUPP ); external name '_DisposeATSUDirectLayoutOperationOverrideUPP';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1576,6 +1836,10 @@ procedure DisposeATSUDirectLayoutOperationOverrideUPP( userUPP: ATSUDirectLayout
 // AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
 procedure DisposeATSUDirectLayoutOperationOverrideUPP( userUPP: ATSUDirectLayoutOperationOverrideUPP ); external name '_DisposeATSUDirectLayoutOperationOverrideUPP';
 >>>>>>> graemeg/fixes_2_2
+=======
+// AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+procedure DisposeATSUDirectLayoutOperationOverrideUPP( userUPP: ATSUDirectLayoutOperationOverrideUPP ); external name '_DisposeATSUDirectLayoutOperationOverrideUPP';
+>>>>>>> origin/fixes_2_2
 
 {
  *  InvokeATSUDirectLayoutOperationOverrideUPP()
@@ -1585,6 +1849,7 @@ procedure DisposeATSUDirectLayoutOperationOverrideUPP( userUPP: ATSUDirectLayout
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function InvokeATSUDirectLayoutOperationOverrideUPP( iCurrentOperation: ATSULayoutOperationSelector; iLineRef: ATSULineRef; iRefCon: URefCon; iOperationCallbackParameterPtr: UnivPtr; var oCallbackStatus: ATSULayoutOperationCallbackStatus; userUPP: ATSUDirectLayoutOperationOverrideUPP ): OSStatus; external name '_InvokeATSUDirectLayoutOperationOverrideUPP';
 <<<<<<< HEAD
@@ -1616,6 +1881,10 @@ function InvokeATSUDirectLayoutOperationOverrideUPP( iCurrentOperation: ATSULayo
 // AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
 function InvokeATSUDirectLayoutOperationOverrideUPP( iCurrentOperation: ATSULayoutOperationSelector; iLineRef: ATSULineRef; iRefCon: UInt32; iOperationCallbackParameterPtr: UnivPtr; var oCallbackStatus: ATSULayoutOperationCallbackStatus; userUPP: ATSUDirectLayoutOperationOverrideUPP ): OSStatus; external name '_InvokeATSUDirectLayoutOperationOverrideUPP';
 >>>>>>> graemeg/fixes_2_2
+=======
+// AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+function InvokeATSUDirectLayoutOperationOverrideUPP( iCurrentOperation: ATSULayoutOperationSelector; iLineRef: ATSULineRef; iRefCon: UInt32; iOperationCallbackParameterPtr: UnivPtr; var oCallbackStatus: ATSULayoutOperationCallbackStatus; userUPP: ATSUDirectLayoutOperationOverrideUPP ): OSStatus; external name '_InvokeATSUDirectLayoutOperationOverrideUPP';
+>>>>>>> origin/fixes_2_2
 
 { ---------------------------------------------------------------------------- }
 
@@ -1631,20 +1900,27 @@ function InvokeATSUDirectLayoutOperationOverrideUPP( iCurrentOperation: ATSULayo
 type
 	ATSULayoutOperationOverrideSpecifier = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
    * A bitfield containing the selector for the operations in which the
    * callback will be installed for.
    }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 			{
 			 * A bitfield containing the selector for the operations in which the
 			 * callback will be installed for.
 			 }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		operationSelector: ATSULayoutOperationSelector;
 		overrideUPP: ATSUDirectLayoutOperationOverrideUPP;
 	end;
 	ATSULayoutOperationOverrideSpecifierPtr = ^ATSULayoutOperationOverrideSpecifier;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	
 //#pragma pack(pop)
@@ -1655,10 +1931,15 @@ type
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {$ALIGN MAC68K}
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

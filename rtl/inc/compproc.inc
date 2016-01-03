@@ -25,9 +25,12 @@
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { normally the array should be maxlongint big, but that will confuse
     the debugger. The compiler will set the correct size of the array
     internally. It's now set to 0..0 because when compiling with -gt,
@@ -37,6 +40,7 @@ type
   fpc_big_chararray = array[0..0] of char;
   fpc_big_widechararray = array[0..0] of widechar;
 {$endif ndef FPC_STRTOCHARARRAYPROC}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -54,6 +58,8 @@ type
   fpc_normal_set_long = array[0..7] of longint;
   fpc_stub_dynarray = array of byte;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC_NEW_BIGENDIAN_SETS}
   fpc_small_set = bitpacked array[0..31] of 0..1;
   fpc_normal_set = bitpacked array[0..255] of 0..1;
@@ -63,7 +69,10 @@ type
 {$endif}
   fpc_normal_set_byte = array[0..31] of byte;
   fpc_normal_set_long = array[0..7] of longint;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {$ifdef FPC_HAS_FEATURE_HEAP}
@@ -78,10 +87,13 @@ procedure fpc_fillmem(out data;len:ptruint;b : byte);compilerproc;
 
 procedure fpc_Shortstr_SetLength(var s:shortstring;len:SizeInt); compilerproc;
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_shortstr_assign(len:{$ifdef cpu16}smallint{$else}longint{$endif};sstr,dstr:pointer); compilerproc;
 procedure fpc_shortstr_to_shortstr(out res:shortstring; const sstr: shortstring); compilerproc;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_STRTOSHORTSTRINGPROC}
 function fpc_shortstr_to_shortstr(len:longint; const sstr: shortstring): shortstring; compilerproc;
 {$else FPC_STRTOSHORTSTRINGPROC}
@@ -99,6 +111,7 @@ function fpc_shortstr_compare(const left,right:shortstring) : longint; compilerp
 function fpc_shortstr_compare_equal(const left,right:shortstring) : longint; compilerproc;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_pchar_to_shortstr(out res : shortstring;p:pchar); compilerproc;
 
 function fpc_pchar_length(p:pchar):sizeint; compilerproc;
@@ -107,6 +120,8 @@ function fpc_pwidechar_length(p:pwidechar):sizeint; compilerproc;
 procedure fpc_chararray_to_shortstr(out res : shortstring;const arr: array of char; zerobased: boolean = true); compilerproc;
 procedure fpc_shortstr_to_chararray(out res: array of char; const src: ShortString); compilerproc;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_STRTOSHORTSTRINGPROC}
 function fpc_pchar_to_shortstr(p:pchar):shortstring; compilerproc;
 {$else FPC_STRTOSHORTSTRINGPROC}
@@ -126,7 +141,10 @@ function fpc_shortstr_to_chararray(arraysize: longint; const src: ShortString): 
 {$else ndef FPC_STRTOCHARARRAYPROC}
 procedure fpc_shortstr_to_chararray(out res: array of char; const src: ShortString); compilerproc;
 {$endif ndef FPC_STRTOCHARARRAYPROC}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 Function  fpc_shortstr_Copy(const s:shortstring;index:SizeInt;count:SizeInt):shortstring;compilerproc;
 function  fpc_char_copy(c:char;index : SizeInt;count : SizeInt): shortstring;compilerproc;
@@ -456,11 +474,14 @@ function fpc_AnsiStr_To_ShortStr (high_of_res: SizeInt;const S2 : Ansistring): s
 procedure fpc_AnsiStr_To_ShortStr (out res : shortstring;const S2 : Ansistring); compilerproc;
 {$endif FPC_STRTOSHORTSTRINGPROC}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_HAS_CPSTRING}
 Function fpc_AnsiStr_To_AnsiStr (const S : RawByteString;cp : TSystemCodePage): RawByteString; compilerproc;
 {$endif FPC_HAS_CPSTRING}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Function fpc_ShortStr_To_AnsiStr (Const S2 : ShortString): ansistring; compilerproc;
 Function fpc_Char_To_AnsiStr(const c : Char): AnsiString; compilerproc;
 
@@ -471,6 +492,7 @@ function fpc_ansistr_to_chararray(arraysize: SizeInt; const src: ansistring): fp
 {$else ndef FPC_STRTOCHARARRAYPROC}
 procedure fpc_ansistr_to_chararray(out res: array of char; const src: ansistring)compilerproc;
 {$endif ndef FPC_STRTOCHARARRAYPROC}
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function fpc_AnsiStr_Compare(const S1,S2 : RawByteString): SizeInt; compilerproc;
 Function fpc_AnsiStr_Compare_equal(const S1,S2 : RawByteString): SizeInt; compilerproc;
@@ -488,6 +510,8 @@ Function  fpc_ansistr_Copy (Const S : RawByteString; Index,Size : SizeInt) : Ans
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function fpc_AnsiStr_Compare(const S1,S2 : AnsiString): SizeInt; compilerproc;
 Function fpc_AnsiStr_Compare_equal(const S1,S2 : AnsiString): SizeInt; compilerproc;
 Procedure fpc_AnsiStr_CheckZero(p : pointer); compilerproc;
@@ -513,14 +537,20 @@ Function fpc_ansistr_Unique(Var S : Pointer): Pointer; compilerproc;
 Procedure fpc_WideStr_Decr_Ref (Var S : Pointer); compilerproc;
 Procedure fpc_WideStr_Incr_Ref (Var S : Pointer); compilerproc;
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_WideStr_To_ShortStr (out res: ShortString;const S2 : WideString); compilerproc;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_STRTOSHORTSTRINGPROC}
 function fpc_WideStr_To_ShortStr (high_of_res: SizeInt;const S2 : WideString): shortstring; compilerproc;
 {$else FPC_STRTOSHORTSTRINGPROC}
 procedure fpc_WideStr_To_ShortStr (out res: ShortString;const S2 : WideString); compilerproc;
 {$endif FPC_STRTOSHORTSTRINGPROC}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Function fpc_ShortStr_To_WideStr (Const S2 : ShortString): WideString; compilerproc;
 Function fpc_WideStr_To_AnsiStr (const S2 : WideString{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING}): AnsiString; compilerproc;
 Function fpc_AnsiStr_To_WideStr (Const S2 : RawByteString): WideString; compilerproc;
@@ -556,7 +586,10 @@ procedure fpc_WideCharArray_To_ShortStr(out res : shortstring;const arr: array o
 {$endif FPC_STRTOSHORTSTRINGPROC}
 Function fpc_WideCharArray_To_AnsiStr(const arr: array of widechar; zerobased: boolean = true): AnsiString; compilerproc;
 Function fpc_WideCharArray_To_WideStr(const arr: array of widechar; zerobased: boolean = true): WideString; compilerproc;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Function fpc_WideStr_Compare(const S1,S2 : WideString): SizeInt; compilerproc;
 Function fpc_WideStr_Compare_equal(const S1,S2 : WideString): SizeInt; compilerproc;
 <<<<<<< HEAD
@@ -582,6 +615,7 @@ Function  fpc_widestr_Copy (Const S : WideString; Index,Size : SizeInt) : WideSt
 {$ifndef FPC_WINLIKEWIDESTRING}
 function fpc_widestr_Unique(Var S : Pointer): Pointer; compilerproc;
 {$endif FPC_WINLIKEWIDESTRING}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -704,16 +738,25 @@ Function fpc_UChar_To_AnsiStr(const c : UnicodeChar{$ifdef FPC_HAS_CPSTRING};cp 
 Function fpc_Char_To_WChar(const c : Char): WideChar; compilerproc;
 Function fpc_WChar_To_Char(const c : WideChar): Char; compilerproc;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function fpc_Char_To_WChar(const c : Char): WideChar; compilerproc;
+Function fpc_WChar_To_Char(const c : WideChar): Char; compilerproc;
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_STRTOSHORTSTRINGPROC}
 Function fpc_WChar_To_ShortStr(const c : WideChar): ShortString; compilerproc;
 {$else FPC_STRTOSHORTSTRINGPROC}
 procedure fpc_WChar_To_ShortStr(out res : shortstring;const c : WideChar) compilerproc;
 {$endif FPC_STRTOSHORTSTRINGPROC}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Function fpc_WChar_To_AnsiStr(const c : WideChar): AnsiString; compilerproc;
 Function fpc_WChar_To_WideStr(const c : WideChar): WideString; compilerproc;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function fpc_WChar_To_AnsiStr(const c : WideChar): AnsiString; compilerproc;
+Function fpc_WChar_To_WideStr(const c : WideChar): WideString; compilerproc;
+>>>>>>> origin/fixes_2_2
 {$endif FPC_HAS_FEATURE_WIDESTRINGS}
 
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
@@ -735,7 +778,10 @@ Function fpc_PWideChar_To_ShortStr(const p : pwidechar): shortstring; compilerpr
 {$else FPC_STRTOSHORTSTRINGPROC}
 procedure fpc_PWideChar_To_ShortStr(out res : shortstring;const p : pwidechar); compilerproc;
 {$endif FPC_STRTOSHORTSTRINGPROC}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif FPC_HAS_FEATURE_WIDESTRINGS}
 
 
@@ -1084,13 +1130,19 @@ procedure fpc_addref_array(data,typeinfo: pointer; count: SizeInt); compilerproc
 procedure fpc_decref_array(data,typeinfo: pointer; count: sizeint); compilerproc;
 =======
 procedure fpc_finalize_array(data,typeinfo : pointer;count,size : longint); compilerproc;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Function fpc_Copy (Src, Dest, TypeInfo : Pointer) : SizeInt; compilerproc;
 Procedure fpc_Copy_proc (Src, Dest, TypeInfo : Pointer); compilerproc; inline;
 {$endif FPC_HAS_FEATURE_RTTI}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifndef FPC_NEW_BIGENDIAN_SETS}
 function fpc_set_load_small(l: fpc_small_set): fpc_normal_set; compilerproc;
@@ -1105,7 +1157,10 @@ function fpc_set_symdif_sets(const set1,set2: fpc_normal_set): fpc_normal_set; c
 function fpc_set_comp_sets(const set1,set2: fpc_normal_set): boolean; compilerproc;
 function fpc_set_contains_sets(const set1,set2: fpc_normal_set): boolean; compilerproc;
 {$endif ndef FPC_NEW_BIGENDIAN_SETS}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifdef FPC_SETBASE_USED}
 procedure fpc_varset_load(const l;sourcesize : longint;var dest;size,srcminusdstbase : ptrint); compilerproc;

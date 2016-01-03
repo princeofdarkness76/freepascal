@@ -9,12 +9,17 @@ packages=rtl
 
 [target]
 <<<<<<< HEAD
+<<<<<<< HEAD
 dirs=hash pasjpeg paszlib fpmkunit fcl-xml fcl-base fcl-db fcl-image fcl-net fcl-passrc fcl-registry fcl-fpcunit fcl-json fcl-js fcl-process unzip regexpr chm fcl-res libgd symbolic bzip2 hermes
 dirs_linux_i386=libc unixutil graph pxlib bzip2
 =======
 dirs=hash pasjpeg paszlib fpmkunit fcl-xml fcl-base fcl-db fcl-image fcl-net fcl-passrc fcl-registry fcl-fpcunit fcl-json fcl-process unzip regexpr chm libgd symbolic
 dirs_linux_i386=libc unixutil graph pxlib
 >>>>>>> graemeg/fixes_2_2
+=======
+dirs=hash pasjpeg paszlib fpmkunit fcl-xml fcl-base fcl-db fcl-image fcl-net fcl-passrc fcl-registry fcl-fpcunit fcl-json fcl-process unzip regexpr chm libgd symbolic
+dirs_linux_i386=libc unixutil graph pxlib
+>>>>>>> origin/fixes_2_2
 dirs_i386_linux=graph
 dirs_x86_64_linux=graph
 dirs_powerpc_linux=graph
@@ -22,6 +27,7 @@ dirs_powerpc64_linux=graph
 dirs_sparc_linux=graph
 dirs_arm_linux=graph
 dirs_m68k_linux=graph
+<<<<<<< HEAD
 <<<<<<< HEAD
 dirs_beos=fv fcl-web fastcgi fcl-async ibase mysql ncurses zlib oracle odbc postgres sqlite pthreads imagemagick \
                gdbint libpng x11 gdbm tcl syslog libcurl opengl cairo bfd aspell svgalib \
@@ -67,6 +73,8 @@ dirs_win64=fv winunits-base winunits-jedi fcl-web fastcgi ibase mysql zlib oracl
                 tcl opengl gtk1 fpgtk fftw sdl openssl cdrom httpd13 httpd20 httpd22 numlib fcl-extra opencl nvapi ptc graph
 dirs_wince=winceunits httpd22 fcl-web fastcgi tcl fftw unzip zlib sqlite mysql ibase postgres oracle odbc sdl openssl oggvorbis numlib
 =======
+=======
+>>>>>>> origin/fixes_2_2
 dirs_beos=fv fcl-web fcl-async ibase mysql ncurses zlib oracle odbc postgres sqlite pthreads imagemagick \
                gdbint libpng x11 gdbm tcl syslog libcurl opengl bfd aspell svgalib \
                imlib utmp  fpgtk xforms fftw pcap ggi sdl openssl graph gnome1 gtk1 gtk2 httpd13 httpd20 httpd22 pxlib numlib
@@ -98,7 +106,10 @@ dirs_win32=fv winunits-base winunits-jedi fcl-web ibase mysql zlib oracle odbc p
 dirs_win64=fv winunits-base winunits-jedi fcl-web ibase mysql zlib oracle odbc postgres sqlite imagemagick \
                 tcl opengl gtk1 gtk2 fpgtk fftw sdl openssl cdrom httpd13 httpd20 httpd22 numlib
 dirs_wince=winceunits httpd22 fcl-web tcl fftw unzip zlib sqlite mysql ibase postgres oracle odbc sdl openssl oggvorbis numlib
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 dirs_os2=fv zlib libpng x11 tcl fpgtk rexx os2units gtk1 imlib
 dirs_emx=fv zlib libpng x11 tcl fpgtk rexx os2units gtk1 imlib
 dirs_netware=fv zlib unzip
@@ -106,6 +117,7 @@ dirs_netwlibc=fv zlib unzip
 dirs_palmos=palmunits
 dirs_go32v2=fv graph unzip gdbint
 dirs_amiga=amunits
+<<<<<<< HEAD
 <<<<<<< HEAD
 dirs_morphos=fv opengl sdl
 dirs_wii=libogcfpc
@@ -121,6 +133,8 @@ dirs_wii=libogcfpc
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [install]
 fpcpackage=y
@@ -165,6 +179,7 @@ fpmkunit_release: fcl-base_release fcl-process_release paszlib_release
 fpmkunit_shared: fcl-base_shared fcl-process_shared paszlib_shared
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ifneq ($(findstring $(OS_TARGET),darwin iphonesim),)
 fcl-base_all: univint_all paszlib_all
 fcl-base_debug: univint_debug paszlib_debug
@@ -173,6 +188,8 @@ fcl-base_release: univint_release paszlib_release
 fcl-base_shared: univint_shared paszlib_shared
 else
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 ifneq ($(findstring $(OS_TARGET),win32 win64),)
 fcl-base_all: paszlib_all winunits-base_all winunits-jedi_all
@@ -180,7 +197,10 @@ fcl-base_debug: paszlib_debug winunits-base_debug winunits-jedi_debug
 fcl-base_smart: paszlib_smart winunits-base_smart winunits-jedi_smart
 fcl-base_release: paszlib_release winunits-base_release winunits-jedi_release
 fcl-base_shared: paszlib_shared winunits-base_shared winunits-jedi_shared
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 fcl-base_all: paszlib_all
 fcl-base_debug: paszlib_debug
 fcl-base_smart: paszlib_smart
@@ -188,6 +208,7 @@ fcl-base_release: paszlib_release
 fcl-base_shared: paszlib_shared
 endif
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ifneq ($(findstring $(OS_TARGET),win32 win64),)
 fcl-extra_all: fcl-base winunits-base_all winunits-jedi_all
@@ -221,6 +242,8 @@ endif
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 fcl-xml_all: fcl-base_all
 fcl-xml_debug: fcl-base_debug
 fcl-xml_smart: fcl-base_smart
@@ -234,6 +257,7 @@ fcl-json_release: fcl-base_release
 fcl-json_shared: fcl-base_shared
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 fcl-js_all: fcl-base_all
 fcl-js_debug: fcl-base_debug
 fcl-js_smart: fcl-base_smart
@@ -242,11 +266,14 @@ fcl-js_shared: fcl-base_shared
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 fcl-image_all: fcl-base_all paszlib_all pasjpeg_all
 fcl-image_debug: fcl-base_debug paszlib_debug pasjpeg_debug
 fcl-image_smart: fcl-base_smart paszlib_smart pasjpeg_smart
 fcl-image_release: fcl-base_release paszlib_release pasjpeg_release
 fcl-image_shared: fcl-base_shared paszlib_shared pasjpeg_shared
+<<<<<<< HEAD
 
 fcl-fpcunit_all: fcl-xml_all paszlib_all
 fcl-fpcunit_debug: fcl-xml_debug paszlib_debug
@@ -265,6 +292,22 @@ ifeq ($(findstring $(OS_TARGET),linux darwin iphonesim freebsd openbsd netbsd so
 =======
 ifeq ($(findstring $(OS_TARGET),linux darwin freebsd openbsd netbsd solaris),)
 >>>>>>> graemeg/fixes_2_2
+=======
+
+fcl-fpcunit_all: fcl-xml_all paszlib_all
+fcl-fpcunit_debug: fcl-xml_debug paszlib_debug
+fcl-fpcunit_smart: fcl-xml_smart paszlib_smart
+fcl-fpcunit_release: fcl-xml_release paszlib_release
+fcl-fpcunit_shared: fcl-xml_shared paszlib_shared
+
+fcl-registry_all: fcl-xml_all
+fcl-registry_debug: fcl-xml_debug
+fcl-registry_smart: fcl-xml_smart
+fcl-registry_release: fcl-xml_release
+fcl-registry_shared: fcl-xml_shared
+
+ifeq ($(findstring $(OS_TARGET),linux darwin freebsd openbsd netbsd solaris),)
+>>>>>>> origin/fixes_2_2
 fcl-net_all: fcl-passrc_all fcl-xml_all
 fcl-net_debug: fcl-passrc_debug fcl-xml_debug
 fcl-net_smart: fcl-passrc_smart fcl-xml_smart
@@ -277,6 +320,7 @@ fcl-net_smart: fcl-passrc_smart fcl-xml_smart fcl-async_smart
 fcl-net_release: fcl-passrc_release fcl-xml_release fcl-async_release
 fcl-net_shared: fcl-passrc_shared fcl-xml_shared fcl-async_shared
 endif
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 fcl-web_all: fcl-db_all fcl-xml_all fcl-process_all httpd22_all fastcgi_all fcl-net_all fcl-json_all
@@ -709,6 +753,15 @@ fcl-web_smart: fcl-db_smart fcl-xml_smart fcl-process_smart httpd22_smart
 fcl-web_release: fcl-db_release fcl-xml_release fcl-process_release httpd22_release
 fcl-web_shared: fcl-db_shared fcl-xml_shared fcl-process_shared httpd22_shared
 
+=======
+
+fcl-web_all: fcl-db_all fcl-xml_all fcl-process_all httpd22_all
+fcl-web_debug: fcl-db_debug fcl-xml_debug fcl-process_debug httpd22_debug
+fcl-web_smart: fcl-db_smart fcl-xml_smart fcl-process_smart httpd22_smart
+fcl-web_release: fcl-db_release fcl-xml_release fcl-process_release httpd22_release
+fcl-web_shared: fcl-db_shared fcl-xml_shared fcl-process_shared httpd22_shared
+
+>>>>>>> origin/fixes_2_2
 ifneq ($(findstring $(OS_TARGET),linux freebsd openbsd netbsd win32 beos),)
 fcl-db_all: fcl-base_all mysql_all ibase_all oracle_all odbc_all postgres_all sqlite_all pxlib_all
 fcl-db_debug: fcl-base_debug mysql_debug ibase_debug oracle_debug odbc_debug postgres_debug sqlite_debug pxlib_debug
@@ -879,4 +932,7 @@ ptc_smart: hermes_smart x11_smart
 ptc_debug: hermes_debug x11_debug
 ptc_release: hermes_release x11_release
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

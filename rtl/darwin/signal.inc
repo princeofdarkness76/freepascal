@@ -176,6 +176,7 @@
     PSigSet = ^TSigSet;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     tdarwin_stack_t = record
         ss_sp    : pchar;        { signal stack base }
         ss_size  : clong;         { signal stack length }
@@ -184,6 +185,8 @@
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$if defined(cpupowerpc) or defined(cpupowerpc64)}
     {$include ppcgen/sig_ppc.inc}    { SigContextRec }
 {$else cpupowerpc or cpupowerpc64}

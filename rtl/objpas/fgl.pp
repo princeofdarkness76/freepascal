@@ -110,6 +110,12 @@ type
 const
   MaxGListSize = MaxInt div 1024;
 
+<<<<<<< HEAD
+=======
+const
+  MaxGListSize = MaxInt div 1024;
+
+>>>>>>> origin/fixes_2_2
 type
   generic TFPGList<T> = class(TFPSList)
 <<<<<<< HEAD
@@ -249,6 +255,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -260,6 +267,8 @@ type
     procedure Assign(Source: TFPGObjectList);
 {$endif VER2_4}
 =======
+=======
+>>>>>>> origin/fixes_2_2
     {$info FIXME: bug #10479: implement TFPGList<T>.Assign(TFPGList) to work somehow}
     {procedure Assign(Source: TFPGList);}
 >>>>>>> graemeg/fixes_2_2
@@ -268,9 +277,12 @@ type
     property Items[Index: Integer]: T read Get write Put; default;
     property List: PTypeList read GetList;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property FreeObjects: Boolean read FFreeObjects write FFreeObjects;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   generic TFPGInterfacedObjectList<T> = class(TFPSList)
@@ -365,9 +377,13 @@ type
     function GetKeyData(AKey: Pointer): Pointer;
     function GetData(Index: Integer): Pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     procedure InitOnPtrCompare; virtual;
 >>>>>>> graemeg/fixes_2_2
+=======
+    procedure InitOnPtrCompare; virtual;
+>>>>>>> origin/fixes_2_2
     function LinearIndexOf(AKey: Pointer): Integer;
     procedure PutKey(Index: Integer; AKey: Pointer);
     procedure PutKeyData(AKey: Pointer; NewData: Pointer);
@@ -443,6 +459,7 @@ type
     procedure Deref(Item: Pointer); override;
     procedure InitOnPtrCompare; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
@@ -471,16 +488,21 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     function GetKey(Index: Integer): TKey; {$ifdef CLASSESINLINE} inline; {$endif}
     function GetKeyData(const AKey: TKey): TData; {$ifdef CLASSESINLINE} inline; {$endif}
     function GetData(Index: Integer): TData; {$ifdef CLASSESINLINE} inline; {$endif}
     function KeyCompare(Key1, Key2: Pointer): Integer;
     function KeyCustomCompare(Key1, Key2: Pointer): Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
     //function DataCompare(Data1, Data2: Pointer): Integer;
     function DataCustomCompare(Data1, Data2: Pointer): Integer;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure PutKey(Index: Integer; const NewKey: TKey); {$ifdef CLASSESINLINE} inline; {$endif}
     procedure PutKeyData(const AKey: TKey; const NewData: TData); {$ifdef CLASSESINLINE} inline; {$endif}
     procedure PutData(Index: Integer; const NewData: TData); {$ifdef CLASSESINLINE} inline; {$endif}
@@ -1252,6 +1274,7 @@ end;
 function TFPGObjectList.Extract(const Item: T): T;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   inherited Extract(@Item, @Result);
 =======
   ResPtr := inherited Extract(@Item);
@@ -1270,6 +1293,13 @@ begin
   else
     Error(SMapKeyError, PtrUInt(AKey));
 >>>>>>> graemeg/fixes_2_2
+=======
+  I := IndexOf(AKey);
+  if I >= 0 then
+    Result := InternalItems[I]+FKeySize
+  else
+    Error(SMapKeyError, PtrUInt(AKey));
+>>>>>>> origin/fixes_2_2
 end;
 
 function TFPGObjectList.GetFirst: T;
@@ -1296,8 +1326,11 @@ end;
 function TFPGObjectList.GetEnumerator: TFPGListEnumeratorSpec;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result := TFPGListEnumeratorSpec.Create(Self);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   I := IndexOf(AKey);
   if I >= 0 then
     Data[I] := NewData
@@ -1326,7 +1359,10 @@ begin
   end else
     Result := Count;
   CopyKey(AKey, inherited Insert(Result));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function TFPGObjectList.GetEnumerator: TFPGListEnumeratorSpec;
@@ -1344,6 +1380,7 @@ var
   I,L,R,Dir: Integer;
 >>>>>>> graemeg/fixes_2_2
 begin
+<<<<<<< HEAD
   Result := 0;
   {$info TODO: fix inlining to work! InternalItems[Result]^}
   while (Result < FCount) and (PT(FList)[Result] <> Item) do
@@ -1774,12 +1811,15 @@ function TFPSMap.Find(AKey: Pointer; out Index: Integer): Boolean;
 var
   I,L,R,Dir: Integer;
 begin
+=======
+>>>>>>> origin/fixes_2_2
   Result := false;
   // Use binary search.
   L := 0;
   R := FCount-1;
   while L<=R do
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
     I := L + (R - L) div 2;
 =======
@@ -1795,6 +1835,10 @@ begin
 =======
 >>>>>>> origin/cpstrnew
     Dir := FOnKeyPtrCompare(Items[I], AKey);
+=======
+    I := (L+R) div 2;
+    Dir := FOnPtrCompare(Items[I], AKey);
+>>>>>>> origin/fixes_2_2
     if Dir < 0 then
       L := I+1
     else begin
@@ -1934,8 +1978,27 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 procedure TFPGMap.InitOnPtrCompare;
+=======
+procedure TFPGMap.InitOnPtrCompare;
+begin
+  OnPtrCompare := @KeyCompare;
+end;
+
+function TFPGMap.KeyCompare(Key1, Key2: Pointer): Integer;
+begin
+  if PKey(Key1)^ < PKey(Key2)^ then
+    Result := -1
+  else if PKey(Key1)^ > PKey(Key2)^ then
+    Result := 1
+  else
+    Result := 0;
+end;
+
+function TFPGMap.KeyCustomCompare(Key1, Key2: Pointer): Integer;
+>>>>>>> origin/fixes_2_2
 begin
   OnPtrCompare := @KeyCompare;
 end;

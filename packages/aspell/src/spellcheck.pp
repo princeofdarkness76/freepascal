@@ -24,11 +24,16 @@ type
   TLineErrorsArray = array of TLineErrors;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   { TSpellCheck }
 =======
   { TSpeller }
   { Abstract ancestor, don't use directly }
 >>>>>>> graemeg/fixes_2_2
+=======
+  { TSpeller }
+  { Abstract ancestor, don't use directly }
+>>>>>>> origin/fixes_2_2
 
   TSpeller = class // abstract class, basis for all checkers
    protected
@@ -49,6 +54,7 @@ type
     property Language: string read FLanguage write SetLanguage;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   { TWordSpeller }
 
@@ -58,6 +64,8 @@ type
     FLastError: string;
     function DoCreateSpeller(Lang, Enc, aMode: pChar): PAspellSpeller;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
   { TWordSpeller }
   { Basic spelling class for spelling single words without context }
@@ -65,7 +73,10 @@ type
   TWordSpeller = class(TSpeller) // class for simple per-word checking
    private
     FSpeller: PAspellSpeller;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
    protected
     procedure CreateSpeller; override;
     procedure FreeSpeller; override;
@@ -75,11 +86,17 @@ type
   
   { TDocumentSpeller }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   { This speller is used to spellcheck lines or even whole documents.
     It is usefull when different mode (like "tex") is used so you can pass
     everything to aspell and let it take care of the context }
 >>>>>>> graemeg/fixes_2_2
+=======
+  { This speller is used to spellcheck lines or even whole documents.
+    It is usefull when different mode (like "tex") is used so you can pass
+    everything to aspell and let it take care of the context }
+>>>>>>> origin/fixes_2_2
 
   TDocumentSpeller = class(TWordSpeller)
    private
@@ -155,6 +172,7 @@ end;
 { TWordSpeller }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TWordSpeller.DoCreateSpeller(Lang, Enc, aMode: pChar): PAspellSpeller;
 var
   Error: Paspellcanhaveerror;
@@ -198,6 +216,8 @@ begin
   if not Assigned(FSpeller) then
     raise Exception.Create('Error on speller creation: ' + FLastError);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TWordSpeller.CreateSpeller;
 var
   Config: Paspellconfig;
@@ -221,7 +241,10 @@ begin
     raise Exception.Create('Error on speller creation: ' + aspell_error_message(Error))
   else
     FSpeller := to_aspell_speller(Error);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TWordSpeller.FreeSpeller;

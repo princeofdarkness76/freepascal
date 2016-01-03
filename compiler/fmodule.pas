@@ -182,6 +182,7 @@ interface
         localframeworksearchpath : TSearchPathList;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         moduleoptions: tmoduleoptions;
         deprecatedmsg: pshortstring;
 
@@ -229,6 +230,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         {create creates a new module which name is stored in 's'. LoadedFrom
         points to the module calling it. It is nil for the first compiled
         module. This allow inheritence of all path lists. MUST pay attention
@@ -247,10 +250,14 @@ interface
         procedure end_of_parsing;virtual;
         procedure setmodulename(const s:string);
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure AddExternalImport(const libname,symname,symmangledname:string;OrdNr: longint;isvar:boolean;ImportByOrdinalOnly:boolean);
 =======
         procedure AddExternalImport(const libname,symname:string;OrdNr: longint;isvar:boolean;ImportByOrdinalOnly:boolean);
 >>>>>>> graemeg/fixes_2_2
+=======
+        procedure AddExternalImport(const libname,symname:string;OrdNr: longint;isvar:boolean;ImportByOrdinalOnly:boolean);
+>>>>>>> origin/fixes_2_2
         property ImportLibraryList : TFPHashObjectList read FImportLibraryList;
       end;
 
@@ -282,9 +289,12 @@ interface
                                           used to delete them after linking }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure set_current_module(p:tmodule);
     function get_module(moduleindex : longint) : tmodule;
     function get_source_file(moduleindex,fileindex : longint) : tinputfile;
@@ -299,8 +309,11 @@ implementation
       verbose,systems,
       scanner,ppu,dbgbase,
 <<<<<<< HEAD
+<<<<<<< HEAD
       procinfo,symdef;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       procinfo;
 >>>>>>> graemeg/fixes_2_2
 
@@ -322,11 +335,16 @@ implementation
         while assigned(hp) do
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (hp.moduleid=st.moduleid) then
 =======
             if (hp.globalsymtable=st) or
                (hp.localsymtable=st) then
 >>>>>>> graemeg/fixes_2_2
+=======
+            if (hp.globalsymtable=st) or
+               (hp.localsymtable=st) then
+>>>>>>> origin/fixes_2_2
               begin
                 result:=hp;
                 exit;
@@ -355,10 +373,14 @@ implementation
                 current_scanner.tempopeninputfile;
                 current_scanner.gettokenpos;
 <<<<<<< HEAD
+<<<<<<< HEAD
                 parser_current_file:=current_scanner.inputfile.name;
 =======
                 parser_current_file:=current_scanner.inputfile.name^;
 >>>>>>> graemeg/fixes_2_2
+=======
+                parser_current_file:=current_scanner.inputfile.name^;
+>>>>>>> origin/fixes_2_2
               end
             else
               begin
@@ -553,6 +575,7 @@ implementation
     constructor tmodule.create(LoadedFrom:TModule;const amodulename: string; const afilename:TPathStr;_is_unit:boolean);
       var
 <<<<<<< HEAD
+<<<<<<< HEAD
         n:string;
         fn:TPathStr;
       begin
@@ -565,6 +588,8 @@ implementation
         else
           fn:=afilename;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         n : string;
       begin
         n:=ChangeFileExt(ExtractFileName(s),'');
@@ -669,7 +694,10 @@ implementation
 =======
         asmdata:=TAsmData.create(realmodulename^);
         InitDebugInfo(self);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -826,6 +854,7 @@ implementation
             asmdata:=nil;
           end;
 <<<<<<< HEAD
+<<<<<<< HEAD
         DoneDebugInfo(self,current_debuginfo_reset);
         globalsymtable.free;
         globalsymtable:=nil;
@@ -836,6 +865,8 @@ implementation
         localmacrosymtable.free;
         localmacrosymtable:=nil;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         DoneDebugInfo(self);
         if assigned(globalsymtable) then
           begin
@@ -903,7 +934,10 @@ implementation
         asmdata:=TAsmData.create(realmodulename^);
         DoneDebugInfo(self);
         InitDebugInfo(self);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         _exports.free;
         _exports:=tlinkedlist.create;
         dllscannerinputlist.free;
@@ -1236,11 +1270,15 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TModule.AddExternalImport(const libname,symname,symmangledname:string;
               OrdNr: longint;isvar:boolean;ImportByOrdinalOnly:boolean);
 =======
     procedure TModule.AddExternalImport(const libname,symname:string;OrdNr: longint;isvar:boolean;ImportByOrdinalOnly:boolean);
 >>>>>>> graemeg/fixes_2_2
+=======
+    procedure TModule.AddExternalImport(const libname,symname:string;OrdNr: longint;isvar:boolean;ImportByOrdinalOnly:boolean);
+>>>>>>> origin/fixes_2_2
       var
         ImportLibrary,OtherIL : TImportLibrary;
         ImportSymbol  : TImportSymbol;
@@ -1252,6 +1290,7 @@ implementation
         ImportSymbol:=TImportSymbol(ImportLibrary.ImportSymbolList.Find(symname));
         if not assigned(ImportSymbol) then
           begin
+<<<<<<< HEAD
 <<<<<<< HEAD
             { Check that the same name does not exist in another library }
             { If it does and the same mangled name is used, issue a warning }
@@ -1275,11 +1314,16 @@ implementation
             ImportSymbol:=TImportSymbol.Create(ImportLibrary.ImportSymbolList,
               symname,symmangledname,OrdNr,isvar);
 =======
+=======
+>>>>>>> origin/fixes_2_2
             if not ImportByOrdinalOnly then
               { negative ordinal number indicates import by name with ordinal number as hint }
               OrdNr:=-OrdNr;
             ImportSymbol:=TImportSymbol.Create(ImportLibrary.ImportSymbolList,symname,OrdNr,isvar);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           end;
       end;
 

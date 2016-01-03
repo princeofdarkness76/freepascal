@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 { lFTP CopyRight (C) 2005-2008 Ales Katona
 =======
 { lFTP CopyRight (C) 2005-2007 Ales Katona
 >>>>>>> graemeg/fixes_2_2
+=======
+{ lFTP CopyRight (C) 2005-2007 Ales Katona
+>>>>>>> origin/fixes_2_2
 
   This library is Free software; you can rediStribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -79,12 +83,15 @@ type
     function GetTimeout: Integer;
     procedure SetTimeout(const Value: Integer);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     function GetSession: TLSession;
     procedure SetSession(const AValue: TLSession);
     procedure SetCreator(AValue: TLComponent); override;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
     
 >>>>>>> graemeg/fixes_2_2
     function GetSocketClass: TLSocketClass;
@@ -107,10 +114,13 @@ type
     property DataConnection: TLTCP read FData;
     property TransferMethod: TLFTPTransferMethod read FTransferMethod write FTransferMethod default ftPassive;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property Session: TLSession read GetSession write SetSession;
     property FeatureList: TStringList read FFeatureList;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   { TLFTPTelnetClient }
@@ -156,6 +166,7 @@ type
     procedure OnControlCo(aSocket: TLSocket);
     procedure OnControlDs(aSocket: TLSocket);
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     procedure ClearStatusFlags;
 
@@ -163,6 +174,9 @@ type
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
     function GetTransfer: Boolean;
 
     function GetEcho: Boolean;
@@ -208,8 +222,11 @@ type
     function Authenticate(const aUsername, aPassword: string): Boolean;
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetData(out aData; const aSize: Integer): Integer;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     function GetData(var aData; const aSize: Integer): Integer;
 >>>>>>> graemeg/fixes_2_2
     function GetDataMessage: string;
@@ -982,6 +999,26 @@ begin
   if CanContinue(fsPass, aPassword, '') then begin
     FStatus.Insert(MakeStatusRec(fsPass, '', ''));
     FControl.SendMessage('PASS ' + aPassword + FLE);
+    Result := True;
+  end;
+end;
+
+function TLFTPClient.User(const aUserName: string): Boolean;
+begin
+  Result := not FPipeLine;
+  if CanContinue(fsUser, aUserName, '') then begin
+    FControl.SendMessage('USER ' + aUserName + FLE);
+    FStatus.Insert(MakeStatusRec(fsUser, '', ''));
+    Result := True;
+  end;
+end;
+
+function TLFTPClient.Password(const aPassword: string): Boolean;
+begin
+  Result := not FPipeLine;
+  if CanContinue(fsPass, aPassword, '') then begin
+    FControl.SendMessage('PASS ' + aPassword + FLE);
+    FStatus.Insert(MakeStatusRec(fsPass, '', ''));
     Result := True;
   end;
 end;

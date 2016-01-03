@@ -29,10 +29,14 @@ program controldemo;
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
  SysUtils, MacOSAll, MacPas;
 =======
  SysUtils, FPCMacOSAll, MacPas;
 >>>>>>> graemeg/fixes_2_2
+=======
+ SysUtils, FPCMacOSAll, MacPas;
+>>>>>>> origin/fixes_2_2
 
 var
   mainWindow: WindowRef;
@@ -50,10 +54,14 @@ const
 { Functions to easely generate carbon structures }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GetQDRect(Left, Top, Width, Height: Integer): MacOSAll.Rect;
 =======
 function GetQDRect(Left, Top, Width, Height: Integer): FPCMacOSAll.Rect;
 >>>>>>> graemeg/fixes_2_2
+=======
+function GetQDRect(Left, Top, Width, Height: Integer): FPCMacOSAll.Rect;
+>>>>>>> origin/fixes_2_2
 begin
   result.Left := Left;
   result.Top := Top;
@@ -120,6 +128,7 @@ var
   eventHandler: EventHandlerUPP;
   fontStyle: ControlFontStyleRec;
 <<<<<<< HEAD
+<<<<<<< HEAD
   psn: ProcessSerialNumber;
 begin
   psn.highLongOfPSN:=0;
@@ -129,6 +138,9 @@ begin
 =======
 begin
 >>>>>>> graemeg/fixes_2_2
+=======
+begin
+>>>>>>> origin/fixes_2_2
   status := CreateNewWindow(kDocumentWindowClass,
    (kWindowStandardDocumentAttributes or kWindowStandardHandlerAttribute
     or kWindowCompositingAttribute),

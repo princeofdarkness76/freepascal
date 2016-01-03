@@ -9,6 +9,7 @@ Ported to FPC by Nikolay Nikolov (nickysn@users.sourceforge.net)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 program TexWarp;
 
 {$MODE objfpc}
@@ -50,6 +51,8 @@ begin
 
   try
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Program TexWarp;
 
 {$MODE objfpc}
@@ -76,11 +79,15 @@ Begin
   d := s.lock;
   
   Try
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     pitch := s.pitch;
     spack := (s.height - 1) * pitch;
 
     { first pixel }
+<<<<<<< HEAD
 <<<<<<< HEAD
     for r := 0 to 3 do
       d[r] := (d[pitch + r] + d[r + 4] + d[spack + r] + d[pitch - 4 + r]) div 4;
@@ -188,6 +195,8 @@ begin
     for x := 0 to 40 do
     begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
     For r := 0 To 3 Do
       d[r] := (d[pitch + r] + d[r + 4] + d[spack + r] + d[pitch - 4 + r]) Div 4;
 
@@ -281,12 +290,16 @@ Begin
     b := 0;
     For x := 0 To 40 Do
     Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       { it should be noted that there is no scientific basis for }
       { the following three lines :) }
       grid[0] := Uint32(Trunc((xbase * 14 + x*4 + xmove*sin(b)+sin(cos(a)*sin(amp))*15) * 65536));
       grid[1] := Uint32(Trunc((ybase * 31 + y*3 + ymove*cos(b)*sin(sin(a)*cos(amp))*30) * 65536));
       id := (cos(xbase) + sin(ybase) + cos(a*xmove*0.17) + sin(b*ymove*0.11)) * amp * 23;
+<<<<<<< HEAD
 <<<<<<< HEAD
       if id < -127 then
         grid[2] := 0
@@ -344,6 +357,8 @@ begin
     for bx := 0 to 39 do
     begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
       If id < -127 Then
         grid[2] := 0
       Else
@@ -403,7 +418,10 @@ Begin
   Begin
     For bx := 0 To 39 Do
     Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       utl := Integer(cbp^);
       vtl := Integer((cbp + 1)^);
       itl := Integer((cbp + 2)^);
@@ -416,6 +434,7 @@ Begin
       ubr := Integer((cbp + (42 * 3))^);
       vbr := Integer((cbp + (42 * 3) + 1)^);
       ibr := Integer((cbp + (42 * 3) + 2)^);
+<<<<<<< HEAD
 <<<<<<< HEAD
       dudx := (utr - utl) div 8;
       dvdx := (vtr - vtl) div 8;
@@ -533,6 +552,8 @@ begin
       { create texture surface }
       texture := TPTCSurfaceFactory.CreateNew(256, 256, format);
 =======
+=======
+>>>>>>> origin/fixes_2_2
       dudx := (utr - utl) Div 8;
       dvdx := (vtr - vtl) Div 8;
       didx := (itr - itl) Div 8;
@@ -616,7 +637,10 @@ Begin
     
       { create texture surface }
       texture := TPTCSurface.Create(256, 256, format);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
       { create texture }
       generate(texture);
@@ -627,20 +651,28 @@ Begin
 
       { create console }
 <<<<<<< HEAD
+<<<<<<< HEAD
       console := TPTCConsoleFactory.CreateNew;
 =======
       console := TPTCConsole.Create;
 >>>>>>> graemeg/fixes_2_2
+=======
+      console := TPTCConsole.Create;
+>>>>>>> origin/fixes_2_2
 
       { open console }
       console.open('Warp demo', 320, 200, format);
 
       { create drawing surface }
 <<<<<<< HEAD
+<<<<<<< HEAD
       surface := TPTCSurfaceFactory.CreateNew(320, 200, format);
 =======
       surface := TPTCSurface.Create(320, 200, format);
 >>>>>>> graemeg/fixes_2_2
+=======
+      surface := TPTCSurface.Create(320, 200, format);
+>>>>>>> origin/fixes_2_2
 
       { control values }
       xbase := 0;
@@ -654,22 +686,29 @@ Begin
       dxm := 0.015;
       dym := -0.0083;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       { main loop }
       while not console.KeyPressed do
       begin
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
     
       { main loop }
       While Not console.KeyPressed Do
       Begin
     
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         { create texture mapping grid }
         grid_map(grid, xbase, ybase, xmove, ymove*3, amp);
 
         p1 := surface.lock;
+<<<<<<< HEAD
 <<<<<<< HEAD
         try
           p2 := texture.lock;
@@ -683,6 +722,8 @@ Begin
           surface.unlock;
         end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	Try
 	  p2 := texture.lock;
 	  Try
@@ -694,13 +735,17 @@ Begin
 	Finally
           surface.unlock;
 	End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
         { copy surface to console }
         surface.copy(console);
 
         { update console }
         console.update;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         { move control values (limit them so it doesn't go too far) }
@@ -753,6 +798,8 @@ Begin
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
       
         { move control values (limit them so it doesn't go too far) }
         xbase += dxb;
@@ -790,12 +837,16 @@ Begin
         End;
       End;
     Finally
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       console.close;
       console.Free;
       surface.Free;
       texture.Free;
       format.Free;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -815,6 +866,8 @@ Begin
   end;
 end.
 =======
+=======
+>>>>>>> origin/fixes_2_2
       If assigned(lighttable) Then
         FreeMem(lighttable);
     End;
@@ -823,4 +876,7 @@ end.
       e.report;
   End;
 End.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

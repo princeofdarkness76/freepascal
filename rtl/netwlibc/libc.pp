@@ -38,8 +38,11 @@ Type
   PDouble   = ^Double;
 $endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
 //  PPPChar   = ^PPChar;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   PPPChar   = ^PPChar;
 >>>>>>> graemeg/fixes_2_2
   void      = pointer;

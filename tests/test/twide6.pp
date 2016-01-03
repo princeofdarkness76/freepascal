@@ -3,6 +3,7 @@
 uses
  {$ifdef unix}
 <<<<<<< HEAD
+<<<<<<< HEAD
  {$ifdef darwin}iosxwstr{$else}cwstring{$endif},
  {$endif}
   sysutils;
@@ -10,11 +11,16 @@ uses
 // {$define print}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  cwstring,
  {$endif}
   sysutils;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure doerror(i : integer);
   begin
     writeln('Error: ',i);
@@ -22,6 +28,7 @@ procedure doerror(i : integer);
   end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { normal upper case testing (widestring) }
 procedure testupper;
@@ -83,12 +90,17 @@ var
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { normal upper case testing }
 procedure testupper;
 var
   s: ansistring;
   w1,w2,w3,w4: widestring;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   i: longint;
 begin
   w1:='aé'#0'èàł'#$d87e#$dc04;
@@ -111,6 +123,7 @@ begin
         w2[i]:='?';
         w1[i]:='?';
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
   w1:=unicodeuppercase(w1);
 =======
@@ -188,6 +201,9 @@ begin
         w1[i]:='?';
       end;
   w1:=unicodeuppercase(w1);
+=======
+  w1:=wideuppercase(w1);
+>>>>>>> origin/fixes_2_2
 {$ifdef print}
   writeln('wideupper: ',w1);
   writeln('original upper: ',w2);
@@ -210,6 +226,7 @@ begin
         w2[i]:='?';
         w1[i]:='?';
       end;
+<<<<<<< HEAD
   w1:=unicodeuppercase(w1);
 {$ifdef print}
   writeln('unicodeupper: ',w1);
@@ -218,12 +235,18 @@ begin
 {$ifdef print}
   writeln('wideupper: ',w1);
 >>>>>>> graemeg/fixes_2_2
+=======
+  w1:=wideuppercase(w1);
+{$ifdef print}
+  writeln('wideupper: ',w1);
+>>>>>>> origin/fixes_2_2
   writeln('ansistrupper: ',w4);
 {$endif print}
   if (w1 <> w2) then
     doerror(21);
   if (w4 <> w2) then
     doerror(22);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -285,6 +308,8 @@ var
   s: ansistring;
   w1,w2,w3,w4: unicodestring;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 end;
 
@@ -294,7 +319,10 @@ procedure testlower;
 var
   s: ansistring;
   w1,w2,w3,w4: widestring;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   i: longint;
 begin
   w1:='AÉ'#0'ÈÀŁ'#$d87e#$dc04;
@@ -315,6 +343,7 @@ begin
         w1[i]:='?';
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   w1:=unicodelowercase(w1);
 {$ifdef print}
   writeln('unicodelower: ',w1);
@@ -323,6 +352,11 @@ begin
 {$ifdef print}
   writeln('widelower: ',w1);
 >>>>>>> graemeg/fixes_2_2
+=======
+  w1:=widelowercase(w1);
+{$ifdef print}
+  writeln('widelower: ',w1);
+>>>>>>> origin/fixes_2_2
   writeln('ansilower: ',w4);
 {$endif print}
   if (w1 <> w2) then
@@ -344,6 +378,7 @@ begin
         w1[i]:='?';
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   w1:=unicodelowercase(w1);
 {$ifdef print}
   writeln('unicodelower: ',w1);
@@ -352,6 +387,11 @@ begin
 {$ifdef print}
   writeln('widelower: ',w1);
 >>>>>>> graemeg/fixes_2_2
+=======
+  w1:=widelowercase(w1);
+{$ifdef print}
+  writeln('widelower: ',w1);
+>>>>>>> origin/fixes_2_2
   writeln('ansistrlower: ',w4);
 {$endif print}
   if (w1 <> w2) then
@@ -360,6 +400,7 @@ begin
     doerror(4);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
@@ -410,6 +451,8 @@ begin
   w3:=s;
   w4:=AnsiStrLower(pchar(s));
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { upper case testing with a missing utf-16 pair at the end }
@@ -430,7 +473,10 @@ begin
   s:=w1;
   w3:=s;
   w4:=AnsiUpperCase(s);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { filter out unsupported characters }
   for i:=1 to length(w3) do
     if w3[i]='?' then
@@ -438,6 +484,7 @@ begin
         w2[i]:='?';
         w1[i]:='?';
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
   w1:=unicodelowercase(w1);
 {$ifdef print}
@@ -461,6 +508,8 @@ begin
   w1:='AÉ'#0'ÈÀŁ'#$d87e#$dc04;
   w2:='aé'#0'èàł'#$d87e#$dc04;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   w1:=wideuppercase(w1);
 {$ifdef print}
   writeln('wideupper: ',w1);
@@ -483,7 +532,10 @@ begin
   { missing utf-16 pair at end}
   w1:='AÉ'#0'ÈÀŁ'#$d87e;
   w2:='aé'#0'èàł'#$d87e;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef print}
 // the utf-8 output can confuse the testsuite parser
   writeln('original: ',w1);
@@ -499,6 +551,7 @@ begin
         w2[i]:='?';
         w1[i]:='?';
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
   w1:=unicodelowercase(w1);
 {$ifdef print}
@@ -576,6 +629,8 @@ begin
   w3:=s;
   w4:=AnsiStrLower(pchar(s));
 =======
+=======
+>>>>>>> origin/fixes_2_2
   w1:=widelowercase(w1);
 {$ifdef print}
   writeln('widelower: ',w1);
@@ -607,7 +662,10 @@ begin
   s:=w1;
   w3:=s;
   w4:=AnsiUpperCase(s);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { filter out unsupported characters }
   for i:=1 to length(w3) do
     if w3[i]='?' then
@@ -615,6 +673,7 @@ begin
         w2[i]:='?';
         w1[i]:='?';
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
   w1:=unicodelowercase(w1);
 {$ifdef print}
@@ -692,6 +751,8 @@ begin
   if (w1 <> w2) then
     doerror(9);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   w1:=wideuppercase(w1);
 {$ifdef print}
   writeln('wideupper: ',w1);
@@ -701,7 +762,10 @@ begin
     doerror(9);
   if (w4 <> w2) then
     doerror(10);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -709,12 +773,18 @@ end;
 procedure testlowerinvalid1;
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   w1,w2: widestring;
 =======
   s: ansistring;
   w1,w2,w3,w4: widestring;
   i: longint;
 >>>>>>> graemeg/fixes_2_2
+=======
+  s: ansistring;
+  w1,w2,w3,w4: widestring;
+  i: longint;
+>>>>>>> origin/fixes_2_2
 begin
   { missing utf-16 pair at end with char after it}
   w1:='AÉ'#0'ÈÀŁ'#$d87e'J';
@@ -725,6 +795,7 @@ begin
   writeln('original lower: ',w2);
 {$endif print}
 <<<<<<< HEAD
+<<<<<<< HEAD
   w1:=widelowercase(w1);
 {$ifdef print}
   writeln('widelower: ',w1);
@@ -732,6 +803,8 @@ begin
   if (w1 <> w2) then
     doerror(11);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   s:=w1;
   w3:=s;
   w4:=AnsiLowerCase(s);
@@ -751,7 +824,10 @@ begin
     doerror(11);
   if (w4 <> w2) then
     doerror(12);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -759,12 +835,18 @@ end;
 procedure testupperinvalid2;
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   w1,w2: widestring;
 =======
   s: ansistring;
   w1,w2,w3,w4: widestring;
   i: longint;
 >>>>>>> graemeg/fixes_2_2
+=======
+  s: ansistring;
+  w1,w2,w3,w4: widestring;
+  i: longint;
+>>>>>>> origin/fixes_2_2
 begin
   w1:='aé'#0'èàł'#$d87e#$dc04'ö';
   w2:='AÉ'#0'ÈÀŁ'#$d87e#$dc04'Ö';
@@ -774,6 +856,7 @@ begin
   writeln('original upper: ',w2);
 {$endif print}
 <<<<<<< HEAD
+<<<<<<< HEAD
   w1:=wideuppercase(w1);
 {$ifdef print}
   writeln('wideupper: ',w1);
@@ -781,6 +864,8 @@ begin
   if (w1 <> w2) then
     doerror(13);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   s:=w1;
   { truncate the last utf-8 character }
   setlength(s,length(s)-1);
@@ -808,7 +893,10 @@ begin
     doerror(13);
   if (w4 <> w2) then
     doerror(14);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -816,12 +904,18 @@ end;
 procedure testlowerinvalid2;
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   w1,w2: widestring;
 =======
   s: ansistring;
   w1,w2,w3,w4: widestring;
   i: longint;
 >>>>>>> graemeg/fixes_2_2
+=======
+  s: ansistring;
+  w1,w2,w3,w4: widestring;
+  i: longint;
+>>>>>>> origin/fixes_2_2
 begin
   w1:='AÉ'#0'ÈÀŁ'#$d87e#$dc04'Ö';
   w2:='aé'#0'èàł'#$d87e#$dc04'ö';
@@ -830,6 +924,7 @@ begin
   writeln('original: ',w1);
   writeln('original lower: ',w2);
 {$endif print}
+<<<<<<< HEAD
 <<<<<<< HEAD
   w1:=widelowercase(w1);
 {$ifdef print}
@@ -850,6 +945,8 @@ begin
   testloweru;
   writeln;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   s:=w1;
   { truncate the last utf-8 character }
   setlength(s,length(s)-1);
@@ -886,7 +983,10 @@ begin
   writeln;
   testlower;
   writeln;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   writeln;
   testupperinvalid;
   writeln;

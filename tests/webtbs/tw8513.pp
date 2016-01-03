@@ -15,9 +15,12 @@ var
   Item: TMyType;
   ItemAsByte: byte absolute Item;
 <<<<<<< HEAD
+<<<<<<< HEAD
   ItemAsWord: word absolute Item;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   r: tr;
   b: byte absolute r.b;
@@ -45,6 +48,7 @@ begin
     halt(1);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_BIG_ENDIAN}
   if (itemasword <> $dead) then
 {$else}
@@ -54,6 +58,8 @@ begin
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   r.a := $de;
   r.b := $ad;
   r.c := $be;

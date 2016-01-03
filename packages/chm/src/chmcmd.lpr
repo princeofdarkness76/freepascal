@@ -13,10 +13,14 @@
   You should have received a copy of the GNU Library General Public License
   along with this library; if not, write to the Free Software Foundation,
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 =======
   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 >>>>>>> graemeg/fixes_2_2
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> origin/fixes_2_2
 }
 {
   See the file COPYING, included in this distribution,
@@ -27,6 +31,7 @@ program chmcmd;
 {$mode objfpc}{$H+}
 
 uses
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -51,10 +56,14 @@ Const
 =======
   Classes, chmfilewriter;
 >>>>>>> graemeg/fixes_2_2
+=======
+  Classes, chmfilewriter;
+>>>>>>> origin/fixes_2_2
 
 Procedure Usage;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   Writeln(StdErr,'Usage: chmcmd [options] <filename>');
   writeln(stderr);
@@ -406,15 +415,21 @@ end;
 
 procedure Processfile(name:string);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Writeln(StdErr,'Usage: chmcmd  <filename>');
   Halt(1);
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 var
   OutStream: TFileStream;
   Project: TChmProject;
+<<<<<<< HEAD
 <<<<<<< HEAD
   xmlname: string;
   ishhp  : boolean;
@@ -596,6 +611,8 @@ begin
      halt;
    end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
   if (Paramcount=1) and (ParamStr(1)<>'-h') and (ParamStr(1)<>'-?') then 
@@ -611,6 +628,9 @@ begin
     begin
     Usage;
     end; 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.
 

@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: pcx.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -40,7 +43,10 @@
 
 *)
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef NDS_INTERFACE}
 type
   // short int = cint16???
@@ -65,8 +71,12 @@ type
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function loadPCX(const pcx: pcuchar; image: PsImage): cint; cdecl; external;
 =======
 function loadPCX(pcx: pcuchar; image: PsImage): cint; cdecl; external;
 >>>>>>> graemeg/fixes_2_2
+=======
+function loadPCX(pcx: pcuchar; image: PsImage): cint; cdecl; external;
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}

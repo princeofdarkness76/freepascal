@@ -9,6 +9,7 @@ program nlshello;
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   gettext, ncurses, initc;
 
 procedure setlocale(cat : integer; p : pchar); cdecl; external clib;
@@ -20,6 +21,9 @@ const
 =======
   gettext, libc, ncurses;
 >>>>>>> graemeg/fixes_2_2
+=======
+  gettext, libc, ncurses;
+>>>>>>> origin/fixes_2_2
 
 resourcestring
   hello_world = 'Hello world!';

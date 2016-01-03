@@ -654,7 +654,10 @@ begin
     PosEx:=0
   else
     PosEx:=succ(i-pchar(pointer(s)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 Function PosEx(c:char; const S: string; Offset: Cardinal): Integer;
@@ -719,6 +722,18 @@ var pc,pcc,lastpc : pchar;
     Found         : Boolean;
     sc            : integer;
 
+<<<<<<< HEAD
+=======
+function StringsReplace(const S: string; OldPattern, NewPattern: array of string;  Flags: TReplaceFlags): string;
+
+var pc,pcc,lastpc : pchar;
+    strcount      : integer;
+    ResStr,
+    CompStr       : string;
+    Found         : Boolean;
+    sc            : integer;
+
+>>>>>>> origin/fixes_2_2
 begin
   sc := length(OldPattern);
   if sc <> length(NewPattern) then
@@ -740,7 +755,10 @@ begin
   pcc := @s[1];
   lastpc := pc+Length(S);
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   while pc < lastpc do
     begin
     Found := False;
@@ -1439,6 +1457,7 @@ begin
   p2:=@result[1];
   k:=spaces;
   while (p>=p2) do
+<<<<<<< HEAD
     begin
       if k=0 then
        begin
@@ -1468,6 +1487,36 @@ begin
        value:=cardinal(value) shr 1;
        dec(p); 
 <<<<<<< HEAD
+=======
+    begin
+      if k=0 then
+       begin
+         p^:=' ';
+         dec(p);
+         k:=spaces;
+       end;
+      p^:=chr(48+(cardinal(value) and 1));
+      value:=cardinal(value) shr 1;
+      dec(p); 
+      dec(k);
+   end;
+end;
+
+function intToBin(Value: Longint; Digits:integer): string;
+var p,p2 : pchar;
+begin
+  result:='';
+  if digits<=0 then exit;
+  setlength(result,digits);
+  p:=pchar(pointer(@result[digits]));
+  p2:=pchar(pointer(@result[1]));
+  // typecasts because we want to keep intto* delphi compat and take an integer
+  while (p>=p2) and (cardinal(value)>0) do     
+    begin
+       p^:=chr(48+(cardinal(value) and 1));
+       value:=cardinal(value) shr 1;
+       dec(p); 
+>>>>>>> origin/fixes_2_2
     end;
   digits:=p-p2+1;
   if digits>0 then
@@ -1489,12 +1538,16 @@ begin
        p^:=chr(48+(cardinal(value) and 1));
        value:=qword(value) shr 1;
        dec(p); 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   digits:=p-p2+1;
   if digits>0 then
     fillchar(result[1],digits,#48);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 end;
@@ -1519,6 +1572,8 @@ begin
   if digits>0 then
     fillchar(result[1],digits,#48);
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 

@@ -74,9 +74,12 @@ type
      mtChar,           {..a particular character}
      mtClass,          {..a character class}
 <<<<<<< HEAD
+<<<<<<< HEAD
      mtDupClass,       {..a character class beying referenced}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      mtNegClass,       {..a negated character class}
      mtTerminal,       {..the final state--no matching}
      mtUnused);        {..an unused state--no matching}
@@ -174,12 +177,17 @@ type
       destructor Destroy; override;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       function Parse(out aErrorPos : integer;
                      out aErrorCode: TRegexError) : boolean; virtual;
 =======
       function Parse(var aErrorPos : integer;
                      var aErrorCode: TRegexError) : boolean; virtual;
 >>>>>>> graemeg/fixes_2_2
+=======
+      function Parse(var aErrorPos : integer;
+                     var aErrorCode: TRegexError) : boolean; virtual;
+>>>>>>> origin/fixes_2_2
       function MatchString(const S : string; out MatchPos : integer; var Offset : integer) : boolean; virtual;
       function ReplaceAllString(const src, newstr: ansistring; out DestStr : string): Integer;
 
@@ -264,6 +272,7 @@ var
   x:integer;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if Offset>length(S) then
     begin
     Result := False;
@@ -273,6 +282,8 @@ begin
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {if the regex string hasn't been parsed yet, do so}
   if (FStateCount = 0) then begin
     if not Parse(ErrorPos, ErrorCode) then
@@ -394,12 +405,17 @@ end;
 
 {--------}
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TRegexEngine.Parse(out aErrorPos : integer;
                               out aErrorCode: TRegexError)
 =======
 function TRegexEngine.Parse(var aErrorPos : integer;
                               var aErrorCode: TRegexError)
 >>>>>>> graemeg/fixes_2_2
+=======
+function TRegexEngine.Parse(var aErrorPos : integer;
+                              var aErrorCode: TRegexError)
+>>>>>>> origin/fixes_2_2
                                                             : boolean;
 begin
   {clear the current transition table}
@@ -464,10 +480,14 @@ begin
     if (aMatchType = mtChar) then
       sdChar := aChar
 <<<<<<< HEAD
+<<<<<<< HEAD
     else if aMatchType in [mtClass, mtDupClass, mtNegClass] then
 =======
     else if (aMatchType = mtClass) or (aMatchType = mtNegClass) then
 >>>>>>> graemeg/fixes_2_2
+=======
+    else if (aMatchType = mtClass) or (aMatchType = mtNegClass) then
+>>>>>>> origin/fixes_2_2
       sdClass := aCharClass;
     end;
   Result := FStateCount;
@@ -476,24 +496,33 @@ begin
     setlength(FStateTable,(FStateCount * 3) div 2);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not (aMatchType in [mtChar,mtTerminal,mtNone]) then FRegexType := rtRegEx;
 =======
   if not (aMatchType in [mtChar,mtTerminal]) then FRegexType := rtRegEx;
 >>>>>>> graemeg/fixes_2_2
+=======
+  if not (aMatchType in [mtChar,mtTerminal]) then FRegexType := rtRegEx;
+>>>>>>> origin/fixes_2_2
 end;
 {--------}
 procedure TRegexEngine.rcClear;
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   i, j : integer;
 =======
   i : integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+  i : integer;
+>>>>>>> origin/fixes_2_2
 begin
   {free all items in the state transition table}
   for i := 0 to FStateCount-1 do begin
     with FStateTable[i] do begin
       if (sdMatchType = mtClass) or
+<<<<<<< HEAD
 <<<<<<< HEAD
          (sdMatchType = mtNegClass) and
          (sdClass <> nil) then
@@ -511,6 +540,11 @@ begin
         if (sdClass <> nil) then
           FreeMem(sdClass, sizeof(TCharSet));
 >>>>>>> graemeg/fixes_2_2
+=======
+         (sdMatchType = mtNegClass) then
+        if (sdClass <> nil) then
+          FreeMem(sdClass, sizeof(TCharSet));
+>>>>>>> origin/fixes_2_2
     end;
   end;
   {clear the state transition table}
@@ -577,17 +611,23 @@ var
   State  : integer;
   StrInx : integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   LenStr : integer;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   {assume we fail to match}
   Result := false;
   Len := StartPosn;
 <<<<<<< HEAD
+<<<<<<< HEAD
   LenStr := Length(s);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {clear the deque}
   FHead := FCapacity div 2;
   FTail := FHead;
@@ -634,10 +674,14 @@ begin
               DequeEnqueue(sdNextState1);
           end;
 <<<<<<< HEAD
+<<<<<<< HEAD
         mtClass, mtDupClass :
 =======
         mtClass :
 >>>>>>> graemeg/fixes_2_2
+=======
+        mtClass :
+>>>>>>> origin/fixes_2_2
           begin
             {for a match within a class, enqueue the next state}
             if (Ch in sdClass^) then
@@ -675,10 +719,14 @@ begin
       end;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   until (FHead = FTail) or (StrInx > LenStr); // deque empty or end of string
 =======
   until (FHead = FTail) or (ch = #0); // deque empty or end of string
 >>>>>>> graemeg/fixes_2_2
+=======
+  until (FHead = FTail) or (ch = #0); // deque empty or end of string
+>>>>>>> origin/fixes_2_2
   {if we reach this point we've either exhausted the deque or we've
    run out of string; if the former, the substring did not match
    since there are no more states. If the latter, we need to check
@@ -686,10 +734,14 @@ begin
    state; if so the string matched the regular expression defined by
    the transition table}
 <<<<<<< HEAD
+<<<<<<< HEAD
   while (FHead <> FTail) and (StrInx<=LenStr) do begin
 =======
   while (FHead <> FTail) do begin
 >>>>>>> graemeg/fixes_2_2
+=======
+  while (FHead <> FTail) do begin
+>>>>>>> origin/fixes_2_2
     State := DequePop;
     with FStateTable[State] do begin
       case sdMatchType of
@@ -762,10 +814,13 @@ begin
         {move past the close parenthesis}
         inc(FPosn);
 <<<<<<< HEAD
+<<<<<<< HEAD
         {always handle expressions with parentheses as regular-expression}
         FRegexType := rtRegEx;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
     '[' :
       begin
@@ -810,6 +865,7 @@ begin
                              NewFinalState, UnusedState);
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     '\' :
       begin
         if (FPosn+1)^ in ['d','D','s','S','w','W'] then begin
@@ -828,6 +884,8 @@ begin
       end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   else
     {otherwise parse a single character}
     Result := rcParseChar;
@@ -886,9 +944,12 @@ begin
     inc(FPosn);
     ch := rcReturnEscapeChar;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FRegexType := rtRegEx;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end
   else
     ch :=FPosn^;
@@ -1021,10 +1082,13 @@ begin
      end state for the second expr and the overall expr}
     rcSetState(EndState1, FStateCount, UnusedState);
 <<<<<<< HEAD
+<<<<<<< HEAD
     {always handle expressions with a pipe as regular-expression}
     FRegexType := rtRegEx;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 end;
 {--------}
@@ -1135,10 +1199,13 @@ begin
                   if FStateTable[FStateCount].sdNextState2 in [StartStateAtom..EndStateAtom+1] then
                     FStateTable[FStateCount].sdNextState2 := i+FStateTable[FStateCount].sdNextState2 + (EndStateAtom-StartStateAtom) *i;
 <<<<<<< HEAD
+<<<<<<< HEAD
                   if FStateTable[FStateCount].sdMatchType = mtClass then
                     FStateTable[FStateCount].sdMatchType := mtDupClass;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                   inc(FStateCount);
 
                   if FStateCount=length(FStateTable) then
@@ -1159,10 +1226,13 @@ begin
                 if FStateTable[FStateCount].sdNextState2 in [StartStateAtom..EndStateAtom+1] then
                   FStateTable[FStateCount].sdNextState2 := i+FStateTable[FStateCount].sdNextState2 + (EndStateAtom-StartStateAtom) * i+(i-n+1);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if FStateTable[FStateCount].sdMatchType = mtClass then
                   FStateTable[FStateCount].sdMatchType := mtDupClass;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 inc(FStateCount);
 
                 if FStateCount=length(FStateTable) then
@@ -1176,10 +1246,13 @@ begin
               Result := StartStateAtom;
               end;
 <<<<<<< HEAD
+<<<<<<< HEAD
             {always handle expressions with braces as regular-expression}
             FRegexType := rtRegEx;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           end;
 
   else
@@ -1233,12 +1306,18 @@ var i : integer;
 begin
   for i := 0 to FStateCount-1 do with FStateTable[i] do
 <<<<<<< HEAD
+<<<<<<< HEAD
     writeln('s:',i,' mt:',sdMatchType ,' ns1:',sdNextState1,' ns2:',sdNextState2,' char:',sdChar);
 =======
 //  FPC version 2.2.1 can not write enum-types. Disabled in fixes_2_2 only
 //    writeln('s:',i,' mt:',sdMatchType ,' ns1:',sdNextState1,' ns2:',sdNextState2,' char:',sdChar);
     writeln('s:',i,' ns1:',sdNextState1,' ns2:',sdNextState2,' char:',sdChar);
 >>>>>>> graemeg/fixes_2_2
+=======
+//  FPC version 2.2.1 can not write enum-types. Disabled in fixes_2_2 only
+//    writeln('s:',i,' mt:',sdMatchType ,' ns1:',sdNextState1,' ns2:',sdNextState2,' char:',sdChar);
+    writeln('s:',i,' ns1:',sdNextState1,' ns2:',sdNextState2,' char:',sdChar);
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TRegexEngine.DequeEnqueue(aValue: integer);

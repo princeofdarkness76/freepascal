@@ -1,5 +1,6 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 #
 
@@ -23,6 +24,8 @@ version=2.5.1
 units=gdbint gdbcon
 examples=examples/testgdb examples/symify
 =======
+=======
+>>>>>>> origin/fixes_2_2
 #   Makefile.fpc for Free Pascal GDB Interface
 #
 
@@ -34,11 +37,15 @@ version=2.2.5
 [target]
 units=gdbint gdbcon
 examples=testgdb symify
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [compiler]
 objectdir=$(GDBLIBDIR)
 librarydir=$(GDBLIBDIR)
+<<<<<<< HEAD
 <<<<<<< HEAD
 includedir=$(GDBLIBDIR) src
 sourcedir=src tests
@@ -47,12 +54,17 @@ sourcedir=src tests
 [require]
 packages=rtl fpmkunit
 =======
+=======
+>>>>>>> origin/fixes_2_2
 includedir=src
 sourcedir=src tests
 
 [require]
 libc=y
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [install]
 fpcpackage=y
@@ -60,6 +72,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
@@ -73,6 +86,8 @@ endif
 LOCALFPMAKE=./fpmake$(SRCEXEEXT)
 =======
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 [prerules]
 # For unix be sure to use the locally created gdbver
@@ -97,13 +112,17 @@ endif
 # Detect if libgdb.a is available
 override LIBGDBFILE:=$(firstword $(wildcard $(addsuffix /libgdb.a,$(GDBLIBDIR))))
 endif
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 # Set GDBFOUND variable
 ifeq ($(LIBGDBFILE),)
 GDBFOUND=0
 else
 GDBFOUND=1
+<<<<<<< HEAD
 <<<<<<< HEAD
 # Detect if gdblib.inc is available
 override LIBGDBINC:=$(firstword $(wildcard $(addsuffix /gdblib.inc,$(GDBLIBDIR))))
@@ -185,6 +204,8 @@ clean:
 	$(FPMAKE_BIN_CLEAN) clean $(FPMAKE_OPT)
 =======
 =======
+=======
+>>>>>>> origin/fixes_2_2
 endif
 
 
@@ -212,12 +233,16 @@ ifndef GOTGDBVER
 gdbint$(PPUEXT): $(CURRDIR)gdbver$(EXEEXT) gdbint.pp
 	$(MAKE) gdbint$(PPUEXT) GOTGDBVER=1
 else
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 # gdbver exists
 GDBVER:=GDB_V$(strip $(shell $(CURRDIR)gdbver$(EXEEXT) -n))
 gdbver.inc: gdbver$(EXEEXT)
         ./gdbver$(EXEEXT) -o gdbver.inc
 gdbint$(PPUEXT): gdbint.pp gdbver.inc
+<<<<<<< HEAD
 <<<<<<< HEAD
 # MingW?
 ifeq ($(wildcard $(GDBLIBDIR)/libmingw32.a),)
@@ -243,19 +268,25 @@ else
         $(FPMAKE_BIN_CLEAN) distclean $(FPMAKE_OPT)
 =======
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@$(ECHO) Using GDB $(GDBVER)
 	$(COMPILER) -d$(GDBVER) -Fisrc -Fusrc src/gdbint.pp
 	$(DEL) gdbver$(EXEEXT) gdbver$(OEXT)
 endif
 
 else
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 # libgdb.a not found, default to libgdb v6
 GDBVER=GDB_V606
 gdbver.inc:
         $(CPPROG) src/gdbver_nogdb.inc src/gdbver.inc
 gdbint$(PPUEXT): gdbint.pp gdbver.inc
 	@$(ECHO) libgdb.a not found, using default GDB $(GDBVER)
+<<<<<<< HEAD
 <<<<<<< HEAD
 	$(COMPILER) -d$(GDBVER) $(GDBLIBINCCOND)  -Fisrc -Fusrc src/gdbint.pp
         $(DEL) src/gdbver.inc
@@ -287,17 +318,23 @@ ifdef UNIXHier
 	$(LOCALFPMAKE) install $(FPMAKE_OPT) --prefix=$(INSTALL_PREFIX) --baseinstalldir=$(INSTALL_LIBDIR)/fpc/$(FPC_VERSION) --unitinstalldir=$(INSTALL_UNITDIR) -ie -fsp 0
 =======
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	$(COMPILER) -d$(GDBVER) -Fisrc -Fusrc src/gdbint.pp
 endif
 
 else
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 # Different OS_TARGET, default to libgdb v6
 GDBVER=GDB_V606
 gdbver.inc:
         $(CPPROG) src/gdbver_nogdb.inc src/gdbver.inc
 gdbint$(PPUEXT): gdbint.pp gdbver.inc
 	@$(ECHO) Different target os or cpu, using default GDB $(GDBVER)
+<<<<<<< HEAD
 <<<<<<< HEAD
 	$(COMPILER) -d$(GDBVER) $(GDBLIBINCCOND)  -Fisrc -Fusrc src/gdbint.pp
 endif
@@ -329,6 +366,8 @@ endif
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	$(COMPILER) -d$(GDBVER) -Fisrc -Fusrc src/gdbint.pp
 endif
 
@@ -350,13 +389,17 @@ $(DBGCOM): ../v4.16/dbgcom.c
 else
 $(DBGCOM):
 endif
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 simple: $(DBGCOM)
 	-rm gdbint.ppu
 	ppc386 -dUSE_LIBGDB -fisrc -fusrc gdbint
 	ppc386 testgdb
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 examples/testgdb$(EXEEXT): examples/testgdb.pp gdbint$(PPUEXT) gdbcon$(PPUEXT) $(DBGCOM)
 ifeq ($(wildcard $(GDBLIBDIR)/libmingw32.a),)
@@ -376,6 +419,9 @@ endif
 =======
 testgdb$(EXEEXT): testgdb.pp gdbint$(PPUEXT) gdbcon$(PPUEXT) $(DBGCOM)
 >>>>>>> graemeg/fixes_2_2
+=======
+testgdb$(EXEEXT): testgdb.pp gdbint$(PPUEXT) gdbcon$(PPUEXT) $(DBGCOM)
+>>>>>>> origin/fixes_2_2
 
 # Allow test for example
 .PHONY: test
@@ -390,6 +436,9 @@ distclean: fpc_distclean
 
 .NOTPARALLEL:
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

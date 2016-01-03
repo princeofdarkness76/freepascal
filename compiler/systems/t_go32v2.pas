@@ -191,10 +191,14 @@ begin
   with Info do
    begin
 <<<<<<< HEAD
+<<<<<<< HEAD
      ExeCmd[1]:='ld $OPT $RES';
 =======
      ExeCmd[1]:='ld $RES';
 >>>>>>> graemeg/fixes_2_2
+=======
+     ExeCmd[1]:='ld $RES';
+>>>>>>> origin/fixes_2_2
    end;
 end;
 
@@ -217,6 +221,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -235,21 +240,30 @@ begin
   if create_smartlink_sections then
     LinkRes.Add('--gc-sections');
 =======
+=======
+>>>>>>> origin/fixes_2_2
   
   { Add all options to link.res instead of passing them via command line:
     DOS command line is limited to 126 characters! }
   LinkRes.Add('--script='+maybequoted(outputexedir+Info.ScriptName));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   if info.ExtraOptions<>'' then
     LinkRes.Add(Info.ExtraOptions);
 (* Potential issues with older ld version??? *)
   if (cs_link_strip in current_settings.globalswitches) then
     LinkRes.Add('-s');
 <<<<<<< HEAD
+<<<<<<< HEAD
   LinkRes.Add('-o '+maybequoted(bstoslash(current_module.exefilename)));
 =======
   LinkRes.Add('-o '+maybequoted(current_module.exefilename^));
 >>>>>>> graemeg/fixes_2_2
+=======
+  LinkRes.Add('-o '+maybequoted(current_module.exefilename^));
+>>>>>>> origin/fixes_2_2
 
   { Write staticlibraries }
   if not StaticLibFiles.Empty then
@@ -447,7 +461,10 @@ begin
    Message1(exec_i_linking,current_module.exefilename);
 =======
    Message1(exec_i_linking,current_module.exefilename^);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   { Write used files and libraries and our own ld script }
   WriteScript(false);
@@ -457,9 +474,12 @@ begin
   SplitBinCmd(Info.ExeCmd[1],binstr,cmdstr);
   Replace(cmdstr,'$RES','@'+maybequoted(outputexedir+Info.ResName));
 <<<<<<< HEAD
+<<<<<<< HEAD
   Replace(cmdstr,'$OPT',Info.ExtraOptions);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   success:=DoExec(FindUtil(utilsprefix+BinStr),cmdstr,true,false);
 
 { Remove ReponseFile }

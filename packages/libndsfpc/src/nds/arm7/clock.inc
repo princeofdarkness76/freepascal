@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef ARM7}
   {$error The clock is only available on the ARM7}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: clock.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -44,7 +47,10 @@
 
 {$ifndef ARM7}
 {$error The clock is only available on the ARM7}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif ARM7}
 
 {$ifdef NDS_INTERFACE}
@@ -101,13 +107,18 @@ procedure rtcTransaction(command: pcuint8; commandLength: cuint32; result: pcuin
 procedure rtcGetTime(time: pcuint8); cdecl; external;
 procedure rtcSetTime(time: pcuint8); cdecl; external;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 procedure rtcGetData(data: pcuint8; size: cuint32); cdecl; external;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure rtcGetData(data: pcuint8; size: cuint32); cdecl; external;
+>>>>>>> origin/fixes_2_2
 
 procedure rtcGetTimeAndDate(time: pcuint8); cdecl; external;
 procedure rtcSetTimeAndDate(time: pcuint8); cdecl; external;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure rtcGetData(var data: cuint8; size: cuint32); cdecl; external;
 procedure BCDToInteger(var data: cuint8; length: cuint32); cdecl; external;
@@ -116,9 +127,14 @@ procedure integerToBCD(var data: cuint8; length: cuint32); cdecl; external;
 procedure initClockIRQ(); cdecl; external;
 procedure resyncClock(); cdecl; external;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure BCDToInteger(data: pcuint8; length: cuint32); cdecl; external;
 procedure integerToBCD(data: pcuint8; length: uint32); cdecl; external;
 
 procedure initClockIRQ(); cdecl; external;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}

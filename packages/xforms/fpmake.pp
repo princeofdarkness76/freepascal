@@ -15,6 +15,7 @@ begin
     P:=AddPackage('xforms');
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -27,17 +28,23 @@ begin
     P.IncludePath.Add('src');
     P.Dependencies.Add('x11');
 =======
+=======
+>>>>>>> origin/fixes_2_2
     P.Directory:='xforms';
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
     P.SourcePath.Add('src');
 //    P.Dependencies.Add('x11');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     T:=P.Targets.AddUnit('xforms.pp');
       with T.Dependencies do
         begin
           AddInclude('cursorfont.inc');
+<<<<<<< HEAD
 <<<<<<< HEAD
         end;
     T:=P.Targets.AddProgram('fd2pascal.pp');
@@ -120,6 +127,11 @@ begin
           AddUnit('xresource');
         end;
 >>>>>>> graemeg/fixes_2_2
+=======
+          AddUnit('xlib');
+          AddUnit('xresource');
+        end;
+>>>>>>> origin/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

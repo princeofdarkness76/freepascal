@@ -17,16 +17,20 @@ unit wininet;
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_OS_UNICODE}
   {$define UNICODE}
 {$endif}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 interface
 
 Uses Windows;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef win64}
   {$packrecords 8}
@@ -36,6 +40,8 @@ Uses Windows;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 //
 // Internet APIs
 //
@@ -822,10 +828,14 @@ Const
 
      HTTP_VERSIONA           = 'HTTP/1.0';
 <<<<<<< HEAD
+<<<<<<< HEAD
      HTTP_VERSIONW           = 'HTTP/1.0'#$0000; // force unicode url.
 =======
      HTTP_VERSIONW           : widestring = 'HTTP/1.0';
 >>>>>>> graemeg/fixes_2_2
+=======
+     HTTP_VERSIONW           : widestring = 'HTTP/1.0';
+>>>>>>> origin/fixes_2_2
      {$ifdef UNICODE}
        HTTP_VERSION = HTTP_VERSIONW;
      {$ELSE}
@@ -1410,10 +1420,14 @@ Const
 Type	
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
      INTERNET_ASYNC_RESULT = record
 =======
      INTERNET_ASYNC_RESULT = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+     INTERNET_ASYNC_RESULT = packed record
+>>>>>>> origin/fixes_2_2
           dwResult : DWORD_PTR;
           dwError : DWORD;
        end;
@@ -1426,10 +1440,14 @@ Type
 
   { INTERNET_DIAGNOSTIC_SOCKET_INFO - info about the socket in use }
 <<<<<<< HEAD
+<<<<<<< HEAD
      INTERNET_DIAGNOSTIC_SOCKET_INFO = record
 =======
      INTERNET_DIAGNOSTIC_SOCKET_INFO =packed  record
 >>>>>>> graemeg/fixes_2_2
+=======
+     INTERNET_DIAGNOSTIC_SOCKET_INFO =packed  record
+>>>>>>> origin/fixes_2_2
           Socket : DWORD_PTR;
           SourcePort : DWORD;
           DestPort : DWORD;
@@ -1440,10 +1458,14 @@ Type
      PINTERNET_DIAGNOSTIC_SOCKET_INFO = LPINTERNET_DIAGNOSTIC_SOCKET_INFO;	
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     INTERNET_PREFETCH_STATUS = record
 =======
     INTERNET_PREFETCH_STATUS = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+    INTERNET_PREFETCH_STATUS = packed record
+>>>>>>> origin/fixes_2_2
     			dwStatus,
 			dwSize : DWord;
                         end;
@@ -1455,10 +1477,14 @@ Type
     LPINTERNETPREFETCHSTATUS= PINTERNET_PREFETCH_STATUS; 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      INTERNET_PROXY_INFO =  record
 =======
      INTERNET_PROXY_INFO = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+     INTERNET_PROXY_INFO = packed record
+>>>>>>> origin/fixes_2_2
           dwAccessType : DWORD;
           lpszProxy : LPCTSTR;
           lpszProxyBypass : LPCTSTR;
@@ -1941,10 +1967,14 @@ Type
 	 InternetAuthNotifyCallback = PFN_AUTH_NOTIFY;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      _INTERNET_CACHE_ENTRY_INFOA = record
 =======
      _INTERNET_CACHE_ENTRY_INFOA = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+     _INTERNET_CACHE_ENTRY_INFOA = packed record
+>>>>>>> origin/fixes_2_2
           dwStructSize : DWORD;
           lpszSourceUrlName : LPSTR;
           lpszLocalFileName : LPSTR;
@@ -1971,10 +2001,14 @@ Type
      PLPINTERNET_CACHE_ENTRY_INFOA = ^LPINTERNET_CACHE_ENTRY_INFOA;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      _INTERNET_CACHE_ENTRY_INFOW = record
 =======
      _INTERNET_CACHE_ENTRY_INFOW = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+     _INTERNET_CACHE_ENTRY_INFOW = packed record
+>>>>>>> origin/fixes_2_2
           dwStructSize : DWORD;
           lpszSourceUrlName : LPWSTR;
           lpszLocalFileName : LPWSTR;
@@ -2011,10 +2045,13 @@ Type
        PINTERNET_CACHE_ENTRY_INFO = LPINTERNET_CACHE_ENTRY_INFOA;
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
      PINTERNETCACHEENTRYINFO = PINTERNET_CACHE_ENTRY_INFO;
      TINTERNETCACHEENTRYINFO = TINTERNET_CACHE_ENTRY_INFO;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
      INTERNET_AUTH_NOTIFY_DATA = record
           cbStruct : DWORD;
@@ -2097,10 +2134,14 @@ Type
 
   PAutoProxyHelperVtbl = ^AutoProxyHelperVtbl;
 <<<<<<< HEAD
+<<<<<<< HEAD
   AutoProxyHelperVtbl =  record
 =======
   AutoProxyHelperVtbl = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  AutoProxyHelperVtbl = packed record
+>>>>>>> origin/fixes_2_2
           IsResolvable                : TIsResolvable;
           GetIPAddress                : TGetIPAddress;
           ResolveHostName             : TResolveHostName;
@@ -2552,12 +2593,16 @@ Type
              lpReserved:LPVOID):BOOL;stdcall;external WININETLIBNAME name 'FindNextUrlCacheEntryExA';
   function FindFirstUrlCacheEntry(lpszUrlSearchPattern:LPCSTR; var lpFirstCacheEntryInfo:INTERNET_CACHE_ENTRY_INFOA; lpcbCacheEntryInfo:LPDWORD):HANDLE;stdcall;external WININETLIBNAME name 'FindFirstUrlCacheEntryA';
 <<<<<<< HEAD
+<<<<<<< HEAD
   function FindFirstUrlCacheEntry(lpszUrlSearchPattern:LPCSTR; var lpFirstCacheEntryInfo:INTERNET_CACHE_ENTRY_INFOA; var lpcbCacheEntryInfo:LongWord):HANDLE;stdcall;external WININETLIBNAME name 'FindFirstUrlCacheEntryA';
   function FindNextUrlCacheEntry(hEnumHandle:HANDLE; var lpNextCacheEntryInfo:INTERNET_CACHE_ENTRY_INFOA; lpcbCacheEntryInfo:LPDWORD):BOOL;stdcall;external WININETLIBNAME name 'FindNextUrlCacheEntryA';
   function FindNextUrlCacheEntry(hEnumHandle:HANDLE; var lpNextCacheEntryInfo:INTERNET_CACHE_ENTRY_INFOA; var lpcbCacheEntryInfo:LongWord):BOOL;stdcall;external WININETLIBNAME name 'FindNextUrlCacheEntryA';
 =======
   function FindNextUrlCacheEntry(hEnumHandle:HANDLE; var lpNextCacheEntryInfo:INTERNET_CACHE_ENTRY_INFOA; lpcbCacheEntryInfo:LPDWORD):BOOL;stdcall;external WININETLIBNAME name 'FindNextUrlCacheEntryA';
 >>>>>>> graemeg/fixes_2_2
+=======
+  function FindNextUrlCacheEntry(hEnumHandle:HANDLE; var lpNextCacheEntryInfo:INTERNET_CACHE_ENTRY_INFOA; lpcbCacheEntryInfo:LPDWORD):BOOL;stdcall;external WININETLIBNAME name 'FindNextUrlCacheEntryA';
+>>>>>>> origin/fixes_2_2
 
 {$ELSE}
 
@@ -2636,6 +2681,7 @@ Type
              lpReserved:LPVOID):BOOL;stdcall;external WININETLIBNAME name 'FindNextUrlCacheEntryExW';
   function FindFirstUrlCacheEntry(lpszUrlSearchPattern:LPCWSTR; lpFirstCacheEntryInfo:LPINTERNET_CACHE_ENTRY_INFOW; lpcbCacheEntryInfo:LPDWORD):HANDLE;stdcall;external WININETLIBNAME name 'FindFirstUrlCacheEntryW';
 <<<<<<< HEAD
+<<<<<<< HEAD
   function FindFirstUrlCacheEntry(lpszUrlSearchPattern:LPCWSTR; lpFirstCacheEntryInfo:LPINTERNET_CACHE_ENTRY_INFOW; var lpcbCacheEntryInfo:LongWord):HANDLE;stdcall;external WININETLIBNAME name 'FindFirstUrlCacheEntryW';
   function FindNextUrlCacheEntry(hEnumHandle:HANDLE; lpNextCacheEntryInfo:LPINTERNET_CACHE_ENTRY_INFOW; lpcbCacheEntryInfo:LPDWORD):BOOL;stdcall;external WININETLIBNAME name 'FindNextUrlCacheEntryW';
   function FindNextUrlCacheEntry(hEnumHandle:HANDLE; lpNextCacheEntryInfo:LPINTERNET_CACHE_ENTRY_INFOW; var lpcbCacheEntryInfo:LongWord):BOOL;stdcall;external WININETLIBNAME name 'FindNextUrlCacheEntryW';
@@ -2644,6 +2690,10 @@ Type
   function FindNextUrlCacheEntry(hEnumHandle:HANDLE; lpNextCacheEntryInfo:LPINTERNET_CACHE_ENTRY_INFOW; lpcbCacheEntryInfo:LPDWORD):BOOL;stdcall;external WININETLIBNAME name 'FindNextUrlCacheEntryW';
   function FindCloseUrlCache(hEnumHandle:HANDLE):BOOL;stdcall;external WININETLIBNAME name 'FindCloseUrlCache';
 >>>>>>> graemeg/fixes_2_2
+=======
+  function FindNextUrlCacheEntry(hEnumHandle:HANDLE; lpNextCacheEntryInfo:LPINTERNET_CACHE_ENTRY_INFOW; lpcbCacheEntryInfo:LPDWORD):BOOL;stdcall;external WININETLIBNAME name 'FindNextUrlCacheEntryW';
+  function FindCloseUrlCache(hEnumHandle:HANDLE):BOOL;stdcall;external WININETLIBNAME name 'FindCloseUrlCache';
+>>>>>>> origin/fixes_2_2
   function DeleteUrlCacheEntry(lpszUrlName:LPCWSTR):BOOL;stdcall;external WININETLIBNAME name 'DeleteUrlCacheEntryW';
   function InternetDial(hwndParent:HWND; lpszConnectoid:LPWSTR; dwFlags:DWORD; lpdwConnection:PDWORD_PTR; dwReserved:DWORD):DWORD;stdcall;external WININETLIBNAME name 'InternetDialW';
 
@@ -2835,7 +2885,11 @@ implementation
     end;  
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 end.
 =======
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+end.
+>>>>>>> origin/fixes_2_2

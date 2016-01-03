@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QD/PictUtils.h
  
      Contains:   Picture Utilities Interfaces.
@@ -8,6 +9,8 @@
  
      Copyright:  © 1990-2008 by Apple Computer, Inc., all rights reserved
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       PictUtils.p
  
      Contains:   Picture Utilities Interfaces.
@@ -16,11 +19,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1990-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -34,6 +41,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -45,7 +54,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -55,12 +67,17 @@
 unit PictUtils;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -74,14 +91,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -90,11 +112,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -132,6 +157,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -139,6 +166,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -362,6 +390,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -370,7 +400,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -397,9 +430,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -409,6 +446,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,QuickdrawTypes,Palettes;
 {$endc} {not MACOSALLINCLUDE}
@@ -432,10 +470,15 @@ uses MacTypes,QuickdrawTypes,Palettes;
 uses MacTypes,Quickdraw,Palettes;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,Quickdraw,Palettes;
+
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
 
 { verbs for the GetPictInfo, GetPixMapInfo, and NewPictInfo calls }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	returnColorTable = $0001;
@@ -526,6 +569,8 @@ function NewInitPickMethodUPP( userRoutine: InitPickMethodProcPtr ): InitPickMet
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 const
 	returnColorTable			= $0001;
@@ -654,11 +699,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewInitPickMethodUPP(userRoutine: InitPickMethodProcPtr): InitPickMethodUPP; external name '_NewInitPickMethodUPP'; { old name was NewInitPickMethodProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewRecordColorsUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -668,16 +717,22 @@ function NewRecordColorsUPP( userRoutine: RecordColorsProcPtr ): RecordColorsUPP
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewRecordColorsUPP(userRoutine: RecordColorsProcPtr): RecordColorsUPP; external name '_NewRecordColorsUPP'; { old name was NewRecordColorsProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewCalcColorTableUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -687,16 +742,22 @@ function NewCalcColorTableUPP( userRoutine: CalcColorTableProcPtr ): CalcColorTa
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewCalcColorTableUPP(userRoutine: CalcColorTableProcPtr): CalcColorTableUPP; external name '_NewCalcColorTableUPP'; { old name was NewCalcColorTableProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewDisposeColorPickMethodUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -706,16 +767,22 @@ function NewDisposeColorPickMethodUPP( userRoutine: DisposeColorPickMethodProcPt
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewDisposeColorPickMethodUPP(userRoutine: DisposeColorPickMethodProcPtr): DisposeColorPickMethodUPP; external name '_NewDisposeColorPickMethodUPP'; { old name was NewDisposeColorPickMethodProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeInitPickMethodUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -725,16 +792,22 @@ procedure DisposeInitPickMethodUPP( userUPP: InitPickMethodUPP ); external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeInitPickMethodUPP(userUPP: InitPickMethodUPP); external name '_DisposeInitPickMethodUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeRecordColorsUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -744,16 +817,22 @@ procedure DisposeRecordColorsUPP( userUPP: RecordColorsUPP ); external name '_Di
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeRecordColorsUPP(userUPP: RecordColorsUPP); external name '_DisposeRecordColorsUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeCalcColorTableUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -763,16 +842,22 @@ procedure DisposeCalcColorTableUPP( userUPP: CalcColorTableUPP ); external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeCalcColorTableUPP(userUPP: CalcColorTableUPP); external name '_DisposeCalcColorTableUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeDisposeColorPickMethodUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -782,16 +867,22 @@ procedure DisposeDisposeColorPickMethodUPP( userUPP: DisposeColorPickMethodUPP )
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeDisposeColorPickMethodUPP(userUPP: DisposeColorPickMethodUPP); external name '_DisposeDisposeColorPickMethodUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeInitPickMethodUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -801,16 +892,22 @@ function InvokeInitPickMethodUPP( colorsRequested: SInt16; var dataRef: UInt32; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeInitPickMethodUPP(colorsRequested: SInt16; var dataRef: UInt32; var colorBankType: SInt16; userRoutine: InitPickMethodUPP): OSErr; external name '_InvokeInitPickMethodUPP'; { old name was CallInitPickMethodProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeRecordColorsUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -820,16 +917,22 @@ function InvokeRecordColorsUPP( dataRef: UInt32; var colorsArray: RGBColor; colo
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeRecordColorsUPP(dataRef: UInt32; var colorsArray: RGBColor; colorCount: SInt32; var uniqueColors: SInt32; userRoutine: RecordColorsUPP): OSErr; external name '_InvokeRecordColorsUPP'; { old name was CallRecordColorsProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeCalcColorTableUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -839,16 +942,22 @@ function InvokeCalcColorTableUPP( dataRef: UInt32; colorsRequested: SInt16; colo
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeCalcColorTableUPP(dataRef: UInt32; colorsRequested: SInt16; colorBankPtr: UnivPtr; var resultPtr: CSpecArray; userRoutine: CalcColorTableUPP): OSErr; external name '_InvokeCalcColorTableUPP'; { old name was CallCalcColorTableProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeDisposeColorPickMethodUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -950,6 +1059,8 @@ function DisposePictInfo( thePictInfoID: PictInfoID ): OSErr; external name '_Di
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -1037,4 +1148,7 @@ function DisposPictInfo(thePictInfoID: PictInfoID): OSErr; external name '_Dispo
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

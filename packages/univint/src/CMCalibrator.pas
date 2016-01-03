@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CommonPanels/CMCalibrator.h
  
      Contains:   ColorSync Calibration API
@@ -24,6 +25,8 @@
  
      Copyright:  © 1998-2008 by Apple Computer, Inc., all rights reserved.
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       CMCalibrator.p
  
      Contains:   ColorSync Calibration API
@@ -32,11 +35,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1998-2002 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -67,6 +74,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -78,7 +87,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -88,12 +100,17 @@
 unit CMCalibrator;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -107,14 +124,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -123,11 +145,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -165,6 +190,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -172,6 +199,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -419,6 +447,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -427,7 +457,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -454,9 +487,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -466,6 +503,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,ColorSyncDeprecated,Events;
 {$endc} {not MACOSALLINCLUDE}
@@ -496,11 +534,16 @@ uses MacTypes,ColorSyncDeprecated,Events;
 uses MacTypes,CMTypes,CMApplication,Events;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,CMTypes,CMApplication,Events;
+
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 	CalibrateEventProcPtr = procedure( var event: EventRecord );
 	CalibrateEventUPP = CalibrateEventProcPtr;
@@ -511,6 +554,8 @@ type
 const
 	kCalibratorNamePrefix = FourCharCode('cali');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc TYPED_FUNCTION_POINTERS}
 	CalibrateEventProcPtr = procedure(var event: EventRecord);
 {$elsec}
@@ -529,11 +574,15 @@ const
 const
 	kCalibratorNamePrefix		= FourCharCode('cali');
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	CalibratorInfoPtr = ^CalibratorInfo;
 	CalibratorInfo = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		dataSize: UInt32;               { Size of this structure - compatibility }
 		displayID: CMDisplayIDType;              { Contains an hDC on Win32 }
@@ -559,6 +608,8 @@ function NewCalibrateEventUPP( userRoutine: CalibrateEventProcPtr ): CalibrateEv
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		dataSize:				UInt32;									{  Size of this structure - compatibility  }
 		displayID:				CMDisplayIDType;						{  Contains an hDC on Win32  }
 		profileLocationSize:	UInt32;									{  Max size for returned profile location  }
@@ -603,11 +654,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewCalibrateEventUPP(userRoutine: CalibrateEventProcPtr): CalibrateEventUPP; external name '_NewCalibrateEventUPP'; { old name was NewCalibrateEventProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewCanCalibrateUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -616,16 +671,22 @@ function NewCalibrateEventUPP(userRoutine: CalibrateEventProcPtr): CalibrateEven
 function NewCanCalibrateUPP( userRoutine: CanCalibrateProcPtr ): CanCalibrateUPP; external name '_NewCanCalibrateUPP';
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         not available
  }
 function NewCanCalibrateUPP(userRoutine: CanCalibrateProcPtr): CanCalibrateUPP; external name '_NewCanCalibrateUPP'; { old name was NewCanCalibrateProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewCalibrateUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -634,16 +695,22 @@ function NewCanCalibrateUPP(userRoutine: CanCalibrateProcPtr): CanCalibrateUPP; 
 function NewCalibrateUPP( userRoutine: CalibrateProcPtr ): CalibrateUPP; external name '_NewCalibrateUPP';
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         not available
  }
 function NewCalibrateUPP(userRoutine: CalibrateProcPtr): CalibrateUPP; external name '_NewCalibrateUPP'; { old name was NewCalibrateProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeCalibrateEventUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -653,16 +720,22 @@ procedure DisposeCalibrateEventUPP( userUPP: CalibrateEventUPP ); external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeCalibrateEventUPP(userUPP: CalibrateEventUPP); external name '_DisposeCalibrateEventUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeCanCalibrateUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -671,16 +744,22 @@ procedure DisposeCalibrateEventUPP(userUPP: CalibrateEventUPP); external name '_
 procedure DisposeCanCalibrateUPP( userUPP: CanCalibrateUPP ); external name '_DisposeCanCalibrateUPP';
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         not available
  }
 procedure DisposeCanCalibrateUPP(userUPP: CanCalibrateUPP); external name '_DisposeCanCalibrateUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeCalibrateUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -689,16 +768,22 @@ procedure DisposeCanCalibrateUPP(userUPP: CanCalibrateUPP); external name '_Disp
 procedure DisposeCalibrateUPP( userUPP: CalibrateUPP ); external name '_DisposeCalibrateUPP';
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         not available
  }
 procedure DisposeCalibrateUPP(userUPP: CalibrateUPP); external name '_DisposeCalibrateUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeCalibrateEventUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -708,16 +793,22 @@ procedure InvokeCalibrateEventUPP( var event: EventRecord; userUPP: CalibrateEve
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure InvokeCalibrateEventUPP(var event: EventRecord; userRoutine: CalibrateEventUPP); external name '_InvokeCalibrateEventUPP'; { old name was CallCalibrateEventProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeCanCalibrateUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -726,16 +817,22 @@ procedure InvokeCalibrateEventUPP(var event: EventRecord; userRoutine: Calibrate
 function InvokeCanCalibrateUPP( displayID: CMDisplayIDType; var errMessage: Str255; userUPP: CanCalibrateUPP ): Boolean; external name '_InvokeCanCalibrateUPP';
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         not available
  }
 function InvokeCanCalibrateUPP(displayID: CMDisplayIDType; var errMessage: Str255; userRoutine: CanCalibrateUPP): boolean; external name '_InvokeCanCalibrateUPP'; { old name was CallCanCalibrateProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeCalibrateUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -744,16 +841,22 @@ function InvokeCanCalibrateUPP(displayID: CMDisplayIDType; var errMessage: Str25
 function InvokeCalibrateUPP( var theInfo: CalibratorInfo; userUPP: CalibrateUPP ): OSErr; external name '_InvokeCalibrateUPP';
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         not available
  }
 function InvokeCalibrateUPP(var theInfo: CalibratorInfo; userRoutine: CalibrateUPP): OSErr; external name '_InvokeCalibrateUPP'; { old name was CallCalibrateProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CMCalibrateDisplay()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        not available
@@ -770,6 +873,8 @@ function CMCalibrateDisplay( var theInfo: CalibratorInfo ): OSErr; external name
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         in version 10.0 and later
@@ -884,4 +989,7 @@ function InvokeOldCalibrateUPP(var theInfo: OldCalibratorInfo; userRoutine: OldC
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

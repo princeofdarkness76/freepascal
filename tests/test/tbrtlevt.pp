@@ -91,6 +91,7 @@ begin
   tc.create(false);
   event := BasicEventCreate(nil,false,false,'bla');
 <<<<<<< HEAD
+<<<<<<< HEAD
   basiceventSetEvent(event);
   if (basiceventWaitFor(cardinal(-1),event) <> wrSignaled) then
     begin
@@ -101,6 +102,8 @@ begin
   if (basiceventWaitFor(1000,event) <> wrSignaled) then
     begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
   basiceventSetEvent(event);
   if (basiceventWaitFor(cardinal(-1),event) <> wrSignaled) then
     begin
@@ -110,7 +113,10 @@ begin
   basiceventSetEvent(event);
   if (basiceventWaitFor(1000,event) <> wrSignaled) then
     begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       writeln('error 5');
       halt(5);
     end;
@@ -120,6 +126,7 @@ begin
   { shouldn't change anything }
   basiceventSetEvent(event);
   if (basiceventWaitFor(cardinal(-1),event) <> wrSignaled) then
+<<<<<<< HEAD
 <<<<<<< HEAD
     begin
       writeln('error 6');
@@ -180,6 +187,31 @@ begin
   help.free;
   basiceventdestroy(event);
 >>>>>>> graemeg/fixes_2_2
+=======
+    begin
+      writeln('error 6');
+      halt(6);
+    end;
+
+  { make sure the two BasicSetEvents aren't cumulative }
+  if (basiceventWaitFor(1000,event) <> wrTimeOut) then
+    begin
+      writeln('error 7');
+      halt(7);
+    end;
+
+  help:=thelper.create(o_waittimeoutabandon);
+  basiceventdestroy(event);
+  help.waitfor;
+  help.free;
+
+  event := BasicEventCreate(nil,false,false,'bla');
+  help:=thelper.create(o_waittimeoutsignal);
+  basiceventSetEvent(event);
+  help.waitfor;
+  help.free;
+  basiceventdestroy(event);
+>>>>>>> origin/fixes_2_2
 
   while not waiting do
     sleep(20);

@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('libpng');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ShortName:='lpng';
     P.Description := 'Interface unit for libpng - working with PNG image format.';
 {$ifdef ALLPACKAGES}
@@ -39,6 +40,8 @@ begin
 
     T:=P.Targets.AddUnit('png.pp');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ALLPACKAGES}
     P.Directory:='libpng';
 {$endif ALLPACKAGES}
@@ -52,7 +55,10 @@ begin
         end;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef ALLPACKAGES}
     Run;
     end;

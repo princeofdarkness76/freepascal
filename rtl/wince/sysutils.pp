@@ -19,6 +19,7 @@ interface
 
 {$MODE objfpc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$MODESWITCH OUT}
 { force ansistrings }
 {$H+}
@@ -28,6 +29,10 @@ interface
 { force ansistrings }
 {$H+}
 >>>>>>> graemeg/fixes_2_2
+=======
+{ force ansistrings }
+{$H+}
+>>>>>>> origin/fixes_2_2
 
 uses
   dos,
@@ -38,6 +43,7 @@ uses
 {$DEFINE HAS_OSCONFIG}
 {$DEFINE HAS_TEMPDIR}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$DEFINE HAS_LOCALTIMEZONEOFFSET}
 
 { used OS file system APIs use ansistring }
@@ -47,6 +53,8 @@ uses
 {$define SYSUTILS_HAS_ANSISTR_ENVVAR_IMPL}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Include platform independent interface part }
 {$i sysutilh.inc}
@@ -112,6 +120,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function ExpandUNCFileName (const filename:rawbytestring) : rawbytestring;
 var
@@ -126,11 +135,16 @@ function ExpandUNCFileName (const filename:unicodestring) : unicodestring;
 var
   s    : unicodestring;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function ExpandUNCFileName (const filename:string) : string;
 { returns empty string on errors }
 var
   s    : widestring;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   size : dword;
   rc   : dword;
   buf  : pwidechar;
@@ -164,10 +178,14 @@ end;
 ****************************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function FileOpen (Const FileName : unicodestring; Mode : Integer) : THandle;
 =======
 Function FileOpen (Const FileName : string; Mode : Integer) : THandle;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function FileOpen (Const FileName : string; Mode : Integer) : THandle;
+>>>>>>> origin/fixes_2_2
 const
   AccessMode: array[0..2] of Cardinal  = (
     GENERIC_READ,
@@ -179,6 +197,7 @@ const
                FILE_SHARE_READ,
                FILE_SHARE_WRITE,
                FILE_SHARE_READ or FILE_SHARE_WRITE);
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
   result := CreateFile(PWideChar(FileName), dword(AccessMode[Mode and 3]),
@@ -203,6 +222,8 @@ end;
 
 Function FileCreate (Const FileName : UnicodeString; ShareMode:longint; Rights:longint) : THandle;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var
   fn: PWideChar;
 begin
@@ -227,17 +248,24 @@ end;
 
 
 Function FileCreate (Const FileName : String; Mode:longint) : THandle;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   FileCreate:=FileCreate(FileName);
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function FileRead (Handle : THandle; Out Buffer; Count : longint) : Longint;
 =======
 Function FileRead (Handle : THandle; Var Buffer; Count : longint) : Longint;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function FileRead (Handle : THandle; Var Buffer; Count : longint) : Longint;
+>>>>>>> origin/fixes_2_2
 Var
   res : dword;
 begin
@@ -301,6 +329,7 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function FileAge (Const FileName : UnicodeString): Longint;
 var
   Handle: THandle;
@@ -308,6 +337,8 @@ var
 begin
   Handle := FindFirstFile(PWideChar(FileName), FindData);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function FileAge (Const FileName : String): Longint;
 var
   Handle: THandle;
@@ -317,7 +348,10 @@ begin
   fn:=StringToPWideChar(FileName);
   Handle := FindFirstFile(fn, FindData);
   FreeMem(fn);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   if Handle <> INVALID_HANDLE_VALUE then
     begin
       Windows.FindClose(Handle);
@@ -330,10 +364,14 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function FileExists (Const FileName : UnicodeString) : Boolean;
 =======
 Function FileExists (Const FileName : String) : Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function FileExists (Const FileName : String) : Boolean;
+>>>>>>> origin/fixes_2_2
 var
   Attr:Dword;
 begin
@@ -346,10 +384,14 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function DirectoryExists (Const Directory : UnicodeString) : Boolean;
 =======
 Function DirectoryExists (Const Directory : String) : Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function DirectoryExists (Const Directory : String) : Boolean;
+>>>>>>> origin/fixes_2_2
 var
   Attr:Dword;
 begin
@@ -362,10 +404,14 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function FindMatch(var f: TAbstractSearchRec; var Name: UnicodeString) : Longint;
 =======
 Function FindMatch(var f: TSearchRec) : Longint;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function FindMatch(var f: TSearchRec) : Longint;
+>>>>>>> origin/fixes_2_2
 begin
   { Find file with correct attribute }
   While (F.FindData.dwFileAttributes and cardinal(F.ExcludeAttr))<>0 do
@@ -381,14 +427,19 @@ begin
   f.size:=F.FindData.NFileSizeLow;
   f.attr:=F.FindData.dwFileAttributes;
 <<<<<<< HEAD
+<<<<<<< HEAD
   Name:=F.FindData.cFileName;
 =======
   PWideCharToString(@F.FindData.cFileName[0], f.Name);
 >>>>>>> graemeg/fixes_2_2
+=======
+  PWideCharToString(@F.FindData.cFileName[0], f.Name);
+>>>>>>> origin/fixes_2_2
   Result:=0;
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function InternalFindFirst (Const Path : UnicodeString; Attr : Longint; out Rslt : TAbstractSearchRec; var Name : UnicodeString) : Longint;
 var
@@ -397,28 +448,38 @@ begin
   fn:=PWideChar(Path);
   Name:=Path;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function FindFirst (Const Path : String; Attr : Longint; out Rslt : TSearchRec) : Longint;
 var
   fn: PWideChar;
 begin
   fn:=StringToPWideChar(Path);
   Rslt.Name:=Path;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Rslt.Attr:=attr;
   Rslt.ExcludeAttr:=(not Attr) and ($1e);
                  { $1e = faHidden or faSysFile or faVolumeID or faDirectory }
   { FindFirstFile is a WinCE Call }
   Rslt.FindHandle:=FindFirstFile (fn, Rslt.FindData);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   FreeMem(fn);
 >>>>>>> graemeg/fixes_2_2
+=======
+  FreeMem(fn);
+>>>>>>> origin/fixes_2_2
   If Rslt.FindHandle=Invalid_Handle_value then
    begin
      Result:=GetLastError;
      exit;
    end;
   { Find file with correct attribute }
+<<<<<<< HEAD
 <<<<<<< HEAD
   Result:=FindMatch(Rslt, Name);
 end;
@@ -429,6 +490,8 @@ begin
   if FindNextFile(Rslt.FindHandle, Rslt.FindData) then
     Result := FindMatch(Rslt, Name)
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Result:=FindMatch(Rslt);
 end;
 
@@ -437,23 +500,32 @@ Function FindNext (Var Rslt : TSearchRec) : Longint;
 begin
   if FindNextFile(Rslt.FindHandle, Rslt.FindData) then
     Result := FindMatch(Rslt)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   else
     Result := GetLastError;
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure InternalFindClose (var Handle: THandle; var FindData: TFindData);
 begin
    if Handle <> INVALID_HANDLE_VALUE then
      Windows.FindClose(Handle);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Procedure FindClose (Var F : TSearchrec);
 begin
    if F.FindHandle <> INVALID_HANDLE_VALUE then
     Windows.FindClose(F.FindHandle);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -480,10 +552,14 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function FileGetAttr (Const FileName : UnicodeString) : Longint;
 =======
 Function FileGetAttr (Const FileName : String) : Longint;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function FileGetAttr (Const FileName : String) : Longint;
+>>>>>>> origin/fixes_2_2
 var
   fn: PWideChar;
 begin
@@ -493,6 +569,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function FileSetAttr (Const Filename : UnicodeString; Attr: longint) : Longint;
 begin
@@ -513,6 +590,8 @@ Function RenameFile (Const OldName, NewName : UnicodeString) : Boolean;
 begin
   Result := MoveFile(PWideChar(OldName), PWideChar(NewName));
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function FileSetAttr (Const Filename : String; Attr: longint) : Longint;
 var
   fn: PWideChar;
@@ -545,7 +624,10 @@ begin
   Result := MoveFile(fold, fnew);
   FreeMem(fnew);
   FreeMem(fold);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -566,7 +648,10 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function GetCurrentDir : String;
 begin
   GetDir(0, result);
@@ -600,13 +685,17 @@ begin
 end;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {****************************************************************************
                               Time Functions
 ****************************************************************************}
 
 
 Procedure GetLocalTime(var SystemTime: TSystemTime);
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
   windows.Getlocaltime(SystemTime);
@@ -628,6 +717,8 @@ begin
    end;
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Var
   Syst : Windows.TSystemtime;
 begin
@@ -641,17 +732,24 @@ begin
   SystemTime.millisecond:=syst.wMilliSeconds;
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {****************************************************************************
                               Misc Functions
 ****************************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SysBeep;
 =======
 procedure Beep;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure Beep;
+>>>>>>> origin/fixes_2_2
 begin
   MessageBeep(0);
 end;
@@ -781,14 +879,18 @@ var
   len: longint;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   MsgBuffer:=nil;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   len:=FormatMessage(
          FORMAT_MESSAGE_ALLOCATE_BUFFER or FORMAT_MESSAGE_FROM_SYSTEM or FORMAT_MESSAGE_IGNORE_INSERTS,
          nil,
          ErrorCode,
          0,
+<<<<<<< HEAD
 <<<<<<< HEAD
          @MsgBuffer,    { This function allocs the memory (in this case you pass a PPwidechar)}
          0,
@@ -804,6 +906,8 @@ begin
   else
     Result:='';
 =======
+=======
+>>>>>>> origin/fixes_2_2
          PWideChar(@MsgBuffer),    { This function allocs the memory (in this case you pass a PPwidechar)}
          0,
          nil);
@@ -812,7 +916,10 @@ begin
   MsgBuffer[len]:=#0;
   PWideCharToString(PWideChar(MsgBuffer), Result);
   LocalFree(HLOCAL(MsgBuffer));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 {****************************************************************************
@@ -832,20 +939,28 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function GetEnvironmentString(Index : Integer) : {$ifdef FPC_RTL_UNICODE}UnicodeString{$else}AnsiString{$endif};
 =======
 Function GetEnvironmentString(Index : Integer) : String;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function GetEnvironmentString(Index : Integer) : String;
+>>>>>>> origin/fixes_2_2
 begin
   Result := '';
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString;Flags:TExecuteFlags=[]):integer;
 =======
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString):integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString):integer;
+>>>>>>> origin/fixes_2_2
 var
   PI: TProcessInformation;
   Proc : THandle;
@@ -879,10 +994,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: Array of AnsiString;Flags:TExecuteFlags=[]):integer;
 =======
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: Array of AnsiString):integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+function ExecuteProcess(Const Path: AnsiString; Const ComLine: Array of AnsiString):integer;
+>>>>>>> origin/fixes_2_2
 
 var
   CommandLine: AnsiString;
@@ -985,22 +1104,29 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function DoCompareString(P1, P2: PWideChar; L1, L2: PtrUInt; Flags: DWORD): PtrInt;
 begin
   SetLastError(0);
   Result:=CompareString(LOCALE_USER_DEFAULT,Flags,P1,L1,P2,L2)-2;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function WinCECompareWideString(const s1, s2 : WideString) : PtrInt;
 begin
   SetLastError(0);
   Result:=CompareString(LOCALE_USER_DEFAULT,0,pwidechar(s1),
     length(s1),pwidechar(s2),length(s2))-2;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   if GetLastError<>0 then
     RaiseLastOSError;
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function WinCECompareWideString(const s1, s2 : WideString; Options : TCompareOptions) : PtrInt;
 begin
@@ -1030,6 +1156,8 @@ function WinCECompareTextUnicodeString(const s1, s2 : UnicodeString) : PtrInt;
 begin
   Result:=DoCompareString(PWideChar(s1), PWideChar(s2), Length(s1), Length(s2), NORM_IGNORECASE);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function WinCECompareTextWideString(const s1, s2 : WideString) : PtrInt;
 begin
   SetLastError(0);
@@ -1037,7 +1165,10 @@ begin
     length(s1),pwidechar(s2),length(s2))-2;
   if GetLastError<>0 then
     RaiseLastOSError;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -1180,10 +1311,14 @@ procedure InitWinCEWidestrings;
   begin
     widestringmanager.CompareWideStringProc:=@WinCECompareWideString;
 <<<<<<< HEAD
+<<<<<<< HEAD
     widestringmanager.CompareUnicodeStringProc:=@WinCECompareUnicodeString;
 =======
     widestringmanager.CompareTextWideStringProc:=@WinCECompareTextWideString;
 >>>>>>> graemeg/fixes_2_2
+=======
+    widestringmanager.CompareTextWideStringProc:=@WinCECompareTextWideString;
+>>>>>>> origin/fixes_2_2
 
     widestringmanager.UpperAnsiStringProc:=@WinCEAnsiUpperCase;
     widestringmanager.LowerAnsiStringProc:=@WinCEAnsiLowerCase;
@@ -1205,9 +1340,12 @@ Initialization
   InitInternational;    { Initialize internationalization settings }
   LoadVersionInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
   OnBeep:=@SysBeep;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   SysConfigDir:='\Windows';
 
 Finalization

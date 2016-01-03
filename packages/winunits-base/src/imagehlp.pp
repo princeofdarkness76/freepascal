@@ -25,6 +25,7 @@ Interface
 Uses Windows;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$packrecords 8}
 {$ifdef win64}
  {$define imagehlp64}
@@ -48,6 +49,8 @@ Uses Windows;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Const 
      IMAGE_SEPARATION    = 64*1024;  	
      DBHHEADER_DEBUGDIRS = $1;     
@@ -375,10 +378,14 @@ Type
   TMINIDUMP_TYPE = _MINIDUMP_TYPE;
   
 <<<<<<< HEAD
+<<<<<<< HEAD
   TLOADED_IMAGE = record
 =======
   TLOADED_IMAGE = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TLOADED_IMAGE = packed record
+>>>>>>> origin/fixes_2_2
           ModuleName : PSTR;
           hFile : THANDLE;
           MappedAddress : PUCHAR;
@@ -402,10 +409,14 @@ Type
 {$ifndef win64}  
   PIMAGE_DEBUG_INFORMATION = ^TIMAGE_DEBUG_INFORMATION;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TIMAGE_DEBUG_INFORMATION = record
 =======
   TIMAGE_DEBUG_INFORMATION = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TIMAGE_DEBUG_INFORMATION = packed record
+>>>>>>> origin/fixes_2_2
           List : TLISTENTRY;
           ReservedSize : DWORD;
           ReservedMappedBase : POINTER;
@@ -442,10 +453,14 @@ Type
 {$ENDIF}  
   PMODLOAD_DATA = ^TMODLOAD_DATA;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMODLOAD_DATA = record
 =======
   TMODLOAD_DATA = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMODLOAD_DATA = packed record
+>>>>>>> origin/fixes_2_2
           ssize : DWORD;
           ssig  : DWORD;
           data  : POINTER;
@@ -454,10 +469,14 @@ Type
        end;
   MODLOAD_DATA	= TMODLOAD_DATA;
 <<<<<<< HEAD
+<<<<<<< HEAD
   tagADDRESS64 = record
 =======
   tagADDRESS64 = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  tagADDRESS64 = packed record
+>>>>>>> origin/fixes_2_2
           Offset : dword64;
           Segment : word;
           Mode : TADDRESS_MODE;
@@ -467,18 +486,24 @@ Type
   LPADDRESS64 = PADDRESS64;
   {$IFDEF IMAGEHLP64}
 <<<<<<< HEAD
+<<<<<<< HEAD
     TADDRESS=TADDRESS64;
 	PADDRESS=PADDRESS64;
 	LPADDRESS=PADDRESS64;
   {$ELSE}
     tagADDRESS = record
 =======
+=======
+>>>>>>> origin/fixes_2_2
     TADRESS=TADDRESS64;
 	PADRESS=PADDRESS64;
 	LPADRESS=PADDRESS64;
   {$ELSE}
     tagADDRESS = packed record
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           Offset : dword;
           Segment : word;
           Mode : TADDRESS_MODE;
@@ -489,10 +514,14 @@ Type
   {$ENDIF}
   PKDHELP64 = ^TKDHELP64;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TKDHELP64 = record          
 =======
   TKDHELP64 = packed record          
 >>>>>>> graemeg/fixes_2_2
+=======
+  TKDHELP64 = packed record          
+>>>>>>> origin/fixes_2_2
           Thread : DWORD64;
           ThCallbackStack : DWORD;
           ThCallbackBStore : DWORD;
@@ -511,10 +540,14 @@ Type
   {$ELSE}
     PKDHELP = ^TKDHELP;
 <<<<<<< HEAD
+<<<<<<< HEAD
     TKDHELP = record
 =======
     TKDHELP = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+    TKDHELP = packed record
+>>>>>>> origin/fixes_2_2
           Thread : DWORD;
           ThCallbackStack : DWORD;
           NextCallback : DWORD;
@@ -528,10 +561,14 @@ Type
     KDHELP = TKDHELP;     
   {$ENDIF}
 <<<<<<< HEAD
+<<<<<<< HEAD
   tagSTACKFRAME64 = record
 =======
   tagSTACKFRAME64 = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  tagSTACKFRAME64 = packed record
+>>>>>>> origin/fixes_2_2
           AddrPC : TADDRESS64;
           AddrReturn : TADDRESS64;
           AddrFrame : TADDRESS64;
@@ -549,19 +586,27 @@ Type
   LPSTACKFRAME64= ^TSTACKFRAME64;  
   {$IFDEF IMAGEHLP64}
 <<<<<<< HEAD
+<<<<<<< HEAD
     STACKFRAME   = TSTACKFRAME64;     
 =======
     STACKFRAME   = STACKFRAME64;     
 >>>>>>> graemeg/fixes_2_2
+=======
+    STACKFRAME   = STACKFRAME64;     
+>>>>>>> origin/fixes_2_2
     LPSTACKFRAME = LPSTACKFRAME64;     
 	TSTACKFRAME  = TSTACKFRAME64;     
     PSTACKFRAME  = PSTACKFRAME64;     	
   {$ELSE}    
 <<<<<<< HEAD
+<<<<<<< HEAD
     tagSTACKFRAME = record
 =======
     tagSTACKFRAME = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+    tagSTACKFRAME = packed record
+>>>>>>> origin/fixes_2_2
           AddrPC : TADDRESS;
           AddrReturn : TADDRESS;
           AddrFrame : TADDRESS;
@@ -581,10 +626,14 @@ Type
    PAPI_VERSION = ^TAPI_VERSION;
    LPAPI_VERSION= PAPI_VERSION;   
 <<<<<<< HEAD
+<<<<<<< HEAD
    TAPI_VERSION = record
 =======
    TAPI_VERSION = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+   TAPI_VERSION = packed record
+>>>>>>> origin/fixes_2_2
           MajorVersion : ushort;
           MinorVersion : ushort;
           Revision : ushort;
@@ -594,10 +643,14 @@ Type
       
    PIMAGEHLP_SYMBOL64 = ^TIMAGEHLP_SYMBOL64;
 <<<<<<< HEAD
+<<<<<<< HEAD
    TIMAGEHLP_SYMBOL64 = record
 =======
    TIMAGEHLP_SYMBOL64 = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+   TIMAGEHLP_SYMBOL64 = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfStruct : dword;
           Address : dword64;
           Size : dword;
@@ -610,10 +663,14 @@ Type
    
    PIMAGEHLP_SYMBOL64_PACKAGE = ^TIMAGEHLP_SYMBOL64_PACKAGE;
 <<<<<<< HEAD
+<<<<<<< HEAD
    TIMAGEHLP_SYMBOL64_PACKAGE = record
 =======
    TIMAGEHLP_SYMBOL64_PACKAGE = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+   TIMAGEHLP_SYMBOL64_PACKAGE = packed record
+>>>>>>> origin/fixes_2_2
           sym : TIMAGEHLP_SYMBOL64;
           name : array[0..(MAX_SYM_NAME+1)-1] of TCHAR;
        end;
@@ -624,6 +681,7 @@ Type
     IMAGEHLP_SYMBOL  = IMAGEHLP_SYMBOL64;
     TIMAGEHLP_SYMBOL = IMAGEHLP_SYMBOL64;
 <<<<<<< HEAD
+<<<<<<< HEAD
     PIMAGEHLP_SYMBOL = PIMAGEHLP_SYMBOL64;
     TIMAGEHLP_SYMBOL_PACKAGE = IMAGEHLP_SYMBOL64_PACKAGE;	
     IMAGEHLP_SYMBOL_PACKAGE = IMAGEHLP_SYMBOL64_PACKAGE;
@@ -632,6 +690,8 @@ Type
     PIMAGEHLP_SYMBOL = ^TIMAGEHLP_SYMBOL;
     TIMAGEHLP_SYMBOL = record
 =======
+=======
+>>>>>>> origin/fixes_2_2
     PIMAGEHLP_SYMBOL = PIMAGEHLP_SYMBOL64
     TIMAGEHLP_SYMBOL_PACKAGE = IMAGEHLP_SYMBOL64_PACKAGE	
     IMAGEHLP_SYMBOL_PACKAGE = IMAGEHLP_SYMBOL64_PACKAGE
@@ -639,7 +699,10 @@ Type
    {$ELSE}
     PIMAGEHLP_SYMBOL = ^TIMAGEHLP_SYMBOL;
     TIMAGEHLP_SYMBOL = packed record
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           SizeOfStruct : dword;
           Address : dword;
           Size : dword;
@@ -652,10 +715,14 @@ Type
 
     PIMAGEHLP_SYMBOL_PACKAGE = ^TIMAGEHLP_SYMBOL_PACKAGE;
 <<<<<<< HEAD
+<<<<<<< HEAD
     TIMAGEHLP_SYMBOL_PACKAGE = record
 =======
     TIMAGEHLP_SYMBOL_PACKAGE = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+    TIMAGEHLP_SYMBOL_PACKAGE = packed record
+>>>>>>> origin/fixes_2_2
           sym : TIMAGEHLP_SYMBOL;
           name : array[0..(MAX_SYM_NAME+1)-1] of TCHAR;
        end;
@@ -664,10 +731,14 @@ Type
    {$ENDIF}
    PIMAGEHLP_MODULE64 = ^TIMAGEHLP_MODULE64;
 <<<<<<< HEAD
+<<<<<<< HEAD
    TIMAGEHLP_MODULE64 = record
 =======
    TIMAGEHLP_MODULE64 = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+   TIMAGEHLP_MODULE64 = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfStruct : dword;
           BaseOfImage : dword64;
           ImageSize : dword;
@@ -694,10 +765,14 @@ Type
      
    PIMAGEHLP_MODULE64W = ^TIMAGEHLP_MODULE64W;
 <<<<<<< HEAD
+<<<<<<< HEAD
    TIMAGEHLP_MODULE64W = record
 =======
    TIMAGEHLP_MODULE64W = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+   TIMAGEHLP_MODULE64W = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfStruct : dword;
           BaseOfImage : dword64;
           ImageSize : dword;
@@ -733,10 +808,14 @@ Type
   {$ELSE}
    PIMAGEHLP_MODULE = ^TIMAGEHLP_MODULE;
 <<<<<<< HEAD
+<<<<<<< HEAD
    TIMAGEHLP_MODULE = record
 =======
    TIMAGEHLP_MODULE = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+   TIMAGEHLP_MODULE = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfStruct : dword;
           BaseOfImage : dword;
           ImageSize : dword;
@@ -753,10 +832,14 @@ Type
    
    PIMAGEHLP_MODULEW = ^TIMAGEHLP_MODULEW;
 <<<<<<< HEAD
+<<<<<<< HEAD
    TIMAGEHLP_MODULEW = record
 =======
    TIMAGEHLP_MODULEW = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+   TIMAGEHLP_MODULEW = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfStruct : dword;
           BaseOfImage : dword;
           ImageSize : dword;
@@ -774,10 +857,14 @@ Type
   
    PIMAGEHLP_LINE64 = ^TIMAGEHLP_LINE64;
 <<<<<<< HEAD
+<<<<<<< HEAD
    TIMAGEHLP_LINE64 = record
 =======
    TIMAGEHLP_LINE64 = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+   TIMAGEHLP_LINE64 = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfStruct : dword;
           Key : pointer;
           LineNumber : dword;
@@ -795,10 +882,14 @@ Type
 {$else}
      PIMAGEHLP_LINE = ^TIMAGEHLP_LINE;
 <<<<<<< HEAD
+<<<<<<< HEAD
      TIMAGEHLP_LINE = record
 =======
      TIMAGEHLP_LINE = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+     TIMAGEHLP_LINE = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfStruct : dword;
           Key : pointer;
           LineNumber : dword;
@@ -811,20 +902,28 @@ Type
   
   PSOURCEFILE = ^TSOURCEFILE;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TSOURCEFILE = record
 =======
   TSOURCEFILE = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TSOURCEFILE = packed record
+>>>>>>> origin/fixes_2_2
           ModBase : dword64;
           FileName : pchar;
        end;  
   
   PIMAGEHLP_CBA_READ_MEMORY = ^TIMAGEHLP_CBA_READ_MEMORY;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TIMAGEHLP_CBA_READ_MEMORY = record
 =======
   TIMAGEHLP_CBA_READ_MEMORY = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TIMAGEHLP_CBA_READ_MEMORY = packed record
+>>>>>>> origin/fixes_2_2
           addr : dword64;
           buf : pointer;
           bytes : dword;
@@ -835,10 +934,14 @@ Type
    
   PIMAGEHLP_CBA_EVENT = ^TIMAGEHLP_CBA_EVENT;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TIMAGEHLP_CBA_EVENT = record
 =======
   TIMAGEHLP_CBA_EVENT = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TIMAGEHLP_CBA_EVENT = packed record
+>>>>>>> origin/fixes_2_2
           severity : dword;
           code : dword;
           desc : pchar;
@@ -849,10 +952,14 @@ Type
     
   PIMAGEHLP_DEFERRED_SYMBOL_LOAD64 = ^TIMAGEHLP_DEFERRED_SYMBOL_LOAD64;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TIMAGEHLP_DEFERRED_SYMBOL_LOAD64 = record
 =======
   TIMAGEHLP_DEFERRED_SYMBOL_LOAD64 = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TIMAGEHLP_DEFERRED_SYMBOL_LOAD64 = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfStruct : dword;
           BaseOfImage : dword64;
           CheckSum : dword;
@@ -872,10 +979,14 @@ Type
 {$else}
   PIMAGEHLP_DEFERRED_SYMBOL_LOAD = ^TIMAGEHLP_DEFERRED_SYMBOL_LOAD;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TIMAGEHLP_DEFERRED_SYMBOL_LOAD = record
 =======
   TIMAGEHLP_DEFERRED_SYMBOL_LOAD = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TIMAGEHLP_DEFERRED_SYMBOL_LOAD = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfStruct : dword;
           BaseOfImage : dword;
           CheckSum : dword;
@@ -890,10 +1001,14 @@ Type
 
   PIMAGEHLP_DUPLICATE_SYMBOL64 = ^TIMAGEHLP_DUPLICATE_SYMBOL64;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TIMAGEHLP_DUPLICATE_SYMBOL64 = record
 =======
   TIMAGEHLP_DUPLICATE_SYMBOL64 = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TIMAGEHLP_DUPLICATE_SYMBOL64 = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfStruct : dword;
           NumberOfDups : dword;
           Symbol : PIMAGEHLP_SYMBOL64;
@@ -909,10 +1024,14 @@ Type
 {$else}
   PIMAGEHLP_DUPLICATE_SYMBOL = ^TIMAGEHLP_DUPLICATE_SYMBOL;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TIMAGEHLP_DUPLICATE_SYMBOL = record
 =======
   TIMAGEHLP_DUPLICATE_SYMBOL = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TIMAGEHLP_DUPLICATE_SYMBOL = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfStruct : dword;
           NumberOfDups : dword;
           Symbol : PIMAGEHLP_SYMBOL;
@@ -923,10 +1042,14 @@ Type
 {$endif}
   PSRCCODEINFO = ^TSRCCODEINFO;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TSRCCODEINFO = record
 =======
   TSRCCODEINFO = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TSRCCODEINFO = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfStruct : dword;
           Key : pointer;
           ModBase : dword64;
@@ -940,10 +1063,14 @@ Type
 
   PIMAGEHLP_SYMBOL_SRC = ^TIMAGEHLP_SYMBOL_SRC;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TIMAGEHLP_SYMBOL_SRC = record
 =======
   TIMAGEHLP_SYMBOL_SRC = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TIMAGEHLP_SYMBOL_SRC = packed record
+>>>>>>> origin/fixes_2_2
           sizeofstruct : dword;
           _type : dword;
           _file : array[0..(MAX_PATH)-1] of char;
@@ -953,10 +1080,14 @@ Type
   
   PMODULE_TYPE_INFO = ^TMODULE_TYPE_INFO;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMODULE_TYPE_INFO = record
 =======
   TMODULE_TYPE_INFO = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMODULE_TYPE_INFO = packed record
+>>>>>>> origin/fixes_2_2
           dataLength : USHORT;
           leaf : USHORT;
           data : array[0..0] of TBYTE;
@@ -966,10 +1097,14 @@ Type
   
   PSYMBOL_INFO = ^TSYMBOL_INFO;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TSYMBOL_INFO = record
 =======
   TSYMBOL_INFO = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TSYMBOL_INFO = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfStruct : ULONG;
           TypeIndex : ULONG;
           Reserved : array[0..1] of ULONG64;
@@ -991,10 +1126,14 @@ Type
 
   PSYMBOL_INFO_PACKAGE = ^TSYMBOL_INFO_PACKAGE;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TSYMBOL_INFO_PACKAGE = record
 =======
   TSYMBOL_INFO_PACKAGE = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TSYMBOL_INFO_PACKAGE = packed record
+>>>>>>> origin/fixes_2_2
           si : TSYMBOL_INFO;
           name : array[0..(MAX_SYM_NAME+1)-1] of TCHAR;
        end;
@@ -1003,10 +1142,14 @@ Type
 
   PIMAGEHLP_STACK_FRAME = ^TIMAGEHLP_STACK_FRAME;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TIMAGEHLP_STACK_FRAME = record
 =======
   TIMAGEHLP_STACK_FRAME = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TIMAGEHLP_STACK_FRAME = packed record
+>>>>>>> origin/fixes_2_2
           InstructionOffset : ULONG64;
           ReturnOffset : ULONG64;
           FrameOffset : ULONG64;
@@ -1027,20 +1170,28 @@ Type
   
   PTI_FINDCHILDREN_PARAMS = ^TTI_FINDCHILDREN_PARAMS;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TTI_FINDCHILDREN_PARAMS = record
 =======
   TTI_FINDCHILDREN_PARAMS = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TTI_FINDCHILDREN_PARAMS = packed record
+>>>>>>> origin/fixes_2_2
           Count : ULONG;
           Start : ULONG;
           ChildId : array[0..0] of ULONG;
        end;
   PMINIDUMP_LOCATION_DESCRIPTOR = ^TMINIDUMP_LOCATION_DESCRIPTOR;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_LOCATION_DESCRIPTOR = record
 =======
   TMINIDUMP_LOCATION_DESCRIPTOR = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_LOCATION_DESCRIPTOR = packed record
+>>>>>>> origin/fixes_2_2
           DataSize : ULONG32;
           Rva : TRVA;
        end;
@@ -1048,10 +1199,14 @@ Type
 
   PMINIDUMP_LOCATION_DESCRIPTOR64 = ^TMINIDUMP_LOCATION_DESCRIPTOR64;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_LOCATION_DESCRIPTOR64 = record
 =======
   TMINIDUMP_LOCATION_DESCRIPTOR64 = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_LOCATION_DESCRIPTOR64 = packed record
+>>>>>>> origin/fixes_2_2
           DataSize : ULONG64;
           Rva : TRVA64;
        end;
@@ -1059,10 +1214,14 @@ Type
   
   PMINIDUMP_MEMORY_DESCRIPTOR = ^TMINIDUMP_MEMORY_DESCRIPTOR;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_MEMORY_DESCRIPTOR = record
 =======
   TMINIDUMP_MEMORY_DESCRIPTOR = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_MEMORY_DESCRIPTOR = packed record
+>>>>>>> origin/fixes_2_2
           StartOfMemoryRange : ULONG64;
           Memory : TMINIDUMP_LOCATION_DESCRIPTOR;
        end;
@@ -1071,10 +1230,14 @@ Type
   
   PMINIDUMP_MEMORY_DESCRIPTOR64 = ^TMINIDUMP_MEMORY_DESCRIPTOR64;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_MEMORY_DESCRIPTOR64 = record
 =======
   TMINIDUMP_MEMORY_DESCRIPTOR64 = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_MEMORY_DESCRIPTOR64 = packed record
+>>>>>>> origin/fixes_2_2
           StartOfMemoryRange : ULONG64;
           DataSize : ULONG64;
        end;
@@ -1083,10 +1246,14 @@ Type
 
   PMINIDUMP_HEADER = ^TMINIDUMP_HEADER;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_HEADER = record
 =======
   TMINIDUMP_HEADER = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_HEADER = packed record
+>>>>>>> origin/fixes_2_2
           Signature : ULONG32;
           Version : ULONG32;
           NumberOfStreams : ULONG32;
@@ -1104,10 +1271,14 @@ Type
   
   PMINIDUMP_DIRECTORY = ^TMINIDUMP_DIRECTORY;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_DIRECTORY = record
 =======
   TMINIDUMP_DIRECTORY = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_DIRECTORY = packed record
+>>>>>>> origin/fixes_2_2
           StreamType : ULONG32;
           Location : TMINIDUMP_LOCATION_DESCRIPTOR;
        end;
@@ -1117,10 +1288,14 @@ Type
   
   PMINIDUMP_STRING = ^TMINIDUMP_STRING;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_STRING = record
 =======
   TMINIDUMP_STRING = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_STRING = packed record
+>>>>>>> origin/fixes_2_2
           Length : ULONG32;
           Buffer : array[0..0] of WCHAR;
        end;
@@ -1130,10 +1305,14 @@ Type
   
   PCPU_INFORMATION = ^TCPU_INFORMATION;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TCPU_INFORMATION = record
 =======
   TCPU_INFORMATION = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TCPU_INFORMATION = packed record
+>>>>>>> origin/fixes_2_2
          case longint of
             0 : ( X86CpuInfo : packed record
                  VendorId : array[0..2] of ULONG32;
@@ -1150,10 +1329,14 @@ Type
   
   PMINIDUMP_SYSTEM_INFO = ^TMINIDUMP_SYSTEM_INFO;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_SYSTEM_INFO = record
 =======
   TMINIDUMP_SYSTEM_INFO = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_SYSTEM_INFO = packed record
+>>>>>>> origin/fixes_2_2
           ProcessorArchitecture : USHORT;
           ProcessorLevel : USHORT;
           ProcessorRevision : USHORT;
@@ -1185,10 +1368,14 @@ Type
   
   PMINIDUMP_THREAD = ^TMINIDUMP_THREAD;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_THREAD = record
 =======
   TMINIDUMP_THREAD = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_THREAD = packed record
+>>>>>>> origin/fixes_2_2
           ThreadId : ULONG32;
           SuspendCount : ULONG32;
           PriorityClass : ULONG32;
@@ -1202,10 +1389,14 @@ Type
   
   PMINIDUMP_THREAD_LIST = ^TMINIDUMP_THREAD_LIST;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_THREAD_LIST = record
 =======
   TMINIDUMP_THREAD_LIST = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_THREAD_LIST = packed record
+>>>>>>> origin/fixes_2_2
           NumberOfThreads : ULONG32;
           Threads : array[0..0] of TMINIDUMP_THREAD;
        end;
@@ -1214,10 +1405,14 @@ Type
 
   PMINIDUMP_THREAD_EX = ^TMINIDUMP_THREAD_EX;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_THREAD_EX = record
 =======
   TMINIDUMP_THREAD_EX = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_THREAD_EX = packed record
+>>>>>>> origin/fixes_2_2
           ThreadId : ULONG32;
           SuspendCount : ULONG32;
           PriorityClass : ULONG32;
@@ -1233,10 +1428,14 @@ Type
 
   PMINIDUMP_THREAD_EX_LIST = ^TMINIDUMP_THREAD_EX_LIST;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_THREAD_EX_LIST = record
 =======
   TMINIDUMP_THREAD_EX_LIST = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_THREAD_EX_LIST = packed record
+>>>>>>> origin/fixes_2_2
           NumberOfThreads : ULONG32;
           Threads : array[0..0] of TMINIDUMP_THREAD_EX;
        end;
@@ -1246,10 +1445,14 @@ Type
 
   PMINIDUMP_EXCEPTION = ^TMINIDUMP_EXCEPTION;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_EXCEPTION = record
 =======
   TMINIDUMP_EXCEPTION = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_EXCEPTION = packed record
+>>>>>>> origin/fixes_2_2
           ExceptionCode : ULONG32;
           ExceptionFlags : ULONG32;
           ExceptionRecord : ULONG64;
@@ -1264,10 +1467,14 @@ Type
 
   PMINIDUMP_EXCEPTION_STREAM = ^TMINIDUMP_EXCEPTION_STREAM;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_EXCEPTION_STREAM = record
 =======
   TMINIDUMP_EXCEPTION_STREAM = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_EXCEPTION_STREAM = packed record
+>>>>>>> origin/fixes_2_2
           ThreadId : ULONG32;
           __alignment : ULONG32;
           ExceptionRecord : TMINIDUMP_EXCEPTION;
@@ -1278,10 +1485,14 @@ Type
   
   PMINIDUMP_MODULE = ^TMINIDUMP_MODULE;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_MODULE = record
 =======
   TMINIDUMP_MODULE = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_MODULE = packed record
+>>>>>>> origin/fixes_2_2
           BaseOfImage : ULONG64;
           SizeOfImage : ULONG32;
           CheckSum : ULONG32;
@@ -1299,10 +1510,14 @@ Type
 
   PMINIDUMP_MODULE_LIST = ^TMINIDUMP_MODULE_LIST;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_MODULE_LIST = record
 =======
   TMINIDUMP_MODULE_LIST = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_MODULE_LIST = packed record
+>>>>>>> origin/fixes_2_2
           NumberOfModules : ULONG32;
           Modules : array[0..0] of TMINIDUMP_MODULE;
        end;
@@ -1312,10 +1527,14 @@ Type
 
   PMINIDUMP_MEMORY_LIST = ^TMINIDUMP_MEMORY_LIST;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_MEMORY_LIST = record
 =======
   TMINIDUMP_MEMORY_LIST = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_MEMORY_LIST = packed record
+>>>>>>> origin/fixes_2_2
           NumberOfMemoryRanges : ULONG32;
           MemoryRanges : array[0..0] of TMINIDUMP_MEMORY_DESCRIPTOR;
        end;
@@ -1324,10 +1543,14 @@ Type
 
   PMINIDUMP_MEMORY64_LIST = ^TMINIDUMP_MEMORY64_LIST;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_MEMORY64_LIST = record
 =======
   TMINIDUMP_MEMORY64_LIST = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_MEMORY64_LIST = packed record
+>>>>>>> origin/fixes_2_2
           NumberOfMemoryRanges : ULONG64;
           BaseRva : TRVA64;
           MemoryRanges : array[0..0] of TMINIDUMP_MEMORY_DESCRIPTOR64;
@@ -1337,10 +1560,14 @@ Type
   
   PMINIDUMP_EXCEPTION_INFORMATION = ^TMINIDUMP_EXCEPTION_INFORMATION;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_EXCEPTION_INFORMATION = record
 =======
   TMINIDUMP_EXCEPTION_INFORMATION = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_EXCEPTION_INFORMATION = packed record
+>>>>>>> origin/fixes_2_2
           ThreadId : dword;
           ExceptionPointers : PEXCEPTION_POINTERS;
           ClientPointers : BOOL;
@@ -1350,10 +1577,14 @@ Type
 
   PMINIDUMP_EXCEPTION_INFORMATION64 = ^TMINIDUMP_EXCEPTION_INFORMATION64;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_EXCEPTION_INFORMATION64 = record
 =======
   TMINIDUMP_EXCEPTION_INFORMATION64 = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_EXCEPTION_INFORMATION64 = packed record
+>>>>>>> origin/fixes_2_2
           ThreadId : dword;
           ExceptionRecord : ULONG64;
           ContextRecord : ULONG64;
@@ -1364,10 +1595,14 @@ Type
   
   PMINIDUMP_HANDLE_DESCRIPTOR = ^TMINIDUMP_HANDLE_DESCRIPTOR;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_HANDLE_DESCRIPTOR = record
 =======
   TMINIDUMP_HANDLE_DESCRIPTOR = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_HANDLE_DESCRIPTOR = packed record
+>>>>>>> origin/fixes_2_2
           Handle : ULONG64;
           TypeNameRva : TRVA;
           ObjectNameRva : TRVA;
@@ -1381,10 +1616,14 @@ Type
 
   PMINIDUMP_HANDLE_DATA_STREAM = ^TMINIDUMP_HANDLE_DATA_STREAM;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_HANDLE_DATA_STREAM = record
 =======
   TMINIDUMP_HANDLE_DATA_STREAM = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_HANDLE_DATA_STREAM = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfHeader : ULONG32;
           SizeOfDescriptor : ULONG32;
           NumberOfDescriptors : ULONG32;
@@ -1396,10 +1635,14 @@ Type
 
   PMINIDUMP_FUNCTION_TABLE_DESCRIPTOR = ^TMINIDUMP_FUNCTION_TABLE_DESCRIPTOR;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_FUNCTION_TABLE_DESCRIPTOR = record
 =======
   TMINIDUMP_FUNCTION_TABLE_DESCRIPTOR = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_FUNCTION_TABLE_DESCRIPTOR = packed record
+>>>>>>> origin/fixes_2_2
           MinimumAddress : ULONG64;
           MaximumAddress : ULONG64;
           BaseAddress : ULONG64;
@@ -1411,10 +1654,14 @@ Type
 
   PMINIDUMP_FUNCTION_TABLE_STREAM = ^TMINIDUMP_FUNCTION_TABLE_STREAM;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_FUNCTION_TABLE_STREAM = record
 =======
   TMINIDUMP_FUNCTION_TABLE_STREAM = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_FUNCTION_TABLE_STREAM = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfHeader : ULONG32;
           SizeOfDescriptor : ULONG32;
           SizeOfNativeDescriptor : ULONG32;
@@ -1428,10 +1675,14 @@ Type
 
   PMINIDUMP_UNLOADED_MODULE = ^TMINIDUMP_UNLOADED_MODULE;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_UNLOADED_MODULE = record
 =======
   TMINIDUMP_UNLOADED_MODULE = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_UNLOADED_MODULE = packed record
+>>>>>>> origin/fixes_2_2
           BaseOfImage : ULONG64;
           SizeOfImage : ULONG32;
           CheckSum : ULONG32;
@@ -1443,10 +1694,14 @@ Type
   
   PMINIDUMP_UNLOADED_MODULE_LIST = ^TMINIDUMP_UNLOADED_MODULE_LIST;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_UNLOADED_MODULE_LIST = record
 =======
   TMINIDUMP_UNLOADED_MODULE_LIST = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_UNLOADED_MODULE_LIST = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfHeader : ULONG32;
           SizeOfEntry : ULONG32;
           NumberOfEntries : ULONG32;
@@ -1456,10 +1711,14 @@ Type
   
   PMINIDUMP_MISC_INFO = ^TMINIDUMP_MISC_INFO;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_MISC_INFO = record
 =======
   TMINIDUMP_MISC_INFO = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_MISC_INFO = packed record
+>>>>>>> origin/fixes_2_2
           SizeOfInfo : ULONG32;
           Flags1 : ULONG32;
           ProcessId : ULONG32;
@@ -1472,10 +1731,14 @@ Type
 
   PMINIDUMP_USER_RECORD = ^TMINIDUMP_USER_RECORD;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_USER_RECORD = record
 =======
   TMINIDUMP_USER_RECORD = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_USER_RECORD = packed record
+>>>>>>> origin/fixes_2_2
           _Type : ULONG32;
           Memory : TMINIDUMP_LOCATION_DESCRIPTOR;
        end;
@@ -1484,10 +1747,14 @@ Type
 
   PMINIDUMP_USER_STREAM = ^TMINIDUMP_USER_STREAM;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_USER_STREAM = record
 =======
   TMINIDUMP_USER_STREAM = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_USER_STREAM = packed record
+>>>>>>> origin/fixes_2_2
           _Type : ULONG32;
           BufferSize : ULONG;
           Buffer : pointer;
@@ -1497,10 +1764,14 @@ Type
 
   PMINIDUMP_USER_STREAM_INFORMATION = ^TMINIDUMP_USER_STREAM_INFORMATION;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_USER_STREAM_INFORMATION = record
 =======
   TMINIDUMP_USER_STREAM_INFORMATION = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_USER_STREAM_INFORMATION = packed record
+>>>>>>> origin/fixes_2_2
           UserStreamCount : ULONG;
           UserStreamArray : PMINIDUMP_USER_STREAM;
        end;
@@ -1509,10 +1780,14 @@ Type
   	 
   PMINIDUMP_THREAD_CALLBACK = ^TMINIDUMP_THREAD_CALLBACK;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_THREAD_CALLBACK = record
 =======
   TMINIDUMP_THREAD_CALLBACK = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_THREAD_CALLBACK = packed record
+>>>>>>> origin/fixes_2_2
           ThreadId : ULONG;
           ThreadHandle : THANDLE;
           Context : TCONTEXT;
@@ -1525,10 +1800,14 @@ Type
 
   PMINIDUMP_THREAD_EX_CALLBACK = ^TMINIDUMP_THREAD_EX_CALLBACK;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_THREAD_EX_CALLBACK = record
 =======
   TMINIDUMP_THREAD_EX_CALLBACK = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_THREAD_EX_CALLBACK = packed record
+>>>>>>> origin/fixes_2_2
           ThreadId : ULONG;
           ThreadHandle : THANDLE;
           Context : TCONTEXT;
@@ -1543,10 +1822,14 @@ Type
 
   PMINIDUMP_INCLUDE_THREAD_CALLBACK = ^TMINIDUMP_INCLUDE_THREAD_CALLBACK;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_INCLUDE_THREAD_CALLBACK = record
 =======
   TMINIDUMP_INCLUDE_THREAD_CALLBACK = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_INCLUDE_THREAD_CALLBACK = packed record
+>>>>>>> origin/fixes_2_2
           ThreadId : ULONG;
        end;
   MINIDUMP_INCLUDE_THREAD_CALLBACK = TMINIDUMP_INCLUDE_THREAD_CALLBACK;
@@ -1554,10 +1837,14 @@ Type
 
   PMINIDUMP_MODULE_CALLBACK = ^TMINIDUMP_MODULE_CALLBACK;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_MODULE_CALLBACK = record
 =======
   TMINIDUMP_MODULE_CALLBACK = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_MODULE_CALLBACK = packed record
+>>>>>>> origin/fixes_2_2
           FullPath : PWCHAR;
           BaseOfImage : ULONG64;
           SizeOfImage : ULONG;
@@ -1574,10 +1861,14 @@ Type
 
   PMINIDUMP_INCLUDE_MODULE_CALLBACK = ^TMINIDUMP_INCLUDE_MODULE_CALLBACK;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_INCLUDE_MODULE_CALLBACK = record
 =======
   TMINIDUMP_INCLUDE_MODULE_CALLBACK = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_INCLUDE_MODULE_CALLBACK = packed record
+>>>>>>> origin/fixes_2_2
           BaseOfImage : ULONG64;
        end;
   MINIDUMP_INCLUDE_MODULE_CALLBACK = TMINIDUMP_INCLUDE_MODULE_CALLBACK;
@@ -1586,10 +1877,14 @@ Type
      
   PMINIDUMP_CALLBACK_INPUT = ^TMINIDUMP_CALLBACK_INPUT;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_CALLBACK_INPUT = record
 =======
   TMINIDUMP_CALLBACK_INPUT = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_CALLBACK_INPUT = packed record
+>>>>>>> origin/fixes_2_2
           ProcessId : ULONG;
           ProcessHandle : THANDLE;
           CallbackType : ULONG;
@@ -1607,10 +1902,14 @@ Type
 
   PMINIDUMP_CALLBACK_OUTPUT = ^TMINIDUMP_CALLBACK_OUTPUT;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMINIDUMP_CALLBACK_OUTPUT = record
 =======
   TMINIDUMP_CALLBACK_OUTPUT = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  TMINIDUMP_CALLBACK_OUTPUT = packed record
+>>>>>>> origin/fixes_2_2
           anony3 : packed record
               case longint of
                  0 : ( ModuleWriteFlags : ULONG );
@@ -1650,16 +1949,22 @@ Type
   TTRANSLATE_ADDRESS_ROUTINE64    = function (hProcess:THANDLE; hThread:THANDLE; lpaddr:LPADDRESS64):dword64;stdcall;
   {$IFDEF IMAGEHLP64}
 <<<<<<< HEAD
+<<<<<<< HEAD
     TREAD_PROCESS_MEMORY_ROUTINE    = TREAD_PROCESS_MEMORY_ROUTINE64 ;
     TFUNCTION_TABLE_ACCESS_ROUTINE  = TFUNCTION_TABLE_ACCESS_ROUTINE64;
     TGET_MODULE_BASE_ROUTINE        = TGET_MODULE_BASE_ROUTINE64;
     TTRANSLATE_ADDRESS_ROUTINE      = TTRANSLATE_ADDRESS_ROUTINE64;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     TREAD_PROCESS_MEMORY_ROUTINE PREAD_PROCESS_MEMORY_ROUTINE =TREAD_PROCESS_MEMORY_ROUTINE PREAD_PROCESS_MEMORY_ROUTINE64;
     TFUNCTION_TABLE_ACCESS_ROUTINE PFUNCTION_TABLE_ACCESS_ROUTINE = TFUNCTION_TABLE_ACCESS_ROUTINE PFUNCTION_TABLE_ACCESS_ROUTINE64;
     TGET_MODULE_BASE_ROUTINE PGET_MODULE_BASE_ROUTINE = TGET_MODULE_BASE_ROUTINE PGET_MODULE_BASE_ROUTINE64;
     TTRANSLATE_ADDRESS_ROUTINE PTRANSLATE_ADDRESS_ROUTINE = TTRANSLATE_ADDRESS_ROUTINE PTRANSLATE_ADDRESS_ROUTINE64;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$ELSE}
     TREAD_PROCESS_MEMORY_ROUTINE = function (hProcess:THANDLE; lpBaseAddress:dword; lpBuffer:pointer; nSize:dword; lpNumberOfBytesRead:PDWORD):bool;stdcall;
     TFUNCTION_TABLE_ACCESS_ROUTINE = function (hProcess:THANDLE; AddrBase:dword):pointer;stdcall;
@@ -1694,10 +1999,14 @@ Type
    TMINIDUMP_CALLBACK_ROUTINE = function (CallbackParam:pointer; CallbackInput:PMINIDUMP_CALLBACK_INPUT; CallbackOutput:PMINIDUMP_CALLBACK_OUTPUT):BOOL;stdcall;
    PMINIDUMP_CALLBACK_INFORMATION = ^TMINIDUMP_CALLBACK_INFORMATION;
 <<<<<<< HEAD
+<<<<<<< HEAD
    TMINIDUMP_CALLBACK_INFORMATION = record
 =======
    TMINIDUMP_CALLBACK_INFORMATION = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+   TMINIDUMP_CALLBACK_INFORMATION = packed record
+>>>>>>> origin/fixes_2_2
           CallbackRoutine : TMINIDUMP_CALLBACK_ROUTINE;
           CallbackParam : pointer;
        end;
@@ -1795,12 +2104,17 @@ function SymGetSymPrev64(hProcess:THANDLE; Symbol:PIMAGEHLP_SYMBOL64):BOOL;stdca
 function SymEnumerateModules(hProcess:THANDLE; EnumModulesCallback:TSYM_ENUMMODULES_CALLBACK64; UserContext:pointer):BOOL;stdcall;external External_library name 'SymEnumerateModules64';
 function SymEnumerateSymbols(hProcess:THANDLE; BaseOfDll:dword64; EnumSymbolsCallback:TSYM_ENUMSYMBOLS_CALLBACK64; UserContext:pointer):BOOL;stdcall;external External_library name 'SymEnumerateSymbols64';  
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SymEnumerateSymbolsW(hProcess:THANDLE; BaseOfDll:dword64; EnumSymbolsCallback:TSYM_ENUMSYMBOLS_CALLBACK64W; UserContext:pointer):BOOL;stdcall;external External_library name 'SymEnumerateSymbolsW64';
 function EnumerateLoadedModules(hProcess:THANDLE; EnumLoadedModulesCallback:TENUMLOADED_MODULES_CALLBACK64; UserContext:pointer):BOOL;stdcall;external External_library name 'EnumerateLoadedModules64';
 =======
 function SymEnumerateSymbolsW(hProcess:THANDLE; BaseOfDll:dword64; EnumSymbolsCallback:TSYM_ENUMSYMBOLS_CALLBACK64W; UserContext:pointer):BOOL;stdcall;external External_library name 'SymEnumerateSymbolsW64'
 function EnumerateLoadedModules(hProcess:THANDLE; EnumLoadedModulesCallback:TPENUMLOADED_MODULES_CALLBACK64; UserContext:pointer):BOOL;stdcall;external External_library name 'EnumerateLoadedModules64';;
 >>>>>>> graemeg/fixes_2_2
+=======
+function SymEnumerateSymbolsW(hProcess:THANDLE; BaseOfDll:dword64; EnumSymbolsCallback:TSYM_ENUMSYMBOLS_CALLBACK64W; UserContext:pointer):BOOL;stdcall;external External_library name 'SymEnumerateSymbolsW64'
+function EnumerateLoadedModules(hProcess:THANDLE; EnumLoadedModulesCallback:TPENUMLOADED_MODULES_CALLBACK64; UserContext:pointer):BOOL;stdcall;external External_library name 'EnumerateLoadedModules64';;
+>>>>>>> origin/fixes_2_2
 function SymFunctionTableAccess(hProcess:THANDLE; AddrBase:dword64):pointer;stdcall;external External_library name 'SymFunctionTableAccess64';
 function SymGetModuleInfo(hProcess:THANDLE; qwAddr:dword64; ModuleInfo:PIMAGEHLP_MODULE64):BOOL;stdcall;external External_library name 'SymGetModuleInfo64';
 function SymGetModuleInfoW(hProcess:THANDLE; qwAddr:dword64; ModuleInfo:PIMAGEHLP_MODULEW64):BOOL;stdcall;external External_library name 'SymGetModuleInfoW64';
@@ -1834,10 +2148,14 @@ function SymRegisterFunctionEntryCallback64(hProcess:THANDLE; CallbackFunction:T
 {$ifdef IMAGEHLP64}
 function SymGetLineFromAddr(hProcess:THANDLE; qwAddr:dword64; pdwDisplacement:PDWORD; Line64:PIMAGEHLP_LINE64):BOOL;stdcall;external External_library name 'SymGetLineFromAddr64';
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SymGetLineFromName(hProcess:THANDLE; ModuleName:PSTR; FileName:PSTR; dwLineNumber:dword; plDisplacement:PLONG; 
 =======
 function SymGetLineFromName(hProcess:THANDLE; ModuleName:PSTR; FileName:PSTR; dwLineNumber:dword; plDisplacement:TPLONG; 
 >>>>>>> graemeg/fixes_2_2
+=======
+function SymGetLineFromName(hProcess:THANDLE; ModuleName:PSTR; FileName:PSTR; dwLineNumber:dword; plDisplacement:TPLONG; 
+>>>>>>> origin/fixes_2_2
              Line:PIMAGEHLP_LINE64):BOOL;stdcall;external External_library name 'SymGetLineFromName64';
 function SymGetLineNext(hProcess:THANDLE; Line:PIMAGEHLP_LINE64):BOOL;stdcall;external External_library name 'SymGetLineNext64';			 
 function SymGetLinePrev(hProcess:THANDLE; Line:PIMAGEHLP_LINE64):BOOL;stdcall;external External_library name 'SymGetLinePrev64'; 
@@ -1941,7 +2259,11 @@ begin
 end;
  
 <<<<<<< HEAD
+<<<<<<< HEAD
 end.
 =======
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+end.
+>>>>>>> origin/fixes_2_2

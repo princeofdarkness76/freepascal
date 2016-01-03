@@ -2,16 +2,22 @@
 <CONFIG>
   <ProjectOptions>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="9"/>
 =======
     <PathDelim Value="/"/>
     <Version Value="6"/>
 >>>>>>> graemeg/fixes_2_2
+=======
+    <PathDelim Value="/"/>
+    <Version Value="6"/>
+>>>>>>> origin/fixes_2_2
     <General>
       <Flags>
         <MainUnitHasUsesSectionForAllUnits Value="False"/>
         <MainUnitHasCreateFormStatements Value="False"/>
         <MainUnitHasTitleStatement Value="False"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <LRSInOutputDirectory Value="False"/>
       </Flags>
@@ -27,6 +33,8 @@
       <Item1 Name="default" Default="True"/>
     </BuildModes>
 =======
+=======
+>>>>>>> origin/fixes_2_2
       </Flags>
       <MainUnit Value="0"/>
       <TargetFileExt Value=""/>
@@ -37,7 +45,10 @@
       <Language Value=""/>
       <CharSet Value=""/>
     </VersionInfo>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     <PublishOptions>
       <Version Value="2"/>
       <IgnoreBinaries Value="False"/>
@@ -48,9 +59,12 @@
       <local>
         <FormatVersion Value="1"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <CommandLineParams Value="--package=fpvectorial --input=/home/felipe/Programas/fpctrunk/packages/fpvectorial/src/fpvectorial.pas"/>
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>
@@ -60,18 +74,25 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="MakeSkel"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
         <CursorPos X="8" Y="22"/>
         <TopLine Value="1"/>
         <EditorIndex Value="0"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       </Unit0>
       <Unit1>
         <Filename Value="dglobals.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="dGlobals"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
       </Unit1>
     </Units>
@@ -88,6 +109,8 @@
         <UseMsgFile Value="True"/>
       </CompilerMessages>
 =======
+=======
+>>>>>>> origin/fixes_2_2
         <CursorPos X="40" Y="311"/>
         <TopLine Value="300"/>
         <EditorIndex Value="1"/>
@@ -105,7 +128,10 @@
   <CompilerOptions>
     <Version Value="8"/>
     <Other>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       <CompilerPath Value="$(CompPath)"/>
     </Other>
   </CompilerOptions>

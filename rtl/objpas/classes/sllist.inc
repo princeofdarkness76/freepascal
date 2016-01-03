@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the Free Pascal Run Time Library (rtl)
     Copyright (c) 2007 by Michael Van Canneyt,
@@ -15,6 +16,8 @@
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Type
   TLinkedListItem = Class
   Public

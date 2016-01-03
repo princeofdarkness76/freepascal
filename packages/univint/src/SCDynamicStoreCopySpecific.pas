@@ -1,9 +1,13 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2000-2005, 2008 Apple Inc. All rights reserved.
 =======
  * Copyright (c) 2000-2003 Apple Computer, Inc. All rights reserved.
 >>>>>>> graemeg/fixes_2_2
+=======
+ * Copyright (c) 2000-2003 Apple Computer, Inc. All rights reserved.
+>>>>>>> origin/fixes_2_2
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -16,6 +20,7 @@
  * 
  * The Original Code and all software distributed under the License are
 <<<<<<< HEAD
+<<<<<<< HEAD
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
@@ -24,12 +29,18 @@
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES of MERCHANTABILITY,
 >>>>>>> graemeg/fixes_2_2
+=======
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY of ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES of MERCHANTABILITY,
+>>>>>>> origin/fixes_2_2
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
  * 
  * @APPLE_LICENSE_HEADER_END@
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
@@ -56,6 +67,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 
 
@@ -65,7 +78,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -75,12 +91,17 @@
 unit SCDynamicStoreCopySpecific;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -94,14 +115,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -110,11 +136,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -152,6 +181,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -159,6 +190,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -426,6 +458,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -434,7 +468,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -461,9 +498,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -474,6 +515,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,SCDynamicStore,MacOSXPosix,CFString,CFDictionary;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -503,6 +545,8 @@ uses MacTypes,CFBase,SCDynamicStore,MacOSXPosix,CFString,CFDictionary;
 		host name.
 	@result Returns the current computer name;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN MAC68K}
 
 {!
@@ -521,19 +565,26 @@ uses MacTypes,CFBase,SCDynamicStore,MacOSXPosix,CFString,CFDictionary;
 	@param nameEncoding A pointer to memory that, if non-NULL, will be
 		filled with the encoding associated with the computer/host name.
 	@result The current computer/host name;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		NULL if the name has not been set or if an error was encountered.
 		You must release the returned value.
  }
 function SCDynamicStoreCopyComputerName( store: SCDynamicStoreRef; nameEncoding: CFStringEncodingPtr ): CFStringRef; external name '_SCDynamicStoreCopyComputerName';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {!
 	@function SCDynamicStoreCopyConsoleUser
 	@discussion Gets the name, user ID, and group ID of the currently
+<<<<<<< HEAD
 <<<<<<< HEAD
 		logged-in user.
 
@@ -552,6 +603,8 @@ function SCDynamicStoreCopyComputerName( store: SCDynamicStoreRef; nameEncoding:
 		returned.
 	@result Returns the user currently logged into the system;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		logged in user.
 	@param store An SCDynamicStoreRef that should be used for communication
 		with the server.
@@ -563,25 +616,34 @@ function SCDynamicStoreCopyComputerName( store: SCDynamicStoreRef; nameEncoding:
 		of the current "Console" user. If NULL, this value will not be
 		returned.
 	@result The current user logged into the system;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		NULL if no user is logged in or if an error was encountered.
 		You must release the returned value.
  }
 function SCDynamicStoreCopyConsoleUser( store: SCDynamicStoreRef; uid: uid_t_ptr; gid: gid_t_ptr ): CFStringRef; external name '_SCDynamicStoreCopyConsoleUser';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {!
 	@function SCDynamicStoreCopyLocalHostName
 	@discussion Gets the current local host name.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@param store An SCDynamicStoreRef representing the dynamic store
 		session that should be used for communication with the server.
 		If NULL, a temporary session will be used.
 	@result Returns the current local host name;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 		See SCDynamicStoreKeyCreateHostNames() for notification
 		key information.
@@ -589,11 +651,15 @@ function SCDynamicStoreCopyConsoleUser( store: SCDynamicStoreRef; uid: uid_t_ptr
 		with the server.
 		If NULL, a temporary session will be used.
 	@result The current local host name;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		NULL if the name has not been set or if an error was encountered.
 		You must release the returned value.
  }
 function SCDynamicStoreCopyLocalHostName( store: SCDynamicStoreRef ): CFStringRef; external name '_SCDynamicStoreCopyLocalHostName';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 
@@ -606,6 +672,8 @@ function SCDynamicStoreCopyLocalHostName( store: SCDynamicStoreRef ): CFStringRe
 	@result Returns a string representing the current location identifier;
 		NULL if no location identifier has been defined or if an error
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {!
 	@function SCDynamicStoreCopyLocation
@@ -615,19 +683,26 @@ function SCDynamicStoreCopyLocalHostName( store: SCDynamicStoreRef ): CFStringRe
 		If NULL, a temporary session will be used.
 	@result A string representing the current "location" identifier;
 		NULL if no "location" identifier has been defined or if an error
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		was encountered.
 		You must release the returned value.
  }
 function SCDynamicStoreCopyLocation( store: SCDynamicStoreRef ): CFStringRef; external name '_SCDynamicStoreCopyLocation';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {!
 	@function SCDynamicStoreCopyProxies
 	@discussion Gets the current internet proxy settings.
+<<<<<<< HEAD
 <<<<<<< HEAD
 		The returned proxy settings dictionary includes:
 
@@ -716,6 +791,8 @@ function SCDynamicStoreCopyProxies( store: SCDynamicStoreRef ): CFDictionaryRef;
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@param store An SCDynamicStoreRef that should be used for communication
 		with the server.
 		If NULL, a temporary session will be used.
@@ -727,4 +804,7 @@ end.
 function SCDynamicStoreCopyProxies( store: SCDynamicStoreRef ): CFDictionaryRef; external name '_SCDynamicStoreCopyProxies';
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

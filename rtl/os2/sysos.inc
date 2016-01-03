@@ -323,10 +323,14 @@ type
     Address: pointer;
     ParamCount: cardinal;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Parameters: array [0..Pred (MaxExceptionParameters)] of cardinal;
 =======
     Parameters: array [0..MaxExceptionParameters] of cardinal;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Parameters: array [0..MaxExceptionParameters] of cardinal;
+>>>>>>> origin/fixes_2_2
   end;
 
   TContextRecord = packed record
@@ -351,7 +355,10 @@ type
     Reg_SS: cardinal;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 function DosSetExceptionHandler (var RegRec: TExceptionRegistrationRecord):
@@ -375,6 +382,7 @@ external 'DOSCALLS' index 378;
  SignalNum  = Signal number to acknowlegde.}
 function DosAcknowledgeSignalException (SignalNum: cardinal): cardinal; cdecl;
 external 'DOSCALLS' index 418;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 
 function DosError (Error: cardinal): cardinal; cdecl;
@@ -402,12 +410,17 @@ external 'DOSCALLS' index 378;
  SignalNum  = Signal number to acknowlegde.}
 function DosAcknowledgeSignalException (SignalNum: cardinal): cardinal; cdecl;
 external 'DOSCALLS' index 418;
+=======
+>>>>>>> origin/fixes_2_2
 
 function DosError (Error: cardinal): cardinal; cdecl;
 external 'DOSCALLS' index 212;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
   TWinMessageBox = function (Parent, Owner: cardinal;
@@ -454,6 +467,7 @@ const
 
 function DosQueryMem (P: pointer; var Size, Flag: cardinal): cardinal; cdecl;
 external 'DOSCALLS' index 306;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 function DosQuerySysInfo (First, Last: cardinal; var Buf; BufSize: cardinal):
@@ -568,3 +582,5 @@ end;
 {$ASMMODE DEFAULT}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

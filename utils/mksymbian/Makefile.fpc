@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -160,6 +161,8 @@ mksymbian$(EXEEXT): mksymbian.pas
 mksymbian$(EXEEXT): mksymbian.pas
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 #
 #   Makefile.fpc for Free Pascal Symbian Build Tool
 #
@@ -184,4 +187,7 @@ fpcdir=../..
 [rules]
 .NOTPARALLEL:
 mksymbian$(EXEEXT): mksymbian.pas
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

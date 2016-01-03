@@ -9,6 +9,7 @@ name=compiler
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
 version=2.5.1
@@ -25,6 +26,9 @@ version=2.5.1
 =======
 version=2.2.5
 >>>>>>> graemeg/fixes_2_2
+=======
+version=2.2.5
+>>>>>>> origin/fixes_2_2
 
 [target]
 programs=pp
@@ -57,6 +61,7 @@ unexport FPC_VERSION FPC_COMPILERINFO
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 CYCLETARGETS=i386 powerpc sparc arm x86_64 powerpc64 m68k armeb mipsel mips avr jvm i8086 aarch64
 =======
 CYCLETARGETS=i386 powerpc sparc arm x86_64 powerpc64 m68k armeb mipsel mips
@@ -73,6 +78,9 @@ CYCLETARGETS=i386 powerpc sparc arm x86_64 powerpc64 m68k armeb mipsel mips
 =======
 CYCLETARGETS=i386 powerpc sparc arm x86_64 powerpc64 m68k
 >>>>>>> graemeg/fixes_2_2
+=======
+CYCLETARGETS=i386 powerpc sparc arm x86_64 powerpc64 m68k
+>>>>>>> origin/fixes_2_2
 
 # All supported targets used for clean
 ALLTARGETS=$(CYCLETARGETS)
@@ -1099,9 +1107,12 @@ cycle:
 # ppc (source native)
 # Clear detected compiler binary, because it can be existing crosscompiler binary, but we need native compiler here
 <<<<<<< HEAD
+<<<<<<< HEAD
         $(MAKE) OS_TARGET=$(OS_SOURCE) CPU_TARGET=$(CPU_SOURCE) CROSSBINDIR= BINUTILSPREFIX= CROSSCYCLEBOOTSTRAP=1 rtlclean rtl CYCLELEVEL=1
         $(MAKE) OS_TARGET=$(OS_SOURCE) CPU_TARGET=$(CPU_SOURCE) EXENAME=$(TEMPNAME) CROSSBINDIR= BINUTILSPREFIX= CROSSCYCLEBOOTSTRAP=1 cycleclean compiler CYCLELEVEL=1
 =======
+=======
+>>>>>>> origin/fixes_2_2
 override FPC=
         $(MAKE) OS_TARGET=$(OS_SOURCE) CPU_TARGET=$(CPU_SOURCE) CROSSBINDIR= BINUTILSPREFIX= CROSSCYCLEBOOTSTRAP=1 rtlclean rtl
         $(MAKE) OS_TARGET=$(OS_SOURCE) CPU_TARGET=$(CPU_SOURCE) EXENAME=$(TEMPNAME) CROSSBINDIR= BINUTILSPREFIX= CROSSCYCLEBOOTSTRAP=1 cycleclean compiler

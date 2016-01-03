@@ -396,12 +396,17 @@ implementation
                  { loop body }
                  get_used_regvars(t2,usedregvars);
 <<<<<<< HEAD
+<<<<<<< HEAD
                  { end value can't be a regvar, but may be a temp in register }
                  get_used_regvars(t1,usedregvars);
 =======
                  { end value (t1) is not necessary (it cannot be a regvar, }
                  { see webtbs/tw8883)                                      }
 >>>>>>> graemeg/fixes_2_2
+=======
+                 { end value (t1) is not necessary (it cannot be a regvar, }
+                 { see webtbs/tw8883)                                      }
+>>>>>>> origin/fixes_2_2
 
                  gen_sync_regvars(current_asmdata.CurrAsmList,usedregvars);
                end
@@ -497,9 +502,13 @@ implementation
            begin
               do_loopvar_at_end:=false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
               location_force_reg(current_asmdata.CurrAsmList,t1.location,t1.location.size,false);
 >>>>>>> graemeg/fixes_2_2
+=======
+              location_force_reg(current_asmdata.CurrAsmList,t1.location,t1.location.size,false);
+>>>>>>> origin/fixes_2_2
               temptovalue:=true;
            end
          else
@@ -1005,17 +1014,24 @@ implementation
          hlcg.a_label(current_asmdata.CurrAsmList,getasmlabel);
 =======
          cg.a_label(current_asmdata.CurrAsmList,getasmlabel);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
          { Write also extra label if this label was referenced from
            assembler block }
          if assigned(labsym) and
             assigned(labsym.asmblocklabel) then
 <<<<<<< HEAD
+<<<<<<< HEAD
            hlcg.a_label(current_asmdata.CurrAsmList,labsym.asmblocklabel);
 =======
            cg.a_label(current_asmdata.CurrAsmList,labsym.asmblocklabel);
 >>>>>>> graemeg/fixes_2_2
+=======
+           cg.a_label(current_asmdata.CurrAsmList,labsym.asmblocklabel);
+>>>>>>> origin/fixes_2_2
 
          secondpass(left);
       end;
@@ -1827,6 +1843,7 @@ implementation
                exit;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              if (tf_safecall_exceptions in target_info.flags) and
                 (current_procinfo.procdef.proccalloption=pocall_safecall) then
                handle_safecall_exception
@@ -1834,6 +1851,28 @@ implementation
 {$if defined(x86) or defined(arm)}
              if (tf_safecall_exceptions in target_info.flags) and
                 (current_procinfo.procdef.proccalloption=pocall_safecall) then
+=======
+{$if defined(x86) or defined(arm)}
+             if current_procinfo.procdef.proccalloption=pocall_safecall then
+               begin
+                 { Remove and destroy the last exception object }
+                 cg.a_call_name(current_asmdata.CurrAsmList,'FPC_POPOBJECTSTACK');
+                 cg.a_call_name(current_asmdata.CurrAsmList,'FPC_DESTROYEXCEPTION');
+                 { Set return value of safecall procedure to indicate exception.       }
+                 { Exception will be raised after procedure exit based on return value }
+                 cg.a_load_const_reg(current_asmdata.CurrAsmList,OS_ADDR,aint($8000FFFF),NR_FUNCTION_RETURN_REG);
+               end
+             else
+{$endif}
+               cg.a_call_name(current_asmdata.CurrAsmList,'FPC_RERAISE');
+           end
+         else
+           begin
+             cg.a_cmp_const_reg_label(current_asmdata.CurrAsmList,OS_INT,OC_EQ,0,NR_FUNCTION_RESULT_REG,endfinallylabel);
+             cg.a_op_const_reg(current_asmdata.CurrAsmList,OP_SUB,OS_INT,1,NR_FUNCTION_RESULT_REG);
+             cg.a_cmp_const_reg_label(current_asmdata.CurrAsmList,OS_INT,OC_EQ,0,NR_FUNCTION_RESULT_REG,reraiselabel);
+             if fc_exit in tryflowcontrol then
+>>>>>>> origin/fixes_2_2
                begin
                  { find safe_result variable we created in the generate_except_block }
                  retsym:=tlocalvarsym(current_procinfo.procdef.localst.Find('safe_result'));

@@ -3,10 +3,14 @@
     Copyright (c) 2000 by Marco van de Voort(marco@freepascal.org)
     member of the Free Pascal development team
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> graemeg/fixes_2_2
+=======
+    
+>>>>>>> origin/fixes_2_2
     libiconv header translation + a helper routine  
     http://wiki.freepascal.org/iconvenc
 
@@ -19,6 +23,7 @@
 
 }
 unit iconvenc;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 interface
@@ -92,6 +97,8 @@ end;
 
 end.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 interface 
 {$mode objfpc}{$H+}
 
@@ -244,4 +251,7 @@ end;
 
 end.
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

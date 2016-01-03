@@ -17,7 +17,10 @@ Uses
     SysUtils,
     inifiles;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
   {$I regdef.inc}
 >>>>>>> graemeg/fixes_2_2
@@ -212,6 +215,40 @@ type
     procedure DeleteKey(const Section, Name: String); override;
     procedure UpdateFile; override;
     function ValueExists(const Section, Ident: string): Boolean; override;
+    property RegIniFile: TRegIniFile read FRegIniFile;
+  end;
+
+{ ---------------------------------------------------------------------
+    TRegIniFile
+  ---------------------------------------------------------------------}
+
+
+  TRegistryIniFile = class(TCustomIniFile)
+  private
+    FRegIniFile: TRegIniFile;
+  public
+    constructor Create(const AFileName: string); overload;
+    constructor Create(const AFileName: string; AAccess: LongWord); overload;
+    function ReadDate(const Section, Name: string; Default: TDateTime): TDateTime; override;
+    function ReadDateTime(const Section, Name: string; Default: TDateTime): TDateTime; override;
+    function ReadInteger(const Section, Name: string; Default: Longint): Longint; override;
+    function ReadFloat(const Section, Name: string; Default: Double): Double; override;
+    function ReadString(const Section, Name, Default: string): string; override;
+    function ReadTime(const Section, Name: string; Default: TDateTime): TDateTime; override;
+    function ReadBinaryStream(const Section, Name: string; Value: TStream): Integer; override;
+    procedure WriteDate(const Section, Name: string; Value: TDateTime); override;
+    procedure WriteDateTime(const Section, Name: string; Value: TDateTime); override;
+    procedure WriteFloat(const Section, Name: string; Value: Double); override;
+    procedure WriteInteger(const Section, Name: string; Value: Longint); override;
+    procedure WriteString(const Section, Name, Value: String); override;
+    procedure WriteTime(const Section, Name: string; Value: TDateTime); override;
+    procedure WriteBinaryStream(const Section, Name: string; Value: TStream); override;
+    procedure ReadSection(const Section: string; Strings: TStrings); override;
+    procedure ReadSections(Strings: TStrings); override;
+    procedure ReadSectionValues(const Section: string; Strings: TStrings); override;
+    procedure EraseSection(const Section: string); override;
+    procedure DeleteKey(const Section, Name: String); override;
+    procedure UpdateFile; override;
     property RegIniFile: TRegIniFile read FRegIniFile;
   end;
 
@@ -450,7 +487,10 @@ begin
 =======
        SetLength(Result, Info.DataSize);
      GetData(Name,PChar(Result),Info.DataSize,Info.RegData);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
    end
   else
     result:='';
@@ -563,9 +603,12 @@ end;
 function TRegistryIniFile.ReadDate(const Section, Name: string;
   Default: TDateTime): TDateTime;
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   Result:=FRegInifile.ReadDate(Section,Name,Default);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var sectkey,curkey : HKey;
 begin 
   with FRegInifile do
@@ -591,15 +634,21 @@ begin
        else
          result:=default; 
     end;          
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function TRegistryIniFile.ReadDateTime(const Section, Name: string;
   Default: TDateTime): TDateTime;
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   Result:=FRegInifile.ReadDateTime(Section,Name,Default);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var sectkey,curkey : HKey;  
 begin
   with FRegInifile do
@@ -625,15 +674,21 @@ begin
        else
          result:=default; 
     end;          
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function TRegistryIniFile.ReadFloat(const Section, Name: string;
   Default: Double): Double;
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   Result:=FRegInifile.ReadFloat(Section,Name,Default);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var sectkey,curkey : HKey;  
 begin
   with FRegInifile do
@@ -659,11 +714,15 @@ begin
        else
          result:=default; 
     end;          
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function TRegistryIniFile.ReadInteger(const Section, Name: string;
   Default: Integer): Longint;
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
   Result:=FRegInifile.ReadInteger(Section, Name, Default);
@@ -671,6 +730,8 @@ end;
 
 procedure TRegistryIniFile.ReadSection(const Section: string; Strings: TStrings);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var sectkey,curkey : HKey;  
 begin
   with FRegInifile do
@@ -700,7 +761,10 @@ end;
 
 procedure TRegistryIniFile.ReadSection(const Section: string;
   Strings: TStrings);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   FRegIniFile.ReadSection(Section,strings);
 end;
@@ -719,9 +783,12 @@ end;
 function TRegistryIniFile.ReadString(const Section, Name,
   Default: string): string;
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   Result:=FRegInifile.ReadString(Section, Name, Default);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var sectkey,curkey : HKey;  
 begin
   with FRegInifile do
@@ -747,15 +814,21 @@ begin
        else
          result:=default; 
     end;          
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function TRegistryIniFile.ReadTime(const Section, Name: string;
   Default: TDateTime): TDateTime;
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   Result:=FRegInifile.ReadTime(Section,Name,Default);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var sectkey,curkey : HKey;  
 begin
   with FRegInifile do
@@ -781,7 +854,10 @@ begin
        else
          result:=default; 
     end;          
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TRegistryIniFile.UpdateFile;
@@ -798,9 +874,12 @@ end;
 procedure TRegistryIniFile.WriteDate(const Section, Name: string;
   Value: TDateTime);
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   FRegInifile.WriteDate(Section,Name, Value);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var sectkey,curkey : HKey;  
 begin
   with FRegInifile do
@@ -821,15 +900,21 @@ begin
             end;
         end
     end;          
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TRegistryIniFile.WriteDateTime(const Section, Name: string;
   Value: TDateTime);
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   FRegInifile.WriteDateTime(Section,Name, Value);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var sectkey,curkey : HKey;  
 begin
   with FRegInifile do
@@ -850,15 +935,21 @@ begin
             end;
         end
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TRegistryIniFile.WriteFloat(const Section, Name: string;
   Value: Double);
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   FRegInifile.WriteFloat(Section,Name, Value);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var sectkey,curkey : HKey;  
 begin
   with FRegInifile do
@@ -879,11 +970,15 @@ begin
             end;
         end
     end;          
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TRegistryIniFile.WriteInteger(const Section, Name: string;
   Value: Integer);
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
   FRegInifile.WriteInteger(Section, Name, Value);
@@ -893,6 +988,8 @@ procedure TRegistryIniFile.WriteString(const Section, Name, Value: String);
 begin
   FRegInifile.WriteString(Section, Name, Value);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var sectkey,curkey : HKey;  
 begin
   with FRegInifile do
@@ -937,11 +1034,15 @@ begin
             end;
         end
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TRegistryIniFile.WriteTime(const Section, Name: string;
   Value: TDateTime);
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
   FRegInifile.WriteTime(Section,Name, Value);
@@ -957,6 +1058,8 @@ begin
         CloseSection;
       end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var sectkey,curkey : HKey;
 begin
   with FRegInifile do
@@ -977,7 +1080,10 @@ begin
             end;
         end
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 end.

@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('imlib');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ShortName:='imlb';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -32,12 +33,17 @@ begin
       P.OSes := P.OSes + [darwin];
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ALLPACKAGES}
     P.Directory:='imlib';
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
     P.OSes:=AllUnixOSes;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     
     P.Dependencies.Add('gtk1');
     P.Dependencies.Add('x11');

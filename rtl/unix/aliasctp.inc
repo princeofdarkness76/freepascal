@@ -60,3 +60,5 @@ type
 
   coff_t                 = UnixType.TOff;
 
+  coff_t                 = UnixType.TOff;
+

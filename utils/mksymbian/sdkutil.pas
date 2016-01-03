@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
 sdkutil.pas
 
@@ -102,6 +103,8 @@ end;
 end.
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
 sdkutil.pas
 
@@ -204,4 +207,7 @@ end;
 
 end.
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

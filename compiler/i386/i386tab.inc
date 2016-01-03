@@ -2955,6 +2955,7 @@
   (
     opcode  : A_MOV;
     ops     : 2;
+<<<<<<< HEAD
     optypes : (ot_reg_ax,ot_mem_offs,ot_none,ot_none);
     code    : #212#1#161#37;
     flags   : if_8086 or if_sm
@@ -2967,6 +2968,8 @@
     code    : #213#1#161#37;
     flags   : if_386 or if_sm
 =======
+=======
+>>>>>>> origin/fixes_2_2
     optypes : (ot_reg_ax,ot_mem_offs,ot_none);
     code    : #212#193#1#161#29;
     flags   : if_8086 or if_sm or if_nox86_64
@@ -2979,6 +2982,13 @@
     optypes : (ot_reg16 or ot_bits32 or ot_bits64,ot_rm_gpr,ot_none,ot_none);
     code    : #208#1#139#72;
 =======
+    optypes : (ot_reg_eax,ot_mem_offs,ot_none);
+    code    : #213#193#1#161#29;
+    flags   : if_386 or if_sm or if_nox86_64
+  ),
+  (
+    opcode  : A_MOV;
+    ops     : 2;
     optypes : (ot_reg_eax,ot_mem_offs,ot_none);
     code    : #213#193#1#161#29;
     flags   : if_386 or if_sm or if_nox86_64
@@ -3205,7 +3215,10 @@
 =======
     optypes : (ot_xmmreg,ot_reg32,ot_none);
     code    : #1#102#211#2#15#110#72;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2
   ),
   (
@@ -3228,7 +3241,10 @@
 =======
     optypes : (ot_reg32,ot_xmmreg,ot_none);
     code    : #1#102#211#2#15#126#65;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2
   ),
   (
@@ -3305,7 +3321,10 @@
 =======
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
     code    : #219#211#2#15#126#72;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2
   ),
   (
@@ -3317,7 +3336,10 @@
 =======
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
     code    : #1#102#211#2#15#214#72;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2
   ),
   (
@@ -3329,7 +3351,10 @@
 =======
     optypes : (ot_memory,ot_xmmreg,ot_none);
     code    : #192#1#102#211#2#15#214#65;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2
   ),
   (
@@ -3341,7 +3366,10 @@
 =======
     optypes : (ot_xmmreg,ot_memory,ot_none);
     code    : #219#193#2#15#126#72;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2
   ),
   (
@@ -3665,7 +3693,10 @@
 =======
     optypes : (ot_xmmreg,ot_memory,ot_none);
     code    : #1#102#193#2#15#107#72;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2 or if_sm
   ),
   (
@@ -3704,7 +3735,10 @@
 =======
     optypes : (ot_xmmreg,ot_memory,ot_none);
     code    : #1#102#193#2#15#99#72;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2 or if_sm
   ),
   (
@@ -3743,7 +3777,10 @@
 =======
     optypes : (ot_xmmreg,ot_memory,ot_none);
     code    : #1#102#193#2#15#103#72;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2 or if_sm
   ),
   (
@@ -3789,7 +3826,10 @@
 =======
     optypes : (ot_xmmreg,ot_memory,ot_none);
     code    : #1#102#193#2#15#252#72;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2 or if_sm
   ),
   (
@@ -3828,7 +3868,10 @@
 =======
     optypes : (ot_xmmreg,ot_memory,ot_none);
     code    : #1#102#193#2#15#254#72;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2 or if_sm
   ),
   (
@@ -3901,7 +3944,10 @@
 =======
     optypes : (ot_xmmreg,ot_memory,ot_none);
     code    : #1#102#193#2#15#237#72;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2 or if_sm
   ),
   (
@@ -3940,7 +3986,10 @@
 =======
     optypes : (ot_xmmreg,ot_memory,ot_none);
     code    : #1#102#193#2#15#220#72;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2 or if_sm
   ),
   (
@@ -3979,7 +4028,10 @@
 =======
     optypes : (ot_xmmreg,ot_memory,ot_none);
     code    : #1#102#193#2#15#221#72;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2 or if_sm
   ),
   (
@@ -4259,7 +4311,10 @@
 =======
     optypes : (ot_xmmreg,ot_memory,ot_none);
     code    : #1#102#193#2#15#117#72;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2 or if_sm
   ),
   (
@@ -4663,7 +4718,10 @@
 =======
     optypes : (ot_xmmreg,ot_memory,ot_none);
     code    : #1#102#193#2#15#245#72;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2 or if_sm
   ),
   (
@@ -4793,7 +4851,10 @@
 =======
     optypes : (ot_xmmreg,ot_memory,ot_none);
     code    : #1#102#193#2#15#229#72;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2 or if_sm
   ),
   (
@@ -4846,7 +4907,10 @@
 =======
     optypes : (ot_xmmreg,ot_memory,ot_none);
     code    : #1#102#193#2#15#213#72;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     flags   : if_willamette or if_sse2 or if_sm
   ),
   (
@@ -5176,23 +5240,41 @@
   (
     opcode  : A_RCR;
     ops     : 2;
+<<<<<<< HEAD
     optypes : (ot_rm_gpr or ot_bits16 or ot_bits32 or ot_bits64,ot_reg_cl,ot_none,ot_none);
     code    : #208#1#211#131;
     flags   : if_8086
+=======
+    optypes : (ot_xmmreg,ot_memory,ot_none);
+    code    : #1#102#193#2#15#242#72;
+    flags   : if_willamette or if_sse2 or if_sm
+>>>>>>> origin/fixes_2_2
   ),
   (
     opcode  : A_RCR;
     ops     : 2;
+<<<<<<< HEAD
     optypes : (ot_rm_gpr or ot_bits16 or ot_bits32 or ot_bits64,ot_immediate,ot_none,ot_none);
     code    : #208#1#193#131#21;
     flags   : if_8086 or if_sb
+=======
+    optypes : (ot_xmmreg,ot_xmmreg,ot_none);
+    code    : #1#102#211#2#15#242#72;
+    flags   : if_willamette or if_sse2
+>>>>>>> origin/fixes_2_2
   ),
   (
     opcode  : A_RCR;
     ops     : 2;
+<<<<<<< HEAD
     optypes : (ot_rm_gpr or ot_bits8,ot_unity,ot_none,ot_none);
     code    : #1#208#131;
     flags   : if_8086
+=======
+    optypes : (ot_xmmreg,ot_immediate,ot_none);
+    code    : #1#102#211#2#15#114#134#21;
+    flags   : if_willamette or if_sse2 or if_sb or if_ar1
+>>>>>>> origin/fixes_2_2
   ),
   (
     opcode  : A_RCR;
@@ -14118,9 +14200,15 @@
 =======
     opcode  : A_PSLLD;
     ops     : 2;
+<<<<<<< HEAD
     optypes : (ot_xmmreg,ot_memory,ot_none);
     code    : #1#102#193#2#15#242#72;
     flags   : if_willamette or if_sse2 or if_sm
+=======
+    optypes : (ot_xmmreg,ot_immediate,ot_none);
+    code    : #1#102#211#2#15#115#135#21;
+    flags   : if_willamette or if_sse2 or if_sb or if_ar1
+>>>>>>> origin/fixes_2_2
   ),
   (
     opcode  : A_PSLLD;
@@ -14631,9 +14719,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#1#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#248#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -14670,9 +14761,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#2#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#250#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -14709,9 +14803,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#3#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#232#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -14749,9 +14846,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#5#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#2#15#233#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -14788,9 +14888,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#6#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#2#15#216#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -14827,9 +14930,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#7#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#2#15#217#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -14866,9 +14972,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#4#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#2#15#249#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -14905,9 +15014,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#11#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#2#15#104#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -14944,9 +15056,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#0#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#2#15#106#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -14983,9 +15098,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#8#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#2#15#105#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -15022,9 +15140,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#9#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#2#15#96#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -15061,9 +15182,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#10#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#2#15#98#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -15101,9 +15225,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#20#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#98#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -15127,6 +15254,7 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#21#72;
     flags   : if_sse4
   ),
@@ -15137,6 +15265,8 @@
     code    : #1#102#217#3#15#58#64#72#22;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#2#15#97#72;
     flags   : if_willamette or if_sse2 or if_sm
   ),
@@ -15298,9 +15428,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#41#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#239#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -15332,7 +15465,10 @@
     optypes : (ot_regmem or ot_bits16 or ot_bits32 or ot_bits64,ot_immediate,ot_none);
     code    : #192#208#1#193#130#21;
     flags   : if_8086 or if_sb
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   ),
   (
     opcode  : A_PEXTRD;
@@ -15441,9 +15577,15 @@
   (
     opcode  : A_PMAXSD;
     ops     : 2;
+<<<<<<< HEAD
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
     code    : #1#102#217#3#15#56#61#72;
     flags   : if_sse4
+=======
+    optypes : (ot_regmem or ot_bits16 or ot_bits32 or ot_bits64,ot_immediate,ot_none);
+    code    : #192#208#1#193#131#21;
+    flags   : if_8086 or if_sb
+>>>>>>> origin/fixes_2_2
   ),
   (
     opcode  : A_PMAXSD;
@@ -16294,9 +16436,15 @@
   (
     opcode  : A_PSHUFB;
     ops     : 2;
+<<<<<<< HEAD
     optypes : (ot_mmxreg,ot_mmxreg,ot_none);
     code    : #217#3#15#56#0#72;
     flags   : if_sse4
+=======
+    optypes : (ot_regmem or ot_bits8,ot_reg8,ot_none);
+    code    : #193#211#1#132#65;
+    flags   : if_8086 or if_sm
+>>>>>>> origin/fixes_2_2
   ),
   (
     opcode  : A_PSHUFB;
@@ -16755,9 +16903,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#63#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#2#15#88#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -16774,9 +16925,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#62#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #193#211#2#15#85#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -16786,9 +16940,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#56#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#2#15#85#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -16798,9 +16955,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#56#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #193#211#2#15#84#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -16810,9 +16970,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#57#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#2#15#84#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -16829,9 +16992,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#58#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#217#2#15#194#72#1#0;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -16841,9 +17007,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#58#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#2#15#194#72#1#0;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -16853,9 +17022,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#59#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#194#72#1#0;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -16872,9 +17044,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#32#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#217#2#15#194#72#1#2;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -16884,9 +17059,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#32#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#2#15#194#72#1#2;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -16896,9 +17074,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#33#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#194#72#1#2;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -16915,9 +17096,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#34#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#217#2#15#194#72#1#1;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -16927,9 +17111,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#34#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#2#15#194#72#1#1;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -16939,9 +17126,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#35#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#194#72#1#1;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -16958,9 +17148,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#36#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#217#2#15#194#72#1#4;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -16970,9 +17163,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#36#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#2#15#194#72#1#4;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -16982,9 +17178,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#37#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#194#72#1#4;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17001,9 +17200,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#48#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#217#2#15#194#72#1#6;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17013,9 +17215,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#48#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#2#15#194#72#1#6;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17025,9 +17230,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#49#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#194#72#1#6;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17044,9 +17252,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#50#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#217#2#15#194#72#1#5;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17056,9 +17267,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#50#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#2#15#194#72#1#5;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17068,9 +17282,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#51#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#194#72#1#5;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17087,9 +17304,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#52#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#217#2#15#194#72#1#7;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17099,9 +17319,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#52#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#2#15#194#72#1#7;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17111,9 +17334,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#53#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#194#72#1#7;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17130,9 +17356,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#40#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#217#2#15#194#72#1#3;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17142,9 +17371,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#40#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#2#15#194#72#1#3;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17154,9 +17386,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#23#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#194#72#1#3;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17180,9 +17415,12 @@
     ops     : 3;
     optypes : (ot_xmmreg,ot_xmmreg,ot_immediate);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#58#9#72#22;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#217#2#15#194#72#18;
     flags   : if_katmai or if_sse or if_sb or if_ar2
 >>>>>>> graemeg/fixes_2_2
@@ -17192,9 +17430,12 @@
     ops     : 3;
     optypes : (ot_xmmreg,ot_memory,ot_immediate);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#58#9#72#22;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#2#15#194#72#18;
     flags   : if_katmai or if_sse or if_sb or if_ar2
 >>>>>>> graemeg/fixes_2_2
@@ -17203,6 +17444,7 @@
     opcode  : A_ROUNDSS;
     ops     : 3;
     optypes : (ot_xmmreg,ot_xmmreg,ot_immediate);
+<<<<<<< HEAD
 <<<<<<< HEAD
     code    : #1#102#217#3#15#58#10#72#22;
     flags   : if_sse4
@@ -17221,6 +17463,8 @@
     code    : #1#102#217#3#15#58#11#72#22;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#194#72#18;
     flags   : if_katmai or if_sse or if_sb or if_ar2
   ),
@@ -17416,9 +17660,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#221#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#217#2#15#94#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17429,6 +17676,7 @@
 <<<<<<< HEAD
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#221#72;
 =======
     optypes : (ot_memory,ot_xmmreg,ot_none);
@@ -17436,6 +17684,8 @@
 >>>>>>> graemeg/cpstrnew
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#2#15#94#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17445,9 +17695,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#222#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#94#72;
     flags   : if_katmai or if_sse
   ),
@@ -17471,9 +17724,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#223#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#217#2#15#95#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17483,9 +17739,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#223#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#2#15#95#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17495,9 +17754,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#219#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#95#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17543,9 +17805,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#28#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#93#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17555,9 +17820,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#28#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #193#211#2#15#40#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17593,9 +17861,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#29#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#2#15#41#65;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17605,9 +17876,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#29#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #193#211#2#15#22#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17637,9 +17911,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#30#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#2#15#22#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17649,9 +17926,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#30#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #193#211#2#15#18#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17709,9 +17989,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#1#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#2#15#18#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17761,9 +18044,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#2#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#211#2#15#16#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17799,9 +18085,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#3#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#17#65;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17838,9 +18127,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#5#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#217#2#15#17#65;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17850,9 +18142,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#5#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #193#211#2#15#89#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17888,9 +18183,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#6#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#89#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17900,9 +18198,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#6#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #193#211#2#15#86#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17932,9 +18233,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#7#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#217#2#15#83#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17944,9 +18248,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#7#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#211#2#15#83#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17976,9 +18283,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#4#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#217#2#15#82#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -17988,9 +18298,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#4#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#211#2#15#82#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -18014,10 +18327,13 @@
     opcode  : A_PMULHRSW;
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#11#72;
     flags   : if_sse4
 =======
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#82#72;
     flags   : if_katmai or if_sse
   ),
@@ -18074,9 +18390,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#0#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#81#72;
     flags   : if_katmai or if_sse
   ),
@@ -18126,9 +18445,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#8#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#92#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -18138,9 +18460,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#8#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #193#211#2#15#46#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -18176,9 +18501,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#9#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#2#15#21#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -18188,9 +18516,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#9#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #193#211#2#15#20#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -18226,9 +18557,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#10#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#2#15#87#72;
     flags   : if_katmai or if_sse
 >>>>>>> graemeg/fixes_2_2
@@ -18394,9 +18728,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#42#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#211#2#15#224#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -18420,9 +18757,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#43#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#227#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -18432,9 +18772,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#43#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#211#2#15#227#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -18554,9 +18897,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#65#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#238#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -18566,9 +18912,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#65#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#2#15#238#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -18635,9 +18984,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#60#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#234#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -18647,9 +18999,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#60#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#2#15#234#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -18673,9 +19028,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#63#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#218#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -18685,9 +19043,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#63#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#2#15#218#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -18731,9 +19092,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#57#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#228#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -18743,9 +19107,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#57#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#2#15#228#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -18769,9 +19136,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#59#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#246#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -18781,9 +19151,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#59#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#2#15#246#72;
     flags   : if_willamette or if_sse2 or if_sm
   ),
@@ -18883,10 +19256,14 @@
   (
     opcode  : A_PMOVSXDQ;
     ops     : 2;
+<<<<<<< HEAD
     optypes : (ot_xmmreg,ot_memory,ot_none);
     code    : #1#102#193#217#3#15#56#37#72;
     flags   : if_sse4
 =======
+=======
+    optypes : (ot_xmmreg,ot_xmmreg,ot_none);
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#247#72;
     flags   : if_willamette or if_sse2
   ),
@@ -18977,9 +19354,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#51#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#211#2#15#111#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -18989,9 +19369,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#52#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#127#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19027,9 +19410,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#53#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#211#2#15#111#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -19039,9 +19425,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#40#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#127#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19163,9 +19552,12 @@
     ops     : 3;
     optypes : (ot_xmmreg,ot_xmmreg,ot_immediate);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#58#97#72#22;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#112#72#18;
     flags   : if_willamette or if_sse2 or if_sb or if_ar2
 >>>>>>> graemeg/fixes_2_2
@@ -19175,9 +19567,12 @@
     ops     : 3;
     optypes : (ot_xmmreg,ot_memory,ot_immediate);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#58#97#72#22;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#211#2#15#112#72#18;
     flags   : if_willamette or if_sse2 or if_sm2 or if_sb or if_ar2
 >>>>>>> graemeg/fixes_2_2
@@ -19187,9 +19582,12 @@
     ops     : 3;
     optypes : (ot_xmmreg,ot_xmmreg,ot_immediate);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#58#96#72#22;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#112#72#18;
     flags   : if_willamette or if_sse2 or if_sb or if_ar2
 >>>>>>> graemeg/fixes_2_2
@@ -19199,9 +19597,12 @@
     ops     : 3;
     optypes : (ot_xmmreg,ot_memory,ot_immediate);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#58#96#72#22;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#211#2#15#112#72#18;
     flags   : if_willamette or if_sse2 or if_sm2 or if_sb or if_ar2
 >>>>>>> graemeg/fixes_2_2
@@ -19211,9 +19612,12 @@
     ops     : 3;
     optypes : (ot_xmmreg,ot_xmmreg,ot_immediate);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#58#99#72#22;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#2#15#112#72#18;
     flags   : if_willamette or if_sse2 or if_sb or if_ar2
 >>>>>>> graemeg/fixes_2_2
@@ -19311,9 +19715,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#220#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#108#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19323,9 +19730,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#220#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#211#2#15#108#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -19335,9 +19745,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#221#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#217#2#15#88#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19348,6 +19761,7 @@
 <<<<<<< HEAD
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#221#72;
 =======
     optypes : (ot_memory,ot_xmmreg,ot_none);
@@ -19355,6 +19769,8 @@
 >>>>>>> origin/cpstrnew
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#217#2#15#88#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -19364,9 +19780,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#222#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#217#2#15#88#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19376,9 +19795,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#222#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#193#217#2#15#88#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19388,9 +19810,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#223#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#217#2#15#85#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19400,9 +19825,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#223#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#217#2#15#85#72;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -19412,9 +19840,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#219#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#217#2#15#84#72;
     flags   : if_willamette or if_sse2
   ),
@@ -19432,9 +19863,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#219#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#217#2#15#194#72#1#0;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -19472,9 +19906,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#28#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#217#2#15#194#72#1#0;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19484,9 +19921,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#28#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#217#2#15#194#72#1#2;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -19522,9 +19962,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#29#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#217#2#15#194#72#1#2;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19534,9 +19977,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#29#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#193#217#2#15#194#72#1#1;
     flags   : if_willamette or if_sse2 or if_sm
 >>>>>>> graemeg/fixes_2_2
@@ -19572,9 +20018,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#30#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#217#2#15#194#72#1#1;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19655,9 +20104,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#1#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#217#2#15#194#72#1#6;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19694,9 +20146,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#2#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#217#2#15#194#72#1#5;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19733,9 +20188,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#3#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#217#2#15#194#72#1#7;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19772,9 +20230,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#5#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#217#2#15#194#72#1#3;
     flags   : if_willamette or if_sse2
   ),
@@ -19831,9 +20292,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#6#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#211#2#15#230#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19863,9 +20327,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#7#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#2#15#230#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19902,9 +20369,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#4#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#90#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19941,9 +20411,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#11#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#91#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -19974,9 +20447,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#0#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#2#15#90#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20007,9 +20483,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#8#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#2#15#90#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20040,9 +20519,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#9#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#211#2#15#90#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20052,9 +20534,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#9#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #219#193#211#2#15#90#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20084,9 +20569,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#10#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#230#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20146,9 +20634,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#20#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#94#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20165,9 +20656,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#21#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#2#15#94#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20269,9 +20763,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#43#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#2#15#95#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20288,9 +20785,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#16#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#93#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20321,9 +20821,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#41#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#2#15#93#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20475,9 +20978,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#60#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#89#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20494,9 +21000,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#61#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#2#15#89#72;
     flags   : if_willamette or if_sse2
   ),
@@ -20520,9 +21029,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#63#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#86#72;
     flags   : if_willamette or if_sse2
   ),
@@ -20546,9 +21058,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#62#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#81#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20565,9 +21080,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#56#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#2#15#81#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20584,9 +21102,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#57#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#92#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20603,9 +21124,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#58#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#2#15#92#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20622,9 +21146,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#59#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#46#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20641,9 +21168,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#32#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#21#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20660,9 +21190,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#33#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#20#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20679,9 +21212,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#34#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#87#72;
     flags   : if_willamette or if_sse2
 >>>>>>> graemeg/fixes_2_2
@@ -20712,9 +21248,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#36#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#208#72;
     flags   : if_prescott or if_sse3
 >>>>>>> graemeg/fixes_2_2
@@ -20731,9 +21270,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#37#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#2#15#208#72;
     flags   : if_prescott or if_sse3
 >>>>>>> graemeg/fixes_2_2
@@ -20750,9 +21292,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#48#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#124#72;
     flags   : if_prescott or if_sse3
 >>>>>>> graemeg/fixes_2_2
@@ -20769,9 +21314,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#49#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#2#15#124#72;
     flags   : if_prescott or if_sse3
 >>>>>>> graemeg/fixes_2_2
@@ -20788,9 +21336,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#50#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#102#211#2#15#125#72;
     flags   : if_prescott or if_sse3
 >>>>>>> graemeg/fixes_2_2
@@ -20807,9 +21358,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#51#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#2#15#125#72;
     flags   : if_prescott or if_sse3
 >>>>>>> graemeg/fixes_2_2
@@ -20819,9 +21373,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_memory,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#193#217#3#15#56#51#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#1#242#211#2#15#240#72;
     flags   : if_prescott or if_sse3
 >>>>>>> graemeg/fixes_2_2
@@ -20845,9 +21402,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#53#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #1#242#211#2#15#18#72;
     flags   : if_prescott or if_sse3
 >>>>>>> graemeg/fixes_2_2
@@ -20864,9 +21424,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#40#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#3#243#15#22#72;
     flags   : if_prescott or if_sse3
 >>>>>>> graemeg/fixes_2_2
@@ -20883,9 +21446,12 @@
     ops     : 2;
     optypes : (ot_xmmreg,ot_xmmreg,ot_none);
 <<<<<<< HEAD
+<<<<<<< HEAD
     code    : #1#102#217#3#15#56#23#72;
     flags   : if_sse4
 =======
+=======
+>>>>>>> origin/fixes_2_2
     code    : #211#3#243#15#18#72;
     flags   : if_prescott or if_sse3
 >>>>>>> graemeg/fixes_2_2
@@ -21216,6 +21782,9 @@
     optypes : (ot_reg32 or ot_bits64,ot_regmem,ot_none);
     code    : #72#209#219#193#62#2#15#184#63;
     flags   : if_386 or if_sm or if_sse4
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   )
 );

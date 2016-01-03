@@ -2112,6 +2112,7 @@ BEGIN
      Repeat
        Tp := Tp^.Next;                                { Get next view }
 <<<<<<< HEAD
+<<<<<<< HEAD
        IF Byte(Longint(CallPointerMethodLocal(P,
          { On most systems, locals are accessed relative to base pointer,
            but for MIPS cpu, they are accessed relative to stack pointer.
@@ -2126,6 +2127,9 @@ BEGIN
 =======
        IF Byte(Longint(CallPointerMethodLocal(P,get_caller_frame(get_frame),@self,Tp)))<>0 THEN
 >>>>>>> graemeg/fixes_2_2
+=======
+       IF Byte(Longint(CallPointerMethodLocal(P,get_caller_frame(get_frame),@self,Tp)))<>0 THEN
+>>>>>>> origin/fixes_2_2
         Begin       { Test each view }
           FirstThat := Tp;                             { View returned true }
           Exit;                                        { Now exit }
@@ -2321,6 +2325,7 @@ BEGIN
         exit;
        Hp:=Tp^.Next;                        { Get next view }
 <<<<<<< HEAD
+<<<<<<< HEAD
        CallPointerMethodLocal(P,
          { On most systems, locals are accessed relative to base pointer,
            but for MIPS cpu, they are accessed relative to stack pointer.
@@ -2335,6 +2340,9 @@ BEGIN
 =======
        CallPointerMethodLocal(P,get_caller_frame(get_frame),@self,Tp);
 >>>>>>> graemeg/fixes_2_2
+=======
+       CallPointerMethodLocal(P,get_caller_frame(get_frame),@self,Tp);
+>>>>>>> origin/fixes_2_2
      Until (Tp=L0);                                   { Until last }
    End;
 END;
@@ -3165,6 +3173,7 @@ VAR Tracking: Boolean; I, P, S, ClickPart, Iv: Sw_Integer;
      If Extent.Contains(Mouse) Then Begin             { Contains mouse }
        If (Size.X = 1) Then Begin                     { Vertical scrollbar }
 <<<<<<< HEAD
+<<<<<<< HEAD
          Mark := Mouse.Y;                             { Calc position }
        End Else Begin                                 { Horizontal bar }
          Mark := Mouse.X;                             { Calc position }
@@ -3173,6 +3182,11 @@ VAR Tracking: Boolean; I, P, S, ClickPart, Iv: Sw_Integer;
        End Else Begin                                 { Horizontal bar }
          Mark := Mouse.X - 1;                 { Calc position }
 >>>>>>> graemeg/fixes_2_2
+=======
+         Mark := Mouse.Y - 1;                { Calc position }
+       End Else Begin                                 { Horizontal bar }
+         Mark := Mouse.X - 1;                 { Calc position }
+>>>>>>> origin/fixes_2_2
        End;
        If (Mark >= P) AND (Mark < P+1) Then           { Within thumbnail }
          Part := sbIndicator;                         { Indicator part }
@@ -3180,10 +3194,14 @@ VAR Tracking: Boolean; I, P, S, ClickPart, Iv: Sw_Integer;
          If (Mark < 1) Then Part := sbLeftArrow Else  { Left arrow part }
          If (Mark < P) Then Part := sbPageLeft Else   { Page left part }
 <<<<<<< HEAD
+<<<<<<< HEAD
          If (Mark < S-1) Then Part := sbPageRight Else  { Page right part }
 =======
          If (Mark < S) Then Part := sbPageRight Else  { Page right part }
 >>>>>>> graemeg/fixes_2_2
+=======
+         If (Mark < S) Then Part := sbPageRight Else  { Page right part }
+>>>>>>> origin/fixes_2_2
            Part := sbRightArrow;                      { Right arrow part }
          If (Size.X = 1) Then Inc(Part, 4);           { Correct for vertical }
        End;
@@ -3244,22 +3262,31 @@ BEGIN
          Extent.A.X := 0;                             { Zero x extent value }
          Extent.A.Y := 0;                             { Zero y extent value }
 <<<<<<< HEAD
+<<<<<<< HEAD
          Extent.B.X := Size.X;                        { Set extent x value }
          Extent.B.Y := Size.Y;                        { set extent y value }
 =======
          Extent.B.X := Size.X;                     { Set extent x value }
          Extent.B.Y := Size.Y;                     { set extent y value }
 >>>>>>> graemeg/fixes_2_2
+=======
+         Extent.B.X := Size.X;                     { Set extent x value }
+         Extent.B.Y := Size.Y;                     { set extent y value }
+>>>>>>> origin/fixes_2_2
          P := GetPos;                                 { Current position }
          S := GetSize;                                { Initial size }
          ClickPart := GetPartCode;                    { Get part code }
          If (ClickPart <> sbIndicator) Then Begin     { Not thumb nail }
            Repeat
 <<<<<<< HEAD
+<<<<<<< HEAD
              MakeLocal(Event.Where, Mouse);           { Localize mouse }
 =======
              MakeLocal(Event.Where, Mouse);                 { Localize mouse }
 >>>>>>> graemeg/fixes_2_2
+=======
+             MakeLocal(Event.Where, Mouse);                 { Localize mouse }
+>>>>>>> origin/fixes_2_2
              If GetPartCode = ClickPart Then
                SetValue(Value+ScrollStep(ClickPart)); { Same part repeat }
            Until NOT MouseEvent(Event, evMouseAuto);  { Until auto done }
@@ -3268,6 +3295,7 @@ BEGIN
            Iv := Value;                               { Initial value }
            Repeat
 <<<<<<< HEAD
+<<<<<<< HEAD
              MakeLocal(Event.Where, Mouse);           { Localize mouse }
              Tracking := Extent.Contains(Mouse);      { Check contains }
              If Tracking Then Begin                   { Tracking mouse }
@@ -3275,13 +3303,18 @@ BEGIN
                  I := Mouse.Y Else                    { Calc vert position }
                  I := Mouse.X;                        { Calc horz position }
 =======
+=======
+>>>>>>> origin/fixes_2_2
              MakeLocal(Event.Where, Mouse);                 { Localize mouse }
              Tracking := Extent.Contains(Mouse);      { Check contains }
              If Tracking Then Begin                   { Tracking mouse }
                If (Size.X=1) Then
                  I := Mouse.Y-1 Else         { Calc vert position }
                  I := Mouse.X-1;              { Calc horz position }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                If (I < 0) Then I := 0;                { Check underflow }
                If (I > S) Then I := S;                { Check overflow }
              End Else I := GetPos;                    { Get position }

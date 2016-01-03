@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    Quickdraw-285~150
 =======
      Version:    Quickdraw-262~1
@@ -28,10 +29,16 @@
  
      Copyright:  © 2003 by Apple Computer, Inc., all rights reserved.
 >>>>>>> graemeg/fixes_2_2
+=======
+     Version:    Quickdraw-150~1
+ 
+     Copyright:  © 2003 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -61,6 +68,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -73,7 +82,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -83,12 +95,17 @@
 unit ATSUnicodeFonts;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -102,14 +119,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -118,11 +140,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -160,6 +185,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -167,6 +194,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -416,6 +444,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -424,7 +454,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -451,9 +484,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -465,6 +502,7 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,ATSUnicodeTypes,SFNTTypes;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -475,11 +513,15 @@ uses MacTypes,ATSUnicodeTypes,SFNTTypes;
 =======
 {$ALIGN MAC68K}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ALIGN MAC68K}
+>>>>>>> origin/fixes_2_2
 
 { ---------------------------------------------------------------------------- }
 {  Font features                                                               }
 { ---------------------------------------------------------------------------- }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {
@@ -492,6 +534,10 @@ uses MacTypes,ATSUnicodeTypes,SFNTTypes;
 {
  *  ATSUSetFontFeatures()
 >>>>>>> graemeg/fixes_2_2
+=======
+{
+ *  ATSUSetFontFeatures()
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Sets font features in a style object.
@@ -539,6 +585,7 @@ uses MacTypes,ATSUnicodeTypes,SFNTTypes;
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -554,6 +601,8 @@ function ATSUSetFontFeatures( iStyle: ATSUStyle; iFeatureCount: ItemCount; {cons
  *  Deprecated:
  *    Use CTFontDescriptorCopyAttribute instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -564,7 +613,10 @@ function ATSUSetFontFeatures( iStyle: ATSUStyle; iFeatureCount: ItemCount; iType
 
 {
  *  ATSUGetFontFeature()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains the font feature corresponding to an index into an array
@@ -612,6 +664,7 @@ function ATSUSetFontFeatures( iStyle: ATSUStyle; iFeatureCount: ItemCount; iType
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -626,6 +679,8 @@ function ATSUGetFontFeature( iStyle: ATSUStyle; iFeatureIndex: ItemCount; oFeatu
  *  Deprecated:
  *    Use CTFontDescriptorCopyAttribute instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -636,7 +691,10 @@ function ATSUGetFontFeature( iStyle: ATSUStyle; iFeatureIndex: ItemCount; oFeatu
 
 {
  *  ATSUGetAllFontFeatures()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains the font features of a style object that are not at
@@ -681,10 +739,14 @@ function ATSUGetFontFeature( iStyle: ATSUStyle; iFeatureIndex: ItemCount; oFeatu
  *      of font feature that is at a nondefault setting in the style
  *      object. If you are uncertain of how much memory to allocate for
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      this array, see the Discussion.
 =======
  *      this array, see the Discussion. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      this array, see the Discussion. can be NULL
+>>>>>>> origin/fixes_2_2
  *    
  *    oFeatureSelector:
  *      On return, the array contains constants identifying the feature
@@ -693,26 +755,35 @@ function ATSUGetFontFeature( iStyle: ATSUStyle; iFeatureIndex: ItemCount; oFeatu
  *      feature type produced in the oFeatureType parameter. If you are
  *      uncertain of how much memory to allocate for this array, see
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      the Discussion.
 =======
  *      the Discussion.  can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      the Discussion.  can be NULL
+>>>>>>> origin/fixes_2_2
  *    
  *    oActualFeatureCount:
  *      On return, the value specifies the actual number of font
  *      feature types and selectors in the style object. This may be
  *      greater than the value you specified in the
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      iMaximumFeatureCount parameter.
 =======
  *      iMaximumFeatureCount parameter. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      iMaximumFeatureCount parameter. can be NULL
+>>>>>>> origin/fixes_2_2
  *  
  *  Result:
  *    On success, noErr is returned. See MacErrors.h for possible error
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -728,6 +799,8 @@ function ATSUGetAllFontFeatures( iStyle: ATSUStyle; iMaximumFeatureCount: ItemCo
  *  Deprecated:
  *    Use CoreText API and CFRelease instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -738,7 +811,10 @@ function ATSUGetAllFontFeatures( iStyle: ATSUStyle; iMaximumFeatureCount: ItemCo
 
 {
  *  ATSUClearFontFeatures()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Restores default settings to the specified font features of a
@@ -777,10 +853,14 @@ function ATSUGetAllFontFeatures( iStyle: ATSUStyle; iMaximumFeatureCount: ItemCo
  *      call the function ATSUGetAllFontFeatures. You may pass NULL for
  *      this parameter if you are passing kATSUClearAll for the
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      iFeatureCount parameter.
 =======
  *      iFeatureCount parameter. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      iFeatureCount parameter. can be NULL
+>>>>>>> origin/fixes_2_2
  *    
  *    iSelector:
  *      An array of feature selectors. Each element in the array must
@@ -790,16 +870,21 @@ function ATSUGetAllFontFeatures( iStyle: ATSUStyle; iMaximumFeatureCount: ItemCo
  *      can call the function ATSUGetAllFontFeatures. You may pass NULL
  *      for this parameter if you are passing kATSUClearAll for the
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      iFeatureCount parameter.
 =======
  *      iFeatureCount parameter. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      iFeatureCount parameter. can be NULL
+>>>>>>> origin/fixes_2_2
  *  
  *  Result:
  *    On success, noErr is returned. See MacErrors.h for possible error
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -808,19 +893,25 @@ function ATSUGetAllFontFeatures( iStyle: ATSUStyle; iMaximumFeatureCount: ItemCo
 function ATSUClearFontFeatures( iStyle: ATSUStyle; iFeatureCount: ItemCount; {const} iType: {variable-size-array} ATSUFontFeatureTypePtr { can be NULL }; {const} iSelector: {variable-size-array} ATSUFontFeatureSelectorPtr { can be NULL } ): OSStatus; external name '_ATSUClearFontFeatures';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function ATSUClearFontFeatures( iStyle: ATSUStyle; iFeatureCount: ItemCount; iType: ATSUFontFeatureTypePtr; iSelector: ATSUFontFeatureSelectorPtr ): OSStatus; external name '_ATSUClearFontFeatures';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { ---------------------------------------------------------------------------- }
 {  Font variations                                                             }
 { ---------------------------------------------------------------------------- }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  ATSUSetVariations()   *** DEPRECATED ***
  *  
@@ -830,6 +921,9 @@ function ATSUClearFontFeatures( iStyle: ATSUStyle; iFeatureCount: ItemCount; iTy
 =======
  *  ATSUSetVariations()
 >>>>>>> graemeg/fixes_2_2
+=======
+ *  ATSUSetVariations()
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Sets font variation axes and values in a style object.
@@ -879,6 +973,7 @@ function ATSUClearFontFeatures( iStyle: ATSUStyle; iFeatureCount: ItemCount; iTy
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -893,6 +988,8 @@ function ATSUSetVariations( iStyle: ATSUStyle; iVariationCount: ItemCount; {cons
  *  Deprecated:
  *    Use CTFontDescriptorCopyAttribute instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -903,7 +1000,10 @@ function ATSUSetVariations( iStyle: ATSUStyle; iVariationCount: ItemCount; iAxes
 
 {
  *  ATSUGetFontVariationValue()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains the current value for a single font variation axis in a
@@ -944,6 +1044,7 @@ function ATSUSetVariations( iStyle: ATSUStyle; iVariationCount: ItemCount; iAxes
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -958,6 +1059,8 @@ function ATSUGetFontVariationValue( iStyle: ATSUStyle; iFontVariationAxis: ATSUF
  *  Deprecated:
  *    Use CTFontDescriptorCopyAttribute instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -968,7 +1071,10 @@ function ATSUGetFontVariationValue( iStyle: ATSUStyle; iFontVariationAxis: ATSUF
 
 {
  *  ATSUGetAllFontVariations()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains a style object's font variation values that are not at
@@ -1011,10 +1117,14 @@ function ATSUGetFontVariationValue( iStyle: ATSUStyle; iFontVariationAxis: ATSUF
  *      for the font variation axes produced in the oVariationAxes
  *      array. If you are uncertain of how much memory to allocate for
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      this array, see the Discussion.
 =======
  *      this array, see the Discussion. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      this array, see the Discussion. can be NULL
+>>>>>>> origin/fixes_2_2
  *    
  *    oFontVariationValues:
  *      On return, the value specifies the actual number of nondefault
@@ -1022,25 +1132,34 @@ function ATSUGetFontVariationValue( iStyle: ATSUStyle; iFontVariationAxis: ATSUF
  *      than the value you passed in the iVariationCount parameter. If
  *      you are uncertain of how much memory to allocate for this
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      array, see the Discussion.
 =======
  *      array, see the Discussion. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      array, see the Discussion. can be NULL
+>>>>>>> origin/fixes_2_2
  *    
  *    oActualVariationCount:
  *      On return, the value specifies the actual number of nondefault
  *      font variation values in the style object. This may be greater
  *      than the value you passed in the iVariationCount parameter.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  *       can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *       can be NULL
+>>>>>>> origin/fixes_2_2
  *  
  *  Result:
  *    On success, noErr is returned. See MacErrors.h for possible error
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1056,6 +1175,8 @@ function ATSUGetAllFontVariations( iStyle: ATSUStyle; iVariationCount: ItemCount
  *  Deprecated:
  *    Use CoreText API and CFRelease instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1066,7 +1187,10 @@ function ATSUGetAllFontVariations( iStyle: ATSUStyle; iVariationCount: ItemCount
 
 {
  *  ATSUClearFontVariations()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Restores default values to the specified font variation axes of a
@@ -1104,16 +1228,21 @@ function ATSUGetAllFontVariations( iStyle: ATSUStyle; iVariationCount: ItemCount
  *      axis tags for a style object from the function
  *      ATSUGetAllFontVariations. You may pass NULL for this parameter
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      if you are passing kATSUClearAll for the iAxisCount parameter.
 =======
  *      if you are passing kATSUClearAll for the iAxisCount parameter. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      if you are passing kATSUClearAll for the iAxisCount parameter. can be NULL
+>>>>>>> origin/fixes_2_2
  *  
  *  Result:
  *    On success, noErr is returned. See MacErrors.h for possible error
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1122,19 +1251,25 @@ function ATSUGetAllFontVariations( iStyle: ATSUStyle; iVariationCount: ItemCount
 function ATSUClearFontVariations( iStyle: ATSUStyle; iAxisCount: ItemCount; {const} iAxis: {variable-size-array} ATSUFontVariationAxisPtr { can be NULL } ): OSStatus; external name '_ATSUClearFontVariations';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function ATSUClearFontVariations( iStyle: ATSUStyle; iAxisCount: ItemCount; iAxis: ATSUFontVariationAxisPtr ): OSStatus; external name '_ATSUClearFontVariations';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { ---------------------------------------------------------------------------- }
 {  Font ID's                                                                   }
 { ---------------------------------------------------------------------------- }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  ATSUFontCount()   *** DEPRECATED ***
  *  
@@ -1143,6 +1278,9 @@ function ATSUClearFontVariations( iStyle: ATSUStyle; iAxisCount: ItemCount; iAxi
 =======
  *  ATSUFontCount()
 >>>>>>> graemeg/fixes_2_2
+=======
+ *  ATSUFontCount()
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains the number of ATSUI-compatible fonts installed on a
@@ -1181,6 +1319,7 @@ function ATSUClearFontVariations( iStyle: ATSUStyle; iAxisCount: ItemCount; iAxi
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1197,6 +1336,8 @@ function ATSUFontCount( var oFontCount: ItemCount ): OSStatus; external name '_A
  *    CTFontCollectionCreateWithFontDescriptors, or
  *    CTFontCollectionCreateCopyWithFontDescriptors instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1207,7 +1348,10 @@ function ATSUFontCount( var oFontCount: ItemCount ): OSStatus; external name '_A
 
 {
  *  ATSUGetFontIDs()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains a list of all the ATSUI-compatible fonts installed on the
@@ -1236,16 +1380,21 @@ function ATSUFontCount( var oFontCount: ItemCount ): OSStatus; external name '_A
  *      ATSUI-compatible fonts installed on the user's system. This may
  *      be greater than the value you specified in the iArraySize
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      parameter.
 =======
  *      parameter. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      parameter. can be NULL
+>>>>>>> origin/fixes_2_2
  *  
  *  Result:
  *    On success, noErr is returned. See MacErrors.h for possible error
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1261,6 +1410,8 @@ function ATSUGetFontIDs( oFontIDs: {variable-size-array} ATSUFontIDPtr; iArraySi
  *  Deprecated:
  *    Use CoreText API instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1271,13 +1422,17 @@ function ATSUGetFontIDs( oFontIDs: ATSUFontIDPtr; iArraySize: ItemCount; oFontCo
 
 {
  *  ATSUFONDtoFontID()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Finds the ATSUI font ID that corresponds to a font family number,
  *    if one exists.
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    This function is not recommended. It is specifically associated
  *    with old QD data types (i.e. the QD font family or 'FOND'
@@ -1301,6 +1456,8 @@ function ATSUFONDtoFontID( iFONDNumber: SInt16; iFONDStyle: Style; var oFontID: 
  *  Deprecated:
  *    Use CoreText API instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    This function is not recommended. Instead, use the function
  *    FMGetFontFromFontFamilyInstance (see Fonts.h). FMFont values are
  *    equivalent to ATSUFontID values.
@@ -1316,13 +1473,17 @@ function ATSUFONDtoFontID( iFONDNumber: SInt16; iFONDStyle: Style; var oFontID: 
 
 {
  *  ATSUFontIDtoFOND()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Finds the font family number and style that correspond to an
  *    ATSUI font ID, if these exist.
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    This function is not recommended. It is specifically associated
  *    with old QD data types (i.e. the QD font family or 'FOND'
@@ -1339,6 +1500,8 @@ function ATSUFONDtoFontID( iFONDNumber: SInt16; iFONDStyle: Style; var oFontID: 
 function ATSUFontIDtoFOND( iFontID: ATSUFontID; var oFONDNumber: SInt16; var oFONDStyle: Style ): OSStatus; external name '_ATSUFontIDtoFOND';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    This function is not recommended. Instead, use the function
  *    FMGetFontFamilyInstanceFromFont (see Fonts.h). FMFont values are
  *    equivalent to ATSUFontID values.
@@ -1350,13 +1513,17 @@ function ATSUFontIDtoFOND( iFontID: ATSUFontID; var oFONDNumber: SInt16; var oFO
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function ATSUFontIDtoFOND( iFontID: ATSUFontID; var oFONDNumber: SInt16; var oFONDStyle: Style ): OSStatus; external name '_ATSUFontIDtoFOND';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { ---------------------------------------------------------------------------- }
 {  Font names                                                                  }
 { ---------------------------------------------------------------------------- }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  ATSUCountFontNames()   *** DEPRECATED ***
  *  
@@ -1367,6 +1534,9 @@ function ATSUFontIDtoFOND( iFontID: ATSUFontID; var oFONDNumber: SInt16; var oFO
 =======
  *  ATSUCountFontNames()
 >>>>>>> graemeg/fixes_2_2
+=======
+ *  ATSUCountFontNames()
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains the number of font names that correspond to a given ATSUI
@@ -1398,6 +1568,7 @@ function ATSUFontIDtoFOND( iFontID: ATSUFontID; var oFONDNumber: SInt16; var oFO
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1414,6 +1585,8 @@ function ATSUCountFontNames( iFontID: ATSUFontID; var oFontNameCount: ItemCount 
  *    CTFontCopyFullName, CTFontCopyDisplayName, CTFontCopyName, or
  *    CTFontCopyLocalizedName instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1424,7 +1597,10 @@ function ATSUCountFontNames( iFontID: ATSUFontID; var oFontNameCount: ItemCount 
 
 {
  *  ATSUGetIndFontName()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains a name string, name code, platform, script, and language
@@ -1481,14 +1657,19 @@ function ATSUCountFontNames( iFontID: ATSUFontID; var oFontNameCount: ItemCount 
  *      in the iMaximumNameLength parameter. You should check this
  *      value to ensure that you have allocated sufficient memory and
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      therefore obtained the complete name string for the font.
 =======
  *      therefore obtained the complete name string for the font. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      therefore obtained the complete name string for the font. can be NULL
+>>>>>>> origin/fixes_2_2
  *    
  *    oFontNameCode:
  *      On return, a value specifying the type of name returned (i.e.,
  *      full name, postscript name) of the font. See SFNTTypes.h for a
+<<<<<<< HEAD
 <<<<<<< HEAD
  *      list of possible values.
  *    
@@ -1504,6 +1685,8 @@ function ATSUCountFontNames( iFontID: ATSUFontID; var oFontNameCount: ItemCount 
  *      On return, a value specifying the language of the font. See
  *      SFNTTypes.h for a list of possible values.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *      list of possible values. can be NULL
  *    
  *    oFontNamePlatform:
@@ -1517,13 +1700,17 @@ function ATSUCountFontNames( iFontID: ATSUFontID; var oFontNameCount: ItemCount 
  *    oFontNameLanguage:
  *      On return, a value specifying the language of the font. See
  *      SFNTTypes.h for a list of possible values. can be NULL
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Result:
  *    On success, noErr is returned. See MacErrors.h for possible error
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1541,6 +1728,8 @@ function ATSUGetIndFontName( iFontID: ATSUFontID; iFontNameIndex: ItemCount; iMa
  *    CTFontCopyFullName, CTFontCopyDisplayName, CTFontCopyName, or
  *    CTFontCopyLocalizedName instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1551,7 +1740,10 @@ function ATSUGetIndFontName( iFontID: ATSUFontID; iFontNameIndex: ItemCount; iMa
 
 {
  *  ATSUFindFontName()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains a name string and index value for the first font in a
@@ -1621,10 +1813,14 @@ function ATSUGetIndFontName( iFontID: ATSUFontID; iFontNameIndex: ItemCount; iMa
  *      allocate is not large enough, ATSUFindFontName produces a
  *      partial string. If you are unsure how much space to allocate
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      for this parameter, see the Discussion.
 =======
  *      for this parameter, see the Discussion. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      for this parameter, see the Discussion. can be NULL
+>>>>>>> origin/fixes_2_2
  *    
  *    oActualNameLength:
  *      On return, specifies the actual length of the complete name
@@ -1632,24 +1828,31 @@ function ATSUGetIndFontName( iFontID: ATSUFontID; iFontNameIndex: ItemCount; iMa
  *      iMaximumNameLength parameter. You should check this value to
  *      ensure that you have allocated sufficient memory and therefore
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      obtained the complete name string for the font.
  *    
  *    oFontNameIndex:
  *      On return, the value provides a 0-based index to the font name
  *      in the font name table.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *      obtained the complete name string for the font. can be NULL
  *    
  *    oFontNameIndex:
  *      On return, the value provides a 0-based index to the font name
  *      in the font name table. can be NULL
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Result:
  *    On success, noErr is returned. See MacErrors.h for possible error
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1665,6 +1868,8 @@ function ATSUFindFontName( iFontID: ATSUFontID; iFontNameCode: FontNameCode; iFo
  *  Deprecated:
  *    Use CTFontCreateWithName instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1675,7 +1880,10 @@ function ATSUFindFontName( iFontID: ATSUFontID; iFontNameCode: FontNameCode; iFo
 
 {
  *  ATSUFindFontFromName()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains an ATSUI font ID for the first font in a name table that
@@ -1734,6 +1942,7 @@ function ATSUFindFontName( iFontID: ATSUFontID; iFontNameCode: FontNameCode; iFo
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1741,19 +1950,25 @@ function ATSUFindFontName( iFontID: ATSUFontID; iFontNameCode: FontNameCode; iFo
 function ATSUFindFontFromName( iName: {const} UnivPtr; iNameLength: ByteCount; iFontNameCode: FontNameCode; iFontNamePlatform: FontPlatformCode; iFontNameScript: FontScriptCode; iFontNameLanguage: FontLanguageCode; var oFontID: ATSUFontID ): OSStatus; external name '_ATSUFindFontFromName';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function ATSUFindFontFromName( iName: Ptr; iNameLength: ByteCount; iFontNameCode: FontNameCode; iFontNamePlatform: FontPlatformCode; iFontNameScript: FontScriptCode; iFontNameLanguage: FontLanguageCode; var oFontID: ATSUFontID ): OSStatus; external name '_ATSUFindFontFromName';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { ---------------------------------------------------------------------------- }
 {  Font features                                                               }
 { ---------------------------------------------------------------------------- }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  ATSUCountFontFeatureTypes()   *** DEPRECATED ***
  *  
@@ -1762,6 +1977,9 @@ function ATSUFindFontFromName( iName: Ptr; iNameLength: ByteCount; iFontNameCode
 =======
  *  ATSUCountFontFeatureTypes()
 >>>>>>> graemeg/fixes_2_2
+=======
+ *  ATSUCountFontFeatureTypes()
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains the number of available feature types in a font.
@@ -1788,6 +2006,7 @@ function ATSUFindFontFromName( iName: Ptr; iNameLength: ByteCount; iFontNameCode
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1802,6 +2021,8 @@ function ATSUCountFontFeatureTypes( iFontID: ATSUFontID; var oTypeCount: ItemCou
  *  Deprecated:
  *    Use CTFontCopyFeatures, CTFontCopyFeatureSettings instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1812,7 +2033,10 @@ function ATSUCountFontFeatureTypes( iFontID: ATSUFontID; var oTypeCount: ItemCou
 
 {
  *  ATSUCountFontFeatureSelectors()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains the number of available feature selectors for a given
@@ -1845,6 +2069,7 @@ function ATSUCountFontFeatureTypes( iFontID: ATSUFontID; var oTypeCount: ItemCou
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1859,6 +2084,8 @@ function ATSUCountFontFeatureSelectors( iFontID: ATSUFontID; iType: ATSUFontFeat
  *  Deprecated:
  *    Use CTFontCopyFeatures, CTFontCopyFeatureSettings instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1869,7 +2096,10 @@ function ATSUCountFontFeatureSelectors( iFontID: ATSUFontID; iType: ATSUFontFeat
 
 {
  *  ATSUGetFontFeatureTypes()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains the available feature types of a font.
@@ -1908,25 +2138,34 @@ function ATSUCountFontFeatureSelectors( iFontID: ATSUFontID; iType: ATSUFontFeat
  *      the header file SFNTLayoutTypes.h and are described in the
  *      official ATSUI documentation, available on the Apple developer
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      website.
 =======
  *      website. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      website. can be NULL
+>>>>>>> origin/fixes_2_2
  *    
  *    oActualTypeCount:
  *      On return, the actual number of feature types defined in the
  *      font. This may be greater than the value you specify in the
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      iMaximumTypes parameter.
 =======
  *      iMaximumTypes parameter. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      iMaximumTypes parameter. can be NULL
+>>>>>>> origin/fixes_2_2
  *  
  *  Result:
  *    On success, noErr is returned. See MacErrors.h for possible error
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1942,6 +2181,8 @@ function ATSUGetFontFeatureTypes( iFontID: ATSUFontID; iMaximumTypes: ItemCount;
  *  Deprecated:
  *    Use CTFontCopyFeatures, CTFontCopyFeatureSettings instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1952,7 +2193,10 @@ function ATSUGetFontFeatureTypes( iFontID: ATSUFontID; iMaximumTypes: ItemCount;
 
 {
  *  ATSUGetFontFeatureSelectors()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains the available feature selectors for a given feature type
@@ -1998,10 +2242,14 @@ function ATSUGetFontFeatureTypes( iFontID: ATSUFontID; iMaximumTypes: ItemCount;
  *      represent font feature selectors are defined in the header file
  *      SFNTLayoutTypes.h and are described in the official ATSUI
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      documentation, available on the Apple developer website.
 =======
  *      documentation, available on the Apple developer website. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      documentation, available on the Apple developer website. can be NULL
+>>>>>>> origin/fixes_2_2
  *    
  *    oSelectorIsOnByDefault:
  *      A pointer to memory you have allocated for an array of Boolean
@@ -2011,20 +2259,28 @@ function ATSUGetFontFeatureTypes( iFontID: ATSUFontID; iMaximumTypes: ItemCount;
  *      corresponding feature selector in the oSelectors array is on or
  *      off. If true, the feature selector is on by default; if false,
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      off.
 =======
  *      off. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      off. can be NULL
+>>>>>>> origin/fixes_2_2
  *    
  *    oActualSelectorCount:
  *      On return, the value specifies the actual number of feature
  *      selectors defined for the given feature type. This value may be
  *      greater than the value you specify in the iMaximumSelectors
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      parameter.
 =======
  *      parameter. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      parameter. can be NULL
+>>>>>>> origin/fixes_2_2
  *    
  *    oIsMutuallyExclusive:
  *      On return, the value indicates whether the feature selectors
@@ -2035,16 +2291,21 @@ function ATSUGetFontFeatureTypes( iFontID: ATSUFontID; iMaximumTypes: ItemCount;
  *      type is nonexclusive, you can enable any number of feature
  *      selectors at once. If true , the feature type is exclusive and
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      only one selector can be used at a time.
 =======
  *      only one selector can be used at a time. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      only one selector can be used at a time. can be NULL
+>>>>>>> origin/fixes_2_2
  *  
  *  Result:
  *    On success, noErr is returned. See MacErrors.h for possible error
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2060,6 +2321,8 @@ function ATSUGetFontFeatureSelectors( iFontID: ATSUFontID; iType: ATSUFontFeatur
  *  Deprecated:
  *    Use CTFontCopyFeatures, CTFontCopyFeatureSettings instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2070,7 +2333,10 @@ function ATSUGetFontFeatureSelectors( iFontID: ATSUFontID; iType: ATSUFontFeatur
 
 {
  *  ATSUGetFontFeatureNameCode()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    btains the name code for a font's feature type or selector that
@@ -2118,6 +2384,7 @@ function ATSUGetFontFeatureSelectors( iFontID: ATSUFontID; iType: ATSUFontFeatur
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2125,19 +2392,25 @@ function ATSUGetFontFeatureSelectors( iFontID: ATSUFontID; iType: ATSUFontFeatur
 function ATSUGetFontFeatureNameCode( iFontID: ATSUFontID; iType: ATSUFontFeatureType; iSelector: ATSUFontFeatureSelector; var oNameCode: FontNameCode ): OSStatus; external name '_ATSUGetFontFeatureNameCode';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function ATSUGetFontFeatureNameCode( iFontID: ATSUFontID; iType: ATSUFontFeatureType; iSelector: ATSUFontFeatureSelector; var oNameCode: FontNameCode ): OSStatus; external name '_ATSUGetFontFeatureNameCode';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { ---------------------------------------------------------------------------- }
 {  Font tracking value & names                                                 }
 { ---------------------------------------------------------------------------- }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  ATSUCountFontTracking()   *** DEPRECATED ***
  *  
@@ -2146,6 +2419,9 @@ function ATSUGetFontFeatureNameCode( iFontID: ATSUFontID; iType: ATSUFontFeature
 =======
  *  ATSUCountFontTracking()
 >>>>>>> graemeg/fixes_2_2
+=======
+ *  ATSUCountFontTracking()
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains the number of entries in the font tracking table that
@@ -2178,6 +2454,7 @@ function ATSUGetFontFeatureNameCode( iFontID: ATSUFontID; iType: ATSUFontFeature
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.6 and later
@@ -2192,6 +2469,8 @@ function ATSUCountFontTracking( iFontID: ATSUFontID; iCharacterOrientation: ATSU
  *  Deprecated:
  *    Use CTFontCopyTable instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.6 and later
@@ -2202,7 +2481,10 @@ function ATSUCountFontTracking( iFontID: ATSUFontID; iCharacterOrientation: ATSU
 
 {
  *  ATSUGetIndFontTracking()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains the name code and tracking value for the font tracking
@@ -2248,6 +2530,7 @@ function ATSUCountFontTracking( iFontID: ATSUFontID; iCharacterOrientation: ATSU
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.6 and later
@@ -2255,19 +2538,25 @@ function ATSUCountFontTracking( iFontID: ATSUFontID; iCharacterOrientation: ATSU
 function ATSUGetIndFontTracking( iFontID: ATSUFontID; iCharacterOrientation: ATSUVerticalCharacterType; iTrackIndex: ItemCount; var oFontTrackingValue: Fixed; var oNameCode: FontNameCode ): OSStatus; external name '_ATSUGetIndFontTracking';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.6 and later
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function ATSUGetIndFontTracking( iFontID: ATSUFontID; iCharacterOrientation: ATSUVerticalCharacterType; iTrackIndex: ItemCount; var oFontTrackingValue: Fixed; var oNameCode: FontNameCode ): OSStatus; external name '_ATSUGetIndFontTracking';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { ---------------------------------------------------------------------------- }
 {  Font variations                                                             }
 { ---------------------------------------------------------------------------- }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  ATSUCountFontVariations()   *** DEPRECATED ***
  *  
@@ -2276,6 +2565,9 @@ function ATSUGetIndFontTracking( iFontID: ATSUFontID; iCharacterOrientation: ATS
 =======
  *  ATSUCountFontVariations()
 >>>>>>> graemeg/fixes_2_2
+=======
+ *  ATSUCountFontVariations()
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains the number of defined variation axes in a font.
@@ -2301,6 +2593,7 @@ function ATSUGetIndFontTracking( iFontID: ATSUFontID; iCharacterOrientation: ATS
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2315,6 +2608,8 @@ function ATSUCountFontVariations( iFontID: ATSUFontID; var oVariationCount: Item
  *  Deprecated:
  *    Use CTFontCopyVariationAxes, CTFontCopyVariation instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2325,7 +2620,10 @@ function ATSUCountFontVariations( iFontID: ATSUFontID; var oVariationCount: Item
 
 {
  *  ATSUGetIndFontVariation()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains a variation axis and its value range for a font.
@@ -2355,6 +2653,7 @@ function ATSUCountFontVariations( iFontID: ATSUFontID; var oVariationCount: Item
  *    oATSUFontVariationAxis:
  *      On return, a four-character code identifying the font variation
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      axis corresponding to the specified index.
  *    
  *    oMinimumValue:
@@ -2366,6 +2665,8 @@ function ATSUCountFontVariations( iFontID: ATSUFontID; var oVariationCount: Item
  *    oDefaultValue:
  *      On return, the variation axis default.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *      axis corresponding to the specified index. can be NULL
  *    
  *    oMinimumValue:
@@ -2376,13 +2677,17 @@ function ATSUCountFontVariations( iFontID: ATSUFontID; var oVariationCount: Item
  *    
  *    oDefaultValue:
  *      On return, the variation axis default. can be NULL
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Result:
  *    On success, noErr is returned. See MacErrors.h for possible error
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2398,6 +2703,8 @@ function ATSUGetIndFontVariation( iFontID: ATSUFontID; iVariationIndex: ItemCoun
  *  Deprecated:
  *    Use CTFontCopyVariationAxes, CTFontCopyVariation instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2408,7 +2715,10 @@ function ATSUGetIndFontVariation( iFontID: ATSUFontID; iVariationIndex: ItemCoun
 
 {
  *  ATSUGetFontVariationNameCode()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains the name code for the font variation that matches an
@@ -2443,6 +2753,7 @@ function ATSUGetIndFontVariation( iFontID: ATSUFontID; iVariationIndex: ItemCoun
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2450,19 +2761,25 @@ function ATSUGetIndFontVariation( iFontID: ATSUFontID; iVariationIndex: ItemCoun
 function ATSUGetFontVariationNameCode( iFontID: ATSUFontID; iAxis: ATSUFontVariationAxis; var oNameCode: FontNameCode ): OSStatus; external name '_ATSUGetFontVariationNameCode';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function ATSUGetFontVariationNameCode( iFontID: ATSUFontID; iAxis: ATSUFontVariationAxis; var oNameCode: FontNameCode ): OSStatus; external name '_ATSUGetFontVariationNameCode';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { ---------------------------------------------------------------------------- }
 {  Font Instances                                                              }
 { ---------------------------------------------------------------------------- }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  ATSUCountFontInstances()   *** DEPRECATED ***
  *  
@@ -2471,6 +2788,9 @@ function ATSUGetFontVariationNameCode( iFontID: ATSUFontID; iAxis: ATSUFontVaria
 =======
  *  ATSUCountFontInstances()
 >>>>>>> graemeg/fixes_2_2
+=======
+ *  ATSUCountFontInstances()
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains the number of defined font instances in a font.
@@ -2496,6 +2816,7 @@ function ATSUGetFontVariationNameCode( iFontID: ATSUFontID; iAxis: ATSUFontVaria
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2510,6 +2831,8 @@ function ATSUCountFontInstances( iFontID: ATSUFontID; var oInstances: ItemCount 
  *  Deprecated:
  *    Use CTFontCopyVariationAxes, CTFontCopyVariation instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2520,7 +2843,10 @@ function ATSUCountFontInstances( iFontID: ATSUFontID; var oInstances: ItemCount 
 
 {
  *  ATSUGetFontInstance()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains the font variation axis values for a font instance.
@@ -2572,20 +2898,28 @@ function ATSUCountFontInstances( iFontID: ATSUFontID; var oInstances: ItemCount 
  *      variation axes that constitute the font instance. If you are
  *      uncertain of how much memory to allocate for this array, see
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      the Discussion.
 =======
  *      the Discussion. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      the Discussion. can be NULL
+>>>>>>> origin/fixes_2_2
  *    
  *    oValues:
  *      On return, the array contains the defined values for the font
  *      variation axes produced in the oAxes array. If you are
  *      uncertain of how much memory to allocate for this array, see
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      the Discussion.
 =======
  *      the Discussion. can be NULL
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      the Discussion. can be NULL
+>>>>>>> origin/fixes_2_2
  *    
  *    oActualVariationCount:
  *      On return, the actual number of font variation axes that
@@ -2597,6 +2931,7 @@ function ATSUCountFontInstances( iFontID: ATSUFontID; var oInstances: ItemCount 
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2612,6 +2947,8 @@ function ATSUGetFontInstance( iFontID: ATSUFontID; iFontInstanceIndex: ItemCount
  *  Deprecated:
  *    Use CTFontCopyVariationAxes, CTFontCopyVariation instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2622,7 +2959,10 @@ function ATSUGetFontInstance( iFontID: ATSUFontID; iFontInstanceIndex: ItemCount
 
 {
  *  ATSUGetFontInstanceNameCode()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Obtains the name code for the font instance that matches an ASTUI
@@ -2660,6 +3000,7 @@ function ATSUGetFontInstance( iFontID: ATSUFontID; iFontInstanceIndex: ItemCount
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2676,6 +3017,8 @@ function ATSUGetFontInstanceNameCode( iFontID: ATSUFontID; iInstanceIndex: ItemC
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2684,4 +3027,7 @@ end.
 function ATSUGetFontInstanceNameCode( iFontID: ATSUFontID; iInstanceIndex: ItemCount; var oNameCode: FontNameCode ): OSStatus; external name '_ATSUGetFontInstanceNameCode';
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

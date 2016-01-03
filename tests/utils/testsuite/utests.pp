@@ -10,6 +10,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses
      cgiapp,
      sysutils,
@@ -44,12 +45,16 @@ uses
 =======
 uses cgiapp,sysutils,mysql50conn,sqldb,whtml,dbwhtml,db,
 >>>>>>> graemeg/fixes_2_2
+=======
+uses cgiapp,sysutils,mysql50conn,sqldb,whtml,dbwhtml,db,
+>>>>>>> origin/fixes_2_2
      tresults,
 >>>>>>> graemeg/cpstrnew
      Classes,ftFont,fpimage,fpimgcanv,fpWritePng,fpcanvas;
 
 const
   TestsuiteURLPrefix='http://www.freepascal.org/testsuite/';
+<<<<<<< HEAD
 <<<<<<< HEAD
   TestsuiteBin='testsuite.cgi';
   ViewURL='http://svn.freepascal.org/cgi-bin/viewvc.cgi/';
@@ -67,6 +72,10 @@ var
   TestsuiteCGIURL = TestsuiteURLPrefix+'cgi-bin/testsuite.cgi';
   ViewVCURL='http://svn.freepascal.org/cgi-bin/viewvc.cgi/trunk/tests/';
 >>>>>>> graemeg/fixes_2_2
+=======
+  TestsuiteCGIURL = TestsuiteURLPrefix+'cgi-bin/testsuite.cgi';
+  ViewVCURL='http://svn.freepascal.org/cgi-bin/viewvc.cgi/trunk/tests/';
+>>>>>>> origin/fixes_2_2
 
 =======
   TestsSubDir='/tests/';
@@ -133,9 +142,12 @@ Type
     FTestLastDays : Integer;
     FNeedEnd : boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure DumpTestInfo(Q: TSQLQuery);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Procedure GetOverviewRowAttr(Sender : TObject; Var BGColor : String;
                                    Var Align : THTMLAlign; Var VAlign : THTMLValign;
                                    Var CustomAttr : String) ;
@@ -237,6 +249,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 Const
+<<<<<<< HEAD
 <<<<<<< HEAD
   OldTestResultsTableName = 'OLDTESTRESULTS';
   NewTestResultsTableName = 'TESTRESULTS';
@@ -469,6 +482,9 @@ const
 =======
   SDetailsURL = TestsuiteCGIURL + '?action=1&run1id=%s';
 >>>>>>> graemeg/fixes_2_2
+=======
+  SDetailsURL = TestsuiteCGIURL + '?action=1&run1id=%s';
+>>>>>>> origin/fixes_2_2
 
 Procedure TTestSuite.DoRun;
 
@@ -513,6 +529,7 @@ begin
         2 : CreateRunPie;
         3 : ShowOneTest;
 <<<<<<< HEAD
+<<<<<<< HEAD
         4 : ShowHistory;
 {$ifdef TEST}        
 >>>>>>> graemeg/cpstrnew
@@ -533,6 +550,8 @@ begin
             system.Writeln(stdout,'</PRE>');
             system.Flush(stdout);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef TEST}        
         98 :
           begin
@@ -547,7 +566,10 @@ begin
             Writeln(stdout,'<PRE>');
             Dump_stack(stdout,get_frame);
             Writeln(stdout,'</PRE>');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           end;
 {$endif TEST}
         end;
@@ -715,10 +737,14 @@ Function TTestSuite.ConnectToDB : Boolean;
 begin
   Result:=False;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FDB:=TPQConnection.Create(Self);
 =======
   FDB:=TMySQl50Connection.Create(Self);
 >>>>>>> graemeg/fixes_2_2
+=======
+  FDB:=TMySQl50Connection.Create(Self);
+>>>>>>> origin/fixes_2_2
   FDB.HostName:=DefHost;
   FDB.DatabaseName:=DefDatabase;
   FDB.UserName:=DefDBUser;
@@ -847,6 +873,7 @@ begin
   AddResponseLn('<BODY>');
   FNeedEnd:=true;
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
 
 Procedure TTestSuite.EmitDocType;
@@ -855,6 +882,8 @@ begin
      '"http://www.w3.org/TR/html4/loose.dtd">');
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure TTestSuite.EmitOverviewForm;
@@ -1025,6 +1054,7 @@ begin
     ParagraphStart;
     FormStart(TestsuiteCGIURL,'');
 <<<<<<< HEAD
+<<<<<<< HEAD
     if FDebug then
       EmitHiddenVar('DEBUGCGI', '1');
 <<<<<<< HEAD
@@ -1038,6 +1068,8 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     TableStart(2,true);
     RowStart;
       CellStart;
@@ -2023,6 +2055,7 @@ Function TTestSuite.ShowRunData : Boolean;
 Const
   SGetRunData = 'SELECT TU_ID,TU_DATE,TC_NAME,TO_NAME,' +
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'TU_SUBMITTER,TU_MACHINE,TU_COMMENT,TV_VERSION,'+
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2059,6 +2092,9 @@ Const
 =======
                 'TU_SUBMITTER,TU_MACHINE,TU_COMMENT,TV_VERSION '+
 >>>>>>> graemeg/fixes_2_2
+=======
+                'TU_SUBMITTER,TU_MACHINE,TU_COMMENT,TV_VERSION '+
+>>>>>>> origin/fixes_2_2
                 ' FROM TESTRUN,TESTCPU,TESTOS,TESTVERSION '+
 >>>>>>> graemeg/cpstrnew
                 'WHERE '+
@@ -2166,9 +2202,31 @@ begin
           RowNext;
             CellStart;
 <<<<<<< HEAD
+<<<<<<< HEAD
               Write('Fails/OK/Total:');
 =======
               Write('Machine:');
+=======
+              Write('Machine:');
+            CellNext;
+              Write(Q1.FieldByName('TU_MACHINE').AsString);
+            CellNext;
+              if Q2 <> nil then
+                Write(Q2.FieldByName('TU_MACHINE').AsString);
+            CellEnd;
+          RowNext;
+            CellStart;
+              Write('Submitter:');
+            CellNext;
+              Write(Q1.FieldByName('TU_SUBMITTER').AsString);
+            CellNext;
+              if Q2 <> nil then
+                Write(Q2.FieldByName('TU_SUBMITTER').AsString);
+            CellEnd;
+          RowNext;
+            CellStart;
+              Write('Date:');
+>>>>>>> origin/fixes_2_2
             CellNext;
               Write(Q1.FieldByName('TU_MACHINE').AsString);
             CellNext;
@@ -2535,9 +2593,13 @@ begin
                 Free;
               end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             DumpLn(Format('<p>Record count: %d </p>',[Q.RecordCount]));
 >>>>>>> graemeg/fixes_2_2
+=======
+            DumpLn(Format('<p>Record count: %d </p>',[Q.RecordCount]));
+>>>>>>> origin/fixes_2_2
           Finally
             Close;
           end;
@@ -2547,6 +2609,7 @@ begin
       If Not (FRunCount=0) and not (FNoSkipped or FOnlyFailed) then
         begin
         ParaGraphStart;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5679,6 +5742,8 @@ begin
               Write('After Source.');
     end
 =======
+=======
+>>>>>>> origin/fixes_2_2
         TagStart('IMG',Format('Src="'+TestsuiteCGIURL+'?action=2&pietotal=%d&piefailed=%d&pieskipped=%d"',[FRunCount,FRunFailedCount,FRunSkipCount]));
         end;
       end
@@ -6360,12 +6425,17 @@ begin
                 DumpLn('<P>No Source in TestSuite DataBase.</P>');
                 DumpLn('Link to SVN view of '+
 <<<<<<< HEAD
+<<<<<<< HEAD
                   '<A HREF="'+FViewVCURL+FTestFileName+'?view=markup'+
                   '" TARGET="fpc_source"> '+FTestFileName+'</A> source. ');
 =======
                   '<A HREF="'+ViewVCURL+FTestFileName+'?view=markup'+
                   '" TARGET="_blank"> '+FTestFileName+'</A> source. ');
 >>>>>>> graemeg/fixes_2_2
+=======
+                  '<A HREF="'+ViewVCURL+FTestFileName+'?view=markup'+
+                  '" TARGET="_blank"> '+FTestFileName+'</A> source. ');
+>>>>>>> origin/fixes_2_2
                 HeaderEnd(3);
               end
             else
@@ -6373,9 +6443,12 @@ begin
                 HeaderStart(3);
                 DumpLn('Link to SVN view of '+
 <<<<<<< HEAD
+<<<<<<< HEAD
                   '<A HREF="'+FViewVCURL+FTestFileName+'?view=markup'+
                   '" TARGET="fpc_source"> '+FTestFileName+'</A> source. ');
 =======
+=======
+>>>>>>> origin/fixes_2_2
                   '<A HREF="'+ViewVCURL+FTestFileName+'?view=markup'+
                   '" TARGET="_blank"> '+FTestFileName+'</A> source. ');
 >>>>>>> graemeg/fixes_2_2
@@ -6468,15 +6541,21 @@ begin
          +'tr2.TR_RESULT as Run2_Result '
          +'FROM TESTS, tr2 LEFT JOIN tr1 USING (TR_TEST_FK) '
 <<<<<<< HEAD
+<<<<<<< HEAD
          +'WHERE ((tr1.TR_SKIP IS NULL) or (tr2.TR_SKIP IS NULL) or '
 =======
          +'WHERE ((tr1.TR_SKIP IS NULL) or'
          +' (tr2.TR_SKIP IS NULL) or '
 >>>>>>> graemeg/fixes_2_2
+=======
+         +'WHERE ((tr1.TR_SKIP IS NULL) or'
+         +' (tr2.TR_SKIP IS NULL) or '
+>>>>>>> origin/fixes_2_2
          +' (%s (tr1.TR_Result<>tr2.TR_Result)))'
          +'and (T_ID=tr2.TR_TEST_FK)';
       If FNoSkipped then
         begin
+<<<<<<< HEAD
 <<<<<<< HEAD
         Qry:='(((tr1.TR_SKIP) and (not tr2.TR_OK) and (not tr2.TR_SKIP)) or '
            +'((not tr1.TR_OK) and (not tr1.TR_SKIP) and (tr2.TR_SKIP)) or '
@@ -6486,6 +6565,11 @@ begin
            +'((tr1.TR_OK="-") and (tr1.TR_SKIP="-") and (tr2.TR_SKIP="+")) or '
            +'((tr1.TR_SKIP="-") and (tr2.TR_SKIP="-"))) and ';
 >>>>>>> graemeg/fixes_2_2
+=======
+        Qry:='(((tr1.TR_SKIP="+") and (tr2.TR_OK="-") and (tr2.TR_SKIP="-")) or '
+           +'((tr1.TR_OK="-") and (tr1.TR_SKIP="-") and (tr2.TR_SKIP="+")) or '
+           +'((tr1.TR_SKIP="-") and (tr2.TR_SKIP="-"))) and ';
+>>>>>>> origin/fixes_2_2
         end
       else
         Qry:='';
@@ -6537,6 +6621,7 @@ begin
         begin
         ParaGraphStart;
 <<<<<<< HEAD
+<<<<<<< HEAD
         TagStart('IMG',Format('Src="'+TestsuiteCGIURL+
         '?action=2&amp;pietotal=%d&amp;piefailed=%d&amp;pieskipped=%d"'+
         ' ALT="total=%d, failed=%d, skipped=%d"',
@@ -6546,6 +6631,9 @@ begin
 =======
         TagStart('IMG',Format('Src="'+TestsuiteCGIURL+'?action=2&pietotal=%d&piefailed=%d&pieskipped=%d"',[FRunCount,FRunFailedCount,FRunSkipCount]));
 >>>>>>> graemeg/fixes_2_2
+=======
+        TagStart('IMG',Format('Src="'+TestsuiteCGIURL+'?action=2&pietotal=%d&piefailed=%d&pieskipped=%d"',[FRunCount,FRunFailedCount,FRunSkipCount]));
+>>>>>>> origin/fixes_2_2
         end;
       end
     else
@@ -6607,16 +6695,23 @@ begin
         BGColor:='#98FB98';    // pale Green
       end  
     else if Run2Field.AsString='-' then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
       Inc(FRunFailedCount);
       if Run1Field.AsString='' then
         BGColor:='#FF82AB'    // Light red
 <<<<<<< HEAD
+<<<<<<< HEAD
       else if Not Run1Field.AsBoolean then
 =======
       else if Run1Field.AsString<>'-' then
 >>>>>>> graemeg/fixes_2_2
+=======
+      else if Run1Field.AsString<>'-' then
+>>>>>>> origin/fixes_2_2
         BGColor:='#FF225B';
       end;
     end;
@@ -6834,12 +6929,15 @@ begin
   P:=(Sender as TTableProducer);
   if FCompareRunID<>'' then
 <<<<<<< HEAD
+<<<<<<< HEAD
     S:=Format(TestSuiteCGIURL + '?action=%d&amp;run1id=%s&amp;run2id=%s&amp;testfileid=%s',
        [faction_show_one_test,FRunID,FCompareRunID,P.DataSet.FieldByName('Id').AsString])
   else
     S:=Format(TestSuiteCGIURL + '?action=%d&amp;run1id=%s&amp;testfileid=%s',
        [faction_show_one_test,FRunID,P.DataSet.FieldByName('Id').AsString]);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     S:=Format(TestSuiteCGIURL + '?action=3&run1id=%s&run2id=%s&testfileid=%s',
        [FRunID,FCompareRunID,P.DataSet.FieldByName('Id').AsString])
   else 

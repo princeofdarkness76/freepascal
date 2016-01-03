@@ -237,12 +237,16 @@ implementation
                     firstpass(p);
 =======
                     p:=hp;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                   end
                  else
                    begin
                      { inlining happens in pass_1 and can cause new }
                      { simplify opportunities                       }
+<<<<<<< HEAD
 <<<<<<< HEAD
                      hp:=p.simplify(true);
                      if assigned(hp) then
@@ -251,13 +255,18 @@ implementation
                          p := hp;
                          firstpass(p);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      hp:=p.simplify;
                      if assigned(hp) then
                        begin
                          p.free;
                          firstpass(hp);
                          p:=hp;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                        end;
                    end;
                  if codegenerror then

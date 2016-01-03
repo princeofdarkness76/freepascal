@@ -34,10 +34,14 @@ interface
     uses
       SysUtils,
 <<<<<<< HEAD
+<<<<<<< HEAD
       systems,globtype,globals,aasmbase,aasmtai,aasmdata,ogbase,owbase,finput;
 =======
       systems,globtype,globals,aasmbase,aasmtai,aasmdata,ogbase,finput;
 >>>>>>> graemeg/fixes_2_2
+=======
+      systems,globtype,globals,aasmbase,aasmtai,aasmdata,ogbase,finput;
+>>>>>>> origin/fixes_2_2
 
     const
        { maximum of aasmoutput lists there will be }
@@ -167,13 +171,17 @@ interface
       protected
 =======
         ioerror : boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       {input source info}
         lastfileinfo : tfileposinfo;
         infile,
         lastinfile   : tinputfile;
       {last section type written}
         lastsectype : TAsmSectionType;
+<<<<<<< HEAD
 <<<<<<< HEAD
         procedure WriteSourceLine(hp: tailineinfo);
         procedure WriteTempalloc(hp: tai_tempalloc);
@@ -184,6 +192,8 @@ interface
         Function DoPipe:boolean;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       public
 
         {# Returns the complete path and executable name of the assembler
@@ -1196,7 +1206,10 @@ Implementation
         writer.AsmCreate(cut_normal);
 =======
         AsmCreate(cut_normal);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         FillChar(lastfileinfo, sizeof(lastfileinfo), 0);
         lastfileinfo.line := -1;
         lastinfile := nil;
@@ -1488,10 +1501,14 @@ Implementation
             ObjData.SetSection(ObjData.StabsSec);
             ObjData.Writebytes(stab,sizeof(TObjStabEntry)-4);
 <<<<<<< HEAD
+<<<<<<< HEAD
             ObjData.Writereloc(stab.nvalue,4,relocsym,RELOC_ABSOLUTE32);
 =======
             ObjData.Writereloc(stab.nvalue,4,relocsym,RELOC_ABSOLUTE);
 >>>>>>> graemeg/fixes_2_2
+=======
+            ObjData.Writereloc(stab.nvalue,4,relocsym,RELOC_ABSOLUTE);
+>>>>>>> origin/fixes_2_2
             ObjData.setsection(oldsec);
           end;
         if assigned(pendquote) then
@@ -1580,11 +1597,14 @@ Implementation
                      Tai_align_abstract(hp).fillsize:=Tai_align_abstract(hp).aligntype;
                      ObjData.alloc(Tai_align_abstract(hp).fillsize);
 <<<<<<< HEAD
+<<<<<<< HEAD
                      { may need to increase alignment of section }
                      if tai_align_abstract(hp).aligntype>ObjData.CurrObjSec.secalign then
                        ObjData.CurrObjSec.secalign:=tai_align_abstract(hp).aligntype;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                    end
                  else
                    Tai_align_abstract(hp).fillsize:=0;
@@ -1624,6 +1644,7 @@ Implementation
                    begin
                      objsym:=Objdata.SymbolRef(tai_const(hp).sym);
 <<<<<<< HEAD
+<<<<<<< HEAD
                      { objsym already defined and there is endsym? }
                      if assigned(objsym.objsection) and assigned(tai_const(hp).endsym) then
                        begin
@@ -1643,17 +1664,23 @@ Implementation
                                Tai_const(hp).value:=objsymend.address-objsym.address+Tai_const(hp).symofs;
                            end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      if assigned(tai_const(hp).endsym) then
                        begin
                          objsymend:=Objdata.SymbolRef(tai_const(hp).endsym);
                          if objsymend.objsection<>objsym.objsection then
                            internalerror(200404124);
                          Tai_const(hp).value:=objsymend.address-objsym.address+Tai_const(hp).symofs;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                        end;
                    end;
                  ObjData.alloc(tai_const(hp).size);
                end;
+<<<<<<< HEAD
 <<<<<<< HEAD
              ait_directive:
                begin
@@ -1717,6 +1744,8 @@ Implementation
                end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
              ait_section:
                begin
                  ObjData.CreateSection(Tai_section(hp).sectype,Tai_section(hp).name^,Tai_section(hp).secorder);
@@ -1807,15 +1836,20 @@ Implementation
              ait_const:
                begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                  { Recalculate relative symbols }
 =======
                  { Recalculate relative symbols, all checks are done in treepass0 }
 >>>>>>> graemeg/fixes_2_2
+=======
+                 { Recalculate relative symbols, all checks are done in treepass0 }
+>>>>>>> origin/fixes_2_2
                  if assigned(tai_const(hp).sym) and
                     assigned(tai_const(hp).endsym) then
                    begin
                      objsym:=Objdata.SymbolRef(tai_const(hp).sym);
                      objsymend:=Objdata.SymbolRef(tai_const(hp).endsym);
+<<<<<<< HEAD
 <<<<<<< HEAD
                      if objsymend.objsection<>objsym.objsection then
                        begin
@@ -1828,6 +1862,9 @@ Implementation
 =======
                      Tai_const(hp).value:=objsymend.address-objsym.address+Tai_const(hp).symofs;
 >>>>>>> graemeg/fixes_2_2
+=======
+                     Tai_const(hp).value:=objsymend.address-objsym.address+Tai_const(hp).symofs;
+>>>>>>> origin/fixes_2_2
                    end;
                  ObjData.alloc(tai_const(hp).size);
                end;
@@ -1857,6 +1894,7 @@ Implementation
              ait_cutobject :
                if SmartAsm then
                 break;
+<<<<<<< HEAD
 <<<<<<< HEAD
              ait_directive :
                begin
@@ -1917,6 +1955,8 @@ Implementation
                end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            end;
            hp:=Tai(hp.next);
          end;
@@ -1927,6 +1967,7 @@ Implementation
     function TInternalAssembler.TreePass2(hp:Tai):Tai;
       var
         fillbuffer : tfillbuffer;
+<<<<<<< HEAD
 <<<<<<< HEAD
         leblen : byte;
         lebbuf : array[0..63] of byte;
@@ -1968,6 +2009,8 @@ Implementation
         fillchar(zerobuf,sizeof(zerobuf),0);
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef x86}
         co : comp;
 {$endif x86}
@@ -1976,7 +2019,10 @@ Implementation
         objsym,
         objsymend : TObjSymbol;
       begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         { main loop }
         while assigned(hp) do
          begin
@@ -2083,18 +2129,24 @@ Implementation
                  { Recalculate relative symbols, addresses of forward references
                    can be changed in treepass1 }
 <<<<<<< HEAD
+<<<<<<< HEAD
                  relative_reloc:=false;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                  if assigned(tai_const(hp).sym) and
                     assigned(tai_const(hp).endsym) then
                    begin
                      objsym:=Objdata.SymbolRef(tai_const(hp).sym);
                      objsymend:=Objdata.SymbolRef(tai_const(hp).endsym);
 <<<<<<< HEAD
+<<<<<<< HEAD
                      relative_reloc:=(objsym.objsection<>objsymend.objsection);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                      Tai_const(hp).value:=objsymend.address-objsym.address+Tai_const(hp).symofs;
                    end;
                  case tai_const(hp).consttype of
@@ -2110,10 +2162,13 @@ Implementation
                           not assigned(tai_const(hp).endsym) then
                          ObjData.writereloc(Tai_const(hp).symofs,tai_const(hp).size,Objdata.SymbolRef(tai_const(hp).sym),RELOC_ABSOLUTE)
 <<<<<<< HEAD
+<<<<<<< HEAD
                        else if relative_reloc then
                          ObjData.writereloc(ObjData.CurrObjSec.size+tai_const(hp).size-objsym.address+tai_const(hp).symofs,tai_const(hp).size,objsymend,RELOC_RELATIVE)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                        else
                          ObjData.writebytes(Tai_const(hp).value,tai_const(hp).size);
                      end;
@@ -2124,16 +2179,21 @@ Implementation
                          ObjData.writereloc(Tai_const(hp).symofs,sizeof(longint),Objdata.SymbolRef(tai_const(hp).sym),RELOC_RVA)
                        else
 <<<<<<< HEAD
+<<<<<<< HEAD
                          ObjData.writereloc(Tai_const(hp).symofs,sizeof(pint),Objdata.SymbolRef(tai_const(hp).sym),RELOC_RVA);
 =======
                          ObjData.writereloc(Tai_const(hp).symofs,sizeof(aint),Objdata.SymbolRef(tai_const(hp).sym),RELOC_RVA);
 >>>>>>> graemeg/fixes_2_2
+=======
+                         ObjData.writereloc(Tai_const(hp).symofs,sizeof(aint),Objdata.SymbolRef(tai_const(hp).sym),RELOC_RVA);
+>>>>>>> origin/fixes_2_2
                      end;
                    aitconst_secrel32_symbol :
                      begin
                        { Required for DWARF2 support under Windows }
                        ObjData.writereloc(Tai_const(hp).symofs,sizeof(longint),Objdata.SymbolRef(tai_const(hp).sym),RELOC_SECREL32);
                      end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef i8086}
                    aitconst_farptr :
@@ -2162,6 +2222,8 @@ Implementation
                      ObjData.writereloc(Tai_const(hp).symofs,sizeof(longint),Objdata.SymbolRef(tai_const(hp).sym),RELOC_GOTOFF);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                    aitconst_uleb128bit,
                    aitconst_sleb128bit :
                      begin
@@ -2214,6 +2276,7 @@ Implementation
                if SmartAsm then
                 break;
 <<<<<<< HEAD
+<<<<<<< HEAD
              ait_weak:
                begin
                  objsym:=ObjData.symbolref(tai_weak(hp).sym^);
@@ -2239,6 +2302,8 @@ Implementation
 {$endif DISABLE_WIN64_SEH}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            end;
            hp:=Tai(hp.next);
          end;

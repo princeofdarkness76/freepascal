@@ -65,6 +65,7 @@ TYPE
   IdeaCryptData = TIdeaCryptData;
   
 <<<<<<< HEAD
+<<<<<<< HEAD
 PROCEDURE EnKeyIdea(UserKey: TIdeacryptkey; OUT z: TIDEAKey);
 PROCEDURE DeKeyIdea(z: TIDEAKey; OUT dk: TIDEAKey);
 PROCEDURE CipherIdea(Input: TIDEACryptData; OUT outdata: TIDEACryptData; z: TIDEAKey);
@@ -73,20 +74,29 @@ PROCEDURE EnKeyIdea(UserKey: TIdeacryptkey; VAR z: TIDEAKey);
 PROCEDURE DeKeyIdea(z: TIDEAKey; VAR dk: TIDEAKey);
 PROCEDURE CipherIdea(Input: TIDEACryptData; VAR outdata: TIDEACryptData; z: TIDEAKey);
 >>>>>>> graemeg/fixes_2_2
+=======
+PROCEDURE EnKeyIdea(UserKey: TIdeacryptkey; VAR z: TIDEAKey);
+PROCEDURE DeKeyIdea(z: TIDEAKey; VAR dk: TIDEAKey);
+PROCEDURE CipherIdea(Input: TIDEACryptData; VAR outdata: TIDEACryptData; z: TIDEAKey);
+>>>>>>> origin/fixes_2_2
 
 Type
   EIDEAError = Class(EStreamError);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   { TIDEAStream }
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   TIDEAStream = Class(TOwnerStream)
   Private
     FKey    : TIDEAKey;
     FData   : TIDEACryptData;
     FBufpos : Byte;
+<<<<<<< HEAD
 <<<<<<< HEAD
     FPos    : Int64;
   Protected
@@ -104,6 +114,8 @@ Type
   public
     Constructor Create(Const AKey : String; Dest: TStream); overload;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FPos    : Longint;
   Public
     Constructor Create(AKey : TIDEAKey; Dest: TStream);
@@ -112,13 +124,17 @@ Type
 
   TIDEAEncryptStream = Class(TIDEAStream)
   public
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Destructor Destroy; override;
     function Write(const Buffer; Count: Longint): Longint; override;
     function Seek(Offset: Longint; Origin: Word): Longint; override;
     procedure Flush;
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   { TIDEADeCryptStream }
 
@@ -128,11 +144,16 @@ Type
     function Read(var Buffer; Count: Longint): Longint; override;
     function Seek(const Offset: int64; Origin: TSeekOrigin): int64; override;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   TIDEADeCryptStream = Class(TIDEAStream)
   public
     function Read(var Buffer; Count: Longint): Longint; override;
     function Seek(Offset: Longint; Origin: Word): Longint; override;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
 Implementation
@@ -140,9 +161,12 @@ Implementation
 Const
   SNoSeekAllowed  = 'Seek not allowed on encryption streams';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrEmptyKey    = 'String Key may not be empty';
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 PROCEDURE mul(VAR a:Word; b: Word);
 VAR p: LongInt;
@@ -188,10 +212,14 @@ BEGIN
 END;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 PROCEDURE EnKeyIdea(userkey: ideacryptkey; OUT z: ideakey);
 =======
 PROCEDURE EnKeyIdea(userkey: ideacryptkey; VAR z: ideakey);
 >>>>>>> graemeg/fixes_2_2
+=======
+PROCEDURE EnKeyIdea(userkey: ideacryptkey; VAR z: ideakey);
+>>>>>>> origin/fixes_2_2
 VAR zi,i,j: integer;
 BEGIN
   FOR j := 0 TO 7 DO z[j] := userkey[j];
@@ -207,10 +235,14 @@ BEGIN
 END;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 PROCEDURE DeKeyIdea(z: IDEAKey; OUT dk: ideakey);
 =======
 PROCEDURE DeKeyIdea(z: IDEAKey; VAR dk: ideakey);
 >>>>>>> graemeg/fixes_2_2
+=======
+PROCEDURE DeKeyIdea(z: IDEAKey; VAR dk: ideakey);
+>>>>>>> origin/fixes_2_2
 VAR j: Integer;
     t1,t2,t3: Word;
     p: IDEAKey;
@@ -257,10 +289,14 @@ BEGIN
 END;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 PROCEDURE CipherIdea(input: ideacryptdata; OUT outdata: ideacryptdata; z:IDEAkey);
 =======
 PROCEDURE CipherIdea(input: ideacryptdata; VAR outdata: ideacryptdata; z:IDEAkey);
 >>>>>>> graemeg/fixes_2_2
+=======
+PROCEDURE CipherIdea(input: ideacryptdata; VAR outdata: ideacryptdata; z:IDEAkey);
+>>>>>>> origin/fixes_2_2
 VAR x1, x2, x3, x4, t1, t2: Word;
     r: Integer;
     zi: Integer;
@@ -302,10 +338,14 @@ END;
   
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Constructor TIDEAStream.Create(AKey : TIDEAKey; Dest: TStream);
 =======
 Constructor TIDEAStream.Create(AKey : ideakey; Dest: TStream);
 >>>>>>> graemeg/fixes_2_2
+=======
+Constructor TIDEAStream.Create(AKey : ideakey; Dest: TStream);
+>>>>>>> origin/fixes_2_2
 
 begin
   inherited Create(Dest);
@@ -314,6 +354,7 @@ begin
   Fpos:=0;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TIDEAStream.GetPosition: Int64;
 begin
@@ -343,10 +384,13 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { ---------------------------------------------------------------------
     TIDEAEncryptStream
   ---------------------------------------------------------------------}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 constructor TIDEAEncryptStream.Create(Const AKey: String; Dest: TStream);
 
@@ -362,6 +406,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Destructor TIDEAEncryptStream.Destroy;
 
 
@@ -425,10 +471,14 @@ begin
     Result := FPos
   else
 <<<<<<< HEAD
+<<<<<<< HEAD
     InvalidSeek;
 =======
     Raise EIDEAError.Create(SNoSeekAllowed);
 >>>>>>> graemeg/fixes_2_2
+=======
+    Raise EIDEAError.Create(SNoSeekAllowed);
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -436,6 +486,7 @@ end;
     TIDEADecryptStream
   ---------------------------------------------------------------------}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 constructor TIDEADeCryptStream.Create(const AKey: String; Dest: TStream);
 
@@ -451,6 +502,8 @@ begin
 end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 function TIDEADeCryptStream.Read(var Buffer; Count: Longint): Longint;
 
@@ -495,12 +548,15 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TIDEADeCryptStream.Seek(const Offset: int64; Origin: TSeekOrigin): int64;
 
 begin
   FakeSeekForward(Offset,Origin,fpos);
   Result:=FPos; // FPos updated by read
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TIDEADeCryptStream.Seek(Offset: Longint; Origin: Word): Longint;
 
 Var Buffer : Array[0..1023] of byte;
@@ -518,7 +574,10 @@ begin
       end
   else
     Raise EIDEAError.Create(SNoSeekAllowed);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 END.

@@ -15,10 +15,14 @@
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   ExitSave: codepointer;
 =======
   ExitSave: pointer;
 >>>>>>> graemeg/fixes_2_2
+=======
+  ExitSave: pointer;
+>>>>>>> origin/fixes_2_2
 
 const
   firstCallOfInitGraph: boolean = true;
@@ -52,10 +56,14 @@ const
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   tinttable = array[0..16382] of smallint;
 =======
   tinttable = array[0..16383] of smallint;
 >>>>>>> graemeg/fixes_2_2
+=======
+  tinttable = array[0..16383] of smallint;
+>>>>>>> origin/fixes_2_2
   pinttable = ^tinttable;
 
   WordArray = Array [0..StdbufferSize] Of word;
@@ -107,10 +115,14 @@ var
   CurrentTextInfo : TextSettingsType;
   CurrentXRatio, CurrentYRatio: graph_float;
 <<<<<<< HEAD
+<<<<<<< HEAD
   installedfonts: smallint;  { Number of installed fonts }
 =======
   installedfonts: longint;  { Number of installed fonts }
 >>>>>>> graemeg/fixes_2_2
+=======
+  installedfonts: longint;  { Number of installed fonts }
+>>>>>>> origin/fixes_2_2
 
 
   StartXViewPort: smallint; { absolute }
@@ -125,6 +137,7 @@ var
   ArcCall: ArcCoordsType;   { Information on the last call to Arc or Ellipse }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
   PNewModelist = ^TNewModeList;
@@ -142,6 +155,8 @@ type
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
 
   { ******************** HARDWARE INFORMATION ********************* }
@@ -496,10 +511,14 @@ var
                     if LinePatterns[PixelCount and 15] = TRUE then
                       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                         DirectPutPixel(x1,PixelCount);
 =======
                     DirectPutPixel(x1,PixelCount);
 >>>>>>> graemeg/fixes_2_2
+=======
+                    DirectPutPixel(x1,PixelCount);
+>>>>>>> origin/fixes_2_2
                       end;
               end
             else
@@ -624,10 +643,14 @@ var
                   if LinePatterns[i and 15] = TRUE then
                     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                       DirectPutPixel(x,y);
 =======
                           DirectPutPixel(x,y);
 >>>>>>> graemeg/fixes_2_2
+=======
+                          DirectPutPixel(x,y);
+>>>>>>> origin/fixes_2_2
                     end;
              if d < 0 then
                  begin
@@ -866,6 +889,7 @@ var
            CurrentColor := OldCurrentColor;
          end;
 <<<<<<< HEAD
+<<<<<<< HEAD
       $ff:
         begin
           OldCurrentColor := CurrentColor;
@@ -874,11 +898,16 @@ var
           CurrentColor := OldCurrentColor;
         end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
        $ff:
          begin
            HLine(x1-StartXViewPort,x2-StartXViewPort,y-StartYViewPort);
          end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        else
          begin
            { number of times to go throuh the 8x8 pattern }
@@ -887,6 +916,7 @@ var
              Begin
                for j:=0 to 7 do
                     Begin
+<<<<<<< HEAD
 <<<<<<< HEAD
                     { x1 mod 8 }
                     if RevBitArray[x1 and 7] and TmpFillPattern <> 0 then
@@ -906,6 +936,8 @@ var
                         DirectPutPixel(x1,y);
                         CurrentColor := OldCurrentColor;
 =======
+=======
+>>>>>>> origin/fixes_2_2
                             { x1 mod 8 }
                     if RevBitArray[x1 and 7] and TmpFillPattern <> 0 then
                        DirectPutpixel(x1,y)
@@ -918,11 +950,15 @@ var
                             CurrentColor := CurrentBkColor;
                             DirectPutPixel(x1,y);
                             CurrentColor := OldCurrentColor;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                       end;
                     Inc(x1);
                     if x1 > x2 then
                      begin
+<<<<<<< HEAD
 <<<<<<< HEAD
                        CurrentWriteMode := OldWriteMode;
                        exit;
@@ -930,6 +966,10 @@ var
                            CurrentWriteMode := OldWriteMode;
                            exit;
 >>>>>>> graemeg/fixes_2_2
+=======
+                           CurrentWriteMode := OldWriteMode;
+                           exit;
+>>>>>>> origin/fixes_2_2
                      end;
                    end;
              end;
@@ -940,10 +980,15 @@ var
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+
+>>>>>>> origin/fixes_2_2
   procedure LineRel(Dx, Dy: smallint);
 
    Begin
@@ -966,6 +1011,7 @@ var
 
   procedure Rectangle(x1,y1,x2,y2:smallint);
 <<<<<<< HEAD
+<<<<<<< HEAD
    var
      tmp: smallint;
    begin
@@ -985,6 +1031,10 @@ var
 
    begin
 >>>>>>> graemeg/fixes_2_2
+=======
+
+   begin
+>>>>>>> origin/fixes_2_2
      { Do not draw the end points }
      Line(x1,y1,x2-1,y1);
      Line(x1,y1+1,x1,y2);
@@ -1185,10 +1235,14 @@ end;
 Procedure DefaultPutImage(X,Y: smallint; var Bitmap; BitBlt: Word); {$ifndef fpc}far;{$endif fpc}
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   pt = array[0..{$ifdef cpu16}16382{$else}$fffffff{$endif}] of word;
 =======
   pt = array[0..$fffffff] of word;
 >>>>>>> graemeg/fixes_2_2
+=======
+  pt = array[0..$fffffff] of word;
+>>>>>>> origin/fixes_2_2
   ptw = array[0..2] of longint;
 var
   k: longint;
@@ -1255,10 +1309,14 @@ end;
 Procedure DefaultGetImage(X1,Y1,X2,Y2: smallint; Var Bitmap); {$ifndef fpc}far;{$endif fpc}
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   pt = array[0..{$ifdef cpu16}16382{$else}$fffffff{$endif}] of word;
 =======
   pt = array[0..$fffffff] of word;
 >>>>>>> graemeg/fixes_2_2
+=======
+  pt = array[0..$fffffff] of word;
+>>>>>>> origin/fixes_2_2
   ptw = array[0..2] of longint;
 var
   i,j: smallint;
@@ -1337,10 +1395,13 @@ end;
   procedure OutTextXYDefault(x,y : smallint;const TextString : string);forward;
   procedure CircleDefault(X, Y: smallint; Radius:Word);forward;
 <<<<<<< HEAD
+<<<<<<< HEAD
   procedure SetBkColorDefault(ColorNum: Word);forward;
   function GetBkColorDefault: Word;forward;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$i palette.inc}
 
@@ -1380,10 +1441,13 @@ end;
     OuttextXY := {$ifdef fpc}@{$endif}OuttextXYDefault;
     Circle := {$ifdef fpc}@{$endif}CircleDefault;
 <<<<<<< HEAD
+<<<<<<< HEAD
     SetBkColor := {$ifdef fpc}@{$endif}SetBkColorDefault;
     GetBkColor := {$ifdef fpc}@{$endif}GetBkColorDefault;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   Procedure InitVars;
@@ -1449,10 +1513,14 @@ end;
      if (LineInfo.Thickness = NormWidth) then
        CurrentWriteMode := NormalPut;}
 <<<<<<< HEAD
+<<<<<<< HEAD
      InternalEllipse(X,Y,Radius,(longint(Radius)*XAspect) div YAspect,StAngle,Endangle,{$ifdef fpc}@{$endif}DummyPatternLine);
 =======
      InternalEllipse(X,Y,Radius,Radius,StAngle,Endangle,{$ifdef fpc}@{$endif}DummyPatternLine);
 >>>>>>> graemeg/fixes_2_2
+=======
+     InternalEllipse(X,Y,Radius,Radius,StAngle,Endangle,{$ifdef fpc}@{$endif}DummyPatternLine);
+>>>>>>> origin/fixes_2_2
 {     CurrentWriteMode := OldWriteMode;}
    end;
 
@@ -1671,6 +1739,7 @@ end;
           y2:=y;
        end;
 <<<<<<< HEAD
+<<<<<<< HEAD
      if x1>x2 then
        begin
           y:=x1;
@@ -1679,6 +1748,8 @@ end;
        end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
      { Always copy mode for Bars }
      origwritemode := CurrentWriteMode;
@@ -1722,6 +1793,7 @@ var
  OldX, OldY : smallint;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if x1 > x2 then
   begin
     OldX := x1;
@@ -1737,6 +1809,8 @@ begin
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   origwritemode := CurrentWriteMode;
   CurrentWriteMode := CopyPut;
   Bar(x1,y1,x2,y2);
@@ -1789,6 +1863,7 @@ end;
    end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   function GetBkColorDefault: Word;
 
    Begin
@@ -1798,6 +1873,8 @@ end;
 
   procedure SetBkColorDefault(ColorNum: Word);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   function GetBkColor: Word;
 
    Begin
@@ -1806,7 +1883,10 @@ end;
 
 
   procedure SetBkColor(ColorNum: Word);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { Background color means background screen color in this case, and it is  }
   { INDEPENDANT of the viewport settings, so we must clear the whole screen }
   { with the color.                                                         }
@@ -1975,11 +2055,15 @@ end;
      CurrentTextInfo.vert:=TopText;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      {fix by nickysn: TP7 doesn't reset aspect ratio in GraphDefaults }
      {XAspect:=10000; YAspect:=10000;}
 =======
      XAspect:=10000; YAspect:=10000;
 >>>>>>> graemeg/fixes_2_2
+=======
+     XAspect:=10000; YAspect:=10000;
+>>>>>>> origin/fixes_2_2
    end;
 
 
@@ -2020,6 +2104,7 @@ end;
     type
       ppointtype = ^pointtype;
 <<<<<<< HEAD
+<<<<<<< HEAD
       pt = array[0..8190] of pointtype;
     var
       i, j, LastPolygonStart: longint;
@@ -2058,6 +2143,8 @@ end;
           Closing := false;
       end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       pt = array[0..16000] of pointtype;
     var
       i : longint;
@@ -2072,17 +2159,24 @@ end;
              pt(polypoints)[i].y,
              pt(polypoints)[i+1].x,
              pt(polypoints)[i+1].y);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
 
 
   procedure PieSlice(X,Y,stangle,endAngle:smallint;Radius: Word);
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     Sector(x,y,stangle,endangle,radius,(longint(Radius)*XAspect) div YAspect);
 =======
     Sector(x,y,stangle,endangle,radius,radius);
 >>>>>>> graemeg/fixes_2_2
+=======
+    Sector(x,y,stangle,endangle,radius,radius);
+>>>>>>> origin/fixes_2_2
   end;
 
 {$i fills.inc}
@@ -2238,12 +2332,16 @@ end;
     list: PModeInfo;
     tmp : PModeInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
     newList: PNewModeList;
     newTmp : PNewModeList;
     c: smallint;
 =======
     c: longint;
 >>>>>>> graemeg/fixes_2_2
+=======
+    c: longint;
+>>>>>>> origin/fixes_2_2
   begin
    { restore old exitproc! }
    exitproc := exitsave;
@@ -2265,6 +2363,7 @@ end;
    for c := lowNewDriver to highNewDriver do
      begin
 <<<<<<< HEAD
+<<<<<<< HEAD
        newList := newModeList.modeinfo[c];
        while assigned(newList) do
          begin
@@ -2272,13 +2371,18 @@ end;
            newList:=newList^.next;
            dispose(newTmp);
 =======
+=======
+>>>>>>> origin/fixes_2_2
        list := newModeList.modeinfo[c];
        while assigned(list) do
          begin
            tmp := list;
            list:=list^.next;
            dispose(tmp);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          end;
      end;
 {$IFDEF DPMI}

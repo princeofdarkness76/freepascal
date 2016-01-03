@@ -30,15 +30,21 @@ implicitunits=exeinfo \
 units=system objpas macpas iso7185 strings watcom dos crt objects \
 =======
 units=system objpas macpas strings watcom dos crt objects \
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       cpu charset types getopts heaptrc lnfodwrf lineinfo ctypes fgl \
       math typinfo mmx ucomplex \
       varutils variants sysutils
 implicitunits=exeinfo
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 # dpmiexcp initc ports profile dxeload emu387 \
 # printer graph classes \
@@ -203,14 +209,20 @@ rtlconst$(PPUEXT) : $(OBJPASDIR)/rtlconst.pp
 sysconst$(PPUEXT) : $(OBJPASDIR)/sysconst.pp objpas$(PPUEXT)
         $(COMPILER) $(OBJPASDIR)/sysconst.pp
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 dateutil$(PPUEXT) : $(OBJPASDIR)/dateutil.pp
         $(COMPILER) -Fi$(OBJPASDIR) $(OBJPASDIR)/dateutil.pp
 convutil$(PPUEXT) : $(OBJPASDIR)/convutil.pp
         $(COMPILER) -Fi$(OBJPASDIR) $(OBJPASDIR)/convutil.pp
 strutils$(PPUEXT) : $(OBJPASDIR)/strutils.pp
         $(COMPILER) $(OBJPASDIR)/strutils.pp
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 #
 # Mac Pascal Model

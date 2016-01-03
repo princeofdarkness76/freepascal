@@ -4,9 +4,12 @@
 {$goto on}
 {$inline on}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$interfaces corba}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { This reduces the memory requirements a lot }
 {$PACKENUM 1}
@@ -101,10 +104,13 @@
   {$define cpuflags}
   {$define cputargethasfixedstack}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$define cpurefshaveindexreg}
   {$define SUPPORT_SAFECALL}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif sparc}
 
 {$ifdef powerpc}
@@ -125,11 +131,14 @@
   {$define cputargethasfixedstack}
   {$define cpumm}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$define cpurox}
   {$define cpurefshaveindexreg}
   {$define cpuno32bitops}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif powerpc64}
 
 {$ifdef arm}
@@ -141,6 +150,7 @@
   {$define cpuneedsdivhelper}
   {$define cpurox}
   {$define cputargethasfixedstack}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$define cpurefshaveindexreg}
   {$define cpucapabilities}
@@ -164,6 +174,8 @@
   {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif arm}
 
 {$ifdef m68k}
@@ -334,5 +346,8 @@
 
 {$if not defined(cpui386) and defined(i386)}
 {$error Cross-compiling from non-i386 to i386 is not yet supported at this time }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif}

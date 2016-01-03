@@ -7,6 +7,7 @@
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
 {  Pascal Translation Update:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, 2009 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
@@ -33,6 +34,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  {	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
  
 {
@@ -41,7 +44,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -51,12 +57,17 @@
 unit CVPixelFormatDescription;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -70,14 +81,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -86,11 +102,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -128,6 +147,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -135,6 +156,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -360,6 +382,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -368,7 +392,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -395,9 +422,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -408,6 +439,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes, CFArray, CFBase, CFDictionary, CVPixelBuffer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -434,6 +466,8 @@ uses MacTypes, CFArray, CFBase, CFDictionary, CVPixelBuffer;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -441,6 +475,7 @@ uses MacTypes, CFArray, CFBase, CFDictionary, CVPixelBuffer;
 
 { The canonical name for the format.  This should bethe same as the codec name you'd use in QT }
 var kCVPixelFormatName: CFStringRef; external name '_kCVPixelFormatName'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 
@@ -461,6 +496,8 @@ var kCVPixelFormatFourCC: CFStringRef; external name '_kCVPixelFormatFourCC'; (*
 var kCVPixelFormatContainsAlpha: CFStringRef; external name '_kCVPixelFormatContainsAlpha'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_7,__IPHONE_4_3) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 { QuickTime/QuickDraw Pixel Format Type constant (OSType) }
@@ -474,17 +511,24 @@ var kCVPixelFormatCodecType: CFStringRef; external name '_kCVPixelFormatCodecTyp
 { This is the equivalent Microsoft FourCC code for this pixel format }
 var kCVPixelFormatFourCC: CFStringRef; external name '_kCVPixelFormatFourCC'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { All buffers have one or more image planes.  Each plane may contain a single or an interleaved set of components }   
 { For simplicity sake, pixel formats that are not planar may place the required format keys at the top
    level dictionary. }
 var kCVPixelFormatPlanes: CFStringRef; external name '_kCVPixelFormatPlanes'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 { The following keys describe the requirements/layout of a a single image plane. }
 
@@ -502,6 +546,7 @@ var kCVPixelFormatPlanes: CFStringRef; external name '_kCVPixelFormatPlanes'; (*
 { Values assumed to 1 be one if not present }
 var kCVPixelFormatBlockWidth: CFStringRef; external name '_kCVPixelFormatBlockWidth'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 var kCVPixelFormatBlockHeight: CFStringRef; external name '_kCVPixelFormatBlockHeight'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
@@ -510,20 +555,30 @@ var kCVPixelFormatBlockHeight: CFStringRef; external name '_kCVPixelFormatBlockH
 var kCVPixelFormatBlockHeight: CFStringRef; external name '_kCVPixelFormatBlockHeight'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kCVPixelFormatBlockHeight: CFStringRef; external name '_kCVPixelFormatBlockHeight'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 { This value must be present.  For simple pixel formats this will be equivalent to the traditional 
    bitsPerPixel value. }
 var kCVPixelFormatBitsPerBlock: CFStringRef; external name '_kCVPixelFormatBitsPerBlock'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 { Used to state requirements on block multiples.  v210 would be '8' here for the horizontal case, 
    to match the standard v210 row alignment value of 48.
    These may be assumed as 1 if not present. }
 var kCVPixelFormatBlockHorizontalAlignment: CFStringRef; external name '_kCVPixelFormatBlockHorizontalAlignment'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 var kCVPixelFormatBlockVerticalAlignment: CFStringRef; external name '_kCVPixelFormatBlockVerticalAlignment'; (* attribute const *)
@@ -565,6 +620,8 @@ var kCVPixelFormatHorizontalSubsampling: CFStringRef; external name '_kCVPixelFo
 var kCVPixelFormatVerticalSubsampling: CFStringRef; external name '_kCVPixelFormatVerticalSubsampling'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 var kCVPixelFormatBlockVerticalAlignment: CFStringRef; external name '_kCVPixelFormatBlockVerticalAlignment'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -574,11 +631,15 @@ var kCVPixelFormatHorizontalSubsampling: CFStringRef; external name '_kCVPixelFo
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 var kCVPixelFormatVerticalSubsampling: CFStringRef; external name '_kCVPixelFormatVerticalSubsampling'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { If present, these two keys describe the OpenGL format and type enums you would use to describe this
    image plane to OpenGL }
 var kCVPixelFormatOpenGLFormat: CFStringRef; external name '_kCVPixelFormatOpenGLFormat'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 var kCVPixelFormatOpenGLType: CFStringRef; external name '_kCVPixelFormatOpenGLType'; (* attribute const *)
@@ -604,6 +665,8 @@ var kCVPixelFormatOpenGLESCompatibility: CFStringRef; external name '_kCVPixelFo
 (* __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_5_0) *)
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 var kCVPixelFormatOpenGLType: CFStringRef; external name '_kCVPixelFormatOpenGLType'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -623,7 +686,10 @@ var kCVPixelFormatCGImageCompatibility: CFStringRef; external name '_kCVPixelFor
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 var kCVPixelFormatOpenGLCompatibility: CFStringRef; external name '_kCVPixelFormatOpenGLCompatibility'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { This callback routine implements code to handle the functionality of CVPixelBufferFillExtendedPixels.  
    For custom pixel formats where you will never need to use that call, this is not required. }
@@ -637,6 +703,7 @@ type
 
 { The value for this key is a CFData containing a CVFillExtendedPixelsCallBackData struct }
 var kCVPixelFormatFillExtendedPixelsCallback: CFStringRef; external name '_kCVPixelFormatFillExtendedPixelsCallback'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 
@@ -670,6 +737,8 @@ procedure CVPixelFormatDescriptionRegisterDescriptionWithPixelFormatType( descri
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 { Create a description of a pixel format from a provided OSType }
@@ -686,4 +755,7 @@ procedure CVPixelFormatDescriptionRegisterDescriptionWithPixelFormatType( descri
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

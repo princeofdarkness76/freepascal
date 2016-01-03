@@ -89,6 +89,7 @@ end;
 procedure TCustomFixedLengthExporter.BuildDefaultFieldMap(AMap: TExportFields);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Const
   // Mapping to TFieldType
   FieldWidths : Array[TFieldType] of integer =
@@ -135,6 +136,8 @@ Const
     {ftWideMemo} 0
     );
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {  TFieldType = (ftUnknown, ftString, ftSmallint, ftInteger, ftWord,
     ftBoolean, ftFloat, ftCurrency, ftBCD, ftDate,  ftTime, ftDateTime,
     ftBytes, ftVarBytes, ftAutoInc, ftBlob, ftMemo, ftGraphic, ftFmtMemo,
@@ -152,7 +155,10 @@ Const
                   0,0,0,0,0,
                   0,0,0,0,0,
                   0,0,0,0,0,0);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 Var
   I,W : Integer;

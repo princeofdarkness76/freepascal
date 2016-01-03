@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 type
   bg_scroll = record
@@ -657,6 +658,8 @@ end;
 
 {$endif NDS_IMPLEMENTATION}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: background.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -753,4 +756,7 @@ function CHAR_BASE_BLOCK_SUB(n: cint): cint; inline;
 function SCREEN_BASE_BLOCK(n: cint): cint; inline;
 function SCREEN_BASE_BLOCK_SUB(n: cint): cint; inline;
 {$endif NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

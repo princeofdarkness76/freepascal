@@ -672,6 +672,7 @@ procedure VarArrayRedim(var A: Variant; HighBound: SizeInt);
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure VarArrayPut(var A: Variant; const Value: Variant; const Indices: array of Longint);
   begin
     if Length(Indices)>0 then
@@ -680,12 +681,18 @@ procedure VarArrayPut(var A: Variant; const Value: Variant; const Indices: array
   begin
     if Length(Indices)>0 then 
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure VarArrayPut(var A: Variant; const Value: Variant; const Indices: array of SizeInt);
+  begin
+    if Length(Indices)>0 then 
+>>>>>>> origin/fixes_2_2
       variantmanager.vararrayput(A, Value, Length(Indices), @Indices[0])
     else
       variantmanager.vararrayput(A, Value, 0, nil);
   end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function VarArrayGet(const A: Variant; const Indices: array of Longint): Variant;
   begin
@@ -697,6 +704,8 @@ function VarArrayGet(const A: Variant; const Indices: array of Longint): Variant
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function VarArrayGet(const A: Variant; const Indices: array of SizeInt): Variant;
   begin
     if Length(Indices)>0 then 
@@ -706,7 +715,10 @@ function VarArrayGet(const A: Variant; const Indices: array of SizeInt): Variant
   end;
   
  
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure VarCast(var dest : variant;const source : variant;vartype : longint);
 
   begin
@@ -870,6 +882,7 @@ operator :=(const source : olevariant) dest : extended;{$ifdef SYSTEMINLINE}inli
 operator :=(const source : olevariant) dest : comp;{$ifdef SYSTEMINLINE}inline;{$endif}
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPUNONE}
     dest:=comp(variantmanager.vartoint64(variant(tvardata(source))));
 {$else}
@@ -878,6 +891,9 @@ operator :=(const source : olevariant) dest : comp;{$ifdef SYSTEMINLINE}inline;{
 =======
     dest:=comp(variantmanager.vartoreal(variant(tvardata(source))));
 >>>>>>> graemeg/fixes_2_2
+=======
+    dest:=comp(variantmanager.vartoreal(variant(tvardata(source))));
+>>>>>>> origin/fixes_2_2
   end;
 {$endif SUPPORT_COMP}
 

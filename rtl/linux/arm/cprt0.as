@@ -104,6 +104,7 @@ _haltproc:
         b _haltproc
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         .globl  _haltproc_eabi
         .type   _haltproc_eabi,#function
 _haltproc_eabi:
@@ -115,6 +116,8 @@ _haltproc_eabi:
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         /* Define a symbol for the first piece of initialized data.  */
         .data
         .globl __data_start

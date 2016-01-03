@@ -598,12 +598,16 @@
 'movsxd',
 'cqo',
 'cmpxchg16b',
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 'movntss',
 'movntsd',
 'insertq',
 'extrq',
 'lzcnt',
+<<<<<<< HEAD
 <<<<<<< HEAD
 'pabsb',
 'pabsw',
@@ -1114,4 +1118,7 @@
 =======
 'popcnt'
 >>>>>>> graemeg/fixes_2_2
+=======
+'popcnt'
+>>>>>>> origin/fixes_2_2
 );

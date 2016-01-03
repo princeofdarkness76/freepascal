@@ -6,10 +6,14 @@
 @---------------------------------------------------------------------------------
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	.equ	_libnds_argv,0x02FFFE70
 =======
 	.equ	_libnds_argv,	0x027FFF70
 >>>>>>> graemeg/fixes_2_2
+=======
+	.equ	_libnds_argv,	0x027FFF70
+>>>>>>> origin/fixes_2_2
 
 @---------------------------------------------------------------------------------
 	.section ".init"
@@ -22,6 +26,7 @@ _start:
 @---------------------------------------------------------------------------------
 	mov	r0, #0x04000000			@ IME = 0;
 	str	r0, [r0, #0x208]
+<<<<<<< HEAD
 <<<<<<< HEAD
 	
 	@ set sensible stacks to allow bios call
@@ -39,6 +44,8 @@ _start:
 	ldr	r3,=__libnds_mpu_setup
 	blx	r3
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 @---------------------------------------------------------------------------------
 @ turn the power on for M3
@@ -155,7 +162,10 @@ _start:
 	ldr	r1,= (1<<18) | (1<<16) | (1<<12) | (1<<2) | (1<<0)
 	orr	r0,r0,r1
 	mcr	p15, 0, r0, c1, c0, 0
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 	mov	r0, #0x12		@ Switch to IRQ Mode
 	msr	cpsr, r0
@@ -170,14 +180,19 @@ _start:
 	ldr	sp, =__sp_usr		@ Set user stack
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ldr	r1, =__itcm_lma		@ Copy instruction tightly coupled memory (itcm section) from LMA to VMA
 =======
 	ldr	r1, =__itcm_lma		@ Copy instruction tightly coupled memory (itcm section) from LMA to VMA (ROM to RAM)
 >>>>>>> graemeg/fixes_2_2
+=======
+	ldr	r1, =__itcm_lma		@ Copy instruction tightly coupled memory (itcm section) from LMA to VMA (ROM to RAM)
+>>>>>>> origin/fixes_2_2
 	ldr	r2, =__itcm_start
 	ldr	r4, =__itcm_end
 	bl	CopyMemCheck
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	ldr     r1, =__vectors_lma              @ Copy reserved vectors area (itcm section) from LMA to VMA
 	ldr     r2, =__vectors_start
@@ -189,6 +204,9 @@ _start:
 =======
 	ldr	r1, =__dtcm_lma		@ Copy data tightly coupled memory (dtcm section) from LMA to VMA (ROM to RAM)
 >>>>>>> graemeg/fixes_2_2
+=======
+	ldr	r1, =__dtcm_lma		@ Copy data tightly coupled memory (dtcm section) from LMA to VMA (ROM to RAM)
+>>>>>>> origin/fixes_2_2
 	ldr	r2, =__dtcm_start
 	ldr	r4, =__dtcm_end
 	bl	CopyMemCheck
@@ -196,12 +214,17 @@ _start:
 	bl	checkARGV					@	check and process argv trickery
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ldr	r0, =__bss_start__	@ Clear BSS section
 	ldr	r1, =__bss_end__
 =======
 	ldr	r0, =__bss_start	@ Clear BSS section
 	ldr	r1, =__bss_end
 >>>>>>> graemeg/fixes_2_2
+=======
+	ldr	r0, =__bss_start	@ Clear BSS section
+	ldr	r1, =__bss_end
+>>>>>>> origin/fixes_2_2
 	sub	r1, r1, r0
 	bl	ClearMem
 
@@ -210,8 +233,11 @@ _start:
 	sub	r1, r1, r0
 	bl	ClearMem
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 	ldr	r1, =fake_heap_end	@ set heap end
 	ldr	r0, =__eheap_end
@@ -223,7 +249,10 @@ _start:
 	ldr	r3,	=initSystem
 	blx	r3	@	jump to user code
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	ldr	r0,	=_libnds_argv
 
 	@ reset heap base
@@ -231,6 +260,7 @@ _start:
 	ldr	r1,=fake_heap_start
 	str	r2,[r1]
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	ldr	r1, =fake_heap_end	@ set heap end
 	sub	r8,r8,#0xc000
@@ -251,6 +281,8 @@ _start:
 	ldr	lr,=__libnds_exit
 	bx	r3			@ jump to user code
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	ldr	r1, [r0,#16]            @ argv
 	ldr	r0, [r0,#12]            @ argc
 
@@ -265,7 +297,10 @@ _start:
 	bx	r1
 ILoop:
 	b	ILoop
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 @---------------------------------------------------------------------------------
 @ check for a commandline
@@ -278,17 +313,23 @@ checkARGV:
 	str	r1, [r0,#16]            @ clear argv
  	  	 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ldr	r3, [r0]		@ argv magic number
 	ldr	r2, =0x5f617267		@ '_arg'
 	cmp	r3, r2
 	strne	r1,[r0,#20]
   bxne	lr                      @ bail out if no magic
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	ldr	r1, [r0]                @ argv magic number
 	ldr	r2, =0x5f617267         @ '_arg'
 	cmp	r1, r2
 	bxne	lr                      @ bail out if no magic
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 	ldr	r1, [r0, #4]            @ command line address
 	ldr	r2, [r0, #8]            @ length of command line

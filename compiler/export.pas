@@ -74,11 +74,14 @@ type
   procedure exportprocsym(sym: tsym; const s : string; index: longint; options: word);
   procedure exportvarsym(sym: tsym; const s : string; index: longint; options: word);
 <<<<<<< HEAD
+<<<<<<< HEAD
   { to export symbols not directly related to a tsym (e.g., the Objective-C
     rtti) }
   procedure exportname(const s : string; options: word);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   procedure exportallprocdefnames(sym: tprocsym; pd: tprocdef; options: word);
   procedure exportallprocsymnames(ps: tprocsym; options: word);
@@ -129,6 +132,7 @@ procedure exportvarsym(sym: tsym; const s : string; index: longint; options: wor
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure exportname(const s : string; options: word);
   begin
     exportvarsym(nil,s,0,options);
@@ -137,6 +141,8 @@ procedure exportname(const s : string; options: word);
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   procedure exportallprocdefnames(sym: tprocsym; pd: tprocdef; options: word);
     var
       item: TCmdStrListItem;

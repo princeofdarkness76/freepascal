@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -64,6 +65,8 @@ var
 
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Type
   PWndProcRegEntry = ^TWndProcRegEntry;
   TWndProcRegEntry = Record
@@ -81,11 +84,15 @@ Var
   I : Integer;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   I := Length(WndProcRegistry);
   SetLength(WndProcRegistry, I + 1);
   WndProcRegistry[I].WindowHandle := AWindowHandle;
   WndProcRegistry[I].Handler := AHandler;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -164,6 +171,8 @@ begin
   FillChar(wc, SizeOf(wc), 0);
   wc.style := CS_DBLCLKS{ or CS_HREDRAW or CS_VREDRAW};
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure WndProcRemove(AWindowHandle : HWND);
@@ -240,7 +249,10 @@ Begin
   LOG('registering window class');
   FillChar(wc, SizeOf(wc), 0);
   wc.style := CS_DBLCLKS{ Or CS_HREDRAW Or CS_VREDRAW};
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   wc.lpfnWndProc := @WinCEWindowProc;
   wc.cbClsExtra := 0;
   wc.cbWndExtra := 0;
@@ -248,6 +260,7 @@ Begin
   wc.hIcon := 0; { not supported by WinCE }
   wc.hCursor := 0;
   wc.hbrBackground := 0;
+<<<<<<< HEAD
 <<<<<<< HEAD
   wc.lpszMenuName := nil;
   wc.lpszClassName := PWideChar(AClassName);
@@ -260,6 +273,8 @@ Begin
   With Rectangle do
   begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
   wc.lpszMenuName := Nil;
   wc.lpszClassName := PWideChar(AClassName);
   ClassAtom := RegisterClassW(@wc);
@@ -270,11 +285,15 @@ Begin
 
   With Rectangle Do
   Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     left := 0;
     top := 0;
     right := AWidth;
     bottom := AHeight;
+<<<<<<< HEAD
 <<<<<<< HEAD
   end;
   if not AdjustWindowRectEx(@Rectangle, AStyle, False, AExStyle) then
@@ -284,6 +303,11 @@ Begin
   If Not AdjustWindowRectEx(@Rectangle, AStyle, False, AExStyle) Then
     Raise TPTCError.Create('could not AdjustWindowRectEx');
 >>>>>>> graemeg/fixes_2_2
+=======
+  End;
+  If Not AdjustWindowRectEx(@Rectangle, AStyle, False, AExStyle) Then
+    Raise TPTCError.Create('could not AdjustWindowRectEx');
+>>>>>>> origin/fixes_2_2
 
   X := AX;
   Y := AY;
@@ -297,6 +321,7 @@ Begin
 			     X, Y, Width, Height,
 			     0, 0, 0,
 			     AData);
+<<<<<<< HEAD
 <<<<<<< HEAD
   if (FWindow = 0) or not IsWindow(FWindow) then
     raise TPTCError.Create('could not create window');
@@ -347,6 +372,8 @@ begin
   end;
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   If (FWindow = 0) Or Not IsWindow(FWindow) Then
     Raise TPTCError.Create('could not create window');
   LOG('installing window message handler');
@@ -395,4 +422,7 @@ Begin
     DispatchMessage(@Message);
   End;
 End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

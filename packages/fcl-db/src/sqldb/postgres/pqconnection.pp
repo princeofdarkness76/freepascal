@@ -89,8 +89,11 @@ type
     FConnectString       : string;
     FIntegerDateTimes    : boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FVerboseErrors       : Boolean;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     function TranslateFldType(res : PPGresult; Tuple : integer; var Size : integer) : TFieldType;
     procedure ExecuteDirectPG(const Query : String);
 >>>>>>> graemeg/fixes_2_2
@@ -132,6 +135,7 @@ type
     procedure RollBackRetaining(trans : TSQLHandle); override;
     procedure UpdateIndexDefs(IndexDefs : TIndexDefs;TableName : string); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure LoadBlobIntoBuffer(FieldDef: TFieldDef;ABlobBuf: PBufBlobField; cursor: TSQLCursor;ATransaction : TSQLTransaction); override;
     function RowsAffected(cursor: TSQLCursor): TRowsCount; override;
     function GetSchemaInfoSQL(SchemaType : TSchemaType; SchemaObjectName, SchemaPattern : string) : string; override;
@@ -141,6 +145,11 @@ type
     procedure LoadBlobIntoBuffer(FieldDef: TFieldDef;ABlobBuf: PBufBlobField; cursor: TSQLCursor;ATransaction : TSQLTransaction); override;
     function RowsAffected(cursor: TSQLCursor): TRowsCount; override;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function GetSchemaInfoSQL(SchemaType : TSchemaType; SchemaObjectName, SchemaPattern : string) : string; override;
+    procedure LoadBlobIntoBuffer(FieldDef: TFieldDef;ABlobBuf: PBufBlobField; cursor: TSQLCursor;ATransaction : TSQLTransaction); override;
+    function RowsAffected(cursor: TSQLCursor): TRowsCount; override;
+>>>>>>> origin/fixes_2_2
   public
     constructor Create(AOwner : TComponent); override;
     destructor Destroy; override;
@@ -171,10 +180,14 @@ type
 implementation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses math, strutils, FmtBCD;
 =======
 uses math, strutils;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses math, strutils;
+>>>>>>> origin/fixes_2_2
 
 ResourceString
   SErrRollbackFailed = 'Rollback transaction failed';
@@ -188,9 +201,12 @@ ResourceString
 const Oid_Bool     = 16;
       Oid_Bytea    = 17;
 <<<<<<< HEAD
+<<<<<<< HEAD
       Oid_char     = 18;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       Oid_Text     = 25;
       Oid_Oid      = 26;
       Oid_Name     = 19;
@@ -299,6 +315,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FConnOptions := FConnOptions + [sqSupportParams, sqSupportEmptyDatabaseName, sqEscapeRepeat, sqEscapeSlash, sqImplicitTransaction,sqSupportReturning];
   FieldNameQuoteChars:=DoubleQuotes;
   VerboseErrors:=True;
@@ -330,6 +347,9 @@ begin
 =======
   FConnOptions := FConnOptions + [sqSupportParams] + [sqEscapeRepeat] + [sqEscapeSlash] + [sqQuoteFieldnames];
 >>>>>>> graemeg/fixes_2_2
+=======
+  FConnOptions := FConnOptions + [sqSupportParams] + [sqEscapeRepeat] + [sqEscapeSlash] + [sqQuoteFieldnames];
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TPQConnection.CreateDB;
@@ -664,7 +684,10 @@ begin
 // This does only work for pg>=8.0, so timestamps won't work with earlier versions of pg which are compiled with integer_datetimes on
   if PQparameterStatus<>nil then
     FIntegerDatetimes := pqparameterstatus(FSQLDatabaseHandle,'integer_datetimes') = 'on';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TPQConnection.DoInternalDisconnect;
@@ -706,6 +729,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 procedure TPQConnection.CheckResultError(var res: PPGresult; conn: PPGconn;
   ErrMsg: string);
 
@@ -802,6 +826,13 @@ begin
   Size := 0;
   case PQftype(res,Tuple) of
 >>>>>>> graemeg/fixes_2_2
+=======
+function TPQConnection.TranslateFldType(res : PPGresult; Tuple : integer; var Size : integer) : TFieldType;
+var li : longint;
+begin
+  Size := 0;
+  case PQftype(res,Tuple) of
+>>>>>>> origin/fixes_2_2
     Oid_varchar,Oid_bpchar,
     Oid_name               : begin
                              Result := ftstring;
@@ -813,6 +844,7 @@ begin
                                  size := dsMaxStringSize
                                else
 <<<<<<< HEAD
+<<<<<<< HEAD
                                  size := (li-VARHDRSZ) and $FFFF;
                                end;
                              if size > MaxSmallint then size := MaxSmallint;
@@ -820,13 +852,18 @@ begin
 //    Oid_text               : Result := ftstring;
     Oid_text,Oid_JSON      : Result := ftMemo;
 =======
+=======
+>>>>>>> origin/fixes_2_2
                                  size := (li-4) and $FFFF;
                                end;
                              if size > dsMaxStringSize then size := dsMaxStringSize;
                              end;
 //    Oid_text               : Result := ftstring;
     Oid_text               : Result := ftBlob;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Oid_Bytea              : Result := ftBlob;
     Oid_oid                : Result := ftInteger;
     Oid_int8               : Result := ftLargeInt;
@@ -848,6 +885,7 @@ begin
                                size := 4 // No information about the size available, use the maximum value
                              else
                              // The precision is the high 16 bits, the scale the
+<<<<<<< HEAD
 <<<<<<< HEAD
                              // low 16 bits with an offset of sizeof(int32).
                                begin
@@ -874,12 +912,17 @@ begin
                              Size := 39;
                              end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
                              // low 16 bits. Both with an offset of 4.
                              // In this case we need the scale:
                                size := (li-4) and $FFFF;
                              end;
     Oid_Money              : Result := ftCurrency;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Oid_Unknown            : Result := ftUnknown;
   else
     Result:=ftUnknown;
@@ -1288,6 +1331,7 @@ var ar  : array of pchar;
 >>>>>>> origin/cpstrnew
     s   : string;
 <<<<<<< HEAD
+<<<<<<< HEAD
     lengths,formats : array of integer;
     ParamNames,
     ParamValues : array of string;
@@ -1314,6 +1358,9 @@ var ar  : array of pchar;
 =======
     ParamNames,ParamValues : array of string;
 >>>>>>> graemeg/fixes_2_2
+=======
+    ParamNames,ParamValues : array of string;
+>>>>>>> origin/fixes_2_2
 
 begin
   with cursor as TPQCursor do
@@ -1351,6 +1398,7 @@ begin
           case AParams[i].DataType of
             ftDateTime:
 <<<<<<< HEAD
+<<<<<<< HEAD
               s := FormatDateTime('yyyy"-"mm"-"dd hh":"nn":"ss.zzz', AParams[i].AsDateTime);
             ftDate:
               s := FormatDateTime('yyyy"-"mm"-"dd', AParams[i].AsDateTime);
@@ -1367,6 +1415,8 @@ begin
             ftFmtBCD:
               s := BCDToStr(AParams[i].AsFMTBCD, FSQLFormatSettings);
 =======
+=======
+>>>>>>> origin/fixes_2_2
               s := FormatDateTime('yyyy-mm-dd hh:nn:ss', AParams[i].AsDateTime);
             ftDate:
               s := FormatDateTime('yyyy-mm-dd', AParams[i].AsDateTime);
@@ -1374,7 +1424,10 @@ begin
               s := FormatDateTime('hh:nn:ss', AParams[i].AsDateTime);
             ftFloat, ftCurrency:
               Str(AParams[i].AsFloat, s);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             else
               s := AParams[i].AsString;
           end; {case}
@@ -1431,6 +1484,7 @@ begin
       TPQTrans(aTransaction.Handle).RegisterCursor(Cursor as TPQCursor);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(AParams) and (AParams.Count > 0) then
         begin
         setlength(ParamNames,AParams.Count);
@@ -1455,6 +1509,8 @@ begin
 
 =======
 =======
+=======
+>>>>>>> origin/fixes_2_2
       if Assigned(AParams) and (AParams.count > 0) then
         begin
         setlength(ParamNames,AParams.Count);
@@ -1468,7 +1524,10 @@ begin
         end
       else
         s := Statement;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       res := pqexec(tr.PGConn,pchar(s));
       if (PQresultStatus(res) in [PGRES_COMMAND_OK,PGRES_TUPLES_OK]) then
         begin
@@ -1521,6 +1580,7 @@ begin
     for i := 0 to nFields-1 do
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       fieldtype := TranslateFldType(Res, i,size, aoid );
       FD:=FieldDefs.Add(FieldDefs.MakeNameUnique(PQfname(Res, i)),fieldtype,Size,False,I+1) as TSQLDBFieldDef;
       With FD do
@@ -1532,6 +1592,8 @@ begin
         B:=B or (aOID>0);
         end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       fieldtype := TranslateFldType(Res, i,size);
       with TFieldDef.Create(FieldDefs, FieldDefs.MakeNameUnique(PQfname(Res, i)), fieldtype,size, False, (i + 1)) do
         FieldBinding[FieldNo-1] := i;
@@ -1805,10 +1867,14 @@ begin
           begin
           dbl := pointer(buffer);
 <<<<<<< HEAD
+<<<<<<< HEAD
           dbl^ := BEtoN(PInt64(CurrBuff)^) / 100;
 =======
           dbl^ := BEtoN(PInteger(CurrBuff)^) / 100;
 >>>>>>> graemeg/fixes_2_2
+=======
+          dbl^ := BEtoN(PInteger(CurrBuff)^) / 100;
+>>>>>>> origin/fixes_2_2
           end;
         ftBoolean:
           pchar(buffer)[0] := CurrBuff[0];
@@ -1961,11 +2027,37 @@ begin
                           'a.atttypmod              as column_length, '+
                           'not a.attnotnull         as column_nullable '+
                         'from '+
+<<<<<<< HEAD
+=======
+                          'pg_class '+
+                        'where '+
+                          'relkind=''r''' +
+                        'order by relname';
+    stColumns    : s := 'select '+
+                          'a.attnum                 as recno, '+
+                          '''''                     as catalog_name, '+
+                          '''''                     as schema_name, '+
+                          'c.relname                as table_name, '+
+                          'a.attname                as column_name, '+
+                          '0                        as column_position, '+
+                          '0                        as column_type, '+
+                          '0                        as column_datatype, '+
+                          '''''                     as column_typename, '+
+                          '0                        as column_subtype, '+
+                          '0                        as column_precision, '+
+                          '0                        as column_scale, '+
+                          'a.atttypmod              as column_length, '+
+                          'not a.attnotnull         as column_nullable '+
+                        'from '+
+>>>>>>> origin/fixes_2_2
                           ' pg_class c, pg_attribute a '+
                         'WHERE '+
                         // This can lead to problems when case-sensitive tablenames are used.
                           '(c.oid=a.attrelid) and (a.attnum>0) and (not a.attisdropped) and (upper(c.relname)=''' + Uppercase(SchemaObjectName) + ''') ' +
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                         'order by a.attname';
   else
     s := inherited;
@@ -2003,6 +2095,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TPQConnection.GetConnectionInfo(InfoType: TConnInfoType): string;
 begin
   Result:='';
@@ -2032,6 +2125,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { TPQConnectionDef }
 
 class function TPQConnectionDef.TypeName: String;

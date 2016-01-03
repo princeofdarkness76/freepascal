@@ -49,6 +49,7 @@ end;
 
 var
   dlexitproc: pointer;
+<<<<<<< HEAD
 
 var
   dlexitproc : pointer;
@@ -56,6 +57,8 @@ var
 {$ifdef FPC_PIC}
 function fpc_geteipasebxlocal : pointer; [external name 'fpc_geteipasebx'];
 {$endif}
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure _FPC_proc_start; assembler; nostackframe; public name '_start';
 asm
@@ -154,6 +157,8 @@ asm
 =======
   movl    %edx, dlexitproc
 
+  movl    %edx, dlexitproc
+
   fninit                           { initialize fpu }
   fwait
   fldcw   Default8087CW
@@ -245,6 +250,7 @@ asm
 
 .Lhaltproc:
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef FPC_PIC}
         call  fpc_geteipasebx
 <<<<<<< HEAD
@@ -266,6 +272,9 @@ asm
 =======
   movl    dlexitproc,%eax
 >>>>>>> graemeg/fixes_2_2
+=======
+  movl    dlexitproc,%eax
+>>>>>>> origin/fixes_2_2
   testl   %eax,%eax
   je      .Lnodlexitproc
   call    *%eax

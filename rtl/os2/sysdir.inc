@@ -346,7 +346,10 @@ begin
             if dir[i] in AllowDirectorySeparators then
               dir[i]:=DirectorySeparator;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
             dir[0]:=char(i);
 >>>>>>> graemeg/fixes_2_2
             inc(i);

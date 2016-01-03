@@ -24,6 +24,7 @@ Const
 Type
   TFPMKUnitDep=record
 <<<<<<< HEAD
+<<<<<<< HEAD
     package  : string[12];
     reqver   : string[8];
     undef    : string[32];
@@ -34,16 +35,28 @@ Type
     reqver  : string[8];
     undef   : string[16];
 >>>>>>> graemeg/fixes_2_2
+=======
+    package : string[12];
+    reqver  : string[8];
+    undef   : string[16];
+>>>>>>> origin/fixes_2_2
   end;
 
 Const
   CmdLinePackageName='<cmdline>';
   CurrentDirPackageName='<currentdir>';
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   // Dependencies for compiling the fpmkunit unit
   FPMKUnitDepDefaultCount=4;
   FPMKUnitDepsDefaults : array[0..FPMKUnitDepDefaultCount-1] of TFPMKUnitDep = (
+=======
+
+  // Dependencies for compiling the fpmkunit unit
+  FPMKUnitDepCount=4;
+  FPMKUnitDeps : array[1..4] of TFPMKUnitDep = (
+>>>>>>> origin/fixes_2_2
     (package: 'hash';
      reqver : '2.2.2';
      undef  : 'NO_UNIT_ZIPPER'),
@@ -59,6 +72,7 @@ Const
   );
 
 Type
+<<<<<<< HEAD
   TLogLevel = (vlError,vlWarning,vlInfo,vlCommands,vlDebug,vlProgres);
   TLogLevels = Set of TLogLevel;
 
@@ -94,6 +108,15 @@ const
   AllLogLevels = [vlError,vlWarning,vlCommands,vlInfo];
 
 >>>>>>> graemeg/fixes_2_2
+=======
+  TLogLevel = (vlError,vlWarning,vlInfo,vlCommands,vlDebug);
+  TLogLevels = Set of TLogLevel;
+
+const
+  DefaultLogLevels = [vlError,vlWarning];
+  AllLogLevels = [vlError,vlWarning,vlCommands,vlInfo];
+
+>>>>>>> origin/fixes_2_2
 type
   EPackagerError = class(Exception);
 
@@ -114,20 +137,28 @@ procedure BackupFile(const AFileName: String);
 Procedure DeleteDir(const ADir:string);
 Procedure SearchFiles(SL:TStringList;const APattern:string);
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function GetCompilerInfo(const ACompiler,AOptions:string):string; overload;
 Procedure GetCompilerInfo(const ACompiler, AOptions: string; out AVersion: string; out ACPU: TCpu; out aOS:TOS); overload;
 =======
 Function GetCompilerInfo(const ACompiler,AOptions:string):string;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function GetCompilerInfo(const ACompiler,AOptions:string):string;
+>>>>>>> origin/fixes_2_2
 function IsSuperUser:boolean;
 
 var
   LogLevels : TLogLevels;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FPMKUnitDeps : array of TFPMKUnitDep;
 =======
   FPMKUnitDepAvailable : array[1..FPMKUnitDepCount] of boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+  FPMKUnitDepAvailable : array[1..FPMKUnitDepCount] of boolean;
+>>>>>>> origin/fixes_2_2
 
 
 Implementation
@@ -162,14 +193,20 @@ end;
 function FPPkgGetApplicationName:string;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   result:='fppkg';
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef unix}
   result:='fppkg';
 {$else}
   result:='Packages'
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -409,6 +446,7 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure GetCompilerInfo(const ACompiler, AOptions: string; out AVersion: string; out ACPU: TCpu; out aOS:TOS); overload;
 var
   infosl: TStringList;
@@ -425,6 +463,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function IsSuperUser:boolean;
 begin
 {$ifdef unix}

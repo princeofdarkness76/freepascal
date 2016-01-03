@@ -77,8 +77,11 @@ interface
         { General purpose instructions }
         procedure maybeadjustresult(list: TAsmList; op: TOpCg; size: tcgsize; dst: tregister);
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure a_op_const_reg(list:TAsmList;Op:TOpCG;size:tcgsize;a:tcgint;reg:TRegister);override;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         procedure a_op_const_reg(list:TAsmList;Op:TOpCG;size:tcgsize;a:aint;reg:TRegister);override;
 >>>>>>> graemeg/fixes_2_2
         procedure a_op_reg_reg(list:TAsmList;Op:TOpCG;size:TCGSize;src, dst:TRegister);override;
@@ -110,6 +113,7 @@ interface
         procedure g_proc_entry(list : TAsmList;localsize : longint;nostackframe:boolean);override;
         procedure g_proc_exit(list : TAsmList;parasize:longint;nostackframe:boolean);override;
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure g_maybe_got_init(list: TAsmList); override;
         procedure g_restore_registers(list:TAsmList);override;
         procedure g_save_registers(list : TAsmList);override;
@@ -125,6 +129,10 @@ interface
         procedure g_restore_registers(list:TAsmList);override;
         procedure g_save_registers(list : TAsmList);override;
 >>>>>>> graemeg/fixes_2_2
+=======
+        procedure g_restore_registers(list:TAsmList);override;
+        procedure g_save_registers(list : TAsmList);override;
+>>>>>>> origin/fixes_2_2
         procedure g_concatcopy(list : TAsmList;const source,dest : treference;len : aint);override;
         procedure g_concatcopy_unaligned(list : TAsmList;const source,dest : treference;len : aint);override;
         procedure g_concatcopy_move(list : TAsmList;const source,dest : treference;len : aint);
@@ -713,6 +721,7 @@ implementation
            case tosize of
              OS_8 :
 <<<<<<< HEAD
+<<<<<<< HEAD
                list.concat(taicpu.op_reg_const_reg(A_AND,reg1,$ff,reg2));
              OS_16 :
                begin
@@ -724,6 +733,11 @@ implementation
              OS_16 :
                a_op_const_reg_reg(list,OP_AND,tosize,$ffff,reg1,reg2);
 >>>>>>> graemeg/fixes_2_2
+=======
+               a_op_const_reg_reg(list,OP_AND,tosize,$ff,reg1,reg2);
+             OS_16 :
+               a_op_const_reg_reg(list,OP_AND,tosize,$ffff,reg1,reg2);
+>>>>>>> origin/fixes_2_2
              OS_32,
              OS_S32 :
                begin
@@ -924,8 +938,11 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TCgSparc.a_op_const_reg(list:TAsmList;Op:TOpCG;size:tcgsize;a:tcgint;reg:TRegister);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure TCgSparc.a_op_const_reg(list:TAsmList;Op:TOpCG;size:tcgsize;a:aint;reg:TRegister);
 >>>>>>> graemeg/fixes_2_2
       begin
@@ -946,7 +963,10 @@ implementation
 =======
           handle_reg_const_reg(list,TOpCG2AsmOp[op],reg,a,reg);
         maybeadjustresult(list,op,size,reg);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -994,7 +1014,10 @@ implementation
         end;
         handle_reg_const_reg(list,TOpCG2AsmOp[op],src,a,dst);
         maybeadjustresult(list,op,size,dst);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -1617,7 +1640,10 @@ implementation
             href.refaddr := addr_low;
             list.concat(taicpu.op_reg_ref_reg(A_OR,NR_G1,href,NR_G1));
             list.concat(taicpu.op_reg(A_JMP,NR_G1));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           end;
         { Delay slot }
         list.Concat(TAiCpu.Op_none(A_NOP));

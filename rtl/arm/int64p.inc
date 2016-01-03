@@ -63,8 +63,11 @@ asm
   ldmfd sp!,{r4,r5,r6,r15}
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif (not defined(CPUTHUMB)) and defined(CPUARM_HAS_UMULL)}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 >>>>>>> graemeg/fixes_2_2
 

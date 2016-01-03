@@ -1,8 +1,12 @@
 (* 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   $Id: nds.inc 25 2007-12-10 21:06:46Z p4p3r0 $
 >>>>>>> graemeg/fixes_2_2
+=======
+  $Id: nds.inc 25 2007-12-10 21:06:46Z p4p3r0 $
+>>>>>>> origin/fixes_2_2
   ------------------------------------------------------------------------------
   	Copyright (C) 2005
   		Jason Rogers (dovoto)
@@ -55,15 +59,21 @@
   ------------------------------------------------------------------------------
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   $Log$
 
 *)
 *
 *
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef NDS_INC}
 {$define NDS_INC}
 
@@ -84,6 +94,7 @@
 {$include helper.inc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$include jtypes.inc} // testing...
 {$include ndstypes.inc} // testing...
 {$include bios.inc}
@@ -94,12 +105,18 @@
 {$include bios.inc}
 {$include card.inc}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$include jtypes.inc}
+{$include bios.inc}
+{$include card.inc}
+>>>>>>> origin/fixes_2_2
 {$include dma.inc}
 {$include interrupts.inc}
 {$include ipc.inc}
 {$include memory.inc}
 {$include system.inc}
 {$include timers.inc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$include fifocommon.inc}
 {$include touch.inc}
@@ -109,12 +126,15 @@
 {$include linkedlist.inc} // testing...
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifdef ARM9}
   {$include arm9/background.inc}
   {$include arm9/boxtest.inc}
   {$include arm9/cache.inc}
   {$include arm9/console.inc}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$include arm9/decompress.inc}
   {$include arm9/exceptions.inc}
@@ -144,6 +164,8 @@
   {$include arm9/video.inc}
   {$include arm9/videoGL.inc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$include arm9/exceptions.inc}
   {$include arm9/image.inc}
   {$include arm9/input.inc}
@@ -156,16 +178,22 @@
   {$include arm9/video.inc}
   {$include arm9/videoGL.inc}
   {$include arm9/sprite.inc}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif ARM9}
 
 {$ifdef ARM7}
   {$include arm7/audio.inc}
   {$include arm7/clock.inc}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$include arm7/input.inc}  
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$include arm7/serial.inc}
   {$include arm7/touch.inc}
 {$endif ARM7}

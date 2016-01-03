@@ -26,7 +26,10 @@ interface
 <<<<<<< HEAD
 =======
 {$goto on}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$TYPEDADDRESS on}
 
 {$if defined(win32) or defined(wince)}
@@ -473,7 +476,10 @@ begin
     inc(allocsize,sizeof(ptruint));
 =======
     inc(allocsize,sizeof(ptrint));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { if ReturnNilIfGrowHeapFails is true
     SysGetMem can return nil }
   p:=SysGetMem(allocsize);
@@ -524,7 +530,10 @@ begin
 {$else FPC_SUPPORTS_UNALIGNED}
       pl^:=$DEADBEEF;
 {$endif FPC_SUPPORTS_UNALIGNED}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   { clear the memory }
   fillchar(p^,size,#255);
@@ -544,7 +553,10 @@ begin
        if (bp<oldbp) or (bp>(StackBottom + StackLength)) then
          break;
      end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   { insert in the linked list }
   if loc_info^.heap_mem_root<>nil then
@@ -924,7 +936,10 @@ begin
 {$else FPC_SUPPORTS_UNALIGNED}
       pl^:=$DEADBEEF;
 {$endif FPC_SUPPORTS_UNALIGNED}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   { adjust like a freemem and then a getmem, so you get correct
     results in the summary display }
@@ -946,7 +961,10 @@ begin
        if (bp<oldbp) or (bp>(StackBottom + StackLength)) then
          break;
      end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { regenerate signature }
   if usecrc then
     pp^.sig:=calculate_sig(pp);
@@ -1047,8 +1065,11 @@ begin
   { allow all between start of code and end of bss }
   if ptruint(p)<=bss_end then
 <<<<<<< HEAD
+<<<<<<< HEAD
     exit;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     goto _exit;
 >>>>>>> graemeg/fixes_2_2
   { stack can be above heap !! }
@@ -1118,10 +1139,14 @@ begin
   // then it is a valid one
   if area_for(p) <> B_ERROR then
 <<<<<<< HEAD
+<<<<<<< HEAD
     exit;
 =======
     goto _exit;
 >>>>>>> graemeg/fixes_2_2
+=======
+    goto _exit;
+>>>>>>> origin/fixes_2_2
 {$endif BEOS}
 
   { first try valid list faster }

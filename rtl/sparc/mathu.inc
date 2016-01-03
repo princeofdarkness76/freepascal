@@ -43,10 +43,13 @@ function SetRoundMode(const RoundMode: TFPURoundingMode): TFPURoundingMode;
     cw: dword;
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     cw:=get_fsr;
     result:=TFPURoundingMode(cw shr 30);
     set_fsr((cw and $3fffffff) or (dword(RoundMode) shl 30));
 =======
+=======
+>>>>>>> origin/fixes_2_2
     case (RoundMode) of
       rmNearest :
         softfloat_rounding_mode := float_round_nearest_even;

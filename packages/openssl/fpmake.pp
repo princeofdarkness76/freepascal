@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('openssl');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ShortName:='ossl';
     P.Description := 'Interface units for OpenSSL libraries supporting SSL-encrypted network communication.';
 {$ifdef ALLPACKAGES}
@@ -30,6 +31,8 @@ begin
     P.ExamplePath.Add('examples');
     P.Targets.AddExampleProgram('test1.pas');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ALLPACKAGES}
     P.Directory:='openssl';
 {$endif ALLPACKAGES}
@@ -38,7 +41,10 @@ begin
 //    P.Dependencies.Add('x11');
 
     T:=P.Targets.AddUnit('openssl.pas');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

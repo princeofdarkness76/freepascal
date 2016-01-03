@@ -3,10 +3,14 @@ program av;
 {$ifdef mswindows}{$apptype console}{$endif}
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
  {$ifdef FPC}{$ifdef unix}cthreads,{$ifdef darwin}iosxwstr{$else}cwstring{$endif},{$endif}{$endif}sysutils;
 =======
  {$ifdef FPC}{$ifdef unix}cthreads,cwstring,{$endif}{$endif}sysutils;
 >>>>>>> graemeg/fixes_2_2
+=======
+ {$ifdef FPC}{$ifdef unix}cthreads,cwstring,{$endif}{$endif}sysutils;
+>>>>>>> origin/fixes_2_2
 type
  testrecty = record
   str: widestring;

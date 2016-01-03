@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -28,10 +29,16 @@
  
      Copyright:  © 2004-2005 by Apple Computer, Inc., all rights reserved.
 >>>>>>> graemeg/fixes_2_2
+=======
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 2004-2005 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -59,6 +66,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -69,7 +78,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -79,12 +91,17 @@
 unit HIArchive;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -98,14 +115,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -114,11 +136,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -156,6 +181,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -163,6 +190,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -430,6 +458,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -438,7 +468,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -465,9 +498,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -479,6 +516,7 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFData,CFNumber,HIObject;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -486,6 +524,8 @@ uses MacTypes,CFBase,CFData,CFNumber,HIObject;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -498,6 +538,7 @@ uses MacTypes,CFBase,CFData,CFNumber,HIObject;
  *    transfer to another application. The archive is encoded using the
  *    binary property list format. The binary plist can be converted to
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    text XML with /usr/bin/plutil for development purposes. Details
  *    on how to create an object that supports the HIArchive protocol
  *    are provided in HIToolbox/HIObject.h. 
@@ -506,6 +547,11 @@ uses MacTypes,CFBase,CFData,CFNumber,HIObject;
  *    how to create an object that supports the HIArchive protocol are
  *    provided in HIToolbox/HIObject.h. 
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    text XML with /usr/bin/plutil for develoment purposes. Details on
+ *    how to create an object that supports the HIArchive protocol are
+ *    provided in HIToolbox/HIObject.h. 
+>>>>>>> origin/fixes_2_2
  *    
  *    When writing data out to an archive, the client must first use
  *    HIArchiveCreateForEncoding to generate the archive into which the
@@ -514,16 +560,22 @@ uses MacTypes,CFBase,CFData,CFNumber,HIObject;
  *    and HIArchiveEncodeCFType. If HIArchiveEncodeCFType is being
  *    called on one of your custom HIObjects, HIToolbox will send it
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    the kEventHIObjectEncode event (see HIObject.h). In order to
  *    receive this event your HIObject must first have set its
  *    archiving-ignored value to false via HIObjectSetArchivingIgnored.
  *    This lets HIToolbox know your object supports archiving. The
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    the kEventHIObjectEncode (HIOBject.h) event. In order to receive
  *    this event your HIObject must first have set its archiving
  *    ignored value to false via HIObjectSetArchivingIgnored. This lets
  *    HIToolbox know your object supports archiving. The
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *    kEventParamHIArchive parameter contains the HIArchiveRef into
  *    which it should encode all of its relevant state information. All
  *    information added to the archive is written with a key. This key
@@ -533,6 +585,7 @@ uses MacTypes,CFBase,CFData,CFNumber,HIObject;
  *    should only use this namespace if explicitly overriding a value
  *    written to the archive by the superclass. Take care to mantain
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    the same data format when overriding the default to avoid
  *    incompatibilities. When your archiving process is complete,
  *    HIArchiveCopyEncodedData will compress the data into the archive
@@ -541,6 +594,8 @@ uses MacTypes,CFBase,CFData,CFNumber,HIObject;
  *    Once the encoded data is compressed, no more data may be added to
  *    the archive. At this point, the HIArchiveRef must be released via
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    the same preference format when overriding the default to avoid
  *    incompatibilities. When your archiving process is complete,
  *    HIArchiveCopyEncodedData will compress the data into the archive
@@ -548,13 +603,17 @@ uses MacTypes,CFBase,CFData,CFNumber,HIObject;
  *    application or written out to disk for later retrieval. Once the
  *    encoded data is compressed, no more data may be added to the
  *    archive. At this point, the HIArchiveRef must be released via
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *    CFRelease. 
  *    
  *    When retrieving data from an archive, the client must first use
  *    HIArchiveCreateForDecoding to create an archive reference capable
  *    of decoding the data from the provided CFDataRef. Given the
  *    HIArchiveRef, data may be pulled from the archive via
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    HIArchiveDecodeBoolean, HIArchiveDecodeNumber, and
  *    HIArchiveCopyDecodedCFType. If HIArchiveCopyDecodedCFType is
@@ -568,6 +627,8 @@ uses MacTypes,CFBase,CFData,CFNumber,HIObject;
  *    routines. Once all data has been read from the archive, it may
  *    simply be released via CFRelease. 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    HIArchiveDecodeBoolean, HIArchiveDecodeNumber,
  *    HIArchiveCopyDecodedCFType and HIArchiveCopyDecodedHIObject. If
  *    HIArchiveCopyDecodedHIObject is called on one of you custom
@@ -580,13 +641,17 @@ uses MacTypes,CFBase,CFData,CFNumber,HIObject;
  *    breaking existing decoding routines. Once all data has been read
  *    from the archive, it may simply be released via CFRelease.
  *    
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *    
  *    For those clients who wish to provide HIArchive editing features
  *    there are a few tricks necessary to achieve the desired behavior.
  *    A generic HIArchive editor will likely be used by clients to edit
  *    objects for which it has no direct knowledge (or which have not
  *    yet been designed). For instance, it may provide users with the
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    ability to edit custom HIViews, including generic functionality
  *    to set the view's class identifier, title, frame, etc. In this
@@ -595,12 +660,17 @@ uses MacTypes,CFBase,CFData,CFNumber,HIObject;
  *    view class itself hasn't been registered within the editor.
  *    
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    ability to edit custom HIViews including generic functionality to
  *    set the view's class identifier, title, frame, etc. In this case,
  *    it is necessary to instantiate the superclass
  *    ("com.apple.hiview") of the custom view object because it doesn't
  *    exist and hasn't been registered within the editor. 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *    
  *    After the user has completed editing the object and desires to
  *    write out the archive, the editor must set the custom archive
@@ -637,6 +707,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	HIArchiveRef = ^OpaqueHIArchiveRef; { an opaque type }
 	OpaqueHIArchiveRef = record end;
 =======
@@ -654,6 +725,9 @@ type
 =======
 	HIArchiveRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	HIArchiveRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 
 {
  *  Discussion:
@@ -708,6 +782,7 @@ const
 	kHIArchiveDecodeSuperclassForUnregisteredObjects = 1 shl 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   {
    * Indicates that an archive is being decoded by an archive editor.
    * This information is passed to the object being decoded via the
@@ -720,6 +795,8 @@ const
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  HIArchiveGetTypeID()
  *  
@@ -734,10 +811,14 @@ const
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -769,10 +850,14 @@ function HIArchiveGetTypeID: CFTypeID; external name '_HIArchiveGetTypeID';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -806,10 +891,14 @@ function HIArchiveCreateForEncoding( var outEncoder: HIArchiveRef ): OSStatus; e
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -847,10 +936,14 @@ function HIArchiveEncodeBoolean( inEncoder: HIArchiveRef; inKey: CFStringRef; in
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -891,10 +984,14 @@ function HIArchiveEncodeNumber( inEncoder: HIArchiveRef; inKey: CFStringRef; inN
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -931,10 +1028,14 @@ function HIArchiveEncodeCFType( inEncoder: HIArchiveRef; inKey: CFStringRef; inC
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -975,10 +1076,14 @@ function HIArchiveCopyEncodedData( inEncoder: HIArchiveRef; var outData: CFDataR
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1011,10 +1116,14 @@ function HIArchiveCreateForDecoding( inData: CFDataRef; inOptions: OptionBits; v
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1051,10 +1160,14 @@ function HIArchiveDecodeBoolean( inDecoder: HIArchiveRef; inKey: CFStringRef; va
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1094,10 +1207,14 @@ function HIArchiveDecodeNumber( inDecoder: HIArchiveRef; inKey: CFStringRef; inN
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1105,6 +1222,7 @@ function HIArchiveCopyDecodedCFType( inDecoder: HIArchiveRef; inKey: CFStringRef
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
@@ -1116,3 +1234,6 @@ end.
 =======
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+end.
+>>>>>>> origin/fixes_2_2

@@ -44,9 +44,12 @@ units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
 rsts=math varutils variants typinfo classes dateutils sysconst convutils rtlconsts
 implicitunits=exeinfo
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [require]
 nortl=y

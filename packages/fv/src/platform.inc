@@ -32,6 +32,7 @@
 {                 - Speedsoft Sybil 2.0+    (32 Bit)       }
 {                 - FPC 0.9912+             (32 Bit)       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {       WIN64     - FPC 2.4.3               (64 Bit)       }
 {        OS2      - Virtual Pascal 1.0+     (32 Bit)       }
 {                 - C'T patch to BP         (16 Bit)       }
@@ -43,6 +44,11 @@
 {                 - C'T patch to BP         (16 Bit)       }
 {        LINUX    - FPC 0.9912+             (32 Bit)       }
 >>>>>>> graemeg/fixes_2_2
+=======
+{        OS2      - Virtual Pascal 1.0+     (32 Bit)       }
+{                 - C'T patch to BP         (16 Bit)       }
+{        LINUX    - FPC 0.9912+             (32 Bit)       }
+>>>>>>> origin/fixes_2_2
 {                                                          }
 {******************[ REVISION HISTORY ]********************}
 {  Version  Date      Who    Fix                           }
@@ -65,6 +71,7 @@
 {  1.33    16 Oct 00  LdB    WIN32/WIN16 defines added     }
 {  1.34    02 May 02  MvdV   FreeBSD, NetBSD, OS_UNIX      }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  1.35    28 Nov 10  PM     64 bit OS Linux, Win64, FreeBSD }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -81,6 +88,8 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {**********************************************************}
 
 { ****************************************************************************
@@ -111,6 +120,7 @@
 
  LINUX    OS_LINUX    FPC      PPC_FPC      PROC_Protected  BIT_32  ASM_FPC
 <<<<<<< HEAD
+<<<<<<< HEAD
  LINUX    OS_LINUX    FPC      PPC_FPC      PROC_Protected  BIT_64  ASM_FPC
           OS_UNIX
 
@@ -139,6 +149,11 @@
 
  FREEBSD  OS_FREEBSD  FPC      PPC_FPC      PROC_Protected  BIT_32  ASM_FPC
 >>>>>>> graemeg/fixes_2_2
+=======
+          OS_UNIX
+
+ FREEBSD  OS_FREEBSD  FPC      PPC_FPC      PROC_Protected  BIT_32  ASM_FPC
+>>>>>>> origin/fixes_2_2
           OS_UNIX
 
  NETBSD   OS_NETBSD   FPC      PPC_FPC      PROC_Protected  BIT_32  ASM_FPC
@@ -156,9 +171,12 @@
                       SYBIL2   PPC_SPEED    PROC_Protected  BIT_32  ASM_BP
                       FPC      PPC_FPC      PROC_Protected  BIT_32  ASM_FPC
 <<<<<<< HEAD
+<<<<<<< HEAD
  WINDOWS 64-BITS      FPC      PPC_FPC      PROC_Protected  BIT_64  ASM_FPC
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
  OS2      OS_OS2      BPOS2    PPC_BPOS2    PROC_Protected  BIT_16  ASM_BP
                       VIRTUAL  PPC_VIRTUAL  PROC_Protected  BIT_32  ASM_BP
@@ -184,6 +202,7 @@ FOR FPC THESE ARE THE TRANSLATIONS
 
  LINUX    OS_LINUX,OS_UNIX     FPC     32-bit           AT&T         ----
 <<<<<<< HEAD
+<<<<<<< HEAD
  FREEBSD  OS_FREEBSD,OS_UNIX   FPC     32-bit           AT&T         ----
  OPENBSD  OS_OPENBSD,OS_UNIX   FPC     32-bit           AT&T         ----
  NETBSD   OS_NETBSD,OS_UNIX    FPC     32-bit           AT&T         ----
@@ -191,6 +210,10 @@ FOR FPC THESE ARE THE TRANSLATIONS
  FREEBSD  OS_NETBSD,OS_UNIX    FPC     32-bit           AT&T         ----
  NETBSD   OS_FREEBSD,OS_UNIX   FPC     32-bit           AT&T         ----
 >>>>>>> graemeg/fixes_2_2
+=======
+ FREEBSD  OS_NETBSD,OS_UNIX    FPC     32-bit           AT&T         ----
+ NETBSD   OS_FREEBSD,OS_UNIX   FPC     32-bit           AT&T         ----
+>>>>>>> origin/fixes_2_2
 
  OS2      OS_OS2               FPC     ?????            AT&T         CPU86
 
@@ -201,10 +224,13 @@ FOR FPC THESE ARE THE TRANSLATIONS
  AMIGA    OS_AMIGA             FPC     32-bit           Internal     CPU68
 
 <<<<<<< HEAD
+<<<<<<< HEAD
  DRAGONFLY OS_DRAGONFLYBSD,OS_UNIX   FPC 32-bit         AT&T         ----
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  ****************************************************************************}
 
 {---------------------------------------------------------------------------}
@@ -221,9 +247,12 @@ FOR FPC THESE ARE THE TRANSLATIONS
 {---------------------------------------------------------------------------}
 {  FPC 32 BIT COMPILER changes ASM, 32 bits etc - Updated 27Aug98 LdB       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  FPC 64 BIT COMPILER added - Update 28Nov2010 PM                          }
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {---------------------------------------------------------------------------}
 {$IFDEF FPC}
   {$mode fpc}
@@ -231,6 +260,7 @@ FOR FPC THESE ARE THE TRANSLATIONS
   {$UNDEF PROC_Real}
   {$DEFINE PROC_Protected}
   {$UNDEF BIT_16}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$IFDEF CPU64}
     {$UNDEF BIT_32}
@@ -242,6 +272,9 @@ FOR FPC THESE ARE THE TRANSLATIONS
 =======
   {$DEFINE BIT_32}
 >>>>>>> graemeg/fixes_2_2
+=======
+  {$DEFINE BIT_32}
+>>>>>>> origin/fixes_2_2
   {$UNDEF PPC_BP}
   {$DEFINE PPC_FPC}
   {$UNDEF ASM_BP}
@@ -258,6 +291,7 @@ FOR FPC THESE ARE THE TRANSLATIONS
 {$IFDEF LINUX}
   {$UNDEF OS_DOS}
   {$DEFINE OS_LINUX}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$DEFINE OS_UNIX}{$ENDIF}
 
@@ -277,13 +311,18 @@ FOR FPC THESE ARE THE TRANSLATIONS
   {$UNDEF OS_DOS}
   {$DEFINE OS_OPENBSD}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$DEFINE OS_UNIX}
 {$ENDIF}
 
 {$IFDEF FreeBSD}
   {$UNDEF OS_DOS}
   {$DEFINE OS_FREEBSD}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$DEFINE OS_UNIX}
 {$ENDIF}
 
@@ -314,6 +353,7 @@ FOR FPC THESE ARE THE TRANSLATIONS
 {$ENDIF}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF AIX}
   {$UNDEF OS_DOS}
   {$DEFINE OS_AIX}
@@ -322,6 +362,8 @@ FOR FPC THESE ARE THE TRANSLATIONS
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {------------------------------------------------}
 {  FPC Netware COMPILER changes operating system }
 {------------------------------------------------}
@@ -356,6 +398,7 @@ FOR FPC THESE ARE THE TRANSLATIONS
 
 {---------------------------------------------------------------------------}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  64 BIT WINDOWS COMPILERS changes bit size - Updated 28Nov10 PM           }
 {---------------------------------------------------------------------------}
 {$IFDEF WIN64}
@@ -370,6 +413,8 @@ FOR FPC THESE ARE THE TRANSLATIONS
 {---------------------------------------------------------------------------}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {  WINDOWS COMPILERS change op system and proc mode - Updated 03Nov99 LdB   }
 {---------------------------------------------------------------------------}
 {$IFDEF WINDOWS}
@@ -379,10 +424,14 @@ FOR FPC THESE ARE THE TRANSLATIONS
   {$DEFINE PROC_Protected}
   {$IFDEF FPC}
 <<<<<<< HEAD
+<<<<<<< HEAD
     // {$DEFINE WIN32}
 =======
     {$DEFINE WIN32}
 >>>>>>> graemeg/fixes_2_2
+=======
+    {$DEFINE WIN32}
+>>>>>>> origin/fixes_2_2
   {$ENDIF}
 {$ENDIF}
 
@@ -497,6 +546,7 @@ FOR FPC THESE ARE THE TRANSLATIONS
 {$ENDIF}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { MorphOS has AmigaOS API, so define OS_AMIGA }
 {$IFDEF MORPHOS}
   {$UNDEF OS_DOS}
@@ -517,6 +567,8 @@ FOR FPC THESE ARE THE TRANSLATIONS
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {---------------------------------------------------------------------------}
 {  FPC ATARI COMPILER changes op system and CPU type - Updated 27Aug98 LdB  }
 {---------------------------------------------------------------------------}
@@ -552,9 +604,12 @@ FOR FPC THESE ARE THE TRANSLATIONS
 {---------------------------------------------------------------------------}
 {  WIN16 AND WIN32 set if in windows - Updated 16Oct2000 LdB                }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  WIN64 added - Update 28Nov2010 PM                                        }
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {---------------------------------------------------------------------------}
 {$IFDEF OS_WINDOWS}                                   { WINDOWS SYSTEM }
   {$IFDEF BIT_16}
@@ -563,6 +618,7 @@ FOR FPC THESE ARE THE TRANSLATIONS
   {$IFDEF BIT_32}
     {$DEFINE WIN32}                                   { 32 BIT WINDOWS }
   {$ENDIF}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$IFDEF BIT_64}
     {$DEFINE WIN64}                                   { 64 BIT WINDOWS }
@@ -641,4 +697,9 @@ FOR FPC THESE ARE THE TRANSLATIONS
 
 
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ENDIF}
+
+
+>>>>>>> origin/fixes_2_2
 

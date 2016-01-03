@@ -1,11 +1,14 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       PrintCore/PMDefinitions.h
  
      Contains:   Carbon Printing Manager Interfaces.
  
      Copyright (c) 1998-2006,2008 by Apple Inc. All Rights Reserved.
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       PMDefinitions.p
  
      Contains:   Carbon Printing Manager Interfaces.
@@ -14,11 +17,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1998-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -49,6 +56,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -60,7 +69,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -70,12 +82,17 @@
 unit PMDefinitions;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -89,14 +106,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -105,11 +127,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -147,6 +172,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -154,6 +181,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -374,6 +402,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -382,7 +412,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -409,9 +442,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -422,6 +459,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,MacErrors,CFString;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -581,6 +619,8 @@ const
 	kPMDestinationPreview = 4;
 	kPMDestinationProcessPDF = 5;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {$ALIGN MAC68K}
@@ -628,11 +668,15 @@ const
 	kPMDestinationFile			= 2;
 	kPMDestinationFax			= 3;
 	kPMDestinationPreview		= 4;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 	kPMDestinationTypeDefault	= kPMDestinationPrinter;
 	
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 	PMOrientation = UInt16;
 const
@@ -1060,6 +1104,8 @@ const
 {$endc}
 { Document format strings }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	PMTag 						= UInt32;
 const
 																{  common tags  }
@@ -1277,7 +1323,10 @@ const
 {$definec kPMPPDDescriptionType CFSTRP('PMPPDDescriptionType')}
 {$endc}
 	{	 Document format strings 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPMDocumentFormatDefault CFSTRP('com.apple.documentformat.default')}
 {$endc}
@@ -1285,6 +1334,7 @@ const
 {$definec kPMDocumentFormatPDF CFSTRP('application/pdf')}
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$definec kPMDocumentFormatPostScript CFSTRP('application/postscript')}
 <<<<<<< HEAD
@@ -1418,6 +1468,8 @@ const
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$definec kPMDocumentFormatPICT CFSTRP('application/vnd.apple.printing-pict')}
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
@@ -1497,11 +1549,15 @@ const
 	kPMUnlocked					= false;
 	kPMLocked					= true;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	PMRectPtr = ^PMRect;
 	PMRect = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		top: Float64;
 		left: Float64;
@@ -1604,6 +1660,8 @@ const
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		top:					Double;
 		left:					Double;
 		bottom:					Double;
@@ -1630,4 +1688,7 @@ end.
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

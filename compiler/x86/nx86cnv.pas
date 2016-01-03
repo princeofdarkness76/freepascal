@@ -232,7 +232,10 @@ implementation
          if registersfpu<1 then
           registersfpu:=1;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         if (left.resultdef.size<4) then
           begin
             inserttypeconv(left,s32inttype);
@@ -240,10 +243,14 @@ implementation
           end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         if use_vectorfpu(resultdef) and
 =======
         if use_sse(resultdef) and
 >>>>>>> graemeg/fixes_2_2
+=======
+        if use_sse(resultdef) and
+>>>>>>> origin/fixes_2_2
            (torddef(left.resultdef).ordtype = s32bit) then
           expectloc:=LOC_MMREGISTER
         else
@@ -260,6 +267,7 @@ implementation
          op: tasmop;
          opsize: topsize;
          signtested : boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
          use_bt: boolean;  { true = use BT (386+), false = use TEST (286-) }
       begin
@@ -331,6 +339,20 @@ implementation
           begin
             location_reset(location,LOC_MMREGISTER,def_cgsize(resultdef));
             location.register:=cg.getmmregister(current_asmdata.CurrAsmList,location.size);
+=======
+      begin
+        if not(left.location.loc in [LOC_REGISTER,LOC_CREGISTER,LOC_REFERENCE,LOC_CREFERENCE]) then
+          location_force_reg(current_asmdata.CurrAsmList,left.location,left.location.size,false);
+        if use_sse(resultdef) and
+{$ifdef cpu64bit}
+           (torddef(left.resultdef).ordtype in [s32bit,s64bit]) then
+{$else cpu64bit}
+           (torddef(left.resultdef).ordtype=s32bit) then
+{$endif cpu64bit}
+          begin
+            location_reset(location,LOC_MMREGISTER,def_cgsize(resultdef));
+            location.register:=cg.getmmregister(current_asmdata.CurrAsmList,location.size);
+>>>>>>> origin/fixes_2_2
             case location.size of
               OS_F32:
                 op:=A_CVTSI2SS;
@@ -343,7 +365,10 @@ implementation
               OS_S32:
                 opsize:=S_L;
               OS_S64:
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 opsize:=S_Q;
               else
                 internalerror(2007120903);
@@ -354,6 +379,7 @@ implementation
                 begin
                   href:=left.location.reference;
                   tcgx86(cg).make_simple_ref(current_asmdata.CurrAsmList,href);
+<<<<<<< HEAD
 <<<<<<< HEAD
                   if UseAVX then
                     { VCVTSI2.. requires a second source operand to copy bits 64..127 }
@@ -375,6 +401,13 @@ implementation
               LOC_CREGISTER:
                 current_asmdata.CurrAsmList.concat(taicpu.op_reg_reg(op,opsize,left.location.register,location.register));
 >>>>>>> graemeg/fixes_2_2
+=======
+                  current_asmdata.CurrAsmList.concat(taicpu.op_ref_reg(op,opsize,href,location.register));
+                end;
+              LOC_REGISTER,
+              LOC_CREGISTER:
+                current_asmdata.CurrAsmList.concat(taicpu.op_reg_reg(op,opsize,left.location.register,location.register));
+>>>>>>> origin/fixes_2_2
             end;
           end
         else
@@ -382,6 +415,7 @@ implementation
             location_reset(location,LOC_FPUREGISTER,def_cgsize(resultdef));
             if (left.location.loc=LOC_REGISTER) and (torddef(left.resultdef).ordtype=u64bit) then
               begin
+<<<<<<< HEAD
 <<<<<<< HEAD
                 if use_bt then
                   begin
@@ -402,12 +436,17 @@ implementation
     {$endif i8086}
                   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     {$ifdef cpu64bit}
                 emit_const_reg(A_BT,S_Q,63,left.location.register);
     {$else cpu64bit}
                 emit_const_reg(A_BT,S_L,31,left.location.register64.reghi);
     {$endif cpu64bit}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 signtested:=true;
               end
             else
@@ -455,12 +494,18 @@ implementation
               s64bit:
                 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                   current_asmdata.CurrAsmList.concat(taicpu.op_ref(A_FILD,S_IQ,leftref));
 =======
                   href:=left.location.reference;
                   tcgx86(cg).make_simple_ref(current_asmdata.CurrAsmList,href);
                   current_asmdata.CurrAsmList.concat(taicpu.op_ref(A_FILD,S_IQ,href));
 >>>>>>> graemeg/fixes_2_2
+=======
+                  href:=left.location.reference;
+                  tcgx86(cg).make_simple_ref(current_asmdata.CurrAsmList,href);
+                  current_asmdata.CurrAsmList.concat(taicpu.op_ref(A_FILD,S_IQ,href));
+>>>>>>> origin/fixes_2_2
                 end;
               u64bit:
                 begin
@@ -538,12 +583,18 @@ implementation
                   if left.resultdef.size<4 then
                     internalerror(2007120901);
 <<<<<<< HEAD
+<<<<<<< HEAD
                  current_asmdata.CurrAsmList.concat(taicpu.op_ref(A_FILD,S_IL,leftref));
 =======
                  href:=left.location.reference;
                  tcgx86(cg).make_simple_ref(current_asmdata.CurrAsmList,href);
                  current_asmdata.CurrAsmList.concat(taicpu.op_ref(A_FILD,S_IL,href));
 >>>>>>> graemeg/fixes_2_2
+=======
+                 href:=left.location.reference;
+                 tcgx86(cg).make_simple_ref(current_asmdata.CurrAsmList,href);
+                 current_asmdata.CurrAsmList.concat(taicpu.op_ref(A_FILD,S_IL,href));
+>>>>>>> origin/fixes_2_2
                 end;
             end;
             tcgx86(cg).inc_fpu_stack;

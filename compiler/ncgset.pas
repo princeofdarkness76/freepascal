@@ -30,7 +30,10 @@ interface
        globtype,globals,constexp,symtype,
 =======
        globtype,globals,
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        node,nset,cpubase,cgbase,cgutils,cgobj,aasmbase,aasmtai,aasmdata;
 
     type
@@ -106,10 +109,14 @@ implementation
       procinfo,pass_2,tgobj,
       nbas,ncon,nflw,
 <<<<<<< HEAD
+<<<<<<< HEAD
       ncgutil,hlcgobj;
 =======
       ncgutil;
 >>>>>>> graemeg/fixes_2_2
+=======
+      ncgutil;
+>>>>>>> origin/fixes_2_2
 
 
 {*****************************************************************************
@@ -229,7 +236,10 @@ implementation
                     not is_signed(left.resultdef) and
 =======
          use_small:=(tsetdef(right.resultdef).settype=smallset) and not is_signed(left.resultdef) and
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                     ((left.resultdef.typ=orddef) and (torddef(left.resultdef).high<32) or
                      (left.resultdef.typ=enumdef) and (tenumdef(left.resultdef).max<32));
 
@@ -256,9 +266,12 @@ implementation
          adjustment,
          setbase    : aint;
 <<<<<<< HEAD
+<<<<<<< HEAD
          l, l2      : tasmlabel;
          hr,
 =======
+=======
+>>>>>>> origin/fixes_2_2
 				 l,l2,
          otl, ofl   : tasmlabel;
          hr,hr2,
@@ -300,11 +313,14 @@ implementation
          needslabel := false;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
          if not genjumps then
            { calculate both operators }
            { the complex one first }
            { not in case of genjumps, because then we don't secondpass      }
 =======
+=======
+>>>>>>> origin/fixes_2_2
          isjump:=false;
          if (left.expectloc=LOC_JUMP) then
            begin
@@ -321,16 +337,22 @@ implementation
            { code generator down. This almost never happens anyway, only in }
            { case like "if ((a in someset) in someboolset) then" etc        }
            { also not in case of genjumps, because then we don't secondpass }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            { right at all (so we have to make sure that "right" really is   }
            { "right" and not "swapped left" in that case)                   }
            firstcomplex(self);
 
          secondpass(left);
 <<<<<<< HEAD
+<<<<<<< HEAD
          if (left.expectloc=LOC_JUMP)<>
             (left.location.loc=LOC_JUMP) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
          if isjump then
            begin
              location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,true);
@@ -338,7 +360,10 @@ implementation
              current_procinfo.CurrFalseLabel:=ofl;
            end
          else if (left.location.loc=LOC_JUMP) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            internalerror(2007070101);
 
          { Only process the right if we are not generating jumps }
@@ -548,6 +573,7 @@ implementation
                   location_force_reg(current_asmdata.CurrAsmList,left.location,location.size,true);
                   register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
 <<<<<<< HEAD
+<<<<<<< HEAD
                   { emit bit test operation -- warning: do not use
                     location_force_reg() to force a set into a register, except
                     to a register of the same size as the set. The reason is
@@ -562,12 +588,17 @@ implementation
                     left.location.size,location.size,
                     left.location.register,right.location,location.register);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                   location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
                   { emit bit test operation }
                   cg.a_bit_test_reg_reg_reg(current_asmdata.CurrAsmList,
                     left.location.size,right.location.size,location.size,
                     left.location.register,right.location.register,location.register);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
                   { now zero the result if left > nr_of_bits_in_right_register }
                   hr := cg.getintregister(current_asmdata.CurrAsmList,location.size);
@@ -589,11 +620,14 @@ implementation
 >>>>>>> graemeg/cpstrnew
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                          hlcg.a_cmp_const_reg_label(current_asmdata.CurrAsmList, opdef, OC_BE, tsetdef(right.resultdef).setmax-tsetdef(right.resultdef).setbase, pleftreg, l);
 
                          hlcg.a_load_const_reg(current_asmdata.CurrAsmList, uopdef, 0, location.register);
                          hlcg.a_jmp_always(current_asmdata.CurrAsmList, l2);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                   cg.a_bit_test_const_loc_reg(current_asmdata.CurrAsmList,location.size,left.location.value-setbase,
                     right.location,location.register);
                 end
@@ -625,7 +659,10 @@ implementation
 
                   cg.a_bit_test_reg_loc_reg(current_asmdata.CurrAsmList,left.location.size,location.size,
                     pleftreg,right.location,location.register);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
                          hlcg.a_label(current_asmdata.CurrAsmList, l);
                        end;
@@ -730,8 +767,11 @@ implementation
                      { have we to ajust the first value ? }
                      if (t^._low>get_min_value(left.resultdef)) or (get_min_value(left.resultdef)<>0) then
 <<<<<<< HEAD
+<<<<<<< HEAD
                        gensub(tcgint(t^._low.svalue));
 =======
+=======
+>>>>>>> origin/fixes_2_2
                        gensub(aint(t^._low));
 >>>>>>> graemeg/fixes_2_2
                   end
@@ -1249,12 +1289,15 @@ implementation
 {$endif OLDREGVARS}
            end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
          cg.executionweight:=oldexecutionweight;
 
          current_asmdata.CurrAsmList.concat(cai_align.create(current_settings.alignment.jumpalign));
          hlcg.a_label(current_asmdata.CurrAsmList,endlabel);
 =======
+=======
+>>>>>>> origin/fixes_2_2
          current_asmdata.CurrAsmList.concat(cai_align.create(current_settings.alignment.jumpalign));
          cg.a_label(current_asmdata.CurrAsmList,endlabel);
 >>>>>>> graemeg/fixes_2_2

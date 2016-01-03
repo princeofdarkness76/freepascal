@@ -1,13 +1,18 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for Hermes
 >>>>>>> graemeg/fixes_2_2
+=======
+#   Makefile.fpc for Hermes
+>>>>>>> origin/fixes_2_2
 #
 
 [package]
 name=hermes
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -41,6 +46,8 @@ options_i386_haiku=-dI386_ASSEMBLER
 options_i386_beos=-dI386_ASSEMBLER
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 version=2.2.5
 
 [target]
@@ -48,11 +55,15 @@ units=hermes
 loaders=$(CPU_LOADERS)
 
 [compiler]
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 unitdir=
 targetdir=.
 includedir=src
 sourcedir=src tests
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
@@ -67,10 +78,13 @@ fpcpackage=y
 fpcpackage=y
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
@@ -175,6 +189,8 @@ fpcdir=../..
 .NOTPARALLEL:
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 [rules]
 .NOTPARALLEL:
 mmx_clr$(OEXT):src/$(CPU_TARGET)/mmx_clr.as
@@ -202,4 +218,7 @@ CPU_LOADERS=mmx_clr mmxp_32 mmx_main mmxp2_32 hm_i386
 else
 CPU_LOADERS=
 endif
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

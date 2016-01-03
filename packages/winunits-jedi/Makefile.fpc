@@ -1,13 +1,18 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for WinUnits
 >>>>>>> graemeg/fixes_2_2
+=======
+#   Makefile.fpc for WinUnits
+>>>>>>> origin/fixes_2_2
 #
 
 [package]
 name=winunits-jedi
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -39,12 +44,17 @@ version=2.5.1
 packages_win32=winunits-base fcl-registry fcl-base
 packages_win64=winunits-base fcl-registry fcl-base
 =======
+=======
+>>>>>>> origin/fixes_2_2
 version=2.2.5
 
 [require]
 packages_win32=winunits-base
 packages_win64=winunits-base
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [target]
 units=buildjwa
@@ -92,6 +102,7 @@ examples=examples
 
 rsts = jwawintype 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
 [install]
@@ -100,11 +111,17 @@ rsts = jwawintype
 [install]
 buildunit=buildjwa
 >>>>>>> graemeg/fixes_2_2
+=======
+
+[install]
+buildunit=buildjwa
+>>>>>>> origin/fixes_2_2
 fpcpackage=y
 
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
@@ -192,6 +209,8 @@ else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
 =======
+=======
+>>>>>>> origin/fixes_2_2
 [compiler]
 options=-Ur
 sourcedir=src
@@ -200,4 +219,7 @@ unitdir=units
 
 [rules]
 .NOTPARALLEL:
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -354,12 +354,15 @@ uses
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       tai_thumb_func = class(tai)
         constructor create;
       end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     function spilling_create_load(const ref:treference;r:tregister):Taicpu;
     function spilling_create_store(r:tregister; const ref:treference):Taicpu;
 
@@ -921,6 +924,7 @@ implementation
 =======
         result:=(((opcode=A_MOV) and (regtype = R_INTREGISTER)) or
 <<<<<<< HEAD
+<<<<<<< HEAD
                  ((opcode=A_MVF) and (regtype = R_FPUREGISTER) and (oppostfix in [PF_None,PF_D])) or
                  (((opcode=A_FCPYS) or (opcode=A_FCPYD)) and (regtype = R_MMREGISTER))
 <<<<<<< HEAD
@@ -936,6 +940,9 @@ implementation
 =======
                  ((opcode=A_MVF) and (regtype = R_FPUREGISTER) and (oppostfix in [PF_None,PF_D]))
 >>>>>>> graemeg/fixes_2_2
+=======
+                 ((opcode=A_MVF) and (regtype = R_FPUREGISTER) and (oppostfix in [PF_None,PF_D]))
+>>>>>>> origin/fixes_2_2
                 ) and
                 ((oppostfix in [PF_None,PF_D]) or (opcode = A_VMOV)) and
                 (condition=C_None) and
@@ -948,10 +955,13 @@ implementation
 
     function spilling_create_load(const ref:treference;r:tregister):Taicpu;
 <<<<<<< HEAD
+<<<<<<< HEAD
       var
         op: tasmop;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
         case getregtype(r) of
           R_INTREGISTER :
@@ -1003,10 +1013,13 @@ implementation
 
     function spilling_create_store(r:tregister; const ref:treference):Taicpu;
 <<<<<<< HEAD
+<<<<<<< HEAD
       var
         op: tasmop;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
         case getregtype(r) of
           R_INTREGISTER :
@@ -1927,7 +1940,10 @@ implementation
 
             { don't miss an insert }
             doinsert:=doinsert or (curpos-lastpos+penalty>1016);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
             { split only at real instructions else the test below fails }
             if doinsert and (curtai.typ=ait_instruction) and
@@ -4853,6 +4869,7 @@ implementation
                         bytes:=bytes or ((Rd and $1) shl 7);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                         bytes:=bytes or (Rm shl 12);
                       end;
                   end;
@@ -4865,6 +4882,8 @@ implementation
                     Rd:=getmmreg(oper[0]^.reg);
                     Rm:=getmmreg(oper[1]^.reg);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef dummy}
       (*
 static void gencode (long segment, long offset, int bits,
@@ -6663,4 +6682,7 @@ begin
   cai_align:=tai_align;
 end.
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

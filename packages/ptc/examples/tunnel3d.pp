@@ -10,6 +10,7 @@ Ported to FPC by Nikolay Nikolov (nickysn@users.sourceforge.net)
  This source code is licensed under the GNU LGPL
 
 <<<<<<< HEAD
+<<<<<<< HEAD
  and do not just blatantly cut&paste this into your demo :)
 }
 
@@ -25,6 +26,8 @@ type
   TVector = array [0..2] of Single;      { X,Y,Z }
   TMatrix = array [0..3, 0..3] of Single;{ FIRST  = COLUMN
 =======
+=======
+>>>>>>> origin/fixes_2_2
  And do not just blatantly cut&paste this into your demo :)
 }
 
@@ -39,7 +42,10 @@ Type
   PVector = ^TVector;
   TVector = Array[0..2] Of Single;      { X,Y,Z }
   TMatrix = Array[0..3, 0..3] Of Single;{ FIRST  = COLUMN
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                                           SECOND = ROW
 
                                           [0, 0]  [1, 0]  [2, 0]
@@ -48,6 +54,7 @@ Type
   (I know the matrices are the wrong way round, so what, the code is quite
   old :) }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   TRayTunnel = class
   private
@@ -128,6 +135,8 @@ end;
 procedure matrix_idle(var m: TMatrix);
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
   TRayTunnel = Class(TObject)
   Private
     tunneltex : PUint8;                      { Texture }
@@ -210,12 +219,16 @@ End;
 Procedure matrix_idle(Var m : TMatrix);
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FillChar(m, SizeOf(TMatrix), 0);
   m[0, 0] := 1;
   m[1, 1] := 1;
   m[2, 2] := 1;
   m[3, 3] := 1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -237,6 +250,8 @@ var
   tmp, tmp2: TMatrix;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure matrix_times_matrix(Const m1, m2 : TMatrix; Var res : TMatrix);
@@ -260,7 +275,10 @@ Var
   tmp, tmp2 : TMatrix;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   matrix_idle(tmp);
   tmp[1, 1] := costab[angle];
   tmp[2, 1] := sintab[angle];
@@ -269,6 +287,7 @@ Begin
   matrix_times_matrix(tmp, m, tmp2);
   Move(tmp2, m, SizeOf(TMatrix));
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
 
 procedure matrix_rotate_y(var m: TMatrix; angle: Integer; sintab, costab: PSingle);
@@ -276,6 +295,8 @@ var
   tmp, tmp2: TMatrix;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure matrix_rotate_y(Var m : TMatrix; angle : Integer; sintab, costab : PSingle);
@@ -284,7 +305,10 @@ Var
   tmp, tmp2 : TMatrix;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   matrix_idle(tmp);
   tmp[0, 0] := costab[angle];
   tmp[2, 0] := -sintab[angle];
@@ -293,6 +317,7 @@ Begin
   matrix_times_matrix(tmp, m, tmp2);
   Move(tmp2, m, SizeOf(TMatrix));
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
 
 procedure matrix_rotate_z(var m: TMatrix; angle: Integer; sintab, costab: PSingle);
@@ -300,6 +325,8 @@ var
   tmp, tmp2: TMatrix;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure matrix_rotate_z(Var m : TMatrix; angle : Integer; sintab, costab : PSingle);
@@ -308,7 +335,10 @@ Var
   tmp, tmp2 : TMatrix;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   matrix_idle(tmp);
   tmp[0, 0] := costab[angle];
   tmp[1, 0] := sintab[angle];
@@ -316,6 +346,7 @@ Begin
   tmp[1, 1] := costab[angle];
   matrix_times_matrix(tmp, m, tmp2);
   Move(tmp2, m, SizeOf(TMatrix));
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -326,6 +357,8 @@ var
   tmp: TVector;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Constructor TRayTunnel.Create(rad : Single);
@@ -345,7 +378,10 @@ Begin
   lookup := Nil;
   pal := Nil;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   radius := rad;
   radius_sqr := rad * rad;
 
@@ -359,6 +395,7 @@ Begin
   lookup := GetMem(65 * 256 * SizeOf(Uint32));
   pal := GetMem(768 * SizeOf(Uint8));
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   for i := 0 to 1023 do
   begin
@@ -374,6 +411,8 @@ Begin
     for i := 0 to 40 do
     begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
   For i := 0 To 1023 Do
   Begin
     sintab[i] := sin(i * pi / 512);
@@ -387,13 +426,17 @@ Begin
     x := -160;
     For i := 0 To 40 Do
     Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       tmp[0] := x;
       tmp[1] := y;
       tmp[2] := 128;
       vector_normalize(tmp);
       norms[j * 64 + i] := tmp;
       x := x + 8;
+<<<<<<< HEAD
 <<<<<<< HEAD
     end;
     y := y + 8;
@@ -403,6 +446,11 @@ Begin
     y := y + 8;
   End;
 >>>>>>> graemeg/fixes_2_2
+=======
+    End;
+    y := y + 8;
+  End;
+>>>>>>> origin/fixes_2_2
 
   { Reset tunnel and light position and all angles }
   pos[0] := 0; pos[1] := 0; pos[2] := 0;
@@ -414,6 +462,7 @@ Begin
 
   { Normalize light vector to length 1.0 }
   vector_normalize(light);
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -510,6 +559,8 @@ begin
   matrix_rotate_y(rot, ya and $3FF, sintab, costab);
   matrix_rotate_z(rot, za and $3FF, sintab, costab);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Destructor TRayTunnel.Destroy;
@@ -612,13 +663,17 @@ Begin
   matrix_rotate_x(rot, xa And $3FF, sintab, costab);
   matrix_rotate_y(rot, ya And $3FF, sintab, costab);
   matrix_rotate_z(rot, za And $3FF, sintab, costab);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   { Constant factor }
   c := 2 * (pos[0] * pos[0] + pos[1] * pos[1] - radius_sqr);
 
   { Start raytracing }
   y := -100;
+<<<<<<< HEAD
 <<<<<<< HEAD
   for j := 0 to 25 do
   begin
@@ -627,18 +682,24 @@ Begin
     begin
       vector_times_matrix(norms[(j shl 6) + i], rot, ray);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   For j := 0 To 25 Do
   Begin
     x := -160;
     For i := 0 To 40 Do
     Begin
       vector_times_matrix(norms[(j Shl 6) + i], rot, ray);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
       a := 2 * (ray[0] * ray[0] + ray[1] * ray[1]);
       b := 2 * (pos[0] * ray[0] + pos[1] * ray[1]);
 
       discr := b * b - a * c;
+<<<<<<< HEAD
 <<<<<<< HEAD
       if discr > 0 then
       begin
@@ -646,6 +707,10 @@ Begin
       If discr > 0 Then
       Begin
 >>>>>>> graemeg/fixes_2_2
+=======
+      If discr > 0 Then
+      Begin
+>>>>>>> origin/fixes_2_2
         discr := sqrt(discr);
         t := (- b + discr) / a;
 
@@ -655,6 +720,7 @@ Begin
         intsc[2] := pos[2] + t * ray[2];
 
         { Calculate texture index at intersection point (cylindrical mapping) }
+<<<<<<< HEAD
 <<<<<<< HEAD
         { try and adjust the 0.2 to stretch/shrink the texture }
 <<<<<<< HEAD
@@ -680,6 +746,11 @@ Begin
         u_array[(j Shl 6) + i] := Trunc(intsc[2] * 0.2) Shl 16;
         v_array[(j Shl 6) + i] := Trunc(abs(arctan2(intsc[1], intsc[0]) * 256 / pi)) Shl 16;
 >>>>>>> graemeg/fixes_2_2
+=======
+        { Try and adjust the 0.2 to stretch/shrink the texture }
+        u_array[(j Shl 6) + i] := Trunc(intsc[2] * 0.2) Shl 16;
+        v_array[(j Shl 6) + i] := Trunc(abs(arctan2(intsc[1], intsc[0]) * 256 / pi)) Shl 16;
+>>>>>>> origin/fixes_2_2
 
         { Calculate the dotproduct between the normal vector and the vector }
         { from the intersection point to the lightsource }
@@ -695,6 +766,7 @@ Begin
         res := lvec[0] * norm[0] + lvec[1] * norm[1] + lvec[2] * norm[2];
 
         { Scale the light a bit }
+<<<<<<< HEAD
 <<<<<<< HEAD
         res := Sqr(res);
         if res < 0 then
@@ -838,6 +910,8 @@ begin
           til_u := til_u and DWord($F8077FFF);
           til_v := til_v and $07F87FFF;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         res *= res;
         If res < 0 Then
           res := 0;
@@ -914,7 +988,10 @@ Begin
 
           til_u := til_u And DWord($F8077FFF);
           til_v := til_v And $07F87FFF;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
           bla := (tunneltex + adr)^;
 
@@ -922,16 +999,22 @@ Begin
 
           { Look up the light and write to buffer }
 <<<<<<< HEAD
+<<<<<<< HEAD
           (dest + ((j shl 3) + y) * 320 + (I shl 3) + x)^ := lookup[((l and $3F0000) shr 8) + bla];
         end;
 =======
           (dest + ((j Shl 3) + y) * 320 + (I Shl 3) + x)^ := lookup[((l And $3F0000) Shr 8) + bla];
         End;
 >>>>>>> graemeg/fixes_2_2
+=======
+          (dest + ((j Shl 3) + y) * 320 + (I Shl 3) + x)^ := lookup[((l And $3F0000) Shr 8) + bla];
+        End;
+>>>>>>> origin/fixes_2_2
 
         Inc(lu, liu); Inc(ru, riu);
         Inc(lv, liv); Inc(rv, riv);
         Inc(ll, lil); Inc(rl, ril);
+<<<<<<< HEAD
 <<<<<<< HEAD
       end;
     end;
@@ -1045,6 +1128,8 @@ begin
 
       surface := TPTCSurfaceFactory.CreateNew(320, 200, format);
 =======
+=======
+>>>>>>> origin/fixes_2_2
       End;
     End;
 End;
@@ -1129,7 +1214,10 @@ Begin
       console.open('Tunnel3D demo', 320, 200, format);
 
       surface := TPTCSurface.create(320, 200, format);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
       { Create a tunnel, radius=700 }
       tunnel := TRayTunnel.Create(700);
@@ -1143,20 +1231,27 @@ Begin
       angle_x := 6; angle_y := 2;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       while not console.KeyPressed do
       begin
         buffer := surface.lock;
         try
 =======
+=======
+>>>>>>> origin/fixes_2_2
       While Not console.KeyPressed Do
       Begin
         buffer := surface.lock;
 	Try
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           tunnel.interpolate;
 
           { Draw to offscreen buffer }
           tunnel.draw(buffer);
+<<<<<<< HEAD
 <<<<<<< HEAD
         finally
           surface.unlock;
@@ -1164,12 +1259,17 @@ Begin
 
         { and copy to screen }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	Finally
           surface.unlock;
 	End;
 
         { And copy to screen }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         surface.copy(console);
 
         console.update;
@@ -1179,6 +1279,7 @@ Begin
 
         phase_x := phase_x + 0.2;
         phase_y := phase_y + 0.1;
+<<<<<<< HEAD
 <<<<<<< HEAD
       end;
     finally
@@ -1200,11 +1301,16 @@ Begin
       End;
     Finally
 >>>>>>> graemeg/fixes_2_2
+=======
+      End;
+    Finally
+>>>>>>> origin/fixes_2_2
       console.close;
       console.Free;
       surface.Free;
       tunnel.Free;
       format.Free;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1223,10 +1329,15 @@ Begin
   end;
 end.
 =======
+=======
+>>>>>>> origin/fixes_2_2
     End;
   Except
     On error : TPTCError Do
       error.report;
   End;
 End.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

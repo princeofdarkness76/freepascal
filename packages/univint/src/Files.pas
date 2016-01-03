@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/Files.h
  
      Contains:   File Manager Interfaces.
@@ -21,6 +22,8 @@
  
      Copyright:  © 1985-2008 Apple, Inc. All rights reserved
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       Files.p
  
      Contains:   File Manager (MFS, HFS, and HFS+) Interfaces.
@@ -29,12 +32,16 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
                      http://www.freepascal.org/bugs.html
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
  
@@ -64,6 +71,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  
 }
 
@@ -74,7 +83,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -84,12 +96,17 @@
 unit Files;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -103,14 +120,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -119,11 +141,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -161,6 +186,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -168,6 +195,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -399,6 +427,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -407,7 +437,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -434,9 +467,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -446,6 +483,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -471,6 +509,9 @@ uses MacTypes,MixedMode,OSUtils,TextCommon,UTCUtils,Finder,MacOSXPosix,DADisk,CF
 =======
 uses MacTypes,MixedMode,OSUtils,TextCommon,UTCUtils,Finder;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,MixedMode,OSUtils,TextCommon,UTCUtils,Finder;
+>>>>>>> origin/fixes_2_2
 
 { Finder constants were moved to Finder.Å }
 
@@ -478,6 +519,7 @@ uses MacTypes,MixedMode,OSUtils,TextCommon,UTCUtils,Finder;
 {$ALIGN MAC68K}
 
 { HFSUniStr255 is the Unicode equivalent of Str255 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	HFSUniStr255Ptr = ^HFSUniStr255;
@@ -1138,6 +1180,8 @@ type
 		0: (
 			ioRefNum:			FSIORefNum;								{ refNum for I/O operation }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	HFSUniStr255Ptr = ^HFSUniStr255;
@@ -1600,7 +1644,10 @@ type
 		case SInt16 of
 		0: (
 			ioRefNum:			SInt16;								{ refNum for I/O operation }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 			ioVersNum:			SInt8;									{ version number }
 			ioPermssn:			SInt8;									{ Open: permissions (byte) }
 			ioMisc:				Ptr;									{ Rename: new name (GetEOF,SetEOF: logical end of file) (Open: optional ptr to buffer) (SetFileType: new type) }
@@ -1612,10 +1659,14 @@ type
 		   );
 		1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
 			ioFRefNum:			FSIORefNum;								{ reference number }
 =======
 			ioFRefNum:			SInt16;								{ reference number }
 >>>>>>> graemeg/fixes_2_2
+=======
+			ioFRefNum:			SInt16;								{ reference number }
+>>>>>>> origin/fixes_2_2
 			ioFVersNum:			SInt8;									{ version number }
 			filler1:			SInt8;
 			ioFDirIndex:		SInt16;								{ GetFInfo directory index }
@@ -1680,16 +1731,22 @@ type
 		ioCmdAddr:				Ptr;									{ FS: address to dispatch to }
 		ioCompletion:			IOCompletionUPP;						{ completion routine addr (0 for synch calls) }
 <<<<<<< HEAD
+<<<<<<< HEAD
 		ioResult:				{volatile} OSErr;									{ result code }
 		ioNamePtr:				StringPtr;								{ ptr to Vol:FileName string }
 		ioVRefNum:				FSVolumeRefNum;								{ volume refnum (DrvNum for Eject and MountVol) }
 		ioFRefNum:				FSIORefNum;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		ioResult:				OSErr;									{ result code }
 		ioNamePtr:				StringPtr;								{ ptr to Vol:FileName string }
 		ioVRefNum:				SInt16;								{ volume refnum (DrvNum for Eject and MountVol) }
 		ioFRefNum:				SInt16;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		ioFVersNum:				SInt8;
 		filler1:				SInt8;
 		ioFDirIndex:			SInt16;
@@ -1699,10 +1756,14 @@ type
 		0: (
 			ioFlFndrInfo:		FInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			ioDirID:			UInt32;
 =======
 			ioDirID:			DirIDType;
 >>>>>>> graemeg/fixes_2_2
+=======
+			ioDirID:			DirIDType;
+>>>>>>> origin/fixes_2_2
 			ioFlStBlk:			UInt16;
 			ioFlLgLen:			SInt32;
 			ioFlPyLen:			SInt32;
@@ -1714,25 +1775,34 @@ type
 			ioFlBkDat:			UInt32;
 			ioFlXFndrInfo:		FXInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			ioFlParID:			UInt32;
 =======
 			ioFlParID:			DirIDType;
 >>>>>>> graemeg/fixes_2_2
+=======
+			ioFlParID:			DirIDType;
+>>>>>>> origin/fixes_2_2
 			ioFlClpSiz:			SInt32;
 		   );
 		1: (
 			ioDrUsrWds:			DInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			ioDrDirID:			SInt32;
 =======
 			ioDrDirID:			DirIDType;
 >>>>>>> graemeg/fixes_2_2
+=======
+			ioDrDirID:			DirIDType;
+>>>>>>> origin/fixes_2_2
 			ioDrNmFls:			UInt16;
 			filler3:			array [1..9] of SInt16;
 			ioDrCrDat:			UInt32;
 			ioDrMdDat:			UInt32;
 			ioDrBkDat:			UInt32;
 			ioDrFndrInfo:		DXInfo;
+<<<<<<< HEAD
 <<<<<<< HEAD
 			ioDrParID:			SInt32;
 		   );
@@ -1762,6 +1832,8 @@ type
 type
 	XCInfoPBPtr = XCInfoPBRecPtr;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 			ioDrParID:			DirIDType;
 		   );
 	end;
@@ -1810,11 +1882,15 @@ type
 	    that as a parameter, ConstFSSpecPtr is allowed to be NULL 
 		}
 	ConstFSSpecPtr						= FSSpecPtr;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	{	 
 	    The following are structures to be filled out with the _PBGetVolMountInfo call
 	    and passed back into the _PBVolumeMount call for external file system mounts. 
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	DTPBRecPtr = ^DTPBRec;
 	DTPBRec = record
@@ -2692,6 +2768,53 @@ const
 	volMountSysReservedMask		= $FF00;						{  bits 8-15 are reserved for Apple system use  }
 
 
+=======
+	{	 the "signature" of the file system 	}
+	VolumeType							= OSType;
+
+const
+																{  the signature for AppleShare  }
+	AppleShareMediaType			= FourCharCode('afpm');
+
+	{	
+	    VolMount stuff was once in FSM.Å
+		}
+
+type
+	VolMountInfoHeaderPtr = ^VolMountInfoHeader;
+	VolMountInfoHeader = record
+		length:					SInt16;								{  length of location data (including self)  }
+		media:					VolumeType;								{  type of media.  Variable length data follows  }
+	end;
+
+	VolMountInfoPtr						= ^VolMountInfoHeader;
+	{	 The new volume mount info record.  The old one is included for compatibility. 
+	    the new record allows access by foriegn filesystems writers to the flags 
+	    portion of the record. This portion is now public.  
+		}
+	VolumeMountInfoHeaderPtr = ^VolumeMountInfoHeader;
+	VolumeMountInfoHeader = record
+		length:					SInt16;								{  length of location data (including self)  }
+		media:					VolumeType;								{  type of media (must be registered with Apple)  }
+		flags:					SInt16;								{  volume mount flags. Variable length data follows  }
+	end;
+
+	{	 volume mount flags 	}
+
+const
+	volMountNoLoginMsgFlagBit	= 0;							{  Input to VolumeMount: If set, the file system  }
+	volMountNoLoginMsgFlagMask	= $0001;						{   should suppresss any log-in message/greeting dialog  }
+	volMountExtendedFlagsBit	= 7;							{  Input to VolumeMount: If set, the mount info is a  }
+	volMountExtendedFlagsMask	= $0080;						{   AFPXVolMountInfo record for 3.7 AppleShare Client  }
+	volMountInteractBit			= 15;							{  Input to VolumeMount: If set, it's OK for the file system  }
+	volMountInteractMask		= $8000;						{   to perform user interaction to mount the volume  }
+	volMountChangedBit			= 14;							{  Output from VoumeMount: If set, the volume was mounted, but  }
+	volMountChangedMask			= $4000;						{   the volume mounting information record needs to be updated.  }
+	volMountFSReservedMask		= $00FF;						{  bits 0-7 are defined by each file system for its own use  }
+	volMountSysReservedMask		= $FF00;						{  bits 8-15 are reserved for Apple system use  }
+
+
+>>>>>>> origin/fixes_2_2
 type
 	AFPVolMountInfoPtr = ^AFPVolMountInfo;
 	AFPVolMountInfo = record
@@ -3087,7 +3210,10 @@ type
 	end;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	HParamBlockRecPtr = ^HParamBlockRec;
 	HParamBlockRec = record
 		qLink:					QElemPtr;								{ queue link in header }
@@ -3098,16 +3224,22 @@ type
 		ioResult:				OSErr;									{ result code }
 		ioNamePtr:				StringPtr;								{ ptr to Vol:FileName string }
 <<<<<<< HEAD
+<<<<<<< HEAD
 		ioVRefNum:				FSVolumeRefNum;								{ volume refnum (DrvNum for Eject and MountVol) }
 		case SInt16 of
 		0: (
 			ioRefNum:			FSIORefNum;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		ioVRefNum:				SInt16;								{ volume refnum (DrvNum for Eject and MountVol) }
 		case SInt16 of
 		0: (
 			ioRefNum:			SInt16;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 			ioVersNum:			SInt8;
 			ioPermssn:			SInt8;
 			ioMisc:				Ptr;
@@ -3119,10 +3251,14 @@ type
 		   );
 		1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
 			ioFRefNum:			FSIORefNum;
 =======
 			ioFRefNum:			SInt16;
 >>>>>>> graemeg/fixes_2_2
+=======
+			ioFRefNum:			SInt16;
+>>>>>>> origin/fixes_2_2
 			ioFVersNum:			SInt8;
 			filler1:			SInt8;
 			ioFDirIndex:		SInt16;
@@ -3130,10 +3266,14 @@ type
 			ioFlVersNum:		SInt8;
 			ioFlFndrInfo:		FInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			ioDirID:			SInt32;
 =======
 			ioDirID:			DirIDType;
 >>>>>>> graemeg/fixes_2_2
+=======
+			ioDirID:			DirIDType;
+>>>>>>> origin/fixes_2_2
 			ioFlStBlk:			UInt16;
 			ioFlLgLen:			SInt32;
 			ioFlPyLen:			SInt32;
@@ -3161,10 +3301,14 @@ type
 			ioVSigWord:			UInt16;
 			ioVDrvInfo:			SInt16;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			ioVDRefNum:			FSIORefNum;
 =======
 			ioVDRefNum:			SInt16;
 >>>>>>> graemeg/fixes_2_2
+=======
+			ioVDRefNum:			SInt16;
+>>>>>>> origin/fixes_2_2
 			ioVFSID:			SInt16;
 			ioVBkUp:			UInt32;
 			ioVSeqNum:			UInt16;
@@ -3184,9 +3328,12 @@ type
 			ioACGroupID:		SInt32;								{ group ID }
 			ioACAccess:			SInt32;								{ access rights }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {			  ioDirID:			SInt32; -- since this struct is only defined for 32 bit targets, the ioDirID field from case 1 will be at the same address }
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		   );
 		4: (
 			filler7:			SInt16;
@@ -3200,6 +3347,7 @@ type
 			ioNewName:			StringPtr;								{ ptr to destination pathname }
 			ioCopyName:			StringPtr;								{ ptr to optional name }
 <<<<<<< HEAD
+<<<<<<< HEAD
 			ioNewDirID:			SInt32;								{ destination directory ID }
 			{ filler14:				SInt32;
 			  filler15:				SInt32;
@@ -3207,41 +3355,58 @@ type
 =======
 			ioNewDirID:			DirIDType;								{ destination directory ID }
 >>>>>>> graemeg/fixes_2_2
+=======
+			ioNewDirID:			DirIDType;								{ destination directory ID }
+>>>>>>> origin/fixes_2_2
 		   );
 		6: (
 			ioWDCreated:		SInt16;
 			ioWDIndex:			SInt16;
 			ioWDProcID:			SInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			ioWDVRefNum:		FSVolumeRefNum;
 =======
 			ioWDVRefNum:		SInt16;
 >>>>>>> graemeg/fixes_2_2
+=======
+			ioWDVRefNum:		SInt16;
+>>>>>>> origin/fixes_2_2
 			filler10:			SInt16;
 			filler11:			SInt32;
 			filler12:			SInt32;
 			filler13:			SInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			ioWDDirID:			SInt32;
 =======
 			ioWDDirID:			DirIDType;
 >>>>>>> graemeg/fixes_2_2
+=======
+			ioWDDirID:			DirIDType;
+>>>>>>> origin/fixes_2_2
 		   );
 		7: (
 			filler14:			SInt32;
 			ioDestNamePtr:		StringPtr;								{  dest file name  }
 			filler15:			SInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			ioDestDirID:		SInt32;							{  dest file's directory id  }
 			filler16:			SInt32;
 			filler17:			SInt32;
 			ioSrcDirID:			SInt32;							{  source file's directory id  }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 			ioDestDirID:		DirIDType;							{  dest file's directory id  }
 			filler16:			SInt32;
 			filler17:			SInt32;
 			ioSrcDirID:			DirIDType;							{  source file's directory id  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 			filler18:			SInt16;
 			ioFileID:			SInt32;								{  file ID  }
 		   );
@@ -3265,10 +3430,14 @@ type
 			ioForeignPrivReqCount: SInt32;
 			ioFiller23:			SInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			ioForeignPrivDirID:	SInt32;
 =======
 			ioForeignPrivDirID:	DirIDType;
 >>>>>>> graemeg/fixes_2_2
+=======
+			ioForeignPrivDirID:	DirIDType;
+>>>>>>> origin/fixes_2_2
 			ioForeignPrivInfo1:	SInt32;
 			ioForeignPrivInfo2:	SInt32;
 			ioForeignPrivInfo3:	SInt32;
@@ -3278,6 +3447,7 @@ type
 
 	HParmBlkPtr							= ^HParamBlockRec;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	CMovePBRecPtr = ^CMovePBRec;
@@ -40115,6 +40285,8 @@ function PBGetUGEntryAsync( paramBlock: HParmBlkPtr ): OSErr; external name '_PB
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	CMovePBRecPtr = ^CMovePBRec;
 	CMovePBRec = record
 		qLink:					QElemPtr;
@@ -45293,4 +45465,7 @@ function FNGetDirectoryForSubscription(subscription: FNSubscriptionRef; var ref:
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

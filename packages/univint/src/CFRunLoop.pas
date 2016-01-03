@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -35,6 +36,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	Copyright (c) 1998-2005, Apple, Inc. All rights reserved.
 }
 {   Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
@@ -44,7 +47,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -54,12 +60,17 @@
 unit CFRunLoop;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -73,14 +84,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -89,11 +105,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -131,6 +150,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -138,6 +159,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -378,6 +400,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -386,7 +410,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -413,9 +440,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -427,10 +458,13 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFArray,CFDate,CFString,MacOSXPosix;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -492,11 +526,15 @@ uses MacTypes,CFBase,CFArray,CFDate,CFString,MacOSXPosix;
 }
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFRunLoopRef = ^__CFRunLoop; { an opaque type }
 	__CFRunLoop = record end;
 =======
 	CFRunLoopRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	CFRunLoopRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 
 {!
 	@typedef CFRunLoopSourceRef
@@ -504,11 +542,15 @@ type
 }
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFRunLoopSourceRef = ^__CFRunLoopSource; { an opaque type }
 	__CFRunLoopSource = record end;
 =======
 	CFRunLoopSourceRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	CFRunLoopSourceRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 
 {!
 	@typedef CFRunLoopObserverRef
@@ -516,11 +558,15 @@ type
 }
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFRunLoopObserverRef = ^__CFRunLoopObserver; { an opaque type }
 	__CFRunLoopObserver = record end;
 =======
 	CFRunLoopObserverRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	CFRunLoopObserverRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 
 {!
 	@typedef CFRunLoopTimerRef
@@ -528,11 +574,15 @@ type
 }
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFRunLoopTimerRef = ^__CFRunLoopTimer; { an opaque type }
 	__CFRunLoopTimer = record end;
 =======
 	CFRunLoopTimerRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	CFRunLoopTimerRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 
 { Reasons for CFRunLoopRunInMode() to Return }
 const
@@ -543,6 +593,7 @@ const
 
 { Run Loop Observer Activities }
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -564,6 +615,9 @@ type
 =======
 	CFRunLoopActivity = UInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+	CFRunLoopActivity = UInt32;
+>>>>>>> origin/fixes_2_2
 const
 	kCFRunLoopEntry = 1 shl 0;
     kCFRunLoopBeforeTimers = 1 shl 1;
@@ -590,11 +644,14 @@ function CFRunLoopGetTypeID: CFTypeID; external name '_CFRunLoopGetTypeID';
 function CFRunLoopGetCurrent: CFRunLoopRef; external name '_CFRunLoopGetCurrent';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CFRunLoopGetMain: CFRunLoopRef; external name '_CFRunLoopGetMain';
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {!
 	@function CFRunLoopCopyCurrentMode
 	Returns the name of the mode in which the run loop is running.
@@ -633,15 +690,20 @@ procedure CFRunLoopAddCommonMode( rl: CFRunLoopRef; mode: CFStringRef ); externa
 function CFRunLoopGetNextTimerFireDate( rl: CFRunLoopRef; mode: CFStringRef ): CFAbsoluteTime; external name '_CFRunLoopGetNextTimerFireDate';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 procedure CFRunLoopRun; external name '_CFRunLoopRun';
 function CFRunLoopRunInMode( mode: CFStringRef; seconds: CFTimeInterval; returnAfterSourceHandled: Boolean ): SInt32; external name '_CFRunLoopRunInMode';
 function CFRunLoopIsWaiting( rl: CFRunLoopRef ): Boolean; external name '_CFRunLoopIsWaiting';
 procedure CFRunLoopWakeUp( rl: CFRunLoopRef ); external name '_CFRunLoopWakeUp';
 procedure CFRunLoopStop( rl: CFRunLoopRef ); external name '_CFRunLoopStop';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {#if __BLOCKS__ && MAC_OS_X_VERSION_10_6 <= MAC_OS_X_VERSION_MAX_ALLOWED}
 { requires support for blocks
@@ -667,6 +729,8 @@ extern void CFRunLoopPerformBlock(CFRunLoopRef rl, CFTypeRef mode, void (^block)
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function CFRunLoopContainsSource( rl: CFRunLoopRef; source: CFRunLoopSourceRef; mode: CFStringRef ): Boolean; external name '_CFRunLoopContainsSource';
 procedure CFRunLoopAddSource( rl: CFRunLoopRef; source: CFRunLoopSourceRef; mode: CFStringRef ); external name '_CFRunLoopAddSource';
 procedure CFRunLoopRemoveSource( rl: CFRunLoopRef; source: CFRunLoopSourceRef; mode: CFStringRef ); external name '_CFRunLoopRemoveSource';
@@ -889,12 +953,15 @@ function CFRunLoopTimerGetTypeID: CFTypeID; external name '_CFRunLoopTimerGetTyp
 
 function CFRunLoopTimerCreate( allocator: CFAllocatorRef; fireDate: CFAbsoluteTime; interval: CFTimeInterval; flags: CFOptionFlags; order: CFIndex; callout: CFRunLoopTimerCallBack; var context: CFRunLoopTimerContext ): CFRunLoopTimerRef; external name '_CFRunLoopTimerCreate';
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef __BLOCKS__}
 extern CFRunLoopTimerRef CFRunLoopTimerCreateWithHandler(CFAllocatorRef allocator, CFAbsoluteTime fireDate, CFTimeInterval interval, CFOptionFlags flags, CFIndex order, void (^block) (CFRunLoopTimerRef timer)) CF_AVAILABLE_STARTING(10_7, 5_0);
 {$endif} { __BLOCKS__ }
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function CFRunLoopTimerGetNextFireDate( timer: CFRunLoopTimerRef ): CFAbsoluteTime; external name '_CFRunLoopTimerGetNextFireDate';
 procedure CFRunLoopTimerSetNextFireDate( timer: CFRunLoopTimerRef; fireDate: CFAbsoluteTime ); external name '_CFRunLoopTimerSetNextFireDate';
 function CFRunLoopTimerGetInterval( timer: CFRunLoopTimerRef ): CFTimeInterval; external name '_CFRunLoopTimerGetInterval';
@@ -904,6 +971,7 @@ procedure CFRunLoopTimerInvalidate( timer: CFRunLoopTimerRef ); external name '_
 function CFRunLoopTimerIsValid( timer: CFRunLoopTimerRef ): Boolean; external name '_CFRunLoopTimerIsValid';
 procedure CFRunLoopTimerGetContext( timer: CFRunLoopTimerRef; var context: CFRunLoopTimerContext ); external name '_CFRunLoopTimerGetContext';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -935,3 +1003,7 @@ end.
 
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+
+end.
+>>>>>>> origin/fixes_2_2

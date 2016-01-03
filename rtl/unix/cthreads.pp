@@ -44,10 +44,14 @@
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(linux) or defined(aix) or defined(android)}
 =======
 {$ifdef linux}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifdef linux}
+>>>>>>> origin/fixes_2_2
 {$define has_sem_timedwait}
 {$endif}
 
@@ -311,7 +315,10 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 >>>>>>> graemeg/fixes_2_2
     function ThreadMain(param : pointer) : pointer;cdecl;
@@ -520,14 +527,18 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
     }
 //      result := pthread_kill(threadHandle,SIGSTOP);
 <<<<<<< HEAD
+<<<<<<< HEAD
       result:=dword(-1);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
 
 
   function  CResumeThread  (threadHandle : TThreadID) : dword;
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -546,6 +557,9 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 =======
 //      result := pthread_kill(threadHandle,SIGCONT);
 >>>>>>> graemeg/fixes_2_2
+=======
+//      result := pthread_kill(threadHandle,SIGCONT);
+>>>>>>> origin/fixes_2_2
     end;
 
 
@@ -636,6 +650,7 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
          if pthread_mutex_lock(@CS) <> 0 then
            fpc_threaderror
 <<<<<<< HEAD
+<<<<<<< HEAD
       end;
 
     function CTryEnterCriticalSection(var CS):longint;
@@ -646,6 +661,8 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
            result:=0; // failure
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
     procedure CLeaveCriticalSection(var CS);
@@ -670,10 +687,14 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
                            Semaphore routines
 *****************************************************************************}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
 procedure cSemaphoreWait(const FSem: Pointer);
 var
   res: cint;
@@ -911,6 +932,7 @@ type
          FEventSection: TPthreadMutex;
          FWaiters: longint;
 <<<<<<< HEAD
+<<<<<<< HEAD
          FIsSet,
          FManualReset,
          FDestroying : Boolean;
@@ -918,6 +940,10 @@ type
          FManualReset,
          FDestroying: Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+         FManualReset,
+         FDestroying: Boolean;
+>>>>>>> origin/fixes_2_2
         end;
      plocaleventstate = ^tbasiceventstate;
 //     peventstate=pointer;
@@ -938,6 +964,7 @@ begin
   plocaleventstate(result)^.FWaiters:=0;
   plocaleventstate(result)^.FDestroying:=False;
 <<<<<<< HEAD
+<<<<<<< HEAD
   plocaleventstate(result)^.FIsSet:=InitialState;
   res := pthread_cond_init(@plocaleventstate(result)^.FCondVar, nil);
   if (res <> 0) then
@@ -947,6 +974,8 @@ begin
   end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef has_sem_init}
   plocaleventstate(result)^.FSem:=cIntSemaphoreInit(initialstate);
   if plocaleventstate(result)^.FSem=nil then
@@ -998,14 +1027,20 @@ end;
 
 procedure Intbasiceventdestroy(state:peventstate);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 var
   i: longint;
 >>>>>>> graemeg/fixes_2_2
+=======
+var
+  i: longint;
+>>>>>>> origin/fixes_2_2
 begin
   { safely mark that we are destroying this event }
   pthread_mutex_lock(@plocaleventstate(state)^.feventsection);
   plocaleventstate(state)^.FDestroying:=true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   { send a signal to all threads that are waiting }
@@ -1013,19 +1048,28 @@ begin
   pthread_mutex_unlock(@plocaleventstate(state)^.feventsection);
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   { wake up everyone who is waiting }
   for i := 1 to plocaleventstate(state)^.FWaiters do
     cSemaphorePost(plocaleventstate(state)^.FSem);
   pthread_mutex_unlock(@plocaleventstate(state)^.feventsection);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { now wait until they've finished their business }
   while (plocaleventstate(state)^.FWaiters <> 0) do
     cThreadSwitch;
 
   { and clean up }
 <<<<<<< HEAD
+<<<<<<< HEAD
   pthread_cond_destroy(@plocaleventstate(state)^.Fcondvar);
   pthread_mutex_destroy(@plocaleventstate(state)^.FEventSection);
+=======
+  cSemaphoreDestroy(plocaleventstate(state)^.FSem);
+>>>>>>> origin/fixes_2_2
   dispose(plocaleventstate(state));
 end;
 
@@ -1037,6 +1081,7 @@ begin
   pthread_mutex_unlock(@plocaleventstate(state)^.feventsection);
 end;
 
+<<<<<<< HEAD
 procedure IntbasiceventSetEvent(state:peventstate);
 begin
   pthread_mutex_lock(@plocaleventstate(state)^.feventsection);
@@ -1062,6 +1107,8 @@ end;
 
 procedure IntbasiceventResetEvent(state:peventstate);
 
+=======
+>>>>>>> origin/fixes_2_2
 begin
 {$if not defined(has_sem_init) and not defined(has_sem_open)}
   pthread_mutex_lock(@plocaleventstate(state)^.feventsection);
@@ -1136,7 +1183,10 @@ var
   nanores, nanoerr: cint;
   twres: TTryWaitResult;
   lastloop: boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   { safely check whether we are being destroyed, if so immediately return. }
   { otherwise (under the same mutex) increase the number of waiters        }
@@ -1147,6 +1197,7 @@ begin
       result := wrAbandoned;
       exit;
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
   { not a regular inc() because it may happen simulatneously with the }
   { interlockeddecrement() at the end                                 }
@@ -1206,6 +1257,13 @@ begin
 
   if TimeOut=Cardinal($FFFFFFFF) then
     begin
+=======
+  inc(plocaleventstate(state)^.FWaiters);
+  pthread_mutex_unlock(@plocaleventstate(state)^.feventsection);
+
+  if TimeOut=Cardinal($FFFFFFFF) then
+    begin
+>>>>>>> origin/fixes_2_2
       { if no timeout, just wait until we are woken up }
       cSemaphoreWait(plocaleventstate(state)^.FSem);
       if not(plocaleventstate(state)^.FDestroying) then
@@ -1322,7 +1380,10 @@ begin
   { we can get errors in case an object is destroyed between the    }
   { end of the wait/sleep loop and the signalling above.            }
   { The pthread_mutex_unlock above takes care of the memory barrier }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   interlockeddecrement(plocaleventstate(state)^.FWaiters);
 end;
 

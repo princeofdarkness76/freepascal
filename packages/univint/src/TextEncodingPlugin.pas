@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/TextEncodingPlugin.h
  
      Contains:   Required interface for Text Encoding Converter-Plugins
@@ -30,6 +31,8 @@
      Copyright:  © 1996-2008 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       TextEncodingPlugin.p
  
      Contains:   Required interface for Text Encoding Converter-Plugins
@@ -38,11 +41,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1996-2002 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -71,6 +78,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -82,7 +91,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -92,12 +104,17 @@
 unit TextEncodingPlugin;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -111,14 +128,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -127,11 +149,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -169,6 +194,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -176,6 +203,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -432,6 +460,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -440,7 +470,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -467,9 +500,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -480,6 +517,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,TextCommon,TextEncodingConverter;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -508,6 +546,9 @@ uses MacTypes,TextCommon,TextEncodingConverter;
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
 
@@ -517,6 +558,7 @@ uses MacTypes,TextCommon,TextEncodingConverter;
   ####################################################################################
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
    This constant is needed for MacOS X development only. It is the name in which the
    function to grab the plugin's dispatch table must go by. 
@@ -548,11 +590,14 @@ const
 {
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   ####################################################################################
         Structs
   ####################################################################################
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { These structs are needed for TEC plugins.}
 
@@ -751,6 +796,8 @@ const
 	kTECPluginDispatchTableVersion1_2 = $00010002; { 1.2 releases}
 	kTECPluginDispatchTableCurrentVersion = kTECPluginDispatchTableVersion1_2;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type
 	TECBufferContextRecPtr = ^TECBufferContextRec;
 	TECBufferContextRec = record
@@ -940,11 +987,15 @@ const
 	kTECPluginDispatchTableVersion1_2 = $00010002;				{  1.2 releases }
 	kTECPluginDispatchTableCurrentVersion = $00010002;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	TECPluginDispatchTablePtr = ^TECPluginDispatchTable;
 	TECPluginDispatchTable = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		version: TECPluginVersion;
 		compatibleVersion: TECPluginVersion;
@@ -957,6 +1008,8 @@ type
 		PluginDisposeEncodingConverter: TECPluginDisposeEncodingConverterPtr;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		version:				TECPluginVersion;
 		compatibleVersion:		TECPluginVersion;
 		PluginID:				TECPluginSignature;
@@ -965,15 +1018,21 @@ type
 		PluginConvertTextEncoding: TECPluginConvertTextEncodingPtr;
 		PluginFlushConversion:	TECPluginFlushConversionPtr;
 		PluginDisposeEncodingConverter: TECPluginDisposeEncodingConverterPtr;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		PluginNewEncodingSniffer: TECPluginNewEncodingSnifferPtr;
 		PluginClearSnifferContextInfo: TECPluginClearSnifferContextInfoPtr;
 		PluginSniffTextEncoding: TECPluginSniffTextEncodingPtr;
 		PluginDisposeEncodingSniffer: TECPluginDisposeEncodingSnifferPtr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		PluginGetCountAvailableTextEncodings: TECPluginGetCountAvailableTextEncodingsPtr;
 		PluginGetCountAvailableTextEncodingPairs: TECPluginGetCountAvailableTextEncodingPairsPtr;
 		PluginGetCountDestinationTextEncodings: TECPluginGetCountDestinationTextEncodingsPtr;
@@ -981,6 +1040,7 @@ type
 		PluginGetCountAvailableSniffers: TECPluginGetCountAvailableSniffersPtr;
 		PluginGetCountWebTextEncodings: TECPluginGetCountWebEncodingsPtr;
 		PluginGetCountMailTextEncodings: TECPluginGetCountMailEncodingsPtr;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 		PluginGetTextEncodingInternetName: TECPluginGetTextEncodingInternetNamePtr;
@@ -1004,6 +1064,8 @@ type
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		PluginGetTextEncodingInternetName: TECPluginGetTextEncodingInternetNamePtr;
 		PluginGetTextEncodingFromInternetName: TECPluginGetTextEncodingFromInternetNamePtr;
 	end;
@@ -1013,4 +1075,7 @@ end.
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

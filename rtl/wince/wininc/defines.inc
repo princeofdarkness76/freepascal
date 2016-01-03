@@ -1634,11 +1634,15 @@
      ANSI_VAR_FONT = 12;
      DEVICE_DEFAULT_FONT = 14;
 <<<<<<< HEAD
+<<<<<<< HEAD
 //     DEFAULT_GUI_FONT = 17;  Returns zero in the emulator and
                             // isn't listed in MSDN, see bug 15062
 =======
      DEFAULT_GUI_FONT = 17;
 >>>>>>> graemeg/fixes_2_2
+=======
+     DEFAULT_GUI_FONT = 17;
+>>>>>>> origin/fixes_2_2
      OEM_FIXED_FONT = 10;
      SYSTEM_FONT = 13;
      SYSTEM_FIXED_FONT = 16;
@@ -2234,9 +2238,12 @@
      MOD_SHIFT = 4;
      MOD_WIN = 8;
 <<<<<<< HEAD
+<<<<<<< HEAD
      MOD_KEYUP = $1000;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      IDHOT_SNAPDESKTOP = -(2);
      IDHOT_SNAPWINDOW = -(1);
   { RegNotifyChangeKeyValue  }
@@ -2667,11 +2674,14 @@
      TPM_BOTTOMALIGN = $20;
      TPM_VERTICAL = $40;
 <<<<<<< HEAD
+<<<<<<< HEAD
      TPM_NONOTIFY        = $0080;     //* Don't send any notification msgs */
      TPM_RETURNCMD       = $0100;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { TranslateCharsetInfo  }
      TCI_SRCCHARSET = 1;
      TCI_SRCCODEPAGE = 2;
@@ -3882,9 +3892,12 @@
      ACS_CENTER = 1;
      ACS_TRANSPARENT = 2;
 <<<<<<< HEAD
+<<<<<<< HEAD
      ACS_TIMER       = 8;  // don't use threads... use timers
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { MODEMDEVCAPS structure  }
      DIALOPTION_BILLING = 64;
      DIALOPTION_QUIET = 128;
@@ -5713,10 +5726,14 @@ PROCESSOR_ARM_V4TFP_INSTRUCTION        PROCESSOR_ARM_V4TFP_INSTRUCTION
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Specific OEM extensions
 =======
 // Specific OEM extentions
 >>>>>>> graemeg/fixes_2_2
+=======
+// Specific OEM extentions
+>>>>>>> origin/fixes_2_2
      PF_ARM_INTEL_XSCALE             = $80010001;
      PF_ARM_INTEL_PMU                = $80010002;
      PF_ARM_INTEL_WMMX               = $80010003;
@@ -5805,10 +5822,15 @@ const
   COLOR_MENUBAR                 = 30;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   WM_APP                        = $8000;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+  WM_APP                        = $8000;
+
+>>>>>>> origin/fixes_2_2
   // ShellExecuteEx mask
   SEE_MASK_NOCLOSEPROCESS =  $00000040;
   SEE_MASK_FLAG_NO_UI     =  $00000400;
@@ -5825,6 +5847,7 @@ const
       MSGSRC_SOFTWARE_POST        = 1;
       MSGSRC_HARDWARE_KEYBOARD    = 2;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 // define dwFlag values for LoadFSDEx function...
 const
@@ -6076,6 +6099,8 @@ const
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif read_interface}
 
 
@@ -6263,6 +6288,7 @@ const
     end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // winuserm.h
 // Mobile extensions to winuser.h
 
@@ -6325,6 +6351,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef WINCE}
 {$endif WINCE}
 

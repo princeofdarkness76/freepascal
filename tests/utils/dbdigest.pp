@@ -82,6 +82,7 @@ TConfigOpt = (
   coTestSrcDir,
   coRelSrcDir,
 <<<<<<< HEAD
+<<<<<<< HEAD
   coVerbose,
   coSQL
  );
@@ -140,6 +141,8 @@ TConfigAddOpt = (
   coSvnRTLRevision,
   coSvnPackagesRevision
 =======
+=======
+>>>>>>> origin/fixes_2_2
   coVerbose
 >>>>>>> graemeg/fixes_2_2
  );
@@ -164,6 +167,7 @@ ConfigStrings : Array [TConfigOpt] of string = (
   'comment',
   'testsrcdir',
   'relsrcdir',
+<<<<<<< HEAD
 <<<<<<< HEAD
   'verbose',
   'sql'
@@ -192,6 +196,8 @@ ConfigOpts : Array[TConfigOpt] of char =(
  'V', {  coVerbose }
  'Q'  {  coSQL }
 =======
+=======
+>>>>>>> origin/fixes_2_2
   'verbose'
 >>>>>>> graemeg/fixes_2_2
 );
@@ -231,6 +237,7 @@ ConfigAddCols : Array [TConfigAddOpt] of string = (
 =======
 ConfigOpts : Array[TConfigOpt] of char
 <<<<<<< HEAD
+<<<<<<< HEAD
            = ('d','h','u','p','P','l','o','c','a','v','t','s','m','C','S','r','V');
 >>>>>>> graemeg/cpstrnew
 =======
@@ -248,6 +255,9 @@ ConfigOpts : Array[TConfigOpt] of char
 =======
            = ('d','h','u','p','l','o','c','a','v','t','s','m','C','S','r','V');
 >>>>>>> graemeg/fixes_2_2
+=======
+           = ('d','h','u','p','l','o','c','a','v','t','s','m','C','S','r','V');
+>>>>>>> origin/fixes_2_2
 
 Var
   TestOS,

@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 1993-2011 by Apple Inc.. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
@@ -40,6 +41,8 @@
  
      Copyright:  © 1993-2008 by Apple Computer, Inc., all rights reserved
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       ConditionalMacros.p
  
      Contains:   Set up for compiler independent conditionals
@@ -48,7 +51,10 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1993-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -56,6 +62,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
@@ -76,6 +83,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -84,7 +93,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -94,12 +106,17 @@
 unit ConditionalMacros;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -113,14 +130,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -129,11 +151,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -171,6 +196,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -178,6 +205,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -427,6 +455,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -435,7 +465,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -462,9 +495,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -474,6 +511,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 {$ALIGN POWER}
@@ -507,17 +545,25 @@ interface
 =======
 {$ALIGN MAC68K}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ALIGN MAC68K}
+>>>>>>> origin/fixes_2_2
 
 {***************************************************************************************************
     UNIVERSAL_INTERFACES_VERSION
     
         0x0400 --> version 4.0 (Mac OS X only)
 <<<<<<< HEAD
+<<<<<<< HEAD
         0x0335 --> version 3.4 
 =======
         0x0341 --> version 3.4.1 
         0x0340 --> version 3.4 
 >>>>>>> graemeg/fixes_2_2
+=======
+        0x0341 --> version 3.4.1 
+        0x0340 --> version 3.4 
+>>>>>>> origin/fixes_2_2
         0x0331 --> version 3.3.1
         0x0330 --> version 3.3
         0x0320 --> version 3.2
@@ -527,6 +573,7 @@ interface
         0x0210 --> version 2.1
         This conditional did not exist prior to version 2.1
 ***************************************************************************************************}
+<<<<<<< HEAD
 <<<<<<< HEAD
 // defined in the conversion script as a macro }
 // const
@@ -572,6 +619,8 @@ interface
 
     PRAGMA_*
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {***************************************************************************************************
@@ -623,7 +672,10 @@ interface
 
 
     PRAGMA_Å
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     These conditionals specify whether the compiler supports particular #pragma's
     
         PRAGMA_IMPORT           - Compiler supports: #pragma import on/off/reset
@@ -638,21 +690,30 @@ interface
 
     FOUR_CHAR_CODE
 <<<<<<< HEAD
+<<<<<<< HEAD
     This conditional is deprecated.  It was used to work around a bug in one obscure compiler that did not pack multiple characters in single quotes rationally.
     It was never intended for endian swapping.
 =======
     This conditional does the proper byte swapping to assue that a four character code (e.g. 'TEXT')
     is compiled down to the correct value on all compilers.
 >>>>>>> graemeg/fixes_2_2
+=======
+    This conditional does the proper byte swapping to assue that a four character code (e.g. 'TEXT')
+    is compiled down to the correct value on all compilers.
+>>>>>>> origin/fixes_2_2
 
         FourCharCode('abcd')  - Convert a four-char-code to the correct 32-bit value
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     TYPE_*
 =======
     TYPE_Å
 >>>>>>> graemeg/fixes_2_2
+=======
+    TYPE_Å
+>>>>>>> origin/fixes_2_2
     These conditionals specify whether the compiler supports particular types.
 
         TYPE_LONGLONG               - Compiler supports "long long" 64-bit integers
@@ -662,10 +723,14 @@ interface
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     FUNCTION_*
 =======
     FUNCTION_Å
 >>>>>>> graemeg/fixes_2_2
+=======
+    FUNCTION_Å
+>>>>>>> origin/fixes_2_2
     These conditionals specify whether the compiler supports particular language extensions
     to function prototypes and definitions.
 
@@ -675,6 +740,7 @@ interface
 
 ***************************************************************************************************}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {***************************************************************************************************
 
@@ -782,6 +848,8 @@ interface
 ***************************************************************************************************}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {***************************************************************************************************
     Backward compatibility for clients expecting 2.x version on ConditionalMacros.h
@@ -816,6 +884,7 @@ interface
 
 {***************************************************************************************************
 <<<<<<< HEAD
+<<<<<<< HEAD
  The following macros isolate the use of 68K inlines in function prototypes.
     On the Mac OS under the Classic 68K runtime, function prototypes were followed
  by a list of 68K opcodes which the compiler inserted in the generated code instead
@@ -831,6 +900,8 @@ interface
 {***************************************************************************************************
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     TARGET_CARBON                   - default: false. Switches all of the above as described.  Overrides all others
                                     - NOTE: If you set TARGET_CARBON to 1, then the other switches will be setup by
@@ -853,6 +924,7 @@ interface
 ***************************************************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
      * It's possible to have ACCESSOR_CALLS_ARE_FUNCTIONS set to true and OPAQUE_TOOLBOX_STRUCTS
      * set to false, but not the other way around, so make sure the defines are not set this way.
@@ -865,3 +937,7 @@ end.
 
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+
+end.
+>>>>>>> origin/fixes_2_2

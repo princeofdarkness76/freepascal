@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 var
@@ -29,6 +30,8 @@ begin
       Writeln('Correct: #0 string is a not valid input for val function');
     end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 var
@@ -58,5 +61,8 @@ begin
     begin
       Writeln('Correct: #0 string is a not valid input for val function');
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.

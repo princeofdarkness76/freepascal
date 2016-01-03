@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -141,6 +142,8 @@ type
     function Name: string; override;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Type
   TX11Image = Class(TObject)
   Protected
@@ -186,5 +189,8 @@ Type
     Function Pitch : Integer; Override;
     Function Name : String; Override;
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF ENABLE_X11_EXTENSION_XSHM}

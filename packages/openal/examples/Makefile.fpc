@@ -4,6 +4,7 @@
 
 [target]
 <<<<<<< HEAD
+<<<<<<< HEAD
 programs=captureplaybackopenal wavopenal
 programs_linux=madopenal
 programs_win32=madopenal
@@ -13,11 +14,16 @@ packages=openal oggvorbis a52 dts modplug matroska
 packages_linux=mad
 packages_win32=mad
 =======
+=======
+>>>>>>> origin/fixes_2_2
 programs=madopenal
 
 [require]
 packages=openal mad oggvorbis a52 dts modplug matroska
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [install]
 fpcpackage=y

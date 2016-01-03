@@ -165,6 +165,10 @@ interface
         '386','m68k','ppc','sparc','x86_64','arm','ppc64'
       );
 
+      ppcSuffix : array[TCpu] of string=(
+        '386','m68k','ppc','sparc','x86_64','arm','ppc64'
+      );
+
       OSStr : array[TOS] of string=(
         'linux','go32v2','win32','os2','freebsd','beos','haiku','netbsd',
         'amiga','atari','solaris', 'qnx', 'netware','openbsd','wdosx',

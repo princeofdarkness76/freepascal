@@ -13,10 +13,14 @@
 
  **********************************************************************}
 <<<<<<< HEAD
+<<<<<<< HEAD
 unit testsqlscript;
 =======
 unit testcsqlscript;
 >>>>>>> graemeg/fixes_2_2
+=======
+unit testcsqlscript;
+>>>>>>> origin/fixes_2_2
 
 {$mode objfpc}{$H+}
 
@@ -39,10 +43,14 @@ type
     procedure ExecuteStatement (SQLStatement: TStrings; var StopExecution: Boolean); override;
     procedure ExecuteDirective (Directive, Argument: String; var StopExecution: Boolean); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure ExecuteCommit(CommitRetaining: boolean=true); override;
 =======
     procedure ExecuteCommit; override;
 >>>>>>> graemeg/fixes_2_2
+=======
+    procedure ExecuteCommit; override;
+>>>>>>> origin/fixes_2_2
     procedure DefaultDirectives; override;
   public
     constructor create (AnOwner: TComponent); override;
@@ -107,9 +115,12 @@ type
     procedure TestCommentInQuotes1;
     procedure TestCommentInQuotes2;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure TestDashDashComment;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure TestQuote1InComment;
     procedure TestQuote2InComment;
     procedure TestQuoteInQuotes1;
@@ -187,10 +198,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TMyScript.ExecuteCommit(CommitRetaining: boolean=true);
 =======
 procedure TMyScript.ExecuteCommit;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TMyScript.ExecuteCommit;
+>>>>>>> origin/fixes_2_2
 begin
   inc (FCommits);
   if DoException <> '' then
@@ -287,6 +302,7 @@ begin
     AssertEquals ('Line', 0, Line);
     AssertEquals ('Defines', 0, Defines.count);
 <<<<<<< HEAD
+<<<<<<< HEAD
     AssertEquals ('Directives', 12, Directives.count);
     AssertTrue('Have SET TERM',Directives.IndexOf('SET TERM')<>-1);
     AssertTrue('Have COMMIT WORK',Directives.IndexOf('COMMIT WORK')<>-1);
@@ -304,6 +320,9 @@ begin
 =======
     AssertEquals ('Directives', 10, Directives.count);
 >>>>>>> graemeg/fixes_2_2
+=======
+    AssertEquals ('Directives', 10, Directives.count);
+>>>>>>> origin/fixes_2_2
     end;
 end;
 
@@ -547,6 +566,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestSQLScript.TestDashDashComment;
 begin
   script.CommentsInSQL := false;
@@ -561,6 +581,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure TTestSQLScript.TestQuote1InComment;
 begin
   script.CommentsInSQL := false;

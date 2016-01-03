@@ -317,6 +317,7 @@ const
   syscall_nr_inotify_rm_watch   = 255;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   syscall_nr_migrate_pages      = 256;
   syscall_nr_openat             = 257;
   syscall_nr_mkdirat            = 258;
@@ -342,6 +343,8 @@ const
   syscall_nr_vmsplice           = 278;
   syscall_nr_move_pages         = 279;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   syscall_migrate_pages	        = 256;
   syscall_openat		        = 257;
   syscall_mkdirat		        = 258;
@@ -366,5 +369,8 @@ const
   syscall_sync_file_range	    = 277;
   syscall_vmsplice		        = 278;
   syscall_move_pages		    = 279;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 

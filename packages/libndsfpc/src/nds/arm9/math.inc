@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 //  Math coprocessor register definitions
 const
@@ -21,6 +22,8 @@ const
   REG_SQRT_PARAM_H    : pcint32 = pointer($040002BC);
   REG_SQRT_RESULT     : pcuint32 = pointer($040002B4);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: math.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -78,7 +81,10 @@ const
   SQRT_PARAM64      : pcint64 = pointer($040002B8);
   SQRT_RESULT32     : pcint32 = pointer($040002B4);
   SQRT_PARAM32      : pcint32 = pointer($040002B8);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 //  Math coprocessor modes
 
@@ -90,6 +96,7 @@ const
   SQRT_64			= 1;
   SQRT_32			= 0;
   SQRT_BUSY		= (1 shl 15);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 function inttof32(n: cint): cint32; inline;
@@ -146,6 +153,8 @@ begin
 
 	divf32 := REG_DIV_RESULT_L^;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}
 
 {$ifdef NDS_IMPLEMENTATION}
@@ -161,7 +170,10 @@ begin
 	while (DIV_CR^ and DIV_BUSY) <> 0 do;
 
 	divf32 := DIV_RESULT32^;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function mulf32(a, b: cint32): cint32; inline;
@@ -178,6 +190,7 @@ end;
 function sqrtf32(a: cint32): cint32; inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 	REG_SQRTCNT^ := SQRT_64;
 
 	while (REG_SQRTCNT^ and SQRT_BUSY) <> 0 do;
@@ -188,6 +201,8 @@ begin
 
 	sqrtf32 := REG_SQRT_RESULT^;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	SQRT_CR^ := SQRT_64;
 
 	while (SQRT_CR^ and SQRT_BUSY) <> 0 do;
@@ -197,7 +212,10 @@ begin
 	while (SQRT_CR^ and SQRT_BUSY) <> 0 do;
 
 	sqrtf32 := SQRT_RESULT32^;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 //  Integer versions
@@ -207,6 +225,7 @@ end;
 //	denominator and returns 32 bit result
 function div32(num, den: cint32): cint32; inline;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 	REG_DIVCNT^ := DIV_32_32;
 
@@ -219,6 +238,8 @@ begin
 
 	div32 := REG_DIV_RESULT_L^;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	DIV_CR^ := DIV_32_32;
 
 	while (DIV_CR^ and DIV_BUSY) <> 0 do;
@@ -229,7 +250,10 @@ begin
 	while (DIV_CR^ and DIV_BUSY) <> 0 do;
 
 	div32 := DIV_RESULT32^;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 //  Integer divide
@@ -237,6 +261,7 @@ end;
 //	denominator and returns 32 bit result
 function mod32(num, den: cint32): cint32; inline;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 	REG_DIVCNT^ := DIV_32_32;
 
@@ -249,6 +274,8 @@ begin
 
 	mod32 := REG_DIVREM_RESULT_L^;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	DIV_CR^ := DIV_32_32;
 
 	while (DIV_CR^ and DIV_BUSY) <> 0 do;
@@ -259,7 +286,10 @@ begin
 	while (DIV_CR^ and DIV_BUSY) <> 0 do;
 
 	mod32 := DIV_REMAINDER32^;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 //  Integer divide
@@ -267,6 +297,7 @@ end;
 //  denominator are returns 32 bit result
 function div64(num: cint64; den: cint32): cint32; inline;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 	REG_DIVCNT^ := DIV_64_32;
 
@@ -279,6 +310,8 @@ begin
 
 	div64 := REG_DIV_RESULT_L^;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	DIV_CR^ := DIV_64_32;
 
 	while (DIV_CR^ and DIV_BUSY) <> 0 do;
@@ -289,7 +322,10 @@ begin
 	while (DIV_CR^ and DIV_BUSY) <> 0 do;
 
 	div64 := DIV_RESULT32^;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 //  Integer divide
@@ -297,6 +333,7 @@ end;
 //  denominator are returns 32 bit result
 function mod64(num: cint64; den: cint32): cint32; inline;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 	REG_DIVCNT^ := DIV_64_32;
 
@@ -309,6 +346,8 @@ begin
 
 	mod64 := REG_DIVREM_RESULT_L^;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	DIV_CR^ := DIV_64_32;
 
 	while (DIV_CR^ and DIV_BUSY) <> 0 do;
@@ -319,12 +358,16 @@ begin
 	while (DIV_CR^ and DIV_BUSY) <> 0 do;
 
 	mod64 := DIV_REMAINDER32^;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 //  Integer square root
 //  takes a 32 bit integer and returns
 //	32 bit result
+<<<<<<< HEAD
 <<<<<<< HEAD
 function sqrt32(a: cint32): cuint32; inline;
 begin
@@ -353,6 +396,8 @@ begin
 end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function sqrt32(a: cint32): cint32; inline;
 begin
 	SQRT_CR^ := SQRT_32;
@@ -372,7 +417,10 @@ end;
 // x = Ay * Bz - By * Az
 // y = Az * Bx - Bz * Ax
 // z = Ax * By - Bx * Ay
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure crossf32(a: pcint32; b: pcint32; res: pcint32); inline;
 begin
 	res[0] := mulf32(a[1], b[2]) - mulf32(b[1], a[2]);
@@ -381,26 +429,38 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 // Dot Product
 // result = Ax * Bx + Ay * By + Az * Bz
 >>>>>>> graemeg/fixes_2_2
+=======
+// Dot Product
+// result = Ax * Bx + Ay * By + Az * Bz
+>>>>>>> origin/fixes_2_2
 function dotf32(a, b: pcint32): cint32; inline;
 begin
 	dotf32 := mulf32(a[0], b[0]) + mulf32(a[1], b[1]) + mulf32(a[2], b[2]);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 // Normalize
 // Ax = Ax / mag
 // Ay = Ay / mag
 // Az = Az / mag
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure normalizef32(a: pcint32); inline;
 var
   magnitude: cint32;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 	magnitude := sqrtf32( mulf32(a[0], a[0]) + mulf32(a[1], a[1]) + mulf32(a[2], a[2]) );
 =======
@@ -408,13 +468,21 @@ begin
 	magnitude := sqrtf32( mulf32(a[0], a[0]) + mulf32(a[1], a[1]) + mulf32(a[2], a[2]) );
 
 >>>>>>> graemeg/fixes_2_2
+=======
+	// magnitude = sqrt ( Ax^2 + Ay^2 + Az^2 )
+	magnitude := sqrtf32( mulf32(a[0], a[0]) + mulf32(a[1], a[1]) + mulf32(a[2], a[2]) );
+
+>>>>>>> origin/fixes_2_2
 	a[0] := divf32(a[0], magnitude);
 	a[1] := divf32(a[1], magnitude);
 	a[2] := divf32(a[2], magnitude);
 end;
 {$endif NDS_IMPLEMENTATION}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifdef NDS_INTERFACE}
 function divf32(num: cint32; den: cint32): cint32; inline;
@@ -429,4 +497,7 @@ procedure crossf32(a: pcint32; b: pcint32; res: pcint32); inline;
 function dotf32(a, b: pcint32): cint32; inline;
 procedure normalizef32(a: pcint32); inline;
 {$endif NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

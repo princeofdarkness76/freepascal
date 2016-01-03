@@ -504,9 +504,12 @@ interface
     { actually defined (could be disable using "undef")                     }
     function  defined_macro(const s : string):boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
     { Look for a system procedure (no overloads supported) }
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {*** Object Helpers ***}
 <<<<<<< HEAD
@@ -1915,10 +1918,14 @@ implementation
 
         sym.fieldoffset:=align(_datasize,varalignfield);
 <<<<<<< HEAD
+<<<<<<< HEAD
         if l>high(asizeint)-sym.fieldoffset then
 =======
         if l>high(aint)-sym.fieldoffset then
 >>>>>>> graemeg/fixes_2_2
+=======
+        if l>high(aint)-sym.fieldoffset then
+>>>>>>> origin/fixes_2_2
           begin
             Message(sym_e_segment_too_large);
             _datasize:=high(aint);
@@ -2288,10 +2295,14 @@ implementation
         varalignrecord,varalign,
         storesize,storealign : aint;
 <<<<<<< HEAD
+<<<<<<< HEAD
         bitsize: tcgint;
 =======
         bitsize: aint;
 >>>>>>> graemeg/fixes_2_2
+=======
+        bitsize: aint;
+>>>>>>> origin/fixes_2_2
       begin
         storesize:=_datasize;
         storealign:=fieldalignment;
@@ -2345,18 +2356,24 @@ implementation
                   begin
                     bitsize:=tfieldvarsym(sym).getsize;
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if (bitsize>high(asizeint) div 8) then
                       Message(sym_e_segment_too_large);
                     bitsize:=bitsize*8;
                   end;
                 if bitsize>high(asizeint)-databitsize then
 =======
+=======
+>>>>>>> origin/fixes_2_2
                     if (bitsize>high(aint) div 8) then
                       Message(sym_e_segment_too_large);
                     bitsize:=bitsize*8;
                   end;
                 if bitsize>high(aint)-databitsize then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                   begin
                     Message(sym_e_segment_too_large);
                     _datasize:=high(asizeint);
@@ -2373,16 +2390,22 @@ implementation
             else
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if tfieldvarsym(sym).getsize>high(asizeint)-_datasize then
                   begin
                     Message(sym_e_segment_too_large);
                     _datasize:=high(asizeint);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                 if tfieldvarsym(sym).getsize>high(aint)-_datasize then
                   begin
                     Message(sym_e_segment_too_large);
                     _datasize:=high(aint);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                   end
                 else
                   _datasize:=tfieldvarsym(sym).fieldoffset+offset;
@@ -2446,6 +2469,7 @@ implementation
               if assigned(hsym) and
                  (
 <<<<<<< HEAD
+<<<<<<< HEAD
                   (
                    not(m_delphi in current_settings.modeswitches) and
                    is_visible_for_object(hsym,tobjectdef(defowner))
@@ -2453,6 +2477,10 @@ implementation
                   (not(m_delphi in current_settings.modeswitches) and
                    tsym(hsym).is_visible_for_object(tobjectdef(defowner),tobjectdef(defowner))
 >>>>>>> graemeg/fixes_2_2
+=======
+                  (not(m_delphi in current_settings.modeswitches) and
+                   tsym(hsym).is_visible_for_object(tobjectdef(defowner),tobjectdef(defowner))
+>>>>>>> origin/fixes_2_2
                   ) or
                   (
                    { In Delphi, you can repeat members of a parent class. You can't }
@@ -4263,6 +4291,7 @@ implementation
         stackitem  : psymtablestackitem;
       begin
         result:=false;
+<<<<<<< HEAD
         stackitem:=symtablestack.stack;
         while assigned(stackitem) do
 =======
@@ -4757,6 +4786,14 @@ implementation
           -> uses ImplementedInterfaces instead }
         if is_objcprotocol(classh) then
 >>>>>>> graemeg/cpstrnew
+=======
+        hashedid.id:=s;
+        if assigned(current_procinfo) and assigned(current_procinfo.procdef) then
+          currentclassh:=current_procinfo.procdef._class
+        else
+          currentclassh:=nil;
+        while assigned(classh) do
+>>>>>>> origin/fixes_2_2
           begin
             srsymtable:=classh.symtable;
             srsym:=tsym(srsymtable.FindWithHash(hashedid));
@@ -5790,7 +5827,10 @@ implementation
 
     function defined_macro(const s : string):boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
       var
         mac: tmacro;
       begin

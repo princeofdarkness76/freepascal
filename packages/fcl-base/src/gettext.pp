@@ -27,9 +27,13 @@ const
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
   TMOFileHeader = packed record
     magic: LongWord;             // MOFileHeaderMagic
     revision: LongWord;          // 0
@@ -89,6 +93,7 @@ uses
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure Endianfixmotable(p:PMOStringTable;n:integer);
 var I:integer;
 begin
@@ -112,20 +117,26 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 constructor TMOFile.Create(AStream: TStream);
 var
   header: TMOFileHeader;
   i: Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   endianswap : boolean;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   inherited Create;
 
   AStream.Read(header, Sizeof(header));
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   if (header.magic <> MOFileHeaderMagic) and (swapendian(header.magic)<>MOFileHeaderMagic) then
     raise EMOFileError.Create('Invalid magic - not a MO file?');
@@ -149,6 +160,11 @@ begin
     raise EMOFileError.Create('Invalid magic - not a MO file?');
 
 >>>>>>> graemeg/fixes_2_2
+=======
+  if header.magic <> MOFileHeaderMagic then
+    raise EMOFileError.Create('Invalid magic - not a MO file?');
+
+>>>>>>> origin/fixes_2_2
   GetMem(OrigTable, header.nstrings * SizeOf(TMOStringInfo));
   GetMem(TranslTable, header.nstrings * SizeOf(TMOStringInfo));
   GetMem(OrigStrings, header.nstrings * SizeOf(PChar));
@@ -157,6 +173,7 @@ begin
 
   AStream.Position := header.OrigTabOffset;
   AStream.Read(OrigTable^, header.nstrings * SizeOf(TMOStringInfo));
+<<<<<<< HEAD
 <<<<<<< HEAD
   if EndianSwap then 
     EndianFixmotable(OrigTable,Header.NStrings);
@@ -170,6 +187,11 @@ begin
   AStream.Position := header.TransTabOffset;
   AStream.Read(TranslTable^, header.nstrings * SizeOf(TMOStringInfo));
 >>>>>>> graemeg/fixes_2_2
+=======
+
+  AStream.Position := header.TransTabOffset;
+  AStream.Read(TranslTable^, header.nstrings * SizeOf(TMOStringInfo));
+>>>>>>> origin/fixes_2_2
 
   StringCount := header.nstrings;
 
@@ -202,10 +224,13 @@ begin
   AStream.Position := header.HashTabOffset;
   AStream.Read(HashTable^, 4 * HashTableSize);
 <<<<<<< HEAD
+<<<<<<< HEAD
   if EndianSwap then 
     EndianFixHashTable(hashtable,hashtablesize);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 constructor TMOFile.Create(const AFilename: String);
@@ -242,6 +267,7 @@ var
   idx, incr, nstr: LongWord;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if AHash = $FFFFFFFF then
   begin
     Result := '';
@@ -249,16 +275,22 @@ begin
   end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   idx := AHash mod HashTableSize;
   incr := 1 + (AHash mod (HashTableSize - 2));
   while True do
   begin
     nstr := HashTable^[idx];
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (nstr = 0) or (nstr > StringCount) then
 =======
     if nstr = 0 then
 >>>>>>> graemeg/fixes_2_2
+=======
+    if nstr = 0 then
+>>>>>>> origin/fixes_2_2
     begin
       Result := '';
       exit;
@@ -294,6 +326,7 @@ end;
 
 function Translate (Name,Value : AnsiString; Hash : Longint; arg:pointer) : AnsiString;
 <<<<<<< HEAD
+<<<<<<< HEAD
 var contextempty : boolean;
 begin
   contextempty:=name='';
@@ -306,6 +339,10 @@ begin
 begin
   Result:=TMOFile(arg).Translate(Value,Hash);
 >>>>>>> graemeg/fixes_2_2
+=======
+begin
+  Result:=TMOFile(arg).Translate(Value,Hash);
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -369,6 +406,7 @@ var
   mo: TMOFile;
   lang, FallbackLang: String;
 <<<<<<< HEAD
+<<<<<<< HEAD
   fn: String;
 begin
   GetLanguageIDs(Lang, FallbackLang);
@@ -403,6 +441,8 @@ begin
       end;
     end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 begin
   GetLanguageIDs(Lang, FallbackLang);
   try
@@ -427,7 +467,10 @@ begin
   except
     on e: Exception do;
   end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 

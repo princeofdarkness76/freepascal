@@ -17,12 +17,18 @@ interface
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, db, sqldb, BufDataset, odbcsqldyn;
 =======
   Classes, SysUtils, sqldb, db, odbcsqldyn
 {$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}, BufDataset{$ENDIF}
   ;
 >>>>>>> graemeg/fixes_2_2
+=======
+  Classes, SysUtils, sqldb, db, odbcsqldyn
+{$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}, BufDataset{$ENDIF}
+  ;
+>>>>>>> origin/fixes_2_2
 
 type
 
@@ -38,11 +44,17 @@ type
     FParamIndex:TParamBinding; // maps the i-th parameter in the query to the TParams passed to PrepareStatement
     FParamBuf:array of pointer; // buffers that can be used to bind the i-th parameter in the query
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$IF NOT((FPC_VERSION>=2) AND (FPC_RELEASE>=1))}
     FBlobStreams:TList;   // list of Blob TMemoryStreams stored in field buffers (we need this currently as we can't hook into the freeing of TBufDataset buffers)
 {$ENDIF}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$IF NOT((FPC_VERSION>=2) AND (FPC_RELEASE>=1))}
+    FBlobStreams:TList;   // list of Blob TMemoryStreams stored in field buffers (we need this currently as we can't hook into the freeing of TBufDataset buffers)
+{$ENDIF}
+>>>>>>> origin/fixes_2_2
   public
     constructor Create(Connection:TODBCConnection);
     destructor Destroy; override;
@@ -126,12 +138,18 @@ type
     function LoadField(cursor:TSQLCursor; FieldDef:TFieldDef; buffer:pointer; out CreateBlob : boolean):boolean; override;
     procedure LoadBlobIntoBuffer(FieldDef: TFieldDef;ABlobBuf: PBufBlobField; cursor: TSQLCursor; ATransaction : TSQLTransaction); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ELSE}
     function LoadField(cursor:TSQLCursor; FieldDef:TFieldDef; buffer:pointer):boolean; override;
     function CreateBlobStream(Field:TField; Mode:TBlobStreamMode):TStream; override;
 {$ENDIF}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure FreeFldBuffers(cursor:TSQLCursor); override;
     // - UpdateIndexDefs
     procedure UpdateIndexDefs(IndexDefs:TIndexDefs; TableName:string); override;
@@ -235,6 +253,7 @@ begin
   //WriteLn('LastResultCode: ',ODBCResultToStr(LastReturnCode));
   try
 <<<<<<< HEAD
+<<<<<<< HEAD
     NativeError1:=0;
     SQLState1:='';
     // build TotalMessage for exception to throw
@@ -245,6 +264,8 @@ begin
     repeat
       SetLength(SqlState,5); // reset 5-character buffer
 =======
+=======
+>>>>>>> origin/fixes_2_2
     // build TotalMessage for exception to throw
     TotalMessage:=Format(ErrorMsg,FmtArgs)+Format(' ODBC error details: LastReturnCode: %s;',[ODBCResultToStr(LastReturnCode)]);
     // retrieve status records
@@ -252,7 +273,10 @@ begin
     SetLength(MessageText,1);
     RecNumber:=1;
     repeat
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       // dummy call to get correct TextLength
       //WriteLn('Getting error record ',RecNumber);
       Res:=SQLGetDiagRec(HandleType,AHandle,RecNumber,@(SqlState[1]),NativeError,@(MessageText[1]),0,TextLength);
@@ -270,6 +294,7 @@ begin
       // add to TotalMessage
       TotalMessage:=TotalMessage+Format(' Record %d: SqlState: %s; NativeError: %d; Message: %s;',[RecNumber,SqlState,NativeError,MessageText]);
 <<<<<<< HEAD
+<<<<<<< HEAD
       // save most significant error
       if RecNumber = 1 then
       begin
@@ -278,6 +303,8 @@ begin
       end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       // incement counter
       Inc(RecNumber);
     until false;
@@ -288,6 +315,11 @@ begin
   end;
   // raise error
   raise EODBCException.CreateFmt(TotalMessage, [], nil, NativeError1, SQLState1);
+end;
+
+procedure ODBCCheckResult(LastReturnCode:SQLRETURN; HandleType:SQLSMALLINT; AHandle: SQLHANDLE; ErrorMsg: string);
+begin
+  ODBCCheckResult(LastReturnCode, HandleType, AHandle, ErrorMsg, []);
 end;
 
 procedure ODBCCheckResult(LastReturnCode:SQLRETURN; HandleType:SQLSMALLINT; AHandle: SQLHANDLE; ErrorMsg: string);
@@ -353,6 +385,7 @@ begin
 {$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}
   FConnOptions := FConnOptions + [sqEscapeRepeat] + [sqEscapeSlash];
 {$ENDIF}
+<<<<<<< HEAD
 end;
 
 function TODBCConnection.StrToStatementType(s : string) : TStatementType;
@@ -432,6 +465,8 @@ begin
     pdw^ := NtoLE(BigInt[j]);
     inc(pdw);
     end;
+=======
+>>>>>>> origin/fixes_2_2
 end;
 *)
 
@@ -821,10 +856,14 @@ begin
         SQL_HANDLE_DBC,FDBCHandle,'Could not free ODBC Connection handle.'
       );
 <<<<<<< HEAD
+<<<<<<< HEAD
       raise; // re-raise exception
 =======
       raise; // re-raise exceptoin
 >>>>>>> graemeg/fixes_2_2
+=======
+      raise; // re-raise exceptoin
+>>>>>>> origin/fixes_2_2
     end;
   end;
 
@@ -1365,16 +1404,22 @@ const
   DEFAULT_BLOB_BUFFER_SIZE = 1024;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TODBCConnection.LoadField(cursor: TSQLCursor; FieldDef: TFieldDef; buffer: pointer; out CreateBlob : boolean): boolean;
 const
   SQL_CA_SS_VARIANT_TYPE = 1215;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}
 function TODBCConnection.LoadField(cursor: TSQLCursor; FieldDef: TFieldDef; buffer: pointer; out CreateBlob : boolean): boolean;
 {$ELSE}
 function TODBCConnection.LoadField(cursor: TSQLCursor; FieldDef: TFieldDef; buffer: pointer):boolean;
 {$ENDIF}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   ODBCCursor:TODBCCursor;
   StrLenOrInd,VariantCType:SQLLEN;
@@ -1383,13 +1428,19 @@ var
   ODBCTimeStampStruct:SQL_TIMESTAMP_STRUCT;
   DateTime:TDateTime;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$IF NOT((FPC_VERSION>=2) AND (FPC_RELEASE>=1))}
   BlobBuffer:pointer;
   BlobBufferSize,BytesRead:SQLINTEGER;
   BlobMemoryStream:TMemoryStream;
 {$ENDIF}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Res:SQLRETURN;
 begin
 {$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}
@@ -1402,11 +1453,14 @@ begin
   // TODO: finish this
   case FieldDef.DataType of
 <<<<<<< HEAD
+<<<<<<< HEAD
     ftWideString,ftFixedWideChar: // mapped to TWideStringField
       Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_WCHAR, buffer, FieldDef.Size+sizeof(WideChar), @StrLenOrInd); //buffer must contain space for the null-termination character
     ftGuid, ftFixedChar,ftString: // are mapped to a TStringField (including TGuidField)
       Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_CHAR, buffer, FieldDef.Size+1, @StrLenOrInd);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}
     ftGuid,ftWideString,ftFixedWideChar,
 {$ENDIF}
@@ -1516,23 +1570,33 @@ begin
 {$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}
     ftWideMemo,
 {$ENDIF}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     ftBlob, ftMemo:       // BLOBs
     begin
       //Writeln('BLOB');
       // Try to discover BLOB data length
       Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_BINARY, buffer, 0, @StrLenOrInd);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       ODBCCheckResult(Res, SQL_HANDLE_STMT, ODBCCursor.FSTMTHandle, 'Could not get field data for field "%s" (index %d).',[FieldDef.Name, FieldDef.Index+1]);
 >>>>>>> graemeg/fixes_2_2
+=======
+      ODBCCheckResult(Res, SQL_HANDLE_STMT, ODBCCursor.FSTMTHandle, 'Could not get field data for field "%s" (index %d).',[FieldDef.Name, FieldDef.Index+1]);
+>>>>>>> origin/fixes_2_2
       // Read the data if not NULL
       if ODBCSuccess(Res) and (StrLenOrInd<>SQL_NULL_DATA) then
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         CreateBlob:=true; // defer actual loading of blob data to LoadBlobIntoBuffer method
         //WriteLn('Deferring loading of blob of length ',StrLenOrInd);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}
         CreateBlob:=true; // defer actual loading of blob data to LoadBlobIntoBuffer method
         //WriteLn('Deferring loading of blob of length ',StrLenOrInd);
@@ -1575,7 +1639,10 @@ begin
             Freemem(BlobBuffer,BlobBufferSize);
         end;
 {$ENDIF}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
     end;
     // TODO: Loading of other field types
@@ -1586,6 +1653,7 @@ begin
   Result:=StrLenOrInd<>SQL_NULL_DATA; // Result indicates whether the value is non-null
 
   //writeln(Format('Field.Size: %d; StrLenOrInd: %d',[FieldDef.Size, StrLenOrInd]));
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -1747,12 +1815,103 @@ begin
   end
   else
     Result:=nil;
+=======
+>>>>>>> origin/fixes_2_2
+end;
+{$ENDIF}
+
+{$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}
+procedure TODBCConnection.LoadBlobIntoBuffer(FieldDef: TFieldDef; ABlobBuf: PBufBlobField; cursor: TSQLCursor; ATransaction: TSQLTransaction);
+var
+  ODBCCursor: TODBCCursor;
+  Res: SQLRETURN;
+  StrLenOrInd:SQLINTEGER;
+  BlobBuffer:pointer;
+  BlobBufferSize,BytesRead:SQLINTEGER;
+  BlobMemoryStream:TMemoryStream;
+begin
+  ODBCCursor:=cursor as TODBCCursor;
+  // Try to discover BLOB data length
+  //   NB MS ODBC requires that TargetValuePtr is not nil, so we supply it with a valid pointer, even though BufferLength is 0
+  Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_BINARY, @BlobBuffer, 0, @StrLenOrInd);
+  ODBCCheckResult(Res, SQL_HANDLE_STMT, ODBCCursor.FSTMTHandle, 'Could not get field data for field "%s" (index %d).',[FieldDef.Name, FieldDef.Index+1]);
+  // Read the data if not NULL
+  if StrLenOrInd<>SQL_NULL_DATA then
+  begin
+    // Determine size of buffer to use
+    if StrLenOrInd<>SQL_NO_TOTAL then begin
+      // Size is known on beforehand
+      // set size & alloc buffer
+      //WriteLn('Loading blob of length ',StrLenOrInd);
+      BlobBufferSize:=StrLenOrInd;
+      ABlobBuf^.BlobBuffer^.Size:=BlobBufferSize;
+      ReAllocMem(ABlobBuf^.BlobBuffer^.Buffer, BlobBufferSize);
+      // get blob data
+      if BlobBufferSize>0 then begin
+        Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_BINARY, ABlobBuf^.BlobBuffer^.Buffer, BlobBufferSize, @StrLenOrInd);
+        ODBCCheckResult(Res, SQL_HANDLE_STMT, ODBCCursor.FSTMTHandle, 'Could not load blob data for field "%s" (index %d).',[FieldDef.Name, FieldDef.Index+1]);
+      end;
+    end else begin
+      // Size is not known on beforehand; read data in chuncks; write to a TMemoryStream (which implements O(n) writing)
+      BlobBufferSize:=DEFAULT_BLOB_BUFFER_SIZE;
+      // init BlobBuffer and BlobMemoryStream to nil pointers
+      BlobBuffer:=nil; // the buffer that will hold the chuncks of data; not to be confused with ABlobBuf^.BlobBuffer
+      BlobMemoryStream:=nil;
+      try
+        // Allocate the buffer and memorystream
+        BlobBuffer:=GetMem(BlobBufferSize);
+        BlobMemoryStream:=TMemoryStream.Create;
+        // Retrieve data in parts
+        repeat
+          Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_BINARY, BlobBuffer, BlobBufferSize, @StrLenOrInd);
+          ODBCCheckResult(Res, SQL_HANDLE_STMT, ODBCCursor.FSTMTHandle, 'Could not load (partial) blob data for field "%s" (index %d).',[FieldDef.Name, FieldDef.Index+1]);
+          // Append data in buffer to memorystream
+          if (StrLenOrInd=SQL_NO_TOTAL) or (StrLenOrInd>BlobBufferSize) then
+            BytesRead:=BlobBufferSize
+          else
+            BytesRead:=StrLenOrInd;
+          BlobMemoryStream.Write(BlobBuffer^, BytesRead);
+        until Res=SQL_SUCCESS;
+        // Copy memory stream data to ABlobBuf^.BlobBuffer
+        BlobBufferSize:=BlobMemoryStream.Size; // actual blob size
+        //   alloc ABlobBuf^.BlobBuffer
+        ABlobBuf^.BlobBuffer^.Size:=BlobBufferSize;
+        ReAllocMem(ABlobBuf^.BlobBuffer^.Buffer, BlobBufferSize);
+        //   read memory stream data into ABlobBuf^.BlobBuffer
+        BlobMemoryStream.Position:=0;
+        BlobMemoryStream.Read(ABlobBuf^.BlobBuffer^.Buffer^, BlobBufferSize);
+      finally
+        // free buffer and memory stream
+        BlobMemoryStream.Free;
+        if BlobBuffer<>nil then
+          Freemem(BlobBuffer,BlobBufferSize);
+      end;
+    end;
+  end;
+end;
+{$ELSE}
+function TODBCConnection.CreateBlobStream(Field: TField; Mode: TBlobStreamMode): TStream;
+var
+  ODBCCursor: TODBCCursor;
+  BlobMemoryStream, BlobMemoryStreamCopy: TMemoryStream;
+begin
+  if (Mode=bmRead) and not Field.IsNull then
+  begin
+    Field.GetData(@BlobMemoryStream);
+    BlobMemoryStreamCopy:=TMemoryStream.Create;
+    if BlobMemoryStream<>nil then
+      BlobMemoryStreamCopy.LoadFromStream(BlobMemoryStream);
+    Result:=BlobMemoryStreamCopy;
+  end
+  else
+    Result:=nil;
 end;
 {$ENDIF}
 
 procedure TODBCConnection.FreeFldBuffers(cursor: TSQLCursor);
 var
   ODBCCursor:TODBCCursor;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 begin
@@ -1762,6 +1921,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$IF NOT((FPC_VERSION>=2) AND (FPC_RELEASE>=1))}
   i: integer;
 {$ENDIF}
@@ -1831,7 +1992,10 @@ begin
                      DecimalDigits,          // number of decimal digits
                      Nullable),              // SQL_NO_NULLS, SQL_NULLABLE or SQL_NULLABLE_UNKNOWN
       SQL_HANDLE_STMT, ODBCCursor.FSTMTHandle, 'Could not get column properties for column %d.',[i]
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     );
 <<<<<<< HEAD
 =======
@@ -1871,7 +2035,10 @@ begin
 {$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}
       SQL_WCHAR:         begin FieldType:=ftWideString; FieldSize:=ColumnSize+1; end; // NB if TFieldDef.Size should be nr. of characters, then we should change this
       SQL_WVARCHAR:      begin FieldType:=ftWideString; FieldSize:=ColumnSize+1; end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       SQL_WLONGVARCHAR:  begin FieldType:=ftWideMemo;   FieldSize:=BLOB_BUF_SIZE; end; // is a blob
 {$ENDIF}
       SQL_DECIMAL:       begin FieldType:=ftFloat;      FieldSize:=0; end;
@@ -1907,10 +2074,14 @@ begin
 {      SQL_INTERVAL_MINUTE_TO_SECOND:FieldType:=ftUnknown;}
 {$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}
 <<<<<<< HEAD
+<<<<<<< HEAD
       SQL_GUID:          begin FieldType:=ftGuid;       FieldSize:=ColumnSize; end;
 =======
       SQL_GUID:          begin FieldType:=ftGuid;       FieldSize:=ColumnSize+1; end;
 >>>>>>> graemeg/fixes_2_2
+=======
+      SQL_GUID:          begin FieldType:=ftGuid;       FieldSize:=ColumnSize+1; end;
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
     else
       begin FieldType:=ftUnknown; FieldSize:=ColumnSize; end
@@ -1985,6 +2156,7 @@ end;
 procedure TODBCConnection.UpdateIndexDefs(IndexDefs: TIndexDefs; TableName: string);
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   Len: integer;
   StmtHandle:SQLHSTMT;
   Res:SQLRETURN;
@@ -2025,6 +2197,23 @@ const
   DEFAULT_NAME_LEN = 255;
 begin
 >>>>>>> graemeg/fixes_2_2
+=======
+  StmtHandle:SQLHSTMT;
+  Res:SQLRETURN;
+  IndexDef: TIndexDef;
+  KeyFields, KeyName: String;
+  // variables for binding
+  NonUnique :SQLSMALLINT; NonUniqueIndOrLen :SQLINTEGER;
+  IndexName :string;      IndexNameIndOrLen :SQLINTEGER;
+  _Type     :SQLSMALLINT; _TypeIndOrLen     :SQLINTEGER;
+  OrdinalPos:SQLSMALLINT; OrdinalPosIndOrLen:SQLINTEGER;
+  ColName   :string;      ColNameIndOrLen   :SQLINTEGER;
+  AscOrDesc :SQLCHAR;     AscOrDescIndOrLen :SQLINTEGER;
+  PKName    :string;      PKNameIndOrLen    :SQLINTEGER;
+const
+  DEFAULT_NAME_LEN = 255;
+begin
+>>>>>>> origin/fixes_2_2
   // allocate statement handle
   StmtHandle := SQL_NULL_HANDLE;
   ODBCCheckResult(
@@ -2060,9 +2249,13 @@ begin
     // init key name & fields; we will set the IndexDefs.Option ixPrimary below when there is a match by IndexName=KeyName
     KeyName:='';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     KeyFields:='';
 >>>>>>> graemeg/fixes_2_2
+=======
+    KeyFields:='';
+>>>>>>> origin/fixes_2_2
     try
       // bind result columns; the column numbers are documented in the reference for SQLStatistics
       ODBCCheckResult(SQLBindCol(StmtHandle,  4, SQL_C_CHAR  , @ColName[1], Length(ColName)+1, @ColNameIndOrLen), SQL_HANDLE_STMT, StmtHandle, 'Could not bind primary key metadata column COLUMN_NAME.');
@@ -2078,6 +2271,7 @@ begin
           Break;
         // handle data
 <<<<<<< HEAD
+<<<<<<< HEAD
         if ODBCSuccess(Res) then begin
           if OrdinalPos=1 then begin
             // create new IndexDef if OrdinalPos=1
@@ -2090,13 +2284,18 @@ begin
             assert(Assigned(IndexDef));
             IndexDef.Fields:=IndexDef.Fields+';'+PChar(@ColName[1]); // NB ; is the separator to be used for IndexDef.Fields
 =======
+=======
+>>>>>>> origin/fixes_2_2
         if ODBCSucces(Res) then begin
           if OrdinalPos=1 then begin
             KeyName:=PChar(@PKName[1]);
             KeyFields:=    PChar(@ColName[1]);
           end else begin
             KeyFields:=KeyFields+';'+PChar(@ColName[1]);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           end;
         end else begin
           ODBCCheckResult(Res, SQL_HANDLE_STMT, StmtHandle, 'Could not fetch primary key metadata row.');
@@ -2115,12 +2314,17 @@ begin
       SQLStatistics(
         StmtHandle,
 <<<<<<< HEAD
+<<<<<<< HEAD
         nil, 0, // catalog unknown; request for all catalogs
         nil, 0, // schema unknown; request for all schemas
 =======
         nil, 0, // catalog unkown; request for all catalogs
         nil, 0, // schema unkown; request for all schemas
 >>>>>>> graemeg/fixes_2_2
+=======
+        nil, 0, // catalog unkown; request for all catalogs
+        nil, 0, // schema unkown; request for all schemas
+>>>>>>> origin/fixes_2_2
         PChar(TableName), Length(TableName), // request information for TableName
         SQL_INDEX_ALL,
         SQL_QUICK
@@ -2149,6 +2353,7 @@ begin
           Break;
         // handle data
 <<<<<<< HEAD
+<<<<<<< HEAD
         if ODBCSuccess(Res) then begin
           // note: SQLStatistics not only returns index info, but also statistics; we skip the latter
           if _Type<>SQL_TABLE_STAT then begin
@@ -2162,12 +2367,17 @@ begin
             end else if (OrdinalPos=1) or not Assigned(IndexDef) then begin
               // create new IndexDef if OrdinalPos=1 or not Assigned(IndexDef) (the latter should not occur though)
 =======
+=======
+>>>>>>> origin/fixes_2_2
         if ODBCSucces(Res) then begin
           // note: SQLStatistics not only returns index info, but also statistics; we skip the latter
           if _Type<>SQL_TABLE_STAT then begin
             if (OrdinalPos=1) or not Assigned(IndexDef) then begin
               // create new IndexDef iff OrdinalPos=1 or not Assigned(IndexDef) (the latter should not occur though)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               IndexDef:=IndexDefs.AddIndexDef;
               IndexDef.Name:=PChar(@IndexName[1]); // treat ansistring as zero terminated string
               IndexDef.Fields:=PChar(@ColName[1]);
@@ -2176,10 +2386,15 @@ begin
               if (AscOrDescIndOrLen<>SQL_NULL_DATA) and (AscOrDesc='D') then
                 IndexDef.Options:=IndexDef.Options+[ixDescending];
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
               if IndexDef.Name=KeyName then
                 IndexDef.Options:=IndexDef.Options+[ixPrimary];
 >>>>>>> graemeg/fixes_2_2
+=======
+              if IndexDef.Name=KeyName then
+                IndexDef.Options:=IndexDef.Options+[ixPrimary];
+>>>>>>> origin/fixes_2_2
               // TODO: figure out how we can tell whether COLUMN_NAME is an expression or not
               //       if it is an expression, we should include ixExpression in Options and set Expression to ColName
             end else // NB we re-use the last IndexDef
@@ -2305,16 +2520,22 @@ begin
   // allocate FBlobStreams
   FBlobStreams:=TList.Create;
 {$ENDIF}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 destructor TODBCCursor.Destroy;
 begin
   inherited Destroy;
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {$IF NOT((FPC_VERSION>=2) AND (FPC_RELEASE>=1))}
   FBlobStreams.Free;
@@ -2330,7 +2551,10 @@ end;
 end;
 
 {$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 class function TODBCConnectionDef.TypeName: String;
 begin
   Result:='ODBC';

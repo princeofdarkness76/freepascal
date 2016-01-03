@@ -321,6 +321,7 @@ begin
 end ;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function DateToStr(Date: TDateTime; const FormatSettings: TFormatSettings): string;
 begin
   DateTimeToString(result, FormatSettings.ShortDateFormat, Date, FormatSettings);
@@ -328,10 +329,13 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {  TimeToStr returns a string representation of Time using LongTimeFormat   }
 
 function TimeToStr(Time: TDateTime): string;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   DateTimeToString(Result, 'tt', Time);
 end ;
@@ -360,11 +364,16 @@ begin
   DateTimeToString(Result, 'c', DateTime);
 end ;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   result := FormatDateTime('tt', Time);
 end ;
 
 {   DateTimeToStr returns a string representation of DateTime using LongDateTimeFormat   }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 function DateTimeToStr(DateTime: TDateTime; const FormatSettings: TFormatSettings): string;
 begin
@@ -485,16 +494,22 @@ begin
        windows, therefor it shouldn't be taken as separator (unless so specified)
        and ignored }
 <<<<<<< HEAD
+<<<<<<< HEAD
      if (Separator <> ' ') and (s[i] = ' ') then
        Continue;
 
      if (s[i] = separator) or ((i = len) and (s[i] in ['0'..'9'])) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
      if (DateSeparator <> ' ') and (s[i] = ' ') then
        Continue;
 
      if (s[i] = dateseparator) or ((i = length(s)) and (s[i] in ['0'..'9'])) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
         inc(n);
         if n>3 then
@@ -636,6 +651,7 @@ type
   TTimeValues = array[tiHour..tiMSec] of Word;
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
    AmPm: integer;
    TimeValues: TTimeValues;
 =======
@@ -650,6 +666,9 @@ var
         SetLength(Result, len);
         move(src[0],result[1],len);
     end;
+=======
+   Len, Current: integer; PM: integer;
+>>>>>>> origin/fixes_2_2
 
    function SplitElements(out TimeValues: TTimeValues; out AmPm: Integer): Boolean;
    //Strict version. It does not allow #32 as Separator, it will treat it as whitespace always
@@ -662,6 +681,7 @@ var
       AmPmStr: ShortString;
       CurChar: Char;
    begin
+<<<<<<< HEAD
 <<<<<<< HEAD
      Result := False;
      AmPm := AMPM_None; //No Am or PM in string found yet
@@ -791,6 +811,8 @@ begin
     //errormsg:='Invalid time.';
     ErrorMsg:=Format(SErrInvalidTimeFormat,[StrPas(S, Len)]);
 =======
+=======
+>>>>>>> origin/fixes_2_2
    result := -1;
    Inc(Current);
    while (result = -1) and (Current <= Len) do
@@ -849,7 +871,10 @@ begin
         TimeValues[0]:=0;
     end;
   result := EncodeTime(TimeValues[0], TimeValues[1], TimeValues[2], TimeValues[3]);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end ;
 
 function StrToTime(const S: PChar; Len : integer; separator : char = #0): TDateTime;
@@ -890,6 +915,7 @@ end;
 function StrToDateTime(const s: string): TDateTime;
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   I: integer;
 begin
   I:=Pos(DefaultFormatSettings.TimeSeparator,S);
@@ -906,6 +932,8 @@ begin
     Result:=StrToDate(S);
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   i, j, k, l: integer;
   sd, st: string;
 begin
@@ -1113,6 +1141,7 @@ var
   begin
    Len := Length(Str);
 <<<<<<< HEAD
+<<<<<<< HEAD
    if ResultLen + Len < SizeOf(ResultBuffer) then
      begin
        StrMove(ResultCurrent, pchar(Str), Len);
@@ -1137,6 +1166,8 @@ var
     StoreStr(pchar(@S[1]), Length(S));
   end ;
 =======
+=======
+>>>>>>> origin/fixes_2_2
    if ResultLen + Len < SizeOf(ResultBuffer) then begin // strmove not safe
       StrMove(ResultCurrent, pchar(Str), Len);
       ResultCurrent := ResultCurrent + Len;
@@ -1155,7 +1186,10 @@ var
       end ;
    StoreStr(pchar(@S[1]), Len);
    end ;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 var
   Year, Month, Day, DayOfWeek, Hour, Minute, Second, MilliSecond: word;
@@ -3379,10 +3413,14 @@ begin
   dati:= ComposeDateTime(dati, newtime);
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure ReplaceDate(var DateTime: TDateTime; const NewDate: TDateTime); inline;
 var
   tmp : TDateTime;
+<<<<<<< HEAD
 begin
   tmp:=NewDate;
   ReplaceTime(tmp,DateTime);
@@ -3409,3 +3447,11 @@ end;
 end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+begin
+  tmp:=NewDate;
+  ReplaceTime(tmp,DateTime);
+  DateTime:=tmp;
+end;
+
+>>>>>>> origin/fixes_2_2

@@ -14,6 +14,7 @@
 {$if defined(VER2_0) or not defined(FPC_TESTGENERICS)}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {****************************************************************************}
 {*                           TFPListEnumerator                              *}
 {****************************************************************************}
@@ -38,6 +39,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {****************************************************************************}
 {*                           TFPList                                        *}
 {****************************************************************************}
@@ -227,8 +230,11 @@ begin
     end;      
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure TFPList.Insert(Index: Integer; Item: Pointer);
 begin
   if (Index < 0) or (Index > FCount )then
@@ -381,7 +387,10 @@ begin
     Add (aList[r]);
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure TFPList.MergeMove (aList : TFPList);
 var r : integer;
@@ -550,6 +559,7 @@ end;
 
 {$endif}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 
 procedure TFPList.MergeMove (aList : TFPList);
@@ -609,6 +619,8 @@ begin
         self.delete (r);
     end;
 end;
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure TFPList.DoSrcUnique(ListA, ListB : TFPList);
 var r : integer;
@@ -919,6 +931,7 @@ end;
 
 Procedure TList.AddList(AList : TList);
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   I: Integer;
 begin
@@ -951,6 +964,11 @@ begin
   FList.AddList(AList.FList);
 end;
 >>>>>>> graemeg/fixes_2_2
+=======
+begin
+  FList.AddList(AList.FList);
+end;
+>>>>>>> origin/fixes_2_2
 
 procedure TList.Clear;
 
@@ -1039,6 +1057,7 @@ end;
 procedure TList.CopyMove (aList : TList);
 var r : integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   Clear;
   for r := 0 to aList.count-1 do
@@ -1055,10 +1074,30 @@ end;
 
 procedure TList.DoCopy(ListA, ListB : TList);
 begin
+=======
+begin
+  Clear;
+  for r := 0 to aList.count-1 do
+    Add (aList[r]);
+end;
+
+procedure TList.MergeMove (aList : TList);
+var r : integer;
+begin
+  For r := 0 to aList.count-1 do
+    if self.indexof(aList[r]) < 0 then
+      self.Add (aList[r]);
+end;
+
+procedure TList.DoCopy(ListA, ListB : TList);
+var l : TList;
+begin
+>>>>>>> origin/fixes_2_2
   if assigned (ListB) then
     CopyMove (ListB)
   else
     CopyMove (ListA);
+<<<<<<< HEAD
 end;
 
 procedure TList.DoDestUnique(ListA, ListB : TList);
@@ -1180,6 +1219,34 @@ begin
     end;
 end;
 
+=======
+end;
+
+procedure TList.DoDestUnique(ListA, ListB : TList);
+  procedure MoveElements (src, dest : TList);
+  var r : integer;
+  begin
+    self.clear;
+    for r := 0 to src.count-1 do
+      if dest.indexof(src[r]) < 0 then
+        self.Add (src[r]);
+  end;
+  
+var dest : TList;
+begin
+  if assigned (ListB) then
+    MoveElements (ListB, ListA)
+  else
+    try
+      dest := TList.Create;
+      dest.CopyMove (self);
+      MoveElements (ListA, dest)
+    finally
+      dest.Free;
+    end;
+end;
+
+>>>>>>> origin/fixes_2_2
 procedure TList.DoAnd(ListA, ListB : TList);
 var r : integer;
 begin
@@ -1228,7 +1295,10 @@ begin
     MergeMove (ListA);
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure TList.DoXOr(ListA, ListB : TList);
 var r : integer;
     l : TList;

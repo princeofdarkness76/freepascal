@@ -267,6 +267,7 @@ type
     sp_internal,            { internal symbol, not reported as unused }
     sp_implicitrename,
 <<<<<<< HEAD
+<<<<<<< HEAD
     sp_hint_experimental,
     sp_generic_para,
 <<<<<<< HEAD
@@ -297,6 +298,11 @@ type
     sp_hint_experimental,
     sp_generic_para
 >>>>>>> graemeg/fixes_2_2
+=======
+    sp_hidden,
+    sp_hint_experimental,
+    sp_generic_para
+>>>>>>> origin/fixes_2_2
   );
   tsymoptions=set of tsymoption;
 
@@ -309,6 +315,7 @@ type
     { type is a specialization of a generic type }
     df_specialization,
     { def has been copied from another def so symtable is not owned }
+<<<<<<< HEAD
 <<<<<<< HEAD
     df_copied_def,
     { def was created as a generic constraint and thus is only "shallow" }
@@ -325,6 +332,9 @@ type
 =======
     df_copied_def
 >>>>>>> graemeg/fixes_2_2
+=======
+    df_copied_def
+>>>>>>> origin/fixes_2_2
   );
   tdefoptions=set of tdefoption;
 
@@ -368,10 +378,13 @@ type
   );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   tordtypeset = set of tordtype;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { string types }
   tstringtype = (
     st_shortstring,
@@ -663,6 +676,7 @@ type
     oo_can_have_published,{ the class has rtti, i.e. you can publish properties }
     oo_has_default_property,
 <<<<<<< HEAD
+<<<<<<< HEAD
     oo_has_valid_guid,
     oo_has_enumerator_movenext,
     oo_has_enumerator_current,
@@ -692,6 +706,9 @@ type
 =======
     oo_has_valid_guid
 >>>>>>> graemeg/fixes_2_2
+=======
+    oo_has_valid_guid
+>>>>>>> origin/fixes_2_2
   );
   tobjectoptions=set of tobjectoption;
 
@@ -945,9 +962,12 @@ type
     te_incompatible,
     te_convert_operator,
 <<<<<<< HEAD
+<<<<<<< HEAD
     te_convert_l6,
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     te_convert_l5,     { ad infinitum... }
     te_convert_l4,     { and yet even less preferred conversion }
     te_convert_l3,     { even less preferred conversion (possibly with loss of data) }
@@ -1064,9 +1084,12 @@ inherited_objectoptions : tobjectoptions = [oo_has_virtual,oo_has_private,oo_has
 
      EqualTypeName : array[tequaltype] of string[16] = (
 <<<<<<< HEAD
+<<<<<<< HEAD
        'incompatible','convert_operator','convert_l6', 'convert_l5','convert_l4','convert_l3',
        'convert_l2','convert_l1','equal','exact'
 =======
+=======
+>>>>>>> origin/fixes_2_2
        'incompatible','convert_operator','convert_l5','convert_l4','convert_l3','convert_l2',
        'convert_l1','equal','exact'
 >>>>>>> graemeg/fixes_2_2

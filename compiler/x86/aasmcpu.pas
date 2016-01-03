@@ -375,10 +375,13 @@ interface
     function spilling_create_load(const ref:treference;r:tregister):Taicpu;
     function spilling_create_store(r:tregister; const ref:treference):Taicpu;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     function MemRefInfo(aAsmop: TAsmOp): TInsTabMemRefSizeInfoRec;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     procedure InitAsm;
     procedure DoneAsm;
@@ -439,6 +442,7 @@ implementation
        { SSE4 instructions  }
        IF_SSE4   = $00200000;
 <<<<<<< HEAD
+<<<<<<< HEAD
        { TODO: These flags were added to make x86ins.dat more readable.
          Values must be reassigned to make any other use of them. }
        IF_SSSE3  = $00200000;
@@ -456,6 +460,9 @@ implementation
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
        IF_8086   = $00000000;  { 8086 instruction  }
        IF_186    = $01000000;  { 186+ instruction  }
        IF_286    = $02000000;  { 286+ instruction  }
@@ -710,7 +717,10 @@ implementation
               move(alignarray[j][1],bufptr^,length(alignarray[j]));
               inc(bufptr,length(alignarray[j]));
               dec(localsize,length(alignarray[j]));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             end;
          end;
         calculatefillbuf:=pchar(@buf);
@@ -1347,7 +1357,10 @@ implementation
                     ot:=OT_IMMEDIATE or opsize_2_type[i,opsize];
                   if (val=1) and (i=1) then
                     ot := ot or OT_ONENESS;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 end;
               top_none :
                 begin
@@ -2550,9 +2563,12 @@ implementation
        * \2ab          - a ModRM, calculated on EA in operand a, with the spare
        *                 field equal to digit b.
 <<<<<<< HEAD
+<<<<<<< HEAD
        * \254,\255,\256 - a signed 32-bit immediate to be extended to 64 bits
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        * \300,\301,\302 - might be an 0x67, depending on the address size of
        *                 the memory reference in operand x.
        * \310          - indicates fixed 16-bit address size, i.e. optional 0x67.
@@ -3258,18 +3274,24 @@ implementation
             &333 :
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if not(needed_VEX) then
                 begin
                   bytes[0]:=$f3;
                   objdata.writebytes(bytes,1);
                 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
                 bytes[0]:=$f3;
                 objdata.writebytes(bytes,1);
 {$ifdef x86_64}
                 maybewriterex;
 {$endif x86_64}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               end;
             &334 :
               begin
@@ -3635,10 +3657,13 @@ implementation
 
     function spilling_create_load(const ref:treference;r:tregister):Taicpu;
 <<<<<<< HEAD
+<<<<<<< HEAD
       var
         tmpref: treference;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
         tmpref:=ref;
 {$ifdef i8086}
@@ -3712,6 +3737,7 @@ implementation
 
     function spilling_create_store(r:tregister; const ref:treference):Taicpu;
 <<<<<<< HEAD
+<<<<<<< HEAD
       var
         size: topsize;
 <<<<<<< HEAD
@@ -3729,6 +3755,8 @@ implementation
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
         tmpref:=ref;
 {$ifdef i8086}

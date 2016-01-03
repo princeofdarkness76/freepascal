@@ -2371,6 +2371,7 @@ const
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_cpuinit;
   begin
     { don't let libraries influence the FPU cw set by the host program }
@@ -2445,6 +2446,10 @@ Procedure SysInitFPU;
 {$define FPC_SYSTEM_HAS_SYSINITFPU}
 Procedure SysInitFPU;
 >>>>>>> graemeg/fixes_2_2
+=======
+{$define FPC_SYSTEM_HAS_SYSINITFPU}
+Procedure SysInitFPU;
+>>>>>>> origin/fixes_2_2
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2461,8 +2466,11 @@ begin
   localfpucw:=fpucw;
   asm
 <<<<<<< HEAD
+<<<<<<< HEAD
     fldcw localfpucw
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC_PIC}
     movq fpucw@GOTPCREL(%rip),%rax
     fldcw (%rax)
@@ -2558,6 +2566,7 @@ asm
 end;
 
 
+<<<<<<< HEAD
 function SwapEndian(const AValue: DWord): DWord; assembler; nostackframe;
 asm
 {$ifdef win64}
@@ -2591,6 +2600,8 @@ asm
 end;
 
 
+=======
+>>>>>>> origin/fixes_2_2
 {$define FPC_SYSTEM_HAS_SYSRESETFPU}
 Procedure SysResetFPU;
   var

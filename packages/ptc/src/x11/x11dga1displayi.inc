@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -55,6 +56,8 @@ var
 begin
   inherited;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$IFDEF ENABLE_X11_EXTENSION_XF86DGA1}
 
 Constructor TX11DGA1Display.Create(ADisplay : PDisplay; AScreen : Integer; Const AFlags : TX11Flags);
@@ -64,12 +67,16 @@ Var
 
 Begin
   Inherited;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   LOG('trying to create a DGA 1.0 display');
 
   FInDirect := False;
   FInMode := False;
+<<<<<<< HEAD
 <<<<<<< HEAD
   FModeInfo := nil;
 
@@ -136,6 +143,8 @@ var
   d_x, d_y: Integer;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FModeInfo := Nil;
 
   { Check if we are root }
@@ -172,7 +181,10 @@ Var
   d_x, d_y : Integer;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FWidth := AWidth;
   FHeight := AHeight;
 
@@ -182,6 +194,7 @@ Begin
   FPreviousMode := -1;
   { Save previous mode }
   New(vml);
+<<<<<<< HEAD
 <<<<<<< HEAD
   try
     XF86VidModeGetModeLine(FDisplay, FScreen, @dotclock, vml);
@@ -205,6 +218,8 @@ Begin
   if FPreviousMode = -1 then
     raise TPTCError.Create('Current mode not found in modelist?! Err, this shouldn''t happen :)');
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Try
     XF86VidModeGetModeLine(FDisplay, FScreen, @dotclock, vml);
     Try
@@ -226,12 +241,16 @@ Begin
   End;
   If FPreviousMode = -1 Then
     Raise TPTCError.Create('Current mode not found in modelist?! Err, this shouldn''t happen :)');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   { Find a video mode to set }
 
   { Normal modesetting first, find exactly matching mode }
   found_mode := -1;
+<<<<<<< HEAD
 <<<<<<< HEAD
   for i := 0 to FModeInfoNum - 1 do
     if (FModeInfo[i]^.hdisplay = AWidth) and (FModeInfo[i]^.vdisplay = AHeight) then
@@ -286,6 +305,8 @@ Begin
   FDestX := (FModeInfo[found_mode]^.hdisplay div 2) - (AWidth div 2);
   FDestY := (FModeInfo[found_mode]^.vdisplay div 2) - (AHeight div 2);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   For i := 0 To FModeInfoNum - 1 Do
     If (FModeInfo[i]^.hdisplay = AWidth) And (FModeInfo[i]^.vdisplay = AHeight) Then
     Begin
@@ -338,7 +359,10 @@ Begin
     Raise TPTCError.Create('Error switching to requested video mode');
   FDestX := (FModeInfo[found_mode]^.hdisplay Div 2) - (AWidth Div 2);
   FDestY := (FModeInfo[found_mode]^.vdisplay Div 2) - (AHeight Div 2);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   XFlush(FDisplay);
   FInMode := True;
@@ -350,10 +374,14 @@ Begin
   root := XRootWindow(FDisplay, FScreen);
   XGrabKeyboard(FDisplay, root, True, GrabModeAsync, GrabModeAsync, CurrentTime);
 <<<<<<< HEAD
+<<<<<<< HEAD
   XGrabPointer(FDisplay, root, True, PointerMotionMask or ButtonPressMask or
 =======
   XGrabPointer(FDisplay, root, True, PointerMotionMask Or ButtonPressMask Or
 >>>>>>> graemeg/fixes_2_2
+=======
+  XGrabPointer(FDisplay, root, True, PointerMotionMask Or ButtonPressMask Or
+>>>>>>> origin/fixes_2_2
                ButtonReleaseMask, GrabModeAsync, GrabModeAsync, None, None,
                CurrentTime);
   XFlush(FDisplay);
@@ -368,6 +396,7 @@ Begin
   XF86DGAGetViewPortSize(FDisplay, FScreen, @FDGAWidth, @FDGAHeight);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if XF86DGAForkApp(FScreen) <> 0 then
     raise TPTCError.Create('cannot do safety fork');
 
@@ -381,6 +410,8 @@ Begin
   XSelectInput(FDisplay, DefaultRootWindow(FDisplay),
                KeyPressMask or KeyReleaseMask);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   If XF86DGAForkApp(FScreen) <> 0 Then
     Raise TPTCError.Create('cannot do safety fork');
 
@@ -393,11 +424,15 @@ Begin
 
   XSelectInput(FDisplay, DefaultRootWindow(FDisplay),
                KeyPressMask Or KeyReleaseMask);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   XF86DGASetViewPort(FDisplay, FScreen, 0, 0); { Important.. sort of =) }
 
   found := False;
+<<<<<<< HEAD
 <<<<<<< HEAD
   repeat
     { Stupid loop. The key }
@@ -528,6 +563,8 @@ begin
   if FInMode then
   begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Repeat
     { Stupid loop. The key }
     { events were causing }
@@ -610,11 +647,15 @@ Begin
 
   If FInMode Then
   Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FInMode := False;
     XF86VidModeSwitchToMode(FDisplay, FScreen, FModeInfo[FPreviousMode]);
     XUngrabKeyboard(FDisplay, CurrentTime);
     XUngrabPointer(FDisplay, CurrentTime);
+<<<<<<< HEAD
 <<<<<<< HEAD
   end;
 
@@ -845,6 +886,8 @@ begin
 >>>>>>> origin/cpstrnew
   repeat
 =======
+=======
+>>>>>>> origin/fixes_2_2
   End;
 
   If FDisplay <> Nil Then
@@ -990,13 +1033,17 @@ Var
 Begin
   FreeAndNil(AEvent);
   Repeat
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { process all events from the X queue and put them on our FEventQueue }
     HandleEvents;
 
     { try to find an event that matches the EventMask }
     AEvent := FEventQueue.NextEvent(AEventMask);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     if AWait and (AEvent = Nil) then
     begin
@@ -1029,6 +1076,8 @@ var
 begin
   repeat
 =======
+=======
+>>>>>>> origin/fixes_2_2
     If AWait And (AEvent = Nil) Then
     Begin
       { if the X event queue is empty, block until an event is received }
@@ -1045,13 +1094,17 @@ Var
 
 Begin
   Repeat
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { process all events from the X queue and put them on our FEventQueue }
     HandleEvents;
 
     { try to find an event that matches the EventMask }
     Result := FEventQueue.PeekEvent(AEventMask);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     if AWait and (Result = Nil) then
     begin
@@ -1174,6 +1227,8 @@ begin
   {...}
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     If AWait And (Result = Nil) Then
     Begin
       { if the X event queue is empty, block until an event is received }
@@ -1243,6 +1298,9 @@ Procedure TX11DGA1Display.SetCursor(AVisible : Boolean);
 Begin
   {nothing... raise exception if visible=true?}
 End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ENDIF ENABLE_X11_EXTENSION_XF86DGA1}

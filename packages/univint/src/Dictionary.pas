@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       LangAnalysis/Dictionary.h
  
      Contains:   Dictionary Manager Interfaces
@@ -24,6 +25,8 @@
  
      Copyright:  © 1992-2008 by Apple Inc., all rights reserved.
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       Dictionary.p
  
      Contains:   Dictionary Manager Interfaces
@@ -32,11 +35,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1992-2002 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -67,6 +74,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -78,7 +87,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -88,12 +100,17 @@
 unit Dictionary;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -107,14 +124,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -123,11 +145,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -165,6 +190,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -172,6 +199,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -438,6 +466,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -446,7 +476,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -473,9 +506,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -487,6 +524,7 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,AEDataModel,Files,AERegistry,CodeFragments,MacErrors;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -494,6 +532,9 @@ uses MacTypes,AEDataModel,Files,AERegistry,CodeFragments,MacErrors;
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN POWER}
 
@@ -505,6 +546,7 @@ uses MacTypes,AEDataModel,Files,AERegistry,CodeFragments,MacErrors;
 {
     Dictionary information
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kDictionaryFileType = FourCharCode('dict');
@@ -827,6 +869,8 @@ type
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 const
 	kDictionaryFileType			= FourCharCode('dict');
@@ -987,11 +1031,15 @@ const
 	 *    Mac OS X:         not available
 	 	}
 function NewDCMProgressFilterUPP(userRoutine: DCMProgressFilterProcPtr): DCMProgressFilterUPP; external name '_NewDCMProgressFilterUPP'; { old name was NewDCMProgressFilterProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeDCMProgressFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -999,16 +1047,22 @@ function NewDCMProgressFilterUPP(userRoutine: DCMProgressFilterProcPtr): DCMProg
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 procedure DisposeDCMProgressFilterUPP(userUPP: DCMProgressFilterUPP); external name '_DisposeDCMProgressFilterUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeDCMProgressFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -1035,6 +1089,8 @@ function DCMLibraryVersion: UInt32; external name '_DCMLibraryVersion';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -1054,12 +1110,16 @@ function InvokeDCMProgressFilterUPP(determinateProcess: boolean; percentageCompl
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMLibraryVersion: UInt32; external name '_DCMLibraryVersion';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Create/delete dictionary
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  DCMNewDictionary()   *** DEPRECATED ***
  *  
@@ -1105,6 +1165,8 @@ function DCMDeleteDictionary( dictionaryID: DCMDictionaryID ): OSStatus; externa
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  DCMNewDictionary()
  *  
  *  Availability:
@@ -1133,12 +1195,16 @@ function DCMDeriveNewDictionary(srcDictionary: DCMDictionaryID; const (*var*) ne
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMDeleteDictionary(dictionaryID: DCMDictionaryID): OSStatus; external name '_DCMDeleteDictionary';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Register dictionary
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  DCMRegisterDictionaryFile()   *** DEPRECATED ***
  *  
@@ -1169,6 +1235,8 @@ function DCMUnregisterDictionary( dictionaryID: DCMDictionaryID ): OSStatus; ext
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  DCMRegisterDictionaryFile()
  *  
  *  Availability:
@@ -1187,12 +1255,16 @@ function DCMRegisterDictionaryFile(const (*var*) dictionaryFile: FSSpec; var dic
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMUnregisterDictionary(dictionaryID: DCMDictionaryID): OSStatus; external name '_DCMUnregisterDictionary';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Open dictionary
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  DCMOpenDictionary()   *** DEPRECATED ***
  *  
@@ -1223,6 +1295,8 @@ function DCMCloseDictionary( dictionaryRef: DCMDictionaryRef ): OSStatus; extern
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  DCMOpenDictionary()
  *  
  *  Availability:
@@ -1241,12 +1315,16 @@ function DCMOpenDictionary(dictionaryID: DCMDictionaryID; protectKeySize: ByteCo
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMCloseDictionary(dictionaryRef: DCMDictionaryRef): OSStatus; external name '_DCMCloseDictionary';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Change access privilege
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  DCMGetDictionaryWriteAccess()   *** DEPRECATED ***
  *  
@@ -1277,6 +1355,8 @@ function DCMReleaseDictionaryWriteAccess( dictionaryRef: DCMDictionaryRef; commi
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  DCMGetDictionaryWriteAccess()
  *  
  *  Availability:
@@ -1295,12 +1375,16 @@ function DCMGetDictionaryWriteAccess(dictionaryRef: DCMDictionaryRef; timeOutDur
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMReleaseDictionaryWriteAccess(dictionaryRef: DCMDictionaryRef; commitTransaction: boolean): OSStatus; external name '_DCMReleaseDictionaryWriteAccess';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Find records
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  DCMFindRecords()   *** DEPRECATED ***
  *  
@@ -1480,6 +1564,51 @@ function DCMGetPrevRecord( dictionaryRef: DCMDictionaryRef; keyFieldTag: DCMFiel
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+ *  DCMFindRecords()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in DictionaryMgrLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function DCMFindRecords(dictionaryRef: DCMDictionaryRef; keyFieldTag: DCMFieldTag; keySize: ByteCount; keyData: ConstLogicalAddress; findMethod: DCMFindMethod; preFetchedDataNum: ItemCount; preFetchedData: DCMFieldTagPtr; skipCount: ItemCount; maxRecordCount: ItemCount; var recordIterator: DCMFoundRecordIterator): OSStatus; external name '_DCMFindRecords';
+
+{
+ *  DCMCountRecordIterator()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in DictionaryMgrLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function DCMCountRecordIterator(recordIterator: DCMFoundRecordIterator): ItemCount; external name '_DCMCountRecordIterator';
+
+{
+ *  DCMIterateFoundRecord()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in DictionaryMgrLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function DCMIterateFoundRecord(recordIterator: DCMFoundRecordIterator; maxKeySize: ByteCount; var actualKeySize: ByteCount; keyData: LogicalAddress; var uniqueID: DCMUniqueID; var dataList: AEDesc): OSStatus; external name '_DCMIterateFoundRecord';
+
+{
+ *  DCMDisposeRecordIterator()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in DictionaryMgrLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function DCMDisposeRecordIterator(recordIterator: DCMFoundRecordIterator): OSStatus; external name '_DCMDisposeRecordIterator';
+
+{
+    Dump dictionary
+}
+{
+>>>>>>> origin/fixes_2_2
  *  DCMCountRecord()
  *  
  *  Availability:
@@ -1528,12 +1657,16 @@ function DCMGetNextRecord(dictionaryRef: DCMDictionaryRef; keyFieldTag: DCMField
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMGetPrevRecord(dictionaryRef: DCMDictionaryRef; keyFieldTag: DCMFieldTag; keySize: ByteCount; keyData: ConstLogicalAddress; uniqueID: DCMUniqueID; maxKeySize: ByteCount; var prevKeySize: ByteCount; prevKeyData: LogicalAddress; var prevUniqueID: DCMUniqueID): OSStatus; external name '_DCMGetPrevRecord';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Get field data
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  DCMGetFieldData()   *** DEPRECATED ***
  *  
@@ -1564,6 +1697,8 @@ function DCMSetFieldData( dictionaryRef: DCMDictionaryRef; keyFieldTag: DCMField
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  DCMGetFieldData()
  *  
  *  Availability:
@@ -1582,12 +1717,16 @@ function DCMGetFieldData(dictionaryRef: DCMDictionaryRef; keyFieldTag: DCMFieldT
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMSetFieldData(dictionaryRef: DCMDictionaryRef; keyFieldTag: DCMFieldTag; keySize: ByteCount; keyData: ConstLogicalAddress; uniqueID: DCMUniqueID; const (*var*) dataList: AEDesc): OSStatus; external name '_DCMSetFieldData';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Add record
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  DCMAddRecord()   *** DEPRECATED ***
  *  
@@ -1618,6 +1757,8 @@ function DCMDeleteRecord( dictionaryRef: DCMDictionaryRef; keyFieldTag: DCMField
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  DCMAddRecord()
  *  
  *  Availability:
@@ -1636,12 +1777,16 @@ function DCMAddRecord(dictionaryRef: DCMDictionaryRef; keyFieldTag: DCMFieldTag;
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMDeleteRecord(dictionaryRef: DCMDictionaryRef; keyFieldTag: DCMFieldTag; keySize: ByteCount; keyData: ConstLogicalAddress; uniqueID: DCMUniqueID): OSStatus; external name '_DCMDeleteRecord';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Reorganize/compact dictionary
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  DCMReorganizeDictionary()   *** DEPRECATED ***
  *  
@@ -1672,6 +1817,8 @@ function DCMCompactDictionary( dictionaryID: DCMDictionaryID; progressProc: DCMP
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  DCMReorganizeDictionary()
  *  
  *  Availability:
@@ -1690,12 +1837,16 @@ function DCMReorganizeDictionary(dictionaryID: DCMDictionaryID; extraCapacity: I
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMCompactDictionary(dictionaryID: DCMDictionaryID; progressProc: DCMProgressFilterUPP; userData: UInt32): OSStatus; external name '_DCMCompactDictionary';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     DictionaryID utilities
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  DCMGetFileFromDictionaryID()   *** DEPRECATED ***
  *  
@@ -1741,6 +1892,8 @@ function DCMGetDictionaryIDFromRef( dictionaryRef: DCMDictionaryRef ): DCMDictio
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  DCMGetFileFromDictionaryID()
  *  
  *  Availability:
@@ -1769,12 +1922,16 @@ function DCMGetDictionaryIDFromFile(const (*var*) fileRef: FSSpec; var dictionar
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMGetDictionaryIDFromRef(dictionaryRef: DCMDictionaryRef): DCMDictionaryID; external name '_DCMGetDictionaryIDFromRef';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Field information and manipulation
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  DCMGetDictionaryFieldInfo()   *** DEPRECATED ***
  *  
@@ -1790,6 +1947,8 @@ function DCMGetDictionaryFieldInfo( dictionaryID: DCMDictionaryID; fieldTag: DCM
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  DCMGetDictionaryFieldInfo()
  *  
  *  Availability:
@@ -1798,12 +1957,16 @@ function DCMGetDictionaryFieldInfo( dictionaryID: DCMDictionaryID; fieldTag: DCM
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMGetDictionaryFieldInfo(dictionaryID: DCMDictionaryID; fieldTag: DCMFieldTag; var fieldInfoRecord: AEDesc): OSStatus; external name '_DCMGetDictionaryFieldInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Dictionary property
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  DCMGetDictionaryProperty()   *** DEPRECATED ***
  *  
@@ -1849,6 +2012,8 @@ function DCMGetDictionaryPropertyList( dictionaryID: DCMDictionaryID; maxPropert
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  DCMGetDictionaryProperty()
  *  
  *  Availability:
@@ -1877,12 +2042,16 @@ function DCMSetDictionaryProperty(dictionaryID: DCMDictionaryID; propertyTag: DC
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMGetDictionaryPropertyList(dictionaryID: DCMDictionaryID; maxPropertyNum: ItemCount; var numProperties: ItemCount; propertyTag: DCMFieldTagPtr): OSStatus; external name '_DCMGetDictionaryPropertyList';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Seaarch dictionary
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  DCMCreateDictionaryIterator()   *** DEPRECATED ***
  *  
@@ -1898,6 +2067,8 @@ function DCMCreateDictionaryIterator( var dictionaryIterator: DCMDictionaryItera
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  DCMCreateDictionaryIterator()
  *  
  *  Availability:
@@ -1906,12 +2077,16 @@ function DCMCreateDictionaryIterator( var dictionaryIterator: DCMDictionaryItera
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMCreateDictionaryIterator(var dictionaryIterator: DCMDictionaryIterator): OSStatus; external name '_DCMCreateDictionaryIterator';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Search AccessMethod
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  DCMCreateAccessMethodIterator()   *** DEPRECATED ***
  *  
@@ -1927,6 +2102,8 @@ function DCMCreateAccessMethodIterator( var accessMethodIterator: DCMAccessMetho
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  DCMCreateAccessMethodIterator()
  *  
  *  Availability:
@@ -1935,12 +2112,16 @@ function DCMCreateAccessMethodIterator( var accessMethodIterator: DCMAccessMetho
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMCreateAccessMethodIterator(var accessMethodIterator: DCMAccessMethodIterator): OSStatus; external name '_DCMCreateAccessMethodIterator';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Iterator Operation
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  DCMCountObjectIterator()   *** DEPRECATED ***
  *  
@@ -2001,6 +2182,8 @@ function DCMDisposeObjectIterator( iterator: DCMObjectIterator ): OSStatus; exte
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  DCMCountObjectIterator()
  *  
  *  Availability:
@@ -2039,12 +2222,16 @@ function DCMResetObjectIterator(iterator: DCMObjectIterator): OSStatus; external
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMDisposeObjectIterator(iterator: DCMObjectIterator): OSStatus; external name '_DCMDisposeObjectIterator';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Get AccessMethod information
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  DCMGetAccessMethodIDFromName()   *** DEPRECATED ***
  *  
@@ -2060,6 +2247,8 @@ function DCMGetAccessMethodIDFromName( const (*var*) accessMethodName: Str63; va
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  DCMGetAccessMethodIDFromName()
  *  
  *  Availability:
@@ -2068,12 +2257,16 @@ function DCMGetAccessMethodIDFromName( const (*var*) accessMethodName: Str63; va
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMGetAccessMethodIDFromName(const (*var*) accessMethodName: Str63; var accessMethodID: DCMAccessMethodID): OSStatus; external name '_DCMGetAccessMethodIDFromName';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Field Info Record routines
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  DCMCreateFieldInfoRecord()   *** DEPRECATED ***
  *  
@@ -2168,6 +2361,8 @@ function DCMGetFieldFindMethods( const (*var*) fieldInfoRecord: AEDesc; findMeth
 
 {$endc} {not TARGET_CPU_64}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  DCMCreateFieldInfoRecord()
  *  
  *  Availability:
@@ -2226,7 +2421,10 @@ function DCMGetFieldDefaultData(const (*var*) fieldInfoRecord: AEDesc; desiredTy
  *    Mac OS X:         in version 10.0 and later
  }
 function DCMGetFieldFindMethods(const (*var*) fieldInfoRecord: AEDesc; findMethodsArrayMaxSize: ItemCount; var findMethods: DCMFindMethod; var actualNumberOfFindMethods: ItemCount): OSStatus; external name '_DCMGetFieldFindMethods';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Check Dictionary Manager availability
@@ -2260,10 +2458,13 @@ function DCMGetFieldFindMethods(const (*var*) fieldInfoRecord: AEDesc; findMetho
     Default dictionary access method for Japanese analysis
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	kAppleJapaneseDefaultAccessMethodName = 'DAM:Apple Backward Trie Access Method';
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     Data length limitations of Apple Japanese dictionaries
 }
@@ -2272,6 +2473,7 @@ const
 	kMaxYomiLengthInAppleJapaneseDictionary = 40;
 	kMaxKanjiLengthInAppleJapaneseDictionary = 64;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
     Defined field tags of Apple Japanese dictionary
@@ -2304,6 +2506,8 @@ const
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{	
 	    Defined field tags of Apple Japanese dictionary
 		}
@@ -2462,4 +2666,7 @@ function CompactDictionary(dictionaryReference: SInt32): OSErr; external name '_
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

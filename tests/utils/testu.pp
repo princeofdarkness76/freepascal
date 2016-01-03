@@ -170,9 +170,12 @@ begin
      if Copy(s,1,3)=#$EF#$BB#$BF then
        delete(s,1,3);
 <<<<<<< HEAD
+<<<<<<< HEAD
      TrimB(s);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      if s<>'' then
       begin
         if s[1]='{' then
@@ -284,6 +287,7 @@ begin
                 Val(res,r.Timeout,code)
               else
 <<<<<<< HEAD
+<<<<<<< HEAD
                if GetEntry('FILES') then
                 r.Files:=res
               else
@@ -298,6 +302,8 @@ begin
               else
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                Verbose(V_Error,'Unknown entry: '+s);
             end;
          end

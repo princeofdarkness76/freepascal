@@ -19,10 +19,13 @@ var
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   DefaultFormat:=fPlain;
   DefaultRunAllTests:=True;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Application := TMyTestRunner.Create(nil);
   Application.Initialize;
   Application.Run;

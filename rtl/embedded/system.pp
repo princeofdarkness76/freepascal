@@ -78,7 +78,10 @@ const
  maxExitCode = 255;
  MaxPathLen = 1024; // BSDs since 1993, Solaris 10, Darwin
  AllFilesMask = '*';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   UnusedHandle    = -1;
   StdInputHandle  = 0;
@@ -261,8 +264,11 @@ begin
   if not(IsLibrary) then
     SysInitFPU;
 <<<<<<< HEAD
+<<<<<<< HEAD
   }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif FPC_HAS_FEATURE_FPU}
 >>>>>>> graemeg/fixes_2_2
 

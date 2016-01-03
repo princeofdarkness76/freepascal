@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: memory.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -44,7 +47,10 @@
 
 {$ifdef NDS_INTERFACE}
 // WAIT_CR: Wait State Control Register
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 {$ifdef ARM9}
   REG_EXMEMCNT : pcuint16 = pointer($04000204);
@@ -77,7 +83,10 @@ const
   SRAM          : pcuint8  = pointer($0A000000);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifdef ARM9}
   PALETTE             : pcuint16 = pointer($05000000);
@@ -110,7 +119,10 @@ const
   OAM_SUB       : pcuint16 = pointer($07000400);
 {$endif ARM9}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ARM7}
   VRAM          : pcuint16 = pointer($06000000);
 {$endif ARM7}
@@ -149,23 +161,32 @@ type
     flags: cuint8;                // auto-boot flag
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     arm9romOffset: cuint32;
 =======
     arm9romSource: cuint32;
 >>>>>>> graemeg/fixes_2_2
+=======
+    arm9romSource: cuint32;
+>>>>>>> origin/fixes_2_2
     arm9executeAddress: cuint32;
     arm9destination: cuint32;
     arm9binarySize: cuint32;
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     arm7romOffset: cuint32;
 =======
     arm7romSource: cuint32;
 >>>>>>> graemeg/fixes_2_2
+=======
+    arm7romSource: cuint32;
+>>>>>>> origin/fixes_2_2
     arm7executeAddress: cuint32;
     arm7destination: cuint32;
     arm7binarySize: cuint32;
     
+<<<<<<< HEAD
 <<<<<<< HEAD
     filenameOffset: cuint32;
     filenameSize: cuint32;
@@ -175,6 +196,11 @@ type
     filenameSize: cuint32;
     fatSource: cuint32;
 >>>>>>> graemeg/fixes_2_2
+=======
+    filenameSource: cuint32;
+    filenameSize: cuint32;
+    fatSource: cuint32;
+>>>>>>> origin/fixes_2_2
     fatSize: cuint32;
     
     arm9overlaySource: cuint32;
@@ -215,10 +241,14 @@ type
   
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
   __NDSHeader : pNDSHeader = pointer($02FFFE00);
 =======
   NDSHeader : pNDSHeader = pointer($027FFE00);
 >>>>>>> graemeg/fixes_2_2
+=======
+  NDSHeader : pNDSHeader = pointer($027FFE00);
+>>>>>>> origin/fixes_2_2
 
 
 type
@@ -241,12 +271,15 @@ const
   BUS_OWNER_ARM9 = true;
   BUS_OWNER_ARM7 = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
   
 procedure sysSetCartOwner(arm9: cbool); inline; 
 procedure sysSetCardOwner(arm9: cbool); inline;
 procedure sysSetBusOwners(arm9rom, arm9card: cbool); inline;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}
 
 {$ifdef NDS_IMPLEMENTATION}
@@ -278,6 +311,7 @@ end;
 procedure sysSetBusOwners(arm9rom, arm9card: cbool); inline;
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   val1, val2: cuint;
 begin
   val1 := 0;
@@ -295,6 +329,8 @@ end;
 {$endif NDS_IMPLEMENTATION}
 {$endif ARM9}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   pattern: cuint16;
   a9r, a9c: cint;
 begin
@@ -321,4 +357,7 @@ procedure sysSetCardOwner(arm9: cbool); inline;
 procedure sysSetBusOwners(arm9rom, arm9card: cbool); inline;
 {$endif ARM9}
 {$endif NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

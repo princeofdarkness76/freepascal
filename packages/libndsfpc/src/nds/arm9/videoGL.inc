@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: videoGL.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -41,7 +44,10 @@
 *)
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef ARM9}
   {$error 3D hardware is only available from the ARM9}
 {$endif}
@@ -55,17 +61,23 @@
 ---------------------------------------------------------------------------------*)
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
   LUT_SIZE = (1 shl 15);
   LUT_MASK = ((1 shl 15) - 1);
 =======
   LUT_SIZE = (512);
   LUT_MASK = ($1FF);
 >>>>>>> graemeg/fixes_2_2
+=======
+  LUT_SIZE = (512);
+  LUT_MASK = ($1FF);
+>>>>>>> origin/fixes_2_2
 
 type
   GLuint = cuint32;
   GLfloat = cfloat;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
   MAX_TEXTURES = 2048;  //this should be enough ! but feel free to change
@@ -119,6 +131,8 @@ function floattov10(n: cfloat): v10; inline;
 function NORMAL_PACK(x,y,z: cint): cuint32; inline;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 //////////////////////////////////////////////////////////////////////
 // Fixed point / floating point / integer conversion macros
 //////////////////////////////////////////////////////////////////////
@@ -269,7 +283,10 @@ end;
 
 
 {$ifdef NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type
   rgb = cushort;
 
@@ -278,38 +295,55 @@ type
   end;
   pm3x3 = ^m3x3;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
   m4x4 = record
     m: array [0..15] of cint32;
   end; 
   pm4x4 = ^m4x4;
 <<<<<<< HEAD
-
-=======
-  
->>>>>>> graemeg/fixes_2_2
-  m4x3 = record
-    m: array [0..11] of cint32;
-  end;
-  pm4x3 = ^m4x3;
 <<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
+  m4x3 = record
+    m: array [0..11] of cint32;
+  end;
+  pm4x3 = ^m4x3;
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+  
+>>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
   GLvector = record
     x,y,z: cint32;
   end;
   PGLvector= ^GLvector;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 //////////////////////////////////////////////////////////////////////
 
 >>>>>>> graemeg/fixes_2_2
+=======
+//////////////////////////////////////////////////////////////////////
+
+>>>>>>> origin/fixes_2_2
 const
   GL_FALSE    = 0;
   GL_TRUE     = 1;
@@ -358,6 +392,7 @@ type
   GL_POLY_FORMAT_ENUM = cint32;
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
   POLY_FORMAT_LIGHT0   : GL_POLY_FORMAT_ENUM = (1 shl 0);
   POLY_FORMAT_LIGHT1   : GL_POLY_FORMAT_ENUM = (1 shl 1);
   POLY_FORMAT_LIGHT2   : GL_POLY_FORMAT_ENUM = (1 shl 2);
@@ -371,6 +406,8 @@ const
   POLY_CULL_NONE       : GL_POLY_FORMAT_ENUM = (3 shl 6);
   POLY_FOG             : GL_POLY_FORMAT_ENUM = (1 shl 15);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	POLY_DECAL           : GL_POLY_FORMAT_ENUM = (1 shl 4);
 	POLY_TOON_SHADING    : GL_POLY_FORMAT_ENUM = (1 shl 5);
 	POLY_CULL_BACK       : GL_POLY_FORMAT_ENUM = (1 shl 7);
@@ -380,7 +417,10 @@ const
 	POLY_FORMAT_LIGHT1   : GL_POLY_FORMAT_ENUM = (1 shl 1);
 	POLY_FORMAT_LIGHT2   : GL_POLY_FORMAT_ENUM = (1 shl 2);
 	POLY_FORMAT_LIGHT3   : GL_POLY_FORMAT_ENUM = (1 shl 3);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 
@@ -419,9 +459,12 @@ type
   GL_TEXTURE_TYPE_ENUM = cint32;
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
   GL_NOTEXTURE  : GL_TEXTURE_TYPE_ENUM = 0; 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	GL_RGB32_A3   : GL_TEXTURE_TYPE_ENUM = 1;
 	GL_RGB4       : GL_TEXTURE_TYPE_ENUM = 2;
 	GL_RGB16      : GL_TEXTURE_TYPE_ENUM = 3;
@@ -432,6 +475,7 @@ const
 	GL_RGB        : GL_TEXTURE_TYPE_ENUM = 8;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
   GL_TEXTURE_PALETTE_PARAM_ENUM = cint32;
 const
@@ -440,6 +484,9 @@ const
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 
 type
   DISP3DCNT_ENUM = cint32;
@@ -451,14 +498,18 @@ const
 	GL_ANTIALIAS       : DISP3DCNT_ENUM = (1 shl 4);
 	GL_OUTLINE         : DISP3DCNT_ENUM = (1 shl 5);
 <<<<<<< HEAD
+<<<<<<< HEAD
   GL_FOG_ONLY_ALPHA  : DISP3DCNT_ENUM = (1 shl 6);
   GL_FOG             : DISP3DCNT_ENUM = (1 shl 7);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	GL_COLOR_UNDERFLOW : DISP3DCNT_ENUM = (1 shl 12);
 	GL_POLY_OVERFLOW   : DISP3DCNT_ENUM = (1 shl 13);
 	GL_CLEAR_BMP       : DISP3DCNT_ENUM = (1 shl 14);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
   GL_GET_ENUM = (
@@ -473,6 +524,8 @@ type
   );
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 ////////////////////////////////////////////////////////////
 // glGet constants
@@ -491,13 +544,17 @@ type
   );
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type
 	GLFLUSH_ENUM = cint32;
 const
 	GL_TRANS_MANUALSORT: GLFLUSH_ENUM = (1 shl 0);
 	GL_WBUFFERING      : GLFLUSH_ENUM = (1 shl 1); 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 (*-----------------------------------------
@@ -557,6 +614,8 @@ type
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 ////////////////////////////////////////////////////////////
 // Misc. constants
 ////////////////////////////////////////////////////////////
@@ -564,11 +623,15 @@ type
 const
   MAX_TEXTURES = 2048;  //this should be enough ! but feel free to change
   GL_LIGHTING  = 1;   // no idea what this is for / who defined it
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
   gl_hidden_globals = record
     matrixMode: GL_MATRIX_MODE_ENUM; // holds the current Matrix Mode
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     vramBlocks: array [0..1] of ps_vramBlock;		// Two classe instances, one for textures, and one for palettes
@@ -880,6 +943,8 @@ end;
 //---------------------------------------------------------------------------------
 function FIFO_COMMAND_PACK(c1,c2,c3,c4: cint): cint; inline;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     // holds the current state of the clear color register
     clearColor: cuint32; // state of clear color register
     // texture globals
@@ -906,16 +971,23 @@ var
 //Fifo commands
 //---------------------------------------------------------------------------------
 function FIFO_COMMAND_PACK(c1,c2,c3,c4: cint): cint; inline; 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   FIFO_COMMAND_PACK := (((c4) shl 24) or ((c3) shl 16) or ((c2) shl 8) or (c1));
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function REG2ID(r: pcuint32): cuint8; inline;
 =======
 function REG2ID(r: pcuint32): cuint8; inline;						
 >>>>>>> graemeg/fixes_2_2
+=======
+function REG2ID(r: pcuint32): cuint8; inline;						
+>>>>>>> origin/fixes_2_2
 begin
   REG2ID := cuint8((cuint32(r) - $04000400) shr 2);
 end;
@@ -936,14 +1008,19 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 function FIFO_VERTEX16(): cuint8; inline;
 begin
   FIFO_VERTEX16 := REG2ID(GFX_VERTEX16);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function FIFO_VERTEX10(): cuint8; inline;
 begin
@@ -967,6 +1044,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function FIFO_TEX_COORD(): cuint8; inline;
 begin
   FIFO_TEX_COORD := REG2ID(GFX_TEX_COORD);
@@ -975,10 +1054,14 @@ end;
 function FIFO_TEX_FORMAT(): cuint8; inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FIFO_TEX_FORMAT := REG2ID(GFX_TEX_FORMAT);
 =======
   FIFO_TEX_FORMAT := REG2ID(GFX_TEX_FORMAT);        
 >>>>>>> graemeg/fixes_2_2
+=======
+  FIFO_TEX_FORMAT := REG2ID(GFX_TEX_FORMAT);        
+>>>>>>> origin/fixes_2_2
 end;
 
 function FIFO_PAL_FORMAT(): cuint8; inline;
@@ -987,9 +1070,13 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 function FIFO_CLEAR_COLOR(): cuint8; inline;
 begin
   FIFO_CLEAR_COLOR := REG2ID(GFX_CLEAR_COLOR);
@@ -1001,9 +1088,13 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 function FIFO_LIGHT_VECTOR(): cuint8; inline;
 begin
   FIFO_LIGHT_VECTOR := REG2ID(GFX_LIGHT_VECTOR);
@@ -1035,18 +1126,26 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 function FIFO_POLY_FORMAT(): cuint8; inline;
 begin
   FIFO_POLY_FORMAT := REG2ID(GFX_POLY_FORMAT);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 function FIFO_BEGIN(): cuint8; inline;
 begin
   FIFO_BEGIN := REG2ID(GFX_BEGIN);
@@ -1074,10 +1173,14 @@ end;
 { $define FIFO_VERTEX16          := REG2ID(GFX_VERTEX16)}
 { $define FIFO_TEX_COORD         := REG2ID(GFX_TEX_COORD)}
 <<<<<<< HEAD
+<<<<<<< HEAD
 { $define FIFO_TEX_FORMAT        := REG2ID(GFX_TEX_FORMAT)}
 =======
 { $define FIFO_TEX_FORMAT        := REG2ID(GFX_TEX_FORMAT)}        
 >>>>>>> graemeg/fixes_2_2
+=======
+{ $define FIFO_TEX_FORMAT        := REG2ID(GFX_TEX_FORMAT)}        
+>>>>>>> origin/fixes_2_2
 { $define FIFO_PAL_FORMAT        := REG2ID(GFX_PAL_FORMAT)}
 
 { $define FIFO_CLEAR_COLOR       := REG2ID(GFX_CLEAR_COLOR)}
@@ -1094,11 +1197,14 @@ end;
 { $define FIFO_POLY_FORMAT       := REG2ID(GFX_POLY_FORMAT)}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { $define FIFO_BEGIN             := REG2ID(GFX_BEGIN)}
 { $define FIFO_END               := REG2ID(GFX_END)}
 { $define FIFO_FLUSH             := REG2ID(GFX_FLUSH)} 
 { $define FIFO_VIEWPORT          := REG2ID(GFX_VIEWPORT)}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { $define FIFO_BEGIN             := REG2ID(GFX_BEGIN)}        
 { $define FIFO_END               := REG2ID(GFX_END)}
 { $define FIFO_FLUSH             := REG2ID(GFX_FLUSH)} 
@@ -1129,7 +1235,10 @@ procedure glInit_C(); cdecl; external;
 function glGetGlobals(): PGLHiddenGlobals; cdecl; external;
 {$endif NDS_INTERFACE}
 		
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 
@@ -1152,25 +1261,35 @@ function glGetGlobals(): PGLHiddenGlobals; cdecl; external;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function POLY_ALPHA(n: cuint32): cuint32; inline;
 =======
 {$ifdef NDS_IMPLEMENTATION}
 function POLY_ALPHA(n: cint): cuint32; inline;  
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifdef NDS_IMPLEMENTATION}
+function POLY_ALPHA(n: cint): cuint32; inline;  
+>>>>>>> origin/fixes_2_2
 begin
   POLY_ALPHA := cuint32((n) shl 16);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function POLY_ID(n: cuint32): cuint32; inline;	
 =======
 function POLY_ID(n: cint): cuint32; inline;	
 >>>>>>> graemeg/fixes_2_2
+=======
+function POLY_ID(n: cint): cuint32; inline;	
+>>>>>>> origin/fixes_2_2
 begin
   POLY_ID := cuint32((n) shl 24);
 end;
 
 procedure glBegin(mode: GL_GLBEGIN_ENUM); inline;
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
   GFX_BEGIN^ := mode;
@@ -1178,6 +1297,10 @@ begin
 begin 
   GFX_BEGIN^ := mode; 
 >>>>>>> graemeg/fixes_2_2
+=======
+begin 
+  GFX_BEGIN^ := mode; 
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glEnd(); inline;
@@ -1186,6 +1309,7 @@ begin
 end;
 
 procedure glClearDepth(depth: fixed12d3); inline;
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
   GFX_CLEAR_DEPTH^ := depth;
@@ -1235,6 +1359,8 @@ end;
 procedure glScalev(const v: PGLvector); inline;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 begin 
   GFX_CLEAR_DEPTH^ := depth; 
 end;
@@ -1282,7 +1408,10 @@ end;
 
 procedure glScalev(const v: PGLvector); inline; 
 begin  
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	MATRIX_SCALE^ := v^.x;
 	MATRIX_SCALE^ := v^.y;
 	MATRIX_SCALE^ := v^.z;
@@ -1290,17 +1419,23 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure glTranslatev(const v: PGLvector) ; inline;
 begin
 =======
 procedure glTranslatev(const v: PGLvector) ; inline; 
 begin 
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure glTranslatev(const v: PGLvector) ; inline; 
+begin 
+>>>>>>> origin/fixes_2_2
 	MATRIX_TRANSLATE^ := v^.x;
 	MATRIX_TRANSLATE^ := v^.y;
 	MATRIX_TRANSLATE^ := v^.z;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure glTranslate3f32(x, y, z: cint32); inline;
 begin
@@ -1313,11 +1448,16 @@ begin
 procedure glTranslate3f32(x, y, z: cint32); inline; 
 begin 
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure glTranslate3f32(x, y, z: cint32); inline; 
+begin 
+>>>>>>> origin/fixes_2_2
 	MATRIX_TRANSLATE^ := x;
 	MATRIX_TRANSLATE^ := y;
 	MATRIX_TRANSLATE^ := z;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure glScalef32(x, y, z: cint); inline;
 begin
@@ -1329,6 +1469,8 @@ end;
 procedure glLight(id: cint; color: rgb; x, y, z: v10); inline;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure glScalef32(factor: cint32); inline; 
 begin 
 	MATRIX_SCALE^ := factor;
@@ -1338,7 +1480,10 @@ end;
 
 procedure glLight(id: cint; color: rgb; x, y, z: v10); inline; 
 begin 	
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   id := (id and 3) shl 30;
 	GFX_LIGHT_VECTOR^ := id or ((z and $3FF) shl 20) or ((y and $3FF) shl 10) or (x and $3FF);
 	GFX_LIGHT_COLOR^ := id or color;
@@ -1347,10 +1492,14 @@ end;
 procedure glNormal(normal: cuint32); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   GFX_NORMAL^ := normal;
 =======
   GFX_NORMAL^ := normal; 
 >>>>>>> graemeg/fixes_2_2
+=======
+  GFX_NORMAL^ := normal; 
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glLoadIdentity(); inline;
@@ -1359,10 +1508,13 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure glMatrixMode(mode: GL_MATRIX_MODE_ENUM); inline;
 begin
   MATRIX_CONTROL^ := mode;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure glIdentity(); inline;
 begin
   MATRIX_IDENTITY^ := 0; 
@@ -1371,29 +1523,41 @@ end;
 procedure glMatrixMode(mode: GL_MATRIX_MODE_ENUM); inline;
 begin
   MATRIX_CONTROL^ := mode; 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glViewport(x1, y1, x2, y2: cuint8); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   GFX_VIEWPORT^ := (x1) + (y1 shl 8) + (x2 shl 16) + (y2 shl 24);
 =======
   GFX_VIEWPORT^ := (x1) + (y1 shl 8) + (x2 shl 16) + (y2 shl 24); 
 >>>>>>> graemeg/fixes_2_2
+=======
+  GFX_VIEWPORT^ := (x1) + (y1 shl 8) + (x2 shl 16) + (y2 shl 24); 
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glFlush(mode: cuint32); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   GFX_FLUSH^ := mode;
 =======
   GFX_FLUSH^ := mode; 
 >>>>>>> graemeg/fixes_2_2
+=======
+  GFX_FLUSH^ := mode; 
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glMaterialShinyness(); inline;
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
   shiny32: array [0..31] of cuint32;
   shiny8: pcuint8;
@@ -1401,16 +1565,22 @@ var
 begin
   shiny8 := pcuint8(@shiny32);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	shiny32: array [0..31] of cuint32;
 	shiny8: pcuint8;
 	i: integer;
 begin
 	shiny8 := pcuint8(@shiny32);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   i := 0;
   while i < (128 * 2) do
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
     shiny8[i shr 1] := i;
     inc(i, 2);
@@ -1421,6 +1591,8 @@ begin
 end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		shiny8[i shr 1] := i;
 		inc(i, 2);
 	end;
@@ -1430,11 +1602,15 @@ end;
 end;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure glCallList(list: pcuint32); inline;
 var
   count: cuint32;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 	sassert(list <> nil, 'glCallList received a null display list pointer');
   count := list^;
@@ -1454,6 +1630,8 @@ end;
 
 procedure glPolyFmt(params: cuint32); inline;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	count := list^;
 	inc(list);
   DC_FlushRange(list, count*4);
@@ -1469,7 +1647,10 @@ procedure glPolyFmt(params: cuint32); inline;
 end;
 
 procedure glPolyFmt(params: cuint32); inline; 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   GFX_POLY_FORMAT^ := params;
 end;
@@ -1485,6 +1666,7 @@ begin
   GFX_CONTROL^ := GFX_CONTROL^ and not bits;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 procedure glFogShift(shift: cint); inline;
@@ -1578,6 +1760,8 @@ begin
   MATRIX_MULT4x4^ := m^.m[14];
   MATRIX_MULT4x4^ := m^.m[15];
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure glLoadMatrix4x4(const m: pm4x4); inline;
 begin
 	MATRIX_LOAD4x4^ := m^.m[0];
@@ -1642,11 +1826,15 @@ begin
 	MATRIX_MULT4x4^ := m^.m[13];
 	MATRIX_MULT4x4^ := m^.m[14];
 	MATRIX_MULT4x4^ := m^.m[15];
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glMultMatrix4x3(const m: pm4x3); inline;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   MATRIX_MULT4x3^ := m^.m[0];
   MATRIX_MULT4x3^ := m^.m[1];
@@ -1663,6 +1851,8 @@ begin
   MATRIX_MULT4x3^ := m^.m[10];
   MATRIX_MULT4x3^ := m^.m[11];
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	MATRIX_MULT4x3^ := m^.m[0];
 	MATRIX_MULT4x3^ := m^.m[1];
 	MATRIX_MULT4x3^ := m^.m[2];
@@ -1677,11 +1867,15 @@ begin
 	MATRIX_MULT4x3^ := m^.m[9];
 	MATRIX_MULT4x3^ := m^.m[10];
 	MATRIX_MULT4x3^ := m^.m[11];
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glMultMatrix3x3(const m: pm3x3); inline;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   MATRIX_MULT3x3^ := m^.m[0];
   MATRIX_MULT3x3^ := m^.m[1];
@@ -1695,6 +1889,8 @@ begin
   MATRIX_MULT3x3^ := m^.m[7];
   MATRIX_MULT3x3^ := m^.m[8];
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	MATRIX_MULT3x3^ := m^.m[0];
 	MATRIX_MULT3x3^ := m^.m[1];
 	MATRIX_MULT3x3^ := m^.m[2];
@@ -1706,7 +1902,10 @@ begin
 	MATRIX_MULT3x3^ := m^.m[6];
 	MATRIX_MULT3x3^ := m^.m[7];
 	MATRIX_MULT3x3^ := m^.m[8];
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glRotateXi(angle: cint); inline;
@@ -1714,6 +1913,7 @@ var
   sine, cosine: cint32;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   sine := sinLerp(angle);
   cosine := cosLerp(angle);
 
@@ -1729,6 +1929,8 @@ begin
   MATRIX_MULT3x3^ := -sine;
   MATRIX_MULT3x3^ := cosine;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	sine := _SIN[angle and  LUT_MASK];
 	cosine := _COS[angle and LUT_MASK];
 	
@@ -1743,7 +1945,10 @@ begin
 	MATRIX_MULT3x3^ := 0;
 	MATRIX_MULT3x3^ := -sine;
 	MATRIX_MULT3x3^ := cosine;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glRotateYi(angle: cint); inline;
@@ -1751,6 +1956,7 @@ var
   sine, cosine: cint32;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   sine := sinLerp(angle);
   cosine := cosLerp(angle);
 
@@ -1766,6 +1972,8 @@ begin
   MATRIX_MULT3x3^ := 0;
   MATRIX_MULT3x3^ := cosine;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	sine := _SIN[angle and  LUT_MASK];
 	cosine := _COS[angle and LUT_MASK];
 	
@@ -1780,13 +1988,17 @@ begin
 	MATRIX_MULT3x3^ := sine;
 	MATRIX_MULT3x3^ := 0;
 	MATRIX_MULT3x3^ := cosine;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glRotateZi(angle: cint); inline;
 var
   sine, cosine: cint32;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   sine := sinLerp(angle);
   cosine := cosLerp(angle);
@@ -1803,6 +2015,8 @@ begin
   MATRIX_MULT3x3^ := 0;
   MATRIX_MULT3x3^ := inttof32(1);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	sine := _SIN[angle and  LUT_MASK];
 	cosine := _COS[angle and LUT_MASK];
 	
@@ -1817,11 +2031,15 @@ begin
 	MATRIX_MULT3x3^ := 0;
 	MATRIX_MULT3x3^ := 0;
 	MATRIX_MULT3x3^ := inttof32(1);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glOrthof32(left, right, bottom, top, zNear, zFar: cint32); inline;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   MATRIX_MULT4x4^ := divf32(inttof32(2), right - left);
   MATRIX_MULT4x4^ := 0;
@@ -1843,6 +2061,8 @@ begin
   MATRIX_MULT4x4^ := -divf32(zFar + zNear, zFar - zNear);
   MATRIX_MULT4x4^ := floattof32(1.0);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	MATRIX_MULT4x4^ := divf32(inttof32(2), right - left);     
 	MATRIX_MULT4x4^ := 0;  
 	MATRIX_MULT4x4^ := 0;      
@@ -1864,13 +2084,17 @@ begin
 	MATRIX_MULT4x4^ := floattof32(1.0);
 
 	//glStoreMatrix(0);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure gluLookAtf32(eyex, eyey, eyez, lookAtx, lookAty, lookAtz, upx, upy, upz: cint32); inline;
 var
   side, forwrd, up, eye: array [0..2] of cint32;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   forwrd[0] := eyex - lookAtx;
@@ -1913,6 +2137,8 @@ begin
   MATRIX_MULT4x3^ := -dotf32(@eye,@up);
   MATRIX_MULT4x3^ := -dotf32(@eye,@forwrd);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	
 	forwrd[0] := eyex - lookAtx; 
 	forwrd[1] := eyey - lookAty; 
@@ -1953,13 +2179,19 @@ begin
 	MATRIX_MULT4x3^ := -dotf32(@eye,@side); 
 	MATRIX_MULT4x3^ := -dotf32(@eye,@up); 
 	MATRIX_MULT4x3^ := -dotf32(@eye,@forwrd); 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glFrustumf32(left, right, bottom, top, zNear, zFar: cint32); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
 	MATRIX_MULT4x4^ := divf32(2*znear, right - left);
 	MATRIX_MULT4x4^ := 0;
@@ -1981,7 +2213,10 @@ begin
 	MATRIX_MULT4x4^ := -divf32(2 * mulf32(zfar, znear), zfar - znear);
 	MATRIX_MULT4x4^ := 0;
 *)	
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   MATRIX_MULT4x4^ := divf32(2*znear, right - left);
   MATRIX_MULT4x4^ := 0;
   MATRIX_MULT4x4^ := 0;
@@ -2008,6 +2243,7 @@ var
   xmin, xmax, ymin, ymax: cint32;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   ymax := mulf32(zNear, tanLerp(fovy shr 1));
   ymin := -ymax;
   xmin := mulf32(ymin, aspect);
@@ -2015,18 +2251,24 @@ begin
 
   glFrustumf32(xmin, xmax, ymin, ymax, zNear, zFar);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   ymax := mulf32(zNear, TAN_bin[(fovy shr 1) and LUT_MASK]);
 	ymin := -ymax;
 	xmin := mulf32(ymin, aspect);
 	xmax := mulf32(ymax, aspect);
 	
 	glFrustumf32(xmin, xmax, ymin, ymax, zNear, zFar);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glTexCoord2f(s, t: cfloat); inline;
 var
   x, y: cint;
+<<<<<<< HEAD
 <<<<<<< HEAD
   tex: pgl_texture_data;
 begin
@@ -2061,6 +2303,8 @@ begin
   MATRIX_MULT4x4^ := 0;
   MATRIX_MULT4x4^ := inttof32(1);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 begin
   x := ((glGlob^.textures[glGlob^.activeTexture]) shr 20) and 7; 
 	y := ((glGlob^.textures[glGlob^.activeTexture]) shr 23) and 7; 
@@ -2099,11 +2343,15 @@ begin
 	MATRIX_MULT4x4^ := inttof32(viewport[3] + ((viewport[1] - y) shl 1)) div height;
 	MATRIX_MULT4x4^ := 0;
 	MATRIX_MULT4x4^ := inttof32(1);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glResetMatrixStack(); inline;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   // make sure there are no push/pops that haven't executed yet
   while (GFX_STATUS^ and (1 shl 14)) <> 0 do
@@ -2130,6 +2378,8 @@ begin
   glMatrixMode(GL_TEXTURE);
   glLoadIdentity();	
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	// make sure there are no push/pops that haven't executed yet
 	while (GFX_STATUS^ and (1 shl 14)) <> 0 do
 	begin
@@ -2154,7 +2404,10 @@ begin
 	glLoadIdentity();
 	glMatrixMode(GL_TEXTURE);
 	glLoadIdentity();	
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glSetOutlineColor(id: cint; color: rgb); inline;
@@ -2167,12 +2420,17 @@ var
   i: integer;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   for i := 0 to 31 do
     GFX_TOON_TABLE[i] := table[i];
 =======
 	for i := 0 to 31 do
 		GFX_TOON_TABLE[i] := table[i];
 >>>>>>> graemeg/fixes_2_2
+=======
+	for i := 0 to 31 do
+		GFX_TOON_TABLE[i] := table[i];
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glSetToonTableRange(_start, _end: cint; color: rgb); inline;
@@ -2180,18 +2438,24 @@ var
   i: integer;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   for i := _start to _end do
     GFX_TOON_TABLE[i] := cuint16(color);
 =======
 	for i := _start to _end do
 		GFX_TOON_TABLE[i] := cuint16(color);
 >>>>>>> graemeg/fixes_2_2
+=======
+	for i := _start to _end do
+		GFX_TOON_TABLE[i] := cuint16(color);
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glGetFixed(const param: GL_GET_ENUM; f: pcint32); inline;
 var
   i: integer;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   case param of 
     GL_GET_MATRIX_VECTOR:
@@ -2228,6 +2492,8 @@ begin
       end;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	case param of 
 		GL_GET_MATRIX_VECTOR:
 		  begin
@@ -2262,7 +2528,10 @@ begin
 				glPopMatrix(1); // restore the projection matrix
 			end;
 	end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glAlphaFunc(alphaThreshold: cint); inline;
@@ -2278,15 +2547,21 @@ end;
 procedure glInit(); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   glInit_C(); // actually does the initialization
 =======
   glGlob := glGetGlobals(); // make sure globals are synced between compilation units
 	glInit_C(); // actually does the initialization
 >>>>>>> graemeg/fixes_2_2
+=======
+  glGlob := glGetGlobals(); // make sure globals are synced between compilation units
+	glInit_C(); // actually does the initialization
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glClearColor(red, green, blue, alpha: cuint8); inline;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   glGlob^.clearColor := (glGlob^.clearColor and $FFE08000) or ($7FFF and RGB15(red, green, blue)) or ((alpha and $1F) shl 16);
   GFX_CLEAR_COLOR^ := glGlob^.clearColor;
@@ -2294,10 +2569,15 @@ begin
 	GFX_CLEAR_COLOR^ := (glGlob^.clearColor and $FFE08000) or ($7FFF and RGB15(red, green, blue)) or ((alpha and $1F) shl 16);
   glGlob^.clearColor := GFX_CLEAR_COLOR^; 
 >>>>>>> graemeg/fixes_2_2
+=======
+	GFX_CLEAR_COLOR^ := (glGlob^.clearColor and $FFE08000) or ($7FFF and RGB15(red, green, blue)) or ((alpha and $1F) shl 16);
+  glGlob^.clearColor := GFX_CLEAR_COLOR^; 
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glClearPolyID(ID: cuint8); inline;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   glGlob^.clearColor  := ( glGlob^.clearColor and $C0FFFFFF) or (( ID and $3F ) shl 24 );
   GFX_CLEAR_COLOR^ := glGlob^.clearColor; 
@@ -2325,6 +2605,8 @@ begin
           i := 8 shl ((tex^.texFormat shr 23 ) and 7);
       end;      
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	GFX_CLEAR_COLOR^ := ( glGlob^.clearColor and $C0FFFFFF) or (( ID and $3F ) shl 24 );
 	glGlob^.clearColor := GFX_CLEAR_COLOR^; 
 end;
@@ -2340,7 +2622,10 @@ begin
 			i := 8 shl (((glGlob^.textures[glGlob^.activeTexture]) shr 20) and 7);
     GL_GET_TEXTURE_HEIGHT:
 			i := 8 shl (((glGlob^.textures[glGlob^.activeTexture]) shr 23) and 7);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 end;
 
@@ -2350,41 +2635,58 @@ end;
 procedure glVertex3f(x, y, z: cfloat); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   glVertex3v16(floattov16(x), floattov16(y), floattov16(z));
 =======
 	glVertex3v16(floattov16(x), floattov16(y), floattov16(z));
 >>>>>>> graemeg/fixes_2_2
+=======
+	glVertex3v16(floattov16(x), floattov16(y), floattov16(z));
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glRotatef32(angle: cfloat; x, y, z: cint32); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   glRotatef32i(trunc(angle * DEGREES_IN_CIRCLE / 360.0), x, y, z);
 =======
 	glRotatef32i(trunc(angle * LUT_SIZE / 360.0), x, y, z);
 >>>>>>> graemeg/fixes_2_2
+=======
+	glRotatef32i(trunc(angle * LUT_SIZE / 360.0), x, y, z);
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glRotatef(angle, x, y, z: cfloat); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   glRotatef32(angle, floattof32(x), floattof32(y), floattof32(z));
 =======
 	glRotatef32(angle, floattof32(x), floattof32(y), floattof32(z));
 >>>>>>> graemeg/fixes_2_2
+=======
+	glRotatef32(angle, floattof32(x), floattof32(y), floattof32(z));
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glColor3f(r, g, b: cfloat); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   glColor3b(trunc(r*255), trunc(g*255), trunc(b*255));
 =======
 	glColor3b(trunc(r*255), trunc(g*255), trunc(b*255));
 >>>>>>> graemeg/fixes_2_2
+=======
+	glColor3b(trunc(r*255), trunc(g*255), trunc(b*255));
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glScalef(x, y, z: cfloat); inline;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   MATRIX_SCALE^ := floattof32(x);
   MATRIX_SCALE^ := floattof32(y);
@@ -2394,10 +2696,16 @@ begin
 	MATRIX_SCALE^ := floattof32(y);
 	MATRIX_SCALE^ := floattof32(z);
 >>>>>>> graemeg/fixes_2_2
+=======
+	MATRIX_SCALE^ := floattof32(x);
+	MATRIX_SCALE^ := floattof32(y);
+	MATRIX_SCALE^ := floattof32(z);
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glTranslatef(x, y, z: cfloat); inline;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   MATRIX_TRANSLATE^ := floattof32(x);
   MATRIX_TRANSLATE^ := floattof32(y);
@@ -2407,55 +2715,81 @@ begin
 	MATRIX_TRANSLATE^ := floattof32(y);
 	MATRIX_TRANSLATE^ := floattof32(z);
 >>>>>>> graemeg/fixes_2_2
+=======
+	MATRIX_TRANSLATE^ := floattof32(x);
+	MATRIX_TRANSLATE^ := floattof32(y);
+	MATRIX_TRANSLATE^ := floattof32(z);
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glNormal3f(x, y, z: cfloat); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   glNormal(NORMAL_PACK(floattov10(x), floattov10(y), floattov10(z)));
 =======
 	glNormal(NORMAL_PACK(floattov10(x), floattov10(y), floattov10(z)));
 >>>>>>> graemeg/fixes_2_2
+=======
+	glNormal(NORMAL_PACK(floattov10(x), floattov10(y), floattov10(z)));
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glRotateX(angle: cfloat); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   glRotateXi(trunc(angle * DEGREES_IN_CIRCLE / 360.0));
 =======
 	glRotateXi(trunc(angle * LUT_SIZE / 360.0));
 >>>>>>> graemeg/fixes_2_2
+=======
+	glRotateXi(trunc(angle * LUT_SIZE / 360.0));
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glRotateY(angle: cfloat); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   glRotateYi(trunc(angle * DEGREES_IN_CIRCLE / 360.0));
 =======
 	glRotateYi(trunc(angle * LUT_SIZE / 360.0));
 >>>>>>> graemeg/fixes_2_2
+=======
+	glRotateYi(trunc(angle * LUT_SIZE / 360.0));
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glRotateZ(angle: cfloat); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   glRotateZi(trunc(angle * DEGREES_IN_CIRCLE / 360.0));
 =======
 	glRotateZi(trunc(angle * LUT_SIZE / 360.0));
 >>>>>>> graemeg/fixes_2_2
+=======
+	glRotateZi(trunc(angle * LUT_SIZE / 360.0));
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glOrtho(left, right, bottom, top, zNear, zFar: cfloat); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   glOrthof32(floattof32(left), floattof32(right), floattof32(bottom), floattof32(top), floattof32(zNear), floattof32(zFar));
 =======
 	glOrthof32(floattof32(left), floattof32(right), floattof32(bottom), floattof32(top), floattof32(zNear), floattof32(zFar));
 >>>>>>> graemeg/fixes_2_2
+=======
+	glOrthof32(floattof32(left), floattof32(right), floattof32(bottom), floattof32(top), floattof32(zNear), floattof32(zFar));
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure gluLookAt(eyex, eyey, eyez, lookAtx, lookAty, lookAtz, upx, upy, upz: cfloat); inline;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   gluLookAtf32(floattof32(eyex), floattof32(eyey), floattof32(eyez),
          floattof32(lookAtx), floattof32(lookAty), floattof32(lookAtz),
@@ -2465,24 +2799,36 @@ begin
 				 floattof32(lookAtx), floattof32(lookAty), floattof32(lookAtz),
 				 floattof32(upx), floattof32(upy), floattof32(upz));
 >>>>>>> graemeg/fixes_2_2
+=======
+	gluLookAtf32(floattof32(eyex), floattof32(eyey), floattof32(eyez),
+				 floattof32(lookAtx), floattof32(lookAty), floattof32(lookAtz),
+				 floattof32(upx), floattof32(upy), floattof32(upz));
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure glFrustum(left, right, bottom, top, znear, zfar: cfloat); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   glFrustumf32(floattof32(left), floattof32(right), floattof32(bottom), floattof32(top), floattof32(znear), floattof32(zfar));
 =======
 	glFrustumf32(floattof32(left), floattof32(right), floattof32(bottom), floattof32(top), floattof32(znear), floattof32(zfar));
 >>>>>>> graemeg/fixes_2_2
+=======
+	glFrustumf32(floattof32(left), floattof32(right), floattof32(bottom), floattof32(top), floattof32(znear), floattof32(zfar));
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure gluPerspective(fovy, aspect, zNear, zFar: cfloat); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   gluPerspectivef32(trunc(fovy * DEGREES_IN_CIRCLE / 360.0), floattof32(aspect), floattof32(zNear), floattof32(zFar));
 end;
 {$endif NDS_IMPLEMENTATION}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	gluPerspectivef32(trunc(fovy * LUT_SIZE / 360.0), floattof32(aspect), floattof32(zNear), floattof32(zFar));    
 end;
 {$endif NDS_IMPLEMENTATION}
@@ -2600,4 +2946,7 @@ procedure glFrustum(left, right, bottom, top, znear, zfar: cfloat); inline;
 procedure gluPerspective(fovy, aspect, zNear, zFar: cfloat); inline;
 procedure glTexCoord2f(s, t: cfloat); inline;
 {$endif NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

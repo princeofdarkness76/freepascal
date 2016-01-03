@@ -22,19 +22,27 @@ uses
 
 {$define NDS_INTERFACE}
 <<<<<<< HEAD
-{$include inc/dswifi7.inc}
-=======
-{$include dswifi7.inc}
->>>>>>> graemeg/fixes_2_2
-{$undef NDS_INTERFACE}
-
-implementation
-{$define NDS_IMPLEMENTATION}
 <<<<<<< HEAD
 {$include inc/dswifi7.inc}
 =======
 {$include dswifi7.inc}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$include dswifi7.inc}
+>>>>>>> origin/fixes_2_2
+{$undef NDS_INTERFACE}
+
+implementation
+{$define NDS_IMPLEMENTATION}
+<<<<<<< HEAD
+<<<<<<< HEAD
+{$include inc/dswifi7.inc}
+=======
+{$include dswifi7.inc}
+>>>>>>> graemeg/fixes_2_2
+=======
+{$include dswifi7.inc}
+>>>>>>> origin/fixes_2_2
 {$undef NDS_IMPLEMENTATION}
 
 end.

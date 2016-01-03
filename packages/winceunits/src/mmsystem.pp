@@ -33,12 +33,15 @@ unit mmsystem;
 {$CALLING cdecl}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_OS_UNICODE}
   {$define UNICODE}
 {$endif}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 interface
 
 uses Windows, mmreg;

@@ -53,9 +53,12 @@ implicitunits=exeinfo \
 rsts=math varutils variants convutils typinfo classes dateutils sysconst rtlconsts system
 implicitunits=exeinfo
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [require]
 nortl=y

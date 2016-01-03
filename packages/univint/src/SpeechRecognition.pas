@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       SpeechRecognition/SpeechRecognition.h
  
      Contains:   Apple Speech Recognition Toolbox Interfaces.
@@ -24,6 +25,8 @@
  
      Copyright:  © 1992-2008 by Apple Computer, Inc., all rights reserved.
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       SpeechRecognition.p
  
      Contains:   Apple Speech Recognition Toolbox Interfaces.
@@ -32,11 +35,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1992-2002 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -67,6 +74,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -78,7 +87,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -88,12 +100,17 @@
 unit SpeechRecognition;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -107,14 +124,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -123,11 +145,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -165,6 +190,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -172,6 +199,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -437,6 +465,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -445,7 +475,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -472,9 +505,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -485,6 +522,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,Files,AEDataModel;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -493,10 +531,14 @@ uses MacTypes,Files,AEDataModel;
 =======
 uses MacTypes,Files,AEDataModel,MixedMode;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,Files,AEDataModel,MixedMode;
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
 
 { Error Codes [Speech recognition gets -5100 through -5199] }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kSRNotAvailable = -5100; { the service requested is not avail or applicable }
@@ -586,6 +628,8 @@ function NewSRCallBackUPP( userRoutine: SRCallBackProcPtr ): SRCallBackUPP; exte
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 const
 	kSRNotAvailable				= -5100;						{  the service requested is not avail or applicable  }
@@ -681,11 +725,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewSRCallBackUPP(userRoutine: SRCallBackProcPtr): SRCallBackUPP; external name '_NewSRCallBackUPP'; { old name was NewSRCallBackProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSRCallBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
@@ -695,16 +743,22 @@ procedure DisposeSRCallBackUPP( userUPP: SRCallBackUPP ); external name '_Dispos
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSRCallBackUPP(userUPP: SRCallBackUPP); external name '_DisposeSRCallBackUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSRCallBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
@@ -1135,6 +1189,8 @@ function SROpenRecognitionSystem( var system: SRRecognitionSystem; systemID: OST
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Mac OS X:         in version 10.0 and later
@@ -1286,11 +1342,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function SROpenRecognitionSystem(var system: SRRecognitionSystem; systemID: OSType): OSErr; external name '_SROpenRecognitionSystem';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRCloseRecognitionSystem()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1301,17 +1361,23 @@ function SRCloseRecognitionSystem( system: SRRecognitionSystem ): OSErr; externa
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRCloseRecognitionSystem(system: SRRecognitionSystem): OSErr; external name '_SRCloseRecognitionSystem';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { Accessing Properties of any Speech Object }
 {
  *  SRSetProperty()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1322,16 +1388,22 @@ function SRSetProperty( srObject: SRSpeechObject; selector: OSType; proprty: {co
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRSetProperty(srObject: SRSpeechObject; selector: OSType; proprty: UnivPtr; propertyLen: Size): OSErr; external name '_SRSetProperty';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRGetProperty()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1342,17 +1414,23 @@ function SRGetProperty( srObject: SRSpeechObject; selector: OSType; proprty: Uni
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRGetProperty(srObject: SRSpeechObject; selector: OSType; proprty: UnivPtr; var propertyLen: Size): OSErr; external name '_SRGetProperty';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { Any object obtained via New or Get type calls must be released }
 {
  *  SRReleaseObject()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1363,16 +1441,22 @@ function SRReleaseObject( srObject: SRSpeechObject ): OSErr; external name '_SRR
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRReleaseObject(srObject: SRSpeechObject): OSErr; external name '_SRReleaseObject';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRGetReference()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1383,17 +1467,23 @@ function SRGetReference( srObject: SRSpeechObject; var newObjectRef: SRSpeechObj
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRGetReference(srObject: SRSpeechObject; var newObjectRef: SRSpeechObject): OSErr; external name '_SRGetReference';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { SRRecognizer Instance Functions }
 {
  *  SRNewRecognizer()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1404,16 +1494,22 @@ function SRNewRecognizer( system: SRRecognitionSystem; var recognizer: SRRecogni
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRNewRecognizer(system: SRRecognitionSystem; var recognizer: SRRecognizer; sourceID: OSType): OSErr; external name '_SRNewRecognizer';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRStartListening()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1424,16 +1520,22 @@ function SRStartListening( recognizer: SRRecognizer ): OSErr; external name '_SR
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRStartListening(recognizer: SRRecognizer): OSErr; external name '_SRStartListening';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRStopListening()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1444,16 +1546,22 @@ function SRStopListening( recognizer: SRRecognizer ): OSErr; external name '_SRS
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRStopListening(recognizer: SRRecognizer): OSErr; external name '_SRStopListening';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRSetLanguageModel()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1464,16 +1572,22 @@ function SRSetLanguageModel( recognizer: SRRecognizer; languageModel: SRLanguage
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRSetLanguageModel(recognizer: SRRecognizer; languageModel: SRLanguageModel): OSErr; external name '_SRSetLanguageModel';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRGetLanguageModel()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1484,16 +1598,22 @@ function SRGetLanguageModel( recognizer: SRRecognizer; var languageModel: SRLang
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRGetLanguageModel(recognizer: SRRecognizer; var languageModel: SRLanguageModel): OSErr; external name '_SRGetLanguageModel';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRContinueRecognition()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1504,16 +1624,22 @@ function SRContinueRecognition( recognizer: SRRecognizer ): OSErr; external name
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRContinueRecognition(recognizer: SRRecognizer): OSErr; external name '_SRContinueRecognition';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRCancelRecognition()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1524,16 +1650,22 @@ function SRCancelRecognition( recognizer: SRRecognizer ): OSErr; external name '
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRCancelRecognition(recognizer: SRRecognizer): OSErr; external name '_SRCancelRecognition';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRIdle()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1544,17 +1676,23 @@ function SRIdle: OSErr; external name '_SRIdle';
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRIdle: OSErr; external name '_SRIdle';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { Language Model Building and Manipulation Functions }
 {
  *  SRNewLanguageModel()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1565,16 +1703,22 @@ function SRNewLanguageModel( system: SRRecognitionSystem; var model: SRLanguageM
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRNewLanguageModel(system: SRRecognitionSystem; var model: SRLanguageModel; name: UnivPtr; nameLength: Size): OSErr; external name '_SRNewLanguageModel';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRNewPath()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1585,16 +1729,22 @@ function SRNewPath( system: SRRecognitionSystem; var path: SRPath ): OSErr; exte
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRNewPath(system: SRRecognitionSystem; var path: SRPath): OSErr; external name '_SRNewPath';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRNewPhrase()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1605,16 +1755,22 @@ function SRNewPhrase( system: SRRecognitionSystem; var phrase: SRPhrase; text: {
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRNewPhrase(system: SRRecognitionSystem; var phrase: SRPhrase; text: UnivPtr; textLength: Size): OSErr; external name '_SRNewPhrase';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRNewWord()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1625,17 +1781,23 @@ function SRNewWord( system: SRRecognitionSystem; var word: SRWord; text: {const}
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRNewWord(system: SRRecognitionSystem; var word: SRWord; text: UnivPtr; textLength: Size): OSErr; external name '_SRNewWord';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { Operations on any object of the SRLanguageObject family }
 {
  *  SRPutLanguageObjectIntoHandle()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1646,16 +1808,22 @@ function SRPutLanguageObjectIntoHandle( languageObject: SRLanguageObject; lobjHa
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRPutLanguageObjectIntoHandle(languageObject: SRLanguageObject; lobjHandle: Handle): OSErr; external name '_SRPutLanguageObjectIntoHandle';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRPutLanguageObjectIntoDataFile()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1666,16 +1834,22 @@ function SRPutLanguageObjectIntoDataFile( languageObject: SRLanguageObject; fRef
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRPutLanguageObjectIntoDataFile(languageObject: SRLanguageObject; fRefNum: SInt16): OSErr; external name '_SRPutLanguageObjectIntoDataFile';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRNewLanguageObjectFromHandle()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1686,16 +1860,22 @@ function SRNewLanguageObjectFromHandle( system: SRRecognitionSystem; var languag
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRNewLanguageObjectFromHandle(system: SRRecognitionSystem; var languageObject: SRLanguageObject; lObjHandle: Handle): OSErr; external name '_SRNewLanguageObjectFromHandle';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRNewLanguageObjectFromDataFile()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1706,16 +1886,22 @@ function SRNewLanguageObjectFromDataFile( system: SRRecognitionSystem; var langu
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRNewLanguageObjectFromDataFile(system: SRRecognitionSystem; var languageObject: SRLanguageObject; fRefNum: SInt16): OSErr; external name '_SRNewLanguageObjectFromDataFile';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SREmptyLanguageObject()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1726,16 +1912,22 @@ function SREmptyLanguageObject( languageObject: SRLanguageObject ): OSErr; exter
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SREmptyLanguageObject(languageObject: SRLanguageObject): OSErr; external name '_SREmptyLanguageObject';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRChangeLanguageObject()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1746,16 +1938,22 @@ function SRChangeLanguageObject( languageObject: SRLanguageObject; text: {const}
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRChangeLanguageObject(languageObject: SRLanguageObject; text: UnivPtr; textLength: Size): OSErr; external name '_SRChangeLanguageObject';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRAddLanguageObject()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1766,16 +1964,22 @@ function SRAddLanguageObject( base: SRLanguageObject; addon: SRLanguageObject ):
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRAddLanguageObject(base: SRLanguageObject; addon: SRLanguageObject): OSErr; external name '_SRAddLanguageObject';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRAddText()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1786,16 +1990,22 @@ function SRAddText( base: SRLanguageObject; text: {const} UnivPtr; textLength: S
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRAddText(base: SRLanguageObject; text: UnivPtr; textLength: Size; refCon: SInt32): OSErr; external name '_SRAddText';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRRemoveLanguageObject()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1806,17 +2016,23 @@ function SRRemoveLanguageObject( base: SRLanguageObject; toRemove: SRLanguageObj
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRRemoveLanguageObject(base: SRLanguageObject; toRemove: SRLanguageObject): OSErr; external name '_SRRemoveLanguageObject';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { Traversing SRRecognitionResults or SRLanguageObjects }
 {
  *  SRCountItems()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1827,16 +2043,22 @@ function SRCountItems( container: SRSpeechObject; var count: SIGNEDLONG ): OSErr
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRCountItems(container: SRSpeechObject; var count: SInt32): OSErr; external name '_SRCountItems';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRGetIndexedItem()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1847,16 +2069,22 @@ function SRGetIndexedItem( container: SRSpeechObject; var item: SRSpeechObject; 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRGetIndexedItem(container: SRSpeechObject; var item: SRSpeechObject; index: SInt32): OSErr; external name '_SRGetIndexedItem';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRSetIndexedItem()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1867,16 +2095,22 @@ function SRSetIndexedItem( container: SRSpeechObject; item: SRSpeechObject; inde
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRSetIndexedItem(container: SRSpeechObject; item: SRSpeechObject; index: SInt32): OSErr; external name '_SRSetIndexedItem';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRRemoveIndexedItem()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1887,17 +2121,23 @@ function SRRemoveIndexedItem( container: SRSpeechObject; index: SIGNEDLONG ): OS
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRRemoveIndexedItem(container: SRSpeechObject; index: SInt32): OSErr; external name '_SRRemoveIndexedItem';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { Utilizing the System Feedback Window }
 {
  *  SRDrawText()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1908,16 +2148,22 @@ function SRDrawText( recognizer: SRRecognizer; dispText: {const} UnivPtr; dispLe
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRDrawText(recognizer: SRRecognizer; dispText: UnivPtr; dispLength: Size): OSErr; external name '_SRDrawText';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRDrawRecognizedText()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1928,16 +2174,22 @@ function SRDrawRecognizedText( recognizer: SRRecognizer; dispText: {const} UnivP
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRDrawRecognizedText(recognizer: SRRecognizer; dispText: UnivPtr; dispLength: Size): OSErr; external name '_SRDrawRecognizedText';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRSpeakText()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1948,16 +2200,22 @@ function SRSpeakText( recognizer: SRRecognizer; speakText: {const} UnivPtr; spea
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRSpeakText(recognizer: SRRecognizer; speakText: UnivPtr; speakLength: Size): OSErr; external name '_SRSpeakText';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRSpeakAndDrawText()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1968,16 +2226,22 @@ function SRSpeakAndDrawText( recognizer: SRRecognizer; text: {const} UnivPtr; te
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRSpeakAndDrawText(recognizer: SRRecognizer; text: UnivPtr; textLength: Size): OSErr; external name '_SRSpeakAndDrawText';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRStopSpeech()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1988,16 +2252,22 @@ function SRStopSpeech( recognizer: SRRecognizer ): OSErr; external name '_SRStop
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRStopSpeech(recognizer: SRRecognizer): OSErr; external name '_SRStopSpeech';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRSpeechBusy()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2008,16 +2278,22 @@ function SRSpeechBusy( recognizer: SRRecognizer ): Boolean; external name '_SRSp
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRSpeechBusy(recognizer: SRRecognizer): boolean; external name '_SRSpeechBusy';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRProcessBegin()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2028,16 +2304,22 @@ function SRProcessBegin( recognizer: SRRecognizer; failed: Boolean ): OSErr; ext
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function SRProcessBegin(recognizer: SRRecognizer; failed: boolean): OSErr; external name '_SRProcessBegin';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SRProcessEnd()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2053,6 +2335,8 @@ function SRProcessEnd( recognizer: SRRecognizer; failed: Boolean ): OSErr; exter
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechRecognitionLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -2062,4 +2346,7 @@ function SRProcessEnd(recognizer: SRRecognizer; failed: boolean): OSErr; externa
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

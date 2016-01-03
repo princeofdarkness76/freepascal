@@ -9,6 +9,7 @@ name=fcl-xml
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -36,10 +37,17 @@ version=2.2.5
 [target]
 units=htmldefs sax xmlutils dom sax_html dom_html xmlcfg xmlread xmlstreaming xmlwrite xhtml htmwrite xpath htmlelements htmlwriter xmlconf sax_xml
 >>>>>>> graemeg/fixes_2_2
+=======
+version=2.2.5
+
+[target]
+units=htmldefs sax xmlutils dom sax_html dom_html xmlcfg xmlread xmlstreaming xmlwrite xhtml htmwrite xpath htmlelements htmlwriter xmlconf sax_xml
+>>>>>>> origin/fixes_2_2
 rsts=sax xpath htmlwriter xmlconf
 
 [require]
 packages=fcl-base
+<<<<<<< HEAD
 <<<<<<< HEAD
 packages_beos=iconvenc
 packages_haiku=iconvenc
@@ -49,6 +57,8 @@ packages_iphonesim=iconvenc
 packages_freebsd=iconvenc
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [compiler]
 options=-S2h

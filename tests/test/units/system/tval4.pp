@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 unit tval4;
 
@@ -27,6 +28,8 @@ end;
 
 end.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 unit tval4;
 
@@ -54,4 +57,7 @@ begin
 end;
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -30,6 +30,7 @@ const
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   EOraDatabaseError = class(ESQLDatabaseError)
     public
       property ORAErrorCode: integer read ErrorCode; deprecated 'Please use ErrorCode instead of ORAErrorCode'; // June 2014
@@ -38,6 +39,11 @@ type
     public
       ORAErrorCode : Longint;
 >>>>>>> graemeg/fixes_2_2
+=======
+  EOraDatabaseError = class(EDatabaseError)
+    public
+      ORAErrorCode : Longint;
+>>>>>>> origin/fixes_2_2
   end;
 
   TOracleTrans = Class(TSQLHandle)
@@ -347,8 +353,11 @@ begin
   OCIErrorGet(FOciError,1,nil,errcode,@buf[0],1024,OCI_HTYPE_ERROR);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   raise EOraDatabaseError.CreateFmt(pchar(buf), [], Self, errcode, '')
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if (Self.Name <> '') then
     E := EOraDatabaseError.CreateFmt('%s : %s',[Self.Name,buf])
   else
@@ -356,7 +365,10 @@ begin
 
   E.ORAErrorCode := errcode;
   Raise E;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TOracleConnection.GetParameters(cursor: TSQLCursor; ATransaction : TSQLTransaction; AParams: TParams);
@@ -566,9 +578,12 @@ begin
   with cursor as TOracleCursor do
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     FreeOraFieldBuffers(FieldBuffers);
     FreeOraFieldBuffers(ParamBuffers);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     OCIHandleFree(FOciStmt,OCI_HTYPE_STMT);
     if Length(FieldBuffers) > 0 then
       for tel := 0 to high(FieldBuffers) do freemem(FieldBuffers[tel].buffer);

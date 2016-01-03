@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     This file is part of the PTCPas framebuffer library
     Copyright (C) 2007, 2009, 2010  Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
@@ -7,10 +8,16 @@
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
     Original C++ version by Glenn Fiedler (ptc@gaffer.org)
 >>>>>>> graemeg/fixes_2_2
+=======
+    Free Pascal port of the OpenPTC C++ library.
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+    Original C++ version by Glenn Fiedler (ptc@gaffer.org)
+>>>>>>> origin/fixes_2_2
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
     License as published by the Free Software Foundation; either
+<<<<<<< HEAD
 <<<<<<< HEAD
     version 2.1 of the License, or (at your option) any later version
     with the following modification:
@@ -28,6 +35,9 @@
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> graemeg/fixes_2_2
+=======
+    version 2.1 of the License, or (at your option) any later version.
+>>>>>>> origin/fixes_2_2
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -40,6 +50,7 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TWinCEKeyboard.Create(EventQueue: TEventQueue);
 
 begin
@@ -47,13 +58,18 @@ begin
 //  m_event := nil;
 //  inherited Create(window, thread);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Constructor TWinCEKeyboard.Create(EventQueue : TEventQueue);
 
 Begin
 //  m_monitor := Nil;
 //  m_event := Nil;
 //  Inherited Create(window, thread);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 //  m_monitor := TWin32Monitor.Create;
 //  m_event := TWin32Event.Create;
 
@@ -68,6 +84,7 @@ Begin
 
   { enable buffering }
   m_enabled := True;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -121,6 +138,8 @@ begin
       else
         if wParam = VK_CONTROL then
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure TWinCEKeyboard.enable;
@@ -172,20 +191,28 @@ Begin
         m_shift := press
       Else
         If wParam = VK_CONTROL Then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           { control }
           m_control := press;
 
     { enter monitor if multithreaded }
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*    if m_multithreaded then
 =======
 (*    If m_multithreaded Then
 >>>>>>> graemeg/fixes_2_2
+=======
+(*    If m_multithreaded Then
+>>>>>>> origin/fixes_2_2
       m_monitor.enter;*)
 
     uni := -1;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 (*    if GetKeyboardState(@KeyStateArray) then
     begin
@@ -212,6 +239,8 @@ Begin
     { handle key repeat count }
     for i := 1 to lParam and $FFFF do
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*    If GetKeyboardState(@KeyStateArray) Then
     Begin
       scancode := (lParam Shr 16) And $FF;
@@ -236,11 +265,15 @@ Begin
 
     { handle key repeat count }
     For i := 1 To lParam And $FFFF Do
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       { create and insert key object }
       FEventQueue.AddEvent(TPTCKeyEvent.Create(wParam, uni, m_alt, m_shift, m_control, press));
 
     { check multithreaded flag }
+<<<<<<< HEAD
 <<<<<<< HEAD
 (*    if m_multithreaded then
     begin
@@ -248,6 +281,10 @@ Begin
 (*    If m_multithreaded Then
     Begin
 >>>>>>> graemeg/fixes_2_2
+=======
+(*    If m_multithreaded Then
+    Begin
+>>>>>>> origin/fixes_2_2
       { set event }
       m_event._set;
 
@@ -255,9 +292,14 @@ Begin
       m_monitor.leave;
     End;*)
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
 end;
 =======
   End;
 End;
 >>>>>>> graemeg/fixes_2_2
+=======
+  End;
+End;
+>>>>>>> origin/fixes_2_2

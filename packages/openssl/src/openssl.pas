@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 unit openssl;
 =======
 unit OpenSSL;
 >>>>>>> graemeg/fixes_2_2
+=======
+unit OpenSSL;
+>>>>>>> origin/fixes_2_2
 
 {==============================================================================|
 | Project : Ararat Synapse                                       | 003.004.001 |
@@ -49,6 +53,7 @@ unit OpenSSL;
 |          if need be, it should be re-added, or handled by the                | 
 |           OS threading init somehow                                          |
 <<<<<<< HEAD
+<<<<<<< HEAD
 |                                                                              |
 | 2010 - Felipe Monteiro de Carvalho - Added RAND functios                     |
 |==============================================================================|
@@ -62,6 +67,8 @@ unit OpenSSL;
 |                                                                              |
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 |==============================================================================|
 | History: see HISTORY.HTM from distribution package                           |
 |          (Found at URL: http://www.ararat.cz/synapse/)                       |
@@ -75,9 +82,12 @@ Special thanks to Gregor Ibic <gregor.ibic@intelicom.si>
 
 {$MODE DELPHI}{$H+}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$Packrecords C}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {:@abstract(OpenSSL support)
 
@@ -89,6 +99,7 @@ requested OpenSSL function just return errorcode.
 interface
 
 uses
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -109,6 +120,9 @@ uses
 =======
   DynLibs, cTypes;
 >>>>>>> graemeg/fixes_2_2
+=======
+  DynLibs, cTypes;
+>>>>>>> origin/fixes_2_2
 
 var
   {$IFDEF WINDOWS}
@@ -116,6 +130,7 @@ var
   DLLSSLName2: string = 'libssl32.dll';
   DLLUtilName: string = 'libeay32.dll';
   {$ELSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
    {$IFDEF OS2}
     {$IFDEF OS2GCC}
@@ -132,12 +147,15 @@ var
    {$ELSE OS2}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   DLLSSLName: string = 'libssl';
   DLLUtilName: string = 'libcrypto';
   
   { ADD NEW ONES WHEN THEY APPEAR!
     Always make .so/dylib first, then versions, in descending order!
     Add "." .before the version, first is always just "" }
+<<<<<<< HEAD
 <<<<<<< HEAD
   DLLVersions: array[1..16] of string = ('', '.1.0.6', '.1.0.5', '.1.0.4', '.1.0.3',
                                         '.1.0.2', '.1.0.1','.1.0.0','.0.9.8',
@@ -196,11 +214,16 @@ const
 
   SHA_DIGEST_LENGTH = 20;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   DLLVersions: array[1..10] of string = ('', '.0.9.9'{futureproof :D}, '.0.9.8',
                                         '.0.9.7', '.0.9.6', '.0.9.5', '.0.9.4',
                                         '.0.9.3', '.0.9.2', '.0.9.1');
   {$ENDIF}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
   SslPtr = Pointer;
@@ -208,6 +231,7 @@ type
   PSSL_CTX = SslPtr;
   PSSL = SslPtr;
   PSSL_METHOD = SslPtr;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -474,6 +498,8 @@ type
   PPasswdCb = SslPtr;
   PFunction = procedure;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   PX509 = SslPtr;
   PX509_NAME = SslPtr;
   PEVP_MD	= SslPtr;
@@ -486,7 +512,10 @@ type
   PPasswdCb = SslPtr;
   PFunction = procedure;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   DES_cblock = array[0..7] of Byte;
   PDES_cblock = ^DES_cblock;
   des_ks_struct = packed record
@@ -495,6 +524,7 @@ type
   end;
   des_key_schedule = array[1..16] of des_ks_struct;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   MD2_CTX = record
     num: integer;
@@ -826,6 +856,11 @@ const
   EVP_MAX_MD_SIZE = 16 + 20;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+const
+  EVP_MAX_MD_SIZE = 16 + 20;
+
+>>>>>>> origin/fixes_2_2
   SSL_ERROR_NONE = 0;
   SSL_ERROR_SSL = 1;
   SSL_ERROR_WANT_READ = 2;
@@ -836,6 +871,7 @@ const
   SSL_ERROR_WANT_CONNECT = 7;
   SSL_ERROR_WANT_ACCEPT = 8;
   
+<<<<<<< HEAD
 <<<<<<< HEAD
   SSL_CTRL_NEED_TMP_RSA = 1;
   SSL_CTRL_SET_TMP_RSA = 2;
@@ -925,6 +961,8 @@ const
   SSL_MODE_ACCEPT_MOVING_WRITE_BUFFER = 2;
   SSL_MODE_AUTO_RETRY = 4;
 =======
+=======
+>>>>>>> origin/fixes_2_2
      SSL_CTRL_NEED_TMP_RSA = 1;
      SSL_CTRL_SET_TMP_RSA = 2;
      SSL_CTRL_SET_TMP_DH = 3;
@@ -979,7 +1017,10 @@ const
  * is blocking: *}
   SSL_MODE_AUTO_RETRY = 4;
 {* Don't attempt to automatically build certificate chain *}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   SSL_MODE_NO_AUTO_CHAIN = 8;
 
   SSL_OP_NO_SSLv2 = $01000000;
@@ -1035,6 +1076,7 @@ const
   SSL_FILETYPE_PEM = 1;
   EVP_PKEY_RSA = 6;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   // RSA
   RSA_PKCS1_PADDING      = 1;
@@ -1176,6 +1218,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   SSLLibHandle: TLibHandle = 0;
   SSLUtilHandle: TLibHandle = 0;
@@ -1237,9 +1281,12 @@ var
 
 // libeay.dll
 <<<<<<< HEAD
+<<<<<<< HEAD
   procedure ERR_load_crypto_strings;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   function X509New: PX509;
   procedure X509Free(x: PX509);
   function X509NameOneline(a: PX509_NAME; var buf: String; size: cInt):String;
@@ -1251,22 +1298,29 @@ var
   function X509print(b: PBIO; a: PX509): cInt;
   function X509SetVersion(x: PX509; version: cInt): cInt;
 <<<<<<< HEAD
+<<<<<<< HEAD
   function X509SetPubkey(x: PX509; pkey: PEVP_PKEY): cInt;
   function X509SetIssuerName(x: PX509; name: PX509_NAME): cInt;
   function X509NameAddEntryByTxt(name: PX509_NAME; field: string; _type: cInt;
     bytes: string; len, loc, _set: cInt): cInt;
   function X509Sign(x: PX509; pkey: PEVP_PKEY; const md: PEVP_MD): cInt;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   function X509SetPubkey(x: PX509; pkey: EVP_PKEY): cInt;
   function X509SetIssuerName(x: PX509; name: PX509_NAME): cInt;
   function X509NameAddEntryByTxt(name: PX509_NAME; field: string; _type: cInt;
     bytes: string; len, loc, _set: cInt): cInt;
   function X509Sign(x: PX509; pkey: EVP_PKEY; const md: PEVP_MD): cInt;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   function X509GmtimeAdj(s: PASN1_UTCTIME; adj: cInt): PASN1_UTCTIME;
   function X509SetNotBefore(x: PX509; tm: PASN1_UTCTIME): cInt;
   function X509SetNotAfter(x: PX509; tm: PASN1_UTCTIME): cInt;
   function X509GetSerialNumber(x: PX509): PASN1_cInt;
+<<<<<<< HEAD
 <<<<<<< HEAD
   function EvpPkeyNew: PEVP_PKEY;
   procedure EvpPkeyFree(pk: PEVP_PKEY);
@@ -1274,19 +1328,25 @@ var
   function EvpGetDigestByName(Name: String): PEVP_MD;
   procedure EVPcleanup;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   function EvpPkeyNew: EVP_PKEY;
   procedure EvpPkeyFree(pk: EVP_PKEY);
   function EvpPkeyAssign(pkey: EVP_PKEY; _type: cInt; key: Prsa): cInt;
   function EvpGetDigestByName(Name: String): PEVP_MD;
   procedure EVPcleanup;
 //  function ErrErrorString(e: cInt; buf: PChar): PChar;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   function SSLeayversion(t: cInt): string;
   procedure ErrErrorString(e: cInt; var buf: string; len: cInt);
   function ErrGetError: cInt;
   procedure ErrClearError;
   procedure ErrFreeStrings;
   procedure ErrRemoveState(pid: cInt);
+<<<<<<< HEAD
 <<<<<<< HEAD
   procedure RandScreen;
   function d2iPKCS12bio(b:PBIO; Pkcs12: SslPtr): SslPtr;
@@ -1682,6 +1742,8 @@ begin
 end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   procedure OPENSSLaddallalgorithms;
   procedure CRYPTOcleanupAllExData;
   procedure RandScreen;
@@ -1712,7 +1774,10 @@ function DestroySSLInterface: Boolean;
 
 implementation
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type
 // libssl.dll
   TSslGetError = function(s: PSSL; ret_code: cInt):cInt; cdecl;
@@ -1758,9 +1823,12 @@ type
 
 // libeay.dll
 <<<<<<< HEAD
+<<<<<<< HEAD
   TERR_load_crypto_strings = procedure; cdecl;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   TX509New = function: PX509; cdecl;
   TX509Free = procedure(x: PX509); cdecl;
   TX509NameOneline = function(a: PX509_NAME; buf: PChar; size: cInt):PChar; cdecl;
@@ -1771,22 +1839,29 @@ type
   TX509print = function(b: PBIO; a: PX509): cInt; cdecl;
   TX509SetVersion = function(x: PX509; version: cInt): cInt; cdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TX509SetPubkey = function(x: PX509; pkey: PEVP_PKEY): cInt; cdecl;
   TX509SetIssuerName = function(x: PX509; name: PX509_NAME): cInt; cdecl;
   TX509NameAddEntryByTxt = function(name: PX509_NAME; field: PChar; _type: cInt;
     bytes: PChar; len, loc, _set: cInt): cInt; cdecl;
   TX509Sign = function(x: PX509; pkey: PEVP_PKEY; const md: PEVP_MD): cInt; cdecl;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   TX509SetPubkey = function(x: PX509; pkey: EVP_PKEY): cInt; cdecl;
   TX509SetIssuerName = function(x: PX509; name: PX509_NAME): cInt; cdecl;
   TX509NameAddEntryByTxt = function(name: PX509_NAME; field: PChar; _type: cInt;
     bytes: PChar; len, loc, _set: cInt): cInt; cdecl;
   TX509Sign = function(x: PX509; pkey: EVP_PKEY; const md: PEVP_MD): cInt; cdecl;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   TX509GmtimeAdj = function(s: PASN1_UTCTIME; adj: cInt): PASN1_UTCTIME; cdecl;
   TX509SetNotBefore = function(x: PX509; tm: PASN1_UTCTIME): cInt; cdecl;
   TX509SetNotAfter = function(x: PX509; tm: PASN1_UTCTIME): cInt; cdecl;
   TX509GetSerialNumber = function(x: PX509): PASN1_cInt; cdecl;
+<<<<<<< HEAD
 <<<<<<< HEAD
   TEvpPkeyNew = function: PEVP_PKEY; cdecl;
   TEvpPkeyFree = procedure(pk: PEVP_PKEY); cdecl;
@@ -1796,6 +1871,11 @@ type
   TEvpPkeyFree = procedure(pk: EVP_PKEY); cdecl;
   TEvpPkeyAssign = function(pkey: EVP_PKEY; _type: cInt; key: Prsa): cInt; cdecl;
 >>>>>>> graemeg/fixes_2_2
+=======
+  TEvpPkeyNew = function: EVP_PKEY; cdecl;
+  TEvpPkeyFree = procedure(pk: EVP_PKEY); cdecl;
+  TEvpPkeyAssign = function(pkey: EVP_PKEY; _type: cInt; key: Prsa): cInt; cdecl;
+>>>>>>> origin/fixes_2_2
   TEvpGetDigestByName = function(Name: PChar): PEVP_MD; cdecl;
   TEVPcleanup = procedure; cdecl;
   TSSLeayversion = function(t: cInt): PChar; cdecl;
@@ -1805,10 +1885,15 @@ type
   TErrFreeStrings = procedure; cdecl;
   TErrRemoveState = procedure(pid: cInt); cdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   TOPENSSLaddallalgorithms = procedure; cdecl;
   TCRYPTOcleanupAllExData = procedure; cdecl;
 >>>>>>> graemeg/fixes_2_2
+=======
+  TOPENSSLaddallalgorithms = procedure; cdecl;
+  TCRYPTOcleanupAllExData = procedure; cdecl;
+>>>>>>> origin/fixes_2_2
   TRandScreen = procedure; cdecl;
   TBioNew = function(b: PBIO_METHOD): PBIO; cdecl;
   TBioFreeAll = procedure(b: PBIO); cdecl;
@@ -1819,6 +1904,7 @@ type
   Td2iPKCS12bio = function(b:PBIO; Pkcs12: SslPtr): SslPtr; cdecl;
   TPKCS12parse = function(p12: SslPtr; pass: PChar; var pkey, cert, ca: SslPtr): cInt; cdecl;
   TPKCS12free = procedure(p12: SslPtr); cdecl;
+<<<<<<< HEAD
 <<<<<<< HEAD
   TAsn1UtctimeNew = function: PASN1_UTCTIME; cdecl;
   TAsn1UtctimeFree = procedure(a: PASN1_UTCTIME); cdecl;
@@ -1839,26 +1925,35 @@ type
   Ti2dX509bio = function(b: PBIO; x: PX509): cInt; cdecl;
   Ti2dPrivateKeyBio= function(b: PBIO; pkey: PEVP_PKEY): cInt; cdecl;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   TRsaGenerateKey = function(bits, e: cInt; callback: PFunction; cb_arg: SslPtr): PRSA; cdecl;
   TAsn1UtctimeNew = function: PASN1_UTCTIME; cdecl;
   TAsn1UtctimeFree = procedure(a: PASN1_UTCTIME); cdecl;
   TAsn1cIntSet = function(a: PASN1_cInt; v: cInt): cInt; cdecl;
   Ti2dX509bio = function(b: PBIO; x: PX509): cInt; cdecl;
   Ti2dPrivateKeyBio= function(b: PBIO; pkey: EVP_PKEY): cInt; cdecl;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   // 3DES functions
   TDESsetoddparity = procedure(Key: des_cblock); cdecl;
   TDESsetkeychecked = function(key: des_cblock; schedule: des_key_schedule): cInt; cdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TDESsetkey = TDESsetkeychecked;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   TDESecbencrypt = procedure(Input: des_cblock; output: des_cblock; ks: des_key_schedule; enc: cInt); cdecl;
   //thread lock functions
   TCRYPTOnumlocks = function: cInt; cdecl;
   TCRYPTOSetLockingCallback = procedure(cb: Sslptr); cdecl;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   // RAND functions
   TRAND_set_rand_method = function(const meth: PRAND_METHOD): cint; cdecl;
@@ -1998,6 +2093,8 @@ type
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
 // libssl.dll
   _SslGetError: TSslGetError = nil;
@@ -2043,9 +2140,12 @@ var
 
 // libeay.dll
 <<<<<<< HEAD
+<<<<<<< HEAD
   _ERR_load_crypto_strings: TERR_load_crypto_strings = nil;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   _X509New: TX509New = nil;
   _X509Free: TX509Free = nil;
   _X509NameOneline: TX509NameOneline = nil;
@@ -2075,10 +2175,15 @@ var
   _ErrFreeStrings: TErrFreeStrings = nil;
   _ErrRemoveState: TErrRemoveState = nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   _OPENSSLaddallalgorithms: TOPENSSLaddallalgorithms = nil;
   _CRYPTOcleanupAllExData: TCRYPTOcleanupAllExData = nil;
 >>>>>>> graemeg/fixes_2_2
+=======
+  _OPENSSLaddallalgorithms: TOPENSSLaddallalgorithms = nil;
+  _CRYPTOcleanupAllExData: TCRYPTOcleanupAllExData = nil;
+>>>>>>> origin/fixes_2_2
   _RandScreen: TRandScreen = nil;
   _BioNew: TBioNew = nil;
   _BioFreeAll: TBioFreeAll = nil;
@@ -2089,6 +2194,7 @@ var
   _d2iPKCS12bio: Td2iPKCS12bio = nil;
   _PKCS12parse: TPKCS12parse = nil;
   _PKCS12free: TPKCS12free = nil;
+<<<<<<< HEAD
 <<<<<<< HEAD
   _Asn1UtctimeNew: TAsn1UtctimeNew = nil;
   _Asn1UtctimeFree: TAsn1UtctimeFree = nil;
@@ -2130,6 +2236,8 @@ var
   _DESsetoddparity: TDESsetoddparity = nil;
   _DESsetkey	   : TDESsetkey = nil;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   _RsaGenerateKey: TRsaGenerateKey = nil;
   _Asn1UtctimeNew: TAsn1UtctimeNew = nil;
   _Asn1UtctimeFree: TAsn1UtctimeFree = nil;
@@ -2139,13 +2247,17 @@ var
 
   // 3DES functions
   _DESsetoddparity: TDESsetoddparity = nil;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   _DESsetkeychecked: TDESsetkeychecked = nil;
   _DESecbencrypt: TDESecbencrypt = nil;
   //thread lock functions
   _CRYPTOnumlocks: TCRYPTOnumlocks = nil;
   _CRYPTOSetLockingCallback: TCRYPTOSetLockingCallback = nil;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   // RAND functions
   _RAND_set_rand_method: TRAND_set_rand_method = nil;
@@ -2366,6 +2478,8 @@ function SslGetError(s: PSSL; ret_code: cInt):cInt;
 begin
   if InitSSLEAInterface and Assigned(_SslGetError) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var
   SSLloaded: boolean = false;
 
@@ -2373,7 +2487,10 @@ var
 function SslGetError(s: PSSL; ret_code: cInt):cInt;
 begin
   if InitSSLInterface and Assigned(_SslGetError) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Result := _SslGetError(s, ret_code)
   else
     Result := SSL_ERROR_SSL;
@@ -2382,10 +2499,14 @@ end;
 function SslLibraryInit:cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslLibraryInit) then
 =======
   if InitSSLInterface and Assigned(_SslLibraryInit) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslLibraryInit) then
+>>>>>>> origin/fixes_2_2
     Result := _SslLibraryInit
   else
     Result := 1;
@@ -2394,20 +2515,28 @@ end;
 procedure SslLoadErrorStrings;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslLoadErrorStrings) then
 =======
   if InitSSLInterface and Assigned(_SslLoadErrorStrings) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslLoadErrorStrings) then
+>>>>>>> origin/fixes_2_2
     _SslLoadErrorStrings;
 end;
 
 function SslCtxSetCipherList(arg0: PSSL_CTX; var str: String):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCtxSetCipherList) then
 =======
   if InitSSLInterface and Assigned(_SslCtxSetCipherList) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCtxSetCipherList) then
+>>>>>>> origin/fixes_2_2
     Result := _SslCtxSetCipherList(arg0, PChar(str))
   else
     Result := 0;
@@ -2416,10 +2545,14 @@ end;
 function SslCtxNew(meth: PSSL_METHOD):PSSL_CTX;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCtxNew) then
 =======
   if InitSSLInterface and Assigned(_SslCtxNew) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCtxNew) then
+>>>>>>> origin/fixes_2_2
     Result := _SslCtxNew(meth)
   else
     Result := nil;
@@ -2428,20 +2561,28 @@ end;
 procedure SslCtxFree(arg0: PSSL_CTX);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCtxFree) then
 =======
   if InitSSLInterface and Assigned(_SslCtxFree) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCtxFree) then
+>>>>>>> origin/fixes_2_2
     _SslCtxFree(arg0);
 end;
 
 function SslSetFd(s: PSSL; fd: cInt):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslSetFd) then
 =======
   if InitSSLInterface and Assigned(_SslSetFd) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslSetFd) then
+>>>>>>> origin/fixes_2_2
     Result := _SslSetFd(s, fd)
   else
     Result := 0;
@@ -2450,10 +2591,14 @@ end;
 function SslCtrl(ssl: PSSL; cmd: cInt; larg: clong; parg: Pointer): cLong;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCtrl) then
 =======
   if InitSSLInterface and Assigned(_SslCtrl) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCtrl) then
+>>>>>>> origin/fixes_2_2
     Result := _SslCtrl(ssl, cmd, larg, parg)
   else
     Result := 0;
@@ -2463,10 +2608,14 @@ function SslCTXCtrl(ctx: PSSL_CTX; cmd: cInt; larg: clong; parg: Pointer
   ): cLong;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCTXCtrl) then
 =======
   if InitSSLInterface and Assigned(_SslCTXCtrl) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCTXCtrl) then
+>>>>>>> origin/fixes_2_2
     Result := _SslCTXCtrl(ctx, cmd, larg, parg)
   else
     Result := 0;
@@ -2495,10 +2644,14 @@ end;
 function SslMethodV2:PSSL_METHOD;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslMethodV2) then
 =======
   if InitSSLInterface and Assigned(_SslMethodV2) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslMethodV2) then
+>>>>>>> origin/fixes_2_2
     Result := _SslMethodV2
   else
     Result := nil;
@@ -2507,10 +2660,14 @@ end;
 function SslMethodV3:PSSL_METHOD;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslMethodV3) then
 =======
   if InitSSLInterface and Assigned(_SslMethodV3) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslMethodV3) then
+>>>>>>> origin/fixes_2_2
     Result := _SslMethodV3
   else
     Result := nil;
@@ -2519,10 +2676,14 @@ end;
 function SslMethodTLSV1:PSSL_METHOD;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslMethodTLSV1) then
 =======
   if InitSSLInterface and Assigned(_SslMethodTLSV1) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslMethodTLSV1) then
+>>>>>>> origin/fixes_2_2
     Result := _SslMethodTLSV1
   else
     Result := nil;
@@ -2531,10 +2692,14 @@ end;
 function SslMethodV23:PSSL_METHOD;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslMethodV23) then
 =======
   if InitSSLInterface and Assigned(_SslMethodV23) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslMethodV23) then
+>>>>>>> origin/fixes_2_2
     Result := _SslMethodV23
   else
     Result := nil;
@@ -2543,10 +2708,14 @@ end;
 function SslCtxUsePrivateKey(ctx: PSSL_CTX; pkey: SslPtr):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCtxUsePrivateKey) then
 =======
   if InitSSLInterface and Assigned(_SslCtxUsePrivateKey) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCtxUsePrivateKey) then
+>>>>>>> origin/fixes_2_2
     Result := _SslCtxUsePrivateKey(ctx, pkey)
   else
     Result := 0;
@@ -2555,10 +2724,14 @@ end;
 function SslCtxUsePrivateKeyASN1(pk: cInt; ctx: PSSL_CTX; d: String; len: cLong):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCtxUsePrivateKeyASN1) then
 =======
   if InitSSLInterface and Assigned(_SslCtxUsePrivateKeyASN1) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCtxUsePrivateKeyASN1) then
+>>>>>>> origin/fixes_2_2
     Result := _SslCtxUsePrivateKeyASN1(pk, ctx, Sslptr(d), len)
   else
     Result := 0;
@@ -2567,10 +2740,14 @@ end;
 function SslCtxUsePrivateKeyFile(ctx: PSSL_CTX; const _file: String; _type: cInt):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCtxUsePrivateKeyFile) then
 =======
   if InitSSLInterface and Assigned(_SslCtxUsePrivateKeyFile) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCtxUsePrivateKeyFile) then
+>>>>>>> origin/fixes_2_2
     Result := _SslCtxUsePrivateKeyFile(ctx, PChar(_file), _type)
   else
     Result := 0;
@@ -2579,10 +2756,14 @@ end;
 function SslCtxUseCertificate(ctx: PSSL_CTX; x: SslPtr):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCtxUseCertificate) then
 =======
   if InitSSLInterface and Assigned(_SslCtxUseCertificate) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCtxUseCertificate) then
+>>>>>>> origin/fixes_2_2
     Result := _SslCtxUseCertificate(ctx, x)
   else
     Result := 0;
@@ -2591,10 +2772,14 @@ end;
 function SslCtxUseCertificateASN1(ctx: PSSL_CTX; len: cLong; d: String):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCtxUseCertificateASN1) then
 =======
   if InitSSLInterface and Assigned(_SslCtxUseCertificateASN1) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCtxUseCertificateASN1) then
+>>>>>>> origin/fixes_2_2
     Result := _SslCtxUseCertificateASN1(ctx, len, SslPtr(d))
   else
     Result := 0;
@@ -2603,10 +2788,14 @@ end;
 function SslCtxUseCertificateFile(ctx: PSSL_CTX; const _file: String; _type: cInt):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCtxUseCertificateFile) then
 =======
   if InitSSLInterface and Assigned(_SslCtxUseCertificateFile) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCtxUseCertificateFile) then
+>>>>>>> origin/fixes_2_2
     Result := _SslCtxUseCertificateFile(ctx, PChar(_file), _type)
   else
     Result := 0;
@@ -2615,10 +2804,14 @@ end;
 function SslCtxUseCertificateChainFile(ctx: PSSL_CTX; const _file: String):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCtxUseCertificateChainFile) then
 =======
   if InitSSLInterface and Assigned(_SslCtxUseCertificateChainFile) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCtxUseCertificateChainFile) then
+>>>>>>> origin/fixes_2_2
     Result := _SslCtxUseCertificateChainFile(ctx, PChar(_file))
   else
     Result := 0;
@@ -2627,10 +2820,14 @@ end;
 function SslCtxCheckPrivateKeyFile(ctx: PSSL_CTX):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCtxCheckPrivateKeyFile) then
 =======
   if InitSSLInterface and Assigned(_SslCtxCheckPrivateKeyFile) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCtxCheckPrivateKeyFile) then
+>>>>>>> origin/fixes_2_2
     Result := _SslCtxCheckPrivateKeyFile(ctx)
   else
     Result := 0;
@@ -2639,30 +2836,42 @@ end;
 procedure SslCtxSetDefaultPasswdCb(ctx: PSSL_CTX; cb: PPasswdCb);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCtxSetDefaultPasswdCb) then
 =======
   if InitSSLInterface and Assigned(_SslCtxSetDefaultPasswdCb) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCtxSetDefaultPasswdCb) then
+>>>>>>> origin/fixes_2_2
     _SslCtxSetDefaultPasswdCb(ctx, cb);
 end;
 
 procedure SslCtxSetDefaultPasswdCbUserdata(ctx: PSSL_CTX; u: SslPtr);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCtxSetDefaultPasswdCbUserdata) then
 =======
   if InitSSLInterface and Assigned(_SslCtxSetDefaultPasswdCbUserdata) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCtxSetDefaultPasswdCbUserdata) then
+>>>>>>> origin/fixes_2_2
     _SslCtxSetDefaultPasswdCbUserdata(ctx, u);
 end;
 
 function SslCtxLoadVerifyLocations(ctx: PSSL_CTX; const CAfile: String; const CApath: String):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCtxLoadVerifyLocations) then
 =======
   if InitSSLInterface and Assigned(_SslCtxLoadVerifyLocations) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCtxLoadVerifyLocations) then
+>>>>>>> origin/fixes_2_2
     Result := _SslCtxLoadVerifyLocations(ctx, SslPtr(CAfile), SslPtr(CApath))
   else
     Result := 0;
@@ -2671,10 +2880,14 @@ end;
 function SslNew(ctx: PSSL_CTX):PSSL;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslNew) then
 =======
   if InitSSLInterface and Assigned(_SslNew) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslNew) then
+>>>>>>> origin/fixes_2_2
     Result := _SslNew(ctx)
   else
     Result := nil;
@@ -2683,20 +2896,28 @@ end;
 procedure SslFree(ssl: PSSL);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslFree) then
 =======
   if InitSSLInterface and Assigned(_SslFree) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslFree) then
+>>>>>>> origin/fixes_2_2
     _SslFree(ssl);
 end;
 
 function SslAccept(ssl: PSSL):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslAccept) then
 =======
   if InitSSLInterface and Assigned(_SslAccept) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslAccept) then
+>>>>>>> origin/fixes_2_2
     Result := _SslAccept(ssl)
   else
     Result := -1;
@@ -2705,10 +2926,14 @@ end;
 function SslConnect(ssl: PSSL):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslConnect) then
 =======
   if InitSSLInterface and Assigned(_SslConnect) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslConnect) then
+>>>>>>> origin/fixes_2_2
     Result := _SslConnect(ssl)
   else
     Result := -1;
@@ -2717,10 +2942,14 @@ end;
 function SslShutdown(ssl: PSSL):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslShutdown) then
 =======
   if InitSSLInterface and Assigned(_SslShutdown) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslShutdown) then
+>>>>>>> origin/fixes_2_2
     Result := _SslShutdown(ssl)
   else
     Result := -1;
@@ -2729,10 +2958,14 @@ end;
 function SslRead(ssl: PSSL; buf: SslPtr; num: cInt):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslRead) then
 =======
   if InitSSLInterface and Assigned(_SslRead) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslRead) then
+>>>>>>> origin/fixes_2_2
     Result := _SslRead(ssl, PChar(buf), num)
   else
     Result := -1;
@@ -2741,10 +2974,14 @@ end;
 function SslPeek(ssl: PSSL; buf: SslPtr; num: cInt):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslPeek) then
 =======
   if InitSSLInterface and Assigned(_SslPeek) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslPeek) then
+>>>>>>> origin/fixes_2_2
     Result := _SslPeek(ssl, PChar(buf), num)
   else
     Result := -1;
@@ -2753,10 +2990,14 @@ end;
 function SslWrite(ssl: PSSL; buf: SslPtr; num: cInt):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslWrite) then
 =======
   if InitSSLInterface and Assigned(_SslWrite) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslWrite) then
+>>>>>>> origin/fixes_2_2
     Result := _SslWrite(ssl, PChar(buf), num)
   else
     Result := -1;
@@ -2765,10 +3006,14 @@ end;
 function SslPending(ssl: PSSL):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslPending) then
 =======
   if InitSSLInterface and Assigned(_SslPending) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslPending) then
+>>>>>>> origin/fixes_2_2
     Result := _SslPending(ssl)
   else
     Result := 0;
@@ -2778,10 +3023,14 @@ end;
 function SslGetVersion(ssl: PSSL):String;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslGetVersion) then
 =======
   if InitSSLInterface and Assigned(_SslGetVersion) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslGetVersion) then
+>>>>>>> origin/fixes_2_2
     Result := _SslGetVersion(ssl)
   else
     Result := '';
@@ -2790,10 +3039,14 @@ end;
 function SslGetPeerCertificate(ssl: PSSL):PX509;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslGetPeerCertificate) then
 =======
   if InitSSLInterface and Assigned(_SslGetPeerCertificate) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslGetPeerCertificate) then
+>>>>>>> origin/fixes_2_2
     Result := _SslGetPeerCertificate(ssl)
   else
     Result := nil;
@@ -2802,20 +3055,28 @@ end;
 procedure SslCtxSetVerify(ctx: PSSL_CTX; mode: cInt; arg2: PFunction);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SslCtxSetVerify) then
 =======
   if InitSSLInterface and Assigned(_SslCtxSetVerify) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SslCtxSetVerify) then
+>>>>>>> origin/fixes_2_2
     _SslCtxSetVerify(ctx, mode, @arg2);
 end;
 
 function SSLGetCurrentCipher(s: PSSL):SslPtr;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SSLGetCurrentCipher) then
 =======
   if InitSSLInterface and Assigned(_SSLGetCurrentCipher) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SSLGetCurrentCipher) then
+>>>>>>> origin/fixes_2_2
 {$IFDEF CIL}
 {$ELSE}
     Result := _SSLGetCurrentCipher(s)
@@ -2827,10 +3088,14 @@ end;
 function SSLCipherGetName(c: SslPtr):String;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SSLCipherGetName) then
 =======
   if InitSSLInterface and Assigned(_SSLCipherGetName) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SSLCipherGetName) then
+>>>>>>> origin/fixes_2_2
     Result := _SSLCipherGetName(c)
   else
     Result := '';
@@ -2839,10 +3104,14 @@ end;
 function SSLCipherGetBits(c: SslPtr; var alg_bits: cInt):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SSLCipherGetBits) then
 =======
   if InitSSLInterface and Assigned(_SSLCipherGetBits) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SSLCipherGetBits) then
+>>>>>>> origin/fixes_2_2
     Result := _SSLCipherGetBits(c, @alg_bits)
   else
     Result := 0;
@@ -2851,15 +3120,20 @@ end;
 function SSLGetVerifyResult(ssl: PSSL):cLong;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitSSLEAInterface and Assigned(_SSLGetVerifyResult) then
 =======
   if InitSSLInterface and Assigned(_SSLGetVerifyResult) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_SSLGetVerifyResult) then
+>>>>>>> origin/fixes_2_2
     Result := _SSLGetVerifyResult(ssl)
   else
     Result := X509_V_ERR_APPLICATION_VERIFICATION;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 // libeay.dll
@@ -2913,11 +3187,16 @@ function X509New: PX509;
 begin
   if InitlibeaInterface and Assigned(_X509New) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
 // libeay.dll
 function X509New: PX509;
 begin
   if InitSSLInterface and Assigned(_X509New) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Result := _X509New
   else
     Result := nil;
@@ -2926,20 +3205,28 @@ end;
 procedure X509Free(x: PX509);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_X509Free) then
 =======
   if InitSSLInterface and Assigned(_X509Free) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_X509Free) then
+>>>>>>> origin/fixes_2_2
     _X509Free(x);
 end;
 
 function X509NameOneline(a: PX509_NAME; var buf: String; size: cInt):String;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_X509NameOneline) then
 =======
   if InitSSLInterface and Assigned(_X509NameOneline) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_X509NameOneline) then
+>>>>>>> origin/fixes_2_2
     Result := _X509NameOneline(a, PChar(buf),size)
   else
     Result := '';
@@ -2948,10 +3235,14 @@ end;
 function X509GetSubjectName(a: PX509):PX509_NAME;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_X509GetSubjectName) then
 =======
   if InitSSLInterface and Assigned(_X509GetSubjectName) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_X509GetSubjectName) then
+>>>>>>> origin/fixes_2_2
     Result := _X509GetSubjectName(a)
   else
     Result := nil;
@@ -2960,10 +3251,14 @@ end;
 function X509GetIssuerName(a: PX509):PX509_NAME;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_X509GetIssuerName) then
 =======
   if InitSSLInterface and Assigned(_X509GetIssuerName) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_X509GetIssuerName) then
+>>>>>>> origin/fixes_2_2
     Result := _X509GetIssuerName(a)
   else
     Result := nil;
@@ -2972,10 +3267,14 @@ end;
 function X509NameHash(x: PX509_NAME):cuLong;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_X509NameHash) then
 =======
   if InitSSLInterface and Assigned(_X509NameHash) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_X509NameHash) then
+>>>>>>> origin/fixes_2_2
     Result := _X509NameHash(x)
   else
     Result := 0;
@@ -2984,15 +3283,20 @@ end;
 function X509Digest(data: PX509; _type: PEVP_MD; md: String; var len: cInt):cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_X509Digest) then
 =======
   if InitSSLInterface and Assigned(_X509Digest) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_X509Digest) then
+>>>>>>> origin/fixes_2_2
     Result := _X509Digest(data, _type, PChar(md), @len)
   else
     Result := 0;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function EvpPkeyNew: PEVP_PKEY;
 begin
@@ -3002,11 +3306,17 @@ function EvpPkeyNew: EVP_PKEY;
 begin
   if InitSSLInterface and Assigned(_EvpPkeyNew) then
 >>>>>>> graemeg/fixes_2_2
+=======
+function EvpPkeyNew: EVP_PKEY;
+begin
+  if InitSSLInterface and Assigned(_EvpPkeyNew) then
+>>>>>>> origin/fixes_2_2
     Result := _EvpPkeyNew
   else
     Result := nil;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure EvpPkeyFree(pk: PEVP_PKEY);
 begin
@@ -3018,6 +3328,8 @@ procedure ErrErrorString(e: cInt; var buf: string; len: cInt);
 begin
   if InitlibeaInterface and Assigned(_ErrErrorString) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure EvpPkeyFree(pk: EVP_PKEY);
 begin
   if InitSSLInterface and Assigned(_EvpPkeyFree) then
@@ -3035,7 +3347,10 @@ end;
 procedure ErrErrorString(e: cInt; var buf: string; len: cInt);
 begin
   if InitSSLInterface and Assigned(_ErrErrorString) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     _ErrErrorString(e, Pointer(buf), len);
   buf := PChar(Buf);
 end;
@@ -3043,10 +3358,14 @@ end;
 function ErrGetError: cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_ErrGetError) then
 =======
   if InitSSLInterface and Assigned(_ErrGetError) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_ErrGetError) then
+>>>>>>> origin/fixes_2_2
     Result := _ErrGetError
   else
     Result := SSL_ERROR_SSL;
@@ -3055,25 +3374,34 @@ end;
 procedure ErrClearError;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_ErrClearError) then
 =======
   if InitSSLInterface and Assigned(_ErrClearError) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_ErrClearError) then
+>>>>>>> origin/fixes_2_2
     _ErrClearError;
 end;
 
 procedure ErrFreeStrings;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_ErrFreeStrings) then
 =======
   if InitSSLInterface and Assigned(_ErrFreeStrings) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_ErrFreeStrings) then
+>>>>>>> origin/fixes_2_2
     _ErrFreeStrings;
 end;
 
 procedure ErrRemoveState(pid: cInt);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if InitlibeaInterface and Assigned(_ErrRemoveState) then
     _ErrRemoveState(pid);
@@ -3089,6 +3417,8 @@ procedure RandScreen;
 begin
   if InitlibeaInterface and Assigned(_RandScreen) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if InitSSLInterface and Assigned(_ErrRemoveState) then
     _ErrRemoveState(pid);
 end;
@@ -3114,17 +3444,24 @@ end;
 procedure RandScreen;
 begin
   if InitSSLInterface and Assigned(_RandScreen) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     _RandScreen;
 end;
 
 function BioNew(b: PBIO_METHOD): PBIO;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_BioNew) then
 =======
   if InitSSLInterface and Assigned(_BioNew) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_BioNew) then
+>>>>>>> origin/fixes_2_2
     Result := _BioNew(b)
   else
     Result := nil;
@@ -3133,25 +3470,34 @@ end;
 procedure BioFreeAll(b: PBIO);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_BioFreeAll) then
 =======
   if InitSSLInterface and Assigned(_BioFreeAll) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_BioFreeAll) then
+>>>>>>> origin/fixes_2_2
     _BioFreeAll(b);
 end;
 
 function BioSMem: PBIO_METHOD;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_BioSMem) then
 =======
   if InitSSLInterface and Assigned(_BioSMem) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_BioSMem) then
+>>>>>>> origin/fixes_2_2
     Result := _BioSMem
   else
     Result := nil;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 function BioCtrlPending(b: PBIO): cInt;
@@ -3162,6 +3508,11 @@ function BioCtrlPending(b: PBIO): cInt;
 begin
   if InitSSLInterface and Assigned(_BioCtrlPending) then
 >>>>>>> graemeg/fixes_2_2
+=======
+function BioCtrlPending(b: PBIO): cInt;
+begin
+  if InitSSLInterface and Assigned(_BioCtrlPending) then
+>>>>>>> origin/fixes_2_2
     Result := _BioCtrlPending(b)
   else
     Result := 0;
@@ -3170,10 +3521,14 @@ end;
 function BioRead(b: PBIO; var Buf: String; Len: cInt): cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_BioRead) then
 =======
   if InitSSLInterface and Assigned(_BioRead) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_BioRead) then
+>>>>>>> origin/fixes_2_2
     Result := _BioRead(b, PChar(Buf), Len)
   else
     Result := -2;
@@ -3183,10 +3538,14 @@ end;
 function BioWrite(b: PBIO; Buf: String; Len: cInt): cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_BioWrite) then
 =======
   if InitSSLInterface and Assigned(_BioWrite) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_BioWrite) then
+>>>>>>> origin/fixes_2_2
     Result := _BioWrite(b, PChar(Buf), Len)
   else
     Result := -2;
@@ -3195,10 +3554,14 @@ end;
 function X509print(b: PBIO; a: PX509): cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_X509print) then
 =======
   if InitSSLInterface and Assigned(_X509print) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_X509print) then
+>>>>>>> origin/fixes_2_2
     Result := _X509print(b, a)
   else
     Result := 0;
@@ -3207,10 +3570,14 @@ end;
 function d2iPKCS12bio(b:PBIO; Pkcs12: SslPtr): SslPtr;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_d2iPKCS12bio) then
 =======
   if InitSSLInterface and Assigned(_d2iPKCS12bio) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_d2iPKCS12bio) then
+>>>>>>> origin/fixes_2_2
     Result := _d2iPKCS12bio(b, Pkcs12)
   else
     Result := nil;
@@ -3219,10 +3586,14 @@ end;
 function PKCS12parse(p12: SslPtr; pass: string; var pkey, cert, ca: SslPtr): cInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_PKCS12parse) then
 =======
   if InitSSLInterface and Assigned(_PKCS12parse) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if InitSSLInterface and Assigned(_PKCS12parse) then
+>>>>>>> origin/fixes_2_2
     Result := _PKCS12parse(p12, SslPtr(pass), pkey, cert, ca)
   else
     Result := 0;
@@ -3231,6 +3602,7 @@ end;
 procedure PKCS12free(p12: SslPtr);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_PKCS12free) then
     _PKCS12free(p12);
 end;
@@ -3238,6 +3610,23 @@ end;
 function EvpPkeyAssign(pkey: PEVP_PKEY; _type: cInt; key: Prsa): cInt;
 begin
   if InitlibeaInterface and Assigned(_EvpPkeyAssign) then
+=======
+  if InitSSLInterface and Assigned(_PKCS12free) then
+    _PKCS12free(p12);
+end;
+
+function RsaGenerateKey(bits, e: cInt; callback: PFunction; cb_arg: SslPtr): PRSA;
+begin
+  if InitSSLInterface and Assigned(_RsaGenerateKey) then
+    Result := _RsaGenerateKey(bits, e, callback, cb_arg)
+  else
+    Result := nil;
+end;
+
+function EvpPkeyAssign(pkey: EVP_PKEY; _type: cInt; key: Prsa): cInt;
+begin
+  if InitSSLInterface and Assigned(_EvpPkeyAssign) then
+>>>>>>> origin/fixes_2_2
     Result := _EvpPkeyAssign(pkey, _type, key)
   else
     Result := 0;
@@ -3245,15 +3634,25 @@ end;
 
 function X509SetVersion(x: PX509; version: cInt): cInt;
 begin
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_X509SetVersion) then
+=======
+  if InitSSLInterface and Assigned(_X509SetVersion) then
+>>>>>>> origin/fixes_2_2
     Result := _X509SetVersion(x, version)
   else
     Result := 0;
 end;
 
+<<<<<<< HEAD
 function X509SetPubkey(x: PX509; pkey: PEVP_PKEY): cInt;
 begin
   if InitlibeaInterface and Assigned(_X509SetPubkey) then
+=======
+function X509SetPubkey(x: PX509; pkey: EVP_PKEY): cInt;
+begin
+  if InitSSLInterface and Assigned(_X509SetPubkey) then
+>>>>>>> origin/fixes_2_2
     Result := _X509SetPubkey(x, pkey)
   else
     Result := 0;
@@ -3261,7 +3660,11 @@ end;
 
 function X509SetIssuerName(x: PX509; name: PX509_NAME): cInt;
 begin
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_X509SetIssuerName) then
+=======
+  if InitSSLInterface and Assigned(_X509SetIssuerName) then
+>>>>>>> origin/fixes_2_2
     Result := _X509SetIssuerName(x, name)
   else
     Result := 0;
@@ -3270,15 +3673,25 @@ end;
 function X509NameAddEntryByTxt(name: PX509_NAME; field: string; _type: cInt;
   bytes: string; len, loc, _set: cInt): cInt;
 begin
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_X509NameAddEntryByTxt) then
+=======
+  if InitSSLInterface and Assigned(_X509NameAddEntryByTxt) then
+>>>>>>> origin/fixes_2_2
     Result := _X509NameAddEntryByTxt(name, PChar(field), _type, PChar(Bytes), len, loc, _set)
   else
     Result := 0;
 end;
 
+<<<<<<< HEAD
 function X509Sign(x: PX509; pkey: PEVP_PKEY; const md: PEVP_MD): cInt;
 begin
   if InitlibeaInterface and Assigned(_X509Sign) then
+=======
+function X509Sign(x: PX509; pkey: EVP_PKEY; const md: PEVP_MD): cInt;
+begin
+  if InitSSLInterface and Assigned(_X509Sign) then
+>>>>>>> origin/fixes_2_2
     Result := _X509Sign(x, pkey, md)
   else
     Result := 0;
@@ -3286,7 +3699,11 @@ end;
 
 function Asn1UtctimeNew: PASN1_UTCTIME;
 begin
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_Asn1UtctimeNew) then
+=======
+  if InitSSLInterface and Assigned(_Asn1UtctimeNew) then
+>>>>>>> origin/fixes_2_2
     Result := _Asn1UtctimeNew
   else
     Result := nil;
@@ -3294,6 +3711,7 @@ end;
 
 procedure Asn1UtctimeFree(a: PASN1_UTCTIME);
 begin
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_Asn1UtctimeFree) then
     _Asn1UtctimeFree(a);
 end;
@@ -3327,6 +3745,15 @@ end;
 function X509GmtimeAdj(s: PASN1_UTCTIME; adj: cInt): PASN1_UTCTIME;
 begin
   if InitlibeaInterface and Assigned(_X509GmtimeAdj) then
+=======
+  if InitSSLInterface and Assigned(_Asn1UtctimeFree) then
+    _Asn1UtctimeFree(a);
+end;
+
+function X509GmtimeAdj(s: PASN1_UTCTIME; adj: cInt): PASN1_UTCTIME;
+begin
+  if InitSSLInterface and Assigned(_X509GmtimeAdj) then
+>>>>>>> origin/fixes_2_2
     Result := _X509GmtimeAdj(s, adj)
   else
     Result := nil;
@@ -3334,7 +3761,11 @@ end;
 
 function X509SetNotBefore(x: PX509; tm: PASN1_UTCTIME): cInt;
 begin
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_X509SetNotBefore) then
+=======
+  if InitSSLInterface and Assigned(_X509SetNotBefore) then
+>>>>>>> origin/fixes_2_2
     Result := _X509SetNotBefore(x, tm)
   else
     Result := 0;
@@ -3342,7 +3773,11 @@ end;
 
 function X509SetNotAfter(x: PX509; tm: PASN1_UTCTIME): cInt;
 begin
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_X509SetNotAfter) then
+=======
+  if InitSSLInterface and Assigned(_X509SetNotAfter) then
+>>>>>>> origin/fixes_2_2
     Result := _X509SetNotAfter(x, tm)
   else
     Result := 0;
@@ -3350,15 +3785,25 @@ end;
 
 function i2dX509bio(b: PBIO; x: PX509): cInt;
 begin
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_i2dX509bio) then
+=======
+  if InitSSLInterface and Assigned(_i2dX509bio) then
+>>>>>>> origin/fixes_2_2
     Result := _i2dX509bio(b, x)
   else
     Result := 0;
 end;
 
+<<<<<<< HEAD
 function i2dPrivateKeyBio(b: PBIO; pkey: PEVP_PKEY): cInt;
 begin
   if InitlibeaInterface and Assigned(_i2dPrivateKeyBio) then
+=======
+function i2dPrivateKeyBio(b: PBIO; pkey: EVP_PKEY): cInt;
+begin
+  if InitSSLInterface and Assigned(_i2dPrivateKeyBio) then
+>>>>>>> origin/fixes_2_2
     Result := _i2dPrivateKeyBio(b, pkey)
   else
     Result := 0;
@@ -3366,15 +3811,33 @@ end;
 
 function EvpGetDigestByName(Name: String): PEVP_MD;
 begin
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_EvpGetDigestByName) then
+=======
+  if InitSSLInterface and Assigned(_EvpGetDigestByName) then
+>>>>>>> origin/fixes_2_2
     Result := _EvpGetDigestByName(PChar(Name))
   else
     Result := nil;
 end;
 
+<<<<<<< HEAD
 function X509GetSerialNumber(x: PX509): PASN1_cInt;
 begin
   if InitlibeaInterface and Assigned(_X509GetSerialNumber) then
+=======
+function Asn1cIntSet(a: PASN1_cInt; v: cInt): cInt;
+begin
+  if InitSSLInterface and Assigned(_Asn1cIntSet) then
+    Result := _Asn1cIntSet(a, v)
+  else
+    Result := 0;
+end;
+
+function X509GetSerialNumber(x: PX509): PASN1_cInt;
+begin
+  if InitSSLInterface and Assigned(_X509GetSerialNumber) then
+>>>>>>> origin/fixes_2_2
     Result := _X509GetSerialNumber(x)
   else
     Result := nil;
@@ -3383,6 +3846,7 @@ end;
 // 3DES functions
 procedure DESsetoddparity(Key: des_cblock);
 begin
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_DESsetoddparity) then
     _DESsetoddparity(Key);
 end;
@@ -3398,6 +3862,15 @@ end;
 function DESsetkeychecked(key: des_cblock; schedule: des_key_schedule): cInt;
 begin
   if InitlibeaInterface and Assigned(_DESsetkeychecked) then
+=======
+  if InitSSLInterface and Assigned(_DESsetoddparity) then
+    _DESsetoddparity(Key);
+end;
+
+function DESsetkeychecked(key: des_cblock; schedule: des_key_schedule): cInt;
+begin
+  if InitSSLInterface and Assigned(_DESsetkeychecked) then
+>>>>>>> origin/fixes_2_2
     Result := _DESsetkeychecked(key, schedule)
   else
     Result := -1;
@@ -3405,6 +3878,7 @@ end;
 
 procedure DESecbencrypt(Input: des_cblock; output: des_cblock; ks: des_key_schedule; enc: cInt);
 begin
+<<<<<<< HEAD
   if InitlibeaInterface and Assigned(_DESecbencrypt) then
     _DESecbencrypt(Input, output, ks, enc);
 end;
@@ -8756,6 +9230,166 @@ begin
 >>>>>>> graemeg/fixes_2_2
         if assigned(_RandScreen) then
           _RandScreen;
+=======
+  if InitSSLInterface and Assigned(_DESecbencrypt) then
+    _DESecbencrypt(Input, output, ks, enc);
+end;
+
+{$IFNDEF WINDOWS}
+{ Try to load all library versions until you find or run out }
+function LoadLibHack(const Value: String): HModule;
+var
+  i: cInt;
+begin
+  Result := NilHandle;
+  
+  for i := Low(DLLVersions) to High(DLLVersions) do begin
+    {$IFDEF DARWIN}
+    Result := LoadLibrary(Value + DLLVersions[i] + '.dylib');
+    {$ELSE}
+    Result := LoadLibrary(Value + '.so' + DLLVersions[i]);
+    {$ENDIF}
+    
+    if Result <> NilHandle then
+      Break;
+  end;
+end;
+{$ENDIF}
+
+function LoadLib(const Value: String): HModule;
+begin
+  {$IFDEF WINDOWS}
+  Result := LoadLibrary(Value);
+  {$ELSE}
+  Result := LoadLibHack(Value);
+  {$ENDIF}
+end;
+
+function GetProcAddr(module: HModule; const ProcName: string): SslPtr;
+begin
+  Result := GetProcAddress(module, PChar(ProcName));
+end;
+
+function InitSSLInterface: Boolean;
+begin
+    if not IsSSLloaded then
+    begin
+      SSLLibHandle := LoadLib(DLLSSLName);
+      SSLUtilHandle := LoadLib(DLLUtilName);
+  {$IFNDEF UNIX}
+      if (SSLLibHandle = 0) then
+        SSLLibHandle := LoadLib(DLLSSLName2);
+  {$ENDIF}
+      if (SSLLibHandle <> 0) and (SSLUtilHandle <> 0) then
+      begin
+        _SslGetError := GetProcAddr(SSLLibHandle, 'SSL_get_error');
+        _SslLibraryInit := GetProcAddr(SSLLibHandle, 'SSL_library_init');
+        _SslLoadErrorStrings := GetProcAddr(SSLLibHandle, 'SSL_load_error_strings');
+        _SslCtxSetCipherList := GetProcAddr(SSLLibHandle, 'SSL_CTX_set_cipher_list');
+        _SslCtxNew := GetProcAddr(SSLLibHandle, 'SSL_CTX_new');
+        _SslCtxFree := GetProcAddr(SSLLibHandle, 'SSL_CTX_free');
+        _SslSetFd := GetProcAddr(SSLLibHandle, 'SSL_set_fd');
+        _SslCtrl := GetProcAddr(SSLLibHandle, 'SSL_ctrl');
+        _SslCTXCtrl := GetProcAddr(SSLLibHandle, 'SSL_CTX_ctrl');
+        _SslMethodV2 := GetProcAddr(SSLLibHandle, 'SSLv2_method');
+        _SslMethodV3 := GetProcAddr(SSLLibHandle, 'SSLv3_method');
+        _SslMethodTLSV1 := GetProcAddr(SSLLibHandle, 'TLSv1_method');
+        _SslMethodV23 := GetProcAddr(SSLLibHandle, 'SSLv23_method');
+        _SslCtxUsePrivateKey := GetProcAddr(SSLLibHandle, 'SSL_CTX_use_PrivateKey');
+        _SslCtxUsePrivateKeyASN1 := GetProcAddr(SSLLibHandle, 'SSL_CTX_use_PrivateKey_ASN1');
+        //use SSL_CTX_use_RSAPrivateKey_file instead SSL_CTX_use_PrivateKey_file,
+        //because SSL_CTX_use_PrivateKey_file not support DER format. :-O
+        _SslCtxUsePrivateKeyFile := GetProcAddr(SSLLibHandle, 'SSL_CTX_use_RSAPrivateKey_file');
+        _SslCtxUseCertificate := GetProcAddr(SSLLibHandle, 'SSL_CTX_use_certificate');
+        _SslCtxUseCertificateASN1 := GetProcAddr(SSLLibHandle, 'SSL_CTX_use_certificate_ASN1');
+        _SslCtxUseCertificateFile := GetProcAddr(SSLLibHandle, 'SSL_CTX_use_certificate_file');
+        _SslCtxUseCertificateChainFile := GetProcAddr(SSLLibHandle, 'SSL_CTX_use_certificate_chain_file');
+        _SslCtxCheckPrivateKeyFile := GetProcAddr(SSLLibHandle, 'SSL_CTX_check_private_key');
+        _SslCtxSetDefaultPasswdCb := GetProcAddr(SSLLibHandle, 'SSL_CTX_set_default_passwd_cb');
+        _SslCtxSetDefaultPasswdCbUserdata := GetProcAddr(SSLLibHandle, 'SSL_CTX_set_default_passwd_cb_userdata');
+        _SslCtxLoadVerifyLocations := GetProcAddr(SSLLibHandle, 'SSL_CTX_load_verify_locations');
+        _SslNew := GetProcAddr(SSLLibHandle, 'SSL_new');
+        _SslFree := GetProcAddr(SSLLibHandle, 'SSL_free');
+        _SslAccept := GetProcAddr(SSLLibHandle, 'SSL_accept');
+        _SslConnect := GetProcAddr(SSLLibHandle, 'SSL_connect');
+        _SslShutdown := GetProcAddr(SSLLibHandle, 'SSL_shutdown');
+        _SslRead := GetProcAddr(SSLLibHandle, 'SSL_read');
+        _SslPeek := GetProcAddr(SSLLibHandle, 'SSL_peek');
+        _SslWrite := GetProcAddr(SSLLibHandle, 'SSL_write');
+        _SslPending := GetProcAddr(SSLLibHandle, 'SSL_pending');
+        _SslGetPeerCertificate := GetProcAddr(SSLLibHandle, 'SSL_get_peer_certificate');
+        _SslGetVersion := GetProcAddr(SSLLibHandle, 'SSL_get_version');
+        _SslCtxSetVerify := GetProcAddr(SSLLibHandle, 'SSL_CTX_set_verify');
+        _SslGetCurrentCipher := GetProcAddr(SSLLibHandle, 'SSL_get_current_cipher');
+        _SslCipherGetName := GetProcAddr(SSLLibHandle, 'SSL_CIPHER_get_name');
+        _SslCipherGetBits := GetProcAddr(SSLLibHandle, 'SSL_CIPHER_get_bits');
+        _SslGetVerifyResult := GetProcAddr(SSLLibHandle, 'SSL_get_verify_result');
+
+        _X509New := GetProcAddr(SSLUtilHandle, 'X509_new');
+        _X509Free := GetProcAddr(SSLUtilHandle, 'X509_free');
+        _X509NameOneline := GetProcAddr(SSLUtilHandle, 'X509_NAME_oneline');
+        _X509GetSubjectName := GetProcAddr(SSLUtilHandle, 'X509_get_subject_name');
+        _X509GetIssuerName := GetProcAddr(SSLUtilHandle, 'X509_get_issuer_name');
+        _X509NameHash := GetProcAddr(SSLUtilHandle, 'X509_NAME_hash');
+        _X509Digest := GetProcAddr(SSLUtilHandle, 'X509_digest');
+        _X509print := GetProcAddr(SSLUtilHandle, 'X509_print');
+        _X509SetVersion := GetProcAddr(SSLUtilHandle, 'X509_set_version');
+        _X509SetPubkey := GetProcAddr(SSLUtilHandle, 'X509_set_pubkey');
+        _X509SetIssuerName := GetProcAddr(SSLUtilHandle, 'X509_set_issuer_name');
+        _X509NameAddEntryByTxt := GetProcAddr(SSLUtilHandle, 'X509_NAME_add_entry_by_txt');
+        _X509Sign := GetProcAddr(SSLUtilHandle, 'X509_sign');
+        _X509GmtimeAdj := GetProcAddr(SSLUtilHandle, 'X509_gmtime_adj');
+        _X509SetNotBefore := GetProcAddr(SSLUtilHandle, 'X509_set_notBefore');
+        _X509SetNotAfter := GetProcAddr(SSLUtilHandle, 'X509_set_notAfter');
+        _X509GetSerialNumber := GetProcAddr(SSLUtilHandle, 'X509_get_serialNumber');
+        _EvpPkeyNew := GetProcAddr(SSLUtilHandle, 'EVP_PKEY_new');
+        _EvpPkeyFree := GetProcAddr(SSLUtilHandle, 'EVP_PKEY_free');
+        _EvpPkeyAssign := GetProcAddr(SSLUtilHandle, 'EVP_PKEY_assign');
+        _EVPCleanup := GetProcAddr(SSLUtilHandle, 'EVP_cleanup');
+        _EvpGetDigestByName := GetProcAddr(SSLUtilHandle, 'EVP_get_digestbyname');
+        _SSLeayversion := GetProcAddr(SSLUtilHandle, 'SSLeay_version');
+        _ErrErrorString := GetProcAddr(SSLUtilHandle, 'ERR_error_string_n');
+        _ErrGetError := GetProcAddr(SSLUtilHandle, 'ERR_get_error');
+        _ErrClearError := GetProcAddr(SSLUtilHandle, 'ERR_clear_error');
+        _ErrFreeStrings := GetProcAddr(SSLUtilHandle, 'ERR_free_strings');
+        _ErrRemoveState := GetProcAddr(SSLUtilHandle, 'ERR_remove_state');
+        _OPENSSLaddallalgorithms := GetProcAddr(SSLUtilHandle, 'OPENSSL_add_all_algorithms_noconf');
+        _CRYPTOcleanupAllExData := GetProcAddr(SSLUtilHandle, 'CRYPTO_cleanup_all_ex_data');
+        _RandScreen := GetProcAddr(SSLUtilHandle, 'RAND_screen');
+        _BioNew := GetProcAddr(SSLUtilHandle, 'BIO_new');
+        _BioFreeAll := GetProcAddr(SSLUtilHandle, 'BIO_free_all');
+        _BioSMem := GetProcAddr(SSLUtilHandle, 'BIO_s_mem');
+        _BioCtrlPending := GetProcAddr(SSLUtilHandle, 'BIO_ctrl_pending');
+        _BioRead := GetProcAddr(SSLUtilHandle, 'BIO_read');
+        _BioWrite := GetProcAddr(SSLUtilHandle, 'BIO_write');
+        _d2iPKCS12bio := GetProcAddr(SSLUtilHandle, 'd2i_PKCS12_bio');
+        _PKCS12parse := GetProcAddr(SSLUtilHandle, 'PKCS12_parse');
+        _PKCS12free := GetProcAddr(SSLUtilHandle, 'PKCS12_free');
+        _RsaGenerateKey := GetProcAddr(SSLUtilHandle, 'RSA_generate_key');
+        _Asn1UtctimeNew := GetProcAddr(SSLUtilHandle, 'ASN1_UTCTIME_new');
+        _Asn1UtctimeFree := GetProcAddr(SSLUtilHandle, 'ASN1_UTCTIME_free');
+        _Asn1cIntSet := GetProcAddr(SSLUtilHandle, 'ASN1_cInt_set');
+        _i2dX509bio := GetProcAddr(SSLUtilHandle, 'i2d_X509_bio');
+        _i2dPrivateKeyBio := GetProcAddr(SSLUtilHandle, 'i2d_PrivateKey_bio');
+
+        // 3DES functions
+        _DESsetoddparity := GetProcAddr(SSLUtilHandle, 'DES_set_odd_parity');
+        _DESsetkeychecked := GetProcAddr(SSLUtilHandle, 'DES_set_key_checked');
+        _DESecbencrypt := GetProcAddr(SSLUtilHandle, 'DES_ecb_encrypt');
+        //
+        _CRYPTOnumlocks := GetProcAddr(SSLUtilHandle, 'CRYPTO_num_locks');
+        _CRYPTOsetlockingcallback := GetProcAddr(SSLUtilHandle, 'CRYPTO_set_locking_callback');
+
+        //init library
+        if assigned(_SslLibraryInit) then
+          _SslLibraryInit;
+        if assigned(_SslLoadErrorStrings) then
+          _SslLoadErrorStrings;
+        if assigned(_OPENSSLaddallalgorithms) then
+          _OPENSSLaddallalgorithms;
+        if assigned(_RandScreen) then
+          _RandScreen;
+>>>>>>> origin/fixes_2_2
 
         Result := True;
         SSLloaded := True;
@@ -8768,6 +9402,7 @@ begin
           FreeLibrary(SSLLibHandle);
           SSLLibHandle := 0;
         end;
+<<<<<<< HEAD
 <<<<<<< HEAD
         Result := False;
       end;
@@ -8953,11 +9588,16 @@ begin
         begin
           FreeLibrary(SSLUtilHandle);
 =======
+=======
+>>>>>>> origin/fixes_2_2
         if SSLUtilHandle <> 0 then
         begin
           FreeLibrary(SSLUtilHandle);
           SSLLibHandle := 0;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         end;
         Result := False;
       end;
@@ -8968,19 +9608,27 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function DestroySSLEAInterface: Boolean;
 =======
 function DestroySSLInterface: Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+function DestroySSLInterface: Boolean;
+>>>>>>> origin/fixes_2_2
 begin
     if IsSSLLoaded then
     begin
       //deinit library
       EVPCleanup;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       CRYPTOcleanupAllExData;
 >>>>>>> graemeg/fixes_2_2
+=======
+      CRYPTOcleanupAllExData;
+>>>>>>> origin/fixes_2_2
       ErrRemoveState(0);
     end;
     SSLloaded := false;
@@ -8988,15 +9636,21 @@ begin
     begin
       FreeLibrary(SSLLibHandle);
 <<<<<<< HEAD
+<<<<<<< HEAD
      SSLLibHandle := 0;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       SSLLibHandle := 0;
     end;
     if SSLUtilHandle <> 0 then
     begin
       FreeLibrary(SSLUtilHandle);
       SSLLibHandle := 0;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
 
     _SslGetError := nil;
@@ -9041,6 +9695,7 @@ begin
     _SslGetVerifyResult := nil;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/cpstrnew
 
       Result := True;
@@ -9066,6 +9721,8 @@ begin
     _ERR_load_crypto_strings := nil;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     _X509New := nil;
     _X509Free := nil;
     _X509NameOneline := nil;
@@ -9089,19 +9746,28 @@ begin
     _EVPCleanup := nil;
     _EvpGetDigestByName := nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     _SSLeayversion := nil;
 >>>>>>> graemeg/fixes_2_2
+=======
+    _SSLeayversion := nil;
+>>>>>>> origin/fixes_2_2
     _ErrErrorString := nil;
     _ErrGetError := nil;
     _ErrClearError := nil;
     _ErrFreeStrings := nil;
     _ErrRemoveState := nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     _OPENSSLaddallalgorithms := nil;
     _CRYPTOcleanupAllExData := nil;
 >>>>>>> graemeg/fixes_2_2
+=======
+    _OPENSSLaddallalgorithms := nil;
+    _CRYPTOcleanupAllExData := nil;
+>>>>>>> origin/fixes_2_2
     _RandScreen := nil;
     _BioNew := nil;
     _BioFreeAll := nil;
@@ -9113,14 +9779,20 @@ begin
     _PKCS12parse := nil;
     _PKCS12free := nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
     _Asn1UtctimeNew := nil;
     _Asn1UtctimeFree := nil;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     _RsaGenerateKey := nil;
     _Asn1UtctimeNew := nil;
     _Asn1UtctimeFree := nil;
     _Asn1cIntSet := nil;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     _i2dX509bio := nil;
     _i2dPrivateKeyBio := nil;
 
@@ -9131,6 +9803,7 @@ begin
     //
     _CRYPTOnumlocks := nil;
     _CRYPTOsetlockingcallback := nil;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     // RAND functions
@@ -9558,17 +10231,23 @@ function Islibealoaded: Boolean;
 begin
   Result := libeaLoaded;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Result := True;
 end;
 
 function IsSSLloaded: Boolean;
 begin
   Result := SSLLoaded;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 finalization
   DestroySSLInterface;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -9589,4 +10268,7 @@ finalization
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 end.

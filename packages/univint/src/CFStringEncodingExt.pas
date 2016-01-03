@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -35,6 +36,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	Copyright (c) 1998-2005, Apple, Inc. All rights reserved.
 }
 {	  Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, November 2005 }
@@ -44,7 +47,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -54,12 +60,17 @@
 unit CFStringEncodingExt;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -73,14 +84,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -89,11 +105,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -131,6 +150,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -138,6 +159,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -374,6 +396,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -382,7 +406,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -409,9 +436,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -423,14 +454,18 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -519,6 +554,8 @@ const
     kCFStringEncodingISOLatin8 = $020E;	{ ISO 8859-14 }
     kCFStringEncodingISOLatin9 = $020F;	{ ISO 8859-15 }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	CFStringEncodings = SInt32;
 const
 {   kCFStringEncodingMacRoman = 0L, defined in CoreFoundation/CFString.h  }
@@ -589,11 +626,15 @@ const
 	kCFStringEncodingISOLatin7 = $020D;						{  ISO 8859-13  }
 	kCFStringEncodingISOLatin8 = $020E;						{  ISO 8859-14  }
 	kCFStringEncodingISOLatin9 = $020F;						{  ISO 8859-15  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4}
     kCFStringEncodingISOLatin10 = $0210;	{ ISO 8859-16 }
 {#endif} { MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     { MS-DOS & Windows encodings begin at 0x400 }
     kCFStringEncodingDOSLatinUS = $0400;	{ code page 437 }
@@ -650,6 +691,8 @@ const
     kCFStringEncodingCNS_11643_92_P3 = $0653;	{ CNS 11643-1992 plane 3 (was plane 14 in 1986 version) }
 =======
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{  MS-DOS & Windows encodings begin at 0x400  }
 	kCFStringEncodingDOSLatinUS = $0400;						{  code page 437  }
 	kCFStringEncodingDOSGreek = $0405;						{  code page 737 (formerly code page 437G)  }
@@ -688,30 +731,41 @@ const
 {#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4}
     kCFStringEncodingANSEL = $0601;	{ ANSEL (ANSI Z39.47) }
 {#endif} { MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4 }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kCFStringEncodingJIS_X0201_76 = $0620;
 	kCFStringEncodingJIS_X0208_83 = $0621;
 	kCFStringEncodingJIS_X0208_90 = $0622;
 	kCFStringEncodingJIS_X0212_90 = $0623;
 	kCFStringEncodingJIS_C6226_78 = $0624;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	kCFStringEncodingShiftJIS_X0213_00 = $0628; { Shift-JIS format encoding of JIS X0213 planes 1 and 2}
 >>>>>>> graemeg/fixes_2_2
+=======
+	kCFStringEncodingShiftJIS_X0213_00 = $0628; { Shift-JIS format encoding of JIS X0213 planes 1 and 2}
+>>>>>>> origin/fixes_2_2
 {#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4}
     kCFStringEncodingShiftJIS_X0213_MenKuTen = $0629;	{ JIS X0213 in plane-row-column notation }
 {#endif} { MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4 }
 	kCFStringEncodingGB_2312_80 = $0630;
 	kCFStringEncodingGBK_95 = $0631;						{  annex to GB 13000-93; for Windows 95  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kCFStringEncodingGB_18030_2000 = $0632;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kCFStringEncodingKSC_5601_87 = $0640;						{  same as KSC 5601-92 without Johab annex  }
 	kCFStringEncodingKSC_5601_92_Johab = $0641;					{  KSC 5601-92 Johab annex  }
 	kCFStringEncodingCNS_11643_92_P1 = $0651;					{  CNS 11643-1992 plane 1  }
 	kCFStringEncodingCNS_11643_92_P2 = $0652;					{  CNS 11643-1992 plane 2  }
 	kCFStringEncodingCNS_11643_92_P3 = $0653;					{  CNS 11643-1992 plane 3 (was plane 14 in 1986 version)  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
@@ -757,6 +811,8 @@ const
     kCFStringEncodingShiftJIS_X0213_00 = $0628; { Shift-JIS format encoding of JIS X0213 planes 1 and 2 (DEPRECATED) }
 =======
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 	{  ISO 2022 collections begin at 0x800  }
 	kCFStringEncodingISO_2022_JP = $0820;
@@ -786,7 +842,10 @@ const
 	kCFStringEncodingBig5_E = $0A09;	{ Taiwan Big-5E standard }
 {#endif} { MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	{  Other platform encodings }
 {  kCFStringEncodingNextStepLatin = 0x0B01, defined in CoreFoundation/CFString.h }
 {#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4}
@@ -795,6 +854,7 @@ const
 																{  EBCDIC & IBM host encodings begin at 0xC00  }
 	kCFStringEncodingEBCDIC_US = $0C01;						{  basic EBCDIC-US  }
 	kCFStringEncodingEBCDIC_CP037 = $0C02;						{  code page 037, extended EBCDIC (Latin-1 set) for US,Canada...  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {#if MAC_OS_X_VERSION_10_6 <= MAC_OS_X_VERSION_MAX_ALLOWED}
 	kCFStringEncodingUTF7 = $04000100; { kTextEncodingUnicodeDefault + kUnicodeUTF7Format RFC2152 }
@@ -822,3 +882,8 @@ end.
 
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+
+
+end.
+>>>>>>> origin/fixes_2_2

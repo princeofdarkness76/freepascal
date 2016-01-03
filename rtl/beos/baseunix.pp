@@ -16,6 +16,7 @@ Unit BaseUnix;
 
 Interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$modeswitch out}
 {$inline on}
 Uses UnixType;
@@ -25,10 +26,15 @@ Uses UnixType;
 
 uses UnixType;
 >>>>>>> graemeg/fixes_2_2
+=======
+
+uses UnixType;
+>>>>>>> origin/fixes_2_2
 
 {$i aliasptp.inc}
 
 {$packrecords C}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {$ifndef FPC_USE_LIBC}
@@ -45,6 +51,8 @@ uses UnixType;
 {$ELSE}
   {$i bunxh.inc}		{ Functions}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$define oldreaddir}		// Keep using readdir system call instead
 				// of userland getdents stuff.
 {$define usedomain}		// Allow uname with "domain" entry.
@@ -65,7 +73,10 @@ const netlib = 'net';
 {$i oscdeclh.inc}
 {$ELSE}
 {$i bunxh.inc}		{ Functions}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
 
 function fpgeterrno:longint; 
@@ -88,10 +99,13 @@ Function  FpNanoSleep  (req : ptimespec;rem : ptimespec):cint;
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$i genfunch.inc}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { Fairly portable constants. I'm not going to waste time to duplicate and alias
 them anywhere}
 
@@ -114,16 +128,20 @@ Const
 implementation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef hassysctl}
 Uses Sysctl;
 {$endif}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$i genfuncs.inc}       // generic calls. (like getenv)
 {$I gensigset.inc}     // general sigset funcs implementation.
 {$I genfdset.inc}      // general fdset funcs.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef FPC_USE_LIBC}
   {$i oscdecl.inc}        // implementation of wrappers in oscdeclh.inc
@@ -132,11 +150,16 @@ Uses Sysctl;
   {$i sysnr.inc}          // syscall numbers.
   {$i bsyscall.inc}       // cpu specific syscalls
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_USE_LIBC}
   {$i syscallh.inc}       // do_syscall declarations themselves
   {$i sysnr.inc}          // syscall numbers.
   {$i bsyscall.inc}  			// cpu specific syscalls
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$i bunxsysc.inc}       // syscalls in system unit.
 //  {$i settimeo.inc}
 {$endif}

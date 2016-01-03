@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 { CoreGraphics - CGDisplayFade.h
    Copyright (c) 2002-2008 Apple Inc.
    All rights reserved. }
@@ -26,6 +27,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CGDisplayFade.h
  *  CoreGraphics
@@ -46,7 +49,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -56,12 +62,17 @@
 unit CGDisplayFades;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -75,14 +86,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -91,11 +107,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -133,6 +152,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -140,6 +161,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -377,6 +399,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -385,7 +409,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -412,9 +439,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -425,6 +456,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CGBase,CGErrors,CGDirectDisplay,CGDisplayConfiguration;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -443,6 +475,11 @@ uses MacTypes,CGBase,CGErrors,CGDirectDisplay,CGDisplayConfiguration;
 
 
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ALIGN POWER}
+
+
+>>>>>>> origin/fixes_2_2
 type
 	CGDisplayFadeReservationToken = UInt32;
 const
@@ -451,23 +488,30 @@ const
 type
 	CGDisplayBlendFraction = Float32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 { Values for the limits of the fade. `kCGDisplayBlendNormal' represents a
    normal display state. `kCGDisplayBlendSolidColor' represents a display
    blended to a solid color }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  * Values for the limits of the fade.
  *	kCGDisplayBlendNormal represents a normal display state
  *	kCGDisplayBlendSolidColor represents a display blended to a solid color
  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kCGDisplayBlendNormal = 0.0;
 const
 	kCGDisplayBlendSolidColor = 1.0;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { Time in seconds to perform a fade operation. }
 
@@ -503,6 +547,8 @@ function CGConfigureDisplayFadeEffect( config: CGDisplayConfigRef; fadeOutSecond
    to a maximum of 15 seconds and should be greater than zero. }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  * Time in seconds to perform a fade operation.
  }
@@ -537,11 +583,15 @@ function CGConfigureDisplayFadeEffect( configRef: CGDisplayConfigRef; fadeOutSec
  * provides a mechanism for controlling display fade operations outside of display
  * mode reconfigurations.
  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type
 	CGDisplayReservationInterval = Float32;
 const
 	kCGMaxDisplayReservationInterval = 15.0;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 function CGAcquireDisplayFadeReservation( seconds: CGDisplayReservationInterval; var token: CGDisplayFadeReservationToken ): CGError; external name '_CGAcquireDisplayFadeReservation';
@@ -631,6 +681,8 @@ function CGDisplayFadeOperationInProgress: boolean_t; external name '_CGDisplayF
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  * Before performing fade operation, the caller must reserve the hardware
  * for the expected period of time that the program will be doing fades
@@ -719,4 +771,7 @@ function CGDisplayFadeOperationInProgress: boolean_t; external name '_CGDisplayF
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

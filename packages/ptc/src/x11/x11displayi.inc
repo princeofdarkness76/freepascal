@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -74,12 +75,17 @@
 constructor TX11Display.Create(ADisplay: PDisplay; AScreen: Integer; const AFlags: TX11Flags);
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$INCLUDE xunikey.inc}
 
 Constructor TX11Display.Create(ADisplay : PDisplay; AScreen : Integer; Const AFlags : TX11Flags);
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FFlags := AFlags;
 
   FDisplay := ADisplay;
@@ -95,6 +101,7 @@ Begin
 
   SetKeyMapping;
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
 
 destructor TX11Display.Destroy;
@@ -107,6 +114,8 @@ begin
     FDisplay := nil;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Destructor TX11Display.Destroy;
@@ -119,12 +128,16 @@ Begin
     XCloseDisplay(FDisplay);
     FDisplay := Nil;
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FreeMemAndNil(FNormalKeys);
   FreeMemAndNil(FFunctionKeys);
 
   FCopy.Free;
   FClear.Free;
+<<<<<<< HEAD
 <<<<<<< HEAD
   FEventQueue.Free;
 
@@ -166,6 +179,8 @@ begin
       console_pixels := Lock;
       try
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FPalette.Free;
   FClip.Free;
   FArea.Free;
@@ -187,11 +202,15 @@ Begin
     Try
       console_pixels := Lock;
       Try
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         FCopy.Request(AFormat, Format);
         FCopy.Palette(APalette, Palette);
         FCopy.Copy(APixels, 0, 0, AWidth, AHeight, APitch, console_pixels, 0, 0,
                     Width, Height, Pitch);
+<<<<<<< HEAD
 <<<<<<< HEAD
       finally
         Unlock;
@@ -273,6 +292,8 @@ begin
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
       Finally
         Unlock;
       End;
@@ -314,11 +335,15 @@ Begin
       Finally
         tmp.Free;
       End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       FCopy.request(AFormat, Format);
       FCopy.palette(APalette, Palette);
       FCopy.copy(APixels, clipped_source.left, clipped_source.top, clipped_source.width, clipped_source.height, APitch,
                  console_pixels, clipped_destination.left, clipped_destination.top, clipped_destination.width, clipped_destination.height, Pitch);
+<<<<<<< HEAD
 <<<<<<< HEAD
     finally
       Unlock;
@@ -683,6 +708,8 @@ var
   _I: Integer;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Finally
       Unlock;
       clipped_source.Free;
@@ -833,12 +860,16 @@ Var
   _I : Integer;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FreeMemAndNil(FFunctionKeys);
   FreeMemAndNil(FNormalKeys);
   FFunctionKeys := GetMem(256 * SizeOf(Integer));
   FNormalKeys := GetMem(256 * SizeOf(Integer));
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   for _I := 0 to 255 do
   begin
@@ -1114,6 +1145,8 @@ end;
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
   For _I := 0 To 255 Do
   Begin
     FFunctionKeys[_I] := Integer(PTCKEY_UNDEFINED);
@@ -1229,4 +1262,7 @@ end;
   FNormalKeys[$FF And XK_y] := Integer(PTCKEY_Y);
   FNormalKeys[$FF And XK_z] := Integer(PTCKEY_Z);
 End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

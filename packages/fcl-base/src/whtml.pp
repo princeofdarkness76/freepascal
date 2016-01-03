@@ -340,10 +340,14 @@ begin
   A:='NAME="'+Name+'" TYPE="checkbox" VALUE="'+Value+'"';
   If Checked then
 <<<<<<< HEAD
+<<<<<<< HEAD
     A:=A+' CHECKED="checked"';
 =======
     A:=A+' CHECKED=1';
 >>>>>>> graemeg/fixes_2_2
+=======
+    A:=A+' CHECKED=1';
+>>>>>>> origin/fixes_2_2
   TagStart('INPUT',A);
 end;
 
@@ -362,10 +366,14 @@ begin
   A:='NAME="'+Name+'" TYPE="checkbox" VALUE="'+Value+'"';
   If Checked then
 <<<<<<< HEAD
+<<<<<<< HEAD
     A:=A+' CHECKED="checked"';
 =======
     A:=A+' CHECKED=1';
 >>>>>>> graemeg/fixes_2_2
+=======
+    A:=A+' CHECKED=1';
+>>>>>>> origin/fixes_2_2
   TagStart('INPUT',A);
 
 end;
@@ -419,10 +427,14 @@ begin
       end;
     If (Value<>'') and (V=Value) then
 <<<<<<< HEAD
+<<<<<<< HEAD
       A:=A+' SELECTED="selected"';
 =======
       A:=A+' SELECTED';
 >>>>>>> graemeg/fixes_2_2
+=======
+      A:=A+' SELECTED';
+>>>>>>> origin/fixes_2_2
     TagStart('OPTION',A);
     end;
   TagEnd('SELECT')

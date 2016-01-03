@@ -288,6 +288,7 @@ type
     FIncludePaths: TStringList;
     FStrictFileCase : Boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
   Protected
     procedure SetBaseDirectory(AValue: string); virtual;
     procedure SetStrictFileCase(AValue: Boolean); virtual;
@@ -295,6 +296,8 @@ type
     Property IncludePaths: TStringList Read FIncludePaths;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   public
     constructor Create; virtual;
     destructor Destroy; override;
@@ -342,6 +345,7 @@ type
     function FindIncludeFile(const AName: string): TLineReader;
     Property StrictFileCase : Boolean Read FStrictFileCase Write FStrictFileCase;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property BaseDirectory: string read FBaseDirectory write FBaseDirectory;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -355,6 +359,8 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   EScannerError       = class(Exception);
@@ -409,6 +415,7 @@ type
     procedure SetOptions(AValue: TPOptions);
   protected
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure DoLog(Const Msg : String; SkipSourceInfo : Boolean = False);overload;
     Procedure DoLog(Const Fmt : String; Args : Array of const;SkipSourceInfo : Boolean = False);overload;
     procedure Error(const Msg: string);overload;
@@ -435,6 +442,10 @@ type
     procedure Error(const Msg: string);overload;
     procedure Error(const Msg: string; Args: array of Const);overload;
 >>>>>>> graemeg/fixes_2_2
+=======
+    procedure Error(const Msg: string);overload;
+    procedure Error(const Msg: string; Args: array of Const);overload;
+>>>>>>> origin/fixes_2_2
     function DoFetchToken: TToken;
     procedure ClearFiles;
     Procedure ClearMacros;
@@ -1153,7 +1164,10 @@ begin
                 FN:='';
               end;    
             end;  
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         If (FN<>'') then
           Result := TFileLineReader.Create(FN);
       except
@@ -2086,16 +2100,22 @@ begin
           Result:=HandleMacro(index);
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   else
     if PPIsSkipping then
       Inc(TokenStr)
     else
 =======
+=======
+>>>>>>> origin/fixes_2_2
   else 
     if PPIsSkipping then
       Inc(TokenStr)
     else  
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       Error(SErrInvalidCharacter, [TokenStr[0]]);
   end;
 

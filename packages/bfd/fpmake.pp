@@ -15,6 +15,7 @@ begin
     P:=AddPackage('bfd');
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -31,6 +32,11 @@ begin
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
 >>>>>>> graemeg/fixes_2_2
+=======
+    P.Directory:='bfd';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+>>>>>>> origin/fixes_2_2
     P.SourcePath.Add('src');
 
     T:=P.Targets.AddUnit('bfd.pas');

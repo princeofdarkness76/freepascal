@@ -11,6 +11,7 @@
 
  **********************************************************************}
 <<<<<<< HEAD
+<<<<<<< HEAD
  
 {$DEFINE OS_HASEXITCODE}
 uses
@@ -28,6 +29,8 @@ Resourcestring
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Const
   PriorityConstants : Array [TProcessPriority] of Integer =
                       (20,20,0,-20);
@@ -42,6 +45,7 @@ begin
  // Do nothing. Win32 call.
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TProcess.GetExitCode : Integer;
 
@@ -63,6 +67,8 @@ begin
   If Not Result then
     FexitCode:=cardinal(-1); // was 0, better testable for abnormal exit.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function TProcess.PeekExitStatus : Boolean;
 
 begin
@@ -71,7 +77,10 @@ begin
     FExitCode:=wexitstatus(FExitCode)
   else
     FexitCode:=0;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 Type
@@ -111,6 +120,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 Function DetectXterm : String;
@@ -192,6 +202,8 @@ Const
 {$endif}
   
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Procedure CommandToList(S : String; List : TStrings);
 
   Function GetNextWord : String;
@@ -253,13 +265,17 @@ end;
 
 Function MakeCommand(P : TProcess) : PPchar;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Var
   Cmd : String;
   S  : TStringList;
   G : String;
   
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   If (P.ApplicationName='') and (P.CommandLine='') and (P.Executable='') then
     Raise EProcess.Create(SNoCommandline);
@@ -291,6 +307,8 @@ begin
       S.Insert(0,TerminalApp);
       {$else}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if (P.ApplicationName='') then
     begin
     If (P.CommandLine='') then
@@ -309,7 +327,10 @@ begin
     CommandToList(Cmd,S);
     if poNewConsole in P.Options then
       begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       S.Insert(0,'-e');
       If (P.ApplicationName<>'') then
         begin
@@ -321,6 +342,7 @@ begin
         S.Insert(0,Format('%dx%d',[P.dwXCountChars,P.dwYCountChars]));
         S.Insert(0,'-geometry');
         end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       If (P.XTermProgram<>'') then
@@ -346,6 +368,10 @@ begin
       S.Insert(0,'xterm');
       end;
 >>>>>>> graemeg/fixes_2_2
+=======
+      S.Insert(0,'xterm');
+      end;
+>>>>>>> origin/fixes_2_2
     if (P.ApplicationName<>'') then
       begin
       S.Add(TitleOption);
@@ -362,9 +388,12 @@ begin
       S.Add(g);
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Result:=StringsToPcharList(S);
   Finally
     S.free;
@@ -388,10 +417,14 @@ Procedure CreatePipes(Var HI,HO,HE : TPipePair; CE : Boolean);
    begin
     If not CreatePipeHandles(P[peRead],P[peWrite]) then
 <<<<<<< HEAD
+<<<<<<< HEAD
       Raise EProcess.Create(SErrCannotCreatePipes);
 =======
       Raise EProcess.Create('Failed to create pipes');
 >>>>>>> graemeg/fixes_2_2
+=======
+      Raise EProcess.Create('Failed to create pipes');
+>>>>>>> origin/fixes_2_2
    end;
 
   Procedure ClosePair(Var P : TPipePair);
@@ -422,6 +455,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function safefpdup2(fildes, fildes2 : cInt): cInt;
 begin
   repeat
@@ -431,6 +465,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Procedure TProcess.Execute;
 
 Var
@@ -440,9 +476,12 @@ Var
   Argv     : PPChar;
   fd       : Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   res      : cint;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FoundName,
   PName    : String;
 
@@ -475,6 +514,7 @@ begin
             raise EProcess.CreateFmt(SErrNoSuchProgram,[PName]);
         end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$if (defined(DARWIN) or defined(SUNOS))}
         { can't use vfork in case the child has to be
@@ -590,6 +630,8 @@ begin
               fpexecv(PName,argv);
             fpExit(127);
 =======
+=======
+>>>>>>> origin/fixes_2_2
         Pid:=fpfork;
         if Pid<0 then
           Raise EProcess.Create('Failed to Fork process');
@@ -634,7 +676,10 @@ begin
           else
             fpexecv(PName,argv);
           Halt(127);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           end
       Finally
         FreePcharList(Argv);
@@ -647,18 +692,24 @@ begin
     if POUsePipes in FProcessOptions then
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         FileClose(HO[peWrite]);
         FileClose(HI[peRead]);
         if Not (poStdErrToOutPut in FProcessOptions) then
           FileClose(HE[peWrite]);
         CreateStreams(HI[peWrite],HO[peRead],HE[peRead]);
 =======
+=======
+>>>>>>> origin/fixes_2_2
       FileClose(HO[peWrite]);
       FileClose(HI[peRead]);
       if Not (poStdErrToOutPut in FProcessOptions) then
         FileClose(HE[peWrite]);
       CreateStreams(HI[peWrite],HO[peRead],HE[peRead]);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
   end;
   FRunning:=True;
@@ -675,15 +726,21 @@ Var
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if FRunning then
     fexitcode:=waitprocess(handle);
   Result:=(fexitcode>=0);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   R:=fpWaitPid(Handle,pcint(@FExitCode),0);
   Result:=(R=Handle);
   If Result then
     FExitCode:=WExitStatus(FExitCode);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FRunning:=False;
 end;
 
@@ -716,6 +773,7 @@ begin
       Result:=fpkill(Handle,SIGKILL)=0;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   { the fact that the signal has been sent does not
     mean that the process has already handled the
     signal -> wait instead of calling getexitstatus }
@@ -724,6 +782,9 @@ begin
 =======
   GetExitStatus;
 >>>>>>> graemeg/fixes_2_2
+=======
+  GetExitStatus;
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure TProcess.SetShowWindow (Value : TShowWindowOptions);

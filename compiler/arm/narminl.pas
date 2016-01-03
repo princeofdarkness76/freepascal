@@ -438,7 +438,10 @@ implementation
 =======
         load_fpu_location;
         current_asmdata.CurrAsmList.concat(setoppostfix(taicpu.op_reg_reg(A_ABS,location.register,left.location.register),get_fpu_postfix(resultdef)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -591,7 +594,10 @@ implementation
 =======
         load_fpu_location;
         current_asmdata.CurrAsmList.concat(setoppostfix(taicpu.op_reg_reg(A_SQT,location.register,left.location.register),get_fpu_postfix(resultdef)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -648,6 +654,7 @@ implementation
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tarminlinenode.second_abs_long;
       var
         opsize : tcgsize;
@@ -676,6 +683,8 @@ implementation
       end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
   cinlinenode:=tarminlinenode;

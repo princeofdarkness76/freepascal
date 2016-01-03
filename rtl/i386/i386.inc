@@ -112,6 +112,7 @@ function mmx_support : boolean;
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_PIC}
 {$if not defined(FPC_SYSTEM_HAS_MOVE) and defined(REGCALL) }
 >>>>>>> graemeg/cpstrnew
@@ -120,11 +121,16 @@ function mmx_support : boolean;
 {$endif FPC_SYSTEM_HAS_MOVE}
 {$endif FPC_PIC}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_SYSTEM_HAS_MOVE}
 {$define USE_FASTMOVE}
 {$i fastmove.inc}
 {$endif FPC_SYSTEM_HAS_MOVE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure fpc_cpuinit;
   begin
@@ -153,6 +159,7 @@ procedure fpc_cpuinit;
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef darwin}
 function fpc_geteipasebx : pointer; [public, alias: 'fpc_geteipasebx'];assembler; nostackframe;
 asm
@@ -167,6 +174,8 @@ end;
 {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifndef FPC_SYSTEM_HAS_MOVE}
 {$define FPC_SYSTEM_HAS_MOVE}
@@ -253,10 +262,14 @@ end;
 {$ifndef FPC_SYSTEM_HAS_FILLCHAR}
 {$define FPC_SYSTEM_HAS_FILLCHAR}
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure FillChar(var x;count:SizeInt;value:byte);assembler; nostackframe;
 =======
 Procedure FillChar(var x;count:SizeInt;value:byte);assembler;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure FillChar(var x;count:SizeInt;value:byte);assembler;
+>>>>>>> origin/fixes_2_2
 asm
         cmpl    $22,%edx          { empirically determined value on a Core 2 Duo Conroe }
         jg      .LFillFull
@@ -781,7 +794,10 @@ asm
         movl    %eax,%edi
         movl    %edx,%esi
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
         movl    %ecx,%eax
 {$else}
         movl    buf2,%esi       { Load params}
@@ -792,7 +808,10 @@ asm
         testl   %eax,%eax
         je      .LCmpDwordExit
         movl    %eax,%ecx
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         xorl    %eax,%eax
         rep                     { Compare entire DWords}
         cmpsl
@@ -856,9 +875,12 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_STRTOSHORTSTRINGPROC}
 function fpc_shortstr_to_shortstr(len:longint; const sstr: shortstring): shortstring; [public,alias: 'FPC_SHORTSTR_TO_SHORTSTR']; compilerproc;
 begin
@@ -906,13 +928,17 @@ end;
 
 {$else FPC_STRTOSHORTSTRINGPROC}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure fpc_shortstr_to_shortstr(out res:shortstring; const sstr: shortstring);assembler;[public,alias:'FPC_SHORTSTR_TO_SHORTSTR']; compilerproc;
   var
    saveesi,saveedi : longint;
   asm
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$ifdef FPC_PROFILE}
         push  %eax
@@ -931,12 +957,17 @@ procedure fpc_shortstr_to_shortstr(out res:shortstring; const sstr: shortstring)
         movl    res,%edi
         movl    sstr,%esi
 =======
+=======
+>>>>>>> origin/fixes_2_2
         movl    %edi,saveedi
         movl    %esi,saveesi
         cld
         movl    %eax,%edi
         movl    %ecx,%esi
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         movl    %edx,%ecx
         xorl    %eax,%eax
         lodsb
@@ -966,9 +997,13 @@ procedure fpc_shortstr_to_shortstr(out res:shortstring; const sstr: shortstring)
         movl    saveesi,%esi
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$endif FPC_STRTOSHORTSTRINGPROC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$endif FPC_STRTOSHORTSTRINGPROC}
+>>>>>>> origin/fixes_2_2
 
 
 procedure fpc_shortstr_assign(len:longint;sstr,dstr:pointer);[public,alias:'FPC_SHORTSTR_ASSIGN'];
@@ -1226,16 +1261,23 @@ end;
 {$ifndef FPC_SYSTEM_HAS_FPC_PCHAR_TO_SHORTSTR}
 {$define FPC_SYSTEM_HAS_FPC_PCHAR_TO_SHORTSTR}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_STRTOSHORTSTRINGPROC}
 function fpc_pchar_to_shortstr(p:pchar):shortstring;assembler;[public,alias:'FPC_PCHAR_TO_SHORTSTR']; compilerproc;
 {$include strpas.inc}
 {$else FPC_STRTOSHORTSTRINGPROC}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure fpc_pchar_to_shortstr(out res : shortstring;p:pchar);assembler;[public,alias:'FPC_PCHAR_TO_SHORTSTR']; compilerproc;
 var
   saveres,saveebx,saveesi,saveedi : longint;
 asm
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef FPC_PROFILE}
         push  %eax
@@ -1253,6 +1295,8 @@ asm
         movl    %eax,%edi
         movl    %edi,saveres
 =======
+=======
+>>>>>>> origin/fixes_2_2
         movl    %ebx,saveebx
         movl    %esi,saveesi
         movl    %edi,saveedi
@@ -1263,17 +1307,26 @@ asm
 {$else}
         movl    p,%esi
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         movl    $1,%ecx
         testl   %esi,%esi
         movl    %esi,%eax
         jz      .LStrPasDone
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 {$ifndef REGCALL}
         movl    res,%edi
 {$endif}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifndef REGCALL}
+        movl    res,%edi
+{$endif}
+>>>>>>> origin/fixes_2_2
         leal    3(%esi),%edx
         andl    $-4,%edx
         // skip length byte
@@ -1337,14 +1390,20 @@ asm
         jnz     .LStrPasEndLoop
 .LStrPasDone:
 <<<<<<< HEAD
+<<<<<<< HEAD
         movl    saveres,%edi
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef REGCALL}
         movl    saveres,%edi
 {$else}
         movl    __RESULT,%edi
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         addb    $255,%cl
         movb    %cl,(%edi)
         movl    saveesi,%esi
@@ -1352,9 +1411,13 @@ asm
         movl    saveebx,%ebx
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$endif FPC_STRTOSHORTSTRINGPROC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$endif FPC_STRTOSHORTSTRINGPROC}
+>>>>>>> origin/fixes_2_2
 {$endif FPC_SYSTEM_HAS_FPC_PCHAR_TO_SHORTSTR}
 
 
@@ -1364,11 +1427,15 @@ end;
 function fpc_pchar_length(p:pchar):sizeint;assembler;[public,alias:'FPC_PCHAR_LENGTH']; compilerproc;
 =======
 function fpc_pchar_length(p:pchar):longint;assembler;[public,alias:'FPC_PCHAR_LENGTH']; compilerproc;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 var
   saveedi : longint;
 asm
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef FPC_PROFILE}
         push  %eax
@@ -1401,6 +1468,8 @@ asm
         cld
 {$endif FPC_ENABLED_CLD}
 =======
+=======
+>>>>>>> origin/fixes_2_2
         movl    %edi,saveedi
 {$ifdef REGCALL}
         movl    %eax,%edi
@@ -1410,16 +1479,22 @@ asm
         movl    $0xffffffff,%ecx
         xorl    %eax,%eax
         cld
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         repne
         scasb
         movl    $0xfffffffe,%eax
         subl    %ecx,%eax
         movl    saveedi,%edi
 <<<<<<< HEAD
+<<<<<<< HEAD
 .LStrLenDone:
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 {$endif FPC_SYSTEM_HAS_FPC_PCHAR_LENGTH}
 
@@ -1458,9 +1533,12 @@ asm
 .Lg_a_null:
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif defined(win32)}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {$define FPC_SYSTEM_HAS_GET_CALLER_FRAME}
@@ -1481,6 +1559,7 @@ asm
         movl    (%eax),%eax
 .Lgnf_null:
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endif defined(win32)}
 
@@ -1514,6 +1593,8 @@ asm
 end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure int_str(l:longint;out s:string);assembler;nostackframe;
 
@@ -1706,14 +1787,20 @@ asm
         pushl       %ebx
         pushl       %edi
 <<<<<<< HEAD
+<<<<<<< HEAD
         movl        %eax,%edi
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef REGCALL}
         movl        %eax,%edi
 {$else}
         movl        Target,%edi
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         movl        Comperand+4,%edx
         movl        Comperand+0,%eax
         movl        NewValue+4,%ecx
@@ -1781,12 +1868,41 @@ Procedure SysInitFPU;{$ifdef SYSTEMINLINE}inline;{$endif}
   end;
 
 
+
+{$define FPC_SYSTEM_HAS_SYSINITFPU}
+Procedure SysInitFPU;{$ifdef SYSTEMINLINE}inline;{$endif}
+  var
+    { these locals are so we don't have to hack pic code in the assembler }
+    localmxcsr: dword;
+    localfpucw: word;
+  begin
+    localfpucw:=Default8087CW;
+    asm
+      fninit
+      fldcw   localfpucw
+      fwait
+    end;
+    if has_sse_support then
+      begin
+        localmxcsr:=mxcsr;
+        asm
+          { setup sse exceptions }
+          ldmxcsr localmxcsr
+        end;
+      end;
+    softfloat_exception_mask:=float_flag_underflow or float_flag_inexact or float_flag_denormal;
+  end;
+
+
 {$define FPC_SYSTEM_HAS_SYSRESETFPU}
 <<<<<<< HEAD
 Procedure SysResetFPU;
 =======
 Procedure SysResetFPU;{$ifdef SYSTEMINLINE}inline;{$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   var
     { these locals are so we don't have to hack pic code in the assembler }
     localmxcsr: dword;
@@ -1801,10 +1917,14 @@ Procedure SysResetFPU;{$ifdef SYSTEMINLINE}inline;{$endif}
     if has_sse_support then
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         localmxcsr:=DefaultMXCSR;
 =======
         localmxcsr:=mxcsr;
 >>>>>>> graemeg/fixes_2_2
+=======
+        localmxcsr:=mxcsr;
+>>>>>>> origin/fixes_2_2
         asm
           { setup sse exceptions }
           ldmxcsr localmxcsr
@@ -1813,7 +1933,10 @@ Procedure SysResetFPU;{$ifdef SYSTEMINLINE}inline;{$endif}
 <<<<<<< HEAD
 =======
     softfloat_exception_flags:=0;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
 
@@ -1883,7 +2006,10 @@ procedure fpc_cpucodeinit;
         sse_check:=false;
       end;
     has_sse_support:=os_supports_sse;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     has_mmx_support:=mmx_support;
 >>>>>>> graemeg/cpstrnew
     SysResetFPU;
@@ -1996,16 +2122,23 @@ end;
 {$endif ndef darwin and defined(regcall) }
 =======
 {$endif darwin}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifndef FPC_SYSTEM_HAS_MEM_BARRIER}
 {$define FPC_SYSTEM_HAS_MEM_BARRIER}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure ReadBarrier;assembler;nostackframe;
 =======
 procedure ReadBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure ReadBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
+>>>>>>> origin/fixes_2_2
 asm
   lock
   addl $0,0(%esp)
@@ -2018,10 +2151,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure ReadWriteBarrier;assembler;nostackframe;
 =======
 procedure ReadWriteBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure ReadWriteBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
+>>>>>>> origin/fixes_2_2
 asm
   lock
   addl $0,0(%esp)
@@ -2029,15 +2166,20 @@ asm
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure WriteBarrier;assembler;nostackframe;
 =======
 procedure WriteBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure WriteBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
+>>>>>>> origin/fixes_2_2
 asm
   { no write reordering on intel CPUs (yet) }
 end;
 
 {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -2169,3 +2311,5 @@ end;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

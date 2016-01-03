@@ -39,10 +39,13 @@ Type
     procedure SetCapacity(const AValue: Integer);
   Protected
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetPosition: Int64; override;
     function GetSize: Int64; override;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure BufferError(const Msg : String);
     Procedure FillBuffer; Virtual;
     Procedure FlushBuffer; Virtual;
@@ -61,10 +64,14 @@ Type
   TReadBufStream = Class(TBufStream)
   Public
 <<<<<<< HEAD
+<<<<<<< HEAD
     function Seek(const Offset: Int64; Origin: TSeekOrigin): Int64; override;
 =======
     Function Seek(Offset: Longint; Origin: Word): Longint; override;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Function Seek(Offset: Longint; Origin: Word): Longint; override;
+>>>>>>> origin/fixes_2_2
     Function Read(var ABuffer; ACount : LongInt) : Integer; override;
   end;
 
@@ -74,10 +81,14 @@ Type
   Public
     Destructor Destroy; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function Seek(const Offset: Int64; Origin: TSeekOrigin): Int64; override;
 =======
     Function Seek(Offset: Longint; Origin: Word): Longint; override;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Function Seek(Offset: Longint; Origin: Word): Longint; override;
+>>>>>>> origin/fixes_2_2
     Function Write(Const ABuffer; ACount : LongInt) : Integer; override;
   end;
 
@@ -102,6 +113,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TBufStream.GetPosition: Int64;
 begin
   Result:=FTotalPos;
@@ -114,6 +126,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure TBufStream.BufferError(const Msg: String);
 begin
   Raise EStreamError.Create(Msg);
@@ -189,12 +203,15 @@ end;
 { TReadBufStream }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TReadBufStream.Seek(const Offset: Int64; Origin: TSeekOrigin): Int64;
 
 begin
   FakeSeekForward(Offset,Origin,FTotalPos);
   Result:=FTotalPos; // Pos updated by fake read
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TReadBufStream.Seek(Offset: Longint; Origin: Word): Longint;
 
 var
@@ -218,7 +235,10 @@ begin
     end
   else
     BufferError(SErrInvalidSeek);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function TReadBufStream.Read(var ABuffer; ACount: LongInt): Integer;
@@ -261,6 +281,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TWriteBufStream.Seek(const Offset: Int64; Origin: TSeekOrigin): Int64;
 
 begin
@@ -270,6 +291,11 @@ function TWriteBufStream.Seek(Offset: Longint; Origin: Word): Longint;
 begin
   if (Offset=0) and (Origin=soFromCurrent) then
 >>>>>>> graemeg/fixes_2_2
+=======
+function TWriteBufStream.Seek(Offset: Longint; Origin: Word): Longint;
+begin
+  if (Offset=0) and (Origin=soFromCurrent) then
+>>>>>>> origin/fixes_2_2
     Result := FTotalPos
   else
     BufferError(SErrInvalidSeek);

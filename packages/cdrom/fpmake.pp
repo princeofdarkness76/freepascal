@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('cdrom');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ShortName:='cdr';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -29,13 +30,18 @@ begin
     P.NeedLibC:= False;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ALLPACKAGES}
     P.Directory:='cdrom';
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
     P.OSes:=[Win32,Win64,Linux];
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');
 
@@ -53,10 +59,13 @@ begin
           AddUnit('cdrom');
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('fpcddb.pp');
     T.ResourceStrings := True;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     // Linux
     T:=P.Targets.AddUnit('lincd.pp',[Linux]);
@@ -79,6 +88,7 @@ begin
     T:=P.Targets.AddUnit('wnaspi32.pp',[Win32,Win64]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     P.ExamplePath.Add('examples');
     T:=P.Targets.AddExampleProgram('getdiscid.pp');
@@ -86,12 +96,17 @@ begin
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef ALLPACKAGES}
     Run;
     end;
 end.
 {$endif ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

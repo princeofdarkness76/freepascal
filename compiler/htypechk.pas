@@ -53,9 +53,12 @@ interface
          cl4_count,
          cl5_count,
 <<<<<<< HEAD
+<<<<<<< HEAD
          cl6_count,
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          coper_count : integer; { should be signed }
          ordinal_distance : double;
          invalid     : boolean;
@@ -78,6 +81,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure collect_overloads_in_struct(structdef:tabstractrecorddef;ProcdefOverloadList:TFPObjectList;searchhelpers,anoninherited:boolean;spezcontext:tspecializationcontext);
         procedure collect_overloads_in_units(ProcdefOverloadList:TFPObjectList; objcidcall,explicitunit: boolean;spezcontext:tspecializationcontext);
         procedure create_candidate_list(ignorevisibility,allowdefaultparas,objcidcall,explicitunit,searchhelpers,anoninherited:boolean;spezcontext:tspecializationcontext);
@@ -86,6 +90,9 @@ interface
 =======
         function proc_add(ps:tprocsym;pd:tprocdef):pcandidate;
 >>>>>>> graemeg/fixes_2_2
+=======
+        function proc_add(ps:tprocsym;pd:tprocdef):pcandidate;
+>>>>>>> origin/fixes_2_2
       public
         constructor create(sym:tprocsym;st:TSymtable;ppn:tnode;ignorevisibility,allowdefaultparas,objcidcall,explicitunit,searchhelpers,anoninherited:boolean;spezcontext:tspecializationcontext);
 =======
@@ -143,6 +150,7 @@ interface
       tregableinfoflags = set of tregableinfoflag;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$i compinnr.inc}
     const
       tok2nodes=27;
@@ -175,6 +183,8 @@ interface
         (tok:_OP_INC     ;nod:inlinen;inr:in_inc_x;op_overloading_supported:true),{ unary overloading supported }
         (tok:_OP_DEC     ;nod:inlinen;inr:in_dec_x;op_overloading_supported:true) { unary overloading supported }
 =======
+=======
+>>>>>>> origin/fixes_2_2
     const
       tok2nodes=24;
       tok2node:array[1..tok2nodes] of ttok2noderec=(
@@ -219,7 +229,10 @@ interface
     { Register Allocation }
     procedure make_not_regable(p : tnode; how: tregableinfoflags);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure calcregisters(p : tbinarynode;r32,fpu,mmx : word);
 >>>>>>> graemeg/fixes_2_2
 
@@ -1165,6 +1178,7 @@ implementation
     { marks an lvalue as "unregable" }
     procedure make_not_regable_intern(p : tnode; how: tregableinfoflags; records_only: boolean);
 <<<<<<< HEAD
+<<<<<<< HEAD
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1181,11 +1195,16 @@ implementation
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
       var
         update_regable: boolean;
       begin
         update_regable:=true;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         repeat
           case p.nodetype of
             subscriptn:
@@ -1195,6 +1214,7 @@ implementation
               end;
             vecn:
               begin
+<<<<<<< HEAD
 <<<<<<< HEAD
                 { if there's an implicit dereference, we can stop (just like
                   when there is an actual derefn) }
@@ -1223,6 +1243,17 @@ implementation
                begin
                  if (ttypeconvnode(p).resultdef.typ = recorddef) then
 >>>>>>> graemeg/fixes_2_2
+=======
+                { arrays are currently never regable and pointers indexed like }
+                { arrays do not have be made unregable, but we do need to      }
+                { propagate the ra_addr_taken info                             }                                          
+                update_regable:=false;
+                p:=tvecnode(p).left;
+              end;
+            typeconvn :
+               begin
+                 if (ttypeconvnode(p).resultdef.typ = recorddef) then
+>>>>>>> origin/fixes_2_2
                    records_only:=false;
                  p:=ttypeconvnode(p).left;
                end;
@@ -1233,11 +1264,16 @@ implementation
                     if (ra_addr_taken in how) then
                       tabstractvarsym(tloadnode(p).symtableentry).addr_taken:=true;
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if (tabstractvarsym(tloadnode(p).symtableentry).varregable <> vr_none) and
 =======
                     if update_regable and
                        (tabstractvarsym(tloadnode(p).symtableentry).varregable <> vr_none) and
 >>>>>>> graemeg/fixes_2_2
+=======
+                    if update_regable and
+                       (tabstractvarsym(tloadnode(p).symtableentry).varregable <> vr_none) and
+>>>>>>> origin/fixes_2_2
                        ((not records_only) or
                         (tabstractvarsym(tloadnode(p).symtableentry).vardef.typ = recorddef)) then
                       if (tloadnode(p).symtableentry.typ = paravarsym) and
@@ -1253,11 +1289,16 @@ implementation
                 if (ra_addr_taken in how) then
                   include(ttemprefnode(p).tempinfo^.flags,ti_addr_taken);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (ti_may_be_in_reg in ttemprefnode(p).tempinfo^.flags) and
 =======
                 if update_regable and
                    (ti_may_be_in_reg in ttemprefnode(p).tempinfo^.flags) and
 >>>>>>> graemeg/fixes_2_2
+=======
+                if update_regable and
+                   (ti_may_be_in_reg in ttemprefnode(p).tempinfo^.flags) and
+>>>>>>> origin/fixes_2_2
                    ((not records_only) or
                     (ttemprefnode(p).tempinfo^.typedef.typ = recorddef)) then
                   exclude(ttemprefnode(p).tempinfo^.flags,ti_may_be_in_reg);
@@ -1580,6 +1621,7 @@ implementation
         errmsg,
         temp     : longint;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         function constaccessok(vs: tabstractvarsym): boolean;
           begin
@@ -1625,6 +1667,8 @@ implementation
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
         if valid_const in opts then
           errmsg:=type_e_variable_id_expected
@@ -1801,13 +1845,19 @@ implementation
                     if (m_tp7 in current_settings.modeswitches) or
                        (todef.size<fromdef.size) then
                       make_not_regable(hp,[ra_addr_regable])
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                     else
                       make_not_regable(hp,[ra_addr_regable])
 {$endif llvm}
                   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
                   
                  { when typecasting to the same size but changing the signdness of
                    an ordinal, the value cannot be in a register if it's < sizeof(aint).
@@ -1818,7 +1868,10 @@ implementation
                     (fromdef.size<sizeof(aint)) and
                     (is_signed(fromdef) xor is_signed(todef)) then
                    make_not_regable(hp,[ra_addr_regable]);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
                  { don't allow assignments to typeconvs that need special code }
                  if not(gotsubscript or gotvec or gotderef) and
@@ -2921,7 +2974,10 @@ implementation
                               end;
                             if not found then
                               proc_add(srprocsym,pd);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                           end;
                         { Store first procsym found }
                         if not assigned(FProcsym) then
@@ -3227,10 +3283,14 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tcallcandidates.proc_add(st:tsymtable;pd:tprocdef;objcidcall: boolean):pcandidate;
 =======
     function tcallcandidates.proc_add(ps:tprocsym;pd:tprocdef):pcandidate;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function tcallcandidates.proc_add(ps:tprocsym;pd:tprocdef):pcandidate;
+>>>>>>> origin/fixes_2_2
       var
         defaultparacnt : integer;
       begin
@@ -3260,6 +3320,7 @@ implementation
         { Give a small penalty for overloaded methods not in
           defined the current class/unit }
 <<<<<<< HEAD
+<<<<<<< HEAD
         {  when calling Objective-C methods via id.method, then the found
            procsym will be inside an arbitrary ObjectSymtable, and we don't
            want togive the methods of that particular objcclass precedence over
@@ -3271,6 +3332,9 @@ implementation
 =======
         if ps.owner<>pd.owner then
 >>>>>>> graemeg/fixes_2_2
+=======
+        if ps.owner<>pd.owner then
+>>>>>>> origin/fixes_2_2
           result^.ordinal_distance:=result^.ordinal_distance+1.0;
       end;
 
@@ -3356,9 +3420,12 @@ implementation
                           ' l4: '+tostr(hp^.cl4_count)+
                           ' l5: '+tostr(hp^.cl5_count)+
 <<<<<<< HEAD
+<<<<<<< HEAD
                           ' l6: '+tostr(hp^.cl6_count)+
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                           ' oper: '+tostr(hp^.coper_count)+
                           ' ord: '+realtostr(hp^.ordinal_distance));
               { Print parameters in left-right order }
@@ -3383,9 +3450,12 @@ implementation
         currparanr : byte;
         rfh,rth  : double;
 <<<<<<< HEAD
+<<<<<<< HEAD
         obj_from,
         obj_to   : tobjectdef;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         objdef   : tobjectdef;
 >>>>>>> graemeg/fixes_2_2
         def_from,
@@ -3402,6 +3472,7 @@ implementation
         n : tnode;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     {$push}
     {$r-}
     {$q-}
@@ -3409,12 +3480,17 @@ implementation
         inf=1.0/0.0;
     {$pop}
 =======
+=======
+>>>>>>> origin/fixes_2_2
     {$ifopt r+}{$define ena_rq}{$q-}{$r-}{$endif}
       const
         inf=1.0/0.0;
     {$ifdef ena_rq}{$q+}{$r+}{$endif}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
         cdoptions:=[cdo_check_operator];
         if FAllowVariant then
@@ -3460,12 +3536,16 @@ implementation
                   (count=1) or
                   equal_defs(tprocvardef(currpt.left.resultdef).returndef,def_to)
 <<<<<<< HEAD
+<<<<<<< HEAD
                  ) and
                  { and if it doesn't require any parameters }
                  (tprocvardef(currpt.left.resultdef).minparacount=0)  then
 =======
                  ) then
 >>>>>>> graemeg/fixes_2_2
+=======
+                 ) then
+>>>>>>> origin/fixes_2_2
                 begin
                   releasecurrpt:=true;
                   currpt:=tcallparanode(pt.getcopy);
@@ -3521,6 +3601,7 @@ implementation
                      from word->[longword,longint] }
                    if is_signed(def_from)<>is_signed(def_to) then
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}
 {$r-}
 {$q-}
@@ -3531,6 +3612,11 @@ implementation
                      hp^.ordinal_distance:=nextafter(hp^.ordinal_distance,inf);
                    {$ifdef ena_rq}{$r+}{$q+}{$endif}
 >>>>>>> graemeg/fixes_2_2
+=======
+                   {$ifopt r+}{$define ena_rq}{$q-}{$r-}{$endif}
+                     hp^.ordinal_distance:=nextafter(hp^.ordinal_distance,inf);
+                   {$ifdef ena_rq}{$r+}{$q+}{$endif}
+>>>>>>> origin/fixes_2_2
                  end
               else
               { for value and const parameters check precision of real, give
@@ -3594,6 +3680,7 @@ implementation
                    n.free;
                  end
 <<<<<<< HEAD
+<<<<<<< HEAD
               else if is_open_array(def_to) and
                       is_class_or_interface_or_dispinterface_or_objc_or_java(tarraydef(def_to).elementdef) and
                       is_array_constructor(currpt.left.resultdef) and
@@ -3620,6 +3707,8 @@ implementation
                 end
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               else
               { generic type comparision }
                begin
@@ -3682,10 +3771,13 @@ implementation
                 te_convert_l5 :
                   inc(hp^.cl5_count);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 te_convert_l6 :
                   inc(hp^.cl6_count);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 te_convert_operator :
                   inc(hp^.coper_count);
                 te_incompatible :
@@ -3814,6 +3906,7 @@ implementation
            if (res=0) then
             begin
 <<<<<<< HEAD
+<<<<<<< HEAD
              { less cl6 parameters? }
              res:=(bestpd^.cl6_count-currpd^.cl6_count);
              if (res=0) then
@@ -3856,6 +3949,8 @@ implementation
                                     res:=0;
                                  end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
              { less cl5 parameters? }
              res:=(bestpd^.cl5_count-currpd^.cl5_count);
              if (res=0) then
@@ -3892,7 +3987,10 @@ implementation
                                   res:=-1
                                 else
                                  res:=0;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                               end;
                            end;
                         end;
@@ -3903,7 +4001,10 @@ implementation
 =======
                   end;
                 end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               end;
             end;
          end;

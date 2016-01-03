@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('fcl-registry');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ShortName:='fclr';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -46,17 +47,23 @@ begin
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ALLPACKAGES}
     P.Directory:='fcl-registry';
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
     P.SourcePath.Add('src');
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('registry.pp');
       with T.Dependencies do
         begin
           AddInclude('regdef.inc');
+<<<<<<< HEAD
 <<<<<<< HEAD
           AddInclude('winreg.inc',AllWindowsOSes);
           AddInclude('xregreg.inc',AllOSes-AllWindowsOSes);
@@ -72,6 +79,8 @@ begin
     // 'tests/Makefile
     // 'tests/Makefile.fpc
 =======
+=======
+>>>>>>> origin/fixes_2_2
           AddInclude('xregreg.inc');
           AddInclude('regini.inc');
           AddUnit('inifiles');
@@ -84,7 +93,10 @@ begin
           AddUnit('xmlread');
           AddUnit('xmlwrite');
         end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

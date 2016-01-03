@@ -82,10 +82,14 @@ begin
 {$else}
   if do_syscall(syscall_nr__llseek,tsysparam(fd),
 <<<<<<< HEAD
+<<<<<<< HEAD
 //      {$ifdef FPC_ABI_EABI}      0,  { align parameters as required with dummy } {$endif FPC_ABI_EABI}
 =======
       {$ifdef FPC_ABI_EABI}      0,  { align parameters as required with dummy } {$endif FPC_ABI_EABI}
 >>>>>>> graemeg/fixes_2_2
+=======
+      {$ifdef FPC_ABI_EABI}      0,  { align parameters as required with dummy } {$endif FPC_ABI_EABI}
+>>>>>>> origin/fixes_2_2
       tsysparam(hi(offset)),tsysparam(lo(offset)),
       tsysparam(@result), tsysparam(whence)) = -1 then
     result:=off_t(-1);

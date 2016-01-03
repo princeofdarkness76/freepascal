@@ -152,9 +152,12 @@ begin
   if Thread.FSuspended then Thread.suspend();
   try
 <<<<<<< HEAD
+<<<<<<< HEAD
     CurrentThreadVar := Thread;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Thread.Execute;
   except
     Thread.FFatalException := TObject(AcquireExceptionObject);
@@ -170,23 +173,30 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TThread.SysCreate(CreateSuspended: Boolean;
                             const StackSize: SizeUInt);
 var
   Flags: Integer;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 constructor TThread.Create(CreateSuspended: Boolean);
 var
   Flags: Integer;
 begin
   inherited Create;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   AddThread(self);
   FSuspended := CreateSuspended;
   Flags := CLONE_VM + CLONE_FS + CLONE_FILES + CLONE_SIGHAND + SIGCHLD;
   { Setup 16k of stack }
   FStackSize:=16384;
+<<<<<<< HEAD
 <<<<<<< HEAD
   Getmem(FStackPointer,StackSize);
   inc(FStackPointer,StackSize);
@@ -194,6 +204,10 @@ begin
   Getmem(FStackPointer,FStackSize);
   inc(FStackPointer,FStackSize);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Getmem(FStackPointer,FStackSize);
+  inc(FStackPointer,FStackSize);
+>>>>>>> origin/fixes_2_2
   FCallExitProcess:=false;
   { Clone }
   FHandle:= Clone(@ThreadProc,FStackPointer,Flags,self);
@@ -205,10 +219,14 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TThread.SysDestroy;
 =======
 destructor TThread.Destroy;
 >>>>>>> graemeg/fixes_2_2
+=======
+destructor TThread.Destroy;
+>>>>>>> origin/fixes_2_2
 begin
   if not FFinished and not Suspended then
    begin
@@ -222,9 +240,13 @@ begin
   FFatalException.Free;
   FFatalException := nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   inherited Destroy;
 >>>>>>> graemeg/fixes_2_2
+=======
+  inherited Destroy;
+>>>>>>> origin/fixes_2_2
   RemoveThread(self);
 end;
 
@@ -269,13 +291,19 @@ end;
 procedure TThread.Synchronize(Method: TThreadMethod);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FSynchronizeException := nil;
   FMethod := Method;
 {  SendMessage(ThreadWindow, CM_EXECPROC, 0, Longint(Self)); }
   if Assigned(FSynchronizeException) then
     raise FSynchronizeException;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -457,17 +485,23 @@ begin
       SemaphoreWait(LThread.FSem);
       if not LThread.FInitialSuspended then begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         CurrentThreadVar := LThread;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         WRITE_DEBUG('going into LThread.Execute');
         LThread.Execute;
       end;
     end else begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       CurrentThreadVar := LThread;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       WRITE_DEBUG('going into LThread.Execute');
       LThread.Execute;
     end;
@@ -495,10 +529,14 @@ end;
 
 { TThread }
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TThread.SysCreate(CreateSuspended: Boolean; const StackSize: SizeUInt);
 =======
 constructor TThread.Create(CreateSuspended: Boolean; const StackSize: SizeUInt = DefaultStackSize);
 >>>>>>> graemeg/fixes_2_2
+=======
+constructor TThread.Create(CreateSuspended: Boolean; const StackSize: SizeUInt = DefaultStackSize);
+>>>>>>> origin/fixes_2_2
 var
   data : pointer;
 begin
@@ -506,9 +544,13 @@ begin
   // via BeginThread and creates the first TThread Object in there!
   InitThreads;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   inherited Create;
 >>>>>>> graemeg/fixes_2_2
+=======
+  inherited Create;
+>>>>>>> origin/fixes_2_2
   FSem := SemaphoreInit;
   FSuspended := CreateSuspended;
   FSuspendedExternal := false;
@@ -521,10 +563,14 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TThread.SysDestroy;
 =======
 destructor TThread.Destroy;
 >>>>>>> graemeg/fixes_2_2
+=======
+destructor TThread.Destroy;
+>>>>>>> origin/fixes_2_2
 begin
   if FThreadID = GetCurrentThreadID then begin
     raise EThreadDestroyCalled.Create('A thread cannot destroy itself except by setting FreeOnTerminate and leaving!');
@@ -545,9 +591,13 @@ begin
   FFatalException := nil;
   SemaphoreDestroy(FSem);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   inherited Destroy;
 >>>>>>> graemeg/fixes_2_2
+=======
+  inherited Destroy;
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TThread.SetSuspended(Value: Boolean);

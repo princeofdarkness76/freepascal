@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('fcl-base');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ShortName:='fclb';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -106,6 +107,8 @@ begin
       T.ResourceStrings:=true;
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ALLPACKAGES}
     P.Directory:='fcl-base';
 {$endif ALLPACKAGES}
@@ -138,7 +141,10 @@ begin
           AddUnit('custapp');
           AddUnit('eventlog');
         end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('eventlog.pp');
       T.ResourceStrings:=true;
       with T.Dependencies do
@@ -149,12 +155,16 @@ begin
     T:=P.Targets.AddUnit('gettext.pp');
     T:=P.Targets.AddUnit('idea.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     T:=P.Targets.AddUnit('inicol.pp');
 
 =======
     T:=P.Targets.AddUnit('inicol.pp');
 >>>>>>> graemeg/fixes_2_2
+=======
+    T:=P.Targets.AddUnit('inicol.pp');
+>>>>>>> origin/fixes_2_2
       T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -167,6 +177,7 @@ begin
         end;
     T:=P.Targets.AddUnit('iostream.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('nullstream.pp');
     T:=P.Targets.AddUnit('maskutils.pp');
       T.ResourceStrings:=true;
@@ -174,6 +185,10 @@ begin
     T:=P.Targets.AddUnit('libtar.pp');
     T:=P.Targets.AddUnit('maskutils.pp');
 >>>>>>> graemeg/fixes_2_2
+=======
+    T:=P.Targets.AddUnit('libtar.pp');
+    T:=P.Targets.AddUnit('maskutils.pp');
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('pooledmm.pp');
     T:=P.Targets.AddUnit('rtfpars.pp');
       with T.Dependencies do
@@ -185,6 +200,7 @@ begin
       T.ResourceStrings:=true;
     T:=P.Targets.AddUnit('streamex.pp');
     T:=P.Targets.AddUnit('streamio.pp');
+<<<<<<< HEAD
 <<<<<<< HEAD
       T.ResourceStrings:=true;
     T:=P.Targets.AddUnit('fptemplate.pp');
@@ -206,6 +222,9 @@ begin
 =======
     T:=P.Targets.AddUnit('syncobjs.pp',AllOSes-[GO32v2,OS2,EMX]);
 >>>>>>> graemeg/fixes_2_2
+=======
+    T:=P.Targets.AddUnit('syncobjs.pp',AllOSes-[GO32v2,OS2,EMX]);
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('uriparser.pp');
     T:=P.Targets.AddUnit('wformat.pp');
     T:=P.Targets.AddUnit('whtml.pp');
@@ -219,6 +238,7 @@ begin
           AddUnit('wformat');
         end;
     T:=P.Targets.AddUnit('fpexprpars.pp');
+<<<<<<< HEAD
 <<<<<<< HEAD
       T.ResourceStrings:=true;
 
@@ -322,6 +342,8 @@ begin
       // parser.dat
       // testcgi.html
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
     // Windows units
     T:=P.Targets.AddUnit('ServiceManager.pas',[Win32,Win64]);
@@ -329,7 +351,10 @@ begin
 
     // Additional sources
     P.Sources.AddSrcFiles('src/win/fclel.*');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;
@@ -337,6 +362,9 @@ begin
 end.
 {$endif ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

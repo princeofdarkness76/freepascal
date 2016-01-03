@@ -33,6 +33,7 @@ Type
       FPos : Int64;
       function GetNumBytesAvailable: DWord;
 <<<<<<< HEAD
+<<<<<<< HEAD
     protected
       function GetPosition: Int64; override;
       procedure InvalidSeek; override;
@@ -45,12 +46,18 @@ Type
       Function Write (Const Buffer; Count : Longint) :Longint; Override;
       Function Seek (Offset : Longint;Origin : Word) : longint;override;
 >>>>>>> graemeg/fixes_2_2
+=======
+    public
+      Function Write (Const Buffer; Count : Longint) :Longint; Override;
+      Function Seek (Offset : Longint;Origin : Word) : longint;override;
+>>>>>>> origin/fixes_2_2
       Function Read (Var Buffer; Count : Longint) : longint; Override;
       property NumBytesAvailable: DWord read GetNumBytesAvailable;
     end;
 
   TOutputPipeStream = Class(THandleStream)
     Public
+<<<<<<< HEAD
 <<<<<<< HEAD
       destructor Destroy; override;
       function Seek(const Offset: int64; Origin: TSeekOrigin): int64; override;
@@ -59,12 +66,17 @@ Type
 
 Function CreatePipeHandles (Var Inhandle,OutHandle : THandle; APipeBufferSize : Cardinal = 1024) : Boolean;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       Function Seek (Offset : Longint;Origin : Word) : longint;override;
       Function Read (Var Buffer; Count : Longint) : longint; Override;
     end;
 
 Function CreatePipeHandles (Var Inhandle,OutHandle : THandle) : Boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Procedure CreatePipeStreams (Var InPipe : TInputPipeStream;
                              Var OutPipe : TOutputPipeStream);
 
@@ -92,6 +104,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 destructor TInputPipeStream.Destroy;
 begin
   PipeClose (Handle);
@@ -103,6 +116,8 @@ Function TInputPipeStream.Write (Const Buffer; Count : Longint) : longint;
 begin
   WriteNotImplemented;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function TInputPipeStream.Write (Const Buffer; Count : Longint) : longint;
 
 begin
@@ -111,7 +126,10 @@ begin
 {$else}
   WriteNotImplemented;
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Result := 0;
 end;
 
@@ -122,6 +140,7 @@ begin
   Inc(FPos,Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TInputPipeStream.Seek(const Offset: int64; Origin: TSeekOrigin): int64;
 
@@ -135,6 +154,8 @@ begin
   PipeClose (Handle);
   inherited;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function TInputPipeStream.Seek (Offset : Longint;Origin : Word) : longint;
 
 Const BufSize = 100;
@@ -156,12 +177,16 @@ begin
   If (Offset>0) then
     Read(Buf,BufSize);
   Result:=FPos;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TOutputPipeStream.Read(Var Buffer; Count : Longint) : longint;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   ReadNotImplemented;
   Result := 0;
@@ -173,6 +198,8 @@ begin
   Result:=0; { to silence warning mostly }
   InvalidSeek;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ver2_2_0}
   raise EStreamError.Create( 'Cannot read from OutputPipeStream');
 {$else}
@@ -185,7 +212,10 @@ Function TOutputPipeStream.Seek (Offset : Longint;Origin : Word) : longint;
 
 begin
   Raise EPipeSeek.Create (ENoSeekMsg);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 end.

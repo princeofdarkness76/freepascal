@@ -31,6 +31,16 @@ begin
    fPath := '';
 end;
 
+constructor TRegIniFile.Create(const FN: String;aaccess:longword);
+begin
+  inherited Create(aaccess);
+  fFileName := FN;
+  if fFileName<>'' then
+   fPath := fFileName + '\'
+  else
+   fPath := '';
+end;
+
 procedure TRegIniFile.DeleteKey(const Section, Ident: String);
 begin
   if OpenSection(Section) then
@@ -273,6 +283,7 @@ begin
 	try
     if ValueExists(Ident) then
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (not fPreferStringValues) or (GetDataType(Ident)=rdInteger) then
   	    Result := inherited ReadBool(Ident)
       else
@@ -280,6 +291,9 @@ begin
 =======
 	    Result := inherited ReadBool(Ident);
 >>>>>>> graemeg/fixes_2_2
+=======
+	    Result := inherited ReadBool(Ident);
+>>>>>>> origin/fixes_2_2
 	finally
     CloseSection;
 	end;
@@ -292,6 +306,7 @@ begin
   try
     if ValueExists(Ident) then
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (not fPreferStringValues) or (GetDataType(Ident)=rdInteger) then
         Result := inherited ReadInteger(Ident)
       else
@@ -299,6 +314,9 @@ begin
 =======
       Result := inherited ReadInteger(Ident);
 >>>>>>> graemeg/fixes_2_2
+=======
+      Result := inherited ReadInteger(Ident);
+>>>>>>> origin/fixes_2_2
   finally
     CloseSection;
   end;

@@ -40,10 +40,14 @@ const
   maxExitCode = 255;
   MaxPathLen = 256;
 <<<<<<< HEAD
+<<<<<<< HEAD
   AllFilesMask = '#?';
 =======
   AllFilesMask = '*';
 >>>>>>> graemeg/fixes_2_2
+=======
+  AllFilesMask = '*';
+>>>>>>> origin/fixes_2_2
 
 const
   UnusedHandle    : LongInt = -1;
@@ -290,9 +294,12 @@ begin
         GetArgv0Ambient:=tmpbuf;
         { Append slash,if we're not in root directory of a volume }
 <<<<<<< HEAD
+<<<<<<< HEAD
         if tmpbuf[counter-1]<>':' then
           GetArgv0Ambient:=GetArgv0Ambient+'/';
 =======
+=======
+>>>>>>> origin/fixes_2_2
         if tmpbuf[counter-1]<>':' then GetArgv0Ambient+='/';
 >>>>>>> graemeg/fixes_2_2
       end;
@@ -306,10 +313,14 @@ begin
       while (progname[counter]<>#0) do begin
         tmpbuf[counter+1]:=progname[counter];
 <<<<<<< HEAD
+<<<<<<< HEAD
         inc(counter);
 =======
         counter+=1;
 >>>>>>> graemeg/fixes_2_2
+=======
+        counter+=1;
+>>>>>>> origin/fixes_2_2
       end;
       tmpbuf[0]:=Char(counter);
       GetArgv0Ambient:=GetArgv0Ambient+tmpbuf;

@@ -293,12 +293,17 @@ implementation
                      if not casedeferror then
                        begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                          testrange(casedef,hl1,false,false);
                          testrange(casedef,hl2,false,false);
 =======
                          testrange(casedef,casedef,hl1,false);
                          testrange(casedef,casedef,hl2,false);
 >>>>>>> graemeg/fixes_2_2
+=======
+                         testrange(casedef,casedef,hl1,false);
+                         testrange(casedef,casedef,hl2,false);
+>>>>>>> origin/fixes_2_2
                        end;
                    end
                  else
@@ -1673,6 +1678,7 @@ implementation
                   if reg<>NR_NO then
                     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                       if not(po_assembler in current_procinfo.procdef.procoptions) and assigned(hl) then
                         begin
                           hl.Insert(tai_regalloc.alloc(reg,nil));
@@ -1680,6 +1686,8 @@ implementation
                           hl.Concat(tai_regalloc.dealloc(reg,nil));
                         end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
                       if (getregtype(reg)=R_INTREGISTER) and not(po_assembler in current_procinfo.procdef.procoptions) then
                         include(asmstat.used_regs_int,getsupreg(reg));
 >>>>>>> graemeg/fixes_2_2
@@ -1805,7 +1813,10 @@ implementation
                            end;
 =======
                            CGMessage(parser_e_goto_outside_proc);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                          code:=cgotonode.create(tlabelsym(srsym));
                          tgotonode(code).labelsym:=tlabelsym(srsym);
                          { set flag that this label is used }
@@ -1991,6 +2002,7 @@ implementation
                                    continuen,labeln,blockn,exitn]) or
                 ((p.nodetype=inlinen) and
 <<<<<<< HEAD
+<<<<<<< HEAD
                  not is_void(p.resultdef)) or
                 ((p.nodetype=calln) and
                  (assigned(tcallnode(p).procdefinition)) and
@@ -1998,6 +2010,9 @@ implementation
 =======
                  not is_void(p.resultdef)) then
 >>>>>>> graemeg/fixes_2_2
+=======
+                 not is_void(p.resultdef)) then
+>>>>>>> origin/fixes_2_2
                Message(parser_e_illegal_expression);
 
              if not assigned(p.resultdef) then

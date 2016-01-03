@@ -530,7 +530,10 @@ type
             result:=operand_write;
           A_NEG, A_EXT, A_EXTB, A_NOT:
             result:=operand_readwrite;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           else begin
             internalerror(2004040903);
           end;

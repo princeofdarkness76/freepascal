@@ -3,10 +3,13 @@
 type
    generic TList<_T>=class(TObject)
 <<<<<<< HEAD
+<<<<<<< HEAD
    public
      var
        data : _T;
 =======
+=======
+>>>>>>> origin/fixes_2_2
    var public
      data : _T;
 >>>>>>> graemeg/fixes_2_2

@@ -31,6 +31,7 @@ type
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   gtk_status_icon_get_type : function:GType; cdecl;
   gtk_status_icon_new : function:PGtkStatusIcon; cdecl;
   gtk_status_icon_new_from_pixbuf : function(pixbuf:PGdkPixbuf):PGtkStatusIcon; cdecl;
@@ -57,6 +58,8 @@ var
   gtk_status_icon_position_menu : procedure(menu:PGtkMenu; x:Pgint; y:Pgint; push_in:Pgboolean; user_data:gpointer); cdecl;
   gtk_status_icon_get_geometry : function(status_icon:PGtkStatusIcon; screen:PPGdkScreen; area:PGdkRectangle; orientation:PGtkOrientation):gboolean; cdecl;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   gtk_status_icon_get_type : function:GType;
   gtk_status_icon_new : function:PGtkStatusIcon;
   gtk_status_icon_new_from_pixbuf : function(pixbuf:PGdkPixbuf):PGtkStatusIcon;
@@ -82,7 +85,10 @@ var
   gtk_status_icon_is_embedded : function(status_icon:PGtkStatusIcon):gboolean;
   gtk_status_icon_position_menu : procedure(menu:PGtkMenu; x:Pgint; y:Pgint; push_in:Pgboolean; user_data:gpointer);
   gtk_status_icon_get_geometry : function(status_icon:PGtkStatusIcon; screen:PPGdkScreen; area:PGdkRectangle; orientation:PGtkOrientation):gboolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   function GTK_TYPE_STATUS_ICON: GType; inline;
   function GTK_STATUS_ICON(obj: Pointer): PGTypeInstance; inline;

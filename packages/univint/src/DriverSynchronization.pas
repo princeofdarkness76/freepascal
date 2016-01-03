@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/DriverSynchronization.h
  
      Contains:   Driver Synchronization Interfaces.
@@ -23,6 +24,8 @@
  
      Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       DriverSynchronization.p
  
      Contains:   Driver Synchronization Interfaces.
@@ -31,7 +34,10 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -39,6 +45,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
@@ -59,6 +66,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -67,7 +76,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -77,12 +89,17 @@
 unit DriverSynchronization;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -96,14 +113,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -112,11 +134,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -154,6 +179,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -161,6 +188,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -429,6 +457,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -437,7 +467,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -464,9 +497,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -477,6 +514,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -486,6 +524,8 @@ uses MacTypes;
 {$ALIGN POWER}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,ConditionalMacros;
 
 
@@ -502,11 +542,15 @@ uses MacTypes,ConditionalMacros;
  }
 procedure SynchronizeIO; external name '_SynchronizeIO';
 {$endc}  {CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  CompareAndSwap()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    Compare and swap operation, performed atomically with respect to
@@ -563,17 +607,23 @@ function CompareAndSwap( oldValue: UInt32; newValue: UInt32; var address: UInt32
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function CompareAndSwap(oldVvalue: UInt32; newValue: UInt32; var OldValueAdr: UInt32): boolean; external name '_CompareAndSwap';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  TestAndClear()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    Bit test and clear operation, performed atomically with respect
@@ -635,17 +685,23 @@ function TestAndClear( bit: UInt32; address: UnivPtr ): Boolean; external name '
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function TestAndClear(bit: UInt32; startAddress: UnivPtr): boolean; external name '_TestAndClear';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  TestAndSet()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    Bit test and set operation, performed atomically with respect to
@@ -697,17 +753,23 @@ function TestAndSet( bit: UInt32; address: UnivPtr ): Boolean; external name '_T
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function TestAndSet(bit: UInt32; startAddress: UnivPtr): boolean; external name '_TestAndSet';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  IncrementAtomic8()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    8-bit increment operation, performed atomically with respect to
@@ -755,17 +817,23 @@ function IncrementAtomic8( var address: SInt8 ): SInt8; external name '_Incremen
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function IncrementAtomic8(var value: SInt8): SInt8; external name '_IncrementAtomic8';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  DecrementAtomic8()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    8-bit decrement operation, performed atomically with respect to
@@ -813,17 +881,23 @@ function DecrementAtomic8( var address: SInt8 ): SInt8; external name '_Decremen
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function DecrementAtomic8(var value: SInt8): SInt8; external name '_DecrementAtomic8';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  AddAtomic8()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    8-bit add operation, performed atomically with respect to all
@@ -874,17 +948,23 @@ function AddAtomic8( amount: SInt32; var address: SInt8 ): SInt8; external name 
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function AddAtomic8(amount: SInt32; var value: SInt8): SInt8; external name '_AddAtomic8';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  BitAndAtomic8()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    8-bit logical and operation, performed atomically with respect to
@@ -936,17 +1016,23 @@ function BitAndAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function BitAndAtomic8(mask: UInt32; var value: UInt8): ByteParameter; external name '_BitAndAtomic8';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  BitOrAtomic8()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    8-bit logical or operation, performed atomically with respect to
@@ -998,17 +1084,23 @@ function BitOrAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name 
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function BitOrAtomic8(mask: UInt32; var value: UInt8): ByteParameter; external name '_BitOrAtomic8';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  BitXorAtomic8()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    8-bit logical xor operation, performed atomically with respect to
@@ -1060,17 +1152,23 @@ function BitXorAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function BitXorAtomic8(mask: UInt32; var value: UInt8): ByteParameter; external name '_BitXorAtomic8';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  IncrementAtomic16()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    16-bit increment operation, performed atomically with respect to
@@ -1118,17 +1216,23 @@ function IncrementAtomic16( var address: SInt16 ): SInt16; external name '_Incre
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function IncrementAtomic16(var value: SInt16): SInt16; external name '_IncrementAtomic16';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  DecrementAtomic16()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    16-bit decrement operation, performed atomically with respect to
@@ -1176,17 +1280,23 @@ function DecrementAtomic16( var address: SInt16 ): SInt16; external name '_Decre
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function DecrementAtomic16(var value: SInt16): SInt16; external name '_DecrementAtomic16';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  AddAtomic16()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    16-bit add operation, performed atomically with respect to all
@@ -1237,17 +1347,23 @@ function AddAtomic16( amount: SInt32; var address: SInt16 ): SInt16; external na
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function AddAtomic16(amount: SInt32; var value: SInt16): SInt16; external name '_AddAtomic16';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  BitAndAtomic16()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    16-bit logical and operation, performed atomically with respect
@@ -1299,17 +1415,23 @@ function BitAndAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external n
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function BitAndAtomic16(mask: UInt32; var value: UInt16): UInt16; external name '_BitAndAtomic16';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  BitOrAtomic16()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    16-bit logical or operation, performed atomically with respect to
@@ -1361,17 +1483,23 @@ function BitOrAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external na
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function BitOrAtomic16(mask: UInt32; var value: UInt16): UInt16; external name '_BitOrAtomic16';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  BitXorAtomic16()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    16-bit logical xor operation, performed atomically with respect
@@ -1423,17 +1551,23 @@ function BitXorAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external n
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function BitXorAtomic16(mask: UInt32; var value: UInt16): UInt16; external name '_BitXorAtomic16';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  IncrementAtomic()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    32-bit increment operation, performed atomically with respect to
@@ -1481,17 +1615,23 @@ function IncrementAtomic( var address: SInt32 ): SInt32; external name '_Increme
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function IncrementAtomic(var value: SInt32): SInt32; external name '_IncrementAtomic';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  DecrementAtomic()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    32-bit decrement operation, performed atomically with respect to
@@ -1539,17 +1679,23 @@ function DecrementAtomic( var address: SInt32 ): SInt32; external name '_Decreme
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function DecrementAtomic(var value: SInt32): SInt32; external name '_DecrementAtomic';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  AddAtomic()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    32-bit add operation, performed atomically with respect to all
@@ -1600,17 +1746,23 @@ function AddAtomic( amount: SInt32; var address: SInt32 ): SInt32; external name
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function AddAtomic(amount: SInt32; var value: SInt32): SInt32; external name '_AddAtomic';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  BitAndAtomic()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    32-bit logical and operation, performed atomically with respect
@@ -1662,17 +1814,23 @@ function BitAndAtomic( mask: UInt32; var address: UInt32 ): UInt32; external nam
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function BitAndAtomic(mask: UInt32; var value: UInt32): UInt32; external name '_BitAndAtomic';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  BitOrAtomic()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    32-bit logical or operation, performed atomically with respect to
@@ -1724,17 +1882,23 @@ function BitOrAtomic( mask: UInt32; var address: UInt32 ): UInt32; external name
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function BitOrAtomic(mask: UInt32; var value: UInt32): UInt32; external name '_BitOrAtomic';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  BitXorAtomic()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    32-bit logical xor operation, performed atomically with respect
@@ -1791,6 +1955,8 @@ function BitXorAtomic( mask: UInt32; var address: UInt32 ): UInt32; external nam
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1803,4 +1969,7 @@ function BitXorAtomic(mask: UInt32; var value: UInt32): UInt32; external name '_
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

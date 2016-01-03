@@ -12,6 +12,7 @@
  **********************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Uses
   Windows;
 
@@ -25,6 +26,8 @@ Resourcestring
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Const
   PriorityConstants : Array [TProcessPriority] of Cardinal =
                       (HIGH_PRIORITY_CLASS,IDLE_PRIORITY_CLASS,
@@ -156,6 +159,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure CreatePipes(Var HI,HO,HE : Thandle; Var SI : TStartupInfo; CE : Boolean; APipeBufferSize : Cardinal);
 
 begin
@@ -164,6 +168,8 @@ begin
   if CE then
     CreatePipeHandles(HE,SI.hStdError,APipeBufferSize)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Procedure CreatePipes(Var HI,HO,HE : Thandle; Var SI : TStartupInfo; CE : Boolean);
 
 begin
@@ -171,7 +177,10 @@ begin
   CreatePipeHandles(HO,Si.hStdOutput);
   if CE then
     CreatePipeHandles(HE,SI.hStdError)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   else
     begin
     SI.hStdError:=SI.hStdOutput;
@@ -195,9 +204,13 @@ Var
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   FInheritHandles:=True;
 >>>>>>> graemeg/fixes_2_2
+=======
+  FInheritHandles:=True;
+>>>>>>> origin/fixes_2_2
   PName:=Nil;
   PCommandLine:=Nil;
   PDir:=Nil;
@@ -230,19 +243,27 @@ begin
     InitStartupInfo(Self,FStartUpInfo);
     If poUsePipes in FProcessOptions then
 <<<<<<< HEAD
+<<<<<<< HEAD
       CreatePipes(HI,HO,HE,FStartupInfo,Not(poStdErrToOutPut in FProcessOptions),FPipeBufferSize);
 =======
       CreatePipes(HI,HO,HE,FStartupInfo,Not(poStdErrToOutPut in FProcessOptions));
 >>>>>>> graemeg/fixes_2_2
+=======
+      CreatePipes(HI,HO,HE,FStartupInfo,Not(poStdErrToOutPut in FProcessOptions));
+>>>>>>> origin/fixes_2_2
     Try
       If Not CreateProcess (PName,PCommandLine,@FProcessAttributes,@FThreadAttributes,
                    FInheritHandles,FCreationFlags,FEnv,PDir,@FStartupInfo,
                    fProcessInformation) then
 <<<<<<< HEAD
+<<<<<<< HEAD
         Raise EProcess.CreateFmt(SErrCannotExecute,[FCommandLine,GetLastError]);
 =======
         Raise EProcess.CreateFmt('Failed to execute %s : %d',[FCommandLine,GetLastError]);
 >>>>>>> graemeg/fixes_2_2
+=======
+        Raise EProcess.CreateFmt('Failed to execute %s : %d',[FCommandLine,GetLastError]);
+>>>>>>> origin/fixes_2_2
       FProcessHandle:=FProcessInformation.hProcess;
       FThreadHandle:=FProcessInformation.hThread;
       FProcessID:=FProcessINformation.dwProcessID;

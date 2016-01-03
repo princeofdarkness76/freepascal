@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -174,6 +175,8 @@ type
     procedure RestorePreviousMode; override;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Type
   TX11Modes = Class(TObject)
   Private
@@ -219,11 +222,15 @@ Type
     Procedure SetBestMode(AWidth, AHeight : Integer); Override;
     Procedure RestorePreviousMode; Override;
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF ENABLE_X11_EXTENSION_XRANDR}
 
 {$IFDEF ENABLE_X11_EXTENSION_XF86VIDMODE}
   TX11ModesXF86VidMode = Class(TX11Modes)
+<<<<<<< HEAD
 <<<<<<< HEAD
   private
     FModeList: PPXF86VidModeModeInfo;
@@ -261,6 +268,8 @@ Type
     procedure RestorePreviousMode; override;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Private
     FModeList : PPXF86VidModeModeInfo;
     FModeListCount : cint;
@@ -280,5 +289,8 @@ Type
     Procedure SetBestMode(AWidth, AHeight : Integer); Override;
     Procedure RestorePreviousMode; Override;
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF ENABLE_X11_EXTENSION_XF86VIDMODE}

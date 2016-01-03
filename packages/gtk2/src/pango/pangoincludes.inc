@@ -12,11 +12,14 @@
 {$include pango-glyph.inc}
 {$include pango-item.inc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef HasPango1_20}
   {$include pango-glyph-item.inc}
 {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$include pango-layout.inc}
 {$include pango-matrix.inc}
 { $include pango-enum-types.inc}

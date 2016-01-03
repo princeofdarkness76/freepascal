@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 program TestVal;
 
@@ -31,6 +32,8 @@ begin
     end;
 end.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 program TestVal;
 
@@ -62,4 +65,7 @@ begin
       Halt(1);
     end;
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

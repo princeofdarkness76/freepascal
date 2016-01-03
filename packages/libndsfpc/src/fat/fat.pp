@@ -14,12 +14,17 @@ uses
   ctypes, nds9;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$linklib fat}
 {$linklib nds9}
 =======
 {$linklib nds9}
 {$linklib libfat.a}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$linklib nds9}
+{$linklib libfat.a}
+>>>>>>> origin/fixes_2_2
 
 {$linklib c}
 {$linklib gcc}
@@ -27,15 +32,19 @@ uses
 
 {$define NDS_INTERFACE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 { $include fathelper.inc}
 {$include ../nds/disc_io.inc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$include fat.inc}
 {$undef NDS_INTERFACE}
 
 implementation
 {$define NDS_IMPLEMENTATION}
+<<<<<<< HEAD
 <<<<<<< HEAD
 { $include fathelper.inc}
 {$include ../nds/disc_io.inc}
@@ -51,4 +60,9 @@ finalization
 {$undef NDS_IMPLEMENTATION}
 
 >>>>>>> graemeg/fixes_2_2
+=======
+{$include fat.inc}
+{$undef NDS_IMPLEMENTATION}
+
+>>>>>>> origin/fixes_2_2
 end.

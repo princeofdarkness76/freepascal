@@ -19,10 +19,14 @@ uses
   { in the interface so the graphh definitions of moveto etc override }
   { the ones in the universal interfaces                              }
 <<<<<<< HEAD
+<<<<<<< HEAD
   MacOSAll;
 =======
   FPCMacOSAll;
 >>>>>>> graemeg/fixes_2_2
+=======
+  FPCMacOSAll;
+>>>>>>> origin/fixes_2_2
 
 {$pascalmainname FPCMacOSXGraphMain}
 

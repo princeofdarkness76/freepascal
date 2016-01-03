@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       OSServices/SCSI.h
  
      Contains:   SCSI Family Interfaces.
@@ -8,6 +9,8 @@
  
      Copyright:  © 1986-2008 by Apple Computer, Inc., all rights reserved
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       SCSI.p
  
      Contains:   SCSI Family Interfaces.
@@ -16,11 +19,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1986-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -34,6 +41,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -45,7 +54,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -55,12 +67,17 @@
 unit SCSI;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -74,14 +91,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -90,11 +112,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -132,6 +157,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -139,6 +166,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -408,6 +436,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -416,7 +446,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -443,9 +476,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -456,6 +493,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,MixedMode,AppleDiskPartitions;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -646,6 +684,8 @@ procedure DisposeSCSICallbackUPP( userUPP: SCSICallbackUPP ); external name '_Di
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_2 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {$ALIGN MAC68K}
@@ -1150,11 +1190,15 @@ function NewSCSICallbackUPP(userRoutine: SCSICallbackProcPtr): SCSICallbackUPP; 
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSCSICallbackUPP(userUPP: SCSICallbackUPP); external name '_DisposeSCSICallbackUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSCSICallbackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -1371,6 +1415,8 @@ type
 type
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -1492,11 +1538,15 @@ type
 
 
 	{	 Command Descriptor Block structure 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	CDBPtr = ^CDB;
 	CDB = record
 		case SInt16 of
 		0: (
+<<<<<<< HEAD
 <<<<<<< HEAD
 			cdbPtr: BytePtr;                 { pointer to the CDB, or }
 			);
@@ -1513,6 +1563,8 @@ type
 		SGAddr: Ptr;
 		SGCount: UInt32;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 			cdbPtr:				BytePtr;								{  pointer to the CDB, or  }
 			);
 		1: (
@@ -1525,11 +1577,15 @@ type
 	SGRecord = record
 		SGAddr:					Ptr;
 		SGCount:				UInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 
 	SCSIHdrPtr = ^SCSIHdr;
 	SCSIHdr = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		qLink: SCSIHdrPtr;								{  (internal use, must be nil on entry)    }
 		scsiReserved1: SInt16;          { ->     reserved for input          }
@@ -1618,6 +1674,8 @@ type
 		XPTprivateFlags: UInt8;        { <> various flags                       }
 		XPTextras: packed array [0..11] of UInt8;          {                              }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		qLink:					SCSIHdrPtr;								{  (internal use, must be nil on entry)    }
 		scsiReserved1:			SInt16;								{  ->     reserved for input           }
 		scsiPBLength:			UInt16;									{  -> Length of the entire PB         }
@@ -1701,7 +1759,10 @@ type
 		scsiSCSImessage:		SInt8;									{  <- Returned scsi device message (for SCSIComplete) }
 		XPTprivateFlags:		SInt8;									{  <> various flags                        }
 		XPTextras:				packed array [0..11] of UInt8;			{                                }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 
 	SCSIExecIOPB						= SCSI_IO;
@@ -1709,6 +1770,7 @@ type
 	{	 Bus inquiry PB 	}
 	SCSIBusInquiryPBPtr = ^SCSIBusInquiryPB;
 	SCSIBusInquiryPB = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		qLink: SCSIHdrPtr;                  { (internal use, must be nil on entry)   }
 		scsiReserved1: SInt16;          { ->     reserved for input          }
@@ -2880,6 +2942,8 @@ function SCSIAction( var parameterBlock: SCSI_PB ): OSErr; external name '_SCSIA
 {$endc} {not TARGET_CPU_64}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		qLink:					SCSIHdrPtr;								{  (internal use, must be nil on entry)    }
 		scsiReserved1:			SInt16;								{  ->     reserved for input           }
 		scsiPBLength:			UInt16;									{  -> Length of the entire PB         }
@@ -3406,12 +3470,16 @@ const
 	 	}
 function SCSIAction(var parameterBlock: SCSI_PB): OSErr; external name '_SCSIAction';
 {$ifc CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SCSIRegisterBus()
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
@@ -3419,34 +3487,22 @@ function SCSIAction(var parameterBlock: SCSI_PB): OSErr; external name '_SCSIAct
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function SCSIRegisterBus(var parameterBlock: SIMInitInfo): OSErr; external name '_SCSIRegisterBus';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SCSIDeregisterBus()
  *  
  *  Availability:
 <<<<<<< HEAD
- *    Mac OS X:         not available
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
- }
-
-
-=======
- *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
- *    CarbonLib:        not available
- *    Mac OS X:         not available
- }
-function SCSIDeregisterBus(var parameterBlock: SCSI_PB): OSErr; external name '_SCSIDeregisterBus';
->>>>>>> graemeg/fixes_2_2
-{
- *  SCSIReregisterBus()
- *  
- *  Availability:
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -3455,16 +3511,46 @@ function SCSIDeregisterBus(var parameterBlock: SCSI_PB): OSErr; external name '_
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
+ *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function SCSIDeregisterBus(var parameterBlock: SCSI_PB): OSErr; external name '_SCSIDeregisterBus';
+<<<<<<< HEAD
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+{
+ *  SCSIReregisterBus()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
+ }
+
+
+=======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function SCSIReregisterBus(var parameterBlock: SIMInitInfo): OSErr; external name '_SCSIReregisterBus';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SCSIKillXPT()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -3478,6 +3564,8 @@ function SCSIReregisterBus(var parameterBlock: SIMInitInfo): OSErr; external nam
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -3489,4 +3577,7 @@ function SCSIKillXPT(var parameterBlock: SIMInitInfo): OSErr; external name '_SC
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

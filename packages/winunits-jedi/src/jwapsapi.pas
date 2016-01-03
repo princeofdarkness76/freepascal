@@ -93,10 +93,14 @@ type
   LPMODULEINFO = ^MODULEINFO;
   {$EXTERNALSYM LPMODULEINFO}
 <<<<<<< HEAD
+<<<<<<< HEAD
   _MODULEINFO = record
 =======
   _MODULEINFO = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  _MODULEINFO = packed record
+>>>>>>> origin/fixes_2_2
     lpBaseOfDll: LPVOID;
     SizeOfImage: DWORD;
     EntryPoint: LPVOID;
@@ -124,10 +128,14 @@ type
   PPSAPI_WS_WATCH_INFORMATION = ^PSAPI_WS_WATCH_INFORMATION;
   {$EXTERNALSYM PPSAPI_WS_WATCH_INFORMATION}
 <<<<<<< HEAD
+<<<<<<< HEAD
   _PSAPI_WS_WATCH_INFORMATION = record
 =======
   _PSAPI_WS_WATCH_INFORMATION = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  _PSAPI_WS_WATCH_INFORMATION = packed record
+>>>>>>> origin/fixes_2_2
     FaultingPc: LPVOID;
     FaultingVa: LPVOID;
   end;
@@ -180,10 +188,14 @@ type
   PPROCESS_MEMORY_COUNTERS = ^PROCESS_MEMORY_COUNTERS;
   {$EXTERNALSYM PPROCESS_MEMORY_COUNTERS}
 <<<<<<< HEAD
+<<<<<<< HEAD
   _PROCESS_MEMORY_COUNTERS = record
 =======
   _PROCESS_MEMORY_COUNTERS = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  _PROCESS_MEMORY_COUNTERS = packed record
+>>>>>>> origin/fixes_2_2
     cb: DWORD;
     PageFaultCount: DWORD;
     PeakWorkingSetSize: SIZE_T;

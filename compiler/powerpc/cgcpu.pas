@@ -76,7 +76,10 @@ unit cgcpu;
         function get_rlwi_const(a: aint; var l1, l2: longint): boolean;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
       protected
        procedure a_load_regconst_subsetreg_intern(list : TAsmList; fromsize, subsetsize: tcgsize; fromreg: tregister; const sreg: tsubsetregister; slopt: tsubsetloadopt); override;
 >>>>>>> graemeg/fixes_2_2
@@ -316,7 +319,10 @@ const
               if (tosize = OS_16) then
                 a_load_reg_reg(list,fromsize,tosize,reg,reg);
             end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        end;
 
 
@@ -854,8 +860,11 @@ const
         if usesfpr then
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
              reference_reset_base(href,NR_R1,-8,8);
 =======
+=======
+>>>>>>> origin/fixes_2_2
              reference_reset_base(href,NR_R1,-8);
 >>>>>>> graemeg/fixes_2_2
              for regcounter:=firstregfpu to RS_F31 do

@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 programs=mdtest crctest sha1test md5performancetest  sha1performancetest
 =======
 programs=mdtest crctest sha1test
@@ -25,11 +26,16 @@ programs=mdtest crctest sha1test
 [require]
 packages=hash rtl-extra rtl-objpas
 =======
+=======
+>>>>>>> origin/fixes_2_2
 programs=mdtest
 
 [require]
 packages=hash
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [install]
 fpcpackage=y

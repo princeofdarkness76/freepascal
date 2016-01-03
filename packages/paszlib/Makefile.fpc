@@ -1,13 +1,18 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for PasZLib
 >>>>>>> graemeg/fixes_2_2
+=======
+#   Makefile.fpc for PasZLib
+>>>>>>> origin/fixes_2_2
 #
 
 [package]
 name=paszlib
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -30,6 +35,8 @@ version=2.5.1
 [require]
 packages=rtl
 =======
+=======
+>>>>>>> origin/fixes_2_2
 version=2.2.5
 
 [require]
@@ -39,11 +46,15 @@ packages=hash
 units=paszlib zip unzip zipper 
 implicitunits=adler gzio infblock infcodes inffast inftrees infutil trees zcompres zdeflate zinflate zbase zuncompr ziputils zstream
 exampledirs=examples
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [install]
 fpcpackage=y
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [default]
 fpcdir=../..
@@ -160,6 +171,8 @@ else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
 =======
+=======
+>>>>>>> origin/fixes_2_2
 [compiler]
 sourcedir=src
 
@@ -169,4 +182,7 @@ fpcdir=../..
 [rules]
 .NOTPARALLEL:
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

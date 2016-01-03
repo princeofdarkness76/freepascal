@@ -33,7 +33,10 @@ interface
        globtype,globals,
        cpubase,cgbase,cgutils,
        aasmbase,
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        symtype,
        optbase;
 
@@ -341,11 +344,14 @@ interface
       { basic class for the intermediated representation fpc uses }
       tnode = class
 <<<<<<< HEAD
+<<<<<<< HEAD
       private
          fppuidx : longint;
          function getppuidx:longint;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       public
          { type of this node }
          nodetype : tnodetype;
@@ -359,6 +365,7 @@ interface
          { this field is set by concattolist  }
          parent : tnode;
 <<<<<<< HEAD
+<<<<<<< HEAD
          { next node in control flow on the same block level, i.e.
            for loop nodes, this is the next node after the end of the loop,
            same for if and case, if this field is nil, the next node is the procedure exit,
@@ -368,6 +375,8 @@ interface
          { there are some properties about the node stored }
          flags  : tnodeflags;
 =======
+=======
+>>>>>>> origin/fixes_2_2
          { there are some properties about the node stored }
          flags  : tnodeflags;
          ppuidx : longint;
@@ -376,15 +385,21 @@ interface
 {$ifdef SUPPORT_MMX}
          registersmmx  : longint;
 {$endif SUPPORT_MMX}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          resultdef     : tdef;
          resultdefderef : tderef;
          fileinfo      : tfileposinfo;
          localswitches : tlocalswitches;
 <<<<<<< HEAD
+<<<<<<< HEAD
          verbosity     : longint;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          optinfo : poptinfo;
          constructor create(t:tnodetype);
          { this constructor is only for creating copies of class }
@@ -396,10 +411,14 @@ interface
          procedure buildderefimpl;virtual;
          procedure derefimpl;virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
          procedure resolveppuidx;virtual;
 =======
          procedure derefnode;virtual;
 >>>>>>> graemeg/fixes_2_2
+=======
+         procedure derefnode;virtual;
+>>>>>>> origin/fixes_2_2
 
          { toggles the flag }
          procedure toggleflag(f : tnodeflag);
@@ -415,10 +434,14 @@ interface
          { tries to simplify the node, returns a value <>nil if a simplified
            node has been created }
 <<<<<<< HEAD
+<<<<<<< HEAD
          function simplify(forinline : boolean) : tnode;virtual;
 =======
          function simplify : tnode;virtual;
 >>>>>>> graemeg/fixes_2_2
+=======
+         function simplify : tnode;virtual;
+>>>>>>> origin/fixes_2_2
 {$ifdef state_tracking}
          { Does optimizations by keeping track of the variable states
            in a procedure }
@@ -453,12 +476,15 @@ interface
          procedure concattolist(l : tlinkedlist);virtual;
          function ischild(p : tnode) : boolean;virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
          { ensures that the optimizer info record is allocated }
          function allocoptinfo : poptinfo;inline;
          property ppuidx:longint read getppuidx;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
       tnodeclass = class of tnode;
@@ -469,10 +495,14 @@ interface
       { one child, you have to use it if you want to use         }
       { true- and current_procinfo.CurrFalseLabel                                     }
 <<<<<<< HEAD
+<<<<<<< HEAD
       //punarynode = ^tunarynode;
 =======
       punarynode = ^tunarynode;
 >>>>>>> graemeg/fixes_2_2
+=======
+      punarynode = ^tunarynode;
+>>>>>>> origin/fixes_2_2
       tunarynode = class(tnode)
          left : tnode;
          constructor create(t:tnodetype;l : tnode);
@@ -482,26 +512,36 @@ interface
          procedure buildderefimpl;override;
          procedure derefimpl;override;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
          procedure derefnode;override;
 >>>>>>> graemeg/fixes_2_2
+=======
+         procedure derefnode;override;
+>>>>>>> origin/fixes_2_2
          procedure concattolist(l : tlinkedlist);override;
          function ischild(p : tnode) : boolean;override;
          function docompare(p : tnode) : boolean;override;
          function dogetcopy : tnode;override;
          procedure insertintolist(l : tnodelist);override;
 <<<<<<< HEAD
+<<<<<<< HEAD
          procedure printnodedata(var t:text);override;
       end;
 
       //pbinarynode = ^tbinarynode;
 =======
+=======
+>>>>>>> origin/fixes_2_2
          procedure left_max;
          procedure printnodedata(var t:text);override;
       end;
 
       pbinarynode = ^tbinarynode;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       tbinarynode = class(tunarynode)
          right : tnode;
          constructor create(t:tnodetype;l,r : tnode);
@@ -511,9 +551,13 @@ interface
          procedure buildderefimpl;override;
          procedure derefimpl;override;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
          procedure derefnode;override;
 >>>>>>> graemeg/fixes_2_2
+=======
+         procedure derefnode;override;
+>>>>>>> origin/fixes_2_2
          procedure concattolist(l : tlinkedlist);override;
          function ischild(p : tnode) : boolean;override;
          function docompare(p : tnode) : boolean;override;
@@ -521,18 +565,26 @@ interface
          function dogetcopy : tnode;override;
          procedure insertintolist(l : tnodelist);override;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
          procedure left_right_max;
 >>>>>>> graemeg/fixes_2_2
+=======
+         procedure left_right_max;
+>>>>>>> origin/fixes_2_2
          procedure printnodedata(var t:text);override;
          procedure printnodelist(var t:text);
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       //ptertiarynode = ^ttertiarynode;
 =======
       ptertiarynode = ^ttertiarynode;
 >>>>>>> graemeg/fixes_2_2
+=======
+      ptertiarynode = ^ttertiarynode;
+>>>>>>> origin/fixes_2_2
       ttertiarynode = class(tbinarynode)
          third : tnode;
          constructor create(_t:tnodetype;l,r,t : tnode);
@@ -542,9 +594,13 @@ interface
          procedure buildderefimpl;override;
          procedure derefimpl;override;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
          procedure derefnode;override;
 >>>>>>> graemeg/fixes_2_2
+=======
+         procedure derefnode;override;
+>>>>>>> origin/fixes_2_2
          procedure concattolist(l : tlinkedlist);override;
          function ischild(p : tnode) : boolean;override;
          function docompare(p : tnode) : boolean;override;
@@ -852,7 +908,10 @@ implementation
 {$ifdef SUPPORT_MMX}
          registersmmx:=0;
 {$endif SUPPORT_MMX}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          flags:=[];
       end;
 
@@ -945,10 +1004,13 @@ implementation
     destructor tnode.destroy;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
          if assigned(optinfo) then
            dispose(optinfo);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -1074,9 +1136,12 @@ implementation
          p.fileinfo:=fileinfo;
          p.localswitches:=localswitches;
 <<<<<<< HEAD
+<<<<<<< HEAD
          p.verbosity:=verbosity;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {         p.list:=list; }
          result:=p;
       end;

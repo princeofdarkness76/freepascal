@@ -12,6 +12,7 @@ Var
   D : TDependency;
   I : Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$endif ALLPACKAGES}
 
@@ -44,6 +45,8 @@ begin
       Run;
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 begin
   With Installer do
     begin

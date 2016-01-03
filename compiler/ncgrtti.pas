@@ -68,7 +68,10 @@ interface
 >>>>>>> origin/cpstrnew
 =======
         procedure fields_write_rtti_data(st:tsymtable;rt:trttitype);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         procedure write_rtti_extrasyms(def:Tdef;rt:Trttitype;mainrtti:Tasmsymbol);
         procedure published_write_rtti(st:tsymtable;rt:trttitype);
         function  published_properties_count(st:tsymtable):longint;
@@ -125,12 +128,15 @@ implementation
        cutils,
        globals,globtype,verbose,systems,
 <<<<<<< HEAD
+<<<<<<< HEAD
        fmodule, procinfo,
        symtable,symsym,
        aasmtai,aasmdata,
        defutil,
        wpobase
 =======
+=======
+>>>>>>> origin/fixes_2_2
        fmodule,
        symsym,
        aasmtai,aasmdata
@@ -569,9 +575,12 @@ implementation
            typvalue : byte;
            hp : ppropaccesslistitem;
 <<<<<<< HEAD
+<<<<<<< HEAD
            extnumber: longint;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            address,space : longint;
            def : tdef;
            hpropsym : tpropertysym;
@@ -744,7 +753,10 @@ implementation
                 current_asmdata.asmlists[al_rtti].concat(Tai_string.Create(tpropertysym(sym).realname));
                 if (tf_requires_proper_alignment in target_info.flags) then
                   current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(TConstPtrUInt)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
              end;
           end;
         tcb.end_anonymous_record;
@@ -863,6 +875,7 @@ implementation
                  write_header(def,tkSString);
                  current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_8bit(def.len));
 <<<<<<< HEAD
+<<<<<<< HEAD
                  maybe_write_align;  // is align necessary here?
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -878,6 +891,10 @@ implementation
                  if (tf_requires_proper_alignment in target_info.flags) then
                    current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(TConstPtrUInt)));
 >>>>>>> graemeg/fixes_2_2
+=======
+                 if (tf_requires_proper_alignment in target_info.flags) then
+                   current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(TConstPtrUInt)));
+>>>>>>> origin/fixes_2_2
               end;
           end;
         end;
@@ -920,7 +937,10 @@ implementation
           write_rtti_name(def);
           if (tf_requires_proper_alignment in target_info.flags) then
             current_asmdata.asmlists[al_rtti].concat(Cai_align.Create(sizeof(TConstPtrUInt)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           case longint(def.size) of
             1 :
               tcb.emit_ord_const(otUByte,u8inttype);
@@ -929,6 +949,7 @@ implementation
             4 :
               tcb.emit_ord_const(otULong,u8inttype);
           end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -975,6 +996,10 @@ implementation
           if (tf_requires_proper_alignment in target_info.flags) then
             current_asmdata.asmlists[al_rtti].concat(Cai_align.Create(sizeof(TConstPtrUInt)));
 >>>>>>> graemeg/fixes_2_2
+=======
+          if (tf_requires_proper_alignment in target_info.flags) then
+            current_asmdata.asmlists[al_rtti].concat(Cai_align.Create(sizeof(TConstPtrUInt)));
+>>>>>>> origin/fixes_2_2
           current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_32bit(def.min));
           current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_32bit(def.max));
           maybe_write_align;  // is align necessary here?
@@ -1143,7 +1168,10 @@ implementation
                 write_rtti_name(def);
                 if (tf_requires_proper_alignment in target_info.flags) then
                   current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(TConstPtrUInt)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 { low }
                 tcb.emit_ord_const(def.low.svalue,s64inttype);
                 { high }
@@ -1181,7 +1209,10 @@ implementation
                 write_rtti_name(def);
                 if (tf_requires_proper_alignment in target_info.flags) then
                   current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(TConstPtrUInt)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 { low }
                 tcb.emit_ord_const(def.low.svalue,s64inttype);
                 { high }
@@ -1236,6 +1267,17 @@ implementation
 >>>>>>> graemeg/cpstrnew
               end;
             scurrency:
+<<<<<<< HEAD
+=======
+              begin
+                current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_8bit(tkFloat));
+                write_rtti_name(def);
+                if (tf_requires_proper_alignment in target_info.flags) then
+                  current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(TConstPtrUInt)));
+                current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_8bit(ftCurr));
+              end;
+            else
+>>>>>>> origin/fixes_2_2
               begin
                 current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_8bit(tkFloat));
                 write_rtti_name(def);
@@ -1282,7 +1324,10 @@ implementation
            write_rtti_name(def);
            if (tf_requires_proper_alignment in target_info.flags) then
              current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(TConstPtrUInt)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_8bit(translate[def.floattype]));
 >>>>>>> graemeg/cpstrnew
         end;
@@ -1359,7 +1404,10 @@ implementation
            end;
            if (tf_requires_proper_alignment in target_info.flags) then
              current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(TConstPtrUInt)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_sym(ref_rtti(def.elementdef,rt)));
 >>>>>>> graemeg/cpstrnew
         end;
@@ -1381,6 +1429,7 @@ implementation
 =======
              current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_8bit(tkarray));
            write_rtti_name(def);
+<<<<<<< HEAD
 <<<<<<< HEAD
            maybe_write_align;
            { size of elements }
@@ -1425,6 +1474,8 @@ implementation
                    write_rtti_reference(tcb,curdef.rangedef,rt);
                  end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
            if (tf_requires_proper_alignment in target_info.flags) then
              current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(TConstPtrUInt)));
            { size of elements }
@@ -1435,7 +1486,10 @@ implementation
                current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_aint(aint(def.elecount)));
                { element type }
                current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_sym(ref_rtti(def.elementdef,rt)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
              end
            else
              { write a delphi almost compatible dyn. array entry:
@@ -1445,6 +1499,7 @@ implementation
                the names are swapped in typinfo.pp
              }
              begin
+<<<<<<< HEAD
 <<<<<<< HEAD
                tcb.begin_anonymous_record(
                  internaltypeprefixName[itp_rtti_dyn_array],
@@ -1496,6 +1551,8 @@ implementation
           { will be aligned thanks to encompassing record }
           write_rtti_reference(tcb,def.pointeddef,rt);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                { element type }
                current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_sym(ref_rtti(def.elementdef,rt)));
              end;
@@ -1511,7 +1568,10 @@ implementation
                { dummy DynUnitName }
                current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_8bit(0));
              end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         end;
 
         procedure recorddef_rtti(def:trecorddef);
@@ -1545,7 +1605,10 @@ implementation
            write_rtti_name(def);
            if (tf_requires_proper_alignment in target_info.flags) then
              current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(TConstPtrUInt)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_32bit(def.size));
            fields_write_rtti_data(def,rt);
 <<<<<<< HEAD
@@ -2167,7 +2230,10 @@ implementation
             current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_16bit(published_properties_count(def.symtable)));
             if (tf_requires_proper_alignment in target_info.flags) then
               current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(TConstPtrUInt)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             published_properties_write_rtti_data(propnamelist,def.symtable);
 >>>>>>> graemeg/cpstrnew
 
@@ -2242,7 +2308,10 @@ implementation
               ));
             if (tf_requires_proper_alignment in target_info.flags) then
               current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(TConstPtrUInt)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_32bit(longint(def.iidguid^.D1)));
             current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_16bit(def.iidguid^.D2));
             current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_16bit(def.iidguid^.D3));
@@ -2258,13 +2327,17 @@ implementation
             current_asmdata.asmlists[al_rtti].concat(Tai_string.Create(current_module.realmodulename^));
             if (tf_requires_proper_alignment in target_info.flags) then
               current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(TConstPtrUInt)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
             { write iidstr }
             if assigned(def.iidstr) then
               write_string(def.iidstr^)
             else
               current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_8bit(0));
+<<<<<<< HEAD
 <<<<<<< HEAD
             maybe_write_align;
 <<<<<<< HEAD
@@ -2281,6 +2354,10 @@ implementation
             if (tf_requires_proper_alignment in target_info.flags) then
               current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(TConstPtrUInt)));
 >>>>>>> graemeg/fixes_2_2
+=======
+            if (tf_requires_proper_alignment in target_info.flags) then
+              current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(TConstPtrUInt)));
+>>>>>>> origin/fixes_2_2
 
             { write published properties for this object }
             published_properties_write_rtti_data(tcb,propnamelist,def.symtable);
@@ -2300,7 +2377,10 @@ implementation
                tcb.emit_ord_const(tkobject,u8inttype);
 =======
                current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_8bit(tkobject));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
              odt_dispinterface,
              odt_interfacecom:
                tcb.emit_ord_const(tkInterface,u8inttype);
@@ -2344,7 +2424,10 @@ implementation
            current_asmdata.asmlists[al_rtti].concat(Tai_string.Create(def.objrealname^));
            if (tf_requires_proper_alignment in target_info.flags) then
              current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(TConstPtrUInt)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
            case rt of
              initrtti :
@@ -2661,6 +2744,7 @@ implementation
             end;
       end;
     end;
+<<<<<<< HEAD
 
     function enumsym_compare_name(item1, item2: pointer): Integer;
       var
@@ -3248,6 +3332,8 @@ implementation
             end;
       end;
     end;
+=======
+>>>>>>> origin/fixes_2_2
 
     procedure TRTTIWriter.write_child_rtti_data(def:tdef;rt:trttitype);
       begin
@@ -3367,7 +3453,10 @@ implementation
         write_rtti_data(def,rt);
         current_asmdata.asmlists[al_rtti].concat(Tai_symbol_end.Create(rttilab));
         write_rtti_extrasyms(def,rt,rttilab);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -3393,6 +3482,16 @@ implementation
         if (cs_create_pic in current_settings.moduleswitches) and
            assigned(current_procinfo) then
           include(current_procinfo.flags,pi_needs_got);
+      end;
+
+    function TRTTIWriter.get_rtti_label_ord2str(def:tdef;rt:trttitype):tasmsymbol;
+      begin
+        result:=current_asmdata.RefAsmSymbol(def.rtti_mangledname(rt)+'_o2s');
+      end;
+
+    function TRTTIWriter.get_rtti_label_str2ord(def:tdef;rt:trttitype):tasmsymbol;
+      begin
+        result:=current_asmdata.RefAsmSymbol(def.rtti_mangledname(rt)+'_s2o');
       end;
 
     function TRTTIWriter.get_rtti_label_ord2str(def:tdef;rt:trttitype):tasmsymbol;

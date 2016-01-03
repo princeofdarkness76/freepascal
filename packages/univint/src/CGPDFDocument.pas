@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 2000-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -42,6 +43,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  * Copyright (c) 2000-2003 Apple Computer, Inc.
  * All rights reserved.
  }
@@ -52,7 +55,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -62,12 +68,17 @@
 unit CGPDFDocument;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -81,14 +92,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -97,11 +113,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -139,6 +158,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -146,6 +167,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -370,6 +392,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -378,7 +402,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -405,9 +432,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -419,14 +450,18 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CGBase,CGDataProvider,CGGeometry,CFURL;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -453,6 +488,8 @@ type
 function CGPDFDocumentCreateWithProvider( provider: CGDataProviderRef ): CGPDFDocumentRef; external name '_CGPDFDocumentCreateWithProvider';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	CGPDFDocumentRef = ^SInt32; { an opaque 32-bit type }
 
 
@@ -460,11 +497,15 @@ function CGPDFDocumentCreateWithProvider( provider: CGDataProviderRef ): CGPDFDo
  * data. }
 
 function CGPDFDocumentCreateWithProvider( provider: CGDataProviderRef ): CGPDFDocumentRef; external name '_CGPDFDocumentCreateWithProvider';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Create a PDF document from `url'. }
 
 function CGPDFDocumentCreateWithURL( url: CFURLRef ): CGPDFDocumentRef; external name '_CGPDFDocumentCreateWithURL';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
@@ -523,6 +564,8 @@ function CGPDFDocumentAllowsPrinting( document: CGPDFDocumentRef ): CBool; exter
 function CGPDFDocumentAllowsCopying( document: CGPDFDocumentRef ): CBool; external name '_CGPDFDocumentAllowsCopying';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 { Equivalent to `CFRetain(document)', except it doesn't crash (as CFRetain
  * does) if `document' is NULL. }
@@ -570,11 +613,15 @@ function CGPDFDocumentAllowsPrinting( document: CGPDFDocumentRef ): CBool; exter
  * copying. }
 
 function CGPDFDocumentAllowsCopying( document: CGPDFDocumentRef ): CBool; external name '_CGPDFDocumentAllowsCopying'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the number of pages in `document'. }
 
 function CGPDFDocumentGetNumberOfPages( document: CGPDFDocumentRef ): size_t; external name '_CGPDFDocumentGetNumberOfPages';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
@@ -606,6 +653,8 @@ function CGPDFDocumentGetTypeID: CFTypeID; external name '_CGPDFDocumentGetTypeI
 
 {$ifc TARGET_OS_MAC}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the page corresponding to `pageNumber', or NULL if no such page
  * exists in the document.  Pages are numbered starting at 1. }
@@ -627,7 +676,10 @@ function CGPDFDocumentGetID( document: CGPDFDocumentRef ): CGPDFArrayRef; extern
 { Return the CFTypeID for CGPDFDocumentRefs. }
 
 function CGPDFDocumentGetTypeID: CFTypeID; external name '_CGPDFDocumentGetTypeID'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { The following functions are deprecated in favor of the CGPDFPage API. }
 
@@ -635,41 +687,54 @@ function CGPDFDocumentGetTypeID: CFTypeID; external name '_CGPDFDocumentGetTypeI
 
 function CGPDFDocumentGetMediaBox( document: CGPDFDocumentRef; page: SInt32 ): CGRect; external name '_CGPDFDocumentGetMediaBox';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5,
 	__IPHONE_NA, __IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { DEPRECATED; return the crop box of page number `page' in `document'. }
 
 function CGPDFDocumentGetCropBox( document: CGPDFDocumentRef; page: SInt32 ): CGRect; external name '_CGPDFDocumentGetCropBox';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5,
 	__IPHONE_NA, __IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { DEPRECATED; return the bleed box of page number `page' in `document'. }
 
 function CGPDFDocumentGetBleedBox( document: CGPDFDocumentRef; page: SInt32 ): CGRect; external name '_CGPDFDocumentGetBleedBox';
 <<<<<<< HEAD
-(* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5,
-	__IPHONE_NA, __IPHONE_NA) *)
-=======
->>>>>>> graemeg/fixes_2_2
-
-{ DEPRECATED; return the trim box of page number `page' in `document'. }
-
-function CGPDFDocumentGetTrimBox( document: CGPDFDocumentRef; page: SInt32 ): CGRect; external name '_CGPDFDocumentGetTrimBox';
 <<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5,
 	__IPHONE_NA, __IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+
+{ DEPRECATED; return the trim box of page number `page' in `document'. }
+
+function CGPDFDocumentGetTrimBox( document: CGPDFDocumentRef; page: SInt32 ): CGRect; external name '_CGPDFDocumentGetTrimBox';
+<<<<<<< HEAD
+<<<<<<< HEAD
+(* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5,
+	__IPHONE_NA, __IPHONE_NA) *)
+=======
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { DEPRECATED; return the art box of page number `page' in `document'. }
 
 function CGPDFDocumentGetArtBox( document: CGPDFDocumentRef; page: SInt32 ): CGRect; external name '_CGPDFDocumentGetArtBox';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5,
 	__IPHONE_NA, __IPHONE_NA) *)
@@ -687,6 +752,8 @@ function CGPDFDocumentGetRotationAngle( document: CGPDFDocumentRef; page: SInt32
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 { DEPRECATED; return the rotation angle (in degrees) of page number `page'
  * in `document'. }
@@ -695,4 +762,7 @@ function CGPDFDocumentGetRotationAngle( document: CGPDFDocumentRef; page: SInt32
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

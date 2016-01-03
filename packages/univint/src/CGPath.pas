@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 2001-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -42,6 +43,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  * Copyright (c) 2001-2002 Apple Computer, Inc.
  * All rights reserved.
  }
@@ -52,7 +55,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -62,12 +68,17 @@
 unit CGPath;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -81,14 +92,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -97,11 +113,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -139,6 +158,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -146,6 +167,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -371,6 +393,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -379,7 +403,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -406,9 +433,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -420,14 +451,18 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CGBase,CGAffineTransforms,CFBase,CGGeometry;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -668,6 +703,8 @@ procedure CGPathAddCurveToPoint( path: CGMutablePathRef; m: CGAffineTransformPtr
 procedure CGPathCloseSubpath( path: CGMutablePathRef ); external name '_CGPathCloseSubpath';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	CGMutablePathRef = ^SInt32; { an opaque 32-bit type }
 type
 	CGPathRef = ^SInt32; { an opaque 32-bit type }
@@ -733,11 +770,15 @@ procedure CGPathAddCurveToPoint( path: CGMutablePathRef; const (*var*) m: CGAffi
  * current subpath of `path' and end the subpath. }
 
 procedure CGPathCloseSubpath( path: CGMutablePathRef ); external name '_CGPathCloseSubpath'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {** Path construction convenience functions. **}
 
 { Add `rect' to `path'. If `m' is non-NULL, then first transform `rect' by
+<<<<<<< HEAD
 <<<<<<< HEAD
    `m' before adding it to `path'. }
 
@@ -932,6 +973,8 @@ procedure CGPathAddArcToPoint( path: CGMutablePathRef; m: CGAffineTransformPtr; 
 procedure CGPathAddPath( path1: CGMutablePathRef; m: CGAffineTransformPtr; path2: CGPathRef ); external name '_CGPathAddPath';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  * `m' before adding it to `path'. }
 
 procedure CGPathAddRect( path: CGMutablePathRef; const (*var*) m: CGAffineTransform; rect: CGRect ); external name '_CGPathAddRect'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
@@ -988,12 +1031,16 @@ procedure CGPathAddArcToPoint( path: CGMutablePathRef; const (*var*) m: CGAffine
 * will be transformed by `m' before they are added to `path1'.}
 
 procedure CGPathAddPath( path1: CGMutablePathRef; const (*var*) m: CGAffineTransform; path2: CGPathRef ); external name '_CGPathAddPath'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {** Path information functions. **}
 
 { Return true if `path' contains no elements, false otherwise. }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function CGPathIsEmpty( path: CGPathRef ): CBool; external name '_CGPathIsEmpty';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
@@ -1139,6 +1186,8 @@ function CGPathContainsPoint( path: CGPathRef; m: CGAffineTransformPtr; point: C
 >>>>>>> origin/cpstrnew
 { The types of path elements returned by `CGPathApply'. }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function CGPathIsEmpty( path: CGPathRef ): CBool; external name '_CGPathIsEmpty'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 { Return true if `path' represents a rectangle, false otherwise. }
@@ -1165,7 +1214,10 @@ function CGPathGetBoundingBox( path: CGPathRef ): CGRect; external name '_CGPath
  * `m' before determining whether the path contains it. }
 
 function CGPathContainsPoint( path: CGPathRef; const (*var*) m: CGAffineTransform; point: CGPoint; eoFill: CBool ): CBool; external name '_CGPathContainsPoint'; (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	CGPathElementType = SInt32;
@@ -1176,6 +1228,7 @@ const
 	kCGPathElementAddCurveToPoint = 3;
 	kCGPathElementCloseSubpath = 4;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { An element of a path returned by `CGPathApply'. }
 
@@ -1204,6 +1257,8 @@ procedure CGPathApply( path: CGPathRef; info: UnivPtr; func: CGPathApplierFuncti
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type
 	CGPathElement = record
 		typ: CGPathElementType;
@@ -1217,4 +1272,7 @@ procedure CGPathApply( path: CGPathRef; info: UnivPtr; func: CGPathApplierFuncti
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

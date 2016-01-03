@@ -391,9 +391,12 @@ implementation
               result := foreachnodestatic(procmethod,tnode(tcallnode(n).callinitblock),f,arg) or result;
               result := foreachnodestatic(procmethod,tcallnode(n).methodpointer,f,arg) or result;
 <<<<<<< HEAD
+<<<<<<< HEAD
               result := foreachnodestatic(procmethod,tcallnode(n).funcretnode,f,arg) or result;
               result := foreachnodestatic(procmethod,tnode(tcallnode(n).callcleanupblock),f,arg) or result;
 =======
+=======
+>>>>>>> origin/fixes_2_2
               result := foreachnodestatic(procmethod,tcallnode(n)._funcretnode,f,arg) or result;
               result := foreachnodestatic(procmethod,tcallnode(n).methodpointerdone,f,arg) or result;
 >>>>>>> graemeg/fixes_2_2
@@ -618,6 +621,31 @@ implementation
       end;
 
 
+    function get_local_or_para_sym(const aname:string):tsym;
+      var
+        pd : tprocdef;
+      begin
+        { we can't use searchsym here, because the
+          symtablestack is not fully setup when pass1
+          is run for nested procedures }
+        pd:=current_procinfo.procdef;
+        repeat
+          result := tsym(pd.localst.Find(aname));
+          if assigned(result) then
+            break;
+          result := tsym(pd.parast.Find(aname));
+          if assigned(result) then
+            break;
+          { try the parent of a nested function }
+          if assigned(pd.owner.defowner) and
+             (pd.owner.defowner.typ=procdef) then
+            pd:=tprocdef(pd.owner.defowner)
+          else
+            break;
+        until false;
+      end;
+
+
     function load_high_value_node(vs:tparavarsym):tnode;
       var
         srsym : tsym;
@@ -645,8 +673,11 @@ implementation
           begin
             result:=cloadnode.create(srsym,srsym.owner);
 <<<<<<< HEAD
+<<<<<<< HEAD
             include(tloadnode(result).loadnodeflags,loadnf_is_self);
 =======
+=======
+>>>>>>> origin/fixes_2_2
             include(result.flags,nf_is_self);
 >>>>>>> graemeg/fixes_2_2
           end
@@ -686,8 +717,11 @@ implementation
           begin
             result:=cloadnode.create(srsym,srsym.owner);
 <<<<<<< HEAD
+<<<<<<< HEAD
             include(tloadnode(result).loadnodeflags,loadnf_load_self_pointer);
 =======
+=======
+>>>>>>> origin/fixes_2_2
             include(result.flags,nf_load_self_pointer);
 >>>>>>> graemeg/fixes_2_2
           end
@@ -941,16 +975,22 @@ implementation
                ));
           end
 <<<<<<< HEAD
+<<<<<<< HEAD
         else if is_unicodestring(p.resultdef) then
           begin
             result:=internalstatements(newstatement);
             addstatement(newstatement,ccallnode.createintern('fpc_unicodestr_decr_ref',
 =======
+=======
+>>>>>>> origin/fixes_2_2
         else if is_interfacecom(p.resultdef) then
           begin
             result:=internalstatements(newstatement);
             addstatement(newstatement,ccallnode.createintern('fpc_intf_decr_ref',
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                   ccallparanode.create(
                     ctypeconvnode.create_internal(p,voidpointertype),
                   nil)));
@@ -959,6 +999,7 @@ implementation
                cnilnode.create
                ));
           end
+<<<<<<< HEAD
 <<<<<<< HEAD
         else if is_interfacecom_or_dispinterface(p.resultdef) then
 <<<<<<< HEAD
@@ -999,6 +1040,8 @@ implementation
             result:=block;
           end
 =======
+=======
+>>>>>>> origin/fixes_2_2
         else
           result:=ccallnode.createintern('fpc_finalize',
                 ccallparanode.create(
@@ -1064,6 +1107,7 @@ implementation
                   exit;
                 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
               subscriptn:
                 begin
 <<<<<<< HEAD
@@ -1102,6 +1146,11 @@ implementation
               blockn,
               callparan:
 >>>>>>> graemeg/fixes_2_2
+=======
+              subscriptn,
+              blockn,
+              callparan:
+>>>>>>> origin/fixes_2_2
                 p := tunarynode(p).left;
               callparan:
                 begin

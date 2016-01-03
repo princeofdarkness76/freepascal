@@ -17,10 +17,14 @@ unit pkgoptions;
 interface
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses Classes, Sysutils, Inifiles, fprepos, fpTemplate, pkgglobals;
 =======
 uses Classes, Sysutils, Inifiles, fprepos;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses Classes, Sysutils, Inifiles, fprepos;
+>>>>>>> origin/fixes_2_2
 
 Const
   UnitConfigFileName   = 'fpunits.conf';
@@ -29,10 +33,14 @@ Const
   PackagesFileName     = 'packages.xml';
   VersionsFileName     = 'versions-%s.dat';
 <<<<<<< HEAD
+<<<<<<< HEAD
   CurrentConfigVersion = 4;
 =======
   CurrentConfigVersion = 3;
 >>>>>>> graemeg/fixes_2_2
+=======
+  CurrentConfigVersion = 3;
+>>>>>>> origin/fixes_2_2
 
 Type
 
@@ -41,11 +49,15 @@ Type
   TGlobalOptions = Class(TPersistent)
   private
 <<<<<<< HEAD
+<<<<<<< HEAD
     FConfigFilename: string;
     FSaveInifileChanges : Boolean;
 =======
     FDirty : Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+    FDirty : Boolean;
+>>>>>>> origin/fixes_2_2
     FConfigVersion : Integer;
     FRemoteMirrorsURL,
     FRemoteRepository,
@@ -61,6 +73,7 @@ Type
     FAllowBroken,
     FInstallGlobal,
     FRecoveryMode   : Boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
     FOptionParser: TTemplateParser;
     FShowLocation: Boolean;
@@ -80,6 +93,8 @@ Type
     // Is set when the inifile has an old version number (which is also the case when a new file is generated)
     Property SaveInifileChanges : Boolean Read FSaveInifileChanges;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     function  GetOptString(Index: integer): String;
     procedure SetOptString(Index: integer; const AValue: String);
   Public
@@ -89,7 +104,10 @@ Type
     Procedure SaveGlobalToFile(const AFileName : String);
     procedure LogValues;
     Property Dirty : Boolean Read FDirty;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Property ConfigVersion : Integer read FConfigVersion;
     function LocalPackagesFile:string;
     function LocalMirrorsFile:string;
@@ -106,20 +124,26 @@ Type
     Property FPMakeCompilerConfig : String Index 9 Read GetOptString Write SetOptString;
     Property Downloader: String Index 10 Read GetOptString Write SetOptString;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property CustomFPMakeOptions: String Index 11 Read GetOptString Write SetOptString;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     // Parameters
     Property CompilerConfig : String Read FCompilerConfig Write FCompilerConfig;
     Property InstallGlobal : Boolean Read FInstallGlobal Write FInstallGlobal;
     Property RecoveryMode : Boolean Read FRecoveryMode Write FRecoveryMode;
     Property AllowBroken : Boolean Read FAllowBroken Write FAllowBroken;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property ShowLocation : Boolean Read FShowLocation Write FShowLocation;
     Property SkipConfigurationFiles: boolean read FSkipConfigurationFiles write FSkipConfigurationFiles;
     Property SkipFixBrokenAfterInstall: boolean read FSkipFixBrokenAfterInstall write FSkipFixBrokenAfterInstall;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
 
@@ -128,15 +152,20 @@ Type
   TCompilerOptions = Class(TPersistent)
   private
 <<<<<<< HEAD
+<<<<<<< HEAD
     FConfigFilename: string;
     FSaveInifileChanges: Boolean;
 =======
     FDirty: Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+    FDirty: Boolean;
+>>>>>>> origin/fixes_2_2
     FConfigVersion : Integer;
     FCompiler,
     FCompilerVersion,
     FLocalInstallDir,
+<<<<<<< HEAD
 <<<<<<< HEAD
     FGlobalInstallDir,
     FLocalPrefix,
@@ -151,12 +180,18 @@ Type
     FCompilerCPU: TCPU;
     FCompilerOS: TOS;
 >>>>>>> graemeg/fixes_2_2
+=======
+    FGlobalInstallDir : String;
+    FCompilerCPU: TCPU;
+    FCompilerOS: TOS;
+>>>>>>> origin/fixes_2_2
     function GetOptString(Index: integer): String;
     procedure SetOptString(Index: integer; const AValue: String);
     procedure SetCompilerCPU(const AValue: TCPU);
     procedure SetCompilerOS(const AValue: TOS);
   Public
     Constructor Create;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Destructor Destroy; override;
     Procedure InitCompilerDefaults;
@@ -175,12 +210,20 @@ Type
     Procedure InitCompilerDefaults;
     Procedure LoadCompilerFromFile(const AFileName : String);
     Procedure SaveCompilerToFile(const AFileName : String);
+=======
+    Procedure InitCompilerDefaults;
+    Procedure LoadCompilerFromFile(const AFileName : String);
+    Procedure SaveCompilerToFile(const AFileName : String);
+>>>>>>> origin/fixes_2_2
     procedure LogValues(const ACfgName:string);
     Property Dirty : Boolean Read FDirty;
     Property ConfigVersion : Integer read FConfigVersion;
     Function LocalUnitDir:string;
     Function GlobalUnitDir:string;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Published
     Property Compiler : String Index 1 Read GetOptString Write SetOptString;
     Property CompilerTarget : String Index 2 Read GetOptString Write SetOptString;
@@ -188,11 +231,14 @@ Type
     Property GlobalInstallDir : String Index 4 Read GetOptString Write SetOptString;
     Property LocalInstallDir : String Index 5 Read GetOptString Write SetOptString;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property GlobalPrefix : String Index 6 Read GetOptString Write SetOptString;
     Property LocalPrefix : String Index 7 Read GetOptString Write SetOptString;
     Property Options : TStrings read GetOptions;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Property CompilerOS : TOS Read FCompilerOS Write SetCompilerOS;
     Property CompilerCPU : TCPU Read FCompilerCPU Write SetCompilerCPU;
   end;
@@ -207,7 +253,10 @@ Implementation
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
   pkgglobals,
 >>>>>>> graemeg/fixes_2_2
   pkgmessages;
@@ -237,6 +286,7 @@ Const
   KeyFPMakeCompilerConfig  = 'FPMakeCompilerConfig';
   KeyDownloader            = 'Downloader';
 <<<<<<< HEAD
+<<<<<<< HEAD
   KeyCustomFPMakeOptions   = 'FPMakeOptions';
 
   // Compiler dependent config
@@ -246,6 +296,10 @@ Const
 
   // Compiler dependent config
 >>>>>>> graemeg/fixes_2_2
+=======
+
+  // Compiler dependent config
+>>>>>>> origin/fixes_2_2
   KeyGlobalInstallDir      = 'GlobalInstallDir';
   KeyLocalInstallDir       = 'LocalInstallDir';
   KeyCompiler              = 'Compiler' ;
@@ -273,9 +327,12 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function TGlobalOptions.GetOptString(Index: integer): String;
 begin
   Case Index of
@@ -298,7 +355,10 @@ begin
     8 : Result:=FDefaultCompilerConfig;
     9 : Result:=FFPMakeCompilerConfig;
    10 : Result:=FDownloader;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     else
       Error('Unknown option');
   end;
@@ -318,24 +378,32 @@ begin
         end;
 =======
     3 : FLocalRepository:=AValue;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     4 : FBuildDir:=FixPath(AValue);
     5 : FArchivesDir:=FixPath(AValue);
     6 : FCompilerConfigDir:=FixPath(AValue);
     8 : FDefaultCompilerConfig:=AValue;
     9 : FFPMakeCompilerConfig:=AValue;
 <<<<<<< HEAD
+<<<<<<< HEAD
     10 : FDownloader:=AValue;
     11 : FCustomFPMakeOptions:=AValue;
 =======
    10 : FDownloader:=AValue;
 >>>>>>> graemeg/fixes_2_2
+=======
+   10 : FDownloader:=AValue;
+>>>>>>> origin/fixes_2_2
     else
       Error('Unknown option');
   end;
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TGlobalOptions.UpdateLocalRepositoryOption;
 begin
@@ -380,6 +448,27 @@ var
   i: Integer;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+function TGlobalOptions.LocalPackagesFile:string;
+begin
+  Result:=FLocalRepository+PackagesFileName;
+end;
+
+
+function TGlobalOptions.LocalMirrorsFile:string;
+begin
+  Result:=FLocalRepository+MirrorsFileName;
+end;
+
+
+function TGlobalOptions.LocalVersionsFile(const ACompilerConfig:String):string;
+begin
+  Result:=FLocalRepository+Format(VersionsFileName,[ACompilerConfig]);
+end;
+
+
+Procedure TGlobalOptions.InitGlobalDefaults;
+>>>>>>> origin/fixes_2_2
 begin
   FConfigVersion:=CurrentConfigVersion;
   // Retrieve Local fppkg directory
@@ -393,6 +482,7 @@ begin
     end
   else
 <<<<<<< HEAD
+<<<<<<< HEAD
     FLocalRepository:='{UserDir}.fppkg/';
 {$else}
   if IsSuperUser then
@@ -404,9 +494,15 @@ begin
 {$else}
   FLocalRepository:=IncludeTrailingPathDelimiter(GetAppConfigDir(IsSuperUser));
 >>>>>>> graemeg/fixes_2_2
+=======
+    FLocalRepository:=IncludeTrailingPathDelimiter(GetEnvironmentVariable('HOME'))+'.fppkg/';
+{$else}
+  FLocalRepository:=IncludeTrailingPathDelimiter(GetAppConfigDir(IsSuperUser));
+>>>>>>> origin/fixes_2_2
 {$endif}
   UpdateLocalRepositoryOption;
   // Directories
+<<<<<<< HEAD
 <<<<<<< HEAD
   FBuildDir:='{LocalRepository}build'+PathDelim;
   FArchivesDir:='{LocalRepository}archives'+PathDelim;
@@ -416,6 +512,11 @@ begin
   FArchivesDir:=FLocalRepository+'archives'+PathDelim;
   FCompilerConfigDir:=FLocalRepository+'config'+PathDelim;
 >>>>>>> graemeg/fixes_2_2
+=======
+  FBuildDir:=FLocalRepository+'build'+PathDelim;
+  FArchivesDir:=FLocalRepository+'archives'+PathDelim;
+  FCompilerConfigDir:=FLocalRepository+'config'+PathDelim;
+>>>>>>> origin/fixes_2_2
   // Remote
   FRemoteMirrorsURL:=DefaultMirrorsURL;
   FRemoteRepository:=DefaultRemoteRepository;
@@ -433,6 +534,7 @@ begin
   FInstallGlobal:=False;
   FRecoveryMode:=False;
   FAllowBroken:=False;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   SetLength(FPMKUnitDeps,FPMKUnitDepDefaultCount);
@@ -647,6 +749,11 @@ begin
 end;
 
 
+=======
+end;
+
+
+>>>>>>> origin/fixes_2_2
 procedure TGlobalOptions.LoadGlobalFromFile(const AFileName: String);
 Var
   Ini : TMemIniFile;
@@ -692,6 +799,7 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCompilerOptions.SetCompilerOS(const AValue: TOS);
 begin
   if FCompilerOS=AValue then
@@ -728,6 +836,8 @@ function TCompilerOptions.HasOptions: boolean;
 begin
   result := assigned(FOptions);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TGlobalOptions.SaveGlobalToFile(const AFileName: String);
 Var
   Ini : TIniFile;
@@ -777,6 +887,7 @@ end;
 *****************************************************************************}
 
 constructor TCompilerOptions.Create;
+<<<<<<< HEAD
 begin
 end;
 
@@ -838,17 +949,84 @@ begin
 end;
 
 
+=======
+begin
+end;
+
+
+function TCompilerOptions.GetOptString(Index: integer): String;
+begin
+  Case Index of
+    1 : Result:=FCompiler;
+    2 : Result:=MakeTargetString(CompilerCPU,CompilerOS);
+    3 : Result:=FCompilerVersion;
+    4 : Result:=FGlobalInstallDir;
+    5 : Result:=FLocalInstallDir;
+    else
+      Error('Unknown option');
+  end;
+end;
+
+procedure TCompilerOptions.SetOptString(Index: integer; const AValue: String);
+begin
+  If AValue=GetOptString(Index) then
+    Exit;
+  Case Index of
+    1 : FCompiler:=AValue;
+    2 : StringToCPUOS(AValue,FCompilerCPU,FCompilerOS);
+    3 : FCompilerVersion:=AValue;
+    4 : FGlobalInstallDir:=FixPath(AValue);
+    5 : FLocalInstallDir:=FixPath(AValue);
+    else
+      Error('Unknown option');
+  end;
+  FDirty:=True;
+end;
+
+
+procedure TCompilerOptions.SetCompilerCPU(const AValue: TCPU);
+begin
+  if FCompilerCPU=AValue then
+    exit;
+  FCompilerCPU:=AValue;
+  FDirty:=True;
+end;
+
+
+procedure TCompilerOptions.SetCompilerOS(const AValue: TOS);
+begin
+  if FCompilerOS=AValue then
+    exit;
+  FCompilerOS:=AValue;
+  FDirty:=True;
+end;
+
+
+function TCompilerOptions.LocalUnitDir:string;
+begin
+  if FLocalInstallDir<>'' then
+    result:=FLocalInstallDir+'units'+PathDelim+CompilerTarget+PathDelim
+  else
+    result:='';
+end;
+
+
+>>>>>>> origin/fixes_2_2
 function TCompilerOptions.GlobalUnitDir:string;
 begin
   if FGlobalInstallDir<>'' then
     result:=FGlobalInstallDir+'units'+PathDelim+CompilerTarget+PathDelim
   else
     result:='';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
 procedure TCompilerOptions.InitCompilerDefaults;
+<<<<<<< HEAD
 <<<<<<< HEAD
 var
   ACompilerVersion: string;
@@ -863,6 +1041,8 @@ begin
   GetCompilerInfo(FCompiler,'-iVTPTO',ACompilerVersion,FCompilerCPU,FCompilerOS);
   CompilerVersion := ACompilerVersion;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 var
   infoSL : TStringList;
@@ -880,12 +1060,16 @@ begin
   FCompilerVersion:=infosl[0];
   FCompilerCPU:=StringToCPU(infosl[1]);
   FCompilerOS:=StringToOS(infosl[2]);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   // Temporary hack to workaround bug in fpc.exe that doesn't support spaces
   // We retrieve the real binary
   if FCompilerVersion='2.2.0' then
     FCompiler:=GetCompilerInfo(FCompiler,'-PB');
   Log(vlDebug,SLogDetectedCompiler,[FCompiler,FCompilerVersion,MakeTargetString(FCompilerCPU,FCompilerOS)]);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   // Use the same algorithm as the compiler, see options.pas
@@ -921,6 +1105,8 @@ begin
     Log(vlDebug,SLogFPCDirEnv,[fpcdir]);
     FGlobalInstallDir:=fpcdir;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   // Use the same algorithm as the compiler, see options.pas
 {$ifdef Unix}
   FGlobalInstallDir:=FixPath(GetEnvironmentVariable('FPCDIR'));
@@ -948,7 +1134,10 @@ begin
     begin
       FLocalInstallDir:=GlobalOptions.LocalRepository+'lib'+PathDelim+FCompilerVersion+PathDelim;
       Log(vlDebug,SLogDetectedFPCDIR,['local',FLocalInstallDir]);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
 end;
 
@@ -958,6 +1147,7 @@ Var
   Ini : TMemIniFile;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Ini:=TMemIniFile.Create(AFileName);
   try
     FConfigFilename:=AFileName;
@@ -965,12 +1155,17 @@ begin
   try
     Ini:=TMemIniFile.Create(AFileName);
 >>>>>>> graemeg/fixes_2_2
+=======
+  try
+    Ini:=TMemIniFile.Create(AFileName);
+>>>>>>> origin/fixes_2_2
     With Ini do
       begin
         FConfigVersion:=ReadInteger(SDefaults,KeyConfigVersion,0);
         if (FConfigVersion<>CurrentConfigVersion) then
           begin
             Log(vlDebug,SLogUpgradingConfig,[AFileName]);
+<<<<<<< HEAD
 <<<<<<< HEAD
             FSaveInifileChanges:=true;
             if (FConfigVersion>CurrentConfigVersion) then
@@ -979,21 +1174,30 @@ begin
         GlobalPrefix:=ReadString(SDefaults,KeyGlobalPrefix,FGlobalPrefix);
         LocalPrefix:=ReadString(SDefaults,KeyLocalPrefix,FLocalPrefix);
 =======
+=======
+>>>>>>> origin/fixes_2_2
             FDirty:=true;
             if (FConfigVersion>CurrentConfigVersion) then
               Error(SErrUnsupportedConfigVersion,[AFileName]);
           end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         FGlobalInstallDir:=FixPath(ReadString(SDefaults,KeyGlobalInstallDir,FGlobalInstallDir));
         FLocalInstallDir:=FixPath(ReadString(SDefaults,KeyLocalInstallDir,FLocalInstallDir));
         FCompiler:=ReadString(SDefaults,KeyCompiler,FCompiler);
         FCompilerOS:=StringToOS(ReadString(SDefaults,KeyCompilerOS,OSToString(CompilerOS)));
         FCompilerCPU:=StringToCPU(ReadString(SDefaults,KeyCompilerCPU,CPUtoString(CompilerCPU)));
 <<<<<<< HEAD
+<<<<<<< HEAD
         CompilerVersion:=ReadString(SDefaults,KeyCompilerVersion,FCompilerVersion);
 =======
         FCompilerVersion:=ReadString(SDefaults,KeyCompilerVersion,FCompilerVersion);
 >>>>>>> graemeg/fixes_2_2
+=======
+        FCompilerVersion:=ReadString(SDefaults,KeyCompilerVersion,FCompilerVersion);
+>>>>>>> origin/fixes_2_2
       end;
   finally
     Ini.Free;
@@ -1008,6 +1212,7 @@ begin
   if FileExists(AFileName) then
     BackupFile(AFileName);
 <<<<<<< HEAD
+<<<<<<< HEAD
   Ini:=TIniFile.Create(AFileName);
   try
     With Ini do
@@ -1017,11 +1222,17 @@ begin
         WriteString(SDefaults,KeyLocalPrefix,FLocalPrefix);
 =======
   try
+=======
+  try
+>>>>>>> origin/fixes_2_2
     Ini:=TIniFile.Create(AFileName);
     With Ini do
       begin
         WriteInteger(SDefaults,KeyConfigVersion,CurrentConfigVersion);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         WriteString(SDefaults,KeyGlobalInstallDir,FGlobalInstallDir);
         WriteString(SDefaults,KeyLocalInstallDir,FLocalInstallDir);
         WriteString(SDefaults,KeyCompiler,FCompiler);
@@ -1029,10 +1240,14 @@ begin
         WriteString(SDefaults,KeyCompilerCPU,CPUtoString(CompilerCPU));
         WriteString(SDefaults,KeyCompilerVersion,FCompilerVersion);
 <<<<<<< HEAD
+<<<<<<< HEAD
         FSaveInifileChanges:=False;
 =======
         FDirty:=False;
 >>>>>>> graemeg/fixes_2_2
+=======
+        FDirty:=False;
+>>>>>>> origin/fixes_2_2
       end;
     Ini.UpdateFile;
   finally
@@ -1041,6 +1256,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCompilerOptions.LogValues(ALogLevel: TLogLevel; const ACfgName:string);
 begin
@@ -1054,6 +1270,8 @@ begin
   Log(ALogLevel,SLogCompilerCfgLocalInstallDir,[FLocalInstallDir,LocalInstallDir]);
   Log(ALogLevel,SLogCompilerCfgOptions,[Options.DelimitedText]);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TCompilerOptions.LogValues(const ACfgName:string);
 begin
   Log(vlDebug,SLogCompilerCfgHeader,[ACfgName]);
@@ -1062,7 +1280,10 @@ begin
   Log(vlDebug,SLogCompilerCfgVersion,[FCompilerVersion]);
   Log(vlDebug,SLogCompilerCfgGlobalInstallDir,[FGlobalInstallDir]);
   Log(vlDebug,SLogCompilerCfgLocalInstallDir,[FLocalInstallDir]);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 

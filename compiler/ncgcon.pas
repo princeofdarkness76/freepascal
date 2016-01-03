@@ -77,9 +77,12 @@ implementation
       globtype,widestr,systems,
       verbose,globals,cutils,
 <<<<<<< HEAD
+<<<<<<< HEAD
       aasmcnst,
       symconst,symdef,aasmtai,aasmdata,aasmcpu,defutil,
 =======
+=======
+>>>>>>> origin/fixes_2_2
       symconst,symdef,aasmbase,aasmtai,aasmdata,aasmcpu,defutil,
 >>>>>>> graemeg/fixes_2_2
       cpuinfo,cpubase,
@@ -221,10 +224,14 @@ implementation
                   lab_real:=lastlabel;
                   maybe_new_object_file(current_asmdata.asmlists[al_typedconsts]);
 <<<<<<< HEAD
+<<<<<<< HEAD
                   new_section(current_asmdata.asmlists[al_typedconsts],sec_rodata_norel,lastlabel.name,const_align(resultdef.alignment));
 =======
                   new_section(current_asmdata.asmlists[al_typedconsts],sec_rodata_norel,lastlabel.name,const_align(resultdef.size));
 >>>>>>> graemeg/fixes_2_2
+=======
+                  new_section(current_asmdata.asmlists[al_typedconsts],sec_rodata_norel,lastlabel.name,const_align(resultdef.size));
+>>>>>>> origin/fixes_2_2
                   current_asmdata.asmlists[al_typedconsts].concat(Tai_label.Create(lastlabel));
                   case realait of
                     aitrealconst_s32bit :
@@ -233,8 +240,11 @@ implementation
                         { range checking? }
                         if floating_point_range_check_error and
 <<<<<<< HEAD
+<<<<<<< HEAD
                            (tai_realconst(current_asmdata.asmlists[al_typedconsts].last).value.s32val=MathInf.Value) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
                           (tai_real_32bit(current_asmdata.asmlists[al_typedconsts].last).value=MathInf.Value) then
 >>>>>>> graemeg/fixes_2_2
                           Message(parser_e_range_check_error);
@@ -252,8 +262,11 @@ implementation
                         { range checking? }
                         if floating_point_range_check_error and
 <<<<<<< HEAD
+<<<<<<< HEAD
                            (tai_realconst(current_asmdata.asmlists[al_typedconsts].last).value.s64val=MathInf.Value) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
                           (tai_real_64bit(current_asmdata.asmlists[al_typedconsts].last).value=MathInf.Value) then
 >>>>>>> graemeg/fixes_2_2
                           Message(parser_e_range_check_error);
@@ -282,8 +295,11 @@ implementation
                         { range checking? }
                         if floating_point_range_check_error and
 <<<<<<< HEAD
+<<<<<<< HEAD
                            (tai_realconst(current_asmdata.asmlists[al_typedconsts].last).value.s80val=MathInf.Value) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
                           (tai_real_80bit(current_asmdata.asmlists[al_typedconsts].last).value=MathInf.Value) then
 >>>>>>> graemeg/fixes_2_2
                           Message(parser_e_range_check_error);
@@ -296,8 +312,11 @@ implementation
                         { range checking? }
                         if floating_point_range_check_error and
 <<<<<<< HEAD
+<<<<<<< HEAD
                            (tai_realconst(current_asmdata.asmlists[al_typedconsts].last).value.s128val=MathInf.Value) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
                           (tai_real_128bit(current_asmdata.asmlists[al_typedconsts].last).value=MathInf.Value) then
 >>>>>>> graemeg/fixes_2_2
                           Message(parser_e_range_check_error);
@@ -369,7 +388,10 @@ implementation
 =======
          hp1,hp2 : tai;
          l1,
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          lastlabel   : tasmlabel;
          pc       : pchar;
          l: longint;
@@ -497,7 +519,10 @@ implementation
                                 move(value_str^,pc^,len);
                                 pc[len]:=#0;
                                 current_asmdata.asmlists[al_typedconsts].concat(Tai_string.Create_pchar(pc,len+1));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                              end;
                            { no contents of the datatcb itself to concatenate,
                              as we will just return the address of the emitted
@@ -560,7 +585,10 @@ implementation
                                   current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_16bit(pcompilerwidestring(value_str)^.data[i]));
                                 { terminating zero }
                                 current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_16bit(0));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                              end;
                            { no contents of the datatcb itself to concatenate,
                              as we will just return the address of the emitted
@@ -728,7 +756,10 @@ implementation
          lastlabel   : tasmlabel;
          i, diff     : longint;
          neededtyp   : taiconst_type;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       type
         setbytes=array[0..31] of byte;
         Psetbytes=^setbytes;
@@ -737,6 +768,7 @@ implementation
         i: longint;
         tcb: ttai_typedconstbuilder;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
         current_asmdata.getglobaldatalabel(lab);
         result:=lab;
@@ -771,6 +803,8 @@ implementation
                entry^.Data:=emitvarsetconst;
              lab_set := TAsmSymbol(entry^.Data);
 =======
+=======
+>>>>>>> origin/fixes_2_2
         adjustforsetbase;
 
         { small sets are loaded as constants }

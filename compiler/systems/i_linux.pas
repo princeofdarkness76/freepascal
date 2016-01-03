@@ -60,6 +60,7 @@ unit i_linux;
             name         : 'Linux for i386';
             shortname    : 'Linux';
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_needs_symbol_size,tf_pic_uses_got,tf_smartlink_sections{,tf_winlikewidestring},
 {$ifdef segment_threadvars}
                             tf_section_threadvars,
@@ -84,13 +85,18 @@ unit i_linux;
 >>>>>>> origin/cpstrnew
                             tf_safecall_exceptions, tf_safecall_clearstack];
 =======
+=======
+>>>>>>> origin/fixes_2_2
             flags        : [tf_needs_symbol_size,tf_pic_uses_got{,tf_smartlink_sections}{,tf_winlikewidestring},
 {$ifdef segment_threadvars}
                             tf_section_threadvars,
 {$endif segment_threadvars}
                             tf_needs_symbol_type,tf_files_case_sensitive,tf_use_function_relative_addresses,
                             tf_smartlink_library,tf_needs_dwarf_cfi];
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             cpu          : cpu_i386;
             unit_env     : 'LINUXUNITS';
             extradefines : 'UNIX;HASUNIX';
@@ -155,6 +161,7 @@ unit i_linux;
             name         : 'Linux for x64_6432';
             shortname    : 'Linux6432';
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -175,6 +182,9 @@ unit i_linux;
 =======
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,tf_use_function_relative_addresses,tf_pic_uses_got{,tf_smartlink_sections},tf_smartlink_library];
 >>>>>>> graemeg/fixes_2_2
+=======
+            flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,tf_use_function_relative_addresses,tf_pic_uses_got{,tf_smartlink_sections},tf_smartlink_library];
+>>>>>>> origin/fixes_2_2
             cpu          : cpu_x86_64;
             unit_env     : 'LINUXUNITS';
             extradefines : 'UNIX;HASUNIX';
@@ -238,6 +248,7 @@ unit i_linux;
             name         : 'Linux for m68k';
             shortname    : 'Linux';
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -259,6 +270,10 @@ unit i_linux;
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,tf_use_function_relative_addresses,
                             tf_smartlink_library];
 >>>>>>> graemeg/fixes_2_2
+=======
+            flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,tf_use_function_relative_addresses,
+                            tf_smartlink_library];
+>>>>>>> origin/fixes_2_2
             cpu          : cpu_m68k;
             unit_env     : 'LINUXUNITS';
             extradefines : 'UNIX;HASUNIX';
@@ -323,6 +338,7 @@ unit i_linux;
             shortname    : 'Linux';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_needs_symbol_size,tf_smartlink_sections,
                             tf_needs_symbol_type,tf_files_case_sensitive,
                             tf_has_winlike_resources];
@@ -334,6 +350,10 @@ unit i_linux;
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,tf_use_function_relative_addresses,
                             tf_smartlink_library];
 >>>>>>> graemeg/fixes_2_2
+=======
+            flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,tf_use_function_relative_addresses,
+                            tf_smartlink_library];
+>>>>>>> origin/fixes_2_2
             cpu          : cpu_powerpc;
             unit_env     : '';
             extradefines : 'UNIX;HASUNIX';
@@ -397,6 +417,7 @@ unit i_linux;
             name         : 'Linux for PowerPC64';
             shortname    : 'Linux';
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -416,6 +437,10 @@ unit i_linux;
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,tf_use_function_relative_addresses,
                             tf_requires_proper_alignment,tf_smartlink_library];
 >>>>>>> graemeg/fixes_2_2
+=======
+            flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,tf_use_function_relative_addresses,
+                            tf_requires_proper_alignment,tf_smartlink_library];
+>>>>>>> origin/fixes_2_2
             cpu          : cpu_powerpc64;
             unit_env     : '';
             extradefines : 'UNIX;HASUNIX';
@@ -469,12 +494,16 @@ unit i_linux;
             first_parm_offset : 8;
             stacksize    : 10*1024*1024;
 <<<<<<< HEAD
+<<<<<<< HEAD
             stackalign   : 16;
             abi : abi_powerpc_sysv;
             llvmdatalayout : 'E-p:64:64:64-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-f128:64:64-v128:128:128-n32:64';
 =======
             abi : abi_powerpc_sysv
 >>>>>>> graemeg/fixes_2_2
+=======
+            abi : abi_powerpc_sysv
+>>>>>>> origin/fixes_2_2
           );
 
        system_x86_64_linux_info : tsysteminfo =
@@ -482,6 +511,7 @@ unit i_linux;
             system       : system_x86_64_LINUX;
             name         : 'Linux for x86-64';
             shortname    : 'Linux';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             flags        : [tf_smartlink_sections,tf_needs_symbol_size,tf_needs_dwarf_cfi,
@@ -495,6 +525,10 @@ unit i_linux;
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
                             tf_use_function_relative_addresses,tf_smartlink_library];
 >>>>>>> graemeg/fixes_2_2
+=======
+            flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
+                            tf_use_function_relative_addresses,tf_smartlink_library];
+>>>>>>> origin/fixes_2_2
             cpu          : cpu_alpha;
 >>>>>>> graemeg/cpstrnew
             unit_env     : 'LINUXUNITS';
@@ -741,6 +775,7 @@ unit i_linux;
             name         : 'Linux for ARMEL';
             shortname    : 'Linux';
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
                             tf_requires_proper_alignment,
 <<<<<<< HEAD
@@ -764,6 +799,11 @@ unit i_linux;
                             tf_use_function_relative_addresses,tf_requires_proper_alignment];
             cpu          : cpu_SPARC;
 >>>>>>> graemeg/fixes_2_2
+=======
+            flags        : [tf_needs_symbol_size,tf_needs_dwarf_cfi,tf_smartlink_library,
+                            tf_library_needs_pic,tf_needs_symbol_type,tf_files_case_sensitive,tf_use_function_relative_addresses];
+            cpu          : cpu_x86_64;
+>>>>>>> origin/fixes_2_2
             unit_env     : 'LINUXUNITS';
             extradefines : 'UNIX;HASUNIX;CPUARMEL';
             exeext       : '';
@@ -855,9 +895,15 @@ unit i_linux;
             system       : system_arm_Linux;
             name         : 'Linux for ARMEL';
             shortname    : 'Linux';
+<<<<<<< HEAD
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
                             tf_use_function_relative_addresses,tf_requires_proper_alignment,tf_smartlink_sections,tf_smartlink_library];
             cpu          : cpu_arm;
+=======
+            flags        : [tf_needs_symbol_size,tf_library_needs_pic,tf_needs_symbol_type,tf_files_case_sensitive,tf_smartlink_library,
+                            tf_use_function_relative_addresses,tf_requires_proper_alignment];
+            cpu          : cpu_SPARC;
+>>>>>>> origin/fixes_2_2
             unit_env     : 'LINUXUNITS';
             extradefines : 'UNIX;HASUNIX';
 >>>>>>> graemeg/fixes_2_2
@@ -943,14 +989,80 @@ unit i_linux;
             stacksize    : 262144;
             abi : abi_eabi
           );
+<<<<<<< HEAD
 {$else FPC_ARMEL}
 >>>>>>> graemeg/fixes_2_2
+=======
+
+{$ifdef FPC_ARMEL}
+       system_arm_linux_info : tsysteminfo =
+          (
+            system       : system_arm_Linux;
+            name         : 'Linux for ARMEL';
+            shortname    : 'Linux';
+            flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
+                            tf_use_function_relative_addresses,tf_requires_proper_alignment,tf_smartlink_sections,tf_smartlink_library];
+            cpu          : cpu_arm;
+            unit_env     : 'LINUXUNITS';
+            extradefines : 'UNIX;HASUNIX';
+            exeext       : '';
+            defext       : '.def';
+            scriptext    : '.sh';
+            smartext     : '.sl';
+            unitext      : '.ppu';
+            unitlibext   : '.ppl';
+            asmext       : '.s';
+            objext       : '.o';
+            resext       : '.res';
+            resobjext    : '.or';
+            sharedlibext : '.so';
+            staticlibext : '.a';
+            staticlibprefix : 'libp';
+            sharedlibprefix : 'lib';
+            sharedClibext : '.so';
+            staticClibext : '.a';
+            staticClibprefix : 'lib';
+            sharedClibprefix : 'lib';
+            Cprefix      : '';
+            newline      : #10;
+            dirsep       : '/';
+            assem        : as_gas;
+            assemextern  : as_gas;
+            link         : nil;
+            linkextern   : nil;
+            ar           : ar_gnu_ar;
+            res          : res_none;
+            dbg          : dbg_stabs;
+            script       : script_unix;
+            endian       : endian_little;
+            alignment    :
+              (
+                procalign       : 4;
+                loopalign       : 4;
+                jumpalign       : 0;
+                constalignmin   : 0;
+                constalignmax   : 8;
+                varalignmin     : 0;
+                varalignmax     : 8;
+                localalignmin   : 4;
+                localalignmax   : 8;
+                recordalignmin  : 0;
+                recordalignmax  : 8;
+                maxCrecordalign : 8
+              );
+            first_parm_offset : 8;
+            stacksize    : 262144;
+            abi : abi_eabi
+          );
+{$else FPC_ARMEL}
+>>>>>>> origin/fixes_2_2
        system_arm_linux_info : tsysteminfo =
           (
             system       : system_arm_Linux;
             name         : 'Linux for ARM';
             shortname    : 'Linux';
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
+<<<<<<< HEAD
 <<<<<<< HEAD
                             tf_requires_proper_alignment,
 <<<<<<< HEAD
@@ -970,6 +1082,9 @@ unit i_linux;
 =======
                             tf_use_function_relative_addresses,tf_requires_proper_alignment,tf_smartlink_sections,tf_smartlink_library];
 >>>>>>> graemeg/fixes_2_2
+=======
+                            tf_use_function_relative_addresses,tf_requires_proper_alignment,tf_smartlink_sections,tf_smartlink_library];
+>>>>>>> origin/fixes_2_2
             cpu          : cpu_arm;
             unit_env     : 'LINUXUNITS';
             extradefines : 'UNIX;HASUNIX';
@@ -1027,12 +1142,16 @@ unit i_linux;
             llvmdatalayout: 'e-p:32:32:32-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:32:64-f32:32:32-f64:32:64-v64:32:64-v128:32:128-a0:0:32-n32-S32';
           );
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif FPC_ARMEB}
 {$endif FPC_ARMEL}
 {$endif FPC_ARMHF}
 =======
 {$endif FPC_ARMEL}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$endif FPC_ARMEL}
+>>>>>>> origin/fixes_2_2
 
 <<<<<<< HEAD
 <<<<<<< HEAD

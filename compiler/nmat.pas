@@ -128,15 +128,20 @@ implementation
                 exit;
               end;
 <<<<<<< HEAD
+<<<<<<< HEAD
             if rv = 0 then
 =======
             if tordconstnode(right).value = 0 then
 >>>>>>> graemeg/fixes_2_2
+=======
+            if tordconstnode(right).value = 0 then
+>>>>>>> origin/fixes_2_2
               begin
                 Message(parser_e_division_by_zero);
                 { recover }
                 tordconstnode(right).value := 1;
               end;
+<<<<<<< HEAD
 <<<<<<< HEAD
             { the following simplification is also required for correctness
               on x86, as its transformation of divisions by constants to
@@ -157,6 +162,8 @@ implementation
                end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           end;
 
         if is_constintnode(right) and is_constintnode(left) then
@@ -231,12 +238,15 @@ implementation
         hp,t : tnode;
         rd,ld : torddef;
 <<<<<<< HEAD
+<<<<<<< HEAD
         else_statements,
         statements : tstatementnode;
         result_data : ttempcreatenode;
         nd : torddef;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
          result:=nil;
          typecheckpass(left);
@@ -312,6 +322,7 @@ implementation
          { always in a way that a smaller type is converted to a bigger type              }
          { (webtbs/tw8870)                                                                }
 <<<<<<< HEAD
+<<<<<<< HEAD
          if (rd.ordtype in [u8bit,u16bit,u32bit,u64bit]) and
             ((is_constintnode(left) and
               (tordconstnode(left).value >= 0) and
@@ -321,6 +332,11 @@ implementation
             ((is_constintnode(left) and
               (tordconstnode(left).value >= 0)) or
 >>>>>>> graemeg/fixes_2_2
+=======
+         if (rd.ordtype in [u32bit,u64bit]) and
+            ((is_constintnode(left) and
+              (tordconstnode(left).value >= 0)) or
+>>>>>>> origin/fixes_2_2
              (not is_signed(ld) and
               (rd.size >= ld.size))) then
            begin
@@ -336,7 +352,10 @@ implementation
          if (ld.ordtype in [u32bit,u64bit]) and
             ((is_constintnode(right) and
               (tordconstnode(right).value >= 0)) or
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
              (not is_signed(rd) and
               (ld.size >= rd.size))) then
           begin
@@ -835,6 +854,7 @@ implementation
              { keep singness of orignal type }
              if is_signed(left.resultdef) then
 <<<<<<< HEAD
+<<<<<<< HEAD
                begin
 {$if defined(cpu64bitalu) or defined(cpu32bitalu)}
                  inserttypeconv(left,s32inttype)
@@ -859,6 +879,11 @@ implementation
              else
                inserttypeconv(left,u32inttype);
 >>>>>>> graemeg/fixes_2_2
+=======
+               inserttypeconv(left,s32inttype)
+             else
+               inserttypeconv(left,u32inttype);
+>>>>>>> origin/fixes_2_2
            end;
 
          inserttypeconv(right,sinttype);
@@ -1004,6 +1029,7 @@ implementation
          else if is_oversizedord(left.resultdef) then
            begin
 <<<<<<< HEAD
+<<<<<<< HEAD
              if is_64bit(left.resultdef) then
                inserttypeconv(left,s64inttype)
              else if is_32bit(left.resultdef) then
@@ -1017,6 +1043,10 @@ implementation
              inserttypeconv(left,s64inttype);
              resultdef:=left.resultdef
 >>>>>>> graemeg/fixes_2_2
+=======
+             inserttypeconv(left,s64inttype);
+             resultdef:=left.resultdef
+>>>>>>> origin/fixes_2_2
            end
          else if (left.resultdef.typ=orddef) then
            begin
@@ -1077,7 +1107,10 @@ implementation
                 result:=ctypeconvnode.create_internal(ccallnode.createintern(procname,ccallparanode.create(
                   ctypeconvnode.create_internal(left,fDef),
                   ccallparanode.create(ctypeconvnode.create_internal(crealconstnode.create(0,resultdef),fdef),nil))),resultdef);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               end
             else
               begin
@@ -1335,6 +1368,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              { not-nodes are not range checked by the code generator -> also
                don't range check while inlining; the resultdef is a bit tricky
                though: the node's resultdef gets changed in most cases compared
@@ -1374,6 +1408,9 @@ implementation
 =======
              t:=cordconstnode.create(v,def,false);
 >>>>>>> graemeg/fixes_2_2
+=======
+             t:=cordconstnode.create(v,def,false);
+>>>>>>> origin/fixes_2_2
              result:=t;
              exit;
           end;

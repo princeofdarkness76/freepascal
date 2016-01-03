@@ -50,9 +50,13 @@ function get_got : pointer;assembler;nostackframe;[public, alias: 'FPC_GETGOT'];
 Procedure SysInitFPU;{$ifdef SYSTEMINLINE}inline;{$endif}
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     softfloat_exception_mask:=float_flag_underflow or float_flag_inexact or float_flag_denormal;
 >>>>>>> graemeg/fixes_2_2
+=======
+    softfloat_exception_mask:=float_flag_underflow or float_flag_inexact or float_flag_denormal;
+>>>>>>> origin/fixes_2_2
     { enable div by 0 and invalid operation fpu exceptions
       round towards zero; ieee compliant arithmetics }
     set_fsr((get_fsr and $3fbfffff) or $09000000);
@@ -71,6 +75,7 @@ procedure fpc_cpuinit;
     if not(IsLibrary) then
       SysInitFPU;
   end;
+<<<<<<< HEAD
 
 {$define FPC_SYSTEM_HAS_SYSRESETFPU}
 Procedure SysResetFPU;{$ifdef SYSTEMINLINE}inline;{$endif}
@@ -84,6 +89,8 @@ procedure fpc_cpuinit;
     if not(IsLibrary) then
       SysInitFPU;
   end;
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {$define FPC_SYSTEM_HAS_GET_FRAME}
@@ -687,6 +694,7 @@ const
   Sync       = $40;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if not(defined(SPARCV7)) and not(defined(SPARCV8))}
 {$define CPUSPARC_HAS_MEMBAR}
 {$endif}
@@ -699,6 +707,11 @@ procedure ReadBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif
 asm
 {$ifdef FPC_HAS_MEMBAR}
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure ReadBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
+asm
+{$ifdef FPC_HAS_MEMBAR}
+>>>>>>> origin/fixes_2_2
   ba,pt .L1
   membar LoadLoad
 .L1:
@@ -713,10 +726,14 @@ end;
 procedure ReadWriteBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
 asm
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPUSPARC_HAS_MEMBAR}
 =======
 {$ifdef FPC_HAS_MEMBAR}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifdef FPC_HAS_MEMBAR}
+>>>>>>> origin/fixes_2_2
   ba,pt .L1
   membar LoadLoad + LoadStore + StoreLoad + StoreStore
 .L1:
@@ -726,10 +743,14 @@ end;
 procedure WriteBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
 asm
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPUSPARC_HAS_MEMBAR}
 =======
 {$ifdef FPC_HAS_MEMBAR}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifdef FPC_HAS_MEMBAR}
+>>>>>>> origin/fixes_2_2
   ba,pt .L1
   stbar
 .L1:
@@ -737,6 +758,7 @@ asm
 end;
 
 {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {$ifndef FPC_SYSTEM_HAS_SAR_QWORD}
@@ -765,3 +787,5 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

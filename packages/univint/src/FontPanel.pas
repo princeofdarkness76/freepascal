@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    CommonPanels-94~602
 =======
      Version:    CommonPanels-91~177
@@ -67,6 +68,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
      Version:    CommonPanels-73~983
  
      Copyright:  © 2002-2005 by Apple Computer, Inc., all rights reserved
@@ -81,7 +84,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -91,12 +97,17 @@
 unit FontPanel;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -110,14 +121,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -126,11 +142,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -168,6 +187,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -175,6 +196,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -391,6 +413,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -399,7 +423,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -426,9 +453,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -439,6 +470,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes, AEDataModel, AERegistry, ATSTypes, CarbonEventsCore, CFArray, CFBase, CFDictionary, QuickdrawTypes,CGBase;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -447,6 +479,9 @@ uses MacTypes, AEDataModel, AERegistry, ATSTypes, CarbonEventsCore, CFArray, CFB
 =======
 uses MacTypes, AEDataModel, AERegistry, ATSTypes, CarbonEventsCore, CFArray, CFBase, CFDictionary, Quickdraw;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes, AEDataModel, AERegistry, ATSTypes, CarbonEventsCore, CFArray, CFBase, CFDictionary, Quickdraw;
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
 
@@ -495,16 +530,22 @@ const
  *    item in the Font Panel, the system will send a
  *    kEventFontSelection event to the event target specified when the
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    application called SetFontInfoForSelection(). kEventFontSelection
  *    will contain parameters reflecting the current Font Panel
  *    selection in all supported formats. Font events are available
  *    after Mac OS X 10.2 in the Carbon framework.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    application called SetFontPanelInfo(). kEventFontSelection will
  *    contain parameters reflecting the current Font Panel selection in
  *    all supported formats. Font events are available after Mac OS X
  *    10.2 in the Carbon framework.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  }
 const
 {
@@ -536,6 +577,7 @@ const
         -->     kEventParamFMFontSize               typeFMFontSize
         -->     kEventParamFontColor                typeFontColor
 <<<<<<< HEAD
+<<<<<<< HEAD
         -->     kEventParamDictionary               typeCFDictionaryRef 
         -->     kEventParamViewAttributesDictionary typeCFDictionaryRef
                 A dictionary containing attributes that can be applied to an entire text view.  An example of this is the background color to 
@@ -548,6 +590,11 @@ const
 }
 const
 >>>>>>> graemeg/fixes_2_2
+=======
+        -->     kEventParamDictionary               typeCFDictionary 
+}
+const
+>>>>>>> origin/fixes_2_2
 	typeATSUFontID = typeUInt32; { ATSUI font ID.}
 	typeATSUSize = typeFixed; { ATSUI font size.}
 	typeFMFontFamily = typeSInt16; { Font family reference.}
@@ -555,9 +602,12 @@ const
 	typeFMFontSize = typeSInt16; { Integer font size.}
 	typeFontColor = typeRGBColor; { Font color spec (optional).}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kEventParamCTFontDescriptor = FourCharCode('ctfd'); { typeCTFontDescriptorRef}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kEventParamATSUFontID = FourCharCode('auid'); { typeATSUFontID}
 	kEventParamATSUFontSize = FourCharCode('ausz'); { typeATSUSize}
 	kEventParamFMFontFamily = FourCharCode('fmfm'); { typeFMFontFamily}
@@ -566,17 +616,23 @@ const
 	kEventParamFontColor = FourCharCode('fclr'); { typeFontColor}
 	kEventParamDictionary = FourCharCode('dict'); {    typeCFDictionaryRef}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kEventParamViewAttributesDictionary = FourCharCode('dadc'); {    typeCFDictionaryRef}
 
 {~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Key constants to be used to access data inside the dictionary that may
     be contained in the kEventFontSelection dictionary. (kEventParamDictionary)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Key constants to be used to access data inside the dictionary that may
     be contained in the kEventFontSelection dictionary.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}
 {
  *  kFontPanelATSUFontIDKey
@@ -709,6 +765,7 @@ var kFontPanelAttributeValuesKey: CFStringRef; external name '_kFontPanelAttribu
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 {Value is a CFDataRef containing one or more style values}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Keys to access to access the optional mouse tracking state if the font attribute/feature control is tracking
 An application can look for this optional value to aid in supporting undo/redo for a font attribute/feature that is represented by
@@ -747,6 +804,8 @@ var kFontPanelBackgroundColorAttributeName: CFStringRef; external name '_kFontPa
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Other Font Panel Constants
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}
@@ -760,10 +819,14 @@ const
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 Type of font information passed in SetFontInfoForSelection(). If the client is
 =======
 Type of font information passed in SetFontPanelInfo(). If the client is
 >>>>>>> graemeg/fixes_2_2
+=======
+Type of font information passed in SetFontPanelInfo(). If the client is
+>>>>>>> origin/fixes_2_2
 sending ATSUI style data, it specifies kFontSelectionATSUIType; if it is
 sending Quickdraw style data, it specifies kFontSelectionQDType.
 }
@@ -771,9 +834,12 @@ const
 	kFontSelectionATSUIType = FourCharCode('astl'); { Use ATSUIStyle collection.}
 	kFontSelectionQDType = FourCharCode('qstl'); { Use FontSelectionQDStyle record.}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kFontSelectionCoreTextType = FourCharCode('ctfd'); { Use CTFontDescriptorRef.}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
 Supported versions of the FontSelectionQDStyle record. Clients should always set
@@ -790,10 +856,14 @@ const
 Record specifying the font information to be specified in the Font
 Panel. This record is used if the client is sending Quickdraw style data
 <<<<<<< HEAD
+<<<<<<< HEAD
 (i.e., it specified kFontSelectionQDType in SetFontInfoForSelection()).
 =======
 (i.e., it specified kFontSelectionQDType in SetFontPanelInfo()).
 >>>>>>> graemeg/fixes_2_2
+=======
+(i.e., it specified kFontSelectionQDType in SetFontPanelInfo()).
+>>>>>>> origin/fixes_2_2
 }
 type
 	FontSelectionQDStyle = record
@@ -802,10 +872,14 @@ type
 		size: FMFontSize;                   { Size of font in points.}
 		hasColor: Boolean;               { true if color info supplied.}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		reserved: UInt8;               { Filler byte.}
 =======
 		reserved: SInt8;               { Filler byte.}
 >>>>>>> graemeg/fixes_2_2
+=======
+		reserved: SInt8;               { Filler byte.}
+>>>>>>> origin/fixes_2_2
 		color: RGBColor;                  { Color specification for font.}
 	end;
 	FontSelectionQDStylePtr = ^FontSelectionQDStyle;
@@ -845,10 +919,14 @@ function FPShowHideFontPanel: OSStatus; external name '_FPShowHideFontPanel';
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SetFontInfoForSelection( iStyleType: OSType; iNumStyles: UInt32; iStyles: UnivPtr; iFPEventTarget: EventTargetRef ): OSStatus; external name '_SetFontInfoForSelection';
 =======
 function SetFontInfoForSelection( iStyleType: OSType; iNumStyles: UInt32; iStyles: {variable-size-array} UnivPtr; iFPEventTarget: EventTargetRef ): OSStatus; external name '_SetFontInfoForSelection';
 >>>>>>> graemeg/fixes_2_2
+=======
+function SetFontInfoForSelection( iStyleType: OSType; iNumStyles: UInt32; iStyles: {variable-size-array} UnivPtr; iFPEventTarget: EventTargetRef ): OSStatus; external name '_SetFontInfoForSelection';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
@@ -865,6 +943,7 @@ function SetFontInfoForSelection( iStyleType: OSType; iNumStyles: UInt32; iStyle
     Font Collection Types
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -887,6 +966,9 @@ type
 =======
 	FCFontDescriptorRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	FCFontDescriptorRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 {
  *  FCCopyCollectionNames()
  *  
@@ -1183,6 +1265,7 @@ function FCFontDescriptorCreateWithFontAttributes( iAttributes: CFDictionaryRef 
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function FCFontDescriptorCreateWithName( iFontName: CFStringRef; iSize: CGFloat ): FCFontDescriptorRef; external name '_FCFontDescriptorCreateWithName';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
@@ -1194,6 +1277,8 @@ function FCFontDescriptorCreateWithName( iFontName: CFStringRef; iSize: CGFloat 
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function FCFontDescriptorCreateWithName( iFontName: CFStringRef; iSize: Float32 ): FCFontDescriptorRef; external name '_FCFontDescriptorCreateWithName';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
@@ -1201,4 +1286,7 @@ function FCFontDescriptorCreateWithName( iFontName: CFStringRef; iSize: Float32 
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

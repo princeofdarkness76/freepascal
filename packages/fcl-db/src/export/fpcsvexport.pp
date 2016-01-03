@@ -6,10 +6,14 @@ interface
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, fpDBExport, csvreadwrite;
 =======
   Classes, SysUtils, DB, fpDBExport;
 >>>>>>> graemeg/fixes_2_2
+=======
+  Classes, SysUtils, DB, fpDBExport;
+>>>>>>> origin/fixes_2_2
 
 Type
   { TCSVFormatSettings }
@@ -18,6 +22,7 @@ Type
   Private
     FDelimiter: String;
     FHeaderRow: Boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
     FIgnoreOuterWhiteSpace: Boolean;
     FRowDelimiter: String;
@@ -40,6 +45,8 @@ Type
     // If fields need to be surrounded by quotes, use this character (e.g. ")
     Property QuoteChar : Char Read FQuoteChar Write FQuoteChar;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FQuoteStrings: TQuoteStrings;
     FRowDelimiter: String;
     FStringQuoteChar: String;
@@ -53,13 +60,17 @@ Type
     Property HeaderRow : Boolean Read FHeaderRow Write FHeaderRow default true;
     Property QuoteStrings : TQuoteStrings Read FQuoteStrings Write FQuoteStrings;
     Property StringQuoteChar : String Read FStringQuoteChar Write FStringQuoteChar;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   { TCustomCSVExporter }
 
   TCustomCSVExporter = Class(TCustomFileExporter)
   private
+<<<<<<< HEAD
 <<<<<<< HEAD
     FCSVOut: TCSVBuilder;
     function GetCSVFormatsettings: TCSVFormatSettings;
@@ -68,6 +79,11 @@ Type
     function GetCSVFormatsettings: TCSVFormatSettings;
     procedure OutputRow(const ARow: String);
 >>>>>>> graemeg/fixes_2_2
+=======
+    FCurrentRow:String;
+    function GetCSVFormatsettings: TCSVFormatSettings;
+    procedure OutputRow(const ARow: String);
+>>>>>>> origin/fixes_2_2
     procedure SetCSVFormatSettings(const AValue: TCSVFormatSettings);
   Protected
     Function CreateFormatSettings : TCustomExportFormatSettings; override;
@@ -75,9 +91,13 @@ Type
     Procedure DoAfterExecute; override;
     Procedure DoDataHeader; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     Procedure DoDataRowStart; override;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Procedure DoDataRowStart; override;
+>>>>>>> origin/fixes_2_2
     Procedure ExportField(EF : TExportFieldItem); override;
     Procedure DoDataRowEnd; override;
   Public
@@ -118,6 +138,7 @@ procedure TCustomCSVExporter.DoBeforeExecute;
 begin
   inherited DoBeforeExecute;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FCSVOut:=TCSVBuilder.Create;
   if (FormatSettings.FieldDelimiter<>'') then
     FCSVOut.Delimiter:=FormatSettings.FieldDelimiter[1];
@@ -129,20 +150,29 @@ begin
 =======
   OpenTextFile;
 >>>>>>> graemeg/fixes_2_2
+=======
+  OpenTextFile;
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TCustomCSVExporter.DoAfterExecute;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FCSVOut.Free;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   CloseTextFile;
   inherited DoAfterExecute;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TCustomCSVExporter.OutputRow(Const ARow : String);
 
 Var
@@ -155,7 +185,10 @@ begin
   else
     Write(TextFile,ARow,RD)
 end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 function TCustomCSVExporter.GetCSVFormatsettings: TCSVFormatSettings;
 begin
@@ -178,14 +211,19 @@ procedure TCustomCSVExporter.DoDataHeader;
 
 Var
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   S : String;
 >>>>>>> graemeg/fixes_2_2
+=======
+  S : String;
+>>>>>>> origin/fixes_2_2
   I : Integer;
 
 begin
   If FormatSettings.HeaderRow then
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
     For I:=0 to ExportFields.Count-1 do
       begin
@@ -193,6 +231,8 @@ begin
       end;
     FCSVOut.AppendRow; //close off with line ending
 =======
+=======
+>>>>>>> origin/fixes_2_2
     S:='';
     For I:=0 to ExportFields.Count-1 do
       begin
@@ -201,12 +241,16 @@ begin
       S:=S+ExportFields[i].ExportedName;
       end;
     OutputRow(S);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   inherited DoDataHeader;
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCustomCSVExporter.ExportField(EF: TExportFieldItem);
 begin
@@ -217,6 +261,8 @@ procedure TCustomCSVExporter.DoDataRowEnd;
 begin
   FCSVOut.AppendRow; //Line ending
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TCustomCSVExporter.DoDataRowStart;
 begin
   FCurrentRow:='';
@@ -269,7 +315,10 @@ procedure TCustomCSVExporter.DoDataRowEnd;
 begin
   OutputRow(FCurrentRow);
   FCurrentRow:='';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 constructor TCustomCSVExporter.Create(Aowner: TComponent);
@@ -282,6 +331,7 @@ end;
 constructor TCSVFormatSettings.Create(DoInitSettings: Boolean);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   // These defaults are meant to be Excel CSV compatible
   inherited Create(DoInitSettings);
   FHeaderRow:=True;
@@ -289,11 +339,16 @@ begin
   FQuoteChar:='"';
   FRowDelimiter:=LineEnding;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   inherited Create(DoInitSettings);
   FHeaderRow:=True;
   FDelimiter:=',';
   FStringQuoteChar:='"';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TCSVFormatSettings.Assign(Source: TPersistent);
@@ -307,15 +362,21 @@ begin
     FS:=Source as TCSVFormatSettings;
     FDelimiter:=FS.FDelimiter;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FHeaderRow:=FS.FHeaderRow;
     FRowDelimiter:=FS.FRowDelimiter;
     FQuoteChar:=FS.FQuoteChar;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FHeaderRow:=FS.FHEaderRow;
     FQuoteStrings:=FS.FQuoteStrings;
     FRowDelimiter:=FS.FRowDelimiter;
     FStringQuoteChar:=FS.FStringQuoteChar;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   inherited Assign(Source);
 end;
@@ -330,14 +391,21 @@ Procedure UnRegisterCSVExportFormat;
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   ExportFormats.UnRegisterExportFormat(SCSVExport);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
 end.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2

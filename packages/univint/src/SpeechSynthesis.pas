@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       SpeechSynthesis/SpeechSynthesis.h
  
      Contains:   Speech Interfaces.
@@ -24,6 +25,8 @@
  
      Copyright:  © 1989-2008 by Apple Computer, Inc., all rights reserved.
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       SpeechSynthesis.p
  
      Contains:   Speech Interfaces.
@@ -32,11 +35,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1989-2002 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -67,6 +74,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -78,7 +87,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -88,12 +100,17 @@
 unit SpeechSynthesis;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -107,14 +124,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -123,11 +145,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -165,6 +190,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -172,6 +199,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -388,11 +416,14 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 {$elsec}
+<<<<<<< HEAD
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
@@ -3729,6 +3760,129 @@ function SetSpeechPitch( chan: SpeechChannel; pitch: Fixed ): OSErr; external na
 
 
 =======
+=======
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+
+{$ifc defined FPC_BIG_ENDIAN}
+	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
+	{$setc TARGET_RT_LITTLE_ENDIAN := FALSE}
+{$elifc defined FPC_LITTLE_ENDIAN}
+	{$setc TARGET_RT_BIG_ENDIAN := FALSE}
+	{$setc TARGET_RT_LITTLE_ENDIAN := TRUE}
+{$elsec}
+	{$error Neither FPC_BIG_ENDIAN nor FPC_LITTLE_ENDIAN are defined.}
+{$endc}
+{$setc ACCESSOR_CALLS_ARE_FUNCTIONS := TRUE}
+{$setc CALL_NOT_IN_CARBON := FALSE}
+{$setc OLDROUTINENAMES := FALSE}
+{$setc OPAQUE_TOOLBOX_STRUCTS := TRUE}
+{$setc OPAQUE_UPP_TYPES := TRUE}
+{$setc OTCARBONAPPLICATION := TRUE}
+{$setc OTKERNEL := FALSE}
+{$setc PM_USE_SESSION_APIS := TRUE}
+{$setc TARGET_API_MAC_CARBON := TRUE}
+{$setc TARGET_API_MAC_OS8 := FALSE}
+{$setc TARGET_API_MAC_OSX := TRUE}
+{$setc TARGET_CARBON := TRUE}
+{$setc TARGET_CPU_68K := FALSE}
+{$setc TARGET_CPU_MIPS := FALSE}
+{$setc TARGET_CPU_SPARC := FALSE}
+{$setc TARGET_OS_MAC := TRUE}
+{$setc TARGET_OS_UNIX := FALSE}
+{$setc TARGET_OS_WIN32 := FALSE}
+{$setc TARGET_RT_MAC_68881 := FALSE}
+{$setc TARGET_RT_MAC_CFM := FALSE}
+{$setc TARGET_RT_MAC_MACHO := TRUE}
+{$setc TYPED_FUNCTION_POINTERS := TRUE}
+{$setc TYPE_BOOL := FALSE}
+{$setc TYPE_EXTENDED := FALSE}
+{$setc TYPE_LONGLONG := TRUE}
+uses MacTypes,MixedMode,Files;
+
+{$ALIGN MAC68K}
+
+
+const
+	kTextToSpeechSynthType		= FourCharCode('ttsc');
+	kTextToSpeechVoiceType		= FourCharCode('ttvd');
+	kTextToSpeechVoiceFileType	= FourCharCode('ttvf');
+	kTextToSpeechVoiceBundleType = FourCharCode('ttvb');
+
+	kNoEndingProsody			= 1;
+	kNoSpeechInterrupt			= 2;
+	kPreflightThenPause			= 4;
+
+	kImmediate					= 0;
+	kEndOfWord					= 1;
+	kEndOfSentence				= 2;
+
+
+	{	------------------------------------------	}
+	{	 GetSpeechInfo & SetSpeechInfo selectors  	}
+	{	------------------------------------------	}
+	soStatus					= FourCharCode('stat');
+	soErrors					= FourCharCode('erro');
+	soInputMode					= FourCharCode('inpt');
+	soCharacterMode				= FourCharCode('char');
+	soNumberMode				= FourCharCode('nmbr');
+	soRate						= FourCharCode('rate');
+	soPitchBase					= FourCharCode('pbas');
+	soPitchMod					= FourCharCode('pmod');
+	soVolume					= FourCharCode('volm');
+	soSynthType					= FourCharCode('vers');
+	soRecentSync				= FourCharCode('sync');
+	soPhonemeSymbols			= FourCharCode('phsy');
+	soCurrentVoice				= FourCharCode('cvox');
+	soCommandDelimiter			= FourCharCode('dlim');
+	soReset						= FourCharCode('rset');
+	soCurrentA5					= FourCharCode('myA5');
+	soRefCon					= FourCharCode('refc');
+	soTextDoneCallBack			= FourCharCode('tdcb');						{  use with SpeechTextDoneProcPtr }
+	soSpeechDoneCallBack		= FourCharCode('sdcb');						{  use with SpeechDoneProcPtr }
+	soSyncCallBack				= FourCharCode('sycb');						{  use with SpeechSyncProcPtr }
+	soErrorCallBack				= FourCharCode('ercb');						{  use with SpeechErrorProcPtr }
+	soPhonemeCallBack			= FourCharCode('phcb');						{  use with SpeechPhonemeProcPtr }
+	soWordCallBack				= FourCharCode('wdcb');
+	soSynthExtension			= FourCharCode('xtnd');
+	soSoundOutput				= FourCharCode('sndo');
+
+
+	{	------------------------------------------	}
+	{	 Speaking Mode Constants                  	}
+	{	------------------------------------------	}
+	modeText					= FourCharCode('TEXT');						{  input mode constants              }
+	modePhonemes				= FourCharCode('PHON');
+	modeNormal					= FourCharCode('NORM');						{  character mode and number mode constants  }
+	modeLiteral					= FourCharCode('LTRL');
+
+
+	soVoiceDescription			= FourCharCode('info');
+	soVoiceFile					= FourCharCode('fref');
+
+
+type
+	SpeechChannel    = ^SInt32; { an opaque 32-bit type }
+	SpeechChannelPtr = ^SpeechChannel;  { when a var xx:SpeechChannel parameter can be nil, it is changed to xx: SpeechChannelPtr }
+
+	VoiceSpecPtr = ^VoiceSpec;
+	VoiceSpec = record
+		creator:				OSType;
+		id:						OSType;
+	end;
+
+
+const
+	kNeuter						= 0;
+	kMale						= 1;
+	kFemale						= 2;
+
+
+type
+	VoiceDescriptionPtr = ^VoiceDescription;
+	VoiceDescription = record
+>>>>>>> origin/fixes_2_2
 		length:					SInt32;
 		voice:					VoiceSpec;
 		version:				SInt32;
@@ -4224,11 +4378,15 @@ function GetSpeechRate(chan: SpeechChannel; var rate: Fixed): OSErr; external na
  *    Mac OS X:         in version 10.0 and later
  }
 function SetSpeechPitch(chan: SpeechChannel; pitch: Fixed): OSErr; external name '_SetSpeechPitch';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  GetSpeechPitch()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -4301,6 +4459,8 @@ function SetSpeechInfo( chan: SpeechChannel; selector: OSType; speechInfo: {cons
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -4315,11 +4475,15 @@ function GetSpeechPitch(chan: SpeechChannel; var pitch: Fixed): OSErr; external 
  *    Mac OS X:         in version 10.0 and later
  }
 function SetSpeechInfo(chan: SpeechChannel; selector: OSType; speechInfo: UnivPtr): OSErr; external name '_SetSpeechInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  GetSpeechInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 <<<<<<< HEAD
@@ -4362,16 +4526,22 @@ function GetSpeechInfo( chan: SpeechChannel; selector: OSType; speechInfo: UnivP
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function GetSpeechInfo(chan: SpeechChannel; selector: OSType; speechInfo: UnivPtr): OSErr; external name '_GetSpeechInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  TextToPhonemes()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 <<<<<<< HEAD
@@ -4414,16 +4584,22 @@ function TextToPhonemes( chan: SpeechChannel; textBuf: {const} UnivPtr; textByte
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function TextToPhonemes(chan: SpeechChannel; textBuf: UnivPtr; textBytes: UInt32; phonemeBuf: Handle; var phonemeBytes: SInt32): OSErr; external name '_TextToPhonemes';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  UseDictionary()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 <<<<<<< HEAD
@@ -4556,6 +4732,8 @@ function SpeechSynthesisUnregisterModuleURL( url: CFURLRef ): OSErr; external na
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SpeechLib 1.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -4565,4 +4743,7 @@ function UseDictionary(chan: SpeechChannel; dictionary: Handle): OSErr; external
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

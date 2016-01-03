@@ -125,7 +125,10 @@ implementation
                 sym:=search_struct_member(classh,'CREATE');
 =======
                 sym:=search_class_member(classh,'CREATE');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 p2 := cloadvmtaddrnode.create(ctypenode.create(p.resultdef));
               end
             else

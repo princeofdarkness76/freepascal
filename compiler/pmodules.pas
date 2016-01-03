@@ -165,10 +165,13 @@ implementation
            ) then
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
             current_asmdata.asmlists[al_dwarf_frame].Free;
             current_asmdata.asmlists[al_dwarf_frame] := TAsmList.create;
             current_asmdata.asmcfi.generate_code(current_asmdata.asmlists[al_dwarf_frame]);
 =======
+=======
+>>>>>>> origin/fixes_2_2
             current_asmdata.asmlists[al_dwarf].Free;
             current_asmdata.asmlists[al_dwarf] := TAsmList.create;
             current_asmdata.asmcfi.generate_code(current_asmdata.asmlists[al_dwarf]);
@@ -646,6 +649,7 @@ implementation
           begin
             { stacksize can be specified and is now simulated }
 <<<<<<< HEAD
+<<<<<<< HEAD
             new_section(current_asmdata.asmlists[al_globals],sec_data,'__stklen', sizeof(pint));
             current_asmdata.asmlists[al_globals].concat(Tai_symbol.Createname_global('__stklen',AT_DATA,sizeof(pint)));
             current_asmdata.asmlists[al_globals].concat(Tai_const.Create_pint(stacksize));
@@ -654,6 +658,11 @@ implementation
             current_asmdata.asmlists[al_globals].concat(Tai_symbol.Createname_global('__stklen',AT_DATA,sizeof(aint)));
             current_asmdata.asmlists[al_globals].concat(Tai_const.Create_aint(stacksize));
 >>>>>>> graemeg/fixes_2_2
+=======
+            new_section(current_asmdata.asmlists[al_globals],sec_data,'__stklen', sizeof(aint));
+            current_asmdata.asmlists[al_globals].concat(Tai_symbol.Createname_global('__stklen',AT_DATA,sizeof(aint)));
+            current_asmdata.asmlists[al_globals].concat(Tai_const.Create_aint(stacksize));
+>>>>>>> origin/fixes_2_2
           end;
 {$IFDEF POWERPC}
         { AmigaOS4 "stack cookie" support }
@@ -728,6 +737,7 @@ implementation
         Message(parser_w_implicit_uses_of_variants_unit);
         AddUnit('variants');
 <<<<<<< HEAD
+<<<<<<< HEAD
       end;
 
 
@@ -782,6 +792,8 @@ implementation
         MaybeRemoveResUnit:=resources_used;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -859,6 +871,7 @@ implementation
         if m_objpas in current_settings.modeswitches then
           AddUnit('objpas');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         { Macpas unit? }
         if m_mac in current_settings.modeswitches then
@@ -910,6 +923,11 @@ implementation
         if m_mac in current_settings.modeswitches then
           AddUnit('macpas');
 >>>>>>> graemeg/fixes_2_2
+=======
+        { Macpas unit? }
+        if m_mac in current_settings.modeswitches then
+          AddUnit('macpas');
+>>>>>>> origin/fixes_2_2
         { Profile unit? Needed for go32v2 only }
         if (cs_profile in current_settings.moduleswitches) and
            (target_info.system in [system_i386_go32v2,system_i386_watcom]) then
@@ -2855,10 +2873,14 @@ type
          { Internal linker does not have this problem.            }
          if RelocSection and
 <<<<<<< HEAD
+<<<<<<< HEAD
             (target_info.system in systems_all_windows+[system_i386_wdosx]) and
 =======
             (target_info.system in system_all_windows+[system_i386_wdosx]) and
 >>>>>>> graemeg/fixes_2_2
+=======
+            (target_info.system in system_all_windows+[system_i386_wdosx]) and
+>>>>>>> origin/fixes_2_2
             (cs_link_extern in current_settings.globalswitches) then
            begin
               include(current_settings.globalswitches,cs_link_strip);
@@ -3082,19 +3104,27 @@ type
             main_procinfo:=create_main_proc(make_mangledname('',current_module.localsymtable,mainaliasname),potype_proginit,current_module.localsymtable);
             { Win32 startup code needs a single name }
 <<<<<<< HEAD
+<<<<<<< HEAD
             if not(target_info.system in (systems_darwin+systems_aix)) then
 =======
             if not(target_info.system in systems_darwin) then
 >>>>>>> graemeg/fixes_2_2
+=======
+            if not(target_info.system in systems_darwin) then
+>>>>>>> origin/fixes_2_2
               main_procinfo.procdef.aliasnames.insert('PASCALMAIN')
             else
               main_procinfo.procdef.aliasnames.insert(target_info.Cprefix+'PASCALMAIN')
           end
 <<<<<<< HEAD
+<<<<<<< HEAD
          else if (target_info.system in ([system_i386_netware,system_i386_netwlibc,system_powerpc_macos]+systems_darwin+systems_aix)) then
 =======
          else if (target_info.system in ([system_i386_netware,system_i386_netwlibc,system_powerpc_macos]+systems_darwin)) then
 >>>>>>> graemeg/fixes_2_2
+=======
+         else if (target_info.system in ([system_i386_netware,system_i386_netwlibc,system_powerpc_macos]+systems_darwin)) then
+>>>>>>> origin/fixes_2_2
            begin
              { create a stub with the name of the desired main routine, with
                the same signature as the C "main" function, and call through to
@@ -3393,6 +3423,7 @@ type
            the default do_extractsymbolinfo
            which is a dummy function PM }
 <<<<<<< HEAD
+<<<<<<< HEAD
          needsymbolinfo:=
            (do_extractsymbolinfo<>@def_extractsymbolinfo) or
            ((current_settings.genwpoptimizerswitches*WPOptimizationsNeedingAllUnitInfo)<>[]);
@@ -3400,6 +3431,9 @@ type
 =======
          needsymbolinfo:=do_extractsymbolinfo<>@def_extractsymbolinfo;
 >>>>>>> graemeg/fixes_2_2
+=======
+         needsymbolinfo:=do_extractsymbolinfo<>@def_extractsymbolinfo;
+>>>>>>> origin/fixes_2_2
          { release all local symtables that are not needed anymore }
          if (not needsymbolinfo) then
            free_localsymtables(current_module.localsymtable);

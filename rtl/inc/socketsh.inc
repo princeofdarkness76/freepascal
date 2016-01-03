@@ -156,9 +156,13 @@ type
 
   Tsocket=longint;   {To easy porting code from Kylix libc unit to sockets unit.}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 
 function socketerror : cint; 
 
@@ -182,12 +186,17 @@ Function CloseSocket(Sock:Longint):Longint; // vote is still out on this one
 
 {Basic Socket Functions}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef legacysocket}
 Function Socket(Domain,SocketType,Protocol:Longint):Longint; deprecated;
 =======
 Function Socket(Domain,SocketType,Protocol:Longint):Longint; deprecated;
 Function CloseSocket(Sock:Longint):Longint; // vote is still out on this one
 >>>>>>> graemeg/fixes_2_2
+=======
+Function Socket(Domain,SocketType,Protocol:Longint):Longint; deprecated;
+Function CloseSocket(Sock:Longint):Longint; // vote is still out on this one
+>>>>>>> origin/fixes_2_2
 Function Send(Sock:Longint;Const Buf;BufLen,Flags:Longint):Longint; deprecated;
 Function SendTo(Sock:Longint;Const Buf;BufLen,Flags:Longint;Var Addr; AddrLen : Longint):Longint; deprecated;
 Function Recv(Sock:Longint;Var Buf;BufLen,Flags:Longint):Longint; deprecated;
@@ -203,10 +212,13 @@ Function SetSocketOptions(Sock,Level,OptName:Longint;const OptVal;optlen:longint
 Function GetSocketOptions(Sock,Level,OptName:Longint;Var OptVal;Var optlen:longint):Longint;deprecated;
 Function SocketPair(Domain,SocketType,Protocol:Longint;var Pair:TSockArray):Longint;deprecated;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 
 { untyped/text filetype support }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {Text Support}
 Procedure Sock2Text(Sock:Longint;Var SockIn,SockOut:Text);deprecated;
@@ -218,6 +230,7 @@ Function Accept(Sock:longint;var addr:TInetSockAddr;var SockIn,SockOut:File):Boo
 Function Accept(Sock:longint;var addr:TInetSockAddr;var SockIn,SockOut:text):Boolean;deprecated;
 Function Connect(Sock:longint;const addr:TInetSockAddr;var SockIn,SockOut:text):Boolean; deprecated;
 Function Connect(Sock:longint;const addr:TInetSockAddr;var SockIn,SockOut:file):Boolean;deprecated;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 
 Procedure Sock2Text(Sock:Longint;Var SockIn,SockOut:Text);deprecated;
@@ -226,6 +239,9 @@ Function Accept(Sock:longint;var addr:TInetSockAddr;var SockIn,SockOut:text):Boo
 Function Connect(Sock:longint;const addr:TInetSockAddr;var SockIn,SockOut:text):Boolean; deprecated;
 Function Connect(Sock:longint;const addr:TInetSockAddr;var SockIn,SockOut:file):Boolean;deprecated;
 Procedure Sock2File(Sock:Longint;Var SockIn,SockOut:File);deprecated;
+=======
+
+>>>>>>> origin/fixes_2_2
 
 { Utility routines}
 function htonl( host : longint):longint; inline;

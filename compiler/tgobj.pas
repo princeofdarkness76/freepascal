@@ -708,8 +708,11 @@ implementation
 {$else}
         alignment:=used_align(alignment,current_settings.alignment.localalignmin,current_settings.alignment.localalignmax);
 <<<<<<< HEAD
+<<<<<<< HEAD
         alloctemp(list,size,alignment,tt_persistent,def,false,ref);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif arm}
         { can't use reference_reset_base, because that will let tgobj depend
           on cgobj (PFV) }

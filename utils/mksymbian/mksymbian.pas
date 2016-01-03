@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
 mksymbian.pas
 
@@ -94,6 +95,8 @@ begin
 end.
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
 mksymbian.pas
 
@@ -188,4 +191,7 @@ begin
   end;
 end.
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

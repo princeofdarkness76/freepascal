@@ -39,10 +39,13 @@ var
   err: longword;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
    oldp:=p;
    DoDirSeparators(p,pchangeable);
    if DeleteFileW(p)=0 then
 =======
+=======
+>>>>>>> origin/fixes_2_2
    DoDirSeparators(p);
    if DeleteFile(p)=0 then
 >>>>>>> graemeg/fixes_2_2
@@ -51,9 +54,12 @@ begin
       if err=5 then
        begin
 <<<<<<< HEAD
+<<<<<<< HEAD
          if ((GetFileAttributesW(p) and FILE_ATTRIBUTE_DIRECTORY)=FILE_ATTRIBUTE_DIRECTORY) then
           err:=2;
 =======
+=======
+>>>>>>> origin/fixes_2_2
          if ((GetFileAttributes(p) and FILE_ATTRIBUTE_DIRECTORY)=FILE_ATTRIBUTE_DIRECTORY) then
           errno:=2;
 >>>>>>> graemeg/fixes_2_2
@@ -70,6 +76,7 @@ var
   oldp1,oldp2: pwidechar;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   oldp1:=p1;
   oldp2:=p2;
   DoDirSeparators(p1,p1changeable);
@@ -83,6 +90,8 @@ begin
   if p2<>oldp2 then
     freemem(p2);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   DoDirSeparators(p1);
   DoDirSeparators(p2);
   if MoveFile(p1,p2)=0 then
@@ -312,9 +321,13 @@ Var
   oldp : pwidechar;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   DoDirSeparators(p);
 >>>>>>> graemeg/fixes_2_2
+=======
+  DoDirSeparators(p);
+>>>>>>> origin/fixes_2_2
   { close first if opened }
   if ((flags and $10000)=0) then
    begin

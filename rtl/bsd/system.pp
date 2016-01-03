@@ -196,6 +196,7 @@ begin
 {$else}
   act.sa_flags:=SA_SIGINFO;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
   FpSigAction(signum,@act,@oldact);
 end;
@@ -221,6 +222,8 @@ begin
   FpSigAction(SIGBUS,@oldsigbus,nil);
   FpSigAction(SIGILL,@oldsigill,nil);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$if defined(darwin) and defined(cpu64)}
   act.sa_flags:=SA_SIGINFO or SA_64REGSET;
 {$else}
@@ -352,12 +355,18 @@ Begin
   InstallSignals;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
   SysResetFPU;
   if not(IsLibrary) then
     SysInitFPU;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$if defined(cpui386) or defined(cpuarm)}
   fpc_cpucodeinit;
 {$endif cpui386}

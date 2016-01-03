@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QuickTime/QTStreamingComponents.h
  
      Contains:   QuickTime Interfaces.
@@ -32,6 +33,8 @@
      Copyright:  © 1990-2008 by Apple Inc., all rights reserved
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       QTStreamingComponents.p
  
      Contains:   QuickTime Interfaces.
@@ -40,11 +43,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1990-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -75,6 +82,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -86,7 +95,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -96,12 +108,17 @@
 unit QTStreamingComponents;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -115,14 +132,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -131,11 +153,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -173,6 +198,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -180,6 +207,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -424,6 +452,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -432,7 +462,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -459,9 +492,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -471,6 +508,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,Components,Dialogs,Movies,QuickTimeStreaming;
 {$endc} {not MACOSALLINCLUDE}
@@ -516,6 +554,8 @@ const
 { flags for sourcer data }
 const
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,Dialogs,Components,Movies,QuickTimeStreaming;
 
 
@@ -538,11 +578,15 @@ const
 	kQTSPushDataSourcerType		= FourCharCode('push');
 
 	{	 flags for sourcer data 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kQTSSourcerDataFlag_SyncSample = $00000001;
 	kQTSPushDataSourcerFlag_SampleTimeIsValid = $80000000;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kQTSSourcerInitParamsVersion1 = 1;
@@ -617,6 +661,8 @@ const
 const
 	kQTSLoopParamsVersion1 = 1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kQTSSourcerInitParamsVersion1 = 1;
 
 
@@ -687,11 +733,15 @@ const
 
 	kQTSLoopParamsVersion1		= 1;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSLoopParamsPtr = ^QTSLoopParams;
 	QTSLoopParams = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		version: SInt32;
 		flags: SInt32;
@@ -702,6 +752,8 @@ type
 const
 	kQTSTrackParamsVersion1 = 1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		version:				SInt32;
 		flags:					SInt32;
 		loopFlags:				SInt32;
@@ -713,11 +765,15 @@ const
 const
 	kQTSTrackParamsVersion1		= 1;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSTrackParamsPtr = ^QTSTrackParams;
 	QTSTrackParams = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		version: SInt32;
 		flags: SInt32;
@@ -762,6 +818,8 @@ type
 		dataPtr: UnivPtr;                { this does not have to be a real macintosh Ptr }
 	end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		version:				SInt32;
 		flags:					SInt32;
 		track:					Track_fix;
@@ -811,7 +869,10 @@ type
 	end;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kQTSSourcerCallbackProcParamsVersion1 = 1;
 
@@ -819,6 +880,7 @@ const
 type
 	QTSSourcerCallbackProcParamsPtr = ^QTSSourcerCallbackProcParams;
 	QTSSourcerCallbackProcParams = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		version: SInt32;
 		flags: SInt32;
@@ -841,6 +903,8 @@ const
 	kQTSPushDataSourcerCallback_SetInfo = $0507; { QTSPushDataInfoParams* }
 	kQTSPushDataSourcerCallback_GetInfo = $0508; { QTSPushDataInfoParams* }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		version:				SInt32;
 		flags:					SInt32;
 		proc:					QTSNotificationUPP;
@@ -858,11 +922,15 @@ const
 	kQTSPushDataSourcerCallback_SetInfo = $0507;				{  QTSPushDataInfoParams*  }
 	kQTSPushDataSourcerCallback_GetInfo = $0508;				{  QTSPushDataInfoParams*  }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSPushDataHasCharacteristicParamsPtr = ^QTSPushDataHasCharacteristicParams;
 	QTSPushDataHasCharacteristicParams = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		version: SInt32;
 		flags: SInt32;
@@ -926,6 +994,8 @@ function QTSSourcerInitialize( inSourcer: QTSSourcer; const (*var*) inInitParams
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		version:				SInt32;
 		flags:					SInt32;
 		characteristic:			OSType;
@@ -989,11 +1059,15 @@ const
 	 *    Mac OS X:         in version 10.1 and later
 	 	}
 function QTSSourcerInitialize(inSourcer: QTSSourcer; const (*var*) inInitParams: QTSSourcerInitParams): ComponentResult; external name '_QTSSourcerInitialize';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTSSourcerIdle()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -1004,16 +1078,22 @@ function QTSSourcerIdle( inSourcer: QTSSourcer; (*const*) var inTime: TimeValue6
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function QTSSourcerIdle(inSourcer: QTSSourcer; (*const*) var inTime: TimeValue64; inFlags: SInt32; var outFlags: SInt32): ComponentResult; external name '_QTSSourcerIdle';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTSSourcerSetEnable()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -1024,16 +1104,22 @@ function QTSSourcerSetEnable( inSourcer: QTSSourcer; inEnableMode: Boolean; inFl
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function QTSSourcerSetEnable(inSourcer: QTSSourcer; inEnableMode: boolean; inFlags: SInt32): ComponentResult; external name '_QTSSourcerSetEnable';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTSSourcerGetEnable()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -1044,16 +1130,22 @@ function QTSSourcerGetEnable( inSourcer: QTSSourcer; var outEnableMode: Boolean;
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function QTSSourcerGetEnable(inSourcer: QTSSourcer; var outEnableMode: boolean; inFlags: SInt32): ComponentResult; external name '_QTSSourcerGetEnable';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTSSourcerSetTimeScale()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -1064,16 +1156,22 @@ function QTSSourcerSetTimeScale( inSourcer: QTSSourcer; inTimeScale: TimeScale )
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function QTSSourcerSetTimeScale(inSourcer: QTSSourcer; inTimeScale: TimeScale): ComponentResult; external name '_QTSSourcerSetTimeScale';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTSSourcerGetTimeScale()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -1084,16 +1182,22 @@ function QTSSourcerGetTimeScale( inSourcer: QTSSourcer; var outTimeScale: TimeSc
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function QTSSourcerGetTimeScale(inSourcer: QTSSourcer; var outTimeScale: TimeScale): ComponentResult; external name '_QTSSourcerGetTimeScale';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTSSourcerSetInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -1104,16 +1208,22 @@ function QTSSourcerSetInfo( inSourcer: QTSSourcer; inSelector: OSType; ioParams:
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function QTSSourcerSetInfo(inSourcer: QTSSourcer; inSelector: OSType; ioParams: UnivPtr): ComponentResult; external name '_QTSSourcerSetInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTSSourcerGetInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -1173,6 +1283,8 @@ const
 	kSHChunkFlagDataLoss = 1 shl 4;
 	kSHChunkFlagExtended = 1 shl 5;
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -1207,11 +1319,15 @@ const
 	kSHChunkFlagDataLoss		= $10;
 	kSHChunkFlagExtended		= $20;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	SHChunkRecordPtr = ^SHChunkRecord;
 	SHChunkRecord = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		version: UInt32;
 		reserved1: SIGNEDLONG;
@@ -1235,6 +1351,8 @@ const
 	kSHExtendedChunkFlag_HasSampleCount = 1 shl 0;
 	kSHExtendedChunkFlag_HasFrameLengths = 1 shl 1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		version:				UInt32;
 		reserved1:				SInt32;
 		flags:					SInt32;
@@ -1257,11 +1375,15 @@ const
 	kSHExtendedChunkFlag_HasSampleCount = $01;
 	kSHExtendedChunkFlag_HasFrameLengths = $02;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	SHExtendedChunkRecordPtr = ^SHExtendedChunkRecord;
 	SHExtendedChunkRecord = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		chunk: SHChunkRecord;
 		extendedFlags: SInt32;
@@ -1423,6 +1545,21 @@ const
 
 const
 	kRTPInvalidSSRC				= 0;
+=======
+		chunk:					SHChunkRecord;
+		extendedFlags:			SInt32;
+		extendedData:			array [0..9] of SInt32;
+	end;
+
+
+	{	============================================================================
+	        RTP Components
+	============================================================================	}
+	RTPSSRC								= UInt32;
+
+const
+	kRTPInvalidSSRC				= 0;
+>>>>>>> origin/fixes_2_2
 
 
 	{	 RTP standard content encodings for audio 	}
@@ -1478,11 +1615,15 @@ const
 	kRTPTotalLostPktsStat		= FourCharCode('tlsp');
 	kRTPTotalProcessedPktsStat	= FourCharCode('tprp');
 	kRTPTotalDroppedPktsStat	= FourCharCode('tdrp');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kRTPBadHeaderDroppedPktsStat = FourCharCode('bhdp');
 	kRTPOurHeaderDroppedPktsStat = FourCharCode('ohdp');
 	kRTPNotReceivingSenderDroppedPktsStat = FourCharCode('nsdp');
 	kRTPNotProcessingDroppedPktsStat = FourCharCode('npdp');
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kRTPBadSeqDroppedPktsStat = FourCharCode('bsdp');
 	kRTPArriveTooLatePktsStat = FourCharCode('artl');
@@ -1537,6 +1678,8 @@ const
 	kRTPPayloadLossRecoveryTag = FourCharCode('loss'); { 0-255, 0 can't handle any loss, 128 can handle 50% packet loss}
 	kRTPPayloadConformanceTag = FourCharCode('conf'); { more than one of these can be present}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kRTPBadSeqDroppedPktsStat	= FourCharCode('bsdp');
 	kRTPArriveTooLatePktsStat	= FourCharCode('artl');
 	kRTPWaitForSeqDroppedPktsStat = FourCharCode('wsdp');
@@ -1563,11 +1706,15 @@ const
 	kRTPPayloadLossRecoveryTag	= FourCharCode('loss');						{  0-255, 0 can't handle any loss, 128 can handle 50% packet loss }
 	kRTPPayloadConformanceTag	= FourCharCode('conf');						{  more than one of these can be present }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	RTPPayloadCharacteristicPtr = ^RTPPayloadCharacteristic;
 	RTPPayloadCharacteristic = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		tag: OSType;
 		value: SIGNEDLONG;
@@ -1662,6 +1809,8 @@ type
 		desc: RTPDescParams;
 	end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		tag:					OSType;
 		value:					SInt32;
 	end;
@@ -1746,11 +1895,15 @@ type
 	end;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kRTPRssmMoreInitParamsVersion1 = 1;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { get/set info selectors}
 const
@@ -1759,11 +1912,16 @@ const
 	{  get/set info selectors }
 	kRTPRssmInfo_MoreInitParams	= FourCharCode('rrmi');
 >>>>>>> graemeg/fixes_2_2
+=======
+	{  get/set info selectors }
+	kRTPRssmInfo_MoreInitParams	= FourCharCode('rrmi');
+>>>>>>> origin/fixes_2_2
 
 
 type
 	RTPRssmPacketPtr = ^RTPRssmPacket;
 	RTPRssmPacket = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		next: RTPRssmPacketPtr;
 		prev: RTPRssmPacketPtr;
@@ -1781,6 +1939,8 @@ type
 	end;
 { flags for RTPRssmPacket struct}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		next:					RTPRssmPacketPtr;
 		prev:					RTPRssmPacketPtr;
 		streamBuffer:			QTSStreamBufferPtr;
@@ -1798,11 +1958,15 @@ type
 
 	{  flags for RTPRssmPacket struct }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kRTPRssmPacketHasMarkerBitSet = $00000001;
 	kRTPRssmPacketHasServerEditFlag = $00010000;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { flags for RTPRssmSendStreamBufferRange}
 const
@@ -1815,6 +1979,8 @@ const
 { flags for RTPRssmSetFlags}
 const
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{  flags for RTPRssmSendStreamBufferRange }
 	kRTPRssmCanRefStreamBuffer	= $00000001;
 
@@ -1822,7 +1988,10 @@ const
 	kRTPRssmLostSomePackets		= $00000001;
 
 	{  flags for RTPRssmSetFlags }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kRTPRssmEveryPacketAChunkFlag = $00000001;
 	kRTPRssmQueueAndUseMarkerBitFlag = $00000002;
 	kRTPRssmTrackLostPacketsFlag = $00010000;
@@ -1832,6 +2001,7 @@ const
 type
 	RTPSendStreamBufferRangeParamsPtr = ^RTPSendStreamBufferRangeParams;
 	RTPSendStreamBufferRangeParams = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		streamBuffer: QTSStreamBufferPtr;
 		presentationTime: TimeValue64;
@@ -1843,6 +2013,8 @@ type
 	end;
 { characteristics}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		streamBuffer:			QTSStreamBufferPtr;
 		presentationTime:		TimeValue64;
 		chunkStartPosition:		UInt32;
@@ -1854,12 +2026,16 @@ type
 
 	{  characteristics }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kRTPCharacteristic_RequiresOrderedPackets = FourCharCode('rrop');
 	kRTPCharacteristic_TimeStampsNotMonoIncreasing = FourCharCode('tsmi');
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kRTPReassemblerInfoResType = FourCharCode('rsmi');
@@ -1877,6 +2053,8 @@ type
 	RTPReassemblerInfoHandle = ^RTPReassemblerInfoPtr;
 	{	 RTPReassemblerInfoElement structs are padded to 32 bits 	}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kRTPReassemblerInfoResType	= FourCharCode('rsmi');
 
 
@@ -1892,11 +2070,15 @@ type
 	RTPReassemblerInfoHandle			= ^RTPReassemblerInfoPtr;
 	{	 RTPReassemblerInfoElement structs are padded to 32 bits 	}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kRTPReassemblerInfoPadUpToBytes = 4;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  *  QTSFindReassemblerForPayloadID()
@@ -1911,6 +2093,8 @@ function QTSFindReassemblerForPayloadID( inPayloadID: UInt8; var inSortInfo: RTP
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{
 	 *  QTSFindReassemblerForPayloadID()
 	 *  
@@ -1921,12 +2105,16 @@ function QTSFindReassemblerForPayloadID( inPayloadID: UInt8; var inSortInfo: RTP
 	 *    Windows:          in QTSClient.lib 4.0 and later
 	 	}
 function QTSFindReassemblerForPayloadID(inPayloadID: ByteParameter; var inSortInfo: RTPPayloadSortRequest; var outReassemblerList: QTAtomContainer): OSErr; external name '_QTSFindReassemblerForPayloadID';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSFindReassemblerForPayloadName()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1937,26 +2125,36 @@ function QTSFindReassemblerForPayloadName( inPayloadName: ConstCStringPtr; var i
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSFindReassemblerForPayloadName(inPayloadName: ConstCStringPtr; var inSortInfo: RTPPayloadSortRequest; var outReassemblerList: QTAtomContainer): OSErr; external name '_QTSFindReassemblerForPayloadName';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {-----------------------------------------
     RTP Reassembler Selectors
 -----------------------------------------}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 const
 	kRTPRssmSetCapabilitiesSelect = $0100;
 	kRTPRssmGetCapabilitiesSelect = $0101;
 	kRTPRssmSetPayloadHeaderLengthSelect = $0102;
 	kRTPRssmGetPayloadHeaderLengthSelect = $0103;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kRTPRssmSetTimeScaleSelect = $0104;
 	kRTPRssmGetTimeScaleSelect = $0105;
@@ -1964,6 +2162,10 @@ const
 	kRTPRssmSetTimeScaleSelect	= $0104;
 	kRTPRssmGetTimeScaleSelect	= $0105;
 >>>>>>> graemeg/fixes_2_2
+=======
+	kRTPRssmSetTimeScaleSelect	= $0104;
+	kRTPRssmGetTimeScaleSelect	= $0105;
+>>>>>>> origin/fixes_2_2
 	kRTPRssmNewStreamHandlerSelect = $0106;
 	kRTPRssmSetStreamHandlerSelect = $0107;
 	kRTPRssmGetStreamHandlerSelect = $0108;
@@ -1971,6 +2173,7 @@ const
 	kRTPRssmSetSampleDescriptionSelect = $010A;
 	kRTPRssmGetChunkAndIncrRefCountSelect = $010D;
 	kRTPRssmSendChunkAndDecrRefCountSelect = $010E;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kRTPRssmSendLostChunkSelect = $010F;
 	kRTPRssmSendStreamBufferRangeSelect = $0110;
@@ -1980,22 +2183,32 @@ const
 	kRTPRssmSendStreamBufferRangeSelect = $0110;
 	kRTPRssmClearCachedPackets	= $0111;
 >>>>>>> graemeg/fixes_2_2
+=======
+	kRTPRssmSendLostChunkSelect	= $010F;
+	kRTPRssmSendStreamBufferRangeSelect = $0110;
+	kRTPRssmClearCachedPackets	= $0111;
+>>>>>>> origin/fixes_2_2
 	kRTPRssmFillPacketListParamsSelect = $0113;
 	kRTPRssmReleasePacketListSelect = $0114;
 	kRTPRssmIncrChunkRefCountSelect = $0115;
 	kRTPRssmDecrChunkRefCountSelect = $0116;
 	kRTPRssmGetExtChunkAndIncrRefCountSelect = $0117;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kRTPRssmInitializeSelect = $0500;
 =======
 	kRTPRssmInitializeSelect	= $0500;
 >>>>>>> graemeg/fixes_2_2
+=======
+	kRTPRssmInitializeSelect	= $0500;
+>>>>>>> origin/fixes_2_2
 	kRTPRssmHandleNewPacketSelect = $0501;
 	kRTPRssmComputeChunkSizeSelect = $0502;
 	kRTPRssmAdjustPacketParamsSelect = $0503;
 	kRTPRssmCopyDataToChunkSelect = $0504;
 	kRTPRssmSendPacketListSelect = $0505;
 	kRTPRssmGetTimeScaleFromPacketSelect = $0506;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kRTPRssmSetInfoSelect = $0509;
 	kRTPRssmGetInfoSelect = $050A;
@@ -2020,6 +2233,8 @@ function RTPRssmInitialize( rtpr: RTPReassembler; var inInitParams: RTPRssmInitP
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kRTPRssmSetInfoSelect		= $0509;
 	kRTPRssmGetInfoSelect		= $050A;
 	kRTPRssmHasCharacteristicSelect = $050B;
@@ -2039,11 +2254,15 @@ function RTPRssmInitialize( rtpr: RTPReassembler; var inInitParams: RTPRssmInitP
 	 *    Windows:          in QTSClient.lib 4.0 and later
 	 	}
 function RTPRssmInitialize(rtpr: RTPReassembler; var inInitParams: RTPRssmInitParams): ComponentResult; external name '_RTPRssmInitialize';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmHandleNewPacket()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2055,17 +2274,23 @@ function RTPRssmHandleNewPacket( rtpr: RTPReassembler; var inStreamBuffer: QTSSt
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmHandleNewPacket(rtpr: RTPReassembler; var inStreamBuffer: QTSStreamBuffer; inNumWraparounds: SInt32): ComponentResult; external name '_RTPRssmHandleNewPacket';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmComputeChunkSize()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2077,17 +2302,23 @@ function RTPRssmComputeChunkSize( rtpr: RTPReassembler; var inPacketListHead: RT
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmComputeChunkSize(rtpr: RTPReassembler; var inPacketListHead: RTPRssmPacket; inFlags: SInt32; var outChunkDataSize: UInt32): ComponentResult; external name '_RTPRssmComputeChunkSize';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmAdjustPacketParams()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2099,17 +2330,23 @@ function RTPRssmAdjustPacketParams( rtpr: RTPReassembler; var inPacket: RTPRssmP
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmAdjustPacketParams(rtpr: RTPReassembler; var inPacket: RTPRssmPacket; inFlags: SInt32): ComponentResult; external name '_RTPRssmAdjustPacketParams';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmCopyDataToChunk()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2121,17 +2358,23 @@ function RTPRssmCopyDataToChunk( rtpr: RTPReassembler; var inPacketListHead: RTP
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmCopyDataToChunk(rtpr: RTPReassembler; var inPacketListHead: RTPRssmPacket; inMaxChunkDataSize: UInt32; var inChunk: SHChunkRecord; inFlags: SInt32): ComponentResult; external name '_RTPRssmCopyDataToChunk';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmSendPacketList()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2143,17 +2386,23 @@ function RTPRssmSendPacketList( rtpr: RTPReassembler; var inPacketListHead: RTPR
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmSendPacketList(rtpr: RTPReassembler; var inPacketListHead: RTPRssmPacket; (*const*) var inLastChunkPresentationTime: TimeValue64; inFlags: SInt32): ComponentResult; external name '_RTPRssmSendPacketList';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmGetTimeScaleFromPacket()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2165,17 +2414,23 @@ function RTPRssmGetTimeScaleFromPacket( rtpr: RTPReassembler; var inStreamBuffer
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmGetTimeScaleFromPacket(rtpr: RTPReassembler; var inStreamBuffer: QTSStreamBuffer; var outTimeScale: TimeScale): ComponentResult; external name '_RTPRssmGetTimeScaleFromPacket';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmSetInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2187,17 +2442,23 @@ function RTPRssmSetInfo( rtpr: RTPReassembler; inSelector: OSType; ioParams: Uni
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmSetInfo(rtpr: RTPReassembler; inSelector: OSType; ioParams: UnivPtr): ComponentResult; external name '_RTPRssmSetInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmGetInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2209,17 +2470,23 @@ function RTPRssmGetInfo( rtpr: RTPReassembler; inSelector: OSType; ioParams: Uni
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmGetInfo(rtpr: RTPReassembler; inSelector: OSType; ioParams: UnivPtr): ComponentResult; external name '_RTPRssmGetInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmHasCharacteristic()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2231,17 +2498,23 @@ function RTPRssmHasCharacteristic( rtpr: RTPReassembler; inCharacteristic: OSTyp
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmHasCharacteristic(rtpr: RTPReassembler; inCharacteristic: OSType; var outHasIt: boolean): ComponentResult; external name '_RTPRssmHasCharacteristic';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmReset()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2257,6 +2530,8 @@ function RTPRssmReset( rtpr: RTPReassembler; inFlags: SInt32 ): ComponentResult;
 -----------------------------------------}
 { ----- setup}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
@@ -2267,11 +2542,15 @@ function RTPRssmReset(rtpr: RTPReassembler; inFlags: SInt32): ComponentResult; e
     RTP Reassembler functions - derived to base
 -----------------------------------------}
 {  ----- setup }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmSetCapabilities()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2283,17 +2562,23 @@ function RTPRssmSetCapabilities( rtpr: RTPReassembler; inFlags: SInt32; inFlagsM
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmSetCapabilities(rtpr: RTPReassembler; inFlags: SInt32; inFlagsMask: SInt32): ComponentResult; external name '_RTPRssmSetCapabilities';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmGetCapabilities()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2305,17 +2590,23 @@ function RTPRssmGetCapabilities( rtpr: RTPReassembler; var outFlags: SInt32 ): C
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmGetCapabilities(rtpr: RTPReassembler; var outFlags: SInt32): ComponentResult; external name '_RTPRssmGetCapabilities';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmSetPayloadHeaderLength()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2327,17 +2618,23 @@ function RTPRssmSetPayloadHeaderLength( rtpr: RTPReassembler; inPayloadHeaderLen
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmSetPayloadHeaderLength(rtpr: RTPReassembler; inPayloadHeaderLength: UInt32): ComponentResult; external name '_RTPRssmSetPayloadHeaderLength';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmGetPayloadHeaderLength()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2349,17 +2646,23 @@ function RTPRssmGetPayloadHeaderLength( rtpr: RTPReassembler; var outPayloadHead
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmGetPayloadHeaderLength(rtpr: RTPReassembler; var outPayloadHeaderLength: UInt32): ComponentResult; external name '_RTPRssmGetPayloadHeaderLength';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmSetTimeScale()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2371,17 +2674,23 @@ function RTPRssmSetTimeScale( rtpr: RTPReassembler; inSHTimeScale: TimeScale ): 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmSetTimeScale(rtpr: RTPReassembler; inSHTimeScale: TimeScale): ComponentResult; external name '_RTPRssmSetTimeScale';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmGetTimeScale()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2393,17 +2702,23 @@ function RTPRssmGetTimeScale( rtpr: RTPReassembler; var outSHTimeScale: TimeScal
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmGetTimeScale(rtpr: RTPReassembler; var outSHTimeScale: TimeScale): ComponentResult; external name '_RTPRssmGetTimeScale';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmNewStreamHandler()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2415,17 +2730,23 @@ function RTPRssmNewStreamHandler( rtpr: RTPReassembler; inSHType: OSType; inSamp
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmNewStreamHandler(rtpr: RTPReassembler; inSHType: OSType; inSampleDescription: SampleDescriptionHandle; inSHTimeScale: TimeScale; var outHandler: ComponentInstance): ComponentResult; external name '_RTPRssmNewStreamHandler';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmSetStreamHandler()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2437,17 +2758,23 @@ function RTPRssmSetStreamHandler( rtpr: RTPReassembler; inStreamHandler: Compone
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmSetStreamHandler(rtpr: RTPReassembler; inStreamHandler: ComponentInstance): ComponentResult; external name '_RTPRssmSetStreamHandler';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmGetStreamHandler()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2459,17 +2786,23 @@ function RTPRssmGetStreamHandler( rtpr: RTPReassembler; var outStreamHandler: Co
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmGetStreamHandler(rtpr: RTPReassembler; var outStreamHandler: ComponentInstance): ComponentResult; external name '_RTPRssmGetStreamHandler';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmSendStreamHandlerChanged()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2488,10 +2821,19 @@ function RTPRssmSendStreamHandlerChanged( rtpr: RTPReassembler ): ComponentResul
  }
 function RTPRssmSendStreamHandlerChanged(rtpr: RTPReassembler): ComponentResult; external name '_RTPRssmSendStreamHandlerChanged';
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in QTSClient.lib 4.0 and later
+ }
+function RTPRssmSendStreamHandlerChanged(rtpr: RTPReassembler): ComponentResult; external name '_RTPRssmSendStreamHandlerChanged';
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmSetSampleDescription()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2504,6 +2846,8 @@ function RTPRssmSetSampleDescription( rtpr: RTPReassembler; inSampleDescription:
 
 { ----- manually sending chunks}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
@@ -2511,11 +2855,15 @@ function RTPRssmSetSampleDescription( rtpr: RTPReassembler; inSampleDescription:
  }
 function RTPRssmSetSampleDescription(rtpr: RTPReassembler; inSampleDescription: SampleDescriptionHandle): ComponentResult; external name '_RTPRssmSetSampleDescription';
 {  ----- manually sending chunks }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmGetChunkAndIncrRefCount()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2527,17 +2875,23 @@ function RTPRssmGetChunkAndIncrRefCount( rtpr: RTPReassembler; inChunkDataSize: 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmGetChunkAndIncrRefCount(rtpr: RTPReassembler; inChunkDataSize: UInt32; (*const*) var inChunkPresentationTime: TimeValue64; var outChunk: UnivPtr): ComponentResult; external name '_RTPRssmGetChunkAndIncrRefCount';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmGetExtChunkAndIncrRefCount()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -2549,17 +2903,23 @@ function RTPRssmGetExtChunkAndIncrRefCount( rtpr: RTPReassembler; inChunkDataSiz
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
 function RTPRssmGetExtChunkAndIncrRefCount(rtpr: RTPReassembler; inChunkDataSize: UInt32; (*const*) var inChunkPresentationTime: TimeValue64; inFlags: SInt32; var outChunk: UnivPtr): ComponentResult; external name '_RTPRssmGetExtChunkAndIncrRefCount';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmSendChunkAndDecrRefCount()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2571,17 +2931,23 @@ function RTPRssmSendChunkAndDecrRefCount( rtpr: RTPReassembler; var inChunk: SHC
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmSendChunkAndDecrRefCount(rtpr: RTPReassembler; var inChunk: SHChunkRecord; const (*var*) inServerEdit: SHServerEditParameters): ComponentResult; external name '_RTPRssmSendChunkAndDecrRefCount';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmSendLostChunk()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2593,17 +2959,23 @@ function RTPRssmSendLostChunk( rtpr: RTPReassembler; (*const*) var inChunkPresen
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmSendLostChunk(rtpr: RTPReassembler; (*const*) var inChunkPresentationTime: TimeValue64): ComponentResult; external name '_RTPRssmSendLostChunk';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmSendStreamBufferRange()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2615,17 +2987,23 @@ function RTPRssmSendStreamBufferRange( rtpr: RTPReassembler; var inParams: RTPSe
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmSendStreamBufferRange(rtpr: RTPReassembler; var inParams: RTPSendStreamBufferRangeParams): ComponentResult; external name '_RTPRssmSendStreamBufferRange';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmClearCachedPackets()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2637,17 +3015,23 @@ function RTPRssmClearCachedPackets( rtpr: RTPReassembler; inFlags: SInt32 ): Com
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmClearCachedPackets(rtpr: RTPReassembler; inFlags: SInt32): ComponentResult; external name '_RTPRssmClearCachedPackets';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmFillPacketListParams()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2659,17 +3043,23 @@ function RTPRssmFillPacketListParams( rtpr: RTPReassembler; var inPacketListHead
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmFillPacketListParams(rtpr: RTPReassembler; var inPacketListHead: RTPRssmPacket; inNumWraparounds: SInt32; inFlags: SInt32): ComponentResult; external name '_RTPRssmFillPacketListParams';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmReleasePacketList()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2681,17 +3071,23 @@ function RTPRssmReleasePacketList( rtpr: RTPReassembler; var inPacketListHead: R
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmReleasePacketList(rtpr: RTPReassembler; var inPacketListHead: RTPRssmPacket): ComponentResult; external name '_RTPRssmReleasePacketList';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmIncrChunkRefCount()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2703,17 +3099,23 @@ function RTPRssmIncrChunkRefCount( rtpr: RTPReassembler; var inChunk: SHChunkRec
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPRssmIncrChunkRefCount(rtpr: RTPReassembler; var inChunk: SHChunkRecord): ComponentResult; external name '_RTPRssmIncrChunkRefCount';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPRssmDecrChunkRefCount()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2811,6 +3213,8 @@ function QTSFindMediaPacketizer( inPacketizerinfo: MediaPacketizerRequirementsPt
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
@@ -2910,12 +3314,16 @@ const
 	 *    Windows:          in QTSClient.lib 4.0 and later
 	 	}
 function QTSFindMediaPacketizer(inPacketizerinfo: MediaPacketizerRequirementsPtr; inSampleDescription: SampleDescriptionHandle; inSortInfo: RTPPayloadSortRequestPtr; var outPacketizerList: QTAtomContainer): OSErr; external name '_QTSFindMediaPacketizer';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSFindMediaPacketizerForTrack()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2926,18 +3334,24 @@ function QTSFindMediaPacketizerForTrack( inTrack: Track; inSampleDescriptionInde
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSFindMediaPacketizerForTrack(inTrack: Track; inSampleDescriptionIndex: SInt32; inSortInfo: RTPPayloadSortRequestPtr; var outPacketizerList: QTAtomContainer): OSErr; external name '_QTSFindMediaPacketizerForTrack';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSFindMediaPacketizerForPayloadID()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2948,18 +3362,24 @@ function QTSFindMediaPacketizerForPayloadID( payloadID: SIGNEDLONG; inSortInfo: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSFindMediaPacketizerForPayloadID(payloadID: SInt32; inSortInfo: RTPPayloadSortRequestPtr; var outPacketizerList: QTAtomContainer): OSErr; external name '_QTSFindMediaPacketizerForPayloadID';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSFindMediaPacketizerForPayloadName()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2979,6 +3399,8 @@ const
 	kRTPMPSyncSampleFlag = $00000001;
 	kRTPMPRespectDurationFlag = $00000002;
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
@@ -2995,11 +3417,15 @@ const
 	kRTPMPSyncSampleFlag		= $00000001;
 	kRTPMPRespectDurationFlag	= $00000002;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	RTPMPSampleDataParamsPtr = ^RTPMPSampleDataParams;
 	RTPMPSampleDataParams = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		version: UInt32;
 		timeStamp: UInt32;
@@ -3019,6 +3445,8 @@ type
 const
 	kRTPMPStillProcessingData = $00000001; { not done with data you've got}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		version:				UInt32;
 		timeStamp:				UInt32;
 		duration:				UInt32;									{  0 = unknown duration }
@@ -3039,11 +3467,15 @@ const
 const
 	kRTPMPStillProcessingData	= $00000001;					{  not done with data you've got }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	RTPMPPayloadTypeParamsPtr = ^RTPMPPayloadTypeParams;
 	RTPMPPayloadTypeParams = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		flags: UInt32;
 		payloadNumber: UInt32;
@@ -3073,6 +3505,8 @@ const
 { also supports relevant ones in Movies.h and QTSToolbox.h }
 const
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		flags:					UInt32;
 		payloadNumber:			UInt32;
 		nameLength:				SInt16;								{  in: size of payloadName buffer (counting null terminator) -- this will be reset to needed length and paramErr returned if too small  }
@@ -3101,13 +3535,17 @@ const
 	    RTP Media Packetizer Characteristics
 	-----------------------------------------	}
 	{	 also supports relevant ones in Movies.h and QTSToolbox.h 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kRTPMPNoSampleDataRequiredCharacteristic = FourCharCode('nsdr');
 	kRTPMPHasUserSettingsDialogCharacteristic = FourCharCode('sdlg');
 	kRTPMPPrefersReliableTransportCharacteristic = FourCharCode('rely');
 	kRTPMPRequiresOutOfBandDimensionsCharacteristic = FourCharCode('robd');
 	kRTPMPReadsPartialSamplesCharacteristic = FourCharCode('rpsp');
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {-----------------------------------------
     RTP Media Packetizer selectors
@@ -3161,6 +3599,8 @@ function RTPMPInitialize( rtpm: RTPMediaPacketizer; inFlags: SInt32 ): Component
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{	-----------------------------------------
 	    RTP Media Packetizer selectors
 	-----------------------------------------	}
@@ -3208,12 +3648,16 @@ function RTPMPInitialize( rtpm: RTPMediaPacketizer; inFlags: SInt32 ): Component
 	 *    Windows:          in QTSClient.lib 4.0 and later
 	 	}
 function RTPMPInitialize(rtpm: RTPMediaPacketizer; inFlags: SInt32): ComponentResult; external name '_RTPMPInitialize';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { return noErr if you can handle this media }
 {
  *  RTPMPPreflightMedia()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3225,13 +3669,18 @@ function RTPMPPreflightMedia( rtpm: RTPMediaPacketizer; inMediaType: OSType; inS
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPPreflightMedia(rtpm: RTPMediaPacketizer; inMediaType: OSType; inSampleDescription: SampleDescriptionHandle): ComponentResult; external name '_RTPMPPreflightMedia';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
    do work here if you need to - give up time periodically
    if you're doing time consuming operations
@@ -3240,6 +3689,7 @@ function RTPMPPreflightMedia(rtpm: RTPMediaPacketizer; inMediaType: OSType; inSa
  *  RTPMPIdle()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3251,13 +3701,18 @@ function RTPMPIdle( rtpm: RTPMediaPacketizer; inFlags: SInt32; var outFlags: SIn
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPIdle(rtpm: RTPMediaPacketizer; inFlags: SInt32; var outFlags: SInt32): ComponentResult; external name '_RTPMPIdle';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
    caller owns the RTPMPSampleDataParams struct
    media Packetizer must copy any fields of the struct it wants to keep
@@ -3270,6 +3725,7 @@ function RTPMPIdle(rtpm: RTPMediaPacketizer; inFlags: SInt32; var outFlags: SInt
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
@@ -3280,13 +3736,18 @@ function RTPMPSetSampleData( rtpm: RTPMediaPacketizer; const (*var*) inSampleDat
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPSetSampleData(rtpm: RTPMediaPacketizer; const (*var*) inSampleData: RTPMPSampleDataParams; var outFlags: SInt32): ComponentResult; external name '_RTPMPSetSampleData';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
    send everything you have buffered - you will get idles while
    you set the kRTPMPStillProcessingData flag here and in idle
@@ -3295,6 +3756,7 @@ function RTPMPSetSampleData(rtpm: RTPMediaPacketizer; const (*var*) inSampleData
  *  RTPMPFlush()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3306,13 +3768,18 @@ function RTPMPFlush( rtpm: RTPMediaPacketizer; inFlags: SInt32; var outFlags: SI
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPFlush(rtpm: RTPMediaPacketizer; inFlags: SInt32; var outFlags: SInt32): ComponentResult; external name '_RTPMPFlush';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
    dispose of anything buffered and get rid of state
    do not send the buffered data (because presumably
@@ -3324,6 +3791,7 @@ function RTPMPFlush(rtpm: RTPMediaPacketizer; inFlags: SInt32; var outFlags: SIn
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
@@ -3334,13 +3802,18 @@ function RTPMPReset( rtpm: RTPMediaPacketizer; inFlags: SInt32 ): ComponentResul
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPReset(rtpm: RTPMediaPacketizer; inFlags: SInt32): ComponentResult; external name '_RTPMPReset';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {-----------------------------------------
     RTP Media Packetizer get / set functions
 -----------------------------------------}
@@ -3348,6 +3821,7 @@ function RTPMPReset(rtpm: RTPMediaPacketizer; inFlags: SInt32): ComponentResult;
  *  RTPMPSetInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3359,17 +3833,23 @@ function RTPMPSetInfo( rtpm: RTPMediaPacketizer; inSelector: OSType; ioParams: {
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPSetInfo(rtpm: RTPMediaPacketizer; inSelector: OSType; ioParams: UnivPtr): ComponentResult; external name '_RTPMPSetInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPGetInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3381,17 +3861,23 @@ function RTPMPGetInfo( rtpm: RTPMediaPacketizer; inSelector: OSType; ioParams: U
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPGetInfo(rtpm: RTPMediaPacketizer; inSelector: OSType; ioParams: UnivPtr): ComponentResult; external name '_RTPMPGetInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPSetTimeScale()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3403,17 +3889,23 @@ function RTPMPSetTimeScale( rtpm: RTPMediaPacketizer; inTimeScale: TimeScale ): 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPSetTimeScale(rtpm: RTPMediaPacketizer; inTimeScale: TimeScale): ComponentResult; external name '_RTPMPSetTimeScale';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPGetTimeScale()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3425,17 +3917,23 @@ function RTPMPGetTimeScale( rtpm: RTPMediaPacketizer; var outTimeScale: TimeScal
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPGetTimeScale(rtpm: RTPMediaPacketizer; var outTimeScale: TimeScale): ComponentResult; external name '_RTPMPGetTimeScale';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPSetTimeBase()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3447,17 +3945,23 @@ function RTPMPSetTimeBase( rtpm: RTPMediaPacketizer; inTimeBase: TimeBase ): Com
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPSetTimeBase(rtpm: RTPMediaPacketizer; inTimeBase: TimeBase): ComponentResult; external name '_RTPMPSetTimeBase';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPGetTimeBase()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3469,17 +3973,23 @@ function RTPMPGetTimeBase( rtpm: RTPMediaPacketizer; var outTimeBase: TimeBase )
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPGetTimeBase(rtpm: RTPMediaPacketizer; var outTimeBase: TimeBase): ComponentResult; external name '_RTPMPGetTimeBase';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPHasCharacteristic()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3491,17 +4001,23 @@ function RTPMPHasCharacteristic( rtpm: RTPMediaPacketizer; inSelector: OSType; v
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPHasCharacteristic(rtpm: RTPMediaPacketizer; inSelector: OSType; var outHasIt: boolean): ComponentResult; external name '_RTPMPHasCharacteristic';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPSetPacketBuilder()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3513,17 +4029,23 @@ function RTPMPSetPacketBuilder( rtpm: RTPMediaPacketizer; inPacketBuilder: Compo
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPSetPacketBuilder(rtpm: RTPMediaPacketizer; inPacketBuilder: ComponentInstance): ComponentResult; external name '_RTPMPSetPacketBuilder';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPGetPacketBuilder()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3535,17 +4057,23 @@ function RTPMPGetPacketBuilder( rtpm: RTPMediaPacketizer; var outPacketBuilder: 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPGetPacketBuilder(rtpm: RTPMediaPacketizer; var outPacketBuilder: ComponentInstance): ComponentResult; external name '_RTPMPGetPacketBuilder';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPSetMediaType()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3557,17 +4085,23 @@ function RTPMPSetMediaType( rtpm: RTPMediaPacketizer; inMediaType: OSType ): Com
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPSetMediaType(rtpm: RTPMediaPacketizer; inMediaType: OSType): ComponentResult; external name '_RTPMPSetMediaType';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPGetMediaType()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3580,6 +4114,8 @@ function RTPMPGetMediaType( rtpm: RTPMediaPacketizer; var outMediaType: OSType )
 
 { size is in bytes}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
@@ -3587,11 +4123,15 @@ function RTPMPGetMediaType( rtpm: RTPMediaPacketizer; var outMediaType: OSType )
  }
 function RTPMPGetMediaType(rtpm: RTPMediaPacketizer; var outMediaType: OSType): ComponentResult; external name '_RTPMPGetMediaType';
 {  size is in bytes }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPSetMaxPacketSize()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3603,17 +4143,23 @@ function RTPMPSetMaxPacketSize( rtpm: RTPMediaPacketizer; inMaxPacketSize: UInt3
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPSetMaxPacketSize(rtpm: RTPMediaPacketizer; inMaxPacketSize: UInt32): ComponentResult; external name '_RTPMPSetMaxPacketSize';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPGetMaxPacketSize()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3626,6 +4172,8 @@ function RTPMPGetMaxPacketSize( rtpm: RTPMediaPacketizer; var outMaxPacketSize: 
 
 { duration is in milliseconds}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
@@ -3633,11 +4181,15 @@ function RTPMPGetMaxPacketSize( rtpm: RTPMediaPacketizer; var outMaxPacketSize: 
  }
 function RTPMPGetMaxPacketSize(rtpm: RTPMediaPacketizer; var outMaxPacketSize: UInt32): ComponentResult; external name '_RTPMPGetMaxPacketSize';
 {  duration is in milliseconds }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPSetMaxPacketDuration()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3649,17 +4201,23 @@ function RTPMPSetMaxPacketDuration( rtpm: RTPMediaPacketizer; inMaxPacketDuratio
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPSetMaxPacketDuration(rtpm: RTPMediaPacketizer; inMaxPacketDuration: UInt32): ComponentResult; external name '_RTPMPSetMaxPacketDuration';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPGetMaxPacketDuration()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3671,17 +4229,23 @@ function RTPMPGetMaxPacketDuration( rtpm: RTPMediaPacketizer; var outMaxPacketDu
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPGetMaxPacketDuration(rtpm: RTPMediaPacketizer; var outMaxPacketDuration: UInt32): ComponentResult; external name '_RTPMPGetMaxPacketDuration';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPDoUserDialog()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3693,17 +4257,23 @@ function RTPMPDoUserDialog( rtpm: RTPMediaPacketizer; inFilterUPP: ModalFilterUP
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPDoUserDialog(rtpm: RTPMediaPacketizer; inFilterUPP: ModalFilterUPP; var canceled: boolean): ComponentResult; external name '_RTPMPDoUserDialog';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPSetSettingsFromAtomContainerAtAtom()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3715,17 +4285,23 @@ function RTPMPSetSettingsFromAtomContainerAtAtom( rtpm: RTPMediaPacketizer; inCo
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPSetSettingsFromAtomContainerAtAtom(rtpm: RTPMediaPacketizer; inContainer: QTAtomContainer; inParentAtom: QTAtom): ComponentResult; external name '_RTPMPSetSettingsFromAtomContainerAtAtom';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPGetSettingsIntoAtomContainerAtAtom()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3737,17 +4313,23 @@ function RTPMPGetSettingsIntoAtomContainerAtAtom( rtpm: RTPMediaPacketizer; inOu
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPGetSettingsIntoAtomContainerAtAtom(rtpm: RTPMediaPacketizer; inOutContainer: QTAtomContainer; inParentAtom: QTAtom): ComponentResult; external name '_RTPMPGetSettingsIntoAtomContainerAtAtom';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPGetSettingsAsText()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3759,17 +4341,23 @@ function RTPMPGetSettingsAsText( rtpm: RTPMediaPacketizer; var text: Handle ): C
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPMPGetSettingsAsText(rtpm: RTPMediaPacketizer; var text: Handle): ComponentResult; external name '_RTPMPGetSettingsAsText';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPGetSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -3781,17 +4369,23 @@ function RTPMPGetSettings( rtpm: RTPMediaPacketizer; var outSettings: QTAtomCont
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 5.0 and later
  }
 function RTPMPGetSettings(rtpm: RTPMediaPacketizer; var outSettings: QTAtomContainer; inFlags: SInt32): ComponentResult; external name '_RTPMPGetSettings';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPMPSetSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -3869,6 +4463,8 @@ const
 	kRTPPBBeginPacketSelect = $0502;
 	kRTPPBEndPacketSelect = $0503;
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -3927,13 +4523,17 @@ const
 	kRTPPBEndPacketGroupSelect	= $0501;
 	kRTPPBBeginPacketSelect		= $0502;
 	kRTPPBEndPacketSelect		= $0503;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kRTPPBAddPacketLiteralDataSelect = $0504;
 	kRTPPBAddPacketSampleDataSelect = $0505;
 	kRTPPBAddPacketRepeatedDataSelect = $0506;
 	kRTPPBReleaseRepeatedDataSelect = $0507;
 	kRTPPBSetPacketSequenceNumberSelect = $0508;
 	kRTPPBGetPacketSequenceNumberSelect = $0509;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kRTPPBSetCallbackSelect = $050A;
 	kRTPPBGetCallbackSelect = $050B;
@@ -3962,6 +4562,8 @@ function RTPPBBeginPacketGroup( rtpb: RTPPacketBuilder; inFlags: SInt32; inTimeS
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kRTPPBSetCallbackSelect		= $050A;
 	kRTPPBGetCallbackSelect		= $050B;
 	kRTPPBSetInfoSelect			= $050C;
@@ -3985,11 +4587,15 @@ function RTPPBBeginPacketGroup( rtpb: RTPPacketBuilder; inFlags: SInt32; inTimeS
 	 *    Windows:          in QTSClient.lib 4.0 and later
 	 	}
 function RTPPBBeginPacketGroup(rtpb: RTPPacketBuilder; inFlags: SInt32; inTimeStamp: UInt32; var outPacketGroup: RTPPacketGroupRef): ComponentResult; external name '_RTPPBBeginPacketGroup';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPPBEndPacketGroup()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4001,17 +4607,23 @@ function RTPPBEndPacketGroup( rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketG
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPPBEndPacketGroup(rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketGroup: RTPPacketGroupRef): ComponentResult; external name '_RTPPBEndPacketGroup';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPPBBeginPacket()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4023,17 +4635,23 @@ function RTPPBBeginPacket( rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketGrou
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPPBBeginPacket(rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketGroup: RTPPacketGroupRef; inPacketMediaDataLength: UInt32; var outPacket: RTPPacketRef): ComponentResult; external name '_RTPPBBeginPacket';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPPBEndPacket()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4045,13 +4663,18 @@ function RTPPBEndPacket( rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketGroup:
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPPBEndPacket(rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketGroup: RTPPacketGroupRef; inPacket: RTPPacketRef; inTransmissionTimeOffset: UInt32; inDuration: UInt32): ComponentResult; external name '_RTPPBEndPacket';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
    non-NULL RTPPacketRepeatedDataRef means this data will be repeated later
    pb must return a repeated data ref
@@ -4060,6 +4683,7 @@ function RTPPBEndPacket(rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketGroup: 
  *  RTPPBAddPacketLiteralData()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4071,13 +4695,18 @@ function RTPPBAddPacketLiteralData( rtpb: RTPPacketBuilder; inFlags: SInt32; inP
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPPBAddPacketLiteralData(rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketGroup: RTPPacketGroupRef; inPacket: RTPPacketRef; var inData: UInt8; inDataLength: UInt32; var outDataRef: RTPPacketRepeatedDataRef): ComponentResult; external name '_RTPPBAddPacketLiteralData';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
    non-NULL RTPPacketRepeatedDataRef means this data will be repeated later
    pb must return a repeated data ref
@@ -4086,6 +4715,7 @@ function RTPPBAddPacketLiteralData(rtpb: RTPPacketBuilder; inFlags: SInt32; inPa
  *  RTPPBAddPacketSampleData()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4097,13 +4727,18 @@ function RTPPBAddPacketSampleData( rtpb: RTPPacketBuilder; inFlags: SInt32; inPa
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPPBAddPacketSampleData(rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketGroup: RTPPacketGroupRef; inPacket: RTPPacketRef; var inSampleDataParams: RTPMPSampleDataParams; inSampleOffset: UInt32; inSampleDataLength: UInt32; var outDataRef: RTPPacketRepeatedDataRef): ComponentResult; external name '_RTPPBAddPacketSampleData';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
    non-NULL RTPPacketRepeatedDataRef means this data will be repeated later
    pb must return a repeated data ref
@@ -4112,6 +4747,7 @@ function RTPPBAddPacketSampleData(rtpb: RTPPacketBuilder; inFlags: SInt32; inPac
  *  RTPPBAddPacketSampleData64()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -4123,13 +4759,18 @@ function RTPPBAddPacketSampleData64( rtpb: RTPPacketBuilder; inFlags: SInt32; in
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 5.0 and later
  }
 function RTPPBAddPacketSampleData64(rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketGroup: RTPPacketGroupRef; inPacket: RTPPacketRef; var inSampleDataParams: RTPMPSampleDataParams; (*const*) var inSampleOffset: UInt64; inSampleDataLength: UInt32; var outDataRef: RTPPacketRepeatedDataRef): ComponentResult; external name '_RTPPBAddPacketSampleData64';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
    call to add the repeated data using the ref you got from
    RTPPBAddPacketLiteralData or RTPPBAddPacketSampleData
@@ -4138,6 +4779,7 @@ function RTPPBAddPacketSampleData64(rtpb: RTPPacketBuilder; inFlags: SInt32; inP
  *  RTPPBAddPacketRepeatedData()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4150,6 +4792,8 @@ function RTPPBAddPacketRepeatedData( rtpb: RTPPacketBuilder; inFlags: SInt32; in
 
 { call when done with repeated data}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
@@ -4157,11 +4801,15 @@ function RTPPBAddPacketRepeatedData( rtpb: RTPPacketBuilder; inFlags: SInt32; in
  }
 function RTPPBAddPacketRepeatedData(rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketGroup: RTPPacketGroupRef; inPacket: RTPPacketRef; inDataRef: RTPPacketRepeatedDataRef): ComponentResult; external name '_RTPPBAddPacketRepeatedData';
 {  call when done with repeated data }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPPBReleaseRepeatedData()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4173,13 +4821,18 @@ function RTPPBReleaseRepeatedData( rtpb: RTPPacketBuilder; inDataRef: RTPPacketR
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPPBReleaseRepeatedData(rtpb: RTPPacketBuilder; inDataRef: RTPPacketRepeatedDataRef): ComponentResult; external name '_RTPPBReleaseRepeatedData';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
    seq number is just relative seq number
    don't call if you don't care when seq # is used
@@ -4188,6 +4841,7 @@ function RTPPBReleaseRepeatedData(rtpb: RTPPacketBuilder; inDataRef: RTPPacketRe
  *  RTPPBSetPacketSequenceNumber()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4199,17 +4853,23 @@ function RTPPBSetPacketSequenceNumber( rtpb: RTPPacketBuilder; inFlags: SInt32; 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPPBSetPacketSequenceNumber(rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketGroup: RTPPacketGroupRef; inPacket: RTPPacketRef; inSequenceNumber: UInt32): ComponentResult; external name '_RTPPBSetPacketSequenceNumber';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPPBGetPacketSequenceNumber()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4221,17 +4881,23 @@ function RTPPBGetPacketSequenceNumber( rtpb: RTPPacketBuilder; inFlags: SInt32; 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPPBGetPacketSequenceNumber(rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketGroup: RTPPacketGroupRef; inPacket: RTPPacketRef; var outSequenceNumber: UInt32): ComponentResult; external name '_RTPPBGetPacketSequenceNumber';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPPBSetPacketTimeStampOffset()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -4243,17 +4909,23 @@ function RTPPBSetPacketTimeStampOffset( rtpb: RTPPacketBuilder; inFlags: SInt32;
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 5.0 and later
  }
 function RTPPBSetPacketTimeStampOffset(rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketGroup: RTPPacketGroupRef; inPacket: RTPPacketRef; inTimeStampOffset: SInt32): ComponentResult; external name '_RTPPBSetPacketTimeStampOffset';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPPBGetPacketTimeStampOffset()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -4265,17 +4937,23 @@ function RTPPBGetPacketTimeStampOffset( rtpb: RTPPacketBuilder; inFlags: SInt32;
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 5.0 and later
  }
 function RTPPBGetPacketTimeStampOffset(rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketGroup: RTPPacketGroupRef; inPacket: RTPPacketRef; var outTimeStampOffset: SInt32): ComponentResult; external name '_RTPPBGetPacketTimeStampOffset';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPPBAddRepeatPacket()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -4287,13 +4965,18 @@ function RTPPBAddRepeatPacket( rtpb: RTPPacketBuilder; inFlags: SInt32; inPacket
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 5.0 and later
  }
 function RTPPBAddRepeatPacket(rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketGroup: RTPPacketGroupRef; inPacket: RTPPacketRef; inTransmissionOffset: TimeValue; inSequenceNumber: UInt32): ComponentResult; external name '_RTPPBAddRepeatPacket';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
    used for communicating with the caller of the media packetizers if needed
    NOT used for communicating with the media packetizers themselves
@@ -4302,6 +4985,7 @@ function RTPPBAddRepeatPacket(rtpb: RTPPacketBuilder; inFlags: SInt32; inPacketG
  *  RTPPBSetCallback()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4313,17 +4997,23 @@ function RTPPBSetCallback( rtpb: RTPPacketBuilder; inCallback: RTPPBCallbackUPP;
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPPBSetCallback(rtpb: RTPPacketBuilder; inCallback: RTPPBCallbackUPP; inRefCon: UnivPtr): ComponentResult; external name '_RTPPBSetCallback';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPPBGetCallback()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4335,17 +5025,23 @@ function RTPPBGetCallback( rtpb: RTPPacketBuilder; var outCallback: RTPPBCallbac
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPPBGetCallback(rtpb: RTPPacketBuilder; var outCallback: RTPPBCallbackUPP; var outRefCon: UnivPtr): ComponentResult; external name '_RTPPBGetCallback';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPPBSetInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4357,17 +5053,23 @@ function RTPPBSetInfo( rtpb: RTPPacketBuilder; inSelector: OSType; ioParams: Uni
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPPBSetInfo(rtpb: RTPPacketBuilder; inSelector: OSType; ioParams: UnivPtr): ComponentResult; external name '_RTPPBSetInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPPBGetInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4379,17 +5081,23 @@ function RTPPBGetInfo( rtpb: RTPPacketBuilder; inSelector: OSType; ioParams: Uni
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function RTPPBGetInfo(rtpb: RTPPacketBuilder; inSelector: OSType; ioParams: UnivPtr): ComponentResult; external name '_RTPPBGetInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RTPPBGetSampleData()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -4413,6 +5121,8 @@ function NewRTPMPDataReleaseUPP( userRoutine: RTPMPDataReleaseProcPtr ): RTPMPDa
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -4433,11 +5143,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewRTPMPDataReleaseUPP(userRoutine: RTPMPDataReleaseProcPtr): RTPMPDataReleaseUPP; external name '_NewRTPMPDataReleaseUPP'; { old name was NewRTPMPDataReleaseProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewRTPPBCallbackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -4447,16 +5161,22 @@ function NewRTPPBCallbackUPP( userRoutine: RTPPBCallbackProcPtr ): RTPPBCallback
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewRTPPBCallbackUPP(userRoutine: RTPPBCallbackProcPtr): RTPPBCallbackUPP; external name '_NewRTPPBCallbackUPP'; { old name was NewRTPPBCallbackProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeRTPMPDataReleaseUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -4466,16 +5186,22 @@ procedure DisposeRTPMPDataReleaseUPP( userUPP: RTPMPDataReleaseUPP ); external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeRTPMPDataReleaseUPP(userUPP: RTPMPDataReleaseUPP); external name '_DisposeRTPMPDataReleaseUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeRTPPBCallbackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -4485,16 +5211,22 @@ procedure DisposeRTPPBCallbackUPP( userUPP: RTPPBCallbackUPP ); external name '_
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeRTPPBCallbackUPP(userUPP: RTPPBCallbackUPP); external name '_DisposeRTPPBCallbackUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeRTPMPDataReleaseUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -4504,16 +5236,22 @@ procedure InvokeRTPMPDataReleaseUPP( var inData: UInt8; inRefCon: UnivPtr; userU
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure InvokeRTPMPDataReleaseUPP(var inData: UInt8; inRefCon: UnivPtr; userRoutine: RTPMPDataReleaseUPP); external name '_InvokeRTPMPDataReleaseUPP'; { old name was CallRTPMPDataReleaseProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeRTPPBCallbackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -4531,6 +5269,8 @@ procedure InvokeRTPPBCallbackUPP( inSelector: OSType; ioParams: UnivPtr; inRefCo
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -4540,4 +5280,7 @@ procedure InvokeRTPPBCallbackUPP(inSelector: OSType; ioParams: UnivPtr; inRefCon
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

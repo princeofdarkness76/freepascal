@@ -21,9 +21,13 @@ procedure test80(a: widechar); overload;
   begin
     writeln('widechar called instead of longint');
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     halt(1)
 >>>>>>> graemeg/fixes_2_2
+=======
+    halt(1)
+>>>>>>> origin/fixes_2_2
   end;
 
 var
@@ -47,6 +51,7 @@ begin
     v := y80;
     test80(v);
 <<<<<<< HEAD
+<<<<<<< HEAD
     Writeln('Exception expected, but none was raised');
     Halt(1)
   except
@@ -57,6 +62,11 @@ begin
     on E : TObject do
       halt(1);
 >>>>>>> graemeg/fixes_2_2
+=======
+  except
+    on E : TObject do
+      halt(1);
+>>>>>>> origin/fixes_2_2
   end;
 end;
 

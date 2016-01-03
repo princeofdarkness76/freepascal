@@ -24,6 +24,7 @@ uses
   
 TYpe
 <<<<<<< HEAD
+<<<<<<< HEAD
   TClassOption = (caCreateClass,caConstructor,caDestructor,caCreateList,
                   caListAddMethod,caListItemsProperty,caOverrideRead,
                   caOverrideReadThis,caOverrideSave);
@@ -39,13 +40,18 @@ TYpe
     Constructor Create(ACollection : TCollection); override;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   TClassOption = (caCreateClass,caConstructor,caDestructor,caCreateList,caListAddMethod,caListItemsProperty);
   TClassOptions = Set of TClassOption;
   TVisitorOption = (voRead,voReadList,voCreate,voDelete,voUpdate,
                     voCommonSetupParams,voSingleSaveVisitor);
   TVisitorOptions = set of TVisitorOption;
   
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { TTiOPFCodeOptions }
 
   TTiOPFCodeOptions = Class (TClassCodeGeneratorOptions)
@@ -94,11 +100,14 @@ TYpe
     procedure WriteFieldAssign(Strings: TStrings; F: TFieldPropDef);
     procedure WriteAssignToParam(Strings: TStrings; F: TFieldPropDef);
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure WriteReadWriteOverride(Strings: TStrings; const AAMethod, AVisitorGroup: String);
     procedure WriteRegisterVisitorLine(Strings: TStrings;
       const V: TVisitorOption; const ObjectClassName: String);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure WriteSetSQL(Strings: TStrings; const ASQL: String);
     procedure WriteSQLConstants(Strings: TStrings);
     Procedure WriteTerminateVisitor(Strings : TStrings; V : TVisitorOption; const ObjectClassName: String);
@@ -114,13 +123,17 @@ TYpe
     procedure WriteVisitorDeclaration(Strings: TStrings; V: TVisitorOption; const ObjectClassName: String);
     procedure WriteVisitorImplementation(Strings: TStrings; V: TVisitorOption; const ObjectClassName: String);
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure WriteVisitorRegistration(Strings: TStrings; const ObjectClassName: String);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Protected
     // Not to be overridden.
     procedure WriteListAddObject(Strings: TStrings; const ListClassName, ObjectClassName: String);
     // Overrides of parent objects
+<<<<<<< HEAD
 <<<<<<< HEAD
     Function CreateFieldPropDefs : TFieldPropDefs; override;
     function AllowPropertyDeclaration(F: TFieldPropDef; AVisibility: TVisibilities): Boolean; override;
@@ -130,11 +143,16 @@ TYpe
     Procedure DoGenerateImplementation(Strings: TStrings); override;
     procedure CreateImplementation(Strings: TStrings); override;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     function AllowPropertyDeclaration(F: TFieldPropDef; AVisibility: TVisibilities): Boolean; override;
     Function GetInterfaceUsesClause : string; override;
     Procedure DoGenerateInterface(Strings: TStrings); override;
     Procedure DoGenerateImplementation(Strings: TStrings); override;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Function NeedsConstructor : Boolean; override;
     Function NeedsDestructor : Boolean; override;
     Class Function NeedsFieldDefs : Boolean; override;
@@ -164,6 +182,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { TTiOPFFieldPropDef }
 
 constructor TTiOPFFieldPropDef.Create(ACollection: TCollection);
@@ -174,6 +193,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { TTiOPFCodeOptions }
 
 function TTiOPFCodeOptions.GetListClassName: String;
@@ -381,10 +402,14 @@ begin
   // AcceptVisitor
   S:=BeginAcceptVisitor(Strings,C,ObjectClassName);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AddLn(Strings,'Result:=Result and (Visited.ObjectState in [posCreate,posDelete,posUpdate]);');
 =======
   AddLn(Strings,'Result:=Result and (Visited.ObjectState in [posCreate,posdelete,posUpdate]);');
 >>>>>>> graemeg/fixes_2_2
+=======
+  AddLn(Strings,'Result:=Result and (Visited.ObjectState in [posCreate,posdelete,posUpdate]);');
+>>>>>>> origin/fixes_2_2
   DecIndent;
   EndMethod(Strings,S);
   S:=BeginSetupParams(Strings,C,ObjectClassName,True);
@@ -423,6 +448,7 @@ begin
     Result:=Result+', ';
   Result:=Result+'tiVisitor, tiVisitorDB, tiObject';
 <<<<<<< HEAD
+<<<<<<< HEAD
   If (voRegisterVisitors in tiOPFoptions.VisitorOptions)
      or ([caOverrideRead,caOverrideReadThis,caOverrideSave]*tiOPFOptions.ClassOptions<>[]) then
     Result:=Result+', tiOPFManager';
@@ -433,6 +459,10 @@ end;
 end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+end;
+
+>>>>>>> origin/fixes_2_2
 procedure TTiOPFCodeGenerator.DoGenerateInterface(Strings: TStrings);
 
 Var
@@ -462,6 +492,7 @@ begin
     end;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   If voRegisterVisitors in tiOPFoptions.VisitorOptions then
     begin
     AddLn(Strings);
@@ -470,6 +501,8 @@ begin
     end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -484,10 +517,14 @@ begin
   If (V in [voCreate,voUpdate]) and (UseCommonSetupParams) then
     A:=Format('TUpdateCreate%sVisitor',[StripType(ObjectClassName)])
 <<<<<<< HEAD
+<<<<<<< HEAD
   else If (V in [voCreate,voDelete,voUpdate,voCommonSetupParams,voSingleSaveVisitor]) then
 =======
   else If (V in [voCreate,voDelete,voUpdate,voCommonSetupParams]) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  else If (V in [voCreate,voDelete,voUpdate,voCommonSetupParams]) then
+>>>>>>> origin/fixes_2_2
     A:='TtiVisitorUpdate'
   else
     A:='TtiVisitorSelect';
@@ -601,10 +638,14 @@ procedure TTiOPFCodeGenerator.WriteSQLConstants(Strings : TStrings);
 Const
   VisSQL : Array [TVisitorOption] of string
 <<<<<<< HEAD
+<<<<<<< HEAD
          = ('Read','ReadList','Create','Delete','Update','','','');
 =======
          = ('Read','ReadList','Create','Delete','Update','','');
 >>>>>>> graemeg/fixes_2_2
+=======
+         = ('Read','ReadList','Create','Delete','Update','','');
+>>>>>>> origin/fixes_2_2
 
 Var
   OCN,S : String;
@@ -675,6 +716,7 @@ begin
       If V in VisitorOptions then
         WriteVisitorImplementation(Strings,V,ObjectClassName);
 <<<<<<< HEAD
+<<<<<<< HEAD
     If (voRegisterVisitors in TiOPFOptions.VisitorOptions) then
       WriteVisitorRegistration(Strings,ObjectClassName);
     end;
@@ -736,6 +778,11 @@ end;
 end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+    end;
+end;
+
+>>>>>>> origin/fixes_2_2
 { ---------------------------------------------------------------------
   Visitor helper routines
   ---------------------------------------------------------------------}
@@ -757,9 +804,12 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Function TTiOPFCodeGenerator.BeginInit(Strings : TStrings; const AClass : String) : String;
 
 begin
@@ -817,6 +867,7 @@ end;
 
 { ---------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
   Visitor registration
   ---------------------------------------------------------------------}
 
@@ -867,6 +918,8 @@ end;
 { ---------------------------------------------------------------------
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Read Visitor
   ---------------------------------------------------------------------}
 
@@ -945,10 +998,14 @@ begin
         S:='AsFloat';
       ptCurrency :
 <<<<<<< HEAD
+<<<<<<< HEAD
         S:='AsFloat';
 =======
         S:='AsCurrency';
 >>>>>>> graemeg/fixes_2_2
+=======
+        S:='AsCurrency';
+>>>>>>> origin/fixes_2_2
       ptDateTime :
         S:='AsDateTime';
       ptEnumerated :
@@ -1216,10 +1273,14 @@ begin
     IncIndent;
     Try
 <<<<<<< HEAD
+<<<<<<< HEAD
       AddLn(Strings,'Property Items[AIndex : Integer] : %s Read GetObj Write SetObj; Default;',[ObjectClassname]);
 =======
       AddLn(Strings,'Property Items[Index : Integer] : %s Read GetObj Write SetObj; Default;',[ObjectClassname]);
 >>>>>>> graemeg/fixes_2_2
+=======
+      AddLn(Strings,'Property Items[Index : Integer] : %s Read GetObj Write SetObj; Default;',[ObjectClassname]);
+>>>>>>> origin/fixes_2_2
     Finally
       DecIndent;
     end;
@@ -1259,6 +1320,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TTiOPFCodeGenerator.CreateFieldPropDefs: TFieldPropDefs;
 begin
   Result:=TFieldPropDefs.Create(TTiOPFFieldPropDef);
@@ -1266,6 +1328,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function TTiOPFCodeGenerator.AllowPropertyDeclaration(F: TFieldPropDef;
   AVisibility: TVisibilities): Boolean;
 begin
@@ -1315,10 +1379,14 @@ end;
 
 Initialization
 <<<<<<< HEAD
+<<<<<<< HEAD
   RegisterCodeGenerator('tiOPF','tiOPF classes and hard-coded visitors for the data',TTiOPFCodeGenerator);
 =======
   RegisterCodeGenerator('tiOPF','tiOPF class and visitors for the data',TTiOPFCodeGenerator);
 >>>>>>> graemeg/fixes_2_2
+=======
+  RegisterCodeGenerator('tiOPF','tiOPF class and visitors for the data',TTiOPFCodeGenerator);
+>>>>>>> origin/fixes_2_2
 
 Finalization
   UnRegisterCodeGenerator(TTiOPFCodeGenerator);

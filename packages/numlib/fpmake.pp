@@ -15,6 +15,7 @@ begin
     P:=AddPackage('numlib');
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -22,11 +23,16 @@ begin
     P.IncludePath.Add('src');
     P.OSes := AllUnixOSes+AllWindowsOSes-[qnx];
 =======
+=======
+>>>>>>> origin/fixes_2_2
     P.Directory:='numlib';
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
     P.SourcePath.Add('src');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 //    P.Dependencies.Add('x11');
 
     T:=P.Targets.AddUnit('det.pas');
@@ -136,6 +142,7 @@ begin
           AddInclude('direct.inc');
         end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     P.ExamplePath.Add('examples');
     P.Targets.AddExampleProgram('iomwrvex.pas');
@@ -287,6 +294,8 @@ begin
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef ALLPACKAGES}
     Run;
     end;

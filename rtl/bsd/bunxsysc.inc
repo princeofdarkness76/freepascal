@@ -48,6 +48,7 @@ function FPsigsuspend(const sigmask:sigset_t):cint;
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef OPENBSD}
   { OpenBSD sigsuspend syscall wants a simple int as arg }
   FPsigsuspend:= do_syscall(syscall_nr_sigsuspend,TSysParam(sigmask[0]));
@@ -57,6 +58,9 @@ begin
 =======
   FPsigsuspend:= do_syscall(syscall_nr_sigsuspend,TSysParam(@sigmask));
 >>>>>>> graemeg/fixes_2_2
+=======
+  FPsigsuspend:= do_syscall(syscall_nr_sigsuspend,TSysParam(@sigmask));
+>>>>>>> origin/fixes_2_2
 end;
 
 <<<<<<< HEAD
@@ -532,6 +536,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function fpLstat(path:pchar;Info:pstat):cint;
 {
   Get all information on a link (the link itself), and return it in info.
@@ -543,6 +548,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function fpNice(N:cint):cint;
 {
   Set process priority. A positive N means a lower priority.

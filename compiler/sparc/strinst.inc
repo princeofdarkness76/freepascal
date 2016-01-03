@@ -68,9 +68,12 @@
           'fmovd',
           'fabsd','fabsq',
 <<<<<<< HEAD
+<<<<<<< HEAD
           'fnegd','fnegq',
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           { memory barrier instructions }
           'stbar',
           'membar'

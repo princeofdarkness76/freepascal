@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -28,15 +29,24 @@
  
      Copyright:  © 2001-2005 by Apple Computer, Inc., all rights reserved.
 >>>>>>> graemeg/fixes_2_2
+=======
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 2001-2005 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
 <<<<<<< HEAD
+<<<<<<< HEAD
                      http://bugs.freepascal.org
 =======
                      http://www.freepascal.org/bugs.html
 >>>>>>> graemeg/fixes_2_2
+=======
+                     http://www.freepascal.org/bugs.html
+>>>>>>> origin/fixes_2_2
  
 }
 {
@@ -50,6 +60,7 @@
 {This file was processed by Dan's Source Converter}
 {version 1.3 (this version modified by Ingemar Ragnemalm)}
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
@@ -73,13 +84,18 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
     Modified for use with Free Pascal
     Version 210
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -89,12 +105,17 @@
 unit HIObject;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -108,14 +129,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -124,11 +150,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -166,6 +195,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -173,6 +204,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -405,6 +437,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -413,7 +447,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -440,9 +477,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -453,6 +494,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,CFBase,CFBundle,Events,CarbonEventsCore,AXUIElement,CFDictionary;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -461,6 +503,9 @@ uses MacTypes,CFBase,CFBundle,Events,CarbonEventsCore,AXUIElement,CFDictionary;
 =======
 uses MacTypes,CFBase,CFBundle,Events,CarbonEvents,HIObjectCore,AXUIElement,CFDictionary,CarbonEventsCore;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,CFBase,CFBundle,Events,CarbonEvents,HIObjectCore,AXUIElement,CFDictionary,CarbonEventsCore;
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN POWER}
 
@@ -470,6 +515,7 @@ uses MacTypes,CFBase,CFBundle,Events,CarbonEvents,HIObjectCore,AXUIElement,CFDic
  *  
  *  Discussion:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    HIObject is the HIToolbox's base class for various objects. In
  *    Mac OS X 10.2 and later, most common user interface objects
  *    (controls, windows, menus, and toolbars) are derived from
@@ -478,6 +524,8 @@ uses MacTypes,CFBase,CFBundle,Events,CarbonEvents,HIObjectCore,AXUIElement,CFDic
  *    this file. There are also polymorphic functions one can use on
  *    any HIObject for getting the class ID, etc. 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    HIObject is the HIToolbox's base class for various objects. Over
  *    time, all of our common objects (controls, windows, menus, etc.)
  *    will be derived from HIObject. Code which is external to
@@ -485,7 +533,10 @@ uses MacTypes,CFBase,CFBundle,Events,CarbonEvents,HIObjectCore,AXUIElement,CFDic
  *    the routines contained in this file. There are also polymorphic
  *    functions one can use on any HIObject for getting the class ID,
  *    etc. 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *    
  *    HIObjects are actually CF types under the hood. This means that
  *    they can be put into CF collections and retain/release can be
@@ -525,6 +576,7 @@ uses MacTypes,CFBase,CFBundle,Events,CarbonEvents,HIObjectCore,AXUIElement,CFDic
  *    really being called in the context of a handler stack, so you
  *    cannot do things like CallNextEventHandler. The userData
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    parameter is what you specified as the inConstructData parameter
  *    to HIObjectRegisterSubclass. Typically, during construction you
  *    will allocate memory yourself to store your own instance data;
@@ -536,6 +588,8 @@ uses MacTypes,CFBase,CFBundle,Events,CarbonEvents,HIObjectCore,AXUIElement,CFDic
  *    later use. When handling this construct event, you should be sure
  *    to use SetEventParameter to set the kEventParamHIObjectInstance
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    parameter is what you specified when you registered the class.
  *    Typically, during construction you will allocate memory yourself
  *    to store your own instance data; this allocation might be as
@@ -545,7 +599,10 @@ uses MacTypes,CFBase,CFBundle,Events,CarbonEvents,HIObjectCore,AXUIElement,CFDic
  *    store this HIObjectRef in your own instance data for later use.
  *    When handling this construct event, you should be sure to use
  *    SetEventParameter to set the kEventParamHIObjectInstance
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *    parameter in the construction event with your own instance data.
  *    You must use typeVoidPtr as the type. 
  *    
@@ -585,6 +642,7 @@ uses MacTypes,CFBase,CFBundle,Events,CarbonEvents,HIObjectCore,AXUIElement,CFDic
  *    some hurt. Just clean up and return from your handler.
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -620,11 +678,16 @@ type
 {--------------------------------------------------------------------------------------}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
 	The declarations for HIObjectClassRef, HIObjectClassRefPtr, and HIObjectRef 
 	have been moved to HIObjectCore. See HIObjectCore.p[.pas] for reason.
 }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  Discussion:
  *    HIObject errors
@@ -649,6 +712,7 @@ const
    }
 	hiObjectClassIsAbstractErr = -22083;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   {
    * You may not register a subclass of a class that has the
@@ -688,6 +752,8 @@ const
 {--------------------------------------------------------------------------------------}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 const
 {
@@ -695,6 +761,7 @@ const
    }
 	kEventClassHIObject = FourCharCode('hiob');
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 const
@@ -830,18 +897,24 @@ var kHIObjectInitParamEventType: CFStringRef; external name '_kHIObjectInitParam
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 {
 =======
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kEventParamHIObjectInstance = FourCharCode('hioi');
 	kEventParamHIArchive = FourCharCode('hiac'); { typeCFTypeRef }
 	typeHIObjectRef = FourCharCode('hiob');
 
 {
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     kEventClassHIObject quick reference:
     
     These are the events for base class functionality of HIObjects. You should only need to be
     aware of these if you are implementing a subclass of HIObject.
     
+<<<<<<< HEAD
 <<<<<<< HEAD
     kEventHIObjectConstruct             = 1,
     kEventHIObjectInitialize            = 2,
@@ -852,13 +925,18 @@ const
     kEventHIObjectCreatedFromArchive    = 7,
     kEventHIObjectGetInitParameters     = 8
 =======
+=======
+>>>>>>> origin/fixes_2_2
     kEventHIObjectConstruct         = 1,
     kEventHIObjectInitialize        = 2,
     kEventHIObjectDestruct          = 3,
     kEventHIObjectIsEqual           = 4,
     kEventHIObjectPrintDebugInfo    = 5,
     kEventHIObjectEncode            = 6
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 }
 {
  *  kEventClassHIObject / kEventHIObjectConstruct
@@ -905,6 +983,7 @@ const
 	kEventHIObjectConstruct = 1;
 
 {
+<<<<<<< HEAD
  *  kEventClassHIObject / kEventHIObjectInitialize
  *  
  *  Summary:
@@ -1875,12 +1954,41 @@ const
  *    install its subdelegate objects. This event is sent to all
  *    handlers registered for it. This event is only sent to the
  *    delegate object, and is not propagated past it.
+=======
+ *  kEventClassHIObject / kEventHIObjectInitialize
+ *  
+ *  Summary:
+ *    Your object is being initialized. You should read initialization
+ *    data from the event and store it into your instance data.
+ *  
+ *  Discussion:
+ *    Your handler should pass this event on to the superclass first
+ *    before handling this event. This is done by calling
+ *    CallNextEventHandler with the event. When that function returns,
+ *    you should make sure the result is noErr. If not, you should NOT
+ *    continue to initialize your class.
+ *    
+ *    Assuming that CallNextEventHandler returned noErr, you may then
+ *    proceed to read initialization data from the event parameters, if
+ *    any. For example, you might be create an object that includes a
+ *    string as part of its instance data. The caller of HIObjectCreate
+ *    would create an EventRef and add a string to the event using a
+ *    parameter name and type defined by your object. In your objectÕs
+ *    kEventHIObjectInitialize event handler, you would read the string
+ *    from the event parameter and store it into your instance
+ *    data.
+ *    
+ *    The parameters of this event, therefore, contain the union of all
+ *    parameters needed by all base classes of this object to properly
+ *    construct themselves.
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
  *    --> kEventParamDirectObject (in, typeHIObjectRef)
  *          The delegate object.
  *    
@@ -1906,10 +2014,44 @@ const
  *    remove its subdelegate objects. This event is sent to all
  *    handlers registered for it. This event is only sent to the
  *    delegate object, and is not propagated past it.
+=======
+ *    --> kEventParamHIArchive (in, typeCFTypeRef)
+ *          The HIArchive reference from which the HIObject should be
+ *          decoded. This parameter will only exist when the HIObject
+ *          is requested to initialize itself from a decoded archive. 
+ *          Otherwise, the HIObject should initialize itself normally.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventHIObjectInitialize = 2;
+
+{
+ *  kEventClassHIObject / kEventHIObjectDestruct
+ *  
+ *  Summary:
+ *    Your object is being destroyed. This is your chance to dispose of
+ *    anything you might have allocated for your objectÕs instance data.
+ *  
+ *  Discussion:
+ *    Do NOT call through with CallNextEventHandler, as you will
+ *    disrupt the fabric of space-time. An HIObject is destroyed in
+ *    most-derived to least-derived order, and if you call through,
+ *    your base class can be destroyed before you destroy your own
+ *    data, which can cause undefined results.
+ *    
+ *    Note that the refcon of your event handler for this event will be
+ *    the instance data pointer allocated and returned by your
+ *    kEventHIObjectConstruct handler in the
+ *    kEventParamHIObjectInstance parameter.
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
  *  Parameters:
  *    
  *    --> kEventParamDirectObject (in, typeHIObjectRef)
@@ -1938,6 +2080,27 @@ const
  *    attached to a particular HIObject. If this event is not handled,
  *    the event sender should assume that the object can be attached to
  *    any type of object.
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventHIObjectDestruct = 3;
+
+{
+ *  kEventClassHIObject / kEventHIObjectIsEqual
+ *  
+ *  Summary:
+ *    HIObjectIsEqual has been called, and you are being asked to
+ *    determine if your object is equivalent to the one being passed to
+ *    your handler.
+ *  
+ *  Discussion:
+ *    The base HIObject class handles this event by comparing the
+ *    HIObjectRef values for pointer equality. Your subclass may choose
+ *    to also compare the contents of the HIObject instance data.
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1945,6 +2108,7 @@ const
  *  Parameters:
  *    
  *    --> kEventParamDirectObject (in, typeHIObjectRef)
+<<<<<<< HEAD
  *          The delegate object.
  *    
  *    --> kEventParamDelegateTargetClasses (in, typeCFMutableArrayRef)
@@ -1969,6 +2133,16 @@ const
  *    A delegate group is a delegate object that installs other
  *    delegates when it is itself installed.
 =======
+=======
+ *          The object to which your object should be compared.
+ *    
+ *    <-- kEventParamResult (out, typeBoolean)
+ *          If your object is equivalent to the direct object, you
+ *          should return true in this parameter; otherwise, return
+ *          false.
+ *  
+ *  Availability:
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
  *    CarbonLib:        not available
  }
@@ -1985,11 +2159,15 @@ const
  *  Discussion:
  *    This event is sent to all handlers registered for it. You should
  *    NOT call CallNextEventHandler.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Parameters:
  *    
@@ -2015,6 +2193,8 @@ const
  *    Retrieves the HIObject class IDs of the delegates that are
  *    installed by a delegate group.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
  *    CarbonLib:        not available
@@ -2038,13 +2218,17 @@ const
  *    HIArchiveEncodeHIObject has been called on your HIObject. At this
  *    point all relevant long term data should be encoded to the
  *    HIArchive provided.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    --> kEventParamDirectObject (in, typeHIObjectRef)
  *          The delegate object.
@@ -2065,6 +2249,8 @@ const
 {  ¥ API                                                                               }
 {--------------------------------------------------------------------------------------}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    --> kEventParamHIArchive (in, typeCFTypeRef)
  *          The HIArchive reference into which the HIObject should be
  *          compiled.
@@ -2076,7 +2262,10 @@ const
 const
 	kEventHIObjectEncode = 6;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  HIObjectRegisterSubclass()
  *  
@@ -2146,10 +2335,14 @@ const
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function HIObjectRegisterSubclass( inClassID: CFStringRef; inBaseClassID: CFStringRef; inOptions: OptionBits; inConstructProc: EventHandlerUPP { can be NULL }; inNumEvents: ItemCount; {const} inEventList: {variable-size-array} EventTypeSpecPtr; inConstructData: UnivPtr; outClassRef: HIObjectClassRefPtr { can be NULL } ): OSStatus; external name '_HIObjectRegisterSubclass';
 =======
 function HIObjectRegisterSubclass( inClassID: CFStringRef; inBaseClassID: CFStringRef; inOptions: OptionBits; inConstructProc: EventHandlerUPP { can be NULL }; inNumEvents: UInt32; {const} inEventList: {variable-size-array} EventTypeSpecPtr; inConstructData: UnivPtr; outClassRef: HIObjectClassRefPtr { can be NULL } ): OSStatus; external name '_HIObjectRegisterSubclass';
 >>>>>>> graemeg/fixes_2_2
+=======
+function HIObjectRegisterSubclass( inClassID: CFStringRef; inBaseClassID: CFStringRef; inOptions: OptionBits; inConstructProc: EventHandlerUPP { can be NULL }; inNumEvents: UInt32; {const} inEventList: {variable-size-array} EventTypeSpecPtr; inConstructData: UnivPtr; outClassRef: HIObjectClassRefPtr { can be NULL } ): OSStatus; external name '_HIObjectRegisterSubclass';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
@@ -2275,6 +2468,7 @@ procedure HIObjectPrintDebugInfo( inObject: HIObjectRef ); external name '_HIObj
  *  
  *  Discussion:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Returns the class ID of a given HIObject. 
  *    
  *    This API will crash if called from an kEventHIObjectConstruct
@@ -2283,6 +2477,9 @@ procedure HIObjectPrintDebugInfo( inObject: HIObjectRef ); external name '_HIObj
 =======
  *    Returns the class ID of a given HIObject.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Returns the class ID of a given HIObject.
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -2412,11 +2609,14 @@ function HIObjectCreateFromBundle( inBundle: CFBundleRef; var outObject: HIObjec
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  HIObjectFromEventTarget()
  *  
  *  Summary:
  *    Returns the HIObjectRef that owns an event target.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  HIObjectIsAccessibilityIgnored()
  *  
  *  Discussion:
@@ -2524,13 +2724,17 @@ function HIObjectSetAccessibilityIgnored( inObject: HIObjectRef; inIgnored: Bool
  *    the consultation of the store. The general rule is that if the
  *    toolbox or a Carbon Event handler can provide the attribute value
  *    some other way, the store will not be consulted.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    inTarget:
  *      The event target whose owing HIObjectRef to return.
@@ -2552,6 +2756,8 @@ function HIObjectFromEventTarget( inTarget: EventTargetRef ): HIObjectRef; exter
 {  ¥ Archiving                                                                         }
 {--------------------------------------------------------------------------------------}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    inHIObject:
  *      The HIObjectRef part of the object-identifier pair to which the
  *      attribute data is associated.
@@ -2676,7 +2882,10 @@ function HIObjectOverrideAccessibilityContainment( inHIObject: HIObjectRef; inDe
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  HIObjectIsArchivingIgnored()
  *  
@@ -2685,10 +2894,14 @@ function HIObjectOverrideAccessibilityContainment( inHIObject: HIObjectRef; inDe
  *    for archiving.
  *    See the discussion of HIObjectSetArchivingIgnored for details on
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    what it means to be archiving-ignored.
 =======
  *    what it means to be archiving ignored.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    what it means to be archiving ignored.
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -2697,10 +2910,14 @@ function HIObjectOverrideAccessibilityContainment( inHIObject: HIObjectRef; inDe
  *    
  *    inObject:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      The object whose archiving-ignored state you wish to query.
 =======
  *      The object whose archiving ignored state you wish to query.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      The object whose archiving ignored state you wish to query.
+>>>>>>> origin/fixes_2_2
  *  
  *  Result:
  *    A Boolean value indicating whether or not the HIObject is ignored
@@ -2716,13 +2933,17 @@ function HIObjectIsArchivingIgnored( inObject: HIObjectRef ): Boolean; external 
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  HIObjectSetArchivingIgnored()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Call this function to mark or unmark an HIObject as ignored for
  *    archiving. By default, HIObjects are marked as ignored for
@@ -2737,13 +2958,18 @@ function HIObjectIsArchivingIgnored( inObject: HIObjectRef ): Boolean; external 
  *    archiving will never be requested to encode itself into an
  *    archive.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Marks an HIObject as ignored (or not) for the purposes of the
  *    archiving APIs.
  *    An HIObject that is ignored for archiving will never be requested
  *    to encode itself into an archive. This is a statement that the
  *    HIObject does not handle the archiving protocol.
  *    By default, an HIObject *is* archiving ignored.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -2752,10 +2978,14 @@ function HIObjectIsArchivingIgnored( inObject: HIObjectRef ): Boolean; external 
  *    
  *    inObject:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      The object whose archiving-ignored state you wish to change.
 =======
  *      The object whose archiving ignored state you wish to change.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      The object whose archiving ignored state you wish to change.
+>>>>>>> origin/fixes_2_2
  *    
  *    inIgnored:
  *      A Boolean value indicating whether or not to ignore the object.
@@ -2765,10 +2995,14 @@ function HIObjectIsArchivingIgnored( inObject: HIObjectRef ): Boolean; external 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2778,6 +3012,7 @@ function HIObjectSetArchivingIgnored( inObject: HIObjectRef; inIgnored: Boolean 
 
 {
    Standard custom archive data dictionary keys describing custom initialize event parameters.
+<<<<<<< HEAD
 <<<<<<< HEAD
    The name and type keys denote an array of OSTypes represented by CFStrings. Use
    UTCreateStringForOSType and UTGetOSTypeFromString in UTType.h for CFStringRef <-> OSType
@@ -2790,6 +3025,11 @@ function HIObjectSetArchivingIgnored( inObject: HIObjectRef; inIgnored: Boolean 
    and UTGetOSTypeFromString in UTType.h for CFStringRef <-> OSType conversion.
 }
 >>>>>>> graemeg/fixes_2_2
+=======
+   Each keyed value is an array of OSTypes represented by CFStrings. Use UTCreateStringForOSType
+   and UTGetOSTypeFromString in UTType.h for CFStringRef <-> OSType conversion.
+}
+>>>>>>> origin/fixes_2_2
 {
  *  kHIObjectCustomDataParameterNamesKey
  *  
@@ -2830,9 +3070,13 @@ var kHIObjectCustomDataParameterTypesKey: CFStringRef; external name '_kHIObject
 var kHIObjectCustomDataParameterValuesKey: CFStringRef; external name '_kHIObjectCustomDataParameterValuesKey'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 {
    Standard custom archive data dictionary keys defining a class and superclass for clients who do
    not implement the object's true class. Each keyed value is a CFStringRef based HIObject class ID.
@@ -2864,6 +3108,7 @@ var kHIObjectCustomDataClassIDKey: CFStringRef; external name '_kHIObjectCustomD
 var kHIObjectCustomDataSuperClassIDKey: CFStringRef; external name '_kHIObjectCustomDataSuperClassIDKey'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
  *  kHIObjectCustomDataCDEFProcIDKey
  *  
@@ -2874,6 +3119,8 @@ var kHIObjectCustomDataSuperClassIDKey: CFStringRef; external name '_kHIObjectCu
  *    conversion.
  *  
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {
    Standard custom archive data dictionary key for ProcPointer based CDEFs.  The key value is a
@@ -2882,21 +3129,29 @@ var kHIObjectCustomDataSuperClassIDKey: CFStringRef; external name '_kHIObjectCu
 {
  *  kHIObjectCustomDataCDEFProcIDKey
  *  
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kHIObjectCustomDataCDEFProcIDKey: CFStringRef; external name '_kHIObjectCustomDataCDEFProcIDKey'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  *  kHIObjectCustomDataDelegateGroupParametersKey
@@ -2923,6 +3178,9 @@ var kHIObjectCustomDataDelegateGroupParametersKey: CFStringRef; external name '_
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 {
  *  HIObjectCopyCustomArchiveData()
  *  
@@ -2950,10 +3208,14 @@ var kHIObjectCustomDataDelegateGroupParametersKey: CFStringRef; external name '_
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2991,10 +3253,14 @@ function HIObjectCopyCustomArchiveData( inObject: HIObjectRef; var outCustomData
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3002,6 +3268,7 @@ function HIObjectSetCustomArchiveData( inObject: HIObjectRef; inCustomData: CFDi
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {--------------------------------------------------------------------------------------}
 {  ¥ Delegate API constants                                                            }
@@ -3315,3 +3582,6 @@ end.
 =======
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+end.
+>>>>>>> origin/fixes_2_2

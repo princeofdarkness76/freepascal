@@ -6,7 +6,10 @@ Const
   Unixes = [darwin,dragonfly,freebsd,linux,netbsd,openbsd];
 =======
   Unixes = [darwin,freebsd,linux,netbsd,openbsd];
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 Function CurrentOS : String;
@@ -252,7 +255,11 @@ begin
     end;
   AddSystemDependencies(Installer.Targets);
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
 =======
 end;
 >>>>>>> graemeg/fixes_2_2
+=======
+end;
+>>>>>>> origin/fixes_2_2

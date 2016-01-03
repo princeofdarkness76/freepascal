@@ -414,6 +414,7 @@ attsufNONE,
 attsufNONE,
 attsufNONE,
 <<<<<<< HEAD
+<<<<<<< HEAD
 attsufMM,
 attsufINT,
 attsufNONE,
@@ -646,7 +647,12 @@ attsufNONE,
 attsufNONE,
 attsufNONE,
 attsufNONE,
+=======
+attsufINT,
+attsufINT,
+>>>>>>> origin/fixes_2_2
 attsufNONE,
+attsufINT,
 attsufNONE,
 attsufNONE,
 attsufNONE,
@@ -730,7 +736,11 @@ attsufMM,
 =======
 attsufNONE,
 attsufNONE,
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+attsufINT,
+>>>>>>> origin/fixes_2_2
 attsufNONE,
 attsufNONE,
 attsufNONE,
@@ -782,11 +792,14 @@ attsufNONE,
 attsufNONE,
 attsufNONE,
 attsufNONE,
+attsufINT,
+attsufNONE,
+attsufINT,
 attsufNONE,
 attsufNONE,
 attsufNONE,
 attsufNONE,
-attsufNONE,
+attsufINT,
 attsufNONE,
 attsufNONE,
 attsufNONE,
@@ -850,10 +863,12 @@ attsufNONE,
 attsufNONE,
 attsufNONE,
 attsufNONE,
+attsufINT,
 attsufNONE,
 attsufNONE,
 attsufNONE,
 attsufNONE,
+<<<<<<< HEAD
 attsufNONE,
 attsufNONE,
 attsufNONE,
@@ -1138,6 +1153,8 @@ attsufNONE,
 attsufNONE,
 attsufNONE
 =======
+=======
+>>>>>>> origin/fixes_2_2
 attsufINT,
 attsufINT
 >>>>>>> graemeg/fixes_2_2

@@ -199,10 +199,14 @@ unit opttail;
                exit;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         labelsym:=clabelsym.create('$opttail');
 =======
         labelsym:=tlabelsym.create('$opttail');
 >>>>>>> graemeg/fixes_2_2
+=======
+        labelsym:=tlabelsym.create('$opttail');
+>>>>>>> origin/fixes_2_2
         labelnode:=clabelnode.create(cnothingnode.create,labelsym);
         if find_and_replace_tailcalls(n) then
           begin

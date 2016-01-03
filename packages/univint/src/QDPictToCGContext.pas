@@ -4,6 +4,7 @@
      Contains:   API to draw Quickdraw PICTs into CoreGraphics context
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    Quickdraw-262~1
  
      Copyright:  © 2001-2008 by Apple Computer, Inc., all rights reserved.
@@ -12,10 +13,16 @@
  
      Copyright:  © 2001-2003 by Apple Computer, Inc., all rights reserved.
 >>>>>>> graemeg/fixes_2_2
+=======
+     Version:    Quickdraw-150~1
+ 
+     Copyright:  © 2001-2003 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -30,6 +37,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -42,7 +51,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -52,12 +64,17 @@
 unit QDPictToCGContext;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -71,14 +88,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -87,11 +109,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -129,6 +154,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -136,6 +163,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -380,6 +408,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -388,7 +418,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -415,9 +448,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -427,6 +464,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,CGContext,CGGeometry,CGDataProvider,CFBase,CFURL;
 {$endc} {not MACOSALLINCLUDE}
@@ -439,13 +477,18 @@ uses MacTypes,CGContext,CGGeometry,CGDataProvider,CFBase,CFURL;
 type
 	QDPictRef = ^SInt32; { an opaque type }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,CGContext,CGGeometry,CGDataProvider,CFURL;
 {$ALIGN MAC68K}
 
 type
 	QDPictRef    = ^SInt32; { an opaque 32-bit type }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     Note: QuickDraw picture data typically comes in two forms: a PICT resource
     that begins the picture header data at the beginning of the resource and PICT
@@ -463,13 +506,17 @@ type
  * of these places in the data fork then the QDPictRef returned will be NULL.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QDPictCreateWithProvider()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
  *    CarbonLib:        not available
@@ -478,13 +525,18 @@ type
 function QDPictCreateWithProvider( provider: CGDataProviderRef ): QDPictRef; external name '_QDPictCreateWithProvider';
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 function QDPictCreateWithProvider( provider: CGDataProviderRef ): QDPictRef; external name '_QDPictCreateWithProvider';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { Create a QDPict reference from `url'. 
@@ -498,6 +550,7 @@ function QDPictCreateWithProvider( provider: CGDataProviderRef ): QDPictRef; ext
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -505,13 +558,18 @@ function QDPictCreateWithProvider( provider: CGDataProviderRef ): QDPictRef; ext
 function QDPictCreateWithURL( url: CFURLRef ): QDPictRef; external name '_QDPictCreateWithURL';
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 function QDPictCreateWithURL( url: CFURLRef ): QDPictRef; external name '_QDPictCreateWithURL';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { Increment the retain count of `pictRef' and return it.  All 
@@ -521,6 +579,7 @@ function QDPictCreateWithURL( url: CFURLRef ): QDPictRef; external name '_QDPict
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -528,13 +587,18 @@ function QDPictCreateWithURL( url: CFURLRef ): QDPictRef; external name '_QDPict
 function QDPictRetain( pictRef: QDPictRef ): QDPictRef; external name '_QDPictRetain';
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 function QDPictRetain( pictRef: QDPictRef ): QDPictRef; external name '_QDPictRetain';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { Decrement the retain count of `pictRef'.  If the retain count reaches 0,
@@ -544,6 +608,7 @@ function QDPictRetain( pictRef: QDPictRef ): QDPictRef; external name '_QDPictRe
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -551,13 +616,18 @@ function QDPictRetain( pictRef: QDPictRef ): QDPictRef; external name '_QDPictRe
 procedure QDPictRelease( pictRef: QDPictRef ); external name '_QDPictRelease';
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 procedure QDPictRelease( pictRef: QDPictRef ); external name '_QDPictRelease';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { Return the Picture Bounds of the QuickDraw picture represented by `pictRef'. This
@@ -568,6 +638,7 @@ procedure QDPictRelease( pictRef: QDPictRef ); external name '_QDPictRelease';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -575,13 +646,18 @@ procedure QDPictRelease( pictRef: QDPictRef ); external name '_QDPictRelease';
 function QDPictGetBounds( pictRef: QDPictRef ): CGRect; external name '_QDPictGetBounds';
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 function QDPictGetBounds( pictRef: QDPictRef ): CGRect; external name '_QDPictGetBounds';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { Return the resolution of the QuickDraw picture represented by `pictRef'.
@@ -594,6 +670,7 @@ function QDPictGetBounds( pictRef: QDPictRef ): CGRect; external name '_QDPictGe
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -601,13 +678,18 @@ function QDPictGetBounds( pictRef: QDPictRef ): CGRect; external name '_QDPictGe
 procedure QDPictGetResolution( pictRef: QDPictRef; var xRes: Float32; var yRes: Float32 ); external name '_QDPictGetResolution';
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 procedure QDPictGetResolution( pictRef: QDPictRef; var xRes, yRes: Float32 ); external name '_QDPictGetResolution';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { Draw `pictRef' in the rectangular area specified by `rect'.
@@ -619,6 +701,7 @@ procedure QDPictGetResolution( pictRef: QDPictRef; var xRes, yRes: Float32 ); ex
  *  QDPictDrawToCGContext()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
  *    CarbonLib:        not available
@@ -635,6 +718,8 @@ function QDPictDrawToCGContext( ctx: CGContextRef; rect: CGRect; pictRef: QDPict
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -643,4 +728,7 @@ end.
 function QDPictDrawToCGContext( ctx: CGContextRef; rect: CGRect; pictRef: QDPictRef ): OSStatus; external name '_QDPictDrawToCGContext';
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

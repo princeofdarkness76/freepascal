@@ -76,6 +76,7 @@ Function Length(A : DynArrayType) : Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function Power(Base:double;expon:double):double;
 Function Power(Base:Longint;expon:Longint):Longint;
 =======
@@ -118,3 +119,5 @@ Var
 {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

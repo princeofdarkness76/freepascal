@@ -598,12 +598,16 @@ A_MOVABS,
 A_MOVSXD,
 A_CQO,
 A_CMPXCHG16B,
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 A_MOVNTSS,
 A_MOVNTSD,
 A_INSERTQ,
 A_EXTRQ,
 A_LZCNT,
+<<<<<<< HEAD
 <<<<<<< HEAD
 A_PABSB,
 A_PABSW,
@@ -1114,4 +1118,7 @@ A_CMPSQ
 =======
 A_POPCNT
 >>>>>>> graemeg/fixes_2_2
+=======
+A_POPCNT
+>>>>>>> origin/fixes_2_2
 );

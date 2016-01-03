@@ -1,13 +1,18 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for OpenAL bindings
 >>>>>>> graemeg/fixes_2_2
+=======
+#   Makefile.fpc for OpenAL bindings
+>>>>>>> origin/fixes_2_2
 #
 
 [package]
 name=openal
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -25,10 +30,14 @@ version=2.5.1
 =======
 version=2.2.5
 >>>>>>> graemeg/fixes_2_2
+=======
+version=2.2.5
+>>>>>>> origin/fixes_2_2
 
 [target]
 units=openal
 exampledirs=examples
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
@@ -38,10 +47,15 @@ packages=rtl fpmkunit
 
 [require]
 >>>>>>> graemeg/fixes_2_2
+=======
+
+[require]
+>>>>>>> origin/fixes_2_2
 
 [install]
 fpcpackage=y
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [default]
 fpcdir=../..
@@ -132,6 +146,8 @@ else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
 =======
+=======
+>>>>>>> origin/fixes_2_2
 [compiler]
 includedir=src
 sourcedir=src tests examples
@@ -141,4 +157,7 @@ fpcdir=../..
 
 [rules]
 .NOTPARALLEL:
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

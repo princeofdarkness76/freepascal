@@ -15,6 +15,7 @@ begin
     P:=AddPackage('univint');
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -959,6 +960,8 @@ begin
     P.ExamplePath.Add('examples');
     P.Targets.AddExampleProgram('controldemo.pas');
 =======
+=======
+>>>>>>> origin/fixes_2_2
     P.Directory:='univint';
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
@@ -4125,7 +4128,10 @@ begin
       begin
         AddUnit('mactypes');
       end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QuickTime/QuickTimeMusic.h
  
      Contains:   QuickTime Interfaces.
@@ -32,6 +33,8 @@
      Copyright:  © 1990-2008 by Apple Inc., all rights reserved
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       QuickTimeMusic.p
  
      Contains:   QuickTime Interfaces.
@@ -40,11 +43,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1990-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -75,6 +82,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -86,7 +95,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -96,12 +108,17 @@
 unit QuickTimeMusic;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -115,14 +132,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -131,11 +153,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -173,6 +198,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -180,6 +207,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -410,6 +438,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -418,7 +448,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -445,9 +478,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -457,6 +494,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,Components,Dialogs,Endian,Files,ImageCompression,Movies,QuickdrawTypes;
 {$endc} {not MACOSALLINCLUDE}
@@ -547,6 +585,8 @@ const
 	kaiLibraryInfoType = FourCharCode('linf');
 	kaiLibraryDescType = FourCharCode('ldsc');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,Dialogs,Files,Components,Quickdraw,Video,MacMemory,Sound,Endian,ImageCompression,Movies;
 
 
@@ -572,11 +612,15 @@ const
 	kaiLibraryInfoType			= FourCharCode('linf');
 	kaiLibraryDescType			= FourCharCode('ldsc');
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	InstLibDescRecPtr = ^InstLibDescRec;
 	InstLibDescRec = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		libIDName: Str31;
 	end;
@@ -590,6 +634,8 @@ const
 	kInstKnobMissingUnknown = 0;
 	kInstKnobMissingDefault = 1 shl 0;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		libIDName:				Str31;
 	end;
 
@@ -604,11 +650,15 @@ const
 	kInstKnobMissingUnknown		= 0;
 	kInstKnobMissingDefault		= $01;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	InstKnobListPtr = ^InstKnobList;
 	InstKnobList = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		knobCount: BigEndianLong;
 		knobFlags: BigEndianLong;
@@ -621,6 +671,8 @@ const
 const
 	instSamplePreProcessFlag = 1 shl 0;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		knobCount:				BigEndianLong;
 		knobFlags:				BigEndianLong;
 		knob:					array [0..0] of InstKnobRec;
@@ -633,11 +685,15 @@ const
 
 	instSamplePreProcessFlag	= $01;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	InstSampleDescRecPtr = ^InstSampleDescRec;
 	InstSampleDescRec = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		dataFormat: BigEndianOSType;
 		numChannels: BigEndianShort;
@@ -877,6 +933,8 @@ const
 	kQTMSKnobVolumeAttackTimeID = $02000001;
 	kQTMSKnobVolumeDecayTimeID = $02000002;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		dataFormat:				BigEndianOSType;
 		numChannels:			BigEndianShort;
 		sampleSize:				BigEndianShort;
@@ -1117,11 +1175,15 @@ const
 	kQTMSKnobStartID			= $02000000;
 	kQTMSKnobVolumeAttackTimeID	= $02000001;
 	kQTMSKnobVolumeDecayTimeID	= $02000002;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kQTMSKnobVolumeSustainLevelID = $02000003;
 	kQTMSKnobVolumeRelease1RateID = $02000004;
 	kQTMSKnobVolumeDecayKeyScalingID = $02000005;
 	kQTMSKnobVolumeReleaseTimeID = $02000006;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kQTMSKnobVolumeLFODelayID = $02000007;
 	kQTMSKnobVolumeLFORampTimeID = $02000008;
@@ -1260,6 +1322,8 @@ type
 const
 	kVoiceCountDynamic = -1;    { constant to use to specify dynamic voicing }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kQTMSKnobVolumeLFODelayID	= $02000007;
 	kQTMSKnobVolumeLFORampTimeID = $02000008;
 	kQTMSKnobVolumeLFOPeriodID	= $02000009;
@@ -1349,12 +1413,16 @@ type
 
 const
 	kVoiceCountDynamic			= -1;							{  constant to use to specify dynamic voicing  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
 	ToneDescriptionPtr = ^ToneDescription;
 	ToneDescription = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		synthesizerType: BigEndianOSType;        { synthesizer type }
 		synthesizerName: Str31;        { name of instantiation of synth }
@@ -1473,6 +1541,8 @@ const
 	kUnknownKnobValue = $7FFFFFFF; { a knob with this value means, we don't know it. }
 	kDefaultKnobValue = $7FFFFFFE; { used to SET a knob to its default value. }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		synthesizerType:		BigEndianOSType;						{  synthesizer type  }
 		synthesizerName:		Str31;									{  name of instantiation of synth  }
 		instrumentName:			Str31;									{  preferred name for human use  }
@@ -1525,11 +1595,15 @@ const
 	kUnknownKnobValue			= $7FFFFFFF;					{  a knob with this value means, we don't know it.  }
 	kDefaultKnobValue			= $7FFFFFFE;					{  used to set a knob to its default value.  }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	KnobDescriptionPtr = ^KnobDescription;
 	KnobDescription = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		name: Str63;
 		lowValue: SIGNEDLONG;
@@ -1709,6 +1783,8 @@ const
 const
 	kGenericMusicMiscLongFirst = 0;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		name:					Str63;
 		lowValue:				SInt32;
 		highValue:				SInt32;
@@ -1826,7 +1902,10 @@ const
 
 	{	 elements of the misc long list 	}
 	kGenericMusicMiscLongFirst	= 0;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kGenericMusicMiscLongVoiceCount = 1;
 	kGenericMusicMiscLongPartCount = 2;
 	kGenericMusicMiscLongModifiableInstrumentCount = 3;
@@ -1837,23 +1916,30 @@ const
 	kGenericMusicMiscLongOutputCount = 8;
 	kGenericMusicMiscLongLatency = 9;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kGenericMusicMiscLongFlags = 10;
 	kGenericMusicMiscLongFirstGMHW = 11;  { number to add to locate GM main instruments }
 	kGenericMusicMiscLongFirstGMDrumHW = 12; { number to add to locate GM drumkits }
 	kGenericMusicMiscLongFirstUserHW = 13; { First hw number of user instruments (presumed sequential) }
 	kGenericMusicMiscLongLast = 14;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kGenericMusicMiscLongFlags	= 10;
 	kGenericMusicMiscLongFirstGMHW = 11;						{  number to add to locate GM main instruments  }
 	kGenericMusicMiscLongFirstGMDrumHW = 12;					{  number to add to locate GM drumkits  }
 	kGenericMusicMiscLongFirstUserHW = 13;						{  First hw number of user instruments (presumed sequential)  }
 	kGenericMusicMiscLongLast	= 14;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	GCPartPtr = ^GCPart;
 	GCPart = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		hwInstrumentNumber: SIGNEDLONG;     { internal number of recalled instrument }
 		controller: array [0..127] of SInt16;				{  current values for all controllers  }
@@ -3420,6 +3506,87 @@ const
 function MusicGetInstrumentInfo(mc: MusicComponent; getInstrumentInfoFlags: SInt32; var infoListH: InstrumentInfoListHandle): ComponentResult; external name '_MusicGetInstrumentInfo';
 {
  *  MusicTask()
+=======
+		hwInstrumentNumber:		SInt32;								{  internal number of recalled instrument  }
+		controller:				array [0..127] of SInt16;				{  current values for all controllers  }
+		volume:					SInt32;								{  ctrl 7 is special case  }
+		polyphony:				SInt32;
+		midiChannel:			SInt32;								{  1-16 if in use  }
+		id:						GCInstrumentData;						{  ToneDescription & knoblist, uncertain length  }
+	end;
+
+	{	
+	 * Calls specific to the GenericMusicComponent
+	 	}
+
+const
+	kMusicGenericRange			= $0100;
+	kMusicDerivedRange			= $0200;
+
+	{	
+	 * Flags in GenericMusicConfigure call
+	 	}
+	kGenericMusicDoMIDI			= $01;							{  implement normal MIDI messages for note, controllers, and program changes 0-127  }
+	kGenericMusicBank0			= $02;							{  implement instrument bank changes on controller 0  }
+	kGenericMusicBank32			= $04;							{  implement instrument bank changes on controller 32  }
+	kGenericMusicErsatzMIDI		= $08;							{  construct MIDI packets, but send them to the derived component  }
+	kGenericMusicCallKnobs		= $10;							{  call the derived component with special knob format call  }
+	kGenericMusicCallParts		= $20;							{  call the derived component with special part format call  }
+	kGenericMusicCallInstrument	= $40;							{  call MusicDerivedSetInstrument for MusicSetInstrument calls  }
+	kGenericMusicCallNumber		= $80;							{  call MusicDerivedSetPartInstrumentNumber for MusicSetPartInstrumentNumber calls, & don't send any C0 or bank stuff  }
+	kGenericMusicCallROMInstrument = $0100;						{  call MusicSetInstrument for MusicSetPartInstrumentNumber for "ROM" instruments, passing params from the ROMi resource  }
+	kGenericMusicAllDefaults	= $0200;						{  indicates that when a new instrument is recalled, all knobs are reset to DEFAULT settings. True for GS modules  }
+
+
+type
+{$ifc TYPED_FUNCTION_POINTERS}
+	MusicOfflineDataProcPtr = function(SoundData: Ptr; numBytes: SInt32; myRefCon: SInt32): ComponentResult;
+{$elsec}
+	MusicOfflineDataProcPtr = ProcPtr;
+{$endc}
+
+{$ifc OPAQUE_UPP_TYPES}
+	MusicOfflineDataUPP = ^SInt32; { an opaque UPP }
+{$elsec}
+	MusicOfflineDataUPP = UniversalProcPtr;
+{$endc}	
+	OfflineSampleTypePtr = ^OfflineSampleType;
+	OfflineSampleType = record
+		numChannels:			UInt32;									{ number of channels,  ie mono = 1 }
+		sampleRate:				UnsignedFixed;							{ sample rate in Apples Fixed point representation }
+		sampleSize:				UInt16;									{ number of bits in sample }
+	end;
+
+	InstrumentInfoRecordPtr = ^InstrumentInfoRecord;
+	InstrumentInfoRecord = record
+		instrumentNumber:		SInt32;								{  instrument number (if 0, name is a catagory) }
+		flags:					SInt32;								{  show in picker, etc. }
+		toneNameIndex:			SInt32;								{  index in toneNames (1 based) }
+		itxtNameAtomID:			SInt32;								{  index in itxtNames (itxt/name by index) }
+	end;
+
+	InstrumentInfoListPtr = ^InstrumentInfoList;
+	InstrumentInfoList = record
+		recordCount:			SInt32;
+		toneNames:				Handle;									{  name from tone description }
+		itxtNames:				QTAtomContainer;						{  itxt/name atoms for instruments }
+		info:					array [0..0] of InstrumentInfoRecord;
+	end;
+
+	InstrumentInfoListHandle			= ^InstrumentInfoListPtr;
+	{
+	 *  MusicGetDescription()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 *    Windows:          in qtmlClient.lib 3.0 and later
+	 	}
+function MusicGetDescription(mc: MusicComponent; var sd: SynthesizerDescription): ComponentResult; external name '_MusicGetDescription';
+{
+ *  MusicGetPart()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3427,9 +3594,15 @@ function MusicGetInstrumentInfo(mc: MusicComponent; getInstrumentInfoFlags: SInt
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MusicTask(mc: MusicComponent): ComponentResult; external name '_MusicTask';
 {
  *  MusicSetPartInstrumentNumberInterruptSafe()
+=======
+function MusicGetPart(mc: MusicComponent; part: SInt32; var midiChannel: SInt32; var polyphony: SInt32): ComponentResult; external name '_MusicGetPart';
+{
+ *  MusicSetPart()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3437,9 +3610,15 @@ function MusicTask(mc: MusicComponent): ComponentResult; external name '_MusicTa
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MusicSetPartInstrumentNumberInterruptSafe(mc: MusicComponent; part: SInt32; instrumentNumber: SInt32): ComponentResult; external name '_MusicSetPartInstrumentNumberInterruptSafe';
 {
  *  MusicSetPartSoundLocalization()
+=======
+function MusicSetPart(mc: MusicComponent; part: SInt32; midiChannel: SInt32; polyphony: SInt32): ComponentResult; external name '_MusicSetPart';
+{
+ *  MusicSetPartInstrumentNumber()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3447,9 +3626,15 @@ function MusicSetPartInstrumentNumberInterruptSafe(mc: MusicComponent; part: SIn
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MusicSetPartSoundLocalization(mc: MusicComponent; part: SInt32; data: Handle): ComponentResult; external name '_MusicSetPartSoundLocalization';
 {
  *  MusicGenericConfigure()
+=======
+function MusicSetPartInstrumentNumber(mc: MusicComponent; part: SInt32; instrumentNumber: SInt32): ComponentResult; external name '_MusicSetPartInstrumentNumber';
+{
+ *  MusicGetPartInstrumentNumber()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3457,9 +3642,15 @@ function MusicSetPartSoundLocalization(mc: MusicComponent; part: SInt32; data: H
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MusicGenericConfigure(mc: MusicComponent; mode: SInt32; flags: SInt32; baseResID: SInt32): ComponentResult; external name '_MusicGenericConfigure';
 {
  *  MusicGenericGetPart()
+=======
+function MusicGetPartInstrumentNumber(mc: MusicComponent; part: SInt32): ComponentResult; external name '_MusicGetPartInstrumentNumber';
+{
+ *  MusicStorePartInstrument()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3467,9 +3658,15 @@ function MusicGenericConfigure(mc: MusicComponent; mode: SInt32; flags: SInt32; 
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MusicGenericGetPart(mc: MusicComponent; partNumber: SInt32; var part: UnivPtr): ComponentResult; external name '_MusicGenericGetPart';
 {
  *  MusicGenericGetKnobList()
+=======
+function MusicStorePartInstrument(mc: MusicComponent; part: SInt32; instrumentNumber: SInt32): ComponentResult; external name '_MusicStorePartInstrument';
+{
+ *  MusicGetPartAtomicInstrument()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3477,19 +3674,34 @@ function MusicGenericGetPart(mc: MusicComponent; partNumber: SInt32; var part: U
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MusicGenericGetKnobList(mc: MusicComponent; knobType: SInt32; var gkdlH: GenericKnobDescriptionListHandle): ComponentResult; external name '_MusicGenericGetKnobList';
 {
  *  MusicGenericSetResourceNumbers()
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+=======
+function MusicGetPartAtomicInstrument(mc: MusicComponent; part: SInt32; var ai: AtomicInstrument; flags: SInt32): ComponentResult; external name '_MusicGetPartAtomicInstrument';
+{
+ *  MusicSetPartAtomicInstrument()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MusicGenericSetResourceNumbers(mc: MusicComponent; resourceIDH: Handle): ComponentResult; external name '_MusicGenericSetResourceNumbers';
 {
  *  MusicDerivedMIDISend()
+=======
+function MusicSetPartAtomicInstrument(mc: MusicComponent; part: SInt32; aiP: AtomicInstrumentPtr; flags: SInt32): ComponentResult; external name '_MusicSetPartAtomicInstrument';
+{
+ *  MusicGetPartKnob()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3497,9 +3709,15 @@ function MusicGenericSetResourceNumbers(mc: MusicComponent; resourceIDH: Handle)
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MusicDerivedMIDISend(mc: MusicComponent; var packet: MusicMIDIPacket): ComponentResult; external name '_MusicDerivedMIDISend';
 {
  *  MusicDerivedSetKnob()
+=======
+function MusicGetPartKnob(mc: MusicComponent; part: SInt32; knobID: SInt32): ComponentResult; external name '_MusicGetPartKnob';
+{
+ *  MusicSetPartKnob()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3507,9 +3725,15 @@ function MusicDerivedMIDISend(mc: MusicComponent; var packet: MusicMIDIPacket): 
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MusicDerivedSetKnob(mc: MusicComponent; knobType: SInt32; knobNumber: SInt32; knobValue: SInt32; partNumber: SInt32; var p: GCPart; var gkd: GenericKnobDescription): ComponentResult; external name '_MusicDerivedSetKnob';
 {
  *  MusicDerivedSetPart()
+=======
+function MusicSetPartKnob(mc: MusicComponent; part: SInt32; knobID: SInt32; knobValue: SInt32): ComponentResult; external name '_MusicSetPartKnob';
+{
+ *  MusicGetKnob()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3517,9 +3741,15 @@ function MusicDerivedSetKnob(mc: MusicComponent; knobType: SInt32; knobNumber: S
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MusicDerivedSetPart(mc: MusicComponent; partNumber: SInt32; var p: GCPart): ComponentResult; external name '_MusicDerivedSetPart';
 {
  *  MusicDerivedSetInstrument()
+=======
+function MusicGetKnob(mc: MusicComponent; knobID: SInt32): ComponentResult; external name '_MusicGetKnob';
+{
+ *  MusicSetKnob()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3527,9 +3757,15 @@ function MusicDerivedSetPart(mc: MusicComponent; partNumber: SInt32; var p: GCPa
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MusicDerivedSetInstrument(mc: MusicComponent; partNumber: SInt32; var p: GCPart): ComponentResult; external name '_MusicDerivedSetInstrument';
 {
  *  MusicDerivedSetPartInstrumentNumber()
+=======
+function MusicSetKnob(mc: MusicComponent; knobID: SInt32; knobValue: SInt32): ComponentResult; external name '_MusicSetKnob';
+{
+ *  MusicGetPartName()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3537,9 +3773,15 @@ function MusicDerivedSetInstrument(mc: MusicComponent; partNumber: SInt32; var p
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MusicDerivedSetPartInstrumentNumber(mc: MusicComponent; partNumber: SInt32; var p: GCPart): ComponentResult; external name '_MusicDerivedSetPartInstrumentNumber';
 {
  *  MusicDerivedSetMIDI()
+=======
+function MusicGetPartName(mc: MusicComponent; part: SInt32; name: StringPtr): ComponentResult; external name '_MusicGetPartName';
+{
+ *  MusicSetPartName()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3547,9 +3789,15 @@ function MusicDerivedSetPartInstrumentNumber(mc: MusicComponent; partNumber: SIn
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MusicDerivedSetMIDI(mc: MusicComponent; midiProc: MusicMIDISendUPP; refcon: SInt32; midiChannel: SInt32): ComponentResult; external name '_MusicDerivedSetMIDI';
 {
  *  MusicDerivedStorePartInstrument()
+=======
+function MusicSetPartName(mc: MusicComponent; part: SInt32; name: StringPtr): ComponentResult; external name '_MusicSetPartName';
+{
+ *  MusicFindTone()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3557,26 +3805,45 @@ function MusicDerivedSetMIDI(mc: MusicComponent; midiProc: MusicMIDISendUPP; ref
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MusicDerivedStorePartInstrument(mc: MusicComponent; partNumber: SInt32; var p: GCPart; instrumentNumber: SInt32): ComponentResult; external name '_MusicDerivedStorePartInstrument';
 {
  *  MusicDerivedOpenResFile()
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+=======
+function MusicFindTone(mc: MusicComponent; var td: ToneDescription; var libraryIndexOut: SInt32; var fit: UInt32): ComponentResult; external name '_MusicFindTone';
+{
+ *  MusicPlayNote()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MusicDerivedOpenResFile(mc: MusicComponent): ComponentResult; external name '_MusicDerivedOpenResFile';
 {
  *  MusicDerivedCloseResFile()
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+=======
+function MusicPlayNote(mc: MusicComponent; part: SInt32; pitch: SInt32; velocity: SInt32): ComponentResult; external name '_MusicPlayNote';
+{
+ *  MusicResetPart()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MusicDerivedCloseResFile(mc: MusicComponent; resRefNum: SInt16): ComponentResult; external name '_MusicDerivedCloseResFile';
 {--------------------------
     Types
@@ -3648,6 +3915,11 @@ const
 function NARegisterMusicDevice(na: NoteAllocator; synthType: OSType; var name: Str31; var connections: SynthesizerConnections): ComponentResult; external name '_NARegisterMusicDevice';
 {
  *  NAUnregisterMusicDevice()
+=======
+function MusicResetPart(mc: MusicComponent; part: SInt32): ComponentResult; external name '_MusicResetPart';
+{
+ *  MusicSetPartController()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3655,9 +3927,15 @@ function NARegisterMusicDevice(na: NoteAllocator; synthType: OSType; var name: S
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NAUnregisterMusicDevice(na: NoteAllocator; index: SInt32): ComponentResult; external name '_NAUnregisterMusicDevice';
 {
  *  NAGetRegisteredMusicDevice()
+=======
+function MusicSetPartController(mc: MusicComponent; part: SInt32; controllerNumber: MusicController; controllerValue: SInt32): ComponentResult; external name '_MusicSetPartController';
+{
+ *  MusicGetPartController()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3665,9 +3943,15 @@ function NAUnregisterMusicDevice(na: NoteAllocator; index: SInt32): ComponentRes
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NAGetRegisteredMusicDevice(na: NoteAllocator; index: SInt32; var synthType: OSType; var name: Str31; var connections: SynthesizerConnections; var mc: MusicComponent): ComponentResult; external name '_NAGetRegisteredMusicDevice';
 {
  *  NASaveMusicConfiguration()
+=======
+function MusicGetPartController(mc: MusicComponent; part: SInt32; controllerNumber: MusicController): ComponentResult; external name '_MusicGetPartController';
+{
+ *  MusicGetMIDIProc()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3675,9 +3959,15 @@ function NAGetRegisteredMusicDevice(na: NoteAllocator; index: SInt32; var synthT
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NASaveMusicConfiguration(na: NoteAllocator): ComponentResult; external name '_NASaveMusicConfiguration';
 {
  *  NANewNoteChannel()
+=======
+function MusicGetMIDIProc(mc: MusicComponent; var midiSendProc: MusicMIDISendUPP; var refCon: SInt32): ComponentResult; external name '_MusicGetMIDIProc';
+{
+ *  MusicSetMIDIProc()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3685,9 +3975,15 @@ function NASaveMusicConfiguration(na: NoteAllocator): ComponentResult; external 
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NANewNoteChannel(na: NoteAllocator; var noteRequest_: NoteRequest; var outChannel: NoteChannel): ComponentResult; external name '_NANewNoteChannel';
 {
  *  NADisposeNoteChannel()
+=======
+function MusicSetMIDIProc(mc: MusicComponent; midiSendProc: MusicMIDISendUPP; refCon: SInt32): ComponentResult; external name '_MusicSetMIDIProc';
+{
+ *  MusicGetInstrumentNames()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3695,9 +3991,15 @@ function NANewNoteChannel(na: NoteAllocator; var noteRequest_: NoteRequest; var 
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NADisposeNoteChannel(na: NoteAllocator; noteChannel_: NoteChannel): ComponentResult; external name '_NADisposeNoteChannel';
 {
  *  NAGetNoteChannelInfo()
+=======
+function MusicGetInstrumentNames(mc: MusicComponent; modifiableInstruments: SInt32; var instrumentNames: Handle; var instrumentCategoryLasts: Handle; var instrumentCategoryNames: Handle): ComponentResult; external name '_MusicGetInstrumentNames';
+{
+ *  MusicGetDrumNames()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3705,9 +4007,15 @@ function NADisposeNoteChannel(na: NoteAllocator; noteChannel_: NoteChannel): Com
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NAGetNoteChannelInfo(na: NoteAllocator; noteChannel_: NoteChannel; var index: SInt32; var part: SInt32): ComponentResult; external name '_NAGetNoteChannelInfo';
 {
  *  NAPrerollNoteChannel()
+=======
+function MusicGetDrumNames(mc: MusicComponent; modifiableInstruments: SInt32; var instrumentNumbers: Handle; var instrumentNames: Handle): ComponentResult; external name '_MusicGetDrumNames';
+{
+ *  MusicGetMasterTune()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3715,9 +4023,15 @@ function NAGetNoteChannelInfo(na: NoteAllocator; noteChannel_: NoteChannel; var 
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NAPrerollNoteChannel(na: NoteAllocator; noteChannel_: NoteChannel): ComponentResult; external name '_NAPrerollNoteChannel';
 {
  *  NAUnrollNoteChannel()
+=======
+function MusicGetMasterTune(mc: MusicComponent): ComponentResult; external name '_MusicGetMasterTune';
+{
+ *  MusicSetMasterTune()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3725,9 +4039,15 @@ function NAPrerollNoteChannel(na: NoteAllocator; noteChannel_: NoteChannel): Com
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NAUnrollNoteChannel(na: NoteAllocator; noteChannel_: NoteChannel): ComponentResult; external name '_NAUnrollNoteChannel';
 {
  *  NASetNoteChannelVolume()
+=======
+function MusicSetMasterTune(mc: MusicComponent; masterTune: SInt32): ComponentResult; external name '_MusicSetMasterTune';
+{
+ *  MusicGetInstrumentAboutInfo()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3735,9 +4055,15 @@ function NAUnrollNoteChannel(na: NoteAllocator; noteChannel_: NoteChannel): Comp
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NASetNoteChannelVolume(na: NoteAllocator; noteChannel_: NoteChannel; volume: Fixed): ComponentResult; external name '_NASetNoteChannelVolume';
 {
  *  NAResetNoteChannel()
+=======
+function MusicGetInstrumentAboutInfo(mc: MusicComponent; part: SInt32; var iai: InstrumentAboutInfo): ComponentResult; external name '_MusicGetInstrumentAboutInfo';
+{
+ *  MusicGetDeviceConnection()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3745,9 +4071,15 @@ function NASetNoteChannelVolume(na: NoteAllocator; noteChannel_: NoteChannel; vo
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NAResetNoteChannel(na: NoteAllocator; noteChannel_: NoteChannel): ComponentResult; external name '_NAResetNoteChannel';
 {
  *  NAPlayNote()
+=======
+function MusicGetDeviceConnection(mc: MusicComponent; index: SInt32; var id1: SInt32; var id2: SInt32): ComponentResult; external name '_MusicGetDeviceConnection';
+{
+ *  MusicUseDeviceConnection()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3755,9 +4087,15 @@ function NAResetNoteChannel(na: NoteAllocator; noteChannel_: NoteChannel): Compo
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NAPlayNote(na: NoteAllocator; noteChannel_: NoteChannel; pitch: SInt32; velocity: SInt32): ComponentResult; external name '_NAPlayNote';
 {
  *  NASetController()
+=======
+function MusicUseDeviceConnection(mc: MusicComponent; id1: SInt32; id2: SInt32): ComponentResult; external name '_MusicUseDeviceConnection';
+{
+ *  MusicGetKnobSettingStrings()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3765,9 +4103,15 @@ function NAPlayNote(na: NoteAllocator; noteChannel_: NoteChannel; pitch: SInt32;
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NASetController(na: NoteAllocator; noteChannel_: NoteChannel; controllerNumber: SInt32; controllerValue: SInt32): ComponentResult; external name '_NASetController';
 {
  *  NASetKnob()
+=======
+function MusicGetKnobSettingStrings(mc: MusicComponent; knobIndex: SInt32; isGlobal: SInt32; var settingsNames: Handle; var settingsCategoryLasts: Handle; var settingsCategoryNames: Handle): ComponentResult; external name '_MusicGetKnobSettingStrings';
+{
+ *  MusicGetMIDIPorts()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3775,9 +4119,15 @@ function NASetController(na: NoteAllocator; noteChannel_: NoteChannel; controlle
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NASetKnob(na: NoteAllocator; noteChannel_: NoteChannel; knobNumber: SInt32; knobValue: SInt32): ComponentResult; external name '_NASetKnob';
 {
  *  NAFindNoteChannelTone()
+=======
+function MusicGetMIDIPorts(mc: MusicComponent; var inputPortCount: SInt32; var outputPortCount: SInt32): ComponentResult; external name '_MusicGetMIDIPorts';
+{
+ *  MusicSendMIDI()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3785,9 +4135,15 @@ function NASetKnob(na: NoteAllocator; noteChannel_: NoteChannel; knobNumber: SIn
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NAFindNoteChannelTone(na: NoteAllocator; noteChannel_: NoteChannel; var td: ToneDescription; var instrumentNumber: SInt32): ComponentResult; external name '_NAFindNoteChannelTone';
 {
  *  NASetInstrumentNumber()
+=======
+function MusicSendMIDI(mc: MusicComponent; portIndex: SInt32; var mp: MusicMIDIPacket): ComponentResult; external name '_MusicSendMIDI';
+{
+ *  MusicStartOffline()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3795,9 +4151,15 @@ function NAFindNoteChannelTone(na: NoteAllocator; noteChannel_: NoteChannel; var
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NASetInstrumentNumber(na: NoteAllocator; noteChannel_: NoteChannel; instrumentNumber: SInt32): ComponentResult; external name '_NASetInstrumentNumber';
 {
  *  NAPickInstrument()
+=======
+function MusicStartOffline(mc: MusicComponent; var numChannels: UInt32; var sampleRate: UnsignedFixed; var sampleSize: UInt16; dataProc: MusicOfflineDataUPP; dataProcRefCon: SInt32): ComponentResult; external name '_MusicStartOffline';
+{
+ *  MusicSetOfflineTimeTo()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3805,9 +4167,15 @@ function NASetInstrumentNumber(na: NoteAllocator; noteChannel_: NoteChannel; ins
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NAPickInstrument(na: NoteAllocator; filterProc: ModalFilterUPP; prompt: StringPtr; var sd: ToneDescription; flags: UInt32; refCon: SInt32; reserved1: SInt32; reserved2: SInt32): ComponentResult; external name '_NAPickInstrument';
 {
  *  NAPickArrangement()
+=======
+function MusicSetOfflineTimeTo(mc: MusicComponent; newTimeStamp: SInt32): ComponentResult; external name '_MusicSetOfflineTimeTo';
+{
+ *  MusicGetInstrumentKnobDescription()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3815,9 +4183,15 @@ function NAPickInstrument(na: NoteAllocator; filterProc: ModalFilterUPP; prompt:
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NAPickArrangement(na: NoteAllocator; filterProc: ModalFilterUPP; prompt: StringPtr; zero1: SInt32; zero2: SInt32; t: Track; songName: StringPtr): ComponentResult; external name '_NAPickArrangement';
 {
  *  NAStuffToneDescription()
+=======
+function MusicGetInstrumentKnobDescription(mc: MusicComponent; knobIndex: SInt32; var mkd: KnobDescription): ComponentResult; external name '_MusicGetInstrumentKnobDescription';
+{
+ *  MusicGetDrumKnobDescription()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3825,9 +4199,15 @@ function NAPickArrangement(na: NoteAllocator; filterProc: ModalFilterUPP; prompt
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NAStuffToneDescription(na: NoteAllocator; gmNumber: SInt32; var td: ToneDescription): ComponentResult; external name '_NAStuffToneDescription';
 {
  *  NACopyrightDialog()
+=======
+function MusicGetDrumKnobDescription(mc: MusicComponent; knobIndex: SInt32; var mkd: KnobDescription): ComponentResult; external name '_MusicGetDrumKnobDescription';
+{
+ *  MusicGetKnobDescription()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3835,6 +4215,7 @@ function NAStuffToneDescription(na: NoteAllocator; gmNumber: SInt32; var td: Ton
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NACopyrightDialog(na: NoteAllocator; p: PicHandle; author: StringPtr; copyright: StringPtr; other: StringPtr; title: StringPtr; filterProc: ModalFilterUPP; refCon: SInt32): ComponentResult; external name '_NACopyrightDialog';
 >>>>>>> graemeg/fixes_2_2
 {
@@ -4016,6 +4397,10 @@ const
 	kTuneQueueDepth = 8;     { Deepest you can queue tune segments }
 =======
  *  NAGetIndNoteChannel()
+=======
+function MusicGetKnobDescription(mc: MusicComponent; knobIndex: SInt32; var mkd: KnobDescription): ComponentResult; external name '_MusicGetKnobDescription';
+{
+ *  MusicGetInfoText()
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -4023,9 +4408,24 @@ const
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
-function NAGetIndNoteChannel(na: NoteAllocator; index: SInt32; var nc: NoteChannel; var seed: SInt32): ComponentResult; external name '_NAGetIndNoteChannel';
+function MusicGetInfoText(mc: MusicComponent; selector: SInt32; var textH: Handle; var styleH: Handle): ComponentResult; external name '_MusicGetInfoText';
+const
+	kGetInstrumentInfoNoBuiltIn	= $01;
+	kGetInstrumentInfoMidiUserInst = $02;
+	kGetInstrumentInfoNoIText	= $04;
+
+	{
+	 *  MusicGetInstrumentInfo()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 *    Windows:          in qtmlClient.lib 3.0 and later
+	 	}
+function MusicGetInstrumentInfo(mc: MusicComponent; getInstrumentInfoFlags: SInt32; var infoListH: InstrumentInfoListHandle): ComponentResult; external name '_MusicGetInstrumentInfo';
 {
- *  NAGetMIDIPorts()
+ *  MusicTask()
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -4033,9 +4433,9 @@ function NAGetIndNoteChannel(na: NoteAllocator; index: SInt32; var nc: NoteChann
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
-function NAGetMIDIPorts(na: NoteAllocator; var inputPorts: QTMIDIPortListHandle; var outputPorts: QTMIDIPortListHandle): ComponentResult; external name '_NAGetMIDIPorts';
+function MusicTask(mc: MusicComponent): ComponentResult; external name '_MusicTask';
 {
- *  NAGetNoteRequest()
+ *  MusicSetPartInstrumentNumberInterruptSafe()
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -4043,9 +4443,9 @@ function NAGetMIDIPorts(na: NoteAllocator; var inputPorts: QTMIDIPortListHandle;
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
-function NAGetNoteRequest(na: NoteAllocator; noteChannel_: NoteChannel; var nrOut: NoteRequest): ComponentResult; external name '_NAGetNoteRequest';
+function MusicSetPartInstrumentNumberInterruptSafe(mc: MusicComponent; part: SInt32; instrumentNumber: SInt32): ComponentResult; external name '_MusicSetPartInstrumentNumberInterruptSafe';
 {
- *  NASendMIDI()
+ *  MusicSetPartSoundLocalization()
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -4053,9 +4453,9 @@ function NAGetNoteRequest(na: NoteAllocator; noteChannel_: NoteChannel; var nrOu
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
-function NASendMIDI(na: NoteAllocator; noteChannel_: NoteChannel; var mp: MusicMIDIPacket): ComponentResult; external name '_NASendMIDI';
+function MusicSetPartSoundLocalization(mc: MusicComponent; part: SInt32; data: Handle): ComponentResult; external name '_MusicSetPartSoundLocalization';
 {
- *  NAPickEditInstrument()
+ *  MusicGenericConfigure()
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -4063,9 +4463,9 @@ function NASendMIDI(na: NoteAllocator; noteChannel_: NoteChannel; var mp: MusicM
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
-function NAPickEditInstrument(na: NoteAllocator; filterProc: ModalFilterUPP; prompt: StringPtr; refCon: SInt32; nc: NoteChannel; ai: AtomicInstrument; flags: SInt32): ComponentResult; external name '_NAPickEditInstrument';
+function MusicGenericConfigure(mc: MusicComponent; mode: SInt32; flags: SInt32; baseResID: SInt32): ComponentResult; external name '_MusicGenericConfigure';
 {
- *  NANewNoteChannelFromAtomicInstrument()
+ *  MusicGenericGetPart()
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -4073,9 +4473,9 @@ function NAPickEditInstrument(na: NoteAllocator; filterProc: ModalFilterUPP; pro
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
-function NANewNoteChannelFromAtomicInstrument(na: NoteAllocator; instrument: AtomicInstrumentPtr; flags: SInt32; var outChannel: NoteChannel): ComponentResult; external name '_NANewNoteChannelFromAtomicInstrument';
+function MusicGenericGetPart(mc: MusicComponent; partNumber: SInt32; var part: UnivPtr): ComponentResult; external name '_MusicGenericGetPart';
 {
- *  NASetAtomicInstrument()
+ *  MusicGenericGetKnobList()
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -4083,59 +4483,9 @@ function NANewNoteChannelFromAtomicInstrument(na: NoteAllocator; instrument: Ato
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
-function NASetAtomicInstrument(na: NoteAllocator; noteChannel_: NoteChannel; instrument: AtomicInstrumentPtr; flags: SInt32): ComponentResult; external name '_NASetAtomicInstrument';
+function MusicGenericGetKnobList(mc: MusicComponent; knobType: SInt32; var gkdlH: GenericKnobDescriptionListHandle): ComponentResult; external name '_MusicGenericGetKnobList';
 {
- *  NAGetKnob()
- *  
- *  Availability:
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function NAGetKnob(na: NoteAllocator; noteChannel_: NoteChannel; knobNumber: SInt32; var knobValue: SInt32): ComponentResult; external name '_NAGetKnob';
-{
- *  NATask()
- *  
- *  Availability:
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function NATask(na: NoteAllocator): ComponentResult; external name '_NATask';
-{
- *  NASetNoteChannelBalance()
- *  
- *  Availability:
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function NASetNoteChannelBalance(na: NoteAllocator; noteChannel_: NoteChannel; balance: SInt32): ComponentResult; external name '_NASetNoteChannelBalance';
-{
- *  NASetInstrumentNumberInterruptSafe()
- *  
- *  Availability:
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function NASetInstrumentNumberInterruptSafe(na: NoteAllocator; noteChannel_: NoteChannel; instrumentNumber: SInt32): ComponentResult; external name '_NASetInstrumentNumberInterruptSafe';
-{
- *  NASetNoteChannelSoundLocalization()
- *  
- *  Availability:
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function NASetNoteChannelSoundLocalization(na: NoteAllocator; noteChannel_: NoteChannel; data: Handle): ComponentResult; external name '_NASetNoteChannelSoundLocalization';
-{
- *  NAGetController()
+ *  MusicGenericSetResourceNumbers()
  *  
  *  Availability:
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -4143,6 +4493,317 @@ function NASetNoteChannelSoundLocalization(na: NoteAllocator; noteChannel_: Note
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+function MusicGenericSetResourceNumbers(mc: MusicComponent; resourceIDH: Handle): ComponentResult; external name '_MusicGenericSetResourceNumbers';
+{
+ *  MusicDerivedMIDISend()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MusicDerivedMIDISend(mc: MusicComponent; var packet: MusicMIDIPacket): ComponentResult; external name '_MusicDerivedMIDISend';
+{
+ *  MusicDerivedSetKnob()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MusicDerivedSetKnob(mc: MusicComponent; knobType: SInt32; knobNumber: SInt32; knobValue: SInt32; partNumber: SInt32; var p: GCPart; var gkd: GenericKnobDescription): ComponentResult; external name '_MusicDerivedSetKnob';
+{
+ *  MusicDerivedSetPart()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MusicDerivedSetPart(mc: MusicComponent; partNumber: SInt32; var p: GCPart): ComponentResult; external name '_MusicDerivedSetPart';
+{
+ *  MusicDerivedSetInstrument()
+>>>>>>> origin/fixes_2_2
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function NAGetIndNoteChannel(na: NoteAllocator; index: SInt32; var nc: NoteChannel; var seed: SInt32): ComponentResult; external name '_NAGetIndNoteChannel';
+{
+ *  NAGetMIDIPorts()
+=======
+function MusicDerivedSetInstrument(mc: MusicComponent; partNumber: SInt32; var p: GCPart): ComponentResult; external name '_MusicDerivedSetInstrument';
+{
+ *  MusicDerivedSetPartInstrumentNumber()
+>>>>>>> origin/fixes_2_2
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function NAGetMIDIPorts(na: NoteAllocator; var inputPorts: QTMIDIPortListHandle; var outputPorts: QTMIDIPortListHandle): ComponentResult; external name '_NAGetMIDIPorts';
+{
+ *  NAGetNoteRequest()
+=======
+function MusicDerivedSetPartInstrumentNumber(mc: MusicComponent; partNumber: SInt32; var p: GCPart): ComponentResult; external name '_MusicDerivedSetPartInstrumentNumber';
+{
+ *  MusicDerivedSetMIDI()
+>>>>>>> origin/fixes_2_2
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function NAGetNoteRequest(na: NoteAllocator; noteChannel_: NoteChannel; var nrOut: NoteRequest): ComponentResult; external name '_NAGetNoteRequest';
+{
+ *  NASendMIDI()
+=======
+function MusicDerivedSetMIDI(mc: MusicComponent; midiProc: MusicMIDISendUPP; refcon: SInt32; midiChannel: SInt32): ComponentResult; external name '_MusicDerivedSetMIDI';
+{
+ *  MusicDerivedStorePartInstrument()
+>>>>>>> origin/fixes_2_2
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function NASendMIDI(na: NoteAllocator; noteChannel_: NoteChannel; var mp: MusicMIDIPacket): ComponentResult; external name '_NASendMIDI';
+{
+ *  NAPickEditInstrument()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+=======
+function MusicDerivedStorePartInstrument(mc: MusicComponent; partNumber: SInt32; var p: GCPart; instrumentNumber: SInt32): ComponentResult; external name '_MusicDerivedStorePartInstrument';
+{
+ *  MusicDerivedOpenResFile()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+>>>>>>> origin/fixes_2_2
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function NAPickEditInstrument(na: NoteAllocator; filterProc: ModalFilterUPP; prompt: StringPtr; refCon: SInt32; nc: NoteChannel; ai: AtomicInstrument; flags: SInt32): ComponentResult; external name '_NAPickEditInstrument';
+{
+ *  NANewNoteChannelFromAtomicInstrument()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+=======
+function MusicDerivedOpenResFile(mc: MusicComponent): ComponentResult; external name '_MusicDerivedOpenResFile';
+{
+ *  MusicDerivedCloseResFile()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+>>>>>>> origin/fixes_2_2
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function NANewNoteChannelFromAtomicInstrument(na: NoteAllocator; instrument: AtomicInstrumentPtr; flags: SInt32; var outChannel: NoteChannel): ComponentResult; external name '_NANewNoteChannelFromAtomicInstrument';
+{
+ *  NASetAtomicInstrument()
+=======
+function MusicDerivedCloseResFile(mc: MusicComponent; resRefNum: SInt16): ComponentResult; external name '_MusicDerivedCloseResFile';
+{--------------------------
+    Types
+--------------------------}
+
+const
+	kNoteRequestNoGM			= 1;							{  don't degrade to a GM synth  }
+	kNoteRequestNoSynthType		= 2;							{  don't degrade to another synth of same type but different name  }
+	kNoteRequestSynthMustMatch	= 4;							{  synthType must be a match, including kGMSynthComponentSubType  }
+
+
+	kNoteRequestSpecifyMIDIChannel = $80;
+
+
+type
+	NoteAllocator						= ComponentInstance;
+	{	
+	    The midiChannelAssignment field of this structure is used to assign a MIDI channel 
+	    when a NoteChannel is created from a NoteRequest.
+	    A value of 0 indicates a MIDI channel has *not* been assigned
+	    A value of (kNoteRequestSpecifyMIDIChannel | 1->16) is a MIDI channel assignment
+	
+	    This field requires QuickTime 5.0 or later and should be set to 0 for prior versions.
+		}
+	NoteRequestMIDIChannel				= UInt8;
+	NoteRequestInfoPtr = ^NoteRequestInfo;
+	NoteRequestInfo = record
+		flags:					SInt8;									{  1: dont accept GM match, 2: dont accept same-synth-type match  }
+		midiChannelAssignment:	SInt8;									{  (kNoteRequestSpecifyMIDIChannel | 1->16) as MIDI Channel assignement or zero - see notes above   }
+		polyphony:				BigEndianShort;							{  Maximum number of voices  }
+		typicalPolyphony:		BigEndianFixed;							{  Hint for level mixing  }
+	end;
+
+	NoteRequestPtr = ^NoteRequest;
+	NoteRequest = record
+		info:					NoteRequestInfo;
+		tone:					ToneDescription;
+	end;
+
+	NoteChannel    = ^SInt32; { an opaque 32-bit type }
+	NoteChannelPtr = ^NoteChannel;  { when a var xx:NoteChannel parameter can be nil, it is changed to xx: NoteChannelPtr }
+
+
+const
+	kPickDontMix				= 1;							{  dont mix instruments with drum sounds  }
+	kPickSameSynth				= 2;							{  only allow the same device that went in, to come out  }
+	kPickUserInsts				= 4;							{  show user insts in addition to ROM voices  }
+	kPickEditAllowEdit			= 8;							{  lets user switch over to edit mode  }
+	kPickEditAllowPick			= 16;							{  lets the user switch over to pick mode  }
+	kPickEditSynthGlobal		= 32;							{  edit the global knobs of the synth  }
+	kPickEditControllers		= 64;							{  edit the controllers of the notechannel  }
+
+
+	kNoteAllocatorComponentType	= FourCharCode('nota');
+
+
+	{	--------------------------------
+	    Note Allocator Prototypes
+	--------------------------------	}
+	{
+	 *  NARegisterMusicDevice()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 *    Windows:          in qtmlClient.lib 3.0 and later
+	 	}
+function NARegisterMusicDevice(na: NoteAllocator; synthType: OSType; var name: Str31; var connections: SynthesizerConnections): ComponentResult; external name '_NARegisterMusicDevice';
+{
+ *  NAUnregisterMusicDevice()
+>>>>>>> origin/fixes_2_2
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function NASetAtomicInstrument(na: NoteAllocator; noteChannel_: NoteChannel; instrument: AtomicInstrumentPtr; flags: SInt32): ComponentResult; external name '_NASetAtomicInstrument';
+{
+ *  NAGetKnob()
+=======
+function NAUnregisterMusicDevice(na: NoteAllocator; index: SInt32): ComponentResult; external name '_NAUnregisterMusicDevice';
+{
+ *  NAGetRegisteredMusicDevice()
+>>>>>>> origin/fixes_2_2
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function NAGetKnob(na: NoteAllocator; noteChannel_: NoteChannel; knobNumber: SInt32; var knobValue: SInt32): ComponentResult; external name '_NAGetKnob';
+{
+ *  NATask()
+=======
+function NAGetRegisteredMusicDevice(na: NoteAllocator; index: SInt32; var synthType: OSType; var name: Str31; var connections: SynthesizerConnections; var mc: MusicComponent): ComponentResult; external name '_NAGetRegisteredMusicDevice';
+{
+ *  NASaveMusicConfiguration()
+>>>>>>> origin/fixes_2_2
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function NATask(na: NoteAllocator): ComponentResult; external name '_NATask';
+{
+ *  NASetNoteChannelBalance()
+=======
+function NASaveMusicConfiguration(na: NoteAllocator): ComponentResult; external name '_NASaveMusicConfiguration';
+{
+ *  NANewNoteChannel()
+>>>>>>> origin/fixes_2_2
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function NASetNoteChannelBalance(na: NoteAllocator; noteChannel_: NoteChannel; balance: SInt32): ComponentResult; external name '_NASetNoteChannelBalance';
+{
+ *  NASetInstrumentNumberInterruptSafe()
+=======
+function NANewNoteChannel(na: NoteAllocator; var noteRequest_: NoteRequest; var outChannel: NoteChannel): ComponentResult; external name '_NANewNoteChannel';
+{
+ *  NADisposeNoteChannel()
+>>>>>>> origin/fixes_2_2
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function NASetInstrumentNumberInterruptSafe(na: NoteAllocator; noteChannel_: NoteChannel; instrumentNumber: SInt32): ComponentResult; external name '_NASetInstrumentNumberInterruptSafe';
+{
+ *  NASetNoteChannelSoundLocalization()
+=======
+function NADisposeNoteChannel(na: NoteAllocator; noteChannel_: NoteChannel): ComponentResult; external name '_NADisposeNoteChannel';
+{
+ *  NAGetNoteChannelInfo()
+>>>>>>> origin/fixes_2_2
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function NASetNoteChannelSoundLocalization(na: NoteAllocator; noteChannel_: NoteChannel; data: Handle): ComponentResult; external name '_NASetNoteChannelSoundLocalization';
+{
+ *  NAGetController()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+=======
+function NAGetNoteChannelInfo(na: NoteAllocator; noteChannel_: NoteChannel; var index: SInt32; var part: SInt32): ComponentResult; external name '_NAGetNoteChannelInfo';
+{
+ *  NAPrerollNoteChannel()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+>>>>>>> origin/fixes_2_2
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
 function NAGetController(na: NoteAllocator; noteChannel_: NoteChannel; controllerNumber: SInt32; var controllerValue: SInt32): ComponentResult; external name '_NAGetController';
 const
 	kTuneQueueDepth				= 8;							{  Deepest you can queue tune segments  }
@@ -4836,6 +5497,271 @@ function NewMusicMIDISendUPP( userRoutine: MusicMIDISendProcPtr ): MusicMIDISend
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+function NAPrerollNoteChannel(na: NoteAllocator; noteChannel_: NoteChannel): ComponentResult; external name '_NAPrerollNoteChannel';
+{
+ *  NAUnrollNoteChannel()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAUnrollNoteChannel(na: NoteAllocator; noteChannel_: NoteChannel): ComponentResult; external name '_NAUnrollNoteChannel';
+{
+ *  NASetNoteChannelVolume()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NASetNoteChannelVolume(na: NoteAllocator; noteChannel_: NoteChannel; volume: Fixed): ComponentResult; external name '_NASetNoteChannelVolume';
+{
+ *  NAResetNoteChannel()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAResetNoteChannel(na: NoteAllocator; noteChannel_: NoteChannel): ComponentResult; external name '_NAResetNoteChannel';
+{
+ *  NAPlayNote()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAPlayNote(na: NoteAllocator; noteChannel_: NoteChannel; pitch: SInt32; velocity: SInt32): ComponentResult; external name '_NAPlayNote';
+{
+ *  NASetController()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NASetController(na: NoteAllocator; noteChannel_: NoteChannel; controllerNumber: SInt32; controllerValue: SInt32): ComponentResult; external name '_NASetController';
+{
+ *  NASetKnob()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NASetKnob(na: NoteAllocator; noteChannel_: NoteChannel; knobNumber: SInt32; knobValue: SInt32): ComponentResult; external name '_NASetKnob';
+{
+ *  NAFindNoteChannelTone()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAFindNoteChannelTone(na: NoteAllocator; noteChannel_: NoteChannel; var td: ToneDescription; var instrumentNumber: SInt32): ComponentResult; external name '_NAFindNoteChannelTone';
+{
+ *  NASetInstrumentNumber()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NASetInstrumentNumber(na: NoteAllocator; noteChannel_: NoteChannel; instrumentNumber: SInt32): ComponentResult; external name '_NASetInstrumentNumber';
+{
+ *  NAPickInstrument()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAPickInstrument(na: NoteAllocator; filterProc: ModalFilterUPP; prompt: StringPtr; var sd: ToneDescription; flags: UInt32; refCon: SInt32; reserved1: SInt32; reserved2: SInt32): ComponentResult; external name '_NAPickInstrument';
+{
+ *  NAPickArrangement()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAPickArrangement(na: NoteAllocator; filterProc: ModalFilterUPP; prompt: StringPtr; zero1: SInt32; zero2: SInt32; t: Track; songName: StringPtr): ComponentResult; external name '_NAPickArrangement';
+{
+ *  NAStuffToneDescription()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAStuffToneDescription(na: NoteAllocator; gmNumber: SInt32; var td: ToneDescription): ComponentResult; external name '_NAStuffToneDescription';
+{
+ *  NACopyrightDialog()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NACopyrightDialog(na: NoteAllocator; p: PicHandle; author: StringPtr; copyright: StringPtr; other: StringPtr; title: StringPtr; filterProc: ModalFilterUPP; refCon: SInt32): ComponentResult; external name '_NACopyrightDialog';
+{
+    kNADummyOneSelect = 29
+    kNADummyTwoSelect = 30
+}
+
+{
+ *  NAGetIndNoteChannel()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAGetIndNoteChannel(na: NoteAllocator; index: SInt32; var nc: NoteChannel; var seed: SInt32): ComponentResult; external name '_NAGetIndNoteChannel';
+{
+ *  NAGetMIDIPorts()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAGetMIDIPorts(na: NoteAllocator; var inputPorts: QTMIDIPortListHandle; var outputPorts: QTMIDIPortListHandle): ComponentResult; external name '_NAGetMIDIPorts';
+{
+ *  NAGetNoteRequest()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAGetNoteRequest(na: NoteAllocator; noteChannel_: NoteChannel; var nrOut: NoteRequest): ComponentResult; external name '_NAGetNoteRequest';
+{
+ *  NASendMIDI()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NASendMIDI(na: NoteAllocator; noteChannel_: NoteChannel; var mp: MusicMIDIPacket): ComponentResult; external name '_NASendMIDI';
+{
+ *  NAPickEditInstrument()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAPickEditInstrument(na: NoteAllocator; filterProc: ModalFilterUPP; prompt: StringPtr; refCon: SInt32; nc: NoteChannel; ai: AtomicInstrument; flags: SInt32): ComponentResult; external name '_NAPickEditInstrument';
+{
+ *  NANewNoteChannelFromAtomicInstrument()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NANewNoteChannelFromAtomicInstrument(na: NoteAllocator; instrument: AtomicInstrumentPtr; flags: SInt32; var outChannel: NoteChannel): ComponentResult; external name '_NANewNoteChannelFromAtomicInstrument';
+{
+ *  NASetAtomicInstrument()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NASetAtomicInstrument(na: NoteAllocator; noteChannel_: NoteChannel; instrument: AtomicInstrumentPtr; flags: SInt32): ComponentResult; external name '_NASetAtomicInstrument';
+{
+ *  NAGetKnob()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAGetKnob(na: NoteAllocator; noteChannel_: NoteChannel; knobNumber: SInt32; var knobValue: SInt32): ComponentResult; external name '_NAGetKnob';
+{
+ *  NATask()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NATask(na: NoteAllocator): ComponentResult; external name '_NATask';
+{
+ *  NASetNoteChannelBalance()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NASetNoteChannelBalance(na: NoteAllocator; noteChannel_: NoteChannel; balance: SInt32): ComponentResult; external name '_NASetNoteChannelBalance';
+{
+ *  NASetInstrumentNumberInterruptSafe()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NASetInstrumentNumberInterruptSafe(na: NoteAllocator; noteChannel_: NoteChannel; instrumentNumber: SInt32): ComponentResult; external name '_NASetInstrumentNumberInterruptSafe';
+{
+ *  NASetNoteChannelSoundLocalization()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NASetNoteChannelSoundLocalization(na: NoteAllocator; noteChannel_: NoteChannel; data: Handle): ComponentResult; external name '_NASetNoteChannelSoundLocalization';
+{
+ *  NAGetController()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAGetController(na: NoteAllocator; noteChannel_: NoteChannel; controllerNumber: SInt32; var controllerValue: SInt32): ComponentResult; external name '_NAGetController';
+const
+	kTuneQueueDepth				= 8;							{  Deepest you can queue tune segments  }
+
+
+type
+	TuneStatusPtr = ^TuneStatus;
+	TuneStatus = record
+>>>>>>> origin/fixes_2_2
 		tune:					SInt32Ptr;								{  currently playing tune  }
 		tunePtr:				SInt32Ptr;								{  position within currently playing piece  }
 		time:					TimeValue;								{  current tune time  }
@@ -5325,11 +6251,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewMusicMIDISendUPP(userRoutine: MusicMIDISendProcPtr): MusicMIDISendUPP; external name '_NewMusicMIDISendUPP'; { old name was NewMusicMIDISendProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewMusicOfflineDataUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5339,16 +6269,22 @@ function NewMusicOfflineDataUPP( userRoutine: MusicOfflineDataProcPtr ): MusicOf
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewMusicOfflineDataUPP(userRoutine: MusicOfflineDataProcPtr): MusicOfflineDataUPP; external name '_NewMusicOfflineDataUPP'; { old name was NewMusicOfflineDataProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewTuneCallBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5358,16 +6294,22 @@ function NewTuneCallBackUPP( userRoutine: TuneCallBackProcPtr ): TuneCallBackUPP
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewTuneCallBackUPP(userRoutine: TuneCallBackProcPtr): TuneCallBackUPP; external name '_NewTuneCallBackUPP'; { old name was NewTuneCallBackProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewTunePlayCallBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5377,16 +6319,22 @@ function NewTunePlayCallBackUPP( userRoutine: TunePlayCallBackProcPtr ): TunePla
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewTunePlayCallBackUPP(userRoutine: TunePlayCallBackProcPtr): TunePlayCallBackUPP; external name '_NewTunePlayCallBackUPP'; { old name was NewTunePlayCallBackProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeMusicMIDISendUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5396,16 +6344,22 @@ procedure DisposeMusicMIDISendUPP( userUPP: MusicMIDISendUPP ); external name '_
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeMusicMIDISendUPP(userUPP: MusicMIDISendUPP); external name '_DisposeMusicMIDISendUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeMusicOfflineDataUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5415,16 +6369,22 @@ procedure DisposeMusicOfflineDataUPP( userUPP: MusicOfflineDataUPP ); external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeMusicOfflineDataUPP(userUPP: MusicOfflineDataUPP); external name '_DisposeMusicOfflineDataUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeTuneCallBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5434,16 +6394,22 @@ procedure DisposeTuneCallBackUPP( userUPP: TuneCallBackUPP ); external name '_Di
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeTuneCallBackUPP(userUPP: TuneCallBackUPP); external name '_DisposeTuneCallBackUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeTunePlayCallBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5453,16 +6419,22 @@ procedure DisposeTunePlayCallBackUPP( userUPP: TunePlayCallBackUPP ); external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeTunePlayCallBackUPP(userUPP: TunePlayCallBackUPP); external name '_DisposeTunePlayCallBackUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeMusicMIDISendUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5472,16 +6444,22 @@ function InvokeMusicMIDISendUPP( self: ComponentInstance; refCon: SIGNEDLONG; va
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeMusicMIDISendUPP(self: ComponentInstance; refCon: SInt32; var mmp: MusicMIDIPacket; userRoutine: MusicMIDISendUPP): ComponentResult; external name '_InvokeMusicMIDISendUPP'; { old name was CallMusicMIDISendProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeMusicOfflineDataUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5491,16 +6469,22 @@ function InvokeMusicOfflineDataUPP( SoundData: Ptr; numBytes: SIGNEDLONG; myRefC
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeMusicOfflineDataUPP(SoundData: Ptr; numBytes: SInt32; myRefCon: SInt32; userRoutine: MusicOfflineDataUPP): ComponentResult; external name '_InvokeMusicOfflineDataUPP'; { old name was CallMusicOfflineDataProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeTuneCallBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5510,16 +6494,22 @@ procedure InvokeTuneCallBackUPP( const (*var*) status: TuneStatus; refCon: SIGNE
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure InvokeTuneCallBackUPP(const (*var*) status: TuneStatus; refCon: SInt32; userRoutine: TuneCallBackUPP); external name '_InvokeTuneCallBackUPP'; { old name was CallTuneCallBackProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeTunePlayCallBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5653,6 +6643,8 @@ const
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -5662,4 +6654,7 @@ procedure InvokeTunePlayCallBackUPP(var event: UInt32; seed: SInt32; refCon: SIn
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

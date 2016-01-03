@@ -15,9 +15,12 @@
 {****************************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$IFNDEF FPC_HAS_TYPE_EXTENDED}
 function ExtendedToDouble(e : pointer) : double;
 var mant : qword;
@@ -63,9 +66,12 @@ begin
 end;
 {$ENDIF}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 function TBinaryObjectReader.ReadWord : word; {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
 begin
@@ -97,9 +103,12 @@ end;
 {$ENDIF FPC_DOUBLE_HILO_SWAPPED}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function TBinaryObjectReader.ReadExtended : extended; {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
 {$IFNDEF FPC_HAS_TYPE_EXTENDED}
 var ext : array[0..9] of byte;
@@ -116,9 +125,12 @@ begin
   {$ENDIF}
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 constructor TBinaryObjectReader.Create(Stream: TStream; BufSize: Integer);
 begin
@@ -164,10 +176,14 @@ begin
 =======
   Read(Signature, 4);
 <<<<<<< HEAD
+<<<<<<< HEAD
   if Signature <> LongInt(unaligned(FilerSignature)) then
 =======
   if Signature <> LongInt({$ifdef FPC_SUPPORTS_UNALIGNED}unaligned{$endif}(FilerSignature)) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if Signature <> LongInt({$ifdef FPC_SUPPORTS_UNALIGNED}unaligned{$endif}(FilerSignature)) then
+>>>>>>> origin/fixes_2_2
     raise EReadError.Create(SInvalidImage);
 >>>>>>> graemeg/cpstrnew
 end;
@@ -233,11 +249,15 @@ var
   end;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   r.d:=ReadDWord;
   Result:=r.s;
 =======
   Result:=single(ReadDWord);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=single(ReadDWord);
+>>>>>>> origin/fixes_2_2
 end;
 {$endif}
 
@@ -250,11 +270,15 @@ var
   end;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   r.c:=ReadQWord;
   Result:=r.c;
 =======
   Result:=currency(ReadQWord);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=currency(ReadQWord);
+>>>>>>> origin/fixes_2_2
 end;
 
 {$ifndef FPUNONE}
@@ -267,11 +291,15 @@ var
   end;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   r.q:=ReadQWord;
   Result:=r.d;
 =======
   Result:=TDateTime(ReadQWord);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TDateTime(ReadQWord);
+>>>>>>> origin/fixes_2_2
 end;
 {$endif}
 
@@ -320,12 +348,16 @@ end;
 function TBinaryObjectReader.ReadSet(EnumType: Pointer): Integer;
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$packset 1}
   tset = set of 0..(SizeOf(Integer)*8-1);
 {$packset default}
 =======
   tset = set of 0..31;
 >>>>>>> graemeg/fixes_2_2
+=======
+  tset = set of 0..31;
+>>>>>>> origin/fixes_2_2
 var
   Name: String;
   Value: Integer;
@@ -385,7 +417,10 @@ begin
 =======
     vaLString:
       i:=ReadDWord;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
   SetLength(Result, i);
   if i > 0 then
@@ -412,6 +447,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TBinaryObjectReader.ReadUnicodeString: UnicodeString;
 var
   len: DWord;
@@ -433,6 +469,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure TBinaryObjectReader.SkipComponent(SkipComponentInfos: Boolean);
 var
   Flags: TFilerFlags;
@@ -502,6 +540,7 @@ begin
       begin
         Count:=LongInt(ReadDWord);
 <<<<<<< HEAD
+<<<<<<< HEAD
         SkipBytes(Count*sizeof(widechar));
       end;
     vaUString:
@@ -509,6 +548,8 @@ begin
         Count:=LongInt(ReadDWord);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         SkipBytes(Count*sizeof(widechar));
       end;
     vaSet:
@@ -669,7 +710,10 @@ begin
   FLoaded := TFpList.Create;
 =======
   FLoaded := TList.Create;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TReader.CheckValue(Value: TValueType);
@@ -1577,6 +1621,7 @@ begin
   if StringType in [vaString, vaLString,vaUTF8String] then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       Result := FDriver.ReadString(StringType);
       if (StringType=vaUTF8String) then
         Result:=string(utf8Decode(Result));
@@ -1586,6 +1631,8 @@ begin
   else if StringType in [vaUString] then
     Result:= string(FDriver.ReadUnicodeString)
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Result := FDriver.ReadString(StringType);
     if (StringType=vaUTF8String) then
       Result:=utf8Decode(Result);
@@ -1633,7 +1680,10 @@ begin
     setlength(result,length(s));
     for i:= 1 to length(s) do begin
      result[i]:= widechar(ord(s[i])); //no code conversion
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   end;
 end;
@@ -1750,17 +1800,23 @@ function TReader.FindComponentClass(const AClassName: String): TComponentClass;
 var
   PersistentClass: TPersistentClass;
 <<<<<<< HEAD
+<<<<<<< HEAD
   ShortClassName: shortstring;
 
   procedure FindInFieldTable(RootComponent: TComponent);
   var
     FieldTable: PFieldTable;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   UClassName: shortstring;
 
   procedure FindInFieldTable(RootComponent: TComponent);
   var
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FieldClassTable: PFieldClassTable;
     Entry: TPersistentClass;
     i: Integer;
@@ -1770,6 +1826,7 @@ var
     // it is not necessary to look in the FieldTable of TComponent,
     // because TComponent doesn't have published properties that are
     // descendants of TComponent
+<<<<<<< HEAD
 <<<<<<< HEAD
     while ComponentClassType<>TComponent do
     begin
@@ -1786,6 +1843,8 @@ var
             (Entry.InheritsFrom(TComponent)) then
           begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
     while ComponentClassType<>TComponent do begin
       FieldClassTable :=
         PFieldTable((Pointer(ComponentClassType)+vmtFieldTable)^)^.ClassTable;
@@ -1796,7 +1855,10 @@ var
             //[AClassName, ComponentClassType.ClassName, Entry.ClassName]));
           if (UpperCase(Entry.ClassName)=UClassName) and
             (Entry.InheritsFrom(TComponent)) then begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             Result := TComponentClass(Entry);
             Exit;
           end;
@@ -1810,10 +1872,14 @@ var
 begin
   Result := nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
   ShortClassName:=AClassName;
 =======
   UClassName:=UpperCase(AClassName);
 >>>>>>> graemeg/fixes_2_2
+=======
+  UClassName:=UpperCase(AClassName);
+>>>>>>> origin/fixes_2_2
   FindInFieldTable(Root);
   
   if (Result=nil) and assigned(LookupRoot) and (LookupRoot<>Root) then

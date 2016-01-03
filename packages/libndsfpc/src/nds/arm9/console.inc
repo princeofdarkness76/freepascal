@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 //const
 //  CONSOLE_USE_COLOR255 = 16;
@@ -86,6 +87,8 @@ procedure consoleClear(); cdecl; external;
 procedure consoleDebugInit(device: DebugDevice); cdecl; external;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: console.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -136,5 +139,8 @@ procedure consoleInit(font: pcuint16; charBase: pcuint16; numCharacters: cuint16
 procedure consoleInitDefault(map: pcuint16; charBase: pcuint16; bitDepth: cuint8); cdecl; external;
 procedure consoleDemoInit(); cdecl; external;
 procedure consoleClear(); cdecl; external;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}

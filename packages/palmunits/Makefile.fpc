@@ -1,13 +1,18 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for the Multimedia Toolkit (interface units for MMPM)
 >>>>>>> graemeg/fixes_2_2
+=======
+#   Makefile.fpc for the Multimedia Toolkit (interface units for MMPM)
+>>>>>>> origin/fixes_2_2
 #
 
 [package]
 name=palmunits
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -30,6 +35,8 @@ version=2.5.1
 [require]
 packages=rtl fpmkunit
 =======
+=======
+>>>>>>> origin/fixes_2_2
 version=2.2.5
 
 [target]
@@ -48,7 +55,10 @@ systemresources sysutil table telephonymgr telephonymgrtypes telephonymgrui \
 textmgr textservicesmgr timemgr udamgr uicolor uicontrols uiresources vfsmgr window
 
 exampledirs=
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [install]
 fpcpackage=y
@@ -56,6 +66,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
@@ -143,10 +154,15 @@ else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
 =======
+=======
+>>>>>>> origin/fixes_2_2
 [compiler]
 includedir=src
 sourcedir=src tests
 
 [rules]
 .NOTPARALLEL:
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

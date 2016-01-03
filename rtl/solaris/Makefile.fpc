@@ -91,10 +91,14 @@ target=solaris
 
 [compiler]
 <<<<<<< HEAD
+<<<<<<< HEAD
 includedir=$(INC) $(PROCINC) $(UNIXINC) $(OSPROCINC)
 =======
 includedir=$(INC) $(PROCINC) $(UNIXINC) $(OSPROCINC) 
 >>>>>>> graemeg/fixes_2_2
+=======
+includedir=$(INC) $(PROCINC) $(UNIXINC) $(OSPROCINC) 
+>>>>>>> origin/fixes_2_2
 sourcedir=$(INC) $(PROCINC) $(UNIXINC) $(COMMON)
 
 

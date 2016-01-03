@@ -45,9 +45,12 @@ units=system objpas macpas iso7185 strings \
 rsts=math varutils typinfo classes variants dateutil sysconst
 implicitunits=exeinfo
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 [require]
 nortl=y
 [install]
@@ -184,6 +187,7 @@ sysutils$(PPUEXT) : sysutils.pp $(wildcard $(OBJPASDIR)/sysutils/*.inc) \
 
 classes$(PPUEXT) : classes.pp $(wildcard $(OBJPASDIR)/classes/*.inc) \
 <<<<<<< HEAD
+<<<<<<< HEAD
 		   sysutils$(PPUEXT) typinfo$(PPUEXT) rtlconst$(PPUEXT) types$(PPUEXT) fgl$(PPUEXT)
 	$(COMPILER) -Fi$(OBJPASDIR)/classes classes.pp
 
@@ -192,11 +196,16 @@ fgl$(PPUEXT) : $(OBJPASDIR)/fgl.pp objpas$(PPUEXT) types$(PPUEXT) system$(PPUEXT
 	$(EXECPPAS)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
                    sysutils$(PPUEXT) typinfo$(PPUEXT) rtlconst$(PPUEXT) types$(PPUEXT) fgl$(PPUEXT)
         $(COMPILER) -Fi$(OBJPASDIR)/classes classes.pp
 fgl$(PPUEXT) : $(OBJPASDIR)/fgl.pp objpas$(PPUEXT) types$(PPUEXT) system$(PPUEXT) sysutils$(PPUEXT)
         $(COMPILER) $(OBJPASDIR)/fgl.pp
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 math$(PPUEXT): $(OBJPASDIR)/math.pp objpas$(PPUEXT) sysutils$(PPUEXT)
 	$(COMPILER) $(OBJPASDIR)/math.pp
 	$(EXECPPAS)
@@ -222,9 +231,12 @@ sysconst$(PPUEXT) : $(OBJPASDIR)/sysconst.pp objpas$(PPUEXT)
 #
 macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) math$(PPUEXT)
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$(COMPILER) $(INC)/macpas.pp $(REDIR)
 	$(EXECPPAS)
 =======
+=======
+>>>>>>> origin/fixes_2_2
         $(COMPILER) $(INC)/macpas.pp $(REDIR)
 >>>>>>> graemeg/fixes_2_2
 #
@@ -279,6 +291,7 @@ msmouse$(PPUEXT) : msmouse.pp system$(PPUEXT)
 
 callspec$(PPUEXT) : $(INC)/callspec.pp system$(PPUEXT)
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$(COMPILER) $(INC)/callspec.pp
 	$(EXECPPAS)
 
@@ -292,3 +305,6 @@ ctypes$(PPUEXT) : $(INC)/ctypes.pp system$(PPUEXT)
 =======
 ctypes$(PPUEXT) : $(INC)/ctypes.pp system$(PPUEXT)
 >>>>>>> graemeg/fixes_2_2
+=======
+ctypes$(PPUEXT) : $(INC)/ctypes.pp system$(PPUEXT)
+>>>>>>> origin/fixes_2_2

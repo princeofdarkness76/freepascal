@@ -290,13 +290,21 @@ type
 =======
 {$endif Windows}
 
+<<<<<<< HEAD
+=======
+{$endif Windows}
+
+>>>>>>> origin/fixes_2_2
 type
   tagSTATSTG =
 {$ifndef FPC_REQUIRES_PROPER_ALIGNMENT}
   packed
 {$endif FPC_REQUIRES_PROPER_ALIGNMENT}
   record
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      pwcsName      : POleStr;
      dwType        : DWord;
      cbSize        : Large_uint;
@@ -313,12 +321,17 @@ type
   STATSTG = TStatStg;
   PStatStg = ^TStatStg;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   { classes depends on these interfaces, we can't use the activex unit in classes though }
 =======
   
   { classes depends on these interfaces, we can't use the activex unit in classes though }  
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+  { classes depends on these interfaces, we can't use the activex unit in classes though }  
+>>>>>>> origin/fixes_2_2
   IClassFactory = Interface(IUnknown) ['{00000001-0000-0000-C000-000000000046}']
      Function CreateInstance(Const unkOuter : IUnknown;Const riid : TGUID;Out vObject) : HResult;StdCall;
      Function LockServer(fLock : LongBool) : HResult;StdCall;

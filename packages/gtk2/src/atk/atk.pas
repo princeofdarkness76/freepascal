@@ -14,12 +14,17 @@
    You should have received a copy of the GNU Library General Public
    License along with this library; if not, write to the
 <<<<<<< HEAD
+<<<<<<< HEAD
    Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 =======
    Free Software Foundation, Inc., 59 Temple Place - Suite 330,
    Boston, MA 02111-1307, USA.
 >>>>>>> graemeg/fixes_2_2
+=======
+   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
+>>>>>>> origin/fixes_2_2
   }
 unit atk; // keep unit name lowercase for kylix
 
@@ -36,10 +41,14 @@ uses glib2;
 
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef windows}
 =======
 {$ifdef win32}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifdef win32}
+>>>>>>> origin/fixes_2_2
   {$define atkwin}
   atklib = 'libatk-1.0-0.dll';
   {$IFDEF FPC}

@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -28,10 +29,16 @@
  
      Copyright:  © 1993-2005 by Apple Computer, Inc., all rights reserved.
 >>>>>>> graemeg/fixes_2_2
+=======
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 1993-2005 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -59,6 +66,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -69,7 +78,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -79,12 +91,17 @@
 unit TranslationExtensions;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -98,14 +115,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -114,11 +136,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -156,6 +181,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -163,6 +190,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -396,6 +424,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -404,7 +434,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -431,9 +464,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -443,6 +480,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,Files,QuickdrawTypes,Components;
 {$endc} {not MACOSALLINCLUDE}
@@ -468,6 +506,10 @@ uses MacTypes,Files,QuickdrawTypes,Components;
 uses MacTypes,Files,Quickdraw,Components;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,Files,Quickdraw,Components;
+
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
 
@@ -500,10 +542,14 @@ type
 	FileTypeSpec = record
 		format: FileType;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		hint: SIGNEDLONG;
 =======
 		hint: SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		hint: SInt32;
+>>>>>>> origin/fixes_2_2
 		flags: TranslationAttributes;               { taDstDocNeedsResourceFork, taDstIsAppTranslation}
 		catInfoType: OSType;
 		catInfoCreator: OSType;
@@ -511,12 +557,17 @@ type
 type
 	FileTranslationList = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		modDate: UNSIGNEDLONG;
 		groupCount: UNSIGNEDLONG;
 =======
 		modDate: UInt32;
 		groupCount: UInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		modDate: UInt32;
+		groupCount: UInt32;
+>>>>>>> origin/fixes_2_2
 
                                               { conceptual declarations:}
 
@@ -535,6 +586,7 @@ type
 	ScrapTypeSpec = record
 		format: ScrapType;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		hint: SIGNEDLONG;
 	end;
 type
@@ -542,13 +594,18 @@ type
 		modDate: UNSIGNEDLONG;
 		groupCount: UNSIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		hint: SInt32;
 	end;
 type
 	ScrapTranslationList = record
 		modDate: UInt32;
 		groupCount: UInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
                                               { conceptual declarations:}
 
@@ -568,10 +625,14 @@ type
 ******************************************************************************************}
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	TranslationRefNum = SIGNEDLONG;
 =======
 	TranslationRefNum = SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+	TranslationRefNum = SInt32;
+>>>>>>> origin/fixes_2_2
 {******************************************************************************************
 
     This routine sets the advertisement in the top half of the progress dialog.
@@ -587,9 +648,12 @@ type
 
 ******************************************************************************************}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SetTranslationAdvertisement()   *** DEPRECATED ***
  *  
@@ -601,10 +665,14 @@ type
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 thru 1.0.2
  *    Non-Carbon CFM:   in Translation 1.0 and later
  }
@@ -638,10 +706,14 @@ function SetTranslationAdvertisement( refNum: TranslationRefNum; advertisement: 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 thru 1.0.2
  *    Non-Carbon CFM:   in Translation 1.0 and later
  }
@@ -655,10 +727,13 @@ function UpdateTranslationProgress( refNum: TranslationRefNum; percentDone: SInt
 
 ******************************************************************************************}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kTranslateGetFileTranslationList = 0;
 	kTranslateIdentifyFile = 1;
@@ -679,6 +754,7 @@ type
 	DoGetFileTranslationListProcPtr = function( self: ComponentInstance; translationList: FileTranslationListHandle ): ComponentResult;
 	DoIdentifyFileProcPtr = function( self: ComponentInstance; const (*var*) theDocument: FSSpec; var docType: FileType ): ComponentResult;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	DoTranslateFileProcPtr = function( self: ComponentInstance; refNum: TranslationRefNum; const (*var*) sourceDocument: FSSpec; srcType: FileType; srcTypeHint: SIGNEDLONG; const (*var*) dstDoc: FSSpec; dstType: FileType; dstTypeHint: SIGNEDLONG ): ComponentResult;
 	DoGetTranslatedFilenameProcPtr = function( self: ComponentInstance; dstType: FileType; dstTypeHint: SIGNEDLONG; var theDocument: FSSpec ): ComponentResult;
 	DoGetScrapTranslationListProcPtr = function( self: ComponentInstance; list: ScrapTranslationListHandle ): ComponentResult;
@@ -691,6 +767,8 @@ type
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	DoTranslateFileProcPtr = function( self: ComponentInstance; refNum: TranslationRefNum; const (*var*) sourceDocument: FSSpec; srcType: FileType; srcTypeHint: SInt32; const (*var*) dstDoc: FSSpec; dstType: FileType; dstTypeHint: SInt32 ): ComponentResult;
 	DoGetTranslatedFilenameProcPtr = function( self: ComponentInstance; dstType: FileType; dstTypeHint: SInt32; var theDocument: FSSpec ): ComponentResult;
 	DoGetScrapTranslationListProcPtr = function( self: ComponentInstance; list: ScrapTranslationListHandle ): ComponentResult;
@@ -700,4 +778,7 @@ end.
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

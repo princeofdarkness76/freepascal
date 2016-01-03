@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/LowMem.h
  
      Contains:   Low Memory Accessor Interfaces.
@@ -22,6 +23,8 @@
  
      Copyright:  © 1993-2008 by Apple Computer, Inc., all rights reserved
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       LowMem.p
  
      Contains:   Low Memory Accessor Interfaces.
@@ -30,7 +33,10 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1993-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -38,6 +44,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
@@ -58,6 +65,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -66,7 +75,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -76,12 +88,17 @@
 unit LowMem;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -95,14 +112,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -111,11 +133,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -153,6 +178,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -160,6 +187,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -394,6 +422,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -402,7 +432,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -429,9 +462,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -441,6 +478,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,Files;
 {$endc} {not MACOSALLINCLUDE}
@@ -453,13 +491,18 @@ uses MacTypes,Files;
 >>>>>>> origin/cpstrnew
 {$ifc TARGET_OS_MAC}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,Files,MacMemory,OSUtils,Resources,Quickdraw,Controls,Events,Menus,Fonts,MacWindows;
 
 
 {$ifc NOT OPAQUE_TOOLBOX_STRUCTS}
 {$endc}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
 
@@ -524,6 +567,7 @@ uses MacTypes,Files,MacMemory,OSUtils,Resources,Quickdraw,Controls,Events,Menus,
 
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 {
@@ -4609,6 +4653,243 @@ procedure LMSetVIA(value: Ptr); external name '_LMSetVIA';
 function LMGetSCCRd: Ptr; external name '_LMGetSCCRd';
 {
  *  LMSetSCCRd()
+=======
+{
+ *  LMGetMemTop()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function LMGetMemTop: Ptr; external name '_LMGetMemTop';
+{
+ *  LMSetMemTop()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure LMSetMemTop(value: Ptr); external name '_LMSetMemTop';
+{
+ *  LMGetBufPtr()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function LMGetBufPtr: Ptr; external name '_LMGetBufPtr';
+{
+ *  LMSetBufPtr()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure LMSetBufPtr(value: Ptr); external name '_LMSetBufPtr';
+{
+ *  LMGetHeapEnd()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function LMGetHeapEnd: Ptr; external name '_LMGetHeapEnd';
+{
+ *  LMSetHeapEnd()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure LMSetHeapEnd(value: Ptr); external name '_LMSetHeapEnd';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  LMGetTheZone()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function LMGetTheZone: THz; external name '_LMGetTheZone';
+{
+ *  LMSetTheZone()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure LMSetTheZone(value: THz); external name '_LMSetTheZone';
+{
+ *  LMGetUTableBase()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function LMGetUTableBase: Ptr; external name '_LMGetUTableBase';
+{
+ *  LMSetUTableBase()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure LMSetUTableBase(value: Ptr); external name '_LMSetUTableBase';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  LMGetCPUFlag()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function LMGetCPUFlag: ByteParameter; external name '_LMGetCPUFlag';
+{
+ *  LMSetCPUFlag()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure LMSetCPUFlag(value: ByteParameter); external name '_LMSetCPUFlag';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  LMGetApplLimit()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function LMGetApplLimit: Ptr; external name '_LMGetApplLimit';
+{
+ *  LMSetApplLimit()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure LMSetApplLimit(value: Ptr); external name '_LMSetApplLimit';
+{
+ *  LMGetSysEvtMask()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function LMGetSysEvtMask: SInt16; external name '_LMGetSysEvtMask';
+{  Carbon Usage: use SetEventMask }
+{
+ *  LMSetSysEvtMask()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure LMSetSysEvtMask(value: SInt16); external name '_LMSetSysEvtMask';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  LMGetRndSeed()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function LMGetRndSeed: SInt32; external name '_LMGetRndSeed';
+{
+ *  LMSetRndSeed()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure LMSetRndSeed(value: SInt32); external name '_LMSetRndSeed';
+{
+ *  LMGetSEvtEnb()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function LMGetSEvtEnb: ByteParameter; external name '_LMGetSEvtEnb';
+{
+ *  LMSetSEvtEnb()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure LMSetSEvtEnb(value: ByteParameter); external name '_LMSetSEvtEnb';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  LMGetTicks()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function LMGetTicks: UInt32; external name '_LMGetTicks';
+{
+ *  LMSetTicks()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure LMSetTicks(value: UInt32); external name '_LMSetTicks';
+{
+ *  LMGetVIA()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function LMGetVIA: Ptr; external name '_LMGetVIA';
+{
+ *  LMSetVIA()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure LMSetVIA(value: Ptr); external name '_LMSetVIA';
+{
+ *  LMGetSCCRd()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function LMGetSCCRd: Ptr; external name '_LMGetSCCRd';
+{
+ *  LMSetSCCRd()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -7021,6 +7302,7 @@ function LMGetTimeSCCDB: SInt16; external name '_LMGetTimeSCCDB';
  *  
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+<<<<<<< HEAD
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
@@ -7528,6 +7810,140 @@ procedure LMSetFinderName( finderNameValue: ConstStr15Param ); external name '_L
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure LMSetTimeSCCDB(value: SInt16); external name '_LMSetTimeSCCDB';
+{
+ *  LMGetJVBLTask()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function LMGetJVBLTask: UniversalProcPtr; external name '_LMGetJVBLTask';
+{
+ *  LMSetJVBLTask()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure LMSetJVBLTask(value: UniversalProcPtr); external name '_LMSetJVBLTask';
+{
+ *  LMGetSynListHandle()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function LMGetSynListHandle: Handle; external name '_LMGetSynListHandle';
+{
+ *  LMSetSynListHandle()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure LMSetSynListHandle(value: Handle); external name '_LMSetSynListHandle';
+{
+ *  LMGetMenuCInfo()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function LMGetMenuCInfo: MCTableHandle; external name '_LMGetMenuCInfo';
+{
+ *  LMSetMenuCInfo()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure LMSetMenuCInfo(value: MCTableHandle); external name '_LMSetMenuCInfo';
+{
+ *  LMGetJDTInstall()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function LMGetJDTInstall: UniversalProcPtr; external name '_LMGetJDTInstall';
+{
+ *  LMSetJDTInstall()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure LMSetJDTInstall(value: UniversalProcPtr); external name '_LMSetJDTInstall';
+{
+ *  LMGetTimeSCSIDB()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function LMGetTimeSCSIDB: SInt16; external name '_LMGetTimeSCSIDB';
+{
+ *  LMSetTimeSCSIDB()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure LMSetTimeSCSIDB(value: SInt16); external name '_LMSetTimeSCSIDB';
+{*************************************************************************************
+
+    MORE COMPLEX LOWMEM ACCESSORS
+
+*************************************************************************************}
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{$ifc TARGET_CPU_68K AND NOT TARGET_RT_MAC_CFM}
+{*************************************************************************************
+    "BIG DATA"
+    
+        These lowmem accessors access big (> 4 bytes) values.
+*************************************************************************************}
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  LMGetDeskPattern()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure LMGetDeskPattern(var deskPatternValue: Pattern); external name '_LMGetDeskPattern';
+{
+ *  LMSetDeskPattern()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure LMSetDeskPattern(const (*var*) deskPatternValue: Pattern); external name '_LMSetDeskPattern';
+{$endc}  {CALL_NOT_IN_CARBON}
+{*************************************************************************************
+    "BLOCKMOVE ACCESSORS"
+    
+        These lowmem accessors use the BlockMove to set
+*************************************************************************************}
+>>>>>>> origin/fixes_2_2
 {$ifc CALL_NOT_IN_CARBON}
 {
  *  LMGetCurApName()
@@ -7762,6 +8178,7 @@ procedure LMSetDTQueue(dtQueueValue: QHdrPtr); external name '_LMSetDTQueue';
  *  
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+<<<<<<< HEAD
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
@@ -7996,6 +8413,18 @@ function LMGetToolScratch: Ptr; external name '_LMGetToolScratch';
 procedure LMSetToolScratch( toolScratchValue: {const} UnivPtr ); external name '_LMSetToolScratch';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 =======
+=======
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function LMGetFSQHdr: QHdrPtr; external name '_LMGetFSQHdr';
+
+{*************************************************************************************
+    "BLOCKMOVE ACCESSORS"
+    
+        These lowmem accessors use the BlockMove to set
+*************************************************************************************}
+>>>>>>> origin/fixes_2_2
 {$endc}  {CALL_NOT_IN_CARBON}
 {
  *  LMGetCurApName()
@@ -8119,7 +8548,10 @@ function LMGetApplScratch: Ptr; external name '_LMGetApplScratch';
  *    Mac OS X:         not available
  }
 procedure LMSetApplScratch(applScratchValue: UnivPtr); external name '_LMSetApplScratch';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {*************************************************************************************
@@ -8128,6 +8560,7 @@ procedure LMSetApplScratch(applScratchValue: UnivPtr); external name '_LMSetAppl
         These lowmem accessors take an index parameter to get/set an indexed
         lowmem global.
 *************************************************************************************}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  *  LMGetLvl2DT()   *** DEPRECATED ***
@@ -8266,6 +8699,8 @@ procedure LMSetLvl2DT( Lvl2DTValue: UniversalProcPtr; vectorNumber: SInt16 ); ex
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {  Carbon Usage: use GetParamText }
 {
@@ -8334,6 +8769,7 @@ procedure LMSetExtStsDT(ExtStsDTValue: UniversalProcPtr; vectorNumber: SInt16); 
 
 {$endc}  {CALL_NOT_IN_CARBON}
 {$endc}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 
 {*************************************************************************************
@@ -8550,6 +8986,8 @@ procedure LMSetLvl2DT( Lvl2DTValue: UniversalProcPtr; vectorNumber: SInt16 ); ex
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
 
+=======
+>>>>>>> origin/fixes_2_2
 
 {*************************************************************************************
     "Missing Accessors"
@@ -8563,6 +9001,7 @@ procedure LMSetLvl2DT( Lvl2DTValue: UniversalProcPtr; vectorNumber: SInt16 ); ex
 *************************************************************************************}
 
 
+<<<<<<< HEAD
 { accesses "HiHeapMark"}
 {
  *  LMGetHighHeapMark()   *** DEPRECATED ***
@@ -8718,6 +9157,8 @@ procedure LMSetDiskFormatingHFSDefaults( value: Ptr ); external name '_LMSetDisk
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc CALL_NOT_IN_CARBON}
 {
  *  LMSetMouseTemp()
@@ -8989,4 +9430,7 @@ procedure LMSetKeyTime(value: SInt32); external name '_LMSetKeyTime';
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

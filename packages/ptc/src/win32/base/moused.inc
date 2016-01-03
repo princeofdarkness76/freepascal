@@ -7,6 +7,7 @@
     modify it under the terms of the GNU Lesser General Public
     License as published by the Free Software Foundation; either
 <<<<<<< HEAD
+<<<<<<< HEAD
     version 2.1 of the License, or (at your option) any later version
     with the following modification:
 
@@ -23,6 +24,9 @@
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> graemeg/fixes_2_2
+=======
+    version 2.1 of the License, or (at your option) any later version.
+>>>>>>> origin/fixes_2_2
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -35,6 +39,7 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
   TWin32Mouse = class(TWin32Hook)
   private
@@ -45,6 +50,8 @@ type
     { the actual image area, inside the window (top left and bottom right corner) }
     FWindowX1, FWindowY1, FWindowX2, FWindowY2: Integer;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Type
   TWin32Mouse = Class(TWin32Hook)
   Private
@@ -57,11 +64,15 @@ Type
 
     { the actual image area, inside the window (top left and bottom right corner) }
     FWindowX1, FWindowY1, FWindowX2, FWindowY2 : Integer;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     { console resolution
       - mouse cursor position as seen by the user must always be in range:
         [0..FConsoleWidth-1, 0..FConsoleHeight-1] }
+<<<<<<< HEAD
 <<<<<<< HEAD
     FConsoleWidth, FConsoleHeight: Integer;
 
@@ -87,6 +98,8 @@ Type
     procedure Disable;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FConsoleWidth, FConsoleHeight : Integer;
 
     FPreviousMouseButtonState : TPTCMouseButtonState;
@@ -106,4 +119,7 @@ Type
     Procedure enable;
     Procedure disable;
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

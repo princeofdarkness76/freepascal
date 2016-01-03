@@ -41,6 +41,7 @@ interface
 {$i systemh.inc}
 {$i ndsbiosh.inc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$i ndsh.inc}
 {$i libch.inc}
 
@@ -48,6 +49,9 @@ interface
 =======
 {$i systemh.inc}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$i systemh.inc}
+>>>>>>> origin/fixes_2_2
 
 {$define fpc_softfpu_interface}
 {$i softfpu.pp}
@@ -58,6 +62,7 @@ function IsARM9(): boolean;
 const
   LineEnding = #10;
   LFNSupport = true;
+<<<<<<< HEAD
 <<<<<<< HEAD
   DirectorySeparator = '/';
   DriveSeparator = ':';
@@ -72,6 +77,8 @@ const
 
   UnusedHandle    = -1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   CtrlZMarksEOF: boolean = false;
   DirectorySeparator = '/';
   DriveSeparator = ':';
@@ -127,7 +134,10 @@ property cmdline:Pchar read get_cmdline;
 =======
   errno: integer;
   fake_heap_end: ^byte; cvar;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 implementation
 
@@ -159,6 +169,30 @@ const
 {$i libc.inc}
 
 
+
+
+{
+  NDS CPU detecting function (thanks to 21o6):
+  --------------------------------------------
+   "You see, the ARM7 can't write to bank A of VRAM, but it doesn't give any
+    error ... it just doesn't write there... so it's easily determinable what
+    CPU is running the code"
+
+   ARM946E-S processor can handle dsp extensions extensions, but ARM7TDMI does
+   not. FPC can't retrieve the CPU target at compiling time, so this small
+   function takes care to check if the code is running on an ARM9 or on an ARM7
+   CPU. It works on Nintendo DS only, I guess :)
+}
+function IsARM9(): boolean;
+var
+  Dummy : pword absolute $06800000;
+  tmp: word;
+begin
+  tmp := Dummy^;
+  Dummy^ := $C0DE;
+  IsARM9 := Dummy^ = $C0DE;
+  Dummy^ := tmp;
+end;
 
 
 {
@@ -218,6 +252,7 @@ var
   IPC_Timer: array [0..2] of byte absolute $27FF01B;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   RandSeed := (IPC_Timer[0]  * 3600) + (IPC_Timer[1] * 60) + IPC_Timer[2]; 
 end;
 
@@ -237,6 +272,9 @@ begin
 	RandSeed := QRAN_A * RandSeed + QRAN_C;
 	a := (RandSeed shr 16) and QRAN_MAX;
   random := (a * value) shr 15;
+=======
+  paramcount := 0;
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -285,6 +323,7 @@ var
   end;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if argc<=0 then
     exit;
@@ -346,6 +385,9 @@ begin
 =======
   paramstr := '';
 >>>>>>> graemeg/fixes_2_2
+=======
+  paramstr := '';
+>>>>>>> origin/fixes_2_2
 end;
 
 function get_cmdline:Pchar;
@@ -367,12 +409,16 @@ function get_cmdline:Pchar;
 >>>>>>> origin/cpstrnew
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if calculated_cmdline=nil then
     setupcmdline;
   get_cmdline:=calculated_cmdline;
 =======
   // Boo!
 >>>>>>> graemeg/fixes_2_2
+=======
+  // Boo!
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -421,23 +467,30 @@ end;
 begin
   StackLength := CheckInitialStkLen(InitialStkLen);
 <<<<<<< HEAD
+<<<<<<< HEAD
   StackBottom := Sptr - StackLength;
 { OS specific startup }
 
 { Set up signals handlers }
   fpc_cpucodeinit;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   StackBottom := StackTop - StackLength;
 { OS specific startup }
 
 { Set up signals handlers }
   if IsARM9 then
     fpc_cpucodeinit;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Setup heap }
   InitHeap;
   SysInitExceptions;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   SetupCmdLine;
@@ -470,6 +523,8 @@ begin
   InitSystemThreads;
 {$endif FPC_HAS_FEATURE_THREADING}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { Setup stdin, stdout and stderr }
   SysInitStdIO;
 { Reset IO Error }
@@ -477,5 +532,8 @@ begin
 { Arguments }
   InitSystemThreads;
   initvariantmanager;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.

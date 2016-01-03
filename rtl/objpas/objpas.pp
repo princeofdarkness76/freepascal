@@ -61,6 +61,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 {$if FPC_FULLVERSION >= 20701}
@@ -135,6 +136,11 @@ Var
    ExceptionClass: TClass; { Exception base class (must actually be Exception, defined in sysutils ) }
    ExceptObjProc: Pointer; { Used to convert OS exceptions to exceptions in Delphi. Unused in FPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+Var
+   ExceptionClass: TClass; { Exception base class (must actually be Exception, defined in sysutils ) }
+   ExceptObjProc: Pointer; { Used to convert OS exceptions to exceptions in Delphi. Unused in FPC}
+>>>>>>> origin/fixes_2_2
 
 {****************************************************************************
                              Compatibility routines.
@@ -142,6 +148,7 @@ Var
 
 {$ifdef FPC_HAS_FEATURE_FILEIO}
     { Untyped file support }
+<<<<<<< HEAD
 <<<<<<< HEAD
      Procedure AssignFile(out f:File;p:pchar);
      Procedure AssignFile(out f:File;c:char);
@@ -165,6 +172,8 @@ Var
      Procedure AssignFile(out t:Text;const Name:RawByteString);
   {$endif FPC_HAS_FEATURE_ANSISTRINGS}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
      Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} f:File;const Name:string);
      Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} f:File;p:pchar);
@@ -175,12 +184,16 @@ Var
      Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} t:Text;const s:string);
      Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} t:Text;p:pchar);
      Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} t:Text;c:char);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      Procedure CloseFile(Var t:Text);
 {$endif FPC_HAS_FEATURE_TEXTIO}
 
 {$ifdef FPC_HAS_FEATURE_FILEIO}
      { Typed file supoort }
+<<<<<<< HEAD
 <<<<<<< HEAD
      Procedure AssignFile(out f:TypedFile;p:pchar);
      Procedure AssignFile(out f:TypedFile;c:char);
@@ -206,12 +219,17 @@ Var
 
 {$ifdef FPC_HAS_FEATURE_COMMANDARGS}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
      Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} f:TypedFile;const Name:string);
      Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} f:TypedFile;p:pchar);
      Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} f:TypedFile;c:char);
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      { ParamStr should return also an ansistring }
      Function ParamStr(Param : Integer) : Ansistring;
 {$endif FPC_HAS_FEATURE_COMMANDARGS}
@@ -263,9 +281,12 @@ Var
      TResStringRec=AnsiString;
    Function LoadResString(p:PResStringRec):AnsiString;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif FPC_HAS_FEATURE_RESOURCES}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   implementation
 
@@ -293,10 +314,14 @@ Procedure RmDirpchar(s: pchar;len:sizeuint);[IOCheck]; external name 'FPC_SYS_RM
 >>>>>>> graemeg/cpstrnew
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Untyped file support }
 =======
 Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} f:File;const Name:string);
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} f:File;const Name:string);
+>>>>>>> origin/fixes_2_2
 
 Procedure AssignFile(out f:File;p:pchar);
 begin
@@ -304,8 +329,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure AssignFile(out f:File;c:char);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} f:File;p:pchar);
 
 >>>>>>> graemeg/fixes_2_2
@@ -313,6 +341,7 @@ begin
   System.Assign (F,c);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef FPC_HAS_FEATURE_ANSISTRINGS}
 Procedure AssignFile(out f:File;const Name:RawBytestring);
@@ -323,6 +352,9 @@ end;
 =======
 Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} f:File;c:char);
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} f:File;c:char);
+>>>>>>> origin/fixes_2_2
 
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
 Procedure AssignFile(out f:File;const Name:UnicodeString);
@@ -343,8 +375,11 @@ end;
 { Text file support }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure AssignFile(out t:Text;p:pchar);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} t:Text;const s:string);
 
 >>>>>>> graemeg/fixes_2_2
@@ -353,8 +388,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure AssignFile(out t:Text;c:char);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} t:Text;p:pchar);
 
 >>>>>>> graemeg/fixes_2_2
@@ -362,6 +400,7 @@ begin
   System.Assign (T,c);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef FPC_HAS_FEATURE_ANSISTRINGS}
 Procedure AssignFile(out t:Text;const Name:RawBytestring);
@@ -372,6 +411,9 @@ end;
 =======
 Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} t:Text;c:char);
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} t:Text;c:char);
+>>>>>>> origin/fixes_2_2
 
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
 Procedure AssignFile(out t:Text;const Name:UnicodeString);
@@ -392,6 +434,7 @@ end;
 { Typed file support }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure AssignFile(out f:TypedFile;p:pchar);
 begin
   System.Assign (F,p);
@@ -399,6 +442,9 @@ end;
 =======
 Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} f:TypedFile;const Name:string);
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} f:TypedFile;const Name:string);
+>>>>>>> origin/fixes_2_2
 
 Procedure AssignFile(out f:TypedFile;c:char);
 begin
@@ -408,6 +454,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_HAS_FEATURE_ANSISTRINGS}
 Procedure AssignFile(out f:TypedFile;const Name:RawBytestring);
 =======
@@ -415,6 +462,9 @@ Procedure AssignFile(out f:TypedFile;const Name:RawBytestring);
 Function ParamStr(Param : Integer) : Ansistring;
 
 Var Len : longint;
+=======
+Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} f:TypedFile;p:pchar);
+>>>>>>> origin/fixes_2_2
 
 >>>>>>> graemeg/cpstrnew
 begin
@@ -468,6 +518,10 @@ Function ParamStr(Param : Integer) : ansistring;
 Function ParamStr(Param : Integer) : Ansistring;
 >>>>>>> graemeg/cpstrnew
 
+<<<<<<< HEAD
+=======
+Procedure AssignFile({$ifdef PARAOUTFILE}out{$else}var{$endif} f:TypedFile;c:char);
+>>>>>>> origin/fixes_2_2
 
 <<<<<<< HEAD
 {$ifdef FPC_HAS_FEATURE_FILEIO}

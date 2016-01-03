@@ -86,6 +86,7 @@
 void                  void                            none
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [ADCcc]
 reglo,reglo                 \x6B\x41\x40                  THUMB,ARMv4T
 
@@ -1968,6 +1969,8 @@ fpureg,immshifter           \xA1\1\xB                     ARM32,FPA
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 [ABScc]
 
 [ACScc]
@@ -2325,4 +2328,7 @@ reg32,reg32,reg32,reg32  \x16\x00\x80\x90		 ARM7
 [SMULWTcc]
 
 [STRDcc]
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

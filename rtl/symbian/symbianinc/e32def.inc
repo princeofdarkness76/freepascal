@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {%MainUnit ../symbian.pas}
 
 {
@@ -2865,6 +2866,8 @@ variables passed or returned by value.
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {%MainUnit ../symbian.pas}
 
 {
@@ -5730,4 +5733,7 @@ variables passed or returned by value.
 #endif /* __SOFTFP }
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

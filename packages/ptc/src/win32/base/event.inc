@@ -7,6 +7,7 @@
     modify it under the terms of the GNU Lesser General Public
     License as published by the Free Software Foundation; either
 <<<<<<< HEAD
+<<<<<<< HEAD
     version 2.1 of the License, or (at your option) any later version
     with the following modification:
 
@@ -23,6 +24,9 @@
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> graemeg/fixes_2_2
+=======
+    version 2.1 of the License, or (at your option) any later version.
+>>>>>>> origin/fixes_2_2
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -34,6 +38,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 constructor TWin32Event.Create;
 begin
@@ -71,6 +76,8 @@ begin
   WaitForSingleObject(FEvent, INFINITE);
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Constructor TWin32Event.Create;
 
 Begin
@@ -111,4 +118,7 @@ Begin
   { wait for event }
   WaitForSingleObject(m_event, INFINITE);
 End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -44,7 +44,10 @@ begin
   lEvent.data.fd := FEpollFD;
   if epoll_ctl(FEpollMasterFD, EPOLL_CTL_ADD, FEpollFD, @lEvent) < 0 then
     raise Exception.Create('Unable to add FDs to master epoll FD');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   lEvent.data.fd := FEpollReadFD;
   if epoll_ctl(FEpollMasterFD, EPOLL_CTL_ADD, FEpollReadFD, @lEvent) < 0 then
     raise Exception.Create('Unable to add FDs to master epoll FD: ' + StrError(fpGetErrno));

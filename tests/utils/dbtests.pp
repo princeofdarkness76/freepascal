@@ -234,7 +234,10 @@ begin
   Verbose(V_DEBUG,'Running silent query:'+Qry);
 =======
   Verbose(V_DEBUG,'Running query:'+Qry);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Result:=mysql_query(@Connection,PChar(qry))=0;
   If Not Result then
     Verbose(V_DEBUG,'Silent query : '+Qry+'Failed : '+Strpas(mysql_error(@connection)))
@@ -408,10 +411,14 @@ Function GetCategoryID(Name : String) : Integer;
 
 Const
 <<<<<<< HEAD
+<<<<<<< HEAD
   SFromName = 'SELECT TCAT_ID FROM TESTCATEGORY WHERE (TCAT_NAME=''%s'')';
 =======
   SFromName = 'SELECT TCAT_ID FROM TESTCATEGORY WHERE (TCAT_NAME="%s")';
 >>>>>>> graemeg/fixes_2_2
+=======
+  SFromName = 'SELECT TCAT_ID FROM TESTCATEGORY WHERE (TCAT_NAME="%s")';
+>>>>>>> origin/fixes_2_2
 
 begin
   Result:=IDQuery(Format(SFromName,[Name]));
@@ -432,6 +439,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function InsertQuery(const Query : string) : Integer;
 
 begin
@@ -440,12 +448,15 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Function AddRun(OSID, CPUID, VERSIONID, CATEGORYID : Integer; Date : TDateTime) : Integer;
 
 Const
   SInsertRun = 'INSERT INTO TESTRUN '+
                '(TU_OS_FK,TU_CPU_FK,TU_VERSION_FK,TU_CATEGORY_FK,TU_DATE)'+
                ' VALUES '+
+<<<<<<< HEAD
 <<<<<<< HEAD
                '(%d,%d,%d,%d,''%s'') RETURNING TU_ID';
 var
@@ -457,6 +468,9 @@ end;
 =======
                '(%d,%d,%d,%d,"%s")';
 >>>>>>> graemeg/fixes_2_2
+=======
+               '(%d,%d,%d,%d,"%s")';
+>>>>>>> origin/fixes_2_2
 
 function posr(c : Char; const s : AnsiString) : integer;
 var
@@ -478,6 +492,7 @@ var
   t          : text;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result := False;
   FillChar(r,sizeof(r),0);
   if pos('.',fn) > 0 then exit; // This is normally not a unit-test
@@ -492,6 +507,8 @@ begin
     Path := copy(Path,1,slashpos-1);
     end
 =======
+=======
+>>>>>>> origin/fixes_2_2
   If RunQuery(Format(SInsertRun,[OSID,CPUID,VERSIONID,CATEGORYID,SQLDate(Date)]),Res) then
     Result:=mysql_insert_id(@connection)
 >>>>>>> graemeg/fixes_2_2
@@ -557,7 +574,10 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function posr(c : Char; const s : AnsiString) : integer;
 var
   i : integer;

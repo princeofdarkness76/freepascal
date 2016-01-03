@@ -374,11 +374,14 @@ end; {SmallBackwardMove}
 procedure Forwards_Valgrind;assembler;nostackframe;
 asm
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_ENABLED_CLD}
   cld
 {$endif FPC_ENABLED_CLD}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   push    esi
   push    edi
   mov     esi,eax
@@ -875,13 +878,19 @@ end;
 <<<<<<< HEAD
 =======
 {$ifdef FPC_HAS_VALGRINDBOOL}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_HAS_INDIRECT_MAIN_INFORMATION}
 var
   valgrind_used : boolean;external name '__fpc_valgrind';
 {$endif FPC_HAS_INDIRECT_MAIN_INFORMATION}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif FPC_HAS_VALGRINDBOOL}
 >>>>>>> graemeg/fixes_2_2
 
@@ -899,7 +908,10 @@ procedure setup_fastmove;{$ifdef SYSTEMINLINE}inline;{$endif}
       end
     else
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif FPC_HAS_VALGRINDBOOL}
 >>>>>>> graemeg/fixes_2_2
 

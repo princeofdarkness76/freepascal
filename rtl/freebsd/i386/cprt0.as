@@ -17,6 +17,7 @@
 # FreeBSD  ELF startup code for Free Pascal for dynamical linking to libc.
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 # To avoid needing a "COMPAT" system, patch the constant following the 
 # "FreeBSD" field in the abitag to the relevant ABI number 
 # Some versions of the "file" command support
@@ -34,6 +35,8 @@
         .file   "cprt0.as"
         .ident  "FreePascal 2.6.x/2.7.x series dynlinked to libc"
 =======
+=======
+>>>>>>> origin/fixes_2_2
 # To avoid needing a "COMPAT" system, patch this file to change the number 
 # according to what is retured by the "file" command on a normal binary:
 #
@@ -49,7 +52,10 @@
 
         .file   "cprt0.as"
         .ident  "FreePascal 2.2.x series dynlinked to libc"
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 .section        .note.ABI-tag,"a",@progbits
         .p2align 2
         .type   abitag, @object

@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QD/Video.h
  
      Contains:   Video Driver Interfaces.
@@ -8,6 +9,8 @@
  
      Copyright:  © 1986-2008 by Apple Computer, Inc., all rights reserved
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       Video.p
  
      Contains:   Video Driver Interfaces.
@@ -16,11 +19,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1986-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -34,6 +41,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -45,7 +54,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -55,12 +67,17 @@
 unit Video;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -74,14 +91,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -90,11 +112,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -132,6 +157,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -139,6 +166,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -370,6 +398,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -378,7 +408,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -405,9 +438,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -417,6 +454,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,QuickdrawTypes;
 {$endc} {not MACOSALLINCLUDE}
@@ -437,10 +475,15 @@ uses MacTypes,QuickdrawTypes;
 uses MacTypes,NameRegistry,Quickdraw;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,NameRegistry,Quickdraw;
+
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {******************* DEPRECATION NOTICE *********************
  *
@@ -1555,6 +1598,8 @@ const
 	kFifthDepthMode = 132;
 	kSixthDepthMode = 133;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 const
 	mBaseOffset					= 1;							{ Id of mBaseOffset. }
 	mRowBytes					= 2;							{ Video sResource parameter Id's  }
@@ -2085,12 +2130,16 @@ const
 	kFourthDepthMode			= 131;
 	kFifthDepthMode				= 132;
 	kSixthDepthMode				= 133;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
 	VDPageInfoPtr = ^VDPageInfo;
 	VDPageInfo = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		csMode: SInt16;                 {(word) mode within device}
 		csData: SIGNEDLONG;                 {(long) data supplied by driver}
@@ -2196,6 +2245,8 @@ const
 const
 	kVideoReplyMicroSecDelayMask = 1 shl 0; { If set, the driver should delay csMinReplyDelay micro seconds between send and recieve}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		csMode:					SInt16;								{ (word) mode within device }
 		csData:					SInt32;								{ (long) data supplied by driver }
 		csPage:					SInt16;								{ (word) page to switch in }
@@ -2294,12 +2345,16 @@ const
 
 	{  VDCommunicationRec.csCommFlags and VDCommunicationInfoRec.csSupportedCommFlags }
 	kVideoReplyMicroSecDelayMask = $01;							{  If set, the driver should delay csMinReplyDelay micro seconds between send and recieve }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
 	VDResolutionInfoRecPtr = ^VDResolutionInfoRec;
 	VDResolutionInfoRec = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		csPreviousDisplayModeID: DisplayModeID; { ID of the previous resolution in a chain }
 		csDisplayModeID: DisplayModeID;        { ID of the next resolution }
@@ -2459,6 +2514,8 @@ const
 	kSyncDigitalVSyncPositiveMask = 1 shl 2;
 	kSyncDigitalHSyncPositiveMask = 1 shl 1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		csPreviousDisplayModeID: DisplayModeID;							{  ID of the previous resolution in a chain  }
 		csDisplayModeID:		DisplayModeID;							{  ID of the next resolution  }
 		csHorizontalPixels:		UInt32;									{  # of pixels in a horizontal line at the max depth  }
@@ -2615,12 +2672,16 @@ const
 	kSyncDigitalSeperateMask	= $18;
 	kSyncDigitalVSyncPositiveMask = $04;
 	kSyncDigitalHSyncPositiveMask = $02;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
 	VDDisplayTimingRangeRecPtr = ^VDDisplayTimingRangeRec;
 	VDDisplayTimingRangeRec = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		csRangeSize: UInt32;            { Init to sizeof(VDDisplayTimingRangeRec) }
 		csRangeType: UInt32;            { Init to 0 }
@@ -2679,6 +2740,8 @@ type
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		csRangeSize:			UInt32;									{  Init to sizeof(VDDisplayTimingRangeRec)  }
 		csRangeType:			UInt32;									{  Init to 0  }
 		csRangeVersion:			UInt32;									{  Init to 0  }
@@ -2720,44 +2783,60 @@ type
 		csCharSizeHorizontalTotal: SInt8;								{  Character size for active + blanking  }
 		csCharSizeVerticalTotal: SInt8;									{  Character size for active + blanking  }
 		csCharSizeReserved1:	UInt16;									{  Reserved (Init to 0)  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		csMinHorizontalActiveClocks: UInt32;
 		csMaxHorizontalActiveClocks: UInt32;
 		csMinHorizontalBlankingClocks: UInt32;
 		csMaxHorizontalBlankingClocks: UInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		csMinHorizontalSyncOffsetClocks: UInt32;
 		csMaxHorizontalSyncOffsetClocks: UInt32;
 		csMinHorizontalPulseWidthClocks: UInt32;
 		csMaxHorizontalPulseWidthClocks: UInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		csMinVerticalActiveClocks: UInt32;
 		csMaxVerticalActiveClocks: UInt32;
 		csMinVerticalBlankingClocks: UInt32;
 		csMaxVerticalBlankingClocks: UInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		csMinVerticalSyncOffsetClocks: UInt32;
 		csMaxVerticalSyncOffsetClocks: UInt32;
 		csMinVerticalPulseWidthClocks: UInt32;
 		csMaxVerticalPulseWidthClocks: UInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		csMinHorizontalBorderLeft: UInt32;
 		csMaxHorizontalBorderLeft: UInt32;
 		csMinHorizontalBorderRight: UInt32;
 		csMaxHorizontalBorderRight: UInt32;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 		csMinVerticalBorderTop: UInt32;
@@ -2798,6 +2877,8 @@ const
 const
 { csTimingRangeSignalLevels}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		csMinVerticalBorderTop:	UInt32;
 		csMaxVerticalBorderTop:	UInt32;
 		csMinVerticalBorderBottom: UInt32;
@@ -2833,11 +2914,15 @@ const
 
 
 																{  csTimingRangeSignalLevels }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kRangeSupportsSignal_0700_0300_Bit = 0;
 	kRangeSupportsSignal_0714_0286_Bit = 1;
 	kRangeSupportsSignal_1000_0400_Bit = 2;
 	kRangeSupportsSignal_0700_0000_Bit = 3;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kRangeSupportsSignal_0700_0300_Mask = 1 shl kRangeSupportsSignal_0700_0300_Bit;
 	kRangeSupportsSignal_0714_0286_Mask = 1 shl kRangeSupportsSignal_0714_0286_Bit;
@@ -2856,6 +2941,8 @@ const
 const
 { csSignalLevels for analog}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kRangeSupportsSignal_0700_0300_Mask = $01;
 	kRangeSupportsSignal_0714_0286_Mask = $02;
 	kRangeSupportsSignal_1000_0400_Mask = $04;
@@ -2870,7 +2957,10 @@ const
 
 
 																{  csSignalLevels for analog }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kAnalogSignalLevel_0700_0300 = 0;
 	kAnalogSignalLevel_0714_0286 = 1;
 	kAnalogSignalLevel_1000_0400 = 2;
@@ -2878,15 +2968,20 @@ const
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 { csTimingRangeSyncFlags}
 =======
 																{  csTimingRangeSyncFlags }
 >>>>>>> graemeg/fixes_2_2
+=======
+																{  csTimingRangeSyncFlags }
+>>>>>>> origin/fixes_2_2
 	kRangeSupportsSeperateSyncsBit = 0;
 	kRangeSupportsSyncOnGreenBit = 1;
 	kRangeSupportsCompositeSyncBit = 2;
 	kRangeSupportsVSyncSerrationBit = 3;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kRangeSupportsSeperateSyncsMask = 1 shl kRangeSupportsSeperateSyncsBit;
 	kRangeSupportsSyncOnGreenMask = 1 shl kRangeSupportsSyncOnGreenBit;
@@ -2983,6 +3078,8 @@ const
 	kSetClutAtSetEntries = 0;    { SetEntries behavior is to update clut during SetEntries call}
 	kSetClutAtVBL = 1;     { SetEntries behavior is to upate clut at next vbl}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kRangeSupportsSeperateSyncsMask = $01;
 	kRangeSupportsSyncOnGreenMask = $02;
 	kRangeSupportsCompositeSyncMask = $04;
@@ -3058,12 +3155,16 @@ type
 const
 	kSetClutAtSetEntries		= 0;							{  SetEntries behavior is to update clut during SetEntries call }
 	kSetClutAtVBL				= 1;							{  SetEntries behavior is to upate clut at next vbl }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
 	VDCommunicationRecPtr = ^VDCommunicationRec;
 	VDCommunicationRec = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		csBusID: SInt32;                { kVideoDefaultBus for single headed cards.}
 		csCommFlags: UInt32;            { Always zero}
@@ -3113,6 +3214,8 @@ type
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		csBusID:				SInt32;									{  kVideoDefaultBus for single headed cards. }
 		csCommFlags:			UInt32;									{  Always zero }
 		csMinReplyDelay:		UInt32;									{  Minimum delay between send and reply transactions (units depend on csCommFlags) }
@@ -3227,4 +3330,7 @@ type
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

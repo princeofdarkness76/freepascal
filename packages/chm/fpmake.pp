@@ -16,6 +16,7 @@ begin
     P:=AddPackage('chm');
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -35,6 +36,8 @@ begin
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');
 =======
+=======
+>>>>>>> origin/fixes_2_2
     P.Directory:='chm';
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
@@ -43,7 +46,10 @@ begin
       D.Version:='2.2.4';
     
     P.SourcePath.Add('src');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     T:=P.Targets.AddUnit('chmbase.pas');
     T:=P.Targets.AddUnit('chmfilewriter.pas');
@@ -71,10 +77,14 @@ begin
     T:=P.Targets.AddUnit('chmtypes.pas');
       with T.Dependencies do
 <<<<<<< HEAD
+<<<<<<< HEAD
        begin
 =======
         begin
 >>>>>>> graemeg/fixes_2_2
+=======
+        begin
+>>>>>>> origin/fixes_2_2
           AddUnit('chmbase');
         end;
     T:=P.Targets.AddUnit('htmlindexer.pas');
@@ -91,6 +101,7 @@ begin
           AddUnit('chmspecialfiles');
           AddUnit('paslzxcomp');
           AddUnit('chmfiftimain');
+<<<<<<< HEAD
 <<<<<<< HEAD
           AddInclude('chmobjinstconst.inc');
         end;
@@ -120,6 +131,8 @@ begin
           AddUnit('paslzxcomp');
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         end;
     T:=P.Targets.AddUnit('fasthtmlparser.pas');
     T:=P.Targets.AddUnit('htmlutil.pas');
@@ -135,6 +148,7 @@ begin
         begin
           AddUnit('htmlindexer');
         end;
+<<<<<<< HEAD
 <<<<<<< HEAD
    T:=P.Targets.AddUnit('itolitlstypes.pas');
    T:=P.Targets.AddUnit('itsftransform.pas');
@@ -174,6 +188,8 @@ begin
     T:=P.Targets.AddProgram('chmcmd.lpr');
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {$ifndef ALLPACKAGES}

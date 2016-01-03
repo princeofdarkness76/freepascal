@@ -416,6 +416,7 @@ struct winsize {
         Chr(VEOL2), Chr(VSWTCH), Chr(VSTART), Chr(VSTOP), Chr(VSUSP));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
   According to posix/sys/ioctl.h
   /* these currently work only on sockets */	
@@ -424,3 +425,5 @@ struct winsize {
 	FIONREAD = $be000001;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

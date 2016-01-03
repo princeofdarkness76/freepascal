@@ -19,9 +19,12 @@ Based on:
  Original translation of cairo-ft.h by Jeffrey Pohlmeyer 
  updated to version 1.4 by Luiz Américo Pereira Câmara 2007
 <<<<<<< HEAD
+<<<<<<< HEAD
  updated to version 1.12 by Valdinilson Lourenço da Cunha 2012
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 As per original authors wish, this file is dual licensed LGPL-MPL see the original file
 cairo.pp for the full license.
@@ -48,6 +51,7 @@ type
   FcPattern = Pointer;
   PFcPattern = ^FcPattern;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   cairo_ft_synthesize_t = (
     CAIRO_FT_SYNTHESIZE_BOLD = 1 shl 0,
@@ -63,6 +67,8 @@ procedure cairo_ft_scaled_font_unlock_face(scaled_font:Pcairo_scaled_font_t); cd
 function  cairo_ft_font_face_create_for_pattern(pattern: PFcPattern): Pcairo_font_face_t; cdecl; external LIB_CAIRO;
 procedure cairo_ft_font_options_substitute(options: Pcairo_font_options_t; pattern: PFcPattern); cdecl; external LIB_CAIRO;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     
 function  cairo_ft_font_face_create_for_pattern(pattern:PFcPattern):Pcairo_font_face_t; cdecl; external LIB_CAIRO;
 procedure cairo_ft_font_options_substitute(options:Pcairo_font_options_t; pattern:PFcPattern); cdecl; external LIB_CAIRO;
@@ -70,7 +76,10 @@ function  cairo_ft_font_face_create_for_ft_face(face:TFT_Face; load_flags:longin
 function  cairo_ft_scaled_font_lock_face(scaled_font:Pcairo_scaled_font_t):TFT_Face; cdecl; external LIB_CAIRO;
 procedure cairo_ft_scaled_font_unlock_face(scaled_font:Pcairo_scaled_font_t); cdecl; external LIB_CAIRO;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 implementation
 

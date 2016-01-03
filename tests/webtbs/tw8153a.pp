@@ -21,12 +21,18 @@ asm
 {$if defined(linux) or defined(aix)}
   ld r4,0(r4)
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif linux or aix}
 =======
 {$else linux}
   ld r4,+vmtoffset tc.v(r4)
 {$endif linux}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$else linux}
+  ld r4,+vmtoffset tc.v(r4)
+{$endif linux}
+>>>>>>> origin/fixes_2_2
 {$else}
   lwz r4,0(r3)
   lwz r4,+vmtoffset tc.v(r4)

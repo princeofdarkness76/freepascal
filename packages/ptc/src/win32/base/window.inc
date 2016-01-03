@@ -7,6 +7,7 @@
     modify it under the terms of the GNU Lesser General Public
     License as published by the Free Software Foundation; either
 <<<<<<< HEAD
+<<<<<<< HEAD
     version 2.1 of the License, or (at your option) any later version
     with the following modification:
 
@@ -23,6 +24,9 @@
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> graemeg/fixes_2_2
+=======
+    version 2.1 of the License, or (at your option) any later version.
+>>>>>>> origin/fixes_2_2
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -39,6 +43,7 @@
 { bug in the compiler???}
 { $LINKLIB ptc.owr}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 constructor TWin32Window.Create(window: HWND);
 begin
@@ -125,6 +130,8 @@ begin
   AdjustWindowRectEx(rectangle, FStyle, False, FExtra);
   SetWindowPos(FWindow, HWND_TOP, window_rectangle.left,
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Constructor TWin32Window.Create(window : HWND);
 
 Begin
@@ -184,12 +191,16 @@ Begin
   End;
   AdjustWindowRectEx(rectangle, m_style, False, m_extra);
   SetWindowPos(m_window, HWND_TOP, window_rectangle.left,
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       window_rectangle.top, rectangle.right - rectangle.left,
       rectangle.bottom - rectangle.top, 0);
   {
   todo: detect if the window is resized off the screen and let windows reposition it correctly... ?
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -436,6 +447,8 @@ begin
   end;
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure TWin32Window.update(force : Boolean);
@@ -682,4 +695,7 @@ Begin
       SetEvent(m_event);
   End;
 End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

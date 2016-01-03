@@ -49,14 +49,20 @@ unit sysinitcyg;
     function DLL_entry(const info : TEntryInformation) : longbool; external name '_FPC_DLL_Entry';
     procedure PascalMain;stdcall;external name 'PASCALMAIN';
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure asm_exit;stdcall;public name 'asm_exit';
       begin
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$i sysinit.inc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure SetupEntryInformation;
       begin
         EntryInformation.InitFinalTable:=@InitFinalTable;
@@ -65,7 +71,10 @@ unit sysinitcyg;
         EntryInformation.PascalMain:=@PascalMain;
         EntryInformation.valgrind_used:=valgrind_used;
       end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
     procedure CMainEXE;cdecl;
@@ -77,6 +86,7 @@ unit sysinitcyg;
         __main;
         SetupEntryInformation;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_USE_TLS_DIRECTORY}
         LinkIn(@tlsdir,@tls_callback_end,@tls_callback);
 {$endif}
@@ -84,6 +94,9 @@ unit sysinitcyg;
 =======
         EXE_Entry(EntryInformation);
 >>>>>>> graemeg/fixes_2_2
+=======
+        EXE_Entry(EntryInformation);
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -96,10 +109,14 @@ unit sysinitcyg;
         __main;
         SetupEntryInformation;
 <<<<<<< HEAD
+<<<<<<< HEAD
         DLL_Entry(SysInitEntryInformation);
 =======
         DLL_Entry(EntryInformation);
 >>>>>>> graemeg/fixes_2_2
+=======
+        DLL_Entry(EntryInformation);
+>>>>>>> origin/fixes_2_2
       end;
 
 

@@ -20,12 +20,17 @@
    You should have received a copy of the GNU Lesser General Public
    License along with this library; if not, write to the
 <<<<<<< HEAD
+<<<<<<< HEAD
    Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 =======
    Free Software Foundation, Inc., 59 Temple Place - Suite 330,
    Boston, MA 02111-1307, USA.
 >>>>>>> graemeg/fixes_2_2
+=======
+   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
+>>>>>>> origin/fixes_2_2
   }
 unit gdk2pixbuf; // keep unit name lowercase for kylix
 
@@ -42,10 +47,14 @@ uses glib2;
 
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef windows}
 =======
 {$ifdef win32}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifdef win32}
+>>>>>>> origin/fixes_2_2
   {$define gdkpixbufwin}
   gdkpixbuflib = 'libgdk_pixbuf-2.0-0.dll';
   {$IFDEF FPC}
@@ -87,10 +96,14 @@ const
 {$IFNDEF Kylix}
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$IFDEF WINDOWS }
 =======
   {$IFDEF WIN32 }
 >>>>>>> graemeg/fixes_2_2
+=======
+  {$IFDEF WIN32 }
+>>>>>>> origin/fixes_2_2
   gdk_pixbuf_major_version: guint; external gdkpixbuflib name 'gdk_pixbuf_major_version';
   gdk_pixbuf_minor_version: guint; external gdkpixbuflib name 'gdk_pixbuf_minor_version';
   gdk_pixbuf_micro_version: guint; external gdkpixbuflib name 'gdk_pixbuf_micro_version';
@@ -156,6 +169,7 @@ type
    );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    TGdkPixbufRotation = (
 	GDK_PIXBUF_ROTATE_NONE             =   0,
 	GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE =  90,
@@ -165,6 +179,8 @@ type
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function GDK_TYPE_PIXBUF : GType;
 function GDK_PIXBUF(anObject : pointer) : PGdkPixbuf;
 function GDK_IS_PIXBUF(anObject : pointer) : boolean;
@@ -261,12 +277,15 @@ function gdk_pixbuf_scale_simple(src:PGdkPixbuf; dest_width:longint; dest_height
 function gdk_pixbuf_composite_color_simple(src:PGdkPixbuf; dest_width:longint; dest_height:longint; interp_type:TGdkInterpType; overall_alpha:longint;
            check_size:longint; color1:guint32; color2:guint32):PGdkPixbuf; cdecl; external gdkpixbuflib;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF HasGTK2_6}
 function gdk_pixbuf_rotate_simple(src: PGdkPixbuf; angle: TGdkPixbufRotation): PGdkPixbuf; cdecl; external gdkpixbuflib;
 function gdk_pixbuf_flip(src: PGdkPixbuf; horizontal: gboolean): PGdkPixbuf; cdecl; external gdkpixbuflib;
 {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Animation support  }
 function gdk_pixbuf_animation_get_type:GType; cdecl; external gdkpixbuflib;

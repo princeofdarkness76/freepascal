@@ -274,6 +274,9 @@ type
    function GetCommandLineW : pwidechar;
      stdcall;external KernelDLL name 'GetCommandLineW';
 
+   function GetCommandLineW : pwidechar;
+     stdcall;external KernelDLL name 'GetCommandLineW';
+
   function GetCurrentProcessId:DWORD;
     stdcall; external KernelDLL name 'GetCurrentProcessId';
 

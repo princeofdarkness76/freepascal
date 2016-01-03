@@ -90,9 +90,12 @@ function ThreadFunc(parameter: Pointer): ptrint;
 var
   LThread: TThread;
 <<<<<<< HEAD
+<<<<<<< HEAD
   LFreeOnTerminate: boolean;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef DEBUG_MT}
   lErrorAddr, lErrorBase: Pointer;
 {$endif}
@@ -110,9 +113,12 @@ begin
     if LThread.FInitialSuspended then
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         WRITE_DEBUG('thread ', ptruint(LThread), ' waiting for RTLEvent ', ptruint(LThread.FSuspendEvent));
         RtlEventWaitFor(LThread.FSuspendEvent);
 =======
+=======
+>>>>>>> origin/fixes_2_2
         WRITE_DEBUG('thread ', ptruint(LThread), ' waiting for semaphore ', ptruint(LThread.FSem));
         CurrentTM.SemaphoreWait(LThread.FSem);
 >>>>>>> graemeg/fixes_2_2
@@ -190,7 +196,10 @@ begin
       // already in case it was joined)
       EndThread(Result);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
     end
   else
     begin
@@ -218,7 +227,10 @@ begin
   WRITE_DEBUG('thread ', ptruint(self), ' created semaphore ', ptruint(FSem));
   FSuspended := CreateSuspended;
   FSuspendedExternal := false;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FThreadReaped := false;
   FInitialSuspended := CreateSuspended;
   FFatalException := nil;
@@ -257,12 +269,16 @@ begin
     end;
   if (FThreadID = GetCurrentThreadID) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2_2
     begin
       if not(FFreeOnTerminate) and not FFinished then
         raise EThreadDestroyCalled.Create('A thread cannot destroy itself except by setting FreeOnTerminate and leaving!');
       FFreeOnTerminate := false;
     end
   else
+<<<<<<< HEAD
     begin
 =======
     begin
@@ -273,6 +289,9 @@ begin
   else
     begin
 >>>>>>> graemeg/fixes_2_2
+=======
+    begin
+>>>>>>> origin/fixes_2_2
       // if someone calls .Free on a thread with not(FreeOnTerminate), there
       // is no problem. Otherwise, FreeOnTerminate must be set to false so
       // when ThreadFunc exits the main runloop, it does not try to Free
@@ -284,10 +303,14 @@ begin
         begin
           Terminate;
 <<<<<<< HEAD
+<<<<<<< HEAD
           if (FSuspendedInternal or FInitialSuspended) then
 =======
           if (FInitialSuspended) then
 >>>>>>> graemeg/fixes_2_2
+=======
+          if (FInitialSuspended) then
+>>>>>>> origin/fixes_2_2
             Resume;
           WaitFor;
         end;
@@ -299,7 +322,10 @@ begin
   { or will be released (in case of FFreeOnTerminate) after this destructor }
   { has exited by ThreadFunc->EndThread->cthreads.CEndThread->DoneThread)   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
   inherited Destroy;
 >>>>>>> graemeg/fixes_2_2
 end;
@@ -319,27 +345,38 @@ begin
     begin
       if not FSuspended and
 <<<<<<< HEAD
+<<<<<<< HEAD
          (InterLockedExchange(longint(FSuspended),longint(longbool(true))) = longint(longbool(false))) then
         RtlEventWaitFor(FSuspendEvent)
 =======
          (InterLockedExchange(longint(FSuspended),ord(true)) = ord(false)) then
         CurrentTM.SemaphoreWait(FSem)
 >>>>>>> graemeg/fixes_2_2
+=======
+         (InterLockedExchange(longint(FSuspended),ord(true)) = ord(false)) then
+        CurrentTM.SemaphoreWait(FSem)
+>>>>>>> origin/fixes_2_2
     end
   else
     begin
       Raise EThread.create('Suspending one thread from inside another one is unsupported (because it is unsafe and deadlock prone) by *nix and posix operating systems');
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 //      FSuspendedExternal := true;
 //      SuspendThread(FHandle);
 >>>>>>> graemeg/fixes_2_2
+=======
+//      FSuspendedExternal := true;
+//      SuspendThread(FHandle);
+>>>>>>> origin/fixes_2_2
     end;
 end;
 
 
 procedure TThread.Resume;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if FSuspendedInternal and (InterLockedExchange(longint(FSuspendedInternal),ord(false)) = longint(longbool(true))) then
     begin
@@ -382,6 +419,8 @@ begin
         end
     end
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if (not FSuspendedExternal) then
     begin
       if FSuspended and
@@ -397,7 +436,10 @@ begin
 //      FSuspendedExternal := false;
 //      ResumeThread(FHandle);
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -410,6 +452,7 @@ function TThread.WaitFor: Integer;
 begin
   WRITE_DEBUG('waiting for thread ',ptruint(FHandle));
 <<<<<<< HEAD
+<<<<<<< HEAD
   If (MainThreadID=GetCurrentThreadID) then 
     {
      FFinished is set after DoTerminate, which does a synchronize of OnTerminate, 
@@ -420,6 +463,8 @@ begin
       CheckSynchronize(100);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   WaitFor := WaitForThreadTerminate(FHandle, 0);
   { should actually check for errors in WaitForThreadTerminate, but no }
   { error api is defined for that function                             }

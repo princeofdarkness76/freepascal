@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {%MainUnit ../symbian.pas}
 
 {
@@ -621,6 +622,8 @@ user input from which a program may recover.
 const KErrCommsBreak=(-48);
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {%MainUnit ../symbian.pas}
 
 {
@@ -1242,4 +1245,7 @@ user input from which a program may recover.
 }
 const KErrCommsBreak=(-48);
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -34,9 +34,12 @@ interface
        taddnode = class(tbinopnode)
        private
 <<<<<<< HEAD
+<<<<<<< HEAD
           resultrealdefderef: tderef;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           function pass_typecheck_internal:tnode;
        public
           resultrealdef : tdef;
@@ -399,12 +402,15 @@ implementation
       begin
         result:=nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
         l1:=0;
         l2:=0;
         s1:=nil;
         s2:=nil;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
         { load easier access variables }
         rd:=right.resultdef;
@@ -428,15 +434,21 @@ implementation
 
         { both are int constants }
 <<<<<<< HEAD
+<<<<<<< HEAD
         if  (
              is_constintnode(left) and
              is_constintnode(right)
 =======
+=======
+>>>>>>> origin/fixes_2_2
         if (
             (
              is_constintnode(left) and ((Torddef(rd).ordtype<>u64bit) or (nodetype in [addn,subn,shln,shrn,andn,orn,xorn])) and
              is_constintnode(right) and ((Torddef(rd).ordtype<>u64bit) or (nodetype in [addn,subn,shln,shrn,andn,orn,xorn]))
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             ) or
             (
              is_constboolnode(left) and
@@ -586,6 +598,7 @@ implementation
           end
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         else if cmp_of_disjunct_ranges(res) then
           begin
             if res then
@@ -604,6 +617,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         {Match against the ranges, i.e.:
          var a:1..10;
          begin
@@ -611,15 +626,22 @@ implementation
          ... always evaluates to true. (DM)}
         else if is_constintnode(left) and (right.resultdef.typ=orddef) and
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             { all type limits are stored using tconstexprint = int64   }
             { currently, so u64bit support would need extra type casts }
             (Torddef(right.resultdef).ordtype<>u64bit) and
 >>>>>>> graemeg/fixes_2_2
+=======
+            { all type limits are stored using tconstexprint = int64   }
+            { currently, so u64bit support would need extra type casts }
+            (Torddef(right.resultdef).ordtype<>u64bit) and
+>>>>>>> origin/fixes_2_2
             { don't ignore type checks }
             is_subequal(left.resultdef,right.resultdef) then
             begin
               t:=nil;
+<<<<<<< HEAD
 <<<<<<< HEAD
               hp:=right;
               realdef:=hp.resultdef;
@@ -641,6 +663,10 @@ implementation
               lv:=Tordconstnode(left).value;
               with Torddef(right.resultdef) do
 >>>>>>> graemeg/fixes_2_2
+=======
+              lv:=Tordconstnode(left).value;
+              with Torddef(right.resultdef) do
+>>>>>>> origin/fixes_2_2
                 case nodetype of
                  ltn:
                    if lv<low then
@@ -677,15 +703,22 @@ implementation
             end
           else if (left.resultdef.typ=orddef) and is_constintnode(right) and
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
               { all type limits are stored using tconstexprint = int64   }
               { currently, so u64bit support would need extra type casts }
               (Torddef(left.resultdef).ordtype<>u64bit) and
 >>>>>>> graemeg/fixes_2_2
+=======
+              { all type limits are stored using tconstexprint = int64   }
+              { currently, so u64bit support would need extra type casts }
+              (Torddef(left.resultdef).ordtype<>u64bit) and
+>>>>>>> origin/fixes_2_2
               { don't ignore type checks }
               is_subequal(left.resultdef,right.resultdef) then
             begin
               t:=nil;
+<<<<<<< HEAD
 <<<<<<< HEAD
               hp:=left;
               realdef:=hp.resultdef;
@@ -701,6 +734,10 @@ implementation
               rv:=Tordconstnode(right).value;
               with Torddef(left.resultdef) do
 >>>>>>> graemeg/fixes_2_2
+=======
+              rv:=Tordconstnode(right).value;
+              with Torddef(left.resultdef) do
+>>>>>>> origin/fixes_2_2
                 case nodetype of
                  ltn:
                    if high<rv then
@@ -736,6 +773,7 @@ implementation
                 end
             end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
         { Add,Sub,Mul,Or,Xor,Andn with constant 0, 1 or -1?  }
@@ -743,22 +781,32 @@ implementation
 
         { Add,Sub,Mul with constant 0 or 1?  }
 >>>>>>> graemeg/fixes_2_2
+=======
+
+        { Add,Sub,Mul with constant 0 or 1?  }
+>>>>>>> origin/fixes_2_2
         if is_constintnode(right) and is_integer(left.resultdef) then
           begin
             if tordconstnode(right).value = 0 then
               begin
                 case nodetype of
 <<<<<<< HEAD
+<<<<<<< HEAD
                   addn,subn,orn,xorn:
                    result := left.getcopy;
                   andn,muln:
                    result:=cordconstnode.create(0,resultdef,true);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                   addn,subn:
                    result := left.getcopy;
                   muln:
                    result:=cordconstnode.create(0,left.resultdef,true);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 end;
               end
             else if tordconstnode(right).value = 1 then
@@ -767,6 +815,7 @@ implementation
                   muln:
                    result := left.getcopy;
                 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
               end
             else if tordconstnode(right).value = -1 then
@@ -777,6 +826,8 @@ implementation
                 end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               end;
             if assigned(result) then
               exit;
@@ -787,18 +838,24 @@ implementation
               begin
                 case nodetype of
 <<<<<<< HEAD
+<<<<<<< HEAD
                   addn,orn,xorn:
                    result := right.getcopy;
                   subn:
                    result := cunaryminusnode.create(right.getcopy);
                   andn,muln:
 =======
+=======
+>>>>>>> origin/fixes_2_2
                   addn:
                    result := right.getcopy;
                   subn:
                    result := cunaryminusnode.create(right.getcopy);
                   muln:
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                    result:=cordconstnode.create(0,right.resultdef,true);
                 end;
               end
@@ -808,6 +865,7 @@ implementation
                   muln:
                    result := right.getcopy;
                 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
               end
 {$ifdef VER2_2}
@@ -822,6 +880,8 @@ implementation
                 end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               end;
             if assigned(result) then
               exit;
@@ -1310,16 +1370,22 @@ implementation
         rd,ld,nd    : tdef;
         hsym        : tfieldvarsym;
 <<<<<<< HEAD
+<<<<<<< HEAD
         llow,lhigh,
         rlow,rhigh  : tconstexprint;
         strtype     : tstringtype;
         res,
 =======
+=======
+>>>>>>> origin/fixes_2_2
         i           : longint;
         llow,lhigh,
         rlow,rhigh  : tconstexprint;
         strtype     : tstringtype;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         b           : boolean;
         lt,rt       : tnodetype;
         ot          : tnodetype;
@@ -1339,6 +1405,7 @@ implementation
       begin
          result:=nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
          rlow:=0;
          llow:=0;
          rhigh:=0;
@@ -1353,6 +1420,8 @@ implementation
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          { both left and right need to be valid }
          set_varstate(left,vs_read,[vsf_must_be_valid]);
          set_varstate(right,vs_read,[vsf_must_be_valid]);
@@ -1422,6 +1491,7 @@ implementation
           need to be done before the constant folding so constant
           operation on a float and int are also handled }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef x86}
         { use extended as default real type only when the x87 fpu is used }
 <<<<<<< HEAD
@@ -1473,6 +1543,9 @@ implementation
 =======
         resultrealdef:=pbestrealtype^;
 >>>>>>> graemeg/fixes_2_2
+=======
+        resultrealdef:=pbestrealtype^;
+>>>>>>> origin/fixes_2_2
         if (right.resultdef.typ=floatdef) or (left.resultdef.typ=floatdef) then
          begin
            { when both floattypes are already equal then use that
@@ -1502,6 +1575,7 @@ implementation
          end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         { If both operands are constant and there is a unicodestring
           or unicodestring then convert everything to unicodestring }
         if is_constnode(right) and is_constnode(left) and
@@ -1514,6 +1588,8 @@ implementation
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         { If both operands are constant and there is a widechar
           or widestring then convert everything to widestring. This
           allows constant folding like char+widechar }
@@ -1527,7 +1603,10 @@ implementation
             inserttypeconv(left,cwidestringtype);
           end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
          result:=simplify;
          if assigned(result) then
@@ -2923,6 +3002,7 @@ implementation
         temp    : ttempcreatenode;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         result:=nil;
         case nodetype of
           equaln,unequaln,lten,gten:
@@ -2936,6 +3016,8 @@ implementation
                     { (left >= right) = (right <= left) }
                     if nodetype = gten then
 =======
+=======
+>>>>>>> origin/fixes_2_2
         if (is_varset(left.resultdef) or is_varset(right.resultdef)) then
           begin
             case nodetype of
@@ -3014,7 +3096,10 @@ implementation
                         ctypeconvnode.create_internal(tsetelementnode(right).left,sinttype),
                         cordconstnode.create(tsetdef(resultdef).setbase,sinttype,false));
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
                       addstatement(newstatement,ccallnode.createintern('fpc_varset_create_element',
                         ccallparanode.create(ctemprefnode.create(temp),
@@ -3138,6 +3223,7 @@ implementation
           end
         else
           internalerror(2007091601);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
       end;
 
@@ -3145,6 +3231,8 @@ implementation
     function taddnode.use_generic_mul32to64: boolean;
       begin
         result := true;
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -3200,7 +3288,10 @@ implementation
                is_signed(ttypeconvnode(right).left.resultdef)) or
               (is_signed(ttypeconvnode(left).left.resultdef) and
                (torddef(ttypeconvnode(right).left.resultdef).ordtype in [u8bit,u16bit]))))) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           begin
             temp := ttypeconvnode(left).left;
             ttypeconvnode(left).left := nil;
@@ -3753,6 +3844,7 @@ implementation
          else if (ld.typ=setdef) then
            begin
 <<<<<<< HEAD
+<<<<<<< HEAD
              { small sets are handled inline by the compiler.
                small set doesn't have support for adding ranges }
              if is_smallset(ld) and
@@ -3763,6 +3855,9 @@ implementation
 =======
              if not(is_varset(ld)) then
 >>>>>>> graemeg/fixes_2_2
+=======
+             if not(is_varset(ld)) then
+>>>>>>> origin/fixes_2_2
                begin
                  if nodetype in [ltn,lten,gtn,gten,equaln,unequaln] then
                    expectloc:=LOC_FLAGS

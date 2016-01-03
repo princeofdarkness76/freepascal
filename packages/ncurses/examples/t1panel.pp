@@ -77,12 +77,17 @@ begin
     FmtStr(lab, 'Window Number %d', [i + 1]);
     win_show(wins[i], lab, i + 1);
 <<<<<<< HEAD
+<<<<<<< HEAD
     Inc(y,3);
     Inc(x,7);
 =======
     y += 3;
     x += 7;
 >>>>>>> graemeg/fixes_2_2
+=======
+    y += 3;
+    x += 7;
+>>>>>>> origin/fixes_2_2
   end
 end;
 

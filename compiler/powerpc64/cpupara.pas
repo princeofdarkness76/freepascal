@@ -846,9 +846,12 @@ implemented
 >>>>>>> graemeg/cpstrnew
           paracgsize := int_cgsize(paralen);
 <<<<<<< HEAD
+<<<<<<< HEAD
           locdef:=get_paraloc_def(paradef, paralen, firstparaloc);
         end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         if (paracgsize in [OS_NO,OS_128,OS_S128]) then
           paraloc^.size := OS_INT
         else 

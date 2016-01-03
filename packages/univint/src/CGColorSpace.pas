@@ -1,5 +1,6 @@
 { CoreGraphics - CGColorSpace.h
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 1999-2009 Apple Inc.
    All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -27,6 +28,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  * Copyright (c) 1999-2004 Apple Computer, Inc.
  * All rights reserved.
  }
@@ -39,7 +42,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -49,12 +55,17 @@
 unit CGColorSpace;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -68,14 +79,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -84,11 +100,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -126,6 +145,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -133,6 +154,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -378,6 +400,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -386,7 +410,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -413,9 +440,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -426,16 +457,21 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,CFBase,CFData,CFString,CGBase,CGDataProvider;
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 uses MacTypes,CFBase,CFString,CMTypes,CGBase,CGDataProvider;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,CFBase,CFString,CMTypes,CGBase,CGDataProvider;
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -464,6 +500,8 @@ type
 
 { Color rendering intents. }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	CGColorSpaceRef = ^SInt32; { an opaque 32-bit type }
 
 type
@@ -471,7 +509,10 @@ type
 	RedGreenBlueValue = array[0..2] of Float32;
 	Single4 = array[0..3] of Float32;
 	Single9 = array[0..8] of Float32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	CGColorRenderingIntent = SInt32;
@@ -482,6 +523,7 @@ const
 	kCGRenderingIntentPerceptual = 3;
 	kCGRenderingIntentSaturation = 4;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { The model of a color space. }
 <<<<<<< HEAD
@@ -684,6 +726,8 @@ function CGColorSpaceCreateLab(const (*var*) whitePoint: TristimulusValue; const
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var kCGColorSpaceGenericGray: CFStringRef; external name '_kCGColorSpaceGenericGray'; (* attribute const *) (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 var kCGColorSpaceGenericRGB: CFStringRef; external name '_kCGColorSpaceGenericRGB'; (* attribute const *) (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -739,7 +783,10 @@ function CGColorSpaceCreateCalibratedRGB( const (*var*) whitePoint: TristimulusV
  * values for the a* and b* components of the color space. }
 
 function CGColorSpaceCreateLab(const (*var*) whitePoint: TristimulusValue; const (*var*) blackPoint: TristimulusValue; const (*var*) range: Single4): CGColorSpaceRef; external name '_CGColorSpaceCreateLab';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Create an ICC-based colorspace.  `nComponents' specifies the number of
  * color components in the color space defined by the ICC profile data.
@@ -754,6 +801,7 @@ function CGColorSpaceCreateLab(const (*var*) whitePoint: TristimulusValue; const
  * is NULL, then the color space used will be DeviceGray, DeviceRGB, or
  * DeviceCMYK, depending on whether `nComponents' is 1, 3, or 4,
  * respectively. }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1076,6 +1124,8 @@ function CGColorSpaceCopyICCProfile( space: CGColorSpaceRef ): CFDataRef; extern
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 function CGColorSpaceCreateICCBased( nComponents: size_t; {const} range: {variable-size-array} Float32Ptr; profile: CGDataProviderRef; alternate: CGColorSpaceRef ): CGColorSpaceRef; external name '_CGColorSpaceCreateICCBased';
 
@@ -1126,7 +1176,10 @@ function CGColorSpaceRetain( cs: CGColorSpaceRef ): CGColorSpaceRef; external na
 
 procedure CGColorSpaceRelease( cs: CGColorSpaceRef ); external name '_CGColorSpaceRelease';
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {* Deprecated APIs. *}
 
@@ -1146,6 +1199,7 @@ procedure CGColorSpaceRelease( cs: CGColorSpaceRef ); external name '_CGColorSpa
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
@@ -1154,3 +1208,7 @@ end.
 
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+
+end.
+>>>>>>> origin/fixes_2_2

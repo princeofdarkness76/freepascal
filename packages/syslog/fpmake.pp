@@ -15,6 +15,7 @@ begin
     P:=AddPackage('syslog');
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -24,16 +25,24 @@ begin
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
 >>>>>>> graemeg/fixes_2_2
+=======
+    P.Directory:='syslog';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+>>>>>>> origin/fixes_2_2
     P.SourcePath.Add('src');
 
     T:=P.Targets.AddUnit('systemlog.pp');
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     P.ExamplePath.Add('examples');
     P.Targets.AddExampleProgram('testlog.pp');
     P.Sources.AddExampleFiles('examples/*',P.Directory,false,'.');
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

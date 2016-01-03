@@ -138,11 +138,14 @@ uses
   gpc,
 {$ENDIF}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF MORPHOS}
   exec,
 {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   sdl;
 
 const
@@ -167,12 +170,15 @@ const
 {$ENDIF}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF MORPHOS}
   SDL_ImageLibName = 'powersdl_image.library';
 {$ENDIF}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   // Printable format: "%d.%d.%d", MAJOR, MINOR, PATCHLEVEL
   SDL_IMAGE_MAJOR_VERSION = 1;
 {$EXTERNALSYM SDL_IMAGE_MAJOR_VERSION}
@@ -182,11 +188,14 @@ const
 {$EXTERNALSYM SDL_IMAGE_PATCHLEVEL}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF MORPHOS}
 {$INCLUDE powersdl_image.inc}
 {$ELSE MORPHOS}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { This macro can be used to fill a version structure with the compile-time
   version of the SDL_image library. }
 procedure SDL_IMAGE_VERSION( var X : TSDL_Version );
@@ -325,10 +334,14 @@ cdecl; external {$IFDEF __GPC__}name 'IMG_ReadXPMFromArray'{$ELSE} SDL_ImageLibN
 {$EXTERNALSYM IMG_ReadXPMFromArray}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF MORPHOS}
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 
 
 { used internally, NOT an exported function }

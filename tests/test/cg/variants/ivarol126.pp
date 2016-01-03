@@ -44,6 +44,7 @@ begin
     v := y126;
     test126(v);
 <<<<<<< HEAD
+<<<<<<< HEAD
     Writeln('No exception caught, exiting');
     Halt(1);
   except
@@ -54,6 +55,11 @@ begin
     on E : TObject do
       halt(1);
 >>>>>>> graemeg/fixes_2_2
+=======
+  except
+    on E : TObject do
+      halt(1);
+>>>>>>> origin/fixes_2_2
   end;
 end;
 

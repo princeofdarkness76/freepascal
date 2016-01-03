@@ -58,9 +58,12 @@ var
   PkgHandlerList  : TFPHashList;
   ExecutedActions : TFPHashList;
 <<<<<<< HEAD
+<<<<<<< HEAD
   CurrentDir      : string;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure RegisterPkgHandler(const AAction:string;pkghandlerclass:TPackageHandlerClass);
 begin
@@ -111,6 +114,7 @@ function PackageBuildPath(APackage:TFPPackage):String;
 begin
   if APackage.Name=CurrentDirPackageName then
 <<<<<<< HEAD
+<<<<<<< HEAD
     begin
       // It could be that to resolve some dependencies, the current directory changes. The first time
       // PackageBuildPath is called the dependencies are not resolved yet, so store the current directory
@@ -132,6 +136,11 @@ begin
   else if APackage.Name=CmdLinePackageName then
     Result:=GlobalOptions.BuildDir+ChangeFileExt(ExtractFileName(APackage.LocalFileName),'')
 >>>>>>> graemeg/fixes_2_2
+=======
+    Result:='.'
+  else if APackage.Name=CmdLinePackageName then
+    Result:=GlobalOptions.BuildDir+ChangeFileExt(ExtractFileName(APackage.LocalFileName),'')
+>>>>>>> origin/fixes_2_2
   else
     Result:=GlobalOptions.BuildDir+APackage.Name;
 end;
@@ -180,9 +189,12 @@ Function TPackageHandler.ExecuteProcess(Const Prog,Args:String):Integer;
 begin
   Log(vlCommands,SLogExecute,[Prog,Args]);
 <<<<<<< HEAD
+<<<<<<< HEAD
   Flush(StdOut);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Result:=SysUtils.ExecuteProcess(Prog,Args);
 end;
 

@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('libndsfpc');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.OSes:=[nds];
     P.CPUs:=[arm];
 {$ifdef ALLPACKAGES}
@@ -147,6 +148,8 @@ begin
 
     P.Sources.AddExampleFiles('examples/*',P.Directory,true,'.');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ALLPACKAGES}
     P.Directory:='libndsfpc';
 {$endif ALLPACKAGES}
@@ -156,7 +159,10 @@ begin
 
     // not linux compilable, skip
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef ALLPACKAGES}
     Run;
     end;

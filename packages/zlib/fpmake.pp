@@ -13,6 +13,7 @@ begin
 {$endif ALLPACKAGES}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     P:=AddPackage('zlib');
     P.Description := 'Interface units for the ZLIB library - support for deflate compression method used for GZIP, PNG, ZIP, etc.';
 {$ifdef ALLPACKAGES}
@@ -21,12 +22,17 @@ begin
     P.Version:='3.1.1';
     P.OSes := AllUnixOSes+AllWindowsOSes+[os2,emx,netware,netwlibc]-[qnx];
 =======
+=======
+>>>>>>> origin/fixes_2_2
     P:=AddPackage('ibase');
 {$ifdef ALLPACKAGES}
     P.Directory:='ibase';
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     P.SourcePath.Add('src');
 
     T:=P.Targets.AddUnit('zlib.pp');

@@ -90,11 +90,15 @@ interface
     function consume_sym_orgid(var srsym:tsym;var srsymtable:TSymtable;var s : string):boolean;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function try_consume_unitsym(var srsym:tsym;var srsymtable:TSymtable;var tokentoconsume:ttoken;consume_id,allow_specialize:boolean;out is_specialize:boolean):boolean;
     function try_consume_unitsym_no_specialize(var srsym:tsym;var srsymtable:TSymtable;var tokentoconsume:ttoken;consume_id:boolean):boolean;
 =======
     function try_consume_unitsym(var srsym:tsym;var srsymtable:TSymtable;var tokentoconsume : ttoken):boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function try_consume_unitsym(var srsym:tsym;var srsymtable:TSymtable;var tokentoconsume : ttoken):boolean;
+>>>>>>> origin/fixes_2_2
 
     function try_consume_hintdirective(var symopt:tsymoptions; var deprecatedmsg:pshortstring):boolean;
 
@@ -107,10 +111,14 @@ implementation
 
     uses
 <<<<<<< HEAD
+<<<<<<< HEAD
        globals,htypechk,scanner,systems,verbose,fmodule;
 =======
        globtype,htypechk,scanner,systems,verbose,fmodule;
 >>>>>>> graemeg/fixes_2_2
+=======
+       globtype,htypechk,scanner,systems,verbose,fmodule;
+>>>>>>> origin/fixes_2_2
 
 {****************************************************************************
                                Token Parsing
@@ -129,6 +137,7 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      procedure identifier_not_found(const s:string;const filepos:tfileposinfo);
        begin
          MessagePos1(filepos,sym_e_id_not_found,s);
@@ -143,6 +152,8 @@ implementation
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { consumes token i, write error if token is different }
     procedure consume(i : ttoken);
       begin
@@ -217,10 +228,14 @@ implementation
         searchsym(pattern,srsym,srsymtable);
         { handle unit specification like System.Writeln }
 <<<<<<< HEAD
+<<<<<<< HEAD
         try_consume_unitsym_no_specialize(srsym,srsymtable,t,true);
 =======
         try_consume_unitsym(srsym,srsymtable,t);
 >>>>>>> graemeg/fixes_2_2
+=======
+        try_consume_unitsym(srsym,srsymtable,t);
+>>>>>>> origin/fixes_2_2
         { if nothing found give error and return errorsym }
         if assigned(srsym) then
           check_hints(srsym,srsym.symoptions,srsym.deprecatedmsg)
@@ -254,10 +269,14 @@ implementation
         searchsym(pattern,srsym,srsymtable);
         { handle unit specification like System.Writeln }
 <<<<<<< HEAD
+<<<<<<< HEAD
         try_consume_unitsym_no_specialize(srsym,srsymtable,t,true);
 =======
         try_consume_unitsym(srsym,srsymtable,t);
 >>>>>>> graemeg/fixes_2_2
+=======
+        try_consume_unitsym(srsym,srsymtable,t);
+>>>>>>> origin/fixes_2_2
         { if nothing found give error and return errorsym }
         if assigned(srsym) then
           check_hints(srsym,srsym.symoptions,srsym.deprecatedmsg)
@@ -273,6 +292,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     function try_consume_unitsym(var srsym:tsym;var srsymtable:TSymtable;var tokentoconsume:ttoken;consume_id,allow_specialize:boolean;out is_specialize:boolean):boolean;
@@ -305,6 +325,12 @@ implementation
       begin
         result:=false;
         tokentoconsume:=_ID;
+=======
+    function try_consume_unitsym(var srsym:tsym;var srsymtable:TSymtable;var tokentoconsume : ttoken):boolean;
+      begin
+        result:=false;
+        tokentoconsume:=_ID;
+>>>>>>> origin/fixes_2_2
         if assigned(srsym) and
            (srsym.typ=unitsym) then
 >>>>>>> graemeg/fixes_2_2
@@ -323,6 +349,7 @@ implementation
                 if consume_id then
                   consume(_ID);
                 consume(_POINT);
+<<<<<<< HEAD
 <<<<<<< HEAD
                 if srsym.typ=namespacesym then
                   begin
@@ -380,11 +407,17 @@ implementation
                   _ID:
                      searchsym_in_module(tunitsym(srsym).module,pattern,srsym,srsymtable);
 >>>>>>> graemeg/fixes_2_2
+=======
+                case token of
+                  _ID:
+                     searchsym_in_module(tunitsym(srsym).module,pattern,srsym,srsymtable);
+>>>>>>> origin/fixes_2_2
                   _STRING:
                     begin
                       { system.string? }
                       if tmodule(tunitsym(srsym).module).globalsymtable=systemunit then
                         begin
+<<<<<<< HEAD
 <<<<<<< HEAD
                           if cs_refcountedstrings in current_settings.localswitches then
                             begin
@@ -397,6 +430,10 @@ implementation
                           if cs_ansistrings in current_settings.localswitches then
                             searchsym_in_module(tunitsym(srsym).module,'ANSISTRING',srsym,srsymtable)
 >>>>>>> graemeg/fixes_2_2
+=======
+                          if cs_ansistrings in current_settings.localswitches then
+                            searchsym_in_module(tunitsym(srsym).module,'ANSISTRING',srsym,srsymtable)
+>>>>>>> origin/fixes_2_2
                           else
                             searchsym_in_module(tunitsym(srsym).module,'SHORTSTRING',srsym,srsymtable);
                           tokentoconsume:=_STRING;

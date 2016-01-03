@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?xml version="1.0"?>
 <CONFIG>
   <ProjectOptions>
@@ -79,6 +80,8 @@
   </CompilerOptions>
 </CONFIG>
 =======
+=======
+>>>>>>> origin/fixes_2_2
 <?xml version="1.0"?>
 <CONFIG>
   <ProjectOptions>
@@ -158,4 +161,7 @@
     </Other>
   </CompilerOptions>
 </CONFIG>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

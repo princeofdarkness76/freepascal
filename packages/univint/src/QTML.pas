@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QuickTime/QTML.h
  
      Contains:   QuickTime Cross-platform specific interfaces
@@ -32,6 +33,8 @@
      Copyright:  © 1997-2008 by Apple Inc., all rights reserved.
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       QTML.p
  
      Contains:   QuickTime Cross-platform specific interfaces
@@ -40,11 +43,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1997-2002 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -75,6 +82,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -86,7 +95,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -96,12 +108,17 @@
 unit QTML;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -115,14 +132,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -131,11 +153,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -173,6 +198,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -180,6 +207,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -446,6 +474,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -454,7 +484,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -481,9 +514,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -493,6 +530,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes;
 {$endc} {not MACOSALLINCLUDE}
@@ -514,17 +552,23 @@ uses MacTypes;
 >>>>>>> origin/cpstrnew
 {$ifc not TARGET_CPU_64}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,Quickdraw,Events,MacMemory,MacWindows,OSUtils,Files;
 
 
 {$ALIGN MAC68K}
 
 {$ifc CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTMLYieldCPU()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 3.0 and later
@@ -539,18 +583,24 @@ procedure QTMLYieldCPU; external name '_QTMLYieldCPU';
 const
 	kQTMLHandlePortEvents = 1 shl 0; { ask for event handling during the yield}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 procedure QTMLYieldCPU; external name '_QTMLYieldCPU';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTMLYieldCPUTime()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 3.0 and later
@@ -612,6 +662,8 @@ const
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -650,12 +702,16 @@ const
 	 *    Windows:          in qtmlClient.lib 3.0 and later
 	 	}
 function InitializeQTML(flag: SInt32): OSErr; external name '_InitializeQTML';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  TerminateQTML()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -672,6 +728,8 @@ const
 const
 	kQTMLIsDoubleBuffered = 'UsesDoubleBuffer';
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -680,11 +738,15 @@ const
 procedure TerminateQTML; external name '_TerminateQTML';
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CreatePortAssociation()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -693,18 +755,24 @@ procedure TerminateQTML; external name '_TerminateQTML';
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function CreatePortAssociation(theWnd: UnivPtr; storage: Ptr; flags: SInt32): GrafPtr; external name '_CreatePortAssociation';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  DestroyPortAssociation()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -712,19 +780,25 @@ function CreatePortAssociation(theWnd: UnivPtr; storage: Ptr; flags: SInt32): Gr
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 procedure DestroyPortAssociation(cgp: CGrafPtr); external name '_DestroyPortAssociation';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  QTMLGrabMutex()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 3.0 and later
@@ -735,18 +809,24 @@ procedure QTMLGrabMutex( mu: QTMLMutex ); external name '_QTMLGrabMutex';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 procedure QTMLGrabMutex(mu: QTMLMutex); external name '_QTMLGrabMutex';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTMLTryGrabMutex()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 4.1 and later
@@ -757,18 +837,24 @@ function QTMLTryGrabMutex( mu: QTMLMutex ): Boolean; external name '_QTMLTryGrab
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 4.1 and later
  }
 function QTMLTryGrabMutex(mu: QTMLMutex): boolean; external name '_QTMLTryGrabMutex';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTMLReturnMutex()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 3.0 and later
@@ -779,18 +865,24 @@ procedure QTMLReturnMutex( mu: QTMLMutex ); external name '_QTMLReturnMutex';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 procedure QTMLReturnMutex(mu: QTMLMutex); external name '_QTMLReturnMutex';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTMLCreateMutex()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 3.0 and later
@@ -801,18 +893,24 @@ function QTMLCreateMutex: QTMLMutex; external name '_QTMLCreateMutex';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTMLCreateMutex: QTMLMutex; external name '_QTMLCreateMutex';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTMLDestroyMutex()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 3.0 and later
@@ -822,13 +920,18 @@ function QTMLCreateMutex: QTMLMutex; external name '_QTMLCreateMutex';
 procedure QTMLDestroyMutex( mu: QTMLMutex ); external name '_QTMLDestroyMutex';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 procedure QTMLDestroyMutex(mu: QTMLMutex); external name '_QTMLDestroyMutex';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -836,6 +939,7 @@ procedure QTMLDestroyMutex(mu: QTMLMutex); external name '_QTMLDestroyMutex';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -843,19 +947,25 @@ procedure QTMLDestroyMutex(mu: QTMLMutex); external name '_QTMLDestroyMutex';
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTMLCreateSyncVar: QTMLSyncVarPtr; external name '_QTMLCreateSyncVar';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTMLDestroySyncVar()
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -863,19 +973,25 @@ function QTMLCreateSyncVar: QTMLSyncVarPtr; external name '_QTMLCreateSyncVar';
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 procedure QTMLDestroySyncVar(p: QTMLSyncVarPtr); external name '_QTMLDestroySyncVar';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTMLTestAndSetSyncVar()
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -883,19 +999,25 @@ procedure QTMLDestroySyncVar(p: QTMLSyncVarPtr); external name '_QTMLDestroySync
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTMLTestAndSetSyncVar(sync: QTMLSyncVarPtr): SInt32; external name '_QTMLTestAndSetSyncVar';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTMLWaitAndSetSyncVar()
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -903,18 +1025,24 @@ function QTMLTestAndSetSyncVar(sync: QTMLSyncVarPtr): SInt32; external name '_QT
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 procedure QTMLWaitAndSetSyncVar(sync: QTMLSyncVarPtr); external name '_QTMLWaitAndSetSyncVar';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTMLResetSyncVar()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -922,13 +1050,18 @@ procedure QTMLWaitAndSetSyncVar(sync: QTMLSyncVarPtr); external name '_QTMLWaitA
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 procedure QTMLResetSyncVar(sync: QTMLSyncVarPtr); external name '_QTMLResetSyncVar';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -936,6 +1069,7 @@ procedure QTMLResetSyncVar(sync: QTMLSyncVarPtr); external name '_QTMLResetSyncV
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -943,18 +1077,24 @@ procedure QTMLResetSyncVar(sync: QTMLSyncVarPtr); external name '_QTMLResetSyncV
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 procedure InitializeQHdr(var qhdr_: QHdr); external name '_InitializeQHdr';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  TerminateQHdr()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -962,13 +1102,18 @@ procedure InitializeQHdr(var qhdr_: QHdr); external name '_InitializeQHdr';
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 procedure TerminateQHdr(var qhdr_: QHdr); external name '_TerminateQHdr';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -976,25 +1121,6 @@ procedure TerminateQHdr(var qhdr_: QHdr); external name '_TerminateQHdr';
  *  
  *  Availability:
 <<<<<<< HEAD
- *    Mac OS X:         not available
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-
-=======
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        not available
- *    Mac OS X:         not available
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-procedure QTMLAcquireWindowList; external name '_QTMLAcquireWindowList';
->>>>>>> graemeg/fixes_2_2
-
-{
- *  QTMLReleaseWindowList()
- *  
- *  Availability:
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -1003,13 +1129,44 @@ procedure QTMLAcquireWindowList; external name '_QTMLAcquireWindowList';
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+procedure QTMLAcquireWindowList; external name '_QTMLAcquireWindowList';
+<<<<<<< HEAD
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+
+{
+ *  QTMLReleaseWindowList()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+
+=======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 procedure QTMLReleaseWindowList; external name '_QTMLReleaseWindowList';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
    These routines are here to support "interrupt level" code
@@ -1021,6 +1178,7 @@ procedure QTMLReleaseWindowList; external name '_QTMLReleaseWindowList';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -1028,18 +1186,24 @@ procedure QTMLReleaseWindowList; external name '_QTMLReleaseWindowList';
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTMLRegisterInterruptSafeThread(threadID: UInt32; threadInfo: UnivPtr): SInt32; external name '_QTMLRegisterInterruptSafeThread';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTMLUnregisterInterruptSafeThread()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -1047,19 +1211,25 @@ function QTMLRegisterInterruptSafeThread(threadID: UInt32; threadInfo: UnivPtr):
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTMLUnregisterInterruptSafeThread(threadID: UInt32): SInt32; external name '_QTMLUnregisterInterruptSafeThread';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  NativeEventToMacEvent()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -1070,6 +1240,8 @@ function QTMLUnregisterInterruptSafeThread(threadID: UInt32): SInt32; external n
 
 {$ifc TARGET_OS_WIN32}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -1080,7 +1252,10 @@ function NativeEventToMacEvent(nativeEvent: UnivPtr; var macEvent: EventRecord):
 {$endc}  {CALL_NOT_IN_CARBON}
 {$ifc TARGET_OS_WIN32}
 {$ifc CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  WinEventToMacEvent()
  *  
@@ -1103,6 +1278,7 @@ function WinEventToMacEvent(winMsg: UnivPtr; var macEvent: EventRecord): SInt32;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  *    M *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -1191,6 +1367,8 @@ const
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
@@ -1224,12 +1402,16 @@ const
 	 *    Windows:          in qtmlClient.lib 3.0 and later
 	 	}
 function QTGetDDObject(var lpDDObject: UnivPtr): OSErr; external name '_QTGetDDObject';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSetDDObject()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1246,18 +1428,24 @@ function QTGetDDObject(var lpDDObject: UnivPtr): OSErr; external name '_QTGetDDO
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTSetDDObject(lpNewDDObject: UnivPtr): OSErr; external name '_QTSetDDObject';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSetDDPrimarySurface()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -1265,13 +1453,18 @@ function QTSetDDObject(lpNewDDObject: UnivPtr): OSErr; external name '_QTSetDDOb
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTSetDDPrimarySurface(lpNewDDSurface: UnivPtr; flags: UInt32): OSErr; external name '_QTSetDDPrimarySurface';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1279,25 +1472,32 @@ function QTSetDDPrimarySurface(lpNewDDSurface: UnivPtr; flags: UInt32): OSErr; e
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTMLGetVolumeRootPath(fullPath: CStringPtr; volumeRootPath: CStringPtr; volumeRootLen: UInt32): OSErr; external name '_QTMLGetVolumeRootPath';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  QTMLSetWindowWndProc()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -1306,18 +1506,24 @@ function QTMLGetVolumeRootPath(fullPath: CStringPtr; volumeRootPath: CStringPtr;
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 procedure QTMLSetWindowWndProc(theWindow: WindowRef; windowProc: UnivPtr); external name '_QTMLSetWindowWndProc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTMLGetWindowWndProc()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -1329,6 +1535,8 @@ procedure QTMLSetWindowWndProc(theWindow: WindowRef; windowProc: UnivPtr); exter
 {$endc}  { TARGET_OS_WIN32 }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -1339,11 +1547,15 @@ function QTMLGetWindowWndProc(theWindow: WindowRef): Ptr; external name '_QTMLGe
 {$endc}  {CALL_NOT_IN_CARBON}
 {$endc}  {TARGET_OS_WIN32}
 {$ifc CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTMLGetCanonicalPathName()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -1385,6 +1597,8 @@ const
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -1430,12 +1644,16 @@ const
 	 *    Windows:          in qtmlClient.lib 3.0 and later
 	 	}
 function NativePathNameToFSSpec(inName: CStringPtr; var outFile: FSSpec; flags: SInt32): OSErr; external name '_NativePathNameToFSSpec';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTGetAliasInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -1452,6 +1670,8 @@ function NativePathNameToFSSpec(inName: CStringPtr; var outFile: FSSpec; flags: 
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -1466,4 +1686,7 @@ function QTGetAliasInfo(alias: AliasHandle; index: AliasInfoType; outBuf: CStrin
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

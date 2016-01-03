@@ -44,8 +44,11 @@ const
  AllowDirectorySeparators : set of char = ['\','/'];
  AllowDriveSeparators : set of char = [':'];
 <<<<<<< HEAD
+<<<<<<< HEAD
 { FileNameCaseSensitive and FileNameCasePreserving are defined separately below!!! }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { FileNameCaseSensitive is defined separately below!!! }
 >>>>>>> graemeg/fixes_2_2
  maxExitCode = 255;
@@ -81,6 +84,8 @@ var
   argv:PPchar;public name 'operatingsystem_parameter_argv';
   envp:PPchar;public name 'operatingsystem_parameter_envp';
   dos_argv0 : pchar; public name 'dos_argv0';
+
+  AllFilesMask: string [3];
 
   AllFilesMask: string [3];
 
@@ -681,10 +686,14 @@ Begin
   if LFNSupport then
    begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     FileNameCasePreserving:=true;
 =======
     FileNameCaseSensitive:=true;
 >>>>>>> graemeg/fixes_2_2
+=======
+    FileNameCaseSensitive:=true;
+>>>>>>> origin/fixes_2_2
     AllFilesMask := '*';
    end
   else
@@ -702,5 +711,8 @@ Begin
 =======
   initvariantmanager;
   initwidestringmanager;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 End.

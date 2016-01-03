@@ -125,6 +125,7 @@ interface
          sec_toc,
          sec_init,
 <<<<<<< HEAD
+<<<<<<< HEAD
          sec_fini,
          {Objective-C common and fragile ABI }
          sec_objc_class,
@@ -185,6 +186,9 @@ interface
 =======
          sec_fini
 >>>>>>> graemeg/fixes_2_2
+=======
+         sec_fini
+>>>>>>> origin/fixes_2_2
        );
 
        TAsmSectionOrder = (secorder_begin,secorder_default,secorder_end);
@@ -279,6 +283,9 @@ implementation
 
     function create_smartlink_library:boolean;inline;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2_2
       begin
         result:=(cs_Create_smart in current_settings.moduleswitches) and
                 (tf_smartlink_library in target_info.flags) and
@@ -288,6 +295,7 @@ implementation
 
     function create_smartlink:boolean;inline;
       begin
+<<<<<<< HEAD
 =======
       begin
         result:=(cs_Create_smart in current_settings.moduleswitches) and
@@ -299,6 +307,8 @@ implementation
     function create_smartlink:boolean;inline;
       begin
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         result:=(
                  (af_smartlink_sections in target_asm.flags) and
                  (tf_smartlink_sections in target_info.flags)

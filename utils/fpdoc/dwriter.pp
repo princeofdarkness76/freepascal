@@ -76,6 +76,7 @@ type
     FEngine  : TFPDocEngine;
     FPackage : TPasPackage;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FContext : TPasElement;
     FTopics  : TList;
     FImgExt : String;
@@ -103,6 +104,12 @@ type
     
   protected
 >>>>>>> graemeg/fixes_2_2
+=======
+    FTopics  : TList;
+    FImgExt : String;
+    
+  protected
+>>>>>>> origin/fixes_2_2
     procedure Warning(AContext: TPasElement; const AMsg: String);
     procedure Warning(AContext: TPasElement; const AMsg: String;
       const Args: array of const);
@@ -129,12 +136,16 @@ type
     Function FindTopicElement(Node : TDocNode): TTopicElement;
     Procedure ConvertImage(El : TDomElement);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     Procedure DescrEmitNotesHeader(AContext : TPasElement); virtual;
     Procedure DescrEmitNotesFooter(AContext : TPasElement); virtual;
 =======
     
 >>>>>>> graemeg/fixes_2_2
+=======
+    
+>>>>>>> origin/fixes_2_2
     procedure DescrWriteText(const AText: DOMString); virtual; abstract;
     procedure DescrBeginBold; virtual; abstract;
     procedure DescrEndBold; virtual; abstract;
@@ -428,17 +439,23 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TFPDocWriter.DescrWriteImageEl(const AFileName, ACaption,
   ALinkName: DOMString);
 
 begin
   DoLog('%s : No support for images yet: %s (caption: "%s")',[ClassName,AFileName,ACaption]);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Procedure TFPDocWriter.DescrWriteImageEl(const AFileName, ACaption,ALinkName : DOMString); 
 
 begin
   system.writeln(ClassName,': No support for images yet: ',AFileName,' (caption: "',ACaption,'")');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 { ---------------------------------------------------------------------
@@ -1189,6 +1206,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TFPDocWriter.DescrEmitNotesHeader(AContext: TPasElement);
 begin
   DescrWriteLinebreak;
@@ -1205,6 +1223,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 Constructor TTopicElement.Create(const AName: String; AParent: TPasElement);
 

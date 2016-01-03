@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('fcl-fpcunit');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ShortName:='fclu';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -33,6 +34,8 @@ begin
     P.NeedLibC:= false;
     P.OSes := P.OSes - [embedded,nativent,msdos,win16];
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ALLPACKAGES}
     P.Directory:='fcl-fpcunit';
 {$endif ALLPACKAGES}
@@ -41,7 +44,10 @@ begin
     P.Dependencies.Add('paszlib');
     P.Dependencies.Add('fcl-base');
     P.Dependencies.Add('fcl-xml');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');
@@ -55,9 +61,12 @@ begin
         end;
     T:=P.Targets.AddUnit('fpcunit.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
       T.ResourceStrings:=true;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       with T.Dependencies do
         begin
           AddInclude('DUnitCompatibleInterface.inc');
@@ -118,6 +127,7 @@ begin
           AddUnit('testutils');
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('consoletestrunner.pas');
       with T.Dependencies do
         begin
@@ -130,6 +140,8 @@ begin
         end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

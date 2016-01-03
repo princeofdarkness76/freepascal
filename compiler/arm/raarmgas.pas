@@ -203,6 +203,7 @@ Unit raarmgas;
         begin
           if require_rbracket then begin
 <<<<<<< HEAD
+<<<<<<< HEAD
             if not(actasmtoken=AS_RBRACKET) then
               begin
                 do_error;
@@ -212,6 +213,8 @@ Unit raarmgas;
               Consume(AS_RBRACKET);
             if (actasmtoken=AS_NOT) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
             if not(actasmtoken=AS_RBRACKET) then 
               begin 
                 do_error; 
@@ -220,12 +223,16 @@ Unit raarmgas;
             else 
               Consume(AS_RBRACKET);
             if (actasmtoken=AS_NOT) then 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               begin
                 oper.opr.ref.addressmode:=AM_PREINDEXED;
                 Consume(AS_NOT);
               end;
           end;
+<<<<<<< HEAD
 <<<<<<< HEAD
           if not(actasmtoken in [AS_SEPARATOR,AS_end]) then
             do_error
@@ -235,6 +242,11 @@ Unit raarmgas;
             do_error
           else 
 >>>>>>> graemeg/fixes_2_2
+=======
+          if not(actasmtoken in [AS_SEPARATOR,AS_end]) then 
+            do_error
+          else 
+>>>>>>> origin/fixes_2_2
             begin
 {$IFDEF debugasmreader}
               writeln('TEST_end_FINAL_OK. Created the following ref:');
@@ -254,6 +266,7 @@ Unit raarmgas;
         begin
           a := SM_NONE;
 <<<<<<< HEAD
+<<<<<<< HEAD
           if      (actasmpattern='LSL') then
             a := SM_LSL
           else if (actasmpattern='LSR') then
@@ -264,6 +277,8 @@ Unit raarmgas;
             a := SM_ROR
           else if (actasmpattern='RRX') then
 =======
+=======
+>>>>>>> origin/fixes_2_2
           if      (actasmpattern='LSL') then 
             a := SM_LSL
           else if (actasmpattern='LSR') then 
@@ -273,13 +288,17 @@ Unit raarmgas;
           else if (actasmpattern='ROR') then 
             a := SM_ROR
           else if (actasmpattern='RRX') then 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             a := SM_RRX;
           is_shifter_ref_operation := not(a=SM_NONE);
         end;
 
 
       procedure read_index_shift(require_rbracket : boolean);
+<<<<<<< HEAD
 <<<<<<< HEAD
         var
           shift : aint;
@@ -330,6 +349,8 @@ Unit raarmgas;
               begin
                 do_error;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         begin
           case actasmtoken of
             AS_COMMA : 
@@ -373,7 +394,10 @@ Unit raarmgas;
             else 
               begin
                 do_error; 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 exit;
               end;
           end;
@@ -381,6 +405,7 @@ Unit raarmgas;
 
 
       procedure read_index(require_rbracket : boolean);
+<<<<<<< HEAD
 <<<<<<< HEAD
         var
           recname : string;
@@ -391,6 +416,8 @@ Unit raarmgas;
               begin
                 oper.opr.ref.index:=actasmregister;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         var 
           i : longint; 
           w : word; 
@@ -401,11 +428,15 @@ Unit raarmgas;
             AS_REGISTER : 
               begin
                 oper.opr.ref.index:=actasmregister;  
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 Consume(AS_REGISTER);
                 read_index_shift(require_rbracket);
                 exit;
               end;
+<<<<<<< HEAD
 <<<<<<< HEAD
             AS_PLUS,AS_MINUS :
               begin
@@ -415,6 +446,8 @@ Unit raarmgas;
                   end
                 else
 =======
+=======
+>>>>>>> origin/fixes_2_2
             AS_PLUS,AS_MINUS : 
               begin
                 if actasmtoken=AS_PLUS then 
@@ -422,11 +455,15 @@ Unit raarmgas;
                     Consume(AS_PLUS);
                   end 
                 else 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                   begin
                     oper.opr.ref.signindex := -1;
                     Consume(AS_MINUS);
                   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
                 if actasmtoken=AS_REGISTER then
                   begin
@@ -439,6 +476,8 @@ Unit raarmgas;
                   begin
                     do_error;
 =======
+=======
+>>>>>>> origin/fixes_2_2
                 if actasmtoken=AS_REGISTER then 
                   begin
                     oper.opr.ref.index:=actasmregister;   
@@ -449,7 +488,10 @@ Unit raarmgas;
                 else 
                   begin
                     do_error; 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                     exit;
                   end;
                 test_end(require_rbracket);
@@ -460,14 +502,19 @@ Unit raarmgas;
                 Consume(AS_HASH);
                 o_int := BuildConstExpression(false,true);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (o_int>4095) or (o_int<-4095) then
 =======
                 if (o_int>4095) or (o_int<-4095) then 
 >>>>>>> graemeg/fixes_2_2
+=======
+                if (o_int>4095) or (o_int<-4095) then 
+>>>>>>> origin/fixes_2_2
                   begin
                     Message(asmr_e_constant_out_of_bounds);
                     RecoverConsume(false);
                     exit;
+<<<<<<< HEAD
 <<<<<<< HEAD
                   end
                 else
@@ -475,6 +522,10 @@ Unit raarmgas;
                   end 
                 else 
 >>>>>>> graemeg/fixes_2_2
+=======
+                  end 
+                else 
+>>>>>>> origin/fixes_2_2
                   begin
                     inc(oper.opr.ref.offset,o_int);
                     test_end(require_rbracket);
@@ -487,14 +538,19 @@ Unit raarmgas;
                 Consume(AS_ID);
                 BuildRecordOffsetSize(recname,o_int,s_int,recname,false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (o_int>4095)or(o_int<-4095) then
 =======
                 if (o_int>4095)or(o_int<-4095) then 
 >>>>>>> graemeg/fixes_2_2
+=======
+                if (o_int>4095)or(o_int<-4095) then 
+>>>>>>> origin/fixes_2_2
                   begin
                     Message(asmr_e_constant_out_of_bounds);
                     RecoverConsume(false);
                     exit;
+<<<<<<< HEAD
 <<<<<<< HEAD
                   end
                 else
@@ -502,6 +558,10 @@ Unit raarmgas;
                   end 
                 else 
 >>>>>>> graemeg/fixes_2_2
+=======
+                  end 
+                else 
+>>>>>>> origin/fixes_2_2
                   begin
                     inc(oper.opr.ref.offset,o_int);
                     test_end(require_rbracket);
@@ -509,10 +569,14 @@ Unit raarmgas;
                   end;
               end;
 <<<<<<< HEAD
+<<<<<<< HEAD
             AS_AT:
 =======
             AS_AT: 
 >>>>>>> graemeg/fixes_2_2
+=======
+            AS_AT: 
+>>>>>>> origin/fixes_2_2
               begin
                 do_error;
                 exit;
@@ -526,6 +590,7 @@ Unit raarmgas;
             AS_RBRACKET :
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if require_rbracket then
                   begin
                     test_end(require_rbracket);
@@ -533,18 +598,24 @@ Unit raarmgas;
                   end
                 else
 =======
+=======
+>>>>>>> origin/fixes_2_2
                 if require_rbracket then 
                   begin
                     test_end(require_rbracket);
                     exit;
                   end 
                 else 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                   begin
                     do_error; // unexpected rbracket
                     exit;
                   end;
               end;
+<<<<<<< HEAD
 <<<<<<< HEAD
             AS_SEPARATOR,AS_end :
               begin
@@ -564,6 +635,8 @@ Unit raarmgas;
                 // unexpected token
                 do_error;
 =======
+=======
+>>>>>>> origin/fixes_2_2
             AS_SEPARATOR,AS_end : 
               begin
                 if not require_rbracket then 
@@ -581,7 +654,10 @@ Unit raarmgas;
               begin
                 // unexpected token
                 do_error; 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 exit;
               end;
           end; // case
@@ -593,10 +669,14 @@ Unit raarmgas;
           Consume(AS_RBRACKET);
           case actasmtoken of
 <<<<<<< HEAD
+<<<<<<< HEAD
             AS_COMMA :
 =======
             AS_COMMA : 
 >>>>>>> graemeg/fixes_2_2
+=======
+            AS_COMMA : 
+>>>>>>> origin/fixes_2_2
               begin // post-indexed
                 Consume(AS_COMMA);
                 oper.opr.ref.addressmode:=AM_POSTINDEXED;
@@ -604,10 +684,14 @@ Unit raarmgas;
                 exit;
               end;
 <<<<<<< HEAD
+<<<<<<< HEAD
             AS_NOT :
 =======
             AS_NOT : 
 >>>>>>> graemeg/fixes_2_2
+=======
+            AS_NOT : 
+>>>>>>> origin/fixes_2_2
               begin   // pre-indexed
                 Consume(AS_NOT);
                 oper.opr.ref.addressmode:=AM_PREINDEXED;
@@ -615,10 +699,14 @@ Unit raarmgas;
                 exit;
               end;
 <<<<<<< HEAD
+<<<<<<< HEAD
             else
 =======
             else 
 >>>>>>> graemeg/fixes_2_2
+=======
+            else 
+>>>>>>> origin/fixes_2_2
               begin
                 test_end(false);
                 exit;
@@ -626,16 +714,22 @@ Unit raarmgas;
           end; // case
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       var
         lab : TASMLABEL;
       begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
  
       var 
         lab : TASMLABEL;
       begin 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         Consume(AS_LBRACKET);
         oper.opr.ref.addressmode:=AM_OFFSET; // assume "neither PRE nor POST inc"
         if actasmtoken=AS_REGISTER then
@@ -643,6 +737,7 @@ Unit raarmgas;
             oper.opr.ref.base:=actasmregister;
             Consume(AS_REGISTER);
             case actasmtoken of
+<<<<<<< HEAD
 <<<<<<< HEAD
               AS_RBRACKET :
                 begin
@@ -657,6 +752,8 @@ Unit raarmgas;
                 end;
               else
 =======
+=======
+>>>>>>> origin/fixes_2_2
               AS_RBRACKET : 
                 begin 
                   try_prepostindexed; 
@@ -669,7 +766,10 @@ Unit raarmgas;
                   exit; 
                 end;
               else 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 begin
                   Message(asmr_e_invalid_reference_syntax);
                   RecoverConsume(false);
@@ -677,10 +777,14 @@ Unit raarmgas;
             end;
           end
 <<<<<<< HEAD
+<<<<<<< HEAD
         else
 =======
         else 
 >>>>>>> graemeg/fixes_2_2
+=======
+        else 
+>>>>>>> origin/fixes_2_2
 {
   if base isn't a register, r15=PC is implied base, so it must be a local label.
   pascal constants don't make sense, because implied r15
@@ -692,6 +796,7 @@ Unit raarmgas;
 
           Begin
             case actasmtoken of
+<<<<<<< HEAD
 <<<<<<< HEAD
               AS_ID :
                 begin
@@ -708,6 +813,8 @@ Unit raarmgas;
                     begin
                       // TODO: Stackpointer implied,
 =======
+=======
+>>>>>>> origin/fixes_2_2
               AS_ID : 
                 begin
                   if is_locallabel(actasmpattern) then 
@@ -721,17 +828,24 @@ Unit raarmgas;
                   else 
                     begin
                       // TODO: Stackpointer implied, 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                       Message(asmr_e_invalid_reference_syntax);
                       RecoverConsume(false);
                       exit;
                     end;
                 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
               else
 =======
               else 
 >>>>>>> graemeg/fixes_2_2
+=======
+              else 
+>>>>>>> origin/fixes_2_2
                 begin // elsecase
                   Message(asmr_e_invalid_reference_syntax);
                   RecoverConsume(false);
@@ -1527,7 +1641,10 @@ Unit raarmgas;
 =======
                 if ((instr.opcode=A_MOV) and (operandnum=2)) or
                   ((operandnum=3) and not(instr.opcode in [A_UMLAL,A_UMULL,A_SMLAL,A_SMULL,A_MLA])) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                   begin
                     Consume(AS_COMMA);
                     if not(TryBuildShifterOp(instr.Operands[operandnum+1] as tarmoperand)) then

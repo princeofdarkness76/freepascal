@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef ARM7}
   {$error Serial header is for ARM7 only}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: serial.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -44,7 +47,10 @@
 
 {$ifndef ARM7}
 {$error Serial header is for ARM7 only}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif ARM7}
 
 {$ifdef NDS_INTERFACE}
@@ -100,8 +106,11 @@ const
   SPI_CONTINUOUS       = (1 shl 11);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 =======
+=======
+>>>>>>> origin/fixes_2_2
 // Fixme: does this stuff really belong in serial.h?
 
 // Power management registers
@@ -140,7 +149,10 @@ const
 
 // Fixme: does this stuff really belong in serial.h?
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 // Firmware commands
   FIRMWARE_WREN = $06;
   FIRMWARE_WRDI = $04;
@@ -155,11 +167,14 @@ const
   FIRMWARE_DP   = $B9;
   FIRMWARE_RDP  = $AB;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure SerialWaitBusy(); inline;
 procedure readFirmware(address: cuint32; destination: pointer; size: cuint32); cdecl; external;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}
 
 
@@ -167,10 +182,13 @@ procedure readFirmware(address: cuint32; destination: pointer; size: cuint32); c
 procedure SerialWaitBusy(); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   while (REG_SPICNT^ and SPI_BUSY) <> 0 do; 
 end;
 {$endif NDS_IMPLEMENTATION}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   while (REG_SPICNT^ and SPI_BUSY) <> 0 do 
     swiDelay(1); 
 end;
@@ -203,4 +221,7 @@ function PM_LED_CONTROL(m: cint): cint; inline;
 procedure SerialWaitBusy(); inline;
 function readPowerManagement(reg: cint): cint; inline;
 {$endif NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

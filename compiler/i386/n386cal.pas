@@ -139,6 +139,7 @@ implementation
         { sizeof(aint) in case of ret_in_param())                          }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { This is only correct if the hidden funcret parameter
           is not passed as a register.
           As it is inserted in parast after all other hidden parameters,
@@ -170,6 +171,11 @@ implementation
             paramanager.ret_in_param(procdefinition.returndef,procdefinition.proccalloption) then
            inc(pop_size,sizeof(aint));
 >>>>>>> graemeg/fixes_2_2
+=======
+        if (target_info.system = system_i386_win32) and
+            paramanager.ret_in_param(procdefinition.returndef,procdefinition.proccalloption) then
+           inc(pop_size,sizeof(aint));
+>>>>>>> origin/fixes_2_2
 
         { better than an add on all processors }
         if pop_size=4 then

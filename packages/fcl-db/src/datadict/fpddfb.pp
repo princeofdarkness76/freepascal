@@ -460,10 +460,14 @@ Var
   {Opmerking: bestaande fielddefs die niet meer in de tabel zitten worden niet verwijderd !? }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   function ImportFieldDef(APosition : Integer) : boolean;
 =======
   function ImportFieldDef : boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+  function ImportFieldDef : boolean;
+>>>>>>> origin/fixes_2_2
   var FD : TDDFieldDef;
       n, s : string;
   begin
@@ -502,10 +506,14 @@ Var
     else
       FD.Required:=false;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FD.index := APosition;
 =======
     FD.index := FPosition.AsInteger;
 >>>>>>> graemeg/fixes_2_2
+=======
+    FD.index := FPosition.AsInteger;
+>>>>>>> origin/fixes_2_2
     s := trim(FDomainName.asstring);
     if copy(s, 1, 4) <> 'RDB$' then
       FD.DomainName := s
@@ -522,10 +530,14 @@ Var
     while not Q.eof do
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       if ImportFieldDef(Result) then
 =======
       if ImportFieldDef then
 >>>>>>> graemeg/fixes_2_2
+=======
+      if ImportFieldDef then
+>>>>>>> origin/fixes_2_2
         inc (result);
       Q.Next;
       end;

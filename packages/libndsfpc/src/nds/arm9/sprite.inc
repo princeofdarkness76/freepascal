@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: sprite.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -42,20 +45,29 @@
 
 *)
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef ARM9}
   {$error Sprites are only available on the ARM9}
 {$endif ARM9}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 // Sprite control defines
 
 {$ifdef NDS_INTERFACE}
 // Attribute 0 consists of 8 bits of Y plus the following flags:
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
   ATTR0_NORMAL          = (0 shl 8);
   ATTR0_ROTSCALE        =	(1 shl 8);
@@ -76,12 +88,15 @@ const
   ATTR0_WIDE            = (1 shl 14);
   ATTR0_TALL            = (2 shl 14);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function OBJ_Y(m: cint): cint; inline;
 
 function ATTR1_ROTDATA(n: cint): cint; inline;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}
 
 {$ifdef NDS_IMPLEMENTATION}
@@ -97,7 +112,10 @@ end;
 {$endif NDS_IMPLEMENTATION}
 
 {$ifdef NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
   ATTR1_FLIP_X          = (1 shl 12);
   ATTR1_FLIP_Y          = (1 shl 13);
@@ -105,6 +123,7 @@ const
   ATTR1_SIZE_16         = (1 shl 14);
   ATTR1_SIZE_32         = (2 shl 14);
   ATTR1_SIZE_64         = (3 shl 14);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 function OBJ_X(m: cint): cint; inline;
@@ -214,6 +233,8 @@ type
         filler: cuint16;   
       );
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}
 
 {$ifdef NDS_IMPLEMENTATION}
@@ -306,20 +327,28 @@ type
                   filler: cuint16;    
                end;
         );
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
   SpriteEntry = sSpriteEntry;
   TSpriteEntry = sSpriteEntry;
   PSpriteEntry = ^sSpriteEntry;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
   sSpriteRotation = record
     filler1: array [0..2] of cuint16;
     hdx: cint16;
     filler2: array [0..2] of cuint16;
+<<<<<<< HEAD
 <<<<<<< HEAD
     vdx: cint16;
     filler3: array [0..2] of cuint16;
@@ -329,6 +358,11 @@ type
     filler3: array [0..2] of cuint16;
     vdx: cint16;
 >>>>>>> graemeg/fixes_2_2
+=======
+    hdy: cint16;
+    filler3: array [0..2] of cuint16;
+    vdx: cint16;
+>>>>>>> origin/fixes_2_2
     filler4: array [0..2] of cuint16;
     vdy: cint16;
   end;
@@ -342,6 +376,7 @@ const
   MATRIX_COUNT = 32;
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
   OAMTable = record
     case integer of
@@ -532,6 +567,8 @@ end;
 
 {$endif NDS_IMPLEMENTATION}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   TOAM = record
     case integer of
       0: (spriteBuffer: array [0..SPRITE_COUNT-1] of TSpriteEntry;);
@@ -547,4 +584,7 @@ function ATTR2_PRIORITY(n: cint): cint; inline;
 function ATTR2_PALETTE(n: cint): cint; inline;      
 function ATTR2_ALPHA(n: cint): cint; inline;		  
 {$endif NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

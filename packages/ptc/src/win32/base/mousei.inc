@@ -7,6 +7,7 @@
     modify it under the terms of the GNU Lesser General Public
     License as published by the Free Software Foundation; either
 <<<<<<< HEAD
+<<<<<<< HEAD
     version 2.1 of the License, or (at your option) any later version
     with the following modification:
 
@@ -23,6 +24,9 @@
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> graemeg/fixes_2_2
+=======
+    version 2.1 of the License, or (at your option) any later version.
+>>>>>>> origin/fixes_2_2
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -35,6 +39,7 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TWin32Mouse.Create(AWindow: HWND; AThread: DWord; AMultithreaded: Boolean; AEventQueue: TEventQueue;
      AFullScreen: Boolean; AConsoleWidth, AConsoleHeight: Integer);
 begin
@@ -46,6 +51,8 @@ begin
   FConsoleWidth := AConsoleWidth;
   FConsoleHeight := AConsoleHeight;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Constructor TWin32Mouse.Create(window : HWND; thread : DWord; multithreaded : Boolean; EventQueue : TEventQueue; FullScreen : Boolean; ConsoleWidth, ConsoleHeight : Integer);
 
 Begin
@@ -56,12 +63,16 @@ Begin
   FFullScreen := FullScreen;
   FConsoleWidth := ConsoleWidth;
   FConsoleHeight := ConsoleHeight;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   FPreviousMousePositionSaved := False;
 
   { enable buffering }
   FEnabled := True;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -119,6 +130,8 @@ begin
     if not FFullScreen then
     begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure TWin32Mouse.SetWindowArea(WindowX1, WindowY1, WindowX2, WindowY2 : Integer);
@@ -179,13 +192,17 @@ Begin
 
     If Not FFullScreen Then
     Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       GetClientRect(hWnd, WindowRect);
 
       FWindowX1 := WindowRect.left;
       FWindowY1 := WindowRect.top;
       FWindowX2 := WindowRect.right - 1;
       FWindowY2 := WindowRect.bottom - 1;
+<<<<<<< HEAD
 <<<<<<< HEAD
     end;
 
@@ -233,6 +250,8 @@ Begin
       { movement? }
       if (TranslatedXPos <> FPreviousMouseX) or (TranslatedYPos <> FPreviousMouseY) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
     End;
 
     If (xPos >= FWindowX1) And (yPos >= FWindowY1) And
@@ -278,11 +297,15 @@ Begin
 
       { movement? }
       If (TranslatedXPos <> FPreviousMouseX) Or (TranslatedYPos <> FPreviousMouseY) Then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         FEventQueue.AddEvent(TPTCMouseEvent.Create(TranslatedXPos, TranslatedYPos, TranslatedXPos - FPreviousMouseX, TranslatedYPos - FPreviousMouseY, FPreviousMouseButtonState));
 
       { button presses/releases? }
       cstate := FPreviousMouseButtonState;
+<<<<<<< HEAD
 <<<<<<< HEAD
       for button := Low(button) to High(button) do
       begin
@@ -303,6 +326,8 @@ Begin
           end;
       end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       For button := Low(button) To High(button) Do
       Begin
         before := button In FPreviousMouseButtonState;
@@ -321,12 +346,16 @@ Begin
             FEventQueue.AddEvent(TPTCMouseButtonEvent.Create(TranslatedXPos, TranslatedYPos, 0, 0, cstate, False, button));
           End;
       End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
       FPreviousMouseX := TranslatedXPos;
       FPreviousMouseY := TranslatedYPos;
       FPreviousMouseButtonState := PTCMouseButtonState;
       FPreviousMousePositionSaved := True;
+<<<<<<< HEAD
 <<<<<<< HEAD
     end;
   end;
@@ -336,3 +365,8 @@ end;
   End;
 End;
 >>>>>>> graemeg/fixes_2_2
+=======
+    End;
+  End;
+End;
+>>>>>>> origin/fixes_2_2

@@ -19,10 +19,14 @@ interface
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, DOM, HtmlDefs, strutils;
 =======
   Classes, SysUtils, DOM, HtmlDefs;
 >>>>>>> graemeg/fixes_2_2
+=======
+  Classes, SysUtils, DOM, HtmlDefs;
+>>>>>>> origin/fixes_2_2
 
 type
 
@@ -40,9 +44,12 @@ type
     procedure WriteSubNodes (const aStream : TStream);
   protected
 <<<<<<< HEAD
+<<<<<<< HEAD
     function  GetNodeName: DOMString; override;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure StringToStream (const aStream : TStream; s : string);
     procedure StringToStream (const aStream : TStream; Fmt : string; Args : array of const);
     function EscapeString (s : string) : string;
@@ -59,9 +66,13 @@ type
     property ElementTag : THTMLElementTag read FElementTag write FElementTag;
     property TagName : DOMString read GetTagName;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     property NodeName : DOMstring read GetTagName;
 >>>>>>> graemeg/fixes_2_2
+=======
+    property NodeName : DOMstring read GetTagName;
+>>>>>>> origin/fixes_2_2
     property AttributeNames [index:integer] : DOMString read GetAttributeName;
     property AttributeValues [index:integer] : DOMString read GetAttributeValue;
   end;
@@ -140,6 +151,7 @@ type
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function EscapeHTML(const s : String) : String;
 function UnescapeHTML(const s : String) : String;
 
@@ -160,6 +172,10 @@ end;
 implementation
 
 >>>>>>> graemeg/fixes_2_2
+=======
+implementation
+
+>>>>>>> origin/fixes_2_2
 
 { THtmlCustomElement }
 
@@ -213,6 +229,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function THtmlCustomElement.GetNodeName: DOMString;
 begin
   Result:=GetTagName;
@@ -220,6 +237,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure THtmlCustomElement.StringToStream(const aStream: TStream; s: string);
 begin
   if s <> '' then
@@ -235,11 +254,16 @@ end;
 function THtmlCustomElement.EscapeString(s: string): string;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   result := EscapeHTML(s);
 =======
   result := s;
   //TODO: Needs to convert all the special signs to their html names ("<" has to be "&lt;" etc.)
 >>>>>>> graemeg/fixes_2_2
+=======
+  result := s;
+  //TODO: Needs to convert all the special signs to their html names ("<" has to be "&lt;" etc.)
+>>>>>>> origin/fixes_2_2
 end;
 
 constructor THtmlCustomElement.create(AOwner: TDOMDocument);

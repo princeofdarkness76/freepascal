@@ -33,12 +33,15 @@ They call InternalGetNDataset and InternalGetFieldDataset which should be implem
 Which connector is currently used is dependent on the 'database.ini'
 configuration file. Also some settings which are connector-dependent can be set
 in that file. See 'database.ini.txt' for an example.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 
 Toolsunit.pas defines some variables for use, e.g.
 - testValuesCount is the number of records/test values in the FieldDataset dataset
 - MaxDataset is the same for NDataset.
 See e.g. the SQLDBToolsUnit for the implementation for SQL databases.
+=======
+>>>>>>> origin/fixes_2_2
 
 Tests
 =====

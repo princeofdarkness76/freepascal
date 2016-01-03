@@ -86,6 +86,7 @@ unit cpupi;
           end;
         if tg.direction = -1 then
 <<<<<<< HEAD
+<<<<<<< HEAD
           begin
             if (target_info.system<>system_arm_darwin) then
               { Non-Darwin, worst case: r4-r10,r11,r13,r14,r15 is saved -> -28-16, but we
@@ -168,6 +169,11 @@ unit cpupi;
         else
           tg.setfirsttemp(maxpushedparasize);
 >>>>>>> graemeg/fixes_2_2
+=======
+          tg.setfirsttemp(-12-28)
+        else
+          tg.setfirsttemp(maxpushedparasize);
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -350,7 +356,10 @@ unit cpupi;
         floatregstart:=tg.direction*result+maxpushedparasize;
         if tg.direction=1 then
           dec(floatregstart,floatsavesize);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 

@@ -14,6 +14,7 @@ Ported to FPC by Nikolay Nikolov (nickysn@users.sourceforge.net)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 program Land;
 
 {$MODE objfpc}
@@ -125,6 +126,8 @@ begin
   for a := 0 to 2047 do
   begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Program Land;
 
 {$MODE objfpc}
@@ -240,7 +243,10 @@ Var
 Begin
   For a := 0 To 2047 Do
   Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { Precalculate cosine }
     result := cos(a * PI / 1024) * 256;
     CosT[a] := Trunc(result);
@@ -249,12 +255,17 @@ Begin
     result := sin(a * PI / 1024) * 256;
     SinT[a] := Trunc(result);
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
 end;
 =======
   End;
 End;
 >>>>>>> graemeg/fixes_2_2
+=======
+  End;
+End;
+>>>>>>> origin/fixes_2_2
 
 {
  Draw a "section" of the landscape; x0,y0 and x1,y1 and the xy coordinates
@@ -262,6 +273,7 @@ End;
  for the distance. x0,y0,x1,y1 are 16.16 fixed point numbers and the
  scaling factor is a 16.8 fixed point value.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure Line(x0, y0, x1, y1, hy, s: Integer; surface_buffer: PUint32; fadeout: Integer);
 var
@@ -285,6 +297,8 @@ begin
     v0 := (y0 shr 8) and $FF00;
     v1 := (v0 + 256) and $FF00;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Procedure Line(x0, y0, x1, y1, hy, s : Integer; surface_buffer : PUint32; fadeout : Integer);
 
 Var
@@ -308,7 +322,10 @@ Begin
     u1 := (u0 + 1) And $FF;
     v0 := (y0 Shr 8) And $FF00;
     v1 := (v0 + 256) And $FF00;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     { Fetch the height at the four corners of the square the point is in }
     h0 := HMap[u0 + v0];
@@ -318,6 +335,7 @@ Begin
 
     { Compute the height using bilinear interpolation }
 <<<<<<< HEAD
+<<<<<<< HEAD
     h0 := (h0 shl 8) + a * (h1 - h0);
     h2 := (h2 shl 8) + a * (h3 - h2);
     h := ((h0 shl 8) + b * (h2 - h0)) shr 16;
@@ -326,6 +344,11 @@ Begin
     h2 := (h2 Shl 8) + a * (h3 - h2);
     h := ((h0 Shl 8) + b * (h2 - h0)) Shr 16;
 >>>>>>> graemeg/fixes_2_2
+=======
+    h0 := (h0 Shl 8) + a * (h1 - h0);
+    h2 := (h2 Shl 8) + a * (h3 - h2);
+    h := ((h0 Shl 8) + b * (h2 - h0)) Shr 16;
+>>>>>>> origin/fixes_2_2
 
     { Fetch the color at the centre of the square the point is in }
     h0 := CMap[u0 + v0];
@@ -334,6 +357,7 @@ Begin
     h3 := CMap[u1 + v1];
 
     { Compute the color using bilinear interpolation (in 16.16) }
+<<<<<<< HEAD
 <<<<<<< HEAD
     h0 := (h0 shl 8) + a * (h1 - h0);
     h2 := (h2 shl 8) + a * (h3 - h2);
@@ -374,6 +398,8 @@ Begin
       lasty[i] := y;
     end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     h0 := (h0 Shl 8) + a * (h1 - h0);
     h2 := (h2 Shl 8) + a * (h3 - h2);
     c := ((h0 Shl 8) + b * (h2 - h0));
@@ -412,11 +438,15 @@ Begin
       End;
       lasty[i] := y;
     End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     lastc[i] := c;
 
     { Advance to next xy position }
     Inc(x0, sx); Inc(y0, sy);
+<<<<<<< HEAD
 <<<<<<< HEAD
   end;
 end;
@@ -441,6 +471,8 @@ begin
   u1 := (u0 + 1) and $FF;
   v1 := (v0 + 256) and $FF00;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   End;
 End;
 
@@ -465,7 +497,10 @@ Begin
   v0 := (y0 Shr 8) And $FF00;
   u1 := (u0 + 1) And $FF;
   v1 := (v0 + 256) And $FF00;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   { Fetch the height at the four corners of the square the point is in }
   h0 := HMap[u0 + v0];
@@ -474,6 +509,7 @@ Begin
   h3 := HMap[u1 + v1];
 
   { Compute the height using bilinear interpolation }
+<<<<<<< HEAD
 <<<<<<< HEAD
   h0 := (h0 shl 8) + a * (h1 - h0);
   h2 := (h2 shl 8) + a * (h3 - h2);
@@ -556,6 +592,8 @@ begin
       console.open('Land demo', SCREENWIDTH, SCREENHEIGHT, format);
       surface := TPTCSurfaceFactory.CreateNew(SCREENWIDTH, SCREENHEIGHT, format);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   h0 := (h0 Shl 8) + a * (h1 - h0);
   h2 := (h2 Shl 8) + a * (h3 - h2);
 
@@ -602,7 +640,10 @@ Begin
       console := TPTCConsole.Create;
       console.open('Land demo', SCREENWIDTH, SCREENHEIGHT, format);
       surface := TPTCSurface.Create(SCREENWIDTH, SCREENHEIGHT, format);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
       { Compute the height map }
       ComputeMap;
@@ -622,20 +663,28 @@ Begin
 
       { create timer }
 <<<<<<< HEAD
+<<<<<<< HEAD
       timer := TPTCTimerFactory.CreateNew;
 =======
       timer := TPTCTimer.Create;
 >>>>>>> graemeg/fixes_2_2
+=======
+      timer := TPTCTimer.Create;
+>>>>>>> origin/fixes_2_2
 
       { start timer }
       timer.start;
 
       { main loop }
 <<<<<<< HEAD
+<<<<<<< HEAD
       repeat
 =======
       Repeat
 >>>>>>> graemeg/fixes_2_2
+=======
+      Repeat
+>>>>>>> origin/fixes_2_2
         { get time delta between frames }
         delta := timer.delta;
 
@@ -645,6 +694,7 @@ Begin
         { lock surface pixels }
         pixels := surface.lock;
 <<<<<<< HEAD
+<<<<<<< HEAD
         try
           { draw current landscape view }
           View(x0, y0, Trunc(angle), height, pixels);
@@ -653,6 +703,8 @@ Begin
           surface.unlock;
         end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         Try
           { draw current landscape view }
           View(x0, y0, Trunc(angle), height, pixels);
@@ -660,7 +712,10 @@ Begin
           { unlock surface }
           surface.unlock;
 	End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
         { copy surface to console }
         surface.copy(console);
@@ -669,6 +724,7 @@ Begin
         console.update;
 
         { check key press }
+<<<<<<< HEAD
 <<<<<<< HEAD
         while console.KeyPressed do
         begin
@@ -717,6 +773,8 @@ Begin
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
         While console.KeyPressed Do
         Begin
           { read key press }
@@ -750,13 +808,17 @@ Begin
         Inc(y0, Trunc(CurrentSpeed * SinT[index]) Div 256);
       Until Done;
     Finally
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       console.close;
       console.Free;
       surface.Free;
       timer.Free;
       format.Free;
       key.Free;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -776,6 +838,8 @@ Begin
   end;
 end.
 =======
+=======
+>>>>>>> origin/fixes_2_2
     End;
   Except
     On error : TPTCError Do
@@ -783,4 +847,7 @@ end.
       error.report;
   End;
 End.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

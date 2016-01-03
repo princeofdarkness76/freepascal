@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -28,10 +29,16 @@
  
      Copyright:  © 1996-2005 by Apple Computer, Inc., all rights reserved.
 >>>>>>> graemeg/fixes_2_2
+=======
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 1996-2005 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -59,6 +66,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -69,7 +78,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -79,12 +91,17 @@
 unit MacTextEditor;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -98,14 +115,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -114,11 +136,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -156,6 +181,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -163,6 +190,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -376,6 +404,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -384,7 +414,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -411,9 +444,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -423,6 +460,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,CFBase,CFURL,CFArray,CFData,CFString,CFDictionary,CGBase,AEDataModel,TextCommon,QuickdrawTypes,QDOffscreen,Menus,ATSUnicodeTypes,ConditionalMacros,Drag,MacWindows,Files,Events,MacErrors,CarbonEvents,HIObject,HIView,HIGeometry;
 {$endc} {not MACOSALLINCLUDE}
@@ -435,6 +473,11 @@ uses MacTypes,CFBase,CFURL,CFArray,CFData,CFString,CFDictionary,CGBase,AEDataMod
 {$ALIGN POWER}
 
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,CFBase,CFURL,CFArray,CFData,CFString,CFDictionary,CGBase,AEDataModel,TextCommon,Quickdraw,QDOffscreen,Menus,ATSUnicodeTypes,ConditionalMacros,Drag,MacWindows,Files,Events,MacErrors,CarbonEvents,HIObjectCore,HIView,HIGeometry;
+{$ALIGN POWER}
+
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
 
@@ -442,6 +485,7 @@ uses MacTypes,CFBase,CFURL,CFArray,CFData,CFString,CFDictionary,CGBase,AEDataMod
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  ¥ Various Defs                                                                                      }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 <<<<<<< HEAD
@@ -465,6 +509,8 @@ type
 	TXNObjectPtr = ^TXNObject;  { when a var xx:TXNObject parameter can be nil, it is changed to xx: TXNObjectPtr }
 type
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	TXNObject = ^SInt32; { an opaque 32-bit type }
@@ -473,7 +519,10 @@ type
 	TXNFontMenuObject = ^SInt32; { an opaque 32-bit type }
 	TXNFontMenuObjectPtr = ^TXNFontMenuObject;  { when a var xx:TXNFontMenuObject parameter can be nil, it is changed to xx: TXNFontMenuObjectPtr }
 type
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	TXNVersionValue = UInt32;
 
 {
@@ -486,10 +535,15 @@ type
 type
 	TXNFrameID = UInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+
+>>>>>>> origin/fixes_2_2
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  ¥ Error Status                                                                                      }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -515,9 +569,12 @@ const
 	kTXNWillDefaultToCarbonEventMask = 1 shl kTXNWillDefaultToCarbonEventBit;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  ¥ Initialization Bits                                                                               }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -540,10 +597,14 @@ const
 	kTXNUseTemporaryMemoryMask = 1 shl kTXNUseTemporaryMemoryBit;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Default constants}
 =======
 { Default constants  }
 >>>>>>> graemeg/fixes_2_2
+=======
+{ Default constants  }
+>>>>>>> origin/fixes_2_2
 
 const
 	kTXNDefaultFontName = nil;
@@ -555,9 +616,12 @@ const
 	kTXNDefaultFontStyle = normal;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  ¥ FrameOption Bits                                                                                  }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -570,9 +634,13 @@ const
 	kTXNWantVScrollBarBit = 3;
 	kTXNReadOnlyBit = 5;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	kTXNNoKeyboardSyncBit = 6;
 >>>>>>> graemeg/fixes_2_2
+=======
+	kTXNNoKeyboardSyncBit = 6;
+>>>>>>> origin/fixes_2_2
 	kTXNNoSelectionBit = 7;
 	kTXNSaveStylesAsSTYLResourceBit = 8;
 	kOutputTextInUnicodeEncodingBit = 9;
@@ -642,13 +710,19 @@ const
 
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
    * Indicates that keyboard synchronization will not occur.
    }
 	kTXNNoKeyboardSyncMask = 1 shl kTXNNoKeyboardSyncBit;
 
   {
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
    * Indicates that the user shouldn't be able to set the insertion
    * point or make a selection.
    }
@@ -723,12 +797,17 @@ const
 {  ¥ TextBox Option Bits                                                                               }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Useful for TXNDrawUnicodeTextBox and TXNDrawCFStringTextBox APIs. 32 bit only                       }
 {$ifc not TARGET_CPU_64}
 =======
 {  Useful for TXNDrawUnicodeTextBox and TXNDrawCFStringTextBox APIs.                                   }
 
 >>>>>>> graemeg/fixes_2_2
+=======
+{  Useful for TXNDrawUnicodeTextBox and TXNDrawCFStringTextBox APIs.                                   }
+
+>>>>>>> origin/fixes_2_2
 const
 	kTXNSetFlushnessBit = 0;
 	kTXNSetJustificationBit = 1;
@@ -741,12 +820,16 @@ const
 	kTXNDontWrapTextBit = 9;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 {$ifc not TARGET_CPU_64}
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 {
  *  TXNTextBoxOptions
  *  
@@ -825,18 +908,24 @@ const
 	kTXNDontWrapTextMask = 1 shl kTXNDontWrapTextBit;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  ¥ TextBox Options Data                                                                              }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type
 	TXNTextBoxOptionsDataPtr = ^TXNTextBoxOptionsData;
 	TXNTextBoxOptionsData = record
@@ -847,9 +936,12 @@ type
 		options: UnivPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  ¥ File Types                                                                                        }
@@ -865,6 +957,7 @@ type
 	TXNFileType = OSType;
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kTXNTextFile = FourCharCode('TEXT');
 	kTXNAIFFFile = FourCharCode('AIFF');
 	kTXNUnicodeTextFile = FourCharCode('utxt');
@@ -878,6 +971,8 @@ const
 
 {$endc} {not TARGET_CPU_64}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kTXNTextensionFile = FourCharCode('txtn');
 	kTXNTextFile = FourCharCode('TEXT');
 	kTXNPictureFile = FourCharCode('PICT');
@@ -885,7 +980,10 @@ const
 	kTXNSoundFile = FourCharCode('sfil');
 	kTXNAIFFFile = FourCharCode('AIFF');
 	kTXNUnicodeTextFile = FourCharCode('utxt');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  ¥ Text Encoding Types                                                                               }
@@ -914,6 +1012,7 @@ type
 const
 	kTXNTextData = FourCharCode('TEXT');
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kTXNUnicodeTextData = FourCharCode('utxt');
 	kTXNRichTextFormatData = FourCharCode('RTF ');
 
@@ -926,13 +1025,18 @@ const
 
 {$endc} {not TARGET_CPU_64}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kTXNPictureData = FourCharCode('PICT');
 	kTXNMovieData = FourCharCode('moov');
 	kTXNSoundData = FourCharCode('snd ');
 	kTXNUnicodeTextData = FourCharCode('utxt');
 	kTXNTextAndMultimediaData = FourCharCode('txtn');
 	kTXNRichTextFormatData = FourCharCode('RTF ');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -952,10 +1056,14 @@ const
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -973,10 +1081,14 @@ var kTXNActionTyping: CFStringRef; external name '_kTXNActionTyping'; (* attribu
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -994,10 +1106,14 @@ var kTXNActionCut: CFStringRef; external name '_kTXNActionCut'; (* attribute con
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1015,10 +1131,14 @@ var kTXNActionPaste: CFStringRef; external name '_kTXNActionPaste'; (* attribute
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1036,10 +1156,14 @@ var kTXNActionClear: CFStringRef; external name '_kTXNActionClear'; (* attribute
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1057,10 +1181,14 @@ var kTXNActionChangeFont: CFStringRef; external name '_kTXNActionChangeFont'; (*
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1078,10 +1206,14 @@ var kTXNActionChangeColor: CFStringRef; external name '_kTXNActionChangeColor'; 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1099,10 +1231,14 @@ var kTXNActionChangeSize: CFStringRef; external name '_kTXNActionChangeSize'; (*
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1120,10 +1256,14 @@ var kTXNActionChangeStyle: CFStringRef; external name '_kTXNActionChangeStyle'; 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1141,10 +1281,14 @@ var kTXNActionAlignLeft: CFStringRef; external name '_kTXNActionAlignLeft'; (* a
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1162,10 +1306,14 @@ var kTXNActionAlignCenter: CFStringRef; external name '_kTXNActionAlignCenter'; 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1183,10 +1331,14 @@ var kTXNActionAlignRight: CFStringRef; external name '_kTXNActionAlignRight'; (*
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1204,10 +1356,14 @@ var kTXNActionDrop: CFStringRef; external name '_kTXNActionDrop'; (* attribute c
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1225,10 +1381,14 @@ var kTXNActionMove: CFStringRef; external name '_kTXNActionMove'; (* attribute c
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1246,10 +1406,14 @@ var kTXNActionChangeFontFeature: CFStringRef; external name '_kTXNActionChangeFo
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1267,10 +1431,14 @@ var kTXNActionChangeFontVariation: CFStringRef; external name '_kTXNActionChange
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1290,10 +1458,14 @@ var kTXNActionChangeGlyphVariation: CFStringRef; external name '_kTXNActionChang
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1311,10 +1483,14 @@ var kTXNActionChangeTextPosition: CFStringRef; external name '_kTXNActionChangeT
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1339,10 +1515,14 @@ type
 		value: SInt16;
 		tabType: TXNTabType;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		filler: UInt8;
 =======
 		filler: SInt8;
 >>>>>>> graemeg/fixes_2_2
+=======
+		filler: SInt8;
+>>>>>>> origin/fixes_2_2
 	end;
 const
 	kTXNLeftToRight = 0;
@@ -1389,10 +1569,14 @@ type
 type
 	TXNControlTag = FourCharCode;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	TXNControlTagPtr = ^TXNControlTag; { when a VAR xx: TXNControlTag parameter can be nil, it is changed to xx: TXNControlTagPtr }
 =======
 	TXNControlTagPtr			= ^TXNControlTag; { when a VAR xx: TXNControlTag parameter can be nil, it is changed to xx: TXNControlTagPtr }
 >>>>>>> graemeg/fixes_2_2
+=======
+	TXNControlTagPtr			= ^TXNControlTag; { when a VAR xx: TXNControlTag parameter can be nil, it is changed to xx: TXNControlTagPtr }
+>>>>>>> origin/fixes_2_2
 const
 	kTXNLineDirectionTag = FourCharCode('lndr'); { Not functional when userIO is not allowed   }
 	kTXNJustificationTag = FourCharCode('just'); { Not functional when userIO is not allowed   }
@@ -1401,9 +1585,13 @@ const
 	kTXNInlineStateTag = FourCharCode('inst');
 	kTXNWordWrapStateTag = FourCharCode('wwrs');
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	kTXNKeyboardSyncStateTag = FourCharCode('kbsy');
 >>>>>>> graemeg/fixes_2_2
+=======
+	kTXNKeyboardSyncStateTag = FourCharCode('kbsy');
+>>>>>>> origin/fixes_2_2
 	kTXNAutoIndentStateTag = FourCharCode('auin');
 	kTXNTabSettingsTag = FourCharCode('tabs');
 	kTXNRefConTag = FourCharCode('rfcn');
@@ -1467,13 +1655,19 @@ const
 	kTXNNoAutoWrap = true;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { kTXNKeyboardSyncStateTag}
 const
 	kTXNSyncKeyboard = false;
 	kTXNNoSyncKeyboard = true;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { kTXNAutoIndentStateTag}
 const
 	kTXNAutoIndentOff = false;
@@ -1500,16 +1694,22 @@ type
 		case SInt16 of
 		0: (
 <<<<<<< HEAD
+<<<<<<< HEAD
 			uValue: UNSIGNEDLONG;
 			);
 		1: (
 			sValue: SIGNEDLONG;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 			uValue: UInt32;
 			);
 		1: (
 			sValue: SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 			);
 		2: (
 			tabValue: TXNTab;
@@ -1567,9 +1767,13 @@ const
 {  ¥ Offset/Selection Constants                                                                        }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 type
 	TXNOffset = UInt32;
 	TXNOffsetPtr				= ^TXNOffset; { when a VAR xx: TXNOffset parameter can be nil, it is changed to xx: TXNOffsetPtr }
@@ -1617,12 +1821,15 @@ const
 {  which are normal, bold, italic, underline, condensed, and extended.  An alternative is to use       }
 {  available QD compatibility tags defined in ATSUnicode.h.                                            }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Deprecate all QD TXNTypeRunAttributes/TXNTypeRunAttributeSizes constants. Use kTXNATSUIStyle or     }
 {  ATSUI tags ATSUFontTag, kATSUColorTag and kATSUSizeTag to Set/Get the font, color or size           }
 type
 	TXNTypeRunAttributes = FourCharCode;
 const
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	TXNTypeRunAttributes = FourCharCode;
@@ -1631,7 +1838,10 @@ const
 	kTXNQDFontFamilyIDAttribute = FourCharCode('font');
 	kTXNQDFontStyleAttribute = FourCharCode('face');
 	kTXNQDFontColorAttribute = FourCharCode('klor');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kTXNTextEncodingAttribute = FourCharCode('encd');
 	kTXNATSUIFontFeaturesAttribute = FourCharCode('atfe');
 	kTXNATSUIFontVariationsAttribute = FourCharCode('atva');
@@ -1642,15 +1852,21 @@ type
 	TXNTypeRunAttributeSizes = ByteCount;
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kTXNTextEncodingAttributeSize = SizeOf(TextEncoding);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kTXNQDFontNameAttributeSize = SizeOf(Str255);
 	kTXNQDFontFamilyIDAttributeSize = SizeOf(SInt16);
 	kTXNQDFontStyleAttributeSize = SizeOf(Style);
 	kTXNQDFontColorAttributeSize = SizeOf(RGBColor);
 	kTXNTextEncodingAttributeSize = SizeOf(TextEncoding);
 	kTXNFontSizeAttributeSize = SizeOf(Fixed);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kTXNATSUIStyleSize = SizeOf(ATSUStyle);
 
 type
@@ -1685,11 +1901,14 @@ type
 			atsuVariations: TXNATSUIVariationsPtr;
 			);
 <<<<<<< HEAD
+<<<<<<< HEAD
 		4: (
 			urlReference: CFURLRef;
 			);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 
 type
@@ -1756,12 +1975,17 @@ type
 	TXNMatchTextRecordPtr = ^TXNMatchTextRecord;
 	TXNMatchTextRecord = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		iTextPtr: {const} UnivPtr;
 		iTextToMatchLength: SIGNEDLONG;
 =======
 		iTextPtr: UnivPtr;
 		iTextToMatchLength: SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		iTextPtr: UnivPtr;
+		iTextToMatchLength: SInt32;
+>>>>>>> origin/fixes_2_2
 		iTextEncoding: TextEncoding;
 	end;
 
@@ -1770,9 +1994,12 @@ type
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type
 	TXNMacOSPreferredFontDescriptionPtr = ^TXNMacOSPreferredFontDescription;
 	TXNMacOSPreferredFontDescription = record
@@ -1782,9 +2009,12 @@ type
 		fontStyle: Style;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  ¥ Background                                                                                        }
@@ -1814,6 +2044,7 @@ type
 	TXNBackgroundData = record
 		case SInt16 of
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
    * Currently only an RGBColor is supported.
    }
@@ -1823,6 +2054,10 @@ type
 		0: (
 			color:				RGBColor;
 >>>>>>> graemeg/fixes_2_2
+=======
+		0: (
+			color:				RGBColor;
+>>>>>>> origin/fixes_2_2
 			);
 	end;
 
@@ -1855,10 +2090,14 @@ type
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1880,10 +2119,14 @@ var kTXNActionCountOfTextChanges: CFStringRef; external name '_kTXNActionCountOf
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1902,10 +2145,14 @@ var kTXNActionCountOfStyleChanges: CFStringRef; external name '_kTXNActionCountO
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2009,11 +2256,17 @@ const
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$definec kTXNFontMenuObjectKey CFSTRP('FontMenuObject')}
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$definec kTXNFontMenuObjectKey CFSTRP('FontMenuObject')}
+{$endc}
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+>>>>>>> origin/fixes_2_2
 {$definec kTXNActionNameMapperKey CFSTRP('ActionNameMapper')}
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
@@ -2045,10 +2298,14 @@ type
    * Pass NULL.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 		filler: UInt8;
 =======
 		filler: SInt8;
 >>>>>>> graemeg/fixes_2_2
+=======
+		filler: SInt8;
+>>>>>>> origin/fixes_2_2
 
   {
    * Pass NULL.  AppleEvent flags have been deprecated.
@@ -2084,10 +2341,14 @@ type
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2105,10 +2366,14 @@ var kTXNDocumentAttributeTitleKey: CFStringRef; external name '_kTXNDocumentAttr
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2126,10 +2391,14 @@ var kTXNDocumentAttributeCompanyNameKey: CFStringRef; external name '_kTXNDocume
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2148,10 +2417,14 @@ var kTXNDocumentAttributeSubjectKey: CFStringRef; external name '_kTXNDocumentAt
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2169,10 +2442,14 @@ var kTXNDocumentAttributeAuthorKey: CFStringRef; external name '_kTXNDocumentAtt
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2190,10 +2467,14 @@ var kTXNDocumentAttributeKeywordsKey: CFStringRef; external name '_kTXNDocumentA
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2211,10 +2492,14 @@ var kTXNDocumentAttributeCommentKey: CFStringRef; external name '_kTXNDocumentAt
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2234,10 +2519,14 @@ var kTXNDocumentAttributeEditorKey: CFStringRef; external name '_kTXNDocumentAtt
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2256,10 +2545,14 @@ var kTXNDocumentAttributeCreationTimeKey: CFStringRef; external name '_kTXNDocum
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2276,10 +2569,14 @@ var kTXNDocumentAttributeModificationTimeKey: CFStringRef; external name '_kTXND
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2304,10 +2601,14 @@ var kTXNDocumentAttributeCopyrightKey: CFStringRef; external name '_kTXNDocument
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2326,10 +2627,14 @@ var kTXNDataOptionDocumentTypeKey: CFStringRef; external name '_kTXNDataOptionDo
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2349,10 +2654,14 @@ var kTXNDataOptionCharacterEncodingKey: CFStringRef; external name '_kTXNDataOpt
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2370,10 +2679,14 @@ var kTXNPlainTextDocumentType: CFStringRef; external name '_kTXNPlainTextDocumen
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2391,10 +2704,14 @@ var kTXNMLTEDocumentType: CFStringRef; external name '_kTXNMLTEDocumentType'; (*
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2413,31 +2730,43 @@ var kTXNRTFDocumentType: CFStringRef; external name '_kTXNRTFDocumentType'; (* a
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
 var kTXNQuickTimeDocumentType: CFStringRef; external name '_kTXNQuickTimeDocumentType'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+
+>>>>>>> origin/fixes_2_2
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  ¥ Callbacks                                                                                         }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	TXNFindProcPtr = function( const (*var*) matchData: TXNMatchTextRecord; iDataType: TXNDataType; iMatchOptions: TXNMatchOptions; iSearchTextPtr: {const} UnivPtr; encoding: TextEncoding; absStartOffset: TXNOffset; searchTextLength: ByteCount; var oStartMatch: TXNOffset; var oEndMatch: TXNOffset; var ofound: Boolean; refCon: URefCon ): OSStatus;
 	TXNActionNameMapperProcPtr = function( actionName: CFStringRef; commandID: UInt32; inUserData: UnivPtr ): CFStringRef;
 	TXNContextualMenuSetupProcPtr = procedure( iContextualMenu: MenuRef; objct: TXNObject; inUserData: UnivPtr );
 	TXNScrollInfoProcPtr = procedure( iValue: SInt32; iMaximumValue: SInt32; iScrollBarOrientation: TXNScrollBarOrientation; iRefCon: SRefCon );
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	TXNFindProcPtr = function( const (*var*) matchData: TXNMatchTextRecord; iDataType: TXNDataType; iMatchOptions: TXNMatchOptions; iSearchTextPtr: {const} UnivPtr; encoding: TextEncoding; absStartOffset: TXNOffset; searchTextLength: ByteCount; var oStartMatch: TXNOffset; var oEndMatch: TXNOffset; var ofound: Boolean; refCon: UInt32 ): OSStatus;
 type
 	TXNActionNameMapperProcPtr = function( actionName: CFStringRef; commandID: UInt32; inUserData: UnivPtr ): CFStringRef;
@@ -2445,7 +2774,10 @@ type
 	TXNContextualMenuSetupProcPtr = procedure( iContextualMenu: MenuRef; objct: TXNObject; inUserData: UnivPtr );
 type
 	TXNScrollInfoProcPtr = procedure( iValue: SInt32; iMaximumValue: SInt32; iScrollBarOrientation: TXNScrollBarOrientation; iRefCon: SInt32 );
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type
 	TXNFindUPP = TXNFindProcPtr;
 type
@@ -2551,10 +2883,14 @@ procedure DisposeTXNScrollInfoUPP( userUPP: TXNScrollInfoUPP ); external name '_
  *    Non-Carbon CFM:   available as macro/inline
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function InvokeTXNFindUPP( const (*var*) matchData: TXNMatchTextRecord; iDataType: TXNDataType; iMatchOptions: TXNMatchOptions; iSearchTextPtr: {const} UnivPtr; encoding: TextEncoding; absStartOffset: TXNOffset; searchTextLength: ByteCount; var oStartMatch: TXNOffset; var oEndMatch: TXNOffset; var ofound: Boolean; refCon: URefCon; userUPP: TXNFindUPP ): OSStatus; external name '_InvokeTXNFindUPP';
 =======
 function InvokeTXNFindUPP( const (*var*) matchData: TXNMatchTextRecord; iDataType: TXNDataType; iMatchOptions: TXNMatchOptions; iSearchTextPtr: {const} UnivPtr; encoding: TextEncoding; absStartOffset: TXNOffset; searchTextLength: ByteCount; var oStartMatch: TXNOffset; var oEndMatch: TXNOffset; var ofound: Boolean; refCon: UInt32; userUPP: TXNFindUPP ): OSStatus; external name '_InvokeTXNFindUPP';
 >>>>>>> graemeg/fixes_2_2
+=======
+function InvokeTXNFindUPP( const (*var*) matchData: TXNMatchTextRecord; iDataType: TXNDataType; iMatchOptions: TXNMatchOptions; iSearchTextPtr: {const} UnivPtr; encoding: TextEncoding; absStartOffset: TXNOffset; searchTextLength: ByteCount; var oStartMatch: TXNOffset; var oEndMatch: TXNOffset; var ofound: Boolean; refCon: UInt32; userUPP: TXNFindUPP ): OSStatus; external name '_InvokeTXNFindUPP';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 {
@@ -2588,10 +2924,14 @@ procedure InvokeTXNContextualMenuSetupUPP( iContextualMenu: MenuRef; objct: TXNO
  *    Non-Carbon CFM:   available as macro/inline
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure InvokeTXNScrollInfoUPP( iValue: SInt32; iMaximumValue: SInt32; iScrollBarOrientation: TXNScrollBarOrientation; iRefCon: SRefCon; userUPP: TXNScrollInfoUPP ); external name '_InvokeTXNScrollInfoUPP';
 =======
 procedure InvokeTXNScrollInfoUPP( iValue: SInt32; iMaximumValue: SInt32; iScrollBarOrientation: TXNScrollBarOrientation; iRefCon: SInt32; userUPP: TXNScrollInfoUPP ); external name '_InvokeTXNScrollInfoUPP';
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure InvokeTXNScrollInfoUPP( iValue: SInt32; iMaximumValue: SInt32; iScrollBarOrientation: TXNScrollBarOrientation; iRefCon: SInt32; userUPP: TXNScrollInfoUPP ); external name '_InvokeTXNScrollInfoUPP';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 
 
@@ -2606,9 +2946,12 @@ procedure InvokeTXNScrollInfoUPP( iValue: SInt32; iMaximumValue: SInt32; iScroll
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  TXNCreateObject()
  *  
@@ -2645,10 +2988,14 @@ procedure InvokeTXNScrollInfoUPP( iValue: SInt32; iMaximumValue: SInt32; iScroll
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2675,10 +3022,14 @@ function TXNCreateObject( const (*var*) iFrameRect: HIRect; iFrameOptions: TXNFr
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -2724,10 +3075,14 @@ procedure TXNDeleteObject( iTXNObject: TXNObject ); external name '_TXNDeleteObj
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -2760,10 +3115,14 @@ function TXNInitTextension( {const} iDefaultFonts: {variable-size-array} TXNMacO
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -2797,10 +3156,14 @@ function TXNVersionInformation( var oFeatureFlags: TXNFeatureBits ): TXNVersionV
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2832,10 +3195,14 @@ function TXNAttachObjectToWindowRef( iTXNObject: TXNObject; iWindowRef: WindowRe
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2869,10 +3236,14 @@ function TXNGetWindowRef( iTXNObject: TXNObject ): WindowRef; external name '_TX
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -2902,10 +3273,14 @@ procedure TXNKeyDown( iTXNObject: TXNObject; const (*var*) iEvent: EventRecord )
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -2934,10 +3309,14 @@ procedure TXNAdjustCursor( iTXNObject: TXNObject; ioCursorRgn: RgnHandle ); exte
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -2961,10 +3340,14 @@ procedure TXNClick( iTXNObject: TXNObject; const (*var*) iEvent: EventRecord ); 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -2992,10 +3375,14 @@ procedure TXNSelectAll( iTXNObject: TXNObject ); external name '_TXNSelectAll';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3023,10 +3410,14 @@ procedure TXNFocus( iTXNObject: TXNObject; iBecomingFocused: Boolean ); external
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3070,10 +3461,14 @@ procedure TXNUpdate( iTXNObject: TXNObject ); external name '_TXNUpdate';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3098,10 +3493,14 @@ function TXNDrawObject( iTXNObject: TXNObject; const (*var*) iClipRect: HIRect; 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3129,10 +3528,14 @@ procedure TXNForceUpdate( iTXNObject: TXNObject ); external name '_TXNForceUpdat
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3158,10 +3561,14 @@ function TXNGetSleepTicks( iTXNObject: TXNObject ): UInt32; external name '_TXNG
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3188,10 +3595,14 @@ procedure TXNIdle( iTXNObject: TXNObject ); external name '_TXNIdle';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3218,10 +3629,14 @@ procedure TXNGrowWindow( iTXNObject: TXNObject; const (*var*) iEvent: EventRecor
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3265,10 +3680,14 @@ procedure TXNZoomWindow( iTXNObject: TXNObject; iPart: SInt16 ); external name '
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3296,10 +3715,14 @@ function TXNBeginActionGroup( iTXNObject: TXNObject; iActionGroupName: CFStringR
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3347,10 +3770,14 @@ function TXNEndActionGroup( iTXNObject: TXNObject ): OSStatus; external name '_T
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3394,10 +3821,14 @@ function TXNCanUndoAction( iTXNObject: TXNObject; var oActionName: CFStringRef )
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3446,10 +3877,14 @@ function TXNCanRedoAction( iTXNObject: TXNObject; var oActionName: CFStringRef )
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3473,10 +3908,14 @@ function TXNSetActionNameMapper( iTXNObject: TXNObject; iStringForKeyProc: TXNAc
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3500,10 +3939,14 @@ procedure TXNUndo( iTXNObject: TXNObject ); external name '_TXNUndo';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3527,10 +3970,14 @@ procedure TXNRedo( iTXNObject: TXNObject ); external name '_TXNRedo';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   in Textension not yet available
  }
@@ -3561,10 +4008,14 @@ function TXNClearUndo( iTXNObject: TXNObject ): OSStatus; external name '_TXNCle
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3591,10 +4042,14 @@ function TXNCut( iTXNObject: TXNObject ): OSStatus; external name '_TXNCut';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3621,10 +4076,14 @@ function TXNCopy( iTXNObject: TXNObject ): OSStatus; external name '_TXNCopy';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3651,10 +4110,14 @@ function TXNPaste( iTXNObject: TXNObject ): OSStatus; external name '_TXNPaste';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3682,10 +4145,14 @@ function TXNClear( iTXNObject: TXNObject ): OSStatus; external name '_TXNClear';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3720,10 +4187,14 @@ function TXNIsScrapPastable: Boolean; external name '_TXNIsScrapPastable';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3751,10 +4222,14 @@ procedure TXNGetSelection( iTXNObject: TXNObject; var oStartOffset: TXNOffset; v
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3763,6 +4238,7 @@ procedure TXNShowSelection( iTXNObject: TXNObject; iShowEnd: Boolean ); external
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  TXNShowOffset()
  *  
@@ -3797,6 +4273,8 @@ procedure TXNShowOffset( iTXNObject: TXNObject; inOffset: TXNOffset ); external 
 {
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  TXNIsSelectionEmpty()
  *  
  *  Summary:
@@ -3818,10 +4296,14 @@ procedure TXNShowOffset( iTXNObject: TXNObject; inOffset: TXNOffset ); external 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3854,10 +4336,14 @@ function TXNIsSelectionEmpty( iTXNObject: TXNObject ): Boolean; external name '_
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3911,10 +4397,14 @@ function TXNSetSelection( iTXNObject: TXNObject; iStartOffset: TXNOffset; iEndOf
  *      know if the current selection was continuous in terms of being
  *      all one same font size you could do something like this.
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      TXNTypeAttributes       attr[1] = ( kTXNQDFontSizeAttribute,
 =======
  *      TXNTypeAttributes       attr[1] = ( TXNFontSizeAttribute,
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      TXNTypeAttributes       attr[1] = ( TXNFontSizeAttribute,
+>>>>>>> origin/fixes_2_2
  *      sizeof(Fixed),( 0 ) ) on return from the function if size is
  *      continuous (i.e. if the bit 3 of flags is set) then the third
  *      field (attr[0].data.dataValue) will contain the size of the
@@ -3930,10 +4420,14 @@ function TXNSetSelection( iTXNObject: TXNObject; iStartOffset: TXNOffset; iEndOf
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -3951,12 +4445,16 @@ function TXNGetContinuousTypeAttributes( iTXNObject: TXNObject; var oContinuousF
  *    TXNTypeAttributes' 3rd field is a union that servers as either a
  *    32-bit integer where values can be written or a 32-bit pointer a
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    value.  Functional in NoUserIO mode. When you call
  *    TXNSetTypeAttributes, any attributes that you do not set retain
  *    their previous values.
 =======
  *    value.  Functional in NoUserIO mode.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    value.  Functional in NoUserIO mode.
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -3983,10 +4481,14 @@ function TXNGetContinuousTypeAttributes( iTXNObject: TXNObject; var oContinuousF
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -4055,10 +4557,14 @@ function TXNSetTypeAttributes( iTXNObject: TXNObject; iAttrCount: ItemCount; {co
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -4103,10 +4609,14 @@ function TXNSetTXNObjectControls( iTXNObject: TXNObject; iClearAll: Boolean; iCo
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -4142,10 +4652,14 @@ function TXNGetTXNObjectControls( iTXNObject: TXNObject { can be NULL }; iContro
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -4192,10 +4706,14 @@ function TXNSetBackground( iTXNObject: TXNObject; const (*var*) iBackgroundInfo:
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -4237,10 +4755,14 @@ function TXNEchoMode( iTXNObject: TXNObject; iEchoCharacter: UniChar; iEncoding:
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -4314,10 +4836,14 @@ function TXNCountRunsInRange( iTXNObject: TXNObject; iStartOffset: TXNOffset; iE
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -4348,10 +4874,14 @@ function TXNGetIndexedRunInfoFromRange( iTXNObject: TXNObject; iIndex: ItemCount
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -4420,10 +4950,14 @@ function TXNDataSize( iTXNObject: TXNObject ): ByteCount; external name '_TXNDat
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -4496,10 +5030,14 @@ function TXNWriteRangeToCFURL( iTXNObject: TXNObject; iStartOffset: TXNOffset; i
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -4548,10 +5086,14 @@ function TXNReadFromCFURL( iTXNObject: TXNObject; iStartOffset: TXNOffset; iEndO
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -4603,10 +5145,14 @@ function TXNCopyTypeIdentifiersForRange( iTXNObject: TXNObject; iStartOffset: TX
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -4651,10 +5197,14 @@ function TXNGetData( iTXNObject: TXNObject; iStartOffset: TXNOffset; iEndOffset:
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -4708,10 +5258,14 @@ function TXNGetDataEncoded( iTXNObject: TXNObject; iStartOffset: TXNOffset; iEnd
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -4750,10 +5304,14 @@ function TXNSetData( iTXNObject: TXNObject; iDataType: TXNDataType; iDataPtr: {c
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -4787,10 +5345,14 @@ function TXNFlattenObjectToCFDataRef( iTXNObject: TXNObject; iTXNDataType: TXNDa
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -4824,10 +5386,14 @@ function TXNRevert( iTXNObject: TXNObject ): OSStatus; external name '_TXNRevert
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -4855,10 +5421,14 @@ function TXNPageSetup( iTXNObject: TXNObject ): OSStatus; external name '_TXNPag
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -4945,22 +5515,29 @@ function TXNPrint( iTXNObject: TXNObject ): OSStatus; external name '_TXNPrint';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
 function TXNFind( iTXNObject: TXNObject; {const} iMatchTextDataPtr: TXNMatchTextRecordPtr { can be NULL }; iDataType: TXNDataType; iMatchOptions: TXNMatchOptions; iStartSearchOffset: TXNOffset; iEndSearchOffset: TXNOffset; iFindProc: TXNFindUPP; iRefCon: SRefCon; var oStartMatchOffset: TXNOffset; var oEndMatchOffset: TXNOffset ): OSStatus; external name '_TXNFind';
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
 function TXNFind( iTXNObject: TXNObject; {const} iMatchTextDataPtr: TXNMatchTextRecordPtr { can be NULL }; iDataType: TXNDataType; iMatchOptions: TXNMatchOptions; iStartSearchOffset: TXNOffset; iEndSearchOffset: TXNOffset; iFindProc: TXNFindUPP; iRefCon: SInt32; var oStartMatchOffset: TXNOffset; var oEndMatchOffset: TXNOffset ): OSStatus; external name '_TXNFind';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {  ¥ Static Text Box                                                                                   }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -4981,6 +5558,8 @@ function TXNFind( iTXNObject: TXNObject; {const} iMatchTextDataPtr: TXNMatchText
  *    Use kTXNUseVerticalTextMask to display text vertically (no need
  *    to use the kTXNRotateTextMask flag in this case).
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {  ¥ Font Defaults                                                                                     }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 
@@ -4989,13 +5568,17 @@ function TXNFind( iTXNObject: TXNObject; {const} iMatchTextDataPtr: TXNMatchText
  *  
  *  Summary:
  *    For a given TXNObject specify the font defaults for each script.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    iText:
  *      Ptr to a Unicode string (UTF16 chars).
@@ -5043,6 +5626,8 @@ function TXNDrawUnicodeTextBox( {const} iText: {variable-size-array} UniCharPtr;
  *    Use kTXNUseVerticalTextMask to display text vertically (no need
  *    to use the kTXNRotateTextMask flag in this case).
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    iTXNObject:
  *      Opaque TXNObject obtained from TXNCreateObject.
  *    
@@ -5074,7 +5659,10 @@ function TXNSetFontDefaults( iTXNObject: TXNObject; iCount: ItemCount; {const} i
  *    To determine how many font descriptions need to be in the array
  *    you should call this function with a NULL for the array.  iCount
  *    will return with the number of font defaults currently stored.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -5082,9 +5670,12 @@ function TXNSetFontDefaults( iTXNObject: TXNObject; iCount: ItemCount; {const} i
  *  Parameters:
  *    
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    iText:
  *      A CFStringRef (see CFBase.h and CFString.h).
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    iTXNObject:
  *      Opaque TXNObject obtained from TXNCreateObject.
  *    
@@ -5321,7 +5912,10 @@ function TXNPrepareFontMenu( iTXNObject: TXNObject { can be NULL }; iTXNFontMenu
  *    
  *    iLen:
  *      Number of UniChars in iText (this is not the size of iText).
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *    
  *    ioBox:
  *      On input the text box where the text will be displayed. On
@@ -5340,8 +5934,11 @@ function TXNPrepareFontMenu( iTXNObject: TXNObject { can be NULL }; iTXNFontMenu
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.6
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in Textension 1.1 and later
@@ -5387,16 +5984,23 @@ function TXNDrawUnicodeTextBox( {const} iText: {variable-size-array} UniCharPtr;
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function TXNDrawCFStringTextBox( iText: CFStringRef; var ioBox: Rect; iStyle: ATSUStyle { can be NULL }; {const} iOptions: TXNTextBoxOptionsDataPtr { can be NULL } ): OSStatus; external name '_TXNDrawCFStringTextBox';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -5425,10 +6029,14 @@ function TXNDrawCFStringTextBox( iText: CFStringRef; var ioBox: Rect; iStyle: AT
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in Textension 1.1 and later
  }
@@ -5465,18 +6073,24 @@ function TXNGetLineCount( iTXNObject: TXNObject; var oLineTotal: ItemCount ): OS
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in Textension 1.1 and later
  }
 function TXNGetLineMetrics( iTXNObject: TXNObject; iLineNumber: UNSIGNEDLONG; var oLineWidth: Fixed; var oLineHeight: Fixed ): OSStatus; external name '_TXNGetLineMetrics';
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in Textension 1.1 and later
  }
 function TXNGetLineMetrics( iTXNObject: TXNObject; iLineNumber: UInt32; var oLineWidth: Fixed; var oLineHeight: Fixed ): OSStatus; external name '_TXNGetLineMetrics';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -5510,10 +6124,14 @@ function TXNGetLineMetrics( iTXNObject: TXNObject; iLineNumber: UInt32; var oLin
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -5558,10 +6176,14 @@ function TXNGetChangeCount( iTXNObject: TXNObject ): ItemCount; external name '_
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -5598,10 +6220,14 @@ function TXNGetCountForActionType( iTXNObject: TXNObject; iActionTypeName: CFStr
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -5648,10 +6274,14 @@ function TXNClearCountForActionType( iTXNObject: TXNObject; iActionTypeName: CFS
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -5690,10 +6320,14 @@ procedure TXNSetHIRectBounds( iTXNObject: TXNObject; {const} iViewRect: HIRectPt
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -5726,10 +6360,14 @@ function TXNGetHIRect( iTXNObject: TXNObject; iTXNRectKey: TXNRectKey; var oRect
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -5768,10 +6406,14 @@ procedure TXNResizeFrame( iTXNObject: TXNObject; iWidth: UInt32; iHeight: UInt32
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -5799,10 +6441,14 @@ procedure TXNSetFrameBounds( iTXNObject: TXNObject; iTop: SInt32; iLeft: SInt32;
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -5837,10 +6483,14 @@ procedure TXNGetViewRect( iTXNObject: TXNObject; var oViewRect: Rect ); external
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.1 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.5 and later
  *    Non-Carbon CFM:   not available
  }
@@ -5908,18 +6558,24 @@ procedure TXNRecalcTextLayout( iTXNObject: TXNObject ); external name '_TXNRecal
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   in Textension not yet available
  }
 function TXNScroll( iTXNObject: TXNObject; iVerticalScrollUnit: TXNScrollUnit; iHorizontalScrollUnit: TXNScrollUnit; var ioVerticalDelta: SIGNEDLONG; var ioHorizontalDelta: SIGNEDLONG ): OSStatus; external name '_TXNScroll';
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   in Textension not yet available
  }
 function TXNScroll( iTXNObject: TXNObject; iVerticalScrollUnit: TXNScrollUnit; iHorizontalScrollUnit: TXNScrollUnit; var ioVerticalDelta: SInt32; var ioHorizontalDelta: SInt32 ): OSStatus; external name '_TXNScroll';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
@@ -5954,18 +6610,24 @@ function TXNScroll( iTXNObject: TXNObject; iVerticalScrollUnit: TXNScrollUnit; i
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   in Textension not yet available
  }
 procedure TXNRegisterScrollInfoProc( iTXNObject: TXNObject; iTXNScrollInfoUPP: TXNScrollInfoUPP; iRefCon: SRefCon ); external name '_TXNRegisterScrollInfoProc';
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   in Textension not yet available
  }
 procedure TXNRegisterScrollInfoProc( iTXNObject: TXNObject; iTXNScrollInfoUPP: TXNScrollInfoUPP; iRefCon: SInt32 ); external name '_TXNRegisterScrollInfoProc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
@@ -5999,10 +6661,14 @@ procedure TXNRegisterScrollInfoProc( iTXNObject: TXNObject; iTXNScrollInfoUPP: T
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6048,10 +6714,14 @@ function TXNSetScrollbarState( iTXNObject: TXNObject; iActiveState: TXNScrollBar
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6093,10 +6763,14 @@ function TXNHIPointToOffset( iTXNObject: TXNObject; const (*var*) iHIPoint: HIPo
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6145,10 +6819,14 @@ function TXNOffsetToHIPoint( iTXNObject: TXNObject; iOffset: TXNOffset; var oHIP
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -6190,10 +6868,14 @@ function TXNDragTracker( iTXNObject: TXNObject; iTXNFrameID: TXNFrameID; iMessag
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -6206,10 +6888,13 @@ function TXNDragReceiver( iTXNObject: TXNObject; iTXNFrameID: TXNFrameID; iWindo
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  TXNCommandEventSupportOptions
@@ -6220,10 +6905,14 @@ function TXNDragReceiver( iTXNObject: TXNObject; iTXNFrameID: TXNFrameID; iWindo
  }
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	TXNCommandEventSupportOptions = OptionBits;
 =======
 	TXNCommandEventSupportOptions = UInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+	TXNCommandEventSupportOptions = UInt32;
+>>>>>>> origin/fixes_2_2
 const
 {
    * Setting this bit enables processing for these HICommands:
@@ -6260,6 +6949,7 @@ const
   {
    * Turns on support for spell checking.  The spell checking commands
 <<<<<<< HEAD
+<<<<<<< HEAD
    * supported are kHICommandShowSpellingPanel,
    * kHICommandCheckSpelling, kHICommandChangeSpelling,
    * kHICommandCheckSpellingAsYouType, kHICommandIgnoreSpelling, and
@@ -6269,6 +6959,11 @@ const
    * ('cksp'), Change Spelling ('chsp'), enable check spelling as you
    * type ('aspc'), ignore spelling ('igsp'), learn spelling ('lrwd').
 >>>>>>> graemeg/fixes_2_2
+=======
+   * supported are: Show Spelling Panel ('shsp'), Check Spelling
+   * ('cksp'), Change Spelling ('chsp'), enable check spelling as you
+   * type ('aspc'), ignore spelling ('igsp'), learn spelling ('lrwd').
+>>>>>>> origin/fixes_2_2
    }
 	kTXNSupportSpellCheckCommandProcessing = 1 shl 2;
 
@@ -6283,10 +6978,14 @@ const
    * Change Spelling:  Typically this is not included in a spelling
    * menu.  If it is included it is enabled if the current selection is
 <<<<<<< HEAD
+<<<<<<< HEAD
    * a misspelled word.  It is disabled if the current selection is
 =======
    * a missspelled word.  It is disabled if the current selection is
 >>>>>>> graemeg/fixes_2_2
+=======
+   * a missspelled word.  It is disabled if the current selection is
+>>>>>>> origin/fixes_2_2
    * empty or is not a misspelled word. 
    * 
    * Check Spelling as You Type:  This item is always enabled.  It is
@@ -6327,9 +7026,12 @@ const
 	kTXNSupportFontCommandUpdating = 1 shl 5;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  TXNSetCommandEventSupport()
  *  
@@ -6369,10 +7071,14 @@ const
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6404,10 +7110,14 @@ function TXNSetCommandEventSupport( iTXNObject: TXNObject; iOptions: TXNCommandE
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6440,10 +7150,14 @@ function TXNGetCommandEventSupport( iTXNObject: TXNObject; var oOptions: TXNComm
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6473,10 +7187,14 @@ function TXNSetSpellCheckAsYouType( iTXNObject: TXNObject; iActivate: Boolean ):
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6522,9 +7240,12 @@ function TXNGetSpellCheckAsYouType( iTXNObject: TXNObject ): Boolean; external n
  *     kEventTSMDocumentAccessGetFont 
  *     kEventTSMDocumentAccessGetGlyphInfo 
 <<<<<<< HEAD
+<<<<<<< HEAD
  *     kEventTSMDocumentAccessGetFirstRectForRange 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *    
  *    For kEventClassFont: 
  *    kEventFontPanelClosed 
@@ -6571,10 +7292,14 @@ function TXNGetSpellCheckAsYouType( iTXNObject: TXNObject ): Boolean; external n
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6609,10 +7334,14 @@ function TXNSetEventTarget( iTXNObject: TXNObject; iEventTarget: HIObjectRef { c
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6656,10 +7385,14 @@ function TXNGetEventTarget( iTXNObject: TXNObject; var oEventTarget: HIObjectRef
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6740,10 +7473,14 @@ function TXNSetContextualMenuSetup( iTXNObject: TXNObject; iMenuSetupProc: TXNCo
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6753,6 +7490,7 @@ function TXNGetAccessibilityHIObject( iTXNObject: TXNObject; var oHIObjectRef: H
 
 { **************************************************************************************************** }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {                                  ¥  DEPRECATED ¥                                                     }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -6816,6 +7554,8 @@ const
 
 {
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {                                  ¥ HITEXTVIEW APIs ¥                                                 }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 { **************************************************************************************************** }
@@ -6987,7 +7727,10 @@ function HITextViewCopyBackgroundColor( inTextView: HIViewRef; var outColor: CGC
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 
 {
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  TXTNTag
  *  
  *  Summary:
@@ -7048,6 +7791,7 @@ const
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Deprecated all QD TXNTypeRunAttributes & TXNTypeRunAttributeSizes constants.}
 const
 	kTXNQDFontNameAttribute = FourCharCode('fntn');
@@ -7064,6 +7808,8 @@ const
 	kTXNQDFontStyleAttributeSize = SizeOf(Style);
 	kTXNQDFontColorAttributeSize = SizeOf(RGBColor);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
     Deprecated TXNTypeRunAttributes and TXNTypeRunAttributeSizes constants.
     kTXNQDFontSizeAttribute is obsolete.  Incorrect font sizes are always returned as a Fixed
@@ -7076,7 +7822,10 @@ const
 const
 	kTXNQDFontSizeAttributeSize = SizeOf(SInt16);
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Deprecated QuickDraw imaging constants.
@@ -7141,12 +7890,18 @@ const
 	kTXNRestartAppleEventHandlersMask = 1 shl kTXNRestartAppleEventHandlersBit;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { Use kTXNFontMenuObjectKey}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kTXNFontMenuRefKey CFSTRP('FontMenuRef')}
 {$endc}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  TXNActionKey
@@ -7154,10 +7909,14 @@ const
  }
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	TXNActionKeyPtr = ^TXNActionKey; { when a VAR xx: TXNActionKey parameter can be nil, it is changed to xx: TXNActionKeyPtr }
 =======
 	TXNActionKeyPtr				= ^TXNActionKey; { when a VAR xx: TXNActionKey parameter can be nil, it is changed to xx: TXNActionKeyPtr }
 >>>>>>> graemeg/fixes_2_2
+=======
+	TXNActionKeyPtr				= ^TXNActionKey; { when a VAR xx: TXNActionKey parameter can be nil, it is changed to xx: TXNActionKeyPtr }
+>>>>>>> origin/fixes_2_2
 	TXNActionKey = UInt32;
 const
 	kTXNTypingAction = 0;
@@ -7251,9 +8010,12 @@ const
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  TXNSetViewRect()   *** DEPRECATED ***
  *  
@@ -7278,10 +8040,14 @@ const
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.2
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.2
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.2
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in Textension 1.3 and later
  }
@@ -7293,9 +8059,13 @@ procedure TXNSetViewRect( iTXNObject: TXNObject; const (*var*) iViewRect: Rect )
 {  ¥ DEPRECATED APIs, Mac OS X version 10.3 and later                                                  }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 {
  *  TXNNewObject()   *** DEPRECATED ***
  *  
@@ -7382,10 +8152,14 @@ procedure TXNSetViewRect( iTXNObject: TXNObject; const (*var*) iViewRect: Rect )
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -7409,10 +8183,14 @@ function TXNNewObject( {const} iFileSpec: FSSpecPtr { can be NULL }; iWindow: Wi
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -7454,12 +8232,17 @@ procedure TXNTerminateTextension; external name '_TXNTerminateTextension';
  *      Further note that if you you just want Textension to read a
  *      file and you are not interested in embedding you can just pass
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      kTXNEndOffset, and Textension will use the file manager to
  *      determine the files length.
 =======
  *      kTXNEndOffset(0x7FFFFFFF), and Textension will use the file
  *      manager to determine the files length.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      kTXNEndOffset(0x7FFFFFFF), and Textension will use the file
+ *      manager to determine the files length.
+>>>>>>> origin/fixes_2_2
  *    
  *    iStartOffset:
  *      Start position at which to insert the file into the document.
@@ -7472,10 +8255,14 @@ procedure TXNTerminateTextension; external name '_TXNTerminateTextension';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -7505,10 +8292,14 @@ function TXNSetDataFromFile( iTXNObject: TXNObject; iFileRefNum: SInt16; iFileTy
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -7540,10 +8331,14 @@ function TXNConvertToPublicScrap: OSStatus; external name '_TXNConvertToPublicSc
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -7588,10 +8383,14 @@ function TXNConvertFromPublicScrap: OSStatus; external name '_TXNConvertFromPubl
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -7638,10 +8437,14 @@ procedure TXNDraw( iTXNObject: TXNObject; iDrawPort: GWorldPtr { can be NULL } )
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -7672,10 +8475,14 @@ function TXNAttachObjectToWindow( iTXNObject: TXNObject; iWindow: GWorldPtr; iIs
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -7713,10 +8520,14 @@ function TXNIsObjectAttachedToWindow( iTXNObject: TXNObject ): Boolean; external
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in Textension 1.2 and later
  }
@@ -7759,10 +8570,14 @@ function TXNIsObjectAttachedToSpecificWindow( iTXNObject: TXNObject; iWindow: Wi
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.1 and later in Carbon.framework but deprecated in 10.3
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.5 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7807,10 +8622,14 @@ procedure TXNSetRectBounds( iTXNObject: TXNObject; {const} iViewRect: RectPtr { 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.1 and later in Carbon.framework but deprecated in 10.3
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.5 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7861,10 +8680,14 @@ function TXNGetRectBounds( iTXNObject: TXNObject; oViewRect: RectPtr { can be NU
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -7898,10 +8721,14 @@ function TXNActivate( iTXNObject: TXNObject; iTXNFrameID: TXNFrameID; iActiveSta
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in Textension 1.1 and later
  }
@@ -7927,6 +8754,7 @@ function TXNPointToOffset( iTXNObject: TXNObject; iPoint: Point; var oOffset: TX
  *      An offset.
  *    
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    oPoint:
  *      Point corresponding to the offset.
  *  
@@ -7942,6 +8770,8 @@ function TXNPointToOffset( iTXNObject: TXNObject; iPoint: Point; var oOffset: TX
 function TXNOffsetToPoint( iTXNObject: TXNObject; iOffset: TXNOffset; var oPoint: Point ): OSStatus; external name '_TXNOffsetToPoint';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    oPoint:
  *      Point corresponding to the offset.
  *  
@@ -7989,7 +8819,10 @@ function TXNOffsetToPoint( iTXNObject: TXNObject; iOffset: TXNOffset; var oPoint
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -8026,10 +8859,14 @@ function TXNOffsetToPoint( iTXNObject: TXNObject; iOffset: TXNOffset; var oPoint
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -8066,10 +8903,14 @@ function TXNCanUndo( iTXNObject: TXNObject; oTXNActionKey: TXNActionKeyPtr { can
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -8111,10 +8952,14 @@ function TXNCanRedo( iTXNObject: TXNObject; oTXNActionKey: TXNActionKeyPtr { can
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.1 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in Textension 1.3 and later
  }
@@ -8151,10 +8996,14 @@ function TXNGetActionChangeCount( iTXNObject: TXNObject; iOptions: TXNCountOptio
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.1 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in Textension 1.3 and later
  }
@@ -8204,10 +9053,14 @@ function TXNClearActionChangeCount( iTXNObject: TXNObject; iOptions: TXNCountOpt
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -8271,10 +9124,14 @@ function TXNSetDataFromCFURLRef( iTXNObject: TXNObject; iURL: CFURLRef; iStartOf
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Textension 1.0 and later
  }
@@ -8282,6 +9139,7 @@ function TXNSave( iTXNObject: TXNObject; iType: TXNFileType; iResType: OSType; i
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  ¥ DEPRECATED APIs, Mac OS X version 10.5 and later                                                  }
@@ -8571,3 +9429,6 @@ end.
 =======
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+end.
+>>>>>>> origin/fixes_2_2

@@ -200,6 +200,7 @@ const
   HDN_GETDISPINFO = HDN_GETDISPINFOW;
      
 <<<<<<< HEAD
+<<<<<<< HEAD
   // MONTHCAL CONTROL
   MONTHCAL_CLASS        = 'SysMonthCal32';
   MCM_FIRST             = $1000;
@@ -276,6 +277,8 @@ const
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   // DATETIMEPICK CONTROL
   DATETIMEPICK_CLASS  ='SysDateTimePick32';
   DTM_FIRST           = $1000;
@@ -471,16 +474,20 @@ const
   RBHT_GRABBER = $0004;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   CMDBAR_HELP  = $000B;
   CMDBAR_OK    = $F000;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 //*****************************************************************************
 // types
 //*****************************************************************************
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
   // MONTHCAL CONTROL
   MONTHDAYSTATE   = DWORD;
@@ -518,6 +525,8 @@ type
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   // DATETIMEPICK CONTROL
   tagNMDATETIMECHANGE = record
     nmhdr   : NMHDR;

@@ -74,7 +74,10 @@ threadvar
   softfloat_exception_mask : Byte;
   softfloat_exception_flags : Byte;
   softfloat_rounding_mode : Byte;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {*
 -------------------------------------------------------------------------------

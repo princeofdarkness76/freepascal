@@ -355,10 +355,14 @@ var
   PX_get_data_double : function(pxdoc:Ppxdoc_t; data:pcchar; len:cint; value:Pdouble):cint;cdecl;
   PX_get_data_long : function(pxdoc:Ppxdoc_t; data:pcchar; len:cint; value:pclong):cint;cdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
   PX_get_data_short : function(pxdoc:Ppxdoc_t; data:pcchar; len:cint; value:pcsshort):cint;cdecl;
 =======
   PX_get_data_short : function(pxdoc:Ppxdoc_t; data:pcchar; len:cint; value:pcsint):cint;cdecl;
 >>>>>>> graemeg/fixes_2_2
+=======
+  PX_get_data_short : function(pxdoc:Ppxdoc_t; data:pcchar; len:cint; value:pcsint):cint;cdecl;
+>>>>>>> origin/fixes_2_2
   PX_get_data_byte : function(pxdoc:Ppxdoc_t; data:pcchar; len:cint; value:pcchar):cint;cdecl;
   PX_get_data_bcd : function(pxdoc:Ppxdoc_t; data:pcuchar; len:cint; value:Ppcchar):cint;cdecl;
   PX_get_data_blob : function(pxdoc:Ppxdoc_t; data:pcchar; len:cint; _mod:pcint; blobsize:pcint; 
@@ -370,6 +374,7 @@ var
   PX_put_data_double : procedure(pxdoc:Ppxdoc_t; data:pcchar; len:cint; value:double);cdecl;
   PX_put_data_long : procedure(pxdoc:Ppxdoc_t; data:pcchar; len:cint; value:cint);cdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
   PX_put_data_short : procedure(pxdoc:Ppxdoc_t; data:pcchar; len:cint; value:csshort);cdecl;
   PX_put_data_byte : procedure(pxdoc:Ppxdoc_t; data:pcchar; len:cint; value:cchar);cdecl;
   PX_put_data_bcd : procedure(pxdoc:Ppxdoc_t; data:pcchar; len:cint; value:pcchar);cdecl;
@@ -378,12 +383,17 @@ var
   PX_SdnToGregorian : procedure(sdn:clong; pYear:pcint; pMonth:pcint; pDay:pcint);cdecl;
 {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   PX_put_data_short : procedure(pxdoc:Ppxdoc_t; data:pcchar; len:cint; value:csint);cdecl;
   PX_put_data_byte : procedure(pxdoc:Ppxdoc_t; data:pcchar; len:cint; value:cchar);cdecl;
   PX_put_data_bcd : procedure(pxdoc:Ppxdoc_t; data:pcchar; len:cint; value:pcchar);cdecl;
   PX_put_data_blob : function(pxdoc:Ppxdoc_t; data:pcchar; len:cint; value:pcchar; valuelen:cint):cint;cdecl;
   PX_SdnToGregorian : procedure(sdn:clong; pYear:pcint; pMonth:pcint; pDay:pcint);cdecl;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   PX_GregorianToSdn : function(year:cint; month:cint; day:cint):clong;cdecl;
   PX_make_time : function(pxdoc:Ppxdoc_t; hour:cint; minute:cint; second:cint):Ppxval_t;cdecl;
   PX_make_date : function(pxdoc:Ppxdoc_t; year:cint; month:cint; day:cint):Ppxval_t;cdecl;
@@ -487,12 +497,16 @@ begin
   PX_put_data_bcd:=nil;
   PX_put_data_blob:=nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef windows}
   PX_SdnToGregorian:=nil;
 {$endif}  
 =======
   PX_SdnToGregorian:=nil;
 >>>>>>> graemeg/fixes_2_2
+=======
+  PX_SdnToGregorian:=nil;
+>>>>>>> origin/fixes_2_2
   PX_GregorianToSdn:=nil;
   PX_make_time:=nil;
   PX_make_date:=nil;
@@ -584,12 +598,16 @@ begin
   pointer(PX_put_data_bcd):=GetProcAddress(hlib,'PX_put_data_bcd');
   pointer(PX_put_data_blob):=GetProcAddress(hlib,'PX_put_data_blob');
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef windows}
   pointer(PX_SdnToGregorian):=GetProcAddress(hlib,'PX_SdnToGregorian');
 {$endif windows}  
 =======
   pointer(PX_SdnToGregorian):=GetProcAddress(hlib,'PX_SdnToGregorian');
 >>>>>>> graemeg/fixes_2_2
+=======
+  pointer(PX_SdnToGregorian):=GetProcAddress(hlib,'PX_SdnToGregorian');
+>>>>>>> origin/fixes_2_2
   pointer(PX_GregorianToSdn):=GetProcAddress(hlib,'PX_GregorianToSdn');
   pointer(PX_make_time):=GetProcAddress(hlib,'PX_make_time');
   pointer(PX_make_date):=GetProcAddress(hlib,'PX_make_date');

@@ -107,7 +107,10 @@ procedure SysOSFree (P: pointer; Size: ptruint);
 =======
 procedure SysOSFree (P: pointer; Size: PtrInt);
 {$IFDEF EXTDUMPGROW}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   RC: cardinal;
 {$ENDIF EXTDUMPGROW}
@@ -119,17 +122,23 @@ begin
   RC :=
 {$ENDIF EXTDUMPGROW}
 <<<<<<< HEAD
+<<<<<<< HEAD
   RC := DosFreeMem (P);
   if RC <> 0 then
    begin
     OSErrorWatch (RC);
 {$IFDEF EXTDUMPGROW}
 =======
+=======
+>>>>>>> origin/fixes_2_2
         DosFreeMem (P);
 {$IFDEF EXTDUMPGROW}
   if RC <> 0 then
    begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     WriteLn ('Error ', RC, ' during memory deallocation (DosFreeMem)!');
     WriteLn ('Total allocated memory is ', Int_HeapSize);
 {$ENDIF EXTDUMPGROW}

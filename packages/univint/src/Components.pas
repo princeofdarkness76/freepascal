@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/Components.h
  
      Contains:   Component Manager Interfaces.
@@ -23,6 +24,8 @@
  
      Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved.
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       Components.p
  
      Contains:   Component Manager Interfaces.
@@ -31,7 +34,10 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1991-2002 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -39,6 +45,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
@@ -59,6 +66,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -67,7 +76,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -77,12 +89,17 @@
 unit Components;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -96,14 +113,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -112,11 +134,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -154,6 +179,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -161,6 +188,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -388,6 +416,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -396,7 +426,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -423,9 +456,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -435,6 +472,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,MacErrors,Files,MixedMode,Resources;
 {$endc} {not MACOSALLINCLUDE}
@@ -455,11 +493,16 @@ uses MacTypes,MacErrors,Files,MixedMode,Resources;
 uses MacTypes,MacErrors,MixedMode,Files;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,MacErrors,MixedMode,Files;
+
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
 
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kAppleManufacturer = FourCharCode('appl'); { Apple supplied components }
 	kComponentResourceType = FourCharCode('thng'); { a components resource type }
@@ -510,6 +553,8 @@ const
 const
 	registerComponentGlobal = 1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kAppleManufacturer			= FourCharCode('appl');						{  Apple supplied components  }
 	kComponentResourceType		= FourCharCode('thng');						{  a components resource type  }
 	kComponentAliasResourceType	= FourCharCode('thga');						{  component alias resource type  }
@@ -551,7 +596,10 @@ const
 
 	{	 RegisterComponentResource flags 	}
 	registerComponentGlobal		= 1;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	registerComponentNoDuplicates = 2;
 	registerComponentAfterExisting = 4;
 	registerComponentAliasesOnly = 8;
@@ -560,6 +608,7 @@ const
 type
 	ComponentDescriptionPtr = ^ComponentDescription;
 	ComponentDescription = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		componentType: OSType;          { A unique 4-byte code indentifying the command set }
 		componentSubType: OSType;       { Particular flavor of this instance }
@@ -907,6 +956,8 @@ procedure DisposeComponentFunctionUPP( userUPP: ComponentFunctionUPP ); external
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		componentType:			OSType;									{  A unique 4-byte code indentifying the command set  }
 		componentSubType:		OSType;									{  Particular flavor of this instance  }
 		componentManufacturer:	OSType;									{  Vendor indentification  }
@@ -1112,7 +1163,10 @@ procedure DisposeComponentFunctionUPP(userUPP: ComponentFunctionUPP); external n
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {*******************************************************
@@ -1126,6 +1180,7 @@ procedure DisposeComponentFunctionUPP(userUPP: ComponentFunctionUPP); external n
 {
  *  RegisterComponent()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
@@ -1383,6 +1438,9 @@ function GetComponentTypeModSeed( componentType: OSType ): SInt32; external name
 =======
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1397,6 +1455,97 @@ function RegisterComponent(var cd: ComponentDescription; componentEntryPoint: Co
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+function RegisterComponentResource(cr: ComponentResourceHandle; global: SInt16): Component; external name '_RegisterComponentResource';
+{
+ *  UnregisterComponent()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function UnregisterComponent(aComponent: Component): OSErr; external name '_UnregisterComponent';
+{
+ *  FindNextComponent()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function FindNextComponent(aComponent: Component; var looking: ComponentDescription): Component; external name '_FindNextComponent';
+{
+ *  CountComponents()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CountComponents(var looking: ComponentDescription): SInt32; external name '_CountComponents';
+{
+ *  GetComponentInfo()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetComponentInfo(aComponent: Component; var cd: ComponentDescription; componentName: Handle; componentInfo: Handle; componentIcon: Handle): OSErr; external name '_GetComponentInfo';
+{
+ *  GetComponentListModSeed()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetComponentListModSeed: SInt32; external name '_GetComponentListModSeed';
+{
+ *  GetComponentTypeModSeed()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetComponentTypeModSeed(componentType: OSType): SInt32; external name '_GetComponentTypeModSeed';
+{*******************************************************
+* Component Instance Allocation and dispatch routines
+*******************************************************}
+{
+ *  OpenAComponent()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
+>>>>>>> origin/fixes_2_2
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function RegisterComponent(var cd: ComponentDescription; componentEntryPoint: ComponentRoutineUPP; global: SInt16; componentName: Handle; componentInfo: Handle; componentIcon: Handle): Component; external name '_RegisterComponent';
+{
+ *  RegisterComponentResource()
+=======
+function OpenAComponent(aComponent: Component; var ci: ComponentInstance): OSErr; external name '_OpenAComponent';
+{
+ *  OpenComponent()
+>>>>>>> origin/fixes_2_2
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
 function RegisterComponentResource(cr: ComponentResourceHandle; global: SInt16): Component; external name '_RegisterComponentResource';
 {
  *  UnregisterComponent()
@@ -1611,6 +1760,11 @@ function OpenAComponent(aComponent: Component; var ci: ComponentInstance): OSErr
 function OpenComponent(aComponent: Component): ComponentInstance; external name '_OpenComponent';
 {
  *  CloseComponent()
+=======
+function OpenComponent(aComponent: Component): ComponentInstance; external name '_OpenComponent';
+{
+ *  CloseComponent()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -1629,13 +1783,17 @@ function CloseComponent(aComponentInstance: ComponentInstance): OSErr; external 
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function GetComponentInstanceError(aComponentInstance: ComponentInstance): OSErr; external name '_GetComponentInstanceError';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {*******************************************************
 * Component aliases
 *******************************************************}
 {
  *  ResolveComponentAlias()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
@@ -1667,6 +1825,8 @@ function ResolveComponentAlias( aComponent: Component ): Component; external nam
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib via QuickTime 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1674,7 +1834,10 @@ function ResolveComponentAlias( aComponent: Component ): Component; external nam
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ResolveComponentAlias(aComponent: Component): Component; external name '_ResolveComponentAlias';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {*******************************************************
 * Component public resources and public string lists
 *******************************************************}
@@ -1682,6 +1845,7 @@ function ResolveComponentAlias(aComponent: Component): Component; external name 
 {
  *  GetComponentPublicResource()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
@@ -1774,6 +1938,8 @@ function GetComponentPublicIndString( aComponent: Component; var theString: Str2
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib via QuickTime 4.0 and later
  *    CarbonLib:        in CarbonLib 1.0.2 and later
@@ -1798,7 +1964,10 @@ function GetComponentPublicResourceList(resourceType: OSType; resourceID: SInt16
  *    Mac OS X:         in version 10.0 and later
  }
 function GetComponentPublicIndString(aComponent: Component; var theString: Str255; strListID: SInt16; index: SInt16): OSErr; external name '_GetComponentPublicIndString';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {*******************************************************
 *                                                       *
 *                   CALLS MADE BY COMPONENTS            *
@@ -1810,6 +1979,7 @@ function GetComponentPublicIndString(aComponent: Component; var theString: Str25
 {
  *  SetComponentInstanceError()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.4
@@ -2001,6 +2171,8 @@ function CloseComponentResFile( refnum: ResFileRefNum ): OSErr; external name '_
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2058,11 +2230,15 @@ function OpenAComponentResFile(aComponent: Component; var resRef: SInt16): OSErr
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function CloseComponentResFile(refnum: SInt16): OSErr; external name '_CloseComponentResFile';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { Note: GetComponentResource returns a Handle, not a resource.  The caller must dispose it with DisposeHandle. }
 {
  *  GetComponentResource()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
@@ -2126,6 +2302,8 @@ function GetComponentIndString( aComponent: Component; var theString: Str255; st
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib via QuickTime 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2137,6 +2315,7 @@ function GetComponentResource(aComponent: Component; resType: OSType; resID: SIn
  *  GetComponentIndString()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib via QuickTime 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -2818,6 +2997,105 @@ function RegisterComponentFileRefEntries( const (*var*) ref: FSRef; global: SInt
 
 =======
  *  Availability:
+=======
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetComponentIndString(aComponent: Component; var theString: Str255; strListID: SInt16; index: SInt16): OSErr; external name '_GetComponentIndString';
+{*******************************************************
+* Component Instance Management routines
+*******************************************************}
+{
+ *  GetComponentInstanceStorage()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetComponentInstanceStorage(aComponentInstance: ComponentInstance): Handle; external name '_GetComponentInstanceStorage';
+{
+ *  SetComponentInstanceStorage()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+procedure SetComponentInstanceStorage(aComponentInstance: ComponentInstance; theStorage: Handle); external name '_SetComponentInstanceStorage';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  GetComponentInstanceA5()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetComponentInstanceA5(aComponentInstance: ComponentInstance): SInt32; external name '_GetComponentInstanceA5';
+{
+ *  SetComponentInstanceA5()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+procedure SetComponentInstanceA5(aComponentInstance: ComponentInstance; theA5: SInt32); external name '_SetComponentInstanceA5';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  CountComponentInstances()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CountComponentInstances(aComponent: Component): SInt32; external name '_CountComponentInstances';
+{ useful helper routines for convenient method dispatching }
+{
+ *  CallComponentFunction()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function CallComponentFunction(var params: ComponentParameters; func: ComponentFunctionUPP): SInt32; external name '_CallComponentFunction';
+{
+ *  CallComponentFunctionWithStorage()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CallComponentFunctionWithStorage(storage: Handle; var params: ComponentParameters; func: ComponentFunctionUPP): SInt32; external name '_CallComponentFunctionWithStorage';
+
+{
+ *  CallComponentFunctionWithStorageProcInfo()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function CallComponentFunctionWithStorageProcInfo(storage: Handle; var params: ComponentParameters; func: ProcPtr; funcProcInfo: ProcInfoType): SInt32; external name '_CallComponentFunctionWithStorageProcInfo';
+
+{
+ *  DelegateComponentCall()
+ *  
+ *  Availability:
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -2894,12 +3172,16 @@ function RegisterComponentResourceFile(resRefNum: SInt16; global: SInt16): SInt3
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function GetComponentIconSuite(aComponent: Component; var iconSuite: Handle): OSErr; external name '_GetComponentIconSuite';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {*******************************************************
 *                                                       *
 *           Direct calls to the Components              *
 *                                                       *
 *******************************************************}
+<<<<<<< HEAD
 <<<<<<< HEAD
 { Old style names}
 
@@ -3004,6 +3286,8 @@ function ComponentSetTarget( ci: ComponentInstance; target: ComponentInstance ):
 
 {$endc} {not TARGET_CPU_64}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {  Old style names }
 
 {
@@ -3037,11 +3321,15 @@ function GetComponentVersion(ci: ComponentInstance): SInt32; external name '_Get
  }
 function ComponentSetTarget(ci: ComponentInstance; target: ComponentInstance): SInt32; external name '_ComponentSetTarget';
 {  New style names }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  CallComponentOpen()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
@@ -3327,6 +3615,8 @@ function CallComponentGetPublicResource( ci: ComponentInstance; resourceType: OS
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3431,7 +3721,10 @@ function CallComponent(ci: ComponentInstance; var cp: ComponentParameters): Comp
 
 {$endc}  {CALL_NOT_IN_CARBON}
 {$endc}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     CallComponentDispatch is a CarbonLib routine that replaces CallComponent inline glue
@@ -3440,6 +3733,7 @@ function CallComponent(ci: ComponentInstance; var cp: ComponentParameters): Comp
 {
  *  CallComponentDispatch()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
@@ -3498,6 +3792,8 @@ function NewComponentMPWorkFunctionUPP( userRoutine: ComponentMPWorkFunctionProc
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3521,11 +3817,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewComponentMPWorkFunctionUPP(userRoutine: ComponentMPWorkFunctionProcPtr): ComponentMPWorkFunctionUPP; external name '_NewComponentMPWorkFunctionUPP'; { old name was NewComponentMPWorkFunctionProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewComponentRoutineUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3551,16 +3851,22 @@ function NewComponentRoutineUPP( userRoutine: ComponentRoutineProcPtr ): Compone
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewComponentRoutineUPP(userRoutine: ComponentRoutineProcPtr): ComponentRoutineUPP; external name '_NewComponentRoutineUPP'; { old name was NewComponentRoutineProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewGetMissingComponentResourceUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3586,16 +3892,22 @@ function NewGetMissingComponentResourceUPP( userRoutine: GetMissingComponentReso
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewGetMissingComponentResourceUPP(userRoutine: GetMissingComponentResourceProcPtr): GetMissingComponentResourceUPP; external name '_NewGetMissingComponentResourceUPP'; { old name was NewGetMissingComponentResourceProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeComponentMPWorkFunctionUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3621,16 +3933,22 @@ procedure DisposeComponentMPWorkFunctionUPP( userUPP: ComponentMPWorkFunctionUPP
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeComponentMPWorkFunctionUPP(userUPP: ComponentMPWorkFunctionUPP); external name '_DisposeComponentMPWorkFunctionUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeComponentRoutineUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3656,16 +3974,22 @@ procedure DisposeComponentRoutineUPP( userUPP: ComponentRoutineUPP ); external n
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeComponentRoutineUPP(userUPP: ComponentRoutineUPP); external name '_DisposeComponentRoutineUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeGetMissingComponentResourceUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3691,16 +4015,22 @@ procedure DisposeGetMissingComponentResourceUPP( userUPP: GetMissingComponentRes
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeGetMissingComponentResourceUPP(userUPP: GetMissingComponentResourceUPP); external name '_DisposeGetMissingComponentResourceUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeComponentMPWorkFunctionUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3726,16 +4056,22 @@ function InvokeComponentMPWorkFunctionUPP( globalRefCon: UnivPtr; header: Compon
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeComponentMPWorkFunctionUPP(globalRefCon: UnivPtr; header: ComponentMPWorkFunctionHeaderRecordPtr; userRoutine: ComponentMPWorkFunctionUPP): ComponentResult; external name '_InvokeComponentMPWorkFunctionUPP'; { old name was CallComponentMPWorkFunctionProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeComponentRoutineUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3761,16 +4097,22 @@ function InvokeComponentRoutineUPP( var cp: ComponentParameters; componentStorag
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeComponentRoutineUPP(var cp: ComponentParameters; componentStorage: Handle; userRoutine: ComponentRoutineUPP): ComponentResult; external name '_InvokeComponentRoutineUPP'; { old name was CallComponentRoutineProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeGetMissingComponentResourceUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3819,6 +4161,8 @@ const
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -3831,4 +4175,7 @@ function InvokeGetMissingComponentResourceUPP(c: Component; resType: OSType; res
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

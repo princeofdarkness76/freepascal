@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 { CoreGraphics - CGRemoteOperation.h
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -40,6 +41,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CGRemoteOperation.h
  *  CoreGraphics
@@ -54,7 +57,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -64,12 +70,17 @@
 unit CGRemoteOperation;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -83,14 +94,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -99,11 +115,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -141,6 +160,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -148,6 +169,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -388,6 +410,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -396,7 +420,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -423,9 +450,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -437,16 +468,20 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFMachPort,CGBase,CGGeometry,CGErrors,CFDate;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
 type
 	CGEventErr = CGError;
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 	CGEventNoErr				= kCGErrorSuccess;
 
@@ -703,6 +738,8 @@ type
 	CGScreenUpdateOperation = UInt32;
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	CGEventNoErr				= 0;
 
 
@@ -771,11 +808,15 @@ function CGWaitForScreenRefreshRects( var pRectArray: {variable-size-array} CGRe
  }
 type
 	CGScreenUpdateOperation = SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kCGScreenUpdateOperationRefresh = 0;
 	kCGScreenUpdateOperationMove = 1 shl 0;
 	kCGScreenUpdateOperationReducedDirtyRectangleCount = 1 shl 31;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 type
@@ -812,6 +853,8 @@ type
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Move operation notifications are restricted to changes that move a region by
@@ -823,12 +866,16 @@ type
  * Positive values of dY indicate movement downward.
  * Negative values of dY indicate movement upward.
  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type
 	CGScreenUpdateMoveDelta = record
 		dX, dY: SInt32;
 	end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1326,6 +1373,8 @@ function CGEnableEventStateCombining( combineState: boolean_t ): CGError; extern
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6,
     __IPHONE_NA, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  * Move operation callback function pointer;
  * Declare your callback function in this form.  When an area of the display is
@@ -1481,7 +1530,10 @@ function CGPostKeyboardEvent( keyChar: CGCharCode; virtualKey: CGKeyCode; keyDow
  * coordinates without generating events
  }
 function CGWarpMouseCursorPosition( newCursorPosition: CGPoint ): CGError; external name '_CGWarpMouseCursorPosition';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Remote operation may want to inhibit local events (events from
@@ -1495,6 +1547,7 @@ function CGWarpMouseCursorPosition( newCursorPosition: CGPoint ): CGError; exter
  *
  * Local event inhibition is turned off if the app that requested it terminates.
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 { This function obsolete. Use
@@ -1696,6 +1749,8 @@ function CGAssociateMouseAndMouseCursorPosition( connected: boolean_t ): CGError
 function CGWindowServerCFMachPort: CFMachPortRef; external name '_CGWindowServerCFMachPort';
 (* CG_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function CGInhibitLocalEvents( doInhibit: boolean_t ): CGError; external name '_CGInhibitLocalEvents';
 
 {
@@ -1703,7 +1758,10 @@ function CGInhibitLocalEvents( doInhibit: boolean_t ): CGError; external name '_
  * are suppressed after posting an event.  Defaults to 0.25 second.
  }
 function CGSetLocalEventsSuppressionInterval( seconds: CFTimeInterval ): CGError; external name '_CGSetLocalEventsSuppressionInterval';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * By default, the flags that indicate modifier key state (Command, Alt, Shift, etc.)
@@ -1721,6 +1779,7 @@ function CGSetLocalEventsSuppressionInterval( seconds: CFTimeInterval ): CGError
  * When called with doCombineState equal to TRUE, the current global state of keys, modifiers,
  * and mouse buttons are used in generating events.
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 { This function is obsolete. Use Quartz events and Quartz event sources
@@ -1849,6 +1908,9 @@ function CGPostKeyboardEvent( keyChar: CGCharCode; virtualKey: CGKeyCode; keyDow
 =======
 function CGEnableEventStateCombining( doCombineState: boolean_t ): CGError; external name '_CGEnableEventStateCombining';
 >>>>>>> graemeg/fixes_2_2
+=======
+function CGEnableEventStateCombining( doCombineState: boolean_t ): CGError; external name '_CGEnableEventStateCombining';
+>>>>>>> origin/fixes_2_2
 
 {
  * By default the system suppresses local hardware events from the keyboard and mouse during
@@ -1865,12 +1927,15 @@ function CGEnableEventStateCombining( doCombineState: boolean_t ): CGError; exte
  * with the next event your app posts.
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 { A type specifying masks for classes of low-level events that can be
    filtered during event suppression states. }
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kCGEventFilterMaskPermitLocalMouseEvents = $00000001;  { Mouse, scroll wheel }
 	kCGEventFilterMaskPermitLocalKeyboardEvents = $00000002;  { Alphanumeric keys and Command, Option, Control, Shift, AlphaLock }
@@ -1880,6 +1945,7 @@ type
 
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kCGEventFilterMaskPermitAllEvents = $00000007;
 
 { A type specifying the event suppression states that can occur after
@@ -1888,12 +1954,15 @@ const
 const
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kCGEventSuppressionStateSuppressionInterval = 0;
 	kCGEventSuppressionStateRemoteMouseDrag = 1;
 	kCGNumberOfEventSuppressionStates = 2;
 type
 	CGEventSuppressionState = UInt32;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc TARGET_OS_MAC}
 
@@ -1987,6 +2056,8 @@ type
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kCGEventFilterMaskPermitAllEvents = $00000007;
 
@@ -2081,4 +2152,7 @@ function CGWindowServerCFMachPort: CFMachPortRef; external name '_CGWindowServer
 }
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

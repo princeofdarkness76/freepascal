@@ -79,6 +79,7 @@ unit typinfo;
       TTypeKinds = set of TTypeKind;
       ShortStringBase = string[255];
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       PVmtFieldEntry = ^TVmtFieldEntry;
       TVmtFieldEntry =
@@ -105,6 +106,8 @@ unit typinfo;
       end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$PACKRECORDS 1}
       TTypeInfo = record
@@ -174,12 +177,16 @@ unit typinfo;
             tkUnKnown,tkLString,tkWString,tkVariant,tkUString:
               ();
 <<<<<<< HEAD
+<<<<<<< HEAD
             tkAString:
               (CodePage: Word);
             tkInteger,tkChar,tkEnumeration,tkBool,tkWChar,tkSet:
 =======
             tkInteger,tkChar,tkEnumeration,tkWChar,tkSet:
 >>>>>>> graemeg/fixes_2_2
+=======
+            tkInteger,tkChar,tkEnumeration,tkWChar,tkSet:
+>>>>>>> origin/fixes_2_2
               (OrdType : TOrdType;
                case TTypeKind of
                   tkInteger,tkChar,tkEnumeration,tkBool,tkWChar : (
@@ -282,6 +289,7 @@ unit typinfo;
                IIDStr: ShortString;
               );
 <<<<<<< HEAD
+<<<<<<< HEAD
             tkArray:
               (ArrayData: TArrayTypeData);
             tkDynArray:
@@ -297,6 +305,8 @@ unit typinfo;
             tkPointer:
               (RefType: PTypeInfo);
 =======
+=======
+>>>>>>> origin/fixes_2_2
             tkDynArray:
               (
               elSize     : PtrUInt;
@@ -305,7 +315,10 @@ unit typinfo;
               elType     : PPTypeInfo;
               DynUnitName: ShortStringBase
               );
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
       TPropData =
@@ -454,6 +467,7 @@ function GetInterfaceProp(Instance: TObject; PropInfo: PPropInfo): IInterface;
 procedure SetInterfaceProp(Instance: TObject; const PropName: string; const Value: IInterface);
 procedure SetInterfaceProp(Instance: TObject; PropInfo: PPropInfo; const Value: IInterface);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function GetRawInterfaceProp(Instance: TObject; const PropName: string): Pointer;
 function GetRawInterfaceProp(Instance: TObject; PropInfo: PPropInfo): Pointer;
@@ -461,6 +475,8 @@ procedure SetRawInterfaceProp(Instance: TObject; const PropName: string; const V
 procedure SetRawInterfaceProp(Instance: TObject; PropInfo: PPropInfo; const Value: Pointer);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 // Auxiliary routines, which may be useful
 Function GetEnumName(TypeInfo : PTypeInfo;Value : Integer) : string;
@@ -484,6 +500,7 @@ Type
   TGetVariantProp = Function (Instance: TObject; PropInfo : PPropInfo): Variant;
   TSetVariantProp = Procedure (Instance: TObject; PropInfo : PPropInfo; const Value: Variant);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   EPropertyConvertError = class(Exception); // Not used (yet), but defined for compatibility.
 
@@ -492,6 +509,11 @@ Type
   EPropertyConvertError = class(Exception); // Not used (yet), but defined for compatibility.
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+  EPropertyConvertError = class(Exception); // Not used (yet), but defined for compatibility.
+  
+>>>>>>> origin/fixes_2_2
 Const
   OnGetPropValue   : TGetPropValue = Nil;
   OnSetPropValue   : TSetPropValue = Nil;
@@ -527,10 +549,14 @@ Function GetEnumName(TypeInfo : PTypeInfo;Value : Integer) : string;
 begin
   PT:=GetTypeData(TypeInfo);
 <<<<<<< HEAD
+<<<<<<< HEAD
   if TypeInfo^.Kind=tkBool then
 =======
   if TypeInfo^.Kind=tkBool then 
 >>>>>>> graemeg/fixes_2_2
+=======
+  if TypeInfo^.Kind=tkBool then 
+>>>>>>> origin/fixes_2_2
     begin
       case Value of
         0,1:
@@ -543,9 +569,12 @@ begin
    begin
      PS:=@PT^.NameList;
 <<<<<<< HEAD
+<<<<<<< HEAD
      dec(Value,PT^.MinValue);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      While Value>0 Do
        begin
          PS:=PShortString(pointer(PS)+PByte(PS)^+1);
@@ -571,12 +600,17 @@ begin
   Count:=0;
   Result:=-1;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   if TypeInfo^.Kind=tkBool then
 =======
   
   if TypeInfo^.Kind=tkBool then 
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+  if TypeInfo^.Kind=tkBool then 
+>>>>>>> origin/fixes_2_2
     begin
     If CompareText(BooleanIdents[false],Name)=0 then
       result:=0
@@ -586,18 +620,26 @@ begin
  else
    begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
      PS:=@PT^.NameList;
      While (Result=-1) and (PByte(PS)^<>0) do
        begin
          If ShortCompareText(PS^, sName) = 0 then
 <<<<<<< HEAD
+<<<<<<< HEAD
            Result:=Count+PT^.MinValue;
 =======
            Result:=Count;
 >>>>>>> graemeg/fixes_2_2
+=======
+           Result:=Count;
+>>>>>>> origin/fixes_2_2
          PS:=PShortString(pointer(PS)+PByte(PS)^+1);
          Inc(Count);
        end;
@@ -613,20 +655,28 @@ var
 begin
   PT:=GetTypeData(enum1);
 <<<<<<< HEAD
+<<<<<<< HEAD
   if enum1^.Kind=tkBool then
 =======
   if enum1^.Kind=tkBool then 
 >>>>>>> graemeg/fixes_2_2
+=======
+  if enum1^.Kind=tkBool then 
+>>>>>>> origin/fixes_2_2
     Result:=2
   else
     begin
       Count:=0;
       Result:=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> graemeg/fixes_2_2
+=======
+    
+>>>>>>> origin/fixes_2_2
       PS:=@PT^.NameList;
       While (PByte(PS)^<>0) do
         begin
@@ -634,12 +684,17 @@ begin
           Inc(Count);
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
       { the last string is the unit name }
       Result := Count - 1;
 =======
     
       Result := Count;
 >>>>>>> graemeg/fixes_2_2
+=======
+    
+      Result := Count;
+>>>>>>> origin/fixes_2_2
     end;
 end;
 
@@ -652,6 +707,7 @@ end;
 
 Function SetToString(TypeInfo: PTypeInfo; Value: Integer; Brackets: Boolean) : String;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 <<<<<<< HEAD
@@ -669,16 +725,22 @@ type
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC_NEW_BIGENDIAN_SETS}
 type
   tsetarr = bitpacked array[0..31] of 0..1;
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Var
   I : Integer;
   PTI : PTypeInfo;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$if defined(FPC_BIG_ENDIAN)}
   { On big endian systems, set element 0 is in the most significant bit,
@@ -687,11 +749,16 @@ begin
     otSByte,otUByte: Value:=Value shl (SizeOf(Integer)*8-8);
     otSWord,otUWord: Value:=Value shl (SizeOf(Integer)*8-16);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$if defined(FPC_NEW_BIGENDIAN_SETS) and defined(FPC_BIG_ENDIAN)}
   case GetTypeData(TypeInfo)^.OrdType of
     otSByte,otUByte: Value:=Value shl 24;
     otSWord,otUWord: Value:=Value shl 16;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 {$endif}
 
@@ -700,14 +767,20 @@ begin
   For I:=0 to SizeOf(Integer)*8-1 do
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (tsetarr(Value)[i]<>0) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC_NEW_BIGENDIAN_SETS}
       if (tsetarr(Value)[i]<>0) then
 {$else}
       if ((Value and 1)<>0) then
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         begin
           If Result='' then
             Result:=GetEnumName(PTI,i)
@@ -715,11 +788,17 @@ begin
             Result:=Result+','+GetEnumName(PTI,I);
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifndef FPC_NEW_BIGENDIAN_SETS}
       Value:=Value shr 1;
 {$endif FPC_NEW_BIGENDIAN_SETS}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifndef FPC_NEW_BIGENDIAN_SETS}
+      Value:=Value shr 1;
+{$endif FPC_NEW_BIGENDIAN_SETS}
+>>>>>>> origin/fixes_2_2
     end;
   if Brackets then
     Result:='['+Result+']';
@@ -919,10 +998,14 @@ begin
           AMethod.Code:=PropInfo^.StoredProc
         else
 <<<<<<< HEAD
+<<<<<<< HEAD
           AMethod.Code:=pcodepointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.StoredProc))^;
 =======
           AMethod.Code:=ppointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.StoredProc))^;
 >>>>>>> graemeg/fixes_2_2
+=======
+          AMethod.Code:=ppointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.StoredProc))^;
+>>>>>>> origin/fixes_2_2
         AMethod.Data:=Instance;
         if ((PropInfo^.PropProcs shr 6) and 1)<>0 then
            Result:=TBooleanIndexFunc(AMethod)(PropInfo^.Index)
@@ -1043,10 +1126,14 @@ begin
     end
   else
 <<<<<<< HEAD
+<<<<<<< HEAD
     PropList:=Nil;
 =======
     PropList:=Nil;  
 >>>>>>> graemeg/fixes_2_2
+=======
+    PropList:=Nil;  
+>>>>>>> origin/fixes_2_2
 end;
 
 function GetPropList(AClass: TClass; out PropList: PPropList): Integer;
@@ -1148,10 +1235,14 @@ begin
           AMethod.Code:=PropInfo^.GetProc
         else
 <<<<<<< HEAD
+<<<<<<< HEAD
           AMethod.Code:=PCodePointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.GetProc))^;
 =======
           AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.GetProc))^;
 >>>>>>> graemeg/fixes_2_2
+=======
+          AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.GetProc))^;
+>>>>>>> origin/fixes_2_2
         AMethod.Data:=Instance;
         if ((PropInfo^.PropProcs shr 6) and 1)<>0 then begin
           case DataSize of
@@ -1231,10 +1322,14 @@ begin
           AMethod.Code:=PropInfo^.SetProc
         else
 <<<<<<< HEAD
+<<<<<<< HEAD
           AMethod.Code:=PCodePointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.SetProc))^;
 =======
           AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.SetProc))^;
 >>>>>>> graemeg/fixes_2_2
+=======
+          AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.SetProc))^;
+>>>>>>> origin/fixes_2_2
         AMethod.Data:=Instance;
         if datasize=8 then
           begin
@@ -1525,6 +1620,7 @@ begin
 {$endif cpu64}
 end;
 
+<<<<<<< HEAD
 procedure SetRawInterfaceProp(Instance: TObject; const PropName: string; const Value: Pointer);
 
 begin
@@ -1563,6 +1659,8 @@ begin
       Raise Exception.Create('Cannot set interface from RAW interface');
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { ---------------------------------------------------------------------
     Interface wrapprers
   ---------------------------------------------------------------------}
@@ -1598,7 +1696,10 @@ begin
 {$else cpu64}
   SetOrdProp(Instance,PropInfo,Integer(Value));
 {$endif cpu64}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 { ---------------------------------------------------------------------
@@ -1632,10 +1733,14 @@ begin
                 AMethod.Code:=PropInfo^.GetProc
               else
 <<<<<<< HEAD
+<<<<<<< HEAD
                 AMethod.Code:=PCodePointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.GetProc))^;
 =======
                 AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.GetProc))^;
 >>>>>>> graemeg/fixes_2_2
+=======
+                AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.GetProc))^;
+>>>>>>> origin/fixes_2_2
               AMethod.Data:=Instance;
               if ((PropInfo^.PropProcs shr 6) and 1)<>0 then
                 Result:=TGetShortStrProcIndex(AMethod)(PropInfo^.Index)
@@ -1656,10 +1761,14 @@ begin
                 AMethod.Code:=PropInfo^.GetProc
               else
 <<<<<<< HEAD
+<<<<<<< HEAD
                 AMethod.Code:=PCodePointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.GetProc))^;
 =======
                 AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.GetProc))^;
 >>>>>>> graemeg/fixes_2_2
+=======
+                AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.GetProc))^;
+>>>>>>> origin/fixes_2_2
               AMethod.Data:=Instance;
               if ((PropInfo^.PropProcs shr 6) and 1)<>0 then
                 Result:=TGetAnsiStrProcIndex(AMethod)(PropInfo^.Index)
@@ -1698,10 +1807,14 @@ begin
                 AMethod.Code:=PropInfo^.SetProc
               else
 <<<<<<< HEAD
+<<<<<<< HEAD
                 AMethod.Code:=PCodePointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.SetProc))^;
 =======
                 AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.SetProc))^;
 >>>>>>> graemeg/fixes_2_2
+=======
+                AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.SetProc))^;
+>>>>>>> origin/fixes_2_2
               AMethod.Data:=Instance;
               if ((PropInfo^.PropProcs shr 6) and 1)<>0 then
                 TSetShortStrProcIndex(AMethod)(PropInfo^.Index,Value)
@@ -1722,10 +1835,14 @@ begin
                 AMethod.Code:=PropInfo^.SetProc
               else
 <<<<<<< HEAD
+<<<<<<< HEAD
                 AMethod.Code:=PCodePointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.SetProc))^;
 =======
                 AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.SetProc))^;
 >>>>>>> graemeg/fixes_2_2
+=======
+                AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.SetProc))^;
+>>>>>>> origin/fixes_2_2
               AMethod.Data:=Instance;
               if ((PropInfo^.PropProcs shr 6) and 1)<>0 then
                 TSetAnsiStrProcIndex(AMethod)(PropInfo^.Index,Value)
@@ -1961,10 +2078,14 @@ begin
           AMethod.Code:=PropInfo^.GetProc
         else
 <<<<<<< HEAD
+<<<<<<< HEAD
           AMethod.Code:=PCodePointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.GetProc))^;
 =======
           AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.GetProc))^;
 >>>>>>> graemeg/fixes_2_2
+=======
+          AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.GetProc))^;
+>>>>>>> origin/fixes_2_2
         AMethod.Data:=Instance;
         Case GetTypeData(PropInfo^.PropType)^.FloatType of
           ftSingle:
@@ -2032,10 +2153,14 @@ begin
           AMethod.Code:=PropInfo^.SetProc
         else
 <<<<<<< HEAD
+<<<<<<< HEAD
           AMethod.Code:=PCodePointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.SetProc))^;
 =======
           AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.SetProc))^;
 >>>>>>> graemeg/fixes_2_2
+=======
+          AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.SetProc))^;
+>>>>>>> origin/fixes_2_2
         AMethod.Data:=Instance;
         Case GetTypeData(PropInfo^.PropType)^.FloatType of
           ftSingle:
@@ -2106,10 +2231,14 @@ begin
           AMethod.Code:=PropInfo^.GetProc
         else
 <<<<<<< HEAD
+<<<<<<< HEAD
           AMethod.Code:=PCodePointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.GetProc))^;
 =======
           AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.GetProc))^;
 >>>>>>> graemeg/fixes_2_2
+=======
+          AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.GetProc))^;
+>>>>>>> origin/fixes_2_2
         AMethod.Data:=Instance;
         if ((PropInfo^.PropProcs shr 6) and 1)<>0 then
           Result:=TGetMethodProcIndex(AMethod)(PropInfo^.Index)
@@ -2144,10 +2273,14 @@ begin
           AMethod.Code:=PropInfo^.SetProc
         else
 <<<<<<< HEAD
+<<<<<<< HEAD
           AMethod.Code:=PCodePointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.SetProc))^;
 =======
           AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.SetProc))^;
 >>>>>>> graemeg/fixes_2_2
+=======
+          AMethod.Code:=PPointer(Pointer(Instance.ClassType)+PtrUInt(PropInfo^.SetProc))^;
+>>>>>>> origin/fixes_2_2
         AMethod.Data:=Instance;
         if ((PropInfo^.PropProcs shr 6) and 1)<>0 then
           TSetMethodProcIndex(AMethod)(PropInfo^.Index,Value)

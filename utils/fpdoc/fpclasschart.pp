@@ -20,19 +20,27 @@ program fpclasschart;
 uses
   SysUtils, Classes, Typinfo, Gettext, dom, xmlread,
 <<<<<<< HEAD
+<<<<<<< HEAD
   dGlobals, PasTree, PParser,PScanner, xmlwrite, fpdocclasstree;
 =======
   dGlobals, PasTree, PParser,PScanner, xmlwrite;
 >>>>>>> graemeg/fixes_2_2
+=======
+  dGlobals, PasTree, PParser,PScanner, xmlwrite;
+>>>>>>> origin/fixes_2_2
 
 resourcestring
   STitle = 'fpClassTree - Create class tree from pascal sources';
   SVersion = 'Version %s [%s]';
   SCopyright = '(c) 2008 - Michael Van Canneyt, michael@freepascal.org';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   SCmdLineHelp = 'See documentation for usage.';
 >>>>>>> graemeg/fixes_2_2
+=======
+  SCmdLineHelp = 'See documentation for usage.';
+>>>>>>> origin/fixes_2_2
   SCmdLineInvalidOption = 'Ignoring unknown option "%s"';
   SDone = 'Done.';
   SSkipMerge = 'Cannot merge %s into %s tree.';
@@ -41,16 +49,23 @@ resourcestring
   SClassesAdded = 'Added %d classes from %d files.';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Const
   RootNames : Array[TPasObjKind] of string
             = ('Objects', 'Classes', 'Interfaces');
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type
 
   { TClassTreeEngine }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   TClassTreeEngine = class(TFPDocEngine)
@@ -61,6 +76,8 @@ type
     Constructor Create(AClassTree : TXMLDocument; AObjectKind : TPasObjKind);
     Destructor Destroy; override;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   TClassTreeEngine = class(TFPDocEngine)
   Private
     FClassTree : TXMLDocument;
@@ -75,7 +92,10 @@ type
     Constructor Create(AClassTree : TXMLDocument; AObjectKind : TPasObjKind);
     Destructor Destroy; override;
     Function BuildTree : Integer;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     function CreateElement(AClass: TPTreeElement; const AName: String;
       AParent: TPasElement; AVisibility :TPasMemberVisibility;
       const ASourceFilename: String; ASourceLinenumber: Integer): TPasElement; override;
@@ -121,10 +141,13 @@ type
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { TClassTreeBuilder }
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { TChartFormatter }
 
 constructor TClassChartFormatter.Create(AXML: TXMLDocument);
@@ -248,9 +271,13 @@ procedure TClassChartFormatter.EmitClass(E : TDomElement; HasSiblings: Boolean);
 
 Var
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   DidSub : Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+  DidSub : Boolean;
+>>>>>>> origin/fixes_2_2
   N : TDomNode;
   I : Integer;
   L : TFPList;
@@ -273,9 +300,13 @@ begin
     DoEmitClass(E);
     N:=E.FirstChild;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     DidSub:=False;
 >>>>>>> graemeg/fixes_2_2
+=======
+    DidSub:=False;
+>>>>>>> origin/fixes_2_2
     L:=TFPList.Create;
     try
       While (N<>Nil) do
@@ -382,6 +413,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
   { TGraphVizClassChartFormatter }
 
@@ -462,6 +494,10 @@ Type
 Type
   TOutputFormat = (ofxml,ofPostscript);
 >>>>>>> graemeg/fixes_2_2
+=======
+Type
+  TOutputFormat = (ofxml,ofPostscript);
+>>>>>>> origin/fixes_2_2
 
 Var
   OutputFormat : TOutputFormat = ofXML;
@@ -473,19 +509,28 @@ const
   FPCDate: String = {$I %FPCDATE%};
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
 
 function TClassTreeEngine.CreateElement(AClass: TPTreeElement; const AName: String;
   AParent: TPasElement; AVisibility : TPasMemberVisibility;
   const ASourceFilename: String; ASourceLinenumber: Integer): TPasElement;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Var
   DN : TDocNode;
 >>>>>>> graemeg/fixes_2_2
+=======
+Var
+  DN : TDocNode;
+>>>>>>> origin/fixes_2_2
 
 begin
   Result := AClass.Create(AName, AParent);
@@ -494,6 +539,7 @@ begin
     CurModule := TPasModule(Result);
   If AClass.InheritsFrom(TPasClassType) then
 <<<<<<< HEAD
+<<<<<<< HEAD
     begin
     FObjects.AddObject(AName,Result);
    // Writeln('Added : ',AName);
@@ -501,10 +547,14 @@ begin
 =======
     FObjects.AddObject(AName,Result);
 >>>>>>> graemeg/fixes_2_2
+=======
+    FObjects.AddObject(AName,Result);
+>>>>>>> origin/fixes_2_2
 end;
 
 Constructor TClassTreeEngine.Create(AClassTree : TXMLDocument; AObjectKind : TPasObjKind);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 begin
@@ -512,6 +562,8 @@ begin
   FTree:=TClassTreeBuilder.Create(FPackage,AObjectKind);
   FObjects:=TStringList.Create;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Var
   N : TDomNode;
 
@@ -527,24 +579,33 @@ begin
     okInterface : FParentObject:=TPasClassType.Create('IInterface',FPackage);
   end;
   FParentObject.ObjKind:=FObjectKind;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Inherited Create;
 end;
 
 destructor TClassTreeEngine.Destroy;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FreeAndNil(FTree);
   FreeAndNil(FPackage);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FreeAndNil(FObjects);
   inherited Destroy;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function TClassTreeEngine.BuildTree : Integer;
 
 Var
@@ -628,7 +689,10 @@ begin
     end;
 end;    
     
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { ---------------------------------------------------------------------
   Main program. Document all units.    
   ---------------------------------------------------------------------}
@@ -642,9 +706,12 @@ Var
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=0;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   N:=Source.FirstChild;
   While (N<>Nil) do
     begin
@@ -671,9 +738,13 @@ Function MergeTrees (Dest,Source : TXMLDocument) : Integer;
 Var
   S,D : TDomElement;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   Count : Integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+  Count : Integer;
+>>>>>>> origin/fixes_2_2
 
 begin
   Result:=0;
@@ -695,6 +766,7 @@ Var
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
   ACount:=0;
   XML:=TXMLDocument.Create;
@@ -702,35 +774,49 @@ begin
     //XML.
     XML.AppendChild(XML.CreateElement('TObject'));
 =======
+=======
+>>>>>>> origin/fixes_2_2
   XML:=TXMLDocument.Create;
   Try
     //XML.
     XML.AppendChild(XML.CreateElement(RootNames[AObjectKind]));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     For I:=0 to MergeFiles.Count-1 do
       begin
       XMl2:=TXMLDocument.Create;
       ReadXMLFile(XML2,MergeFiles[i]);
       try
 <<<<<<< HEAD
+<<<<<<< HEAD
         ACount:=ACount+MergeTrees(XML,XML2);
 =======
         ACount:=MergeTrees(XML,XML2);
 >>>>>>> graemeg/fixes_2_2
+=======
+        ACount:=MergeTrees(XML,XML2);
+>>>>>>> origin/fixes_2_2
         WriteLn(StdErr,Format(SMergedFile,[ACount,MergeFiles[i]]));
       Finally
         FreeAndNil(XML2);
       end;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     ACount:=0;
 >>>>>>> graemeg/fixes_2_2
+=======
+    ACount:=0;
+>>>>>>> origin/fixes_2_2
     For I:=0 to InputFiles.Count-1 do
       begin
       Engine := TClassTreeEngine.Create(XML,AObjectKind);
       Try
         ParseSource(Engine,InputFiles[I],OSTarget,CPUTarget);
+<<<<<<< HEAD
 <<<<<<< HEAD
         Engine.Ftree.BuildTree(Engine.FObjects);
         ACount:=ACount+MergeTrees(XML,Engine.FTree.ClassTree);
@@ -741,6 +827,11 @@ begin
       Finally
         Engine.Free;
 >>>>>>> graemeg/fixes_2_2
+=======
+        ACount:=ACount+Engine.BuildTree;
+      Finally
+        Engine.Free;
+>>>>>>> origin/fixes_2_2
       end;
       end;
     Case OutputFormat of
@@ -755,6 +846,7 @@ begin
             Free;
           end;
 <<<<<<< HEAD
+<<<<<<< HEAD
       ofGraphViz :
         With TGraphVizClassChartFormatter.Create(XML) do
           try
@@ -765,6 +857,8 @@ begin
           end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
     Writeln(StdErr,Format(SClassesAdded,[ACount,InputFiles.Count]));
   Finally
@@ -783,9 +877,13 @@ var
   MergeFiles : TStringList;
   DocLang : String;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   PackageName, 
 >>>>>>> graemeg/fixes_2_2
+=======
+  PackageName, 
+>>>>>>> origin/fixes_2_2
   OutputName: String;
 
 procedure InitOptions;
@@ -818,9 +916,12 @@ begin
   Writeln(' --lang=language     Use selected language.');
   Writeln(' --output=filename   Send output to file.');
 <<<<<<< HEAD
+<<<<<<< HEAD
   Writeln(' --format=name       Kind of output to create: XML, PostScript, GraphViz.');
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure ParseOption(const s: String);
@@ -905,6 +1006,7 @@ var
 begin
   Result:=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ParamCount=0 then
     begin
       Usage;
@@ -912,6 +1014,8 @@ begin
     end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   DocLang:='';
   for i := 1 to ParamCount do
     ParseOption(ParamStr(i));
@@ -942,9 +1046,12 @@ begin
   WriteLn(Format(SVersion, [FPCVersion, FPCDate]));
   WriteLn(SCopyright);
 <<<<<<< HEAD
+<<<<<<< HEAD
  
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   InitOptions;
   Try
     E:=ParseCommandLine;

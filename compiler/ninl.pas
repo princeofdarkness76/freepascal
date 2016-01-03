@@ -41,10 +41,14 @@ interface
           function pass_1 : tnode;override;
           function pass_typecheck:tnode;override;
 <<<<<<< HEAD
+<<<<<<< HEAD
           function simplify(forinline : boolean): tnode;override;
 =======
           function simplify: tnode;override;
 >>>>>>> graemeg/fixes_2_2
+=======
+          function simplify: tnode;override;
+>>>>>>> origin/fixes_2_2
           function docompare(p: tnode): boolean; override;
 
           { pack and unpack are changed into for-loops by the compiler }
@@ -176,6 +180,7 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function get_str_int_func(def: tdef): string;
     var
       ordtype: tordtype;
@@ -211,6 +216,8 @@ implementation
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     function tinlinenode.handle_str : tnode;
       var
         lenpara,
@@ -610,6 +617,7 @@ implementation
             if (tstringconstnode(n).len<=255) then
               inserttypeconv(n,cshortstringtype)
             else
+<<<<<<< HEAD
 <<<<<<< HEAD
               inserttypeconv(n,getansistringdef)
           else if is_widechararray(n.resultdef) then
@@ -1138,6 +1146,8 @@ implementation
           para := nextpara;
         end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
               inserttypeconv(n,cansistringtype)
           else if is_widechararray(n.resultdef) then
             inserttypeconv(n,cwidestringtype);
@@ -2168,10 +2178,14 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tinlinenode.simplify(forinline : boolean): tnode;
 =======
     function tinlinenode.simplify: tnode;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function tinlinenode.simplify: tnode;
+>>>>>>> origin/fixes_2_2
 
       function do_lowhigh(def:tdef) : tnode;
         var
@@ -2239,6 +2253,7 @@ implementation
 
       function handle_ln_const(r : bestreal) : tnode;
 <<<<<<< HEAD
+<<<<<<< HEAD
         begin
           if r<=0.0 then
             if floating_point_range_check_error then
@@ -2265,12 +2280,17 @@ implementation
         begin
           if r<=0.0 then
 >>>>>>> graemeg/fixes_2_2
+=======
+        begin
+          if r<=0.0 then
+>>>>>>> origin/fixes_2_2
             if floating_point_range_check_error then
                begin
                  result:=crealconstnode.create(0,pbestrealtype^);
                  CGMessage(type_e_wrong_math_argument)
                end
             else
+<<<<<<< HEAD
 <<<<<<< HEAD
               result:=crealconstnode.create(MathQNaN.Value,pbestrealtype^)
           else
@@ -3659,6 +3679,587 @@ implementation
           { do nothing                                               }
           if (source.resultdef.size = 0) then
             result:=cnothingnode.create;
+=======
+              begin
+                if r=0.0 then
+                  result:=crealconstnode.create(MathQNaN.Value,pbestrealtype^)
+                else
+                  result:=crealconstnode.create(MathNegInf.Value,pbestrealtype^)
+              end
+          else
+            result:=crealconstnode.create(ln(r),pbestrealtype^)
+        end;
+
+
+      function handle_sqrt_const(r : bestreal) : tnode;
+        begin
+          if r<0.0 then
+            if floating_point_range_check_error then
+               begin
+                 result:=crealconstnode.create(0,pbestrealtype^);
+                 CGMessage(type_e_wrong_math_argument)
+               end
+            else
+              result:=crealconstnode.create(MathQNaN.Value,pbestrealtype^)
+          else
+            result:=crealconstnode.create(sqrt(r),pbestrealtype^)
+>>>>>>> origin/fixes_2_2
+        end;
+
+
+      var
+<<<<<<< HEAD
+         hightree,
+         hp        : tnode;
+      begin
+        result:=nil;
+        { when handling writeln "left" contains no valid address }
+        if assigned(left) then
+=======
+        hp        : tnode;
+        vl,vl2    : TConstExprInt;
+        vr        : bestreal;
+        checkrange: boolean;
+
+      begin { simplify }
+         result:=nil;
+         { handle intern constant functions in separate case }
+         if nf_inlineconst in flags then
+>>>>>>> origin/fixes_2_2
+          begin
+            if left.nodetype=callparan then
+              tcallparanode(left).get_paratype
+            else
+<<<<<<< HEAD
+              typecheckpass(left);
+          end;
+
+        if not(nf_inlineconst in flags) then
+=======
+             begin
+               vl:=0;
+               vl2:=0; { second parameter Ex: ptr(vl,vl2) }
+               case left.nodetype of
+                 realconstn :
+                   begin
+                     { Real functions are all handled with internproc below }
+                     CGMessage1(type_e_integer_expr_expected,left.resultdef.typename)
+                   end;
+                 ordconstn :
+                   vl:=tordconstnode(left).value;
+                 callparan :
+                   begin
+                     { both exists, else it was not generated }
+                     vl:=tordconstnode(tcallparanode(left).left).value;
+                     vl2:=tordconstnode(tcallparanode(tcallparanode(left).right).left).value;
+                   end;
+                 else
+                   CGMessage(parser_e_illegal_expression);
+               end;
+               case inlinenumber of
+                 in_const_abs :
+                   hp:=genintconstnode(abs(vl));
+                 in_const_sqr :
+                   hp:=genintconstnode(sqr(vl));
+                 in_const_odd :
+                   hp:=cordconstnode.create(byte(odd(vl)),booltype,true);
+                 in_const_swap_word :
+                   hp:=cordconstnode.create((vl and $ff) shl 8+(vl shr 8),left.resultdef,true);
+                 in_const_swap_long :
+                   hp:=cordconstnode.create((vl and $ffff) shl 16+(vl shr 16),left.resultdef,true);
+                 in_const_swap_qword :
+                   hp:=cordconstnode.create((vl and $ffff) shl 32+(vl shr 32),left.resultdef,true);
+                 in_const_ptr :
+                   hp:=cpointerconstnode.create((vl2 shl 4)+vl,voidfarpointertype);
+                 else
+                   internalerror(88);
+               end;
+             end;
+            if hp=nil then
+              hp:=cerrornode.create;
+            result:=hp;
+          end
+        else
+>>>>>>> origin/fixes_2_2
+          begin
+            case inlinenumber of
+              in_lo_long,
+              in_hi_long,
+              in_lo_qword,
+              in_hi_qword,
+              in_lo_word,
+              in_hi_word :
+                begin
+<<<<<<< HEAD
+                  { give warning for incompatibility with tp and delphi }
+                  if (inlinenumber in [in_lo_long,in_hi_long,in_lo_qword,in_hi_qword]) and
+                     ((m_tp7 in current_settings.modeswitches) or
+                      (m_delphi in current_settings.modeswitches)) then
+                    CGMessage(type_w_maybe_wrong_hi_lo);
+                  set_varstate(left,vs_read,[vsf_must_be_valid]);
+                  if not is_integer(left.resultdef) then
+                    CGMessage1(type_e_integer_expr_expected,left.resultdef.typename);
+                  case inlinenumber of
+                    in_lo_word,
+                    in_hi_word :
+                      resultdef:=u8inttype;
+                    in_lo_long,
+                    in_hi_long :
+                      resultdef:=u16inttype;
+                    in_lo_qword,
+                    in_hi_qword :
+                      resultdef:=u32inttype;
+                  end;
+=======
+                  if left.nodetype=ordconstn then
+                    begin
+                      case inlinenumber of
+                        in_lo_word :
+                          result:=cordconstnode.create(tordconstnode(left).value and $ff,u8inttype,true);
+                        in_hi_word :
+                          result:=cordconstnode.create(tordconstnode(left).value shr 8,u8inttype,true);
+                        in_lo_long :
+                          result:=cordconstnode.create(tordconstnode(left).value and $ffff,u16inttype,true);
+                        in_hi_long :
+                          result:=cordconstnode.create(tordconstnode(left).value shr 16,u16inttype,true);
+                        in_lo_qword :
+                          result:=cordconstnode.create(tordconstnode(left).value and $ffffffff,u32inttype,true);
+                        in_hi_qword :
+                          result:=cordconstnode.create(tordconstnode(left).value shr 32,u32inttype,true);
+                      end;
+                    end;
+>>>>>>> origin/fixes_2_2
+                end;
+              in_ord_x:
+                begin
+<<<<<<< HEAD
+                  { the constant evaluation of in_sizeof_x happens in pexpr where possible }
+                  set_varstate(left,vs_read,[]);
+                  if paramanager.push_high_param(vs_value,left.resultdef,current_procinfo.procdef.proccalloption) then
+                   begin
+                     hightree:=load_high_value_node(tparavarsym(tloadnode(left).symtableentry));
+                     if assigned(hightree) then
+=======
+                  case left.resultdef.typ of
+                    orddef :
+>>>>>>> origin/fixes_2_2
+                      begin
+                        case torddef(left.resultdef).ordtype of
+                          bool8bit,
+                          uchar:
+                            begin
+                              { change to byte() }
+                              result:=ctypeconvnode.create_internal(left,u8inttype);
+                              left:=nil;
+                            end;
+                          bool16bit,
+                          uwidechar :
+                            begin
+                              { change to word() }
+                              result:=ctypeconvnode.create_internal(left,u16inttype);
+                              left:=nil;
+                            end;
+                          bool32bit :
+                            begin
+                              { change to dword() }
+                              result:=ctypeconvnode.create_internal(left,u32inttype);
+                              left:=nil;
+                            end;
+                          bool64bit :
+                            begin
+                              { change to qword() }
+                              result:=ctypeconvnode.create_internal(left,u64inttype);
+                              left:=nil;
+                            end;
+                          uvoid :
+                            CGMessage1(type_e_ordinal_expr_expected,left.resultdef.typename);
+                          else
+                            begin
+                              { all other orddef need no transformation }
+                              result:=left;
+                              left:=nil;
+                            end;
+                        end;
+                      end;
+<<<<<<< HEAD
+                   end
+                  else
+                   resultdef:=sinttype;
+                end;
+
+              in_typeof_x:
+                begin
+                  set_varstate(left,vs_read,[]);
+                  resultdef:=voidpointertype;
+                end;
+
+              in_ord_x:
+                begin
+                   set_varstate(left,vs_read,[vsf_must_be_valid]);
+                   case left.resultdef.typ of
+                     orddef,
+                     enumdef :
+                       ;
+                     pointerdef :
+                       begin
+                         if not(m_mac in current_settings.modeswitches) then
+                           CGMessage1(type_e_ordinal_expr_expected,left.resultdef.typename);
+                       end
+                     else
+                       CGMessage1(type_e_ordinal_expr_expected,left.resultdef.typename);
+                   end;
+                end;
+
+             in_chr_byte:
+               begin
+                 set_varstate(left,vs_read,[vsf_must_be_valid]);
+               end;
+
+              in_length_x:
+                begin
+                  if ((left.resultdef.typ=arraydef) and
+                      (not is_special_array(left.resultdef) or
+                       is_open_array(left.resultdef))) or
+                     (left.resultdef.typ=orddef) then
+                    set_varstate(left,vs_read,[])
+                  else
+                    set_varstate(left,vs_read,[vsf_must_be_valid]);
+
+=======
+                    enumdef :
+                      begin
+                        result:=ctypeconvnode.create_internal(left,s32inttype);
+                        left:=nil;
+                      end;
+                    pointerdef :
+                      begin
+                        if m_mac in current_settings.modeswitches then
+                          begin
+                            result:=ctypeconvnode.create_internal(left,ptruinttype);
+                            left:=nil;
+                          end
+                      end;
+                  end;
+(*
+                  if (left.nodetype=ordconstn) then
+                     begin
+                       result:=cordconstnode.create(
+                         tordconstnode(left).value,sinttype,true);
+                     end
+                   else if (m_mac in current_settings.modeswitches) and
+                           (left.ndoetype=pointerconstn) then
+                       result:=cordconstnode.create(
+                         tpointerconstnode(left).value,ptruinttype,true);
+*)
+                end;
+              in_chr_byte:
+                begin
+                   { convert to explicit char() }
+                   result:=ctypeconvnode.create_internal(left,cchartype);
+                   left:=nil;
+                end;
+              in_length_x:
+                begin
+>>>>>>> origin/fixes_2_2
+                  case left.resultdef.typ of
+                    stringdef :
+                      begin
+<<<<<<< HEAD
+                        inserttypeconv(left,cansistringtype);
+>>>>>>> graemeg/fixes_2_2
+=======
+                        if (left.nodetype=stringconstn) then
+                          begin
+                            result:=cordconstnode.create(
+                              tstringconstnode(left).len,sinttype,true);
+                          end;
+                      end;
+                    orddef :
+                      begin
+                        { length of char is always one }
+                        if is_char(left.resultdef) or
+                           is_widechar(left.resultdef) then
+                         begin
+                           result:=cordconstnode.create(1,sinttype,false);
+                         end
+                      end;
+                    arraydef :
+                      begin
+                        if not is_open_array(left.resultdef) and
+                           not is_array_of_const(left.resultdef) and
+                           not is_dynamic_array(left.resultdef) then
+                          result:=cordconstnode.create(tarraydef(left.resultdef).highrange-
+                            tarraydef(left.resultdef).lowrange+1,
+                            sinttype,true);
+                      end;
+                  end;
+                end;
+              in_assigned_x:
+                begin
+                  if is_constnode(tcallparanode(left).left) or
+                     (tcallparanode(left).left.nodetype = pointerconstn) then
+                    begin
+                      { let an add node figure it out }
+                      result:=caddnode.create(unequaln,tcallparanode(left).left,cnilnode.create);
+                      tcallparanode(left).left := nil;
+                    end;
+                end;
+              in_pred_x,
+              in_succ_x:
+                begin
+                  { only perform range checking if the result is an enum }
+                  checkrange:=(resultdef.typ=enumdef);
+
+                  if (left.nodetype=ordconstn) then
+                   begin
+                     if (inlinenumber=in_succ_x) then
+                       result:=cordconstnode.create(tordconstnode(left).value+1,left.resultdef,checkrange)
+                     else
+                       result:=cordconstnode.create(tordconstnode(left).value-1,left.resultdef,checkrange);
+                   end;
+                end;
+              in_low_x,
+              in_high_x:
+                begin
+                  case left.resultdef.typ of
+                    orddef,
+                    enumdef:
+                      begin
+                        result:=do_lowhigh(left.resultdef);
+                      end;
+                    setdef:
+                      begin
+                        result:=do_lowhigh(tsetdef(left.resultdef).elementdef);
+                      end;
+                    arraydef:
+                      begin
+                        if (inlinenumber=in_low_x) then
+                          begin
+                            result:=cordconstnode.create(int64(tarraydef(
+                             left.resultdef).lowrange),tarraydef(left.resultdef).rangedef,true);
+                          end
+                        else if not is_open_array(left.resultdef) and
+                                not is_array_of_const(left.resultdef) and
+                                not is_dynamic_array(left.resultdef) then
+                          result:=cordconstnode.create(int64(tarraydef(left.resultdef).highrange),
+                            tarraydef(left.resultdef).rangedef,true);
+                      end;
+                    stringdef:
+                      begin
+                        if inlinenumber=in_low_x then
+                          begin
+                            result:=cordconstnode.create(0,u8inttype,false);
+                          end
+                        else if not is_ansistring(left.resultdef) and
+                                not is_widestring(left.resultdef) then
+                          result:=cordconstnode.create(tstringdef(left.resultdef).len,u8inttype,true)
+                      end;
+                  end;
+                end;
+              in_exp_real :
+                begin
+                  if left.nodetype in [ordconstn,realconstn] then
+                    begin
+                      result:=crealconstnode.create(exp(getconstrealvalue),pbestrealtype^);
+                      if (trealconstnode(result).value_real=MathInf.Value) and
+                         floating_point_range_check_error then
+                        begin
+                          result:=crealconstnode.create(0,pbestrealtype^);
+                          CGMessage(parser_e_range_check_error);
+                        end;
+                    end
+                end;
+              in_trunc_real :
+                begin
+                  if left.nodetype in [ordconstn,realconstn] then
+                    begin
+                      vr:=getconstrealvalue;
+                      if (vr>=9223372036854775807.5) or (vr<=-9223372036854775808.5) then
+                        begin
+                          CGMessage(parser_e_range_check_error);
+                          result:=cordconstnode.create(1,s64inttype,false)
+                        end
+                      else
+                        result:=cordconstnode.create(trunc(vr),s64inttype,true)
+                    end
+                end;
+              in_round_real :
+                begin
+                  if left.nodetype in [ordconstn,realconstn] then
+                    begin
+                      vr:=getconstrealvalue;
+                      if (vr>=9223372036854775807.5) or (vr<=-9223372036854775808.5) then
+                        begin
+                          CGMessage(parser_e_range_check_error);
+                          result:=cordconstnode.create(1,s64inttype,false)
+                        end
+                      else
+                        result:=cordconstnode.create(round(vr),s64inttype,true)
+                    end
+                end;
+              in_frac_real :
+                begin
+                  if left.nodetype in [ordconstn,realconstn] then
+                    setconstrealvalue(frac(getconstrealvalue))
+                end;
+              in_int_real :
+                begin
+                  if left.nodetype in [ordconstn,realconstn] then
+                    setconstrealvalue(int(getconstrealvalue));
+                end;
+              in_pi_real :
+                 begin
+                   if block_type=bt_const then
+                     setconstrealvalue(getpi)
+                 end;
+              in_cos_real :
+                begin
+                  if left.nodetype in [ordconstn,realconstn] then
+                    setconstrealvalue(cos(getconstrealvalue))
+                end;
+              in_sin_real :
+                begin
+                  if left.nodetype in [ordconstn,realconstn] then
+                    setconstrealvalue(sin(getconstrealvalue))
+                end;
+              in_arctan_real :
+                begin
+                  if left.nodetype in [ordconstn,realconstn] then
+                    setconstrealvalue(arctan(getconstrealvalue))
+                end;
+              in_abs_real :
+                begin
+                  if left.nodetype in [ordconstn,realconstn] then
+                    setconstrealvalue(abs(getconstrealvalue))
+                end;
+              in_sqr_real :
+                begin
+                  if left.nodetype in [ordconstn,realconstn] then
+                    setconstrealvalue(sqr(getconstrealvalue))
+                end;
+              in_sqrt_real :
+                begin
+                  if left.nodetype in [ordconstn,realconstn] then
+                    begin
+                      vr:=getconstrealvalue;
+                      if vr<0.0 then
+                        result:=handle_sqrt_const(vr)
+                      else
+                        setconstrealvalue(sqrt(vr));
+                    end
+                end;
+              in_ln_real :
+                begin
+                  if left.nodetype in [ordconstn,realconstn] then
+                   begin
+                     vr:=getconstrealvalue;
+                     if vr<=0.0 then
+                       result:=handle_ln_const(vr)
+                     else
+                       setconstrealvalue(ln(vr));
+                   end
+                end;
+              in_assert_x_y :
+                begin
+                  if not(cs_do_assertion in current_settings.localswitches) then
+                    { we need a valid node, so insert a nothingn }
+                    result:=cnothingnode.create;
+                end;
+            end;
+          end;
+      end;
+
+
+
+    function tinlinenode.pass_typecheck:tnode;
+
+      procedure setfloatresultdef;
+        begin
+          if (left.resultdef.typ=floatdef) and
+            (tfloatdef(left.resultdef).floattype in [s32real,s64real,s80real,s128real]) then
+            resultdef:=left.resultdef
+          else
+            begin
+              if (left.nodetype <> ordconstn) then
+                inserttypeconv(left,pbestrealtype^);
+              resultdef:=pbestrealtype^;
+            end;
+        end;
+
+
+      procedure handle_pack_unpack;
+        var
+          source, target, index: tcallparanode;
+          unpackedarraydef, packedarraydef: tarraydef;
+          tempindex: TConstExprInt;
+        begin
+          resultdef:=voidtype;
+
+          unpackedarraydef := nil;
+          packedarraydef := nil;
+          source := tcallparanode(left);
+          if (inlinenumber = in_unpack_x_y_z) then
+            begin
+              target := tcallparanode(source.right);
+              index := tcallparanode(target.right);
+
+              { source must be a packed array }
+              if not is_packed_array(source.left.resultdef) then
+                CGMessagePos2(source.left.fileinfo,type_e_got_expected_packed_array,'1',source.left.resultdef.GetTypeName)
+              else
+                packedarraydef := tarraydef(source.left.resultdef);
+              { target can be any kind of array, as long as it's not packed }
+              if (target.left.resultdef.typ <> arraydef) or
+                 is_packed_array(target.left.resultdef) then
+                CGMessagePos2(target.left.fileinfo,type_e_got_expected_unpacked_array,'2',target.left.resultdef.GetTypeName)
+              else
+                unpackedarraydef := tarraydef(target.left.resultdef);
+            end
+          else
+            begin
+              index := tcallparanode(source.right);
+              target := tcallparanode(index.right);
+
+              { source can be any kind of array, as long as it's not packed }
+              if (source.left.resultdef.typ <> arraydef) or
+                 is_packed_array(source.left.resultdef) then
+                CGMessagePos2(source.left.fileinfo,type_e_got_expected_unpacked_array,'1',source.left.resultdef.GetTypeName)
+              else
+                unpackedarraydef := tarraydef(source.left.resultdef);
+              { target must be a packed array }
+              if not is_packed_array(target.left.resultdef) then
+                CGMessagePos2(target.left.fileinfo,type_e_got_expected_packed_array,'3',target.left.resultdef.GetTypeName)
+              else
+                packedarraydef := tarraydef(target.left.resultdef);
+            end;
+
+          if assigned(unpackedarraydef) then
+            begin
+              { index must be compatible with the unpacked array's indextype }
+              inserttypeconv(index.left,unpackedarraydef.rangedef);
+
+              { range check at compile time if possible }
+              if assigned(packedarraydef) and
+                 (index.left.nodetype = ordconstn) and
+                 not is_special_array(unpackedarraydef) then
+                begin
+                  testrange(index.left.resultdef,unpackedarraydef,tordconstnode(index.left).value,false);
+                  tempindex := tordconstnode(index.left).value + packedarraydef.highrange-packedarraydef.lowrange;
+                  testrange(index.left.resultdef,unpackedarraydef,tempindex,false);
+                end;
+            end;
+
+          { source array is read and must be valid }
+          set_varstate(source.left,vs_read,[vsf_must_be_valid]);
+          { target array is written }
+          valid_for_assignment(target.left,true);
+          set_varstate(target.left,vs_written,[]);
+          { index in the unpacked array is read and must be valid }
+          set_varstate(index.left,vs_read,[vsf_must_be_valid]);
+          { if the size of the arrays is 0 (array of empty records), }
+          { do nothing                                               }
+          if (source.resultdef.size = 0) then
+            result:=cnothingnode.create;
         end;
 
 
@@ -3795,7 +4396,7 @@ implementation
                     variantdef:
                       begin
                         inserttypeconv(left,cansistringtype);
->>>>>>> graemeg/fixes_2_2
+>>>>>>> origin/fixes_2_2
                       end;
 
                     stringdef :
@@ -3807,12 +4408,17 @@ implementation
                         if (left.nodetype=typeconvn) and
                            (ttypeconvnode(left).left.resultdef.typ=stringdef) and
 <<<<<<< HEAD
+<<<<<<< HEAD
                            not(is_wide_or_unicode_string(left.resultdef) xor
                                is_wide_or_unicode_string(ttypeconvnode(left).left.resultdef)) then
 =======
                            not(is_widestring(left.resultdef) xor
                                is_widestring(ttypeconvnode(left).left.resultdef)) then
 >>>>>>> graemeg/fixes_2_2
+=======
+                           not(is_widestring(left.resultdef) xor
+                               is_widestring(ttypeconvnode(left).left.resultdef)) then
+>>>>>>> origin/fixes_2_2
                          begin
                            hp:=ttypeconvnode(left).left;
                            ttypeconvnode(left).left:=nil;
@@ -3862,6 +4468,7 @@ implementation
                            exit;
                          end
 <<<<<<< HEAD
+<<<<<<< HEAD
                         { Length() for dynamic arrays is inlined }
                         else
                           begin
@@ -3875,6 +4482,8 @@ implementation
                         { otherwise nothing }
                       end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
                         else if is_dynamic_array(left.resultdef) then
                           begin
                             hp := ccallparanode.create(ctypeconvnode.create_internal(left,voidpointertype),nil);
@@ -3889,7 +4498,10 @@ implementation
                             { will be handled in simplify }
                           end;
                       end
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                     else
                       CGMessage(type_e_mismatch);
                   end;
@@ -3900,10 +4512,14 @@ implementation
                     resultdef:=u8inttype
                   else
 <<<<<<< HEAD
+<<<<<<< HEAD
                     resultdef:=ossinttype;
 =======
                     resultdef:=sinttype;
 >>>>>>> graemeg/fixes_2_2
+=======
+                    resultdef:=sinttype;
+>>>>>>> origin/fixes_2_2
                 end;
 
               in_typeinfo_x:
@@ -3921,6 +4537,7 @@ implementation
                 begin
                   { the parser has already made sure the expression is valid }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                   { in case of a complex procvar, only check the "code" pointer }
                   if (tcallparanode(left).left.resultdef.typ=procvardef) and
@@ -3962,6 +4579,11 @@ implementation
                   { must only check the first pointer -> can't just convert to an  }
                   { add node in all cases                                          }
 >>>>>>> graemeg/fixes_2_2
+=======
+                  { there could be a procvar, which is 2*sizeof(pointer), while we }
+                  { must only check the first pointer -> can't just convert to an  }
+                  { add node in all cases                                          }
+>>>>>>> origin/fixes_2_2
                   set_varstate(tcallparanode(left).left,vs_read,[vsf_must_be_valid]);
                   resultdef:=pasbool8type;
                 end;
@@ -3976,7 +4598,10 @@ implementation
 =======
                   set_varstate(left,vs_read,[]);
                   result:=cordconstnode.create(0,s32inttype,false);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 end;
 
               in_pred_x,
@@ -3991,12 +4616,16 @@ implementation
                           not(m_delphi in current_settings.modeswitches) then
                          CGMessage(type_e_succ_and_pred_enums_with_assign_not_possible);
 <<<<<<< HEAD
+<<<<<<< HEAD
                      end
                    else
                      CGMessage(type_e_ordinal_expr_expected)
 =======
                      end;
 >>>>>>> graemeg/fixes_2_2
+=======
+                     end;
+>>>>>>> origin/fixes_2_2
                 end;
 
               in_copy_x:
@@ -4270,6 +4899,7 @@ implementation
                               result:=load_high_value_node(tparavarsym(tloadnode(left).symtableentry))
                             end
 <<<<<<< HEAD
+<<<<<<< HEAD
                            else if is_dynamicstring(left.resultdef) then
                               begin
                                 result:=cinlinenode.create(in_length_x,false,left);
@@ -4284,6 +4914,11 @@ implementation
                                    is_widestring(left.resultdef) then
                              CGMessage(type_e_mismatch)
 >>>>>>> graemeg/fixes_2_2
+=======
+                           else if is_ansistring(left.resultdef) or
+                                   is_widestring(left.resultdef) then
+                             CGMessage(type_e_mismatch)
+>>>>>>> origin/fixes_2_2
                          end;
                      end;
                     else
@@ -4297,6 +4932,7 @@ implementation
               in_cos_real,
               in_sin_real,
               in_arctan_real,
+<<<<<<< HEAD
 <<<<<<< HEAD
               in_ln_real :
                 begin
@@ -4515,6 +5151,43 @@ implementation
                   result:=cobjcselectornode.create(left);
                   { reused }
                   left:=nil;
+=======
+              in_abs_real,
+              in_ln_real :
+                begin
+                  set_varstate(left,vs_read,[vsf_must_be_valid]);
+                  { converting an int64 to double on platforms without }
+                  { extended can cause precision loss                  }
+                  if not(left.nodetype in [ordconstn,realconstn]) then
+                    inserttypeconv(left,pbestrealtype^);
+                  resultdef:=pbestrealtype^;
+                end;
+
+              in_trunc_real,
+              in_round_real :
+                begin
+                  set_varstate(left,vs_read,[vsf_must_be_valid]);
+                  { for direct float rounding, no best real type cast should be necessary }
+                  if not((left.resultdef.typ=floatdef) and
+                         (tfloatdef(left.resultdef).floattype in [s32real,s64real,s80real,s128real])) and
+                     { converting an int64 to double on platforms without }
+                     { extended can cause precision loss                  }
+                     not(left.nodetype in [ordconstn,realconstn]) then
+                    inserttypeconv(left,pbestrealtype^);
+                  resultdef:=s64inttype;
+                end;
+
+              in_pi_real :
+                begin
+                  resultdef:=pbestrealtype^;
+                end;
+
+              in_sqr_real,
+              in_sqrt_real :
+                begin
+                  set_varstate(left,vs_read,[vsf_must_be_valid]);
+                  setfloatresultdef;
+>>>>>>> origin/fixes_2_2
                 end;
               in_objc_protocol_x:
                 begin
@@ -4538,12 +5211,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               in_default_x:
                 begin
                   result:=handle_default;
                 end;
               in_box_x:
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif SUPPORT_MMX}
 {$ifdef SUPPORT_UNALIGNED}
               in_unaligned_x:
@@ -4609,8 +5285,11 @@ implementation
         if not assigned(result) and not
            codegenerror then
 <<<<<<< HEAD
+<<<<<<< HEAD
           result:=simplify(false);
 =======
+=======
+>>>>>>> origin/fixes_2_2
           result:=simplify;
         dec(parsing_para_level);
 >>>>>>> graemeg/fixes_2_2

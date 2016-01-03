@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 { CoreGraphics - CGDirectPalette.h
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -40,6 +41,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CGDirectPalette.h
  *  CoreGraphics
@@ -54,7 +57,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -64,12 +70,17 @@
 unit CGDirectPalette;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -83,14 +94,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -99,11 +115,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -141,6 +160,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -148,6 +169,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -405,6 +427,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -413,7 +437,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -440,9 +467,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -453,6 +484,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CGDirectDisplay;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -480,6 +512,8 @@ type
    where 0 is no color and 1 is full intensity. }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -492,7 +526,10 @@ type
  * Values should be in the range from 0.0 to 1.0, where 0.0 is black, and 1.0
  * is full on for each channel.
  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type
 	CGDeviceColorPtr = ^CGDeviceColor;
 	CGDeviceColor = record
@@ -501,6 +538,7 @@ type
 		blue: Float32;
 	end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { A color in a display palette, using 8-bit integer components. Values
    should be in the interval [0, 255] where 0 is no color and 255 is full
@@ -516,6 +554,8 @@ type
 {$ifc TARGET_OS_MAC}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	CGDeviceByteColorPtr = ^CGDeviceByteColor;
 	CGDeviceByteColor = record
 		red: SInt8;
@@ -523,16 +563,22 @@ type
 		blue: SInt8;
 	end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  * Create a new palette object representing the default 8 bit color palette.
  * Release the palette using CGPaletteRelease().
  }
 function CGPaletteCreateDefaultColorPalette: CGDirectPaletteRef; external name '_CGPaletteCreateDefaultColorPalette';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Create a copy of the display's current palette, if any.
@@ -541,9 +587,12 @@ function CGPaletteCreateDefaultColorPalette: CGDirectPaletteRef; external name '
  }
 function CGPaletteCreateWithDisplay( display: CGDirectDisplayID ): CGDirectPaletteRef; external name '_CGPaletteCreateWithDisplay';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Create a new palette with a capacity as specified.  Entries are initialized from
@@ -551,9 +600,12 @@ function CGPaletteCreateWithDisplay( display: CGDirectDisplayID ): CGDirectPalet
  }
 function CGPaletteCreateWithCapacity( capacity: CGTableCount ): CGDirectPaletteRef; external name '_CGPaletteCreateWithCapacity';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Create a new palette with a capacity and contents as specified.
@@ -561,9 +613,12 @@ function CGPaletteCreateWithCapacity( capacity: CGTableCount ): CGDirectPaletteR
  }
 function CGPaletteCreateWithSamples( var sampleTable: CGDeviceColor; sampleCount: CGTableCount ): CGDirectPaletteRef; external name '_CGPaletteCreateWithSamples';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Convenience function:
@@ -572,27 +627,36 @@ function CGPaletteCreateWithSamples( var sampleTable: CGDeviceColor; sampleCount
  }
 function CGPaletteCreateWithByteSamples( var sampleTable: CGDeviceByteColor; sampleCount: CGTableCount ): CGDirectPaletteRef; external name '_CGPaletteCreateWithByteSamples';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Release a palette
  }
 procedure CGPaletteRelease( palette: CGDirectPaletteRef ); external name '_CGPaletteRelease';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Get the color value at the specified index
  }
 function CGPaletteGetColorAtIndex( palette: CGDirectPaletteRef; index: CGTableCount ): CGDeviceColor; external name '_CGPaletteGetColorAtIndex';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Get the index for the specified color value
@@ -601,18 +665,24 @@ function CGPaletteGetColorAtIndex( palette: CGDirectPaletteRef; index: CGTableCo
  }
 function CGPaletteGetIndexForColor( palette: CGDirectPaletteRef; color: CGDeviceColor ): CGTableCount; external name '_CGPaletteGetIndexForColor';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Get the number of samples in the palette
  }
 function CGPaletteGetNumberOfSamples( palette: CGDirectPaletteRef ): CGTableCount; external name '_CGPaletteGetNumberOfSamples';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -620,33 +690,43 @@ function CGPaletteGetNumberOfSamples( palette: CGDirectPaletteRef ): CGTableCoun
  }
 procedure CGPaletteSetColorAtIndex( palette: CGDirectPaletteRef; color: CGDeviceColor; index: CGTableCount ); external name '_CGPaletteSetColorAtIndex';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Copy a palette
  }
 function CGPaletteCreateCopy( palette: CGDirectPaletteRef ): CGDirectPaletteRef; external name '_CGPaletteCreateCopy';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Compare two palettes
  }
 function CGPaletteIsEqualToPalette( palette1: CGDirectPaletteRef; palette2: CGDirectPaletteRef ): Boolean; external name '_CGPaletteIsEqualToPalette';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  * Create a new palette blended with a fraction of a device color.
  * Free the resulting palette with CGPaletteRelease()
  }
 function CGPaletteCreateFromPaletteBlendedWithColor( palette: CGDirectPaletteRef; fraction: CGPaletteBlendFraction; color: CGDeviceColor ): CGDirectPaletteRef; external name '_CGPaletteCreateFromPaletteBlendedWithColor';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 
@@ -660,3 +740,8 @@ end.
 
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+
+
+end.
+>>>>>>> origin/fixes_2_2

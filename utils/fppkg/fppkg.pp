@@ -18,11 +18,15 @@ uses
   // Package Handler components
   pkghandler,pkgmkconv, pkgdownload,
 <<<<<<< HEAD
+<<<<<<< HEAD
   pkgfpmake, pkgcommands,
   fpmkunit
 =======
   pkgfpmake, pkgcommands
 >>>>>>> graemeg/fixes_2_2
+=======
+  pkgfpmake, pkgcommands
+>>>>>>> origin/fixes_2_2
   // Downloaders
 {$if (defined(unix) and not defined(android)) or defined(windows)}
   ,pkgwget
@@ -108,6 +112,7 @@ begin
     if (ParamStr(i)='-d') or (ParamStr(i)='--debug') then
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         LogLevels:=AllLogLevels+[llDebug];
         break;
       end;
@@ -190,6 +195,14 @@ begin
   // Load file or create new default configuration
   cfgfile:=GetConfigFileName;
   GeneratedConfig:=false;
+=======
+        LogLevels:=AllLogLevels+[vlDebug];
+        break;
+      end;
+  // Load file or create new default configuration
+  cfgfile:=GetConfigFileName;
+  GeneratedConfig:=false;
+>>>>>>> origin/fixes_2_2
   if FileExists(cfgfile) then
     begin
       GlobalOptions.LoadGlobalFromFile(cfgfile);
@@ -210,7 +223,10 @@ begin
     Log(vlDebug,SLogLoadingGlobalConfig,[cfgfile]);
   // Log configuration
   GlobalOptions.LogValues;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -231,6 +247,7 @@ begin
   // Load default compiler config
   S:=GlobalOptions.CompilerConfigDir+GlobalOptions.CompilerConfig;
 <<<<<<< HEAD
+<<<<<<< HEAD
   CompilerOptions.UpdateLocalRepositoryOption;
   if FileExists(S) then
     begin
@@ -240,6 +257,11 @@ begin
     begin
       Log(vlDebug,SLogLoadingCompilerConfig,[S]);
 >>>>>>> graemeg/fixes_2_2
+=======
+  if FileExists(S) then
+    begin
+      Log(vlDebug,SLogLoadingCompilerConfig,[S]);
+>>>>>>> origin/fixes_2_2
       CompilerOptions.LoadCompilerFromFile(S)
     end
   else
@@ -248,22 +270,29 @@ begin
       if GlobalOptions.CompilerConfig='default' then
         begin
 <<<<<<< HEAD
+<<<<<<< HEAD
           pkgglobals.Log(vlDebug,SLogGeneratingCompilerConfig,[S]);
           CompilerOptions.InitCompilerDefaults;
           CompilerOptions.SaveCompilerToFile(S);
           if CompilerOptions.SaveInifileChanges then
 =======
+=======
+>>>>>>> origin/fixes_2_2
           Log(vlDebug,SLogGeneratingCompilerConfig,[S]);
           CompilerOptions.InitCompilerDefaults;
           CompilerOptions.SaveCompilerToFile(S);
           if CompilerOptions.Dirty then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             CompilerOptions.SaveCompilerToFile(S);
         end
       else
         Error(SErrMissingCompilerConfig,[S]);
     end;
   // Log compiler configuration
+<<<<<<< HEAD
 <<<<<<< HEAD
   CompilerOptions.LogValues(vlDebug,'');
   // Load FPMake compiler config, this is normally the same config as above
@@ -275,6 +304,8 @@ begin
       FPMakeCompilerOptions.LoadCompilerFromFile(S);
       if FPMakeCompilerOptions.SaveInifileChanges then
 =======
+=======
+>>>>>>> origin/fixes_2_2
   CompilerOptions.LogValues('');
   // Load FPMake compiler config, this is normally the same config as above
   S:=GlobalOptions.CompilerConfigDir+GlobalOptions.FPMakeCompilerConfig;
@@ -283,17 +314,24 @@ begin
       Log(vlDebug,SLogLoadingFPMakeCompilerConfig,[S]);
       FPMakeCompilerOptions.LoadCompilerFromFile(S);
       if FPMakeCompilerOptions.Dirty then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         FPMakeCompilerOptions.SaveCompilerToFile(S);
     end
   else
     Error(SErrMissingCompilerConfig,[S]);
   // Log compiler configuration
 <<<<<<< HEAD
+<<<<<<< HEAD
   FPMakeCompilerOptions.LogValues(vlDebug,'fpmake-building ');
 =======
   FPMakeCompilerOptions.LogValues('fpmake-building ');
 >>>>>>> graemeg/fixes_2_2
+=======
+  FPMakeCompilerOptions.LogValues('fpmake-building ');
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -310,6 +348,7 @@ begin
   Writeln('  -g --global        Force installation to global (system-wide) directory');
   Writeln('  -f --force         Force installation also if the package is already installed');
   Writeln('  -r --recovery      Recovery mode, use always internal fpmkunit');
+<<<<<<< HEAD
 <<<<<<< HEAD
   Writeln('  -b --broken        Do not stop on broken packages');
   Writeln('  -l --showlocation  Show if the packages are installed globally or locally');
@@ -359,6 +398,8 @@ begin
   Writeln('  fixbroken         Recompile all (broken) packages with changed dependencies');
   Writeln('  listsettings      Show the values for all fppkg settings');
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Writeln('Actions:');
   Writeln('  update             Update packages list');
   Writeln('  list               List available and installed packages');
@@ -369,7 +410,10 @@ begin
   Writeln('  archive            Create archive of package');
   Writeln('  download           Download package');
   Writeln('  convertmk          Convert Makefile.fpc to fpmake.pp');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 //  Writeln('  addconfig          Add a compiler configuration for the supplied compiler');
   Halt(0);
 end;
@@ -463,20 +507,28 @@ begin
       else if CheckOption(I,'c','config') then
 =======
       if CheckOption(I,'c','config') then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         GlobalOptions.CompilerConfig:=OptionArg(I)
       else if CheckOption(I,'v','verbose') then
         LogLevels:=AllLogLevels
       else if CheckOption(I,'d','debug') then
 <<<<<<< HEAD
+<<<<<<< HEAD
         LogLevels:=AllLogLevels+[llDebug]
 =======
         LogLevels:=AllLogLevels+[vlDebug]
 >>>>>>> graemeg/fixes_2_2
+=======
+        LogLevels:=AllLogLevels+[vlDebug]
+>>>>>>> origin/fixes_2_2
       else if CheckOption(I,'g','global') then
         GlobalOptions.InstallGlobal:=true
       else if CheckOption(I,'r','recovery') then
         GlobalOptions.RecoveryMode:=true
+<<<<<<< HEAD
 <<<<<<< HEAD
       else if CheckOption(I,'n','') then
         GlobalOptions.SkipConfigurationFiles:=true
@@ -512,6 +564,10 @@ begin
       else if CheckOption(I,'b','broken') then
         GlobalOptions.AllowBroken:=true
 >>>>>>> graemeg/fixes_2_2
+=======
+      else if CheckOption(I,'b','broken') then
+        GlobalOptions.AllowBroken:=true
+>>>>>>> origin/fixes_2_2
       else if CheckOption(I,'h','help') then
         begin
           ShowUsage;
@@ -553,10 +609,14 @@ begin
   Try
     LoadGlobalDefaults;
 <<<<<<< HEAD
+<<<<<<< HEAD
     ProcessCommandLine(true);
 =======
     ProcessCommandLine;
 >>>>>>> graemeg/fixes_2_2
+=======
+    ProcessCommandLine;
+>>>>>>> origin/fixes_2_2
 
     // Scan is special, it doesn't need a valid local setup
     if (ParaAction='scan') then
@@ -588,7 +648,10 @@ begin
 
 =======
     LoadCompilerDefaults;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     LoadLocalAvailableMirrors;
 
     // Load local repository, update first if this is a new installation
@@ -600,6 +663,7 @@ begin
           pkghandler.ExecuteAction('','update');
         except
           on E: Exception do
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -621,12 +685,16 @@ begin
 =======
             Log(vlWarning,E.Message);
 >>>>>>> graemeg/fixes_2_2
+=======
+            Log(vlWarning,E.Message);
+>>>>>>> origin/fixes_2_2
         end;
       end;
     LoadLocalAvailableRepository;
     FindInstalledPackages(FPMakeCompilerOptions,true);
     CheckFPMakeDependencies;
     // We only need to reload the status when we use a different
+<<<<<<< HEAD
 <<<<<<< HEAD
     // configuration for compiling fpmake or when the CPU, OS or compiler
     // are set in the command-line
@@ -638,10 +706,15 @@ begin
     // configuration for compiling fpmake
     if GlobalOptions.CompilerConfig<>GlobalOptions.FPMakeCompilerConfig then
 >>>>>>> graemeg/fixes_2_2
+=======
+    // configuration for compiling fpmake
+    if GlobalOptions.CompilerConfig<>GlobalOptions.FPMakeCompilerConfig then
+>>>>>>> origin/fixes_2_2
       FindInstalledPackages(CompilerOptions,true);
 
     // Check for broken dependencies
     if not GlobalOptions.AllowBroken and
+<<<<<<< HEAD
 <<<<<<< HEAD
        (((ParaAction='fixbroken') and (ParaPackages.Count>0)) or
         (ParaAction='compile') or
@@ -670,6 +743,10 @@ begin
        not((ParaPackages.Count=0) and (ParaAction='fixbroken')) then
       begin
 >>>>>>> graemeg/fixes_2_2
+=======
+       not((ParaPackages.Count=0) and (ParaAction='fixbroken')) then
+      begin
+>>>>>>> origin/fixes_2_2
         SL:=TStringList.Create;
         if FindBrokenPackages(SL) then
           Error(SErrBrokenPackagesFound);
@@ -687,10 +764,14 @@ begin
         for i:=0 to ParaPackages.Count-1 do
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
             if sametext(ExtractFileExt(ParaPackages[i]),'.zip') and FileExists(ParaPackages[i]) then
 =======
             if FileExists(ParaPackages[i]) then
 >>>>>>> graemeg/fixes_2_2
+=======
+            if FileExists(ParaPackages[i]) then
+>>>>>>> origin/fixes_2_2
               begin
                 ActionPackage:=AvailableRepository.AddPackage(CmdLinePackageName);
                 ActionPackage.LocalFileName:=ExpandFileName(ParaPackages[i]);
@@ -698,6 +779,7 @@ begin
               end
             else
               begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -719,6 +801,9 @@ begin
 =======
                 Log(vlDebug,SLogCommandLineAction,['['+ParaPackages[i]+']',ParaAction]);
 >>>>>>> graemeg/fixes_2_2
+=======
+                Log(vlDebug,SLogCommandLineAction,['['+ParaPackages[i]+']',ParaAction]);
+>>>>>>> origin/fixes_2_2
                 pkghandler.ExecuteAction(ParaPackages[i],ParaAction);
               end;
           end;
@@ -726,10 +811,14 @@ begin
 
     // Recompile all packages dependent on this package
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (ParaAction='install') and not GlobalOptions.SkipFixBrokenAfterInstall then
 =======
     if (ParaAction='install') then
 >>>>>>> graemeg/fixes_2_2
+=======
+    if (ParaAction='install') then
+>>>>>>> origin/fixes_2_2
       pkghandler.ExecuteAction('','fixbroken');
 
     Terminate;

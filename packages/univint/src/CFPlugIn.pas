@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1999-2013, Apple Inc.  All rights reserved.
 }
 =======
@@ -36,6 +37,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	Copyright (c) 1999-2005, Apple, Inc. All rights reserved.
 }
 {   Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
@@ -45,7 +48,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -55,12 +61,17 @@
 unit CFPlugIn;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -74,14 +85,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -90,11 +106,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -132,6 +151,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -139,6 +160,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -376,6 +398,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -384,7 +408,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -411,9 +438,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -425,10 +456,13 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFArray,CFBundle,CFString,CFURL,CFUUID;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 {
@@ -457,10 +491,14 @@ type
 { ================= Creating PlugIns ================= }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CFPlugInGetTypeID: CFTypeID; external name '_CFPlugInGetTypeID';
 =======
 function CFPlugInGetTypeID: UInt32; external name '_CFPlugInGetTypeID';
 >>>>>>> graemeg/fixes_2_2
+=======
+function CFPlugInGetTypeID: UInt32; external name '_CFPlugInGetTypeID';
+>>>>>>> origin/fixes_2_2
 
 function CFPlugInCreate( allocator: CFAllocatorRef; plugInURL: CFURLRef ): CFPlugInRef; external name '_CFPlugInCreate';
     { Might return an existing instance with the ref-count bumped. }
@@ -521,6 +559,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFPlugInInstanceRef = ^__CFPlugInInstance; { an opaque type }
 	__CFPlugInInstance = record end;
 =======
@@ -538,6 +577,9 @@ type
 =======
 	CFPlugInInstanceRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	CFPlugInInstanceRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 	CFPlugInInstanceRefPtr = ^CFPlugInInstanceRef;
 
 type
@@ -545,6 +587,7 @@ type
 	CFPlugInInstanceDeallocateInstanceDataFunction = procedure( instanceData: UnivPtr );
 
 function CFPlugInInstanceGetInterfaceFunctionTable( instance: CFPlugInInstanceRef; interfaceName: CFStringRef; var ftbl: UnivPtr ): Boolean; external name '_CFPlugInInstanceGetInterfaceFunctionTable';
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 { This function returns a retained object on 10.8 or later. }
@@ -575,10 +618,16 @@ function CFPlugInInstanceGetFactoryName( instance: CFPlugInInstanceRef ): CFStri
 function CFPlugInInstanceGetInstanceData( instance: CFPlugInInstanceRef ): UnivPtr; external name '_CFPlugInInstanceGetInstanceData';
 function CFPlugInInstanceGetTypeID: UInt32; external name '_CFPlugInInstanceGetTypeID';
 >>>>>>> graemeg/fixes_2_2
+=======
+function CFPlugInInstanceGetFactoryName( instance: CFPlugInInstanceRef ): CFStringRef; external name '_CFPlugInInstanceGetFactoryName';
+function CFPlugInInstanceGetInstanceData( instance: CFPlugInInstanceRef ): UnivPtr; external name '_CFPlugInInstanceGetInstanceData';
+function CFPlugInInstanceGetTypeID: UInt32; external name '_CFPlugInInstanceGetTypeID';
+>>>>>>> origin/fixes_2_2
 function CFPlugInInstanceCreateWithInstanceDataSize( allocator: CFAllocatorRef; instanceDataSize: CFIndex; deallocateInstanceFunction: CFPlugInInstanceDeallocateInstanceDataFunction; factoryName: CFStringRef; getInterfaceFunction: CFPlugInInstanceGetInterfaceFunction ): CFPlugInInstanceRef; external name '_CFPlugInInstanceCreateWithInstanceDataSize';
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
@@ -588,3 +637,7 @@ end.
 
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+
+end.
+>>>>>>> origin/fixes_2_2

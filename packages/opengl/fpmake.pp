@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('opengl');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ShortName:='ogl';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -47,6 +48,8 @@ begin
     P.Targets.AddExampleProgram('glxtest.pp');
     P.Sources.AddSrc('readme');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ALLPACKAGES}
     P.Directory:='opengl';
 {$endif ALLPACKAGES}
@@ -62,7 +65,10 @@ begin
     T:=P.Targets.AddUnit('glu.pp');
     T:=P.Targets.AddUnit('glut.pp');
     T:=P.Targets.AddUnit('glx.pp',AllUnixOSes);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

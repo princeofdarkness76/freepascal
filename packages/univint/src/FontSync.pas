@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QD/FontSync.h
  
      Contains:   Public interface for FontSync
@@ -8,6 +9,8 @@
  
      Copyright:  © 1999-2008 by Apple Inc. all rights reserved.
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       FontSync.p
  
      Contains:   Public interface for FontSync
@@ -16,11 +19,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1999-2002 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -34,6 +41,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -45,7 +54,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -55,12 +67,17 @@
 unit FontSync;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -74,14 +91,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -90,11 +112,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -132,6 +157,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -139,6 +166,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -366,6 +394,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -374,7 +404,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -401,9 +434,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -414,6 +451,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,ATSTypes,Files,Fonts,SFNTTypes,MacErrors;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -427,11 +465,15 @@ uses MacTypes,ATSTypes,Files,Fonts,SFNTTypes,MacErrors;
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN POWER}
 
 
 { Matching Options }
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	FNSMatchOptions = UInt32;
@@ -760,6 +802,8 @@ function FNSProfileGetIndReference( iProfile: FNSFontProfile; iWhichReference: U
 function FNSProfileMatchReference( iProfile: FNSFontProfile; iReference: FNSFontReference; iMatchOptions: FNSMatchOptions; iOutputSize: ItemCount; oIndices: {variable-size-array} UInt32Ptr { can be NULL }; oNumMatches: ItemCountPtr { can be NULL } ): OSStatus; external name '_FNSProfileMatchReference';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	FNSMatchOptions 			= UInt32;
@@ -1044,11 +1088,15 @@ function FNSProfileGetIndReference(iProfile: FNSFontProfile; iWhichReference: UI
  *    Mac OS X:         in version 10.0 and later
  }
 function FNSProfileMatchReference(iProfile: FNSFontProfile; iReference: FNSFontReference; iMatchOptions: FNSMatchOptions; iOutputSize: ItemCount; oIndices: UInt32Ptr; oNumMatches: ItemCountPtr): OSStatus; external name '_FNSProfileMatchReference';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { Mapping to and from Font Objects }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  FNSReferenceCreate()   *** DEPRECATED ***
  *  
@@ -1072,6 +1120,8 @@ function FNSReferenceCreate( iFont: FMFont; iDesiredVersion: FNSObjectVersion; v
 function FNSReferenceMatchFonts( iReference: FNSFontReference; iMatchOptions: FNSMatchOptions; iOutputSize: ItemCount; oFonts: {variable-size-array} FMFontPtr { can be NULL }; oNumMatches: ItemCountPtr { can be NULL } ): OSStatus; external name '_FNSReferenceMatchFonts';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  FNSReferenceCreate()
  *  
  *  Availability:
@@ -1090,11 +1140,15 @@ function FNSReferenceCreate(iFont: FMFont; iDesiredVersion: FNSObjectVersion; va
  *    Mac OS X:         in version 10.0 and later
  }
 function FNSReferenceMatchFonts(iReference: FNSFontReference; iMatchOptions: FNSMatchOptions; iOutputSize: ItemCount; oFonts: FMFontPtr; oNumMatches: ItemCountPtr): OSStatus; external name '_FNSReferenceMatchFonts';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { Mapping to and from Font Families }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  FNSReferenceCreateFromFamily()   *** DEPRECATED ***
  *  
@@ -1118,6 +1172,8 @@ function FNSReferenceCreateFromFamily( iFamily: FMFontFamily; iStyle: FMFontStyl
 function FNSReferenceMatchFamilies( iReference: FNSFontReference; iMatchOptions: FNSMatchOptions; iOutputSize: ItemCount; oFonts: {variable-size-array} FMFontFamilyInstancePtr { can be NULL }; oNumMatches: ItemCountPtr { can be NULL } ): OSStatus; external name '_FNSReferenceMatchFamilies';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  FNSReferenceCreateFromFamily()
  *  
  *  Availability:
@@ -1136,11 +1192,15 @@ function FNSReferenceCreateFromFamily(iFamily: FMFontFamily; iStyle: FMFontStyle
  *    Mac OS X:         in version 10.0 and later
  }
 function FNSReferenceMatchFamilies(iReference: FNSFontReference; iMatchOptions: FNSMatchOptions; iOutputSize: ItemCount; oFonts: FMFontFamilyInstancePtr; oNumMatches: ItemCountPtr): OSStatus; external name '_FNSReferenceMatchFamilies';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { UI Support }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  FNSReferenceGetFamilyInfo()   *** DEPRECATED ***
  *  
@@ -1212,6 +1272,8 @@ function FNSEnabled: Boolean; external name '_FNSEnabled';
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  FNSReferenceGetFamilyInfo()
  *  
  *  Availability:
@@ -1266,4 +1328,7 @@ function FNSEnabled: boolean; external name '_FNSEnabled';
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

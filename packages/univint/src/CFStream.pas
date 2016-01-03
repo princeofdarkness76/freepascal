@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 2000-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -39,6 +40,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	Copyright (c) 2000-2005, Apple, Inc. All rights reserved.
 }
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
@@ -49,7 +52,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -59,12 +65,17 @@
 unit CFStream;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -78,14 +89,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -94,11 +110,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -136,6 +155,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -143,6 +164,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -372,6 +394,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -380,7 +404,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -407,9 +434,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -419,6 +450,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -474,6 +506,8 @@ const
 type
 	CFStreamEventType = CFOptionFlags;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,CFBase,CFString,CFDictionary,CFURL,CFRunLoop,CFSocket;
 {$ALIGN POWER}
 
@@ -513,7 +547,10 @@ const
     kCFStreamEventCanAcceptBytes = 4; 
     kCFStreamEventErrorOccurred = 8;
     kCFStreamEventEndEncountered = 16;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	CFStreamClientContext = record
@@ -525,6 +562,7 @@ type
 	end;
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -557,11 +595,16 @@ type
 	__CFWriteStream = record end;
 	CFReadStreamRefPtr = ^CFReadStreamRef;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	CFReadStreamRef = ^SInt32; { an opaque 32-bit type }
 	CFReadStreamRefPtr = ^CFReadStreamRef;
 	CFWriteStreamRef = ^SInt32; { an opaque 32-bit type }
 	CFWriteStreamRefPtr = ^CFWriteStreamRef;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	CFReadStreamClientCallBack = procedure( stream: CFReadStreamRef; typ: CFStreamEventType; clientCallBackInfo: UnivPtr );
@@ -592,6 +635,7 @@ function CFWriteStreamCreateWithFile( alloc: CFAllocatorRef; fileURL: CFURLRef )
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { CF_IMPLICIT_BRIDGING_DISABLED }
 procedure CFStreamCreateBoundPair( alloc: CFAllocatorRef; var readStream: CFReadStreamRef; var writeStream: CFWriteStreamRef; transferBufferSize: CFIndex ); external name '_CFStreamCreateBoundPair';
 { CF_IMPLICIT_BRIDGING_ENABLED }
@@ -609,6 +653,8 @@ procedure CFStreamCreateBoundPair( alloc: CFAllocatorRef; var readStream: CFRead
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {#if MAC_OS_X_VERSION_10_2 <= MAC_OS_X_VERSION_MAX_ALLOWED}
 { Property for file write streams; value should be a CFBoolean.  Set to TRUE to append to a file, rather than to replace its contents }
@@ -616,9 +662,12 @@ var kCFStreamPropertyAppendToFile: CFStringRef; external name '_kCFStreamPropert
 {#endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Value is a CFNumber
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var kCFStreamPropertyFileCurrentOffset: CFStringRef; external name '_kCFStreamPropertyFileCurrentOffset'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
@@ -634,9 +683,12 @@ var kCFStreamPropertySocketRemoteHostName: CFStringRef; external name '_kCFStrea
 var kCFStreamPropertySocketRemotePortNumber: CFStringRef; external name '_kCFStreamPropertySocketRemotePortNumber'; (* attribute const *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { CF_IMPLICIT_BRIDGING_DISABLED }
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { Socket streams; the returned streams are paired such that they use the same socket; pass NULL if you want only the read stream or the write stream }
 procedure CFStreamCreatePairWithSocket( alloc: CFAllocatorRef; sock: CFSocketNativeHandle; var readStream: CFReadStreamRef; var writeStream: CFWriteStreamRef ); external name '_CFStreamCreatePairWithSocket';
 procedure CFStreamCreatePairWithSocketToHost( alloc: CFAllocatorRef; host: CFStringRef; port: UInt32; var readStream: CFReadStreamRef; var writeStream: CFWriteStreamRef ); external name '_CFStreamCreatePairWithSocketToHost';
@@ -644,15 +696,19 @@ procedure CFStreamCreatePairWithSocketToHost( alloc: CFAllocatorRef; host: CFStr
 procedure CFStreamCreatePairWithPeerSocketSignature( alloc: CFAllocatorRef; const (*var*) signature: CFSocketSignature; var readStream: CFReadStreamRef; var writeStream: CFWriteStreamRef ); external name '_CFStreamCreatePairWithPeerSocketSignature';
 {#endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
 { CF_IMPLICIT_BRIDGING_ENABLED }
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { Returns the current state of the stream }
 function CFReadStreamGetStatus( stream: CFReadStreamRef ): CFStreamStatus; external name '_CFReadStreamGetStatus';
 function CFWriteStreamGetStatus( stream: CFWriteStreamRef ): CFStreamStatus; external name '_CFWriteStreamGetStatus';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { Returns NULL if no error has occurred; otherwise returns the error. }
 function CFReadStreamCopyError( stream: CFReadStreamRef ): CFErrorRef; external name '_CFReadStreamCopyError';
@@ -684,12 +740,17 @@ function CFWriteStreamCopyError( stream: CFWriteStreamRef ): CFErrorRef; externa
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { 0 is returned if no error has occurred.  errorDomain specifies the domain
    in which the error code should be interpretted; pass NULL if you are not 
    interested. }
 function CFReadStreamGetError( stream: CFReadStreamRef ): CFStreamError; external name '_CFReadStreamGetError';
 function CFWriteStreamGetError( stream: CFWriteStreamRef ): CFStreamError; external name '_CFWriteStreamGetError';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Returns success/failure.  Opening a stream causes it to reserve all the system
    resources it requires.  If the stream can open non-blocking, this will always 
@@ -720,6 +781,7 @@ function CFReadStreamRead( stream: CFReadStreamRef; buffer: UnivPtr; bufferLengt
 
 { Returns a pointer to an internal buffer if possible (setting *numBytesRead
 <<<<<<< HEAD
+<<<<<<< HEAD
    to the length of the returned buffer), otherwise returns NULL; guaranteed
    to return in O(1).  Bytes returned in the buffer are considered read from
    the stream; if maxBytesToRead is greater than 0, not more than maxBytesToRead
@@ -727,13 +789,18 @@ function CFReadStreamRead( stream: CFReadStreamRef; buffer: UnivPtr; bufferLengt
    as are readily available will be returned.  The returned buffer is good only
    until the next stream operation called on the stream.  Caller should neither
 =======
+=======
+>>>>>>> origin/fixes_2_2
    to the length of the returned buffer), otherwise returns NULL; guaranteed 
    to return in O(1).  Bytes returned in the buffer are considered read from 
    the stream; if maxBytesToRead is greater than 0, not more than maxBytesToRead
    will be returned.  If maxBytesToRead is less than or equal to zero, as many bytes
    as are readily available will be returned.  The returned buffer is good only 
    until the next stream operation called on the stream.  Caller should neither 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
    change the contents of the returned buffer nor attempt to deallocate the buffer;
    it is still owned by the stream. }
 function CFReadStreamGetBuffer( stream: CFReadStreamRef; maxBytesToRead: CFIndex; var numBytesRead: CFIndex ): UInt8Ptr; external name '_CFReadStreamGetBuffer';
@@ -772,6 +839,7 @@ function CFWriteStreamSetProperty( stream: CFWriteStreamRef; propertyName: CFStr
    per stream is allowed; registering a new client replaces the previous one.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  
    Once you have set a client, the stream must be scheduled to provide the context in
    which the client will be called.  Streams may be scheduled on a single dispatch queue
@@ -788,6 +856,8 @@ function CFWriteStreamSetProperty( stream: CFWriteStreamRef; propertyName: CFStr
 =======
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
    Once you have set a client, you need to schedule a run loop on which that client
    can be notified.  You may schedule multiple run loops (for instance, if you are 
@@ -795,6 +865,7 @@ function CFWriteStreamSetProperty( stream: CFWriteStreamRef; propertyName: CFStr
    run loops; It is the caller's responsibility to ensure that at least one of the 
    scheduled run loops is being run.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -823,6 +894,11 @@ function CFWriteStreamSetProperty( stream: CFWriteStreamRef; propertyName: CFStr
    asynchronous notification, CFStreamSetClient() will return NO; typically, such
    streams will never block for device I/O (e.g. a stream on memory)
 >>>>>>> graemeg/fixes_2_2
+=======
+   NOTE: not all streams provide these notifications.  If a stream does not support
+   asynchronous notification, CFStreamSetClient() will return NO; typically, such
+   streams will never block for device I/O (e.g. a stream on memory)
+>>>>>>> origin/fixes_2_2
 }
 
 function CFReadStreamSetClient( stream: CFReadStreamRef; streamEvents: CFOptionFlags; clientCB: CFReadStreamClientCallBack; var clientContext: CFStreamClientContext ): Boolean; external name '_CFReadStreamSetClient';
@@ -834,6 +910,7 @@ procedure CFWriteStreamScheduleWithRunLoop( stream: CFWriteStreamRef; runLoop: C
 procedure CFReadStreamUnscheduleFromRunLoop( stream: CFReadStreamRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ); external name '_CFReadStreamUnscheduleFromRunLoop';
 procedure CFWriteStreamUnscheduleFromRunLoop( stream: CFWriteStreamRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ); external name '_CFWriteStreamUnscheduleFromRunLoop';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  * Specify the dispatch queue upon which the client callbacks will be invoked.
@@ -975,3 +1052,7 @@ end.
 
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+
+end.
+>>>>>>> origin/fixes_2_2

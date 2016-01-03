@@ -15,6 +15,7 @@ begin
     P:=AddPackage('fftw');
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -37,6 +38,8 @@ begin
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
     P.Directory:='fftw';
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
@@ -45,7 +48,10 @@ begin
 
     T:=P.Targets.AddUnit('fftw_s.pas');
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef ALLPACKAGES}
     Run;
     end;

@@ -3379,6 +3379,7 @@ uses ctypes,
 
 {$IFDEF LinkDynamically}
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function InitialiseOCI(const LibraryName: AnsiString): integer;
 Function InitialiseOCI(): integer;
 Procedure ReleaseOCI;
@@ -3386,11 +3387,16 @@ Procedure ReleaseOCI;
 var OCILibraryHandle : TLibHandle;
     OCILoadedLibrary : AnsiString;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Procedure InitialiseOCI;
 Procedure ReleaseOCI;
 
 var OCILibraryHandle : TLibHandle;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
 
 implementation
@@ -3399,6 +3405,7 @@ implementation
 
 {$IFDEF LinkDynamically}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 var 
   RefCount : integer;
@@ -3921,6 +3928,8 @@ begin
   pointer(OCIClientVersion) := GetProcedureAddress(OCILibraryHandle,'OCIClientVersion');
   pointer(OCIInitEventHandle) := GetProcedureAddress(OCILibraryHandle,'OCIInitEventHandle');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var RefCount : integer;
 
 Procedure InitialiseOCI;
@@ -4423,12 +4432,16 @@ begin
     pointer(OCIInitEventHandle) := GetProcedureAddress(OCILibraryHandle,'OCIInitEventHandle');
 
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure ReleaseOCI;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if RefCount > 0 then 
     dec(RefCount);
@@ -4438,11 +4451,16 @@ begin
       inc(RefCount);
     OCILoadedLibrary:='';
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if RefCount > 0 then dec(RefCount);
   if RefCount = 0 then
     begin
     if not UnloadLibrary(OCILibraryHandle) then inc(RefCount);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
 end;
 

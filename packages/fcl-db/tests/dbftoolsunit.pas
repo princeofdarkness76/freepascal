@@ -63,6 +63,20 @@ type
     Function InternalGetFieldDataset : TDataSet; override;
   public
     function GetTraceDataset(AChange : Boolean) : TDataset; override;
+<<<<<<< HEAD
+=======
+  end;
+
+  { TDbfTraceDataset }
+
+  TDbfTraceDataset = class(Tdbf)
+  protected
+    procedure SetCurrentRecord(Index: Longint); override;
+    procedure RefreshInternalCalcFields(Buffer: PChar); override;
+    procedure InternalInitFieldDefs; override;
+    procedure CalculateFields(Buffer: PChar); override;
+    procedure ClearCalcFields(Buffer: PChar); override;
+>>>>>>> origin/fixes_2_2
   end;
 
   { TDbfTraceDataset }
@@ -431,7 +445,10 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TDBFDBConnector.GetTraceDataset(AChange: Boolean): TDataset;
 var ADS, AResDS : TDbf;
 begin
@@ -474,7 +491,10 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure TDbfTraceDataset.CalculateFields(Buffer: PChar);
 begin
   DataEvents := DataEvents + 'CalculateFields' + ';';

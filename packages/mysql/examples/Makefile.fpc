@@ -4,10 +4,14 @@
 
 [target]
 <<<<<<< HEAD
+<<<<<<< HEAD
 programs=testdb4 mysqls testdb3 testdb5
 =======
 programs=testdb4 mysqls testdb3
 >>>>>>> graemeg/fixes_2_2
+=======
+programs=testdb4 mysqls testdb3
+>>>>>>> origin/fixes_2_2
 
 [require]
 packages=mysql

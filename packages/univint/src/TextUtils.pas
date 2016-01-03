@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/TextUtils.h
  
      Contains:   Text Utilities Interfaces.
@@ -30,6 +31,8 @@
      Copyright:  © 1985-2008 Apple Inc. All rights reserved.
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       TextUtils.p
  
      Contains:   Text Utilities Interfaces.
@@ -38,11 +41,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -71,6 +78,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -82,7 +91,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -92,12 +104,17 @@
 unit TextUtils;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -111,14 +128,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -127,11 +149,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -169,6 +194,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -176,6 +203,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -429,6 +457,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -437,7 +467,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -464,9 +497,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -477,6 +514,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,IntlResources;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -485,6 +523,9 @@ uses MacTypes,IntlResources;
 =======
 uses MacTypes,IntlResources,NumberFormatting,StringCompare,DateTimeUtils;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,IntlResources,NumberFormatting,StringCompare,DateTimeUtils;
+>>>>>>> origin/fixes_2_2
 
 
 {$ALIGN MAC68K}
@@ -518,6 +559,7 @@ uses MacTypes,IntlResources,NumberFormatting,StringCompare,DateTimeUtils;
 }
 
 { TruncCode, StyledLineBreakCode, and truncation constants moved to QuickDrawText.i }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 type
@@ -989,6 +1031,8 @@ function FindScriptRun( textPtr: Ptr; textLen: SIGNEDLONG; var lenUsed: SIGNEDLO
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	ScriptRunStatusPtr = ^ScriptRunStatus;
@@ -1120,40 +1164,30 @@ procedure UppercaseStripDiacritics(textPtr: Ptr; len: SInt16; script: ScriptCode
  *    Mac OS X:         in version 10.0 and later
  }
 function FindScriptRun(textPtr: Ptr; textLen: SInt32; var lenUsed: SInt32): ScriptRunStatus; external name '_FindScriptRun';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     The following functions are old names, but are required for PowerPC builds
     because InterfaceLib exports these names, instead of the new ones.
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 =======
 {$ifc CALL_NOT_IN_CARBON}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc CALL_NOT_IN_CARBON}
+>>>>>>> origin/fixes_2_2
 {
  *  FindWord()
  *  
  *  Availability:
 <<<<<<< HEAD
- *    Mac OS X:         not available
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-
-
-=======
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    CarbonLib:        not available
- *    Mac OS X:         not available
- }
-procedure FindWord(textPtr: Ptr; textLength: SInt16; offset: SInt16; leadingEdge: boolean; breaks: BreakTablePtr; var offsets: OffsetTable); external name '_FindWord';
->>>>>>> graemeg/fixes_2_2
-{
- *  NFindWord()
- *  
- *  Availability:
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -1162,12 +1196,41 @@ procedure FindWord(textPtr: Ptr; textLength: SInt16; offset: SInt16; leadingEdge
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure FindWord(textPtr: Ptr; textLength: SInt16; offset: SInt16; leadingEdge: boolean; breaks: BreakTablePtr; var offsets: OffsetTable); external name '_FindWord';
+<<<<<<< HEAD
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+{
+ *  NFindWord()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+=======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 procedure NFindWord(textPtr: Ptr; textLength: SInt16; offset: SInt16; leadingEdge: boolean; nbreaks: NBreakTablePtr; var offsets: OffsetTable); external name '_NFindWord';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
    On 68K machines, LwrText, LowerText, StripText, UpperText and StripUpperText
    return an error code in register D0, but System 7 PowerMacs do not emulate
@@ -1179,6 +1242,7 @@ procedure NFindWord(textPtr: Ptr; textLength: SInt16; offset: SInt16; leadingEdg
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -1186,17 +1250,23 @@ procedure NFindWord(textPtr: Ptr; textLength: SInt16; offset: SInt16; leadingEdg
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 procedure LwrText(textPtr: Ptr; len: SInt16); external name '_LwrText';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  LowerText()
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -1204,34 +1274,22 @@ procedure LwrText(textPtr: Ptr; len: SInt16); external name '_LwrText';
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 procedure LowerText(textPtr: Ptr; len: SInt16); external name '_LowerText';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  StripText()
  *  
  *  Availability:
 <<<<<<< HEAD
- *    Mac OS X:         not available
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-
-
-=======
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    CarbonLib:        not available
- *    Mac OS X:         not available
- }
-procedure StripText(textPtr: Ptr; len: SInt16); external name '_StripText';
->>>>>>> graemeg/fixes_2_2
-{
- *  UpperText()
- *  
- *  Availability:
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -1240,16 +1298,46 @@ procedure StripText(textPtr: Ptr; len: SInt16); external name '_StripText';
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure StripText(textPtr: Ptr; len: SInt16); external name '_StripText';
+<<<<<<< HEAD
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+{
+ *  UpperText()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+=======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 procedure UpperText(textPtr: Ptr; len: SInt16); external name '_UpperText';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  StripUpperText()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -1348,6 +1436,8 @@ procedure upperstring( theString: CStringPtr; diacSensitive: Boolean ); external
 >>>>>>> origin/cpstrnew
 { Old routine name but no new names are mapped to it:}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -1369,11 +1459,15 @@ procedure UpperString(var theString: Str255; diacSensitive: boolean); external n
 
 {  Old routine name but no new names are mapped to it: }
 {$ifc CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  UprText()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -1381,13 +1475,18 @@ procedure UpperString(var theString: Str255; diacSensitive: boolean); external n
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 procedure UprText(textPtr: Ptr; len: SInt16); external name '_UprText';
 {$endc}  {CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Functions for converting between C and Pascal Strings
@@ -1406,6 +1505,7 @@ procedure UprText(textPtr: Ptr; len: SInt16); external name '_UprText';
           then they are available as a macro.
     
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 {
@@ -1661,6 +1761,8 @@ function P2CStr( pString: StringPtr ): Ptr; external name '_P2CStr';
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  c2pstrcpy()
  *  
@@ -1749,4 +1851,7 @@ function P2CStr(pString: StringPtr): Ptr; external name '_P2CStr';
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

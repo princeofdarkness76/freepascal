@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     $Id: header,v 1.3 2013/05/26 06:33:45 michael Exp $
     This file is part of the Free Component Library (FCL)
     Copyright (c) 1999-2014 by the Free Pascal development team
@@ -8,6 +9,11 @@
     This file is part of the Free Component Library (FCL)
     Copyright (c) 1999-2000 by the Free Pascal development team
 >>>>>>> graemeg/fixes_2_2
+=======
+    $Id: header,v 1.1 2000/07/13 06:33:45 michael Exp $
+    This file is part of the Free Component Library (FCL)
+    Copyright (c) 1999-2000 by the Free Pascal development team
+>>>>>>> origin/fixes_2_2
 
     See the file COPYING.FPC, included in this distribution,
     for details about the copyright.
@@ -25,6 +31,7 @@ Interface
 
 Uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$IFDEF UNIX}
    BaseUnix,
   {$ENDIF}
@@ -32,10 +39,14 @@ Uses
 =======
    SysUtils,Classes,ZStream;
 >>>>>>> graemeg/fixes_2_2
+=======
+   SysUtils,Classes,ZStream;
+>>>>>>> origin/fixes_2_2
 
 
 Const
   { Signatures }
+<<<<<<< HEAD
 <<<<<<< HEAD
   END_OF_CENTRAL_DIR_SIGNATURE               = $06054B50;
   ZIP64_END_OF_CENTRAL_DIR_SIGNATURE         = $06064B50;
@@ -83,6 +94,8 @@ Type
      {$warning TODO implement EFS/language enooding using UTF-8}
      Bit_Flag               :  Word; //"General purpose bit flag in PKZip appnote
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC_BIG_ENDIAN}
   END_OF_CENTRAL_DIR_SIGNATURE  = $504B0506;
   LOCAL_FILE_HEADER_SIGNATURE   = $504B0304;
@@ -98,11 +111,15 @@ Type
      Signature              :  LongInt;
      Extract_Version_Reqd   :  Word;
      Bit_Flag               :  Word;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      Compress_Method        :  Word;
      Last_Mod_Time          :  Word;
      Last_Mod_Date          :  Word;
      Crc32                  :  LongWord;
+<<<<<<< HEAD
 <<<<<<< HEAD
      Compressed_Size        :  LongWord;
      Uncompressed_Size      :  LongWord;
@@ -131,31 +148,43 @@ Type
      Relative_Hdr_Offset    :  QWord; //Offset that leads to local header record
      Disk_Start_Number      :  LongWord; //on which disk this file starts
 =======
+=======
+>>>>>>> origin/fixes_2_2
      Compressed_Size        :  LongInt;
      Uncompressed_Size      :  LongInt;
      Filename_Length        :  Word;
      Extra_Field_Length     :  Word;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
    end;
 
   { Define the Central Directory record types }
 
   Central_File_Header_Type = Packed Record
 <<<<<<< HEAD
+<<<<<<< HEAD
     Signature            :  LongInt; //4 bytes
     MadeBy_Version       :  Word; //if zip64: lower byte >= 45
     Extract_Version_Reqd :  Word; //if zip64: >=45
     Bit_Flag             :  Word; //General purpose bit flag in PKZip appnote
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Signature            :  LongInt;
     MadeBy_Version       :  Word;
     Extract_Version_Reqd :  Word;
     Bit_Flag             :  Word;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Compress_Method      :  Word;
     Last_Mod_Time        :  Word;
     Last_Mod_Date        :  Word;
     Crc32                :  LongWord;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Compressed_Size      :  LongWord;
     Uncompressed_Size    :  LongWord;
@@ -163,11 +192,16 @@ Type
     Compressed_Size      :  LongInt;
     Uncompressed_Size    :  LongInt;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Compressed_Size      :  LongInt;
+    Uncompressed_Size    :  LongInt;
+>>>>>>> origin/fixes_2_2
     Filename_Length      :  Word;
     Extra_Field_Length   :  Word;
     File_Comment_Length  :  Word;
     Starting_Disk_Num    :  Word;
     Internal_Attributes  :  Word;
+<<<<<<< HEAD
 <<<<<<< HEAD
     External_Attributes  :  LongWord;
     Local_Header_Offset  :  LongWord; // if zip64: 0xFFFFFFFF
@@ -177,17 +211,23 @@ Type
     //1 per zip file, near end, before comment
     Signature               :  LongInt; //4 bytes
 =======
+=======
+>>>>>>> origin/fixes_2_2
     External_Attributes  :  LongInt;
     Local_Header_Offset  :  LongInt;
   End;
 
   End_of_Central_Dir_Type =  Packed Record
     Signature               :  LongInt;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Disk_Number             :  Word;
     Central_Dir_Start_Disk  :  Word;
     Entries_This_Disk       :  Word;
     Total_Entries           :  Word;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Central_Dir_Size        :  LongWord;
     Start_Disk_Offset       :  LongWord;
@@ -215,12 +255,17 @@ Type
   end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Central_Dir_Size        :  LongInt;
     Start_Disk_Offset       :  LongInt;
     ZipFile_Comment_Length  :  Word;
   end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Const
   Crc_32_Tab : Array[0..255] of LongWord = (
     $00000000, $77073096, $ee0e612c, $990951ba, $076dc419, $706af48f, $e963a535, $9e6495a3,
@@ -280,10 +325,13 @@ Type
     Procedure Compress; Virtual; Abstract;
     Class Function ZipID : Word; virtual; Abstract;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Class Function ZipVersionReqd: Word; virtual; Abstract;
     Function ZipBitFlag: Word; virtual; Abstract;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Property BufferSize : LongWord read FBufferSize;
     Property OnPercent : Integer Read FOnPercent Write FOnPercent;
     Property OnProgress : TProgressEvent Read FOnProgress Write FOnProgress;
@@ -352,6 +400,7 @@ Type
     SaveByte    :  Byte;     { Output code buffer                              }
     BitsUsed    :  Byte;     { Index into output code buffer                   }
 <<<<<<< HEAD
+<<<<<<< HEAD
     BytesIn     :  LongWord;  { Count of input file bytes processed             }
     BytesOut    :  LongWord;  { Count of output bytes                           }
     FOnBytes    :  LongWord;
@@ -360,6 +409,11 @@ Type
     BytesOut    :  LongInt;  { Count of output bytes                           }
     FOnBytes    : Longint;
 >>>>>>> graemeg/fixes_2_2
+=======
+    BytesIn     :  LongInt;  { Count of input file bytes processed             }
+    BytesOut    :  LongInt;  { Count of output bytes                           }
+    FOnBytes    : Longint;
+>>>>>>> origin/fixes_2_2
     Procedure FillInputBuffer;
     Procedure WriteOutputBuffer;
     Procedure FlushOutput;
@@ -381,10 +435,13 @@ Type
     Procedure Compress; override;
     Class Function ZipID : Word; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Class Function ZipVersionReqd : Word; override;
     Function ZipBitFlag : Word; override;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   { TDeflater }
@@ -397,10 +454,13 @@ Type
     Procedure Compress; override;
     Class Function ZipID : Word; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Class Function ZipVersionReqd : Word; override;
     Function ZipBitFlag : Word; override;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Property CompressionLevel : TCompressionlevel Read FCompressionLevel Write FCompressionLevel;
   end;
 
@@ -417,6 +477,7 @@ Type
 
   TZipFileEntry = Class(TCollectionItem)
   private
+<<<<<<< HEAD
 <<<<<<< HEAD
     FArchiveFileName: String; //Name of the file as it appears in the zip file list
     FAttributes: LongInt;
@@ -451,6 +512,8 @@ Type
     property Attributes: LongInt read FAttributes write FAttributes;
     Property CompressionLevel: TCompressionlevel read FCompressionLevel write FCompressionLevel;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FArchiveFileName: String;
     FDateTime: TDateTime;
     FDiskFileName: String;
@@ -468,7 +531,10 @@ Type
     Property DiskFileName : String Read FDiskFileName Write FDiskFileName;
     Property Size : Integer Read FSize Write FSize;
     Property DateTime : TDateTime Read FDateTime Write FDateTime;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   { TZipFileEntries }
@@ -482,20 +548,27 @@ Type
     Function AddFileEntry(Const ADiskFileName, AArchiveFileName : String): TZipFileEntry;
     Function AddFileEntry(Const AStream : TSTream; Const AArchiveFileName : String): TZipFileEntry;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure AddFileEntries(Const List : TStrings);
     Property Entries[AIndex : Integer] : TZipFileEntry Read GetZ Write SetZ; default;
   end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Property Entries[AIndex : Integer] : TZipFileEntry Read GetZ Write SetZ; default;
   end;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { TZipper }
 
   TZipper = Class(TObject)
   Private
+<<<<<<< HEAD
 <<<<<<< HEAD
     FEntries        : TZipFileEntries;
     FZipping        : Boolean;
@@ -524,6 +597,8 @@ Type
     Function  UpdateZipHeader(Item : TZipFileEntry; FZip : TStream; ACRC : LongWord;AMethod : Word; AZipVersionReqd : Word; AZipBitFlag : Word) : Boolean;
     Procedure BuildZipDirectory; //Builds central directory based on local headers
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FEntries: TZipFileEntries;
     FZipping    : Boolean;
     FBufSize    : LongWord;
@@ -548,7 +623,10 @@ Type
     Procedure StartZipFile(Item : TZipFileEntry);
     Function  UpdateZipHeader(Item : TZipFileEntry; FZip : TStream; ACRC : LongWord;AMethod : Word) : Boolean;
     Procedure BuildZipDirectory;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Procedure DoEndOfFile;
     Procedure ZipOneFile(Item : TZipFileEntry); virtual;
     Function  OpenInput(Item : TZipFileEntry) : Boolean;
@@ -557,13 +635,17 @@ Type
     Procedure SetFileName(Value : String);
     Function CreateCompressor(Item : TZipFileEntry; AinFile,AZipStream : TStream) : TCompressor; virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property NeedsZip64 : boolean Read FZipFileNeedsZip64 Write FZipFileNeedsZip64;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Public
     Constructor Create;
     Destructor Destroy;override;
     Procedure ZipAllFiles; virtual;
+<<<<<<< HEAD
 <<<<<<< HEAD
     // Saves zip to file and changes FileName
     Procedure SaveToFile(AFileName: string);
@@ -579,6 +661,10 @@ Type
     Procedure ZipFiles(AFileName : String; FileList : TStrings);
     Procedure ZipFiles(AFileName : String; Entries : TZipFileEntries);
 >>>>>>> graemeg/fixes_2_2
+=======
+    Procedure ZipFiles(AFileName : String; FileList : TStrings);
+    Procedure ZipFiles(AFileName : String; Entries : TZipFileEntries);
+>>>>>>> origin/fixes_2_2
     Procedure Clear;
   Public
     Property BufferSize : LongWord Read FBufSize Write SetBufSize;
@@ -587,6 +673,7 @@ Type
     Property OnStartFile : TOnStartFileEvent Read FOnStartFile Write FOnStartFile;
     Property OnEndFile : TOnEndOfFileEvent Read FOnEndOfFile Write FOnEndOfFile;
     Property FileName : String Read FFileName Write SetFileName;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Property FileComment: String Read FFileComment Write FFileComment;
     // Deprecated. Use Entries.AddFileEntry(FileName) or Entries.AddFileEntries(List) instead.
@@ -621,18 +708,24 @@ Type
     Property FullEntries[AIndex : Integer] : TFullZipFileEntry Read GetFZ Write SetFZ; default;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Property Files : TStrings Read FFiles;
     Property InMemSize : Integer Read FInMemSize Write FInMemSize;
     Property Entries : TZipFileEntries Read FEntries Write SetEntries;
   end;
 
   { TYbZipper }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   { TUnZipper }
 
   TUnZipper = Class(TObject)
   Private
+<<<<<<< HEAD
 <<<<<<< HEAD
     FOnCloseInputStream: TCustomInputStreamEvent;
     FOnCreateStream: TOnCustomStreamEvent;
@@ -663,6 +756,8 @@ Type
 >>>>>>> graemeg/cpstrnew
     CentralHdr  : Central_File_Header_Type;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FUnZipping  : Boolean;
     FBufSize    : LongWord;
     FFileName   :  String;         { Name of resulting Zip file                 }
@@ -674,7 +769,10 @@ Type
     LocalHdr    : Local_File_Header_Type;
     CentralHdr  : Central_File_Header_Type;
     EndHdr      : End_of_Central_Dir_Type;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     FOnPercent  : LongInt;
     FOnProgress : TProgressEvent;
@@ -682,6 +780,7 @@ Type
     FOnStartFile : TOnStartFileEvent;
   Protected
     Procedure OpenInput;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Procedure CloseOutput(Item : TFullZipFileEntry; var OutStream: TStream);
     Procedure CloseInput;
@@ -696,6 +795,8 @@ Type
     Procedure UnZipOneFile(Item : TFullZipFileEntry); virtual;
     Function  OpenOutput(OutFileName : String; var OutStream: TStream; Item : TFullZipFileEntry) : Boolean;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Procedure CloseOutput;
     Procedure CloseInput;
     Procedure ReadZipHeader(Item : TZipFileEntry; out ACRC : LongWord;out AMethod : Word);
@@ -703,7 +804,10 @@ Type
     Procedure DoEndOfFile;
     Procedure UnZipOneFile(Item : TZipFileEntry); virtual;
     Function  OpenOutput(OutFileName : String) : Boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Procedure SetBufSize(Value : LongWord);
     Procedure SetFileName(Value : String);
     Procedure SetOutputPath(Value:String);
@@ -713,6 +817,7 @@ Type
     Destructor Destroy;override;
     Procedure UnZipAllFiles; virtual;
     Procedure UnZipFiles(AFileName : String; FileList : TStrings);
+<<<<<<< HEAD
 <<<<<<< HEAD
     Procedure UnZipFiles(FileList : TStrings);
     Procedure UnZipAllFiles(AFileName : String);
@@ -725,17 +830,23 @@ Type
     Property OnCreateStream : TOnCustomStreamEvent Read FOnCreateStream Write FOnCreateStream;
     Property OnDoneStream : TOnCustomStreamEvent Read FOnDoneStream Write FOnDoneStream;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Procedure UnZipAllFiles(AFileName : String);
     Procedure Clear;
   Public
     Property BufferSize : LongWord Read FBufSize Write SetBufSize;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Property OnPercent : Integer Read FOnPercent Write FOnPercent;
     Property OnProgress : TProgressEvent Read FOnProgress Write FOnProgress;
     Property OnStartFile : TOnStartFileEvent Read FOnStartFile Write FOnStartFile;
     Property OnEndFile : TOnEndOfFileEvent Read FOnEndOfFile Write FOnEndOfFile;
     Property FileName : String Read FFileName Write SetFileName;
     Property OutputPath : String Read FOutputPath Write SetOutputPath;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Property FileComment: String Read FFileComment;
     Property Files : TStrings Read FFiles;
@@ -744,6 +855,10 @@ Type
     Property Files : TStrings Read FFiles;
     Property Entries : TZipFileEntries Read FEntries Write FEntries;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Property Files : TStrings Read FFiles;
+    Property Entries : TZipFileEntries Read FEntries Write FEntries;
+>>>>>>> origin/fixes_2_2
   end;
 
   EZipError = Class(Exception);
@@ -751,6 +866,7 @@ Type
 Implementation
 
 ResourceString
+<<<<<<< HEAD
 <<<<<<< HEAD
   SErrBufsizeChange = 'Changing buffer size is not allowed while (un)zipping.';
   SErrFileChange = 'Changing output file name is not allowed while (un)zipping.';
@@ -767,6 +883,8 @@ ResourceString
   SErrNoFileName = 'No archive filename for examine operation.';
   SErrNoStream = 'No stream is opened.';
 =======
+=======
+>>>>>>> origin/fixes_2_2
   SErrBufsizeChange = 'Changing buffer size is not allowed while (un)zipping';
   SErrFileChange = 'Changing output file name is not allowed while (un)zipping';
   SErrInvalidCRC = 'Invalid CRC checksum while unzipping %s';
@@ -775,12 +893,16 @@ ResourceString
   SErrMissingFileName = 'Missing filename in entry %d';
   SErrMissingArchiveName = 'Missing archive filename in streamed entry %d';
   SErrFileDoesNotExist = 'File "%s" does not exist.';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { ---------------------------------------------------------------------
     Auxiliary
   ---------------------------------------------------------------------}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$IFDEF FPC_BIG_ENDIAN}
 function SwapLFH(const Values: Local_File_Header_Type): Local_File_Header_Type;
@@ -891,6 +1013,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Procedure DateTimeToZipDateTime(DT : TDateTime; out ZD,ZT : Word);
 
 Var
@@ -899,6 +1023,7 @@ Var
 begin
   DecodeDate(DT,Y,M,D);
   DecodeTime(DT,H,N,S,MS);
+<<<<<<< HEAD
 <<<<<<< HEAD
   if Y<1980 then
   begin
@@ -918,6 +1043,9 @@ begin
 =======
   Y:=Y-1980;
 >>>>>>> graemeg/fixes_2_2
+=======
+  Y:=Y-1980;
+>>>>>>> origin/fixes_2_2
   ZD:=d+(32*M)+(512*Y);
   ZT:=(S div 2)+(32*N)+(2048*h);
 end;
@@ -931,6 +1059,7 @@ begin
   MS:=0;
   S:=(ZT and 31) shl 1;
   N:=(ZT shr 5) and 63;
+<<<<<<< HEAD
 <<<<<<< HEAD
   H:=ZT shr 11;
   D:=ZD and 31;
@@ -977,6 +1106,8 @@ begin
 end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   H:=(ZT shr 12) and 31;
   D:=ZD and 31;
   M:=(ZD shr 5) and 15;
@@ -984,7 +1115,10 @@ end;
   DT:=ComposeDateTime(EncodeDate(Y,M,D),EncodeTime(H,N,S,MS));
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { ---------------------------------------------------------------------
     TDeCompressor
   ---------------------------------------------------------------------}
@@ -1037,6 +1171,7 @@ end;
 
 
 procedure TDeflater.Compress;
+<<<<<<< HEAD
 <<<<<<< HEAD
 Var
   Buf : PByte;
@@ -1110,6 +1245,8 @@ begin
       if assigned(FOnProgress) then
         fOnProgress(self,0);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 Var
   Buf : PByte;
@@ -1122,12 +1259,16 @@ begin
   Try
     C:=TCompressionStream.Create(FCompressionLevel,FOutFile,True);
     Try
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       Repeat
         Count:=FInFile.Read(Buf^,FBufferSize);
         For I:=0 to Count-1 do
           UpdC32(Buf[i]);
         NewCount:=Count;
+<<<<<<< HEAD
 <<<<<<< HEAD
         while (NewCount>0) do
           NewCount:=NewCount-C.Write(Buf^,NewCount);
@@ -1158,6 +1299,10 @@ begin
         While (NewCount>0) do
           NewCount:=NewCount-C.Write(Buf^,NewCount);
 >>>>>>> graemeg/fixes_2_2
+=======
+        While (NewCount>0) do
+          NewCount:=NewCount-C.Write(Buf^,NewCount);
+>>>>>>> origin/fixes_2_2
       Until (Count=0);
     Finally
       C.Free;
@@ -1166,10 +1311,13 @@ begin
     FreeMem(Buf);
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if assigned(FOnProgress) then
     fOnProgress(self,100.0);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Crc32Val:=NOT Crc32Val;
 end;
 
@@ -1178,6 +1326,7 @@ begin
   Result:=8;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 class function TDeflater.ZipVersionReqd: Word;
 begin
@@ -1198,6 +1347,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { ---------------------------------------------------------------------
     TInflater
   ---------------------------------------------------------------------}
@@ -1214,6 +1365,7 @@ Var
   Buf : PByte;
   I,Count : Integer;
   C : TDeCompressionStream;
+<<<<<<< HEAD
 <<<<<<< HEAD
   BytesNow : Integer;
   NextMark : Integer;
@@ -1236,6 +1388,11 @@ begin
 begin
   CRC32Val:=$FFFFFFFF;
 >>>>>>> graemeg/fixes_2_2
+=======
+
+begin
+  CRC32Val:=$FFFFFFFF;
+>>>>>>> origin/fixes_2_2
   Buf:=GetMem(FBufferSize);
   Try
     C:=TDeCompressionStream.Create(FInFile,True);
@@ -1246,6 +1403,7 @@ begin
           UpdC32(Buf[i]);
         FOutFile.Write(Buf^,Count);
 <<<<<<< HEAD
+<<<<<<< HEAD
         inc(BytesNow,Count);
         if BytesNow>NextMark Then
            begin
@@ -1255,6 +1413,8 @@ begin
            end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       Until (Count=0);
     Finally
       C.Free;
@@ -1263,10 +1423,13 @@ begin
     FreeMem(Buf);
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
  if assigned(FOnProgress) then
    fOnProgress(self,100.0);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Crc32Val:=NOT Crc32Val;
 end;
 
@@ -1289,10 +1452,14 @@ Const
    INCSIZE     =      1;        { Code indicating a jump in code size              }
    CLEARCODE   =      2;        { Code indicating code table has been cleared      }
 <<<<<<< HEAD
+<<<<<<< HEAD
    STDATTR     =    faAnyFile;  { Standard file attribute for DOS Find First/Next  }
 =======
    STDATTR     =    $23;        { Standard file attribute for DOS Find First/Next  }
 >>>>>>> graemeg/fixes_2_2
+=======
+   STDATTR     =    $23;        { Standard file attribute for DOS Find First/Next  }
+>>>>>>> origin/fixes_2_2
 
 constructor TShrinker.Create(AInFile, AOutFile : TStream; ABufSize : LongWord);
 begin
@@ -1328,10 +1495,14 @@ begin
   Crc32Val:=$FFFFFFFF;
   FOnBytes:=Round((FInFile.Size * FOnPercent) / 100);
 <<<<<<< HEAD
+<<<<<<< HEAD
   While Not InputEof do
 =======
   While NOT InputEof do
 >>>>>>> graemeg/fixes_2_2
+=======
+  While NOT InputEof do
+>>>>>>> origin/fixes_2_2
     begin
     Remaining:=Succ(MaxInBufIdx - InBufIdx);
     If Remaining>255 then
@@ -1347,10 +1518,14 @@ begin
       end;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
    Crc32Val := Not Crc32Val;
 =======
    Crc32Val := NOT Crc32Val;
 >>>>>>> graemeg/fixes_2_2
+=======
+   Crc32Val := NOT Crc32Val;
+>>>>>>> origin/fixes_2_2
    ProcessLine('');
 end;
 
@@ -1359,6 +1534,7 @@ begin
   Result:=1;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 class function TShrinker.ZipVersionReqd: Word;
 begin
@@ -1372,6 +1548,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 Procedure TShrinker.DoOnProgress(Const Pct: Double);
 
@@ -1477,10 +1655,14 @@ Begin
   CurrChild := CodeTable^[Parent].Child;
   { Find first Child that has descendants .. clear any that don't }
 <<<<<<< HEAD
+<<<<<<< HEAD
   While (CurrChild <> -1) and (CodeTable^[CurrChild].Child = -1) do
 =======
   While (CurrChild <> -1) AND (CodeTable^[CurrChild].Child = -1) do
 >>>>>>> graemeg/fixes_2_2
+=======
+  While (CurrChild <> -1) AND (CodeTable^[CurrChild].Child = -1) do
+>>>>>>> origin/fixes_2_2
     begin
     CodeTable^[Parent].Child := CodeTable^[CurrChild].Sibling;
     CodeTable^[CurrChild].Sibling := -1;
@@ -1677,6 +1859,7 @@ Procedure TZipper.GetFileInfo;
 
 Var
 <<<<<<< HEAD
+<<<<<<< HEAD
   F    : TZipFileEntry;
   Info : TSearchRec;
   I    : integer; //zip spec allows QWord but FEntries.Count does not support it
@@ -1684,11 +1867,16 @@ Var
   UnixInfo: Stat;
 {$ENDIF}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   F : TZipFileEntry;
   Info : TSearchRec;
   I       : Longint;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Begin
   For I := 0 to FEntries.Count-1 do
     begin
@@ -1702,6 +1890,7 @@ Begin
           F.Size:=Info.Size;
           F.DateTime:=FileDateToDateTime(Info.Time);
 <<<<<<< HEAD
+<<<<<<< HEAD
         {$IFDEF UNIX}
           if fplstat(F.DiskFileName, @UnixInfo) = 0 then
             F.Attributes := UnixInfo.st_mode;
@@ -1710,6 +1899,8 @@ Begin
         {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         finally
           FindClose(Info);
         end
@@ -1717,6 +1908,7 @@ Begin
         Raise EZipError.CreateFmt(SErrFileDoesNotExist,[F.DiskFileName]);
       end
     else
+<<<<<<< HEAD
 <<<<<<< HEAD
     begin
       If (F.ArchiveFileName='') then
@@ -1733,13 +1925,18 @@ Begin
     end;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       begin
       If (F.ArchiveFileName='') then
         Raise EZipError.CreateFmt(SErrMissingArchiveName,[I]);
       F.Size:=F.Stream.Size;
       end;
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -1750,7 +1947,10 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Procedure TZipper.OpenOutput;
 
 Begin
@@ -1758,13 +1958,17 @@ Begin
 End;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Function TZipper.OpenInput(Item : TZipFileEntry) : Boolean;
 
 Begin
   If (Item.Stream<>nil) then
     FInFile:=Item.Stream
   else
+<<<<<<< HEAD
 <<<<<<< HEAD
     if Item.IsDirectory then
       FInFile := TStringStream.Create('')
@@ -1773,6 +1977,9 @@ Begin
 =======
     FInFile:=TFileStream.Create(Item.DiskFileName,fmOpenRead);
 >>>>>>> graemeg/fixes_2_2
+=======
+    FInFile:=TFileStream.Create(Item.DiskFileName,fmOpenRead);
+>>>>>>> origin/fixes_2_2
   Result:=True;
   If Assigned(FOnStartFile) then
     FOnStartFile(Self,Item.ArchiveFileName);
@@ -1780,7 +1987,10 @@ End;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Procedure TZipper.CloseOutput;
 
 Begin
@@ -1788,7 +1998,10 @@ Begin
 end;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Procedure TZipper.CloseInput(Item : TZipFileEntry);
 
 Begin
@@ -1797,9 +2010,12 @@ Begin
   else
     FinFile:=Nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
   DoEndOfFile;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -1808,22 +2024,29 @@ Procedure TZipper.StartZipFile(Item : TZipFileEntry);
 Begin
   FillChar(LocalHdr,SizeOf(LocalHdr),0);
 <<<<<<< HEAD
+<<<<<<< HEAD
   FillChar(LocalZip64Fld,SizeOf(LocalZip64Fld),0);
   With LocalHdr do
     begin
     Signature := LOCAL_FILE_HEADER_SIGNATURE;
     Extract_Version_Reqd := 10; //default value, v1.0
 =======
+=======
+>>>>>>> origin/fixes_2_2
   With LocalHdr do
     begin
     Signature := LOCAL_FILE_HEADER_SIGNATURE;
     Extract_Version_Reqd := 10;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Bit_Flag := 0;
     Compress_Method := 1;
     DateTimeToZipDateTime(Item.DateTime,Last_Mod_Date,Last_Mod_Time);
     Crc32 := 0;
     Compressed_Size := 0;
+<<<<<<< HEAD
 <<<<<<< HEAD
     LocalZip64Fld.Compressed_Size := 0;
     if Item.Size >= $FFFFFFFF then
@@ -1916,6 +2139,8 @@ Begin
   end;
   FOutStream.WriteBuffer(ZFileName[1],Length(ZFileName));
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Uncompressed_Size := Item.Size;
     FileName_Length := 0;
     Extra_Field_Length := 0;
@@ -1943,11 +2168,15 @@ Begin
     end;
   FOutFile.WriteBuffer(LocalHdr,SizeOf(LocalHdr));
   FOutFile.WriteBuffer(ZFileName[1],Length(ZFileName));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 
 Procedure TZipper.BuildZipDirectory;
+<<<<<<< HEAD
 <<<<<<< HEAD
 // Write out all central file headers using info from local headers
 Var
@@ -2151,6 +2380,8 @@ Begin
       FOutStream.WriteBuffer(FFileComment[1],Length(FFileComment));
     end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 Var
    SavePos   : LongInt;
@@ -2205,7 +2436,10 @@ Begin
      ZipFile_Comment_Length := 0;
      FOutFile.WriteBuffer(EndHdr, SizeOf(EndHdr));
      end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TZipper.CreateCompressor(Item : TZipFileEntry; AInFile,AZipStream : TStream) : TCompressor;
@@ -2213,9 +2447,12 @@ Function TZipper.CreateCompressor(Item : TZipFileEntry; AInFile,AZipStream : TSt
 begin
   Result:=TDeflater.Create(AinFile,AZipStream,FBufSize);
 <<<<<<< HEAD
+<<<<<<< HEAD
   (Result as TDeflater).CompressionLevel:=Item.CompressionLevel;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure TZipper.ZipOneFile(Item : TZipFileEntry);
@@ -2224,10 +2461,13 @@ Var
   CRC : LongWord;
   ZMethod : Word;
 <<<<<<< HEAD
+<<<<<<< HEAD
   ZVersionReqd : Word;
   ZBitFlag : Word;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   ZipStream : TStream;
   TmpFileName : String;
 
@@ -2241,10 +2481,13 @@ Begin
       begin
       TmpFileName:=ChangeFileExt(FFileName,'.tmp');
 <<<<<<< HEAD
+<<<<<<< HEAD
       if TmpFileName=FFileName then
         TmpFileName:=TmpFileName+'.tmp';
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       ZipStream:=TFileStream.Create(TmpFileName,fmCreate);
       end;
     Try
@@ -2255,6 +2498,7 @@ Begin
           Compress;
           CRC:=Crc32Val;
           ZMethod:=ZipID;
+<<<<<<< HEAD
 <<<<<<< HEAD
           ZVersionReqd:=ZipVersionReqd;
           ZBitFlag:=ZipBitFlag;
@@ -2270,6 +2514,8 @@ Begin
         FInfile.Seek(0,soBeginning);
         FOutStream.CopyFrom(FInFile,0);
 =======
+=======
+>>>>>>> origin/fixes_2_2
         Finally
           Free;
         end;
@@ -2281,7 +2527,10 @@ Begin
         // Original file smaller than compressed file.
         FInfile.Seek(0,soFromBeginning);
         FOutFile.CopyFrom(FInFile,0);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         end;
     finally
       ZipStream.Free;
@@ -2293,6 +2542,7 @@ Begin
   end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 // Just like SaveToFile, but uses the FileName property
 Procedure TZipper.ZipAllFiles;
@@ -2336,6 +2586,8 @@ begin
     for I:=0 to FFiles.Count-1 do
       FEntries.Delete(FEntries.Count-1);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Procedure TZipper.ZipAllFiles;
 
 Var
@@ -2362,7 +2614,10 @@ Begin
     end;
   finally
     FZipping:=False;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 end;
 
@@ -2388,6 +2643,7 @@ Procedure TZipper.ZipFiles(AFileName : String; FileList : TStrings);
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FFileName:=AFileName;
   ZipFiles(FileList);
 end;
@@ -2399,12 +2655,17 @@ begin
   FFiles.Assign(FileList);
   FFileName:=AFileName;
 >>>>>>> graemeg/fixes_2_2
+=======
+  FFiles.Assign(FileList);
+  FFileName:=AFileName;
+>>>>>>> origin/fixes_2_2
   ZipAllFiles;
 end;
 
 procedure TZipper.ZipFiles(AFileName: String; Entries: TZipFileEntries);
 begin
   FFileName:=AFileName;
+<<<<<<< HEAD
 <<<<<<< HEAD
   ZipFiles(Entries);
 end;
@@ -2413,6 +2674,8 @@ procedure TZipper.ZipFiles(Entries: TZipFileEntries);
 begin
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FEntries.Assign(Entries);
   ZipAllFiles;
 end;
@@ -2424,12 +2687,16 @@ Var
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (FZipFileNeedsZip64) and (LocalZip64Fld.Original_Size>0) then
     ComprPct := (100.0 * (LocalZip64Fld.Original_size - LocalZip64Fld.Compressed_Size)) / LocalZip64Fld.Original_Size
   else if (LocalHdr.Uncompressed_Size>0) then
 =======
   If (LocalHdr.Uncompressed_Size>0) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  If (LocalHdr.Uncompressed_Size>0) then
+>>>>>>> origin/fixes_2_2
     ComprPct := (100.0 * (LocalHdr.Uncompressed_Size - LocalHdr.Compressed_Size)) / LocalHdr.Uncompressed_Size
   else
     ComprPct := 0;
@@ -2446,16 +2713,20 @@ begin
   FEntries:=TZipFileEntries.Create(TZipFileEntry);
   FOnPercent:=1;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FZipFileNeedsZip64:=false;
   LocalZip64ExtHdr.Header_ID:=ZIP64_HEADER_ID;
   LocalZip64ExtHdr.Data_Size:=SizeOf(Zip64_Extended_Info_Field_Type);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TZipper.CheckEntries : Integer;
 
 Var
+<<<<<<< HEAD
 <<<<<<< HEAD
   I : integer; //Could be QWord but limited by FFiles.Count
 
@@ -2482,6 +2753,8 @@ begin
     end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   I : Integer;
 
 begin
@@ -2493,7 +2766,10 @@ begin
       FEntries.AddFileEntry(FFiles[i]);
       end;
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Result:=FEntries.Count;
 end;
 
@@ -2522,6 +2798,7 @@ end;
 Procedure TUnZipper.OpenInput;
 
 Begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if Assigned(FOnOpenInputStream) then
     FOnOpenInputStream(Self, FZipStream);
@@ -2638,6 +2915,8 @@ Begin
     FreeAndNil(OutStream);
   DoEndOfFile;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FZipFile:=TFileStream.Create(FFileName,fmOpenRead);
 End;
 
@@ -2657,13 +2936,17 @@ Procedure TUnZipper.CloseOutput;
 
 Begin
   FreeAndNil(FOutFile);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
 Procedure TUnZipper.CloseInput;
 
 Begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if Assigned(FOnCloseInputStream) then
     FOnCloseInputStream(Self, FZipStream);
@@ -2899,6 +3182,8 @@ begin
   end;
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FreeAndNil(FZipFile);
 end;
 
@@ -2927,11 +3212,15 @@ Begin
     end;
 End;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 Procedure TUnZipper.ReadZipDirectory;
 
 Var
+<<<<<<< HEAD
 <<<<<<< HEAD
   EndHdr      : End_of_Central_Dir_Type;
   EndZip64Hdr : Zip64_End_of_Central_Dir_type;
@@ -3112,6 +3401,8 @@ Begin
       end;
     end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   i,
   EndHdrPos,
   CenDirPos : LongInt;
@@ -3146,7 +3437,10 @@ Begin
       FZipFile.Seek(Extra_Field_Length+File_Comment_Length,soCurrent);
       end;
    end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TUnZipper.CreateDeCompressor(Item : TZipFileEntry; AMethod : Word;AZipFile,AOutFile : TStream) : TDeCompressor;
@@ -3159,6 +3453,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Procedure TUnZipper.UnZipOneFile(Item : TFullZipFileEntry);
 
@@ -3305,6 +3600,8 @@ Begin
       end;
     end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Procedure TUnZipper.UnZipOneFile(Item : TZipFileEntry);
 
 Var
@@ -3337,13 +3634,17 @@ Begin
         end;
   Finally
     CloseOutput;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 end;
 
 
 Procedure TUnZipper.UnZipAllFiles;
 Var
+<<<<<<< HEAD
 <<<<<<< HEAD
   Item : TFullZipFileEntry;
   I : integer; //Really QWord but limited to FEntries.Count
@@ -3353,6 +3654,11 @@ Var
    I : Integer;
    AllFiles : Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+   Item : TZipFileEntry;
+   I : Integer;
+   AllFiles : Boolean;
+>>>>>>> origin/fixes_2_2
 
 Begin
   FUnZipping:=True;
@@ -3362,10 +3668,14 @@ Begin
     Try
       ReadZipDirectory;
 <<<<<<< HEAD
+<<<<<<< HEAD
       for i:=0 to FEntries.Count-1 do
 =======
       For I:=0 to FEntries.Count-1 do
 >>>>>>> graemeg/fixes_2_2
+=======
+      For I:=0 to FEntries.Count-1 do
+>>>>>>> origin/fixes_2_2
         begin
         Item:=FEntries[i];
         if AllFiles or (FFiles.IndexOf(Item.ArchiveFileName)<>-1) then
@@ -3408,6 +3718,7 @@ Procedure TUnZipper.UnZipFiles(AFileName : String; FileList : TStrings);
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FFileName:=AFileName;
   UNzipFiles(FileList);
 end;
@@ -3419,6 +3730,10 @@ begin
   FFiles.Assign(FileList);
   FFileName:=AFileName;
 >>>>>>> graemeg/fixes_2_2
+=======
+  FFiles.Assign(FileList);
+  FFileName:=AFileName;
+>>>>>>> origin/fixes_2_2
   UnZipAllFiles;
 end;
 
@@ -3433,6 +3748,7 @@ Procedure TUnZipper.DoEndOfFile;
 
 Var
   ComprPct : Double;
+<<<<<<< HEAD
 <<<<<<< HEAD
   Uncompressed: QWord;
   Compressed: QWord;
@@ -3453,11 +3769,16 @@ begin
     else
       ComprPct := (100.0 * (Uncompressed - Compressed)) / Uncompressed
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
   If (LocalHdr.Uncompressed_Size>0) then
     ComprPct := (100.0 * (LocalHdr.Uncompressed_Size - LocalHdr.Compressed_Size)) / LocalHdr.Uncompressed_Size
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   else
     ComprPct := 0;
   If Assigned(FOnEndOfFile) then
@@ -3471,10 +3792,14 @@ begin
   FFiles:=TStringList.Create;
   TStringlist(FFiles).Sorted:=True;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FEntries:=TFullZipFileEntries.Create(TFullZipFileEntry);
 =======
   FEntries:=TZipFileEntries.Create(TZipFileEntry);
 >>>>>>> graemeg/fixes_2_2
+=======
+  FEntries:=TZipFileEntries.Create(TZipFileEntry);
+>>>>>>> origin/fixes_2_2
   FOnPercent:=1;
 end;
 
@@ -3485,6 +3810,7 @@ begin
   FEntries.Clear;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TUnZipper.Examine;
 begin
@@ -3502,6 +3828,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Destructor TUnZipper.Destroy;
 
 begin
@@ -3520,6 +3848,7 @@ begin
     Result:=FDiskFileName;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 constructor TZipFileEntry.Create(ACollection: TCollection);
 
@@ -3599,6 +3928,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure TZipFileEntry.Assign(Source: TPersistent);
 
 Var
@@ -3614,10 +3945,13 @@ begin
     FDateTime:=Z.FDateTime;
     FStream:=Z.FStream;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FOS:=Z.OS;
     FAttributes:=Z.Attributes;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end
   else
     inherited Assign(Source);
@@ -3636,11 +3970,16 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TZipFileEntries.AddFileEntry(const ADiskFileName: String): TZipFileEntry;
 =======
 function TZipFileEntries.AddFileEntry(const ADiskFileName: String
   ): TZipFileEntry;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TZipFileEntries.AddFileEntry(const ADiskFileName: String
+  ): TZipFileEntry;
+>>>>>>> origin/fixes_2_2
 begin
   Result:=Add as TZipFileEntry;
   Result.DiskFileName:=ADiskFileName;
@@ -3661,6 +4000,7 @@ begin
   Result.ArchiveFileName:=AArchiveFileName;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Procedure TZipFileEntries.AddFileEntries(Const List : TStrings);
 
@@ -3687,4 +4027,6 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 End.

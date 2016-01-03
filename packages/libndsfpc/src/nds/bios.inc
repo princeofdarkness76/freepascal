@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 
 type
@@ -15,6 +16,8 @@ type
     getResult: TGetResultCallback; 
     readByte: TGetByteCallback; 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: bios.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -68,7 +71,10 @@ type
     getSize: TGetSize; 
     getResult: TGetResult; 
     readByte: TReadByte; 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
   TDecompressionStream = DecompressionStream;
   PDecompressionStream = ^TDecompressionStream;
@@ -88,10 +94,13 @@ procedure swiSoftReset(); cdecl; external;
 procedure swiDelay(duration: cuint32); cdecl; external;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function swiDivide(numerator, divisor: cint): cint; cdecl; external;
 function swiRemainder(numerator, divisor: cint): cint; cdecl; external;
 procedure swiDivMod(numerator, divisor: cint; var result, remainder: cint); cdecl; external;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure swiIntrWait(waitForSet: cint; flags: cuint32); cdecl; external;
 
 procedure swiWaitForVBlank(); cdecl; external;
@@ -99,7 +108,10 @@ procedure swiWaitForVBlank(); cdecl; external;
 function swiDivide(numerator, divisor: cint): cint; cdecl; external;
 function swiRemainder(numerator, divisor: cint): cint; cdecl; external;
 procedure swiDivMod(numerator, divisor: cint; result, remainder: pcint); cdecl; external;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 const
   COPY_MODE_HWORD = (0);
@@ -122,15 +134,19 @@ procedure swiDecompressLZSSWram(source, destination: pointer); cdecl; external;
 function swiDecompressLZSSVram(source, destination: pointer; toGetSize: cuint32; stream: PDecompressionStream): cint; cdecl; external;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function swiDecompressLZSSVramNTR(source, destination: pointer; toGetSize: cuint32; stream: PDecompressionStream): cint; cdecl; external;
 function swiDecompressLZSSVramTWL(source, destination: pointer; toGetSize: cuint32; stream: PDecompressionStream): cint; cdecl; external;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function swiDecompressHuffman(source, destination: pointer; toGetSize: cuint32; stream: PDecompressionStream): cint; cdecl; external;
 
 procedure swiDecompressRLEWram(source, destination: pointer); cdecl; external;
 function swiDecompressRLEVram(source, destination: pointer; toGetSize: cuint32; stream: PDecompressionStream): cint; cdecl; external;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {$ifdef ARM9}
@@ -152,6 +168,8 @@ function swiDecompressRLEVram(source, destination: pointer; toGetSize: cuint32; 
 {$endif ARM7}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}
 
 
@@ -173,5 +191,8 @@ function swiGetPitchTable(index: cint): cuint16; cdecl; external;
 function swiGetVolumeTable(index: cint): cuint8; cdecl; external;
 procedure swiChangeSoundBias(enabled, delay: cint); cdecl; external;
 {$endif ARM7}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}

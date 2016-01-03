@@ -4,6 +4,7 @@ program form_test_2;
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   ncurses, form, initc;
 
 
@@ -24,6 +25,8 @@ begin
   try
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   ncurses, form, libc;
 
 
@@ -36,7 +39,10 @@ var
 begin
 
 try
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   setlocale(LC_ALL, ''); { Tested with Russian UTF-8 locale }
 
   (* Initialize curses *)

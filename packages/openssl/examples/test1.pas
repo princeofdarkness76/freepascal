@@ -10,9 +10,13 @@ begin
     Writeln('Success')
   else
 <<<<<<< HEAD
+<<<<<<< HEAD
     Writeln('Load failed, missing functions: ',OpenSSL_unavailable_functions);
 =======
     Writeln('Holy shit!');
 >>>>>>> graemeg/fixes_2_2
+=======
+    Writeln('Holy shit!');
+>>>>>>> origin/fixes_2_2
 end.
 

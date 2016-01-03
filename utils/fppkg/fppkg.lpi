@@ -6,7 +6,10 @@
 =======
     <PathDelim Value="/"/>
     <Version Value="6"/>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     <General>
       <Flags>
         <MainUnitHasUsesSectionForAllUnits Value="False"/>
@@ -21,7 +24,10 @@
       <IconPath Value=".\"/>
       <TargetFileExt Value=""/>
       <ActiveEditorIndexAtStart Value="4"/>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     </General>
     <VersionInfo>
       <Language Value=""/>
@@ -38,6 +44,7 @@
       <local>
         <FormatVersion Value="1"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <CommandLineParams Value="list"/>
         <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
@@ -50,12 +57,22 @@
     </RunParams>
     <Units Count="39">
 >>>>>>> graemeg/fixes_2_2
+=======
+        <CommandLineParams Value="avail"/>
+        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+      </local>
+    </RunParams>
+    <Units Count="39">
+>>>>>>> origin/fixes_2_2
       <Unit0>
         <Filename Value="fppkg.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="fppkg"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
         <CursorPos X="1" Y="317"/>
         <TopLine Value="293"/>
         <EditorIndex Value="7"/>
@@ -107,7 +124,10 @@
         <CursorPos X="1" Y="1"/>
         <TopLine Value="1"/>
         <UsageCount Value="72"/>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       </Unit4>
       <Unit5>
         <Filename Value="pkgmkconv.pp"/>
@@ -421,12 +441,17 @@
     <Version Value="9"/>
     <SearchPaths>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <IncludeFiles Value="lnet/sys"/>
       <OtherUnitFiles Value="lnet"/>
 =======
       <IncludeFiles Value="lnet/sys/"/>
       <OtherUnitFiles Value="lnet/"/>
 >>>>>>> graemeg/fixes_2_2
+=======
+      <IncludeFiles Value="lnet/sys/"/>
+      <OtherUnitFiles Value="lnet/"/>
+>>>>>>> origin/fixes_2_2
     </SearchPaths>
     <Parsing>
       <SyntaxOptions>
@@ -462,7 +487,10 @@
   </CompilerOptions>
   <Debugging>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
     <Watches Count="1">
       <Item1>
         <Expression Value="builddir"/>

@@ -1,13 +1,18 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for fppkg
 >>>>>>> graemeg/fixes_2_2
+=======
+#   Makefile.fpc for fppkg
+>>>>>>> origin/fixes_2_2
 #
 
 [package]
 name=fpmkunit
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -30,15 +35,21 @@ version=2.5.1
 [require]
 packages=rtl paszlib fcl-process hash libtar
 =======
+=======
+>>>>>>> origin/fixes_2_2
 version=2.2.5
 
 [target]
 units=fpmkunit
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [install]
 fpcpackage=y
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [default]
 fpcdir=../..
@@ -157,6 +168,8 @@ endif
 zipinstall:	fpmake
 	$(LOCALFPMAKE) zipinstall $(FPMAKE_OPT)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 [require]
 packages=paszlib fcl-process
 
@@ -169,4 +182,7 @@ fpcdir=../..
 
 [rules]
 .NOTPARALLEL:
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -37,18 +37,24 @@ uses
   
 Type
 <<<<<<< HEAD
+<<<<<<< HEAD
   TStdExportformat = (sefCSV,sefFixedLength,sefSimpleXMl,sefXMLXSD,sefSimpleJSON,sefSQL,seTeX,seRTF,sefDBF);
   TStdExportformats = Set of TStdExportFormat;
 
 Const
   AllStdExportFormats = [sefCSV,sefFixedLength,sefSimpleXMl,sefXMLXSD,sefSimpleJSON,sefSQL,seTeX,seRTF,sefDBF];
 =======
+=======
+>>>>>>> origin/fixes_2_2
   TStdExportformat = (sefCSV,sefFixedLength,sefSimpleXMl,sefSimpleJSON,sefSQL,seTeX,seRTF,sefDBF);
   TStdExportformats = Set of TStdExportFormat;
 
 Const
   AllStdExportFormats = [sefCSV,sefFixedLength,sefSimpleXMl,sefSimpleJSON,sefSQL,seTeX,seRTF,sefDBF];
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 Type
 
@@ -82,9 +88,12 @@ uses
   fpfixedexport,
   fpsimplexmlexport,
 <<<<<<< HEAD
+<<<<<<< HEAD
   fpxmlxsdexport,
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   fpsimplejsonexport,
   fpsqlexport,
   fptexexport,
@@ -93,6 +102,7 @@ uses
 
 Const
   StdExportNames : Array[TStdExportFormat] of string
+<<<<<<< HEAD
 <<<<<<< HEAD
                  = (SCSVExport,SFixedLengthExport,SSimpleXML, SXMLXSD,
                     SSimpleJSON,SSQLExport,STexExport,SRTFExport,SDBFExport);
@@ -103,6 +113,8 @@ Const
   StdExportUnRegProcs : Array[TStdExportFormat] of Procedure
                  = (@UnRegisterCSVExportFormat,@UNRegisterFixedExportFormat,@UnRegisterSimpleXMLExportFormat,@UnRegisterXMLXSDExportFormat,
 =======
+=======
+>>>>>>> origin/fixes_2_2
                  = (SCSVExport,SFixedLengthExport,SSimpleXML,
                     SSimpleJSON,SSQLExport,STexExport,SRTFExport,SDBFExport);
   StdExportRegProcs : Array[TStdExportFormat] of Procedure
@@ -111,7 +123,10 @@ Const
                     ,@RegisterRTFExporter,@RegisterDBFExportFormat);
   StdExportUnRegProcs : Array[TStdExportFormat] of Procedure
                  = (@UnRegisterCSVExportFormat,@UNRegisterFixedExportFormat,@UnRegisterSimpleXMLExportFormat,
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                     @UnRegisterSimpleJSONExportFormat,@UnRegisterSQLExportFormat,@UnRegisterTexExportFormat,
                     @UnRegisterRTFExporter,@UnRegisterDBFExportFormat);
 

@@ -1,6 +1,7 @@
 { %norun }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$inline on}
 program TEST;
 {$EXTENDEDSYNTAX OFF}
@@ -17,6 +18,8 @@ BEGIN
    IO:=test;
 END.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 program TEST;
 {$EXTENDEDSYNTAX OFF}
 USES
@@ -28,4 +31,7 @@ BEGIN
 END.
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

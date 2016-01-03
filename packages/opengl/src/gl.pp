@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*
 ** License Applicability. Except to the extent portions of this file are
 ** made subject to an alternative license as permitted in the SGI Free
@@ -34,6 +35,8 @@
 {******************************************************************************}
 { Converted to Delphi by Tom Nuydens (tom@delphi3d.net)                        }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
 
   Adaption of the delphi3d.net OpenGL units to FreePascal
@@ -76,7 +79,10 @@ Abstract:
 {******************************************************************************}
 { Converted to Delphi by Tom Nuydens (tom@delphi3d.net)                        }
 { For the latest updates, visit Delphi3D: http://www.delphi3d.net              }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {******************************************************************************}
 
 {$MODE Delphi}
@@ -90,12 +96,16 @@ Abstract:
     {$DEFINE GL_UNIT}
   {$ELSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
    {$IFNDEF OS2}
     {$LINKLIB c}
    {$ENDIF OS2}
 =======
     {$LINKLIB c}
 >>>>>>> graemeg/fixes_2_2
+=======
+    {$LINKLIB c}
+>>>>>>> origin/fixes_2_2
   {$ENDIF}
 {$ENDIF}
 
@@ -1161,7 +1171,10 @@ const
   GL_T4F_C4F_N3F_V4F                = $2A2D;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
   // Extensions
   GL_EXT_vertex_array               = 1;
   GL_WIN_swap_hint                  = 1;
@@ -1226,7 +1239,10 @@ const
   GL_COLOR_INDEX12_EXT              = $80E6;
   GL_COLOR_INDEX16_EXT              = $80E7;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   // For compatibility with OpenGL v1.0
   GL_LOGIC_OP                       = GL_INDEX_LOGIC_OP;
   GL_TEXTURE_COMPONENTS             = GL_TEXTURE_INTERNAL_FORMAT;
@@ -1433,6 +1449,7 @@ var
   glOrtho: procedure(left, right, bottom, top, zNear, zFar: GLdouble); extdecl;
   glPassThrough: procedure(token: GLfloat); extdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
   glPixelMapfv: procedure(map: GLenum; mapsize: GLint; const values: PGLfloat); extdecl;
   glPixelMapuiv: procedure(map: GLenum; mapsize: GLint; const values: PGLuint); extdecl;
   glPixelMapusv: procedure(map: GLenum; mapsize: GLint; const values: PGLushort); extdecl;
@@ -1441,6 +1458,11 @@ var
   glPixelMapuiv: procedure(map: GLenum; mapsize: GLsizei; const values: PGLuint); extdecl;
   glPixelMapusv: procedure(map: GLenum; mapsize: GLsizei; const values: PGLushort); extdecl;
 >>>>>>> graemeg/fixes_2_2
+=======
+  glPixelMapfv: procedure(map: GLenum; mapsize: GLsizei; const values: PGLfloat); extdecl;
+  glPixelMapuiv: procedure(map: GLenum; mapsize: GLsizei; const values: PGLuint); extdecl;
+  glPixelMapusv: procedure(map: GLenum; mapsize: GLsizei; const values: PGLushort); extdecl;
+>>>>>>> origin/fixes_2_2
   glPixelStoref: procedure(pname: GLenum; param: GLfloat); extdecl;
   glPixelStorei: procedure(pname: GLenum; param: GLint); extdecl;
   glPixelTransferf: procedure(pname: GLenum; param: GLfloat); extdecl;
@@ -1548,12 +1570,17 @@ var
   glTexGeni: procedure(coord: GLenum; pname: GLenum; param: GLint); extdecl;
   glTexGeniv: procedure(coord: GLenum; pname: GLenum; const params: PGLint); extdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
   glTexImage1D: procedure(target: GLenum; level: GLInt; internalformat: GLEnum; width: GLsizei; border: GLint; format, atype: GLenum; const pixels: Pointer); extdecl;
   glTexImage2D: procedure(target: GLenum; level: GLInt; internalformat: GLEnum; width, height: GLsizei; border: GLint; format, atype: GLenum; const pixels: Pointer); extdecl;
 =======
   glTexImage1D: procedure(target: GLenum; level, internalformat: GLint; width: GLsizei; border: GLint; format, atype: GLenum; const pixels: Pointer); extdecl;
   glTexImage2D: procedure(target: GLenum; level, internalformat: GLint; width, height: GLsizei; border: GLint; format, atype: GLenum; const pixels: Pointer); extdecl;
 >>>>>>> graemeg/fixes_2_2
+=======
+  glTexImage1D: procedure(target: GLenum; level, internalformat: GLint; width: GLsizei; border: GLint; format, atype: GLenum; const pixels: Pointer); extdecl;
+  glTexImage2D: procedure(target: GLenum; level, internalformat: GLint; width, height: GLsizei; border: GLint; format, atype: GLenum; const pixels: Pointer); extdecl;
+>>>>>>> origin/fixes_2_2
   glTexParameterf: procedure(target: GLenum; pname: GLenum; param: GLfloat); extdecl;
   glTexParameterfv: procedure(target: GLenum; pname: GLenum; const params: PGLfloat); extdecl;
   glTexParameteri: procedure(target: GLenum; pname: GLenum; param: GLint); extdecl;
@@ -2386,17 +2413,21 @@ initialization
   LoadOpenGL('opengl32.dll');
   {$ELSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$IFDEF OS2}
   LoadOpenGL('opengl.dll');
   {$ELSE OS2}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$ifdef darwin}
   LoadOpenGL('/System/Library/Frameworks/OpenGL.framework/Libraries/libGL.dylib');
   {$ELSE}
   {$IFDEF MorphOS}
   InitTinyGLLibrary;
   {$ELSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$ifdef haiku}
   LoadOpenGL('libGL.so');
@@ -2411,6 +2442,11 @@ initialization
   {$ENDIF}
   {$endif}
 >>>>>>> graemeg/fixes_2_2
+=======
+  LoadOpenGL('libGL.so.1');
+  {$ENDIF}
+  {$endif}
+>>>>>>> origin/fixes_2_2
   {$ENDIF}
 
 finalization

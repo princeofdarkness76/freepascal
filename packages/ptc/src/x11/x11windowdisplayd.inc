@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -246,6 +247,8 @@ type
 >>>>>>> origin/cpstrnew
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Type
   TX11WindowDisplay = Class(TX11Display)
   Private
@@ -298,4 +301,7 @@ Type
     Function IsFullScreen : Boolean; Override;
     Procedure SetCursor(AVisible : Boolean); Override;
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

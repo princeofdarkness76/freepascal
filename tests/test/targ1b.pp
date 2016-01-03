@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {%skiptarget=wince}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -115,6 +116,8 @@ begin
 end.
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {%skiptarget=wince}
 
 { This file is to check if there is some memory corruption
@@ -209,4 +212,7 @@ begin
     end;
 end.
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

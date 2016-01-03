@@ -154,6 +154,7 @@ begin
     use_gnu_ld:=true;
   if NOT Dontlinkstdlibpath Then
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef x86_64}
    LibrarySearchPath.AddPath(sysrootpath,'/lib/64;/usr/lib/64;/usr/X11R6/lib/64;/opt/sfw/lib/64',true);
 {$else not x86_64}
@@ -162,6 +163,9 @@ begin
 =======
    LibrarySearchPath.AddPath(sysrootpath,'/lib;/usr/lib;/usr/X11R6/lib;/opt/sfw/lib',true);
 >>>>>>> graemeg/fixes_2_2
+=======
+   LibrarySearchPath.AddPath(sysrootpath,'/lib;/usr/lib;/usr/X11R6/lib;/opt/sfw/lib',true);
+>>>>>>> origin/fixes_2_2
 {$ifdef  LinkTest}
      if (cs_link_staticflag in current_settings.globalswitches) then  WriteLN('ForceLinkStaticFlag');
      if (cs_link_static in current_settings.globalswitches) then  WriteLN('LinkStatic-Flag');
@@ -262,7 +266,10 @@ begin
      ExeCmd[1]:='gld $OPT $DYNLINK $STATIC $STRIP -L. -o $EXE $RES';
      DllCmd[1]:='gld $OPT -shared -L. -o $EXE $RES';
      DllCmd[2]:='gstrip --strip-unneeded $EXE';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      DynamicLinker:=''; { Gnu uses the default }
      Glibc21:=false;
 {$ELSE}

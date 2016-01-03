@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       ATS/SFNTLayoutTypes.h
  
      Contains:   SFNT file layout structures and constants.
@@ -109,6 +110,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       SFNTLayoutTypes.p
  
      Contains:   SFNT file layout structures and constants.
@@ -132,7 +135,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -142,12 +148,17 @@
 unit SFNTLayoutTypes;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -161,14 +172,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -177,11 +193,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -219,6 +238,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -226,6 +247,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -474,6 +496,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -482,7 +506,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -509,9 +536,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -522,6 +553,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -564,6 +596,10 @@ uses MacTypes;
 
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+
+>>>>>>> origin/fixes_2_2
 {$ALIGN MAC68K}
 
 { ----------------------------------------------------------------------------------------- }
@@ -572,12 +608,17 @@ uses MacTypes;
     The following values can be used to set run feature values. Note that unless the
     feature is defaulted differently in different fonts, the zero value for the
 <<<<<<< HEAD
+<<<<<<< HEAD
     selectors represents the default value. Consult the following URL for further info:
     <http://developer.apple.com/fonts/registry/>
 =======
     selectors represents the default value.  Check the following URL site for further info:
     "http://fonts.apple.com/Registry"
 >>>>>>> graemeg/fixes_2_2
+=======
+    selectors represents the default value.  Check the following URL site for further info:
+    "http://fonts.apple.com/Registry"
+>>>>>>> origin/fixes_2_2
 }
 
 
@@ -585,6 +626,7 @@ uses MacTypes;
  *  Summary:
  *    Feature types
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kAllTypographicFeaturesType = 0;
@@ -753,6 +795,8 @@ const
  }
 const
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 const
 	kAllTypographicFeaturesType	= 0;
@@ -847,11 +891,15 @@ const
 	 *  Summary:
 	 *    Selectors for feature type kVerticalSubstitutionType
 	 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kSubstituteVerticalFormsOnSelector = 0;
 	kSubstituteVerticalFormsOffSelector = 1;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  *  Summary:
@@ -859,15 +907,21 @@ const
  }
 const
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{
 	 *  Summary:
 	 *    Selectors for feature type kLinguisticRearrangementType
 	 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kLinguisticRearrangementOnSelector = 0;
 	kLinguisticRearrangementOffSelector = 1;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  *  Summary:
@@ -966,6 +1020,8 @@ const
 	kSmartQuotesOnSelector = 8;
 	kSmartQuotesOffSelector = 9;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{
 	 *  Summary:
 	 *    Selectors for feature type kNumberSpacingType
@@ -1042,11 +1098,15 @@ const
 	kFormInterrobangOffSelector	= 7;
 	kSmartQuotesOnSelector		= 8;
 	kSmartQuotesOffSelector		= 9;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kPeriodsToEllipsisOnSelector = 10;
 	kPeriodsToEllipsisOffSelector = 11;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  *  Summary:
@@ -1206,6 +1266,8 @@ const
 	kKatakanaToHiraganaSelector = 3;
 	kKanaToRomanizationSelector = 4;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{
 	 *  Summary:
 	 *    Selectors for feature type kMathematicalExtrasType
@@ -1309,7 +1371,10 @@ const
 	kHiraganaToKatakanaSelector	= 2;
 	kKatakanaToHiraganaSelector	= 3;
 	kKanaToRomanizationSelector	= 4;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kRomanizationToHiraganaSelector = 5;
 	kRomanizationToKatakanaSelector = 6;
 	kHanjaToHangulAltOneSelector = 7;
@@ -1317,6 +1382,7 @@ const
 	kHanjaToHangulAltThreeSelector = 9;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  *  Summary:
@@ -1333,6 +1399,8 @@ const
 	kRomanNumeralAnnotationSelector = 7;
 	kDiamondAnnotationSelector = 8;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{
 	 *  Summary:
 	 *    Selectors for feature type kAnnotationType
@@ -1346,11 +1414,15 @@ const
 	kPeriodAnnotationSelector	= 6;
 	kRomanNumeralAnnotationSelector = 7;
 	kDiamondAnnotationSelector	= 8;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kInvertedBoxAnnotationSelector = 9;
 	kInvertedRoundedBoxAnnotationSelector = 10;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  *  Summary:
@@ -1367,6 +1439,8 @@ const
  }
 const
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{
 	 *  Summary:
 	 *    Selectors for feature type kKanaSpacingType
@@ -1379,12 +1453,16 @@ const
 	 *  Summary:
 	 *    Selectors for feature type kIdeographicSpacingType
 	 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kFullWidthIdeographsSelector = 0;
 	kProportionalIdeographsSelector = 1;
 	kHalfWidthIdeographsSelector = 2;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  *  Summary:
@@ -1392,11 +1470,16 @@ const
  }
 const
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{
 	 *  Summary:
 	 *    Selectors for feature type kUnicodeDecompositionType
 	 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kCanonicalCompositionOnSelector = 0;
 	kCanonicalCompositionOffSelector = 1;
 	kCompatibilityCompositionOnSelector = 2;
@@ -1405,6 +1488,7 @@ const
 	kTranscodingCompositionOffSelector = 5;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  *  Summary:
@@ -1449,6 +1533,8 @@ const
  }
 const
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{
 	 *  Summary:
 	 *    Selectors for feature type kRubyKanaType
@@ -1485,11 +1571,15 @@ const
 	 *  Summary:
 	 *    Selectors for feature type kCJKVerticalRomanPlacementType
 	 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kCJKVerticalRomanCenteredSelector = 0;
 	kCJKVerticalRomanHBaselineSelector = 1;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  *  Summary:
@@ -1721,6 +1811,8 @@ type
  	SFNTLookupFormatSpecificHeader = record
  		case SInt16 of
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{
 	 *  Summary:
 	 *    Selectors for feature type kItalicCJKRomanType
@@ -1793,6 +1885,7 @@ type
 	SFNTLookupSegment = record
 		lastGlyph:				UInt16;
 		firstGlyph:				UInt16;
+<<<<<<< HEAD
 		value:					array [0..0] of UInt16;
 	end;
 
@@ -2238,6 +2331,48 @@ type
 	MortRearrangementSubtable = record
 		header: STHeader;
 =======
+=======
+		value:					array [0..0] of UInt16;
+	end;
+
+	SFNTLookupSegmentHeaderPtr = ^SFNTLookupSegmentHeader;
+	SFNTLookupSegmentHeader = record
+		binSearch:				SFNTLookupBinarySearchHeader;
+		segments:				array [0..0] of SFNTLookupSegment;
+	end;
+
+	{	 A format 6 lookup table maps single glyphs to lookup values. 	}
+	SFNTLookupSinglePtr = ^SFNTLookupSingle;
+	SFNTLookupSingle = record
+		glyph:					UInt16;
+		value:					array [0..0] of UInt16;
+	end;
+
+	SFNTLookupSingleHeaderPtr = ^SFNTLookupSingleHeader;
+	SFNTLookupSingleHeader = record
+		binSearch:				SFNTLookupBinarySearchHeader;
+		entries:				array [0..0] of SFNTLookupSingle;
+	end;
+
+	{	 The format-specific part of the subtable header 	}
+	SFNTLookupFormatSpecificHeaderPtr = ^SFNTLookupFormatSpecificHeader;
+	SFNTLookupFormatSpecificHeader = record
+		case SInt16 of
+		0: (
+			theArray:			SFNTLookupArrayHeader;
+			);
+		1: (
+			segment:			SFNTLookupSegmentHeader;
+			);
+		2: (
+			single:				SFNTLookupSingleHeader;
+			);
+		3: (
+			trimmedArray:		SFNTLookupTrimmedArrayHeader;
+			);
+	end;
+
+>>>>>>> origin/fixes_2_2
 	{	 The overall subtable header 	}
 	SFNTLookupTablePtr = ^SFNTLookupTable;
 	SFNTLookupTable = record
@@ -2604,21 +2739,29 @@ type
 	MortRearrangementSubtablePtr = ^MortRearrangementSubtable;
 	MortRearrangementSubtable = record
 		header:					STHeader;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 
 	MortContextualSubtablePtr = ^MortContextualSubtable;
 	MortContextualSubtable = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		header: STHeader;
 =======
 		header:					STHeader;
 >>>>>>> graemeg/fixes_2_2
+=======
+		header:					STHeader;
+>>>>>>> origin/fixes_2_2
 		substitutionTableOffset: UInt16;
 	end;
 
 	MortLigatureSubtablePtr = ^MortLigatureSubtable;
 	MortLigatureSubtable = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		header: STHeader;
 		ligatureActionTableOffset: UInt16;
@@ -2630,6 +2773,8 @@ type
 	MortSwashSubtable = record
 		lookup: SFNTLookupTable;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		header:					STHeader;
 		ligatureActionTableOffset: UInt16;
 		componentTableOffset:	UInt16;
@@ -2639,11 +2784,15 @@ type
 	MortSwashSubtablePtr = ^MortSwashSubtable;
 	MortSwashSubtable = record
 		lookup:					SFNTLookupTable;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 
 	MortInsertionSubtablePtr = ^MortInsertionSubtable;
 	MortInsertionSubtable = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		header: STHeader;
 	end;
@@ -2653,6 +2802,11 @@ type
 	end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+		header:					STHeader;
+	end;
+
+>>>>>>> origin/fixes_2_2
 	MortSpecificSubtablePtr = ^MortSpecificSubtable;
 	MortSpecificSubtable = record
 		case SInt16 of
@@ -2676,35 +2830,48 @@ type
 	MortSubtablePtr = ^MortSubtable;
 	MortSubtable = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		length: UInt16;
 		coverage: UInt16;
 		flags: MortSubtableMaskFlags;
 		u: MortSpecificSubtable;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		length:					UInt16;
 		coverage:				UInt16;
 		flags:					MortSubtableMaskFlags;
 		u:						MortSpecificSubtable;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 
 	MortFeatureEntryPtr = ^MortFeatureEntry;
 	MortFeatureEntry = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		featureType: UInt16;
 		featureSelector: UInt16;
 		enableFlags: MortSubtableMaskFlags;
 		disableFlags: MortSubtableMaskFlags;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		featureType:			UInt16;
 		featureSelector:		UInt16;
 		enableFlags:			MortSubtableMaskFlags;
 		disableFlags:			MortSubtableMaskFlags;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 
 	MortChainPtr = ^MortChain;
 	MortChain = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		defaultFlags: MortSubtableMaskFlags;        { default flags for this chain }
 		length: UInt32;                 { byte length of this chain }
@@ -2738,6 +2905,8 @@ type
 	MorxRearrangementSubtable = record
 		header: STXHeader;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		defaultFlags:			MortSubtableMaskFlags;					{  default flags for this chain  }
 		length:					UInt32;									{  byte length of this chain  }
 		nFeatures:				UInt16;									{  number of feature entries  }
@@ -2772,47 +2941,66 @@ type
 	MorxRearrangementSubtablePtr = ^MorxRearrangementSubtable;
 	MorxRearrangementSubtable = record
 		header:					STXHeader;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 
 	MorxContextualSubtablePtr = ^MorxContextualSubtable;
 	MorxContextualSubtable = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		header: STXHeader;
 =======
 		header:					STXHeader;
 >>>>>>> graemeg/fixes_2_2
+=======
+		header:					STXHeader;
+>>>>>>> origin/fixes_2_2
 		substitutionTableOffset: UInt32;
 	end;
 
 	MorxLigatureSubtablePtr = ^MorxLigatureSubtable;
 	MorxLigatureSubtable = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		header: STXHeader;
 		ligatureActionTableOffset: UInt32;
 		componentTableOffset: UInt32;
 		ligatureTableOffset: UInt32;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		header:					STXHeader;
 		ligatureActionTableOffset: UInt32;
 		componentTableOffset:	UInt32;
 		ligatureTableOffset:	UInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 
 	MorxInsertionSubtablePtr = ^MorxInsertionSubtable;
 	MorxInsertionSubtable = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		header: STXHeader;
 		insertionGlyphTableOffset: UInt32;
 	end;
 	
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		header:					STXHeader;
 		insertionGlyphTableOffset: UInt32;
 	end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	MorxSpecificSubtablePtr = ^MorxSpecificSubtable;
 	MorxSpecificSubtable = record
 		case SInt16 of
@@ -2836,20 +3024,27 @@ type
 	MorxSubtablePtr = ^MorxSubtable;
 	MorxSubtable = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		length: UInt32;
 		coverage: UInt32;
 		flags: MortSubtableMaskFlags;
 		u: MorxSpecificSubtable;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		length:					UInt32;
 		coverage:				UInt32;
 		flags:					MortSubtableMaskFlags;
 		u:						MorxSpecificSubtable;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 
 	MorxChainPtr = ^MorxChain;
 	MorxChain = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		defaultFlags: MortSubtableMaskFlags;        { default flags for this chain }
 		length: UInt32;                 { byte length of this chain }
@@ -2858,17 +3053,23 @@ type
 		featureEntries: array[0..0] of MortFeatureEntry;
                                               { the subtables follow }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		defaultFlags:			MortSubtableMaskFlags;					{  default flags for this chain  }
 		length:					UInt32;									{  byte length of this chain  }
 		nFeatures:				UInt32;									{  number of feature entries  }
 		nSubtables:				UInt32;									{  number of subtables  }
 		featureEntries:			array [0..0] of MortFeatureEntry;
 																		{  the subtables follow  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 
 	MorxTablePtr = ^MorxTable;
 	MorxTable = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		version: Fixed;
 		nChains: UInt32;
@@ -2963,6 +3164,8 @@ type
 		defaultProps: PropCharProperties;
 		lookup: SFNTLookupTable;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		version:				Fixed;
 		nChains:				UInt32;
 		chains:					array [0..0] of MorxChain;
@@ -3019,11 +3222,15 @@ type
 		format:					UInt16;
 		defaultProps:			PropCharProperties;
 		lookup:					SFNTLookupTable;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 
 	PropLookupSegmentPtr = ^PropLookupSegment;
 	PropLookupSegment = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		lastGlyph: UInt16;
 		firstGlyph: UInt16;
@@ -3033,10 +3240,16 @@ type
 		firstGlyph:				UInt16;
 		value:					UInt16;
 >>>>>>> graemeg/fixes_2_2
+=======
+		lastGlyph:				UInt16;
+		firstGlyph:				UInt16;
+		value:					UInt16;
+>>>>>>> origin/fixes_2_2
 	end;
 
 	PropLookupSinglePtr = ^PropLookupSingle;
 	PropLookupSingle = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		glyph: UInt16;
 		props: PropCharProperties;
@@ -3059,6 +3272,8 @@ type
 		nameTableIndex: UInt16;
 		sizesOffset: UInt16;            { offset to array of TrackingValues }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		glyph:					UInt16;
 		props:					PropCharProperties;
 	end;
@@ -3081,26 +3296,36 @@ type
 		track:					Fixed;
 		nameTableIndex:			UInt16;
 		sizesOffset:			UInt16;									{  offset to array of TrackingValues  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 
 	TrakTableDataPtr = ^TrakTableData;
 	TrakTableData = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		nTracks: UInt16;
 		nSizes: UInt16;
 		sizeTableOffset: UInt32;
 		trakTable: array[0..0] of TrakTableEntry;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		nTracks:				UInt16;
 		nSizes:					UInt16;
 		sizeTableOffset:		UInt32;
 		trakTable:				array [0..0] of TrakTableEntry;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 
 	TrakTablePtr = ^TrakTable;
 	TrakTable = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		version: Fixed;
 		format: UInt16;
@@ -3198,6 +3423,8 @@ type
 		valueTable: UInt16;             { offset to kerning value table }
 		firstTable: array[0..0] of UInt8;          { first table starts here }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		version:				Fixed;
 		format:					UInt16;
 		horizOffset:			UInt16;
@@ -3295,11 +3522,15 @@ type
 		header:					STHeader;								{  state table header  }
 		valueTable:				UInt16;									{  offset to kerning value table  }
 		firstTable:				SInt8;									{  first table starts here  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 
 	KernStateEntryPtr = ^KernStateEntry;
 	KernStateEntry = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		newState: UInt16;
 		flags: UInt16;                  { flags per above enum }
@@ -3361,6 +3592,8 @@ type
 	end;
 { format specific part of subtable header }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		newState:				UInt16;
 		flags:					UInt16;									{  flags per above enum  }
 	end;
@@ -3421,7 +3654,10 @@ type
 	end;
 
 	{	 format specific part of subtable header 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	KernFormatSpecificHeaderPtr = ^KernFormatSpecificHeader;
 	KernFormatSpecificHeader = record
 		case SInt16 of
@@ -3438,6 +3674,7 @@ type
 			indexArray:			KernIndexArrayHeader;
 			);
 	end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 { version 0 subtable header }
 
@@ -3776,6 +4013,8 @@ type
 	end;
 { The BslnFormatUnion is a union containing the format-specific parts of the baseline table. }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 	{	 version 0 subtable header 	}
 	KernVersion0SubtableHeaderPtr = ^KernVersion0SubtableHeader;
@@ -3864,7 +4103,10 @@ type
 	end;
 
 	{	 The BslnFormatUnion is a union containing the format-specific parts of the baseline table. 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	BslnFormatUnionPtr = ^BslnFormatUnion;
 	BslnFormatUnion = record
 		case SInt16 of
@@ -3882,6 +4124,7 @@ type
 			);
 	end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { The table format used in BaselineTable }
 <<<<<<< HEAD
@@ -4065,6 +4308,8 @@ type
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{	 The table format used in BaselineTable 	}
 	BslnTableFormat						= UInt16;
 	{	 BaselineTable defines the top-level format of the baseline table in the font. 	}
@@ -4081,4 +4326,7 @@ end.
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

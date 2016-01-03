@@ -79,6 +79,7 @@ begin
    begin
     comp:=ref.getcomponent;
 <<<<<<< HEAD
+<<<<<<< HEAD
     if op = opInsert then
       comp.FreeNotification(Self)
     else
@@ -86,6 +87,9 @@ begin
 =======
     comp.notification(self,op); 
 >>>>>>> graemeg/fixes_2_2
+=======
+    comp.notification(self,op); 
+>>>>>>> origin/fixes_2_2
    end;
 end;
 
@@ -746,6 +750,7 @@ begin
     Result := E_NOTIMPL;
 end;
 
+<<<<<<< HEAD
 function TComponent.GetTypeInfo(Index, LocaleID: Integer; out TypeInfo): HResult; stdcall;
 begin
   if Assigned(VCLComObject) then
@@ -833,4 +838,10 @@ function TComponent.iicrGetComponent: TComponent;
 begin
   result:=self;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TComponent.iicrGetComponent: TComponent;
+
+begin
+  result:=self;
+>>>>>>> origin/fixes_2_2
 end;

@@ -13,10 +13,14 @@
   You should have received a copy of the GNU Library General Public License
   along with this library; if not, write to the Free Software Foundation,
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 =======
   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 >>>>>>> graemeg/fixes_2_2
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> origin/fixes_2_2
 }
 {
   See the file COPYING.FPC, included in this distribution,
@@ -30,6 +34,7 @@ interface
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   Strings, Classes, SysUtils, chmwriter, inifiles, contnrs, chmsitemap, avl_tree,
   {for html scanning } dom,SAX_HTML,dom_html;
 
@@ -40,13 +45,18 @@ type
   TChmProgressCB = procedure (Project: TChmProject; CurrentFile: String) of object;
   TChmErrorCB    = procedure (Project: TChmProject;errorkind:TChmProjectErrorKind;msg:String;detaillevel:integer=0);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Classes, SysUtils, chmwriter;
   
 type
   TChmProject = class;
   
   TChmProgressCB = procedure (Project: TChmProject; CurrentFile: String) of object;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   { TChmProject }
 
@@ -57,6 +67,7 @@ type
     FDefaultPage: String;
     FFiles: TStrings;
     FIndexFileName: String;
+<<<<<<< HEAD
 <<<<<<< HEAD
     FMakeBinaryTOC: Boolean;
     FMakeBinaryIndex: Boolean;
@@ -153,6 +164,8 @@ type
     procedure AddFileWithContext(contextid:integer;filename:ansistring;contextname:ansistring='');
     procedure Error(errorkind:TChmProjectErrorKind;msg:String;detaillevel:integer=0);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FMakeSearchable: Boolean;
     FFileName: String;
     FOnProgress: TChmProgressCB;
@@ -169,11 +182,15 @@ type
     procedure SaveToFile(AFileName: String);
     procedure WriteChm(AOutStream: TStream);
     function ProjectDir: String;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     // though stored in the project file, it is only there for the program that uses the unit
     // since we actually write to a stream
     property OutputFileName: String read FOutputFileName write FOutputFileName;
     property FileName: String read FFileName write FFileName;
+<<<<<<< HEAD
 <<<<<<< HEAD
     property Files: TStrings read FFiles write FFiles;  // html files
     property OtherFiles: TStrings read FOtherFiles write FOtherFiles;  // other files (.css, img etc)
@@ -186,11 +203,17 @@ type
     property AutoFollowLinks: Boolean read FAutoFollowLinks write FAutoFollowLinks;
     property TableOfContentsFileName: String read FTableOfContentsFileName write FTableOfContentsFileName;
 >>>>>>> graemeg/fixes_2_2
+=======
+    property Files: TStrings read FFiles write FFiles;
+    property AutoFollowLinks: Boolean read FAutoFollowLinks write FAutoFollowLinks;
+    property TableOfContentsFileName: String read FTableOfContentsFileName write FTableOfContentsFileName;
+>>>>>>> origin/fixes_2_2
     property Title: String read FTitle write FTitle;
     property IndexFileName: String read FIndexFileName write FIndexFileName;
     property MakeSearchable: Boolean read FMakeSearchable write FMakeSearchable;
     property DefaultPage: String read FDefaultPage write FDefaultPage;
     property DefaultFont: String read FDefaultFont write FDefaultFont;
+<<<<<<< HEAD
 <<<<<<< HEAD
     property Windows :TObjectList read FWindows write FWindows;
     property MergeFiles :TStringlist read FMergeFiles write FMergefiles;
@@ -263,6 +286,8 @@ end;
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
     
     property OnProgress: TChmProgressCB read FOnProgress write FOnProgress;
   end;
@@ -270,7 +295,10 @@ end;
 implementation
 
 uses XmlCfg;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { TChmProject }
 
@@ -284,16 +312,21 @@ begin
   FileName := StringReplace(ExtractFileName(DataName), '\', '/', [rfReplaceAll]);
   FileName := StringReplace(FileName, '//', '/', [rfReplaceAll]);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
   PathInChm := '/'+ExtractFilePath(DataName);
   if Assigned(FOnProgress) then FOnProgress(Self, DataName);
 end;
 
 procedure TChmProject.LastFileAdded(Sender: TObject);
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
   Writer: TChmWriter;
   TOCSitemap  : TChmSiteMap;
@@ -369,6 +402,8 @@ begin
       IndexSitemap.Free;
     end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   IndexStream: TFileStream;
   TOCStream: TFileStream;
   Writer: TChmWriter;
@@ -378,12 +413,16 @@ begin
   if (IndexFileName <> '') and FileExists(IndexFileName) then begin
     IndexStream := TFileStream.Create(IndexFileName, fmOpenRead);
     Writer.AppendIndex(IndexStream);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     IndexStream.Free;
   end;
   if (TableOfContentsFileName <> '') and FileExists(TableOfContentsFileName) then begin
     TOCStream := TFileStream.Create(TableOfContentsFileName, fmOpenRead);
     Writer.AppendTOC(TOCStream);
+<<<<<<< HEAD
 <<<<<<< HEAD
     if MakeBinaryTOC then
     begin
@@ -403,11 +442,17 @@ begin
   end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+    TOCStream.Free;
+  end;
+
+>>>>>>> origin/fixes_2_2
 end;
 
 constructor TChmProject.Create;
 begin
   FFiles := TStringList.Create;
+<<<<<<< HEAD
 <<<<<<< HEAD
   FOtherFiles := TStringList.Create;
   FAllowedExtensions:=TStringList.Create;
@@ -566,6 +611,8 @@ var
   s  : String;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 destructor TChmProject.Destroy;
@@ -579,11 +626,15 @@ var
   Cfg: TXMLConfig;
   FileCount: Integer;
   I: Integer;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   Cfg := TXMLConfig.Create(nil);
   Cfg.Filename := AFileName;
   FileName := AFileName;
+<<<<<<< HEAD
 <<<<<<< HEAD
   FBasePath:=extractfilepath(expandfilename(afilename));
 
@@ -643,6 +694,8 @@ begin
     MakeBinaryIndex := Cfg.GetValue('Files/MakeBinaryIndex/Value', False);
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   
   Files.Clear;
   FileCount := Cfg.GetValue('Files/Count/Value', 0);
@@ -652,12 +705,16 @@ begin
   IndexFileName := Cfg.GetValue('Files/IndexFile/Value','');
   TableOfContentsFileName := Cfg.GetValue('Files/TOCFile/Value','');
   
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   AutoFollowLinks := Cfg.GetValue('Settings/AutoFollowLinks/Value', False);
   MakeSearchable := Cfg.GetValue('Settings/MakeSearchable/Value', False);
   DefaultPage := Cfg.GetValue('Settings/DefaultPage/Value', '');
   Title := Cfg.GetValue('Settings/Title/Value', '');
   OutputFileName := Cfg.GetValue('Settings/OutputFileName/Value', '');
+<<<<<<< HEAD
 <<<<<<< HEAD
   DefaultFont  := Cfg.GetValue('Settings/DefaultFont/Value', '');
   DefaultWindow:= Cfg.GetValue('Settings/DefaultWindow/Value', '');
@@ -998,6 +1055,8 @@ begin
   Cfg.SetValue('Settings/MakeBinaryTOC/Value',MakeBinaryTOC);
   Cfg.SetValue('Settings/MakeBinaryIndex/Value',MakeBinaryIndex);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   DefaultFont := Cfg.GetValue('Settings/DefaultFont/Value', '');
   Cfg.Free;
 end;
@@ -1018,7 +1077,10 @@ begin
   end;
   Cfg.SetValue('Files/IndexFile/Value', IndexFileName);
   Cfg.SetValue('Files/TOCFile/Value', TableOfContentsFileName);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   Cfg.SetValue('Settings/AutoFollowLinks/Value', AutoFollowLinks);
   Cfg.SetValue('Settings/MakeSearchable/Value', MakeSearchable);
@@ -1027,6 +1089,7 @@ begin
   Cfg.SetValue('Settings/OutputFileName/Value', OutputFileName);
   Cfg.SetValue('Settings/DefaultFont/Value', DefaultFont);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   Cfg.SetValue('Settings/DefaultWindow/Value', DefaultWindow);
   Cfg.SetValue('Settings/ScanHtmlContents/Value', ScanHtmlContents);
@@ -1034,6 +1097,8 @@ begin
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Cfg.Flush;
   Cfg.Free;
 end;
@@ -1043,6 +1108,7 @@ begin
   Result := ExtractFilePath(FileName);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TChmProject.Error(errorkind:TChmProjectErrorKind;msg:String;detaillevel:integer=0);
 begin
@@ -1751,13 +1817,18 @@ begin
     ScanHtml;                 // Since this is slowing we opt to skip this step, and only do this on html load.
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TChmProject.WriteChm(AOutStream: TStream);
 var
   Writer: TChmWriter;
   TOCStream,
   IndexStream: TFileStream;
 begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   IndexStream := nil;
   TOCStream := nil;
 
@@ -1766,6 +1837,7 @@ begin
   // our callback to get data
   Writer.OnGetFileData := @GetData;
   Writer.OnLastFile    := @LastFileAdded;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   // give it the list of html files
@@ -1776,16 +1848,22 @@ begin
   Writer.FilesToCompress.AddStrings(OtherFiles);
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   
   // give it the list of files
   Writer.FilesToCompress.AddStrings(Files);
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   // now some settings in the chm
   Writer.DefaultPage := DefaultPage;
   Writer.Title := Title;
   Writer.DefaultFont := DefaultFont;
   Writer.FullTextSearch := MakeSearchable;
+<<<<<<< HEAD
 <<<<<<< HEAD
   Writer.HasBinaryTOC := MakeBinaryTOC;
   Writer.HasBinaryIndex := MakeBinaryIndex;
@@ -1929,6 +2007,8 @@ begin
    end;
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   
   // and write!
   Writer.Execute;
@@ -1937,7 +2017,10 @@ end;
   if Assigned(IndexStream) then IndexStream.Free;
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 end.

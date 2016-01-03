@@ -14,9 +14,12 @@ interface
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
  ctypes,
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  zlib;
 
 Const
@@ -29,16 +32,22 @@ Const
   { matching lib version for libpng, needed for initialization }
   PNG_LIBPNG_VER_STRING='1.2.12';
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$linklib png}
 {$endif windows}
 
 type
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif windows}
 
 type
    size_t = longint;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
    time_t = longint;
    int = longint;
    z_stream = TZStream;
@@ -60,10 +69,14 @@ type
    pppng_int_16 = ^ppng_int_16;
    pppng_byte = ^ppng_byte;
 <<<<<<< HEAD
+<<<<<<< HEAD
    png_size_t = csize_t;
 =======
    png_size_t = size_t;
 >>>>>>> graemeg/fixes_2_2
+=======
+   png_size_t = size_t;
+>>>>>>> origin/fixes_2_2
    png_fixed_point = png_int_32;
    ppng_fixed_point = ^png_fixed_point;
    pppng_fixed_point = ^ppng_fixed_point;
@@ -94,12 +107,18 @@ type
    ppng_charpp = ^png_charpp;
    png_fixed_point_pp = PPpng_fixed_point;
 <<<<<<< HEAD
+<<<<<<< HEAD
    png_doublepp = PPdouble;
 =======
    PPDouble = ^PDouble;
    png_doublepp = PPdouble;
    PPPChar = ^PPCHar;
 >>>>>>> graemeg/fixes_2_2
+=======
+   PPDouble = ^PDouble;
+   png_doublepp = PPdouble;
+   PPPChar = ^PPCHar;
+>>>>>>> origin/fixes_2_2
    png_charppp = PPPchar;
    Pcharf = Pchar;
    PPcharf = ^Pcharf;

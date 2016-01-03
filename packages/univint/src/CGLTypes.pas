@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright:	(c) 1999-2008 Apple Inc. All rights reserved.
 }
 
@@ -14,6 +15,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	Copyright:	(c) 1999 by Apple Computer, Inc., all rights reserved.
 }
 
@@ -25,7 +28,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -35,12 +41,17 @@
 unit CGLTypes;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -54,14 +65,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -70,11 +86,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -112,6 +131,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -119,6 +140,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -353,6 +375,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -361,7 +385,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -388,9 +415,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -402,6 +433,7 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -409,12 +441,15 @@ uses MacTypes;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 {
 ** CGL opaque data.
 }
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 	_CGLContextObject = Record end;
 	CGLContextObj = ^_CGLContextObject;
@@ -489,6 +524,8 @@ const
 	kCGLPFAMPSafe             =  78;	{ renderer is multi-processor safe             }
 	kCGLPFAMultiScreen        =  81;	{ single window can span multiple screens      }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	CGLContextObj      = ^SInt32; { an opaque 32-bit type }
 	CGLPixelFormatObj  = ^SInt32; { an opaque 32-bit type }
 	CGLRendererInfoObj = ^SInt32; { an opaque 32-bit type }
@@ -534,11 +571,15 @@ const
 	kCGLPFAPBuffer            = 90;	{ can be used to render to a pbuffer           }
 	kCGLPFARemotePBuffer      = 91;	{ can be used to render offline to a pbuffer   }
 	kCGLPFAVirtualScreenCount = 128; 	{ number of virtual screens in this format     }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
 ** Property names for CGLDescribeRenderer.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 { CGLRendererProperty }
 type
@@ -558,6 +599,8 @@ const
 	kCGLRPCompliant           =  83;
 	kCGLRPDisplayMask         =  84;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kCGLRPOffScreen           = 53;
 	kCGLRPFullScreen          = 54;
@@ -570,7 +613,10 @@ const
 	kCGLRPMultiScreen         = 81;
 	kCGLRPCompliant           = 83;
 	kCGLRPDisplayMask         = 84;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kCGLRPBufferModes         = 100;	{ a bitfield of supported buffer modes          }
 	kCGLRPColorModes          = 103;	{ a bitfield of supported color buffer formats  }
 	kCGLRPAccumModes          = 104;	{ a bitfield of supported accum buffer formats  }
@@ -586,16 +632,21 @@ const
 	kCGLRPGPUVertProcCapable  = 122;	{ renderer capable of GPU vertex processing     }
 	kCGLRPGPUFragProcCapable  = 123;	{ renderer capable of GPU fragment processing   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kCGLRPRendererCount       = 128;	{ the number of renderers in this renderer info }
 	kCGLRPOnline              = 129;	{ a boolean stating if renderer is on/offline   }
 	kCGLRPAcceleratedCompute  = 130;	{ hardware accelerated compute device           }
 =======
 	kCGLRPRendererCount       = 128; 	{ the number of renderers in this renderer info }
 >>>>>>> graemeg/fixes_2_2
+=======
+	kCGLRPRendererCount       = 128; 	{ the number of renderers in this renderer info }
+>>>>>>> origin/fixes_2_2
 
 {
 ** Enable names for CGLEnable, CGLDisable, and CGLIsEnabled.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	CGLContextEnable = SInt32;
@@ -611,6 +662,8 @@ const
 	kCGLCEDisplayListOptimization = 307;  { Ability to turn off display list optimizer }
 	kCGLCEMPEngine         = 313; 	{ Enable or disable multi-threaded GL engine    }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kCGLCESwapRectangle       = 201;	{ Enable or disable the swap rectangle          }
 	kCGLCESwapLimit           = 203;	{ Enable or disable the swap async limit        }
@@ -619,11 +672,15 @@ const
 	kCGLCESurfaceBackingSize  = 305;	{ Enable or disable surface backing size override }
 	kCGLCEDisplayListOptimization = 307;  { Ability to turn off display list optimizer }
 	kCGLCEMPEngine            = 313;    { Enable or disable multi-threaded GL engine    }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
 ** Parameter names for CGLSetParameter and CGLGetParameter.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	CGLContextParameter = SInt32;
@@ -658,6 +715,8 @@ const
 	kCGLCPHasDrawable			 = 314; { 1 param.   Boolean returned if drawable is attached			}
 	kCGLCPMPSwapsInFlight		 = 315; { 1 param.   Max number of swaps queued by the MP GL engine	}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kCGLCPSwapRectangle       = 200;  { 4 params.  Set or get the swap rectangle (x, y, w, h)  }
 	kCGLCPSwapInterval        = 222;  { 1 param.   0 -> Don't sync, n -> Sync every n retrace  }
@@ -683,11 +742,15 @@ const
 	kCGLCPCurrentRendererID      = 309;  { 1 param.   Retrieves the current renderer ID         }
 	kCGLCPGPUVertexProcessing    = 310;  { 1 param.   Currently processing vertices with GPU (get) }
 	kCGLCPGPUFragmentProcessing  = 311;  { 1 param.   Currently processing fragments with GPU (get) }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
 ** Option names for CGLSetOption and CGLGetOption.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	CGLGlobalOption = SInt32;
@@ -704,6 +767,8 @@ const
 	kCGLGOUseBuildCache    = 506;	{ Enable the function compilation block cache.  }
 	                                { Off by default.  Must be enabled at startup.  }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kCGLGOFormatCacheSize     = 501;	{ Set the size of the pixel format cache        }
 	kCGLGOClearFormatCache    = 502;	{ Reset the pixel format cache if true          }
@@ -711,11 +776,15 @@ const
 	kCGLGOResetLibrary        = 504;	{ *** DEPRECATED in MacOS X 10.4 ***            }
 	                             		{ Do a soft reset of the CGL library if true    }
 	kCGLGOUseErrorHandler     = 505;	{ Call the Core Graphics handler on CGL errors  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
 ** Error return values from CGLGetError.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	CGLError	= SInt32; { in case there will be negative errors in the future }
@@ -724,6 +793,8 @@ type
 { CGLError }
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kCGLNoError               = 0;      { no error }
 	kCGLBadAttribute          = 10000;	{ invalid pixel format attribute  }
@@ -814,6 +885,7 @@ const
 	kCGLARGB16161616Bit = kCGLRGBA16161616Bit;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
@@ -822,3 +894,6 @@ end.
 =======
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+end.
+>>>>>>> origin/fixes_2_2

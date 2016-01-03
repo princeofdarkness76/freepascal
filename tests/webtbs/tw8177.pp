@@ -10,12 +10,15 @@ program ValidateStrToInt;
   {$define slowcpu}
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef cpumips}
   {$define slowcpu}
 {$endif}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 uses
   SysUtils;

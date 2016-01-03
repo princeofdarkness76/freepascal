@@ -40,9 +40,12 @@ interface
       globtype,globals,verbose,
       aasmbase,aasmtai,aasmdata,
 <<<<<<< HEAD
+<<<<<<< HEAD
       symdef,defutil,
       cgbase,cgutils,cga,cgobj,hlcgobj,cgx86,
 =======
+=======
+>>>>>>> origin/fixes_2_2
       defutil,
       cgbase,cgutils,cga,cgobj,
 >>>>>>> graemeg/fixes_2_2
@@ -73,6 +76,7 @@ interface
 *****************************************************************************}
 
     procedure tx8664addnode.second_mul;
+<<<<<<< HEAD
 <<<<<<< HEAD
       var
         reg,rega,regd:Tregister;
@@ -149,6 +153,8 @@ interface
         location_freetemp(current_asmdata.CurrAsmList,right.location);
       end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
     var reg:Tregister;
         ref:Treference;

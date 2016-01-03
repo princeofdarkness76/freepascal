@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -53,6 +54,8 @@ var
 begin
   inherited Create;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Constructor TX11Console.Create;
 
 Var
@@ -60,7 +63,10 @@ Var
 
 Begin
   Inherited Create;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   { default flags }
   FFlags := [PTC_X11_TRY_XSHM, PTC_X11_TRY_XF86VIDMODE];
@@ -69,6 +75,7 @@ Begin
 
   Configure('/usr/share/ptcpas/ptcpas.conf');
   s := fpgetenv('HOME');
+<<<<<<< HEAD
 <<<<<<< HEAD
   if s = '' then
     s := '/';
@@ -387,6 +394,8 @@ begin
 >>>>>>> origin/cpstrnew
   if FX11Display = nil then
 =======
+=======
+>>>>>>> origin/fixes_2_2
   If s = '' Then
     s := '/';
   If s[Length(s)] <> '/' Then
@@ -550,11 +559,15 @@ Begin
     FreeAndNil(FModes[I]);
 
   If FX11Display = Nil Then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FX11Display := CreateDisplay;
 
   FX11Display.GetModes(FModes);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   Result := FModes;
@@ -674,6 +687,8 @@ begin
   if display = nil then
     raise TPTCError.Create('Cannot open X display');
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Result := @FModes[0];
 End;
 
@@ -717,11 +732,15 @@ Begin
   display := XOpenDisplay(Nil);
   If display = Nil Then
     Raise TPTCError.Create('Cannot open X display');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   { DefaultScreen should be fine }
   screen := DefaultScreen(display);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   if not XkbSetDetectableAutoRepeat(display, True, @DetectableAutoRepeatSupported) then
     LOG('DetectableAutoRepeat not supported')
@@ -1381,6 +1400,8 @@ begin
     end;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$IFDEF ENABLE_X11_EXTENSION_XF86DGA2}
   If PTC_X11_TRY_DGA In FFlags Then
   Begin
@@ -1665,11 +1686,15 @@ Begin
       {...}
     End;
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Result := Result + 'mode, ' +
             IntToStr(FX11Display.Width) + 'x' +
             IntToStr(FX11Display.Height) + ', ' +
             IntToStr(FX11Display.Format.Bits) + ' bit';
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -1717,6 +1742,8 @@ end;
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure TX11Console.UpdateCursor;
@@ -1730,4 +1757,7 @@ Begin
       FX11Display.SetCursor(Not (PTC_X11_WINDOWED_CURSOR_INVISIBLE In FFlags));
   End;
 End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

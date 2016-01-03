@@ -3,6 +3,7 @@ program tclock;
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   ncurses, sysutils, initc;
 
 procedure setlocale(cat : integer; p : pchar); cdecl; external clib;
@@ -13,6 +14,9 @@ const
 =======
   libc, ncurses, sysutils;
 >>>>>>> graemeg/fixes_2_2
+=======
+  libc, ncurses, sysutils;
+>>>>>>> origin/fixes_2_2
 
 const
   ASPECT = 2.2;

@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2003-2006, 2008-2010 Apple Inc. All rights reserved.
 =======
  * Copyright (c) 2003-2006, 2008, 2009 Apple Inc. All rights reserved.
@@ -20,6 +21,9 @@
 =======
  * Copyright (c) 2002-2003 Apple Computer, Inc. All rights reserved.
 >>>>>>> graemeg/fixes_2_2
+=======
+ * Copyright (c) 2002-2003 Apple Computer, Inc. All rights reserved.
+>>>>>>> origin/fixes_2_2
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -32,6 +36,7 @@
  * 
  * The Original Code and all software distributed under the License are
 <<<<<<< HEAD
+<<<<<<< HEAD
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
@@ -40,12 +45,18 @@
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES of MERCHANTABILITY,
 >>>>>>> graemeg/fixes_2_2
+=======
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY of ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES of MERCHANTABILITY,
+>>>>>>> origin/fixes_2_2
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
  * 
  * @APPLE_LICENSE_HEADER_END@
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
@@ -72,6 +83,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 
 
@@ -81,7 +94,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -91,12 +107,17 @@
 unit SCNetworkConnection;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -110,14 +131,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -126,11 +152,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -168,6 +197,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -175,6 +206,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -411,6 +443,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -419,7 +453,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -446,9 +483,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -458,6 +499,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,MacOSXPosix,CFBase,CFDictionary,CFRunLoop;
 {$endc} {not MACOSALLINCLUDE}
@@ -477,6 +519,8 @@ uses MacTypes,MacOSXPosix,CFBase,CFDictionary,CFRunLoop;
 
 		Note: Currently, only PPP services can be controlled.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,CFBase,CFDictionary,CFRunLoop;
 {$ALIGN MAC68K}
 
@@ -491,12 +535,16 @@ uses MacTypes,CFBase,CFDictionary,CFRunLoop;
 	must be used.
 
 	Note: Currently only PPP services can be controlled.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  }
 
 
 {!
 	@typedef SCNetworkConnectionRef
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@discussion This is the handle to manage a connection-oriented service.
  }
@@ -520,15 +568,21 @@ type
 	SCNetworkConnectionRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@discussion This is the handle to manage a connection oriented service.
  }
 type
 	SCNetworkConnectionRef							= ^SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {!
 	@typedef SCNetworkConnectionContext
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@discussion Structure containing user-specified data and callbacks
 		for a SCNetworkConnection.
@@ -547,11 +601,14 @@ type
 		the info field.
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 type SCNetworkConnectionContext = record
 		version: CFIndex;
 		info: Ptr;
+<<<<<<< HEAD
 <<<<<<< HEAD
 		retain: function( info: UnivPtr ): UnivPtr;
 		release: procedure( info: UnivPtr );
@@ -561,6 +618,11 @@ type SCNetworkConnectionContext = record
 		release: procedure( info: Ptr );
 		copyDescription: function( info: Ptr ): CFStringRef;
 >>>>>>> graemeg/fixes_2_2
+=======
+		retain: function( info: Ptr ): Ptr;
+		release: procedure( info: Ptr );
+		copyDescription: function( info: Ptr ): CFStringRef;
+>>>>>>> origin/fixes_2_2
 	end;
 	SCNetworkConnectionContextPtr = ^SCNetworkConnectionContext;
 
@@ -573,6 +635,7 @@ type SCNetworkConnectionContext = record
 		connection is also available for applications that
 		need additonal information.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@constant kSCNetworkConnectionInvalid
 		The network connection refers to an invalid service.
 	@constant kSCNetworkConnectionDisconnected
@@ -582,6 +645,8 @@ type SCNetworkConnectionContext = record
 	@constant kSCNetworkConnectionConnected
 		The network connection is connected.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 	@constant kSCNetworkConnectionInvalid
 		The network connection refers to an invalid service.
@@ -595,11 +660,15 @@ type SCNetworkConnectionContext = record
 	@constant kSCNetworkConnectionConnected
 		The network connection is connected.
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	@constant kSCNetworkConnectionDisconnecting
 		The network connection is disconnecting.
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kSCNetworkConnectionInvalid = -1;
@@ -610,6 +679,8 @@ const
 type
 	SCNetworkConnectionStatus = SInt32;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type
 	SCNetworkConnectionStatus = SInt32;
 const
@@ -618,11 +689,15 @@ const
 	kSCNetworkConnectionConnecting		=  1;
 	kSCNetworkConnectionConnected		=  2;
 	kSCNetworkConnectionDisconnecting	=  3;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {!
 	@enum SCNetworkConnectionPPPStatus
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@discussion PPP-specific status of the network connection.
 		This status is returned as part of the extended information
@@ -664,6 +739,8 @@ const
 		PPP is suspended as a result of the suspend command (for
 		example, when a V.92 Modem is On Hold).
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@discussion PPP specific status of the network connection.
 		This status is PPP specific and returned as part of the extended information
 		for a PPP service.
@@ -710,11 +787,15 @@ const
 	@constant kSCNetworkConnectionPPPSuspended
 		PPP is suspended as a result of the suspend command (for example, when a V92 Modem is On Hold).
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	@constant kSCNetworkConnectionPPPWaitingForRedial
 		PPP has found a busy server and is waiting for redial.
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kSCNetworkConnectionPPPDisconnected = 0;
@@ -734,6 +815,8 @@ const
 type
 	SCNetworkConnectionPPPStatus = SInt32;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type
 	SCNetworkConnectionPPPStatus = SInt32;
 const
@@ -751,7 +834,10 @@ const
 	kSCNetworkConnectionPPPHoldingLinkOff		=  11;
 	kSCNetworkConnectionPPPSuspended		=  12;
 	kSCNetworkConnectionPPPWaitingForRedial		=  13;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {!
@@ -761,17 +847,23 @@ const
 	@param status The connection status.
 	@param connection The connection reference.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@param info Application-specific information.
  }
 type
   // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 	SCNetworkConnectionCallBack = procedure( connection: SCNetworkConnectionRef; status: SCNetworkConnectionStatus; info: UnivPtr );
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@param info ....
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 type SCNetworkConnectionCallBack = procedure( connection: SCNetworkConnectionRef; status: SCNetworkConnectionStatus; info: Ptr );
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -798,6 +890,7 @@ type SCNetworkConnectionCallBack = procedure( connection: SCNetworkConnectionRef
 {$endc}		{ CFNumber }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  Keys for the SCNetworkConnectionCopyUserPreferences() "selectionOptions"
@@ -877,6 +970,8 @@ function SCNetworkConnectionGetTypeID: CFTypeID; external name '_SCNetworkConnec
 function SCNetworkConnectionCopyUserPreferences( selectionOptions: CFDictionaryRef; var serviceID: CFStringRef; var userOptions: CFDictionaryRef ): Boolean; external name '_SCNetworkConnectionCopyUserPreferences';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {!
 	@function SCDynamicStoreGetTypeID
 	Returns the type identifier of all SCNetworkConnection instances.
@@ -899,11 +994,15 @@ function SCNetworkConnectionGetTypeID: CFTypeID; external name '_SCNetworkConnec
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function SCNetworkConnectionCopyUserPreferences( selectionOptions: CFDictionaryRef; var serviceID: CFStringRef; var userOptions: CFDictionaryRef ): Boolean; external name '_SCNetworkConnectionCopyUserPreferences';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {!
 	@function SCNetworkConnectionCreateWithServiceID
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@discussion Creates a new connection reference to use for getting
 		the status or for connecting or disconnecting the associated
@@ -937,6 +1036,8 @@ function SCNetworkConnectionCreateWithServiceID( allocator: CFAllocatorRef; serv
 function SCNetworkConnectionCopyServiceID( connection: SCNetworkConnectionRef ): CFStringRef; external name '_SCNetworkConnectionCopyServiceID';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@discussion Creates a new connection reference to use for getting the status,
 		for connecting or for disconnecting the associated service.
 	@param allocator The CFAllocator which should be used to allocate
@@ -966,12 +1067,16 @@ function SCNetworkConnectionCreateWithServiceID( allocator: CFAllocatorRef; serv
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function SCNetworkConnectionCopyServiceID( connection: SCNetworkConnectionRef ): CFStringRef; external name '_SCNetworkConnectionCopyServiceID';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {!
 	@function SCNetworkConnectionGetStatus
 	@discussion Returns the status of the SCNetworkConnection.
+<<<<<<< HEAD
 <<<<<<< HEAD
 		A status is one of the following values:
 <pre>
@@ -990,6 +1095,8 @@ function SCNetworkConnectionCopyServiceID( connection: SCNetworkConnectionRef ):
 function SCNetworkConnectionGetStatus( connection: SCNetworkConnectionRef ): SCNetworkConnectionStatus; external name '_SCNetworkConnectionGetStatus';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		A status is one of the following values :
 		    kSCNetworkConnectionInvalid
 		    kSCNetworkConnectionDisconnected
@@ -1002,7 +1109,10 @@ function SCNetworkConnectionGetStatus( connection: SCNetworkConnectionRef ): SCN
 }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function SCNetworkConnectionGetStatus( connection: SCNetworkConnectionRef ): SCNetworkConnectionStatus; external name '_SCNetworkConnectionGetStatus';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {!
@@ -1011,6 +1121,7 @@ function SCNetworkConnectionGetStatus( connection: SCNetworkConnectionRef ): SCN
 		An extended status dictionary contains specific dictionaries
 		describing the status for each subcomponent of the service.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 		For example, a status dictionary will contain the following
 		sub-dictionaries, keys, and values:
@@ -1051,6 +1162,8 @@ function SCNetworkConnectionGetStatus( connection: SCNetworkConnectionRef ): SCN
 function SCNetworkConnectionCopyExtendedStatus( connection: SCNetworkConnectionRef ): CFDictionaryRef; external name '_SCNetworkConnectionCopyExtendedStatus';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		For example, a status dictionary will contain the following dictionaries:
 
 		IPv4:
@@ -1077,13 +1190,17 @@ function SCNetworkConnectionCopyExtendedStatus( connection: SCNetworkConnectionR
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function SCNetworkConnectionCopyExtendedStatus( connection: SCNetworkConnectionRef ): CFDictionaryRef; external name '_SCNetworkConnectionCopyExtendedStatus';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {!
 	@function SCNetworkConnectionCopyStatistics
 	@discussion Returns the statistics of the SCNetworkConnection.
 		A statistic dictionary contains specific dictionaries
+<<<<<<< HEAD
 <<<<<<< HEAD
 		with statistics for each subcomponent of the service.
 
@@ -1120,6 +1237,8 @@ function SCNetworkConnectionCopyExtendedStatus( connection: SCNetworkConnectionR
 function SCNetworkConnectionCopyStatistics( connection: SCNetworkConnectionRef ): CFDictionaryRef; external name '_SCNetworkConnectionCopyStatistics';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		with statistics for each subcomponents of the service.
 
 		For example, a statistic dictionary will contain the following dictionaries:
@@ -1140,11 +1259,15 @@ function SCNetworkConnectionCopyStatistics( connection: SCNetworkConnectionRef )
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function SCNetworkConnectionCopyStatistics( connection: SCNetworkConnectionRef ): CFDictionaryRef; external name '_SCNetworkConnectionCopyStatistics';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {!
 	@function SCNetworkConnectionStart
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@discussion Starts the connection for the SCNetworkConnection.
 		The connection process is asynchronous and the function will
@@ -1191,6 +1314,8 @@ function SCNetworkConnectionCopyStatistics( connection: SCNetworkConnectionRef )
 function SCNetworkConnectionStart( connection: SCNetworkConnectionRef; userOptions: CFDictionaryRef; linger: Boolean ): Boolean; external name '_SCNetworkConnectionStart';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@discussion Start the connection for the SCNetworkConnection.
 		The connection process is asynchronous and the function will
 		return immediately. The connection status can be obtain by polling or
@@ -1230,11 +1355,15 @@ function SCNetworkConnectionStart( connection: SCNetworkConnectionRef; userOptio
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function SCNetworkConnectionStart( connection: SCNetworkConnectionRef; userOptions: CFDictionaryRef; linger: Boolean ): Boolean; external name '_SCNetworkConnectionStart';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {!
 	@function SCNetworkConnectionStop
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@discussion Stops the connection for the SCNetworkConnection.
 		The disconnection process is asynchronous and the function
@@ -1270,6 +1399,8 @@ function SCNetworkConnectionStop( connection: SCNetworkConnectionRef; forceDisco
 function SCNetworkConnectionCopyUserOptions( connection: SCNetworkConnectionRef ): CFDictionaryRef; external name '_SCNetworkConnectionCopyUserOptions';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@discussion Stop the connection for the SCNetworkConnection.
 		The disconnection process is asynchronous and the function will
 		return immediately. The connection status can be obtain by polling or
@@ -1302,11 +1433,15 @@ function SCNetworkConnectionStop( connection: SCNetworkConnectionRef; forceDisco
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function SCNetworkConnectionCopyUserOptions( connection: SCNetworkConnectionRef ): CFDictionaryRef; external name '_SCNetworkConnectionCopyUserOptions';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {!
 	@function SCNetworkConnectionScheduleWithRunLoop
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@discussion Schedules a connection with the run loop.
 	@param connection The SCNetworkConnection to schedule.
@@ -1319,6 +1454,8 @@ function SCNetworkConnectionCopyUserOptions( connection: SCNetworkConnectionRef 
 function SCNetworkConnectionScheduleWithRunLoop( connection: SCNetworkConnectionRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ): Boolean; external name '_SCNetworkConnectionScheduleWithRunLoop';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@discussion Schedule a connection with the Run Loop.
 	@param connection The SCNetworkConnection to schedule.
 	@param runLoop The runloop to schedule with.
@@ -1328,11 +1465,15 @@ function SCNetworkConnectionScheduleWithRunLoop( connection: SCNetworkConnection
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function SCNetworkConnectionScheduleWithRunLoop( connection: SCNetworkConnectionRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ): Boolean; external name '_SCNetworkConnectionScheduleWithRunLoop';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {!
 	@function SCNetworkConnectionUnscheduleFromRunLoop
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@discussion Unschedules a connection from the run loop.
 	@param connection The SCNetworkConnection to unschedule.
@@ -1397,6 +1538,8 @@ function SCNetworkConnectionSetDispatchQueue( connection: SCNetworkConnectionRef
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@discussion Unschedule a connection from the Run Loop.
 	@param connection The SCNetworkConnection to unschedule.
 	@param runLoop The runloop to unschedule from.
@@ -1408,4 +1551,7 @@ end.
 function SCNetworkConnectionUnscheduleFromRunLoop( connection: SCNetworkConnectionRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ): Boolean; external name '_SCNetworkConnectionUnscheduleFromRunLoop';
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

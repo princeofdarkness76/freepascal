@@ -1,5 +1,6 @@
 { CoreGraphics - CGFont.h
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 1999-2009 Apple Inc.
    All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -25,6 +26,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  * Copyright (c) 1999-2003 Apple Computer, Inc.
  * All rights reserved.
  }
@@ -35,7 +38,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -45,12 +51,17 @@
 unit CGFont;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -64,14 +75,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -80,11 +96,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -122,6 +141,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -129,6 +150,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -379,6 +401,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -387,7 +411,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -414,9 +441,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -427,18 +458,23 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,CFBase,CFData,CFDictionary,CFArray,CGBase,CGDataProvider,CGGeometry;
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 uses MacTypes,CFBase,CFData,CFDictionary,CFArray,CGBase;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,CFBase,CFData,CFDictionary,CFArray,CGBase;
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
 { The type used to represent a CoreGraphics font. }
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -461,6 +497,9 @@ type
 =======
 	CGFontRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	CGFontRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 
 { A type to represent indexes in a CGFontRef. }
 
@@ -474,16 +513,22 @@ type
 	CGGlyphPtr								= ^CGGlyph;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { The format of a PostScript font subset. Type1 is documented in "Adobe
    Type 1 Font Format"; Type3 in "PostScript Language Reference, 3rd ed."
    and Type42 in "Adobe Technical Note 5012, The Type 42 Font Format
    Specification". }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { The format of a PostScript font subset. Type1 is documented in the
  * "Adobe Type 1 Font Format"; Type3 in the "PostScript Language Reference,
  * 3rd ed." and Type42 in "Adobe Technical Note 5012, The Type 42 Font
  * Format Specification". }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	CGFontPostScriptFormat = SInt32;
@@ -497,6 +542,7 @@ const
 { The maximum allowed value of a CGFontIndex. Always <= USHRT_MAX - 1. }
 	kCGFontIndexMax = (1 shl 16) - 2;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   { A value representing an invalid CGFontIndex. Always <= USHRT_MAX. }
 	kCGFontIndexInvalid = (1 shl 16) - 1;
@@ -850,6 +896,8 @@ function CGFontCopyTableTags( font: CGFontRef ): CFArrayRef; external name '_CGF
 function CGFontCopyTableForTag( font: CGFontRef; tag: UInt32 ): CFDataRef; external name '_CGFontCopyTableForTag';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
     { A value representing an invalid CGFontIndex. Always <= USHRT_MAX. }
 	kCGFontIndexInvalid = (1 shl 16) - 1;
 
@@ -924,11 +972,15 @@ function CGFontCreatePostScriptSubset( font: CGFontRef; subsetName: CFStringRef;
 { Return a PostScript encoding of `font' containing glyphs in `encoding'. }
 
 function CGFontCreatePostScriptEncoding( font: CGFontRef; const (*var*) encoding: CGGlyph256Array ): CFDataRef; external name '_CGFontCreatePostScriptEncoding'; (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {** Keys for the font variation axis dictionary. **}
 
 { The key used to obtain the variation axis name from a variation axis
+<<<<<<< HEAD
 <<<<<<< HEAD
    dictionary. The value obtained with this key is a CFStringRef specifying
    the name of the variation axis. }
@@ -957,6 +1009,8 @@ var kCGFontVariationAxisMaxValue: CFStringRef; external name '_kCGFontVariationA
 var kCGFontVariationAxisDefaultValue: CFStringRef; external name '_kCGFontVariationAxisDefaultValue'; (* attribute const *)
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  * dictionary. The value obtained with this key is a CFStringRef specifying
  * the name of the variation axis. }
 
@@ -980,7 +1034,10 @@ var kCGFontVariationAxisMaxValue: CFStringRef; external name '_kCGFontVariationA
 
 var kCGFontVariationAxisDefaultValue: CFStringRef; external name '_kCGFontVariationAxisDefaultValue'; (* attribute const *) (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Obsolete; don't use these. }
 
@@ -988,6 +1045,7 @@ const
 	CGGlyphMin = 0;
 	CGGlyphMax = kCGGlyphMax;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
@@ -997,3 +1055,7 @@ end.
 
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+
+end.
+>>>>>>> origin/fixes_2_2

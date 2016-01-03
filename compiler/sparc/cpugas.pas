@@ -202,10 +202,13 @@ implementation
               getopstr:=tostr(longint(val));
             top_ref:
 <<<<<<< HEAD
+<<<<<<< HEAD
               if (oper.ref^.refaddr in [addr_no,addr_pic]) or
                  ((oper.ref^.refaddr=addr_low) and ((oper.ref^.base<>NR_NO) or
                   (oper.ref^.index<>NR_NO))) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
               if (oper.ref^.refaddr in [addr_no,addr_pic]) or ((oper.ref^.refaddr=addr_low) and ((oper.ref^.base<>NR_NO) or
                 (oper.ref^.index<>NR_NO))) then
 >>>>>>> graemeg/fixes_2_2
@@ -284,6 +287,7 @@ implementation
            asmbin : 'as';
 {$ifdef FPC_SPARC_V8_ONLY}
 <<<<<<< HEAD
+<<<<<<< HEAD
            asmcmd : '$PIC -o $OBJ $EXTRAOPT $ASM';
 {$else}
            asmcmd : '$ARCH $PIC -o $OBJ $EXTRAOPT $ASM';
@@ -291,6 +295,8 @@ implementation
            supported_targets : [system_sparc_solaris,system_sparc_linux,system_sparc_embedded];
            flags : [af_needar,af_smartlink_sections];
 =======
+=======
+>>>>>>> origin/fixes_2_2
            asmcmd : '-o $OBJ $ASM';
 {$else}
            asmcmd : '-Av9 -o $OBJ $ASM';
@@ -309,10 +315,13 @@ implementation
            idtxt  : 'GAS';
            asmbin : 'gas';
 <<<<<<< HEAD
+<<<<<<< HEAD
            asmcmd : '$ARCH $PIC -o $OBJ $EXTRAOPT $ASM';
            supported_targets : [system_sparc_solaris,system_sparc_linux,system_sparc_embedded];
            flags : [af_needar,af_smartlink_sections];
 =======
+=======
+>>>>>>> origin/fixes_2_2
            asmcmd : '-Av9 -o $OBJ $ASM';
            supported_target : system_any;
            flags : [af_allowdirect,af_needar,af_smartlink_sections];

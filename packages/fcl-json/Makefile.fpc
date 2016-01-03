@@ -1,13 +1,18 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for XML for FCL
 >>>>>>> graemeg/fixes_2_2
+=======
+#   Makefile.fpc for XML for FCL
+>>>>>>> origin/fixes_2_2
 #
 
 [package]
 name=fcl-json
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -40,6 +45,8 @@ rsts=fpjson jsonscanner jsonparser jsonconf fpjsonrtti
 [require]
 packages=rtl fpmkunit
 =======
+=======
+>>>>>>> origin/fixes_2_2
 version=2.2.5
 
 [target]
@@ -52,7 +59,10 @@ packages=fcl-base
 [compiler]
 options=-S2h
 sourcedir=src
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [install]
 fpcpackage=y
@@ -60,6 +70,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
@@ -164,10 +175,16 @@ fpjsonrtti$(PPUEXT): jsonparser$(PPUEXT) fpjson$(PPUEXT)
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 [rules]
 .NOTPARALLEL:
 
 jsonparser$(PPUEXT): jsonparser.pp fpjson$(PPUEXT) jsonscanner$(PPUEXT)
 
+<<<<<<< HEAD
 jsonconf$(PPUEXT): jsonparser$(PPUEXT) fpjson$(PPUEXT)
 >>>>>>> graemeg/fixes_2_2
+=======
+jsonconf$(PPUEXT): jsonparser$(PPUEXT) fpjson$(PPUEXT)
+>>>>>>> origin/fixes_2_2

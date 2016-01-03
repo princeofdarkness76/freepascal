@@ -483,7 +483,10 @@ implementation
                       read_typed_const(tclist,tstaticvarsym(sym),in_structure);
 =======
                       read_typed_const(tclist,tstaticvarsym(sym));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                     end;
                 end;
 
@@ -1513,6 +1516,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
            if not (m_delphi in current_settings.modeswitches) and
                (token=_ID) and (idtoken=_GENERIC) then
@@ -1548,12 +1552,17 @@ implementation
          current_module.checkforwarddefs.free;
          current_module.checkforwarddefs:=old_checkforwarddefs;
 =======
+=======
+>>>>>>> origin/fixes_2_2
            if assigned(generictypelist) then
              generictypelist.free;
          until token<>_ID;
          typecanbeforward:=false;
          symtablestack.top.SymList.ForEachCall(@resolve_type_forward,nil);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          block_type:=old_block_type;
       end;
 

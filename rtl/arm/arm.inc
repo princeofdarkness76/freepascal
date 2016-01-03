@@ -20,12 +20,18 @@
 {$endif FPC_SYSTEM_HAS_MOVE}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_SYSTEM_HAS_MOVE}
 {$define FPC_SYSTEM_FPC_MOVE}
 {$endif FPC_SYSTEM_HAS_MOVE}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC_SYSTEM_FPC_MOVE}
 const
   cpu_has_edsp : boolean = false;
@@ -33,6 +39,7 @@ const
 {$endif FPC_SYSTEM_FPC_MOVE}
 
 {$if not(defined(wince)) and not(defined(gba)) and not(defined(nds)) and not(defined(FPUSOFT)) and not(defined(FPULIBGCC))}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {$define FPC_SYSTEM_HAS_SYSINITFPU}
@@ -56,6 +63,9 @@ const
 =======
 {$define FPC_SYSTEM_HAS_SYSINITFPU}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$define FPC_SYSTEM_HAS_SYSINITFPU}
+>>>>>>> origin/fixes_2_2
 Procedure SysInitFPU;{$ifdef SYSTEMINLINE}inline;{$endif}
 begin
   { Enable FPU exceptions, but disable INEXACT, UNDERFLOW, DENORMAL }
@@ -66,6 +76,7 @@ begin
     wfs r0
   end;
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$else}
 Procedure SysInitFPU;{$ifdef SYSTEMINLINE}inline;{$endif}
@@ -120,6 +131,13 @@ begin
 =======
   SysInitFPU;
 >>>>>>> graemeg/fixes_2_2
+=======
+{$endif}
+
+procedure fpc_cpuinit;
+begin
+  SysInitFPU;
+>>>>>>> origin/fixes_2_2
 end;
 
 {$ifdef wince}
@@ -131,14 +149,20 @@ begin
 <<<<<<< HEAD
 =======
   softfloat_exception_flags:=0;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 {$define FPC_SYSTEM_HAS_SYSINITFPU}
 Procedure SysInitFPU;{$ifdef SYSTEMINLINE}inline;{$endif}
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
   softfloat_exception_mask:=float_flag_underflow or float_flag_inexact or float_flag_denormal;
 >>>>>>> graemeg/fixes_2_2
   { Enable FPU exceptions, but disable INEXACT, UNDERFLOW, DENORMAL }
@@ -158,11 +182,14 @@ asm
 {$ifndef darwin}
   mov    r0,r11
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$else}
   mov    r0,r7
 {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 {$ENDIF not INTERNAL_BACKTRACE}
 
@@ -181,7 +208,10 @@ asm
   beq .Lg_a_null
   ldr r0,[r0,#-4]
 .Lg_a_null:
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -202,9 +232,12 @@ asm
   ldr r0,[r0,#-12]
 .Lgnf_null:
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -359,11 +392,14 @@ end;
 {$ifndef FPC_SYSTEM_HAS_MOVE}
 {$define FPC_SYSTEM_HAS_MOVE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPUARM_HAS_EDSP}
 procedure Move(const source;var dest;count:longint);[public, alias: 'FPC_MOVE'];assembler;nostackframe;
 {$else CPUARM_HAS_EDSP}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure Move_pld(const source;var dest;count:longint);assembler;nostackframe;
 {$endif CPUARM_HAS_EDSP}
 asm
@@ -703,6 +739,9 @@ end;
 const
   moveproc : pointer = @move_blended;
 
+const
+  moveproc : pointer = @move_blended;
+
 procedure Move(const source;var dest;count:longint);[public, alias: 'FPC_MOVE'];assembler;nostackframe;
 >>>>>>> graemeg/fixes_2_2
 asm
@@ -725,14 +764,20 @@ end;
 {$define FPC_SYSTEM_HAS_FPC_SHORTSTR_ASSIGN}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_shortstr_to_shortstr(out res:shortstring;const sstr:shortstring);assembler;nostackframe;[public,alias: 'FPC_SHORTSTR_TO_SHORTSTR'];compilerproc;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_STRTOSHORTSTRINGPROC}
 function fpc_shortstr_to_shortstr(len:longint;const sstr:shortstring):shortstring;assembler;nostackframe;[public,alias: 'FPC_SHORTSTR_TO_SHORTSTR'];compilerproc;
 {$else}
 procedure fpc_shortstr_to_shortstr(out res:shortstring;const sstr:shortstring);assembler;nostackframe;[public,alias: 'FPC_SHORTSTR_TO_SHORTSTR'];compilerproc;
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {r0: __RESULT
  r1: len
  r2: sstr}
@@ -851,6 +896,7 @@ end;
 {$ifndef FPC_SYSTEM_HAS_FPC_PCHAR_LENGTH}
 {$define FPC_SYSTEM_HAS_FPC_PCHAR_LENGTH}
 <<<<<<< HEAD
+<<<<<<< HEAD
 function fpc_Pchar_length(p:Pchar):sizeint;assembler;nostackframe;[public,alias:'FPC_PCHAR_LENGTH'];compilerproc;
 
 asm
@@ -858,11 +904,16 @@ asm
     mov r1,r0
     beq .Ldone
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function fpc_Pchar_length(p:Pchar):longint;assembler;nostackframe;[public,alias:'FPC_PCHAR_LENGTH'];compilerproc;
 
 asm
     mov r1,r0
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 .Lnextchar:
     (*Are we aligned?*)
     tst r1,#3
@@ -885,6 +936,7 @@ asm
     (*Dirty trick: we need to subtract 1 extra because we have counted the
       terminating 0, due to the known carry flag sbc can do this.*)
     sbc r0,r1,r0
+<<<<<<< HEAD
 <<<<<<< HEAD
 .Ldone:
 <<<<<<< HEAD
@@ -921,12 +973,16 @@ asm
 =======
     mov pc,lr
 >>>>>>> graemeg/fixes_2_2
+=======
+    mov pc,lr
+>>>>>>> origin/fixes_2_2
 .L01010101:
     .long 0x01010101
 end;
 {$endif}
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifndef darwin}
 {$define FPC_SYSTEM_HAS_ANSISTR_DECR_REF}
@@ -1017,6 +1073,8 @@ end;
   {$endif FPC_PIC}
 {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var
   fpc_system_lock: longint; export name 'fpc_system_lock';
 >>>>>>> graemeg/fixes_2_2
@@ -1756,13 +1814,17 @@ procedure fpc_cpucodeinit;
 begin
 {$ifdef FPC_SYSTEM_FPC_MOVE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef CPUARM_HAS_EDSP}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   cpu_has_edsp:=true;
   in_edsp_test:=true;
   asm
     bic r0,sp,#7
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     // ldrd r0,r1,[r0]
@@ -1771,6 +1833,9 @@ begin
 =======
     ldrd r0,[r0]
 >>>>>>> graemeg/fixes_2_2
+=======
+    ldrd r0,[r0]
+>>>>>>> origin/fixes_2_2
   end;
   in_edsp_test:=false;
   if cpu_has_edsp then
@@ -1783,6 +1848,7 @@ begin
 {$endif FPC_SYSTEM_FPC_MOVE}
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$define FPC_SYSTEM_HAS_SWAPENDIAN}
 
@@ -1964,3 +2030,8 @@ end;
 {$i divide.inc}
 
 >>>>>>> graemeg/fixes_2_2
+=======
+{include hand-optimized assembler division code}
+{$i divide.inc}
+
+>>>>>>> origin/fixes_2_2

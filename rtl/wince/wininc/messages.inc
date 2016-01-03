@@ -67,9 +67,12 @@
     
        WM_USER = 1024;  //keep it first
 <<<<<<< HEAD
+<<<<<<< HEAD
        WM_APP  = $8000;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
        ACM_PLAY = 1125;
        ACM_STOP = 1126;
@@ -999,6 +1002,7 @@
      WM_IME_CHAR = 646;
      WM_IME_COMPOSITION = 271;
 <<<<<<< HEAD
+<<<<<<< HEAD
      WM_IME_CONTROL = 643;
      WM_IME_COMPOSITIONFULL = 644;
      WM_IME_REQUEST = $0288;
@@ -1006,6 +1010,10 @@
      WM_IME_COMPOSITIONFULL = 644;
      WM_IME_CONTROL = 643;
 >>>>>>> graemeg/fixes_2_2
+=======
+     WM_IME_COMPOSITIONFULL = 644;
+     WM_IME_CONTROL = 643;
+>>>>>>> origin/fixes_2_2
      WM_IME_ENDCOMPOSITION = 270;
      WM_IME_KEYDOWN = 656;
      WM_IME_KEYUP = 657;
@@ -1143,6 +1151,7 @@
      WM_XBUTTONDBLCLK = 525;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // winuserm.h
 // Mobile extensions to winuser.h
 
@@ -1194,6 +1203,8 @@ const
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Type
 {$ifdef MESSAGESUNIT}
 

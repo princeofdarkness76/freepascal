@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       LangAnalysis/LanguageAnalysis.h
  
      Contains:   Language Analysis Manager Interfaces
@@ -24,6 +25,8 @@
  
      Copyright:  © 1996-2008 by Apple Inc., all rights reserved
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       LanguageAnalysis.p
  
      Contains:   Language Analysis Manager Interfaces
@@ -32,11 +35,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1996-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -67,6 +74,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -78,7 +87,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -88,12 +100,17 @@
 unit LanguageAnalysis;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -107,14 +124,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -123,11 +145,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -165,6 +190,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -172,6 +199,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -407,6 +435,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -415,7 +445,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -442,9 +475,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -455,6 +492,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,AEDataModel,Files,AERegistry,Dictionary,TextCommon,MacErrors;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -646,6 +684,8 @@ function LALibraryVersion: UInt32; external name '_LALibraryVersion';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {$ALIGN POWER}
@@ -757,12 +797,16 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function LALibraryVersion: UInt32; external name '_LALibraryVersion';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     High level API
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  LATextToMorphemes()   *** DEPRECATED ***
  *  
@@ -779,6 +823,8 @@ function LATextToMorphemes( context: LAContextRef; preferedEncoding: TextEncodin
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  LATextToMorphemes()
  *  
  *  Availability:
@@ -787,12 +833,16 @@ function LATextToMorphemes( context: LAContextRef; preferedEncoding: TextEncodin
  *    Mac OS X:         in version 10.0 and later
  }
 function LATextToMorphemes(context: LAContextRef; preferedEncoding: TextEncoding; textLength: ByteCount; sourceText: ConstLogicalAddress; bufferSize: ByteCount; convertFlags: OptionBits; structureVersion: UInt32; var acceptedLength: ByteCount; resultBuffer: LAMorphemesArrayPtr): OSStatus; external name '_LATextToMorphemes';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Handling Context
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  LAOpenAnalysisContext()   *** DEPRECATED ***
  *  
@@ -825,6 +875,8 @@ function LACloseAnalysisContext( context: LAContextRef ): OSStatus; external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  LAOpenAnalysisContext()
  *  
  *  Availability:
@@ -843,12 +895,16 @@ function LAOpenAnalysisContext(environ: LAEnvironmentRef; var context: LAContext
  *    Mac OS X:         in version 10.0 and later
  }
 function LACloseAnalysisContext(context: LAContextRef): OSStatus; external name '_LACloseAnalysisContext';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Handling Environment
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  LAGetEnvironmentList()   *** DEPRECATED ***
  *  
@@ -945,6 +1001,8 @@ function LADeleteCustomEnvironment( environment: LAEnvironmentRef ): OSStatus; e
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  LAGetEnvironmentList()
  *  
  *  Availability:
@@ -993,12 +1051,16 @@ function LACreateCustomEnvironment(baseEnvironment: LAEnvironmentRef; const (*va
  *    Mac OS X:         in version 10.0 and later
  }
 function LADeleteCustomEnvironment(environment: LAEnvironmentRef): OSStatus; external name '_LADeleteCustomEnvironment';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Handling dictionries
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  LAOpenDictionary()   *** DEPRECATED ***
  *  
@@ -1063,6 +1125,8 @@ function LAAddNewWord( environ: LAEnvironmentRef; const (*var*) dictionary: FSSp
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  LAOpenDictionary()
  *  
  *  Availability:
@@ -1101,12 +1165,16 @@ function LAListAvailableDictionaries(environ: LAEnvironmentRef; maxCount: ItemCo
  *    Mac OS X:         in version 10.0 and later
  }
 function LAAddNewWord(environ: LAEnvironmentRef; const (*var*) dictionary: FSSpec; const (*var*) dataList: AEDesc): OSStatus; external name '_LAAddNewWord';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Analyzing text
 }
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  LAMorphemeAnalysis()   *** DEPRECATED ***
  *  
@@ -1191,6 +1259,8 @@ function LAResetAnalysis( context: LAContextRef ): OSStatus; external name '_LAR
 
 {$endc} {not TARGET_CPU_64}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  LAMorphemeAnalysis()
  *  
  *  Availability:
@@ -1239,7 +1309,10 @@ function LAShiftMorphemes(context: LAContextRef; morphemeCount: ItemCount; var p
  *    Mac OS X:         in version 10.0 and later
  }
 function LAResetAnalysis(context: LAContextRef): OSStatus; external name '_LAResetAnalysis';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     Check Language Analysis Manager availability
@@ -1272,6 +1345,7 @@ function LAResetAnalysis(context: LAContextRef): OSStatus; external name '_LARes
 {
     Names for default environments for Japanese analysis
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kLAJapaneseKanaKanjiEnvironment = 'KanaKanjiConversion';
@@ -1551,6 +1625,8 @@ const
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
     File cretor for dictionary of Apple Japanese access method
 }
@@ -1681,4 +1757,7 @@ const
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

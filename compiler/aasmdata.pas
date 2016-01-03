@@ -658,6 +658,7 @@ implementation
     procedure TAsmData.getglobaljumplabel(out l : TAsmLabel);
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         l:=TAsmLabel.createglobal(AsmSymbolDict,name^,FNextLabelNr[alt_jump],alt_jump);
         inc(FNextLabelNr[alt_jump]);
       end;
@@ -681,6 +682,11 @@ implementation
         inc(FNextLabelNr[alt_jump]);
       end;
 >>>>>>> graemeg/fixes_2_2
+=======
+        l:=TAsmLabel.createglobal(AsmSymbolDict,name,FNextLabelNr[alt_jump],alt_jump);
+        inc(FNextLabelNr[alt_jump]);
+      end;
+>>>>>>> origin/fixes_2_2
 
     procedure TAsmData.getlocaldatalabel(out l: TAsmLabel);
       begin

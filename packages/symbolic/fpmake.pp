@@ -12,6 +12,7 @@ begin
     begin
 {$endif ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P:=AddPackage('symbolic');
     P.ShortName:='symb';
 {$ifdef ALLPACKAGES}
@@ -30,6 +31,8 @@ begin
     P.IncludePath.Add('src');
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
     P:=AddPackage('symbolic');
 {$ifdef ALLPACKAGES}
@@ -41,7 +44,10 @@ begin
 
 //    P.Dependencies.Add('x11');
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('symbolic.pas');
       with T.Dependencies do
         begin
@@ -51,6 +57,7 @@ begin
           AddInclude('teval.inc');
           AddInclude('rearrang.inc');
         end;
+<<<<<<< HEAD
 <<<<<<< HEAD
     T.ResourceStrings := True;
 
@@ -63,6 +70,9 @@ begin
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

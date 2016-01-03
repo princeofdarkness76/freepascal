@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -66,11 +67,16 @@ constructor TWinCEGAPIConsole.Create;
 begin
   inherited Create;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Constructor TWinCEGAPIConsole.Create;
 
 Begin
   Inherited Create;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   FCopy := TPTCCopy.Create;
   FClear := TPTCClear.Create;
@@ -89,6 +95,7 @@ Begin
   FDisplayWidth := FGXDisplayProperties.cxWidth;
   FDisplayHeight := FGXDisplayProperties.cyHeight;
   FDisplayPitch := FGXDisplayProperties.cbyPitch;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -168,6 +175,8 @@ var
 >>>>>>> origin/cpstrnew
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 //  FDisplayFormat := TPTCFormat.Create(32, $00FF0000, $0000FF00, $000000FF);
   FDisplayFormat := TPTCFormat.Create(16, $F800, $07E0, $001F); {hardcoded for now...}
 
@@ -181,20 +190,27 @@ Var
   I : Integer;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Close;
 
   FCopy.Free;
   FClear.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FArea.Free;
   FClip.Free;
   FDisplayFormat.Free;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   for I := Low(FModes) to High(FModes) do
     FModes[I].Free;
@@ -319,6 +335,8 @@ begin
 
   try
 =======
+=======
+>>>>>>> origin/fixes_2_2
   For I := Low(FModes) To High(FModes) Do
     FModes[I].Free;
 
@@ -358,11 +376,15 @@ Begin
     Close;
 
   Try
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     LOG('creating window');
     FWindow := TWinCEWindow.Create('PTC_GAPI_FULLSCREEN',
                                    ATitle,
                                    0,
+<<<<<<< HEAD
 <<<<<<< HEAD
                                    WS_VISIBLE {Or WS_SYSMENU or WS_CAPTION},
                                    SW_SHOWNORMAL,
@@ -372,11 +394,17 @@ Begin
                                    SW_SHOWNORMAL,
                                    CW_USEDEFAULT, CW_USEDEFAULT,
 >>>>>>> graemeg/fixes_2_2
+=======
+                                   WS_VISIBLE {Or WS_SYSMENU Or WS_CAPTION},
+                                   SW_SHOWNORMAL,
+                                   CW_USEDEFAULT, CW_USEDEFAULT,
+>>>>>>> origin/fixes_2_2
                                    FDisplayWidth, FDisplayHeight,
 				   @WndProc);
     LOG('window created successfully');
 
     LOG('opening display');
+<<<<<<< HEAD
 <<<<<<< HEAD
     if GXOpenDisplay(FWindow.WindowHandle, GX_FULLSCREEN) <> 0 then
       FGXDisplayIsOpen := True {success!!!}
@@ -405,6 +433,8 @@ Begin
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
     If GXOpenDisplay(FWindow.WindowHandle, GX_FULLSCREEN) <> 0 Then
       FGXDisplayIsOpen := True {success!!!}
     Else
@@ -417,22 +447,30 @@ Begin
     Finally
       tmp.Free;
     End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     FEventQueue := TEventQueue.Create;
     FKeyboard := TWinCEKeyboard.Create(FEventQueue);
     FMouse := TWinCEMouse.Create(FEventQueue, True, FDisplayWidth, FDisplayHeight);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if {m_primary.m_fullscreen}True then
 =======
     If {m_primary.m_fullscreen}True Then
 >>>>>>> graemeg/fixes_2_2
+=======
+    If {m_primary.m_fullscreen}True Then
+>>>>>>> origin/fixes_2_2
       FMouse.SetWindowArea(0, 0, FDisplayWidth, FDisplayHeight);
 
     FWindow.Update;
 
     FOpen := True;
+<<<<<<< HEAD
 <<<<<<< HEAD
   except
     on error: TObject do
@@ -468,6 +506,8 @@ begin
 
   if FGXDisplayIsOpen Then;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Except
     On error : TObject Do
     Begin
@@ -483,7 +523,10 @@ Begin
   LOG('TWinCEGAPIConsole.Close');
 
   If FGXDisplayIsOpen Then;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     GXCloseDisplay;
   FGXDisplayIsOpen := False;
 
@@ -493,6 +536,7 @@ Begin
   FreeAndNil(FEventQueue);
 
   FOpen := False;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -576,6 +620,8 @@ begin
       console_pixels := Lock;
       try
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure TWinCEGAPIConsole.Copy(Var ASurface : TPTCBaseSurface);
@@ -605,11 +651,15 @@ Begin
     Try
       console_pixels := Lock;
       Try
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         FCopy.Request(AFormat, Format);
         FCopy.Palette(APalette, Palette);
         FCopy.Copy(APixels, 0, 0, AWidth, AHeight, APitch, console_pixels, 0, 0,
                     Width, Height, Pitch);
+<<<<<<< HEAD
 <<<<<<< HEAD
       finally
         Unlock;
@@ -728,6 +778,8 @@ begin
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
       Finally
         Unlock;
       End;
@@ -773,11 +825,15 @@ Begin
       Finally
         tmp.Free;
       End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       FCopy.request(AFormat, Format);
       FCopy.palette(APalette, Palette);
       FCopy.copy(APixels, clipped_source.left, clipped_source.top, clipped_source.width, clipped_source.height, APitch,
                  console_pixels, clipped_destination.left, clipped_destination.top, clipped_destination.width, clipped_destination.height, Pitch);
+<<<<<<< HEAD
 <<<<<<< HEAD
     finally
       Unlock;
@@ -1123,6 +1179,8 @@ function TWinCEGAPIConsole.Option(const AOption: String): Boolean;
 >>>>>>> origin/cpstrnew
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Finally
       Unlock;
       clipped_source.Free;
@@ -1219,12 +1277,16 @@ End;
 Function TWinCEGAPIConsole.Option(Const AOption : String) : Boolean;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   LOG('console option', AOption);
 
   // todo...
 
   Result := FCopy.Option(AOption);
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 <<<<<<< HEAD
@@ -1459,6 +1521,8 @@ procedure TWinCEGAPIConsole.Flush;
 >>>>>>> origin/cpstrnew
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure TWinCEGAPIConsole.Palette(Const APalette : TPTCPalette);
@@ -1548,12 +1612,16 @@ End;
 Procedure TWinCEGAPIConsole.Flush;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   CheckOpen    ('TWinCEGAPIConsole.Flush');
   CheckUnlocked('TWinCEGAPIConsole.Flush');
 
   Update;
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1583,16 +1651,22 @@ procedure TWinCEGAPIConsole.Finish;
 >>>>>>> origin/cpstrnew
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure TWinCEGAPIConsole.Finish;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   CheckOpen    ('TWinCEGAPIConsole.Finish');
   CheckUnlocked('TWinCEGAPIConsole.Finish');
 
   Update;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 <<<<<<< HEAD
@@ -1619,16 +1693,22 @@ procedure TWinCEGAPIConsole.Update;
 >>>>>>> origin/cpstrnew
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure TWinCEGAPIConsole.Update;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   CheckOpen    ('TWinCEGAPIConsole.Update');
   CheckUnlocked('TWinCEGAPIConsole.Update');
 
   FWindow.Update;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 <<<<<<< HEAD
@@ -1702,6 +1782,8 @@ begin
 >>>>>>> origin/cpstrnew
   repeat
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure TWinCEGAPIConsole.Update(Const AArea : TPTCArea);
@@ -1718,12 +1800,16 @@ Begin
 
   FreeAndNil(AEvent);
   Repeat
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { update window }
     FWindow.Update;
 
     { try to find an event that matches the EventMask }
     AEvent := FEventQueue.NextEvent(AEventMask);
+<<<<<<< HEAD
 <<<<<<< HEAD
   until (not AWait) or (AEvent <> Nil);
   Result := AEvent <> nil;
@@ -1760,6 +1846,8 @@ begin
 
   repeat
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Until (Not AWait) Or (AEvent <> Nil);
   Result := AEvent <> Nil;
 End;
@@ -1771,12 +1859,16 @@ Begin
 //  CheckUnlocked('TWinCEGAPIConsole.PeekEvent');
 
   Repeat
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { update window }
     FWindow.Update;
 
     { try to find an event that matches the EventMask }
     Result := FEventQueue.PeekEvent(AEventMask);
+<<<<<<< HEAD
 <<<<<<< HEAD
   until (not AWait) or (Result <> nil);
 end;
@@ -2082,6 +2174,8 @@ begin
   end;
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Until (Not AWait) Or (Result <> Nil);
 End;
 
@@ -2169,4 +2263,7 @@ Begin
       Raise TPTCError.Create(AMessage, error);
   End;
 End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

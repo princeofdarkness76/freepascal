@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/MacMemory.h
  
      Contains:   Memory Manager Interfaces.
@@ -23,6 +24,8 @@
  
      Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       MacMemory.p
  
      Contains:   Memory Manager Interfaces.
@@ -31,7 +34,10 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -39,6 +45,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {      Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
@@ -59,6 +66,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -67,7 +76,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -77,12 +89,17 @@
 unit MacMemory;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -96,14 +113,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -112,11 +134,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -154,6 +179,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -161,6 +188,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -395,6 +423,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -403,7 +433,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -430,9 +463,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -442,6 +479,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes;
 {$endc} {not MACOSALLINCLUDE}
@@ -457,11 +495,16 @@ uses MacTypes;
 uses MacTypes,MixedMode;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,MixedMode;
+
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
 
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 	maxSize = $7FFFFFF0; {the largest block possible}
 
@@ -595,6 +638,8 @@ function NewGrowZoneUPP( userRoutine: GrowZoneProcPtr ): GrowZoneUPP; external n
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	maxSize						= $7FFFFFF0;					{ the largest block possible }
 
 	defaultPhysicalEntryCount	= 8;
@@ -724,11 +769,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewGrowZoneUPP(userRoutine: GrowZoneProcPtr): GrowZoneUPP; external name '_NewGrowZoneUPP'; { old name was NewGrowZoneProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewPurgeUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -754,16 +803,22 @@ function NewPurgeUPP( userRoutine: PurgeProcPtr ): PurgeUPP; external name '_New
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewPurgeUPP(userRoutine: PurgeProcPtr): PurgeUPP; external name '_NewPurgeUPP'; { old name was NewPurgeProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewUserFnUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -789,16 +844,22 @@ function NewUserFnUPP( userRoutine: UserFnProcPtr ): UserFnUPP; external name '_
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewUserFnUPP(userRoutine: UserFnProcPtr): UserFnUPP; external name '_NewUserFnUPP'; { old name was NewUserFnProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeGrowZoneUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -824,16 +885,22 @@ procedure DisposeGrowZoneUPP( userUPP: GrowZoneUPP ); external name '_DisposeGro
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeGrowZoneUPP(userUPP: GrowZoneUPP); external name '_DisposeGrowZoneUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposePurgeUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -859,16 +926,22 @@ procedure DisposePurgeUPP( userUPP: PurgeUPP ); external name '_DisposePurgeUPP'
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposePurgeUPP(userUPP: PurgeUPP); external name '_DisposePurgeUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeUserFnUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -894,16 +967,22 @@ procedure DisposeUserFnUPP( userUPP: UserFnUPP ); external name '_DisposeUserFnU
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeUserFnUPP(userUPP: UserFnUPP); external name '_DisposeUserFnUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeGrowZoneUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -929,16 +1008,22 @@ function InvokeGrowZoneUPP( cbNeeded: Size; userUPP: GrowZoneUPP ): SIGNEDLONG; 
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeGrowZoneUPP(cbNeeded: Size; userRoutine: GrowZoneUPP): SInt32; external name '_InvokeGrowZoneUPP'; { old name was CallGrowZoneProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokePurgeUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -964,16 +1049,22 @@ procedure InvokePurgeUPP( blockToPurge: Handle; userUPP: PurgeUPP ); external na
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure InvokePurgeUPP(blockToPurge: Handle; userRoutine: PurgeUPP); external name '_InvokePurgeUPP'; { old name was CallPurgeProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeUserFnUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1264,6 +1355,8 @@ procedure LMSetMemErr( value: SInt16 ); external name '_LMSetMemErr';
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -1337,11 +1430,15 @@ function MemError: OSErr; external name '_MemError';
  }
 function GetZone: THz; external name '_GetZone';
 {$endc}  {CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  NewHandle()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    Allocate a relocatable memory block of a specified size.
@@ -1399,6 +1496,8 @@ function NewHandle( byteCount: Size ): Handle; external name '_NewHandle';
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1416,11 +1515,15 @@ function NewHandle(byteCount: Size): Handle; external name '_NewHandle';
  }
 function NewHandleSys(byteCount: Size): Handle; external name '_NewHandleSys';
 {$endc}  {CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  NewHandleClear()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    Allocate a relocatable memory block of a specified size.
@@ -1477,6 +1580,8 @@ function NewHandleClear( byteCount: Size ): Handle; external name '_NewHandleCle
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1503,11 +1608,15 @@ function NewHandleSysClear(byteCount: Size): Handle; external name '_NewHandleSy
  }
 function HandleZone(h: Handle): THz; external name '_HandleZone';
 {$endc}  {CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  RecoverHandle()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    Returns a handle to a relocatable block pointed to by a specified
@@ -1561,6 +1670,8 @@ function RecoverHandle( p: Ptr ): Handle; external name '_RecoverHandle';
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1578,11 +1689,15 @@ function RecoverHandle(p: Ptr): Handle; external name '_RecoverHandle';
  }
 function RecoverHandleSys(p: Ptr): Handle; external name '_RecoverHandleSys';
 {$endc}  {CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  NewPtr()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    Allocates a nonrelocatable block of memory of a specified size.
@@ -1633,6 +1748,8 @@ function NewPtr( byteCount: Size ): Ptr; external name '_NewPtr';
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1650,11 +1767,15 @@ function NewPtr(byteCount: Size): Ptr; external name '_NewPtr';
  }
 function NewPtrSys(byteCount: Size): Ptr; external name '_NewPtrSys';
 {$endc}  {CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  NewPtrClear()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    Allocates a nonrelocatable block of memory of a specified size
@@ -4080,12 +4201,54 @@ function GetHandleSize(h: Handle): Size; external name '_GetHandleSize';
 {$ifc CALL_NOT_IN_CARBON}
 {
  *  InlineGetHandleSize()
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NewPtrClear(byteCount: Size): Ptr; external name '_NewPtrClear';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  NewPtrSysClear()
  *  
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
+function NewPtrSysClear(byteCount: Size): Ptr; external name '_NewPtrSysClear';
+{
+ *  PtrZone()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function PtrZone(p: Ptr): THz; external name '_PtrZone';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  MaxBlock()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MaxBlock: SInt32; external name '_MaxBlock';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  MaxBlockSys()
+>>>>>>> origin/fixes_2_2
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+<<<<<<< HEAD
 function InlineGetHandleSize(h: Handle): Size; external name '_InlineGetHandleSize';
 {$endc}  {CALL_NOT_IN_CARBON}
 >>>>>>> graemeg/fixes_2_2
@@ -4149,11 +4312,20 @@ procedure ReallocateHandle( h: Handle; byteCount: Size ); external name '_Reallo
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+function MaxBlockSys: SInt32; external name '_MaxBlockSys';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  StackSpace()
+ *  
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
+<<<<<<< HEAD
 procedure ReallocateHandle(h: Handle; byteCount: Size); external name '_ReallocateHandle';
 {$ifc CALL_NOT_IN_CARBON}
 {
@@ -4446,55 +4618,114 @@ procedure HSetState( h: Handle; flags: SInt8 ); external name '_HSetState';
 {$ifc not TARGET_CPU_64}
 =======
  *  Availability:
+=======
+function StackSpace: SInt32; external name '_StackSpace';
+{
+ *  NewEmptyHandle()
+ *  
+ *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
+function NewEmptyHandle: Handle; external name '_NewEmptyHandle';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  NewEmptyHandleSys()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function NewEmptyHandleSys: Handle; external name '_NewEmptyHandleSys';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  HLock()
+ *  
+ *  Availability:
+>>>>>>> origin/fixes_2_2
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+<<<<<<< HEAD
 procedure EmptyHandle(h: Handle); external name '_EmptyHandle';
 {
  *  HSetRBit()
+=======
+procedure HLock(h: Handle); external name '_HLock';
+{
+ *  HUnlock()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
+<<<<<<< HEAD
 procedure HSetRBit(h: Handle); external name '_HSetRBit';
 {
  *  HClrRBit()
+=======
+procedure HUnlock(h: Handle); external name '_HUnlock';
+{
+ *  HPurge()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
+<<<<<<< HEAD
 procedure HClrRBit(h: Handle); external name '_HClrRBit';
 {
  *  HGetState()
+=======
+procedure HPurge(h: Handle); external name '_HPurge';
+{
+ *  HNoPurge()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
+<<<<<<< HEAD
 function HGetState(h: Handle): SInt8; external name '_HGetState';
 {
  *  HSetState()
+=======
+procedure HNoPurge(h: Handle); external name '_HNoPurge';
+{
+ *  HLockHi()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
+<<<<<<< HEAD
 procedure HSetState(h: Handle; flags: SInt8); external name '_HSetState';
 {
  *  PurgeSpace()
+=======
+procedure HLockHi(h: Handle); external name '_HLockHi';
+{
+ *  TempNewHandle()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
+<<<<<<< HEAD
 procedure PurgeSpace(var total: SInt32; var contig: SInt32); external name '_PurgeSpace';
 
 {
@@ -6356,6 +6587,454 @@ function IsHeapValid: Boolean; external name '_IsHeapValid';
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+function TempNewHandle(logicalSize: Size; var resultCode: OSErr): Handle; external name '_TempNewHandle';
+{
+ *  TempMaxMem()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TempMaxMem(var grow: Size): Size; external name '_TempMaxMem';
+{
+ *  TempFreeMem()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TempFreeMem: SInt32; external name '_TempFreeMem';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  InitZone()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure InitZone(pgrowZone: GrowZoneUPP; cmoreMasters: SInt16; limitPtr: UnivPtr; startPtr: UnivPtr); external name '_InitZone';
+
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  SetZone()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure SetZone(hz: THz); external name '_SetZone';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  CompactMem()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function CompactMem(cbNeeded: Size): Size; external name '_CompactMem';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  CompactMemSys()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function CompactMemSys(cbNeeded: Size): Size; external name '_CompactMemSys';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  PurgeMem()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure PurgeMem(cbNeeded: Size); external name '_PurgeMem';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  PurgeMemSys()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure PurgeMemSys(cbNeeded: Size); external name '_PurgeMemSys';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  FreeMem()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+
+ *  Note:
+      FreeMem has been renamed MacFreeMem, to resolve a naming conflict with
+      FreeMem in the Turbo Pascal/Delphi/FreePascal runtime library
+ }
+function MacFreeMem: SInt32; external name '_FreeMem';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  FreeMemSys()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function FreeMemSys: SInt32; external name '_FreeMemSys';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  ReserveMem()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure ReserveMem(cbNeeded: Size); external name '_ReserveMem';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  ReserveMemSys()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure ReserveMemSys(cbNeeded: Size); external name '_ReserveMemSys';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  MaxMem()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MaxMem(var grow: Size): Size; external name '_MaxMem';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  MaxMemSys()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function MaxMemSys(var grow: Size): Size; external name '_MaxMemSys';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  SetGrowZone()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure SetGrowZone(growZone: GrowZoneUPP); external name '_SetGrowZone';
+{
+ *  GetGrowZone()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function GetGrowZone: GrowZoneUPP; external name '_GetGrowZone';
+
+{
+ *  MoveHHi()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure MoveHHi(h: Handle); external name '_MoveHHi';
+{
+ *  DisposePtr()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposePtr(p: Ptr); external name '_DisposePtr';
+{
+ *  GetPtrSize()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function GetPtrSize(p: Ptr): Size; external name '_GetPtrSize';
+
+{
+ *  SetPtrSize()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure SetPtrSize(p: Ptr; newSize: Size); external name '_SetPtrSize';
+{
+ *  DisposeHandle()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposeHandle(h: Handle); external name '_DisposeHandle';
+{
+ *  SetHandleSize()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure SetHandleSize(h: Handle; newSize: Size); external name '_SetHandleSize';
+{ 
+    NOTE
+    
+    GetHandleSize and GetPtrSize are documented in Inside Mac as returning 0 
+    in case of an error, but the traps actually return an error code in D0.
+    The glue sets D0 to 0 if an error occurred.
+}
+{
+ *  GetHandleSize()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function GetHandleSize(h: Handle): Size; external name '_GetHandleSize';
+
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  InlineGetHandleSize()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function InlineGetHandleSize(h: Handle): Size; external name '_InlineGetHandleSize';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  ReallocateHandle()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure ReallocateHandle(h: Handle; byteCount: Size); external name '_ReallocateHandle';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  ReallocateHandleSys()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure ReallocateHandleSys(h: Handle; byteCount: Size); external name '_ReallocateHandleSys';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  EmptyHandle()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure EmptyHandle(h: Handle); external name '_EmptyHandle';
+{
+ *  HSetRBit()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure HSetRBit(h: Handle); external name '_HSetRBit';
+{
+ *  HClrRBit()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure HClrRBit(h: Handle); external name '_HClrRBit';
+{
+ *  HGetState()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function HGetState(h: Handle): SInt8; external name '_HGetState';
+{
+ *  HSetState()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure HSetState(h: Handle; flags: SInt8); external name '_HSetState';
+{
+ *  PurgeSpace()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure PurgeSpace(var total: SInt32; var contig: SInt32); external name '_PurgeSpace';
+
+{
+    PurgeSpaceTotal and PurgeSpaceContiguous are currently only implement
+    on classic 68K.  The are the same as PurgeSpace() but return just
+    one value (either total space purgable or contiguous space purgable).
+    Begining in Mac OS 8.5 they are available in InterfaceLib.
+}
+{
+ *  PurgeSpaceTotal()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function PurgeSpaceTotal: SInt32; external name '_PurgeSpaceTotal';
+{
+ *  PurgeSpaceContiguous()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function PurgeSpaceContiguous: SInt32; external name '_PurgeSpaceContiguous';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  PurgeSpaceSysTotal()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function PurgeSpaceSysTotal: SInt32; external name '_PurgeSpaceSysTotal';
+{
+ *  PurgeSpaceSysContiguous()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function PurgeSpaceSysContiguous: SInt32; external name '_PurgeSpaceSysContiguous';
+{****************************************************************************
+
+    The routines: 
+
+        BlockMoveUncached, BlockMoveDataUncached
+        BlockZero, BlockZeroUncached
+    
+    were first created for developers writing drivers. Originally they only
+    existed in DriverServicesLib.  Later they were added to InterfaceLib 
+    in PCI based PowerMacs.  MacOS 8.5 provides these routines in InterfaceLib
+    on all supported machines. 
+    
+****************************************************************************}
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  BlockMove()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in DriverServicesLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure BlockMove(srcPtr: UnivPtr; destPtr: UnivPtr; byteCount: Size); external name '_BlockMove';
+{
+ *  BlockMoveData()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in DriverServicesLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure BlockMoveData(srcPtr: UnivPtr; destPtr: UnivPtr; byteCount: Size); external name '_BlockMoveData';
+{
+ *  BlockMoveUncached()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure BlockMoveUncached(srcPtr: UnivPtr; destPtr: UnivPtr; byteCount: Size); external name '_BlockMoveUncached';
+
+{
+ *  BlockMoveDataUncached()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure BlockMoveDataUncached(srcPtr: UnivPtr; destPtr: UnivPtr; byteCount: Size); external name '_BlockMoveDataUncached';
+
+{
+ *  BlockZero()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure BlockZero(destPtr: UnivPtr; byteCount: Size); external name '_BlockZero';
+
+{
+ *  BlockZeroUncached()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+>>>>>>> origin/fixes_2_2
 procedure BlockZeroUncached(destPtr: UnivPtr; byteCount: Size); external name '_BlockZeroUncached';
 
 
@@ -6757,12 +7436,16 @@ function CheckAllHeaps: boolean; external name '_CheckAllHeaps';
  *    Mac OS X:         in version 10.0 and later
  }
 function IsHeapValid: boolean; external name '_IsHeapValid';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { It is invalid to pass a NULL or an empty Handle to IsHandleValid }
 {
  *  IsHandleValid()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
@@ -6792,18 +7475,24 @@ function IsHandleValid( h: Handle ): Boolean; external name '_IsHandleValid';
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function IsHandleValid(h: Handle): boolean; external name '_IsHandleValid';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { It is invalid to pass a NULL Pointer to IsPointerValid }
 {
  *  IsPointerValid()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
@@ -6979,6 +7668,8 @@ procedure LMSetApplZone( value: THz ); external name '_LMSetApplZone';
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -7104,4 +7795,7 @@ procedure ReallocHandle(h: Handle; byteCount: Size); external name '_ReallocHand
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

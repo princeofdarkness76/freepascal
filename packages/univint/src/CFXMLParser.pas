@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -35,6 +36,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	Copyright (c) 1998-2005, Apple, Inc. All rights reserved.
 }
 {	  Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, November 2005 }
@@ -44,7 +47,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -54,12 +60,17 @@
 unit CFXMLParser;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -73,14 +84,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -89,11 +105,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -131,6 +150,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -138,6 +159,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -364,6 +386,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -372,7 +396,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -399,9 +426,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -413,14 +444,18 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFArray,CFData,CFDictionary,CFTree,CFURL,CFXMLNode;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -446,6 +481,10 @@ type
 	CFXMLParserRef = ^SInt32; { an opaque 32-bit type }
 	CFXMLParserRefPtr = ^CFXMLParserRef;
 >>>>>>> graemeg/fixes_2_2
+=======
+	CFXMLParserRef = ^SInt32; { an opaque 32-bit type }
+	CFXMLParserRefPtr = ^CFXMLParserRef;
+>>>>>>> origin/fixes_2_2
 { These are the various options you can configure the parser with.  These are
    chosen such that an option flag of 0 (kCFXMLParserNoOptions) leaves the XML
    as "intact" as possible (reports all structures; performs no replacements).
@@ -482,6 +521,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFXMLParserOptions = CFOptionFlags;
 =======
 	CFXMLParserOptions = UNSIGNEDLONG;
@@ -498,6 +538,9 @@ type
 =======
 	CFXMLParserOptions = SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+	CFXMLParserOptions = SInt32;
+>>>>>>> origin/fixes_2_2
 const
 	kCFXMLParserValidateDocument = 1 shl 0;
 	kCFXMLParserSkipMetaData = 1 shl 1;
@@ -510,6 +553,7 @@ const
 
 { This list is expected to grow }
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -531,6 +575,9 @@ type
 =======
 	CFXMLParserStatusCode = SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+	CFXMLParserStatusCode = SInt32;
+>>>>>>> origin/fixes_2_2
 const
 	kCFXMLStatusParseNotBegun	= -2;
 	kCFXMLStatusParseInProgress	= -1;
@@ -624,9 +671,12 @@ type
 
 function CFXMLParserGetTypeID: CFTypeID; external name '_CFXMLParserGetTypeID';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_DEPRECATED(10_0, 10_8, 2_0, 6_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Creates a parser which will parse the given data with the given options.  xmlData may not be NULL. 
    dataSource should be the URL from which the data came, and may be NULL; it is used to resolve any
@@ -637,13 +687,17 @@ function CFXMLParserGetTypeID: CFTypeID; external name '_CFXMLParserGetTypeID';
    passed to the callbacks as the parse progresses; context may be NULL.  }
 function CFXMLParserCreate( allocator: CFAllocatorRef; xmlData: CFDataRef; dataSource: CFURLRef; parseOptions: CFOptionFlags; versionOfNodes: CFIndex; var callBacks: CFXMLParserCallBacks; var context: CFXMLParserContext ): CFXMLParserRef; external name '_CFXMLParserCreate';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_DEPRECATED(10_0, 10_8, 2_0, 6_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Arguments as above, except that the data to be parsed is loaded directly 
    from dataSource.  dataSource may not be NULL.  }
 function CFXMLParserCreateWithDataFromURL( allocator: CFAllocatorRef; dataSource: CFURLRef; parseOptions: CFOptionFlags; versionOfNodes: CFIndex; var callBacks: CFXMLParserCallBacks; var context: CFXMLParserContext ): CFXMLParserRef; external name '_CFXMLParserCreateWithDataFromURL';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CF_DEPRECATED(10_0, 10_8, 2_0, 6_0) *)
 
@@ -668,6 +722,8 @@ function CFXMLParserGetLineNumber( parser: CFXMLParserRef ): CFIndex; external n
 function CFXMLParserGetDocument( parser: CFXMLParserRef ): UnivPtr; external name '_CFXMLParserGetDocument';
 (* CF_DEPRECATED(10_0, 10_8, 2_0, 6_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure CFXMLParserGetContext( parser: CFXMLParserRef; var context: CFXMLParserContext ); external name '_CFXMLParserGetContext';
 
@@ -683,13 +739,17 @@ function CFXMLParserGetLineNumber( parser: CFXMLParserRef ): CFIndex; external n
 
 { Returns the top-most object returned by the createXMLStructure callback }
 function CFXMLParserGetDocument( parser: CFXMLParserRef ): UnivPtr; external name '_CFXMLParserGetDocument';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Get the status code or a user-readable description of the last error that occurred in a parse.
    If no error has occurred, a null description string is returned.  See the enum above for
    possible status returns }
 function CFXMLParserGetStatusCode( parser: CFXMLParserRef ): CFXMLParserStatusCode; external name '_CFXMLParserGetStatusCode';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_DEPRECATED(10_0, 10_8, 2_0, 6_0) *)
 
 function CFXMLParserCopyErrorDescription( parser: CFXMLParserRef ): CFStringRef; external name '_CFXMLParserCopyErrorDescription';
@@ -698,15 +758,22 @@ function CFXMLParserCopyErrorDescription( parser: CFXMLParserRef ): CFStringRef;
 
 function CFXMLParserCopyErrorDescription( parser: CFXMLParserRef ): CFStringRef; external name '_CFXMLParserCopyErrorDescription';
 >>>>>>> graemeg/fixes_2_2
+=======
+
+function CFXMLParserCopyErrorDescription( parser: CFXMLParserRef ): CFStringRef; external name '_CFXMLParserCopyErrorDescription';
+>>>>>>> origin/fixes_2_2
 
 { Cause any in-progress parse to abort with the given error code and description.  errorCode
    must be positive, and errorDescription may not be NULL.  Cannot be called asynchronously
    (i.e. must be called from within a parser callback) }
 procedure CFXMLParserAbort( parser: CFXMLParserRef; errorCode: CFXMLParserStatusCode; errorDescription: CFStringRef ); external name '_CFXMLParserAbort';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_DEPRECATED(10_0, 10_8, 2_0, 6_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Starts a parse of the data the parser was created with; returns success or failure.
    Upon success, use CFXMLParserGetDocument() to get the product of the parse.  Upon
@@ -715,9 +782,12 @@ procedure CFXMLParserAbort( parser: CFXMLParserRef; errorCode: CFXMLParserStatus
    parse is already underway. }
 function CFXMLParserParse( parser: CFXMLParserRef ): Boolean; external name '_CFXMLParserParse';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_DEPRECATED(10_0, 10_8, 2_0, 6_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { These functions provide a higher-level interface.  The XML data is parsed to a
    special CFTree (an CFXMLTree) with known contexts and callbacks.  See CFXMLNode.h
@@ -727,14 +797,18 @@ function CFXMLParserParse( parser: CFXMLParserRef ): Boolean; external name '_CF
    what version CFXMLNodes are used to populate the tree.  }
 function CFXMLTreeCreateFromData( allocator: CFAllocatorRef; xmlData: CFDataRef; dataSource: CFURLRef; parseOptions: CFOptionFlags; versionOfNodes: CFIndex ): CFXMLTreeRef; external name '_CFXMLTreeCreateFromData';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_DEPRECATED(10_0, 10_8, 2_0, 6_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { As above, with the additional by-reference pass of a CFDictionaryRef containing
    various error information (see below). The caller is responsible for releasing the
    returned dictionary. If the error dictionary is not desired, pass NULL. }
 function CFXMLTreeCreateFromDataWithError( allocator: CFAllocatorRef; xmlData: CFDataRef; dataSource: CFURLRef; parseOptions: CFOptionFlags; versionOfNodes: CFIndex; var errorDict: CFDictionaryRef ): CFXMLTreeRef; external name '_CFXMLTreeCreateFromDataWithError';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CF_DEPRECATED(10_0, 10_8, 2_0, 6_0) *)
 
@@ -742,11 +816,16 @@ function CFXMLTreeCreateFromDataWithError( allocator: CFAllocatorRef; xmlData: C
 function CFXMLTreeCreateWithDataFromURL( allocator: CFAllocatorRef; dataSource: CFURLRef; parseOptions: CFOptionFlags; versionOfNodes: CFIndex ): CFXMLTreeRef; external name '_CFXMLTreeCreateWithDataFromURL';
 (* CF_DEPRECATED(10_0, 10_8, 2_0, 6_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
 { Loads the data to be parsed directly from dataSource.  Arguments as above. }
 function CFXMLTreeCreateWithDataFromURL( allocator: CFAllocatorRef; dataSource: CFURLRef; parseOptions: CFOptionFlags; versionOfNodes: CFIndex ): CFXMLTreeRef; external name '_CFXMLTreeCreateWithDataFromURL';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Generate the XMLData (ready to be written to whatever permanent storage is to be
    used) from an CFXMLTree.  Will NOT regenerate entity references (except those
@@ -755,9 +834,12 @@ function CFXMLTreeCreateWithDataFromURL( allocator: CFAllocatorRef; dataSource: 
    that should appear in the final output file. }
 function CFXMLTreeCreateXMLData( allocator: CFAllocatorRef; xmlTree: CFXMLTreeRef ): CFDataRef; external name '_CFXMLTreeCreateXMLData';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_DEPRECATED(10_0, 10_8, 2_0, 6_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Escaping and unescaping XML entities in CFStrings. The standard XML entities
    are always replaced.  }
@@ -767,9 +849,13 @@ function CFXMLTreeCreateXMLData( allocator: CFAllocatorRef; xmlTree: CFXMLTreeRe
    other than the standard five. }
 function CFXMLCreateStringByEscapingEntities( allocator: CFAllocatorRef; strng: CFStringRef; entitiesDictionary: CFDictionaryRef ): CFStringRef; external name '_CFXMLCreateStringByEscapingEntities';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 function CFXMLCreateStringByUnescapingEntities( allocator: CFAllocatorRef; strng: CFStringRef; entitiesDictionary: CFDictionaryRef ): CFStringRef; external name '_CFXMLCreateStringByUnescapingEntities';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
@@ -792,6 +878,7 @@ var kCFXMLTreeErrorStatusCode: CFStringRef; external name '_kCFXMLTreeErrorStatu
     { value is a CFNumber containing the error status code. }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
@@ -800,3 +887,7 @@ end.
 
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+
+end.
+>>>>>>> origin/fixes_2_2

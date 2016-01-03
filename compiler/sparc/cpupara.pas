@@ -200,6 +200,7 @@ implementation
             paraloc^.loc:=LOC_VOID;
             exit;
           end;
+<<<<<<< HEAD
         { Constructors return self instead of a boolean }
         if (p.proctypeoption=potype_constructor) then
           begin
@@ -231,6 +232,8 @@ implementation
 
         paraloc:=result.add_location;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         { Return is passed as var parameter }
         if ret_in_param(p.returndef,p.proccalloption) then
           begin
@@ -238,7 +241,10 @@ implementation
             p.funcretloc[side].size:=retcgsize;
             exit;
           end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         { Return in FPU register? }
         if def.typ=floatdef then
 <<<<<<< HEAD

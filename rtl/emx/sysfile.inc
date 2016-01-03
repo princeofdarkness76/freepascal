@@ -45,11 +45,15 @@ var
   oldp: pchar;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     oldp:=p;
     DoDirSeparators(p,pchangeable);
 =======
     DoDirSeparators(p);
 >>>>>>> graemeg/fixes_2_2
+=======
+    DoDirSeparators(p);
+>>>>>>> origin/fixes_2_2
     asm
         movl P,%edx
         movb $0x41,%ah
@@ -67,6 +71,7 @@ var
   oldp1, oldp2 : pchar;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     oldp1:=p1;
     oldp2:=p2;
     DoDirSeparators(p1,p1changeable);
@@ -75,6 +80,10 @@ begin
     DoDirSeparators(p1);
     DoDirSeparators(p2);
 >>>>>>> graemeg/fixes_2_2
+=======
+    DoDirSeparators(p1);
+    DoDirSeparators(p2);
+>>>>>>> origin/fixes_2_2
     asm
         movl P1, %edx
         movl P2, %edi
@@ -289,9 +298,13 @@ var
   oldp : pchar;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     DoDirSeparators(p);
 >>>>>>> graemeg/fixes_2_2
+=======
+    DoDirSeparators(p);
+>>>>>>> origin/fixes_2_2
     { close first if opened }
     if ((flags and $10000)=0) then
         begin

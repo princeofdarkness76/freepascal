@@ -5532,12 +5532,17 @@ type
        pbData:array[0..0] of byte;                      // @field message itself
      end;
 <<<<<<< HEAD
+<<<<<<< HEAD
      RILSUPSERVICEDATA = rilsupservicedata_tag;
      LPRILSUPSERVICEDATA = ^rilsupservicedata_tag;
 =======
      RILSUPSERVICEDATA = rilmsgstorageinfo_tag;
      LPRILSUPSERVICEDATA = ^rilmsgstorageinfo_tag;
 >>>>>>> graemeg/fixes_2_2
+=======
+     RILSUPSERVICEDATA = rilmsgstorageinfo_tag;
+     LPRILSUPSERVICEDATA = ^rilmsgstorageinfo_tag;
+>>>>>>> origin/fixes_2_2
 //#pragma warning(default : 4200)
 
 // -----------------------------------------------------------------------------

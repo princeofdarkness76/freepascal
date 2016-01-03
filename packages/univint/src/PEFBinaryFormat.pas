@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/PEFBinaryFormat.h
  
      Contains:   PEF Types and Macros
@@ -22,6 +23,8 @@
  
      Copyright:  © 1993-2008 by Apple Computer, Inc., all rights reserved.
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       PEFBinaryFormat.p
  
      Contains:   PEF Types and Macros
@@ -30,7 +33,10 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1993-2002 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -38,6 +44,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
@@ -58,6 +65,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -66,7 +75,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -76,12 +88,17 @@
 unit PEFBinaryFormat;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -95,14 +112,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -111,11 +133,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -153,6 +178,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -160,6 +187,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -389,6 +417,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -397,7 +427,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -424,9 +457,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -437,6 +474,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -467,6 +505,9 @@ uses MacTypes;
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
 
@@ -478,17 +519,23 @@ uses MacTypes;
 { ensure consistent treatment across compilers.                                                }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { ======================================================================================== }
 { Overall Structure }
 { ================= }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { -------------------------------------------------------------------------------------------- }
 { This header contains a complete set of types and macros for dealing with the PEF executable  }
 { format.  While some description is provided, this header is not meant as a primary source    }
@@ -496,16 +543,22 @@ uses MacTypes;
 { Runtime Architectures book.  This header is primarily a physical format description.  Thus   }
 { it depends on as few other headers as possible and structure fields have obvious sizes.      }
 <<<<<<< HEAD
+<<<<<<< HEAD
 { The physical storage for a PEF executable is known as a "container".  This refers to just    }
 { the executable itself, not the file etc.  E.g. if five DLLs are packaged in a single file's  }
 { data fork, that one data fork has five containers within it.                                 }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {                                                                                              }
 { The physical storage for a PEF executable is known as a "container".  This refers to just    }
 { the executable itself, not the file etc.  E.g. if five DLLs are packaged in a single file's  }
 { data fork, that one data fork has five containers within it.                                 }
 {                                                                                              }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { A PEF container consists of an overall header, followed by one or more section headers,      }
 { followed by the section name table, followed by the contents for the sections.  Some kinds   }
 { of sections have specific internal representation.  The "loader" section is the most common  }
@@ -513,10 +566,15 @@ uses MacTypes;
 { relocations required to prepare the executable.  PEF containers are self contained, all      }
 { portions are located via relative offsets.                                                   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {                                                                                              }
 {                                                                                              }
 >>>>>>> graemeg/fixes_2_2
+=======
+{                                                                                              }
+{                                                                                              }
+>>>>>>> origin/fixes_2_2
 {          +-------------------------------+                                                   }
 {          |       Container Header        |   40 bytes                                        }
 {          +-------------------------------+                                                   }
@@ -535,19 +593,27 @@ uses MacTypes;
 {          |       Section y raw data      |                                                   }
 {          +-------------------------------+                                                   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {                                                                                              }
 {                                                                                              }
 >>>>>>> graemeg/fixes_2_2
+=======
+{                                                                                              }
+{                                                                                              }
+>>>>>>> origin/fixes_2_2
 { The sections are implicitly numbered from 0 to n according to the order of their headers.    }
 { The headers of the instantiated sections must precede those of the non-instantiated          }
 { sections.  The ordering of the raw data is independent of the section header ordering.       }
 { Each section header contains the offset for that section's raw data.                         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { =========================================================================================== }
 { Container Header }
 { ================ }
@@ -556,6 +622,7 @@ uses MacTypes;
 type
 	PEFContainerHeaderPtr = ^PEFContainerHeader;
 	PEFContainerHeader = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		tag1: OSType;                   { Must contain 'Joy!'.}
 		tag2: OSType;                   { Must contain 'peff'.  (Yes, with two 'f's.)}
@@ -616,6 +683,8 @@ const
 { Section Headers }
 { =============== }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		tag1:					OSType;									{  Must contain 'Joy!'. }
 		tag2:					OSType;									{  Must contain 'peff'.  (Yes, with two 'f's.) }
 		architecture:			OSType;									{  The ISA for code sections.  Constants in CodeFragments.h. }
@@ -642,12 +711,16 @@ const
 	{	 =========================================================================================== 	}
 	{	 Section Headers 	}
 	{	 =============== 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
 	PEFSectionHeaderPtr = ^PEFSectionHeader;
 	PEFSectionHeader = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		nameOffset: SInt32;             { Offset of name within the section name table, -1 => none.}
 		defaultAddress: UInt32;         { Default address, affects relocations.}
@@ -804,6 +877,8 @@ const
 {          |       Export Symbol e-1           |                                               }
 {          +-----------------------------------+                                               }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		nameOffset:				SInt32;									{  Offset of name within the section name table, -1 => none. }
 		defaultAddress:			UInt32;									{  Default address, affects relocations. }
 		totalLength:			UInt32;									{  Fully expanded size in bytes of the section contents. }
@@ -951,12 +1026,16 @@ const
 	{	          |...................................|                                               	}
 	{	          |       Export Symbol e-1           |                                               	}
 	{	          +-----------------------------------+                                               	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
 	PEFLoaderInfoHeaderPtr = ^PEFLoaderInfoHeader;
 	PEFLoaderInfoHeader = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		mainSection: SInt32;            { Section containing the main symbol, -1 => none.}
 		mainOffset: UInt32;             { Offset of main symbol.}
@@ -1048,6 +1127,8 @@ const
 {      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                       }
 {      |<-- 8 bits --->|<-- 24 bits ---------------------------------->|                       }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		mainSection:			SInt32;									{  Section containing the main symbol, -1 => none. }
 		mainOffset:				UInt32;									{  Offset of main symbol. }
 		initSection:			SInt32;									{  Section containing the init routine's TVector, -1 => none. }
@@ -1099,12 +1180,16 @@ const
 	{	      | symbol class  | offset of symbol name in loader string table  |                       	}
 	{	      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                       	}
 	{	      |<-- 8 bits --->|<-- 24 bits ---------------------------------->|                       	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
 	PEFImportedSymbolPtr = ^PEFImportedSymbol;
 	PEFImportedSymbol = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		classAndName: UInt32;
 	end;
@@ -1174,6 +1259,8 @@ const
 {      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                       }
 {      |<-- 14 bits -------------->|<-- 18 bits ---------------------->|                       }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		classAndName:			UInt32;
 	end;
 
@@ -1249,12 +1336,16 @@ const
 	{	      | symbol count              | index of first export key         |                       	}
 	{	      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                       	}
 	{	      |<-- 14 bits -------------->|<-- 18 bits ---------------------->|                       	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
 	PEFExportedSymbolHashSlotPtr = ^PEFExportedSymbolHashSlot;
 	PEFExportedSymbolHashSlot = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		countAndStart: UInt32;
 	end;
@@ -1268,6 +1359,8 @@ const
 { Exported Symbol Hash Key }
 { ------------------------ }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		countAndStart:			UInt32;
 	end;
 
@@ -1282,27 +1375,37 @@ const
 	{	 =========================================================================================== 	}
 	{	 Exported Symbol Hash Key 	}
 	{	 ------------------------ 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
 	PEFSplitHashWordPtr = ^PEFSplitHashWord;
 	PEFSplitHashWord = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		nameLength: UInt16;
 		hashValue: UInt16;
 	end;
 type
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		nameLength:				UInt16;
 		hashValue:				UInt16;
 	end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	PEFExportedSymbolKeyPtr = ^PEFExportedSymbolKey;
 	PEFExportedSymbolKey = record
 		case SInt16 of
 		0: (
+<<<<<<< HEAD
 <<<<<<< HEAD
 			fullHashWord: UInt32;
 			);
@@ -1344,6 +1447,8 @@ const
 { Exported Symbols }
 { ---------------- }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 			fullHashWord:		UInt32;
 			);
 		1: (
@@ -1390,12 +1495,16 @@ const
 	{	 =========================================================================================== 	}
 	{	 Exported Symbols 	}
 	{	 ---------------- 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
 	PEFExportedSymbolPtr = ^PEFExportedSymbol;
 	PEFExportedSymbol = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 { ! This structure is 10 bytes long and arrays are packed.}
 		classAndName: UInt32;           { A combination of class and name offset.}
@@ -4970,6 +5079,8 @@ type
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 																		{  ! This structure is 10 bytes long and arrays are packed. }
 		classAndName:			UInt32;									{  A combination of class and name offset. }
 		symbolValue:			UInt32;									{  Typically the symbol's offset within a section. }
@@ -5267,4 +5378,7 @@ const
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

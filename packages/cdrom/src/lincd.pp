@@ -709,6 +709,7 @@ procedure set_sense_key(var a : Trequest_sense; __sense_key : Tu8);
     Utility functions
   ---------------------------------------------------------------------}
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
   TCDSearchRec = record
     Name: String;
@@ -722,6 +723,10 @@ Function FindNextCD(var ACDSearchRec: TCDSearchRec): Boolean;
 
 Function IsCDDevice(Device : String) : Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+
+Function IsCDDevice(Device : String) : Boolean;
+>>>>>>> origin/fixes_2_2
 Function DetectCd : String;
 
 implementation
@@ -1111,6 +1116,7 @@ Const
   '/dev/optcd');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function FindFirstCD(var ACDSearchRec: TCDSearchRec): Boolean;
 begin
   Result := False;
@@ -1168,6 +1174,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Function DetectCD : String;
 
 Var
@@ -1234,6 +1242,7 @@ begin
     exit;
   DeviceMajor:=info.st_rdev shr 8;
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef debug}
   Writeln('Device major : ',DeviceMajor);
   {$endif}
@@ -1259,6 +1268,8 @@ begin
       end;
     end;  
 =======
+=======
+>>>>>>> origin/fixes_2_2
   If DeviceMajor in [IDE0_MAJOR,IDE1_MAJOR,IDE2_MAJOR,IDE3_MAJOR] then
       Result:=TestCDRomIOCTL(Device)
   else
@@ -1276,7 +1287,10 @@ begin
         fpClose(F);
       end;
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TestCDRomIOCTL(Device : String) : Boolean;

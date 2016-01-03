@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %opt=-CN }
 
 { the -CN is to generated null pointer load checks for AIX,
@@ -7,6 +8,8 @@
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode objfpc}
 
 uses

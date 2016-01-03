@@ -170,9 +170,12 @@ begin
     try
       Log(vlCommands,SLogDownloading,[PackageRemoteArchive(P),PackageLocalArchive(P)]);
 <<<<<<< HEAD
+<<<<<<< HEAD
       pkgglobals.Log(vlProgres,SProgrDownloadPackage,[P.Name, P.Version.AsString]);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       Download(PackageRemoteArchive(P),PackageLocalArchive(P));
     finally
       Free;

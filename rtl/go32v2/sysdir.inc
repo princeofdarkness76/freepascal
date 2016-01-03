@@ -45,7 +45,10 @@ begin
   move(s[1],buffer,length(s));
   buffer[length(s)]:=#0;
   DoDirSeparators(pchar(@buffer));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { True DOS does not like backslashes at end
     Win95 DOS accepts this !!
     but "\" and "c:\" should still be kept and accepted hopefully PM }

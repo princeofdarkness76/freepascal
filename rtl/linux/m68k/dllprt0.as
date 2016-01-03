@@ -20,6 +20,7 @@
         .type   _startlib,@function
 _startlib:
 <<<<<<< HEAD
+<<<<<<< HEAD
         .globl  FPC_SHARED_LIB_START
         .type   FPC_SHARED_LIB_START,@function
 <<<<<<< HEAD
@@ -48,6 +49,11 @@ FPC_SHARED_LIB_START:
         .type   FPC_LIB_START,@function
 FPC_LIB_START:
 >>>>>>> graemeg/fixes_2_2
+=======
+        .globl  FPC_LIB_START
+        .type   FPC_LIB_START,@function
+FPC_LIB_START:
+>>>>>>> origin/fixes_2_2
 |
 |       The args and envs are not tested yet
 |
@@ -56,6 +62,7 @@ FPC_LIB_START:
         move.l   %a0, U_SYSLINUX_ENVP
         move.l   %sp,U_SYSLINUX_ARGV
         move.l   %d0,U_SYSLINUX_ARGC
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
         jsr      PASCALMAIN
@@ -88,6 +95,8 @@ FPC_SHARED_LIB_EXIT:
         bra       _haltproc
 .size _haltproc,.-_haltproc
 =======
+=======
+>>>>>>> origin/fixes_2_2
         jsr      PASCALMAIN
         rts
 
@@ -99,7 +108,10 @@ haltproc:
         trap      #0
         bra       _haltproc
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
         .data
 	.align  4
@@ -107,6 +119,7 @@ haltproc:
 ___fpc_brk_addr:
         .long   0
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         .bss
         .type   __stkptr,@object
@@ -127,6 +140,8 @@ operatingsystem_parameters:
         .set operatingsystem_parameter_argc,operatingsystem_parameters+4
         .set operatingsystem_parameter_argv,operatingsystem_parameters+8
 =======
+=======
+>>>>>>> origin/fixes_2_2
 |
 | $Log: dllprt0.as,v $
 | Revision 1.1.2.4  2001/08/01 13:26:17  pierre
@@ -142,5 +157,8 @@ operatingsystem_parameters:
 |  + New file converted from i386 version
 |
 |
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 

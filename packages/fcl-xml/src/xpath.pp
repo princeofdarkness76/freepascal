@@ -281,7 +281,10 @@ type
   public
     constructor Create(AIsAbsolutePath: Boolean);
     destructor destroy;override;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     function Evaluate(AContext: TXPathContext;
       AEnvironment: TXPathEnvironment): TXPathVariable; override;
   end;
@@ -514,7 +517,10 @@ type
 =======
     constructor Create(AScanner: TXPathScanner; CompleteExpression: Boolean);
     destructor destroy;override;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     function Evaluate(AContextNode: TDOMNode): TXPathVariable;
     function Evaluate(AContextNode: TDOMNode;
       AEnvironment: TXPathEnvironment): TXPathVariable;
@@ -1385,7 +1391,10 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 destructor TXPathLocationPathNode.destroy;
 var tmp:TStep;
 begin
@@ -2915,6 +2924,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 destructor TXPathExpression.Destroy;
 begin
   FRootNode.Free;
@@ -2924,6 +2934,11 @@ destructor TXPathExpression.destroy;
 begin
  FRootNode.free;
 >>>>>>> graemeg/fixes_2_2
+=======
+destructor TXPathExpression.destroy;
+begin
+ FRootNode.free;
+>>>>>>> origin/fixes_2_2
 end;
 
 function TXPathExpression.Evaluate(AContextNode: TDOMNode;

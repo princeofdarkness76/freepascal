@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       ATS/ATSTypes.h
  
      Contains:   Public interfaces for Apple Type Services components.
@@ -111,6 +112,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       ATSTypes.p
  
      Contains:   Public interfaces for Apple Type Services components.
@@ -134,7 +137,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -144,12 +150,17 @@
 unit ATSTypes;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -163,14 +174,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -179,11 +195,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -221,6 +240,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -228,6 +249,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -469,6 +491,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -477,7 +501,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -504,9 +531,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -516,6 +547,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,Files,CGBase,CGGeometry;
 {$endc} {not MACOSALLINCLUDE}
@@ -545,10 +577,15 @@ uses MacTypes,Files,CGBase,CGGeometry;
 uses MacTypes,Files,MixedMode;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,Files,MixedMode;
+
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 //#pragma pack(push, 2)
 
@@ -750,6 +787,8 @@ function NewFMFontFamilyCallbackFilterUPP( userRoutine: FMFontFamilyCallbackFilt
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type
 	FMGeneration						= UInt32;
 	{	 The FMFontFamily reference represents a collection of fonts with the same design
@@ -854,11 +893,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewFMFontFamilyCallbackFilterUPP(userRoutine: FMFontFamilyCallbackFilterProcPtr): FMFontFamilyCallbackFilterUPP; external name '_NewFMFontFamilyCallbackFilterUPP'; { old name was NewFMFontFamilyCallbackFilterProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewFMFontCallbackFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -884,16 +927,22 @@ function NewFMFontCallbackFilterUPP( userRoutine: FMFontCallbackFilterProcPtr ):
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewFMFontCallbackFilterUPP(userRoutine: FMFontCallbackFilterProcPtr): FMFontCallbackFilterUPP; external name '_NewFMFontCallbackFilterUPP'; { old name was NewFMFontCallbackFilterProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeFMFontFamilyCallbackFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -919,16 +968,22 @@ procedure DisposeFMFontFamilyCallbackFilterUPP( userUPP: FMFontFamilyCallbackFil
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeFMFontFamilyCallbackFilterUPP(userUPP: FMFontFamilyCallbackFilterUPP); external name '_DisposeFMFontFamilyCallbackFilterUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeFMFontCallbackFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -954,16 +1009,22 @@ procedure DisposeFMFontCallbackFilterUPP( userUPP: FMFontCallbackFilterUPP ); ex
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeFMFontCallbackFilterUPP(userUPP: FMFontCallbackFilterUPP); external name '_DisposeFMFontCallbackFilterUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeFMFontFamilyCallbackFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -989,16 +1050,22 @@ function InvokeFMFontFamilyCallbackFilterUPP( iFontFamily: FMFontFamily; iRefCon
 >>>>>>> origin/cpstrnew
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeFMFontFamilyCallbackFilterUPP(iFontFamily: FMFontFamily; iRefCon: UnivPtr; userRoutine: FMFontFamilyCallbackFilterUPP): OSStatus; external name '_InvokeFMFontFamilyCallbackFilterUPP'; { old name was CallFMFontFamilyCallbackFilterProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeFMFontCallbackFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1125,6 +1192,8 @@ const
 	kATSQuadCurveType = $0002;
 	kATSOtherCurveType = $0003;
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -1213,13 +1282,17 @@ const
 	kATSCubicCurveType			= $0001;
 	kATSQuadCurveType			= $0002;
 	kATSOtherCurveType			= $0003;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { 
     This is what the ATSGlyphRef is set to when the glyph is deleted -
     that is, when the glyph is set to no longer appear when the layout
     is actually drawn
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 	kATSDeletedGlyphcode = $FFFF;
@@ -1228,10 +1301,16 @@ const
   kATSDeletedGlyphcode          = $FFFF;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+const
+  kATSDeletedGlyphcode          = $FFFF;
+
+>>>>>>> origin/fixes_2_2
 
 type
 	ATSUCurvePathPtr = ^ATSUCurvePath;
 	ATSUCurvePath = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		vectors: UInt32;
   		controlBits: array[0..0] of UInt32;
@@ -1241,10 +1320,16 @@ type
 		controlBits:			array [0..0] of UInt32;
 		vector:					array [0..0] of Float32Point;
 >>>>>>> graemeg/fixes_2_2
+=======
+		vectors:				UInt32;
+		controlBits:			array [0..0] of UInt32;
+		vector:					array [0..0] of Float32Point;
+>>>>>>> origin/fixes_2_2
 	end;
 
 	ATSUCurvePathsPtr = ^ATSUCurvePaths;
 	ATSUCurvePaths = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		contours: UInt32;
         contour: array[0..0] of ATSUCurvePath;
@@ -1282,6 +1367,8 @@ type
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		contours:				UInt32;
 		contour:				array [0..0] of ATSUCurvePath;
 	end;
@@ -1312,4 +1399,7 @@ end.
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

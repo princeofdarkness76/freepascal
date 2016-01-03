@@ -223,6 +223,7 @@ begin
   P2 := @S2[1];
   i := 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if count>0 then
     begin
       P1 := @S1[1];
@@ -250,6 +251,14 @@ begin
     Chr2 := byte(p2^);
     if Chr1 <> Chr2 then
     begin
+=======
+  while i < Count do
+  begin
+    Chr1 := byte(p1^);
+    Chr2 := byte(p2^);
+    if Chr1 <> Chr2 then
+    begin
+>>>>>>> origin/fixes_2_2
       if Chr1 in [97..122] then
         dec(Chr1,32);
       if Chr2 in [97..122] then
@@ -259,7 +268,10 @@ begin
     end;
     Inc(P1); Inc(P2); Inc(I);
   end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   if i < Count then
     result := Chr1-Chr2
   else
@@ -281,10 +293,14 @@ end;
 type
   TCaseTranslationTable = array[0..255] of char;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
 var
   { Tables with upper and lowercase forms of character sets.
     MUST be initialized with the correct code-pages }
@@ -367,10 +383,14 @@ begin
     Inc(S1);
     Inc(S2);
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
 =======
   end;  
 >>>>>>> graemeg/fixes_2_2
+=======
+  end;  
+>>>>>>> origin/fixes_2_2
   if (Result=0) and (S1^<>S2^) then // loop ended because exactly one has #0
     if S1^=#0 then // shorter string is smaller
       result:=-1
@@ -862,10 +882,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TryStrToInt(const s: string; out i : Longint) : boolean;
 =======
 function TryStrToInt(const s: string; out i : integer) : boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TryStrToInt(const s: string; out i : integer) : boolean;
+>>>>>>> origin/fixes_2_2
 var Error : word;
 begin
   Val(s, i, Error);
@@ -1247,6 +1271,7 @@ Var
   DS: Char;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   function RemoveLeadingNegativeSign(var AValue: String): Boolean;
   // removes negative sign in case when result is zero eg. -0.00
   var
@@ -1272,6 +1297,8 @@ Var
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Begin
   DS:=FormatSettings.DecimalSeparator;
   Case format Of
@@ -1855,9 +1882,13 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 function AnsiDequotedStr(const S: string; AQuote: Char): string;
 >>>>>>> graemeg/fixes_2_2
+=======
+function AnsiDequotedStr(const S: string; AQuote: Char): string;
+>>>>>>> origin/fixes_2_2
 
 Function CurrToStr(Value: Currency; Const FormatSettings: TFormatSettings): string;
 begin
@@ -1868,9 +1899,12 @@ end;
 function StrToCurr(const S: string): Currency;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not TextToFloat(PChar(pointer(S)), Result, fvCurrency) then
     Raise EConvertError.createfmt(SInValidFLoat,[S]);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   p:=pchar(pointer(s)); // work around CONST. Ansiextract is safe for nil
   result:=AnsiExtractquotedStr(p,AQuote);
   if result='' Then
@@ -1882,10 +1916,14 @@ end;
 function StrToCurr(const S: string; Const FormatSettings: TFormatSettings): Currency; 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not TextToFloat(PChar(pointer(S)), Result, fvCurrency,FormatSettings) then
 =======
   if not TextToFloat(PChar(pointer(S)), Result, fvCurrency) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if not TextToFloat(PChar(pointer(S)), Result, fvCurrency) then
+>>>>>>> origin/fixes_2_2
     Raise EConvertError.createfmt(SInValidFLoat,[S]);
 end;
 
@@ -2308,10 +2346,14 @@ Var
       { Find and cut out exponent. Always the
         last 6 characters in the string.
 <<<<<<< HEAD
+<<<<<<< HEAD
         -> 0000E+0000
 =======
         -> 0000E+0000                         
 >>>>>>> graemeg/fixes_2_2
+=======
+        -> 0000E+0000                         
+>>>>>>> origin/fixes_2_2
         *** No, not always the last 6 characters, this depends on
             the maximally supported precision (JM)}
       I:=Pos('E',Digits);
@@ -3062,10 +3104,14 @@ function sscanf(const s: string; const fmt : string;const Pointers : array of Po
         inc(n);
       while (Length(s) >= n) and
 <<<<<<< HEAD
+<<<<<<< HEAD
             (s[n] in ['0'..'9', '+', '-', FormatSettings.DecimalSeparator, 'e', 'E']) do
 =======
             (s[n] in ['0'..'9', '+', '-', '.', 'e', 'E']) do
 >>>>>>> graemeg/fixes_2_2
+=======
+            (s[n] in ['0'..'9', '+', '-', '.', 'e', 'E']) do
+>>>>>>> origin/fixes_2_2
         begin
           s1 := s1+s[n];
           inc(n);

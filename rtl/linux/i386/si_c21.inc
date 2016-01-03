@@ -39,7 +39,10 @@ var
   dlexitproc: pointer; { atexit from loader }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure libc_exit; external name '__libc_exit';
 procedure libc_init; external name '__libc_init';
 procedure libc_setfpucw; external name '__setfpucw';

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {%NORUN}
 {%FAIL}
 type
@@ -9,6 +10,8 @@ type
 begin
 end.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {%NORUN}
 {%FAIL}
 type
@@ -18,4 +21,7 @@ type
 
 begin
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

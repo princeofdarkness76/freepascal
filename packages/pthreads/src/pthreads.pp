@@ -21,6 +21,7 @@ interface
 {$PACKRECORDS C}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(BSD)}
   uses initc,BaseUnix, unixtype;
   {$i pthrbsd.inc}
@@ -43,6 +44,8 @@ interface
 {$else}
   {$error operating system not detected}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef BSD}
 uses initc,BaseUnix, unixtype;
 {$i pthrbsd.inc}
@@ -64,13 +67,20 @@ uses initc,BaseUnix, unixtype;
    {$endif}
   {$endif}
  {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif}
 
 implementation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 end.
 =======
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+end.
+>>>>>>> origin/fixes_2_2

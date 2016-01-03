@@ -467,10 +467,14 @@ const
                              specification for DosFindFirst call.}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function FileOpen (const FileName: rawbytestring; Mode: integer): THandle;
 =======
 function FileOpen (const FileName: string; Mode: integer): THandle;
 >>>>>>> graemeg/fixes_2_2
+=======
+function FileOpen (const FileName: string; Mode: integer): THandle;
+>>>>>>> origin/fixes_2_2
 Var
   SystemFileName: RawByteString;
   Handle: THandle;
@@ -486,7 +490,10 @@ begin
 (* DenyNone if sharing not specified. *)
   if Mode and 112 = 0 then Mode:=Mode or 64;
   Rc:=Sys_DosOpenL(PChar (FileName), Handle, Action, 0, 0, 1, Mode, nil);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   If Rc=0 then
     FileOpen:=Handle
   else
@@ -509,6 +516,7 @@ begin
                                       (* Sharing to DenyAll *)
 end;
 
+<<<<<<< HEAD
 function FileCreate (const FileName: RawByteString; ShareMode: integer;
                                                      Rights: integer): THandle;
 var
@@ -533,6 +541,8 @@ begin
 End;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function FileCreate (const FileName: string): THandle;
 Const
   Mode = ofReadWrite or faCreate or doDenyRW;   (* Sharing to DenyAll *)
@@ -557,11 +567,15 @@ end;
 =======
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/cpstrnew
 function FileRead (Handle: THandle; Out Buffer; Count: longint): longint;
 =======
 function FileRead (Handle: THandle; var Buffer; Count: longint): longint;
 >>>>>>> graemeg/fixes_2_2
+=======
+function FileRead (Handle: THandle; var Buffer; Count: longint): longint;
+>>>>>>> origin/fixes_2_2
 Var
   T: cardinal;
   RC: cardinal;
@@ -595,6 +609,7 @@ function FileSeek (Handle: THandle; FOffset, Origin: longint): longint;
 var
   NPos: int64;
 <<<<<<< HEAD
+<<<<<<< HEAD
   RC: cardinal;
 begin
   RC := Sys_DosSetFilePtrL (Handle, FOffset, Origin, NPos);
@@ -604,6 +619,11 @@ begin
   if (Sys_DosSetFilePtrL (Handle, FOffset, Origin, NPos) = 0)
                                                and (NPos < high (longint)) then
 >>>>>>> graemeg/fixes_2_2
+=======
+begin
+  if (Sys_DosSetFilePtrL (Handle, FOffset, Origin, NPos) = 0)
+                                               and (NPos < high (longint)) then
+>>>>>>> origin/fixes_2_2
     FileSeek:= longint (NPos)
   else
    begin
@@ -615,6 +635,7 @@ end;
 function FileSeek (Handle: THandle; FOffset: Int64; Origin: Longint): Int64;
 var
   NPos: int64;
+<<<<<<< HEAD
 <<<<<<< HEAD
   RC: cardinal;
 begin
@@ -632,6 +653,7 @@ procedure FileClose (Handle: THandle);
 var
   RC: cardinal;
 =======
+=======
 begin
   if Sys_DosSetFilePtrL (Handle, FOffset, Origin, NPos) = 0 then
     FileSeek:= NPos
@@ -639,6 +661,16 @@ begin
     FileSeek:=-1;
 end;
 
+procedure FileClose (Handle: THandle);
+>>>>>>> origin/fixes_2_2
+begin
+  if Sys_DosSetFilePtrL (Handle, FOffset, Origin, NPos) = 0 then
+    FileSeek:= NPos
+  else
+    FileSeek:=-1;
+end;
+
+<<<<<<< HEAD
 procedure FileClose (Handle: THandle);
 >>>>>>> graemeg/fixes_2_2
 begin
@@ -660,6 +692,10 @@ begin
    OSErrorWatch (RC);
 =======
 begin
+=======
+function FileTruncate (Handle: THandle; Size: Int64): boolean;
+begin
+>>>>>>> origin/fixes_2_2
   FileTruncate:=Sys_DosSetFileSizeL(Handle, Size)=0;
   FileSeek(Handle, 0, 2);
 >>>>>>> graemeg/fixes_2_2

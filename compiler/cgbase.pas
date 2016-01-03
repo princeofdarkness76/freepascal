@@ -69,6 +69,7 @@ interface
          addr_no,
          addr_full,
 <<<<<<< HEAD
+<<<<<<< HEAD
          addr_pic,
          addr_pic_no_got
          {$IF defined(POWERPC) or defined(POWERPC64) or defined(SPARC) or defined(MIPS)}
@@ -76,6 +77,10 @@ interface
          addr_pic
          {$IF defined(POWERPC) or defined(POWERPC64) or defined(SPARC)}
 >>>>>>> graemeg/fixes_2_2
+=======
+         addr_pic
+         {$IF defined(POWERPC) or defined(POWERPC64) or defined(SPARC)}
+>>>>>>> origin/fixes_2_2
          ,
          addr_low,         // bits 48-63
          addr_high,        // bits 32-47
@@ -89,6 +94,7 @@ interface
          addr_highera,     // bits 32-47, adjusted
          addr_highesta     // bits 48-63, adjusted
          {$ENDIF}
+<<<<<<< HEAD
 <<<<<<< HEAD
          {$ENDIF POWERPC or POWERPC64 or SPARC or MIPS}
          {$IFDEF MIPS}
@@ -144,6 +150,9 @@ interface
 =======
          {$ENDIF}
 >>>>>>> graemeg/fixes_2_2
+=======
+         {$ENDIF}
+>>>>>>> origin/fixes_2_2
          );
 
 

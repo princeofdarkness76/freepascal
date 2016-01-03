@@ -78,7 +78,10 @@ implementation
 =======
       secnames : array[TAsmSectiontype] of string[4] = ('',
         'CODE','DATA','DATA','DATA','BSS','',
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         '','','','','','',
         '','','','',
         '',
@@ -90,6 +93,7 @@ implementation
         '',
         '',
         '',
+<<<<<<< HEAD
 <<<<<<< HEAD
         '',
         '',
@@ -158,12 +162,17 @@ implementation
         '_TEXT','_DATE','_DATA','_DATA','_BSS','',
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
         ''
       );
 
       secnamesml64 : array[TAsmSectiontype] of string[7] = ('',
         '_TEXT','_DATE','_DATA','_DATA','_BSS','',
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         '','','','',
         'idata$2','idata$4','idata$5','idata$6','idata$7','edata',
         '',
@@ -175,6 +184,7 @@ implementation
         '',
         '',
         '',
+<<<<<<< HEAD
 <<<<<<< HEAD
         '',
         '',
@@ -226,6 +236,8 @@ implementation
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         ''
       );
 
@@ -529,10 +541,14 @@ implementation
         #9''#9,#9'DQ'#9,#9'DD'#9,#9'DW'#9,#9'DB'#9,
         #9'FIXMESLEB',#9'FIXEMEULEB',
 <<<<<<< HEAD
+<<<<<<< HEAD
         #9'DD RVA'#9,#9'DD SECREL32'#9
 =======
         #9'DD RVA'#9,#9'DD SECREL32'#9,#9'FIXMEINDIRECT'#9
 >>>>>>> graemeg/fixes_2_2
+=======
+        #9'DD RVA'#9,#9'DD SECREL32'#9,#9'FIXMEINDIRECT'#9
+>>>>>>> origin/fixes_2_2
       );
 
     Function PadTabs(const p:string;addch:char):string;
@@ -709,8 +725,11 @@ implementation
                  aitconst_8bit,
                  aitconst_rva_symbol,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  aitconst_secrel32_symbol :
 =======
+=======
+>>>>>>> origin/fixes_2_2
                  aitconst_secrel32_symbol,
                  aitconst_indirect_symbol :
 >>>>>>> graemeg/fixes_2_2
@@ -733,7 +752,10 @@ implementation
                        writer.AsmWrite(s);
 =======
                        AsmWrite(s);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                        inc(l,length(s));
                        if (l>line_length) or
                           (hp.next=nil) or
@@ -778,7 +800,10 @@ implementation
              AsmWriteLn(#9#9'DT'#9+extended2str(tai_real_80bit(hp).value));
            ait_comp_64bit :
              AsmWriteLn(#9#9'DQ'#9+extended2str(tai_comp_64bit(hp).value));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            ait_string :
              begin
                counter := 0;
@@ -915,12 +940,16 @@ implementation
                   prefix:=std_op2str[fixed_opcode]+#9;
 =======
                   prefix:=std_op2str[taicpu(hp).opcode]+#9;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                   { there can be a stab inbetween when the opcode was on
                     a different line in the source code }
                   repeat
                     hp:=tai(hp.next);
                   until (hp=nil) or (hp.typ=ait_instruction);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
                   { next instruction ... }
@@ -929,6 +958,8 @@ implementation
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                   { this is theorically impossible... }
                   if hp=nil then
                    begin
@@ -1106,8 +1137,11 @@ implementation
        comment(v_info,'Start writing intel-styled assembler output for '+current_module.mainsource);
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
       if asminfo^.id<>as_x86_64_masm then
 =======
+=======
+>>>>>>> origin/fixes_2_2
       if target_asm.id<>as_x86_64_masm then
 >>>>>>> graemeg/fixes_2_2
         begin
@@ -1136,6 +1170,7 @@ implementation
       { better do this at end of WriteTree, but then there comes a trouble with
         al_const which does not have leading ait_section and thus goes out of segment }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1162,6 +1197,8 @@ implementation
       writer.AsmWriteLn(#9'END');
       writer.AsmLn;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         
       { TODO: probably ml64 needs 'closing' last section, too }
       if LastSecType <> sec_none then

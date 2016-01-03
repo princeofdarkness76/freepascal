@@ -15,6 +15,7 @@
 {
   TParadox : Dataset wich can handle paradox files, based on PXLib.
 <<<<<<< HEAD
+<<<<<<< HEAD
   pxlib is an open source C library for handling paradox files. It
   is available from sourceforge:
   http://pxlib.sourceforge.net/
@@ -25,6 +26,8 @@
   The TParadox component was implemented by Michael Van Canneyt
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 }
 
 unit paradox;
@@ -33,10 +36,14 @@ interface
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   sysutils, classes, db, pxlib, bufdataset_parser;
 =======
   sysutils, classes, db, pxlib;
 >>>>>>> graemeg/fixes_2_2
+=======
+  sysutils, classes, db, pxlib;
+>>>>>>> origin/fixes_2_2
 
 type
   EParadox=class(Exception);
@@ -51,23 +58,31 @@ type
     FCurrRecNo : Integer;
     FDoc       : PPX_Doc;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FFilterBuffer : TRecordBuffer;
 =======
     FFilterBuffer : PChar;
 >>>>>>> graemeg/fixes_2_2
+=======
+    FFilterBuffer : PChar;
+>>>>>>> origin/fixes_2_2
     FOffsets   : PInteger;
     FTableName : String;
     FInputEncoding : String;
     FTargetEncoding : String;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FParser         : TBufDatasetParser;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     function GetInputEncoding: String;
     function GetTableName: String;
     function GetTargetEncoding: String;
     procedure OpenBlobFile;
     procedure PXAppendRecord(Buffer: Pointer);
+<<<<<<< HEAD
 <<<<<<< HEAD
     function PXFilterRecord(Buffer: TRecordBuffer): Boolean;
     function PXGetActiveBuffer(var Buffer: TRecordBuffer): Boolean;
@@ -75,6 +90,10 @@ type
     function PXFilterRecord(Buffer: PChar): Boolean;
     function PXGetActiveBuffer(var Buffer: PChar): Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function PXFilterRecord(Buffer: PChar): Boolean;
+    function PXGetActiveBuffer(var Buffer: PChar): Boolean;
+>>>>>>> origin/fixes_2_2
     procedure RaiseError(Fmt: String; Args: array of const);
     procedure SetBlobFileName(const AValue: String);
     procedure SetFileName(const AValue: String);
@@ -82,6 +101,7 @@ type
     procedure SetOpenParams;
     procedure SetTableName(const AValue: String);
     procedure SetTargetEncoding(const AValue: String);
+<<<<<<< HEAD
 <<<<<<< HEAD
     function GetLibStored : Boolean;
   protected
@@ -97,6 +117,8 @@ type
     function  GetFieldData(Field: TField; Buffer: Pointer): Boolean; override;
     function  GetRecord(Buffer: TRecordBuffer; GetMode: TGetMode; DoCheck: Boolean): TGetResult; override;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   protected
     // Mandatory
     
@@ -106,7 +128,10 @@ type
     function  GetBookmarkFlag(Buffer: PChar): TBookmarkFlag; override;
     function  GetFieldData(Field: TField; Buffer: Pointer): Boolean; override;
     function  GetRecord(Buffer: PChar; GetMode: TGetMode; DoCheck: Boolean): TGetResult; override;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     function  GetRecordSize: Word; override;
     procedure InternalAddRecord(Buffer: Pointer; DoAppend: Boolean); override;
     procedure InternalClose; override;
@@ -114,6 +139,7 @@ type
     procedure InternalFirst; override;
     procedure InternalGotoBookmark(ABookmark: Pointer); override;
     procedure InternalInitFieldDefs; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure InternalInitRecord(Buffer: TRecordBuffer); override;
     procedure InternalLast; override;
@@ -124,6 +150,8 @@ type
     procedure SetBookmarkFlag(Buffer: TRecordBuffer; Value: TBookmarkFlag); override;
     procedure SetBookmarkData(Buffer: TRecordBuffer; Data: Pointer); override;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure InternalInitRecord(Buffer: PChar); override;
     procedure InternalLast; override;
     procedure InternalOpen; override;
@@ -132,7 +160,10 @@ type
     function  IsCursorOpen: Boolean; override;
     procedure SetBookmarkFlag(Buffer: PChar; Value: TBookmarkFlag); override;
     procedure SetBookmarkData(Buffer: PChar; Data: Pointer); override;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure SetFieldData(Field: TField; Buffer: Pointer); override;
     procedure DataConvert(aField: TField; aSource, aDest: Pointer; aToNative: Boolean); override;
     function  CreateBlobStream(Field: TField; Mode: TBlobStreamMode): TStream; override;
@@ -150,19 +181,26 @@ type
     destructor Destroy; override;
   published
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property PXLibrary : String Read FPXLibrary Write FPXLibrary Stored GetLibStored;
 =======
     Property PXLibrary : String Read FPXLibrary Write FPXLibrary;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Property PXLibrary : String Read FPXLibrary Write FPXLibrary;
+>>>>>>> origin/fixes_2_2
     Property FileName : String Read FFileName Write SetFileName;
     Property BlobFileName : String Read FBlobFileName Write SetBlobFileName;
     Property TableName : String Read GetTableName Write SetTableName;
     Property TargetEncoding : String Read GetTargetEncoding Write SetTargetEncoding;
     Property InputEncoding : String Read GetInputEncoding Write SetInputEncoding;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property filter;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property Filtered;
     Property Active;
     Property FieldDefs;
@@ -312,6 +350,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TParadox.GetLibStored : boolean;
 
 begin
@@ -320,6 +359,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure TParadox.SetBlobFileName(const AValue: String);
 begin
   if (FBlobFileName=AValue) then
@@ -329,10 +370,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TParadox.PXFilterRecord(Buffer: TRecordBuffer): Boolean;
 =======
 function TParadox.PXFilterRecord(Buffer: PChar): Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TParadox.PXFilterRecord(Buffer: PChar): Boolean;
+>>>>>>> origin/fixes_2_2
 
 var
   SaveState: TDatasetState;
@@ -340,14 +385,19 @@ var
 begin
   Result:=True;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not Assigned(OnFilterRecord) and Not Filtered then
 =======
   if not Assigned(OnFilterRecord) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if not Assigned(OnFilterRecord) then
+>>>>>>> origin/fixes_2_2
     Exit;
   SaveState:=SetTempState(dsFilter);
   Try
     FFilterBuffer:=Buffer;
+<<<<<<< HEAD
 <<<<<<< HEAD
     If Assigned(OnFilterRecord) then
       OnFilterRecord(Self,Result);
@@ -356,6 +406,9 @@ begin
 =======
     OnFilterRecord(Self,Result);
 >>>>>>> graemeg/fixes_2_2
+=======
+    OnFilterRecord(Self,Result);
+>>>>>>> origin/fixes_2_2
   Finally
     RestoreState(SaveState);
   end;
@@ -364,20 +417,28 @@ end;
 {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TParadox.MDSReadRecord(Buffer:TRecordBuffer;ARecNo:Integer);   //Reads a Rec from Stream in Buffer
 =======
 procedure TParadox.MDSReadRecord(Buffer:PChar;ARecNo:Integer);   //Reads a Rec from Stream in Buffer
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TParadox.MDSReadRecord(Buffer:PChar;ARecNo:Integer);   //Reads a Rec from Stream in Buffer
+>>>>>>> origin/fixes_2_2
 begin
   FStream.Position:=MDSGetRecordOffset(ARecNo);
   FStream.ReadBuffer(Buffer^, FRecSize);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TParadox.MDSWriteRecord(Buffer:TRecordBuffer;ARecNo:Integer);  //Writes a Rec from Buffer to Stream
 =======
 procedure TParadox.MDSWriteRecord(Buffer:PChar;ARecNo:Integer);  //Writes a Rec from Buffer to Stream
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TParadox.MDSWriteRecord(Buffer:PChar;ARecNo:Integer);  //Writes a Rec from Buffer to Stream
+>>>>>>> origin/fixes_2_2
 begin
   FStream.Position:=MDSGetRecordOffset(ARecNo);
   FStream.WriteBuffer(Buffer^, FRecSize);
@@ -385,10 +446,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TParadox.MDSAppendRecord(Buffer:TRecordBuffer);   //Appends a Rec (from Buffer) to Stream
 =======
 procedure TParadox.MDSAppendRecord(Buffer:PChar);   //Appends a Rec (from Buffer) to Stream
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TParadox.MDSAppendRecord(Buffer:PChar);   //Appends a Rec (from Buffer) to Stream
+>>>>>>> origin/fixes_2_2
 begin
   FStream.Position:=MDSGetRecordOffset(FRecCount);
   FStream.WriteBuffer(Buffer^, FRecSize);
@@ -397,10 +462,14 @@ end;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TParadox.PXGetActiveBuffer(var Buffer: TRecordBuffer): Boolean;
 =======
 function TParadox.PXGetActiveBuffer(var Buffer: PChar): Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TParadox.PXGetActiveBuffer(var Buffer: PChar): Boolean;
+>>>>>>> origin/fixes_2_2
 
 begin
  case State of
@@ -448,6 +517,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TParadox.SetFilterText(const Value: String);
 begin
   if (Value<>Filter) then
@@ -476,25 +546,37 @@ function TParadox.AllocRecordBuffer: TRecordBuffer;
 //Abstract Overrides
 function TParadox.AllocRecordBuffer: PChar;
 >>>>>>> graemeg/fixes_2_2
+=======
+//Abstract Overrides
+function TParadox.AllocRecordBuffer: PChar;
+>>>>>>> origin/fixes_2_2
 begin
   Result:=Nil;
   GetMem(Result,SizeOf(TPXRecInfo)+GetRecordSize);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TParadox.FreeRecordBuffer (var Buffer: TRecordBuffer);
 =======
 procedure TParadox.FreeRecordBuffer (var Buffer: PChar);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TParadox.FreeRecordBuffer (var Buffer: PChar);
+>>>>>>> origin/fixes_2_2
 begin
   FreeMem(Buffer);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TParadox.InternalInitRecord(Buffer: TRecordBuffer);
 =======
 procedure TParadox.InternalInitRecord(Buffer: PChar);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TParadox.InternalInitRecord(Buffer: PChar);
+>>>>>>> origin/fixes_2_2
 
 begin
   fillchar((Buffer+DataOffSet)^,GetRecordSize,0);
@@ -519,9 +601,12 @@ Var
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FieldDefs.Clear;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   pxf:=PX_get_fields(FDoc);
   ACount:= PX_get_num_fields(FDoc);
   ReallocMem(FOffsets,ACount*SizeOf(Integer));
@@ -588,10 +673,14 @@ begin
   If (BFN<>'') then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     //Writeln('opening blib file',bfn);
 =======
     Writeln('opening blib file',bfn);
 >>>>>>> graemeg/fixes_2_2
+=======
+    Writeln('opening blib file',bfn);
+>>>>>>> origin/fixes_2_2
     if PX_set_blob_file(FDoc,PChar(BFN))<>0 then
       RaiseError(SErrInvalidBlobFile,[BFN]);
     FBlobFileName:=BFN;
@@ -627,6 +716,7 @@ begin
       end;
     Raise;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
   try
     ParseFilter(Filter);
@@ -664,12 +754,17 @@ begin
     DestroyFields;
   FreeAndNil(FParser);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TParadox.InternalClose;
 
 begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FreeMem(FOffsets);
   FOffSets:=Nil;
   FCurrRecNo:=-1;
@@ -688,10 +783,14 @@ begin
     Exit;
   if (State=dsEdit) then
 <<<<<<< HEAD
+<<<<<<< HEAD
     PX_put_recordn(FDoc,pansichar(ActiveBuffer), FCurrRecNo)
 =======
     PX_put_recordn(FDoc,ActiveBuffer, FCurrRecNo)
 >>>>>>> graemeg/fixes_2_2
+=======
+    PX_put_recordn(FDoc,ActiveBuffer, FCurrRecNo)
+>>>>>>> origin/fixes_2_2
   else
     InternalAddRecord(ActiveBuffer,True);
 end;
@@ -703,10 +802,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TParadox.GetRecord(Buffer: TRecordBuffer; GetMode: TGetMode; DoCheck: Boolean): TGetResult;
 =======
 function TParadox.GetRecord(Buffer: PChar; GetMode: TGetMode; DoCheck: Boolean): TGetResult;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TParadox.GetRecord(Buffer: PChar; GetMode: TGetMode; DoCheck: Boolean): TGetResult;
+>>>>>>> origin/fixes_2_2
 
 var
   Accepted: Boolean;
@@ -738,10 +841,14 @@ begin
     if result=grOK then
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       PX_get_record(Doc,FCurrRecNo,pansichar(Buffer+DataOffset));
 =======
       PX_get_record(Doc,FCurrRecNo,Buffer+DataOffset);
 >>>>>>> graemeg/fixes_2_2
+=======
+      PX_get_record(Doc,FCurrRecNo,Buffer+DataOffset);
+>>>>>>> origin/fixes_2_2
       PPXRecInfo(Buffer)^.Bookmark:=FCurrRecNo;
       PPXRecInfo(Buffer)^.BookmarkFlag:=bfCurrent;
       if (Filtered) then
@@ -758,18 +865,24 @@ function TParadox.GetFieldData(Field: TField; Buffer: Pointer): Boolean;
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   Buf          : TRecordbuffer;
   No,pft,flen : integer;
   pxf          : PPx_field;
   Value        : Pchar;
   D            : clong;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Buf          : PChar;
   No,pft,flen : integer;
   pxf          : PPx_field;
   Value        : Pchar;
   Y,M,D        : cint;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   longv        : Clong;
   R            : Double;
   c            : Char;
@@ -789,6 +902,7 @@ begin
       pxfAlpha:
         begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         Result:=PX_get_data_alpha(FDoc,pansichar(Buf),flen,@value)>0;
         If result then
           begin
@@ -797,16 +911,22 @@ begin
             Pchar(Buffer)[flen]:=#0;
           FDoc^.free(FDoc,value);
 =======
+=======
+>>>>>>> origin/fixes_2_2
         Result:=PX_get_data_alpha(FDoc,Buf,flen,@value)>0;
         If result then
           begin
           Move(Value^,Buffer^,flen);
           doc^.free(doc,value);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           end;
         end;
       pxfDate:
         begin
+<<<<<<< HEAD
 <<<<<<< HEAD
         Result:=PX_get_data_long(FDoc,pansichar(Buf),flen,@longv)>0;
         If Result then
@@ -817,21 +937,30 @@ begin
           // julian calendar (4714 BC) and dec-30-1899 (TDateTime base date)
           PDateTime(Buffer)^:=Longv+1721425-2415019;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         Result:=PX_get_data_long(FDoc,Buf,flen,@longv)>0;
         If Result then
           begin
           PX_SdnToGregorian(longv+1721425,@Y,@M,@D);
           PDateTime(Buffer)^:=EncodeDate(Y,M,D);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           end;
         end;
       pxfShort:
         begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         Result:=PX_get_data_short(FDoc,pansichar(Buf), flen, @D)>0;
 =======
         Result:=PX_get_data_short(FDoc,Buf, flen, @D)>0;
 >>>>>>> graemeg/fixes_2_2
+=======
+        Result:=PX_get_data_short(FDoc,Buf, flen, @D)>0;
+>>>>>>> origin/fixes_2_2
         If result then
           PSmallInt(Buffer)^:=D;
         end;
@@ -839,10 +968,14 @@ begin
       pxfLong:
         begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         Result:=(PX_get_data_long(FDoc,pansichar(buf),flen,@longv)>0);
 =======
         Result:=(PX_get_data_long(FDoc,buf,flen,@longv)>0);
 >>>>>>> graemeg/fixes_2_2
+=======
+        Result:=(PX_get_data_long(FDoc,buf,flen,@longv)>0);
+>>>>>>> origin/fixes_2_2
         If Result then
           PInteger(Buffer)^:=Longv;
         end;
@@ -850,15 +983,20 @@ begin
       pxfNumber:
         begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         Result:=(PX_get_data_double(FDoc,pansichar(Buf),Flen,@R)>0);
 =======
         Result:=(PX_get_data_double(FDoc,Buf,Flen,@R)>0);
 >>>>>>> graemeg/fixes_2_2
+=======
+        Result:=(PX_get_data_double(FDoc,Buf,Flen,@R)>0);
+>>>>>>> origin/fixes_2_2
         If Result then
           PDouble(Buffer)^:=R;
         end;
       pxfLogical:
         begin
+<<<<<<< HEAD
 <<<<<<< HEAD
         Result:=(PX_get_data_byte(FDoc,pansichar(Buf),flen,@C)>0);
         If result then
@@ -868,6 +1006,8 @@ begin
         begin
         Result:=PX_get_data_bytes(FDoc,pansichar(Buf),FLen,@Value)>0;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         Result:=(PX_get_data_byte(FDoc,Buf,flen,@C)>0);
         If result then
           PBoolean(Buffer)^:=(C<>#0);
@@ -875,7 +1015,10 @@ begin
       pxfBytes:
         begin
         Result:=PX_get_data_bytes(FDoc,Buf,FLen,@Value)>0;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         If Result then
           begin
           Move(Value^,Buffer^,FLen);
@@ -894,15 +1037,20 @@ begin
       pxfTime:
         begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         Result:=(PX_get_data_long(FDoc,pansichar(Buf),flen,@longv)>0);
 =======
         Result:=(PX_get_data_long(FDoc,Buf,flen,@longv)>0);
 >>>>>>> graemeg/fixes_2_2
+=======
+        Result:=(PX_get_data_long(FDoc,Buf,flen,@longv)>0);
+>>>>>>> origin/fixes_2_2
         If result then
           PDateTime(Buffer)^:=longv/MSecsPerDay;
         end;
       pxfTimestamp:
         begin
+<<<<<<< HEAD
 <<<<<<< HEAD
         Result:=(PX_get_data_double(FDoc,pansichar(buf),flen,@R)>0);
         if Result then
@@ -928,6 +1076,8 @@ begin
 >>>>>>> origin/cpstrnew
           PDateTime(Buffer)^:=D+(Longv/MSecsPerday);
 =======
+=======
+>>>>>>> origin/fixes_2_2
         Result:=(PX_get_data_double(FDoc,buf,flen,@R)>0);
         if Result then
           begin
@@ -936,7 +1086,10 @@ begin
           PX_SdnToGregorian(longv+1721425,@Y,@M,@D);
           longv:=(Trunc(r) mod 86400);
           PDateTime(Buffer)^:=EncodeDate(Y,M,d)+(Longv/MSecsPerday);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           end;
         end;
       pxfBCD:
@@ -958,10 +1111,14 @@ procedure TParadox.SetFieldData(Field: TField; Buffer: Pointer);
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
  DestBuffer: TRecordBuffer;
 =======
  DestBuffer: PChar;
 >>>>>>> graemeg/fixes_2_2
+=======
+ DestBuffer: PChar;
+>>>>>>> origin/fixes_2_2
  I: integer;
 
 begin
@@ -1013,6 +1170,7 @@ begin
         V2:=Value;
         if (Field.DataType=ftGraphic) then
 <<<<<<< HEAD
+<<<<<<< HEAD
           begin
           Result.WriteAnsiString('bmp');
           Result.WriteBuffer(V2^,D-SizeOf(TGraphicHeader));
@@ -1023,6 +1181,10 @@ begin
           Result.WriteAnsiString('bmp');
         Result.WriteBuffer(V2^,D-SizeOf(TGraphicHeader));
 >>>>>>> graemeg/fixes_2_2
+=======
+          Result.WriteAnsiString('bmp');
+        Result.WriteBuffer(V2^,D-SizeOf(TGraphicHeader));
+>>>>>>> origin/fixes_2_2
         Result.Position:=0;
         FDoc^.free(FDoc,Value);
         end;
@@ -1054,10 +1216,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TParadox.InternalSetToRecord(Buffer: TRecordBuffer);
 =======
 procedure TParadox.InternalSetToRecord(Buffer: PChar);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TParadox.InternalSetToRecord(Buffer: PChar);
+>>>>>>> origin/fixes_2_2
 
 var
   ReqBookmark: integer;
@@ -1068,30 +1234,42 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TParadox.GetBookmarkFlag(Buffer: TRecordBuffer): TBookmarkFlag;
 =======
 function TParadox.GetBookmarkFlag(Buffer: PChar): TBookmarkFlag;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TParadox.GetBookmarkFlag(Buffer: PChar): TBookmarkFlag;
+>>>>>>> origin/fixes_2_2
 
 begin
   Result:=PPXRecInfo(Buffer)^.BookmarkFlag;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TParadox.SetBookmarkFlag(Buffer: TRecordBuffer; Value: TBookmarkFlag);
 =======
 procedure TParadox.SetBookmarkFlag(Buffer: PChar; Value: TBookmarkFlag);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TParadox.SetBookmarkFlag(Buffer: PChar; Value: TBookmarkFlag);
+>>>>>>> origin/fixes_2_2
 
 begin
   PPXRecInfo(Buffer)^.BookmarkFlag := Value;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TParadox.GetBookmarkData(Buffer: TRecordBuffer; Data: Pointer);
 =======
 procedure TParadox.GetBookmarkData(Buffer: PChar; Data: Pointer);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TParadox.GetBookmarkData(Buffer: PChar; Data: Pointer);
+>>>>>>> origin/fixes_2_2
 
 begin
   if Data<>nil then
@@ -1099,10 +1277,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TParadox.SetBookmarkData(Buffer: TRecordBuffer; Data: Pointer);
 =======
 procedure TParadox.SetBookmarkData(Buffer: PChar; Data: Pointer);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TParadox.SetBookmarkData(Buffer: PChar; Data: Pointer);
+>>>>>>> origin/fixes_2_2
 
 begin
   if Data<>nil then

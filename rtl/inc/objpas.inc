@@ -421,9 +421,12 @@
 
         begin
 <<<<<<< HEAD
+<<<<<<< HEAD
            ovmt:=PVmt(self);
            while assigned(ovmt) do
 =======
+=======
+>>>>>>> origin/fixes_2_2
            vmt:=self;
            while assigned(vmt) do
 >>>>>>> graemeg/fixes_2_2
@@ -497,8 +500,11 @@
 
         var
 <<<<<<< HEAD
+<<<<<<< HEAD
            ovmt: PVmt;
 =======
+=======
+>>>>>>> origin/fixes_2_2
            CurClassType: TClass;
 >>>>>>> graemeg/fixes_2_2
            FieldTable: PFieldTable;
@@ -509,9 +515,12 @@
            if Length(name) > 0 then
            begin
 <<<<<<< HEAD
+<<<<<<< HEAD
              ovmt := PVmt(ClassType);
              while ovmt <> nil do
 =======
+=======
+>>>>>>> origin/fixes_2_2
              CurClassType := ClassType;
              while CurClassType <> nil do
 >>>>>>> graemeg/fixes_2_2
@@ -581,11 +590,15 @@
 
         begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         // call to ClassName inlined here, this eliminates stack and string copying.
            ClassNameIs:=ShortCompareText(PVmt(Self)^.vClassName^, name) = 0;
 =======
            ClassNameIs:=ShortCompareText(ClassName, name) = 0;
 >>>>>>> graemeg/fixes_2_2
+=======
+           ClassNameIs:=ShortCompareText(ClassName, name) = 0;
+>>>>>>> origin/fixes_2_2
         end;
 
       class function TObject.InheritsFrom(aclass : TClass) : Boolean;
@@ -942,6 +955,43 @@
           result := assigned(pointer(obj));
         end;
 
+      function getcorbainterfacebyentry(Instance: pointer; IEntry: pinterfaceentry; out obj): boolean;
+        var
+          Getter: function: IInterface of object;
+        begin
+          Pointer(Obj) := nil;
+          if Assigned(IEntry) and Assigned(Instance) then
+          begin
+            case IEntry^.IType of
+              etStandard:
+                begin
+                  //writeln('Doing etStandard cast of ', TObject(Instance).classname(), ' with self = ', ptruint(Instance), ' and offset = ', IEntry^.IOffset);
+                  Pbyte(Obj):=Pbyte(instance)+IEntry^.IOffset;
+                end;
+              etFieldValue:
+                begin
+                  //writeln('Doing etFieldValue cast of ', TObject(Instance).classname(), ' with offset = ', IEntry^.IOffset);
+                  Pointer(obj) := ppointer(Pbyte(Instance)+IEntry^.IOffset)^;
+                end;
+              etVirtualMethodResult:
+                begin
+                  //writeln('Doing etVirtualMethodResult cast of ', TObject(Instance).classname());
+                  TMethod(Getter).data := Instance;
+                  TMethod(Getter).code := ppointer(Pbyte(Instance) + IEntry^.IOffset)^;
+                  Pointer(obj) := Pointer(Getter());
+                end;
+              etStaticMethodResult:
+                begin
+                  //writeln('Doing etStaticMethodResult cast of ', TObject(Instance).classname());
+                  TMethod(Getter).data := Instance;
+                  TMethod(Getter).code := pointer(IEntry^.IOffset);
+                  Pointer(obj) := Pointer(Getter());
+                end;
+            end;
+          end;
+          result := assigned(pointer(obj));
+        end;
+
       function TObject.getinterface(const iid : tguid;out obj) : boolean;
 >>>>>>> graemeg/fixes_2_2
         begin
@@ -1009,8 +1059,17 @@
 
       function TObject.getinterface(const iidstr : string;out obj) : boolean;{$ifdef SYSTEMINLINE}inline;{$endif}
         begin
+<<<<<<< HEAD
           Result := getinterfacebystr(iidstr,obj);
 >>>>>>> graemeg/fixes_2_2
+=======
+          Result := getcorbainterfacebyentry(self, getinterfaceentrybystr(iidstr), obj);
+        end;
+
+      function TObject.getinterface(const iidstr : string;out obj) : boolean;{$ifdef SYSTEMINLINE}inline;{$endif}
+        begin
+          Result := getinterfacebystr(iidstr,obj);
+>>>>>>> origin/fixes_2_2
         end;
 
       class function TObject.GetInterfaceEntry(const iid : tguid) : pinterfaceentry;
@@ -1199,6 +1258,7 @@
 {****************************************************************************
                                TContainedOBJECT
 ****************************************************************************}
+<<<<<<< HEAD
 
     function TContainedObject.QueryInterface(
 <<<<<<< HEAD
@@ -1212,12 +1272,21 @@
 =======
             const iid : tguid;out obj) : longint; stdcall;
 
+=======
+
+    function TContainedObject.QueryInterface(
+            const iid : tguid;out obj) : longint; stdcall;
+
+>>>>>>> origin/fixes_2_2
     begin
       if getinterface(iid,obj) then
         result:=0
       else
         result:=longint(E_NOINTERFACE); 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
 
 {****************************************************************************

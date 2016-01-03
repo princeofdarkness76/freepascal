@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QuickTime/QuickTimeComponents.h
  
      Contains:   QuickTime Interfaces.
@@ -32,6 +33,8 @@
      Copyright:  © 1990-2008 by Apple Inc., all rights reserved
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       QuickTimeComponents.p
  
      Contains:   QuickTime Interfaces.
@@ -40,11 +43,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1990-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -75,6 +82,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -86,7 +95,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -96,12 +108,17 @@
 unit QuickTimeComponents;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -115,14 +132,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -131,11 +153,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -173,6 +198,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -180,6 +207,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -410,6 +438,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -418,7 +448,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -445,9 +478,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -457,6 +494,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,Aliases,Components,Dialogs,Events,Files,Menus,Video,ImageCompression,Movies,QuickdrawTypes,QDOffscreen,QuickTimeMusic,CFBase,CoreAudioTypes;
 {$endc} {not MACOSALLINCLUDE}
@@ -539,6 +577,8 @@ function ClockGetTime( aClock: ComponentInstance; var out: TimeRecord ): Compone
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,Files,Events,QDOffscreen,Menus,Dialogs,Aliases,MixedMode,Components,Quickdraw,Video,Sound,ImageCompression,Movies,QuickTimeMusic;
 
 
@@ -567,11 +607,15 @@ const
 	 *    Windows:          in qtmlClient.lib 3.0 and later
 	 	}
 function ClockGetTime(aClock: ComponentInstance; var out: TimeRecord): ComponentResult; external name '_ClockGetTime';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ClockNewCallBack()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -583,17 +627,23 @@ function ClockNewCallBack( aClock: ComponentInstance; tb: TimeBase; callBackType
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ClockNewCallBack(aClock: ComponentInstance; tb: TimeBase; callBackType: SInt16): QTCallBack; external name '_ClockNewCallBack';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ClockDisposeCallBack()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -605,17 +655,23 @@ function ClockDisposeCallBack( aClock: ComponentInstance; cb: QTCallBack ): Comp
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ClockDisposeCallBack(aClock: ComponentInstance; cb: QTCallBack): ComponentResult; external name '_ClockDisposeCallBack';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ClockCallMeWhen()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -627,17 +683,23 @@ function ClockCallMeWhen( aClock: ComponentInstance; cb: QTCallBack; param1: SIG
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ClockCallMeWhen(aClock: ComponentInstance; cb: QTCallBack; param1: SInt32; param2: SInt32; param3: SInt32): ComponentResult; external name '_ClockCallMeWhen';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ClockCancelCallBack()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -649,17 +711,23 @@ function ClockCancelCallBack( aClock: ComponentInstance; cb: QTCallBack ): Compo
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ClockCancelCallBack(aClock: ComponentInstance; cb: QTCallBack): ComponentResult; external name '_ClockCancelCallBack';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ClockRateChanged()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -671,17 +739,23 @@ function ClockRateChanged( aClock: ComponentInstance; cb: QTCallBack ): Componen
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ClockRateChanged(aClock: ComponentInstance; cb: QTCallBack): ComponentResult; external name '_ClockRateChanged';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ClockTimeChanged()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -693,17 +767,23 @@ function ClockTimeChanged( aClock: ComponentInstance; cb: QTCallBack ): Componen
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ClockTimeChanged(aClock: ComponentInstance; cb: QTCallBack): ComponentResult; external name '_ClockTimeChanged';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ClockSetTimeBase()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -715,17 +795,23 @@ function ClockSetTimeBase( aClock: ComponentInstance; tb: TimeBase ): ComponentR
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ClockSetTimeBase(aClock: ComponentInstance; tb: TimeBase): ComponentResult; external name '_ClockSetTimeBase';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ClockStartStopChanged()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -737,17 +823,23 @@ function ClockStartStopChanged( aClock: ComponentInstance; cb: QTCallBack; start
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ClockStartStopChanged(aClock: ComponentInstance; cb: QTCallBack; startChanged: boolean; stopChanged: boolean): ComponentResult; external name '_ClockStartStopChanged';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ClockGetRate()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -919,6 +1011,8 @@ const
 
 {  Get/SetInfo structures.}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -988,11 +1082,15 @@ const
 
 	{   Get/SetInfo structures. }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	SCSpatialSettingsPtr = ^SCSpatialSettings;
 	SCSpatialSettings = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		codecType: CodecType_fix;
 		codec: CodecComponent;
@@ -1060,6 +1158,8 @@ const
 
 {  scTypeNotFoundErr returned by Get/SetInfo when type cannot be found.}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		codecType:				CodecType_fix;
 		codec:					CodecComponent;
 		depth:					SInt16;
@@ -1069,6 +1169,7 @@ const
 	SCTemporalSettingsPtr = ^SCTemporalSettings;
 	SCTemporalSettings = record
 		temporalQuality:		CodecQ;
+<<<<<<< HEAD
 		frameRate:				Fixed;
 		keyFrameRate:			SInt32;
 	end;
@@ -19634,6 +19735,61 @@ const
 
 {  A Parsed XML attribute value, one of number/percent, boolean/on-off, color, or enumerated type}
 =======
+=======
+		frameRate:				Fixed;
+		keyFrameRate:			SInt32;
+	end;
+
+	SCDataRateSettingsPtr = ^SCDataRateSettings;
+	SCDataRateSettings = record
+		dataRate:				SInt32;
+		frameDuration:			SInt32;
+		minSpatialQuality:		CodecQ;
+		minTemporalQuality:		CodecQ;
+	end;
+
+	SCExtendedProcsPtr = ^SCExtendedProcs;
+	SCExtendedProcs = record
+		filterProc:				SCModalFilterUPP;
+		hookProc:				SCModalHookUPP;
+		refcon:					SInt32;
+		customName:				Str31;
+	end;
+
+	{   Get/SetInfo selectors }
+
+const
+	scSpatialSettingsType		= FourCharCode('sptl');						{  pointer to SCSpatialSettings struct }
+	scTemporalSettingsType		= FourCharCode('tprl');						{  pointer to SCTemporalSettings struct }
+	scDataRateSettingsType		= FourCharCode('drat');						{  pointer to SCDataRateSettings struct }
+	scColorTableType			= FourCharCode('clut');						{  pointer to CTabHandle }
+	scProgressProcType			= FourCharCode('prog');						{  pointer to ProgressRecord struct }
+	scExtendedProcsType			= FourCharCode('xprc');						{  pointer to SCExtendedProcs struct }
+	scPreferenceFlagsType		= FourCharCode('pref');						{  pointer to long }
+	scSettingsStateType			= FourCharCode('ssta');						{  pointer to Handle }
+	scSequenceIDType			= FourCharCode('sequ');						{  pointer to ImageSequence }
+	scWindowPositionType		= FourCharCode('wndw');						{  pointer to Point }
+	scCodecFlagsType			= FourCharCode('cflg');						{  pointer to CodecFlags }
+	scCodecSettingsType			= FourCharCode('cdec');						{  pointer to Handle }
+	scForceKeyValueType			= FourCharCode('ksim');						{  pointer to long }
+	scSoundSampleRateType		= FourCharCode('ssrt');						{  pointer to UnsignedFixed }
+	scSoundSampleSizeType		= FourCharCode('ssss');						{  pointer to short }
+	scSoundChannelCountType		= FourCharCode('sscc');						{  pointer to short }
+	scSoundCompressionType		= FourCharCode('ssct');						{  pointer to OSType }
+	scCompressionListType		= FourCharCode('ctyl');						{  pointer to OSType Handle }
+	scCodecManufacturerType		= FourCharCode('cmfr');						{  pointer to OSType }
+	scSoundVBRCompressionOK		= FourCharCode('cvbr');						{  pointer to Boolean }
+	scSoundInputSampleRateType	= FourCharCode('ssir');						{  pointer to UnsignedFixed }
+	scSoundSampleRateChangeOK	= FourCharCode('rcok');						{  pointer to Boolean }
+	scAvailableCompressionListType = FourCharCode('avai');					{  pointer to OSType Handle }
+
+	{   scTypeNotFoundErr returned by Get/SetInfo when type cannot be found. }
+
+
+type
+	SCParamsPtr = ^SCParams;
+	SCParams = record
+>>>>>>> origin/fixes_2_2
 		flags:					SInt32;
 		theCodecType:			CodecType;
 		theCodec:				CodecComponent;
@@ -23367,12 +23523,16 @@ const
 
 	{   A Parsed XML attribute value, one of number/percent, boolean/on-off, color, or enumerated type }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type
 	XMLAttributeValuePtr = ^XMLAttributeValue;
 	XMLAttributeValue = record
 		case SInt16 of
 		0: (
+<<<<<<< HEAD
 <<<<<<< HEAD
 			number: SInt32;									{     The value when valueKind is attributeValueKindInteger or attributeValueKindPercent }
 			);
@@ -23418,6 +23578,8 @@ type
     or simply character data.
 }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 			number:				SInt32;									{     The value when valueKind is attributeValueKindInteger or attributeValueKindPercent }
 			);
 		1: (
@@ -23461,11 +23623,15 @@ type
 	    The content of an XML element is a series of parts, each of which may be either another element
 	    or simply character data.
 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	XMLElementContentPtr = ^XMLElementContent;
 	XMLElementContent = record
 		case SInt16 of
 		0: (
+<<<<<<< HEAD
 <<<<<<< HEAD
 			element: XMLElement;								{     The contents when the content kind is xmlContentTypeElement }
 			);
@@ -23520,6 +23686,8 @@ function XMLParseDataRef( aParser: ComponentInstance; dataRef: Handle; dataRefTy
 
 {  Parses the XML file pointed to by fileSpec, returning a XMLDoc parse tree}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 			element:			XMLElement;								{     The contents when the content kind is xmlContentTypeElement }
 			);
 		1: (
@@ -23640,11 +23808,15 @@ function XMLParseDataRef( aParser: ComponentInstance; dataRef: Handle; dataRefTy
 	 	}
 function XMLParseDataRef(aParser: ComponentInstance; dataRef: Handle; dataRefType: OSType; parseFlags: SInt32; var document: XMLDoc): ComponentResult; external name '_XMLParseDataRef';
 {   Parses the XML file pointed to by fileSpec, returning a XMLDoc parse tree }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  XMLParseFile()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -23657,6 +23829,8 @@ function XMLParseFile( aParser: ComponentInstance; fileSpec: ConstFSSpecPtr; par
 
 {  Disposes of a XMLDoc parse tree}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -23664,11 +23838,15 @@ function XMLParseFile( aParser: ComponentInstance; fileSpec: ConstFSSpecPtr; par
  }
 function XMLParseFile(aParser: ComponentInstance; fileSpec: ConstFSSpecPtr; parseFlags: SInt32; var document: XMLDoc): ComponentResult; external name '_XMLParseFile';
 {   Disposes of a XMLDoc parse tree }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  XMLParseDisposeXMLDoc()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -23680,13 +23858,18 @@ function XMLParseDisposeXMLDoc( aParser: ComponentInstance; document: XMLDoc ): 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
 function XMLParseDisposeXMLDoc(aParser: ComponentInstance; document: XMLDoc): ComponentResult; external name '_XMLParseDisposeXMLDoc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     Returns a more detailed description of the error and the line in which it occurred, if a
     file failed to parse properly.
@@ -23695,6 +23878,7 @@ function XMLParseDisposeXMLDoc(aParser: ComponentInstance; document: XMLDoc): Co
  *  XMLParseGetDetailedParseError()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -23706,13 +23890,18 @@ function XMLParseGetDetailedParseError( aParser: ComponentInstance; var errorLin
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
 function XMLParseGetDetailedParseError(aParser: ComponentInstance; var errorLine: SInt32; errDesc: StringPtr): ComponentResult; external name '_XMLParseGetDetailedParseError';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     Tell the parser of an element to be recognized. The tokenized element unique identifier is
     passed in *elementID, unless *elementID is zero, whereupon a unique ID is generated and returned.
@@ -23722,6 +23911,7 @@ function XMLParseGetDetailedParseError(aParser: ComponentInstance; var errorLine
  *  XMLParseAddElement()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -23733,13 +23923,18 @@ function XMLParseAddElement( aParser: ComponentInstance; elementName: CStringPtr
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
 function XMLParseAddElement(aParser: ComponentInstance; elementName: CStringPtr; nameSpaceID: UInt32; var elementID: UInt32; elementFlags: SInt32): ComponentResult; external name '_XMLParseAddElement';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     Tells the parser of an attribute for the specified element. The tokenized attribute unique
     ID is passed in *attributeID, unless *attributeID is zero, whereupon a unique ID is generated and
@@ -23749,6 +23944,7 @@ function XMLParseAddElement(aParser: ComponentInstance; elementName: CStringPtr;
  *  XMLParseAddAttribute()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -23760,13 +23956,18 @@ function XMLParseAddAttribute( aParser: ComponentInstance; elementID: UInt32; na
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
 function XMLParseAddAttribute(aParser: ComponentInstance; elementID: UInt32; nameSpaceID: UInt32; attributeName: CStringPtr; var attributeID: UInt32): ComponentResult; external name '_XMLParseAddAttribute';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     Tells the parser of several attributes for the specified element. The attributes are passed
     as a zero-delimited, double-zero-terminated C string in attributeNames, and the attribute
@@ -23778,6 +23979,7 @@ function XMLParseAddAttribute(aParser: ComponentInstance; elementID: UInt32; nam
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
@@ -23788,13 +23990,18 @@ function XMLParseAddMultipleAttributes( aParser: ComponentInstance; elementID: U
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
 function XMLParseAddMultipleAttributes(aParser: ComponentInstance; elementID: UInt32; var nameSpaceIDs: UInt32; attributeNames: CStringPtr; var attributeIDs: UInt32): ComponentResult; external name '_XMLParseAddMultipleAttributes';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     Tells the parser of an attribute, which may have a particular type of value, for the
     specified element. Params are as in XMLParseAddAttribute, plus all the kinds of values
@@ -23806,6 +24013,7 @@ function XMLParseAddMultipleAttributes(aParser: ComponentInstance; elementID: UI
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
@@ -23816,13 +24024,18 @@ function XMLParseAddAttributeAndValue ( aParser: ComponentInstance; elementID: U
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
 function XMLParseAddAttributeAndValue(aParser: ComponentInstance; elementID: UInt32; nameSpaceID: UInt32; attributeName: CStringPtr; var attributeID: UInt32; attributeValueKind: UInt32; attributeValueKindInfo: UnivPtr): ComponentResult; external name '_XMLParseAddAttributeAndValue';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     Tells the parser of several attributes, which may have a particular type of value, for the
     specified element. Params are as in XMLParseAddMultipleAttributes, plus all the kinds of values
@@ -23834,6 +24047,7 @@ function XMLParseAddAttributeAndValue(aParser: ComponentInstance; elementID: UIn
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
@@ -23844,13 +24058,18 @@ function XMLParseAddMultipleAttributesAndValues( aParser: ComponentInstance; ele
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
 function XMLParseAddMultipleAttributesAndValues(aParser: ComponentInstance; elementID: UInt32; var nameSpaceIDs: UInt32; attributeNames: CStringPtr; var attributeIDs: UInt32; var attributeValueKinds: UInt32; var attributeValueKindInfos: UnivPtr): ComponentResult; external name '_XMLParseAddMultipleAttributesAndValues';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     Tells the parser that the particular attribute may have an additional kind of
     value, as specified by attributeValueKind and attributeValueKindInfo
@@ -23859,6 +24078,7 @@ function XMLParseAddMultipleAttributesAndValues(aParser: ComponentInstance; elem
  *  XMLParseAddAttributeValueKind()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -23870,13 +24090,18 @@ function XMLParseAddAttributeValueKind( aParser: ComponentInstance; elementID: U
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
 function XMLParseAddAttributeValueKind(aParser: ComponentInstance; elementID: UInt32; attributeID: UInt32; attributeValueKind: UInt32; attributeValueKindInfo: UnivPtr): ComponentResult; external name '_XMLParseAddAttributeValueKind';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     Tell the parser of a namespace to be recognized. The tokenized namespace unique identifier is
     passed in *nameSpaceID, unless *nameSpaceID is zero, whereupon a unique ID is generated and returned.
@@ -23886,6 +24111,7 @@ function XMLParseAddAttributeValueKind(aParser: ComponentInstance; elementID: UI
  *  XMLParseAddNameSpace()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -23898,6 +24124,8 @@ function XMLParseAddNameSpace( aParser: ComponentInstance; nameSpaceURL: CString
 
 {  Specifies the offset and limit for reading from the dataref to be used when parsing}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -23905,11 +24133,15 @@ function XMLParseAddNameSpace( aParser: ComponentInstance; nameSpaceURL: CString
  }
 function XMLParseAddNameSpace(aParser: ComponentInstance; nameSpaceURL: CStringPtr; var nameSpaceID: UInt32): ComponentResult; external name '_XMLParseAddNameSpace';
 {   Specifies the offset and limit for reading from the dataref to be used when parsing }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  XMLParseSetOffsetAndLimit()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -23922,6 +24154,8 @@ function XMLParseSetOffsetAndLimit( aParser: ComponentInstance; offset: UInt32; 
 
 {  Set the event parse refcon}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -23929,11 +24163,15 @@ function XMLParseSetOffsetAndLimit( aParser: ComponentInstance; offset: UInt32; 
  }
 function XMLParseSetOffsetAndLimit(aParser: ComponentInstance; offset: UInt32; limit: UInt32): ComponentResult; external name '_XMLParseSetOffsetAndLimit';
 {   Set the event parse refcon }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  XMLParseSetEventParseRefCon()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -23946,6 +24184,8 @@ function XMLParseSetEventParseRefCon( aParser: ComponentInstance; refcon: SIGNED
 
 {  Set the start document handler UPP for event parsing}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -23953,11 +24193,15 @@ function XMLParseSetEventParseRefCon( aParser: ComponentInstance; refcon: SIGNED
  }
 function XMLParseSetEventParseRefCon(aParser: ComponentInstance; refcon: SInt32): ComponentResult; external name '_XMLParseSetEventParseRefCon';
 {   Set the start document handler UPP for event parsing }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  XMLParseSetStartDocumentHandler()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -23970,6 +24214,8 @@ function XMLParseSetStartDocumentHandler( aParser: ComponentInstance; startDocum
 
 {  Set the end document handler UPP for event parsing}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -23977,11 +24223,15 @@ function XMLParseSetStartDocumentHandler( aParser: ComponentInstance; startDocum
  }
 function XMLParseSetStartDocumentHandler(aParser: ComponentInstance; startDocument: StartDocumentHandlerUPP): ComponentResult; external name '_XMLParseSetStartDocumentHandler';
 {   Set the end document handler UPP for event parsing }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  XMLParseSetEndDocumentHandler()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -23994,6 +24244,8 @@ function XMLParseSetEndDocumentHandler( aParser: ComponentInstance; endDocument:
 
 {  Set the start element handler UPP for event parsing}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -24001,11 +24253,15 @@ function XMLParseSetEndDocumentHandler( aParser: ComponentInstance; endDocument:
  }
 function XMLParseSetEndDocumentHandler(aParser: ComponentInstance; endDocument: EndDocumentHandlerUPP): ComponentResult; external name '_XMLParseSetEndDocumentHandler';
 {   Set the start element handler UPP for event parsing }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  XMLParseSetStartElementHandler()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -24018,6 +24274,8 @@ function XMLParseSetStartElementHandler( aParser: ComponentInstance; startElemen
 
 {  Set the end element handler UPP for event parsing}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -24025,11 +24283,15 @@ function XMLParseSetStartElementHandler( aParser: ComponentInstance; startElemen
  }
 function XMLParseSetStartElementHandler(aParser: ComponentInstance; startElement: StartElementHandlerUPP): ComponentResult; external name '_XMLParseSetStartElementHandler';
 {   Set the end element handler UPP for event parsing }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  XMLParseSetEndElementHandler()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -24042,6 +24304,8 @@ function XMLParseSetEndElementHandler( aParser: ComponentInstance; endElement: E
 
 {  Set the character data handler UPP for event parsing}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -24049,11 +24313,15 @@ function XMLParseSetEndElementHandler( aParser: ComponentInstance; endElement: E
  }
 function XMLParseSetEndElementHandler(aParser: ComponentInstance; endElement: EndElementHandlerUPP): ComponentResult; external name '_XMLParseSetEndElementHandler';
 {   Set the character data handler UPP for event parsing }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  XMLParseSetCharDataHandler()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -24066,6 +24334,8 @@ function XMLParseSetCharDataHandler( aParser: ComponentInstance; charData: CharD
 
 {  Set the preprocess instruction handler UPP for event parsing}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -24073,11 +24343,15 @@ function XMLParseSetCharDataHandler( aParser: ComponentInstance; charData: CharD
  }
 function XMLParseSetCharDataHandler(aParser: ComponentInstance; charData: CharDataHandlerUPP): ComponentResult; external name '_XMLParseSetCharDataHandler';
 {   Set the preprocess instruction handler UPP for event parsing }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  XMLParseSetPreprocessInstructionHandler()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -24090,6 +24364,8 @@ function XMLParseSetPreprocessInstructionHandler( aParser: ComponentInstance; pr
 
 {  Set the comment handler UPP for event parsing}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -24097,11 +24373,15 @@ function XMLParseSetPreprocessInstructionHandler( aParser: ComponentInstance; pr
  }
 function XMLParseSetPreprocessInstructionHandler(aParser: ComponentInstance; preprocessInstruction: PreprocessInstructionHandlerUPP): ComponentResult; external name '_XMLParseSetPreprocessInstructionHandler';
 {   Set the comment handler UPP for event parsing }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  XMLParseSetCommentHandler()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -24114,6 +24394,8 @@ function XMLParseSetCommentHandler( aParser: ComponentInstance; comment: Comment
 
 {  Set the cdata handler UPP for event parsing}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -24121,11 +24403,15 @@ function XMLParseSetCommentHandler( aParser: ComponentInstance; comment: Comment
  }
 function XMLParseSetCommentHandler(aParser: ComponentInstance; comment: CommentHandlerUPP): ComponentResult; external name '_XMLParseSetCommentHandler';
 {   Set the cdata handler UPP for event parsing }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  XMLParseSetCDataHandler()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -24137,13 +24423,18 @@ function XMLParseSetCDataHandler( aParser: ComponentInstance; cdata: CDataHandle
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
 function XMLParseSetCDataHandler(aParser: ComponentInstance; cdata: CDataHandlerUPP): ComponentResult; external name '_XMLParseSetCDataHandler';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     Helper Macros
     
@@ -24205,6 +24496,7 @@ function XMLParseSetCDataHandler(aParser: ComponentInstance; cdata: CDataHandler
     "http-equiv" with a unique identifier of attr_httpequiv
 }
 
+<<<<<<< HEAD
 
 {
     General Sequence Grab stuff
@@ -24328,6 +24620,13 @@ const
 	sgDeviceInputNameFlagInputUnavailable = 1 shl 0;
 =======
 
+=======
+
+{
+    General Sequence Grab stuff
+}
+
+>>>>>>> origin/fixes_2_2
 type
 	SeqGrabComponent					= ComponentInstance;
 	SGChannel							= ComponentInstance;
@@ -24433,11 +24732,15 @@ type
 const
 	sgDeviceInputNameFlagInputUnavailable = $01;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	SGDeviceInputListRecordPtr = ^SGDeviceInputListRecord;
 	SGDeviceInputListRecord = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		count: SInt16;
 		selectedIndex: SInt16;
@@ -24459,6 +24762,8 @@ const
 	sgDeviceNameFlagDeviceUnavailable = 1 shl 0;
 	sgDeviceNameFlagShowInputsAsDevices = 1 shl 1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		count:					SInt16;
 		selectedIndex:			SInt16;
 		reserved:				SInt32;								{  zero }
@@ -24481,11 +24786,15 @@ const
 	sgDeviceNameFlagDeviceUnavailable = $01;
 	sgDeviceNameFlagShowInputsAsDevices = $02;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	SGDeviceListRecordPtr = ^SGDeviceListRecord;
 	SGDeviceListRecord = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		count: SInt16;
 		selectedIndex: SInt16;
@@ -24612,6 +24921,8 @@ function SGInitialize( s: SeqGrabComponent ): ComponentResult; external name '_S
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		count:					SInt16;
 		selectedIndex:			SInt16;
 		reserved:				SInt32;								{  zero }
@@ -24672,11 +24983,15 @@ const
 	 *    Windows:          in qtmlClient.lib 3.0 and later
 	 	}
 function SGInitialize(s: SeqGrabComponent): ComponentResult; external name '_SGInitialize';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetDataOutput()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -24688,17 +25003,23 @@ function SGSetDataOutput( s: SeqGrabComponent; const (*var*) movieFile: FSSpec; 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetDataOutput(s: SeqGrabComponent; const (*var*) movieFile: FSSpec; whereFlags: SInt32): ComponentResult; external name '_SGSetDataOutput';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetDataOutput()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -24710,17 +25031,23 @@ function SGGetDataOutput( s: SeqGrabComponent; var movieFile: FSSpec; var whereF
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetDataOutput(s: SeqGrabComponent; var movieFile: FSSpec; var whereFlags: SInt32): ComponentResult; external name '_SGGetDataOutput';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetGWorld()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -24732,17 +25059,23 @@ function SGSetGWorld( s: SeqGrabComponent; gp: CGrafPtr; gd: GDHandle ): Compone
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetGWorld(s: SeqGrabComponent; gp: CGrafPtr; gd: GDHandle): ComponentResult; external name '_SGSetGWorld';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetGWorld()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -24754,17 +25087,23 @@ function SGGetGWorld( s: SeqGrabComponent; var gp: CGrafPtr; var gd: GDHandle ):
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetGWorld(s: SeqGrabComponent; var gp: CGrafPtr; var gd: GDHandle): ComponentResult; external name '_SGGetGWorld';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGNewChannel()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -24776,17 +25115,23 @@ function SGNewChannel( s: SeqGrabComponent; channelType: OSType; var ref: SGChan
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGNewChannel(s: SeqGrabComponent; channelType: OSType; var ref: SGChannel): ComponentResult; external name '_SGNewChannel';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGDisposeChannel()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -24798,17 +25143,23 @@ function SGDisposeChannel( s: SeqGrabComponent; c: SGChannel ): ComponentResult;
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGDisposeChannel(s: SeqGrabComponent; c: SGChannel): ComponentResult; external name '_SGDisposeChannel';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGStartPreview()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -24820,17 +25171,23 @@ function SGStartPreview( s: SeqGrabComponent ): ComponentResult; external name '
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGStartPreview(s: SeqGrabComponent): ComponentResult; external name '_SGStartPreview';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGStartRecord()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -24842,17 +25199,23 @@ function SGStartRecord( s: SeqGrabComponent ): ComponentResult; external name '_
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGStartRecord(s: SeqGrabComponent): ComponentResult; external name '_SGStartRecord';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGIdle()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -24864,17 +25227,23 @@ function SGIdle( s: SeqGrabComponent ): ComponentResult; external name '_SGIdle'
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGIdle(s: SeqGrabComponent): ComponentResult; external name '_SGIdle';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGStop()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -24886,17 +25255,23 @@ function SGStop( s: SeqGrabComponent ): ComponentResult; external name '_SGStop'
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGStop(s: SeqGrabComponent): ComponentResult; external name '_SGStop';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGPause()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -24908,17 +25283,23 @@ function SGPause( s: SeqGrabComponent; pause: ByteParameter ): ComponentResult; 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGPause(s: SeqGrabComponent; pause: ByteParameter): ComponentResult; external name '_SGPause';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGPrepare()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -24930,17 +25311,23 @@ function SGPrepare( s: SeqGrabComponent; prepareForPreview: Boolean; prepareForR
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGPrepare(s: SeqGrabComponent; prepareForPreview: boolean; prepareForRecord: boolean): ComponentResult; external name '_SGPrepare';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGRelease()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -24952,17 +25339,23 @@ function SGRelease( s: SeqGrabComponent ): ComponentResult; external name '_SGRe
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGRelease(s: SeqGrabComponent): ComponentResult; external name '_SGRelease';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetMovie()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -24974,17 +25367,23 @@ function SGGetMovie( s: SeqGrabComponent ): Movie; external name '_SGGetMovie';
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetMovie(s: SeqGrabComponent): Movie; external name '_SGGetMovie';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetMaximumRecordTime()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -24996,17 +25395,23 @@ function SGSetMaximumRecordTime( s: SeqGrabComponent; ticks: UNSIGNEDLONG ): Com
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetMaximumRecordTime(s: SeqGrabComponent; ticks: UInt32): ComponentResult; external name '_SGSetMaximumRecordTime';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetMaximumRecordTime()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25018,17 +25423,23 @@ function SGGetMaximumRecordTime( s: SeqGrabComponent; var ticks: UNSIGNEDLONG ):
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetMaximumRecordTime(s: SeqGrabComponent; var ticks: UInt32): ComponentResult; external name '_SGGetMaximumRecordTime';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetStorageSpaceRemaining()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25040,17 +25451,23 @@ function SGGetStorageSpaceRemaining( s: SeqGrabComponent; var bytes: UNSIGNEDLON
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetStorageSpaceRemaining(s: SeqGrabComponent; var bytes: UInt32): ComponentResult; external name '_SGGetStorageSpaceRemaining';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetTimeRemaining()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25062,17 +25479,23 @@ function SGGetTimeRemaining( s: SeqGrabComponent; var ticksLeft: SIGNEDLONG ): C
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetTimeRemaining(s: SeqGrabComponent; var ticksLeft: SInt32): ComponentResult; external name '_SGGetTimeRemaining';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGrabPict()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25084,17 +25507,23 @@ function SGGrabPict( s: SeqGrabComponent; var p: PicHandle; const (*var*) bounds
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGrabPict(s: SeqGrabComponent; var p: PicHandle; const (*var*) bounds: Rect; offscreenDepth: SInt16; grabPictFlags: SInt32): ComponentResult; external name '_SGGrabPict';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetLastMovieResID()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25106,17 +25535,23 @@ function SGGetLastMovieResID( s: SeqGrabComponent; var resID: SInt16 ): Componen
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetLastMovieResID(s: SeqGrabComponent; var resID: SInt16): ComponentResult; external name '_SGGetLastMovieResID';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetFlags()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25128,17 +25563,23 @@ function SGSetFlags( s: SeqGrabComponent; sgFlags: SIGNEDLONG ): ComponentResult
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetFlags(s: SeqGrabComponent; sgFlags: SInt32): ComponentResult; external name '_SGSetFlags';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetFlags()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25150,17 +25591,23 @@ function SGGetFlags( s: SeqGrabComponent; var sgFlags: SIGNEDLONG ): ComponentRe
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetFlags(s: SeqGrabComponent; var sgFlags: SInt32): ComponentResult; external name '_SGGetFlags';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetDataProc()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25172,17 +25619,23 @@ function SGSetDataProc( s: SeqGrabComponent; proc: SGDataUPP; refCon: SIGNEDLONG
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetDataProc(s: SeqGrabComponent; proc: SGDataUPP; refCon: SInt32): ComponentResult; external name '_SGSetDataProc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGNewChannelFromComponent()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25194,17 +25647,23 @@ function SGNewChannelFromComponent( s: SeqGrabComponent; var newChannel: SGChann
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGNewChannelFromComponent(s: SeqGrabComponent; var newChannel: SGChannel; sgChannelComponent: Component): ComponentResult; external name '_SGNewChannelFromComponent';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGDisposeDeviceList()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25216,17 +25675,23 @@ function SGDisposeDeviceList( s: SeqGrabComponent; list: SGDeviceList ): Compone
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGDisposeDeviceList(s: SeqGrabComponent; list: SGDeviceList): ComponentResult; external name '_SGDisposeDeviceList';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGAppendDeviceListToMenu()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25238,17 +25703,23 @@ function SGAppendDeviceListToMenu( s: SeqGrabComponent; list: SGDeviceList; mh: 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGAppendDeviceListToMenu(s: SeqGrabComponent; list: SGDeviceList; mh: MenuRef): ComponentResult; external name '_SGAppendDeviceListToMenu';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25260,17 +25731,23 @@ function SGSetSettings( s: SeqGrabComponent; ud: UserData; flags: SIGNEDLONG ): 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetSettings(s: SeqGrabComponent; ud: UserData; flags: SInt32): ComponentResult; external name '_SGSetSettings';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25282,17 +25759,23 @@ function SGGetSettings( s: SeqGrabComponent; var ud: UserData; flags: SIGNEDLONG
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetSettings(s: SeqGrabComponent; var ud: UserData; flags: SInt32): ComponentResult; external name '_SGGetSettings';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetIndChannel()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25304,17 +25787,23 @@ function SGGetIndChannel( s: SeqGrabComponent; index: SInt16; var ref: SGChannel
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetIndChannel(s: SeqGrabComponent; index: SInt16; var ref: SGChannel; var chanType: OSType): ComponentResult; external name '_SGGetIndChannel';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGUpdate()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25326,17 +25815,23 @@ function SGUpdate( s: SeqGrabComponent; updateRgn: RgnHandle ): ComponentResult;
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGUpdate(s: SeqGrabComponent; updateRgn: RgnHandle): ComponentResult; external name '_SGUpdate';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetPause()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25363,6 +25858,8 @@ function SGSettingsDialog( s: SeqGrabComponent; c: SGChannel; numPanels: SInt16;
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -25381,11 +25878,15 @@ type
 	 *    Windows:          in qtmlClient.lib 3.0 and later
 	 	}
 function SGSettingsDialog(s: SeqGrabComponent; c: SGChannel; numPanels: SInt16; panelList: ConstComponentListPtr; flags: SInt32; proc: SGModalFilterUPP; procRefNum: SInt32): ComponentResult; external name '_SGSettingsDialog';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetAlignmentProc()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25397,17 +25898,23 @@ function SGGetAlignmentProc( s: SeqGrabComponent; alignmentProc: ICMAlignmentPro
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetAlignmentProc(s: SeqGrabComponent; alignmentProc: ICMAlignmentProcRecordPtr): ComponentResult; external name '_SGGetAlignmentProc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetChannelSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25419,17 +25926,23 @@ function SGSetChannelSettings( s: SeqGrabComponent; c: SGChannel; ud: UserData; 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetChannelSettings(s: SeqGrabComponent; c: SGChannel; ud: UserData; flags: SInt32): ComponentResult; external name '_SGSetChannelSettings';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetChannelSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25441,11 +25954,14 @@ function SGGetChannelSettings( s: SeqGrabComponent; c: SGChannel; var ud: UserDa
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function SGGetChannelSettings(s: SeqGrabComponent; c: SGChannel; var ud: UserData; flags: SInt32): ComponentResult; external name '_SGGetChannelSettings';
 >>>>>>> graemeg/fixes_2_2
 {
@@ -25463,17 +25979,28 @@ function SGGetMode( s: SeqGrabComponent; var previewMode: Boolean; var recordMod
 
 
 =======
+=======
+function SGGetChannelSettings(s: SeqGrabComponent; c: SGChannel; var ud: UserData; flags: SInt32): ComponentResult; external name '_SGGetChannelSettings';
+{
+ *  SGGetMode()
+ *  
+ *  Availability:
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetMode(s: SeqGrabComponent; var previewMode: boolean; var recordMode: boolean): ComponentResult; external name '_SGGetMode';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetDataRef()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25485,17 +26012,23 @@ function SGSetDataRef( s: SeqGrabComponent; dataRef: Handle; dataRefType: OSType
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetDataRef(s: SeqGrabComponent; dataRef: Handle; dataRefType: OSType; whereFlags: SInt32): ComponentResult; external name '_SGSetDataRef';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetDataRef()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25507,17 +26040,23 @@ function SGGetDataRef( s: SeqGrabComponent; var dataRef: Handle; var dataRefType
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetDataRef(s: SeqGrabComponent; var dataRef: Handle; var dataRefType: OSType; var whereFlags: SInt32): ComponentResult; external name '_SGGetDataRef';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGNewOutput()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25529,17 +26068,23 @@ function SGNewOutput( s: SeqGrabComponent; dataRef: Handle; dataRefType: OSType;
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGNewOutput(s: SeqGrabComponent; dataRef: Handle; dataRefType: OSType; whereFlags: SInt32; var sgOut: SGOutput): ComponentResult; external name '_SGNewOutput';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGDisposeOutput()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25551,17 +26096,23 @@ function SGDisposeOutput( s: SeqGrabComponent; sgOut: SGOutput ): ComponentResul
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGDisposeOutput(s: SeqGrabComponent; sgOut: SGOutput): ComponentResult; external name '_SGDisposeOutput';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetOutputFlags()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25573,17 +26124,23 @@ function SGSetOutputFlags( s: SeqGrabComponent; sgOut: SGOutput; whereFlags: SIG
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetOutputFlags(s: SeqGrabComponent; sgOut: SGOutput; whereFlags: SInt32): ComponentResult; external name '_SGSetOutputFlags';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetChannelOutput()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25595,17 +26152,23 @@ function SGSetChannelOutput( s: SeqGrabComponent; c: SGChannel; sgOut: SGOutput 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetChannelOutput(s: SeqGrabComponent; c: SGChannel; sgOut: SGOutput): ComponentResult; external name '_SGSetChannelOutput';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetDataOutputStorageSpaceRemaining()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25617,17 +26180,23 @@ function SGGetDataOutputStorageSpaceRemaining( s: SeqGrabComponent; sgOut: SGOut
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetDataOutputStorageSpaceRemaining(s: SeqGrabComponent; sgOut: SGOutput; var space: UInt32): ComponentResult; external name '_SGGetDataOutputStorageSpaceRemaining';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGHandleUpdateEvent()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25639,17 +26208,23 @@ function SGHandleUpdateEvent( s: SeqGrabComponent; const (*var*) event: EventRec
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGHandleUpdateEvent(s: SeqGrabComponent; const (*var*) event: EventRecord; var handled: boolean): ComponentResult; external name '_SGHandleUpdateEvent';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetOutputNextOutput()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25661,17 +26236,23 @@ function SGSetOutputNextOutput( s: SeqGrabComponent; sgOut: SGOutput; nextOut: S
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetOutputNextOutput(s: SeqGrabComponent; sgOut: SGOutput; nextOut: SGOutput): ComponentResult; external name '_SGSetOutputNextOutput';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetOutputNextOutput()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25683,17 +26264,23 @@ function SGGetOutputNextOutput( s: SeqGrabComponent; sgOut: SGOutput; var nextOu
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetOutputNextOutput(s: SeqGrabComponent; sgOut: SGOutput; var nextOut: SGOutput): ComponentResult; external name '_SGGetOutputNextOutput';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetOutputMaximumOffset()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25705,17 +26292,23 @@ function SGSetOutputMaximumOffset( s: SeqGrabComponent; sgOut: SGOutput; const (
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetOutputMaximumOffset(s: SeqGrabComponent; sgOut: SGOutput; const (*var*) maxOffset: wide): ComponentResult; external name '_SGSetOutputMaximumOffset';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetOutputMaximumOffset()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25727,17 +26320,23 @@ function SGGetOutputMaximumOffset( s: SeqGrabComponent; sgOut: SGOutput; var max
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetOutputMaximumOffset(s: SeqGrabComponent; sgOut: SGOutput; var maxOffset: wide): ComponentResult; external name '_SGGetOutputMaximumOffset';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetOutputDataReference()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25749,17 +26348,23 @@ function SGGetOutputDataReference( s: SeqGrabComponent; sgOut: SGOutput; var dat
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetOutputDataReference(s: SeqGrabComponent; sgOut: SGOutput; var dataRef: Handle; var dataRefType: OSType): ComponentResult; external name '_SGGetOutputDataReference';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGWriteExtendedMovieData()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25771,17 +26376,23 @@ function SGWriteExtendedMovieData( s: SeqGrabComponent; c: SGChannel; p: Ptr; le
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGWriteExtendedMovieData(s: SeqGrabComponent; c: SGChannel; p: Ptr; len: SInt32; var offset: wide; var sgOut: SGOutput): ComponentResult; external name '_SGWriteExtendedMovieData';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetStorageSpaceRemaining64()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
@@ -25793,17 +26404,23 @@ function SGGetStorageSpaceRemaining64( s: SeqGrabComponent; var bytes: wide ): C
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
 function SGGetStorageSpaceRemaining64(s: SeqGrabComponent; var bytes: wide): ComponentResult; external name '_SGGetStorageSpaceRemaining64';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetDataOutputStorageSpaceRemaining64()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -25815,13 +26432,18 @@ function SGGetDataOutputStorageSpaceRemaining64( s: SeqGrabComponent; sgOut: SGO
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
 function SGGetDataOutputStorageSpaceRemaining64(s: SeqGrabComponent; sgOut: SGOutput; var space: wide): ComponentResult; external name '_SGGetDataOutputStorageSpaceRemaining64';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     calls from Channel to seqGrab
 }
@@ -25829,6 +26451,7 @@ function SGGetDataOutputStorageSpaceRemaining64(s: SeqGrabComponent; sgOut: SGOu
  *  SGWriteMovieData()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25840,17 +26463,23 @@ function SGWriteMovieData( s: SeqGrabComponent; c: SGChannel; p: Ptr; len: SIGNE
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGWriteMovieData(s: SeqGrabComponent; c: SGChannel; p: Ptr; len: SInt32; var offset: SInt32): ComponentResult; external name '_SGWriteMovieData';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGAddFrameReference()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25862,17 +26491,23 @@ function SGAddFrameReference( s: SeqGrabComponent; frameInfo: SeqGrabFrameInfoPt
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGAddFrameReference(s: SeqGrabComponent; frameInfo: SeqGrabFrameInfoPtr): ComponentResult; external name '_SGAddFrameReference';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetNextFrameReference()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25884,17 +26519,23 @@ function SGGetNextFrameReference( s: SeqGrabComponent; frameInfo: SeqGrabFrameIn
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetNextFrameReference(s: SeqGrabComponent; frameInfo: SeqGrabFrameInfoPtr; var frameDuration: TimeValue; var frameNumber: SInt32): ComponentResult; external name '_SGGetNextFrameReference';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetTimeBase()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25906,17 +26547,23 @@ function SGGetTimeBase( s: SeqGrabComponent; var tb: TimeBase ): ComponentResult
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetTimeBase(s: SeqGrabComponent; var tb: TimeBase): ComponentResult; external name '_SGGetTimeBase';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSortDeviceList()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25928,17 +26575,23 @@ function SGSortDeviceList( s: SeqGrabComponent; list: SGDeviceList ): ComponentR
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSortDeviceList(s: SeqGrabComponent; list: SGDeviceList): ComponentResult; external name '_SGSortDeviceList';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGAddMovieData()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25950,17 +26603,23 @@ function SGAddMovieData( s: SeqGrabComponent; c: SGChannel; p: Ptr; len: SIGNEDL
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGAddMovieData(s: SeqGrabComponent; c: SGChannel; p: Ptr; len: SInt32; var offset: SInt32; chRefCon: SInt32; time: TimeValue; writeType: SInt16): ComponentResult; external name '_SGAddMovieData';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGChangedSource()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25972,17 +26631,23 @@ function SGChangedSource( s: SeqGrabComponent; c: SGChannel ): ComponentResult; 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGChangedSource(s: SeqGrabComponent; c: SGChannel): ComponentResult; external name '_SGChangedSource';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGAddExtendedFrameReference()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -25994,17 +26659,23 @@ function SGAddExtendedFrameReference( s: SeqGrabComponent; frameInfo: SeqGrabExt
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGAddExtendedFrameReference(s: SeqGrabComponent; frameInfo: SeqGrabExtendedFrameInfoPtr): ComponentResult; external name '_SGAddExtendedFrameReference';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetNextExtendedFrameReference()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26016,17 +26687,23 @@ function SGGetNextExtendedFrameReference( s: SeqGrabComponent; frameInfo: SeqGra
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetNextExtendedFrameReference(s: SeqGrabComponent; frameInfo: SeqGrabExtendedFrameInfoPtr; var frameDuration: TimeValue; var frameNumber: SInt32): ComponentResult; external name '_SGGetNextExtendedFrameReference';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGAddExtendedMovieData()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26038,17 +26715,23 @@ function SGAddExtendedMovieData( s: SeqGrabComponent; c: SGChannel; p: Ptr; len:
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGAddExtendedMovieData(s: SeqGrabComponent; c: SGChannel; p: Ptr; len: SInt32; var offset: wide; chRefCon: SInt32; time: TimeValue; writeType: SInt16; var whichOutput: SGOutput): ComponentResult; external name '_SGAddExtendedMovieData';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGAddOutputDataRefToMedia()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26060,17 +26743,23 @@ function SGAddOutputDataRefToMedia( s: SeqGrabComponent; sgOut: SGOutput; theMed
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGAddOutputDataRefToMedia(s: SeqGrabComponent; sgOut: SGOutput; theMedia: Media; desc: SampleDescriptionHandle): ComponentResult; external name '_SGAddOutputDataRefToMedia';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetSettingsSummary()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -26082,19 +26771,25 @@ function SGSetSettingsSummary( s: SeqGrabComponent; summaryText: Handle ): Compo
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
 function SGSetSettingsSummary(s: SeqGrabComponent; summaryText: Handle): ComponentResult; external name '_SGSetSettingsSummary';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {** Sequence Grab CHANNEL Component Stuff **}
 
 {
  *  SGSetChannelUsage()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26106,17 +26801,23 @@ function SGSetChannelUsage( c: SGChannel; usage: SIGNEDLONG ): ComponentResult; 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetChannelUsage(c: SGChannel; usage: SInt32): ComponentResult; external name '_SGSetChannelUsage';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetChannelUsage()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26128,17 +26829,23 @@ function SGGetChannelUsage( c: SGChannel; var usage: SIGNEDLONG ): ComponentResu
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetChannelUsage(c: SGChannel; var usage: SInt32): ComponentResult; external name '_SGGetChannelUsage';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetChannelBounds()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26150,17 +26857,23 @@ function SGSetChannelBounds( c: SGChannel; const (*var*) bounds: Rect ): Compone
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetChannelBounds(c: SGChannel; const (*var*) bounds: Rect): ComponentResult; external name '_SGSetChannelBounds';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetChannelBounds()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26172,17 +26885,23 @@ function SGGetChannelBounds( c: SGChannel; var bounds: Rect ): ComponentResult; 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetChannelBounds(c: SGChannel; var bounds: Rect): ComponentResult; external name '_SGGetChannelBounds';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetChannelVolume()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26194,17 +26913,23 @@ function SGSetChannelVolume( c: SGChannel; volume: SInt16 ): ComponentResult; ex
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetChannelVolume(c: SGChannel; volume: SInt16): ComponentResult; external name '_SGSetChannelVolume';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetChannelVolume()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26216,17 +26941,23 @@ function SGGetChannelVolume( c: SGChannel; var volume: SInt16 ): ComponentResult
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetChannelVolume(c: SGChannel; var volume: SInt16): ComponentResult; external name '_SGGetChannelVolume';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetChannelInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26238,17 +26969,23 @@ function SGGetChannelInfo( c: SGChannel; var channelInfo: SIGNEDLONG ): Componen
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetChannelInfo(c: SGChannel; var channelInfo: SInt32): ComponentResult; external name '_SGGetChannelInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetChannelPlayFlags()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26260,17 +26997,23 @@ function SGSetChannelPlayFlags( c: SGChannel; playFlags: SIGNEDLONG ): Component
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetChannelPlayFlags(c: SGChannel; playFlags: SInt32): ComponentResult; external name '_SGSetChannelPlayFlags';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetChannelPlayFlags()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26282,17 +27025,23 @@ function SGGetChannelPlayFlags( c: SGChannel; var playFlags: SIGNEDLONG ): Compo
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetChannelPlayFlags(c: SGChannel; var playFlags: SInt32): ComponentResult; external name '_SGGetChannelPlayFlags';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetChannelMaxFrames()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26304,17 +27053,23 @@ function SGSetChannelMaxFrames( c: SGChannel; frameCount: SIGNEDLONG ): Componen
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetChannelMaxFrames(c: SGChannel; frameCount: SInt32): ComponentResult; external name '_SGSetChannelMaxFrames';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetChannelMaxFrames()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26326,17 +27081,23 @@ function SGGetChannelMaxFrames( c: SGChannel; var frameCount: SIGNEDLONG ): Comp
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetChannelMaxFrames(c: SGChannel; var frameCount: SInt32): ComponentResult; external name '_SGGetChannelMaxFrames';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetChannelRefCon()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26348,11 +27109,14 @@ function SGSetChannelRefCon( c: SGChannel; refCon: SIGNEDLONG ): ComponentResult
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function SGSetChannelRefCon(c: SGChannel; refCon: SInt32): ComponentResult; external name '_SGSetChannelRefCon';
 >>>>>>> graemeg/fixes_2_2
 {
@@ -26370,17 +27134,28 @@ function SGSetChannelClip( c: SGChannel; theClip: RgnHandle ): ComponentResult; 
 
 
 =======
+=======
+function SGSetChannelRefCon(c: SGChannel; refCon: SInt32): ComponentResult; external name '_SGSetChannelRefCon';
+{
+ *  SGSetChannelClip()
+ *  
+ *  Availability:
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetChannelClip(c: SGChannel; theClip: RgnHandle): ComponentResult; external name '_SGSetChannelClip';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetChannelClip()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26392,17 +27167,23 @@ function SGGetChannelClip( c: SGChannel; var theClip: RgnHandle ): ComponentResu
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetChannelClip(c: SGChannel; var theClip: RgnHandle): ComponentResult; external name '_SGGetChannelClip';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetChannelSampleDescription()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26414,17 +27195,23 @@ function SGGetChannelSampleDescription( c: SGChannel; sampleDesc: Handle ): Comp
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetChannelSampleDescription(c: SGChannel; sampleDesc: Handle): ComponentResult; external name '_SGGetChannelSampleDescription';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetChannelDeviceList()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26436,17 +27223,23 @@ function SGGetChannelDeviceList( c: SGChannel; selectionFlags: SIGNEDLONG; var l
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetChannelDeviceList(c: SGChannel; selectionFlags: SInt32; var list: SGDeviceList): ComponentResult; external name '_SGGetChannelDeviceList';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetChannelDevice()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26458,17 +27251,23 @@ function SGSetChannelDevice( c: SGChannel; name: StringPtr ): ComponentResult; e
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetChannelDevice(c: SGChannel; name: StringPtr): ComponentResult; external name '_SGSetChannelDevice';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetChannelMatrix()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26480,17 +27279,23 @@ function SGSetChannelMatrix( c: SGChannel; const (*var*) m: MatrixRecord ): Comp
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetChannelMatrix(c: SGChannel; const (*var*) m: MatrixRecord): ComponentResult; external name '_SGSetChannelMatrix';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetChannelMatrix()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26502,17 +27307,23 @@ function SGGetChannelMatrix( c: SGChannel; var m: MatrixRecord ): ComponentResul
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetChannelMatrix(c: SGChannel; var m: MatrixRecord): ComponentResult; external name '_SGGetChannelMatrix';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetChannelTimeScale()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26524,17 +27335,23 @@ function SGGetChannelTimeScale( c: SGChannel; var scale: TimeScale ): ComponentR
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetChannelTimeScale(c: SGChannel; var scale: TimeScale): ComponentResult; external name '_SGGetChannelTimeScale';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGChannelPutPicture()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26546,17 +27363,23 @@ function SGChannelPutPicture( c: SGChannel ): ComponentResult; external name '_S
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGChannelPutPicture(c: SGChannel): ComponentResult; external name '_SGChannelPutPicture';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGChannelSetRequestedDataRate()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26568,17 +27391,23 @@ function SGChannelSetRequestedDataRate( c: SGChannel; bytesPerSecond: SIGNEDLONG
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGChannelSetRequestedDataRate(c: SGChannel; bytesPerSecond: SInt32): ComponentResult; external name '_SGChannelSetRequestedDataRate';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGChannelGetRequestedDataRate()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26590,17 +27419,23 @@ function SGChannelGetRequestedDataRate( c: SGChannel; var bytesPerSecond: SIGNED
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGChannelGetRequestedDataRate(c: SGChannel; var bytesPerSecond: SInt32): ComponentResult; external name '_SGChannelGetRequestedDataRate';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGChannelSetDataSourceName()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26612,17 +27447,23 @@ function SGChannelSetDataSourceName( c: SGChannel; const (*var*) name: Str255; s
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGChannelSetDataSourceName(c: SGChannel; const (*var*) name: Str255; scriptTag: ScriptCode): ComponentResult; external name '_SGChannelSetDataSourceName';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGChannelGetDataSourceName()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26634,17 +27475,23 @@ function SGChannelGetDataSourceName( c: SGChannel; var name: Str255; var scriptT
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGChannelGetDataSourceName(c: SGChannel; var name: Str255; var scriptTag: ScriptCode): ComponentResult; external name '_SGChannelGetDataSourceName';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGChannelSetCodecSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
@@ -26656,17 +27503,23 @@ function SGChannelSetCodecSettings( c: SGChannel; settings: Handle ): ComponentR
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
 function SGChannelSetCodecSettings(c: SGChannel; settings: Handle): ComponentResult; external name '_SGChannelSetCodecSettings';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGChannelGetCodecSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
@@ -26678,17 +27531,23 @@ function SGChannelGetCodecSettings( c: SGChannel; var settings: Handle ): Compon
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
 function SGChannelGetCodecSettings(c: SGChannel; var settings: Handle): ComponentResult; external name '_SGChannelGetCodecSettings';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetChannelTimeBase()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
@@ -26700,17 +27559,23 @@ function SGGetChannelTimeBase( c: SGChannel; var tb: TimeBase ): ComponentResult
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
 function SGGetChannelTimeBase(c: SGChannel; var tb: TimeBase): ComponentResult; external name '_SGGetChannelTimeBase';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetChannelRefCon()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -26722,18 +27587,24 @@ function SGGetChannelRefCon( c: SGChannel; var refCon: SIGNEDLONG ): ComponentRe
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
 function SGGetChannelRefCon(c: SGChannel; var refCon: SInt32): ComponentResult; external name '_SGGetChannelRefCon';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { A utility call to find out the current device and input names, instead of having to call GetDeviceList and walk it yourself }
 {
  *  SGGetChannelDeviceAndInputNames()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -26745,18 +27616,24 @@ function SGGetChannelDeviceAndInputNames( c: SGChannel; var outDeviceName: Str25
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
 function SGGetChannelDeviceAndInputNames(c: SGChannel; var outDeviceName: Str255; var outInputName: Str255; var outInputNumber: SInt16): ComponentResult; external name '_SGGetChannelDeviceAndInputNames';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { A media format independent call for this. Inputs start at 0 here (Sound starts at 1, VDIGs at 0 in direct calls) }
 {
  *  SGSetChannelDeviceInput()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -26787,6 +27664,8 @@ function SGSetChannelSettingsStateChanging( c: SGChannel; inFlags: UInt32 ): Com
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
@@ -26810,7 +27689,10 @@ const
 	 *    Windows:          in qtmlClient.lib 6.0 and later
 	 	}
 function SGSetChannelSettingsStateChanging(c: SGChannel; inFlags: UInt32): ComponentResult; external name '_SGSetChannelSettingsStateChanging';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     calls from seqGrab to Channel
 }
@@ -26818,6 +27700,7 @@ function SGSetChannelSettingsStateChanging(c: SGChannel; inFlags: UInt32): Compo
  *  SGInitChannel()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26829,17 +27712,23 @@ function SGInitChannel( c: SGChannel; owner: SeqGrabComponent ): ComponentResult
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGInitChannel(c: SGChannel; owner: SeqGrabComponent): ComponentResult; external name '_SGInitChannel';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGWriteSamples()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26851,17 +27740,23 @@ function SGWriteSamples( c: SGChannel; m: Movie; theFile: AliasHandle ): Compone
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGWriteSamples(c: SGChannel; m: Movie; theFile: AliasHandle): ComponentResult; external name '_SGWriteSamples';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetDataRate()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26873,17 +27768,23 @@ function SGGetDataRate( c: SGChannel; var bytesPerSecond: SIGNEDLONG ): Componen
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetDataRate(c: SGChannel; var bytesPerSecond: SInt32): ComponentResult; external name '_SGGetDataRate';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGAlignChannelRect()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26895,13 +27796,18 @@ function SGAlignChannelRect( c: SGChannel; var r: Rect ): ComponentResult; exter
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGAlignChannelRect(c: SGChannel; var r: Rect): ComponentResult; external name '_SGAlignChannelRect';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     Dorky dialog panel calls
 }
@@ -26909,6 +27815,7 @@ function SGAlignChannelRect(c: SGChannel; var r: Rect): ComponentResult; externa
  *  SGPanelGetDitl()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26920,17 +27827,23 @@ function SGPanelGetDitl( s: SeqGrabComponent; var ditl: Handle ): ComponentResul
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGPanelGetDitl(s: SeqGrabComponent; var ditl: Handle): ComponentResult; external name '_SGPanelGetDitl';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGPanelGetTitle()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26942,17 +27855,23 @@ function SGPanelGetTitle( s: SeqGrabComponent; var title: Str255 ): ComponentRes
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGPanelGetTitle(s: SeqGrabComponent; var title: Str255): ComponentResult; external name '_SGPanelGetTitle';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGPanelCanRun()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26964,17 +27883,23 @@ function SGPanelCanRun( s: SeqGrabComponent; c: SGChannel ): ComponentResult; ex
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGPanelCanRun(s: SeqGrabComponent; c: SGChannel): ComponentResult; external name '_SGPanelCanRun';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGPanelInstall()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -26986,17 +27911,23 @@ function SGPanelInstall( s: SeqGrabComponent; c: SGChannel; d: DialogRef; itemOf
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGPanelInstall(s: SeqGrabComponent; c: SGChannel; d: DialogRef; itemOffset: SInt16): ComponentResult; external name '_SGPanelInstall';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGPanelEvent()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27008,17 +27939,23 @@ function SGPanelEvent( s: SeqGrabComponent; c: SGChannel; d: DialogRef; itemOffs
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGPanelEvent(s: SeqGrabComponent; c: SGChannel; d: DialogRef; itemOffset: SInt16; const (*var*) theEvent: EventRecord; var itemHit: SInt16; var handled: boolean): ComponentResult; external name '_SGPanelEvent';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGPanelItem()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27030,17 +27967,23 @@ function SGPanelItem( s: SeqGrabComponent; c: SGChannel; d: DialogRef; itemOffse
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGPanelItem(s: SeqGrabComponent; c: SGChannel; d: DialogRef; itemOffset: SInt16; itemNum: SInt16): ComponentResult; external name '_SGPanelItem';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGPanelRemove()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27052,17 +27995,23 @@ function SGPanelRemove( s: SeqGrabComponent; c: SGChannel; d: DialogRef; itemOff
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGPanelRemove(s: SeqGrabComponent; c: SGChannel; d: DialogRef; itemOffset: SInt16): ComponentResult; external name '_SGPanelRemove';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGPanelSetGrabber()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27074,17 +28023,23 @@ function SGPanelSetGrabber( s: SeqGrabComponent; sg: SeqGrabComponent ): Compone
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGPanelSetGrabber(s: SeqGrabComponent; sg: SeqGrabComponent): ComponentResult; external name '_SGPanelSetGrabber';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGPanelSetResFile()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27096,17 +28051,23 @@ function SGPanelSetResFile( s: SeqGrabComponent; resRef: SInt16 ): ComponentResu
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGPanelSetResFile(s: SeqGrabComponent; resRef: SInt16): ComponentResult; external name '_SGPanelSetResFile';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGPanelGetSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27118,17 +28079,23 @@ function SGPanelGetSettings( s: SeqGrabComponent; c: SGChannel; var ud: UserData
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGPanelGetSettings(s: SeqGrabComponent; c: SGChannel; var ud: UserData; flags: SInt32): ComponentResult; external name '_SGPanelGetSettings';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGPanelSetSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27140,17 +28107,23 @@ function SGPanelSetSettings( s: SeqGrabComponent; c: SGChannel; ud: UserData; fl
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGPanelSetSettings(s: SeqGrabComponent; c: SGChannel; ud: UserData; flags: SInt32): ComponentResult; external name '_SGPanelSetSettings';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGPanelValidateInput()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27162,17 +28135,23 @@ function SGPanelValidateInput( s: SeqGrabComponent; var ok: Boolean ): Component
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGPanelValidateInput(s: SeqGrabComponent; var ok: boolean): ComponentResult; external name '_SGPanelValidateInput';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGPanelSetEventFilter()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27184,13 +28163,18 @@ function SGPanelSetEventFilter( s: SeqGrabComponent; proc: SGModalFilterUPP; ref
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGPanelSetEventFilter(s: SeqGrabComponent; proc: SGModalFilterUPP; refCon: SInt32): ComponentResult; external name '_SGPanelSetEventFilter';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     SGPanelGetDITLForSize is used to retrieve user interface elements that fit within a specified size
     panel.  The component should return badComponentSelector for sizes it does not support.  The component
@@ -27198,6 +28182,7 @@ function SGPanelSetEventFilter(s: SeqGrabComponent; proc: SGModalFilterUPP; refC
     
     If SGPanelGetDITLForSize is unimplemented entirely, the panel is assumed to not have resizable UI elements.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kSGSmallestDITLSize = -1;   { requestedSize h and v set to this to retrieve small size}
@@ -27217,6 +28202,8 @@ function SGPanelGetDITLForSize( s: SeqGrabComponent; var ditl: Handle; var reque
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 const
 	kSGSmallestDITLSize			= -1;							{  requestedSize h and v set to this to retrieve small size }
@@ -27232,6 +28219,7 @@ const
 	 *    Windows:          in qtmlClient.lib 6.0 and later
 	 	}
 function SGPanelGetDITLForSize(s: SeqGrabComponent; var ditl: Handle; var requestedSize: Point): ComponentResult; external name '_SGPanelGetDITLForSize';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 {** Sequence Grab VIDEO CHANNEL Component Stuff **}
 {
@@ -27297,6 +28285,12 @@ function SGGetSrcVideoBounds( c: SGChannel; var r: Rect ): ComponentResult; exte
 
 
 =======
+=======
+{** Sequence Grab VIDEO CHANNEL Component Stuff **}
+{
+    Video stuff
+}
+>>>>>>> origin/fixes_2_2
 
 type
 	SGCompressInfoPtr = ^SGCompressInfo;
@@ -27433,11 +28427,15 @@ type
 	 *    Windows:          in qtmlClient.lib 3.0 and later
 	 	}
 function SGGetSrcVideoBounds(c: SGChannel; var r: Rect): ComponentResult; external name '_SGGetSrcVideoBounds';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetVideoRect()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27449,17 +28447,23 @@ function SGSetVideoRect( c: SGChannel; const (*var*) r: Rect ): ComponentResult;
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetVideoRect(c: SGChannel; const (*var*) r: Rect): ComponentResult; external name '_SGSetVideoRect';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetVideoRect()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27471,17 +28475,23 @@ function SGGetVideoRect( c: SGChannel; var r: Rect ): ComponentResult; external 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetVideoRect(c: SGChannel; var r: Rect): ComponentResult; external name '_SGGetVideoRect';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetVideoCompressorType()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27493,17 +28503,23 @@ function SGGetVideoCompressorType( c: SGChannel; var compressorType: OSType ): C
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetVideoCompressorType(c: SGChannel; var compressorType: OSType): ComponentResult; external name '_SGGetVideoCompressorType';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetVideoCompressorType()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27515,17 +28531,23 @@ function SGSetVideoCompressorType( c: SGChannel; compressorType: OSType ): Compo
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetVideoCompressorType(c: SGChannel; compressorType: OSType): ComponentResult; external name '_SGSetVideoCompressorType';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetVideoCompressor()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27537,17 +28559,23 @@ function SGSetVideoCompressor( c: SGChannel; depth: SInt16; compressor: Compress
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetVideoCompressor(c: SGChannel; depth: SInt16; compressor: CompressorComponent; spatialQuality: CodecQ; temporalQuality: CodecQ; keyFrameRate: SInt32): ComponentResult; external name '_SGSetVideoCompressor';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetVideoCompressor()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27559,17 +28587,23 @@ function SGGetVideoCompressor( c: SGChannel; var depth: SInt16; var compressor: 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetVideoCompressor(c: SGChannel; var depth: SInt16; var compressor: CompressorComponent; var spatialQuality: CodecQ; var temporalQuality: CodecQ; var keyFrameRate: SInt32): ComponentResult; external name '_SGGetVideoCompressor';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetVideoDigitizerComponent()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27581,17 +28615,23 @@ function SGGetVideoDigitizerComponent( c: SGChannel ): ComponentInstance; extern
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetVideoDigitizerComponent(c: SGChannel): ComponentInstance; external name '_SGGetVideoDigitizerComponent';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetVideoDigitizerComponent()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27603,17 +28643,23 @@ function SGSetVideoDigitizerComponent( c: SGChannel; vdig: ComponentInstance ): 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetVideoDigitizerComponent(c: SGChannel; vdig: ComponentInstance): ComponentResult; external name '_SGSetVideoDigitizerComponent';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGVideoDigitizerChanged()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27625,17 +28671,23 @@ function SGVideoDigitizerChanged( c: SGChannel ): ComponentResult; external name
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGVideoDigitizerChanged(c: SGChannel): ComponentResult; external name '_SGVideoDigitizerChanged';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetVideoBottlenecks()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27647,17 +28699,23 @@ function SGSetVideoBottlenecks( c: SGChannel; var vb: VideoBottles ): ComponentR
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetVideoBottlenecks(c: SGChannel; var vb: VideoBottles): ComponentResult; external name '_SGSetVideoBottlenecks';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetVideoBottlenecks()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27669,17 +28727,23 @@ function SGGetVideoBottlenecks( c: SGChannel; var vb: VideoBottles ): ComponentR
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetVideoBottlenecks(c: SGChannel; var vb: VideoBottles): ComponentResult; external name '_SGGetVideoBottlenecks';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGrabFrame()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27691,17 +28755,23 @@ function SGGrabFrame( c: SGChannel; bufferNum: SInt16 ): ComponentResult; extern
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGrabFrame(c: SGChannel; bufferNum: SInt16): ComponentResult; external name '_SGGrabFrame';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGrabFrameComplete()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27713,17 +28783,23 @@ function SGGrabFrameComplete( c: SGChannel; bufferNum: SInt16; var done: Boolean
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGrabFrameComplete(c: SGChannel; bufferNum: SInt16; var done: boolean): ComponentResult; external name '_SGGrabFrameComplete';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGDisplayFrame()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27735,17 +28811,23 @@ function SGDisplayFrame( c: SGChannel; bufferNum: SInt16; const (*var*) mp: Matr
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGDisplayFrame(c: SGChannel; bufferNum: SInt16; const (*var*) mp: MatrixRecord; clipRgn: RgnHandle): ComponentResult; external name '_SGDisplayFrame';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGCompressFrame()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27757,17 +28839,23 @@ function SGCompressFrame( c: SGChannel; bufferNum: SInt16 ): ComponentResult; ex
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGCompressFrame(c: SGChannel; bufferNum: SInt16): ComponentResult; external name '_SGCompressFrame';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGCompressFrameComplete()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27779,17 +28867,23 @@ function SGCompressFrameComplete( c: SGChannel; bufferNum: SInt16; var done: Boo
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGCompressFrameComplete(c: SGChannel; bufferNum: SInt16; var done: boolean; var ci: SGCompressInfo): ComponentResult; external name '_SGCompressFrameComplete';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGAddFrame()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27801,17 +28895,23 @@ function SGAddFrame( c: SGChannel; bufferNum: SInt16; atTime: TimeValue; scale: 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGAddFrame(c: SGChannel; bufferNum: SInt16; atTime: TimeValue; scale: TimeScale; const (*var*) ci: SGCompressInfo): ComponentResult; external name '_SGAddFrame';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGTransferFrameForCompress()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27823,17 +28923,23 @@ function SGTransferFrameForCompress( c: SGChannel; bufferNum: SInt16; const (*va
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGTransferFrameForCompress(c: SGChannel; bufferNum: SInt16; const (*var*) mp: MatrixRecord; clipRgn: RgnHandle): ComponentResult; external name '_SGTransferFrameForCompress';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetCompressBuffer()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27845,17 +28951,23 @@ function SGSetCompressBuffer( c: SGChannel; depth: SInt16; const (*var*) compres
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetCompressBuffer(c: SGChannel; depth: SInt16; const (*var*) compressSize: Rect): ComponentResult; external name '_SGSetCompressBuffer';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetCompressBuffer()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27867,17 +28979,23 @@ function SGGetCompressBuffer( c: SGChannel; var depth: SInt16; var compressSize:
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetCompressBuffer(c: SGChannel; var depth: SInt16; var compressSize: Rect): ComponentResult; external name '_SGGetCompressBuffer';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetBufferInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27889,17 +29007,23 @@ function SGGetBufferInfo( c: SGChannel; bufferNum: SInt16; var bufferPM: PixMapH
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetBufferInfo(c: SGChannel; bufferNum: SInt16; var bufferPM: PixMapHandle; var bufferRect: Rect; var compressBuffer: GWorldPtr; var compressBufferRect: Rect): ComponentResult; external name '_SGGetBufferInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetUseScreenBuffer()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27911,17 +29035,23 @@ function SGSetUseScreenBuffer( c: SGChannel; useScreenBuffer: Boolean ): Compone
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetUseScreenBuffer(c: SGChannel; useScreenBuffer: boolean): ComponentResult; external name '_SGSetUseScreenBuffer';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetUseScreenBuffer()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27933,13 +29063,18 @@ function SGGetUseScreenBuffer( c: SGChannel; var useScreenBuffer: Boolean ): Com
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetUseScreenBuffer(c: SGChannel; var useScreenBuffer: boolean): ComponentResult; external name '_SGGetUseScreenBuffer';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {    Note that UInt8 *queuedFrameCount replaces Boolean *done. 0(==false) still means no frames, and 1(==true) one, 
     but if more than one are available the number should be returned here. The value 2 previously meant more than one frame,
     so some VDIGs may return 2 even if more than 2 are available, and some will still return 1 as they are using the original definition. }
@@ -27947,6 +29082,7 @@ function SGGetUseScreenBuffer(c: SGChannel; var useScreenBuffer: boolean): Compo
  *  SGGrabCompressComplete()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27958,17 +29094,23 @@ function SGGrabCompressComplete( c: SGChannel; var queuedFrameCount: UInt8; var 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGrabCompressComplete(c: SGChannel; var queuedFrameCount: UInt8; var ci: SGCompressInfo; var tr: TimeRecord): ComponentResult; external name '_SGGrabCompressComplete';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGDisplayCompress()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -27980,17 +29122,23 @@ function SGDisplayCompress( c: SGChannel; dataPtr: Ptr; desc: ImageDescriptionHa
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGDisplayCompress(c: SGChannel; dataPtr: Ptr; desc: ImageDescriptionHandle; var mp: MatrixRecord; clipRgn: RgnHandle): ComponentResult; external name '_SGDisplayCompress';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetFrameRate()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -28002,17 +29150,23 @@ function SGSetFrameRate( c: SGChannel; frameRate: Fixed ): ComponentResult; exte
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetFrameRate(c: SGChannel; frameRate: Fixed): ComponentResult; external name '_SGSetFrameRate';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetFrameRate()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -28024,17 +29178,23 @@ function SGGetFrameRate( c: SGChannel; var frameRate: Fixed ): ComponentResult; 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetFrameRate(c: SGChannel; var frameRate: Fixed): ComponentResult; external name '_SGGetFrameRate';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetPreferredPacketSize()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -28046,17 +29206,23 @@ function SGSetPreferredPacketSize( c: SGChannel; preferredPacketSizeInBytes: SIG
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetPreferredPacketSize(c: SGChannel; preferredPacketSizeInBytes: SInt32): ComponentResult; external name '_SGSetPreferredPacketSize';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetPreferredPacketSize()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -28068,17 +29234,23 @@ function SGGetPreferredPacketSize( c: SGChannel; var preferredPacketSizeInBytes:
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetPreferredPacketSize(c: SGChannel; var preferredPacketSizeInBytes: SInt32): ComponentResult; external name '_SGGetPreferredPacketSize';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetUserVideoCompressorList()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -28090,17 +29262,23 @@ function SGSetUserVideoCompressorList( c: SGChannel; compressorTypes: Handle ): 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetUserVideoCompressorList(c: SGChannel; compressorTypes: Handle): ComponentResult; external name '_SGSetUserVideoCompressorList';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetUserVideoCompressorList()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -28958,13 +30136,18 @@ type
 		inputProcRefCon: UnivPtr;
 	end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetUserVideoCompressorList(c: SGChannel; var compressorTypes: Handle): ComponentResult; external name '_SGGetUserVideoCompressorList';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {** Sequence Grab SOUND CHANNEL Component Stuff **}
 
 {
@@ -28974,6 +30157,7 @@ function SGGetUserVideoCompressorList(c: SGChannel; var compressorTypes: Handle)
  *  SGSetSoundInputDriver()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -28985,17 +30169,23 @@ function SGSetSoundInputDriver( c: SGChannel; const (*var*) driverName: Str255 )
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetSoundInputDriver(c: SGChannel; const (*var*) driverName: Str255): ComponentResult; external name '_SGSetSoundInputDriver';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetSoundInputDriver()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29007,17 +30197,23 @@ function SGGetSoundInputDriver( c: SGChannel ): SIGNEDLONG; external name '_SGGe
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetSoundInputDriver(c: SGChannel): SInt32; external name '_SGGetSoundInputDriver';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSoundInputDriverChanged()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29029,17 +30225,23 @@ function SGSoundInputDriverChanged( c: SGChannel ): ComponentResult; external na
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSoundInputDriverChanged(c: SGChannel): ComponentResult; external name '_SGSoundInputDriverChanged';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetSoundRecordChunkSize()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29051,17 +30253,23 @@ function SGSetSoundRecordChunkSize( c: SGChannel; seconds: SIGNEDLONG ): Compone
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetSoundRecordChunkSize(c: SGChannel; seconds: SInt32): ComponentResult; external name '_SGSetSoundRecordChunkSize';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetSoundRecordChunkSize()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29073,11 +30281,14 @@ function SGGetSoundRecordChunkSize( c: SGChannel ): SIGNEDLONG; external name '_
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function SGGetSoundRecordChunkSize(c: SGChannel): SInt32; external name '_SGGetSoundRecordChunkSize';
 >>>>>>> graemeg/fixes_2_2
 {
@@ -29095,17 +30306,28 @@ function SGSetSoundInputRate( c: SGChannel; rate: Fixed ): ComponentResult; exte
 
 
 =======
+=======
+function SGGetSoundRecordChunkSize(c: SGChannel): SInt32; external name '_SGGetSoundRecordChunkSize';
+{
+ *  SGSetSoundInputRate()
+ *  
+ *  Availability:
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetSoundInputRate(c: SGChannel; rate: Fixed): ComponentResult; external name '_SGSetSoundInputRate';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetSoundInputRate()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29117,17 +30339,23 @@ function SGGetSoundInputRate( c: SGChannel ): Fixed; external name '_SGGetSoundI
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetSoundInputRate(c: SGChannel): Fixed; external name '_SGGetSoundInputRate';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetSoundInputParameters()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29139,17 +30367,23 @@ function SGSetSoundInputParameters( c: SGChannel; sampleSize: SInt16; numChannel
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetSoundInputParameters(c: SGChannel; sampleSize: SInt16; numChannels: SInt16; compressionType: OSType): ComponentResult; external name '_SGSetSoundInputParameters';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetSoundInputParameters()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29161,17 +30395,23 @@ function SGGetSoundInputParameters( c: SGChannel; var sampleSize: SInt16; var nu
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetSoundInputParameters(c: SGChannel; var sampleSize: SInt16; var numChannels: SInt16; var compressionType: OSType): ComponentResult; external name '_SGGetSoundInputParameters';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetAdditionalSoundRates()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29183,17 +30423,23 @@ function SGSetAdditionalSoundRates( c: SGChannel; rates: Handle ): ComponentResu
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetAdditionalSoundRates(c: SGChannel; rates: Handle): ComponentResult; external name '_SGSetAdditionalSoundRates';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetAdditionalSoundRates()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29205,13 +30451,18 @@ function SGGetAdditionalSoundRates( c: SGChannel; var rates: Handle ): Component
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetAdditionalSoundRates(c: SGChannel; var rates: Handle): ComponentResult; external name '_SGGetAdditionalSoundRates';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     Text stuff
 }
@@ -29219,6 +30470,7 @@ function SGGetAdditionalSoundRates(c: SGChannel; var rates: Handle): ComponentRe
  *  SGSetFontName()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29230,17 +30482,23 @@ function SGSetFontName( c: SGChannel; pstr: StringPtr ): ComponentResult; extern
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetFontName(c: SGChannel; pstr: StringPtr): ComponentResult; external name '_SGSetFontName';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetFontSize()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29252,17 +30510,23 @@ function SGSetFontSize( c: SGChannel; fontSize: SInt16 ): ComponentResult; exter
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetFontSize(c: SGChannel; fontSize: SInt16): ComponentResult; external name '_SGSetFontSize';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetTextForeColor()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29274,17 +30538,23 @@ function SGSetTextForeColor( c: SGChannel; var theColor: RGBColor ): ComponentRe
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetTextForeColor(c: SGChannel; var theColor: RGBColor): ComponentResult; external name '_SGSetTextForeColor';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetTextBackColor()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29296,17 +30566,23 @@ function SGSetTextBackColor( c: SGChannel; var theColor: RGBColor ): ComponentRe
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetTextBackColor(c: SGChannel; var theColor: RGBColor): ComponentResult; external name '_SGSetTextBackColor';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetJustification()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29318,17 +30594,23 @@ function SGSetJustification( c: SGChannel; just: SInt16 ): ComponentResult; exte
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetJustification(c: SGChannel; just: SInt16): ComponentResult; external name '_SGSetJustification';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGGetTextReturnToSpaceValue()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29340,17 +30622,23 @@ function SGGetTextReturnToSpaceValue( c: SGChannel; var rettospace: SInt16 ): Co
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetTextReturnToSpaceValue(c: SGChannel; var rettospace: SInt16): ComponentResult; external name '_SGGetTextReturnToSpaceValue';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetTextReturnToSpaceValue()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29362,13 +30650,18 @@ function SGSetTextReturnToSpaceValue( c: SGChannel; rettospace: SInt16 ): Compon
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGSetTextReturnToSpaceValue(c: SGChannel; rettospace: SInt16): ComponentResult; external name '_SGSetTextReturnToSpaceValue';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
     Music stuff
 }
@@ -29376,6 +30669,7 @@ function SGSetTextReturnToSpaceValue(c: SGChannel; rettospace: SInt16): Componen
  *  SGGetInstrument()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29387,17 +30681,23 @@ function SGGetInstrument( c: SGChannel; var td: ToneDescription ): ComponentResu
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SGGetInstrument(c: SGChannel; var td: ToneDescription): ComponentResult; external name '_SGGetInstrument';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SGSetInstrument()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29637,6 +30937,8 @@ function QTVideoOutputGetDisplayModeList( vo: QTVideoOutputComponent; var output
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -29723,11 +31025,15 @@ const
 	 *    Windows:          in qtmlClient.lib 3.0 and later
 	 	}
 function QTVideoOutputGetDisplayModeList(vo: QTVideoOutputComponent; var outputs: QTAtomContainer): ComponentResult; external name '_QTVideoOutputGetDisplayModeList';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTVideoOutputGetCurrentClientName()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29739,17 +31045,23 @@ function QTVideoOutputGetCurrentClientName( vo: QTVideoOutputComponent; var str:
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTVideoOutputGetCurrentClientName(vo: QTVideoOutputComponent; var str: Str255): ComponentResult; external name '_QTVideoOutputGetCurrentClientName';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTVideoOutputSetClientName()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29761,17 +31073,23 @@ function QTVideoOutputSetClientName( vo: QTVideoOutputComponent; const (*var*) s
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTVideoOutputSetClientName(vo: QTVideoOutputComponent; const (*var*) str: Str255): ComponentResult; external name '_QTVideoOutputSetClientName';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTVideoOutputGetClientName()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29783,17 +31101,23 @@ function QTVideoOutputGetClientName( vo: QTVideoOutputComponent; var str: Str255
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTVideoOutputGetClientName(vo: QTVideoOutputComponent; var str: Str255): ComponentResult; external name '_QTVideoOutputGetClientName';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTVideoOutputBegin()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29805,17 +31129,23 @@ function QTVideoOutputBegin( vo: QTVideoOutputComponent ): ComponentResult; exte
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTVideoOutputBegin(vo: QTVideoOutputComponent): ComponentResult; external name '_QTVideoOutputBegin';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTVideoOutputEnd()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29827,17 +31157,23 @@ function QTVideoOutputEnd( vo: QTVideoOutputComponent ): ComponentResult; extern
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTVideoOutputEnd(vo: QTVideoOutputComponent): ComponentResult; external name '_QTVideoOutputEnd';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTVideoOutputSetDisplayMode()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29849,17 +31185,23 @@ function QTVideoOutputSetDisplayMode( vo: QTVideoOutputComponent; displayModeID:
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTVideoOutputSetDisplayMode(vo: QTVideoOutputComponent; displayModeID: SInt32): ComponentResult; external name '_QTVideoOutputSetDisplayMode';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTVideoOutputGetDisplayMode()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29871,17 +31213,23 @@ function QTVideoOutputGetDisplayMode( vo: QTVideoOutputComponent; var displayMod
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTVideoOutputGetDisplayMode(vo: QTVideoOutputComponent; var displayModeID: SInt32): ComponentResult; external name '_QTVideoOutputGetDisplayMode';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTVideoOutputCustomConfigureDisplay()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29893,17 +31241,23 @@ function QTVideoOutputCustomConfigureDisplay( vo: QTVideoOutputComponent; filter
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTVideoOutputCustomConfigureDisplay(vo: QTVideoOutputComponent; filter: ModalFilterUPP): ComponentResult; external name '_QTVideoOutputCustomConfigureDisplay';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTVideoOutputSaveState()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29915,17 +31269,23 @@ function QTVideoOutputSaveState( vo: QTVideoOutputComponent; var state: QTAtomCo
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTVideoOutputSaveState(vo: QTVideoOutputComponent; var state: QTAtomContainer): ComponentResult; external name '_QTVideoOutputSaveState';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTVideoOutputRestoreState()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29937,17 +31297,23 @@ function QTVideoOutputRestoreState( vo: QTVideoOutputComponent; state: QTAtomCon
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTVideoOutputRestoreState(vo: QTVideoOutputComponent; state: QTAtomContainer): ComponentResult; external name '_QTVideoOutputRestoreState';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTVideoOutputGetGWorld()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29959,17 +31325,23 @@ function QTVideoOutputGetGWorld( vo: QTVideoOutputComponent; var gw: GWorldPtr )
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTVideoOutputGetGWorld(vo: QTVideoOutputComponent; var gw: GWorldPtr): ComponentResult; external name '_QTVideoOutputGetGWorld';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTVideoOutputGetGWorldParameters()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -29981,17 +31353,23 @@ function QTVideoOutputGetGWorldParameters( vo: QTVideoOutputComponent; var baseA
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTVideoOutputGetGWorldParameters(vo: QTVideoOutputComponent; var baseAddr: Ptr; var rowBytes: SInt32; var colorTable: CTabHandle): ComponentResult; external name '_QTVideoOutputGetGWorldParameters';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTVideoOutputGetIndSoundOutput()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30003,17 +31381,23 @@ function QTVideoOutputGetIndSoundOutput( vo: QTVideoOutputComponent; index: SIGN
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTVideoOutputGetIndSoundOutput(vo: QTVideoOutputComponent; index: SInt32; var outputComponent: Component): ComponentResult; external name '_QTVideoOutputGetIndSoundOutput';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTVideoOutputGetClock()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30025,17 +31409,23 @@ function QTVideoOutputGetClock( vo: QTVideoOutputComponent; var clock: Component
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTVideoOutputGetClock(vo: QTVideoOutputComponent; var clock: ComponentInstance): ComponentResult; external name '_QTVideoOutputGetClock';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTVideoOutputSetEchoPort()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30047,17 +31437,23 @@ function QTVideoOutputSetEchoPort( vo: QTVideoOutputComponent; echoPort: CGrafPt
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTVideoOutputSetEchoPort(vo: QTVideoOutputComponent; echoPort: CGrafPtr): ComponentResult; external name '_QTVideoOutputSetEchoPort';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTVideoOutputGetIndImageDecompressor()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -30069,12 +31465,15 @@ function QTVideoOutputGetIndImageDecompressor( vo: QTVideoOutputComponent; index
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
 function QTVideoOutputGetIndImageDecompressor(vo: QTVideoOutputComponent; index: SInt32; var codec: Component): ComponentResult; external name '_QTVideoOutputGetIndImageDecompressor';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 {
  *  QTVideoOutputBaseSetEchoPort()
@@ -30116,6 +31515,12 @@ function NewDataHCompletionUPP( userRoutine: DataHCompletionProcPtr ): DataHComp
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+{
+ *  QTVideoOutputBaseSetEchoPort()
+ *  
+ *  Availability:
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
@@ -30155,11 +31560,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewDataHCompletionUPP(userRoutine: DataHCompletionProcPtr): DataHCompletionUPP; external name '_NewDataHCompletionUPP'; { old name was NewDataHCompletionProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewVdigIntUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30169,16 +31578,22 @@ function NewVdigIntUPP( userRoutine: VdigIntProcPtr ): VdigIntUPP; external name
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewVdigIntUPP(userRoutine: VdigIntProcPtr): VdigIntUPP; external name '_NewVdigIntUPP'; { old name was NewVdigIntProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewStartDocumentHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -30188,16 +31603,22 @@ function NewStartDocumentHandlerUPP( userRoutine: StartDocumentHandler ): StartD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewStartDocumentHandlerUPP(userRoutine: StartDocumentHandler): StartDocumentHandlerUPP; external name '_NewStartDocumentHandlerUPP'; { old name was NewStartDocumentHandlerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewEndDocumentHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -30207,16 +31628,22 @@ function NewEndDocumentHandlerUPP( userRoutine: EndDocumentHandler ): EndDocumen
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewEndDocumentHandlerUPP(userRoutine: EndDocumentHandler): EndDocumentHandlerUPP; external name '_NewEndDocumentHandlerUPP'; { old name was NewEndDocumentHandlerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewStartElementHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -30226,16 +31653,22 @@ function NewStartElementHandlerUPP( userRoutine: StartElementHandler ): StartEle
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewStartElementHandlerUPP(userRoutine: StartElementHandler): StartElementHandlerUPP; external name '_NewStartElementHandlerUPP'; { old name was NewStartElementHandlerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewEndElementHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -30245,16 +31678,22 @@ function NewEndElementHandlerUPP( userRoutine: EndElementHandler ): EndElementHa
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewEndElementHandlerUPP(userRoutine: EndElementHandler): EndElementHandlerUPP; external name '_NewEndElementHandlerUPP'; { old name was NewEndElementHandlerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewCharDataHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -30264,16 +31703,22 @@ function NewCharDataHandlerUPP( userRoutine: CharDataHandler ): CharDataHandlerU
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewCharDataHandlerUPP(userRoutine: CharDataHandler): CharDataHandlerUPP; external name '_NewCharDataHandlerUPP'; { old name was NewCharDataHandlerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewPreprocessInstructionHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -30283,16 +31728,22 @@ function NewPreprocessInstructionHandlerUPP( userRoutine: PreprocessInstructionH
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewPreprocessInstructionHandlerUPP(userRoutine: PreprocessInstructionHandler): PreprocessInstructionHandlerUPP; external name '_NewPreprocessInstructionHandlerUPP'; { old name was NewPreprocessInstructionHandlerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewCommentHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -30302,16 +31753,22 @@ function NewCommentHandlerUPP( userRoutine: CommentHandler ): CommentHandlerUPP;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewCommentHandlerUPP(userRoutine: CommentHandler): CommentHandlerUPP; external name '_NewCommentHandlerUPP'; { old name was NewCommentHandlerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewCDataHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -30321,16 +31778,22 @@ function NewCDataHandlerUPP( userRoutine: CDataHandler ): CDataHandlerUPP; exter
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  }
 function NewCDataHandlerUPP(userRoutine: CDataHandler): CDataHandlerUPP; external name '_NewCDataHandlerUPP'; { old name was NewCDataHandlerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewSGDataUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30340,16 +31803,22 @@ function NewSGDataUPP( userRoutine: SGDataProcPtr ): SGDataUPP; external name '_
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewSGDataUPP(userRoutine: SGDataProcPtr): SGDataUPP; external name '_NewSGDataUPP'; { old name was NewSGDataProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewSGModalFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30359,16 +31828,22 @@ function NewSGModalFilterUPP( userRoutine: SGModalFilterProcPtr ): SGModalFilter
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewSGModalFilterUPP(userRoutine: SGModalFilterProcPtr): SGModalFilterUPP; external name '_NewSGModalFilterUPP'; { old name was NewSGModalFilterProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewSGGrabBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30378,16 +31853,22 @@ function NewSGGrabBottleUPP( userRoutine: SGGrabBottleProcPtr ): SGGrabBottleUPP
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewSGGrabBottleUPP(userRoutine: SGGrabBottleProcPtr): SGGrabBottleUPP; external name '_NewSGGrabBottleUPP'; { old name was NewSGGrabBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewSGGrabCompleteBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30397,16 +31878,22 @@ function NewSGGrabCompleteBottleUPP( userRoutine: SGGrabCompleteBottleProcPtr ):
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewSGGrabCompleteBottleUPP(userRoutine: SGGrabCompleteBottleProcPtr): SGGrabCompleteBottleUPP; external name '_NewSGGrabCompleteBottleUPP'; { old name was NewSGGrabCompleteBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewSGDisplayBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30416,16 +31903,22 @@ function NewSGDisplayBottleUPP( userRoutine: SGDisplayBottleProcPtr ): SGDisplay
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewSGDisplayBottleUPP(userRoutine: SGDisplayBottleProcPtr): SGDisplayBottleUPP; external name '_NewSGDisplayBottleUPP'; { old name was NewSGDisplayBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewSGCompressBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30435,16 +31928,22 @@ function NewSGCompressBottleUPP( userRoutine: SGCompressBottleProcPtr ): SGCompr
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewSGCompressBottleUPP(userRoutine: SGCompressBottleProcPtr): SGCompressBottleUPP; external name '_NewSGCompressBottleUPP'; { old name was NewSGCompressBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewSGCompressCompleteBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30454,16 +31953,22 @@ function NewSGCompressCompleteBottleUPP( userRoutine: SGCompressCompleteBottlePr
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewSGCompressCompleteBottleUPP(userRoutine: SGCompressCompleteBottleProcPtr): SGCompressCompleteBottleUPP; external name '_NewSGCompressCompleteBottleUPP'; { old name was NewSGCompressCompleteBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewSGAddFrameBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30473,16 +31978,22 @@ function NewSGAddFrameBottleUPP( userRoutine: SGAddFrameBottleProcPtr ): SGAddFr
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewSGAddFrameBottleUPP(userRoutine: SGAddFrameBottleProcPtr): SGAddFrameBottleUPP; external name '_NewSGAddFrameBottleUPP'; { old name was NewSGAddFrameBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewSGTransferFrameBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30492,16 +32003,22 @@ function NewSGTransferFrameBottleUPP( userRoutine: SGTransferFrameBottleProcPtr 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewSGTransferFrameBottleUPP(userRoutine: SGTransferFrameBottleProcPtr): SGTransferFrameBottleUPP; external name '_NewSGTransferFrameBottleUPP'; { old name was NewSGTransferFrameBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewSGGrabCompressCompleteBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30511,16 +32028,22 @@ function NewSGGrabCompressCompleteBottleUPP( userRoutine: SGGrabCompressComplete
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewSGGrabCompressCompleteBottleUPP(userRoutine: SGGrabCompressCompleteBottleProcPtr): SGGrabCompressCompleteBottleUPP; external name '_NewSGGrabCompressCompleteBottleUPP'; { old name was NewSGGrabCompressCompleteBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewSGDisplayCompressBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30530,16 +32053,22 @@ function NewSGDisplayCompressBottleUPP( userRoutine: SGDisplayCompressBottleProc
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewSGDisplayCompressBottleUPP(userRoutine: SGDisplayCompressBottleProcPtr): SGDisplayCompressBottleUPP; external name '_NewSGDisplayCompressBottleUPP'; { old name was NewSGDisplayCompressBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeDataHCompletionUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30549,16 +32078,22 @@ procedure DisposeDataHCompletionUPP( userUPP: DataHCompletionUPP ); external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeDataHCompletionUPP(userUPP: DataHCompletionUPP); external name '_DisposeDataHCompletionUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeVdigIntUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30568,16 +32103,22 @@ procedure DisposeVdigIntUPP( userUPP: VdigIntUPP ); external name '_DisposeVdigI
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeVdigIntUPP(userUPP: VdigIntUPP); external name '_DisposeVdigIntUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeStartDocumentHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -30587,16 +32128,22 @@ procedure DisposeStartDocumentHandlerUPP( userUPP: StartDocumentHandlerUPP ); ex
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeStartDocumentHandlerUPP(userUPP: StartDocumentHandlerUPP); external name '_DisposeStartDocumentHandlerUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeEndDocumentHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -30606,16 +32153,22 @@ procedure DisposeEndDocumentHandlerUPP( userUPP: EndDocumentHandlerUPP ); extern
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeEndDocumentHandlerUPP(userUPP: EndDocumentHandlerUPP); external name '_DisposeEndDocumentHandlerUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeStartElementHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -30625,16 +32178,22 @@ procedure DisposeStartElementHandlerUPP( userUPP: StartElementHandlerUPP ); exte
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeStartElementHandlerUPP(userUPP: StartElementHandlerUPP); external name '_DisposeStartElementHandlerUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeEndElementHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -30644,16 +32203,22 @@ procedure DisposeEndElementHandlerUPP( userUPP: EndElementHandlerUPP ); external
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeEndElementHandlerUPP(userUPP: EndElementHandlerUPP); external name '_DisposeEndElementHandlerUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeCharDataHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -30663,16 +32228,22 @@ procedure DisposeCharDataHandlerUPP( userUPP: CharDataHandlerUPP ); external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeCharDataHandlerUPP(userUPP: CharDataHandlerUPP); external name '_DisposeCharDataHandlerUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposePreprocessInstructionHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -30682,16 +32253,22 @@ procedure DisposePreprocessInstructionHandlerUPP( userUPP: PreprocessInstruction
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposePreprocessInstructionHandlerUPP(userUPP: PreprocessInstructionHandlerUPP); external name '_DisposePreprocessInstructionHandlerUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeCommentHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -30701,16 +32278,22 @@ procedure DisposeCommentHandlerUPP( userUPP: CommentHandlerUPP ); external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeCommentHandlerUPP(userUPP: CommentHandlerUPP); external name '_DisposeCommentHandlerUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeCDataHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -30720,16 +32303,22 @@ procedure DisposeCDataHandlerUPP( userUPP: CDataHandlerUPP ); external name '_Di
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  }
 procedure DisposeCDataHandlerUPP(userUPP: CDataHandlerUPP); external name '_DisposeCDataHandlerUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSGDataUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30739,16 +32328,22 @@ procedure DisposeSGDataUPP( userUPP: SGDataUPP ); external name '_DisposeSGDataU
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSGDataUPP(userUPP: SGDataUPP); external name '_DisposeSGDataUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSGModalFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30758,16 +32353,22 @@ procedure DisposeSGModalFilterUPP( userUPP: SGModalFilterUPP ); external name '_
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSGModalFilterUPP(userUPP: SGModalFilterUPP); external name '_DisposeSGModalFilterUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSGGrabBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30777,16 +32378,22 @@ procedure DisposeSGGrabBottleUPP( userUPP: SGGrabBottleUPP ); external name '_Di
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSGGrabBottleUPP(userUPP: SGGrabBottleUPP); external name '_DisposeSGGrabBottleUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSGGrabCompleteBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30796,16 +32403,22 @@ procedure DisposeSGGrabCompleteBottleUPP( userUPP: SGGrabCompleteBottleUPP ); ex
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSGGrabCompleteBottleUPP(userUPP: SGGrabCompleteBottleUPP); external name '_DisposeSGGrabCompleteBottleUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSGDisplayBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30815,16 +32428,22 @@ procedure DisposeSGDisplayBottleUPP( userUPP: SGDisplayBottleUPP ); external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSGDisplayBottleUPP(userUPP: SGDisplayBottleUPP); external name '_DisposeSGDisplayBottleUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSGCompressBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30834,16 +32453,22 @@ procedure DisposeSGCompressBottleUPP( userUPP: SGCompressBottleUPP ); external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSGCompressBottleUPP(userUPP: SGCompressBottleUPP); external name '_DisposeSGCompressBottleUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSGCompressCompleteBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30853,16 +32478,22 @@ procedure DisposeSGCompressCompleteBottleUPP( userUPP: SGCompressCompleteBottleU
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSGCompressCompleteBottleUPP(userUPP: SGCompressCompleteBottleUPP); external name '_DisposeSGCompressCompleteBottleUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSGAddFrameBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30872,16 +32503,22 @@ procedure DisposeSGAddFrameBottleUPP( userUPP: SGAddFrameBottleUPP ); external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSGAddFrameBottleUPP(userUPP: SGAddFrameBottleUPP); external name '_DisposeSGAddFrameBottleUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSGTransferFrameBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30891,16 +32528,22 @@ procedure DisposeSGTransferFrameBottleUPP( userUPP: SGTransferFrameBottleUPP ); 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSGTransferFrameBottleUPP(userUPP: SGTransferFrameBottleUPP); external name '_DisposeSGTransferFrameBottleUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSGGrabCompressCompleteBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30910,16 +32553,22 @@ procedure DisposeSGGrabCompressCompleteBottleUPP( userUPP: SGGrabCompressComplet
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSGGrabCompressCompleteBottleUPP(userUPP: SGGrabCompressCompleteBottleUPP); external name '_DisposeSGGrabCompressCompleteBottleUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSGDisplayCompressBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30929,16 +32578,22 @@ procedure DisposeSGDisplayCompressBottleUPP( userUPP: SGDisplayCompressBottleUPP
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSGDisplayCompressBottleUPP(userUPP: SGDisplayCompressBottleUPP); external name '_DisposeSGDisplayCompressBottleUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeDataHCompletionUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30948,16 +32603,22 @@ procedure InvokeDataHCompletionUPP( request: Ptr; refcon: SIGNEDLONG; err: OSErr
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure InvokeDataHCompletionUPP(request: Ptr; refcon: SInt32; err: OSErr; userRoutine: DataHCompletionUPP); external name '_InvokeDataHCompletionUPP'; { old name was CallDataHCompletionProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeVdigIntUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -30967,16 +32628,22 @@ procedure InvokeVdigIntUPP( flags: SIGNEDLONG; refcon: SIGNEDLONG; userUPP: Vdig
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure InvokeVdigIntUPP(flags: SInt32; refcon: SInt32; userRoutine: VdigIntUPP); external name '_InvokeVdigIntUPP'; { old name was CallVdigIntProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeStartDocumentHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -30986,16 +32653,22 @@ function InvokeStartDocumentHandlerUPP( refcon: SIGNEDLONG; userUPP: StartDocume
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeStartDocumentHandlerUPP(refcon: SInt32; userRoutine: StartDocumentHandlerUPP): ComponentResult; external name '_InvokeStartDocumentHandlerUPP'; { old name was CallStartDocumentHandlerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeEndDocumentHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -31005,16 +32678,22 @@ function InvokeEndDocumentHandlerUPP( refcon: SIGNEDLONG; userUPP: EndDocumentHa
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeEndDocumentHandlerUPP(refcon: SInt32; userRoutine: EndDocumentHandlerUPP): ComponentResult; external name '_InvokeEndDocumentHandlerUPP'; { old name was CallEndDocumentHandlerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeStartElementHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -31024,16 +32703,22 @@ function InvokeStartElementHandlerUPP( name: ConstCStringPtr; var atts: ConstCSt
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeStartElementHandlerUPP(name: ConstCStringPtr; var atts: ConstCStringPtr; refcon: SInt32; userRoutine: StartElementHandlerUPP): ComponentResult; external name '_InvokeStartElementHandlerUPP'; { old name was CallStartElementHandlerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeEndElementHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -31043,16 +32728,22 @@ function InvokeEndElementHandlerUPP( name: ConstCStringPtr; refcon: SIGNEDLONG; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeEndElementHandlerUPP(name: ConstCStringPtr; refcon: SInt32; userRoutine: EndElementHandlerUPP): ComponentResult; external name '_InvokeEndElementHandlerUPP'; { old name was CallEndElementHandlerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeCharDataHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -31062,16 +32753,22 @@ function InvokeCharDataHandlerUPP( charData: ConstCStringPtr; refcon: SIGNEDLONG
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeCharDataHandlerUPP(charData: ConstCStringPtr; refcon: SInt32; userRoutine: CharDataHandlerUPP): ComponentResult; external name '_InvokeCharDataHandlerUPP'; { old name was CallCharDataHandlerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokePreprocessInstructionHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -31081,16 +32778,22 @@ function InvokePreprocessInstructionHandlerUPP( name: ConstCStringPtr; atts: Con
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokePreprocessInstructionHandlerUPP(name: ConstCStringPtr; atts: ConstCStringPtrPtr; refcon: SInt32; userRoutine: PreprocessInstructionHandlerUPP): ComponentResult; external name '_InvokePreprocessInstructionHandlerUPP'; { old name was CallPreprocessInstructionHandlerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeCommentHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -31100,16 +32803,22 @@ function InvokeCommentHandlerUPP( comment: ConstCStringPtr; refcon: SIGNEDLONG; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeCommentHandlerUPP(comment: ConstCStringPtr; refcon: SInt32; userRoutine: CommentHandlerUPP): ComponentResult; external name '_InvokeCommentHandlerUPP'; { old name was CallCommentHandlerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeCDataHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -31119,16 +32828,22 @@ function InvokeCDataHandlerUPP( cdata: ConstCStringPtr; refcon: SIGNEDLONG; user
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  }
 function InvokeCDataHandlerUPP(cdata: ConstCStringPtr; refcon: SInt32; userRoutine: CDataHandlerUPP): ComponentResult; external name '_InvokeCDataHandlerUPP'; { old name was CallCDataHandlerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSGDataUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -31138,16 +32853,22 @@ function InvokeSGDataUPP( c: SGChannel; p: Ptr; len: SIGNEDLONG; var offset: SIG
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeSGDataUPP(c: SGChannel; p: Ptr; len: SInt32; var offset: SInt32; chRefCon: SInt32; time: TimeValue; writeType: SInt16; refCon: SInt32; userRoutine: SGDataUPP): OSErr; external name '_InvokeSGDataUPP'; { old name was CallSGDataProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSGModalFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -31157,16 +32878,22 @@ function InvokeSGModalFilterUPP( theDialog: DialogRef; const (*var*) theEvent: E
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeSGModalFilterUPP(theDialog: DialogRef; const (*var*) theEvent: EventRecord; var itemHit: SInt16; refCon: SInt32; userRoutine: SGModalFilterUPP): boolean; external name '_InvokeSGModalFilterUPP'; { old name was CallSGModalFilterProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSGGrabBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -31176,16 +32903,22 @@ function InvokeSGGrabBottleUPP( c: SGChannel; bufferNum: SInt16; refCon: SIGNEDL
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeSGGrabBottleUPP(c: SGChannel; bufferNum: SInt16; refCon: SInt32; userRoutine: SGGrabBottleUPP): ComponentResult; external name '_InvokeSGGrabBottleUPP'; { old name was CallSGGrabBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSGGrabCompleteBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -31195,16 +32928,22 @@ function InvokeSGGrabCompleteBottleUPP( c: SGChannel; bufferNum: SInt16; var don
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeSGGrabCompleteBottleUPP(c: SGChannel; bufferNum: SInt16; var done: boolean; refCon: SInt32; userRoutine: SGGrabCompleteBottleUPP): ComponentResult; external name '_InvokeSGGrabCompleteBottleUPP'; { old name was CallSGGrabCompleteBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSGDisplayBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -31214,16 +32953,22 @@ function InvokeSGDisplayBottleUPP( c: SGChannel; bufferNum: SInt16; var mp: Matr
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeSGDisplayBottleUPP(c: SGChannel; bufferNum: SInt16; var mp: MatrixRecord; clipRgn: RgnHandle; refCon: SInt32; userRoutine: SGDisplayBottleUPP): ComponentResult; external name '_InvokeSGDisplayBottleUPP'; { old name was CallSGDisplayBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSGCompressBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -31233,16 +32978,22 @@ function InvokeSGCompressBottleUPP( c: SGChannel; bufferNum: SInt16; refCon: SIG
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeSGCompressBottleUPP(c: SGChannel; bufferNum: SInt16; refCon: SInt32; userRoutine: SGCompressBottleUPP): ComponentResult; external name '_InvokeSGCompressBottleUPP'; { old name was CallSGCompressBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSGCompressCompleteBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -31252,16 +33003,22 @@ function InvokeSGCompressCompleteBottleUPP( c: SGChannel; bufferNum: SInt16; var
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeSGCompressCompleteBottleUPP(c: SGChannel; bufferNum: SInt16; var done: boolean; var ci: SGCompressInfo; refCon: SInt32; userRoutine: SGCompressCompleteBottleUPP): ComponentResult; external name '_InvokeSGCompressCompleteBottleUPP'; { old name was CallSGCompressCompleteBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSGAddFrameBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -31271,16 +33028,22 @@ function InvokeSGAddFrameBottleUPP( c: SGChannel; bufferNum: SInt16; atTime: Tim
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeSGAddFrameBottleUPP(c: SGChannel; bufferNum: SInt16; atTime: TimeValue; scale: TimeScale; const (*var*) ci: SGCompressInfo; refCon: SInt32; userRoutine: SGAddFrameBottleUPP): ComponentResult; external name '_InvokeSGAddFrameBottleUPP'; { old name was CallSGAddFrameBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSGTransferFrameBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -31290,16 +33053,22 @@ function InvokeSGTransferFrameBottleUPP( c: SGChannel; bufferNum: SInt16; var mp
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeSGTransferFrameBottleUPP(c: SGChannel; bufferNum: SInt16; var mp: MatrixRecord; clipRgn: RgnHandle; refCon: SInt32; userRoutine: SGTransferFrameBottleUPP): ComponentResult; external name '_InvokeSGTransferFrameBottleUPP'; { old name was CallSGTransferFrameBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSGGrabCompressCompleteBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -31309,16 +33078,22 @@ function InvokeSGGrabCompressCompleteBottleUPP( c: SGChannel; var queuedFrameCou
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeSGGrabCompressCompleteBottleUPP(c: SGChannel; var queuedFrameCount: UInt8; var ci: SGCompressInfo; var t: TimeRecord; refCon: SInt32; userRoutine: SGGrabCompressCompleteBottleUPP): ComponentResult; external name '_InvokeSGGrabCompressCompleteBottleUPP'; { old name was CallSGGrabCompressCompleteBottleProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSGDisplayCompressBottleUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -31858,6 +33633,8 @@ const
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -31867,4 +33644,7 @@ function InvokeSGDisplayCompressBottleUPP(c: SGChannel; dataPtr: Ptr; desc: Imag
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -80,7 +80,10 @@ end;
 
 Function  fpFlock (fd,mode : longint) : cint;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
  fpFlock:=do_syscall(syscall_nr_flock,fd,mode);

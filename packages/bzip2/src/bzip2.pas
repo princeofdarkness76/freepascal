@@ -27,10 +27,13 @@ interface
 {$goto on}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses objects, bzip2comn;
 
 Type
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses objects;
 
 const max_groups=6;
@@ -50,7 +53,10 @@ type  Tcardinal_array=array [0..899999] of cardinal;
       Thuffarray=array[0..max_alpha_size] of cardinal;
       Phuffarray=^Thuffarray;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       Tbzip2_decode_stream=object(Tstream)
         short:cardinal;
         readstream:Pstream;
@@ -107,6 +113,7 @@ type  Tcardinal_array=array [0..899999] of cardinal;
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 implementation
 
@@ -115,6 +122,8 @@ implementation
 {$endif}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {A bzip2 stream starts with this:}
 const bzip2_stream_magic='BZh';
 
@@ -165,7 +174,10 @@ begin
     base[i]:=((limit[i-1]+1) shl 1)-base[i];
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {*****************************************************************************
                              Tbzip2_decode_stream
 *****************************************************************************}

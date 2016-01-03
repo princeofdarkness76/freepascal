@@ -38,6 +38,7 @@ Var
         SysResetFPU;
         SysInitFPU;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 {$ifndef HAS_MEMORYMANAGER}
         { initialize this thread's heap }
@@ -47,14 +48,19 @@ Var
           MemoryManager.InitThread();
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
         if assigned(widestringmanager.ThreadInitProc) then
           widestringmanager.ThreadInitProc;
 {$endif FPC_HAS_FEATURE_WIDESTRINGS}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_HAS_FEATURE_EXCEPTIONS}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         { ExceptAddrStack and ExceptObjectStack are threadvars       }
         { so every thread has its on exception handling capabilities }
         SysInitExceptions;
@@ -82,6 +88,7 @@ Var
           widestringmanager.ThreadFiniProc;
 {$endif FPC_HAS_FEATURE_WIDESTRINGS}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef HAS_MEMORYMANAGER}
         FinalizeHeap;
 {$endif HAS_MEMORYMANAGER}
@@ -99,6 +106,9 @@ Var
 =======
         CurrentTM.ReleaseThreadVars;
 >>>>>>> graemeg/fixes_2_2
+=======
+        CurrentTM.ReleaseThreadVars;
+>>>>>>> origin/fixes_2_2
       end;
 
 {*****************************************************************************

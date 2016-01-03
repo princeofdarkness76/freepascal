@@ -7,6 +7,7 @@
     modify it under the terms of the GNU Lesser General Public
     License as published by the Free Software Foundation; either
 <<<<<<< HEAD
+<<<<<<< HEAD
     version 2.1 of the License, or (at your option) any later version
     with the following modification:
 
@@ -23,6 +24,9 @@
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> graemeg/fixes_2_2
+=======
+    version 2.1 of the License, or (at your option) any later version.
+>>>>>>> origin/fixes_2_2
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -34,6 +38,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$WARNING this has to go to the windows unit}
 const
@@ -95,6 +100,8 @@ begin
 {$ENDIF}
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Type
   PWin32Hook_Lookup = ^TWin32Hook_Lookup;
   TWin32Hook_Lookup = Record
@@ -152,12 +159,16 @@ Begin
       Raise TPTCError.Create('TWin32Hook window lookup search failure!');
 {$ENDIF}
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   { result value }
   TWin32Hook_hook := 0;
 
   { iterate all hooks for this window }
+<<<<<<< HEAD
 <<<<<<< HEAD
   for i := lookup^.count - 1 downto 0 do
   begin
@@ -207,6 +218,8 @@ begin
   { invalidate cache }
   TWin32Hook_Cached := nil;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   For i := lookup^.count - 1 DownTo 0 Do
   Begin
     { call hook window procedure }
@@ -256,12 +269,16 @@ Begin
 
   { invalidate cache }
   TWin32Hook_m_cached := Nil;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   { registry index }
   index := 0;
 
   { iterate registry }
+<<<<<<< HEAD
 <<<<<<< HEAD
   while index < TWin32Hook_Count do
   begin
@@ -278,6 +295,8 @@ Begin
   if index <> TWin32Hook_Count then
   begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
   While index < TWin32Hook_m_count Do
   Begin
     { search for existing window hook }
@@ -292,7 +311,10 @@ Begin
   { check results }
   If index <> TWin32Hook_m_count Then
   Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { get insertion point for hook }
     insert := TWin32Hook_m_registry[index].count;
 
@@ -302,16 +324,22 @@ Begin
 {$IFDEF DEBUG}
     { Check for maximum hook count }
 <<<<<<< HEAD
+<<<<<<< HEAD
     if TWin32Hook_m_registry[index].count > (High(TWin32Hook_m_registry[index].hook) + 1) then
       raise TPTCError.Create('TWin32Hook too many hooks created!');
 =======
     If TWin32Hook_m_registry[index].count > (High(TWin32Hook_m_registry[index].hook) + 1) Then
       Raise TPTCError.Create('TWin32Hook too many hooks created!');
 >>>>>>> graemeg/fixes_2_2
+=======
+    If TWin32Hook_m_registry[index].count > (High(TWin32Hook_m_registry[index].hook) + 1) Then
+      Raise TPTCError.Create('TWin32Hook too many hooks created!');
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
 
     { insert hook in registry }
     TWin32Hook_m_registry[index].hook[insert] := Self;
+<<<<<<< HEAD
 <<<<<<< HEAD
   end
   else
@@ -320,17 +348,23 @@ Begin
     TWin32Hook_m_registry[index].wndproc := GetWindowLongPtr(AWindow, GWLP_WNDPROC);
     TWin32Hook_m_registry[index].window := AWindow;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   End
   Else
   Begin
     { setup new lookup }
     TWin32Hook_m_registry[index].wndproc := GetWindowLong(window, GWL_WNDPROC);
     TWin32Hook_m_registry[index].window := window;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     TWin32Hook_m_registry[index].hook[0] := Self;
     TWin32Hook_m_registry[index].count := 1;
 
     { increase lookup count }
+<<<<<<< HEAD
 <<<<<<< HEAD
     Inc(TWin32Hook_Count);
 
@@ -358,6 +392,8 @@ begin
   { invalidate cache }
   TWin32Hook_Cached := nil;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Inc(TWin32Hook_m_count);
 
 {$IFDEF DEBUG}
@@ -385,12 +421,16 @@ Begin
 
   { invalidate cache }
   TWin32Hook_m_cached := Nil;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   { registry index }
   index := 0;
 
   { iterate registry }
+<<<<<<< HEAD
 <<<<<<< HEAD
   while index < TWin32Hook_Count do
   begin
@@ -405,6 +445,8 @@ Begin
           { remove this hook (quite inefficient for high count...) }
           for j := i to TWin32Hook_m_registry[index].count - 2 do
 =======
+=======
+>>>>>>> origin/fixes_2_2
   While index < TWin32Hook_m_count Do
   Begin
     { check for window match }
@@ -417,7 +459,10 @@ Begin
         Begin
           { remove this hook (quite inefficient for high count...) }
           For j := i To TWin32Hook_m_registry[index].count - 2 Do
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             TWin32Hook_m_registry[index].hook[j] :=
               TWin32Hook_m_registry[index].hook[j + 1];
 
@@ -425,6 +470,7 @@ Begin
           Dec(TWin32Hook_m_registry[index].count);
 
           { break }
+<<<<<<< HEAD
 <<<<<<< HEAD
           break;
         end;
@@ -455,6 +501,8 @@ Begin
   TWin32Hook_Monitor.Leave;
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
           Break;
         End;
 
@@ -483,4 +531,7 @@ end;
   { leave monitor }
   TWin32Hook_m_monitor.leave;
 End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

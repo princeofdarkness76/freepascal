@@ -134,10 +134,14 @@ type
 
   TPasMemberVisibilities = set of TPasMemberVisibility;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TPasMemberHint = (hDeprecated,hLibrary,hPlatform,hExperimental,hUnimplemented);
 =======
   TPasMemberHint = (hDeprecated,hLibrary,hPlatform);
 >>>>>>> graemeg/fixes_2_2
+=======
+  TPasMemberHint = (hDeprecated,hLibrary,hPlatform);
+>>>>>>> origin/fixes_2_2
   TPasMemberHints = set of TPasMemberHint; 
 
   TPTreeElement = class of TPasElement;
@@ -157,6 +161,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FHintMessage : String;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -170,6 +175,8 @@ type
     procedure ProcessHints(const ASemiColonPrefix: boolean; var AResult: string); virtual;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   public
     SourceFilename: string;
     SourceLinenumber: Integer;
@@ -187,13 +194,17 @@ type
     Function HintsString : String;
     function GetDeclaration(full : Boolean) : string; virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure Accept(Visitor: TPassTreeVisitor); override;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property RefCount: LongWord read FRefCount;
     property Name: string read FName write FName;
     property Parent: TPasElement read FParent;
     Property Hints : TPasMemberHints Read FHints Write FHints;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Property CustomData : TObject Read FData Write FData;
     Property HintMessage : String Read FHintMessage Write FHintMessage;
@@ -220,6 +231,8 @@ type
     OpCode    : TexprOpcode;
     constructor Create(AParent : TPasElement; AKind: TPasExprKind; AOpCode: TexprOpcode); virtual; overload;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   TPasSection = class(TPasElement)
@@ -232,7 +245,10 @@ type
     UsesList: TList;            // TPasUnresolvedTypeRef or TPasModule elements
     Declarations, ResStrings, Types, Consts, Classes,
     Functions, Variables, Properties: TList;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   TUnaryExpr = class(TPasExpr)
@@ -533,7 +549,10 @@ type
     IsForward : Boolean;
     Members: TList;     // array of TPasElement objects
     InterfaceGUID : string; // 15/06/07 - Inoussa
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   { TRecordValues }
@@ -876,7 +895,10 @@ type
     function GetDeclaration(full : Boolean) : string; override;
     destructor Destroy; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
   public
     Commands: TStrings;
 >>>>>>> graemeg/fixes_2_2
@@ -891,6 +913,7 @@ type
     constructor CreateRange(AParent : TPasElement; xleft, xright: TPasExpr); overload;
     function GetDeclaration(full : Boolean) : string; override;
     destructor Destroy; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
   end;
 
@@ -912,6 +935,8 @@ type
     constructor Create(AParent : TPasElement); overload;
     function GetDeclaration(full : Boolean) : string; override;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   public
     Condition: string;
     IfBranch, ElseBranch: TPasImplElement;
@@ -968,10 +993,17 @@ type
 
   { TRecordValues }
 
+<<<<<<< HEAD
   TRecordValuesItem = record
     Name      : AnsiString;
     ValueExp  : TPasExpr;
   end;
+=======
+{$IFNDEF FPC}
+  const
+    LineEnding = sLineBreak;
+{$ENDIF}
+>>>>>>> origin/fixes_2_2
 
   TRecordValues = class(TPasExpr)
     Fields    : array of TRecordValuesItem;
@@ -8514,19 +8546,45 @@ end;
 
 procedure TPasImplExceptOn.AddElement(Element: TPasImplElement);
 begin
+<<<<<<< HEAD
   inherited AddElement(Element);
   if Body=nil then
     Body:=Element;
+=======
+  inherited Create(AName, AParent);
+  UsesList := TList.Create;
+  Declarations := TList.Create;
+  ResStrings := TList.Create;
+  Types := TList.Create;
+  Consts := TList.Create;
+  Classes := TList.Create;
+  Functions := TList.Create;
+  Variables := TList.Create;
+  Properties := TList.Create;
+>>>>>>> origin/fixes_2_2
 end;
 
 { TPasImplStatement }
 
 function TPasImplStatement.CloseOnSemicolon: boolean;
 begin
+<<<<<<< HEAD
   Result:=true;
 end;
 
 { TPasExpr }
+=======
+  Variables.Free;
+  Functions.Free;
+  Classes.Free;
+  Consts.Free;
+  Types.Free;
+  ResStrings.Free;
+  Properties.Free;
+  for i := 0 to Declarations.Count - 1 do
+    TPasElement(Declarations[i]).Release;
+  Declarations.Free;
+>>>>>>> origin/fixes_2_2
 
 constructor TPasExpr.Create(AParent : TPasElement; AKind: TPasExprKind; AOpCode: TexprOpcode);
 begin
@@ -9149,10 +9207,13 @@ end;
 procedure TPasImplExceptOn.AddElement(Element: TPasImplElement);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   inherited AddElement(Element);
   if Body=nil then
     Body:=Element;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Result:='Array';
   If (IndexRange<>'') then
     Result:=Result+'['+IndexRange+']';
@@ -9173,8 +9234,11 @@ end;
 function TPasImplStatement.CloseOnSemicolon: boolean;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=true;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Result:='File';
   If Assigned(Eltype) then
     Result:=Result+' of '+ElType.Name;

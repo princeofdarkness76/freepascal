@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef ALLPACKAGES}
 {$mode objfpc}{$H+}
 program fpmake;
@@ -96,6 +97,8 @@ end.
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$mode objfpc}{$H+}
 program fpmake;
 
@@ -153,5 +156,8 @@ begin
     Run;
     end;
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 

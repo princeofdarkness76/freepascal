@@ -26,17 +26,23 @@ uses
 
 Type
 <<<<<<< HEAD
+<<<<<<< HEAD
   TObjectListCallback = Procedure(data:TObject;arg:pointer) of object;
   TObjectListStaticCallback = Procedure(data:TObject;arg:pointer);
 =======
   TObjectListCallback = procedure(data:TObject;arg:pointer) of object;
   TObjectListStaticCallback = procedure(data:TObject;arg:pointer);
 >>>>>>> graemeg/fixes_2_2
+=======
+  TObjectListCallback = procedure(data:TObject;arg:pointer) of object;
+  TObjectListStaticCallback = procedure(data:TObject;arg:pointer);
+>>>>>>> origin/fixes_2_2
 
   TFPObjectList = class(TObject)
   private
     FFreeObjects : Boolean;
     FList: TFPList;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Function GetCount: integer;
     Procedure SetCount(const AValue: integer);
@@ -46,6 +52,8 @@ Type
     Procedure SetCapacity(NewCapacity: Integer);
     Function GetCapacity: integer;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     function GetCount: integer;
     procedure SetCount(const AValue: integer);
   protected
@@ -53,11 +61,15 @@ Type
     procedure SetItem(Index: Integer; AObject: TObject); {$ifdef CLASSESINLINE}inline;{$endif}
     procedure SetCapacity(NewCapacity: Integer);
     function GetCapacity: integer;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   public
     constructor Create;
     constructor Create(FreeObjects : Boolean);
     destructor Destroy; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Procedure Clear;
     Function Add(AObject: TObject): Integer; {$ifdef CLASSESINLINE}inline;{$endif}
@@ -78,6 +90,8 @@ Type
     Procedure ForEachCall(proc2call:TObjectListCallback;arg:pointer);
     Procedure ForEachCall(proc2call:TObjectListStaticCallback;arg:pointer);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure Clear;
     function Add(AObject: TObject): Integer; {$ifdef CLASSESINLINE}inline;{$endif}
     procedure Delete(Index: Integer); {$ifdef CLASSESINLINE}inline;{$endif}
@@ -96,7 +110,10 @@ Type
     procedure Sort(Compare: TListSortCompare);
     procedure ForEachCall(proc2call:TObjectListCallback;arg:pointer);
     procedure ForEachCall(proc2call:TObjectListStaticCallback;arg:pointer);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property Capacity: Integer read GetCapacity write SetCapacity;
     property Count: Integer read GetCount write SetCount;
     property OwnsObjects: Boolean read FFreeObjects write FFreeObjects;
@@ -105,6 +122,7 @@ Type
   end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   { TObjectList }
 
@@ -126,6 +144,8 @@ Type
     Procedure Insert(Index: Integer; AObject: TObject);
     Function First: TObject;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   TObjectList = class(TList)
   private
     ffreeobjects : boolean;
@@ -143,7 +163,10 @@ Type
     function FindInstanceOf(AClass: TClass; AExact: Boolean; AStartAt: Integer): Integer;
     Procedure Insert(Index: Integer; AObject: TObject);
     function First: TObject;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Function Last: TObject;
     property OwnsObjects: Boolean read FFreeObjects write FFreeObjects;
     property Items[Index: Integer]: TObject read GetItem write SetItem; default;
@@ -249,6 +272,7 @@ type
 
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPU16}
   MaxHashListSize = maxsmallint div 16;
   MaxHashStrSize  = maxsmallint;
@@ -263,6 +287,11 @@ const
   MaxHashStrSize  = Maxint;
   MaxHashTableSize = Maxint div 4;
 >>>>>>> graemeg/fixes_2_2
+=======
+  MaxHashListSize = Maxint div 16;
+  MaxHashStrSize  = Maxint;
+  MaxHashTableSize = Maxint div 4;
+>>>>>>> origin/fixes_2_2
   MaxItemsPerHash = 3;
 
 type
@@ -284,6 +313,7 @@ type
     FStrs     : PChar;
     FStrCount,
     FStrCapacity : Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Function InternalFind(AHash:LongWord;const AName:shortstring;out PrevIndex:Integer):Integer;
   protected
@@ -321,6 +351,8 @@ type
     Procedure ForEachCall(proc2call:TListCallback;arg:pointer);
     Procedure ForEachCall(proc2call:TListStaticCallback;arg:pointer);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     function InternalFind(AHash:LongWord;const AName:shortstring;out PrevIndex:Integer):Integer;
   protected
     function Get(Index: Integer): Pointer; {$ifdef CCLASSESINLINE}inline;{$endif}
@@ -355,7 +387,10 @@ type
     procedure ShowStatistics;
     procedure ForEachCall(proc2call:TListCallback;arg:pointer);
     procedure ForEachCall(proc2call:TListStaticCallback;arg:pointer);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property Capacity: Integer read FCapacity write SetCapacity;
     property Count: Integer read FCount write SetCount;
     property Items[Index: Integer]: Pointer read Get write Put; default;
@@ -378,6 +413,7 @@ type
     FCachedStr : pshortstring;
     FStrIndex  : Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure InternalChangeOwner(HashObjectList:TFPHashObjectList;const s:shortstring);
   protected
     Function GetName:shortstring;virtual;
@@ -389,6 +425,8 @@ type
     Procedure ChangeOwnerAndName(HashObjectList:TFPHashObjectList;const s:shortstring); {$ifdef CCLASSESINLINE}inline;{$endif}
     Procedure Rename(const ANewName:shortstring);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure InternalChangeOwner(HashObjectList:TFPHashObjectList;const s:shortstring);
   protected
     function GetName:shortstring;virtual;
@@ -399,7 +437,10 @@ type
     procedure ChangeOwner(HashObjectList:TFPHashObjectList); {$ifdef CCLASSESINLINE}inline;{$endif}
     procedure ChangeOwnerAndName(HashObjectList:TFPHashObjectList;const s:shortstring); {$ifdef CCLASSESINLINE}inline;{$endif}
     procedure Rename(const ANewName:shortstring);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property Name:shortstring read GetName;
     property Hash:Longword read GetHash;
   end;
@@ -408,6 +449,7 @@ type
   private
     FFreeObjects : Boolean;
     FHashList: TFPHashList;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Function GetCount: integer; {$ifdef CCLASSESINLINE}inline;{$endif}
     Procedure SetCount(const AValue: integer); {$ifdef CCLASSESINLINE}inline;{$endif}
@@ -439,6 +481,8 @@ type
     Procedure ForEachCall(proc2call:TObjectListCallback;arg:pointer); {$ifdef CCLASSESINLINE}inline;{$endif}
     Procedure ForEachCall(proc2call:TObjectListStaticCallback;arg:pointer); {$ifdef CCLASSESINLINE}inline;{$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
     function GetCount: integer; {$ifdef CCLASSESINLINE}inline;{$endif}
     procedure SetCount(const AValue: integer); {$ifdef CCLASSESINLINE}inline;{$endif}
   protected
@@ -467,7 +511,10 @@ type
     procedure ShowStatistics; {$ifdef CCLASSESINLINE}inline;{$endif}
     procedure ForEachCall(proc2call:TObjectListCallback;arg:pointer); {$ifdef CCLASSESINLINE}inline;{$endif}
     procedure ForEachCall(proc2call:TObjectListStaticCallback;arg:pointer); {$ifdef CCLASSESINLINE}inline;{$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property Capacity: Integer read GetCapacity write SetCapacity;
     property Count: Integer read GetCount write SetCount;
     property OwnsObjects: Boolean read FFreeObjects write FFreeObjects;
@@ -483,10 +530,14 @@ type
   { Must return a Longword value in the range 0..TableSize,
    usually via a mod operator;  }
 <<<<<<< HEAD
+<<<<<<< HEAD
   THashFunction = Function(const S: string; const TableSize: Longword): Longword;
 =======
   THashFunction = function(const S: string; const TableSize: Longword): Longword;
 >>>>>>> graemeg/fixes_2_2
+=======
+  THashFunction = function(const S: string; const TableSize: Longword): Longword;
+>>>>>>> origin/fixes_2_2
 
 
   { THTNode }
@@ -497,10 +548,14 @@ type
   public
     constructor CreateWith(const AString: String);
 <<<<<<< HEAD
+<<<<<<< HEAD
     Function HasKey(const AKey: string): boolean;
 =======
     function HasKey(const AKey: string): boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function HasKey(const AKey: string): boolean;
+>>>>>>> origin/fixes_2_2
     property Key: string read FKey;
   end;
   THTCustomNodeClass = Class of THTCustomNode;
@@ -511,6 +566,7 @@ type
   TFPCustomHashTable = class(TObject)
   private
     FHashTable: TFPObjectList;
+<<<<<<< HEAD
 <<<<<<< HEAD
     FHashFunction: THashFunction;
     FCount: Longword;
@@ -532,6 +588,11 @@ type
     FHashFunction: THashFunction;
     FCount: Longword;
 >>>>>>> graemeg/fixes_2_2
+=======
+    FHashTableSize: Longword;
+    FHashFunction: THashFunction;
+    FCount: Longword;
+>>>>>>> origin/fixes_2_2
     function GetDensity: Longword;
     function GetNumberOfCollisions: Longword;
     procedure SetHashTableSize(const Value: Longword);
@@ -540,6 +601,7 @@ type
     function GetLoadFactor: double;
     function GetAVGChainLen: double;
     function GetMaxChainLength: Longword;
+<<<<<<< HEAD
 <<<<<<< HEAD
   protected
     function Chain(const index: Longword):TFPObjectList;
@@ -559,6 +621,8 @@ type
     Function FindOrCreateNew(const aKey: string): THTCustomNode; virtual;
     Procedure SetHashFunction(AHashFunction: THashFunction); virtual;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     function Chain(const index: Longword):TFPObjectList;
   protected
     Function CreateNewNode(const aKey : string) : THTCustomNode; virtual; abstract;
@@ -566,12 +630,16 @@ type
     function ChainLength(const ChainIndex: Longword): Longword; virtual;
     function FindOrCreateNew(const aKey: string): THTCustomNode; virtual;
     procedure SetHashFunction(AHashFunction: THashFunction); virtual;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Function FindChainForAdd(Const aKey : String) : TFPObjectList;
   public
     constructor Create;
     constructor CreateWith(AHashTableSize: Longword; aHashFunc: THashFunction);
     destructor Destroy; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Procedure ChangeTableSize(const ANewSize: Longword); virtual;
     Procedure Clear; virtual;
@@ -579,12 +647,17 @@ type
     Function Find(const aKey: string): THTCustomNode;
     Function IsEmpty: boolean;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure ChangeTableSize(const ANewSize: Longword); virtual;
     procedure Clear; virtual;
     procedure Delete(const aKey: string); virtual;
     function Find(const aKey: string): THTCustomNode;
     function IsEmpty: boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property HashFunction: THashFunction read FHashFunction write SetHashFunction;
     property Count: Longword read FCount;
     property HashTableSize: Longword read FHashTableSize write SetHashTableSize;
@@ -609,10 +682,14 @@ type
   THTNode = THTDataNode;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   TDataIteratorMethod = Procedure(Item: Pointer; const Key: string; var Continue: Boolean) of object;
 =======
   TDataIteratorMethod = procedure(Item: Pointer; const Key: string; var Continue: Boolean) of object;
 >>>>>>> graemeg/fixes_2_2
+=======
+  TDataIteratorMethod = procedure(Item: Pointer; const Key: string; var Continue: Boolean) of object;
+>>>>>>> origin/fixes_2_2
   // For compatibility
   TIteratorMethod = TDataIteratorMethod;
 
@@ -621,6 +698,7 @@ type
     Function CreateNewNode(const aKey : String) : THTCustomNode; override;
     Procedure AddNode(ANode : THTCustomNode); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure SetData(const index: string; const AValue: Pointer); virtual;
     Function GetData(const index: string):Pointer; virtual;
     Function ForEachCall(aMethod: TDataIteratorMethod): THTDataNode; virtual;
@@ -628,12 +706,17 @@ type
     Function Iterate(aMethod: TDataIteratorMethod): Pointer; virtual;
     Procedure Add(const aKey: string; AItem: pointer); virtual;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure SetData(const index: string; const AValue: Pointer); virtual;
     function GetData(const index: string):Pointer; virtual;
     function ForEachCall(aMethod: TDataIteratorMethod): THTDataNode; virtual;
   Public
     procedure Add(const aKey: string; AItem: pointer); virtual;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property Items[const index: string]: Pointer read GetData write SetData; default;
   end;
 
@@ -645,15 +728,20 @@ type
     property Data: String read FData write FData;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TStringIteratorMethod = Procedure(Item: String; const Key: string; var Continue: Boolean) of object;
 =======
   TStringIteratorMethod = procedure(Item: String; const Key: string; var Continue: Boolean) of object;
 >>>>>>> graemeg/fixes_2_2
+=======
+  TStringIteratorMethod = procedure(Item: String; const Key: string; var Continue: Boolean) of object;
+>>>>>>> origin/fixes_2_2
 
   TFPStringHashTable = Class(TFPCustomHashTable)
   Protected
     Function CreateNewNode(const aKey : String) : THTCustomNode; override;
     Procedure AddNode(ANode : THTCustomNode); override;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Procedure SetData(const Index, AValue: string); virtual;
     Function GetData(const index: string): String; virtual;
@@ -662,12 +750,17 @@ type
     Function Iterate(aMethod: TStringIteratorMethod): String; virtual;
     Procedure Add(const aKey,aItem: string); virtual;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure SetData(const Index, AValue: string); virtual;
     function GetData(const index: string): String; virtual;
     function ForEachCall(aMethod: TStringIteratorMethod): THTStringNode; virtual;
   Public
     procedure Add(const aKey,aItem: string); virtual;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property Items[const index: string]: String read GetData write SetData; default;
   end;
 
@@ -684,6 +777,7 @@ type
   THTOwnedObjectNode = Class(THTObjectNode)
   public
 <<<<<<< HEAD
+<<<<<<< HEAD
     destructor Destroy; override;
   end;
   TObjectIteratorMethod = Procedure(Item: TObject; const Key: string; var Continue: Boolean) of object;
@@ -692,6 +786,11 @@ type
   end;
   TObjectIteratorMethod = procedure(Item: TObject; const Key: string; var Continue: Boolean) of object;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Destructor Destroy; override;
+  end;
+  TObjectIteratorMethod = procedure(Item: TObject; const Key: string; var Continue: Boolean) of object;
+>>>>>>> origin/fixes_2_2
 
   TFPObjectHashTable = Class(TFPCustomHashTable)
   Private
@@ -699,6 +798,7 @@ type
   Protected
     Function CreateNewNode(const aKey : String) : THTCustomNode; override;
     Procedure AddNode(ANode : THTCustomNode); override;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Procedure SetData(const Index: string; AObject : TObject); virtual;
     Function GetData(const index: string): TObject; virtual;
@@ -711,6 +811,8 @@ type
     property Items[const index: string]: TObject read GetData write SetData; default;
     Property OwnsObjects : Boolean Read FOwnsObjects;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure SetData(const Index: string; AObject : TObject); virtual;
     function GetData(const index: string): TObject; virtual;
     function ForEachCall(aMethod: TObjectIteratorMethod): THTObjectNode; virtual;
@@ -720,26 +822,37 @@ type
     procedure Add(const aKey: string; AItem : TObject); virtual;
     property Items[const index: string]: TObject read GetData write SetData; default;
     Property OwnsObjects : Boolean Read FOwnsObjects Write FOwnsObjects;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   EDuplicate = class(Exception);
   EKeyNotFound = class(Exception);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   Function RSHash(const S: string; const TableSize: Longword): Longword;
 =======
   function RSHash(const S: string; const TableSize: Longword): Longword;
 >>>>>>> graemeg/fixes_2_2
+=======
+  function RSHash(const S: string; const TableSize: Longword): Longword;
+>>>>>>> origin/fixes_2_2
 
 { ---------------------------------------------------------------------
     Bucket lists as in Delphi
   ---------------------------------------------------------------------}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
 
 Type
   TBucketItem = record
@@ -755,12 +868,17 @@ Type
   TBucketArray = array of TBucket;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   TBucketProc = Procedure(AInfo, AItem, AData: Pointer; out AContinue: Boolean);
   TBucketProcObject = Procedure(AItem, AData: Pointer; out AContinue: Boolean) of Object;
 =======
   TBucketProc = procedure(AInfo, AItem, AData: Pointer; out AContinue: Boolean);
   TBucketProcObject = procedure(AItem, AData: Pointer; out AContinue: Boolean) of Object;
 >>>>>>> graemeg/fixes_2_2
+=======
+  TBucketProc = procedure(AInfo, AItem, AData: Pointer; out AContinue: Boolean);
+  TBucketProcObject = procedure(AItem, AData: Pointer; out AContinue: Boolean) of Object;
+>>>>>>> origin/fixes_2_2
 
 { ---------------------------------------------------------------------
   TCustomBucketList
@@ -771,6 +889,7 @@ Type
   TCustomBucketList = class(TObject)
   private
     FBuckets: TBucketArray;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Function GetBucketCount: Integer;
     Function GetData(AItem: Pointer): Pointer;
@@ -784,6 +903,8 @@ Type
     Procedure Error(Msg : String; Args : Array of Const);
     Function FindItem(AItem: Pointer; out ABucket, AIndex: Integer): Boolean; virtual;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     function GetBucketCount: Integer;
     function GetData(AItem: Pointer): Pointer;
     procedure SetData(AItem: Pointer; const AData: Pointer);
@@ -795,11 +916,15 @@ Type
     function DeleteItem(ABucket: Integer; AIndex: Integer): Pointer; virtual;
     Procedure Error(Msg : String; Args : Array of Const);
     function FindItem(AItem: Pointer; out ABucket, AIndex: Integer): Boolean; virtual;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property Buckets: TBucketArray read FBuckets;
     property BucketCount: Integer read GetBucketCount write SetBucketCount;
   public
     destructor Destroy; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Procedure Clear;
     Function Add(AItem, AData: Pointer): Pointer;
@@ -810,6 +935,8 @@ Type
     Function ForEach(AProc: TBucketProcObject): Boolean;
     Function Remove(AItem: Pointer): Pointer;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure Clear;
     function Add(AItem, AData: Pointer): Pointer;
     procedure Assign(AList: TCustomBucketList);
@@ -818,7 +945,10 @@ Type
     function ForEach(AProc: TBucketProc; AInfo: Pointer = nil): Boolean;
     function ForEach(AProc: TBucketProcObject): Boolean;
     function Remove(AItem: Pointer): Pointer;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property Data[AItem: Pointer]: Pointer read GetData write SetData; default;
   end;
 
@@ -826,10 +956,14 @@ Type
   TBucketList
   ---------------------------------------------------------------------}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
 
   TBucketListSizes = (bl2, bl4, bl8, bl16, bl32, bl64, bl128, bl256);
 
@@ -840,10 +974,14 @@ Type
     FBucketMask: Byte;
   protected
 <<<<<<< HEAD
+<<<<<<< HEAD
     Function BucketFor(AItem: Pointer): Integer; override;
 =======
     function BucketFor(AItem: Pointer): Integer; override;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function BucketFor(AItem: Pointer): Integer; override;
+>>>>>>> origin/fixes_2_2
   public
     constructor Create(ABuckets: TBucketListSizes = bl16);
   end;
@@ -852,14 +990,19 @@ Type
   TObjectBucketList
   ---------------------------------------------------------------------}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
   { TObjectBucketList }
 
   TObjectBucketList = class(TBucketList)
   protected
+<<<<<<< HEAD
 <<<<<<< HEAD
     Function GetData(AItem: TObject): TObject;
     Procedure SetData(AItem: TObject; const AData: TObject);
@@ -867,12 +1010,17 @@ Type
     Function Add(AItem, AData: TObject): TObject;
     Function Remove(AItem: TObject): TObject;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     function GetData(AItem: TObject): TObject;
     procedure SetData(AItem: TObject; const AData: TObject);
   public
     function Add(AItem, AData: TObject): TObject;
     function Remove(AItem: TObject): TObject;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property Data[AItem: TObject]: TObject read GetData write SetData; default;
   end;
 
@@ -904,10 +1052,14 @@ constructor TFPObjectList.Create(FreeObjects : boolean);
 begin
   Create;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FFreeObjects:=Freeobjects;
 =======
   FFreeObjects := Freeobjects;
 >>>>>>> graemeg/fixes_2_2
+=======
+  FFreeObjects := Freeobjects;
+>>>>>>> origin/fixes_2_2
 end;
 
 destructor TFPObjectList.Destroy;
@@ -921,19 +1073,27 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPObjectList.Clear;
 =======
 procedure TFPObjectList.Clear;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPObjectList.Clear;
+>>>>>>> origin/fixes_2_2
 var
   i: integer;
 begin
   if FFreeObjects then
 <<<<<<< HEAD
+<<<<<<< HEAD
     for i:=FList.Count-1 downto 0  do
 =======
     for i := 0 to FList.Count - 1 do
 >>>>>>> graemeg/fixes_2_2
+=======
+    for i := 0 to FList.Count - 1 do
+>>>>>>> origin/fixes_2_2
       TObject(FList[i]).Free;
   FList.Clear;
 end;
@@ -941,6 +1101,7 @@ end;
 constructor TFPObjectList.Create;
 begin
   inherited Create;
+<<<<<<< HEAD
 <<<<<<< HEAD
   FList:=TFPList.Create;
   FFreeObjects:=True;
@@ -986,6 +1147,8 @@ end;
 
 Procedure TFPObjectList.Delete(Index: Integer); {$ifdef CLASSESINLINE}inline;{$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FList := TFPList.Create;
   FFreeObjects := True;
 end;
@@ -1029,7 +1192,10 @@ begin
 end;
 
 procedure TFPObjectList.Delete(Index: Integer); {$ifdef CLASSESINLINE}inline;{$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   if OwnsObjects then
     TObject(FList[Index]).Free;
@@ -1037,14 +1203,19 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPObjectList.Exchange(Index1, Index2: Integer);
 =======
 procedure TFPObjectList.Exchange(Index1, Index2: Integer);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPObjectList.Exchange(Index1, Index2: Integer);
+>>>>>>> origin/fixes_2_2
 begin
   FList.Exchange(Index1, Index2);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TFPObjectList.Expand: TFPObjectList;
 begin
@@ -1075,6 +1246,8 @@ end;
 
 Function TFPObjectList.FindInstanceOf(AClass: TClass; AExact: Boolean; AStartAt : Integer): Integer;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TFPObjectList.Expand: TFPObjectList;
 begin
   FList.Expand;
@@ -1103,12 +1276,16 @@ begin
 end;
 
 function TFPObjectList.FindInstanceOf(AClass: TClass; AExact: Boolean; AStartAt : Integer): Integer;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   I : Integer;
 begin
   I:=AStartAt;
   Result:=-1;
+<<<<<<< HEAD
 <<<<<<< HEAD
   if AExact then
     while (I<Count) and (Result=-1) do
@@ -1118,48 +1295,70 @@ begin
     while (I<Count) and (Result=-1) do
       If Items[i].ClassType=AClass then
 >>>>>>> graemeg/fixes_2_2
+=======
+  If AExact then
+    while (I<Count) and (Result=-1) do
+      If Items[i].ClassType=AClass then
+>>>>>>> origin/fixes_2_2
         Result:=I
       else
         Inc(I)
   else
     while (I<Count) and (Result=-1) do
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Items[i].InheritsFrom(AClass) then
 =======
       If Items[i].InheritsFrom(AClass) then
 >>>>>>> graemeg/fixes_2_2
+=======
+      If Items[i].InheritsFrom(AClass) then
+>>>>>>> origin/fixes_2_2
         Result:=I
       else
         Inc(I);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPObjectList.Insert(Index: Integer; AObject: TObject); {$ifdef CLASSESINLINE}inline;{$endif}
 =======
 procedure TFPObjectList.Insert(Index: Integer; AObject: TObject); {$ifdef CLASSESINLINE}inline;{$endif}
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPObjectList.Insert(Index: Integer; AObject: TObject); {$ifdef CLASSESINLINE}inline;{$endif}
+>>>>>>> origin/fixes_2_2
 begin
   FList.Insert(Index, Pointer(AObject));
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPObjectList.Move(CurIndex, NewIndex: Integer);
 =======
 procedure TFPObjectList.Move(CurIndex, NewIndex: Integer);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPObjectList.Move(CurIndex, NewIndex: Integer);
+>>>>>>> origin/fixes_2_2
 begin
   FList.Move(CurIndex, NewIndex);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPObjectList.Assign(Obj: TFPObjectList);
 =======
 procedure TFPObjectList.Assign(Obj: TFPObjectList);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPObjectList.Assign(Obj: TFPObjectList);
+>>>>>>> origin/fixes_2_2
 var
   i: Integer;
 begin
   Clear;
+<<<<<<< HEAD
 <<<<<<< HEAD
   for i:=0 to Obj.Count - 1 do
     Add(Obj[i]);
@@ -1167,25 +1366,35 @@ end;
 
 Procedure TFPObjectList.Pack;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   for I := 0 to Obj.Count - 1 do
     Add(Obj[i]);
 end;
 
 procedure TFPObjectList.Pack;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   FList.Pack;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPObjectList.Sort(Compare: TListSortCompare);
 =======
 procedure TFPObjectList.Sort(Compare: TListSortCompare);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPObjectList.Sort(Compare: TListSortCompare);
+>>>>>>> origin/fixes_2_2
 begin
   FList.Sort(Compare);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TFPObjectList.First: TObject;
 begin
@@ -1199,6 +1408,8 @@ end;
 
 Procedure TFPObjectList.ForEachCall(proc2call:TObjectListCallback;arg:pointer);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TFPObjectList.First: TObject;
 begin
   Result := TObject(FList.First);
@@ -1210,16 +1421,23 @@ begin
 end;
 
 procedure TFPObjectList.ForEachCall(proc2call:TObjectListCallback;arg:pointer);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   FList.ForEachCall(TListCallBack(proc2call),arg);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPObjectList.ForEachCall(proc2call:TObjectListStaticCallback;arg:pointer);
 =======
 procedure TFPObjectList.ForEachCall(proc2call:TObjectListStaticCallback;arg:pointer);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPObjectList.ForEachCall(proc2call:TObjectListStaticCallback;arg:pointer);
+>>>>>>> origin/fixes_2_2
 begin
   FList.ForEachCall(TListStaticCallBack(proc2call),arg);
 end;
@@ -1227,6 +1445,7 @@ end;
 
 { TObjectList }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 constructor TObjectList.Create(FreeObjects: boolean);
 begin
@@ -1242,6 +1461,8 @@ end;
 
 Procedure TObjectList.Notify(Ptr: Pointer; Action: TListNotification);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 constructor tobjectlist.create(freeobjects : boolean);
 
 begin
@@ -1258,7 +1479,10 @@ end;
 
 Procedure TObjectList.Notify(Ptr: Pointer; Action: TListNotification);
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   if FFreeObjects then
     if (Action=lnDeleted) then
@@ -1269,6 +1493,7 @@ end;
 
 Function TObjectList.GetItem(Index: Integer): TObject;
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   Result:=TObject(inherited Get(Index));
 =======
@@ -1276,14 +1501,23 @@ begin
 begin
   Result:=TObject(Inherited Get(Index));
 >>>>>>> graemeg/fixes_2_2
+=======
+
+begin
+  Result:=TObject(Inherited Get(Index));
+>>>>>>> origin/fixes_2_2
 end;
 
 
 Procedure TObjectList.SetItem(Index: Integer; AObject: TObject);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 begin
   // Put will take care of deleting old one in Notify.
   Put(Index,Pointer(AObject));
@@ -1292,6 +1526,7 @@ end;
 
 Function TObjectList.Add(AObject: TObject): Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   Result:=inherited Add(Pointer(AObject));
 =======
@@ -1299,10 +1534,16 @@ begin
 begin
   Result:=Inherited Add(Pointer(AObject));
 >>>>>>> graemeg/fixes_2_2
+=======
+
+begin
+  Result:=Inherited Add(Pointer(AObject));
+>>>>>>> origin/fixes_2_2
 end;
 
 
 Function TObjectList.Extract(Item: TObject): TObject;
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
   Result:=TObject(inherited Extract(Pointer(Item)));
@@ -1311,10 +1552,16 @@ begin
 begin
   Result:=Tobject(Inherited Extract(Pointer(Item)));
 >>>>>>> graemeg/fixes_2_2
+=======
+
+begin
+  Result:=Tobject(Inherited Extract(Pointer(Item)));
+>>>>>>> origin/fixes_2_2
 end;
 
 
 Function TObjectList.Remove(AObject: TObject): Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
   Result:=inherited Remove(Pointer(AObject));
@@ -1323,10 +1570,16 @@ begin
 begin
   Result:=Inherited Remove(Pointer(AObject));
 >>>>>>> graemeg/fixes_2_2
+=======
+
+begin
+  Result:=Inherited Remove(Pointer(AObject));
+>>>>>>> origin/fixes_2_2
 end;
 
 
 Function TObjectList.IndexOf(AObject: TObject): Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
   Result:=inherited IndexOf(Pointer(AObject));
@@ -1344,6 +1597,8 @@ begin
     while (I<Count) and (Result=-1) do
       if Items[i].ClassType=AClass then
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
   Result:=Inherited indexOF(Pointer(AObject));
@@ -1361,11 +1616,15 @@ begin
   If AExact then
     While (I<Count) and (Result=-1) do
       If Items[i].ClassType=AClass then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         Result:=I
       else
         Inc(I)
   else
+<<<<<<< HEAD
 <<<<<<< HEAD
     while (I<Count) and (Result=-1) do
       if Items[i].InheritsFrom(AClass) then
@@ -1373,6 +1632,10 @@ begin
     While (I<Count) and (Result=-1) do
       If Items[i].InheritsFrom(AClass) then
 >>>>>>> graemeg/fixes_2_2
+=======
+    While (I<Count) and (Result=-1) do
+      If Items[i].InheritsFrom(AClass) then
+>>>>>>> origin/fixes_2_2
         Result:=I
       else
         Inc(I);
@@ -1380,15 +1643,20 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TObjectList.Insert(Index: Integer; AObject: TObject);
 =======
 procedure TObjectList.Insert(Index: Integer; AObject: TObject);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TObjectList.Insert(Index: Integer; AObject: TObject);
+>>>>>>> origin/fixes_2_2
 begin
   Inherited Insert(Index,Pointer(AObject));
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TObjectList.First: TObject;
 begin
@@ -1400,6 +1668,8 @@ Function TObjectList.Last: TObject;
 begin
   Result:=TObject(inherited Last);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TObjectList.First: TObject;
 
 begin
@@ -1411,11 +1681,15 @@ function TObjectList.Last: TObject;
 
 begin
   Result := TObject(Inherited Last);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 { TListComponent }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
   TlistComponent = class(TComponent)
@@ -1430,6 +1704,8 @@ Procedure TlistComponent.Notification(AComponent: TComponent;
 begin
   if (Operation=opRemove) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Type
   TlistComponent = Class(TComponent)
   Private
@@ -1442,7 +1718,10 @@ procedure TlistComponent.Notification(AComponent: TComponent;
   Operation: TOperation);
 begin
   If (Operation=opremove) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Flist.HandleFreeNotify(Self,AComponent);
   inherited;
 end;
@@ -1452,10 +1731,14 @@ end;
 Function TComponentList.Add(AComponent: TComponent): Integer;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=inherited Add(AComponent);
 =======
   Result:=Inherited Add(AComponent);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=Inherited Add(AComponent);
+>>>>>>> origin/fixes_2_2
 end;
 
 destructor TComponentList.Destroy;
@@ -1467,78 +1750,111 @@ end;
 Function TComponentList.Extract(Item: TComponent): TComponent;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=TComponent(inherited Extract(Item));
 =======
   Result:=TComponent(Inherited Extract(Item));
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TComponent(Inherited Extract(Item));
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TComponentList.First: TComponent;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=TComponent(inherited First);
 =======
   Result:=TComponent(Inherited First);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TComponent(Inherited First);
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TComponentList.GetItems(Index: Integer): TComponent;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=TComponent(inherited Items[Index]);
 =======
   Result:=TComponent(Inherited Items[Index]);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TComponent(Inherited Items[Index]);
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure TComponentList.HandleFreeNotify(Sender: TObject;
   AComponent: TComponent);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Extract(AComponent);
 =======
   Extract(Acomponent);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Extract(Acomponent);
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TComponentList.IndexOf(AComponent: TComponent): Integer;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=inherited IndexOf(AComponent);
 =======
   Result:=Inherited IndexOf(AComponent);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=Inherited IndexOf(AComponent);
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure TComponentList.Insert(Index: Integer; AComponent: TComponent);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   inherited Insert(Index,AComponent)
 =======
   Inherited Insert(Index,Acomponent)
 >>>>>>> graemeg/fixes_2_2
+=======
+  Inherited Insert(Index,Acomponent)
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TComponentList.Last: TComponent;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=TComponent(inherited Last);
 =======
   Result:=TComponent(Inherited Last);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TComponent(Inherited Last);
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure TComponentList.Notify(Ptr: Pointer; Action: TListNotification);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if FNotifier=nil then
 =======
   If FNotifier=NIl then
 >>>>>>> graemeg/fixes_2_2
+=======
+  If FNotifier=NIl then
+>>>>>>> origin/fixes_2_2
     begin
     FNotifier:=TlistComponent.Create(nil);
     TlistComponent(FNotifier).FList:=Self;
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
   if Assigned(Ptr) then
     with TComponent(Ptr) do
@@ -1546,6 +1862,10 @@ begin
   If Assigned(Ptr) then
     With TComponent(Ptr) do
 >>>>>>> graemeg/fixes_2_2
+=======
+  If Assigned(Ptr) then
+    With TComponent(Ptr) do
+>>>>>>> origin/fixes_2_2
       case Action of
         lnAdded : FreeNotification(FNotifier);
         lnExtracted, lnDeleted: RemoveFreeNotification(FNotifier);
@@ -1556,10 +1876,14 @@ end;
 Function TComponentList.Remove(AComponent: TComponent): Integer;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=inherited Remove(AComponent);
 =======
   Result:=Inherited Remove(AComponent);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=Inherited Remove(AComponent);
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure TComponentList.SetItems(Index: Integer; AComponent: TComponent);
@@ -1572,82 +1896,118 @@ end;
 Function TClassList.Add(AClass: TClass): Integer;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=inherited Add(Pointer(AClass));
 =======
   Result:=Inherited Add(Pointer(AClass));
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=Inherited Add(Pointer(AClass));
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TClassList.Extract(Item: TClass): TClass;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=TClass(inherited Extract(Pointer(Item)));
 =======
   Result:=TClass(Inherited Extract(Pointer(Item)));
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TClass(Inherited Extract(Pointer(Item)));
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TClassList.First: TClass;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=TClass(inherited First);
 =======
   Result:=TClass(Inherited First);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TClass(Inherited First);
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TClassList.GetItems(Index: Integer): TClass;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=TClass(inherited Items[Index]);
 =======
   Result:=TClass(Inherited Items[Index]);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TClass(Inherited Items[Index]);
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TClassList.IndexOf(AClass: TClass): Integer;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=inherited IndexOf(Pointer(AClass));
 =======
   Result:=Inherited IndexOf(Pointer(AClass));
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=Inherited IndexOf(Pointer(AClass));
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure TClassList.Insert(Index: Integer; AClass: TClass);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   inherited Insert(Index,Pointer(AClass));
 =======
   Inherited Insert(index,Pointer(AClass));
 >>>>>>> graemeg/fixes_2_2
+=======
+  Inherited Insert(index,Pointer(AClass));
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TClassList.Last: TClass;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=TClass(inherited Last);
 =======
   Result:=TClass(Inherited Last);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TClass(Inherited Last);
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TClassList.Remove(AClass: TClass): Integer;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=inherited Remove(Pointer(AClass));
 =======
   Result:=Inherited Remove(Pointer(AClass));
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=Inherited Remove(Pointer(AClass));
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure TClassList.SetItems(Index: Integer; AClass: TClass);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Put(Index,Pointer(AClass));
 =======
   Put(Index,Pointer(Aclass));
 >>>>>>> graemeg/fixes_2_2
+=======
+  Put(Index,Pointer(Aclass));
+>>>>>>> origin/fixes_2_2
 end;
 
 { TOrderedList }
@@ -1675,25 +2035,35 @@ end;
 Function TOrderedList.Peek: Pointer;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if AtLeast(1) then
     Result:=PeekItem
   else
     Result:=nil;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   If AtLeast(1) then
     Result:=PeekItem
   else
     Result:=Nil;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TOrderedList.PeekItem: Pointer;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   with Flist do
 =======
   With Flist do
 >>>>>>> graemeg/fixes_2_2
+=======
+  With Flist do
+>>>>>>> origin/fixes_2_2
     Result:=Items[Count-1]
 end;
 
@@ -1703,14 +2073,19 @@ begin
     Result:=PopItem
   else
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result:=nil;
 =======
     Result:=Nil;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Result:=Nil;
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TOrderedList.PopItem: Pointer;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   with FList do
     if Count>0 then
@@ -1718,25 +2093,37 @@ begin
   With FList do
     If Count>0 then
 >>>>>>> graemeg/fixes_2_2
+=======
+  With FList do
+    If Count>0 then
+>>>>>>> origin/fixes_2_2
       begin
       Result:=Items[Count-1];
       Delete(Count-1);
       end
     else
 <<<<<<< HEAD
+<<<<<<< HEAD
       Result:=nil;
 =======
       Result:=Nil;
 >>>>>>> graemeg/fixes_2_2
+=======
+      Result:=Nil;
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TOrderedList.Push(AItem: Pointer): Pointer;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   PushItem(AItem);
 =======
   PushItem(Aitem);
 >>>>>>> graemeg/fixes_2_2
+=======
+  PushItem(Aitem);
+>>>>>>> origin/fixes_2_2
   Result:=AItem;
 end;
 
@@ -1745,10 +2132,14 @@ end;
 Procedure TStack.PushItem(AItem: Pointer);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FList.Add(AItem);
 =======
   FList.Add(Aitem);
 >>>>>>> graemeg/fixes_2_2
+=======
+  FList.Add(Aitem);
+>>>>>>> origin/fixes_2_2
 end;
 
 { TObjectStack }
@@ -1756,10 +2147,14 @@ end;
 Function TObjectStack.Peek: TObject;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=TObject(inherited Peek);
 =======
   Result:=TObject(Inherited Peek);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TObject(Inherited Peek);
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TObjectStack.Pop: TObject;
@@ -1770,10 +2165,14 @@ end;
 Function TObjectStack.Push(AObject: TObject): TObject;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=TObject(inherited Push(Pointer(AObject)));
 =======
   Result:=TObject(Inherited Push(Pointer(AObject)));
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TObject(Inherited Push(Pointer(AObject)));
+>>>>>>> origin/fixes_2_2
 end;
 
 { TQueue }
@@ -1781,10 +2180,14 @@ end;
 Procedure TQueue.PushItem(AItem: Pointer);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   with FList Do
 =======
   With Flist Do
 >>>>>>> graemeg/fixes_2_2
+=======
+  With Flist Do
+>>>>>>> origin/fixes_2_2
     Insert(0,AItem);
 end;
 
@@ -1793,28 +2196,40 @@ end;
 Function TObjectQueue.Peek: TObject;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=TObject(inherited Peek);
 =======
   Result:=TObject(Inherited Peek);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TObject(Inherited Peek);
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TObjectQueue.Pop: TObject;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=TObject(inherited Pop);
 =======
   Result:=TObject(Inherited Pop);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TObject(Inherited Pop);
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TObjectQueue.Push(AObject: TObject): TObject;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=TObject(inherited Push(Pointer(AObject)));
 =======
   Result:=TObject(Inherited Push(Pointer(Aobject)));
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TObject(Inherited Push(Pointer(Aobject)));
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -1822,6 +2237,7 @@ end;
                             TFPHashList
 *****************************************************************************}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     Function FPHash(const s:shortstring):LongWord;
     var
@@ -1859,6 +2275,8 @@ end;
 
 Procedure TFPHashList.RaiseIndexError(Index : Integer);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     function FPHash1(const s:shortstring):LongWord;
       Var
         g : LongWord;
@@ -1903,17 +2321,24 @@ Procedure TFPHashList.RaiseIndexError(Index : Integer);
 
 
 procedure TFPHashList.RaiseIndexError(Index : Integer);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   Error(SListIndexError, Index);
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TFPHashList.Get(Index: Integer): Pointer;
 =======
 function TFPHashList.Get(Index: Integer): Pointer;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TFPHashList.Get(Index: Integer): Pointer;
+>>>>>>> origin/fixes_2_2
 begin
   If (Index < 0) or (Index >= FCount) then
     RaiseIndexError(Index);
@@ -1921,6 +2346,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Procedure TFPHashList.Put(Index: Integer; Item: Pointer);
 begin
@@ -1941,6 +2367,8 @@ begin
     else
       Result:='';
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TFPHashList.Put(Index: Integer; Item: Pointer);
 begin
   if (Index < 0) or (Index >= FCount) then
@@ -1959,16 +2387,23 @@ begin
         Result:=PShortString(@FStrs[StrIndex])^
       else
         Result:='';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TFPHashList.HashOfIndex(Index: Integer): LongWord;
 =======
 function TFPHashList.HashOfIndex(Index: Integer): LongWord;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TFPHashList.HashOfIndex(Index: Integer): LongWord;
+>>>>>>> origin/fixes_2_2
 begin
   If (Index < 0) or (Index >= FCount) then
     RaiseIndexError(Index);
@@ -1976,6 +2411,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TFPHashList.GetNextCollision(Index: Integer): Integer;
 begin
@@ -2048,6 +2484,8 @@ begin
   FHashCapacity:=NewCapacity;
   ReallocMem(FHashTable, FHashCapacity*SizeOf(Integer));
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TFPHashList.Extract(item: Pointer): Pointer;
 var
   i : Integer;
@@ -2107,25 +2545,36 @@ begin
     exit;
   FHashCapacity:=NewCapacity;
   ReallocMem(FHashTable, FHashCapacity*sizeof(Integer));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   ReHash;
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPHashList.ReHash;
 =======
 procedure TFPHashList.ReHash;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPHashList.ReHash;
+>>>>>>> origin/fixes_2_2
 var
   i : Integer;
 begin
   FillDword(FHashTable^,FHashCapacity,LongWord(-1));
 <<<<<<< HEAD
+<<<<<<< HEAD
   for i:=0 to FCount-1 do
 =======
   For i:=0 To FCount-1 Do
 >>>>>>> graemeg/fixes_2_2
+=======
+  For i:=0 To FCount-1 Do
+>>>>>>> origin/fixes_2_2
     AddToHashTable(i);
 end;
 
@@ -2140,15 +2589,20 @@ destructor TFPHashList.Destroy;
 begin
   Clear;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if Assigned(FHashTable) then
 =======
   if assigned(FHashTable) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if assigned(FHashTable) then
+>>>>>>> origin/fixes_2_2
     FreeMem(FHashTable);
   inherited Destroy;
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TFPHashList.AddStr(const s:shortstring): Integer;
 var
@@ -2165,6 +2619,8 @@ end;
 
 Procedure TFPHashList.AddToHashTable(Index: Integer);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TFPHashList.AddStr(const s:shortstring): Integer;
 var
   Len : Integer;
@@ -2179,12 +2635,16 @@ end;
 
 
 procedure TFPHashList.AddToHashTable(Index: Integer);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   HashIndex : Integer;
 begin
   with FHashList^[Index] do
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
     if not Assigned(Data) then
       Exit;
@@ -2192,26 +2652,36 @@ begin
     NextIndex:=FHashTable^[HashIndex];
     FHashTable^[HashIndex]:=Index;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       if not assigned(Data) then
         exit;
       HashIndex:=HashValue mod LongWord(FHashCapacity);
       NextIndex:=FHashTable^[HashIndex];
       FHashTable^[HashIndex]:=Index;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TFPHashList.Add(const AName:shortstring;Item: Pointer): Integer;
 =======
 function TFPHashList.Add(const AName:shortstring;Item: Pointer): Integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TFPHashList.Add(const AName:shortstring;Item: Pointer): Integer;
+>>>>>>> origin/fixes_2_2
 begin
   if FCount = FCapacity then
     Expand;
   with FHashList^[FCount] do
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
     HashValue:=FPHash(AName);
     Data:=Item;
@@ -2261,6 +2731,8 @@ Function TFPHashList.Remove(Item: Pointer): Integer;
 begin
   Result:=IndexOf(Item);
 =======
+=======
+>>>>>>> origin/fixes_2_2
       HashValue:=FPHash(AName);
       Data:=Item;
       StrIndex:=AddStr(AName);
@@ -2308,11 +2780,15 @@ end;
 function TFPHashList.Remove(Item: Pointer): Integer;
 begin
   Result := IndexOf(Item);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   If Result <> -1 then
     Self.Delete(Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 class Procedure TFPHashList.Error(const Msg: string; Data: PtrInt);
 begin
@@ -2357,6 +2833,27 @@ begin
     Inc(IncSize, FCapacity shr 1)
   else if FCapacity >= sizeof(ptrint) then
     inc(IncSize,sizeof(ptrint));
+=======
+class procedure TFPHashList.Error(const Msg: string; Data: PtrInt);
+begin
+  Raise EListError.CreateFmt(Msg,[Data]) at get_caller_addr(get_frame);
+end;
+
+function TFPHashList.Expand: TFPHashList;
+var
+  IncSize : Longint;
+begin
+  Result := Self;
+  if FCount < FCapacity then
+    exit;
+  IncSize := sizeof(ptrint)*2;
+  if FCapacity > 127 then
+    Inc(IncSize, FCapacity shr 2)
+  else if FCapacity > sizeof(ptrint)*3 then
+    Inc(IncSize, FCapacity shr 1)
+  else if FCapacity >= sizeof(ptrint) then
+    inc(IncSize,sizeof(ptrint));
+>>>>>>> origin/fixes_2_2
   SetCapacity(FCapacity + IncSize);
   { Maybe expand hash also }
   if FCount>FHashCapacity*MaxItemsPerHash then
@@ -2364,11 +2861,15 @@ begin
 end;
 
 procedure TFPHashList.StrExpand(MinIncSize:Integer);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   IncSize : Longint;
 begin
   if FStrCount+MinIncSize < FStrCapacity then
+<<<<<<< HEAD
 <<<<<<< HEAD
     Exit;
   IncSize:=64;
@@ -2376,22 +2877,31 @@ begin
     exit;
   IncSize := 64;
 >>>>>>> graemeg/fixes_2_2
+=======
+    exit;
+  IncSize := 64;
+>>>>>>> origin/fixes_2_2
   if FStrCapacity > 255 then
     Inc(IncSize, FStrCapacity shr 2);
   SetStrCapacity(FStrCapacity + IncSize + MinIncSize);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TFPHashList.IndexOf(Item: Pointer): Integer;
 =======
 function TFPHashList.IndexOf(Item: Pointer): Integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TFPHashList.IndexOf(Item: Pointer): Integer;
+>>>>>>> origin/fixes_2_2
 var
   psrc  : PHashItem;
   Index : integer;
 begin
   Result:=-1;
   psrc:=@FHashList^[0];
+<<<<<<< HEAD
 <<<<<<< HEAD
   for Index:=0 to FCount-1 do
     begin
@@ -2406,6 +2916,8 @@ end;
 
 Function TFPHashList.InternalFind(AHash:LongWord;const AName:shortstring;out PrevIndex:Integer):Integer;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   For Index:=0 To FCount-1 Do
     begin
       if psrc^.Data=Item then
@@ -2418,7 +2930,10 @@ Function TFPHashList.InternalFind(AHash:LongWord;const AName:shortstring;out Pre
 end;
 
 function TFPHashList.InternalFind(AHash:LongWord;const AName:shortstring;out PrevIndex:Integer):Integer;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   HashIndex : Integer;
   Len,
@@ -2430,6 +2945,7 @@ begin
   LastChar:=AName[Byte(Len)];
   PrevIndex:=-1;
   while Result<>-1 do
+<<<<<<< HEAD
 <<<<<<< HEAD
     with FHashList^[Result] do
       begin
@@ -2447,6 +2963,8 @@ end;
 
 Function TFPHashList.Find(const AName:shortstring): Pointer;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     begin
       with FHashList^[Result] do
         begin
@@ -2464,7 +2982,10 @@ end;
 
 
 function TFPHashList.Find(const AName:shortstring): Pointer;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   Index,
   PrevIndex : Integer;
@@ -2473,19 +2994,27 @@ begin
   Index:=InternalFind(FPHash(AName),AName,PrevIndex);
   if Index=-1 then
 <<<<<<< HEAD
+<<<<<<< HEAD
     Exit;
 =======
     exit;
 >>>>>>> graemeg/fixes_2_2
+=======
+    exit;
+>>>>>>> origin/fixes_2_2
   Result:=FHashList^[Index].Data;
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TFPHashList.FindIndexOf(const AName:shortstring): Integer;
 =======
 function TFPHashList.FindIndexOf(const AName:shortstring): Integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TFPHashList.FindIndexOf(const AName:shortstring): Integer;
+>>>>>>> origin/fixes_2_2
 var
   PrevIndex : Integer;
 begin
@@ -2494,10 +3023,14 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TFPHashList.FindWithHash(const AName:shortstring;AHash:LongWord): Pointer;
 =======
 function TFPHashList.FindWithHash(const AName:shortstring;AHash:LongWord): Pointer;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TFPHashList.FindWithHash(const AName:shortstring;AHash:LongWord): Pointer;
+>>>>>>> origin/fixes_2_2
 var
   Index,
   PrevIndex : Integer;
@@ -2506,19 +3039,27 @@ begin
   Index:=InternalFind(AHash,AName,PrevIndex);
   if Index=-1 then
 <<<<<<< HEAD
+<<<<<<< HEAD
     Exit;
 =======
     exit;
 >>>>>>> graemeg/fixes_2_2
+=======
+    exit;
+>>>>>>> origin/fixes_2_2
   Result:=FHashList^[Index].Data;
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TFPHashList.Rename(const AOldName,ANewName:shortstring): Integer;
 =======
 function TFPHashList.Rename(const AOldName,ANewName:shortstring): Integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TFPHashList.Rename(const AOldName,ANewName:shortstring): Integer;
+>>>>>>> origin/fixes_2_2
 var
   PrevIndex,
   Index : Integer;
@@ -2529,10 +3070,14 @@ begin
   Index:=InternalFind(OldHash,AOldName,PrevIndex);
   if Index=-1 then
 <<<<<<< HEAD
+<<<<<<< HEAD
     Exit;
 =======
     exit;
 >>>>>>> graemeg/fixes_2_2
+=======
+    exit;
+>>>>>>> origin/fixes_2_2
   { Remove from current Hash }
   if PrevIndex<>-1 then
     FHashList^[PrevIndex].NextIndex:=FHashList^[Index].NextIndex
@@ -2542,12 +3087,17 @@ begin
   with FHashList^[Index] do
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     HashValue:=FPHash(ANewName);
     StrIndex:=AddStr(ANewName);
 =======
       HashValue:=FPHash(ANewName);
       StrIndex:=AddStr(ANewName);
 >>>>>>> graemeg/fixes_2_2
+=======
+      HashValue:=FPHash(ANewName);
+      StrIndex:=AddStr(ANewName);
+>>>>>>> origin/fixes_2_2
     end;
   { Insert back in Hash }
   AddToHashTable(Index);
@@ -2556,15 +3106,20 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPHashList.Pack;
 =======
 procedure TFPHashList.Pack;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPHashList.Pack;
+>>>>>>> origin/fixes_2_2
 var
   NewCount,
   i : integer;
   pdest,
   psrc : PHashItem;
+<<<<<<< HEAD
 <<<<<<< HEAD
   FOldStr : Pchar;
 begin
@@ -2591,6 +3146,8 @@ begin
     FreeMem(FoldStr);
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 begin
   NewCount:=0;
   psrc:=@FHashList^[0];
@@ -2605,7 +3162,10 @@ begin
         end;
       inc(psrc);
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FCount:=NewCount;
   { We need to ReHash to update the IndexNext }
   ReHash;
@@ -2616,10 +3176,14 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPHashList.ShowStatistics;
 =======
 procedure TFPHashList.ShowStatistics;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPHashList.ShowStatistics;
+>>>>>>> origin/fixes_2_2
 var
   HashMean,
   HashStdDev : Double;
@@ -2631,6 +3195,7 @@ begin
   HashStdDev:=0;
   for i:=0 to FHashCapacity-1 do
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
     j:=0;
     Index:=FHashTable^[i];
@@ -2646,6 +3211,8 @@ begin
   HashStdDev:=(HashStdDev-FHashCapacity*Sqr(HashMean));
   if FHashCapacity>1 then
 =======
+=======
+>>>>>>> origin/fixes_2_2
       j:=0;
       Index:=FHashTable^[i];
       while (Index<>-1) do
@@ -2659,7 +3226,10 @@ begin
   HashMean:=HashMean/FHashCapacity;
   HashStdDev:=(HashStdDev-FHashCapacity*Sqr(HashMean));
   If FHashCapacity>1 then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     HashStdDev:=Sqrt(HashStdDev/(FHashCapacity-1))
   else
     HashStdDev:=0;
@@ -2673,14 +3243,19 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPHashList.ForEachCall(proc2call:TListCallback;arg:pointer);
 =======
 procedure TFPHashList.ForEachCall(proc2call:TListCallback;arg:pointer);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPHashList.ForEachCall(proc2call:TListCallback;arg:pointer);
+>>>>>>> origin/fixes_2_2
 var
   i : integer;
   p : pointer;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   for i:=0 to Count-1 Do
     begin
@@ -2688,25 +3263,35 @@ begin
     if Assigned(p) then
       proc2call(p,arg);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   For I:=0 To Count-1 Do
     begin
       p:=FHashList^[i].Data;
       if assigned(p) then
         proc2call(p,arg);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPHashList.ForEachCall(proc2call:TListStaticCallback;arg:pointer);
 =======
 procedure TFPHashList.ForEachCall(proc2call:TListStaticCallback;arg:pointer);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPHashList.ForEachCall(proc2call:TListStaticCallback;arg:pointer);
+>>>>>>> origin/fixes_2_2
 var
   i : integer;
   p : pointer;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   for i:=0 to Count-1 Do
     begin
@@ -2714,12 +3299,17 @@ begin
     if Assigned(p) then
       proc2call(p,arg);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   For I:=0 To Count-1 Do
     begin
       p:=FHashList^[i].Data;
       if assigned(p) then
         proc2call(p,arg);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
 end;
 
@@ -2729,10 +3319,14 @@ end;
 *****************************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPHashObject.InternalChangeOwner(HashObjectList:TFPHashObjectList;const s:shortstring);
 =======
 procedure TFPHashObject.InternalChangeOwner(HashObjectList:TFPHashObjectList;const s:shortstring);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPHashObject.InternalChangeOwner(HashObjectList:TFPHashObjectList;const s:shortstring);
+>>>>>>> origin/fixes_2_2
 var
   Index : integer;
 begin
@@ -2756,30 +3350,42 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPHashObject.ChangeOwner(HashObjectList:TFPHashObjectList);
 =======
 procedure TFPHashObject.ChangeOwner(HashObjectList:TFPHashObjectList);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPHashObject.ChangeOwner(HashObjectList:TFPHashObjectList);
+>>>>>>> origin/fixes_2_2
 begin
   InternalChangeOwner(HashObjectList,PShortString(@FOwner.List.Strs[FStrIndex])^);
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPHashObject.ChangeOwnerAndName(HashObjectList:TFPHashObjectList;const s:shortstring);
 =======
 procedure TFPHashObject.ChangeOwnerAndName(HashObjectList:TFPHashObjectList;const s:shortstring);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPHashObject.ChangeOwnerAndName(HashObjectList:TFPHashObjectList;const s:shortstring);
+>>>>>>> origin/fixes_2_2
 begin
   InternalChangeOwner(HashObjectList,s);
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPHashObject.Rename(const ANewName:shortstring);
 =======
 procedure TFPHashObject.Rename(const ANewName:shortstring);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPHashObject.Rename(const ANewName:shortstring);
+>>>>>>> origin/fixes_2_2
 var
   Index : integer;
 begin
@@ -2787,16 +3393,22 @@ begin
   if Index<>-1 then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     FStrIndex:=FOwner.List.List^[Index].StrIndex;
     FCachedStr:=PShortString(@FOwner.List.Strs[FStrIndex]);
 =======
       FStrIndex:=FOwner.List.List^[Index].StrIndex;
       FCachedStr:=PShortString(@FOwner.List.Strs[FStrIndex]);
 >>>>>>> graemeg/fixes_2_2
+=======
+      FStrIndex:=FOwner.List.List^[Index].StrIndex;
+      FCachedStr:=PShortString(@FOwner.List.Strs[FStrIndex]);
+>>>>>>> origin/fixes_2_2
     end;
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TFPHashObject.GetName:shortstring;
 begin
@@ -2805,13 +3417,18 @@ begin
     FCachedStr:=PShortString(@FOwner.List.Strs[FStrIndex]);
     Result:=FCachedStr^;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TFPHashObject.GetName:shortstring;
 begin
   if FOwner<>nil then
     begin
       FCachedStr:=PShortString(@FOwner.List.Strs[FStrIndex]);
       Result:=FCachedStr^;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end
   else
     Result:='';
@@ -2819,10 +3436,14 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TFPHashObject.GetHash:Longword;
 =======
 function TFPHashObject.GetHash:Longword;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TFPHashObject.GetHash:Longword;
+>>>>>>> origin/fixes_2_2
 begin
   if FOwner<>nil then
     Result:=FPHash(PShortString(@FOwner.List.Strs[FStrIndex])^)
@@ -2839,12 +3460,17 @@ constructor TFPHashObjectList.Create(FreeObjects : boolean = True);
 begin
   inherited Create;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FHashList:=TFPHashList.Create;
   FFreeObjects:=Freeobjects;
 =======
   FHashList := TFPHashList.Create;
   FFreeObjects := Freeobjects;
 >>>>>>> graemeg/fixes_2_2
+=======
+  FHashList := TFPHashList.Create;
+  FFreeObjects := Freeobjects;
+>>>>>>> origin/fixes_2_2
 end;
 
 destructor TFPHashObjectList.Destroy;
@@ -2852,34 +3478,48 @@ begin
   if (FHashList <> nil) then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     Clear;
     FHashList.Destroy;
 =======
       Clear;
       FHashList.Destroy;
 >>>>>>> graemeg/fixes_2_2
+=======
+      Clear;
+      FHashList.Destroy;
+>>>>>>> origin/fixes_2_2
     end;
   inherited Destroy;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPHashObjectList.Clear;
 =======
 procedure TFPHashObjectList.Clear;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPHashObjectList.Clear;
+>>>>>>> origin/fixes_2_2
 var
   i: integer;
 begin
   if FFreeObjects then
 <<<<<<< HEAD
+<<<<<<< HEAD
     for i:=0 to FHashList.Count - 1 do
 =======
     for i := 0 to FHashList.Count - 1 do
 >>>>>>> graemeg/fixes_2_2
+=======
+    for i := 0 to FHashList.Count - 1 do
+>>>>>>> origin/fixes_2_2
       TObject(FHashList[i]).Free;
   FHashList.Clear;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TFPHashObjectList.GetCount: integer;
 begin
@@ -2936,6 +3576,8 @@ end;
 
 Procedure TFPHashObjectList.Delete(Index: Integer);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TFPHashObjectList.GetCount: integer;
 begin
   Result := FHashList.Count;
@@ -2985,13 +3627,17 @@ begin
 end;
 
 procedure TFPHashObjectList.Delete(Index: Integer);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   if OwnsObjects then
     TObject(FHashList[Index]).Free;
   FHashList.Delete(Index);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TFPHashObjectList.Expand: TFPHashObjectList;
 begin
@@ -3035,6 +3681,8 @@ end;
 
 Function TFPHashObjectList.FindWithHash(const AName:shortstring;AHash:LongWord): Pointer;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TFPHashObjectList.Expand: TFPHashObjectList;
 begin
   FHashList.Expand;
@@ -3076,32 +3724,44 @@ end;
 
 
 function TFPHashObjectList.FindWithHash(const AName:shortstring;AHash:LongWord): Pointer;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   Result:=TObject(FHashList.FindWithHash(AName,AHash));
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TFPHashObjectList.Rename(const AOldName,ANewName:shortstring): Integer;
 =======
 function TFPHashObjectList.Rename(const AOldName,ANewName:shortstring): Integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TFPHashObjectList.Rename(const AOldName,ANewName:shortstring): Integer;
+>>>>>>> origin/fixes_2_2
 begin
   Result:=FHashList.Rename(AOldName,ANewName);
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TFPHashObjectList.FindInstanceOf(AClass: TClass; AExact: Boolean; AStartAt : Integer): Integer;
 =======
 function TFPHashObjectList.FindInstanceOf(AClass: TClass; AExact: Boolean; AStartAt : Integer): Integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TFPHashObjectList.FindInstanceOf(AClass: TClass; AExact: Boolean; AStartAt : Integer): Integer;
+>>>>>>> origin/fixes_2_2
 var
   I : Integer;
 begin
   I:=AStartAt;
   Result:=-1;
+<<<<<<< HEAD
 <<<<<<< HEAD
   if AExact then
     while (I<Count) and (Result=-1) do
@@ -3111,16 +3771,25 @@ begin
     while (I<Count) and (Result=-1) do
       If Items[i].ClassType=AClass then
 >>>>>>> graemeg/fixes_2_2
+=======
+  If AExact then
+    while (I<Count) and (Result=-1) do
+      If Items[i].ClassType=AClass then
+>>>>>>> origin/fixes_2_2
         Result:=I
       else
         Inc(I)
   else
     while (I<Count) and (Result=-1) do
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Items[i].InheritsFrom(AClass) then
 =======
       If Items[i].InheritsFrom(AClass) then
 >>>>>>> graemeg/fixes_2_2
+=======
+      If Items[i].InheritsFrom(AClass) then
+>>>>>>> origin/fixes_2_2
         Result:=I
       else
         Inc(I);
@@ -3128,40 +3797,56 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPHashObjectList.Pack;
 =======
 procedure TFPHashObjectList.Pack;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPHashObjectList.Pack;
+>>>>>>> origin/fixes_2_2
 begin
   FHashList.Pack;
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPHashObjectList.ShowStatistics;
 =======
 procedure TFPHashObjectList.ShowStatistics;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPHashObjectList.ShowStatistics;
+>>>>>>> origin/fixes_2_2
 begin
   FHashList.ShowStatistics;
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPHashObjectList.ForEachCall(proc2call:TObjectListCallback;arg:pointer);
 =======
 procedure TFPHashObjectList.ForEachCall(proc2call:TObjectListCallback;arg:pointer);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPHashObjectList.ForEachCall(proc2call:TObjectListCallback;arg:pointer);
+>>>>>>> origin/fixes_2_2
 begin
   FHashList.ForEachCall(TListCallBack(proc2call),arg);
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPHashObjectList.ForEachCall(proc2call:TObjectListStaticCallback;arg:pointer);
 =======
 procedure TFPHashObjectList.ForEachCall(proc2call:TObjectListStaticCallback;arg:pointer);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPHashObjectList.ForEachCall(proc2call:TObjectListStaticCallback;arg:pointer);
+>>>>>>> origin/fixes_2_2
 begin
   FHashList.ForEachCall(TListStaticCallBack(proc2call),arg);
 end;
@@ -3172,6 +3857,7 @@ end;
   ---------------------------------------------------------------------}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Default hash Function }
 
 Function RSHash(const S: string; const TableSize: Longword): Longword;
@@ -3180,12 +3866,18 @@ Function RSHash(const S: string; const TableSize: Longword): Longword;
 
 function RSHash(const S: string; const TableSize: Longword): Longword;
 >>>>>>> graemeg/fixes_2_2
+=======
+{ Default hash function }
+
+function RSHash(const S: string; const TableSize: Longword): Longword;
+>>>>>>> origin/fixes_2_2
 const
   b = 378551;
 var
   a: Longword;
   i: Longword;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   a:=63689;
   Result:=0;
@@ -3197,6 +3889,8 @@ begin
       end;
   Result:=(Result and $7FFFFFFF) mod TableSize;
 =======
+=======
+>>>>>>> origin/fixes_2_2
  a := 63689;
  Result := 0;
  if length(s)>0 then
@@ -3206,7 +3900,10 @@ begin
      a := a * b;
    end;
  Result := (Result and $7FFFFFFF) mod TableSize;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 { THTNode }
@@ -3214,6 +3911,7 @@ end;
 constructor THTCustomNode.CreateWith(const AString: string);
 begin
   inherited Create;
+<<<<<<< HEAD
 <<<<<<< HEAD
   FKey:=AString;
 end;
@@ -3228,6 +3926,8 @@ begin
   else
     Result:=CompareMem(PChar(FKey), PChar(AKey), Length(AKey));
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FKey := AString;
 end;
 
@@ -3240,7 +3940,10 @@ begin
   end
   else
     Result := CompareMem(PChar(FKey), PChar(AKey), length(AKey));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 { TFPCustomHashTable }
@@ -3254,16 +3957,22 @@ constructor TFPCustomHashTable.CreateWith(AHashTableSize: Longword;
   aHashFunc: THashFunction);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   inherited Create;
   FHashTable:=TFPObjectList.Create(True);
   HashTableSize:=AHashTableSize;
   FHashFunction:=aHashFunc;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Inherited Create;
   FHashTable := TFPObjectList.Create(True);
   HashTableSize := AHashTableSize;
   FHashFunction := aHashFunc;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 destructor TFPCustomHashTable.Destroy;
@@ -3272,6 +3981,7 @@ begin
   inherited Destroy;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TFPCustomHashTable.GetDensity: Longword;
 begin
@@ -3285,6 +3995,8 @@ end;
 
 Procedure TFPCustomHashTable.SetHashTableSize(const Value: Longword);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TFPCustomHashTable.GetDensity: Longword;
 begin
   Result := FHashTableSize - VoidSlots
@@ -3296,12 +4008,16 @@ begin
 end;
 
 procedure TFPCustomHashTable.SetHashTableSize(const Value: Longword);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   i: Longword;
   newSize: Longword;
 begin
   if Value <> FHashTableSize then
+<<<<<<< HEAD
 <<<<<<< HEAD
     begin
     i:=0;
@@ -3320,6 +4036,8 @@ end;
 
 Procedure TFPCustomHashTable.InitializeHashTable;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   begin
     i := 0;
     while (PRIMELIST[i] < Value) and (i < 27) do
@@ -3336,11 +4054,15 @@ Procedure TFPCustomHashTable.InitializeHashTable;
 end;
 
 procedure TFPCustomHashTable.InitializeHashTable;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   i: LongWord;
 begin
   if FHashTableSize>0 Then
+<<<<<<< HEAD
 <<<<<<< HEAD
     for i:=0 to FHashTableSize-1 do
       FHashTable.Add(nil);
@@ -3349,19 +4071,25 @@ end;
 
 Procedure TFPCustomHashTable.ChangeTableSize(const ANewSize: Longword);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     for i := 0 to FHashTableSize-1 do
      FHashTable.Add(nil);
   FCount := 0;
 end;
 
 procedure TFPCustomHashTable.ChangeTableSize(const ANewSize: Longword);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   SavedTable: TFPObjectList;
   SavedTableSize: Longword;
   i, j: Longword;
   temp: THTCustomNode;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   SavedTable:=FHashTable;
   SavedTableSize:=FHashTableSize;
@@ -3384,6 +4112,8 @@ begin
   if IsEmpty then
     FHashFunction:=AHashFunction
 =======
+=======
+>>>>>>> origin/fixes_2_2
   SavedTable := FHashTable;
   SavedTableSize := FHashTableSize;
   FHashTableSize := ANewSize;
@@ -3406,21 +4136,29 @@ procedure TFPCustomHashTable.SetHashFunction(AHashFunction: THashFunction);
 begin
   if IsEmpty then
     FHashFunction := AHashFunction
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   else
     raise Exception.Create(NotEmptyMsg);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TFPCustomHashTable.Find(const aKey: string): THTCustomNode;
 =======
 function TFPCustomHashTable.Find(const aKey: string): THTCustomNode;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TFPCustomHashTable.Find(const aKey: string): THTCustomNode;
+>>>>>>> origin/fixes_2_2
 var
   hashCode: Longword;
   chn: TFPObjectList;
   i: Longword;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   hashCode:=FHashFunction(aKey, FHashTableSize);
   chn:=Chain(hashCode);
@@ -3460,6 +4198,8 @@ end;
 
 Procedure TFPCustomHashTable.Delete(const aKey: string);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   hashCode := FHashFunction(aKey, FHashTableSize);
   chn := Chain(hashCode);
   if Assigned(chn) then
@@ -3501,12 +4241,16 @@ end;
 
 
 procedure TFPCustomHashTable.Delete(const aKey: string);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   hashCode: Longword;
   chn: TFPObjectList;
   i: Longword;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   hashCode:=FHashFunction(aKey, FHashTableSize);
   chn:=Chain(hashCode);
@@ -3533,6 +4277,8 @@ end;
 
 Function TFPCustomHashTable.GetVoidSlots: Longword;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   hashCode := FHashFunction(aKey, FHashTableSize);
   chn := Chain(hashCode);
   if Assigned(chn) then
@@ -3560,11 +4306,15 @@ begin
 end;
 
 function TFPCustomHashTable.GetVoidSlots: Longword;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   i: Longword;
   num: Longword;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   num:=0;
   if FHashTableSize>0 then
@@ -3597,6 +4347,8 @@ end;
 
 Function TFPCustomHashTable.FindOrCreateNew(const aKey: string): THTCustomNode;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   num := 0;
   if FHashTableSize>0 Then
     for i:= 0 to FHashTableSize-1 do
@@ -3627,12 +4379,16 @@ begin
 end;
 
 function TFPCustomHashTable.FindOrCreateNew(const aKey: string): THTCustomNode;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   hashCode: Longword;
   chn: TFPObjectList;
   i: Longword;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   hashCode:=FHashFunction(aKey, FHashTableSize);
   chn:=Chain(hashCode);
@@ -3674,6 +4430,8 @@ begin
         Chain(i).Clear;
   FCount:=0;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   hashCode := FHashFunction(aKey, FHashTableSize);
   chn := Chain(hashCode);
   if Assigned(chn)  then
@@ -3715,7 +4473,10 @@ begin
           Chain(i).Clear;
       end;
   FCount := 0;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -3723,15 +4484,20 @@ end;
 { TFPDataHashTable }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPDataHashTable.Add(const aKey: string; aItem: pointer);
 =======
 procedure TFPDataHashTable.Add(const aKey: string; aItem: pointer);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TFPDataHashTable.Add(const aKey: string; aItem: pointer);
+>>>>>>> origin/fixes_2_2
 var
   chn: TFPObjectList;
   NewNode: THtDataNode;
 begin
   chn:=FindChainForAdd(akey);
+<<<<<<< HEAD
 <<<<<<< HEAD
   NewNode:=THtDataNode(CreateNewNode(aKey));
   NewNode.Data:=aItem;
@@ -3753,6 +4519,8 @@ Procedure TFPDataHashTable.SetData(const index: string; const AValue: Pointer);
 begin
   THTDataNode(FindOrCreateNew(index)).Data:=AValue;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   NewNode := THtDataNode(CreateNewNode(aKey));
   NewNode.Data := aItem;
   chn.Add(NewNode);
@@ -3772,7 +4540,10 @@ end;
 procedure TFPDataHashTable.SetData(const index: string; const AValue: Pointer);
 begin
   THTDataNode(FindOrCreateNew(index)).Data := AValue;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 Function TFPDataHashTable.CreateNewNode(const aKey : string) : THTCustomNode;
@@ -3781,6 +4552,7 @@ begin
   Result:=THTDataNode.CreateWith(aKey);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TFPDataHashTable.Iterate(aMethod: TDataIteratorMethod): Pointer;
 var
@@ -3819,6 +4591,8 @@ Procedure TFPDataHashTable.AddNode(ANode : THTCustomNode);
 begin
   with THTDataNode(ANode) do
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TFPDataHashTable.ForEachCall(aMethod: TDataIteratorMethod): THTDataNode;
 var
   i, j: Longword;
@@ -3849,13 +4623,17 @@ Procedure TFPDataHashTable.AddNode(ANode : THTCustomNode);
 
 begin
   With THTDataNode(ANode) do
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Add(Key,Data);
 end;
 
 { TFPStringHashTable }
 
 Procedure TFPStringHashTable.AddNode(ANode : THTCustomNode);
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
   with THTStringNode(ANode) do
@@ -3887,6 +4665,8 @@ begin
   NewNode:=THtStringNode(CreateNewNode(aKey));
   NewNode.Data:=aItem;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
   With THTStringNode(ANode) do
@@ -3918,19 +4698,27 @@ begin
   chn:=FindChainForAdd(akey);
   NewNode := THtStringNode(CreateNewNode(aKey));
   NewNode.Data := aItem;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   chn.Add(NewNode);
 end;
 
 Function TFPStringHashTable.CreateNewNode(const aKey : string) : THTCustomNode;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 begin
   Result:=THTStringNode.CreateWith(aKey);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TFPStringHashTable.Iterate(aMethod: TStringIteratorMethod): String;
 var
@@ -3948,10 +4736,15 @@ Function TFPStringHashTable.ForEachCall(aMethod: TStringIteratorMethod): THTStri
 
 function TFPStringHashTable.ForEachCall(aMethod: TStringIteratorMethod): THTStringNode;
 >>>>>>> graemeg/fixes_2_2
+=======
+
+function TFPStringHashTable.ForEachCall(aMethod: TStringIteratorMethod): THTStringNode;
+>>>>>>> origin/fixes_2_2
 var
   i, j: Longword;
   continue: boolean;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   Result:=nil;
   continue:=True;
@@ -3969,6 +4762,8 @@ begin
               end;
             end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Result := nil;
   continue := true;
   if FHashTableSize>0 then
@@ -3988,21 +4783,29 @@ begin
         end;
       end;
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 { TFPObjectHashTable }
 
 Procedure TFPObjectHashTable.AddNode(ANode : THTCustomNode);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 begin
   With THTObjectNode(ANode) do
     Add(Key,Data);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TFPObjectHashTable.GetData(const Index: string): TObject;
 var
@@ -4029,6 +4832,8 @@ begin
   NewNode:=THTObjectNode(CreateNewNode(aKey));
   NewNode.Data:=aItem;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TFPObjectHashTable.GetData(const Index: string): TObject;
 var
   node: THTObjectNode;
@@ -4054,11 +4859,15 @@ begin
   chn:=FindChainForAdd(akey);
   NewNode := THTObjectNode(CreateNewNode(aKey));
   NewNode.Data := aItem;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   chn.Add(NewNode);
 end;
 
 Function TFPObjectHashTable.CreateNewNode(const aKey : string) : THTCustomNode;
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
   if OwnsObjects then
@@ -4067,12 +4876,18 @@ begin
 begin
   If OwnsObjects then
 >>>>>>> graemeg/fixes_2_2
+=======
+
+begin
+  If OwnsObjects then
+>>>>>>> origin/fixes_2_2
     Result:=THTOwnedObjectNode.CreateWith(aKey)
   else
     Result:=THTObjectNode.CreateWith(aKey);
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TFPObjectHashTable.Iterate(aMethod: TObjectIteratorMethod): TObject;
 var
@@ -4089,10 +4904,14 @@ Function TFPObjectHashTable.ForEachCall(aMethod: TObjectIteratorMethod): THTObje
 =======
 function TFPObjectHashTable.ForEachCall(aMethod: TObjectIteratorMethod): THTObjectNode;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TFPObjectHashTable.ForEachCall(aMethod: TObjectIteratorMethod): THTObjectNode;
+>>>>>>> origin/fixes_2_2
 var
   i, j: Longword;
   continue: boolean;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   Result:=nil;
   continue:=true;
@@ -4115,6 +4934,8 @@ constructor TFPObjectHashTable.Create(AOwnsObjects : Boolean = True);
 begin
   inherited Create;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Result := nil;
   continue := true;
   if FHashTableSize>0 then
@@ -4140,11 +4961,15 @@ constructor TFPObjectHashTable.Create(AOwnsObjects : Boolean = True);
 
 begin
   Inherited Create;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FOwnsObjects:=AOwnsObjects;
 end;
 
 constructor TFPObjectHashTable.CreateWith(AHashTableSize: Longword; aHashFunc: THashFunction; AOwnsObjects : Boolean = True);
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
   inherited CreateWith(AHashTableSize,AHashFunc);
@@ -4156,6 +4981,8 @@ begin
   FreeAndNil(FData);
   inherited;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
   Inherited CreateWith(AHashTableSize,AHashFunc);
@@ -4167,52 +4994,72 @@ Destructor THTOwnedObjectNode.Destroy;
 begin
   FreeAndNil(FData);
   Inherited;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 { TCustomBucketList }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TCustomBucketList.GetData(AItem: Pointer): Pointer;
 var
   B,I : Integer;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TCustomBucketList.GetData(AItem: Pointer): Pointer;
 
 Var
   B,I : Integer;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   GetBucketItem(AItem,B,I);
   Result:=FBuckets[B].Items[I].Data;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TCustomBucketList.GetBucketCount: Integer;
 =======
 function TCustomBucketList.GetBucketCount: Integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TCustomBucketList.GetBucketCount: Integer;
+>>>>>>> origin/fixes_2_2
 begin
   Result:=Length(FBuckets);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TCustomBucketList.SetData(AItem: Pointer; const AData: Pointer);
 var
   B,I : Integer;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TCustomBucketList.SetData(AItem: Pointer; const AData: Pointer);
 
 Var
   B,I : Integer;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   GetBucketItem(AItem,B,I);
   FBuckets[B].Items[I].Data:=AData;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Procedure TCustomBucketList.SetBucketCount(const Value: Integer);
 begin
@@ -4239,6 +5086,8 @@ begin
     begin
     if L<8 then
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TCustomBucketList.SetBucketCount(const Value: Integer);
 
 begin
@@ -4266,17 +5115,24 @@ begin
   If (B^.Count=L) then
     begin
     If L<8 then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       L:=8
     else
       L:=L+L div 2;
     SetLength(B^.Items,L);
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   with B^ do
 =======
   With B^ do
 >>>>>>> graemeg/fixes_2_2
+=======
+  With B^ do
+>>>>>>> origin/fixes_2_2
     begin
     Items[Count].Item:=AItem;
     Items[Count].Data:=AData;
@@ -4285,6 +5141,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TCustomBucketList.DeleteItem(ABucket: Integer; AIndex: Integer): Pointer;
 var
@@ -4295,6 +5152,8 @@ begin
   Result:=B^.Items[AIndex].Data;
   if B^.Count=1 then
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TCustomBucketList.DeleteItem(ABucket: Integer; AIndex: Integer): Pointer;
   
 Var
@@ -4305,21 +5164,29 @@ begin
   B:=@FBuckets[ABucket];
   Result:=B^.Items[Aindex].Data;
   If B^.Count=1 then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     SetLength(B^.Items,0)
   else
     begin
     L:=(B^.Count-AIndex-1);// No point in moving if last one...
 <<<<<<< HEAD
+<<<<<<< HEAD
     if L>0 then
 =======
     If L>0 then
 >>>>>>> graemeg/fixes_2_2
+=======
+    If L>0 then
+>>>>>>> origin/fixes_2_2
       Move(B^.Items[AIndex+1],B^.Items[AIndex],L*SizeOf(TBucketItem));
     end;
   Dec(B^.Count);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Procedure TCustomBucketList.Error(Msg: String; Args: array of const);
 begin
@@ -4332,6 +5199,8 @@ var
   I : Integer;
   B : TBucket;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TCustomBucketList.Error(Msg: String; Args: array of const);
 begin
   Raise ElistError.CreateFmt(Msg,Args);
@@ -4344,22 +5213,31 @@ Var
   I : Integer;
   B : TBucket;
   
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   ABucket:=BucketFor(AItem);
   B:=FBuckets[ABucket];
   I:=B.Count-1;
+<<<<<<< HEAD
 <<<<<<< HEAD
   while (I>=0) and (B.Items[I].Item<>AItem) do
     Dec(I);
   Result:=I>=0;
   if Result then
 =======
+=======
+>>>>>>> origin/fixes_2_2
   While (I>=0) And (B.Items[I].Item<>AItem) do
     Dec(I);
   Result:=I>=0;
   If Result then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     AIndex:=I;
 end;
 
@@ -4369,6 +5247,7 @@ begin
   inherited Destroy;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Procedure TCustomBucketList.Clear;
 var
@@ -4380,6 +5259,8 @@ begin
     B:=FBuckets[I];
     for J:=B.Count-1 downto 0 do
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TCustomBucketList.Clear;
 
 Var
@@ -4391,12 +5272,16 @@ begin
     begin
     B:=FBuckets[I];
     For J:=B.Count-1 downto 0 do
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       DeleteItem(I,J);
     end;
   SetLength(FBuckets,0);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TCustomBucketList.Add(AItem, AData: Pointer): Pointer;
 var
@@ -4404,6 +5289,8 @@ var
 begin
   if FindItem(AItem,B,I) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TCustomBucketList.Add(AItem, AData: Pointer): Pointer;
 
 Var
@@ -4411,11 +5298,15 @@ Var
 
 begin
   If FindItem(AItem,B,I) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Error(SDuplicateItem,[AItem]);
   Result:=AddItem(B,AItem,AData);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Procedure TCustomBucketList.Assign(AList: TCustomBucketList);
 var
@@ -4429,6 +5320,8 @@ begin
     for J:=0 to AList.Fbuckets[I].Count-1 do
       with AList.Fbuckets[I].Items[J] do
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TCustomBucketList.Assign(AList: TCustomBucketList);
 
 Var
@@ -4442,11 +5335,15 @@ begin
     SetLength(FBuckets[i].Items,Length(AList.Fbuckets[I].Items));
     For J:=0 to AList.Fbuckets[I].Count-1 do
       With AList.Fbuckets[I].Items[J] do
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         AddItem(I,Item,Data);
     end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TCustomBucketList.Exists(AItem: Pointer): Boolean;
 var
@@ -4470,6 +5367,8 @@ var
   I,J,S : Integer;
   Bu : TBucket;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TCustomBucketList.Exists(AItem: Pointer): Boolean;
 
 Var
@@ -4497,11 +5396,15 @@ Var
   I,J,S : Integer;
   Bu : TBucket;
   
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   I:=0;
   Result:=True;
   S:=GetBucketCount;
+<<<<<<< HEAD
 <<<<<<< HEAD
   while Result and (I<S) do
     begin
@@ -4511,6 +5414,8 @@ begin
       begin
       with Bu.Items[J] do
 =======
+=======
+>>>>>>> origin/fixes_2_2
   While Result and (I<S) do
     begin
     J:=0;
@@ -4518,7 +5423,10 @@ begin
     While Result and (J<Bu.Count) do
       begin
       With Bu.Items[J] do
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         AProc(AInfo,Item,Data,Result);
       Inc(J);
       end;
@@ -4527,22 +5435,29 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TCustomBucketList.ForEach(AProc: TBucketProcObject): Boolean;
 var
   I,J,S : Integer;
   Bu : TBucket;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TCustomBucketList.ForEach(AProc: TBucketProcObject): Boolean;
 
 Var
   I,J,S : Integer;
   Bu : TBucket;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   I:=0;
   Result:=True;
   S:=GetBucketCount;
+<<<<<<< HEAD
 <<<<<<< HEAD
   while Result and (I<S) do
     begin
@@ -4552,6 +5467,8 @@ begin
       begin
       with Bu.Items[J] do
 =======
+=======
+>>>>>>> origin/fixes_2_2
   While Result and (I<S) do
     begin
     J:=0;
@@ -4559,7 +5476,10 @@ begin
     While Result and (J<Bu.Count) do
       begin
       With Bu.Items[J] do
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         AProc(Item,Data,Result);
       Inc(J);
       end;
@@ -4568,12 +5488,15 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TCustomBucketList.Remove(AItem: Pointer): Pointer;
 var
   B,I : integer;
 begin
   if FindItem(AItem,B,I) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TCustomBucketList.Remove(AItem: Pointer): Pointer;
 
 Var
@@ -4581,26 +5504,37 @@ Var
 
 begin
   If FindItem(AItem,B,I) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     begin
     Result:=FBuckets[B].Items[I].Data;
     DeleteItem(B,I);
     end
   else
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result:=nil;
 =======
     Result:=Nil;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Result:=Nil;
+>>>>>>> origin/fixes_2_2
 end;
 
 { TBucketList }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TBucketList.BucketFor(AItem: Pointer): Integer;
 =======
 function TBucketList.BucketFor(AItem: Pointer): Integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TBucketList.BucketFor(AItem: Pointer): Integer;
+>>>>>>> origin/fixes_2_2
 begin
   // Pointers on average have a granularity of 4
   Result:=(PtrInt(AItem) shr 2) and FBucketMask;
@@ -4608,18 +5542,24 @@ end;
 
 constructor TBucketList.Create(ABuckets: TBucketListSizes);
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   L : Integer;
 begin
   inherited Create;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 Var
   L : Integer;
   
 begin
   Inherited Create;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   L:=1 shl (Ord(Abuckets)+1);
   SetBucketCount(L);
   FBucketMask:=L-1;
@@ -4627,6 +5567,7 @@ end;
 
 { TObjectBucketList }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TObjectBucketList.GetData(AItem: TObject): TObject;
 begin
@@ -4647,6 +5588,8 @@ Function TObjectBucketList.Remove(AItem: TObject): TObject;
 begin
   Result:=TObject(inherited Remove(Pointer(AItem)));
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TObjectBucketList.GetData(AItem: TObject): TObject;
 begin
   Result:=TObject(Inherited GetData(AItem));
@@ -4665,7 +5608,10 @@ end;
 function TObjectBucketList.Remove(AItem: TObject): TObject;
 begin
   Result:=TObject(Inherited Remove(Pointer(AItem)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 end.

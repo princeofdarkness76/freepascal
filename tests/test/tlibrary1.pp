@@ -9,6 +9,10 @@
 {$PIC+}
 {$endif darwin}
 
+{$ifdef darwin}
+{$PIC+}
+{$endif darwin}
+
 {$ifdef CPUX86_64}
 {$ifndef WINDOWS}
 {$PIC+}
@@ -41,12 +45,15 @@ procedure Test;export;
 
  begin
 <<<<<<< HEAD
+<<<<<<< HEAD
    if not islibrary then
      halt(1);
    if not moduleislib then
      halt(2);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
    writeln('Hoi');
  end;
 

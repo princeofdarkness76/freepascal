@@ -197,11 +197,16 @@ void                  \332\1\xA6                      8086
 (Ch_All, Ch_None, Ch_None)
 void                  \332\325\1\xA7                  386
 <<<<<<< HEAD
+<<<<<<< HEAD
 xmmreg,xmmrm,imm      \334\2\x0F\xC2\110\26           WILLAMETTE,SSE2,SM2,SB,AR2
 =======
 xmmreg,xmmreg,imm     \1\xF2\331\2\x0F\xC2\110\26       WILLAMETTE,SSE2,SB,AR2
 xmmreg,mem,imm        \1\xF2\301\331\2\x0F\xC2\110\26   WILLAMETTE,SSE2,SB,AR2
 >>>>>>> graemeg/fixes_2_2
+=======
+xmmreg,xmmreg,imm     \1\xF2\331\2\x0F\xC2\110\26       WILLAMETTE,SSE2,SB,AR2
+xmmreg,mem,imm        \1\xF2\301\331\2\x0F\xC2\110\26   WILLAMETTE,SSE2,SB,AR2
+>>>>>>> origin/fixes_2_2
 
 [CMPSW]
 (Ch_All, Ch_None, Ch_None)
@@ -1135,9 +1140,12 @@ reg32,mmxreg          \2\x0F\x7E\101                  PENT,MMX
 xmmreg,reg32          \1\x66\323\2\x0F\x6E\110          WILLAMETTE,SSE2
 reg32,xmmreg          \1\x66\323\2\x0F\x7E\101          WILLAMETTE,SSE2
 <<<<<<< HEAD
+<<<<<<< HEAD
 mem,xmmreg            \1\x66\325\2\x0F\x7E\101        WILLAMETTE,SSE2
 xmmreg,mem            \1\x66\325\2\x0F\x6E\110        WILLAMETTE,SSE2
 =======
+=======
+>>>>>>> origin/fixes_2_2
 xmmreg,reg64          \1\x66\326\2\x0F\x6E\110        WILLAMETTE,SSE2
 reg64,xmmreg          \1\x66\326\2\x0F\x7E\101        WILLAMETTE,SSE2
 mem,xmmreg            \1\x66\326\2\x0F\x7E\101        WILLAMETTE,SSE2
@@ -1155,6 +1163,7 @@ xmmreg,xmmreg         \1\x66\323\2\x0F\xD6\110          WILLAMETTE,SSE2
 mem,xmmreg            \300\1\x66\323\2\x0F\xD6\101          WILLAMETTE,SSE2
 xmmreg,mem            \333\301\2\x0F\x7E\110          WILLAMETTE,SSE2
 <<<<<<< HEAD
+<<<<<<< HEAD
 xmmreg,reg64          \1\x66\326\2\x0F\x6E\110        WILLAMETTE,SSE2
 reg64,xmmreg          \1\x66\326\2\x0F\x7E\101        WILLAMETTE,SSE2
 <<<<<<< HEAD
@@ -1169,6 +1178,8 @@ reg64,xmmreg          \1\x66\326\2\x0F\x7E\101        WILLAMETTE,SSE2
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [MOVSB]
 (Ch_All, Ch_None, Ch_None)
@@ -1179,9 +1190,12 @@ void                  \1\xA4                          8086
 (Ch_All, Ch_None, Ch_None)
 void                  \325\1\xA5                      386
 <<<<<<< HEAD
+<<<<<<< HEAD
 xmmreg,xmmrm          \334\2\x0F\x10\110              WILLAMETTE,SSE2
 xmmrm,xmmreg          \334\2\x0F\x11\101              WILLAMETTE,SSE2
 =======
+=======
+>>>>>>> origin/fixes_2_2
 xmmreg,xmmreg         \1\xF2\323\2\x0F\x10\110          WILLAMETTE,SSE2
 xmmreg,xmmreg         \1\xF2\323\2\x0F\x11\110          WILLAMETTE,SSE2
 mem,xmmreg            \300\1\xF2\323\2\x0F\x11\101    WILLAMETTE,SSE2
@@ -1338,7 +1352,10 @@ mmxreg,mem            \301\2\x0F\xEC\110              PENT,MMX,SM
 mmxreg,mmxreg         \2\x0F\xEC\110                  PENT,MMX
 xmmreg,mem            \1\x66\301\2\x0F\xEC\110          WILLAMETTE,SSE2,SM
 xmmreg,xmmreg         \1\x66\323\2\x0F\xEC\110          WILLAMETTE,SSE2
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [PADDSIW]
 (Ch_Mop2, Ch_Rop1, Ch_None)
@@ -1414,7 +1431,10 @@ mmxreg,mem            \301\2\x0F\xDF\110              PENT,MMX,SM
 mmxreg,mmxreg         \2\x0F\xDF\110                  PENT,MMX
 xmmreg,xmmreg         \1\x66\323\2\x0F\xDF\110          WILLAMETTE,SSE2
 xmmreg,mem            \1\x66\301\2\x0F\xDF\110          WILLAMETTE,SSE2,SM
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [PAVEB]
 (Ch_All, Ch_None, Ch_None)
@@ -1494,7 +1514,10 @@ mmxreg,mem            \301\2\x0F\x65\110              PENT,MMX,SM
 mmxreg,mmxreg         \2\x0F\x65\110                  PENT,MMX
 xmmreg,xmmreg         \1\x66\323\2\x0F\x65\110          WILLAMETTE,SSE2
 xmmreg,mem            \1\x66\301\2\x0F\x65\110          WILLAMETTE,SSE2,SM
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [PDISTIB]
 (Ch_All, Ch_None, Ch_None)
@@ -1582,7 +1605,10 @@ mmxreg,mem            \301\2\x0F\xF5\110              PENT,MMX,SM
 mmxreg,mmxreg         \2\x0F\xF5\110                  PENT,MMX
 xmmreg,mem            \1\x66\301\2\x0F\xF5\110          WILLAMETTE,SSE2,SM
 xmmreg,xmmreg         \1\x66\323\2\x0F\xF5\110          WILLAMETTE,SSE2
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [PMAGW]
 (Ch_All, Ch_None, Ch_None)
@@ -1622,7 +1648,10 @@ mmxreg,mem            \301\2\x0F\xD5\110              PENT,MMX,SM
 mmxreg,mmxreg         \2\x0F\xD5\110                  PENT,MMX
 xmmreg,mem            \1\x66\301\2\x0F\xD5\110          WILLAMETTE,SSE2,SM
 xmmreg,xmmreg         \1\x66\323\2\x0F\xD5\110          WILLAMETTE,SSE2
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [PMVGEZB]
 (Ch_All, Ch_None, Ch_None)
@@ -1744,7 +1773,10 @@ mmxreg,mem            \301\2\x0F\xEB\110              PENT,MMX,SM
 mmxreg,mmxreg         \2\x0F\xEB\110                  PENT,MMX
 xmmreg,mem            \1\x66\301\2\x0F\xEB\110          WILLAMETTE,SSE2,SM
 xmmreg,xmmreg         \1\x66\323\2\x0F\xEB\110          WILLAMETTE,SSE2
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [PREFETCH,prefetchX]
 (Ch_All, Ch_None, Ch_None)
@@ -1924,7 +1956,10 @@ mmxreg,mem            \301\2\x0F\xE8\110              PENT,MMX,SM
 mmxreg,mmxreg         \2\x0F\xE8\110                  PENT,MMX
 xmmreg,mem            \1\x66\301\2\x0F\xE8\110          WILLAMETTE,SSE2,SM
 xmmreg,xmmreg         \1\x66\323\2\x0F\xE8\110          WILLAMETTE,SSE2
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [PSUBSIW]
 (Ch_All, Ch_None, Ch_None)
@@ -2049,7 +2084,10 @@ mmxreg,mem            \301\2\x0F\x61\110              PENT,MMX,SM
 mmxreg,mmxreg         \2\x0F\x61\110                  PENT,MMX
 xmmreg,mem            \1\x66\301\2\x0F\x61\110          WILLAMETTE,SSE2,SM
 xmmreg,xmmreg         \1\x66\323\2\x0F\x61\110          WILLAMETTE,SSE2
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [PUSH,pushX]
 (Ch_Rop1, Ch_RWESP, Ch_None)
@@ -2464,7 +2502,10 @@ regmem,reg16|32|64    \300\320\1\x85\101              8086,SM
 reg16|32|64,mem       \301\320\1\x85\110              8086,SM
 reg8,reg8             \300\323\1\x84\101              8086
 rm8,reg8              \301\323\1\x84\101              8086,SM
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 reg_eax,imm           \325\1\xA9\41                   386,SM
 reg_ax,imm            \324\1\xA9\31                   8086,SM
 reg_al,imm            \1\xA8\21                       8086,SM
@@ -2620,6 +2661,7 @@ xmmreg,xmmrm          \331\2\x0F\x58\110              KATMAI,SSE
 [ADDSS]
 (Ch_Mop2, Ch_Rop1, Ch_None)
 <<<<<<< HEAD
+<<<<<<< HEAD
 xmmreg,xmmrm          \333\2\x0F\x58\110              KATMAI,SSE
 
 [ANDNPS]
@@ -2694,6 +2736,8 @@ xmmreg,xmmrm          \331\2\x0F\xC2\110\1\x03        KATMAI,SSE
 (Ch_All, Ch_None, Ch_None)
 xmmreg,xmmrm          \333\2\x0F\xC2\110\1\x03        KATMAI,SSE
 =======
+=======
+>>>>>>> origin/fixes_2_2
 xmmreg,mem            \333\301\2\x0F\x58\110          KATMAI,SSE
 xmmreg,xmmreg         \333\2\x0F\x58\110              KATMAI,SSE
 
@@ -2786,7 +2830,10 @@ xmmreg,xmmreg         \323\331\2\x0F\xC2\110\1\x03    KATMAI,SSE
 (Ch_All, Ch_None, Ch_None)
 xmmreg,mem            \333\301\2\x0F\xC2\110\1\x03    KATMAI,SSE
 xmmreg,xmmreg         \333\323\2\x0F\xC2\110\1\x03    KATMAI,SSE
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 ;
 ; CMPPS/CMPSS must come after the specific ops; that way the disassembler will find the
@@ -2961,7 +3008,10 @@ xmmreg,xmmreg         \323\2\x0F\x29\101              KATMAI,SSE
 (Ch_All, Ch_None, Ch_None)
 xmmreg,mem            \301\323\2\x0F\x16\110              KATMAI,SSE
 mem,xmmreg            \300\323\2\x0F\x17\101              KATMAI,SSE
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [MOVLHPS]
 (Ch_All, Ch_None, Ch_None)
@@ -2970,12 +3020,17 @@ xmmreg,xmmreg         \323\2\x0F\x16\110              KATMAI,SSE
 [MOVLPS]
 (Ch_All, Ch_None, Ch_None)
 <<<<<<< HEAD
+<<<<<<< HEAD
 xmmreg,mem            \2\x0F\x12\110                  KATMAI,SSE
 mem,xmmreg            \2\x0F\x13\101                  KATMAI,SSE
 =======
 xmmreg,mem            \301\323\2\x0F\x12\110              KATMAI,SSE
 mem,xmmreg            \300\323\2\x0F\x13\101              KATMAI,SSE
 >>>>>>> graemeg/fixes_2_2
+=======
+xmmreg,mem            \301\323\2\x0F\x12\110              KATMAI,SSE
+mem,xmmreg            \300\323\2\x0F\x13\101              KATMAI,SSE
+>>>>>>> origin/fixes_2_2
 
 [MOVHLPS]
 (Ch_All, Ch_None, Ch_None)
@@ -2991,6 +3046,7 @@ mem,xmmreg            \323\2\x0F\x2B\101              KATMAI,SSE
 
 [MOVSS]
 (Ch_Wop2, Ch_Rop1, Ch_None)
+<<<<<<< HEAD
 <<<<<<< HEAD
 xmmreg,xmmrm          \333\2\x0F\x10\110              KATMAI,SSE
 xmmrm,xmmreg          \333\2\x0F\x11\101              KATMAI,SSE
@@ -3106,6 +3162,46 @@ xmmreg,mem            \333\301\323\2\x0F\x53\110          KATMAI,SSE
 xmmreg,xmmreg         \333\323\2\x0F\x53\110          KATMAI,SSE
 
 [RSQRTPS]
+=======
+xmmreg,mem            \333\301\323\2\x0F\x10\110          KATMAI,SSE
+mem,xmmreg            \333\300\323\2\x0F\x11\101          KATMAI,SSE
+xmmreg,xmmreg         \333\323\2\x0F\x10\110          KATMAI,SSE
+xmmreg,xmmreg         \333\323\2\x0F\x11\101          KATMAI,SSE
+
+[MOVUPS]
+(Ch_All, Ch_None, Ch_None)
+xmmreg,mem            \301\331\2\x0F\x10\110          KATMAI,SSE
+mem,xmmreg            \300\331\2\x0F\x11\101          KATMAI,SSE
+xmmreg,xmmreg         \323\331\2\x0F\x10\110          KATMAI,SSE
+xmmreg,xmmreg         \323\331\2\x0F\x11\101          KATMAI,SSE
+
+[MULPS]
+(Ch_Mop2, Ch_Rop1, Ch_None)
+xmmreg,mem            \301\323\2\x0F\x59\110              KATMAI,SSE
+xmmreg,xmmreg         \323\2\x0F\x59\110              KATMAI,SSE
+
+[MULSS]
+(Ch_Mop2, Ch_Rop1, Ch_None)
+xmmreg,mem            \333\301\323\2\x0F\x59\110          KATMAI,SSE
+xmmreg,xmmreg         \333\323\2\x0F\x59\110          KATMAI,SSE
+
+[ORPS]
+(Ch_Mop2, Ch_Rop1, Ch_None)
+xmmreg,mem            \301\323\2\x0F\x56\110              KATMAI,SSE
+xmmreg,xmmreg         \323\2\x0F\x56\110              KATMAI,SSE
+
+[RCPPS]
+(Ch_All, Ch_None, Ch_None)
+xmmreg,mem            \301\331\2\x0F\x53\110          KATMAI,SSE
+xmmreg,xmmreg         \323\331\2\x0F\x53\110          KATMAI,SSE
+
+[RCPSS]
+(Ch_All, Ch_None, Ch_None)
+xmmreg,mem            \333\301\323\2\x0F\x53\110          KATMAI,SSE
+xmmreg,xmmreg         \333\323\2\x0F\x53\110          KATMAI,SSE
+
+[RSQRTPS]
+>>>>>>> origin/fixes_2_2
 (Ch_All, Ch_None, Ch_None)
 xmmreg,mem            \301\331\2\x0F\x52\110          KATMAI,SSE
 xmmreg,xmmreg         \323\331\2\x0F\x52\110          KATMAI,SSE
@@ -3163,7 +3259,10 @@ xmmreg,xmmreg         \323\2\x0F\x14\110              KATMAI,SSE
 (Ch_Mop2, Ch_Rop1, Ch_None)
 xmmreg,mem            \301\323\2\x0F\x57\110              KATMAI,SSE
 xmmreg,xmmreg         \323\2\x0F\x57\110              KATMAI,SSE
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 ;
 ; Introduced in Dechutes but necessary for SSE support
@@ -3185,6 +3284,7 @@ mem                   \2\x0F\xAE\200                  P6,SSE,FPU
 [PREFETCHNTA]
 (Ch_All, Ch_None, Ch_None)
 <<<<<<< HEAD
+<<<<<<< HEAD
 mem                   \2\x0F\x18\200                      KATMAI
 
 [PREFETCHT0]
@@ -3199,6 +3299,8 @@ mem                   \2\x0F\x18\202                      KATMAI
 (Ch_All, Ch_None, Ch_None)
 mem                   \2\x0F\x18\203                      KATMAI
 =======
+=======
+>>>>>>> origin/fixes_2_2
 mem                   \300\323\2\x0F\x18\200              KATMAI
 
 [PREFETCHT0]
@@ -3212,7 +3314,10 @@ mem                   \300\323\2\x0F\x18\202              KATMAI
 [PREFETCHT2]
 (Ch_All, Ch_None, Ch_None)
 mem                   \300\323\2\x0F\x18\203              KATMAI
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [SFENCE]
 (Ch_All, Ch_None, Ch_None)
@@ -3252,11 +3357,15 @@ mmxreg,mmxreg         \2\x0F\xE3\110                  KATMAI,MMX
 mmxreg,mem            \301\2\x0F\xE3\110              KATMAI,MMX,SM
 xmmreg,xmmreg         \1\x66\323\2\x0F\xE3\110          WILLAMETTE,SSE2
 xmmreg,mem            \1\x66\301\323\2\x0F\xE3\110          WILLAMETTE,SSE2,SM
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [PEXTRW]
 (Ch_All, Ch_None, Ch_None)
 reg32,mmxreg,imm      \2\x0F\xC5\110\22               KATMAI,MMX,SB,AR2
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3284,6 +3393,9 @@ mem32,xmmreg,imm      \1\x66\300\323\3\x0F\x3A\x15\101\26            SSE4
 =======
 reg32,xmmreg,imm      \1\x66\323\2\x0F\xC5\110\26       WILLAMETTE,SSE2,SB,AR2
 >>>>>>> graemeg/fixes_2_2
+=======
+reg32,xmmreg,imm      \1\x66\323\2\x0F\xC5\110\26       WILLAMETTE,SSE2,SB,AR2
+>>>>>>> origin/fixes_2_2
 
 [PINSRW]
 (Ch_All, Ch_None, Ch_None)
@@ -3353,11 +3465,15 @@ mmxreg,mmxreg         \2\x0F\xDA\110                  KATMAI,MMX
 mmxreg,mem            \301\2\x0F\xDA\110              KATMAI,MMX,SM
 xmmreg,xmmreg         \1\x66\323\2\x0F\xDA\110          WILLAMETTE,SSE2
 xmmreg,mem            \1\x66\301\2\x0F\xDA\110          WILLAMETTE,SSE2,SM
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [PMOVMSKB]
 (Ch_All, Ch_None, Ch_None)
 reg32,mmxreg          \2\x0F\xD7\110                  KATMAI,MMX
+<<<<<<< HEAD
 <<<<<<< HEAD
 reg32,xmmreg          \361\2\x0F\xD7\110              WILLAMETTE,SSE2
 
@@ -3371,6 +3487,8 @@ xmmreg,xmmrm          \361\2\x0F\xE4\110              WILLAMETTE,SSE2,SM
 mmxreg,mmxrm          \2\x0F\xF6\110                  KATMAI,MMX,SM
 xmmreg,xmmrm          \361\2\x0F\xF6\110              WILLAMETTE,SSE2,SM
 =======
+=======
+>>>>>>> origin/fixes_2_2
 reg32,xmmreg          \1\x66\323\2\x0F\xD7\110          WILLAMETTE,SSE2
 
 [PMULHUW]
@@ -3386,7 +3504,10 @@ mmxreg,mmxreg         \2\x0F\xF6\110                  KATMAI,MMX
 mmxreg,mem            \301\2\x0F\xF6\110              KATMAI,MMX,SM
 xmmreg,xmmreg         \1\x66\323\2\x0F\xF6\110          WILLAMETTE,SSE2
 xmmreg,mem            \1\x66\301\2\x0F\xF6\110          WILLAMETTE,SSE2,SM
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [PSHUFW]
 (Ch_All, Ch_None, Ch_None)
@@ -3424,14 +3545,19 @@ fpureg                \1\xDF\10\xC0                   PENT,3DNOW,FPU
 [MASKMOVDQU]
 (Ch_All, Ch_None, Ch_None)
 <<<<<<< HEAD
+<<<<<<< HEAD
 xmmreg,xmmreg           \361\2\x0F\xF7\110            WILLAMETTE,SSE2
 =======
 xmmreg,xmmreg           \1\x66\323\2\x0F\xF7\110        WILLAMETTE,SSE2
 >>>>>>> graemeg/fixes_2_2
+=======
+xmmreg,xmmreg           \1\x66\323\2\x0F\xF7\110        WILLAMETTE,SSE2
+>>>>>>> origin/fixes_2_2
 
 ; CLFLUSH needs its own feature flag implemented one day
 [CLFLUSH]
 (Ch_All, Ch_None, Ch_None)
+<<<<<<< HEAD
 <<<<<<< HEAD
 mem                     \2\x0F\xAE\207                WILLAMETTE,SSE2
 
@@ -3447,6 +3573,8 @@ mem,reg32|64            \320\2\x0F\xC3\101            WILLAMETTE,SSE2,SM
 (Ch_All, Ch_None, Ch_None)
 mem,xmmreg              \361\2\x0F\x2B\101            WILLAMETTE,SSE2,SM
 =======
+=======
+>>>>>>> origin/fixes_2_2
 mem                     \300\323\2\x0F\xAE\207            WILLAMETTE,SSE2
 
 [MOVNTDQ]
@@ -3460,7 +3588,10 @@ mem,reg32|64            \300\320\2\x0F\xC3\101        WILLAMETTE,SSE2,SM
 [MOVNTPD]
 (Ch_All, Ch_None, Ch_None)
 mem,xmmreg              \1\x66\300\323\2\x0F\x2B\101        WILLAMETTE,SSE2,SM
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [PAUSE]
 (Ch_All, Ch_None, Ch_None)
@@ -3490,9 +3621,12 @@ xmmreg,xmmrm            \333\2\x0F\x6F\110              WILLAMETTE,SSE2,SM
 
 [MOVDQ2Q]
 (Ch_All, Ch_None, Ch_None)
+<<<<<<< HEAD
 mmxreg,xmmreg           \334\2\x0F\xD6\110              WILLAMETTE,SSE2
 =======
 (Ch_All, Ch_None, Ch_None)
+=======
+>>>>>>> origin/fixes_2_2
 xmmreg,xmmreg           \1\x66\323\2\x0F\x6F\110        WILLAMETTE,SSE2
 mem,xmmreg              \1\x66\300\323\2\x0F\x7F\101        WILLAMETTE,SSE2,SM
 xmmreg,mem              \1\x66\301\323\2\x0F\x6F\110        WILLAMETTE,SSE2,SM
@@ -3508,7 +3642,10 @@ xmmreg,xmmreg           \333\323\2\x0F\x7F\110          WILLAMETTE,SSE2
 [MOVDQ2Q]
 (Ch_All, Ch_None, Ch_None)
 mmxreg,xmmreg           \1\xF2\323\2\x0F\xD6\110          WILLAMETTE,SSE2
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [MOVQ2DQ]
 (Ch_All, Ch_None, Ch_None)
@@ -3601,13 +3738,17 @@ xmmreg,mem              \1\x66\301\323\2\x0F\x6D\110          WILLAMETTE,SSE2,SM
 (Ch_All, Ch_None, Ch_None)
 xmmreg,xmmreg           \1\x66\323\2\x0F\x6C\110          WILLAMETTE,SSE2
 xmmreg,mem              \1\x66\301\323\2\x0F\x6C\110          WILLAMETTE,SSE2,SM
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 ;
 ; Willamette Streaming SIMD instructions (SSE2)
 ;
 [ADDPD]
 (Ch_Mop2, Ch_Rop1, Ch_None)
+<<<<<<< HEAD
 <<<<<<< HEAD
 xmmreg,xmmrm            \361\2\x0F\x58\110              WILLAMETTE,SSE2,SM
 
@@ -3627,6 +3768,8 @@ xmmreg,xmmrm            \361\2\x0F\x54\110              WILLAMETTE,SSE2,SM
 (Ch_All, Ch_None, Ch_None)
 xmmreg,xmmrm            \361\2\x0F\xC2\110\1\x00        WILLAMETTE,SSE2,SM
 =======
+=======
+>>>>>>> origin/fixes_2_2
 xmmreg,xmmreg           \1\x66\323\331\2\x0F\x58\110      WILLAMETTE,SSE2
 xmmreg,mem              \1\x66\301\331\2\x0F\x58\110      WILLAMETTE,SSE2,SM
 
@@ -3649,11 +3792,15 @@ xmmreg,mem              \1\x66\301\331\2\x0F\x54\110      WILLAMETTE,SSE2,SM
 (Ch_All, Ch_None, Ch_None)
 xmmreg,mem              \1\x66\301\331\2\x0F\xC2\110\1\x00    WILLAMETTE,SSE2,SM
 xmmreg,xmmreg           \1\x66\323\331\2\x0F\xC2\110\1\x00    WILLAMETTE,SSE2
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 ; note: no SM flag on CMPxxSD, they use 64-bit memory location, not 128-bit
 [CMPEQSD]
 (Ch_All, Ch_None, Ch_None)
+<<<<<<< HEAD
 <<<<<<< HEAD
 xmmreg,xmmrm            \334\2\x0F\xC2\110\1\x00        WILLAMETTE,SSE2
 
@@ -3713,6 +3860,8 @@ xmmreg,xmmrm            \361\2\x0F\xC2\110\1\x03        WILLAMETTE,SSE2,SM
 (Ch_All, Ch_None, Ch_None)
 xmmreg,xmmrm            \334\2\x0F\xC2\110\1\x03        WILLAMETTE,SSE2
 =======
+=======
+>>>>>>> origin/fixes_2_2
 xmmreg,mem              \1\xF2\301\331\2\x0F\xC2\110\1\x00    WILLAMETTE,SSE2
 xmmreg,xmmreg           \1\xF2\323\331\2\x0F\xC2\110\1\x00    WILLAMETTE,SSE2
 
@@ -3782,12 +3931,16 @@ xmmreg,xmmreg           \1\x66\323\331\2\x0F\xC2\110\1\x03    WILLAMETTE,SSE2
 (Ch_All, Ch_None, Ch_None)
 xmmreg,mem              \301\331\1\xF2\323\2\x0F\xC2\110\1\x03    WILLAMETTE,SSE2
 xmmreg,xmmreg           \1\xF2\331\2\x0F\xC2\110\1\x03    WILLAMETTE,SSE2
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 ; CMPPD/CMPSD must come after the specific ops; that way the disassembler will find the
 ; specific ops first and only disassemble illegal ones as cmppd/cmpsd.
 [CMPPD]
 (Ch_All, Ch_None, Ch_None)
+<<<<<<< HEAD
 <<<<<<< HEAD
 xmmreg,xmmrm,imm        \361\2\x0F\xC2\110\26           WILLAMETTE,SSE2,SM2,SB,AR2
 
@@ -3829,6 +3982,8 @@ xmmreg,xmmrm            \361\2\x0F\x5B\110              WILLAMETTE,SSE2,SM
 xmmreg,xmmreg            \2\x0F\x5A\110                WILLAMETTE,SSE2 ;,SQ
 xmmreg,mem64             \2\x0F\x5A\110                WILLAMETTE,SSE2 ;,SQ
 =======
+=======
+>>>>>>> origin/fixes_2_2
 xmmreg,xmmreg,imm       \1\x66\331\2\x0F\xC2\110\26       WILLAMETTE,SSE2,SB,AR2
 xmmreg,mem,imm          \301\331\1\x66\323\2\x0F\xC2\110\26   WILLAMETTE,SSE2,SM2,SB,AR2
 
@@ -3888,22 +4043,29 @@ reg64,mem64 	        \334\320\2\x0F\x2D\110        WILLAMETTE,SSE2,X86_64
 [CVTSD2SS]
 (Ch_Wop2, Ch_Rop1, Ch_None)
 <<<<<<< HEAD
+<<<<<<< HEAD
 xmmreg,xmmreg           \334\2\x0F\x5A\110              WILLAMETTE,SSE2 ;,SQ
 xmmreg,mem64            \334\2\x0F\x5A\110              WILLAMETTE,SSE2 ;,SQ
 
 [CVTSI2SD,cvtsi2sdM]
 =======
+=======
+>>>>>>> origin/fixes_2_2
 xmmreg,xmmreg           \1\xF2\323\2\x0F\x5A\110              WILLAMETTE,SSE2
 xmmreg,mem              \301\1\xF2\323\2\x0F\x5A\110    WILLAMETTE,SSE2
 
 [CVTSI2SD,cvtsi2sdX]
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 (Ch_Wop2, Ch_Rop1, Ch_None)
 xmmreg,rm32             \334\2\x0F\x2A\110        	WILLAMETTE,SSE2
 xmmreg,rm64             \326\334\321\2\x0F\x2A\110      WILLAMETTE,SSE2,X86_64
 
 [CVTSS2SD]
 (Ch_Wop2, Ch_Rop1, Ch_None)
+<<<<<<< HEAD
 <<<<<<< HEAD
 xmmreg,xmmreg            \333\2\x0F\x5A\110            WILLAMETTE,SSE2 ;,SD
 xmmreg,mem32             \333\2\x0F\x5A\110            WILLAMETTE,SSE2 ;,SD
@@ -3920,6 +4082,8 @@ xmmreg,xmmrm            \361\2\x0F\xE6\110              WILLAMETTE,SSE2,SM
 (Ch_Wop2, Ch_Rop1, Ch_None)
 xmmreg,xmmrm            \333\2\x0F\x5B\110              WILLAMETTE,SSE2,SM
 =======
+=======
+>>>>>>> origin/fixes_2_2
 xmmreg,xmmreg           \333\323\2\x0F\x5A\110          WILLAMETTE,SSE2
 xmmreg,mem              \333\301\323\2\x0F\x5A\110      WILLAMETTE,SSE2
 
@@ -3937,7 +4101,10 @@ xmmreg,mem              \301\1\x66\323\2\x0F\xE6\110    WILLAMETTE,SSE2,SM
 (Ch_Wop2, Ch_Rop1, Ch_None)
 xmmreg,xmmreg           \333\323\2\x0F\x5B\110          WILLAMETTE,SSE2
 xmmreg,mem              \333\301\2\x0F\x5B\110          WILLAMETTE,SSE2,SM
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [CVTTSD2SI,cvttsd2siX]
 (Ch_Wop2, Ch_Rop1, Ch_None)
@@ -3946,6 +4113,7 @@ reg32|64,mem64          \334\320\2\x0F\x2C\110        WILLAMETTE,SSE2
 
 [DIVPD]
 (Ch_Mop2, Ch_Rop1, Ch_None)
+<<<<<<< HEAD
 <<<<<<< HEAD
 xmmreg,xmmrm            \361\2\x0F\x5E\110            WILLAMETTE,SSE2,SM
 
@@ -3974,6 +4142,8 @@ xmmreg,xmmrm            \334\2\x0F\x5D\110          WILLAMETTE,SSE2
 xmmrm,xmmreg            \361\2\x0F\x29\101        WILLAMETTE,SSE2,SM
 xmmreg,xmmrm            \361\2\x0F\x28\110        WILLAMETTE,SSE2,SM
 =======
+=======
+>>>>>>> origin/fixes_2_2
 xmmreg,xmmreg           \1\x66\323\2\x0F\x5E\110          WILLAMETTE,SSE2
 xmmreg,mem              \301\1\x66\323\2\x0F\x5E\110    WILLAMETTE,SSE2,SM
 
@@ -4022,6 +4192,7 @@ xmmreg,mem              \361\2\x0F\x12\110        WILLAMETTE,SSE2
 
 [MOVMSKPD]
 (Ch_All, Ch_None, Ch_None)
+<<<<<<< HEAD
 <<<<<<< HEAD
 reg32,xmmreg            \361\2\x0F\x50\110        WILLAMETTE,SSE2
 
@@ -4080,6 +4251,76 @@ xmmreg,xmmrm            \361\2\x0F\x14\110        WILLAMETTE,SSE2,SM
 xmmreg,xmmrm            \361\2\x0F\x57\110        WILLAMETTE,SSE2,SM
 =======
 reg32,xmmreg            \323\1\x66\323\2\x0F\x50\110    WILLAMETTE,SSE2
+=======
+reg32,xmmreg            \323\1\x66\323\2\x0F\x50\110    WILLAMETTE,SSE2
+
+[MOVUPD]
+(Ch_All, Ch_None, Ch_None)
+xmmreg,xmmreg           \1\x66\323\2\x0F\x10\110          WILLAMETTE,SSE2
+xmmreg,xmmreg           \1\x66\323\2\x0F\x11\110          WILLAMETTE,SSE2
+mem,xmmreg              \300\1\x66\323\2\x0F\x11\101    WILLAMETTE,SSE2,SM
+xmmreg,mem              \301\1\x66\323\2\x0F\x10\110    WILLAMETTE,SSE2,SM
+
+[MULPD]
+(Ch_Mop2, Ch_Rop1, Ch_None)
+xmmreg,xmmreg           \1\x66\323\2\x0F\x59\110          WILLAMETTE,SSE2
+xmmreg,mem              \301\1\x66\323\2\x0F\x59\110    WILLAMETTE,SSE2,SM
+
+[MULSD]
+(Ch_Mop2, Ch_Rop1, Ch_None)
+xmmreg,xmmreg           \1\xF2\323\2\x0F\x59\110          WILLAMETTE,SSE2
+xmmreg,mem              \301\1\xF2\323\2\x0F\x59\110    WILLAMETTE,SSE2
+
+[ORPD]
+(Ch_Mop2, Ch_Rop1, Ch_None)
+xmmreg,mem              \301\1\x66\323\2\x0F\x56\110    WILLAMETTE,SSE2,SM
+xmmreg,xmmreg           \1\x66\323\2\x0F\x56\110          WILLAMETTE,SSE2
+
+[SHUFPD]
+(Ch_All, Ch_None, Ch_None)
+xmmreg,xmmreg,imm       \1\x66\323\2\x0F\xC6\110\26       WILLAMETTE,SSE2,SB,AR2
+xmmreg,mem,imm          \301\1\x66\323\2\x0F\xC6\110\26 WILLAMETTE,SSE2,SM,SB,AR2
+
+[SQRTPD]
+(Ch_Mop2, Ch_Rop1, Ch_None)
+xmmreg,xmmreg           \1\x66\323\2\x0F\x51\110          WILLAMETTE,SSE2
+xmmreg,mem              \301\1\x66\323\2\x0F\x51\110    WILLAMETTE,SSE2,SM
+
+[SQRTSD]
+(Ch_Mop2, Ch_Rop1, Ch_None)
+xmmreg,xmmreg           \1\xF2\323\2\x0F\x51\110          WILLAMETTE,SSE2
+xmmreg,mem              \301\1\xF2\323\2\x0F\x51\110    WILLAMETTE,SSE2
+
+[SUBPD]
+(Ch_Mop2, Ch_Rop1, Ch_None)
+xmmreg,xmmreg           \1\x66\323\2\x0F\x5C\110          WILLAMETTE,SSE2
+xmmreg,mem              \301\1\x66\323\2\x0F\x5C\110    WILLAMETTE,SSE2,SM
+
+[SUBSD]
+(Ch_Mop2, Ch_Rop1, Ch_None)
+xmmreg,xmmreg           \1\xF2\323\2\x0F\x5C\110          WILLAMETTE,SSE2
+xmmreg,mem              \301\1\xF2\323\2\x0F\x5C\110    WILLAMETTE,SSE2
+
+[UCOMISD]
+(Ch_All, Ch_None, Ch_None)
+xmmreg,xmmreg           \1\x66\323\2\x0F\x2E\110          WILLAMETTE,SSE2
+xmmreg,mem              \301\1\x66\323\2\x0F\x2E\110    WILLAMETTE,SSE2
+
+[UNPCKHPD]
+(Ch_All, Ch_None, Ch_None)
+xmmreg,xmmreg           \1\x66\323\2\x0F\x15\110          WILLAMETTE,SSE2
+mem,xmmreg              \300\1\x66\323\2\x0F\x15\110    WILLAMETTE,SSE2,SM
+
+[UNPCKLPD]
+(Ch_All, Ch_None, Ch_None)
+xmmreg,xmmreg           \1\x66\323\2\x0F\x14\110          WILLAMETTE,SSE2
+xmmreg,mem              \301\1\x66\323\2\x0F\x14\110    WILLAMETTE,SSE2,SM
+
+[XORPD]
+(Ch_Mop2, Ch_Rop1, Ch_None)
+xmmreg,xmmreg           \1\x66\323\2\x0F\x57\110          WILLAMETTE,SSE2
+xmmreg,mem              \301\1\x66\323\2\x0F\x57\110    WILLAMETTE,SSE2,SM
+>>>>>>> origin/fixes_2_2
 
 [MOVUPD]
 (Ch_All, Ch_None, Ch_None)
@@ -4239,7 +4480,10 @@ xmmreg,xmmreg		\323\3\xF3\x0F\x16\110		PRESCOTT,SSE3
 (Ch_All, Ch_None, Ch_None)
 xmmreg,mem		\301\1\xF3\323\2\x0F\x12\110	PRESCOTT,SSE3
 xmmreg,xmmreg           \323\3\xF3\x0F\x12\110              PRESCOTT,SSE3
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 ;
 ; Intel VT
@@ -4275,18 +4519,24 @@ void                  \3\x0F\x01\xC4                  386,PRIV,PROT
 [VMXON]
 (Ch_All, Ch_None, Ch_None)
 <<<<<<< HEAD
+<<<<<<< HEAD
 mem                   \333\2\x0F\xC7\206              PRIV,PROT
 
 [VMCLEAR]
 (Ch_All, Ch_None, Ch_None)
 mem                   \361\2\x0F\xC7\206              PRIV,PROT
 =======
+=======
+>>>>>>> origin/fixes_2_2
 mem                   \333\300\2\x0F\xC7\206          PRIV,PROT
 
 [VMCLEAR]
 (Ch_All, Ch_None, Ch_None)
 mem                   \1\x66\300\2\x0F\xC7\206          PRIV,PROT
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [VMPTRLD]
 (Ch_All, Ch_None, Ch_None)
@@ -4379,6 +4629,7 @@ void                  \326\1\x99                      X86_64
 
 [CMPXCHG16B,cmpxchg16bX]
 (Ch_All, Ch_None, Ch_None)
+<<<<<<< HEAD
 <<<<<<< HEAD
 mem                   \326\2\x0F\xC7\201              X86_64
 
@@ -8009,6 +8260,8 @@ void                   \2\x48\xAD                                    X86_64
 void                   \2\x48\xA7                                    X86_64
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 mem                   \320\323\2\x0F\xC7\201          X86_64
 
 ;
@@ -8046,4 +8299,7 @@ reg32|64,regmem         \110\321\333\301\76\2\x0F\xBD\77                386,SM,S
 (Ch_All, Ch_None, Ch_None)
 reg16,regmem            \110\320\333\301\76\2\x0F\xB8\77                386,SM,SSE4
 reg32|64,regmem         \110\321\333\301\76\2\x0F\xB8\77                386,SM,SSE4
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

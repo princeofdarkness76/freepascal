@@ -135,11 +135,14 @@ interface
 
        tgotonode = class(tnode)
 <<<<<<< HEAD
+<<<<<<< HEAD
        private
           labelnodeidx : longint;
        public
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           labelsym : tlabelsym;
           labelnode : tlabelnode;
           exceptionblock : integer;
@@ -2008,7 +2011,10 @@ implementation
         exceptionblock:=current_exceptblock;
 =======
         exceptionblock:=aktexceptblock;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         labelnode:=nil;
         labelsym:=p;
       end;
@@ -2068,6 +2074,7 @@ implementation
         { The labelnode can already be set when
           this node was copied }
 <<<<<<< HEAD
+<<<<<<< HEAD
         if not(assigned(labelnode)) then
           begin
             { inner procedure goto? }
@@ -2080,6 +2087,11 @@ implementation
           begin
             if assigned(labelsym.code) then
 >>>>>>> graemeg/fixes_2_2
+=======
+        if not assigned(labelnode) then
+          begin
+            if assigned(labelsym.code) then
+>>>>>>> origin/fixes_2_2
               labelnode:=tlabelnode(labelsym.code)
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2193,7 +2205,10 @@ implementation
               internalerror(200610291);
           end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
         p.labelsym:=labelsym;
         p.labelnode:=tlabelnode(labelnode.dogetcopy);
@@ -2219,7 +2234,10 @@ implementation
         exceptionblock:=current_exceptblock;
 =======
         exceptionblock:=aktexceptblock;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         labsym:=alabsym;
         { Register labelnode in labelsym }
         labsym.code:=self;

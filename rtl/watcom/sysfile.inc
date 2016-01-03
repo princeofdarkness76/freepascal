@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
    { Keep Track of open files }
    const
       max_files = 50;
@@ -586,6 +587,8 @@ begin
 end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
    { Keep Track of open files }
    const
       max_files = 50;
@@ -1015,4 +1018,7 @@ begin
    GetInOutRes(lo(regs.realeax));
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

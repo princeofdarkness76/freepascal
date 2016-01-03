@@ -49,10 +49,14 @@ Var
   LEOL : Integer;
   modir : string;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
 resourcestring
   // Output strings
   SDocPackageTitle           = 'Reference for package ''%s''';
@@ -73,9 +77,12 @@ resourcestring
   SDocVariables              = 'Variables';
   SDocIdentifierIndex        = 'Index';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SDocPackageClassHierarchy  = 'Class hierarchy';
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   SDocModuleIndex            = 'Index of all identifiers in unit ''%s''';
   SDocPackageIndex           = 'Index of all identifiers in package ''%s''';
   SDocUnitOverview           = 'Overview of unit ''%s''';
@@ -125,11 +132,14 @@ resourcestring
   SDocOpaque                 = 'Opaque type';
   SDocDateGenerated          = 'Documentation generated on: %s';
 <<<<<<< HEAD
+<<<<<<< HEAD
   // The next line requires leading/trailing space due to XML comment layout:
   SDocGeneratedByComment     = ' Generated using FPDoc - (c) 2000-2012 FPC contributors and Sebastian Guenther, sg@freepascal.org ';
   SDocNotes                  = 'Notes';
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   
   // Topics
   SDocRelatedTopics = 'Related topics';
@@ -158,9 +168,12 @@ resourcestring
   SHTMLIndexColcount = 'Use N columns in the identifier index pages';
   SHTMLImageUrl = 'Prefix image URLs with url';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SHTMLDisableMenuBrackets = 'Disable ''['' and '']'' characters around menu items at the top of the page. Useful for custom css';
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     
   // CHM usage
   SCHMUsageTOC     = 'Use [File] as the table of contents. Usually a .hhc file.';
@@ -171,6 +184,7 @@ resourcestring
   SCHMUsageAutoTOC = 'Automatically generate a Table of Contents. Ignores --toc-file';
   SCHMUsageAutoIDX = 'Automatically generate an Index. Ignores --index-file';
   SCHMUsageMakeSearch = 'Automatically generate a Search Index from filenames that match *.htm*';
+<<<<<<< HEAD
 <<<<<<< HEAD
   SCHMUsageChmTitle= 'Title of the chm. Defaults to the value from --package';
 
@@ -193,6 +207,8 @@ resourcestring
   SLinearUsageDupLinkedDocsP2 = 'descendant classes.';
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   STitle           = 'FPDoc - Free Pascal Documentation Tool';
   SVersion         = 'Version %s [%s]';
@@ -253,6 +269,7 @@ resourcestring
   SUsageOption170  = '--warn-no-node    Warn if no documentation node was found.';
   SUsageOption180  = '--mo-dir=dir      Set directory where language files reside to dir';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SUsageOption190  = '--parse-impl      (Experimental) try to parse implementation too';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -267,6 +284,9 @@ resourcestring
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
   SUsageFormats        = 'The following output formats are supported by this fpdoc:';
   SUsageBackendHelp    = 'Specify an output format, combined with --help to get more help for this backend.';
   SUsageFormatSpecific = 'Output format "%s" supports the following options:';
@@ -367,9 +387,12 @@ type
     FTopicNode : Boolean;
     FRefCount : Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FVersion: TDomElement;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   public
     constructor Create(const AName: String; ANode: TDOMElement);
     destructor Destroy; override;
@@ -413,9 +436,14 @@ type
     function ResolveLinkInUsedUnits(AModule: TPasModule; const ALinkDest: String; Strict: Boolean=False): String;
 =======
 
+  { TFPDocEngine }
+
   TFPDocEngine = class(TPasTreeContainer)
   private
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   protected
     FAlwaysVisible : TStringList;
     DescrDocs: TObjectList;             // List of XML documents
@@ -463,7 +491,10 @@ type
 =======
     function ResolveLink(AModule: TPasModule; const ALinkDest: String): String;
     function FindLinkedNode(ANode: TDocNode): TDocNode;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     // Documentation file support
     procedure AddDocFile(const AFilename: String;DontTrim:boolean=false);
@@ -1914,9 +1945,12 @@ begin
       PackageDocNode := ReadNode(RootDocNode, TDOMElement(Node));
       PackageDocNode.IncRefCount;
 <<<<<<< HEAD
+<<<<<<< HEAD
       PN:=PackageDocNode.Name;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       // Scan all 'module' elements within this package element
       Subnode := Node.FirstChild;
       while Assigned(Subnode) do
@@ -2051,11 +2085,17 @@ end;
 function TFPDocEngine.FindLinkedNode(ANode : TDocNode) : TDocNode;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Var
   S: String;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+Var
+  S: String;
+
+>>>>>>> origin/fixes_2_2
 begin
   If (ANode.Link='') then
     Result:=Nil
@@ -2063,6 +2103,7 @@ begin
     Result:=FindDocNode(CurModule,ANode.Link);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TFPDocEngine.ShowElement(El: TPasElement): Boolean;
 begin
@@ -2089,6 +2130,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function TFPDocEngine.FindShortDescr(ARefModule: TPasModule;
   const AName: String): TDOMElement;
 

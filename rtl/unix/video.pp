@@ -641,10 +641,14 @@ var
           #0..#31:
             converted:=convert_lowascii_to_UTF8[c];
 <<<<<<< HEAD
+<<<<<<< HEAD
           #127..#255:
 =======
           #128..#255:
 >>>>>>> graemeg/fixes_2_2
+=======
+          #128..#255:
+>>>>>>> origin/fixes_2_2
             converted:=convert_cp437_to_UTF8[c];
           else
           begin

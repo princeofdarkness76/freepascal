@@ -3,6 +3,7 @@
  
      Contains:   OS Utilities Interfaces.
 <<<<<<< HEAD
+<<<<<<< HEAD
                  The contents of this header file are deprecated.
  
 <<<<<<< HEAD
@@ -22,11 +23,16 @@
  
      Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
 =======
+=======
+>>>>>>> origin/fixes_2_2
  
      Version:    CarbonCore-654.0.85~1
  
      Copyright:  © 1985-2005 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -35,6 +41,7 @@
  
 }
 {      Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, November 2005 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {      Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {      Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
@@ -56,13 +63,18 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
     Modified for use with Free Pascal
     Version 210
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -72,12 +84,17 @@
 unit OSUtils;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -91,14 +108,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -107,11 +129,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -149,6 +174,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -156,6 +183,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -393,6 +421,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -401,7 +431,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -428,9 +461,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -441,6 +478,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,CFBase;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -450,6 +488,9 @@ uses MacTypes,CFBase;
 =======
 uses MacTypes,CFBase,MixedMode,MacMemory,DateTimeUtils,CFString,Endian;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,CFBase,MixedMode,MacMemory,DateTimeUtils,CFString,Endian;
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -462,7 +503,10 @@ uses MacTypes,CFBase,MixedMode,MacMemory,DateTimeUtils,CFString,Endian;
 
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	useFree = 0;
 	useATalk = 1;
 	useAsync = 2;
@@ -474,7 +518,10 @@ const
 	true32b = 1;     {32 bit addressing error}
 
 const
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { result types for RelString Call }
 	sortsBefore = -1;   {first string < second string}
 	sortsEqual = 0;    {first string = second string}
@@ -494,7 +541,10 @@ const
 type
 	QTypes = SignedByte;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type
 	SysParmTypePtr = ^SysParmType;
 	SysParmType = packed record
@@ -514,7 +564,10 @@ type
 	SysPPtr = SysParmTypePtr;
 
 type
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	QElemPtr = ^QElem;
 	QElem = record
 		qLink: QElemPtr;
@@ -523,6 +576,7 @@ type
 	end;
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	QHdr = record
 		qFlags: {volatile} SInt16;
 		qHead: {volatile} QElemPtr;
@@ -530,6 +584,8 @@ type
 	end;
 	QHdrPtr = ^QHdr;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	QHdrPtr = ^QHdr;
 	QHdr = record
 		qFlags: SInt16;
@@ -582,7 +638,10 @@ type
 		dtReserved: SInt32;
 	end;
 	DeferredTaskPtr = ^DeferredTask;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { 
     In order for MachineLocation to be endian-safe, a new member 
     has been added to the 'u' union in the structure. You are 
@@ -621,18 +680,24 @@ type
 {$ifc TARGET_RT_BIG_ENDIAN}
 		0: (
 <<<<<<< HEAD
+<<<<<<< HEAD
 			dlsDelta: SInt8;									{ signed byte; daylight savings delta }
 			);
 {$endc}
 		1: (
 			gmtDelta: SIGNEDLONG;           { use low 24-bits only }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 			dlsDelta: SInt8;									{  signed byte; daylight savings delta  }
 			);
 {$endc}
 		1: (
 			gmtDelta: SInt32;								{  use low 24-bits only  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 			);
 		2: (
 {$ifc TARGET_RT_LITTLE_ENDIAN}
@@ -642,6 +707,7 @@ type
 			);
 	end;
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -803,6 +869,8 @@ type
  *    TRUE if the metric system is being used; FALSE if the English
  *    system is being used.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  IsMetric()
  *  
  *  Availability:
@@ -879,7 +947,10 @@ function GetMMUMode: SInt8; inline;
 procedure SwapMMUMode( var mode: SInt8 ); inline;
 {
  *  Delay()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -887,14 +958,19 @@ procedure SwapMMUMode( var mode: SInt8 ); inline;
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IsMetric: Boolean; external name '_IsMetric';
 =======
 procedure Delay( numTicks: UInt32; var finalTicks: UInt32 ); external name '_Delay';
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure Delay( numTicks: UInt32; var finalTicks: UInt32 ); external name '_Delay';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Delay()
  *  
@@ -921,6 +997,8 @@ procedure Delay( numTicks: UInt32; var finalTicks: UInt32 ); external name '_Del
 procedure Delay( numTicks: UNSIGNEDLONG; var finalTicks: UNSIGNEDLONG ); external name '_Delay';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  WriteParam()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -934,12 +1012,16 @@ procedure Delay( numTicks: UNSIGNEDLONG; var finalTicks: UNSIGNEDLONG ); externa
  }
 function WriteParam: OSErr; external name '_WriteParam';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  Enqueue()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    Atomically adds a queue element to the given queue
@@ -964,6 +1046,8 @@ function WriteParam: OSErr; external name '_WriteParam';
  *  
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -976,6 +1060,7 @@ procedure Enqueue( qElement: QElemPtr; qHeader: QHdrPtr ); external name '_Enque
 {
  *  Dequeue()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
  *    Atomically removes a queue element from the given queue
@@ -999,6 +1084,8 @@ procedure Enqueue( qElement: QElemPtr; qHeader: QHdrPtr ); external name '_Enque
  *  
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1008,6 +1095,7 @@ function Dequeue( qElement: QElemPtr; qHeader: QHdrPtr ): OSErr; external name '
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 {
@@ -1111,20 +1199,84 @@ procedure MakeDataExecutable( baseAddress: UnivPtr; length: UNSIGNEDLONG ); exte
  *      contain 0.
 >>>>>>> origin/cpstrnew
  *  
+=======
+{
+ *  SetCurrentA5()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    You no longer need to use SetCurrentA5() on Mac OS X.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function SetCurrentA5: SInt32; external name '_SetCurrentA5';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  SetA5()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    You no longer need to use SetA5() on Mac OS X.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function SetA5( newA5: SInt32 ): SInt32; external name '_SetA5';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  InitUtil()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.3
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function InitUtil: OSErr; external name '_InitUtil';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{
+ *  MakeDataExecutable()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
+ }
+procedure MakeDataExecutable( baseAddress: UnivPtr; length: UInt32 ); external name '_MakeDataExecutable';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  ReadLocation()
+ *  
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure Delay( numTicks: UNSIGNEDLONG; var finalTicks: UNSIGNEDLONG ); external name '_Delay';
 =======
 procedure ReadLocation( var loc: MachineLocation ); external name '_ReadLocation';
 >>>>>>> origin/cpstrnew
+=======
+procedure ReadLocation( var loc: MachineLocation ); external name '_ReadLocation';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
+<<<<<<< HEAD
  *  TickCount()
  *  
  *  Summary:
@@ -1171,6 +1323,21 @@ procedure ReadLocation( var loc: MachineLocation ); external name '_ReadLocation
  *    
  *    qHeader:
  *      a pointer to the queue header.
+=======
+ *  WriteLocation()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.0
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure WriteLocation( const (*var*) loc: MachineLocation ); external name '_WriteLocation';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED *)
+
+
+{
+ *  TickCount()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1184,6 +1351,7 @@ function TickCount: UInt32; external name '_TickCount';
 {
  *  CSCopyUserName()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Returns a reference to the CFString that represents the user name.
  *  
@@ -1220,6 +1388,8 @@ function TickCount: UInt32; external name '_TickCount';
  *    qHeader:
  *      a pointer to the queue header.
  *  
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.5 and later
@@ -1229,6 +1399,7 @@ function CSCopyUserName( useShortName: Boolean ): CFStringRef; external name '_C
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 {
 <<<<<<< HEAD
@@ -1274,6 +1445,11 @@ function CSCopyUserName( useShortName: Boolean ): CFStringRef; external name '_C
  *    the name of this machine in a CFStringRef.  You should release
  *    this when you are done with it.
  *  
+=======
+{
+ *  CSCopyMachineName()
+ *  
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.5 and later
@@ -1283,6 +1459,7 @@ function CSCopyMachineName: CFStringRef; external name '_CSCopyMachineName';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 const
 	useFree = 0;
 	useATalk = 1;
@@ -3116,6 +3293,8 @@ end.
 
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
     NOTE: SysEnvirons is obsolete.  You should be using Gestalt.
 }
@@ -3190,4 +3369,7 @@ begin
 end;
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

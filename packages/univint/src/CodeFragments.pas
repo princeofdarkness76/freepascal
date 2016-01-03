@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/CodeFragments.h
  
      Contains:   Public Code Fragment Manager Interfaces.
@@ -22,6 +23,8 @@
  
      Copyright:  © 1992-2008 by Apple Computer, Inc., all rights reserved.
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       CodeFragments.p
  
      Contains:   Public Code Fragment Manager Interfaces.
@@ -30,7 +33,10 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1992-2002 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -38,6 +44,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
@@ -58,6 +65,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
    ¥
    ===========================================================================================
@@ -72,7 +81,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -82,12 +94,17 @@
 unit CodeFragments;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -101,14 +118,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -117,11 +139,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -159,6 +184,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -166,6 +193,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
@@ -404,6 +432,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -412,7 +442,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -439,9 +472,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -452,6 +489,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBundle,Files,Multiprocessing;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -481,14 +519,19 @@ uses MacTypes,CFBundle,Files,Multiprocessing;
 }
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {$ALIGN MAC68K}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
    ¤
    ===========================================================================================
@@ -496,6 +539,7 @@ uses MacTypes,CFBundle,Files,Multiprocessing;
    ===========================
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kCFragResourceType = FourCharCode('cfrg');
@@ -575,6 +619,8 @@ const
    mechanism.
 }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 const
 	kCFragResourceType			= FourCharCode('cfrg');
@@ -656,13 +702,17 @@ const
 	   Only one standard extension type is defined at present, it is used by SOM's searching
 	   mechanism.
 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
 	CFragUsage1UnionPtr = ^CFragUsage1Union;
 	CFragUsage1Union = record
 		case SInt16 of
+<<<<<<< HEAD
 <<<<<<< HEAD
 																		{ ! Meaning differs depending on value of "usage".}
 		0: (
@@ -685,6 +735,8 @@ const
 { Bit masks for the CFragUsage2Union libFlags variant.}
 	kCFragLibUsageMapPrivatelyMask = $0001; { Put container in app heap if necessary.}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 																		{  ! Meaning differs depending on value of "usage". }
 		0: (
 			appStackSize:		UInt32;									{  If the fragment is an application. (Not used by CFM!) }
@@ -707,13 +759,17 @@ const
 const
 																{  Bit masks for the CFragUsage2Union libFlags variant. }
 	kCFragLibUsageMapPrivatelyMask = $0001;						{  Put container in app heap if necessary. }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
 	CFragWhere1UnionPtr = ^CFragWhere1Union;
 	CFragWhere1Union = record
 		case SInt16 of
+<<<<<<< HEAD
 <<<<<<< HEAD
 																		{ ! Meaning differs depending on value of "where". }
 		0: (
@@ -770,6 +826,8 @@ type
 
 	CFragResourceSearchExtensionPtr = ^CFragResourceSearchExtension;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 																		{  ! Meaning differs depending on value of "where". }
 		0: (
 			spaceID:			UInt32;									{  If the fragment is in memory.  (Actually an AddressSpaceID.) }
@@ -826,12 +884,16 @@ type
 	end;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kCFragResourceSearchExtensionKind = $30EE;
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 	CFragResource = record
 		reservedA: UInt32;              { ! Must be zero!}
@@ -873,6 +935,8 @@ const
 
 const
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	CFragResourcePtr = ^CFragResource;
 	CFragResource = record
 		reservedA:				UInt32;									{  ! Must be zero! }
@@ -913,11 +977,15 @@ const
 	kPrivateCFragCopy			= $0005;						{  Prepare a new private copy.  (kReferenceCFrag | 0x0004) }
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kUnresolvedCFragSymbolAddress = 0;
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 	CFragSymbolClass = UInt8;
 	CFragSymbolClassPtr = ^CFragSymbolClass;
@@ -1200,6 +1268,8 @@ function GetIndSymbol( connID: CFragConnectionID; symIndex: SIGNEDLONG; symName:
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	CFragSymbolClass					= UInt8;
 	CFragSymbolClassPtr					= ^CFragSymbolClass;  { when a var xx:CFragSymbolClass parameter can be nil, it is changed to xx: CFragSymbolClassPtr }
 
@@ -1288,7 +1358,10 @@ function CountSymbols(connID: CFragConnectionID; var symCount: SInt32): OSErr; e
  *    Mac OS X:         in version 10.0 and later
  }
 function GetIndSymbol(connID: CFragConnectionID; symIndex: SInt32; symName: StringPtr; symAddr: symAddrPtr; symClass: CFragSymbolClassPtr): OSErr; external name '_GetIndSymbol';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
    ¤
    ===========================================================================================
@@ -1328,6 +1401,7 @@ function GetIndSymbol(connID: CFragConnectionID; symIndex: SInt32; symName: Stri
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
@@ -1431,6 +1505,8 @@ function ConvertBundlePreLocator( initBlockLocator: CFragSystem7LocatorPtr ): OS
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type
 	CFragSystem7MemoryLocatorPtr = ^CFragSystem7MemoryLocator;
 	CFragSystem7MemoryLocator = record
@@ -1524,7 +1600,10 @@ type
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function ConvertBundlePreLocator(initBlockLocator: CFragSystem7LocatorPtr): OSErr; external name '_ConvertBundlePreLocator';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -1542,6 +1621,7 @@ function ConvertBundlePreLocator(initBlockLocator: CFragSystem7LocatorPtr): OSEr
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
@@ -1611,6 +1691,8 @@ const
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kLoadCFrag					= $0001;
 
@@ -1680,4 +1762,7 @@ const
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -4,10 +4,14 @@
 
 [target]
 <<<<<<< HEAD
+<<<<<<< HEAD
 programs=imgconv drawing xwdtobmp interpoldemo
 =======
 programs=imgconv drawing
 >>>>>>> graemeg/fixes_2_2
+=======
+programs=imgconv drawing
+>>>>>>> origin/fixes_2_2
 
 [require]
 packages=fcl-image

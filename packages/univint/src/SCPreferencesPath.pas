@@ -1,9 +1,13 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2000, 2001, 2004, 2005, 2008 Apple Inc. All rights reserved.
 =======
  * Copyright (c) 2000-2003 Apple Computer, Inc. All rights reserved.
 >>>>>>> graemeg/fixes_2_2
+=======
+ * Copyright (c) 2000-2003 Apple Computer, Inc. All rights reserved.
+>>>>>>> origin/fixes_2_2
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -16,6 +20,7 @@
  * 
  * The Original Code and all software distributed under the License are
 <<<<<<< HEAD
+<<<<<<< HEAD
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
@@ -24,12 +29,18 @@
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES of MERCHANTABILITY,
 >>>>>>> graemeg/fixes_2_2
+=======
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY of ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES of MERCHANTABILITY,
+>>>>>>> origin/fixes_2_2
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
  * 
  * @APPLE_LICENSE_HEADER_END@
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
@@ -56,6 +67,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 
 
@@ -65,7 +78,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -75,12 +91,17 @@
 unit SCPreferencesPath;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -94,14 +115,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -110,11 +136,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -152,6 +181,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -159,6 +190,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -403,6 +435,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -411,7 +445,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -438,9 +475,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -451,6 +492,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,SCPreferences,CFDictionary;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -505,6 +547,8 @@ uses MacTypes,CFBase,SCPreferences,CFDictionary;
 {$ifc TARGET_OS_MAC}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN MAC68K}
 
 {!
@@ -550,11 +594,15 @@ uses MacTypes,CFBase,SCPreferences,CFDictionary;
 	specified by the link.
  }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {!
 	@function SCPreferencesPathCreateUniqueChild
 	@discussion Creates a new path component within the dictionary
 		hierarchy.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@param prefs The preferences session.
 	@param prefix A string that represents the parent path.
@@ -564,6 +612,8 @@ uses MacTypes,CFBase,SCPreferences,CFDictionary;
 function SCPreferencesPathCreateUniqueChild( prefs: SCPreferencesRef; prefix: CFStringRef ): CFStringRef; external name '_SCPreferencesPathCreateUniqueChild';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@param session The SCPreferencesRef handle that should be used to
 	 communicate with the APIs.
 	@param prefix A string that represents the parent path.
@@ -571,12 +621,16 @@ function SCPreferencesPathCreateUniqueChild( prefs: SCPreferencesRef; prefix: CF
 		if the specified path does not exist.
  }
 function SCPreferencesPathCreateUniqueChild( session: SCPreferencesRef; prefix: CFStringRef ): CFStringRef; external name '_SCPreferencesPathCreateUniqueChild';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {!
 	@function SCPreferencesPathGetValue
 	@discussion Returns the dictionary associated with the specified
 		path.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@param prefs The preferences session.
 	@param path A string that represents the path to be returned.
@@ -586,6 +640,8 @@ function SCPreferencesPathCreateUniqueChild( session: SCPreferencesRef; prefix: 
 function SCPreferencesPathGetValue( prefs: SCPreferencesRef; path: CFStringRef ): CFDictionaryRef; external name '_SCPreferencesPathGetValue';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@param session The SCPreferencesRef handle that should be used to
 		communicate with the APIs.
 	@param path A string that represents the path to be returned.
@@ -593,12 +649,16 @@ function SCPreferencesPathGetValue( prefs: SCPreferencesRef; path: CFStringRef )
 		if the path does not exist.
  }
 function SCPreferencesPathGetValue( session: SCPreferencesRef; path: CFStringRef ): CFDictionaryRef; external name '_SCPreferencesPathGetValue';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {!
 	@function SCPreferencesPathGetLink
 	@discussion Returns the link (if one exists) associated with the
 		specified path.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@param prefs The preferences session.
 	@param path A string that represents the path to be returned.
@@ -608,6 +668,8 @@ function SCPreferencesPathGetValue( session: SCPreferencesRef; path: CFStringRef
 function SCPreferencesPathGetLink( prefs: SCPreferencesRef; path: CFStringRef ): CFStringRef; external name '_SCPreferencesPathGetLink';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@param session The SCPreferencesRef handle that should be used to
 	 communicate with the APIs.
 	@param path A string that represents the path to be returned.
@@ -615,11 +677,15 @@ function SCPreferencesPathGetLink( prefs: SCPreferencesRef; path: CFStringRef ):
 		if the path is not a link or does not exist.
  }
 function SCPreferencesPathGetLink( session: SCPreferencesRef; path: CFStringRef ): CFStringRef; external name '_SCPreferencesPathGetLink';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {!
 	@function SCPreferencesPathSetValue
 	@discussion Associates a dictionary with the specified path.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@param prefs The preferences session.
 	@param path A string that represents the path to be updated.
@@ -630,6 +696,8 @@ function SCPreferencesPathGetLink( session: SCPreferencesRef; path: CFStringRef 
 function SCPreferencesPathSetValue( prefs: SCPreferencesRef; path: CFStringRef; value: CFDictionaryRef ): Boolean; external name '_SCPreferencesPathSetValue';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@param session The SCPreferencesRef handle that should be used to
 	 communicate with the APIs.
 	@param path A string that represents the path to be updated.
@@ -638,12 +706,16 @@ function SCPreferencesPathSetValue( prefs: SCPreferencesRef; path: CFStringRef; 
 	@result A boolean indicating the success (or failure) of the call.
  }
 function SCPreferencesPathSetValue( session: SCPreferencesRef; path: CFStringRef; value: CFDictionaryRef ): Boolean; external name '_SCPreferencesPathSetValue';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {!
 	@function SCPreferencesPathSetLink
 	@discussion Associates a link to a second dictionary at the
 		specified path.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@param prefs The preferences session.
 	@param path A string that represents the path to be updated.
@@ -654,6 +726,8 @@ function SCPreferencesPathSetValue( session: SCPreferencesRef; path: CFStringRef
 function SCPreferencesPathSetLink( prefs: SCPreferencesRef; path: CFStringRef; link: CFStringRef ): Boolean; external name '_SCPreferencesPathSetLink';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@param session The SCPreferencesRef handle that should be used to
 		communicate with the APIs.
 	@param path A string that represents the path to be updated.
@@ -662,11 +736,15 @@ function SCPreferencesPathSetLink( prefs: SCPreferencesRef; path: CFStringRef; l
 	@result A boolean indicating the success (or failure) of the call.
  }
 function SCPreferencesPathSetLink( session: SCPreferencesRef; path: CFStringRef; link: CFStringRef ): Boolean; external name '_SCPreferencesPathSetLink';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {!
 	@function SCPreferencesPathRemoveValue
 	@discussion Removes the data associated with the specified path.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@param prefs The preferences session.
 	@param path A string that represents the path to be returned.
@@ -681,6 +759,8 @@ function SCPreferencesPathRemoveValue( prefs: SCPreferencesRef; path: CFStringRe
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@param session The SCPreferencesRef handle that should be used to
 	 communicate with the APIs.
 	@param path A string that represents the path to be returned.
@@ -689,4 +769,7 @@ end.
 function SCPreferencesPathRemoveValue( session: SCPreferencesRef; path: CFStringRef ): Boolean; external name '_SCPreferencesPathRemoveValue';
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

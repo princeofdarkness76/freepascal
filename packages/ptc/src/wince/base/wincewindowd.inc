@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -68,6 +69,8 @@ type
     property WindowHandle: HWND read FWindow;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Type
   TWinCEWndProc = Function(Ahwnd : HWND; AuMsg : UINT; AwParam : WPARAM; AlParam : LPARAM) : LRESULT Of Object;
 
@@ -89,4 +92,7 @@ Type
 
     Property WindowHandle : HWND Read FWindow;
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

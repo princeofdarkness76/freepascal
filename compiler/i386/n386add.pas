@@ -51,6 +51,7 @@ interface
       cgbase,procinfo,
       ncon,nset,cgutils,tgobj,
 <<<<<<< HEAD
+<<<<<<< HEAD
       cga,ncgutil,cgobj,cg64f32,cgx86,
       hlcgobj;
 
@@ -90,6 +91,9 @@ interface
 =======
       cga,ncgutil,cgobj,cg64f32,cgx86;
 >>>>>>> graemeg/fixes_2_2
+=======
+      cga,ncgutil,cgobj,cg64f32,cgx86;
+>>>>>>> origin/fixes_2_2
 
 {*****************************************************************************
                                 Add64bit
@@ -499,8 +503,11 @@ interface
 <<<<<<< HEAD
     procedure ti386addnode.second_mul(unsigned: boolean);
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     var reg:Tregister;
         ref:Treference;
         use_ref:boolean;
@@ -524,7 +531,10 @@ interface
       location_reset(location,LOC_REGISTER,def_cgsize(resultdef));
       { Mul supports registers and references, so if not register/reference,
         load the location into a register}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       use_ref:=false;
       if left.location.loc in [LOC_REGISTER,LOC_CREGISTER] then
         reg:=left.location.register
@@ -539,10 +549,14 @@ interface
           {LOC_CONSTANT for example.}
           reg:=cg.getintregister(current_asmdata.CurrAsmList,OS_INT);
 <<<<<<< HEAD
+<<<<<<< HEAD
           hlcg.a_load_loc_reg(current_asmdata.CurrAsmList,left.resultdef,osuinttype,left.location,reg);
 =======
           cg.a_load_loc_reg(current_asmdata.CurrAsmList,OS_INT,left.location,reg);
 >>>>>>> graemeg/fixes_2_2
+=======
+          cg.a_load_loc_reg(current_asmdata.CurrAsmList,OS_INT,left.location,reg);
+>>>>>>> origin/fixes_2_2
         end;
       {Allocate EAX.}
       cg.getcpuregister(current_asmdata.CurrAsmList,NR_EAX);
@@ -551,6 +565,7 @@ interface
       {Also allocate EDX, since it is also modified by a mul (JM).}
       cg.getcpuregister(current_asmdata.CurrAsmList,NR_EDX);
       if use_ref then
+<<<<<<< HEAD
 <<<<<<< HEAD
         emit_ref(asmops[unsigned],S_L,ref)
       else
@@ -666,6 +681,8 @@ interface
       { Result is now in EDX:EAX. Copy it to virtual registers. }
       set_mul_result_location;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         emit_ref(A_MUL,S_L,ref)
       else
         emit_reg(A_MUL,S_L,reg);

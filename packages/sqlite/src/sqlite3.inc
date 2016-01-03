@@ -1,14 +1,19 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$mode objfpc}{$h+}
 =======
 {$mode objfpc}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$mode objfpc}
+>>>>>>> origin/fixes_2_2
 
 {$ifdef BSD}
   {$linklib c}
   {$linklib pthread}
 {$endif}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$packrecords C}
 
@@ -23,10 +28,16 @@ interface
 
 uses
 >>>>>>> graemeg/fixes_2_2
+=======
+interface
+
+uses
+>>>>>>> origin/fixes_2_2
 {$ifdef LOAD_DYNAMICALLY}
   SysUtils, DynLibs;
 {$else}
   DynLibs;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {$ifdef darwin}
@@ -1161,6 +1172,8 @@ var
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif}
 
 {
@@ -1541,11 +1554,15 @@ var
   SQLiteLibraryHandle : TLibHandle;
   DefaultLibrary : String = Sqlite3Lib;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF LOAD_DYNAMICALLY}
 
 implementation
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function sqlite3_version(): pansichar;
 begin
@@ -1570,6 +1587,8 @@ begin
   pointer(sqlite3_changes) := GetProcedureAddress(LibHandle,'sqlite3_changes');
   pointer(sqlite3_total_changes) := GetProcedureAddress(LibHandle,'sqlite3_total_changes');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$IFDEF LOAD_DYNAMICALLY}
 
 ResourceString
@@ -1585,12 +1604,16 @@ begin
   pointer(sqlite3_changes) := GetProcedureAddress(LibHandle,'sqlite3_changes');
   pointer(sqlite3_total_changes) := GetProcedureAddress(LibHandle,'sqlite3_total_changes');
   pointer(sqlite3_interrupt) := GetProcedureAddress(LibHandle,'sqlite3_interrupt');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   pointer(sqlite3_complete) := GetProcedureAddress(LibHandle,'sqlite3_complete');
   pointer(sqlite3_complete16) := GetProcedureAddress(LibHandle,'sqlite3_complete16');
   pointer(sqlite3_busy_handler) := GetProcedureAddress(LibHandle,'sqlite3_busy_handler');
   pointer(sqlite3_busy_timeout) := GetProcedureAddress(LibHandle,'sqlite3_busy_timeout');
   pointer(sqlite3_get_table) := GetProcedureAddress(LibHandle,'sqlite3_get_table');
+<<<<<<< HEAD
 <<<<<<< HEAD
   pointer(sqlite3_malloc) := GetProcedureAddress(LibHandle,'sqlite3_malloc');
   pointer(sqlite3_realloc) := GetProcedureAddress(LibHandle,'sqlite3_realloc');
@@ -1613,6 +1636,8 @@ begin
   pointer(sqlite3_prepare16_v2) := GetProcedureAddress(LibHandle,'sqlite3_prepare16_v2');
   pointer(sqlite3_sql) := GetProcedureAddress(LibHandle,'sqlite3_sql');
 =======
+=======
+>>>>>>> origin/fixes_2_2
   pointer(sqlite3_free_table) := GetProcedureAddress(LibHandle,'sqlite3_free_table');
 // Todo: see how translate sqlite3_mprintf, sqlite3_vmprintf, sqlite3_snprintf
 //   pointer(sqlite3_mprintf) := GetProcedureAddress(LibHandle,'sqlite3_mprintf');
@@ -1632,7 +1657,10 @@ begin
   pointer(sqlite3_errmsg16) := GetProcedureAddress(LibHandle,'sqlite3_errmsg16');
   pointer(sqlite3_prepare) := GetProcedureAddress(LibHandle,'sqlite3_prepare');
   pointer(sqlite3_prepare16) := GetProcedureAddress(LibHandle,'sqlite3_prepare16');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   pointer(sqlite3_bind_blob) := GetProcedureAddress(LibHandle,'sqlite3_bind_blob');
   pointer(sqlite3_bind_double) := GetProcedureAddress(LibHandle,'sqlite3_bind_double');
   pointer(sqlite3_bind_int) := GetProcedureAddress(LibHandle,'sqlite3_bind_int');
@@ -1640,6 +1668,7 @@ begin
   pointer(sqlite3_bind_null) := GetProcedureAddress(LibHandle,'sqlite3_bind_null');
   pointer(sqlite3_bind_text) := GetProcedureAddress(LibHandle,'sqlite3_bind_text');
   pointer(sqlite3_bind_text16) := GetProcedureAddress(LibHandle,'sqlite3_bind_text16');
+<<<<<<< HEAD
 <<<<<<< HEAD
   pointer(sqlite3_bind_value) := GetProcedureAddress(LibHandle,'sqlite3_bind_value');
   pointer(sqlite3_bind_zeroblob) := GetProcedureAddress(LibHandle,'sqlite3_bind_zeroblob');
@@ -1657,6 +1686,8 @@ begin
   pointer(sqlite3_column_origin_name) := GetProcedureAddress(LibHandle,'sqlite3_column_origin_name');
   pointer(sqlite3_column_origin_name16) := GetProcedureAddress(LibHandle,'sqlite3_column_origin_name16');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 //  pointer(sqlite3_bind_value) := GetProcedureAddress(LibHandle,'sqlite3_bind_value');
 //These overloaded functions were introduced to allow the use of SQLITE_STATIC and SQLITE_TRANSIENT
 //It's the c world man ;-)
@@ -1671,7 +1702,10 @@ begin
   pointer(sqlite3_column_count) := GetProcedureAddress(LibHandle,'sqlite3_column_count');
   pointer(sqlite3_column_name) := GetProcedureAddress(LibHandle,'sqlite3_column_name');
   pointer(sqlite3_column_name16) := GetProcedureAddress(LibHandle,'sqlite3_column_name16');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   pointer(sqlite3_column_decltype) := GetProcedureAddress(LibHandle,'sqlite3_column_decltype');
   pointer(sqlite3_column_decltype16) := GetProcedureAddress(LibHandle,'sqlite3_column_decltype16');
   pointer(sqlite3_step) := GetProcedureAddress(LibHandle,'sqlite3_step');
@@ -1686,18 +1720,25 @@ begin
   pointer(sqlite3_column_text16) := GetProcedureAddress(LibHandle,'sqlite3_column_text16');
   pointer(sqlite3_column_type) := GetProcedureAddress(LibHandle,'sqlite3_column_type');
 <<<<<<< HEAD
+<<<<<<< HEAD
   pointer(sqlite3_column_value) := GetProcedureAddress(LibHandle,'sqlite3_column_value');
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   pointer(sqlite3_finalize) := GetProcedureAddress(LibHandle,'sqlite3_finalize');
   pointer(sqlite3_reset) := GetProcedureAddress(LibHandle,'sqlite3_reset');
   pointer(sqlite3_create_function) := GetProcedureAddress(LibHandle,'sqlite3_create_function');
   pointer(sqlite3_create_function16) := GetProcedureAddress(LibHandle,'sqlite3_create_function16');
 <<<<<<< HEAD
+<<<<<<< HEAD
   pointer(sqlite3_create_function_v2) := GetProcedureAddress(LibHandle,'sqlite3_create_function_v2');
 =======
   pointer(sqlite3_aggregate_count) := GetProcedureAddress(LibHandle,'sqlite3_aggregate_count');
 >>>>>>> graemeg/fixes_2_2
+=======
+  pointer(sqlite3_aggregate_count) := GetProcedureAddress(LibHandle,'sqlite3_aggregate_count');
+>>>>>>> origin/fixes_2_2
   pointer(sqlite3_value_blob) := GetProcedureAddress(LibHandle,'sqlite3_value_blob');
   pointer(sqlite3_value_bytes) := GetProcedureAddress(LibHandle,'sqlite3_value_bytes');
   pointer(sqlite3_value_bytes16) := GetProcedureAddress(LibHandle,'sqlite3_value_bytes16');
@@ -1709,6 +1750,7 @@ begin
   pointer(sqlite3_value_text16le) := GetProcedureAddress(LibHandle,'sqlite3_value_text16le');
   pointer(sqlite3_value_text16be) := GetProcedureAddress(LibHandle,'sqlite3_value_text16be');
   pointer(sqlite3_value_type) := GetProcedureAddress(LibHandle,'sqlite3_value_type');
+<<<<<<< HEAD
 <<<<<<< HEAD
   pointer(sqlite3_value_numeric_type) := GetProcedureAddress(LibHandle,'sqlite3_value_numeric_type');
   pointer(sqlite3_aggregate_context) := GetProcedureAddress(LibHandle,'sqlite3_aggregate_context');
@@ -1767,17 +1809,25 @@ begin
   pointer(sqlite3_user_data) := GetProcedureAddress(LibHandle,'sqlite3_user_data');
   pointer(sqlite3_get_auxdata) := GetProcedureAddress(LibHandle,'sqlite3_get_auxdata');
 >>>>>>> graemeg/fixes_2_2
+=======
+  pointer(sqlite3_aggregate_context) := GetProcedureAddress(LibHandle,'sqlite3_aggregate_context');
+  pointer(sqlite3_user_data) := GetProcedureAddress(LibHandle,'sqlite3_user_data');
+  pointer(sqlite3_get_auxdata) := GetProcedureAddress(LibHandle,'sqlite3_get_auxdata');
+>>>>>>> origin/fixes_2_2
   pointer(sqlite3_set_auxdata) := GetProcedureAddress(LibHandle,'sqlite3_set_auxdata');
   pointer(sqlite3_result_blob) := GetProcedureAddress(LibHandle,'sqlite3_result_blob');
   pointer(sqlite3_result_double) := GetProcedureAddress(LibHandle,'sqlite3_result_double');
   pointer(sqlite3_result_error) := GetProcedureAddress(LibHandle,'sqlite3_result_error');
   pointer(sqlite3_result_error16) := GetProcedureAddress(LibHandle,'sqlite3_result_error16');
 <<<<<<< HEAD
+<<<<<<< HEAD
   pointer(sqlite3_result_error_toobig) := GetProcedureAddress(LibHandle,'sqlite3_result_error_toobig');
   pointer(sqlite3_result_error_nomem) := GetProcedureAddress(LibHandle,'sqlite3_result_error_nomem');
   pointer(sqlite3_result_error_code) := GetProcedureAddress(LibHandle,'sqlite3_result_error_code');
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   pointer(sqlite3_result_int) := GetProcedureAddress(LibHandle,'sqlite3_result_int');
   pointer(sqlite3_result_int64) := GetProcedureAddress(LibHandle,'sqlite3_result_int64');
   pointer(sqlite3_result_null) := GetProcedureAddress(LibHandle,'sqlite3_result_null');
@@ -1786,6 +1836,7 @@ begin
   pointer(sqlite3_result_text16le) := GetProcedureAddress(LibHandle,'sqlite3_result_text16le');
   pointer(sqlite3_result_text16be) := GetProcedureAddress(LibHandle,'sqlite3_result_text16be');
   pointer(sqlite3_result_value) := GetProcedureAddress(LibHandle,'sqlite3_result_value');
+<<<<<<< HEAD
 <<<<<<< HEAD
   pointer(sqlite3_result_zeroblob) := GetProcedureAddress(LibHandle,'sqlite3_result_zeroblob');
   pointer(sqlite3_soft_heap_limit) := GetProcedureAddress(LibHandle,'sqlite3_soft_heap_limit');
@@ -2022,6 +2073,8 @@ end;
 >>>>>>> origin/cpstrnew
 {$ENDIF}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   pointer(sqlite3_create_collation) := GetProcedureAddress(LibHandle,'sqlite3_create_collation');
   pointer(sqlite3_create_collation16) := GetProcedureAddress(LibHandle,'sqlite3_create_collation16');
   pointer(sqlite3_collation_needed) := GetProcedureAddress(LibHandle,'sqlite3_collation_needed');
@@ -2097,4 +2150,7 @@ end;
 {$ENDIF}
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QuickTime/ImageCompression.h
  
      Contains:   QuickTime Image Compression Interfaces.
@@ -32,6 +33,8 @@
      Copyright:  © 1990-2008 by Apple Inc., all rights reserved
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       ImageCompression.p
  
      Contains:   QuickTime Image Compression Interfaces.
@@ -40,11 +43,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1990-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -75,6 +82,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -86,7 +95,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -96,12 +108,17 @@
 unit ImageCompression;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -115,14 +132,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -131,11 +153,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -173,6 +198,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -180,6 +207,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -410,6 +438,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -418,7 +448,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -445,9 +478,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -458,6 +495,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,Components,CGLTypes,ColorSyncDeprecated,CVBase,CVImageBuffer,CVPixelBuffer,CVPixelBufferPool,Files,Dialogs,OSUtils,QuickdrawTypes,QDOffscreen,CFBase,CFData,CFDictionary,CGContext,CGImage;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -466,11 +504,15 @@ uses MacTypes,Components,CGLTypes,ColorSyncDeprecated,CVBase,CVImageBuffer,CVPix
 =======
 uses MacTypes,Files,OSUtils,Quickdraw,QDOffscreen,Components,Dialogs;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,Files,OSUtils,Quickdraw,QDOffscreen,Components,Dialogs;
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 	MatrixRecord = record
 		matrix: array [0..2,0..2] of Fixed;
@@ -23129,6 +23171,1985 @@ function QTPixelBufferContextCreate( allocator: CFAllocatorRef { can be NULL }; 
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+	MatrixRecordPtr = ^MatrixRecord;
+	MatrixRecord = record
+		matrix:					array [0..2,0..2] of Fixed;
+	end;
+
+
+const
+	kRawCodecType				= FourCharCode('raw ');
+	kCinepakCodecType			= FourCharCode('cvid');
+	kGraphicsCodecType			= FourCharCode('smc ');
+	kAnimationCodecType			= FourCharCode('rle ');
+	kVideoCodecType				= FourCharCode('rpza');
+	kComponentVideoCodecType	= FourCharCode('yuv2');
+	kJPEGCodecType				= FourCharCode('jpeg');
+	kMotionJPEGACodecType		= FourCharCode('mjpa');
+	kMotionJPEGBCodecType		= FourCharCode('mjpb');
+	kSGICodecType				= FourCharCode('.SGI');
+	kPlanarRGBCodecType			= FourCharCode('8BPS');
+	kMacPaintCodecType			= FourCharCode('PNTG');
+	kGIFCodecType				= FourCharCode('gif ');
+	kPhotoCDCodecType			= FourCharCode('kpcd');
+	kQuickDrawGXCodecType		= FourCharCode('qdgx');
+	kAVRJPEGCodecType			= FourCharCode('avr ');
+	kOpenDMLJPEGCodecType		= FourCharCode('dmb1');
+	kBMPCodecType				= FourCharCode('WRLE');
+	kWindowsRawCodecType		= FourCharCode('WRAW');
+	kVectorCodecType			= FourCharCode('path');
+	kQuickDrawCodecType			= FourCharCode('qdrw');
+	kWaterRippleCodecType		= FourCharCode('ripl');
+	kFireCodecType				= FourCharCode('fire');
+	kCloudCodecType				= FourCharCode('clou');
+	kH261CodecType				= FourCharCode('h261');
+	kH263CodecType				= FourCharCode('h263');
+	kDVCNTSCCodecType			= FourCharCode('dvc ');						{  DV - NTSC and DVCPRO NTSC (available in QuickTime 6.0 or later) }
+																{  NOTE: kDVCProNTSCCodecType is deprecated.   }
+																{  Use kDVCNTSCCodecType instead -- as far as the codecs are concerned,  }
+																{  the two data formats are identical. }
+	kDVCPALCodecType			= FourCharCode('dvcp');
+	kDVCProPALCodecType			= FourCharCode('dvpp');						{  available in QuickTime 6.0 or later }
+	kBaseCodecType				= FourCharCode('base');
+	kFLCCodecType				= FourCharCode('flic');
+	kTargaCodecType				= FourCharCode('tga ');
+	kPNGCodecType				= FourCharCode('png ');
+	kTIFFCodecType				= FourCharCode('tiff');						{     NOTE: despite what might seem obvious from the two constants }
+																{     below and their names, they really are correct. 'yuvu' really  }
+																{     does mean signed, and 'yuvs' really does mean unsigned. Really.  }
+	kComponentVideoSigned		= FourCharCode('yuvu');
+	kComponentVideoUnsigned		= FourCharCode('yuvs');
+	kCMYKCodecType				= FourCharCode('cmyk');
+	kMicrosoftVideo1CodecType	= FourCharCode('msvc');
+	kSorensonCodecType			= FourCharCode('SVQ1');
+	kSorenson3CodecType			= FourCharCode('SVQ3');						{  available in QuickTime 5 and later }
+	kIndeo4CodecType			= FourCharCode('IV41');
+	kMPEG4VisualCodecType		= FourCharCode('mp4v');
+	k64ARGBCodecType			= FourCharCode('b64a');
+	k48RGBCodecType				= FourCharCode('b48r');
+	k32AlphaGrayCodecType		= FourCharCode('b32a');
+	k16GrayCodecType			= FourCharCode('b16g');
+	kMpegYUV420CodecType		= FourCharCode('myuv');
+	kYUV420CodecType			= FourCharCode('y420');
+	kSorensonYUV9CodecType		= FourCharCode('syv9');
+	k422YpCbCr8CodecType		= FourCharCode('2vuy');						{  Component Y'CbCr 8-bit 4:2:2   }
+	k444YpCbCr8CodecType		= FourCharCode('v308');						{  Component Y'CbCr 8-bit 4:4:4   }
+	k4444YpCbCrA8CodecType		= FourCharCode('v408');						{  Component Y'CbCrA 8-bit 4:4:4:4  }
+	k422YpCbCr16CodecType		= FourCharCode('v216');						{  Component Y'CbCr 10,12,14,16-bit 4:2:2 }
+	k422YpCbCr10CodecType		= FourCharCode('v210');						{  Component Y'CbCr 10-bit 4:2:2  }
+	k444YpCbCr10CodecType		= FourCharCode('v410');						{  Component Y'CbCr 10-bit 4:4:4  }
+	k4444YpCbCrA8RCodecType		= FourCharCode('r408');						{  Component Y'CbCrA 8-bit 4:4:4:4, rendering format. full range alpha, zero biased yuv }
+
+
+	{	 one source effects 	}
+	kBlurImageFilterType		= FourCharCode('blur');
+	kSharpenImageFilterType		= FourCharCode('shrp');
+	kEdgeDetectImageFilterType	= FourCharCode('edge');
+	kEmbossImageFilterType		= FourCharCode('embs');
+	kConvolveImageFilterType	= FourCharCode('genk');
+	kAlphaGainImageFilterType	= FourCharCode('gain');
+	kRGBColorBalanceImageFilterType = FourCharCode('rgbb');
+	kHSLColorBalanceImageFilterType = FourCharCode('hslb');
+	kColorSyncImageFilterType	= FourCharCode('sync');
+	kFilmNoiseImageFilterType	= FourCharCode('fmns');
+	kSolarizeImageFilterType	= FourCharCode('solr');
+	kColorTintImageFilterType	= FourCharCode('tint');
+	kLensFlareImageFilterType	= FourCharCode('lens');
+	kBrightnessContrastImageFilterType = FourCharCode('brco');
+
+	{	 two source effects 	}
+	kAlphaCompositorTransitionType = FourCharCode('blnd');
+	kCrossFadeTransitionType	= FourCharCode('dslv');
+	kChannelCompositeEffectType	= FourCharCode('chan');
+	kChromaKeyTransitionType	= FourCharCode('ckey');
+	kImplodeTransitionType		= FourCharCode('mplo');
+	kExplodeTransitionType		= FourCharCode('xplo');
+	kGradientTransitionType		= FourCharCode('matt');
+	kPushTransitionType			= FourCharCode('push');
+	kSlideTransitionType		= FourCharCode('slid');
+	kWipeTransitionType			= FourCharCode('smpt');
+	kIrisTransitionType			= FourCharCode('smp2');
+	kRadialTransitionType		= FourCharCode('smp3');
+	kMatrixTransitionType		= FourCharCode('smp4');
+	kZoomTransitionType			= FourCharCode('zoom');
+
+	{	 three source effects 	}
+	kTravellingMatteEffectType	= FourCharCode('trav');
+
+
+	{	 Supported by QTNewGWorld in QuickTime 4.0 and later 	}
+	kCMYKPixelFormat			= FourCharCode('cmyk');						{  CMYK, 8-bit  }
+	k64ARGBPixelFormat			= FourCharCode('b64a');						{  ARGB, 16-bit big-endian samples  }
+	k48RGBPixelFormat			= FourCharCode('b48r');						{  RGB, 16-bit big-endian samples  }
+	k32AlphaGrayPixelFormat		= FourCharCode('b32a');						{  AlphaGray, 16-bit big-endian samples  }
+	k16GrayPixelFormat			= FourCharCode('b16g');						{  Grayscale, 16-bit big-endian samples  }
+	k422YpCbCr8PixelFormat		= FourCharCode('2vuy');						{  Component Y'CbCr 8-bit 4:2:2, ordered Cb Y'0 Cr Y'1  }
+
+	{	 Supported by QTNewGWorld in QuickTime 4.1.2 and later 	}
+	k4444YpCbCrA8PixelFormat	= FourCharCode('v408');						{  Component Y'CbCrA 8-bit 4:4:4:4, ordered Cb Y' Cr A  }
+	k4444YpCbCrA8RPixelFormat	= FourCharCode('r408');						{  Component Y'CbCrA 8-bit 4:4:4:4, rendering format. full range alpha, zero biased yuv, ordered A Y' Cb Cr  }
+
+	{	 Supported by QTNewGWorld in QuickTime 6.0 and later 	}
+	kYUV420PixelFormat			= FourCharCode('y420');						{  Planar Component Y'CbCr 8-bit 4:2:0.  PixMap baseAddr points to a big-endian PlanarPixmapInfoYUV420 struct; see ImageCodec.i.  }
+
+
+	{	 These are the bits that are set in the Component flags, and also in the codecInfo struct. 	}
+	codecInfoDoes1				= $00000001;					{  codec can work with 1-bit pixels  }
+	codecInfoDoes2				= $00000002;					{  codec can work with 2-bit pixels  }
+	codecInfoDoes4				= $00000004;					{  codec can work with 4-bit pixels  }
+	codecInfoDoes8				= $00000008;					{  codec can work with 8-bit pixels  }
+	codecInfoDoes16				= $00000010;					{  codec can work with 16-bit pixels  }
+	codecInfoDoes32				= $00000020;					{  codec can work with 32-bit pixels  }
+	codecInfoDoesDither			= $00000040;					{  codec can do ditherMode  }
+	codecInfoDoesStretch		= $00000080;					{  codec can stretch to arbitrary sizes  }
+	codecInfoDoesShrink			= $00000100;					{  codec can shrink to arbitrary sizes  }
+	codecInfoDoesMask			= $00000200;					{  codec can mask to clipping regions  }
+	codecInfoDoesTemporal		= $00000400;					{  codec can handle temporal redundancy  }
+	codecInfoDoesDouble			= $00000800;					{  codec can stretch to double size exactly  }
+	codecInfoDoesQuad			= $00001000;					{  codec can stretch to quadruple size exactly  }
+	codecInfoDoesHalf			= $00002000;					{  codec can shrink to half size  }
+	codecInfoDoesQuarter		= $00004000;					{  codec can shrink to quarter size  }
+	codecInfoDoesRotate			= $00008000;					{  codec can rotate on decompress  }
+	codecInfoDoesHorizFlip		= $00010000;					{  codec can flip horizontally on decompress  }
+	codecInfoDoesVertFlip		= $00020000;					{  codec can flip vertically on decompress  }
+	codecInfoHasEffectParameterList = $00040000;				{  codec implements get effects parameter list call, once was codecInfoDoesSkew  }
+	codecInfoDoesBlend			= $00080000;					{  codec can blend on decompress  }
+	codecInfoDoesWarp			= $00100000;					{  codec can warp arbitrarily on decompress  }
+	codecInfoDoesRecompress		= $00200000;					{  codec can recompress image without accumulating errors  }
+	codecInfoDoesSpool			= $00400000;					{  codec can spool image data  }
+	codecInfoDoesRateConstrain	= $00800000;					{  codec can data rate constrain  }
+
+
+	codecInfoDepth1				= $00000001;					{  compressed data at 1 bpp depth available  }
+	codecInfoDepth2				= $00000002;					{  compressed data at 2 bpp depth available  }
+	codecInfoDepth4				= $00000004;					{  compressed data at 4 bpp depth available  }
+	codecInfoDepth8				= $00000008;					{  compressed data at 8 bpp depth available  }
+	codecInfoDepth16			= $00000010;					{  compressed data at 16 bpp depth available  }
+	codecInfoDepth32			= $00000020;					{  compressed data at 32 bpp depth available  }
+	codecInfoDepth24			= $00000040;					{  compressed data at 24 bpp depth available  }
+	codecInfoDepth33			= $00000080;					{  compressed data at 1 bpp monochrome depth  available  }
+	codecInfoDepth34			= $00000100;					{  compressed data at 2 bpp grayscale depth available  }
+	codecInfoDepth36			= $00000200;					{  compressed data at 4 bpp grayscale depth available  }
+	codecInfoDepth40			= $00000400;					{  compressed data at 8 bpp grayscale depth available  }
+	codecInfoStoresClut			= $00000800;					{  compressed data can have custom cluts  }
+	codecInfoDoesLossless		= $00001000;					{  compressed data can be stored in lossless format  }
+	codecInfoSequenceSensitive	= $00002000;					{  compressed data is sensitive to out of sequence decoding  }
+
+
+	{  input sequence flags }
+	codecFlagUseImageBuffer		= $00000001;					{  decompress }
+	codecFlagUseScreenBuffer	= $00000002;					{  decompress }
+	codecFlagUpdatePrevious		= $00000004;					{  compress }
+	codecFlagNoScreenUpdate		= $00000008;					{  decompress }
+	codecFlagWasCompressed		= $00000010;					{  compress }
+	codecFlagDontOffscreen		= $00000020;					{  decompress }
+	codecFlagUpdatePreviousComp	= $00000040;					{  compress }
+	codecFlagForceKeyFrame		= $00000080;					{  compress }
+	codecFlagOnlyScreenUpdate	= $00000100;					{  decompress }
+	codecFlagLiveGrab			= $00000200;					{  compress }
+	codecFlagDiffFrame			= $00000200;					{  decompress }
+	codecFlagDontUseNewImageBuffer = $00000400;					{  decompress }
+	codecFlagInterlaceUpdate	= $00000800;					{  decompress }
+	codecFlagCatchUpDiff		= $00001000;					{  decompress }
+	codecFlagSupportDisable		= $00002000;					{  decompress }
+	codecFlagReenable			= $00004000;					{  decompress }
+
+
+	{  output sequence flags }
+	codecFlagOutUpdateOnNextIdle = $00000200;
+	codecFlagOutUpdateOnDataSourceChange = $00000400;
+	codecFlagSequenceSensitive	= $00000800;
+	codecFlagOutUpdateOnTimeChange = $00001000;
+	codecFlagImageBufferNotSourceImage = $00002000;
+	codecFlagUsedNewImageBuffer	= $00004000;
+	codecFlagUsedImageBuffer	= $00008000;
+
+
+																{  The minimum data size for spooling in or out data  }
+	codecMinimumDataSize		= 32768;
+
+
+	compressorComponentType		= FourCharCode('imco');						{  the type for "Components" which compress images  }
+	decompressorComponentType	= FourCharCode('imdc');						{  the type for "Components" which decompress images  }
+
+
+type
+	CompressorComponent					= Component;
+	DecompressorComponent				= Component;
+	CodecComponent						= Component;
+
+const
+	anyCodec					= 0;							{  take first working codec of given type  }
+	bestSpeedCodec				= -1;							{  take fastest codec of given type  }
+	bestFidelityCodec			= -2;							{  take codec which is most accurate  }
+	bestCompressionCodec		= -3;							{  take codec of given type that is most accurate  }
+
+
+type
+	CodecType							= OSType;
+	CodecType_fix                       = CodecType; { used as field type when a record declaration contains a CodecType field identifier }
+	CodecFlags							= UInt16;
+	CodecQ								= UInt32;
+
+const
+	codecLosslessQuality		= $00000400;
+	codecMaxQuality				= $000003FF;
+	codecMinQuality				= $00000000;
+	codecLowQuality				= $00000100;
+	codecNormalQuality			= $00000200;
+	codecHighQuality			= $00000300;
+
+	codecLockBitsShieldCursor	= $01;							{  shield cursor  }
+
+	codecCompletionSource		= $01;							{  asynchronous codec is done with source data  }
+	codecCompletionDest			= $02;							{  asynchronous codec is done with destination data  }
+	codecCompletionDontUnshield	= $04;							{  on dest complete don't unshield cursor  }
+	codecCompletionWentOffscreen = $08;							{  codec used offscreen buffer  }
+	codecCompletionUnlockBits	= $10;							{  on dest complete, call ICMSequenceUnlockBits  }
+	codecCompletionForceChainFlush = $20;						{  ICM needs to flush the whole chain  }
+	codecCompletionDropped		= $40;							{  codec decided to drop this frame  }
+
+	codecProgressOpen			= 0;
+	codecProgressUpdatePercent	= 1;
+	codecProgressClose			= 2;
+
+
+type
+{$ifc TYPED_FUNCTION_POINTERS}
+	ICMDataProcPtr = function(var dataP: Ptr; bytesNeeded: SInt32; refcon: SInt32): OSErr;
+{$elsec}
+	ICMDataProcPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	ICMFlushProcPtr = function(data: Ptr; bytesAdded: SInt32; refcon: SInt32): OSErr;
+{$elsec}
+	ICMFlushProcPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	ICMCompletionProcPtr = procedure(result: OSErr; flags: SInt16; refcon: SInt32);
+{$elsec}
+	ICMCompletionProcPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	ICMProgressProcPtr = function(message: SInt16; completeness: Fixed; refcon: SInt32): OSErr;
+{$elsec}
+	ICMProgressProcPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	StdPixProcPtr = procedure(var src: PixMap; var srcRect: Rect; var matrix: MatrixRecord; mode: SInt16; mask: RgnHandle; var matte: PixMap; var matteRect: Rect; flags: SInt16);
+{$elsec}
+	StdPixProcPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	QDPixProcPtr = procedure(var src: PixMap; var srcRect: Rect; var matrix: MatrixRecord; mode: SInt16; mask: RgnHandle; var matte: PixMap; var matteRect: Rect; flags: SInt16);
+{$elsec}
+	QDPixProcPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	ICMAlignmentProcPtr = procedure(var rp: Rect; refcon: SInt32);
+{$elsec}
+	ICMAlignmentProcPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	ICMCursorShieldedProcPtr = procedure(const (*var*) r: Rect; refcon: UnivPtr; flags: SInt32);
+{$elsec}
+	ICMCursorShieldedProcPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	ICMMemoryDisposedProcPtr = procedure(memoryBlock: Ptr; refcon: UnivPtr);
+{$elsec}
+	ICMMemoryDisposedProcPtr = ProcPtr;
+{$endc}
+
+	ICMCursorNotify						= Ptr;
+{$ifc TYPED_FUNCTION_POINTERS}
+	ICMConvertDataFormatProcPtr = function(refCon: UnivPtr; flags: SInt32; desiredFormat: Handle; sourceDataFormat: Handle; srcData: UnivPtr; srcDataSize: SInt32; var dstData: UnivPtr; var dstDataSize: SInt32): OSErr;
+{$elsec}
+	ICMConvertDataFormatProcPtr = ProcPtr;
+{$endc}
+
+{$ifc OPAQUE_UPP_TYPES}
+	ICMDataUPP = ^SInt32; { an opaque UPP }
+{$elsec}
+	ICMDataUPP = UniversalProcPtr;
+{$endc}	
+{$ifc OPAQUE_UPP_TYPES}
+	ICMFlushUPP = ^SInt32; { an opaque UPP }
+{$elsec}
+	ICMFlushUPP = UniversalProcPtr;
+{$endc}	
+{$ifc OPAQUE_UPP_TYPES}
+	ICMCompletionUPP = ^SInt32; { an opaque UPP }
+{$elsec}
+	ICMCompletionUPP = UniversalProcPtr;
+{$endc}	
+{$ifc OPAQUE_UPP_TYPES}
+	ICMProgressUPP = ^SInt32; { an opaque UPP }
+{$elsec}
+	ICMProgressUPP = UniversalProcPtr;
+{$endc}	
+{$ifc OPAQUE_UPP_TYPES}
+	StdPixUPP = ^SInt32; { an opaque UPP }
+{$elsec}
+	StdPixUPP = UniversalProcPtr;
+{$endc}	
+{$ifc OPAQUE_UPP_TYPES}
+	QDPixUPP = ^SInt32; { an opaque UPP }
+{$elsec}
+	QDPixUPP = UniversalProcPtr;
+{$endc}	
+{$ifc OPAQUE_UPP_TYPES}
+	ICMAlignmentUPP = ^SInt32; { an opaque UPP }
+{$elsec}
+	ICMAlignmentUPP = UniversalProcPtr;
+{$endc}	
+{$ifc OPAQUE_UPP_TYPES}
+	ICMCursorShieldedUPP = ^SInt32; { an opaque UPP }
+{$elsec}
+	ICMCursorShieldedUPP = UniversalProcPtr;
+{$endc}	
+{$ifc OPAQUE_UPP_TYPES}
+	ICMMemoryDisposedUPP = ^SInt32; { an opaque UPP }
+{$elsec}
+	ICMMemoryDisposedUPP = UniversalProcPtr;
+{$endc}	
+{$ifc OPAQUE_UPP_TYPES}
+	ICMConvertDataFormatUPP = ^SInt32; { an opaque UPP }
+{$elsec}
+	ICMConvertDataFormatUPP = UniversalProcPtr;
+{$endc}	
+	ImageSequence						= SInt32;
+	ImageSequenceDataSource				= SInt32;
+	ImageTranscodeSequence				= SInt32;
+	ImageFieldSequence					= SInt32;
+	ICMProgressProcRecordPtr = ^ICMProgressProcRecord;
+	ICMProgressProcRecord = record
+		progressProc:			ICMProgressUPP;
+		progressRefCon:			SInt32;
+	end;
+
+	ICMCompletionProcRecordPtr = ^ICMCompletionProcRecord;
+	ICMCompletionProcRecord = record
+		completionProc:			ICMCompletionUPP;
+		completionRefCon:		SInt32;
+	end;
+
+	ICMDataProcRecordPtr = ^ICMDataProcRecord;
+	ICMDataProcRecord = record
+		dataProc:				ICMDataUPP;
+		dataRefCon:				SInt32;
+	end;
+
+	ICMFlushProcRecordPtr = ^ICMFlushProcRecord;
+	ICMFlushProcRecord = record
+		flushProc:				ICMFlushUPP;
+		flushRefCon:			SInt32;
+	end;
+
+	ICMAlignmentProcRecordPtr = ^ICMAlignmentProcRecord;
+	ICMAlignmentProcRecord = record
+		alignmentProc:			ICMAlignmentUPP;
+		alignmentRefCon:		SInt32;
+	end;
+
+	DataRateParamsPtr = ^DataRateParams;
+	DataRateParams = record
+		dataRate:				SInt32;
+		dataOverrun:			SInt32;
+		frameDuration:			SInt32;
+		keyFrameRate:			SInt32;
+		minSpatialQuality:		CodecQ;
+		minTemporalQuality:		CodecQ;
+	end;
+
+	ImageDescriptionPtr = ^ImageDescription;
+	ImageDescription = packed record
+		idSize:					SInt32;								{  total size of ImageDescription including extra data ( CLUTs and other per sequence data )  }
+		cType:					CodecType;								{  what kind of codec compressed this data  }
+		resvd1:					SInt32;								{  reserved for Apple use  }
+		resvd2:					SInt16;								{  reserved for Apple use  }
+		dataRefIndex:			SInt16;								{  set to zero   }
+		version:				SInt16;								{  which version is this data  }
+		revisionLevel:			SInt16;								{  what version of that codec did this  }
+		vendor:					SInt32;								{  whose  codec compressed this data  }
+		temporalQuality:		CodecQ;									{  what was the temporal quality factor   }
+		spatialQuality:			CodecQ;									{  what was the spatial quality factor  }
+		width:					SInt16;								{  how many pixels wide is this data  }
+		height:					SInt16;								{  how many pixels high is this data  }
+		hRes:					Fixed;									{  horizontal resolution  }
+		vRes:					Fixed;									{  vertical resolution  }
+		dataSize:				SInt32;								{  if known, the size of data for this image descriptor  }
+		frameCount:				SInt16;								{  number of frames this description applies to  }
+		name:					Str31;									{  name of codec ( in case not installed )   }
+		depth:					SInt16;								{  what depth is this data (1-32) or ( 33-40 grayscale )  }
+		clutID:					SInt16;								{  clut id or if 0 clut follows  or -1 if no clut  }
+	end;
+
+	ImageDescriptionHandle				= ^ImageDescriptionPtr;
+	CodecInfoPtr = ^CodecInfo;
+	CodecInfo = packed record
+		typeName:				Str31;									{  name of the codec type i.e.: 'Apple Image Compression'  }
+		version:				SInt16;								{  version of the codec data that this codec knows about  }
+		revisionLevel:			SInt16;								{  revision level of this codec i.e: 0x00010001 (1.0.1)  }
+		vendor:					SInt32;								{  Maker of this codec i.e: 'appl'  }
+		decompressFlags:		SInt32;								{  codecInfo flags for decompression capabilities  }
+		compressFlags:			SInt32;								{  codecInfo flags for compression capabilities  }
+		formatFlags:			SInt32;								{  codecInfo flags for compression format details  }
+		compressionAccuracy:	UInt8;									{  measure (1-255) of accuracy of this codec for compress (0 if unknown)  }
+		decompressionAccuracy:	UInt8;									{  measure (1-255) of accuracy of this codec for decompress (0 if unknown)  }
+		compressionSpeed:		UInt16;									{  ( millisecs for compressing 320x240 on base mac II) (0 if unknown)   }
+		decompressionSpeed:		UInt16;									{  ( millisecs for decompressing 320x240 on mac II)(0 if unknown)   }
+		compressionLevel:		UInt8;									{  measure (1-255) of compression level of this codec (0 if unknown)   }
+		resvd:					UInt8;									{  pad  }
+		minimumHeight:			SInt16;								{  minimum height of image (block size)  }
+		minimumWidth:			SInt16;								{  minimum width of image (block size)  }
+		decompressPipelineLatency: SInt16;								{  in milliseconds ( for asynchronous codecs )  }
+		compressPipelineLatency: SInt16;								{  in milliseconds ( for asynchronous codecs )  }
+		privateData:			SInt32;
+	end;
+
+	CodecNameSpecPtr = ^CodecNameSpec;
+	CodecNameSpec = record
+		codec:					CodecComponent;
+		cType:					CodecType;
+		typeName:				Str31;
+		name:					Handle;
+	end;
+
+	CodecNameSpecListPtr = ^CodecNameSpecList;
+	CodecNameSpecList = record
+		count:					SInt16;
+		list:					array [0..0] of CodecNameSpec;
+	end;
+
+
+const
+	defaultDither				= 0;
+	forceDither					= 1;
+	suppressDither				= 2;
+	useColorMatching			= 4;
+
+	callStdBits					= 1;
+	callOldBits					= 2;
+	noDefaultOpcodes			= 4;
+
+	graphicsModeStraightAlpha	= 256;
+	graphicsModePreWhiteAlpha	= 257;
+	graphicsModePreBlackAlpha	= 258;
+	graphicsModeComposition		= 259;
+	graphicsModeStraightAlphaBlend = 260;
+	graphicsModePreMulColorAlpha = 261;
+
+	evenField1ToEvenFieldOut	= $01;
+	evenField1ToOddFieldOut		= $02;
+	oddField1ToEvenFieldOut		= $04;
+	oddField1ToOddFieldOut		= $08;
+	evenField2ToEvenFieldOut	= $10;
+	evenField2ToOddFieldOut		= $20;
+	oddField2ToEvenFieldOut		= $40;
+	oddField2ToOddFieldOut		= $80;
+
+	icmFrameTimeHasVirtualStartTimeAndDuration = $01;
+
+
+type
+	ICMFrameTimeRecordPtr = ^ICMFrameTimeRecord;
+	ICMFrameTimeRecord = record
+		value:					wide;									{  frame time }
+		scale:					SInt32;								{  timescale of value/duration fields }
+		base:					Ptr;									{  timebase }
+		duration:				SInt32;								{  duration frame is to be displayed (0 if unknown) }
+		rate:					Fixed;									{  rate of timebase relative to wall-time }
+		recordSize:				SInt32;								{  total number of bytes in ICMFrameTimeRecord }
+		frameNumber:			SInt32;								{  number of frame, zero if not known }
+		flags:					SInt32;
+		virtualStartTime:		wide;									{  conceptual start time }
+		virtualDuration:		SInt32;								{  conceptual duration }
+	end;
+
+	ICMFrameTimePtr						= ^ICMFrameTimeRecord;
+{$ifc undefined __QTUUID__}
+{$setc __QTUUID__ := 1}
+	{  QuickTime flavor of universally unique identifier (uuid) }
+	QTUUIDPtr = ^QTUUID;
+	QTUUID = record
+		data1:					UInt32;
+		data2:					UInt16;
+		data3:					UInt16;
+		data4:					packed array [0..7] of UInt8;
+	end;
+
+	QTMediaContextID					= QTUUID;
+	QTMediaContextIDPtr 				= ^QTMediaContextID;
+{$endc}
+
+
+const
+	uppICMDataProcInfo = $00000FE0;
+	uppICMFlushProcInfo = $00000FE0;
+	uppICMCompletionProcInfo = $00000E80;
+	uppICMProgressProcInfo = $00000FA0;
+	uppStdPixProcInfo = $002FEFC0;
+	uppQDPixProcInfo = $002FEFC0;
+	uppICMAlignmentProcInfo = $000003C0;
+	uppICMCursorShieldedProcInfo = $00000FC0;
+	uppICMMemoryDisposedProcInfo = $000003C0;
+	uppICMConvertDataFormatProcInfo = $003FFFE0;
+	{
+	 *  NewICMDataUPP()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   available as macro/inline
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function NewICMDataUPP(userRoutine: ICMDataProcPtr): ICMDataUPP; external name '_NewICMDataUPP'; { old name was NewICMDataProc }
+{
+ *  NewICMFlushUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NewICMFlushUPP(userRoutine: ICMFlushProcPtr): ICMFlushUPP; external name '_NewICMFlushUPP'; { old name was NewICMFlushProc }
+{
+ *  NewICMCompletionUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NewICMCompletionUPP(userRoutine: ICMCompletionProcPtr): ICMCompletionUPP; external name '_NewICMCompletionUPP'; { old name was NewICMCompletionProc }
+{
+ *  NewICMProgressUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NewICMProgressUPP(userRoutine: ICMProgressProcPtr): ICMProgressUPP; external name '_NewICMProgressUPP'; { old name was NewICMProgressProc }
+{
+ *  NewStdPixUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NewStdPixUPP(userRoutine: StdPixProcPtr): StdPixUPP; external name '_NewStdPixUPP'; { old name was NewStdPixProc }
+{
+ *  NewQDPixUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NewQDPixUPP(userRoutine: QDPixProcPtr): QDPixUPP; external name '_NewQDPixUPP'; { old name was NewQDPixProc }
+{
+ *  NewICMAlignmentUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NewICMAlignmentUPP(userRoutine: ICMAlignmentProcPtr): ICMAlignmentUPP; external name '_NewICMAlignmentUPP'; { old name was NewICMAlignmentProc }
+{
+ *  NewICMCursorShieldedUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NewICMCursorShieldedUPP(userRoutine: ICMCursorShieldedProcPtr): ICMCursorShieldedUPP; external name '_NewICMCursorShieldedUPP'; { old name was NewICMCursorShieldedProc }
+{
+ *  NewICMMemoryDisposedUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NewICMMemoryDisposedUPP(userRoutine: ICMMemoryDisposedProcPtr): ICMMemoryDisposedUPP; external name '_NewICMMemoryDisposedUPP'; { old name was NewICMMemoryDisposedProc }
+{
+ *  NewICMConvertDataFormatUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NewICMConvertDataFormatUPP(userRoutine: ICMConvertDataFormatProcPtr): ICMConvertDataFormatUPP; external name '_NewICMConvertDataFormatUPP'; { old name was NewICMConvertDataFormatProc }
+{
+ *  DisposeICMDataUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposeICMDataUPP(userUPP: ICMDataUPP); external name '_DisposeICMDataUPP';
+{
+ *  DisposeICMFlushUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposeICMFlushUPP(userUPP: ICMFlushUPP); external name '_DisposeICMFlushUPP';
+{
+ *  DisposeICMCompletionUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposeICMCompletionUPP(userUPP: ICMCompletionUPP); external name '_DisposeICMCompletionUPP';
+{
+ *  DisposeICMProgressUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposeICMProgressUPP(userUPP: ICMProgressUPP); external name '_DisposeICMProgressUPP';
+{
+ *  DisposeStdPixUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposeStdPixUPP(userUPP: StdPixUPP); external name '_DisposeStdPixUPP';
+{
+ *  DisposeQDPixUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposeQDPixUPP(userUPP: QDPixUPP); external name '_DisposeQDPixUPP';
+{
+ *  DisposeICMAlignmentUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposeICMAlignmentUPP(userUPP: ICMAlignmentUPP); external name '_DisposeICMAlignmentUPP';
+{
+ *  DisposeICMCursorShieldedUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposeICMCursorShieldedUPP(userUPP: ICMCursorShieldedUPP); external name '_DisposeICMCursorShieldedUPP';
+{
+ *  DisposeICMMemoryDisposedUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposeICMMemoryDisposedUPP(userUPP: ICMMemoryDisposedUPP); external name '_DisposeICMMemoryDisposedUPP';
+{
+ *  DisposeICMConvertDataFormatUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposeICMConvertDataFormatUPP(userUPP: ICMConvertDataFormatUPP); external name '_DisposeICMConvertDataFormatUPP';
+{
+ *  InvokeICMDataUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function InvokeICMDataUPP(var dataP: Ptr; bytesNeeded: SInt32; refcon: SInt32; userRoutine: ICMDataUPP): OSErr; external name '_InvokeICMDataUPP'; { old name was CallICMDataProc }
+{
+ *  InvokeICMFlushUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function InvokeICMFlushUPP(data: Ptr; bytesAdded: SInt32; refcon: SInt32; userRoutine: ICMFlushUPP): OSErr; external name '_InvokeICMFlushUPP'; { old name was CallICMFlushProc }
+{
+ *  InvokeICMCompletionUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure InvokeICMCompletionUPP(result: OSErr; flags: SInt16; refcon: SInt32; userRoutine: ICMCompletionUPP); external name '_InvokeICMCompletionUPP'; { old name was CallICMCompletionProc }
+{
+ *  InvokeICMProgressUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function InvokeICMProgressUPP(message: SInt16; completeness: Fixed; refcon: SInt32; userRoutine: ICMProgressUPP): OSErr; external name '_InvokeICMProgressUPP'; { old name was CallICMProgressProc }
+{
+ *  InvokeStdPixUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure InvokeStdPixUPP(var src: PixMap; var srcRect: Rect; var matrix: MatrixRecord; mode: SInt16; mask: RgnHandle; var matte: PixMap; var matteRect: Rect; flags: SInt16; userRoutine: StdPixUPP); external name '_InvokeStdPixUPP'; { old name was CallStdPixProc }
+{
+ *  InvokeQDPixUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure InvokeQDPixUPP(var src: PixMap; var srcRect: Rect; var matrix: MatrixRecord; mode: SInt16; mask: RgnHandle; var matte: PixMap; var matteRect: Rect; flags: SInt16; userRoutine: QDPixUPP); external name '_InvokeQDPixUPP'; { old name was CallQDPixProc }
+{
+ *  InvokeICMAlignmentUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure InvokeICMAlignmentUPP(var rp: Rect; refcon: SInt32; userRoutine: ICMAlignmentUPP); external name '_InvokeICMAlignmentUPP'; { old name was CallICMAlignmentProc }
+{
+ *  InvokeICMCursorShieldedUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure InvokeICMCursorShieldedUPP(const (*var*) r: Rect; refcon: UnivPtr; flags: SInt32; userRoutine: ICMCursorShieldedUPP); external name '_InvokeICMCursorShieldedUPP'; { old name was CallICMCursorShieldedProc }
+{
+ *  InvokeICMMemoryDisposedUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure InvokeICMMemoryDisposedUPP(memoryBlock: Ptr; refcon: UnivPtr; userRoutine: ICMMemoryDisposedUPP); external name '_InvokeICMMemoryDisposedUPP'; { old name was CallICMMemoryDisposedProc }
+{
+ *  InvokeICMConvertDataFormatUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function InvokeICMConvertDataFormatUPP(refCon: UnivPtr; flags: SInt32; desiredFormat: Handle; sourceDataFormat: Handle; srcData: UnivPtr; srcDataSize: SInt32; var dstData: UnivPtr; var dstDataSize: SInt32; userRoutine: ICMConvertDataFormatUPP): OSErr; external name '_InvokeICMConvertDataFormatUPP'; { old name was CallICMConvertDataFormatProc }
+{
+ *  CodecManagerVersion()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CodecManagerVersion(var version: SInt32): OSErr; external name '_CodecManagerVersion';
+{
+ *  GetCodecNameList()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetCodecNameList(var list: CodecNameSpecListPtr; showAll: SInt16): OSErr; external name '_GetCodecNameList';
+{
+ *  DisposeCodecNameList()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DisposeCodecNameList(list: CodecNameSpecListPtr): OSErr; external name '_DisposeCodecNameList';
+{
+ *  GetCodecInfo()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetCodecInfo(var info: CodecInfo; cType: CodecType; codec: CodecComponent): OSErr; external name '_GetCodecInfo';
+{
+ *  GetMaxCompressionSize()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetMaxCompressionSize(src: PixMapHandle; const (*var*) srcRect: Rect; colorDepth: SInt16; quality: CodecQ; cType: CodecType; codec: CompressorComponent; var size: SInt32): OSErr; external name '_GetMaxCompressionSize';
+{
+ *  GetCSequenceMaxCompressionSize()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetCSequenceMaxCompressionSize(seqID: ImageSequence; src: PixMapHandle; var size: SInt32): OSErr; external name '_GetCSequenceMaxCompressionSize';
+{
+ *  GetCompressionTime()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetCompressionTime(src: PixMapHandle; const (*var*) srcRect: Rect; colorDepth: SInt16; cType: CodecType; codec: CompressorComponent; var spatialQuality: CodecQ; var temporalQuality: CodecQ; var compressTime: UInt32): OSErr; external name '_GetCompressionTime';
+{
+ *  CompressImage()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CompressImage(src: PixMapHandle; const (*var*) srcRect: Rect; quality: CodecQ; cType: CodecType; desc: ImageDescriptionHandle; data: Ptr): OSErr; external name '_CompressImage';
+{
+ *  FCompressImage()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function FCompressImage(src: PixMapHandle; const (*var*) srcRect: Rect; colorDepth: SInt16; quality: CodecQ; cType: CodecType; codec: CompressorComponent; ctable: CTabHandle; flags: CodecFlags; bufferSize: SInt32; flushProc: ICMFlushProcRecordPtr; progressProc: ICMProgressProcRecordPtr; desc: ImageDescriptionHandle; data: Ptr): OSErr; external name '_FCompressImage';
+{
+ *  DecompressImage()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DecompressImage(data: Ptr; desc: ImageDescriptionHandle; dst: PixMapHandle; const (*var*) srcRect: Rect; const (*var*) dstRect: Rect; mode: SInt16; mask: RgnHandle): OSErr; external name '_DecompressImage';
+{
+ *  FDecompressImage()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function FDecompressImage(data: Ptr; desc: ImageDescriptionHandle; dst: PixMapHandle; const (*var*) srcRect: Rect; matrix: MatrixRecordPtr; mode: SInt16; mask: RgnHandle; matte: PixMapHandle; const (*var*) matteRect: Rect; accuracy: CodecQ; codec: DecompressorComponent; bufferSize: SInt32; dataProc: ICMDataProcRecordPtr; progressProc: ICMProgressProcRecordPtr): OSErr; external name '_FDecompressImage';
+{
+ *  CompressSequenceBegin()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CompressSequenceBegin(var seqID: ImageSequence; src: PixMapHandle; prev: PixMapHandle; const (*var*) srcRect: Rect; const (*var*) prevRect: Rect; colorDepth: SInt16; cType: CodecType; codec: CompressorComponent; spatialQuality: CodecQ; temporalQuality: CodecQ; keyFrameRate: SInt32; ctable: CTabHandle; flags: CodecFlags; desc: ImageDescriptionHandle): OSErr; external name '_CompressSequenceBegin';
+{
+ *  CompressSequenceFrame()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CompressSequenceFrame(seqID: ImageSequence; src: PixMapHandle; const (*var*) srcRect: Rect; flags: CodecFlags; data: Ptr; var dataSize: SInt32; var similarity: UInt8; asyncCompletionProc: ICMCompletionProcRecordPtr): OSErr; external name '_CompressSequenceFrame';
+{
+ *  DecompressSequenceBegin()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DecompressSequenceBegin(var seqID: ImageSequence; desc: ImageDescriptionHandle; port: CGrafPtr; gdh: GDHandle; const (*var*) srcRect: Rect; matrix: MatrixRecordPtr; mode: SInt16; mask: RgnHandle; flags: CodecFlags; accuracy: CodecQ; codec: DecompressorComponent): OSErr; external name '_DecompressSequenceBegin';
+{
+ *  DecompressSequenceBeginS()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DecompressSequenceBeginS(var seqID: ImageSequence; desc: ImageDescriptionHandle; data: Ptr; dataSize: SInt32; port: CGrafPtr; gdh: GDHandle; const (*var*) srcRect: Rect; matrix: MatrixRecordPtr; mode: SInt16; mask: RgnHandle; flags: CodecFlags; accuracy: CodecQ; codec: DecompressorComponent): OSErr; external name '_DecompressSequenceBeginS';
+{
+ *  DecompressSequenceFrame()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DecompressSequenceFrame(seqID: ImageSequence; data: Ptr; inFlags: CodecFlags; var outFlags: CodecFlags; asyncCompletionProc: ICMCompletionProcRecordPtr): OSErr; external name '_DecompressSequenceFrame';
+{
+ *  DecompressSequenceFrameS()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DecompressSequenceFrameS(seqID: ImageSequence; data: Ptr; dataSize: SInt32; inFlags: CodecFlags; var outFlags: CodecFlags; asyncCompletionProc: ICMCompletionProcRecordPtr): OSErr; external name '_DecompressSequenceFrameS';
+{
+ *  DecompressSequenceFrameWhen()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DecompressSequenceFrameWhen(seqID: ImageSequence; data: Ptr; dataSize: SInt32; inFlags: CodecFlags; var outFlags: CodecFlags; asyncCompletionProc: ICMCompletionProcRecordPtr; const (*var*) frameTime: ICMFrameTimeRecord): OSErr; external name '_DecompressSequenceFrameWhen';
+{
+ *  CDSequenceFlush()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CDSequenceFlush(seqID: ImageSequence): OSErr; external name '_CDSequenceFlush';
+{
+ *  SetDSequenceMatrix()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetDSequenceMatrix(seqID: ImageSequence; matrix: MatrixRecordPtr): OSErr; external name '_SetDSequenceMatrix';
+{
+ *  GetDSequenceMatrix()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function GetDSequenceMatrix(seqID: ImageSequence; matrix: MatrixRecordPtr): OSErr; external name '_GetDSequenceMatrix';
+{
+ *  SetDSequenceMatte()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetDSequenceMatte(seqID: ImageSequence; matte: PixMapHandle; const (*var*) matteRect: Rect): OSErr; external name '_SetDSequenceMatte';
+{
+ *  SetDSequenceMask()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetDSequenceMask(seqID: ImageSequence; mask: RgnHandle): OSErr; external name '_SetDSequenceMask';
+{
+ *  SetDSequenceTransferMode()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetDSequenceTransferMode(seqID: ImageSequence; mode: SInt16; const (*var*) opColor: RGBColor): OSErr; external name '_SetDSequenceTransferMode';
+{
+ *  SetDSequenceDataProc()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetDSequenceDataProc(seqID: ImageSequence; dataProc: ICMDataProcRecordPtr; bufferSize: SInt32): OSErr; external name '_SetDSequenceDataProc';
+{
+ *  SetDSequenceAccuracy()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetDSequenceAccuracy(seqID: ImageSequence; accuracy: CodecQ): OSErr; external name '_SetDSequenceAccuracy';
+{
+ *  SetDSequenceSrcRect()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetDSequenceSrcRect(seqID: ImageSequence; const (*var*) srcRect: Rect): OSErr; external name '_SetDSequenceSrcRect';
+{
+ *  SetDSequenceFlags()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function SetDSequenceFlags(seqID: ImageSequence; flags: SInt32; flagsMask: SInt32): OSErr; external name '_SetDSequenceFlags';
+const
+	codecDSequenceDisableOverlaySurface = $00000020;
+	codecDSequenceSingleField	= $00000040;
+	codecDSequenceBidirectionalPrediction = $00000080;
+	codecDSequenceFlushInsteadOfDirtying = $00000100;
+	codecDSequenceEnableSubPixelPositioning = $00000200;
+
+
+type
+	CodecComponentPtr					= ^CodecComponent;
+	CodecComponentHandle				= ^CodecComponentPtr;
+	{  selectors for ICMSequenceGet/SetInfo }
+
+const
+	kICMSequenceTaskWeight		= FourCharCode('twei');						{  data is pointer to UInt32 }
+	kICMSequenceTaskName		= FourCharCode('tnam');						{  data is pointer to OSType }
+	kICMSequenceUserPreferredCodecs = FourCharCode('punt');					{  data is pointer to CodecComponentHandle }
+
+	{
+	 *  ICMSequenceGetInfo()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+	 *    CarbonLib:        in CarbonLib 1.3 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 *    Windows:          in qtmlClient.lib 5.0 and later
+	 	}
+function ICMSequenceGetInfo(seqID: ImageSequence; which: OSType; data: UnivPtr): OSErr; external name '_ICMSequenceGetInfo';
+{
+ *  ICMSequenceSetInfo()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function ICMSequenceSetInfo(seqID: ImageSequence; which: OSType; data: UnivPtr; dataSize: Size): OSErr; external name '_ICMSequenceSetInfo';
+{
+ *  GetDSequenceImageBuffer()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetDSequenceImageBuffer(seqID: ImageSequence; var gworld: GWorldPtr): OSErr; external name '_GetDSequenceImageBuffer';
+{
+ *  GetDSequenceScreenBuffer()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetDSequenceScreenBuffer(seqID: ImageSequence; var gworld: GWorldPtr): OSErr; external name '_GetDSequenceScreenBuffer';
+{
+ *  SetCSequenceQuality()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetCSequenceQuality(seqID: ImageSequence; spatialQuality: CodecQ; temporalQuality: CodecQ): OSErr; external name '_SetCSequenceQuality';
+{
+ *  SetCSequencePrev()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetCSequencePrev(seqID: ImageSequence; prev: PixMapHandle; const (*var*) prevRect: Rect): OSErr; external name '_SetCSequencePrev';
+{
+ *  SetCSequenceFlushProc()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetCSequenceFlushProc(seqID: ImageSequence; flushProc: ICMFlushProcRecordPtr; bufferSize: SInt32): OSErr; external name '_SetCSequenceFlushProc';
+{
+ *  SetCSequenceKeyFrameRate()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetCSequenceKeyFrameRate(seqID: ImageSequence; keyFrameRate: SInt32): OSErr; external name '_SetCSequenceKeyFrameRate';
+{
+ *  GetCSequenceKeyFrameRate()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetCSequenceKeyFrameRate(seqID: ImageSequence; var keyFrameRate: SInt32): OSErr; external name '_GetCSequenceKeyFrameRate';
+{
+ *  GetCSequencePrevBuffer()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetCSequencePrevBuffer(seqID: ImageSequence; var gworld: GWorldPtr): OSErr; external name '_GetCSequencePrevBuffer';
+{
+ *  CDSequenceBusy()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CDSequenceBusy(seqID: ImageSequence): OSErr; external name '_CDSequenceBusy';
+{
+ *  CDSequenceEnd()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CDSequenceEnd(seqID: ImageSequence): OSErr; external name '_CDSequenceEnd';
+{
+ *  CDSequenceEquivalentImageDescription()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CDSequenceEquivalentImageDescription(seqID: ImageSequence; newDesc: ImageDescriptionHandle; var equivalent: boolean): OSErr; external name '_CDSequenceEquivalentImageDescription';
+{
+ *  CDSequenceEquivalentImageDescriptionS()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function CDSequenceEquivalentImageDescriptionS(seqID: ImageSequence; newDesc: ImageDescriptionHandle; var equivalent: boolean; var canSwitch: boolean): OSErr; external name '_CDSequenceEquivalentImageDescriptionS';
+{
+ *  ReplaceDSequenceImageDescription()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function ReplaceDSequenceImageDescription(seqID: ImageSequence; newDesc: ImageDescriptionHandle): OSErr; external name '_ReplaceDSequenceImageDescription';
+{
+ *  GetCompressedImageSize()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetCompressedImageSize(desc: ImageDescriptionHandle; data: Ptr; bufferSize: SInt32; dataProc: ICMDataProcRecordPtr; var dataSize: SInt32): OSErr; external name '_GetCompressedImageSize';
+{
+ *  GetSimilarity()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetSimilarity(src: PixMapHandle; const (*var*) srcRect: Rect; desc: ImageDescriptionHandle; data: Ptr; var similarity: Fixed): OSErr; external name '_GetSimilarity';
+const
+	kImageDescriptionSampleFormat = FourCharCode('idfm');						{  image description extension describing sample format }
+	kImageDescriptionClassicAtomFormat = FourCharCode('atom');				{  sample contains classic atom structure (ie, GX codec and Curve codec) }
+	kImageDescriptionQTAtomFormat = FourCharCode('qtat');						{  sample contains QT atom structure }
+	kImageDescriptionEffectDataFormat = FourCharCode('fxat');					{  sample describes an effect (as QTAtoms) }
+	kImageDescriptionPrivateDataFormat = FourCharCode('priv');				{  sample is in a private codec specific format }
+	kImageDescriptionAlternateCodec = FourCharCode('subs');					{  image description extension containing the OSType of a substitute codec should the main codec not be available }
+	kImageDescriptionColorSpace	= FourCharCode('cspc');						{  image description extension containing an OSType naming the native pixel format of an image (only used for pixel formats not supported by classic Color QuickDraw) }
+
+	{
+	 *  GetImageDescriptionCTable()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 *    Windows:          in qtmlClient.lib 3.0 and later
+	 	}
+function GetImageDescriptionCTable(desc: ImageDescriptionHandle; var ctable: CTabHandle): OSErr; external name '_GetImageDescriptionCTable';
+{
+ *  SetImageDescriptionCTable()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetImageDescriptionCTable(desc: ImageDescriptionHandle; ctable: CTabHandle): OSErr; external name '_SetImageDescriptionCTable';
+{
+ *  GetImageDescriptionExtension()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetImageDescriptionExtension(desc: ImageDescriptionHandle; var extension: Handle; idType: SInt32; index: SInt32): OSErr; external name '_GetImageDescriptionExtension';
+{
+ *  AddImageDescriptionExtension()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function AddImageDescriptionExtension(desc: ImageDescriptionHandle; extension: Handle; idType: SInt32): OSErr; external name '_AddImageDescriptionExtension';
+{
+ *  RemoveImageDescriptionExtension()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function RemoveImageDescriptionExtension(desc: ImageDescriptionHandle; idType: SInt32; index: SInt32): OSErr; external name '_RemoveImageDescriptionExtension';
+{
+ *  CountImageDescriptionExtensionType()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CountImageDescriptionExtensionType(desc: ImageDescriptionHandle; idType: SInt32; var count: SInt32): OSErr; external name '_CountImageDescriptionExtensionType';
+{
+ *  GetNextImageDescriptionExtensionType()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetNextImageDescriptionExtensionType(desc: ImageDescriptionHandle; var idType: SInt32): OSErr; external name '_GetNextImageDescriptionExtensionType';
+{
+ *  FindCodec()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function FindCodec(cType: CodecType; specCodec: CodecComponent; var compressor: CompressorComponent; var decompressor: DecompressorComponent): OSErr; external name '_FindCodec';
+{
+ *  CompressPicture()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CompressPicture(srcPicture: PicHandle; dstPicture: PicHandle; quality: CodecQ; cType: CodecType): OSErr; external name '_CompressPicture';
+{
+ *  FCompressPicture()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function FCompressPicture(srcPicture: PicHandle; dstPicture: PicHandle; colorDepth: SInt16; ctable: CTabHandle; quality: CodecQ; doDither: SInt16; compressAgain: SInt16; progressProc: ICMProgressProcRecordPtr; cType: CodecType; codec: CompressorComponent): OSErr; external name '_FCompressPicture';
+{
+ *  CompressPictureFile()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CompressPictureFile(srcRefNum: SInt16; dstRefNum: SInt16; quality: CodecQ; cType: CodecType): OSErr; external name '_CompressPictureFile';
+{
+ *  FCompressPictureFile()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function FCompressPictureFile(srcRefNum: SInt16; dstRefNum: SInt16; colorDepth: SInt16; ctable: CTabHandle; quality: CodecQ; doDither: SInt16; compressAgain: SInt16; progressProc: ICMProgressProcRecordPtr; cType: CodecType; codec: CompressorComponent): OSErr; external name '_FCompressPictureFile';
+{
+ *  GetPictureFileHeader()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetPictureFileHeader(refNum: SInt16; var frame: Rect; var header: OpenCPicParams): OSErr; external name '_GetPictureFileHeader';
+{
+ *  DrawPictureFile()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DrawPictureFile(refNum: SInt16; const (*var*) frame: Rect; progressProc: ICMProgressProcRecordPtr): OSErr; external name '_DrawPictureFile';
+{
+ *  DrawTrimmedPicture()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DrawTrimmedPicture(srcPicture: PicHandle; const (*var*) frame: Rect; trimMask: RgnHandle; doDither: SInt16; progressProc: ICMProgressProcRecordPtr): OSErr; external name '_DrawTrimmedPicture';
+{
+ *  DrawTrimmedPictureFile()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DrawTrimmedPictureFile(srcRefnum: SInt16; const (*var*) frame: Rect; trimMask: RgnHandle; doDither: SInt16; progressProc: ICMProgressProcRecordPtr): OSErr; external name '_DrawTrimmedPictureFile';
+{
+ *  MakeThumbnailFromPicture()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MakeThumbnailFromPicture(picture: PicHandle; colorDepth: SInt16; thumbnail: PicHandle; progressProc: ICMProgressProcRecordPtr): OSErr; external name '_MakeThumbnailFromPicture';
+{
+ *  MakeThumbnailFromPictureFile()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MakeThumbnailFromPictureFile(refNum: SInt16; colorDepth: SInt16; thumbnail: PicHandle; progressProc: ICMProgressProcRecordPtr): OSErr; external name '_MakeThumbnailFromPictureFile';
+{
+ *  MakeThumbnailFromPixMap()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MakeThumbnailFromPixMap(src: PixMapHandle; const (*var*) srcRect: Rect; colorDepth: SInt16; thumbnail: PicHandle; progressProc: ICMProgressProcRecordPtr): OSErr; external name '_MakeThumbnailFromPixMap';
+{
+ *  TrimImage()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TrimImage(desc: ImageDescriptionHandle; inData: Ptr; inBufferSize: SInt32; dataProc: ICMDataProcRecordPtr; outData: Ptr; outBufferSize: SInt32; flushProc: ICMFlushProcRecordPtr; var trimRect: Rect; progressProc: ICMProgressProcRecordPtr): OSErr; external name '_TrimImage';
+{
+ *  ConvertImage()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ConvertImage(srcDD: ImageDescriptionHandle; srcData: Ptr; colorDepth: SInt16; ctable: CTabHandle; accuracy: CodecQ; quality: CodecQ; cType: CodecType; codec: CodecComponent; dstDD: ImageDescriptionHandle; dstData: Ptr): OSErr; external name '_ConvertImage';
+{
+ *  GetCompressedPixMapInfo()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetCompressedPixMapInfo(pix: PixMapPtr; var desc: ImageDescriptionHandle; var data: Ptr; var bufferSize: SInt32; var dataProc: ICMDataProcRecord; var progressProc: ICMProgressProcRecord): OSErr; external name '_GetCompressedPixMapInfo';
+{
+ *  SetCompressedPixMapInfo()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetCompressedPixMapInfo(pix: PixMapPtr; desc: ImageDescriptionHandle; data: Ptr; bufferSize: SInt32; dataProc: ICMDataProcRecordPtr; progressProc: ICMProgressProcRecordPtr): OSErr; external name '_SetCompressedPixMapInfo';
+{
+ *  StdPix()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+procedure StdPix(src: PixMapPtr; const (*var*) srcRect: Rect; matrix: MatrixRecordPtr; mode: SInt16; mask: RgnHandle; matte: PixMapPtr; const (*var*) matteRect: Rect; flags: SInt16); external name '_StdPix';
+{
+ *  TransformRgn()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TransformRgn(matrix: MatrixRecordPtr; rgn: RgnHandle): OSErr; external name '_TransformRgn';
+{**********
+    preview stuff
+**********}
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  SFGetFilePreview()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+procedure SFGetFilePreview(where: Point; const (*var*) prompt: Str255; fileFilter: FileFilterUPP; numTypes: SInt16; typeList: ConstSFTypeListPtr; dlgHook: DlgHookUPP; var reply: SFReply); external name '_SFGetFilePreview';
+{
+ *  SFPGetFilePreview()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+procedure SFPGetFilePreview(where: Point; const (*var*) prompt: Str255; fileFilter: FileFilterUPP; numTypes: SInt16; typeList: ConstSFTypeListPtr; dlgHook: DlgHookUPP; var reply: SFReply; dlgID: SInt16; filterProc: ModalFilterUPP); external name '_SFPGetFilePreview';
+{
+ *  StandardGetFilePreview()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+procedure StandardGetFilePreview(fileFilter: FileFilterUPP; numTypes: SInt16; typeList: ConstSFTypeListPtr; var reply: StandardFileReply); external name '_StandardGetFilePreview';
+{
+ *  CustomGetFilePreview()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+procedure CustomGetFilePreview(fileFilter: FileFilterYDUPP; numTypes: SInt16; typeList: ConstSFTypeListPtr; var reply: StandardFileReply; dlgID: SInt16; where: Point; dlgHook: DlgHookYDUPP; filterProc: ModalFilterYDUPP; activeList: ActivationOrderListPtr; activateProc: ActivateYDUPP; yourDataPtr: UnivPtr); external name '_CustomGetFilePreview';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  MakeFilePreview()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MakeFilePreview(resRefNum: SInt16; progress: ICMProgressProcRecordPtr): OSErr; external name '_MakeFilePreview';
+{
+ *  AddFilePreview()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function AddFilePreview(resRefNum: SInt16; previewType: OSType; previewData: Handle): OSErr; external name '_AddFilePreview';
+const
+	sfpItemPreviewAreaUser		= 11;
+	sfpItemPreviewStaticText	= 12;
+	sfpItemPreviewDividerUser	= 13;
+	sfpItemCreatePreviewButton	= 14;
+	sfpItemShowPreviewButton	= 15;
+
+
+type
+	PreviewResourceRecordPtr = ^PreviewResourceRecord;
+	PreviewResourceRecord = record
+		modDate:				UInt32;
+		version:				SInt16;
+		resType:				OSType;
+		resID:					SInt16;
+	end;
+
+	PreviewResourcePtr					= ^PreviewResourceRecord;
+	PreviewResource						= ^PreviewResourcePtr;
+	{
+	 *  AlignScreenRect()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 *    Windows:          in qtmlClient.lib 3.0 and later
+	 	}
+procedure AlignScreenRect(var rp: Rect; alignmentProc: ICMAlignmentProcRecordPtr); external name '_AlignScreenRect';
+{
+ *  AlignWindow()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+procedure AlignWindow(wp: WindowRef; front: boolean; const (*var*) alignmentRect: Rect; alignmentProc: ICMAlignmentProcRecordPtr); external name '_AlignWindow';
+{
+ *  DragAlignedWindow()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+procedure DragAlignedWindow(wp: WindowRef; startPt: Point; var boundsRect: Rect; var alignmentRect: Rect; alignmentProc: ICMAlignmentProcRecordPtr); external name '_DragAlignedWindow';
+{
+ *  DragAlignedGrayRgn()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DragAlignedGrayRgn(theRgn: RgnHandle; startPt: Point; var boundsRect: Rect; var slopRect: Rect; axis: SInt16; actionProc: UniversalProcPtr; var alignmentRect: Rect; alignmentProc: ICMAlignmentProcRecordPtr): SInt32; external name '_DragAlignedGrayRgn';
+{
+ *  SetCSequenceDataRateParams()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetCSequenceDataRateParams(seqID: ImageSequence; params: DataRateParamsPtr): OSErr; external name '_SetCSequenceDataRateParams';
+{
+ *  SetCSequenceFrameNumber()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetCSequenceFrameNumber(seqID: ImageSequence; frameNumber: SInt32): OSErr; external name '_SetCSequenceFrameNumber';
+{
+ *  SetCSequencePreferredPacketSize()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetCSequencePreferredPacketSize(seqID: ImageSequence; preferredPacketSizeInBytes: SInt32): OSErr; external name '_SetCSequencePreferredPacketSize';
+{
+ *  NewImageGWorld()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NewImageGWorld(var gworld: GWorldPtr; idh: ImageDescriptionHandle; flags: GWorldFlags): OSErr; external name '_NewImageGWorld';
+{
+ *  GetCSequenceDataRateParams()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetCSequenceDataRateParams(seqID: ImageSequence; params: DataRateParamsPtr): OSErr; external name '_GetCSequenceDataRateParams';
+{
+ *  GetCSequenceFrameNumber()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetCSequenceFrameNumber(seqID: ImageSequence; var frameNumber: SInt32): OSErr; external name '_GetCSequenceFrameNumber';
+{
+ *  GetBestDeviceRect()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetBestDeviceRect(var gdh: GDHandle; var rp: Rect): OSErr; external name '_GetBestDeviceRect';
+{
+ *  SetSequenceProgressProc()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetSequenceProgressProc(seqID: ImageSequence; var progressProc: ICMProgressProcRecord): OSErr; external name '_SetSequenceProgressProc';
+{
+ *  GDHasScale()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GDHasScale(gdh: GDHandle; depth: SInt16; var scale: Fixed): OSErr; external name '_GDHasScale';
+{
+ *  GDGetScale()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GDGetScale(gdh: GDHandle; var scale: Fixed; var flags: SInt16): OSErr; external name '_GDGetScale';
+{
+ *  GDSetScale()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GDSetScale(gdh: GDHandle; scale: Fixed; flags: SInt16): OSErr; external name '_GDSetScale';
+{
+ *  ICMShieldSequenceCursor()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ICMShieldSequenceCursor(seqID: ImageSequence): OSErr; external name '_ICMShieldSequenceCursor';
+{
+ *  ICMDecompressComplete()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+procedure ICMDecompressComplete(seqID: ImageSequence; err: OSErr; flag: SInt16; completionRtn: ICMCompletionProcRecordPtr); external name '_ICMDecompressComplete';
+{
+ *  ICMDecompressCompleteS()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ICMDecompressCompleteS(seqID: ImageSequence; err: OSErr; flag: SInt16; completionRtn: ICMCompletionProcRecordPtr): OSErr; external name '_ICMDecompressCompleteS';
+{
+ *  ICMSequenceLockBits()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ICMSequenceLockBits(seqID: ImageSequence; dst: PixMapPtr; flags: SInt32): OSErr; external name '_ICMSequenceLockBits';
+{
+ *  ICMSequenceUnlockBits()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ICMSequenceUnlockBits(seqID: ImageSequence; flags: SInt32): OSErr; external name '_ICMSequenceUnlockBits';
+const
+	kICMPixelFormatIsPlanarMask	= $0F;							{  these bits in formatFlags indicate how many planes there are; they're 0 if chunky }
+	kICMPixelFormatIsIndexed	= $00000010;
+	kICMPixelFormatIsSupportedByQD = $00000020;
+	kICMPixelFormatIsMonochrome	= $00000040;
+	kICMPixelFormatHasAlphaChannel = $00000080;
+
+
+type
+	ICMPixelFormatInfoPtr = ^ICMPixelFormatInfo;
+	ICMPixelFormatInfo = record
+		size:					SInt32;								{  caller MUST fill this in with sizeof(ICMPixelFormatInfo) before calling ICMGet/SetPixelFormatInfo }
+		formatFlags:			UInt32;
+		bitsPerPixel:			array [0..13] of SInt16;				{  list each plane's bits per pixel separately if planar }
+																		{  new field for QuickTime 4.1 }
+		defaultGammaLevel:		Fixed;
+																		{  new fields for QuickTime 6.0 }
+		horizontalSubsampling:	array [0..13] of SInt16;				{  per plane; use 1 if plane is not subsampled }
+		verticalSubsampling:	array [0..13] of SInt16;				{  per plane; use 1 if plane is not subsampled }
+	end;
+
+	{	 IMPORTANT: Fill in theInfo->size with sizeof(ICMPixelFormatInfo) before calling ICMGetPixelFormatInfo 	}
+	{
+	 *  ICMGetPixelFormatInfo()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 *    Windows:          in qtmlClient.lib 3.0 and later
+	 	}
+function ICMGetPixelFormatInfo(PixelFormat: OSType; theInfo: ICMPixelFormatInfoPtr): OSErr; external name '_ICMGetPixelFormatInfo';
+{ IMPORTANT: Fill in theInfo->size with sizeof(ICMPixelFormatInfo) before calling ICMSetPixelFormatInfo }
+{
+ *  ICMSetPixelFormatInfo()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ICMSetPixelFormatInfo(PixelFormat: OSType; theInfo: ICMPixelFormatInfoPtr): OSErr; external name '_ICMSetPixelFormatInfo';
+const
+	kICMGetChainUltimateParent	= 0;
+	kICMGetChainParent			= 1;
+	kICMGetChainChild			= 2;
+	kICMGetChainUltimateChild	= 3;
+
+	{
+	 *  ICMSequenceGetChainMember()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 *    Windows:          in qtmlClient.lib 3.0 and later
+	 	}
+function ICMSequenceGetChainMember(seqID: ImageSequence; var retSeqID: ImageSequence; flags: SInt32): OSErr; external name '_ICMSequenceGetChainMember';
+{
+ *  SetDSequenceTimeCode()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetDSequenceTimeCode(seqID: ImageSequence; timeCodeFormat: UnivPtr; timeCodeTime: UnivPtr): OSErr; external name '_SetDSequenceTimeCode';
+{
+ *  CDSequenceNewMemory()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CDSequenceNewMemory(seqID: ImageSequence; var data: Ptr; dataSize: Size; dataUse: SInt32; memoryGoneProc: ICMMemoryDisposedUPP; refCon: UnivPtr): OSErr; external name '_CDSequenceNewMemory';
+{
+ *  CDSequenceDisposeMemory()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CDSequenceDisposeMemory(seqID: ImageSequence; data: Ptr): OSErr; external name '_CDSequenceDisposeMemory';
+{
+ *  CDSequenceNewDataSource()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CDSequenceNewDataSource(seqID: ImageSequence; var sourceID: ImageSequenceDataSource; sourceType: OSType; sourceInputNumber: SInt32; dataDescription: Handle; transferProc: ICMConvertDataFormatUPP; refCon: UnivPtr): OSErr; external name '_CDSequenceNewDataSource';
+{
+ *  CDSequenceDisposeDataSource()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CDSequenceDisposeDataSource(sourceID: ImageSequenceDataSource): OSErr; external name '_CDSequenceDisposeDataSource';
+{
+ *  CDSequenceSetSourceData()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CDSequenceSetSourceData(sourceID: ImageSequenceDataSource; data: UnivPtr; dataSize: SInt32): OSErr; external name '_CDSequenceSetSourceData';
+{
+ *  CDSequenceChangedSourceData()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CDSequenceChangedSourceData(sourceID: ImageSequenceDataSource): OSErr; external name '_CDSequenceChangedSourceData';
+{
+ *  CDSequenceSetSourceDataQueue()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CDSequenceSetSourceDataQueue(sourceID: ImageSequenceDataSource; dataQueue: QHdrPtr): OSErr; external name '_CDSequenceSetSourceDataQueue';
+{
+ *  CDSequenceGetDataSource()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CDSequenceGetDataSource(seqID: ImageSequence; var sourceID: ImageSequenceDataSource; sourceType: OSType; sourceInputNumber: SInt32): OSErr; external name '_CDSequenceGetDataSource';
+{
+ *  PtInDSequenceData()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function PtInDSequenceData(seqID: ImageSequence; data: UnivPtr; dataSize: Size; where: Point; var hit: boolean): OSErr; external name '_PtInDSequenceData';
+{
+ *  HitTestDSequenceData()
+ *  
+ *  Availability:
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -25469,4 +27490,7 @@ function ImageTranscoderEndSequence(itc: ImageTranscoderComponent): ComponentRes
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

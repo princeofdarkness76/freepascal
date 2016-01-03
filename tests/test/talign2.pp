@@ -22,10 +22,14 @@ program talign2;
 {$ifdef unix}
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef darwin}iosxwstr{$else}cwstring{$endif};
 =======
   cwstring;
 >>>>>>> graemeg/fixes_2_2
+=======
+  cwstring;
+>>>>>>> origin/fixes_2_2
 {$endif}
 {$endif}
 

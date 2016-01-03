@@ -283,6 +283,7 @@ interface
     function is_64bit(def : tdef) : boolean;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     { true, if def is an int type, larger than the processor's native int size }
     function is_oversizedint(def : tdef) : boolean;
 
@@ -311,6 +312,12 @@ interface
     }
     procedure testrange(fromdef, todef : tdef;var l : tconstexprint;explicit:boolean);
 >>>>>>> graemeg/fixes_2_2
+=======
+    {# If @var(l) isn't in the range of todef a range check error (if not explicit) is generated and
+      the value is placed within the range
+    }
+    procedure testrange(fromdef, todef : tdef;var l : tconstexprint;explicit:boolean);
+>>>>>>> origin/fixes_2_2
 
     {# Returns the range of def, where @var(l) is the low-range and @var(h) is
       the high-range.
@@ -341,11 +348,14 @@ interface
     function def_cgmmsize(def: tdef): tcgsize;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     {# returns true, if the type passed is can be used with windows automation }
     function is_automatable(p : tdef) : boolean;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { # returns true if the procdef has no parameters and no specified return type }
     function is_bareprocdef(pd : tprocdef): boolean;
 
@@ -681,9 +691,12 @@ implementation
          case def_from.typ of
            orddef:
 <<<<<<< HEAD
+<<<<<<< HEAD
              is_in_limit:=(torddef(def_from).low>=torddef(def_to).low) and
                           (torddef(def_from).high<=torddef(def_to).high);
 =======
+=======
+>>>>>>> origin/fixes_2_2
              begin
                fromqword := torddef(def_from).ordtype = u64bit;
                toqword := torddef(def_to).ordtype = u64bit;
@@ -692,7 +705,10 @@ implementation
                              (torddef(def_from).low>=torddef(def_to).low) and
                              (torddef(def_from).high<=torddef(def_to).high));
              end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            enumdef:
              is_in_limit:=(tenumdef(def_from).min>=tenumdef(def_to).min) and
                           (tenumdef(def_from).max<=tenumdef(def_to).max);
@@ -700,10 +716,13 @@ implementation
              is_in_limit:=(tsetdef(def_from).setbase>=tsetdef(def_to).setbase) and
                           (tsetdef(def_from).setmax<=tsetdef(def_to).setmax);
 <<<<<<< HEAD
+<<<<<<< HEAD
          else
            is_in_limit:=false;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          end;
       end;
 
@@ -1060,6 +1079,7 @@ implementation
          result:=is_nativeint(def) and (def.typ=orddef) and (torddef(def).ordtype in [u64bit,u32bit,u16bit,u8bit]);
       end;
 
+<<<<<<< HEAD
     { true, if def is a signed int type, equal in size to the processor's native int size }
     function is_nativesint(def: tdef): boolean;
       begin
@@ -1074,11 +1094,17 @@ implementation
       the value is placed within the range }
     procedure testrange(fromdef, todef : tdef;var l : tconstexprint;explicit:boolean);
 >>>>>>> graemeg/fixes_2_2
+=======
+    { if l isn't in the range of todef a range check error (if not explicit) is generated and
+      the value is placed within the range }
+    procedure testrange(fromdef, todef : tdef;var l : tconstexprint;explicit:boolean);
+>>>>>>> origin/fixes_2_2
       var
          lv,hv: TConstExprInt;
       begin
          { for 64 bit types we need only to check if it is less than }
          { zero, if def is a qword node                              }
+<<<<<<< HEAD
 <<<<<<< HEAD
          getrange(todef,lv,hv);
          if (l<lv) or (l>hv) then
@@ -1109,6 +1135,8 @@ implementation
                    Message3(type_w_range_check_error_bounds,tostr(l),tostr(lv),tostr(hv));
                end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
          if is_64bitint(todef) then
            begin
               if (l<0) and
@@ -1166,10 +1194,13 @@ implementation
               begin
                 case longint(todef.size) of
 <<<<<<< HEAD
+<<<<<<< HEAD
                   1: l.svalue := shortint(l.svalue);
                   2: l.svalue := smallint(l.svalue);
                   4: l.svalue := longint(l.svalue);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                   1: l := shortint(l);
                   2: l := smallint(l);
                   4: l := longint(l);
@@ -1404,7 +1435,10 @@ implementation
                   internalerror(200707141)
               else
                 result:=OS_ADDR;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             end;
           formaldef:
             result := int_cgsize(voidpointertype.size);
@@ -1559,6 +1593,7 @@ implementation
 <<<<<<< HEAD
     function is_smallset(p : tdef) : boolean;
       begin
+<<<<<<< HEAD
         {$if defined(cpu8bitalu)}
           result:=(p.typ=setdef) and (p.size = 1)
         {$elseif defined(cpu16bitalu)}
@@ -1571,6 +1606,9 @@ implementation
       begin
         result:=(p.typ=setdef) and not(p.size in [1,2,4])
 >>>>>>> graemeg/fixes_2_2
+=======
+        result:=(p.typ=setdef) and not(p.size in [1,2,4])
+>>>>>>> origin/fixes_2_2
       end;
 
 

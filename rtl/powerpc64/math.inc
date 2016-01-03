@@ -124,6 +124,9 @@ asm
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif ndef aix}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

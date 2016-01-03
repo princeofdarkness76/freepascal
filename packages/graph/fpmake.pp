@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('graph');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ShortName:='grph';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -82,6 +83,8 @@ begin
     // Graph unit other targets
     T:=P.Targets.AddUnit('graph.pp',[go32v2,amiga,win32,win64,freebsd,msdos]);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ALLPACKAGES}
     P.Directory:='graph';
 {$endif ALLPACKAGES}
@@ -89,7 +92,10 @@ begin
     P.SourcePath.Add('src');
 
     T:=P.Targets.AddUnit('ggigraph.pp');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       with T.Dependencies do
         begin
           AddInclude('graphh.inc');
@@ -101,6 +107,7 @@ begin
           AddInclude('fills.inc');
           AddInclude('gtext.inc');
 <<<<<<< HEAD
+<<<<<<< HEAD
           AddInclude('graph16.inc',[freebsd,linux]);
           AddInclude('vesa.inc',[go32v2,msdos]);
           AddInclude('vesah.inc',[go32v2,msdos]);
@@ -111,6 +118,10 @@ begin
         end;
     T:=P.Targets.AddUnit('graph.pp');
 >>>>>>> graemeg/fixes_2_2
+=======
+        end;
+    T:=P.Targets.AddUnit('graph.pp');
+>>>>>>> origin/fixes_2_2
       with T.Dependencies do
         begin
           AddInclude('graphh.inc');
@@ -121,6 +132,7 @@ begin
           AddInclude('modes.inc');
           AddInclude('fills.inc');
           AddInclude('gtext.inc');
+<<<<<<< HEAD
 <<<<<<< HEAD
         end;
     T:=P.Targets.AddUnit('wincrt.pp',[win32, win64]);
@@ -139,6 +151,11 @@ begin
         end;
     T:=P.Targets.AddUnit('sdlgraph.pp');
 >>>>>>> graemeg/fixes_2_2
+=======
+          AddInclude('graph16.inc');
+        end;
+    T:=P.Targets.AddUnit('sdlgraph.pp');
+>>>>>>> origin/fixes_2_2
       with T.Dependencies do
         begin
           AddInclude('graphh.inc');
@@ -149,6 +166,7 @@ begin
           AddInclude('modes.inc');
           AddInclude('fills.inc');
           AddInclude('gtext.inc');
+<<<<<<< HEAD
 <<<<<<< HEAD
         end;
     T:=P.Targets.AddUnit('ptccrt.pp',[win32,win64,linux]);
@@ -165,6 +183,11 @@ begin
           AddUnit('sdlutils');
           AddUnit('logger');
 >>>>>>> graemeg/fixes_2_2
+=======
+          AddUnit('sdl');
+          AddUnit('sdlutils');
+          AddUnit('logger');
+>>>>>>> origin/fixes_2_2
         end;
 
 

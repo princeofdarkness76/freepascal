@@ -188,7 +188,10 @@ interface
           procedure ppuwrite(ppufile:tcompilerppufile);override;final;
 =======
           procedure ppuwrite(ppufile:tcompilerppufile);override;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           function  getvardef:longint;override;
           procedure setsize;
           function is_publishable : boolean;override;
@@ -545,6 +548,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           { for Object Pascal helpers }
           extendeddef   : tdef;
           extendeddefderef: tderef;
@@ -567,6 +571,8 @@ interface
           { for Objective-C: protocols and classes can have the same name there }
           objextname     : pshortstring;
 =======
+=======
+>>>>>>> origin/fixes_2_2
           objname,
           objrealname    : pshortstring;
           objectoptions  : tobjectoptions;
@@ -625,6 +631,7 @@ interface
           procedure buildderef;override;
           procedure deref;override;
 <<<<<<< HEAD
+<<<<<<< HEAD
           procedure derefimpl;override;
           procedure resetvmtentries;
           procedure copyvmtentries(objdef:tobjectdef);
@@ -632,6 +639,10 @@ interface
           procedure buildderefimpl;override;
           procedure derefimpl;override;
 >>>>>>> graemeg/fixes_2_2
+=======
+          procedure buildderefimpl;override;
+          procedure derefimpl;override;
+>>>>>>> origin/fixes_2_2
           function  getparentdef:tdef;override;
           function  size : asizeint;override;
           function  alignment:shortint;override;
@@ -767,7 +778,10 @@ interface
           function elesize : aint;
           function elepackedbitsize : aint;
           function elecount : aword;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           constructor create_from_pointer(def:tdef);
           constructor create(l,h:asizeint;def:tdef);
 >>>>>>> origin/cpstrnew
@@ -1424,7 +1438,10 @@ interface
 =======
           setmax   : aint;
           constructor create(def:tdef;low, high : aint);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           constructor ppuload(ppufile:tcompilerppufile);
           function getcopy : tstoreddef;override;
           { do not override this routine in platform-specific subclasses,
@@ -1776,11 +1793,14 @@ interface
     function is_classhelper(def: tdef): boolean;
     function is_class_or_interface(def: tdef): boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function is_class_or_interface_or_objc(def: tdef): boolean;
     function is_class_or_interface_or_objc_or_java(def: tdef): boolean;
     function is_class_or_interface_or_dispinterface_or_objc_or_java(def: tdef): boolean;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     function is_class_or_interface_or_object(def: tdef): boolean;
     function is_class_or_interface_or_dispinterface(def: tdef): boolean;
     function is_implicit_pointer_object_type(def: tdef): boolean;
@@ -2027,10 +2047,14 @@ implementation
            { Replace with CRC if the parameter line is very long }
            if (newlen-oldlen>12) and
 <<<<<<< HEAD
+<<<<<<< HEAD
               ((newlen+length(prefix)>100) or (newlen-oldlen>32)) then
 =======
               ((newlen+length(prefix)>128) or (newlen-oldlen>32)) then
 >>>>>>> graemeg/fixes_2_2
+=======
+              ((newlen+length(prefix)>128) or (newlen-oldlen>32)) then
+>>>>>>> origin/fixes_2_2
              begin
                crc:=0;
                for i:=0 to tprocdef(st.defowner).paras.count-1 do
@@ -2542,6 +2566,7 @@ implementation
          ppufile.getsmallset(defoptions);
          ppufile.getsmallset(defstates);
 <<<<<<< HEAD
+<<<<<<< HEAD
          if df_genconstraint in defoptions then
            begin
              genconstraintdata:=tgenericconstraintdata.create;
@@ -2565,6 +2590,8 @@ implementation
            end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          if df_generic in defoptions then
            begin
              sizeleft:=ppufile.getlongint;
@@ -2795,6 +2822,7 @@ implementation
         ppufile.do_crc:=false;
         ppufile.putsmallset(defstates);
 <<<<<<< HEAD
+<<<<<<< HEAD
         if df_genconstraint in defoptions then
           genconstraintdata.ppuwrite(ppufile);
         if [df_generic,df_specialization]*defoptions<>[] then
@@ -2815,6 +2843,8 @@ implementation
           end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         if df_generic in defoptions then
           begin
             if assigned(generictokenbuf) then
@@ -3429,6 +3459,7 @@ implementation
           st_longstring,
           st_shortstring:
 <<<<<<< HEAD
+<<<<<<< HEAD
               { char to string accesses byte 0 and 1 with one word access }
             if (tf_requires_proper_alignment in target_info.flags) or
               { macpas needs an alignment of 2 (MetroWerks compatible) }
@@ -3437,6 +3468,10 @@ implementation
             if (tf_requires_proper_alignment in target_info.flags) then
               { char to string accesses byte 0 and 1 with one word access }
 >>>>>>> graemeg/fixes_2_2
+=======
+            if (tf_requires_proper_alignment in target_info.flags) then
+              { char to string accesses byte 0 and 1 with one word access }
+>>>>>>> origin/fixes_2_2
               alignment:=size_2_align(2)
             else
               alignment:=size_2_align(1);
@@ -3909,19 +3944,25 @@ implementation
           exit;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef cpu64bitalu}
         if (ordtype in [s64bit,u64bit]) then
 {$else not cpu64bitalu}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         if (ordtype = u64bit) or
            ((ordtype = s64bit) and
             ((low <= (system.low(int64) div 2)) or
              (high > (system.high(int64) div 2)))) then
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif cpu64bitalu}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           result := 64
         else if (low >= 0) and
            (high <= 1) then
@@ -3962,11 +4003,15 @@ implementation
           varbyte,varword,varlongword,varqword,
           varshortint,varsmallint,varinteger,varint64,
 <<<<<<< HEAD
+<<<<<<< HEAD
           varboolean,varboolean,varboolean,varUndefined,varUndefined,
 >>>>>>> graemeg/cpstrnew
 =======
           varboolean,varboolean,varUndefined,varUndefined,
 >>>>>>> graemeg/fixes_2_2
+=======
+          varboolean,varboolean,varUndefined,varUndefined,
+>>>>>>> origin/fixes_2_2
           varUndefined,varUndefined,varCurrency);
       begin
         result:=basetype2vardef[ordtype];
@@ -4394,6 +4439,12 @@ implementation
       end;
 
 
+    function tvariantdef.getvardef : longint;
+      begin
+        Result:=varVariant;
+      end;
+
+
     procedure tvariantdef.setsize;
       begin
 {$ifdef cpu64bitaddr}
@@ -4796,6 +4847,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor tsetdef.create(def: tdef; low, high: asizeint; doregister: boolean);
 =======
     constructor tsetdef.create(def:tdef;low, high : asizeint);
@@ -4814,15 +4866,21 @@ implementation
         packedsavesize: aint;
         actual_setalloc: ShortInt;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     constructor tsetdef.create(def:tdef;low, high : aint);
       var
         setallocbits: aint;
         packedsavesize: aint;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
          inherited create(setdef,doregister);
          elementdef:=def;
          setmax:=high;
+<<<<<<< HEAD
 <<<<<<< HEAD
          actual_setalloc:=current_settings.setalloc;
 {$if defined(cpu8bitalu) or defined(cpu16bitalu)}
@@ -4841,6 +4899,12 @@ implementation
            begin
              setbase:=0;
              if (high<32) then
+=======
+         if (current_settings.setalloc=0) then
+           begin
+             setbase:=0;
+             if (high<32) then
+>>>>>>> origin/fixes_2_2
                begin
                  settype:=smallset;
                  savesize:=Sizeof(longint)
@@ -4850,12 +4914,16 @@ implementation
                  settype:=normset;
                  savesize:=32
                end
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
              else
                savesize:=(high+7) div 8
            end
          else
            begin
+<<<<<<< HEAD
 <<<<<<< HEAD
              setallocbits:=actual_setalloc*8;
              setbase:=low and not(setallocbits-1);
@@ -4866,6 +4934,8 @@ implementation
                savesize:=4;
 {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
              setallocbits:=current_settings.setalloc*8;
              setbase:=low and not(setallocbits-1);
              packedsavesize:=current_settings.setalloc*((((high+setallocbits)-setbase)) DIV setallocbits);
@@ -4878,7 +4948,10 @@ implementation
                end
              else if (packedsavesize<=32) then
                settype:=normset;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            end;
       end;
 
@@ -4897,10 +4970,14 @@ implementation
     function tsetdef.getcopy : tstoreddef;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         result:=csetdef.create(elementdef,setbase,setmax,true);
 =======
         result:=tsetdef.create(elementdef,setbase,setmax);
 >>>>>>> graemeg/fixes_2_2
+=======
+        result:=tsetdef.create(elementdef,setbase,setmax);
+>>>>>>> origin/fixes_2_2
         { the copy might have been created with a different setalloc setting }
         tsetdef(result).savesize:=savesize;
       end;
@@ -5205,10 +5282,14 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tarraydef.elecount : asizeuint;
 =======
     function tarraydef.elecount : aword;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function tarraydef.elecount : aword;
+>>>>>>> origin/fixes_2_2
       var
         qhigh,qlow : qword;
       begin
@@ -5223,10 +5304,14 @@ implementation
             qlow:=qword(-lowrange);
             { prevent overflow, return 0 to indicate overflow }
 <<<<<<< HEAD
+<<<<<<< HEAD
             if qhigh+qlow>qword(high(asizeint)-1) then
 =======
             if qhigh+qlow>qword(high(aint)-1) then
 >>>>>>> graemeg/fixes_2_2
+=======
+            if qhigh+qlow>qword(high(aint)-1) then
+>>>>>>> origin/fixes_2_2
               result:=0
             else
               result:=qhigh+qlow+1;
@@ -5239,9 +5324,12 @@ implementation
     function tarraydef.size : asizeint;
       var
 <<<<<<< HEAD
+<<<<<<< HEAD
         cachedelecount : asizeuint;
         cachedelesize : asizeint;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         cachedelecount : aword;
         cachedelesize : aint;
 >>>>>>> graemeg/fixes_2_2
@@ -5499,7 +5587,10 @@ implementation
         result:=trecorddef.create(symtable.getcopy);
         trecorddef(result).isunion:=isunion;
         include(trecorddef(result).defoptions,df_copied_def);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
     function tabstractrecorddef.find_procdef_bytype(pt:tproctypeoption): tprocdef;
@@ -5534,7 +5625,10 @@ implementation
            cloneddefderef.build(symtable.defowner)
          else
            tstoredsymtable(symtable).buildderef;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
     constructor tabstractrecorddef.ppuload(dt:tdeftyp;ppufile:tcompilerppufile);
@@ -5583,6 +5677,15 @@ implementation
              ppufile.putbyte(byte(trecordsymtable(symtable).usefieldalignment));
              ppufile.putaint(trecordsymtable(symtable).datasize);
            end;
+<<<<<<< HEAD
+=======
+
+         ppufile.writeentry(ibrecorddef);
+
+         if not(df_copied_def in defoptions) then
+           trecordsymtable(symtable).ppuwrite(ppufile);
+      end;
+>>>>>>> origin/fixes_2_2
 
          ppufile.writeentry(ibrecorddef);
 
@@ -6580,12 +6683,17 @@ implementation
         sym:=tsym(symtable.FindWithHash(hashedid));
         if assigned(sym) and (sym.typ=procsym) then
           begin
+<<<<<<< HEAD
             for i := 0 to Tprocsym(sym).ProcdefList.Count - 1 do
             begin
               pd := tprocdef(Tprocsym(sym).ProcdefList[i]);
               if (pd.proctypeoption = potype_function) and
                  (is_class_or_interface_or_object(pd.returndef) or is_record(pd.returndef)) and
                  (pd.visibility >= vis_public) then
+=======
+            crc:=0;
+            for i:=0 to paras.count-1 do
+>>>>>>> origin/fixes_2_2
               begin
                 result:=pd;
                 exit;
@@ -6601,6 +6709,7 @@ implementation
         pd : tprocdef;
         hashedid : THashedIDString;
       begin
+<<<<<<< HEAD
         result:=nil;
         // first search for po_enumerator_movenext method modifier
         // then search for public function MoveNext: Boolean
@@ -6631,6 +6740,22 @@ implementation
               begin
                 result:=pd;
                 exit;
+=======
+        { outdated gcc 2.x name mangling scheme }
+{$ifdef NAMEMANGLING_GCC2}
+
+         s := procsym.realname;
+         if procsym.owner.symtabletype=ObjectSymtable then
+           begin
+              s2:=upper(tobjectdef(procsym.owner.defowner).objrealname^);
+              case proctypeoption of
+                 potype_destructor:
+                   s:='_$_'+tostr(length(s2))+s2;
+                 potype_constructor:
+                   s:='___'+tostr(length(s2))+s2;
+                 else
+                   s:='_'+s+'__'+tostr(length(s2))+s2;
+>>>>>>> origin/fixes_2_2
               end;
             end;
           end;
@@ -6678,6 +6803,7 @@ implementation
         else
           internalerror(2011032601);
 
+<<<<<<< HEAD
         { in case of specializations, add some extras to prevent name conflicts
           with nested classes }
         if df_specialization in defoptions then
@@ -6704,6 +6830,61 @@ implementation
         if with_package_name and
            assigned(import_lib) then
           result:=import_lib^+'/'+result;
+=======
+         { now we handle the parameters }
+         if maxparacount>0 then
+           begin
+             for i:=0 to paras.count-1 do
+               begin
+                 hp:=tparavarsym(paras[i]);
+                 s2:=getcppparaname(hp.vardef);
+                 if hp.varspez in [vs_var,vs_out] then
+                   s2:='R'+s2;
+                 s:=s+s2;
+               end;
+           end
+         else
+           s:=s+'v';
+         cplusplusmangledname:=s;
+{$endif NAMEMANGLING_GCC2}
+
+         { gcc 3.x name mangling scheme }
+         if procsym.owner.symtabletype=ObjectSymtable then
+           begin
+             s:='_ZN';
+
+             s2:=tobjectdef(procsym.owner.defowner).objrealname^;
+             s:=s+tostr(length(s2))+s2;
+             case proctypeoption of
+                potype_constructor:
+                  s:=s+'C1';
+                potype_destructor:
+                  s:=s+'D1';
+                else
+                  s:=s+tostr(length(procsym.realname))+procsym.realname;
+             end;
+
+             s:=s+'E';
+           end
+         else
+           s:=procsym.realname;
+
+         { now we handle the parameters }
+         if maxparacount>0 then
+           begin
+             for i:=0 to paras.count-1 do
+               begin
+                 hp:=tparavarsym(paras[i]);
+                 s2:=getcppparaname(hp.vardef);
+                 if hp.varspez in [vs_var,vs_out] then
+                   s2:='R'+s2;
+                 s:=s+s2;
+               end;
+           end
+         else
+           s:=s+'v';
+         cplusplusmangledname:=s;
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -11104,15 +11285,26 @@ implementation
            tObjectSymtable(symtable).ppuload(ppufile);
 >>>>>>> graemeg/fixes_2_2
 
+<<<<<<< HEAD
     function tobjectdef.members_need_inittable : boolean;
       begin
         members_need_inittable:=tObjectSymtable(symtable).needs_init_final;
       end;
+=======
+         if df_copied_def in defoptions then
+           ppufile.getderef(cloneddefderef)
+         else
+           tObjectSymtable(symtable).ppuload(ppufile);
+>>>>>>> origin/fixes_2_2
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tobjectdef.is_publishable : boolean;
 =======
+=======
+
+>>>>>>> origin/fixes_2_2
     destructor tobjectdef.destroy;
 >>>>>>> graemeg/fixes_2_2
       begin
@@ -11352,11 +11544,17 @@ implementation
          if df_copied_def in defoptions then
            ppufile.putderef(cloneddefderef);
 
+         if df_copied_def in defoptions then
+           ppufile.putderef(cloneddefderef);
+
          ppufile.writeentry(ibobjectdef);
 
          if not(df_copied_def in defoptions) then
            tObjectSymtable(symtable).ppuwrite(ppufile);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
     function tobjectdef.search_enumerator_get: tprocdef;
@@ -11442,6 +11640,24 @@ implementation
 =======
     function tobjectdef.get_next_dispid: longint;
 =======
+    procedure tobjectdef.buildderefimpl;
+      var
+         i : longint;
+      begin
+         inherited buildderefimpl;
+         if not (df_copied_def in defoptions) then
+           tstoredsymtable(symtable).buildderefimpl;
+      end;
+
+
+    procedure tobjectdef.derefimpl;
+      begin
+         inherited derefimpl;
+         if not (df_copied_def in defoptions) then
+           tstoredsymtable(symtable).derefimpl;
+      end;
+
+
     procedure tobjectdef.buildderefimpl;
       var
          i : longint;
@@ -12078,7 +12294,10 @@ implementation
         inherited create(errordef,true);
 =======
         inherited create(errordef);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         { prevent consecutive faults }
         savesize:=1;
       end;
@@ -12198,6 +12417,7 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function is_objcclass(def: tdef): boolean;
       begin
         is_objcclass:=
@@ -12298,6 +12518,8 @@ implementation
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     function is_class_or_interface(def: tdef): boolean;
       begin
         result:=
@@ -12307,6 +12529,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     function is_class_or_interface_or_objc(def: tdef): boolean;
       begin
@@ -12349,6 +12572,8 @@ implementation
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     function is_class_or_interface_or_object(def: tdef): boolean;
       begin
         result:=

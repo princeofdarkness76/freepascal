@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 1998-2011 Apple Inc.
 =======
  * Copyright (c) 1998-2009 Apple Inc.
@@ -43,6 +44,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  * Copyright (c) 1998-2000 Apple Computer, Inc.
  * All rights reserved.
  }
@@ -53,7 +56,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -63,12 +69,17 @@
 unit CGAffineTransforms;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -82,14 +93,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -98,11 +114,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -140,6 +159,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -147,6 +168,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -361,6 +383,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -369,7 +393,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -396,9 +423,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -410,10 +441,13 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CGBase,CGGeometry;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -421,17 +455,23 @@ type
 	CGAffineTransformPtr = ^CGAffineTransform;
 	CGAffineTransform = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		a, b, c, d: CGFloat;
 		tx, ty: CGFloat;
 =======
 		a, b, c, d: Float32;
 		tx, ty: Float32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		a, b, c, d: Float32;
+		tx, ty: Float32;
+>>>>>>> origin/fixes_2_2
 	end;
 
 { The identity transform: [ 1 0 0 1 0 0 ]. }
 
 var CGAffineTransformIdentity: CGAffineTransform; external name '_CGAffineTransformIdentity'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
@@ -496,33 +536,47 @@ function CGAffineTransformMakeRotation( angle: CGFloat ): CGAffineTransform; ext
 >>>>>>> graemeg/cpstrnew
 =======
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the transform [ a b c d tx ty ]. }
 
 function CGAffineTransformMake( a: Float32; b: Float32; c: Float32; d: Float32; tx: Float32; ty: Float32 ): CGAffineTransform; external name '_CGAffineTransformMake';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return a transform which translates by `(tx, ty)':
  *   t' = [ 1 0 0 1 tx ty ] }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CGAffineTransformMakeTranslation( tx: CGFloat; ty: CGFloat ): CGAffineTransform; external name '_CGAffineTransformMakeTranslation';
 =======
 function CGAffineTransformMakeTranslation( tx: Float32; ty: Float32 ): CGAffineTransform; external name '_CGAffineTransformMakeTranslation';
 >>>>>>> graemeg/fixes_2_2
+=======
+function CGAffineTransformMakeTranslation( tx: Float32; ty: Float32 ): CGAffineTransform; external name '_CGAffineTransformMakeTranslation';
+>>>>>>> origin/fixes_2_2
 
 { Return a transform which scales by `(sx, sy)':
  *   t' = [ sx 0 0 sy 0 0 ] }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CGAffineTransformMakeScale( sx: CGFloat; sy: CGFloat ): CGAffineTransform; external name '_CGAffineTransformMakeScale';
 =======
 function CGAffineTransformMakeScale( sx: Float32; sy: Float32 ): CGAffineTransform; external name '_CGAffineTransformMakeScale';
 >>>>>>> graemeg/fixes_2_2
+=======
+function CGAffineTransformMakeScale( sx: Float32; sy: Float32 ): CGAffineTransform; external name '_CGAffineTransformMakeScale';
+>>>>>>> origin/fixes_2_2
 
 { Return a transform which rotates by `angle' radians:
  *   t' = [ cos(angle) sin(angle) -sin(angle) cos(angle) 0 0 ] }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function CGAffineTransformMakeRotation( angle: CGFloat ): CGAffineTransform; external name '_CGAffineTransformMakeRotation';
 >>>>>>> origin/cpstrnew
@@ -585,6 +639,8 @@ function CGAffineTransformRotate( t: CGAffineTransform; angle: CGFloat ): CGAffi
 
 function CGAffineTransformTranslate( t: CGAffineTransform; tx: CGFloat; ty: CGFloat ): CGAffineTransform; external name '_CGAffineTransformTranslate';
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function CGAffineTransformMakeRotation( angle: Float32 ): CGAffineTransform; external name '_CGAffineTransformMakeRotation';
 
 { Return true if `t' is the identity transform, false otherwise. }
@@ -595,20 +651,28 @@ function CGAffineTransformIsIdentity( t: CGAffineTransform ): CBool; external na
  *   t' = [ 1 0 0 1 tx ty ] * t }
 
 function CGAffineTransformTranslate( t: CGAffineTransform; tx: Float32; ty: Float32 ): CGAffineTransform; external name '_CGAffineTransformTranslate';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Scale `t' by `(sx, sy)' and return the result:
  *   t' = [ sx 0 0 sy 0 0 ] * t }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CGAffineTransformScale( t: CGAffineTransform; sx: CGFloat; sy: CGFloat ): CGAffineTransform; external name '_CGAffineTransformScale';
 =======
 function CGAffineTransformScale( t: CGAffineTransform; sx: Float32; sy: Float32 ): CGAffineTransform; external name '_CGAffineTransformScale';
 >>>>>>> graemeg/fixes_2_2
+=======
+function CGAffineTransformScale( t: CGAffineTransform; sx: Float32; sy: Float32 ): CGAffineTransform; external name '_CGAffineTransformScale';
+>>>>>>> origin/fixes_2_2
 
 { Rotate `t' by `angle' radians and return the result:
  *   t' =  [ cos(angle) sin(angle) -sin(angle) cos(angle) 0 0 ] * t }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function CGAffineTransformRotate( t: CGAffineTransform; angle: CGFloat ): CGAffineTransform; external name '_CGAffineTransformRotate';
 
@@ -654,6 +718,8 @@ function CGSizeApplyAffineTransform( size: CGSize; t: CGAffineTransform ): CGSiz
 function CGRectApplyAffineTransform( rect: CGRect; t: CGAffineTransform ): CGRect; external name '_CGRectApplyAffineTransform';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function CGAffineTransformRotate( t: CGAffineTransform; angle: Float32 ): CGAffineTransform; external name '_CGAffineTransformRotate';
 
 { Invert `t' and return the result.  If `t' has zero determinant, then `t'
@@ -690,7 +756,10 @@ function CGSizeApplyAffineTransform( size: CGSize; t: CGAffineTransform ): CGSiz
  * four transformed corners. }
 
 function CGRectApplyAffineTransform( rect: CGRect; t: CGAffineTransform ): CGRect; external name '_CGRectApplyAffineTransform'; (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 (*
 {** Definitions of inline functions. **}
@@ -731,6 +800,7 @@ __CGSizeApplyAffineTransform(CGSize size, CGAffineTransform t)
 #define CGSizeApplyAffineTransform __CGSizeApplyAffineTransform
 *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
@@ -739,3 +809,7 @@ end.
 
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+
+end.
+>>>>>>> origin/fixes_2_2

@@ -17,8 +17,11 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SignalToRunerror(sig : longint; SigInfo: PSigInfo; UContext: Pucontext);public name '_FPC_DEFAULTSIGHANDLER';cdecl;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure SignalToRunerror(sig : longint; SigInfo: PSigInfo; UContext: Pucontext);cdecl;
 >>>>>>> graemeg/fixes_2_2
 var
@@ -52,6 +55,7 @@ begin
               end;
             with ucontext^.uc_mcontext.fpstate^ do
 <<<<<<< HEAD
+<<<<<<< HEAD
               begin
                 { Reset Status word }
                 sw:=sw and not FPU_ExceptionMask;
@@ -65,6 +69,10 @@ begin
               sw:=sw and not FPU_ExceptionMask;
           end;
 >>>>>>> graemeg/fixes_2_2
+=======
+              sw:=sw and not FPU_ExceptionMask;
+          end;
+>>>>>>> origin/fixes_2_2
       end;
     SIGBUS:
       res:=214;
@@ -80,12 +88,15 @@ begin
     SIGSEGV :
       res:=216;
 <<<<<<< HEAD
+<<<<<<< HEAD
     SIGINT:
         res:=217;
     SIGQUIT:
         res:=233;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
   reenable_signal(sig);
 { give runtime error at the position where the signal was raised }

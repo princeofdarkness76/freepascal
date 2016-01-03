@@ -152,7 +152,10 @@ function Compile(const cmd:TCmdStr):longint;
   ;
 
 function Compile(const cmd:string):longint;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 implementation
 

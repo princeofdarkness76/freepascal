@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2000-2004 Apple Computer, Inc. All Rights Reserved.
  * 
  * @APPLE_LICENSE_HEADER_START@
@@ -54,6 +55,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  * Copyright (c) 2000-2002 Apple Computer, Inc. All Rights Reserved.
  * 
  * The contents of this file constitute Original Code as defined in and are
@@ -84,7 +87,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -94,12 +100,17 @@
 unit AuthorizationTags;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -113,14 +124,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -129,11 +145,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -171,6 +190,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -178,6 +199,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -392,6 +414,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -400,7 +424,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -427,9 +454,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -440,6 +471,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -458,11 +490,16 @@ uses MacTypes;
 {!
 	@header AuthorizationTags
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN MAC68K}
 {!
 	@header AuthorizationTags
 	Draft version 2 01/23/2001
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 	This header defines some of the supported rights tags to be used in the Authorization API.
 }
@@ -473,33 +510,45 @@ uses MacTypes;
 	The name of the AuthorizationItem that should be passed into the environment when specifying a username.  The value and valueLength should contain the username itself.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	kAuthorizationEnvironmentUsername = 'username';
 =======
 const kAuthorizationEnvironmentUsername = 'username';
 >>>>>>> graemeg/fixes_2_2
+=======
+const kAuthorizationEnvironmentUsername = 'username';
+>>>>>>> origin/fixes_2_2
 
 {!
 	@define kAuthorizationEnvironmentPassword
 	The name of the AuthorizationItem that should be passed into the environment when specifying a password for a given username.  The value and valueLength should contain the actual password data.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	kAuthorizationEnvironmentPassword = 'password';
 =======
 const kAuthorizationEnvironmentPassword = 'password';
 >>>>>>> graemeg/fixes_2_2
+=======
+const kAuthorizationEnvironmentPassword = 'password';
+>>>>>>> origin/fixes_2_2
 
 {!
 	@define kAuthorizationEnvironmentShared
 	The name of the AuthorizationItem that should be passed into the environment when specifying a username and password.  Adding this entry to the environment will cause the username/password to be added to the shared credential pool of the calling applications session.  This means that further calls by other applications in this session will automatically have this credential availible to them.  The value is ignored.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	kAuthorizationEnvironmentShared = 'shared';
 =======
 const kAuthorizationEnvironmentShared = 'shared';
 >>>>>>> graemeg/fixes_2_2
+=======
+const kAuthorizationEnvironmentShared = 'shared';
+>>>>>>> origin/fixes_2_2
 
 {!
 	@define kAuthorizationRightExecute
@@ -508,27 +557,36 @@ const kAuthorizationEnvironmentShared = 'shared';
 	You need to aquire this right to be able to perform a AuthorizationExecuteWithPrivileges() operation.  In addtion to this right you should obtain whatever rights the tool you are executing with privileges need to perform it's operation on your behalf.  Currently no options are supported but you should pass in the full path of the tool you wish to execute in the value and valueLength fields.  In the future we will limit the right to only execute the requested path, and we will display this information to the user.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	kAuthorizationRightExecute = 'system.privilege.admin';
 =======
 const kAuthorizationRightExecute= 'system.privilege.admin';
 >>>>>>> graemeg/fixes_2_2
+=======
+const kAuthorizationRightExecute= 'system.privilege.admin';
+>>>>>>> origin/fixes_2_2
 
 {!
 	@define kAuthorizationEnvironmentPrompt
 	The name of the AuthorizationItem that should be passed into the environment when specifying a invocation specific additional text.  The value should be a localized UTF8 string.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	kAuthorizationEnvironmentPrompt = 'prompt';
 =======
 const kAuthorizationEnvironmentPrompt = 'prompt';
 >>>>>>> graemeg/fixes_2_2
+=======
+const kAuthorizationEnvironmentPrompt = 'prompt';
+>>>>>>> origin/fixes_2_2
 
 {!
 	@define kAuthorizationEnvironmentIcon
 	The name of the AuthorizationItem that should be passed into the environment when specifying an alternate icon to be used.  The value should be a full path to and image NSImage can deal with.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kAuthorizationEnvironmentIcon = 'icon';
@@ -543,3 +601,8 @@ const kAuthorizationEnvironmentIcon = 'icon';
 
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+const kAuthorizationEnvironmentIcon = 'icon';
+
+end.
+>>>>>>> origin/fixes_2_2

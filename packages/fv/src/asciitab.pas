@@ -172,10 +172,14 @@ var
   Handled : boolean;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   procedure SetTo(xpos, ypos : sw_integer;press:integer);
 =======
   procedure SetTo(xpos, ypos : sw_integer);
 >>>>>>> graemeg/fixes_2_2
+=======
+  procedure SetTo(xpos, ypos : sw_integer);
+>>>>>>> origin/fixes_2_2
   var
     newchar : ptrint;
   begin
@@ -184,6 +188,7 @@ var
     SetCursor(xpos,ypos);
     Message(Owner,evCommand,AsciiTableCommandBase,
       pointer(newchar));
+<<<<<<< HEAD
 <<<<<<< HEAD
     if press>0 then
       begin
@@ -194,11 +199,16 @@ var
   end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
     DrawCurPos(true);
     ClearEvent(Event);
   end;
   
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   case Event.What of
     evMouseDown :
@@ -207,10 +217,14 @@ begin
           begin
             MakeLocal(Event.Where, CurrentPos);
 <<<<<<< HEAD
+<<<<<<< HEAD
             SetTo(CurrentPos.X, CurrentPos.Y,1);
 =======
             SetTo(CurrentPos.X, CurrentPos.Y);
 >>>>>>> graemeg/fixes_2_2
+=======
+            SetTo(CurrentPos.X, CurrentPos.Y);
+>>>>>>> origin/fixes_2_2
             exit;
           end;
       end;
@@ -219,6 +233,7 @@ begin
         Handled:=true;
         case Event.Keycode of
           kbUp   : if Cursor.Y>0 then
+<<<<<<< HEAD
 <<<<<<< HEAD
                    SetTo(Cursor.X,Cursor.Y-1,0);
           kbDown : if Cursor.Y<Size.Y-1 then
@@ -231,6 +246,8 @@ begin
           kbEnd  : SetTo(Size.X-1,Size.Y-1,0);
           kbEnter: SetTo(Cursor.X,Cursor.Y,1);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                    SetTo(Cursor.X,Cursor.Y-1);
           kbDown : if Cursor.Y<Size.Y-1 then
                    SetTo(Cursor.X,Cursor.Y+1);
@@ -240,7 +257,10 @@ begin
                    SetTo(Cursor.X+1,Cursor.Y);
           kbHome : SetTo(0,0);
           kbEnd  : SetTo(Size.X-1,Size.Y-1);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         else
           Handled:=false;
         end;
@@ -282,10 +302,14 @@ begin
      (Event.Command =  AsciiTableCommandBase) then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       AsciiChar:=PtrInt(Event.InfoPtr);
 =======
       AsciiChar:=Event.InfoLong;
 >>>>>>> graemeg/fixes_2_2
+=======
+      AsciiChar:=Event.InfoLong;
+>>>>>>> origin/fixes_2_2
       Draw;
       ClearEvent(Event);
     end
@@ -338,9 +362,12 @@ end;
 procedure TASCIIChart.HandleEvent(var Event:TEvent);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   {writeln(stderr,'ascii cmd',event.what, ' ', event.command);}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   if (Event.what=evCommand) and
      (Event.Command =  AsciiTableCommandBase) then
     begin

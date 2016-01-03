@@ -41,6 +41,7 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   dlexitproc: pointer; { atexit from loader }
 
@@ -204,6 +205,8 @@ asm
   pushl   %ebx
   call    uclibc_exit
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure libc_init; external name '__uClibc_init';
 procedure libc_fini; external name '__uClibc_fini';
 procedure libc_exit; external name '_exit';
@@ -269,12 +272,16 @@ asm
 {$endif}
   pushl   %ebx
   call    libc_exit
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   xorl    %eax,%eax
   incl    %eax                    { eax=1, exit call }
   popl    %ebx
   int     $0x80
   jmp     .Lhaltproc
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 end;
@@ -282,3 +289,7 @@ end;
 end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+end;
+
+>>>>>>> origin/fixes_2_2

@@ -22,10 +22,14 @@ Resourcestring
   SErrNoPackageSpecified     = 'No package specified';
   SErrNoPackageAvailable     = 'Package %s %s is not available';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrOnlyLocalDir           = 'The specified command "%s" works only on current dir, not on a (remote) package';
 =======
   SErrOnlyLocalDir           = 'The speficied command "%s" works only on current dir, not on a (remote) package';
 >>>>>>> graemeg/fixes_2_2
+=======
+  SErrOnlyLocalDir           = 'The speficied command "%s" works only on current dir, not on a (remote) package';
+>>>>>>> origin/fixes_2_2
   SErrExecutionFPMake        = 'Execution of FPMake %s failed';
   SErrException              = 'The FPC Package tool encountered the following error:';
   SErrActionAlreadyRegistered= 'Action "%s" is already registered';
@@ -70,19 +74,26 @@ Resourcestring
   SLogGeneratingGlobalConfig = 'Generating default global configuration in "%s"';
   SLogDetectedCompiler       = 'Detected compiler "%s" (version %s for %s)';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SLogDetectedPrefix         = 'Detected %s prefix "%s"';
   SLogFPCDirEnv              = 'FPCDIR from environment setting "%s"';
 =======
   SLogDetectedFPCDIR         = 'Detected %s FPCDIR "%s"';
 >>>>>>> graemeg/fixes_2_2
+=======
+  SLogDetectedFPCDIR         = 'Detected %s FPCDIR "%s"';
+>>>>>>> origin/fixes_2_2
   SLogGeneratingCompilerConfig  = 'Generating default compiler configuration in "%s"';
   SLogLoadingPackagesFile    = 'Loading available packages from "%s"';
   SLogLoadingMirrorsFile     = 'Loading available mirrors from "%s"';
   SLogFindInstalledPackages  = 'Finding installed packages in "%s"';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SLogFoundFPMakeAddin       = 'Found FPMake-AddIn "%s"';
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   SLogSavingStatusFile       = 'Saving local status to "%s"';
   SLogFPMKUnitDepVersion     = 'Checking for %s %s, installed %s, available %s';
   SLogFPMKUnitDepTooOld      = 'Minimum version of %s is not installed, using internal fpmkunit with limited functionality';
@@ -90,6 +101,7 @@ Resourcestring
   SLogUpgradingConfig        = 'Configuration file "%s" is updated with new configuration settings';
   SLogPackageDependency      = 'Dependency on package %s %s, installed %s, available %s  (%s)';
   SLogPackageChecksumChanged = 'Package %s needs to be rebuild, dependency %s is modified';
+<<<<<<< HEAD
 <<<<<<< HEAD
   SLogCheckBrokenDependenvies= 'Checking for broken dependencies';
 
@@ -113,6 +125,8 @@ Resourcestring
   SLogCompilerCfgGlobalPrefix     = ' GlobalPrefix:     "%s" -> "%s"';
   SLogCompilerCfgLocalPrefix      = ' LocalPrefix:      "%s" -> "%s"';
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
   SLogGlobalCfgHeader        = 'Using global configuration:';
   SLogGlobalCfgRemoteMirrorsURL = ' RemoteMirrorsURL: "%s"';
@@ -130,7 +144,10 @@ Resourcestring
   SLogCompilerCfgVersion     = ' Version: "%s"';
   SLogCompilerCfgGlobalInstallDir = ' GlobalInstallDir: "%s"';
   SLogCompilerCfgLocalInstallDir = ' LocalInstallDir: "%s"';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   SDbgFound                  = 'Found';
   SDbgNotFound               = 'Not Found';

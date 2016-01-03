@@ -369,10 +369,14 @@ var
         else
           writeln;
 <<<<<<< HEAD
+<<<<<<< HEAD
         Writeln('    process afgebroken, te hoge nauwkeurigheid?');
 =======
         Writeln('    proces afgebroken, te hoge nauwkeurigheid?');
 >>>>>>> graemeg/fixes_2_2
+=======
+        Writeln('    proces afgebroken, te hoge nauwkeurigheid?');
+>>>>>>> origin/fixes_2_2
       end;
       3: Writeln('Verkeerde waarde ae (<=0) bij aanroep: ', ae: 8);
       4:
@@ -383,10 +387,14 @@ var
         else
           writeln;
 <<<<<<< HEAD
+<<<<<<< HEAD
         writeln('    process afgebroken, moeilijk, mogelijk divergent?');
 =======
         writeln('    proces afgebroken, moeilijk, mogelijk divergent?');
 >>>>>>> graemeg/fixes_2_2
+=======
+        writeln('    proces afgebroken, moeilijk, mogelijk divergent?');
+>>>>>>> origin/fixes_2_2
       end;
     end;
   end;
@@ -875,10 +883,14 @@ var
         else
           writeln;
 <<<<<<< HEAD
+<<<<<<< HEAD
         Writeln('    process afgebroken, te hoge nauwkeurigheid?');
 =======
         Writeln('    proces afgebroken, te hoge nauwkeurigheid?');
 >>>>>>> graemeg/fixes_2_2
+=======
+        Writeln('    proces afgebroken, te hoge nauwkeurigheid?');
+>>>>>>> origin/fixes_2_2
       end;
       3: Writeln('Verkeerde waarde ae (<=0) bij aanroep: ', ae: 8);
       4:
@@ -889,10 +901,14 @@ var
         else
           writeln;
 <<<<<<< HEAD
+<<<<<<< HEAD
         writeln('    process afgebroken, moeilijk, mogelijk divergent?');
 =======
         writeln('    proces afgebroken, moeilijk, mogelijk divergent?');
 >>>>>>> graemeg/fixes_2_2
+=======
+        writeln('    proces afgebroken, moeilijk, mogelijk divergent?');
+>>>>>>> origin/fixes_2_2
       end;
     end;
   end;

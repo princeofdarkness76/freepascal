@@ -1717,6 +1717,7 @@ Compilateur Free Pascal version $FPCFULLVERSION [$FPCDATE] pour $FPCTARGET
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Copyright (c) 1993-2015 by Florian Klaempfl and others
 =======
 Copyright (c) 1998-2011 by Florian Klaempfl
@@ -1733,6 +1734,9 @@ Copyright (c) 1998-2011 by Florian Klaempfl
 =======
 Copyright (c) 1998-2008 by Florian Klaempfl
 >>>>>>> graemeg/fixes_2_2
+=======
+Copyright (c) 1998-2008 by Florian Klaempfl
+>>>>>>> origin/fixes_2_2
 ]
 
 #

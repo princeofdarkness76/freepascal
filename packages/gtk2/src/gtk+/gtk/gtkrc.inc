@@ -42,10 +42,14 @@
      the token it expected but didn't get.
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Combine RC style data from src into dest. If overridden, this
 =======
 { Combine RC style data from src into dest. If overriden, this
 >>>>>>> graemeg/fixes_2_2
+=======
+{ Combine RC style data from src into dest. If overriden, this
+>>>>>>> origin/fixes_2_2
      function should chain to the parent.
     }
 { Create an empty style suitable to this RC style

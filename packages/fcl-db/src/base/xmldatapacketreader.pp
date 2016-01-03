@@ -50,6 +50,7 @@ type
     destructor destroy; override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure StoreFieldDefs(AnAutoIncValue : integer); override;
     procedure StoreRecord(ARowState : TRowState; AUpdOrder : integer = 0); override;
 =======
@@ -88,6 +89,8 @@ type
     procedure RestoreRecord(ADataset : TCustomBufDataset); override;
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure StoreFieldDefs(AFieldDefs : TFieldDefs); override;
     procedure StoreRecord(ADataset : TBufDataset; ARowState : TRowState; AUpdOrder : integer = 0); override;
     procedure FinalizeStoreRecords; override;
@@ -96,7 +99,10 @@ type
     function GetCurrentRecord : boolean; override;
     function GetRecordRowState(out AUpdOrder : Integer) : TRowState; override;
     procedure RestoreRecord(ADataset : TBufDataset); override;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure GotoNextRecord; override;
     class function RecognizeStream(AStream : TStream) : boolean; override;
   end;
@@ -104,16 +110,22 @@ type
 implementation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses xmlwrite, xmlread, base64;
 
 const
   XMLFieldtypenames : Array [TFieldType] of String[16] =
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses xmlwrite, xmlread;
 
 const
   XMLFieldtypenames : Array [TFieldType] of String[15] =
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     (
       'Unknown',
       'string',
@@ -123,16 +135,21 @@ const
       'boolean',
       'r8',
 <<<<<<< HEAD
+<<<<<<< HEAD
       'r8:Money',
 =======
       'r8',
 >>>>>>> graemeg/fixes_2_2
+=======
+      'r8',
+>>>>>>> origin/fixes_2_2
       'fixed',
       'date',
       'time',
       'datetime',
       'bin.hex',
       'bin.hex',
+<<<<<<< HEAD
 <<<<<<< HEAD
       'i4:Autoinc',
       'bin.hex:Binary',
@@ -146,6 +163,8 @@ const
       'string',             // ftFixedChar
       'string.uni',         // ftWideString
 =======
+=======
+>>>>>>> origin/fixes_2_2
       'i4',
       'bin.hex',
       'bin.hex',
@@ -157,7 +176,10 @@ const
       '',
       'string',
       'string',
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       'i8',
       '',
       '',
@@ -169,18 +191,24 @@ const
       '',
       '',
 <<<<<<< HEAD
+<<<<<<< HEAD
       'string:Guid',        // ftGuid
       '',
       'fixedFMT',           // ftFmtBCD
       'string.uni',         // ftFixedWideChar
       'bin.hex:WideText'    // ftWideMemo
 =======
+=======
+>>>>>>> origin/fixes_2_2
       '',
       '',
       '',
       '',
       ''
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     );
 
 resourcestring
@@ -198,10 +226,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TXMLDatapacketReader.LoadFieldDefs(var AnAutoIncValue: integer);
 =======
 procedure TXMLDatapacketReader.LoadFieldDefs(AFieldDefs : TFieldDefs);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TXMLDatapacketReader.LoadFieldDefs(AFieldDefs : TFieldDefs);
+>>>>>>> origin/fixes_2_2
 
   function GetNodeAttribute(const aNode : TDOMNode; AttName : String) : string;
   var AnAttr : TDomNode;
@@ -216,12 +248,16 @@ var i           : integer;
     iFieldType  : TFieldType;
     FTString    : string;
 <<<<<<< HEAD
+<<<<<<< HEAD
     SubFTString : string;
     AFieldNode  : TDOMNode;
     AnAutoIncNode: TDomNode;
 =======
     AFieldNode  : TDOMNode;
 >>>>>>> graemeg/fixes_2_2
+=======
+    AFieldNode  : TDOMNode;
+>>>>>>> origin/fixes_2_2
 
 begin
   ReadXMLFile(XMLDocument,Stream);
@@ -240,20 +276,27 @@ begin
     if AFieldNode.CompareName('FIELD')=0 then
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       AFieldDef := Dataset.FieldDefs.AddFieldDef;
 =======
       AFieldDef := TFieldDef.create(AFieldDefs);
 >>>>>>> graemeg/fixes_2_2
+=======
+      AFieldDef := TFieldDef.create(AFieldDefs);
+>>>>>>> origin/fixes_2_2
       AFieldDef.DisplayName:=GetNodeAttribute(AFieldNode,'fieldname');
       AFieldDef.Name:=GetNodeAttribute(AFieldNode,'attrname');
       AFieldDef.Size:=StrToIntDef(GetNodeAttribute(AFieldNode,'width'),0);
       FTString:=GetNodeAttribute(AFieldNode,'fieldtype');
+<<<<<<< HEAD
 <<<<<<< HEAD
       SubFTString:=GetNodeAttribute(AFieldNode,'subtype');
       if SubFTString<>'' then
         FTString:=FTString+':'+SubFTString;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
       AFieldDef.DataType:=ftUnknown;
       for iFieldType:=low(TFieldType) to high(TFieldType) do
@@ -265,6 +308,7 @@ begin
       end;
     end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   FParamsNode := MetaDataNode.FindNode('PARAMS');
   if assigned(FParamsNode) then
@@ -279,11 +323,17 @@ begin
   if assigned(FChangeLogNode) then
     FChangeLogNode := FChangeLogNode.Attributes.GetNamedItem('CHANGE_LOG');
 >>>>>>> graemeg/fixes_2_2
+=======
+  FChangeLogNode := MetaDataNode.FindNode('PARAMS');
+  if assigned(FChangeLogNode) then
+    FChangeLogNode := FChangeLogNode.Attributes.GetNamedItem('CHANGE_LOG');
+>>>>>>> origin/fixes_2_2
 
   FRowDataNode := DataPacketNode.FindNode('ROWDATA');
   FRecordNode := nil;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TXMLDatapacketReader.StoreFieldDefs(AnAutoIncValue: integer);
 
@@ -291,11 +341,16 @@ var i,p         : integer;
     AFieldNode  : TDOMElement;
     AStringFT   : string;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TXMLDatapacketReader.StoreFieldDefs(AFieldDefs: TFieldDefs);
 
 var i           : integer;
     AFieldNode  : TDOMElement;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
   XMLDocument := TXMLDocument.Create;
@@ -306,15 +361,20 @@ begin
   FieldsNode := XMLDocument.CreateElement('FIELDS');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   for i := 0 to DataSet.FieldDefs.Count - 1 do with DataSet.FieldDefs[i] do
 =======
   for i := 0 to AFieldDefs.Count -1 do with AFieldDefs[i] do
 >>>>>>> graemeg/fixes_2_2
+=======
+  for i := 0 to AFieldDefs.Count -1 do with AFieldDefs[i] do
+>>>>>>> origin/fixes_2_2
     begin
     AFieldNode := XMLDocument.CreateElement('FIELD');
     if Name <> '' then AFieldNode.SetAttribute('fieldname',Name);
     AFieldNode.SetAttribute('attrname',DisplayName);
     if size <> 0 then AFieldNode.SetAttribute('width',IntToStr(Size));
+<<<<<<< HEAD
 <<<<<<< HEAD
     AStringFT:=XMLFieldtypenames[DataType];
     p := pos(':',AStringFT);
@@ -326,6 +386,8 @@ begin
     else
       AFieldNode.SetAttribute('fieldtype',AStringFT);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     AFieldNode.SetAttribute('fieldtype',XMLFieldtypenames[DataType]);
     case DataType of
       ftAutoInc : begin
@@ -342,7 +404,10 @@ begin
       ftParadoxOle,
         ftDBaseOle : AFieldNode.SetAttribute('subtype','Ole');
     end; {case}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     if faReadonly in Attributes then AFieldNode.SetAttribute('readonly','true');
 
     FieldsNode.AppendChild(AFieldNode);
@@ -351,11 +416,14 @@ begin
   MetaDataNode.AppendChild(FieldsNode);
   FParamsNode := XMLDocument.CreateElement('PARAMS');
 <<<<<<< HEAD
+<<<<<<< HEAD
   if AnAutoIncValue>-1 then
     (FParamsNode as TDomElement).SetAttribute('AUTOINCVALUE',IntToStr(AnAutoIncValue));
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   MetaDataNode.AppendChild(FParamsNode);
   DataPacketNode.AppendChild(MetaDataNode);
   FRowDataNode := XMLDocument.CreateElement('ROWDATA');
@@ -468,6 +536,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TXMLDatapacketReader.RestoreRecord;
 var FieldNr      : integer;
     AFieldNode   : TDomNode;
@@ -534,6 +603,8 @@ var FieldNr : Integer;
     AFieldDef: TFieldDef;
     AField: TField;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TXMLDatapacketReader.RestoreRecord(ADataset : TBufDataset);
 var FieldNr    : integer;
     AFieldNode : TDomNode;
@@ -550,11 +621,15 @@ end;
 
 procedure TXMLDatapacketReader.StoreRecord(ADataset : TBufDataset; ARowState : TRowState; AUpdOrder : integer = 0);
 var FieldNr : Integer;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     ARecordNode : TDOMElement;
 begin
   inc(FEntryNr);
   ARecordNode := XMLDocument.CreateElement('ROW');
+<<<<<<< HEAD
 <<<<<<< HEAD
   with DataSet do for FieldNr := 0 to FieldDefs.Count-1 do
     begin
@@ -570,6 +645,11 @@ begin
     begin
     ARecordNode.SetAttribute(ADataset.fields[FieldNr].FieldName,ADataset.fields[FieldNr].AsString);
 >>>>>>> graemeg/fixes_2_2
+=======
+  for FieldNr := 0 to ADataset.Fields.Count-1 do
+    begin
+    ARecordNode.SetAttribute(ADataset.fields[FieldNr].FieldName,ADataset.fields[FieldNr].AsString);
+>>>>>>> origin/fixes_2_2
     end;
   if ARowState<>[] then
     begin

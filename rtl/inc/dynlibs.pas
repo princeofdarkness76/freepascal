@@ -44,6 +44,7 @@ Function GetLoadErrorStr: string; inline;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function FreeLibrary(Lib : TLibHandle) : Boolean; inline;
 Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : {$ifdef cpui8086}FarPointer{$else}Pointer{$endif}; inline;
 =======
@@ -57,6 +58,8 @@ Function SafeLoadLibrary(const Name : AnsiString) : TLibHandle;
 Function LoadLibrary(const Name : AnsiString) : TLibHandle;
 Function GetProcedureAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function SafeLoadLibrary(Name : AnsiString) : TLibHandle;
 Function LoadLibrary(Name : AnsiString) : TLibHandle;
 Function GetProcedureAddress(Lib : TlibHandle; ProcName : AnsiString) : Pointer;
@@ -82,7 +85,10 @@ Type
   HModule = TLibHandle; 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 // these are for easier crossplatform construction of dll names in dynloading libs.
 Const
  {$ifdef Windows}
@@ -99,7 +105,10 @@ Const
    {$endif}
  {$endif}      
       
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Implementation
 
 
@@ -193,6 +202,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 initialization
   InitDynLibs;
 finalization
@@ -200,6 +210,8 @@ finalization
   DoneDynLibs;
 {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function SafeLoadLibrary(Name : AnsiString) : TLibHandle;
 
 {$ifdef i386}
@@ -218,5 +230,8 @@ Begin
 {$endif}
 End;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.

@@ -1,13 +1,18 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for OpenGL for FPC
 >>>>>>> graemeg/fixes_2_2
+=======
+#   Makefile.fpc for OpenGL for FPC
+>>>>>>> origin/fixes_2_2
 #
 
 [package]
 name=opengl
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -28,6 +33,9 @@ version=2.5.1
 =======
 version=2.2.5
 >>>>>>> graemeg/fixes_2_2
+=======
+version=2.2.5
+>>>>>>> origin/fixes_2_2
 
 [require]
 packages_linux=x11
@@ -36,23 +44,30 @@ packages_netbsd=x11
 packages_openbsd=x11
 packages_darwin=x11
 <<<<<<< HEAD
+<<<<<<< HEAD
 packages_i386_iphonesim=x11
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [target]
 units=gl glu glut
 units_win32=glext
 <<<<<<< HEAD
+<<<<<<< HEAD
 units_haiku=glext
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 units_linux=glx glext
 units_freebsd=glx glext
 units_netbsd=glx glext
 units_openbsd=glx glext
 units_darwin=glx glext
 exampledirs=examples
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
@@ -65,10 +80,13 @@ implicitunits=freeglut
 implicitunits=freeglut
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [install]
 fpcpackage=y
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [default]
 fpcdir=../..
@@ -159,6 +177,8 @@ else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
 =======
+=======
+>>>>>>> origin/fixes_2_2
 [compiler]
 includedir=src
 sourcedir=src tests examples
@@ -168,4 +188,7 @@ fpcdir=../..
 
 [rules]
 .NOTPARALLEL:
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

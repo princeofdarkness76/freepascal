@@ -1390,6 +1390,7 @@ implementation
           if is_java_class_or_interface(pd.struct) then
             begin
 <<<<<<< HEAD
+<<<<<<< HEAD
               { mark all non-virtual instance methods as "virtual; final;",
                 because
                  a) that's the only way to guarantee "non-virtual" behaviour
@@ -1428,6 +1429,8 @@ implementation
         begin
           if is_objc_class_or_protocol(pd.struct) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
               { use single_type instead of id_type for specialize support }
               single_type(hdef,false);
               if (not assigned(hdef)) or
@@ -2265,6 +2268,7 @@ implementation
                         else if object_member_blocktype=bt_const then
                           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                             typedconstswritable:=false;
                             if final_fields then
                               begin
@@ -2372,6 +2376,13 @@ implementation
                                 if is_interface(aktobjectdef) then
                                   Message(parser_e_no_vars_in_interfaces);
 
+=======
+                            if current_blocktype=bt_general then
+                              begin
+                                if is_interface(aktobjectdef) then
+                                  Message(parser_e_no_vars_in_interfaces);
+
+>>>>>>> origin/fixes_2_2
                                 if (sp_published in current_object_option) and
                                   not(oo_can_have_published in aktobjectdef.objectoptions) then
                                   Message(parser_e_cant_have_published);

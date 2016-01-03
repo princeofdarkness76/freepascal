@@ -115,6 +115,7 @@ _start:
 _haltproc:
         /* r0 contains exitcode */
 <<<<<<< HEAD
+<<<<<<< HEAD
 .ifdef __thumb__
         ldr r0,=operatingsystem_result
         ldr r0,[r0]
@@ -123,6 +124,8 @@ _haltproc:
 .else
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	swi 0x900001
 .endif
 	b _haltproc

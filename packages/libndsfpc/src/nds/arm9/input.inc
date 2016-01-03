@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
   
 procedure scanKeys(); cdecl; external;
@@ -6,6 +7,8 @@ procedure scanKeys(); cdecl; external;
 function keysCurrent(): cuint32; cdecl; external;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: input.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -69,7 +72,10 @@ const
   
 procedure scanKeys(); cdecl; external;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function keysHeld(): cuint32; cdecl; external;
 
 function keysDown(): cuint32; cdecl; external;
@@ -82,8 +88,11 @@ function keysUp(): cuint32; cdecl; external;
 
 function touchReadXY(): touchPosition; cdecl; external;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure touchRead(var data: touchPosition); cdecl; external;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}

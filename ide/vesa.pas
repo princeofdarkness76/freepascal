@@ -741,6 +741,7 @@ BEGIN
 
   SetVideoDriver (Driver);
 <<<<<<< HEAD
+<<<<<<< HEAD
   SetVESAVideoDriver:=true;
 END;
 
@@ -765,4 +766,6 @@ begin
    DisableVESA := true;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 END.

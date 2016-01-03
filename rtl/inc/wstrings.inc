@@ -15,6 +15,7 @@
  **********************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
   This file contains the implementation of the WideString type,
   and all things that are needed for it.
@@ -1879,3 +1880,6 @@ procedure initwidestringmanager;
 =======
 {$i wustrings.inc}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$i wustrings.inc}
+>>>>>>> origin/fixes_2_2

@@ -175,11 +175,15 @@ var
   IsIdentStart: array[char] of boolean;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
   WhitespaceTokensToIgnore = [tkWhitespace, tkComment, tkLineEnding, tkTab];
 =======
   TDeclType = (declNone, declConst, declResourcestring, declType, declVar, declThreadvar, declProperty);
 >>>>>>> graemeg/fixes_2_2
+=======
+  TDeclType = (declNone, declConst, declResourcestring, declType, declVar, declThreadvar, declProperty);
+>>>>>>> origin/fixes_2_2
 
 type
   TDeclType = (declNone, declConst, declResourcestring, declType, declVar, declThreadvar, declProperty);
@@ -300,6 +304,7 @@ type
     function CreateElement(AClass: TPTreeElement; const AName: String;
       AParent: TPasElement; AVisibility: TPasMemberVisibility): TPasElement;overload;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Function IsCurTokenHint(out AHint : TPasMemberHint) : Boolean; overload;
     Function IsCurTokenHint: Boolean; overload;
     Function CheckHint(Element : TPasElement; ExpectSemiColon : Boolean) : TPasMemberHints;
@@ -309,6 +314,9 @@ type
 =======
     Function CheckHint(Element : TPasElement; ExpectSemiColon : Boolean) : TPasMemberHints;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Function CheckHint(Element : TPasElement; ExpectSemiColon : Boolean) : TPasMemberHints;
+>>>>>>> origin/fixes_2_2
   public
     Options : set of TPOptions;
     CurModule: TPasModule;
@@ -331,6 +339,7 @@ type
     procedure CheckToken(tk: TToken);
     procedure ExpectToken(tk: TToken);
     function ExpectIdentifier: String;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     Function CurTokenIsIdentifier(Const S : String) : Boolean;
@@ -388,6 +397,8 @@ type
     function ParseType(Parent: TPasElement): TPasType;overload;
     function ParseComplexType(Parent : TPasElement = Nil): TPasType;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
     function ParseType(Parent: TPasElement; Prefix : String): TPasType;overload;
     function ParseType(Parent: TPasElement): TPasType;overload;
@@ -1081,6 +1092,38 @@ end;
     ExpectToken(tkSemiColon);  
 end;
 
+Function TPasParser.CheckHint(Element : TPasElement; ExpectSemiColon : Boolean) : TPasMemberHints;
+
+Var
+  Found : Boolean;
+
+begin
+  Result:=[];
+  Repeat
+    NextToken;
+    Found:=CompareText(CurTokenString,'deprecated')=0;
+    If Found then
+      Include(Result,hDeprecated)
+    else
+     begin
+     Found:=CompareText(CurTokenString,'library')=0;
+     if Found then
+       Include(Result,hLibrary)
+     else 
+       begin
+       Found:=CompareText(CurTokenString,'platform')=0;
+       If Found then
+         Include(Result,hPlatform);
+       end;
+     end;
+  Until Not Found;
+  UnGetToken;
+  If Assigned(Element) then
+    Element.Hints:=Result;
+  if ExpectSemiColon then
+    ExpectToken(tkSemiColon);  
+end;
+
 function TPasParser.ParseType(Parent: TPasElement; Prefix : String): TPasType;
 >>>>>>> graemeg/fixes_2_2
 
@@ -1153,6 +1196,7 @@ var
   Ref: TPasElement;
   HadPackedModifier : Boolean;           // 12/04/04 - Dave - Added
   IsBitPacked : Boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 >>>>>>> origin/cpstrnew
@@ -1246,6 +1290,10 @@ begin
 =======
   
 begin
+=======
+  
+begin
+>>>>>>> origin/fixes_2_2
   Result := nil;         // !!!: Remove in the future
   HadPackedModifier := False;     { Assume not present }
   NextToken;
@@ -1514,8 +1562,11 @@ begin
         If HadPackedModifier then
             TPasRecordType(Result).IsBitPacked:=IsBitPacked;
 <<<<<<< HEAD
+<<<<<<< HEAD
     try
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	try
 >>>>>>> graemeg/fixes_2_2
           ParseRecordDecl(TPasRecordType(Result), False);
@@ -2697,9 +2748,13 @@ var
   VarEl: TPasVariable;
   PropEl : TPasProperty;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
 begin
   CurBlock := declNone;
   while True do
@@ -2750,10 +2805,14 @@ begin
         CurBlock := declThreadVar;
       tkProperty:
 <<<<<<< HEAD
+<<<<<<< HEAD
         CurBlock := declProperty;
 =======
         CurBlock := declProperty;  
 >>>>>>> graemeg/fixes_2_2
+=======
+        CurBlock := declProperty;  
+>>>>>>> origin/fixes_2_2
       tkProcedure:
         begin
           AddProcOrFunction(Declarations,
@@ -2766,6 +2825,7 @@ begin
                         ParseProcedureOrFunctionDecl(Declarations, ptFunction));
           CurBlock := declNone;
         end;
+<<<<<<< HEAD
 <<<<<<< HEAD
       tkConstructor:
         begin
@@ -2781,6 +2841,8 @@ begin
         end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       tkOperator:
         begin
           AddProcOrFunction(Declarations,
@@ -2878,15 +2940,20 @@ begin
             declProperty:
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
               PropEl:=TPasProperty(CreateElement(TPasProperty, CurTokenString, Declarations));
 =======
               PropEl:=TPasProperty(CreateElement(TPasProperty, CurTokenString, Section));
 >>>>>>> graemeg/fixes_2_2
+=======
+              PropEl:=TPasProperty(CreateElement(TPasProperty, CurTokenString, Section));
+>>>>>>> origin/fixes_2_2
               Try
                 ParseProperty(PropEl)
               except
                 Propel.Free;
                 Raise;
+<<<<<<< HEAD
 <<<<<<< HEAD
               end;
               Declarations.Declarations.Add(PropEl);
@@ -2896,6 +2963,11 @@ begin
               Section.Declarations.Add(PropEl);
               Section.properties.add(PropEl);
 >>>>>>> graemeg/fixes_2_2
+=======
+              end;    
+              Section.Declarations.Add(PropEl);
+              Section.properties.add(PropEl);
+>>>>>>> origin/fixes_2_2
               end;
           else
             ParseExc(SParserSyntaxError);
@@ -3047,6 +3119,7 @@ end;
 
 Function TPasParser.TokenToExprOp (AToken : TToken) : TExprOpCode;
 
+<<<<<<< HEAD
 begin
 <<<<<<< HEAD
   Case AToken of
@@ -3078,6 +3151,14 @@ begin
     tkCaret                 : Result:=eopDeref;
   else
     ParseExc(format('Not an operand: (%d : %s)',[AToken,TokenInfos[AToken]]));
+=======
+    ExpectToken(tkEqual);
+    Result.Value := ParseExpression;
+    CheckHint(Result,True);
+  except
+    Result.Free;
+    raise;
+>>>>>>> origin/fixes_2_2
   end;
 end;
  
@@ -3089,6 +3170,7 @@ var
   b       : TBinaryExpr;
   optk    : TToken;
 begin
+<<<<<<< HEAD
   Result:=nil;
   case CurToken of
     tkString:           x:=TPrimitiveExpr.Create(AParent,pekString, CurTokenString);
@@ -3143,6 +3225,16 @@ begin
     end;
   else
     ParseExc(SParserExpectedIdentifier);
+=======
+  Result := TPasResString(CreateElement(TPasResString, CurTokenString, Parent));
+  try
+    ExpectToken(tkEqual);
+    Result.Value := ParseExpression;
+    CheckHint(Result,True);
+  except
+    Result.Free;
+    raise;
+>>>>>>> origin/fixes_2_2
   end;
 
   if x.Kind<>pekSet then NextToken;
@@ -3330,7 +3422,10 @@ begin
       TPasRangeType(Result).RangeStart := ParseExpression;
       ExpectToken(tkDotDot);
       TPasRangeType(Result).RangeEnd := ParseExpression;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       CheckHint(Result,True);
     except
       Result.Free;
@@ -3344,8 +3439,11 @@ var
   HadPackedModifier : Boolean;           // 12/04/04 - Dave - Added
   IsBitPacked : Boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
   
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 >>>>>>> graemeg/fixes_2_2
 begin
@@ -3370,10 +3468,14 @@ begin
         try
           ParseRecordDecl(TPasRecordType(Result), False);
 <<<<<<< HEAD
+<<<<<<< HEAD
       CheckHint(Result,True);
 =======
 	  CheckHint(Result,True);
 >>>>>>> graemeg/fixes_2_2
+=======
+	  CheckHint(Result,True);
+>>>>>>> origin/fixes_2_2
           TPasRecordType(Result).IsPacked := HadPackedModifier;
           If HadPackedModifier then
             TPasRecordType(Result).IsBitPacked:=IsBitPacked;
@@ -3533,10 +3635,13 @@ begin
 >>>>>>> origin/cpstrnew
           end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         end else begin
           x:=ParseExpIdent(AParent);
 =======
+=======
+>>>>>>> origin/fixes_2_2
           CheckHint(Result,True);
         except
           Result.Free;
@@ -3642,11 +3747,15 @@ var
   VarEl: TPasVariable;
   H : TPasMemberHints;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 >>>>>>> origin/cpstrnew
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
 begin
   Module := nil;
   Module := TPasModule(CreateElement(TPasProgram, ExpectIdentifier,
@@ -3721,6 +3830,9 @@ begin
     H:=CheckHint(Nil,False);
     NextToken;
 
+    H:=CheckHint(Nil,False);
+    NextToken;
+
     for i := 0 to VarNames.Count - 1 do
     begin
       VarEl := TPasVariable(CreateElement(TPasVariable, VarNames[i], Parent,
@@ -3757,9 +3869,13 @@ begin
   M: string;
   H : TPasMemberHints;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   LastVar : String;
 >>>>>>> graemeg/fixes_2_2
+=======
+  LastVar : String;
+>>>>>>> origin/fixes_2_2
 begin
   while True do
   begin
@@ -11466,6 +11582,21 @@ begin
       else if (tok='LIBRARY') then  
         begin
 {       El['calling-conv'] := 'deprecated';}
+<<<<<<< HEAD
+=======
+        element.hints:=element.hints+[hDeprecated];
+        ExpectToken(tkSemicolon);
+        end
+      else if (tok='PLATFORM') then  
+        begin
+{       El['calling-conv'] := 'deprecated';}
+        element.hints:=element.hints+[hPlatform];
+        ExpectToken(tkSemicolon);
+        end
+      else if (tok='LIBRARY') then  
+        begin
+{       El['calling-conv'] := 'deprecated';}
+>>>>>>> origin/fixes_2_2
         element.hints:=element.hints+[hLibrary];
         ExpectToken(tkSemicolon);
         end
@@ -11602,7 +11733,10 @@ procedure TPasParser.ParseProperty(Element:TPasElement);
       UngetToken;
     //MaybeReadFullyQualifiedIdentifier(Result);  
     //writeln(Result);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 end;
 
@@ -12659,10 +12793,13 @@ begin
     else
       TPasClassType(Result).isForward:=CurToken=tkSemicolon;
 <<<<<<< HEAD
+<<<<<<< HEAD
     if CurToken = tkSemicolon then
        TPasClassType(Result).IsShortDefinition:=true;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     if CurToken <> tkSemicolon then
     begin
@@ -12672,10 +12809,14 @@ begin
         TPasClassType(Result).InterfaceGUID := CurTokenString;
         ExpectToken(tkSquaredBraceClose);
 <<<<<<< HEAD
+<<<<<<< HEAD
       end;
 =======
       end;    
 >>>>>>> graemeg/fixes_2_2
+=======
+      end;    
+>>>>>>> origin/fixes_2_2
       CurVisibility := visDefault;
       while CurToken <> tkEnd do
       begin
@@ -12819,10 +12960,13 @@ var
           if s[3] = 'i' then // -Fi include path
             FileResolver.AddIncludePath(Copy(s, 4, Length(s)));
 <<<<<<< HEAD
+<<<<<<< HEAD
         'I': // -I include path
           FileResolver.AddIncludePath(Copy(s, 3, Length(s)));
         'S': // -S mode
 =======
+=======
+>>>>>>> origin/fixes_2_2
         'I':
           FileResolver.AddIncludePath(Copy(s, 3, Length(s)));    
         'S':

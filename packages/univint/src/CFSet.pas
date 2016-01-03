@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -35,6 +36,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	Copyright (c) 1998-2005, Apple, Inc. All rights reserved.
 }
 {   Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
@@ -44,7 +47,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -54,12 +60,17 @@
 unit CFSet;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -73,14 +84,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -89,11 +105,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -131,6 +150,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -138,6 +159,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -371,6 +393,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -379,7 +403,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -406,9 +433,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -420,10 +451,13 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 {!
@@ -552,6 +586,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFSetRef = ^__CFSet; { an opaque type }
 	__CFSet = record end;
 =======
@@ -569,6 +604,9 @@ type
 =======
 	CFSetRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	CFSetRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 	CFSetRefPtr = ^CFSetRef;
 
 {!
@@ -662,9 +700,12 @@ function CFSetCreateCopy( allocator: CFAllocatorRef; theSet: CFSetRef ): CFSetRe
 		CFAllocator is used. If this reference is not a valid
 		CFAllocator, the behavior is undefined.
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	@param capacity The maximum number of values that can be contained
 		by the CFSet. The set starts empty, and can grow to this
 		number of values (and it can have less). If this parameter
@@ -672,6 +713,7 @@ function CFSetCreateCopy( allocator: CFAllocatorRef; theSet: CFSetRef ): CFSetRe
 		only limited by address space and available memory
 		constraints). If this parameter is negative, the behavior is
 		undefined.
+<<<<<<< HEAD
 <<<<<<< HEAD
 #else
   @param capacity A hint about the number of values that will be held
@@ -683,6 +725,8 @@ function CFSetCreateCopy( allocator: CFAllocatorRef; theSet: CFSetRef ): CFSetRe
 #endif
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	@param callBacks A C pointer to a CFSetCallBacks structure
 		initialized with the callbacks for the set to use on each
 		value in the set. A copy of the contents of the
@@ -723,6 +767,7 @@ function CFSetCreateMutable( allocator: CFAllocatorRef; capacity: CFIndex; {cons
 		CFAllocator is used. If this reference is not a valid
 		CFAllocator, the behavior is undefined.
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 	@param capacity The maximum number of values that can be contained
 		by the CFSet. The set starts with the same values as the
@@ -744,6 +789,8 @@ function CFSetCreateMutable( allocator: CFAllocatorRef; capacity: CFIndex; {cons
     behavior is undefined.
 #endif
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@param capacity The maximum number of values that can be contained
 		by the CFSet. The set starts with the same values as the
                 set to be copied, and can grow to this number of values.
@@ -752,7 +799,10 @@ function CFSetCreateMutable( allocator: CFAllocatorRef; capacity: CFIndex; {cons
                 available memory constraints). This parameter must be 
                 greater than or equal to the count of the set which is to
                 be copied, or the behavior is undefined.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	@param theSet The set which is to be copied. The values from the
 		set are copied as pointers into the new set (that is,
 		the values themselves are copied, not that which the values
@@ -779,10 +829,14 @@ function CFSetGetCount( theSet: CFSetRef ): CFIndex; external name '_CFSetGetCou
 	Counts the number of times the given value occurs in the set. Since 
         sets by definition contain only one instance of a value, this function
 <<<<<<< HEAD
+<<<<<<< HEAD
         is synonymous to CFSetContainsValue.
 =======
         is synomous to SFSetContainsValue.
 >>>>>>> graemeg/fixes_2_2
+=======
+        is synomous to SFSetContainsValue.
+>>>>>>> origin/fixes_2_2
 	@param theSet The set to be searched. If this parameter is not a
 		valid CFSet, the behavior is undefined.
 	@param value The value for which to find matches in the set. The
@@ -826,10 +880,14 @@ function CFSetGetValue( theSet: CFSetRef; value: {const} UnivPtr ): UnivPtr; ext
 
 {!
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@function CFSetGetValueIfPresent
 =======
 	@function CFSetGetValue
 >>>>>>> graemeg/fixes_2_2
+=======
+	@function CFSetGetValue
+>>>>>>> origin/fixes_2_2
 	Retrieves a value in the set which hashes the same as the specified value,
         if present.
 	@param theSet The set to be queried. If this parameter is not a
@@ -889,6 +947,7 @@ procedure CFSetApplyFunction( theSet: CFSetRef; applier: CFSetApplierFunction; c
 	@param theSet The set to which the value is to be added. If this
 		parameter is not a valid mutable CFSet, the behavior is
 <<<<<<< HEAD
+<<<<<<< HEAD
 		undefined.
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 		If the set is a fixed-capacity set and it
@@ -898,6 +957,10 @@ procedure CFSetApplyFunction( theSet: CFSetRef; applier: CFSetApplierFunction; c
 		undefined. If the set is a fixed-capacity set and it
 		is full before this operation, the behavior is undefined.
 >>>>>>> graemeg/fixes_2_2
+=======
+		undefined. If the set is a fixed-capacity set and it
+		is full before this operation, the behavior is undefined.
+>>>>>>> origin/fixes_2_2
 	@param value The value to add to the set. The value is retained by
 		the set using the retain callback provided when the set
 		was created. If the value is not of the sort expected by the
@@ -967,6 +1030,7 @@ procedure CFSetRemoveValue( theSet: CFMutableSetRef; value: {const} UnivPtr ); e
 procedure CFSetRemoveAllValues( theSet: CFMutableSetRef ); external name '_CFSetRemoveAllValues';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
@@ -975,3 +1039,7 @@ end.
 
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+
+end.
+>>>>>>> origin/fixes_2_2

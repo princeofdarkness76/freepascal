@@ -911,14 +911,20 @@ implementation
     procedure dir_ifopt;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         flushpendingswitchesstate;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         if localswitcheschanged then
           begin
             current_settings.localswitches:=nextlocalswitches;
             localswitcheschanged:=false;
           end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         current_scanner.ifpreprocstack(pp_ifopt,@opt_check,scan_c_ifopt_found);
       end;
 
@@ -1979,6 +1985,75 @@ type
                         end
                       else
                         Message1(sym_e_id_not_found,storedpattern);
+
+                    if current_scanner.preproc_token =_RKLAMMER then
+                      preproc_consume(_RKLAMMER)
+                    else
+                      Message(scan_e_preproc_syntax_error);
+                  end
+                else
+                if current_scanner.preproc_pattern='HIGH' then
+                  begin
+                    factorType:= [ctetInteger];
+                    preproc_consume(_ID);
+                    current_scanner.skipspace;
+                    if current_scanner.preproc_token =_LKLAMMER then
+                      begin
+                        preproc_consume(_LKLAMMER);
+                        current_scanner.skipspace;
+                      end
+                    else
+                      Message(scan_e_preproc_syntax_error);
+
+                    if eval then
+                      if searchsym(current_scanner.preproc_pattern,srsym,srsymtable) then
+                        begin
+                          hdef:=nil;
+                          hs:='';
+                          l:=0;
+                          case srsym.typ of
+                            staticvarsym,
+                            localvarsym,
+                            paravarsym :
+                              hdef:=tabstractvarsym(srsym).vardef;
+                            typesym:
+                              hdef:=ttypesym(srsym).typedef;
+                            else
+                              Message(scan_e_error_in_preproc_expr);
+                          end;
+                          if hdef<>nil then
+                            begin
+                              if hdef.typ=setdef then
+                                hdef:=tsetdef(hdef).elementdef;
+                              case hdef.typ of
+                                orddef:
+                                  str(torddef(hdef).high,hs);
+                                enumdef:
+                                  l:=tenumdef(hdef).maxval;
+                                arraydef:
+                                  if is_open_array(hdef) or is_array_of_const(hdef) or is_dynamic_array(hdef) then
+                                    Message(type_e_mismatch)
+                                  else
+                                    l:=tarraydef(hdef).highrange;
+                                stringdef:
+                                  if is_open_string(hdef) or is_ansistring(hdef) or is_widestring(hdef) then
+                                    Message(type_e_mismatch)
+                                  else
+                                    l:=tstringdef(hdef).len;
+                                else
+                                  Message(type_e_mismatch);
+                              end;
+                            end;
+                          if hs='' then
+                            str(l,read_factor)
+                          else
+                            read_factor:=hs;
+                        end
+                      else
+                        Message1(sym_e_id_not_found,current_scanner.preproc_pattern);
+
+                    preproc_consume(_ID);
+                    current_scanner.skipspace;
 
                     if current_scanner.preproc_token =_RKLAMMER then
                       preproc_consume(_RKLAMMER)
@@ -3446,6 +3521,7 @@ type
     procedure tscannerfile.recordtoken;
       var
 <<<<<<< HEAD
+<<<<<<< HEAD
         t : ttoken;
         s : tspecialgenerictoken;
 <<<<<<< HEAD
@@ -3471,6 +3547,9 @@ type
 =======
         a : array[0..1] of byte;
 >>>>>>> graemeg/fixes_2_2
+=======
+        a : array[0..1] of byte;
+>>>>>>> origin/fixes_2_2
       begin
         if not assigned(recordtokenbuf) then
           internalerror(200511176);
@@ -3482,6 +3561,7 @@ type
              sizeof(current_settings)-sizeof(pointer))<>0 then
           begin
             { use a special token to record it }
+<<<<<<< HEAD
 <<<<<<< HEAD
             s:=ST_LOADSETTINGS;
 <<<<<<< HEAD
@@ -3506,6 +3586,11 @@ type
             a[1]:=byte(ST_LOADSETTINGS);
             recordtokenbuf.write(a,2);
 >>>>>>> graemeg/fixes_2_2
+=======
+            a[0]:=byte(_GENERICSPECIALTOKEN);
+            a[1]:=byte(ST_LOADSETTINGS);
+            recordtokenbuf.write(a,2);
+>>>>>>> origin/fixes_2_2
             recordtokenbuf.write(current_settings,sizeof(current_settings));
 >>>>>>> graemeg/cpstrnew
             last_settings:=current_settings;
@@ -3546,6 +3631,7 @@ type
         if current_tokenpos.line<>last_filepos.line then
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
             s:=ST_LINE;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3568,12 +3654,18 @@ type
             a[1]:=byte(ST_LINE);
             recordtokenbuf.write(a,2);
 >>>>>>> graemeg/fixes_2_2
+=======
+            a[0]:=byte(_GENERICSPECIALTOKEN);
+            a[1]:=byte(ST_LINE);
+            recordtokenbuf.write(a,2);
+>>>>>>> origin/fixes_2_2
             recordtokenbuf.write(current_tokenpos.line,sizeof(current_tokenpos.line));
 >>>>>>> graemeg/cpstrnew
             last_filepos.line:=current_tokenpos.line;
           end;
         if current_tokenpos.column<>last_filepos.column then
           begin
+<<<<<<< HEAD
 <<<<<<< HEAD
             s:=ST_COLUMN;
 <<<<<<< HEAD
@@ -3606,12 +3698,18 @@ type
             a[1]:=byte(ST_COLUMN);
             recordtokenbuf.write(a,2);
 >>>>>>> graemeg/fixes_2_2
+=======
+            a[0]:=byte(_GENERICSPECIALTOKEN);
+            a[1]:=byte(ST_COLUMN);
+            recordtokenbuf.write(a,2);
+>>>>>>> origin/fixes_2_2
             recordtokenbuf.write(current_tokenpos.column,sizeof(current_tokenpos.column));
 >>>>>>> graemeg/cpstrnew
             last_filepos.column:=current_tokenpos.column;
           end;
         if current_tokenpos.fileindex<>last_filepos.fileindex then
           begin
+<<<<<<< HEAD
 <<<<<<< HEAD
             s:=ST_FILEINDEX;
 <<<<<<< HEAD
@@ -3641,6 +3739,11 @@ type
             a[1]:=byte(ST_FILEINDEX);
             recordtokenbuf.write(a,2);
 >>>>>>> graemeg/fixes_2_2
+=======
+            a[0]:=byte(_GENERICSPECIALTOKEN);
+            a[1]:=byte(ST_FILEINDEX);
+            recordtokenbuf.write(a,2);
+>>>>>>> origin/fixes_2_2
             recordtokenbuf.write(current_tokenpos.fileindex,sizeof(current_tokenpos.fileindex));
             last_filepos.fileindex:=current_tokenpos.fileindex;
           end;
@@ -5771,7 +5874,10 @@ type
                     if (block_type in [bt_type,bt_const_type,bt_var_type]) or
 =======
                     if (block_type in [bt_type,bt_specialize]) or
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                        (lasttoken=_ID) or (lasttoken=_NIL) or (lasttoken=_OPERATOR) or
                        (lasttoken=_RKLAMMER) or (lasttoken=_RECKKLAMMER) or (lasttoken=_CARET) then
                      begin

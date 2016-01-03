@@ -13,10 +13,14 @@
   You should have received a copy of the GNU Library General Public License
   along with this library; if not, write to the Free Software Foundation,
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 =======
   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 >>>>>>> graemeg/fixes_2_2
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> origin/fixes_2_2
 }
 {
   See the file COPYING.FPC, included in this distribution,
@@ -30,6 +34,7 @@ interface
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils,xmlcfg;
 
 type
@@ -38,6 +43,8 @@ type
   TSectionNames = set of TSectionName;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Classes, SysUtils; 
   
 type
@@ -45,7 +52,10 @@ type
   
   TSectionNames = set of TSectionName;
   
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
    { TDirectoryChunk }
 
   TDirectoryChunk = class(TObject)
@@ -67,10 +77,14 @@ type
     constructor Create(AHeaderSize: Integer);
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
   { TPMGIDirectoryChunk }
 
   TPMGIDirectoryChunk = class(TDirectoryChunk)
@@ -109,6 +123,7 @@ type
 
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   TValidWindowFieldsEnum = (valid_Unknown1 {:=1},
                             valid_Navigation_pane_style {:= 2},
@@ -274,10 +289,13 @@ Const defvalidflags = [valid_Navigation_pane_style,valid_Window_style_flags,vali
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 implementation
 uses chmbase;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function PageBookInfoRecordSize(ARecord: PTOCEntryPageBookInfo): Integer;
 begin
@@ -289,15 +307,21 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { TDirectoryChunk }
 
 function TDirectoryChunk.CanHold(ASize: Integer): Boolean;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result := CurrentPos < $1000 - ASize - (SizeOf(Word) * (FQuickRefEntries+2));
 =======
   Result := CurrentPos < $1000-1 - ASize - (SizeOf(Word) * (FQuickRefEntries+2));
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result := CurrentPos < $1000-1 - ASize - (SizeOf(Word) * (FQuickRefEntries+2));
+>>>>>>> origin/fixes_2_2
 end;
 
 function TDirectoryChunk.FreeSpace: Integer;
@@ -320,6 +344,7 @@ begin
   Inc(CurrentPos, Size);
   Inc(FItemCount);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   // now put a quickref entry if needed
   if ItemCount mod 5 = 0 then begin
@@ -327,13 +352,18 @@ begin
     ReversePos := ($1000) - SizeOf(Word) - (SizeOf(Word)*FQuickRefEntries);
     Value := NtoLE(Word(CurrentPos - Size - FHeaderSize));
 =======
+=======
+>>>>>>> origin/fixes_2_2
   
   // now put a quickref entry if needed
   if ItemCount mod 5 = 0 then begin
     Inc(FQuickRefEntries);
     ReversePos := ($1000-1) - SizeOf(Word) - (SizeOf(Word)*FQuickRefEntries);
     Value := NtoLE(Word(CurrentPos - Size));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Move(Value, Buffer[ReversePos], SizeOf(Word));
   end;
 end;
@@ -342,17 +372,23 @@ procedure TDirectoryChunk.WriteChunkToStream(Stream: TStream);
 var
   ReversePos: Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TmpItemCount: Word;
 begin
   ReversePos := $1000 - SizeOf(Word);
   TmpItemCount := NtoLE(Word(FItemCount));
   Move(TmpItemCount, Buffer[ReversePos], SizeOf(Word));
 =======
+=======
+>>>>>>> origin/fixes_2_2
 begin
   ReversePos := $1000-1 - SizeOf(Word);
   FItemCount := NtoLE(ItemCount);
   Move(ItemCount, Buffer[ReversePos], SizeOf(Word));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   Stream.Write(Buffer[0], $1000);
   {$IFDEF DEBUG_CHM_CHUNKS}
@@ -466,12 +502,16 @@ var
 begin
   if FItemCount < 1 then begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     {$ifdef chm_debug}
     WriteLn('WHAT ARE YOU DOING!!');
     {$endif}
 =======
     WriteLn('WHAT ARE YOU DOING!!');
 >>>>>>> graemeg/fixes_2_2
+=======
+    WriteLn('WHAT ARE YOU DOING!!');
+>>>>>>> origin/fixes_2_2
     Dec(AIndex);
     Exit;
   end;
@@ -480,10 +520,14 @@ begin
   NewPos := Stream.Position;
   Inc(FChunkLevelCount);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
   if Final and (ChunkLevelCount < 2) then begin
     FParentChunk.Free;
     FParentChunk := nil;
@@ -504,15 +548,20 @@ begin
     FinishBlock;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
   FParentChunk.WriteEntry(WriteSize, @NewBuffer[0]);
   if Final then FinishBlock;
   //WriteLn(ChunkLevelCount);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function getnext(const s:string;var i: integer;len:integer):string;
 var
@@ -846,3 +895,7 @@ end.
 end.
 
 >>>>>>> graemeg/fixes_2_2
+=======
+end.
+
+>>>>>>> origin/fixes_2_2

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -54,17 +55,23 @@ type
                    PTC_X11_TRY_DGA1,
                    PTC_X11_TRY_DGA2,
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Type
   TX11FlagsEnum = (PTC_X11_FULLSCREEN,
                    PTC_X11_LEAVE_DISPLAY,
                    PTC_X11_LEAVE_WINDOW,
                    PTC_X11_TRY_DGA,
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                    PTC_X11_TRY_XF86VIDMODE,
                    PTC_X11_TRY_XRANDR,
                    PTC_X11_TRY_XSHM,
                    PTC_X11_DITHER,
                    PTC_X11_FULLSCREEN_CURSOR_VISIBLE,
+<<<<<<< HEAD
 <<<<<<< HEAD
                    PTC_X11_WINDOWED_CURSOR_INVISIBLE,
 <<<<<<< HEAD
@@ -450,6 +457,8 @@ type
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
                    PTC_X11_WINDOWED_CURSOR_INVISIBLE);
   TX11Flags = Set Of TX11FlagsEnum;
 
@@ -551,11 +560,15 @@ Type
     Procedure SetFlags(AFlags : TX11Flags);
 
     Procedure GetModes(Var AModes : TPTCModeDynArray); Virtual; Abstract;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     { X11 helper functions for your enjoyment }
 
     { return the display we are using }
+<<<<<<< HEAD
 <<<<<<< HEAD
     function GetX11Display: PDisplay;
 
@@ -596,6 +609,8 @@ Type
 >>>>>>> origin/cpstrnew
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Function GetX11Display : PDisplay;
 
     { return the screen we are using }
@@ -610,4 +625,7 @@ Type
     Property Area : TPTCArea Read GetArea;
     Property Format : TPTCFormat Read GetFormat;
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

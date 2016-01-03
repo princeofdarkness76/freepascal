@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonSound/Sound.h
  
      Contains:   Sound Manager Interfaces.
@@ -24,6 +25,8 @@
  
      Copyright:  © 1986-2008 by Apple Computer, Inc., all rights reserved
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       Sound.p
  
      Contains:   Sound Manager Interfaces.
@@ -32,11 +35,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1986-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -67,6 +74,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -78,7 +87,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -88,12 +100,17 @@
 unit Sound;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -107,14 +124,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -123,11 +145,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -165,6 +190,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -172,6 +199,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -413,6 +441,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -421,7 +451,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -448,9 +481,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -461,6 +498,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,Components,MixedMode,Dialogs;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -485,11 +523,16 @@ uses MacTypes,Components,MixedMode,Dialogs;
 
 {$ifc not TARGET_CPU_64}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {$ALIGN MAC68K}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
                         * * *  N O T E  * * *
 
@@ -535,6 +578,7 @@ uses MacTypes,Components,MixedMode,Dialogs;
    constants
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	twelfthRootTwo = 1.05946309435;
@@ -1180,6 +1224,8 @@ function NewSndCallBackUPP( userRoutine: SndCallBackProcPtr ): SndCallBackUPP; e
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 const twelfthRootTwo = 1.05946309435;
 
 
@@ -1677,11 +1723,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewSndCallBackUPP(userRoutine: SndCallBackProcPtr): SndCallBackUPP; external name '_NewSndCallBackUPP'; { old name was NewSndCallBackProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSndCallBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1691,16 +1741,22 @@ procedure DisposeSndCallBackUPP( userUPP: SndCallBackUPP ); external name '_Disp
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSndCallBackUPP(userUPP: SndCallBackUPP); external name '_DisposeSndCallBackUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSndCallBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1815,6 +1871,8 @@ type
 	ExtSoundHeaderPtr = ^ExtSoundHeader;
 type
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -1926,7 +1984,10 @@ type
 		pad:					UInt8;
 	end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	SoundHeaderUnionPtr = ^SoundHeaderUnion;
 	SoundHeaderUnion = record
 		case SInt16 of
@@ -1941,6 +2002,7 @@ type
 			);
 	end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	ConversionBlock = record
 		destination: SInt16;
@@ -2051,6 +2113,23 @@ const
 	kScheduledSoundDoCallBack	= $02;
 	kScheduledSoundExtendedHdr	= $04;
 
+=======
+	ConversionBlockPtr = ^ConversionBlock;
+	ConversionBlock = record
+		destination:			SInt16;
+		unused:					SInt16;
+		inputPtr:				CmpSoundHeaderPtr;
+		outputPtr:				CmpSoundHeaderPtr;
+	end;
+
+	{  ScheduledSoundHeader flags }
+
+const
+	kScheduledSoundDoScheduled	= $01;
+	kScheduledSoundDoCallBack	= $02;
+	kScheduledSoundExtendedHdr	= $04;
+
+>>>>>>> origin/fixes_2_2
 
 type
 	ScheduledSoundHeaderPtr = ^ScheduledSoundHeader;
@@ -2136,11 +2215,15 @@ const
 	 *    Mac OS X:         not available
 	 	}
 function NewSndDoubleBackUPP(userRoutine: SndDoubleBackProcPtr): SndDoubleBackUPP; external name '_NewSndDoubleBackUPP'; { old name was NewSndDoubleBackProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSndDoubleBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -2148,16 +2231,22 @@ function NewSndDoubleBackUPP(userRoutine: SndDoubleBackProcPtr): SndDoubleBackUP
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 procedure DisposeSndDoubleBackUPP(userUPP: SndDoubleBackUPP); external name '_DisposeSndDoubleBackUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSndDoubleBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -2520,6 +2609,8 @@ function NewSoundParamUPP( userRoutine: SoundParamProcPtr ): SoundParamUPP; exte
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -2755,11 +2846,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewSoundParamUPP(userRoutine: SoundParamProcPtr): SoundParamUPP; external name '_NewSoundParamUPP'; { old name was NewSoundParamProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewSoundConverterFillBufferDataUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2769,16 +2864,22 @@ function NewSoundConverterFillBufferDataUPP( userRoutine: SoundConverterFillBuff
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewSoundConverterFillBufferDataUPP(userRoutine: SoundConverterFillBufferDataProcPtr): SoundConverterFillBufferDataUPP; external name '_NewSoundConverterFillBufferDataUPP'; { old name was NewSoundConverterFillBufferDataProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewSIInterruptUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2788,16 +2889,22 @@ function NewSIInterruptUPP( userRoutine: SIInterruptProcPtr ): SIInterruptUPP; e
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewSIInterruptUPP(userRoutine: SIInterruptProcPtr): SIInterruptUPP; external name '_NewSIInterruptUPP'; { old name was NewSIInterruptProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewSICompletionUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2807,16 +2914,22 @@ function NewSICompletionUPP( userRoutine: SICompletionProcPtr ): SICompletionUPP
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewSICompletionUPP(userRoutine: SICompletionProcPtr): SICompletionUPP; external name '_NewSICompletionUPP'; { old name was NewSICompletionProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSoundParamUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2826,16 +2939,22 @@ procedure DisposeSoundParamUPP( userUPP: SoundParamUPP ); external name '_Dispos
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSoundParamUPP(userUPP: SoundParamUPP); external name '_DisposeSoundParamUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSoundConverterFillBufferDataUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2845,16 +2964,22 @@ procedure DisposeSoundConverterFillBufferDataUPP( userUPP: SoundConverterFillBuf
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSoundConverterFillBufferDataUPP(userUPP: SoundConverterFillBufferDataUPP); external name '_DisposeSoundConverterFillBufferDataUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSIInterruptUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2864,16 +2989,22 @@ procedure DisposeSIInterruptUPP( userUPP: SIInterruptUPP ); external name '_Disp
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSIInterruptUPP(userUPP: SIInterruptUPP); external name '_DisposeSIInterruptUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeSICompletionUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2883,16 +3014,22 @@ procedure DisposeSICompletionUPP( userUPP: SICompletionUPP ); external name '_Di
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeSICompletionUPP(userUPP: SICompletionUPP); external name '_DisposeSICompletionUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSoundParamUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2902,16 +3039,22 @@ function InvokeSoundParamUPP( var pb: SoundParamBlockPtr; userUPP: SoundParamUPP
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeSoundParamUPP(var pb: SoundParamBlockPtr; userRoutine: SoundParamUPP): boolean; external name '_InvokeSoundParamUPP'; { old name was CallSoundParamProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSoundConverterFillBufferDataUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2921,16 +3064,22 @@ function InvokeSoundConverterFillBufferDataUPP( var data: SoundComponentDataPtr;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeSoundConverterFillBufferDataUPP(var data: SoundComponentDataPtr; refCon: UnivPtr; userRoutine: SoundConverterFillBufferDataUPP): boolean; external name '_InvokeSoundConverterFillBufferDataUPP'; { old name was CallSoundConverterFillBufferDataProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSIInterruptUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2940,16 +3089,22 @@ procedure InvokeSIInterruptUPP( inParamPtr: SPBPtr; dataBuffer: Ptr; peakAmplitu
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure InvokeSIInterruptUPP(inParamPtr: SPBPtr; dataBuffer: Ptr; peakAmplitude: SInt16; sampleSize: SInt32; userRoutine: SIInterruptUPP); external name '_InvokeSIInterruptUPP'; { old name was CallSIInterruptProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeSICompletionUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2980,6 +3135,8 @@ type
  }
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -3019,30 +3176,40 @@ function NewFilePlayCompletionUPP(userRoutine: FilePlayCompletionProcPtr): FileP
  *    Mac OS X:         not available
  }
 procedure DisposeFilePlayCompletionUPP(userUPP: FilePlayCompletionUPP); external name '_DisposeFilePlayCompletionUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeFilePlayCompletionUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   available as macro/inline
  }
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 procedure InvokeFilePlayCompletionUPP(chan: SndChannelPtr; userRoutine: FilePlayCompletionUPP); external name '_InvokeFilePlayCompletionUPP'; { old name was CallFilePlayCompletionProc }
 {$endc}  {CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    prototypes
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -3140,6 +3307,20 @@ function SndPlay( chan: SndChannelPtr; sndHandle: SndListHandle; async: Boolean 
 procedure SysBeep(duration: SInt16); external name '_SysBeep';
 {
  *  SndDoCommand()
+=======
+{ Sound Manager routines }
+{
+ *  SysBeep()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure SysBeep(duration: SInt16); external name '_SysBeep';
+{
+ *  SndDoCommand()
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -3185,11 +3366,15 @@ function SndDisposeChannel(chan: SndChannelPtr; quietNow: boolean): OSErr; exter
 function SndPlay(chan: SndChannelPtr; sndHandle: SndListHandle; async: boolean): OSErr; external name '_SndPlay';
 {$ifc OLDROUTINENAMES}
 {$ifc CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SndAddModifier()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -3200,6 +3385,8 @@ function SndPlay(chan: SndChannelPtr; sndHandle: SndListHandle; async: boolean):
 {$endc} {OLDROUTINENAMES}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -3209,11 +3396,15 @@ function SndAddModifier(chan: SndChannelPtr; modifier: Ptr; id: SInt16; init: SI
 {$endc}  {OLDROUTINENAMES}
 
 {$ifc CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SndControl()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -3238,6 +3429,8 @@ function SndSoundManagerVersion: NumVersion; external name '_SndSoundManagerVers
 {$endc} {not TARGET_CPU_64}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -3256,29 +3449,15 @@ function SndControl(id: SInt16; var cmd: SndCommand): OSErr; external name '_Snd
  }
 function SndSoundManagerVersion: NumVersion; external name '_SndSoundManagerVersion';
 {$ifc CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SndStartFilePlay()
  *  
  *  Availability:
 <<<<<<< HEAD
- *    Mac OS X:         not available
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-
-
-=======
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    CarbonLib:        not available
- *    Mac OS X:         not available
- }
-function SndStartFilePlay(chan: SndChannelPtr; fRefNum: SInt16; resNum: SInt16; bufferSize: SInt32; theBuffer: UnivPtr; theSelection: AudioSelectionPtr; theCompletion: FilePlayCompletionUPP; async: boolean): OSErr; external name '_SndStartFilePlay';
->>>>>>> graemeg/fixes_2_2
-{
- *  SndPauseFilePlay()
- *  
- *  Availability:
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -3287,16 +3466,46 @@ function SndStartFilePlay(chan: SndChannelPtr; fRefNum: SInt16; resNum: SInt16; 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function SndStartFilePlay(chan: SndChannelPtr; fRefNum: SInt16; resNum: SInt16; bufferSize: SInt32; theBuffer: UnivPtr; theSelection: AudioSelectionPtr; theCompletion: FilePlayCompletionUPP; async: boolean): OSErr; external name '_SndStartFilePlay';
+<<<<<<< HEAD
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+{
+ *  SndPauseFilePlay()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+=======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function SndPauseFilePlay(chan: SndChannelPtr): OSErr; external name '_SndPauseFilePlay';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SndStopFilePlay()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -3364,6 +3573,8 @@ function SndSetSysBeepState( sysBeepState: SInt16 ): OSErr; external name '_SndS
 {$endc} {not TARGET_CPU_64}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -3408,11 +3619,15 @@ procedure SndGetSysBeepState(var sysBeepState: SInt16); external name '_SndGetSy
  }
 function SndSetSysBeepState(sysBeepState: SInt16): OSErr; external name '_SndSetSysBeepState';
 {$ifc CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SndPlayDoubleBuffer()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -3421,18 +3636,24 @@ function SndSetSysBeepState(sysBeepState: SInt16): OSErr; external name '_SndSet
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function SndPlayDoubleBuffer(chan: SndChannelPtr; theParams: SndDoubleBufferHeaderPtr): OSErr; external name '_SndPlayDoubleBuffer';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { MACE compression routines, uses _SoundDispatch }
 {
  *  MACEVersion()
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -3440,17 +3661,23 @@ function SndPlayDoubleBuffer(chan: SndChannelPtr; theParams: SndDoubleBufferHead
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function MACEVersion: NumVersion; external name '_MACEVersion';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  Comp3to1()
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -3458,34 +3685,22 @@ function MACEVersion: NumVersion; external name '_MACEVersion';
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 procedure Comp3to1(inBuffer: UnivPtr; outBuffer: UnivPtr; cnt: UInt32; inState: StateBlockPtr; outState: StateBlockPtr; numChannels: UInt32; whichChannel: UInt32); external name '_Comp3to1';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  Exp1to3()
  *  
  *  Availability:
 <<<<<<< HEAD
- *    Mac OS X:         not available
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-
-
-=======
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    CarbonLib:        not available
- *    Mac OS X:         not available
- }
-procedure Exp1to3(inBuffer: UnivPtr; outBuffer: UnivPtr; cnt: UInt32; inState: StateBlockPtr; outState: StateBlockPtr; numChannels: UInt32; whichChannel: UInt32); external name '_Exp1to3';
->>>>>>> graemeg/fixes_2_2
-{
- *  Comp6to1()
- *  
- *  Availability:
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -3494,16 +3709,46 @@ procedure Exp1to3(inBuffer: UnivPtr; outBuffer: UnivPtr; cnt: UInt32; inState: S
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure Exp1to3(inBuffer: UnivPtr; outBuffer: UnivPtr; cnt: UInt32; inState: StateBlockPtr; outState: StateBlockPtr; numChannels: UInt32; whichChannel: UInt32); external name '_Exp1to3';
+<<<<<<< HEAD
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+{
+ *  Comp6to1()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+=======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 procedure Comp6to1(inBuffer: UnivPtr; outBuffer: UnivPtr; cnt: UInt32; inState: StateBlockPtr; outState: StateBlockPtr; numChannels: UInt32; whichChannel: UInt32); external name '_Comp6to1';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  Exp1to6()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -3576,6 +3821,8 @@ function GetSoundHeaderOffset( sndHandle: SndListHandle; var offset: SIGNEDLONG 
 {$endc} {not TARGET_CPU_64}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -3629,11 +3876,15 @@ function SetDefaultOutputVolume(level: SInt32): OSErr; external name '_SetDefaul
  *    Mac OS X:         in version 10.0 and later
  }
 function GetSoundHeaderOffset(sndHandle: SndListHandle; var offset: SInt32): OSErr; external name '_GetSoundHeaderOffset';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  UnsignedFixedMulDiv()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3963,6 +4214,68 @@ function CloseMixerSoundComponent(ci: ComponentInstance): OSErr; external name '
  *    Mac OS X:         in version 10.0 and later
  }
 function SndGetInfo(chan: SndChannelPtr; selector: OSType; infoPtr: UnivPtr): OSErr; external name '_SndGetInfo';
+=======
+ *    Non-Carbon CFM:   in SoundLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+ }
+function UnsignedFixedMulDiv(value: UnsignedFixed; multiplier: UnsignedFixed; divisor: UnsignedFixed): UnsignedFixed; external name '_UnsignedFixedMulDiv';
+{
+ *  GetCompressionInfo()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in SoundLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function GetCompressionInfo(compressionID: SInt16; format: OSType; numChannels: SInt16; sampleSize: SInt16; cp: CompressionInfoPtr): OSErr; external name '_GetCompressionInfo';
+{
+ *  SetSoundPreference()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in SoundLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function SetSoundPreference(theType: OSType; var name: Str255; settings: Handle): OSErr; external name '_SetSoundPreference';
+{
+ *  GetSoundPreference()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in SoundLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function GetSoundPreference(theType: OSType; var name: Str255; settings: Handle): OSErr; external name '_GetSoundPreference';
+{
+ *  OpenMixerSoundComponent()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in SoundLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function OpenMixerSoundComponent(outputDescription: SoundComponentDataPtr; outputFlags: SInt32; var mixerComponent: ComponentInstance): OSErr; external name '_OpenMixerSoundComponent';
+{
+ *  CloseMixerSoundComponent()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in SoundLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function CloseMixerSoundComponent(ci: ComponentInstance): OSErr; external name '_CloseMixerSoundComponent';
+{ Sound Manager 3.1 and later calls, uses _SoundDispatch }
+{
+ *  SndGetInfo()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in SoundLib 3.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function SndGetInfo(chan: SndChannelPtr; selector: OSType; infoPtr: UnivPtr): OSErr; external name '_SndGetInfo';
+>>>>>>> origin/fixes_2_2
 {
  *  SndSetInfo()
  *  
@@ -4101,13 +4414,17 @@ function SoundManagerGetInfo(selector: OSType; infoPtr: UnivPtr): OSErr; externa
  *    Mac OS X:         in version 10.0 and later
  }
 function SoundManagerSetInfo(selector: OSType; infoPtr: UnivPtr): OSErr; external name '_SoundManagerSetInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
   Sound Component Functions
    basic sound component functions
 }
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  SoundComponentInitOutputDevice()   *** DEPRECATED ***
  *  
@@ -4287,6 +4604,8 @@ const
 	kSoundComponentPlaySourceBufferSelect = $0108;
 {Audio Components}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  SoundComponentInitOutputDevice()
  *  
  *  Availability:
@@ -4407,38 +4726,28 @@ function SoundComponentPauseSource(ti: ComponentInstance; count: SInt16; var sou
  }
 function SoundComponentPlaySourceBuffer(ti: ComponentInstance; sourceID: SoundSource; pb: SoundParamBlockPtr; actions: SInt32): ComponentResult; external name '_SoundComponentPlaySourceBuffer';
 { Audio Components }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {Volume is described as a value between 0 and 1, with 0 indicating minimum
   volume and 1 indicating maximum volume; if the device doesn't support
   software control of volume, then a value of unimpErr is returned, indicating
   that these functions are not supported by the device
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifc CALL_NOT_IN_CARBON}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc CALL_NOT_IN_CARBON}
+>>>>>>> origin/fixes_2_2
 {
  *  AudioGetVolume()
  *  
  *  Availability:
 <<<<<<< HEAD
- *    Mac OS X:         not available
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   in SoundLib 3.0 and later
- }
-
-
-=======
- *    Non-Carbon CFM:   in SoundLib 3.0 and later
- *    CarbonLib:        not available
- *    Mac OS X:         not available
- }
-function AudioGetVolume(ac: ComponentInstance; whichChannel: SInt16; var volume: ShortFixed): ComponentResult; external name '_AudioGetVolume';
->>>>>>> graemeg/fixes_2_2
-{
- *  AudioSetVolume()
- *  
- *  Availability:
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -4447,12 +4756,41 @@ function AudioGetVolume(ac: ComponentInstance; whichChannel: SInt16; var volume:
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
+ *    Non-Carbon CFM:   in SoundLib 3.0 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function AudioGetVolume(ac: ComponentInstance; whichChannel: SInt16; var volume: ShortFixed): ComponentResult; external name '_AudioGetVolume';
+<<<<<<< HEAD
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+{
+ *  AudioSetVolume()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in SoundLib 3.0 and later
+ }
+
+
+=======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SoundLib 3.0 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function AudioSetVolume(ac: ComponentInstance; whichChannel: SInt16; volume: ShortFixed): ComponentResult; external name '_AudioSetVolume';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {If the device doesn't support software control of mute, then a value of unimpErr is
 returned, indicating that these functions are not supported by the device.}
 {
@@ -4460,23 +4798,6 @@ returned, indicating that these functions are not supported by the device.}
  *  
  *  Availability:
 <<<<<<< HEAD
- *    Mac OS X:         not available
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   in SoundLib 3.0 and later
- }
-
-
-=======
- *    Non-Carbon CFM:   in SoundLib 3.0 and later
- *    CarbonLib:        not available
- *    Mac OS X:         not available
- }
-function AudioGetMute(ac: ComponentInstance; whichChannel: SInt16; var mute: SInt16): ComponentResult; external name '_AudioGetMute';
->>>>>>> graemeg/fixes_2_2
-{
- *  AudioSetMute()
- *  
- *  Availability:
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -4485,18 +4806,48 @@ function AudioGetMute(ac: ComponentInstance; whichChannel: SInt16; var mute: SIn
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
+ *    Non-Carbon CFM:   in SoundLib 3.0 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function AudioGetMute(ac: ComponentInstance; whichChannel: SInt16; var mute: SInt16): ComponentResult; external name '_AudioGetMute';
+<<<<<<< HEAD
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+{
+ *  AudioSetMute()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in SoundLib 3.0 and later
+ }
+
+
+=======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SoundLib 3.0 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function AudioSetMute(ac: ComponentInstance; whichChannel: SInt16; mute: SInt16): ComponentResult; external name '_AudioSetMute';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {AudioSetToDefaults causes the associated device to reset its volume and mute values
 (and perhaps other characteristics, e.g. attenuation) to "factory default" settings}
 {
  *  AudioSetToDefaults()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -4506,19 +4857,25 @@ function AudioSetMute(ac: ComponentInstance; whichChannel: SInt16; mute: SInt16)
 
 {This routine is required; it must be implemented by all audio components}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SoundLib 3.0 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function AudioSetToDefaults(ac: ComponentInstance): ComponentResult; external name '_AudioSetToDefaults';
 { This routine is required; it must be implemented by all audio components }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  AudioGetInfo()
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in SoundLib 3.0 and later
@@ -4526,17 +4883,23 @@ function AudioSetToDefaults(ac: ComponentInstance): ComponentResult; external na
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SoundLib 3.0 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function AudioGetInfo(ac: ComponentInstance; info: AudioInfoPtr): ComponentResult; external name '_AudioGetInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  AudioGetBass()
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in SoundLib 3.0 and later
@@ -4544,17 +4907,23 @@ function AudioGetInfo(ac: ComponentInstance; info: AudioInfoPtr): ComponentResul
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SoundLib 3.0 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function AudioGetBass(ac: ComponentInstance; whichChannel: SInt16; var bass: SInt16): ComponentResult; external name '_AudioGetBass';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  AudioSetBass()
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in SoundLib 3.0 and later
@@ -4562,34 +4931,22 @@ function AudioGetBass(ac: ComponentInstance; whichChannel: SInt16; var bass: SIn
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SoundLib 3.0 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function AudioSetBass(ac: ComponentInstance; whichChannel: SInt16; bass: SInt16): ComponentResult; external name '_AudioSetBass';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  AudioGetTreble()
  *  
  *  Availability:
 <<<<<<< HEAD
- *    Mac OS X:         not available
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   in SoundLib 3.0 and later
- }
-
-
-=======
- *    Non-Carbon CFM:   in SoundLib 3.0 and later
- *    CarbonLib:        not available
- *    Mac OS X:         not available
- }
-function AudioGetTreble(ac: ComponentInstance; whichChannel: SInt16; var Treble: SInt16): ComponentResult; external name '_AudioGetTreble';
->>>>>>> graemeg/fixes_2_2
-{
- *  AudioSetTreble()
- *  
- *  Availability:
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -4598,16 +4955,46 @@ function AudioGetTreble(ac: ComponentInstance; whichChannel: SInt16; var Treble:
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
+ *    Non-Carbon CFM:   in SoundLib 3.0 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function AudioGetTreble(ac: ComponentInstance; whichChannel: SInt16; var Treble: SInt16): ComponentResult; external name '_AudioGetTreble';
+<<<<<<< HEAD
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+{
+ *  AudioSetTreble()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in SoundLib 3.0 and later
+ }
+
+
+=======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SoundLib 3.0 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function AudioSetTreble(ac: ComponentInstance; whichChannel: SInt16; Treble: SInt16): ComponentResult; external name '_AudioSetTreble';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  AudioGetOutputDevice()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -4617,10 +5004,13 @@ function AudioSetTreble(ac: ComponentInstance; whichChannel: SInt16; Treble: SIn
 
 {This is routine is private to the AudioVision component.  It enables the watching of the mute key.}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in SoundLib 3.0 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
+<<<<<<< HEAD
 function AudioGetOutputDevice(ac: ComponentInstance; var outputDevice: Component): ComponentResult; external name '_AudioGetOutputDevice';
 { This is routine is private to the AudioVision component.  It enables the watching of the mute key. }
 >>>>>>> graemeg/fixes_2_2
@@ -4677,6 +5067,25 @@ function SndRecord( filterProc: ModalFilterUPP; corner: Point; quality: OSType; 
 {$endc} {not TARGET_CPU_64}
 
 =======
+=======
+function AudioGetOutputDevice(ac: ComponentInstance; var outputDevice: Component): ComponentResult; external name '_AudioGetOutputDevice';
+{ This is routine is private to the AudioVision component.  It enables the watching of the mute key. }
+{
+ *  AudioMuteOnEvent()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in SoundLib 3.0 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function AudioMuteOnEvent(ac: ComponentInstance; muteOnEvent: SInt16): ComponentResult; external name '_AudioMuteOnEvent';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+
+const
+	kDelegatedSoundComponentSelectors = $0100;
+
+>>>>>>> origin/fixes_2_2
 	{	 Sound Input Manager routines, uses _SoundDispatch 	}
 	{
 	 *  SPBVersion()
@@ -4697,11 +5106,15 @@ function SPBVersion: NumVersion; external name '_SPBVersion';
  }
 function SndRecord(filterProc: ModalFilterUPP; corner: Point; quality: OSType; var sndHandle: SndListHandle): OSErr; external name '_SndRecord';
 {$ifc CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SndRecordToFile()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -4785,6 +5198,8 @@ function SPBRecord( inParamPtr: SPBPtr; asynchFlag: Boolean ): OSErr; external n
 {$endc} {not TARGET_CPU_64}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -4847,11 +5262,15 @@ function SPBCloseDevice(inRefNum: SInt32): OSErr; external name '_SPBCloseDevice
  }
 function SPBRecord(inParamPtr: SPBPtr; asynchFlag: boolean): OSErr; external name '_SPBRecord';
 {$ifc CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SPBRecordToFile()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -5009,6 +5428,8 @@ function ParseSndHeader( sndHandle: SndListHandle; var sndInfo: SoundComponentDa
 
 {$ifc TARGET_API_MAC_CARBON}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -5126,12 +5547,16 @@ function ParseAIFFHeader(fRefNum: SInt16; var sndInfo: SoundComponentData; var n
  }
 function ParseSndHeader(sndHandle: SndListHandle; var sndInfo: SoundComponentData; var numFrames: UInt32; var dataOffset: UInt32): OSErr; external name '_ParseSndHeader';
 {$ifc NOT TARGET_OS_MAC OR TARGET_API_MAC_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {  Only to be used if you are writing a sound input component; this }
 {  is the param block for a read request from the SoundMgr to the   }
 {  sound input component.  Not to be confused with the SPB struct   }
 {  above, which is the param block for a read request from an app   }
 {  to the SoundMgr.                                                 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	SndInputCmpParamPtr = ^SndInputCmpParam;
@@ -5280,6 +5705,8 @@ const
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	SndInputCmpParamPtr = ^SndInputCmpParam;
@@ -5388,4 +5815,7 @@ function SndInputInitHardware(self: ComponentInstance): ComponentResult; externa
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

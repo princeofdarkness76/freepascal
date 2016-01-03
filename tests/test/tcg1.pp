@@ -12,8 +12,11 @@ begin
 {$asmmode att}
   asm
 <<<<<<< HEAD
+<<<<<<< HEAD
     movl   %esp,wpush
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_PIC}
     movl   %esp,before
 >>>>>>> graemeg/fixes_2_2
@@ -35,6 +38,24 @@ begin
     pushw  %es
     movl   %esp,after@GOT(%ecx)
     popw   %es
+<<<<<<< HEAD
+=======
+{$else not FPC_PIC}
+    call   .LPIC
+.LPIC:
+    popl   %ecx
+{$ifdef darwin}
+    movl   %esp,before-.LPIC(%ecx)
+    pushw  %es
+    movl   %esp,after-.LPIC(%ecx)
+    popw   %es
+{$else darwin}
+    addl   $_GLOBAL_OFFSET_TABLE_,%ecx
+    movl   %esp,before@GOT(%ecx)
+    pushw  %es
+    movl   %esp,after@GOT(%ecx)
+    popw   %es
+>>>>>>> origin/fixes_2_2
 {$endif darwin}
 {$endif not FPC_PIC}
   end;
@@ -46,8 +67,11 @@ begin
     
   asm
 <<<<<<< HEAD
+<<<<<<< HEAD
     movl   %esp,lpush
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_PIC}
     movl   %esp,before
 >>>>>>> graemeg/fixes_2_2
@@ -80,8 +104,11 @@ begin
 
   asm
 <<<<<<< HEAD
+<<<<<<< HEAD
     movl   %esp,wpush
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_PIC}
     movl   %esp,before
 >>>>>>> graemeg/fixes_2_2
@@ -97,6 +124,18 @@ begin
     pushw  %gs
     movl   %esp,after-.LPIC(%ecx)
     popw   %gs
+<<<<<<< HEAD
+=======
+{$else not FPC_PIC}
+    call   .LPIC
+.LPIC:
+    popl   %ecx
+{$ifdef darwin}
+    movl   %esp,before-.LPIC(%ecx)
+    pushw  %gs
+    movl   %esp,after-.LPIC(%ecx)
+    popw   %gs
+>>>>>>> origin/fixes_2_2
 {$else darwin}
     addl   $_GLOBAL_OFFSET_TABLE_,%ecx
     movl   %esp,before@GOT(%ecx)
@@ -113,8 +152,11 @@ begin
     end;
   asm
 <<<<<<< HEAD
+<<<<<<< HEAD
     movl   %esp,lpush
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_PIC}
     movl   %esp,before
 >>>>>>> graemeg/fixes_2_2
@@ -130,6 +172,18 @@ begin
     pushl  %gs
     movl   %esp,after-.LPIC(%ecx)
     popl   %gs
+<<<<<<< HEAD
+=======
+{$else not FPC_PIC}
+    call   .LPIC
+.LPIC:
+    popl   %ecx
+{$ifdef darwin}
+    movl   %esp,before-.LPIC(%ecx)
+    pushl  %gs
+    movl   %esp,after-.LPIC(%ecx)
+    popl   %gs
+>>>>>>> origin/fixes_2_2
 {$else darwin}
     addl   $_GLOBAL_OFFSET_TABLE_,%ecx
     movl   %esp,before@GOT(%ecx)
@@ -147,8 +201,11 @@ begin
 {$asmmode intel}
   asm
 <<<<<<< HEAD
+<<<<<<< HEAD
     mov    lpush,esp
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_PIC}
     mov    before,esp
 >>>>>>> graemeg/fixes_2_2

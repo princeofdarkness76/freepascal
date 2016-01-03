@@ -14,7 +14,10 @@
  **********************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_NEW_BIGENDIAN_SETS}
 
 {$ifndef FPC_SYSTEM_HAS_FPC_SET_LOAD_SMALL}
@@ -113,6 +116,7 @@ procedure fpc_varset_load(const l;sourcesize : longint;var dest;size,srcminusdst
     }
     if (srcminusdstbase>0) then
       begin
+<<<<<<< HEAD
         { fill the skipped part with 0 }
         fillchar(dstptr^,srcminusdstbase,0);
         inc(dstptr,srcminusdstbase);
@@ -125,6 +129,8 @@ procedure fpc_varset_load(const l;sourcesize : longint;var dest;size,srcminusdst
         dec(srcptr,srcminusdstbase);
         inc(sourcesize,srcminusdstbase);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_NEW_BIGENDIAN_SETS}
         c := fpc_set_set_range[i div 32];
         c := (1 shl (i mod 32)) or c;
@@ -132,6 +138,7 @@ procedure fpc_varset_load(const l;sourcesize : longint;var dest;size,srcminusdst
 {$else}
         fpc_set_set_range[i] := 1;
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
       end;
 
@@ -143,6 +150,13 @@ procedure fpc_varset_load(const l;sourcesize : longint;var dest;size,srcminusdst
     FillChar((dstptr+sourcesize)^,size-sourcesize,0);
   end;
 =======
+=======
+      end;
+  end;
+{$endif ndef FPC_SYSTEM_HAS_FPC_SET_SET_RANGE}
+
+
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_SYSTEM_HAS_FPC_SET_ADD_SETS}
  function fpc_set_add_sets(const set1,set2: fpc_normal_set): fpc_normal_set;[public,alias:'FPC_SET_ADD_SETS']; compilerproc;
  var
@@ -301,7 +315,10 @@ procedure fpc_varset_load(const l;sourcesize : longint;var dest;size,srcminusdst
 
 {$else FPC_SETBASE_USED}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure fpc_varset_load(const l;sourcesize : longint;var dest;size : ptrint); compilerproc;
   begin
     if sourcesize>size then
@@ -325,6 +342,7 @@ procedure fpc_varset_create_element(b,size : ptrint; var data); compilerproc;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tbsetarray = bitpacked array[0..high(sizeint)-1] of 0..1;
 =======
     tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
@@ -342,6 +360,8 @@ procedure fpc_varset_create_element(b,size : ptrint; var data); compilerproc;
     FillChar(data,size,0);
     tbsetarray(data)[b]:=1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_NEW_BIGENDIAN_SETS}
     tbytearray = array[0..sizeof(sizeint)-1] of byte;
 {$else}
@@ -354,7 +374,10 @@ procedure fpc_varset_create_element(b,size : ptrint; var data); compilerproc;
 {$else}
     tbsetarray(data)[b]:=1;
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 {$endif ndef FPC_SYSTEM_HAS_FPC_VARSET_CREATE_ELEMENT}
 
@@ -370,6 +393,7 @@ procedure fpc_varset_set(const source;var dest; b,size : ptrint); compilerproc;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tbsetarray = bitpacked array[0..high(sizeint)-1] of 0..1;
 =======
     tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
@@ -387,6 +411,8 @@ procedure fpc_varset_set(const source;var dest; b,size : ptrint); compilerproc;
     move(source,dest,size);
     tbsetarray(dest)[b]:=1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_NEW_BIGENDIAN_SETS}
     tbytearray = array[0..sizeof(sizeint)-1] of byte;
 {$else}
@@ -399,7 +425,10 @@ procedure fpc_varset_set(const source;var dest; b,size : ptrint); compilerproc;
 {$else}
     tbsetarray(dest)[b]:=1;
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 {$endif ndef FPC_SYSTEM_HAS_FPC_VARSET_SET_BYTE}
 
@@ -416,6 +445,7 @@ procedure fpc_varset_unset(const source;var dest; b,size : ptrint); compilerproc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tbsetarray = bitpacked array[0..high(sizeint)-1] of 0..1;
 =======
     tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
@@ -433,6 +463,8 @@ procedure fpc_varset_unset(const source;var dest; b,size : ptrint); compilerproc
     move(source,dest,size);
     tbsetarray(dest)[b]:=0;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_NEW_BIGENDIAN_SETS}
     tbytearray = array[0..sizeof(sizeint)-1] of byte;
 {$else}
@@ -445,7 +477,10 @@ procedure fpc_varset_unset(const source;var dest; b,size : ptrint); compilerproc
 {$else}
     tbsetarray(dest)[b]:=0;
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 {$endif ndef FPC_SYSTEM_HAS_FPC_VARSET_UNSET_BYTE}
 
@@ -461,6 +496,7 @@ procedure fpc_varset_set_range(const orgset; var dest;l,h,size : ptrint); compil
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tbsetarray = bitpacked array[0..high(sizeint)-1] of 0..1;
 =======
     tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
@@ -475,26 +511,37 @@ procedure fpc_varset_set_range(const orgset; var dest;l,h,size : ptrint); compil
     tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_NEW_BIGENDIAN_SETS}
     tbytearray = array[0..sizeof(sizeint)-1] of byte;
 {$else}
     tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   var
     i : ptrint;
   begin
     move(orgset,dest,size);
     for i:=l to h do
 <<<<<<< HEAD
+<<<<<<< HEAD
        tbsetarray(dest)[i]:=1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_NEW_BIGENDIAN_SETS}
        tbytearray(dest)[i div 8]:=(1 shl (i mod 8)) or tbytearray(dest)[i div 8];
 {$else}
        tbsetarray(dest)[i]:=1;
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 {$endif ndef FPC_SYSTEM_HAS_FPC_VARSET_SET_RANGE}
 

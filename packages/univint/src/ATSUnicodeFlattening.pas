@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    Quickdraw-285~150
 =======
      Version:    Quickdraw-262~1
@@ -28,10 +29,16 @@
  
      Copyright:  © 2002-2003 by Apple Computer, Inc., all rights reserved.
 >>>>>>> graemeg/fixes_2_2
+=======
+     Version:    Quickdraw-150~1
+ 
+     Copyright:  © 2002-2003 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -61,6 +68,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -73,7 +82,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -83,12 +95,17 @@
 unit ATSUnicodeFlattening;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -102,14 +119,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -118,11 +140,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -160,6 +185,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -167,6 +194,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -410,6 +438,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -418,7 +448,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -445,9 +478,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -459,6 +496,7 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,ATSUnicodeTypes,SFNTTypes;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -466,6 +504,9 @@ uses MacTypes,ATSUnicodeTypes,SFNTTypes;
 =======
 {$ALIGN MAC68K}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ALIGN MAC68K}
+>>>>>>> origin/fixes_2_2
 
 { ---------------------------------------------------------------------------- }
 { Constants                                                                    }
@@ -476,6 +517,7 @@ uses MacTypes,ATSUnicodeTypes,SFNTTypes;
    or parsing.
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {$ALIGN MAC68K}
@@ -489,6 +531,11 @@ type ATSUFlattenedDataStreamFormat = UInt32;
 const
   kATSUDataStreamUnicodeStyledText = FourCharCode('ustl');
 >>>>>>> graemeg/fixes_2_2
+=======
+type ATSUFlattenedDataStreamFormat = UInt32;
+const
+  kATSUDataStreamUnicodeStyledText = FourCharCode('ustl');
+>>>>>>> origin/fixes_2_2
 
 
 {
@@ -496,6 +543,7 @@ const
    into the ATSUFlattenStyleRunsToStream API. Currently, there are no options. 
    This is here for future expansion.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	ATSUFlattenStyleRunOptions = UInt32;
@@ -506,12 +554,18 @@ type ATSUFlattenStyleRunOptions = UInt32;
 const
   kATSUFlattenOptionNoOptionsMask = $00000000;
 >>>>>>> graemeg/fixes_2_2
+=======
+type ATSUFlattenStyleRunOptions = UInt32;
+const
+  kATSUFlattenOptionNoOptionsMask = $00000000;
+>>>>>>> origin/fixes_2_2
 
 {
    ATSUUnFlattenStyleRunOptions is a bitfield list of options that can be passed
    into the ATSUUnFlattenStyleRunsToStream API. Currently, there are no options. 
    This is here for future expansion.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	ATSUUnFlattenStyleRunOptions = UInt32;
@@ -522,6 +576,11 @@ type ATSUUnFlattenStyleRunOptions = UInt32;
 const
   kATSUUnFlattenOptionNoOptionsMask = $00000000;
 >>>>>>> graemeg/fixes_2_2
+=======
+type ATSUUnFlattenStyleRunOptions = UInt32;
+const
+  kATSUUnFlattenOptionNoOptionsMask = $00000000;
+>>>>>>> origin/fixes_2_2
 
 
 { ---------------------------------------------------------------------------- }
@@ -530,10 +589,14 @@ const
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
    ATSUStyleRunInfo is a structure that contains an index into an array of 
 =======
    ATSUStyleRunInfo is a structure that contrains an index into an array of 
 >>>>>>> graemeg/fixes_2_2
+=======
+   ATSUStyleRunInfo is a structure that contrains an index into an array of 
+>>>>>>> origin/fixes_2_2
    unique ATSUStyle objects as well as the length of the run that the style run 
    object covers. This structure is utilized by ATSUUnflattenStyleRunsFromStream() 
    to return the style run info to the caller. 
@@ -541,12 +604,17 @@ const
 type
 	ATSUStyleRunInfo = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		runLength: UInt32;
 		styleObjectIndex: UInt32;
 =======
 		runLength: UniCharCount;
 		styleObjectIndex: ItemCount;
 >>>>>>> graemeg/fixes_2_2
+=======
+		runLength: UniCharCount;
+		styleObjectIndex: ItemCount;
+>>>>>>> origin/fixes_2_2
 	end;
 	ATSUStyleRunInfoPtr = ^ATSUStyleRunInfo;
 { ---------------------------------------------------------------------------- }
@@ -570,16 +638,22 @@ type
 }
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSFlatDataUstlVersion0 = 0;
 	kATSFlatDataUstlVersion1 = 1;
 	kATSFlatDataUstlVersion2 = 2;
 	kATSFlatDataUstlCurrentVersion = kATSFlatDataUstlVersion2;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   kATSFlatDataUstlVersion0      = 0;
   kATSFlatDataUstlVersion1      = 1;
   kATSFlatDataUstlVersion2      = 2;
   kATSFlatDataUstlCurrentVersion = kATSFlatDataUstlVersion2;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { ------------------ }
 { Block 1 Structures }
@@ -592,17 +666,23 @@ const
 type
 	ATSFlatDataMainHeaderBlock = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 { the 'ustl' version number. This needs to be the first item in the}
 =======
 
                                               { the 'ustl' version number. This needs to be the first item in the}
 >>>>>>> graemeg/fixes_2_2
+=======
+
+                                              { the 'ustl' version number. This needs to be the first item in the}
+>>>>>>> origin/fixes_2_2
                                               { data block do as not to confuse parsers of earlier (and possibly}
                                               { later) versions of the spec *|}
 		version: UInt32;
 
                                               { the total size of the stream in bytes, including the four bytes in}
                                               { the version above}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		sizeOfDataBlock: UInt32;
 
@@ -618,6 +698,8 @@ type
                                               { is no flattened style list data}
 		offsetToStyleList: UInt32;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		sizeOfDataBlock: ByteCount;
 
                                               { offset from the beginning of the stream to the flattened text layout data.}
@@ -631,7 +713,10 @@ type
                                               { offset to the flattened style list data. This can be set to 0 if there}
                                               { is no flattened style list data}
 		offsetToStyleList: ByteCount;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 	ATSFlatDataMainHeaderBlockPtr = ^ATSFlatDataMainHeaderBlock;
 { ------------------ }
@@ -651,6 +736,7 @@ type
 type
 	ATSFlatDataTextLayoutDataHeader = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 { the total size of this particular flattened text layout, including any}
                                               { padding bytes and such. }
 		sizeOfLayoutData: UInt32;
@@ -658,6 +744,8 @@ type
                                               { the number of characters covered by this flattened text layout}
 		textLayoutLength: UInt32;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
                                               { the total size of this particular flattened text layout, including any}
                                               { padding bytes and such. }
@@ -665,25 +753,36 @@ type
 
                                               { the number of characters covered by this flattened text layout}
 		textLayoutLength: ByteCount;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
                                               { the byte offset relative to the start of this structure to the flattened}
                                               { layout control data. This can be set to zero if there are no layout}
                                               { controls.}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		offsetToLayoutControls: UInt32;
 =======
 		offsetToLayoutControls: ByteCount;
 >>>>>>> graemeg/fixes_2_2
+=======
+		offsetToLayoutControls: ByteCount;
+>>>>>>> origin/fixes_2_2
 
                                               { the byte offset, relative to the start of this structure to the}
                                               { flattened line info. This can be set to zero if there is no line info }
                                               { in this layout.}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		offsetToLineInfo: UInt32;
 =======
 		offsetToLineInfo: ByteCount;
 >>>>>>> graemeg/fixes_2_2
+=======
+		offsetToLineInfo: ByteCount;
+>>>>>>> origin/fixes_2_2
 
                                               { if the offsetToLayoutControls is non-zero, then following this block}
                                               { there will be a ATSFlattenedLayoutDataFlattenedLayoutControlsHeader}
@@ -701,17 +800,23 @@ type
 type
 	ATSFlatDataTextLayoutHeader = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 { the total number of flattened text layouts stored in this block.}
                                               { This must be non-zero, as if there were no flattened text layouts, the}
                                               { entire block 2 would not exist}
 		numFlattenedTextLayouts: UInt32;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
                                               { the total number of flattened text layouts stored in this block.}
                                               { This must be non-zero, as if there were no flattened text layouts, the}
                                               { entire block 2 would not exist}
 		numFlattenedTextLayouts: ItemCount;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
                                               { first of possibly many flattened text layouts. There should be one of}
                                               { these for each flattened text layout as determined by the}
@@ -727,15 +832,21 @@ type
 type
 	ATSFlatDataLayoutControlsDataHeader = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 { the number of flattened layout controls. It is suggested that there be}
                                               { at least one layout control to output the line direction for the layout}
 		numberOfLayoutControls: UInt32;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
                                               { the number of flattened layout controls. It is suggested that there be}
                                               { at least one layout control to output the line direction for the layout}
 		numberOfLayoutControls: ItemCount;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
                                               { first of possibly many flattened layout controls. There should be one }
                                               { of these for each layout control as determined by the}
@@ -750,6 +861,7 @@ type
 type
 	ATSFlatDataLineInfoData = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 { the length of this particular line in UniChars}
 		lineLength: UInt32;
 
@@ -757,6 +869,8 @@ type
                                               { to zero if there are no special line controls applied to this line.}
 		numberOfLineControls: UInt32;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
                                               { the length of this particular line in UniChars}
 		lineLength: UniCharCount;
@@ -764,7 +878,10 @@ type
                                               { the number of line controls applied to this line. This can be set}
                                               { to zero if there are no special line controls applied to this line.}
 		numberOfLineControls: ItemCount;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
                                               { the numberOfLineControls is non-zero, then following this structure}
                                               { must be an array of ATSUAttributeInfo structures. There must be one}
@@ -779,19 +896,25 @@ type
 type
 	ATSFlatDataLineInfoHeader = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 { the number of flattened line info structures that are stored in this}
                                               { block. This value should really be equal to the number of soft line}
                                               { breaks in the layout + 1. Of course if numberOfLines is zero, then}
                                               { this structure shouldn't even be used.}
 		numberOfLines: UInt32;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
                                               { the number of flattened line info structures that are stored in this}
                                               { block. This value should really be equal to the number of soft line}
                                               { breaks in the layout + 1. Of course if numberOfLines is zero, then}
                                               { this structure shouldn't even be used.}
 		numberOfLines: ItemCount;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
                                               { the first in a array of ATSFlatDataLineInfoData structures. There}
                                               { needs to be a ATSFlatDataLineInfoData for each numberOfLines}
@@ -817,6 +940,7 @@ type
 type
 	ATSFlatDataStyleRunDataHeader = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 { the number of style run data structures stored in this block}
 		numberOfStyleRuns: UInt32;
 =======
@@ -824,6 +948,11 @@ type
                                               { the number of style run data structures stored in this block}
 		numberOfStyleRuns: ItemCount;
 >>>>>>> graemeg/fixes_2_2
+=======
+
+                                              { the number of style run data structures stored in this block}
+		numberOfStyleRuns: ItemCount;
+>>>>>>> origin/fixes_2_2
 
                                               { the first in an array of ATSUStyleRunInfo structures. There needs to}
                                               { be a ATSUStyleRunInfo structure for each numberOfStyleRuns specified}
@@ -847,21 +976,28 @@ type
 type
 	ATSFlatDataStyleListStyleDataHeader = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 { the size of this flattened style object, including these four bytes and}
                                               { any padding bytes at the end of the structure. Basically, this can be}
                                               { used to determine where the next structure in the array begins.}
 		sizeOfStyleInfo: UInt32;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
                                               { the size of this flattened style object, including these four bytes and}
                                               { any padding bytes at the end of the structure. Basically, this can be}
                                               { used to determine where the next structure in the array begins.}
 		sizeOfStyleInfo: ByteCount;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
                                               { the number of attributes set in this flattened style object. This should }
                                               { be at least one for the font data, although it can be 0 if this is to be}
                                               { unspecfied.}
+<<<<<<< HEAD
 <<<<<<< HEAD
 		numberOfSetAttributes: UInt32;
 
@@ -873,6 +1009,8 @@ type
                                               { can be set to 0 if there are no font variations set in the style object.}
 		numberOfSetVariations: UInt32;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		numberOfSetAttributes: ItemCount;
 
                                               { the number of font features set in the flattened style object. This can}
@@ -882,7 +1020,10 @@ type
                                               { the number of font variations set in the flattened style object. This}
                                               { can be set to 0 if there are no font variations set in the style object.}
 		numberOfSetVariations: ItemCount;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
                                               { after this structure header, there is the following data in this block:}
 
@@ -915,6 +1056,7 @@ type
 type
 	ATSFlatDataStyleListHeader = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 { the total number of flattened style objects stored in this block}
 		numberOfStyles: UInt32;
 =======
@@ -922,6 +1064,11 @@ type
                                               { the total number of flattened style objects stored in this block}
 		numberOfStyles: ItemCount;
 >>>>>>> graemeg/fixes_2_2
+=======
+
+                                              { the total number of flattened style objects stored in this block}
+		numberOfStyles: ItemCount;
+>>>>>>> origin/fixes_2_2
 
                                               { the first in an array of flattned style entries. The data stored}
                                               { in them is variably sized, so a simply array access won't do for}
@@ -930,9 +1077,13 @@ type
                                               { numberOfStyles above.}
 		styleDataArray: array[0..0] of ATSFlatDataStyleListStyleDataHeader;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 	end;
 	ATSFlatDataStyleListHeaderPtr = ^ATSFlatDataStyleListHeader;
 {
@@ -943,11 +1094,16 @@ type
 type
 	ATSFlatDataStyleListFeatureData = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 { the font feature type}
 =======
 
                                               { the font feature type}
 >>>>>>> graemeg/fixes_2_2
+=======
+
+                                              { the font feature type}
+>>>>>>> origin/fixes_2_2
 		theFeatureType: ATSUFontFeatureType;
 
                                               { the font feature selector}
@@ -963,11 +1119,16 @@ type
 type
 	ATSFlatDataStyleListVariationData = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 { the variation axis}
 =======
 
                                               { the variation axis}
 >>>>>>> graemeg/fixes_2_2
+=======
+
+                                              { the variation axis}
+>>>>>>> origin/fixes_2_2
 		theVariationAxis: ATSUFontVariationAxis;
 
                                               { the variation value}
@@ -988,6 +1149,7 @@ type
 
 { these are the currenly supported font specifiers. }
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	ATSFlatDataFontSpeciferType = UInt32;
 const
@@ -995,12 +1157,17 @@ const
                                         { uses the stuctures below to store the actual data itself.}
 	kATSFlattenedFontSpecifierRawNameData = FourCharCode('namd');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type ATSFlatDataFontSpeciferType = UInt32;
 const
                                         { this specifier allows the storage of font data based on name data. This}
                                         { uses the stuctures below to store the actual data itself.}
   kATSFlattenedFontSpecifierRawNameData = FourCharCode('namd');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
    this is the main header for the font data. It dictates what type of data
@@ -1010,11 +1177,16 @@ const
 type
 	ATSFlatDataFontNameDataHeader = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 { the type of data that is flattened in this structure}
 =======
 
                                               { the type of data that is flattened in this structure}
 >>>>>>> graemeg/fixes_2_2
+=======
+
+                                              { the type of data that is flattened in this structure}
+>>>>>>> origin/fixes_2_2
 		nameSpecifierType: ATSFlatDataFontSpeciferType;
 
                                               { the size of the data that is flattened in this structre, not including }
@@ -1022,10 +1194,14 @@ type
                                               { alignment of the data, unless they are specified as part of structure, }
                                               { such as with the ATSFlatDataFontSpecRawNameData structure.}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		nameSpecifierSize: UInt32;
 =======
 		nameSpecifierSize: ByteCount;
 >>>>>>> graemeg/fixes_2_2
+=======
+		nameSpecifierSize: ByteCount;
+>>>>>>> origin/fixes_2_2
 
                                               { after this header comes the flattened font name data which matches}
                                               { the type specified by the nameSpecifierType above. For instance, if }
@@ -1033,9 +1209,13 @@ type
                                               { structure that immediately follows this would be a}
                                               { ATSFlatDataFontNameRawNameDataHeader structure. }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 	end;
 	ATSFlatDataFontNameDataHeaderPtr = ^ATSFlatDataFontNameDataHeader;
 {
@@ -1048,11 +1228,16 @@ type
 type
 	ATSFlatDataFontSpecRawNameData = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 { the type of name being specified}
 =======
 
                                               { the type of name being specified}
 >>>>>>> graemeg/fixes_2_2
+=======
+
+                                              { the type of name being specified}
+>>>>>>> origin/fixes_2_2
 		fontNameType: FontNameCode;
 
                                               { the platform type of the font name, whether it be Unicode, Mac, etc.  }
@@ -1075,17 +1260,23 @@ type
                                               { the length of the font name in bytes, not including any padding bytes}
                                               { added to maintain the four byte alignment}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		fontNameLength: UInt32;
 
                                               { after the name length comes the actual font name data itself, plus any}
                                               { padding bytes needed to maintain the four byte alignment.}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		fontNameLength: ByteCount;
 
                                               { after the name length comes the actual font name data itself, plus any}
                                               { padding bytes needed to maintain the four byte alignment.}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 	ATSFlatDataFontSpecRawNameDataPtr = ^ATSFlatDataFontSpecRawNameData;
 {
@@ -1102,15 +1293,21 @@ type
 type
 	ATSFlatDataFontSpecRawNameDataHeader = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 { the number of flattened font names. There must be at least one flattened }
                                               { font name, otherwise the structure is malformed.}
 		numberOfFlattenedNames: UInt32;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
                                               { the number of flattened font names. There must be at least one flattened }
                                               { font name, otherwise the structure is malformed.}
 		numberOfFlattenedNames: ItemCount;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
                                               { the first in an array of possibly many font name specifiers - depending}
                                               { on how specific the caller wants this. There must be one }
@@ -1118,14 +1315,19 @@ type
                                               { above.}
 		nameDataArray: array[0..0] of ATSFlatDataFontSpecRawNameData;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 	end;
 	ATSFlatDataFontSpecRawNameDataHeaderPtr = ^ATSFlatDataFontSpecRawNameDataHeader;
 { ---------------------------------------------------------------------------- }
 { Style Flattening and Parsing Functions                                       }
 { ---------------------------------------------------------------------------- }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 {
@@ -1137,6 +1339,10 @@ type
 {
  *  ATSUFlattenStyleRunsToStream()
 >>>>>>> graemeg/fixes_2_2
+=======
+{
+ *  ATSUFlattenStyleRunsToStream()
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Converts a series of ATSUStyle objects and associated run info to
@@ -1155,10 +1361,14 @@ type
  *    iNumberOfStyleObjects, and iStyleArray parameters. Set
  *    iStreamBufferSize to 0, oStreamBuffer to NULL, and pass a valid
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    reference to a UInt32 variable in the oActualStreamBufferSize
 =======
  *    reference to a ByteCount variable in the oActualStreamBufferSize
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    reference to a ByteCount variable in the oActualStreamBufferSize
+>>>>>>> origin/fixes_2_2
  *    parameter. Call the function ATSUFlattenStyleRunsToStream. On
  *    return, oActualStreamBufferSize points to the size needed for the
  *    buffer. (2) Allocate an appropriately-sized buffer for the
@@ -1176,10 +1386,14 @@ type
  *      The options you want to use to flatten the data. There are no
  *      options supported at this time, so you must pass the constant
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      kATSUFlattenOptionNoOptionsMask.
 =======
  *      kATSUFlattenOptionsNoOptionsMask.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      kATSUFlattenOptionsNoOptionsMask.
+>>>>>>> origin/fixes_2_2
  *    
  *    iNumberOfRunInfo:
  *      The number of style run information structures passed in the
@@ -1233,6 +1447,7 @@ type
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
@@ -1247,6 +1462,8 @@ function ATSUFlattenStyleRunsToStream( iStreamFormat: ATSUFlattenedDataStreamFor
  *  Deprecated:
  *    Use CoreFoundation flattening API instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
@@ -1257,7 +1474,10 @@ function ATSUFlattenStyleRunsToStream( iStreamFormat: ATSUFlattenedDataStreamFor
 
 {
  *  ATSUUnflattenStyleRunsFromStream()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Summary:
  *    Creates a series of ATSUStyle objects and associated run
@@ -1300,10 +1520,14 @@ function ATSUFlattenStyleRunsToStream( iStreamFormat: ATSUFlattenedDataStreamFor
  *      The options you want to use to unflatten the data. There are no
  *      options supported at this time, so you must pass the constant
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      kATSUUnflattenOptionNoOptionsMask.
 =======
  *      kATSUUnflattenOptionsNoOptionsMask.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      kATSUUnflattenOptionsNoOptionsMask.
+>>>>>>> origin/fixes_2_2
  *    
  *    iStreamBufferSize:
  *      The size of the buffer pointed to by the iStreamBuffer
@@ -1318,10 +1542,14 @@ function ATSUFlattenStyleRunsToStream( iStreamFormat: ATSUFlattenedDataStreamFor
  *    iNumberOfRunInfo:
  *      The number of style run information structures passed in the
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      oRunInfoArray parameter. If you are uncertain of the number of
 =======
  *      iRunInfoArray parameter. If you are uncertain of the number of
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      iRunInfoArray parameter. If you are uncertain of the number of
+>>>>>>> origin/fixes_2_2
  *      style run information structures, see the Discussion.
  *    
  *    iNumberOfStyleObjects:
@@ -1365,6 +1593,7 @@ function ATSUFlattenStyleRunsToStream( iStreamFormat: ATSUFlattenedDataStreamFor
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
@@ -1372,18 +1601,24 @@ function ATSUFlattenStyleRunsToStream( iStreamFormat: ATSUFlattenedDataStreamFor
 function ATSUUnflattenStyleRunsFromStream( iStreamFormat: ATSUFlattenedDataStreamFormat; iUnflattenOptions: ATSUUnFlattenStyleRunOptions; iStreamBufferSize: ByteCount; iStreamBuffer: {const} UnivPtr; iNumberOfRunInfo: ItemCount; iNumberOfStyleObjects: ItemCount; oRunInfoArray: {variable-size-array} ATSUStyleRunInfoPtr; oStyleArray: {variable-size-array} ATSUStylePtr; oActualNumberOfRunInfo: ItemCountPtr; oActualNumberOfStyleObjects: ItemCountPtr ): OSStatus; external name '_ATSUUnflattenStyleRunsFromStream';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
 function ATSUUnflattenStyleRunsFromStream( iStreamFormat: ATSUFlattenedDataStreamFormat; iUnflattenOptions: ATSUUnFlattenStyleRunOptions; iStreamBufferSize: ByteCount; iStreamBuffer: UnivPtr; iNumberOfRunInfo: ItemCount; iNumberOfStyleObjects: ItemCount; oRunInfoArray: ATSUStyleRunInfoPtr; oStyleArray: ATSUStylePtr; oActualNumberOfRunInfo: ItemCountPtr; oActualNumberOfStyleObjects: ItemCountPtr ): OSStatus; external name '_ATSUUnflattenStyleRunsFromStream';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { Functions listed beyond this point are either deprecated or not recommended }
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  ATSUCopyToHandle()   *** DEPRECATED ***
  *  
@@ -1392,12 +1627,16 @@ function ATSUUnflattenStyleRunsFromStream( iStreamFormat: ATSUFlattenedDataStrea
 =======
  *  ATSUCopyToHandle()
 >>>>>>> graemeg/fixes_2_2
+=======
+ *  ATSUCopyToHandle()
+>>>>>>> origin/fixes_2_2
  *  
  *  Discussion:
  *    This function is no longer recommended. Please use
  *    ATSUFlattenStyleRunsToStream instead.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.1
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1413,6 +1652,8 @@ function ATSUCopyToHandle( iStyle: ATSUStyle; oStyleHandle: Handle ): OSStatus; 
  *  Deprecated:
  *    Use CoreFoundation flattening API instead.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1423,13 +1664,17 @@ function ATSUCopyToHandle( iStyle: ATSUStyle; oStyleHandle: Handle ): OSStatus; 
 
 {
  *  ATSUPasteFromHandle()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Discussion:
  *    This function is no longer recommended. Please use
  *    ATSUUnflattenStyleRunsFromStream instead.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.1
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1448,6 +1693,8 @@ function ATSUPasteFromHandle( iStyle: ATSUStyle; iStyleHandle: Handle ): OSStatu
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1457,4 +1704,7 @@ function ATSUPasteFromHandle( iStyle: ATSUStyle; iStyleHandle: Handle ): OSStatu
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

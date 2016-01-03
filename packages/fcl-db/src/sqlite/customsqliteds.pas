@@ -116,6 +116,9 @@ type
   TSqliteOption = (soWildcardKey);
   TSqliteOptions = set of TSqliteOption;
 
+  TSqliteOption = (soWildcardKey);
+  TSqliteOptions = set of TSqliteOption;
+
   { TCustomSqliteDataset }
 
   TCustomSqliteDataset = class(TDataSet)
@@ -128,15 +131,19 @@ type
     FInternalActiveBuffer: PDataRecord;
     FInsertBookmark: PDataRecord;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FFilterBuffer: TRecordBuffer;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FOnCallback: TSqliteCallback;
     FMasterLink: TMasterDataLink;
     FIndexFieldNames: String;
     FIndexFieldList: TList;
     FOnGetHandle: TDataSetNotifyEvent;
     FOptions: TSqliteOptions;
+<<<<<<< HEAD
 <<<<<<< HEAD
     FSQLList: TStrings;
     FStoreDefs: Boolean;
@@ -152,11 +159,14 @@ type
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FSqlList:TStrings;
 >>>>>>> graemeg/fixes_2_2
     procedure CopyCacheToItem(AItem: PDataRecord);
 >>>>>>> graemeg/cpstrnew
     function GetIndexFields(Value: Integer): TField;
+<<<<<<< HEAD
 <<<<<<< HEAD
     function GetSQLList: TStrings;
     procedure SetMasterIndexValue;
@@ -166,11 +176,16 @@ type
     function FindRecordItem(StartItem: PDataRecord; const KeyFields: string; const KeyValues: Variant; LocateOptions: TLocateOptions; DoResync: Boolean): PDataRecord;
     procedure UpdateMasterDetailProperties;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure SetMasterIndexValue;
     procedure SetOptions(const AValue: TSqliteOptions);
     procedure UpdateIndexFields;
     function FindRecordItem(StartItem: PDataRecord; const KeyFields: string; const KeyValues: Variant; LocateOptions: TLocateOptions; DoResync:Boolean):PDataRecord;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   protected
     FPrimaryKey: String;
     FPrimaryKeyNo: Integer;
@@ -185,9 +200,12 @@ type
     FAddedItems: TFPList;
     FDeletedItems: TFPList;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FCalcFieldList: TFPList;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FReturnCode: Integer;
     FSqliteHandle: Pointer;
     FRowBufferSize: Integer;
@@ -202,9 +220,12 @@ type
     FAutoIncrementKey: Boolean;
     FDataAllocated: Boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function SqliteExec(Sql: PAnsiChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; virtual; abstract;
     procedure InternalCloseHandle; virtual; abstract;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     function SqliteExec(Sql:PChar; ACallback: TSqliteCdeclCallback; Data: Pointer):Integer;virtual; abstract;
     procedure InternalCloseHandle;virtual;abstract;
 >>>>>>> graemeg/fixes_2_2
@@ -254,7 +275,10 @@ type
 >>>>>>> origin/cpstrnew
 =======
     function CreateBlobStream(Field: TField; Mode: TBlobStreamMode): TStream; override;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure DoBeforeClose; override;
     procedure DoAfterInsert; override;
     procedure DoBeforeInsert; override;
@@ -295,6 +319,7 @@ type
     function GetFieldData(Field: TField; Buffer: Pointer): Boolean; override;
     function GetFieldData(Field: TField; Buffer: Pointer; NativeFormat: Boolean): Boolean; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function Locate(const KeyFields: String; const KeyValues: Variant; LocateOptions: TLocateOptions) : Boolean; override;
     function LocateNext(const KeyFields: String; const KeyValues: Variant; LocateOptions: TLocateOptions) : Boolean;
     function Lookup(const KeyFields: String; const KeyValues: Variant; const ResultFields: String): Variant; override;
@@ -305,6 +330,11 @@ type
     function LocateNext(const KeyFields: string; const KeyValues: Variant; LocateOptions: TLocateOptions) : Boolean;
     function Lookup(const KeyFields: string; const KeyValues: Variant; const ResultFields: string): Variant;override;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function Locate(const KeyFields: string; const KeyValues: Variant; LocateOptions: TLocateOptions) : Boolean; override;
+    function LocateNext(const KeyFields: string; const KeyValues: Variant; LocateOptions: TLocateOptions) : Boolean;
+    function Lookup(const KeyFields: string; const KeyValues: Variant; const ResultFields: string): Variant;override;
+>>>>>>> origin/fixes_2_2
     // Additional procedures
     function ApplyUpdates: Boolean;
     procedure ClearUpdates(RecordStates: TRecordStateSet = [rsAdded, rsDeleted, rsUpdated]);
@@ -347,10 +377,14 @@ type
     property OnCallback: TSqliteCallback read FOnCallback write FOnCallback;
     property OnGetHandle: TDataSetNotifyEvent read FOnGetHandle write FOnGetHandle;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property Options: TSqliteOptions read FOptions write SetOptions default [];
 =======
     property Options: TSqliteOptions read FOptions write SetOptions;
 >>>>>>> graemeg/fixes_2_2
+=======
+    property Options: TSqliteOptions read FOptions write SetOptions;
+>>>>>>> origin/fixes_2_2
     property PrimaryKey: String read FPrimaryKey write FPrimaryKey;
     property SaveOnClose: Boolean read FSaveOnClose write FSaveOnClose default False;
     property SaveOnRefetch: Boolean read FSaveOnRefetch write FSaveOnRefetch default False;
@@ -362,10 +396,14 @@ type
     
     property Active;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property FieldDefs stored FieldDefsStored;
 =======
     property FieldDefs;   
 >>>>>>> graemeg/fixes_2_2
+=======
+    property FieldDefs;   
+>>>>>>> origin/fixes_2_2
     //Events
     property BeforeOpen;
     property AfterOpen;
@@ -386,9 +424,12 @@ type
     property BeforeRefresh;
     property AfterRefresh;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property OnCalcFields;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property OnDeleteError;
     property OnEditError;
     property OnNewRecord;
@@ -465,11 +506,15 @@ begin
   //todo: create custom routine to directly transform PAnsiChar -> SQL str
 =======
   //todo: create custom routine to directly transform PChar -> SQL str
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Result := String(APChar);
   if Pos('''', Result) > 0 then
     Result := AnsiReplaceStr(Result, '''', '''''');
   Result := '''' + Result + '''';
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -493,6 +538,8 @@ begin
     Result := AnsiReplaceStr(Result, #0, '''||x''00''||''');
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 // TDSStream
@@ -525,6 +572,7 @@ begin
   inherited Create;
   //FPosition := 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FDataset := Dataset;
   FField := Field;
   FFieldOffset := FieldOffset;
@@ -543,6 +591,12 @@ end;
   FFieldIndex := FieldIndex;
   FFieldRow := ActiveItem^.Row[FieldIndex];
   if FFieldRow <> nil then
+=======
+  FActiveItem := ActiveItem;
+  FFieldIndex := FieldIndex;
+  FFieldRow := ActiveItem^.Row[FieldIndex];
+  if FFieldRow <> nil then
+>>>>>>> origin/fixes_2_2
     FRowSize := StrLen(FFieldRow);
   //else
   //  FRowSize := 0;  
@@ -673,7 +727,10 @@ begin
   Move((FFieldRow+FPosition)^,Buffer,BytesToMove);
   Inc(FPosition,BytesToMove);
   Result:=BytesToMove;  
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$ifdef DEBUG_SQLITEDS}
   WriteLn('##TDSStream.Read##');
   WriteLn('  Bytes requested: ', Count);
@@ -685,6 +742,7 @@ end;
  
 // TCustomSqliteDataset override methods
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TCustomSqliteDataset.AllocRecordBuffer: TRecordBuffer;
 begin
@@ -706,11 +764,16 @@ begin
     RecordItem^.Row[i] := nil;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TCustomSqliteDataset.AllocRecordBuffer: PChar;
 begin
   Result := AllocMem(SizeOf(PPDataRecord));
   PDataRecord(Pointer(Result)^):=FBeginItem;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 constructor TCustomSqliteDataset.Create(AOwner: TComponent);
@@ -723,6 +786,7 @@ begin
   FBeginItem^.Previous := nil;
   FEndItem^.Next := nil;
   
+<<<<<<< HEAD
 <<<<<<< HEAD
   FBeginItem^.BookmarkFlag := bfBOF;
   FEndItem^.BookmarkFlag := bfEOF;
@@ -739,14 +803,27 @@ begin
   FMasterLink.OnMasterDisable := @MasterDisabled;
   FIndexFieldList := TList.Create;
 >>>>>>> graemeg/fixes_2_2
+=======
+  FBeginItem^.BookMarkFlag := bfBOF;
+  FEndItem^.BookMarkFlag := bfEOF;
+  
+  FMasterLink := TMasterDataLink.Create(Self);
+  FMasterLink.OnMasterChange := @MasterChanged;
+  FMasterLink.OnMasterDisable := @MasterDisabled;
+  FIndexFieldList := TList.Create;
+>>>>>>> origin/fixes_2_2
   BookmarkSize := SizeOf(Pointer);
   FUpdatedItems := TFPList.Create;
   FAddedItems := TFPList.Create;
   FDeletedItems := TFPList.Create;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   FSqlList := TStringList.Create;
 >>>>>>> graemeg/fixes_2_2
+=======
+  FSqlList := TStringList.Create;
+>>>>>>> origin/fixes_2_2
   inherited Create(AOwner);
 end;
 
@@ -798,6 +875,13 @@ begin
     EditItem^.Row[FieldOffset] := nil;
   end;
   Result := TDSStream.Create(Self, Field, FieldOffset, EditItem, Mode = bmWrite);
+end;
+
+procedure TCustomSqliteDataset.DoBeforeClose;
+begin
+  if FSaveOnClose then
+    ApplyUpdates;
+  inherited DoBeforeClose;
 end;
 
 procedure TCustomSqliteDataset.DoBeforeClose;
@@ -988,8 +1072,25 @@ end;
 
 procedure TCustomSqliteDataset.SetOptions(const AValue: TSqliteOptions);
 begin
+<<<<<<< HEAD
   FOptions := AValue;
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result := TField(FIndexFieldList[Value]);
+end;
+
+procedure TCustomSqliteDataset.SetMasterIndexValue;
+var
+  i: Integer;
+begin
+  for i := 0 to FIndexFieldList.Count - 1 do
+    TField(FIndexFieldList[i]).AsString := TField(FMasterLink.Fields[i]).AsString;
+end;
+
+procedure TCustomSqliteDataset.SetOptions(const AValue: TSqliteOptions);
+begin
+  FOptions := AValue;
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TCustomSqliteDataset.DisposeLinkedList;
@@ -1016,17 +1117,24 @@ begin
   while TempItem^.Next <> nil do
   begin
     TempItem:=TempItem^.Next;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FreeItem(TempItem^.Previous);
   end; 
 
   //Dispose Deleted Items
   //Directly access list pointer since the index check is already done in the loop
 <<<<<<< HEAD
+<<<<<<< HEAD
   for i := 0 to FDeletedItems.Count - 1 do
 =======
   for i:= 0 to FDeletedItems.Count - 1 do
 >>>>>>> graemeg/fixes_2_2
+=======
+  for i:= 0 to FDeletedItems.Count - 1 do
+>>>>>>> origin/fixes_2_2
     FreeItem(PDataRecord(FDeletedItems.List^[i]));
 
   //Dispose FBeginItem.Row
@@ -1035,16 +1143,22 @@ begin
   FreeMem(FBeginItem^.Row, FRowBufferSize);
     
 <<<<<<< HEAD
+<<<<<<< HEAD
   //Dispose edit item row
   for i := 0 to FRowCount - 1 do
     StrDispose(FSavedEditItem^.Row[i]);
   FreeMem(FSavedEditItem^.Row, FRowBufferSize);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   //Dispose cache item row
   for i:= 0 to FRowCount - 1 do
     StrDispose(FCacheItem^.Row[i]);
   FreeMem(FCacheItem^.Row,FRowBufferSize);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TCustomSqliteDataset.FreeRecordBuffer(var Buffer: TRecordBuffer);
@@ -1066,6 +1180,7 @@ function TCustomSqliteDataset.GetFieldData(Field: TField; Buffer: Pointer;
   NativeFormat: Boolean): Boolean;
 var
   ValError: Word;
+<<<<<<< HEAD
 <<<<<<< HEAD
   FieldRow: PAnsiChar;
   FieldOffset: Integer;
@@ -1105,6 +1220,11 @@ begin
 begin
   FieldRow := PPDataRecord(ActiveBuffer)^^.Row[Field.FieldNo - 1];
 >>>>>>> graemeg/fixes_2_2
+=======
+  FieldRow: PChar;
+begin
+  FieldRow := PPDataRecord(ActiveBuffer)^^.Row[Field.FieldNo - 1];
+>>>>>>> origin/fixes_2_2
   Result := FieldRow <> nil;  
   if Result and (Buffer <> nil) then //supports GetIsNull
   begin
@@ -1112,10 +1232,14 @@ begin
     ftString:
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         Move(FieldRow^, PAnsiChar(Buffer)^, StrBufSize(FieldRow));
 =======
         Move(FieldRow^, PChar(Buffer)^, StrLen(FieldRow) + 1);
 >>>>>>> graemeg/fixes_2_2
+=======
+        Move(FieldRow^, PChar(Buffer)^, StrLen(FieldRow) + 1);
+>>>>>>> origin/fixes_2_2
       end;
     ftInteger, ftAutoInc:
       begin
@@ -1136,8 +1260,11 @@ begin
       begin
         Val(String(FieldRow), Int64(Buffer^), ValError);
 <<<<<<< HEAD
+<<<<<<< HEAD
         Result := ValError = 0;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         Result:= ValError = 0;
 >>>>>>> graemeg/fixes_2_2
       end;        
@@ -1235,10 +1362,14 @@ begin
   {$ifdef DEBUG_SQLITEDS}
   if PPDataRecord(ActiveBuffer)^ <> FCacheItem then
 <<<<<<< HEAD
+<<<<<<< HEAD
     DatabaseError('PPDataRecord(ActiveBuffer) <> FCacheItem - Problem', Self);
 =======
     DatabaseError('PPDataRecord(ActiveBuffer) <> FCacheItem - Problem',Self);
 >>>>>>> graemeg/fixes_2_2
+=======
+    DatabaseError('PPDataRecord(ActiveBuffer) <> FCacheItem - Problem',Self);
+>>>>>>> origin/fixes_2_2
   {$endif}
   ActiveItem := PPDataRecord(Buffer)^; 
   New(NewItem);
@@ -1246,7 +1377,10 @@ begin
   GetMem(NewItem^.Row, FRowBufferSize);
 =======
   GetMem(NewItem^.Row,FRowBufferSize);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   //if is a detail dataset then set the index value
   if FMasterLink.Active then
     SetMasterIndexValue;
@@ -1281,8 +1415,11 @@ begin
   FUpdatedItems.Clear;
   FDeletedItems.Clear;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FRecordCount := 0;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FRecordCount:=0;
 >>>>>>> graemeg/fixes_2_2
 end;
@@ -1323,7 +1460,10 @@ begin
       FCurrentItem := FCurrentItem^.Previous
     else
       FCurrentItem := FCurrentItem^.Next;  
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end; 
   // Dec FNextAutoInc (only if deleted item is the last record)  
   if FAutoIncFieldNo <> -1 then
@@ -1405,7 +1545,10 @@ end;
 procedure TCustomSqliteDataset.InternalOpen;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if FMasterLink.DataSource <> nil then
   begin
     //todo: retrieve only necessary fields
@@ -1456,10 +1599,14 @@ begin
 
   if State <> dsEdit then
 <<<<<<< HEAD
+<<<<<<< HEAD
     InternalAddRecord(ActiveBuffer, True)
 =======
     InternalAddRecord(nil, True)
 >>>>>>> graemeg/fixes_2_2
+=======
+    InternalAddRecord(nil, True)
+>>>>>>> origin/fixes_2_2
   else
   begin
     ActiveItem := PPDataRecord(ActiveBuffer)^;
@@ -1481,10 +1628,14 @@ end;
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   TLocateCompareFunction = function (Value: PAnsiChar; const Key: String): Boolean;
 =======
   TLocateCompareFunction = function (Value: PChar; const Key: String): Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+  TLocateCompareFunction = function (Value: PChar; const Key: String): Boolean;
+>>>>>>> origin/fixes_2_2
   
   TLocateFieldInfo = record
     Index: Integer;
@@ -1492,6 +1643,7 @@ type
     CompFunction: TLocateCompareFunction;
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function CompInsensitivePartial(UTF8Value: PAnsiChar; const AnsiKey: String): Boolean;
 var
@@ -1618,14 +1770,71 @@ function TCustomSqliteDataset.FindRecordItem(StartItem: PDataRecord; const KeyFi
 function TCustomSqliteDataset.FindRecordItem(StartItem: PDataRecord; const KeyFields: string; const KeyValues: Variant; LocateOptions: TLocateOptions; DoResync:Boolean):PDataRecord;
 >>>>>>> graemeg/fixes_2_2
 var
+=======
+function CompInsensitivePartial(Value: PChar; const Key: String): Boolean;
+begin
+  if Value <> nil then
+    Result := StrLIComp(Value, PChar(Key), Length(Key)) = 0
+  else
+    Result := False;
+end;
+
+function CompSensitivePartial(Value: PChar; const Key: String): Boolean;
+begin
+  if Value <> nil then
+    Result := StrLComp(Value, PChar(Key), Length(Key)) = 0
+  else
+    Result := False;
+end;
+
+function CompInsensitive(Value: PChar; const Key: String): Boolean;
+begin
+  if Value <> nil then
+    Result := StrIComp(Value, PChar(Key)) = 0
+  else
+    Result := False;
+end;
+
+function CompSensitive(Value: PChar; const Key: String): Boolean;
+begin
+  if Value <> nil then
+    Result := StrComp(Value, PChar(Key)) = 0
+  else
+    Result := False;
+end;
+
+function CompSensitiveWild(Value: PChar; const Key: String): Boolean;
+begin
+  if Value <> nil then
+    Result := IsWild(String(Value), Key, False)
+  else
+    Result := False;
+end;
+
+function CompInsensitiveWild(Value: PChar; const Key: String): Boolean;
+begin
+  if Value <> nil then
+    Result := IsWild(String(Value), Key, True)
+  else
+    Result := False;
+end;
+
+
+function TCustomSqliteDataset.FindRecordItem(StartItem: PDataRecord; const KeyFields: string; const KeyValues: Variant; LocateOptions: TLocateOptions; DoResync:Boolean):PDataRecord;
+var
+>>>>>>> origin/fixes_2_2
   LocateFields: array of TLocateFieldInfo;
   AFieldList: TList;
   i, AFieldCount: Integer;
   MatchRecord: Boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   AValue: String;
 >>>>>>> graemeg/fixes_2_2
+=======
+  AValue: String;
+>>>>>>> origin/fixes_2_2
   TempItem: PDataRecord;
   
 begin
@@ -1652,6 +1861,7 @@ begin
       with TField(AFieldList[i]) do
       begin
         if not (DataType in [ftFloat, ftDateTime, ftTime, ftDate]) then
+<<<<<<< HEAD
         begin
           //the loPartialKey and loCaseInsensitive is ignored in numeric fields
           if DataType in [ftString, ftMemo] then
@@ -1700,6 +1910,39 @@ begin
           else
             Str(VarToDateTime(keyvalues), LocateFields[i].Key);
 =======
+=======
+        begin
+          //the loPartialKey and loCaseInsensitive is ignored in numeric fields
+          if DataType in [ftString, ftMemo] then
+          begin
+            if loPartialKey in LocateOptions then
+            begin
+              if loCaseInsensitive in LocateOptions then
+                LocateFields[i].CompFunction := @CompInsensitivePartial
+              else
+                LocateFields[i].CompFunction := @CompSensitivePartial;
+            end
+            else
+            if soWildcardKey in FOptions then
+            begin
+              if loCaseInsensitive in LocateOptions then
+                LocateFields[i].CompFunction := @CompInsensitiveWild
+              else
+                LocateFields[i].CompFunction := @CompSensitiveWild;
+            end
+            else
+            begin
+              if loCaseInsensitive in LocateOptions then
+                LocateFields[i].CompFunction := @CompInsensitive
+              else
+                LocateFields[i].CompFunction := @CompSensitive;
+            end;
+          end
+          else
+            LocateFields[i].CompFunction := @CompSensitive;
+            
+          if VarIsArray(KeyValues) then
+>>>>>>> origin/fixes_2_2
             LocateFields[i].Key := KeyValues[i]
           else
             LocateFields[i].Key := KeyValues;
@@ -1713,7 +1956,10 @@ begin
           else
             Str(VarToDateTime(keyvalues), AValue);
           LocateFields[i].Key := Trim(AValue);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         end;
         LocateFields[i].Index := FieldNo - 1;
       end;
@@ -1721,6 +1967,7 @@ begin
     AFieldList.Destroy;
   end;
   {$ifdef DEBUG_SQLITEDS}
+<<<<<<< HEAD
 <<<<<<< HEAD
   WriteLn('##TCustomSqliteDataset.FindRecordItem##');
   WriteLn('  KeyFields: ', KeyFields);
@@ -1730,6 +1977,8 @@ begin
     WriteLn('  Key: ', LocateFields[i].Key);
     WriteLn('  Index: ', LocateFields[i].Index);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   writeln('##TCustomSqliteDataset.FindRecordItem##');
   writeln('  KeyFields: ', KeyFields);
   for i := 0 to AFieldCount - 1 do
@@ -1737,7 +1986,10 @@ begin
     writeln('LocateFields[',i,']');
     writeln('  Key: ', LocateFields[i].Key);
     writeln('  Index: ', LocateFields[i].Index);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
   {$endif}        
   //Search the list
@@ -1752,8 +2004,11 @@ begin
       begin
         MatchRecord := False;
 <<<<<<< HEAD
+<<<<<<< HEAD
         break; //for
 =======
+=======
+>>>>>>> origin/fixes_2_2
         Break;//for
 >>>>>>> graemeg/fixes_2_2
       end;
@@ -1802,6 +2057,7 @@ procedure TCustomSqliteDataset.GetSqliteHandle;
 begin
   if FFileName = '' then
 <<<<<<< HEAD
+<<<<<<< HEAD
     DatabaseError('Filename not set', Self);
   FSqliteHandle := InternalGetHandle;
   if Assigned(FOnGetHandle) then
@@ -1840,15 +2096,39 @@ end;
 function TCustomSqliteDataset.Locate(const KeyFields: string; const KeyValues: Variant; LocateOptions: TLocateOptions) : Boolean;
 begin
 >>>>>>> graemeg/fixes_2_2
+=======
+    DatabaseError('Filename not set',Self);
+  FSqliteHandle := InternalGetHandle;
+  if Assigned(FOnGetHandle) then
+    FOnGetHandle(Self);
+end;
+
+procedure TCustomSqliteDataset.FreeItem(AItem: PDataRecord);
+var
+  i: Integer;
+begin
+  for i:= 0 to FRowCount - 1 do
+    StrDispose(AItem^.Row[i]);
+  FreeMem(AItem^.Row,FRowBufferSize);
+  Dispose(AItem);
+end;
+
+function TCustomSqliteDataset.Locate(const KeyFields: string; const KeyValues: Variant; LocateOptions: TLocateOptions) : Boolean;
+begin
+>>>>>>> origin/fixes_2_2
   CheckBrowseMode;
   Result := FindRecordItem(FBeginItem^.Next, KeyFields, KeyValues, LocateOptions, True) <> nil;
 end;
   
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TCustomSqliteDataset.LocateNext(const KeyFields: String; const KeyValues: Variant; LocateOptions: TLocateOptions): Boolean;
 =======
 function TCustomSqliteDataset.LocateNext(const KeyFields: string; const KeyValues: Variant; LocateOptions: TLocateOptions) : Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TCustomSqliteDataset.LocateNext(const KeyFields: string; const KeyValues: Variant; LocateOptions: TLocateOptions) : Boolean;
+>>>>>>> origin/fixes_2_2
 begin
   CheckBrowseMode;
   Result := FindRecordItem(PPDataRecord(ActiveBuffer)^^.Next, KeyFields, KeyValues, LocateOptions, True) <> nil;
@@ -1858,13 +2138,17 @@ function TCustomSqliteDataset.Lookup(const KeyFields: String; const KeyValues: V
 var
   TempItem: PDataRecord;
 <<<<<<< HEAD
+<<<<<<< HEAD
   SaveState: TDataSetState;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   CheckBrowseMode;
   TempItem := FindRecordItem(FBeginItem^.Next, KeyFields, KeyValues, [], False);
   if TempItem <> nil then
+<<<<<<< HEAD
 <<<<<<< HEAD
   begin
     SaveState := SetTempState(dsInternalCalc);
@@ -1902,6 +2186,11 @@ begin
   else
     Result := False;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Result := TempItem^.Row[FieldByName(ResultFields).FieldNo - 1]
+  else
+    Result := False;
+>>>>>>> origin/fixes_2_2
 end;  
 
 procedure TCustomSqliteDataset.SetBookmarkData(Buffer: TRecordBuffer; Data: Pointer);
@@ -1930,7 +2219,10 @@ begin
   FDeletedItems.Capacity := AValue;
 =======
   FDeletedItems.Capacity:=AValue;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;  
 
 procedure TCustomSqliteDataset.SetFieldData(Field: TField; Buffer: Pointer;
@@ -1994,10 +2286,13 @@ begin
     ftFloat, ftDateTime, ftDate, ftTime, ftCurrency:
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         Str(Double(Buffer^), TempStr);
         EditItem^.Row[FieldOffset] := StrAlloc(Length(TempStr) + 1);
         Move(PAnsiChar(TempStr)^, (EditItem^.Row[FieldOffset])^, Length(TempStr) + 1);
 =======
+=======
+>>>>>>> origin/fixes_2_2
         Str(Double(Buffer^),TempStr);
         //Str returns a space as the first character for positive values
         //and the - sign for negative values. It's necessary to remove the extra
@@ -2014,7 +2309,10 @@ begin
         end;
         FCacheItem^.Row[Pred(Field.FieldNo)] := StrAlloc(FloatLen);
         Move(FloatStr^, (FCacheItem^.Row[Pred(Field.FieldNo)])^, FloatLen);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
     ftLargeInt:
       begin
@@ -2115,10 +2413,13 @@ begin
   SetDetailFilter;
   {$ifdef DEBUG_SQLITEDS}
 <<<<<<< HEAD
+<<<<<<< HEAD
   WriteLn('##TCustomSqliteDataset.MasterChanged##');
   WriteLn('  SQL used to filter detail dataset:');
   WriteLn('  ', FEffectiveSQL);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   writeln('##TCustomSqliteDataset.MasterChanged##');
   writeln('  SQL used to filter detail dataset:');
   writeln('  ',FSql);
@@ -2177,10 +2478,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomSqliteDataset.SetFileName(const Value: UTF8String);
 =======
 procedure TCustomSqliteDataset.SetFileName(const Value: String);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TCustomSqliteDataset.SetFileName(const Value: String);
+>>>>>>> origin/fixes_2_2
 begin
   if Value <> FFileName then
   begin
@@ -2265,17 +2570,23 @@ end;
 function TCustomSqliteDataset.ApplyUpdates: Boolean;
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   iFields, iItems, StatementsCounter: Integer;
   SQLTemp, WhereKeyNameEqual, SQLLine, TemplateStr: String;
   TempItem: PDataRecord;
 begin
   Result := False;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   iFields, iItems, StatementsCounter, TempReturnCode:Integer;
   SqlTemp,WhereKeyNameEqual,ASqlLine,TemplateStr:String;
   TempItem: PDataRecord;
 begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   CheckBrowseMode;
   if not UpdatesPending then
   begin
@@ -2285,6 +2596,7 @@ begin
   //A PrimaryKey is only necessary to update or delete records
   if FPrimaryKeyNo <> -1 then
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
     WhereKeyNameEqual := ' WHERE ' + FieldDefs[FPrimaryKeyNo].Name + ' = ';
     Result := True;
@@ -2328,6 +2640,8 @@ begin
         end;
       end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FReturnCode := SQLITE_OK;
     StatementsCounter:=0;
     WhereKeyNameEqual:=' WHERE '+Fields[FPrimaryKeyNo].FieldName+' = ';
@@ -2530,8 +2844,11 @@ var
 begin
   {$ifdef DEBUG_SQLITEDS}
 <<<<<<< HEAD
+<<<<<<< HEAD
   WriteLn('##TCustomSqliteDataset.CreateTable##');
 =======
+=======
+>>>>>>> origin/fixes_2_2
   writeln('##TCustomSqliteDataset.CreateTable##');
 >>>>>>> graemeg/fixes_2_2
   if ATableName = '' then
@@ -2628,7 +2945,10 @@ begin
     DatabaseError('Callback parameter not set', Self);
 =======
     DatabaseError('Callback parameter not set',Self);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   CheckBrowseMode;
   if rsDeleted in RecordStates then
     with FDeletedItems do
@@ -2680,10 +3000,14 @@ end;
 function TCustomSqliteDataset.TableExists(const ATableName: String): Boolean;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   ExecSql('SELECT name FROM SQLITE_MASTER WHERE type = ''table'' AND name LIKE ''' + ATableName + ''';');
 =======
   ExecSql('SELECT name FROM SQLITE_MASTER WHERE type = ''table'' AND name LIKE '''+ ATableName+ ''';');
 >>>>>>> graemeg/fixes_2_2
+=======
+  ExecSql('SELECT name FROM SQLITE_MASTER WHERE type = ''table'' AND name LIKE '''+ ATableName+ ''';');
+>>>>>>> origin/fixes_2_2
   Result := FReturnCode = SQLITE_ROW;
 end;
 

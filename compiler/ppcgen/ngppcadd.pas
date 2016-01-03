@@ -425,6 +425,7 @@ implementation
         else
           setbase:=tsetdef(right.resultdef).setbase;
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (nf_swapped in flags) and
            ((nodetype=subn) or
             (left.nodetype=setelementn)) then
@@ -436,6 +437,8 @@ implementation
           hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,left.resultdef,true);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         case nodetype of
           addn :
             begin
@@ -455,10 +458,14 @@ implementation
                       tmpreg := cg.getintregister(current_asmdata.CurrAsmList,OS_INT);
                       cg.a_load_const_reg(current_asmdata.CurrAsmList,OS_INT,aint((aword(1) shl (resultdef.size*8-1))),tmpreg);
 <<<<<<< HEAD
+<<<<<<< HEAD
                       register_maybe_adjust_setbase(current_asmdata.CurrAsmList,u32inttype,right.location,setbase);
 =======
                       register_maybe_adjust_setbase(current_asmdata.CurrAsmList,right.location,setbase);
 >>>>>>> graemeg/fixes_2_2
+=======
+                      register_maybe_adjust_setbase(current_asmdata.CurrAsmList,right.location,setbase);
+>>>>>>> origin/fixes_2_2
                       cg.a_op_reg_reg(current_asmdata.CurrAsmList,OP_SHR,OS_INT,
                         right.location.register,tmpreg);
                       if left.location.loc <> LOC_CONSTANT then

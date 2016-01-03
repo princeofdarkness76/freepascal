@@ -132,10 +132,14 @@ implementation
 
         { load left operator in a register }
 <<<<<<< HEAD
+<<<<<<< HEAD
         hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,resultdef,false);
 =======
         location_force_reg(current_asmdata.CurrAsmList,left.location,location.size,false);
 >>>>>>> graemeg/fixes_2_2
+=======
+        location_force_reg(current_asmdata.CurrAsmList,left.location,location.size,false);
+>>>>>>> origin/fixes_2_2
         hreg64hi:=left.location.register64.reghi;
         hreg64lo:=left.location.register64.reglo;
 

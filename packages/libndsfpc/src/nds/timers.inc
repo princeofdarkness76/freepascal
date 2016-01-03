@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 
 const
@@ -74,6 +75,8 @@ function TIMER_FREQ(n: cint): cint; inline;
 begin
   TIMER_FREQ := cint(-BUS_CLOCK div (n));
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: timers.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -118,34 +121,48 @@ begin
 function TIMER_FREQ(n: cint): cint; inline;
 begin
   TIMER_FREQ := cint(-$2000000 div (n));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 	
 function TIMER_FREQ_64(n: cint): cint; inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   TIMER_FREQ_64 := cint(-(BUS_CLOCK shr 6) div (n));
 =======
   TIMER_FREQ_64 := cint(-($2000000 shr 6) div (n));
 >>>>>>> graemeg/fixes_2_2
+=======
+  TIMER_FREQ_64 := cint(-($2000000 shr 6) div (n));
+>>>>>>> origin/fixes_2_2
 end;
 	
 function TIMER_FREQ_256(n: cint): cint; inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   TIMER_FREQ_256 := cint(-(BUS_CLOCK shr 8) div (n));
 =======
   TIMER_FREQ_256 := cint(-($2000000 shr 8) div (n));
 >>>>>>> graemeg/fixes_2_2
+=======
+  TIMER_FREQ_256 := cint(-($2000000 shr 8) div (n));
+>>>>>>> origin/fixes_2_2
 end;
 
 function TIMER_FREQ_1024(n: cint): cint; inline; 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   TIMER_FREQ_1024 := cint(-(BUS_CLOCK shr 10) div (n));
 end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   TIMER_FREQ_1024 := cint(-($2000000 shr 10) div (n));
 end;
 {$endif NDS_IMPLEMENTATION}
@@ -163,14 +180,20 @@ const
 {$endif NDS_INTERFACE}
 
 {$ifdef NDS_IMPLEMENTATION}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function TIMER_DATA(n: cuint): pcuint16; inline;
 begin
   TIMER_DATA := pcuint16($04000100 + (n shl 2));
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_IMPLEMENTATION}
 
 {$ifdef NDS_INTERFACE}
@@ -187,11 +210,15 @@ const
 {$endif NDS_INTERFACE}
 
 {$ifdef NDS_IMPLEMENTATION}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function TIMER_CR(n: cint): pcuint16; inline;
 begin
   TIMER_CR := pcuint16($04000102 + (n shl 2));
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 function timerTick(timer: cuint): cuint16; inline; 
@@ -236,6 +263,8 @@ end;
 
 {$endif NDS_IMPLEMENTATION}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_IMPLEMENTATION}
 
 {$ifdef NDS_INTERFACE}
@@ -267,4 +296,7 @@ function TIMER_FREQ_1024(n: cint): cint; inline;
 function TIMER_DATA(n: cuint): pcuint16; inline;
 function TIMER_CR(n: cint): pcuint16; inline;
 {$endif NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

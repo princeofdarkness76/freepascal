@@ -56,6 +56,7 @@ begin
        Inc(ThreadNumber);
        thr:=ThProva.Create(Threadnumber);
 <<<<<<< HEAD
+<<<<<<< HEAD
        thr.start;
      Except on e: Exception do
        begin
@@ -72,6 +73,8 @@ begin
        end;
      end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
        thr.resume;
      Except on e: Exception do
        begin
@@ -83,7 +86,10 @@ begin
        while (threadsfinished<>threadnumber) do
          { let the started threads to finish }
          sleep(70);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
    end;
   while (threadsfinished<>threadnumber) do
     { give some time to the started threads to finish }

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -313,6 +314,8 @@ type
 >>>>>>> origin/cpstrnew
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Type
   TX11Console = Class(TPTCBaseConsole)
   Private
@@ -395,4 +398,7 @@ Type
     Function NextEvent(Var AEvent : TPTCEvent; AWait : Boolean; Const AEventMask : TPTCEventMask) : Boolean; Override;
     Function PeekEvent(AWait : Boolean; Const AEventMask : TPTCEventMask) : TPTCEvent; Override;
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

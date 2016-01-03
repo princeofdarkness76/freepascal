@@ -645,10 +645,14 @@ unit charset;
 
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
          if (mapcache=cp) and assigned(mapcachep) and (mapcachep^.cp=cp) then
 =======
          if (mapcache=s) and assigned(mapcachep) and (mapcachep^.cpname=s) then
 >>>>>>> graemeg/fixes_2_2
+=======
+         if (mapcache=s) and assigned(mapcachep) and (mapcachep^.cpname=s) then
+>>>>>>> origin/fixes_2_2
            begin
               getmap:=mapcachep;
               exit;

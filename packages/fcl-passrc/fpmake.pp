@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('fcl-passrc');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ShortName:='fcls';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -28,17 +29,23 @@ begin
     P.NeedLibC:= false;
     P.OSes:=AllOSes-[embedded,msdos,win16];
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ALLPACKAGES}
     P.Directory:='fcl-passrc';
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
 
     P.Dependencies.Add('fcl-base');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     P.SourcePath.Add('src');
 
     T:=P.Targets.AddUnit('pastree.pp');
+<<<<<<< HEAD
 <<<<<<< HEAD
     T.ResourceStrings := True;
     T:=P.Targets.AddUnit('pscanner.pp');
@@ -73,6 +80,8 @@ begin
           AddUnit('pastree');
         end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('paswrite.pp');
       with T.Dependencies do
         begin
@@ -85,7 +94,10 @@ begin
           AddUnit('pscanner');
         end;
     T:=P.Targets.AddUnit('pscanner.pp');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

@@ -77,7 +77,10 @@
   type
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
   { Structure used in sigstack call. }
     tdarwin_stack_t = record
         ss_sp    : pchar;        { signal stack base }
@@ -85,7 +88,10 @@
         ss_flags : cint;         { SA_DISABLE and/or SA_ONSTACK }
     end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      ppc_thread_state = record
   { Instruction address register (PC)  }
           srr0 : dword;
@@ -263,7 +269,10 @@
         vs: ppc_vector_state_t;
      end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
      psigcontext = ^sigcontextrec;
      psigcontextrec = ^sigcontextrec;
@@ -276,4 +285,7 @@
         uc_mcontext: ^mcontext_t;      { machine specific context }
      end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

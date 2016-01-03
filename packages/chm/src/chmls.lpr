@@ -1,11 +1,14 @@
 { Copyright (C) <2005> <Andrew Haines> chmls.lpr
 <<<<<<< HEAD
+<<<<<<< HEAD
   Mostly rewritten by Marco van de Voort 2009-2012
 
   An util that concentrates on listing and decompiling various sections
    of a CHM.
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -20,6 +23,7 @@
   You should have received a copy of the GNU Library General Public License
   along with this library; if not, write to the Free Software Foundation,
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 =======
@@ -27,6 +31,11 @@
 }
 {
 >>>>>>> graemeg/fixes_2_2
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+}
+{
+>>>>>>> origin/fixes_2_2
   See the file COPYING, included in this distribution,
   for details about the copyright.
 }
@@ -39,6 +48,7 @@ program chmls;
 {$mode objfpc}{$H+}
 
 uses
+<<<<<<< HEAD
 <<<<<<< HEAD
   Classes, GetOpts, SysUtils, Types,
 <<<<<<< HEAD
@@ -336,6 +346,8 @@ procedure WriteStrAdj(Str: String; CharWidth: Integer);
 // Changed to WriteStrADJ (for adjust), since 2.4.0 writestr is a builtin
 // Why doesn't Write() allow left aligned columns?, sigh.
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Classes, chmreader, chmbase, Sysutils
   { add your units here };
 type
@@ -355,7 +367,10 @@ var
   JunkObject: TJunkObject;
 
 procedure WriteStr(Str: String; CharWidth: Integer);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   var
     OutString: String;
     Len: Integer;
@@ -363,6 +378,7 @@ procedure WriteStr(Str: String; CharWidth: Integer);
     Len := Length(Str);
     SetLength(OutString, CharWidth-Len);
     FillChar(OutString[1], CharWidth-Len, ' ');
+<<<<<<< HEAD
 <<<<<<< HEAD
     Write(OutString + Str); // to stdout
   end;
@@ -1461,6 +1477,8 @@ begin
    end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
     Write(OutString + Str); // to sdtout
   end;
@@ -1515,6 +1533,9 @@ begin
   WriteLn('Total Files in chm: ', I);
   ITS.Free;
   JunkObject.Free;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.
 

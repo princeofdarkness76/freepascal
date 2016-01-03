@@ -29,12 +29,15 @@ interface
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   SysUtils, Classes, fpjson, jsonscanner, jsonparser;
 
 
 type
   EJSONConfigError = class(Exception);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   SysUtils, Classes, fpjson, jsonparser;
 
 resourcestring
@@ -43,7 +46,10 @@ resourcestring
 type
   EJSONConfigError = class(Exception);
   TPathFlags = set of (pfHasValue, pfWriteAccess);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 (* ********************************************************************
    "APath" is the path and name of a value: A JSON configuration file 
@@ -66,6 +72,7 @@ type
   private
     FFilename: String;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FFormatIndentSize: Integer;
     FFormatoptions: TFormatOptions;
     FFormatted: Boolean;
@@ -74,15 +81,21 @@ type
     procedure SetFilename(const AFilename: String);
     Function StripSlash(Const P : UnicodeString) : UnicodeString;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FKey: TJSONObject;
     procedure DoSetFilename(const AFilename: String; ForceReload: Boolean);
     procedure SetFilename(const AFilename: String);
     Function StripSlash(P : WideString) : WideString;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   protected
     FJSON: TJSONObject;
     FModified: Boolean;
     procedure Loaded; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
     function FindPath(Const APath: UnicodeString; AllowCreate : Boolean) : TJSONObject;
     function FindObject(Const APath: UnicodeString; AllowCreate : Boolean) : TJSONObject;
@@ -129,6 +142,8 @@ type
     Property FormatOptions : TFormatOptions Read FFormatoptions Write FFormatOptions Default DefaultFormat;
     Property FormatIndentsize : Integer Read FFormatIndentSize Write FFormatIndentSize Default DefaultIndentSize;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     function FindPath(Const APath: WideString; AllowCreate : Boolean) : TJSONObject;
     function FindObject(Const APath: WideString; AllowCreate : Boolean) : TJSONObject;
     function FindObject(Const APath: WideString; AllowCreate : Boolean;Var ElName : WideString) : TJSONObject;
@@ -163,7 +178,10 @@ type
     property Modified: Boolean read FModified;
   published
     property Filename: String read FFilename write SetFilename;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
 
@@ -172,10 +190,14 @@ type
 implementation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Resourcestring
 =======
 Const
 >>>>>>> graemeg/fixes_2_2
+=======
+Const
+>>>>>>> origin/fixes_2_2
   SErrInvalidJSONFile = '"%s" is not a valid JSON configuration file.';
   SErrCouldNotOpenKey = 'Could not open key "%s".';
 
@@ -185,10 +207,13 @@ begin
   FJSON:=TJSONObject.Create;
   FKey:=FJSON;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FFormatOptions:=DefaultFormat;
   FFormatIndentsize:=DefaultIndentSize;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 destructor TJSONConfig.Destroy;
@@ -212,17 +237,22 @@ procedure TJSONConfig.Flush;
 Var
   F : Text;
 <<<<<<< HEAD
+<<<<<<< HEAD
   S : TJSONStringType;
   
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 begin
   if Modified then
     begin
     AssignFile(F,FileName);
     Rewrite(F);
     Try
+<<<<<<< HEAD
 <<<<<<< HEAD
       if Formatted then
         S:=FJSON.FormatJSON(Formatoptions,FormatIndentSize)
@@ -232,6 +262,9 @@ begin
 =======
       Writeln(F,FJSON.AsJSON);
 >>>>>>> graemeg/fixes_2_2
+=======
+      Writeln(F,FJSON.AsJSON);
+>>>>>>> origin/fixes_2_2
     Finally
       CloseFile(F);
     end;
@@ -241,22 +274,29 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSONConfig.FindObject(const APath: UnicodeString; AllowCreate: Boolean
   ): TJSONObject;
 
 Var
   Dummy : UnicodeString;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TJSONConfig.FindObject(Const APath: WideString; AllowCreate : Boolean) : TJSONObject;
 
 Var
   Dummy : WideString;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
   Result:=FindObject(APath,AllowCreate,Dummy);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TJSONConfig.FindObject(const APath: UnicodeString; AllowCreate: Boolean;
   out ElName: UnicodeString): TJSONObject;
@@ -264,11 +304,16 @@ function TJSONConfig.FindObject(const APath: UnicodeString; AllowCreate: Boolean
 Var
   S,El : UnicodeString;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TJSONConfig.FindObject(Const APath: WideString; AllowCreate : Boolean;Var ElName : WideString) : TJSONObject;
 
 Var
   S,El : WideString;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   P,I : Integer;
   T : TJSonObject;
   
@@ -291,10 +336,14 @@ begin
           I:=-1
         else
 <<<<<<< HEAD
+<<<<<<< HEAD
           I:=Result.IndexOfName(UTF8Encode(El));
 =======
           I:=Result.IndexOfName(El);
 >>>>>>> graemeg/fixes_2_2
+=======
+          I:=Result.IndexOfName(El);
+>>>>>>> origin/fixes_2_2
         If (I=-1) then
           // No element with this name.
           begin
@@ -304,10 +353,14 @@ begin
             T:=Result;
             Result:=TJSonObject.Create;
 <<<<<<< HEAD
+<<<<<<< HEAD
             T.Add(UTF8Encode(El),Result);
 =======
             T.Add(El,Result);
 >>>>>>> graemeg/fixes_2_2
+=======
+            T.Add(El,Result);
+>>>>>>> origin/fixes_2_2
             end
           else
             Result:=Nil
@@ -317,10 +370,14 @@ begin
           begin
           if (Result.Items[i].JSONtype=jtObject) then
 <<<<<<< HEAD
+<<<<<<< HEAD
             Result:=Result.Objects[UTF8Encode(el)]
 =======
             Result:=Result.Objects[el]
 >>>>>>> graemeg/fixes_2_2
+=======
+            Result:=Result.Objects[el]
+>>>>>>> origin/fixes_2_2
           else
             begin
 //            Writeln(el,' type wrong');
@@ -331,10 +388,14 @@ begin
               T:=Result;
               Result:=TJSonObject.Create;
 <<<<<<< HEAD
+<<<<<<< HEAD
               T.Add(UTF8Encode(El),Result);
 =======
               T.Add(El,Result);
 >>>>>>> graemeg/fixes_2_2
+=======
+              T.Add(El,Result);
+>>>>>>> origin/fixes_2_2
               end
             else
               Result:=Nil
@@ -347,6 +408,7 @@ begin
   ElName:=S;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TJSONConfig.FindElement(const APath: UnicodeString; CreateParent: Boolean; AllowObject : Boolean = False): TJSONData;
 
@@ -362,6 +424,8 @@ function TJSONConfig.FindElement(const APath: UnicodeString;
   CreateParent: Boolean; out AParent: TJSONObject; out ElName: UnicodeString;
   AllowObject : Boolean = False): TJSONData;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TJSONConfig.FindElement(Const APath: WideString; CreateParent : Boolean) : TJSONData;
 
 Var
@@ -373,7 +437,10 @@ begin
 end;
 
 function TJSONConfig.FindElement(Const APath: WideString; CreateParent : Boolean; Var AParent : TJSONObject; Var ElName : WideString) : TJSONData;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 Var
   I : Integer;
@@ -384,6 +451,7 @@ begin
   If Assigned(Aparent) then
     begin
 //    Writeln('Found parent, looking for element:',elName);
+<<<<<<< HEAD
 <<<<<<< HEAD
     I:=AParent.IndexOfName(UTF8Encode(ElName));
 //    Writeln('Element index is',I);
@@ -396,6 +464,8 @@ end;
 
 function TJSONConfig.GetValue(const APath: UnicodeString; const ADefault: UnicodeString): UnicodeString;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     I:=AParent.IndexOfName(ElName);
 //    Writeln('Element index is',I);
     If (I<>-1) And (AParent.items[I].JSONType<>jtObject) then
@@ -405,7 +475,10 @@ end;
 
 
 function TJSONConfig.GetValue(const APath: WideString; const ADefault: WideString): WideString;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 var
   El : TJSONData;
@@ -414,19 +487,27 @@ begin
   El:=FindElement(StripSlash(APath),False);
   If Assigned(El) then
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result:=El.AsUnicodeString
 =======
     Result:=El.AsString
 >>>>>>> graemeg/fixes_2_2
+=======
+    Result:=El.AsString
+>>>>>>> origin/fixes_2_2
   else
     Result:=ADefault;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSONConfig.GetValue(const APath: UnicodeString; ADefault: Integer): Integer;
 =======
 function TJSONConfig.GetValue(const APath: WideString; ADefault: Integer): Integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TJSONConfig.GetValue(const APath: WideString; ADefault: Integer): Integer;
+>>>>>>> origin/fixes_2_2
 var
   El : TJSONData;
   
@@ -440,6 +521,7 @@ begin
     Result:=StrToIntDef(El.AsString,ADefault);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TJSONConfig.GetValue(const APath: UnicodeString; ADefault: Int64): Int64;
 var
@@ -459,6 +541,9 @@ function TJSONConfig.GetValue(const APath: UnicodeString; ADefault: Boolean): Bo
 =======
 function TJSONConfig.GetValue(const APath: WideString; ADefault: Boolean): Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TJSONConfig.GetValue(const APath: WideString; ADefault: Boolean): Boolean;
+>>>>>>> origin/fixes_2_2
 
 var
   El : TJSONData;
@@ -474,10 +559,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSONConfig.GetValue(const APath: UnicodeString; ADefault: Double): Double;
 =======
 function TJSONConfig.GetValue(const APath: WideString; ADefault: Double): Double;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TJSONConfig.GetValue(const APath: WideString; ADefault: Double): Double;
+>>>>>>> origin/fixes_2_2
 
 var
   El : TJSONData;
@@ -492,6 +581,7 @@ begin
     Result:=StrToFloatDef(El.AsString,ADefault);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TJSONConfig.GetValue(const APath: UnicodeString; AValue: TStrings;
   const ADefault: String): Boolean;
@@ -538,13 +628,18 @@ var
   El : TJSONData;
   ElName : UnicodeString;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure TJSONConfig.SetValue(const APath: WideString; const AValue: WideString);
 
 var
   El : TJSONData;
   ElName : WideString;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   O : TJSONObject;
   I : integer;
   
@@ -553,16 +648,21 @@ begin
   if Assigned(El) and (El.JSONType<>jtString) then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     I:=O.IndexOfName(UTF8Encode(elName));
 =======
     I:=O.IndexOfName(elName);
 >>>>>>> graemeg/fixes_2_2
+=======
+    I:=O.IndexOfName(elName);
+>>>>>>> origin/fixes_2_2
     O.Delete(i);
     El:=Nil;
     end;
   If Not Assigned(el) then
     begin
     El:=TJSONString.Create(AValue);
+<<<<<<< HEAD
 <<<<<<< HEAD
     O.Add(UTF8Encode(ElName),El);
     end
@@ -573,6 +673,8 @@ end;
 
 procedure TJSONConfig.SetDeleteValue(const APath: UnicodeString; const AValue, DefValue: UnicodeString);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     O.Add(ElName,El);
     end
   else
@@ -581,7 +683,10 @@ procedure TJSONConfig.SetDeleteValue(const APath: UnicodeString; const AValue, D
 end;
 
 procedure TJSONConfig.SetDeleteValue(const APath: WideString; const AValue, DefValue: WideString);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   if AValue = DefValue then
     DeleteValue(APath)
@@ -590,18 +695,24 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TJSONConfig.SetValue(const APath: UnicodeString; AValue: Integer);
 
 var
   El : TJSONData;
   ElName : UnicodeString;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TJSONConfig.SetValue(const APath: WideString; AValue: Integer);
 
 var
   El : TJSONData;
   ElName : WideString;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   O : TJSONObject;
   I : integer;
 
@@ -610,10 +721,14 @@ begin
   if Assigned(El) and (Not (El is TJSONIntegerNumber)) then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     I:=O.IndexOfName(UTF8Encode(elName));
 =======
     I:=O.IndexOfName(elName);
 >>>>>>> graemeg/fixes_2_2
+=======
+    I:=O.IndexOfName(elName);
+>>>>>>> origin/fixes_2_2
     If (I<>-1) then // Normally not needed...
       O.Delete(i);
     El:=Nil;
@@ -622,16 +737,21 @@ begin
     begin
     El:=TJSONIntegerNumber.Create(AValue);
 <<<<<<< HEAD
+<<<<<<< HEAD
     O.Add(UTF8Encode(ElName),El);
 =======
     O.Add(ElName,El);
 >>>>>>> graemeg/fixes_2_2
+=======
+    O.Add(ElName,El);
+>>>>>>> origin/fixes_2_2
     end
   else
     El.AsInteger:=AValue;
   FModified:=True;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TJSONConfig.SetValue(const APath: UnicodeString; AValue: Int64);
 
@@ -664,6 +784,9 @@ procedure TJSONConfig.SetDeleteValue(const APath: UnicodeString; AValue,
 =======
 procedure TJSONConfig.SetDeleteValue(const APath: WideString; AValue,
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TJSONConfig.SetDeleteValue(const APath: WideString; AValue,
+>>>>>>> origin/fixes_2_2
   DefValue: Integer);
 begin
   if AValue = DefValue then
@@ -672,6 +795,7 @@ begin
     SetValue(APath, AValue);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TJSONConfig.SetDeleteValue(const APath: UnicodeString; AValue,
   DefValue: Int64);
@@ -688,12 +812,17 @@ var
   El : TJSONData;
   ElName : UnicodeString;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TJSONConfig.SetValue(const APath: WideString; AValue: Boolean);
 
 var
   El : TJSONData;
   ElName : WideString;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   O : TJSONObject;
   I : integer;
 
@@ -702,10 +831,14 @@ begin
   if Assigned(El) and (el.JSONType<>jtBoolean) then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     I:=O.IndexOfName(UTF8Encode(elName));
 =======
     I:=O.IndexOfName(elName);
 >>>>>>> graemeg/fixes_2_2
+=======
+    I:=O.IndexOfName(elName);
+>>>>>>> origin/fixes_2_2
     O.Delete(i);
     El:=Nil;
     end;
@@ -713,10 +846,14 @@ begin
     begin
     El:=TJSONBoolean.Create(AValue);
 <<<<<<< HEAD
+<<<<<<< HEAD
     O.Add(UTF8Encode(ElName),El);
 =======
     O.Add(ElName,El);
 >>>>>>> graemeg/fixes_2_2
+=======
+    O.Add(ElName,El);
+>>>>>>> origin/fixes_2_2
     end
   else
     El.AsBoolean:=AValue;
@@ -724,18 +861,24 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TJSONConfig.SetValue(const APath: UnicodeString; AValue: Double);
 
 var
   El : TJSONData;
   ElName : UnicodeString;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TJSONConfig.SetValue(const APath: WideString; AValue: Double);
 
 var
   El : TJSONData;
   ElName : WideString;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   O : TJSONObject;
   I : integer;
 
@@ -744,10 +887,14 @@ begin
   if Assigned(El) and (Not (El is TJSONFloatNumber)) then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     I:=O.IndexOfName(UTF8Encode(elName));
 =======
     I:=O.IndexOfName(elName);
 >>>>>>> graemeg/fixes_2_2
+=======
+    I:=O.IndexOfName(elName);
+>>>>>>> origin/fixes_2_2
     O.Delete(i);
     El:=Nil;
     end;
@@ -755,16 +902,21 @@ begin
     begin
     El:=TJSONFloatNumber.Create(AValue);
 <<<<<<< HEAD
+<<<<<<< HEAD
     O.Add(UTF8Encode(ElName),El);
 =======
     O.Add(ElName,El);
 >>>>>>> graemeg/fixes_2_2
+=======
+    O.Add(ElName,El);
+>>>>>>> origin/fixes_2_2
     end
   else
     El.AsFloat:=AValue;
   FModified:=True;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TJSONConfig.SetValue(const APath: UnicodeString; AValue: TStrings; AsObject : Boolean = False);
 var
@@ -822,6 +974,9 @@ procedure TJSONConfig.SetDeleteValue(const APath: UnicodeString; AValue,
 =======
 procedure TJSONConfig.SetDeleteValue(const APath: WideString; AValue,
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TJSONConfig.SetDeleteValue(const APath: WideString; AValue,
+>>>>>>> origin/fixes_2_2
   DefValue: Boolean);
 begin
   if AValue = DefValue then
@@ -831,6 +986,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TJSONConfig.DeletePath(const APath: UnicodeString);
 
 Var
@@ -839,6 +995,8 @@ Var
   Node : TJSONObject;
   ElName : UnicodeString;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TJSONConfig.DeletePath(const APath: WideString);
 
 Var
@@ -846,7 +1004,10 @@ Var
   L : integer;
   Node : TJSONObject;
   ElName : WideString;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   
 begin
   P:=StripSlash(APath);
@@ -857,10 +1018,14 @@ begin
     If Assigned(Node) then
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       L:=Node.IndexOfName(UTF8Encode(ElName));
 =======
       L:=Node.IndexOfName(ElName);
 >>>>>>> graemeg/fixes_2_2
+=======
+      L:=Node.IndexOfName(ElName);
+>>>>>>> origin/fixes_2_2
       If (L<>-1) then
         Node.Delete(L);
       end;
@@ -868,15 +1033,20 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TJSONConfig.DeleteValue(const APath: UnicodeString);
 =======
 procedure TJSONConfig.DeleteValue(const APath: WideString);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TJSONConfig.DeleteValue(const APath: WideString);
+>>>>>>> origin/fixes_2_2
 
 begin
   DeletePath(APath);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TJSONConfig.Reload;
 
@@ -897,6 +1067,8 @@ function TJSONConfig.FindPath(const APath: UnicodeString; AllowCreate: Boolean
 Var
   P : UnicodeString;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TJSONConfig.Loaded;
 begin
   inherited Loaded;
@@ -909,7 +1081,10 @@ function TJSONConfig.FindPath(const APath: WideString; AllowCreate: Boolean
   
 Var
   P : WideString;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   L : Integer;
   
 begin
@@ -943,10 +1118,14 @@ begin
     F:=TFileStream.Create(AFileName,fmopenRead);
     try
 <<<<<<< HEAD
+<<<<<<< HEAD
       P:=TJSONParser.Create(F,[joUTF8,joComments]);
 =======
       P:=TJSONParser.Create(F);
 >>>>>>> graemeg/fixes_2_2
+=======
+      P:=TJSONParser.Create(F);
+>>>>>>> origin/fixes_2_2
       try
         J:=P.Parse;
         If (J is TJSONObject) then
@@ -972,10 +1151,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSONConfig.StripSlash(const P: UnicodeString): UnicodeString;
 =======
 function TJSONConfig.StripSlash(P: WideString): WideString;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TJSONConfig.StripSlash(P: WideString): WideString;
+>>>>>>> origin/fixes_2_2
 
 Var
   L : Integer;
@@ -995,6 +1178,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TJSONConfig.OpenKey(const aPath: UnicodeString; AllowCreate: Boolean);
 
 Var
@@ -1002,13 +1186,18 @@ Var
   L : Integer;
   
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TJSONConfig.OpenKey(const aPath: WideString; AllowCreate: Boolean);
 
 Var
   ElName : WideString;
   P : String;
   L : Integer;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   P:=APath;
   L:=Length(P);
@@ -1030,10 +1219,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TJSONConfig.EnumSubKeys(const APath: UnicodeString; List: TStrings);
 =======
 procedure TJSONConfig.EnumSubKeys(const APath: String; List: TStrings);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TJSONConfig.EnumSubKeys(const APath: String; List: TStrings);
+>>>>>>> origin/fixes_2_2
 
 Var
   AKey : TJSONObject;
@@ -1050,10 +1243,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TJSONConfig.EnumValues(const APath: UnicodeString; List: TStrings);
 =======
 procedure TJSONConfig.EnumValues(const APath: String; List: TStrings);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TJSONConfig.EnumValues(const APath: String; List: TStrings);
+>>>>>>> origin/fixes_2_2
 
 Var
   AKey : TJSONObject;

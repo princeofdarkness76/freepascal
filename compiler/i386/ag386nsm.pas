@@ -372,10 +372,14 @@ interface
                           (opcode = A_LSS) or (opcode = A_LFS) or
                           (opcode = A_LES) or (opcode = A_LDS) or
 <<<<<<< HEAD
+<<<<<<< HEAD
                          // (opcode = A_SHR) or (opcode = A_SHL) or
 =======
                           //(opcode = A_SHR) or (opcode = A_SHL) or
 >>>>>>> graemeg/fixes_2_2
+=======
+                          //(opcode = A_SHR) or (opcode = A_SHL) or
+>>>>>>> origin/fixes_2_2
                           (opcode = A_SAR) or (opcode = A_SAL) or
                           (opcode = A_OUT) or (opcode = A_IN)) then
                     AsmWrite(sizestr(s,dest));
@@ -452,7 +456,10 @@ interface
         #9'FIXME_128BIT'#9,#9'FIXME_64BIT'#9,#9'DD'#9,#9'DW'#9,#9'DB'#9,
         #9'FIXME_SLEB128BIT'#9,#9'FIXME_ULEB128BIT'#9,
         #9'RVA'#9,#9'SECREL32'#9,#9'FIXMEINDIRECT'#9
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       );
 
     procedure T386NasmAssembler.WriteSection(atype:TAsmSectiontype;const aname:string);
@@ -474,6 +481,7 @@ interface
           '.fpc',
           '',
           '.init',
+<<<<<<< HEAD
 <<<<<<< HEAD
           '.fini',
           '.objc_class',
@@ -513,6 +521,9 @@ interface
 =======
           '.fini'
 >>>>>>> graemeg/fixes_2_2
+=======
+          '.fini'
+>>>>>>> origin/fixes_2_2
         );
       begin
         AsmLn;
@@ -694,8 +705,11 @@ interface
                  aitconst_8bit,
                  aitconst_rva_symbol,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  aitconst_secrel32_symbol :
 =======
+=======
+>>>>>>> origin/fixes_2_2
                  aitconst_secrel32_symbol,
                  aitconst_indirect_symbol :
 >>>>>>> graemeg/fixes_2_2
@@ -753,10 +767,13 @@ interface
                   AsmWrite(tostr(t80bitarray(e)[i]));
                 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
                 for i:=11 to tai_real_80bit(hp).savesize do
                   AsmWrite(',0');
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                AsmLn;
              end;
 {$else cpuextended}

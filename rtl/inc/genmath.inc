@@ -122,7 +122,10 @@ const sincof : TabCoef = (
                 4.16666666666665929218E-2);
 =======
                 4.16666666666665929218E-2, 0);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif}
 
 {*
@@ -1163,14 +1166,20 @@ type
         lo:=0.0;
         k:=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
         hx:=float64high(d);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC_DOUBLE_HILO_SWAPPED}
         hx:=float64(d).low;
 {$else}
         hx:=float64(d).high;
 {$endif FPC_DOUBLE_HILO_SWAPPED}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         xsb := (hx shr 31) and 1;               { sign bit of d }
         hx := hx and $7fffffff;                 { high word of |d| }
 
@@ -1180,14 +1189,20 @@ type
             if hx >= $7ff00000 then
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 lx:=float64low(d);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC_DOUBLE_HILO_SWAPPED}
                 lx:=float64(d).high;
 {$else}
                 lx:=float64(d).low;
 {$endif FPC_DOUBLE_HILO_SWAPPED}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 if ((hx and $fffff) or lx)<>0 then
                   begin
                     result:=d+d; { NaN }
@@ -1254,9 +1269,12 @@ type
         if k >= -1021 then
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
             hy:=float64high(y);
             float64sethigh(y,longint(hy)+(k shl 20));        { add k to y's exponent }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC_DOUBLE_HILO_SWAPPED}
             hy:=float64(y).low;
             float64(y).low:=longint(hy)+(k shl 20);        { add k to y's exponent }
@@ -1264,15 +1282,21 @@ type
             hy:=float64(y).high;
             float64(y).high:=longint(hy)+(k shl 20);        { add k to y's exponent }
 {$endif FPC_DOUBLE_HILO_SWAPPED}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             result:=y;
           end
         else
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
             hy:=float64high(y);
             float64sethigh(y,longint(hy)+((k+1000) shl 20)); { add k to y's exponent }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC_DOUBLE_HILO_SWAPPED}
             hy:=float64(y).low;
             float64(y).low:=longint(hy)+((k+1000) shl 20); { add k to y's exponent }
@@ -1280,7 +1304,10 @@ type
             hy:=float64(y).high;
             float64(y).high:=longint(hy)+((k+1000) shl 20); { add k to y's exponent }
 {$endif FPC_DOUBLE_HILO_SWAPPED}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             result:=y*twom1000;
           end;
       end;
@@ -1368,6 +1395,7 @@ type
     function fpc_round_real(d : ValReal) : int64;compilerproc;
      var
 <<<<<<< HEAD
+<<<<<<< HEAD
       tmp: double;
       j0: longint;
       hx: longword;
@@ -1413,6 +1441,8 @@ type
       if sx<>0 then
         result:=-result;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       fr: ValReal;
       tr: Int64;
     Begin
@@ -1456,7 +1486,10 @@ type
         float_round_to_zero:
           result:=tr;
       end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
 {$endif FPC_SYSTEM_HAS_ROUND}
 

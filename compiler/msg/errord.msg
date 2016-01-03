@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Based on errore.msg of SVN revision 30725
 #
 #   This file is part of the Free Pascal Compiler
@@ -22,6 +23,12 @@
 #   Based on errore.msg of SVN revision 16783
 =======
 #   Based on errore.msg of SVN revision 12320 + one
+=======
+#   Based on errore.msg of SVN revision 12320 + one
+#
+#   This file is part of the Free Pascal Compiler
+#   Copyright (c) 1998-2009 by the Free Pascal Development team
+>>>>>>> origin/fixes_2_2
 #
 #   This file is part of the Free Pascal Compiler
 #   Copyright (c) 1998-2009 by the Free Pascal Development team
@@ -127,6 +134,7 @@ general_t_objectpath=01007_T_Der Objektdateienpfad ist: $1
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 general_i_abslines_compiled=01008_I_$1 Zeilen Åbersetzt, $2 Sekunden $3
 =======
 general_i_abslines_compiled=01008_I_$1 Zeilen bersetzt, $2 Sekunden$3
@@ -143,6 +151,9 @@ general_i_abslines_compiled=01008_I_$1 Zeilen bersetzt, $2 Sekunden$3
 =======
 general_i_abslines_compiled=01008_I_$1 Zeilen Åbersetzt, $2 Sekunden$3
 >>>>>>> graemeg/fixes_2_2
+=======
+general_i_abslines_compiled=01008_I_$1 Zeilen Åbersetzt, $2 Sekunden$3
+>>>>>>> origin/fixes_2_2
 % When the \var{-vi} switch is used, the compiler reports the number
 % of lines compiled, and the time it took to compile them (real time,
 % not program time).
@@ -215,6 +226,7 @@ general_f_oserror=01025_F_Betriebsystemfehler: $1
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 02098 is the last used one
 =======
 # 02087 is the last used one
@@ -231,6 +243,9 @@ general_f_oserror=01025_F_Betriebsystemfehler: $1
 =======
 # 02086 is the last used one
 >>>>>>> graemeg/fixes_2_2
+=======
+# 02086 is the last used one
+>>>>>>> origin/fixes_2_2
 #
 % \section{Scanner messages.}
 % This section lists the messages that the scanner emits. The scanner takes
@@ -325,7 +340,10 @@ scan_e_endif_expected=02017_E_$ENDIF erwartet fr $1 $2 definiert in $3 Zeile $4
 =======
 % \var{n}. Only 1,2 or 4 NORMAL or DEFAULT are valid in this case.
 scan_e_endif_expected=02017_E_$ENDIF erwartet fÅr $1 $2 definiert in $3 Zeile $4
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 % Your conditional compilation statements are unbalanced.
 scan_e_preproc_syntax_error=02018_E_Syntaxfehler im Argument einer $if Direktive
 % There is an error in the expression following the \var{\{\$if ..\}}, \var{\{\$ifc \}}
@@ -638,13 +656,17 @@ scan_e_illegal_minfpconstprec=02085_E_"$1" ist eine ungÅltige minimale PrÑzision
 scan_w_multiple_main_name_overrides=02086_W_Der Name der "main" Prozedur wird mehrfach Åberschrieben. Es war bisher auf "$1" gesetzt
 % The name for the main entry procedure is specified more than once. Only the last
 % name will be used.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 % \end{description}
 # EndOfTeX
 
 #
 # Parser
 #
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -666,6 +688,9 @@ scan_w_multiple_main_name_overrides=02086_W_Der Name der "main" Prozedur wird me
 =======
 # 03247 is the last used one
 >>>>>>> graemeg/fixes_2_2
+=======
+# 03247 is the last used one
+>>>>>>> origin/fixes_2_2
 #
 % \section{Parser messages}
 % This section lists all parser messages. The parser takes care of the
@@ -759,8 +784,11 @@ parser_e_illegal_parameter_list=03024_E_Ungltige Parameterliste
 % the declared parameters of the function.
 parser_e_wrong_parameter_size=03026_E_Falsche Anzahl an Parameter im Aufruf von "$1" angegeben
 <<<<<<< HEAD
+<<<<<<< HEAD
 % There is an error in the parameter list of the function or procedure --
 =======
+=======
+>>>>>>> origin/fixes_2_2
 % There is an error in the parameter list of the function or procedure,
 >>>>>>> graemeg/fixes_2_2
 % the number of parameters is not correct.
@@ -773,8 +801,11 @@ parser_e_overloaded_have_same_parameters=03028_E_Overload-Funktion darf keine id
 % declaration.
 parser_e_header_dont_match_forward=03029_E_Funktionskopf unterscheidet sich von voriger Deklaration "$1"
 <<<<<<< HEAD
+<<<<<<< HEAD
 % You declared a function with the same parameters but
 =======
+=======
+>>>>>>> origin/fixes_2_2
 % You declared a function with same parameters but
 >>>>>>> graemeg/fixes_2_2
 % different result type or function specifiers.
@@ -807,7 +838,10 @@ parser_e_case_lower_less_than_upper_bound=03038_E_Obere Grenze der CASE-Bereichs
 % is useless.
 =======
 % is useless
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 parser_e_type_const_not_possible=03039_E_Klassen oder Interfaces sind als typisierte Konstanten unzulÑssig
 % You cannot declare a constant of type class or object.
 parser_e_no_overloaded_procvars=03040_E_Funktionsvariablen von Overload-Funktionen sind unzulÑssig
@@ -1036,10 +1070,14 @@ parser_e_procedure_overloading_is_off=03088_E_Das öberladen von Prozeduren ist a
 % When using the \var{-So} switch, procedure overloading is switched off.
 % Turbo Pascal does not support function overloading.
 <<<<<<< HEAD
+<<<<<<< HEAD
 parser_e_overload_operator_failed=03089_E_Es ist nicht mîglich, dieesen Operator zu berladen. Verwandte berladbare Operatoren sind "$1"
 =======
 parser_e_overload_operator_failed=03089_E_Es ist nicht mîglich, dieesen Operator zu Åberladen. Verwandte Åberladbare Operatoren sind "$1"
 >>>>>>> graemeg/fixes_2_2
+=======
+parser_e_overload_operator_failed=03089_E_Es ist nicht mîglich, dieesen Operator zu Åberladen. Verwandte Åberladbare Operatoren sind "$1"
+>>>>>>> origin/fixes_2_2
 % You are trying to overload an operator which cannot be overloaded.
 % The following operators can be overloaded :
 % \begin{verbatim}
@@ -1367,7 +1405,10 @@ parser_e_dlltool_unit_var_problem=03160_E_Es kann kein DEFFILE-Eintrag fr unit-g
 =======
 % file correct with a name of length 1.
 parser_e_dlltool_unit_var_problem=03160_E_Es kann kein DEFFILE-Eintrag fÅr unit-globale Variablen erzeugt werden
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 parser_e_dlltool_unit_var_problem2=03161_E_öbersetze ohne "-WD"-Option
 % You need to compile this file without the -WD switch on the
 % command line.
@@ -1646,7 +1687,10 @@ parser_w_overridden_methods_not_same_ret=03218_W_öberschriebene Methoden mssen e
 parser_e_dispid_must_be_ord_const=03219_E_Dispatch IDs mssen ganzzahlige Konstanten sein
 =======
 parser_e_dispid_must_be_ord_const=03219_E_Dispatch IDs mÅssen ganzzahlige Konstanten sein
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 % The \var{dispid} keyword must be followed by an ordinal constant (the dispid index).
 parser_e_array_range_out_of_bounds=03220_E_Der Bereich des Array ist zu gross
 % Regardless of the size taken up by its elements, an array cannot have more
@@ -1705,7 +1749,10 @@ parser_e_no_funcret_specified=03227_E_Kein Funktionsergebnistyp fÅr Funktion "$1
 % including all parameters and the result type.
 parser_e_special_onlygenerics=03228_E_Spezialisierung wird nur fÅr generische Typen unterstÅtzt
 % Types not being generics can't be specialized
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 parser_e_no_generics_as_params=03229_E_Generische Typen kînnen bei der Spezialisierung generischer Typen nicht als Parameter benutzt werden
 % When specializing a generic, only non-generic types can be used as parameters.
 parser_e_type_object_constants=03230_E_Konstanten eines Objekts, das ein VMT enthÑlt, sind unzulÑssig
@@ -1713,6 +1760,7 @@ parser_e_type_object_constants=03230_E_Konstanten eines Objekts, das ein VMT ent
 % it's not allowed to create constants of it. In TP and Delphi mode this is allowed
 % for compatibility reasons.
 parser_e_label_outside_proc=03231_E_Die Address von Labels, die ausserhalb des aktuellen Scopes definiert wurden, kînnen nicht verwendet werden
+<<<<<<< HEAD
 <<<<<<< HEAD
 % It isn't allowed to take the address of labels outside the
 % current procedure.
@@ -1739,6 +1787,8 @@ parser_e_illegal_function_result=03234_E_Ungltiger Funktionsergebnistyp
 parser_e_no_common_type=03235_E_"$1" und "$2" haben keinen gemeinsamen Typ
 % To perform an operation on integers, the compiler converts both operands
 =======
+=======
+>>>>>>> origin/fixes_2_2
 % It isn't allowed to take the addresss of labels outside the
 % current procedure.
 parser_e_initialized_not_for_external=03233_E_Extern deklarierte Variablen kînnen nicht intialisiert werden 
@@ -1747,11 +1797,15 @@ parser_e_illegal_function_result=03234_E_UngÅltiger Funktionsergebnistyp
 % Some types like file types can not be used as function result.
 parser_e_no_common_type=03235_E_"$1" und "$2" haben keinen gemeinsamen Typ
 % To perform an operation beween integers, the compiler converts both operands
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 % to their common type, which appears to be an invalid type. To determine the
 % common type of the operands, the compiler takes the minimum of the minimal values
 % of both types, and the maximum of the maximal values of both types. The common
 % type is then minimum..maximum.
+<<<<<<< HEAD
 <<<<<<< HEAD
 parser_e_no_generics_as_types=03236_E_Generische Typen kînnen nicht ohne Spezialisierung als Typ fr eine Variable verwendet werden
 % Generics must be always specialized before being used as variable type.
@@ -2332,6 +2386,8 @@ parser_e_cant_use_type_parameters_here=03304_E_Typ-Parameter kînnen initializati
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 parser_e_no_generics_as_types=03236_E_Generische Typen kînnen nicht ohne Spezialisierung als Typ fÅr eine Variable verwendet werden
 % Generics must be always specialized before being used as variable type
 parser_w_register_list_ignored=03237_W_Registerliste wird in reinen Assemblerroutinen ignoriert
@@ -2342,7 +2398,10 @@ parser_e_cant_export_var_different_name=03247_E_Variablen kînnen fÅr dieses Targ
 parser_e_forward_mismatch=03249_E_Forward Typdefinition passt nicht
 % Classes and interfaces being defined forward must have the same type
 % when being implemented. A forward interface can not be changed into a class.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 %
 % \end{description}
 # EndOfTeX
@@ -2350,6 +2409,7 @@ parser_e_forward_mismatch=03249_E_Forward Typdefinition passt nicht
 #
 # Type Checking
 #
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2371,6 +2431,9 @@ parser_e_forward_mismatch=03249_E_Forward Typdefinition passt nicht
 =======
 # 04083 is the last used one
 >>>>>>> graemeg/fixes_2_2
+=======
+# 04083 is the last used one
+>>>>>>> origin/fixes_2_2
 #
 % \section{Type checking errors}
 % This section lists all errors that can occur when type checking is
@@ -2509,7 +2572,10 @@ type_e_no_addr_of_constant=04028_E_Von Konstanten kann keine Adresse bestimmt we
 =======
 % It's not possible to get the address of a constant, because they
 % aren't stored in memory, you can try making it a typed constant. This error
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 % can also be displayed if you try to pass a property to a var parameter.
 type_e_argument_cant_be_assigned=04029_E_An das Argument kann nichts zugewiesen werden
 % Only expressions which can be on the left side of an
@@ -2652,7 +2718,10 @@ type_e_cant_take_address_of_abstract_method=04050_E_Die Adresse einer abstrakten
 % An abstract method has no body, so the address of an abstract method cannot be taken.
 =======
 % An abstract method has no body, so the address of an abstract method can't be taken.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type_e_assignment_not_allowed=04051_E_Zuweisungen auf formale Parameter und offene Arrays sind nicht mîglich
 % You are trying to assign a value to a formal (untyped var, const or out)
 % parameter, or to an open array.
@@ -2703,7 +2772,10 @@ type_w_untyped_arithmetic_unportable=04066_W_Arithmetik "$1" mit typenlosem Zeig
 =======
 type_w_untyped_arithmetic_unportable=04066_W_Arithmetik "$1" mit typenlosem Pointer ist nicht portierbar nach {$T+}, schlage typecast vor
 % Addition/subtraction from untyped pointer may work differently in \var{\{\$T+\}}, use typecast to typed pointer
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type_e_cant_take_address_of_local_subroutine=04076_E_Die Address einer Subroutine, die als local markiert ist, kann nicht verwendet werden
 % The address of a subroutine marked as local cannot be taken.
 type_e_cant_export_local=04077_E_Eine Subroutine, die aus einer Unit als local markiert ist, kann nicht exportiert werden
@@ -2720,6 +2792,7 @@ type_h_convert_sub_operands_to_prevent_overflow=04080_H_Konvertierung des Operan
 type_h_convert_mul_operands_to_prevent_overflow=04081_H_Konvertierung des Operanden "$1" vor der Multiplikation kînnte öberlauf Fehler verhindern
 % Multiplying two types can cause overflow errors. Since you are converting the result to a larger type, you
 % could prevent such errors by converting the operands to this type before doing the multiplication.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2986,6 +3059,8 @@ type_e_generic_declaration_does_not_match=04098_E_Die generische Deklaration von
 >>>>>>> origin/cpstrnew
 %
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type_w_pointer_to_signed=04082_W_Die Konvertierung von Pointern in einen Integertyp mit Vorzeichen kann zu falschen Ergebnissen bei Vergleichen und zu BereichsÅberschreitungen fÅhren; verwenden sie statt dessen besser einen Typ ohne Vorzeichen
 % The virtual address space on 32-bit machines runs from \$00000000 to \$ffffffff. Many operating systems allow you to
 % allocate memory above \$80000000, for example both Windows and Linux allow pointers in the range \$0000000 to \$bfffffff.
@@ -2994,13 +3069,17 @@ type_w_pointer_to_signed=04082_W_Die Konvertierung von Pointern in einen Integer
 type_interface_has_no_guid=04083_E_Interface Typ $1 hat keine gÅltige GUID
 % When applying the as-operator to an interface or class, the desired interface, i.e. the right operand of the
 % as-operator must have a valid GUID
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 % \end{description}
 # EndOfTeX
 
 #
 # Symtable
 #
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3022,6 +3101,9 @@ type_interface_has_no_guid=04083_E_Interface Typ $1 hat keine gÅltige GUID
 =======
 # 05062 is the last used one
 >>>>>>> graemeg/fixes_2_2
+=======
+# 05062 is the last used one
+>>>>>>> origin/fixes_2_2
 #
 % \section{Symbol handling}
 % This section lists all the messages that concern the handling of symbols.
@@ -3183,6 +3265,7 @@ sym_w_identifier_only_read=05061_W_Die Variable "$1" wird gelesen, obwohl ihr ab
 % it.
 sym_h_abstract_method_list=05062_H_Abstrakte Method "$1" gefunden 
 % When getting a warning about constructing a class/object with abstract methods
+<<<<<<< HEAD
 <<<<<<< HEAD
 % you get this hint to assist you in finding the affected method.
 sym_w_experimental_symbol=05063_W_Symbol "$1" ist experimentell
@@ -3421,12 +3504,16 @@ sym_e_external_class_name_mismatch2=05083=E_Hierhin muss die vollstÑndige Klasse
 =======
 % you get this hint to find the affected method.
 >>>>>>> graemeg/fixes_2_2
+=======
+% you get this hint to find the affected method.
+>>>>>>> origin/fixes_2_2
 % \end{description}
 # EndOfTeX
 
 #
 # Codegenerator
 #
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3448,6 +3535,9 @@ sym_e_external_class_name_mismatch2=05083=E_Hierhin muss die vollstÑndige Klasse
 =======
 # 06049 is the last used one
 >>>>>>> graemeg/fixes_2_2
+=======
+# 06049 is the last used one
+>>>>>>> origin/fixes_2_2
 #
 % \section{Code generator messages}
 % This section lists all messages that can be displayed if the code
@@ -3616,11 +3706,15 @@ cg_f_unknown_system_type=06047_F_Systemtyp "$1" konnte nicht gefunden werden. öb
 % that you removed a type which the compiler needs for internal use.
 cg_h_inherited_ignored=06048_H_Geerbter Aufruf einer abstrakten Methode ignoriert
 % This messages appears only in Delphi mode when you call an abstract method
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 % of a parent class via \var{inherited;}. The call is then ignored.
 cg_e_goto_label_not_found=06049_E_Goto Label "$1": Das Label ist nicht definiert oder wurde bei der Optimierung entfernt
 % The label used in the goto definition is not defined or optimized away by the
 % unreachable code elemination.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3693,12 +3787,15 @@ cg_f_max_units_reached=06057_F_Maximale Anzahl an Units ($1) für das aktuelle Zi
 %
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 % \end{description}
 # EndOfTeX
 
 #
 # Assembler reader
 #
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3720,6 +3817,9 @@ cg_f_max_units_reached=06057_F_Maximale Anzahl an Units ($1) für das aktuelle Zi
 =======
 # 07107 is the last used one
 >>>>>>> graemeg/fixes_2_2
+=======
+# 07107 is the last used one
+>>>>>>> origin/fixes_2_2
 #
 asmr_d_start_reading=07000_DL_Starte $1 Stil Assembler Parsen
 % This informs you that an assembler block is being parsed
@@ -4009,20 +4109,28 @@ asmr_w_unable_to_determine_reference_size_using_byte=07101_W_Grîsse nicht angege
 % should use for the reference. This warning is only used in Delphi mode where
 % it falls back to use BYTE as default.
 <<<<<<< HEAD
+<<<<<<< HEAD
 asmr_w_no_direct_ebp_for_parameter=07102_W_Die Verwendung von +offset(%ebp) fr Parameter ist hier ungltig
 =======
 asmr_w_no_direct_ebp_for_parameter=07102_W_Die Verwendung von +offset(%ebp) fÅr Parameter ist hier ungÅltig
 >>>>>>> graemeg/fixes_2_2
+=======
+asmr_w_no_direct_ebp_for_parameter=07102_W_Die Verwendung von +offset(%ebp) fÅr Parameter ist hier ungÅltig
+>>>>>>> origin/fixes_2_2
 % Using direct 8(%ebp) reference for function/procedure parameters is invalid
 % if parameters are in registers.
 asmr_w_direct_ebp_for_parameter_regcall=07103_W_Die Verwendung von +offset(%ebp) ist nicht mit der regcall Konvention kompatibel
 % Using direct 8(%ebp) reference for function/procedure parameters is invalid
 % if parameters are in registers.
 <<<<<<< HEAD
+<<<<<<< HEAD
 asmr_w_direct_ebp_neg_offset=07104_W_Die Verwendung von -offset(%ebp) wird fr den Zugriff auf lokale Variablen nicht empfohlen
 =======
 asmr_w_direct_ebp_neg_offset=07104_W_Die Verwendung von -offset(%ebp) wird fÅr den Zugriff auf lokale Variablen nicht empfohlen
 >>>>>>> graemeg/fixes_2_2
+=======
+asmr_w_direct_ebp_neg_offset=07104_W_Die Verwendung von -offset(%ebp) wird fÅr den Zugriff auf lokale Variablen nicht empfohlen
+>>>>>>> origin/fixes_2_2
 % Using -8(%ebp) to access a local variable is not recommended
 asmr_w_direct_esp_neg_offset=07105_W_Verwendung von -offset(%esp); Zugriff kann einen Crash oder Datenverlust auslîsen
 % Using -8(%esp) to access a local stack is not recommended, as
@@ -4033,6 +4141,7 @@ asmr_e_need_pic_ref=07107_E_Erzeuge eigentlich PIC, aber die Referenz ist nicht 
 % The compiler has been configured to generate position-independent code
 % (PIC), but there are position-dependent references in the current
 % handwritten assembler instruction.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4158,6 +4267,12 @@ asmr_w_useless_got_for_local=07110_W_@GOTPCREL ist nutzlos und bei lokalen Symbo
 #
 # 08020 is the last used one
 >>>>>>> graemeg/fixes_2_2
+=======
+#
+# Assembler/binary writers
+#
+# 08020 is the last used one
+>>>>>>> origin/fixes_2_2
 #
 asmw_f_too_many_asm_files=08000_F_Zu viele Assembler-Dateien
 % With smartlinking enabled, there are too many assembler
@@ -4242,10 +4357,14 @@ asmw_e_64bit_not_supported=08021_E_Asm: 64 Bit Operanden werden nicht untersttzt
 # Executing linker/assembler
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 09035 is the last used one
 =======
 # 09028 is the last used one
 >>>>>>> graemeg/fixes_2_2
+=======
+# 09028 is the last used one
+>>>>>>> origin/fixes_2_2
 #
 # BeginOfTeX
 %
@@ -4416,10 +4535,14 @@ link_w_32bit_absolute_reloc=09201_W_Objektdatei "$1" enthÑlt eine 32-bit absolut
 # Unit loading
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 10062 is the last used one
 =======
 # 10060 is the last used one
 >>>>>>> graemeg/fixes_2_2
+=======
+# 10060 is the last used one
+>>>>>>> origin/fixes_2_2
 #
 # BeginOfTeX
 % \section{Unit loading messages.}
@@ -4449,12 +4572,19 @@ unit_u_ppu_invalid_version=10008_U_PPU Ungltige Version $1
 % This unit file was compiled with a different version of the compiler, and
 % cannot be read.
 <<<<<<< HEAD
+<<<<<<< HEAD
 unit_u_ppu_invalid_processor=10009_U_PPU ist fr einen anderen Prozessor bersetzt
 % This unit file was compiled for a different processor type, and
 % cannot be read.
 unit_u_ppu_invalid_target=10010_U_PPU ist fr ein anderes Zielsystem bersetzt
 =======
 unit_u_ppu_invalid_processor=10009_U_PPU ist fÅr einen anderen Prozessor Åbersetzt
+=======
+unit_u_ppu_invalid_processor=10009_U_PPU ist fÅr einen anderen Prozessor Åbersetzt
+% This unit file was compiled for a different processor type, and
+% cannot be read
+unit_u_ppu_invalid_target=10010_U_PPU ist fÅr ein anderes Zielsystem Åbersetzt
+>>>>>>> origin/fixes_2_2
 % This unit file was compiled for a different processor type, and
 % cannot be read
 unit_u_ppu_invalid_target=10010_U_PPU ist fÅr ein anderes Zielsystem Åbersetzt
@@ -4552,19 +4682,27 @@ unit_u_check_time=10037_U_PPU prfe Datei $1 Zeit $2
 #% found a conditional that was used the last time the unit was compiled, but
 #% the conditional is currently not defined.
 <<<<<<< HEAD
+<<<<<<< HEAD
 unit_w_cant_compile_unit_with_changed_incfile=10040_W_Kann Unit $1 nicht erneut bersetzen, aber geÑnderte Include-Datei gefunden
 =======
 unit_w_cant_compile_unit_with_changed_incfile=10040_W_Kann Unit $1 nicht erneut Åbersetzen, aber geÑnderte Include-Datei gefunden
 >>>>>>> graemeg/fixes_2_2
+=======
+unit_w_cant_compile_unit_with_changed_incfile=10040_W_Kann Unit $1 nicht erneut Åbersetzen, aber geÑnderte Include-Datei gefunden
+>>>>>>> origin/fixes_2_2
 % A unit was found to have modified include files, but
 % some source files were not found, so recompilation is impossible.
 unit_u_source_modified=10041_U_Datei $1 ist neuer als die, aus der die PPU Datei $2 erzeugt wird
 % A modified source file for a compiler unit was found.
 <<<<<<< HEAD
+<<<<<<< HEAD
 unit_u_ppu_invalid_fpumode=10042_U_Versuch eine Unit zu verwenden, die in einem anderen FPU Mode bersetzt wurde
 =======
 unit_u_ppu_invalid_fpumode=10042_U_Versuch eine Unit zu verwenden, die in einem anderen FPU Mode Åbersetzt wurde
 >>>>>>> graemeg/fixes_2_2
+=======
+unit_u_ppu_invalid_fpumode=10042_U_Versuch eine Unit zu verwenden, die in einem anderen FPU Mode Åbersetzt wurde
+>>>>>>> origin/fixes_2_2
 % Trying to compile code while using units which were not compiled with
 % the same floating point format mode. Either all code should be compiled
 % with FPU emulation on, or with FPU emulation off.
@@ -4612,7 +4750,10 @@ unit_u_no_reload_is_caller=10049_U_Kein erneutes Laden, Unit $1 ist die Aufrufen
 =======
 % has will not reload the unit because it is the unit that wants
 % to load this unit
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 unit_u_no_reload_in_second_compile=10050_U_Kein erneutes Laden der Unit, bereits beim zweiten öbersetzen: $1
 % When you use the \var{-vu} flag, the compiler warns that it
 % will not reload the unit because it is already in a second recompile.
@@ -4706,13 +4847,17 @@ unit_u_skipping_reresolving_unit=10059_U_Erneutes Resolving der Unit $1 wird Åbe
 unit_u_unload_resunit=10060_U_Entlade die Resource Unit $1 (wird nicht benîtigt) 
 % When you use the \var{-vu} flag, the compiler warns that it is unloading the 
 % resource handling unit, since no resources are used.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 % \end{description}
 # EndOfTeX
 
 #
 # Options
 #
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4734,6 +4879,9 @@ unit_u_unload_resunit=10060_U_Entlade die Resource Unit $1 (wird nicht benîtigt)
 =======
 # 11041 is the last used one
 >>>>>>> graemeg/fixes_2_2
+=======
+# 11041 is the last used one
+>>>>>>> origin/fixes_2_2
 #
 # BeginOfTeX
 %
@@ -4849,10 +4997,14 @@ option_no_debug_support=11016_W_Erzeugung von Debug-Informationen wird von diese
 % the generation of debugging info. If you use such an executable with the
 % \var{-g} switch, this warning will be displayed.
 <<<<<<< HEAD
+<<<<<<< HEAD
 option_no_debug_support_recompile_fpc=11017_H_Versuchen Sie mit -dGDB erneut zu bersetzen
 =======
 option_no_debug_support_recompile_fpc=11017_H_Versuchen Sie mit -dGDB erneut zu Åbersetzen
 >>>>>>> graemeg/fixes_2_2
+=======
+option_no_debug_support_recompile_fpc=11017_H_Versuchen Sie mit -dGDB erneut zu Åbersetzen
+>>>>>>> origin/fixes_2_2
 % It is possible to have a compiler executable that doesn't support
 % the generation of debugging info. If you use such an executable with the
 % \var{-g} switch, this warning will be displayed.
@@ -4884,7 +5036,10 @@ option_help_press_enter=11029_O_*** Drcken Sie die ENTER-Taste ***
 =======
 % Debug info that an option is found and will be handled
 option_help_press_enter=11029__*** DrÅcken Sie die ENTER-Taste ***
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 % Message shown when help is shown page per page. When pressing the ENTER
 % Key, the next page of help is shown. If you press q and then ENTER, the
 % compiler exits.
@@ -4909,7 +5064,10 @@ option_code_page_not_available=11039_E_Unbekannte Codepage "$1"
 % Additional infos about options, displayed
 % when you have debug option turned on.
 option_code_page_not_available=11039_E_Unbekannte code page
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 % An unknown code page for the source files was requested.
 % The compiler is compiled with support for several code pages built-in.
 % The requested code page is not in that list. You will need to recompile
@@ -5133,7 +5291,10 @@ option_ppc386_deprecated=11042_W_Die Verwendung von ppc386.cfg wird beendet. Bit
 % system the naming makes no sense anymore. Please continue to use fpc.cfg instead.
 option_else_without_if=11043_F_Zur \var{\#ELSE} Direktive in Zeile $2 der Optionen-Datei $1 gibt es kein entsprechendes \var{\#IF(N)DEF}
 % An \var{\#ELSE} statement was found in the options file without a matching \var{\#IF(N)DEF} statement.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 # EndOfTeX
 
 #
@@ -5145,6 +5306,7 @@ option_logo=11023_[
 <<<<<<< HEAD
 <<<<<<< HEAD
 Free Pascal Compiler Version $FPCFULLVERSION [$FPCDATE] fÅr $FPCTARGET
+<<<<<<< HEAD
 <<<<<<< HEAD
 Copyright (c) 1993-2015 Florian KlÑmpfl und andere
 =======
@@ -5166,6 +5328,9 @@ Copyright (c) 1993-2011 Florian KlÑmpfl und andere
 =======
 Copyright (c) 1993-2008 Florian KlÑmpfl
 >>>>>>> graemeg/fixes_2_2
+=======
+Copyright (c) 1993-2008 Florian KlÑmpfl
+>>>>>>> origin/fixes_2_2
 ]
 
 #
@@ -5207,6 +5372,7 @@ Untersttzte FPU Instruktionen:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 UnterstÅtzte Inline-Assembler Modi:
   $ASMMODES
 
@@ -5230,6 +5396,8 @@ Untersttzte ABI Ziele:
 
 Untersttzte Optimierungen:
 =======
+=======
+>>>>>>> origin/fixes_2_2
 UnterstÅtzte ABI Ziele:
   $ABITARGETS
 
@@ -5316,6 +5484,7 @@ diskutiert werden kînnen, usw.):
 #
 option_help_pages=11025_[
 <<<<<<< HEAD
+<<<<<<< HEAD
 F*0*_Es werden nur Optionen aufgelistet, die fÅr die voreingestellte oder ausgewÑhlte Plattform gÅltig sind.
 **0*_Nach booleschen Optionen geben Sie + zum Ein- bzw. - zum Ausschalten an
 **1@<x>_Lese zusÑtzlich zu den voreingestellten Compiler-Optionen aus fpc.cfg auch die aus <x>
@@ -5324,17 +5493,23 @@ F*0*_Es werden nur Optionen aufgelistet, die fÅr die voreingestellte oder ausgew
 **2an_Liste "node info" in der Assembler-Datei (-dEXTDEBUG Compiler)
 **2ao_FÅge eine zusÑtzliche Option zum Aufruf des externen Assemblers hinzu (ignoriert fÅr den internen Assembler)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 **0*_Nach booleschen Optionen geben Sie + zum Ein- bzw. - zum Ausschalten an
 **1a_Lîsche die erzeugte Assembler-Datei nicht
 **2al_Liste Quellcode-Zeilen in der Assembler-Datei
 **2an_Liste "node info" in der Assembler-Datei
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 *L2ap_Benutze Pipes anstelle temporÑrer Assembler-Dateien
 **2ar_Liste Registerbelegungsinformation in Assembler-Datei
 **2at_Liste Temp. Variablenbelegungsinfo in Assembler-Datei
 **1A<x>_Ausgabe Format:
 **2Adefault_Benutze den "default" Assembler
 3*2Aas_Assembliere mit Hilfe von GNU AS
+<<<<<<< HEAD
 <<<<<<< HEAD
 3*2Amacho_Mach-O (Darwin, Intel 32 bit) mit Hilfe des internen Schreibers
 <<<<<<< HEAD
@@ -5390,6 +5565,8 @@ F*0*_Es werden nur Optionen aufgelistet, die fÅr die voreingestellte oder ausgew
 4*2Anasmdarwin_Assembliere darwin Macho64 Objektdatei mit Hilfe von Nasm (experimentell)
 6*2Aas_Unix o-Datei mit Hilfe von GNU AS
 =======
+=======
+>>>>>>> origin/fixes_2_2
 3*2Anasmcoff_COFF (Go32v2) Datei mit Hilfe von Nasm
 3*2Anasmelf_ELF32 (Linux) Datei mit Hilfe von Nasm
 3*2Anasmwin32_Win32 Object Datei mit Hilfe von Nasm
@@ -5418,8 +5595,11 @@ S*2Aas_Assembliere mit Hilfe von GNU AS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 **1C<x>_Optionen fÅr Code-Erzeugung:
 **2C3<x>_Schalte ieee-PrÅfung von Konstanten ein
 **2Ca<x>_WÑhle ABI aus; fpc -i oder fpc -ia geben die mîglichen Werte aus
@@ -5438,6 +5618,7 @@ S*2Aas_Assembliere mit Hilfe von GNU AS
 >>>>>>> graemeg/cpstrnew
 **2Cc<x>_Setze "default calling convention" zu <x>
 <<<<<<< HEAD
+<<<<<<< HEAD
 **2CD_Erzeuge auch eine dynamische Bibliothek (nicht untersttzt)
 **2Ce_öbersetze mit emulierten Fliesskomma opcodes
 **2Cf<x>_WÑhle den Fliesskomma-Instruction-Set aus; fpc -i oder fpc -if geben die mîglichen Werte aus
@@ -5446,6 +5627,11 @@ S*2Aas_Assembliere mit Hilfe von GNU AS
 **2Ce_öbersetze mit emulierten Fliesskomma opcodes
 **2Cf<x>_WÑhle den Fliesskomma instruction set aus; fpc -i gibt die mîglichen Werte aus
 >>>>>>> graemeg/fixes_2_2
+=======
+**2CD_Erzeuge auch eine dynamische Bibliothek (nicht unterstÅtzt)
+**2Ce_öbersetze mit emulierten Fliesskomma opcodes
+**2Cf<x>_WÑhle den Fliesskomma instruction set aus; fpc -i gibt die mîglichen Werte aus
+>>>>>>> origin/fixes_2_2
 **2CF<x>_Minimale PrÑzission von Fliesskommakonstanten (default, 32, 64)
 **2Cg_Erzeuge PIC code
 **2Ch<n>_<n> Bytes Heap (zwischen 1023 und 67107840)
@@ -5454,6 +5640,7 @@ S*2Aas_Assembliere mit Hilfe von GNU AS
 <<<<<<< HEAD
 <<<<<<< HEAD
 **2Ci_I/O-PrÅfung
+<<<<<<< HEAD
 <<<<<<< HEAD
 A*2CI<x>_WÑhle den Instruction-Set fÅr ARM aus: ARM oder THUMB
 **2Cn_Lasse die Linkstufe aus
@@ -5538,27 +5725,43 @@ J*2Cv_Var/out Parameter copy-out öberprÅfung
 **2Cp<x>_WÑhle instruction set aus; fpc -i gibt die mîglichen Werte aus
 **2CP<x>=<y>_ Einstellungen fÅr packing
 **3CPPACKSET=<y>_ <y> Belegung von Sets: 0, 1 oder DEFAULT oder NORMAL, 2, 4 und 8
+=======
+**2Cn_Lasse die Linkstufe aus
+**2Co_PrÅfe auf öberlauf von Integer-Operationen
+**2CO_PrÅfe auf mîglichen öberlauf von Integer-Operationen
+**2Cp<x>_WÑhle instruction set aus; fpc -i gibt die mîglichen Werte aus
+**2CP<x>=<y>_ Einstellungen fÅr packing
+**3CPPACKSET=<y>_ <y> Belegung von Sets: 0, 1 oder DEFAULT oder NORMAL, 2, 4 und 8
+>>>>>>> origin/fixes_2_2
 **2Cr_FÅhre BereichsprÅfung durch
 **2CR_Verifiziere die GÅltigkiet des Aufrufs der Objektmethoden
 **2Cs<n>_Setze Grîsse des Stacks auf <n>
 **2Ct_FÅhre StackprÅfung durch
 **2Cx_Benutze Smartlinking
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 **1d<x>_Definiere das Symbol <x>
 **1D_Erzeuge eine DEF-Datei
 **2Dd<x>_Setze Beschreibung zu <x>
 **2Dv<x>_Setze DLL Version zu <x>
 *O2Dw_Erzeuge PM-Anwendung
 <<<<<<< HEAD
+<<<<<<< HEAD
 **1e<x>_Setze Pfad zur ausfhrbaren Datei
 =======
 **1e<x>_Setze Pfad zur ausfÅhrbaren Datei
 >>>>>>> graemeg/fixes_2_2
+=======
+**1e<x>_Setze Pfad zur ausfÅhrbaren Datei
+>>>>>>> origin/fixes_2_2
 **1E_Genau wie -Cn
 **1fPIC_Genau wie -Cg
 **1F<x>_Dateinamen und Pfade:
 **2Fa<x>[,y]_Ein Program soll die Units <x> und [y] laden, bevor uses analysiert wird
 **2Fc<x>_Setze die Eingabe-Codepage zu <x>
+<<<<<<< HEAD
 <<<<<<< HEAD
 **2Fd_Schalte den internen Verzeichnis-Cache des Compilers aus
 **2FC<x>_Setze den Namen des RC Compiler-BinÑrprograms auf <x>
@@ -5584,16 +5787,22 @@ J*2Cv_Var/out Parameter copy-out öberprÅfung
 **2Ff<x>_ErgÑnze <x> zum Framework-Pfad (nur Darwin)
 **2FE<x>_Setze den Pfad fr Exe/Unit-Dateien auf <x>
 =======
+=======
+>>>>>>> origin/fixes_2_2
 **2FC<x>_Setze den Namen des RC Compiler-BinÑrprograms auf <x>
 **2FD<x>_Setze das Verzeichnis fÅr die Compiler-Hilfsprogramme
 **2Fe<x>_Leite die Fehlerausgabe um nach <x>
 **2Ff<x>_ErgÑnze <x> zum Framework-Pfad (nur Darwin)
 **2FE<x>_Setze den Pfad fÅr Exe/Unit-Dateien auf <x>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 **2Fi<x>_ErgÑnze <x> zum Include-Pfad
 **2Fl<x>_ErgÑnze <x> zum Bibliotheks-Pfad
 **2FL<x>_Benutze <x> als dynamischen Linker
 **2Fm<x>_Lade die Unicode-Konversionstabelle aus <x>.txt im Compiler-Verzeichnis
+<<<<<<< HEAD
 <<<<<<< HEAD
 **2FM<x>_Setze das Verzeichnis fÅr Unicode-BinÑr-Dateien
 **2Fo<x>_ErgÑnze <x> zum Objektdatei-Pfad
@@ -5678,6 +5887,8 @@ J*2Cv_Var/out Parameter copy-out öberprÅfung
 >>>>>>> origin/cpstrnew
 **2iD_Zeige Compilerdatum
 =======
+=======
+>>>>>>> origin/fixes_2_2
 **2Fo<x>_ErgÑnze <x> zum Objektdatei-Pfad
 **2Fr<x>_Lade die Fehler-Meldungs Datei <x>
 **2FR<x>_Setze den Resource (.res) Linker auf <x>
@@ -5700,11 +5911,15 @@ J*2Cv_Var/out Parameter copy-out öberprÅfung
 **2iD_Zeige Compilerdatum
 **2iV_Zeige Compilerversion
 **2iW_Zeige vollstÑndige Compilerversion
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 **2iSO_Zeige Compilerbetriebssystem
 **2iSP_Zeige Compilerprozessor
 **2iTO_Zeige Zielbetriebssystem
 **2iTP_Zeige Zielprozessor
+<<<<<<< HEAD
 <<<<<<< HEAD
 **2iV_Zeige kurze Compilerversion
 **2iW_Zeige vollstÑndige Compilerversion
@@ -5719,6 +5934,8 @@ J*2Cv_Var/out Parameter copy-out öberprÅfung
 **2iw_Zeige Liste der unterstÅtzten Gesamtprogramm-Optimierungen
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 **1I<x>_ErgÑnze <x> zum Include-Pfad
 **1k<x>_öbergebe <x> an den Linker
 **1l_Zeige Logo
@@ -5729,6 +5946,7 @@ J*2Cv_Var/out Parameter copy-out öberprÅfung
 **2Mtp_Versuche zu TP/BP 7.0 kompatibel zu sein
 **2Mmacpas_Versuche zu den MacIntosh Pascal-Dialekten kompatibel zu sein
 **1n_Standard-Konfigurationsdatei ignorieren
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 **1o<x>_Die erzeugte, ausfÅhrbare Datei bekommt den Namen <x>
@@ -5751,11 +5969,17 @@ J*2Cv_Var/out Parameter copy-out öberprÅfung
 **2Nu_Unroll loops
 **1o<x>_Die erzeugte, ausfÅhrbare Datei bekommt den Namen <x>
 >>>>>>> graemeg/fixes_2_2
+=======
+**1N<x>_Node tree Optimierung
+**2Nu_Unroll loops
+**1o<x>_Die erzeugte, ausfÅhrbare Datei bekommt den Namen <x>
+>>>>>>> origin/fixes_2_2
 **1O<x>_Optimierungen:
 **2O-_Optimierungen ausschalten
 **2O1_Level 1 Optimierung (schnell und Debugger freundlich)
 **2O2_Level 2 Optimierung (-O1 + schnelle Optimierungen)
 **2O3_Level 3 Optimierung (-O2 + langsame Optimierungen)
+<<<<<<< HEAD
 <<<<<<< HEAD
 **2O4_Level 4 Optimierung (-O3 + Optimierungen, die unerwartete Nebeneffekte haben kînnen)
 **2Oa<x>=<y>_Ausrichtung (alignment) von Mengen
@@ -5795,12 +6019,17 @@ F*2P<x>_Setze die Ziel-CPU (arm, avr, i386, jvm, m68k, mips, mipsel, powerpc, po
 **2Os_Erzeuge krzeren Code
 **1pg_Erzeuge Profiler-Code fr gprof
 =======
+=======
+>>>>>>> origin/fixes_2_2
 **2Oa<x>=<y>_Ausrichtung (alignment) von Mengen
 **2Oo[NO]<x>_Optimierungen ein- oder ausschalten; fpc -i gibt die mîglichen Werte aus
 **2Op<x>_Setze Zielprozessor fÅr die Optimierung; fpc -i gibt die mîglichen Werte aus
 **2Os_Erzeuge kÅrzeren Code
 **1pg_Erzeuge Profiler-Code fÅr gprof
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 **1R<x>_Assembler Code Format:
 **2Rdefault_Benutze den default Assembler
 3*2Ratt_Lese Assembler Code im AT&T Format
@@ -5808,6 +6037,7 @@ F*2P<x>_Setze die Ziel-CPU (arm, avr, i386, jvm, m68k, mips, mipsel, powerpc, po
 6*2RMOT_Lese Assembler im Motorola Format
 **1S<x>_Syntax-Optionen:
 **2S2_Schalte einige der Delphi 2 Erweiterungen ein (wie -Mobjfpc)
+<<<<<<< HEAD
 <<<<<<< HEAD
 **2Sc_Untersttze spezielle C Operatoren (*=,+=,/= and -=)
 <<<<<<< HEAD
@@ -5823,6 +6053,9 @@ F*2P<x>_Setze die Ziel-CPU (arm, avr, i386, jvm, m68k, mips, mipsel, powerpc, po
 =======
 **2Sc_UnterstÅtze spezielle C Operatoren (*=,+=,/= and -=)
 >>>>>>> graemeg/fixes_2_2
+=======
+**2Sc_UnterstÅtze spezielle C Operatoren (*=,+=,/= and -=)
+>>>>>>> origin/fixes_2_2
 **2Sa_Erlaube assertion code.
 **2Sd_Sei Delphi-kompatibel (wie -Mdelphi)
 **2Se<x>_Fehler Optionen. <x> ist eine der folgenden Kombinationen:
@@ -5831,9 +6064,12 @@ F*2P<x>_Setze die Ziel-CPU (arm, avr, i386, jvm, m68k, mips, mipsel, powerpc, po
 **3*_n : Compiler hÑlt auch nach Anmerkungen
 **3*_h : Compiler hÑlt auch nach Hinweisen
 <<<<<<< HEAD
+<<<<<<< HEAD
 **2Sf_Schalte bestimmte Feature in Compiler und RTL ein; fpc -i oder fpc -ir geben die mîglichen Werte aus
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 **2Sg_Erlaube LABEL und GOTO
 **2Sh_Benutze ANSI-Strings
 **2Si_Benutze C++ artige INLINE
@@ -5841,6 +6077,7 @@ F*2P<x>_Setze die Ziel-CPU (arm, avr, i386, jvm, m68k, mips, mipsel, powerpc, po
 **2SI<x>_Setze den Stil des Interface zu <x>
 **3SIcom_COM kompatibles Interface (Voreinstellung)
 **3SIcorba_CORBA kompatibles Interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 **2Sm_Untersttze Makros wie in C (global)
 **2So_Sei TP/BP 7.0 kompatibel (wie -Mtp)
@@ -5869,12 +6106,17 @@ F*2P<x>_Setze die Ziel-CPU (arm, avr, i386, jvm, m68k, mips, mipsel, powerpc, po
 **2Sx_Exception Schlsselwîrter einschalten (Voreinstellung in Delphi/ObjFPC Moden)
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 **2Sm_UnterstÅtze Makros wie in C (global)
 **2So_Sei TP/BP 7.0 kompatibel (wie -Mtp)
 **2Ss_Konstruktor- und Destruktorname mÅssen "Init" und "Done" sein
 **2St_Erlaube SchlÅsselwort static in Objekten
 **2Sx_Exception SchlÅsselwîrter einschalten (Voreinstellung in Delphi/ObjFPC Moden)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 **1s_Rufe weder Assembler noch Linker auf (nur mit -a)
 **2sh_Erzeuge Script um auf dem Host zu linken
 **2st_Erzeuge Script um auf dem Zielsystem zu linken
@@ -5905,9 +6147,12 @@ F*2P<x>_Setze die Ziel-CPU (arm, avr, i386, jvm, m68k, mips, mipsel, powerpc, po
 3*2Tfreebsd_FreeBSD
 3*2Tgo32v2_Version 2 des DJ Delorie DOS extender
 <<<<<<< HEAD
+<<<<<<< HEAD
 3*2Thaiku_Haiku
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 3*2Tlinux_Linux
 3*2Tnativent_Native NT API (experimentell)
 3*2Tnetbsd_NetBSD
@@ -5918,9 +6163,12 @@ F*2P<x>_Setze die Ziel-CPU (arm, avr, i386, jvm, m68k, mips, mipsel, powerpc, po
 3*2Tsunos_SunOS/Solaris
 3*2Tsymbian_Symbian OS
 <<<<<<< HEAD
+<<<<<<< HEAD
 3*2Tsolaris_Solaris
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 3*2Twatcom_Watcom compatible DOS extender
 3*2Twdosx_WDOSX DOS extender
 3*2Twin32_Windows 32 Bit
@@ -5984,6 +6232,7 @@ A*2Twince_Windows CE
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 J*2Tandroid_Android
 J*2Tjava_Java
 m*2Tembedded_Embedded
@@ -6004,11 +6253,16 @@ P*2Tdarwin_Darwin und Mac OS X
 P*2Tlinux_Linux
 P*2Tmacos_Mac OS (classic)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 P*2Tamiga_AmigaOS auf PowerPC
 P*2Tdarwin_Darwin und Mac OS X auf PowerPC
 P*2Tlinux_Linux auf PowerPC
 P*2Tmacos_Mac OS (classic) auf PowerPC
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 P*2Tmorphos_MorphOS
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6031,6 +6285,7 @@ S*2Tlinux_Linux
 =======
 S*2Tsolaris_Solaris
 S*2Tlinux_Linux
+<<<<<<< HEAD
 **1u<x>_Entferne die Definition fr das Symbol <x>
 >>>>>>> graemeg/cpstrnew
 =======
@@ -6053,11 +6308,18 @@ S*2Tlinux_Linux
 **2Un_PrÅfe den Unitnamen nicht
 **2Ur_Erzeuge release unit Dateien
 >>>>>>> graemeg/fixes_2_2
+=======
+**1u<x>_Entferne die Definition fÅr das Symbol <x>
+**1U<x>_Unit-Optionen:
+**2Un_PrÅfe den Unitnamen nicht
+**2Ur_Erzeuge release unit Dateien
+>>>>>>> origin/fixes_2_2
 **2Us_Erzeuge eine Systemunit
 **1v<x>_Meldungen, <x> ist eine Kombination der folgenden Zeichen:
 **2*_e : Fehler (Standard)             0 : Nichts (ausser Fehlern)
 **2*_w : Warnungen                     u : Unit Informationen
 **2*_n : Anmerkungen                   t : Angesprochene/benutzte Dateien
+<<<<<<< HEAD
 <<<<<<< HEAD
 **2*_h : Hinweise                      c : Preprozessordirektiven
 **2*_i : Allgemeine Informationen      d : Debug Informationen
@@ -6285,6 +6547,38 @@ A*2WN_Erzeuge keinen "relocation code" (notwendig fÅr debugging) (Windows)
 A*2WR_Erzeuge "relocation code" (Windows)
 P*2WF_Spezifiziere "MPW tool type application" (Classic Mac OS)
 **1X_Programm-Optionen:
+=======
+**2*_h : Hinweise                      c : Preprozessordirektive
+**2*_i : Allgemeine Informationen      d : Debug Informationen
+**2*_l : Zeilennummern                 r : Rhide/GCC kompatibler Modus
+**2*_a : Alles                         x : Exe-Datei Informationen (nur Win32)
+**2*_b : Schreibe bei Meldungen mit Dateinamen den vollstÑndigem Pfad
+**2*_v : Schreibe fpcdebug.txt mit     p : Schreibe tree.log mit Analysenbaum (parse tree)
+**2*_   ganz viel Information
+3*1W<x>_Ziel-spezifische Optionen (Ziele)
+A*1W<x>_Ziel-spezifische Optionen (Ziele)
+P*1W<x>_Ziel-spezifische Optionen (Ziele)
+3*2Wb_Erzeuge statt einer Bibliothek ein Bundle (Darwin)
+P*2Wb_Erzeuge statt einer Bibliothek ein Bundle (Darwin)
+p*2Wb_Erzeuge statt einer Bibliothek ein Bundle (Darwin)
+3*2WB_Erzeuge ein relozierbares Image (Windows)
+A*2WB_Erzeuge ein relozierbares Image (Windows, Symbian)
+3*2WC_Spezifiziere "console type application" (EMX, OS/2, Windows)
+A*2WC_Spezifiziere "console type application" (Windows)
+P*2WC_Spezifiziere "console type application" (Classic Mac OS)
+3*2WD_Benutze DEFFILE um Funktionen der DLL oder EXE zu exportieren (Windows)
+A*2WD_Benutze DEFFILE um Funktionen der DLL oder EXE zu exportieren (Windows)
+3*2WF_Spezifiziere "full-screen type application" (EMX, OS/2)
+3*2WG_Spezifiziere "graphic type application" (EMX, OS/2, Windows)
+A*2WG_Spezifiziere "graphic type application" (Windows)
+P*2WG_Spezifiziere "graphic type application" (Classic Mac OS)
+3*2WN_Erzeuge keinen "relocation code" (notwendig fÅr debugging) (Windows)
+A*2WN_Erzeuge keinen "relocation code" (notwendig fÅr debugging) (Windows)
+3*2WR_Erzeuge "relocation code" (Windows)
+A*2WR_Erzeuge "relocation code" (Windows)
+P*2WF_Spezifiziere "MPW tool type application" (Classic Mac OS)
+**1X_Programm-Optionen:
+>>>>>>> origin/fixes_2_2
 **2Xc_öbergebe --shared an den Linker (nur Unix)
 **2Xd_Den Standard Bibliotheks-Suchpfad NICHT nutzen (benîtigt fÅr cross compile)
 **2Xe_Verwende den externen Linker
@@ -6299,7 +6593,10 @@ P*2WF_Spezifiziere "MPW tool type application" (Classic Mac OS)
 **2Xs_Entferne alle Symbole von ausfÅhrbarer Datei
 **2XS_Versuche Units statisch zu linken (default)    (definiert FPC_LINK_STATIC)
 **2Xt_Linke mit statischen Bibliotheken              (-static wird an den Linker Åbergeben)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 **2XX_Versuche Units smart zu linken                 (definiert FPC_LINK_SMART)
 **1*_
 **1?_Zeigt diese Hilfe an
@@ -6309,6 +6606,9 @@ P*2WF_Spezifiziere "MPW tool type application" (Classic Mac OS)
 #
 # The End...
 <<<<<<< HEAD
+<<<<<<< HEAD
 #
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

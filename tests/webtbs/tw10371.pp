@@ -10,12 +10,17 @@ type
   TBug = class
   protected
 <<<<<<< HEAD
+<<<<<<< HEAD
     fL: longword;
     function InlinedMethod : longword; inline;
 =======
     function InlinedMethod : longword; inline;
     fL: longword;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function InlinedMethod : longword; inline;
+    fL: longword;
+>>>>>>> origin/fixes_2_2
   public
     procedure Method1(var Buf); 
     procedure Method2;

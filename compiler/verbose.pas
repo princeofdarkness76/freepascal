@@ -81,6 +81,7 @@ interface
 
     function  CheckVerbosity(v:longint):boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function  SetMessageVerbosity(v:longint;state:tmsgstate):boolean;
     procedure RestoreLocalVerbosity(pstate : pmessagestaterecord);
     procedure FreeLocalVerbosity(var fstate : pmessagestaterecord);
@@ -88,6 +89,8 @@ interface
     function ChangeMessageVerbosity(s: string; var i: integer;state:tmsgstate): boolean;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure ShowStatus;
     function  ErrorCount:longint;
     procedure SetErrorFlags(const s:string);
@@ -147,7 +150,10 @@ implementation
 =======
       comphook,fmodule;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {****************************************************************************
                        Extra Handlers for default compiler
@@ -554,7 +560,10 @@ implementation
              lastfileidx:=0;
            lastmoduleidx:=module.unit_index;
          end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -673,10 +682,14 @@ implementation
            (status.errornote and ((l and V_Note)<>0)) or
            (status.errorhint and ((l and V_Hint)<>0)) then
 <<<<<<< HEAD
+<<<<<<< HEAD
          GenerateError
 =======
          inc(status.errorcount)
 >>>>>>> graemeg/fixes_2_2
+=======
+         inc(status.errorcount)
+>>>>>>> origin/fixes_2_2
         else
          if l and V_Warning <> 0 then
           inc(status.countWarnings)

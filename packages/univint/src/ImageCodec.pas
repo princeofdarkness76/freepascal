@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QuickTime/ImageCodec.h
  
      Contains:   QuickTime Interfaces.
@@ -32,6 +33,8 @@
      Copyright:  © 1990-2008 by Apple Inc., all rights reserved
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       ImageCodec.p
  
      Contains:   QuickTime Interfaces.
@@ -40,11 +43,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1990-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -71,6 +78,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -82,7 +91,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -92,12 +104,17 @@
 unit ImageCodec;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -111,14 +128,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -127,11 +149,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -169,6 +194,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -176,6 +203,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -425,6 +453,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -433,7 +463,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -460,9 +493,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -472,6 +509,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,Components,Dialogs,Events,ImageCompression,Movies,OSUtils,QuickdrawTypes,QDOffscreen,CFDictionary;
 {$endc} {not MACOSALLINCLUDE}
@@ -571,6 +609,8 @@ const
 	codecSupportsOutOfOrderDisplayTimes = 1 shl 8; { codec supports frames queued in one order for display in a different order, eg, IPB content }
 	codecSupportsScheduledBackwardsPlaybackWithDifferenceFrames = 1 shl 9; { codec can use additional buffers to minimise redecoding during backwards playback }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,Events,QDOffscreen,OSUtils,Dialogs,Quickdraw,Components,GXTypes,ImageCompression,Movies;
 
 
@@ -622,11 +662,15 @@ const
 	codecImageBufferMemoryFlagsValid = $00000040;				{  set by ImageCodecNewImageBufferMemory/NewImageGWorld to indicate that it set the AGP/PCI flags (supported in QuickTime 6.0 and later)  }
 	codecDrawsHigherQualityScaled = $00000080;					{  codec will draw higher-quality image if it performs scaling (eg, wipe effect with border)  }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	CodecCapabilitiesPtr = ^CodecCapabilities;
 	CodecCapabilities = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		flags: SIGNEDLONG;
 		wantedPixelSize: SInt16;
@@ -897,6 +941,8 @@ function NewImageCodecTimeTriggerUPP( userRoutine: ImageCodecTimeTriggerProcPtr 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		flags:					SInt32;
 		wantedPixelSize:		SInt16;
 		extendWidth:			SInt16;
@@ -1140,11 +1186,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewImageCodecTimeTriggerUPP(userRoutine: ImageCodecTimeTriggerProcPtr): ImageCodecTimeTriggerUPP; external name '_NewImageCodecTimeTriggerUPP'; { old name was NewImageCodecTimeTriggerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewImageCodecDrawBandCompleteUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -1154,16 +1204,22 @@ function NewImageCodecDrawBandCompleteUPP( userRoutine: ImageCodecDrawBandComple
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewImageCodecDrawBandCompleteUPP(userRoutine: ImageCodecDrawBandCompleteProcPtr): ImageCodecDrawBandCompleteUPP; external name '_NewImageCodecDrawBandCompleteUPP'; { old name was NewImageCodecDrawBandCompleteProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeImageCodecTimeTriggerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
@@ -1173,16 +1229,22 @@ procedure DisposeImageCodecTimeTriggerUPP( userUPP: ImageCodecTimeTriggerUPP ); 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeImageCodecTimeTriggerUPP(userUPP: ImageCodecTimeTriggerUPP); external name '_DisposeImageCodecTimeTriggerUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeImageCodecDrawBandCompleteUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -1192,16 +1254,22 @@ procedure DisposeImageCodecDrawBandCompleteUPP( userUPP: ImageCodecDrawBandCompl
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeImageCodecDrawBandCompleteUPP(userUPP: ImageCodecDrawBandCompleteUPP); external name '_DisposeImageCodecDrawBandCompleteUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeImageCodecTimeTriggerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
@@ -1211,16 +1279,22 @@ procedure InvokeImageCodecTimeTriggerUPP( refcon: UnivPtr; userUPP: ImageCodecTi
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure InvokeImageCodecTimeTriggerUPP(refcon: UnivPtr; userRoutine: ImageCodecTimeTriggerUPP); external name '_InvokeImageCodecTimeTriggerUPP'; { old name was CallImageCodecTimeTriggerProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeImageCodecDrawBandCompleteUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -1930,6 +2004,106 @@ const
 	{  codec sub-type of parameters or effect -- placed in root container, required  }
 	kParameterWhatName			= FourCharCode('what');
 	kParameterWhatID			= 1;
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure InvokeImageCodecDrawBandCompleteUPP(refcon: UnivPtr; drawBandResult: ComponentResult; drawBandCompleteFlags: UInt32; userRoutine: ImageCodecDrawBandCompleteUPP); external name '_InvokeImageCodecDrawBandCompleteUPP'; { old name was CallImageCodecDrawBandCompleteProc }
+type
+	ImageSubCodecDecompressCapabilitiesPtr = ^ImageSubCodecDecompressCapabilities;
+	ImageSubCodecDecompressCapabilities = record
+		recordSize:				SInt32;								{  sizeof(ImageSubCodecDecompressCapabilities) }
+		decompressRecordSize:	SInt32;								{  size of your codec's decompress record }
+		canAsync:				boolean;								{  default true }
+		pad0:					SInt8;
+																		{  The following field only exists for QuickTime 4.1 and greater  }
+		suggestedQueueSize:		UInt16;
+																		{  The following field only exists for QuickTime 4.0 and greater  }
+		canProvideTrigger:		boolean;
+																		{  The following fields only exist for QuickTime 5.0 and greater  }
+		subCodecFlushesScreen:	boolean;								{  only used on Mac OS X }
+		subCodecCallsDrawBandComplete: boolean;
+		pad2:					SInt8;
+																		{  The following fields only exist for QuickTime 5.0.1 and greater  }
+		isChildCodec:			boolean;								{  set by base codec before calling Initialize }
+		pad3,pad4,pad5:			SInt8;
+	end;
+
+
+const
+	kCodecFrameTypeUnknown		= 0;
+	kCodecFrameTypeKey			= 1;
+	kCodecFrameTypeDifference	= 2;
+	kCodecFrameTypeDroppableDifference = 3;
+
+
+type
+	ImageSubCodecDecompressRecordPtr = ^ImageSubCodecDecompressRecord;
+	ImageSubCodecDecompressRecord = record
+		baseAddr:				Ptr;
+		rowBytes:				SInt32;
+		codecData:				Ptr;
+		progressProcRecord:		ICMProgressProcRecord;
+		dataProcRecord:			ICMDataProcRecord;
+		userDecompressRecord:	Ptr;									{  pointer to codec-specific per-band data }
+		frameType:				SInt8;
+		inhibitMP:				boolean;								{  set this in BeginBand to tell the base decompressor not to call DrawBand from an MP task for this frame.  (Only has any effect for MP-capable subcodecs.  New in QuickTime 5.0.) }
+		pad:					packed array [0..1] of UInt8;
+		priv:					array [0..1] of SInt32;
+																		{  The following fields only exist for QuickTime 5.0 and greater  }
+		drawBandCompleteUPP:	ImageCodecDrawBandCompleteUPP;			{  only used if subcodec set subCodecCallsDrawBandComplete; if drawBandCompleteUPP is non-nil, codec must call it when a frame is finished, but may return from DrawBand before the frame is finished.  }
+		drawBandCompleteRefCon:	Ptr;									{  Note: do not call drawBandCompleteUPP directly from a hardware interrupt; instead, use DTInstall to run a function at deferred task time, and call drawBandCompleteUPP from that.  }
+	end;
+
+	{
+	  These data structures are used by code that wants to pass planar pixmap 
+	   information around.
+	  The structure below gives the basic idea of what is being done.
+	  Normal instances of code will use a fixed number of planes (eg YUV420 uses 
+	   three planes, Y, U and V). Each such code instance will define its own
+	   version of the PlanarPixMapInfo struct counting the number of planes it 
+	   needs along with defining constants that specify the meanings of each
+	   plane.
+	}
+	PlanarComponentInfoPtr = ^PlanarComponentInfo;
+	PlanarComponentInfo = record
+		offset:					SInt32;
+		rowBytes:				UInt32;
+	end;
+
+	PlanarPixMapInfoPtr = ^PlanarPixMapInfo;
+	PlanarPixMapInfo = record
+		componentInfo:			array [0..0] of PlanarComponentInfo;
+	end;
+
+	PlanarPixmapInfoSorensonYUV9Ptr = ^PlanarPixmapInfoSorensonYUV9;
+	PlanarPixmapInfoSorensonYUV9 = record
+		componentInfoY:			PlanarComponentInfo;
+		componentInfoU:			PlanarComponentInfo;
+		componentInfoV:			PlanarComponentInfo;
+	end;
+
+	PlanarPixmapInfoYUV420Ptr = ^PlanarPixmapInfoYUV420;
+	PlanarPixmapInfoYUV420 = record
+		componentInfoY:			PlanarComponentInfo;
+		componentInfoCb:		PlanarComponentInfo;
+		componentInfoCr:		PlanarComponentInfo;
+	end;
+
+
+const
+	codecSuggestedBufferSentinel = FourCharCode('sent');						{  codec public resource containing suggested data pattern to put past end of data buffer  }
+
+
+	{  name of parameters or effect -- placed in root container, required  }
+	kParameterTitleName			= FourCharCode('name');
+	kParameterTitleID			= 1;
+
+	{  codec sub-type of parameters or effect -- placed in root container, required  }
+	kParameterWhatName			= FourCharCode('what');
+	kParameterWhatID			= 1;
+>>>>>>> origin/fixes_2_2
 
 	{  effect version -- placed in root container, optional, but recommended  }
 	kParameterVersionName		= FourCharCode('vers');
@@ -2054,11 +2228,15 @@ type
 const
 	kParameterEnumList			= FourCharCode('enum');
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	EnumValuePairPtr = ^EnumValuePair;
 	EnumValuePair = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		value: SIGNEDLONG;
 		name: Str255;
@@ -2096,6 +2274,8 @@ const
 	kAtomInterpolateIsOptional = $00000002; { atom can be interpolated, but it is an advanced user operation}
 	kAtomMayBeIndexed = $00000004; { more than one value of atom can exist with accending IDs (ie, lists of colors)}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		value:					SInt32;
 		name:					Str255;
 	end;
@@ -2117,11 +2297,15 @@ const
 	kAtomInterpolateIsOptional	= $00000002;					{  atom can be interpolated, but it is an advanced user operation }
 	kAtomMayBeIndexed			= $00000004;					{  more than one value of atom can exist with accending IDs (ie, lists of colors) }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	ParameterAtomTypeAndIDPtr = ^ParameterAtomTypeAndID;
 	ParameterAtomTypeAndID = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		atomType: QTAtomType;               { type of atom this data comes from/goes into}
 		atomID: QTAtomID;                 { ID of atom this data comes from/goes into}
@@ -2151,6 +2335,8 @@ const
 	kParameterTypeDataBitField = FourCharCode('bool'); { bit field value (something that holds boolean(s))}
 	kParameterTypeDataImage = FourCharCode('imag'); { reference to an image via Picture data}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		atomType:				QTAtomType;								{  type of atom this data comes from/goes into }
 		atomID:					QTAtomID;								{  ID of atom this data comes from/goes into }
 		atomFlags:				SInt32;								{  options for this atom }
@@ -2171,11 +2357,15 @@ const
 	kParameterTypeDataBitField	= FourCharCode('bool');						{  bit field value (something that holds boolean(s)) }
 	kParameterTypeDataImage		= FourCharCode('imag');						{  reference to an image via Picture data }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	ParameterDataTypePtr = ^ParameterDataType;
 	ParameterDataType = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		dataType: OSType;               { type of data this item is stored as}
 	end;
@@ -2190,6 +2380,8 @@ const
 	kParameterTypeDataCubic = FourCharCode('cubi'); { cubic bezier(s) (no built-in support)}
 	kParameterTypeDataNURB = FourCharCode('nurb'); { nurb(s) (no built-in support)}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		dataType:				OSType;									{  type of data this item is stored as }
 	end;
 
@@ -2205,11 +2397,15 @@ const
 	kParameterTypeDataCubic		= FourCharCode('cubi');						{  cubic bezier(s) (no built-in support) }
 	kParameterTypeDataNURB		= FourCharCode('nurb');						{  nurb(s) (no built-in support) }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	ParameterAlternateDataEntryPtr = ^ParameterAlternateDataEntry;
 	ParameterAlternateDataEntry = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		dataType: OSType;               { type of data this item is stored as}
 		alternateAtom: QTAtomType;          { where to store}
@@ -2319,6 +2515,8 @@ const
 const
 	kStandardPresetGroup = FourCharCode('pset');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		dataType:				OSType;									{  type of data this item is stored as }
 		alternateAtom:			QTAtomType;								{  where to store }
 	end;
@@ -2394,11 +2592,15 @@ const
 
 	kStandardPresetGroup		= FourCharCode('pset');
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	ImageRangeRecordPtr = ^ImageRangeRecord;
 	ImageRangeRecord = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		imageFlags: SIGNEDLONG;
 		fileType: OSType;               { file type to contain the preset group (normally kStandardPresetGroup)}
@@ -2531,6 +2733,8 @@ const
 	{ flags for ImageCodecValidateParameters }
 	kParameterValidationNoFlags = $00000000;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		imageFlags:				SInt32;
 		fileType:				OSType;									{  file type to contain the preset group (normally kStandardPresetGroup) }
 		replacedAtoms:			SInt32;								{  # atoms at this level replaced by this preset group }
@@ -2634,6 +2838,7 @@ const
 	kParameterInfoManufacturer	= FourCharCode('©man');
 	kParameterInfoIDs			= 1;
 
+<<<<<<< HEAD
 	{	 flags for ImageCodecValidateParameters 	}
 	kParameterValidationNoFlags	= $00000000;
 >>>>>>> graemeg/fixes_2_2
@@ -2737,6 +2942,24 @@ const
 const
 	kQTFieldDetailUnknown = 0;
 =======
+=======
+	{	 flags for ImageCodecValidateParameters 	}
+	kParameterValidationNoFlags	= $00000000;
+	kParameterValidationFinalValidation = $00000001;
+
+
+type
+	QTParameterValidationOptions		= SInt32;
+	{  QTAtomTypes for atoms in image compressor settings containers }
+
+const
+	kImageCodecSettingsFieldCount = FourCharCode('fiel');						{  Number of fields (UInt8)  }
+	kImageCodecSettingsFieldOrdering = FourCharCode('fdom');					{  Ordering of fields (UInt8) }
+	kImageCodecSettingsFieldOrderingF1F2 = 1;
+	kImageCodecSettingsFieldOrderingF2F1 = 2;
+
+
+>>>>>>> origin/fixes_2_2
 	{  Additional Image Description Extensions }
 	kColorInfoImageDescriptionExtension = FourCharCode('colr');				{  image description extension describing the color properties     }
 	kPixelAspectRatioImageDescriptionExtension = FourCharCode('pasp');		{  image description extension describing the pixel aspect ratio }
@@ -2794,13 +3017,17 @@ const
 	kQTFieldsInterlaced			= 2;
 
 	kQTFieldDetailUnknown		= 0;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kQTFieldDetailTemporalTopFirst = 1;
 	kQTFieldDetailTemporalBottomFirst = 6;
 	kQTFieldDetailSpatialFirstLineEarly = 9;
 	kQTFieldDetailSpatialFirstLineLate = 14;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { Pixel Aspect Ratio Image Description Extensions}
 type
@@ -2837,6 +3064,8 @@ function NewImageCodecMPDrawBandUPP( userRoutine: ImageCodecMPDrawBandProcPtr ):
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{  Pixel Aspect Ratio Image Description Extensions }
 
 type
@@ -2882,11 +3111,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewImageCodecMPDrawBandUPP(userRoutine: ImageCodecMPDrawBandProcPtr): ImageCodecMPDrawBandUPP; external name '_NewImageCodecMPDrawBandUPP'; { old name was NewImageCodecMPDrawBandProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeImageCodecMPDrawBandUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2896,16 +3129,22 @@ procedure DisposeImageCodecMPDrawBandUPP( userUPP: ImageCodecMPDrawBandUPP ); ex
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeImageCodecMPDrawBandUPP(userUPP: ImageCodecMPDrawBandUPP); external name '_DisposeImageCodecMPDrawBandUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeImageCodecMPDrawBandUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2921,6 +3160,8 @@ function InvokeImageCodecMPDrawBandUPP( refcon: UnivPtr; var drp: ImageSubCodecD
 {  codec selectors 512-1023 are reserved by Apple }
 {  codec selectors 1024-32767 are available for general use }
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -2930,12 +3171,16 @@ function InvokeImageCodecMPDrawBandUPP(refcon: UnivPtr; var drp: ImageSubCodecDe
 {  codec selectors 128-191 are subtype specific }
 {  codec selectors 192-255 are vendor specific }
 {  codec selectors 256-32767 are available for general use }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {  negative selectors are reserved by the Component Manager }
 {
  *  ImageCodecGetCodecInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2947,17 +3192,23 @@ function ImageCodecGetCodecInfo( ci: ComponentInstance; var info: CodecInfo ): C
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecGetCodecInfo(ci: ComponentInstance; var info: CodecInfo): ComponentResult; external name '_ImageCodecGetCodecInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecGetCompressionTime()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2969,17 +3220,23 @@ function ImageCodecGetCompressionTime( ci: ComponentInstance; src: PixMapHandle;
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecGetCompressionTime(ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; depth: SInt16; var spatialQuality: CodecQ; var temporalQuality: CodecQ; var time: UInt32): ComponentResult; external name '_ImageCodecGetCompressionTime';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecGetMaxCompressionSize()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2991,17 +3248,23 @@ function ImageCodecGetMaxCompressionSize( ci: ComponentInstance; src: PixMapHand
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecGetMaxCompressionSize(ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; depth: SInt16; quality: CodecQ; var size: SInt32): ComponentResult; external name '_ImageCodecGetMaxCompressionSize';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecPreCompress()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3013,17 +3276,23 @@ function ImageCodecPreCompress( ci: ComponentInstance; var params: CodecCompress
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecPreCompress(ci: ComponentInstance; var params: CodecCompressParams): ComponentResult; external name '_ImageCodecPreCompress';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecBandCompress()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3035,17 +3304,23 @@ function ImageCodecBandCompress( ci: ComponentInstance; var params: CodecCompres
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecBandCompress(ci: ComponentInstance; var params: CodecCompressParams): ComponentResult; external name '_ImageCodecBandCompress';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecPreDecompress()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3057,17 +3332,23 @@ function ImageCodecPreDecompress( ci: ComponentInstance; var params: CodecDecomp
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecPreDecompress(ci: ComponentInstance; var params: CodecDecompressParams): ComponentResult; external name '_ImageCodecPreDecompress';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecBandDecompress()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3079,17 +3360,23 @@ function ImageCodecBandDecompress( ci: ComponentInstance; var params: CodecDecom
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecBandDecompress(ci: ComponentInstance; var params: CodecDecompressParams): ComponentResult; external name '_ImageCodecBandDecompress';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecBusy()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3101,17 +3388,23 @@ function ImageCodecBusy( ci: ComponentInstance; seq: ImageSequence ): ComponentR
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecBusy(ci: ComponentInstance; seq: ImageSequence): ComponentResult; external name '_ImageCodecBusy';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecGetCompressedImageSize()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3123,17 +3416,23 @@ function ImageCodecGetCompressedImageSize( ci: ComponentInstance; desc: ImageDes
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecGetCompressedImageSize(ci: ComponentInstance; desc: ImageDescriptionHandle; data: Ptr; bufferSize: SInt32; dataProc: ICMDataProcRecordPtr; var dataSize: SInt32): ComponentResult; external name '_ImageCodecGetCompressedImageSize';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecGetSimilarity()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3145,17 +3444,23 @@ function ImageCodecGetSimilarity( ci: ComponentInstance; src: PixMapHandle; cons
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecGetSimilarity(ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; desc: ImageDescriptionHandle; data: Ptr; var similarity: Fixed): ComponentResult; external name '_ImageCodecGetSimilarity';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecTrimImage()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3167,17 +3472,23 @@ function ImageCodecTrimImage( ci: ComponentInstance; Desc: ImageDescriptionHandl
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecTrimImage(ci: ComponentInstance; Desc: ImageDescriptionHandle; inData: Ptr; inBufferSize: SInt32; dataProc: ICMDataProcRecordPtr; outData: Ptr; outBufferSize: SInt32; flushProc: ICMFlushProcRecordPtr; var trimRect: Rect; progressProc: ICMProgressProcRecordPtr): ComponentResult; external name '_ImageCodecTrimImage';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecRequestSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3189,17 +3500,23 @@ function ImageCodecRequestSettings( ci: ComponentInstance; settings: Handle; var
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecRequestSettings(ci: ComponentInstance; settings: Handle; var rp: Rect; filterProc: ModalFilterUPP): ComponentResult; external name '_ImageCodecRequestSettings';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecGetSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3211,17 +3528,23 @@ function ImageCodecGetSettings( ci: ComponentInstance; settings: Handle ): Compo
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecGetSettings(ci: ComponentInstance; settings: Handle): ComponentResult; external name '_ImageCodecGetSettings';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecSetSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3233,17 +3556,23 @@ function ImageCodecSetSettings( ci: ComponentInstance; settings: Handle ): Compo
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecSetSettings(ci: ComponentInstance; settings: Handle): ComponentResult; external name '_ImageCodecSetSettings';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecFlush()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3255,17 +3584,23 @@ function ImageCodecFlush( ci: ComponentInstance ): ComponentResult; external nam
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecFlush(ci: ComponentInstance): ComponentResult; external name '_ImageCodecFlush';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecSetTimeCode()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3277,17 +3612,23 @@ function ImageCodecSetTimeCode( ci: ComponentInstance; timeCodeFormat: UnivPtr; 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecSetTimeCode(ci: ComponentInstance; timeCodeFormat: UnivPtr; timeCodeTime: UnivPtr): ComponentResult; external name '_ImageCodecSetTimeCode';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecIsImageDescriptionEquivalent()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3299,17 +3640,23 @@ function ImageCodecIsImageDescriptionEquivalent( ci: ComponentInstance; newDesc:
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecIsImageDescriptionEquivalent(ci: ComponentInstance; newDesc: ImageDescriptionHandle; var equivalent: boolean): ComponentResult; external name '_ImageCodecIsImageDescriptionEquivalent';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecNewMemory()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3321,17 +3668,23 @@ function ImageCodecNewMemory( ci: ComponentInstance; var data: Ptr; dataSize: Si
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecNewMemory(ci: ComponentInstance; var data: Ptr; dataSize: Size; dataUse: SInt32; memoryGoneProc: ICMMemoryDisposedUPP; refCon: UnivPtr): ComponentResult; external name '_ImageCodecNewMemory';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecDisposeMemory()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3343,17 +3696,23 @@ function ImageCodecDisposeMemory( ci: ComponentInstance; data: Ptr ): ComponentR
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecDisposeMemory(ci: ComponentInstance; data: Ptr): ComponentResult; external name '_ImageCodecDisposeMemory';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecHitTestData()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3365,17 +3724,23 @@ function ImageCodecHitTestData( ci: ComponentInstance; desc: ImageDescriptionHan
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecHitTestData(ci: ComponentInstance; desc: ImageDescriptionHandle; data: UnivPtr; dataSize: Size; where: Point; var hit: boolean): ComponentResult; external name '_ImageCodecHitTestData';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecNewImageBufferMemory()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3387,17 +3752,23 @@ function ImageCodecNewImageBufferMemory( ci: ComponentInstance; var params: Code
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecNewImageBufferMemory(ci: ComponentInstance; var params: CodecDecompressParams; flags: SInt32; memoryGoneProc: ICMMemoryDisposedUPP; refCon: UnivPtr): ComponentResult; external name '_ImageCodecNewImageBufferMemory';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecExtractAndCombineFields()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3409,17 +3780,23 @@ function ImageCodecExtractAndCombineFields( ci: ComponentInstance; fieldFlags: S
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecExtractAndCombineFields(ci: ComponentInstance; fieldFlags: SInt32; data1: UnivPtr; dataSize1: SInt32; desc1: ImageDescriptionHandle; data2: UnivPtr; dataSize2: SInt32; desc2: ImageDescriptionHandle; outputData: UnivPtr; var outDataSize: SInt32; descOut: ImageDescriptionHandle): ComponentResult; external name '_ImageCodecExtractAndCombineFields';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecGetMaxCompressionSizeWithSources()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3431,17 +3808,23 @@ function ImageCodecGetMaxCompressionSizeWithSources( ci: ComponentInstance; src:
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecGetMaxCompressionSizeWithSources(ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; depth: SInt16; quality: CodecQ; sourceData: CDSequenceDataSourcePtr; var size: SInt32): ComponentResult; external name '_ImageCodecGetMaxCompressionSizeWithSources';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecSetTimeBase()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3453,17 +3836,23 @@ function ImageCodecSetTimeBase( ci: ComponentInstance; base: UnivPtr ): Componen
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecSetTimeBase(ci: ComponentInstance; base: UnivPtr): ComponentResult; external name '_ImageCodecSetTimeBase';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecSourceChanged()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3475,17 +3864,23 @@ function ImageCodecSourceChanged( ci: ComponentInstance; majorSourceChangeSeed: 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecSourceChanged(ci: ComponentInstance; majorSourceChangeSeed: UInt32; minorSourceChangeSeed: UInt32; sourceData: CDSequenceDataSourcePtr; var flagsOut: SInt32): ComponentResult; external name '_ImageCodecSourceChanged';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecFlushFrame()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3497,17 +3892,23 @@ function ImageCodecFlushFrame( ci: ComponentInstance; flags: UInt32 ): Component
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecFlushFrame(ci: ComponentInstance; flags: UInt32): ComponentResult; external name '_ImageCodecFlushFrame';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecGetSettingsAsText()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3519,17 +3920,23 @@ function ImageCodecGetSettingsAsText( ci: ComponentInstance; var text: Handle ):
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecGetSettingsAsText(ci: ComponentInstance; var text: Handle): ComponentResult; external name '_ImageCodecGetSettingsAsText';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecGetParameterListHandle()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3541,17 +3948,23 @@ function ImageCodecGetParameterListHandle( ci: ComponentInstance; var parameterD
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecGetParameterListHandle(ci: ComponentInstance; var parameterDescriptionHandle: Handle): ComponentResult; external name '_ImageCodecGetParameterListHandle';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecGetParameterList()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3563,17 +3976,23 @@ function ImageCodecGetParameterList( ci: ComponentInstance; var parameterDescrip
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecGetParameterList(ci: ComponentInstance; var parameterDescription: QTAtomContainer): ComponentResult; external name '_ImageCodecGetParameterList';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecCreateStandardParameterDialog()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3585,17 +4004,23 @@ function ImageCodecCreateStandardParameterDialog( ci: ComponentInstance; paramet
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecCreateStandardParameterDialog(ci: ComponentInstance; parameterDescription: QTAtomContainer; parameters: QTAtomContainer; dialogOptions: QTParameterDialogOptions; existingDialog: DialogPtr; existingUserItem: SInt16; var createdDialog: QTParameterDialog): ComponentResult; external name '_ImageCodecCreateStandardParameterDialog';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecIsStandardParameterDialogEvent()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3607,17 +4032,23 @@ function ImageCodecIsStandardParameterDialogEvent( ci: ComponentInstance; var pE
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecIsStandardParameterDialogEvent(ci: ComponentInstance; var pEvent: EventRecord; createdDialog: QTParameterDialog): ComponentResult; external name '_ImageCodecIsStandardParameterDialogEvent';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecDismissStandardParameterDialog()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3629,17 +4060,23 @@ function ImageCodecDismissStandardParameterDialog( ci: ComponentInstance; create
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecDismissStandardParameterDialog(ci: ComponentInstance; createdDialog: QTParameterDialog): ComponentResult; external name '_ImageCodecDismissStandardParameterDialog';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecStandardParameterDialogDoAction()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3651,17 +4088,23 @@ function ImageCodecStandardParameterDialogDoAction( ci: ComponentInstance; creat
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecStandardParameterDialogDoAction(ci: ComponentInstance; createdDialog: QTParameterDialog; action: SInt32; params: UnivPtr): ComponentResult; external name '_ImageCodecStandardParameterDialogDoAction';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecNewImageGWorld()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3673,12 +4116,15 @@ function ImageCodecNewImageGWorld( ci: ComponentInstance; var params: CodecDecom
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecNewImageGWorld(ci: ComponentInstance; var params: CodecDecompressParams; var newGW: GWorldPtr; flags: SInt32): ComponentResult; external name '_ImageCodecNewImageGWorld';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 {
  *  ImageCodecDisposeImageGWorld()
@@ -3695,17 +4141,27 @@ function ImageCodecDisposeImageGWorld( ci: ComponentInstance; theGW: GWorldPtr )
 
 
 =======
+=======
+{
+ *  ImageCodecDisposeImageGWorld()
+ *  
+ *  Availability:
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecDisposeImageGWorld(ci: ComponentInstance; theGW: GWorldPtr): ComponentResult; external name '_ImageCodecDisposeImageGWorld';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecHitTestDataWithFlags()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3717,17 +4173,23 @@ function ImageCodecHitTestDataWithFlags( ci: ComponentInstance; desc: ImageDescr
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecHitTestDataWithFlags(ci: ComponentInstance; desc: ImageDescriptionHandle; data: UnivPtr; dataSize: Size; where: Point; var hit: SInt32; hitFlags: SInt32): ComponentResult; external name '_ImageCodecHitTestDataWithFlags';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecValidateParameters()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3739,17 +4201,23 @@ function ImageCodecValidateParameters( ci: ComponentInstance; parameters: QTAtom
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecValidateParameters(ci: ComponentInstance; parameters: QTAtomContainer; validationFlags: QTParameterValidationOptions; errorString: StringPtr): ComponentResult; external name '_ImageCodecValidateParameters';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecGetBaseMPWorkFunction()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3786,17 +4254,23 @@ function ImageCodecUnlockBits( ci: ComponentInstance; port: CGrafPtr ): Componen
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecGetBaseMPWorkFunction(ci: ComponentInstance; var workFunction: ComponentMPWorkFunctionUPP; var refCon: UnivPtr; drawProc: ImageCodecMPDrawBandUPP; drawProcRefCon: UnivPtr): ComponentResult; external name '_ImageCodecGetBaseMPWorkFunction';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecRequestGammaLevel()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -3808,17 +4282,23 @@ function ImageCodecRequestGammaLevel( ci: ComponentInstance; srcGammaLevel: Fixe
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
 function ImageCodecRequestGammaLevel(ci: ComponentInstance; srcGammaLevel: Fixed; dstGammaLevel: Fixed; var codecCanMatch: SInt32): ComponentResult; external name '_ImageCodecRequestGammaLevel';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecGetSourceDataGammaLevel()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -3831,17 +4311,23 @@ function ImageCodecGetSourceDataGammaLevel( ci: ComponentInstance; var sourceDat
 
 { (Selector 42 skipped) }
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
 function ImageCodecGetSourceDataGammaLevel(ci: ComponentInstance; var sourceDataGammaLevel: Fixed): ComponentResult; external name '_ImageCodecGetSourceDataGammaLevel';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecGetDecompressLatency()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -3853,17 +4339,23 @@ function ImageCodecGetDecompressLatency( ci: ComponentInstance; var latency: Tim
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
 function ImageCodecGetDecompressLatency(ci: ComponentInstance; var latency: TimeRecord): ComponentResult; external name '_ImageCodecGetDecompressLatency';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecMergeFloatingImageOntoWindow()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -3875,17 +4367,23 @@ function ImageCodecMergeFloatingImageOntoWindow( ci: ComponentInstance; flags: U
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
 function ImageCodecMergeFloatingImageOntoWindow(ci: ComponentInstance; flags: UInt32): ComponentResult; external name '_ImageCodecMergeFloatingImageOntoWindow';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecRemoveFloatingImage()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -3897,17 +4395,23 @@ function ImageCodecRemoveFloatingImage( ci: ComponentInstance; flags: UInt32 ): 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
 function ImageCodecRemoveFloatingImage(ci: ComponentInstance; flags: UInt32): ComponentResult; external name '_ImageCodecRemoveFloatingImage';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecGetDITLForSize()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -3919,17 +4423,23 @@ function ImageCodecGetDITLForSize( ci: ComponentInstance; var ditl: Handle; var 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
 function ImageCodecGetDITLForSize(ci: ComponentInstance; var ditl: Handle; var requestedSize: Point): ComponentResult; external name '_ImageCodecGetDITLForSize';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecDITLInstall()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -3941,17 +4451,23 @@ function ImageCodecDITLInstall( ci: ComponentInstance; d: DialogRef; itemOffset:
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
 function ImageCodecDITLInstall(ci: ComponentInstance; d: DialogRef; itemOffset: SInt16): ComponentResult; external name '_ImageCodecDITLInstall';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecDITLEvent()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -3963,17 +4479,23 @@ function ImageCodecDITLEvent( ci: ComponentInstance; d: DialogRef; itemOffset: S
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
 function ImageCodecDITLEvent(ci: ComponentInstance; d: DialogRef; itemOffset: SInt16; const (*var*) theEvent: EventRecord; var itemHit: SInt16; var handled: boolean): ComponentResult; external name '_ImageCodecDITLEvent';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecDITLItem()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -3985,17 +4507,23 @@ function ImageCodecDITLItem( ci: ComponentInstance; d: DialogRef; itemOffset: SI
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
 function ImageCodecDITLItem(ci: ComponentInstance; d: DialogRef; itemOffset: SInt16; itemNum: SInt16): ComponentResult; external name '_ImageCodecDITLItem';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecDITLRemove()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -4007,17 +4535,23 @@ function ImageCodecDITLRemove( ci: ComponentInstance; d: DialogRef; itemOffset: 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
 function ImageCodecDITLRemove(ci: ComponentInstance; d: DialogRef; itemOffset: SInt16): ComponentResult; external name '_ImageCodecDITLRemove';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecDITLValidateInput()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -4331,17 +4865,23 @@ function ImageCodecProcessBetweenPasses( ci: ComponentInstance; multiPassStorage
 { (Selector 65 skipped) }
 { (Selector 66 skipped) }
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
 function ImageCodecDITLValidateInput(ci: ComponentInstance; var ok: boolean): ComponentResult; external name '_ImageCodecDITLValidateInput';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecPreflight()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -4353,17 +4893,23 @@ function ImageCodecPreflight( ci: ComponentInstance; var params: CodecDecompress
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecPreflight(ci: ComponentInstance; var params: CodecDecompressParams): ComponentResult; external name '_ImageCodecPreflight';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecInitialize()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -4375,17 +4921,23 @@ function ImageCodecInitialize( ci: ComponentInstance; var cap: ImageSubCodecDeco
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecInitialize(ci: ComponentInstance; var cap: ImageSubCodecDecompressCapabilities): ComponentResult; external name '_ImageCodecInitialize';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecBeginBand()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -4397,17 +4949,23 @@ function ImageCodecBeginBand( ci: ComponentInstance; var params: CodecDecompress
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecBeginBand(ci: ComponentInstance; var params: CodecDecompressParams; var drp: ImageSubCodecDecompressRecord; flags: SInt32): ComponentResult; external name '_ImageCodecBeginBand';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecDrawBand()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -4419,17 +4977,23 @@ function ImageCodecDrawBand( ci: ComponentInstance; var drp: ImageSubCodecDecomp
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecDrawBand(ci: ComponentInstance; var drp: ImageSubCodecDecompressRecord): ComponentResult; external name '_ImageCodecDrawBand';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecEndBand()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -4441,17 +5005,23 @@ function ImageCodecEndBand( ci: ComponentInstance; var drp: ImageSubCodecDecompr
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecEndBand(ci: ComponentInstance; var drp: ImageSubCodecDecompressRecord; result: OSErr; flags: SInt32): ComponentResult; external name '_ImageCodecEndBand';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecQueueStarting()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -4463,17 +5033,23 @@ function ImageCodecQueueStarting( ci: ComponentInstance ): ComponentResult; exte
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecQueueStarting(ci: ComponentInstance): ComponentResult; external name '_ImageCodecQueueStarting';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecQueueStopping()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -4485,17 +5061,23 @@ function ImageCodecQueueStopping( ci: ComponentInstance ): ComponentResult; exte
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecQueueStopping(ci: ComponentInstance): ComponentResult; external name '_ImageCodecQueueStopping';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecDroppingFrame()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -4507,17 +5089,23 @@ function ImageCodecDroppingFrame( ci: ComponentInstance; const (*var*) drp: Imag
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecDroppingFrame(ci: ComponentInstance; const (*var*) drp: ImageSubCodecDecompressRecord): ComponentResult; external name '_ImageCodecDroppingFrame';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecScheduleFrame()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
@@ -4529,17 +5117,23 @@ function ImageCodecScheduleFrame( ci: ComponentInstance; const (*var*) drp: Imag
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
 function ImageCodecScheduleFrame(ci: ComponentInstance; const (*var*) drp: ImageSubCodecDecompressRecord; triggerProc: ImageCodecTimeTriggerUPP; triggerProcRefCon: UnivPtr): ComponentResult; external name '_ImageCodecScheduleFrame';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecCancelTrigger()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
@@ -4645,6 +5239,8 @@ const
 const
 	kFieldOrderUnknown = 0;
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Mac OS X:         in version 10.0 and later
@@ -4657,6 +5253,7 @@ const
 	kJPEGHuffmanTablesImageDescriptionExtension = FourCharCode('mjht');
 	kFieldInfoImageDescriptionExtension = FourCharCode('fiel');				{  image description extension describing the field count and field orderings }
 
+<<<<<<< HEAD
 	kFieldOrderUnknown			= 0;
 >>>>>>> graemeg/fixes_2_2
 	kFieldsStoredF1F2DisplayedF1F2 = 1;
@@ -4700,6 +5297,14 @@ function QTPhotoSetSampling( codec: ComponentInstance; yH: SInt16; yV: SInt16; c
 
 
 =======
+=======
+	kFieldOrderUnknown			= 0;
+	kFieldsStoredF1F2DisplayedF1F2 = 1;
+	kFieldsStoredF1F2DisplayedF2F1 = 2;
+	kFieldsStoredF2F1DisplayedF1F2 = 5;
+	kFieldsStoredF2F1DisplayedF2F1 = 6;
+
+>>>>>>> origin/fixes_2_2
 
 type
 	MotionJPEGApp1MarkerPtr = ^MotionJPEGApp1Marker;
@@ -4733,11 +5338,15 @@ type
 	 *    Windows:          in qtmlClient.lib 3.0 and later
 	 	}
 function QTPhotoSetSampling(codec: ComponentInstance; yH: SInt16; yV: SInt16; cbH: SInt16; cbV: SInt16; crH: SInt16; crV: SInt16): ComponentResult; external name '_QTPhotoSetSampling';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTPhotoSetRestartInterval()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -4749,17 +5358,23 @@ function QTPhotoSetRestartInterval( codec: ComponentInstance; restartInterval: U
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTPhotoSetRestartInterval(codec: ComponentInstance; restartInterval: UInt16): ComponentResult; external name '_QTPhotoSetRestartInterval';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTPhotoDefineHuffmanTable()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -4771,17 +5386,23 @@ function QTPhotoDefineHuffmanTable( codec: ComponentInstance; componentNumber: S
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTPhotoDefineHuffmanTable(codec: ComponentInstance; componentNumber: SInt16; isDC: boolean; lengthCounts: UInt8Ptr; values: UInt8Ptr): ComponentResult; external name '_QTPhotoDefineHuffmanTable';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  QTPhotoDefineQuantizationTable()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -4898,6 +5519,8 @@ const
 	kEffectRawSource = 0;    { the source is raw image data}
 	kEffectGenericType = FourCharCode('geff'); { generic effect for combining others}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -4917,7 +5540,10 @@ const
 	kEffectRawSource			= 0;							{  the source is raw image data }
 	kEffectGenericType			= FourCharCode('geff');						{  generic effect for combining others }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	EffectSourcePtr = ^EffectSource;
@@ -4934,6 +5560,7 @@ type
 
 
 	EffectSource = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		effectType: SIGNEDLONG;             { type of effect or kEffectRawSource if raw ICM data}
 		data: Ptr;                   { track data for this effect}
@@ -4990,6 +5617,8 @@ function ImageCodecEffectSetup( effect: ComponentInstance; var p: CodecDecompres
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		effectType:				SInt32;								{  type of effect or kEffectRawSource if raw ICM data }
 		data:					Ptr;									{  track data for this effect }
 		source:					SourceData;								{  source/effect pointers }
@@ -5021,11 +5650,15 @@ function ImageCodecEffectSetup( effect: ComponentInstance; var p: CodecDecompres
 	 *    Windows:          in qtmlClient.lib 3.0 and later
 	 	}
 function ImageCodecEffectSetup(effect: ComponentInstance; var p: CodecDecompressParams): ComponentResult; external name '_ImageCodecEffectSetup';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecEffectBegin()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5037,17 +5670,23 @@ function ImageCodecEffectBegin( effect: ComponentInstance; var p: CodecDecompres
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecEffectBegin(effect: ComponentInstance; var p: CodecDecompressParams; ePtr: EffectsFrameParamsPtr): ComponentResult; external name '_ImageCodecEffectBegin';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecEffectRenderFrame()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5059,17 +5698,23 @@ function ImageCodecEffectRenderFrame( effect: ComponentInstance; p: EffectsFrame
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecEffectRenderFrame(effect: ComponentInstance; p: EffectsFrameParamsPtr): ComponentResult; external name '_ImageCodecEffectRenderFrame';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecEffectConvertEffectSourceToFormat()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5081,17 +5726,23 @@ function ImageCodecEffectConvertEffectSourceToFormat( effect: ComponentInstance;
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecEffectConvertEffectSourceToFormat(effect: ComponentInstance; sourceToConvert: EffectSourcePtr; requestedDesc: ImageDescriptionHandle): ComponentResult; external name '_ImageCodecEffectConvertEffectSourceToFormat';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecEffectCancel()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5103,17 +5754,23 @@ function ImageCodecEffectCancel( effect: ComponentInstance; p: EffectsFrameParam
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageCodecEffectCancel(effect: ComponentInstance; p: EffectsFrameParamsPtr): ComponentResult; external name '_ImageCodecEffectCancel';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecEffectGetSpeed()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5213,6 +5870,8 @@ const
 	kBottom180Wipe = 223;
 	kLeft180Wipe = 224;
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -5307,11 +5966,15 @@ const
 	kRight180Wipe				= 222;
 	kBottom180Wipe				= 223;
 	kLeft180Wipe				= 224;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kCounterRotatingTopBottomWipe = 225;
 	kCounterRotatingLeftRightWipe = 226;
 	kDoubleRotatingTopBottomWipe = 227;
 	kDoubleRotatingLeftRightWipe = 228;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kVOpenTopWipe = 231;
 	kVOpenRightWipe = 232;
@@ -5330,6 +5993,8 @@ const
 	kRotatingBottomLeftRightWipe = 253;
 	kRotatingRightTopBottomWipe = 254;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kVOpenTopWipe				= 231;
 	kVOpenRightWipe				= 232;
 	kVOpenBottomWipe			= 233;
@@ -5346,12 +6011,16 @@ const
 	kRotatingLeftTopBottomWipe	= 252;
 	kRotatingBottomLeftRightWipe = 253;
 	kRotatingRightTopBottomWipe	= 254;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kRotatingDoubleCenterRightWipe = 261;
 	kRotatingDoubleCenterTopWipe = 262;
 	kRotatingDoubleCenterTopBottomWipe = 263;
 	kRotatingDoubleCenterLeftRightWipe = 264;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kHorizontalMatrixWipe = 301;
@@ -5362,6 +6031,8 @@ const
 	kBottomLeftDiagonalMatrixWipe = 306;
 	kClockwiseTopLeftMatrixWipe = 310;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kHorizontalMatrixWipe		= 301;
 	kVerticalMatrixWipe			= 302;
 	kTopLeftDiagonalMatrixWipe	= 303;
@@ -5369,7 +6040,10 @@ const
 	kBottomRightDiagonalMatrixWipe = 305;
 	kBottomLeftDiagonalMatrixWipe = 306;
 	kClockwiseTopLeftMatrixWipe	= 310;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kClockwiseTopRightMatrixWipe = 311;
 	kClockwiseBottomRightMatrixWipe = 312;
 	kClockwiseBottomLeftMatrixWipe = 313;
@@ -5378,10 +6052,14 @@ const
 	kCounterClockwiseBottomRightMatrixWipe = 316;
 	kCounterClockwiseBottomLeftMatrixWipe = 317;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kVerticalStartTopMatrixWipe = 320;
 =======
 	kVerticalStartTopMatrixWipe	= 320;
 >>>>>>> graemeg/fixes_2_2
+=======
+	kVerticalStartTopMatrixWipe	= 320;
+>>>>>>> origin/fixes_2_2
 	kVerticalStartBottomMatrixWipe = 321;
 	kVerticalStartTopOppositeMatrixWipe = 322;
 	kVerticalStartBottomOppositeMatrixWipe = 323;
@@ -5392,22 +6070,29 @@ const
 	kDoubleDiagonalTopRightMatrixWipe = 328;
 	kDoubleDiagonalBottomRightMatrixWipe = 329;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kDoubleSpiralTopMatixWipe = 340;
 	kDoubleSpiralBottomMatixWipe = 341;
 	kDoubleSpiralLeftMatixWipe = 342;
 	kDoubleSpiralRightMatixWipe = 343;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kDoubleSpiralTopMatixWipe	= 340;
 	kDoubleSpiralBottomMatixWipe = 341;
 	kDoubleSpiralLeftMatixWipe	= 342;
 	kDoubleSpiralRightMatixWipe	= 343;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kQuadSpiralVerticalMatixWipe = 344;
 	kQuadSpiralHorizontalMatixWipe = 345;
 	kVerticalWaterfallLeftMatrixWipe = 350;
 	kVerticalWaterfallRightMatrixWipe = 351;
 	kHorizontalWaterfallLeftMatrixWipe = 352;
 	kHorizontalWaterfallRightMatrixWipe = 353;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kRandomWipe = 409;  { non-SMPTE standard numbers}
 	kRandomWipeGroupWipe = 501;
@@ -5431,6 +6116,8 @@ function ImageCodecEffectPrepareSMPTEFrame( effect: ComponentInstance; destPixMa
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kRandomWipe					= 409;							{  non-SMPTE standard numbers }
 	kRandomWipeGroupWipe		= 501;
 	kRandomIrisGroupWipe		= 502;
@@ -5450,11 +6137,15 @@ type
 	 *    Windows:          in qtmlClient.lib 4.0 and later
 	 	}
 function ImageCodecEffectPrepareSMPTEFrame(effect: ComponentInstance; destPixMap: PixMapPtr; var returnValue: SMPTEFrameReference): ComponentResult; external name '_ImageCodecEffectPrepareSMPTEFrame';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecEffectDisposeSMPTEFrame()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
@@ -5466,17 +6157,23 @@ function ImageCodecEffectDisposeSMPTEFrame( effect: ComponentInstance; frameRef:
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
 function ImageCodecEffectDisposeSMPTEFrame(effect: ComponentInstance; frameRef: SMPTEFrameReference): ComponentResult; external name '_ImageCodecEffectDisposeSMPTEFrame';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  ImageCodecEffectRenderSMPTEFrame()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
@@ -5521,6 +6218,8 @@ const
 const
 	kCurveARGBColorAtom = FourCharCode('argb');
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Mac OS X:         in version 10.0 and later
@@ -5548,11 +6247,15 @@ const
 
 	kCurveARGBColorAtom			= FourCharCode('argb');
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	ARGBColorPtr = ^ARGBColor;
 	ARGBColor = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		alpha: UInt16;
 		red: UInt16;
@@ -5562,6 +6265,8 @@ type
 const
 	kCurveGradientRecordAtom = FourCharCode('grad');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		alpha:					UInt16;
 		red:					UInt16;
 		green:					UInt16;
@@ -5572,11 +6277,15 @@ const
 const
 	kCurveGradientRecordAtom	= FourCharCode('grad');
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	GradientColorRecordPtr = ^GradientColorRecord;
 	GradientColorRecord = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		thisColor: ARGBColor;
 		endingPercentage: Fixed;
@@ -5607,6 +6316,8 @@ function CurveGetLength( effect: ComponentInstance; var target: gxPaths; index: 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		thisColor:				ARGBColor;
 		endingPercentage:		Fixed;
 	end;
@@ -5633,11 +6344,15 @@ type
 	 *    Windows:          in qtmlClient.lib 3.0 and later
 	 	}
 function CurveGetLength(effect: ComponentInstance; var target: gxPaths; index: SInt32; var wideLength: wide): ComponentResult; external name '_CurveGetLength';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CurveLengthToPoint()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5649,17 +6364,23 @@ function CurveLengthToPoint( effect: ComponentInstance; var target: gxPaths; ind
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function CurveLengthToPoint(effect: ComponentInstance; var target: gxPaths; index: SInt32; length: Fixed; var location: FixedPoint; var tangent: FixedPoint): ComponentResult; external name '_CurveLengthToPoint';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CurveNewPath()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5671,17 +6392,23 @@ function CurveNewPath( effect: ComponentInstance; var pPath: Handle ): Component
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function CurveNewPath(effect: ComponentInstance; var pPath: Handle): ComponentResult; external name '_CurveNewPath';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CurveCountPointsInPath()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5693,17 +6420,23 @@ function CurveCountPointsInPath( effect: ComponentInstance; var aPath: gxPaths; 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function CurveCountPointsInPath(effect: ComponentInstance; var aPath: gxPaths; contourIndex: UInt32; var pCount: UInt32): ComponentResult; external name '_CurveCountPointsInPath';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CurveGetPathPoint()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5715,17 +6448,23 @@ function CurveGetPathPoint( effect: ComponentInstance; var aPath: gxPaths; conto
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function CurveGetPathPoint(effect: ComponentInstance; var aPath: gxPaths; contourIndex: UInt32; pointIndex: UInt32; var thePoint: gxPoint; var ptIsOnPath: boolean): ComponentResult; external name '_CurveGetPathPoint';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CurveInsertPointIntoPath()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5737,17 +6476,23 @@ function CurveInsertPointIntoPath( effect: ComponentInstance; var aPoint: gxPoin
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function CurveInsertPointIntoPath(effect: ComponentInstance; var aPoint: gxPoint; thePath: Handle; contourIndex: UInt32; pointIndex: UInt32; ptIsOnPath: boolean): ComponentResult; external name '_CurveInsertPointIntoPath';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CurveSetPathPoint()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5759,17 +6504,23 @@ function CurveSetPathPoint( effect: ComponentInstance; var aPath: gxPaths; conto
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function CurveSetPathPoint(effect: ComponentInstance; var aPath: gxPaths; contourIndex: UInt32; pointIndex: UInt32; var thePoint: gxPoint; ptIsOnPath: boolean): ComponentResult; external name '_CurveSetPathPoint';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CurveGetNearestPathPoint()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5781,17 +6532,23 @@ function CurveGetNearestPathPoint( effect: ComponentInstance; var aPath: gxPaths
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function CurveGetNearestPathPoint(effect: ComponentInstance; var aPath: gxPaths; var thePoint: FixedPoint; var contourIndex: UInt32; var pointIndex: UInt32; var theDelta: Fixed): ComponentResult; external name '_CurveGetNearestPathPoint';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CurvePathPointToLength()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5803,17 +6560,23 @@ function CurvePathPointToLength( ci: ComponentInstance; var aPath: gxPaths; star
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function CurvePathPointToLength(ci: ComponentInstance; var aPath: gxPaths; startDist: Fixed; endDist: Fixed; var thePoint: FixedPoint; var pLength: Fixed): ComponentResult; external name '_CurvePathPointToLength';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CurveCreateVectorStream()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5825,17 +6588,23 @@ function CurveCreateVectorStream( effect: ComponentInstance; var pStream: Handle
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function CurveCreateVectorStream(effect: ComponentInstance; var pStream: Handle): ComponentResult; external name '_CurveCreateVectorStream';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CurveAddAtomToVectorStream()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5847,17 +6616,23 @@ function CurveAddAtomToVectorStream( effect: ComponentInstance; atomType: OSType
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function CurveAddAtomToVectorStream(effect: ComponentInstance; atomType: OSType; atomSize: Size; pAtomData: UnivPtr; vectorStream: Handle): ComponentResult; external name '_CurveAddAtomToVectorStream';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CurveAddPathAtomToVectorStream()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5869,17 +6644,23 @@ function CurveAddPathAtomToVectorStream( effect: ComponentInstance; pathData: Ha
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function CurveAddPathAtomToVectorStream(effect: ComponentInstance; pathData: Handle; vectorStream: Handle): ComponentResult; external name '_CurveAddPathAtomToVectorStream';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CurveAddZeroAtomToVectorStream()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5891,17 +6672,23 @@ function CurveAddZeroAtomToVectorStream( effect: ComponentInstance; vectorStream
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function CurveAddZeroAtomToVectorStream(effect: ComponentInstance; vectorStream: Handle): ComponentResult; external name '_CurveAddZeroAtomToVectorStream';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CurveGetAtomDataFromVectorStream()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -5938,6 +6725,8 @@ const
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -5949,4 +6738,7 @@ function CurveGetAtomDataFromVectorStream(effect: ComponentInstance; vectorStrea
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

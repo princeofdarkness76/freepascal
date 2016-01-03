@@ -40,9 +40,12 @@ units_netbsd_i386=mmx cpu
 rsts=math varutils typinfo variants classes sysconst
 implicitunits=exeinfo
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [require]
 nortl=y
@@ -260,6 +263,7 @@ character$(PPUEXT): sysutils$(PPUEXT) $(OBJPASDIR)/character.pas objpas$(PPUEXT)
 
 macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) math$(PPUEXT)
 <<<<<<< HEAD
+<<<<<<< HEAD
         $(COMPILER) $(INC)/macpas.pp
 
 #
@@ -276,6 +280,8 @@ iso7185$(PPUEXT) : $(INC)/iso7185.pp $(SYSTEMUNIT)$(PPUEXT)
 extpas$(PPUEXT) : $(INC)/extpas.pp dos$(PPUEXT)
         $(COMPILER) $(INC)/extpas.pp
 =======
+=======
+>>>>>>> origin/fixes_2_2
         $(COMPILER) $(INC)/macpas.pp $(REDIR)
 >>>>>>> graemeg/fixes_2_2
 

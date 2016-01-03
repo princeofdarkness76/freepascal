@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const msgtxt : array[0..000318] of string[240]=(
 {$else Delphi}
 const msgtxt : array[0..000318,1..240] of char=(
@@ -32,6 +33,11 @@ const msgtxt : array[0..000192] of string[240]=(
 {$else Delphi}
 const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> graemeg/fixes_2_2
+=======
+const msgtxt : array[0..000192] of string[240]=(
+{$else Delphi}
+const msgtxt : array[0..000192,1..240] of char=(
+>>>>>>> origin/fixes_2_2
 {$endif Delphi}
   '01000_T_Compiler: $1'#000+
   '01001_D_Compiler OS: $1'#000+
@@ -63,10 +69,14 @@ const msgtxt : array[0..000192,1..240] of char=(
   '02000_F_Unexpected end of file'#000+
   '02001_F_String exceeds line'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '02002_F_illegal character "$1" ($2)'#000+
 =======
   '02002_F_illegal character "$1" ($2)',#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '02002_F_illegal character "$1" ($2)',#000+
+>>>>>>> origin/fixes_2_2
   '02003_F_Syntax error, "$1" expected but "$2" found'#000+
   '02004_TL_Start reading includefile $1'#000+
   '02005_W_Comment level $1 found'#000+
@@ -88,16 +98,23 @@ const msgtxt : array[0..000192,1..240] of char=(
   '02015_E_Illegal record alignment specifier "$1"'#000+
   '02016_E_Illegal enum minimum-size specifier "$1"'#000+
   '02017_E_$ENDIF expected for $1 $2 defined in $3 lin','e $4'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '02018_E_Syntax error while parsing a conditional compiling expression'#000+
   '02019_E_Evaluating a conditional compiling express','ion'#000+
   '02020_W_Macro contents are limited to 255 characters in length'#000+
   '02021_E_ENDIF without IF(N)DEF'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '02022_F_User defined: $1'#000+
 =======
   '02022_F_User defi','ned: $1'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '02022_F_User defi','ned: $1'#000+
+>>>>>>> origin/fixes_2_2
   '02023_E_User defined: $1'#000+
   '02024_W_User defined: $1'#000+
   '02025_N_User defined: $1'#000+
@@ -105,10 +122,14 @@ const msgtxt : array[0..000192,1..240] of char=(
   '02027_I_User defi','ned: $1'#000+
   '02028_E_Keyword redefined as macro has no effect'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '02029_F_Macro buffer overflow while reading or expanding a macro'#000+
 =======
   '02029_F_Macro buffer overflow while reading or expanding a',' macro'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '02029_F_Macro buffer overflow while reading or expanding a',' macro'#000+
+>>>>>>> origin/fixes_2_2
   '02030_W_Expanding of macros exceeds a depth of 16.'#000+
   '02031_W_compiler switches are not supported in // styled comments'#000+
   '0','2032_DL_Handling switch "$1"'#000+
@@ -116,10 +137,14 @@ const msgtxt : array[0..000192,1..240] of char=(
   '02034_CL_IFDEF $1 found, $2'#000+
   '02035_CL_IFOPT $1 found, $2'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '02036_CL_IF $1 found, $2'#000+
 =======
   '02036_C','L_IF $1 found, $2'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '02036_C','L_IF $1 found, $2'#000+
+>>>>>>> origin/fixes_2_2
   '02037_CL_IFNDEF $1 found, $2'#000+
   '02038_CL_ELSE $1 found, $2'#000+
   '02039_CL_Skipping until...'#000+
@@ -128,31 +153,44 @@ const msgtxt : array[0..000192,1..240] of char=(
   '02042_W_Illegal compiler directive "$1"'#000+
   '02043_TL_Back in $1'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '02044_W_Unsupported application type: "$1"'#000+
 =======
   '02044_W_Unsu','pported application type: "$1"'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '02044_W_Unsu','pported application type: "$1"'#000+
+>>>>>>> origin/fixes_2_2
   '02045_W_APPTYPE is not supported by the target OS'#000+
   '02046_W_DESCRIPTION is not supported by the',' target OS'#000+
   '02047_N_VERSION is not supported by target OS'#000+
   '02048_N_VERSION only for exes or DLLs'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '02049_W_Wrong format for VERSION directive "$1"'#000+
 =======
   '02049_W_Wrong format ','for VERSION directive "$1"'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '02049_W_Wrong format ','for VERSION directive "$1"'#000+
+>>>>>>> origin/fixes_2_2
   '02050_E_Illegal assembler style specified "$1"'#000+
   '02051_W_ASM reader switch is not possible inside a','sm statement, "$1"'+
   ' will be effective only for next'#000+
   '02052_E_Wrong switch toggle, use ON/OFF or +/-'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '02053_E_Resource files are not supported for this target'#000+
 =======
   '02053_E_Resource f','iles are not supported for this target'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '02053_E_Resource f','iles are not supported for this target'#000+
+>>>>>>> origin/fixes_2_2
   '02054_W_Include environment "$1" not found in environment'#000+
   '02055_E_Illegal value for F','PU register limit'#000+
   '02056_W_Only one resource file is supported for this target'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '02057_W_Macro support has been turned off'#000+
   '02058_E_Illegal interface type specified. Valids are COM, CORBA or DEF'+
@@ -162,6 +200,8 @@ const msgtxt : array[0..000192,1..240] of char=(
   '02061_E_Constant strings cannot be longer than 255 chars'#000+
   '02062_F_Including include files exceeds a depth of 16.'#000+
 =======
+=======
+>>>>>>> origin/fixes_2_2
   '02057_W_Macro support has been turned ','off'#000+
   '02058_E_Illegal interface type specified. Valids are COM, CORBA or DEF'+
   'AULT.'#000+
@@ -169,33 +209,48 @@ const msgtxt : array[0..000192,1..240] of char=(
   '02060_W_APPNAME is only supported for PalmOS'#000+
   '02061_E_Constant strings can'#039't be longer than 255 chars'#000+
   '02062_F_Includin','g include files exceeds a depth of 16.'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '02063_F_Too many levels of PUSH'#000+
   '02064_E_A POP without a preceding PUSH'#000+
   '02065_E_Macro',' or compile time variable "$1" does not have any value'#000+
   '02066_E_Wrong switch toggle, use ON/OFF/DEFAULT or +/-/*'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '02067_E_Mode switch "$1" not allowed here'#000+
 =======
   '02067','_E_Mode switch "$1" not allowed here'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '02067','_E_Mode switch "$1" not allowed here'#000+
+>>>>>>> origin/fixes_2_2
   '02068_E_Compile time variable or macro "$1" is not defined.'#000+
   '02069_E_UTF-8 code greater',' than 65535 found'#000+
   '02070_E_Malformed UTF-8 string'#000+
   '02071_C_UTF-8 signature found, using UTF-8 encoding'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '02072_E_Compile time expression: Wanted $1 but got $2 at $3'#000+
 =======
   '02072_E_Compile ','time expression: Wanted $1 but got $2 at $3'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '02072_E_Compile ','time expression: Wanted $1 but got $2 at $3'#000+
+>>>>>>> origin/fixes_2_2
   '02073_N_APPTYPE is not supported by the target OS'#000+
   '02074_E_Illegal optimization ','specified "$1"'#000+
   '02075_W_SETPEFLAGS is not supported by the target OS'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '02076_W_IMAGEBASE is not supported by the target OS'#000+
 =======
   '02076_W_IMAGEBASE is not supported by the target ','OS'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '02076_W_IMAGEBASE is not supported by the target ','OS'#000+
+>>>>>>> origin/fixes_2_2
   '02077_W_MINSTACKSIZE is not supported by the target OS'#000+
   '02078_W_MAXSTACKSIZE is not supported by the target OS'#000+
 <<<<<<< HEAD
@@ -242,6 +297,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   '02080_E_Illegal set packing value'#000+
   '02081_W_PIC directive or switch ignored'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
   '02079_E_Illegal state "$1" for $WARN directive'#000+
@@ -252,10 +308,14 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '02082_W_The',' switch "$1" is not supported by the currently selected t'+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '02082_W_The',' switch "$1" is not supported by the currently selected t'+
+>>>>>>> origin/fixes_2_2
   'arget'#000+
   '02084_W_Framework-related options are only supported for Darwin/Mac OS'+
   ' X'#000+
   '02085_E_Illegal minimal floating point constant precision "$1"'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '02086_W_Overriding name of "main" pr','ocedure multiple times, was prev'+
   'iously set to "$1"'#000+
@@ -273,6 +333,8 @@ const msgtxt : array[0..000192,1..240] of char=(
   '03000_E_Parser - Syntax Error'#000+
   '03004_E_INTERRUPT procedure cannot be nested'#000+
 =======
+=======
+>>>>>>> origin/fixes_2_2
   '02086_W_Overriding name of "main" procedu','re multiple times, was prev'+
   'iously set to "$1"'#000+
   '03000_E_Parser - Syntax Error'#000+
@@ -285,14 +347,19 @@ const msgtxt : array[0..000192,1..240] of char=(
 <<<<<<< HEAD
   '03006_E_Not all declarations of "$1" are declared with OVERLOAD'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '03008_E_Duplicat','e exported function name "$1"'#000+
 =======
   '03008_E_Duplicate ex','ported function name "$1"'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '03008_E_Duplicate ex','ported function name "$1"'#000+
+>>>>>>> origin/fixes_2_2
   '03009_E_Duplicate exported function index $1'#000+
   '03010_E_Invalid index for exported function'#000+
   '03011_W_Relocatable DLL or executable $1 debug info does not work, dis'+
   'abled.'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '03012_W_To allow debugging for win32 code yo','u need to disable reloca'+
   'tion with -WN option'#000+
@@ -337,6 +404,10 @@ const msgtxt : array[0..000192,1..240] of char=(
   '03012_W_To allow debugging for win32 code you ne','ed to disable reloca'+
   'tion with -WN option'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '03012_W_To allow debugging for win32 code you ne','ed to disable reloca'+
+  'tion with -WN option'#000+
+>>>>>>> origin/fixes_2_2
   '03013_E_Constructor name must be INIT'#000+
   '03014_E_Destructor name must be DONE'#000+
   '03016_E_Procedure type INLINE not supported'#000+
@@ -347,23 +418,32 @@ const msgtxt : array[0..000192,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '030','20_N_Class should have one destructor only'#000+
 =======
   '03020_N','_Class should have one destructor only'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '03020_N','_Class should have one destructor only'#000+
+>>>>>>> origin/fixes_2_2
   '03021_E_Local class definitions are not allowed'#000+
   '03022_F_Anonymous class definitions are not allowed'#000+
   '03023_N_The object "$1" has no VMT'#000+
   '03024_E_Illegal parameter list'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '03026_E_Wrong number of paramet','ers specified for call to "$1"'#000+
 =======
   '03026_E_Wrong number of parameters ','specified for call to "$1"'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '03026_E_Wrong number of parameters ','specified for call to "$1"'#000+
+>>>>>>> origin/fixes_2_2
   '03027_E_overloaded identifier "$1" isn'#039't a function'#000+
   '03028_E_overloaded functions have the same parameter list'#000+
   '03029_E_function header doesn'#039't match the previous declaration "$1'+
   '"'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '03030_E_function header "$1" do','esn'#039't match forward : var name ch'+
   'anges $2 => $3'#000+
@@ -581,6 +661,8 @@ const msgtxt : array[0..000192,1..240] of char=(
   '03055_E_Constant and CASE types do not match'#000+
   '03056_E_The sy','mbol can'#039't be exported from a library'#000+
 =======
+=======
+>>>>>>> origin/fixes_2_2
   '03030_E_function header "$1" doesn'#039,'t match forward : var name cha'+
   'nges $2 => $3'#000+
   '03031_N_Values in enumeration types have to be ascending'#000+
@@ -616,6 +698,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   '1"'#000+
   '03059_E_No member is provided to access property'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '03060_W_Stored property directive is',' not yet implemented'#000+
   '03061_E_Illegal symbol for property access'#000+
   '03062_E_Cannot access a protected field of an object here'#000+
@@ -636,6 +719,16 @@ const msgtxt : array[0..000192,1..240] of char=(
   'rriden by "$1" which has another return type'#000+
   '03067_E_EXPORT declared functions can'#039't be nested'#000+
   '03068_E_Methods can'#039't be EXPORTed'#000+
+=======
+  '03060_W_Stored property directive is not yet implemented'#000+
+  '03061_E_Illegal symbol for property access'#000+
+  '03062_E_Cannot access a protected field of an object here'#000+
+  '03063_E_Cannot a','ccess a private field of an object here'#000+
+  '03066_E_Overridden methods must have the same return type: "$2" is ove'+
+  'rriden by "$1" which has another return type'#000+
+  '03067_E_EXPORT declared functions can'#039't be nested'#000+
+  '03068_E_Methods can'#039't be EXPORTed'#000+
+>>>>>>> origin/fixes_2_2
   '0','3069_E_Call by var for arg no. $1 has to match exactly: Got "$2" ex'+
   'pected "$3"'#000+
   '03070_E_Class isn'#039't a parent class of the current class'#000+
@@ -645,23 +738,32 @@ const msgtxt : array[0..000192,1..240] of char=(
   ' identifier of the class'#000+
   '03073_E_Illegal use of '#039':'#039#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '03074_E_range check error in set constructor o','r duplicate set elemen'+
   't'#000+
 =======
   '03074_E_range check error in set constructor or duplicate set element'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '03074_E_range check error in set constructor or duplicate set element'#000+
+>>>>>>> origin/fixes_2_2
   '03075_E_Pointer to object expected'#000+
   '03076_E_Expression must be constructor call'#000+
   '03077_E_Expression must be destructo','r call'#000+
   '03078_E_Illegal order of record elements'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '03079_E_Expression type must be class or record type'#000,
 =======
   '03079_E_Expression type must be class or record type'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '03079_E_Expression type must be class or record type'#000+
+>>>>>>> origin/fixes_2_2
   '03080_E_Procedures can'#039't return a value'#000+
   '03081_E_constructors, destructors and class operators must be methods'#000+
   '03082_E_Operator is not overloaded'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '03083_E_Impossible to overload assignment for equal types'#000+
   '03084_E_Impossible operator overload'#000,
@@ -681,6 +783,16 @@ const msgtxt : array[0..000192,1..240] of char=(
   '03089_E_It is not possible to overload this operator. Related overload'+
   'able operators (if any) are: $1'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '03083_E_Imp','ossible to overload assignment for equal types'#000+
+  '03084_E_Impossible operator overload'#000+
+  '03085_E_Re-raise isn'#039't possible there'#000+
+  '03086_E_The extended syntax of new or dispose isn'#039't allowed for a '+
+  'class'#000+
+  '03088_E_Procedure overloading is switched off'#000,
+  '03089_E_It is not possible to overload this operator. Related overload'+
+  'able operators (if any) are: $1'#000+
+>>>>>>> origin/fixes_2_2
   '03090_E_Comparative operator must return a boolean value'#000+
   '03091_E_Only virtual methods can be abstract'#000+
   '03092_F_Use of unsupported feature!'#000,
@@ -689,11 +801,15 @@ const msgtxt : array[0..000192,1..240] of char=(
   ', etc) isn'#039't a','llowed'#000+
 =======
   ', etc) isn'#039't allowed'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '03094_W_Unknown procedure directive had to be ignored: "$1"'#000+
   '03095_E_absolute can only be associated to one variable'#000+
   '03096_E_absolute can only be asso','ciated with a var or const'#000+
   '03097_E_Only one variable can be initialized'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '03098_E_Abst','ract methods shouldn'#039't have any definition (with fun'+
   'ction body)'#000+
@@ -710,6 +826,13 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
 >>>>>>> origin/cpstrnew
   '03100_W_Virtual methods are used without a constructor in "$1"'#000+
+=======
+  '03098_E_Abstract methods shouldn'#039't have any definition (with funct'+
+  'ion body)'#000+
+  '03099_E_This overloaded function can'#039't be local (must be exported)'+
+  #000+
+  '03100_W_Virtual methods a','re used without a constructor in "$1"'#000+
+>>>>>>> origin/fixes_2_2
   '03101_CL_Macro defined: $1'#000+
   '03102_CL_Macro unde','fined: $1'#000+
   '03103_CL_Macro $1 set to $2'#000+
@@ -729,6 +852,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   '03106_UL_Parsing implementation of $1'#000+
   '03107_DL_Compiling $1',' for the second time'#000+
   '03109_E_No property found to override'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -813,21 +937,49 @@ const msgtxt : array[0..000192,1..240] of char=(
   '03127_F_Selected as','sembler reader not supported'#000+
   '03128_E_Procedure directive "$1" has conflicts with other directives'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '03110_E_Only one default property is allowed'#000+
+  '03111_E_The default property must be an array property'#000+
+  '03112_E_Virtual constructors are only supported in class object model'#000+
+  '03113_E_No ','default property available'#000+
+  '03114_E_The class can'#039't have a published section, use the {$M+} sw'+
+  'itch'#000+
+  '03115_E_Forward declaration of class "$1" must be resolved here to use'+
+  ' the class as ancestor'#000+
+  '03116_E_Local operators not supported'#000+
+  '03117_E_Pro','cedure directive "$1" not allowed in interface section'#000+
+  '03118_E_Procedure directive "$1" not allowed in implementation section'+
+  #000+
+  '03119_E_Procedure directive "$1" not allowed in procvar declaration'#000+
+  '03120_E_Function is already declared Public/Fo','rward "$1"'#000+
+  '03121_E_Can'#039't use both EXPORT and EXTERNAL'#000+
+  '03123_W_"$1" not yet supported inside inline procedure/function'#000+
+  '03124_W_Inlining disabled'#000+
+  '03125_I_Writing Browser log $1'#000+
+  '03126_H_may be pointer dereference is missing'#000+
+  '03127_F_Selected as','sembler reader not supported'#000+
+  '03128_E_Procedure directive "$1" has conflicts with other directives'#000+
+>>>>>>> origin/fixes_2_2
   '03129_E_Calling convention doesn'#039't match forward'#000+
   '03131_E_Property can'#039't have a default value'#000+
   '03132_E_The default value of a property must be c','onstant'#000+
   '03133_E_Symbol can'#039't be published, can be only a class'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '03134_E_This kind of ','property can'#039't be published'#000+
 =======
   '03134_E_This kind of property can'#039't be published'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '03134_E_This kind of property can'#039't be published'#000+
+>>>>>>> origin/fixes_2_2
   '03136_E_An import name is required'#000+
 >>>>>>> graemeg/cpstrnew
   '03138_E_Division by zero'#000+
   '03139_E_Invalid floating point operation'#000+
   '03140_E_Upper bound of rang','e is less than lower bound'#000+
   '03141_W_string "$1" is longer than "$2"'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -870,9 +1022,13 @@ const msgtxt : array[0..000192,1..240] of char=(
 <<<<<<< HEAD
 =======
   '03142_E_string le','ngth is larger than array of char length'#000+
+=======
+  '03142_E_string length is larger than array of char length'#000+
+>>>>>>> origin/fixes_2_2
   '03143_E_Illegal expression after message directive'#000+
-  '03144_E_Message handlers can take only one call by ref. parameter'#000+
+  '03144_E_Message handlers can take only one call by ref. paramete','r'#000+
   '03145_E_Duplicate message label: "$1"'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
   '03142_E_string le','ngth is larger than array of char length'#000+
@@ -927,6 +1083,27 @@ const msgtxt : array[0..000192,1..240] of char=(
   '03158_E_The value for a property index must be of an ordinal type'#000+
   '03159_E_Procedure name too short to be exported'#000+
   '03160_E_No DEFFILE entry can be generated for unit global vars'#000+
+=======
+  '03146_E_Self can only be an explicit parameter in methods which are me'+
+  'ssage handlers'#000+
+  '03147_E_Threadvars can be only static or global'#000+
+  '03148_F_Direct assembler not supported for binary output format'#000+
+  '031','49_W_Don'#039't load OBJPAS unit manually, use \{\$mode objfpc\} o'+
+  'r \{\$mode delphi\} instead'#000+
+  '03150_E_OVERRIDE can'#039't be used in objects'#000+
+  '03151_E_Data types which require initialization/finalization can'#039't'+
+  ' be used in variant records'#000+
+  '03152_E_Resourc','estrings can be only static or global'#000+
+  '03153_E_Exit with argument can'#039't be used here'#000+
+  '03154_E_The type of the storage symbol must be boolean'#000+
+  '03155_E_This symbol isn'#039't allowed as storage symbol'#000+
+  '03156_E_Only classes which are compiled in $M+ mo','de can be published'+
+  #000+
+  '03157_E_Procedure directive expected'#000+
+  '03158_E_The value for a property index must be of an ordinal type'#000+
+  '03159_E_Procedure name too short to be exported'#000+
+  '03160_E_No DEFFILE entry can be generated for unit global vars'#000+
+>>>>>>> origin/fixes_2_2
   '03161_','E_Compile without -WD option'#000+
   '03162_F_You need ObjFpc (-S2) or Delphi (-Sd) mode to compile this mod'+
   'ule'#000+
@@ -935,6 +1112,7 @@ const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
   '03164_E_Exporting of variables is not supported under $1'#000+
   '03165_E_Improper GUID syntax'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '03168_W_Procedure named "$1" not found that is suitable for implementi'+
   'ng the $2.$3'#000+
@@ -1263,6 +1441,68 @@ const msgtxt : array[0..000192,1..240] of char=(
   '"$1" which has another return type)'#000+
   '03219_E_Dispatch IDs must be ordinal constants'#000+
   '03220_E_The range of the array is too large'#000+
+=======
+  '03168_W_Pr','ocedure named "$1" not found that is suitable for implemen'+
+  'ting the $2.$3'#000+
+  '03169_E_interface identifier expected'#000+
+  '03170_E_Type "$1" can'#039't be used as array index type'#000+
+  '03171_E_Con- and destructors aren'#039't allowed in interfaces'#000+
+  '03172_E_Access spec','ifiers can'#039't be used in INTERFACES'#000+
+  '03173_E_An interface can'#039't contain fields'#000+
+  '03174_E_Can'#039't declare local procedure as EXTERNAL'#000+
+  '03175_W_Some fields coming before "$1" weren'#039't initialized'#000+
+  '03176_E_Some fields coming before "$1" weren'#039't initial','ized'#000+
+  '03177_W_Some fields coming after "$1" weren'#039't initialized'#000+
+  '03178_E_VarArgs directive (or '#039'...'#039' in MacPas) without CDecl/C'+
+  'PPDecl/MWPascal and External'#000+
+  '03179_E_Self must be a normal (call-by-value) parameter'#000+
+  '03180_E_Interface "$1" has no ','interface identification'#000+
+  '03181_E_Unknown class field or method identifier "$1"'#000+
+  '03182_W_Overriding calling convention "$1" with "$2"'#000+
+  '03183_E_Typed constants of the type "procedure of object" can only be '+
+  'initialized with NIL'#000+
+  '03184_E_Default v','alue can only be assigned to one parameter'#000+
+  '03185_E_Default parameter required for "$1"'#000+
+  '03186_W_Use of unsupported feature!'#000+
+  '03187_H_C arrays are passed by reference'#000+
+  '03188_E_C array of const must be the last argument'#000+
+  '03189_H_Type "$1" redefin','ition'#000+
+  '03190_W_cdecl'#039'ared functions have no high parameter'#000+
+  '03191_W_cdecl'#039'ared functions do not support open strings'#000+
+  '03192_E_Cannot initialize variables declared as threadvar'#000+
+  '03193_E_Message directive is only allowed in Classes'#000+
+  '03194_E_Proced','ure or Function expected'#000+
+  '03195_W_Calling convention directive ignored: "$1"'#000+
+  '03196_E_REINTRODUCE can'#039't be used in objects'#000+
+  '03197_E_Each argument must have its own location'#000+
+  '03198_E_Each argument must have an explicit location'#000+
+  '03199_E_Unknown a','rgument location'#000+
+  '03200_E_32 Bit-Integer or pointer variable expected'#000+
+  '03201_E_Goto statements aren'#039't allowed between different procedure'+
+  's'#000+
+  '03202_F_Procedure too complex, it requires too many registers'#000+
+  '03203_E_Illegal expression'#000+
+  '03204_E_Invali','d integer expression'#000+
+  '03205_E_Illegal qualifier'#000+
+  '03206_E_High range limit < low range limit'#000+
+  '03207_E_Exit'#039's parameter must be the name of the procedure it is u'+
+  'sed in'#000+
+  '03208_E_Illegal assignment to for-loop variable "$1"'#000+
+  '03209_E_Can'#039't declare lo','cal variable as EXTERNAL'#000+
+  '03210_E_Procedure is already declared EXTERNAL'#000+
+  '03211_W_Implicit uses of Variants unit'#000+
+  '03212_E_Class and static methods can'#039't be used in INTERFACES'#000+
+  '03213_E_Overflow in arithmetic operation'#000+
+  '03214_E_Protected or privat','e expected'#000+
+  '03215_E_SLICE can'#039't be used outside of parameter list'#000+
+  '03216_E_A DISPINTERFACE can'#039't have a parent class'#000+
+  '03217_E_A DISPINTERFACE needs a guid'#000+
+  '03218_W_Overridden methods must have a related return type. This code '+
+  'may crash, it depe','nds on a Delphi parser bug ("$2" is overridden by '+
+  '"$1" which has another return type)'#000+
+  '03219_E_Dispatch IDs must be ordinal constants'#000+
+  '03220_E_The range of the array is too large'#000+
+>>>>>>> origin/fixes_2_2
   '03221_E_The address cannot be taken of bit packed array element','s and'+
   ' record fields'#000+
   '03222_E_Dynamic arrays cannot be packed'#000+
@@ -1275,12 +1515,16 @@ const msgtxt : array[0..000192,1..240] of char=(
   '03227_E_No function result type specified for function "$1"'#000+
   '03228_E_Specialization is only supported for generic types'#000+
   '03229_E_Generics can'#039't be used as parameters when ','specializing g'+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   'enerics'#000+
   '03230_E_Constants of objects containing a VMT aren'#039't allowed'#000+
   '03231_E_Taking the address of labels defined outside the current scope'+
   ' isn'#039't allowed'#000+
   '03233_E_Cannot initialize variables declared as external'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '03234_E_Illegal f','unction result type'#000+
 <<<<<<< HEAD
@@ -1837,6 +2081,8 @@ const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> origin/cpstrnew
   '04001_E_Incompatible types: got "$1','" expected "$2"'#000+
 =======
+=======
+>>>>>>> origin/fixes_2_2
   '03234_E_Illegal',' function result type'#000+
   '03235_E_No common type possible between "$1" and "$2"'#000+
   '03236_E_Generics without specialization can not be used as a type for '+
@@ -1848,11 +2094,15 @@ const msgtxt : array[0..000192,1..240] of char=(
   '03249_E_Forward type definition does not match'#000+
   '04000_E_Type mismatch'#000+
   '04001_E_Inc','ompatible types: got "$1" expected "$2"'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '04002_E_Type mismatch between "$1" and "$2"'#000+
   '04003_E_Type identifier expected'#000+
   '04004_E_Variable identifier expected'#000+
   '04005_E_Integer expression expected, but got "$1"'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '04006_E_Boolean expression expected, but got "$1"'#000+
   '04007_E_Or','dinal expression expected'#000+
@@ -1870,10 +2120,15 @@ const msgtxt : array[0..000192,1..240] of char=(
   '04006_E_Boolean expression expected,',' but got "$1"'#000+
   '04007_E_Ordinal expression expected'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '04006_E_Boolean expression expected,',' but got "$1"'#000+
+  '04007_E_Ordinal expression expected'#000+
+>>>>>>> origin/fixes_2_2
   '04008_E_pointer type expected, but got "$1"'#000+
   '04009_E_class ','type expected, but got "$1"'#000+
   '04011_E_Can'#039't evaluate constant expression'#000+
   '04012_E_Set elements are not compatible'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '04013_E_Operation not implemented for sets'#000+
 <<<<<<< HEAD
@@ -1904,6 +2159,11 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '04','014_W_Automatic type conversion from floating type to COMP which i'+
   's an integer type'#000+
+=======
+  '04013_E_Operation not',' implemented for sets'#000+
+  '04014_W_Automatic type conversion from floating type to COMP which is '+
+  'an integer type'#000+
+>>>>>>> origin/fixes_2_2
   '04015_H_use DIV instead to get an integer result'#000+
   '04016_E_String types have to match exactly in $V+ mode'#000+
 >>>>>>> graemeg/cpstrnew
@@ -1921,11 +2181,15 @@ const msgtxt : array[0..000192,1..240] of char=(
   '04015_H_use DIV instead to get an integer result'#000+
   '04016_E_string types doesn'#039't match, because of $V+ mode'#000+
   '04017_E_succ or pred on enu','ms with assignments not possible'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '04018_E_Can'#039't read or write variables of this type'#000+
   '04019_E_Can'#039't use readln or writeln on typed file'#000+
   '04020_E_Can'#039't use read or write on untyped file.'#000+
   '04021_E_Type conflict between set elements'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '04022_W_lo/hi(dword/qword) returns the ','upper/lower word/dword'#000+
 <<<<<<< HEAD
@@ -1941,9 +2205,13 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '04022_W_lo/hi(','dword/qword) returns the upper/lower word/dword'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '04022_W_lo/hi(','dword/qword) returns the upper/lower word/dword'#000+
+>>>>>>> origin/fixes_2_2
   '04023_E_Integer or real expression expected'#000+
   '04024_E_Wrong typ','e "$1" in array constructor'#000+
   '04025_E_Incompatible type for arg no. $1: Got "$2", expected "$3"'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1967,11 +2235,15 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '04026_E_Method (variable) and Procedu','re (variable) are not compatibl'+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '04026_E_Method (variable) and Procedu','re (variable) are not compatibl'+
+>>>>>>> origin/fixes_2_2
   'e'#000+
   '04027_E_Illegal constant passed to internal math function'#000+
   '04028_E_Can'#039't take the address of constant expressions'#000+
   '04029_E_Argument can'#039't be assigned to'#000+
   '04030_E_Can'#039't assign local procedure/function to procedure variabl'+
+<<<<<<< HEAD
 <<<<<<< HEAD
   'e'#000+
   '04031_E_Can'#039't',' assign values to an address'#000+
@@ -1989,6 +2261,10 @@ const msgtxt : array[0..000192,1..240] of char=(
   'e'#000,
   '04031_E_Can'#039't assign values to an address'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  'e'#000,
+  '04031_E_Can'#039't assign values to an address'#000+
+>>>>>>> origin/fixes_2_2
   '04032_E_Can'#039't assign values to const variable'#000+
   '04033_E_','Array type required'#000+
   '04034_E_interface type expected, but got "$1"'#000+
@@ -2063,19 +2339,27 @@ const msgtxt : array[0..000192,1..240] of char=(
   '04037_E_Typecast has different size ($1 -> $2) in assignment'#000+
   '04038_E_enums with assignments can'#039't be used as array index'#000+
   '04039_E_Class or Object types "$1" and "$2" a','re not related'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '04040_W_Class types "$1" and "$2" are not related'#000+
   '04041_E_Class or interface type expected, but got "$1"'#000+
   '04042_E_Type "$1" is not completely defined'#000+
   '04043_W_String literal has more characters than short string length'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '04044_W_Comparison is',' always false due to range of values'#000+
 =======
   '04044_W_','Comparison is always false due to range of values'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '04044_W_','Comparison is always false due to range of values'#000+
+>>>>>>> origin/fixes_2_2
   '04045_W_Comparison is always true due to range of values'#000+
   '04046_W_Constructing a class "$1" with abstract method "$2"'#000+
   '04047_H_The left operand of the IN operator should be byte sized'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '04048_W_Type size mis','match, possible loss of data / range check erro'+
   'r'#000+
@@ -2089,11 +2373,19 @@ const msgtxt : array[0..000192,1..240] of char=(
   '04050_E_The address of an abstract method can'#039't be taken'#000+
   '04051_E_Assignments to formal parameters and open array','s are not pos'+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '04048_W_Type',' size mismatch, possible loss of data / range check erro'+
+  'r'#000+
+  '04049_H_Type size mismatch, possible loss of data / range check error'#000+
+  '04050_E_The address of an abstract method can'#039't be taken'#000+
+  '04051_E_Assignments to formal parameters and open array','s are not pos'+
+>>>>>>> origin/fixes_2_2
   'sible'#000+
   '04052_E_Constant Expression expected'#000+
   '04053_E_Operation "$1" not supported for types "$2" and "$3"'#000+
   '04054_E_Illegal type conversion: "$1" to "$2"'#000+
   '04055_H_Conversion between ordinals and pointers is not portable'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '04056_W_Conversion be','tween ordinals and pointers is not portable'#000+
   '04057_E_Can'#039't determine which overloaded function to call'#000+
@@ -2107,28 +2399,44 @@ const msgtxt : array[0..000192,1..240] of char=(
   '04059_W_Converting constant real value to double for C variable argume'+
   'nt, add explicit typecast ','to prevent this.'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '04056_W_Conv','ersion between ordinals and pointers is not portable'#000+
+  '04057_E_Can'#039't determine which overloaded function to call'#000+
+  '04058_E_Illegal counter variable'#000+
+  '04059_W_Converting constant real value to double for C variable argume'+
+  'nt, add explicit typecast ','to prevent this.'#000+
+>>>>>>> origin/fixes_2_2
   '04060_E_Class or COM interface type expected, but got "$1"'#000+
   '04061_E_Constant packed arrays are not yet supported'#000+
   '04062_E_Incompatible type for arg no. $1: Got "$2" expected "(Bit)Pack'+
   'ed Array"'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '04063_E_Incompatible type for arg no. $1',': Got "$2" expected "(not pa'+
 =======
   '04063_E_Incompatible type for a','rg no. $1: Got "$2" expected "(not pa'+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '04063_E_Incompatible type for a','rg no. $1: Got "$2" expected "(not pa'+
+>>>>>>> origin/fixes_2_2
   'cked) Array"'#000+
   '04064_E_Elements of packed arrays cannot be of a type which need to be'+
   ' initialised'#000+
   '04065_E_Constant packed records and objects are not yet supported'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '04066_W_Arithmetic "$1" on untyped pointer is unpo','rtable to {$T+}, s'+
 =======
   '04066_W_Arithmetic "$1" on untyped pointe','r is unportable to {$T+}, s'+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '04066_W_Arithmetic "$1" on untyped pointe','r is unportable to {$T+}, s'+
+>>>>>>> origin/fixes_2_2
   'uggest typecast'#000+
   '04076_E_Can'#039't take address of a subroutine marked as local'#000+
   '04077_E_Can'#039't export subroutine marked as local from a unit'#000+
   '04078_E_Type is not automatable: "$1"'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '04079_H_Converting the operands to "$1" before do','ing the add could p'+
   'revent overflow errors.'#000+
@@ -2249,6 +2557,8 @@ const msgtxt : array[0..000192,1..240] of char=(
   '05000_E_Ide','ntifier not found "$1"'#000+
   '05001_F_Internal Error in SymTableStack()'#000+
 =======
+=======
+>>>>>>> origin/fixes_2_2
   '04079_H_Converting the operands to "$1" ','before doing the add could p'+
   'revent overflow errors.'#000+
   '04080_H_Converting the operands to "$1" before doing the subtract coul'+
@@ -2260,7 +2570,10 @@ const msgtxt : array[0..000192,1..240] of char=(
   '04083_E_Interface type $1 has no valid GUID'#000+
   '05000_E_Identifier not found "$1"'#000+
   '05001_F_Internal Error',' in SymTableStack()'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '05002_E_Duplicate identifier "$1"'#000+
   '05003_H_Identifier already defined in $1 at line $2'#000+
 =======
@@ -2308,7 +2621,10 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '05007_E_Error in type definition'#000+
   '05009_E_Forward type not ','resolved "$1"'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '05010_E_Only static variables can be used in static methods or outside'+
   ' methods'#000+
   '05012_E_Record or object or class type expected'#000+
@@ -2330,6 +2646,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   '05013_E_Instances of classes or objects with an abstract method are no'+
   't allowed'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '05014_W_Label not defined "$1"'#000+
   '05015_E_Label used but not defined "$1"'#000+
   '05016_E_Illegal label dec','laration'#000+
@@ -2344,6 +2661,8 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
   '05014_W_Label not defined "$1','"'#000+
   '05015_E_Label used but not defined "$1"'#000+
   '05016_E_Illegal label declaration'#000+
@@ -2353,6 +2672,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   '05019_E_identifier isn'#039't a ','label'#000+
   '05020_E_label already defined'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '05021_E_illegal type declaration of set elements'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2361,6 +2681,9 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '05021_E_illegal typ','e declaration of set elements'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '05021_E_illegal typ','e declaration of set elements'#000+
+>>>>>>> origin/fixes_2_2
   '05022_E_Forward class definition not resolved "$1"'#000+
 =======
   '05022_E_Forward class definition not ','resolved "$1"'#000+
@@ -2387,7 +2710,10 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '05026_H_Value parameter "$1" is assigned but never used'#000+
   '0','5027_N_Local variable "$1" is assigned but never used'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '05028_H_Local $1 "$2" is not used'#000+
 =======
   '05028_H_Local',' $1 "$2" is not used'#000+
@@ -2405,10 +2731,14 @@ const msgtxt : array[0..000192,1..240] of char=(
   '05030_N_Private field "$1.$2" is assigned but never u','sed'#000+
   '05031_N_Private method "$1.$2" never used'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '05032_E_Set type expected'#000+
 =======
   '05032_E_S','et type expected'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '05032_E_S','et type expected'#000+
+>>>>>>> origin/fixes_2_2
   '05033_W_Function result does not seem to be set'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2438,7 +2768,10 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '05036_W_Local variable "$1" does not seem to be initialized'#000+
   '050','37_W_Variable "$1" does not seem to be initialized'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '05038_E_identifier idents no member "$1"'#000+
 =======
   '05038_E_identifi','er idents no member "$1"'#000+
@@ -2460,7 +2793,10 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '05042_E_No matching implementation for interface method "$1" found'#000+
   '05043_W_Symbol "$1" ','is deprecated'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '05044_W_Symbol "$1" is not portable'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2621,7 +2957,10 @@ const msgtxt : array[0..000192,1..240] of char=(
   '06015_E_EXPORT declared functions can'#039't be called'#000+
   '06016_W_Possible illegal call of constructor or destructor'#000+
   '06017_N_','Inefficient code'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '06018_W_unreachable code'#000+
   '06020_E_Abstract methods cannot be called directly'#000+
   '06027_DL_Register $1 weight $2 ','$3'#000+
@@ -2723,6 +3062,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   'un time library.'#000+
   '06048_H_Inherited call to abstract method ignored'#000+
   '06049_E_Goto label "$1" not defined or optimized away'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
   '07000_DL_Starting $1 styled assembler parsing'#000+
   '07001_DL_Finished $1 styled a','ssembler parsing'#000+
@@ -3015,6 +3355,11 @@ const msgtxt : array[0..000192,1..240] of char=(
   '07100_E_Address of packed component is not at a byte boundary'#000+
   '07101_W_No size specified a','nd unable to determine the size of the op'+
 =======
+=======
+  '07000_DL_Starting $1 styled assembler parsing'#000+
+  '07001_DL_Finished $1 styled a','ssembler parsing'#000+
+  '07002_E_Non-label pattern contains @'#000+
+>>>>>>> origin/fixes_2_2
   '07004_E_Error building record offset'#000+
   '07005_E_OFFSET used without identifier'#000+
   '07006_E_TYPE used without identifier'#000+
@@ -3111,11 +3456,15 @@ const msgtxt : array[0..000192,1..240] of char=(
   '07099_E_Syntax error while trying to parse a shifter operand'#000+
   '07100_E_Address of packed component is not at a byte boundary'#000+
   '07101_W_','No size specified and unable to determine the size of the op'+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   'erands, using BYTE as default'#000+
   '07102_W_Use of +offset(%ebp) for parameters invalid here'#000+
   '07103_W_Use of +offset(%ebp) is not compatible with regcall convention'+
   #000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '07104_W_Use of -offset(%ebp) is not recom','mended for local variable a'+
   'ccess'#000+
@@ -3277,6 +3626,23 @@ const msgtxt : array[0..000192,1..240] of char=(
   '08006_E_Asm: Opcode $1 not in table'#000+
   '08007_E_Asm: $1 invalid combination of opcode and operands'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '07104_W_Use of -offset','(%ebp) is not recommended for local variable a'+
+  'ccess'#000+
+  '07105_W_Use of -offset(%esp), access may cause a crash or value may be'+
+  ' lost'#000+
+  '07106_E_VMTOffset must be used in combination with a virtual method, a'+
+  'nd "$1" is not virtual'#000+
+  '07107_E_Generating ','PIC, but reference is not PIC-safe'#000+
+  '08000_F_Too many assembler files'#000+
+  '08001_F_Selected assembler output not supported'#000+
+  '08002_F_Comp not supported'#000+
+  '08003_F_Direct not support for binary writers'#000+
+  '08004_E_Allocating of data is only allowed in bss s','ection'#000+
+  '08005_F_No binary writer selected'#000+
+  '08006_E_Asm: Opcode $1 not in table'#000+
+  '08007_E_Asm: $1 invalid combination of opcode and operands'#000+
+>>>>>>> origin/fixes_2_2
   '08008_E_Asm: 16 Bit references not supported'#000+
   '0800','9_E_Asm: Invalid effective address'#000+
 =======
@@ -3286,6 +3652,7 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '08008_E_Asm: 16 Bit ','references not supported'#000+
   '08009_E_Asm: Invalid effective address'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
   '08008_E_Asm: 16 Bit ','references not supported'#000+
@@ -3326,10 +3693,19 @@ const msgtxt : array[0..000192,1..240] of char=(
   '08014_E_Asm: Comp type not supported for this target'#000+
   '08015_E_Asm: Extended type not supported for th','is target'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '08010_E_Asm: Immedia','te or reference expected'#000+
+  '08011_E_Asm: $1 value exceeds bounds $2'#000+
+  '08012_E_Asm: Short jump is out of range $1'#000+
+  '08013_E_Asm: Undefined label $1'#000+
+  '08014_E_Asm: Comp type not supported for this target'#000+
+  '08015_E_Asm: Extended type not supported for th','is target'#000+
+>>>>>>> origin/fixes_2_2
   '08016_E_Asm: Duplicate label $1'#000+
   '08017_E_Asm: Redefined label $1'#000+
   '08018_E_Asm: First defined here'#000+
   '08019_E_Asm: Invalid register $1'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3360,10 +3736,19 @@ const msgtxt : array[0..000192,1..240] of char=(
   '09002_E_Can'#039't create assembler file: $1'#000+
   '09003_E_Can'#039't create object file: $1'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '08020_E_Asm: 16 or 32 Bit references not supported'#000+
+  '08021_E_Asm: 64 Bit operands not supported'#000+
+  '09000_W','_Source operating system redefined'#000+
+  '09001_I_Assembling (pipe) $1'#000+
+  '09002_E_Can'#039't create assembler file: $1'#000+
+  '09003_E_Can'#039't create object file: $1'#000+
+>>>>>>> origin/fixes_2_2
   '09004_E_Can'#039't create archive file: $1'#000+
   '09005_E_Assembler $1 not found, switching to external assembl','ing'#000+
   '09006_T_Using assembler: $1'#000+
   '09007_E_Error while assembling exitcode $1'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '09008_E_Can'#039't call the assembler, error $1 swit','ching to external'+
   ' assembling'#000+
@@ -3371,6 +3756,10 @@ const msgtxt : array[0..000192,1..240] of char=(
   '09008_E_Can'#039't call the assembler, error $1 switching to external a'+
   'ssembling'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '09008_E_Can'#039't call the assembler, error $1 switching to external a'+
+  'ssembling'#000+
+>>>>>>> origin/fixes_2_2
   '09009_I_Assembling $1'#000+
 =======
   '08020_E_Asm: 16 o','r 32 Bit references not supported'#000+
@@ -3426,6 +3815,7 @@ const msgtxt : array[0..000192,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '09014_E_Can'#039't call the l','inker, switching to external linking'#000+
 =======
   '09014_E_Can'#039't call the linker, switching to external linki','ng'#000+
@@ -3442,10 +3832,14 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '09014_E_Can'#039't call the linker, switching to external linking'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '09014_E_Can'#039't call the linker, switching to external linking'#000+
+>>>>>>> origin/fixes_2_2
   '09015_I_Linking $1'#000+
   '09016_E_Util $1 not found, switching to external linking'#000+
   '09017','_T_Using util $1'#000+
   '09018_E_Creation of Executables not supported'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '09019_E_Creation of Dynamic/Shared Libraries not supported'#000,
   '09035_E_Creation of Static Libraries not supported'#000+
@@ -3480,10 +3874,17 @@ const msgtxt : array[0..000192,1..240] of char=(
   '09021_E_resource compiler not found, switching to external mode'#000+
   '09022_I_Compiling resource $','1'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '09019_E_Creation of Dynamic/Shared Libraries not supported'#000+
+  '09020_I_Closing script $1'#000+
+  '09021_E_resource compiler not found, switching to external mode'#000+
+  '09022_I_Compiling resource $','1'#000+
+>>>>>>> origin/fixes_2_2
   '09023_T_unit $1 can'#039't be statically linked, switching to smart lin'+
   'king'#000+
   '09024_T_unit $1 can'#039't be smart linked, switching to static linking'+
   #000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '09025_T_uni','t $1 can'#039't be shared linked, switching to static link'+
   'ing'#000+
@@ -3508,12 +3909,17 @@ const msgtxt : array[0..000192,1..240] of char=(
   '09033_N_File "$1" not found for backquoted cat command'#000+
   '09034_W_"$1" not found, this will probably cause a linking failure'#000+
 =======
+=======
+>>>>>>> origin/fixes_2_2
   '09025_T_unit $1 can'#039't be shared linked, switching to static linkin'+
   'g'#000+
   '09026_E_unit $1 can'#039't be smart o','r static linked'#000+
   '09027_E_unit $1 can'#039't be shared or static linked'#000+
   '09028_D_Calling resource compiler "$1" with "$2" as command line'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '09128_F_Can'#039't post process executable $1'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3524,6 +3930,7 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '09129_F_Can'#039't open executable',' $1'#000+
   '09130_X_Size of Code: $1 bytes'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -3542,6 +3949,9 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '09131','_X_Size of initialized data: $1 bytes'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '09131','_X_Size of initialized data: $1 bytes'#000+
+>>>>>>> origin/fixes_2_2
   '09132_X_Size of uninitialized data: $1 bytes'#000+
   '09133_X_Stack space reserved: $1 bytes'#000+
   '09134_X_Stack space committed: $1 bytes'#000+
@@ -3589,7 +3999,10 @@ const msgtxt : array[0..000192,1..240] of char=(
   '10006_U_PPU Fil','e too short'#000+
 =======
   '10006_U_PPU File too short'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '10007_U_PPU Invalid Header (no PPU at the begin)'#000+
   '10008_U_PPU Invalid Version $1'#000+
 <<<<<<< HEAD
@@ -3603,6 +4016,7 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '10009_U_PPU is compiled for another processor'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
   '10009_U_PPU is compiled for another processor'#000+
@@ -3614,12 +4028,16 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '10010_U_PPU is compiled for an othe','r target'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '10010_U_PPU is compiled for an othe','r target'#000+
+>>>>>>> origin/fixes_2_2
   '10011_U_PPU Source: $1'#000+
   '10012_U_Writing $1'#000+
   '10013_F_Can'#039't Wri','te PPU-File'#000+
   '10014_F_Error reading PPU-File'#000+
   '10015_F_unexpected end of PPU-File'#000+
   '10016_F_Invalid PPU-File entry: $1'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '10017_F_PPU Dbx count pro','blem'#000+
   '10018_E_Illegal unit name: $1'#000+
@@ -3654,8 +4072,16 @@ const msgtxt : array[0..000192,1..240] of char=(
   '1002','6_F_There were $1 errors compiling module, stopping'#000+
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+  '10017_F_PPU Dbx count problem'#000+
+  '10018_E_Illegal unit name: $1',#000+
+  '10019_F_Too much units'#000+
+  '10020_F_Circular unit reference between $1 and $2'#000+
+  '10021_F_Can'#039't compile unit $1, no sources available'#000+
+  '10022_F_Can'#039't find unit $1 used by $2'#000+
+>>>>>>> origin/fixes_2_2
   '10023_W_Unit $1 was not found but $2 exists'#000+
-  '10024_F_Unit $1 searched but $2 found'#000+
+  '10024_F_Unit $1 searched but $2 ','found'#000+
   '10025_W_Compiling the system unit requires the -Us switch'#000+
   '1002','6_F_There were $1 errors compiling module, stopping'#000+
 >>>>>>> origin/cpstrnew
@@ -3676,7 +4102,10 @@ const msgtxt : array[0..000192,1..240] of char=(
   '10027_U_Load from $1 ($2) unit $3'#000+
   '10028_U_Recompiling $1, checksum changed for $2'#000+
   '10029_U_Recompiling $1, source found o','nly'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '10030_U_Recompiling unit, static lib is older than ppufile'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3684,6 +4113,7 @@ const msgtxt : array[0..000192,1..240] of char=(
 <<<<<<< HEAD
   '10031_U_Recompiling unit, shared lib is older than ppufile'#000+
   '10032_U_Recompiling unit, obj and asm are older than ppufile'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '10033_U_Recompiling uni','t, obj is older than asm'#000+
 =======
@@ -3698,6 +4128,10 @@ const msgtxt : array[0..000192,1..240] of char=(
   '10033_U_Recompiling unit, obj is older than asm'#000+
 >>>>>>> graemeg/cpstrnew
   '10034_U_Parsing interface of $1'#000+
+=======
+  '10033_U_Recompiling unit, obj is older than asm'#000+
+  '10034_U_P','arsing interface of $1'#000+
+>>>>>>> origin/fixes_2_2
   '10035_U_Parsing implementation of $1'#000+
   '10036_U_','Second load for unit $1'#000+
   '10037_U_PPU Check file $1 time $2'#000+
@@ -3761,7 +4195,10 @@ const msgtxt : array[0..000192,1..240] of char=(
   ' mode'#000+
   '10043_U_Loading interface units from $1'#000+
   '10044_U_Loading implementation units from $1'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '10045_U_Interface CRC changed for unit $1'#000+
   '10046_U_Implementation CRC changed for unit $1',#000+
   '10047_U_Finished compiling unit $1'#000+
@@ -3772,6 +4209,7 @@ const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
   '10052_U_Forced reloading'#000+
   '10053_U_Previous state of $1: $2'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '10054_U_Already compiling $1, sett','ing second compile'#000+
   '10055_U_Loading unit $1'#000+
@@ -3790,14 +4228,20 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
   '1','0054_U_Already compiling $1, setting second compile'#000+
   '10055_U_Loading unit $1'#000+
   '10056_U_Finished loading unit $1'#000+
   '10057_U_Registering new unit $1'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '10058_U_Re-resolving unit $1'#000+
 >>>>>>> graemeg/cpstrnew
   '10059_U_Skipping re-resolving unit $1, still loading used units'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '10060_U_Unloading resource unit $1 (not',' needed)'#000+
   '10061_E_Unit $1 was compiled using a different whole program optimizat'+
@@ -3828,10 +4272,14 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '10060_','U_Unloading resource unit $1 (not needed)'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '10060_','U_Unloading resource unit $1 (not needed)'#000+
+>>>>>>> origin/fixes_2_2
   '11000_O_$1 [options] <inputfile> [options]'#000+
   '11001_W_Only one source file supported, changing source file to compil'+
   'e from "$1" into "$2"'#000+
   '11002_W_DEF file can be created only for OS/2'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '11003_E_nested response f','iles are not supported'#000+
 <<<<<<< HEAD
@@ -3847,6 +4295,8 @@ const msgtxt : array[0..000192,1..240] of char=(
   '11004_F_No source file name in command line'#000+
   '11005_N_No opti','on inside $1 config file'#000+
 =======
+=======
+>>>>>>> origin/fixes_2_2
   '11003_E_nested response files are not supported'#000+
   '11004_F_No source file',' name in command line'#000+
   '11005_N_No option inside $1 config file'#000+
@@ -3855,6 +4305,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   '11007_H_-? writes help pages'#000+
   '11008_F_Too many config files nested'#000+
   '11009_F_Unable to open file $1'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '11010_','D_Reading further options from $1'#000+
   '11011_W_Target is already set to: $1'#000+
@@ -3939,6 +4390,23 @@ const msgtxt : array[0..000192,1..240] of char=(
   '11020_N_Switching assembler to default source writing assembler'#000+
   '11021_W_Assembler output selected "$1" is not compatible with "$2"'#000+
   '11022_W_"$1" assembler use forced'#000+
+=======
+  '11010_D_Reading further options from $1'#000+
+  '11011_W_Tar','get is already set to: $1'#000+
+  '11012_W_Shared libs not supported on DOS platform, reverting to static'+
+  #000+
+  '11013_F_In options file $1 at line $2 too many #IF(N)DEFs encountered'#000+
+  '11014_F_In options file $1 at line $2 unexpected #ENDIFs encountered'#000+
+  '1101','5_F_Open conditional at the end of the options file'#000+
+  '11016_W_Debug information generation is not supported by this executab'+
+  'le'#000+
+  '11017_H_Try recompiling with -dGDB'#000+
+  '11018_W_You are using the obsolete switch $1'#000+
+  '11019_W_You are using the obsolete ','switch $1, please use $2'#000+
+  '11020_N_Switching assembler to default source writing assembler'#000+
+  '11021_W_Assembler output selected "$1" is not compatible with "$2"'#000+
+  '11022_W_"$1" assembler use forced'#000+
+>>>>>>> origin/fixes_2_2
   '11026_T_Reading options from file $1'#000+
   '11027_T_Readi','ng options from environment $1'#000+
   '11028_D_Handling option "$1"'#000+
@@ -4115,6 +4583,7 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '11039_E_Unknown code page'#000+
   '11040_F_Config file $1 is a directory'#000+
+<<<<<<< HEAD
   '11041_W_','Assembler output selected "$1" cannot generate debug info, d'+
   'ebugging disabled'#000+
   '11042_W_Use of ppc386.cfg is deprecated, please use fpc.cfg instead'#000+
@@ -4230,6 +4699,8 @@ const msgtxt : array[0..000192,1..240] of char=(
   'PCCPU'#010+
   'Copyright (c) 1993-2011 by Florian Klaempfl and others'#000+
 =======
+=======
+>>>>>>> origin/fixes_2_2
   '11041_W_Assembler output selected "$1" cannot generate debug info, d','e'+
   'bugging disabled'#000+
   '11042_W_Use of ppc386.cfg is deprecated, please use fpc.cfg instead'#000+
@@ -4238,7 +4709,10 @@ const msgtxt : array[0..000192,1..240] of char=(
   '11023_Free Pascal Compiler version $FPCFULLVERSION [$FPCDATE] for $FPC'+
   'CPU'#010+
   'Co','pyright (c) 1993-2008 by Florian Klaempfl'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '11024_Free Pascal Compiler version $FPCVERSION'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4259,6 +4733,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   '  $OSTARGETS'#010+
   #010+
 <<<<<<< HEAD
+<<<<<<< HEAD
   'Supported',' CPU instruction sets:'#010+
   '  $INSTRUCTIONSETS'#010+
   #010+
@@ -4269,6 +4744,12 @@ const msgtxt : array[0..000192,1..240] of char=(
   #010+
   'Suppo','rted FPU instruction sets:'#010+
 >>>>>>> graemeg/fixes_2_2
+=======
+  'Supported CPU instruction sets:'#010+
+  '  $INSTRUCTIONSETS'#010+
+  #010+
+  'Suppo','rted FPU instruction sets:'#010+
+>>>>>>> origin/fixes_2_2
   '  $FPUINSTRUCTIONSETS'#010+
   #010+
   'Supported inline assembler modes:'#010+
@@ -4301,6 +4782,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   #010+
   'Supported Microcontroller types:$\n  $CONTROLLERTYPES$\n'#010+
   'This program comes under the GNU General Public Licence'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4343,15 +4825,21 @@ const msgtxt : array[0..000192,1..240] of char=(
   'or'#010+
   '      ','           bugs@freepascal.org'#000+
 =======
+=======
+>>>>>>> origin/fixes_2_2
   'For more information read COPYING.FPC'#010+
   #010+
   'Report bugs,suggestions etc to:'#010+
   '                 bug','s@freepascal.org'#000+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '11025_**0*_Put + after a boolean switch option to enable it, - to disa'+
   'ble it'#010+
   '**1a_The compiler doesn'#039't delete the generated assembler file'#010+
   '**2al_List sourcecode lines in assembler file'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '**2an_List node info in ','assembler file'#010+
 <<<<<<< HEAD
@@ -4367,10 +4855,14 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '**2an_List node info in assembler file',#010+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '**2an_List node info in assembler file',#010+
+>>>>>>> origin/fixes_2_2
   '*L2ap_Use pipes instead of creating temporary assembler files'#010+
   '**2ar_List register allocation/release info in assembler file'#010+
   '**2at_List temp allocation/release info in assembler file'#010+
   '**1A<x>_Output format:'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4468,6 +4960,8 @@ const msgtxt : array[0..000192,1..240] of char=(
   'P*2Aas_Assemble using GNU AS'#010+
   'S*2Aas_Assemble using GNU AS'#010+
 =======
+=======
+>>>>>>> origin/fixes_2_2
   '**2Adefault_Use default assembler'#010,
   '3*2Aas_Assemble using GNU AS'#010+
   '3*2Anasmcoff_COFF (Go32v2) file using Nasm'#010+
@@ -4489,11 +4983,15 @@ const msgtxt : array[0..000192,1..240] of char=(
   'A*2Aas_Assemble using GNU AS'#010+
   'P*2Aas_Assemble using GNU AS'#010+
   'S*2Aas_Assemb','le using GNU AS'#010+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '**1b_Generate browser info'#010+
   '**2bl_Generate local symbol info'#010+
   '**1B_Build all modules'#010+
   '**1C<x>_Code generation options:'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4638,6 +5136,17 @@ const msgtxt : array[0..000192,1..240] of char=(
   '**2Cg_Generate PIC code'#010+
   '**2Ch<n>_<n> bytes heap (bet','ween 1023 and 67107840)'#010+
   '**2Ci_IO-checking'#010+
+=======
+  '**2Cc<x>_Set default calling convention to <x>'#010+
+  '**2CD_Create also dynamic library (not supported)'#010+
+  '**2Ce_Compi','lation with emulated floating point opcodes'#010+
+  '**2Cf<x>_Select fpu instruction set to use, see fpc -i for possible va'+
+  'lues'#010+
+  '**2CF<x>_Minimal floating point constant precision (default, 32, 64)'#010+
+  '**2Cg_Generate PIC code'#010+
+  '**2Ch<n>_<n> bytes heap (bet','ween 1023 and 67107840)'#010+
+  '**2Ci_IO-checking'#010+
+>>>>>>> origin/fixes_2_2
   '**2Cn_Omit linking stage'#010+
   '**2Co_Check overflow of integer operations'#010+
   '**2CO_Check for possible overflow of integer operations'#010+
@@ -4650,12 +5159,16 @@ const msgtxt : array[0..000192,1..240] of char=(
   '**2Cs<n>_Set stack size to <n>'#010+
   '**2Ct_Stack checking'#010+
   '**2CX_Create also smartlinked',' library'#010+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '**1d<x>_Defines the symbol <x>'#010+
   '**1D_Generate a DEF file'#010+
   '**2Dd<x>_Set description to <x>'#010+
   '**2Dv<x>_Set DLL version to <x>'#010+
   '*O2Dw_PM application'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '**1e<x>','_Set path to executable'#010+
   '**1E_Same as -Cn'#010+
@@ -4791,6 +5304,8 @@ const msgtxt : array[0..000192,1..240] of char=(
   '**1i_Information'#010+
   '**2iD_Return compiler date'#010+
 =======
+=======
+>>>>>>> origin/fixes_2_2
   '**1e<x>_Set path to executable'#010+
   '**1E_Same as -Cn'#010+
   '**1fPIC_Same as -Cg'#010+
@@ -4830,11 +5345,15 @@ const msgtxt : array[0..000192,1..240] of char=(
   '**2iD_Return compiler date'#010+
   '**2iV_Return sh','ort compiler version'#010+
   '**2iW_Return full compiler version'#010+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '**2iSO_Return compiler OS'#010+
   '**2iSP_Return compiler host processor'#010+
   '**2iTO_Return target OS'#010+
   '**2iTP_Return target processor'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '**2iV_Return sho','rt compiler version'#010+
   '**2iW_Return full compiler version'#010+
@@ -5129,6 +5648,8 @@ const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> origin/cpstrnew
   '**1s_Do not call assembler and li','nker'#010+
 =======
+=======
+>>>>>>> origin/fixes_2_2
   '**1I<x>_Add <x> to include path'#010+
   '**1k<x>_Pass <x> to the linker'#010+
   '**','1l_Write logo'#010+
@@ -5182,17 +5703,24 @@ const msgtxt : array[0..000192,1..240] of char=(
   '**2St_Allow static keyword in objects'#010+
   '**2Sx_Enable exception keywords (default in Delphi/ObjFPC modes)'#010+
   '**1s_Do not call assembler and linker'#010+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '**2sh_Generate script to link on host'#010+
   '**2st_Generate script to link on target'#010+
   '**2s','r_Skip register allocation phase (use with -alr)'#010+
   '**1T<x>_Target operating system:'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '3*2Tdarwin_Darwin/Mac OS X'#010+
   '3*2Temx_OS/2 via EMX (including EMX/RSX exte','nder)'#010+
 =======
   '3*2Temx_OS/2 via EMX (including EMX/RSX extender)'#010+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '3*2Temx_OS/2 via EMX (including EMX/RSX extender)'#010+
+>>>>>>> origin/fixes_2_2
   '3*2Tfreebsd_FreeBSD'#010+
   '3*2Tgo32v2_Version 2 of DJ Delorie DOS extender'#010+
 <<<<<<< HEAD
@@ -5211,6 +5739,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   '3*2Tnativent_Nati','ve NT API (experimental)'#010+
   '3*2Tnetbsd_NetBSD'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '3*2Tnetware_Novell Netware Module (clib)'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5219,6 +5748,9 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '3*2Tne','tware_Novell Netware Module (clib)'#010+
 >>>>>>> graemeg/fixes_2_2
+=======
+  '3*2Tne','tware_Novell Netware Module (clib)'#010+
+>>>>>>> origin/fixes_2_2
   '3*2Tnetwlibc_Novell Netware Module (libc)'#010+
 =======
   '3*2Tnetwlibc_No','vell Netware Module (libc)'#010+
@@ -5241,9 +5773,12 @@ const msgtxt : array[0..000192,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '3*2Tsolaris_Solaris'#010,
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '3*2Twatcom_Watcom compatible DOS extender'#010+
   '3*2Twdosx_WDOSX DOS extende','r'#010+
   '3*2Twin32_Windows 32 Bit'#010+
@@ -5295,8 +5830,11 @@ const msgtxt : array[0..000192,1..240] of char=(
   '6*2Tamiga_Commodore Amiga'#010+
   '6*2Tatari_Atari ST/STe/TT'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
   '6*2Tlinux_Linux'#010+
 =======
+=======
+>>>>>>> origin/fixes_2_2
   '6*2Tlinux_Linux/m68k'#010+
   '6*2Tmacos_Macintosh m68k (not supported)'#010+
 >>>>>>> graemeg/fixes_2_2
@@ -5315,6 +5853,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   'A*2Tnds_Nintendo DS'#010+
   'A*2Tsymbian_Symbian'#010+
   'A*2Twince_Windows CE'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
   'J*2Tandroid_Android'#010+
   'J*2Tjava_Java'#010+
@@ -5660,6 +6199,27 @@ const msgtxt : array[0..000192,1..240] of char=(
   '**2*_h : Show hints                  c : Show conditionals'#010+
   '**2*_i : Show general info      ','     d : Show debug info'#010+
   '**2*_l : Show linenumbers            r : Rhide/GCC compatibility mode'#010+
+=======
+  'P*2Tami','ga_AmigaOS on PowerPC'#010+
+  'P*2Tdarwin_Darwin and Mac OS X on PowerPC'#010+
+  'P*2Tlinux_Linux on PowerPC'#010+
+  'P*2Tmacos_Mac OS (classic) on PowerPC'#010+
+  'P*2Tmorphos_MorphOS'#010+
+  'S*2Tlinux_Linux'#010+
+  '**1u<x>_Undefines the symbol <x>'#010+
+  '**1U_Unit options:'#010+
+  '**2Un_Do not check wher','e the unit name matches the file name'#010+
+  '**2Ur_Generate release unit files (never automatically recompiled)'#010+
+  '**2Us_Compile a system unit'#010+
+  '**1v<x>_Be verbose. <x> is a combination of the following letters:'#010+
+  '**2*_e : Show errors (default)       0 :',' Show nothing (except errors'+
+  ')'#010+
+  '**2*_w : Show warnings               u : Show unit info'#010+
+  '**2*_n : Show notes                  t : Show tried/used files'#010+
+  '**2*_h : Show hints                  c : Show conditionals'#010+
+  '**2*_i : Show general info      ','     d : Show debug info'#010+
+  '**2*_l : Show linenumbers            r : Rhide/GCC compatibility mode'#010+
+>>>>>>> origin/fixes_2_2
   '**2*_a : Show everything             x : Executable info (Win32 only)'#010+
   '**2*_b : Write file names messages with full path'#010+
   '**2*_v : Write fpcdebug.t','xt with     p : Write tree.log with parse t'+
@@ -5688,11 +6248,15 @@ const msgtxt : array[0..000192,1..240] of char=(
   'A*2WR_Generate relocation code (Windows)'#010+
   'P*2WT_Specify',' MPW tool type application (Classic Mac OS)'#010+
   '**1X_Executable options:'#010+
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   '**2Xc_Pass --shared/-dynamic to the linker (BeOS, Darwin, FreeBSD, Lin'+
   'ux)'#010+
   '**2Xd_Do not use standard library search path (needed for cross compil'+
   'e)'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '**2Xe_Use external linker'#010+
   '**2Xg_Create debuginfo in a separate file and add a debugli','nk sectio'+
@@ -5781,6 +6345,8 @@ const msgtxt : array[0..000192,1..240] of char=(
   '**1?_Show this help'#010+
   '**1h_Shows this help without waiting'
 =======
+=======
+>>>>>>> origin/fixes_2_2
   '**2Xe_Use external linke','r'#010+
   '**2Xg_Create debuginfo in a separate file and add a debuglink section '+
   'to executable'#010+
@@ -5801,5 +6367,8 @@ const msgtxt : array[0..000192,1..240] of char=(
   '**1*_'#010+
   '**1?_Show this help'#010+
   '**1h_Shows this help without waiting'#000
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 );

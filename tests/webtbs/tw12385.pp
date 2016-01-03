@@ -1,10 +1,14 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef fpc}
 {$mode objfpc}
 {$endif}
 =======
 {$mode objfpc}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$mode objfpc}
+>>>>>>> origin/fixes_2_2
 program tw12385;
 
 uses
@@ -14,6 +18,7 @@ var
   s: string; 
   cr: Extended; 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Procedure TestIt(CR : Extended; Fmt,Expected : String);
   
@@ -41,6 +46,8 @@ begin
   TestIt(-1400,'#,##0.00','-1,400.00');
   TestIt(-1400,'##,##0.00','-1,400.00');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 begin
   cr := -1234.567;
   s:=FormatFloat('0.00', cr);
@@ -55,5 +62,8 @@ begin
      Writeln(S,'<> -001.000 (latter is correct)');
      Halt(1);
      end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.

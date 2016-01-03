@@ -42,6 +42,7 @@ begin
 
   try
 <<<<<<< HEAD
+<<<<<<< HEAD
     y105:='a';
     v := y105;
     test105(v);
@@ -53,12 +54,17 @@ begin
       Writeln('Caught exception ',E.ClassName,'as expected');
       end
 =======
+=======
+>>>>>>> origin/fixes_2_2
     v := y105;
     test105(v);
   except
     on E : TObject do
       halt(1);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 end;
 

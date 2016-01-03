@@ -126,7 +126,10 @@ implementation
           rcbin  : 'windres';
           rccmd  : '--include $INC -O res -o $RES $RC';
           resourcefileclass : nil;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         );
 {$ifdef x86_64}
     res_win64_gorc_info : tresinfo =
@@ -146,7 +149,22 @@ implementation
           rcbin  : 'windres';
           rccmd  : '--include $INC -O res -o $RES $RC';
           resourcefileclass : nil;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+        );
+{$endif x86_64}
+
+{$ifdef x86_64}
+    res_win64_gorc_info : tresinfo =
+        (
+          id     : res_win64_gorc;
+          resbin : 'gorc';
+          rescmd : '/machine x64 /nw /ni /o /fo $OBJ $RES';
+          rcbin  : 'gorc';
+          rccmd  : '/machine x64 /nw /ni /r /fo $RES $RC';
+          resourcefileclass : nil;
         );
 {$endif x86_64}
 
@@ -930,7 +948,10 @@ implementation
                 else
                   internalerror(200709272);
               end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               address_table.concat(Tai_const.Create_rva_sym(asmsym));
               inc(current_index);
               hp:=texported_item(hp.next);
@@ -998,7 +1019,10 @@ implementation
         ibase : TCmdStr;
         secname,
         secnames : string;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
         ScriptAddSourceStatements(true);
         with LinkScript do
@@ -1135,10 +1159,13 @@ implementation
             Concat('  OBJSECTION .idata$7*');
             Concat('ENDEXESECTION');
 <<<<<<< HEAD
+<<<<<<< HEAD
             ScriptAddGenericSections('.edata,.rsrc,.reloc,.gnu_debuglink,'+
                       '.debug_aranges,.debug_pubnames,.debug_info,.debug_abbrev,.debug_line,.debug_frame,.debug_str,.debug_loc,'+
                       '.debug_macinfo,.debug_weaknames,.debug_funcnames,.debug_typenames,.debug_varnames,.debug_ranges');
 =======
+=======
+>>>>>>> origin/fixes_2_2
             secnames:='.edata,.rsrc,.reloc,.gnu_debuglink,'+
                       '.debug_aranges,.debug_pubnames,.debug_info,.debug_abbrev,.debug_line,.debug_frame,.debug_str,.debug_loc,'+
                       '.debug_macinfo,.debug_weaknames,.debug_funcnames,.debug_typenames,.debug_varnames,.debug_ranges';
@@ -1150,7 +1177,10 @@ implementation
               Concat('  OBJSECTION '+secname+'*');
               Concat('ENDEXESECTION');
             until false;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             { Can't use the generic rules, because that will add also .stabstr to .stab }
             Concat('EXESECTION .stab');
             Concat('  OBJSECTION .stab');
@@ -1882,10 +1912,14 @@ implementation
             if (ExtName=funcname) then
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 current_module.AddExternalImport(dllname,funcname,funcname,0,false,false);
 =======
                 current_module.AddExternalImport(dllname,funcname,0,false,false);
 >>>>>>> graemeg/fixes_2_2
+=======
+                current_module.AddExternalImport(dllname,funcname,0,false,false);
+>>>>>>> origin/fixes_2_2
                 importfound:=true;
                 current_module.dllscannerinputlist.Delete(i);
                 exit;
@@ -1980,11 +2014,15 @@ initialization
   RegisterExport(system_x86_64_win64,TExportLibWin);
   RegisterDLLScanner(system_x86_64_win64,TDLLScannerWin);
 <<<<<<< HEAD
+<<<<<<< HEAD
   RegisterRes(res_gnu_windres_info,TWinLikeResourceFile);
   RegisterRes(res_win64_gorc_info,TWinLikeResourceFile);
 =======
   RegisterRes(res_win64_gorc_info,TWinResourceFile);
 >>>>>>> graemeg/fixes_2_2
+=======
+  RegisterRes(res_win64_gorc_info,TWinResourceFile);
+>>>>>>> origin/fixes_2_2
   RegisterTarget(system_x64_win64_info);
 {$endif x86_64}
 {$ifdef arm}

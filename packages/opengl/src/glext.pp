@@ -53,6 +53,7 @@ type
   TGLcharARB = GLcharARB;
   PGLcharARB = ^GLcharARB;
 <<<<<<< HEAD
+<<<<<<< HEAD
   PPGLchar = ^PGLchar;
 
   {$ifdef DARWIN}
@@ -64,6 +65,10 @@ type
 
   GLhandleARB = Cardinal;
 >>>>>>> graemeg/fixes_2_2
+=======
+
+  GLhandleARB = Cardinal;
+>>>>>>> origin/fixes_2_2
   TGLhandleARB = GLhandleARB;
   PGLhandleARB = ^GLhandleARB;
 
@@ -80,6 +85,7 @@ type
   PGLchar = Pchar;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   GLint64 = Int64;
   TGLint64 = GLint64;
   PGLint64 = ^GLint64;
@@ -91,6 +97,8 @@ type
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 //***** GL_version_1_2 *****//
 const
   GL_UNSIGNED_BYTE_3_3_2 = $8032;
@@ -1078,6 +1086,7 @@ var
 function Load_GL_EXT_multi_draw_arrays: Boolean;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //***** GL_EXT_packed_depth_stencil *****//
 const
   GL_DEPTH_STENCIL_EXT = $84F9;
@@ -1089,6 +1098,8 @@ function Load_GL_EXT_packed_depth_stencil: Boolean;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 //***** GL_EXT_packed_pixels *****//
 const
   GL_UNSIGNED_BYTE_3_3_2_EXT = $8032;
@@ -2786,10 +2797,13 @@ const
      GL_TEXT_FRAGMENT_SHADER_ATI = $8200;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function Load_GL_ATI_text_fragment_shader: Boolean;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {***** GL_ARB_vertex_buffer_object *****}
 const
      GL_BUFFER_SIZE_ARB = $8764;
@@ -2837,12 +2851,18 @@ var
      glGetBufferParameterivARB:procedure(target:GLenum; pname:GLenum; params:PGLint); extdecl;
      glGetBufferPointervARB : procedure(target: GLenum; pname:GLenum; params: PPGLvoid); extdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
 function Load_GL_ARB_vertex_buffer_object : boolean;
 =======
      function Load_GL_ARB_vertex_buffer_object : boolean;
 
 function Load_GL_ATI_text_fragment_shader: Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+     function Load_GL_ARB_vertex_buffer_object : boolean;
+
+function Load_GL_ATI_text_fragment_shader: Boolean;
+>>>>>>> origin/fixes_2_2
 
 //***** GL_APPLE_client_storage *****//
 const
@@ -3935,6 +3955,7 @@ var
 function Load_GL_EXT_framebuffer_object: Boolean;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //**** GL_ARB_framebuffer_object *****//
 const
   GL_INVALID_FRAMEBUFFER_OPERATION = $0506;
@@ -4782,6 +4803,8 @@ function Load_GL_ARB_transform_feedback3(): Boolean;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 //***** GL_version_1_4 *****//
 const
   GL_BLEND_DST_RGB = $80C8;
@@ -5130,6 +5153,7 @@ var
 
 function Load_GL_version_2_0: Boolean;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 //**** GL_VERSION_2_1 *****//
 const
@@ -5494,6 +5518,8 @@ function Load_GL_VERSION_4_3(): Boolean;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 implementation
 
@@ -5740,10 +5766,14 @@ begin
     glGetCompressedTexImage := wglGetProcAddress('glGetCompressedTexImage');
     if not Assigned(glGetCompressedTexImage) then Exit;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result := Load_GL_version_1_2;
 =======
     Result := TRUE;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Result := TRUE;
+>>>>>>> origin/fixes_2_2
 
 end;
 
@@ -6637,6 +6667,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function Load_GL_EXT_packed_depth_stencil: Boolean;
 var
   extstring: String;
@@ -6654,6 +6685,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function Load_GL_EXT_packed_pixels: Boolean;
 var
   extstring: String;
@@ -8880,10 +8913,13 @@ begin
       glBufferDataARB := wglGetProcAddress('glBufferDataARB');
       if not Assigned(glBufferDataARB) then Exit;
 <<<<<<< HEAD
+<<<<<<< HEAD
       glBufferSubDataARB := wglGetProcAddress('glBufferSubDataARB');
       if not Assigned(glBufferSubDataARB) then Exit;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       glGetBufferSubDataARB := wglGetProcAddress('glGetBufferSubDataARB');
       if not Assigned(glGetBufferSubDataARB) then Exit;
       glMapBufferARB := wglGetProcAddress('glMapBufferARB');
@@ -10270,6 +10306,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function Load_GL_ARB_framebuffer_object(LoadAsCore: boolean): Boolean;
 =======
 function Load_GL_ARB_framebuffer_object(): Boolean;
@@ -11493,6 +11530,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function Load_GL_version_1_4: Boolean;
 var
   extstring: String;
@@ -11592,10 +11631,14 @@ begin
     glWindowPos3sv := wglGetProcAddress('glWindowPos3sv');
     if not Assigned(glWindowPos3sv) then Exit;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result := Load_GL_version_1_3;
 =======
     Result := TRUE;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Result := TRUE;
+>>>>>>> origin/fixes_2_2
 
 end;
 
@@ -11646,10 +11689,14 @@ begin
     glGetBufferPointerv := wglGetProcAddress('glGetBufferPointerv');
     if not Assigned(glGetBufferPointerv) then Exit;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result := Load_GL_version_1_4;
 =======
     Result := TRUE;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Result := TRUE;
+>>>>>>> origin/fixes_2_2
 
 end;
 
@@ -11848,10 +11895,14 @@ begin
     glVertexAttribPointer := wglGetProcAddress('glVertexAttribPointer');
     if not Assigned(glVertexAttribPointer) then Exit;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result := Load_GL_version_1_5;
 =======
     Result := TRUE;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Result := TRUE;
+>>>>>>> origin/fixes_2_2
 
 end;
 
@@ -12063,6 +12114,7 @@ begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function Load_GL_VERSION_2_1(): Boolean;
 begin
@@ -12422,4 +12474,6 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.

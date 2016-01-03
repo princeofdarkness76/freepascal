@@ -469,6 +469,7 @@ Var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   destcopy    : pointer;
   U           : UnicodeString;
   DestCP,
@@ -499,12 +500,16 @@ Var
 =======
   destcopy    : pointer;
 >>>>>>> graemeg/fixes_2_2
+=======
+  destcopy    : pointer;
+>>>>>>> origin/fixes_2_2
 begin
   if high(sarr)=0 then
     begin
       DestS:='';
       exit;
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef FPC_HAS_CPSTRING}
 <<<<<<< HEAD
@@ -567,6 +572,9 @@ begin
 
   destcopy:=nil;
 >>>>>>> graemeg/cpstrnew
+=======
+  destcopy:=nil;
+>>>>>>> origin/fixes_2_2
   lowstart:=low(sarr);
   { skip empty strings }
   while (lowstart<=high(sarr)) and
@@ -667,10 +675,13 @@ begin
         end;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   SetCodePage(DestS,tmpCP,False);
   SetCodePage(DestS,DestCP,True);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   fpc_AnsiStr_Decr_Ref(destcopy);
 end;
 <<<<<<< HEAD
@@ -750,6 +761,8 @@ end;
 
 Function fpc_AnsiStr_To_AnsiStr (const S : RawByteString{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING}): RawByteString; [external name 'FPC_ANSISTR_TO_ANSISTR'];
 {$endif FPC_HAS_CPSTRING}
+
+{$ifndef FPC_STRTOSHORTSTRINGPROC}
 
 {$ifndef FPC_STRTOSHORTSTRINGPROC}
 
@@ -846,7 +859,33 @@ begin
    end;
 end;
 
+<<<<<<< HEAD
 {$endif FPC_STRTOSHORTSTRINGPROC}
+=======
+{$else FPC_STRTOSHORTSTRINGPROC}
+
+procedure fpc_AnsiStr_To_ShortStr (out res: shortstring; const S2 : Ansistring);[Public, alias: 'FPC_ANSISTR_TO_SHORTSTR'];  compilerproc;
+{
+  Converts a AnsiString to a ShortString;
+}
+Var
+  Size : SizeInt;
+begin
+  if S2='' then
+   res:=''
+  else
+   begin
+     Size:=Length(S2);
+     If Size>high(res) then
+      Size:=high(res);
+     Move (S2[1],res[1],Size);
+     byte(res[0]):=byte(Size);
+   end;
+end;
+
+{$endif FPC_STRTOSHORTSTRINGPROC}
+
+>>>>>>> origin/fixes_2_2
 
 
 
@@ -915,6 +954,7 @@ begin
     L := 0
   else
 <<<<<<< HEAD
+<<<<<<< HEAD
     L:=IndexChar(p^,-1,#0);
   SetLength(fpc_PChar_To_AnsiStr,L);
   if L > 0 then
@@ -933,6 +973,12 @@ begin
   if L > 0 then
     Move (P[0],Pointer(fpc_PChar_To_AnsiStr)^,L)
 >>>>>>> graemeg/fixes_2_2
+=======
+    l:=IndexChar(p^,-1,#0);
+  SetLength(fpc_PChar_To_AnsiStr,L);
+  if L > 0 then
+    Move (P[0],Pointer(fpc_PChar_To_AnsiStr)^,L)
+>>>>>>> origin/fixes_2_2
 end;
 <<<<<<< HEAD
 {$endif FPC_HAS_PCHAR_TO_ANSISTR}
@@ -967,23 +1013,30 @@ begin
         i := 0
       else
 <<<<<<< HEAD
+<<<<<<< HEAD
       begin
         i:=IndexChar(arr,high(arr)+1,#0);
         if i = -1 then
           i := high(arr)+1;
       end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       begin  
         i:=IndexChar(arr,high(arr)+1,#0);
         if i = -1 then
           i := high(arr)+1;
       end;    
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end
   else
     i := high(arr)+1;
   SetLength(fpc_CharArray_To_AnsiStr,i);
   if i > 0 then
+<<<<<<< HEAD
 <<<<<<< HEAD
     begin
 {$ifdef FPC_HAS_CPSTRING}
@@ -997,6 +1050,9 @@ begin
 =======
     Move (arr[0],Pointer(fpc_CharArray_To_AnsiStr)^,i);
 >>>>>>> graemeg/fixes_2_2
+=======
+    Move (arr[0],Pointer(fpc_CharArray_To_AnsiStr)^,i);
+>>>>>>> origin/fixes_2_2
 end;
 {$endif FPC_HAS_ANSISTR_TO_CHARARRAY}
 
@@ -1453,7 +1509,10 @@ begin
           Dec(Pointer(S),AnsiFirstOff);
 =======
           Dec(Pointer(S),FirstOff);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           lens:=MemSize(Pointer(s));
           lena:=AnsiRecLen+L;
           { allow shrinking string if that saves at least half of current size }

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 const
   REG_DISPSTAT	: pcuint16 = pointer($04000004);
@@ -192,6 +193,8 @@ const
 	BACKLIGHT_MAX  : BACKLIGHT_LEVELS = 3;	
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: system.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -337,7 +340,10 @@ procedure readUserSettings(); cdecl; external;
 
 
 {$ifdef NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type
   tPERSONAL_DATA = bitpacked record
     RESERVED0: array [0..1] of cuint8;
@@ -376,6 +382,7 @@ type
       defaultBrightness: 0..2;
       autoMode: 0..1;
 <<<<<<< HEAD
+<<<<<<< HEAD
       RESERVED5: 0..2;
 	    settingsLost: 0..1;	
 	    RESERVED6: 0..6;
@@ -384,6 +391,11 @@ type
 	    settingsLost: 0..1;	
 	    RESERVED2: 0..6;
 >>>>>>> graemeg/fixes_2_2
+=======
+      RESERVED4: 0..1;
+	    settingsLost: 0..1;	
+	    RESERVED2: 0..6;
+>>>>>>> origin/fixes_2_2
     end;
     RESERVED3: cuint16;
     rtcOffset: cuint32;
@@ -393,6 +405,7 @@ type
   PPERSONAL_DATA = ^tPERSONAL_DATA;
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
   PersonalData  : PPERSONAL_DATA = pointer($2FFFC80);
 
@@ -414,17 +427,23 @@ const
 type 
   ppcchar = ^pcchar;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   REG_KEYINPUT	: pcuint16 = pointer($04000130);
   REG_KEYCNT		: pcuint16 = pointer($04000132);
   PersonalData  : PPERSONAL_DATA = pointer($27FFC80);
 
 
 type 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   __argv = record 
     argvMagic: cint;		  // argv magic number, set to 0x5f617267 ('_arg') if valid 
     commandLine: pcchar;	// base address of command line, set of null terminated strings
     length: cint;			    // total length of command line
+<<<<<<< HEAD
 <<<<<<< HEAD
     argc: integer;
     argv: ppcchar;    
@@ -432,11 +451,14 @@ type
     host: cuint32;        // internal use, host ip for dslink 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
   Targv = __argv;
   Pargv = ^Targv;
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
   __system_argv: Pargv = pointer($02FFFE70);
 
@@ -542,6 +564,8 @@ end;
 {$endif NDS_IMPLEMENTATION}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   libnds_argv: Pargv = pointer($027FFF70);
   argvMagic = $5f617267;
 {$endif NDS_INTERFACE}
@@ -558,4 +582,7 @@ procedure lcdMainOnTop(); inline;
 procedure lcdMainOnBottom(); inline; 
 {$endif ARM9} 
 {$endif NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

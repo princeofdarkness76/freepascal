@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -39,11 +40,16 @@ begin
   FDisplayWidth := GetSystemMetrics(SM_CXSCREEN);
   FDisplayHeight := GetSystemMetrics(SM_CYSCREEN);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Constructor TGDIConsole.Create;
 
 Begin
   Inherited Create;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   FDefaultWidth := 320;
   FDefaultHeight := 200;
@@ -58,6 +64,7 @@ Begin
   FOpen := False;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   FModes[0] := TPTCMode.Create(FDisplayWidth, FDisplayHeight, FDefaultFormat);
   FModes[1] := TPTCMode.Create;
 
@@ -70,6 +77,8 @@ var
   I: Integer;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
   { configure console }
   Configure('ptcpas.cfg');
 End;
@@ -77,7 +86,10 @@ End;
 Destructor TGDIConsole.Destroy;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Close;
 
   {...}
@@ -92,6 +104,7 @@ Begin
   FClip.Free;
   FDefaultFormat.Free;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   for I := Low(FModes) to High(FModes) do
     FModes[I].Free;
@@ -123,6 +136,8 @@ var
 begin
   if FOpen then
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Inherited Destroy;
 End;
 
@@ -154,17 +169,24 @@ Var
 
 Begin
   If FOpen Then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Close;
 
 (*  FWindow := TWin32Window.Create('PTC_GDI_FULLSCREEN',
                                  ATitle,
                                  WS_EX_TOPMOST,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                  DWord(WS_POPUP or WS_SYSMENU or WS_VISIBLE), // fpc windows RTL bug - WS_POPUP should be a DWord!!!
 =======
                                  DWord(WS_POPUP Or WS_SYSMENU Or WS_VISIBLE), // fpc windows RTL bug - WS_POPUP should be a DWord!!!
 >>>>>>> graemeg/fixes_2_2
+=======
+                                 DWord(WS_POPUP Or WS_SYSMENU Or WS_VISIBLE), // fpc windows RTL bug - WS_POPUP should be a DWord!!!
+>>>>>>> origin/fixes_2_2
                                  SW_NORMAL,
                                  0, 0,
                                  GetSystemMetrics(SM_CXSCREEN),
@@ -175,10 +197,14 @@ Begin
                                  ATitle,
                                  0,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                  WS_VISIBLE or WS_SYSMENU or WS_CAPTION or WS_MINIMIZEBOX,
 =======
                                  WS_VISIBLE Or WS_SYSMENU Or WS_CAPTION Or WS_MINIMIZEBOX,
 >>>>>>> graemeg/fixes_2_2
+=======
+                                 WS_VISIBLE Or WS_SYSMENU Or WS_CAPTION Or WS_MINIMIZEBOX,
+>>>>>>> origin/fixes_2_2
                                  SW_NORMAL,
                                  CW_USEDEFAULT, CW_USEDEFAULT,
                                  AWidth, AHeight,
@@ -189,10 +215,14 @@ Begin
                                  ATitle,
                                  0,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                  WS_OVERLAPPEDWINDOW or WS_VISIBLE,
 =======
                                  WS_OVERLAPPEDWINDOW Or WS_VISIBLE,
 >>>>>>> graemeg/fixes_2_2
+=======
+                                 WS_OVERLAPPEDWINDOW Or WS_VISIBLE,
+>>>>>>> origin/fixes_2_2
                                  SW_NORMAL,
                                  CW_USEDEFAULT, CW_USEDEFAULT,
                                  AWidth, AHeight,
@@ -210,6 +240,7 @@ Begin
 
   tmp := TPTCArea.Create(0, 0, AWidth, AHeight);
 <<<<<<< HEAD
+<<<<<<< HEAD
   try
     FArea.Assign(tmp);
     FClip.Assign(tmp);
@@ -217,19 +248,25 @@ Begin
     tmp.Free;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Try
     FArea.Assign(tmp);
     FClip.Assign(tmp);
   Finally
     tmp.Free;
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   FWindow.Update;
 
   FTitle := ATitle;
 
   FOpen := True;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -238,6 +275,8 @@ begin
   if not FOpen then
     exit;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure TGDIConsole.Close;
@@ -245,7 +284,10 @@ Procedure TGDIConsole.Close;
 Begin
   If Not FOpen Then
     Exit;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   {...}
 
@@ -260,6 +302,7 @@ Begin
   FTitle := '';
 
   FOpen := False;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -290,6 +333,8 @@ begin
       console_pixels := Lock;
       try
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure TGDIConsole.Copy(Var ASurface : TPTCBaseSurface);
@@ -321,11 +366,15 @@ Begin
     Try
       console_pixels := Lock;
       Try
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         FCopy.Request(AFormat, Format);
         FCopy.Palette(APalette, Palette);
         FCopy.Copy(APixels, 0, 0, AWidth, AHeight, APitch, console_pixels, 0, 0,
                     Width, Height, Pitch);
+<<<<<<< HEAD
 <<<<<<< HEAD
       finally
         Unlock;
@@ -372,6 +421,8 @@ begin
         tmp.Free;
       end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       Finally
         Unlock;
       End;
@@ -417,11 +468,15 @@ Begin
       Finally
         tmp.Free;
       End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       FCopy.request(AFormat, Format);
       FCopy.palette(APalette, Palette);
       FCopy.copy(APixels, clipped_source.left, clipped_source.top, clipped_source.width, clipped_source.height, APitch,
                  console_pixels, clipped_destination.left, clipped_destination.top, clipped_destination.width, clipped_destination.height, Pitch);
+<<<<<<< HEAD
 <<<<<<< HEAD
     finally
       Unlock;
@@ -509,6 +564,8 @@ var
   S: string;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Finally
       Unlock;
       clipped_source.Free;
@@ -578,11 +635,15 @@ Var
   S : String;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   AssignFile(F, AFileName);
   {$I-}
   Reset(F);
   {$I+}
+<<<<<<< HEAD
 <<<<<<< HEAD
   if IOResult <> 0 then
     exit;
@@ -673,6 +734,8 @@ end;
 procedure TGDIConsole.Flush;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
   If IOResult <> 0 Then
     Exit;
   While Not EoF(F) Do
@@ -741,27 +804,37 @@ End;
 Procedure TGDIConsole.Flush;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   CheckOpen(    'TGDIConsole.Flush');
   CheckUnlocked('TGDIConsole.Flush');
 
   // todo...
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
 procedure TGDIConsole.Finish;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure TGDIConsole.Finish;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   CheckOpen(    'TGDIConsole.Finish');
   CheckUnlocked('TGDIConsole.Finish');
 
   // todo...
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -771,6 +844,8 @@ var
   DeviceContext: HDC;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure TGDIConsole.Update;
@@ -780,12 +855,16 @@ Var
   DeviceContext : HDC;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   CheckOpen(    'TGDIConsole.Update');
   CheckUnlocked('TGDIConsole.Update');
 
   FWindow.Update;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   DeviceContext := GetDC(FWindow.Handle);
 
@@ -794,13 +873,18 @@ Begin
     if GetClientRect(FWindow.Handle, @ClientRect) then
     begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
   DeviceContext := GetDC(FWindow.m_window);
 
   If DeviceContext <> 0 Then
   Begin
     If GetClientRect(FWindow.m_window, @ClientRect) Then
     Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       StretchDIBits(DeviceContext,
                     0, 0, ClientRect.right, ClientRect.bottom,
                     0, 0, FWin32DIB.Width, FWin32DIB.Height,
@@ -808,6 +892,7 @@ Begin
                     FWin32DIB.BMI^,
                     DIB_RGB_COLORS,
                     SRCCOPY);
+<<<<<<< HEAD
 <<<<<<< HEAD
     end;
 
@@ -825,6 +910,8 @@ var
   UseGetMessage: Boolean;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
     End;
 
     ReleaseDC(FWindow.m_window, DeviceContext);
@@ -840,11 +927,15 @@ End;
 Function TGDIConsole.NextEvent(Var AEvent : TPTCEvent; AWait : Boolean; Const AEventMask : TPTCEventMask) : Boolean;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   CheckOpen('TGDIConsole.NextEvent');
 //  CheckUnlocked('TGDIConsole.NextEvent');
 
   FreeAndNil(AEvent);
+<<<<<<< HEAD
 <<<<<<< HEAD
   UseGetMessage := False;
   repeat
@@ -953,6 +1044,8 @@ begin
   end;
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Repeat
     { update window }
     FWindow.Update;
@@ -1063,4 +1156,7 @@ Begin
       Raise TPTCError.Create(AMessage, error);
   End;
 End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

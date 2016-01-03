@@ -137,9 +137,12 @@ unit cpubase;
       maxfpuregs = 8;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       { include regnumber_count_bsstart }
       {$i r68kbss.inc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$WARNING TODO FIX BSSTART}
       regnumber_count_bsstart = 16;
 >>>>>>> graemeg/fixes_2_2
@@ -274,7 +277,10 @@ unit cpubase;
 {$warning FIX ME!!! frame pointer is A5 on Amiga, but A6 on unixes?}
       NR_FRAME_POINTER_REG = NR_A5;
       RS_FRAME_POINTER_REG = RS_A5;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
       {# Register for addressing absolute data in a position independant way,
          such as in PIC code. The exact meaning is ABI specific. For
@@ -333,7 +339,10 @@ unit cpubase;
       
       { this is only for the generic code which is not used for this architecture }
       saved_mm_registers : array[0..0] of tsuperregister = (RS_NO);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
       {# Required parameter alignment when calling a routine declared as
          stdcall and cdecl. The alignment value should be the one defined

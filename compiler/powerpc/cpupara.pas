@@ -153,6 +153,7 @@ unit cpupara;
             classrefdef:
               result:=LOC_REGISTER;
 <<<<<<< HEAD
+<<<<<<< HEAD
             procvardef:
               if (target_info.abi in [abi_powerpc_aix,abi_powerpc_darwin]) or
                  (p.size = sizeof(pint)) then
@@ -162,6 +163,9 @@ unit cpupara;
 =======
             procvardef,
 >>>>>>> graemeg/fixes_2_2
+=======
+            procvardef,
+>>>>>>> origin/fixes_2_2
             recorddef:
               if not(target_info.system in systems_aix) and
                  (not(target_info.abi in [abi_powerpc_aix,abi_powerpc_darwin]) or
@@ -217,6 +221,7 @@ unit cpupara;
           formaldef :
             result:=true;
 <<<<<<< HEAD
+<<<<<<< HEAD
           { regular procvars must be passed by value, because you cannot pass
             the address of a local stack location when calling e.g.
             pthread_create with the address of a function (first of all it
@@ -239,6 +244,10 @@ unit cpupara;
           recorddef,
           procvardef :
 >>>>>>> graemeg/fixes_2_2
+=======
+          recorddef,
+          procvardef :
+>>>>>>> origin/fixes_2_2
             result :=
               not(target_info.abi in [abi_powerpc_aix,abi_powerpc_darwin]) or
               ((varspez = vs_const) and
@@ -390,11 +399,23 @@ unit cpupara;
             exit;
           end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         paraloc:=result.add_location;
 =======
         { Return is passed as var parameter }
         if ret_in_param(p.returndef,p.proccalloption) then
+=======
+        { Return is passed as var parameter }
+        if ret_in_param(p.returndef,p.proccalloption) then
+          begin
+            p.funcretloc[side].loc:=LOC_REFERENCE;
+            p.funcretloc[side].size:=retcgsize;
+            exit;
+          end;
+        { Return in FPU register? }
+        if p.returndef.typ=floatdef then
+>>>>>>> origin/fixes_2_2
           begin
             p.funcretloc[side].loc:=LOC_REFERENCE;
             p.funcretloc[side].size:=retcgsize;

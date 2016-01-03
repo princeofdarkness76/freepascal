@@ -2,6 +2,7 @@
  * Copyright (c) 2000-2003 Apple Computer, Inc. All Rights Reserved.
  * 
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @APPLE_LICENSE_HEADER_START@
  * 
  * This file contains Original Code and/or Modifications of Original Code
@@ -48,6 +49,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  * The contents of this file constitute Original Code as defined in and are
  * subject to the Apple Public Source License Version 1.2 (the 'License').
  * You may not use this file except in compliance with the License. Please obtain
@@ -76,7 +79,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -86,12 +92,17 @@
 unit AuthSession;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -105,14 +116,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -121,11 +137,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -163,6 +182,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -170,6 +191,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -389,6 +411,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -397,7 +421,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -424,9 +451,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -437,6 +468,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,Authorization;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -454,6 +486,9 @@ uses MacTypes,Authorization;
 =======
 {$ALIGN MAC68K}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ALIGN MAC68K}
+>>>>>>> origin/fixes_2_2
 {!
 	@header AuthSession
 
@@ -495,6 +530,7 @@ type
         on input to SessionAPI functions. They will never be returned from such
         functions.
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     Note: -2 is reserved (see 4487137).  
 }
@@ -505,6 +541,11 @@ const
 const
 	noSecuritySession                      = 0;     { definitely not a valid SecuritySessionId }
 >>>>>>> graemeg/fixes_2_2
+=======
+}
+const
+	noSecuritySession                      = 0;     { definitely not a valid SecuritySessionId }
+>>>>>>> origin/fixes_2_2
 	callerSecuritySession = -1;     { the Session I (the caller) am in }
 
 
@@ -547,17 +588,23 @@ const
 }
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 	errSessionSuccess = 0;      { all is well }
 	errSessionInvalidId = -60500; { invalid session id specified }
 	errSessionInvalidAttributes = -60501; { invalid set of requested attribute bits }
 	errSessionAuthorizationDenied = -60502; { you are not allowed to do this }
 	errSessionValueNotSet = -60503; { the session attribute you requested has not been set }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	errSessionSuccess                       = 0;      { all is well }
 	errSessionInvalidId                     = -60500; { invalid session id specified }
 	errSessionInvalidAttributes             = -60501; { invalid set of requested attribute bits }
 	errSessionAuthorizationDenied           = -60502; { you are not allowed to do this }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 	errSessionInternal                      = errAuthorizationInternal;	{ internal error }
 	errSessionInvalidFlags                  = errAuthorizationInvalidFlags; { invalid flags/options }
@@ -578,10 +625,14 @@ const
     @param attributes (output/optional) Receives the attribute bits for the session.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     @result An OSStatus indicating success (errSecSuccess) or an error cause.
 =======
     @result An OSStatus indicating success (noErr) or an error cause.
 >>>>>>> graemeg/fixes_2_2
+=======
+    @result An OSStatus indicating success (noErr) or an error cause.
+>>>>>>> origin/fixes_2_2
     
     errSessionInvalidId -60500 Invalid session id specified
 
@@ -615,10 +666,14 @@ function SessionGetInfo( session: SecuritySessionId; sessionId: SecuritySessionI
         Not all bits can be set this way.
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     @result An OSStatus indicating success (errSecSuccess) or an error cause.
 =======
     @result An OSStatus indicating success (noErr) or an error cause.
 >>>>>>> graemeg/fixes_2_2
+=======
+    @result An OSStatus indicating success (noErr) or an error cause.
+>>>>>>> origin/fixes_2_2
     
     errSessionInvalidAttributes -60501 Attempt to set invalid attribute bits	
     errSessionAuthorizationDenied -60502 Attempt to re-initialize a session
@@ -628,6 +683,7 @@ function SessionGetInfo( session: SecuritySessionId; sessionId: SecuritySessionI
 function SessionCreate( flags: SessionCreationFlags; attributes: SessionAttributeBits ): OSStatus; external name '_SessionCreate';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
@@ -636,3 +692,6 @@ end.
 =======
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+end.
+>>>>>>> origin/fixes_2_2

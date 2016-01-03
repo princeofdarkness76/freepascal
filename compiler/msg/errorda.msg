@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 %%% Reordering of errorda.msg respective to errore.msg
 %%% Contains all comments from errorda.msg
 #$
@@ -18,6 +19,9 @@
 =======
 ﻿#
 >>>>>>> graemeg/fixes_2_2
+=======
+﻿#
+>>>>>>> origin/fixes_2_2
 #   $Id: errorda.msg 621 2006-07-02 15:44:03Z chrivers $
 >>>>>>> graemeg/cpstrnew
 #   This file is part of the Free Pascal Compiler
@@ -3555,6 +3559,7 @@ Free Pascal Compiler version $FPCFULLVERSION [$FPCDATE] til $FPCTARGET
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Copyright (c) 1993-2015 Florian Klaempfl and others
 =======
 Copyright (c) 1993-2011 Florian Klaempfl
@@ -3571,6 +3576,9 @@ Copyright (c) 1993-2011 Florian Klaempfl
 =======
 Copyright (c) 1993-2008 Florian Klaempfl
 >>>>>>> graemeg/fixes_2_2
+=======
+Copyright (c) 1993-2008 Florian Klaempfl
+>>>>>>> origin/fixes_2_2
 ]
 
 #

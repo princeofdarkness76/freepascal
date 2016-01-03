@@ -57,10 +57,14 @@
     mtctr   0
     ld      2, 8(11)
 <<<<<<< HEAD
+<<<<<<< HEAD
     ld      11, 16(11)
 =======
     ld      11, 8(11)
 >>>>>>> graemeg/fixes_2_2
+=======
+    ld      11, 8(11)
+>>>>>>> origin/fixes_2_2
     bctr
 .long 0
 .byte 0, 12, 128, 0, 0, 0, 0, 0
@@ -326,6 +330,7 @@ _restvr_31: addi r12,r0,-16
 
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Main program entry point for dynamic executables.
  *
  * r7 contains the function pointer that needs to be registered for calling at exit.
@@ -467,6 +472,8 @@ FUNCTION_PROLOG _haltproc
 .long 0
 .byte 0, 12, 64, 0, 0, 0, 0, 0
 =======
+=======
+>>>>>>> origin/fixes_2_2
  * Main program entry point label (function), called by the loader
  */
 FUNCTION_PROLOG _start
@@ -508,7 +515,10 @@ FUNCTION_PROLOG _haltproc
     li      0, 1
     sc
     b       ._haltproc
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     /* Define a symbol for the first piece of initialized data.  */
     .section ".data"
@@ -516,6 +526,7 @@ FUNCTION_PROLOG _haltproc
 __data_start:
 data_start:
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     .section ".bss"
 
@@ -556,6 +567,8 @@ operatingsystem_parameters:
 
 .section .note.GNU-stack,"",%progbits
 =======
+=======
+>>>>>>> origin/fixes_2_2
 .text
     .comm __stkptr, 8
 
@@ -563,4 +576,7 @@ operatingsystem_parameters:
     .comm operatingsystem_parameter_argv, 8
     .comm operatingsystem_parameter_envp, 8
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

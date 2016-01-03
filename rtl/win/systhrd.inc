@@ -113,8 +113,11 @@ var
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SysAllocateThreadVars; public name '_FPC_SysAllocateThreadVars';
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure SysAllocateThreadVars;
 >>>>>>> graemeg/fixes_2_2
       var
@@ -201,6 +204,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       begin
 =======
 =======
@@ -227,6 +231,8 @@ var
            movl (%eax,%edx,4),%eax
           .LToDataIndex:
 =======
+=======
+>>>>>>> origin/fixes_2_2
       begin
 {$ifdef dummy}
         { I've no clue why this doesn't read dataindex, imo it should (FK) }
@@ -235,7 +241,10 @@ var
           movl $0x2c,%eax
           movl %fs:(%eax),%eax
           movl (%eax,%edx,4),%eax
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           movl %eax,dataindex
         end;
         if DataIndex=nil then
@@ -247,15 +256,19 @@ var
           end;
 {$else win32}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         errorsave:=GetLastError;
         dataindex:=TlsGetValue(tlskey);
         if dataindex=nil then
           begin
             SysAllocateThreadVars;
             dataindex:=TlsGetValue(tlskey);
+<<<<<<< HEAD
 <<<<<<< HEAD
             InitThread($1000000);
           end;
@@ -265,6 +278,11 @@ var
         SetLastError(errorsave);
 {$endif win32}
 >>>>>>> graemeg/fixes_2_2
+=======
+          end;
+        SetLastError(errorsave);
+{$endif win32}
+>>>>>>> origin/fixes_2_2
         SysRelocateThreadvar:=DataIndex+Offset;
       end;
 

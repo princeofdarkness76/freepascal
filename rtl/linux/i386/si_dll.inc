@@ -72,10 +72,14 @@ end;
 {$asmmode ATT}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure _FPC_shared_lib_start(argc : dword;argv,envp : pointer); cdecl; public name 'FPC_SHARED_LIB_START'; public name '_start';
 =======
 procedure _FPC_shared_lib_start(argc : dword;argv,envp : pointer); cdecl; public name '_FPC_SHARED_LIB_START_LOCAL'; public name '_start';
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure _FPC_shared_lib_start(argc : dword;argv,envp : pointer); cdecl; public name '_FPC_SHARED_LIB_START_LOCAL'; public name '_start';
+>>>>>>> origin/fixes_2_2
 begin
 
   operatingsystem_parameter_argc:=argc;    { Copy the argument count      }

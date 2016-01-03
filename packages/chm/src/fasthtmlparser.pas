@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
   See the section LICENSE/TERMS below for details about the copyright.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { Copyright (C) <2005> <Andrew Haines> fasthtmlparser.pas
 
   This library is free software; you can redistribute it and/or modify it
@@ -21,7 +24,10 @@
 {
   See the file COPYING.FPC, included in this distribution,
   for details about the copyright.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 }
 // TODO:
 {
@@ -175,19 +181,25 @@ type
       OnFoundText: TOnFoundText;
       Raw: Pchar;
 <<<<<<< HEAD
+<<<<<<< HEAD
       FCurrent : PChar;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       constructor Create(sRaw: string);overload;
       constructor Create(pRaw: PChar);overload;
       procedure Exec;
       procedure NilOnFoundTag(NoCaseTag, ActualTag: string);
       procedure NilOnFoundText(Text: string);
 <<<<<<< HEAD
+<<<<<<< HEAD
     Public
       Function CurrentPos : Integer;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       property Done: Boolean read FDone write FDone;
   end;
 
@@ -202,17 +214,23 @@ end;
 
 function CopyBuffer(StartIndex: PChar; Length: Integer): string;
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   SetLength(Result, Length);
   StrLCopy(@Result[1], StartIndex, Length);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var
   S: string;
 begin
   SetLength(S, Length);
   StrLCopy(@S[1], StartIndex, Length);
   Result:= S;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -242,6 +260,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function THTMLParser.CurrentPos: Integer;
 begin
   if Assigned(Raw) and Assigned(FCurrent) then
@@ -252,6 +271,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure THTMLParser.Exec;
 var
   L: Integer;
@@ -296,9 +317,12 @@ begin
         L:= P - TextStart;
         { Yes, copy to buffer }
 <<<<<<< HEAD
+<<<<<<< HEAD
         FCurrent:=P;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         OnFoundText( CopyBuffer(TextStart, L) );
       end else
       begin
@@ -335,9 +359,12 @@ begin
       L:= P - TagStart + 1;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       FCurrent:=P;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       OnFoundTag( uppercase(CopyBuffer(TagStart, L )), CopyBuffer(TagStart, L ) ); //L505: added uppercase
       Inc(P); Inc(I);
       if I >= TL then Break;

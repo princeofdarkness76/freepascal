@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 %%% Reordering of errorheu.msg respective to errore.msg
 %%% Contains all comments from errorheu.msg
 =======
@@ -17,6 +18,9 @@
 =======
 ﻿#
 >>>>>>> graemeg/fixes_2_2
+=======
+﻿#
+>>>>>>> origin/fixes_2_2
 #   This file is part of the Free Pascal Compiler
 #   Copyright (c) 1999-2008 by the Free Pascal Development team
 #
@@ -3377,6 +3381,7 @@ option_confict_asm_debug=11041_W_סוג הפלט של המאסף שנבחר "$1"
 % The assembler output selected can not generate
 % debugging information, debugging option is therefore disabled.
 <<<<<<< HEAD
+<<<<<<< HEAD
 %\end{description}
 # EndOfTeX
 
@@ -3503,6 +3508,8 @@ wpo_cant_create_feedback_file=12019_E_Cannot create specified whole program opti
 % The compiler is unable to create the file specified using the -FW parameter to store the whole program optimisation information.
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 %\end{description}
 # EndOfTeX
 
@@ -3512,6 +3519,7 @@ wpo_cant_create_feedback_file=12019_E_Cannot create specified whole program opti
 #
 option_logo=11023_[
 Free Pascal Compiler version $FPCFULLVERSION [$FPCDATE] for $FPCCPU
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3533,6 +3541,9 @@ Copyright (c) 1993-2011 by Florian Klaempfl
 =======
 Copyright (c) 1993-2008 by Florian Klaempfl
 >>>>>>> graemeg/fixes_2_2
+=======
+Copyright (c) 1993-2008 by Florian Klaempfl
+>>>>>>> origin/fixes_2_2
 ]
 
 #

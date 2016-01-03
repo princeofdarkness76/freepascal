@@ -180,10 +180,14 @@ begin
           sx:=PInteger(xEntry)^;
           inc(xEntry,SizeOf(integer));
 <<<<<<< HEAD
+<<<<<<< HEAD
           NewCol:= colTransparent;
 =======
           NewCol:=colBlack;
 >>>>>>> graemeg/fixes_2_2
+=======
+          NewCol:=colBlack;
+>>>>>>> origin/fixes_2_2
           for cx:=0 to xSupport-1 do
           begin
             f:=PSingle(xEntry)^;
@@ -203,10 +207,14 @@ begin
       begin
         CurEntry:=yEntry+SizeOf(integer);
 <<<<<<< HEAD
+<<<<<<< HEAD
         NewCol:=colTransparent;
 =======
         NewCol:=colBlack;
 >>>>>>> graemeg/fixes_2_2
+=======
+        NewCol:=colBlack;
+>>>>>>> origin/fixes_2_2
         for sy:=0 to ySupport-1 do
         begin
           f:=PSingle(CurEntry)^;

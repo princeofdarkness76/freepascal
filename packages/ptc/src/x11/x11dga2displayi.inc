@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -55,6 +56,8 @@ var
 begin
   inherited;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$IFDEF ENABLE_X11_EXTENSION_XF86DGA2}
 
 Constructor TX11DGA2Display.Create(ADisplay : PDisplay; AScreen : Integer; Const AFlags : TX11Flags);
@@ -64,12 +67,16 @@ Var
 
 Begin
   Inherited;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   LOG('trying to open a DGA 2.0 display');
 
   { Check if the DGA extension can be used }
   LOG('checking if the DGA extension can be used (XDGAQueryExtension)');
+<<<<<<< HEAD
 <<<<<<< HEAD
   if not XDGAQueryExtension(FDisplay, @FXDGAEventBase, @FXDGAErrorBase) then
     raise TPTCError.Create('DGA extension not available');
@@ -239,6 +246,8 @@ begin
 
   { Get all available video modes }
 =======
+=======
+>>>>>>> origin/fixes_2_2
   If Not XDGAQueryExtension(FDisplay, @dummy1, @dummy2) Then
     Raise TPTCError.Create('DGA extension not available');
 End;
@@ -275,12 +284,16 @@ Begin
   FFramebufferIsOpen := True;
 
   { Get all availabe video modes }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   LOG('querying available display modes (XDGAQueryModes)');
   FXDGAModes := XDGAQueryModes(FDisplay, FScreen, @FXDGAModesNum);
 
   LOG('number of display modes', FXDGAModesNum);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   for I := 0 to FXDGAModesNum - 1 do
   begin
@@ -343,6 +356,8 @@ Begin
                ButtonReleaseMask, GrabModeAsync, GrabModeAsync, None, None,
                CurrentTime);*)
 =======
+=======
+>>>>>>> origin/fixes_2_2
   For I := 0 To FXDGAModesNum - 1 Do
   Begin
     LOG('mode#', I);
@@ -370,7 +385,10 @@ Begin
   XGrabPointer(FDisplay, root, True, PointerMotionMask Or ButtonPressMask Or
                ButtonReleaseMask, GrabModeAsync, GrabModeAsync, None, None,
                CurrentTime);}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   XFlush(FDisplay);
 
   { Get Display information }
@@ -382,6 +400,7 @@ Begin
 
 //  XF86DGAGetViewPortSize(FDisplay, FScreen, @dga_width, @dga_height);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {  if XF86DGAForkApp(FScreen) <> 0 then
     raise TPTCError.Create('cannot do safety fork')
@@ -550,6 +569,8 @@ begin
   if FModeIsSet then
   begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {  If XF86DGAForkApp(FScreen) <> 0 Then
     Raise TPTCError.Create('cannot do safety fork')
   Else
@@ -643,13 +664,17 @@ Var
 Begin
   If FModeIsSet Then
   Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FModeIsSet := False;
 
     { restore the original mode }
     XDGASetMode(FDisplay, FScreen, 0); { returns PXDGADevice }
 {    XUngrabKeyboard(FDisplay, CurrentTime);
     XUngrabPointer(FDisplay, CurrentTime);}
+<<<<<<< HEAD
 <<<<<<< HEAD
   end;
 
@@ -892,6 +917,8 @@ begin
 >>>>>>> origin/cpstrnew
   repeat
 =======
+=======
+>>>>>>> origin/fixes_2_2
   End;
 
   If FFramebufferIsOpen Then
@@ -1051,13 +1078,17 @@ Var
 Begin
   FreeAndNil(event);
   Repeat
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { process all events from the X queue and put them on our FEventQueue }
     HandleEvents;
 
     { try to find an event that matches the EventMask }
     event := FEventQueue.NextEvent(EventMask);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     if wait and (event = nil) then
     begin
@@ -1090,6 +1121,8 @@ var
 begin
   repeat
 =======
+=======
+>>>>>>> origin/fixes_2_2
     If wait And (event = Nil) Then
     Begin
       { if the X event queue is empty, block until an event is received }
@@ -1106,13 +1139,17 @@ Var
 
 Begin
   Repeat
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { process all events from the X queue and put them on our FEventQueue }
     HandleEvents;
 
     { try to find an event that matches the EventMask }
     Result := FEventQueue.PeekEvent(EventMask);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     if wait and (Result = nil) then
     begin
@@ -1214,6 +1251,8 @@ begin
   {...}
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     If wait And (Result = Nil) Then
     Begin
       { if the X event queue is empty, block until an event is received }
@@ -1284,6 +1323,9 @@ Procedure TX11DGA2Display.SetCursor(visible : Boolean);
 Begin
   {nothing... raise exception if visible=true?}
 End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ENDIF ENABLE_X11_EXTENSION_XF86DGA2}

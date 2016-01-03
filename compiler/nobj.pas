@@ -80,7 +80,10 @@ implementation
        globals,verbose,systems,
        node,
        symbase,symtable,symconst,symtype,defcmp,
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        dbgbase,
        wpobase
        ;
@@ -444,7 +447,10 @@ implementation
                     { same parameter and return types (parameter specifiers will be checked below) }
                     else if (compare_paras(procdefcoll^.data.paras,pd.paras,cp_none,[])>=te_equal) and
                             compatible_childmethod_resultdef(procdefcoll^.data.returndef,pd.returndef) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                       begin
                         { In Objective-C, you cannot create a new VMT entry to
                           start a new inheritance tree. We therefore give an
@@ -906,6 +912,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        (compare_paras(proc.paras,implprocdef.paras,cp_all,[cpo_ignorehidden,cpo_ignoreuniv])>=te_equal) and
 =======
                        (compare_paras(proc.paras,implprocdef.paras,cp_all,[cpo_ignorehidden,cpo_comparedefaultvalue,cpo_ignoreuniv])>=te_equal) and
@@ -934,13 +941,18 @@ implementation
                           MessagePos2(implprocdef.fileinfo,type_w_interface_lower_visibility,proc.fullprocname(false),implprocdef.fullprocname(false));
 {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                        (compare_paras(proc.paras,implprocdef.paras,cp_all,[cpo_ignorehidden,cpo_comparedefaultvalue])>=te_equal) and
                        (compare_defs(proc.returndef,implprocdef.returndef,nothingn)>=te_equal) and
                        (proc.proccalloption=implprocdef.proccalloption) and
                        (proc.proctypeoption=implprocdef.proctypeoption) and
                        ((proc.procoptions*po_comp)=((implprocdef.procoptions+[po_virtualmethod])*po_comp)) then
                       begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                         result:=implprocdef;
                         exit;
                       end;
@@ -984,6 +996,7 @@ implementation
 
                 { Add procdef to the implemented interface }
                 if assigned(implprocdef) then
+<<<<<<< HEAD
 <<<<<<< HEAD
                   begin
                     if (tobjectdef(implprocdef.struct).objecttype<>odt_objcclass) then
@@ -1035,6 +1048,9 @@ implementation
 =======
                   ImplIntf.AddImplProc(implprocdef)
 >>>>>>> graemeg/fixes_2_2
+=======
+                  ImplIntf.AddImplProc(implprocdef)
+>>>>>>> origin/fixes_2_2
                 else
                   if (ImplIntf.IType=etStandard) and
                      not(po_optional in tprocdef(def).procoptions) then
@@ -1826,9 +1842,12 @@ implementation
               begin
                 if (tf_requires_proper_alignment in target_info.flags) then
 <<<<<<< HEAD
+<<<<<<< HEAD
                   current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(pint)));
                 current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_pint(tfieldvarsym(sym).fieldoffset));
 =======
+=======
+>>>>>>> origin/fixes_2_2
                   current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(AInt)));
                 current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_aint(tfieldvarsym(sym).fieldoffset));
 >>>>>>> graemeg/fixes_2_2

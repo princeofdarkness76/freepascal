@@ -49,9 +49,12 @@ Classes
 function FormatMaskText(const EditMask: string; const Value: string): string;
 function FormatMaskInput(const EditMask: string): string;
 <<<<<<< HEAD
+<<<<<<< HEAD
 function MaskDoFormatText(const EditMask: string; const Value: string; Blank: Char): string;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 
@@ -67,26 +70,36 @@ type
 
   TParseState = set of TStepState;
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   TEditMask = type string;
 =======
 
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+
+>>>>>>> origin/fixes_2_2
 
 { TMaskUtils }
 
 type
   TMaskUtils = class(TObject)
 <<<<<<< HEAD
+<<<<<<< HEAD
   private
 =======
     private
 >>>>>>> graemeg/fixes_2_2
+=======
+    private
+>>>>>>> origin/fixes_2_2
     FValue: string;
     SourcePosition,Position : Integer;
     FEditMask,FMask : string;
     SourceVal,ExitVal : string;
+<<<<<<< HEAD
 <<<<<<< HEAD
     FMatched : Boolean;
     FMissChar : Char;
@@ -94,6 +107,10 @@ type
     Matched : Boolean;
     MissChar : Char;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Matched : Boolean;
+    MissChar : Char;
+>>>>>>> origin/fixes_2_2
     State : TParseState;
     procedure EvaluateExit;
     procedure EvaluateMissing;
@@ -115,14 +132,19 @@ type
     procedure SetMask(const AValue: string);
     procedure SetValue(const AValue: string);
 <<<<<<< HEAD
+<<<<<<< HEAD
   protected
 =======
     protected
 >>>>>>> graemeg/fixes_2_2
+=======
+    protected
+>>>>>>> origin/fixes_2_2
     procedure RaiseError;
     procedure ExtractMask;
     function MaskPtr : Char;
     function SourcePtr : Char;
+<<<<<<< HEAD
 <<<<<<< HEAD
     property Matched: Boolean read FMatched write FMatched;
     property MissChar: Char read FMissChar write FMissChar;
@@ -130,6 +152,9 @@ type
 =======
     public
 >>>>>>> graemeg/fixes_2_2
+=======
+    public
+>>>>>>> origin/fixes_2_2
     function ValidateInput : string;
     property Mask : string read FEditMask write SetMask;
     property Value : string read FValue write SetValue;
@@ -600,6 +625,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
   Format Value string using EditMask, dont use 2d and 3d fields of EditMask,
   set own Blank char and Matched = False
@@ -622,6 +648,8 @@ begin
 end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 end.
 

@@ -640,6 +640,7 @@ begin
                  end;
                if useunicodefunctions then
 <<<<<<< HEAD
+<<<<<<< HEAD
                  LineBuf[BufCounter].UniCodeChar := Widechar(mapcp850[WordRec(VideoBuf^[BufCounter]).One].unicode)
                else
                  LineBuf[BufCounter].UniCodeChar := Widechar(WordRec(VideoBuf^[BufCounter]).One);
@@ -656,6 +657,15 @@ begin
                else }
                LineBuf^[BufCounter].Attributes := WordRec(VideoBuf^[BufCounter]).Two;
 >>>>>>> graemeg/fixes_2_2
+=======
+                 LineBuf^[BufCounter].UniCodeChar := Widechar(mapcp850[WordRec(VideoBuf^[BufCounter]).One].unicode)
+               else
+                 LineBuf^[BufCounter].UniCodeChar := Widechar(WordRec(VideoBuf^[BufCounter]).One);
+               { If (WordRec(VideoBuf^[BufCounter]).Two and $80)<>0 then
+                 LineBuf^[BufCounter].Attributes := $100+WordRec(VideoBuf^[BufCounter]).Two
+               else }
+               LineBuf^[BufCounter].Attributes := WordRec(VideoBuf^[BufCounter]).Two;
+>>>>>>> origin/fixes_2_2
 
                Inc(BufCounter);
              end; { for }
@@ -692,10 +702,13 @@ begin
       }
       if useunicodefunctions then
 <<<<<<< HEAD
+<<<<<<< HEAD
         WriteConsoleOutputW(TextRec(Output).Handle, @LineBuf, BufSize, BufCoord, WriteRegion)
       else
         WriteConsoleOutput(TextRec(Output).Handle, @LineBuf, BufSize, BufCoord, WriteRegion);
 =======
+=======
+>>>>>>> origin/fixes_2_2
         WriteConsoleOutputW(TextRec(Output).Handle, LineBuf, BufSize, BufCoord, WriteRegion)
       else
         WriteConsoleOutput(TextRec(Output).Handle, LineBuf, BufSize, BufCoord, WriteRegion);

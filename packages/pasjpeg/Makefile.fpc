@@ -1,13 +1,18 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for PasJPEG
 >>>>>>> graemeg/fixes_2_2
+=======
+#   Makefile.fpc for PasJPEG
+>>>>>>> origin/fixes_2_2
 #
 
 [package]
 name=pasjpeg
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -30,6 +35,8 @@ version=2.5.1
 [require]
 packages=rtl fpmkunit
 =======
+=======
+>>>>>>> origin/fixes_2_2
 version=2.2.5
 
 [target]
@@ -42,11 +49,15 @@ implicitunits=jcapimin jcapistd jccoefct jccolor jcdctmgr jchuff jcinit jcmainct
       jidctint jidctred jinclude jmemmgr jmemnobs jmorecfg jpeglib \
       jquant1 jquant2 jutils
 examples=cjpeg demo djpeg jpegtran rdjpgcom
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [install]
 fpcpackage=y
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [default]
 fpcdir=../..
@@ -137,6 +148,8 @@ else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
 =======
+=======
+>>>>>>> origin/fixes_2_2
 [compiler]
 sourcedir=src
 
@@ -145,4 +158,7 @@ fpcdir=../..
 
 [rules]
 .NOTPARALLEL:
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

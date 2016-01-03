@@ -44,8 +44,11 @@ const
  AllowDirectorySeparators : set of char = ['\','/'];
  AllowDriveSeparators : set of char = [':'];
 <<<<<<< HEAD
+<<<<<<< HEAD
 { FileNameCaseSensitive and FileNameCasePreserving are defined separately below!!! }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { FileNameCaseSensitive is defined separately below!!! }
 >>>>>>> graemeg/fixes_2_2
  maxExitCode = 65535;
@@ -64,7 +67,10 @@ const
   FileNameCasePreserving: boolean = true;
 =======
   FileNameCaseSensitive : boolean = true;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   CtrlZMarksEOF: boolean = true; (* #26 is considered as end of file *)
 
   sLineBreak = LineEnding;
@@ -830,7 +836,10 @@ begin
 <<<<<<< HEAD
 =======
          inclocked(Thread_count);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { Allocate Threadvars ?!}
          if assigned(Dll_Thread_Attach_Hook) then
            Dll_Thread_Attach_Hook(DllParam);

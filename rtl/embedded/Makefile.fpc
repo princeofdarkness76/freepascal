@@ -32,9 +32,12 @@ units=$(SYSTEMUNIT) $(CPU_UNITS) objpas # macpas iso7185 strings \
 #       variants types rtlconsts sysconst dateutil
 #implicitunits=exeinfo
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 #rsts=math rtlconsts varutils typinfo variants classes sysconst dateutil
 
@@ -311,10 +314,14 @@ dateutil$(PPUEXT) : $(OBJPASDIR)/dateutil.pp $(SYSTEMUNIT)$(PPUEXT)
 #
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) math$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
 =======
 macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) math$(PPUEXT)
 >>>>>>> graemeg/fixes_2_2
+=======
+macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) math$(PPUEXT)
+>>>>>>> origin/fixes_2_2
         $(COMPILER) $(INC)/macpas.pp $(REDIR)
 
 #

@@ -54,6 +54,7 @@ type
   PTransferSoundData = ^sTransferSoundData; 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   sTransferRegion = record
   	touchX,   touchY: cint16;
   	touchXpx, touchYpx: cint16;
@@ -63,6 +64,8 @@ type
 
     unixTime: cint32;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   sTransferSound = record
     data: array [0..15] of TransferSoundData;
     count: cuint8;
@@ -111,7 +114,10 @@ type
     mailBusy: cuint8;
     mailSize: cuint32;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
   TransferRegion = sTransferRegion; 
   TTransferRegion = TransferRegion;
@@ -122,13 +128,19 @@ const
   //IPC : pTransferRegion = pointer($027FF000);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
   IPC_PEN_DOWN = (1 shl 6);
   IPC_X = (1 shl 0);
   IPC_Y = (1 shl 1);
   IPC_LID_CLOSED = (1 shl 7);
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 //---------------------------------------------------------------------------------
 // Synchronization register
 //---------------------------------------------------------------------------------
@@ -140,6 +152,7 @@ const
   IPC_SYNC_IRQ_ENABLE: IPC_SYNC_BITS =	(1 shl 14);
   IPC_SYNC_IRQ_REQUEST: IPC_SYNC_BITS	=	(1 shl 13);
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   
 function getIPC(): PTransferRegion; inline;
@@ -148,6 +161,8 @@ procedure IPC_SendSync(sync: cuint); inline;
 function IPC_GetSync(): cint; inline;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}  
 
 
@@ -175,7 +190,10 @@ end;
 
 
 {$ifdef NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
   REG_IPC_FIFO_TX		: pcuint32 = pointer($04000188);
   REG_IPC_FIFO_RX		: pcuint32 = pointer($04100000);
@@ -196,6 +214,7 @@ const
 	IPC_FIFO_ENABLE      : IPC_CONTROL_BITS = (1 shl 15);
 {$endif NDS_INTERFACE}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef NDS_IMPLEMENTATION}
 function getIPC(): PTransferRegion; inline;
@@ -219,10 +238,15 @@ begin
 end;
 {$endif NDS_IMPLEMENTATION}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef NDS_INTERFACE}
 function getIPC(): pTransferRegion; inline;
 function IPC(): TransferRegion; 
 procedure IPC_SendSync(sync: cuint); inline; 
 function IPC_GetSync(): cint; inline;
 {$endif NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -19,9 +19,12 @@ const
 // colon ($3a) is excluded, it is handled in the code
   ns_ASCII = [{ $3A,} $41..$5A, $5F, $61..$7A, $C0..$D6, $D8..$F6, $F8..$FF];
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   namingBitmap: array[0..$0C] of TSetOfByte = (
 =======
+=======
+>>>>>>> origin/fixes_2_2
   ns_0200  = [0..$17, $50..$A8, $BB..$C1];
   ns_0300  = [$86, $88..$8A, $8C, $8E..$A1,
               $A3..$CE, $D0..$D6, $DA, $DC,
@@ -64,7 +67,10 @@ const
   ns_3000  = [$41..$94, $A1..$FA] + [$07, $21..$29];
 
   namingBitmap: array[0..$30] of TSetOfByte = (
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   [],                              // 00 - nothing allowed
   [0..255],                        // 01 - all allowed

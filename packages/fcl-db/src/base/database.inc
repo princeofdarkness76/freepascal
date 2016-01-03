@@ -41,16 +41,22 @@ end;
 procedure TDatabase.DoDisconnect;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   CloseDatasets;
   CloseTransactions;
   DoInternalDisConnect;
   if csLoading in ComponentState then
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Closedatasets;
   Closetransactions;
   DoInternalDisConnect;
   if csloading in ComponentState then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FOpenAfterRead := false;
   FConnected := False;
 end;
@@ -103,6 +109,7 @@ begin
     begin
     For I:=FTransactions.Count-1 downto 0 do
 <<<<<<< HEAD
+<<<<<<< HEAD
       try
         TDBTransaction(FTransactions[i]).EndTransaction;
       except
@@ -112,6 +119,9 @@ begin
 =======
       TDBTransaction(FTransactions[i]).EndTransaction;
 >>>>>>> graemeg/fixes_2_2
+=======
+      TDBTransaction(FTransactions[i]).EndTransaction;
+>>>>>>> origin/fixes_2_2
     end;
 end;
 
@@ -136,6 +146,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TDatabase.SetParams(AValue: TStrings);
 begin
   if AValue<>nil then
@@ -144,6 +155,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Function TDatabase.GetDataSetCount : Longint;
 
 begin
@@ -237,10 +250,14 @@ end;
 
 { ---------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
     TDBDataset
 =======
     TDBdataset
 >>>>>>> graemeg/fixes_2_2
+=======
+    TDBdataset
+>>>>>>> origin/fixes_2_2
   ---------------------------------------------------------------------}
 
 Procedure TDBDataset.SetDatabase (Value : TDatabase);
@@ -318,10 +335,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TDBTransaction.InternalHandleException;
 =======
 Procedure TDBTransaction.InternalHandleException;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TDBTransaction.InternalHandleException;
+>>>>>>> origin/fixes_2_2
 
 begin
   if assigned(classes.ApplicationHandleException) then
@@ -331,10 +352,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TDBTransaction.CheckActive;
 =======
 Procedure TDBTransaction.CheckActive;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TDBTransaction.CheckActive;
+>>>>>>> origin/fixes_2_2
 
 begin
   If not FActive Then
@@ -342,16 +367,21 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TDBTransaction.CheckInactive;
 =======
 Procedure TDBTransaction.CheckInActive;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TDBTransaction.CheckInActive;
+>>>>>>> origin/fixes_2_2
 
 begin
   If FActive Then
     DatabaseError(STransActive,Self);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TDBTransaction.Commit;
 begin
@@ -379,26 +409,37 @@ procedure TDBTransaction.CloseTrans;
 =======
 Procedure TDBTransaction.CloseTrans;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TDBTransaction.CloseTrans;
+>>>>>>> origin/fixes_2_2
 
 begin
   FActive := false;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TDBTransaction.OpenTrans;
 =======
 Procedure TDBTransaction.OpenTrans;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TDBTransaction.OpenTrans;
+>>>>>>> origin/fixes_2_2
 
 begin
   FActive := true;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TDBTransaction.SetDatabase(Value: TDatabase);
 =======
 Procedure TDBTransaction.SetDatabase (Value : TDatabase);
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TDBTransaction.SetDatabase (Value : TDatabase);
+>>>>>>> origin/fixes_2_2
 
 begin
   If Value<>FDatabase then
@@ -413,6 +454,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TDBTransaction.Create(AOwner: TComponent);
 
 begin
@@ -422,6 +464,8 @@ end;
 
 procedure TDBTransaction.CheckDatabase;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 constructor TDBTransaction.create(AOwner : TComponent);
 
 begin
@@ -430,13 +474,17 @@ begin
 end;
 
 Procedure TDBTransaction.CheckDatabase;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
   If (FDatabase=Nil) then
     DatabaseError(SErrNoDatabaseAvailable,Self)
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function TDBTransaction.AllowClose(DS : TDBDataset) : Boolean;
 
@@ -454,11 +502,17 @@ procedure TDBTransaction.CloseDataSets;
 
 Var I : longint;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TDBTransaction.CloseDataSets;
+
+Var I : longint;
+>>>>>>> origin/fixes_2_2
 
 begin
   If Assigned(FDatasets) then
     begin
     For I:=FDatasets.Count-1 downto 0 do
+<<<<<<< HEAD
 <<<<<<< HEAD
       begin
       DS:=TDBDataset(FDatasets[i]);
@@ -470,12 +524,17 @@ end;
 
 destructor TDBTransaction.Destroy;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       TDBDataset(FDatasets[i]).Close;
     end;
 end;
 
 Destructor TDBTransaction.Destroy;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
   Database:=Nil;
@@ -495,6 +554,7 @@ begin
       TDBDataset(FDataSets[i]).Transaction:=Nil;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TDBTransaction.GetDataset(Index: longint): TDBDataset;
 
@@ -516,6 +576,8 @@ begin
   else
     Result:=0;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function TDBTransaction.GetDataSetCount : Longint;
 
 begin
@@ -535,7 +597,10 @@ begin
     FDatasets.Delete(I)
   else
     DatabaseErrorFmt(SNoDatasetRegistered,[DS.Name]);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TDBTransaction.RegisterDataset (DS : TDBDataset);
@@ -551,6 +616,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TDBTransaction.UnRegisterDataset (DS : TDBDataset);
 
 Var I : longint;
@@ -562,6 +628,8 @@ begin
   else
     DatabaseErrorFmt(SNoDatasetRegistered,[DS.Name]);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function TDBTransaction.GetDataset(Index : longint) : TDBDataset;
 
 begin
@@ -572,13 +640,17 @@ begin
     result := nil;
     DatabaseError(SNoDatasets);
   end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 { ---------------------------------------------------------------------
     TCustomConnection
   ---------------------------------------------------------------------}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -589,13 +661,18 @@ end;
 
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TCustomConnection.SetAfterConnect(const AValue: TNotifyEvent);
 begin
   if FAfterConnect=AValue then exit;
   FAfterConnect:=AValue;
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function TCustomConnection.GetDataSet(Index: Longint): TDataSet;
 begin
   Result := nil;
@@ -615,6 +692,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomConnection.SetAfterConnect(const AValue: TNotifyEvent);
 begin
   FAfterConnect:=AValue;
@@ -627,11 +705,17 @@ procedure TCustomConnection.SetAfterDisconnect(const AValue: TNotifyEvent);
 begin
   if FAfterDisconnect=AValue then exit;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TCustomConnection.SetAfterDisconnect(const AValue: TNotifyEvent);
+begin
+  if FAfterDisconnect=AValue then exit;
+>>>>>>> origin/fixes_2_2
   FAfterDisconnect:=AValue;
 end;
 
 procedure TCustomConnection.SetBeforeConnect(const AValue: TNotifyEvent);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   FBeforeConnect:=AValue;
 end;
@@ -661,12 +745,17 @@ end;
 procedure TCustomConnection.SetConnected(Value: boolean);
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if FBeforeConnect=AValue then exit;
   FBeforeConnect:=AValue;
 end;
 
 procedure TCustomConnection.SetConnected(Value: boolean);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   If Value<>Connected then
     begin
@@ -682,11 +771,16 @@ begin
         if Assigned(BeforeConnect) then
           BeforeConnect(self);
 <<<<<<< HEAD
+<<<<<<< HEAD
         DoLoginPrompt;
 =======
         if FLoginPrompt then if assigned(FOnLogin) then
           FOnLogin(self,'','');
 >>>>>>> graemeg/fixes_2_2
+=======
+        if FLoginPrompt then if assigned(FOnLogin) then
+          FOnLogin(self,'','');
+>>>>>>> origin/fixes_2_2
         DoConnect;
         if Assigned(AfterConnect) then
           AfterConnect(self);
@@ -703,6 +797,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCustomConnection.GetLoginParams(out ADatabaseName, AUserName, APassword: string);
@@ -738,11 +833,16 @@ begin
   FBeforeDisconnect:=AValue;
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TCustomConnection.SetBeforeDisconnect(const AValue: TNotifyEvent);
 begin
   if FBeforeDisconnect=AValue then exit;
   FBeforeDisconnect:=AValue;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TCustomConnection.DoConnect;
@@ -778,6 +878,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomConnection.Close(ForceClose : Boolean = False);
 begin
   try
@@ -791,6 +892,11 @@ procedure TCustomConnection.Close;
 begin
   Connected := False;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TCustomConnection.Close;
+begin
+  Connected := False;
+>>>>>>> origin/fixes_2_2
 end;
 
 destructor TCustomConnection.Destroy;

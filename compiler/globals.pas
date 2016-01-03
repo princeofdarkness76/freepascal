@@ -49,6 +49,7 @@ interface
     const
        delphimodeswitches =
 <<<<<<< HEAD
+<<<<<<< HEAD
          [m_delphi,m_class,m_objpas,m_result,m_string_pchar,
           m_pointer_2_procedure,m_autoderef,m_tp_procvar,m_initfinal,m_default_ansistring,
           m_out,m_default_para,m_duplicate_names,m_hintdirective,
@@ -73,11 +74,16 @@ interface
 >>>>>>> origin/cpstrnew
           m_property,m_default_inline,m_except,m_advanced_records];
 =======
+=======
+>>>>>>> origin/fixes_2_2
          [m_delphi,m_all,m_class,m_objpas,m_result,m_string_pchar,
           m_pointer_2_procedure,m_autoderef,m_tp_procvar,m_initfinal,m_default_ansistring,
           m_out,m_default_para,m_duplicate_names,m_hintdirective,m_add_pointer,
           m_property,m_default_inline,m_except];
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        fpcmodeswitches =
          [m_fpc,m_all,m_string_pchar,m_nested_comment,m_repeat_forward,
           m_cvar_support,m_initfinal,m_hintdirective,
@@ -97,6 +103,7 @@ interface
           m_repeat_forward,m_cvar_support,m_initfinal,m_out,m_default_para,m_hintdirective,
           m_property,m_default_inline,m_except];
        tpmodeswitches =
+<<<<<<< HEAD
 <<<<<<< HEAD
          [m_tp7,m_tp_procvar,m_duplicate_names];
 {$ifdef gpc_mode}
@@ -138,6 +145,8 @@ interface
          [m_iso,m_all,m_tp_procvar,m_duplicate_names,m_nested_procvars,m_non_local_goto];
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
          [m_tp7,m_all,m_tp_procvar,m_duplicate_names];
 {$ifdef gpc_mode}
        gpcmodeswitches =
@@ -220,12 +229,15 @@ interface
          modeswitches    : tmodeswitches;
          optimizerswitches : toptimizerswitches;
 <<<<<<< HEAD
+<<<<<<< HEAD
          { generate information necessary to perform these wpo's during a subsequent compilation }
          genwpoptimizerswitches: twpoptimizerswitches;
          { perform these wpo's using information generated during a previous compilation }
          dowpoptimizerswitches: twpoptimizerswitches;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          debugswitches   : tdebugswitches;
          { 0: old behaviour for sets <=256 elements
            >0: round to this size }
@@ -266,7 +278,10 @@ interface
          maxfpuregisters : shortint;
 
          minfpconstprec  : tfloattype;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        end;
 
     const
@@ -696,6 +711,79 @@ interface
         minfpconstprec : s32real;
       );
 
+    const
+      default_settings : TSettings = (
+        globalswitches : [cs_check_unit_name,cs_link_static];
+        moduleswitches : [cs_extsyntax,cs_implicit_exceptions];
+        localswitches : [cs_check_io,cs_typed_const_writable];
+        modeswitches : fpcmodeswitches;
+        optimizerswitches : [];
+        debugswitches : [];
+        setalloc : 0;
+        packenum : 4;
+        alignment : (
+          procalign : 0;
+          loopalign : 0;
+          jumpalign : 0;
+          constalignmin : 0;
+          constalignmax : 0;
+          varalignmin : 0;
+          varalignmax : 0;
+          localalignmin : 0;
+          localalignmax : 0;
+          recordalignmin : 0;
+          recordalignmax : 0;
+          maxCrecordalign : 0;
+        );
+{$ifdef i386}
+        cputype : cpu_Pentium;
+        optimizecputype : cpu_Pentium3;
+        fputype : fpu_x87;
+{$endif i386}
+{$ifdef m68k}
+        cputype : cpu_MC68020;
+        optimizecputype : cpu_MC68020;
+        fputype : fpu_soft;
+{$endif m68k}
+{$ifdef powerpc}
+        cputype : cpu_PPC604;
+        optimizecputype : cpu_ppc7400;
+        fputype : fpu_standard;
+{$endif powerpc}
+{$ifdef POWERPC64}
+        cputype : cpu_PPC970;
+        optimizecputype : cpu_ppc970;
+        fputype : fpu_standard;
+{$endif POWERPC64}
+{$ifdef sparc}
+        cputype : cpu_SPARC_V8;
+        optimizecputype : cpu_SPARC_V8;
+        fputype : fpu_hard;
+{$endif sparc}
+{$ifdef arm}
+        cputype : cpu_armv3;
+        optimizecputype : cpu_armv3;
+        fputype : fpu_fpa;
+{$endif arm}
+{$ifdef x86_64}
+        cputype : cpu_athlon64;
+        optimizecputype : cpu_athlon64;
+        fputype : fpu_sse64;
+{$endif x86_64}
+{$ifdef avr}
+        cputype : cpuinfo.cpu_avr;
+        optimizecputype : cpuinfo.cpu_avr;
+        fputype : fpu_none;
+{$endif avr}
+        asmmode : asmmode_standard;
+        interfacetype : it_interfacecom;
+        defproccall : pocall_default;
+        sourcecodepage : '8859-1';
+        packrecords     : 0;
+        maxfpuregisters : 0;
+        minfpconstprec : s32real;
+      );
+
     var
       starttime  : real;
 
@@ -730,7 +818,10 @@ interface
     function UpdateAlignmentStr(s:string;var a:talignmentinfo):boolean;
     function UpdateOptimizerStr(s:string;var a:toptimizerswitches):boolean;
     function UpdateDebugStr(s:string;var a:tdebugswitches):boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     function IncludeFeature(const s : string) : boolean;
     function SetMinFPConstPrec(const s: string; var a: tfloattype) : boolean;
 
@@ -745,11 +836,15 @@ interface
     function const_align_size(siz: longint): shortint;
 =======
     function const_align(siz: longint): shortint;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ARM}
     function is_double_hilo_swapped: boolean;{$ifdef USEINLINE}inline;{$endif}
 {$endif ARM}
     function floating_point_range_check_error : boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
     function use_dotted_functions: boolean;
 
@@ -759,6 +854,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 implementation
 
@@ -1313,10 +1410,14 @@ implementation
           string2guid:=true;
           end
 <<<<<<< HEAD
+<<<<<<< HEAD
         else
 =======
         else  
 >>>>>>> graemeg/fixes_2_2
+=======
+        else  
+>>>>>>> origin/fixes_2_2
           string2guid:=false;
       end;
 
@@ -1636,6 +1737,48 @@ implementation
       end;
 
 
+    function UpdateDebugStr(s:string;var a:tdebugswitches):boolean;
+      var
+        tok   : string;
+        doset,
+        found : boolean;
+        opt   : tdebugswitch;
+      begin
+        result:=true;
+        uppervar(s);
+        repeat
+          tok:=GetToken(s,',');
+          if tok='' then
+           break;
+          if Copy(tok,1,2)='NO' then
+            begin
+              delete(tok,1,2);
+              doset:=false;
+            end
+          else
+            doset:=true;
+          found:=false;
+          for opt:=low(tdebugswitch) to high(tdebugswitch) do
+            begin
+              if DebugSwitchStr[opt]=tok then
+                begin
+                  found:=true;
+                  break;
+                end;
+            end;
+          if found then
+            begin
+              if doset then
+                include(a,opt)
+              else
+                exclude(a,opt);
+            end
+          else
+            result:=false;
+        until false;
+      end;
+
+
     function IncludeFeature(const s : string) : boolean;
       var
         i : tfeature;
@@ -1678,6 +1821,7 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function var_align(want_align: longint): shortint;
       begin
         var_align := used_align(want_align,current_settings.alignment.varalignmin,current_settings.alignment.varalignmax);
@@ -1686,6 +1830,8 @@ implementation
 
     function var_align_size(siz: longint): shortint;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     function var_align(siz: longint): shortint;
 >>>>>>> graemeg/fixes_2_2
       begin
@@ -1719,6 +1865,25 @@ implementation
       end;
 {$endif ARM}
 
+{$ifdef ARM}
+    function is_double_hilo_swapped: boolean;{$ifdef USEINLINE}inline;{$endif}
+      begin
+        result := (current_settings.fputype in [fpu_fpa,fpu_fpa10,fpu_fpa11]) and
+          not(cs_fp_emulation in current_settings.moduleswitches);
+{$ifdef FPC_DOUBLE_HILO_SWAPPED}
+        { inverse result if compiler was compiled with swapped hilo already }
+        result := not result;
+{$endif FPC_DOUBLE_HILO_SWAPPED}
+      end;
+{$endif ARM}
+
+
+    function floating_point_range_check_error : boolean;
+      begin
+        result:=((([cs_check_range,cs_check_overflow]*current_settings.localswitches)<>[]) and not
+                   (m_delphi in current_settings.modeswitches)
+                ); // or (cs_ieee_errors in current_settings.localswitches);
+      end;
 
 <<<<<<< HEAD
     function floating_point_range_check_error : boolean;

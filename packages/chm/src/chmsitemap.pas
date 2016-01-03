@@ -13,20 +13,28 @@
   You should have received a copy of the GNU Library General Public License
   along with this library; if not, write to the Free Software Foundation,
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 =======
   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 >>>>>>> graemeg/fixes_2_2
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> origin/fixes_2_2
 }
 {
   See the file COPYING.FPC, included in this distribution,
   for details about the copyright.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 unit chmsitemap;
 =======
 unit chmsitemap; 
 >>>>>>> graemeg/fixes_2_2
+=======
+unit chmsitemap; 
+>>>>>>> origin/fixes_2_2
 
 {$mode objfpc}{$H+}
 
@@ -35,18 +43,24 @@ interface
 uses
   Classes, SysUtils, fasthtmlparser;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 type
   TChmSiteMapItems = class; // forward
   TChmSiteMap = class;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   
 type
   TChmSiteMapItems = class; // forward
   TChmSiteMap = class;
   
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { TChmSiteMapItem }
 
   TChmSiteMapItem = class(TPersistent)
@@ -62,11 +76,14 @@ type
     FText: String;
     FURL: String;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FMerge : String;
     FFrameName : String;
     FWindowName : String;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure SetChildren(const AValue: TChmSiteMapItems);
   public
     constructor Create(AOwner: TChmSiteMapItems);
@@ -83,17 +100,23 @@ type
     property Comment: String read FComment write FComment;
     property Owner: TChmSiteMapItems read FOwner;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     property FrameName: String read FFrameName write FFrameName;
     property WindowName: String read FWindowName write FWindowName;
 //    property Type_: Integer read FType_ write FType_; either Local or URL
     property Merge: String read FMerge write FMerge;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     //property FrameName: String read FFrameName write FFrameName;
     //property WindowName: String read FWindowName write FWindowName;
     //property Type_: Integer read FType_ write FType_; either Local or URL
     //property Merge: Boolean read FMerge write FMerge;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   { TChmSiteMapItems }
@@ -101,9 +124,12 @@ type
   TChmSiteMapItems = class(TPersistent)
   private
 <<<<<<< HEAD
+<<<<<<< HEAD
     FInternalData: Dword;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FList: TList;
     FOwner: TChmSiteMap;
     FParentItem: TChmSiteMapItem;
@@ -124,9 +150,12 @@ type
     property ParentItem: TChmSiteMapItem read FParentItem;
     property Owner: TChmSiteMap read FOwner;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property InternalData: Dword read FInternalData write FInternalData;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
   
 
@@ -161,9 +190,12 @@ type
     FWindowName: String;
     FLevel: Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FLevelForced: Boolean;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FWindowStyles: LongInt;
     procedure SetItems(const AValue: TChmSiteMapItems);
   protected
@@ -175,9 +207,12 @@ type
     procedure LoadFromFile(AFileName: String);
     procedure LoadFromStream(AStream: TStream);
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SaveToFile(AFileName:String);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure SaveToStream(AStream: TStream);
     property Items: TChmSiteMapItems read FItems write SetItems;
     property SiteMapType: TSiteMapType read FSiteMapType;
@@ -237,13 +272,17 @@ var
   TagAttributeName,
   TagAttributeValue: String;
 <<<<<<< HEAD
+<<<<<<< HEAD
   isParam,IsMerged : string;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   //WriteLn('TAG:', AActualTag);
   TagName := GetTagName(ACaseInsensitiveTag);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {  if not (smtHTML in FSiteMapTags) then begin
     if (TagName = 'HTML') or (TagName = '/HTML') then Include(FSiteMapTags, smtHTML);
@@ -254,6 +293,8 @@ begin
 
   //if (smtHTML in FSiteMapTags) then begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if not (smtHTML in FSiteMapTags) then begin
     if TagName = 'HTML' then Include(FSiteMapTags, smtHTML);
   end
@@ -262,7 +303,10 @@ begin
   end;
   
   if (smtHTML in FSiteMapTags) then begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      if not (smtBODY in FSiteMapTags) then begin
        if TagName = 'BODY' then Include(FSiteMapTags, smtBODY);
      end
@@ -270,10 +314,14 @@ begin
        if TagName = '/BODY' then Exclude(FSiteMapTags, smtBODY);
      end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
      
 >>>>>>> graemeg/fixes_2_2
+=======
+     
+>>>>>>> origin/fixes_2_2
      if (smtBODY in FSiteMapTags) then begin
        //WriteLn('GOT TAG: ', AActualTag);
        if TagName = 'UL' then begin
@@ -285,6 +333,7 @@ begin
          DecreaseULevel;
        end
 <<<<<<< HEAD
+<<<<<<< HEAD
        else if (TagName = 'LI') and (FLevel = 0) then
          FLevelForced := True
        else if TagName = 'OBJECT' then begin
@@ -295,11 +344,16 @@ begin
        else if TagName = 'OBJECT' then begin
          Include(FSiteMapBodyTags, smbtOBJECT);
 >>>>>>> graemeg/fixes_2_2
+=======
+       else if TagName = 'OBJECT' then begin
+         Include(FSiteMapBodyTags, smbtOBJECT);
+>>>>>>> origin/fixes_2_2
          If FLevel > 0 then // if it is zero it is the site properties
            NewSiteMapItem;
        end
        else if TagName = '/OBJECT' then begin
          Exclude(FSiteMapBodyTags, smbtOBJECT);
+<<<<<<< HEAD
 <<<<<<< HEAD
          if FLevelForced then
          begin
@@ -395,6 +449,11 @@ begin
        else begin // we are the properties of the object tag
          if (smbtOBJECT in FSiteMapBodyTags) then begin
 >>>>>>> graemeg/fixes_2_2
+=======
+       end
+       else begin // we are the properties of the object tag
+         if (smbtOBJECT in FSiteMapBodyTags) then begin
+>>>>>>> origin/fixes_2_2
            if LowerCase(GetTagName(AActualTag)) = 'param' then begin
 
              TagAttributeName := GetVal(AActualTag, 'name');
@@ -425,6 +484,7 @@ begin
                //else if CompareText(TagAttributeName, '') = 0 then begin
                //end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
              end;
           end;
@@ -432,13 +492,18 @@ begin
      end;
   //end
 =======
+=======
+>>>>>>> origin/fixes_2_2
              end;
            end;
          end;
        end;
      end;
   end
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TChmSiteMap.FoundText(AText: string);
@@ -471,6 +536,7 @@ begin
   if Assigned(FHTMLParser) then FHTMLParser.Free;
   TmpStream := TMemoryStream.Create;
 <<<<<<< HEAD
+<<<<<<< HEAD
   try
     TmpStream.LoadFromFile(AFileName);
     SetLength(Buffer, TmpStream.Size);
@@ -488,6 +554,8 @@ begin
     FreeAndNil(FHTMLParser);
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   TmpStream.LoadFromFile(AFileName);
   SetLength(Buffer, TmpStream.Size);
   TmpStream.Position := 0;
@@ -497,7 +565,10 @@ begin
   FHTMLParser.OnFoundText := @FoundText;
   FHTMLParser.Exec;
   FreeAndNil(FHTMLParser);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TChmSiteMap.LoadFromStream(AStream: TStream);
@@ -515,6 +586,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TChmSiteMap.SaveToFile(AFileName:String);
 var
@@ -546,6 +618,8 @@ end;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure TChmSiteMap.SaveToStream(AStream: TStream);
 var
   Indent: Integer;
@@ -607,10 +681,14 @@ begin
   WriteString('<!-- Sitemap 1.0 -->');
   WriteString('</HEAD><BODY>');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
   // Site Properties
   WriteString('<OBJECT type="text/site properties">');
   Inc(Indent, 8);
@@ -690,9 +768,12 @@ begin
   FParentItem := AParentItem;
   FOwner := AOwner;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FInternalData := maxLongint;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 destructor TChmSiteMapItems.Destroy;

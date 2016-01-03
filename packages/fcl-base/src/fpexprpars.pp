@@ -196,9 +196,12 @@ Type
 
   TFPOrderingOperation = Class(TFPBooleanResultOperation)
 <<<<<<< HEAD
+<<<<<<< HEAD
   Public
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Procedure Check; override;
   end;
 
@@ -247,6 +250,7 @@ Type
   protected
     Procedure GetNodeValue(var Result : TFPExpressionResult); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
   Public
     Procedure Check; override;
     Function NodeType : TResultType; override;
@@ -255,6 +259,11 @@ Type
     Function NodeType : TResultType; override;
   Public
 >>>>>>> graemeg/fixes_2_2
+=======
+    Procedure Check; override;
+    Function NodeType : TResultType; override;
+  Public
+>>>>>>> origin/fixes_2_2
     Constructor Create(ACondition,ALeft,ARight : TFPExprNode);
     Destructor destroy; override;
     Function AsString : string ; override;
@@ -270,6 +279,7 @@ Type
   protected
     Procedure GetNodeValue(var Result : TFPExpressionResult); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
   Public
     Procedure Check; override;
     Function NodeType : TResultType; override;
@@ -278,6 +288,11 @@ Type
     Function NodeType : TResultType; override;
   Public
 >>>>>>> graemeg/fixes_2_2
+=======
+    Procedure Check; override;
+    Function NodeType : TResultType; override;
+  Public
+>>>>>>> origin/fixes_2_2
     Constructor Create(Args : TExprArgumentArray);
     Destructor destroy; override;
     Function AsString : string ; override;
@@ -288,10 +303,14 @@ Type
 
   TMathOperation = Class(TFPBinaryOperation)
 <<<<<<< HEAD
+<<<<<<< HEAD
   Public
 =======
   protected
 >>>>>>> graemeg/fixes_2_2
+=======
+  protected
+>>>>>>> origin/fixes_2_2
     Procedure Check; override;
     Function NodeType : TResultType; override;
   end;
@@ -309,21 +328,28 @@ Type
 
   TFPSubtractOperation = Class(TMathOperation)
 <<<<<<< HEAD
+<<<<<<< HEAD
   Public
     Procedure Check; override;
     Procedure GetNodeValue(var Result : TFPExpressionResult); override;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Protected
     Procedure check; override;
     Procedure GetNodeValue(var Result : TFPExpressionResult); override;
   Public
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Function AsString : string ; override;
   end;
 
   { TFPMultiplyOperation }
 
   TFPMultiplyOperation = Class(TMathOperation)
+<<<<<<< HEAD
 <<<<<<< HEAD
   Public
     Procedure check; override;
@@ -332,6 +358,11 @@ Type
     Procedure check; override;
   Public
 >>>>>>> graemeg/fixes_2_2
+=======
+  Protected
+    Procedure check; override;
+  Public
+>>>>>>> origin/fixes_2_2
     Function AsString : string ; override;
     Procedure GetNodeValue(var Result : TFPExpressionResult); override;
   end;
@@ -340,6 +371,7 @@ Type
 
   TFPDivideOperation = Class(TMathOperation)
 <<<<<<< HEAD
+<<<<<<< HEAD
   Public
     Procedure Check; override;
 =======
@@ -347,6 +379,11 @@ Type
     Procedure check; override;
   Public
 >>>>>>> graemeg/fixes_2_2
+=======
+  Protected
+    Procedure check; override;
+  Public
+>>>>>>> origin/fixes_2_2
     Function AsString : string ; override;
     Function NodeType : TResultType; override;
     Procedure GetNodeValue(var Result : TFPExpressionResult); override;
@@ -374,6 +411,7 @@ Type
 
   TFPNotNode = Class(TFPUnaryOperator)
 <<<<<<< HEAD
+<<<<<<< HEAD
   Public
     Procedure Check; override;
 =======
@@ -381,6 +419,11 @@ Type
     Procedure Check; override;
   Public
 >>>>>>> graemeg/fixes_2_2
+=======
+  Protected
+    Procedure Check; override;
+  Public
+>>>>>>> origin/fixes_2_2
     Function NodeType : TResultType;  override;
     Procedure GetNodeValue(var Result : TFPExpressionResult);  override;
     Function AsString : String; override;
@@ -388,10 +431,14 @@ Type
 
   TIntConvertNode = Class(TFPConvertNode)
 <<<<<<< HEAD
+<<<<<<< HEAD
   Public
 =======
   Protected
 >>>>>>> graemeg/fixes_2_2
+=======
+  Protected
+>>>>>>> origin/fixes_2_2
     Procedure Check; override;
   end;
 
@@ -414,6 +461,7 @@ Type
 
   TFloatToDateTimeNode = Class(TFPConvertNode)
 <<<<<<< HEAD
+<<<<<<< HEAD
   Public
     Procedure Check; override;
 =======
@@ -421,6 +469,11 @@ Type
     Procedure Check; override;
   Public
 >>>>>>> graemeg/fixes_2_2
+=======
+  Protected
+    Procedure Check; override;
+  Public
+>>>>>>> origin/fixes_2_2
     Function NodeType : TResultType;  override;
     Procedure GetNodeValue(var Result : TFPExpressionResult);  override;
   end;
@@ -577,12 +630,17 @@ Type
   Protected
     Procedure CalcParams;
 <<<<<<< HEAD
+<<<<<<< HEAD
   Public
     Procedure Check; override;
 =======
     Procedure Check; override;
   Public
 >>>>>>> graemeg/fixes_2_2
+=======
+    Procedure Check; override;
+  Public
+>>>>>>> origin/fixes_2_2
     Constructor CreateFunction(AID : TFPExprIdentifierDef; Const Args : TExprArgumentArray); virtual;
     Destructor Destroy; override;
     Property ArgumentNodes : TExprArgumentArray Read FArgumentNodes;
@@ -657,10 +715,14 @@ Type
     Constructor Create(AOwner :TComponent); override;
     Destructor Destroy; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Function IdentifierByName(const AName : ShortString) : TFPExprIdentifierDef; virtual;
 =======
     Function IdentifierByName(AName : ShortString) : TFPExprIdentifierDef;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Function IdentifierByName(AName : ShortString) : TFPExprIdentifierDef;
+>>>>>>> origin/fixes_2_2
     Procedure Clear;
     Procedure EvaluateExpression(Var Result : TFPExpressionResult);
     Function Evaluate : TFPExpressionResult;
@@ -713,9 +775,12 @@ Function CharToResultType(C : Char) : TResultType;
 Function BuiltinIdentifiers : TExprBuiltInManager;
 Procedure RegisterStdBuiltins(AManager : TExprBuiltInManager);
 <<<<<<< HEAD
+<<<<<<< HEAD
 function ArgToFloat(Arg: TFPExpressionResult): TExprFloat;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 Const
   AllBuiltIns = [bcStrings,bcDateTime,bcMath,bcBoolean,bcConversion,bcData,bcVaria,bcUser];
@@ -758,10 +823,14 @@ Resourcestring
   SErrNoOperand = 'No operand for unary operation %s';
   SErrNoleftOperand = 'No left operand for binary operation %s';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrNoRightOperand = 'No right operand for binary operation %s';
 =======
   SErrNoRightOperand = 'No left operand for binary operation %s';
 >>>>>>> graemeg/fixes_2_2
+=======
+  SErrNoRightOperand = 'No left operand for binary operation %s';
+>>>>>>> origin/fixes_2_2
   SErrNoNegation = 'Cannot negate expression of type %s : %s';
   SErrNoNOTOperation = 'Cannot perform "not" on expression of type %s: %s';
   SErrTypesDoNotMatch = 'Type mismatch: %s<>%s for expressions "%s" and "%s".';
@@ -991,6 +1060,7 @@ Var
   X : TExprFloat;
   I : Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   prevC: Char;
 
 begin
@@ -1007,6 +1077,8 @@ begin
     FToken := FToken+C;
     prevC := Upcase(C);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
   C:=CurrentChar;
@@ -1015,7 +1087,10 @@ begin
     If Not (IsDigit(C) or ((FToken<>'') and (Upcase(C)='E'))) then
       ScanError(Format(SErrInvalidNumberChar,[C]));
     FToken := FToken+C;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     C:=NextPos;
     end;
   Val(FToken,X,I);
@@ -1125,10 +1200,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TFPExpressionParser.IdentifierByName(const AName: ShortString): TFPExprIdentifierDef;
 =======
 function TFPExpressionParser.IdentifierByName(AName: ShortString): TFPExprIdentifierDef;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TFPExpressionParser.IdentifierByName(AName: ShortString): TFPExprIdentifierDef;
+>>>>>>> origin/fixes_2_2
 begin
   If FDirty then
     CreateHashList;
@@ -2898,6 +2977,7 @@ begin
     rtp:=CharToResultType(FID.ParameterTypes[i+1]);
     rta:=FArgumentNodes[i].NodeType;
 <<<<<<< HEAD
+<<<<<<< HEAD
     If (rtp<>rta) then begin
 
       // Automatically convert integers to floats in functions that return
@@ -2915,6 +2995,11 @@ begin
       RaiseParserError(SErrInvalidArgumentType,[I+1,ResultTypeName(rtp),ResultTypeName(rta)])
     end;
 >>>>>>> graemeg/fixes_2_2
+=======
+    If (rtp<>rta) then
+      RaiseParserError(SErrInvalidArgumentType,[I+1,ResultTypeName(rtp),ResultTypeName(rta)])
+    end;
+>>>>>>> origin/fixes_2_2
 end;
 
 constructor TFPExprFunction.CreateFunction(AID: TFPExprIdentifierDef;
@@ -3002,6 +3087,7 @@ end;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function ArgToFloat(Arg: TFPExpressionResult): TExprFloat;
 // Utility function for the built-in math functions. Accepts also integers
 // in place of the floating point arguments. To be called in builtins or
@@ -3015,78 +3101,112 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 // Math builtins
 
 Procedure BuiltInCos(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resFloat:=Cos(ArgToFloat(Args[0]));
 =======
   Result.resFloat:=Cos(Args[0].resFloat);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resFloat:=Cos(Args[0].resFloat);
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure BuiltInSin(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resFloat:=Sin(ArgToFloat(Args[0]));
 =======
   Result.resFloat:=Sin(Args[0].resFloat);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resFloat:=Sin(Args[0].resFloat);
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure BuiltInArcTan(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resFloat:=Arctan(ArgToFloat(Args[0]));
 =======
   Result.resFloat:=Arctan(Args[0].resFloat);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resFloat:=Arctan(Args[0].resFloat);
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure BuiltInAbs(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resFloat:=Abs(ArgToFloat(Args[0]));
 =======
   Result.resFloat:=Abs(Args[0].resFloat);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resFloat:=Abs(Args[0].resFloat);
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure BuiltInSqr(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resFloat:=Sqr(ArgToFloat(Args[0]));
 =======
   Result.resFloat:=Sqr(Args[0].resFloat);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resFloat:=Sqr(Args[0].resFloat);
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure BuiltInSqrt(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resFloat:=Sqrt(ArgToFloat(Args[0]));
 =======
   Result.resFloat:=Sqrt(Args[0].resFloat);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resFloat:=Sqrt(Args[0].resFloat);
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure BuiltInExp(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resFloat:=Exp(ArgToFloat(Args[0]));
 =======
   Result.resFloat:=Exp(Args[0].resFloat);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resFloat:=Exp(Args[0].resFloat);
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure BuiltInLn(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resFloat:=Ln(ArgToFloat(Args[0]));
 =======
   Result.resFloat:=Ln(Args[0].resFloat);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resFloat:=Ln(Args[0].resFloat);
+>>>>>>> origin/fixes_2_2
 end;
 
 Const
@@ -3095,46 +3215,66 @@ Const
 Procedure BuiltInLog(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resFloat:=Ln(ArgToFloat(Args[0]))/L10;
 =======
   Result.resFloat:=Ln(Args[0].resFloat)/L10;
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resFloat:=Ln(Args[0].resFloat)/L10;
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure BuiltInRound(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resInteger:=Round(ArgToFloat(Args[0]));
 =======
   Result.resInteger:=Round(Args[0].resFloat);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resInteger:=Round(Args[0].resFloat);
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure BuiltInTrunc(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resInteger:=Trunc(ArgToFloat(Args[0]));
 =======
   Result.resInteger:=Trunc(Args[0].resFloat);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resInteger:=Trunc(Args[0].resFloat);
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure BuiltInInt(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resFloat:=Int(ArgToFloat(Args[0]));
 =======
   Result.resFloat:=Int(Args[0].resFloat);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resFloat:=Int(Args[0].resFloat);
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure BuiltInFrac(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resFloat:=frac(ArgToFloat(Args[0]));
 =======
   Result.resFloat:=frac(Args[0].resFloat);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resFloat:=frac(Args[0].resFloat);
+>>>>>>> origin/fixes_2_2
 end;
 
 // String builtins
@@ -3304,39 +3444,55 @@ Procedure BuiltInShortDayName(Var Result : TFPExpressionResult; Const Args : TEx
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resString:=DefaultFormatSettings.ShortDayNames[Args[0].resInteger];
 =======
   Result.resString:=ShortDayNames[Args[0].resInteger];
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resString:=ShortDayNames[Args[0].resInteger];
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure BuiltInShortMonthName(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resString:=DefaultFormatSettings.ShortMonthNames[Args[0].resInteger];
 =======
   Result.resString:=ShortMonthNames[Args[0].resInteger];
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resString:=ShortMonthNames[Args[0].resInteger];
+>>>>>>> origin/fixes_2_2
 end;
 Procedure BuiltInLongDayName(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resString:=DefaultFormatSettings.LongDayNames[Args[0].resInteger];
 =======
   Result.resString:=LongDayNames[Args[0].resInteger];
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resString:=LongDayNames[Args[0].resInteger];
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure BuiltInLongMonthName(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result.resString:=DefaultFormatSettings.LongMonthNames[Args[0].resInteger];
 =======
   Result.resString:=LongMonthNames[Args[0].resInteger];
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result.resString:=LongMonthNames[Args[0].resInteger];
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure BuiltInFormatDateTime(Var Result : TFPExpressionResult; Const Args : TExprParameterArray);

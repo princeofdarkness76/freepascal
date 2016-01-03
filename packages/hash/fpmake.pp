@@ -12,6 +12,7 @@ begin
     begin
 {$endif ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P:=AddPackage('hash');
 
 {$ifdef ALLPACKAGES}
@@ -75,6 +76,8 @@ begin
 >>>>>>> origin/cpstrnew
     // md5.ref
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
     P:=AddPackage('hash');
 {$ifdef ALLPACKAGES}
@@ -89,7 +92,10 @@ begin
       T.OSes:=[Linux];
     T:=P.Targets.AddExampleunit('examples/mdtest.pas');
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef ALLPACKAGES}
     Run;
     end;

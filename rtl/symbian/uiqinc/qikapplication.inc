@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the Free Pascal run time library.
     Copyright (c) 2007 by contributors of the Free Pascal Compiler
@@ -39,6 +40,8 @@ implementation
 end.
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
     This file is part of the Free Pascal run time library.
     Copyright (c) 2007 by contributors of the Free Pascal Compiler
@@ -78,4 +81,7 @@ implementation
 
 end.
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -40,12 +40,15 @@
   { variant error codes }
   {$i varerror.inc}
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   { Type helpers}
   {$IFNDEF VER2_6}
   {$i syshelp.inc}
   {$ENDIF}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
     Function FileSearch (Const Name, DirList : String; ImplicitCurrentDir : Boolean = True) : String;
     Var
@@ -340,6 +343,7 @@ Var
   i : longint;
   hstdout : ^text;
 <<<<<<< HEAD
+<<<<<<< HEAD
   
 begin
   if WriteErrorsToStdErr then
@@ -360,6 +364,9 @@ begin
 {$ENDIF HAS_OSERROR}
 =======
 begin
+=======
+begin
+>>>>>>> origin/fixes_2_2
   hstdout:=@stdout;
   Writeln(hstdout^,'An unhandled exception occurred at $',HexStr(PtrUInt(Addr),sizeof(PtrUInt)*2),' :');
   if Obj is exception then
@@ -369,7 +376,10 @@ begin
    end
   else
    Writeln(hstdout^,'Exception object ',Obj.ClassName,' is not of class Exception.');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Writeln(hstdout^,BackTraceStrFunc(Addr));
   if (FrameCount>0) then
     begin
@@ -483,6 +493,7 @@ begin
        106 : HS:=@SInvalidInput;
      end;
 <<<<<<< HEAD
+<<<<<<< HEAD
      if Assigned(HS) then
        E:=EInOutError.CreateRes(HS)
      else
@@ -490,6 +501,9 @@ begin
 =======
      E:=EinOutError.Create (HS^);
 >>>>>>> graemeg/fixes_2_2
+=======
+     E:=EinOutError.Create (HS^);
+>>>>>>> origin/fixes_2_2
      // this routine can be called from FPC_IOCHECK,
      // which clears inoutres and then passes its
      // original value to HandleErrorFrame() (which calls
@@ -574,10 +588,14 @@ begin
   else
     S:=Msg;
 <<<<<<< HEAD
+<<<<<<< HEAD
   Raise EAssertionFailed.Createfmt(SAssertError,[S,Fn,LineNo]) at get_caller_addr(theAddr), get_caller_frame(theAddr);
 =======
   Raise EAssertionFailed.Createfmt(SAssertError,[S,Fn,LineNo]) at Pointer(theAddr);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Raise EAssertionFailed.Createfmt(SAssertError,[S,Fn,LineNo]) at Pointer(theAddr);
+>>>>>>> origin/fixes_2_2
 end;
 
 {$pop} //{$S-} for Error handling functions
@@ -811,6 +829,9 @@ end;
 Var
   GUIDCalledRandomize : Boolean = False;
 
+Var
+  GUIDCalledRandomize : Boolean = False;
+
 Procedure GetRandomBytes(Var Buf; NBytes : Integer);
 
 Var
@@ -895,14 +916,19 @@ begin
 {$ifdef MSWINDOWS}
   SetLength(Result,MAX_PATH);
 <<<<<<< HEAD
+<<<<<<< HEAD
   SetLength(Result,GetModuleFileNameA(Module, Pchar(Result),Length(Result)));
 =======
   SetLength(Result,GetModuleFileName(Module, Pchar(Result),Length(Result)));
 >>>>>>> graemeg/fixes_2_2
+=======
+  SetLength(Result,GetModuleFileName(Module, Pchar(Result),Length(Result)));
+>>>>>>> origin/fixes_2_2
 {$ELSE}
   Result:='';
 {$ENDIF}
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 { Beep support }
@@ -927,3 +953,5 @@ end;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

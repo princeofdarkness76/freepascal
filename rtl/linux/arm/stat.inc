@@ -58,7 +58,10 @@
       ctime  : culong;
       ctime_nsec : culong;
       ino    : culonglong;);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     1:
       (st_dev    : culonglong;
       __pad0_    : array[0..3] of cuchar;

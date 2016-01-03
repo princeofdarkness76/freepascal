@@ -1,15 +1,20 @@
 {
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2007, 2009-2012  Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/fixes_2_2
+=======
+    Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/fixes_2_2
     Original C++ version by Glenn Fiedler (ptc@gaffer.org)
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
     License as published by the Free Software Foundation; either
+<<<<<<< HEAD
 <<<<<<< HEAD
     version 2.1 of the License, or (at your option) any later version
     with the following modification:
@@ -27,6 +32,9 @@
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> graemeg/fixes_2_2
+=======
+    version 2.1 of the License, or (at your option) any later version.
+>>>>>>> origin/fixes_2_2
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -48,10 +56,14 @@
 
   { X11 extensions we want to enable at compile time }
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$INCLUDE x11/x11extensions.inc}
 =======
   {$INCLUDE x11/extensions.inc}
 >>>>>>> graemeg/fixes_2_2
+=======
+  {$INCLUDE x11/extensions.inc}
+>>>>>>> origin/fixes_2_2
 
   {$IFDEF ENABLE_X11_EXTENSION_XF86DGA1}
     {$DEFINE ENABLE_X11_EXTENSION_XF86DGA}
@@ -62,6 +74,7 @@
 
 {$ENDIF UNIX}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 unit ptc;
 
@@ -93,6 +106,8 @@ const
 
 type
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Unit ptc;
 
 Interface
@@ -106,7 +121,10 @@ Const
   PTCPAS_VERSION = 'PTCPas 0.99.7';
 
 Type
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   PUint8  = ^Uint8;
   PUint16 = ^Uint16;
   PUint32 = ^Uint32;
@@ -125,14 +143,19 @@ Type
   Sint64 = Int64;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$INCLUDE core/coreinterface.inc}
 =======
 {$INCLUDE coreinterface.inc}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$INCLUDE coreinterface.inc}
+>>>>>>> origin/fixes_2_2
 
 {$IFNDEF FPDOC}
 
 {$IFDEF ENABLE_C_API}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$INCLUDE c_api/capi_index.inc}
 {$INCLUDE c_api/capi_errord.inc}
@@ -150,6 +173,8 @@ Type
 {$INCLUDE c_api/capi_moded.inc}
 {$INCLUDE c_api/capi_timerd.inc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$INCLUDE c_api/index.pp}
 {$INCLUDE c_api/errord.pp}
 {$INCLUDE c_api/exceptd.pp}
@@ -165,11 +190,15 @@ Type
 {$INCLUDE c_api/consoled.pp}
 {$INCLUDE c_api/moded.pp}
 {$INCLUDE c_api/timerd.pp}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF ENABLE_C_API}
 
 {$ENDIF FPDOC}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 implementation
 
@@ -202,6 +231,8 @@ uses
 {$IFDEF WinCE}
 uses
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Implementation
 
 {$IFDEF GO32V2}
@@ -216,11 +247,15 @@ Uses
 
 {$IFDEF WinCE}
 Uses
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Windows, p_gx;
 {$ENDIF WinCE}
 
 {$IFDEF UNIX}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses
 <<<<<<< HEAD
@@ -241,6 +276,10 @@ uses
 Uses
   BaseUnix, Unix, ctypes, x, xlib, xutil, xatom, keysym
 >>>>>>> graemeg/fixes_2_2
+=======
+Uses
+  BaseUnix, Unix, ctypes, x, xlib, xutil, xatom, keysym
+>>>>>>> origin/fixes_2_2
   {$IFDEF ENABLE_X11_EXTENSION_XRANDR}
   , xrandr
   {$ENDIF ENABLE_X11_EXTENSION_XRANDR}
@@ -254,16 +293,20 @@ Uses
   , xshm, ipc
   {$ENDIF ENABLE_X11_EXTENSION_XSHM}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$IFDEF ENABLE_X11_EXTENSION_GLX}
   , glx
   {$ENDIF ENABLE_X11_EXTENSION_GLX}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   ;
 {$ENDIF UNIX}
 
 { this little procedure is not a good reason to include the whole sysutils
   unit :) }
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure FreeAndNil(var q);
 var
@@ -327,6 +370,8 @@ end;
 >>>>>>> origin/cpstrnew
 {$INCLUDE core/coreimplementation.inc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Procedure FreeAndNil(Var q);
 
 Var
@@ -374,12 +419,16 @@ End;
 {$ENDIF WIN32}
 
 {$INCLUDE coreimplementation.inc}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$IFDEF GO32V2}
 {$INCLUDE dos/includes.inc}
 {$ENDIF GO32V2}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$IF defined(Win32) OR defined(Win64)}
 <<<<<<< HEAD
@@ -438,6 +487,9 @@ End;
 =======
 {$IFDEF Win32}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$IFDEF Win32}
+>>>>>>> origin/fixes_2_2
 {$INCLUDE win32/base/monitord.inc}
 {$INCLUDE win32/base/eventd.inc}
 {$INCLUDE win32/base/windowd.inc}
@@ -453,9 +505,12 @@ End;
 {$INCLUDE win32/gdi/gdiconsoled.inc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$INCLUDE win32/base/cursor.inc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$INCLUDE win32/base/monitor.inc}
 {$INCLUDE win32/base/event.inc}
 {$INCLUDE win32/base/window.inc}
@@ -475,6 +530,7 @@ End;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -486,6 +542,9 @@ End;
 =======
 {$ENDIF Win32}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ENDIF Win32}
+>>>>>>> origin/fixes_2_2
 
 {$IFDEF WinCE}
 {$INCLUDE wince/includes.inc}
@@ -493,16 +552,22 @@ End;
 
 {$IFDEF UNIX}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$INCLUDE x11/x11includes.inc}
 {$ENDIF UNIX}
 
 {$INCLUDE core/consolei.inc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$INCLUDE x11/includes.inc}
 {$ENDIF UNIX}
 
 {$INCLUDE consolei.inc}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$IFDEF ENABLE_C_API}
 {$INCLUDE c_api/except.pp}
@@ -522,6 +587,7 @@ End;
 {$ENDIF ENABLE_C_API}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 initialization
   {$IFDEF ENABLE_C_API}
   ptc_error_handler_function := @ptc_error_handler_default;
@@ -537,6 +603,8 @@ finalization
 
 end.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Initialization
 
 Begin
@@ -557,4 +625,7 @@ Begin
 End;
 
 End.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -23,6 +23,7 @@ interface
 {$Q-}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IF FPC_VERSION<3}
 Type 
   CodePointer = Pointer;
@@ -34,6 +35,9 @@ procedure CloseStabs;
 =======
 function GetLineInfo(addr:ptruint;var func,source:string;var line:longint) : boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+function GetLineInfo(addr:ptruint;var func,source:string;var line:longint) : boolean;
+>>>>>>> origin/fixes_2_2
 
 implementation
 
@@ -71,9 +75,13 @@ type
 var
   e          : TExeFile;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   staberr    : boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+  staberr    : boolean;
+>>>>>>> origin/fixes_2_2
   stabcnt,              { amount of stabs }
   stablen,
   stabofs,              { absolute stab section offset in executable }
@@ -86,6 +94,7 @@ var
   dirstab,              { stab with current directory info }
   filestab   : tstab;   { stab with current file info }
   filename,
+<<<<<<< HEAD
 <<<<<<< HEAD
   lastfilename,         { store last processed file }
   dbgfn : string;
@@ -159,6 +168,10 @@ begin
 =======
   dbgfn : string;
 
+=======
+  dbgfn : string;
+
+>>>>>>> origin/fixes_2_2
 
 function OpenStabs(addr : pointer) : boolean;
   var
@@ -192,7 +205,10 @@ begin
   else
     begin
       staberr:=true;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       exit;
     end;
 end;
@@ -200,6 +216,7 @@ end;
 
 procedure CloseStabs;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if e.isopen then
   begin
@@ -217,6 +234,12 @@ end;
 
 
 >>>>>>> graemeg/fixes_2_2
+=======
+  CloseExeFile(e);
+end;
+
+
+>>>>>>> origin/fixes_2_2
 function GetLineInfo(addr:ptruint;var func,source:string;var line:longint) : boolean;
 var
   res,
@@ -233,6 +256,7 @@ begin
   fillchar(source,high(source)+1,0);
   line:=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   if not OpenStabs(pointer(addr)) then
     exit;
@@ -241,6 +265,8 @@ begin
   { processaddress is set in OpenStabs                   }
   addr := dword(addr - e.processaddress);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if staberr then
     exit;
   if not e.isopen then
@@ -252,7 +278,10 @@ begin
   { correct the value to the correct address in the file }
   { processaddress is set in OpenStabs                   }
   addr := addr - e.processaddress;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifdef DEBUG_LINEINFO}
   writeln(stderr,'Addr: ',hexstr(addr,sizeof(addr)*2));
@@ -357,11 +386,16 @@ begin
       Delete(func,i,255);
    end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   if e.isopen then
     CloseStabs;
 >>>>>>> graemeg/fixes_2_2
+=======
+  if e.isopen then
+    CloseStabs;
+>>>>>>> origin/fixes_2_2
   GetLineInfo:=true;
 end;
 
@@ -405,8 +439,11 @@ begin
      StabBackTraceStr:=StabBackTraceStr+' of '+source;
    end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   BackTraceStrFunc:=Store;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if Success then
     BackTraceStrFunc:=Store;
 >>>>>>> graemeg/fixes_2_2
@@ -420,10 +457,15 @@ initialization
 
 finalization
 <<<<<<< HEAD
+<<<<<<< HEAD
   CloseStabs;
 
 =======
   if e.isopen then
    CloseStabs;
 >>>>>>> graemeg/fixes_2_2
+=======
+  if e.isopen then
+   CloseStabs;
+>>>>>>> origin/fixes_2_2
 end.

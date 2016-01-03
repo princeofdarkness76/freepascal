@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2000, 2001, 2003-2005, 2008-2010 Apple Inc. All rights reserved.
 =======
  * Copyright (c) 2000, 2001, 2003-2005, 2008, 2009 Apple Inc. All rights reserved.
@@ -20,6 +21,9 @@
 =======
  * Copyright (c) 2000 Apple Computer, Inc. All rights reserved.
 >>>>>>> graemeg/fixes_2_2
+=======
+ * Copyright (c) 2000 Apple Computer, Inc. All rights reserved.
+>>>>>>> origin/fixes_2_2
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -32,6 +36,7 @@
  * 
  * The Original Code and all software distributed under the License are
 <<<<<<< HEAD
+<<<<<<< HEAD
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
@@ -40,12 +45,18 @@
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES of MERCHANTABILITY,
 >>>>>>> graemeg/fixes_2_2
+=======
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY of ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES of MERCHANTABILITY,
+>>>>>>> origin/fixes_2_2
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
  * 
  * @APPLE_LICENSE_HEADER_END@
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
@@ -72,6 +83,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 
 
@@ -81,7 +94,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -91,12 +107,17 @@
 unit SCDynamicStore;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -110,14 +131,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -126,11 +152,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -168,6 +197,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -175,6 +206,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -400,6 +432,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -408,7 +442,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -435,9 +472,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -447,6 +488,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,MacOSXPosix,CFBase,CFArray,CFRunLoop,CFPropertyList,CFDictionary;
 {$endc} {not MACOSALLINCLUDE}
@@ -472,6 +514,8 @@ uses MacTypes,MacOSXPosix,CFBase,CFArray,CFRunLoop,CFPropertyList,CFDictionary;
 		function.  When you are finished with the session, use CFRelease
 		to close it.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,CFBase,CFArray,CFRunLoop,CFPropertyList,CFDictionary;
 {$ALIGN MAC68K}
 
@@ -489,12 +533,16 @@ uses MacTypes,CFBase,CFArray,CFRunLoop,CFPropertyList,CFDictionary;
 	bundles (or plug-ins) that monitor low-level kernel events
 	and, via a set of policy modules, keep the state data up
 	to date.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  }
 
 
 {!
 	@typedef SCDynamicStoreRef
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@discussion This is the handle to an open a dynamic store session
 		with the system configuration daemon.
@@ -537,6 +585,8 @@ type
 	@field copyDescription The callback used to provide a description of
 		the info field.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@discussion This is the handle to an open "dynamic store" session
 		with the system configuration daemon.
  }
@@ -545,16 +595,23 @@ type
 
 {!
 	@typedef SCDynamicStoreContext
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  }
 type
 	SCDynamicStoreContext = record
 		version: CFIndex;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		info: UnivPtr;
 =======
 		info: Ptr;
 >>>>>>> graemeg/fixes_2_2
+=======
+		info: Ptr;
+>>>>>>> origin/fixes_2_2
 		retain: function( info: Ptr ): Ptr;
 		release: procedure( info: Ptr );
 		copyDescription: function( info: Ptr ): CFStringRef;
@@ -563,6 +620,7 @@ type
 
 {!
 	@typedef SCDynamicStoreCallBack
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@discussion Type of callback function used when notification of
 		changes to the dynamic store is delivered.
@@ -606,6 +664,8 @@ type
 function SCDynamicStoreGetTypeID: CFTypeID; external name '_SCDynamicStoreGetTypeID';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@discussion Type of the callback function used when a
 		dynamic store change is delivered.
 	@param store The "dynamic store" session.
@@ -619,21 +679,28 @@ type SCDynamicStoreCallBack = procedure( store: SCDynamicStoreRef; changedKeys: 
 	Returns the type identifier of all SCDynamicStore instances.
  }
 function SCDynamicStoreGetTypeID: CFTypeID; external name '_SCDynamicStoreGetTypeID';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {!
 	@function SCDynamicStoreCreate
 	@discussion Creates a new session used to interact with the dynamic
 <<<<<<< HEAD
+<<<<<<< HEAD
 		store maintained by the System Configuration server.
 	@param allocator The CFAllocator that should be used to allocate
 		memory for the local dynamic store object.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		store maintained by the SystemConfiguration server.
 	@param allocator The CFAllocator which should be used to allocate
 		memory for the local "dynamic store" and its storage for
 		values.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 		This parameter may be NULL in which case the current
 		default CFAllocator is used. If this reference is not
@@ -661,11 +728,14 @@ function SCDynamicStoreCreate( allocator: CFAllocatorRef; name: CFStringRef; cal
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2_2
 		This parameter may be NULL in which case the current
 		default CFAllocator is used. If this reference is not
 		a valid CFAllocator, the behavior is undefined.
 	@param name A string that describes the name of the calling
 		process or plug-in of the caller.
+<<<<<<< HEAD
 	@param storeOptions A CFDictionary containing options for the
 		dynamic store session (such as whether all keys added or set
 		into the dynamic store should be per-session keys).
@@ -779,6 +849,9 @@ var kSCDynamicStoreUseSessionKeys: CFStringRef; external name '_kSCDynamicStoreU
 		on the order number for any architectural or design aspect
 		of code. In the absence of any reason to do otherwise,
 =======
+=======
+	@param callout The function to be called when a watched value
+>>>>>>> origin/fixes_2_2
 		in the "dynamic store" is changed.
 		A NULL value can be specified if no callouts are
 		desired.
@@ -805,13 +878,17 @@ function SCDynamicStoreCreate( allocator: CFAllocatorRef; name: CFStringRef; cal
 		sources. It is inadvisable to depend on the order
 		number for any architectural or design aspect of
 		code. In the absence of any reason to do otherwise,
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 		zero should be used.
 	@result A reference to the new CFRunLoopSource.
 		You must release the returned value.
 
  }
 function SCDynamicStoreCreateRunLoopSource( allocator: CFAllocatorRef; store: SCDynamicStoreRef; order: CFIndex ): CFRunLoopSourceRef; external name '_SCDynamicStoreCreateRunLoopSource';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 
@@ -861,10 +938,13 @@ function SCDynamicStoreSetDispatchQueue( store: SCDynamicStoreRef; queue: dispat
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {!
 	@function SCDynamicStoreCopyKeyList
 	@discussion Returns an array of CFString keys representing the
+<<<<<<< HEAD
 <<<<<<< HEAD
 		current dynamic store entries that match a specified pattern.
 	@param store The dynamic store session.
@@ -957,6 +1037,8 @@ function SCDynamicStoreSetValue( store: SCDynamicStoreRef; key: CFStringRef; val
 function SCDynamicStoreSetMultiple( store: SCDynamicStoreRef; keysToSet: CFDictionaryRef; keysToRemove: CFArrayRef; keysToNotify: CFArrayRef ): Boolean; external name '_SCDynamicStoreSetMultiple';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		configuration "dynamic store" entries that match a
 		specified pattern.
 	@param store The "dynamic store" session.
@@ -1044,11 +1126,15 @@ function SCDynamicStoreSetValue( store: SCDynamicStoreRef; key: CFStringRef; val
 	@result TRUE if the dynamic store updates were successful; FALSE if an error was encountered.
  }
 function SCDynamicStoreSetMultiple( store: SCDynamicStoreRef; keysToSet: CFDictionaryRef; keysToRemove: CFArrayRef; keysToNotify: CFArrayRef ): Boolean; external name '_SCDynamicStoreSetMultiple';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {!
 	@function SCDynamicStoreRemoveValue
 	@discussion Removes the value of the specified key from the
+<<<<<<< HEAD
 <<<<<<< HEAD
 		dynamic store.
 	@param store The dynamic store session.
@@ -1059,6 +1145,8 @@ function SCDynamicStoreSetMultiple( store: SCDynamicStoreRef; keysToSet: CFDicti
 function SCDynamicStoreRemoveValue( store: SCDynamicStoreRef; key: CFStringRef ): Boolean; external name '_SCDynamicStoreRemoveValue';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		"dynamic store".
 	@param store The "dynamic store" session.
 	@param key The key of the value you wish to remove.
@@ -1066,12 +1154,16 @@ function SCDynamicStoreRemoveValue( store: SCDynamicStoreRef; key: CFStringRef )
 		located or an error was encountered.
  }
 function SCDynamicStoreRemoveValue( store: SCDynamicStoreRef; key: CFStringRef ): Boolean; external name '_SCDynamicStoreRemoveValue';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {!
 	@function SCDynamicStoreNotifyValue
 	@discussion Triggers a notification to be delivered for the
 		specified key in the dynamic store.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@param store The dynamic store session.
 	@param key The key that should be flagged as changed.  Any dynamic store sessions
@@ -1082,16 +1174,22 @@ function SCDynamicStoreRemoveValue( store: SCDynamicStoreRef; key: CFStringRef )
 function SCDynamicStoreNotifyValue( store: SCDynamicStoreRef; key: CFStringRef ): Boolean; external name '_SCDynamicStoreNotifyValue';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	@param store The "dynamic store" session.
 	@param key The key which should be flagged as changed (without actually changing the data).
 	@result TRUE if the value was updated; FALSE if an error was encountered.
  }
 function SCDynamicStoreNotifyValue( store: SCDynamicStoreRef; key: CFStringRef ): Boolean; external name '_SCDynamicStoreNotifyValue';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {!
 	@function SCDynamicStoreSetNotificationKeys
 	@discussion Specifies a set of specific keys and key patterns
+<<<<<<< HEAD
 <<<<<<< HEAD
 		that should be monitored for changes.
 	@param store The dynamic store session being watched.
@@ -1105,6 +1203,8 @@ function SCDynamicStoreNotifyValue( store: SCDynamicStoreRef; key: CFStringRef )
 function SCDynamicStoreSetNotificationKeys( store: SCDynamicStoreRef; keys: CFArrayRef; patterns: CFArrayRef ): Boolean; external name '_SCDynamicStoreSetNotificationKeys';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		which should be monitored for changes.
 	@param store The "dynamic store" session being watched.
 	@param keys The keys to be monitored; NULL if no specific keys
@@ -1115,11 +1215,15 @@ function SCDynamicStoreSetNotificationKeys( store: SCDynamicStoreRef; keys: CFAr
 		was encountered.
  }
 function SCDynamicStoreSetNotificationKeys( store: SCDynamicStoreRef; keys: CFArrayRef; patterns: CFArrayRef ): Boolean; external name '_SCDynamicStoreSetNotificationKeys';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {!
 	@function SCDynamicStoreCopyNotifiedKeys
 	@discussion Returns an array of CFString keys representing the
+<<<<<<< HEAD
 <<<<<<< HEAD
 		dynamic store entries that have changed since this
 		function was last called.  If possible, your application should
@@ -1139,6 +1243,8 @@ function SCDynamicStoreCopyNotifiedKeys( store: SCDynamicStoreRef ): CFArrayRef;
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		"dynamic store" entries that have changed since this
 		function was last called.
 	@param store The "dynamic store" session.
@@ -1149,4 +1255,7 @@ end.
 function SCDynamicStoreCopyNotifiedKeys( store: SCDynamicStoreRef ): CFArrayRef; external name '_SCDynamicStoreCopyNotifiedKeys';
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

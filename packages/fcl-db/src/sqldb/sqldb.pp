@@ -38,6 +38,8 @@ const
 
      TRowsCount = LargeInt;
 
+     TRowsCount = LargeInt;
+
 type
 
   TStatementType = (stUnknown, stSelect, stInsert, stUpdate, stDelete,
@@ -60,9 +62,12 @@ type
   TSQLTransaction = class;
   TCustomSQLQuery = class;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TCustomSQLStatement = Class;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   TSQLQuery = class;
   TSQLScript = class;
 
@@ -196,9 +201,22 @@ const
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
   { TServerIndexDefs }
+=======
+
+  { TServerIndexDefs }
+
+  TServerIndexDefs = class(TIndexDefs)
+  Private
+  public
+    constructor Create(ADataSet: TDataSet); override;
+    procedure Update; override;
+  end;
+
+>>>>>>> origin/fixes_2_2
 
   TServerIndexDefs = class(TIndexDefs)
   Private
@@ -300,6 +318,7 @@ type
     FCharSet             : string;
     FRole                : String;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FStatements          : TFPList;
     FLogEvents: TDBEventTypes;
     FOnLog: TDBLogNotifyEvent;
@@ -329,6 +348,8 @@ type
     procedure GetDBInfo(const ASchemaType : TSchemaType; const ASchemaObjectName, AReturnField : string; AList: TStrings);
     procedure SetTransaction(Value : TSQLTransaction); virtual;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     
     function GetPort: cardinal;
     procedure Setport(const AValue: cardinal);
@@ -385,6 +406,7 @@ type
     procedure CommitRetaining(trans : TSQLHandle); virtual; abstract;
     procedure RollBackRetaining(trans : TSQLHandle); virtual; abstract;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     procedure UpdateIndexDefs(IndexDefs : TIndexDefs; TableName : string); virtual;
     function GetSchemaInfoSQL(SchemaType : TSchemaType; SchemaObjectName, SchemaPattern : string) : string; virtual;
@@ -396,12 +418,17 @@ type
     Property Statements : TFPList Read FStatements;
     property Port: cardinal read GetPort write SetPort;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure UpdateIndexDefs(IndexDefs : TIndexDefs;TableName : string); virtual;
     function GetSchemaInfoSQL(SchemaType : TSchemaType; SchemaObjectName, SchemaPattern : string) : string; virtual;
     procedure LoadBlobIntoBuffer(FieldDef: TFieldDef;ABlobBuf: PBufBlobField; cursor: TSQLCursor; ATransaction : TSQLTransaction); virtual; abstract;
     function RowsAffected(cursor: TSQLCursor): TRowsCount; virtual;
     property port: cardinal read GetPort write Setport;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   public
     property Handle: Pointer read GetHandle;
     property FieldNameQuoteChars: TQuoteChars read FFieldNameQuoteChars write FFieldNameQuoteChars;
@@ -496,6 +523,7 @@ type
     Property Options : TSQLTransactionOptions Read FOptions Write SetOptions;
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -617,6 +645,11 @@ type
 
   TCustomSQLQuery = class (Tbufdataset)
 >>>>>>> graemeg/fixes_2_2
+=======
+{ TCustomSQLQuery }
+
+  TCustomSQLQuery = class (Tbufdataset)
+>>>>>>> origin/fixes_2_2
   private
     FOptions             : TSQLQueryOptions;
     FSchemaType          : TSchemaType;
@@ -630,7 +663,10 @@ type
     FIsEOF               : boolean;
     FLoadingFieldDefs    : boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FReadOnly            : boolean;
 >>>>>>> graemeg/fixes_2_2
     FUpdateMode          : TUpdateMode;
@@ -638,16 +674,22 @@ type
 <<<<<<< HEAD
 =======
     FSQLBuf              : String;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FWhereStartPos       : integer;
     FWhereStopPos        : integer;
     FServerFilterText    : string;
     FServerFiltered      : Boolean;
     
     FServerIndexDefs     : TServerIndexDefs;
+<<<<<<< HEAD
 
 <<<<<<< HEAD
     FServerIndexDefs     : TServerIndexDefs;
+=======
+>>>>>>> origin/fixes_2_2
 
     // Used by SetSchemaType
     FSchemaObjectName    : string;
@@ -691,7 +733,10 @@ type
     procedure SetReadOnly(AValue : Boolean);
     procedure SetParseSQL(AValue : Boolean);
     procedure SetUpdateSQL(const AValue: TStringlist);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure SetUsePrimaryKeyAsKey(AValue : Boolean);
     procedure SetUpdateMode(AValue : TUpdateMode);
     procedure OnChangeModifySQL(Sender : TObject);
@@ -848,6 +893,7 @@ type
     // protected
     property Database;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property Transaction;
     property SchemaType : TSchemaType read FSchemaType default stNoSchema;
     property SQL : TStringlist read GetSQL write SetSQL;
@@ -865,6 +911,8 @@ type
     Property DataSource : TDataSource Read GetDataSource Write SetDataSource;
     property Sequence: TSQLSequence read FSequence write FSequence;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   // protected
 //    property SchemaInfo : TSchemaInfo read FSchemaInfo default stNoSchema;
     property Transaction;
@@ -879,7 +927,10 @@ type
     property StatementType : TStatementType read GetStatementType;
     property ParseSQL : Boolean read FParseSQL write SetParseSQL default true;
     Property DataSource : TDatasource Read GetDataSource Write SetDatasource;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property ServerFilter: string read FServerFilterText write SetServerFilterText;
     property ServerFiltered: Boolean read FServerFiltered write SetServerFiltered default False;
     property ServerIndexDefs : TServerIndexDefs read GetServerIndexDefs;
@@ -887,6 +938,7 @@ type
 
 { TSQLQuery }
   TSQLQuery = Class(TCustomSQLQuery)
+<<<<<<< HEAD
 <<<<<<< HEAD
   public
     property SchemaType;
@@ -899,6 +951,10 @@ type
   Published
    // TDataset stuff
 >>>>>>> graemeg/fixes_2_2
+=======
+  Published
+   // TDataset stuff
+>>>>>>> origin/fixes_2_2
     Property Active;
     Property AutoCalcFields;
     Property Filter;
@@ -932,6 +988,7 @@ type
     property ReadOnly;
     property SQL;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property InsertSQL;
     property UpdateSQL;
     property DeleteSQL;
@@ -946,6 +1003,8 @@ type
     Property DataSource;
     property Sequence;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     property UpdateSQL;
     property InsertSQL;
     property DeleteSQL;
@@ -955,7 +1014,10 @@ type
     property UsePrimaryKeyAsKey;
     property ParseSQL;
     Property DataSource;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property ServerFilter;
     property ServerFiltered;
     property ServerIndexDefs;
@@ -973,10 +1035,14 @@ type
     procedure ExecuteStatement (SQLStatement: TStrings; var StopExecution: Boolean); override;
     procedure ExecuteDirective (Directive, Argument: String; var StopExecution: Boolean); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure ExecuteCommit(CommitRetaining: boolean=true); override;
 =======
     procedure ExecuteCommit; override;
 >>>>>>> graemeg/fixes_2_2
+=======
+    procedure ExecuteCommit; override;
+>>>>>>> origin/fixes_2_2
     Procedure SetDatabase (Value : TDatabase); virtual;
     Procedure SetTransaction(Value : TDBTransaction); virtual;
     Procedure CheckDatabase;
@@ -1031,12 +1097,16 @@ type
     procedure UnPrepareStatement(cursor : TSQLCursor); override;
     function LoadField(cursor : TSQLCursor;FieldDef : TfieldDef;buffer : pointer; out CreateBlob : boolean) : boolean; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure LoadBlobIntoBuffer(FieldDef: TFieldDef;ABlobBuf: PBufBlobField; cursor: TSQLCursor; ATransaction : TSQLTransaction); override;
     procedure FreeFldBuffers(cursor : TSQLCursor); override;
 
 =======
     function RowsAffected(cursor: TSQLCursor): TRowsCount; override;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function RowsAffected(cursor: TSQLCursor): TRowsCount; override;
+>>>>>>> origin/fixes_2_2
     function GetTransactionHandle(trans : TSQLHandle): pointer; override;
     function Commit(trans : TSQLHandle) : boolean; override;
     function RollBack(trans : TSQLHandle) : boolean; override;
@@ -1044,10 +1114,14 @@ type
     procedure CommitRetaining(trans : TSQLHandle); override;
     procedure RollBackRetaining(trans : TSQLHandle); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure UpdateIndexDefs(IndexDefs : TIndexDefs; TableName : string); override;
 =======
     procedure UpdateIndexDefs(IndexDefs : TIndexDefs;TableName : string); override;
 >>>>>>> graemeg/fixes_2_2
+=======
+    procedure UpdateIndexDefs(IndexDefs : TIndexDefs;TableName : string); override;
+>>>>>>> origin/fixes_2_2
     function GetSchemaInfoSQL(SchemaType : TSchemaType; SchemaObjectName, SchemaPattern : string) : string; override;
     Property Proxy : TSQLConnection Read FProxy;
   Published
@@ -1143,7 +1217,10 @@ begin
 end;
 
 procedure TSQLConnection.UpdateIndexDefs(IndexDefs : TIndexDefs;TableName : string);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 function TSqlObjectIdentifierList.GetIdentifier(Index: integer): TSqlObjectIdenfier;
 begin
@@ -1235,8 +1312,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomSQLStatement.SetDatabase(AValue: TSQLConnection);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TSQLConnection.GetPort: cardinal;
 begin
   result := StrToIntDef(Params.Values['Port'],0);
@@ -1275,6 +1355,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomSQLStatement.SetTransaction(AValue: TSQLTransaction);
 begin
   if FTransaction=AValue then Exit;
@@ -1288,6 +1369,8 @@ begin
     if Assigned(Transaction.DataBase) and (Database <> Transaction.DataBase) then
       Database := Transaction.DataBase as TSQLConnection;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   qry := TCustomSQLQuery.Create(nil);
   qry.transaction := Transaction;
   qry.database := Self;
@@ -1307,9 +1390,18 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomSQLStatement.SetDataSource(AValue: TDataSource);
 =======
 function TSQLConnection.RowsAffected(cursor: TSQLCursor): TRowsCount;
+=======
+function TSQLConnection.RowsAffected(cursor: TSQLCursor): TRowsCount;
+begin
+  Result := -1;
+end;
+
+procedure TSQLConnection.GetTableNames(List: TStrings; SystemTables: Boolean);
+>>>>>>> origin/fixes_2_2
 begin
   Result := -1;
 end;
@@ -2600,6 +2692,7 @@ end;
 
 procedure TSQLTransaction.SetOptions(AValue: TSQLTransactionOptions);
 begin
+<<<<<<< HEAD
   if FOptions=AValue then Exit;
   if (stoUseImplicit in Avalue) and Assigned(SQLConnection) And Not (sqImplicitTransaction in SQLConnection.ConnOptions) then
     DatabaseErrorFmt(SErrNoImplicitTransaction, [SQLConnection.ClassName]);
@@ -2636,6 +2729,9 @@ begin
 =======
   Result := TSQLConnection(Database).GetTransactionHandle(FTrans);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result := TSQLConnection(Database).GetTransactionHandle(FTrans);
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TSQLTransaction.Commit;
@@ -2643,10 +2739,15 @@ begin
 <<<<<<< HEAD
   if Active  then
     begin
+<<<<<<< HEAD
     CloseDataSets;
     If LogEvent(detCommit) then
       Log(detCommit,SCommitting);
     if (stoUseImplicit in Options) or SQLConnection.AttemptCommit(FTrans) then
+=======
+    closedatasets;
+    if TSQLConnection(Database).commit(FTrans) then
+>>>>>>> origin/fixes_2_2
       begin
       CloseTrans;
       FreeAndNil(FTrans);
@@ -2656,24 +2757,34 @@ end;
 
 procedure TSQLTransaction.CommitRetaining;
 begin
+<<<<<<< HEAD
   if Active then
     begin
     If LogEvent(detCommit) then
       Log(detCommit,SCommitRetaining);
     SQLConnection.CommitRetaining(FTrans);
     end;
+=======
+  if active then
+    TSQLConnection(Database).commitRetaining(FTrans);
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TSQLTransaction.Rollback;
 begin
   if Active then
     begin
+<<<<<<< HEAD
     if (stoUseImplicit in Options) then
       DatabaseError(SErrImplicitNoRollBack);
     CloseDataSets;
     If LogEvent(detRollback) then
       Log(detRollback,SRollingBack);
     if SQLConnection.AttemptRollBack(FTrans) then
+=======
+    closedatasets;
+    if TSQLConnection(Database).RollBack(FTrans) then
+>>>>>>> origin/fixes_2_2
       begin
       CloseTrans;
       FreeAndNil(FTrans);
@@ -2683,6 +2794,7 @@ end;
 
 procedure TSQLTransaction.RollbackRetaining;
 begin
+<<<<<<< HEAD
   if Active then
     begin
     if (stoUseImplicit in Options) then
@@ -2691,6 +2803,10 @@ begin
       Log(detRollback,SRollBackRetaining);
     SQLConnection.RollBackRetaining(FTrans);
     end;
+=======
+  if active then
+    TSQLConnection(Database).RollBackRetaining(FTrans);
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TSQLTransaction.StartTransaction;
@@ -2701,7 +2817,11 @@ begin
   if Active then
     DatabaseError(SErrTransAlreadyActive);
 
+<<<<<<< HEAD
   db := SQLConnection;
+=======
+  db := TSQLConnection(Database);
+>>>>>>> origin/fixes_2_2
 
   if Db = nil then
     DatabaseError(SErrDatabasenAssigned);
@@ -3069,17 +3189,33 @@ Var
 begin
   If LogEVent(EventType) then
     begin
+<<<<<<< HEAD
     If (Name<>'') then
       M:=Name+' : '+Msg
     else
       M:=Msg;
     TSQLConnection(Database).Log(EventType,M);
+=======
+    if assigned(value) and not (Value is TSQLConnection) then
+      DatabaseErrorFmt(SErrNotASQLConnection,[value.Name],self);
+    CheckInactive;
+    If Assigned(Database) then
+      with TSQLConnection(DataBase) do
+        if Transaction = self then Transaction := nil;
+    inherited SetDatabase(Value);
+    If Assigned(Database) then
+      If (TSQLConnection(DataBase).Transaction=Nil) then
+        TSQLConnection(DataBase).Transaction:=Self;
+>>>>>>> origin/fixes_2_2
     end;
 end;
 
 { TCustomSQLQuery }
 procedure TCustomSQLQuery.OnChangeSQL(Sender : TObject);
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure TSQLTransaction.Log(EventType: TDBEventType; const Msg: String);
 
@@ -3095,13 +3231,17 @@ begin
 =======
     if assigned(DataBase) then
       ConnOptions := TSQLConnection(DataBase).ConnOptions
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     else
       M:=Msg;
     TSQLConnection(Database).Log(EventType,M);
     end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3130,12 +3270,15 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure TCustomSQLQuery.OnChangeModifySQL(Sender : TObject);
 
 begin
   CheckInactive;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCustomSQLQuery.SetDatabase(Value : TDatabase);
 
@@ -3159,11 +3302,15 @@ begin
 end;
 
 procedure TCustomSQLQuery.SetTransaction(Value: TDBTransaction);
+=======
+Procedure TCustomSQLQuery.SetTransaction(Value : TDBTransaction);
+>>>>>>> origin/fixes_2_2
 
 begin
   if Transaction = Value then Exit;
   UnPrepare;
   inherited;
+<<<<<<< HEAD
   If Assigned(FStatement) then
     FStatement.Transaction := TSQLTransaction(Value);
   If Assigned(Transaction) and Assigned(Transaction.DataBase) and (Database<>Transaction.DataBase) then
@@ -3172,6 +3319,8 @@ end;
 
 function TCustomSQLQuery.IsPrepared: Boolean;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   If (Transaction<>Nil) and (Database=Nil) then
     Database:=TSQLTransaction(Transaction).Database;
 end;
@@ -3196,7 +3345,10 @@ begin
 end;
 
 Function TCustomSQLQuery.IsPrepared : Boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
   if Assigned(Fstatement) then
@@ -3206,10 +3358,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TCustomSQLQuery.AddFilter(SQLstr: string): string;
 =======
 Function TCustomSQLQuery.AddFilter(SQLstr : string) : string;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function TCustomSQLQuery.AddFilter(SQLstr : string) : string;
+>>>>>>> origin/fixes_2_2
 
 begin
   if (FWhereStartPos > 0) and (FWhereStopPos > 0) then
@@ -3222,15 +3378,20 @@ begin
     SQLstr := SQLstr + ' where (' + ServerFilter + ')'
   else if FWhereStopPos > 0 then
 <<<<<<< HEAD
+<<<<<<< HEAD
     system.insert(' and ('+ServerFilter+') ',SQLstr,FWhereStopPos+2)
 =======
     system.insert(' and ('+ServerFilter+') ',SQLstr,FWhereStopPos+1)
 >>>>>>> graemeg/fixes_2_2
+=======
+    system.insert(' and ('+ServerFilter+') ',SQLstr,FWhereStopPos+1)
+>>>>>>> origin/fixes_2_2
   else
     system.insert(' where ('+ServerFilter+') ',SQLstr,FWhereStartPos);
   Result := SQLstr;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TCustomSQLQuery.NeedRefreshRecord(UpdateKind: TUpdateKind): Boolean;
 =======
@@ -3260,6 +3421,9 @@ begin
 end;
 
 function TCustomSQLQuery.RefreshRecord(UpdateKind: TUpdateKind): Boolean;
+=======
+procedure TCustomSQLQuery.ApplyFilter;
+>>>>>>> origin/fixes_2_2
 
 Var
   Q : TCustomSQLQuery;
@@ -3335,10 +3499,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomSQLQuery.ApplyFilter;
 =======
   TSQLConnection(Database).PrepareStatement(Fcursor,(transaction as tsqltransaction),S,FParams);
 >>>>>>> graemeg/fixes_2_2
+=======
+  TSQLConnection(Database).PrepareStatement(Fcursor,(transaction as tsqltransaction),S,FParams);
+>>>>>>> origin/fixes_2_2
 
 begin
   FreeFldBuffers;
@@ -3352,10 +3520,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomSQLQuery.SetActive(Value: Boolean);
 =======
 Procedure TCustomSQLQuery.SetActive (Value : Boolean);
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TCustomSQLQuery.SetActive (Value : Boolean);
+>>>>>>> origin/fixes_2_2
 
 begin
   inherited SetActive(Value);
@@ -3387,9 +3559,12 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure TCustomSQLQuery.Prepare;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TCustomSQLQuery.Prepare;
 var
   db    : tsqlconnection;
@@ -3453,7 +3628,10 @@ begin
       Db.PrepareStatement(Fcursor,sqltr,FSQLBuf,FParams);
 
     if (FCursor.FStatementType = stSelect) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       FCursor.FInitFieldDef := True;
     end;
 >>>>>>> graemeg/cpstrnew
@@ -3463,6 +3641,7 @@ procedure TCustomSQLQuery.UnPrepare;
 
 begin
   CheckInactive;
+<<<<<<< HEAD
 <<<<<<< HEAD
   If Assigned(FStatement) then
     FStatement.Unprepare;
@@ -3476,6 +3655,8 @@ end;
 
 function TCustomSQLQuery.GetParamCheck: Boolean;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if IsPrepared then with TSQLConnection(DataBase) do
     UnPrepareStatement(FCursor);
 end;
@@ -3486,6 +3667,7 @@ begin
 end;
 
 function TCustomSQLQuery.GetServerIndexDefs: TServerIndexDefs;
+<<<<<<< HEAD
 begin
   Result := FServerIndexDefs;
 end;
@@ -3530,6 +3712,13 @@ begin
 end;
 
 function TCustomSQLQuery.GetSQLTransaction: TSQLTransaction;
+=======
+begin
+  Result := FServerIndexDefs;
+end;
+
+function TCustomSQLQuery.Fetch : boolean;
+>>>>>>> origin/fixes_2_2
 begin
   Result:=Transaction as TSQLTransaction;
 end;
@@ -3554,12 +3743,18 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if not FIsEof then FIsEOF := not TSQLConnection(Database).Fetch(Fcursor);
   Result := not FIsEOF;
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure TCustomSQLQuery.Execute;
 begin
 <<<<<<< HEAD
@@ -3567,6 +3762,7 @@ begin
 =======
   If (FParams.Count>0) and Assigned(FMasterLink) then
     FMasterLink.CopyParamsFromMaster(False);
+<<<<<<< HEAD
 <<<<<<< HEAD
   If LogEvent(detExecute) then
     Log(detExecute,FSQLBuf);
@@ -3611,6 +3807,12 @@ begin
 end;
 
 function TCustomSQLQuery.LoadField(FieldDef : TFieldDef;buffer : pointer; out CreateBlob : boolean) : boolean;
+=======
+  TSQLConnection(Database).execute(Fcursor,Transaction as tsqltransaction, FParams);
+end;
+
+function TCustomSQLQuery.LoadField(FieldDef : TFieldDef;buffer : pointer; out CreateBlob : boolean) : boolean;
+>>>>>>> origin/fixes_2_2
 
 begin
   result := TSQLConnection(Database).LoadField(FCursor,FieldDef,buffer, Createblob)
@@ -3622,7 +3824,10 @@ begin
   if not Assigned(Database) then Exit;
   //assert(Database is TSQLConnection);
   Result := TSQLConnection(Database).RowsAffected(FCursor);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TCustomSQLQuery.InternalAddRecord(Buffer: Pointer; AAppend: Boolean);
@@ -3651,7 +3856,10 @@ begin
     FOpenDidPrepare:=False;
     TSQLConnection(database).UnPrepareStatement(FCursor);
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   if DefaultFields then
     DestroyFields;
 
@@ -3679,7 +3887,10 @@ begin
 =======
 
     TSQLConnection(Database).AddFieldDefs(fcursor,FieldDefs);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   finally
     FLoadingFieldDefs := False;
     if assigned(Cursor) then Cursor.FInitFieldDef := False;
@@ -3690,10 +3901,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TCustomSQLQuery.SQLParser(const ASQL : string) : TStatementType;
 =======
 procedure TCustomSQLQuery.SQLParser(var ASQL : string);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TCustomSQLQuery.SQLParser(var ASQL : string);
+>>>>>>> origin/fixes_2_2
 
 type TParsePart = (ppStart,ppSelect,ppWhere,ppFrom,ppOrder,ppComment,ppGroup,ppBogus);
 
@@ -3721,7 +3936,10 @@ begin
 
 =======
   
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   ConnOptions := TSQLConnection(DataBase).ConnOptions;
   FUpdateable := False;
 
@@ -3761,9 +3979,12 @@ begin
         case ParsePart of
           ppStart  : begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                      Result := TSQLConnection(Database).StrToStatementType(s);
                      if Result = stSelect then ParsePart := ppSelect
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      FCursor.FStatementType := TSQLConnection(Database).StrToStatementType(s);
                      if FCursor.FStatementType = stSelect then ParsePart := ppSelect
 >>>>>>> graemeg/fixes_2_2
@@ -3808,15 +4029,20 @@ begin
                          StrLength := CurrentP-PStatementPart;
                          end;
 <<<<<<< HEAD
+<<<<<<< HEAD
                        if Result = stSelect then
 =======
                        if FCursor.FStatementType = stSelect then
 >>>>>>> graemeg/fixes_2_2
+=======
+                       if FCursor.FStatementType = stSelect then
+>>>>>>> origin/fixes_2_2
                          begin
                          Setlength(FFromPart,StrLength);
                          Move(PStatementPart^,FFromPart[1],(StrLength));
                          FFrompart := trim(FFrompart);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                          // Meta-data requests and are never updateable select-statements
                          // from more then one table are not updateable
@@ -3826,6 +4052,10 @@ begin
                          // select-statements from more then one table are not updateable
                          if ExtractStrings([',',' '],[],pchar(FFromPart),nil) = 1 then
 >>>>>>> graemeg/fixes_2_2
+=======
+                         // select-statements from more then one table are not updateable
+                         if ExtractStrings([',',' '],[],pchar(FFromPart),nil) = 1 then
+>>>>>>> origin/fixes_2_2
                            begin
                            FUpdateable := True;
                            FTableName := FFromPart;
@@ -3871,6 +4101,7 @@ begin
 end;
 
 procedure TCustomSQLQuery.InternalOpen;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 var counter, fieldc : integer;
@@ -3939,6 +4170,8 @@ begin
               if F <> nil then
                 F.ProviderFlags := F.ProviderFlags + [pfInKey];
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 var tel, fieldc : integer;
     f           : TField;
@@ -3988,6 +4221,7 @@ begin
             IndexFields.Free;
             end;
 <<<<<<< HEAD
+<<<<<<< HEAD
       end;
     end;
   BindFields(True);
@@ -3999,6 +4233,8 @@ begin
     end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
           end
         else
           BindFields(True);
@@ -4032,12 +4268,18 @@ end;
 
 procedure TCustomSQLQuery.ExecSQL;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 Var
   ExecDidPrepare : Boolean;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   try
     ExecDidPrepare:=Not IsPrepared;
@@ -4139,10 +4381,14 @@ procedure TCustomSQLQuery.SetReadOnly(AValue : Boolean);
 begin
   CheckInactive;
 <<<<<<< HEAD
+<<<<<<< HEAD
   inherited SetReadOnly(AValue);
 =======
   FReadOnly:=AValue;
 >>>>>>> graemeg/fixes_2_2
+=======
+  FReadOnly:=AValue;
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TCustomSQLQuery.SetParseSQL(AValue : Boolean);
@@ -4154,10 +4400,14 @@ begin
 <<<<<<< HEAD
 =======
     begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FServerFiltered := False;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCustomSQLQuery.SetSQL(const AValue: TStringList);
 begin
@@ -4167,6 +4417,11 @@ procedure TCustomSQLQuery.SetUpdateSQL(const AValue: TStringlist);
 begin
   FUpdateSQL.Assign(AValue);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TCustomSQLQuery.SetUpdateSQL(const AValue: TStringlist);
+begin
+  FUpdateSQL.Assign(AValue);
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TCustomSQLQuery.SetUsePrimaryKeyAsKey(AValue : Boolean);
@@ -4181,20 +4436,27 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomSQLQuery.UpdateServerIndexDefs;
 =======
 Procedure TCustomSQLQuery.UpdateServerIndexDefs;
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure TCustomSQLQuery.UpdateServerIndexDefs;
+>>>>>>> origin/fixes_2_2
 
 begin
   FServerIndexDefs.Clear;
   if assigned(DataBase) and (FTableName<>'') then
+<<<<<<< HEAD
 <<<<<<< HEAD
     SQLConnection.UpdateIndexDefs(ServerIndexDefs,FTableName);
 end;
 
 function TCustomSQLQuery.NeedLastInsertID: TField;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     TSQLConnection(DataBase).UpdateIndexDefs(ServerIndexDefs,FTableName);
 end;
 
@@ -4214,6 +4476,7 @@ var FieldNamesQuoteChar : char;
       SQL.text := aSQL;
       end;
   end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 
 <<<<<<< HEAD
@@ -4248,6 +4511,8 @@ begin
       end;
     end
 end;
+=======
+>>>>>>> origin/fixes_2_2
 
 function TCustomSQLQuery.RefreshLastInsertID(Field: TField): Boolean;
 
@@ -4261,10 +4526,14 @@ end;
        ((FUpdateMode = upWhereAll) and (pfInWhere in Fields[x].ProviderFlags)) or
        ((FUpdateMode = UpWhereChanged) and (pfInWhere in Fields[x].ProviderFlags) and (fields[x].value <> fields[x].oldvalue)) then
 <<<<<<< HEAD
+<<<<<<< HEAD
       sql_where := sql_where + '(' + FieldNamesQuoteChars[0] + fields[x].FieldName + FieldNamesQuoteChars[1] + '= :"' + 'OLD_' + fields[x].FieldName + '") and ';
 =======
       sql_where := sql_where + '(' + FieldNamesQuoteChar + fields[x].FieldName + FieldNamesQuoteChar + '= :OLD_' + fields[x].FieldName + ') and ';
 >>>>>>> graemeg/fixes_2_2
+=======
+      sql_where := sql_where + '(' + FieldNamesQuoteChar + fields[x].FieldName + FieldNamesQuoteChar + '= :OLD_' + fields[x].FieldName + ') and ';
+>>>>>>> origin/fixes_2_2
   end;
 >>>>>>> graemeg/cpstrnew
 
@@ -4304,13 +4573,18 @@ end;
 =======
       if (pfInUpdate in Fields[x].ProviderFlags) then
 <<<<<<< HEAD
+<<<<<<< HEAD
         sql_set := sql_set +FieldNamesQuoteChars[0] + fields[x].FieldName + FieldNamesQuoteChars[1] +'=:"' + fields[x].FieldName + '",';
 =======
         sql_set := sql_set +FieldNamesQuoteChar + fields[x].FieldName + FieldNamesQuoteChar +'=:' + fields[x].FieldName + ',';
 >>>>>>> graemeg/fixes_2_2
+=======
+        sql_set := sql_set +FieldNamesQuoteChar + fields[x].FieldName + FieldNamesQuoteChar +'=:' + fields[x].FieldName + ',';
+>>>>>>> origin/fixes_2_2
       end;
 >>>>>>> graemeg/cpstrnew
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCustomSQLQuery.SetPacketRecords(aValue: integer);
 begin
@@ -4320,6 +4594,8 @@ begin
   Inherited SetPacketRecords(aValue);
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     if length(sql_set) = 0 then DatabaseErrorFmt(sNoUpdateFields,['update'],self);
     setlength(sql_set,length(sql_set)-1);
     if length(sql_where) = 0 then DatabaseErrorFmt(sNoWhereFields,['update'],self);
@@ -4349,9 +4625,12 @@ procedure TCustomSQLQuery.SetUpdateMode(AValue : TUpdateMode);
       if (not fields[x].IsNull) and (pfInUpdate in Fields[x].ProviderFlags) then
         begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         sql_fields := sql_fields + FieldNamesQuoteChars[0] + fields[x].FieldName + FieldNamesQuoteChars[1] + ',';
         sql_values := sql_values + ':"' + fields[x].FieldName + '",';
 =======
+=======
+>>>>>>> origin/fixes_2_2
         sql_fields := sql_fields + FieldNamesQuoteChar + fields[x].FieldName + FieldNamesQuoteChar + ',';
         sql_values := sql_values + ':' + fields[x].FieldName + ',';
 >>>>>>> graemeg/fixes_2_2
@@ -4385,11 +4664,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TCustomSQLQuery.LogEvent(EventType: TDBEventType): Boolean;
 begin
   Result:=Assigned(Database) and SQLConnection.LogEvent(EventType);
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     if length(sql_where) = 0 then DatabaseErrorFmt(sNoWhereFields,['delete'],self);
     setlength(sql_where,length(sql_where)-5);
 >>>>>>> graemeg/fixes_2_2
@@ -4399,6 +4681,7 @@ procedure TCustomSQLQuery.Log(EventType: TDBEventType; const Msg: String);
 Var
   M : String;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
 <<<<<<< HEAD
@@ -4415,6 +4698,8 @@ begin
 >>>>>>> origin/cpstrnew
   FieldNamesQuoteChars := TSQLConnection(DataBase).FieldNameQuoteChars;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var qry : TCustomSQLQuery;
     x   : integer;
     Fld : TField;
@@ -4424,7 +4709,10 @@ begin
     FieldNamesQuoteChar := '"'
   else
     FieldNamesQuoteChar := ' ';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   case UpdateKind of
     ukModify : begin
@@ -4434,6 +4722,7 @@ begin
                    InitialiseModifyQuery(FUpdateQry,FUpdateSQL.Text)
                  else
                    InitialiseModifyQuery(FUpdateQry,ModifyRecQuery);
+<<<<<<< HEAD
 <<<<<<< HEAD
                  end;
                qry := FUpdateQry;
@@ -4458,6 +4747,9 @@ begin
                  end;
 =======
                  end;
+=======
+                 end;
+>>>>>>> origin/fixes_2_2
                qry := FUpdateQry;
                end;
     ukInsert : begin
@@ -4472,7 +4764,10 @@ begin
                  InitialiseModifyQuery(FDeleteQry,FDeleteSQL.Text)
                else
                  InitialiseModifyQuery(FDeleteQry,DeleteRecQuery);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                qry := FDeleteQry;
                end;
   end;
@@ -4493,10 +4788,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TCustomSQLQuery.GetStatementType : TStatementType;
 =======
 Function TCustomSQLQuery.GetCanModify: Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function TCustomSQLQuery.GetCanModify: Boolean;
+>>>>>>> origin/fixes_2_2
 
 begin
 <<<<<<< HEAD
@@ -4535,6 +4834,7 @@ begin
     PacketRecords:=-1;
 end;
 
+<<<<<<< HEAD
 procedure TCustomSQLQuery.SetSQLConnection(AValue: TSQLConnection);
 begin
   Database:=AValue;
@@ -4578,6 +4878,9 @@ procedure TCustomSQLQuery.Log(EventType: TDBEventType; const Msg: String);
 
 Var
   M : String;
+=======
+procedure TCustomSQLQuery.SetUpdateMode(AValue : TUpdateMode);
+>>>>>>> origin/fixes_2_2
 
 <<<<<<< HEAD
 begin
@@ -4684,8 +4987,12 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 function TCustomSQLQuery.GetStatementType : TStatementType;
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TCustomSQLQuery.SetSchemaInfo( SchemaType : TSchemaType; SchemaObjectName, SchemaPattern : string);
+>>>>>>> origin/fixes_2_2
 
 procedure TCustomSQLQuery.SetDeleteSQL(const AValue: TStringList);
 begin
@@ -4723,6 +5030,7 @@ procedure TCustomSQLQuery.LoadBlobIntoBuffer(FieldDef: TFieldDef;
   ABlobBuf: PBufBlobField);
 begin
   TSQLConnection(DataBase).LoadBlobIntoBuffer(FieldDef, ABlobBuf, FCursor,(Transaction as tsqltransaction));
+<<<<<<< HEAD
 end;
 
 function TCustomSQLQuery.GetStatementType : TStatementType;
@@ -4756,6 +5064,25 @@ procedure TCustomSQLQuery.SetDeleteSQL(const AValue: TStringlist);
 begin
   FDeleteQry.Assign(AValue);
 end;
+=======
+end;
+
+function TCustomSQLQuery.GetStatementType : TStatementType;
+>>>>>>> origin/fixes_2_2
+
+procedure TCustomSQLQuery.SetInsertSQL(const AValue: TStringlist);
+begin
+  FInsertQry.Assign(AValue);
+end;
+
+<<<<<<< HEAD
+Procedure TCustomSQLQuery.SetDataSource(AVAlue : TDatasource);
+>>>>>>> graemeg/fixes_2_2
+=======
+procedure TCustomSQLQuery.SetDeleteSQL(const AValue: TStringlist);
+begin
+  FDeleteQry.Assign(AValue);
+end;
 
 procedure TCustomSQLQuery.SetInsertSQL(const AValue: TStringlist);
 begin
@@ -4763,7 +5090,7 @@ begin
 end;
 
 Procedure TCustomSQLQuery.SetDataSource(AVAlue : TDatasource);
->>>>>>> graemeg/fixes_2_2
+>>>>>>> origin/fixes_2_2
 
 Var
   DS : TDataSource;
@@ -4796,7 +5123,10 @@ function TCustomSQLQuery.GetDataSource: TDataSource;
 end;
 
 Function TCustomSQLQuery.GetDataSource : TDatasource;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
   If Assigned(FStatement) then
@@ -4806,10 +5136,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomSQLQuery.Notification(AComponent: TComponent; Operation: TOperation);
 =======
 procedure TCustomSQLQuery.Notification(AComponent: TComponent; Operation: TOperation); 
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TCustomSQLQuery.Notification(AComponent: TComponent; Operation: TOperation); 
+>>>>>>> origin/fixes_2_2
 
 begin
   Inherited;
@@ -4865,11 +5199,15 @@ end;
 procedure TSQLScript.ExecuteDirective(Directive, Argument: String;
   var StopExecution: Boolean);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2_2
 begin
   if assigned (FOnDirective) then
     FOnDirective (Self, Directive, Argument, StopExecution);
 end;
 
+<<<<<<< HEAD
 procedure TSQLScript.ExecuteCommit(CommitRetaining: boolean=true);
 begin
   if FTransaction is TSQLTransaction then
@@ -4886,11 +5224,16 @@ begin
     FOnDirective (Self, Directive, Argument, StopExecution);
 end;
 
+=======
+>>>>>>> origin/fixes_2_2
 procedure TSQLScript.ExecuteCommit;
 begin
   if FTransaction is TSQLTransaction then
     TSQLTransaction(FTransaction).CommitRetaining
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   else
     begin
     FTransaction.Active := false;
@@ -4918,11 +5261,15 @@ constructor TSQLScript.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
 <<<<<<< HEAD
+<<<<<<< HEAD
   FQuery := TCustomSQLQuery.Create(nil);
   FQuery.ParamCheck := false; // Do not parse for parameters; breaks use of e.g. select bla into :bla in Firebird procedures
 =======
   FQuery := TCustomSQLQuery.Create(nil); 
 >>>>>>> graemeg/fixes_2_2
+=======
+  FQuery := TCustomSQLQuery.Create(nil); 
+>>>>>>> origin/fixes_2_2
 end;
 
 destructor TSQLScript.Destroy;
@@ -5204,6 +5551,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TSQLConnector.LoadBlobIntoBuffer(FieldDef: TFieldDef;
   ABlobBuf: PBufBlobField; cursor: TSQLCursor; ATransaction: TSQLTransaction);
 begin
@@ -5213,6 +5561,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function TSQLConnector.RowsAffected(cursor: TSQLCursor): TRowsCount;
 begin
   CheckProxy;
@@ -5332,6 +5682,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { TSqlObjectIdenfier }
 
 constructor TSqlObjectIdenfier.Create(ACollection: TSqlObjectIdentifierList;
@@ -5344,6 +5695,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Initialization
 
 Finalization

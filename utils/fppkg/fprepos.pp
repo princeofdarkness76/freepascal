@@ -38,10 +38,14 @@ Type
     amiga,atari, solaris, qnx, netware, openbsd,wdosx,
     palmos,macos,darwin,emx,watcom,morphos,netwlibc,
 <<<<<<< HEAD
+<<<<<<< HEAD
     win64,wince,gba,nds,embedded,symbian,haiku
 =======
     win64,wince,gba,nds,embedded,symbian
 >>>>>>> graemeg/fixes_2_2
+=======
+    win64,wince,gba,nds,embedded,symbian
+>>>>>>> origin/fixes_2_2
   );
   TOSes = Set of TOS;
 
@@ -148,12 +152,15 @@ type
     Function AddDependency(Const APackageName : String; const AMinVersion : String = '') : TFPDependency;
     Property Dependencies : TFPDependencies Read FDependencies;
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Only for installed packages: (is false for packages which are installed globally)
     Property InstalledLocally : boolean read FInstalledLocally write FInstalledLocally;
     Property UnusedVersion : TFPVersion Read FUnusedVersion Write SetUnusedVersion;
     Property RecompileBroken : boolean read FRecompileBroken write FRecompileBroken;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Published
     Property Name : String Read FName Write SetName;
     Property Author : String Read FAuthor Write FAuthor;
@@ -168,12 +175,15 @@ type
     Property CPUs : TCPUs Read FCPUs Write FCPUs;
     Property Checksum : Cardinal Read FChecksum Write FChecksum;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property IsFPMakeAddIn : boolean read FIsFPMakeAddIn write FIsFPMakeAddIn;
     // These properties are used to re-compile the package, when it's dependencies are changed.
     Property SourcePath : string read FSourcePath write FSourcePath;
     Property FPMakeOptionsString : string read FFPMakeOptionsString write FFPMakeOptionsString;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     // Manual package from commandline not in official repository
     Property LocalFileName : String Read FLocalFileName Write FLocalFileName;
   end;
@@ -532,9 +542,12 @@ begin
   inherited Create(ACollection);
   FVersion:=TFPVersion.Create;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FUnusedVersion:=TFPVersion.Create;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FChecksum:=$ffffffff;
   FOSes:=AllOSes;
   FCPUs:=AllCPUs;
@@ -547,9 +560,12 @@ begin
   FreeAndNil(FDependencies);
   FreeAndNil(FVersion);
 <<<<<<< HEAD
+<<<<<<< HEAD
   FreeAndNil(FUnusedVersion);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   inherited Destroy;
 end;
 
@@ -566,6 +582,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure TFPPackage.SetUnusedVersion(const AValue: TFPVersion);
 begin
@@ -576,6 +593,8 @@ end;
 =======
 >>>>>>> graemeg/fixes_2_2
 
+=======
+>>>>>>> origin/fixes_2_2
 
 function TFPPackage.GetFileName: String;
 var
@@ -688,6 +707,7 @@ begin
       HomepageURL:=P.HomepageURL;
       DownloadURL:=P.DownloadURL;
 <<<<<<< HEAD
+<<<<<<< HEAD
       SourcePath:=P.SourcePath;
       FPMakeOptionsString:=P.FPMakeOptionsString;
       InstalledLocally:=P.InstalledLocally;
@@ -695,6 +715,8 @@ begin
       CPUs:=P.CPUs;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       FileName:=P.FileName;
       Checksum:=P.Checksum;
       Dependencies.Clear;

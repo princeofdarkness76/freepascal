@@ -374,10 +374,14 @@ FUNCTION_PROLOG _start
     LOAD_64BIT_VAL 8, start_addresses
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     b       __libc_start_main
 =======
     b   .__libc_start_main
 >>>>>>> graemeg/fixes_2_2
+=======
+    b   .__libc_start_main
+>>>>>>> origin/fixes_2_2
     nop                      /* a NOP for the linker */
 
 /*
@@ -407,6 +411,7 @@ FUNCTION_PROLOG main_stub
 
     LOAD_64BIT_VAL 3, _start
 <<<<<<< HEAD
+<<<<<<< HEAD
     ld      3, 0(3)
     LOAD_64BIT_VAL 4, etext
     bl      __monstartup
@@ -421,6 +426,8 @@ FUNCTION_PROLOG main_stub
 
     b       ._haltproc
 =======
+=======
+>>>>>>> origin/fixes_2_2
     ld 3, 0(3)
     LOAD_64BIT_VAL 4, etext
     bl  .__monstartup
@@ -434,7 +441,10 @@ FUNCTION_PROLOG main_stub
     nop
 
     b   ._haltproc
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 FUNCTION_PROLOG _haltproc
     LOAD_64BIT_VAL 8, ___fpc_ret
@@ -453,6 +463,7 @@ data_start:
 ___fpc_ret:                            /* return address to libc */
     .quad   0
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     .section ".bss"
 
@@ -475,10 +486,15 @@ operatingsystem_parameters:
 
 .section .note.GNU-stack,"",%progbits
 =======
+=======
+>>>>>>> origin/fixes_2_2
 .text
     .comm __stkptr, 8
 
     .comm operatingsystem_parameter_argc, 4
     .comm operatingsystem_parameter_argv, 8
     .comm operatingsystem_parameter_envp, 8
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

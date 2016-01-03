@@ -32,6 +32,7 @@ const
   Classes, SysUtils, toolsunit,
   db,
 <<<<<<< HEAD
+<<<<<<< HEAD
   sqldb, ibconnection, mysql40conn, mysql41conn, mysql50conn, mysql51conn, pqconnection,odbcconn,oracleconnection,sqlite3conn;
 
 type TSQLDBTypes = (mysql40,mysql41,mysql50,mysql51,postgresql,interbase,odbc,oracle,sqlite3);
@@ -40,6 +41,8 @@ const MySQLdbTypes = [mysql40,mysql41,mysql50];
       DBTypesNames : Array [TSQLDBTypes] of String[19] =
              ('MYSQL40','MYSQL41','MYSQL50','MYSQL51','POSTGRESQL','INTERBASE','ODBC','ORACLE','SQLITE3');
 =======
+=======
+>>>>>>> origin/fixes_2_2
   sqldb, ibconnection, mysql40conn, mysql41conn, mysql50conn, pqconnection,odbcconn,oracleconnection,sqlite3conn;
 
 type TSQLDBTypes = (mysql40,mysql41,mysql50,postgresql,interbase,odbc,oracle,sqlite3);
@@ -47,7 +50,10 @@ type TSQLDBTypes = (mysql40,mysql41,mysql50,postgresql,interbase,odbc,oracle,sql
 const MySQLdbTypes = [mysql40,mysql41,mysql50];
       DBTypesNames : Array [TSQLDBTypes] of String[19] =
              ('MYSQL40','MYSQL41','MYSQL50','POSTGRESQL','INTERBASE','ODBC','ORACLE','SQLITE3');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
              
       FieldtypeDefinitionsConst : Array [TFieldType] of String[15] =
         (
@@ -62,10 +68,14 @@ const MySQLdbTypes = [mysql40,mysql41,mysql50];
           'DECIMAL(18,4)',
           'DATE',
 <<<<<<< HEAD
+<<<<<<< HEAD
           'TIME',
 =======
           'TIMESTAMP',
 >>>>>>> graemeg/fixes_2_2
+=======
+          'TIMESTAMP',
+>>>>>>> origin/fixes_2_2
           'TIMESTAMP',
           '',
           '',
@@ -81,10 +91,14 @@ const MySQLdbTypes = [mysql40,mysql41,mysql50];
           'CHAR(10)',
           '',
 <<<<<<< HEAD
+<<<<<<< HEAD
           'BIGINT',
 =======
           '',
 >>>>>>> graemeg/fixes_2_2
+=======
+          '',
+>>>>>>> origin/fixes_2_2
           '',
           '',
           '',
@@ -97,6 +111,7 @@ const MySQLdbTypes = [mysql40,mysql41,mysql50];
           '',
           'TIMESTAMP',
 <<<<<<< HEAD
+<<<<<<< HEAD
           'NUMERIC(18,6)',
           '',
           ''
@@ -106,12 +121,17 @@ const MySQLdbTypes = [mysql40,mysql41,mysql50];
   STestNotApplicable = 'This test does not apply to this sqldb connection type';
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
           '',
           '',
           ''
         );
              
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 { TSQLDBConnector }
@@ -150,6 +170,7 @@ type
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 var SQLConnType : TSQLConnType;
     SQLServerType : TSQLServerType;
     FieldtypeDefinitions : Array [TFieldType] of String[20];
@@ -161,6 +182,11 @@ var SQLDbType : TSQLDBTypes;
     FieldtypeDefinitions : Array [TFieldType] of String[15];
     
 >>>>>>> graemeg/fixes_2_2
+=======
+var SQLDbType : TSQLDBTypes;
+    FieldtypeDefinitions : Array [TFieldType] of String[15];
+    
+>>>>>>> origin/fixes_2_2
 implementation
 
 uses StrUtils;
@@ -662,17 +688,24 @@ var CountID : Integer;
 begin
   try
     Ftransaction.StartTransaction;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     Sql := 'create table FPDEV_FIELD (ID INT NOT NULL,';
     for FType := low(TFieldType)to high(TFieldType) do
       if FieldtypeDefinitions[FType]<>'' then
+<<<<<<< HEAD
 <<<<<<< HEAD
         sql := sql + 'F' + Fieldtypenames[FType] + ' ' +
           FieldtypeDefinitions[FType] + ',';
 =======
         sql := sql + 'F' + Fieldtypenames[FType] + ' ' +FieldtypeDefinitions[FType]+ ',';
 >>>>>>> graemeg/fixes_2_2
+=======
+        sql := sql + 'F' + Fieldtypenames[FType] + ' ' +FieldtypeDefinitions[FType]+ ',';
+>>>>>>> origin/fixes_2_2
     Sql := Sql + 'PRIMARY KEY (ID))';
 
     FConnection.ExecuteDirect(Sql);
@@ -682,9 +715,13 @@ begin
     for countID := 0 to testValuesCount-1 do
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       
 >>>>>>> graemeg/fixes_2_2
+=======
+      
+>>>>>>> origin/fixes_2_2
       Sql :=  'insert into FPDEV_FIELD (ID';
       Sql1 := 'values ('+IntToStr(countID);
       for FType := low(TFieldType)to high(TFieldType) do
@@ -692,6 +729,7 @@ begin
           begin
           sql := sql + ',F' + Fieldtypenames[FType];
           if testValues[FType,CountID] <> '' then
+<<<<<<< HEAD
 <<<<<<< HEAD
             case FType of
               ftBlob, ftBytes, ftGraphic, ftVarBytes:
@@ -736,6 +774,9 @@ begin
 =======
             sql1 := sql1 + ',''' + StringReplace(testValues[FType,CountID],'''','''''',[rfReplaceAll]) + ''''
 >>>>>>> graemeg/fixes_2_2
+=======
+            sql1 := sql1 + ',''' + StringReplace(testValues[FType,CountID],'''','''''',[rfReplaceAll]) + ''''
+>>>>>>> origin/fixes_2_2
           else
             sql1 := sql1 + ',NULL';
           end;
@@ -761,6 +802,7 @@ var
   Category: string;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   case EventType of
     detCustom:   Category:='Custom';
     detPrepare:  Category:='Prepare';
@@ -777,6 +819,8 @@ procedure TSQLDBConnector.DropNDatasets;
 begin
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   if assigned(FTransaction) then
     begin
     try
@@ -786,6 +830,7 @@ begin
       Ftransaction.Commit;
     Except
 <<<<<<< HEAD
+<<<<<<< HEAD
       on E: Exception do begin
         if dblogfilename<>'' then
           DoLogEvent(nil,detCustom,'Exception running DropNDatasets: '+E.Message);
@@ -794,6 +839,9 @@ begin
 =======
       if Ftransaction.Active then Ftransaction.Rollback
 >>>>>>> graemeg/fixes_2_2
+=======
+      if Ftransaction.Active then Ftransaction.Rollback
+>>>>>>> origin/fixes_2_2
     end;
     end;
 end;
@@ -809,6 +857,7 @@ begin
       Ftransaction.Commit;
     Except
 <<<<<<< HEAD
+<<<<<<< HEAD
       on E: Exception do begin
         if dblogfilename<>'' then
           DoLogEvent(nil,detCustom,'Exception running DropFieldDataset: '+E.Message);
@@ -817,6 +866,9 @@ begin
 =======
       if Ftransaction.Active then Ftransaction.Rollback
 >>>>>>> graemeg/fixes_2_2
+=======
+      if Ftransaction.Active then Ftransaction.Rollback
+>>>>>>> origin/fixes_2_2
     end;
     end;
 end;
@@ -874,6 +926,7 @@ end;
 
 procedure TSQLDBConnector.TryDropIfExist(ATableName: String);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   // This makes life so much easier, since it avoids the exception if the table already
   // exists. And while this exception is in a try..except statement, the debugger
@@ -935,6 +988,8 @@ begin
   end;
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if assigned(FTransaction) then
     begin
     try

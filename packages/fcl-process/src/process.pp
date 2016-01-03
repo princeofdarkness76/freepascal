@@ -42,6 +42,7 @@ Type
 
 Type
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef UNIX}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -74,15 +75,20 @@ Type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   TProcess = Class (TComponent)
   Private
     FProcessOptions : TProcessOptions;
     FStartupOptions : TStartupOptions;
     FProcessID : Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FTerminalProgram: String;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FThreadID : Integer;
     FProcessHandle : Thandle;
     FThreadHandle : Thandle;
@@ -93,6 +99,7 @@ Type
     FCurrentDirectory : String;
     FDesktop : String;
     FEnvironment : Tstrings;
+<<<<<<< HEAD
 <<<<<<< HEAD
     FExecutable : String;
     FParameters : TStrings;
@@ -105,6 +112,10 @@ Type
     FShowWindow : TShowWindowOptions;
     FInherithandles : Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+    FShowWindow : TShowWindowOptions;
+    FInherithandles : Boolean;
+>>>>>>> origin/fixes_2_2
     FProcessPriority : TProcessPriority;
     dwXCountchars,
     dwXSize,
@@ -112,6 +123,7 @@ Type
     dwx,
     dwYcountChars,
     dwy : Cardinal;
+<<<<<<< HEAD
 <<<<<<< HEAD
     FXTermProgram: String;
     FPipeBufferSize : cardinal;
@@ -123,11 +135,16 @@ Type
     procedure SetCommandLine(const AValue: String);
     procedure SetParameters(const AValue: TStrings);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Procedure FreeStreams;
     Function  GetExitStatus : Integer;
     Function  GetRunning : Boolean;
     Function  GetWindowRect : TRect;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Procedure SetWindowRect (Value : TRect);
     Procedure SetShowWindow (Value : TShowWindowOptions);
     Procedure SetWindowColumns (Value : Cardinal);
@@ -141,6 +158,7 @@ Type
     procedure SetActive(const Value: Boolean);
     procedure SetEnvironment(const Value: TStrings);
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure ConvertCommandLine;
     function  PeekExitStatus: Boolean;
   Protected
@@ -148,6 +166,10 @@ Type
     function  PeekExitStatus: Boolean;
   Protected  
 >>>>>>> graemeg/fixes_2_2
+=======
+    function  PeekExitStatus: Boolean;
+  Protected  
+>>>>>>> origin/fixes_2_2
     FRunning : Boolean;
     FExitCode : Cardinal;
     FInputStream  : TOutputPipeStream;
@@ -157,9 +179,12 @@ Type
     Procedure CreateStreams(InHandle,OutHandle,ErrHandle : Longint);virtual;
     procedure FreeStream(var AStream: THandleStream);
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure Loaded; override;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Public
     Constructor Create (AOwner : TComponent);override;
     Destructor Destroy; override;
@@ -182,6 +207,7 @@ Type
     Property Stderr : TinputPipeStream  Read FStderrStream;
     Property ExitStatus : Integer Read GetExitStatus;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property ExitCode : Integer Read GetExitCode;
     Property InheritHandles : Boolean Read FInheritHandles Write FInheritHandles;
     {$ifdef UNIX}
@@ -195,12 +221,17 @@ Type
     Property Executable : String Read FExecutable Write FExecutable;
     Property Parameters : TStrings Read FParameters Write SetParameters;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Property InheritHandles : Boolean Read FInheritHandles Write FInheritHandles;
   Published
     Property Active : Boolean Read GetRunning Write SetActive;
     Property ApplicationName : String Read FApplicationName Write SetApplicationName;
     Property CommandLine : String Read FCommandLine Write FCommandLine;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Property ConsoleTitle : String Read FConsoleTitle Write FConsoleTitle;
     Property CurrentDirectory : String Read FCurrentDirectory Write FCurrentDirectory;
     Property Desktop : String Read FDesktop Write FDesktop;
@@ -217,6 +248,7 @@ Type
     Property WindowTop : Cardinal Read dwY Write SetWindowTop ;
     Property WindowWidth : Cardinal Read dwXSize Write SetWindowWidth;
     Property FillAttribute : Cardinal read FFillAttribute Write FFillAttribute;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Property XTermProgram : String Read FXTermProgram Write FXTermProgram;
   end;
@@ -302,6 +334,8 @@ begin
     end;
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   end;
   
   EProcess = Class(Exception);
@@ -323,7 +357,10 @@ Resourcestring
   SErrNoSuchProgram = 'Executable not found: "%s"';
 
 {$i process.inc}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 Constructor TProcess.Create (AOwner : TComponent);
 begin
@@ -331,6 +368,7 @@ begin
   FProcessPriority:=ppNormal;
   FShowWindow:=swoNone;
   FInheritHandles:=True;
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$ifdef UNIX}
   FForkEvent:=nil;
@@ -353,15 +391,21 @@ begin
 =======
   FEnvironment:=TStringList.Create;
 >>>>>>> graemeg/fixes_2_2
+=======
+  FEnvironment:=TStringList.Create;
+>>>>>>> origin/fixes_2_2
 end;
 
 Destructor TProcess.Destroy;
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FParameters.Free;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FEnvironment.Free;
   FreeStreams;
   CloseProcessHandles;
@@ -372,6 +416,7 @@ Procedure TProcess.FreeStreams;
 begin
   If FStderrStream<>FOutputStream then
 <<<<<<< HEAD
+<<<<<<< HEAD
     FreeStream(THandleStream(FStderrStream));
   FreeStream(THandleStream(FOutputStream));
   FreeStream(THandleStream(FInputStream));
@@ -380,12 +425,18 @@ begin
   FreeStream(FOutputStream);
   FreeStream(FInputStream);
 >>>>>>> graemeg/fixes_2_2
+=======
+    FreeStream(FStderrStream);
+  FreeStream(FOutputStream);
+  FreeStream(FInputStream);
+>>>>>>> origin/fixes_2_2
 end;
 
 
 Function TProcess.GetExitStatus : Integer;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   GetRunning;
   Result:=FExitCode;
@@ -402,12 +453,17 @@ begin
 end;
 {$ENDIF}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   If FRunning then
     PeekExitStatus;
   Result:=FExitCode;
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 Function TProcess.GetRunning : Boolean;
 
@@ -432,6 +488,7 @@ procedure TProcess.FreeStream(var AStream: THandleStream);
 begin
   if AStream = nil then exit;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FreeAndNil(AStream);
 end;
 
@@ -446,6 +503,8 @@ procedure TProcess.CloseInput;
 begin
   FreeStream(THandleStream(FInputStream));
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FileClose(AStream.Handle);
   FreeAndNil(AStream);
 end;
@@ -453,25 +512,36 @@ end;
 procedure TProcess.CloseInput;
 begin
   FreeStream(FInputStream);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TProcess.CloseOutput;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FreeStream(THandleStream(FOutputStream));
 =======
   FreeStream(FOutputStream);
 >>>>>>> graemeg/fixes_2_2
+=======
+  FreeStream(FOutputStream);
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TProcess.CloseStderr;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FreeStream(THandleStream(FStderrStream));
 =======
   FreeStream(FStderrStream);
 >>>>>>> graemeg/fixes_2_2
+=======
+  FreeStream(FStderrStream);
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure TProcess.SetWindowColumns (Value : Cardinal);
@@ -526,6 +596,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TProcess.SetCommandLine(const AValue: String);
 begin
   if FCommandLine=AValue then exit;
@@ -541,6 +612,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Procedure TProcess.SetWindowRect (Value : Trect);
 begin
   Include(FStartupOptions,suoUseSize);
@@ -594,6 +667,7 @@ begin
   FEnvironment.Assign(Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TProcess.ConvertCommandLine;
 begin
@@ -786,4 +860,6 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.

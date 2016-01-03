@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QD/Fonts.h
  
      Contains:   Public interface to the Font Manager.
@@ -24,6 +25,8 @@
  
      Copyright:  © 1985-2008 by Apple Inc. all rights reserved.
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       Fonts.p
  
      Contains:   Public interface to the Font Manager.
@@ -32,11 +35,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -67,6 +74,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -78,7 +87,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -88,12 +100,17 @@
 unit Fonts;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -107,14 +124,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -123,11 +145,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -165,6 +190,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -172,6 +199,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -385,6 +413,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -393,7 +423,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -420,9 +453,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -432,6 +469,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,QuickdrawText,ATSTypes,Files,MacErrors,QuickdrawTypes,TextCommon,CGFont;
 {$endc} {not MACOSALLINCLUDE}
@@ -2524,6 +2562,254 @@ const
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+uses MacTypes,QuickdrawText,ATSTypes,Files,MacErrors,Quickdraw,TextCommon;
+
+
+{$ALIGN MAC68K}
+
+
+const
+	systemFont					= 0;
+	applFont					= 1;
+
+	kFMDefaultOptions			= 0;
+
+	{	 Activation contexts 	}
+	kFMDefaultActivationContext	= 0;
+	kFMGlobalActivationContext	= $00000001;
+	kFMLocalActivationContext	= 0;
+
+	{	 Iteration scopes 	}
+	kFMDefaultIterationScope	= 0;
+	kFMGlobalIterationScope		= $00000001;
+	kFMLocalIterationScope		= 0;
+
+
+	{	 kPlatformDefaultGuiFontID is used in QuickTime 3.0. 	}
+{$ifc TARGET_OS_MAC}
+	kPlatformDefaultGuiFontID	= 1;
+
+{$elsec}
+	kPlatformDefaultGuiFontID	= -1;
+
+{$endc}  {TARGET_OS_MAC}
+
+	commandMark					= 17;
+	checkMark					= 18;
+	diamondMark					= 19;
+	appleMark					= 20;
+
+	propFont					= 36864;
+	prpFntH						= 36865;
+	prpFntW						= 36866;
+	prpFntHW					= 36867;
+	fixedFont					= 45056;
+	fxdFntH						= 45057;
+	fxdFntW						= 45058;
+	fxdFntHW					= 45059;
+	fontWid						= 44208;
+
+
+type
+	FMInputPtr = ^FMInput;
+	FMInput = packed record
+		family:					SInt16;
+		size:					SInt16;
+		face:					Style;
+		needBits:				boolean;
+		device:					SInt16;
+		numer:					Point;
+		denom:					Point;
+	end;
+
+	FMOutputPtr = ^FMOutput;
+	FMOutput = packed record
+		errNum:					SInt16;
+		fontHandle:				Handle;
+		boldPixels:				UInt8;
+		italicPixels:			UInt8;
+		ulOffset:				UInt8;
+		ulShadow:				UInt8;
+		ulThick:				UInt8;
+		shadowPixels:			UInt8;
+		extra:					SInt8;
+		ascent:					UInt8;
+		descent:				UInt8;
+		widMax:					UInt8;
+		leading:				SInt8;
+		curStyle:				SInt8;
+		numer:					Point;
+		denom:					Point;
+	end;
+
+	FMOutPtr							= FMOutputPtr;
+	FMetricRecPtr = ^FMetricRec;
+	FMetricRec = record
+		ascent:					Fixed;									{ base line to top }
+		descent:				Fixed;									{ base line to bottom }
+		leading:				Fixed;									{ leading between lines }
+		widMax:					Fixed;									{ maximum character width }
+		wTabHandle:				Handle;									{ handle to font width table }
+	end;
+
+	FMetricRecHandle					= ^FMetricRecPtr;
+{$ifc CALL_NOT_IN_CARBON}
+	{
+	 *  InitFonts()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+	 *    CarbonLib:        not available
+	 *    Mac OS X:         not available
+	 	}
+procedure InitFonts; external name '_InitFonts';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  GetFontName()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure GetFontName(familyID: SInt16; var name: Str255); external name '_GetFontName';
+{
+ *  GetFNum()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure GetFNum(const (*var*) name: Str255; var familyID: SInt16); external name '_GetFNum';
+{
+ *  RealFont()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function RealFont(fontNum: SInt16; size: SInt16): boolean; external name '_RealFont';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  SetFontLock()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure SetFontLock(lockFlag: boolean); external name '_SetFontLock';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  FMSwapFont()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function FMSwapFont(const (*var*) inRec: FMInput): FMOutPtr; external name '_FMSwapFont';
+{
+ *  SetFScaleDisable()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure SetFScaleDisable(fscaleDisable: boolean); external name '_SetFScaleDisable';
+{
+ *  FontMetrics()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure FontMetrics(theMetrics: FMetricRecPtr); external name '_FontMetrics';
+{
+ *  SetFractEnable()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure SetFractEnable(fractEnable: boolean); external name '_SetFractEnable';
+{
+ *  GetDefFontSize()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function GetDefFontSize: SInt16; external name '_GetDefFontSize';
+{
+ *  IsOutline()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function IsOutline(numer: Point; denom: Point): boolean; external name '_IsOutline';
+{
+ *  SetOutlinePreferred()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure SetOutlinePreferred(outlinePreferred: boolean); external name '_SetOutlinePreferred';
+{
+ *  GetOutlinePreferred()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function GetOutlinePreferred: boolean; external name '_GetOutlinePreferred';
+{
+ *  OutlineMetrics()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function OutlineMetrics(byteCount: SInt16; textPtr: UnivPtr; numer: Point; denom: Point; var yMax: SInt16; var yMin: SInt16; awArray: FixedPtr; lsbArray: FixedPtr; boundsArray: RectPtr): OSErr; external name '_OutlineMetrics';
+{
+ *  SetPreserveGlyph()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure SetPreserveGlyph(preserveGlyph: boolean); external name '_SetPreserveGlyph';
+{
+ *  GetPreserveGlyph()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function GetPreserveGlyph: boolean; external name '_GetPreserveGlyph';
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  FlushFonts()
+ *  
+ *  Availability:
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -3100,4 +3386,7 @@ const
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

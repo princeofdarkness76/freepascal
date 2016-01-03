@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
 compiler.pas
 
@@ -652,6 +653,8 @@ end;
 end.
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
 compiler.pas
 
@@ -1304,4 +1307,7 @@ end;
 
 end.
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

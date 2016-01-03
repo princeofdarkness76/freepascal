@@ -83,6 +83,7 @@ end;
     See the file COPYING.FPC, included in this distribution,
     for details about the copyright.
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 {
@@ -126,6 +127,8 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure libc_atexit; external name 'atexit';
 procedure libc_exit; external name '__libc_exit';
 procedure libc_init; external name '__libc_init';

@@ -1,5 +1,6 @@
 {$IFDEF FPC}{$mode objfpc}{$ENDIF}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$h+}
 
 uses
@@ -51,6 +52,8 @@ procedure TAny.x;
 begin
   Inc(gx);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 uses
 	sysutils;
@@ -76,11 +79,15 @@ type
 procedure TAny.x;
 begin
 	WriteLn('x');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TAny.y;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   Inc(gy);
 end;
@@ -140,6 +147,8 @@ begin
   if (gc<>0) or (gx<>2) or (gy<>2) or (gz<>2) then
     halt(1);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	WriteLn('y');
 end;
 
@@ -166,5 +175,8 @@ begin
 	any(a as IAny2);
 
 	//a.Free();
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.

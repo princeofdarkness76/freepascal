@@ -72,7 +72,10 @@ unit cgcpu;
         procedure g_exception_reason_save_const(list : TAsmList; const href : treference; a: aint);override;
         procedure g_exception_reason_load(list : TAsmList; const href : treference);override;
         procedure g_intf_wrapper(list: TAsmList; procdef: tprocdef; const labelname: string; ioffset: longint);override;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         procedure g_maybe_got_init(list: TAsmList); override;
      end;
 
@@ -122,6 +125,7 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (cs_useebp in current_settings.optimizerswitches) and assigned(current_procinfo) and (current_procinfo.framepointer<>NR_EBP) then
           rg[R_INTREGISTER]:=trgcpu.create(R_INTREGISTER,R_SUBWHOLE,[RS_EAX,RS_EDX,RS_ECX,RS_EBX,RS_ESI,RS_EDI,RS_EBP],first_int_imreg,[])
 =======
@@ -135,6 +139,9 @@ unit cgcpu;
 =======
         if (target_info.system<>system_i386_darwin) and
 >>>>>>> graemeg/fixes_2_2
+=======
+        if (target_info.system<>system_i386_darwin) and
+>>>>>>> origin/fixes_2_2
            (cs_create_pic in current_settings.moduleswitches) then
           rg[R_INTREGISTER]:=trgcpu.create(R_INTREGISTER,R_SUBWHOLE,[RS_EAX,RS_EDX,RS_ECX,RS_ESI,RS_EDI],first_int_imreg,[RS_EBP])
 >>>>>>> graemeg/cpstrnew
@@ -155,10 +162,15 @@ unit cgcpu;
             if getsupreg(current_procinfo.got) < first_int_imreg then
               include(rg[R_INTREGISTER].used_in_proc,getsupreg(current_procinfo.got));
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             { ebx is currently always used (do to getiepasebx call) }
             include(rg[R_INTREGISTER].used_in_proc,RS_EBX);
 >>>>>>> graemeg/fixes_2_2
+=======
+            { ebx is currently always used (do to getiepasebx call) }
+            include(rg[R_INTREGISTER].used_in_proc,RS_EBX);
+>>>>>>> origin/fixes_2_2
           end;
         inherited do_register_allocation(list,headertai);
       end;
@@ -504,6 +516,7 @@ unit cgcpu;
            { complex return values are removed from stack in C code PM }
            { but not on win32 }
 <<<<<<< HEAD
+<<<<<<< HEAD
            { and not for safecall with hidden exceptions, because the result }
            { wich contains the exception is passed in EAX }
 <<<<<<< HEAD
@@ -529,6 +542,8 @@ unit cgcpu;
               paramanager.ret_in_param(current_procinfo.procdef.returndef,
                                        current_procinfo.procdef) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
            if (target_info.system <> system_i386_win32) and
               paramanager.ret_in_param(current_procinfo.procdef.returndef,
                                        current_procinfo.procdef.proccalloption) then
@@ -767,6 +782,7 @@ unit cgcpu;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tcg386.g_maybe_got_init(list: TAsmList);
       var
         i: longint;
@@ -774,6 +790,19 @@ unit cgcpu;
 =======
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+    procedure tcg386.g_releasevaluepara_openarray(list : TAsmList;const l:tlocation);
+      begin
+        if use_fixed_stack then
+          begin
+            inherited g_releasevaluepara_openarray(list,l);
+            exit;
+          end;
+        { Nothing to release }
+      end;
+
+
+>>>>>>> origin/fixes_2_2
     procedure tcg386.g_exception_reason_save(list : TAsmList; const href : treference);
       begin
         if not paramanager.use_fixed_stack then
@@ -806,6 +835,7 @@ unit cgcpu;
 
     procedure tcg386.g_maybe_got_init(list: TAsmList);
 <<<<<<< HEAD
+<<<<<<< HEAD
       var
         notdarwin: boolean;
 <<<<<<< HEAD
@@ -820,12 +850,15 @@ unit cgcpu;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
         { allocate PIC register }
         if (cs_create_pic in current_settings.moduleswitches) and
            (tf_pic_uses_got in target_info.flags) and
            (pi_needs_got in current_procinfo.flags) then
           begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -933,6 +966,8 @@ unit cgcpu;
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
             if (target_info.system<>system_i386_darwin) then
               begin
                 current_module.requires_ebx_pic_helper:=true;
@@ -952,7 +987,10 @@ unit cgcpu;
                 { got is already set by ti386procinfo.allocate_got_register }
                 list.concat(tai_regalloc.dealloc(NR_EBX,nil));
                 a_load_reg_reg(list,OS_ADDR,OS_ADDR,NR_EBX,current_procinfo.got);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               end;
           end;
       end;
@@ -1234,10 +1272,14 @@ unit cgcpu;
           OP_AND,OP_OR,OP_XOR:
             begin
 <<<<<<< HEAD
+<<<<<<< HEAD
               cg.a_op_const_ref(list,op,OS_32,tcgint(lo(value)),tempref);
 =======
               cg.a_op_const_ref(list,op,OS_32,aint(lo(value)),tempref);
 >>>>>>> graemeg/fixes_2_2
+=======
+              cg.a_op_const_ref(list,op,OS_32,aint(lo(value)),tempref);
+>>>>>>> origin/fixes_2_2
               inc(tempref.offset,4);
               cg.a_op_const_ref(list,op,OS_32,tcgint(hi(value)),tempref);
             end;

@@ -1,10 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
 
   Adaption of the delphi3d.net OpenGL units to FreePascal
   Sebastian Guenther (sg@freepascal.org) in 2002
   These units are free to use
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { Adaption of the delphi3d.net OpenGL units to FreePascal
   Sebastian Guenther (sg@freepascal.org) in 2002
   These units are free to use
@@ -12,7 +15,10 @@
   19.6.07 : Added GLUT_EXCLUSIVE_FPUMODE to allow for
   unsafe glut-libs, that don't handle FPU-exceptions in
   a compatible way.  Jan Bruns (post@abnuto.de)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 }
 
 {$MACRO ON}
@@ -24,7 +30,10 @@
 {$ENDIF}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {$IFDEF CPU86}
   {$DEFINE GLUT_EXCLUSIVE_FPUMODE}
@@ -32,7 +41,10 @@
 {$ENDIF}
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$IFDEF MORPHOS}
 {$INLINE ON}
 {$DEFINE GLUT_UNIT}
@@ -66,10 +78,13 @@ uses
   {$ENDIF}
   {$ENDIF}
 <<<<<<< HEAD
+<<<<<<< HEAD
   GL;
 
 type
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$IFDEF GLUT_EXCLUSIVE_FPUMODE}
   math,
   {$ENDIF}
@@ -78,7 +93,10 @@ type
 type
   PInteger = ^Integer;
   PPChar = ^PChar;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   TGlutVoidCallback = procedure; cdecl;
   TGlut1IntCallback = procedure(value: Integer); cdecl;
   TGlut2IntCallback = procedure(v1, v2: Integer); cdecl;
@@ -341,7 +359,10 @@ const
 {$ELSE MORPHOS}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$IFDEF GLUT_EXCLUSIVE_FPUMODE}
 var
 OLD_glutInit:procedure(argcp: PInteger; argv: PPChar); extdecl;
@@ -576,7 +597,10 @@ function glutGameModeGet(mode : GLenum): integer; mode_inline;
 
 
 {$ELSE GLUT_EXCLUSIVE_FPUMODE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
 // GLUT initialization sub-API.
   glutInit: procedure(argcp: PInteger; argv: PPChar); extdecl;
@@ -723,18 +747,24 @@ var
   glutLeaveGameMode : procedure; extdecl;
   glutGameModeGet : function (mode : GLenum) : integer; extdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF MORPHOS}
 
 procedure LoadGlut(const dll: String);
 procedure UnloadGlut;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ENDIF GLUT_EXCLUSIVE_FPUMODE}
 {$ENDIF MORPHOS}
 
 procedure LoadGlut(const dll: String);
 procedure FreeGlut;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 implementation
 
@@ -746,19 +776,26 @@ implementation
 
 {$ELSE MORPHOS}
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses FreeGlut;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   hDLL: TLibHandle;
 {$ENDIF MORPHOS}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure UnloadGlut;
 =======
 procedure FreeGlut;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure FreeGlut;
+>>>>>>> origin/fixes_2_2
 begin
 {$IFDEF MORPHOS}
   // MorphOS's GL will closed down by TinyGL unit, nothing is needed here.
@@ -768,7 +805,10 @@ begin
     FreeLibrary(hDLL);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$IFDEF GLUT_EXCLUSIVE_FPUMODE}
 
   @OLD_glutInit := nil;
@@ -887,7 +927,10 @@ begin
   @OLD_glutGameModeGet := nil;
 
 {$ELSE GLUT_EXCLUSIVE_FPUMODE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   @glutInit := nil;
   @glutInitDisplayMode := nil;
   @glutInitDisplayString := nil;
@@ -1003,11 +1046,15 @@ begin
   @glutLeaveGameMode := nil;
   @glutGameModeGet := nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   UnloadFreeGlut;
 =======
 {$ENDIF GLUT_EXCLUSIVE_FPUMODE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ENDIF GLUT_EXCLUSIVE_FPUMODE}
+>>>>>>> origin/fixes_2_2
 {$ENDIF MORPHOS}
 end;
 
@@ -1029,16 +1076,23 @@ var
 begin
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   UnloadGlut;
 =======
   FreeGlut;
 >>>>>>> graemeg/fixes_2_2
+=======
+  FreeGlut;
+>>>>>>> origin/fixes_2_2
 
   hDLL := LoadLibrary(PChar(dll));
   if hDLL = 0 then raise Exception.Create('Could not load Glut from ' + dll);
   try
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$IFDEF GLUT_EXCLUSIVE_FPUMODE}
     @OLD_glutInit := GetGLutProcAddress(hDLL, 'glutInit');
     @OLD_glutInitDisplayMode := GetGLutProcAddress(hDLL, 'glutInitDisplayMode');
@@ -1155,7 +1209,10 @@ begin
     @OLD_glutLeaveGameMode := GetGLutProcAddress(hDLL, 'glutLeaveGameMode');
     @OLD_glutGameModeGet := GetGLutProcAddress(hDLL, 'glutGameModeGet');
 {$ELSE GLUT_EXCLUSIVE_FPUMODE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     @glutInit := GetGLutProcAddress(hDLL, 'glutInit');
     @glutInitDisplayMode := GetGLutProcAddress(hDLL, 'glutInitDisplayMode');
     @glutInitDisplayString := GetGLutProcAddress(hDLL, 'glutInitDisplayString');
@@ -1271,10 +1328,15 @@ begin
     @glutLeaveGameMode := GetGLutProcAddress(hDLL, 'glutLeaveGameMode');
     @glutGameModeGet := GetGLutProcAddress(hDLL, 'glutGameModeGet');
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ENDIF GLUT_EXCLUSIVE_FPUMODE}
 
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ENDIF GLUT_EXCLUSIVE_FPUMODE}
+
+>>>>>>> origin/fixes_2_2
 {$ifndef Windows}
     GLUT_STROKE_ROMAN := GetGLutProcAddress(hDll, 'glutStrokeRoman');
     GLUT_STROKE_MONO_ROMAN := GetGLutProcAddress(hDll,'glutStrokeMonoRoman');
@@ -1289,6 +1351,7 @@ begin
   except
     raise Exception.Create('Could not load ' + MethodName + ' from ' + dll);
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
   LoadFreeGlut(hDLL);
 end;
@@ -1322,6 +1385,8 @@ finalization
   UnloadGlut;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 end;
 {$ENDIF MORPHOS}
 
@@ -2186,5 +2251,8 @@ initialization
 
 finalization
   FreeGlut;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.

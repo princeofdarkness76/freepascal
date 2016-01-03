@@ -126,10 +126,14 @@ implementation
       { return type might be wrong }
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
          packet_error:= not ({dword}(0));
 =======
          packet_error:= not (dword(0));
 >>>>>>> graemeg/fixes_2_2
+=======
+         packet_error:= not (dword(0));
+>>>>>>> origin/fixes_2_2
       end;
 
 // Next function also defined in mysql4_comdyn

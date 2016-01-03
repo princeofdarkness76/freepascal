@@ -3,6 +3,7 @@
  
      Contains:   Thread Manager Interfaces.
 <<<<<<< HEAD
+<<<<<<< HEAD
                  The contents of this header file are deprecated.
  
 <<<<<<< HEAD
@@ -22,11 +23,16 @@
  
      Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  
      Version:    CarbonCore-654.0.85~1
  
      Copyright:  © 1991-2005 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -35,6 +41,7 @@
  
 }
 {      Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, November 2005 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {      Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
@@ -55,13 +62,18 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
     Modified for use with Free Pascal
     Version 210
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -71,12 +83,17 @@
 unit Threads;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -90,14 +107,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -106,11 +128,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -148,6 +173,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -155,6 +182,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -400,6 +428,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -408,7 +438,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -435,9 +468,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -447,6 +484,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes;
 {$endc} {not MACOSALLINCLUDE}
@@ -487,12 +525,17 @@ uses MacTypes;
 ********************************************************************************************}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,MixedMode,MacErrors;
 
 
 {$ALIGN MAC68K}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { Thread states}
 type
 	ThreadState = UInt16;
@@ -516,10 +559,14 @@ const
 { Thread identifiers}
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ThreadID = UNSIGNEDLONG;
 =======
 	ThreadID = UInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+	ThreadID = UInt32;
+>>>>>>> origin/fixes_2_2
 const
 	kNoThreadID = 0;
 	kCurrentThreadID = 1;
@@ -552,10 +599,14 @@ type
  }
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	voidPtr = UnivPtr;
 =======
 	voidPtr = Ptr;
 >>>>>>> graemeg/fixes_2_2
+=======
+	voidPtr = Ptr;
+>>>>>>> origin/fixes_2_2
 { Prototype for thread's entry (main) routine}
 type
 	ThreadEntryProcPtr = function( threadParam: UnivPtr ): voidPtr;
@@ -595,10 +646,14 @@ type
  }
 function NewThreadEntryUPP( userRoutine: ThreadEntryProcPtr ): ThreadEntryUPP; external name '_NewThreadEntryUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  NewThreadSchedulerUPP()
@@ -610,10 +665,14 @@ function NewThreadEntryUPP( userRoutine: ThreadEntryProcPtr ): ThreadEntryUPP; e
  }
 function NewThreadSchedulerUPP( userRoutine: ThreadSchedulerProcPtr ): ThreadSchedulerUPP; external name '_NewThreadSchedulerUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  NewThreadSwitchUPP()
@@ -625,10 +684,14 @@ function NewThreadSchedulerUPP( userRoutine: ThreadSchedulerProcPtr ): ThreadSch
  }
 function NewThreadSwitchUPP( userRoutine: ThreadSwitchProcPtr ): ThreadSwitchUPP; external name '_NewThreadSwitchUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  NewThreadTerminationUPP()
@@ -640,10 +703,14 @@ function NewThreadSwitchUPP( userRoutine: ThreadSwitchProcPtr ): ThreadSwitchUPP
  }
 function NewThreadTerminationUPP( userRoutine: ThreadTerminationProcPtr ): ThreadTerminationUPP; external name '_NewThreadTerminationUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  NewDebuggerNewThreadUPP()
@@ -655,10 +722,14 @@ function NewThreadTerminationUPP( userRoutine: ThreadTerminationProcPtr ): Threa
  }
 function NewDebuggerNewThreadUPP( userRoutine: DebuggerNewThreadProcPtr ): DebuggerNewThreadUPP; external name '_NewDebuggerNewThreadUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  NewDebuggerDisposeThreadUPP()
@@ -670,10 +741,14 @@ function NewDebuggerNewThreadUPP( userRoutine: DebuggerNewThreadProcPtr ): Debug
  }
 function NewDebuggerDisposeThreadUPP( userRoutine: DebuggerDisposeThreadProcPtr ): DebuggerDisposeThreadUPP; external name '_NewDebuggerDisposeThreadUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  NewDebuggerThreadSchedulerUPP()
@@ -685,10 +760,14 @@ function NewDebuggerDisposeThreadUPP( userRoutine: DebuggerDisposeThreadProcPtr 
  }
 function NewDebuggerThreadSchedulerUPP( userRoutine: DebuggerThreadSchedulerProcPtr ): DebuggerThreadSchedulerUPP; external name '_NewDebuggerThreadSchedulerUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  DisposeThreadEntryUPP()
@@ -700,10 +779,14 @@ function NewDebuggerThreadSchedulerUPP( userRoutine: DebuggerThreadSchedulerProc
  }
 procedure DisposeThreadEntryUPP( userUPP: ThreadEntryUPP ); external name '_DisposeThreadEntryUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  DisposeThreadSchedulerUPP()
@@ -715,10 +798,14 @@ procedure DisposeThreadEntryUPP( userUPP: ThreadEntryUPP ); external name '_Disp
  }
 procedure DisposeThreadSchedulerUPP( userUPP: ThreadSchedulerUPP ); external name '_DisposeThreadSchedulerUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  DisposeThreadSwitchUPP()
@@ -730,10 +817,14 @@ procedure DisposeThreadSchedulerUPP( userUPP: ThreadSchedulerUPP ); external nam
  }
 procedure DisposeThreadSwitchUPP( userUPP: ThreadSwitchUPP ); external name '_DisposeThreadSwitchUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  DisposeThreadTerminationUPP()
@@ -745,10 +836,14 @@ procedure DisposeThreadSwitchUPP( userUPP: ThreadSwitchUPP ); external name '_Di
  }
 procedure DisposeThreadTerminationUPP( userUPP: ThreadTerminationUPP ); external name '_DisposeThreadTerminationUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  DisposeDebuggerNewThreadUPP()
@@ -760,10 +855,14 @@ procedure DisposeThreadTerminationUPP( userUPP: ThreadTerminationUPP ); external
  }
 procedure DisposeDebuggerNewThreadUPP( userUPP: DebuggerNewThreadUPP ); external name '_DisposeDebuggerNewThreadUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  DisposeDebuggerDisposeThreadUPP()
@@ -775,10 +874,14 @@ procedure DisposeDebuggerNewThreadUPP( userUPP: DebuggerNewThreadUPP ); external
  }
 procedure DisposeDebuggerDisposeThreadUPP( userUPP: DebuggerDisposeThreadUPP ); external name '_DisposeDebuggerDisposeThreadUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  DisposeDebuggerThreadSchedulerUPP()
@@ -790,10 +893,14 @@ procedure DisposeDebuggerDisposeThreadUPP( userUPP: DebuggerDisposeThreadUPP ); 
  }
 procedure DisposeDebuggerThreadSchedulerUPP( userUPP: DebuggerThreadSchedulerUPP ); external name '_DisposeDebuggerThreadSchedulerUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  InvokeThreadEntryUPP()
@@ -805,10 +912,14 @@ procedure DisposeDebuggerThreadSchedulerUPP( userUPP: DebuggerThreadSchedulerUPP
  }
 function InvokeThreadEntryUPP( threadParam: UnivPtr; userUPP: ThreadEntryUPP ): voidPtr; external name '_InvokeThreadEntryUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  InvokeThreadSchedulerUPP()
@@ -820,10 +931,14 @@ function InvokeThreadEntryUPP( threadParam: UnivPtr; userUPP: ThreadEntryUPP ): 
  }
 function InvokeThreadSchedulerUPP( schedulerInfo: SchedulerInfoRecPtr; userUPP: ThreadSchedulerUPP ): ThreadID; external name '_InvokeThreadSchedulerUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  InvokeThreadSwitchUPP()
@@ -835,10 +950,14 @@ function InvokeThreadSchedulerUPP( schedulerInfo: SchedulerInfoRecPtr; userUPP: 
  }
 procedure InvokeThreadSwitchUPP( threadBeingSwitched: ThreadID; switchProcParam: UnivPtr; userUPP: ThreadSwitchUPP ); external name '_InvokeThreadSwitchUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  InvokeThreadTerminationUPP()
@@ -850,10 +969,14 @@ procedure InvokeThreadSwitchUPP( threadBeingSwitched: ThreadID; switchProcParam:
  }
 procedure InvokeThreadTerminationUPP( threadTerminated: ThreadID; terminationProcParam: UnivPtr; userUPP: ThreadTerminationUPP ); external name '_InvokeThreadTerminationUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  InvokeDebuggerNewThreadUPP()
@@ -865,10 +988,14 @@ procedure InvokeThreadTerminationUPP( threadTerminated: ThreadID; terminationPro
  }
 procedure InvokeDebuggerNewThreadUPP( threadCreated: ThreadID; userUPP: DebuggerNewThreadUPP ); external name '_InvokeDebuggerNewThreadUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  InvokeDebuggerDisposeThreadUPP()
@@ -880,10 +1007,14 @@ procedure InvokeDebuggerNewThreadUPP( threadCreated: ThreadID; userUPP: Debugger
  }
 procedure InvokeDebuggerDisposeThreadUPP( threadDeleted: ThreadID; userUPP: DebuggerDisposeThreadUPP ); external name '_InvokeDebuggerDisposeThreadUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
  *  InvokeDebuggerThreadSchedulerUPP()
@@ -895,10 +1026,14 @@ procedure InvokeDebuggerDisposeThreadUPP( threadDeleted: ThreadID; userUPP: Debu
  }
 function InvokeDebuggerThreadSchedulerUPP( schedulerInfo: SchedulerInfoRecPtr; userUPP: DebuggerThreadSchedulerUPP ): ThreadID; external name '_InvokeDebuggerThreadSchedulerUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 {
    Thread Manager function pointers (TPP):
@@ -920,20 +1055,27 @@ type
 	DebuggerThreadSchedulerTPP = DebuggerThreadSchedulerUPP;
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  NewThread()   *** DEPRECATED ***
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  NewThread()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ThreadsLib 1.0 and later
  }
 function NewThread( threadStyle_: ThreadStyle; threadEntry: ThreadEntryTPP; threadParam: UnivPtr; stackSize: Size; options: ThreadOptions; threadResult: UnivPtrPtr { can be NULL }; var threadMade: ThreadID ): OSErr; external name '_NewThread';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 
@@ -944,6 +1086,8 @@ function NewThread( threadStyle_: ThreadStyle; threadEntry: ThreadEntryTPP; thre
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -952,11 +1096,15 @@ function NewThread( threadStyle_: ThreadStyle; threadEntry: ThreadEntryTPP; thre
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ThreadsLib 1.0 and later
  }
 function SetThreadScheduler( threadScheduler: ThreadSchedulerTPP ): OSErr; external name '_SetThreadScheduler';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 
@@ -967,6 +1115,8 @@ function SetThreadScheduler( threadScheduler: ThreadSchedulerTPP ): OSErr; exter
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -975,11 +1125,15 @@ function SetThreadScheduler( threadScheduler: ThreadSchedulerTPP ): OSErr; exter
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ThreadsLib 1.0 and later
  }
 function SetThreadSwitcher( thread: ThreadID; threadSwitcher: ThreadSwitchTPP; switchProcParam: UnivPtr; inOrOut: Boolean ): OSErr; external name '_SetThreadSwitcher';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 
@@ -990,6 +1144,8 @@ function SetThreadSwitcher( thread: ThreadID; threadSwitcher: ThreadSwitchTPP; s
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -998,11 +1154,15 @@ function SetThreadSwitcher( thread: ThreadID; threadSwitcher: ThreadSwitchTPP; s
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ThreadsLib 1.0 and later
  }
 function SetThreadTerminator( thread: ThreadID; threadTerminator: ThreadTerminationTPP; terminationProcParam: UnivPtr ): OSErr; external name '_SetThreadTerminator';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 
@@ -1013,6 +1173,8 @@ function SetThreadTerminator( thread: ThreadID; threadTerminator: ThreadTerminat
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -1021,11 +1183,15 @@ function SetThreadTerminator( thread: ThreadID; threadTerminator: ThreadTerminat
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ThreadsLib 1.0 and later
  }
 function SetDebuggerNotificationProcs( notifyNewThread: DebuggerNewThreadTPP; notifyDisposeThread: DebuggerDisposeThreadTPP; notifyThreadScheduler: DebuggerThreadSchedulerTPP ): OSErr; external name '_SetDebuggerNotificationProcs';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 
@@ -1036,6 +1202,8 @@ function SetDebuggerNotificationProcs( notifyNewThread: DebuggerNewThreadTPP; no
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -1044,11 +1212,15 @@ function SetDebuggerNotificationProcs( notifyNewThread: DebuggerNewThreadTPP; no
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ThreadsLib 1.0 and later
  }
 function CreateThreadPool( threadStyle_: ThreadStyle; numToCreate: SInt16; stackSize: Size ): OSErr; external name '_CreateThreadPool';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 
@@ -1405,6 +1577,8 @@ function GetSpecificFreeThreadCount( threadStyle_: ThreadStyle; stackSize: Size;
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -1605,4 +1779,7 @@ function SetThreadReadyGivenTaskRef( threadTRef: ThreadTaskRef; threadToSet: Thr
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

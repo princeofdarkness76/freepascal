@@ -17,6 +17,7 @@ uses
 {$IFDEF Unix}
   const
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef darwin}
     pqlib = 'libpq.'+sharedsuffix; // No version number.
 {$else}
@@ -30,12 +31,17 @@ uses
   const
     pqlib = 'libpq.dll'; // Not sure if it has a version number ?
 =======
+=======
+>>>>>>> origin/fixes_2_2
     pqlib = 'libpq.'+sharedsuffix;
 {$ENDIF}
 {$IFDEF Win32}
   const
     pqlib = 'libpq.dll';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
 
 
@@ -91,9 +97,12 @@ var
   PQparameterStatus : function (conn:PPGconn; paramName:Pchar):Pchar;cdecl;
   PQprotocolVersion : function (conn:PPGconn):longint;cdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
   PQserverVersion : function (conn:PPGconn):longint;cdecl;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   PQerrorMessage : function (conn:PPGconn):Pchar;cdecl;
   PQsocket : function (conn:PPGconn):longint;cdecl;
   PQbackendPID : function (conn:PPGconn):longint;cdecl;
@@ -118,9 +127,12 @@ var
   PQexecPrepared : function (conn:PPGconn; stmtName:Pchar; nParams:longint; paramValues:PPchar; paramLengths:Plongint;paramFormats:Plongint; resultFormat:longint):PPGresult;cdecl;
   PQPrepare : function (conn:PPGconn; stmtName:Pchar; query:Pchar; nParams:longint; paramTypes:POid):PPGresult;cdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
   PQdescribePrepared : function (conn:PPGconn; stmtName:Pchar):PPGresult;cdecl;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { Interface for multiple-result or asynchronous queries  }
   PQsendQuery : function (conn:PPGconn; query:Pchar):longint;cdecl;
   PQsendQueryParams : function (conn:PPGconn; command:Pchar; nParams:longint; paramTypes:POid; paramValues:PPchar;paramLengths:Plongint; paramFormats:Plongint; resultFormat:longint):longint;cdecl;
@@ -145,10 +157,13 @@ var
   PQsetnonblocking : function (conn:PPGconn; arg:longint):longint;cdecl;
   PQisnonblocking : function (conn:PPGconn):longint;cdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
   PQisthreadsafe : function ():longint;cdecl;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { Force the write buffer to be written (or at least try)  }
   PQflush : function (conn:PPGconn):longint;cdecl;
 {
@@ -182,10 +197,13 @@ var
   PQgetlength : function (res:PPGresult; tup_num:longint; field_num:longint):longint;cdecl;
   PQgetisnull : function (res:PPGresult; tup_num:longint; field_num:longint):longint;cdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
   PQnparams : function (res:PPGresult):longint;cdecl;
   PQparamtype : function (res:PPGresult; param_num:longint):Oid;cdecl;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { Delete a PGresult  }
   PQclear : procedure (res:PPGresult);cdecl;
 { For freeing other alloc'd results, such as PGnotify structs  }
@@ -203,6 +221,7 @@ var
   PQmakeEmptyPGresult : function (conn:PPGconn; status:TExecStatusType):PPGresult;cdecl;
 { Quoting strings before inclusion in queries.  }
 <<<<<<< HEAD
+<<<<<<< HEAD
   PQescapeStringConn : function (conn:PPGconn; str:Pcchar; from:Pcchar; length:size_t; error:Pcint):size_t;cdecl;
   PQescapeLiteral : function (conn:PPGconn; str:Pcchar; len:size_t):Pcchar;cdecl;
   PQescapeIdentifier : function (conn:PPGconn; str:Pcchar; len:size_t):Pcchar;cdecl;
@@ -217,6 +236,11 @@ var
   PQescapeBytea : function (bintext:Pbyte; binlen:size_t; bytealen:Psize_t):Pbyte;cdecl;
   PQunescapeBytea : function (strtext:Pbyte; retbuflen:Psize_t):Pbyte;cdecl;
 >>>>>>> graemeg/fixes_2_2
+=======
+  PQescapeString : function (till:Pchar; from:Pchar; length:size_t):size_t;cdecl;
+  PQescapeBytea : function (bintext:Pbyte; binlen:size_t; bytealen:Psize_t):Pbyte;cdecl;
+  PQunescapeBytea : function (strtext:Pbyte; retbuflen:Psize_t):Pbyte;cdecl;
+>>>>>>> origin/fixes_2_2
 { === in fe-print.c ===  }
 { output stream  }
   PQprint : procedure (fout:PFILE; res:PPGresult; ps:PPQprintOpt);cdecl;
@@ -246,6 +270,7 @@ var
   lo_creat : function (conn:PPGconn; mode:longint):Oid;cdecl;
   lo_tell : function (conn:PPGconn; fd:longint):longint;cdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
   lo_truncate : function (conn:PPGconn; fd:longint; len:size_t):longint;cdecl;
   lo_unlink : function (conn:PPGconn; lobjId:Oid):longint;cdecl;
   lo_import : function (conn:PPGconn; filename:Pchar):Oid;cdecl;
@@ -254,6 +279,10 @@ var
   lo_unlink : function (conn:PPGconn; lobjId:Oid):longint;cdecl;
   lo_import : function (conn:PPGconn; filename:Pchar):Oid;cdecl;
 >>>>>>> graemeg/fixes_2_2
+=======
+  lo_unlink : function (conn:PPGconn; lobjId:Oid):longint;cdecl;
+  lo_import : function (conn:PPGconn; filename:Pchar):Oid;cdecl;
+>>>>>>> origin/fixes_2_2
   lo_export : function (conn:PPGconn; lobjId:Oid; filename:Pchar):longint;cdecl;
 { === in fe-misc.c ===  }
 { Determine length of multibyte encoded char at *s  }
@@ -261,6 +290,7 @@ var
 { Get encoding id from environment variable PGCLIENTENCODING  }
   PQenv2encoding: function :longint;cdecl;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { === in fe-auth.c === }
   PQencryptPassword : function (passwd:Pcchar; user:Pcchar):Pcchar;cdecl;
@@ -445,6 +475,8 @@ begin
   end;
 =======
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Procedure InitialisePostgres3;
 Procedure ReleasePostgres3;
 
@@ -467,7 +499,10 @@ begin
       Raise EInOutError.Create('Can not load PosgreSQL client. Is it installed? ('+pqlib+')');
       end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     pointer(PQconnectStart) := GetProcedureAddress(Postgres3LibraryHandle,'PQconnectStart');
     pointer(PQconnectPoll) := GetProcedureAddress(Postgres3LibraryHandle,'PQconnectPoll');
     pointer(PQconnectdb) := GetProcedureAddress(Postgres3LibraryHandle,'PQconnectdb');
@@ -507,10 +542,14 @@ begin
     pointer(PQexecParams) := GetProcedureAddress(Postgres3LibraryHandle,'PQexecParams');
     pointer(PQexecPrepared) := GetProcedureAddress(Postgres3LibraryHandle,'PQexecPrepared');
 <<<<<<< HEAD
+<<<<<<< HEAD
     pointer(PQPrepare) := GetProcedureAddress(Postgres3LibraryHandle,'PQprepare');
 =======
     pointer(PQPrepare) := GetProcedureAddress(Postgres3LibraryHandle,'PQPrepare');
 >>>>>>> graemeg/fixes_2_2
+=======
+    pointer(PQPrepare) := GetProcedureAddress(Postgres3LibraryHandle,'PQPrepare');
+>>>>>>> origin/fixes_2_2
     pointer(PQsendQuery) := GetProcedureAddress(Postgres3LibraryHandle,'PQsendQuery');
     pointer(PQsendQueryParams) := GetProcedureAddress(Postgres3LibraryHandle,'PQsendQueryParams');
     pointer(PQsendQueryPrepared) := GetProcedureAddress(Postgres3LibraryHandle,'PQsendQueryPrepared');
@@ -577,14 +616,18 @@ begin
     InitialiseDllist;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 Procedure ReleasePostgres3;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   EnterCriticalsection(libpgCriticalSection);
   try
@@ -598,13 +641,18 @@ begin
     LeaveCriticalsection(libpgCriticalSection);
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if RefCount > 0 then dec(RefCount);
   if RefCount = 0 then
     begin
     if not UnloadLibrary(Postgres3LibraryHandle) then inc(RefCount);
     ReleaseDllist;
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 // This function is also defined in postgres3!

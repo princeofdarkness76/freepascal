@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1999-2013, Apple Inc.  All rights reserved.
 }
 =======
@@ -36,6 +37,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	Copyright (c) 1999-2005, Apple, Inc. All rights reserved.
 }
 {	  Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, November 2005 }
@@ -45,7 +48,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -55,12 +61,17 @@
 unit CFUUID;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -74,14 +85,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -90,11 +106,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -132,6 +151,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -139,6 +160,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
@@ -368,6 +390,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -376,7 +400,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -403,9 +430,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -417,14 +448,18 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFString;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -447,10 +482,14 @@ type
 =======
 	CFUUIDRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	CFUUIDRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 	CFUUIDRefPtr = ^CFUUIDRef;
 
 type
 	CFUUIDBytes = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		byte0: UInt8;
 		byte1: UInt8;
@@ -469,6 +508,8 @@ type
 		byte14: UInt8;
 		byte15: UInt8;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		byte0: SInt8;
 		byte1: SInt8;
 		byte2: SInt8;
@@ -485,7 +526,10 @@ type
 		byte13: SInt8;
 		byte14: SInt8;
 		byte15: SInt8;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 	CFUUIDBytesPtr = ^CFUUIDBytes;
 { The CFUUIDBytes struct is a 128-bit struct that contains the
@@ -500,10 +544,14 @@ function CFUUIDCreate( alloc: CFAllocatorRef ): CFUUIDRef; external name '_CFUUI
     { Create and return a brand new unique identifier }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CFUUIDCreateWithBytes( alloc: CFAllocatorRef; byte0: UInt8; byte1: UInt8; byte2: UInt8; byte3: UInt8; byte4: UInt8; byte5: UInt8; byte6: UInt8; byte7: UInt8; byte8: UInt8; byte9: UInt8; byte10: UInt8; byte11: UInt8; byte12: UInt8; byte13: UInt8; byte14: UInt8; byte15: UInt8 ): CFUUIDRef; external name '_CFUUIDCreateWithBytes';
 =======
 function CFUUIDCreateWithBytes( alloc: CFAllocatorRef; byte0: ByteParameter; byte1: ByteParameter; byte2: ByteParameter; byte3: ByteParameter; byte4: ByteParameter; byte5: ByteParameter; byte6: ByteParameter; byte7: ByteParameter; byte8: ByteParameter; byte9: ByteParameter; byte10: ByteParameter; byte11: ByteParameter; byte12: ByteParameter; byte13: ByteParameter; byte14: ByteParameter; byte15: ByteParameter ): CFUUIDRef; external name '_CFUUIDCreateWithBytes';
 >>>>>>> graemeg/fixes_2_2
+=======
+function CFUUIDCreateWithBytes( alloc: CFAllocatorRef; byte0: ByteParameter; byte1: ByteParameter; byte2: ByteParameter; byte3: ByteParameter; byte4: ByteParameter; byte5: ByteParameter; byte6: ByteParameter; byte7: ByteParameter; byte8: ByteParameter; byte9: ByteParameter; byte10: ByteParameter; byte11: ByteParameter; byte12: ByteParameter; byte13: ByteParameter; byte14: ByteParameter; byte15: ByteParameter ): CFUUIDRef; external name '_CFUUIDCreateWithBytes';
+>>>>>>> origin/fixes_2_2
     { Create and return an identifier with the given contents.  This may return an existing instance with its ref count bumped because of uniquing. }
 
 function CFUUIDCreateFromString( alloc: CFAllocatorRef; uuidStr: CFStringRef ): CFUUIDRef; external name '_CFUUIDCreateFromString';
@@ -513,16 +561,21 @@ function CFUUIDCreateString( alloc: CFAllocatorRef; uuid: CFUUIDRef ): CFStringR
     { Converts from a UUID to its string representation. }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CFUUIDGetConstantUUIDWithBytes( alloc: CFAllocatorRef; byte0: UInt8; byte1: UInt8; byte2: UInt8; byte3: UInt8; byte4: UInt8; byte5: UInt8; byte6: UInt8; byte7: UInt8; byte8: UInt8; byte9: UInt8; byte10: UInt8; byte11: UInt8; byte12: UInt8; byte13: UInt8; byte14: UInt8; byte15: UInt8 ): CFUUIDRef; external name '_CFUUIDGetConstantUUIDWithBytes';
 =======
 function CFUUIDGetConstantUUIDWithBytes( alloc: CFAllocatorRef; byte0: ByteParameter; byte1: ByteParameter; byte2: ByteParameter; byte3: ByteParameter; byte4: ByteParameter; byte5: ByteParameter; byte6: ByteParameter; byte7: ByteParameter; byte8: ByteParameter; byte9: ByteParameter; byte10: ByteParameter; byte11: ByteParameter; byte12: ByteParameter; byte13: ByteParameter; byte14: ByteParameter; byte15: ByteParameter ): CFUUIDRef; external name '_CFUUIDGetConstantUUIDWithBytes';
 >>>>>>> graemeg/fixes_2_2
+=======
+function CFUUIDGetConstantUUIDWithBytes( alloc: CFAllocatorRef; byte0: ByteParameter; byte1: ByteParameter; byte2: ByteParameter; byte3: ByteParameter; byte4: ByteParameter; byte5: ByteParameter; byte6: ByteParameter; byte7: ByteParameter; byte8: ByteParameter; byte9: ByteParameter; byte10: ByteParameter; byte11: ByteParameter; byte12: ByteParameter; byte13: ByteParameter; byte14: ByteParameter; byte15: ByteParameter ): CFUUIDRef; external name '_CFUUIDGetConstantUUIDWithBytes';
+>>>>>>> origin/fixes_2_2
     { This returns an immortal CFUUIDRef that should not be released.  It can be used in headers to declare UUID constants with #define. }
 
 function CFUUIDGetUUIDBytes( uuid: CFUUIDRef ): CFUUIDBytes; external name '_CFUUIDGetUUIDBytes';
 
 function CFUUIDCreateFromUUIDBytes( alloc: CFAllocatorRef; bytes: CFUUIDBytes ): CFUUIDRef; external name '_CFUUIDCreateFromUUIDBytes';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
@@ -532,3 +585,7 @@ end.
 
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+
+end.
+>>>>>>> origin/fixes_2_2

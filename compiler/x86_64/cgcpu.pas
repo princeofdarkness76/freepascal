@@ -36,7 +36,10 @@ unit cgcpu;
       tcgx86_64 = class(tcgx86)
         procedure init_register_allocators;override;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
         procedure done_register_allocators;override;
 
         procedure g_proc_exit(list : TAsmList;parasize:longint;nostackframe:boolean);override;
@@ -112,7 +115,10 @@ unit cgcpu;
 =======
             SetLength(saved_standard_registers,Length(win64_saved_std_regs));
             SetLength(saved_mm_registers,Length(win64_saved_xmm_regs));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
                 for i:=low(win64_saved_std_regs) to high(win64_saved_std_regs) do
                   saved_standard_registers[i]:=win64_saved_std_regs[i];
@@ -133,7 +139,10 @@ unit cgcpu;
           begin
             SetLength(saved_standard_registers,Length(others_saved_std_regs));
             SetLength(saved_mm_registers,0);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
                 for i:=low(others_saved_std_regs) to high(others_saved_std_regs) do
                   saved_standard_registers[i]:=others_saved_std_regs[i];
@@ -154,7 +163,10 @@ unit cgcpu;
 =======
         if assigned(current_procinfo) then
           framepointer:=getsupreg(current_procinfo.framepointer)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         else
 <<<<<<< HEAD
           rg[R_INTREGISTER]:=trgcpu.create(R_INTREGISTER,R_SUBWHOLE,[RS_RAX,RS_RDX,RS_RCX,RS_RSI,RS_RDI,RS_R8,
@@ -185,6 +197,7 @@ unit cgcpu;
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure tcgx86_64.a_loadfpu_ref_cgpara(list: TAsmList; size: tcgsize; const ref: treference; const cgpara: TCGPara);
       begin
@@ -387,6 +400,8 @@ unit cgcpu;
             for r:=low(saved_standard_registers) to high(saved_standard_registers) do
               if saved_standard_registers[r] in rg[R_INTREGISTER].used_in_proc then
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure Tcgx86_64.done_register_allocators;
       begin
         inherited done_register_allocators;
@@ -528,10 +543,14 @@ unit cgcpu;
 =======
                 stacksize:=current_procinfo.calc_stackframe_size;
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (target_info.system in systems_need_16_byte_stack_alignment) and
 =======
                 if (target_info.system in [system_x86_64_win64,system_x86_64_linux,system_x86_64_freebsd]) and
 >>>>>>> graemeg/fixes_2_2
+=======
+                if (target_info.system in [system_x86_64_win64,system_x86_64_linux,system_x86_64_freebsd]) and
+>>>>>>> origin/fixes_2_2
                    ((stacksize <> 0) or
                     (pi_do_call in current_procinfo.flags) or
                     { can't detect if a call in this case -> use nostackframe }
@@ -763,5 +782,8 @@ unit cgcpu;
 =======
 begin
   cg:=tcgx86_64.create;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.

@@ -12,6 +12,7 @@ uses
   DigestTestReport,
   toolsunit,
 <<<<<<< HEAD
+<<<<<<< HEAD
 // List of supported database connectors
   sqldbtoolsunit,
   dbftoolsunit,
@@ -37,6 +38,8 @@ uses
 Procedure LegacyOutput;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 // Units wich contains the tests
   testbasics, testfieldtypes, TestDatasources, testdbbasics;
   

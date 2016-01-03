@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QuickTime/QuickTimeStreaming.h
  
      Contains:   QuickTime Interfaces.
@@ -32,6 +33,8 @@
      Copyright:  © 1990-2008 by Apple Inc., all rights reserved
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       QuickTimeStreaming.p
  
      Contains:   QuickTime Interfaces.
@@ -40,11 +43,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1990-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -75,6 +82,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -86,7 +95,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -96,12 +108,17 @@
 unit QuickTimeStreaming;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -115,14 +132,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -131,11 +153,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -173,6 +198,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -180,6 +207,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
@@ -401,6 +429,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -409,7 +439,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -436,9 +469,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -448,6 +485,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,Components,Events,Files,QuickdrawTypes,Movies,ImageCompression,QuickTimeComponents;
 {$endc} {not MACOSALLINCLUDE}
@@ -481,6 +519,8 @@ const
 	kQTSNormalForwardRate = $00010000;
 	kQTSStoppedRate = $00000000;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,Files,Events,ImageCompression,Quickdraw,Components,MacErrors,Movies,QuickTimeComponents;
 
 
@@ -493,11 +533,15 @@ const
 	kQTSNormalForwardRate		= $00010000;
 	kQTSStoppedRate				= $00000000;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSPresentationRecordPtr = ^QTSPresentationRecord;
 	QTSPresentationRecord = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -607,6 +651,8 @@ const
 	kQTSInfo_SettingsText = FourCharCode('sttx'); { QTSSettingsTextParams* }
 	kQTSInfo_AverageFrameRate = FourCharCode('fps '); { UnsignedFixed* }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		data:					array [0..0] of SInt32;
 	end;
 
@@ -690,12 +736,16 @@ const
 	kQTSRemainingBufferTimeInfo	= FourCharCode('btms');						{  UInt32* remaining buffer time before playback, in microseconds  }
 	kQTSInfo_SettingsText		= FourCharCode('sttx');						{  QTSSettingsTextParams*  }
 	kQTSInfo_AverageFrameRate	= FourCharCode('fps ');						{  UnsignedFixed*  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
 	QTSAuthenticationParamsPtr = ^QTSAuthenticationParams;
 	QTSAuthenticationParams = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		flags: SInt32;
 		userID: ConstCStringPtr;                 { caller disposes of pointer}
@@ -721,6 +771,8 @@ const
 	kQTSSettingsTextSummary = FourCharCode('set1');
 	kQTSSettingsTextDetails = FourCharCode('setd');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		flags:					SInt32;
 		userID:					ConstCStringPtr;						{  caller disposes of pointer }
 		password:				ConstCStringPtr;						{  caller disposes of pointer }
@@ -758,11 +810,15 @@ const
 	kQTSSettingsTextSummary		= FourCharCode('set1');
 	kQTSSettingsTextDetails		= FourCharCode('setd');
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSSettingsTextParamsPtr = ^QTSSettingsTextParams;
 	QTSSettingsTextParams = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		flags: SInt32;                  { None yet defined}
 		inSettingsSelector: OSType;     { which kind of setting you want from enum above}
@@ -822,6 +878,8 @@ const
 	kQTSDataProcType_MediaSample = FourCharCode('mdia');
 	kQTSDataProcType_HintSample = FourCharCode('hint');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		flags:					SInt32;									{  None yet defined }
 		inSettingsSelector:		OSType;									{  which kind of setting you want from enum above }
 		outSettingsAsText:		Handle;									{  QTS allocates; Caller disposes }
@@ -882,11 +940,15 @@ const
 	kQTSDataProcType_MediaSample = FourCharCode('mdia');
 	kQTSDataProcType_HintSample	= FourCharCode('hint');
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSDataProcParamsPtr = ^QTSDataProcParams;
 	QTSDataProcParams = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		version: SInt32;
 		flags: SInt32;
@@ -896,6 +958,8 @@ type
 		procRefCon: UnivPtr;
 	end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		version:				SInt32;
 		flags:					SInt32;
 		stream:					QTSStream;
@@ -905,11 +969,15 @@ type
 	end;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kQTSDataProcSelector_SampleData = FourCharCode('samp');
 	kQTSDataProcSelector_UserData = FourCharCode('user');
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kQTSSampleDataCallbackParamsVersion1 = 1;
@@ -1040,6 +1108,8 @@ const
 const
 	kQTSFatalErrorFlag = $00000001;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kQTSSampleDataCallbackParamsVersion1 = 1;
 
 
@@ -1185,11 +1255,15 @@ const
 	{	 flags for QTSErrorParams 	}
 	kQTSFatalErrorFlag			= $00000001;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSErrorParamsPtr = ^QTSErrorParams;
 	QTSErrorParams = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		errorString: ConstCStringPtr;
 		flags: SInt32;
@@ -1239,6 +1313,8 @@ const
 	kQTSBandwidthAlertNeedToStop = 1 shl 0;
 	kQTSBandwidthAlertRestartAt = 1 shl 1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		errorString:			ConstCStringPtr;
 		flags:					SInt32;
 	end;
@@ -1289,11 +1365,15 @@ const
 	kQTSBandwidthAlertNeedToStop = $01;
 	kQTSBandwidthAlertRestartAt	= $02;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSBandwidthAlertParamsPtr = ^QTSBandwidthAlertParams;
 	QTSBandwidthAlertParams = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		flags: SInt32;
 		restartAt: TimeValue;              { new field in QT 4.1}
@@ -1312,6 +1392,8 @@ const
 	kQTSSendMediaFlag = $00010000;
 	kQTSReceiveMediaFlag = $00020000;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		flags:					SInt32;
 		restartAt:				TimeValue;								{  new field in QT 4.1 }
 		reserved:				Ptr;
@@ -1331,11 +1413,15 @@ const
 	kQTSSendMediaFlag			= $00010000;
 	kQTSReceiveMediaFlag		= $00020000;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSNewPresentationParamsPtr = ^QTSNewPresentationParams;
 	QTSNewPresentationParams = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		dataType: OSType;
 		data: {const} UnivPtr;
@@ -1361,6 +1447,8 @@ type
 const
 	kQTSPresParamsVersion1 = 1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		dataType:				OSType;
 		data:					Ptr;
 		dataLength:				UInt32;
@@ -1387,11 +1475,15 @@ const
 const
 	kQTSPresParamsVersion1		= 1;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSPresIdleParamsPtr = ^QTSPresIdleParams;
 	QTSPresIdleParams = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		stream: QTSStream;
 		movieTimeToDisplay: TimeValue64;
@@ -1404,6 +1496,8 @@ const
 const
 	kQTSExportParamsVersion1 = 1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		stream:					QTSStream;
 		movieTimeToDisplay:		TimeValue64;
 		flagsIn:				SInt32;
@@ -1416,11 +1510,15 @@ const
 
 	kQTSExportParamsVersion1	= 1;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSExportParamsPtr = ^QTSExportParams;
 	QTSExportParams = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		version: SInt32;
 		exportType: OSType;
@@ -1451,6 +1549,8 @@ function InitializeQTS: OSErr; external name '_InitializeQTS';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		version:				SInt32;
 		exportType:				OSType;
 		exportExtraData:		Ptr;
@@ -1478,12 +1578,16 @@ function InitializeQTS: OSErr; external name '_InitializeQTS';
 	 *    Windows:          in QTSClient.lib 4.0 and later
 	 	}
 function InitializeQTS: OSErr; external name '_InitializeQTS';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  TerminateQTS()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1494,13 +1598,18 @@ function TerminateQTS: OSErr; external name '_TerminateQTS';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function TerminateQTS: OSErr; external name '_TerminateQTS';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {-----------------------------------------
     Presentation Functions
@@ -1509,6 +1618,7 @@ function TerminateQTS: OSErr; external name '_TerminateQTS';
  *  QTSNewPresentation()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1519,18 +1629,24 @@ function QTSNewPresentation( const (*var*) inParams: QTSNewPresentationParams; v
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSNewPresentation(const (*var*) inParams: QTSNewPresentationParams; var outPresentation: QTSPresentation): OSErr; external name '_QTSNewPresentation';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSNewPresentationFromData()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -1541,18 +1657,24 @@ function QTSNewPresentationFromData( inDataType: OSType; inData: {const} UnivPtr
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 5.0 and later
  }
 function QTSNewPresentationFromData(inDataType: OSType; inData: UnivPtr; (*const*) var inDataLength: SInt64; const (*var*) inPresParams: QTSPresParams; var outPresentation: QTSPresentation): OSErr; external name '_QTSNewPresentationFromData';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSNewPresentationFromFile()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -1570,11 +1692,20 @@ function QTSNewPresentationFromFile( const (*var*) inFileSpec: FSSpec; const (*v
  }
 function QTSNewPresentationFromFile(const (*var*) inFileSpec: FSSpec; const (*var*) inPresParams: QTSPresParams; var outPresentation: QTSPresentation): OSErr; external name '_QTSNewPresentationFromFile';
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in QTSClient.lib 5.0 and later
+ }
+function QTSNewPresentationFromFile(const (*var*) inFileSpec: FSSpec; const (*var*) inPresParams: QTSPresParams; var outPresentation: QTSPresentation): OSErr; external name '_QTSNewPresentationFromFile';
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSNewPresentationFromDataRef()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -1585,18 +1716,24 @@ function QTSNewPresentationFromDataRef( inDataRef: Handle; inDataRefType: OSType
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 5.0 and later
  }
 function QTSNewPresentationFromDataRef(inDataRef: Handle; inDataRefType: OSType; const (*var*) inPresParams: QTSPresParams; var outPresentation: QTSPresentation): OSErr; external name '_QTSNewPresentationFromDataRef';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSDisposePresentation()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1607,18 +1744,24 @@ function QTSDisposePresentation( inPresentation: QTSPresentation; inFlags: SInt3
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSDisposePresentation(inPresentation: QTSPresentation; inFlags: SInt32): OSErr; external name '_QTSDisposePresentation';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresExport()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -1629,18 +1772,24 @@ function QTSPresExport( inPresentation: QTSPresentation; inStream: QTSStream; va
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 5.0 and later
  }
 function QTSPresExport(inPresentation: QTSPresentation; inStream: QTSStream; var inExportParams: QTSExportParams): OSErr; external name '_QTSPresExport';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresIdle()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1651,18 +1800,24 @@ procedure QTSPresIdle( inPresentation: QTSPresentation; var ioParams: QTSPresIdl
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 procedure QTSPresIdle(inPresentation: QTSPresentation; var ioParams: QTSPresIdleParams); external name '_QTSPresIdle';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresInvalidateRegion()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1673,13 +1828,18 @@ function QTSPresInvalidateRegion( inPresentation: QTSPresentation; inRegion: Rgn
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresInvalidateRegion(inPresentation: QTSPresentation; inRegion: RgnHandle): OSErr; external name '_QTSPresInvalidateRegion';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {-----------------------------------------
     Presentation Configuration
@@ -1688,6 +1848,7 @@ function QTSPresInvalidateRegion(inPresentation: QTSPresentation; inRegion: RgnH
  *  QTSPresSetFlags()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1698,18 +1859,24 @@ function QTSPresSetFlags( inPresentation: QTSPresentation; inFlags: SInt32; inFl
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresSetFlags(inPresentation: QTSPresentation; inFlags: SInt32; inFlagsMask: SInt32): OSErr; external name '_QTSPresSetFlags';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetFlags()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1720,18 +1887,24 @@ function QTSPresGetFlags( inPresentation: QTSPresentation; var outFlags: SInt32 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresGetFlags(inPresentation: QTSPresentation; var outFlags: SInt32): OSErr; external name '_QTSPresGetFlags';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetTimeBase()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1742,18 +1915,24 @@ function QTSPresGetTimeBase( inPresentation: QTSPresentation; var outTimeBase: T
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresGetTimeBase(inPresentation: QTSPresentation; var outTimeBase: TimeBase): OSErr; external name '_QTSPresGetTimeBase';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetTimeScale()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1764,18 +1943,24 @@ function QTSPresGetTimeScale( inPresentation: QTSPresentation; var outTimeScale:
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresGetTimeScale(inPresentation: QTSPresentation; var outTimeScale: TimeScale): OSErr; external name '_QTSPresGetTimeScale';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresSetInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1786,18 +1971,24 @@ function QTSPresSetInfo( inPresentation: QTSPresentation; inStream: QTSStream; i
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresSetInfo(inPresentation: QTSPresentation; inStream: QTSStream; inSelector: OSType; ioParam: UnivPtr): OSErr; external name '_QTSPresSetInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1808,18 +1999,24 @@ function QTSPresGetInfo( inPresentation: QTSPresentation; inStream: QTSStream; i
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresGetInfo(inPresentation: QTSPresentation; inStream: QTSStream; inSelector: OSType; ioParam: UnivPtr): OSErr; external name '_QTSPresGetInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresHasCharacteristic()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1830,18 +2027,24 @@ function QTSPresHasCharacteristic( inPresentation: QTSPresentation; inStream: QT
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresHasCharacteristic(inPresentation: QTSPresentation; inStream: QTSStream; inCharacteristic: OSType; var outHasIt: boolean): OSErr; external name '_QTSPresHasCharacteristic';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresSetNotificationProc()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1852,18 +2055,24 @@ function QTSPresSetNotificationProc( inPresentation: QTSPresentation; inNotifica
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresSetNotificationProc(inPresentation: QTSPresentation; inNotificationProc: QTSNotificationUPP; inRefCon: UnivPtr): OSErr; external name '_QTSPresSetNotificationProc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetNotificationProc()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1874,13 +2083,18 @@ function QTSPresGetNotificationProc( inPresentation: QTSPresentation; var outNot
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresGetNotificationProc(inPresentation: QTSPresentation; var outNotificationProc: QTSNotificationUPP; var outRefCon: UnivPtr): OSErr; external name '_QTSPresGetNotificationProc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {-----------------------------------------
     Presentation Control
@@ -1890,6 +2104,7 @@ function QTSPresGetNotificationProc(inPresentation: QTSPresentation; var outNoti
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
@@ -1898,17 +2113,23 @@ function QTSPresPreview( inPresentation: QTSPresentation; inStream: QTSStream; (
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function QTSPresPreview(inPresentation: QTSPresentation; inStream: QTSStream; (*const*) var inTimeValue: TimeValue64; inRate: Fixed; inFlags: SInt32): OSErr; external name '_QTSPresPreview';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresPreroll()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1919,18 +2140,24 @@ function QTSPresPreroll( inPresentation: QTSPresentation; inStream: QTSStream; i
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresPreroll(inPresentation: QTSPresentation; inStream: QTSStream; inTimeValue: UInt32; inRate: Fixed; inFlags: SInt32): OSErr; external name '_QTSPresPreroll';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresPreroll64()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1941,18 +2168,24 @@ function QTSPresPreroll64( inPresentation: QTSPresentation; inStream: QTSStream;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.1 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.1 and later
  }
 function QTSPresPreroll64(inPresentation: QTSPresentation; inStream: QTSStream; (*const*) var inPrerollTime: TimeValue64; inRate: Fixed; inFlags: SInt32): OSErr; external name '_QTSPresPreroll64';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresStart()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1963,18 +2196,24 @@ function QTSPresStart( inPresentation: QTSPresentation; inStream: QTSStream; inF
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresStart(inPresentation: QTSPresentation; inStream: QTSStream; inFlags: SInt32): OSErr; external name '_QTSPresStart';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresSkipTo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1985,18 +2224,24 @@ function QTSPresSkipTo( inPresentation: QTSPresentation; inTimeValue: UInt32 ): 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresSkipTo(inPresentation: QTSPresentation; inTimeValue: UInt32): OSErr; external name '_QTSPresSkipTo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresSkipTo64()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2007,18 +2252,24 @@ function QTSPresSkipTo64( inPresentation: QTSPresentation; (*const*) var inTimeV
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.1 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.1 and later
  }
 function QTSPresSkipTo64(inPresentation: QTSPresentation; (*const*) var inTimeValue: TimeValue64): OSErr; external name '_QTSPresSkipTo64';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresStop()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2029,13 +2280,18 @@ function QTSPresStop( inPresentation: QTSPresentation; inStream: QTSStream; inFl
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresStop(inPresentation: QTSPresentation; inStream: QTSStream; inFlags: SInt32): OSErr; external name '_QTSPresStop';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {============================================================================
         Streams
@@ -2048,6 +2304,7 @@ function QTSPresStop(inPresentation: QTSPresentation; inStream: QTSStream; inFla
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
@@ -2057,18 +2314,24 @@ function QTSPresNewStream( inPresentation: QTSPresentation; inDataType: OSType; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresNewStream(inPresentation: QTSPresentation; inDataType: OSType; inData: UnivPtr; inDataLength: UInt32; inFlags: SInt32; var outStream: QTSStream): OSErr; external name '_QTSPresNewStream';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSDisposeStream()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2079,18 +2342,24 @@ function QTSDisposeStream( inStream: QTSStream; inFlags: SInt32 ): OSErr; extern
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSDisposeStream(inStream: QTSStream; inFlags: SInt32): OSErr; external name '_QTSDisposeStream';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetNumStreams()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2101,18 +2370,24 @@ function QTSPresGetNumStreams( inPresentation: QTSPresentation ): UInt32; extern
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresGetNumStreams(inPresentation: QTSPresentation): UInt32; external name '_QTSPresGetNumStreams';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetIndStream()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2123,18 +2398,24 @@ function QTSPresGetIndStream( inPresentation: QTSPresentation; inIndex: UInt32 )
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresGetIndStream(inPresentation: QTSPresentation; inIndex: UInt32): QTSStream; external name '_QTSPresGetIndStream';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSGetStreamPresentation()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2145,18 +2426,24 @@ function QTSGetStreamPresentation( inStream: QTSStream ): QTSPresentation; exter
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSGetStreamPresentation(inStream: QTSStream): QTSPresentation; external name '_QTSGetStreamPresentation';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresSetPreferredRate()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2167,18 +2454,24 @@ function QTSPresSetPreferredRate( inPresentation: QTSPresentation; inRate: Fixed
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresSetPreferredRate(inPresentation: QTSPresentation; inRate: Fixed; inFlags: SInt32): OSErr; external name '_QTSPresSetPreferredRate';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetPreferredRate()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2189,18 +2482,24 @@ function QTSPresGetPreferredRate( inPresentation: QTSPresentation; var outRate: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresGetPreferredRate(inPresentation: QTSPresentation; var outRate: Fixed): OSErr; external name '_QTSPresGetPreferredRate';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresSetEnable()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2211,18 +2510,24 @@ function QTSPresSetEnable( inPresentation: QTSPresentation; inStream: QTSStream;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresSetEnable(inPresentation: QTSPresentation; inStream: QTSStream; inEnableMode: boolean): OSErr; external name '_QTSPresSetEnable';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetEnable()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2233,18 +2538,24 @@ function QTSPresGetEnable( inPresentation: QTSPresentation; inStream: QTSStream;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresGetEnable(inPresentation: QTSPresentation; inStream: QTSStream; var outEnableMode: boolean): OSErr; external name '_QTSPresGetEnable';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresSetPresenting()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2255,18 +2566,24 @@ function QTSPresSetPresenting( inPresentation: QTSPresentation; inStream: QTSStr
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresSetPresenting(inPresentation: QTSPresentation; inStream: QTSStream; inPresentingMode: boolean): OSErr; external name '_QTSPresSetPresenting';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetPresenting()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2277,18 +2594,24 @@ function QTSPresGetPresenting( inPresentation: QTSPresentation; inStream: QTSStr
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresGetPresenting(inPresentation: QTSPresentation; inStream: QTSStream; var outPresentingMode: boolean): OSErr; external name '_QTSPresGetPresenting';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresSetActiveSegment()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2299,18 +2622,24 @@ function QTSPresSetActiveSegment( inPresentation: QTSPresentation; inStream: QTS
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.1 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.1 and later
  }
 function QTSPresSetActiveSegment(inPresentation: QTSPresentation; inStream: QTSStream; (*const*) var inStartTime: TimeValue64; (*const*) var inDuration: TimeValue64): OSErr; external name '_QTSPresSetActiveSegment';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetActiveSegment()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2321,18 +2650,24 @@ function QTSPresGetActiveSegment( inPresentation: QTSPresentation; inStream: QTS
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.1 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.1 and later
  }
 function QTSPresGetActiveSegment(inPresentation: QTSPresentation; inStream: QTSStream; var outStartTime: TimeValue64; var outDuration: TimeValue64): OSErr; external name '_QTSPresGetActiveSegment';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresSetPlayHints()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2343,18 +2678,24 @@ function QTSPresSetPlayHints( inPresentation: QTSPresentation; inStream: QTSStre
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresSetPlayHints(inPresentation: QTSPresentation; inStream: QTSStream; inFlags: SInt32; inFlagsMask: SInt32): OSErr; external name '_QTSPresSetPlayHints';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetPlayHints()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2365,13 +2706,18 @@ function QTSPresGetPlayHints( inPresentation: QTSPresentation; inStream: QTSStre
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresGetPlayHints(inPresentation: QTSPresentation; inStream: QTSStream; var outFlags: SInt32): OSErr; external name '_QTSPresGetPlayHints';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {-----------------------------------------
     Stream Spatial Functions
@@ -2380,6 +2726,7 @@ function QTSPresGetPlayHints(inPresentation: QTSPresentation; inStream: QTSStrea
  *  QTSPresSetGWorld()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2390,18 +2737,24 @@ function QTSPresSetGWorld( inPresentation: QTSPresentation; inStream: QTSStream;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresSetGWorld(inPresentation: QTSPresentation; inStream: QTSStream; inGWorld: CGrafPtr; inGDHandle: GDHandle): OSErr; external name '_QTSPresSetGWorld';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetGWorld()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2412,18 +2765,24 @@ function QTSPresGetGWorld( inPresentation: QTSPresentation; inStream: QTSStream;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresGetGWorld(inPresentation: QTSPresentation; inStream: QTSStream; var outGWorld: CGrafPtr; var outGDHandle: GDHandle): OSErr; external name '_QTSPresGetGWorld';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresSetClip()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2434,18 +2793,24 @@ function QTSPresSetClip( inPresentation: QTSPresentation; inStream: QTSStream; i
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresSetClip(inPresentation: QTSPresentation; inStream: QTSStream; inClip: RgnHandle): OSErr; external name '_QTSPresSetClip';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetClip()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2456,18 +2821,24 @@ function QTSPresGetClip( inPresentation: QTSPresentation; inStream: QTSStream; v
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresGetClip(inPresentation: QTSPresentation; inStream: QTSStream; var outClip: RgnHandle): OSErr; external name '_QTSPresGetClip';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresSetMatrix()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2478,18 +2849,24 @@ function QTSPresSetMatrix( inPresentation: QTSPresentation; inStream: QTSStream;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresSetMatrix(inPresentation: QTSPresentation; inStream: QTSStream; const (*var*) inMatrix: MatrixRecord): OSErr; external name '_QTSPresSetMatrix';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetMatrix()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2500,18 +2877,24 @@ function QTSPresGetMatrix( inPresentation: QTSPresentation; inStream: QTSStream;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresGetMatrix(inPresentation: QTSPresentation; inStream: QTSStream; var outMatrix: MatrixRecord): OSErr; external name '_QTSPresGetMatrix';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresSetDimensions()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2701,6 +3084,8 @@ function QTSPresGetVisualContext( inPresentation: QTSPresentation; inStream: QTS
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
@@ -2751,7 +3136,10 @@ function QTSPresGetGraphicsMode(inPresentation: QTSPresentation; inStream: QTSSt
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresGetPicture(inPresentation: QTSPresentation; inStream: QTSStream; var outPicture: PicHandle): OSErr; external name '_QTSPresGetPicture';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {-----------------------------------------
     Stream Sound Functions
@@ -2760,6 +3148,7 @@ function QTSPresGetPicture(inPresentation: QTSPresentation; inStream: QTSStream;
  *  QTSPresSetVolumes()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2770,18 +3159,24 @@ function QTSPresSetVolumes( inPresentation: QTSPresentation; inStream: QTSStream
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresSetVolumes(inPresentation: QTSPresentation; inStream: QTSStream; inLeftVolume: SInt16; inRightVolume: SInt16): OSErr; external name '_QTSPresSetVolumes';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetVolumes()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -2792,13 +3187,18 @@ function QTSPresGetVolumes( inPresentation: QTSPresentation; inStream: QTSStream
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSPresGetVolumes(inPresentation: QTSPresentation; inStream: QTSStream; var outLeftVolume: SInt16; var outRightVolume: SInt16): OSErr; external name '_QTSPresGetVolumes';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {-----------------------------------------
     Sourcing
@@ -2808,6 +3208,7 @@ function QTSPresGetVolumes(inPresentation: QTSPresentation; inStream: QTSStream;
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QTStreamLib 5.0.1 and later
@@ -2816,17 +3217,23 @@ function QTSPresGetSettingsAsText( inPresentation: QTSPresentation; inStream: QT
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0.1 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.1 and later
  }
 function QTSPresGetSettingsAsText(inPresentation: QTSPresentation; inStream: QTSStream; inFlags: SInt32; inSettingsType: OSType; var outText: Handle; inPanelFilterProc: QTSPanelFilterUPP; inPanelFilterProcRefCon: UnivPtr): OSErr; external name '_QTSPresGetSettingsAsText';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresSettingsDialog()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -2836,17 +3243,23 @@ function QTSPresSettingsDialog( inPresentation: QTSPresentation; inStream: QTSSt
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function QTSPresSettingsDialog(inPresentation: QTSPresentation; inStream: QTSStream; inFlags: SInt32; inFilterProc: QTSModalFilterUPP; inFilterProcRefCon: UnivPtr): OSErr; external name '_QTSPresSettingsDialog';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresSettingsDialogWithFilters()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -2856,17 +3269,23 @@ function QTSPresSettingsDialogWithFilters( inPresentation: QTSPresentation; inSt
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0.1 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.1 and later
  }
 function QTSPresSettingsDialogWithFilters(inPresentation: QTSPresentation; inStream: QTSStream; inFlags: SInt32; inFilterProc: QTSModalFilterUPP; inFilterProcRefCon: UnivPtr; inPanelFilterProc: QTSPanelFilterUPP; inPanelFilterProcRefCon: UnivPtr): OSErr; external name '_QTSPresSettingsDialogWithFilters';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresSetSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -2876,17 +3295,23 @@ function QTSPresSetSettings( inPresentation: QTSPresentation; inStream: QTSStrea
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function QTSPresSetSettings(inPresentation: QTSPresentation; inStream: QTSStream; inSettings: QTAtomSpecPtr; inFlags: SInt32): OSErr; external name '_QTSPresSetSettings';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -2896,17 +3321,23 @@ function QTSPresGetSettings( inPresentation: QTSPresentation; inStream: QTSStrea
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function QTSPresGetSettings(inPresentation: QTSPresentation; inStream: QTSStream; var outSettings: QTAtomContainer; inFlags: SInt32): OSErr; external name '_QTSPresGetSettings';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresAddSourcer()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -2916,17 +3347,23 @@ function QTSPresAddSourcer( inPresentation: QTSPresentation; inStream: QTSStream
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function QTSPresAddSourcer(inPresentation: QTSPresentation; inStream: QTSStream; inSourcer: ComponentInstance; inFlags: SInt32): OSErr; external name '_QTSPresAddSourcer';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresRemoveSourcer()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -2936,17 +3373,23 @@ function QTSPresRemoveSourcer( inPresentation: QTSPresentation; inStream: QTSStr
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function QTSPresRemoveSourcer(inPresentation: QTSPresentation; inStream: QTSStream; inSourcer: ComponentInstance; inFlags: SInt32): OSErr; external name '_QTSPresRemoveSourcer';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetNumSourcers()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -2956,17 +3399,23 @@ function QTSPresGetNumSourcers( inPresentation: QTSPresentation; inStream: QTSSt
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function QTSPresGetNumSourcers(inPresentation: QTSPresentation; inStream: QTSStream): UInt32; external name '_QTSPresGetNumSourcers';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPresGetIndSourcer()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -2976,17 +3425,23 @@ function QTSPresGetIndSourcer( inPresentation: QTSPresentation; inStream: QTSStr
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function QTSPresGetIndSourcer(inPresentation: QTSPresentation; inStream: QTSStream; inIndex: UInt32; var outSourcer: ComponentInstance): OSErr; external name '_QTSPresGetIndSourcer';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {============================================================================
         Misc
 ============================================================================}
 { flags for Get/SetNetworkAppName }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kQTSNetworkAppNameIsFullNameFlag = $00000001;
@@ -3004,6 +3459,8 @@ function QTSSetNetworkAppName( inAppName: ConstCStringPtr; inFlags: SInt32 ): OS
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 const
 	kQTSNetworkAppNameIsFullNameFlag = $00000001;
@@ -3018,12 +3475,16 @@ const
 	 *    Windows:          in QTSClient.lib 4.1 and later
 	 	}
 function QTSSetNetworkAppName(inAppName: ConstCStringPtr; inFlags: SInt32): OSErr; external name '_QTSSetNetworkAppName';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSGetNetworkAppName()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3035,17 +3496,23 @@ function QTSGetNetworkAppName( inFlags: SInt32; var outCStringPtr: CStringPtr ):
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.1 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.1 and later
  }
 function QTSGetNetworkAppName(inFlags: SInt32; var outCStringPtr: CStringPtr): OSErr; external name '_QTSGetNetworkAppName';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {-----------------------------------------
     Statistics Utilities
 -----------------------------------------}
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	QTSStatHelperRecordPtr = ^QTSStatHelperRecord;
@@ -3108,6 +3575,8 @@ const
 { statistics data formats }
 const
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSStatHelperRecordPtr = ^QTSStatHelperRecord;
@@ -3169,7 +3638,10 @@ const
 	kQTSStatisticsUnitsNameAtomType = FourCharCode('unin');					{  chars only, no length or terminator  }
 
 	{	 statistics data formats 	}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kQTSStatisticsSInt32DataFormat = FourCharCode('si32');
 	kQTSStatisticsUInt32DataFormat = FourCharCode('ui32');
 	kQTSStatisticsSInt16DataFormat = FourCharCode('si16');
@@ -3182,6 +3654,7 @@ const
 	kQTSStatisticsPointDataFormat = FourCharCode('pont');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { statistics units types }
 const
 	kQTSStatisticsNoUnitsType = 0;
@@ -3189,10 +3662,15 @@ const
 	{	 statistics units types 	}
 	kQTSStatisticsNoUnitsType	= 0;
 >>>>>>> graemeg/fixes_2_2
+=======
+	{	 statistics units types 	}
+	kQTSStatisticsNoUnitsType	= 0;
+>>>>>>> origin/fixes_2_2
 	kQTSStatisticsPercentUnitsType = FourCharCode('pcnt');
 	kQTSStatisticsBitsPerSecUnitsType = FourCharCode('bps ');
 	kQTSStatisticsFramesPerSecUnitsType = FourCharCode('fps ');
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { specific statistics types }
 const
@@ -3214,6 +3692,8 @@ function QTSNewStatHelper( inPresentation: QTSPresentation; inStream: QTSStream;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{	 specific statistics types 	}
 	kQTSTotalDataRateStat		= FourCharCode('drtt');
 	kQTSTotalDataRateInStat		= FourCharCode('drti');
@@ -3230,12 +3710,16 @@ function QTSNewStatHelper( inPresentation: QTSPresentation; inStream: QTSStream;
 	 *    Windows:          in QTSClient.lib 4.0 and later
 	 	}
 function QTSNewStatHelper(inPresentation: QTSPresentation; inStream: QTSStream; inStatType: OSType; inFlags: SInt32; var outStatHelper: QTSStatHelper): OSErr; external name '_QTSNewStatHelper';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSDisposeStatHelper()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3246,18 +3730,24 @@ function QTSDisposeStatHelper( inStatHelper: QTSStatHelper ): OSErr; external na
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSDisposeStatHelper(inStatHelper: QTSStatHelper): OSErr; external name '_QTSDisposeStatHelper';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSStatHelperGetStats()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3268,18 +3758,24 @@ function QTSStatHelperGetStats( inStatHelper: QTSStatHelper ): OSErr; external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSStatHelperGetStats(inStatHelper: QTSStatHelper): OSErr; external name '_QTSStatHelperGetStats';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSStatHelperResetIter()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3290,18 +3786,24 @@ function QTSStatHelperResetIter( inStatHelper: QTSStatHelper ): OSErr; external 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSStatHelperResetIter(inStatHelper: QTSStatHelper): OSErr; external name '_QTSStatHelperResetIter';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSStatHelperNext()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3312,18 +3814,24 @@ function QTSStatHelperNext( inStatHelper: QTSStatHelper; var ioParams: QTSStatHe
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSStatHelperNext(inStatHelper: QTSStatHelper; var ioParams: QTSStatHelperNextParams): boolean; external name '_QTSStatHelperNext';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSStatHelperGetNumStats()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3334,19 +3842,25 @@ function QTSStatHelperGetNumStats( inStatHelper: QTSStatHelper ): UInt32; extern
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSStatHelperGetNumStats(inStatHelper: QTSStatHelper): UInt32; external name '_QTSStatHelperGetNumStats';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { used by components to put statistics into the atom container }
 {
  *  QTSGetOrMakeStatAtomForStream()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3357,18 +3871,24 @@ function QTSGetOrMakeStatAtomForStream( inContainer: QTAtomContainer; inStream: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSGetOrMakeStatAtomForStream(inContainer: QTAtomContainer; inStream: QTSStream; var outParentAtom: QTAtom): OSErr; external name '_QTSGetOrMakeStatAtomForStream';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSInsertStatistic()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3379,18 +3899,24 @@ function QTSInsertStatistic( inContainer: QTAtomContainer; inParentAtom: QTAtom;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSInsertStatistic(inContainer: QTAtomContainer; inParentAtom: QTAtom; inStatType: OSType; inStatData: UnivPtr; inStatDataLength: UInt32; inStatDataFormat: OSType; inFlags: SInt32): OSErr; external name '_QTSInsertStatistic';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSInsertStatisticName()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3401,12 +3927,15 @@ function QTSInsertStatisticName( inContainer: QTAtomContainer; inParentAtom: QTA
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSInsertStatisticName(inContainer: QTAtomContainer; inParentAtom: QTAtom; inStatType: OSType; inStatName: ConstCStringPtr; inStatNameLength: UInt32): OSErr; external name '_QTSInsertStatisticName';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 
 {
@@ -3423,13 +3952,23 @@ function QTSInsertStatisticUnits( inContainer: QTAtomContainer; inParentAtom: QT
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+
+{
+ *  QTSInsertStatisticUnits()
+ *  
+ *  Availability:
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSInsertStatisticUnits(inContainer: QTAtomContainer; inParentAtom: QTAtom; inStatType: OSType; inUnitsType: OSType; inUnitsName: ConstCStringPtr; inUnitsNameLength: UInt32): OSErr; external name '_QTSInsertStatisticUnits';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {============================================================================
         Data Formats
@@ -3438,6 +3977,7 @@ function QTSInsertStatisticUnits(inContainer: QTAtomContainer; inParentAtom: QTA
     Data Types
 -----------------------------------------}
 { universal data types }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kQTSNullDataType = FourCharCode('NULL');
@@ -3468,6 +4008,8 @@ const
 	kQTSAtomType_Duration = FourCharCode('dura'); { QTSDurationAtom }
 	kQTSAtomType_BufferTime = FourCharCode('bufr'); { QTSBufferTimeAtom }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 const
 	kQTSNullDataType			= FourCharCode('NULL');
@@ -3496,11 +4038,15 @@ const
 	kQTSAtomType_Duration		= FourCharCode('dura');						{  QTSDurationAtom  }
 	kQTSAtomType_BufferTime		= FourCharCode('bufr');						{  QTSBufferTimeAtom  }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSAtomContainerDataStructPtr = ^QTSAtomContainerDataStruct;
 	QTSAtomContainerDataStruct = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		container: QTAtomContainer;
 		parentAtom: QTAtom;
@@ -3510,6 +4056,8 @@ const
 	kQTSPresHeaderTypeIsData = $00000100;
 	kQTSPresHeaderDataIsHandle = $00000200;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		container:				QTAtomContainer;
 		parentAtom:				QTAtom;
 	end;
@@ -3520,11 +4068,15 @@ const
 	kQTSPresHeaderTypeIsData	= $00000100;
 	kQTSPresHeaderDataIsHandle	= $00000200;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSPresentationHeaderAtomPtr = ^QTSPresentationHeaderAtom;
 	QTSPresentationHeaderAtom = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		versionAndFlags: SInt32;
 		conductorOrDataType: OSType;
@@ -3557,6 +4109,8 @@ type
 		clipRect: Rect;
 	end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		versionAndFlags:		SInt32;
 		conductorOrDataType:	OSType;
 		dataAtomType:			OSType;									{  where the data really is }
@@ -3589,12 +4143,16 @@ type
 	end;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kQTSEmptyEditStreamStartTime = -1;
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 	QTSStatus = UInt32;
 const
@@ -3605,6 +4163,8 @@ const
 	kQTSMadeConnectionDetailedStatus = 4;
 	kQTSNegotiatingStatus = 5;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	QTSStatus							= UInt32;
 
 const
@@ -3614,13 +4174,17 @@ const
 	kQTSOpeningConnectionDetailedStatus = 3;
 	kQTSMadeConnectionDetailedStatus = 4;
 	kQTSNegotiatingStatus		= 5;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	kQTSGettingDescriptionDetailedStatus = 6;
 	kQTSGotDescriptionDetailedStatus = 7;
 	kQTSSentSetupCmdDetailedStatus = 8;
 	kQTSReceivedSetupResponseDetailedStatus = 9;
 	kQTSSentPlayCmdDetailedStatus = 10;
 	kQTSReceivedPlayResponseDetailedStatus = 11;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kQTSBufferingStatus = 12;
 	kQTSPlayingStatus = 13;
@@ -3663,6 +4227,8 @@ const
 	kConnectionActive = 1 shl 0;
 	kConnectionUseSystemPref = 1 shl 1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kQTSBufferingStatus			= 12;
 	kQTSPlayingStatus			= 13;
 	kQTSPausedStatus			= 14;
@@ -3703,11 +4269,15 @@ const
 	kConnectionActive			= $00000001;
 	kConnectionUseSystemPref	= $00000002;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSTransportPrefPtr = ^QTSTransportPref;
 	QTSTransportPref = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		protocol: OSType;               { udp, http, tcp, etc}
 		portID: SInt32;                 { port to use for this connection type}
@@ -3718,6 +4288,8 @@ const
 	kProxyActive = 1 shl 0;
 	kProxyUseSystemPref = 1 shl 1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		protocol:				OSType;									{  udp, http, tcp, etc }
 		portID:					SInt32;									{  port to use for this connection type }
 		flags:					UInt32;									{  connection flags }
@@ -3729,11 +4301,15 @@ const
 	kProxyActive				= $00000001;
 	kProxyUseSystemPref			= $00000002;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSProxyPrefPtr = ^QTSProxyPref;
 	QTSProxyPref = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		flags: UInt32;                  { proxy flags}
 		portID: SInt32;                 { port to use for this connection type}
@@ -3743,6 +4319,8 @@ type
 const
 	kNoProxyUseSystemPref = 1 shl 0;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		flags:					UInt32;									{  proxy flags }
 		portID:					SInt32;									{  port to use for this connection type }
 		seed:					UInt32;									{  seed value last time this setting was read from system prefs }
@@ -3753,11 +4331,15 @@ const
 const
 	kNoProxyUseSystemPref		= $00000001;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSNoProxyPrefPtr = ^QTSNoProxyPref;
 	QTSNoProxyPref = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		flags: UInt32;                  { no-proxy flags}
 		seed: UInt32;                   { seed value last time this setting was read from system prefs}
@@ -3767,6 +4349,8 @@ const
 	kQTSInstantOnFlag_Enable = 1 shl 0; { instant on is enabled (read/write)}
 	kQTSInstantOnFlag_Permitted = 1 shl 1; { instant on is possible (read only)}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		flags:					UInt32;									{  no-proxy flags }
 		seed:					UInt32;									{  seed value last time this setting was read from system prefs }
 		urlList:				SInt8;									{  NULL terminated, comma delimited list of urls }
@@ -3776,12 +4360,16 @@ const
 const
 	kQTSInstantOnFlag_Enable	= $00000001;					{  instant on is enabled (read/write) }
 	kQTSInstantOnFlag_Permitted	= $00000002;					{  instant on is possible (read only) }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 type
 	QTSInstantOnPrefPtr = ^QTSInstantOnPref;
 	QTSInstantOnPref = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		flags: SInt32;                  { flags}
 		factor: SInt32;                 {    0-100; default is 50}
@@ -3816,6 +4404,8 @@ function QTSPrefsAddProxySetting( proxyType: OSType; portID: SInt32; flags: UInt
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		flags:					SInt32;									{  flags }
 		factor:					SInt32;									{     0-100; default is 50 }
 	end;
@@ -3848,12 +4438,16 @@ const
 	 *    Windows:          in QTSClient.lib 4.1 and later
 	 	}
 function QTSPrefsAddProxySetting(proxyType: OSType; portID: SInt32; flags: UInt32; seed: UInt32; var srvrURL: Str255): OSErr; external name '_QTSPrefsAddProxySetting';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPrefsFindProxyByType()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3864,18 +4458,24 @@ function QTSPrefsFindProxyByType( proxyType: OSType; flags: UInt32; flagsMask: U
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.1 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.1 and later
  }
 function QTSPrefsFindProxyByType(proxyType: OSType; flags: UInt32; flagsMask: UInt32; var proxyHndl: UnivPtr; var count: SInt16): OSErr; external name '_QTSPrefsFindProxyByType';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPrefsAddConnectionSetting()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3886,18 +4486,24 @@ function QTSPrefsAddConnectionSetting( protocol: OSType; portID: SInt32; flags: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.1 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.1 and later
  }
 function QTSPrefsAddConnectionSetting(protocol: OSType; portID: SInt32; flags: UInt32; seed: UInt32): OSErr; external name '_QTSPrefsAddConnectionSetting';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPrefsFindConnectionByType()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3908,18 +4514,24 @@ function QTSPrefsFindConnectionByType( protocol: OSType; flags: UInt32; flagsMas
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.1 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.1 and later
  }
 function QTSPrefsFindConnectionByType(protocol: OSType; flags: UInt32; flagsMask: UInt32; var connectionHndl: UnivPtr; var count: SInt16): OSErr; external name '_QTSPrefsFindConnectionByType';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPrefsGetActiveConnection()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3930,18 +4542,24 @@ function QTSPrefsGetActiveConnection( protocol: OSType; var connectInfo: QTSTran
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.1 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.1 and later
  }
 function QTSPrefsGetActiveConnection(protocol: OSType; var connectInfo: QTSTransportPref): OSErr; external name '_QTSPrefsGetActiveConnection';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPrefsGetNoProxyURLs()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3952,18 +4570,24 @@ function QTSPrefsGetNoProxyURLs( var noProxyHndl: UnivPtr ): OSErr; external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.1 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.1 and later
  }
 function QTSPrefsGetNoProxyURLs(var noProxyHndl: UnivPtr): OSErr; external name '_QTSPrefsGetNoProxyURLs';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPrefsSetNoProxyURLs()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -3974,18 +4598,24 @@ function QTSPrefsSetNoProxyURLs( urls: CStringPtr; flags: UInt32; seed: UInt32 )
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.1 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.1 and later
  }
 function QTSPrefsSetNoProxyURLs(urls: CStringPtr; flags: UInt32; seed: UInt32): OSErr; external name '_QTSPrefsSetNoProxyURLs';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPrefsAddProxyUserInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -3996,18 +4626,24 @@ function QTSPrefsAddProxyUserInfo( proxyType: OSType; flags: SInt32; flagsMask: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0.1 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.1 and later
  *    Windows:          in QTSClient.lib 5.0.1 and later
  }
 function QTSPrefsAddProxyUserInfo(proxyType: OSType; flags: SInt32; flagsMask: SInt32; username: StringPtr; password: StringPtr): OSErr; external name '_QTSPrefsAddProxyUserInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPrefsFindProxyUserInfoByType()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -4018,18 +4654,24 @@ function QTSPrefsFindProxyUserInfoByType( proxyType: OSType; flags: SInt32; flag
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0.1 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.1 and later
  *    Windows:          in QTSClient.lib 5.0.1 and later
  }
 function QTSPrefsFindProxyUserInfoByType(proxyType: OSType; flags: SInt32; flagsMask: SInt32; username: StringPtr; password: StringPtr): OSErr; external name '_QTSPrefsFindProxyUserInfoByType';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPrefsGetInstantOnSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -4040,18 +4682,24 @@ function QTSPrefsGetInstantOnSettings( var outPref: QTSInstantOnPref; inFlags: S
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  *    Windows:          in QTSClient.lib 6.0 and later
  }
 function QTSPrefsGetInstantOnSettings(var outPref: QTSInstantOnPref; inFlags: SInt32): OSErr; external name '_QTSPrefsGetInstantOnSettings';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSPrefsSetInstantOnSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -4061,13 +4709,18 @@ function QTSPrefsGetInstantOnSettings(var outPref: QTSInstantOnPref; inFlags: SI
 function QTSPrefsSetInstantOnSettings( var inPref: QTSInstantOnPref; inFlags: SInt32 ): OSErr; external name '_QTSPrefsSetInstantOnSettings';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 6.0 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.2 and later
  *    Windows:          in QTSClient.lib 6.0 and later
  }
 function QTSPrefsSetInstantOnSettings(var inPref: QTSInstantOnPref; inFlags: SInt32): OSErr; external name '_QTSPrefsSetInstantOnSettings';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {============================================================================
@@ -4086,6 +4739,7 @@ function QTSPrefsSetInstantOnSettings(var inPref: QTSInstantOnPref; inFlags: SIn
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
@@ -4095,18 +4749,24 @@ function QTSNewPtr( inByteCount: UInt32; inFlags: SInt32; var outFlags: SInt32 )
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSNewPtr(inByteCount: UInt32; inFlags: SInt32; var outFlags: SInt32): Ptr; external name '_QTSNewPtr';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSNewHandle()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4171,6 +4831,8 @@ function QTSAllocMemPtr( inByteCount: UInt32; inFlags: SInt32 ): QTSMemPtr; exte
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
@@ -4213,12 +4875,16 @@ type
 	 *    Windows:          in QTSClient.lib 4.0 and later
 	 	}
 function QTSAllocMemPtr(inByteCount: UInt32; inFlags: SInt32): QTSMemPtr; external name '_QTSAllocMemPtr';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSReleaseMemPtr()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4228,13 +4894,18 @@ function QTSAllocMemPtr(inByteCount: UInt32; inFlags: SInt32): QTSMemPtr; extern
 procedure QTSReleaseMemPtr( inMemPtr: QTSMemPtr; inFlags: SInt32 ); external name '_QTSReleaseMemPtr';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 procedure QTSReleaseMemPtr(inMemPtr: QTSMemPtr; inFlags: SInt32); external name '_QTSReleaseMemPtr';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {============================================================================
@@ -4242,18 +4913,25 @@ procedure QTSReleaseMemPtr(inMemPtr: QTSMemPtr; inFlags: SInt32); external name 
 ============================================================================}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	kQTSStreamBufferVersion1 = 1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 const
 	kQTSStreamBufferVersion1	= 1;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTSStreamBufferPtr = ^QTSStreamBuffer;
 	QTSStreamBuffer = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		reserved1: QTSStreamBufferPtr;
 		reserved2: QTSStreamBufferPtr;
@@ -4297,6 +4975,8 @@ type
 	end;
 { flags for QTSDuplicateMessage}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		reserved1:				QTSStreamBufferPtr;
 		reserved2:				QTSStreamBufferPtr;
 		next:					QTSStreamBufferPtr;						{  next message block in a message  }
@@ -4313,12 +4993,16 @@ type
 
 	{  flags for QTSDuplicateMessage }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
 	kQTSDuplicateBufferFlag_CopyData = $00000001;
 	kQTSDuplicateBufferFlag_FlattenMessage = $00000002;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  *  QTSNewStreamBuffer()
@@ -4333,6 +5017,8 @@ function QTSNewStreamBuffer( inDataSize: UInt32; inFlags: SInt32; var outStreamB
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{
 	 *  QTSNewStreamBuffer()
 	 *  
@@ -4343,12 +5029,16 @@ function QTSNewStreamBuffer( inDataSize: UInt32; inFlags: SInt32; var outStreamB
 	 *    Windows:          in QTSClient.lib 5.0 and later
 	 	}
 function QTSNewStreamBuffer(inDataSize: UInt32; inFlags: SInt32; var outStreamBuffer: UnivPtr): OSErr; external name '_QTSNewStreamBuffer';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSFreeMessage()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4359,13 +5049,18 @@ procedure QTSFreeMessage( var inMessage: QTSStreamBuffer ); external name '_QTSF
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 procedure QTSFreeMessage(var inMessage: QTSStreamBuffer); external name '_QTSFreeMessage';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
     kQTSDuplicateBufferFlag_CopyData - forces a copy of the data itself
@@ -4377,6 +5072,7 @@ procedure QTSFreeMessage(var inMessage: QTSStreamBuffer); external name '_QTSFre
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
@@ -4386,18 +5082,24 @@ function QTSDuplicateMessage( var inMessage: QTSStreamBuffer; inFlags: SInt32; v
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 5.0 and later
  }
 function QTSDuplicateMessage(var inMessage: QTSStreamBuffer; inFlags: SInt32; var outDuplicatedMessage: UnivPtr): OSErr; external name '_QTSDuplicateMessage';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSMessageLength()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4408,18 +5110,24 @@ function QTSMessageLength( var inMessage: QTSStreamBuffer ): UInt32; external na
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSMessageLength(var inMessage: QTSStreamBuffer): UInt32; external name '_QTSMessageLength';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSStreamBufferDataInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -4432,6 +5140,8 @@ procedure QTSStreamBufferDataInfo( var inStreamBuffer: QTSStreamBuffer; var outD
 
 { ---- old calls (don't use these)}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0 and later
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -4440,12 +5150,16 @@ procedure QTSStreamBufferDataInfo( var inStreamBuffer: QTSStreamBuffer; var outD
 procedure QTSStreamBufferDataInfo(var inStreamBuffer: QTSStreamBuffer; var outDataStart: UnivPtr; var outDataMaxLength: UInt32); external name '_QTSStreamBufferDataInfo';
 
 {  ---- old calls (don't use these) }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSAllocBuffer()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4456,18 +5170,24 @@ function QTSAllocBuffer( inSize: SInt32 ): QTSStreamBufferPtr; external name '_Q
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSAllocBuffer(inSize: SInt32): QTSStreamBufferPtr; external name '_QTSAllocBuffer';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSDupMessage()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4478,18 +5198,24 @@ function QTSDupMessage( var inMessage: QTSStreamBuffer ): QTSStreamBufferPtr; ex
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSDupMessage(var inMessage: QTSStreamBuffer): QTSStreamBufferPtr; external name '_QTSDupMessage';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSCopyMessage()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4500,18 +5226,24 @@ function QTSCopyMessage( var inMessage: QTSStreamBuffer ): QTSStreamBufferPtr; e
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSCopyMessage(var inMessage: QTSStreamBuffer): QTSStreamBufferPtr; external name '_QTSCopyMessage';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSFlattenMessage()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -4521,13 +5253,18 @@ function QTSCopyMessage(var inMessage: QTSStreamBuffer): QTSStreamBufferPtr; ext
 function QTSFlattenMessage( var inMessage: QTSStreamBuffer ): QTSStreamBufferPtr; external name '_QTSFlattenMessage';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSFlattenMessage(var inMessage: QTSStreamBuffer): QTSStreamBufferPtr; external name '_QTSFlattenMessage';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {============================================================================
@@ -4538,6 +5275,7 @@ function QTSFlattenMessage(var inMessage: QTSStreamBuffer): QTSStreamBufferPtr; 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
@@ -4547,18 +5285,24 @@ function QTSGetErrorString( inErrorCode: SInt32; inMaxErrorStringLength: UInt32;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Mac OS X:         in version 10.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
 function QTSGetErrorString(inErrorCode: SInt32; inMaxErrorStringLength: UInt32; outErrorString: CStringPtr; inFlags: SInt32): boolean; external name '_QTSGetErrorString';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  QTSInitializeMediaParams()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -4582,6 +5326,8 @@ function NewQTSNotificationUPP( userRoutine: QTSNotificationProcPtr ): QTSNotifi
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QTStreamLib 5.0.1 and later
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.1 and later
@@ -4605,11 +5351,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewQTSNotificationUPP(userRoutine: QTSNotificationProcPtr): QTSNotificationUPP; external name '_NewQTSNotificationUPP'; { old name was NewQTSNotificationProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewQTSPanelFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -4619,16 +5369,22 @@ function NewQTSPanelFilterUPP( userRoutine: QTSPanelFilterProcPtr ): QTSPanelFil
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.1 and later
  }
 function NewQTSPanelFilterUPP(userRoutine: QTSPanelFilterProcPtr): QTSPanelFilterUPP; external name '_NewQTSPanelFilterUPP'; { old name was NewQTSPanelFilterProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewQTSModalFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -4638,16 +5394,22 @@ function NewQTSModalFilterUPP( userRoutine: QTSModalFilterProcPtr ): QTSModalFil
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewQTSModalFilterUPP(userRoutine: QTSModalFilterProcPtr): QTSModalFilterUPP; external name '_NewQTSModalFilterUPP'; { old name was NewQTSModalFilterProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeQTSNotificationUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -4657,16 +5419,22 @@ procedure DisposeQTSNotificationUPP( userUPP: QTSNotificationUPP ); external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeQTSNotificationUPP(userUPP: QTSNotificationUPP); external name '_DisposeQTSNotificationUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeQTSPanelFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -4676,16 +5444,22 @@ procedure DisposeQTSPanelFilterUPP( userUPP: QTSPanelFilterUPP ); external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.1 and later
  }
 procedure DisposeQTSPanelFilterUPP(userUPP: QTSPanelFilterUPP); external name '_DisposeQTSPanelFilterUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeQTSModalFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -4695,16 +5469,22 @@ procedure DisposeQTSModalFilterUPP( userUPP: QTSModalFilterUPP ); external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeQTSModalFilterUPP(userUPP: QTSModalFilterUPP); external name '_DisposeQTSModalFilterUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeQTSNotificationUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -4714,16 +5494,22 @@ function InvokeQTSNotificationUPP( inErr: ComponentResult; inNotificationType: O
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeQTSNotificationUPP(inErr: ComponentResult; inNotificationType: OSType; inNotificationParams: UnivPtr; inRefCon: UnivPtr; userRoutine: QTSNotificationUPP): ComponentResult; external name '_InvokeQTSNotificationUPP'; { old name was CallQTSNotificationProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeQTSPanelFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
@@ -4733,16 +5519,22 @@ function InvokeQTSPanelFilterUPP( var inParams: QTSPanelFilterParams; inRefCon: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Mac OS X:         in version 10.1 and later
  }
 function InvokeQTSPanelFilterUPP(var inParams: QTSPanelFilterParams; inRefCon: UnivPtr; userRoutine: QTSPanelFilterUPP): boolean; external name '_InvokeQTSPanelFilterUPP'; { old name was CallQTSPanelFilterProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeQTSModalFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
@@ -4759,6 +5551,8 @@ function InvokeQTSModalFilterUPP( inDialog: DialogPtr; const (*var*) inEvent: Ev
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Mac OS X:         in version 10.0 and later
@@ -4768,4 +5562,7 @@ function InvokeQTSModalFilterUPP(inDialog: DialogPtr; const (*var*) inEvent: Eve
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

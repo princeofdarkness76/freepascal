@@ -1,5 +1,6 @@
 {%CPU=x86_64,powerpc64}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {%skiptarget=darwin,aix,win64}
 
 { darwin limits statically declared data structures to 32 bit for efficiency reasons }
@@ -10,6 +11,11 @@
 
 { darwin limits statically declared data structures to 32 bit for efficiency reasons }
 >>>>>>> graemeg/fixes_2_2
+=======
+{%skiptarget=darwin}
+
+{ darwin limits statically declared data structures to 32 bit for efficiency reasons }
+>>>>>>> origin/fixes_2_2
 
 program tb0528;
 

@@ -134,7 +134,10 @@ interface
 =======
         'csect','csect','csect','csect',
          '','','','','','','','','','','','','',''
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       );
 
     type
@@ -762,10 +765,14 @@ interface
               begin
                  {if LastSecType<>sec_none then
 <<<<<<< HEAD
+<<<<<<< HEAD
                   writer.AsmWriteLn('_'+asminfo^.secnames[LastSecType]+#9#9'ENDS');}
 =======
                   AsmWriteLn('_'+target_asm.secnames[LastSecType]+#9#9'ENDS');}
 >>>>>>> graemeg/fixes_2_2
+=======
+                  AsmWriteLn('_'+target_asm.secnames[LastSecType]+#9#9'ENDS');}
+>>>>>>> origin/fixes_2_2
 
                  if tai_section(hp).sectype<>sec_none then
                   begin
@@ -1224,10 +1231,13 @@ interface
 
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       writer.AsmWriteLn(#9'string asis');  {Interpret strings just to be the content between the quotes.}
       writer.AsmWriteLn(#9'aligning off'); {We do our own aligning.}
       writer.AsmLn;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       AsmWriteLn(#9'string asis');  {Interpret strings just to be the content between the quotes.}
       AsmWriteLn(#9'aligning off'); {We do our own aligning.}
       AsmLn;

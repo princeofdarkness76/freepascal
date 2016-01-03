@@ -5,9 +5,12 @@
 {$MACRO on}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 interface
 
 {$IFDEF LinkDynamically}
@@ -23,6 +26,7 @@ uses Dynlibs,ctypes;
 {$IFDEF Unix}
   {$DEFINE extdecl:=cdecl}
   const
+<<<<<<< HEAD
 <<<<<<< HEAD
     gdslib = 'libgds.'+sharedsuffix; // Needs completion ?
     libfc  = 'libfbclient.'+sharedsuffix;
@@ -47,6 +51,11 @@ uses Dynlibs,ctypes;
     fbclib = 'libfbclient.'+sharedsuffix;
     fbembedlib = 'libfbembed.'+sharedsuffix;
 >>>>>>> graemeg/fixes_2_2
+=======
+    gdslib = 'libgds.'+sharedsuffix;
+    fbclib = 'libfbclient.'+sharedsuffix;
+    fbembedlib = 'libfbembed.'+sharedsuffix;
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
 {$IFDEF Windows}
   {$DEFINE extdecl:=stdcall}
@@ -55,10 +64,13 @@ uses Dynlibs,ctypes;
     fbclib = 'fbclient.dll';
     fbembedlib = 'fbembed.dll';
 <<<<<<< HEAD
+<<<<<<< HEAD
     libfc  = fbclib;
     libem  = fbembedlib;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
 
 type
@@ -99,12 +111,16 @@ type
 Type
    ISC_USHORT    = word;
 <<<<<<< HEAD
+<<<<<<< HEAD
    ISC_STATUS    = ptrint;  { CLong according the sources but they ifdef
 				for win64, the only significant platform
 				where clong<>ptrint}
 =======
    ISC_STATUS    = clong;
 >>>>>>> graemeg/fixes_2_2
+=======
+   ISC_STATUS    = clong;
+>>>>>>> origin/fixes_2_2
    ISC_INT64     = int64;
    ISC_UINT64    = qword;
    ISC_LONG      = Longint;
@@ -116,6 +132,7 @@ Type
    PISC_UINT64 = ^ISC_UINT64;
    PISC_LONG = ^ISC_LONG;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
    {$IFDEF CPU64}
     FB_API_HANDLE = cuint;
@@ -133,6 +150,9 @@ Type
 =======
   const
 >>>>>>> graemeg/fixes_2_2
+=======
+  const
+>>>>>>> origin/fixes_2_2
      DSQL_close = 1;
      DSQL_drop = 2;
 
@@ -380,6 +400,7 @@ type
 
   type
 <<<<<<< HEAD
+<<<<<<< HEAD
 
      isc_att_handle  = FB_API_HANDLE;
      isc_blob_handle = FB_API_HANDLE;
@@ -391,6 +412,8 @@ type
      isc_tr_handle   = FB_API_HANDLE;
      isc_win_handle  = pointer;       // can't find in 2.5.1 
 =======
+=======
+>>>>>>> origin/fixes_2_2
      isc_att_handle = pointer;
      isc_blob_handle = pointer;
      isc_db_handle = pointer;
@@ -400,7 +423,10 @@ type
      isc_svc_handle = pointer;
      isc_tr_handle = pointer;
      isc_win_handle = pointer;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      isc_callback = procedure ;extdecl;
      isc_resv_handle = ISC_LONG;
      tisc_att_handle = isc_att_handle;
@@ -1226,10 +1252,13 @@ type
      isc_spb_res_length = 11;
      isc_spb_res_access_mode = 12;
 <<<<<<< HEAD
+<<<<<<< HEAD
      isc_spb_res_fix_fss_data = 13;
      isc_spb_res_fix_fss_metadata = 14;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      isc_spb_res_deactivate_idx = $0100;
      isc_spb_res_no_shadow = $0200;
      isc_spb_res_no_validity = $0400;
@@ -1256,11 +1285,14 @@ type
      isc_spb_sts_idx_pages = $08;
      isc_spb_sts_sys_relations = $10;
 <<<<<<< HEAD
+<<<<<<< HEAD
      isc_spb_sts_record_versions = $20;
      isc_spb_sts_table = $40;
      isc_spb_sts_nocreation = $80;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {                        }
   { SQL information items  }
   {                        }
@@ -1865,11 +1897,14 @@ type
   function isc_sqlcode(_para1:PISC_STATUS):ISC_LONG; extdecl; external gdslib;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   // Available in Firebird 2.5+
   function fb_sqlstate(_para1: PAnsiChar;_para2:PISC_STATUS): ISC_STATUS ; extdecl;  external gdslib;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   procedure isc_sql_interprete(_para1:smallint; _para2:Pchar; _para3:smallint); extdecl; external gdslib;
 
   function isc_transaction_info(_para1:PISC_STATUS; _para2:Pisc_tr_handle; _para3:smallint; _para4:Pchar; _para5:smallint;
@@ -2085,6 +2120,7 @@ type
 
   {                              }
 <<<<<<< HEAD
+<<<<<<< HEAD
   { Shutdown and cancel          }
   {                              }
   // Available in Firebird 2.5+
@@ -2100,6 +2136,8 @@ type
   {                              }
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { Forms functions              }
   {                              }
 {$IFDEF Unix}
@@ -2147,6 +2185,7 @@ type
 {$ENDIF}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   // Available in Firebird 2.5+
   function fb_shutdown:int; extdecl; external gdslib;
 
@@ -2155,6 +2194,8 @@ type
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   function isc_attach_database:ISC_STATUS; extdecl; external gdslib;
 
   function isc_array_gen_sdl:ISC_STATUS; extdecl; external gdslib;
@@ -2404,10 +2445,13 @@ var
   isc_start_transaction : function (_para1:PISC_STATUS; _para2:Pisc_tr_handle; _para3:smallint; args:array of const):ISC_STATUS; cdecl;
   isc_sqlcode : function (_para1:PISC_STATUS):ISC_LONG; extdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
   // Available in Firebird 2.5+
   fb_sqlstate : function(_para1: PAnsiChar;_para2:PISC_STATUS):ISC_STATUS; extdecl; 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   isc_sql_interprete : procedure (_para1:smallint; _para2:Pchar; _para3:smallint); extdecl;
   isc_transaction_info : function (_para1:PISC_STATUS; _para2:Pisc_tr_handle; _para3:smallint; _para4:Pchar; _para5:smallint;_para6:Pchar):ISC_STATUS; extdecl;
   isc_transact_request : function (_para1:PISC_STATUS; _para2:Pisc_db_handle; _para3:Pisc_tr_handle; _para4:word; _para5:Pchar;_para6:word; _para7:Pchar; _para8:word; _para9:Pchar):ISC_STATUS; extdecl;
@@ -2519,6 +2563,7 @@ var
   isc_service_query : function (_para1:PISC_STATUS; _para2:Pisc_svc_handle; _para3:Pisc_resv_handle; _para4:word; _para5:Pchar;_para6:word; _para7:Pchar; _para8:word; _para9:Pchar):ISC_STATUS; extdecl;
   isc_service_start : function (_para1:PISC_STATUS; _para2:Pisc_svc_handle; _para3:Pisc_resv_handle; _para4:word; _para5:Pchar):ISC_STATUS; extdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 {                              }
@@ -2529,6 +2574,8 @@ var
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {                              }
 { Forms functions              }
 {                              }
@@ -2554,6 +2601,7 @@ var
 {$ENDIF}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function InitialiseIBase60(Const LibraryName : AnsiString) : integer;
 function InitialiseIBase60 : integer;
 procedure ReleaseIBase60;
@@ -2561,13 +2609,18 @@ procedure ReleaseIBase60;
 Function IBaseLibraryHandle : TLibHandle;
 Function IBaseLoadedLibrary : AnsiString;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function InitialiseIBase60(Const LibraryName : String) : integer;
 function InitialiseIBase60 : integer;
 procedure ReleaseIBase60;
 
 var IBaseLibraryHandle : TLibHandle;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
 
 implementation
@@ -2577,15 +2630,20 @@ implementation
 ResourceString
   SErrEmbeddedFailed = 'Can not load embedded Firebird client "%s". Check your installation.';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrDefaultsFailed = 'Can not load default Firebird clients ("%s" or "%s" or "%s"). Check your installation.';
 =======
   SErrDefaultsFailed = 'Can not load default Firebird clients ("%s" or "%s"). Check your installation.';
 >>>>>>> graemeg/fixes_2_2
+=======
+  SErrDefaultsFailed = 'Can not load default Firebird clients ("%s" or "%s"). Check your installation.';
+>>>>>>> origin/fixes_2_2
   SErrLoadFailed     = 'Can not load Firebird client library "%s". Check your installation.';
   SErrAlreadyLoaded  = 'Firebird interface already initialized from library %s.';
   
 var 
   RefCount : integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
   LoadedLibrary : AnsiString;
   LibHandle : TLibHandle;
@@ -2608,11 +2666,17 @@ Function TryInitialiseIBase60(Const LibraryName : AnsiString) : integer;
 
 Function TryInitialiseIBase60(Const LibraryName : String) : integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+  LoadedLibrary : String;
+
+Function TryInitialiseIBase60(Const LibraryName : String) : integer;
+>>>>>>> origin/fixes_2_2
 
 begin
   Result := 0;
   if (RefCount=0) then
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
     LibHandle:=LoadLibrary(LibraryName);
     if (LibHandle=nilhandle) then
@@ -2624,12 +2688,17 @@ begin
     // Available in Firebird 2.5+    
     pointer(fb_sqlstate) := GetProcedureAddress(IBaseLibraryHandle,'fb_sqlstate');
 =======
+=======
+>>>>>>> origin/fixes_2_2
     IBaseLibraryHandle:=LoadLibrary(LibraryName);
     if (IBaseLibraryHandle=nilhandle) then
       Exit;
     inc(RefCount);
     LoadedLibrary:=LibraryName;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     pointer(isc_attach_database) := GetProcedureAddress(IBaseLibraryHandle,'isc_attach_database');
     pointer(isc_array_gen_sdl) := GetProcedureAddress(IBaseLibraryHandle,'isc_array_gen_sdl');
     pointer(isc_array_get_slice) := GetProcedureAddress(IBaseLibraryHandle,'isc_array_get_slice');
@@ -2808,6 +2877,7 @@ function InitialiseIBase60 : integer;
 begin
   Result := 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (RefCount<>0) then
     // pretend to load whatever is already loaded, so we do not get a library name conflict.
     Inc(RefCount)
@@ -2819,10 +2889,16 @@ begin
     begin
     If (TryInitialiseIBase60(fbembedlib)=0) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  If UseEmbeddedFirebird then
+    begin
+    If (TryInitialiseIBase60(fbembedlib)=0) then
+>>>>>>> origin/fixes_2_2
       Raise EInOutError.CreateFmt(SErrEmbeddedFailed,[fbembedlib]);
     end
   else
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
     If (TryInitialiseIBase60(fbembedlib)=0) and
        (TryInitialiseIBase60(libem)=0) and
@@ -2835,20 +2911,30 @@ begin
        (TryInitialiseIBase60(gdslib)=0) then
         Raise EInOutError.CreateFmt(SErrDefaultsFailed,[gdslib,fbclib]);
 >>>>>>> graemeg/fixes_2_2
+=======
+    If (TryInitialiseIBase60(fbclib)=0) and
+       (TryInitialiseIBase60(gdslib)=0) then
+        Raise EInOutError.CreateFmt(SErrDefaultsFailed,[gdslib,fbclib]);
+>>>>>>> origin/fixes_2_2
     end;    
   Result := RefCount;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function InitialiseIBase60(Const LibraryName : AnsiString) : integer;
 =======
 function InitialiseIBase60(Const LibraryName : String) : integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+function InitialiseIBase60(Const LibraryName : String) : integer;
+>>>>>>> origin/fixes_2_2
 
 begin
   Result := TryInitialiseIBase60(LibraryName);
   If Result = 0 then
     Raise EInOutError.CreateFmt(SErrLoadFailed,[LibraryName])
+<<<<<<< HEAD
 <<<<<<< HEAD
   else If (LibraryName<>IBaseLoadedLibrary) then
     begin
@@ -2856,12 +2942,17 @@ begin
     Result := RefCount;
     Raise EInOUtError.CreateFmt(SErrAlreadyLoaded,[IBaseLoadedLibrary]);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   else If (LibraryName<>LoadedLibrary) then
     begin
     Dec(RefCount);
     Result := RefCount;
     Raise EInOUtError.CreateFmt(SErrAlreadyLoaded,[LoadedLibrary]);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
 end;
 
@@ -2871,6 +2962,7 @@ Procedure ReleaseIBase60;
 begin
   if RefCount>1 then
     Dec(RefCount)
+<<<<<<< HEAD
 <<<<<<< HEAD
   else
     begin
@@ -2887,12 +2979,17 @@ begin
       LoadedLibrary:='';
       end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   else if UnloadLibrary(IBaseLibraryHandle) then 
     begin
     Dec(RefCount);
     IBaseLibraryHandle := NilHandle;
     LoadedLibrary:='';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
 end;
 

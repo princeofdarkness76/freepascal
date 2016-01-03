@@ -121,10 +121,14 @@ Type
       procedure   Insert(Item: Pointer); virtual;
       function    At(Index: sw_Integer): PString;
 <<<<<<< HEAD
+<<<<<<< HEAD
       function    AddItem(Item: string): sw_integer;
 =======
       function    AddItem(Item: string): integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+      function    AddItem(Item: string): integer;
+>>>>>>> origin/fixes_2_2
     end;
 
 function EncodeHTMLCtx(FileID: integer; LinkNo: word): longint;
@@ -906,10 +910,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TTopicLinkCollection.AddItem(Item: string): sw_integer;
 =======
 function TTopicLinkCollection.AddItem(Item: string): integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TTopicLinkCollection.AddItem(Item: string): integer;
+>>>>>>> origin/fixes_2_2
 var Idx: sw_integer;
 begin
   if Item='' then Idx:=-1 else

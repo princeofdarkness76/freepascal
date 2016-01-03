@@ -107,7 +107,10 @@ begin
    else
      Resize(value - 1);
    FBSize:= value;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TBits.SetBit(bit : longint; value : Boolean);
@@ -130,7 +133,10 @@ var
 =======
    startIndex : longint;
    stopIndex : Longint;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
    result := -1; {should only occur if the whole array is set}
    { map 0 to -1, 1..32 to 0, etc }
@@ -144,7 +150,10 @@ begin
          startIndex := loop * 32;
          stopIndex := liMin ( FBSize -1,startIndex + 31) ;
          for loop2 := startIndex to stopIndex do
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          begin
            if (FBits^[loop] and (longint(1) shl loop2)) = 0 then
            begin
@@ -155,7 +164,10 @@ begin
            end;
          end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
          if result = -1 then begin
            result := FBSize;
            inc(FBSize);
@@ -179,10 +191,14 @@ begin
    findIndex := -1;
    findState := True;  { no reason just setting it to something }
 <<<<<<< HEAD
+<<<<<<< HEAD
    if TheSize > 0 then grow(theSize);
 =======
    if TheSize > 0 then grow(theSize-1);
 >>>>>>> graemeg/fixes_2_2
+=======
+   if TheSize > 0 then grow(theSize-1);
+>>>>>>> origin/fixes_2_2
 end;
 
 destructor TBits.Destroy;
@@ -206,7 +222,10 @@ var
 begin
    newSize :=  (nbit shr BITSHIFT) + 1;
    if newSize > FSize then Resize(nbit);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function TBits.getFSize : longint;
@@ -223,7 +242,10 @@ begin
    grow(bit);
    FBits^[n] := FBits^[n] or (longint(1) shl (bit and MASK));
    if bit >= FBSize then FBSize := bit;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TBits.clear(bit : longint);
@@ -236,7 +258,10 @@ begin
    grow(bit);
    FBits^[n] := FBits^[n] and not(longint(1) shl (bit and MASK));
    if bit >= FBSize then FBSize := bit + 1;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TBits.clearall;
@@ -246,12 +271,17 @@ begin
    for loop := 0 to FSize - 1 do
       FBits^[loop] := 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 { don't clear FBSize here, it will cause exceptions on subsequent reading bit values }
 { use 'Size := 0' to reset everything and deallocate storage }
 =======
    {Should FBSize be cleared too? - I think so}
    FBSize := 0;
 >>>>>>> graemeg/fixes_2_2
+=======
+   {Should FBSize be cleared too? - I think so}
+   FBSize := 0;
+>>>>>>> origin/fixes_2_2
 end;
 
 function TBits.get(bit : longint) : Boolean;

@@ -27,10 +27,14 @@ interface
 
   uses
 <<<<<<< HEAD
+<<<<<<< HEAD
     Systems, cstreams, Script;
 =======
     Systems, cstreams;
 >>>>>>> graemeg/fixes_2_2
+=======
+    Systems, cstreams;
+>>>>>>> origin/fixes_2_2
 
 type
    tresoutput = (roRES, roOBJ);
@@ -44,21 +48,28 @@ type
    public
       constructor Create(const fn : ansistring);override;
 <<<<<<< HEAD
+<<<<<<< HEAD
       function Compile(output: tresoutput; const OutName: ansistring) : boolean; virtual;
       procedure PostProcessResourcefile(const s : ansistring);virtual;
       function IsCompiled(const fn : ansistring) : boolean;virtual;
       procedure Collect(const fn : ansistring);virtual;
       procedure EndCollect; virtual;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       procedure Compile(output: tresoutput; const OutName: ansistring);virtual;
       procedure PostProcessResourcefile(const s : ansistring);virtual;
       function IsCompiled(const fn : ansistring) : boolean;virtual;
       procedure Collect(const fn : ansistring);virtual;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
    end;
    
    TWinLikeResourceFile = class(tresourcefile)
    private
+<<<<<<< HEAD
 <<<<<<< HEAD
       fResScript : TScript;
       fScriptName : ansistring;
@@ -82,13 +93,18 @@ type
       function Compile(output: tresoutput; const OutName: ansistring) : boolean; override;
       function IsCompiled(const fn : ansistring) : boolean;override;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       FOut: TCFileStream;
       FLastIconID: longint;
       FLastCursorID: longint;
    public
       function IsCompiled(const fn : ansistring) : boolean;override;
       procedure Collect(const fn : ansistring);override;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
    end;
 
 
@@ -104,16 +120,22 @@ implementation
 uses
   SysUtils,
 <<<<<<< HEAD
+<<<<<<< HEAD
   cutils,cfileutl,cclasses,
   Globtype,Globals,Verbose,Fmodule, comphook,cpuinfo;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   cutils,cfileutils,cclasses,
   Globtype,Globals,Verbose,Fmodule,
   Script;
   
 const
   GlobalResName = 'fpc-res';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {****************************************************************************
                               TRESOURCEFILE
@@ -136,9 +158,13 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 procedure tresourcefile.Collect(const fn: ansistring);
 begin
   if fn='' then
@@ -147,6 +173,7 @@ begin
   Compile(roOBJ, ChangeFileExt(fn, target_info.resobjext));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure tresourcefile.EndCollect;
 begin
@@ -180,19 +207,27 @@ function tresourcefile.compile(output: tresoutput; const OutName: ansistring)
 
   Function SelectBin(Const Bin1,Bin2 : String) : String;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure tresourcefile.compile(output: tresoutput; const OutName: ansistring);
 
   Function SelectBin(Const Bin1,Bin2 : String) : String;
   
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   begin
     If (Bin1<>'') then
       SelectBin:=Bin1
     else
 <<<<<<< HEAD
+<<<<<<< HEAD
       SelectBin:=Bin2;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       SelectBin:=Bin2;  
   end;
 
@@ -206,11 +241,15 @@ procedure tresourcefile.compile(output: tresoutput; const OutName: ansistring);
     for I:=1 to Length(Result) do
     if Result[I] in AllowDirectorySeparators then
       Result[i]:='/';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
 var
   respath,
+<<<<<<< HEAD
 <<<<<<< HEAD
   s,
   bin,
@@ -224,19 +263,32 @@ var
   fnameparam : TCmdStr;
   usewindres,
 >>>>>>> graemeg/fixes_2_2
+=======
+  srcfilepath,
+  preprocessorbin,
+  s,
+  bin,
+  resbin,
+  fnameparam : TCmdStr;
+  usewindres,
+>>>>>>> origin/fixes_2_2
   resfound,
   objused  : boolean;
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=true;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   if output=roRES then
     Bin:=SelectBin(RCCompiler,target_res.rcbin)
   else
     Bin:=SelectBin(ResCompiler,target_res.resbin);
   if bin='' then
+<<<<<<< HEAD
 <<<<<<< HEAD
   begin
     Result:=false;
@@ -245,11 +297,15 @@ begin
 =======
     exit;
 >>>>>>> graemeg/fixes_2_2
+=======
+    exit;
+>>>>>>> origin/fixes_2_2
   resfound:=false;
   usewindres:= bin='windres';
   if utilsdirectory<>'' then
     resfound:=FindFile(utilsprefix+bin+source_info.exeext,utilsdirectory,false,resbin);
   if not resfound then
+<<<<<<< HEAD
 <<<<<<< HEAD
     begin
       resfound:=FindExe(utilsprefix+bin,false,resbin);
@@ -261,6 +317,9 @@ begin
 =======
     resfound:=FindExe(utilsprefix+bin,false,resbin);
 >>>>>>> graemeg/fixes_2_2
+=======
+    resfound:=FindExe(utilsprefix+bin,false,resbin);
+>>>>>>> origin/fixes_2_2
   { get also the path to be searched for the windres.h }
   respath:=ExtractFilePath(resbin);
   if (not resfound) and not(cs_link_nolink in current_settings.globalswitches) then
@@ -307,7 +366,10 @@ begin
      if FileExists(preprocessorbin,true) then
        s:=s+' --preprocessor='+maybequoted(preprocessorbin);
    end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { Execute the command }
 { Always try to compile resources. but don't complain if cs_link_nolink }
   if resfound then
@@ -333,6 +395,7 @@ begin
        end
      end;
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
   { Update asmres when externmode is set and resource compiling failed }
   if (not Result) and (cs_link_nolink in current_settings.globalswitches) then
@@ -457,6 +520,8 @@ begin
     DeleteFile(fScriptName);
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if output=roOBJ then
     PostProcessResourcefile(OutName);
   { Update asmres when externmode is set }
@@ -466,7 +531,10 @@ end;
     current_module.linkunitofiles.add(OutName,link_always);
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 function TWinLikeResourceFile.IsCompiled(const fn: ansistring): boolean;
 const
@@ -474,14 +542,18 @@ const
   ($00,$00,$00,$00,$20,$00,$00,$00,$FF,$FF,$00,$00,$FF,$FF,$00,$00,
    $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00);
 <<<<<<< HEAD
+<<<<<<< HEAD
   knownexts : array[1..4] of string[4] = ('.lfm', '.dfm', '.xfm', '.tlb');
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   f : file;
   oldfmode : byte;
   buf: array[1..32] of byte;
   i: longint;
+<<<<<<< HEAD
 <<<<<<< HEAD
   ext : shortstring;
 begin
@@ -498,6 +570,10 @@ begin
 begin
   Result:=CompareText(ExtractFileExt(fn), target_info.resext) = 0;
 >>>>>>> graemeg/fixes_2_2
+=======
+begin
+  Result:=CompareText(ExtractFileExt(fn), target_info.resext) = 0;
+>>>>>>> origin/fixes_2_2
   if Result or not FileExists(fn, False) then exit;
   oldfmode:=Filemode;
   Filemode:=0;
@@ -518,6 +594,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TWinLikeResourceFile.Collect(const fn: ansistring);
 begin
   if fResScript=nil then
@@ -535,6 +612,8 @@ begin
     Compile(roOBJ,ChangeFileExt(fname,target_info.resobjext));
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure TWinLikeResourceFile.Collect(const fn: ansistring);
 const
@@ -679,7 +758,10 @@ begin
         Include(current_settings.globalswitches, cs_link_nolink);
       end;
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -750,6 +832,7 @@ var
   res: TCmdStrListItem;
   p,s : TCmdStr;
 <<<<<<< HEAD
+<<<<<<< HEAD
   outfmt : tresoutput;
 begin
   { Don't do anything for systems supporting resources without using resource
@@ -760,6 +843,8 @@ begin
 
   p:=ExtractFilePath(ExpandFileName(current_module.mainsource));
 =======
+=======
+>>>>>>> origin/fixes_2_2
   src,dst : TCFileStream;
   outfmt : tresoutput;
 begin
@@ -768,7 +853,10 @@ begin
   if target_info.system in [system_i386_os2,system_i386_emx,system_powerpc_macos] then exit;
 
   p:=ExtractFilePath(ExpandFileName(current_module.mainsource^));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   res:=TCmdStrListItem(current_module.ResourceFiles.First);
   while res<>nil do
     begin
@@ -778,6 +866,7 @@ begin
       if not path_absolute(s) then
         s:=p+s;
 <<<<<<< HEAD
+<<<<<<< HEAD
       if not FileExists(s, True) then
         begin
           Message1(exec_e_cant_open_resource_file, s);
@@ -786,10 +875,13 @@ begin
         end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       resourcefile:=TResourceFile(resinfos[target_info.res]^.resourcefileclass.create(s));
       if resourcefile.IsCompiled(s) then
         begin
           resourcefile.free;
+<<<<<<< HEAD
 <<<<<<< HEAD
           if AnsiCompareFileName(IncludeTrailingPathDelimiter(ExpandFileName(current_module.outputpath)), p) <> 0 then
             begin
@@ -798,6 +890,8 @@ begin
               res.FPStr:=ExtractFileName(res.FPStr); //store file name only in PPU.
               if not CopyResFile(s,res.FPStr) then exit;
 =======
+=======
+>>>>>>> origin/fixes_2_2
           if AnsiCompareFileName(IncludeTrailingPathDelimiter(ExpandFileName(current_module.outputpath^)), p) <> 0 then
             begin
               { Copy .res file to units output dir }
@@ -819,17 +913,24 @@ begin
               dst.CopyFrom(src,src.Size);
               dst.Free;
               src.Free;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             end;
         end
       else
         begin
           res.FPStr:=ExtractFileName(res.FPStr);
 <<<<<<< HEAD
+<<<<<<< HEAD
           if (target_res.rcbin='') and (RCCompiler='') then
 =======
           if target_res.rcbin='' then
 >>>>>>> graemeg/fixes_2_2
+=======
+          if target_res.rcbin='' then
+>>>>>>> origin/fixes_2_2
             begin
               { if target does not have .rc to .res compiler, create obj }
               outfmt:=roOBJ;
@@ -841,10 +942,14 @@ begin
               res.FPStr:=ChangeFileExt(res.FPStr,target_info.resext);
             end;
 <<<<<<< HEAD
+<<<<<<< HEAD
           resourcefile.compile(outfmt, current_module.outputpath+res.FPStr);
 =======
           resourcefile.compile(outfmt, current_module.outputpath^+res.FPStr);
 >>>>>>> graemeg/fixes_2_2
+=======
+          resourcefile.compile(outfmt, current_module.outputpath^+res.FPStr);
+>>>>>>> origin/fixes_2_2
           resourcefile.free;
         end;
       res:=TCmdStrListItem(res.Next);
@@ -869,6 +974,7 @@ var
         else
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
             s:=u.path+res.FPStr;
             if not FileExists(s,True) then
               s:=u.outputpath+res.FPStr;
@@ -877,6 +983,11 @@ var
             if not FileExists(s,True) then
               s:=u.outputpath^+res.FPStr;
 >>>>>>> graemeg/fixes_2_2
+=======
+            s:=u.path^+res.FPStr;
+            if not FileExists(s,True) then
+              s:=u.outputpath^+res.FPStr;
+>>>>>>> origin/fixes_2_2
           end;
         resourcefile.Collect(s);
         res:=TCmdStrListItem(res.Next);
@@ -888,6 +999,7 @@ var
   s : TCmdStr;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (target_info.res=res_none) or ((target_res.resbin='')
     and (ResCompiler='')) then
       exit;
@@ -897,12 +1009,17 @@ begin
   if (res_arch_in_file_name in target_res.resflags) then
     s:=ChangeFileExt(s,'.'+cpu2str[target_cpu]+target_info.resobjext);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if (target_info.res=res_none) or (target_res.rcbin='') then
     exit;
   if cs_link_nolink in current_settings.globalswitches then
     exit;
   s:=main_module.outputpath^+GlobalResName+target_info.resext;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   resourcefile:=TResourceFile(resinfos[target_info.res]^.resourcefileclass.create(s));
   hp:=tused_unit(usedunits.first);
   while assigned(hp) do
@@ -913,10 +1030,14 @@ begin
   ProcessModule(current_module);
   { Finish collection }
 <<<<<<< HEAD
+<<<<<<< HEAD
   resourcefile.EndCollect;
 =======
   resourcefile.Collect('');
 >>>>>>> graemeg/fixes_2_2
+=======
+  resourcefile.Collect('');
+>>>>>>> origin/fixes_2_2
   resourcefile.free;
 end;
 

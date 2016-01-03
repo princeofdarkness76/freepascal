@@ -19,6 +19,7 @@ program testjson;
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, testjsondata, testjsonparser, consoletestrunner; //, testjsonrtti, fpjsonrtti;
 =======
   Classes, consoletestrunner, testjsondata, testjsonparser,
@@ -37,6 +38,10 @@ uses
   Classes, consoletestrunner, testjsondata, testjsonparser,
   fpcunitconsolerunner;
 >>>>>>> graemeg/fixes_2_2
+=======
+  Classes, consoletestrunner, testjsondata, testjsonparser,
+  fpcunitconsolerunner;
+>>>>>>> origin/fixes_2_2
 type
   { TLazTestRunner }
    TMyTestRunner = class(TTestRunner)
@@ -48,11 +53,14 @@ var
   Application: TMyTestRunner;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   DefaultFormat := fPlain;
   DefaultRunAllTests := True;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Application := TMyTestRunner.Create(nil); 
   Application.Initialize;
   Application.Run;  

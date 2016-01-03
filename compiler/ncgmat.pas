@@ -207,17 +207,23 @@ implementation
         secondpass(left);
         location_reset(location,LOC_REGISTER,left.location.size);
 <<<<<<< HEAD
+<<<<<<< HEAD
         location.register64.reglo:=cg.getintregister(current_asmdata.CurrAsmList,OS_32);
         location.register64.reghi:=cg.getintregister(current_asmdata.CurrAsmList,OS_32);
 =======
         location.register64.reglo:=cg.getintregister(current_asmdata.CurrAsmList,OS_INT);
         location.register64.reghi:=cg.getintregister(current_asmdata.CurrAsmList,OS_INT);
 >>>>>>> graemeg/fixes_2_2
+=======
+        location.register64.reglo:=cg.getintregister(current_asmdata.CurrAsmList,OS_INT);
+        location.register64.reghi:=cg.getintregister(current_asmdata.CurrAsmList,OS_INT);
+>>>>>>> origin/fixes_2_2
         cg64.a_op64_loc_reg(current_asmdata.CurrAsmList,OP_NEG,OS_S64,
           left.location,joinreg64(location.register64.reglo,location.register64.reghi));
         { there's only overflow in case left was low(int64) -> -left = left }
         if (cs_check_overflow in current_settings.localswitches) then
           begin
+<<<<<<< HEAD
 <<<<<<< HEAD
             tr:=cg.getintregister(current_asmdata.CurrAsmList,OS_32);
             cg.a_op_const_reg_reg(current_asmdata.CurrAsmList,OP_XOR,OS_32,
@@ -228,6 +234,8 @@ implementation
             cg.a_cmp_const_reg_label(current_asmdata.CurrAsmList,OS_32,OC_NE,0,tr,hl);
             cg.a_call_name(current_asmdata.CurrAsmList,'FPC_OVERFLOW',false);
 =======
+=======
+>>>>>>> origin/fixes_2_2
             tr:=cg.getintregister(current_asmdata.CurrAsmList,OS_INT);
             cg.a_op_const_reg_reg(current_asmdata.CurrAsmList,OP_XOR,OS_INT,
               aint($80000000),location.register64.reghi,tr);
@@ -236,7 +244,10 @@ implementation
             current_asmdata.getjumplabel(hl);
             cg.a_cmp_const_reg_label(current_asmdata.CurrAsmList,OS_INT,OC_NE,0,tr,hl);
             cg.a_call_name(current_asmdata.CurrAsmList,'FPC_OVERFLOW');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             cg.a_label(current_asmdata.CurrAsmList,hl);
           end;
       end;
@@ -306,9 +317,12 @@ implementation
       var
         hl: tasmlabel;
 <<<<<<< HEAD
+<<<<<<< HEAD
         opsize: tdef;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
         secondpass(left);
 <<<<<<< HEAD
@@ -336,6 +350,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -351,6 +366,8 @@ implementation
             hlcg.g_call_system_proc(current_asmdata.CurrAsmList,'fpc_overflow',[],nil);
             hlcg.a_label(current_asmdata.CurrAsmList,hl);
 =======
+=======
+>>>>>>> origin/fixes_2_2
         
         if (cs_check_overflow in current_settings.localswitches) then
           begin
@@ -358,7 +375,10 @@ implementation
             cg.a_cmp_const_reg_label(current_asmdata.CurrAsmList,OS_SINT,OC_NE,low(aint),location.register,hl);
             cg.a_call_name(current_asmdata.CurrAsmList,'FPC_OVERFLOW');
             cg.a_label(current_asmdata.CurrAsmList,hl);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           end;
       end;
 

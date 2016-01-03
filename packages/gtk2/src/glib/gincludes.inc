@@ -67,10 +67,14 @@
 {$include gmarshal.inc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF winDOWS}
 =======
 {$IFDEF win32}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$IFDEF win32}
+>>>>>>> origin/fixes_2_2
 {$include gwin32.inc}
 {$ENDIF}
 

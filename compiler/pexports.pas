@@ -35,10 +35,14 @@ implementation
        cutils,
        { global }
 <<<<<<< HEAD
+<<<<<<< HEAD
        globals,globtype,tokens,verbose,constexp,
 =======
        globals,globtype,tokens,verbose,
 >>>>>>> graemeg/fixes_2_2
+=======
+       globals,globtype,tokens,verbose,
+>>>>>>> origin/fixes_2_2
        systems,
        ppu,fmodule,
        { symtable }
@@ -431,7 +435,10 @@ implementation
                         hpname:=orgs;
                     exportvarsym(srsym,hpname,index,options);
                   end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
              end
            else
              consume(_ID);

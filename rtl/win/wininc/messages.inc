@@ -70,9 +70,12 @@
      BM_GETSTATE = 242;
      BM_SETCHECK = 241;
 <<<<<<< HEAD
+<<<<<<< HEAD
      BM_SETDONTCLICK = 248;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      BM_SETIMAGE = 247;
      BM_SETSTATE = 243;
      BM_SETSTYLE = 244;
@@ -1195,6 +1198,7 @@
      WM_UPDATEUISTATE  = $0128;
      WM_QUERYUISTATE   = $0129;
 <<<<<<< HEAD
+<<<<<<< HEAD
      WM_NEXTMENU       = $0213;
      WM_WTSSESSION_CHANGE = $02B1;
      WM_TABLET_FIRST      = $02c0;
@@ -1208,6 +1212,8 @@
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   Type
 {$ifdef MESSAGESUNIT}
@@ -1297,6 +1303,7 @@
     TWMTimeChange       = Windows.TWMTimeChange;
     TWMUndo             = Windows.TWMUndo;
 <<<<<<< HEAD
+<<<<<<< HEAD
     TWMWindowPosChanged = TWMWindowPosMsg;
     TWMWindowPosChanging= TWMWindowPosMsg;
 
@@ -1304,12 +1311,17 @@
     TWMCut              = Windows.TWMCut;
     TWMCopy             = Windows.TWMCopy;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
     TWMPaste            = Windows.TWMPaste;
     TWMCut 	        = Windows.TWMCut;	
     TWMCopy	        = Windows.TWMCopy;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$else}
 
      HALFLRESULT   = WORD;     // in win64, these remain 16-bit. the extra room is unused.
@@ -1850,10 +1862,14 @@
       MsgFiller : TDwordFiller;
       RGN : HRGN;
 <<<<<<< HEAD
+<<<<<<< HEAD
       Unused : LPARAM;
 =======
       Unused : WPARAM;
 >>>>>>> graemeg/fixes_2_2
+=======
+      Unused : WPARAM;
+>>>>>>> origin/fixes_2_2
       Result : LRESULT;
     end;
 
@@ -1868,9 +1884,12 @@
     TWMSizeClipboard = record
       Msg: UINT;
 <<<<<<< HEAD
+<<<<<<< HEAD
       MsgFiller : TDwordFiller;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       Viewer: HWND;
       RC: THandle;
       Result: LRESULT;
@@ -1878,6 +1897,7 @@
 
     TWMSpoolerStatus = record
       Msg: UINT;
+<<<<<<< HEAD
 <<<<<<< HEAD
       MsgFiller: TDwordFiller;
       JobStatus: WPARAM;
@@ -1891,6 +1911,8 @@
       Msg: UINT;
       MsgFiller : TDwordFiller;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       JobStatus: LPARAM;
       JobsLeft: WPARAM;
       Unused: WPARAM;
@@ -1899,11 +1921,15 @@
   
     TWMStyleChange = record
       Msg: UINT;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       StyleType: LPARAM;
       StyleStruct: PStyleStruct;
       Result: LRESULT;
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     TWMStyleChanged = TWMStyleChange;
@@ -1922,6 +1948,8 @@
       Msg: UINT;
       MsgFiller : TDwordFiller;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   
     TWMStyleChanged = TWMStyleChange;
     TWMStyleChanging = TWMStyleChange;
@@ -1937,11 +1965,15 @@
   
     TWMSystemError = record
       Msg: UINT;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       ErrSpec: WPARAM;
       Unused: LPARAM;
       Result: LRESULT;
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     TWMTimeChange = TWMNoParams;
@@ -1974,6 +2006,8 @@
       Height: Word;
       LParamFiller : TDwordFiller;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   
     TWMTimeChange = TWMNoParams;
   
@@ -1999,16 +2033,22 @@
       BitsPerPixel: Integer;
       Width: WPARAM;
       Height: WPARAM;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       Result: LRESULT;
     end;
 
     TWMDropFiles = record
       Msg: UINT;
 <<<<<<< HEAD
+<<<<<<< HEAD
       MsgFiller : TDwordFiller;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       Drop: THANDLE;
       Unused: LPARAM;
       Result: LRESULT;
@@ -2017,18 +2057,23 @@
     TWMEnable = record
       Msg: UINT;
 <<<<<<< HEAD
+<<<<<<< HEAD
       MsgFiller : TDwordFiller;
       Enabled: BOOL;
       WParamFiller : TDwordFiller;
 =======
       Enabled: BOOL;
 >>>>>>> graemeg/fixes_2_2
+=======
+      Enabled: BOOL;
+>>>>>>> origin/fixes_2_2
       Unused: LPARAM;
       Result: LRESULT;
     end;
 
     TWMMouseActivate = record
       Msg: UINT;
+<<<<<<< HEAD
 <<<<<<< HEAD
       MsgFiller : TDwordFiller;
       TopLevel: HWND;
@@ -2040,11 +2085,17 @@
       HitTestCode: Word;
       MouseMsg: Word;
 >>>>>>> graemeg/fixes_2_2
+=======
+      TopLevel: HWND;
+      HitTestCode: Word;
+      MouseMsg: Word;
+>>>>>>> origin/fixes_2_2
       Result: LRESULT;
     end;
 
     TWMEndSession = record
       Msg: UINT;
+<<<<<<< HEAD
 <<<<<<< HEAD
       MsgFiller : TDwordFiller;
       EndSession: BOOL;
@@ -2060,6 +2111,8 @@
       WParamFiller : TDwordFiller;
       ThreadId: LPARAM;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       EndSession: BOOL;
       Unused: LPARAM;
       Result: LRESULT;
@@ -2069,7 +2122,10 @@
       Msg: UINT;
       Active: BOOL;
       ThreadId: WPARAM;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       Result: LRESULT;
     end;
 {$endif messagesunit}

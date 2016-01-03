@@ -39,10 +39,14 @@ units=$(SYSTEMUNIT) unixtype ctypes objpas macpas iso7185 \
       video mouse keyboard console serial dateutils \
       sysconst cthreads strutils convutils stdconvs dos objects cwstring \
 <<<<<<< HEAD
+<<<<<<< HEAD
       fpintres clocale
 =======
       clocale
 >>>>>>> graemeg/fixes_2_2
+=======
+      clocale
+>>>>>>> origin/fixes_2_2
 implicitunits=exeinfo
 
 rsts=math varutils typinfo classes variants dateutils sysconst
@@ -97,7 +101,14 @@ endif
 ifeq ($(ARCH),i386)
 CPU_UNITS=x86 ports cpu mmx
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+endif
+
+ifeq ($(CPU_TARGET),x86_64)
+CPU_UNITS=x86 ports 
+>>>>>>> origin/fixes_2_2
 endif
 
 ifeq ($(CPU_TARGET),x86_64)
@@ -308,11 +319,15 @@ cmem$(PPUEXT) : $(INC)/cmem.pp $(SYSTEMUNIT)$(PPUEXT)
         $(COMPILER) $<
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 syscall$(PPUEXT) : $(UNIXINC)/syscall.pp baseunix$(PPUEXT) unixtype$(PPUEXT)
         $(COMPILER) $<
 =======
 sysctl$(PPUEXT) : $(BSDINC)/sysctl.pp $(SYSTEMUNIT)$(PPUEXT) syscall$(PPUEXT)
 >>>>>>> graemeg/fixes_2_2
+=======
+sysctl$(PPUEXT) : $(BSDINC)/sysctl.pp $(SYSTEMUNIT)$(PPUEXT) syscall$(PPUEXT)
+>>>>>>> origin/fixes_2_2
 
 sysctl$(PPUEXT) : $(BSDINC)/sysctl.pp $(SYSTEMUNIT)$(PPUEXT) syscall$(PPUEXT)
         $(COMPILER) $<

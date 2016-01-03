@@ -147,6 +147,7 @@ interface
              system_i386_symbian,       { 59 }
              system_arm_symbian,        { 60 }
 <<<<<<< HEAD
+<<<<<<< HEAD
              system_x86_64_darwin,      { 61 }
              system_avr_embedded,       { 62 }
              system_i386_haiku,         { 63 }
@@ -160,6 +161,9 @@ interface
 =======
              system_x86_64_darwin       { 61 }
 >>>>>>> graemeg/fixes_2_2
+=======
+             system_x86_64_darwin       { 61 }
+>>>>>>> origin/fixes_2_2
        );
 
      type
@@ -211,7 +215,10 @@ interface
 =======
             ,res_gnu_wince_windres
             ,res_win64_gorc
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        );
 
        tresinfoflags = (res_external_file,res_arch_in_file_name
@@ -298,18 +305,24 @@ interface
           id      : tres;
           { Compiler for resource (.rc or .res) to obj }
 <<<<<<< HEAD
+<<<<<<< HEAD
           resbin  : string[10];
           rescmd  : string[50];
           { Optional compiler for resource script (.rc) to binary resource (.res). }
           { If it is not provided resbin and rescmd will be used.                 }
           rcbin   : string[10];
 =======
+=======
+>>>>>>> origin/fixes_2_2
           resbin  : string[8];
           rescmd  : string[50];
           { Optional compiler for resource script (.rc) to binary resource (.res). }
           { If it is not provided resbin and rescmd will be used.                 }
           rcbin   : string[8];
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           rccmd   : string[50];
           resourcefileclass : TAbstractResourceFileClass;
           resflags : set of tresinfoflags;
@@ -349,6 +362,7 @@ interface
             tf_pic_default,
             { the os does some kind of stack checking and it can be converted into a rte 202 }
 <<<<<<< HEAD
+<<<<<<< HEAD
             tf_no_generic_stackcheck,
             tf_has_winlike_resources,
             tf_safecall_clearstack,             // With this flag set, after safecall calls the caller cleans up the stack
@@ -385,6 +399,9 @@ interface
 =======
             tf_no_generic_stackcheck
 >>>>>>> graemeg/fixes_2_2
+=======
+            tf_no_generic_stackcheck
+>>>>>>> origin/fixes_2_2
        );
 
        psysteminfo = ^tsysteminfo;
@@ -601,6 +618,10 @@ interface
 
        { systems supporting "blocks" }
        systems_blocks_supported = systems_darwin;
+
+       { all darwin systems }
+       systems_darwin = [system_powerpc_darwin,system_i386_darwin,
+                         system_powerpc64_darwin,system_x86_64_darwin];
 
        { all darwin systems }
        systems_darwin = [system_powerpc_darwin,system_i386_darwin,
@@ -1183,7 +1204,10 @@ begin
 =======
   {$endif cpu86}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { default is linux }
   {$ifndef default_target_set}
     default_target(system_i386_linux);
@@ -1216,6 +1240,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    {$ifdef openbsd}
     default_target(system_x86_64_openbsd);
     {$define default_target_set}
@@ -1238,6 +1263,8 @@ begin
    {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
    {$ifdef darwin}
     default_target(system_x86_64_darwin);
     {$define default_target_set}
@@ -1286,6 +1313,7 @@ begin
     {$define default_target_set}
   {$else cpupowerpc64}
 <<<<<<< HEAD
+<<<<<<< HEAD
     {$ifdef darwin}
      default_target(system_powerpc64_darwin);
      {$define default_target_set}
@@ -1304,6 +1332,8 @@ begin
     {$define default_target_set}
   {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$ifdef darwin}
     default_target(system_powerpc64_darwin);
   {$else darwin}
@@ -1328,6 +1358,7 @@ begin
   {$else cpuarm}
     {$ifdef WINDOWS}
 <<<<<<< HEAD
+<<<<<<< HEAD
       {$define default_target_set}
       default_target(system_arm_wince);
     {$endif}
@@ -1348,11 +1379,16 @@ begin
       {$define default_target_set}
     {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
       default_target(system_arm_wince);
     {$else WINDOWS}
       default_target(system_arm_linux);
     {$endif WINDOWS}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$endif cpuarm}
 {$endif arm}
 

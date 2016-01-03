@@ -2252,9 +2252,12 @@ end;
          begin
            Next:=NewNode.Next;
 <<<<<<< HEAD
+<<<<<<< HEAD
            prefetch(next.next);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            NewNode.Free;
            NewNode:=Next;
           end;

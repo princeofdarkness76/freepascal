@@ -39,6 +39,7 @@
 *)
 {$ifdef NDS_INTERFACE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 function fatInit(cacheSize: cuint32; setAsDefaultDevice: cbool): cbool; cdecl; external;
 function fatInitDefault(): cbool; cdecl; external;
 function fatMountSimple (const name: pcchar; const ainterface: PDISC_INTERFACE): cbool; cdecl; external;
@@ -65,6 +66,8 @@ function FAT_setAttr(const _file: pcchar; attr: cint): cint; cdecl; external;
 
 {$define LIBFAT_FEOS_MULTICWD}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 const
   FEATURE_MEDIUM_CANREAD		= $00000001;
@@ -110,7 +113,10 @@ function fatMountCustomInterface(const device: PIO_INTERFACE_STRUCT; cacheSize: 
 function fatUnmount(partitionNumber: PARTITION_INTERFACE): cbool; cdecl; external;
 function fatUnsafeUnmount(partitionNumber: PARTITION_INTERFACE): cbool; cdecl; external;
 function fatSetDefaultInterface(partitionNumber: PARTITION_INTERFACE): cbool; cdecl; external;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$endif NDS_INTERFACE}
 

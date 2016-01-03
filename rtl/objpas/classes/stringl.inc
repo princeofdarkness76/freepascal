@@ -77,6 +77,7 @@ begin
     FLBS:=DefaultTextLineBreakStyle;
     FSpecialCharsInited:=true;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FLineBreak:=sLineBreak;
     end;
 end;
@@ -96,11 +97,16 @@ begin
 end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FLBS:=DefaultTextLineBreakStyle;
     end;
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Function TStrings.GetLBS : TTextLineBreakStyle;
 begin
   CheckSpecialChars;
@@ -145,6 +151,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TStrings.GetQuoteChar :Char;
 begin
   CheckSpecialChars;
@@ -153,6 +160,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure TStrings.SetNameValueSeparator(c:Char);
 begin
   CheckSpecialChars;
@@ -196,16 +205,21 @@ Var
   I : integer;
   p : pchar;
 <<<<<<< HEAD
+<<<<<<< HEAD
   BreakChars : set of char;
 =======
   c : set of char;
 >>>>>>> graemeg/fixes_2_2
+=======
+  c : set of char;
+>>>>>>> origin/fixes_2_2
   S : String;
   
 begin
   CheckSpecialChars;
   result:='';
   if StrictDelimiter then
+<<<<<<< HEAD
 <<<<<<< HEAD
     BreakChars:=[#0,QuoteChar,Delimiter]
   else  
@@ -217,10 +231,16 @@ begin
   else  
     c:=[#0..' ',QuoteChar,Delimiter];
 >>>>>>> graemeg/fixes_2_2
+=======
+    c:=[#0,Delimiter]
+  else  
+    c:=[#0..' ',QuoteChar,Delimiter];
+>>>>>>> origin/fixes_2_2
   For i:=0 to count-1 do
     begin
     S:=Strings[i];
     p:=pchar(S);
+<<<<<<< HEAD
 <<<<<<< HEAD
     //Quote strings that include BreakChars:
     while not(p^ in BreakChars) do
@@ -232,6 +252,12 @@ begin
 // strings in list may contain #0
     if (p<>pchar(S)+length(S)) and not StrictDelimiter then
 >>>>>>> graemeg/fixes_2_2
+=======
+    while not(p^ in c) do
+     inc(p);
+// strings in list may contain #0
+    if (p<>pchar(S)+length(S)) and not StrictDelimiter then
+>>>>>>> origin/fixes_2_2
       Result:=Result+QuoteString(S,QuoteChar)
     else
       Result:=Result+S;
@@ -239,9 +265,12 @@ begin
       Result:=Result+Delimiter;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   // Quote empty string:
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   If (Length(Result)=0) and (Count=1) then
     Result:=QuoteChar+QuoteChar;
 end;
@@ -334,6 +363,7 @@ begin
   Reader.ReadListEnd;
 end;
 
+<<<<<<< HEAD
 
 Procedure TStrings.SetDelimitedText(const AValue: string);
 <<<<<<< HEAD
@@ -460,6 +490,41 @@ begin
  j:=1;
  aNotFirst:=false;
 
+=======
+
+Procedure TStrings.SetDelimitedText(const AValue: string);
+
+  Procedure  SetStrictDelimited;
+  
+  Var
+    P,PL : Integer;
+    
+  begin
+    PL:=1;
+    P:=1;
+{
+    While Length(S)>0 do
+      begin
+      P:=Pos(FDelimiter,S);
+      If (P=0) then
+        P:=Length(S)+1;
+      Add(Copy(S,1,P-1));
+      System.Delete(S,1,P));
+      end;
+}  end;  
+    
+
+var i,j:integer;
+    aNotFirst:boolean;
+begin
+ CheckSpecialChars;
+ BeginUpdate;
+
+ i:=1;
+ j:=1;
+ aNotFirst:=false;
+
+>>>>>>> origin/fixes_2_2
  try
   Clear;
   If StrictDelimiter then
@@ -517,7 +582,10 @@ begin
      // skip spaces
      while (i<=length(AValue)) and (Ord(AValue[i])<=Ord(' ')) do inc(i);
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      aNotFirst:=true;
     end;
     end;
@@ -634,6 +702,7 @@ begin
   CheckSpecialChars;
   // Determine needed place
 <<<<<<< HEAD
+<<<<<<< HEAD
   if FLineBreak<>sLineBreak then
     NL:=FLineBreak
   else
@@ -643,12 +712,17 @@ begin
       tlbsCR   : NL:=#13;
     end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Case FLBS of
     tlbsLF   : NL:=#10;
     tlbsCRLF : NL:=#13#10;
     tlbsCR   : NL:=#13; 
   end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   L:=0;
   NLS:=Length(NL);
   For I:=0 to count-1 do
@@ -895,9 +969,12 @@ begin
       FNameValueSeparator:=S.FNameValueSeparator;
       FLBS:=S.FLBS;
 <<<<<<< HEAD
+<<<<<<< HEAD
       FLineBreak:=S.FLineBreak;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       AddStrings(S);
     finally
       EndUpdate;
@@ -1132,9 +1209,12 @@ Var
 begin
   S:=Text;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if S = '' then Exit;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Stream.WriteBuffer(Pointer(S)^,Length(S));
 end;
 
@@ -1159,10 +1239,13 @@ end;
 {****************************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if not defined(FPC_TESTGENERICS)}
 
 Procedure TStringList.ExchangeItemsInt(Index1, Index2: Integer);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$if defined(VER2_0) or not defined(FPC_TESTGENERICS)}
 
 Procedure TStringList.ExchangeItems(Index1, Index2: Integer);
@@ -1233,6 +1316,7 @@ end;
 Procedure TStringList.QuickSort(L, R: Integer; CompareFn: TStringListSortCompare);
 var
   Pivot, vL, vR: Integer;
+<<<<<<< HEAD
   ExchangeProc: procedure(Left, Right: Integer) of object;
 begin
   //if ExchangeItems is override call that, else call (faster) ExchangeItemsInt
@@ -1245,10 +1329,18 @@ begin
     if L < R then
       if CompareFn(Self, L, R) > 0 then
         ExchangeProc(L, R);
+=======
+begin
+  if R - L <= 1 then begin // a little bit of time saver
+    if L < R then
+      if CompareFn(Self, L, R) > 0 then
+        ExchangeItems(L, R);
+>>>>>>> origin/fixes_2_2
 
     Exit;
   end;
 
+<<<<<<< HEAD
 =======
 
 Procedure TStringList.QuickSort(L, R: Integer; CompareFn: TStringListSortCompare);
@@ -1264,6 +1356,8 @@ begin
   end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   vL := L;
   vR := R;
 
@@ -1277,10 +1371,14 @@ begin
       Dec(vR);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     ExchangeProc(vL, vR);
 =======
     ExchangeItems(vL, vR);
 >>>>>>> graemeg/fixes_2_2
+=======
+    ExchangeItems(vL, vR);
+>>>>>>> origin/fixes_2_2
 
     if Pivot = vL then // swap pivot if we just hit it from one side
       Pivot := vR
@@ -1593,6 +1691,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1606,16 +1705,21 @@ Function TStringList.Find(const S: string; Out Index: Integer): Boolean;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   L, R, I: Integer;
   CompareRes: PtrInt;
 begin
   Result := false;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if Not Sorted then 
     exit;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   // Use binary search.
   L := 0;
   R := Count - 1;
@@ -1702,6 +1806,7 @@ constructor TStringList.Create;
 begin
   inherited;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FOwnsObjects:=false;
   FMap := TFPStrObjMap.Create;
   FMap.OnPtrCompare := @MapPtrCompare;
@@ -1725,6 +1830,11 @@ begin
   FMap.OnPtrCompare := @MapPtrCompare;
   FOnCompareText := @DefaultCompareText;
 >>>>>>> graemeg/fixes_2_2
+=======
+  FMap := TFPStrObjMap.Create;
+  FMap.OnPtrCompare := @MapPtrCompare;
+  FOnCompareText := @DefaultCompareText;
+>>>>>>> origin/fixes_2_2
 end;
 
 destructor TStringList.Destroy;

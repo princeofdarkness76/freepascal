@@ -320,6 +320,7 @@ function do_isdevice(handle:thandle):boolean;forward;
 {$endif cpuarm}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef cpuavr}
   {$ifdef SYSPROCDEFINED}
     {$Error Can't determine processor type !}
@@ -359,6 +360,8 @@ function do_isdevice(handle:thandle):boolean;forward;
 
 procedure fillchar(var x;count : {$ifdef FILLCHAR_HAS_SIZEUINT_COUNT}SizeUInt{$else}SizeInt{$endif};value : boolean);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure fillchar(var x;count : SizeInt;value : boolean);{$ifdef SYSTEMINLINE}inline;{$endif}
 >>>>>>> graemeg/fixes_2_2
@@ -368,8 +371,11 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fillchar(var x;count : {$ifdef FILLCHAR_HAS_SIZEUINT_COUNT}SizeUInt{$else}SizeInt{$endif};value : char);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure fillchar(var x;count : SizeInt;value : char);{$ifdef SYSTEMINLINE}inline;{$endif}
 >>>>>>> graemeg/fixes_2_2
 begin
@@ -378,34 +384,47 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure FillByte (var x;count : {$ifdef FILLCHAR_HAS_SIZEUINT_COUNT}SizeUInt{$else}SizeInt{$endif};value : byte );
 =======
 procedure FillByte (var x;count : SizeInt;value : byte ); {$ifdef SYSTEMINLINE}inline;{$endif}
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure FillByte (var x;count : SizeInt;value : byte ); {$ifdef SYSTEMINLINE}inline;{$endif}
+>>>>>>> origin/fixes_2_2
 begin
   FillChar (X,Count,VALUE);
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IndexChar(Const buf;len:SizeInt;b:char):SizeInt;
 =======
 function IndexChar(Const buf;len:SizeInt;b:char):SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
 >>>>>>> graemeg/fixes_2_2
+=======
+function IndexChar(Const buf;len:SizeInt;b:char):SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
+>>>>>>> origin/fixes_2_2
 begin
   IndexChar:=IndexByte(Buf,Len,byte(B));
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CompareChar(Const buf1,buf2;len:SizeInt):SizeInt;
 =======
 function CompareChar(Const buf1,buf2;len:SizeInt):SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
 >>>>>>> graemeg/fixes_2_2
+=======
+function CompareChar(Const buf1,buf2;len:SizeInt):SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
+>>>>>>> origin/fixes_2_2
 begin
   CompareChar:=CompareByte(buf1,buf2,len);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 procedure fpc_zeromem(p:pointer;len:ptruint);
@@ -420,6 +439,8 @@ begin
 end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Include generic pascal only routines which are not defined in the processor
   specific include file }
@@ -876,6 +897,12 @@ begin
 end;
 
 
+procedure fpc_threaderror; [public,alias:'FPC_THREADERROR'];
+begin
+  HandleErrorFrame(6,get_frame);
+end;
+
+
 procedure fpc_iocheck;[public,alias:'FPC_IOCHECK']; compilerproc;
 var
   l : longint;
@@ -887,8 +914,11 @@ begin
      l:=HInOutRes^;
      HInOutRes^:=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
      HandleErrorAddrFrameInd(l,get_pc_addr,get_frame);
 =======
+=======
+>>>>>>> origin/fixes_2_2
      HandleErrorFrame(l,get_frame);
 >>>>>>> graemeg/fixes_2_2
    end;
@@ -980,12 +1010,17 @@ type
   end;
   PInitFinalTable = ^TInitFinalTable;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_HAS_INDIRECT_MAIN_INFORMATION}
 var
   InitFinalTable : TInitFinalTable;external name 'INITFINAL';
@@ -1001,6 +1036,7 @@ var
 begin
   { call cpu/fpu initialisation routine }
   fpc_cpuinit;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}
 <<<<<<< HEAD
@@ -1038,6 +1074,11 @@ begin
     InitFinalTable
     {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION})^{$endif FPC_HAS_INDIRECT_MAIN_INFORMATION} do
 >>>>>>> graemeg/fixes_2_2
+=======
+  with {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}PInitFinalTable(EntryInformation.{$endif FPC_HAS_INDIRECT_MAIN_INFORMATION}
+    InitFinalTable
+    {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION})^{$endif FPC_HAS_INDIRECT_MAIN_INFORMATION} do
+>>>>>>> origin/fixes_2_2
    begin
      for i:=1 to ALUUInt(TableCount) do
       begin
@@ -1071,6 +1112,7 @@ procedure FinalizeUnits; external name 'FPC_FINALIZE_FUNC_TABLE';
 procedure FinalizeUnits;[public,alias:'FPC_FINALIZEUNITS'];
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}
   with PInitFinalTable(EntryInformation.InitFinalTable)^ do
 {$else FPC_HAS_INDIRECT_MAIN_INFORMATION}
@@ -1081,6 +1123,11 @@ begin
     InitFinalTable
     {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION})^{$endif FPC_HAS_INDIRECT_MAIN_INFORMATION} do
 >>>>>>> graemeg/fixes_2_2
+=======
+  with {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}PInitFinalTable(EntryInformation.{$endif FPC_HAS_INDIRECT_MAIN_INFORMATION}
+    InitFinalTable
+    {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION})^{$endif FPC_HAS_INDIRECT_MAIN_INFORMATION} do
+>>>>>>> origin/fixes_2_2
    begin
      while (InitCount>0) do
       begin
@@ -1176,7 +1223,10 @@ Begin
     Flush(pstdout^);
   if Textrec(StdErr).Mode=fmOutput then
     Flush(StdErr);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif FPC_HAS_FEATURE_CONSOLEIO}
 
   { Finalize units }
@@ -1366,8 +1416,11 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure dump_stack(var f : text;fp : Pointer; addr : CodePointer);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC_HAS_FEATURE_CONSOLEIO}
 Procedure dump_stack(var f : text;bp : Pointer);
 >>>>>>> graemeg/fixes_2_2
@@ -1407,6 +1460,7 @@ End;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure dump_stack(var f: text; skipframes: longint);
 var
   i,count: longint;
@@ -1431,16 +1485,22 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC_HAS_FEATURE_EXCEPTIONS}
 procedure DumpExceptionBackTrace(var f:text);
 var
   FrameNumber,
   FrameCount   : longint;
 <<<<<<< HEAD
+<<<<<<< HEAD
   Frames       : PCodePointer;
 =======
   Frames       : PPointer;
 >>>>>>> graemeg/fixes_2_2
+=======
+  Frames       : PPointer;
+>>>>>>> origin/fixes_2_2
 begin
   if RaiseList=nil then
     exit;
@@ -1452,7 +1512,10 @@ begin
 end;
 {$endif FPC_HAS_FEATURE_EXCEPTIONS}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {$endif FPC_HAS_FEATURE_CONSOLEIO}
 >>>>>>> graemeg/fixes_2_2
@@ -1672,7 +1735,10 @@ end;
 {$ifdef OverflowCheckWasOn}
 {$Q+}
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {*****************************************************************************
@@ -1723,6 +1789,7 @@ end;
 *****************************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_HAS_FEATURE_FILEIO}
 { Allow slash and backslash as separators }
 procedure DoDirSeparators(var p: pchar; inplace: boolean = true);
@@ -1769,6 +1836,8 @@ begin
         p[i]:=DirectorySeparator;
       end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { Allow slash and backslash as separators }
 procedure DoDirSeparators(p:Pchar);
 var
@@ -1777,7 +1846,10 @@ begin
   for i:=0 to strlen(p) do
     if p[i] in AllowDirectorySeparators then
       p[i]:=DirectorySeparator;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure DoDirSeparators(var p:shortstring);
@@ -1789,6 +1861,7 @@ begin
       p[i]:=DirectorySeparator;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {$ifdef FPC_HAS_FEATURE_ANSISTRINGS}
@@ -1840,6 +1913,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { OS dependent low level file functions }
 {$ifdef FPC_HAS_FEATURE_FILEIO}
 {$i sysfile.inc}
@@ -2222,5 +2297,22 @@ begin
   SysSetCtrlBreakHandler := CtrlBreakHandler;
   CtrlBreakHandler := Handler;
 end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+
+const
+  CtrlBreakHandler: TCtrlBreakHandler = nil;
+
+{$IFNDEF FPC_HAS_SETCTRLBREAKHANDLER}
+(* It is possible to provide platform specific implementation performing   *)
+(* special initialization; default implementation just sets the procedural *)
+(* variable to make it available for use from the exception handler.       *)
+function SysSetCtrlBreakHandler (Handler: TCtrlBreakHandler): TCtrlBreakHandler;
+begin
+  (* Return either nil or previous handler *)
+  SysSetCtrlBreakHandler := CtrlBreakHandler;
+  CtrlBreakHandler := Handler;
+end;
+>>>>>>> origin/fixes_2_2
 {$ENDIF FPC_HAS_SETCTRLBREAKHANDLER}

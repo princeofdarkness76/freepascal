@@ -5,12 +5,15 @@ unit richedit;
 {$calling stdcall}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_OS_UNICODE}
   {$define UNICODE}
 {$endif}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 interface
 
 uses Messages, Windows;
@@ -374,10 +377,14 @@ uses Messages, Windows;
 
      _editstream = record
 <<<<<<< HEAD
+<<<<<<< HEAD
           dwCookie : DWORD_PTR;
 =======
           dwCookie : DWORD;
 >>>>>>> graemeg/fixes_2_2
+=======
+          dwCookie : DWORD;
+>>>>>>> origin/fixes_2_2
           dwError : DWORD;
           pfnCallback : EDITSTREAMCALLBACK;
        end;

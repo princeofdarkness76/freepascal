@@ -186,12 +186,15 @@ Type
   function kse_switchin(tmbx: PKseThrMailBox; flags: cInt): cInt; extdecl;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_USE_LIBC}
 function fpgetfsstat(buf:pstatfs;bufsize:clong;flags:cint):cint;
 {$endif} 
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Const
  MAP_FILE         = $0000;  { map from file (default) }
  MAP_ANON         = $1000;  { allocated from memory, swap space }
@@ -205,6 +208,7 @@ Const
  MAP_NOSYNC       = $0800; { page to but do not sync underlying file}
  MAP_NOCORE       = $20000;{ dont include these pages in a coredump}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 function kernproc_getgenvalue(pid:pid_t;kernproc_variable:cint;var s:ansistring):cint;
@@ -240,6 +244,8 @@ function clock_settime(clk_id: clockid_t; tp: ptimespec): cint; {$ifdef FPC_USE_
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 implementation
 
 Uses Sysctl,

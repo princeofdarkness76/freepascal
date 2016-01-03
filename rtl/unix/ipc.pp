@@ -18,6 +18,7 @@ unit ipc;
 interface
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Uses
 {$ifdef FPC_USE_LIBCX}
   initc,
@@ -28,6 +29,9 @@ Uses
 =======
 Uses BaseUnix,UnixType;
 >>>>>>> graemeg/fixes_2_2
+=======
+Uses BaseUnix,UnixType;
+>>>>>>> origin/fixes_2_2
 
 { ----------------------------------------------------------------------
   General IPC stuff
@@ -68,10 +72,14 @@ Const
   IPC_NOWAIT =  4 shl 9;  { return error on wait }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(FreeBSD) or defined(Darwin) or defined(Linux)}
 =======
 {$if defined(FreeBSD) or defined(Linux)}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$if defined(FreeBSD) or defined(Linux)}
+>>>>>>> origin/fixes_2_2
   IPC_PRIVATE : TKey = 0;
 {$endif}
 
@@ -87,6 +95,7 @@ Const
 type
   PIPC_Perm = ^TIPC_Perm;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef darwin}
 {$packrecords 4}
 {$endif}
@@ -94,6 +103,9 @@ type
 =======
 {$ifdef FreeBSD}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifdef FreeBSD}
+>>>>>>> origin/fixes_2_2
   TIPC_Perm = record
         cuid  : cushort;  { creator user id }
         cgid  : cushort;  { creator group id }
@@ -103,6 +115,7 @@ type
         seq   : cushort;  { sequence # (to generate unique msg/sem/shm id) }
         key   : key_t;    { user specified msg/sem/shm key }
   End;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef darwin}
 {$packrecords c}
@@ -136,6 +149,12 @@ type
 {$ifdef cpux86_64}
   TIPC_Perm = record
         key   : TKey;
+=======
+{$else} // linux
+{$ifdef cpux86_64}
+  TIPC_Perm = record
+        key   : TKey;
+>>>>>>> origin/fixes_2_2
         uid   : uid_t;
         gid   : gid_t;
         cuid  : uid_t;
@@ -143,11 +162,15 @@ type
         mode  : mode_t;
         __pad1    : cushort;
         seq       : cushort;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         __pad2    : cushort;
         __unused1 : culong;
         __unused2 : culong;
   End;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$else not(linux_ipc32) and not(FPC_USE_LIBC)}
   TIPC_Perm = record
@@ -182,6 +205,23 @@ Function ftok (Path : pchar;  ID : cint) : TKey; {$ifdef FPC_USE_LIBC} cdecl; ex
 { Function to generate a IPC key. }
 Function ftok (Path : pchar;  ID : cint) : TKey; {$ifdef FPC_USE_LIBC} cdecl; external name 'ftok'; {$endif}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$else cpux86_64}  
+  TIPC_Perm = record
+        key   : TKey;
+        uid   : uid_t;
+        gid   : gid_t;
+        cuid  : uid_t;
+        cgid  : gid_t;
+        mode  : mode_t;
+        seq   : cushort;
+  End;
+{$endif cpux86_64}
+{$endif}
+
+{ Function to generate a IPC key. }
+Function ftok (Path : pchar;  ID : cint) : TKey; {$ifdef FPC_USE_LIBC} cdecl; external name 'ftok'; {$endif}
+>>>>>>> origin/fixes_2_2
 
 { ----------------------------------------------------------------------
   Sys V Shared memory stuff
@@ -210,6 +250,7 @@ Type
 =======
 {$ifdef linux}
 {$ifdef cpux86_64}
+<<<<<<< HEAD
   TShmid_ds = record
     shm_perm  : TIPC_Perm;
     shm_segsz : size_t;
@@ -225,6 +266,23 @@ Type
 {$else cpux86_64}  
   TShmid_ds = record
     shm_perm  : TIPC_Perm;
+=======
+  TShmid_ds = record
+    shm_perm  : TIPC_Perm;
+    shm_segsz : size_t;
+    shm_atime : time_t;
+    shm_dtime : time_t;
+    shm_ctime : time_t;
+    shm_cpid  : pid_t;
+    shm_lpid  : pid_t;
+    shm_nattch : culong;
+    __unused4 : culong;
+    __unused5 : culong;
+  end;
+{$else cpux86_64}  
+  TShmid_ds = record
+    shm_perm  : TIPC_Perm;
+>>>>>>> origin/fixes_2_2
     shm_segsz : cint;
     shm_atime : time_t;
     shm_dtime : time_t;
@@ -321,10 +379,14 @@ type            // the shm*info kind is "kernel" only.
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(FreeBSD) or defined(Linux)}
 =======
 {$if defined(freebsd) or defined(linux)}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$if defined(freebsd) or defined(linux)}
+>>>>>>> origin/fixes_2_2
   PSHM_info = ^TSHM_info;
   TSHM_info = record
     used_ids : cint;
@@ -337,16 +399,22 @@ type            // the shm*info kind is "kernel" only.
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function shmget(key: Tkey; size:size_t; flag:cint):cint; {$ifdef FPC_USE_LIBC} cdecl; external clib name 'shmget'; {$endif}
 Function shmat (shmid:cint; shmaddr:pointer; shmflg:cint):pointer; {$ifdef FPC_USE_LIBC} cdecl; external clib name 'shmat'; {$endif}
 Function shmdt (shmaddr:pointer):cint; {$ifdef FPC_USE_LIBC} cdecl; external clib name 'shmdt'; {$endif}
 Function shmctl(shmid:cint; cmd:cint; buf: pshmid_ds): cint; {$ifdef FPC_USE_LIBC} cdecl; external clib name 'shmctl'; {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function shmget(key: Tkey; size:size_t; flag:cint):cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'shmget'; {$endif}
 Function shmat (shmid:cint; shmaddr:pointer; shmflg:cint):pointer; {$ifdef FPC_USE_LIBC} cdecl; external name 'shmat'; {$endif}
 Function shmdt (shmaddr:pointer):cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'shmdt'; {$endif}
 Function shmctl(shmid:cint; cmd:cint; buf: pshmid_ds): cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'shmctl'; {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { ----------------------------------------------------------------------
   Message queue stuff
@@ -482,16 +550,22 @@ type
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function msgget(key: TKey; msgflg:cint):cint; {$ifdef FPC_USE_LIBC} cdecl; external clib name 'msgget'; {$endif}
 Function msgsnd(msqid:cint; msgp: PMSGBuf; msgsz: size_t; msgflg:cint): cint; {$ifdef FPC_USE_LIBC} cdecl; external clib name 'msgsnd'; {$endif}
 Function msgrcv(msqid:cint; msgp: PMSGBuf; msgsz: size_t; msgtyp:clong; msgflg:cint): {$ifdef Darwin}ssize_t;{$else}cint;{$endif} {$ifdef FPC_USE_LIBC} cdecl; external clib name 'msgrcv'; {$endif}
 Function msgctl(msqid:cint; cmd: cint; buf: PMSQid_ds): cint; {$ifdef FPC_USE_LIBC} cdecl; external clib name 'msgctl'; {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function msgget(key: TKey; msgflg:cint):cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'msgget'; {$endif}
 Function msgsnd(msqid:cint; msgp: PMSGBuf; msgsz: size_t; msgflg:cint): cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'msgsnd'; {$endif}
 Function msgrcv(msqid:cint; msgp: PMSGBuf; msgsz: size_t; msgtyp:cint; msgflg:cint):cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'msgrcv'; {$endif}
 Function msgctl(msqid:cint; cmd: cint; buf: PMSQid_ds): cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'msgctl'; {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { ----------------------------------------------------------------------
   Semaphores stuff
@@ -551,10 +625,14 @@ type
   TSEMid_ds = record
     sem_perm : tipc_perm;
 <<<<<<< HEAD
+<<<<<<< HEAD
     sem_otime : time_t;   // kernel
 =======
     sem_otime : time_t;
 >>>>>>> graemeg/fixes_2_2
+=======
+    sem_otime : time_t;
+>>>>>>> origin/fixes_2_2
     sem_ctime : time_t;
     sem_base         : pointer;
     sem_pending      : pointer;
@@ -647,6 +725,7 @@ Type
    end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function semget(key:Tkey; nsems:cint; semflg:cint): cint; {$ifdef FPC_USE_LIBC} cdecl; external clib name 'semget'; {$endif}
 Function semop(semid:cint; sops: psembuf; nsops: cuint): cint; {$ifdef FPC_USE_LIBC} cdecl; external clib name 'semop'; {$endif}
 Function semctl(semid:cint; semnum:cint; cmd:cint; var arg: tsemun): cint;
@@ -658,6 +737,11 @@ Function semget(key:Tkey; nsems:cint; semflg:cint): cint; {$ifdef FPC_USE_LIBC} 
 Function semop(semid:cint; sops: psembuf; nsops: cuint): cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'semop'; {$endif}
 Function semctl(semid:cint; semnum:cint; cmd:cint; var arg: tsemun): cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'semctl'; {$endif}
 >>>>>>> graemeg/fixes_2_2
+=======
+Function semget(key:Tkey; nsems:cint; semflg:cint): cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'semget'; {$endif}
+Function semop(semid:cint; sops: psembuf; nsops: cuint): cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'semop'; {$endif}
+Function semctl(semid:cint; semnum:cint; cmd:cint; var arg: tsemun): cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'semctl'; {$endif}
+>>>>>>> origin/fixes_2_2
 
 implementation
 

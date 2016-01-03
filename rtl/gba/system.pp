@@ -24,12 +24,16 @@ interface
 {$i gbabiosh.inc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$i libch.inc}
 
 
 =======
 {$i systemh.inc}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$i systemh.inc}
+>>>>>>> origin/fixes_2_2
 
 {$define fpc_softfpu_interface}
   {$i softfpu.pp}
@@ -57,6 +61,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  sLineBreak = LineEnding;
 =======
 =======
@@ -68,6 +73,9 @@ const
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
  sLineBreak : string[1] = LineEnding;
 >>>>>>> graemeg/cpstrnew
  DefaultTextLineBreakStyle : TTextLineBreakStyle = tlbsCRLF;
@@ -120,7 +128,10 @@ procedure randomize(value: integer);
 =======
   errno: integer;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 implementation
 
@@ -144,7 +155,10 @@ implementation
 
 {$i system.inc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 >>>>>>> graemeg/fixes_2_2
 {$i gbabios.inc}
@@ -239,6 +253,7 @@ end;
 begin
   StackLength := CheckInitialStkLen(InitialStkLen);
 <<<<<<< HEAD
+<<<<<<< HEAD
   StackBottom := Sptr - StackLength;
 { OS specific startup }
 
@@ -248,6 +263,10 @@ begin
   StackBottom := StackTop - StackLength;
 { OS specific startup }
 >>>>>>> graemeg/fixes_2_2
+=======
+  StackBottom := StackTop - StackLength;
+{ OS specific startup }
+>>>>>>> origin/fixes_2_2
 
 { Setup heap }
   InitHeap;
@@ -258,6 +277,7 @@ begin
   { Reset IO Error }
   InOutRes:=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif FPC_HAS_FEATURE_CONSOLEIO}
 
 {$ifdef FPC_HAS_FEATURE_THREADING}
@@ -265,6 +285,9 @@ begin
 =======
 { Arguments }
 >>>>>>> graemeg/fixes_2_2
+=======
+{ Arguments }
+>>>>>>> origin/fixes_2_2
   InitSystemThreads;
 {$endif FPC_HAS_FEATURE_THREADING}
 end.

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #
 #   This file is part of the Free Pascal run time library.
 #   Copyright (c) 2001 by Free Pascal Core Team
@@ -17,6 +18,8 @@
         .file   "cprt0.as"
         .text
 =======
+=======
+>>>>>>> origin/fixes_2_2
 |
 |   $Id: cprt0.as,v 1.1.2.2 2001/08/01 13:26:17 pierre Exp $
 |   This file is part of the Free Pascal run time library.
@@ -35,13 +38,17 @@
 |
         .file   "cprt0.as"
 	.text
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         .globl  _start
         .type   _start,@function
 _start:
         .globl  __entry
         .type   __entry,@function
 __entry:
+<<<<<<< HEAD
 <<<<<<< HEAD
 ######### This order of parameters is for ucLibc.
 #       move.l   8(%sp),%d0
@@ -79,6 +86,8 @@ _haltproc:
 #       Call C exit function
         move.l   operatingsystem_result,%d1
 =======
+=======
+>>>>>>> origin/fixes_2_2
         move.l   8(%sp),%d0
         move.l   %d0,U_SYSLINUX_ENVP
         move.l   %d0,__environ
@@ -104,13 +113,17 @@ _haltproc:
 _haltproc:
 |       Call C exit function
         move.w   U_SYSLINUX_EXITCODE,%d1
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         move.l   %d1,-(%sp)
         jsr      exit
         moveq.l  #1,%d0
         move.l   (%sp)+,%d1
         trap     #0
         bra      _haltproc
+<<<<<<< HEAD
 <<<<<<< HEAD
 .size _haltproc,.-_haltproc
 
@@ -133,6 +146,8 @@ operatingsystem_parameters:
         .set operatingsystem_parameter_argc,operatingsystem_parameters+4
         .set operatingsystem_parameter_argv,operatingsystem_parameters+8
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 |       Is this still needed ??
@@ -153,4 +168,7 @@ operatingsystem_parameters:
 |
 |
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

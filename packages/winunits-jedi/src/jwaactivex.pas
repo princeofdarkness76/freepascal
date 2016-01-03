@@ -277,6 +277,7 @@ type
   IStream = interface(ISequentialStream)
     ['{0000000C-0000-0000-C000-000000000046}']
 <<<<<<< HEAD
+<<<<<<< HEAD
     function Seek(dlibMove: qword; dwOrigin: Longint;
       out libNewPosition: qword): HRESULT; stdcall;
     function SetSize(libNewSize: qword): HRESULT; stdcall;
@@ -288,6 +289,8 @@ type
       dwLockType: Longint): HRESULT; stdcall;
     function UnlockRegion(libOffset: qword; cb: qword;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     function Seek(dlibMove: Largeint; dwOrigin: Longint;
       out libNewPosition: Largeint): HRESULT; stdcall;
     function SetSize(libNewSize: Largeint): HRESULT; stdcall;
@@ -298,7 +301,10 @@ type
     function LockRegion(libOffset: Largeint; cb: Largeint;
       dwLockType: Longint): HRESULT; stdcall;
     function UnlockRegion(libOffset: Largeint; cb: Largeint;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       dwLockType: Longint): HRESULT; stdcall;
     function Stat(out statstg: TStatStg; grfStatFlag: Longint): HRESULT; stdcall;
     function Clone(out stm: IStream): HRESULT; stdcall;

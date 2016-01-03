@@ -20,7 +20,10 @@
 { $Define AOUT}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef CPUI386}
 {$DEFINE ELFRES32}
 {$endif}
@@ -59,7 +62,10 @@ property cmdline:Pchar read get_cmdline;
 var
   sysenter_supported: LongInt = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif}
 
 { Include ELF resources }
@@ -362,12 +368,18 @@ begin
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 =======
   SysResetFPU;
   if not(IsLibrary) then
     SysInitFPU;
 >>>>>>> graemeg/fixes_2_2
+=======
+  SysResetFPU;
+  if not(IsLibrary) then
+    SysInitFPU;
+>>>>>>> origin/fixes_2_2
 {$if defined(cpupowerpc)}
   // some PPC kernels set the exception bits FE0/FE1 in the MSR to zero,
   // disabling all FPU exceptions. Enable them again.

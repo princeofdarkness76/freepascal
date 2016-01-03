@@ -18,6 +18,7 @@ unit commdlg;
 interface
 {$mode delphi} // interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef Win64}
   {$packrecords 1}
 {$endif}
@@ -27,6 +28,8 @@ interface
 {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 uses windows;
 
 Type
@@ -425,10 +428,14 @@ Type
      PDEVNAMES = ^DEVNAMES;
     
 <<<<<<< HEAD
+<<<<<<< HEAD
 	TPRINTDLGA = record
 =======
 	TPRINTDLGA = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+	TPRINTDLGA = packed record
+>>>>>>> origin/fixes_2_2
           lStructSize : DWORD;
           hwndOwner : HWND;
           hDevMode : HANDLE;
@@ -442,10 +449,14 @@ Type
           nCopies : WORD;
           hInstance : HINST;
 <<<<<<< HEAD
+<<<<<<< HEAD
           lCustData : LPARAM;
 =======
           lCustData : DWORD;
 >>>>>>> graemeg/fixes_2_2
+=======
+          lCustData : DWORD;
+>>>>>>> origin/fixes_2_2
           lpfnPrintHook : LPPRINTHOOKPROC;
           lpfnSetupHook : LPSETUPHOOKPROC;
           lpPrintTemplateName : LPCTSTR;
@@ -461,10 +472,14 @@ Type
      PPDA = ^TPRINTDLGA;
 	 	 
 <<<<<<< HEAD
+<<<<<<< HEAD
      TPRINTDLGW = record
 =======
      TPRINTDLGW = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+     TPRINTDLGW = packed record
+>>>>>>> origin/fixes_2_2
           lStructSize : DWORD;
           hwndOwner : HWND;
           hDevMode : HANDLE;
@@ -478,10 +493,14 @@ Type
           nCopies : WORD;
           hInstance : HINST;
 <<<<<<< HEAD
+<<<<<<< HEAD
           lCustData : LPARAM;
 =======
           lCustData : DWORD;
 >>>>>>> graemeg/fixes_2_2
+=======
+          lCustData : DWORD;
+>>>>>>> origin/fixes_2_2
           lpfnPrintHook : LPPRINTHOOKPROC;
           lpfnSetupHook : LPSETUPHOOKPROC;
           lpPrintTemplateName : LPWSTR;
@@ -633,7 +652,11 @@ function PageSetupDlgW(_para1:LPPAGESETUPDLG):WINBOOL; stdcall; external 'comdlg
 implementation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 end.
 =======
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+end.
+>>>>>>> origin/fixes_2_2

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
@@ -7,6 +8,8 @@
       <Flags>
         <SaveOnlyProjectUnits Value="True"/>
 =======
+=======
+>>>>>>> origin/fixes_2_2
 <?xml version="1.0"?>
 <CONFIG>
   <ProjectOptions>
@@ -16,12 +19,16 @@
       <Flags>
         <SaveOnlyProjectUnits Value="True"/>
         <MainUnitHasUsesSectionForAllUnits Value="False"/>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         <MainUnitHasCreateFormStatements Value="False"/>
         <MainUnitHasTitleStatement Value="False"/>
       </Flags>
       <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <Title Value="FPDoc Documentation generator"/>
       <ResourceType Value="res"/>
@@ -57,6 +64,8 @@
       <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
       <ExcludeFileFilter Value="*.(bak|ppu|o|so);*~;backup"/>
 =======
+=======
+>>>>>>> origin/fixes_2_2
       <IconPath Value="./"/>
       <TargetFileExt Value=""/>
     </General>
@@ -68,11 +77,15 @@
       <IgnoreBinaries Value="False"/>
       <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
       <ExcludeFileFilter Value="*.(bak|ppu|ppw|o|so);*~;backup"/>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     </PublishOptions>
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -120,17 +133,23 @@
     <Units Count="14">
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
         <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>
     <Units Count="11">
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       <Unit0>
         <Filename Value="fpdoc.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FPDoc"/>
       </Unit0>
       <Unit1>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <Filename Value="dglobals.pp"/>
         <IsPartOfProject Value="True"/>
@@ -445,6 +464,8 @@
     </Exceptions>
   </Debugging>
 =======
+=======
+>>>>>>> origin/fixes_2_2
         <Filename Value="dwriter.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="dWriter"/>
@@ -502,5 +523,8 @@
       <CompilerPath Value="$(CompPath)"/>
     </Other>
   </CompilerOptions>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 </CONFIG>

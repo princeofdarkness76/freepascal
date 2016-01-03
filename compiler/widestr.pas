@@ -72,7 +72,10 @@ unit widestr;
     procedure unicode2ascii(r : pcompilerwidestring;p : pchar;cp : tstringencoding);
 =======
     procedure unicode2ascii(r : pcompilerwidestring;p : pchar);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     function hasnonasciichars(const p: pcompilerwidestring): boolean;
     function getcharwidestring(r : pcompilerwidestring;l : SizeInt) : tcompilerwidechar;
     function cpavailable(const s : string) : boolean;
@@ -96,6 +99,7 @@ unit widestr;
   implementation
 
     uses
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -131,6 +135,11 @@ unit widestr;
       { cyrillic code pages }
       cp1251,cp866,cp8859_5,
 >>>>>>> graemeg/fixes_2_2
+=======
+      cp8859_1,cp850,cp437,
+      { cyrillic code pages }
+      cp1251,cp866,cp8859_5,
+>>>>>>> origin/fixes_2_2
       globals,cutils;
 
 
@@ -241,6 +250,7 @@ unit widestr;
 
     function unicode2asciichar(c : tcompilerwidechar) : char;
 <<<<<<< HEAD
+<<<<<<< HEAD
       {begin
         if word(c)<128 then
           unicode2asciichar:=char(word(c))
@@ -250,12 +260,17 @@ unit widestr;
       begin
          Result := getascii(c,getmap(current_settings.sourcecodepage))[1];
 =======
+=======
+>>>>>>> origin/fixes_2_2
       begin
         if word(c)<128 then
           unicode2asciichar:=char(word(c))
          else
           unicode2asciichar:='?';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -353,6 +368,7 @@ unit widestr;
         i      : longint;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         { can't implement that here, because the memory size for p() cannot
           be changed here, and we may need more bytes than have been allocated }
         if cp=CP_UTF8 then
@@ -367,6 +383,11 @@ unit widestr;
           the routine in the RTL to have the same compile time (for constant strings)
           and runtime conversion (for variables) }
 >>>>>>> graemeg/fixes_2_2
+=======
+        { This routine must work the same as the
+          the routine in the RTL to have the same compile time (for constant strings)
+          and runtime conversion (for variables) }
+>>>>>>> origin/fixes_2_2
         source:=tcompilerwidecharptr(r^.data);
         dest:=p;
         for i:=1 to r^.len do
@@ -436,6 +457,7 @@ unit widestr;
             dest^:=char(word(source^))
            else
             dest^:='?';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
            inc(dest);
            inc(source);
@@ -528,6 +550,8 @@ unit widestr;
         for i:=1 to l do
          begin
            dest^ := getascii(getunicode(source^,ms),md)[1];
+=======
+>>>>>>> origin/fixes_2_2
            inc(dest);
            inc(source);
          end;
@@ -569,10 +593,30 @@ unit widestr;
       end;
 
 
+    function hasnonasciichars(const p: pcompilerwidestring): boolean;
+      var
+        source : tcompilerwidecharptr;
+        i      : longint;
+      begin
+        source:=tcompilerwidecharptr(p^.data);
+        result:=true;
+        for i:=1 to p^.len do
+          begin
+            if word(source^)>=128 then
+              exit;
+            inc(source);
+          end;
+        result:=false;
+      end;
+
+
     function cpavailable(const s : string) : boolean;
       begin
           cpavailable:=mappingavailable(lower(s));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 end.

@@ -258,6 +258,7 @@ function IsZero(const A: Extended): Boolean;inline; overload;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IsNan(const d : Single): Boolean; overload;
 {$ifdef FPC_HAS_TYPE_DOUBLE}
 function IsNan(const d : Double): Boolean; overload;
@@ -280,6 +281,9 @@ function IsNan(const d : Double): Boolean; overload;
 =======
 function IsNan(const d : Double): Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+function IsNan(const d : Double): Boolean;
+>>>>>>> origin/fixes_2_2
 function IsInfinite(const d : Double): Boolean;
 
 {$ifdef FPC_HAS_TYPE_EXTENDED}
@@ -536,10 +540,14 @@ function popnvariance(const data : PSingle; Const N : Integer) : float;
 function popnvariance(const data : array of Single) : float;inline;
 procedure momentskewkurtosis(const data : array of Single;
 <<<<<<< HEAD
+<<<<<<< HEAD
   out m1,m2,m3,m4,skew,kurtosis : float);inline;
 =======
   out m1,m2,m3,m4,skew,kurtosis : float);
 >>>>>>> graemeg/fixes_2_2
+=======
+  out m1,m2,m3,m4,skew,kurtosis : float);
+>>>>>>> origin/fixes_2_2
 procedure momentskewkurtosis(const data : PSingle; Const N : Integer;
   out m1,m2,m3,m4,skew,kurtosis : float);
 
@@ -571,10 +579,14 @@ function popnvariance(const data : PDouble; Const N : Integer) : float;
 function popnvariance(const data : array of Double) : float;inline;
 procedure momentskewkurtosis(const data : array of Double;
 <<<<<<< HEAD
+<<<<<<< HEAD
   out m1,m2,m3,m4,skew,kurtosis : float);inline;
 =======
   out m1,m2,m3,m4,skew,kurtosis : float);
 >>>>>>> graemeg/fixes_2_2
+=======
+  out m1,m2,m3,m4,skew,kurtosis : float);
+>>>>>>> origin/fixes_2_2
 procedure momentskewkurtosis(const data : PDouble; Const N : Integer;
   out m1,m2,m3,m4,skew,kurtosis : float);
 
@@ -606,10 +618,14 @@ function popnvariance(const data : PExtended; Const N : Integer) : float;
 function popnvariance(const data : array of Extended) : float;inline;
 procedure momentskewkurtosis(const data : array of Extended;
 <<<<<<< HEAD
+<<<<<<< HEAD
   out m1,m2,m3,m4,skew,kurtosis : float);inline;
 =======
   out m1,m2,m3,m4,skew,kurtosis : float);
 >>>>>>> graemeg/fixes_2_2
+=======
+  out m1,m2,m3,m4,skew,kurtosis : float);
+>>>>>>> origin/fixes_2_2
 procedure momentskewkurtosis(const data : PExtended; Const N : Integer;
   out m1,m2,m3,m4,skew,kurtosis : float);
 
@@ -1498,8 +1514,11 @@ function popnvariance(const data : PSingle; Const N : Integer) : float;
 
 procedure momentskewkurtosis(const data : array of single;
 <<<<<<< HEAD
+<<<<<<< HEAD
   out m1,m2,m3,m4,skew,kurtosis : float); inline;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   out m1,m2,m3,m4,skew,kurtosis : float);
 
 >>>>>>> graemeg/fixes_2_2
@@ -1550,12 +1569,18 @@ begin
   m3 := reciprocalN * m3;
   m4 := reciprocalN * m4;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
   
   skew := m3 / (sqrt(m2)*m2);
   kurtosis := m4 / (m2 * m2);
 end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   skew := m3 / (sqrt(m2)*m2);
   kurtosis := m4 / (m2 * m2);
@@ -1674,7 +1699,10 @@ function popnvariance(const data : PDouble; Const N : Integer) : float;
 procedure momentskewkurtosis(const data : array of Double;
   out m1,m2,m3,m4,skew,kurtosis : float);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 >>>>>>> graemeg/fixes_2_2
 begin
@@ -1707,6 +1735,7 @@ begin
   end;
   m1 := reciprocalN * m1;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   m2 := 0;
   m3 := 0;
@@ -1729,6 +1758,8 @@ begin
   kurtosis := m4 / (m2 * m2);
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
   m2 := 0;
   m3 := 0;
@@ -1750,9 +1781,15 @@ end;
   skew := m3 / (sqrt(m2)*m2);
   kurtosis := m4 / (m2 * m2);
 end;
+<<<<<<< HEAD
 
 >>>>>>> graemeg/fixes_2_2
 
+=======
+
+
+function norm(const data : array of Double) : float;
+>>>>>>> origin/fixes_2_2
 
 function norm(const data : array of Double) : float; inline;
   begin
@@ -1862,8 +1899,11 @@ function popnvariance(const data : PExtended; Const N : Integer) : float;
 
 procedure momentskewkurtosis(const data : array of Extended;
 <<<<<<< HEAD
+<<<<<<< HEAD
   out m1,m2,m3,m4,skew,kurtosis : float); inline;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   out m1,m2,m3,m4,skew,kurtosis : float);
 
 >>>>>>> graemeg/fixes_2_2
@@ -1914,12 +1954,18 @@ begin
   m3 := reciprocalN * m3;
   m4 := reciprocalN * m4;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
   
   skew := m3 / (sqrt(m2)*m2);
   kurtosis := m4 / (m2 * m2);
 end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   skew := m3 / (sqrt(m2)*m2);
   kurtosis := m4 / (m2 * m2);
@@ -2727,6 +2773,17 @@ begin
 end;
 
 function CompareValue(const A, B: QWord): TValueRelationship;
+
+begin
+  result:=GreaterThanValue;
+  if a=b then
+    result:=EqualsValue
+  else
+   if a<b then
+     result:=LessThanValue;
+end;
+
+function CompareValue ( const A, B : QWord) : TValueRelationship;
 
 begin
   result:=GreaterThanValue;

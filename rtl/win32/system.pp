@@ -52,8 +52,11 @@ const
  AllowDriveSeparators : set of char = [':'];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { FileNameCaseSensitive and FileNameCasePreserving are defined separately below!!! }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { FileNameCaseSensitive is defined separately below!!! }
 >>>>>>> graemeg/fixes_2_2
  maxExitCode = 65535;
@@ -79,7 +82,10 @@ const
   FileNameCasePreserving: boolean = true;
 =======
   FileNameCaseSensitive : boolean = true;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   CtrlZMarksEOF: boolean = true; (* #26 is considered as end of file *)
 
   sLineBreak = LineEnding;
@@ -104,7 +110,10 @@ const
 =======
   DLLreason,DLLparam:longint;
   StartupConsoleMode : DWORD;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 <<<<<<< HEAD
@@ -327,15 +336,21 @@ end;
 procedure install_exception_handlers;forward;
 procedure remove_exception_handlers;forward;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif FPC_USE_WIN32_SEH}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_HAS_INDIRECT_MAIN_INFORMATION}
 procedure PascalMain;stdcall;external name 'PASCALMAIN';
 {$endif FPC_HAS_INDIRECT_MAIN_INFORMATION}
 procedure fpc_do_exit;stdcall;external name 'FPC_DO_EXIT';
 Procedure ExitDLL(Exitcode : longint); forward;
 procedure asm_exit;stdcall;external name 'asm_exit';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 Procedure system_exit;
 begin
@@ -369,6 +384,16 @@ begin
 
   { do cleanup required by the startup code }
   EntryInformation.asm_exit();
+
+  { in 2.0 asm_exit does an exitprocess }
+{$ifndef ver2_0}
+  { do cleanup required by the startup code }
+{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}
+  EntryInformation.asm_exit();
+{$else FPC_HAS_INDIRECT_MAIN_INFORMATION}
+  asm_exit;
+{$endif FPC_HAS_INDIRECT_MAIN_INFORMATION}
+{$endif ver2_0}
 
   { in 2.0 asm_exit does an exitprocess }
 {$ifndef ver2_0}
@@ -424,14 +449,20 @@ procedure Exe_entry(const info : TEntryInformation);[public,alias:'_FPC_EXE_Entr
         xorl %ebp,%ebp
      end;
 <<<<<<< HEAD
+<<<<<<< HEAD
      EntryInformation.PascalMain();
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}
      EntryInformation.PascalMain();
 {$else FPC_HAS_INDIRECT_MAIN_INFORMATION}
      PascalMain;
 {$endif FPC_HAS_INDIRECT_MAIN_INFORMATION}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      asm
         popl %ebp
      end;
@@ -913,7 +944,19 @@ procedure Win32Ansi2WideMove(source:pchar;var dest:widestring;len:SizeInt);
     // this will null-terminate
     setlength(dest, destlen);
     MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, source, len, @dest[1], destlen);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+  end;
+
+
+function Win32WideUpper(const s : WideString) : WideString;
+  begin
+    result:=s;
+    UniqueString(result);
+    if length(result)>0 then
+      CharUpperBuff(LPWSTR(result),length(result));
+>>>>>>> origin/fixes_2_2
   end;
 {$endif FPC_SECTION_THREADVARS}
 
@@ -1274,10 +1317,14 @@ begin
     SysInstance:=getmodulehandle(nil);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   MainInstance:=SysInstance;
 =======
   MainInstance:=HInstance;
 >>>>>>> graemeg/fixes_2_2
+=======
+  MainInstance:=HInstance;
+>>>>>>> origin/fixes_2_2
 
   { pass dummy value }
   StackLength := CheckInitialStkLen($1000000);

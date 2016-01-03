@@ -235,8 +235,11 @@ unit rgobj;
       private
         int_live_range_direction: TRADirection;
 <<<<<<< HEAD
+<<<<<<< HEAD
         { First imaginary register.}
 =======
+=======
+>>>>>>> origin/fixes_2_2
         {# First imaginary register.}
 >>>>>>> graemeg/fixes_2_2
         first_imaginary   : Tsuperregister;
@@ -308,6 +311,7 @@ unit rgobj;
         procedure clear_interferences(u:Tsuperregister);
         procedure set_live_range_direction(dir: TRADirection);
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure set_live_start(reg : tsuperregister;t : tai);
         function get_live_start(reg : tsuperregister) : tai;
         procedure set_live_end(reg : tsuperregister;t : tai);
@@ -327,6 +331,10 @@ unit rgobj;
        public
         property live_range_direction: TRADirection read int_live_range_direction write set_live_range_direction;
 >>>>>>> graemeg/fixes_2_2
+=======
+       public
+        property live_range_direction: TRADirection read int_live_range_direction write set_live_range_direction;
+>>>>>>> origin/fixes_2_2
       end;
 
     const
@@ -459,10 +467,15 @@ unit rgobj;
            internalerror(200210181);
          live_range_direction:=rad_forward;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
          supregset_reset(extended_backwards,false,high(tsuperregister));
          supregset_reset(backwards_was_first,false,high(tsuperregister));
 >>>>>>> graemeg/fixes_2_2
+=======
+         supregset_reset(extended_backwards,false,high(tsuperregister));
+         supregset_reset(backwards_was_first,false,high(tsuperregister));
+>>>>>>> origin/fixes_2_2
          first_imaginary:=Afirst_imaginary;
          maxreg:=Afirst_imaginary;
          regtype:=Aregtype;
@@ -791,10 +804,14 @@ unit rgobj;
             begin
               { don't use sizeof(tmovelistheader), because that ignores alignment }
 <<<<<<< HEAD
+<<<<<<< HEAD
               getmem(movelist,ptruint(@movelist^.data)-ptruint(movelist)+60*sizeof(pointer));
 =======
               getmem(movelist,ptrint(@movelist^.data)-ptrint(movelist)+60*sizeof(pointer));
 >>>>>>> graemeg/fixes_2_2
+=======
+              getmem(movelist,ptrint(@movelist^.data)-ptrint(movelist)+60*sizeof(pointer));
+>>>>>>> origin/fixes_2_2
               movelist^.header.maxcount:=60;
               movelist^.header.count:=0;
               movelist^.header.sorted_until:=0;
@@ -806,10 +823,14 @@ unit rgobj;
                   movelist^.header.maxcount:=movelist^.header.maxcount*2;
                   { don't use sizeof(tmovelistheader), because that ignores alignment }
 <<<<<<< HEAD
+<<<<<<< HEAD
                   reallocmem(movelist,ptruint(@movelist^.data)-ptruint(movelist)+movelist^.header.maxcount*sizeof(pointer));
 =======
                   reallocmem(movelist,ptrint(@movelist^.data)-ptrint(movelist)+movelist^.header.maxcount*sizeof(pointer));
 >>>>>>> graemeg/fixes_2_2
+=======
+                  reallocmem(movelist,ptrint(@movelist^.data)-ptrint(movelist)+movelist^.header.maxcount*sizeof(pointer));
+>>>>>>> origin/fixes_2_2
                 end;
             end;
           movelist^.data[movelist^.header.count]:=data;
@@ -822,6 +843,7 @@ unit rgobj;
       begin
         if (dir in [rad_backwards,rad_backwards_reinit]) then
           begin
+<<<<<<< HEAD
 <<<<<<< HEAD
             if not assigned(extended_backwards) then
               begin
@@ -864,6 +886,8 @@ unit rgobj;
       begin
         result:=reginfo[reg].live_end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
             if (dir=rad_backwards_reinit) then
               supregset_reset(extended_backwards,false,high(tsuperregister));
             int_live_range_direction:=rad_backwards;
@@ -872,7 +896,10 @@ unit rgobj;
           end
         else
           int_live_range_direction:=rad_forward;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -890,10 +917,13 @@ unit rgobj;
           with reginfo[supreg] do
             begin
 <<<<<<< HEAD
+<<<<<<< HEAD
               // if aweight>weight then
               inc(weight,aweight);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               if (live_range_direction=rad_forward) then
                 begin
                   if not assigned(live_start) then
@@ -1991,6 +2021,7 @@ unit rgobj;
                                     if (base<>NR_NO) and
                                        (getregtype(base)=regtype) then
 <<<<<<< HEAD
+<<<<<<< HEAD
                                       begin
                                         u:=getsupreg(base);
 {$ifdef EXTDEBUG}
@@ -2022,6 +2053,8 @@ unit rgobj;
                                       end;
 {$endif defined(x86)}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                                       setsupreg(base,reginfo[getsupreg(base)].colour);
                                     if (index<>NR_NO) and
                                        (getregtype(index)=regtype) then
@@ -2203,17 +2236,23 @@ unit rgobj;
 
     var ins:Taicpu;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
         ins:=spilling_create_load(spilltemp,tempreg);
         add_cpu_interferences(ins);
         list.insertafter(ins,pos);
+<<<<<<< HEAD
 <<<<<<< HEAD
         {$ifdef DEBUG_SPILLING}
         list.Insertbefore(tai_comment.Create(strpnew('Spilling: Spill Read')),ins);
         {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -2223,6 +2262,7 @@ unit rgobj;
         ins:tai_cpu_abstract_sym;
 =======
     procedure Trgobj.do_spill_written(list:TAsmList;pos:tai;const spilltemp:treference;tempreg:tregister);
+<<<<<<< HEAD
 <<<<<<< HEAD
       var
         ins:Taicpu;
@@ -2241,16 +2281,24 @@ unit rgobj;
     var ins:Taicpu;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+    var ins:Taicpu;
+
+>>>>>>> origin/fixes_2_2
       begin
         ins:=spilling_create_store(tempreg,spilltemp);
         add_cpu_interferences(ins);
         list.insertafter(ins,pos);
+<<<<<<< HEAD
 <<<<<<< HEAD
         {$ifdef DEBUG_SPILLING}
         list.Insertbefore(tai_comment.Create(strpnew('Spilling: Spill Write')),ins);
         {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -2666,12 +2714,15 @@ unit rgobj;
         { substitute registers }
         for counter:=0 to instr.ops-1 do
 <<<<<<< HEAD
+<<<<<<< HEAD
           substitute_spilled_registers(regs,instr,counter);
         { We have modified the instruction; perhaps the new instruction has
           certain constraints regarding which imaginary registers interfere
           with certain physical registers. }
         add_cpu_interferences(instr);
 =======
+=======
+>>>>>>> origin/fixes_2_2
           with instr.oper[counter]^ do
             case typ of
               top_reg:
@@ -2699,7 +2750,10 @@ unit rgobj;
           certain constraints regarding which imaginary registers interfere
           with certain physical registers.}
          add_cpu_interferences(instr);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 end.

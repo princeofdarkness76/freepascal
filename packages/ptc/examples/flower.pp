@@ -9,6 +9,7 @@ Ported to FPC by Nikolay Nikolov (nickysn@users.sourceforge.net)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 program Flower;
 
 {$MODE objfpc}
@@ -54,6 +55,8 @@ begin
     fx2 := fx div 2;
     fy2 := fy div 2;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Program Flower;
 
 {$MODE objfpc}
@@ -85,12 +88,16 @@ Begin
     fy := flower.height;
     fx2 := fx Div 2;
     fy2 := fy Div 2;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     { useful 2*pi constant }
     TWO_PI := 2 * PI;
 
     { generate flower image }
+<<<<<<< HEAD
 <<<<<<< HEAD
     for y := 0 to fy - 1 do
       for x := 0 to fx - 1 do
@@ -98,17 +105,23 @@ Begin
                                   0.3 * Sin(15*ArcTan2((y - fy2),(x - fx2))) * 255 / TWO_PI +
                                   Sqrt((y - fy2) * (y - fy2) + (x - fx2) * (x - fx2))) and $FF;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     For y := 0 To fy - 1 Do
       For x := 0 To fx - 1 Do
         data[x + y * fx] := Trunc(1.0 * Cos(18*ArcTan2((y - fy2),(x - fx2))) * 255 / TWO_PI +
 		                  0.3 * Sin(15*ArcTan2((y - fy2),(x - fx2))) * 255 / TWO_PI +
                                   Sqrt((y - fy2) * (y - fy2) + (x - fx2) * (x - fx2))) And $FF;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     { You might want to move the 1.0 and 0.3 and the 18 and the 15
       to parameters passed to the generate function...
       the 1.0 and the 0.3 define the 'height' of the flower, while the
       18 and 15 control the number of 'petals' }
+<<<<<<< HEAD
 <<<<<<< HEAD
   finally
     flower.unlock;
@@ -260,6 +273,8 @@ begin
       { create flower surface }
       flower_surface := TPTCSurfaceFactory.CreateNew(640, 400, format);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Finally
     flower.unlock;
   End;
@@ -349,7 +364,10 @@ Begin
 
       { create flower surface }
       flower_surface := TPTCSurface.Create(640, 400, format);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
       { generate flower }
       generate_flower(flower_surface);
@@ -359,16 +377,22 @@ Begin
 
       { create surface }
 <<<<<<< HEAD
+<<<<<<< HEAD
       surface := TPTCSurfaceFactory.CreateNew(320, 200, format);
 
       { create palette }
       palette := TPTCPaletteFactory.CreateNew;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       surface := TPTCSurface.Create(320, 200, format);
 
       { create palette }
       palette := TPTCPalette.Create;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
       { generate palette }
       generate(palette);
@@ -381,16 +405,21 @@ Begin
 
       { setup copy area }
 <<<<<<< HEAD
+<<<<<<< HEAD
       area := TPTCAreaFactory.CreateNew(0, 0, 320, 200);
 =======
       area := TPTCArea.Create(0, 0, 320, 200);
 >>>>>>> graemeg/fixes_2_2
+=======
+      area := TPTCArea.Create(0, 0, 320, 200);
+>>>>>>> origin/fixes_2_2
 
       { time data }
       time := 0;
       delta := 0.04;
 
       { main loop }
+<<<<<<< HEAD
 <<<<<<< HEAD
       while not console.KeyPressed do
       begin
@@ -400,6 +429,8 @@ Begin
           map := flower_surface.lock;
           try
 =======
+=======
+>>>>>>> origin/fixes_2_2
       While Not console.KeyPressed Do
       Begin
         { lock surface pixels }
@@ -407,7 +438,10 @@ Begin
 	Try
           map := flower_surface.lock;
 	  Try
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             { get surface dimensions }
             width := surface.width;
             height := surface.height;
@@ -427,6 +461,7 @@ Begin
 
             { vertical loop }
 <<<<<<< HEAD
+<<<<<<< HEAD
             for y := 0 to height - 1 do
               { horizontal loop }
               for x := 0 to width - 1 do
@@ -442,6 +477,8 @@ Begin
           surface.unlock;
         end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
             For y := 0 To height - 1 Do
               { horizontal loop }
 	      For x := 0 To width - 1 Do
@@ -456,7 +493,10 @@ Begin
           { unlock surface }
           surface.unlock;
 	End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
         { copy surface to console }
         surface.copy(console, area, area);
@@ -467,6 +507,7 @@ Begin
         { update time }
         time := time + delta;
 <<<<<<< HEAD
+<<<<<<< HEAD
       end;
     finally
       if Assigned(console) then
@@ -474,17 +515,23 @@ Begin
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> origin/fixes_2_2
       End;
     Finally
       If Assigned(console) Then
         console.close;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       area.Free;
       format.Free;
       palette.Free;
       surface.Free;
       flower_surface.Free;
       console.Free;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -504,6 +551,8 @@ Begin
   end;
 end.
 =======
+=======
+>>>>>>> origin/fixes_2_2
     End;
   Except
     On error : TPTCError Do
@@ -511,4 +560,7 @@ end.
       error.report;
   End;
 End.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

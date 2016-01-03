@@ -15,6 +15,7 @@ begin
     P:=AddPackage('amunits');
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -30,6 +31,10 @@ begin
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
 >>>>>>> graemeg/fixes_2_2
+=======
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+>>>>>>> origin/fixes_2_2
     P.CPUs:=[m68k];
     P.OSes:=[Amiga];
 
@@ -39,10 +44,14 @@ begin
     P.IncludePath.Add('src');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('amsgbox.pas');
 =======
     T:=P.Targets.AddUnit('msgbox.pas');
 >>>>>>> graemeg/fixes_2_2
+=======
+    T:=P.Targets.AddUnit('msgbox.pas');
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('amigautils.pas');
     T:=P.Targets.AddUnit('wbargs.pas');
     T:=P.Targets.AddUnit('vartags.pas');
@@ -59,6 +68,7 @@ begin
     T:=P.Targets.AddUnit('easyasl.pas');
     T:=P.Targets.AddUnit('doublebuffer.pas');
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('exec.pas');
     T:=P.Targets.AddUnit('intuition.pas');
     T:=P.Targets.AddUnit('agraphics.pas');
@@ -66,6 +76,10 @@ begin
     T:=P.Targets.AddUnit('intuition.pas');
     T:=P.Targets.AddUnit('graphics.pas');
 >>>>>>> graemeg/fixes_2_2
+=======
+    T:=P.Targets.AddUnit('intuition.pas');
+    T:=P.Targets.AddUnit('graphics.pas');
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('amigalib.pas');
     T:=P.Targets.AddUnit('nonvolatile.pas');
     T:=P.Targets.AddUnit('iffparse.pas');
@@ -76,10 +90,14 @@ begin
     T:=P.Targets.AddUnit('amigados.pas');
     T:=P.Targets.AddUnit('configvars.pas');
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('akeyboard.pas');
 =======
     T:=P.Targets.AddUnit('keyboard.pas');
 >>>>>>> graemeg/fixes_2_2
+=======
+    T:=P.Targets.AddUnit('keyboard.pas');
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('bootblock.pas');
     T:=P.Targets.AddUnit('icon.pas');
     T:=P.Targets.AddUnit('cd.pas');
@@ -194,6 +212,7 @@ begin
     T:=P.Targets.AddExampleProgram('penshare.pas');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Sources.AddDoc('README.txt');
     P.Sources.AddDoc('units.txt');
 
@@ -201,6 +220,10 @@ begin
     P.Sources.AddSrc('README');
     P.Sources.AddSrc('units.txt');
 >>>>>>> graemeg/fixes_2_2
+=======
+    P.Sources.AddSrc('README');
+    P.Sources.AddSrc('units.txt');
+>>>>>>> origin/fixes_2_2
 {$ifndef ALLPACKAGES}
     Run;
     end;

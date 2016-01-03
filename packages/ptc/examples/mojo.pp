@@ -22,6 +22,7 @@ define inv for interesting fx (not)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 program Mojo;
 
 {$MODE objfpc}
@@ -29,16 +30,22 @@ program Mojo;
 
 uses
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Program Mojo;
 
 {$MODE objfpc}
 
 Uses
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   ptc, SysUtils;
 
 { $DEFINE INV}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
   SC = 12;
@@ -197,6 +204,8 @@ var
   c, s: Single;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Const
   SC = 12;
   MINSEGSIZE = 2.5;
@@ -383,12 +392,16 @@ Var
   c, s : Single;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   c := cos(theta);
   s := sin(theta);
   Row[1].Y := c; Row[1].Z := s; Row[1].X := 0;
   Row[2].Y := -s; Row[2].Z := c; Row[2].X := 0;
   Row[0].Y := 0; Row[0].Z := 0; Row[0].X := 1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -397,6 +410,8 @@ var
   c, s: Single;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure FMatrix.MakeYRot(theta : Single);
@@ -405,12 +420,16 @@ Var
   c, s : Single;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   c := cos(theta);
   s := sin(theta);
   Row[2].Z := c; Row[2].X := s; Row[2].Y := 0;
   Row[0].Z := -s; Row[0].X := c; Row[0].Y := 0;
   Row[1].Z := 0; Row[1].X := 0; Row[1].Y := 1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -419,6 +438,8 @@ var
   c, s: Single;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure FMatrix.MakeZRot(theta : Single);
@@ -427,12 +448,16 @@ Var
   c, s : Single;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   c := cos(theta);
   s := sin(theta);
   Row[0].X := c; Row[0].Y := s; Row[0].Z := 0;
   Row[1].X := -s; Row[1].Y := c; Row[1].Z := 0;
   Row[2].X := 0; Row[2].Y := 0; Row[2].Z := 1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -477,6 +502,8 @@ end;
 procedure FMatrix.Normalise; inline;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure FMatrix.MakeID;
@@ -506,12 +533,16 @@ End;
 Procedure FMatrix.Normalise;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Row[2].Normalise;
   Row[0] := Row[1]**Row[2];
   Row[0].Normalise;
   Row[1] := Row[2]**Row[0];
   Row[1].Normalise;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 <<<<<<< HEAD
@@ -570,6 +601,8 @@ end;
 constructor VLight.Create(const col: FVector);
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Operator * (Const m : FMatrix; Const a : Single) res : FMatrix;
@@ -625,13 +658,17 @@ End;
 Constructor VLight.Create(Const col : FVector);
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   mCol := col * 0.9;
   mAng := 2.8;
   mPosn.Init(0, 0, 20);
   mTarget.Init(0, 0, 0.1);
   mAxis.MakeID;
   Update;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -660,6 +697,8 @@ var
   pp: FVector;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure VLight.Move(Const q : FVector);
@@ -692,7 +731,10 @@ Var
   res : FVector;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   f := 0;
 
   p2 := ray.mPosn;
@@ -703,6 +745,7 @@ Begin
   C := (p.X*p.X+p.Y*p.Y)-mAng*(p.Z);
   D := B*B-4*A*C;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if D <= 0 then
   begin
     Result.Init(0, 0, 0);
@@ -711,6 +754,8 @@ Begin
   D := Sqrt(D);
   A := A * 2;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   If D <= 0 Then
   Begin
     res.Init(0, 0, 0);
@@ -719,11 +764,15 @@ Begin
   End;
   D := Sqrt(D);
   A *= 2;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   t1 := (-B-D)/A;
   t2 := (-B+D)/A;
   frc := 255;
   t3 := -ray.mPosn.Z/ray.mDir.Z;
+<<<<<<< HEAD
 <<<<<<< HEAD
   if t2<=0 then
   begin
@@ -735,6 +784,8 @@ Begin
   if t3>0 then
   begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
   If t2<=0 Then
   Begin
     res.Init(0, 0, 0);
@@ -745,11 +796,15 @@ Begin
     t1 := 0;
   If t3>0 Then
   Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { clip to bitmap plane }
     pp := ray.mPosn + ray.mDir*t3;
     x := 160+Trunc(SC*pp.X);
 {$IFNDEF INV}
+<<<<<<< HEAD
 <<<<<<< HEAD
     if (x>=0) and (x<=319) then
     begin
@@ -999,6 +1054,8 @@ begin
     for c1 := 0 to 9999 do
     begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
     If (x>=0) And (x<=319) Then
     Begin
       y := 100 + Trunc(SC*pp.Y);
@@ -1277,11 +1334,15 @@ Begin
     { swap them around }
     For c1 := 0 To 99 Do
     Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       c2 := Random(190);
       c3 := Random(190);
       ti := order[c2, 0]; order[c2, 0] := order[c3, 0]; order[c3, 0] := ti;
       ti := order[c2, 1]; order[c2, 1] := order[c3, 1]; order[c3, 1] := ti;
+<<<<<<< HEAD
 <<<<<<< HEAD
     end;
 
@@ -1482,6 +1543,8 @@ begin
         console.close;
 =======
 =======
+=======
+>>>>>>> origin/fixes_2_2
     End;
     For zz := 0 To 189 Do
     Begin
@@ -1585,11 +1648,15 @@ Begin
       
     Finally
       { close console }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       console.close;
       console.Free;
       surface.Free;
       format.Free;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1607,6 +1674,10 @@ Begin
     End;
     
 >>>>>>> graemeg/fixes_2_2
+=======
+    End;
+    
+>>>>>>> origin/fixes_2_2
     { print message to stdout }
     Writeln('mojo by alex "statix" evans');
     Writeln('to be used as an example of bad coding and good ptc');
@@ -1615,6 +1686,7 @@ Begin
     Writeln;
     Writeln('-statix 13/1/98');
 <<<<<<< HEAD
+<<<<<<< HEAD
   except
     on error: TPTCError do
       { report error }
@@ -1622,10 +1694,15 @@ Begin
   end;
 end.
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Except
     On error : TPTCError Do
       { report error }
       error.report;
   End;
 End.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

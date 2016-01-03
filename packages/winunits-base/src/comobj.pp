@@ -19,6 +19,7 @@ unit comobj;
   interface
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { $define DEBUG_COM}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -47,12 +48,17 @@ unit comobj;
       // http://lazarus.freepascal.org/index.php/topic,11612.0.html
       TConnectEvent = procedure(const Sink: IUnknown; Connecting: Boolean) of object;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     uses
       Windows,Types,Variants,Sysutils,ActiveX;
 
     type
       EOleError = class(Exception);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
       EOleSysError = class(EOleError)
       private
@@ -73,6 +79,7 @@ unit comobj;
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       EOleRegistrationError = class(EOleSysError);
 
       TOleStream = Class(TProxyStream)
@@ -81,6 +88,9 @@ unit comobj;
 =======
       EOleRegistrationError = class(EOleError);
 >>>>>>> graemeg/fixes_2_2
+=======
+      EOleRegistrationError = class(EOleError);
+>>>>>>> origin/fixes_2_2
 
       TComServerObject = class(TObject)
       protected
@@ -107,6 +117,7 @@ unit comobj;
       TFactoryProc = procedure(Factory: TComObjectFactory) of object;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       { TComClassManager }
 
       TComClassManager = class(TObject)
@@ -122,6 +133,11 @@ unit comobj;
         constructor Create;
         destructor Destroy; override;
 >>>>>>> graemeg/fixes_2_2
+=======
+      TComClassManager = class(TObject)
+        constructor Create;
+        destructor Destroy; override;
+>>>>>>> origin/fixes_2_2
         procedure ForEachFactory(ComServer: TComServerObject; FactoryProc: TFactoryProc);
         function GetFactoryFromClass(ComClass: TClass): TComObjectFactory;
         function GetFactoryFromClassID(const ClassID: TGUID): TComObjectFactory;
@@ -149,10 +165,14 @@ unit comobj;
 
         { IUnknown methods for other interfaces }
 <<<<<<< HEAD
+<<<<<<< HEAD
         function QueryInterface(constref IID: TGUID; out Obj): HResult; stdcall;
 =======
         function QueryInterface(const IID: TGUID; out Obj): HResult; stdcall;
 >>>>>>> graemeg/fixes_2_2
+=======
+        function QueryInterface(const IID: TGUID; out Obj): HResult; stdcall;
+>>>>>>> origin/fixes_2_2
         function _AddRef: Integer; stdcall;
         function _Release: Integer; stdcall;
 
@@ -166,10 +186,14 @@ unit comobj;
         procedure Initialize; virtual;
         function ObjAddRef: Integer; virtual; stdcall;
 <<<<<<< HEAD
+<<<<<<< HEAD
         function ObjQueryInterface(constref IID: TGUID; out Obj): HResult; virtual; stdcall;
 =======
         function ObjQueryInterface(const IID: TGUID; out Obj): HResult; virtual; stdcall;
 >>>>>>> graemeg/fixes_2_2
+=======
+        function ObjQueryInterface(const IID: TGUID; out Obj): HResult; virtual; stdcall;
+>>>>>>> origin/fixes_2_2
         function ObjRelease: Integer; virtual; stdcall;
         function SafeCallException(ExceptObject: TObject; ExceptAddr: Pointer): HResult; override;
         property Controller: IUnknown read GetController;
@@ -183,6 +207,7 @@ unit comobj;
       TThreadingModel = (tmSingle, tmApartment, tmFree, tmBoth, tmNeutral);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       { TComObjectFactory }
 
       TComObjectFactory = class(TObject, IUnknown, IClassFactory, IClassFactory2)
@@ -194,23 +219,35 @@ unit comobj;
       private
         Next: TComObjectFactory;
 >>>>>>> graemeg/fixes_2_2
+=======
+      TComObjectFactory = class(TObject, IUnknown, IClassFactory, IClassFactory2)
+      private
+        Next: TComObjectFactory;
+>>>>>>> origin/fixes_2_2
         FComServer: TComServerObject;
         FComClass: TClass;
         FClassID: TGUID;
         FClassName: string;
 <<<<<<< HEAD
+<<<<<<< HEAD
         FClassVersion : String;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         FDescription: string;
         FErrorIID: TGUID;
         FInstancing: TClassInstancing;
         FLicString: WideString;
 <<<<<<< HEAD
+<<<<<<< HEAD
         //FRegister: Longint;
 =======
         FRegister: Longint;
 >>>>>>> graemeg/fixes_2_2
+=======
+        FRegister: Longint;
+>>>>>>> origin/fixes_2_2
         FShowErrors: Boolean;
         FSupportsLicensing: Boolean;
         FThreadingModel: TThreadingModel;
@@ -218,10 +255,14 @@ unit comobj;
       protected
         { IUnknown }
 <<<<<<< HEAD
+<<<<<<< HEAD
         function QueryInterface(constref IID: TGUID; out Obj): HResult; stdcall;
 =======
         function QueryInterface(const IID: TGUID; out Obj): HResult; stdcall;
 >>>>>>> graemeg/fixes_2_2
+=======
+        function QueryInterface(const IID: TGUID; out Obj): HResult; stdcall;
+>>>>>>> origin/fixes_2_2
         function _AddRef: Integer; stdcall;
         function _Release: Integer; stdcall;
         { IClassFactory }
@@ -238,11 +279,14 @@ unit comobj;
           const ClassID: TGUID; const Name, Description: string;
           Instancing: TClassInstancing; ThreadingModel: TThreadingModel = tmSingle);
 <<<<<<< HEAD
+<<<<<<< HEAD
         constructor Create(ComServer: TComServerObject; ComClass: TComClass;
           const ClassID: TGUID; const Name, Version, Description: string;
           Instancing: TClassInstancing; ThreadingModel: TThreadingModel = tmSingle);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         destructor Destroy; override;
         function CreateComObject(const Controller: IUnknown): TComObject; virtual;
         procedure RegisterClassObject;
@@ -250,9 +294,12 @@ unit comobj;
         property ClassID: TGUID read FClassID;
         property ClassName: string read FClassName;
 <<<<<<< HEAD
+<<<<<<< HEAD
         property ClassVersion: string read FClassVersion;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         property ComClass: TClass read FComClass;
         property ComServer: TComServerObject read FComServer;
         property Description: string read FDescription;
@@ -279,9 +326,12 @@ unit comobj;
       private
         FClassInfo: ITypeInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
         FTypeInfoCount:integer;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       public
         constructor Create(AComServer: TComServerObject; TypedComClass: TTypedComClass; const AClassID: TGUID;
           AInstancing: TClassInstancing; AThreadingModel: TThreadingModel = tmSingle);
@@ -290,6 +340,7 @@ unit comobj;
         property ClassInfo : ITypeInfo read FClassInfo;
       end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
       { TAutoObject }
 
@@ -365,6 +416,8 @@ unit comobj;
       end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     function CreateClassID : ansistring;
 
@@ -380,6 +433,7 @@ unit comobj;
     function ClassIDToProgID(const classID: TGUID): string;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function StringToLPOLESTR(const Source: string): POLEStr;
 
     procedure InterfaceConnect(const Source: IUnknown; const IID: TIID; const Sink: IUnknown; var Connection: DWORD);
@@ -387,6 +441,8 @@ unit comobj;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure DispatchInvoke(const Dispatch: IDispatch; CallDesc: PCallDesc;
        DispIDs: PDispIDList; Params: Pointer; Result: PVariant);
     procedure DispatchInvokeError(Status: HRESULT; const ExceptInfo: TExcepInfo);
@@ -396,6 +452,7 @@ unit comobj;
 
     function ComClassManager : TComClassManager;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -426,6 +483,8 @@ unit comobj;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     type
       TCoCreateInstanceExProc = function(const clsid: TCLSID; unkOuter: IUnknown; dwClsCtx: DWORD; ServerInfo: PCoServerInfo;
@@ -447,6 +506,7 @@ unit comobj;
       CoInitFlags : Longint = -1;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef DEBUG_COM}
      var printcom : boolean=true;
   {$endif}
@@ -455,17 +515,23 @@ implementation
     uses
       ComConst, Ole2, {$ifndef dummy_reg} Registry, {$endif} RtlConsts;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 implementation
 
     uses
       ComConst,Ole2;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     var
       Uninitializing : boolean;
 
     function HandleSafeCallException(ExceptObject: TObject; ExceptAddr: Pointer; const ErrorIID: TGUID; const ProgID,
       HelpFileName: WideString): HResult;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifndef wince}
       var
@@ -476,12 +542,17 @@ implementation
         Result:=E_UNEXPECTED;
 {$ifndef wince}
 =======
+=======
+>>>>>>> origin/fixes_2_2
       var
         _CreateErrorInfo : ICreateErrorInfo;
         ErrorInfo : IErrorInfo;
       begin
         Result:=E_UNEXPECTED;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         if Succeeded(CreateErrorInfo(_CreateErrorInfo)) then
           begin
             _CreateErrorInfo.SetGUID(ErrorIID);
@@ -500,9 +571,12 @@ implementation
               SetErrorInfo(0,ErrorInfo);
           end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif wince}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -589,12 +663,17 @@ implementation
      end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    function GetActiveOleObject(const ClassName : string) : IDispatch;
 {$ifndef wince}
 =======
 
    function GetActiveOleObject(const ClassName : string) : IDispatch;
 >>>>>>> graemeg/fixes_2_2
+=======
+
+   function GetActiveOleObject(const ClassName : string) : IDispatch;
+>>>>>>> origin/fixes_2_2
      var
      	 intf : IUnknown;
        id : TCLSID;
@@ -603,6 +682,7 @@ implementation
        OleCheck(GetActiveObject(id,nil,intf));
        OleCheck(intf.QueryInterface(IDispatch,Result));
      end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$else}
      begin
@@ -778,6 +858,8 @@ implementation
       end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
    procedure OleError(Code: HResult);
@@ -809,6 +891,7 @@ implementation
      end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
    function StringToLPOLESTR(const Source: string): POLEStr;
      var
@@ -855,10 +938,14 @@ implementation
 =======
    procedure SafeCallErrorHandler(err : HResult;addr : pointer);
 >>>>>>> graemeg/fixes_2_2
+=======
+   procedure SafeCallErrorHandler(err : HResult;addr : pointer);
+>>>>>>> origin/fixes_2_2
      var
        info : IErrorInfo;
        descr,src,helpfile : widestring;
        helpctx : DWORD;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endif wince}
      begin
@@ -866,6 +953,9 @@ implementation
 =======
      begin
 >>>>>>> graemeg/fixes_2_2
+=======
+     begin
+>>>>>>> origin/fixes_2_2
        if GetErrorInfo(0,info)=S_OK then
          begin
            info.GetDescription(descr);
@@ -876,9 +966,12 @@ implementation
          end
        else
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif wince}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          raise EOleException.Create('',err,'','',0) at addr;
      end;
 
@@ -906,14 +999,19 @@ implementation
     constructor TComClassManager.Create;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         fClassFactoryList := TList.create({true});
 =======
         RunError(217);
 >>>>>>> graemeg/fixes_2_2
+=======
+        RunError(217);
+>>>>>>> origin/fixes_2_2
       end;
 
 
     destructor TComClassManager.Destroy;
+<<<<<<< HEAD
 <<<<<<< HEAD
       var i : integer;
       begin
@@ -994,6 +1092,8 @@ implementation
             FactoryProc(obj);
         end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       begin
         RunError(217);
       end;
@@ -1003,12 +1103,16 @@ implementation
       FactoryProc: TFactoryProc);
       begin
         RunError(217);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
     function TComClassManager.GetFactoryFromClass(ComClass: TClass
       ): TComObjectFactory;
+<<<<<<< HEAD
 <<<<<<< HEAD
       var
         i: Integer;
@@ -1040,11 +1144,16 @@ implementation
       begin
         RunError(217);
 >>>>>>> graemeg/fixes_2_2
+=======
+      begin
+        RunError(217);
+>>>>>>> origin/fixes_2_2
       end;
 
 
     function TComClassManager.GetFactoryFromClassID(const ClassID: TGUID
       ): TComObjectFactory;
+<<<<<<< HEAD
 <<<<<<< HEAD
       var
         i: Integer;
@@ -1092,6 +1201,10 @@ implementation
       begin
         RunError(217);
 >>>>>>> graemeg/fixes_2_2
+=======
+      begin
+        RunError(217);
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -1102,10 +1215,14 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function TComObject.QueryInterface(constref IID: TGUID; out Obj): HResult; stdcall;
 =======
     function TComObject.QueryInterface(const IID: TGUID; out Obj): HResult; stdcall;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function TComObject.QueryInterface(const IID: TGUID; out Obj): HResult; stdcall;
+>>>>>>> origin/fixes_2_2
       begin
         if assigned(FController) then
           Result:=IUnknown(FController).QueryInterface(IID,Obj)
@@ -1173,6 +1290,7 @@ implementation
             if assigned(FFactory) and FCounted then
               FFactory.Comserver.CountObject(false);
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef wince}
             if FRefCount>0 then
               CoDisconnectObject(Self,0);
@@ -1181,6 +1299,10 @@ implementation
             if FRefCount>0 then
               CoDisconnectObject(Self,0);
 >>>>>>> graemeg/fixes_2_2
+=======
+            if FRefCount>0 then
+              CoDisconnectObject(Self,0);
+>>>>>>> origin/fixes_2_2
           end;
       end;
 
@@ -1197,10 +1319,14 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function TComObject.ObjQueryInterface(constref IID: TGUID; out Obj): HResult; stdcall;
 =======
     function TComObject.ObjQueryInterface(const IID: TGUID; out Obj): HResult; stdcall;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function TComObject.ObjQueryInterface(const IID: TGUID; out Obj): HResult; stdcall;
+>>>>>>> origin/fixes_2_2
       begin
         if GetInterface(IID,Obj) then
           Result:=S_OK
@@ -1242,6 +1368,7 @@ implementation
     function TComObjectFactory.GetProgID: string;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         Result := FComServer.GetServerName + '.' + FClassName;
       end;
 
@@ -1253,6 +1380,8 @@ implementation
         else
           Result:=E_NOINTERFACE;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         RunError(217);
       end;
 
@@ -1260,22 +1389,30 @@ implementation
     function TComObjectFactory.QueryInterface(const IID: TGUID; out Obj): HResult; stdcall;
       begin
         RunError(217);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
     function TComObjectFactory._AddRef: Integer; stdcall;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         Result:=InterlockedIncrement(FRefCount);
 =======
         RunError(217);
 >>>>>>> graemeg/fixes_2_2
+=======
+        RunError(217);
+>>>>>>> origin/fixes_2_2
       end;
 
 
     function TComObjectFactory._Release: Integer; stdcall;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
         Result:=InterlockedDecrement(FRefCount);
         if Result=0 then
@@ -1283,11 +1420,15 @@ implementation
 =======
         RunError(217);
 >>>>>>> graemeg/fixes_2_2
+=======
+        RunError(217);
+>>>>>>> origin/fixes_2_2
       end;
 
 
     function TComObjectFactory.CreateInstance(const UnkOuter: IUnknown;
       const IID: TGUID; out Obj): HResult; stdcall;
+<<<<<<< HEAD
 <<<<<<< HEAD
       var
         comObject: TComObject;
@@ -1317,11 +1458,16 @@ implementation
       begin
         RunError(217);
 >>>>>>> graemeg/fixes_2_2
+=======
+      begin
+        RunError(217);
+>>>>>>> origin/fixes_2_2
       end;
 
 
     function TComObjectFactory.LockServer(fLock: BOOL): HResult; stdcall;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
@@ -1344,11 +1490,15 @@ implementation
 =======
         RunError(217);
 >>>>>>> graemeg/fixes_2_2
+=======
+        RunError(217);
+>>>>>>> origin/fixes_2_2
       end;
 
 
     function TComObjectFactory.GetLicInfo(var licInfo: TLicInfo): HResult; stdcall;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
@@ -1371,11 +1521,15 @@ implementation
 =======
         RunError(217);
 >>>>>>> graemeg/fixes_2_2
+=======
+        RunError(217);
+>>>>>>> origin/fixes_2_2
       end;
 
 
     function TComObjectFactory.RequestLicKey(dwResrved: DWORD; out bstrKey: WideString): HResult; stdcall;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
@@ -1398,6 +1552,9 @@ implementation
 =======
         RunError(217);
 >>>>>>> graemeg/fixes_2_2
+=======
+        RunError(217);
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -1405,6 +1562,7 @@ implementation
       const unkReserved: IUnknown; const iid: TIID; const bstrKey: WideString; out
       vObject): HResult; stdcall;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
@@ -1427,6 +1585,9 @@ implementation
 =======
         RunError(217);
 >>>>>>> graemeg/fixes_2_2
+=======
+        RunError(217);
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -1435,6 +1596,7 @@ implementation
       Description: string; Instancing: TClassInstancing;
       ThreadingModel: TThreadingModel);
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
         Create(ComServer, ComClass, ClassID, Name, '', Description, Instancing, ThreadingModel);
       end;
@@ -1472,23 +1634,31 @@ implementation
 =======
         RunError(217);
 >>>>>>> graemeg/fixes_2_2
+=======
+        RunError(217);
+>>>>>>> origin/fixes_2_2
       end;
 
 
     destructor TComObjectFactory.Destroy;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         ComClassManager.RemoveObjectFactory(Self);
         //RunError(217);
 =======
         RunError(217);
 >>>>>>> graemeg/fixes_2_2
+=======
+        RunError(217);
+>>>>>>> origin/fixes_2_2
       end;
 
 
     function TComObjectFactory.CreateComObject(const Controller: IUnknown
       ): TComObject;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
@@ -1510,11 +1680,15 @@ implementation
 =======
         RunError(217);
 >>>>>>> graemeg/fixes_2_2
+=======
+        RunError(217);
+>>>>>>> origin/fixes_2_2
       end;
 
 
     procedure TComObjectFactory.RegisterClassObject;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
       {$ifdef DEBUG_COM}
 <<<<<<< HEAD
@@ -1534,10 +1708,13 @@ implementation
       {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         RunError(217);
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* Copy from Sample.RGS (http://www.codeproject.com/KB/atl/RegistryMap.aspx)
 HKCR
@@ -1758,6 +1935,8 @@ HKCR
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure TComObjectFactory.UpdateRegistry(Register: Boolean);
       begin
         RunError(217);
@@ -1765,7 +1944,10 @@ HKCR
 
 
 { $define DEBUG_COMDISPATCH}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure DispatchInvoke(const Dispatch: IDispatch; CallDesc: PCallDesc;
       DispIDs: PDispIDList; Params: Pointer; Result: PVariant);
 
@@ -1789,15 +1971,19 @@ HKCR
         try
 {$ifdef DEBUG_COMDISPATCH}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           writeln('DispatchInvoke: Got ',CallDesc^.ArgCount,' arguments   NamedArgs = ',CallDesc^.NamedArgCount);
 {$endif DEBUG_COMDISPATCH}
           { copy and prepare arguments }
           for i:=0 to CallDesc^.ArgCount-1 do
             begin
 {$ifdef DEBUG_COMDISPATCH}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1824,11 +2010,16 @@ HKCR
                   continue;
                 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
               writeln('DispatchInvoke: Params = ',hexstr(PtrInt(Params),SizeOf(Pointer)*2));
 {$endif DEBUG_COMDISPATCH}
               { get plain type }
               CurrType:=CallDesc^.ArgTypes[i] and $3f;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               { by reference? }
               if (CallDesc^.ArgTypes[i] and $80)<>0 then
                 begin
@@ -1837,9 +2028,12 @@ HKCR
                       begin
 {$ifdef DEBUG_COMDISPATCH}
 <<<<<<< HEAD
+<<<<<<< HEAD
                         if printcom then 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                         writeln('Translating var ansistring argument ',PString(Params^)^);
 {$endif DEBUG_COMDISPATCH}
                         StringMap[NextString].ComStr:=StringToOleStr(PString(Params^)^);
@@ -1853,18 +2047,24 @@ HKCR
                       begin
 {$ifdef DEBUG_COMDISPATCH}
 <<<<<<< HEAD
+<<<<<<< HEAD
                         if printcom then 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                         writeln('Got ref. variant containing type: ',PVarData(PPointer(Params)^)^.VType);
 {$endif DEBUG_COMDISPATCH}
                         if PVarData(PPointer(Params)^)^.VType=varString then
                           begin
 {$ifdef DEBUG_COMDISPATCH}
 <<<<<<< HEAD
+<<<<<<< HEAD
                             if printcom then   
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                             writeln('  Casting nested varString: ',Ansistring(PVarData(Params^)^.vString));
 {$endif DEBUG_COMDISPATCH}
                             VarCast(PVariant(Params^)^,PVariant(Params^)^,varOleStr);
@@ -1878,6 +2078,7 @@ HKCR
                       begin
 {$ifdef DEBUG_COMDISPATCH}
 <<<<<<< HEAD
+<<<<<<< HEAD
                                  if printcom then 
                         write('DispatchInvoke: Got ref argument with type = ',CurrType);
                         case CurrType of
@@ -1886,12 +2087,17 @@ HKCR
                         end;
                         if printcom then 
 =======
+=======
+>>>>>>> origin/fixes_2_2
                         write('DispatchInvoke: Got ref argument with type = ',CurrType);
                         case CurrType of
                           varOleStr:
                             write(' Value = ',pwidestring(PPointer(Params)^)^);
                         end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                         writeln;
 {$endif DEBUG_COMDISPATCH}
                         Arguments[i].VType:=CurrType or VarByRef;
@@ -1901,18 +2107,25 @@ HKCR
                   end
                 end
 <<<<<<< HEAD
+<<<<<<< HEAD
               else   { by-value argument }
 =======
               else
 >>>>>>> graemeg/fixes_2_2
+=======
+              else
+>>>>>>> origin/fixes_2_2
                 case CurrType of
                   varStrArg:
                     begin
 {$ifdef DEBUG_COMDISPATCH}
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if printcom then 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                       writeln('Translating ansistring argument ',PString(Params)^);
 {$endif DEBUG_COMDISPATCH}
                       StringMap[NextString].ComStr:=StringToOleStr(PString(Params)^);
@@ -1926,6 +2139,7 @@ HKCR
                   varVariant:
                     begin
 {$ifdef DEBUG_COMDISPATCH}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1972,6 +2186,8 @@ HKCR
                       Arguments[i].VType:=CurrType;
                       Arguments[i].VDouble:=PDouble(Params)^;
 =======
+=======
+>>>>>>> origin/fixes_2_2
                       writeln('Unimplemented variant dispatch');
 {$endif DEBUG_COMDISPATCH}
                     end;
@@ -1984,12 +2200,16 @@ HKCR
 {$endif DEBUG_COMDISPATCH}
                       Arguments[i].VType:=CurrType;
                       move(PPointer(Params)^,Arguments[i].VDouble,sizeof(Double));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                       inc(PDouble(Params));
                     end;
                   else
                     begin
 {$ifdef DEBUG_COMDISPATCH}
+<<<<<<< HEAD
 <<<<<<< HEAD
                       if printcom then 
                       write('DispatchInvoke: Got argument with type ',CurrType);
@@ -1999,12 +2219,17 @@ HKCR
                         else
                           if printcom then 
 =======
+=======
+>>>>>>> origin/fixes_2_2
                       write('DispatchInvoke: Got argument with type ',CurrType);
                       case CurrType of
                         varOleStr:
                           write(' Value = ',pwidestring(Params)^);
                         else
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                           write(' Value = ',hexstr(PtrInt(PPointer(Params)^),SizeOf(Pointer)*2));
                       end;
                       writeln;
@@ -2033,20 +2258,27 @@ HKCR
             DISPATCH_PROPERTYPUT:
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (Arguments[0].VType and varTypeMask) = varDispatch then
                   InvokeKind:=DISPATCH_PROPERTYPUTREF;
                 { first name is actually the name of the property to set }
                 DispIDs^[0]:=DISPID_PROPERTYPUT;
 =======
+=======
+>>>>>>> origin/fixes_2_2
                 if (Arguments[0].VType and varDispatch)<>0 then
                   InvokeKind:=DISPATCH_PROPERTYPUTREF;
                 { first name is actually the name of the property to set }
                 DispIDs^[0]:=DISPATCH_PROPERTYPUT;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 DispParams.rgdispidNamedArgs:=@DispIDs^[0];
                 inc(DispParams.cNamedArgs);
               end;
             DISPATCH_METHOD:
+<<<<<<< HEAD
 <<<<<<< HEAD
               { It appears that certain COM servers expect both DISPATCH_METHOD and DISPATCH_PROPERTYGET
                 flags for anything returning a result, see bug #24352 }
@@ -2056,11 +2288,16 @@ HKCR
 {$ifdef DEBUG_COMDISPATCH}
          if printcom then 
 =======
+=======
+>>>>>>> origin/fixes_2_2
               if assigned(Result) and (CallDesc^.ArgCount=0) then
                 InvokeKind:=DISPATCH_METHOD or DISPATCH_PROPERTYGET;
           end;
 {$ifdef DEBUG_COMDISPATCH}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           writeln('DispatchInvoke: MethodID: ',MethodID,' InvokeKind: ',InvokeKind);
 {$endif DEBUG_COMDISPATCH}
           { do the call and check the result }
@@ -2100,11 +2337,15 @@ HKCR
         NameCount:=0;
    	    OrigNames:=Names;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef DEBUG_COMDISPATCH} 
                 if printcom then 
 =======
 {$ifdef DEBUG_COMDISPATCH}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifdef DEBUG_COMDISPATCH}
+>>>>>>> origin/fixes_2_2
         writeln('SearchIDs: Searching ',Count,' IDs');
 {$endif DEBUG_COMDISPATCH}
       	for i:=1 to Count do
@@ -2112,9 +2353,12 @@ HKCR
        	    NameLen:=strlen(Names);
 {$ifdef DEBUG_COMDISPATCH}
 <<<<<<< HEAD
+<<<<<<< HEAD
                      if printcom then 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             writeln('SearchIDs: Original name: ',Names,' Len: ',NameLen);
 {$endif DEBUG_COMDISPATCH}
       	    NewNameLen:=MultiByteToWideChar(0,0,Names,NameLen,nil,0)+1;
@@ -2128,9 +2372,12 @@ HKCR
       	    NamesData[CurrentNameDataUsed+NewNameLen-1]:=#0;
 {$ifdef DEBUG_COMDISPATCH}
 <<<<<<< HEAD
+<<<<<<< HEAD
                    if printcom then 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             writeln('SearchIDs: Translated name: ',WideString(PWideChar(@NamesData[CurrentNameDataUsed])));
 {$endif DEBUG_COMDISPATCH}
       	    inc(CurrentNameDataUsed,NewNameLen);
@@ -2146,9 +2393,12 @@ HKCR
          ,IDs);
 {$ifdef DEBUG_COMDISPATCH}
 <<<<<<< HEAD
+<<<<<<< HEAD
                  if printcom then 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         writeln('SearchIDs: GetIDsOfNames result = ',hexstr(res,SizeOf(HRESULT)*2));
         for i:=0 to Count-1 do
           writeln('SearchIDs: ID[',i,'] = ',ids^[i]);
@@ -2171,12 +2421,16 @@ HKCR
         fillchar(ids,sizeof(ids),0);
 {$ifdef DEBUG_COMDISPATCH}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
         writeln('ComObjDispatchInvoke called');
          if printcom then 
 =======
         writeln('ComObjDispatchInvoke called');
 >>>>>>> graemeg/fixes_2_2
+=======
+        writeln('ComObjDispatchInvoke called');
+>>>>>>> origin/fixes_2_2
         writeln('ComObjDispatchInvoke: @CallDesc = $',hexstr(PtrInt(CallDesc),SizeOf(Pointer)*2),' CallDesc^.ArgCount = ',CallDesc^.ArgCount);
 {$endif DEBUG_COMDISPATCH}
       	if tvardata(source).vtype=VarDispatch then
@@ -2202,6 +2456,7 @@ HKCR
         invokeresult : HRESULT;
         preallocateddata : array[0..15] of TVarData;
 <<<<<<< HEAD
+<<<<<<< HEAD
         Arguments : PVarData;
         CurrType, i : byte;
 <<<<<<< HEAD
@@ -2222,11 +2477,16 @@ HKCR
         dispidNamed: dispid;
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
         Arguments : ^TVarData;
         NamedArguments : PPointer;
         CurrType : byte;
         namedcount,i : byte;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
         { use preallocated space, i.e. can we avoid a getmem call? }
         if desc^.calldesc.argcount<=Length(preallocateddata) then
@@ -2235,6 +2495,7 @@ HKCR
           GetMem(Arguments,desc^.calldesc.argcount*sizeof(TVarData));
 
         { prepare parameters }
+<<<<<<< HEAD
 <<<<<<< HEAD
         if desc^.CallDesc.ArgCount > 0 then
           for i:=0 to desc^.CallDesc.ArgCount-1 do
@@ -2332,6 +2593,8 @@ HKCR
         end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
         for i:=0 to desc^.CallDesc.ArgCount-1 do
           begin
 {$ifdef DEBUG_DISPATCH}
@@ -2397,7 +2660,10 @@ HKCR
         dispparams.cNamedArgs:=namedcount;
         dispparams.rgdispidNamedArgs:=pointer(NamedArguments);
         flags:=0;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         invokeresult:=disp.Invoke(
                 desc^.DispId, { DispID: LongInt; }
                 GUID_NULL, { const iid : TGUID; }
@@ -2425,6 +2691,7 @@ HKCR
 
     constructor TTypedComObjectFactory.Create(AComServer: TComServerObject; TypedComClass: TTypedComClass; const AClassID: TGUID;
       AInstancing: TClassInstancing; AThreadingModel: TThreadingModel = tmSingle);
+<<<<<<< HEAD
 <<<<<<< HEAD
       var
         TypedName, TypedDescription, TypedVersion: WideString;
@@ -2466,10 +2733,15 @@ HKCR
       begin
         RunError(217);
 >>>>>>> graemeg/fixes_2_2
+=======
+      begin
+        RunError(217);
+>>>>>>> origin/fixes_2_2
       end;
 
 
     function TTypedComObjectFactory.GetInterfaceTypeInfo(TypeFlags: Integer): ITypeInfo;
+<<<<<<< HEAD
 <<<<<<< HEAD
     var
       index, ImplTypeFlags: Integer;
@@ -2953,6 +3225,8 @@ HKCR
         OleCheck(err);
       end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       begin
         RunError(217);
       end;
@@ -2963,7 +3237,10 @@ HKCR
         RunError(217);
       end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 const
   Initialized : boolean = false;
@@ -2986,6 +3263,7 @@ initialization
 
   if not(IsLibrary) then
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef wince}
     if (CoInitFlags=-1) or not(assigned(comobj.CoInitializeEx)) then
       Initialized:=Succeeded(CoInitialize(nil))
@@ -2996,6 +3274,11 @@ initialization
       Initialized:=Succeeded(CoInitialize(nil))
     else
 >>>>>>> graemeg/fixes_2_2
+=======
+    if (CoInitFlags=-1) or not(assigned(comobj.CoInitializeEx)) then
+      Initialized:=Succeeded(CoInitialize(nil))
+    else
+>>>>>>> origin/fixes_2_2
       Initialized:=Succeeded(comobj.CoInitializeEx(nil, CoInitFlags));
 
   SafeCallErrorProc:=@SafeCallErrorHandler;
@@ -3011,6 +3294,10 @@ finalization
 end.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2

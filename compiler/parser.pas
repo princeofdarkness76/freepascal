@@ -61,11 +61,14 @@ implementation
          current_asmdata:=nil;
          current_procinfo:=nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
          current_structdef:=nil;
          current_genericdef:=nil;
          current_specializedef:=nil;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
          loaded_units:=TLinkedList.Create;
 
@@ -126,6 +129,7 @@ implementation
            system_x86_64_aros:
              include(supported_calling_conventions,pocall_syscall);
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef i8086}
            system_i8086_msdos:
              begin
@@ -164,6 +168,10 @@ implementation
 {$endif i8086}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+           system_m68k_amiga:
+             include(supported_calling_conventions,pocall_syscall);
+>>>>>>> origin/fixes_2_2
          end;
       end;
 
@@ -177,11 +185,14 @@ implementation
          current_procinfo:=nil;
          current_asmdata:=nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
          current_structdef:=nil;
          current_genericdef:=nil;
          current_specializedef:=nil;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
          { unload units }
          if assigned(loaded_units) then
@@ -410,10 +421,14 @@ implementation
              if assigned(current_module) then
                internalerror(200501158);
 <<<<<<< HEAD
+<<<<<<< HEAD
              set_current_module(tppumodule.create(nil,'',filename,false));
 =======
              set_current_module(tppumodule.create(nil,filename,'',false));
 >>>>>>> graemeg/fixes_2_2
+=======
+             set_current_module(tppumodule.create(nil,filename,'',false));
+>>>>>>> origin/fixes_2_2
              addloadedunit(current_module);
              main_module:=current_module;
              current_module.state:=ms_compile;
@@ -566,6 +581,7 @@ implementation
              end;
            dec(compile_level);
 <<<<<<< HEAD
+<<<<<<< HEAD
            { If used units are compiled current_module is already the same as
              the stored module. Now if the unit is not finished its scanner is
              not yet freed and thus set_current_module would reopen the scanned
@@ -579,6 +595,9 @@ implementation
 =======
            set_current_module(olddata^.old_current_module);
 >>>>>>> graemeg/fixes_2_2
+=======
+           set_current_module(olddata^.old_current_module);
+>>>>>>> origin/fixes_2_2
 
            dispose(olddata);
          end;

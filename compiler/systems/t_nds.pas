@@ -786,18 +786,25 @@ begin
   Replace(cmdstr,'$OPT',Info.ExtraOptions);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   Replace(cmdstr,'$EXE',(maybequoted(ScriptFixFileName(ChangeFileExt(current_module.exefilename,preName)))));
 =======
   Replace(cmdstr,'$EXE',(maybequoted(ScriptFixFileName(ChangeFileExt(current_module.exefilename^,preName)))));
 >>>>>>> graemeg/fixes_2_2
+=======
+  Replace(cmdstr,'$EXE',(maybequoted(ScriptFixFileName(ChangeFileExt(current_module.exefilename^,preName)))));
+>>>>>>> origin/fixes_2_2
   Replace(cmdstr,'$RES',(maybequoted(ScriptFixFileName(outputexedir+Info.ResName))));
   Replace(cmdstr,'$STATIC',StaticStr);
   Replace(cmdstr,'$STRIP',StripStr);
   Replace(cmdstr,'$GCSECTIONS',GCSectionsStr);
 <<<<<<< HEAD
+<<<<<<< HEAD
   Replace(cmdstr,'$MAP',MapStr);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Replace(cmdstr,'$DYNLINK',DynLinkStr);
   
   success:=DoExec(FindUtil(utilsprefix+BinStr),cmdstr,true,false);
@@ -811,9 +818,12 @@ begin
     begin
       success:=DoExec(FindUtil(utilsprefix + 'objcopy'), '-O binary '+ 
 <<<<<<< HEAD
+<<<<<<< HEAD
         ChangeFileExt(current_module.exefilename, preName) + ' ' + 
         ChangeFileExt(current_module.exefilename, preName+target_info.exeext),
 =======
+=======
+>>>>>>> origin/fixes_2_2
         ChangeFileExt(current_module.exefilename^, preName) + ' ' + 
         ChangeFileExt(current_module.exefilename^, preName+target_info.exeext),
 >>>>>>> graemeg/fixes_2_2

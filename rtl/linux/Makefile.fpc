@@ -92,6 +92,9 @@ endif
 CPU_UNITS=x86 ports cpu mmx
 SYSINIT_UNITS=si_prc si_c21g si_c21 si_c si_dll si_uc
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2_2
 endif
 
 ifeq ($(ARCH),x86_64)
@@ -131,6 +134,10 @@ endif
 
 
 ifeq ($(ARCH),arm)
+override LOADERS+=ucprt0
+endif
+
+ifeq ($(CPU_TARGET),arm)
 override LOADERS+=ucprt0
 endif
 
@@ -284,6 +291,9 @@ si_g$(PPUEXT) : si_g.pp si_intf.inc $(ARCH)/sysnr.inc $(ARCH)/si_g.inc $(SYSTEMU
 ucprt0$(OEXT) : $(CPU_TARGET)/ucprt0.as
         $(AS) $(ASTARGET) -o $(UNITTARGETDIRPREFIX)$@ $<
 
+ucprt0$(OEXT) : $(CPU_TARGET)/ucprt0.as
+        $(AS) $(ASTARGET) -o $(UNITTARGETDIRPREFIX)$@ $<
+
 
 #
 # $(SYSTEMUNIT) Units ($(SYSTEMUNIT), Objpas, Strings)
@@ -400,10 +410,14 @@ rtlconsts$(PPUEXT) : $(OBJPASDIR)/rtlconsts.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PP
 #
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) math$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
 =======
 macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) math$(PPUEXT)
 >>>>>>> graemeg/fixes_2_2
+=======
+macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) math$(PPUEXT)
+>>>>>>> origin/fixes_2_2
         $(COMPILER) $(INC)/macpas.pp $(REDIR)
 
 #

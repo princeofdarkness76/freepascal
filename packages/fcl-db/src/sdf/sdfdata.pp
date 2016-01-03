@@ -137,7 +137,10 @@ uses
   DB, Classes, SysUtils, DBConst;
 =======
   DB, Classes, SysUtils;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 //-----------------------------------------------------------------------------
@@ -187,15 +190,21 @@ type
     FRecInfoOfs         :Integer;
     FLastBookmark       :PtrInt;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FSaveChanges        :Boolean;
     FDefaultRecordLength:Cardinal;
     FDataOffset         : Integer;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FRecInfoOfs         :Integer;
     FBookmarkOfs        :Integer;
     FSaveChanges        :Boolean;
     FDefaultRecordLength:Cardinal;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   protected
     function AllocRecordBuffer: TRecordBuffer; override;
     procedure FreeRecordBuffer(var Buffer: TRecordBuffer); override;
@@ -321,18 +330,24 @@ begin
   FDefaultRecordLength := 250;
   FFileMustExist  := TRUE;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FLoadFromStream := False;
   FRecordSize   := 0;
   FTrimSpace    := TRUE;
   FSchema       := TStringList.Create;
   FData         := TSDFStringList.Create;  // Load the textfile into a StringList
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FLoadfromStream := False;
   FRecordSize   := 0;
   FTrimSpace     := TRUE;
   FSchema       := TStringList.Create;
   FData         := TStringList.Create;  // Load the textfile into a stringlist
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   inherited Create(AOwner);
 end;
 
@@ -397,7 +412,10 @@ begin
 =======
   if (Maxlen = 0) then
     Maxlen := FDefaultRecordLength;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   LstFields := TStringList.Create;
   try
     LoadFieldScheme(LstFields, MaxLen);
@@ -441,7 +459,10 @@ begin
 =======
   if FRecordSize = 0 then
     FRecordSize := FDefaultRecordLength;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   BookmarkSize := SizeOf(PtrInt);
   FRecInfoOfs := FRecordSize + CalcFieldsSize; // Initialize the offset for TRecInfo in the buffer
 {$IFDEF FPC_REQUIRES_PROPER_ALIGNMENT}
@@ -797,7 +818,10 @@ begin
       if p > Field.Size then
         p := Field.Size;
       Move(Buffer^, RecBuf[0], p);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
   end
   else // fkCalculated, fkLookup

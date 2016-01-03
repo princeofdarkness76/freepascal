@@ -14,6 +14,7 @@
 unit GdbInt;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$mode objfpc}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -55,6 +56,8 @@ interface
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$i gdbver.inc}
 
 interface
@@ -64,12 +67,16 @@ interface
 {.$define Verbose}
 {.$define DebugCommand}
 {$define NotImplemented}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Is create_breakpoint_hook deprecated? }
 { Seem not so for 6.1 }
 {$define GDB_HAS_DEPRECATED_CBPH}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {
@@ -301,6 +308,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 {$endif def GDB_V606}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { 6.1.x }
 {$ifdef GDB_V601}
   {$info using gdb 6.1.x}
@@ -330,11 +339,15 @@ interface
   {$define GDB_NEEDS_NO_ERROR_INIT}
   {$define GDB_HAS_DB_COMMANDS}
 {$endif def GDB_V604}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { 6.5.x }
 {$ifdef GDB_V605}
   {$info using gdb 6.5.x}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$define GDB_VERSION_RECOGNIZED}
   {$define GDB_V6}
@@ -425,6 +438,8 @@ interface
 >>>>>>> origin/cpstrnew
 {$endif def GDB_V606}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$define GDB_V6}
   {$define GDB_NEEDS_NO_ERROR_INIT}
 {$endif def GDB_V605}
@@ -438,13 +453,17 @@ interface
   {$define GDB_USES_EXPAT_LIB}
   {$define GDB_HAS_DEBUG_FILE_DIRECTORY}
 {$endif def GDB_V605}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { 6.7.x }
 {$ifdef GDB_V607}
   {$info using gdb 6.7.x}
   {$define GDB_V6}
   {$define GDB_HAS_DB_COMMANDS}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$define GDB_USES_BP_LOCATION}
 <<<<<<< HEAD
@@ -593,11 +612,16 @@ interface
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$define GDB_NEEDS_NO_ERROR_INIT}
   {$define GDB_USES_EXPAT_LIB}
   {$define GDB_HAS_DEBUG_FILE_DIRECTORY}
 {$endif def GDB_V605}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifdef GDB_V6}
   {$define GDB_HAS_SYSROOT}
@@ -606,6 +630,7 @@ interface
   {$define GDB_INIT_HAS_ARGV0}
 {$endif GDB_V6}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -630,12 +655,15 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { GDB has a simulator for powerpc CPU
   it is integrated into GDB by default }
 {$ifdef cpupowerpc}
   {$define GDB_HAS_SIM}
 {$endif cpupowerpc}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef Solaris}
   {$ifdef Sparc}
@@ -653,6 +681,9 @@ interface
 =======
 {$ifdef go32v2}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifdef go32v2}
+>>>>>>> origin/fixes_2_2
   {$undef NotImplemented}
   {$LINKLIB gdb}
   {$ifdef GDB_HAS_SIM}
@@ -663,6 +694,7 @@ interface
   {$LINKLIB opcodes}
   {$LINKLIB history}
   {$LINKLIB iberty}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$ifdef GDB_USES_LIBDECNUMBER}
     {$LINKLIB decnumber}
@@ -680,15 +712,21 @@ interface
 =======
   {$LINKLIB intl}
 >>>>>>> graemeg/fixes_2_2
+=======
+  {$LINKLIB intl}
+>>>>>>> origin/fixes_2_2
   {$LINKLIB dbg}
   {$LINKLIB c}
 {$endif go32v2}
 
 {$ifdef linux}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NotImplemented}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$undef NotImplemented}
   {$LINKLIB libgdb.a}
   {$ifdef GDB_HAS_SIM}
@@ -699,6 +737,7 @@ interface
   {$LINKLIB libopcodes.a}
   {$LINKLIB libhistory.a}
   {$LINKLIB libiberty.a}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$ifdef GDB_USES_LIBDECNUMBER}
     {$LINKLIB decnumber}
@@ -712,17 +751,23 @@ interface
   {$LINKLIB ncurses}
 {$endif NotImplemented}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$ifdef GDB_USES_EXPAT_LIB}
     {$LINKLIB expat}
   {$endif GDB_USES_EXPAT_LIB}
   {$LINKLIB ncurses}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$LINKLIB m}
   {$LINKLIB dl}
   {$LINKLIB c}
   {$LINKLIB gcc}
 {$endif linux}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef dragonfly}
 {$ifdef NotImplemented}
@@ -764,10 +809,14 @@ interface
 =======
 {$ifdef freebsd}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifdef freebsd}
+>>>>>>> origin/fixes_2_2
   {$ifdef FreeBSD5}  //5.4+ ?
     {$linklib kvm}
   {$endif}
   {$undef NotImplemented}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$LINKLIB libgdb.a}
   {$ifdef GDB_HAS_SIM}
@@ -807,6 +856,8 @@ interface
   {$undef NotImplemented}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$LINKLIB gdb}
   {$ifdef GDB_HAS_SIM}
     {$LINKLIB sim}
@@ -819,6 +870,7 @@ interface
   {$LINKLIB ncurses}
   {$LINKLIB m}
   {$LINKLIB iberty}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$LINKLIB intl}
   {$ifdef GDB_USES_LIBDECNUMBER}
@@ -839,6 +891,8 @@ interface
 {$ifdef solaris}
 {$ifdef NotImplemented}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$LINKLIB intl}        { does not seem to exist on netbsd LINKLIB dl,
                             but I use GDB CVS snapshots for the *BSDs}
   {$ifdef GDB_USES_EXPAT_LIB}
@@ -849,7 +903,10 @@ interface
 {$endif freebsd}
 
 {$ifdef netbsd}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$undef NotImplemented}
   {$LINKLIB gdb}
   {$ifdef GDB_HAS_SIM}
@@ -860,6 +917,7 @@ interface
   {$LINKLIB opcodes}
   {$LINKLIB history}
   {$LINKLIB iberty}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$LINKLIB curses}
   {$LINKLIB m}
@@ -884,6 +942,8 @@ interface
 {$ifdef openbsd}
 {$ifdef NotImplemented}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$LINKLIB ncurses}
   {$LINKLIB m}
   {$LINKLIB iberty}
@@ -897,7 +957,10 @@ interface
 {$endif netbsd}
 
 {$ifdef openbsd}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$undef NotImplemented}
   {$LINKLIB gdb}
   {$ifdef GDB_HAS_SIM}
@@ -911,6 +974,7 @@ interface
   {$LINKLIB ncurses}
   {$LINKLIB m}
   {$LINKLIB iberty}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$ifndef GDB_DISABLE_INTL}
     {$LINKLIB intl}
@@ -927,17 +991,23 @@ interface
   { does not seem to exist on netbsd LINKLIB dl}
 {$endif NotImplemented}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$LINKLIB intl}
   {$ifdef GDB_USES_EXPAT_LIB}
     {$LINKLIB expat}
   {$endif GDB_USES_EXPAT_LIB}
   { does not seem to exist on netbsd LINKLIB dl}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$LINKLIB c}
   {$LINKLIB gcc}
 {$endif netbsd}
 
 {$ifdef win32}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef NotImplemented}
   {$undef NotImplemented}
@@ -946,17 +1016,23 @@ interface
    {$LINKLIB libsim.a}
   {$endif GDB_HAS_SIM}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$undef NotImplemented}
   {$LINKLIB libgdb.a}
  {$ifdef GDB_HAS_SIM}
   {$LINKLIB libsim.a}
  {$endif GDB_HAS_SIM}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$LINKLIB libbfd.a}
   {$LINKLIB libreadline.a}
   {$LINKLIB libopcodes.a}
   {$LINKLIB libhistory.a}
   {$LINKLIB libiberty.a}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   {$ifdef USE_MINGW_GDB}
@@ -987,6 +1063,9 @@ interface
 =======
   {$LINKLIB libintl.a}
 >>>>>>> graemeg/fixes_2_2
+=======
+  {$LINKLIB libintl.a}
+>>>>>>> origin/fixes_2_2
   {$ifdef USE_MINGW_GDB}
     {$LINKLIB libm.a}
     {$LINKLIB libmoldname.a}
@@ -996,6 +1075,7 @@ interface
     {$LINKLIB libmingw32.a}
     {$LINKLIB libmsvcrt.a}
   {$else not USE_MINGW_GDB}
+<<<<<<< HEAD
 <<<<<<< HEAD
     {$LINKLIB gcc}
     {$LINKLIB cygwin} { alias of libm.a and libc.a }
@@ -1062,6 +1142,8 @@ interface
 {$ifdef beos}
 {$ifdef NotImplemented}
 =======
+=======
+>>>>>>> origin/fixes_2_2
     {$LINKLIB libiconv.a}
     {$LINKLIB libncurses.a}
     {$ifdef GDB_USES_EXPAT_LIB}
@@ -1076,7 +1158,10 @@ interface
 {$endif win32}
 
 {$ifdef beos}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { still need some work... stollen from netbsd}
   {$undef NotImplemented}
   {$LINKLIB gdb}
@@ -1090,6 +1175,7 @@ interface
   {$LINKLIB iberty}
   {$LINKLIB ncurses}
   { $ LINKLIB m} // include in libroot under BeOS
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$ifndef GDB_DISABLE_INTL}
     {$LINKLIB intl}
@@ -1105,17 +1191,23 @@ interface
   {$endif GDB_USES_LIBPYTHON}
 {$endif NotImplemented}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$LINKLIB intl}
   {$ifdef GDB_USES_EXPAT_LIB}
     {$LINKLIB expat}
   {$endif GDB_USES_EXPAT_LIB}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { does not seem to exist on netbsd LINKLIB dl}
   { $ LINKLIB c} // This is libroot under BeOS, and always linked
   {$LINKLIB debug}
   {$LINKLIB gcc}
 {$endif beos}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1137,6 +1229,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef go32v2}
   {$define supportexceptions}
 {$endif go32v2}
@@ -1156,6 +1250,7 @@ interface
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(CPUSPARC) and defined(LINUX)}
   {$define GDB_CORE_ADDR_FORCE_64BITS}
 {$endif}
@@ -1167,6 +1262,8 @@ type
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   psyminfo=^tsyminfo;
   tsyminfo=record
     address  : ptrint;
@@ -1182,10 +1279,14 @@ type
     args : pchar;
     line_number : longint;
 <<<<<<< HEAD
+<<<<<<< HEAD
     address : CORE_ADDR;
 =======
     address : ptrint;
 >>>>>>> graemeg/fixes_2_2
+=======
+    address : ptrint;
+>>>>>>> origin/fixes_2_2
     level : longint;
     constructor init;
     destructor done;
@@ -1204,6 +1305,7 @@ const
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$if defined(CPUSPARC) and defined(LINUX)}
   {$define GDB_CORE_ADDR_FORCE_64BITS}
@@ -1212,14 +1314,20 @@ type
 =======
 {$if defined(CPUSPARC) and defined(LINUX)}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$if defined(CPUSPARC) and defined(LINUX)}
+>>>>>>> origin/fixes_2_2
   CORE_ADDR = qword;
 {$else}
   CORE_ADDR = ptrint; { might be target dependent PM }
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   streamtype = (afile,astring);
   C_FILE     = ptrint; { at least under DJGPP }
   P_C_FILE   = ^C_FILE;
@@ -1227,6 +1335,7 @@ type
 type
 
   pui_file = ^ui_file;
+<<<<<<< HEAD
 <<<<<<< HEAD
   pstdio_file = ^stdio_file;
 
@@ -1238,6 +1347,11 @@ type
   ui_file_flush_ftype = procedure(stream : pui_file);cdecl;
   ui_file_write_ftype = procedure(stream : pui_file;buf : pchar;len : longint);cdecl;
 >>>>>>> graemeg/fixes_2_2
+=======
+
+  ui_file_flush_ftype = procedure(stream : pui_file);cdecl;
+  ui_file_write_ftype = procedure(stream : pui_file;buf : pchar;len : longint);cdecl;
+>>>>>>> origin/fixes_2_2
   ui_file_fputs_ftype = procedure(buf : pchar; stream : pui_file);cdecl;
   ui_file_delete_ftype = procedure(stream : pui_file);cdecl;
   ui_file_isatty_ftype = function(stream : pui_file) : longbool;cdecl;
@@ -1248,22 +1362,28 @@ type
   ui_file_read_ftype = function (stream : pui_file; buffer : pchar; len : longint):longint;cdecl;
   {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef GDB_UI_FILE_HAS_FSEEK}
   ui_file_fseek_ftype = function (stream : pui_file; offset : longint{clong}; whence : longint {cint}) : longint{cint};cdecl;
   {$endif GDB_UI_FILE_HAS_FSEEK}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   ui_file = record
       magic : plongint;
       to_flush  : ui_file_flush_ftype;
       to_write  : ui_file_write_ftype;
 <<<<<<< HEAD
+<<<<<<< HEAD
       {$ifdef GDB_UI_FILE_HAS_WRITE_ASYNC}
       to_write_async_safe   : ui_file_write_async_save_ftype;
       {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       to_fputs  : ui_file_fputs_ftype;
       {$ifdef GDB_V6}
       to_read   : ui_file_read_ftype;
@@ -1272,6 +1392,7 @@ type
       to_isatty : ui_file_isatty_ftype;
       to_rewind : ui_file_rewind_ftype;
       to_put    : ui_file_put_ftype;
+<<<<<<< HEAD
 <<<<<<< HEAD
      {$ifdef GDB_UI_FILE_HAS_FSEEK}
      to_fseek   : ui_file_fseek_ftype;
@@ -1291,6 +1412,11 @@ type
     end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+      to_data   : pointer;
+    end;
+
+>>>>>>> origin/fixes_2_2
   { used to delete stdio_ui_file  gdb_stdout and gdb_stderr }
   procedure ui_file_delete(stream : pui_file);cdecl;external;
 
@@ -1355,11 +1481,14 @@ type
   pgdbinterface=^tgdbinterface;
   tgdbinterface=object
 <<<<<<< HEAD
+<<<<<<< HEAD
   private
     stop_breakpoint_number : longint;
   public
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     gdberrorbuf,
     gdboutputbuf  : tgdbbuffer;
     got_error,
@@ -1375,6 +1504,7 @@ type
     frame_begin_seen : boolean;
     frame_level,
     command_level,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -1393,6 +1523,10 @@ type
     stop_breakpoint_number,
     current_address,
 >>>>>>> graemeg/fixes_2_2
+=======
+    stop_breakpoint_number,
+    current_address,
+>>>>>>> origin/fixes_2_2
     current_line_number,
     signal_start,
     signal_end,
@@ -1411,6 +1545,7 @@ type
     signal_name,
     signal_string : pchar;
 <<<<<<< HEAD
+<<<<<<< HEAD
     current_address,
     current_pc      : CORE_ADDR;
     { breakpoint }
@@ -1423,6 +1558,8 @@ type
     switch_to_user     : boolean;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
     current_pc      : CORE_ADDR;
     { breakpoint }
     last_breakpoint_number,
@@ -1430,7 +1567,10 @@ type
     last_breakpoint_line : longint;
     last_breakpoint_file : pchar;
     invalid_breakpoint_line : boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { init }
     constructor init;
     destructor  done;
@@ -1448,19 +1588,26 @@ type
     procedure clear_frames;
     { Highlevel }
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure GetAddrSyminfo(addr:ptrint;var si:tsyminfo);
     function SelectSourceline(fn:pchar;line,BreakIndex:longint): Boolean;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     user_screen_shown,
     switch_to_user     : boolean;
     procedure GetAddrSyminfo(addr:ptrint;var si:tsyminfo);
     procedure SelectSourceline(fn:pchar;line:longint);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure StartSession;
     procedure BreakSession;
     procedure EndSession(code:longint);
     procedure DebuggerScreen;
     procedure UserScreen;
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure FlushAll; virtual;
     function Query(question : pchar; args : pchar) : longint; virtual;
@@ -1470,6 +1617,10 @@ type
     { Hooks }
     procedure DoSelectSourceline(const fn:string;line:longint);virtual;
 >>>>>>> graemeg/fixes_2_2
+=======
+    { Hooks }
+    procedure DoSelectSourceline(const fn:string;line:longint);virtual;
+>>>>>>> origin/fixes_2_2
     procedure DoStartSession;virtual;
     procedure DoBreakSession;virtual;
     procedure DoEndSession(code:longint);virtual;
@@ -1495,6 +1646,7 @@ function  inferior_pid : longint;
 type
   ui_out = pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef GDB_NO_UIOUT}
 var
   uiout : ui_out;cvar;external;
@@ -1508,11 +1660,16 @@ var
 function cli_out_new (stream : pui_file):ui_out;cdecl;external;
 {$endif GDB_V6}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var
   uiout : ui_out;cvar;external;
 function cli_out_new (stream : pui_file):ui_out;cdecl;external;
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifdef go32v2}
   { needed to be sure %fs contains the DOS memory selector
@@ -1551,6 +1708,7 @@ type
   pjmp_buf = pdpmi_jmp_buf;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   function setjmp(var rec : jmp_buf) : longint;cdecl;external;
 
@@ -1560,6 +1718,10 @@ type
   function setjmp(var rec : jmp_buf) : longint;cdecl;external;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+  function setjmp(var rec : jmp_buf) : longint;cdecl;external;
+
+>>>>>>> origin/fixes_2_2
   procedure longjmp(var rec : jmp_buf;return_value : longint);cdecl;external;
 
   procedure reload_fs;assembler;
@@ -1576,11 +1738,15 @@ type
     0 :
     { greatest value found in cygwin machine/setjmp.h for i386 }
 <<<<<<< HEAD
+<<<<<<< HEAD
     { mingw uses int[16] C type for i386 }
     (unknown_field : array [1..15] of longint;);
 =======
     (unknown_field : array [1..13] of longint;);
 >>>>>>> graemeg/fixes_2_2
+=======
+    (unknown_field : array [1..13] of longint;);
+>>>>>>> origin/fixes_2_2
     1 :
     (eax,ebx,ecx,edx : longint;
     esi,edi,ebp,esp,eip : longint;);
@@ -1617,6 +1783,7 @@ type
      pblock = ^block;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      tframe_id = record
        stack_addr, code_addr, special_addr : CORE_ADDR;
        addr_p_flags : byte;{ for three 1 bit flags
@@ -1626,11 +1793,14 @@ type
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      tlanguage = (language_unknown,language_auto,language_c,
        language_cplus,language_java,language_chill,
        language_fortran,language_m2,language_asm,
        language_scm,language_pascal,language_objc);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
      bptype = (
 {$ifdef GDB_HAS_BP_NONE}
@@ -1640,6 +1810,9 @@ type
 =======
      bptype = (bp_breakpoint,bp_hardware_breakpoint,
 >>>>>>> graemeg/fixes_2_2
+=======
+     bptype = (bp_breakpoint,bp_hardware_breakpoint,
+>>>>>>> origin/fixes_2_2
        bp_until,bp_finish,bp_watchpoint,bp_hardware_watchpoint,
        bp_read_watchpoint,bp_access_watchpoint,
        bp_longjmp,bp_longjmp_resume,bp_step_resume,
@@ -1650,6 +1823,7 @@ type
 
      bpdisp = (del,del_at_next_stop,disable,donttouch);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
      pbp_location = ^bp_location;
 
@@ -1689,11 +1863,17 @@ type
      pbreakpoint = ^breakpoint;
      breakpoint = record
 >>>>>>> graemeg/fixes_2_2
+=======
+{$PACKRECORDS 4}
+     pbreakpoint = ^breakpoint;
+     breakpoint = record
+>>>>>>> origin/fixes_2_2
           next : pbreakpoint;
           typ : bptype;
           enable : tenable;
           disposition : bpdisp;
           number : longint;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef GDB_USES_BP_LOCATION}
           loc : pbp_location;
@@ -1769,6 +1949,8 @@ type
           gdbarch : pgdbarch;
 {$endif GDB_USES_BP_OPS}
 =======
+=======
+>>>>>>> origin/fixes_2_2
           address : CORE_ADDR;
           line_number : longint;
           source_file : pchar;
@@ -1781,7 +1963,10 @@ type
           frame : CORE_ADDR;
           cond : pointer; {^expression}
           addr_string : ^char;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           language : tlanguage;
           input_radix : longint;
           cond_string : ^char;
@@ -1797,6 +1982,7 @@ type
           section : pointer; {^asection}
        end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1981,11 +2167,14 @@ type
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      tfreecode=(free_nothing,free_contents,free_linetable);
 
      psymtab = ^symtab;
      symtab = record
           next : psymtab;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef SYMTAB_HAS_COMPUNIT_SYMTAB}
           comp_unit : pointer; {^compunit_symtab }
@@ -1998,6 +2187,8 @@ type
 {$else not SYMTAB_HAS_COMPUNIT_SYMTAB}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           blockvector : pointer; {^blockvector;}
           linetable : pointer; {^linetable;}
           block_line_section : longint;
@@ -2018,24 +2209,31 @@ type
           fullname : pchar;
           objfile : pointer; {^objfile;}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif not SYMTAB_HAS_COMPUNIT_SYMTAB}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        end;
 
      psymtab_and_line = ^symtab_and_line;
      symtab_and_line = record
+<<<<<<< HEAD
 <<<<<<< HEAD
          {$ifdef GDB_HAS_PROGRAM_SPACE}
          pspace : pointer;
          {$endif GDB_HAS_PROGRAM_SPACE}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           symtab : psymtab;
           section : pointer; {^asection;}
           line : longint;
           pc : CORE_ADDR;
           _end : CORE_ADDR;
+<<<<<<< HEAD
 <<<<<<< HEAD
           { Added fields, not used in gdbint,
             but necessary to allocated enough space to
@@ -2060,6 +2258,8 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        end;
 
      symtabs_and_lines = record
@@ -2506,10 +2706,14 @@ type
        end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$PACKRECORDS C}
 =======
 {$PACKRECORDS NORMAL}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$PACKRECORDS NORMAL}
+>>>>>>> origin/fixes_2_2
 
 {*****************************************************************************
                    Define external calls to libgdb.a
@@ -2519,6 +2723,7 @@ var
 { external variables }
   error_return : jmp_buf;cvar;public;
   quit_return  : jmp_buf;cvar;public;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2552,6 +2757,8 @@ var
   { This global variable is declared in defs.h as external
     and instanciated in main.c since version 5.0. }
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$ifdef GDB_HAS_DEPRECATED_CBPH}
   deprecated_create_breakpoint_hook : pointer;cvar;external;
   {$else}
@@ -2560,7 +2767,10 @@ var
   current_target : target_ops;cvar;external;
   stop_pc      : CORE_ADDR;cvar;external;
   { Only used from GDB 5.01 but doesn't hurst otherwise }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   interpreter_p : pchar;cvar;public;
 
 { we need also to declare some vars }
@@ -2575,16 +2785,20 @@ var
 { Whether xdb commands will be handled }
 {$ifdef GDB_HAS_DB_COMMANDS}
 <<<<<<< HEAD
+<<<<<<< HEAD
   { These two global variables are declared in defs.h
     since version 4.18 }
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   xdb_commands : longint;cvar;public;
 
 { Whether dbx commands will be handled }
   dbx_commands : longint;cvar;public;
 {$endif GDB_HAS_DB_COMMANDS}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef GDB_NEEDS_SET_INSTREAM}
 var
@@ -2605,6 +2819,9 @@ var
 =======
 var
 >>>>>>> graemeg/fixes_2_2
+=======
+var
+>>>>>>> origin/fixes_2_2
   gdb_stdout : pui_file;cvar;public;
   gdb_stderr : pui_file;cvar;public;
   gdb_stdlog : pui_file;cvar;public;
@@ -2613,17 +2830,21 @@ var
 {$ifdef GDB_V6}
 (* target IO streams *)
 <<<<<<< HEAD
+<<<<<<< HEAD
   { The three following variables are declared in defs.h
     and instanciated in main.c since version 6.0 }
   gdb_stdin : pui_file;cvar;public;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   gdb_stdtargin : pui_file;cvar;public;
   gdb_stdtargerr : pui_file;cvar;public;
 {$endif}
 
 { used for gdb_stdout and gdb_stderr }
 function  xmalloc(size : longint) : pointer;cdecl;external;
+<<<<<<< HEAD
 <<<<<<< HEAD
 { used for QueryHook }
 { xvasprintf is present at least from GDB 5.3
@@ -2637,6 +2858,8 @@ function xvasprintf(ret : ppchar; msg : pchar) : pchar; varargs; cdecl; external
 procedure xfree(p : pointer); cdecl; external;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function  find_pc_line(i:CORE_ADDR;l:longint):symtab_and_line;cdecl;external;
 function  find_pc_function(i:CORE_ADDR):psymbol;cdecl;external;
 function  lookup_minimal_symbol_by_pc(i : CORE_ADDR):pminimal_symbol;cdecl;external;
@@ -2646,6 +2869,7 @@ procedure gdb_init(argv0 : pchar);cdecl;external;
 procedure gdb_init;cdecl;external;
 {$endif not GDB_INIT_HAS_ARGV0}
 procedure execute_command(p:pchar;i:longint);cdecl;external;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef GDB_TARGET_CLOSE_HAS_PTARGET_ARG}
 procedure target_kill;cdecl;external;
@@ -2657,6 +2881,10 @@ procedure target_close(i:longint);cdecl;external;
 procedure target_kill;cdecl;external;
 procedure target_close(i:longint);cdecl;external;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure target_kill;cdecl;external;
+procedure target_close(i:longint);cdecl;external;
+>>>>>>> origin/fixes_2_2
 
 
 {*****************************************************************************
@@ -2694,9 +2922,12 @@ begin
   line_number:=0;
   address:=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   level:=0;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure tframeentry.clear;
@@ -2972,11 +3203,15 @@ begin
      else
       fname:=nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
      if not SelectSourceLine(fname,sym.line,stop_breakpoint_number) then
        gdb_command('continue');
 =======
      SelectSourceLine(fname,sym.line);
 >>>>>>> graemeg/fixes_2_2
+=======
+     SelectSourceLine(fname,sym.line);
+>>>>>>> origin/fixes_2_2
    end;
 end;
 
@@ -3008,6 +3243,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure annotate_new_thread;cdecl;public;
 begin
 {$ifdef Verbose}
@@ -3024,6 +3260,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure annotate_breakpoint(num:longint);cdecl;public;
 begin
@@ -3035,6 +3273,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure annotate_breakpoints_changed;cdecl;public;
 begin
 {$ifdef Verbose}
@@ -3044,6 +3283,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure annotate_watchpoint(num:longint);cdecl;public;
 begin
@@ -3105,6 +3346,7 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure annotate_frame_begin(level:longint;
 {$ifdef GDB_ANNOTATE_FRAME_BEGIN_HAS_GDBARCH_FIELD}
   gdbarch : pgdbarch;
@@ -3113,6 +3355,9 @@ pc:CORE_ADDR);cdecl;public;
 =======
 procedure annotate_frame_begin(level:longint;pc:CORE_ADDR);cdecl;public;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure annotate_frame_begin(level:longint;pc:CORE_ADDR);cdecl;public;
+>>>>>>> origin/fixes_2_2
 begin
 {$ifdef Verbose}
   Debug('|frame_begin(%d,%ld)|');
@@ -3271,12 +3516,15 @@ begin
           if (gdboutputbuf.buf[args_end-1]=#10) then
            dec(args_end);
 <<<<<<< HEAD
+<<<<<<< HEAD
           { Flushing is not always correct for args,
             try to move on to next closing brace }
           while (args_end<file_start) and (gdboutputbuf.buf[args_end-1]<>')') do
             inc(args_end);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           c:=gdboutputbuf.buf[args_end];
           gdboutputbuf.buf[args_end]:=#0;
           fe^.args:=strnew(gdboutputbuf.buf+args_start);
@@ -3335,6 +3583,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure annotate_source(filename:pchar;line,character,mid:longint;
 {$ifdef GDB_ANNOTATE_FRAME_BEGIN_HAS_GDBARCH_FIELD}
   gdbarch : pgdbarch;
@@ -3343,6 +3592,9 @@ pc:CORE_ADDR);cdecl;public;
 =======
 procedure annotate_source(filename:pchar;line,character,mid:longint;pc:CORE_ADDR);cdecl;public;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure annotate_source(filename:pchar;line,character,mid:longint;pc:CORE_ADDR);cdecl;public;
+>>>>>>> origin/fixes_2_2
 begin
 {$ifdef Verbose}
   Debug('|source|');
@@ -3405,6 +3657,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure annotate_display_prompt;cdecl;public;
 begin
 {$ifdef Verbose}
@@ -3415,6 +3668,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure annotate_display_begin;cdecl;public;
 begin
 {$ifdef Verbose}
@@ -3576,6 +3831,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function QueryHook(question : pchar; arg : ppchar) : longint; cdecl;
 var local : pchar;
 
@@ -3644,6 +3900,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure CreateBreakPointHook(var b:breakpoint);cdecl;
 var
   sym : symtab_and_line;
@@ -3659,6 +3917,7 @@ var
   procedure get_pc_line;
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifdef GDB_USES_BP_LOCATION}
       if assigned (b.loc) then
@@ -3672,6 +3931,9 @@ var
 =======
       sym:=find_pc_line(b.address,0);
 >>>>>>> graemeg/fixes_2_2
+=======
+      sym:=find_pc_line(b.address,0);
+>>>>>>> origin/fixes_2_2
     end;
 begin
   get_pc_line;
@@ -3680,6 +3942,7 @@ begin
      last_breakpoint_number:=b.number;
      { function breakpoints have zero as file and as line !!
        but they are valid !! }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifndef GDB_USES_BP_OPS}
      invalid_breakpoint_line:=(b.line_number<>sym.line) and (b.line_number<>0);
@@ -3711,6 +3974,10 @@ begin
      invalid_breakpoint_line:=(b.line_number<>sym.line) and (b.line_number<>0);
      last_breakpoint_address:=b.address;
 >>>>>>> graemeg/fixes_2_2
+=======
+     invalid_breakpoint_line:=(b.line_number<>sym.line) and (b.line_number<>0);
+     last_breakpoint_address:=b.address;
+>>>>>>> origin/fixes_2_2
      last_breakpoint_line:=sym.line;
      if assigned(sym.symtab) then
       last_breakpoint_file:=sym.symtab^.filename
@@ -3719,6 +3986,7 @@ begin
    end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef GDB_HAS_OBSERVER_NOTIFY_BREAKPOINT_CREATED}
 
@@ -3827,6 +4095,8 @@ end;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {*****************************************************************************
                                  tgdbinterface
@@ -3856,11 +4126,14 @@ begin
   gdb_command('set print object on');
   gdb_command('set print null-stop');
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef USE_MINGW_GDB}  // maybe this also should be done for newer cygwin gdbs.
   //gdb_command('set confirm off');
   {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -3878,6 +4151,7 @@ begin
   gdboutputbuf.reset;
   gdberrorbuf.reset;
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef GDB_HAS_OBSERVER_NOTIFY_BREAKPOINT_CREATED}
     breakpoint_created_observer:=observer_attach_breakpoint_created(@notify_breakpoint_created);
   {$else not GDB_HAS_OBSERVER_NOTIFY_BREAKPOINT_CREATED}
@@ -3890,12 +4164,17 @@ begin
   deprecated_query_hook :=@QueryHook;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$ifdef GDB_HAS_DEPRECATED_CBPH}
   deprecated_create_breakpoint_hook:=@CreateBreakPointHook;
   {$else}
   create_breakpoint_hook:=@CreateBreakPointHook;
   {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   signal_string:=nil;
   signal_name:=nil;
 end;
@@ -3906,6 +4185,7 @@ procedure tgdbinterface.gdb_done;
 begin
   if debuggee_started then
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef GDB_TARGET_CLOSE_HAS_PTARGET_ARG}
       target_kill;
@@ -3936,6 +4216,8 @@ begin
   Query:=0;
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       current_target.to_kill;
       current_target.to_close(1);
     end;
@@ -3946,7 +4228,10 @@ end;
   {$endif}
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 function tgdbinterface.error:boolean;
 begin
@@ -3961,6 +4246,7 @@ end;
 var
    top_level_val : longint;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef USE_CATCH_EXCEPTIONS}
 function catch_exceptions(uiout : ui_out; func : pointer; command : pchar; mask : longint) : longint;cdecl;external;
@@ -3980,15 +4266,23 @@ function catch_errors(func : pointer; command : pchar; from_tty,mask : longint) 
 
 function gdbint_execute_command(command : pchar; from_tty,mask : longint) : longint;cdecl;
 >>>>>>> graemeg/fixes_2_2
+=======
+function catch_errors(func : pointer; command : pchar; from_tty,mask : longint) : longint;cdecl;external;
+
+function gdbint_execute_command(command : pchar; from_tty,mask : longint) : longint;cdecl;
+>>>>>>> origin/fixes_2_2
 begin
   gdbint_execute_command:=1;
   execute_command(command,from_tty);
   gdbint_execute_command:=0;
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif not USE_CATCH_EXCEPTIONS}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifdef cpui386}
 type
@@ -4031,10 +4325,13 @@ begin
 {$ifdef cpui386}
   MaskAllFPUExceptions := control or MaskAllExceptions;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$else}
   MaskAllFPUExceptions:=0;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif}
 end;
 
@@ -4094,6 +4391,7 @@ begin
      quit_return:=error_return;
      mask:=longint($ffffffff);
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef USE_CATCH_EXCEPTIONS}
      catch_exceptions(our_uiout, @gdbint_execute_command,@command,mask);
 {$else i.e. not USE_CATCH_EXCEPTIONS}
@@ -4103,6 +4401,9 @@ begin
 =======
      catch_errors(@gdbint_execute_command,@command,0,mask);
 >>>>>>> graemeg/fixes_2_2
+=======
+     catch_errors(@gdbint_execute_command,@command,0,mask);
+>>>>>>> origin/fixes_2_2
 {$ifdef go32v2}
      reload_fs;
 {$endif go32v2}
@@ -4169,6 +4470,7 @@ begin
   for i:=0 to frame_size-1 do
    dispose(frames[i],done);
 <<<<<<< HEAD
+<<<<<<< HEAD
   if assigned(frames) then
     begin
       freemem(frames,sizeof(pointer)*Frame_size);
@@ -4177,6 +4479,9 @@ begin
 =======
   freemem(frames,sizeof(pointer)*Frame_size);
 >>>>>>> graemeg/fixes_2_2
+=======
+  freemem(frames,sizeof(pointer)*Frame_size);
+>>>>>>> origin/fixes_2_2
   frame_count:=0;
   frame_size:=0;
 end;
@@ -4231,6 +4536,7 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function tgdbinterface.SelectSourceLine(fn:pchar;line,BreakIndex:longint): Boolean;
 begin
   if assigned(fn) then
@@ -4238,13 +4544,18 @@ begin
   else
     SelectSourceLine:=DoSelectSourceLine('',line,BreakIndex);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure tgdbinterface.SelectSourceLine(fn:pchar;line:longint);
 begin
   if assigned(fn) then
    DoSelectSourceLine(StrPas(fn),line)
   else
    DoSelectSourceLine('',line);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -4264,12 +4575,16 @@ procedure tgdbinterface.EndSession(code:longint);
 begin
   Debuggee_started:=false;
 <<<<<<< HEAD
+<<<<<<< HEAD
   { inferior_ptid.pid:=0;
     This leads to an assertion failure
     from generic_mount_inferior }
 =======
   inferior_ptid.pid:=0;
 >>>>>>> graemeg/fixes_2_2
+=======
+  inferior_ptid.pid:=0;
+>>>>>>> origin/fixes_2_2
   DoEndSession(code);
   if assigned(signal_name) then
     strdispose(signal_name);
@@ -4311,26 +4626,36 @@ end;
 ---------------------------------------}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function tgdbinterface.DoSelectSourceLine(const fn:string;line,BreakIndex:longint): Boolean;
 {$ifdef Verbose}
 var
   s,bs : string;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure tgdbinterface.DoSelectSourceLine(const fn:string;line:longint);
 {$ifdef Verbose}
 var
   s : string;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif}
 begin
 {$ifdef Verbose}
   Str(line,S);
+<<<<<<< HEAD
 <<<<<<< HEAD
   Str(BreakIndex,BS);
   Debug('|SelectSource '+fn+':'+s+','+bs+'|');
 =======
   Debug('|SelectSource '+fn+':'+s+'|');
 >>>>>>> graemeg/fixes_2_2
+=======
+  Debug('|SelectSource '+fn+':'+s+'|');
+>>>>>>> origin/fixes_2_2
 {$endif}
 end;
 
@@ -4385,6 +4710,7 @@ end;
 
 {$ifdef go32v2}
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
   c_environ : ppchar;external name '__environ';
   c_argc : longint;external name '___crt0_argc';
@@ -4457,17 +4783,23 @@ var
 const
   DIRBUF_SIZE = 1024;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   c_environ : ppchar;external name '_environ';
   c_argc : longint;external name '___crt0_argc';
   c_argv : ppchar;external name '___crt0_argv';
 {$endif def go32v2}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure InitLibGDB;
 {$ifdef supportexceptions}
 var
   OldSigInt : SignalHandler;
 {$endif supportexceptions}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef GDB_NEEDS_SET_INSTREAM}
 var
@@ -4476,10 +4808,13 @@ var
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef GDB_INIT_HAS_ARGV0}
 var
   argv0 : pchar;
 {$endif not GDB_INIT_HAS_ARGV0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef GDB_NEEDS_INTERPRETER_SETUP}
 var
@@ -4499,6 +4834,11 @@ begin
 {$ifdef go32v2}
   c_environ:=system.envp;
 >>>>>>> graemeg/fixes_2_2
+=======
+begin
+{$ifdef go32v2}
+  c_environ:=system.envp;
+>>>>>>> origin/fixes_2_2
   c_argc:=system.argc;
   c_argv:=system.argv;
 {$endif def go32v2}
@@ -4518,6 +4858,7 @@ begin
     ui_file_delete(gdb_stderr);
   if assigned(gdb_stdout) then
     ui_file_delete(gdb_stdout);
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef GDB_NEEDS_SET_INSTREAM}
   if assigned(gdb_stdin) then
@@ -4547,6 +4888,10 @@ begin
   gdb_stderr:=mem_fileopen;
   gdb_stdout:=mem_fileopen;
 >>>>>>> graemeg/fixes_2_2
+=======
+  gdb_stderr:=mem_fileopen;
+  gdb_stdout:=mem_fileopen;
+>>>>>>> origin/fixes_2_2
   gdb_stdlog:=gdb_stderr;
   gdb_stdtarg:=gdb_stderr;
   set_ui_file_write(gdb_stdout,@gdbint_ui_file_write);
@@ -4555,6 +4900,7 @@ begin
   error_init;
 {$endif GDB_NEEDS_NO_ERROR_INIT}
 {$ifdef GDB_V6}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef GDB_NEEDS_SET_INSTREAM}
   gdb_stdtargin := gdb_stdin;
@@ -4575,6 +4921,8 @@ begin
 {$endif not GDB_NO_UIOUT}
 {$endif GDB_V6}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 //  gdb_stdtargin := gdb_stdin;
   gdb_stdtargerr := gdb_stderr;
 {$endif}
@@ -4584,7 +4932,10 @@ begin
 {$ifdef GDB_V6}
   uiout := cli_out_new (gdb_stdout);
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef GDB_INIT_HAS_ARGV0}
   getmem(argv0,length(paramstr(0))+1);
   strpcopy(argv0,paramstr(0));
@@ -4593,6 +4944,7 @@ begin
 {$else not GDB_INIT_HAS_ARGV0}
   gdb_init;
 {$endif not GDB_INIT_HAS_ARGV0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef GDB_NEEDS_INTERPRETER_SETUP}
   { interpreter can only be set after all files are
@@ -4622,6 +4974,8 @@ begin
 {$endif GDB_NEEDS_INTERPRETER_SETUP}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef supportexceptions}
   {$ifdef unix}
     fpsignal(SIGINT,OldSigInt);
@@ -4647,6 +5001,7 @@ begin
 end;
 
 {$ifdef GDB_HAS_SYSROOT}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   { Here we declare as cvar;public; a bunch of global
@@ -4708,18 +5063,24 @@ var gdb_sysroot  : pchar; cvar;public;
     batch_flag : longbool;cvar;public;
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var gdb_sysroot  : pchar; cvar;public;
     gdb_sysrootc : char;
     return_child_result : longbool;cvar;public;
     return_child_result_value : longint;cvar;public;
     batch_silent : longbool;cvar;public;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif}
 {$ifdef GDB_HAS_DEBUG_FILE_DIRECTORY}
 var
   debug_file_directory : pchar; cvar; external;
 {$endif GDB_HAS_DEBUG_FILE_DIRECTORY}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef USE_LOCAL_SET_GDB_DATA_DIRECTORY}
 { Avoid loading of main.o object by providing a
@@ -4738,11 +5099,16 @@ begin
   gdb_datadir := @gdb_sysrootc;
   python_libdir := @gdb_sysrootc;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 begin
 {$ifdef GDB_HAS_SYSROOT}
   gdb_sysrootc := #0;
   gdb_sysroot := @gdb_sysrootc;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif}
 {$ifdef GDB_HAS_DEBUG_FILE_DIRECTORY}
   debug_file_directory := '/usr/local/lib';

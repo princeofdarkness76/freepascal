@@ -85,12 +85,15 @@ type
    end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
   Generated from fpmkunit.pp, using data2inc:
   data2inc -b -s fpmkunit.pp fpmkunitsrc.inc fpmkunitsrc
 }
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$i fpmkunitsrc.inc}
 
 procedure CreateFPMKUnitSource(const AFileName:string);
@@ -193,6 +196,7 @@ begin
         Error(SErrMissingFPMake);
       AddOption('-n');
 <<<<<<< HEAD
+<<<<<<< HEAD
       AddOption('-dCOMPILED_BY_FPPKG');
       for i:=0 to high(FPMKUnitDeps) do
         begin
@@ -205,6 +209,8 @@ begin
               if FPMKUnitDeps[i].def<>'' then
                 AddOption('-d'+FPMKUnitDeps[i].def);
 =======
+=======
+>>>>>>> origin/fixes_2_2
       for i:=1 to FPMKUnitDepCount do
         begin
           if FPMKUnitDepAvailable[i] then
@@ -213,7 +219,10 @@ begin
                 AddOption(maybequoted('-Fu'+DepDir))
               else
                 Error(SErrMissingInstallPackage,[FPMKUnitDeps[i].package]);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             end
           else
             begin
@@ -266,9 +275,12 @@ end;
 Function TFPMakeRunner.RunFPMake(const Command:string) : Integer;
 Var
 <<<<<<< HEAD
+<<<<<<< HEAD
   ManifestPackage,
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   P : TFPPackage;
   FPMakeBin,
   OOptions : string;
@@ -281,6 +293,7 @@ Var
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   procedure CondAddOption(const Name,Value:string);
   begin
     if Value<>'' then
@@ -289,10 +302,13 @@ Var
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   OOptions:='';
   // Does the current package support this CPU-OS?
   if PackageName<>'' then
+<<<<<<< HEAD
 <<<<<<< HEAD
     begin
       P:=AvailableRepository.PackageByName(PackageName);
@@ -307,10 +323,14 @@ begin
 =======
     P:=AvailableRepository.PackageByName(PackageName)
 >>>>>>> graemeg/fixes_2_2
+=======
+    P:=AvailableRepository.PackageByName(PackageName)
+>>>>>>> origin/fixes_2_2
   else
     P:=nil;
   if assigned(P) then
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
       if (command<>'archive') and (command<>'manifest') and
          (not(CompilerOptions.CompilerOS in P.OSes) or
@@ -319,11 +339,16 @@ begin
       if not(CompilerOptions.CompilerOS in P.OSes) or
          not(CompilerOptions.CompilerCPU in P.CPUs) then
 >>>>>>> graemeg/fixes_2_2
+=======
+      if not(CompilerOptions.CompilerOS in P.OSes) or
+         not(CompilerOptions.CompilerCPU in P.CPUs) then
+>>>>>>> origin/fixes_2_2
         Error(SErrPackageDoesNotSupportTarget,[P.Name,MakeTargetString(CompilerOptions.CompilerCPU,CompilerOptions.CompilerOS)]);
     end;
   { Maybe compile fpmake executable? }
   ExecuteAction(PackageName,'compilefpmake');
   { Create options }
+<<<<<<< HEAD
 <<<<<<< HEAD
   if vlDebug in LogLevels then
     AddOption('--debug')
@@ -363,6 +388,8 @@ begin
         end;
     end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   AddOption('--nofpccfg');
   if vlInfo in LogLevels then
     AddOption('--verbose');
@@ -376,13 +403,17 @@ begin
   if CompilerOptions.LocalInstallDir<>'' then
     AddOption('--localunitdir='+CompilerOptions.LocalUnitDir);
   AddOption('--globalunitdir='+CompilerOptions.GlobalUnitDir);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { Run FPMake }
   FPMakeBin:='fpmake'+ExeExt;
   SetCurrentDir(PackageBuildPath(P));
   Result:=ExecuteProcess(FPMakeBin,Command+' '+OOptions);
   if Result<>0 then
     Error(SErrExecutionFPMake,[Command]);
+<<<<<<< HEAD
 end;
 
 
@@ -395,6 +426,14 @@ end;
 procedure TFPMakeRunnerBuild.Execute;
 begin
   RunFPMake('build');
+=======
+end;
+
+
+procedure TFPMakeRunnerCompile.Execute;
+begin
+  RunFPMake('compile');
+>>>>>>> origin/fixes_2_2
 end;
 <<<<<<< HEAD
 
@@ -403,6 +442,31 @@ end;
 
 
 >>>>>>> graemeg/fixes_2_2
+procedure TFPMakeRunnerInstall.Execute;
+begin
+  RunFPMake('install');
+end;
+
+procedure TFPMakeRunnerBuild.Execute;
+begin
+  RunFPMake('build');
+end;
+
+
+<<<<<<< HEAD
+procedure TFPMakeRunnerClean.Execute;
+begin
+  RunFPMake('clean');
+end;
+
+
+procedure TFPMakeRunnerManifest.Execute;
+begin
+  RunFPMake('manifest');
+end;
+
+
+=======
 procedure TFPMakeRunnerInstall.Execute;
 begin
   RunFPMake('install');
@@ -421,6 +485,7 @@ begin
 end;
 
 
+>>>>>>> origin/fixes_2_2
 procedure TFPMakeRunnerArchive.Execute;
 begin
   RunFPMake('archive');

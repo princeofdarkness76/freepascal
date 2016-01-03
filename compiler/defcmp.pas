@@ -35,6 +35,7 @@ interface
        { if acp is cp_all the var const or nothing are considered equal }
        tcompare_paras_type = ( cp_none, cp_value_equal_const, cp_all,cp_procvar);
 <<<<<<< HEAD
+<<<<<<< HEAD
        tcompare_paras_option = (
           cpo_allowdefaults,
           cpo_ignorehidden,           // ignore hidden parameters
@@ -70,6 +71,9 @@ interface
 =======
        tcompare_paras_option = (cpo_allowdefaults,cpo_ignorehidden,cpo_allowconvert,cpo_comparedefaultvalue,cpo_openequalisexact);
 >>>>>>> graemeg/fixes_2_2
+=======
+       tcompare_paras_option = (cpo_allowdefaults,cpo_ignorehidden,cpo_allowconvert,cpo_comparedefaultvalue,cpo_openequalisexact);
+>>>>>>> origin/fixes_2_2
        tcompare_paras_options = set of tcompare_paras_option;
 
 <<<<<<< HEAD
@@ -467,10 +471,14 @@ implementation
                           { "punish" bad type conversions :) (JM) }
                           eq:=te_convert_l3
 <<<<<<< HEAD
+<<<<<<< HEAD
                         else
 =======
                          else
 >>>>>>> graemeg/fixes_2_2
+=======
+                         else
+>>>>>>> origin/fixes_2_2
                           eq:=te_convert_l1;
                       end;
                    end;
@@ -494,12 +502,16 @@ implementation
                  objectdef:
                    begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                      if (m_delphi in current_settings.modeswitches) and
                         is_implicit_pointer_object_type(def_from) and
                         (cdo_explicit in cdoptions) then
 =======
                      if is_class_or_interface_or_dispinterface(def_from) and (cdo_explicit in cdoptions) then
 >>>>>>> graemeg/fixes_2_2
+=======
+                     if is_class_or_interface_or_dispinterface(def_from) and (cdo_explicit in cdoptions) then
+>>>>>>> origin/fixes_2_2
                       begin
                         eq:=te_convert_l1;
                         if (fromtreetype=niln) then
@@ -911,6 +923,7 @@ implementation
                         doconv:=tc_intf_2_string;
                         eq:=te_convert_l1;
 <<<<<<< HEAD
+<<<<<<< HEAD
                       end
                      else if (def_from=java_jlstring) then
                        begin
@@ -929,6 +942,8 @@ implementation
                            end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                       end;
                    end;
                end;
@@ -948,6 +963,7 @@ implementation
                        begin
                          doconv:=tc_int_2_real;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                          { prefer single over others }
                          if is_single(def_to) then
@@ -957,6 +973,9 @@ implementation
 =======
                          eq:=te_convert_l4;
 >>>>>>> graemeg/fixes_2_2
+=======
+                         eq:=te_convert_l4;
+>>>>>>> origin/fixes_2_2
                        end
                      else if is_currency(def_from)
                              { and (s64currencytype.typ = orddef)) } then
@@ -985,9 +1004,12 @@ implementation
                              doconv:=tc_real_2_real;
                              { do we lose precision? }
 <<<<<<< HEAD
+<<<<<<< HEAD
                              if (def_to.size<def_from.size) or
                                (is_currency(def_from) and (tfloatdef(def_to).floattype in [s32real,s64real])) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
                              if def_to.size<def_from.size then
 >>>>>>> graemeg/fixes_2_2
                                eq:=te_convert_l2
@@ -1372,14 +1394,20 @@ implementation
                      { string constant (which can be part of array constructor)
                        to zero terminated string constant }
 <<<<<<< HEAD
+<<<<<<< HEAD
                      if (fromtreetype = stringconstn) and
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      if (((fromtreetype = arrayconstructorn) and
                           { can't use is_chararray, because returns false for }
                           { array constructors                                }
                           is_char(tarraydef(def_from).elementdef)) or
                          (fromtreetype = stringconstn)) and
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                         (is_pchar(def_to) or is_pwidechar(def_to)) then
                       begin
                         doconv:=tc_cstring_2_pchar;
@@ -1448,7 +1476,26 @@ implementation
                          (cdo_internal in cdoptions)
                         ) then
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+                       begin
+                         doconv:=tc_int_2_int;
+                         eq:=te_convert_l1;
+                       end;
+                   end;
+                 enumdef :
+                   begin
+                     { allow explicit typecasts from enums to pointer.
+                       Support for delphi compatibility
+                     }
+                     if (eq=te_incompatible) and
+                        (((cdo_explicit in cdoptions) and
+                          (m_delphi in current_settings.modeswitches)
+                          ) or
+                         (cdo_internal in cdoptions)
+                        ) then
+>>>>>>> origin/fixes_2_2
                        begin
                          doconv:=tc_int_2_int;
                          eq:=te_convert_l1;
@@ -2055,10 +2102,14 @@ implementation
                { interface -> guid }
                if (def_to=rec_tguid) and
 <<<<<<< HEAD
+<<<<<<< HEAD
                   (is_interfacecom_or_dispinterface(def_from)) then
 =======
                   (is_interfacecom(def_from) or is_dispinterface(def_from)) then
 >>>>>>> graemeg/fixes_2_2
+=======
+                  (is_interfacecom(def_from) or is_dispinterface(def_from)) then
+>>>>>>> origin/fixes_2_2
                 begin
                   doconv:=tc_intf_2_guid;
                   eq:=te_convert_l1;
@@ -2086,6 +2137,7 @@ implementation
            { the test will still succeed                           }
            ((cdo_allow_variant in cdoptions) or
 <<<<<<< HEAD
+<<<<<<< HEAD
             ((def_from.typ<>variantdef) and
              (def_to.typ<>variantdef) and
              { internal typeconversions always have to be bitcasts (except for
@@ -2095,6 +2147,9 @@ implementation
 =======
             ((def_from.typ<>variantdef) and (def_to.typ<>variantdef))
 >>>>>>> graemeg/fixes_2_2
+=======
+            ((def_from.typ<>variantdef) and (def_to.typ<>variantdef))
+>>>>>>> origin/fixes_2_2
            ) and
            (
             { Check for variants? }
@@ -2106,11 +2161,16 @@ implementation
             (
              (cdo_check_operator in cdoptions) and
 <<<<<<< HEAD
+<<<<<<< HEAD
              ((def_from.typ<>variantdef) or (def_to.typ<>variantdef))
 =======
              ((def_from.typ in [objectdef,recorddef,arraydef,stringdef]) or
               (def_to.typ in [objectdef,recorddef,arraydef,stringdef]))
 >>>>>>> graemeg/fixes_2_2
+=======
+             ((def_from.typ in [objectdef,recorddef,arraydef,stringdef]) or
+              (def_to.typ in [objectdef,recorddef,arraydef,stringdef]))
+>>>>>>> origin/fixes_2_2
             )
            ) then
           begin
@@ -2300,9 +2360,12 @@ implementation
                   exit;
                 eq:=te_exact;
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (([vo_is_self,vo_is_vmt]*currpara1.varoptions)=[]) and
                    (([vo_is_self,vo_is_vmt]*currpara2.varoptions)=[]) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
                 if not(vo_is_self in currpara1.varoptions) and
                    not(vo_is_self in currpara2.varoptions) then
 >>>>>>> graemeg/fixes_2_2
@@ -2443,7 +2506,10 @@ implementation
 >>>>>>> origin/cpstrnew
 =======
                 exit;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               { open strings can never match exactly, since you cannot define }
               { a separate "open string" type -> we have to be able to        }
               { consider those as exact when resolving forward definitions.   }

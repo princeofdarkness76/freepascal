@@ -157,10 +157,14 @@ const TopicCacheSize    : sw_integer = 10;
       HelpStreamBufSize : sw_integer = 4096;
       HelpFacility      : PHelpFacility = nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
       MaxHelpTopicSize  : sw_word = 1024*1024;
 =======
       MaxHelpTopicSize  : sw_word = 3*65520;
 >>>>>>> graemeg/fixes_2_2
+=======
+      MaxHelpTopicSize  : sw_word = 3*65520;
+>>>>>>> origin/fixes_2_2
 
 function  NewTopic(FileID: byte; HelpCtx: THelpCtx; Pos: longint; Param: string;
           ExtData: pointer; ExtDataSize: longint): PTopic;

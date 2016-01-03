@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QuickTime/MoviesFormat.h
  
      Contains:   QuickTime Interfaces.
@@ -32,6 +33,8 @@
      Copyright:  © 1990-2008 by Apple Inc., all rights reserved
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       MoviesFormat.p
  
      Contains:   QuickTime Interfaces.
@@ -40,11 +43,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1990-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -71,6 +78,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -82,7 +91,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -92,12 +104,17 @@
 unit MoviesFormat;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -111,14 +128,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -127,11 +149,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -169,6 +194,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -176,6 +203,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -440,6 +468,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -448,7 +478,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -474,6 +507,7 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
@@ -1051,6 +1085,19 @@ const
 	TrackInPreview = 1 shl 2;
 	TrackInPoster = 1 shl 3;
 =======
+=======
+{$setc TARGET_OS_MAC := TRUE}
+{$setc TARGET_OS_UNIX := FALSE}
+{$setc TARGET_OS_WIN32 := FALSE}
+{$setc TARGET_RT_MAC_68881 := FALSE}
+{$setc TARGET_RT_MAC_CFM := FALSE}
+{$setc TARGET_RT_MAC_MACHO := TRUE}
+{$setc TYPED_FUNCTION_POINTERS := TRUE}
+{$setc TYPE_BOOL := FALSE}
+{$setc TYPE_EXTENDED := FALSE}
+{$setc TYPE_LONGLONG := TRUE}
+uses MacTypes,ImageCompression,Components,Movies;
+>>>>>>> origin/fixes_2_2
 
 
 {$ALIGN MAC68K}
@@ -1355,11 +1402,15 @@ const
 	TrackInPreview				= $04;
 	TrackInPoster				= $08;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	TrackHeaderPtr = ^TrackHeader;
 	TrackHeader = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
 <<<<<<< HEAD
@@ -1973,6 +2024,8 @@ const
 
 { Text ATOM definitions}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		flags:					SInt32;								{  1 byte of version / 3 bytes of flags  }
 		creationTime:			SInt32;								{  seconds since Jan 1904 when directory was created  }
 		modificationTime:		SInt32;								{  seconds since Jan 1904 when directory was appended  }
@@ -2177,11 +2230,15 @@ const
 
 	{  Text ATOM definitions }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	TextBoxAtomPtr = ^TextBoxAtom;
 	TextBoxAtom = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		size: SInt32;
 		atomType: SInt32;               { = 'tbox' }
@@ -2212,6 +2269,8 @@ type
 const
 	kDataRefIsSelfContained = 1 shl 0;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		size:					SInt32;
 		atomType:				SInt32;								{  = 'tbox'  }
 		textBox:				Rect;									{  New text box (overrides defaultTextBox) }
@@ -2243,11 +2302,15 @@ const
 const
 	kDataRefIsSelfContained		= $01;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	ReferenceMovieDataRefRecordPtr = ^ReferenceMovieDataRefRecord;
 	ReferenceMovieDataRefRecord = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		flags: SInt32;
 		dataRefType: OSType;
@@ -2259,6 +2322,8 @@ const
 	kVersionCheckMin = 0;    { val1 is the min. version required}
 	kVersionCheckMask = 1;     { (gestalt return value & val2) must == val1}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		flags:					SInt32;
 		dataRefType:			OSType;
 		dataRefSize:			SInt32;
@@ -2271,11 +2336,15 @@ const
 	kVersionCheckMin			= 0;							{  val1 is the min. version required }
 	kVersionCheckMask			= 1;							{  (gestalt return value & val2) must == val1 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTAltVersionCheckRecordPtr = ^QTAltVersionCheckRecord;
 	QTAltVersionCheckRecord = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		flags: SInt32;                  { currently always 0}
 		gestaltTag: OSType;
@@ -2298,6 +2367,8 @@ const
 	kDataRateInfiniteRate = $7FFFFFFF;
 	kDataRateDefaultIfNotSet = kDataRate512kbpsRate;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		flags:					SInt32;								{  currently always 0 }
 		gestaltTag:				OSType;
 		val1:					UInt32;
@@ -2321,11 +2392,15 @@ const
 	kDataRateInfiniteRate		= $7FFFFFFF;
 	kDataRateDefaultIfNotSet	= 5600;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTAltDataRateRecordPtr = ^QTAltDataRateRecord;
 	QTAltDataRateRecord = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		flags: SInt32;                  { currently always 0}
 		dataRate: SInt32;
@@ -2351,6 +2426,8 @@ const
 	kQTCPUSpeed4Rating = 400;
 	kQTCPUSpeed5Rating = 500;   { fastest}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		flags:					SInt32;								{  currently always 0 }
 		dataRate:				SInt32;
 	end;
@@ -2376,11 +2453,15 @@ const
 	kQTCPUSpeed4Rating			= 400;
 	kQTCPUSpeed5Rating			= 500;							{  fastest }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	QTAltCPURatingRecordPtr = ^QTAltCPURatingRecord;
 	QTAltCPURatingRecord = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		flags: UInt32;                  { currently always 0}
 		speed: UInt16;
@@ -2421,6 +2502,8 @@ const
 	kQTFileTypeBrandMPEG4v1 = FourCharCode('mp41'); { MPEG-4 (ISO/IEC 14496-1) version 1 files}
 	kQTFileTypeBrandMPEG4v2 = FourCharCode('mp42'); { MPEG-4 (ISO/IEC 14496-1) version 2 files}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		flags:					UInt32;									{  currently always 0 }
 		speed:					UInt16;
 	end;
@@ -2461,11 +2544,15 @@ const
 	kQTFileTypeBrandMPEG4v1		= FourCharCode('mp41');						{  MPEG-4 (ISO/IEC 14496-1) version 1 files }
 	kQTFileTypeBrandMPEG4v2		= FourCharCode('mp42');						{  MPEG-4 (ISO/IEC 14496-1) version 2 files }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	SecureContentInfoAtomPtr = ^SecureContentInfoAtom;
 	SecureContentInfoAtom = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		size: SInt32;
 		atomType: SInt32;               { = 'sinf' }
@@ -2514,6 +2601,8 @@ type
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		size:					SInt32;
 		atomType:				SInt32;								{  = 'sinf'  }
 	end;
@@ -2538,4 +2627,7 @@ end.
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

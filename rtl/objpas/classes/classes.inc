@@ -436,6 +436,7 @@ end;
 
 function CheckSynchronize(timeout : longint=0) : boolean;
 
+<<<<<<< HEAD
 { assumes being called from GUI thread }
 var
   ExceptObj: Exception;
@@ -472,6 +473,8 @@ begin
       RtlEventSetEvent(tmpentry^.SyncEvent)
       end
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function CheckSynchronize(timeout : longint=0) : boolean;
   { assumes being called from GUI thread }
   begin
@@ -760,7 +763,10 @@ end;
 function ExtractStrings(Separators, WhiteSpace: TSysCharSet; Content: PChar; Strings: TStrings; AddEmptyStrings : Boolean = False): Integer;
 =======
 function ExtractStrings(Separators, WhiteSpace: TSysCharSet; Content: PChar; Strings: TStrings): Integer;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   b, c : pchar;
 
@@ -777,20 +783,28 @@ var
     begin
       l := c-b;
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (l > 0) or AddEmptyStrings then
 =======
       if l > 0 then
 >>>>>>> graemeg/fixes_2_2
+=======
+      if l > 0 then
+>>>>>>> origin/fixes_2_2
         begin
           if assigned(Strings) then
             begin
               setlength(s, l);
+<<<<<<< HEAD
 <<<<<<< HEAD
               if l>0 then
                 move (b^, s[1],l*SizeOf(char));
 =======
               move (b^, s[1],l);
 >>>>>>> graemeg/fixes_2_2
+=======
+              move (b^, s[1],l);
+>>>>>>> origin/fixes_2_2
               Strings.Add (s);
             end;
           inc (result);
@@ -1019,10 +1033,14 @@ end;
 { TPropFixup }
 // Tainted. TPropFixup is being removed.
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
  
 >>>>>>> graemeg/fixes_2_2
+=======
+ 
+>>>>>>> origin/fixes_2_2
 Type
   TInitHandler = Class(TObject)
     AHandler : TInitComponentHandler;
@@ -1238,6 +1256,7 @@ end;
 
 
 Function FindNestedComponent(Root : TComponent; APath : String; CStyle : Boolean = True) : TComponent;
+<<<<<<< HEAD
 
   Function GetNextName : String; {$ifdef CLASSESINLINE} inline; {$endif CLASSESINLINE}
 <<<<<<< HEAD
@@ -1247,12 +1266,19 @@ Function FindNestedComponent(Root : TComponent; APath : String; CStyle : Boolean
     CM : Boolean;
 
 =======
+=======
+
+  Function GetNextName : String; {$ifdef CLASSESINLINE} inline; {$endif CLASSESINLINE}
+>>>>>>> origin/fixes_2_2
   
   Var
     P : Integer;
     CM : Boolean;
     
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   begin
     P:=Pos('.',APath);
     CM:=False;
@@ -1443,6 +1469,7 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
     res:= '''''';
    end
 <<<<<<< HEAD
+<<<<<<< HEAD
    else
     begin
     res := '';
@@ -1453,6 +1480,8 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
       w := CharToOrdfunc(P);
       if w = ord('''') then
 =======
+=======
+>>>>>>> origin/fixes_2_2
    else 
     begin
     res := '';
@@ -1462,11 +1491,15 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
       NewInString := InString;
       w := CharToOrdfunc(P);
       if w = ord('''') then 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         begin //quote char
         if not InString then
           NewInString := True;
         NewStr := '''''';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         end
@@ -1499,16 +1532,30 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
         end 
       else 
 >>>>>>> graemeg/fixes_2_2
+=======
+        end 
+      else if (Ord(w) >= 32) and (Ord(w) < 127) then 
+        begin //printable ascii
+        if not InString then
+          NewInString := True;
+        NewStr := char(w);
+        end 
+      else 
+>>>>>>> origin/fixes_2_2
         begin //ascii control chars, non ascii
         if InString then
           NewInString := False;
         NewStr := '#' + IntToStr(w);
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
       if NewInString <> InString then
 =======
       if NewInString <> InString then 
 >>>>>>> graemeg/fixes_2_2
+=======
+      if NewInString <> InString then 
+>>>>>>> origin/fixes_2_2
         begin
         NewStr := '''' + NewStr;
         InString := NewInString;
@@ -1516,10 +1563,14 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
       res := res + NewStr;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     if InString then
 =======
     if InString then 
 >>>>>>> graemeg/fixes_2_2
+=======
+    if InString then 
+>>>>>>> origin/fixes_2_2
       res := res + '''';
     end;
    OutStr(res);
@@ -1621,6 +1672,15 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
     Result:=LEtoN(Result);
   end;
 
+<<<<<<< HEAD
+=======
+  function ReadWord : word; {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
+  begin
+    Result:=Input.ReadWord;
+    Result:=LEtoN(Result);
+  end;
+
+>>>>>>> origin/fixes_2_2
   function ReadDWord : longword; {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
   begin
     Result:=Input.ReadDWord;
@@ -1678,7 +1738,10 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
   end;
   {$ENDIF}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   function ReadInt(ValueType: TValueType): Int64;
   begin
     case ValueType of
@@ -1706,6 +1769,7 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
     Input.ReadBuffer(Result,sizeof(Result));
     {$ENDIF}
   end;
+<<<<<<< HEAD
 
 {$ifndef FPUNONE}
   function ReadExtended : extended;
@@ -1721,6 +1785,8 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
     {$ENDIF}
   end;
 {$endif}
+=======
+>>>>>>> origin/fixes_2_2
 
   function ReadSStr: String;
   var
@@ -1749,6 +1815,7 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
     i : integer;
   {$ENDIF}
 <<<<<<< HEAD
+<<<<<<< HEAD
   begin
     len := ReadDWord;
     SetLength(Result, len);
@@ -1770,6 +1837,8 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
   {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   begin
     len := ReadDWord;
     SetLength(Result, len);
@@ -1838,9 +1907,12 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
         vaInt32: OutLn(IntToStr(LongInt(ReadDWord)));
         vaInt64: OutLn(IntToStr(Int64(ReadQWord)));
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         vaExtended: begin
             ext:=ReadExtended;
             Str(ext,S);// Do not use localized strings.
@@ -1996,11 +2068,15 @@ var
     Output.WriteBuffer(qw,sizeof(qword));
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifndef FPUNONE}
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
   {$IFNDEF FPC_HAS_TYPE_EXTENDED}
   procedure DoubleToExtended(d : double; e : pointer);
   var mant : qword;
@@ -2051,9 +2127,12 @@ var
     {$ENDIF}
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   procedure WriteString(s: String);
   var size : byte;
@@ -2109,6 +2188,9 @@ var
       Output.WriteByte(ord(vaInt64));
       WriteQWord(qword(value));
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2_2
     end;
   end;
 
@@ -2122,6 +2204,7 @@ var
       if not (parser.Token in [toString,toWString]) then
         parser.CheckToken(toWString);
       ws:=ws+parser.TokenWideString;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
     end;
@@ -2139,6 +2222,8 @@ var
       if not (parser.Token in [toString,toWString]) then
         parser.CheckToken(toWString);
       ws:=ws+parser.TokenWideString;
+=======
+>>>>>>> origin/fixes_2_2
     end;
     Output.WriteByte(Ord(vaWstring));
     WriteWString(ws);
@@ -2179,10 +2264,14 @@ var
               toString  : s:=s+parser.TokenString;
               toWString : begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                             ProcessWideString(WideString(s));
 =======
                             ProcessWideString(s);
 >>>>>>> graemeg/fixes_2_2
+=======
+                            ProcessWideString(s);
+>>>>>>> origin/fixes_2_2
                             exit;
                           end
               else parser.CheckToken(toString);
@@ -2430,10 +2519,13 @@ begin
   InitCriticalSection(ThreadQueueLock);
   MainThreadID:=GetCurrentThreadID;
 <<<<<<< HEAD
+<<<<<<< HEAD
   ExternalThreads := TThreadList.Create;
   TThread.FProcessorCount := CPUCount;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   InitCriticalsection(ResolveSection);
   InitHandlerList:=Nil;
   FindGlobalComponentList:=nil;

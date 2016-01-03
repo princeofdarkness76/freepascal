@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 1998-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -42,6 +43,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  * Copyright (c) 1998-2003 Apple Computer, Inc.
  * All rights reserved.
  }
@@ -52,7 +55,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -62,12 +68,17 @@
 unit CGGeometry;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -81,14 +92,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -97,11 +113,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -139,6 +158,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -146,6 +167,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -381,6 +403,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -389,7 +413,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -416,9 +443,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -429,12 +460,16 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,CFBase,CFDictionary,CGBase;
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 uses MacTypes,CFBase,CGBase;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,CFBase,CGBase;
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -444,12 +479,17 @@ type
 	CGPointPtr = ^CGPoint;
 	CGPoint = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		x: CGFloat;
 		y: CGFloat;
 =======
 		x: Float32;
 		y: Float32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		x: Float32;
+		y: Float32;
+>>>>>>> origin/fixes_2_2
 	end;
 
 { Sizes. }
@@ -457,6 +497,7 @@ type
 type
 	CGSizePtr = ^CGSize;
 	CGSize = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		width: CGFloat;
 		height: CGFloat;
@@ -488,6 +529,10 @@ type
 		width: Float32;
 		height: Float32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		width: Float32;
+		height: Float32;
+>>>>>>> origin/fixes_2_2
 	end;
 
 { Rectangles. }
@@ -513,21 +558,28 @@ const
 
 var CGPointZero: CGPoint; external name '_CGPointZero'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { The "zero" size -- equivalent to CGSizeMake(0, 0). } 
 
 var CGSizeZero: CGSize; external name '_CGSizeZero'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { The "zero" rectangle -- equivalent to CGRectMake(0, 0, 0, 0). } 
 
 var CGRectZero: CGRect; external name '_CGRectZero'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
@@ -656,6 +708,8 @@ function CGRectInset( rect: CGRect; dx: CGFloat; dy: CGFloat ): CGRect; external
 function CGRectIntegral( rect: CGRect ): CGRect; external name '_CGRectIntegral';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 { The "empty" rect.  This is the rectangle returned when, for example, we
  * intersect two disjoint rectangles.  Note that the null rect is not the
@@ -748,11 +802,15 @@ function CGRectInset( rect: CGRect; dx: Float32; dy: Float32 ): CGRect; external
  * and size. }
 
 function CGRectIntegral( rect: CGRect ): CGRect; external name '_CGRectIntegral';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the union of `r1' and `r2'. }
 
 function CGRectUnion( r1: CGRect; r2: CGRect ): CGRect; external name '_CGRectUnion';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
@@ -1184,6 +1242,8 @@ end.
 
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 { Return the intersection of `r1' and `r2'.  This may return a null
  * rect. }
@@ -1238,4 +1298,7 @@ function CGRectIntersectsRect( rect1: CGRect; rect2: CGRect ): SInt32; external 
 *)
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

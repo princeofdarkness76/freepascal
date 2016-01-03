@@ -87,6 +87,7 @@ begin
     rmNearest :
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         mode := FP_RND_RN;
       end;
     rmTruncate :
@@ -101,6 +102,8 @@ begin
       begin
         mode := FP_RND_RM;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         mode := 0;
         softfloat_rounding_mode := float_round_nearest_even;
       end;
@@ -118,7 +121,10 @@ begin
       begin
         mode := 3;
         softfloat_rounding_mode := float_round_down;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
   end;
 {$ifndef aix}

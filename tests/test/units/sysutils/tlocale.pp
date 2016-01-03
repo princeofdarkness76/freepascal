@@ -3,10 +3,14 @@
 uses
 {$ifdef unix}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef darwin}iosxwstr{$else}cwstring{$endif},
 =======
   cwstring,
 >>>>>>> graemeg/fixes_2_2
+=======
+  cwstring,
+>>>>>>> origin/fixes_2_2
   clocale,
 {$endif}
   SysUtils;

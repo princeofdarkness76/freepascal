@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 const
   DEGREES_IN_CIRCLE = (1 shl 15);
@@ -62,6 +63,8 @@ end;
 
 {$endif NDS_IMPLEMENTATION}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: trig_lut.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -112,4 +115,7 @@ var
 {$define  _SIN := SIN_bin}
 {$define  _TAN := TAN_bin}
 {$endif NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

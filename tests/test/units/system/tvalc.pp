@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 unit tvalc;
 
 interface
@@ -63,6 +64,8 @@ end;
 
 end.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 unit tvalc;
 
 interface
@@ -126,4 +129,7 @@ begin
 end;
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

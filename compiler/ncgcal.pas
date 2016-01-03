@@ -672,9 +672,12 @@ implementation
           end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         if not assigned(typedef) then
           realresdef:=tstoreddef(resultdef)
 =======
+=======
+>>>>>>> origin/fixes_2_2
               retloc:=procdefinition.funcretloc[callerside];
 {$ifndef cpu64bit}
               if cgsize in [OS_64,OS_S64] then
@@ -1222,12 +1225,16 @@ implementation
         vmtoffset : aint;
 {$endif vtentry}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef SUPPORT_SAFECALL}
         cgpara : tcgpara;
 {$endif}
 =======
         cgpara : tcgpara;
 >>>>>>> graemeg/fixes_2_2
+=======
+        cgpara : tcgpara;
+>>>>>>> origin/fixes_2_2
       begin
          if not assigned(procdefinition) or
             not(procdefinition.has_paraloc_info in [callerside,callbothsides]) then

@@ -4,6 +4,7 @@ program Example;
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   SpellCheck;
 
 var
@@ -31,6 +32,8 @@ begin
 
     Speller.Free;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   sCheck;
 
 var
@@ -49,7 +52,10 @@ begin
       Writeln; // to keep format
     end else
       Writeln(ParamStr(i), ' is spelled correctly!');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 end.
 

@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('sqlite');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ShortName:='sqlt';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -23,12 +24,17 @@ begin
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ALLPACKAGES}
     P.Directory:='sqlite';
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
     P.SourcePath.Add('src');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     T:=P.Targets.AddUnit('sqlite3db.pas');
       with T.Dependencies do
@@ -41,9 +47,12 @@ begin
           AddInclude('sqlite3.inc');
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.ResourceStrings := True;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('sqlite3.pp');
       with T.Dependencies do
         begin
@@ -57,12 +66,15 @@ begin
     T:=P.Targets.AddUnit('sqlite.pp');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ExamplePath.Add('tests/');
     P.Targets.AddExampleProgram('testapiv3x.pp');
     P.Targets.AddExampleProgram('test.pas');
     // 'testapiv3x.README
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

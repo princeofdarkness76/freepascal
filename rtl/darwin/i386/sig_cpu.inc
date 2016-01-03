@@ -629,4 +629,7 @@
         uc_mcontext: ^mcontext_t;      { machine specific context }
      end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

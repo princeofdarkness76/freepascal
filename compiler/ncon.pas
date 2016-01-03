@@ -767,12 +767,17 @@ implementation
         { only do range checking when explicitly asked for it
           and if the type can be range checked, see tests/tbs/tb0539.pp }
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (resultdef.typ in [orddef,enumdef]) then
            testrange(resultdef,value,not rangecheck,false)
 =======
         if rangecheck and (resultdef.typ in [orddef,enumdef]) then
            testrange(resultdef,resultdef,value,false);
 >>>>>>> graemeg/fixes_2_2
+=======
+        if rangecheck and (resultdef.typ in [orddef,enumdef]) then
+           testrange(resultdef,resultdef,value,false);
+>>>>>>> origin/fixes_2_2
       end;
 
     function tordconstnode.pass_1 : tnode;
@@ -1417,7 +1422,10 @@ implementation
           end;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
     
 

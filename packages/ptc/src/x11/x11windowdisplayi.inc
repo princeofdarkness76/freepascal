@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -146,6 +147,8 @@ begin
   FFullScreen := PTC_X11_FULLSCREEN in FFlags;
   FResizable := (PTC_X11_RESIZABLE_WINDOW in FFlags) and not FFullScreen;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Constructor TX11WindowDisplay.Create(ADisplay : PDisplay; AScreen : Integer; Const AFlags : TX11Flags);
 
 Begin
@@ -186,7 +189,10 @@ Begin
   FDestY := 0;
 
   FFullScreen := PTC_X11_FULLSCREEN In FFlags;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   FFocus := True;
 
@@ -199,14 +205,19 @@ Begin
 
   { Create the mode switcher object }
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (FModeSwitcher = Nil) and FFullScreen then
 =======
   If (FModeSwitcher = Nil) And FFullScreen Then
 >>>>>>> graemeg/fixes_2_2
+=======
+  If (FModeSwitcher = Nil) And FFullScreen Then
+>>>>>>> origin/fixes_2_2
     FModeSwitcher := CreateModeSwitcher;
 
   { Create the invisible cursor }
   tmpPixmap := XCreateBitmapFromData(FDisplay, RootWindow(FDisplay, FScreen), @BlankCursorData, 8, 8);
+<<<<<<< HEAD
 <<<<<<< HEAD
   try
     FX11InvisibleCursor := XCreatePixmapCursor(FDisplay, tmpPixmap, tmpPixmap, @BlackColor, @BlackColor, 0, 0);
@@ -412,6 +423,8 @@ Begin
   if FFullScreen then
   begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Try
     FX11InvisibleCursor := XCreatePixmapCursor(FDisplay, tmpPixmap, tmpPixmap, @BlackColor, @BlackColor, 0, 0);
   Finally
@@ -481,7 +494,10 @@ Begin
   { Set the _NET_WM_STATE property }
   If FFullScreen Then
   Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     tmpArrayOfCLong[1] := XInternAtom(FDisplay, '_NET_WM_STATE_FULLSCREEN', False);
 
     XChangeProperty(FDisplay, FWindow,
@@ -489,14 +505,19 @@ Begin
                     XA_ATOM,
                     32, PropModeReplace, @tmpArrayOfCLong, 1);
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
 =======
   End;
 >>>>>>> graemeg/fixes_2_2
+=======
+  End;
+>>>>>>> origin/fixes_2_2
 
   { Map the window and wait for success }
   XSelectInput(FDisplay, FWindow, StructureNotifyMask);
   XMapRaised(FDisplay, FWindow);
+<<<<<<< HEAD
 <<<<<<< HEAD
   repeat
     XNextEvent(FDisplay, @e);
@@ -524,6 +545,8 @@ Begin
     found := XCheckMaskEvent(FDisplay, KeyPressMask or KeyReleaseMask, @e);
   until not found;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Repeat
     XNextEvent(FDisplay, @e);
     If e._type = MapNotify Then
@@ -545,12 +568,16 @@ Begin
     { problems.. }
     found := XCheckMaskEvent(FDisplay, KeyPressMask Or KeyReleaseMask, @e);
   Until Not found;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   attr.backing_store := Always;
   XChangeWindowAttributes(FDisplay, FWindow, CWBackingStore, @attr);
 
   { Set clipping area }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   FClip := TPTCArea.Create(0, 0, FWidth, FHeight);
@@ -572,17 +599,23 @@ Begin
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
   tmpArea := TPTCArea.Create(0, 0, FWidth, FHeight);
   Try
     FClip.Assign(tmpArea);
   Finally
     tmpArea.Free;
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   { Installs the right colour map for 8 bit modes }
   CreateColormap;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -685,6 +718,8 @@ begin
     FCMap := 0;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   If FFullScreen Then
     EnterFullScreen;
 End;
@@ -710,12 +745,16 @@ Begin
     XFreeColormap(FDisplay, FCMap);
     FCMap := 0;
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   { Destroy XImage and buffer }
   FreeAndNil(FPrimary);
   FreeMemAndNil(FColours);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   if FGC <> nil then
   begin
@@ -731,10 +770,16 @@ Begin
   If (FWindow <> 0) And (Not (PTC_X11_LEAVE_WINDOW In FFlags)) Then
   Begin
 >>>>>>> graemeg/fixes_2_2
+=======
+  { Hide and destroy window }
+  If (FWindow <> 0) And (Not (PTC_X11_LEAVE_WINDOW In FFlags)) Then
+  Begin
+>>>>>>> origin/fixes_2_2
     XUnmapWindow(FDisplay, FWindow);
     XSync(FDisplay, False);
 
     XDestroyWindow(FDisplay, FWindow);
+<<<<<<< HEAD
 <<<<<<< HEAD
   end;
 
@@ -866,6 +911,8 @@ begin
   { try to switch mode }
   if Assigned(FModeSwitcher) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
   End;
 
   { Free the invisible cursor }
@@ -904,12 +951,16 @@ Procedure TX11WindowDisplay.EnterFullScreen;
 Begin
   { Try to switch mode }
   If Assigned(FModeSwitcher) Then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FModeSwitcher.SetBestMode(FWidth, FHeight);
 
   XSync(FDisplay, False);
 
   { Center the image }
+<<<<<<< HEAD
 <<<<<<< HEAD
   FDestX := FModeSwitcher.Width div 2 - FWidth div 2;
   FDestY := FModeSwitcher.Height div 2 - FHeight div 2;
@@ -1102,6 +1153,8 @@ var
       { movement? }
       if (x <> FPreviousMouseX) or (y <> FPreviousMouseY) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FDestX := FModeSwitcher.Width Div 2 - FWidth Div 2;
   FDestY := FModeSwitcher.Height Div 2 - FHeight Div 2;
 End;
@@ -1281,11 +1334,15 @@ Var
 
       { movement? }
       If (x <> FPreviousMouseX) Or (y <> FPreviousMouseY) Then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         FEventQueue.AddEvent(TPTCMouseEvent.Create(x, y, x - FPreviousMouseX, y - FPreviousMouseY, FPreviousMouseButtonState));
 
       { button presses/releases? }
       cstate := FPreviousMouseButtonState;
+<<<<<<< HEAD
 <<<<<<< HEAD
       for button := Low(button) to High(button) do
       begin
@@ -1306,6 +1363,8 @@ Var
           end;
       end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       For button := Low(button) To High(button) Do
       Begin
         before := button In FPreviousMouseButtonState;
@@ -1324,12 +1383,16 @@ Var
             FEventQueue.AddEvent(TPTCMouseButtonEvent.Create(x, y, 0, 0, cstate, False, button));
           End;
       End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
       FPreviousMouseX := x;
       FPreviousMouseY := y;
       FPreviousMouseButtonState := PTCMouseButtonState;
       FPreviousMousePositionSaved := True;
+<<<<<<< HEAD
 <<<<<<< HEAD
     end;
   end;
@@ -1549,6 +1612,8 @@ begin
 >>>>>>> origin/cpstrnew
   repeat
 =======
+=======
+>>>>>>> origin/fixes_2_2
     End;
   End;
 
@@ -1621,13 +1686,17 @@ Var
 Begin
   FreeAndNil(AEvent);
   Repeat
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { process all events from the X queue and put them on our FEventQueue }
     HandleEvents;
 
     { try to find an event that matches the EventMask }
     AEvent := FEventQueue.NextEvent(AEventMask);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     if AWait and (AEvent = Nil) then
     begin
@@ -1660,6 +1729,8 @@ var
 begin
   repeat
 =======
+=======
+>>>>>>> origin/fixes_2_2
     If AWait And (AEvent = Nil) Then
     Begin
       { if the X event queue is empty, block until an event is received }
@@ -1676,13 +1747,17 @@ Var
 
 Begin
   Repeat
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { process all events from the X queue and put them on our FEventQueue }
     HandleEvents;
 
     { try to find an event that matches the EventMask }
     Result := FEventQueue.PeekEvent(AEventMask);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     if AWait and (Result = Nil) then
     begin
@@ -1850,6 +1925,8 @@ begin
     end;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     If AWait And (Result = Nil) Then
     Begin
       { if the X event queue is empty, block until an event is received }
@@ -1934,11 +2011,15 @@ Begin
       LOG('XShm failed');
     End;
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$ENDIF ENABLE_X11_EXTENSION_XSHM}
 
   LOG('trying to create a normal image');
   Result := TX11NormalImage.Create(ADisplay, AScreen, AWidth, AHeight, AFormat);
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -1997,6 +2078,8 @@ begin
       LOG('XF86VidMode failed');
     end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Function TX11WindowDisplay.CreateModeSwitcher : TX11Modes;
@@ -2022,11 +2105,15 @@ Begin
     Except
       LOG('XF86VidMode failed');
     End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF ENABLE_X11_EXTENSION_XF86VIDMODE}
 
   LOG('creating the standard NoModeSwitching mode switcher');
   Result := TX11ModesNoModeSwitching.Create(FDisplay, FScreen);
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -2133,6 +2220,8 @@ end;
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Function TX11WindowDisplay.GetX11Window : TWindow;
@@ -2196,4 +2285,7 @@ Begin
     XStoreColors(FDisplay, FCMap, FColours, 256);
   End;
 End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

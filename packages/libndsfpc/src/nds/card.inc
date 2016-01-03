@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 const  
   // Card bus
@@ -8,6 +9,8 @@ const
   REG_AUXSPICNTH : pcuint8  = pointer($040001A1);
   REG_AUXSPIDATA : pcuint8  = pointer($040001A2);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: card.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -58,7 +61,10 @@ const
   CARD_CR2       : pcuint32 = pointer($040001A4);
   CARD_COMMAND   : pcuint8  = pointer($040001A8);
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   CARD_DATA_RD   : pcuint32 = pointer($04100010);
 
   CARD_1B0       : pcuint32 = pointer($040001B0);
@@ -66,6 +72,7 @@ const
   CARD_1B8       : pcuint16 = pointer($040001B8);
   CARD_1BA       : pcuint16 = pointer($040001BA);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   CARD_CR1_ENABLE = $80;  // in byte 1, i.e. 0x8000
   CARD_CR1_IRQ    = $40;  // in byte 1, i.e. 0x4000
@@ -134,6 +141,8 @@ function CARD_DELAY1(n: cint): cint; inline;
 
 const  
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
   CARD_CR1_ENABLE = $80;  // in byte 1, i.e. 0x8000
   CARD_CR1_IRQ    = $40;  // in byte 1, i.e. 0x4000
@@ -152,12 +161,16 @@ const
   CARD_13         = (1 shl 13);  // when writing
   CARD_4          = (1 shl 4);   // when writing
   
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   // 3 bits in b10..b8 indicate something
   // read bits
   CARD_BUSY       = (1 shl 31);  // when reading, still expecting incomming data?
   CARD_DATA_READY = (1 shl 23);  // when reading, CARD_DATA_RD or CARD_DATA has another word of data and is good to go
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   // Card commands
   CARD_CMD_DUMMY          = $9F;
@@ -217,6 +230,8 @@ function cardEepromReadID(): cuint32; cdecl; external;
 function cardEepromCommand(command: cuint8): cuint8; cdecl; external;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 procedure cardWriteCommand(const command: pcuint8); cdecl; external;
@@ -232,11 +247,15 @@ procedure cardWriteEeprom(address: cuint32;  data: pcuint8;  length: cuint32;  a
 
 function cardEepromReadID(i: cuint8): cuint8; cdecl; external;
 function cardEepromCommand(command: cuint8; address: cuint32): cuint8; cdecl; external;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function cardEepromGetType({void}): cint; cdecl; external;
 function cardEepromGetSize(): cuint32; cdecl; external;
 procedure cardEepromChipErase({void}); cdecl; external;
 procedure cardEepromSectorErase(address: cuint32); cdecl; external;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {$endif NDS_INTERFACE}
@@ -269,3 +288,7 @@ end;
 {$endif NDS_INTERFACE}
 
 >>>>>>> graemeg/fixes_2_2
+=======
+{$endif NDS_INTERFACE}
+
+>>>>>>> origin/fixes_2_2

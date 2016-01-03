@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 const
   EXCEPTION_VECTOR : ^VoidFn = pointer($2FFFD9C);
@@ -6,6 +7,8 @@ const
 var
   exceptionC: ^VoidFn; cvar; external;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: exceptions.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -52,16 +55,23 @@ const
 
 var
   exceptionC: ^VoidFunctionPointer; cvar; external;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   exceptionStack: cuint32; cvar; external;
   exceptionRegisters: pcint32; cvar; external;
 
 procedure enterException(); cdecl; external;
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure setExceptionHandler(handler: VoidFn); cdecl; external;
 =======
 procedure setExceptionHandler(handler: VoidFunctionPointer); cdecl; external;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure setExceptionHandler(handler: VoidFunctionPointer); cdecl; external;
+>>>>>>> origin/fixes_2_2
 procedure defaultExceptionHandler(); cdecl; external;
 
 function getCPSR(): cuint32; cdecl; external;

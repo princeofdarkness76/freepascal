@@ -585,6 +585,7 @@ A_INSERTQ,
 A_EXTRQ,
 A_LZCNT,
 <<<<<<< HEAD
+<<<<<<< HEAD
 A_PABSB,
 A_PABSW,
 A_PABSD,
@@ -1073,4 +1074,7 @@ A_CMPSQ
 =======
 A_POPCNT
 >>>>>>> graemeg/fixes_2_2
+=======
+A_POPCNT
+>>>>>>> origin/fixes_2_2
 );

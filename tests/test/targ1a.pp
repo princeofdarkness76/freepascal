@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %NEEDEDAFTER }
 program go32v2_crash;
 
@@ -58,6 +59,8 @@ begin
 
 end.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 program go32v2_crash;
 
 const
@@ -89,4 +92,7 @@ begin
   Writeln(stderr,'Everthing is fine');
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

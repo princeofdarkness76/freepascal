@@ -71,6 +71,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure TLinkerAmiga.SetAmiga68kInfo;
 begin
@@ -86,12 +87,17 @@ begin
      end;
    end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TLinkerAmiga.SetAmiga68kInfo;
 begin
   with Info do begin
     ExeCmd[1]:='m68k-amiga-ld $OPT -d -n -o $EXE $RES';
   end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TLinkerAmiga.SetAmigaPPCInfo;
@@ -223,6 +229,28 @@ end;
 
 
 function TLinkerAmiga.MakeAmiga68kExe: boolean;
+<<<<<<< HEAD
+=======
+var
+  BinStr,
+  CmdStr  : TCmdStr;
+  StripStr: string[40];
+begin
+  StripStr:='';
+  if (cs_link_strip in current_settings.globalswitches) then StripStr:='-s';
+
+  { Call linker }
+  SplitBinCmd(Info.ExeCmd[1],BinStr,CmdStr);
+  Replace(cmdstr,'$OPT',Info.ExtraOptions);
+  Replace(cmdstr,'$EXE',PathConv(maybequoted(ScriptFixFileName(current_module.exefilename^))));
+  Replace(cmdstr,'$RES',PathConv(maybequoted(ScriptFixFileName(outputexedir+Info.ResName))));
+  Replace(cmdstr,'$STRIP',StripStr);
+  MakeAmiga68kExe:=DoExec(FindUtil(BinStr),CmdStr,true,false);
+end;
+
+
+function TLinkerAmiga.MakeAmigaPPCExe: boolean;
+>>>>>>> origin/fixes_2_2
 var
   BinStr,
   CmdStr  : TCmdStr;
@@ -320,7 +348,10 @@ initialization
 =======
 {$warning No executable creation support for m68k yet!}
   RegisterExternalLinker(system_m68k_Amiga_info,TLinkerAmiga);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   RegisterTarget(system_m68k_Amiga_info);
   RegisterRes(res_ext_info, TWinLikeResourceFile);
 {$endif m68k}

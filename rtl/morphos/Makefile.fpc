@@ -34,7 +34,10 @@ units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
 units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
 =======
 units=$(SYSTEMUNIT) objpas macpas strings \
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       dos heaptrc ctypes \
       sysutils classes fgl strutils math typinfo varutils \
       charset ucomplex getopts matrix fmtbcd \
@@ -42,6 +45,7 @@ units=$(SYSTEMUNIT) objpas macpas strings \
       exec timer doslib utility hardware inputevent keymap graphics layers \
       intuition aboxlib mui \
 # these units are here, because they depend on system interface units above
+<<<<<<< HEAD
 <<<<<<< HEAD
       kvm video mouse keyboard sockets \
 <<<<<<< HEAD
@@ -62,6 +66,8 @@ implicitunits=cp1250 cp1251 cp1252 cp1253 cp1254 cp1255 cp1256 cp1257 cp1258 \
 
 rsts=math rtlconsts typinfo classes sysconst
 =======
+=======
+>>>>>>> origin/fixes_2_2
       kvm video keyboard mouse sockets \
 # these can be moved to packages later
       clipboard datatypes asl ahi tinygl get9 muihelper
@@ -286,4 +292,7 @@ ctypes$(PPUEXT) :  $(INC)/ctypes.pp $(SYSTEMUNIT)$(PPUEXT)
 
 sockets$(PPUEXT) : sockets.pp $(INC)/textrec.inc $(INC)/filerec.inc \
                    ctypes$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

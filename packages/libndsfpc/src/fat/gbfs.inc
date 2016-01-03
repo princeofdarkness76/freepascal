@@ -46,10 +46,14 @@
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   GBFS_FILE = record
 =======
   GBFS_FILE = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  GBFS_FILE = packed record
+>>>>>>> origin/fixes_2_2
     magic: array [0..15] of char;   // "PinEightGBFS\r\n\032\n" 
     total_len: cuint32;              // total length of archive
     dir_off: cuint16;               // offset in bytes to directory 
@@ -59,10 +63,14 @@ type
   PGBFS_FILE = ^GBFS_FILE;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   GBFS_ENTRY = record
 =======
   GBFS_ENTRY = packed record
 >>>>>>> graemeg/fixes_2_2
+=======
+  GBFS_ENTRY = packed record
+>>>>>>> origin/fixes_2_2
     name: array [0..23] of char;      // filename, nul-padded
     len: cuint32;                     // length of object in bytes 
     data_offset: cuint32;             // in bytes from beginning of file

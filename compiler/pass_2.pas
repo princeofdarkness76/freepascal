@@ -36,11 +36,14 @@ uses
          fc_inflowcontrol,
          fc_gotolabel,
 <<<<<<< HEAD
+<<<<<<< HEAD
          { in try block of try..finally }
          fc_unwind_exit,
          fc_unwind_loop,
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          { the left side of an expression is already handled, so we are
            not allowed to do ssl }
          fc_lefthandled);
@@ -223,10 +226,14 @@ implementation
              begin
                if (p.location.loc<>p.expectloc) then
 <<<<<<< HEAD
+<<<<<<< HEAD
                  Comment(V_Warning,'Location ('+tcgloc2str[p.location.loc]+') not equal to expectloc ('+tcgloc2str[p.expectloc]+'): '+nodetype2str[p.nodetype]);
 =======
                  Comment(V_Warning,'Location not equal to expectloc: '+nodetype2str[p.nodetype]);
 >>>>>>> graemeg/fixes_2_2
+=======
+                 Comment(V_Warning,'Location not equal to expectloc: '+nodetype2str[p.nodetype]);
+>>>>>>> origin/fixes_2_2
                if (p.location.loc=LOC_INVALID) then
                  Comment(V_Warning,'Location not set in secondpass: '+nodetype2str[p.nodetype]);
              end;

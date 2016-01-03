@@ -169,9 +169,12 @@ interface
           exefilename,              { fullname of the exefile }
           dbgfilename,              { fullname of the debug info file }
 <<<<<<< HEAD
+<<<<<<< HEAD
           path,                     { path where the module is find/created }
           outputpath   : TPathStr;  { path where the .s / .o / exe are created }
 =======
+=======
+>>>>>>> origin/fixes_2_2
           mainsource   : pshortstring;   { name of the main sourcefile }
 >>>>>>> graemeg/fixes_2_2
           constructor create(const s:string);
@@ -714,7 +717,10 @@ uses
 =======
          mapfilename:=stringdup(p+n+'.map');
          dbgfilename:=stringdup(p+n+'.dbg');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 

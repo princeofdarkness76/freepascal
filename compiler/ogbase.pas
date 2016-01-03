@@ -162,6 +162,7 @@ interface
       debuglinkname='.gnu_debuglink';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       { TObjRelocation.flags }
       { 'ftype' field contains platform-specific value }
       rf_raw = 1;
@@ -172,6 +173,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     type
       TObjSectionOption = (
        { Has Data available in the file }
@@ -328,6 +331,7 @@ interface
      TObjSectionClass = class of TObjSection;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      TObjSectionGroup = class(TFPHashObject)
      public
        members: array of TObjSection;
@@ -345,12 +349,17 @@ interface
      TObjData = class(TLinkedListItem)
      private
 =======
+=======
+>>>>>>> origin/fixes_2_2
      TString80 = string[80];
 
      TObjData = class(TLinkedListItem)
      private
        FName       : TString80;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        FCurrObjSec : TObjSection;
        FObjSectionList  : TFPHashObjectList;
        FCObjSymbol      : TObjSymbolClass;
@@ -406,9 +415,12 @@ interface
        procedure afterwrite;virtual;
        procedure resetsections;
 <<<<<<< HEAD
+<<<<<<< HEAD
        procedure layoutsections(var datapos:aword);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        property Name:TString80 read FName;
        property CurrObjSec:TObjSection read FCurrObjSec;
        property ObjSymbolList:TObjSymbolList read FObjSymbolList;
@@ -609,7 +621,10 @@ interface
         procedure SetCurrMemPos(const AValue: qword);
 =======
         FImageBase    : aint;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       protected
         { writer }
         FExeWriteMode : TExeWriteMode;
@@ -625,6 +640,7 @@ interface
         function  writeData:boolean;virtual;abstract;
         property CExeSection:TExeSectionClass read FCExeSection write FCExeSection;
         property CObjData:TObjDataClass read FCObjData write FCObjData;
+<<<<<<< HEAD
 <<<<<<< HEAD
         property CObjSymbol:TObjSymbolClass read FCObjSymbol write FCObjSymbol;
         procedure Order_ObjSectionList(ObjSectionList : TFPObjectList; const aPattern:string);virtual;
@@ -642,6 +658,12 @@ interface
         CurrDataPos,
         CurrMemPos   : aint;
 >>>>>>> graemeg/fixes_2_2
+=======
+        procedure Order_ObjSectionList(ObjSectionList : TFPObjectList);virtual;
+      public
+        CurrDataPos,
+        CurrMemPos   : aint;
+>>>>>>> origin/fixes_2_2
         IsSharedLibrary : boolean;
         ExecStack    : boolean;
         constructor create;virtual;
@@ -668,17 +690,23 @@ interface
         procedure MemPos_Start;virtual;
         procedure MemPos_Header;virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure MemPos_ExeSection(exesec:TExeSection);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         procedure MemPos_ExeSection(const aname:string);virtual;
         procedure MemPos_EndExeSection;virtual;
         procedure DataPos_Start;virtual;
         procedure DataPos_Header;virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure DataPos_ExeSection(exesec:TExeSection);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         procedure DataPos_ExeSection(const aname:string);virtual;
         procedure DataPos_EndExeSection;virtual;
         procedure DataPos_Symbols;virtual;
@@ -707,7 +735,10 @@ interface
         procedure GenerateLibraryImports(ImportLibraryList:TFPHashObjectList);virtual;
         procedure GenerateDebugLink(const dbgname:string;dbgcrc:cardinal);
         function WriteExeFile(const fn:string):boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         property Writer:TObjectWriter read FWriter;
         property ExeSectionList:TFPHashObjectList read FExeSectionList;
         property ObjDataList:TFPObjectList read FObjDataList;
@@ -722,9 +753,12 @@ interface
         property CurrExeSec:TExeSection read FCurrExeSec;
         property ExeWriteMode:TExeWriteMode read FExeWriteMode write FExeWriteMode;
 <<<<<<< HEAD
+<<<<<<< HEAD
         property CurrMemPos:qword read FCurrMemPos write SetCurrMemPos;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
       TExeOutputClass=class of TExeOutput;
 
@@ -1252,6 +1286,7 @@ implementation
           'toc',
           'init',
 <<<<<<< HEAD
+<<<<<<< HEAD
           'fini',
           'objc_class',
           'objc_meta_class',
@@ -1290,6 +1325,9 @@ implementation
 =======
           'fini'
 >>>>>>> graemeg/fixes_2_2
+=======
+          'fini'
+>>>>>>> origin/fixes_2_2
         );
       var
         sep : string[3];
@@ -1318,6 +1356,7 @@ implementation
           {code} [oso_Data,oso_load,oso_readonly,oso_executable,oso_keep],
           {Data} [oso_Data,oso_load,oso_write,oso_keep],
 <<<<<<< HEAD
+<<<<<<< HEAD
 { TODO: Fix sec_rodata be read-only-with-relocs}
           {roData} [oso_Data,oso_load,oso_write,oso_keep],
 { TODO: Fix sec_rodata_norel be read-only/constant}
@@ -1326,6 +1365,11 @@ implementation
           {roData} [oso_Data,oso_load,oso_write,oso_keep],
 {$warning TODO Fix sec_rodata_norel be read-only/constant}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$warning TODO Fix sec_rodata be read-only-with-relocs}
+          {roData} [oso_Data,oso_load,oso_write,oso_keep],
+{$warning TODO Fix sec_rodata_norel be read-only/constant}
+>>>>>>> origin/fixes_2_2
           {roData_norel} [oso_Data,oso_load,oso_write,oso_keep],
           {bss} [oso_load,oso_write,oso_keep],
           {threadvar} [oso_load,oso_write],
@@ -1440,7 +1484,10 @@ implementation
           {toc} [oso_Data,oso_load,oso_readonly],
           {init} [oso_Data,oso_load,oso_readonly,oso_executable,oso_keep],
           {fini} [oso_Data,oso_load,oso_readonly,oso_executable,oso_keep]
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         );
       begin
         result:=secoptions[atype];
@@ -1460,6 +1507,7 @@ implementation
             an entry is always (also in win64) 20 bytes and aligning
             on 8 bytes will insert 4 bytes between the entries resulting
 <<<<<<< HEAD
+<<<<<<< HEAD
             in a corrupt idata section.
             Same story with .pdata, it has 4-byte elements which should
             be packed without gaps. }
@@ -1468,6 +1516,10 @@ implementation
             in a corrupt idata section }
           sec_idata2,sec_idata4,sec_idata5,sec_idata6,sec_idata7:
 >>>>>>> graemeg/fixes_2_2
+=======
+            in a corrupt idata section }
+          sec_idata2,sec_idata4,sec_idata5,sec_idata6,sec_idata7:
+>>>>>>> origin/fixes_2_2
             result:=4;
           else
             result:=sizeof(pint);
@@ -2061,7 +2113,10 @@ implementation
           begin
             Replace(FMangledName,'?','__q$$');
             Replace(FMangledName,'@','__a$$');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           end;
       end;
 
@@ -2126,15 +2181,19 @@ implementation
         ExeVTableList.free;
         FExeSectionList.free;
 <<<<<<< HEAD
+<<<<<<< HEAD
         ComdatGroups.free;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         ObjDatalist.free;
         FWriter.free;
         inherited destroy;
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     function TExeOutput.MemAlign(exesec:TExeSection):longword;
       begin
@@ -2160,6 +2219,10 @@ implementation
     function TExeOutput.WriteExeFile(const fn:string):boolean;
       begin
 >>>>>>> graemeg/fixes_2_2
+=======
+    function TExeOutput.WriteExeFile(const fn:string):boolean;
+      begin
+>>>>>>> origin/fixes_2_2
         result:=false;
         if FWriter.createfile(fn) then
          begin
@@ -2315,10 +2378,14 @@ implementation
           end;
         { Order list if needed }
 <<<<<<< HEAD
+<<<<<<< HEAD
         Order_ObjSectionList(TmpObjSectionList,aname);
 =======
         Order_ObjSectionList(TmpObjSectionList);
 >>>>>>> graemeg/fixes_2_2
+=======
+        Order_ObjSectionList(TmpObjSectionList);
+>>>>>>> origin/fixes_2_2
         { Add the (ordered) list to the current ExeSection }
         for i:=0 to TmpObjSectionList.Count-1 do
           begin
@@ -2330,10 +2397,14 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TExeOutput.Order_ObjSectionList(ObjSectionList : TFPObjectList; const aPattern:string);
 =======
     procedure TExeOutput.Order_ObjSectionList(ObjSectionList : TFPObjectList);
 >>>>>>> graemeg/fixes_2_2
+=======
+    procedure TExeOutput.Order_ObjSectionList(ObjSectionList : TFPObjectList);
+>>>>>>> origin/fixes_2_2
       begin
       end;
 
@@ -2422,8 +2493,23 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     procedure TExeOutput.MemPos_ExeSection(const aname:string);
 >>>>>>> graemeg/fixes_2_2
+=======
+    procedure TExeOutput.MemPos_Start;
+      begin
+        CurrMemPos:=0;
+      end;
+
+
+    procedure TExeOutput.MemPos_Header;
+      begin
+      end;
+
+
+    procedure TExeOutput.MemPos_ExeSection(const aname:string);
+>>>>>>> origin/fixes_2_2
       var
         bytevalues : array[0..MAXVAL-1] of byte;
         twobytevalues : array[0..MAXVAL-1] of word;
@@ -2559,20 +2645,28 @@ implementation
 
 
     procedure TExeOutput.DataPos_Header;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
       end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TExeOutput.MemPos_ExeSection(exesec:TExeSection);
 =======
     procedure TExeOutput.DataPos_ExeSection(const aname:string);
 >>>>>>> graemeg/fixes_2_2
+=======
+    procedure TExeOutput.DataPos_ExeSection(const aname:string);
+>>>>>>> origin/fixes_2_2
       var
         i      : longint;
         objsec : TObjSection;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
         { Alignment of ExeSection }
         CurrMemPos:=align_qword(CurrMemPos,MemAlign(exesec));
@@ -2603,6 +2697,8 @@ implementation
 
     procedure TExeOutput.MemPos_EndExeSection;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         { Section can be removed }
         FCurrExeSec:=FindExeSection(aname);
         if not assigned(CurrExeSec) then
@@ -2636,7 +2732,10 @@ implementation
 
 
     procedure TExeOutput.DataPos_EndExeSection;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
         if not assigned(CurrExeSec) then
           exit;
@@ -2644,6 +2743,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure TExeOutput.DataPos_Start;
       begin
@@ -2657,6 +2757,8 @@ implementation
 
     procedure TExeOutput.DataPos_ExeSection(exesec:TExeSection);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure TExeOutput.DataPos_Symbols;
       var
         i : longint;
@@ -3162,10 +3264,14 @@ implementation
         exesec.SecOptions:=[oso_data,oso_keep];
         exesec.SecAlign:=4;
 <<<<<<< HEAD
+<<<<<<< HEAD
         objsec:=internalObjData.createsection(exesec.name,1,exesec.SecOptions);
 =======
         objsec:=internalObjData.createsection(exesec.name,0,exesec.SecOptions);
 >>>>>>> graemeg/fixes_2_2
+=======
+        objsec:=internalObjData.createsection(exesec.name,0,exesec.SecOptions);
+>>>>>>> origin/fixes_2_2
         internalObjData.writebytes(debuglink,len);
         exesec.AddObjSection(objsec);
       end;
@@ -3542,6 +3648,7 @@ implementation
                     end;
               end;
 <<<<<<< HEAD
+<<<<<<< HEAD
             if doremove then
               begin
                 Comment(V_Debug,'Disabling empty section '+exesec.name);
@@ -3552,6 +3659,12 @@ implementation
                 Comment(V_Debug,'Deleting empty section '+exesec.name);
                 ExeSectionList[i]:=nil;
 >>>>>>> graemeg/fixes_2_2
+=======
+            if doremove and not (RelocSection and (exesec.Name='.reloc')) then
+              begin
+                Comment(V_Debug,'Deleting empty section '+exesec.name);
+                ExeSectionList[i]:=nil;
+>>>>>>> origin/fixes_2_2
               end;
           end;
       end;
@@ -3566,6 +3679,21 @@ implementation
           begin
             exesec:=TExeSection(ExeSectionList[i]);
             if exesec.Disabled then
+              ExeSectionList[i]:=nil;
+          end;
+        ExeSectionList.Pack;
+      end;
+
+
+    procedure TExeOutput.RemoveDebugInfo;
+      var
+        i      : longint;
+        exesec : TExeSection;
+      begin
+        for i:=0 to ExeSectionList.Count-1 do
+          begin
+            exesec:=TExeSection(ExeSectionList[i]);
+            if (oso_debug in exesec.SecOptions) then
               ExeSectionList[i]:=nil;
           end;
         ExeSectionList.Pack;
@@ -3651,6 +3779,7 @@ implementation
             begin
               objsym:=objreloc.symbol;
 <<<<<<< HEAD
+<<<<<<< HEAD
               if assigned(objsym) and (objsym.typ<>AT_SECTION) then
                 exemap.Add('  References  '+objsym.name+' in '
                   +refobjsec.fullname)
@@ -3664,6 +3793,8 @@ implementation
           if assigned(refobjsec) then
             AddToObjSectionWorkList(refobjsec);
 =======
+=======
+>>>>>>> origin/fixes_2_2
               if assigned(objsym) then
                 exemap.Add('  References  '+objsym.name+' in '
                   +refobjsec.fullname)
@@ -3821,6 +3952,7 @@ implementation
         exesec  : TExeSection;
         objsec  : TObjSection;
 <<<<<<< HEAD
+<<<<<<< HEAD
       begin
         for i:=0 to ExeSectionList.Count-1 do
           begin
@@ -3927,6 +4059,9 @@ implementation
         FExeSectionList:=tmp;
 =======
       begin
+=======
+      begin
+>>>>>>> origin/fixes_2_2
         for i:=0 to ExeSectionList.Count-1 do
           begin
             exesec:=TExeSection(ExeSectionList[i]);
@@ -3940,7 +4075,10 @@ implementation
                 objsec.FixupRelocs;
               end;
           end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 

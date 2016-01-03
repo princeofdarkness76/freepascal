@@ -7,10 +7,15 @@ program meteorshower;
  mostly based on Ben St. John's implementation.}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$Q-}
 
 >>>>>>> graemeg/fixes_2_2
+=======
+{$Q-}
+
+>>>>>>> origin/fixes_2_2
 uses dos;
 
 const N_COL = 5;
@@ -709,10 +714,14 @@ begin
 
        if not(cardinal(last_row) in alwaysBad[parity(row and 1)]) then
 <<<<<<< HEAD
+<<<<<<< HEAD
          if boardVec*bitvec(cardinal(cardinal(TOP_ROW) shl N_COL*3))=[] then
 =======
          if boardVec*bitvec(cardinal(TOP_ROW) shl N_COL*3)=[] then
 >>>>>>> graemeg/fixes_2_2
+=======
+         if boardVec*bitvec(cardinal(TOP_ROW) shl N_COL*3)=[] then
+>>>>>>> origin/fixes_2_2
            begin
              isClosed:=fixed(row>6); {because we track 3 rows}
                if not(cardinal(last_row) in is_known[isClosed,isOdd]) then

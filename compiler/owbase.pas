@@ -253,6 +253,7 @@ begin
   if opened then
     closefile;
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
 
 
@@ -261,6 +262,8 @@ begin
   InternalError(2015081401);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -275,6 +278,7 @@ begin
     end;
   ffilename:=fn;
 <<<<<<< HEAD
+<<<<<<< HEAD
   bufmax:=f.Size;
   getmem(buf,bufmax);
   f.read(buf^,bufmax);
@@ -283,6 +287,11 @@ begin
   f.read(buf^,f.Size);
   bufmax:=f.Size;
 >>>>>>> graemeg/fixes_2_2
+=======
+  getmem(buf,f.Size);
+  f.read(buf^,f.Size);
+  bufmax:=f.Size;
+>>>>>>> origin/fixes_2_2
   f.free;
   bufidx:=0;
   opened:=true;
@@ -340,6 +349,7 @@ function tobjectreader.getfilename : string;
   begin
     result:=ffilename;
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
 
 function tobjectreader.GetPos: longint;
@@ -353,6 +363,8 @@ function tobjectreader.GetIsArchive: boolean;
     Result:=false;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
 end.

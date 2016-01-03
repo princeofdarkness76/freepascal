@@ -339,11 +339,15 @@ Resourcestring
   SNoValidTests = 'No valid tests found in ';
   SNoException = 'no exception';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SAssertNotCalled = 'Assert not called during test.';
   
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 implementation
 
 uses
@@ -878,10 +882,14 @@ begin
   try
     AMethod;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FailMsg:=MisMatch(SNoException);
 =======
     ExceptionName:=SNoException;
 >>>>>>> graemeg/fixes_2_2
+=======
+    ExceptionName:=SNoException;
+>>>>>>> origin/fixes_2_2
   except
     on E: Exception do
       begin
@@ -1328,7 +1336,10 @@ begin
   if ATest.TestSuiteName = '' then
     ATest.TestSuiteName := Self.TestName;
   ATest.EnableIgnores := Self.EnableIgnores;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 

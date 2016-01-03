@@ -202,12 +202,17 @@ type
   PUWSTR = {$IFDEF USE_DELPHI_TYPES} Windows.LPWSTR {$ELSE} PWideChar {$ENDIF};
   {$EXTERNALSYM PUWSTR}
 <<<<<<< HEAD
+<<<<<<< HEAD
   LPCUWSTR = {$IFDEF USE_DELPHI_TYPES} Windows.LPWSTR {$ELSE} PWideChar {$ENDIF};
   {$EXTERNALSYM LPCUWSTR}
 =======
   LCPUWSTR = {$IFDEF USE_DELPHI_TYPES} Windows.LPWSTR {$ELSE} PWideChar {$ENDIF};
   {$EXTERNALSYM LCPUWSTR}
 >>>>>>> graemeg/fixes_2_2
+=======
+  LCPUWSTR = {$IFDEF USE_DELPHI_TYPES} Windows.LPWSTR {$ELSE} PWideChar {$ENDIF};
+  {$EXTERNALSYM LCPUWSTR}
+>>>>>>> origin/fixes_2_2
   PCUWSTR = {$IFDEF USE_DELPHI_TYPES} Windows.LPWSTR {$ELSE} PWideChar {$ENDIF};
   {$EXTERNALSYM PCUWSTR}
 
@@ -1137,6 +1142,7 @@ type
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   INT_PTR = PtrInt;
   {$EXTERNALSYM INT_PTR}
   PINT_PTR = ^INT_PTR;
@@ -1151,6 +1157,8 @@ type
   {$EXTERNALSYM PLONG_PTR}
   ULONG_PTR = PTRUINT;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   INT_PTR = Integer;
   {$EXTERNALSYM INT_PTR}
   PINT_PTR = ^INT_PTR;
@@ -1164,7 +1172,10 @@ type
   PLONG_PTR = ^LONG_PTR;
   {$EXTERNALSYM PLONG_PTR}
   ULONG_PTR = Longword;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$EXTERNALSYM ULONG_PTR}
   PULONG_PTR = ^ULONG_PTR;
   {$EXTERNALSYM PULONG_PTR}

@@ -863,12 +863,15 @@ IMPLEMENTATION
       procedure Clear(var V: TVarData); override;
       procedure Copy(var Dest: TVarData; const Source: TVarData; const Indirect: Boolean); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
       function CompareOp(const Left, Right: TVarData; const Operation: TVarOp): Boolean; override;
       procedure Compare(const Left, Right: TVarData; var Relationship: TVarCompareResult); override;
       procedure Cast(var Dest: TVarData; const Source: TVarData); override;
       procedure CastTo(var Dest: TVarData; const Source: TVarData; const aVarType: TVarType); override;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
 
     TFMTBcdVarData = CLASS(TPersistent)
@@ -1647,7 +1650,10 @@ IMPLEMENTATION
        _endSELECT;
      end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$warnings off}
   function VarToBCD ( const aValue : Variant ) : tBCD;
 
@@ -1655,7 +1661,10 @@ IMPLEMENTATION
       not_implemented;
      end;
 {$warnings on}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   function CurrToBCD ( const Curr : currency;
                          var BCD : tBCD;
@@ -4038,7 +4047,25 @@ end;
 =======
     Dest.VType:=Vartype;
   end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+procedure TFMTBcdFactory.Clear(var V: TVarData);
+  begin
+    FreeAndNil(tObject(V.VPointer));
+    V.VType:=varEmpty;
+  end;
+
+procedure TFMTBcdFactory.Copy(var Dest: TVarData; const Source: TVarData; const Indirect: Boolean);
+  begin
+    if Indirect then
+      Dest.VPointer:=Source.VPointer
+    else
+      Dest.VPointer:=TFMTBcdVarData.Create(TFMTBcdVarData(Source.VPointer).BCD);
+    Dest.VType:=Vartype;
+  end;
+>>>>>>> origin/fixes_2_2
 
 {$if declared ( myMinIntBCD ) }
 (*

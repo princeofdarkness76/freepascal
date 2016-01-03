@@ -33,6 +33,7 @@
 
    pgssize  = ^gssize;
 <<<<<<< HEAD
+<<<<<<< HEAD
    gssize   = SizeInt;
    pgsize   = ^gsize;
    gsize    = SizeUInt;
@@ -41,6 +42,11 @@
    pgsize   = ^gsize;
    gsize    = dword;
 >>>>>>> graemeg/fixes_2_2
+=======
+   gssize   = longint;
+   pgsize   = ^gsize;
+   gsize    = dword;
+>>>>>>> origin/fixes_2_2
 
 {$ENDIF read_forward_definitions}
 
@@ -109,10 +115,14 @@ const
    GLIB_SYSDEF_POLLNVAL  = 32;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef windows}
 =======
 {$ifdef win32}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifdef win32}
+>>>>>>> origin/fixes_2_2
    G_MODULE_SUFFIX  = 'dll';
 {$else}
    G_MODULE_SUFFIX  = 'so';

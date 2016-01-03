@@ -73,6 +73,7 @@ Type
     FDateTimeFormat : String;
     FDecimalSeparator: Char;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FUseDisplayText : Boolean;
   Protected
     Procedure InitSettings; virtual;
@@ -81,6 +82,10 @@ Type
   Protected
     Procedure InitSettings; virtual;
 >>>>>>> graemeg/fixes_2_2
+=======
+  Protected
+    Procedure InitSettings; virtual;
+>>>>>>> origin/fixes_2_2
     Property IntegerFormat : String Read FIntegerFormat Write FIntegerFormat;
     Property DecimalSeparator : Char Read FDecimalSeparator Write FDecimalSeparator;
     Property CurrencySymbol : String Read FCurrencySymbol Write FCurrencySymbol;
@@ -156,10 +161,14 @@ Type
     // Override if a simple loop is not enough.
     Procedure ExportDataRow; virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Override to write something at row end.
 =======
     // Override to write something at row start.
 >>>>>>> graemeg/fixes_2_2
+=======
+    // Override to write something at row start.
+>>>>>>> origin/fixes_2_2
     Procedure DoDataRowEnd; virtual;
     // Called after row was exported
     Procedure DoProgress(ItemNo : Integer); Virtual;
@@ -231,6 +240,7 @@ Type
     // Override if some checking needs to be done prior to opening.
     Procedure CheckFileName; virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Use to open textfile. Creates a file stream.
     Procedure OpenTextFile;
     // Use to close textfile.
@@ -238,6 +248,10 @@ Type
     // Use to open/close textfile. Creates a file stream.
     Procedure OpenTextFile;
 >>>>>>> graemeg/fixes_2_2
+=======
+    // Use to open/close textfile. Creates a file stream.
+    Procedure OpenTextFile;
+>>>>>>> origin/fixes_2_2
     Procedure CloseTextFile;
     // Access to stream/file
     Property TextFile : Text Read FTextFile;
@@ -309,18 +323,24 @@ Procedure UnRegisterExportFormat(Const AName : String);
 Const
   StringFieldTypes = [ftString,ftFixedChar,ftWidestring,ftFixedWideChar];
 <<<<<<< HEAD
+<<<<<<< HEAD
   IntFieldTypes    = [ftInteger,ftWord,ftSmallint,ftAutoinc];
   OrdFieldTypes    = IntFieldTypes +[ftBoolean,ftLargeInt];
   DateFieldTypes   = [ftDate,ftTime,ftDateTime,ftTimeStamp];
   MemoFieldTypes   = [ftMemo,ftFmtMemo,ftWideMemo];
   BlobFieldTypes   =  [ftBlob,ftDBaseOLE,ftGraphic,ftOraBlob,ftOraClob,ftParadoxOLE];
 =======
+=======
+>>>>>>> origin/fixes_2_2
   IntFieldTypes    = [ftInteger,ftWord,ftsmallint,ftautoinc];
   OrdFieldTypes    = IntFieldTypes +[ftBoolean,ftLargeInt];
   DateFieldTypes   = [ftDate,ftTime,ftDateTime,ftTimeStamp];
   MemoFieldTypes   = [ftMemo,ftFmtMemo,ftWideMemo];
   BlobFieldTypes   =  [ftBlob,ftGraphic,ftOraBlob,ftOraClob];
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   
 
 implementation
@@ -479,11 +499,15 @@ begin
       FDataset.RemoveFreeNotification(Self);
     FDataset:=AValue;
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (FDataset<>Nil) then
       FDataset.FreeNotification(Self);
 =======
     FDataset.FreeNotification(Self);
 >>>>>>> graemeg/fixes_2_2
+=======
+    FDataset.FreeNotification(Self);
+>>>>>>> origin/fixes_2_2
     UnbindFields;
     end;
 end;
@@ -618,6 +642,7 @@ begin
     If (FormatSettings.IntegerFormat)<>'' then
       Result:=Format(FormatSettings.IntegerFormat,[F.AsInteger])
 <<<<<<< HEAD
+<<<<<<< HEAD
     else if FormatSettings.UseDisplayText then
       Result:=F.DisplayText
     else
@@ -626,6 +651,10 @@ begin
     else
       Result:=F.AsString;
 >>>>>>> graemeg/fixes_2_2
+=======
+    else
+      Result:=F.AsString;
+>>>>>>> origin/fixes_2_2
     end
   else if (F.DataType=ftBoolean) then
     begin
@@ -635,6 +664,7 @@ begin
       Result:=FormatSettings.BooleanFalse;
     If (Result='') then
 <<<<<<< HEAD
+<<<<<<< HEAD
       if FormatSettings.UseDisplayText then
         Result:=F.DisplayText
       else
@@ -642,16 +672,22 @@ begin
 =======
       Result:=F.AsString;
 >>>>>>> graemeg/fixes_2_2
+=======
+      Result:=F.AsString;
+>>>>>>> origin/fixes_2_2
     end
   else if (F.DataType=ftDate) then
     begin
     If (FormatSettings.DateFormat<>'') then
       Result:=FormatDateTime(FormatSettings.DateFormat,F.AsDateTime)
 <<<<<<< HEAD
+<<<<<<< HEAD
     else if FormatSettings.UseDisplayText then
       Result:=F.DisplayText
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     else
       Result:=F.AsString;
     end
@@ -659,6 +695,7 @@ begin
     begin
     If (FormatSettings.TimeFormat<>'') then
       Result:=FormatDateTime(FormatSettings.TimeFormat,F.AsDateTime)
+<<<<<<< HEAD
 <<<<<<< HEAD
     else if FormatSettings.UseDisplayText then
       Result:=F.DisplayText
@@ -668,11 +705,16 @@ begin
     else
       Result:=F.AsString;
 >>>>>>> graemeg/fixes_2_2
+=======
+    else
+      Result:=F.AsString;
+>>>>>>> origin/fixes_2_2
     end
   else if (F.DataType in [ftDateTime,ftTimeStamp]) then
     begin
     If (FormatSettings.DateTimeFormat<>'') then
       Result:=FormatDateTime(FormatSettings.DateTimeFormat,F.AsDateTime)
+<<<<<<< HEAD
 <<<<<<< HEAD
     else if FormatSettings.UseDisplayText then
       Result:=F.DisplayText
@@ -684,6 +726,11 @@ begin
       Result:=F.AsString;
     end
 >>>>>>> graemeg/fixes_2_2
+=======
+    else
+      Result:=F.AsString;
+    end
+>>>>>>> origin/fixes_2_2
   else if (F.DataType=ftCurrency) then
     begin
     If (FormatSettings.CurrencySymbol<>'') then
@@ -692,6 +739,7 @@ begin
       FS.CurrencyString:=FormatSettings.CurrencySymbol;
       Result:=CurrToStrF(F.AsCurrency,ffCurrency,FormatSettings.CurrencyDigits,FS);
       end
+<<<<<<< HEAD
 <<<<<<< HEAD
     else  if FormatSettings.UseDisplayText then
       Result:=F.DisplayText
@@ -703,12 +751,17 @@ begin
   else
     Result:=F.AsString;  
 =======
+=======
+>>>>>>> origin/fixes_2_2
     else
       Result:=F.AsString
     end
   else
     Result:=F.AsString;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TCustomDatasetExporter.ExportError(Msg: String);
@@ -736,9 +789,12 @@ destructor TCustomDatasetExporter.Destroy;
 begin
   FreeAndNil(FExportFields);
 <<<<<<< HEAD
+<<<<<<< HEAD
   FreeAndNil(FFormatSettings);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   inherited Destroy;
 end;
 
@@ -765,10 +821,14 @@ Function TCustomDatasetExporter.Execute : Integer;
 Var
   B : Boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
   BM : TBookMark;
 =======
   BM : TBookMarkStr;
 >>>>>>> graemeg/fixes_2_2
+=======
+  BM : TBookMarkStr;
+>>>>>>> origin/fixes_2_2
 
 begin
   Result:=0;
@@ -937,9 +997,12 @@ begin
     FDateTimeFormat:=FS.FDateTimeFormat;
     FDecimalSeparator:=FS.FDecimalSeparator;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FUseDisplayText:=FS.FUseDisplayText;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end
   else
     inherited Assign(Source);

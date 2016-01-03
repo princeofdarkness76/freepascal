@@ -1,8 +1,12 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     $Id: header,v 1.1 2000/07/13 06:33:45 michael Exp $
 >>>>>>> graemeg/fixes_2_2
+=======
+    $Id: header,v 1.1 2000/07/13 06:33:45 michael Exp $
+>>>>>>> origin/fixes_2_2
     This file is part of the Free Component Library (FCL)
     Copyright (c) 1999-2000 by the Free Pascal development team
 
@@ -52,16 +56,20 @@ Type
   EBlowFishError = Class(EStreamError);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   { TBlowFishStream }
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   TBlowFishStream = Class(TOwnerStream)
   Private
     FBF     : TBlowFish;
     FData   : TBFBlock;
     FBufpos : Byte;
     FPos    : Int64;
+<<<<<<< HEAD
 <<<<<<< HEAD
   protected
     function GetPosition: Int64; override;
@@ -73,6 +81,10 @@ Type
   Public
     Constructor Create(AKey : TBlowFishKey; AKeySize : Byte; Dest: TStream);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Public
+    Constructor Create(AKey : TBlowFishKey; AKeySize : Byte; Dest: TStream);
+>>>>>>> origin/fixes_2_2
     Destructor Destroy; override;
     Property BlowFish : TBlowFish Read FBF;
   end;
@@ -82,10 +94,14 @@ Type
     Destructor Destroy; override;
     function Write(const Buffer; Count: Longint): Longint; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function Seek(const Offset: Int64; Origin: TSeekOrigin): Int64; override;
 =======
     function Seek(Offset: Longint; Origin: Word): Longint; override;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function Seek(Offset: Longint; Origin: Word): Longint; override;
+>>>>>>> origin/fixes_2_2
     procedure Flush;
   end;
 
@@ -93,10 +109,14 @@ Type
   public
     function Read(var Buffer; Count: Longint): Longint; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function Seek(const Offset: Int64; Origin: TSeekOrigin): Int64; override;
 =======
     function Seek(Offset: Longint; Origin: Word): Longint; override;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function Seek(Offset: Longint; Origin: Word): Longint; override;
+>>>>>>> origin/fixes_2_2
   end;
 
 Implementation
@@ -104,9 +124,12 @@ Implementation
 ResourceString
   SNoSeekAllowed  = 'Seek not allowed on encryption streams';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrEmptyPassPhraseNotAllowed = 'Empty passphrase is not allowed in constructor';
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { Blowfish lookup tables }
 
@@ -565,6 +588,7 @@ end;
   ---------------------------------------------------------------------}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TBlowFishStream.GetPosition: Int64;
 begin
   Result:=FPos;
@@ -576,6 +600,8 @@ begin
 end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 Constructor TBlowFishStream.Create(AKey : TBlowFishkey; AKeySize : Byte; Dest: TStream);
 
@@ -586,6 +612,7 @@ begin
   FPos:=0;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 constructor TBlowFishStream.Create(const KeyPhrase: String; Dest: TStream);
 
@@ -605,6 +632,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Destructor TBlowFishStream.Destroy;
 
 begin
@@ -668,6 +697,7 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TBlowFishEncryptStream.Seek(const Offset: Int64; Origin: TSeekOrigin): Int64;
 
 begin
@@ -676,6 +706,8 @@ begin
   else
     InvalidSeek;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TBlowFishEncryptStream.Seek(Offset: Longint; Origin: Word): Longint;
 
 begin
@@ -683,7 +715,10 @@ begin
     Result := FPos
   else
     Raise EBlowFishError.Create(SNoSeekAllowed);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -734,6 +769,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TBlowFishDeCryptStream.Seek(const Offset: Int64; Origin: TSeekOrigin): Int64;
 
 begin
@@ -743,6 +779,8 @@ end;
 
 end.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function TBlowFishDeCryptStream.Seek(Offset: Longint; Origin: Word): Longint;
 
 Var Buffer : Array[0..1023] of byte;
@@ -762,5 +800,9 @@ begin
     Raise EBlowFishError.Create(SNoSeekAllowed);
 end;
 
+<<<<<<< HEAD
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+end.
+>>>>>>> origin/fixes_2_2

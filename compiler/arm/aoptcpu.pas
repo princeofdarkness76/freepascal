@@ -99,12 +99,15 @@ Implementation
 
   uses
 <<<<<<< HEAD
+<<<<<<< HEAD
     cutils,verbose,globtype,globals,
     systems,
     cpuinfo,
     cgobj,procinfo,
     aasmbase,aasmdata;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     verbose,
     aasmbase,aasmcpu;
 >>>>>>> graemeg/fixes_2_2
@@ -593,6 +596,7 @@ Implementation
   function TCpuAsmOptimizer.PeepHoleOptPass1Cpu(var p: tai): boolean;
     var
 <<<<<<< HEAD
+<<<<<<< HEAD
       hp1,hp2,hp3,hp4: tai;
       i, i2: longint;
       TmpUsedRegs: TAllUsedRegs;
@@ -609,6 +613,10 @@ Implementation
       next1: tai;
       hp1: tai;
 >>>>>>> graemeg/fixes_2_2
+=======
+      next1: tai;
+      hp1: tai;
+>>>>>>> origin/fixes_2_2
     begin
       result := false;
       case p.typ of

@@ -224,10 +224,14 @@ begin
     Len := FieldDef.Size;
     if FMode = smAnsiTrim then
 <<<<<<< HEAD
+<<<<<<< HEAD
       while (Len >= 1) and (Src[Len-1] = TRecordbufferbasetype(' ')) do Dec(Len);
 =======
       while (Len >= 1) and (Src[Len-1] = ' ') do Dec(Len);
 >>>>>>> graemeg/fixes_2_2
+=======
+      while (Len >= 1) and (Src[Len-1] = ' ') do Dec(Len);
+>>>>>>> origin/fixes_2_2
     // translate to ANSI
     Len := TranslateString(DbfFile.UseCodePage, GetACP, pansichar(Src), FFieldVal, Len);
     FFieldVal[Len] := #0;

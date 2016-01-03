@@ -22,11 +22,14 @@ Interface
 Type
    bestreal = double;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if FPC_FULLVERSION>20700}
    bestrealrec = TDoubleRec;
 {$endif FPC_FULLVERSION>20700}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
    ts32real = single;
    ts64real = double;
    ts80real = extended;

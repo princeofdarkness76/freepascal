@@ -273,10 +273,14 @@ implementation
                    if is_constintnode(n) then
                      begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                        testrange(def,tordconstnode(n).value,false,false);
 =======
                        testrange(n.resultdef,def,tordconstnode(n).value,false);
 >>>>>>> graemeg/fixes_2_2
+=======
+                       testrange(n.resultdef,def,tordconstnode(n).value,false);
+>>>>>>> origin/fixes_2_2
                        case def.size of
                          1 :
                            list.concat(Tai_const.Create_8bit(byte(tordconstnode(n).value.svalue)));
@@ -577,10 +581,14 @@ implementation
                       constsym :
                         if tconstsym(srsym).consttyp=constresourcestring then
 <<<<<<< HEAD
+<<<<<<< HEAD
                           list.concat(Tai_const.Createname(make_mangledname('RESSTR',tconstsym(srsym).owner,tconstsym(srsym).name),sizeof(pint)))
 =======
                           list.concat(Tai_const.Createname(make_mangledname('RESSTR',tconstsym(srsym).owner,tconstsym(srsym).name),sizeof(aint)))
 >>>>>>> graemeg/fixes_2_2
+=======
+                          list.concat(Tai_const.Createname(make_mangledname('RESSTR',tconstsym(srsym).owner,tconstsym(srsym).name),sizeof(aint)))
+>>>>>>> origin/fixes_2_2
                         else
                           Message(type_e_variable_id_expected);
                       else
@@ -630,8 +638,11 @@ implementation
                 begin
                   tsetconstnode(p).adjustforsetbase;
 <<<<<<< HEAD
+<<<<<<< HEAD
                   { this writing is endian-dependant   }
 =======
+=======
+>>>>>>> origin/fixes_2_2
                   { this writing is endian independant   }
                   { untrue - because they are considered }
                   { arrays of 32-bit values CEC          }
@@ -1356,9 +1367,12 @@ implementation
                           curroffset:=align(curroffset,8);
                         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
                       hr.offset:=startoffset+tfieldvarsym(srsym).fieldoffset;
                       read_typed_const_data(hr,tfieldvarsym(srsym).vardef);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                       read_typed_const_data(list,tfieldvarsym(srsym).vardef);
 >>>>>>> graemeg/fixes_2_2
                     end
@@ -1589,6 +1603,7 @@ implementation
         storefilepos : tfileposinfo;
         cursectype   : TAsmSectionType;
 <<<<<<< HEAD
+<<<<<<< HEAD
         hrec         : threc;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1603,6 +1618,9 @@ implementation
 =======
         valuelist    : tasmlist;
 >>>>>>> graemeg/fixes_2_2
+=======
+        valuelist    : tasmlist;
+>>>>>>> origin/fixes_2_2
       begin
         { mark the staticvarsym as typedconst }
         include(sym.varoptions,vo_is_typed_const);
@@ -1639,6 +1657,7 @@ implementation
           cursectype:=sec_data;
         maybe_new_object_file(list);
 <<<<<<< HEAD
+<<<<<<< HEAD
         hrec.list:=tasmlist.create;
         hrec.origsym:=sym;
         hrec.offset:=0;
@@ -1657,16 +1676,22 @@ implementation
         { Parse hints }
         try_consume_hintdirective(sym.symoptions,sym.deprecatedmsg);
 =======
+=======
+>>>>>>> origin/fixes_2_2
         valuelist:=tasmlist.create;
         read_typed_const_data(valuelist,sym.vardef);
 
         { Parse hints }
         try_consume_hintdirective(sym.symoptions);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
         consume(_SEMICOLON);
 
         { parse public/external/export/... }
+<<<<<<< HEAD
 <<<<<<< HEAD
         if not in_structure and
            (
@@ -1674,11 +1699,16 @@ implementation
              (token = _ID) and
              (idtoken in [_EXPORT,_EXTERNAL,_WEAKEXTERNAL,_PUBLIC,_CVAR]) and
 =======
+=======
+>>>>>>> origin/fixes_2_2
         if (
             (
              (token = _ID) and
              (idtoken in [_EXPORT,_EXTERNAL,_PUBLIC,_CVAR]) and
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
              (m_cvar_support in current_settings.modeswitches)
             ) or
             (
@@ -1691,6 +1721,7 @@ implementation
            ) then
           read_public_and_external(sym);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         { try to parse a section directive }
@@ -1735,6 +1766,8 @@ implementation
         list.concat(tai_symbol_end.Createname(sym.mangledname));
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
         { only now add items based on the symbolname, because it may }
         { have been modified by the directives parsed above          }
         new_section(list,cursectype,lower(sym.mangledname),const_align(sym.vardef.alignment));

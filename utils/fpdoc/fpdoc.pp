@@ -43,11 +43,15 @@ uses
 =======
   SysUtils, Classes, Gettext, DOM, XMLWrite, PasTree, PParser,
   dGlobals,  // GLobal definitions, constants.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   dwriter,   // TFPDocWriter definition.
   dwlinear,  // Linear (abstract) writer
   dw_LaTeX,  // TLaTex writer
   dw_XML,    // XML writer
+<<<<<<< HEAD
 <<<<<<< HEAD
   dw_dxml,   // Delphi XML doc.
   dw_HTML,   // HTML writer
@@ -87,12 +91,17 @@ Type
 >>>>>>> origin/cpstrnew
   dw_txt, fpdocproj, fpdocxmlopts;    // TXT writer
 =======
+=======
+>>>>>>> origin/fixes_2_2
   dw_HTML,   // HTML writer
   dw_ipf,    // IPF writer
   dw_man,    // Man page writer
   dw_linrtf, // lineair RTF writer
   dw_txt;    // TXT writer
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 const
   DefOSTarget    = {$I %FPCTARGETOS%};
@@ -149,8 +158,11 @@ var
   PackageName, DocLang, ContentFile : String;
   Engine: TFPDocEngine;
   StopOnParserError : Boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 
+=======
+>>>>>>> origin/fixes_2_2
 
 Procedure TFPDocAplication.Usage(AnExitCode : Byte);
 >>>>>>> graemeg/cpstrnew
@@ -217,6 +229,7 @@ begin
   Writeln(SUsageOption170);
   Writeln(SUsageOption180);
 <<<<<<< HEAD
+<<<<<<< HEAD
   Writeln(SUsageOption190);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -235,6 +248,8 @@ begin
   Writeln(SUsageOption300);
   Writeln(SUsageOption310);
   Writeln(SUsageOption320);
+=======
+>>>>>>> origin/fixes_2_2
   L:=TStringList.Create;
   Try
     Backend:=FCreator.OPtions.Backend;
@@ -340,6 +355,7 @@ begin
   BackendOptions := TStringList.Create;
   Engine := TFPDocEngine.Create;
   StopOnParserError:=False;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 end;
 
@@ -359,6 +375,8 @@ destructor TFPDocAplication.Destroy;
 begin
   FreeAndNil(FProject);
   Inherited;
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function TFPDocAplication.SelectedPackage: TFPDocPackage;
@@ -617,7 +635,10 @@ begin
     Engine.HidePrivate := False
   else if s = '--stop-on-parser-error' then
     StopOnParserError := True
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   else
     begin
     i := Pos('=', s);
@@ -784,6 +805,7 @@ begin
       CPUTarget := Arg
     else if Cmd = '--mo-dir' then
       modir := Arg
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
     else
       begin
@@ -828,6 +850,8 @@ begin
       FProject.Options.modir := Arg
     else if Cmd = '--parse-impl' then
       FProject.Options.InterfaceOnly:=false
+=======
+>>>>>>> origin/fixes_2_2
     else
       begin
       FProject.Options.BackendOptions.Add(Cmd);

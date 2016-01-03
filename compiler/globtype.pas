@@ -278,6 +278,7 @@ interface
           { without support for that tag (they refuse to parse the rest }
           { of the debug information)                                   }
 <<<<<<< HEAD
+<<<<<<< HEAD
           ds_dwarf_sets,
           { use absolute paths for include files in stabs. Pro: gdb     }
           { always knows full path to file. Con: doesn't work anymore   }
@@ -338,11 +339,16 @@ interface
        ttargetswitches = set of ttargetswitch;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
           ds_dwarf_sets
        );
        tdebugswitches = set of tdebugswitch;
        
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
        { adding a new entry here requires also adding the appropriate define in
          systemh.inc (FK)
@@ -351,6 +357,7 @@ interface
          f_heap,f_init_final,f_rtti,f_classes,f_exceptions,f_exitcode,
          f_ansistrings,f_widestrings,f_textio,f_consoleio,f_fileio,
          f_random,f_variants,f_objects,f_dynarrays,f_threading,f_commandargs,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -373,6 +380,9 @@ interface
 =======
          f_processes,f_stackcheck,f_dynlibs
 >>>>>>> graemeg/fixes_2_2
+=======
+         f_processes,f_stackcheck,f_dynlibs
+>>>>>>> origin/fixes_2_2
        );
        tfeatures = set of tfeature;
 
@@ -463,6 +473,9 @@ interface
        DebugSwitchStr : array[tdebugswitch] of string[9] = ('',
          'DWARFSETS');
 
+       DebugSwitchStr : array[tdebugswitch] of string[9] = ('',
+         'DWARFSETS');
+
        { switches being applied to all CPUs at the given level }
        genericlevel1optimizerswitches = [cs_opt_level1,cs_opt_peephole];
        genericlevel2optimizerswitches = [cs_opt_level2,cs_opt_remove_emtpy_proc];
@@ -478,6 +491,7 @@ interface
          'HEAP','INITFINAL','RTTI','CLASSES','EXCEPTIONS','EXITCODE',
          'ANSISTRINGS','WIDESTRINGS','TEXTIO','CONSOLEIO','FILEIO',
          'RANDOM','VARIANTS','OBJECTS','DYNARRAYS','THREADING','COMMANDARGS',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -500,6 +514,9 @@ interface
 =======
          'PROCESSES','STACKCHECK','DYNLIBS'
 >>>>>>> graemeg/fixes_2_2
+=======
+         'PROCESSES','STACKCHECK','DYNLIBS'
+>>>>>>> origin/fixes_2_2
        );
 
     type
@@ -605,7 +622,10 @@ interface
          app_arm7,
          app_arm9,
          app_bundle     { dynamically loadable bundle, Darwin only }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        );
 
        { interface types }
@@ -820,6 +840,7 @@ interface
          pi_needs_stackframe,
          { set if the procedure has at least one register saved on the stack }
 <<<<<<< HEAD
+<<<<<<< HEAD
          pi_has_saved_regs,
          { dfa was generated for this proc }
          pi_dfaavailable,
@@ -858,10 +879,14 @@ interface
 =======
          pi_has_saved_regs
 >>>>>>> graemeg/fixes_2_2
+=======
+         pi_has_saved_regs
+>>>>>>> origin/fixes_2_2
        );
        tprocinfoflags=set of tprocinfoflag;
 
     type
+<<<<<<< HEAD
 <<<<<<< HEAD
       { float types -- warning, this enum/order is used internally by the RTL
         as well in rtl/inc/real2str.inc }
@@ -872,6 +897,11 @@ interface
       tfloattype = (
         s32real,s64real,s80real,
 >>>>>>> graemeg/fixes_2_2
+=======
+      { float types }
+      tfloattype = (
+        s32real,s64real,s80real,
+>>>>>>> origin/fixes_2_2
         s64comp,s64currency,s128real
       );
 
@@ -880,6 +910,7 @@ interface
       TRADirection = (rad_forward, rad_backwards, rad_backwards_reinit);
 
     type
+<<<<<<< HEAD
 <<<<<<< HEAD
       TIDString = string[maxidlen];
 
@@ -902,6 +933,8 @@ interface
         moduleindex : word;
       end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
        TIDString = string[maxidlen];
 
        tnormalset = set of byte; { 256 elements set }

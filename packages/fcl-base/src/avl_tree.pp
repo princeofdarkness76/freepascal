@@ -43,6 +43,7 @@ type
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   TBaseAVLTreeNodeManager = class
   public
     procedure DisposeNode(ANode: TAVLTreeNode); virtual; abstract;
@@ -65,6 +66,8 @@ type
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   TAVLTree = class
   private
     FOnCompare: TListSortCompare;
@@ -74,20 +77,27 @@ type
     function FindInsertPos(Data: Pointer): TAVLTreeNode;
     procedure SetOnCompare(const AValue: TListSortCompare);
 <<<<<<< HEAD
+<<<<<<< HEAD
   protected
     fNodeMgrAutoFree: boolean;
     fNodeMgr: TBaseAVLTreeNodeManager;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   public
     Root: TAVLTreeNode;
     function Find(Data: Pointer): TAVLTreeNode;
     function FindKey(Key: Pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
       const OnCompareKeyWithData: TListSortCompare): TAVLTreeNode;
 =======
       OnCompareKeyWithData: TListSortCompare): TAVLTreeNode;
 >>>>>>> graemeg/fixes_2_2
+=======
+      OnCompareKeyWithData: TListSortCompare): TAVLTreeNode;
+>>>>>>> origin/fixes_2_2
     function FindSuccessor(ANode: TAVLTreeNode): TAVLTreeNode;
     function FindPrecessor(ANode: TAVLTreeNode): TAVLTreeNode;
     function FindLowest: TAVLTreeNode;
@@ -98,6 +108,7 @@ type
     function FindRightMost(Data: Pointer): TAVLTreeNode;
     function FindLeftMostKey(Key: Pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
       const OnCompareKeyWithData: TListSortCompare): TAVLTreeNode;
     function FindRightMostKey(Key: Pointer;
       const OnCompareKeyWithData: TListSortCompare): TAVLTreeNode;
@@ -106,6 +117,11 @@ type
     function FindRightMostKey(Key: Pointer;
       OnCompareKeyWithData: TListSortCompare): TAVLTreeNode;
 >>>>>>> graemeg/fixes_2_2
+=======
+      OnCompareKeyWithData: TListSortCompare): TAVLTreeNode;
+    function FindRightMostKey(Key: Pointer;
+      OnCompareKeyWithData: TListSortCompare): TAVLTreeNode;
+>>>>>>> origin/fixes_2_2
     function FindLeftMostSameKey(ANode: TAVLTreeNode): TAVLTreeNode;
     function FindRightMostSameKey(ANode: TAVLTreeNode): TAVLTreeNode;
     procedure Add(ANode: TAVLTreeNode);
@@ -124,6 +140,7 @@ type
     procedure WriteReportToStream(s: TStream; var StreamSize: int64);
     function ReportAsString: string;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SetNodeManager(NewMgr: TBaseAVLTreeNodeManager;
                              AutoFree: boolean = false);
     constructor Create(const OnCompareMethod: TListSortCompare);
@@ -134,13 +151,18 @@ type
 
   TAVLTreeNodeMemManager = class(TBaseAVLTreeNodeManager)
 =======
+=======
+>>>>>>> origin/fixes_2_2
     constructor Create(OnCompareMethod: TListSortCompare);
     constructor Create;
     destructor Destroy; override;
   end;
 
   TAVLTreeNodeMemManager = class
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   private
     FFirstFree: TAVLTreeNode;
     FFreeCount: integer;
@@ -152,12 +174,17 @@ type
     procedure DisposeFirstFreeNode;
   public
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure DisposeNode(ANode: TAVLTreeNode); override;
     function NewNode: TAVLTreeNode; override;
 =======
     procedure DisposeNode(ANode: TAVLTreeNode);
     function NewNode: TAVLTreeNode;
 >>>>>>> graemeg/fixes_2_2
+=======
+    procedure DisposeNode(ANode: TAVLTreeNode);
+    function NewNode: TAVLTreeNode;
+>>>>>>> origin/fixes_2_2
     property MinimumFreeNode: integer read FMinFree write SetMinFree;
     property MaximumFreeNodeRatio: integer
         read FMaxFreeRatio write SetMaxFreeRatio; // in one eighth steps
@@ -182,6 +209,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { TAVLTreeNodeEnumerator }
 
 constructor TAVLTreeNodeEnumerator.Create(Tree: TAVLTree);
@@ -200,15 +228,21 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { TAVLTree }
 
 function TAVLTree.Add(Data: Pointer): TAVLTreeNode;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=fNodeMgr.NewNode;
 =======
   Result:=NodeMemManager.NewNode;
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=NodeMemManager.NewNode;
+>>>>>>> origin/fixes_2_2
   Result.Data:=Data;
   Add(Result);
 end;
@@ -548,10 +582,14 @@ procedure TAVLTree.Clear;
       if ANode.Right<>nil then DeleteNode(ANode.Right);
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     fNodeMgr.DisposeNode(ANode);
 =======
     NodeMemManager.DisposeNode(ANode);
 >>>>>>> graemeg/fixes_2_2
+=======
+    NodeMemManager.DisposeNode(ANode);
+>>>>>>> origin/fixes_2_2
   end;
 
 // Clear
@@ -562,6 +600,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TAVLTree.Create(const OnCompareMethod: TListSortCompare);
 begin
   inherited Create;
@@ -571,6 +610,11 @@ constructor TAVLTree.Create(OnCompareMethod: TListSortCompare);
 begin
   inherited Create;
 >>>>>>> graemeg/fixes_2_2
+=======
+constructor TAVLTree.Create(OnCompareMethod: TListSortCompare);
+begin
+  inherited Create;
+>>>>>>> origin/fixes_2_2
   FOnCompare:=OnCompareMethod;
   FCount:=0;
 end;
@@ -609,10 +653,14 @@ begin
     end;
     dec(FCount);
 <<<<<<< HEAD
+<<<<<<< HEAD
     fNodeMgr.DisposeNode(ANode);
 =======
     NodeMemManager.DisposeNode(ANode);
 >>>>>>> graemeg/fixes_2_2
+=======
+    NodeMemManager.DisposeNode(ANode);
+>>>>>>> origin/fixes_2_2
     exit;
   end;
   if (ANode.Right=nil) then begin
@@ -636,10 +684,14 @@ begin
     end;
     dec(FCount);
 <<<<<<< HEAD
+<<<<<<< HEAD
     fNodeMgr.DisposeNode(ANode);
 =======
     NodeMemManager.DisposeNode(ANode);
 >>>>>>> graemeg/fixes_2_2
+=======
+    NodeMemManager.DisposeNode(ANode);
+>>>>>>> origin/fixes_2_2
     exit;
   end;
   if (ANode.Left=nil) then begin
@@ -663,10 +715,14 @@ begin
     end;
     dec(FCount);
 <<<<<<< HEAD
+<<<<<<< HEAD
     fNodeMgr.DisposeNode(ANode);
 =======
     NodeMemManager.DisposeNode(ANode);
 >>>>>>> graemeg/fixes_2_2
+=======
+    NodeMemManager.DisposeNode(ANode);
+>>>>>>> origin/fixes_2_2
     exit;
   end;
   // DelNode has both: Left and Right
@@ -735,6 +791,7 @@ destructor TAVLTree.Destroy;
 begin
   Clear;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if fNodeMgrAutoFree then
     FreeAndNil(fNodeMgr);
   inherited Destroy;
@@ -750,6 +807,11 @@ end;
 end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+  inherited Destroy;
+end;
+
+>>>>>>> origin/fixes_2_2
 function TAVLTree.Find(Data: Pointer): TAVLTreeNode;
 var Comp: integer;
 begin
@@ -766,10 +828,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TAVLTree.FindKey(Key: Pointer; const OnCompareKeyWithData: TListSortCompare
 =======
 function TAVLTree.FindKey(Key: Pointer; OnCompareKeyWithData: TListSortCompare
 >>>>>>> graemeg/fixes_2_2
+=======
+function TAVLTree.FindKey(Key: Pointer; OnCompareKeyWithData: TListSortCompare
+>>>>>>> origin/fixes_2_2
   ): TAVLTreeNode;
 var Comp: integer;
 begin
@@ -786,6 +852,7 @@ begin
 end;
 
 function TAVLTree.FindLeftMostKey(Key: Pointer;
+<<<<<<< HEAD
 <<<<<<< HEAD
   const OnCompareKeyWithData: TListSortCompare): TAVLTreeNode;
 var
@@ -813,6 +880,8 @@ begin
     Result:=RightNode;
   until false;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   OnCompareKeyWithData: TListSortCompare): TAVLTreeNode;
 begin
   Result:=FindLeftMostSameKey(FindKey(Key,OnCompareKeyWithData));
@@ -822,7 +891,10 @@ function TAVLTree.FindRightMostKey(Key: Pointer;
   OnCompareKeyWithData: TListSortCompare): TAVLTreeNode;
 begin
   Result:=FindRightMostSameKey(FindKey(Key,OnCompareKeyWithData));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function TAVLTree.FindLeftMostSameKey(ANode: TAVLTreeNode): TAVLTreeNode;
@@ -836,10 +908,14 @@ begin
     repeat
       LeftNode:=FindPrecessor(Result);
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (LeftNode=nil) or (FOnCompare(Data,LeftNode.Data)<>0) then break;
 =======
       if (LeftNode=nil) or (fOnCompare(Data,LeftNode.Data)<>0) then break;
 >>>>>>> graemeg/fixes_2_2
+=======
+      if (LeftNode=nil) or (fOnCompare(Data,LeftNode.Data)<>0) then break;
+>>>>>>> origin/fixes_2_2
       Result:=LeftNode;
     until false;
   end else begin
@@ -858,10 +934,14 @@ begin
     repeat
       RightNode:=FindSuccessor(Result);
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (RightNode=nil) or (FOnCompare(Data,RightNode.Data)<>0) then break;
 =======
       if (RightNode=nil) or (fOnCompare(Data,RightNode.Data)<>0) then break;
 >>>>>>> graemeg/fixes_2_2
+=======
+      if (RightNode=nil) or (fOnCompare(Data,RightNode.Data)<>0) then break;
+>>>>>>> origin/fixes_2_2
       Result:=RightNode;
     until false;
   end else begin
@@ -897,11 +977,15 @@ begin
     if Result.Data=Data then break;
     Result:=FindSuccessor(Result);
 <<<<<<< HEAD
+<<<<<<< HEAD
     if Result=nil then exit;
     if fOnCompare(Data,Result.Data)<>0 then exit(nil);
 =======
     if fOnCompare(Data,Result.Data)<>0 then Result:=nil;
 >>>>>>> graemeg/fixes_2_2
+=======
+    if fOnCompare(Data,Result.Data)<>0 then Result:=nil;
+>>>>>>> origin/fixes_2_2
   end;
 end;
 
@@ -1186,6 +1270,7 @@ begin
       FreeMem(List);
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   end else
     FOnCompare:=AValue;
 end;
@@ -1204,6 +1289,11 @@ end;
 end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+  end;
+end;
+
+>>>>>>> origin/fixes_2_2
 
 { TAVLTreeNode }
 
@@ -1235,10 +1325,13 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { TAVLTreeNodeMemManager }
 
 constructor TAVLTreeNodeMemManager.Create;
@@ -1332,12 +1425,15 @@ end;
 
 initialization
 <<<<<<< HEAD
+<<<<<<< HEAD
   NodeMemManager:=TAVLTreeNodeMemManager.Create;
 
 finalization
   NodeMemManager.Free;
   NodeMemManager:=nil;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 NodeMemManager:=TAVLTreeNodeMemManager.Create;
 
@@ -1346,5 +1442,8 @@ finalization
 NodeMemManager.Free;
 NodeMemManager:=nil;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.

@@ -1,8 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 %%% Reordering of errorid.msg respective to errore.msg
 %%% Contains all comments from errorid.msg
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 #   $Id: errorid.msg,v 1.124 2007/09/20 02:52:50 zaenal Exp $
 #   This file is part of the Free Pascal Compiler
 #   Copyright (c) 1999-2008 by the Free Pascal Development team
@@ -11,10 +14,14 @@
 #   Contributed by Zaenal Mutaqin <ade999 at gmail.com>
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   See the file COPYING.v2, included in this distribution,
 =======
 #   See the file COPYING.FPC, included in this distribution,
 >>>>>>> graemeg/fixes_2_2
+=======
+#   See the file COPYING.FPC, included in this distribution,
+>>>>>>> origin/fixes_2_2
 #   for details about the copyright.
 #
 #   This program is distributed in the hope that it will be useful,
@@ -124,12 +131,16 @@ general_f_compilation_aborted=01018_F_Kompilasi dibatalkan
 % Kompilasi sudah dibatalkan.
 general_text_bytes_code=01019_byte kode
 <<<<<<< HEAD
+<<<<<<< HEAD
 % The size of the generated executable code, in bytes.
 general_text_bytes_data=01020_byte data
 % The size of the generated program data, in bytes.
 =======
 general_text_bytes_data=01020_byte data
 >>>>>>> graemeg/fixes_2_2
+=======
+general_text_bytes_data=01020_byte data
+>>>>>>> origin/fixes_2_2
 general_i_number_of_warnings=01021_I_$1 peringatan diterbitkan
 % Jumlah peringatan yang diterbitkan selama kompilasi.
 general_i_number_of_hints=01022_I_$1 petunjuk diterbitkan
@@ -149,6 +160,7 @@ general_i_number_of_notes=01023_I_$1 catatan diterbitkan
 % kompilasi kondisional.
 % \begin{description}
 <<<<<<< HEAD
+<<<<<<< HEAD
 general_f_ioerror=01024_F_I/O error: $1
 % During compilation an I/O error happened which allows no further compilation.
 general_f_oserror=01025_F_Operating system error: $1
@@ -167,6 +179,8 @@ general_f_oserror=01025_F_Operating system error: $1
 % \begin{description}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 scan_f_end_of_file=02000_F_Akhir file tidak diharapkan
 % Ini biasanya terjadi dalam salah satu kasus berikut :
 % \begin{itemize}
@@ -400,6 +414,7 @@ scan_e_illegal_minfpconstprec=02085_E_Konstan presisi pecahan minimal "$1" tidak
 % sudah benar atau tidak.
 % \begin{description}
 <<<<<<< HEAD
+<<<<<<< HEAD
 scan_w_multiple_main_name_overrides=02086_W_Overriding name of "main" procedure multiple times, was previously set to "$1"
 % The name for the main entry procedure is specified more than once. Only the last
 % name will be used.
@@ -453,6 +468,8 @@ scan_e_illegal_hugepointernormalization=02098_E_Illegal argument for HUGEPOINTER
 % \begin{description}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 parser_e_syntax_error=03000_E_Pengurai - Sintaks Salah
 % Kesalahan terhadap bahasa Turbo Pascal ditemukan. Ini terjadi biasanya
 % saat karakter tidak benar ditemukan dalam file sumber.
@@ -471,9 +488,12 @@ parser_e_export_invalid_index=03010_E_Indeks untuk fungsi yang diekspor tidak be
 % Indeks fungsi DLL harus dalam jangkauan \var{1..\$FFFF}
 parser_w_parser_reloc_no_debug=03011_W_DLL yang bisa direlokasi atau info debug executable $1 tidak bekerja, dimatikan.
 <<<<<<< HEAD
+<<<<<<< HEAD
 % It is currently not possible to include debug information in a relocatable DLL.
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 parser_w_parser_win32_debug_needs_WN=03012_W_Untuk membolehkan men-debug pada kode win32 anda perlu mematikan relokasi dengan opsi -WN
 % Info stab salah untuk DLL atau EXE yang bisa direlokasi, gunakan -WN
 % jika anda ingin men-debug win32 executable.
@@ -598,12 +618,17 @@ parser_e_no_paras_for_destructor=03052_E_Destruktor tidak bisa mempunyai paramet
 % Anda mendeklarasikan sebuah destruktor dengan daftar parameter. Metode destruktor
 % tidak bisa memiliki parameter.
 <<<<<<< HEAD
+<<<<<<< HEAD
 parser_e_only_class_members_via_class_ref=03053_E_Only class methods, class properties and class variables can be referred with class references
 % This error occurs in a situation like the following:
 =======
 parser_e_only_class_methods_via_class_ref=03053_E_Hanya metode kelas dapat dirujuk dengan referensi kelas
 % Kesalahan ini terjadi dalam situasi seperti berikut:
 >>>>>>> graemeg/fixes_2_2
+=======
+parser_e_only_class_methods_via_class_ref=03053_E_Hanya metode kelas dapat dirujuk dengan referensi kelas
+% Kesalahan ini terjadi dalam situasi seperti berikut:
+>>>>>>> origin/fixes_2_2
 % \begin{verbatim}
 % Type :
 %    Tclass = Class of Tobject;
@@ -615,18 +640,24 @@ parser_e_only_class_methods_via_class_ref=03053_E_Hanya metode kelas dapat diruj
 % C.free
 % \end{verbatim}
 <<<<<<< HEAD
+<<<<<<< HEAD
 % \var{Free} is not a class method and hence cannot be called with a class
 % reference.
 parser_e_only_class_members=03054_E_Only class methods, class properties and class variables can be accessed in class methods
 % This is related to the previous error. You cannot call a method of an object
 % from inside a class method. The following code would produce this error:
 =======
+=======
+>>>>>>> origin/fixes_2_2
 % \var{Free} bukan metode kelas dan tidak bisa dipanggil dengan referensi
 % kelas.
 parser_e_only_class_methods=03054_E_Hanya metode kelas bisa diakses dalam metode kelas
 % Ini terkait dengan kesalahan sebelumnya. Anda tidak bisa memanggil metode obyek dari
 % dalam metode kelas. Kode berikut akan menghasilkan kesalahan ini:
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 % \begin{verbatim}
 % class procedure tobject.x;
 %
@@ -634,12 +665,17 @@ parser_e_only_class_methods=03054_E_Hanya metode kelas bisa diakses dalam metode
 %   free
 % \end{verbatim}
 <<<<<<< HEAD
+<<<<<<< HEAD
 % Because free is a normal method of a class it cannot be called from a class
 % method.
 =======
 % Karena free adalah metode normal sebuah kelas, ia tidak bisa dipanggil dari
 % metode kelas.
 >>>>>>> graemeg/fixes_2_2
+=======
+% Karena free adalah metode normal sebuah kelas, ia tidak bisa dipanggil dari
+% metode kelas.
+>>>>>>> origin/fixes_2_2
 parser_e_case_mismatch=03055_E_Tipe konstan dan CASE tidak sama
 % Salah satu label tidak memiliki tipe yang sama seperti variabel case.
 parser_e_illegal_symbol_exported=03056_E_Simbol tidak bisa diekspor dari sebuah librari
@@ -726,12 +762,17 @@ parser_e_void_function=03080_E_Prosedur tidak mengembalikan nilai
 % memakai pernyataan \var{exit}. Kesalahan ini terjadi ketika anda mencoba untuk
 % melakukan ini dengan prosedur. Prosedure tidak bisa mengembalikan nilai.
 <<<<<<< HEAD
+<<<<<<< HEAD
 parser_e_only_methods_allowed=03081_E_konstruktor, destruktor dan class operator harus sebuah metode
 % Anda mendeklarasikan sebuah procedure sebagai destruktor, konstructor atau class operator, ketika
 =======
 parser_e_constructors_always_objects=03081_E_konstruktor dan destruktor harus sebuah metode
 % Anda mendeklarasikan sebuah procedure sebagai destruktor atau konstruktor, ketika
 >>>>>>> graemeg/fixes_2_2
+=======
+parser_e_constructors_always_objects=03081_E_konstruktor dan destruktor harus sebuah metode
+% Anda mendeklarasikan sebuah procedure sebagai destruktor atau konstruktor, ketika
+>>>>>>> origin/fixes_2_2
 % prosedure bukan metode kelas.
 parser_e_operator_not_overloaded=03082_E_Operator tidak di-overload
 % Anda mencoba untuk menggunakan operator yang di-overload saat ia bukan tipe
@@ -773,6 +814,7 @@ parser_e_mix_of_classes_and_objects=03093_E_Campuran dari jenis obyek berbeda (c
 parser_w_unknown_proc_directive_ignored=03094_W_Direktif procedure tidak dikenal harus diabaikan: "$1"
 % Direktif procedure yang anda tetapkan tidak dikenal.
 <<<<<<< HEAD
+<<<<<<< HEAD
 parser_e_directive_only_one_var=03095_E_$1 can be associated with only one variable
 % You cannot specify more than one variable before the \var{absolute}, \var{export}, \var{external},
 % \var{weakexternal}, \var{public} and \var{cvar} directives.
@@ -782,12 +824,20 @@ parser_e_absolute_only_one_var=03095_E_absolute hanya bisa dikaitkan ke satu var
 % Anda tidak bisa menetapkan lebih dari satu variabel sebelum direktif \var{absolute}.
 % Selanjutnya, konstruksi berikut akan menghasilkan kesalahan ini:
 >>>>>>> graemeg/fixes_2_2
+=======
+parser_e_absolute_only_one_var=03095_E_absolute hanya bisa dikaitkan ke satu variabel
+% Anda tidak bisa menetapkan lebih dari satu variabel sebelum direktif \var{absolute}.
+% Selanjutnya, konstruksi berikut akan menghasilkan kesalahan ini:
+>>>>>>> origin/fixes_2_2
 % \begin{verbatim}
 % Var Z : Longint;
 %     X,Y : Longint absolute Z;
 % \end{verbatim}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 % \item [ absolute hanya bisa dikaitkan ke sebuah var atau const ]
 % Alamat dari direktif \var{absolute} hanya dapat mengarah ke variabel atau
 % tipe konstan. Oleh karena itu, kode berikut akan menghasilkan kesalahan ini:
@@ -797,7 +847,10 @@ parser_e_absolute_only_one_var=03095_E_absolute hanya bisa dikaitkan ke satu var
 %  var p : longint absolute x;
 % \end{verbatim}
 %
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 parser_e_absolute_only_to_var_or_const=03096_E_absolute hanya bisa dikaitkan dengan var atau const
 % Alamat direktif \var{absolute} hanya bisa mengarah ke variabel atau konstan.
 % Oleh karena itu, kode berikut akan menghasilkan kesalahan ini:
@@ -886,6 +939,7 @@ parser_e_function_already_declared_public_forward=03120_E_Fungsi sudah dideklara
 parser_e_not_external_and_export=03121_E_Tidak bisa menggunakan EXPORT dan EXTERNAL
 % Dua prosedur ini adalah mutual eksklusif
 <<<<<<< HEAD
+<<<<<<< HEAD
 parser_h_not_supported_for_inline=03123_H_"$1" belum didukung di dalam inline procedure/function
 % Inline procedures tidak mendukung deklarasi ini.
 parser_h_inlining_disabled=03124_H_Inlining dimatikan
@@ -894,6 +948,11 @@ parser_w_not_supported_for_inline=03123_W_"$1" belum didukung di dalam inline pr
 % Inline procedures tidak mendukung deklarasi ini.
 parser_w_inlining_disabled=03124_W_Inlining dimatikan
 >>>>>>> graemeg/fixes_2_2
+=======
+parser_w_not_supported_for_inline=03123_W_"$1" belum didukung di dalam inline procedure/function
+% Inline procedures tidak mendukung deklarasi ini.
+parser_w_inlining_disabled=03124_W_Inlining dimatikan
+>>>>>>> origin/fixes_2_2
 % Inlining dari prosedur dimatikan.
 parser_i_writing_browser_log=03125_I_Menulis log Browser $1
 % Ketika pesan informasi hidup, kompilator memperingatkan anda saat ia
@@ -1218,9 +1277,12 @@ parser_w_overridden_methods_not_same_ret=03218_W_Metode yang diganti harus tipe 
 % cara metode dipanggil.
 parser_e_dispid_must_be_ord_const=03219_E_Dispatch ID harus konstan ordinal
 <<<<<<< HEAD
+<<<<<<< HEAD
 % The \var{dispid} keyword must be followed by an ordinal constant (the dispid index).
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 parser_e_array_range_out_of_bounds=03220_E_Jangkauan array terlalu besar
 % Meskipun ukuran tergantung elemennya, array tidak bisa memiliki lebih dari
 % high(ptrint) elemen. Sebagai tambahan, tipe jangkauan harus sub jangkauan
@@ -1239,6 +1301,7 @@ parser_e_packed_element_no_loop=03223_E_Bit elemen packed array dan field record
 % ia akan dipadatkan di tingkat bit. Untuk alasan performansi, ia tidak bisa
 % dipakai sebagai variabel loop.
 <<<<<<< HEAD
+<<<<<<< HEAD
 parser_e_type_var_const_only_in_records_and_classes=03224_E_VAR, TYPE and CONST are allowed only in records, objects and classes
 % The usage of VAR, TYPE and CONST to declare new types inside an object is allowed only inside
 % records, objects and classes.
@@ -1247,6 +1310,11 @@ parser_e_type_and_var_only_in_generics=03224_E_VAR dan TYPE hanya dibolehkan dal
 % Penggunaan VAR dan TYPE untuk mendeklarasikan tipe baru di dalam sebuah obyek
 % hanya dibolehkan di dalam generik.
 >>>>>>> graemeg/fixes_2_2
+=======
+parser_e_type_and_var_only_in_generics=03224_E_VAR dan TYPE hanya dibolehkan dalam generik
+% Penggunaan VAR dan TYPE untuk mendeklarasikan tipe baru di dalam sebuah obyek
+% hanya dibolehkan di dalam generik.
+>>>>>>> origin/fixes_2_2
 parser_e_cant_create_generics_of_this_type=03225_E_Tipe ini tidak bisa generik
 % Hanya Class, Object, Interface dan Record dibolehkan untuk dipakai sebagai generik
 parser_w_no_lineinfo_use_switch=03226_W_Jangan ambil unit LINEINFO secara manual, sebaliknya gunakan saklar kompilator -gl
@@ -1267,7 +1335,10 @@ parser_e_label_outside_proc=03231_E_Mengambil alamat label yang didefinisikan di
 % Tidak diperbolehkan untuk mengambil alamat label di luar prosedur
 % saat ini.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 parser_f_no_anonymous_specializations=03232_F_Spesialisasi generik anonim tidak diperbolehkan
 % Sesuatu seperti
 % \begin{verbatim}
@@ -1281,7 +1352,10 @@ parser_f_no_anonymous_specializations=03232_F_Spesialisasi generik anonim tidak 
 % var
 %   MyLinkedList: TMyLinkedList
 % \end{verbatim}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 parser_e_initialized_not_for_external=03233_E_Tidak bisa menginisialisasi variabel yang dideklarasikan sebagai external
 % Variabel yang dideklarasikan sebagai external tidak bisa diinisialisasi dengan nilai default.
 parser_e_illegal_function_result=03234_E_Tipe hasil fungsi tidak benar
@@ -1304,6 +1378,7 @@ parser_e_no_generics_as_types=03236_E_Generik tanpa spesialisasi tidak bisa dipa
 % Seksi ini mendaftarkan semua kesalahan yang terjadi saat pemeriksaan tipe
 % dilakukan.
 % \begin{description}
+<<<<<<< HEAD
 <<<<<<< HEAD
 parser_w_register_list_ignored=03237_W_Register list is ignored for pure assembler routines
 % When using pure assembler routines, the list with modified registers is ignored.
@@ -1668,6 +1743,8 @@ parser_u_already_compiled=03340_UL_Unit $1 has been already compiled meanwhile.
 % \begin{description}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type_e_mismatch=04000_E_Tipe tidak sama
 % Ini terjadi dalam banyak kasus:
 % \begin{itemize}
@@ -1805,6 +1882,7 @@ type_e_interface_type_expected=04034_E_tipe interface diharapkan, tapi didapat "
 %   TMyStream = Class(TStream,Integer)
 % \end{verbatim}
 <<<<<<< HEAD
+<<<<<<< HEAD
 type_h_mixed_signed_unsigned=04035_H_Mixing signed expressions and longwords gives a 64bit result
 % If you divide (or calculate the modulus of) a signed expression by a longword (or vice versa),
 % or if you have overflow and/or range checking turned on and use an arithmetic
@@ -1813,6 +1891,8 @@ type_h_mixed_signed_unsigned=04035_H_Mixing signed expressions and longwords giv
 % 32-bit arithmetic. You can avoid this by typecasting one operand so it
 % matches the result type of the other one.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type_w_mixed_signed_unsigned=04035_W_Mencampur ekspresi bertanda dan longword memberikan hasil 64bit
 % Jika anda membagi (atau menghitung modulus dari) ekspresi bertanda dengan 
 % longword (atau sebaliknya), atau jika anda memiliki overflow dan/atau 
@@ -1821,7 +1901,10 @@ type_w_mixed_signed_unsigned=04035_W_Mencampur ekspresi bertanda dan longword me
 % maka kesemuanya harus dievaluasi dalam 64bit yang lebih lambat daripada 
 % aritmatika 32bit normal. Anda bisa menghindari ini dengan typecasting satu 
 % operand agar ia sesuai tipe hasil atas yang lainnya.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type_w_mixed_signed_unsigned2=04036_W_Mencampur ekspresi bertanda dan cardinal di sini dapat menyebabkan kesalahan pemeriksaan jangkauan
 % Jika anda menggunakan operator biner (and, or, xor) dan salah satu operand
 % adalah longword sementara yang lainnya ekspresi bertanda, maka jika
@@ -1854,6 +1937,7 @@ type_w_string_too_long=04043_W_Literal string memiliki lebih banyak karakter dar
 % Ukuran string konstan, yang ditempatkan ke shortstring, lebih panjang daripada
 % ukuran maksimum shortstring
 <<<<<<< HEAD
+<<<<<<< HEAD
 type_w_comparison_always_false=04044_W_Comparison might be always false due to range of constant and expression
 % There is a comparison between a constant and an expression where the constant is out of the
 % valid range of values of the expression. Because of type promotion, the statement will always evaluate to
@@ -1865,6 +1949,8 @@ type_w_comparison_always_true=04045_W_Comparison might be always true due to ran
 % true. Explicitly typecast the constant or the expression to the correct range to avoid this warning
 % if you think the code is correct.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type_w_signed_unsigned_always_false=04044_W_Perbandingan selalu salah karena jangkauan nilai
 % Ada perbandingan antara nilai unsigned dan konstan bertanda yang kurang dari
 % nol. Karena promosi tipe, pernyataan akan selalu dievaluasi menjadi false.
@@ -1873,7 +1959,10 @@ type_w_signed_unsigned_always_true=04045_W_Perbandingan selalu true karena jangk
 % Ada perbandingan antara nilai unsigned dan konstan bertanda yang kurang dari
 % nol. Karena promosi tipe, pernyataan akan selalu dievaluasi menjadi true.
 % Typecast secara eksplisit konstan ke jangkauan yang benar guna menghindari masalah ini.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 type_w_instance_with_abstract=04046_W_Membentuk sebuah kelas "$1" dengan metode abstrak
 % Turunan kelas dibuat yang berisi metode abstrak tidak diimplementasikan. Ini
 % dapat membawa kesalahan runtime 211 dalam kode jika rutin itu tidak pernah
@@ -1976,6 +2065,7 @@ type_w_pointer_to_signed=04082_W_Mengkonversi pointer ke integer bertanda dapat 
 % Seksi ini mendaftarkan semua pesan yang berkenaan dengan penanganan simbol.
 % Ini berarti semua hal yang harus dilakukan dengan prosedur dan nama variabel.
 % \begin{description}
+<<<<<<< HEAD
 <<<<<<< HEAD
 type_e_interface_has_no_guid=04083_E_Interface type $1 has no valid GUID
 % When applying the as-operator to an interface or class, the desired interface (i.e. the right operand of the
@@ -2143,6 +2233,8 @@ type_e_anonymous_function_unsupported=04999_E_Function references are not yet su
 % \begin{description}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 sym_e_id_not_found=05000_E_Pengenal tidak ditemukan "$1"
 % Kompilator tidak mengetahui simbol ini. Biasanya terjadi ketika anda salah
 % mengeja nama variabel atau prosedur, atau ketika anda lupa untuk
@@ -2175,12 +2267,17 @@ sym_e_forward_type_not_resolved=05009_E_Tipe forward tidak memecahkan "$1"
 sym_e_only_static_in_static=05010_E_Hanya variabel statis bisa dipakai dalam metode statis atau di luar metode
 % Metode statis pada obyek hanya bisa mengakses variabel statis.
 <<<<<<< HEAD
+<<<<<<< HEAD
 sym_e_type_must_be_rec_or_object_or_class=05012_E_Record or object or class type expected
 % The variable or expression isn't of the type \var{record} or \var{object} or \var{class}.
 =======
 sym_f_type_must_be_rec_or_class=05012_F_tipe record atau class diharapkan
 % Variabel atau ekspresi bukan tipe \var{record} atau \var{class}.
 >>>>>>> graemeg/fixes_2_2
+=======
+sym_f_type_must_be_rec_or_class=05012_F_tipe record atau class diharapkan
+% Variabel atau ekspresi bukan tipe \var{record} atau \var{class}.
+>>>>>>> origin/fixes_2_2
 sym_e_no_instance_of_abstract_object=05013_E_Turunan kelas atau obyek dengan metode abstrak tidak dibolehkan
 % Anda mencoba untuk membuat turunan kelas yang memiliki metode abstrak yang
 % tidak diganti.
@@ -2315,6 +2412,7 @@ sym_h_abstract_method_list=05062_H_Ditemukan metode abstrak: $1
 % Seksi ini mendaftarkan semua pesan yang dapat ditampilkan jika generator
 % kode menemukan kondisi kesalahan.
 % \begin{description}
+<<<<<<< HEAD
 <<<<<<< HEAD
 sym_w_experimental_symbol=05063_W_Symbol "$1" is experimental
 % This means that a symbol (a variable, routine, etc...) which is
@@ -2474,6 +2572,8 @@ sym_w_duplicate_id=05095_W_Duplicate identifier "$1"
 % \begin{description}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 cg_e_parasize_too_big=06009_E_Ukuran daftar parameter melebihi 65535 byte
 % Prosesor I386 membatasi daftar parameter ke 65535 byte (instruksi \var{RET}
 % menyebabkan ini)
@@ -2601,6 +2701,7 @@ cg_h_inherited_ignored=06048_H_Pemanggilan turunan ke metode abstrak diabaikan
 # 07105 is the last used one
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 cg_e_goto_label_not_found=06049_E_Goto label "$1" not defined or optimized away
 % The label used in the goto definition is not defined or optimized away by the
 % unreachable code elemination.
@@ -2638,6 +2739,8 @@ cg_f_max_units_reached=06057_F_Maximum number of units ($1) reached for the curr
 #
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 asmr_d_start_reading=07000_DL_Mulai penguraian assembler gaya $1
 % Ini memberitahu anda bahwa blok assembler sedang diuraikan
 asmr_d_finish_reading=07001_DL_Selesasi penguraian assembler gaya $1
@@ -2883,6 +2986,7 @@ asmr_e_no_vmtoffset_possible=07106_E_VMTOffset harus dipakai dalam kombinasi den
 # 08018 is the last used one
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 asmr_e_need_pic_ref=07107_E_Generating PIC, but reference is not PIC-safe
 % The compiler has been configured to generate position-independent code
 % (PIC), but there are position-dependent references in the current
@@ -2950,6 +3054,8 @@ asmr_e_invalid_ref_register=07125_E_Invalid register used in memory reference ex
 #
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 asmw_f_too_many_asm_files=08000_F_Terlalu banyak file assembler
 % Dengan menghidupkan smartlinking, ada terlalu banyak file assembler yang dibuat.
 % Matikan smartlinking.
@@ -2988,6 +3094,7 @@ asmw_e_64bit_not_supported=08021_E_Asm: 64 Bit operand tidak didukung
 % baris perintah atau menangani file konfigurasi.
 % \begin{description}
 <<<<<<< HEAD
+<<<<<<< HEAD
 asmw_e_bad_reg_with_rex=08022_E_Asm: AH,BH,CH or DH cannot be used in an instruction requiring REX prefix
 % x86_64 only: instruction encoding of this platform does not allow using
 % 8086 high byte registers (AH,BH,CH or DH) together with REX prefix in a single instruction.
@@ -3025,6 +3132,8 @@ asmw_e_32bit_not_supported=08029_E_Asm: 32 Bit references not supported
 % \begin{description}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 exec_w_source_os_redefined=09000_W_Sistem operasi sumber didefinisikan ulang
 % Sistem operasi sumber didefinisikan ulang.
 exec_i_assembling_pipe=09001_I_Assembling (pipe) $1
@@ -3079,11 +3188,14 @@ exec_e_dll_not_supported=09019_E_Pembuatan Librari Dinamis/Berbagai tidak diduku
 % Pembuatan dynamically loadable libraries tidak didukung untuk platform ini, 
 % karena belum diimplementasikan dalam kompilator.
 <<<<<<< HEAD
+<<<<<<< HEAD
 exec_e_static_lib_not_supported=09035_E_Creation of Static Libraries not supported
 % Creating static libraries is not supported for this platform, because it was
 % not yet implemented in the compiler.
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 exec_i_closing_script=09020_I_Menutup naskah $1
 % Pesan informasional yang tampil saat naskah linking assembling eskternal selesai.
 exec_e_res_not_found=09021_E_kompilator resource tidak ditemukan, beralih ke mode eksternal
@@ -3114,6 +3226,7 @@ exec_d_resbin_params=09028_D_Memanggil kompilator resource "$1" dengan "$2" seba
 % Seksi ini mendaftarkan semua pesan yang dikeluarkan kompilator saat program
 % executable dihasilkan, dan hanya ketika linker internal yang dipakai.
 % \begin{description}
+<<<<<<< HEAD
 <<<<<<< HEAD
 exec_e_error_while_compiling_resources=09029_E_Error while compiling resources
 % The resource compiler or converter returned an error.
@@ -3146,6 +3259,8 @@ exec_w_init_file_not_found=09034_W_"$1" not found, this will probably cause a li
 % \begin{description}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 execinfo_f_cant_process_executable=09128_F_Tidak dapat memproses akhir executable $1
 % Kesalahan fatal saat kompilator tidak bisa memproses akhir sebuah executable.
 execinfo_f_cant_open_executable=09129_F_Tidak bisa membuka executable $1
@@ -3175,6 +3290,7 @@ execinfo_x_stackcommit=09134_X_Ruang stack dikomit: $1 byte
 % pesan informasional.
 % \begin{description}
 <<<<<<< HEAD
+<<<<<<< HEAD
 link_f_executable_too_big=09200_F_Executable image size is too big for $1 target.
 % Fatal error when resulting executable is too big.
 link_w_32bit_absolute_reloc=09201_W_Object file "$1" contains 32-bit absolute relocation to symbol "$2".
@@ -3197,6 +3313,8 @@ link_w_32bit_absolute_reloc=09201_W_Object file "$1" contains 32-bit absolute re
 % \begin{description}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 unit_t_unitsearch=10000_T_Pencarian unit: $1
 % Ketika anda menggunakan saklar \var{-vt}, kompilator memberitahu anda ke mana
 % ia mencoba mencari file unit.
@@ -3388,6 +3506,7 @@ unit_u_skipping_reresolving_unit=10059_U_Melewati pemecahan ulang unit $1, masih
 # 11041 is the last used one
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 unit_u_unload_resunit=10060_U_Unloading resource unit $1 (not needed)
 % When you use the \var{-vu} flag, the compiler warns that it is unloading the
 % resource handling unit, since no resources are used.
@@ -3413,6 +3532,8 @@ unit_u_ppu_invalid_memory_model=10063_U_PPU is compiled for another i8086 memory
 #
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 option_usage=11000_O_$1 [opsi] <inputfile> [opsi]
 # BeginOfTeX
 %
@@ -3490,16 +3611,20 @@ option_handling_option=11028_D_Menangani opsi "$1"
 % Info debug yang opsinya ditemukan akan ditangani
 option_help_press_enter=11029__*** tekan enter ***
 <<<<<<< HEAD
+<<<<<<< HEAD
 % Message shown when help is shown page per page. When pressing the ENTER
 % Key, the next page of help is shown. If you press q and then ENTER, the
 % compiler exits.
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 option_start_reading_configfile=11030_H_Mulai membaca file konfigurasi $1
 % Memulai penguraian file konfigurasi.
 option_end_reading_configfile=11031_H_Akhir pembacaan file konfigurasi $1
 % Akhir penguraian file konfigurasi.
 option_interpreting_option=11032_D_menginterpretasikan opsi "$1"
+<<<<<<< HEAD
 <<<<<<< HEAD
 % The compiler is interpreting an option
 option_interpreting_firstpass_option=11036_D_menginterpretasikan operan opsi pertama "$1"
@@ -3513,10 +3638,16 @@ option_interpreting_firstpass_option=11036_D_menginterpretasikan operan opsi per
 option_interpreting_file_option=11033_D_menginterpretasikan opsi file "$1"
 option_read_config_file=11034_D_Membaca file konfigurasi "$1"
 >>>>>>> graemeg/fixes_2_2
+=======
+option_interpreting_firstpass_option=11036_D_menginterpretasikan operan opsi pertama "$1"
+option_interpreting_file_option=11033_D_menginterpretasikan opsi file "$1"
+option_read_config_file=11034_D_Membaca file konfigurasi "$1"
+>>>>>>> origin/fixes_2_2
 option_found_file=11035_D_ditemukan nama file sumber "$1"
 % Info tambahan mengenai opsi, ditampilkan saat anda menghidupkan opsi
 % debug.
 option_code_page_not_available=11039_E_Halaman kode tidak dikenal
+<<<<<<< HEAD
 <<<<<<< HEAD
 % An unknown codepage for the source files was requested.
 % The compiler is compiled with support for several codepages built-in.
@@ -3524,6 +3655,8 @@ option_code_page_not_available=11039_E_Halaman kode tidak dikenal
 % the compiler with support for the codepage you need.
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 option_config_is_dir=11040_F_File konfigurasi $1 adalah sebuah direktori
 % Direktori tidak bisa dipakai sebagai file konfigurasi.
 option_confict_asm_debug=11041_W_Output assembler yang dipilih "$1" tidak bisa menghasilkan info debug, debugging dimatikan
@@ -3535,6 +3668,7 @@ option_confict_asm_debug=11041_W_Output assembler yang dipilih "$1" tidak bisa m
 #
 # Logo (option -l)
 #
+<<<<<<< HEAD
 <<<<<<< HEAD
 option_ppc386_deprecated=11042_W_Use of ppc386.cfg is deprecated, please use fpc.cfg instead
 % Using ppc386.cfg is still supported for historical reasons, however, for a multiplatform
@@ -3685,6 +3819,11 @@ option_logo=11023_[
 Free Pascal Compiler versi $FPCFULLVERSION [$FPCDATE] untuk $FPCCPU
 Hak Cipta (c) 1993-2008 oleh Florian Klaempfl
 >>>>>>> graemeg/fixes_2_2
+=======
+option_logo=11023_[
+Free Pascal Compiler versi $FPCFULLVERSION [$FPCDATE] untuk $FPCCPU
+Hak Cipta (c) 1993-2008 oleh Florian Klaempfl
+>>>>>>> origin/fixes_2_2
 ]
 
 #
@@ -3710,16 +3849,22 @@ Optimasi Didukung:
 
 Program ini datang bersama GNU General Public Licence
 <<<<<<< HEAD
+<<<<<<< HEAD
 Untuk informasi lebih jauh baca COPYING.v2
 
 Laporkan bugs, saran, dll ke:
                  http://bugs.freepascal.org
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Untuk informasi lebih jauh baca COPYING.FPC
 
 Laporkan bugs, saran, dll ke:
                  bugs@freepascal.org
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 ]
 
 #
@@ -3851,10 +3996,15 @@ S*2Aas_Rangkai menggunakan GNU AS
 **2Mmacpas_Mode kompatibilitas dialek Macintosh Pascal
 **1n_Jangan baca file konfigurasi standar
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 **1N<x>_Optimasi susunan node
 **2Nu_Jangan gulung pengulangan
 >>>>>>> graemeg/fixes_2_2
+=======
+**1N<x>_Optimasi susunan node
+**2Nu_Jangan gulung pengulangan
+>>>>>>> origin/fixes_2_2
 **1o<x>_Ubah nama executable yang dihasilkan ke <x>
 **1O<x>_Optimasi:
 **2O-_Matikan optimasi
@@ -3892,9 +4042,13 @@ S*2Aas_Rangkai menggunakan GNU AS
 **2So_Sama seperti -Mtp
 **2Ss_Nama konstruktor harus init (destruktor harus done)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 **2St_Ijinkan kata kunci static dalam obyek
 >>>>>>> graemeg/fixes_2_2
+=======
+**2St_Ijinkan kata kunci static dalam obyek
+>>>>>>> origin/fixes_2_2
 **2Sx_Hidupkan kata kunci exception (standar dalam mode Delphi/ObjFPC)
 **1s_Jangan panggil assembler dan linker
 **2sh_Hasilkan naskah untuk me-link pada host
@@ -3989,6 +4143,7 @@ P*2WT_Tetapkan aplikasi tipe piranti MPW (Mac OS Klasik)
 #
 # The End...
 <<<<<<< HEAD
+<<<<<<< HEAD
 %%% parser_e_only_class_methods_via_class_ref=03053_E_Hanya metode kelas dapat dirujuk dengan referensi kelas
 % Kesalahan ini terjadi dalam situasi seperti berikut:
 % \begin{verbatim}
@@ -4064,3 +4219,5 @@ P*2WT_Tetapkan aplikasi tipe piranti MPW (Mac OS Klasik)
 % Typecast secara eksplisit konstan ke jangkauan yang benar guna menghindari masalah ini.
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

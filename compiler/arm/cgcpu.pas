@@ -137,6 +137,7 @@ unit cgcpu;
 
         procedure g_intf_wrapper(list: TAsmList; procdef: tprocdef; const labelname: string; ioffset: longint);override;
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure g_adjust_self_value(list:TAsmList;procdef: tprocdef;ioffset: aint); override;
         procedure g_stackpointer_alloc(list : TAsmList;size : longint);override;
 
@@ -225,12 +226,17 @@ unit cgcpu;
         procedure a_load_const_reg(list : TAsmList; size: tcgsize; a : aint;reg : tregister);override;
         procedure a_load_ref_reg(list : TAsmList; fromsize, tosize : tcgsize;const Ref : treference;reg : tregister);override;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         procedure g_adjust_self_value(list:TAsmList;procdef: tprocdef;ioffset: aint);
       private
         { clear out potential overflow bits from 8 or 16 bit operations  }
         { the upper 24/16 bits of a register after an operation          }
         procedure maybeadjustresult(list: TAsmList; op: TOpCg; size: tcgsize; dst: tregister);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
       tcg64farm = class(tcg64f32)
@@ -1267,7 +1273,10 @@ unit cgcpu;
             list.concat(taicpu.op_reg_const(A_MVN,reg,not(a)))
           { loading of constants with mov and orr }
           else if (is_shifter_const(a-byte(a),imm_shift)) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             begin
               list.concat(taicpu.op_reg_const(A_MOV,reg,a-byte(a)));
               list.concat(taicpu.op_reg_reg_const(A_ORR,reg,reg,byte(a)));
@@ -1609,6 +1618,7 @@ unit cgcpu;
                      usedtmpref:=ref;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                    shifterop_reset(so);so.shiftmode:=SM_LSL;
                    if ref.alignment=2 then
                      begin
@@ -1639,6 +1649,8 @@ unit cgcpu;
                        list.concat(taicpu.op_reg_reg_reg_shifterop(A_ORR,reg,reg,tmpreg,so));
                      end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
                    if target_info.endian=endian_big then
                      inc(usedtmpref.offset,3);
                    shifterop_reset(so);so.shiftmode:=SM_LSL;so.shiftimm:=8;
@@ -1663,7 +1675,10 @@ unit cgcpu;
          else
            handle_load_store(list,A_LDR,oppostfix,reg,ref);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
          if (fromsize=OS_S8) and (tosize = OS_16) then
            a_load_reg_reg(list,OS_16,OS_32,reg,reg);
@@ -1723,12 +1738,23 @@ unit cgcpu;
      procedure tcgarm.a_load_reg_reg(list : TAsmList; fromsize, tosize : tcgsize;reg1,reg2 : tregister);
        var
          so : tshifterop;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 
 
 <<<<<<< HEAD
     procedure tcgarm.a_load_ref_cgpara(list : TAsmList;size : tcgsize;const r : treference;const paraloc : TCGPara);
 =======
+=======
+
+       procedure do_shift(shiftmode : tshiftmode; shiftimm : byte; reg : tregister);
+         begin
+           so.shiftmode:=shiftmode;
+           so.shiftimm:=shiftimm;
+           list.concat(taicpu.op_reg_reg_shifterop(A_MOV,reg2,reg,so));
+         end;
+
+>>>>>>> origin/fixes_2_2
        var
          instr: taicpu;
          conv_done: boolean;
@@ -1915,6 +1941,7 @@ unit cgcpu;
          dir : integer;
        begin
 <<<<<<< HEAD
+<<<<<<< HEAD
          if (TCGSize2Size[FromSize] >= TCGSize2Size[ToSize]) then
            FromSize := ToSize;
          case FromSize of
@@ -1930,6 +1957,9 @@ unit cgcpu;
 =======
          case fromsize of
 >>>>>>> graemeg/fixes_2_2
+=======
+         case fromsize of
+>>>>>>> origin/fixes_2_2
            OS_32,
            OS_S32:
              oppostfix:=PF_None;
@@ -14888,12 +14918,25 @@ unit cgcpu;
       end;
 
 
+<<<<<<< HEAD
     procedure tcgarm.g_intf_wrapper(list: TAsmList; procdef: tprocdef; const labelname: string; ioffset: longint);
 >>>>>>> graemeg/fixes_2_2
 
           For now, we assume that references where base or index equals to PC are already
           relative, all other references are assumed to be absolute and thus they need
           to be handled extra.
+=======
+    procedure tcgarm.g_save_registers(list : TAsmList);
+      begin
+        { this work is done in g_proc_entry }
+      end;
+
+
+    procedure tcgarm.g_restore_registers(list : TAsmList);
+      begin
+        { this work is done in g_proc_exit }
+      end;
+>>>>>>> origin/fixes_2_2
 
           A proper solution would be to change refoptions to a set and store the information
           if the symbol is absolute or relative there.
@@ -14931,7 +14974,64 @@ unit cgcpu;
                 cg.a_label(current_procinfo.aktlocaldata,l);
                 tmpref.symboldata:=current_procinfo.aktlocaldata.last;
 
+<<<<<<< HEAD
                 current_procinfo.aktlocaldata.concat(tai_const.create_sym_offset(ref.symbol,ref.offset));
+=======
+    procedure tcgarm.g_adjust_self_value(list:TAsmList;procdef: tprocdef;ioffset: aint);
+      var
+        hsym : tsym;
+        href : treference;
+        paraloc : Pcgparalocation;
+        shift : byte;
+      begin
+        { calculate the parameter info for the procdef }
+        if not procdef.has_paraloc_info then
+          begin
+            procdef.requiredargarea:=paramanager.create_paraloc_info(procdef,callerside);
+            procdef.has_paraloc_info:=true;
+          end;
+        hsym:=tsym(procdef.parast.Find('self'));
+        if not(assigned(hsym) and
+          (hsym.typ=paravarsym)) then
+          internalerror(200305251);
+        paraloc:=tparavarsym(hsym).paraloc[callerside].location;
+        while paraloc<>nil do
+          with paraloc^ do
+            begin
+              case loc of
+                LOC_REGISTER:
+                  begin
+                    if is_shifter_const(ioffset,shift) then
+                      a_op_const_reg(list,OP_SUB,size,ioffset,register)
+                    else
+                      begin
+                        a_load_const_reg(list,OS_ADDR,ioffset,NR_R12);
+                        a_op_reg_reg(list,OP_SUB,size,NR_R12,register);
+                      end;
+                  end;
+                LOC_REFERENCE:
+                  begin
+                    { offset in the wrapper needs to be adjusted for the stored
+                      return address }
+                    reference_reset_base(href,reference.index,reference.offset+sizeof(aint));
+                    if is_shifter_const(ioffset,shift) then
+                      a_op_const_ref(list,OP_SUB,size,ioffset,href)
+                    else
+                      begin
+                        a_load_const_reg(list,OS_ADDR,ioffset,NR_R12);
+                        a_op_reg_ref(list,OP_SUB,size,NR_R12,href);
+                      end;
+                  end
+                else
+                  internalerror(200309189);
+              end;
+              paraloc:=next;
+            end;
+      end;
+
+
+    procedure tcgarm.g_intf_wrapper(list: TAsmList; procdef: tprocdef; const labelname: string; ioffset: longint);
+>>>>>>> origin/fixes_2_2
 
                 { load consts entry }
                 tmpref.symbol:=l;
@@ -15000,6 +15100,10 @@ unit cgcpu;
             ref.base := tmpreg;
           end;
 =======
+        { the wrapper might need aktlocaldata for the additional data to
+          load the constant }
+        current_procinfo:=cprocinfo.create(nil);
+
         { the wrapper might need aktlocaldata for the additional data to
           load the constant }
         current_procinfo:=cprocinfo.create(nil);

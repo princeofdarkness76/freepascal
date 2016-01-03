@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 { lNet v0.6.2
 
   CopyRight (C) 2004-2008 Ales Katona
@@ -7,6 +8,11 @@
 
   CopyRight (C) 2004-2007 Ales Katona
 >>>>>>> graemeg/fixes_2_2
+=======
+{ lNet v0.5.8
+
+  CopyRight (C) 2004-2007 Ales Katona
+>>>>>>> origin/fixes_2_2
 
   This library is Free software; you can rediStribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -90,7 +96,10 @@ type
     FReuseAddress: Boolean;
     FConnected: Boolean;
     FConnecting: Boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FNextSock: TLSocket;
     FPrevSock: TLSocket;
     FSocketState: TLSocketStates;
@@ -100,9 +109,12 @@ type
     FProtocol: Integer;
     FSocketType: Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FSocketNet: Integer;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FCreator: TLComponent;
     FSession: TLSession;
     FConnection: TLConnection;
@@ -155,7 +167,10 @@ type
     procedure SetOptions; virtual;
     procedure SetBlocking(const aValue: Boolean);
     procedure SetReuseAddress(const aValue: Boolean);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     function Bail(const msg: string; const ernum: Integer): Boolean;
     
@@ -194,7 +209,10 @@ type
     property ListenBacklog: Integer read FListenBacklog write FListenBacklog;
     property Protocol: Integer read FProtocol write FProtocol;
     property SocketType: Integer read FSocketType write FSocketType;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property PeerAddress: string read GetPeerAddress;
     property PeerPort: Word read GetPeerPort;
     property LocalAddress: string read GetLocalAddress;
@@ -416,6 +434,7 @@ type
     function GetConnecting: Boolean;
     function GetCount: Integer; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetValidSocket: TLSocket;
 
     procedure SetReuseAddress(const aValue: Boolean);
@@ -424,6 +443,10 @@ type
 
     procedure SetReuseAddress(const aValue: Boolean);
 >>>>>>> graemeg/fixes_2_2
+=======
+
+    procedure SetReuseAddress(const aValue: Boolean);
+>>>>>>> origin/fixes_2_2
 
     procedure ConnectAction(aSocket: TLHandle); override;
     procedure AcceptAction(aSocket: TLHandle); override;
@@ -458,9 +481,12 @@ type
     property OnConnect: TLSocketEvent read FOnConnect write FOnConnect;
     property ReuseAddress: Boolean read FReuseAddress write SetReuseAddress;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property SocketNet: Integer read FSocketNet write SetSocketNet;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   { TLSession }
@@ -513,7 +539,10 @@ begin
   FConnecting := False;
   FIgnoreShutdown := False;
   FSocketType := SOCK_STREAM;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FProtocol := LPROTO_TCP;
   FMSGBufferSize := 0;
 end;
@@ -525,10 +554,14 @@ begin
 
   inherited Destroy; // important! must be called before disconnect
 <<<<<<< HEAD
+<<<<<<< HEAD
   Disconnect(True);
 =======
   Disconnect;
 >>>>>>> graemeg/fixes_2_2
+=======
+  Disconnect;
+>>>>>>> origin/fixes_2_2
 end;
 
 function TLSocket.SetState(const aState: TLSocketState; const TurnOn: Boolean = True): Boolean;
@@ -621,10 +654,13 @@ function TLSocket.Bail(const msg: string; const ernum: Integer): Boolean;
 begin
   Result := False; // return the result for the caller
 <<<<<<< HEAD
+<<<<<<< HEAD
   if FDispose then // why?
     Exit;
   Disconnect(True);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
   Disconnect;
 >>>>>>> graemeg/fixes_2_2
@@ -636,8 +672,11 @@ begin
   Result := '';
   if FSocketType = SOCK_STREAM then
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result := NetAddrtoStr(FAddress.IPv4.sin_addr)
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Result := NetAddrtoStr(FAddress.Addr)
 >>>>>>> graemeg/fixes_2_2
   else
@@ -652,6 +691,7 @@ begin
   Result := '';
   l := SizeOf(a);
   if fpGetSockName(FHandle, @a, @l) = 0 then
+<<<<<<< HEAD
 <<<<<<< HEAD
     Result := NetAddrToStr(a.sin_addr);
 =======
@@ -680,6 +720,14 @@ function TLSocket.ReceivePossible: Boolean; inline;
 begin
   Result := (FConnectionStatus in [scConnected, scDisconnecting])
     and (ssCanReceive in FSocketState) and not (ssServerSocket in FSocketState);
+=======
+    Result := NetAddrToStr(LongWord(a.sin_addr));
+>>>>>>> origin/fixes_2_2
+end;
+
+procedure TLSocket.SetOptions;
+begin
+  SetBlocking(FBlocking);
 end;
 
 procedure TLSocket.SetOptions;
@@ -708,6 +756,7 @@ end;
 
 procedure TLSocket.SetReuseAddress(const aValue: Boolean);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if FConnectionStatus = scNone then begin
     FReuseAddress := aValue;
@@ -800,6 +849,10 @@ begin
     end else
       HardDisconnect; // UDP or ServerSocket
   end;
+=======
+  if not FConnected then
+    FReuseAddress := aValue;
+>>>>>>> origin/fixes_2_2
 end;
 
 =======
@@ -1008,7 +1061,10 @@ begin
     Result := sockets.fpsend(FHandle, @TheData, TheSize, LMSG)
   else
     Result := sockets.fpsendto(FHandle, @TheData, TheSize, LMSG, @FPeerAddress, AddressLength);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function TLSocket.SetupSocket(const APort: Word; const Address: string): Boolean;
@@ -1020,10 +1076,14 @@ begin
   if FConnectionStatus = scNone then begin
     Done := true;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FHandle := fpSocket(FSocketNet, FSocketType, FProtocol);
 =======
     FHandle := fpSocket(AF_INET, FSocketType, FProtocol);
 >>>>>>> graemeg/fixes_2_2
+=======
+    FHandle := fpSocket(AF_INET, FSocketType, FProtocol);
+>>>>>>> origin/fixes_2_2
     if FHandle = INVALID_SOCKET then
       Exit(Bail('Socket error', LSocketError));
     SetOptions;
@@ -1040,15 +1100,20 @@ begin
       {$endif}
       if fpsetsockopt(FHandle, SOL_SOCKET, Opt, @Arg, Sizeof(Arg)) = SOCKET_ERROR then
 <<<<<<< HEAD
+<<<<<<< HEAD
         Exit(Bail('SetSockOpt error setting reuseaddr', LSocketError));
 =======
         Exit(Bail('SetSockOpt error', LSocketError));
 >>>>>>> graemeg/fixes_2_2
+=======
+        Exit(Bail('SetSockOpt error', LSocketError));
+>>>>>>> origin/fixes_2_2
     end;
     
     {$ifdef darwin}
     Arg := 1;
     if fpsetsockopt(FHandle, SOL_SOCKET, SO_NOSIGPIPE, @Arg, Sizeof(Arg)) = SOCKET_ERROR then
+<<<<<<< HEAD
 <<<<<<< HEAD
       Exit(Bail('SetSockOpt error setting nosigpipe', LSocketError));
     {$endif}
@@ -1117,6 +1182,8 @@ begin
     Result := sockets.fpRecvfrom(FHandle, @aData, aSize, LMSG, @FPeerAddress, @AddressLength);
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       Exit(Bail('SetSockOpt error', LSocketError));
     {$endif}
     
@@ -1159,19 +1226,27 @@ end;
 function TLSocket.GetLocalPort: Word;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result := ntohs(FAddress.IPv4.sin_port);
 =======
   Result := ntohs(FAddress.sin_port);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result := ntohs(FAddress.sin_port);
+>>>>>>> origin/fixes_2_2
 end;
 
 function TLSocket.GetPeerPort: Word;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result := ntohs(FPeerAddress.IPv4.sin_port);
 =======
   Result := ntohs(FPeerAddress.sin_port);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result := ntohs(FPeerAddress.sin_port);
+>>>>>>> origin/fixes_2_2
 end;
 
 function TLSocket.Listen(const APort: Word; const AIntf: string = LADDR_ANY): Boolean;
@@ -1205,7 +1280,10 @@ begin
     else
       Result := true;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
     if (FSocketType = SOCK_STREAM) and Result then
       if fpListen(FHandle, FListenBacklog) = SOCKET_ERROR then
         Result := Bail('Error on Listen', LSocketError)
@@ -1371,6 +1449,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TLConnection.SetSession(aSession: TLSession);
 begin
   if FSession = aSession then Exit;
@@ -1396,6 +1475,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function TLConnection.InitSocket(aSocket: TLSocket): TLSocket;
 begin
   FActive := True; // once we got a socket, we're considered active
@@ -1550,10 +1631,13 @@ begin
     Tmp2 := Tmp;
     Tmp := Tmp.NextSock;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Tmp2.Disconnect(Forced);
     if Forced then
       Tmp2.Free;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Tmp2.Disconnect;
     Tmp2.Free;
 >>>>>>> graemeg/fixes_2_2
@@ -1576,7 +1660,10 @@ begin
     FRootSock.Disconnect(True);
 =======
     FRootSock.Disconnect;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FRootSock := nil; // even if the old one exists, eventer takes care of it
   end;
 end;
@@ -1595,12 +1682,17 @@ begin
   
   if Result then begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     FillAddressInfo(FRootSock.FPeerAddress, FRootSock.FSocketNet, Address, aPort);
     FRootSock.FConnectionStatus := scConnected;
 =======
     FillAddressInfo(FRootSock.FPeerAddress, AF_INET, Address, aPort);
     FRootSock.FConnected := true;
 >>>>>>> graemeg/fixes_2_2
+=======
+    FillAddressInfo(FRootSock.FPeerAddress, AF_INET, Address, aPort);
+    FRootSock.FConnected := true;
+>>>>>>> origin/fixes_2_2
     RegisterWithEventer;
   end;
 end;
@@ -1653,7 +1745,10 @@ begin
     FillAddressInfo(FRootSock.FPeerAddress, FRootSock.FSocketNet, Address,
 =======
     FillAddressInfo(FRootSock.FPeerAddress, AF_INET, Address,
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                                             FRootSock.PeerPort);
 end;
 
@@ -1795,17 +1890,23 @@ begin
   
   FRootSock := InitSocket(SocketClass.Create);
 <<<<<<< HEAD
+<<<<<<< HEAD
   FRootSock.SetReuseAddress(FReuseAddress);
   if FRootSock.Listen(APort, AIntf) then begin
     FRootSock.SetState(ssServerSocket);
     FRootSock.FConnectionStatus := scConnected;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FRootSock.FIgnoreShutdown := True;
   FRootSock.SetReuseAddress(FReuseAddress);
   if FRootSock.Listen(APort, AIntf) then begin
     FRootSock.FConnected := True;
     FRootSock.FServerSocket := True;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FIterator := FRootSock;
     Inc(FCount);
     RegisterWithEventer;
@@ -1914,9 +2015,12 @@ var
 begin
   Tmp := InitSocket(SocketClass.Create);
 <<<<<<< HEAD
+<<<<<<< HEAD
   
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   if Tmp.Accept(FRootSock.FHandle) then begin
     if Assigned(FRootSock.FNextSock) then begin
       Tmp.FNextSock := FRootSock.FNextSock;
@@ -1925,6 +2029,7 @@ begin
     
     FRootSock.FNextSock := Tmp;
     Tmp.FPrevSock := FRootSock;
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     if not Assigned(FIterator)      // if we don't have (bug?) an iterator yet
@@ -1936,6 +2041,11 @@ begin
     or FIterator.FServerSocket then // or if it's the first socket accepted
       FIterator := Tmp;  // assign it as iterator (don't assign later acceptees)
 >>>>>>> graemeg/fixes_2_2
+=======
+    if not Assigned(FIterator)      // if we don't have (bug?) an iterator yet
+    or FIterator.FServerSocket then // or if it's the first socket accepted
+      FIterator := Tmp;  // assign it as iterator (don't assign later acceptees)
+>>>>>>> origin/fixes_2_2
     Inc(FCount);
     FEventer.AddHandle(Tmp);
     
@@ -2053,6 +2163,18 @@ end;
 
 function TLTcp.Get(out aData; const aSize: Integer; aSocket: TLSocket): Integer;
 =======
+  or not FRootSock.Connected then
+    FReuseAddress := aValue;
+end;
+
+function TLTcp.GetCount: Integer;
+begin
+  Result := FCount;
+end;
+
+procedure TLTcp.SetReuseAddress(const aValue: Boolean);
+begin
+  if not Assigned(FRootSock)
   or not FRootSock.Connected then
     FReuseAddress := aValue;
 end;

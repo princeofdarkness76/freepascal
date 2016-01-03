@@ -144,6 +144,7 @@ program pp;
 {$endif support_mmx}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 { Don't care about minstacksize or maxstacksize not beeing supported by current OS }
 {$WARN 2077 OFF}
@@ -151,6 +152,8 @@ program pp;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef win32}
   { 256 MB stack }
   { under windows the stack can't grow }
@@ -163,10 +166,14 @@ program pp;
   {$else win64}
     { 1 MB stack }
 <<<<<<< HEAD
+<<<<<<< HEAD
     {$MINSTACKSIZE 1000000}
 =======
     {$STACKSIZE 1000000}
 >>>>>>> graemeg/fixes_2_2
+=======
+    {$STACKSIZE 1000000}
+>>>>>>> origin/fixes_2_2
   {$endif win64}
 {$endif win32}
 

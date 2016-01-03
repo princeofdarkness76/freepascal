@@ -47,10 +47,14 @@
 {$ifdef read_interface}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Const
 =======
 Const 
 >>>>>>> graemeg/fixes_2_2
+=======
+Const 
+>>>>>>> origin/fixes_2_2
   IMAGE_SIZEOF_SHORT_NAME = 8;
 
   type
@@ -2865,10 +2869,14 @@ Const
           elpBrushStyle : UINT;
           elpColor : COLORREF;
 <<<<<<< HEAD
+<<<<<<< HEAD
           elpHatch : ULONG_PTR;
 =======
           elpHatch : ULONG_ptr;
 >>>>>>> graemeg/fixes_2_2
+=======
+          elpHatch : ULONG_ptr;
+>>>>>>> origin/fixes_2_2
           elpNumEntries : DWORD;
           elpStyleEntry : array[0..0] of DWORD;
        end;
@@ -6975,6 +6983,7 @@ Const
      PSTICKYKEYS = ^STICKYKEYS;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      STRRET = record
           utype : UINT;
           case longint of
@@ -6983,6 +6992,11 @@ Const
           utype : UINT;
           case longint of 
 >>>>>>> graemeg/fixes_2_2
+=======
+     STRRET = record 
+          utype : UINT;
+          case longint of 
+>>>>>>> origin/fixes_2_2
            0: ( polestr:LPWSTR);
            1: ( uOffset : UINT);
            2: ( cStr : array[0..(MAX_PATH)-1] of char );
@@ -7026,16 +7040,21 @@ Const
           	       lpMinimumApplicationAddress : LPVOID;
           	       lpMaximumApplicationAddress : LPVOID;
 <<<<<<< HEAD
+<<<<<<< HEAD
           	       dwActiveProcessorMask : DWORD_PTR;
 =======
           	       dwActiveProcessorMask : DWORD;
 >>>>>>> graemeg/fixes_2_2
+=======
+          	       dwActiveProcessorMask : DWORD;
+>>>>>>> origin/fixes_2_2
           	       dwNumberOfProcessors : DWORD;
                        dwProcessorType : DWORD;
                        dwAllocationGranularity : DWORD;
                        wProcessorLevel : WORD;
                        wProcessorRevision : WORD;	
 			 );
+<<<<<<< HEAD
 <<<<<<< HEAD
                  1 : (
                       wProcessorArchitecture : WORD;
@@ -7044,6 +7063,10 @@ Const
                  1 : ( 
                       wProcessorArchitecture : WORD;
 >>>>>>> graemeg/fixes_2_2
+=======
+                 1 : ( 
+                      wProcessorArchitecture : WORD;
+>>>>>>> origin/fixes_2_2
                     );
        end;
      LPSYSTEM_INFO = ^SYSTEM_INFO;
@@ -8034,10 +8057,14 @@ Const
           e_oeminfo : WORD;
           e_res2 : array[0..9] of WORD;
 <<<<<<< HEAD
+<<<<<<< HEAD
           case boolean of
 =======
           case boolean of 
 >>>>>>> graemeg/fixes_2_2
+=======
+          case boolean of 
+>>>>>>> origin/fixes_2_2
              true : (e_lfanew : LONG);
              false: (_lfanew : LONG); // delphi naming
        end;
@@ -8305,6 +8332,7 @@ const
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef _WIN64}
   IMAGE_OPTIONAL_HEADER = IMAGE_OPTIONAL_HEADER64;
   PIMAGE_OPTIONAL_HEADER = PIMAGE_OPTIONAL_HEADER64;
@@ -8316,6 +8344,10 @@ type
   IMAGE_OPTIONAL_HEADER = IMAGE_OPTIONAL_HEADER32;
   PIMAGE_OPTIONAL_HEADER = PIMAGE_OPTIONAL_HEADER32;
 >>>>>>> graemeg/fixes_2_2
+=======
+  IMAGE_OPTIONAL_HEADER = IMAGE_OPTIONAL_HEADER32;
+  PIMAGE_OPTIONAL_HEADER = PIMAGE_OPTIONAL_HEADER32;
+>>>>>>> origin/fixes_2_2
   TImageOptionalHeader = IMAGE_OPTIONAL_HEADER;
   PImageOptionalHeader = PIMAGE_OPTIONAL_HEADER;
 
@@ -8354,6 +8386,7 @@ type
   PImageRomHeaders = PIMAGE_ROM_HEADERS;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef _WIN64}
   IMAGE_NT_HEADERS = IMAGE_NT_HEADERS64;
   PIMAGE_NT_HEADERS = PIMAGE_NT_HEADERS64;
@@ -8364,11 +8397,16 @@ type
 
   TImageNtHeaders = IMAGE_NT_HEADERS;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   IMAGE_NT_HEADERS = IMAGE_NT_HEADERS32;
   PIMAGE_NT_HEADERS = PIMAGE_NT_HEADERS32;
 
   TImageNtHeaders = IMAGE_NT_HEADERS32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   PImageNtHeaders = PIMAGE_NT_HEADERS;
 
   _GET_FILEEX_INFO_LEVELS = (GetFileExInfoStandard, GetFileExMaxInfoLevel);
@@ -8435,10 +8473,14 @@ type
        StartingAddress,
        EndingAddress :   ULONGLONG   ;
 <<<<<<< HEAD
+<<<<<<< HEAD
        case boolean of
 =======
        case boolean of 
 >>>>>>> graemeg/fixes_2_2
+=======
+       case boolean of 
+>>>>>>> origin/fixes_2_2
          false : (EndOfPrologue : ULONGLONG);
          true  : (UnwindInfoAddress : ULONGLONG);
        end;
@@ -8468,10 +8510,14 @@ type
     cbProcSize: DWORD;             // # bytes in function
     cdwLocals : DWORD;             // # bytes in locals/4
 <<<<<<< HEAD
+<<<<<<< HEAD
     bitvalues : word;              //
 =======
     bitvalues : word;              // 
 >>>>>>> graemeg/fixes_2_2
+=======
+    bitvalues : word;              // 
+>>>>>>> origin/fixes_2_2
 {
     WORD        cdwParams;              // # bytes in params/4
     WORD        cbProlog : 8;           // # bytes in prolog
@@ -8546,6 +8592,7 @@ type
      PIMAGE_LOAD_CONFIG_DIRECTORY = PIMAGE_LOAD_CONFIG_DIRECTORY32;
 {$endif}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$push}
 {$packrecords 4}
@@ -8764,6 +8811,8 @@ type
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  tagCOMBOBOXINFO = record
     cbSize: DWORD;
     rcItem: TRect;
@@ -8808,6 +8857,7 @@ type
   PGRADIENT_RECT = ^_GRADIENT_RECT;
   LPGRADIENT_RECT = PGRADIENT_RECT;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   CURSORINFO = record
     		 cbSize  : DWORD;
@@ -8857,6 +8907,11 @@ const
   SECURITY_DESCRIPTOR_MIN_LENGTH = SIZEOF(SECURITY_DESCRIPTOR);
 
 >>>>>>> graemeg/fixes_2_2
+=======
+const 
+  SECURITY_DESCRIPTOR_MIN_LENGTH = SIZEOF(SECURITY_DESCRIPTOR);
+
+>>>>>>> origin/fixes_2_2
 {$endif read_interface}
 
 

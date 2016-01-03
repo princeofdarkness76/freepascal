@@ -1,5 +1,6 @@
 Type
 <<<<<<< HEAD
+<<<<<<< HEAD
   HKEY = THandle;
   PHKEY = ^HKEY;
   
@@ -34,6 +35,8 @@ Const
 
 Const
 =======
+=======
+>>>>>>> origin/fixes_2_2
   LPDWORD = ^DWord;
   LPVOID  = Pointer;
   WINBOOL = LongBool;
@@ -59,7 +62,10 @@ Const
 
 
 Const
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   HKEY_CLASSES_ROOT     = HKEY($80000000);
   HKEY_CURRENT_USER     = HKEY($80000001);
   HKEY_LOCAL_MACHINE    = HKEY($80000002);

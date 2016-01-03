@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('fcl-process');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ShortName:='fclp';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -40,6 +41,8 @@ begin
     P.Dependencies.add('amunits',[amiga]);
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ALLPACKAGES}
     P.Directory:='fcl-process';
 {$endif ALLPACKAGES}
@@ -48,11 +51,15 @@ begin
     P.IncludePath.Add('src/unix',AllUnixOSes);
     P.IncludePath.Add('src/win',AllWindowsOSes);
     P.IncludePath.Add('src/$(OS)',AllOSes-AllWindowsOSes-AllUnixOSes);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('pipes.pp');
       T.Dependencies.AddInclude('pipes.inc');
     T:=P.Targets.AddUnit('process.pp');
       T.Dependencies.AddInclude('process.inc');
+<<<<<<< HEAD
 <<<<<<< HEAD
     T.ResourceStrings:=True;
     T:=P.Targets.AddUnit('simpleipc.pp');
@@ -62,11 +69,16 @@ begin
       T.Dependencies.AddInclude('simpleipc.inc');
       T.ResourceStrings:=True;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 //      T.ResourceStrings:=True;
     T:=P.Targets.AddUnit('simpleipc.pp');
       T.Dependencies.AddInclude('simpleipc.inc');
       T.ResourceStrings:=True;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('dbugmsg.pp');
       T.ResourceStrings:=True;
     T:=P.Targets.AddUnit('dbugintf.pp');

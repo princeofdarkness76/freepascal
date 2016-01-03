@@ -13,10 +13,14 @@
   You should have received a copy of the GNU Library General Public License
   along with this library; if not, write to the Free Software Foundation,
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 =======
   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 >>>>>>> graemeg/fixes_2_2
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> origin/fixes_2_2
 }
 {
   See the file COPYING.FPC, included in this distribution,
@@ -290,6 +294,7 @@ begin
             leaves[leaves_left].freq := leaves[leaves_left].freq shr 1;
             codes_too_long := 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
           end;
           Inc(leaves_left);
 =======
@@ -297,6 +302,11 @@ begin
           end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+            Inc(leaves_left);
+          end;
+
+>>>>>>> origin/fixes_2_2
         end;
         if codes_too_long <> 0 then
           raise Exception.Create('!codes_too_long');
@@ -432,6 +442,7 @@ begin
       end;
       leaves[i].code := cur_code;
 <<<<<<< HEAD
+<<<<<<< HEAD
       {$PUSH}
       {$R-}
       Inc(cur_code); // range error but i = 0 so it's harmless
@@ -439,6 +450,9 @@ begin
 =======
       Inc(cur_code);
 >>>>>>> graemeg/fixes_2_2
+=======
+      Inc(cur_code);
+>>>>>>> origin/fixes_2_2
     end;
 //#endif
 
@@ -727,18 +741,24 @@ begin
     else begin
       mask_bits := (1 shl shift_bits) - 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
       lzxd^.bit_buf := word(lzxd^.bit_buf shl shift_bits);
       lzxd^.bit_buf := word(lzxd^.bit_buf or (bits shr rshift_bits) and mask_bits);
     end;
 {$IFDEF ENDIAN_BIG}
     lzxd^.bit_buf := word(((lzxd^.bit_buf and $FF)shl 8) or (lzxd^.bit_buf shr 8));
 =======
+=======
+>>>>>>> origin/fixes_2_2
       lzxd^.bit_buf := lzxd^.bit_buf shl shift_bits;
       lzxd^.bit_buf := lzxd^.bit_buf or (bits shr rshift_bits) and mask_bits;
     end;
 {$IFDEF ENDIAN_BIG}
     lzxd^.bit_buf := ((lzxd^.bit_buf and $FF)shl 8) or (lzxd^.bit_buf shr 8);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
     lzxd^.put_bytes(lzxd^.out_arg, sizeof(lzxd^.bit_buf), @lzxd^.bit_buf);
     Inc(lzxd^.len_compressed_output, sizeof(lzxd^.bit_buf));
@@ -751,12 +771,17 @@ begin
   shift_bits := nbits;
   mask_bits := (1 shl shift_bits) - 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
   lzxd^.bit_buf := word(lzxd^.bit_buf shl shift_bits);
   lzxd^.bit_buf := word(lzxd^.bit_buf or bits and mask_bits);
 =======
   lzxd^.bit_buf := lzxd^.bit_buf shl shift_bits;
   lzxd^.bit_buf := lzxd^.bit_buf or bits and mask_bits;
 >>>>>>> graemeg/fixes_2_2
+=======
+  lzxd^.bit_buf := lzxd^.bit_buf shl shift_bits;
+  lzxd^.bit_buf := lzxd^.bit_buf or bits and mask_bits;
+>>>>>>> origin/fixes_2_2
   Inc(cur_bits, nbits);
 
   lzxd^.bits_in_buf := cur_bits;
@@ -922,12 +947,17 @@ begin
 	  //* right, MS lies again.  Code is NOT
 	  //   prev_len + len (mod 17), it's prev_len - len (mod 17)*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 	  codep^ := byte(prevlengths[i-cur_run] - last_len);
 	  if (codep^ > 16) then codep^ := byte(codep^ + 17); //Inc(codep^, 17);
 =======
 	  codep^ := prevlengths[i-cur_run] - last_len;
 	  if (codep^ > 16) then Inc(codep^, 17);
 >>>>>>> graemeg/fixes_2_2
+=======
+	  codep^ := prevlengths[i-cur_run] - last_len;
+	  if (codep^ > 16) then Inc(codep^, 17);
+>>>>>>> origin/fixes_2_2
 	  Inc(freqs[codep^]);
           Inc(codep);
 	  runp^ := 0; //* not necessary */
@@ -936,12 +966,17 @@ begin
         end;
 	while (cur_run > 0) do begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 	  codep^ := byte(prevlengths[i-cur_run] - last_len);
 	  if (codep^ > 16) then codep^ := byte(codep^ + 17); //Inc(codep^, byte(17));
 =======
 	  codep^ := prevlengths[i-cur_run] - last_len;
 	  if (codep^ > 16) then Inc(codep^, 17);
 >>>>>>> graemeg/fixes_2_2
+=======
+	  codep^ := prevlengths[i-cur_run] - last_len;
+	  if (codep^ > 16) then Inc(codep^, 17);
+>>>>>>> origin/fixes_2_2
 	  runp^ := 0; //* not necessary */
           Inc(runp);
 	  Dec(cur_run);
@@ -1034,9 +1069,13 @@ begin
   Fillchar(lzxd^.main_freq_table[0], lzxd^.main_tree_size * sizeof(longint), 0);
   Fillchar(lzxd^.aligned_freq_table[0], LZX_ALIGNED_SIZE * sizeof(longint), 0);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
   while ((lzxd^.left_in_block<>0) and ((lz_left_to_process(lzxd^.lzi)<>0) or not(lzxd^.at_eof(lzxd^.in_arg)))) do begin
     lz_compress(lzxd^.lzi, lzxd^.left_in_block);
 
@@ -1045,9 +1084,13 @@ begin
     end;
     
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     if lzxd^.at_eof(lzxd^.in_arg) then Sleep(500);
 >>>>>>> graemeg/fixes_2_2
+=======
+    if lzxd^.at_eof(lzxd^.in_arg) then Sleep(500);
+>>>>>>> origin/fixes_2_2
     if ((lzxd^.subdivide<0)
       or (lzxd^.left_in_block = 0)
       or ((lz_left_to_process(lzxd^.lzi) = 0) and lzxd^.at_eof(lzxd^.in_arg))) then begin
@@ -1069,9 +1112,13 @@ begin
 	lzxd^.need_1bit_header := 0;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
       //* handle extra bits */
       uncomp_bits := 0;
       comp_bits := 0;
@@ -1200,9 +1247,12 @@ begin
   freemem(lzxd^.main_tree);
   freemem(lzxd^.main_freq_table);
 <<<<<<< HEAD
+<<<<<<< HEAD
   freemem(lzxd^.block_codes);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   dispose(lzxd);
   Exit(0);
 end;

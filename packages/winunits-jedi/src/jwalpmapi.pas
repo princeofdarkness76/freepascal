@@ -1528,10 +1528,14 @@ end;
 function ObjData(const x: TRsvpObjHdr): Pointer;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result := Pointer(PtrUInt(@x) + SizeOf(x));
 =======
   Result := Pointer(Integer(@x) + SizeOf(x));
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result := Pointer(Integer(@x) + SizeOf(x));
+>>>>>>> origin/fixes_2_2
 end;
 
 function Style_is_Wildcard(p: DWORD): Boolean;

@@ -109,9 +109,12 @@ interface
           procedure readImportSymbols;
           procedure readResources;
 <<<<<<< HEAD
+<<<<<<< HEAD
           procedure readwpofile;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$IFDEF MACRO_DIFF_HINT}
           procedure writeusedmacro(p:TNamedIndexItem;arg:pointer);
           procedure writeusedmacros;
@@ -466,6 +469,7 @@ var
               searchpath (PFV) }
             if CheckVerbosity(V_Tried) then
 <<<<<<< HEAD
+<<<<<<< HEAD
               Message1(unit_t_unitsearch,ChangeFileExt(sourcefn,sourceext));
             fnd:=FindFile(ChangeFileExt(sourcefn,sourceext),'',true,hs);
             if not fnd then
@@ -474,6 +478,8 @@ var
                  Message1(unit_t_unitsearch,ChangeFileExt(sourcefn,pasext));
                fnd:=FindFile(ChangeFileExt(sourcefn,pasext),'',true,hs);
 =======
+=======
+>>>>>>> origin/fixes_2_2
               Message1(unit_t_unitsearch,ChangeFileExt(sourcefn^,sourceext));
             fnd:=FindFile(ChangeFileExt(sourcefn^,sourceext),'',true,hs);
             if not fnd then
@@ -489,9 +495,12 @@ var
              begin
                if CheckVerbosity(V_Tried) then
 <<<<<<< HEAD
+<<<<<<< HEAD
                  Message1(unit_t_unitsearch,ChangeFileExt(sourcefn,pext));
                fnd:=FindFile(ChangeFileExt(sourcefn,pext),'',true,hs);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                  Message1(unit_t_unitsearch,ChangeFileExt(sourcefn^,pext));
                fnd:=FindFile(ChangeFileExt(sourcefn^,pext),'',true,hs);
 >>>>>>> graemeg/fixes_2_2
@@ -508,12 +517,17 @@ var
          if not fnd then
            fnd:=SourceSearchPath('.');
 <<<<<<< HEAD
+<<<<<<< HEAD
          if (not fnd) and Assigned(main_module) and (main_module.Path<>'') then
            fnd:=SourceSearchPath(main_module.Path);
 =======
          if (not fnd) and Assigned(main_module) and (main_module.Path^<>'') then
            fnd:=SourceSearchPath(main_module.Path^);
 >>>>>>> graemeg/fixes_2_2
+=======
+         if (not fnd) and Assigned(main_module) and (main_module.Path^<>'') then
+           fnd:=SourceSearchPath(main_module.Path^);
+>>>>>>> origin/fixes_2_2
          if (not fnd) and Assigned(loaded_from) then
            fnd:=SearchPathList(loaded_from.LocalUnitSearchPath);
          if not fnd then
@@ -1015,6 +1029,7 @@ var
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tppumodule.readwpofile;
       var
         orgwpofilename: string;
@@ -1036,6 +1051,8 @@ var
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure tppumodule.load_interface;
       var
         b : byte;
@@ -1107,10 +1124,13 @@ var
              ibresources:
                readResources;
 <<<<<<< HEAD
+<<<<<<< HEAD
              ibwpofile:
                readwpofile;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
              ibendinterface :
                break;
            else
@@ -1189,6 +1209,7 @@ var
          ppufile.writeentry(ibmodulename);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
          ppufile.putsmallset(moduleoptions);
          if mo_has_deprecated_msg in moduleoptions then
            ppufile.putstring(deprecatedmsg^);
@@ -1196,6 +1217,8 @@ var
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          { write the alternate main procedure name if any }
          if assigned(mainname) then
            begin
@@ -1777,6 +1800,7 @@ var
                     printcomments;
                     if recompile_reason=rr_noppu then
 <<<<<<< HEAD
+<<<<<<< HEAD
                       begin
                         pu:=tused_unit(loaded_from.used_units.first);
                         while assigned(pu) do
@@ -1793,6 +1817,9 @@ var
 =======
                       Message2(unit_f_cant_find_ppu,realmodulename^,loaded_from.realmodulename^)
 >>>>>>> graemeg/fixes_2_2
+=======
+                      Message2(unit_f_cant_find_ppu,realmodulename^,loaded_from.realmodulename^)
+>>>>>>> origin/fixes_2_2
                     else
                       Message1(unit_f_cant_compile_unit,realmodulename^);
                   end;

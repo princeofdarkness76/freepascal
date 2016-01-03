@@ -111,7 +111,10 @@ implementation
     function trgx86.do_spill_replace(list:TAsmList;instr:tai_cpu_abstract_sym;orgreg:tsuperregister;const spilltemp:treference):boolean;
 =======
     function trgx86.do_spill_replace(list:TAsmList;instr:taicpu;orgreg:tsuperregister;const spilltemp:treference):boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     {Decide wether a "replace" spill is possible, i.e. wether we can replace a register
      in an instruction by a memory reference. For example, in "mov ireg26d,0", the imaginary
@@ -120,9 +123,12 @@ implementation
       var
         n,replaceoper : longint;
 <<<<<<< HEAD
+<<<<<<< HEAD
         is_subh: Boolean;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       begin
         result:=false;
         with taicpu(instr) do
@@ -140,6 +146,7 @@ implementation
                     end;
                 end;
               2,3 :
+<<<<<<< HEAD
 <<<<<<< HEAD
                 begin
 <<<<<<< HEAD
@@ -174,6 +181,9 @@ implementation
 =======
                 begin 
 >>>>>>> graemeg/fixes_2_2
+=======
+                begin 
+>>>>>>> origin/fixes_2_2
                   { We can handle opcodes with 2 and 3 operands the same way. The opcodes
                     with 3 registers are shrd/shld, where the 3rd operand is const or CL,
                     that doesn't need spilling.
@@ -185,6 +195,7 @@ implementation
                     n:=1;
                   if (oper[n+0]^.typ=top_reg) and
                      (oper[n+1]^.typ=top_reg) and
+<<<<<<< HEAD
 <<<<<<< HEAD
                      ((getregtype(oper[n+0]^.reg)<>regtype) or
                       (getregtype(oper[n+1]^.reg)<>regtype) or
@@ -199,6 +210,8 @@ implementation
                     end
                   else if (oper[n+0]^.typ=top_reg) and
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      (get_alias(getsupreg(oper[n+0]^.reg))<>get_alias(getsupreg(oper[n+1]^.reg))) then
                     begin
                       { One of the arguments shall be able to be replaced }
@@ -209,6 +222,7 @@ implementation
                         if (getregtype(oper[n+1]^.reg)=regtype) and
                            (get_alias(getsupreg(oper[n+1]^.reg))=orgreg) then
                           replaceoper:=1+n
+<<<<<<< HEAD
                       else
                         internalerror(200704281);
                     end;
@@ -386,6 +400,19 @@ implementation
                             end;
                           end;
 =======
+=======
+                      else
+                        internalerror(200704281);
+                    end;
+                  if (oper[n+0]^.typ=top_reg) and
+                     (oper[n+1]^.typ=top_const) then
+                    begin
+                      if (getregtype(oper[0+n]^.reg)=regtype) and
+                         (get_alias(getsupreg(oper[0+n]^.reg))=orgreg) then
+                        replaceoper:=0+n
+                      else
+                        internalerror(200704282);
+>>>>>>> origin/fixes_2_2
                     end;
                   if (oper[n+0]^.typ=top_const) and
                      (oper[n+1]^.typ=top_reg) then
@@ -457,7 +484,10 @@ implementation
                           A_ANDPS:
                             replaceoper:=-1;
                         end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                       end;
                     end;
                 end;

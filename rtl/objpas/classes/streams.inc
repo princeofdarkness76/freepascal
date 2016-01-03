@@ -17,19 +17,27 @@
 procedure TStream.ReadNotImplemented;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   raise EStreamError.CreateFmt(SStreamNoReading, [ClassName]) at get_caller_addr(get_frame), get_caller_frame(get_frame);
 =======
   raise EStreamError.CreateFmt(SStreamNoReading, [ClassName]) at get_caller_addr(get_frame);
 >>>>>>> graemeg/fixes_2_2
+=======
+  raise EStreamError.CreateFmt(SStreamNoReading, [ClassName]) at get_caller_addr(get_frame);
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TStream.WriteNotImplemented;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   raise EStreamError.CreateFmt(SStreamNoWriting, [ClassName]) at get_caller_addr(get_frame), get_caller_frame(get_frame);
 =======
   raise EStreamError.CreateFmt(SStreamNoWriting, [ClassName]) at get_caller_addr(get_frame);
 >>>>>>> graemeg/fixes_2_2
+=======
+  raise EStreamError.CreateFmt(SStreamNoWriting, [ClassName]) at get_caller_addr(get_frame);
+>>>>>>> origin/fixes_2_2
 end;
 
 function TStream.Read(var Buffer; Count: Longint): Longint;
@@ -343,7 +351,10 @@ end;
   procedure TStream.WriteResourceHeader(const ResName: string; {!!!: out} var FixupInfo: Longint);
 =======
   procedure TStream.WriteResourceHeader(const ResName: string; {!!!: out} var FixupInfo: Integer);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     var
       ResType, Flags : word;
     begin
@@ -370,10 +381,14 @@ end;
 
     var
 <<<<<<< HEAD
+<<<<<<< HEAD
        ResSize,TmpResSize : Longint;
 =======
        ResSize,TmpResSize : Integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+       ResSize,TmpResSize : Integer;
+>>>>>>> origin/fixes_2_2
 
     begin
 
@@ -1053,11 +1068,14 @@ begin
   FStream:=Stream;
   FOwnership:=Ownership;
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_bReverted:=false;   // mantis 15003
 			// http://www.tech-archive.net/Archive/German/microsoft.public.de.vc/2005-08/msg00791.html
 			// http://code.google.com/p/ddab-lib/wiki/TPJIStreamWrapper
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -1067,6 +1085,7 @@ begin
     FreeAndNil(FStream);
   inherited Destroy;
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {$warnings off}
@@ -1856,6 +1875,8 @@ end;
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
   
 {$warnings off}
 function TStreamAdapter.Read(pv: Pointer; cb: DWORD; pcbRead: PDWORD): HResult; stdcall;
@@ -1922,5 +1943,8 @@ function TStreamAdapter.Clone(out stm: IStream): HResult; stdcall;
 begin
   runerror(217);
 end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$warnings on}

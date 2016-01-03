@@ -198,8 +198,11 @@ const
   DOS_MAX_COMMAND_LINE_LENGTH = 126;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure exec_ansistring(path : string;comline : ansistring);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure exec(const path : pathstr;const comline : comstr);
 >>>>>>> graemeg/fixes_2_2
 type
@@ -239,6 +242,7 @@ var
   begin
      paste_to_dos:=false;
 <<<<<<< HEAD
+<<<<<<< HEAD
      if include_string_length then
        start_pos:=0
      else
@@ -258,6 +262,11 @@ var
      if current_dos_buffer_pos+ls+3>transfer_buffer+tb_size then
       RunError(217);
 >>>>>>> graemeg/fixes_2_2
+=======
+     ls:=Length(src)-n;
+     if current_dos_buffer_pos+ls+3>transfer_buffer+tb_size then
+      RunError(217);
+>>>>>>> origin/fixes_2_2
      getmem(c,ls+3);
 }
      Move (Src [Start_Pos], ExecBufPtr [Current_Dos_Buffer_Pos], LS + 1);
@@ -402,7 +411,10 @@ begin
   c:=comline;
   if length(c)>DOS_MAX_COMMAND_LINE_LENGTH then
     c[0]:=chr(DOS_MAX_COMMAND_LINE_LENGTH);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { create path }
 {$ifdef DEBUG_PROXY}
   writeln(stderr,'Dos.exec path="',path,'"');
@@ -412,7 +424,10 @@ begin
 =======
 { allow slash as backslash }
   DoDirSeparators(p);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   if LFNSupport then
     GetShortName(p);
 { create buffer }
@@ -433,6 +448,7 @@ begin
    paste_to_dos(envstr(i),false,false);
   {the behaviour is still suboptimal because variable COMMAND is stripped out}
 <<<<<<< HEAD
+<<<<<<< HEAD
   paste_to_dos(chr(0),false,false); { adds a double zero at the end }
   if use_proxy then
     setup_proxy_cmdline;
@@ -449,6 +465,8 @@ begin
 
   la_e:=TB + current_dos_buffer_pos;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   paste_to_dos(chr(0),false,1); { adds a double zero at the end }
   la_p:=current_dos_buffer_pos;
   paste_to_dos(p,false,0);
@@ -572,6 +590,7 @@ const
   CDFUNC_SECTSIZE = 7;   //For cdrom control block func field
   CDFUNC_VOLSIZE  = 8;   //For cdrom control block func field
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 type
   TRequestHeader = packed record
@@ -604,6 +623,8 @@ var
   blocksize, freeblocks, totblocks : longword;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 type
   TRequestHeader = packed record
@@ -635,7 +656,10 @@ function do_diskdata(drive : byte; Free : boolean) : Int64;
 var
   blocksize, freeblocks, totblocks : longword;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { Get disk data via old int21/36 (GET FREE DISK SPACE). It's always supported
     even if it returns wrong values for volumes > 2GB and for cdrom drives when
     in pure DOS. Note that it's also the only way to get some data on WinNTs. }
@@ -1213,9 +1237,12 @@ begin
     exit;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_ANSI_TEXTFILEREC}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   copytodos(filerec(f).name,strlen(filerec(f).name)+1);
 {$else}
   r:=ToSingleByteFileSystemEncodedFileName(filerec(f).name);

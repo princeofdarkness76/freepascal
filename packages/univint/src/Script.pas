@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/Script.h
  
      Contains:   Script Manager interfaces
@@ -2890,6 +2891,114 @@ procedure GetIntlResourceTable( script: ScriptCode; tableCode: SInt16; var itlHa
 {$endc} {not TARGET_CPU_64}
 
 =======
+=======
+     File:       Script.p
+ 
+     Contains:   Script Manager interfaces
+ 
+     Version:    Technology: Mac OS 9 / Carbon
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1986-2002 by Apple Computer, Inc., all rights reserved
+ 
+     Bugs?:      For bug reports, consult the following page on
+                 the World Wide Web:
+ 
+                     http://www.freepascal.org/bugs.html
+ 
+}
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+{$mode macpas}
+{$packenum 1}
+{$macro on}
+{$inline on}
+{$calling mwpascal}
+
+unit Script;
+interface
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+
+{$ifc not defined USE_CFSTR_CONSTANT_MACROS}
+    {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
+{$endc}
+
+{$ifc defined CPUPOWERPC and defined CPUI386}
+	{$error Conflicting initial definitions for CPUPOWERPC and CPUI386}
+{$endc}
+{$ifc defined FPC_BIG_ENDIAN and defined FPC_LITTLE_ENDIAN}
+	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
+{$endc}
+
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+	{$setc __ppc__ := 1}
+{$elsec}
+	{$setc __ppc__ := 0}
+{$endc}
+{$ifc not defined __i386__ and defined CPUI386}
+	{$setc __i386__ := 1}
+{$elsec}
+	{$setc __i386__ := 0}
+{$endc}
+
+{$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
+	{$error Conflicting definitions for __ppc__ and __i386__}
+{$endc}
+
+{$ifc defined __ppc__ and __ppc__}
+	{$setc TARGET_CPU_PPC := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+
+{$ifc defined FPC_BIG_ENDIAN}
+	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
+	{$setc TARGET_RT_LITTLE_ENDIAN := FALSE}
+{$elifc defined FPC_LITTLE_ENDIAN}
+	{$setc TARGET_RT_BIG_ENDIAN := FALSE}
+	{$setc TARGET_RT_LITTLE_ENDIAN := TRUE}
+{$elsec}
+	{$error Neither FPC_BIG_ENDIAN nor FPC_LITTLE_ENDIAN are defined.}
+{$endc}
+{$setc ACCESSOR_CALLS_ARE_FUNCTIONS := TRUE}
+{$setc CALL_NOT_IN_CARBON := FALSE}
+{$setc OLDROUTINENAMES := FALSE}
+{$setc OPAQUE_TOOLBOX_STRUCTS := TRUE}
+{$setc OPAQUE_UPP_TYPES := TRUE}
+{$setc OTCARBONAPPLICATION := TRUE}
+{$setc OTKERNEL := FALSE}
+{$setc PM_USE_SESSION_APIS := TRUE}
+{$setc TARGET_API_MAC_CARBON := TRUE}
+{$setc TARGET_API_MAC_OS8 := FALSE}
+{$setc TARGET_API_MAC_OSX := TRUE}
+{$setc TARGET_CARBON := TRUE}
+{$setc TARGET_CPU_68K := FALSE}
+{$setc TARGET_CPU_MIPS := FALSE}
+{$setc TARGET_CPU_SPARC := FALSE}
+{$setc TARGET_OS_MAC := TRUE}
+{$setc TARGET_OS_UNIX := FALSE}
+{$setc TARGET_OS_WIN32 := FALSE}
+{$setc TARGET_RT_MAC_68881 := FALSE}
+{$setc TARGET_RT_MAC_CFM := FALSE}
+{$setc TARGET_RT_MAC_MACHO := TRUE}
+{$setc TYPED_FUNCTION_POINTERS := TRUE}
+{$setc TYPE_BOOL := FALSE}
+{$setc TYPE_EXTENDED := FALSE}
+{$setc TYPE_LONGLONG := TRUE}
+uses MacTypes,IntlResources;
+>>>>>>> origin/fixes_2_2
 
 
 {$ALIGN MAC68K}
@@ -3909,12 +4018,16 @@ procedure ClearIntlResourceCache; external name '_ClearIntlResourceCache';
  }
 procedure GetIntlResourceTable(script: ScriptCode; tableCode: SInt16; var itlHandle: Handle; var offset: SInt32; var length: SInt32); external name '_GetIntlResourceTable';
 {$ifc CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  GetScriptUtilityAddress()
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -3922,17 +4035,23 @@ procedure GetIntlResourceTable(script: ScriptCode; tableCode: SInt16; var itlHan
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function GetScriptUtilityAddress(selector: SInt16; Before: boolean; script: ScriptCode): UniversalProcPtr; external name '_GetScriptUtilityAddress';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SetScriptUtilityAddress()
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -3940,17 +4059,23 @@ function GetScriptUtilityAddress(selector: SInt16; Before: boolean; script: Scri
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 procedure SetScriptUtilityAddress(selector: SInt16; Before: boolean; routineAddr: UniversalProcPtr; script: ScriptCode); external name '_SetScriptUtilityAddress';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  GetScriptQDPatchAddress()
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -3958,17 +4083,23 @@ procedure SetScriptUtilityAddress(selector: SInt16; Before: boolean; routineAddr
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function GetScriptQDPatchAddress(trapNum: SInt16; Before: boolean; forPrinting: boolean; script: ScriptCode): UniversalProcPtr; external name '_GetScriptQDPatchAddress';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SetScriptQDPatchAddress()
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -3976,34 +4107,22 @@ function GetScriptQDPatchAddress(trapNum: SInt16; Before: boolean; forPrinting: 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 procedure SetScriptQDPatchAddress(trapNum: SInt16; Before: boolean; forPrinting: boolean; routineAddr: UniversalProcPtr; script: ScriptCode); external name '_SetScriptQDPatchAddress';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  SetIntlResource()
  *  
  *  Availability:
 <<<<<<< HEAD
- *    Mac OS X:         not available
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-
-
-=======
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    CarbonLib:        not available
- *    Mac OS X:         not available
- }
-procedure SetIntlResource(refNum: SInt16; theID: SInt16; intlHandle: Handle); external name '_SetIntlResource';
->>>>>>> graemeg/fixes_2_2
-{
- *  CharByte()
- *  
- *  Availability:
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -4012,16 +4131,46 @@ procedure SetIntlResource(refNum: SInt16; theID: SInt16; intlHandle: Handle); ex
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure SetIntlResource(refNum: SInt16; theID: SInt16; intlHandle: Handle); external name '_SetIntlResource';
+<<<<<<< HEAD
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+{
+ *  CharByte()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+=======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function CharByte(textBuf: Ptr; textOffset: SInt16): SInt16; external name '_CharByte';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CharType()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
@@ -4092,6 +4241,8 @@ function IntlTokenize( tokenParam: TokenBlockPtr ): TokenResults; external name 
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
@@ -4235,4 +4386,7 @@ procedure IUGetItlTable(script: ScriptCode; tableCode: SInt16; var itlHandle: Ha
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

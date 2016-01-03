@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 procedure IC_InvalidateAll(); cdecl; external;
 procedure IC_InvalidateRange(const base: pointer; size: cuint32); cdecl; external;
@@ -6,6 +7,8 @@ procedure DC_FlushAll(); cdecl; external;
 procedure DC_FlushRange(const base: pointer; size: cuint32); cdecl; external;
 procedure DC_InvalidateAll(); cdecl; external;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: cache.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -57,6 +60,9 @@ procedure DC_FlushRange(const base: pointer; size: cuint32); cdecl; external;
 
 procedure DC_InvalidateAll(); cdecl; external;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure DC_InvalidateRange(const base: pointer; size: cuint32); cdecl; external;
 {$endif NDS_INTERFACE}

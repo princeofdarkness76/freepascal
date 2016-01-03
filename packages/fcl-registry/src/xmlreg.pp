@@ -368,6 +368,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     Case DataType of
       dtDWORD : S:=IntToStr(PCardinal(@Data)^);
@@ -418,6 +419,8 @@ begin
     else
       DataNode.Free;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Result:=DataNode<>Nil;  // Bug 9879. Create child here?
     If Result Then
       begin 

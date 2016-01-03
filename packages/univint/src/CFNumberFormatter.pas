@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 2003-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -37,6 +38,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	Copyright (c) 2003-2005, Apple, Inc. All rights reserved.
 }
 {   Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
@@ -47,7 +50,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -57,12 +63,17 @@
 unit CFNumberFormatter;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -76,14 +87,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -92,11 +108,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -134,6 +153,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -141,6 +162,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -369,6 +391,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -377,7 +401,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -404,9 +431,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -418,10 +449,13 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFNumber,CFLocale;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -429,6 +463,7 @@ uses MacTypes,CFBase,CFNumber,CFLocale;
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -451,6 +486,9 @@ type
 =======
 	CFNumberFormatterRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	CFNumberFormatterRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 
 // CFNumberFormatters are not thread-safe.  Do not use one from multiple threads!
 
@@ -459,6 +497,7 @@ function CFNumberFormatterGetTypeID: CFTypeID; external name '_CFNumberFormatter
 
 // number format styles
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -480,6 +519,9 @@ type
 =======
 	CFNumberFormatterStyle = SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+	CFNumberFormatterStyle = SInt32;
+>>>>>>> origin/fixes_2_2
 const
 	kCFNumberFormatterNoStyle = 0;
 	kCFNumberFormatterDecimalStyle = 1;
@@ -510,10 +552,14 @@ procedure CFNumberFormatterSetFormat( formatter: CFNumberFormatterRef; formatStr
 	// overrides the style settings.  The format of the format string
 	// is as defined by the ICU library, and is similar to that found
 <<<<<<< HEAD
+<<<<<<< HEAD
 	// in Microsoft Excel and NSNumberFormatter.
 =======
 	// in Microsoft Excel and NSNumberFormatter (and Java I believe).
 >>>>>>> graemeg/fixes_2_2
+=======
+	// in Microsoft Excel and NSNumberFormatter (and Java I believe).
+>>>>>>> origin/fixes_2_2
 	// The number formatter starts with a default format string defined
 	// by the style argument with which it was created.
 
@@ -528,6 +574,7 @@ function CFNumberFormatterCreateStringWithValue( allocator: CFAllocatorRef; form
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -549,6 +596,9 @@ type
 =======
 	CFNumberFormatterOptionFlags = SInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+	CFNumberFormatterOptionFlags = SInt32;
+>>>>>>> origin/fixes_2_2
 const
 	kCFNumberFormatterParseIntegersOnly = 1;	{ only parse integers }
 
@@ -643,6 +693,7 @@ var kCFNumberFormatterPerMillSymbol: CFStringRef; external name '_kCFNumberForma
 var kCFNumberFormatterInternationalCurrencySymbol: CFStringRef; external name '_kCFNumberFormatterInternationalCurrencySymbol'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *) // CFString
 <<<<<<< HEAD
+<<<<<<< HEAD
 var kCFNumberFormatterCurrencyGroupingSeparator: CFStringRef; external name '_kCFNumberFormatterCurrencyGroupingSeparator'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -722,6 +773,8 @@ const
 	kCFNumberFormatterPadBeforeSuffix = 2;
 	kCFNumberFormatterPadAfterSuffix = 3;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	CFNumberFormatterRoundingMode = SInt32;
@@ -741,7 +794,10 @@ const
     kCFNumberFormatterPadAfterPrefix = 1;
     kCFNumberFormatterPadBeforeSuffix = 2;
     kCFNumberFormatterPadAfterSuffix = 3;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 function CFNumberFormatterGetDecimalInfoForCurrencyCode( currencyCode: CFStringRef; defaultFractionDigits: SInt32Ptr; roundingIncrement: Float64Ptr ): Boolean; external name '_CFNumberFormatterGetDecimalInfoForCurrencyCode';
@@ -756,6 +812,7 @@ function CFNumberFormatterGetDecimalInfoForCurrencyCode( currencyCode: CFStringR
 {#endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
@@ -764,3 +821,7 @@ end.
 
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+
+end.
+>>>>>>> origin/fixes_2_2

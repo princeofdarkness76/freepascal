@@ -263,6 +263,7 @@ CONST
     O_NOFOLLOW =    $20000;
     O_DIRECT  =    $100000;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$else : not cpusparc}
 {$ifdef cpumips}
     O_CREAT   =       $100;
@@ -280,6 +281,9 @@ CONST
 =======
 {$else cpusparc}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$else cpusparc}
+>>>>>>> origin/fixes_2_2
     O_CREAT   =        $40;
     O_EXCL    =        $80;
     O_NOCTTY  =       $100;
@@ -291,6 +295,7 @@ CONST
     O_DIRECT  =      $4000;
     O_DIRECTORY =   $10000;
     O_NOFOLLOW =    $20000;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endif not cpumips}
 {$endif not cpusparc}
@@ -306,6 +311,11 @@ CONST
 
 {$if defined(cpuarm) or defined(cpualpha) or defined(cpublackfin) or defined(cpum68k)}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$endif cpusparc}
+
+{$if defined(cpuarm) or defined(cpualpha) or defined(cpublackfin) or defined(cpum68k)}
+>>>>>>> origin/fixes_2_2
     O_LARGEFILE =   $20000;
 {$endif}
 {$if defined(cpusparc) or defined(cpusparc64)}
@@ -318,10 +328,14 @@ CONST
     O_LARGEFILE =    $8000;
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(cpumips) or defined(cpumipsel)}
 =======
 {$if defined(cpumips)}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$if defined(cpumips)}
+>>>>>>> origin/fixes_2_2
     O_LARGEFILE =    $2000;
 {$endif}
     { mode_t possible values                                 }
@@ -357,6 +371,7 @@ CONST
   MAP_PRIVATE   =2;
  {$ENDIF}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
  {$if defined(cpumips) or  defined(cpumipsel)}
   MAP_ANONYMOUS  = $800;
@@ -374,6 +389,8 @@ CONST
   MAP_NORESERVE  = $4000;      { don't check for reservations }
  {$endif cpumips}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   MAP_ANONYMOUS =$20;
 
 >>>>>>> graemeg/fixes_2_2

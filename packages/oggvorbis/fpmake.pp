@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('oggvorbis');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ShortName:='oggv';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -22,12 +23,17 @@ begin
     P.SourcePath.Add('src');
     P.OSes := [linux,win32,wince];
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ALLPACKAGES}
     P.Directory:='oggvorbis';
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
     P.SourcePath.Add('src');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 //    P.Dependencies.Add('x11');
 
    T:=P.Targets.AddUnit('ogg.pas');

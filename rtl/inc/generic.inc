@@ -134,16 +134,21 @@ Procedure FillChar(var x;count:SizeInt;value:byte);
 var
   pdest,pend : pbyte;
 <<<<<<< HEAD
+<<<<<<< HEAD
   v : ALUUInt;
 =======
   v : ptruint;
 >>>>>>> graemeg/fixes_2_2
+=======
+  v : ptruint;
+>>>>>>> origin/fixes_2_2
 begin
   if count <= 0 then
     exit;
   pdest:=@x;
   if Count>4*sizeof(ptruint)-1 then
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$if sizeof(v)>=2}
       v:=(value shl 8) or value;
@@ -155,11 +160,16 @@ begin
       v:=(v shl 32) or v;
 {$endif sizeof(v)=8}
 =======
+=======
+>>>>>>> origin/fixes_2_2
       v:=(value shl 8) or value;
       v:=(v shl 16) or v;
       if sizeof(ptruint)=8 then
         v:=(v shl 32) or v;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       { Align on native pointer size }
       pend:=pbyte(align(pdest,sizeof(PtrUInt)));
       dec(count,pend-pdest);
@@ -193,16 +203,21 @@ var
   aligncount : sizeint;
   pdest,pend : pword;
 <<<<<<< HEAD
+<<<<<<< HEAD
   v : ALUUInt;
 =======
   v : ptruint;
 >>>>>>> graemeg/fixes_2_2
+=======
+  v : ptruint;
+>>>>>>> origin/fixes_2_2
 begin
   if count <= 0 then
     exit;
   pdest:=@x;
   if Count>4*sizeof(ptruint)-1 then
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$if sizeof(v)>=4}
       v:=(value shl 16) or value;
@@ -211,11 +226,16 @@ begin
       v:=(v shl 32) or v;
 {$endif sizeof(v)=8}
 =======
+=======
+>>>>>>> origin/fixes_2_2
       v:=(value shl 16) or value;
 {$ifdef CPU64}
       v:=(v shl 32) or v;
 {$endif CPU64}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       { Align on native pointer size }
       aligncount:=(PtrUInt(pdest) and (sizeof(PtrUInt)-1)) shr 1;
       dec(count,aligncount);
@@ -250,10 +270,14 @@ var
   aligncount : sizeint;
   pdest,pend : pdword;
 <<<<<<< HEAD
+<<<<<<< HEAD
   v : ALUUInt;
 =======
   v : ptruint;
 >>>>>>> graemeg/fixes_2_2
+=======
+  v : ptruint;
+>>>>>>> origin/fixes_2_2
 begin
   if count <= 0 then
     exit;
@@ -261,6 +285,7 @@ begin
   if Count>4*sizeof(ptruint)-1 then
     begin
       v:=value;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$if sizeof(v)=8}
       v:=(v shl 32) or v;
@@ -270,6 +295,11 @@ begin
       v:=(v shl 32) or v;
 {$endif CPU64}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifdef CPU64}
+      v:=(v shl 32) or v;
+{$endif CPU64}
+>>>>>>> origin/fixes_2_2
       { Align on native pointer size }
       aligncount:=(PtrUInt(pdest) and (sizeof(PtrUInt)-1)) shr 2;
       dec(count,aligncount);
@@ -299,6 +329,7 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_SYSTEM_HAS_FILLQWORD}
 procedure fillqword(var x;count : SizeInt;value : qword);
 var
@@ -319,6 +350,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_SYSTEM_HAS_INDEXBYTE}
 function IndexByte(Const buf;len:SizeInt;b:byte):SizeInt;
 var
@@ -400,10 +433,14 @@ begin
      (len > high(PtrInt) div 2) or
      (psrc+len < psrc) then
 <<<<<<< HEAD
+<<<<<<< HEAD
     pend:=pdword(high(PtrUInt)-PtrUInt(sizeof(dword)))
 =======
     pend:=pdword(high(PtrUInt)-sizeof(dword))
 >>>>>>> graemeg/fixes_2_2
+=======
+    pend:=pdword(high(PtrUInt)-sizeof(dword))
+>>>>>>> origin/fixes_2_2
   else
     pend:=psrc+len;
 {$ifdef FPC_REQUIRES_PROPER_ALIGNMENT}
@@ -433,6 +470,7 @@ end;
 {$endif not FPC_SYSTEM_HAS_INDEXDWORD}
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifndef FPC_SYSTEM_HAS_INDEXQWORD}
 function IndexQWord(Const buf;len:SizeInt;b:QWord):SizeInt;
@@ -477,6 +515,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_SYSTEM_HAS_COMPAREBYTE}
 function CompareByte(Const buf1,buf2;len:SizeInt):SizeInt;
 var
@@ -597,11 +637,16 @@ begin
         end;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (psrc+len >= psrc) then
 =======
   if (len <= high(ptrint)) and
      (psrc+len >= psrc) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if (len <= high(ptrint)) and
+     (psrc+len >= psrc) then
+>>>>>>> origin/fixes_2_2
     pend:=psrc+len
   else
     pend:=pword(high(ptruint)-2);
@@ -742,10 +787,14 @@ begin
   { fpc_pchar_to_ansistr in astrings.inc                            }
   if (len < 0) then
 <<<<<<< HEAD
+<<<<<<< HEAD
     pend:=pbyte(high(PtrUInt)-PtrUInt(sizeof(byte)))
 =======
     pend:=pbyte(high(PtrUInt)-sizeof(byte))
 >>>>>>> graemeg/fixes_2_2
+=======
+    pend:=pbyte(high(PtrUInt)-sizeof(byte))
+>>>>>>> origin/fixes_2_2
   else
     pend:=psrc+len;
   while (psrc<pend) and (psrc^<>0) do
@@ -918,8 +967,11 @@ end;
 {$ifndef FPC_SYSTEM_HAS_FPC_SHORTSTR_ASSIGN}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_shortstr_to_shortstr(out res:shortstring; const sstr: shortstring);[public,alias:'FPC_SHORTSTR_TO_SHORTSTR']; compilerproc;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_STRTOSHORTSTRINGPROC}
 function fpc_shortstr_to_shortstr(len:longint;const sstr:shortstring): shortstring;[public,alias:'FPC_SHORTSTR_TO_SHORTSTR']; compilerproc;
 >>>>>>> graemeg/fixes_2_2
@@ -943,6 +995,20 @@ begin
   move(sstr[0],res[0],slen+1);
   res[0]:=chr(slen);
 end;
+<<<<<<< HEAD
+=======
+{$else FPC_STRTOSHORTSTRINGPROC}
+procedure fpc_shortstr_to_shortstr(out res:shortstring; const sstr: shortstring);[public,alias:'FPC_SHORTSTR_TO_SHORTSTR']; compilerproc;
+var
+  slen : byte;
+begin
+  slen:=length(sstr);
+  if slen>high(res) then
+    slen:=high(res);
+  move(sstr[0],res[0],slen+1);
+  res[0]:=chr(slen);
+end;
+>>>>>>> origin/fixes_2_2
 {$endif FPC_STRTOSHORTSTRINGPROC}
 
 procedure fpc_shortstr_assign(len:{$ifdef cpu16}smallint{$else}longint{$endif};sstr,dstr:pointer);[public,alias:'FPC_SHORTSTR_ASSIGN']; compilerproc;
@@ -1117,9 +1183,12 @@ end;
 {$ifndef FPC_SYSTEM_HAS_FPC_PCHAR_TO_SHORTSTR}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure fpc_pchar_to_shortstr(out res : shortstring;p:pchar);[public,alias:'FPC_PCHAR_TO_SHORTSTR']; compilerproc;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_STRTOSHORTSTRINGPROC}
 function fpc_pchar_to_shortstr(p:pchar):shortstring;[public,alias:'FPC_PCHAR_TO_SHORTSTR']; compilerproc;
 >>>>>>> graemeg/fixes_2_2
@@ -1160,8 +1229,31 @@ begin
   res:=s;
 end;
 
+<<<<<<< HEAD
 {$endif FPC_STRTOSHORTSTRINGPROC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$else FPC_STRTOSHORTSTRINGPROC}
+
+procedure fpc_pchar_to_shortstr(out res : shortstring;p:pchar);[public,alias:'FPC_PCHAR_TO_SHORTSTR']; compilerproc;
+var
+  l : longint;
+  s: shortstring;
+begin
+  if p=nil then
+    l:=0
+  else
+    l:=strlen(p);
+  if l>high(res) then
+    l:=high(res);
+  if l>0 then
+    move(p^,s[1],l);
+  s[0]:=chr(l);
+  res:=s;
+end;
+
+{$endif FPC_STRTOSHORTSTRINGPROC}
+>>>>>>> origin/fixes_2_2
 
 {$endif ndef FPC_SYSTEM_HAS_FPC_PCHAR_TO_SHORTSTR}
 
@@ -1337,11 +1429,35 @@ function strpas(p:pchar):shortstring;{$ifdef SYSTEMINLINE}inline;{$endif}
 {$endif FPC_STRTOSHORTSTRINGPROC}
   end;
 
+{$ifndef FPC_STRTOSHORTSTRINGPROC}
+
+{ also define alias which can be used inside the system unit }
+function fpc_pchar_to_shortstr(p:pchar):shortstring;[external name 'FPC_PCHAR_TO_SHORTSTR'];
+
+{$else FPC_STRTOSHORTSTRINGPROC}
+
+{ also define alias which can be used inside the system unit }
+procedure fpc_pchar_to_shortstr(out res : shortstring;p:pchar);[external name 'FPC_PCHAR_TO_SHORTSTR'];
+
+{$endif FPC_STRTOSHORTSTRINGPROC}
+
+function strpas(p:pchar):shortstring;{$ifdef SYSTEMINLINE}inline;{$endif}
+  begin
+{$ifndef FPC_STRTOSHORTSTRINGPROC}
+    result:=fpc_pchar_to_shortstr(p);
+{$else FPC_STRTOSHORTSTRINGPROC}
+    fpc_pchar_to_shortstr(result,p);
+{$endif FPC_STRTOSHORTSTRINGPROC}
+  end;
+
 {$ifndef FPC_SYSTEM_HAS_FPC_CHARARRAY_TO_SHORTSTR}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_chararray_to_shortstr(out res : shortstring;const arr: array of char; zerobased: boolean = true);[public,alias:'FPC_CHARARRAY_TO_SHORTSTR']; compilerproc;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_STRTOSHORTSTRINGPROC}
 function fpc_chararray_to_shortstr(const arr: array of char; zerobased: boolean = true):shortstring;[public,alias:'FPC_CHARARRAY_TO_SHORTSTR']; compilerproc;
 >>>>>>> graemeg/fixes_2_2
@@ -1393,6 +1509,34 @@ begin
   move(arr[0],res[1],len);
   res[0]:=chr(len);
 end;
+<<<<<<< HEAD
+=======
+{$else FPC_STRTOSHORTSTRINGPROC}
+procedure fpc_chararray_to_shortstr(out res : shortstring;const arr: array of char; zerobased: boolean = true);[public,alias:'FPC_CHARARRAY_TO_SHORTSTR']; compilerproc;
+var
+ l: longint;
+ index: longint;
+ len: byte;
+begin
+  l:=high(arr)+1;
+  if l>=high(res)+1 then
+    l:=high(res)
+  else if l<0 then
+    l:=0;
+  if zerobased then
+    begin
+      index:=IndexByte(arr[0],l,0);
+      if index<0 then
+        len:=l
+      else
+        len:=index;
+    end
+  else
+    len:=l;
+  move(arr[0],res[1],len);
+  res[0]:=chr(len);
+end;
+>>>>>>> origin/fixes_2_2
 {$endif FPC_STRTOSHORTSTRINGPROC}
 
 {$endif ndef FPC_SYSTEM_HAS_FPC_CHARARRAY_TO_SHORTSTR}
@@ -1401,8 +1545,11 @@ end;
 {$ifndef FPC_SYSTEM_HAS_FPC_SHORTSTR_TO_CHARARRAY}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_shortstr_to_chararray(out res: array of char; const src: ShortString); compilerproc;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef FPC_STRTOCHARARRAYPROC}
 
 { inside the compiler, the resulttype is modified to that of the actual }
@@ -1452,7 +1599,10 @@ begin
 {$ifdef RangeCheckWasOn}
 {$r+}
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 {$endif ndef FPC_STRTOCHARARRAYPROC}
@@ -2230,10 +2380,14 @@ function align(addr : PtrUInt;alignment : PtrUInt) : PtrUInt;{$ifdef SYSTEMINLIN
     tmp: PtrUInt;
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     tmp:=addr+(alignment-1);
 =======
     tmp:=addr+alignment-1;
 >>>>>>> graemeg/fixes_2_2
+=======
+    tmp:=addr+alignment-1;
+>>>>>>> origin/fixes_2_2
     result:=tmp-(tmp mod alignment)
   end;
 
@@ -2244,10 +2398,14 @@ function align(addr : Pointer;alignment : PtrUInt) : Pointer;{$ifdef SYSTEMINLIN
     tmp: PtrUInt;
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     tmp:=PtrUInt(addr)+(alignment-1);
 =======
     tmp:=PtrUInt(addr)+alignment-1;
 >>>>>>> graemeg/fixes_2_2
+=======
+    tmp:=PtrUInt(addr)+alignment-1;
+>>>>>>> origin/fixes_2_2
     result:=pointer(tmp-(tmp mod alignment));
   end;
 {$endif}
@@ -2266,10 +2424,14 @@ var
   pc,pc2 : pchar;
   hs : string[32];
 <<<<<<< HEAD
+<<<<<<< HEAD
   overflow : longint;
 =======
   b : longint;
 >>>>>>> graemeg/fixes_2_2
+=======
+  b : longint;
+>>>>>>> origin/fixes_2_2
 begin
   pc2start:=@s[1];
   pc2:=pc2start;
@@ -2282,10 +2444,13 @@ begin
     end
   else
 <<<<<<< HEAD
+<<<<<<< HEAD
     m:=longword(l);
   pcstart:=pchar(@hs[0]);
   pc:=pcstart;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     begin
       b:=0;
       m:=longword(l);
@@ -2299,6 +2464,7 @@ begin
     m:=m1;
   until m=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   overflow:=(pc-pcstart)+(pc2-pc2start)-high(s);
   if overflow>0 then
     inc(pcstart,overflow);
@@ -2307,9 +2473,14 @@ begin
   while (pc>pchar(@hs[0])) and
         (b<high(s)) do
 >>>>>>> graemeg/fixes_2_2
+=======
+  while (pc>pchar(@hs[0])) and
+        (b<high(s)) do
+>>>>>>> origin/fixes_2_2
     begin
       pc2^:=pc^;
       inc(pc2);
+<<<<<<< HEAD
 <<<<<<< HEAD
       dec(pc);
     end;
@@ -2319,6 +2490,11 @@ begin
     end;
   s[0]:=chr(b);
 >>>>>>> graemeg/fixes_2_2
+=======
+      inc(b);
+    end;
+  s[0]:=chr(b);
+>>>>>>> origin/fixes_2_2
 end;
 
 {$endif ndef FPC_SYSTEM_HAS_INT_STR_LONGINT}
@@ -2329,11 +2505,15 @@ procedure int_str_unsigned(l:longword;out s:shortstring);
 var
   m1 : longword;
 <<<<<<< HEAD
+<<<<<<< HEAD
   pcstart,
   pc2start,
 =======
   b: longint;
 >>>>>>> graemeg/fixes_2_2
+=======
+  b: longint;
+>>>>>>> origin/fixes_2_2
   pc,pc2 : pchar;
   hs : string[32];
   overflow : longint;
@@ -2349,6 +2529,7 @@ begin
     l:=m1;
   until l=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   overflow:=(pc-pcstart)-high(s);
   if overflow>0 then
     inc(pcstart,overflow);
@@ -2358,9 +2539,15 @@ begin
   while (pc>pchar(@hs[0])) and
         (b<high(s)) do
 >>>>>>> graemeg/fixes_2_2
+=======
+  b:=0;
+  while (pc>pchar(@hs[0])) and
+        (b<high(s)) do
+>>>>>>> origin/fixes_2_2
     begin
       pc2^:=pc^;
       inc(pc2);
+<<<<<<< HEAD
 <<<<<<< HEAD
       dec(pc);
     end;
@@ -2370,6 +2557,11 @@ begin
     end;
   s[0]:=chr(b);
 >>>>>>> graemeg/fixes_2_2
+=======
+      inc(b);
+    end;
+  s[0]:=chr(b);
+>>>>>>> origin/fixes_2_2
 end;
 
 {$endif ndef FPC_SYSTEM_HAS_INT_STR_LONGWORD}
@@ -2388,9 +2580,12 @@ var
   pc2start,
   pc,pc2 : pchar;
 <<<<<<< HEAD
+<<<<<<< HEAD
   hs : string[32];
   overflow : longint;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   b: longint;
   hs : string[64];
 >>>>>>> graemeg/fixes_2_2
@@ -2406,10 +2601,13 @@ begin
     end
   else
 <<<<<<< HEAD
+<<<<<<< HEAD
     m:=qword(l);
   pcstart:=pchar(@hs[0]);
   pc:=pcstart;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     begin
       b:=0;
       m:=qword(l);
@@ -2423,6 +2621,7 @@ begin
     m:=m1;
   until m=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   overflow:=(pc-pcstart)+(pc2-pc2start)-high(s);
   if overflow>0 then
     inc(pcstart,overflow);
@@ -2431,9 +2630,14 @@ begin
   while (pc>pchar(@hs[0])) and
         (b < high(s)) do
 >>>>>>> graemeg/fixes_2_2
+=======
+  while (pc>pchar(@hs[0])) and
+        (b < high(s)) do
+>>>>>>> origin/fixes_2_2
     begin
       pc2^:=pc^;
       inc(pc2);
+<<<<<<< HEAD
 <<<<<<< HEAD
       dec(pc);
     end;
@@ -2443,6 +2647,11 @@ begin
     end;
   s[0]:=chr(b);
 >>>>>>> graemeg/fixes_2_2
+=======
+      inc(b);
+    end;
+  s[0]:=chr(b);
+>>>>>>> origin/fixes_2_2
 end;
 {$endif EXCLUDE_COMPLEX_PROCS}
 
@@ -2476,6 +2685,7 @@ begin
     l:=m1;
   until l=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   overflow:=(pc-pcstart)-high(s);
   if overflow>0 then
     inc(pcstart,overflow);
@@ -2485,9 +2695,15 @@ begin
   while (pc>pchar(@hs[0])) and
         (b<high(s)) do
 >>>>>>> graemeg/fixes_2_2
+=======
+  b:=0;
+  while (pc>pchar(@hs[0])) and
+        (b<high(s)) do
+>>>>>>> origin/fixes_2_2
     begin
       pc2^:=pc^;
       inc(pc2);
+<<<<<<< HEAD
 <<<<<<< HEAD
       dec(pc);
     end;
@@ -2497,6 +2713,11 @@ begin
     end;
   s[0]:=chr(b);
 >>>>>>> graemeg/fixes_2_2
+=======
+      inc(b);
+    end;
+  s[0]:=chr(b);
+>>>>>>> origin/fixes_2_2
 end;
 {$endif EXCLUDE_COMPLEX_PROCS}
 
@@ -2511,7 +2732,10 @@ begin
   softfloat_exception_flags:=[];
 =======
   softfloat_exception_flags:=0;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 {$endif FPC_SYSTEM_HAS_SYSRESETFPU}
@@ -2521,17 +2745,23 @@ end;
 procedure SysInitFpu;{$ifdef SYSTEMINLINE}inline;{$endif}
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   softfloat_exception_mask:=[float_flag_underflow,float_flag_inexact,float_flag_denormal];
 end;
 
 {$endif FPC_SYSTEM_HAS_SYSINITFPU}
 {$endif}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   softfloat_exception_mask:=float_flag_underflow or float_flag_inexact or float_flag_denormal;
 end;
 
 {$endif FPC_SYSTEM_HAS_SYSINITFPU}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifndef FPC_SYSTEM_HAS_SWAPENDIAN}
 function SwapEndian(const AValue: SmallInt): SmallInt;{$ifdef SYSTEMINLINE}inline;{$endif}
@@ -2541,10 +2771,14 @@ function SwapEndian(const AValue: SmallInt): SmallInt;{$ifdef SYSTEMINLINE}inlin
     { the sign bits from the upper 16 bits are shifted in rather than  }
     { zeroes.                                                          }
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result := SmallInt((Word(AValue) shr 8) or (Word(AValue) shl 8));
 =======
     Result := SmallInt((Word(AValue) shr 8) or (AValue shl 8));
 >>>>>>> graemeg/fixes_2_2
+=======
+    Result := SmallInt((Word(AValue) shr 8) or (AValue shl 8));
+>>>>>>> origin/fixes_2_2
   end;
 
 {$ifndef cpujvm}
@@ -2853,9 +3087,12 @@ function NtoLE(const AValue: QWord): QWord;{$ifdef SYSTEMINLINE}inline;{$endif}
     {$ENDIF}
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif not cpujvm}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifndef FPC_SYSTEM_HAS_MEM_BARRIER}
 
@@ -2875,6 +3112,7 @@ procedure WriteBarrier;{$ifdef SYSTEMINLINE}inline;{$endif}
 begin
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endif FPC_SYSTEM_HAS_MEM_BARRIER}
 
@@ -3444,3 +3682,6 @@ function BsrQWord(Const AValue : QWord): cardinal;
 =======
 {$endif}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$endif}
+>>>>>>> origin/fixes_2_2

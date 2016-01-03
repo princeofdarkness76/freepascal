@@ -1,13 +1,18 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for PTCPas
 >>>>>>> graemeg/fixes_2_2
+=======
+#   Makefile.fpc for PTCPas
+>>>>>>> origin/fixes_2_2
 #
 
 [package]
 name=ptc
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -51,6 +56,8 @@ packages_linux=x11
 packages_freebsd=x11
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 version=2.2.5
 
 [target]
@@ -68,11 +75,15 @@ targetdir=.
 packages=hermes
 packages_linux=x11
 packages_freebsd=x11
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -184,3 +195,8 @@ endif
 [rules]
 .NOTPARALLEL:
 >>>>>>> graemeg/fixes_2_2
+=======
+
+[rules]
+.NOTPARALLEL:
+>>>>>>> origin/fixes_2_2

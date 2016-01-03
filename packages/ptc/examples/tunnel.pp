@@ -10,6 +10,7 @@ Ported to FPC by Nikolay Nikolov (nickysn@users.sourceforge.net)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 program Tunnel;
 
 {$MODE objfpc}
@@ -34,6 +35,8 @@ type
 constructor TTunnel.Create;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Program Tunnel;
 
 {$MODE objfpc}
@@ -61,13 +64,17 @@ Begin
   tunnel := Nil;
   texture := Nil;
   
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { allocate tables }
   tunnel := GetMem(320*200*SizeOf(Uint32));
   texture := GetMem(256*256*2*SizeOf(Uint8));
 
   { setup }
   setup;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -94,6 +101,8 @@ begin
     for x := -160 to 159 do
     begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Destructor TTunnel.Destroy;
@@ -123,7 +132,10 @@ Begin
   For y := 100 DownTo -99 Do
     For x := -160 To 159 Do
     Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       { calculate angle from center }
       angle := arctan2(y, x) * 256 / pi / 2;
 
@@ -132,18 +144,24 @@ Begin
 
       { clamp radius to minimum }
 <<<<<<< HEAD
+<<<<<<< HEAD
       if radius < 1 then
         radius := 1;
 =======
       If radius < 1 Then
 	radius := 1;
 >>>>>>> graemeg/fixes_2_2
+=======
+      If radius < 1 Then
+	radius := 1;
+>>>>>>> origin/fixes_2_2
 
       { texture coordinates }
       u := angle;
       v := 6000 / radius;
 
       { calculate texture index for (u,v) }
+<<<<<<< HEAD
 <<<<<<< HEAD
       tunnel[index] := (Trunc(v) and $FF) * 256 + (Trunc(u) and $FF);
       Inc(index);
@@ -153,10 +171,16 @@ Begin
       Inc(index);
     End;
 >>>>>>> graemeg/fixes_2_2
+=======
+      tunnel[index] := (Trunc(v) And $FF) * 256 + (Trunc(u) And $FF);
+      Inc(index);
+    End;
+>>>>>>> origin/fixes_2_2
 
   { generate blue plasma texture }
   index := 0;
   angle2 := pi * 2/256 * 230;
+<<<<<<< HEAD
 <<<<<<< HEAD
   for y := 0 to 256 * 2 - 1 do
   begin
@@ -178,6 +202,8 @@ var
   i: Integer;
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
   For y := 0 To 256 * 2 - 1 Do
   Begin
     angle1 := pi * 2/256 * 100;
@@ -199,12 +225,16 @@ Var
   i : Integer;
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { tunnel control functions }
   x := Trunc(sin(t) * 99.9);
   y := Trunc(t * 200);
 
   { calculate tunnel scroll offset }
+<<<<<<< HEAD
 <<<<<<< HEAD
   scroll := ((y and $FF) shl 8) + (x and $FF);
 
@@ -254,6 +284,8 @@ begin
       { create console }
       console := TPTCConsoleFactory.CreateNew;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   scroll := ((y And $FF) Shl 8) + (x And $FF);
 
   { loop through each pixel }
@@ -282,12 +314,16 @@ Begin
 
       { create console }
       console := TPTCConsole.Create;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
       { open console }
       console.open('Tunnel demo', 320, 200, format);
 
       { create surface }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       surface := TPTCSurfaceFactory.CreateNew(320, 200, format);
@@ -308,6 +344,10 @@ Begin
       surface := TPTCSurface.Create(320, 200, format);
     
 >>>>>>> graemeg/fixes_2_2
+=======
+      surface := TPTCSurface.Create(320, 200, format);
+    
+>>>>>>> origin/fixes_2_2
       { create tunnel }
       TheTunnel := TTunnel.Create;
 
@@ -316,6 +356,7 @@ Begin
       delta := 0.03;
 
       { loop until a key is pressed }
+<<<<<<< HEAD
 <<<<<<< HEAD
       while not console.KeyPressed do
       begin
@@ -329,6 +370,8 @@ Begin
           surface.unlock;
         end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       While Not console.KeyPressed Do
       Begin
         { lock surface }
@@ -340,7 +383,10 @@ Begin
           { unlock surface }
           surface.unlock;
 	End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
         { copy to console }
         surface.copy(console);
@@ -349,6 +395,7 @@ Begin
         console.update;
 
         { update time }
+<<<<<<< HEAD
 <<<<<<< HEAD
         time := time + delta;
       end;
@@ -359,15 +406,21 @@ Begin
         console.close;
 =======
 =======
+=======
+>>>>>>> origin/fixes_2_2
         time += delta;
       End;
     Finally
       TheTunnel.Free;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       surface.Free;
       console.close;
       console.Free;
       format.Free;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -387,6 +440,8 @@ Begin
   end;
 end.
 =======
+=======
+>>>>>>> origin/fixes_2_2
     End;
   Except
     On error : TPTCError Do
@@ -394,4 +449,7 @@ end.
       error.report;
   End;
 End.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -1,5 +1,6 @@
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -21,15 +22,21 @@
 {$include debug.inc}
 {$include disc_io.inc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$include helper.inc}
 {$include jtypes.inc}
 {$include bios.inc}
 {$include card.inc}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$include dma.inc}
 {$include interrupts.inc}
 {$include ipc.inc}
 {$include memory.inc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$include touch.inc}
 {$include fifocommon.inc}
@@ -63,6 +70,8 @@
   {$include arm9/console.inc}
   {$include arm9/keyboard.inc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$include system.inc}
 {$include timers.inc}
 {$include reload.inc}
@@ -72,11 +81,15 @@
   {$include arm9/boxtest.inc}
   {$include arm9/cache.inc}
   {$include arm9/console.inc}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$include arm9/exceptions.inc}
   {$include arm9/image.inc}
   {$include arm9/input.inc}
   {$include arm9/math.inc}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$include arm9/pcx.inc}
   {$include arm9/rumble.inc}
@@ -107,6 +120,8 @@
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$include arm9/ndsmotion.inc}
   {$include arm9/pcx.inc}
   {$include arm9/rumble.inc}
@@ -116,12 +131,16 @@
   {$include arm9/video.inc}
   {$include arm9/videoGL.inc}
   {$include arm9/postest.inc}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif ARM9}
 
 {$ifdef ARM7}
   {$include arm7/audio.inc}
   {$include arm7/clock.inc}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$include arm7/input.inc}
   {$include arm7/i2c.inc}
@@ -142,5 +161,8 @@
 =======
   {$include arm7/serial.inc}
 >>>>>>> graemeg/fixes_2_2
+=======
+  {$include arm7/serial.inc}
+>>>>>>> origin/fixes_2_2
   {$include arm7/touch.inc}
 {$endif ARM7}

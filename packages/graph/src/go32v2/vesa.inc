@@ -77,7 +77,10 @@ var
   ScanLines: word;        { maximum number of scan lines for mode }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function hexstr(val : longint;cnt : byte) : string;
 const
   HexTbl : array[0..15] of char='0123456789ABCDEF';
@@ -92,7 +95,10 @@ begin
    end;
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$IFDEF DPMI}
 
@@ -243,6 +249,7 @@ end;
     { get the segment value }
     RealSeg := word(Ptr shr 16);
 <<<<<<< HEAD
+<<<<<<< HEAD
     { we have to init everything to zero, since VBE < 1.1  }
     { may not setup fields correctly.                      }
 {$ifndef fpc}
@@ -252,6 +259,8 @@ end;
 {$endif fpc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { setup interrupt registers }
     FillChar(regs, sizeof(regs), #0);
     { call VESA mode information...}
@@ -341,6 +350,7 @@ end;
           { we have to init everything to zero, since VBE < 1.1  }
           { may not setup fields correctly.                      }
 <<<<<<< HEAD
+<<<<<<< HEAD
           { bugfix: for DPMI this is now done in GetVESAModeInfo }
 {$IFNDEF DPMI}
           FillChar(VESAModeInfo, sizeof(VESAModeInfo), #0);
@@ -348,6 +358,9 @@ end;
 =======
           FillChar(VESAModeInfo, sizeof(VESAModeInfo), #0);
 >>>>>>> graemeg/fixes_2_2
+=======
+          FillChar(VESAModeInfo, sizeof(VESAModeInfo), #0);
+>>>>>>> origin/fixes_2_2
           If GetVESAModeInfo(VESAModeInfo, Mode) And
              ((VESAModeInfo.attr and modeAvail) <> 0) then
             ModeSupported := TRUE
@@ -357,6 +370,7 @@ end;
        SearchVESAModes := ModeSupported;
     end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure SetBankIndex(win: byte; BankNr: smallint);
 {I don't know why but the previous assembler version changed by some mechanism
@@ -370,6 +384,8 @@ begin
   RealIntr($10,r);
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
   procedure SetBankIndex(win: byte; BankNr: smallint); assembler;
@@ -398,7 +414,10 @@ end;
      pop ebp
 {$endif fpc}
    end ['EDX','EBX','EAX'];
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   {********************************************************}
   { There are two routines for setting banks. This may in  }
@@ -535,10 +554,14 @@ end;
           ((offs and 3) = 0)) or
          (amount >= 4+4-(offs and 3)) Then
 <<<<<<< HEAD
+<<<<<<< HEAD
       { align target }
 =======
       { allign target }
 >>>>>>> graemeg/fixes_2_2
+=======
+      { allign target }
+>>>>>>> origin/fixes_2_2
         Begin
           If (offs and 3) <> 0 then
           { this cannot go past a window boundary bacause the }
@@ -546,10 +569,14 @@ end;
             Begin
               {$ifdef logging}
 <<<<<<< HEAD
+<<<<<<< HEAD
               LogLn('Aligning by reading '+strf(4-(offs and 3))+' pixels');
 =======
               LogLn('Alligning by reading '+strf(4-(offs and 3))+' pixels');
 >>>>>>> graemeg/fixes_2_2
+=======
+              LogLn('Alligning by reading '+strf(4-(offs and 3))+' pixels');
+>>>>>>> origin/fixes_2_2
               {$endif logging}
               for l := 1 to 4-(offs and 3) do
                 WordArray(Data)[index+l-1] :=
@@ -562,10 +589,14 @@ end;
           LogLn('Offset is now '+hexstr(offs,8)+', amount left: '+strf(amount));
           {$endif logging}
 <<<<<<< HEAD
+<<<<<<< HEAD
           { offs is now 4-bytes aligned }
 =======
           { offs is now 4-bytes alligned }
 >>>>>>> graemeg/fixes_2_2
+=======
+          { offs is now 4-bytes alligned }
+>>>>>>> origin/fixes_2_2
           If amount <= ($10000-(Offs and $ffff)) Then
              bankrest := amount
           else {the rest won't fit anymore in the current window }
@@ -579,10 +610,14 @@ end;
           For l := 0 to (Bankrest div 4)-1 Do
             begin
 <<<<<<< HEAD
+<<<<<<< HEAD
               pixels := MemL[WinReadSeg:word(offs)+l*4];
 =======
               pixels := MemL[WinWriteSeg:word(offs)+l*4];
 >>>>>>> graemeg/fixes_2_2
+=======
+              pixels := MemL[WinWriteSeg:word(offs)+l*4];
+>>>>>>> origin/fixes_2_2
               WordArray(Data)[index+l*4] := pixels and $ff;
               pixels := pixels shr 8;
               WordArray(Data)[index+l*4+1] := pixels and $ff;
@@ -671,23 +706,32 @@ end;
                  { align target }
                    Begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                      l := 0;
 >>>>>>> graemeg/fixes_2_2
+=======
+                     l := 0;
+>>>>>>> origin/fixes_2_2
                      If (offs and 3) <> 0 then
                      { this cannot go past a window boundary bacause the }
                      { size of a window is always a multiple of 4        }
                        Begin
                          {$ifdef logging2}
 <<<<<<< HEAD
+<<<<<<< HEAD
                          LogLn('Aligning by drawing '+strf(4-(offs and 3))+' pixels');
 =======
                          LogLn('Alligning by drawing '+strf(4-(offs and 3))+' pixels');
 >>>>>>> graemeg/fixes_2_2
+=======
+                         LogLn('Alligning by drawing '+strf(4-(offs and 3))+' pixels');
+>>>>>>> origin/fixes_2_2
                          {$endif logging2}
                          for l := 1 to 4-(offs and 3) do
                            Mem[WinWriteSeg:word(offs)+l-1] :=
                              Mem[WinReadSeg:word(offs)+l-1] And Byte(CurrentColor);
+<<<<<<< HEAD
 <<<<<<< HEAD
                          Dec(HLength, l);
                          inc(offs, l);
@@ -697,6 +741,8 @@ end;
                      {$endif logging}
                      { offs is now 4-bytes aligned }
 =======
+=======
+>>>>>>> origin/fixes_2_2
                        End;
                      Dec(HLength, l);
                      inc(offs, l);
@@ -704,7 +750,10 @@ end;
                      LogLn('Offset is now '+hexstr(offs,8)+', length left: '+strf(hlength));
                      {$endif logging}
                      { offs is now 4-bytes alligned }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                      If HLength <= ($10000-(Offs and $ffff)) Then
                         bankrest := HLength
                      else {the rest won't fit anymore in the current window }
@@ -758,6 +807,7 @@ end;
                      ((offs and 3) = 0)) or
                     (HLength >= 4+4-(offs and 3)) Then
 <<<<<<< HEAD
+<<<<<<< HEAD
                  { align target }
                    Begin
 =======
@@ -765,20 +815,30 @@ end;
                    Begin
                      l := 0;
 >>>>>>> graemeg/fixes_2_2
+=======
+                 { allign target }
+                   Begin
+                     l := 0;
+>>>>>>> origin/fixes_2_2
                      If (offs and 3) <> 0 then
                      { this cannot go past a window boundary bacause the }
                      { size of a window is always a multiple of 4        }
                        Begin
                          {$ifdef logging2}
 <<<<<<< HEAD
+<<<<<<< HEAD
                          LogLn('Aligning by drawing '+strf(4-(offs and 3))+' pixels');
 =======
                          LogLn('Alligning by drawing '+strf(4-(offs and 3))+' pixels');
 >>>>>>> graemeg/fixes_2_2
+=======
+                         LogLn('Alligning by drawing '+strf(4-(offs and 3))+' pixels');
+>>>>>>> origin/fixes_2_2
                          {$endif logging}
                          for l := 1 to 4-(offs and 3) do
                            Mem[WinWriteSeg:word(offs)+l-1] :=
                              Mem[WinReadSeg:word(offs)+l-1] Xor Byte(CurrentColor);
+<<<<<<< HEAD
 <<<<<<< HEAD
                          Dec(HLength, l);
                          inc(offs, l);
@@ -788,6 +848,8 @@ end;
                      {$endif logging}
                      { offs is now 4-bytes aligned }
 =======
+=======
+>>>>>>> origin/fixes_2_2
                        End;
                      Dec(HLength, l);
                      inc(offs, l);
@@ -795,7 +857,10 @@ end;
                      LogLn('Offset is now '+hexstr(offs,8)+', length left: '+strf(hlength));
                      {$endif logging}
                      { offs is now 4-bytes alligned }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                      If HLength <= ($10000-(Offs and $ffff)) Then
                         bankrest := HLength
                      else {the rest won't fit anymore in the current window }
@@ -849,6 +914,7 @@ end;
                      ((offs and 3) = 0)) or
                     (HLength >= 4+4-(offs and 3)) Then
 <<<<<<< HEAD
+<<<<<<< HEAD
                  { align target }
                    Begin
 =======
@@ -856,20 +922,30 @@ end;
                    Begin
                      l := 0;
 >>>>>>> graemeg/fixes_2_2
+=======
+                 { allign target }
+                   Begin
+                     l := 0;
+>>>>>>> origin/fixes_2_2
                      If (offs and 3) <> 0 then
                      { this cannot go past a window boundary bacause the }
                      { size of a window is always a multiple of 4        }
                        Begin
                          {$ifdef logging2}
 <<<<<<< HEAD
+<<<<<<< HEAD
                          LogLn('Aligning by drawing '+strf(4-(offs and 3))+' pixels');
 =======
                          LogLn('Alligning by drawing '+strf(4-(offs and 3))+' pixels');
 >>>>>>> graemeg/fixes_2_2
+=======
+                         LogLn('Alligning by drawing '+strf(4-(offs and 3))+' pixels');
+>>>>>>> origin/fixes_2_2
                          {$endif logging}
                          for l := 1 to 4-(offs and 3) do
                            Mem[WinWriteSeg:word(offs)+l-1] :=
                              Mem[WinReadSeg:word(offs)+l-1] Or Byte(CurrentColor);
+<<<<<<< HEAD
 <<<<<<< HEAD
                          Dec(HLength, l);
                          inc(offs, l);
@@ -879,6 +955,11 @@ end;
                      Dec(HLength, l);
                      inc(offs, l);
 >>>>>>> graemeg/fixes_2_2
+=======
+                       End;
+                     Dec(HLength, l);
+                     inc(offs, l);
+>>>>>>> origin/fixes_2_2
                      { it is possible that by aligningm we ended up in a new }
                      { bank, so set the correct bank again to make sure      }
                      setwritebank(offs shr 16);
@@ -887,10 +968,14 @@ end;
                      LogLn('Offset is now '+hexstr(offs,8)+', length left: '+strf(hlength));
                      {$endif logging}
 <<<<<<< HEAD
+<<<<<<< HEAD
                      { offs is now 4-bytes aligned }
 =======
                      { offs is now 4-bytes alligned }
 >>>>>>> graemeg/fixes_2_2
+=======
+                     { offs is now 4-bytes alligned }
+>>>>>>> origin/fixes_2_2
                      If HLength <= ($10000-(Offs and $ffff)) Then
                         bankrest := HLength
                      else {the rest won't fit anymore in the current window }
@@ -921,10 +1006,14 @@ end;
                          setwritebank(offs shr 16);
                          Mem[WinWriteSeg:word(offs)] :=
 <<<<<<< HEAD
+<<<<<<< HEAD
                            Mem[WinReadSeg:word(offs)] Or byte(currentColor);
 =======
                            Mem[WinReadSeg:word(offs)] And byte(currentColor);
 >>>>>>> graemeg/fixes_2_2
+=======
+                           Mem[WinReadSeg:word(offs)] And byte(currentColor);
+>>>>>>> origin/fixes_2_2
                          inc(offs);
                        end;
                      HLength := 0
@@ -945,6 +1034,7 @@ end;
                      ((offs and 3) = 0)) or
                     (HLength >= 4+4-(offs and 3)) Then
 <<<<<<< HEAD
+<<<<<<< HEAD
                  { align target }
                    Begin
 =======
@@ -952,11 +1042,17 @@ end;
                    Begin
                      l := 0;
 >>>>>>> graemeg/fixes_2_2
+=======
+                 { allign target }
+                   Begin
+                     l := 0;
+>>>>>>> origin/fixes_2_2
                      If (offs and 3) <> 0 then
                      { this cannot go past a window boundary bacause the }
                      { size of a window is always a multiple of 4        }
                        Begin
                          {$ifdef logging2}
+<<<<<<< HEAD
 <<<<<<< HEAD
                          LogLn('Aligning by drawing '+strf(4-(offs and 3))+' pixels');
                          {$endif logging}
@@ -970,6 +1066,8 @@ end;
                      {$endif logging}
                      { offs is now 4-bytes aligned }
 =======
+=======
+>>>>>>> origin/fixes_2_2
                          LogLn('Alligning by drawing '+strf(4-(offs and 3))+' pixels');
                          {$endif logging}
                          for l := 1 to 4-(offs and 3) do
@@ -981,7 +1079,10 @@ end;
                      LogLn('Offset is now '+hexstr(offs,8)+', length left: '+strf(hlength));
                      {$endif logging}
                      { offs is now 4-bytes alligned }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                      If HLength <= ($10000-(Offs and $ffff)) Then
                         bankrest := HLength
                      else {the rest won't fit anymore in the current window }
@@ -1071,16 +1172,22 @@ end;
                  LogLn('set bank '+strf(curbank)+' for offset '+hexstr(offs,8));
                  {$endif logging}
 <<<<<<< HEAD
+<<<<<<< HEAD
                  If (VLength-1)*bytesperline <= ($ffff-(Offs and $ffff)) Then
                    bankrest := VLength
                  else {the rest won't fit anymore in the current window }
                    bankrest := (($ffff - (Offs and $ffff)) div bytesperline)+1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
                  If (VLength-1)*bytesperline <= ($10000-(Offs and $ffff)) Then
                    bankrest := VLength
                  else {the rest won't fit anymore in the current window }
                    bankrest := (($10000 - (Offs and $ffff)) div bytesperline)+1;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                  {$ifdef logging2}
                  LogLn('Rest to be drawn in this window: '+strf(bankrest));
                  {$endif logging}
@@ -1106,16 +1213,22 @@ end;
                  LogLn('set bank '+strf(curbank)+' for offset '+hexstr(offs,8));
                  {$endif logging}
 <<<<<<< HEAD
+<<<<<<< HEAD
                  If (VLength-1)*bytesperline <= ($ffff-(Offs and $ffff)) Then
                    bankrest := VLength
                  else {the rest won't fit anymore in the current window }
                    bankrest := (($ffff - (Offs and $ffff)) div bytesperline)+1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
                  If (VLength-1)*bytesperline <= ($10000-(Offs and $ffff)) Then
                    bankrest := VLength
                  else {the rest won't fit anymore in the current window }
                    bankrest := (($10000 - (Offs and $ffff)) div bytesperline)+1;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                  {$ifdef logging2}
                  LogLn('Rest to be drawn in this window: '+strf(bankrest));
                  {$endif logging}
@@ -1141,16 +1254,22 @@ end;
                  LogLn('set bank '+strf(curbank)+' for offset '+hexstr(offs,8));
                  {$endif logging}
 <<<<<<< HEAD
+<<<<<<< HEAD
                  If (VLength-1)*bytesperline <= ($ffff-(Offs and $ffff)) Then
                    bankrest := VLength
                  else {the rest won't fit anymore in the current window }
                    bankrest := (($ffff - (Offs and $ffff)) div bytesperline)+1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
                  If (VLength-1)*bytesperline <= ($10000-(Offs and $ffff)) Then
                    bankrest := VLength
                  else {the rest won't fit anymore in the current window }
                    bankrest := (($10000 - (Offs and $ffff)) div bytesperline)+1;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                  {$ifdef logging2}
                  LogLn('Rest to be drawn in this window: '+strf(bankrest));
                  {$endif logging}
@@ -1177,16 +1296,22 @@ end;
                  LogLn('set bank '+strf(curbank)+' for offset '+hexstr(offs,8));
                  {$endif logging}
 <<<<<<< HEAD
+<<<<<<< HEAD
                  If (VLength-1)*bytesperline <= ($ffff-(Offs and $ffff)) Then
                    bankrest := VLength
                  else {the rest won't fit anymore in the current window }
                    bankrest := (($ffff - (Offs and $ffff)) div bytesperline)+1;
 =======
+=======
+>>>>>>> origin/fixes_2_2
                  If (VLength-1)*bytesperline <= ($10000-(Offs and $ffff)) Then
                    bankrest := VLength
                  else {the rest won't fit anymore in the current window }
                    bankrest := (($10000 - (Offs and $ffff)) div bytesperline)+1;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                  {$ifdef logging2}
                  LogLn('Rest to be drawn in this window: '+strf(bankrest));
                  {$endif logging}
@@ -1258,11 +1383,14 @@ end;
          if TmpFillPattern and j <> 0 then
            fill.pat[7-i] := currentColor;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}
 {$q-}
          j := j shl 1;
 {$pop}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifopt q+}
 {$q-}
 {$define overflowOn}
@@ -1272,7 +1400,10 @@ end;
 {$q+}
 {$undef overflowOn}
 {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        end;
      Repeat
        SetWriteBank(smallint(offs shr 16));
@@ -1282,9 +1413,13 @@ end;
          Begin
            { align target }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
            l := 0;
 >>>>>>> graemeg/fixes_2_2
+=======
+           l := 0;
+>>>>>>> origin/fixes_2_2
            If (offs and 7) <> 0 then
            { this cannot go past a window boundary bacause the }
            { size of a window is always a multiple of 8        }
@@ -1300,6 +1435,7 @@ end;
                    inc(patternPos)
                  end;
 <<<<<<< HEAD
+<<<<<<< HEAD
                Dec(amount, l);
                inc(offs, l);
              End;
@@ -1308,6 +1444,8 @@ end;
            {$endif logging2}
            { offs is now 8-bytes aligned }
 =======
+=======
+>>>>>>> origin/fixes_2_2
              End;
            Dec(amount, l);
            inc(offs, l);
@@ -1315,7 +1453,10 @@ end;
            LogLn('Offset is now '+hexstr(offs,8)+', length left: '+strf(amount));
            {$endif logging2}
            { offs is now 8-bytes alligned }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            If amount <= ($10000-(Offs and $ffff)) Then
               bankrest := amount
            else {the rest won't fit anymore in the current window }
@@ -1495,11 +1636,14 @@ end;
   var
      offs : longint;
 <<<<<<< HEAD
+<<<<<<< HEAD
      place: word;
      bank : shortint;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   begin
 {$ifdef logging}
      logln('putpixvesa32kor64k('+strf(x)+','+strf(y)+')');
@@ -1517,6 +1661,7 @@ end;
      Y := Y + YOffset; { adjust pixel for correct virtual page }
      offs := longint(y) * BytesPerLine + 2*x;
 <<<<<<< HEAD
+<<<<<<< HEAD
      bank := offs div 65536;
      place:= offs mod 65536;
      SetWriteBank(bank);
@@ -1526,12 +1671,17 @@ end;
 {$endif logging}
      memW[WinWriteSeg : place] := color;
 =======
+=======
+>>>>>>> origin/fixes_2_2
      SetWriteBank(smallint(offs shr 16));
 {$ifdef logging}
      logln('putpixvesa32kor64k offset: '+strf(word(offs)));
 {$endif logging}
      memW[WinWriteSeg : word(offs)] := color;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   function GetPixVESA32kOr64k(x, y : smallint): word; {$ifndef fpc}far;{$endif fpc}
@@ -1549,16 +1699,21 @@ end;
   var
      offs : longint;
 <<<<<<< HEAD
+<<<<<<< HEAD
      bank : smallint;
      place,col : word;
 =======
      col : word;
 >>>>>>> graemeg/fixes_2_2
+=======
+     col : word;
+>>>>>>> origin/fixes_2_2
   begin
 {$ifdef logging}
      logln('directputpixvesa32kor64k('+strf(x)+','+strf(y)+')');
 {$endif logging}
      y:= Y + YOffset;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
      offs := longint(y) * BytesPerLine + 2*x;
@@ -1582,6 +1737,8 @@ end;
            SetReadBank(bank);
            memW[WinWriteSeg : place] := memW[WinReadSeg : place] or currentcolor;
 =======
+=======
+>>>>>>> origin/fixes_2_2
      offs := longint(y) * BytesPerLine + 2*x;
      SetWriteBank(smallint((offs shr 16) and $ff));
      Case CurrentWriteMode of
@@ -1599,7 +1756,10 @@ end;
          Begin
            SetReadBank(smallint(offs shr 16));
            memW[WinWriteSeg : word(offs)] := memW[WinReadSeg : word(offs)] or currentcolor;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          End
        else
          Begin
@@ -1610,14 +1770,19 @@ end;
            logln('directputpixvesa32kor64k offset: '+strf(word(offs)));
 {$endif logging}
 <<<<<<< HEAD
+<<<<<<< HEAD
            memW[WinWriteSeg : place] := Col;
 =======
            memW[WinWriteSeg : word(offs)] := Col;
 >>>>>>> graemeg/fixes_2_2
+=======
+           memW[WinWriteSeg : word(offs)] := Col;
+>>>>>>> origin/fixes_2_2
          End
      End;
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   procedure HLineVESA32kOr64k(x,x2,y: smallint); {$ifndef fpc}far;{$endif fpc}
 
@@ -1938,6 +2103,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC}
  {************************************************************************}
  {*                    15/16bit pixels VESA mode routines  Linear mode   *}
@@ -2048,14 +2215,18 @@ end;
      { }
      offs := longint(y) * BytesPerLine + (x div 8);
 <<<<<<< HEAD
+<<<<<<< HEAD
      SetReadBank(smallint(offs shr 16));
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      SetWriteBank(smallint(offs shr 16));
 
      PortW[$3ce] := $0f01;       { Index 01 : Enable ops on all 4 planes }
      PortW[$3ce] := color shl 8; { Index 00 : Enable correct plane and write color }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
      { Index 08 : Bitmask register.          }
      PortW[$3ce] := ($8000 shr (x and $7)) or 8; { Select correct bits to modify }
@@ -2063,12 +2234,17 @@ end;
      dummy := Mem[WinReadSeg: word(offs)];  { Latch the data into host space.  }
      Mem[WinWriteSeg: word(offs)] := dummy;  { Write the data into video memory }
 =======
+=======
+>>>>>>> origin/fixes_2_2
      Port[$3ce] := 8;           { Index 08 : Bitmask register.          }
      Port[$3cf] := $80 shr (x and $7); { Select correct bits to modify }
 
      dummy := Mem[WinWriteSeg: offs];  { Latch the data into host space.  }
      Mem[WinWriteSeg: offs] := dummy;  { Write the data into video memory }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      PortW[$3ce] := $ff08;         { Enable all bit planes.           }
      PortW[$3ce] := $0001;         { Index 01 : Disable ops on all four planes.         }
      { }
@@ -2077,17 +2253,22 @@ end;
 
  Function GetPixVESA16(X,Y: smallint):word; {$ifndef fpc}far;{$endif fpc}
 <<<<<<< HEAD
+<<<<<<< HEAD
  Var dummy: Word;
      offset: longint;
 =======
  Var dummy, offset: Word;
 >>>>>>> graemeg/fixes_2_2
+=======
+ Var dummy, offset: Word;
+>>>>>>> origin/fixes_2_2
      shift: byte;
   Begin
     X:= X + StartXViewPort;
     Y:= Y + StartYViewPort + YOffset;
     offset := longint(Y) * BytesPerLine + (x div 8);
     SetReadBank(smallint(offset shr 16));
+<<<<<<< HEAD
 <<<<<<< HEAD
     PortW[$3ce] := $0004;
     shift := 7 - (X and 7);
@@ -2099,6 +2280,8 @@ end;
     Port[$3cf] := 3;
     dummy := dummy or (((Mem[WinReadSeg:word(offset)] shr shift) and 1) shl 3);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Port[$3ce] := 4;
     shift := 7 - (X and 7);
     Port[$3cf] := 0;
@@ -2109,7 +2292,10 @@ end;
     dummy := dummy or (((Mem[WinReadSeg:offset] shr shift) and 1) shl 2);
     Port[$3cf] := 3;
     dummy := dummy or (((Mem[WinReadSeg:offset] shr shift) and 1) shl 3);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     GetPixVESA16 := dummy;
   end;
 
@@ -2120,6 +2306,7 @@ end;
      dummy : byte;
      Color : word;
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
      If CurrentWriteMode <> NotPut Then
        Color := CurrentColor
@@ -2143,6 +2330,8 @@ end;
      offs := longint(y) * BytesPerLine + (x div 8);
      SetReadBank(smallint(offs shr 16));
 =======
+=======
+>>>>>>> origin/fixes_2_2
     y:= Y + YOffset;
     case CurrentWriteMode of
       XORPut:
@@ -2171,11 +2360,15 @@ end;
         Color := CurrentColor;
     end;
      offs := longint(y) * BytesPerLine + (x div 8);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      SetWriteBank(smallint(offs shr 16));
      PortW[$3ce] := $0f01;       { Index 01 : Enable ops on all 4 planes }
      PortW[$3ce] := color shl 8; { Index 00 : Enable correct plane and write color }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
      { Index 08 : Bitmask register.          }
      PortW[$3ce] := ($8000 shr (x and $7)) or 8; { Select correct bits to modify }
@@ -2406,6 +2599,8 @@ end;
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
      Port[$3ce] := 8;           { Index 08 : Bitmask register.          }
      Port[$3cf] := $80 shr (x and $7); { Select correct bits to modify }
 
@@ -2416,7 +2611,10 @@ end;
   end;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
  {************************************************************************}
@@ -2813,6 +3011,7 @@ Const
    begin
      SetUpLinear:=false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
      if VESAInfo.Version >= $0300 then
        BytesPerLine := VESAModeInfo.LinBytesPerScanLine
@@ -2821,6 +3020,8 @@ Const
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef FPC}
      case mode of
        m320x200x32k,
@@ -2919,11 +3120,14 @@ Const
    begin
      InLinear:=false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
      BytesPerLine := VESAModeInfo.BytesPerScanLine;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      { now we check the windowing scheme ...}
      if (ModeInfo.WinAAttr and WinSupported) <> 0 then
        { is this window supported ... }
@@ -3074,11 +3278,15 @@ Const
      CurrentWriteBank := -1;
      CurrentReadBank := -1;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {    nickysn: setting BytesPerLine moved to SetupLinear and SetupWindowed
      BytesPerLine := VESAModeInfo.BytesPerScanLine;}
 =======
      BytesPerLine := VESAModeInfo.BytesPerScanLine;
 >>>>>>> graemeg/fixes_2_2
+=======
+     BytesPerLine := VESAModeInfo.BytesPerScanLine;
+>>>>>>> origin/fixes_2_2
 
      { These are the window adresses ... }
      WinWriteSeg := 0;  { This is the segment to use for writes }
@@ -3373,10 +3581,13 @@ Const
 {$endif logging}
     { Prepare to save video state...}
 <<<<<<< HEAD
+<<<<<<< HEAD
     regs.eax := $4F04;     { get buffer size to save state }
     regs.edx := $0000;
     regs.ecx := $000F;     { Save DAC / Data areas / Hardware states }
 =======
+=======
+>>>>>>> origin/fixes_2_2
     asm
       mov  ax, 4F04h       { get buffer size to save state }
       mov  dx, 00h
@@ -3405,7 +3616,10 @@ Const
     regs.eax := $4f04;
     regs.edx := $0000;
     regs.ecx := $000F;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     RealIntr($10, regs);
     StateSize := word(regs.ebx);
     if byte(regs.eax) = $4f then

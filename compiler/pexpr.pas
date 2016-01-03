@@ -2668,11 +2668,15 @@ implementation
            pc    : pchar;
            srsym : tsym;
            unit_found : boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            srsymtable : TSymtable;
            hdef  : tdef;
            orgstoredpattern,
            storedpattern : string;
+<<<<<<< HEAD
 <<<<<<< HEAD
            callflags: tcallnodeflags;
            t : ttoken;
@@ -2681,6 +2685,10 @@ implementation
            len   : longint;
            t : ttoken;
 >>>>>>> graemeg/fixes_2_2
+=======
+           len   : longint;
+           t : ttoken;
+>>>>>>> origin/fixes_2_2
          begin
            { allow post fix operators }
            again:=true;
@@ -2705,8 +2713,11 @@ implementation
                orgstoredpattern:=orgpattern;
                consume(t);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
                { named parameter support }
                found_arg_name:=false;
@@ -4477,6 +4488,7 @@ implementation
                 fieldvarsym :
                   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                     { check if we are reading a field of an object/class/   }
                     { record. is_member_read() will deal with withsymtables }
                     { if needed.                                            }
@@ -4485,6 +4497,9 @@ implementation
 =======
                     if is_class_or_interface_or_object(p1.resultdef) then
 >>>>>>> graemeg/fixes_2_2
+=======
+                    if is_class_or_interface_or_object(p1.resultdef) then
+>>>>>>> origin/fixes_2_2
                       begin
 <<<<<<< HEAD
                         { if the field was originally found in an     }
@@ -8022,8 +8037,11 @@ implementation
                _ASSIGNMENT :
                  p1:=cassignmentnode.create(p1,p2);
 <<<<<<< HEAD
+<<<<<<< HEAD
                _NE :
 =======
+=======
+>>>>>>> origin/fixes_2_2
                _UNEQUAL :
 >>>>>>> graemeg/fixes_2_2
                  p1:=caddnode.create(unequaln,p1,p2);

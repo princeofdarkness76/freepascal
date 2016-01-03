@@ -2,6 +2,7 @@
 <CONFIG>
   <ProjectOptions>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="9"/>
     <General>
       <Flags>
@@ -19,6 +20,8 @@
       <Item1 Name="default" Default="True"/>
     </BuildModes>
 =======
+=======
+>>>>>>> origin/fixes_2_2
     <PathDelim Value="/"/>
     <Version Value="5"/>
     <General>
@@ -32,7 +35,10 @@
       <Language Value=""/>
       <CharSet Value=""/>
     </VersionInfo>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     <PublishOptions>
       <Version Value="2"/>
       <IgnoreBinaries Value="False"/>
@@ -46,14 +52,19 @@
       </local>
     </RunParams>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Units Count="1">
 =======
     <Units Count="22">
 >>>>>>> graemeg/fixes_2_2
+=======
+    <Units Count="22">
+>>>>>>> origin/fixes_2_2
       <Unit0>
         <Filename Value="chmcmd.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="chmcmd"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
       </Unit0>
     </Units>
@@ -71,6 +82,8 @@
     <CodeGeneration>
       <SmartLinkUnit Value="True"/>
 =======
+=======
+>>>>>>> origin/fixes_2_2
         <CursorPos X="1" Y="20"/>
         <TopLine Value="1"/>
         <EditorIndex Value="9"/>
@@ -293,7 +306,10 @@
     <CodeGeneration>
       <SmartLinkUnit Value="True"/>
       <Generate Value="Faster"/>
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       <Optimizations>
         <OptimizationLevel Value="2"/>
       </Optimizations>
@@ -301,12 +317,16 @@
     <Linking>
       <Debugging>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <UseHeaptrc Value="True"/>
         <UseValgrind Value="True"/>
         <GenGProfCode Value="True"/>
 =======
         <GenerateDebugInfo Value="True"/>
 >>>>>>> graemeg/fixes_2_2
+=======
+        <GenerateDebugInfo Value="True"/>
+>>>>>>> origin/fixes_2_2
       </Debugging>
     </Linking>
     <Other>

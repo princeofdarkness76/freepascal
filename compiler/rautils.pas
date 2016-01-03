@@ -147,10 +147,14 @@ type
     destructor  destroy;override;
     { converts the instruction to an instruction how it's used by the assembler writer
 <<<<<<< HEAD
+<<<<<<< HEAD
       and concats it to the passed list. The newly created item is returned if the
 =======
       and concats it to the passed list. The newly created item is returned if the 
 >>>>>>> graemeg/fixes_2_2
+=======
+      and concats it to the passed list. The newly created item is returned if the 
+>>>>>>> origin/fixes_2_2
       instruction was valid, otherwise nil is returned }
     function ConcatInstruction(p:TAsmList) : tai;virtual;
   end;
@@ -1540,6 +1544,7 @@ Begin
         hl:=tlabelsym(sym).asmblocklabel;
         if emit then
 <<<<<<< HEAD
+<<<<<<< HEAD
           begin
             if tlabelsym(sym).defined then
               Message(sym_e_label_already_defined);
@@ -1548,6 +1553,9 @@ Begin
 =======
           tlabelsym(sym).defined:=true
 >>>>>>> graemeg/fixes_2_2
+=======
+          tlabelsym(sym).defined:=true
+>>>>>>> origin/fixes_2_2
         else
           tlabelsym(sym).used:=true;
         SearchLabel:=true;
@@ -1645,8 +1653,11 @@ end;
 {$ifdef ARM}
            if is_double_hilo_swapped then
 <<<<<<< HEAD
+<<<<<<< HEAD
              p.concat(tai_realconst.create_s64real_hiloswapped(value))
 =======
+=======
+>>>>>>> origin/fixes_2_2
              p.concat(Tai_real_64bit.Create_hiloswapped(value))
 >>>>>>> graemeg/fixes_2_2
            else

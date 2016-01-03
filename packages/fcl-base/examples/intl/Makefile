@@ -4,10 +4,14 @@
 #
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 DEMOLANGUAGES=fr nl de pb ru cs
 =======
 DEMOLANGUAGES=fr nl de pb
 >>>>>>> graemeg/fixes_2_2
+=======
+DEMOLANGUAGES=fr nl de pb
+>>>>>>> origin/fixes_2_2
 
 #
 # No need to add after this line.

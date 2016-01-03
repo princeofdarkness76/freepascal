@@ -57,6 +57,7 @@ uses classes, sysutils, contnrs;
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   { TStringHash }
 
@@ -77,6 +78,8 @@ type
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   { THashedStringList }
 
   THashedStringList = class(TStringList)
@@ -91,9 +94,13 @@ type
     procedure Changed; override;
   public
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     constructor Create;
 >>>>>>> graemeg/fixes_2_2
+=======
+    constructor Create;
+>>>>>>> origin/fixes_2_2
     destructor Destroy; override;
     function IndexOf(const S: String): Integer; override;
     function IndexOfName(const Name: String): Integer; override;
@@ -105,10 +112,14 @@ type
     FValue: string;
   public
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor Create(const AIdent, AValue: string);
 =======
     constructor Create(AIdent, AValue: string);
 >>>>>>> graemeg/fixes_2_2
+=======
+    constructor Create(AIdent, AValue: string);
+>>>>>>> origin/fixes_2_2
     property Ident: string read FIdent write FIdent;
     property Value: string read FValue write FValue;
   end;
@@ -117,10 +128,14 @@ type
   private
     function GetItem(Index: integer): TIniFileKey;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function KeyByName(const AName: string; CaseSensitive : Boolean): TIniFileKey;
 =======
     function KeyByName(AName: string; CaseSensitive : Boolean): TIniFileKey;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function KeyByName(AName: string; CaseSensitive : Boolean): TIniFileKey;
+>>>>>>> origin/fixes_2_2
   public
     destructor Destroy; override;
     procedure Clear; override;
@@ -134,10 +149,14 @@ type
   public
     Function Empty : Boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor Create(const AName: string);
 =======
     constructor Create(AName: string);
 >>>>>>> graemeg/fixes_2_2
+=======
+    constructor Create(AName: string);
+>>>>>>> origin/fixes_2_2
     destructor Destroy; override;
     property Name: string read FName;
     property KeyList: TIniFileKeyList read FKeyList;
@@ -147,10 +166,14 @@ type
   private
     function GetItem(Index: integer): TIniFileSection;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function SectionByName(const AName: string; CaseSensitive : Boolean): TIniFileSection;
 =======
     function SectionByName(AName: string; CaseSensitive : Boolean): TIniFileSection;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function SectionByName(AName: string; CaseSensitive : Boolean): TIniFileSection;
+>>>>>>> origin/fixes_2_2
   public
     destructor Destroy; override;
     procedure Clear;override;
@@ -158,15 +181,19 @@ type
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   { TCustomIniFile }
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   TCustomIniFile = class
   Private
     FFileName: string;
     FSectionList: TIniFileSectionList;
     FEscapeLineFeeds: boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
     FCaseSensitive : Boolean;
     FStripQuotes : Boolean;
@@ -178,6 +205,11 @@ type
     FStripQuotes : Boolean;
   public
 >>>>>>> graemeg/fixes_2_2
+=======
+    FCaseSensitive : Boolean; 
+    FStripQuotes : Boolean;
+  public
+>>>>>>> origin/fixes_2_2
     constructor Create(const AFileName: string; AEscapeLineFeeds : Boolean = False); virtual;
     destructor Destroy; override;
     function SectionExists(const Section: string): Boolean; virtual;
@@ -186,10 +218,13 @@ type
     function ReadInteger(const Section, Ident: string; Default: Longint): Longint; virtual;
     procedure WriteInteger(const Section, Ident: string; Value: Longint); virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function ReadInt64(const Section, Ident: string; Default: Int64): Longint; virtual;
     procedure WriteInt64(const Section, Ident: string; Value: Int64); virtual;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     function ReadBool(const Section, Ident: string; Default: Boolean): Boolean; virtual;
     procedure WriteBool(const Section, Ident: string; Value: Boolean); virtual;
     function ReadDate(const Section, Ident: string; Default: TDateTime): TDateTime; virtual;
@@ -214,9 +249,12 @@ type
     Property CaseSensitive : Boolean Read FCaseSensitive Write FCaseSensitive;
     Property StripQuotes : Boolean Read FStripQuotes Write FStripQuotes;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property FormatSettingsActive: Boolean Read FFormatSettingsActive write FFormatSettingsActive;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   { TIniFile }
@@ -226,6 +264,7 @@ type
     FStream: TStream;
     FCacheUpdates: Boolean;
     FDirty : Boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
     FBOM : String;
     procedure FillSectionList(AStrings: TStrings);
@@ -237,10 +276,16 @@ type
     Procedure DeleteSection(ASection : TIniFileSection);
     Procedure MaybeDeleteSection(ASection : TIniFileSection);
 >>>>>>> graemeg/fixes_2_2
+=======
+    procedure FillSectionList(AStrings: TStrings);
+    Procedure DeleteSection(ASection : TIniFileSection);
+    Procedure MaybeDeleteSection(ASection : TIniFileSection);
+>>>>>>> origin/fixes_2_2
   protected
     procedure MaybeUpdateFile;
     property Dirty : Boolean Read FDirty;
   public
+<<<<<<< HEAD
 <<<<<<< HEAD
     constructor Create(const AFileName: string; AEscapeLineFeeds : Boolean = False); overload; override;
     constructor Create(AStream: TStream; AEscapeLineFeeds : Boolean = False); overload;
@@ -248,6 +293,10 @@ type
     constructor Create(const AFileName: string; AEscapeLineFeeds : Boolean = False); override;
     constructor Create(AStream: TStream; AEscapeLineFeeds : Boolean = False);
 >>>>>>> graemeg/fixes_2_2
+=======
+    constructor Create(const AFileName: string; AEscapeLineFeeds : Boolean = False); override;
+    constructor Create(AStream: TStream; AEscapeLineFeeds : Boolean = False);
+>>>>>>> origin/fixes_2_2
     destructor Destroy; override;
     function ReadString(const Section, Ident, Default: string): string; override;
     procedure WriteString(const Section, Ident, Value: String); override;
@@ -260,19 +309,27 @@ type
     procedure UpdateFile; override;
     property Stream: TStream read FStream;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property CacheUpdates : Boolean read FCacheUpdates write SetCacheUpdates;
 =======
     property CacheUpdates : Boolean Read FCacheUpdates Write FCacheUpdates;
 >>>>>>> graemeg/fixes_2_2
+=======
+    property CacheUpdates : Boolean Read FCacheUpdates Write FCacheUpdates;
+>>>>>>> origin/fixes_2_2
   end;
 
   TMemIniFile = class(TIniFile)
   public
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor Create(const AFileName: string; AEscapeLineFeeds : Boolean = False); overload; override;
 =======
     constructor Create(const AFileName: string; AEscapeLineFeeds : Boolean = False); override;
 >>>>>>> graemeg/fixes_2_2
+=======
+    constructor Create(const AFileName: string; AEscapeLineFeeds : Boolean = False); override;
+>>>>>>> origin/fixes_2_2
     procedure Clear;
     procedure GetStrings(List: TStrings);
     procedure Rename(const AFileName: string; Reload: Boolean);
@@ -282,11 +339,14 @@ type
 implementation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Resourcestring
   SErrCouldNotCreatePath = 'Could not create directory "%s"';
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
    Brackets  : array[0..1] of Char = ('[', ']');
    Separator : Char = '=';
@@ -307,16 +367,21 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IsComment(const AString: string): boolean;
 =======
 function IsComment(AString: string): boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+function IsComment(AString: string): boolean;
+>>>>>>> origin/fixes_2_2
 begin
   Result := False;
   if AString > '' then
     Result := (Copy(AString, 1, 1) = Comment);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { TStringHash }
 
@@ -378,6 +443,8 @@ begin
   FreeAndNil(FValueHash);
   FreeAndNil(FNameHash);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { THashedStringList }
 
 constructor THashedStringList.Create;
@@ -395,7 +462,10 @@ begin
     FValueHash.Free;
   if Assigned(FNameHash) then
     FNameHash.Free;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   inherited Destroy;
 end;
 
@@ -463,10 +533,14 @@ end;
 { TIniFileKey }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TIniFileKey.Create(const AIdent, AValue: string);
 =======
 constructor TIniFileKey.Create(AIdent, AValue: string);
 >>>>>>> graemeg/fixes_2_2
+=======
+constructor TIniFileKey.Create(AIdent, AValue: string);
+>>>>>>> origin/fixes_2_2
 begin
   FIdent := AIdent;
   FValue := AValue;
@@ -482,10 +556,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TIniFileKeyList.KeyByName(const AName: string; CaseSensitive : Boolean): TIniFileKey;
 =======
 function TIniFileKeyList.KeyByName(AName: string; CaseSensitive : Boolean): TIniFileKey;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TIniFileKeyList.KeyByName(AName: string; CaseSensitive : Boolean): TIniFileKey;
+>>>>>>> origin/fixes_2_2
 var
   i: integer;
 begin
@@ -495,20 +573,28 @@ begin
       begin
       for i := 0 to Count-1 do
 <<<<<<< HEAD
+<<<<<<< HEAD
         if Items[i].Ident=AName then
 =======
         if Items[i].Ident=AName then 
 >>>>>>> graemeg/fixes_2_2
+=======
+        if Items[i].Ident=AName then 
+>>>>>>> origin/fixes_2_2
           begin
           Result := Items[i];
           Break;
           end;
       end
 <<<<<<< HEAD
+<<<<<<< HEAD
     else
 =======
     else  
 >>>>>>> graemeg/fixes_2_2
+=======
+    else  
+>>>>>>> origin/fixes_2_2
       for i := 0 to Count-1 do
         if CompareText(Items[i].Ident, AName) = 0 then begin
           Result := Items[i];
@@ -550,10 +636,14 @@ end;
 { TIniFileSection }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TIniFileSection.Create(const AName: string);
 =======
 constructor TIniFileSection.Create(AName: string);
 >>>>>>> graemeg/fixes_2_2
+=======
+constructor TIniFileSection.Create(AName: string);
+>>>>>>> origin/fixes_2_2
 begin
   FName := AName;
   FKeyList := TIniFileKeyList.Create;
@@ -574,10 +664,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TIniFileSectionList.SectionByName(const AName: string; CaseSensitive : Boolean): TIniFileSection;
 =======
 function TIniFileSectionList.SectionByName(AName: string; CaseSensitive : Boolean): TIniFileSection;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TIniFileSectionList.SectionByName(AName: string; CaseSensitive : Boolean): TIniFileSection;
+>>>>>>> origin/fixes_2_2
 var
   i: integer;
 begin
@@ -587,10 +681,14 @@ begin
       begin
       for i:=0 to Count-1 do
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (Items[i].Name=AName) then
 =======
         if (Items[i].Name=AName) then 
 >>>>>>> graemeg/fixes_2_2
+=======
+        if (Items[i].Name=AName) then 
+>>>>>>> origin/fixes_2_2
           begin
           Result := Items[i];
           Break;
@@ -599,10 +697,14 @@ begin
     else
       for i := 0 to Count-1 do
 <<<<<<< HEAD
+<<<<<<< HEAD
         if CompareText(Items[i].Name, AName) = 0 then
 =======
         if CompareText(Items[i].Name, AName) = 0 then 
 >>>>>>> graemeg/fixes_2_2
+=======
+        if CompareText(Items[i].Name, AName) = 0 then 
+>>>>>>> origin/fixes_2_2
           begin
           Result := Items[i];
           Break;
@@ -632,6 +734,7 @@ begin
   FSectionList := TIniFileSectionList.Create;
   FEscapeLineFeeds := AEscapeLineFeeds;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FormatSettings := DefaultFormatSettings;
   with FormatSettings do begin
     DecimalSeparator := '.';
@@ -645,6 +748,8 @@ begin
   end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 destructor TCustomIniFile.Destroy;
@@ -675,6 +780,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TCustomIniFile.ReadInt64(const Section, Ident: string; Default: Int64
   ): Longint;
 begin
@@ -688,6 +794,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function TCustomIniFile.ReadBool(const Section, Ident: string; Default: Boolean): Boolean;
 var
   s: string;
@@ -707,6 +815,7 @@ function TCustomIniFile.ReadDate(const Section, Ident: string; Default: TDateTim
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if FFormatSettingsActive then begin
     if not TryStrToDate(ReadString(Section, Ident, ''), Result, FormatSettings) then
       Result := Default;
@@ -715,11 +824,15 @@ begin
 =======
   Result := StrToDateDef(ReadString(Section, Ident, ''),Default);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result := StrToDateDef(ReadString(Section, Ident, ''),Default);
+>>>>>>> origin/fixes_2_2
 end;
 
 function TCustomIniFile.ReadDateTime(const Section, Ident: string; Default: TDateTime): TDateTime;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if FFormatSettingsActive then begin
     if not TryStrToDateTime(ReadString(Section, Ident, ''), Result, FormatSettings) then
@@ -729,11 +842,15 @@ begin
 =======
   Result := StrToDateTimeDef(ReadString(Section, Ident, ''),Default);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result := StrToDateTimeDef(ReadString(Section, Ident, ''),Default);
+>>>>>>> origin/fixes_2_2
 end;
 
 function TCustomIniFile.ReadFloat(const Section, Ident: string; Default: Double): Double;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if FFormatSettingsActive then
     Result:=StrToFloatDef(ReadString(Section, Ident, ''),Default, FormatSettings)
@@ -742,11 +859,15 @@ begin
 =======
   Result:=StrToFloatDef(ReadString(Section, Ident, ''),Default);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=StrToFloatDef(ReadString(Section, Ident, ''),Default);
+>>>>>>> origin/fixes_2_2
 end;
 
 function TCustomIniFile.ReadTime(const Section, Ident: string; Default: TDateTime): TDateTime;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if FFormatSettingsActive then
     Result := StrToTimeDef(ReadString(Section, Ident, ''),Default, FormatSettings.TimeSeparator)
@@ -755,10 +876,14 @@ begin
 =======
   Result := StrToTimeDef(ReadString(Section, Ident, ''),Default);
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result := StrToTimeDef(ReadString(Section, Ident, ''),Default);
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TCustomIniFile.WriteDate(const Section, Ident: string; Value: TDateTime);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if FFormatSettingsActive then
     WriteString(Section, Ident, DateToStr(Value, FormatSettings))
@@ -767,10 +892,14 @@ begin
 =======
   WriteString(Section, Ident, DateToStr(Value));
 >>>>>>> graemeg/fixes_2_2
+=======
+  WriteString(Section, Ident, DateToStr(Value));
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TCustomIniFile.WriteDateTime(const Section, Ident: string; Value: TDateTime);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if FFormatSettingsActive then
     WriteString(Section, Ident, DateTimeToStr(Value, FormatSettings))
@@ -779,10 +908,14 @@ begin
 =======
   WriteString(Section, Ident, DateTimeToStr(Value));
 >>>>>>> graemeg/fixes_2_2
+=======
+  WriteString(Section, Ident, DateTimeToStr(Value));
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TCustomIniFile.WriteFloat(const Section, Ident: string; Value: Double);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if FFormatSettingsActive then
     WriteString(Section, Ident, FloatToStr(Value, FormatSettings))
@@ -791,10 +924,14 @@ begin
 =======
   WriteString(Section, Ident, FloatToStr(Value));
 >>>>>>> graemeg/fixes_2_2
+=======
+  WriteString(Section, Ident, FloatToStr(Value));
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TCustomIniFile.WriteTime(const Section, Ident: string; Value: TDateTime);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if FFormatSettingsActive then
     WriteString(Section, Ident, TimeToStr(Value, FormatSettings))
@@ -803,6 +940,9 @@ begin
 =======
   WriteString(Section, Ident, TimeToStr(Value));
 >>>>>>> graemeg/fixes_2_2
+=======
+  WriteString(Section, Ident, TimeToStr(Value));
+>>>>>>> origin/fixes_2_2
 end;
 
 function TCustomIniFile.ValueExists(const Section, Ident: string): Boolean;
@@ -894,9 +1034,12 @@ var
   slLines: TStringList;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FBOM := '';
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   If Not (self is TMemIniFile) then
     StripQuotes:=True;
   inherited Create(AFileName,AEscapeLineFeeds);
@@ -904,19 +1047,27 @@ begin
   slLines := TStringList.Create;
   try
 <<<<<<< HEAD
+<<<<<<< HEAD
     if FileExists(FFileName) then
 =======
     if FileExists(FFileName) then 
 >>>>>>> graemeg/fixes_2_2
+=======
+    if FileExists(FFileName) then 
+>>>>>>> origin/fixes_2_2
       begin
       // read the ini file values
       slLines.LoadFromFile(FFileName);
       FillSectionList(slLines);
 <<<<<<< HEAD
+<<<<<<< HEAD
       end
 =======
       end 
 >>>>>>> graemeg/fixes_2_2
+=======
+      end 
+>>>>>>> origin/fixes_2_2
   finally
     slLines.Free;
   end;
@@ -927,9 +1078,12 @@ var
   slLines: TStringList;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FBOM := '';
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   inherited Create('',AEscapeLineFeeds);
   FStream := AStream;
   slLines := TStringList.Create;
@@ -946,6 +1100,7 @@ destructor TIniFile.destroy;
 begin
   If FDirty and FCacheUpdates then
 <<<<<<< HEAD
+<<<<<<< HEAD
     try
       UpdateFile;
     except
@@ -954,16 +1109,22 @@ begin
 =======
     UpdateFile;
 >>>>>>> graemeg/fixes_2_2
+=======
+    UpdateFile;
+>>>>>>> origin/fixes_2_2
   inherited destroy;
 end;
 
 procedure TIniFile.FillSectionList(AStrings: TStrings);
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
   Utf8Bom    = #$EF#$BB#$BF;        { Die einzelnen BOM Typen }
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   i,j: integer;
   sLine, sIdent, sValue: string;
@@ -999,6 +1160,7 @@ begin
   if FEscapeLineFeeds then
     RemoveBackslashes;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (AStrings.Count > 0) and (copy(AStrings.Strings[0],1,Length(Utf8Bom)) = Utf8Bom) then
   begin
     FBOM := Utf8Bom;
@@ -1006,6 +1168,8 @@ begin
   end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   for i := 0 to AStrings.Count-1 do begin
     sLine := Trim(AStrings[i]);
     if sLine > '' then
@@ -1038,7 +1202,10 @@ begin
              sIdent:=Trim(Copy(sLine, 1,  j - 1));
              sValue:=Trim(Copy(sLine, j + 1, Length(sLine) - j));
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
              If StripQuotes then
                begin
                J:=Length(sValue);
@@ -1048,7 +1215,10 @@ begin
                If (J>1) and ((sValue[1] in ['"','''']) and (sValue[J]=sValue[1])) then
                  sValue:=Copy(sValue,2,J-2);
                end;  
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            end;
         end;
         oSection.KeyList.Add(TIniFileKey.Create(sIdent, sValue));
@@ -1062,15 +1232,19 @@ var
   oSection: TIniFileSection;
   oKey: TIniFileKey;
 <<<<<<< HEAD
+<<<<<<< HEAD
   J: integer;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   Result := Default;
   oSection := FSectionList.SectionByName(Section,CaseSensitive);
   if oSection <> nil then begin
     oKey := oSection.KeyList.KeyByName(Ident,CaseSensitive);
     if oKey <> nil then
+<<<<<<< HEAD
 <<<<<<< HEAD
       If StripQuotes then
       begin
@@ -1096,6 +1270,10 @@ begin
       Result := oKey.Value;
   end;
 >>>>>>> graemeg/fixes_2_2
+=======
+      Result := oKey.Value;
+  end;
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TIniFile.WriteString(const Section, Ident, Value: String);
@@ -1103,6 +1281,7 @@ var
   oSection: TIniFileSection;
   oKey: TIniFileKey;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   if (Section > '') and (Ident > '') then 
     begin
@@ -1123,6 +1302,8 @@ begin
       end;
     end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if (Section > '') and (Ident > '') then begin
     // update or add key
     oSection := FSectionList.SectionByName(Section,CaseSensitive);
@@ -1146,7 +1327,10 @@ begin
       end;
     end;
   end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   MaybeUpdateFile;
 end;
 
@@ -1211,10 +1395,14 @@ var
   oSection: TIniFileSection;
   s: string;
 <<<<<<< HEAD
+<<<<<<< HEAD
   i,J: integer;
 =======
   i: integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+  i: integer;
+>>>>>>> origin/fixes_2_2
 begin
   Strings.BeginUpdate;
   try
@@ -1222,6 +1410,7 @@ begin
     oSection := FSectionList.SectionByName(Section,CaseSensitive);
     if oSection <> nil then with oSection.KeyList do
       for i := 0 to Count-1 do begin
+<<<<<<< HEAD
 <<<<<<< HEAD
         s := Items[i].Value;
       If StripQuotes then
@@ -1238,6 +1427,9 @@ begin
 =======
         s := Items[i].Ident+Separator+Items[i].Value;
 >>>>>>> graemeg/fixes_2_2
+=======
+        s := Items[i].Ident+Separator+Items[i].Value;
+>>>>>>> origin/fixes_2_2
         Strings.Add(s);
       end;
   finally
@@ -1279,6 +1471,7 @@ var
 begin
   oSection := FSectionList.SectionByName(Section,CaseSensitive);
 <<<<<<< HEAD
+<<<<<<< HEAD
   if oSection <> nil then
     begin
     oKey := oSection.KeyList.KeyByName(Ident,CaseSensitive);
@@ -1287,6 +1480,8 @@ begin
       oSection.KeyList.Delete(oSection.KeyList.IndexOf(oKey));
       oKey.Free;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if oSection <> nil then 
     begin
     oKey := oSection.KeyList.KeyByName(Ident,CaseSensitive);
@@ -1295,7 +1490,10 @@ begin
       oSection.KeyList.Delete(oSection.KeyList.IndexOf(oKey));
       oKey.Free;
       MaybeDeleteSection(oSection);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       MaybeUpdateFile;
       end;
     end;
@@ -1306,10 +1504,13 @@ var
   slLines: TStringList;
   i, j: integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   D : String;
   
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   slLines := TStringList.Create;
   try
@@ -1332,6 +1533,7 @@ begin
           slLines.Add('');
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     if slLines.Count > 0 then
       slLines.Strings[0] := FBOM + slLines.Strings[0];
     if FFileName > '' then
@@ -1350,12 +1552,17 @@ begin
     FillSectionList(slLines);
     FDirty := false;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     if FFileName > '' then
       slLines.SaveToFile(FFileName)
     else if FStream <> nil then
       slLines.SaveToStream(FStream);
     FillSectionList(slLines);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   finally
     slLines.Free;
   end;

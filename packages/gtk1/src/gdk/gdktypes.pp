@@ -9,9 +9,13 @@
 
    type
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      PPPChar   = ^PPchar;
 >>>>>>> graemeg/fixes_2_2
+=======
+     PPPChar   = ^PPchar;
+>>>>>>> origin/fixes_2_2
      PPguchar  = Pguchar;
      PPgchar   = ^Pgchar;
      PPPgchar  = ^PPgchar;

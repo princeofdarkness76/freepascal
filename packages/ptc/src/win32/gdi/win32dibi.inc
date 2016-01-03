@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -57,6 +58,8 @@ begin
   with FBitmapInfo^.bmiHeader do
   begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {TODO: create DIBs with the same color depth as the desktop}
 
@@ -68,7 +71,10 @@ Begin
   FillChar(FBitmapInfo^.bmiHeader, SizeOf(BITMAPINFOHEADER), 0);
   With FBitmapInfo^.bmiHeader Do
   Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     biSize := SizeOf(BITMAPINFOHEADER);
     biWidth := AWidth;
     biHeight := -AHeight;
@@ -81,10 +87,14 @@ Begin
     biClrUsed := 0;
     biClrImportant := 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
 =======
   End;
 >>>>>>> graemeg/fixes_2_2
+=======
+  End;
+>>>>>>> origin/fixes_2_2
 
   PDWord(@FBitmapInfo^.bmiColors)[0] := $FF0000;
   PDWord(@FBitmapInfo^.bmiColors)[1] := $00FF00;
@@ -97,6 +107,7 @@ Begin
 
   FPixels := GetMem(AWidth * AHeight * 4);
   FillChar(FPixels^, AWidth * AHeight * 4, 0);
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -120,6 +131,8 @@ begin
   inherited Destroy;
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Destructor TWin32DIB.Destroy;
@@ -130,4 +143,7 @@ Begin
   FFormat.Free;
   Inherited Destroy;
 End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

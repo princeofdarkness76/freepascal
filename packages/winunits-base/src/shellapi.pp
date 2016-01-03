@@ -23,12 +23,15 @@
 {$mode objfpc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_OS_UNICODE}
   {$define UNICODE}
 {$endif}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Unit ShellApi;
 
 //+-------------------------------------------------------------------------
@@ -52,11 +55,14 @@ Uses Windows, ActiveX;
     Copyright (c) Microsoft Corporation. All rights reserved.             }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
    shell32 =  'shell32.dll';
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Const 
     SHGDN_NORMAL             = $0000;  // default (display purpose)
     SHGDN_INFOLDER           = $0001;  // displayed under a folder (relative)
@@ -1071,6 +1077,7 @@ Type
 
 {unicode}
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function DragQueryFileA(arg1 : HDROP; arg2 : UINT;arg3 : LPSTR ; arg4 : UINT):UINT;external shell32 name 'DragQueryFileA';
 Function DragQueryFileW(arg1 : HDROP; arg2 : UINT;arg3 : LPWSTR; arg4 : UINT):UINT;external shell32 name 'DragQueryFileW';
 Function DragQueryFile(arg1 : HDROP; arg2 : UINT;arg3 : LPSTR ; arg4 : UINT):UINT;external shell32 name 'DragQueryFileA';
@@ -1110,6 +1117,8 @@ Function ExtractIconW(hInst: HINST; lpszExeFileName :LPCWSTR ; nIconIndex : UINT
 Function ExtractIcon(hInst: HINST; lpszExeFileName :LPCSTR ; nIconIndex : UINT):HICON;external shell32 name 'ExtractIconA';
 Function ExtractIcon(hInst: HINST; lpszExeFileName :LPCWSTR ; nIconIndex : UINT):HICON;external shell32 name 'ExtractIconW';
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function DragQueryFileA(arg1 : HDROP; arg2 : UINT;arg3 : LPSTR ; arg4 : UINT):UINT;external 'shell32.dll' name 'DragQueryFileA';
 Function DragQueryFileW(arg1 : HDROP; arg2 : UINT;arg3 : LPWSTR; arg4 : UINT):UINT;external 'shell32.dll' name 'DragQueryFileW';
 Function DragQueryFile(arg1 : HDROP; arg2 : UINT;arg3 : LPSTR ; arg4 : UINT):UINT;external 'shell32.dll' name 'DragQueryFileA';
@@ -1148,7 +1157,10 @@ Function ExtractIconW(hInst: HINST; lpszExeFileName :LPCWSTR ; nIconIndex : UINT
 
 Function ExtractIcon(hInst: HINST; lpszExeFileName :LPCSTR ; nIconIndex : UINT):HICON;external 'shell32.dll' name 'ExtractIconA';
 Function ExtractIcon(hInst: HINST; lpszExeFileName :LPCWSTR ; nIconIndex : UINT):HICON;external 'shell32.dll' name 'ExtractIconW';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 // if(WINVER >= 0x0400)
 
@@ -1233,30 +1245,41 @@ Type
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function SHAppBarMessage(dwMessage : DWORD; pData : pAPPBARDATA):UINT_PTR;external shell32 name 'SHAppBarMessage';
 =======
 Function SHAppBarMessage(dwMessage : DWORD; pData : pAPPBARDATA):UINT_PTR;external 'shell32.dll' name 'SHAppBarMessage';
 >>>>>>> graemeg/fixes_2_2
+=======
+Function SHAppBarMessage(dwMessage : DWORD; pData : pAPPBARDATA):UINT_PTR;external 'shell32.dll' name 'SHAppBarMessage';
+>>>>>>> origin/fixes_2_2
 
     //
     //  EndAppBar
     //
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function   DoEnvironmentSubstA(szString: LPSTR; cchString:UINT):DWORD;external shell32 name 'DoEnvironmentSubstA';
 Function   DoEnvironmentSubstW(szString: LPWSTR; cchString:UINT):DWORD;external shell32 name 'DoEnvironmentSubstW';
 Function   DoEnvironmentSubst(szString: LPSTR; cchString:UINT):DWORD;external shell32 name 'DoEnvironmentSubstA';
 Function   DoEnvironmentSubst(szString: LPWSTR; cchString:UINT):DWORD;external shell32 name 'DoEnvironmentSubstW';
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function   DoEnvironmentSubstA(szString: LPSTR; cchString:UINT):DWORD;external 'shell32.dll' name 'DoEnvironmentSubstA';
 Function   DoEnvironmentSubstW(szString: LPWSTR; cchString:UINT):DWORD;external 'shell32.dll' name 'DoEnvironmentSubstW';
 Function   DoEnvironmentSubst(szString: LPSTR; cchString:UINT):DWORD;external 'shell32.dll' name 'DoEnvironmentSubstA';
 Function   DoEnvironmentSubst(szString: LPWSTR; cchString:UINT):DWORD;external 'shell32.dll' name 'DoEnvironmentSubstW';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {Macro}
 function EIRESID(x : longint) : longint;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function ExtractIconExA(lpszFile : LPCSTR; nIconIndex:Longint; phiconLarge:pHICON; phiconSmall:pHIcon; nIcons:UINT):UINT;   external shell32 name 'ExtractIconExA';
 Function ExtractIconExW(lpszFile : LPCWSTR; nIconIndex:Longint; phiconLarge:pHICON; phiconSmall:pHIcon; nIcons:UINT):UINT;  external shell32 name 'ExtractIconExW';
@@ -1268,6 +1291,8 @@ Function ExtractIconEx (lpszFile : LPCWSTR; nIconIndex:Longint; phiconLarge:pHIC
 Function ExtractIconEx (lpszFile : LPCSTR; nIconIndex:Longint; var phiconLarge:HICON;var phiconSmall:HIcon; nIcons:UINT):UINT; external shell32 name 'ExtractIconExA';
 Function ExtractIconEx (lpszFile : LPCWSTR; nIconIndex:Longint; var phiconLarge:HICON;var phiconSmall:HIcon; nIcons:UINT):UINT; external shell32 name 'ExtractIconExW';
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function ExtractIconExA(lpszFile : LPCSTR; nIconIndex:Longint; phiconLarge:pHICON; phiconSmall:pHIcon; nIcons:UINT):UINT;   external 'shell32.dll' name 'ExtractIconExA';
 Function ExtractIconExW(lpszFile : LPCWSTR; nIconIndex:Longint; phiconLarge:pHICON; phiconSmall:pHIcon; nIcons:UINT):UINT;  external 'shell32.dll' name 'ExtractIconExW';
 Function ExtractIconExA(lpszFile : LPCSTR; nIconIndex:Longint; var phiconLarge:HICON;var phiconSmall:HIcon; nIcons:UINT):UINT;   external 'shell32.dll' name 'ExtractIconExA';
@@ -1277,7 +1302,10 @@ Function ExtractIconEx (lpszFile : LPCSTR; nIconIndex:Longint; phiconLarge:pHICO
 Function ExtractIconEx (lpszFile : LPCWSTR; nIconIndex:Longint; phiconLarge:pHICON; phiconSmall:pHIcon; nIcons:UINT):UINT; external 'shell32.dll' name 'ExtractIconExW';
 Function ExtractIconEx (lpszFile : LPCSTR; nIconIndex:Longint; var phiconLarge:HICON;var phiconSmall:HIcon; nIcons:UINT):UINT; external 'shell32.dll' name 'ExtractIconExA';
 Function ExtractIconEx (lpszFile : LPCWSTR; nIconIndex:Longint; var phiconLarge:HICON;var phiconSmall:HIcon; nIcons:UINT):UINT; external 'shell32.dll' name 'ExtractIconExW';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 //
 // Shell File Operations
@@ -1384,6 +1412,7 @@ Type
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function SHFileOperationA(lpFileOp:LPSHFILEOPSTRUCTA ):Longint;external shell32 name 'SHFileOperationA';
 
 Function SHFileOperationW(lpFileOp:LPSHFILEOPSTRUCTW ):Longint;external shell32 name 'SHFileOperationW';
@@ -1394,6 +1423,8 @@ Function SHFileOperation(lpFileOp:LPSHFILEOPSTRUCTW ):Longint;external shell32 n
 
 Procedure SHFreeNameMappings(hNameMappings : THandle);external shell32 name 'SHFreeNameMappings';
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function SHFileOperationA(lpFileOp:LPSHFILEOPSTRUCTA ):Longint;external 'shell32.dll' name 'SHFileOperationA';
 
 Function SHFileOperationW(lpFileOp:LPSHFILEOPSTRUCTW ):Longint;external 'shell32.dll' name 'SHFileOperationW';
@@ -1403,7 +1434,10 @@ Function SHFileOperation(var lpFileOp:SHFILEOPSTRUCTA ):Longint;external 'shell3
 Function SHFileOperation(lpFileOp:LPSHFILEOPSTRUCTW ):Longint;external 'shell32.dll' name 'SHFileOperationW';
 
 Procedure SHFreeNameMappings(hNameMappings : THandle);external 'shell32.dll' name 'SHFreeNameMappings';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 Type
 
@@ -1559,6 +1593,7 @@ Type
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function ShellExecuteExA(lpExecInfo: LPSHELLEXECUTEINFOA):Bool;external shell32 name 'ShellExecuteExA';
 Function ShellExecuteExW(lpExecInfo: LPSHELLEXECUTEINFOW):Bool;external shell32 name 'ShellExecuteExW';
 Function ShellExecuteEx(lpExecInfo: LPSHELLEXECUTEINFOA):Bool;external shell32 name 'ShellExecuteExA';
@@ -1569,6 +1604,8 @@ Procedure WinExecErrorW(HWND : hwnd; error : Longint;lpstrFileName:LPCWSTR; lpst
 Procedure WinExecError(HWND : hwnd; error : Longint;lpstrFileName:LPCSTR; lpstrTitle:LPCSTR); external shell32 name 'WinExecErrorA';
 Procedure WinExecError(HWND : hwnd; error : Longint;lpstrFileName:LPCWSTR; lpstrTitle:LPCWSTR); external shell32 name 'WinExecErrorW';
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function ShellExecuteExA(lpExecInfo: LPSHELLEXECUTEINFOA):Bool;external 'shell32.dll' name 'ShellExecuteExA';
 Function ShellExecuteExW(lpExecInfo: LPSHELLEXECUTEINFOW):Bool;external 'shell32.dll' name 'ShellExecuteExW';
 Function ShellExecuteEx(lpExecInfo: LPSHELLEXECUTEINFOA):Bool;external 'shell32.dll' name 'ShellExecuteExA';
@@ -1578,7 +1615,10 @@ Procedure WinExecErrorA(HWND : hwnd; error : Longint;lpstrFileName:LPCSTR; lpstr
 Procedure WinExecErrorW(HWND : hwnd; error : Longint;lpstrFileName:LPCWSTR; lpstrTitle:LPCWSTR); external 'shell32.dll' name 'WinExecErrorW';
 Procedure WinExecError(HWND : hwnd; error : Longint;lpstrFileName:LPCSTR; lpstrTitle:LPCSTR); external 'shell32.dll' name 'WinExecErrorA';
 Procedure WinExecError(HWND : hwnd; error : Longint;lpstrFileName:LPCWSTR; lpstrTitle:LPCWSTR); external 'shell32.dll' name 'WinExecErrorW';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 
@@ -1602,10 +1642,14 @@ type
      PSHCREATEPROCESSINFOW      = ^_SHCREATEPROCESSINFOW;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function SHCreateProcessAsUserW(pscpi : PSHCREATEPROCESSINFOW):Bool;external shell32 name 'SHCreateProcessAsUserW';
 =======
 Function SHCreateProcessAsUserW(pscpi : PSHCREATEPROCESSINFOW):Bool;external 'shell32.dll' name 'SHCreateProcessAsUserW';
 >>>>>>> graemeg/fixes_2_2
+=======
+Function SHCreateProcessAsUserW(pscpi : PSHCREATEPROCESSINFOW):Bool;external 'shell32.dll' name 'SHCreateProcessAsUserW';
+>>>>>>> origin/fixes_2_2
 
     //
     //  End ShellExecuteEx and family }
@@ -1635,6 +1679,7 @@ const
        SHERB_NOSOUND            = $00000004;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SHQueryRecycleBinA(pszRootPath:LPCSTR; pSHQueryRBInfo:LPSHQUERYRBINFO):HRESULT;external shell32 name 'SHQueryRecycleBinA';
 function SHQueryRecycleBinW(pszRootPath:LPCWSTR; pSHQueryRBInfo:LPSHQUERYRBINFO):HRESULT;external shell32 name 'SHQueryRecycleBinW';
 function SHQueryRecycleBin(pszRootPath:LPCSTR; pSHQueryRBInfo:LPSHQUERYRBINFO):HRESULT;external shell32 name 'SHQueryRecycleBinA';
@@ -1645,6 +1690,8 @@ function SHEmptyRecycleBinW(hwnd:HWND; pszRootPath:LPCWSTR; dwFlags:DWORD):HRESU
 function SHEmptyRecycleBin(hwnd:HWND; pszRootPath:LPCSTR; dwFlags:DWORD):HRESULT;external shell32 name 'SHEmptyRecycleBinA';
 function SHEmptyRecycleBin(hwnd:HWND; pszRootPath:LPCWSTR; dwFlags:DWORD):HRESULT;external shell32 name 'SHEmptyRecycleBinW';
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function SHQueryRecycleBinA(pszRootPath:LPCSTR; pSHQueryRBInfo:LPSHQUERYRBINFO):HRESULT;external 'shell32.dll' name 'SHQueryRecycleBinA';
 function SHQueryRecycleBinW(pszRootPath:LPCWSTR; pSHQueryRBInfo:LPSHQUERYRBINFO):HRESULT;external 'shell32.dll' name 'SHQueryRecycleBinW';
 function SHQueryRecycleBin(pszRootPath:LPCSTR; pSHQueryRBInfo:LPSHQUERYRBINFO):HRESULT;external 'shell32.dll' name 'SHQueryRecycleBinA';
@@ -1654,7 +1701,10 @@ function SHEmptyRecycleBinA(hwnd:HWND; pszRootPath:LPCSTR; dwFlags:DWORD):HRESUL
 function SHEmptyRecycleBinW(hwnd:HWND; pszRootPath:LPCWSTR; dwFlags:DWORD):HRESULT;external 'shell32.dll' name 'SHEmptyRecycleBinW';
 function SHEmptyRecycleBin(hwnd:HWND; pszRootPath:LPCSTR; dwFlags:DWORD):HRESULT;external 'shell32.dll' name 'SHEmptyRecycleBinA';
 function SHEmptyRecycleBin(hwnd:HWND; pszRootPath:LPCWSTR; dwFlags:DWORD):HRESULT;external 'shell32.dll' name 'SHEmptyRecycleBinW';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 //
 // end of RecycleBin
@@ -1807,18 +1857,24 @@ Type
        NIIF_NOSOUND             = $00000010;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function Shell_NotifyIconA( dwMessage: Dword;lpData: PNOTIFYICONDATAA):Bool;external shell32 name 'Shell_NotifyIconA';
 Function Shell_NotifyIconW( dwMessage: Dword;lpData: PNOTIFYICONDATAW):Bool;external shell32 name 'Shell_NotifyIconW';
 
 Function Shell_NotifyIcon( dwMessage: Dword;lpData: PNOTIFYICONDATAA):Bool;external shell32 name 'Shell_NotifyIconA';
 Function Shell_NotifyIcon( dwMessage: Dword;lpData: PNOTIFYICONDATAW):Bool;external shell32 name 'Shell_NotifyIconW';
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function Shell_NotifyIconA( dwMessage: Dword;lpData: PNOTIFYICONDATAA):Bool;external 'shell32.dll' name 'Shell_NotifyIconA';
 Function Shell_NotifyIconW( dwMessage: Dword;lpData: PNOTIFYICONDATAW):Bool;external 'shell32.dll' name 'Shell_NotifyIconW';
 
 Function Shell_NotifyIcon( dwMessage: Dword;lpData: PNOTIFYICONDATAA):Bool;external 'shell32.dll' name 'Shell_NotifyIconA';
 Function Shell_NotifyIcon( dwMessage: Dword;lpData: PNOTIFYICONDATAW):Bool;external 'shell32.dll' name 'Shell_NotifyIconW';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 //
 // End Tray Notification Icons
 //
@@ -1908,6 +1964,7 @@ Function Shell_NotifyIcon( dwMessage: Dword;lpData: PNOTIFYICONDATAW):Bool;exter
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function SHGetFileInfoA(pszPath: LPCSTR; dwFileAttributes : DWORD; psfi: pSHFILEINFOA; cbFileInfo,UFlags: UINT):DWORD_PTR;external shell32 name 'SHGetFileInfoA';
 Function SHGetFileInfoW(pszPath: LPCWSTR; dwFileAttributes : DWORD; psfi: pSHFILEINFOW; cbFileInfo,UFlags: UINT):DWORD_PTR;external shell32 name 'SHGetFileInfoW';
 Function SHGetFileInfo(pszPath: LPCSTR; dwFileAttributes : DWORD; psfi: pSHFILEINFOA; cbFileInfo,UFlags: UINT):DWORD_PTR;external shell32 name 'SHGetFileInfoA';
@@ -1955,6 +2012,8 @@ Function SHGetNewLinkInfoW(pszLinkTo:LPCWSTR;pszDir:LPCWSTR; pszName:LPWSTR; pfM
 Function SHGetNewLinkInfo (pszLinkTo:LPCSTR;pszDir:LPCSTR; pszName:LPSTR; pfMustCopy: pBool; uFlags:UINT):Bool;external shell32 name 'SHGetNewLinkInfoA';
 Function SHGetNewLinkInfo (pszLinkTo:LPCWSTR;pszDir:LPCWSTR; pszName:LPWSTR; pfMustCopy: pBool; uFlags:UINT):Bool;external shell32 name 'SHGetNewLinkInfoW';
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function SHGetFileInfoA(pszPath: LPCSTR; dwFileAttributes : DWORD; psfi: pSHFILEINFOA; cbFileInfo,UFlags: UINT):DWORD;external 'shell32.dll' name 'SHGetFileInfoA';
 Function SHGetFileInfoW(pszPath: LPCWSTR; dwFileAttributes : DWORD; psfi: pSHFILEINFOW; cbFileInfo,UFlags: UINT):DWORD;external 'shell32.dll' name 'SHGetFileInfoW';
 Function SHGetFileInfo(pszPath: LPCSTR; dwFileAttributes : DWORD; psfi: pSHFILEINFOA; cbFileInfo,UFlags: UINT):DWORD;external 'shell32.dll' name 'SHGetFileInfoA';
@@ -1976,7 +2035,10 @@ Function SHGetNewLinkInfoW(pszLinkTo:LPCWSTR;pszDir:LPCWSTR; pszName:LPWSTR; pfM
 
 Function SHGetNewLinkInfo (pszLinkTo:LPCSTR;pszDir:LPCSTR; pszName:LPSTR; pfMustCopy: pBool; uFlags:UINT):Bool;external 'shell32.dll' name 'SHGetNewLinkInfoA';
 Function SHGetNewLinkInfo (pszLinkTo:LPCWSTR;pszDir:LPCWSTR; pszName:LPWSTR; pfMustCopy: pBool; uFlags:UINT):Bool;external 'shell32.dll' name 'SHGetNewLinkInfoW';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     const
        SHGNLI_PIDL              = $000000001;    { pszLinkTo is a pidl }
@@ -2003,16 +2065,22 @@ Function SHGetNewLinkInfo (pszLinkTo:LPCWSTR;pszDir:LPCWSTR; pszName:LPWSTR; pfM
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function SHInvokePrinterCommandA(HWND: hwnd; uAction:UINT; lpBuf1: LPCSTR; lpBuf2: LPCSTR; fModal:Bool):Bool;external shell32 name 'SHInvokePrinterCommandA';
 Function SHInvokePrinterCommandW(HWND: hwnd; uAction:UINT; lpBuf1: LPCWSTR; lpBuf2: LPCWSTR; fModal:Bool):Bool;external shell32 name 'SHInvokePrinterCommandW';
 Function SHInvokePrinterCommand(HWND: hwnd; uAction:UINT; lpBuf1: LPCSTR; lpBuf2: LPCSTR; fModal:Bool):Bool;external shell32 name 'SHInvokePrinterCommandA';
 Function SHInvokePrinterCommand(HWND: hwnd; uAction:UINT; lpBuf1: LPCWSTR; lpBuf2: LPCWSTR; fModal:Bool):Bool;external shell32 name 'SHInvokePrinterCommandW';
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function SHInvokePrinterCommandA(HWND: hwnd; uAction:UINT; lpBuf1: LPCSTR; lpBuf2: LPCSTR; fModal:Bool):Bool;external 'shell32.dll' name 'SHInvokePrinterCommandA';
 Function SHInvokePrinterCommandW(HWND: hwnd; uAction:UINT; lpBuf1: LPCWSTR; lpBuf2: LPCWSTR; fModal:Bool):Bool;external 'shell32.dll' name 'SHInvokePrinterCommandW';
 Function SHInvokePrinterCommand(HWND: hwnd; uAction:UINT; lpBuf1: LPCSTR; lpBuf2: LPCSTR; fModal:Bool):Bool;external 'shell32.dll' name 'SHInvokePrinterCommandA';
 Function SHInvokePrinterCommand(HWND: hwnd; uAction:UINT; lpBuf1: LPCWSTR; lpBuf2: LPCWSTR; fModal:Bool):Bool;external 'shell32.dll' name 'SHInvokePrinterCommandW';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 // WINVER >= 0x0400
 //if (_WIN32_WINNT >= 0x0500) || (_WIN32_WINDOWS >= 0x0500)
@@ -2034,6 +2102,7 @@ Function SHInvokePrinterCommand(HWND: hwnd; uAction:UINT; lpBuf1: LPCWSTR; lpBuf
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SHLoadNonloadedIconOverlayIdentifiers:HResult; external shell32 name 'SHLoadNonloadedIconOverlayIdentifiers';
 =======
 function SHLoadNonloadedIconOverlayIdentifiers:HResult; external shell32 name 'SHInvokePrinterCommandW';
@@ -2050,6 +2119,9 @@ function SHLoadNonloadedIconOverlayIdentifiers:HResult; external shell32 name 'S
 =======
 function SHLoadNonloadedIconOverlayIdentifiers:HResult; external 'shell32.dll' name 'SHInvokePrinterCommandW';
 >>>>>>> graemeg/fixes_2_2
+=======
+function SHLoadNonloadedIconOverlayIdentifiers:HResult; external 'shell32.dll' name 'SHInvokePrinterCommandW';
+>>>>>>> origin/fixes_2_2
 
     //
     // The SHIsFileAvailableOffline API determines whether a file
@@ -2071,10 +2143,14 @@ function SHLoadNonloadedIconOverlayIdentifiers:HResult; external 'shell32.dll' n
     //     indicating "open in both places." This is common when the server is online.
     //
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SHIsFileAvailableOffline(pwszPath:LPCWSTR; pdwStatus:LPDWORD):HRESULT; external shell32 name 'SHIsFileAvailableOffline';
 =======
 function SHIsFileAvailableOffline(pwszPath:LPCWSTR; pdwStatus:LPDWORD):HRESULT; external 'shell32.dll' name 'SHIsFileAvailableOffline';
 >>>>>>> graemeg/fixes_2_2
+=======
+function SHIsFileAvailableOffline(pwszPath:LPCWSTR; pdwStatus:LPDWORD):HRESULT; external 'shell32.dll' name 'SHIsFileAvailableOffline';
+>>>>>>> origin/fixes_2_2
 
 const
        OFFLINE_STATUS_LOCAL         = $0001;    { If open, it's open locally }
@@ -2085,6 +2161,7 @@ const
     {  sets the specified path to use the string resource }
     {  as the UI instead of the file system name }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function SHSetLocalizedName(pszPath:LPWSTR; pszResModule:LPCWSTR; idsRes:longint):HRESULT;external shell32 name 'SHSetLocalizedName';
 
@@ -2105,6 +2182,8 @@ function SHSetUnreadMailCountW(pszMailAddress:LPCWSTR; dwCount:DWORD; pszShellEx
 function SHSetUnreadMailCount(pszMailAddress:LPCSTR; dwCount:DWORD; pszShellExecuteCommand:LPCSTR):HRESULT;external shell32 name 'SHSetUnreadMailCountA';
 function SHSetUnreadMailCount(pszMailAddress:LPCWSTR; dwCount:DWORD; pszShellExecuteCommand:LPCWSTR):HRESULT;external shell32 name 'SHSetUnreadMailCountW';
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function SHSetLocalizedName(pszPath:LPWSTR; pszResModule:LPCWSTR; idsRes:longint):HRESULT;external 'shell32.dll' name 'SHSetLocalizedName';
 
 //if         _WIN32_IE >= 0x0600}
@@ -2123,16 +2202,23 @@ function SHSetUnreadMailCountA(pszMailAddress:LPCSTR; dwCount:DWORD; pszShellExe
 function SHSetUnreadMailCountW(pszMailAddress:LPCWSTR; dwCount:DWORD; pszShellExecuteCommand:LPCWSTR):HRESULT;external 'shell32.dll' name 'SHSetUnreadMailCountW';
 function SHSetUnreadMailCount(pszMailAddress:LPCSTR; dwCount:DWORD; pszShellExecuteCommand:LPCSTR):HRESULT;external 'shell32.dll' name 'SHSetUnreadMailCountA';
 function SHSetUnreadMailCount(pszMailAddress:LPCWSTR; dwCount:DWORD; pszShellExecuteCommand:LPCWSTR):HRESULT;external 'shell32.dll' name 'SHSetUnreadMailCountW';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 //  _WIN32_IE >= 0x0600      }
 //  if         _WIN32_IE >= 0x0600}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SHGetImageList(iImageList:longint;CONST riid:TIID; ppvObj:Ppointer):HRESULT;external shell32 name 'SHGetImageList';
 =======
 function SHGetImageList(iImageList:longint;CONST riid:TIID; ppvObj:Ppointer):HRESULT;external 'shell32.dll' name 'SHGetImageList';
 >>>>>>> graemeg/fixes_2_2
+=======
+function SHGetImageList(iImageList:longint;CONST riid:TIID; ppvObj:Ppointer):HRESULT;external 'shell32.dll' name 'SHGetImageList';
+>>>>>>> origin/fixes_2_2
 
 Const
        SHIL_LARGE                   = 0;    { normally 32x32 }

@@ -688,6 +688,7 @@ implementation
           by thev tblarray below }
         systemunit.insert(ttypesym.create('$pvmt',pvmttype));
 <<<<<<< HEAD
+<<<<<<< HEAD
         addfield(hrecst,tfieldvarsym.create('$length',vs_value,ptrsinttype,[]));
         addfield(hrecst,tfieldvarsym.create('$mlength',vs_value,ptrsinttype,[]));
         addfield(hrecst,tfieldvarsym.create('$parent',vs_value,pvmttype,[]));
@@ -696,16 +697,25 @@ implementation
         hrecst.insertfield(tfieldvarsym.create('$mlength',vs_value,ptrsinttype,[]));
         hrecst.insertfield(tfieldvarsym.create('$parent',vs_value,pvmttype,[]));
 >>>>>>> graemeg/fixes_2_2
+=======
+        hrecst.insertfield(tfieldvarsym.create('$length',vs_value,ptrsinttype,[]));
+        hrecst.insertfield(tfieldvarsym.create('$mlength',vs_value,ptrsinttype,[]));
+        hrecst.insertfield(tfieldvarsym.create('$parent',vs_value,pvmttype,[]));
+>>>>>>> origin/fixes_2_2
         { it seems vmttype is used both for TP objects and Delphi classes,
           so the next entry could either be the first virtual method (vm1)
           (object) or the class name (class). We can't easily create separate
           vtable formats for both, as gdb is hard coded to search for
           __vtbl_ptr_type in all cases (JM) }
 <<<<<<< HEAD
+<<<<<<< HEAD
         addfield(hrecst,tfieldvarsym.create('$vm1_or_classname',vs_value,tpointerdef.create(cshortstringtype),[]));
 =======
         hrecst.insertfield(tfieldvarsym.create('$vm1_or_classname',vs_value,tpointerdef.create(cshortstringtype),[]));
 >>>>>>> graemeg/fixes_2_2
+=======
+        hrecst.insertfield(tfieldvarsym.create('$vm1_or_classname',vs_value,tpointerdef.create(cshortstringtype),[]));
+>>>>>>> origin/fixes_2_2
         vmtarraytype:=tarraydef.create(0,0,s32inttype);
         tarraydef(vmtarraytype).elementdef:=voidpointertype;
         addfield(hrecst,tfieldvarsym.create('$__pfn',vs_value,vmtarraytype,[]));
@@ -851,7 +861,10 @@ implementation
         ptruinttype:=u32inttype;
         ptrsinttype:=s32inttype;
 {$endif cpu64bit}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         set_current_module(oldcurrentmodule);
       end;
 
@@ -998,6 +1011,7 @@ implementation
         aiclass[ait_tempalloc]:=tai_tempalloc;
         aiclass[ait_marker]:=tai_marker;
 <<<<<<< HEAD
+<<<<<<< HEAD
         aiclass[ait_seh_directive]:=tai_seh_directive;
 {$ifdef JVM}
         aiclass[ait_jvar]:=tai_jvar;
@@ -1005,6 +1019,8 @@ implementation
 {$endif JVM}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 end.

@@ -18,10 +18,14 @@ unit FPCanvas;
 interface
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses Math, sysutils, classes, FPImage, Types;
 =======
 uses Math, sysutils, classes, FPImage;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses Math, sysutils, classes, FPImage;
+>>>>>>> origin/fixes_2_2
 
 const
   PatternBitCount = sizeof(longword) * 8;

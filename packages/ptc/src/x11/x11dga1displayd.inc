@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -166,6 +167,8 @@ type
     procedure SetMouseGrab(AGrabMouse: Boolean); override;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$IFDEF ENABLE_X11_EXTENSION_XF86DGA1}
 
 Type
@@ -209,6 +212,9 @@ Type
     Function IsFullScreen : Boolean; Override;
     Procedure SetCursor(AVisible : Boolean); Override;
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ENDIF ENABLE_X11_EXTENSION_XF86DGA1}

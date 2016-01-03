@@ -9,6 +9,7 @@ Ported to FPC by Nikolay Nikolov (nickysn@users.sourceforge.net)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 program Lights;
 
 {$MODE objfpc}
@@ -84,6 +85,8 @@ begin
 
       format := TPTCFormatFactory.CreateNew(8);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Program Lights;
 
 {$MODE objfpc}
@@ -138,12 +141,16 @@ Begin
       console := TPTCConsole.Create;
 
       format := TPTCFormat.Create(8);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
       { open console }
       console.open('Lights demo', 320, 200, format);
 
       { create surface }
+<<<<<<< HEAD
 <<<<<<< HEAD
       surface := TPTCSurfaceFactory.CreateNew(320, 200, format);
 
@@ -198,6 +205,8 @@ Begin
 >>>>>>> origin/cpstrnew
       end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       surface := TPTCSurface.Create(320, 200, format);
 
       { setup intensity table }
@@ -221,7 +230,10 @@ Begin
       Finally
         palette.unlock;
       End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
       { set console palette }
       console.palette(palette);
@@ -265,12 +277,17 @@ Begin
 
       { main loop }
 <<<<<<< HEAD
+<<<<<<< HEAD
       while not console.KeyPressed do
       begin
 =======
       While Not console.KeyPressed Do
       Begin
 >>>>>>> graemeg/fixes_2_2
+=======
+      While Not console.KeyPressed Do
+      Begin
+>>>>>>> origin/fixes_2_2
         { source positions }
         x1 := Trunc(cx1 + dx1);
         y1 := Trunc(cy1 + dy1);
@@ -284,14 +301,19 @@ Begin
         { lock surface }
         pixels := surface.lock;
 <<<<<<< HEAD
+<<<<<<< HEAD
         try
 =======
         Try
 >>>>>>> graemeg/fixes_2_2
+=======
+        Try
+>>>>>>> origin/fixes_2_2
           { get surface dimensions }
           width := surface.width;
 
           { line loop }
+<<<<<<< HEAD
 <<<<<<< HEAD
           for y := 0 to 199 do
           begin
@@ -299,6 +321,10 @@ Begin
           For y := 0 To 199 Do
           Begin
 >>>>>>> graemeg/fixes_2_2
+=======
+          For y := 0 To 199 Do
+          Begin
+>>>>>>> origin/fixes_2_2
             { calcalate pointer to start of line }
             line := pixels + y * width;
 
@@ -313,12 +339,17 @@ Begin
 
             { line loop }
 <<<<<<< HEAD
+<<<<<<< HEAD
             while x < width do
             begin
 =======
             While x < width Do
             Begin
 >>>>>>> graemeg/fixes_2_2
+=======
+            While x < width Do
+            Begin
+>>>>>>> origin/fixes_2_2
               { get x deltas }
               _dx1 := abs(x1 - x);
               _dx2 := abs(x2 - x);
@@ -331,6 +362,7 @@ Begin
               ix3 := 1;
               ix4 := 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
               if x1 > x then
                 ix1 := -1;
               if x2 > x then
@@ -339,6 +371,8 @@ Begin
                 ix3 := -1;
               if x4 > x then
 =======
+=======
+>>>>>>> origin/fixes_2_2
               If x1 > x Then
                 ix1 := -1;
               If x2 > x Then
@@ -346,11 +380,15 @@ Begin
               If x3 > x Then
                 ix3 := -1;
               If x4 > x Then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 ix4 := -1;
 
               { set span length to min delta }
               length := width - x;
+<<<<<<< HEAD
 <<<<<<< HEAD
               if (x1 > x) and (_dx1 < length) then
                 length := _dx1;
@@ -365,6 +403,8 @@ Begin
               while length > 0 do
               begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
               If (x1 > x) And (_dx1 < length) Then
                 length := _dx1;
               If (x2 > x) And (_dx2 < length) Then
@@ -377,7 +417,10 @@ Begin
               { pixel loop }
               While length > 0 Do
               Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 Dec(length);
                 { calc intensities }
                 intensity := CalcIntensity(_dx1, _dy1, i1);
@@ -385,12 +428,17 @@ Begin
                 Inc(intensity, CalcIntensity(_dx3, _dy3, i3));
                 Inc(intensity, CalcIntensity(_dx4, _dy4, i4));
 <<<<<<< HEAD
+<<<<<<< HEAD
                 intensity := intensity shr 16;
                 if intensity > 255 then
 =======
                 intensity := intensity Shr 16;
                 If intensity > 255 Then
 >>>>>>> graemeg/fixes_2_2
+=======
+                intensity := intensity Shr 16;
+                If intensity > 255 Then
+>>>>>>> origin/fixes_2_2
                   intensity := 255;
 
                 { update deltas }
@@ -403,6 +451,7 @@ Begin
                 line[x] := intensity;
                 Inc(x);
 <<<<<<< HEAD
+<<<<<<< HEAD
               end;
             end;
           end;
@@ -411,6 +460,8 @@ Begin
           surface.unlock;
         end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
               End;
             End;
           End;
@@ -418,7 +469,10 @@ Begin
           { unlock surface }
           surface.unlock;
 	End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
         { move the lights around }
         dx1 := 50  * sin((move_t + 0.0) * 0.10);
@@ -444,6 +498,7 @@ Begin
 
         { reset on big flash... }
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (move_t > 600) and (i1 > 10000) and (i2 > 10000) and
            (i3 > 10000) and (i4 > 10000) then
         begin
@@ -452,6 +507,11 @@ Begin
            (i3 > 10000) And (i4 > 10000) Then
         Begin
 >>>>>>> graemeg/fixes_2_2
+=======
+        If (move_t > 600) And (i1 > 10000) And (i2 > 10000) And
+           (i3 > 10000) And (i4 > 10000) Then
+        Begin
+>>>>>>> origin/fixes_2_2
           move_t := 0.3;
           move_dt := 0.1;
           move_ddt := 0.0006;
@@ -461,10 +521,14 @@ Begin
           max_intensity := 0.0;
           max_intensity_inc := 0.2;
 <<<<<<< HEAD
+<<<<<<< HEAD
         end;
 =======
         End;
 >>>>>>> graemeg/fixes_2_2
+=======
+        End;
+>>>>>>> origin/fixes_2_2
 
         { update intensity }
         max_intensity := max_intensity + max_intensity_inc;
@@ -475,6 +539,7 @@ Begin
 
         { update console }
         console.update;
+<<<<<<< HEAD
 <<<<<<< HEAD
       end;
     finally
@@ -495,11 +560,16 @@ Begin
       End;
     Finally
 >>>>>>> graemeg/fixes_2_2
+=======
+      End;
+    Finally
+>>>>>>> origin/fixes_2_2
       console.close;
       surface.Free;
       console.Free;
       palette.Free;
       format.Free;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -519,6 +589,8 @@ Begin
   end;
 end.
 =======
+=======
+>>>>>>> origin/fixes_2_2
     End;
   Except
     On error : TPTCError Do
@@ -526,4 +598,7 @@ end.
       error.report;
   End;
 End.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

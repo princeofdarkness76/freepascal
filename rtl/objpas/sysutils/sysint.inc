@@ -25,10 +25,14 @@ procedure InitInternationalGeneric;
       widestringmanager.UpperAnsiStringProc:=@GenericAnsiUpperCase;
     if not assigned(widestringmanager.LowerAnsiStringProc) then
 <<<<<<< HEAD
+<<<<<<< HEAD
       widestringmanager.LowerAnsiStringProc:=@GenericAnsiLowerCase;
 =======
       widestringmanager.LowerAnsiStringProc:=@GenericAnsiLowerCase;    
 >>>>>>> graemeg/fixes_2_2
+=======
+      widestringmanager.LowerAnsiStringProc:=@GenericAnsiLowerCase;    
+>>>>>>> origin/fixes_2_2
     if not assigned(widestringmanager.CompareStrAnsiStringProc) then
       widestringmanager.CompareStrAnsiStringProc:=@GenericAnsiCompareStr;
     if not assigned(widestringmanager.CompareTextAnsiStringProc) then
@@ -46,8 +50,11 @@ procedure InitInternationalGeneric;
     if not assigned(widestringmanager.StrUpperAnsiStringProc) then
       widestringmanager.StrUpperAnsiStringProc:=@GenericAnsiStrUpper;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif FPC_NOGENERICANSIROUTINES}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif FPC_NOGENERICANSIROUTINES}    
 >>>>>>> graemeg/fixes_2_2
   end;

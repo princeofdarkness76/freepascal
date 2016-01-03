@@ -317,10 +317,14 @@ unit cpupara;
               { array of const values are pushed on the stack as
                 well as dyn. arrays }
 <<<<<<< HEAD
+<<<<<<< HEAD
               if (calloption in cdecl_pocalls) then
 =======
               if (calloption in [pocall_cdecl,pocall_cppdecl]) then
 >>>>>>> graemeg/fixes_2_2
+=======
+              if (calloption in [pocall_cdecl,pocall_cppdecl]) then
+>>>>>>> origin/fixes_2_2
                 result:=not(is_array_of_const(def) or
                         is_dynamic_array(def))
               else
@@ -543,7 +547,17 @@ unit cpupara;
             p.funcretloc[side].size:=retcgsize;
             exit;
           end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+        { Return is passed as var parameter }
+        if ret_in_param(p.returndef,p.proccalloption) then
+          begin
+            p.funcretloc[side].loc:=LOC_REFERENCE;
+            p.funcretloc[side].size:=retcgsize;
+            exit;
+          end;
+>>>>>>> origin/fixes_2_2
         { Return in FPU register? }
 <<<<<<< HEAD
 <<<<<<< HEAD

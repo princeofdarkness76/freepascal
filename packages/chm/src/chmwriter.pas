@@ -12,12 +12,17 @@
 
   You should have received a copy of the GNU Library General Public License
 <<<<<<< HEAD
+<<<<<<< HEAD
   along with this library; if not, write to the Free Software Foundation, Inc.,
   51 Franklin Street, Fifth Floor, Boston, MA 02111-1301, USA.
 =======
   along with this library; if not, write to the Free Software Foundation,
   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 >>>>>>> graemeg/fixes_2_2
+=======
+  along with this library; if not, write to the Free Software Foundation,
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> origin/fixes_2_2
 }
 {
   See the file COPYING.FPC, included in this distribution,
@@ -25,6 +30,7 @@
 }
 unit chmwriter;
 {$MODE OBJFPC}{$H+}
+<<<<<<< HEAD
 <<<<<<< HEAD
 { $DEFINE LZX_USETHREADS}
 
@@ -53,13 +59,18 @@ Const
 
 Type
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 interface
 uses Classes, ChmBase, chmtypes, chmspecialfiles, HtmlIndexer;
 
 type
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   TGetDataFunc = function (const DataName: String; out PathInChm: String; out FileName: String; var Stream: TStream): Boolean of object;
   //  DataName :  A FileName or whatever so that the getter can find and open the file to add
   //  PathInChm:  This is the absolute path in the archive. i.e. /home/user/helpstuff/
@@ -67,6 +78,7 @@ type
   //  FileName :  /home/user/helpstuff/index.html > index.html
   //  Stream   :  the file opened with DataName should be written to this stream
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Type
    TStringIndex = Class    // AVLTree needs wrapping in non automated reference type also used in filewriter.
@@ -85,6 +97,8 @@ Type
   private
     ForceExit: Boolean;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
   { TChmWriter }
 
@@ -97,14 +111,20 @@ Type
     FDefaultFont: String;
     FDefaultPage: String;
     FFullTextSearch: Boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FInternalFiles: TFileEntryList; // Contains a complete list of files in the chm including
     FFrameSize: LongWord;           // uncompressed files and special internal files of the chm
     FCurrentStream: TStream; // used to buffer the files that are to be compressed
     FCurrentIndex: Integer;
     FOnGetFileData: TGetDataFunc;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FSearchTitlesOnly: Boolean;
     FStringsStream: TMemoryStream; // the #STRINGS file
     FTopicsStream: TMemoryStream;  // the #TOPICS file
@@ -112,7 +132,10 @@ Type
     FURLSTRStream: TMemoryStream;  // the #URLSTR file
     FFiftiMainStream: TMemoryStream;
     FContextStream: TMemoryStream; // the #IVB file
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     FSection0: TMemoryStream;
     FSection1: TStream; // Compressed Stream
     FSection1Size: QWord;
@@ -124,17 +147,23 @@ Type
     FTempStream: TStream;
     FPostStream: TStream;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FWindowSize: LongWord;
     FReadCompressedSize: QWord; // Current Size of Uncompressed data that went in Section1 (compressed)
     FPostStreamActive: Boolean;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     FTitle: String;
     FHasTOC: Boolean;
     FHasIndex: Boolean;
     FWindowSize: LongWord;
     FReadCompressedSize: QWord; // Current Size of Uncompressed data that went in Section1 (compressed)
     FIndexedFiles: TIndexedWordList;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     // Linear order of file
     ITSFHeader: TITSFHeader;
     HeaderSection0Table: TITSFHeaderEntry;  // points to HeaderSection0
@@ -143,10 +172,13 @@ Type
     HeaderSection0: TITSPHeaderPrefix;
     HeaderSection1: TITSPHeader; // DirectoryListings header
 <<<<<<< HEAD
+<<<<<<< HEAD
     FReadmeMessage : String;
     FCores	: integer;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     // DirectoryListings
     // CONTENT Section 0 (section 1 is contained in section 0)
     // EOF
@@ -157,6 +189,7 @@ Type
     procedure WriteHeader(Stream: TStream);
     procedure CreateDirectoryListings;
     procedure WriteDirectoryListings(Stream: TStream);
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure WriteInternalFilesBefore; virtual;
     procedure WriteInternalFilesAfter; virtual;
@@ -169,6 +202,8 @@ Type
 
     procedure FileAdded(AStream: TStream; const AEntry: TFileEntryRec); virtual;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     procedure StartCompressingStream;
     procedure WriteSYSTEM;
     procedure WriteITBITS;
@@ -186,13 +221,17 @@ Type
     function AddString(AString: String): LongWord;
     function AddURL(AURL: String; TopicsIndex: DWord): LongWord;
     procedure CheckFileMakeSearchable(AStream: TStream; AFileEntry: TFileEntryRec);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     // callbacks for lzxcomp
     function  AtEndOfData: Longbool;
     function  GetData(Count: LongInt; Buffer: PByte): LongInt;
     function  WriteCompressedData(Count: Longint; Buffer: Pointer): LongInt;
     procedure MarkFrame(UnCompressedTotal, CompressedTotal: LongWord);
     // end callbacks
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -239,6 +278,8 @@ Type
     procedure AddStreamToArchive(AFileName, APath: String; AStream: TStream; Compress: Boolean = True);
     procedure PostAddStreamToArchive(AFileName, APath: String; AStream: TStream; Compress: Boolean = True);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   public
     constructor Create(OutStream: TStream; FreeStreamOnDestroy: Boolean);
     destructor Destroy; override;
@@ -249,13 +290,17 @@ Type
     procedure AddStreamToArchive(AFileName, APath: String; AStream: TStream; Compress: Boolean = True);
     procedure PostAddStreamToArchive(AFileName, APath: String; AStream: TStream; Compress: Boolean = True);
     procedure AddContext(AContext: DWord; ATopic: String);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     property WindowSize: LongWord read FWindowSize write FWindowSize default 2; // in $8000 blocks
     property FrameSize: LongWord read FFrameSize write FFrameSize default 1; // in $8000 blocks
     property FilesToCompress: TStrings read FFileNames;
     property OnGetFileData: TGetDataFunc read FOnGetFileData write FOnGetFileData;
     property OnLastFile: TNotifyEvent read FOnLastFile write FOnLastFile;
     property OutStream: TStream read FOutStream;
+<<<<<<< HEAD
 <<<<<<< HEAD
     property TempRawStream: TStream read FTempStream write SetTempRawStream;
 <<<<<<< HEAD
@@ -464,6 +509,8 @@ Type
 Function CompareStrings(Node1, Node2: Pointer): integer; // also used in filewriter
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
     property Title: String read FTitle write FTitle;
     property FullTextSearch: Boolean read FFullTextSearch write FFullTextSearch;
     property SearchTitlesOnly: Boolean read FSearchTitlesOnly write FSearchTitlesOnly;
@@ -473,11 +520,15 @@ Function CompareStrings(Node1, Node2: Pointer): integer; // also used in filewri
     //property LocaleID: dword read ITSFHeader.LanguageID write ITSFHeader.LanguageID;
   end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 implementation
 uses dateutils, sysutils, paslzxcomp, chmFiftiMain;
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
   LZX_WINDOW_SIZE = 16; // 16 = 2 frames = 1 shl 16
   LZX_FRAME_SIZE = $8000;
@@ -515,6 +566,8 @@ end;
 
 procedure TITSFWriter.InitITSFHeader;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
   LZX_WINDOW_SIZE = 16; // 16 = 2 frames = 1 shl 16
   LZX_FRAME_SIZE = $8000;
@@ -524,12 +577,16 @@ procedure TITSFWriter.InitITSFHeader;
 { TChmWriter }
 
 procedure TChmWriter.InitITSFHeader;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   with ITSFHeader do begin
     ITSFsig := ITSFFileSig;
     Version := NToLE(DWord(3));
     // we fix endian order when this is written to the stream
+<<<<<<< HEAD
 <<<<<<< HEAD
     HeaderLength := NToLE(DWord(SizeOf(TITSFHeader) + (SizeOf(TGuid)*2)+ (SizeOf(TITSFHeaderEntry)*2) + SizeOf(TITSFHeaderSuffix)));
     Unknown_1 := NToLE(DWord(1));
@@ -540,6 +597,8 @@ end;
 
 procedure TITSFWriter.InitHeaderSectionTable;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     HeaderLength := NToLE(DWord(SizeOf(TITSFHeader) + (SizeOf(TITSFHeaderEntry)*2) + SizeOf(TITSFHeaderSuffix)));
     Unknown_1 := NToLE(DWord(1));
     TimeStamp:= NToBE(MilliSecondOfTheDay(Now)); //bigendian
@@ -550,7 +609,10 @@ procedure TITSFWriter.InitHeaderSectionTable;
 end;
 
 procedure TChmWriter.InitHeaderSectionTable;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   // header section 0
   HeaderSection0Table.PosFromZero := LEToN(ITSFHeader.HeaderLength);
@@ -559,16 +621,22 @@ begin
   HeaderSection1Table.PosFromZero := HeaderSection0Table.PosFromZero + HeaderSection0Table.Length;
   HeaderSection1Table.Length := SizeOf(TITSPHeader)+FDirectoryListings.Size;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   //contains the offset of CONTENT Section0 from zero
   HeaderSuffix.Offset := HeaderSection1Table.PosFromZero + HeaderSection1Table.Length;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   
   //contains the offset of CONTENT Section0 from zero
   HeaderSuffix.Offset := HeaderSection1Table.PosFromZero + HeaderSection1Table.Length;
   
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   // now fix endian stuff
   HeaderSection0Table.PosFromZero := NToLE(HeaderSection0Table.PosFromZero);
   HeaderSection0Table.Length := NToLE(HeaderSection0Table.Length);
@@ -596,10 +664,14 @@ begin
     //FirstPMGLChunkIndex,
     //LastPMGLChunkIndex: LongWord;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> graemeg/fixes_2_2
+=======
+    
+>>>>>>> origin/fixes_2_2
     Unknown2 := NToLE(Longint(-1));
     //DirectoryChunkCount: LongWord;
     LanguageID := NToLE(DWord($0409));
@@ -610,19 +682,27 @@ begin
     Unknown5 := NToLE(Longint(-1));
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
   // more endian stuff
   HeaderSuffix.Offset := NToLE(HeaderSuffix.Offset);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TITSFWriter.SetTempRawStream(const AValue: TStream);
 =======
 procedure TChmWriter.SetTempRawStream(const AValue: TStream);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TChmWriter.SetTempRawStream(const AValue: TStream);
+>>>>>>> origin/fixes_2_2
 begin
   if (FCurrentStream.Size > 0) or (FSection1.Size > 0) then
     raise Exception.Create('Cannot set the TempRawStream once data has been written to it!');
@@ -634,6 +714,7 @@ begin
   FCurrentStream := AValue;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TITSFWriter.WriteHeader(Stream: TStream);
 begin
@@ -649,6 +730,11 @@ procedure TChmWriter.WriteHeader(Stream: TStream);
 begin
   Stream.Write(ITSFHeader, SizeOf(TITSFHeader));
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TChmWriter.WriteHeader(Stream: TStream);
+begin
+  Stream.Write(ITSFHeader, SizeOf(TITSFHeader));
+>>>>>>> origin/fixes_2_2
   Stream.Write(HeaderSection0Table, SizeOf(TITSFHeaderEntry));
   Stream.Write(HeaderSection1Table, SizeOf(TITSFHeaderEntry));
   Stream.Write(HeaderSuffix, SizeOf(TITSFHeaderSuffix));
@@ -657,10 +743,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TITSFWriter.CreateDirectoryListings;
 =======
 procedure TChmWriter.CreateDirectoryListings;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TChmWriter.CreateDirectoryListings;
+>>>>>>> origin/fixes_2_2
 type
   TFirstListEntry = record
     Entry: array[0..511] of byte;
@@ -704,11 +794,15 @@ const
     TmpIndex: TPMGIDirectoryChunk;
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     with IndexHeader do
     begin
 =======
     with IndexHeader do begin
 >>>>>>> graemeg/fixes_2_2
+=======
+    with IndexHeader do begin
+>>>>>>> origin/fixes_2_2
       PMGIsig := PMGI;
       UnusedSpace := NToLE(IndexBlock.FreeSpace);
     end;
@@ -717,6 +811,7 @@ const
     IndexBlock.Clear;
     if HeaderSection1.IndexOfRootChunk < 0 then HeaderSection1.IndexOfRootChunk := ChunkIndex;
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ShouldFinish then
     begin
       HeaderSection1.IndexTreeDepth := 2;
@@ -724,11 +819,16 @@ const
       if ParentIndex <> nil then
       repeat // the parent index is notified by our child index when to write
 =======
+=======
+>>>>>>> origin/fixes_2_2
     if ShouldFinish then begin;
       HeaderSection1.IndexTreeDepth := 2;
       ParentIndex := IndexBlock.ParentChunk;
       if ParentIndex <> nil then repeat // the parent index is notified by our child index when to write
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         HeaderSection1.IndexOfRootChunk := ChunkIndex;
         TmpIndex := ParentIndex;
         ParentIndex := ParentIndex.ParentChunk;
@@ -770,10 +870,14 @@ begin
   HeaderSection1.IndexTreeDepth := 1;
   HeaderSection1.IndexOfRootChunk := -1;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
   ChunkIndex := 0;
 
   IndexBlock := TPMGIDirectoryChunk.Create(SizeOf(TPMGIIndexChunk));
@@ -805,6 +909,7 @@ begin
     if not ListingBlock.CanHold(Size) then
       WriteListChunk;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     ListingBlock.WriteEntry(Size, @Buffer[0]);
 
@@ -813,6 +918,11 @@ begin
     ListingBlock.WriteEntry(Size, @Buffer[0]);
     
 >>>>>>> graemeg/fixes_2_2
+=======
+    
+    ListingBlock.WriteEntry(Size, @Buffer[0]);
+    
+>>>>>>> origin/fixes_2_2
     if ListingBlock.ItemCount = 1 then begin // add the first list item to the index
       Move(Buffer[0], FirstListEntry.Entry[0], FESize);
       FirstListEntry.Size := FESize + WriteCompressedInteger(@FirstListEntry.Entry[FESize], ChunkIndex);
@@ -831,20 +941,28 @@ begin
   IndexBlock.Free;
   ListingBlock.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
   //now fix some endian stuff
   HeaderSection1.IndexOfRootChunk := NToLE(HeaderSection1.IndexOfRootChunk);
   HeaderSection1.IndexTreeDepth := NtoLE(HeaderSection1.IndexTreeDepth);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TITSFWriter.WriteDirectoryListings(Stream: TStream);
 =======
 procedure TChmWriter.WriteDirectoryListings(Stream: TStream);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TChmWriter.WriteDirectoryListings(Stream: TStream);
+>>>>>>> origin/fixes_2_2
 begin
   Stream.Write(HeaderSection1, SizeOf(HeaderSection1));
   FDirectoryListings.Position := 0;
@@ -853,6 +971,7 @@ begin
   //TMemoryStream(FDirectoryListings).SaveToFile('dirlistings.pmg');
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TITSFWriter.WriteInternalFilesBefore;
 begin
@@ -946,6 +1065,8 @@ begin
 
   //  ::DataSpace/NameList
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TChmWriter.WriteSystem;
 var
   Entry: TFileEntryRec;
@@ -1312,7 +1433,10 @@ begin
   Entry.Compressed := False; // None of these files are compressed
 
   //  ::DataSpace/NameList
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Entry.DecompressedOffset := FSection0.Position;
   Entry.DecompressedSize := WriteNameListToStream(FSection0, [snUnCompressed,snMSCompressed]);
   Entry.Path := '::DataSpace/';
@@ -1326,10 +1450,14 @@ begin
   Entry.Name := 'ControlData';
   FInternalFiles.AddEntry(Entry, False);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
   //  ::DataSpace/Storage/MSCompressed/SpanInfo
   Entry.DecompressedOffset := FSection0.Position;
   Entry.DecompressedSize := WriteSpanInfoToStream(FSection0, FReadCompressedSize);
@@ -1361,6 +1489,7 @@ begin
   FInternalFiles.AddEntry(Entry, False);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 end;
 
@@ -1368,6 +1497,8 @@ procedure TITSFWriter.FileAdded(AStream: TStream; const AEntry: TFileEntryRec);
 begin
   // do nothing here
 =======
+=======
+>>>>>>> origin/fixes_2_2
   
 end;
 
@@ -1418,22 +1549,31 @@ begin
   FURLTBLStream.WriteDWord(0);//($231e9f5c); //unknown
   FURLTBLStream.WriteDWord(NtoLE(TopicsIndex)); // Index of topic in #TOPICS
   FURLTBLStream.WriteDWord(NtoLE(AddURLString(AURL)));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function _AtEndOfData(arg: pointer): LongBool; cdecl;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   Result := TITSFWriter(arg).AtEndOfData;
 end;
 
 function TITSFWriter.AtEndOfData: LongBool;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Result := TChmWriter(arg).AtEndOfData;
 end;
 
 function TChmWriter.AtEndOfData: LongBool;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   Result := ForceExit or (FCurrentIndex >= FFileNames.Count-1);
   if Result then
@@ -1443,16 +1583,22 @@ end;
 function _GetData(arg: pointer; Count: LongInt; Buffer: Pointer): LongInt; cdecl;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result := TITSFWriter(arg).GetData(Count, PByte(Buffer));
 end;
 
 function TITSFWriter.GetData(Count: LongInt; Buffer: PByte): LongInt;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Result := TChmWriter(arg).GetData(Count, PByte(Buffer));
 end;
 
 function TChmWriter.GetData(Count: LongInt; Buffer: PByte): LongInt;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   FileEntry: TFileEntryRec;
 begin
@@ -1464,14 +1610,18 @@ begin
       // the current file has been read. move to the next file in the list
       FCurrentStream.Position := 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
       FCurrentStream.Size:=0;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       Inc(FCurrentIndex);
       ForceExit := OnGetFileData(FFileNames[FCurrentIndex], FileEntry.Path, FileEntry.Name, FCurrentStream);
       FileEntry.DecompressedSize := FCurrentStream.Size;
       FileEntry.DecompressedOffset := FReadCompressedSize; //269047723;//to test writing really large numbers
       FileEntry.Compressed := True;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
       FileAdded(FCurrentStream, FileEntry);
@@ -1480,6 +1630,11 @@ begin
       if FullTextSearch then
         CheckFileMakeSearchable(FCurrentStream, FileEntry);
 >>>>>>> graemeg/fixes_2_2
+=======
+      
+      if FullTextSearch then
+        CheckFileMakeSearchable(FCurrentStream, FileEntry);
+>>>>>>> origin/fixes_2_2
 
       FInternalFiles.AddEntry(FileEntry);
       // So the next file knows it's offset
@@ -1493,9 +1648,12 @@ begin
     and (FCurrentStream <> FPostStream) then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       FPostStreamActive := True;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       if Assigned(FOnLastFile) then
         FOnLastFile(Self);
       FCurrentStream.Free;
@@ -1510,16 +1668,22 @@ end;
 function _WriteCompressedData(arg: pointer; Count: LongInt; Buffer: Pointer): LongInt; cdecl;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result := TITSFWriter(arg).WriteCompressedData(Count, Buffer);
 end;
 
 function TITSFWriter.WriteCompressedData(Count: Longint; Buffer: Pointer): LongInt;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Result := TChmWriter(arg).WriteCompressedData(Count, Buffer);
 end;
 
 function TChmWriter.WriteCompressedData(Count: Longint; Buffer: Pointer): LongInt;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   // we allocate a MB at a time to limit memory reallocation since this
   // writes usually 2 bytes at a time
@@ -1533,16 +1697,22 @@ end;
 procedure _MarkFrame(arg: pointer; UncompressedTotal, CompressedTotal: LongWord); cdecl;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   TITSFWriter(arg).MarkFrame(UncompressedTotal, CompressedTotal);
 end;
 
 procedure TITSFWriter.MarkFrame(UnCompressedTotal, CompressedTotal: LongWord);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   TChmWriter(arg).MarkFrame(UncompressedTotal, CompressedTotal);
 end;
 
 procedure TChmWriter.MarkFrame(UnCompressedTotal, CompressedTotal: LongWord);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   procedure WriteQWord(Value: QWord);
   begin
     FSection1ResetTable.Write(NToLE(Value), 8);
@@ -1587,6 +1757,7 @@ begin
   // We have to trim the last entry off when we are done because there is no next block in that case
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1657,6 +1828,8 @@ begin
   FCurrentStream := TMemoryStream.Create;
   FInternalFiles := TFileEntryList.Create;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TChmWriter.CheckFileMakeSearchable(AStream: TStream; AFileEntry: TFileEntryRec);
 type
   TTopicEntry = record
@@ -1706,7 +1879,10 @@ begin
   FURLSTRStream := TMemoryStream.Create;
   FURLTBLStream := TMemoryStream.Create;
   FFiftiMainStream := TMemoryStream.Create;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FSection0 := TMemoryStream.Create;
   FSection1 := TMemoryStream.Create;
   FSection1ResetTable := TMemoryStream.Create;
@@ -1714,6 +1890,7 @@ begin
   FPostStream := TMemoryStream.Create;;
   FDestroyStream := FreeStreamOnDestroy;
   FFileNames := TStringList.Create;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -1723,6 +1900,8 @@ begin
   FInternalFiles.Free;
   FCurrentStream.Free;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FIndexedFiles := TIndexedWordList.Create;
 end;
 
@@ -1737,24 +1916,33 @@ begin
   FURLSTRStream.Free;
   FURLTBLStream.Free;
   FFiftiMainStream.Free;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   FSection0.Free;
   FSection1.Free;
   FSection1ResetTable.Free;
   FDirectoryListings.Free;
   FFileNames.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
   inherited Destroy;
 end;
 
 procedure TITSFWriter.Execute;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FIndexedFiles.Free;
   inherited Destroy;
 end;
 
 procedure TChmWriter.Execute;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   InitITSFHeader;
   FOutStream.Position := 0;
@@ -1762,9 +1950,12 @@ begin
 
   // write any internal files to FCurrentStream that we want in the compressed section
 <<<<<<< HEAD
+<<<<<<< HEAD
   WriteInternalFilesBefore;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   WriteIVB;
   
   // written to Section0 (uncompressed)
@@ -1772,7 +1963,10 @@ begin
 
   WriteOBJINST;
   
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   // move back to zero so that we can start reading from zero :)
   FReadCompressedSize := FCurrentStream.Size;
   FCurrentStream.Position := 0;  // when compressing happens, first the FCurrentStream is read
@@ -1784,12 +1978,15 @@ begin
   FSection1.Size := FSection1Size;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   WriteInternalFilesAfter;
 
   //this creates all special files in the archive that start with ::DataSpace
   WriteDataSpaceFiles(FSection0);
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   // This creates and writes the #ITBITS (empty) file to section0
   WriteITBITS;
   // This creates and writes the #SYSTEM file to section0
@@ -1799,7 +1996,10 @@ begin
   //this creates all special files in the archive that start with ::DataSpace
   WriteDataSpaceFiles(FSection0);
   
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   // creates all directory listings including header
   CreateDirectoryListings;
 
@@ -1814,11 +2014,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // this procedure is used to manually add files to compress to an internal stream that is
 // processed before FileToCompress is called. Files added this way should not be
 // duplicated in the FilesToCompress property.
 procedure TITSFWriter.AddStreamToArchive(AFileName, APath: String; AStream: TStream; Compress: Boolean = True);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure TChmWriter.AppendTOC(AStream: TStream);
 begin
   FHasTOC := True;
@@ -1841,11 +2044,15 @@ end;
 // processed before FileToCompress is called. Files added this way should not be
 // duplicated in the FilesToCompress property.
 procedure TChmWriter.AddStreamToArchive(AFileName, APath: String; AStream: TStream; Compress: Boolean = True);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
   TargetStream: TStream;
   Entry: TFileEntryRec;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   // in case AddStreamToArchive is used after we should be writing to the post stream
   if FPostStreamActive then
@@ -1855,6 +2062,8 @@ begin
   end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   if AStream = nil then Exit;
   if Compress then
     TargetStream := FCurrentStream
@@ -1867,21 +2076,30 @@ begin
   Entry.DecompressedOffset := TargetStream.Position;
   Entry.DecompressedSize := AStream.Size;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FileAdded(AStream,Entry);
 =======
   if FullTextSearch then
     CheckFileMakeSearchable(AStream, Entry); // Must check before we add it to the list so we know if the name needs to be added to #STRINGS
 >>>>>>> graemeg/fixes_2_2
+=======
+  if FullTextSearch then
+    CheckFileMakeSearchable(AStream, Entry); // Must check before we add it to the list so we know if the name needs to be added to #STRINGS
+>>>>>>> origin/fixes_2_2
   FInternalFiles.AddEntry(Entry);
   AStream.Position := 0;
   TargetStream.CopyFrom(AStream, AStream.Size);
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TITSFWriter.PostAddStreamToArchive(AFileName, APath: String;
 =======
 procedure TChmWriter.PostAddStreamToArchive(AFileName, APath: String;
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TChmWriter.PostAddStreamToArchive(AFileName, APath: String;
+>>>>>>> origin/fixes_2_2
   AStream: TStream; Compress: Boolean);
 var
   TargetStream: TStream;
@@ -1904,6 +2122,7 @@ begin
   FInternalFiles.AddEntry(Entry);
   AStream.Position := 0;
   TargetStream.CopyFrom(AStream, AStream.Size);
+<<<<<<< HEAD
 <<<<<<< HEAD
   FileAdded(AStream, Entry);
 <<<<<<< HEAD
@@ -5469,6 +5688,8 @@ end;
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   if FullTextSearch then
     CheckFileMakeSearchable(AStream, Entry);
 end;
@@ -5508,6 +5729,9 @@ begin
   lzx_finish(LZXdata, nil);
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.
 

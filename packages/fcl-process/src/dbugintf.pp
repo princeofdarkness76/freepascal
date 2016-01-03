@@ -51,9 +51,12 @@ ResourceString
   SExiting  = '< Exiting ';
   SSeparator = '>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-<';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SServerStartFailed = 'Failed to start debugserver. (%s)';
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 implementation
 
@@ -216,6 +219,7 @@ begin
     begin
     Try
 <<<<<<< HEAD
+<<<<<<< HEAD
       CommandLine:='dbugsrv';
       Execute;
       Result:=ProcessID;
@@ -225,12 +229,17 @@ begin
       Result := 0;
       end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       CommandLine:='debugserver';
       Execute;
       Result:=ProcessID;
     Except
       Result := 0;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
     Free;
     end;
@@ -274,9 +283,12 @@ begin
       begin
       DebugDisabled := True;
 <<<<<<< HEAD
+<<<<<<< HEAD
       FreeAndNil(DebugClient);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       Exit;
       end
     else
@@ -289,6 +301,7 @@ begin
       end;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   try
     DebugClient.Connect;
   except
@@ -299,6 +312,9 @@ begin
 =======
   DebugClient.Connect;
 >>>>>>> graemeg/fixes_2_2
+=======
+  DebugClient.Connect;
+>>>>>>> origin/fixes_2_2
   MsgBuffer:=TMemoryStream.Create;
   Msg.MsgType:=lctIdentify;
   Msg.MsgTimeStamp:=Now;

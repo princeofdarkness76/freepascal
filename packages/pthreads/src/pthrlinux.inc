@@ -91,10 +91,14 @@ type
   // procedural types used in parameters to pthread functions
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   TStartRoutine = function (_para1:pointer): Pointer; cdecl;
 =======
   TStartRoutine = function (_para1:pointer): cint; cdecl;
 >>>>>>> graemeg/fixes_2_2
+=======
+  TStartRoutine = function (_para1:pointer): cint; cdecl;
+>>>>>>> origin/fixes_2_2
   TKeyValueDestructor = procedure(ValueInKey: Pointer); cdecl;
   TInitOnceProc = Procedure;cdecl;
   TForkHandler = procedure; cdecl;
@@ -314,7 +318,10 @@ type
   function sem_timedwait(__sem: Psem_t; __abstime: Ptimespec):cint;cdecl; external libthreads;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { ---------------------------------------------------------------------
      Overloaded versions with var args instead of pointers
   ---------------------------------------------------------------------}
@@ -408,4 +415,7 @@ type
   function sem_getvalue(var __sem: sem_t; var __sval:cint):cint;cdecl;external libthreads;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

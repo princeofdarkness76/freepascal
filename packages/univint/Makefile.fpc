@@ -1,13 +1,18 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for Apple Universal Interfaces for Free Pascal
 >>>>>>> graemeg/fixes_2_2
+=======
+#   Makefile.fpc for Apple Universal Interfaces for Free Pascal
+>>>>>>> origin/fixes_2_2
 #
 
 [package]
 name=univint
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -120,6 +125,8 @@ implicitunits=ABActions ABAddressBook ABGlobals ABPeoplePicker ABTypedefs AEData
   fenv fp gliContexts gliDispatch gluContext kern_return macgl macglext \
   macglu mach_error vBLAS vDSP x509defs xattr 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 version=2.2.5
 
 [target]
@@ -204,7 +211,10 @@ implicitunits=ABActions ABAddressBook ABGlobals ABPeoplePicker ABTypedefs \
   ObjCRuntime
 
   
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 exampledirs=examples
 
 [libs]
@@ -212,6 +222,7 @@ libversion=2.0.0
 
 # FPCMacOSAll is not a build unit, but directly includes the code of
 # most other units
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 [install]
@@ -323,6 +334,8 @@ MacOSAll$(PPUEXT): $(filter-out MacOS.pas GPCStrings.pas KeyEvents.pas,$(wildcar
 MacOS$(PPUEXT): $(filter-out MacOSAll.pas,$(wildcard *.pas))
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 [install]
 buildunit=MacOS
 fpcpackage=y
@@ -337,4 +350,7 @@ fpcdir=../..
 [rules]
 MacOSAll$(PPUEXT): $(filter-out MacOS.pas GPCStrings.pas,$(wildcard *.pas))
 MacOS$(PPUEXT): $(filter-out MacOSAll.pas,$(wildcard *.pas))
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

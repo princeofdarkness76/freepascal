@@ -648,6 +648,7 @@ implementation
           if elepara.location.loc=LOC_CONSTANT then
             begin
 <<<<<<< HEAD
+<<<<<<< HEAD
               hlcg.a_bit_set_const_loc(current_asmdata.CurrAsmList,(inlinenumber=in_include_x_y),
                 setpara.resultdef,elepara.location.value-tsetdef(setpara.resultdef).setbase,setpara.location);
             end
@@ -663,11 +664,21 @@ implementation
             end
           else
             begin
+=======
+              cg.a_bit_set_const_loc(current_asmdata.CurrAsmList,(inlinenumber=in_include_x_y),
+                elepara.location.value-tsetdef(setpara.resultdef).setbase,setpara.location);
+            end
+          else
+            begin
+>>>>>>> origin/fixes_2_2
               location_force_reg(current_asmdata.CurrAsmList,elepara.location,OS_INT,true);
               register_maybe_adjust_setbase(current_asmdata.CurrAsmList,elepara.location,tsetdef(setpara.resultdef).setbase);
               cg.a_bit_set_reg_loc(current_asmdata.CurrAsmList,(inlinenumber=in_include_x_y),
                 elepara.location.size,elepara.location.register,setpara.location);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             end;
         end;
 

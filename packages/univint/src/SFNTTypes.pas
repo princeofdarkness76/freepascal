@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       ATS/SFNTTypes.h
  
      Contains:   Font file structures.
@@ -112,6 +113,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       SFNTTypes.p
  
      Contains:   Font file structures.
@@ -135,7 +138,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -145,12 +151,17 @@
 unit SFNTTypes;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -164,14 +175,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -180,11 +196,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -222,6 +241,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -229,6 +250,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -462,6 +484,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -470,7 +494,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -497,9 +524,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -510,6 +541,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -534,15 +566,21 @@ uses MacTypes;
 {$ALIGN POWER}
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {$ALIGN MAC68K}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	sfntDirectoryEntryPtr = ^sfntDirectoryEntry;
 	sfntDirectoryEntry = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		tableTag: FourCharCode;
 		checkSum: UInt32;
@@ -897,6 +935,8 @@ const
 	kFontNoScriptCode = $FFFFFFFF;
 	kFontNoLanguageCode = $FFFFFFFF;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		tableTag:				FourCharCode;
 		checkSum:				UInt32;
 		offset:					UInt32;
@@ -1098,11 +1138,15 @@ const
 	kFontNoScript				= $FFFFFFFF;
 	kFontNoLanguage				= $FFFFFFFF;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	sfntCMapSubHeaderPtr = ^sfntCMapSubHeader;
 	sfntCMapSubHeader = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		format: UInt16;
 		length: UInt16;
@@ -1121,6 +1165,8 @@ type
 const
 	sizeof_sfntCMapExtendedSubHeader = 12;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		format:					UInt16;
 		length:					UInt16;
 		languageID:				UInt16;									{  base-1  }
@@ -1130,11 +1176,15 @@ const
 const
 	sizeof_sfntCMapSubHeader	= 6;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	sfntCMapEncodingPtr = ^sfntCMapEncoding;
 	sfntCMapEncoding = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		platformID: UInt16;             { base-0 }
 		scriptID: UInt16;               { base-0 }
@@ -1143,6 +1193,8 @@ type
 const
 	sizeof_sfntCMapEncoding = 8;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		platformID:				UInt16;									{  base-0  }
 		scriptID:				UInt16;									{  base-0  }
 		offset:					UInt32;
@@ -1152,11 +1204,15 @@ const
 const
 	sizeof_sfntCMapEncoding		= 8;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	sfntCMapHeaderPtr = ^sfntCMapHeader;
 	sfntCMapHeader = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		version: UInt16;
 		numTables: UInt16;
@@ -1197,6 +1253,8 @@ const
 const
 	kFontNoNameCode = $FFFFFFFF;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		version:				UInt16;
 		numTables:				UInt16;
 		encoding:				array [0..0] of sfntCMapEncoding;
@@ -1229,11 +1287,15 @@ const
 	{	 The following is a special "don't care" value to be used in interfaces 	}
 	kFontNoName					= $FFFFFFFF;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	sfntNameRecordPtr = ^sfntNameRecord;
 	sfntNameRecord = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		platformID: UInt16;             { base-0 }
 		scriptID: UInt16;               { base-0 }
@@ -1245,6 +1307,8 @@ type
 const
 	sizeof_sfntNameRecord = 12;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		platformID:				UInt16;									{  base-0  }
 		scriptID:				UInt16;									{  base-0  }
 		languageID:				UInt16;									{  base-0  }
@@ -1257,11 +1321,15 @@ const
 const
 	sizeof_sfntNameRecord		= 12;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	sfntNameHeaderPtr = ^sfntNameHeader;
 	sfntNameHeader = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		format: UInt16;
 		count: UInt16;
@@ -1301,6 +1369,8 @@ type
 const
 	sizeof_sfntInstance = 4;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		format:					UInt16;
 		count:					UInt16;
 		stringOffset:			UInt16;
@@ -1346,11 +1416,15 @@ type
 const
 	sizeof_sfntInstance			= 4;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	sfntVariationHeaderPtr = ^sfntVariationHeader;
 	sfntVariationHeader = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		version: Fixed;                { 1.0 Fixed }
 		offsetToData: UInt16;           { to first axis = 16}
@@ -1370,6 +1444,8 @@ const
 const
 	descriptorFontTableTag = FourCharCode('fdsc');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		version:				Fixed;									{  1.0 Fixed  }
 		offsetToData:			UInt16;									{  to first axis = 16 }
 		countSizePairs:			UInt16;									{  axis+inst = 2  }
@@ -1389,11 +1465,15 @@ const
 	{	 Fdsc table - font descriptor 	}
 	descriptorFontTableTag		= FourCharCode('fdsc');
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	sfntFontDescriptorPtr = ^sfntFontDescriptor;
 	sfntFontDescriptor = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		name: FourCharCode;
 		value: Fixed;
@@ -1401,10 +1481,15 @@ type
 		name:					FourCharCode;
 		value:					Fixed;
 >>>>>>> graemeg/fixes_2_2
+=======
+		name:					FourCharCode;
+		value:					Fixed;
+>>>>>>> origin/fixes_2_2
 	end;
 
 	sfntDescriptorHeaderPtr = ^sfntDescriptorHeader;
 	sfntDescriptorHeader = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		version: Fixed;                { 1.0 in Fixed }
 		descriptorCount: SInt32;
@@ -1417,6 +1502,8 @@ const
 const
 	featureFontTableTag = FourCharCode('feat');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		version:				Fixed;									{  1.0 in Fixed  }
 		descriptorCount:		SInt32;
 		descriptor:				array [0..0] of sfntFontDescriptor;
@@ -1429,11 +1516,15 @@ const
 	{	 Feat Table - layout feature table 	}
 	featureFontTableTag			= FourCharCode('feat');
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 	sfntFeatureNamePtr = ^sfntFeatureName;
 	sfntFeatureName = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		featureType: UInt16;
 		settingCount: UInt16;
@@ -1441,16 +1532,22 @@ type
 		featureFlags: UInt16;
 		nameID: UInt16;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		featureType:			UInt16;
 		settingCount:			UInt16;
 		offsetToSettings:		SInt32;
 		featureFlags:			UInt16;
 		nameID:					UInt16;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	end;
 
 	sfntFontFeatureSettingPtr = ^sfntFontFeatureSetting;
 	sfntFontFeatureSetting = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		setting: UInt16;
 		nameID: UInt16;
@@ -1458,10 +1555,15 @@ type
 		setting:				UInt16;
 		nameID:					UInt16;
 >>>>>>> graemeg/fixes_2_2
+=======
+		setting:				UInt16;
+		nameID:					UInt16;
+>>>>>>> origin/fixes_2_2
 	end;
 
 	sfntFontRunFeaturePtr = ^sfntFontRunFeature;
 	sfntFontRunFeature = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		featureType: UInt16;
 		setting: UInt16;
@@ -1469,10 +1571,15 @@ type
 		featureType:			UInt16;
 		setting:				UInt16;
 >>>>>>> graemeg/fixes_2_2
+=======
+		featureType:			UInt16;
+		setting:				UInt16;
+>>>>>>> origin/fixes_2_2
 	end;
 
 	sfntFeatureHeaderPtr = ^sfntFeatureHeader;
 	sfntFeatureHeader = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		version: SInt32;                { 1.0 }
 		featureNameCount: UInt16;
@@ -1567,6 +1674,8 @@ type
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 		version:				SInt32;									{  1.0  }
 		featureNameCount:		UInt16;
 		featureSetCount:		UInt16;
@@ -1610,4 +1719,7 @@ type
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

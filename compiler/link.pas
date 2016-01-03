@@ -66,8 +66,11 @@ interface
          Procedure AddSharedCLibrary(S : TCmdStr);
          Procedure AddFramework(S : TCmdStr);
 <<<<<<< HEAD
+<<<<<<< HEAD
          procedure AddImportSymbol(const libname,symname,symmangledname:TCmdStr;OrdNr: longint;isvar:boolean);virtual;
 =======
+=======
+>>>>>>> origin/fixes_2_2
          procedure AddImportSymbol(const libname,symname:TCmdStr;OrdNr: longint;isvar:boolean);virtual;
 >>>>>>> graemeg/fixes_2_2
          Procedure InitSysInitUnitName;virtual;
@@ -161,6 +164,7 @@ Implementation
 
     uses
 <<<<<<< HEAD
+<<<<<<< HEAD
       cutils,cfileutl,cstreams,
 {$ifdef hasUnix}
       baseunix,
@@ -168,6 +172,9 @@ Implementation
 =======
       cutils,cfileutils,cstreams,
 >>>>>>> graemeg/fixes_2_2
+=======
+      cutils,cfileutils,cstreams,
+>>>>>>> origin/fixes_2_2
       script,globals,verbose,comphook,ppu,fpccrc,
       aasmbase,aasmtai,aasmdata,aasmcpu,
       ogmap;
@@ -180,10 +187,14 @@ Implementation
 *****************************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetFileCRC(const fn:TPathStr):cardinal;
 =======
     function GetFileCRC(const fn:string):cardinal;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function GetFileCRC(const fn:string):cardinal;
+>>>>>>> origin/fixes_2_2
       var
         fs : TCStream;
         bufcount,
@@ -193,10 +204,14 @@ Implementation
         result:=0;
         bufsize:=64*1024;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	      fs:=CFileStreamClass.Create(fn,fmOpenRead or fmShareDenyNone);
 =======
 	      fs:=TCFileStream.Create(fn,fmOpenRead or fmShareDenyNone);
 >>>>>>> graemeg/fixes_2_2
+=======
+	      fs:=TCFileStream.Create(fn,fmOpenRead or fmShareDenyNone);
+>>>>>>> origin/fixes_2_2
 	      if CStreamError<>0 then
 	        begin
 	          fs.Free;
@@ -1381,6 +1396,36 @@ Implementation
 
 
     procedure TInternalLinker.ParseScript_MemPos;
+<<<<<<< HEAD
+=======
+      var
+        s,
+        para,
+        keyword : String;
+        hp : TCmdStrListItem;
+      begin
+        exeoutput.MemPos_Start;
+        hp:=TCmdStrListItem(linkscript.first);
+        while assigned(hp) do
+          begin
+            s:=hp.str;
+            if (s='') or (s[1]='#') then
+              continue;
+            keyword:=Upper(GetToken(s,' '));
+            para:=GetToken(s,' ');
+            if keyword='EXESECTION' then
+              ExeOutput.MemPos_ExeSection(para)
+            else if keyword='ENDEXESECTION' then
+              ExeOutput.MemPos_EndExeSection
+            else if keyword='HEADER' then
+              ExeOutput.MemPos_Header;
+            hp:=TCmdStrListItem(hp.next);
+          end;
+      end;
+
+
+    procedure TInternalLinker.ParseScript_DataPos;
+>>>>>>> origin/fixes_2_2
       var
         s,
         para,
@@ -1407,7 +1452,11 @@ Implementation
             para:=ParsePara(GetToken(s,' '));
 =======
       begin
+<<<<<<< HEAD
         exeoutput.MemPos_Start;
+=======
+        exeoutput.DataPos_Start;
+>>>>>>> origin/fixes_2_2
         hp:=TCmdStrListItem(linkscript.first);
         while assigned(hp) do
           begin
@@ -1418,6 +1467,7 @@ Implementation
             para:=GetToken(s,' ');
 >>>>>>> graemeg/fixes_2_2
             if keyword='EXESECTION' then
+<<<<<<< HEAD
               ExeOutput.MemPos_ExeSection(para)
             else if keyword='ENDEXESECTION' then
               ExeOutput.MemPos_EndExeSection
@@ -1476,6 +1526,15 @@ Implementation
 =======
               ExeOutput.DataPos_Symbols;
 >>>>>>> graemeg/fixes_2_2
+=======
+              ExeOutput.DataPos_ExeSection(para)
+            else if keyword='ENDEXESECTION' then
+              ExeOutput.DataPos_EndExeSection
+            else if keyword='HEADER' then
+              ExeOutput.DataPos_Header
+            else if keyword='SYMBOLS' then
+              ExeOutput.DataPos_Symbols;
+>>>>>>> origin/fixes_2_2
             hp:=TCmdStrListItem(hp.next);
           end;
       end;
@@ -1507,7 +1566,10 @@ Implementation
 =======
         bsssize : aint;
         bsssec  : TExeSection;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         dbgname : TCmdStr;
       begin
         result:=false;
@@ -1515,7 +1577,10 @@ Implementation
         Message1(exec_i_linking,outputname);
         FlushOutput;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {$warning TODO Load custom linker script}
         DefaultLinkScript;
@@ -1579,10 +1644,14 @@ Implementation
             exeoutput.ExeWriteMode:=ewm_exeonly;
             exeoutput.RemoveDebugInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
             exeoutput.GenerateDebugLink(ExtractFileName(dbgname),GetFileCRC(dbgname));
 =======
             exeoutput.GenerateDebugLink(dbgname,GetFileCRC(dbgname));
 >>>>>>> graemeg/fixes_2_2
+=======
+            exeoutput.GenerateDebugLink(dbgname,GetFileCRC(dbgname));
+>>>>>>> origin/fixes_2_2
             ParseScript_MemPos;
             ParseScript_DataPos;
             exeoutput.WriteExeFile(outputname);
@@ -1610,7 +1679,10 @@ Implementation
           bsssize:=bsssec.size
         else
           bsssize:=0;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
         { Executable info }
         Message1(execinfo_x_codesize,tostr(status.codesize));

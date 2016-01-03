@@ -81,6 +81,7 @@ unit cpupara;
       parammsupregs_winx64 : array[0..3] of tsuperregister = (RS_XMM0,RS_XMM1,RS_XMM2,RS_XMM3);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
    The argument classification code largely comes from libffi:
 <<<<<<< HEAD
@@ -1846,6 +1847,8 @@ unit cpupara;
             internalerror(2010021501);
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
     function structure_in_registers(varspez:tvarspez;size:longint):boolean;
       begin
@@ -2186,6 +2189,7 @@ unit cpupara;
           recorddef :
             begin
 <<<<<<< HEAD
+<<<<<<< HEAD
               { MetroWerks Pascal: const records always passed by reference
                 (for Mac OS X interfaces) }
               if (calloption=pocall_mwpascal) and
@@ -2223,18 +2227,24 @@ unit cpupara;
               else
               { SysV ABI always passes it as value parameter }
 =======
+=======
+>>>>>>> origin/fixes_2_2
               { Win ABI depends on size to pass it in a register or not }
               if (target_info.system=system_x86_64_win64) then
                 result:=not structure_in_registers(varspez,def.size)
               else
               { linux ABI always passes it as value parameter }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                 result:=false;
             end;
           arraydef :
             begin
               { cdecl array of const need to be ignored and therefor be puhsed
                 as value parameter with length 0 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2277,6 +2287,8 @@ unit cpupara;
           stringdef,
           procvardef,
 =======
+=======
+>>>>>>> origin/fixes_2_2
               if (calloption in [pocall_cdecl,pocall_cppdecl]) and
                  (is_array_of_const(def) or
                   is_dynamic_array(def)) then
@@ -2299,7 +2311,10 @@ unit cpupara;
               if (po_methodpointer in tprocvardef(def).procoptions) then
                 result:=not structure_in_registers(varspez,def.size);
             end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           setdef :
             begin
               numclasses:=classify_argument(def,vs_value,def.size,classes,0);
@@ -2444,6 +2459,13 @@ unit cpupara;
           when passing as parameter, but LOC_FPUREGISTER as function result) }
         if def.typ=floatdef then
 =======
+        { Return is passed as var parameter }
+        if ret_in_param(p.returndef,p.proccalloption) then
+          begin
+            p.funcretloc[side].loc:=LOC_REFERENCE;
+            p.funcretloc[side].size:=retcgsize;
+            exit;
+          end;
         { Return is passed as var parameter }
         if ret_in_param(p.returndef,p.proccalloption) then
           begin
@@ -2734,7 +2756,10 @@ unit cpupara;
               p.funcretloc[side].register:=newreg(R_INTREGISTER,RS_FUNCTION_RESULT_REG,cgsize2subreg(retcgsize))
             else
               p.funcretloc[side].register:=newreg(R_INTREGISTER,RS_FUNCTION_RETURN_REG,cgsize2subreg(retcgsize));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           end;
       end;
 
@@ -2807,10 +2832,13 @@ unit cpupara;
             else
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 getvalueparaloc(hp.varspez,paradef,loc[1],loc[2]);
                 paralen:=push_size(hp.varspez,paradef,p.proccalloption);
                 paracgsize:=def_cgsize(paradef);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                 getvalueparaloc(hp.varspez,hp.vardef,loc[1],loc[2]);
                 paralen:=push_size(hp.varspez,hp.vardef,p.proccalloption);
                 paracgsize:=def_cgsize(hp.vardef);
@@ -3142,9 +3170,12 @@ unit cpupara;
                           paraloc:=hp.paraloc[side].add_location;
                           paraloc^.loc:=LOC_REFERENCE;
 <<<<<<< HEAD
+<<<<<<< HEAD
                           paraloc^.def:=loc[locidx].def;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                           {Hack alert!!! We should modify int_cgsize to handle OS_128,
                            however, since int_cgsize is called in many places in the
                            compiler where only a few can already handle OS_128, fixing it

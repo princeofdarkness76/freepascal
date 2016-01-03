@@ -13,10 +13,14 @@
   You should have received a copy of the GNU Library General Public License
   along with this library; if not, write to the Free Software Foundation,
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inc., i51 Franklin Street, Fifth Floor, Boston, MA 02111-1301, USA.
 =======
   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 >>>>>>> graemeg/fixes_2_2
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> origin/fixes_2_2
 }
 {
   See the file COPYING.FPC, included in this distribution,
@@ -72,9 +76,12 @@ type
     FBlockStream: TMemoryStream;
     ParentNode: TFIftiNode;
 <<<<<<< HEAD
+<<<<<<< HEAD
     OwnsParentNode : boolean;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     function  AdjustedWord(AWord: String; out AOffset: Byte; AOldWord: String): String;
     procedure ChildIsFull(AWord: String; ANodeOffset: DWord); virtual; abstract;
     function  GuessIfCanHold(AWord: String): Boolean; virtual; abstract;
@@ -94,14 +101,18 @@ type
     FWordList: TIndexedWordList;
     FActiveLeafNode: TFIftiNode;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetHasData: Boolean;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure ProcessWords;
     procedure WriteHeader(IsPlaceHolder: Boolean);
     procedure WriteAWord(AWord: TIndexedWord);
   public
     procedure WriteToStream;
+<<<<<<< HEAD
 <<<<<<< HEAD
     property  HasData: Boolean read GetHasData;
     constructor Create(AStream: TStream; AWordList: TIndexedWordList);
@@ -109,6 +120,9 @@ type
 =======
     constructor Create(AStream: TStream; AWordList: TIndexedWordList);
 >>>>>>> graemeg/fixes_2_2
+=======
+    constructor Create(AStream: TStream; AWordList: TIndexedWordList);
+>>>>>>> origin/fixes_2_2
   end;
 
   { TChmSearchReader }
@@ -150,10 +164,14 @@ type
     destructor  Destroy; override;
     procedure   DumpData(AFoundDataEvent: TChmSearchReaderFoundDataEvent);
 <<<<<<< HEAD
+<<<<<<< HEAD
     function    LookupWord(AWord: String; out ATitleHits: TChmWLCTopicArray; AStartsWith: Boolean = True): TChmWLCTopicArray;
 =======
     function    LookupWord(AWord: String; out ATitleHits: TChmWLCTopicArray): TChmWLCTopicArray;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function    LookupWord(AWord: String; out ATitleHits: TChmWLCTopicArray): TChmWLCTopicArray;
+>>>>>>> origin/fixes_2_2
     property    FileIsValid: Boolean read FFileIsValid;
   end;
 
@@ -273,12 +291,15 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { TChmSearchWriter }
 
 procedure TChmSearchWriter.ProcessWords;
 begin
   FWordList.ForEach(@WriteAword);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 { TChmSearchWriter }
@@ -293,11 +314,15 @@ begin
     WriteAWord(AWord);
     AWord := AWord.NextWord;
   end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   if FActiveLeafNode <> nil then
     FActiveLeafNode.Flush(False); // causes the unwritten parts of the tree to be written
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TChmSearchWriter.GetHasData: Boolean;
 begin
@@ -307,6 +332,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure TChmSearchWriter.WriteHeader ( IsPlaceHolder: Boolean ) ;
 var
   TmpNode: TFIftiNode;
@@ -326,10 +353,14 @@ begin
   FHeaderRec.Sig[2] := $28;
   FHeaderRec.HTMLFilesCount := FWordList.IndexedFileCount;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FHeaderRec.RootNodeOffset := FStream.Size-FIFTI_NODE_SIZE;
 =======
   FHeaderRec.RootNodeOffset := FStream.Size-4096;
 >>>>>>> graemeg/fixes_2_2
+=======
+  FHeaderRec.RootNodeOffset := FStream.Size-4096;
+>>>>>>> origin/fixes_2_2
   FHeaderRec.LeafNodeCount := TLeafNode(FActiveLeafNode).LeafNodeCount;
   FHeaderRec.CopyOfRootNodeOffset := FHeaderRec.RootNodeOffset;
   FHeaderRec.TreeDepth := 0;
@@ -348,10 +379,14 @@ begin
   //FHeaderRec.LocationCodeRootSize := 15;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   FHeaderRec.NodeSize := FIFTI_NODE_SIZE;
 =======
   FHeaderRec.NodeSize := 4096;
 >>>>>>> graemeg/fixes_2_2
+=======
+  FHeaderRec.NodeSize := 4096;
+>>>>>>> origin/fixes_2_2
   FHeaderRec.LongestWordLength := FWordList.LongestWord;
   FHeaderRec.TotalWordsIndexed := FWordList.TotalWordCount;
   FHeaderRec.TotalWords := FWordList.TotalDIfferentWords;
@@ -401,9 +436,12 @@ end;
 
 procedure TChmSearchWriter.WriteAWord ( AWord: TIndexedWord ) ;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   if FActiveLeafNode = nil then
   begin
@@ -416,9 +454,13 @@ begin
     end;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
   if FActiveLeafNode.GuessIfCanHold(AWord.TheWord) = False then
   begin
     FActiveLeafNode.Flush(True);
@@ -427,9 +469,13 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 procedure TChmSearchWriter.WriteToStream;
 begin
   WriteHeader(True);
@@ -442,6 +488,7 @@ constructor TChmSearchWriter.Create ( AStream: TStream;
 begin
   FStream := AStream;
   FWordList := AWordList;
+<<<<<<< HEAD
 <<<<<<< HEAD
   FActiveLeafNode:=NIL; 
 end;
@@ -458,6 +505,11 @@ end;
 end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+end;
+
+>>>>>>> origin/fixes_2_2
 { TLeafNode }
 
 function TFIftiNode.RemainingSpace: DWord;
@@ -471,18 +523,24 @@ begin
   FWriteStream := AStream;
   FBlockStream := TMemoryStream.Create;
 <<<<<<< HEAD
+<<<<<<< HEAD
   OwnsParentNode :=false;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 destructor TFIftiNode.Destroy;
 begin
   FBlockStream.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if OwnsParentNode then ParentNode.Free;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   inherited Destroy;
 end;
 
@@ -574,6 +632,7 @@ begin
   begin
     if ParentNode = nil then
 <<<<<<< HEAD
+<<<<<<< HEAD
       begin
         ParentNode := TIndexNode.Create(FWriteStream);
         OwnsParentNode:=True;
@@ -582,6 +641,10 @@ begin
       ParentNode := TIndexNode.Create(FWriteStream);
 
 >>>>>>> graemeg/fixes_2_2
+=======
+      ParentNode := TIndexNode.Create(FWriteStream);
+
+>>>>>>> origin/fixes_2_2
     ParentNode.ChildIsFull(FLastWord, FLastNodeStart);
     if (NewBlockNeeded = False) then
       ParentNode.Flush(False);
@@ -608,6 +671,7 @@ begin
   FBlockStream.WriteByte(Length(NewWord)+1);
   FBlockStream.WriteByte(Offset);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   // length can be 0 if it is the same word as the last. there is a word entry each for title and content
 
@@ -617,6 +681,9 @@ begin
 =======
   FBlockStream.Write(NewWord[1], Length(Trim(NewWord)));
 >>>>>>> graemeg/fixes_2_2
+=======
+  FBlockStream.Write(NewWord[1], Length(Trim(NewWord)));
+>>>>>>> origin/fixes_2_2
   FBlockStream.WriteByte(Ord(AWord.IsTitle));
   WriteCompressedIntegerBE(FBlockStream, AWord.DocumentCount);
   FBlockStream.WriteDWord(NtoLE(DWord(FWriteStream.Position)));
@@ -627,10 +694,13 @@ begin
 
   WriteCompressedIntegerBE(FBlockStream, WLCSize);
 <<<<<<< HEAD
+<<<<<<< HEAD
   if FBlockStream.Position > FIFTI_NODE_SIZE then
     raise Exception.Create('FIFTIMAIN Leaf node has written past the block!');
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 function Min(AValue, BValue: Byte): Byte;
@@ -733,6 +803,7 @@ begin
     BitCount := WriteScaleRootInt(DocDelta, Bits, ADocRootSize);
     AddValue(Bits, BitCount);
 <<<<<<< HEAD
+<<<<<<< HEAD
     BitCount := WriteScaleRootInt(Doc.NumberOfIndexEntries, Bits, ACodeRootSize);
     AddValue(Bits, BitCount);
 
@@ -740,13 +811,18 @@ begin
     begin
       LocDelta := NewLocCode(Doc.IndexEntry[j]);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     BitCount := WriteScaleRootInt(Length(Doc.WordIndex), Bits, ACodeRootSize);
     AddValue(Bits, BitCount);
 
     for j := 0 to High(Doc.WordIndex) do
     begin
       LocDelta := NewLocCode(Doc.WordIndex[j]);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       BitCount := WriteScaleRootInt(LocDelta, Bits, ALocRootSize);
       AddValue(Bits, BitCount);
     end;
@@ -771,14 +847,18 @@ procedure TIndexNode.ChildIsFull ( AWord: String; ANodeOffset: DWord ) ;
 var
   Offset: Byte;
 <<<<<<< HEAD
+<<<<<<< HEAD
   NewWord: String;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 begin
   if FBlockStream.Position = 0 then
     FBlockStream.WriteWord(0); // free space at end. updated when the block is flushed
   if GuessIfCanHold(AWord) = False then
     Flush(True);
+<<<<<<< HEAD
 <<<<<<< HEAD
   NewWord := AdjustedWord(AWord, Offset, FLastWord);
   FLastWord:=AWord;
@@ -792,6 +872,8 @@ begin
   if FBlockStream.Position > FIFTI_NODE_SIZE then
     raise Exception.Create('FIFTIMAIN Index node has written past the block!');
 =======
+=======
+>>>>>>> origin/fixes_2_2
   AWord := AdjustedWord(AWord, Offset, FLastWord);
 
   // Write the Index node Entry
@@ -800,7 +882,10 @@ begin
   FBlockStream.Write(AWord[1], Length(AWord));
   FBlockStream.WriteDWord(NtoLE(ANodeOffset));
   FBlockStream.WriteWord(0);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TIndexNode.Flush ( NewBlockNeeded: Boolean ) ;
@@ -811,6 +896,7 @@ begin
   begin
     if ParentNode = nil then
 <<<<<<< HEAD
+<<<<<<< HEAD
       begin
         ParentNode := TIndexNode.Create(FWriteStream);
         OwnsParentNode:=True;
@@ -818,6 +904,9 @@ begin
 =======
       ParentNode := TIndexNode.Create(FWriteStream);
 >>>>>>> graemeg/fixes_2_2
+=======
+      ParentNode := TIndexNode.Create(FWriteStream);
+>>>>>>> origin/fixes_2_2
   end;
 
   if ParentNode <> nil then
@@ -832,9 +921,12 @@ begin
 
   FWriteStream.CopyFrom(FBlockStream, FIFTI_NODE_SIZE);
 <<<<<<< HEAD
+<<<<<<< HEAD
   FBlockStream.Position := 0;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   FLastWord := '';
 
@@ -933,11 +1025,15 @@ begin
     Result := Copy(ALastWord, 1, CopyLastWordCharCount);
   SetLength(Result, (WordLength-1) + CopyLastWordCharCount);
 <<<<<<< HEAD
+<<<<<<< HEAD
   if WordLength > 1 then
     FStream.Read(Result[1+CopyLastWordCharCount], WordLength-1);
 =======
   FStream.Read(Result[1+CopyLastWordCharCount], WordLength-1);
 >>>>>>> graemeg/fixes_2_2
+=======
+  FStream.Read(Result[1+CopyLastWordCharCount], WordLength-1);
+>>>>>>> origin/fixes_2_2
 end;
 
 function TChmSearchReader.ReadIndexNodeEntry (ALastWord: String;  out AWord: String; out
@@ -1124,10 +1220,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TChmSearchReader.LookupWord(AWord: String; out ATitleHits: TChmWLCTopicArray; AStartsWith: Boolean = True): TChmWLCTopicArray;
 =======
 function TChmSearchReader.LookupWord(AWord: String; out ATitleHits: TChmWLCTopicArray): TChmWLCTopicArray;
 >>>>>>> graemeg/fixes_2_2
+=======
+function TChmSearchReader.LookupWord(AWord: String; out ATitleHits: TChmWLCTopicArray): TChmWLCTopicArray;
+>>>>>>> origin/fixes_2_2
 var
   LastWord: String;
   NewWord: String;
@@ -1151,6 +1251,7 @@ begin
      if ReadIndexNodeEntry(LastWord, NewWord, NewNodePosition) <> False then
      begin
 <<<<<<< HEAD
+<<<<<<< HEAD
        LastWord := NewWord;
        //WriteLn('Found Index Entry: ', NewWord, ' Comparing to ', AWord);
        if  ChmCompareText(NewWord, AWord) >= 0 then
@@ -1158,6 +1259,10 @@ begin
        //WriteLn('Found Index Entry: ', NewWord, ' Comparing to ', AWord);
        if ChmCompareText(NewWord, AWord) >= 0 then
 >>>>>>> graemeg/fixes_2_2
+=======
+       //WriteLn('Found Index Entry: ', NewWord, ' Comparing to ', AWord);
+       if ChmCompareText(NewWord, AWord) >= 0 then
+>>>>>>> origin/fixes_2_2
        begin
          LastWord := '';
          Dec(NodeLevel);
@@ -1176,6 +1281,7 @@ begin
     //WriteLn('Found Leaf Entry: ', NewWord, ' Comparing to ', AWord);
     LastWord := NewWord;
 <<<<<<< HEAD
+<<<<<<< HEAD
     if Length(NewWord) < Length(AWord) then
       continue;
 
@@ -1186,6 +1292,9 @@ begin
 =======
     CompareResult := ChmCompareText(AWord, NewWord);
 >>>>>>> graemeg/fixes_2_2
+=======
+    CompareResult := ChmCompareText(AWord, NewWord);
+>>>>>>> origin/fixes_2_2
     if CompareResult < 0 then
       Exit;
     if CompareResult = 0 then

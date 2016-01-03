@@ -253,7 +253,10 @@ implementation
              right.free;
              right:=t;
              typecheckpass(right);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            end;
 
          if right.resultdef.typ<>setdef then
@@ -333,6 +336,7 @@ implementation
                  { value > high(longint) if we don't take the signedness    }
                  { into account                                             }
 <<<<<<< HEAD
+<<<<<<< HEAD
                  if Tordconstnode(left).value.signed then
                    t:=cordconstnode.create(byte(tordconstnode(left).value.svalue in Tsetconstnode(right).value_set^),
                      pasbool8type,true)
@@ -340,13 +344,18 @@ implementation
                    t:=cordconstnode.create(byte(tordconstnode(left).value.uvalue in Tsetconstnode(right).value_set^),
                      pasbool8type,true);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                  if is_signed(left.resultdef) then
                    t:=cordconstnode.create(byte(tordconstnode(left).value in Tsetconstnode(right).value_set^),
                      booltype,true)
                  else
                    t:=cordconstnode.create(byte(TConstExprUInt(tordconstnode(left).value) in Tsetconstnode(right).value_set^),
                      booltype,true);                   
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                  typecheckpass(t);
                  result:=t;
                  exit;

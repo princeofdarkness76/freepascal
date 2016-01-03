@@ -42,7 +42,10 @@ implicitunits=exeinfo \
       strutils convutil ctypes 
 rsts=math varutils typinfo variants pmhelp classes sysconst dateutil
 implicitunits=exeinfo
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 [require]
 nortl=y

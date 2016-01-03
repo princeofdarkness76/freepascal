@@ -17,9 +17,13 @@
 {$goto on}
 {$H+}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$goto on}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$goto on}
+>>>>>>> origin/fixes_2_2
 
 program dotest;
 uses
@@ -32,11 +36,15 @@ uses
   testu,
   redir,
 <<<<<<< HEAD
+<<<<<<< HEAD
   bench,
   classes;
 =======
   bench;
 >>>>>>> graemeg/fixes_2_2
+=======
+  bench;
+>>>>>>> origin/fixes_2_2
 
 {$ifdef go32v2}
   {$define LIMIT83FS}
@@ -66,6 +74,7 @@ const
 {$endif MACOS}
 {$endif UNIX}
 <<<<<<< HEAD
+<<<<<<< HEAD
   ExeExt : string = '';
   DllExt : string = '.so';
   DllPrefix: string = 'lib';
@@ -74,6 +83,9 @@ const
 =======
   DefaultTimeout=60;
 >>>>>>> graemeg/fixes_2_2
+=======
+  DefaultTimeout=60;
+>>>>>>> origin/fixes_2_2
 
 var
   Config : TConfig;
@@ -110,7 +122,10 @@ const
   { TargetDir : string = ''; unused }
 =======
   TargetDir : string = '';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   BenchmarkInfo : boolean = false;
   ExtraCompilerOpts : string = '';
   DelExecutable : TDelExecutables = [];
@@ -128,7 +143,10 @@ const
   rquote : string = '''';
 =======
   rquote : char = '''';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   UseTimeout : boolean = false;
   emulatorname : string = '';
   TargetCanCompileLibraries : boolean = true;
@@ -1729,6 +1747,7 @@ var
   TestExe  : string;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   LocalFile, RemoteFile: string;
   LocalPath, LTarget : string;
@@ -1762,12 +1781,19 @@ begin
   EndTicks,
   StartTicks : int64;
 >>>>>>> graemeg/fixes_2_2
+=======
+  execcmd  : string;
+  execres  : boolean;
+  EndTicks,
+  StartTicks : int64;
+>>>>>>> origin/fixes_2_2
   function ExecuteRemote(const prog,args:string):boolean;
     var
       Trials : longint;
     begin
       Verbose(V_Debug,'RemoteExecuting '+Prog+' '+args);
       StartTicks:=GetMicroSTicks;
+<<<<<<< HEAD
 <<<<<<< HEAD
       ExecuteRemote:=false;
       Trials:=0;
@@ -1782,6 +1808,9 @@ begin
 =======
       ExecuteRemote:=ExecuteRedir(prog,args,'',EXELogFile,'stdout');
 >>>>>>> graemeg/fixes_2_2
+=======
+      ExecuteRemote:=ExecuteRedir(prog,args,'',EXELogFile,'stdout');
+>>>>>>> origin/fixes_2_2
       EndTicks:=GetMicroSTicks;
     end;
 
@@ -1833,8 +1862,11 @@ begin
       ioresult;
       s:=CurrDir+SplitFileName(TestExe);
 <<<<<<< HEAD
+<<<<<<< HEAD
       execres:=ExecuteEmulated(EmulatorName,s,FullExeLogFile,StartTicks,EndTicks);
 =======
+=======
+>>>>>>> origin/fixes_2_2
       execres:=ExecuteEmulated(EmulatorName,s);
 >>>>>>> graemeg/fixes_2_2
       {$I-}
@@ -1844,6 +1876,7 @@ begin
   else if RemoteAddr<>'' then
     begin
       TestRemoteExe:=RemotePath+'/'+SplitFileName(TestExe);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       { rsh doesn't pass the exitcode, use a second command to print the exitcode
@@ -1977,6 +2010,8 @@ begin
       execres:=ExecuteRemote(rshprog,execcmd);
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
       if deBefore in DelExecutable then
         ExecuteRemote(rshprog,RemotePara+' '+RemoteAddr+' rm -f '+TestRemoteExe);
       ExecuteRemote(rcpprog,RemotePara+' '+TestExe+' '+RemoteAddr+':'+TestRemoteExe);
@@ -1997,7 +2032,10 @@ begin
         execcmd:=execcmd+' ; rm -f '+TestRemoteExe;
       execcmd:=execcmd+rquote;
       execres:=ExecuteRemote(rshprog,execcmd);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       { Check for TestExitCode error in output, sets ExecuteResult }
       if not CheckTestExitCode(EXELogFile) then
         Verbose(V_Debug,'Failed to check exit code for '+execcmd);
@@ -2102,10 +2140,14 @@ begin
    end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (deAfter in DelExecutable) and not Config.NeededAfter then
 =======
   if deAfter in DelExecutable then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if deAfter in DelExecutable then
+>>>>>>> origin/fixes_2_2
     begin
       Verbose(V_Debug,'Deleting executable '+TestExe);
       RemoveFile(TestExe);
@@ -2163,6 +2205,7 @@ procedure getargs;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     writeln('  !ENV_NAME     parse environment variable ENV_NAME for options');
     writeln('  -A            include ALL tests');
     writeln('  -ADB          use ADB to run tests');
@@ -2180,12 +2223,15 @@ procedure getargs;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     writeln('  -B            delete executable before remote upload');
     writeln('  -C<compiler>  set compiler to use');
     writeln('  -D            display execution time');
     writeln('  -E            execute test also');
     writeln('  -G            include graph tests');
     writeln('  -I            include interactive tests');
+<<<<<<< HEAD
 <<<<<<< HEAD
     writeln('  -K            include known bug tests');
 <<<<<<< HEAD
@@ -2204,6 +2250,9 @@ procedure getargs;
 =======
     writeln('  -O            use timeout wrapper for (remote) execution');
 >>>>>>> graemeg/fixes_2_2
+=======
+    writeln('  -O            use timeout wrapper for (remote) execution');
+>>>>>>> origin/fixes_2_2
     writeln('  -M<emulator>  run the tests using the given emulator');
     writeln('  -O            use timeout wrapper for (remote) execution');
     writeln('  -P<path>      path to the tests tree on the remote machine');
@@ -2284,6 +2333,8 @@ begin
 =======
          'B' : Include(DelExecutable,deBefore);
 
+         'B' : Include(DelExecutable,deBefore);
+
          'C' : CompilerBin:=Para;
 >>>>>>> graemeg/fixes_2_2
 
@@ -2306,6 +2357,8 @@ begin
                DoUsual:=false;
            end;
 =======
+         'O' : UseTimeout:=true;
+
          'O' : UseTimeout:=true;
 
          'P' : RemotePath:=Para;
@@ -2391,6 +2444,7 @@ begin
      'Y' : ExtraCompilerOpts:= ExtraCompilerOpts +' '+ Para;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      'Z' : Include(DelExecutable,deAfter);
     end;
  end;
@@ -2407,6 +2461,8 @@ begin
    Verbose(V_Debug,'Environment value is "'+arg+'"');
    while (length(arg)>0) do
 =======
+=======
+>>>>>>> origin/fixes_2_2
          'Z' : Include(DelExecutable,deAfter);
         end;
      end

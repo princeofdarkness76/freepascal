@@ -528,10 +528,13 @@ implementation
             with h do
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 address:=swapendian(address);
                 info:=swapendian(info);
                 addend:=swapendian(addend);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                 result.e_type:=swapendian(e_type);
                 result.e_machine:=swapendian(e_machine);
                 result.e_version:=swapendian(e_version);
@@ -545,7 +548,10 @@ implementation
                 result.e_shentsize:=swapendian(e_shentsize);
                 result.e_shnum:=swapendian(e_shnum);
                 result.e_shstrndx:=swapendian(e_shstrndx);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               end;
         end;
 
@@ -556,10 +562,13 @@ implementation
             with h do
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 address:=swapendian(address);
                 info:=swapendian(info);
                 addend:=swapendian(addend);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                 result.e_type:=swapendian(e_type);
                 result.e_machine:=swapendian(e_machine);
                 result.e_version:=swapendian(e_version);
@@ -573,7 +582,10 @@ implementation
                 result.e_shentsize:=swapendian(e_shentsize);
                 result.e_shnum:=swapendian(e_shnum);
                 result.e_shstrndx:=swapendian(e_shstrndx);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               end;
         end;
 
@@ -584,9 +596,12 @@ implementation
             with h do
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 d_tag:=swapendian(d_tag);
                 d_val:=swapendian(d_val);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                 result.sh_name:=swapendian(sh_name);
                 result.sh_type:=swapendian(sh_type);
                 result.sh_flags:=swapendian(sh_flags);
@@ -597,7 +612,10 @@ implementation
                 result.sh_info:=swapendian(sh_info);
                 result.sh_addralign:=swapendian(sh_addralign);
                 result.sh_entsize:=swapendian(sh_entsize);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               end;
         end;
 
@@ -608,9 +626,12 @@ implementation
             with h do
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 d_tag:=swapendian(d_tag);
                 d_val:=swapendian(d_val);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                 result.sh_name:=swapendian(sh_name);
                 result.sh_type:=swapendian(sh_type);
                 result.sh_flags:=swapendian(sh_flags);
@@ -621,7 +642,10 @@ implementation
                 result.sh_info:=swapendian(sh_info);
                 result.sh_addralign:=swapendian(sh_addralign);
                 result.sh_entsize:=swapendian(sh_entsize);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               end;
         end;
 
@@ -632,6 +656,7 @@ implementation
             with h do
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 vd_version:=swapendian(vd_version);
                 vd_flags:=swapendian(vd_flags);
                 vd_ndx:=swapendian(vd_ndx);
@@ -640,11 +665,16 @@ implementation
                 vd_aux:=swapendian(vd_aux);
                 vd_next:=swapendian(vd_next);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                 result.st_name:=swapendian(st_name);
                 result.st_value:=swapendian(st_value);
                 result.st_size:=swapendian(st_size);
                 result.st_shndx:=swapendian(st_shndx);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               end;
         end;
 
@@ -655,14 +685,20 @@ implementation
             with h do
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 vda_name:=swapendian(vda_name);
                 vda_next:=swapendian(vda_next);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                 result.st_name:=swapendian(st_name);
                 result.st_value:=swapendian(st_value);
                 result.st_size:=swapendian(st_size);
                 result.st_shndx:=swapendian(st_shndx);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
               end;
         end;
 
@@ -673,6 +709,7 @@ implementation
             with h do
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 vn_version:=swapendian(vn_version);
                 vn_cnt:=swapendian(vn_cnt);
                 vn_file:=swapendian(vn_file);
@@ -682,6 +719,10 @@ implementation
                 result.address:=swapendian(address);
                 result.info:=swapendian(info);
 >>>>>>> graemeg/fixes_2_2
+=======
+                result.address:=swapendian(address);
+                result.info:=swapendian(info);
+>>>>>>> origin/fixes_2_2
               end;
         end;
 
@@ -692,6 +733,7 @@ implementation
             with h do
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 vna_hash:=swapendian(vna_hash);
                 vna_flags:=swapendian(vna_flags);
                 vna_other:=swapendian(vna_other);
@@ -701,6 +743,10 @@ implementation
                 result.address:=swapendian(address);
                 result.info:=swapendian(info);
 >>>>>>> graemeg/fixes_2_2
+=======
+                result.address:=swapendian(address);
+                result.info:=swapendian(info);
+>>>>>>> origin/fixes_2_2
               end;
         end;
 
@@ -877,9 +923,12 @@ implementation
 >>>>>>> origin/cpstrnew
 {$ifdef userodata}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
           '.text','.data','.data','.rodata','.bss','.threadvar',
 =======
+=======
+>>>>>>> origin/fixes_2_2
           '.text','.data','.data','.rodata','.bss','.threadvar',
 {$else userodata}
           '.text','.data','.data','.data','.bss','.threadvar',
@@ -898,6 +947,7 @@ implementation
           '.fpc',
           '.toc',
           '.init',
+<<<<<<< HEAD
 <<<<<<< HEAD
           '.fini',
           '.objc_class',
@@ -951,6 +1001,9 @@ implementation
 =======
           '.fini'
 >>>>>>> graemeg/fixes_2_2
+=======
+          '.fini'
+>>>>>>> origin/fixes_2_2
         );
         secnames_pic : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
           '.text',
@@ -973,6 +1026,7 @@ implementation
           '.fpc',
           '.toc',
           '.init',
+<<<<<<< HEAD
 <<<<<<< HEAD
           '.fini',
           '.objc_class',
@@ -1022,6 +1076,9 @@ implementation
 =======
           '.fini'
 >>>>>>> graemeg/fixes_2_2
+=======
+          '.fini'
+>>>>>>> origin/fixes_2_2
         );
       var
         sep : string[3];

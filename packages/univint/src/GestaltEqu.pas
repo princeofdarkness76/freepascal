@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/Gestalt.h
  
      Contains:   Gestalt Interfaces.
@@ -8,6 +9,8 @@
  
      Copyright:  © 1988-2008 by Apple Computer, Inc.  All rights reserved
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       GestaltEqu.p
  
      Contains:   Gestalt Interfaces.
@@ -16,11 +19,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1988-2002 by Apple Computer, Inc.  All rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -34,6 +41,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -45,7 +54,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -55,12 +67,17 @@
 unit GestaltEqu;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -74,14 +91,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -90,11 +112,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -132,6 +157,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -139,6 +166,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -404,6 +432,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -412,7 +442,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -439,9 +472,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -451,6 +488,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes;
 {$endc} {not MACOSALLINCLUDE}
@@ -477,6 +515,8 @@ type
 	SelectorFunctionProcPtr = function( selector: OSType; var response: SInt32 ): OSErr;
 	SelectorFunctionUPP = SelectorFunctionProcPtr;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,MixedMode;
 
 
@@ -495,7 +535,10 @@ type
 {$elsec}
 	SelectorFunctionUPP = UniversalProcPtr;
 {$endc}	
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  Gestalt()
  *  
@@ -506,10 +549,14 @@ type
  *    The Gestalt function places the information requested by the
  *    selector parameter in the variable parameter response . Note that
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Gestalt returns the response from all selectors in an SInt32,
 =======
  *    Gestalt returns the response from all selectors in a long word,
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Gestalt returns the response from all selectors in a long word,
+>>>>>>> origin/fixes_2_2
  *    which occupies 4 bytes. When not all 4 bytes are needed, the
  *    significant information appears in the low-order byte or bytes.
  *    Although the response parameter is declared as a variable
@@ -545,12 +592,17 @@ type
  *    
  *    Attr:  A range of 32 bits, the meanings of which are defined by a
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    list of constants. Bit 0 is the least significant bit of the
  *    SInt32.
 =======
  *    list of constants. Bit 0 is the least significant bit of the long
  *    word.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    list of constants. Bit 0 is the least significant bit of the long
+ *    word.
+>>>>>>> origin/fixes_2_2
  *    Count: A number indicating how many of the indicated type of item
  *    exist.
  *    Size: A size, usually in bytes.
@@ -591,6 +643,7 @@ type
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function Gestalt( selector: OSType; var response: SInt32 ): OSErr; external name '_Gestalt';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -601,6 +654,11 @@ function Gestalt(selector: OSType; var response: SInt32): OSErr; external name '
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> graemeg/fixes_2_2
+=======
+function Gestalt(selector: OSType; var response: SInt32): OSErr; external name '_Gestalt';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2_2
 {
  *  ReplaceGestalt()   *** DEPRECATED ***
  *  
@@ -637,6 +695,7 @@ function Gestalt(selector: OSType; var response: SInt32): OSErr; external name '
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -649,6 +708,8 @@ function ReplaceGestalt( selector: OSType; gestaltFunction: SelectorFunctionUPP;
 
 {$ifc not TARGET_CPU_64}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.3
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -656,7 +717,10 @@ function ReplaceGestalt( selector: OSType; gestaltFunction: SelectorFunctionUPP;
 function ReplaceGestalt(selector: OSType; gestaltFunction: SelectorFunctionUPP; var oldGestaltFunction: SelectorFunctionUPP): OSErr; external name '_ReplaceGestalt';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewGestalt()   *** DEPRECATED ***
  *  
@@ -702,6 +766,7 @@ function ReplaceGestalt(selector: OSType; gestaltFunction: SelectorFunctionUPP; 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -712,6 +777,8 @@ function NewGestalt( selector: OSType; gestaltFunction: SelectorFunctionUPP ): O
 
 {$endc} {not TARGET_CPU_64}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.3
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -720,7 +787,10 @@ function NewGestalt(selector: OSType; gestaltFunction: SelectorFunctionUPP): OSE
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 
 {   The GestaltValue functions are available in System 7.5 and later }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  NewGestaltValue()
@@ -735,6 +805,7 @@ function NewGestalt(selector: OSType; gestaltFunction: SelectorFunctionUPP): OSE
  *    executed. Before calling NewGestalt, you must define a selector
  *    function callback. See SelectorFunctionProcPtr for a description
  *    of how to define your selector function.
+<<<<<<< HEAD
  *    
  *    Registering with the Gestalt Manager is a way for software such
  *    as system extensions to make their presence known to potential
@@ -5844,6 +5915,170 @@ const
 const
 	gestaltSystemUpdateVersion = FourCharCode('sysu'); { System Update version }
 =======
+=======
+ *    
+ *    Registering with the Gestalt Manager is a way for software such
+ *    as system extensions to make their presence known to potential
+ *    users of their services.
+ *    
+ *    In Mac OS X, the selector and replacement value are on a
+ *    per-context basis. That means they are available only to the
+ *    application or other code that installs them. You cannot use this
+ *    function to make information available to another process.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Parameters:
+ *    
+ *    selector:
+ *      the selector to create
+ *    
+ *    newValue:
+ *      the value to return for the new selector code.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
+ }
+function NewGestaltValue(selector: OSType; newValue: SInt32): OSErr; external name '_NewGestaltValue';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  ReplaceGestaltValue()
+ *  
+ *  Summary:
+ *    Replaces the value that the function Gestalt returns for a
+ *    specified selector code with the value provided to the function.
+ *  
+ *  Discussion:
+ *    You use the function ReplaceGestaltValue to replace an existing
+ *    value. You should not call this function to introduce a value
+ *    that doesn't already exist; instead call the function
+ *    NewGestaltValue.
+ *    
+ *    In Mac OS X, the selector and replacement value are on a
+ *    per-context basis. That means they are available only to the
+ *    application or other code that installs them. You cannot use this
+ *    function to make information available to another process.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Parameters:
+ *    
+ *    selector:
+ *      the selector to create
+ *    
+ *    replacementValue:
+ *      the new value to return for the new selector code.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
+ }
+function ReplaceGestaltValue(selector: OSType; replacementValue: SInt32): OSErr; external name '_ReplaceGestaltValue';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  SetGestaltValue()
+ *  
+ *  Summary:
+ *    Sets the value the function Gestalt will return for a specified
+ *    selector code, installing the selector if it was not already
+ *    installed.
+ *  
+ *  Discussion:
+ *    You use SetGestaltValue to establish a value for a selector,
+ *    without regard to whether the selector was already installed.
+ *     
+ *    In Mac OS X, the selector and replacement value are on a
+ *    per-context basis. That means they are available only to the
+ *    application or other code that installs them. You cannot use this
+ *    function to make information available to another process.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Parameters:
+ *    
+ *    selector:
+ *      the selector to create
+ *    
+ *    newValue:
+ *      the new value to return for the new selector code.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
+ }
+function SetGestaltValue(selector: OSType; newValue: SInt32): OSErr; external name '_SetGestaltValue';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  DeleteGestaltValue()
+ *  
+ *  Summary:
+ *    Deletes a Gestalt selector code so that it is no longer
+ *    recognized by Gestalt.
+ *  
+ *  Discussion:
+ *    After calling this function, subsequent query or replacement
+ *    calls for the selector code will fail as if the selector had
+ *    never been installed 
+ *    
+ *    In Mac OS X, the selector and replacement value are on a
+ *    per-context basis. That means they are available only to the
+ *    application or other code that installs them.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Parameters:
+ *    
+ *    selector:
+ *      the selector to delete
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
+ }
+function DeleteGestaltValue(selector: OSType): OSErr; external name '_DeleteGestaltValue';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+const
+	uppSelectorFunctionProcInfo = $000003E0;
+	{
+	 *  NewSelectorFunctionUPP()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   available as macro/inline
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function NewSelectorFunctionUPP(userRoutine: SelectorFunctionProcPtr): SelectorFunctionUPP; external name '_NewSelectorFunctionUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  DisposeSelectorFunctionUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposeSelectorFunctionUPP(userUPP: SelectorFunctionUPP); external name '_DisposeSelectorFunctionUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  InvokeSelectorFunctionUPP()
+ *  
+ *  Availability:
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -7104,7 +7339,10 @@ const
 	gestaltIntel                = 10;                           {  Intel x86 architecture }
 
 	gestaltSystemUpdateVersion	= FourCharCode('sysu');						{  System Update version  }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {  
     Returns the system version as a 32 bit packed BCD ( binary coded decimal )
@@ -7122,6 +7360,7 @@ const
     Mac OS X 10.3.15 will be returned as 0x1039, and Mac OS X 10.10.5 will
     return 0x1095.
     
+<<<<<<< HEAD
 <<<<<<< HEAD
     A better way to get version information on Mac OS X would be to use the
     new gestaltSystemVersionMajor, gestaltSystemVersionMinor, and 
@@ -7359,6 +7598,8 @@ const
 >>>>>>> graemeg/cpstrnew
 	gestaltHasSingleWindowModeBit = 8;    { This system supports single window mode}
 =======
+=======
+>>>>>>> origin/fixes_2_2
     A better way to get version information on Mac OS X would be to read in the
     system version information from the file /System/Library/CoreServices/SystemVersion.plist.
 }
@@ -7555,7 +7796,10 @@ const
 	gestaltFrontWindowMayBeHiddenMask = 1 shl gestaltFrontWindowMayBeHiddenBit;
 
 	gestaltHasSingleWindowModeBit = 8;                          {  This system supports single window mode}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	gestaltHasSingleWindowModeMask = 1 shl gestaltHasSingleWindowModeBit;
 
 
@@ -7563,6 +7807,7 @@ const
    that even though the processor may support a specific feature, the
    OS may not support all of these features.  These bitfields
    correspond directly to the bits returned by cpuid }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	gestaltX86Features = FourCharCode('x86f');
@@ -7597,6 +7842,8 @@ const
 	gestaltX86HasHTT = 28;   { Hyper-Threading Technology}
 	gestaltX86HasTM = 29;    { Thermal Monitor}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 	gestaltX86Features			= FourCharCode('x86f');
 	gestaltX86HasFPU			= 0;							{  has an FPU that supports the 387 instructions }
@@ -7630,6 +7877,7 @@ const
 	gestaltX86HasSS             = 27;                           {  Self-Snoop}
 	gestaltX86HasHTT            = 28;                           {  Hyper-Threading Technology}
 	gestaltX86HasTM             = 29;                           {  Thermal Monitor}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 
 { 'cpuid' now returns a 64 bit value, and the following 
@@ -7688,10 +7936,13 @@ const
 	gestaltX86HasSS = 27;   { Self-Snoop}
 	gestaltX86HasHTT = 28;   { Hyper-Threading Technology}
 	gestaltX86HasTM = 29;    { Thermal Monitor}
+=======
+>>>>>>> origin/fixes_2_2
 
 { 'cpuid' now returns a 64 bit value, and the following 
     gestalt selector and field definitions apply
     to the extended form of this instruction }
+<<<<<<< HEAD
 const
 	gestaltX86AdditionalFeatures = FourCharCode('x86a');
 	gestaltX86HasSSE3 = 0;    { Prescott New Inst.}
@@ -7737,6 +7988,8 @@ const
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 	gestaltX86AdditionalFeatures = FourCharCode('x86a');
 	gestaltX86HasSSE3           = 0;                            {  Prescott New Inst.}
@@ -7777,4 +8030,7 @@ end.
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

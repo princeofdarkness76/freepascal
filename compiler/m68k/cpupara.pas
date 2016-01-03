@@ -275,7 +275,17 @@ unit cpupara;
             p.funcretloc[side].size:=retcgsize;
             exit;
           end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+        { Return is passed as var parameter }
+        if ret_in_param(p.returndef,p.proccalloption) then
+          begin
+            p.funcretloc[side].loc:=LOC_REFERENCE;
+            p.funcretloc[side].size:=retcgsize;
+            exit;
+          end;
+>>>>>>> origin/fixes_2_2
         { Return in FPU register? }
         if not (cs_fp_emulation in current_settings.moduleswitches) and
            not (current_settings.fputype=fpu_soft) and (result.def.typ=floatdef) then
@@ -412,11 +422,17 @@ unit cpupara;
                is_array_of_const(paradef) then
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifdef DEBUG_CHARLIE}
                 writeln('loc register');
 {$endif DEBUG_CHARLIE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifdef DEBUG_CHARLIE}
+                writeln('loc register');
+{$endif DEBUG_CHARLIE}
+>>>>>>> origin/fixes_2_2
                 paraloc:=hp.paraloc[side].add_location;
                 { hack: the paraloc must be valid, but is not actually used }
                 paraloc^.loc:=LOC_REGISTER;
@@ -429,8 +445,11 @@ unit cpupara;
             if push_addr_param(hp.varspez,paradef,p.proccalloption) then
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 paradef:=cpointerdef.getreusable_no_free(paradef);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef DEBUG_CHARLIE}
                 writeln('loc register');
 {$endif DEBUG_CHARLIE}
@@ -488,12 +507,15 @@ unit cpupara;
                 else
                   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                     paraloc^.reference.index:=NR_FRAME_POINTER_REG;
                     inc(paraloc^.reference.offset,target_info.first_parm_offset);
                     { M68K is a big-endian target }
                     if (paralen<tcgsize2size[OS_INT]) then
                       inc(paraloc^.reference.offset,4-paralen);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef DEBUG_CHARLIE}
 		    writeln('loc reference');
 {$endif DEBUG_CHARLIE}

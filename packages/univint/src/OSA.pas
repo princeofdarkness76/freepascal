@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       OpenScripting/OSA.h
  
      Contains:   Open Scripting Architecture Client Interfaces.
@@ -24,6 +25,8 @@
  
      Copyright:  © 1992-2008 by Apple Inc., all rights reserved
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       OSA.p
  
      Contains:   Open Scripting Architecture Client Interfaces.
@@ -32,11 +35,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  © 1992-2002 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -66,6 +73,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -77,7 +86,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -87,12 +99,17 @@
 unit OSA;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -106,14 +123,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -122,11 +144,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -164,6 +189,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -171,6 +198,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -423,6 +451,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -431,7 +461,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -458,9 +491,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -470,6 +507,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,AEDataModel,MacErrors,AppleEvents,AEObjects,AEInteraction,Components,Files,CFBase,CFURL,CFAttributedString;
 {$endc} {not MACOSALLINCLUDE}
@@ -498,11 +536,16 @@ uses MacTypes,AEDataModel,MacErrors,AppleEvents,AEObjects,AEInteraction,Componen
 {$ALIGN POWER}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,AEDataModel,MacErrors,AppleEvents,AEObjects,AEInteraction,Components;
 
 
 {$ALIGN MAC68K}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {*************************************************************************
     Types and Constants
@@ -511,6 +554,7 @@ uses MacTypes,AEDataModel,MacErrors,AppleEvents,AEObjects,AEInteraction,Componen
 {    The componenent manager type code for components that
         support the OSA interface defined here. }
 { 0x6f736120 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kOSAComponentType = FourCharCode('osa ');
@@ -664,6 +708,8 @@ function NewOSACreateAppleEventUPP( userRoutine: OSACreateAppleEventProcPtr ): O
 
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 const
 	kOSAComponentType			= FourCharCode('osa ');
@@ -778,11 +824,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewOSACreateAppleEventUPP(userRoutine: OSACreateAppleEventProcPtr): OSACreateAppleEventUPP; external name '_NewOSACreateAppleEventUPP'; { old name was NewOSACreateAppleEventProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  NewOSASendUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -792,16 +842,22 @@ function NewOSASendUPP( userRoutine: OSASendProcPtr ): OSASendUPP; external name
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function NewOSASendUPP(userRoutine: OSASendProcPtr): OSASendUPP; external name '_NewOSASendUPP'; { old name was NewOSASendProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeOSACreateAppleEventUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -811,16 +867,22 @@ procedure DisposeOSACreateAppleEventUPP( userUPP: OSACreateAppleEventUPP ); exte
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeOSACreateAppleEventUPP(userUPP: OSACreateAppleEventUPP); external name '_DisposeOSACreateAppleEventUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeOSASendUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -830,16 +892,22 @@ procedure DisposeOSASendUPP( userUPP: OSASendUPP ); external name '_DisposeOSASe
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeOSASendUPP(userUPP: OSASendUPP); external name '_DisposeOSASendUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeOSACreateAppleEventUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -849,16 +917,22 @@ function InvokeOSACreateAppleEventUPP( theAEEventClass: AEEventClass; theAEEvent
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeOSACreateAppleEventUPP(theAEEventClass: AEEventClass; theAEEventID: AEEventID; const (*var*) target: AEAddressDesc; returnID: SInt16; transactionID: SInt32; var result: AppleEvent; refCon: SInt32; userRoutine: OSACreateAppleEventUPP): OSErr; external name '_InvokeOSACreateAppleEventUPP'; { old name was CallOSACreateAppleEventProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeOSASendUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -869,12 +943,17 @@ function InvokeOSASendUPP( const (*var*) theAppleEvent: AppleEvent; var reply: A
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeOSASendUPP(const (*var*) theAppleEvent: AppleEvent; var reply: AppleEvent; sendMode: AESendMode; sendPriority: AESendPriority; timeOutInTicks: SInt32; idleProc: AEIdleUPP; filterProc: AEFilterUPP; refCon: SInt32; userRoutine: OSASendUPP): OSErr; external name '_InvokeOSASendUPP'; { old name was CallOSASendProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {*************************************************************************
     OSA Interface Descriptions
 **************************************************************************
@@ -887,6 +966,7 @@ function InvokeOSASendUPP(const (*var*) theAppleEvent: AppleEvent; var reply: Ap
     particular capability.
 *************************************************************************}
 { OSA Component Flags: }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kOSASupportsCompiling = $0002;
@@ -1129,6 +1209,8 @@ function OSALoad( scriptingComponent: ComponentInstance; const (*var*) scriptDat
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 const
 	kOSASupportsCompiling		= $0002;
@@ -1352,7 +1434,10 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function OSALoad(scriptingComponent: ComponentInstance; const (*var*) scriptData: AEDesc; modeFlags: SInt32; var resultingScriptID: OSAID): OSAError; external name '_OSALoad';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectLoad, 12);
     
@@ -1372,6 +1457,7 @@ function OSALoad(scriptingComponent: ComponentInstance; const (*var*) scriptData
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -1381,12 +1467,17 @@ function OSAStore( scriptingComponent: ComponentInstance; scriptID: OSAID; desir
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAStore(scriptingComponent: ComponentInstance; scriptID: OSAID; desiredType: DescType; modeFlags: SInt32; var resultingScriptData: AEDesc): OSAError; external name '_OSAStore';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectStore, 16);
     
@@ -1406,6 +1497,7 @@ function OSAStore(scriptingComponent: ComponentInstance; scriptID: OSAID; desire
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -1415,12 +1507,17 @@ function OSAExecute( scriptingComponent: ComponentInstance; compiledScriptID: OS
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAExecute(scriptingComponent: ComponentInstance; compiledScriptID: OSAID; contextID: OSAID; modeFlags: SInt32; var resultingScriptValueID: OSAID): OSAError; external name '_OSAExecute';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectExecute, 16);
         This call runs a script.  The contextID represents the environment
@@ -1452,6 +1549,7 @@ function OSAExecute(scriptingComponent: ComponentInstance; compiledScriptID: OSA
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -1461,12 +1559,17 @@ function OSADisplay( scriptingComponent: ComponentInstance; scriptValueID: OSAID
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSADisplay(scriptingComponent: ComponentInstance; scriptValueID: OSAID; desiredType: DescType; modeFlags: SInt32; var resultingText: AEDesc): OSAError; external name '_OSADisplay';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectDisplay, 16);
         This call is used to convert results (script value IDs) into displayable
@@ -1488,6 +1591,7 @@ function OSADisplay(scriptingComponent: ComponentInstance; scriptValueID: OSAID;
             kOSAModeDisplayForHumans
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     @function   OSACopyDisplayString
 
@@ -1507,11 +1611,14 @@ function OSACopyDisplayString( scriptingComponent: ComponentInstance; scriptID: 
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { Getting Error Information: }
 {
  *  OSAScriptError()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1522,12 +1629,17 @@ function OSAScriptError( scriptingComponent: ComponentInstance; selector: OSType
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAScriptError(scriptingComponent: ComponentInstance; selector: OSType; desiredType: DescType; var resultingErrorDescription: AEDesc): OSAError; external name '_OSAScriptError';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectScriptError, 12);
         Whenever script execution returns errOSAExecutionError, this routine
@@ -1548,6 +1660,7 @@ function OSAScriptError(scriptingComponent: ComponentInstance; selector: OSType;
         These error numbers may be either system error numbers, or error numbers
         that are scripting component specific.
         Required desiredTypes:  
+<<<<<<< HEAD
 <<<<<<< HEAD
             typeSInt32
 <<<<<<< HEAD
@@ -1795,6 +1908,8 @@ function OSADispose( scriptingComponent: ComponentInstance; scriptID: OSAID ): O
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
             typeShortInteger
     }
 
@@ -1896,7 +2011,10 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function OSADispose(scriptingComponent: ComponentInstance; scriptID: OSAID): OSAError; external name '_OSADispose';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectDispose, 4);
         Disposes a script or context.
@@ -1912,6 +2030,7 @@ function OSADispose(scriptingComponent: ComponentInstance; scriptID: OSAID): OSA
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -1921,12 +2040,17 @@ function OSASetScriptInfo( scriptingComponent: ComponentInstance; scriptID: OSAI
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSASetScriptInfo(scriptingComponent: ComponentInstance; scriptID: OSAID; selector: OSType; value: SInt32): OSAError; external name '_OSASetScriptInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectSetScriptInfo, 12);
     
@@ -1942,6 +2066,7 @@ function OSASetScriptInfo(scriptingComponent: ComponentInstance; scriptID: OSAID
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -1951,12 +2076,17 @@ function OSAGetScriptInfo( scriptingComponent: ComponentInstance; scriptID: OSAI
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAGetScriptInfo(scriptingComponent: ComponentInstance; scriptID: OSAID; selector: OSType; var result: SInt32): OSAError; external name '_OSAGetScriptInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectGetScriptInfo, 12);
     
@@ -1972,6 +2102,7 @@ function OSAGetScriptInfo(scriptingComponent: ComponentInstance; scriptID: OSAID
     Scripting systems will supply default values for these procedures if they
     are not set by the client:
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	OSAActiveProcPtr = function( refCon: SRefCon ): OSErr;
@@ -1989,6 +2120,8 @@ function NewOSAActiveUPP( userRoutine: OSAActiveProcPtr ): OSAActiveUPP; externa
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 type
 {$ifc TYPED_FUNCTION_POINTERS}
@@ -2014,11 +2147,15 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function NewOSAActiveUPP(userRoutine: OSAActiveProcPtr): OSAActiveUPP; external name '_NewOSAActiveUPP'; { old name was NewOSAActiveProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  DisposeOSAActiveUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2028,16 +2165,22 @@ procedure DisposeOSAActiveUPP( userUPP: OSAActiveUPP ); external name '_DisposeO
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 procedure DisposeOSAActiveUPP(userUPP: OSAActiveUPP); external name '_DisposeOSAActiveUPP';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InvokeOSAActiveUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2048,16 +2191,22 @@ function InvokeOSAActiveUPP( refCon: SRefCon; userUPP: OSAActiveUPP ): OSErr; ex
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function InvokeOSAActiveUPP(refCon: SInt32; userRoutine: OSAActiveUPP): OSErr; external name '_InvokeOSAActiveUPP'; { old name was CallOSAActiveProc }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  OSASetActiveProc()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2068,12 +2217,17 @@ function OSASetActiveProc( scriptingComponent: ComponentInstance; activeProc: OS
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSASetActiveProc(scriptingComponent: ComponentInstance; activeProc: OSAActiveUPP; refCon: SInt32): OSAError; external name '_OSASetActiveProc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectSetActiveProc, 8);
         If activeProc is nil, the default activeProc is used.
@@ -2087,6 +2241,7 @@ function OSASetActiveProc(scriptingComponent: ComponentInstance; activeProc: OSA
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2096,12 +2251,17 @@ function OSAGetActiveProc( scriptingComponent: ComponentInstance; var activeProc
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAGetActiveProc(scriptingComponent: ComponentInstance; var activeProc: OSAActiveUPP; var refCon: SInt32): OSAError; external name '_OSAGetActiveProc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectGetActiveProc, 8);
     
@@ -2120,6 +2280,7 @@ function OSAGetActiveProc(scriptingComponent: ComponentInstance; var activeProc:
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2129,12 +2290,17 @@ function OSAScriptingComponentName( scriptingComponent: ComponentInstance; var r
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAScriptingComponentName(scriptingComponent: ComponentInstance; var resultingScriptingComponentName: AEDesc): OSAError; external name '_OSAScriptingComponentName';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectScriptingComponentName, 4);
         Given a scripting component, this routine returns the name of that
@@ -2152,6 +2318,7 @@ function OSAScriptingComponentName(scriptingComponent: ComponentInstance; var re
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2161,12 +2328,17 @@ function OSACompile( scriptingComponent: ComponentInstance; const (*var*) source
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSACompile(scriptingComponent: ComponentInstance; const (*var*) sourceData: AEDesc; modeFlags: SInt32; var previousAndResultingScriptID: OSAID): OSAError; external name '_OSACompile';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectCompile, 12);
         Coerces input desc (possibly text) into a script's internal format.
@@ -2200,6 +2372,7 @@ function OSACompile(scriptingComponent: ComponentInstance; const (*var*) sourceD
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2209,12 +2382,17 @@ function OSACopyID( scriptingComponent: ComponentInstance; fromID: OSAID; var to
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSACopyID(scriptingComponent: ComponentInstance; fromID: OSAID; var toID: OSAID): OSAError; external name '_OSACopyID';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectCopyID, 8);
         If toID is a reference to kOSANullScript then it is updated to have a
@@ -2226,6 +2404,7 @@ function OSACopyID(scriptingComponent: ComponentInstance; fromID: OSAID; var toI
             errOSASystemError
             errOSAInvalidID
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 {$ifc CALL_NOT_IN_CARBON}
@@ -2244,12 +2423,22 @@ function OSACopyScript( scriptingComponent: ComponentInstance; fromID: OSAID; va
 
 
 =======
+=======
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  OSACopyScript()
+ *  
+ *  Availability:
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.5 and later
  *    CarbonLib:        not available
  *    Mac OS X:         not available
  }
 function OSACopyScript(scriptingComponent: ComponentInstance; fromID: OSAID; var toID: OSAID): OSAError; external name '_OSACopyScript';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectCopyScript, 8);
         Creates a duplicate copy of the script with the given OSAID and returns
@@ -2261,10 +2450,15 @@ function OSACopyScript(scriptingComponent: ComponentInstance; fromID: OSAID; var
             errOSAInvalidID
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$endc}  {CALL_NOT_IN_CARBON}
 
 >>>>>>> graemeg/fixes_2_2
+=======
+{$endc}  {CALL_NOT_IN_CARBON}
+
+>>>>>>> origin/fixes_2_2
 {*************************************************************************
     OSA Optional GetSource Interface
 **************************************************************************
@@ -2276,6 +2470,7 @@ function OSACopyScript(scriptingComponent: ComponentInstance; fromID: OSAID; var
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2285,12 +2480,17 @@ function OSAGetSource( scriptingComponent: ComponentInstance; scriptID: OSAID; d
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAGetSource(scriptingComponent: ComponentInstance; scriptID: OSAID; desiredType: DescType; var resultingSourceData: AEDesc): OSAError; external name '_OSAGetSource';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectGetSource, 12);
         This routine causes a compiled script to be output in a form (possibly
@@ -2302,6 +2502,7 @@ function OSAGetSource(scriptingComponent: ComponentInstance; scriptID: OSAID; de
             errOSAInvalidID
             errOSASourceNotAvailable    can't get source for this scriptID
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
     @function   OSACopySourceString
@@ -2322,6 +2523,8 @@ function OSACopySourceString( scriptingComponent: ComponentInstance; scriptID: O
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {*************************************************************************
     OSA Optional AECoercion Interface
 **************************************************************************
@@ -2333,6 +2536,7 @@ function OSACopySourceString( scriptingComponent: ComponentInstance; scriptID: O
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2342,12 +2546,17 @@ function OSACoerceFromDesc( scriptingComponent: ComponentInstance; const (*var*)
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSACoerceFromDesc(scriptingComponent: ComponentInstance; const (*var*) scriptData: AEDesc; modeFlags: SInt32; var resultingScriptID: OSAID): OSAError; external name '_OSACoerceFromDesc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectCoerceFromDesc, 12);
         This routine causes script data to be coerced into a script value.
@@ -2374,6 +2583,7 @@ function OSACoerceFromDesc(scriptingComponent: ComponentInstance; const (*var*) 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2383,12 +2593,17 @@ function OSACoerceToDesc( scriptingComponent: ComponentInstance; scriptID: OSAID
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSACoerceToDesc(scriptingComponent: ComponentInstance; scriptID: OSAID; desiredType: DescType; modeFlags: SInt32; var result: AEDesc): OSAError; external name '_OSACoerceToDesc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectCoerceToDesc, 16);
         This routine causes a script value to be coerced into any desired form.
@@ -2415,6 +2630,7 @@ function OSACoerceToDesc(scriptingComponent: ComponentInstance; scriptID: OSAID;
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2424,12 +2640,17 @@ function OSASetSendProc( scriptingComponent: ComponentInstance; sendProc: OSASen
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSASetSendProc(scriptingComponent: ComponentInstance; sendProc: OSASendUPP; refCon: SInt32): OSAError; external name '_OSASetSendProc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectSetSendProc, 8);
         If sendProc is nil, the default sendProc is used.
@@ -2443,6 +2664,7 @@ function OSASetSendProc(scriptingComponent: ComponentInstance; sendProc: OSASend
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2452,12 +2674,17 @@ function OSAGetSendProc( scriptingComponent: ComponentInstance; var sendProc: OS
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAGetSendProc(scriptingComponent: ComponentInstance; var sendProc: OSASendUPP; var refCon: SInt32): OSAError; external name '_OSAGetSendProc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectGetSendProc, 8);
     
@@ -2470,6 +2697,7 @@ function OSAGetSendProc(scriptingComponent: ComponentInstance; var sendProc: OSA
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2479,12 +2707,17 @@ function OSASetCreateProc( scriptingComponent: ComponentInstance; createProc: OS
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSASetCreateProc(scriptingComponent: ComponentInstance; createProc: OSACreateAppleEventUPP; refCon: SInt32): OSAError; external name '_OSASetCreateProc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectSetCreateProc, 8);
         If createProc is nil, the default createProc is used.
@@ -2498,6 +2731,7 @@ function OSASetCreateProc(scriptingComponent: ComponentInstance; createProc: OSA
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2507,12 +2741,17 @@ function OSAGetCreateProc( scriptingComponent: ComponentInstance; var createProc
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAGetCreateProc(scriptingComponent: ComponentInstance; var createProc: OSACreateAppleEventUPP; var refCon: SInt32): OSAError; external name '_OSAGetCreateProc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectGetCreateProc, 8);
     
@@ -2525,6 +2764,7 @@ function OSAGetCreateProc(scriptingComponent: ComponentInstance; var createProc:
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2534,12 +2774,17 @@ function OSASetDefaultTarget( scriptingComponent: ComponentInstance; const (*var
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSASetDefaultTarget(scriptingComponent: ComponentInstance; const (*var*) target: AEAddressDesc): OSAError; external name '_OSASetDefaultTarget';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectSetDefaultTarget, 4);
         This routine sets the default target application for AE sending.
@@ -2563,6 +2808,7 @@ function OSASetDefaultTarget(scriptingComponent: ComponentInstance; const (*var*
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2572,12 +2818,17 @@ function OSAStartRecording( scriptingComponent: ComponentInstance; var compiledS
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAStartRecording(scriptingComponent: ComponentInstance; var compiledScriptToModifyID: OSAID): OSAError; external name '_OSAStartRecording';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectStartRecording, 4);
         Starts recording.  If compiledScriptToModifyID is kOSANullScript, a
@@ -2597,6 +2848,7 @@ function OSAStartRecording(scriptingComponent: ComponentInstance; var compiledSc
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2606,12 +2858,17 @@ function OSAStopRecording( scriptingComponent: ComponentInstance; compiledScript
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAStopRecording(scriptingComponent: ComponentInstance; compiledScriptID: OSAID): OSAError; external name '_OSAStopRecording';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectStopRecording, 4);
         If compiledScriptID is not being recorded into or recording is not
@@ -2633,6 +2890,7 @@ function OSAStopRecording(scriptingComponent: ComponentInstance; compiledScriptI
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2642,12 +2900,17 @@ function OSALoadExecute( scriptingComponent: ComponentInstance; const (*var*) sc
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSALoadExecute(scriptingComponent: ComponentInstance; const (*var*) scriptData: AEDesc; contextID: OSAID; modeFlags: SInt32; var resultingScriptValueID: OSAID): OSAError; external name '_OSALoadExecute';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectLoadExecute, 16);
         This routine is effectively equivalent to calling OSALoad followed by
@@ -2677,6 +2940,7 @@ function OSALoadExecute(scriptingComponent: ComponentInstance; const (*var*) scr
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2686,12 +2950,17 @@ function OSACompileExecute( scriptingComponent: ComponentInstance; const (*var*)
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSACompileExecute(scriptingComponent: ComponentInstance; const (*var*) sourceData: AEDesc; contextID: OSAID; modeFlags: SInt32; var resultingScriptValueID: OSAID): OSAError; external name '_OSACompileExecute';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectCompileExecute, 16);
         This routine is effectively equivalent to calling OSACompile followed by
@@ -2720,6 +2989,7 @@ function OSACompileExecute(scriptingComponent: ComponentInstance; const (*var*) 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2729,12 +2999,17 @@ function OSADoScript( scriptingComponent: ComponentInstance; const (*var*) sourc
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSADoScript(scriptingComponent: ComponentInstance; const (*var*) sourceData: AEDesc; contextID: OSAID; desiredType: DescType; modeFlags: SInt32; var resultingText: AEDesc): OSAError; external name '_OSADoScript';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectDoScript, 20);
         This routine is effectively equivalent to calling OSACompile followed by
@@ -2780,6 +3055,7 @@ function OSADoScript(scriptingComponent: ComponentInstance; const (*var*) source
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2789,12 +3065,17 @@ function OSASetCurrentDialect( scriptingComponent: ComponentInstance; dialectCod
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSASetCurrentDialect(scriptingComponent: ComponentInstance; dialectCode: SInt16): OSAError; external name '_OSASetCurrentDialect';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectSetCurrentDialect, 2);
     
@@ -2808,6 +3089,7 @@ function OSASetCurrentDialect(scriptingComponent: ComponentInstance; dialectCode
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2817,12 +3099,17 @@ function OSAGetCurrentDialect( scriptingComponent: ComponentInstance; var result
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAGetCurrentDialect(scriptingComponent: ComponentInstance; var resultingDialectCode: SInt16): OSAError; external name '_OSAGetCurrentDialect';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectGetCurrentDialect, 4);
     
@@ -2835,6 +3122,7 @@ function OSAGetCurrentDialect(scriptingComponent: ComponentInstance; var resulti
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2844,12 +3132,17 @@ function OSAAvailableDialects( scriptingComponent: ComponentInstance; var result
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAAvailableDialects(scriptingComponent: ComponentInstance; var resultingDialectInfoList: AEDesc): OSAError; external name '_OSAAvailableDialects';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectAvailableDialects, 4);
         This call return an AEList containing information about each of the
@@ -2867,6 +3160,7 @@ function OSAAvailableDialects(scriptingComponent: ComponentInstance; var resulti
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2876,12 +3170,17 @@ function OSAGetDialectInfo( scriptingComponent: ComponentInstance; dialectCode: 
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAGetDialectInfo(scriptingComponent: ComponentInstance; dialectCode: SInt16; selector: OSType; var resultingDialectInfo: AEDesc): OSAError; external name '_OSAGetDialectInfo';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectGetDialectInfo, 10);
         This call gives information about the specified dialect of a scripting
@@ -2901,6 +3200,7 @@ function OSAGetDialectInfo(scriptingComponent: ComponentInstance; dialectCode: S
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2910,12 +3210,17 @@ function OSAAvailableDialectCodeList( scriptingComponent: ComponentInstance; var
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAAvailableDialectCodeList(scriptingComponent: ComponentInstance; var resultingDialectCodeList: AEDesc): OSAError; external name '_OSAAvailableDialectCodeList';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectAvailableDialectCodeList, 4);
         This is alternative to OSAGetAvailableDialectCodeList. Use this call
@@ -2923,10 +3228,14 @@ function OSAAvailableDialectCodeList(scriptingComponent: ComponentInstance; var 
         This call return an AEList containing dialect code for each of the
         currently available dialects of a scripting component. Each dialect
 <<<<<<< HEAD
+<<<<<<< HEAD
         code is a short integer of type typeSInt16.
 =======
         code is a short SInt16 of type typeShortInteger.
 >>>>>>> graemeg/fixes_2_2
+=======
+        code is a short SInt16 of type typeShortInteger.
+>>>>>>> origin/fixes_2_2
     
         Errors:
             badComponentInstance    invalid scripting component instance
@@ -2939,6 +3248,7 @@ function OSAAvailableDialectCodeList(scriptingComponent: ComponentInstance; var 
 
         Field of a typeOSADialectInfo record of typeChar.
 <<<<<<< HEAD
+<<<<<<< HEAD
         Field of a typeOSADialectInfo record of typeSInt16.
         Field of a typeOSADialectInfo record of typeSInt16.
         Field of a typeOSADialectInfo record of typeSInt16.
@@ -2947,6 +3257,11 @@ function OSAAvailableDialectCodeList(scriptingComponent: ComponentInstance; var 
         Field of a typeOSADialectInfo record of typeShortInteger.
         Field of a typeOSADialectInfo record of typeShortInteger.
 >>>>>>> graemeg/fixes_2_2
+=======
+        Field of a typeOSADialectInfo record of typeShortInteger.
+        Field of a typeOSADialectInfo record of typeShortInteger.
+        Field of a typeOSADialectInfo record of typeShortInteger.
+>>>>>>> origin/fixes_2_2
     }
 {*************************************************************************
     OSA Optional Event Handling Interface
@@ -2959,6 +3274,7 @@ function OSAAvailableDialectCodeList(scriptingComponent: ComponentInstance; var 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -2968,12 +3284,17 @@ function OSASetResumeDispatchProc( scriptingComponent: ComponentInstance; resume
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSASetResumeDispatchProc(scriptingComponent: ComponentInstance; resumeDispatchProc: AEEventHandlerUPP; refCon: SInt32): OSAError; external name '_OSASetResumeDispatchProc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectSetResumeDispatchProc, 8);
         This function is used to set the ResumeDispatchProc that will be used
@@ -2988,6 +3309,7 @@ function OSASetResumeDispatchProc(scriptingComponent: ComponentInstance; resumeD
             badComponentInstance    invalid scripting component instance
             errOSASystemError
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kOSAUseStandardDispatch = kAEUseStandardDispatch;
@@ -3131,6 +3453,8 @@ function OSAGetResumeDispatchProc( scriptingComponent: ComponentInstance; var re
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 const
 	kOSAUseStandardDispatch		= $FFFFFFFF;
@@ -3176,7 +3500,10 @@ const
 	 *    Mac OS X:         in version 10.0 and later
 	 	}
 function OSAGetResumeDispatchProc(scriptingComponent: ComponentInstance; var resumeDispatchProc: AEEventHandlerUPP; var refCon: SInt32): OSAError; external name '_OSAGetResumeDispatchProc';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectGetResumeDispatchProc, 8);
         Returns the registered ResumeDispatchProc.  If no ResumeDispatchProc has
@@ -3191,6 +3518,7 @@ function OSAGetResumeDispatchProc(scriptingComponent: ComponentInstance; var res
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -3200,12 +3528,17 @@ function OSAExecuteEvent( scriptingComponent: ComponentInstance; const (*var*) t
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAExecuteEvent(scriptingComponent: ComponentInstance; const (*var*) theAppleEvent: AppleEvent; contextID: OSAID; modeFlags: SInt32; var resultingScriptValueID: OSAID): OSAError; external name '_OSAExecuteEvent';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectExecuteEvent, 16);
         This call is similar to OSAExecute except the initial command to
@@ -3237,6 +3570,7 @@ function OSAExecuteEvent(scriptingComponent: ComponentInstance; const (*var*) th
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -3246,12 +3580,17 @@ function OSADoEvent( scriptingComponent: ComponentInstance; const (*var*) theApp
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSADoEvent(scriptingComponent: ComponentInstance; const (*var*) theAppleEvent: AppleEvent; contextID: OSAID; modeFlags: SInt32; var reply: AppleEvent): OSAError; external name '_OSADoEvent';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectDoEvent, 16);
         This call is similar to OSADoScript except the initial command to
@@ -3287,6 +3626,7 @@ function OSADoEvent(scriptingComponent: ComponentInstance; const (*var*) theAppl
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -3296,12 +3636,17 @@ function OSAMakeContext( scriptingComponent: ComponentInstance; const (*var*) co
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
  }
 function OSAMakeContext(scriptingComponent: ComponentInstance; const (*var*) contextName: AEDesc; parentContext: OSAID; var resultingContextID: OSAID): OSAError; external name '_OSAMakeContext';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
         OSAComponentFunctionInline(kOSASelectMakeContext, 12);
         Makes a new empty context which may be passed to OSAExecute or 
@@ -3315,6 +3660,7 @@ function OSAMakeContext(scriptingComponent: ComponentInstance; const (*var*) con
             errOSAInvalidID
             errAECoercionFail:      contextName is invalid
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -3479,6 +3825,8 @@ function OSADoScriptFile( scriptingComponent: ComponentInstance; const (*var*) s
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  * Debugging API
  }
@@ -3689,4 +4037,7 @@ function OSADebuggerCountVariables(scriptingComponent: ComponentInstance; inSess
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

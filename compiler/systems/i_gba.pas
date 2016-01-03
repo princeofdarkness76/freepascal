@@ -40,7 +40,10 @@ unit i_gba;
 =======
             flags        : [tf_needs_symbol_size,tf_files_case_sensitive,tf_use_function_relative_addresses
 	                          ,tf_smartlink_sections,tf_requires_proper_alignment];
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             cpu          : cpu_arm;
             unit_env     : '';
             extradefines : '';

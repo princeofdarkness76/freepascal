@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -96,6 +97,8 @@ type
     property Pixels: Pointer read FPixels;
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Type
   TWin32DIB = Class(TObject)
   Private
@@ -113,4 +116,7 @@ Type
     Property Format : TPTCFormat Read FFormat;
     Property Pixels : Pointer Read FPixels;
   End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -193,8 +193,11 @@ interface
           { one byte left here till the next 4 byte alignment        }
           addr_taken     : boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
           constructor create(st:tsymtyp;const n : string;vsp:tvarspez;def:tdef;vopts:tvaroptions;doregister:boolean);
 =======
+=======
+>>>>>>> origin/fixes_2_2
           constructor create(st:tsymtyp;const n : string;vsp:tvarspez;def:tdef;vopts:tvaroptions);
 >>>>>>> graemeg/fixes_2_2
           constructor ppuload(st:tsymtyp;ppufile:tcompilerppufile);
@@ -464,12 +467,15 @@ interface
           consttyp    : tconsttyp;
           value       : tconstvalue;
 <<<<<<< HEAD
+<<<<<<< HEAD
           constructor create_ord(const n : string;t : tconsttyp;v : tconstexprint;def:tdef);virtual;
           constructor create_ordptr(const n : string;t : tconsttyp;v : tconstptruint;def:tdef);virtual;
           constructor create_ptr(const n : string;t : tconsttyp;v : pointer;def:tdef);virtual;
           constructor create_string(const n : string;t : tconsttyp;str:pchar;l:longint;def:tdef);virtual;
           constructor create_wstring(const n : string;t : tconsttyp;pw:pcompilerwidestring);virtual;
 =======
+=======
+>>>>>>> origin/fixes_2_2
           constructor create_ord(const n : string;t : tconsttyp;v : tconstexprint;def:tdef);
           constructor create_ordptr(const n : string;t : tconsttyp;v : tconstptruint;def:tdef);
           constructor create_ptr(const n : string;t : tconsttyp;v : pointer;def:tdef);
@@ -789,7 +795,10 @@ implementation
 <<<<<<< HEAD
 =======
            defined:=true;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            if nonlocal then
              current_asmdata.getglobaljumplabel(asmblocklabel)
            else
@@ -3044,9 +3053,12 @@ implementation
                getmem(pc,value.len+1);
                ppufile.getdata(pc^,value.len);
 <<<<<<< HEAD
+<<<<<<< HEAD
                pc[value.len]:=#0;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                value.valueptr:=pc;
              end;
            constreal :

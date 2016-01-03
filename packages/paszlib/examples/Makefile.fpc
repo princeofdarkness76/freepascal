@@ -4,10 +4,14 @@
 
 [target]
 <<<<<<< HEAD
+<<<<<<< HEAD
 programs=minigzip example minizip miniunz example2
 =======
 programs=minigzip example minizip miniunz
 >>>>>>> graemeg/fixes_2_2
+=======
+programs=minigzip example minizip miniunz
+>>>>>>> origin/fixes_2_2
 
 [require]
 packages=paszlib

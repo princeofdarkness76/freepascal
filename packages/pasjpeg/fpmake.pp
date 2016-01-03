@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('pasjpeg');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ShortName:='pjp';
     P.Description := 'Pascal port of JPEG (.JPG) image format handling library from IJG.';
 {$ifdef ALLPACKAGES}
@@ -22,15 +23,21 @@ begin
     P.Version:='3.1.1';
     P.OSes:=P.OSes-[embedded,msdos,win16];
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ALLPACKAGES}
     P.Directory:='pasjpeg';
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     T:=P.Targets.AddUnit('jctrans.pas');
     with T.Dependencies do
@@ -51,6 +58,8 @@ begin
       end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('buildpasjpeg.pp');
       T.Install:=False;
       with T.Dependencies do
@@ -158,6 +167,7 @@ begin
     T:=P.Targets.AddImplicitUnit('jutils.pas');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Sources.AddSrc('readme.txt');
 
     P.ExamplePath.Add('examples');
@@ -196,6 +206,8 @@ begin
     // 'jpegtran.drc
     // 'script2.ijg
 =======
+=======
+>>>>>>> origin/fixes_2_2
     P.ExamplePath.Add('examples');
 
     T:=P.Targets.AddExampleProgram('cjpeg.pas');
@@ -203,7 +215,10 @@ begin
     T:=P.Targets.AddExampleProgram('djpeg.pas');
     T:=P.Targets.AddExampleProgram('jpegtran.pas');
     T:=P.Targets.AddExampleProgram('rdjpgcom.pas');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

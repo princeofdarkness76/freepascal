@@ -105,10 +105,14 @@ interface
           function pass_1 : tnode;override;
           function pass_typecheck:tnode;override;
 <<<<<<< HEAD
+<<<<<<< HEAD
           function simplify(forinline : boolean) : tnode;override;
 =======
           function simplify : tnode;override;
 >>>>>>> graemeg/fixes_2_2
+=======
+          function simplify : tnode;override;
+>>>>>>> origin/fixes_2_2
        {$ifdef state_tracking}
           function track_state_pass(exec_known:boolean):boolean;override;
        {$endif state_tracking}
@@ -195,9 +199,12 @@ implementation
       htypechk,pass_1,procinfo,paramgr,
       cpuinfo,
 <<<<<<< HEAD
+<<<<<<< HEAD
       ncon,ninl,ncnv,nmem,ncal,nutils,
       cgbase
 =======
+=======
+>>>>>>> origin/fixes_2_2
       ncon,ninl,ncnv,nmem,ncal,nutils,nbas,
       cgobj,cgbase
 >>>>>>> graemeg/fixes_2_2
@@ -586,6 +593,7 @@ implementation
          if r.nodetype = typeconvn then
            ttypeconvnode(r).warn_pointer_to_signed:=false;
 <<<<<<< HEAD
+<<<<<<< HEAD
       end;
 
 
@@ -595,6 +603,8 @@ implementation
         include(flags,nf_internal);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -625,10 +635,14 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tassignmentnode.simplify(forinline : boolean) : tnode;
 =======
     function tassignmentnode.simplify : tnode;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function tassignmentnode.simplify : tnode;
+>>>>>>> origin/fixes_2_2
       begin
         result:=nil;
         { assignment nodes can perform several floating point }
@@ -658,6 +672,7 @@ implementation
 
         typecheckpass(left);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         { PI. This is needed to return correct resultdef of add nodes for ansistrings
           rawbytestring return needs to be replaced by left.resultdef }
@@ -665,6 +680,8 @@ implementation
         aktassignmentnode:=self;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         typecheckpass(right);
         aktassignmentnode:=oldassignmentnode;
 
@@ -771,6 +788,7 @@ implementation
                 { efficiently than a type conversion node, so don't     }
                 { bother implementing support for that                  }
 <<<<<<< HEAD
+<<<<<<< HEAD
                 and (use_vectorfpu(left.resultdef) or not(use_vectorfpu(right.resultdef)))
 {$endif}
 
@@ -787,16 +805,22 @@ implementation
             if not(nf_internal in flags) then
               check_ranges(fileinfo,right,left.resultdef);
 =======
+=======
+>>>>>>> origin/fixes_2_2
                 and (use_sse(left.resultdef) or not(use_sse(right.resultdef)))
 {$endif}
         then
           begin
             check_ranges(fileinfo,right,left.resultdef);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
           end
         else
           begin
             { check if the assignment may cause a range check error }
+<<<<<<< HEAD
 <<<<<<< HEAD
             if not(nf_internal in flags) then
               check_ranges(fileinfo,right,left.resultdef);
@@ -816,6 +840,10 @@ implementation
             check_ranges(fileinfo,right,left.resultdef);
             inserttypeconv(right,left.resultdef);
 >>>>>>> graemeg/fixes_2_2
+=======
+            check_ranges(fileinfo,right,left.resultdef);
+            inserttypeconv(right,left.resultdef);
+>>>>>>> origin/fixes_2_2
           end;
 
         { call helpers for interface }
@@ -823,10 +851,14 @@ implementation
          begin
 	   { Normal interface assignments are handled by the generic refcount incr/decr }
 <<<<<<< HEAD
+<<<<<<< HEAD
            if not def_is_related(right.resultdef,left.resultdef) then
 =======
            if not right.resultdef.is_related(left.resultdef) then
 >>>>>>> graemeg/fixes_2_2
+=======
+           if not right.resultdef.is_related(left.resultdef) then
+>>>>>>> origin/fixes_2_2
              begin
                { remove property flag to avoid errors, see comments for }
                { tf_winlikewidestring assignments below                 }
@@ -885,7 +917,10 @@ implementation
            exit;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
          { if right is a function call for which the address of the result  }
          { is allocated by the caller and passed to the function via an     }
          { invisible function result, try to pass the x in "x:=f(...)" as   }
@@ -955,11 +990,14 @@ implementation
                  (tstringconstnode(right).len<>0) then
                begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                  { remove property flag to avoid errors, see comments for }
                  { tf_winlikewidestring assignments below                 }
                  exclude(left.flags, nf_isproperty);
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                  hp:=ccallparanode.create
                        (right,
                   ccallparanode.create(left,nil));
@@ -969,6 +1007,7 @@ implementation
                  right:=nil;
                end;
             end;
+<<<<<<< HEAD
 <<<<<<< HEAD
             exit;
            end
@@ -995,6 +1034,8 @@ implementation
            hp:=ccallparanode.create(caddrnode.create_internal(
                   crttinode.create(tstoreddef(left.resultdef),initrtti,rdt_normal)),
 =======
+=======
+>>>>>>> origin/fixes_2_2
            end
         { call helpers for composite types containing automated types }
         else if (left.resultdef.needs_inittable) and
@@ -1004,7 +1045,10 @@ implementation
          begin
            hp:=ccallparanode.create(caddrnode.create_internal(
                   crttinode.create(tstoreddef(left.resultdef),initrtti)),
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                ccallparanode.create(ctypeconvnode.create_internal(
                  caddrnode.create_internal(left),voidpointertype),
                ccallparanode.create(ctypeconvnode.create_internal(
@@ -1019,6 +1063,7 @@ implementation
         { call helpers for variant, they can contain non ref. counted types like
           vararrays which must be really copied }
 <<<<<<< HEAD
+<<<<<<< HEAD
         else if (left.resultdef.typ=variantdef) and
             not(target_info.system in systems_garbage_collected_managed_types)  then
          begin
@@ -1031,13 +1076,18 @@ implementation
                ccallparanode.create(ctypeconvnode.create_internal(
                  left,hdef),
 =======
+=======
+>>>>>>> origin/fixes_2_2
         else if left.resultdef.typ=variantdef then
          begin
            hp:=ccallparanode.create(ctypeconvnode.create_internal(
                  caddrnode.create_internal(right),voidpointertype),
                ccallparanode.create(ctypeconvnode.create_internal(
                  caddrnode.create_internal(left),voidpointertype),
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                nil));
            result:=ccallnode.createintern('fpc_variant_copy',hp);
            firstpass(result);
@@ -1045,6 +1095,7 @@ implementation
            right:=nil;
            exit;
          end
+<<<<<<< HEAD
 <<<<<<< HEAD
         else if not(target_info.system in systems_garbage_collected_managed_types) and
           not(is_const(left)) then
@@ -1069,6 +1120,8 @@ implementation
         else
           exit;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         { call helpers for windows widestrings, they aren't ref. counted }
         else if (tf_winlikewidestring in target_info.flags) and is_widestring(left.resultdef) then
          begin
@@ -1097,6 +1150,7 @@ implementation
            right:=nil;
            exit;
          end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 
         { The first argument of these procedures is a var parameter. Properties cannot     }
@@ -1127,6 +1181,14 @@ implementation
         firstpass(result);
         left:=nil;
         right:=nil;
+=======
+
+         registersint:=left.registersint+right.registersint;
+         registersfpu:=max(left.registersfpu,right.registersfpu);
+{$ifdef SUPPORT_MMX}
+         registersmmx:=max(left.registersmmx,right.registersmmx);
+{$endif SUPPORT_MMX}
+>>>>>>> origin/fixes_2_2
       end;
 
 

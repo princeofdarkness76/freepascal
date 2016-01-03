@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 File:	   CFNetwork/CFNetServices.h
  
 	 Contains:   CoreFoundation Network Net Services header
@@ -52,6 +53,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       CFNetwork/CFNetServices.h
  
      Contains:   CoreFoundation Network Net Services header
@@ -75,7 +78,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -85,12 +91,17 @@
 unit CFNetServices;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -104,14 +115,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -120,11 +136,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -162,6 +181,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -169,6 +190,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -414,6 +436,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -422,7 +446,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -449,9 +476,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -461,6 +492,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,CFBase,CFStream,CFArray,CFRunLoop, CFData, CFDate, CFDictionary;
 {$endc} {not MACOSALLINCLUDE}
@@ -522,6 +554,8 @@ type
 	CFNetServiceMonitorRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses MacTypes,CFBase,CFStream,CFArray,CFRunLoop;
 {$ALIGN MAC68K}
 {
@@ -557,12 +591,16 @@ may be retrieved from their web site at
  }
 type
 	CFNetServiceRef							= ^SInt32;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  CFNetServiceBrowserRef
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *	This is the type of a reference to a service or domain browser.
  *	It may be used for discovering services or domains.
@@ -587,17 +625,23 @@ type
 	CFNetServiceBrowserRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    This is the type of a reference to a service or domain browser.
  *    It may be used for discovering services or domains.
  }
 type
 	CFNetServiceBrowserRef							= ^SInt32;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  kCFStreamErrorDomainMach
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *	Errors reported by mach.  See <mach/error.h>
  *  
@@ -609,6 +653,8 @@ type
 var kCFStreamErrorDomainMach: SInt32; external name '_kCFStreamErrorDomainMach'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Errors reported by mach.  See <mach/error.h>
  *  
  *  Availability:
@@ -619,12 +665,16 @@ var kCFStreamErrorDomainMach: SInt32; external name '_kCFStreamErrorDomainMach';
 // AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
 var kCFStreamErrorDomainMach: SInt32; external name '_kCFStreamErrorDomainMach'; (* attribute const *)
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  kCFStreamErrorDomainNetServices
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *	Errors listed below or reported by the Service Discovery API's.
  *	See <dns_sd.h>.  The Service Discovery errors will only be
@@ -639,6 +689,8 @@ var kCFStreamErrorDomainMach: SInt32; external name '_kCFStreamErrorDomainMach';
 var kCFStreamErrorDomainNetServices: SInt32; external name '_kCFStreamErrorDomainNetServices'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Errors listed below
  *  
  *  Availability:
@@ -648,13 +700,17 @@ var kCFStreamErrorDomainNetServices: SInt32; external name '_kCFStreamErrorDomai
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
 var kCFStreamErrorDomainNetServices: SInt32; external name '_kCFStreamErrorDomainNetServices'; (* attribute const *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFNetServicesError
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *	Errors from the kCFStreamErrorDomainNetServices domain.
  }
@@ -666,6 +722,8 @@ const
    }
 	kCFNetServicesErrorUnknown = -72000;
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Errors from the kCFStreamErrorDomainNetServices domain.
  }
 type CFNetServicesError = SInt32;
@@ -674,7 +732,10 @@ const
    * An error of unknown type has occured.
    }
   kCFNetServicesErrorUnknown    = -72000;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   {
    * The given registration has had a name collision.  Registration
@@ -682,14 +743,19 @@ const
    * name.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kCFNetServicesErrorCollision = -72001;
 =======
   kCFNetServicesErrorCollision  = -72001;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kCFNetServicesErrorCollision  = -72001;
+>>>>>>> origin/fixes_2_2
 
   {
    * Not used
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kCFNetServicesErrorNotFound = -72002;
 
@@ -699,6 +765,8 @@ const
    }
 	kCFNetServicesErrorInProgress = -72003;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   kCFNetServicesErrorNotFound   = -72002;
 
   {
@@ -706,20 +774,28 @@ const
    * given object.
    }
   kCFNetServicesErrorInProgress = -72003;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   {
    * Not used
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kCFNetServicesErrorBadArgument = -72004;
 =======
   kCFNetServicesErrorBadArgument = -72004;
 >>>>>>> graemeg/fixes_2_2
+=======
+  kCFNetServicesErrorBadArgument = -72004;
+>>>>>>> origin/fixes_2_2
 
   {
    * The register, resolve, or browse on the object has been cancelled.
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kCFNetServicesErrorCancel = -72005;
 <<<<<<< HEAD
@@ -825,6 +901,8 @@ const
 const
 	kCFNetServiceFlagNoAutoRename = 1;	 { Indicate that registration should not auto-rename the service to prevent name conflicts.}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   kCFNetServicesErrorCancel     = -72005;
 
   {
@@ -832,13 +910,17 @@ const
    * no longer be used for browsing.
    }
   kCFNetServicesErrorInvalid    = -72006;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFNetServiceBrowser flags
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *	Result bit flags passed to CFNetServiceBrowserClientCallBack.
  }
@@ -849,6 +931,8 @@ const
 	kCFNetServiceFlagIsRegistrationDomain = 4;  { Same as the previous but incorrectly named. Kept for compatibility.}
 	kCFNetServiceFlagRemove = 8;   { The result item should be removed and not added.}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Result bit flags passed to CFNetServiceBrowserClientCallBack.
  }
 const
@@ -856,13 +940,17 @@ const
   kCFNetServiceFlagIsDomain     = 2;    { If off, the result is a service. }
   kCFNetServiceFlagIsRegistrationDomain = 4; { The result domain is the default registration domain. }
   kCFNetServiceFlagRemove       = 8;     { The result item should be removed and not added. }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFNetServiceClientContext
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *	Structure containing the user-defined data and callbacks for
  *	CFNetService and CFNetServiceBrowser objects.
@@ -876,6 +964,8 @@ type
    }
 		version: CFIndex;
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Structure containing the user-defined data and callbacks for
  *    CFNetService and CFNetServiceBrowser objects.
  }
@@ -887,17 +977,24 @@ type CFNetServiceClientContext = record
    * version number is currently 0.
    }
   version: CFIndex;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   {
    * An arbitrary pointer to client-defined data, which can be
    * associated with the service/browser and is passed to the callbacks.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 		info: UnivPtr;
 =======
   info: Ptr;
 >>>>>>> graemeg/fixes_2_2
+=======
+  info: Ptr;
+>>>>>>> origin/fixes_2_2
 
   {
    * The callback used to add a retain for the service/browser on the
@@ -908,20 +1005,28 @@ type CFNetServiceClientContext = record
    * parameter.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 		retain: CFAllocatorRetainCallBack;
 =======
   retain: CFAllocatorRetainCallBack;
 >>>>>>> graemeg/fixes_2_2
+=======
+  retain: CFAllocatorRetainCallBack;
+>>>>>>> origin/fixes_2_2
 
   {
    * The callback used to remove a retain previously added for the
    * service/browser on the info pointer.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 		release: CFAllocatorReleaseCallBack;
 =======
   release: CFAllocatorReleaseCallBack;
 >>>>>>> graemeg/fixes_2_2
+=======
+  release: CFAllocatorReleaseCallBack;
+>>>>>>> origin/fixes_2_2
 
   {
    * The callback used to create a descriptive string representation of
@@ -930,18 +1035,24 @@ type CFNetServiceClientContext = record
    * function.
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 		copyDescription: CFAllocatorCopyDescriptionCallBack;
 	end;
 =======
   copyDescription: CFAllocatorCopyDescriptionCallBack;
 end;
 >>>>>>> graemeg/fixes_2_2
+=======
+  copyDescription: CFAllocatorCopyDescriptionCallBack;
+end;
+>>>>>>> origin/fixes_2_2
 CFNetServiceClientContextPtr = ^CFNetServiceClientContext;
 
 {
  *  CFNetServiceClientCallBack
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *	Callback function which is called upon error or completion of
  *	resolve or register.  If resolving with the deprecated API's, the
@@ -993,6 +1104,8 @@ type
 type
 	CFNetServiceMonitorClientCallBack = procedure( theMonitor: CFNetServiceMonitorRef; theService: CFNetServiceRef; typeInfo: CFNetServiceMonitorType; rdata: CFDataRef; var error: CFStreamError; info: UnivPtr );
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Callback function which is called upon error or completion of
  *    resolve or register.  If resolving, the callback may be called
  *    multiple times, once for each resolved address.
@@ -1011,12 +1124,16 @@ type
  }
 	type
 		CFNetServiceClientCallBack = procedure( service: CFNetServiceRef; var error: CFStreamError; info: Ptr );
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {
  *  CFNetServiceBrowserClientCallBack
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *	Callback function which is called upon error or upon successful
  *	discovery of services or domains.
@@ -1079,6 +1196,8 @@ function CFNetServiceGetTypeID: CFTypeID; external name '_CFNetServiceGetTypeID'
 function CFNetServiceMonitorGetTypeID: CFTypeID; external name '_CFNetServiceMonitorGetTypeID';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Callback function which is called upon error or upon successful
  *    discovery of services or domains.
  *  
@@ -1123,13 +1242,17 @@ function CFNetServiceMonitorGetTypeID: CFTypeID; external name '_CFNetServiceMon
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
 function CFNetServiceGetTypeID: CFTypeID; external name '_CFNetServiceGetTypeID';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFNetServiceBrowserGetTypeID()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *	Returns the type identifier of all CFNetServiceBrowser instances.
  *  
@@ -1144,6 +1267,8 @@ function CFNetServiceGetTypeID: CFTypeID; external name '_CFNetServiceGetTypeID'
 function CFNetServiceBrowserGetTypeID: CFTypeID; external name '_CFNetServiceBrowserGetTypeID';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Returns the type identifier of all CFNetServiceBrowser instances.
  *  
  *  Mac OS X threading:
@@ -1156,13 +1281,17 @@ function CFNetServiceBrowserGetTypeID: CFTypeID; external name '_CFNetServiceBro
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
 function CFNetServiceBrowserGetTypeID: CFTypeID; external name '_CFNetServiceBrowserGetTypeID';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFNetServiceCreate()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *	Creates an instance of a Network Service.
  *  
@@ -1212,6 +1341,8 @@ function CFNetServiceBrowserGetTypeID: CFTypeID; external name '_CFNetServiceBro
 function CFNetServiceCreate( alloc: CFAllocatorRef; domain: CFStringRef; serviceType: CFStringRef; name: CFStringRef; port: SInt32 ): CFNetServiceRef; external name '_CFNetServiceCreate';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Creates an instance of a Network Service.
  *  
  *  Mac OS X threading:
@@ -1253,13 +1384,17 @@ function CFNetServiceCreate( alloc: CFAllocatorRef; domain: CFStringRef; service
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
 function CFNetServiceCreate(alloc: CFAllocatorRef; domain: CFStringRef; typ: CFStringRef; name: CFStringRef; port: UInt32): CFNetServiceRef; external name '_CFNetServiceCreate';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFNetServiceCreateCopy()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *	Creates a new CFNetService object as a copy of service argument.
  *  
@@ -1291,6 +1426,8 @@ function CFNetServiceCreate(alloc: CFAllocatorRef; domain: CFStringRef; typ: CFS
 function CFNetServiceCreateCopy( alloc: CFAllocatorRef; service: CFNetServiceRef ): CFNetServiceRef; external name '_CFNetServiceCreateCopy';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Creates a new CFNetService object as a copy of service argument.
  *  
  *  Mac OS X threading:
@@ -1320,13 +1457,17 @@ function CFNetServiceCreateCopy( alloc: CFAllocatorRef; service: CFNetServiceRef
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function CFNetServiceCreateCopy( alloc: CFAllocatorRef; service: CFNetServiceRef ): CFNetServiceRef; external name '_CFNetServiceCreateCopy';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFNetServiceGetDomain()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *	Query a Network Service for its domain.
  *  
@@ -1353,6 +1494,8 @@ function CFNetServiceCreateCopy( alloc: CFAllocatorRef; service: CFNetServiceRef
 function CFNetServiceGetDomain( theService: CFNetServiceRef ): CFStringRef; external name '_CFNetServiceGetDomain';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Query a Network Service for its domain.
  *  
  *  Mac OS X threading:
@@ -1377,13 +1520,17 @@ function CFNetServiceGetDomain( theService: CFNetServiceRef ): CFStringRef; exte
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
 function CFNetServiceGetDomain(theService: CFNetServiceRef): CFStringRef; external name '_CFNetServiceGetDomain';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFNetServiceGetType()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *	Query a Network Service for its type.
  *  
@@ -1410,6 +1557,8 @@ function CFNetServiceGetDomain(theService: CFNetServiceRef): CFStringRef; extern
 function CFNetServiceGetType( theService: CFNetServiceRef ): CFStringRef; external name '_CFNetServiceGetType';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Query a Network Service for its type.
  *  
  *  Mac OS X threading:
@@ -1434,13 +1583,17 @@ function CFNetServiceGetType( theService: CFNetServiceRef ): CFStringRef; extern
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
 function CFNetServiceGetType(theService: CFNetServiceRef): CFStringRef; external name '_CFNetServiceGetType';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFNetServiceGetName()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *	Query a Network Service for its name.
 <<<<<<< HEAD
@@ -5329,6 +5482,8 @@ procedure CFNetServiceSetProtocolSpecificInformation( theService: CFNetServiceRe
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Query a Network Service for its name.
  *  
  *  Mac OS X threading:
@@ -5913,4 +6068,7 @@ procedure CFNetServiceBrowserScheduleWithRunLoop(browser: CFNetServiceBrowserRef
 procedure CFNetServiceBrowserUnscheduleFromRunLoop(browser: CFNetServiceBrowserRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef); external name '_CFNetServiceBrowserUnscheduleFromRunLoop';
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

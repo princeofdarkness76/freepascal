@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       HIServices/InternetConfig.h
  
      Contains:   Internet Config interfaces
@@ -24,6 +25,8 @@
  
      Copyright:  � 1999-2008 by Apple Computer, Inc., all rights reserved.
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       InternetConfig.p
  
      Contains:   Internet Config interfaces
@@ -32,11 +35,15 @@
                  Release:    Universal Interfaces 3.4.2
  
      Copyright:  � 1999-2002 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -67,6 +74,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -79,7 +88,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -89,12 +101,17 @@
 unit InternetConfig;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -108,14 +125,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -124,11 +146,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -166,6 +191,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -173,6 +200,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
@@ -403,6 +431,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -411,7 +441,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -438,9 +471,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -451,6 +488,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,Files,Aliases,Components,AEDataModel;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -552,6 +590,8 @@ uses MacTypes,Files,Aliases,Components,AEDataModel;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {$ALIGN MAC68K}
@@ -560,6 +600,7 @@ uses MacTypes,Files,Aliases,Components,AEDataModel;
   IC error codes
  ***********************************************************************************************}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1198,6 +1239,141 @@ const
 	{	***********************************************************************************************
 	  constants for use with ICGetVersion
 	 ***********************************************************************************************	}
+=======
+
+const
+	icPrefNotFoundErr			= -666;							{  preference not found (duh!)   }
+	icPermErr					= -667;							{  cannot set preference   }
+	icPrefDataErr				= -668;							{  problem with preference data   }
+	icInternalErr				= -669;							{  hmm, this is not good   }
+	icTruncatedErr				= -670;							{  more data was present than was returned   }
+	icNoMoreWritersErr			= -671;							{  you cannot begin a write session because someone else is already doing it   }
+	icNothingToOverrideErr		= -672;							{  no component for the override component to capture   }
+	icNoURLErr					= -673;							{  no URL found   }
+	icConfigNotFoundErr			= -674;							{  no configuration was found   }
+	icConfigInappropriateErr	= -675;							{  incorrect manufacturer code   }
+	icProfileNotFoundErr		= -676;							{  profile not found   }
+	icTooManyProfilesErr		= -677;							{  too many profiles in database   }
+
+	{	***********************************************************************************************
+	  IC versions (not necessarily, but historically, from a component)
+	 ***********************************************************************************************	}
+
+	kICComponentInterfaceVersion0 = $00000000;					{  IC >= 1.0   }
+	kICComponentInterfaceVersion1 = $00010000;					{  IC >= 1.1   }
+	kICComponentInterfaceVersion2 = $00020000;					{  IC >= 1.2   }
+	kICComponentInterfaceVersion3 = $00030000;					{  IC >= 2.0   }
+	kICComponentInterfaceVersion4 = $00040000;					{  IC >= 2.5   }
+	kICComponentInterfaceVersion = $00040000;					{  current version number is 4   }
+
+	{	***********************************************************************************************
+	  opaque type for preference reference
+	 ***********************************************************************************************	}
+
+
+type
+	ICInstance    = ^SInt32; { an opaque 32-bit type }
+	ICInstancePtr = ^ICInstance;  { when a var xx:ICInstance parameter can be nil, it is changed to xx: ICInstancePtr }
+
+	{	***********************************************************************************************
+	  a record that specifies a folder, an array of such records, and a pointer to such an array
+	 ***********************************************************************************************	}
+	ICDirSpecPtr = ^ICDirSpec;
+	ICDirSpec = record
+		vRefNum:				SInt16;
+		dirID:					SInt32;
+	end;
+
+	ICDirSpecArray						= array [0..3] of ICDirSpec;
+	ICDirSpecArrayPtr					= ^ICDirSpecArray;
+
+	{	***********************************************************************************************
+	  preference attributes type, bit number constants, and mask constants
+	 ***********************************************************************************************	}
+	ICAttr								= UInt32;
+
+
+const
+	kICAttrLockedBit			= 0;
+	kICAttrVolatileBit			= 1;
+
+	kICAttrNoChange				= $FFFFFFFF;					{  pass this to ICSetPref to tell it not to change the attributes   }
+	kICAttrLockedMask			= $00000001;
+	kICAttrVolatileMask			= $00000002;
+
+	{	***********************************************************************************************
+	  permissions for use with ICBegin
+	 ***********************************************************************************************	}
+
+
+type
+	ICPerm								= UInt8;
+
+
+const
+	icNoPerm					= 0;
+	icReadOnlyPerm				= 1;
+	icReadWritePerm				= 2;
+
+	{	***********************************************************************************************
+	  a reference to an instance's current configuration
+	 ***********************************************************************************************	}
+
+{$ifc CALL_NOT_IN_CARBON}
+
+type
+	ICConfigRefPtr = ^ICConfigRef;
+	ICConfigRef = record
+		manufacturer:			OSType;
+																		{  other private data follows   }
+	end;
+
+	ICConfigRefHandle					= ^ICConfigRefPtr;
+
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{***********************************************************************************************
+  profile IDs
+ ***********************************************************************************************}
+
+type
+	ICProfileID							= SInt32;
+	ICProfileIDPtr						= ^ICProfileID;
+
+
+const
+	kICNilProfileID				= 0;
+
+	{	***********************************************************************************************
+	  other constants
+	 ***********************************************************************************************	}
+
+	kICNoUserInteractionBit		= 0;
+
+	kICNoUserInteractionMask	= $00000001;
+
+	kICFileType					= FourCharCode('ICAp');
+	kICCreator					= FourCharCode('ICAp');
+
+	{	***********************************************************************************************
+	  Apple event constants
+	 ***********************************************************************************************	}
+
+	kInternetEventClass			= FourCharCode('GURL');
+	kAEGetURL					= FourCharCode('GURL');
+	kAEFetchURL					= FourCharCode('FURL');
+	keyAEAttaching				= FourCharCode('Atch');
+
+	{	 AERegistry.i defines a compatible keyAEDestination 	}
+
+	kICEditPreferenceEventClass	= FourCharCode('ICAp');
+	kICEditPreferenceEvent		= FourCharCode('ICAp');
+	keyICEditPreferenceDestination = FourCharCode('dest');
+
+	{	***********************************************************************************************
+	  constants for use with ICGetVersion
+	 ***********************************************************************************************	}
+>>>>>>> origin/fixes_2_2
 
 	kICComponentVersion			= 0;							{  Return a component version, comparable to kICComponentInterfaceVersion   }
 	kICNumVersion				= 1;							{  Return a NumVersion structure   }
@@ -1387,13 +1563,17 @@ const
 	kICDefaultFileName			= 'Internet Preferences';
 {$endc}  {CALL_NOT_IN_CARBON}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {***********************************************************************************************
   keys
  ***********************************************************************************************}
 { 
     key reserved for use by Internet Config 
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kICReservedKey = 'kICReservedKey';
@@ -7425,6 +7605,883 @@ function ICDeleteProfile( inst: ICInstance; thisID: ICProfileID ): OSStatus; ext
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+
+const
+	kICReservedKey				= 'kICReservedKey';
+	{	
+	    STR# -- formatted, list of Archie servers  
+		}
+	kICArchieAll				= 'ArchieAll';
+	{	
+	    PString -- formatted, preferred Archie server   
+		}
+	kICArchiePreferred			= 'ArchiePreferred';
+	{	
+	    ICCharTable -- Mac-to-Net and Net-to-Mac character translation   
+		}
+	kICCharacterSet				= 'CharacterSet';
+	{	
+	    ICFontRecord -- font used for proportional text   
+		}
+	kICDocumentFont				= 'DocumentFont';
+	{	
+	    ICFileSpec -- where to put newly downloaded files   
+		}
+	kICDownloadFolder			= 'DownloadFolder';
+	{	
+	    PString -- user@host.domain, email address of user, ie return address   
+		}
+	kICEmail					= 'Email';
+	{	
+	    PString -- host.domain, default FTP server   
+		}
+	kICFTPHost					= 'FTPHost';
+	{	
+	    PString -- second level FTP proxy authorisation   
+		}
+	kICFTPProxyAccount			= 'FTPProxyAccount';
+	{	
+	    PString -- host.domain   
+		}
+	kICFTPProxyHost				= 'FTPProxyHost';
+	{	
+	    PString -- scrambled, password for FTPProxyUser   
+		}
+	kICFTPProxyPassword			= 'FTPProxyPassword';
+	{	
+	    PString -- first level FTP proxy authorisation   
+		}
+	kICFTPProxyUser				= 'FTPProxyUser';
+	{	
+	    PString -- host.domain, default finger server   
+		}
+	kICFingerHost				= 'FingerHost';
+	{	
+	    PString -- host.domain, default Gopher server   
+		}
+	kICGopherHost				= 'GopherHost';
+	{	
+	    PString -- host.domain, see note in Prog Docs   
+		}
+	kICGopherProxy				= 'GopherProxy';
+	{	
+	    PString -- host.domain   
+		}
+	kICHTTPProxyHost			= 'HTTPProxyHost';
+	{	
+	    ICAppSpec -- helpers for URL schemes   
+		}
+	kICHelper					= 'Helper�';
+	{	
+	    PString -- description for URL scheme   
+		}
+	kICHelperDesc				= 'HelperDesc�';
+	{	
+	    ICAppSpecList -- list of common helpers for URL schemes   
+		}
+	kICHelperList				= 'HelperList�';
+	{	
+	    PString -- host.domain, Internet Relay Chat server   
+		}
+	kICIRCHost					= 'IRCHost';
+	{	
+	    STR# -- formatted, list of Info-Mac servers   
+		}
+	kICInfoMacAll				= 'InfoMacAll';
+	{	
+	    PString -- formatted, preferred Info-Mac server   
+		}
+	kICInfoMacPreferred			= 'InfoMacPreferred';
+	{	
+	    PString -- string LDAP thing   
+		}
+	kICLDAPSearchbase			= 'LDAPSearchbase';
+	{	
+	    PString -- host.domain   
+		}
+	kICLDAPServer				= 'LDAPServer';
+	{	
+	    ICFontRecord -- font used for lists of items (eg news article lists)   
+		}
+	kICListFont					= 'ListFont';
+	{	
+	    PString -- host for MacSearch queries   
+		}
+	kICMacSearchHost			= 'MacSearchHost';
+	{	
+	    PString -- user@host.domain, account from which to fetch mail   
+		}
+	kICMailAccount				= 'MailAccount';
+	{	
+	    TEXT -- extra headers for mail messages   
+		}
+	kICMailHeaders				= 'MailHeaders';
+	{	
+	    PString -- scrambled, password for MailAccount   
+		}
+	kICMailPassword				= 'MailPassword';
+	{	
+	    ICMapEntries -- file type mapping, see documentation   
+		}
+	kICMapping					= 'Mapping';
+	{	
+	    PString -- host.domain, NNTP server   
+		}
+	kICNNTPHost					= 'NNTPHost';
+	{	
+	    PString -- host.domain, Network Time Protocol (NTP)   
+		}
+	kICNTPHost					= 'NTPHost';
+	{	
+	    Boolean   
+		}
+	kICNewMailDialog			= 'NewMailDialog';
+	{	
+	    Boolean -- how to announce new mail   
+		}
+	kICNewMailFlashIcon			= 'NewMailFlashIcon';
+	{	
+	    Boolean   
+		}
+	kICNewMailPlaySound			= 'NewMailPlaySound';
+	{	
+	    PString   
+		}
+	kICNewMailSoundName			= 'NewMailSoundName';
+	{	
+	    PString -- scrambled, password for NewsAuthUsername   
+		}
+	kICNewsAuthPassword			= 'NewsAuthPassword';
+	{	
+	    PString -- user name for authorised news servers   
+		}
+	kICNewsAuthUsername			= 'NewsAuthUsername';
+	{	
+	    TEXT -- extra headers for news messages   
+		}
+	kICNewsHeaders				= 'NewsHeaders';
+	{	
+	    STR# -- list of domains not to be proxied   
+		}
+	kICNoProxyDomains			= 'NoProxyDomains';
+	{	
+	    PString -- for X-Organization string   
+		}
+	kICOrganization				= 'Organization';
+	{	
+	    PString -- host.domain, default Ph server   
+		}
+	kICPhHost					= 'PhHost';
+	{	
+	    TEXT -- default response for finger servers   
+		}
+	kICPlan						= FourCharCode('Plan');
+	{	
+	    ICFontRecord -- font used to print ScreenFont   
+		}
+	kICPrinterFont				= 'PrinterFont';
+	{	
+	    PString -- used to quote responses in news and mail   
+		}
+	kICQuotingString			= 'QuotingString';
+	{	
+	    PString -- real name of user   
+		}
+	kICRealName					= 'RealName';
+	{	
+	    PString -- RTSP Proxy Host
+		}
+	kICRTSPProxyHost			= 'RTSPProxyHost';
+	{	
+	    PString -- host.domain, SMTP server   
+		}
+	kICSMTPHost					= 'SMTPHost';
+	{	
+	    ICFontRecord -- font used for monospaced text (eg news articles)   
+		}
+	kICScreenFont				= 'ScreenFont';
+	{	
+	    ICServices -- TCP and IP port-to-name mapping   
+		}
+	kICServices					= 'Services';
+	{	
+	    TEXT -- append to news and mail messages   
+		}
+	kICSignature				= 'Signature';
+	{	
+	    TEXT -- preferred mailing address   
+		}
+	kICSnailMailAddress			= 'SnailMailAddress';
+	{	
+	    PString -- host.domain, remember that host.domain format allows ":port" and " port"  
+		}
+	kICSocksHost				= 'SocksHost';
+	{	
+	    PString -- host.domain, default Telnet address   
+		}
+	kICTelnetHost				= 'TelnetHost';
+	{	
+	    STR# -- formatted, list of UMich servers   
+		}
+	kICUMichAll					= 'UMichAll';
+	{	
+	    PString -- formatted, preferred UMich server   
+		}
+	kICUMichPreferred			= 'UMichPreferred';
+	{	
+	    Boolean   
+		}
+	kICUseFTPProxy				= 'UseFTPProxy';
+	{	
+	    Boolean   
+		}
+	kICUseGopherProxy			= 'UseGopherProxy';
+	{	
+	    Boolean   
+		}
+	kICUseHTTPProxy				= 'UseHTTPProxy';
+	{	
+	    Boolean -- use PASV command for FTP transfers   
+		}
+	kICUsePassiveFTP			= 'UsePassiveFTP';
+	{	
+	    Boolean
+		}
+	kICUseRTSPProxy				= 'UseRTSPProxy';
+	{	
+	    Boolean   
+		}
+	kICUseSocks					= 'UseSocks';
+	{	
+	    PString -- no idea   
+		}
+	kICWAISGateway				= 'WAISGateway';
+	{	
+	    PString -- URL, users default WWW page   
+		}
+	kICWWWHomePage				= 'WWWHomePage';
+	{	
+	    RGBColor -- background colour for web pages   
+		}
+	kICWebBackgroundColour		= 'WebBackgroundColour';
+	{	
+	    RGBColor -- colour for read links   
+		}
+	kICWebReadColor				= '646F6777쩦ebReadColor';
+	{	
+	    PString -- URL, users default search page   
+		}
+	kICWebSearchPagePrefs		= 'WebSearchPagePrefs';
+	{	
+	    RGBColor -- colour for normal text   
+		}
+	kICWebTextColor				= 'WebTextColor';
+	{	
+	    Boolean -- whether to underline links   
+		}
+	kICWebUnderlineLinks		= '646F6777쩦ebUnderlineLinks';
+	{	
+	    RGBColor -- colour for unread links   
+		}
+	kICWebUnreadColor			= '646F6777쩦ebUnreadColor';
+	{	
+	    PString -- host.domain, default whois server   
+		}
+	kICWhoisHost				= 'WhoisHost';
+
+	{	***********************************************************************************************
+	
+	      FUNCTIONS
+	
+	      What do the annotations after each API mean?
+	      --------------------------------------------
+	
+	      [r1] Requires IC 1.1 or higher.
+	      [r2] Requires IC 1.2 or higher.
+	      [r3] Requires IC 2.0 or higher.
+	      [r4] Requires IC 2.5 or higher.
+	      
+	      IMPORTANT:
+	
+	      In IC 2.5, instances automatically use the default configuration.
+	      You no longer need to configure an instance explicitly, except
+	      if your code might run with an older version of IC.  So the following
+	      notes only apply to IC 2.0 and earlier.
+	
+	      [c1]  You must have specified a configuration before calling this routine.
+	      
+	      [c2]  You must have specified the default configuration before calling this
+	            routine.
+	      
+	      [c3]  You do not need to specify a configuration before calling this routine.
+	      
+	      [b1]  You must be inside a Begin/End pair when calling this routine.
+	      
+	      [b2]  You must be inside a Begin/End read/write pair when calling this routine.
+	      
+	      [b3]  You do not need to be inside a Begin/End pair when calling this routine.
+	      
+	      [b4]  If you are getting or setting multiple preferences, you should make this
+	            call inside a Begin/End pair. If you do not make this call inside a Begin/End
+	            pair, the call will automatically do it for you.
+	      
+	      [b5]  It is illegal to call this routine inside a Begin/End pair.
+	
+	 ***********************************************************************************************	}
+
+	{	 ***** Starting Up and Shutting Down *****  	}
+	{
+	 *  ICStart()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+	 *    CarbonLib:        in CarbonLib 1.0.2 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function ICStart(var inst: ICInstance; signature: OSType): OSStatus; external name '_ICStart';
+
+{ Call this at application initialisation. Set signature to a value
+   * which has been regsitered with DTS to allow for future expansion
+   * of the IC system. Returns inst as a connection to the IC system.
+   }
+{
+ *  ICStop()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICStop(inst: ICInstance): OSStatus; external name '_ICStop';
+
+{ [b5] 
+   * Call this at application initialisation, after which inst
+   * is no longer valid connection to IC.
+   }
+{
+ *  ICGetVersion()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICGetVersion(inst: ICInstance; whichVersion: SInt32; var version: UInt32): OSStatus; external name '_ICGetVersion';
+{ [r4] [c3] [b3] 
+   * Returns the version of Internet Config.  Pass kICComponentVersion
+   * to get the version as previously returned by GetComponenVerson.
+   * Pass kICNumVersion to get a NumVersion structure.
+   }
+{ ***** Specifying a Configuration *****  }
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  ICFindConfigFile()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function ICFindConfigFile(inst: ICInstance; count: SInt16; folders: ICDirSpecArrayPtr): OSStatus; external name '_ICFindConfigFile';
+{ [b5] 
+   * Call to configure this connection to IC.
+   * Set count as the number of valid elements in folders.
+   * Set folders to a pointer to the folders to search.
+   * Setting count to 0 and folders to nil is OK.
+   * Searches the specified folders and then the Preferences folder
+   * in a unspecified manner.
+   }
+{
+ *  ICFindUserConfigFile()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function ICFindUserConfigFile(inst: ICInstance; var where: ICDirSpec): OSStatus; external name '_ICFindUserConfigFile';
+{ [r1] [b5] 
+   * Similar to ICFindConfigFile except that it only searches the folder
+   * specified in where.  If the input parameters are valid the routine
+   * will always successful configure the instance, creating an
+   * empty configuration if necessary
+   * For use with double-clickable preference files.
+   }
+{
+ *  ICGeneralFindConfigFile()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function ICGeneralFindConfigFile(inst: ICInstance; searchPrefs: boolean; canCreate: boolean; count: SInt16; folders: ICDirSpecArrayPtr): OSStatus; external name '_ICGeneralFindConfigFile';
+{ [r2] [b5] 
+   * Call to configure this connection to IC.
+   * This routine acts as a more general replacement for
+   * ICFindConfigFile and ICFindUserConfigFile.
+   * Set search_prefs to true if you want it to search the preferences folder.
+   * Set can_create to true if you want it to be able to create a new config.
+   * Set count as the number of valid elements in folders.
+   * Set folders to a pointer to the folders to search.
+   * Setting count to 0 and folders to nil is OK.
+   * Searches the specified folders and then optionally the Preferences folder
+   * in a unspecified manner.
+   }
+{
+ *  ICChooseConfig()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function ICChooseConfig(inst: ICInstance): OSStatus; external name '_ICChooseConfig';
+{ [r2] [b5] 
+   * Requests the user to choose a configuration, typically using some
+   * sort of modal dialog. If the user cancels the dialog the configuration
+   * state will be unaffected.
+   }
+{
+ *  ICChooseNewConfig()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function ICChooseNewConfig(inst: ICInstance): OSStatus; external name '_ICChooseNewConfig';
+{ [r2] [b5] 
+   * Requests the user to create a new configuration, typically using some
+   * sort of modal dialog. If the user cancels the dialog the configuration
+   * state will be unaffected.
+   }
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  ICGetConfigName()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICGetConfigName(inst: ICInstance; longname: boolean; var name: Str255): OSStatus; external name '_ICGetConfigName';
+{ [r2] [c1] [b3] 
+   * Returns a string that describes the current configuration at a user
+   * level. Set longname to true if you want a long name, up to 255
+   * characters, or false if you want a short name, typically about 32
+   * characters.
+   * The returned string is for user display only. If you rely on the
+   * exact format of it, you will conflict with any future IC
+   * implementation that doesn't use explicit preference files.
+   }
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  ICGetConfigReference()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function ICGetConfigReference(inst: ICInstance; ref: ICConfigRefHandle): OSStatus; external name '_ICGetConfigReference';
+{ [r2] [c1] [b3] 
+   * Returns a self-contained reference to the instance's current
+   * configuration.
+   * ref must be a valid non-nil handle and it will be resized to fit the
+   * resulting data.
+   }
+{
+ *  ICSetConfigReference()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function ICSetConfigReference(inst: ICInstance; ref: ICConfigRefHandle; flags: SInt32): OSStatus; external name '_ICSetConfigReference';
+{ [r2] [b5] 
+   * Reconfigures the instance using a configuration reference that was
+   * got using ICGetConfigReference reference. Set the
+   * icNoUserInteraction_bit in flags if you require that this routine
+   * not present a modal dialog. Other flag bits are reserved and should
+   * be set to zero.
+   * ref must not be nil.
+   }
+{ ***** Private Routines *****
+ * 
+ * If you are calling these routines, you are most probably doing something
+ * wrong.  Please read the documentation for more details.
+  }
+{
+ *  ICSpecifyConfigFile()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function ICSpecifyConfigFile(inst: ICInstance; var config: FSSpec): OSStatus; external name '_ICSpecifyConfigFile';
+{ [b5] 
+   * For use only by the IC application.
+   * If you call this routine yourself, you will conflict with any
+   * future IC implementation that doesn't use explicit preference files.
+   }
+{
+ *  ICRefreshCaches()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function ICRefreshCaches(inst: ICInstance): OSStatus; external name '_ICRefreshCaches';
+{ [r3] [c1] [b3] 
+   * For use only by the IC application.
+   * If you call this routine yourself, you will conflict with any
+   * future IC implementation that doesn't use explicit preference files.
+   }
+{ ***** Getting Information *****  }
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  ICGetSeed()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICGetSeed(inst: ICInstance; var seed: SInt32): OSStatus; external name '_ICGetSeed';
+{ [c3] [b3] 
+   * Returns the current seed for the IC prefs database.
+   * This seed changes each time a non-volatile preference is changed.
+   * You can poll this to determine if any cached preferences change.
+   }
+{
+ *  ICGetPerm()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICGetPerm(inst: ICInstance; var perm: ICPerm): OSStatus; external name '_ICGetPerm';
+{ [c3] [b3] 
+   * Returns the access permissions currently associated with this instance.
+   * While applications normally know what permissions they have,
+   * this routine is designed for use by override components.
+   }
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  ICDefaultFileName()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function ICDefaultFileName(inst: ICInstance; var name: Str63): OSStatus; external name '_ICDefaultFileName';
+{ [c3] [b3] 
+   * Returns the default file name for IC preference files.
+   * Applications should never need to call this routine.
+   * If you rely on information returned by this routine yourself,
+   * you may conflict with any future IC implementation that doesn't use
+   * explicit preference files.
+   * The component calls this routine to set up the default IC file name.
+   * This allows this operation to be intercepted by a component that has
+   * captured us. It currently gets it from the component resource file.
+   * The glue version is hardwired to "Internet Preferences".
+   }
+{
+ *  ICGetComponentInstance()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function ICGetComponentInstance(inst: ICInstance; var componentInst: ComponentInstance): OSStatus; external name '_ICGetComponentInstance';
+
+{ [c3] [b3] 
+   * Returns noErr and the connection to the IC component,
+   * if we're using the component.
+   * Returns badComponenInstance and nil if we're operating with glue.
+   }
+{ ***** Reading and Writing Preferences *****  }
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  ICBegin()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICBegin(inst: ICInstance; perm: ByteParameter): OSStatus; external name '_ICBegin';
+{ [c1] [b5] 
+   * Starting reading or writing multiple preferences.
+   * A call to this must be balanced by a call to ICEnd.
+   * Do not call WaitNextEvent between these calls.
+   * The perm specifies whether you intend to read or read/write.
+   * Only one writer is allowed per instance.
+   * Note that this may open resource files that are not closed
+   * until you call ICEnd.
+   }
+{
+ *  ICGetPref()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICGetPref(inst: ICInstance; const (*var*) key: Str255; var attr: ICAttr; buf: UnivPtr; var size: SInt32): OSStatus; external name '_ICGetPref';
+{ [c1] [b4] 
+   * Reads the preference specified by key from the IC database to the
+   * buffer pointed to by buf and size.
+   * key must not be the empty string.
+   * If buf is nil then no data is returned.
+   * size must be non-negative.
+   * attr and size are always set on return. On errors (except icTruncatedErr)
+   * attr is set to ICattr_no_change and size is set to 0.
+   * size is the actual size of the data.
+   * attr is set to the attributes associated with the preference.
+   * If this routine returns icTruncatedErr then the other returned
+   * values are valid except that only the first size bytes have been
+   * return. size is adjusted to reflect the true size of the preference.
+   * Returns icPrefNotFound if there is no preference for the key.
+   }
+{
+ *  ICSetPref()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICSetPref(inst: ICInstance; const (*var*) key: Str255; attr: ICAttr; buf: UnivPtr; size: SInt32): OSStatus; external name '_ICSetPref';
+{ [c1] [b4] 
+   * Sets the preference specified by key from the IC database to the
+   * value pointed to by buf and size.
+   * key must not be the empty string.
+   * size must be non-negative. 
+   * If buf is nil then the preference value is not set and size is ignored.
+   * If buf is not nil then the preference value is set to the size
+   * bytes pointed to by buf.
+   * If attr is ICattr_no_change then the preference attributes are not set.
+   * Otherwise the preference attributes are set to attr.
+   * Returns icPermErr if the previous ICBegin was passed icReadOnlyPerm.
+   * Returns icPermErr if current attr is locked, new attr is locked and buf <> nil.
+   }
+{
+ *  ICFindPrefHandle()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICFindPrefHandle(inst: ICInstance; const (*var*) key: Str255; var attr: ICAttr; prefh: Handle): OSStatus; external name '_ICFindPrefHandle';
+{ [r2] [c1] [b4] 
+   * This routine effectively replaces ICGetPrefHandle.
+   * Reads the preference specified by key from the IC database into
+   * a handle, prefh.
+   * key must not be the empty string.
+   * attr is set to the attributes associated with the preference.
+   * You must set prefh to a non-nil handle before calling this routine.
+   * If the preference does not exist, icPrefNotFoundErr is returned.
+   }
+{
+ *  ICGetPrefHandle()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICGetPrefHandle(inst: ICInstance; const (*var*) key: Str255; var attr: ICAttr; var prefh: Handle): OSStatus; external name '_ICGetPrefHandle';
+{ [r1] [c1] [b4] 
+   * This routine is now obsolete. Use ICFindPrefHandle instead.
+   * Reads the preference specified by key from the IC database into
+   * a newly created handle, prefh.
+   * key must not be the empty string.
+   * attr is set to the attributes associated with the preference.
+   * The incoming value of prefh is ignored.
+   * A new handle is created in the current heap and returned in prefh.
+   * If the routine returns an error, prefh is set to nil.
+   * If the preference does not exist, no error is returned and prefh is set
+   * to an empty handle.
+   }
+{
+ *  ICSetPrefHandle()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICSetPrefHandle(inst: ICInstance; const (*var*) key: Str255; attr: ICAttr; prefh: Handle): OSStatus; external name '_ICSetPrefHandle';
+{ [r1] [c1] [b4] 
+   * Sets the preference specified by key from the IC database to the
+   * value contained in prefh.
+   * key must not be the empty string.
+   * If prefh is nil then the preference value is not set.
+   * If buf is not nil then the preference value is set to the data
+   * contained in it.
+   * If attr is ICattr_no_change then the preference attributes are not set.
+   * Otherwise the preference attributes are set to attr.
+   * Returns icPermErr if the previous ICBegin was passed icReadOnlyPerm.
+   * Returns icPermErr if current attr is locked, new attr is locked and prefh <> nil.
+   }
+{
+ *  ICCountPref()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICCountPref(inst: ICInstance; var count: SInt32): OSStatus; external name '_ICCountPref';
+{ [c1] [b1] 
+   * Counts the total number of preferences.
+   * If the routine returns an error, count is set to 0.
+   }
+{
+ *  ICGetIndPref()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICGetIndPref(inst: ICInstance; index: SInt32; var key: Str255): OSStatus; external name '_ICGetIndPref';
+{ [c1] [b1] 
+   * Returns the key of the index'th preference.
+   * index must be positive.
+   * Returns icPrefNotFoundErr if index is greater than the total number of preferences.
+   * If the routine returns an error, key is undefined.
+   }
+{
+ *  ICDeletePref()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICDeletePref(inst: ICInstance; const (*var*) key: Str255): OSStatus; external name '_ICDeletePref';
+{ [c1] [b2] 
+   * Deletes the preference specified by key.
+   * key must not be the empty string.
+   * Returns icPrefNotFound if the preference specified by key is not present.
+   }
+{
+ *  ICEnd()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICEnd(inst: ICInstance): OSStatus; external name '_ICEnd';
+{ [c1] [b1] 
+   * Terminates a preference session, as started by ICBegin.
+   * You must have called ICBegin before calling this routine.
+   }
+{
+ *  ICGetDefaultPref()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICGetDefaultPref(inst: ICInstance; const (*var*) key: Str255; prefH: Handle): OSStatus; external name '_ICGetDefaultPref';
+{ [r4] [c3] [b5] 
+   * Returns a default preference value for the specified key.  You
+   * must pass in a valid prefH, which is resized to fit the data.
+   }
+{ ***** User Interface Stuff *****  }
+{
+ *  ICEditPreferences()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICEditPreferences(inst: ICInstance; const (*var*) key: Str255): OSStatus; external name '_ICEditPreferences';
+{ [r1] [c1] [b3] 
+   * Instructs IC to display the user interface associated with editing
+   * preferences and focusing on the preference specified by key.
+   * If key is the empty string then no preference should be focused upon.
+   * You must have specified a configuration before calling this routine.
+   * You do not need to call ICBegin before calling this routine.
+   * In the current implementation this launches the IC application
+   * (or brings it to the front) and displays the window containing
+   * the preference specified by key.
+   * It may have a radically different implementation in future
+   * IC systems.
+   }
+{ ***** URL Handling *****  }
+{
+ *  ICLaunchURL()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICLaunchURL(inst: ICInstance; const (*var*) hint: Str255; data: UnivPtr; len: SInt32; var selStart: SInt32; var selEnd: SInt32): OSStatus; external name '_ICLaunchURL';
+{ [r1] [c1] [b3] 
+   * Parses a URL out of the specified text and feeds it off to the
+   * appropriate helper.
+   * hint indicates the default scheme for URLs of the form "name@address".
+   * If hint is the empty string then URLs of that form are not allowed.
+   * data points to the start of the text. It must not be nil.
+   * len indicates the length of the text. It must be non-negative.
+   * selStart and selEnd should be passed in as the current selection of
+   * the text. This selection is given in the same manner as TextEdit,
+   * ie if selStart = selEnd then there is no selection only an insertion
+   * point. Also selStart � selEnd and 0 � selStart � len and 0 � selEnd � len.
+   * selStart and selEnd are returned as the bounds of the URL. If the
+   * routine returns an error then these new boundaries may be
+   * invalid but they will be close.
+   * The URL is parsed out of the text and passed off to the appropriate
+   * helper using the GURL AppleEvent.
+   }
+{
+ *  ICParseURL()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ICParseURL(inst: ICInstance; const (*var*) hint: Str255; data: UnivPtr; len: SInt32; var selStart: SInt32; var selEnd: SInt32; url: Handle): OSStatus; external name '_ICParseURL';
+{ [r1] [c1] [b3] 
+   * Parses a URL out of the specified text and returns it in a canonical form
+   * in a handle.
+   * hint indicates the default scheme for URLs of the form "name@address".
+   * If hint is the empty string then URLs of that form are not allowed.
+   * data points to the start of the text. It must not be nil.
+   * len indicates the length of the text. It must be non-negative.
+   * selStart and selEnd should be passed in as the current selection of
+   * the text. This selection is given in the same manner as TextEdit,
+   * ie if selStart = selEnd then there is no selection only an insertion
+   * point. Also selStart � selEnd and 0 � selStart � len and 0 � selEnd � len.
+   * selStart and selEnd are returned as the bounds of the URL. If the
+   * routine returns an error then these new boundaries may be
+   * invalid but they will be close.
+   * The incoming url handle must not be nil.  The resulting URL is normalised
+   * and copied into the url handle, which is resized to fit.
+   }
+{
+>>>>>>> origin/fixes_2_2
  *  ICCreateGURLEvent()
  *  
  *  Availability:
@@ -8567,4 +9624,7 @@ const
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

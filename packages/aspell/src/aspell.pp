@@ -16,6 +16,7 @@ uses
   cTypes;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF UNIX}
   const libaspell = 'aspell';
 {$ELSE} 
@@ -28,6 +29,8 @@ uses
 
   {$i aspelltypes.inc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$IFDEF Linux}
   const libaspell = '/usr/lib/libaspell.so';
 {$ENDIF}
@@ -178,7 +181,10 @@ uses
          end;
          
 {$IFDEF STATIC_ASPELL}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   {************************* mutable container ************************* }
 
@@ -433,10 +439,14 @@ uses
 
     // internal hacky version to go around a bug regarding struct results/cdecl
 <<<<<<< HEAD
+<<<<<<< HEAD
     function aspell_document_checker_next_misspelling(ths:PAspellDocumentChecker):AspellToken;cdecl;external libaspell name 'aspell_document_checker_next_misspelling';
 =======
     function __aspell_document_checker_next_misspelling(ths:PAspellDocumentChecker):{$IFDEF CPU64}{$IFDEF LINUX}QWord{$ELSE}AspellToken{$ENDIF}{$ELSE}AspellToken{$ENDIF};cdecl;external libaspell name 'aspell_document_checker_next_misspelling';
 >>>>>>> graemeg/fixes_2_2
+=======
+    function __aspell_document_checker_next_misspelling(ths:PAspellDocumentChecker):{$IFDEF CPU64}{$IFDEF LINUX}QWord{$ELSE}AspellToken{$ENDIF}{$ELSE}AspellToken{$ENDIF};cdecl;external libaspell name 'aspell_document_checker_next_misspelling';
+>>>>>>> origin/fixes_2_2
 
     { Returns the underlying filter class.  }
 
@@ -589,12 +599,15 @@ uses
     function aspell_reset_cache(which:pchar):cint;cdecl;external libaspell name 'aspell_reset_cache';
     
 <<<<<<< HEAD
+<<<<<<< HEAD
   function aspell_init(const libn: ansistring): Boolean;
   function aspell_loaded: Boolean;
 
 implementation
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ELSE}
 
   {************************* mutable container ************************* }
@@ -1011,7 +1024,10 @@ implementation
 
 {$IFDEF STATIC_ASPELL}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function aspell_init(const libn: ansistring): Boolean;
 begin
   aspell_init := True;
@@ -1023,7 +1039,10 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function aspell_document_checker_next_misspelling(ths: PAspellDocumentChecker
   ): AspellToken;
 begin
@@ -1629,5 +1648,8 @@ finalization
     
 {$ENDIF}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.

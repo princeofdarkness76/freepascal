@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 
 type
@@ -58,6 +59,8 @@ function soundMicRecord(buffer: pointer; bufferLength: cuint32; format: MicForma
 procedure soundMicOff(); cdecl; external;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: sound.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -102,5 +105,8 @@ procedure soundMicOff(); cdecl; external;
 procedure playSound(sound: pTransferSoundData); cdecl; external;
 procedure setGenericSound(rate: cuint32; vol: cuint8; pan: cuint8; format: cuint8); cdecl; external;
 procedure playGenericSound(const data: pointer; length: cuint32); cdecl; external;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}

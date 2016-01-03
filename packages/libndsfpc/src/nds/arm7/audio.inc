@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef ARM7}
   {$error Audio is only available on the ARM7}
 {$endif ARM7}
@@ -9,6 +10,8 @@ function SOUND_VOL(n: cint): cint; inline;
 function SOUND_FREQ(n: cint): cint; inline;	
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: audio.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -66,7 +69,10 @@ end;
 {$endif NDS_IMPLEMENTATION}
 
 {$ifdef NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
   SOUND_ENABLE        = (1 shl 15);
   SOUND_REPEAT        = (1 shl 27);
@@ -75,6 +81,7 @@ const
   SOUND_FORMAT_8BIT   = (0 shl 29);
   SOUND_FORMAT_PSG    = (3 shl 29);
   SOUND_FORMAT_ADPCM  = (2 shl 29);
+<<<<<<< HEAD
 <<<<<<< HEAD
   
 function SOUND_PAN(n: cint): cint; inline;
@@ -137,20 +144,28 @@ begin
 end;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
   SOUND_16BIT         = (1 shl 29);
   SOUND_8BIT          = (0);
 {$endif NDS_INTERFACE}
 
 {$ifdef NDS_IMPLEMENTATION}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function SOUND_PAN(n: cint): cint; inline;
 begin
   SOUND_PAN := ((n) shl 16);
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_IMPLEMENTATION}
 
 {$ifdef NDS_INTERFACE}
@@ -162,7 +177,10 @@ const
 //---------------------------------------------------------------------------------
 // registers
 //---------------------------------------------------------------------------------
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function SCHANNEL_CR(n: cint): pcuint32; inline; 
 begin
   SCHANNEL_CR := pcuint32($04000400 + ((n) shl 4));
@@ -198,6 +216,7 @@ begin
   SCHANNEL_LENGTH := pcuint32($0400040C + ((n) shl 4));
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure micOn(); inline; 
 begin
@@ -210,6 +229,8 @@ begin
 end;
 {$endif NDS_IMPLEMENTATION}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_IMPLEMENTATION}
 
 {$ifdef NDS_INTERFACE}
@@ -291,4 +312,7 @@ function SCHANNEL_LENGTH(n: cint): pcuint32; inline;
 procedure MIC_On(); inline; 
 procedure MIC_Off(); inline; 
 {$endif NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

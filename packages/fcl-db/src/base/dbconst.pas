@@ -23,10 +23,14 @@ Resourcestring
   SBadParamFieldType       = 'Bad fieldtype for parameter "%s".';
   SCantSetAutoIncFields    = 'AutoInc Fields are read-only';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SConnected               = 'Operation cannot be performed on a connected database';
 =======
   SConnected               = 'Operation cannot be performed on an connected database';
 >>>>>>> graemeg/fixes_2_2
+=======
+  SConnected               = 'Operation cannot be performed on an connected database';
+>>>>>>> origin/fixes_2_2
   SDatasetReadOnly         = 'Dataset is read-only.';
   SDatasetRegistered       = 'Dataset already registered : "%s"';
   SDuplicateFieldName      = 'Duplicate fieldname : "%s"';
@@ -41,10 +45,14 @@ Resourcestring
   SErrTransactionnSet      = 'Transaction not set';
   SErrIndexResultTooLong   = 'Index result for "%s" too long, >100 characters (%d).';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrIndexBasedOnInvField = 'Field "%s" has an invalid field type (%s) to base index on.';
 =======
   SErrIndexBasedOnInvField = 'Field "%s" is an invalid field type to base index on.';
 >>>>>>> graemeg/fixes_2_2
+=======
+  SErrIndexBasedOnInvField = 'Field "%s" is an invalid field type to base index on.';
+>>>>>>> origin/fixes_2_2
   SErrIndexBasedOnUnkField = 'Index based on unknown field "%s".';
   SErrConnTransactionnSet  = 'Transaction of connection not set';
   SErrNotASQLConnection    = '"%s" is not a TSQLConnection';
@@ -92,9 +100,12 @@ Resourcestring
   SUnsupportedFieldType    = 'Fieldtype %s is not supported';
   SInvPacketRecordsValue   = 'PacketRecords has to be larger then 0';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SInvPacketRecordsValueFieldNames = 'PacketRecords must be -1 if IndexFieldNames is set';
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   SInvalidSearchFieldType  = 'Searching in fields of type %s is not supported';
   SDatasetEmpty            = 'The dataset is empty';
   SFieldIsNull             = 'The field is null';
@@ -113,14 +124,19 @@ Resourcestring
   SNoFieldIndexes          = 'No index currently active';
   SNotIndexField           = 'Field ''%s'' is not indexed and cannot be modified';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrUnknownConnectorType = 'Unknown connector type: "%s"';
 =======
   SErrUnknownConnectorType = 'Unknown connector type';
 >>>>>>> graemeg/fixes_2_2
+=======
+  SErrUnknownConnectorType = 'Unknown connector type';
+>>>>>>> origin/fixes_2_2
   SNoIndexFieldNameGiven   = 'There are no fields selected to base the index on';
   SStreamNotRecognised     = 'The data-stream format is not recognized';
   SNoReaderClassRegistered = 'There is no TDatapacketReaderClass registered for this kind of data-stream';
   SErrCircularDataSourceReferenceNotAllowed = 'Circular datasource references are not allowed.';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -168,6 +184,9 @@ Resourcestring
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
 
 Implementation
 

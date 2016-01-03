@@ -16,15 +16,20 @@
 unit wchmhwrap;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 interface
 =======
 interface 
 >>>>>>> graemeg/fixes_2_2
+=======
+interface 
+>>>>>>> origin/fixes_2_2
 {$Mode Delphi}
 
 Uses  wutils,whelp,whtml,SysUtils,ChmReader,ChmSiteMap,Classes;
 
 Type
+<<<<<<< HEAD
 <<<<<<< HEAD
 //      TopicLinks: PTopicLinkCollection;IndexEntries : PUnsortedIndexEntryCollection;
 
@@ -42,6 +47,8 @@ Type
                      public
                       constructor Create(name:String;aid:integer;TopicLinks:PTopicLinkCollection);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 //      TopicLinks: PTopicLinkCollection;IndexEntries : PUnsortedIndexEntryCollection;  
 
      TChmWrapper = Class
@@ -53,13 +60,17 @@ Type
                        floaded  : boolean;
                      public    
                       constructor Create(name:String);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                       function	  LoadIndex(id:integer;TopicLinks: PTopicLinkCollection;IndexEntries : PUnsortedIndexEntryCollection;helpfacility:PHelpFacility):boolean;
                       function    GetTopic(name:string):PMemoryTextFile;
                       destructor  Destroy;override;
                     end;
 
 function combinepaths(relpath,basepath:String):String;
+<<<<<<< HEAD
 <<<<<<< HEAD
 function CHMResolve( href: ansistring; var AFileId,ALinkId : longint):boolean;
 
@@ -74,6 +85,11 @@ var CHMIndex : TStringList; // list to register open CHMs.
 implementation
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+implementation
+
+>>>>>>> origin/fixes_2_2
 function combinepaths(relpath,basepath:String):String;
 
 begin
@@ -89,6 +105,7 @@ begin
        basepath:=extractfiledir(basepath);
        delete(relpath,1,3);
      end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   {$ifdef combinedebug}
@@ -114,6 +131,8 @@ begin
   findex:=nil;
   FTopicLinks:=TopicLinks;
 =======
+=======
+>>>>>>> origin/fixes_2_2
        
    {$ifdef combinedebug}
     debugmessageS({$i %file%},'combine out "'+relpath+'" and "'+basepath+'"',{$i %line%},'1',0,0);
@@ -129,11 +148,15 @@ begin
   ffs:=Classes.TFileStream.create(name,fmOpenRead);
   fchmr:=TChmReader.Create(ffs,True); // owns ffs
   findex:=nil;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   if not fchmr.isvalidfile then
     begin
       freeandnil(fchmr);
       freeandnil(ffs);
+<<<<<<< HEAD
 <<<<<<< HEAD
       exit;
     end;
@@ -147,6 +170,8 @@ begin
   findex:=TChmSiteMap.create(stindex);
   ftopic:=TChmSiteMap.create(sttoc);
 =======
+=======
+>>>>>>> origin/fixes_2_2
       exit;  
     end;      
   {$ifdef wdebug}
@@ -157,7 +182,10 @@ begin
   {$ifdef wdebug}
     debugmessageS({$i %file%},'TCHMWrapper: after sitemap creation ',{$i %line%},'1',0,0);
   {$endif}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   floaded:=false;
 end;
 
@@ -171,15 +199,20 @@ begin
   FormatAlias:=Alias;
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
               
 >>>>>>> graemeg/fixes_2_2
+=======
+              
+>>>>>>> origin/fixes_2_2
 var
     m : Classes.TMemoryStream;
     i,j : integer;
     item : TChmSiteMapItem;
     tli: integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
     s  : String;
 begin
@@ -194,6 +227,8 @@ begin
   findex:=fchmr.GetIndexSitemap(false);
 (*  m:=fchmr.getobject(fchmr.indexfile);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 begin
  result:=false;
  if not assigned (fchmr) then exit;
@@ -203,22 +238,30 @@ begin
  {$endif}
   
   m:=fchmr.getobject(fchmr.indexfile);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   try
    if assigned(m) then
      begin
       {$ifdef wdebug}
 <<<<<<< HEAD
+<<<<<<< HEAD
        debugmessageS({$i %file%},'TCHMWrapper: stream size loaded :'+inttostr(m.size),{$i %line%},'1',0,0);
 =======
        debugmessageS({$i %file%},'TCHMWrapper: stream size loaded :'+inttostr(m.size),{$i %line%},'1',0,0); 
 >>>>>>> graemeg/fixes_2_2
+=======
+       debugmessageS({$i %file%},'TCHMWrapper: stream size loaded :'+inttostr(m.size),{$i %line%},'1',0,0); 
+>>>>>>> origin/fixes_2_2
       {$endif}
       findex.loadfromStream(m);
     end;
   finally
     freeandnil(m);
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
     *)
    {$ifdef wdebug}
@@ -269,6 +312,8 @@ begin
    {$ifdef wdebug}
      debugmessageS({$i %file%},'TCHMWrapper: endloadindex ',{$i %line%},'1',0,0);
 =======
+=======
+>>>>>>> origin/fixes_2_2
    {$ifdef wdebug}
      debugmessageS({$i %file%},'TCHMWrapper: loadindex after final ',{$i %line%},'1',0,0); 
   {$endif}
@@ -285,7 +330,10 @@ begin
     end;
    {$ifdef wdebug}
      debugmessageS({$i %file%},'TCHMWrapper: endloadindex ',{$i %line%},'1',0,0); 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$endif}
   floaded:=true;
   result:=true;
@@ -309,10 +357,14 @@ begin
       if (s[i]='"') then inquote:=not inquote;
       inc(i);
 <<<<<<< HEAD
+<<<<<<< HEAD
     end;
 =======
     end;  
 >>>>>>> graemeg/fixes_2_2
+=======
+    end;  
+>>>>>>> origin/fixes_2_2
   scanvalue:=lastpoint;
 end;
 
@@ -343,30 +395,42 @@ begin
   result:=nil;
   if not assigned(fchmr) or (name='') then exit;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  
+>>>>>>> origin/fixes_2_2
   If (name[1]<>'/') and (copy(name,1,7)<>'ms-its:') Then
     name:='/'+name;
   linedata:=Classes.TStringList.create;
   try
     {$ifdef wdebug}
 <<<<<<< HEAD
+<<<<<<< HEAD
      debugmessageS({$i %file%},'TCHMWrapper: Getting file '+name,{$i %line%},'1',0,0);
 =======
      debugmessageS({$i %file%},'TCHMWrapper: Getting file '+name,{$i %line%},'1',0,0); 
 >>>>>>> graemeg/fixes_2_2
+=======
+     debugmessageS({$i %file%},'TCHMWrapper: Getting file '+name,{$i %line%},'1',0,0); 
+>>>>>>> origin/fixes_2_2
     {$endif}
 //    if uppercase(name)='TABLE OF CONTENTS' Then
   //    m:=fchmr.getobject(fchmr.tocfile)
 //    else
       m:=fchmr.getobject(name);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> graemeg/fixes_2_2
+=======
+    
+>>>>>>> origin/fixes_2_2
     if not assigned(m) then exit;
     linedata.loadfromstream(m);
     result:=new(PMemoryTextFile,Init);
@@ -383,6 +447,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 destructor TChmWrapper.Destroy;
 
@@ -510,6 +575,8 @@ finalization
   ChmIndex.Free;
 end.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 destructor TChmWrapper.Destroy;
 
@@ -521,5 +588,9 @@ end;
 // m:=r.getobject(r.indexfile);
 //  siteindex.loadfromStream(m);
 
+<<<<<<< HEAD
 end.
 >>>>>>> graemeg/fixes_2_2
+=======
+end.
+>>>>>>> origin/fixes_2_2

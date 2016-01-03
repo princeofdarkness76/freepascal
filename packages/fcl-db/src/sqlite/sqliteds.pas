@@ -90,10 +90,14 @@ var
   CodeError, TempInt: Integer;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   TempInt := 0;
 =======
   TempInt := -1;
 >>>>>>> graemeg/fixes_2_2
+=======
+  TempInt := -1;
+>>>>>>> origin/fixes_2_2
   if ColumnValues[0] <> nil then
   begin
     Val(String(ColumnValues[0]), TempInt, CodeError);
@@ -120,6 +124,7 @@ end;
 function TSqliteDataset.InternalGetHandle: Pointer;
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   ErrorStr: PAnsiChar;
 begin
   Result := sqlite_open(PAnsiChar(FFileName), 0, @ErrorStr);
@@ -129,11 +134,18 @@ begin
 =======
   ErrorStr: PChar;
 begin
+=======
+  ErrorStr: PChar;
+begin
+>>>>>>> origin/fixes_2_2
   Result := sqlite_open(PChar(FFileName), 0, @ErrorStr);
   if Result = nil then
   begin
     DatabaseError('Error opening "' + FFileName +'": ' + String(ErrorStr));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     sqlite_freemem(ErrorStr);
   end;
 end;
@@ -193,9 +205,12 @@ begin
   for i := 0 to ColumnCount - 1 do
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     DataSize := 0;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     ColumnStr := UpperCase(String(ColumnNames[i + ColumnCount]));
     if (ColumnStr = 'INTEGER') or (ColumnStr = 'INT') then
     begin
@@ -208,6 +223,7 @@ begin
       else
         AType := ftInteger;
 <<<<<<< HEAD
+<<<<<<< HEAD
     end else if Pos('VARCHAR', ColumnStr) = 1 then
     begin
       AType := ftString;
@@ -217,6 +233,8 @@ begin
       AType := ftBoolean;
     end else if Pos('AUTOINC', ColumnStr) = 1 then
 =======
+=======
+>>>>>>> origin/fixes_2_2
     end else if Pos('VARCHAR',ColumnStr) = 1 then
     begin
       AType := ftString;
@@ -230,8 +248,11 @@ begin
       if FAutoIncFieldNo = -1 then
         FAutoIncFieldNo := i;
 <<<<<<< HEAD
+<<<<<<< HEAD
     end else if (Pos('FLOAT', ColumnStr)=1) or (Pos('NUMERIC', ColumnStr) = 1) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
     end else if (Pos('FLOAT',ColumnStr)=1) or (Pos('NUMERIC',ColumnStr)=1) then
 >>>>>>> graemeg/fixes_2_2
     begin
@@ -246,8 +267,11 @@ begin
     begin
       AType := ftTime;
 <<<<<<< HEAD
+<<<<<<< HEAD
     end else if (ColumnStr = 'LARGEINT') or (ColumnStr = 'BIGINT') then
 =======
+=======
+>>>>>>> origin/fixes_2_2
     end else if (ColumnStr = 'LARGEINT') then
 >>>>>>> graemeg/fixes_2_2
     begin
@@ -265,15 +289,21 @@ begin
     begin
       AType := ftString;
 <<<<<<< HEAD
+<<<<<<< HEAD
     end;
     FieldDefs.Add(FieldDefs.MakeNameUnique(String(ColumnNames[i])), AType, DataSize);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     end;    
     if AType = ftString then
       FieldDefs.Add(String(ColumnNames[i]), AType, dsMaxStringSize)
     else
       FieldDefs.Add(String(ColumnNames[i]), AType);  
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     //Set the pchar2sql function
     case AType of
       ftString:
@@ -449,10 +479,14 @@ function TSqliteDataset.QuickQuery(const ASQL: String; const AStrList: TStrings;
 var
   vm: Pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   ColumnNames, ColumnValues: PPAnsiChar;
 =======
   ColumnNames, ColumnValues: PPChar;
 >>>>>>> graemeg/fixes_2_2
+=======
+  ColumnNames, ColumnValues: PPChar;
+>>>>>>> origin/fixes_2_2
   ColCount: Integer;
   
   procedure FillStrings;
@@ -469,6 +503,7 @@ var
     begin
       // I know, this code is really dirty!!
 <<<<<<< HEAD
+<<<<<<< HEAD
       AStrList.AddObject(String(ColumnValues[0]),
         TObject(PtrInt(StrToInt(String(ColumnValues[1])))));
       FReturnCode := sqlite_step(vm, @ColCount, @ColumnValues, @ColumnNames);
@@ -476,6 +511,10 @@ var
       AStrList.AddObject(String(ColumnValues[0]), TObject(PtrInt(StrToInt(String(ColumnValues[1])))));
       FReturnCode:=sqlite_step(vm, @ColCount, @ColumnValues, @ColumnNames);
 >>>>>>> graemeg/fixes_2_2
+=======
+      AStrList.AddObject(String(ColumnValues[0]), TObject(PtrInt(StrToInt(String(ColumnValues[1])))));
+      FReturnCode:=sqlite_step(vm, @ColCount, @ColumnValues, @ColumnNames);
+>>>>>>> origin/fixes_2_2
     end;
   end;    
 begin
@@ -483,10 +522,14 @@ begin
     GetSqliteHandle;
   Result := '';
 <<<<<<< HEAD
+<<<<<<< HEAD
   FReturnCode := sqlite_compile(FSqliteHandle, PAnsiChar(ASQL), nil, @vm, nil);
 =======
   FReturnCode := sqlite_compile(FSqliteHandle, PChar(ASql), nil, @vm, nil);
 >>>>>>> graemeg/fixes_2_2
+=======
+  FReturnCode := sqlite_compile(FSqliteHandle, PChar(ASql), nil, @vm, nil);
+>>>>>>> origin/fixes_2_2
   if FReturnCode <> SQLITE_OK then
     DatabaseError(ReturnString,Self);
     

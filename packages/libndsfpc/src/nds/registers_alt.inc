@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 type 
   f32 = integer;
@@ -65,6 +66,8 @@ const
   BG3_CX = REG_BG3X;
   BG3_CY = REG_BG3Y;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: registers_alt.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -158,7 +161,10 @@ const
   REG_BG3Y		: pcuint32 = pointer($400003C);
   REG_BG3Y_L		: pcuint16 = pointer($400003C);
   REG_BG3Y_H		: pcuint16 = pointer($400003E);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   
   REG_WIN0H		: pcuint16 = pointer($4000040);
   REG_WIN1H		: pcuint16 = pointer($4000042);
@@ -167,6 +173,7 @@ const
   REG_WININ		: pcuint16 = pointer($4000048);
   REG_WINOUT		: pcuint16 = pointer($400004A);
   
+<<<<<<< HEAD
 <<<<<<< HEAD
   MOSAIC_CR = REG_MOSAIC;
 
@@ -221,6 +228,8 @@ const
   SUB_BG3_CX = REG_BG3X_SUB;
   SUB_BG3_CY = REG_BG3Y_SUB;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   REG_MOSAIC		: pcuint32 = pointer($400004C);
   REG_MOSAIC_L	: pcuint32 = pointer($400004C);
   REG_MOSAIC_H	: pcuint32 = pointer($400004E);
@@ -271,7 +280,10 @@ const
   REG_BG3Y_SUB		: pcuint32 = pointer($400103C);
   REG_BG3Y_L_SUB		: pcuint16 = pointer($400103C);
   REG_BG3Y_H_SUB		: pcuint16 = pointer($400103E);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   
   REG_WIN0H_SUB		: pcuint16 = pointer($4001040);
   REG_WIN1H_SUB		: pcuint16 = pointer($4001042);
@@ -279,12 +291,15 @@ const
   REG_WIN1V_SUB		: pcuint16 = pointer($4001046);
   REG_WININ_SUB		: pcuint16 = pointer($4001048);
 <<<<<<< HEAD
+<<<<<<< HEAD
   REG_WINOUT_SUB	: pcuint16 = pointer($400104A);
   
   SUB_MOSAIC_CR = REG_MOSAIC_SUB;
   
   REG_BLDMOD_SUB: pcuint16 = pointer($4001050);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   REG_WINOUT_SUB		: pcuint16 = pointer($400104A);
   
   REG_MOSAIC_SUB		: pcuint32 = pointer($400104C);
@@ -292,17 +307,25 @@ const
   REG_MOSAIC_H_SUB	: pcuint32 = pointer($400104E);
   
   REG_BLDMOD_SUB	: pcuint16 = pointer($4001050);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   REG_COLV_SUB	: pcuint16 = pointer($4001052);
   REG_COLY_SUB	: pcuint16 = pointer($4001054);
   
   (*common*)
+<<<<<<< HEAD
 <<<<<<< HEAD
  
 =======
   REG_DMA			: pcuint32 = pointer($40000B0);
   
 >>>>>>> graemeg/fixes_2_2
+=======
+  REG_DMA			: pcuint32 = pointer($40000B0);
+  
+>>>>>>> origin/fixes_2_2
   REG_DMA0SAD		: pcuint32 = pointer($40000B0);
   REG_DMA0SAD_L	: pcuint16 = pointer($40000B0);
   REG_DMA0SAD_H	: pcuint16 = pointer($40000B2);
@@ -354,6 +377,7 @@ const
   
   
 <<<<<<< HEAD
+<<<<<<< HEAD
 //  REG_SIOCNT		: pcuint16 = pointer($4000128);
   REG_SIOMLT_SEND	: pcuint16 = pointer($400012A);
   
@@ -371,6 +395,8 @@ const
   (*controls power  0x30f	is all on *)
 {$define POWER_CR := REG_POWERCNT}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   REG_SIOCNT		: pcuint16 = pointer($4000128);
   REG_SIOMLT_SEND	: pcuint16 = pointer($400012A);
   
@@ -387,7 +413,10 @@ const
   
   (*controls power  0x30f	is all on *)
   POWER_CR = REG_POWERCNT;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   
   (* ram	controllers	0x8	is enabled,	other bits have	to do with mapping *)
   REG_VRAM_A_CR	: pcuint8 = pointer($4000240);
@@ -449,16 +478,22 @@ const
   // Card	bus
   
 <<<<<<< HEAD
+<<<<<<< HEAD
   CARD_CR1     = REG_AUXSPICNT;
   CARD_CR1H    = REG_AUXSPICNTH;
   CARD_CR2     = REG_ROMCTRL;
   CARD_EEPDATA = REG_AUXSPIDATA;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   REG_CARD_CR1		: pcuint32 = pointer($040001A0);
   REG_CARD_CR1H		: pcuint8 = pointer($040001A1);
   REG_CARD_CR2		: pcuint32 = pointer($040001A4);
   REG_CARD_COMMAND	: pcuint8 = pointer($040001A8);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   
   REG_CARD_DATA		: pcuint32 = pointer($04100000);
   REG_CARD_DATA_RD	: pcuint32 = pointer($04100010);
@@ -468,10 +503,13 @@ const
   REG_CARD_1B8		: pcuint16 = pointer($040001B8);
   REG_CARD_1BA		: pcuint16 = pointer($040001BA);
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   SOUND_CR          = REG_SOUNDCNT;
   SOUND_MASTER_VOL  = REG_MASTER_VOLUME;
   SOUND_BIAS        = REG_SOUNDBIAS;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif NDS_INTERFACE}

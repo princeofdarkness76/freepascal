@@ -36,10 +36,14 @@
 {                                                                              }
 {******************************************************************************}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$Z4}
 =======
 {$A+,Z4}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$A+,Z4}
+>>>>>>> origin/fixes_2_2
 
 // This file is intended for C header conversions.
 // It defines several mutually exclusive IFDEFs which determine
@@ -334,7 +338,11 @@ Standalone compiling would be useless!
 {$ENDIF HTMLHELP11}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF ~JEDIAPILIB_INC}
 =======
 {$ENDIF ~JEDIAPILIB_INC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ENDIF ~JEDIAPILIB_INC}
+>>>>>>> origin/fixes_2_2

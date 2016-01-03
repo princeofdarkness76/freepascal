@@ -49,6 +49,7 @@ end;
 {$ifndef FPC_SYSTEM_HAS_INDEXBYTE}
 {$define FPC_SYSTEM_HAS_INDEXBYTE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifdef LINUX}
   {$define BUGGYMEMCHR}
@@ -62,6 +63,10 @@ function rawmemchr(const buf; b: cint): pointer; cdecl; external 'c';
 
 function memchr(const buf; b: cint; len: size_t): pointer; cdecl; external 'c';
 >>>>>>> graemeg/fixes_2_2
+=======
+
+function memchr(const buf; b: cint; len: size_t): pointer; cdecl; external 'c';
+>>>>>>> origin/fixes_2_2
 
 function IndexByte(Const buf;len:sizeint;b:byte):sizeint;{$ifdef SYSTEMINLINE}inline;{$endif}
 var
@@ -73,6 +78,7 @@ begin
   { fpc_pchar_to_ansistr in astrings.inc (interpret values < 0 as   }
   { unsigned)                                                       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef BUGGYMEMCHR}
   if len = -1 then
     res := rawmemchr(buf,cint(b))
@@ -82,6 +88,9 @@ begin
 =======
   res := memchr(buf,cint(b),size_t(sizeuint(len)));
 >>>>>>> graemeg/fixes_2_2
+=======
+  res := memchr(buf,cint(b),size_t(sizeuint(len)));
+>>>>>>> origin/fixes_2_2
   if (res <> nil) then
     IndexByte := SizeInt(res-@buf)
   else

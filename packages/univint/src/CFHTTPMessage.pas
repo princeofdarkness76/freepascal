@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 File:	   CFNetwork/CFHTTPMessage.h
  
 	 Contains:   CoreFoundation Network socket streams header
@@ -52,6 +53,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       CFNetwork/CFHTTPMessage.h
  
      Contains:   CoreFoundation Network socket streams header
@@ -75,7 +78,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -85,12 +91,17 @@
 unit CFHTTPMessage;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -104,14 +115,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -120,11 +136,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -162,6 +181,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -169,6 +190,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -413,6 +435,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -421,7 +445,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -448,9 +475,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -461,6 +492,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFString,CFURL,CFBase,CFData,CFDictionary;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -481,10 +513,14 @@ uses MacTypes,CFString,CFURL,CFBase,CFData,CFDictionary;
 =======
 {$ALIGN MAC68K}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ALIGN MAC68K}
+>>>>>>> origin/fixes_2_2
 
 {
  *  kCFHTTPVersion1_0
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Discussion:
  *	Version string for HTTP 1.0.
@@ -697,6 +733,8 @@ type
 function CFHTTPMessageGetTypeID: CFTypeID; external name '_CFHTTPMessageGetTypeID';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
  *    CarbonLib:        not available
@@ -747,12 +785,16 @@ type
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 function CFHTTPMessageGetTypeID: CFTypeID; external name '_CFHTTPMessageGetTypeID';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFHTTPMessageCreateRequest()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Discussion:
  *	Create an HTTPMessage from an HTTP method, url and version.
@@ -872,6 +914,8 @@ function CFHTTPMessageCreateResponse( alloc: CFAllocatorRef; statusCode: CFIndex
 function CFHTTPMessageCreateEmpty( alloc: CFAllocatorRef; isRequest: Boolean ): CFHTTPMessageRef; external name '_CFHTTPMessageCreateEmpty';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
  *    CarbonLib:        not available
@@ -905,12 +949,16 @@ function CFHTTPMessageCreateResponse( allocator: CFAllocatorRef; statusCode: SIn
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 function CFHTTPMessageCreateEmpty( allocator: CFAllocatorRef; isRequest: Boolean ): CFHTTPMessageRef; external name '_CFHTTPMessageCreateEmpty';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFHTTPMessageCreateCopy()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Discussion:
  *	Creates a copy of a CFHTTPMessage.
@@ -972,6 +1020,8 @@ function CFHTTPMessageCreateCopy( alloc: CFAllocatorRef; message: CFHTTPMessageR
 function CFHTTPMessageIsRequest( message: CFHTTPMessageRef ): Boolean; external name '_CFHTTPMessageIsRequest';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
  *    CarbonLib:        not available
@@ -992,12 +1042,16 @@ function CFHTTPMessageCreateCopy( allocator: CFAllocatorRef; message: CFHTTPMess
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 function CFHTTPMessageIsRequest( message: CFHTTPMessageRef ): Boolean; external name '_CFHTTPMessageIsRequest';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFHTTPMessageCopyVersion()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Discussion:
  *	Returns the HTTP version.
@@ -1023,6 +1077,8 @@ function CFHTTPMessageIsRequest( message: CFHTTPMessageRef ): Boolean; external 
 function CFHTTPMessageCopyVersion( message: CFHTTPMessageRef ): CFStringRef; external name '_CFHTTPMessageCopyVersion';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
  *    CarbonLib:        not available
@@ -1030,12 +1086,16 @@ function CFHTTPMessageCopyVersion( message: CFHTTPMessageRef ): CFStringRef; ext
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 function CFHTTPMessageCopyVersion( message: CFHTTPMessageRef ): CFStringRef; external name '_CFHTTPMessageCopyVersion';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFHTTPMessageCopyBody()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Discussion:
  *	Returns the body of the message.
@@ -1061,6 +1121,8 @@ function CFHTTPMessageCopyVersion( message: CFHTTPMessageRef ): CFStringRef; ext
 function CFHTTPMessageCopyBody( message: CFHTTPMessageRef ): CFDataRef; external name '_CFHTTPMessageCopyBody';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
  *    CarbonLib:        not available
@@ -1068,12 +1130,16 @@ function CFHTTPMessageCopyBody( message: CFHTTPMessageRef ): CFDataRef; external
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 function CFHTTPMessageCopyBody( message: CFHTTPMessageRef ): CFDataRef; external name '_CFHTTPMessageCopyBody';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFHTTPMessageSetBody()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Discussion:
  *	Sets the body of the message from a CFData.
@@ -1099,6 +1165,8 @@ function CFHTTPMessageCopyBody( message: CFHTTPMessageRef ): CFDataRef; external
 procedure CFHTTPMessageSetBody( message: CFHTTPMessageRef; bodyData: CFDataRef ); external name '_CFHTTPMessageSetBody';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
  *    CarbonLib:        not available
@@ -1106,12 +1174,16 @@ procedure CFHTTPMessageSetBody( message: CFHTTPMessageRef; bodyData: CFDataRef )
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 procedure CFHTTPMessageSetBody( message: CFHTTPMessageRef; bodyData: CFDataRef ); external name '_CFHTTPMessageSetBody';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFHTTPMessageCopyHeaderFieldValue()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Discussion:
  *	Returns the specified header field.
@@ -1141,6 +1213,8 @@ procedure CFHTTPMessageSetBody( message: CFHTTPMessageRef; bodyData: CFDataRef )
 function CFHTTPMessageCopyHeaderFieldValue( message: CFHTTPMessageRef; headerField: CFStringRef ): CFStringRef; external name '_CFHTTPMessageCopyHeaderFieldValue';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
  *    CarbonLib:        not available
@@ -1148,12 +1222,16 @@ function CFHTTPMessageCopyHeaderFieldValue( message: CFHTTPMessageRef; headerFie
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 function CFHTTPMessageCopyHeaderFieldValue( message: CFHTTPMessageRef; headerField: CFStringRef ): CFStringRef; external name '_CFHTTPMessageCopyHeaderFieldValue';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFHTTPMessageCopyAllHeaderFields()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Discussion:
  *	Returns a CFDictionary containing all of the header fields.
@@ -1179,6 +1257,8 @@ function CFHTTPMessageCopyHeaderFieldValue( message: CFHTTPMessageRef; headerFie
 function CFHTTPMessageCopyAllHeaderFields( message: CFHTTPMessageRef ): CFDictionaryRef; external name '_CFHTTPMessageCopyAllHeaderFields';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
  *    CarbonLib:        not available
@@ -1186,12 +1266,16 @@ function CFHTTPMessageCopyAllHeaderFields( message: CFHTTPMessageRef ): CFDictio
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 function CFHTTPMessageCopyAllHeaderFields( message: CFHTTPMessageRef ): CFDictionaryRef; external name '_CFHTTPMessageCopyAllHeaderFields';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFHTTPMessageSetHeaderFieldValue()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Discussion:
  *	Sets the value of the specified header field.
@@ -1285,6 +1369,8 @@ function CFHTTPMessageAppendBytes( message: CFHTTPMessageRef; newBytes: UnivPtr;
 function CFHTTPMessageIsHeaderComplete( message: CFHTTPMessageRef ): Boolean; external name '_CFHTTPMessageIsHeaderComplete';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
  *    CarbonLib:        not available
@@ -1318,12 +1404,16 @@ function CFHTTPMessageAppendBytes( message: CFHTTPMessageRef; newBytes: UnivPtr;
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 function CFHTTPMessageIsHeaderComplete( message: CFHTTPMessageRef ): Boolean; external name '_CFHTTPMessageIsHeaderComplete';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFHTTPMessageCopySerializedMessage()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Discussion:
  *	Creates a self-contained copy of a CFHTTPMessage. This would be
@@ -1350,6 +1440,8 @@ function CFHTTPMessageIsHeaderComplete( message: CFHTTPMessageRef ): Boolean; ex
 function CFHTTPMessageCopySerializedMessage( request: CFHTTPMessageRef ): CFDataRef; external name '_CFHTTPMessageCopySerializedMessage';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
  *    CarbonLib:        not available
@@ -1357,12 +1449,16 @@ function CFHTTPMessageCopySerializedMessage( request: CFHTTPMessageRef ): CFData
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 function CFHTTPMessageCopySerializedMessage( request: CFHTTPMessageRef ): CFDataRef; external name '_CFHTTPMessageCopySerializedMessage';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {*******************}
 { Request functions }
 {*******************}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {
@@ -1391,6 +1487,8 @@ function CFHTTPMessageCopySerializedMessage( request: CFHTTPMessageRef ): CFData
 function CFHTTPMessageCopyRequestURL( request: CFHTTPMessageRef ): CFURLRef; external name '_CFHTTPMessageCopyRequestURL';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CFHTTPMessageCopyRequestURL()
  *  
@@ -1401,12 +1499,16 @@ function CFHTTPMessageCopyRequestURL( request: CFHTTPMessageRef ): CFURLRef; ext
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 function CFHTTPMessageCopyRequestURL( request: CFHTTPMessageRef ): CFURLRef; external name '_CFHTTPMessageCopyRequestURL';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFHTTPMessageCopyRequestMethod()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Discussion:
  *	Creates a copy of the request method.
@@ -1480,6 +1582,8 @@ function CFHTTPMessageCopyRequestMethod( request: CFHTTPMessageRef ): CFStringRe
 function CFHTTPMessageAddAuthentication( request: CFHTTPMessageRef; authenticationFailureResponse: CFHTTPMessageRef; username: CFStringRef; password: CFStringRef; authenticationScheme: CFStringRef; forProxy: Boolean ): Boolean; external name '_CFHTTPMessageAddAuthentication';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
  *    CarbonLib:        not available
@@ -1504,12 +1608,16 @@ function CFHTTPMessageCopyRequestMethod( request: CFHTTPMessageRef ): CFStringRe
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 function CFHTTPMessageAddAuthentication( request: CFHTTPMessageRef; authenticationFailureResponse: CFHTTPMessageRef; username: CFStringRef; password: CFStringRef; authenticationScheme: CFStringRef; forProxy: Boolean ): Boolean; external name '_CFHTTPMessageAddAuthentication';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {********************}
 { Response functions }
 {********************}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {
@@ -1538,6 +1646,8 @@ function CFHTTPMessageAddAuthentication( request: CFHTTPMessageRef; authenticati
 function CFHTTPMessageGetResponseStatusCode( response: CFHTTPMessageRef ): CFIndex; external name '_CFHTTPMessageGetResponseStatusCode';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0) *)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CFHTTPMessageGetResponseStatusCode()
  *  
@@ -1548,12 +1658,16 @@ function CFHTTPMessageGetResponseStatusCode( response: CFHTTPMessageRef ): CFInd
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
 function CFHTTPMessageGetResponseStatusCode( response: CFHTTPMessageRef ): UInt32; external name '_CFHTTPMessageGetResponseStatusCode';
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 
 {
  *  CFHTTPMessageCopyResponseStatusLine()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Discussion:
  *	Returns the status line for the response.
@@ -1585,6 +1699,8 @@ function CFHTTPMessageCopyResponseStatusLine( response: CFHTTPMessageRef ): CFSt
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
  *    CarbonLib:        not available
@@ -1594,4 +1710,7 @@ end.
 function CFHTTPMessageCopyResponseStatusLine( response: CFHTTPMessageRef ): CFStringRef; external name '_CFHTTPMessageCopyResponseStatusLine';
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

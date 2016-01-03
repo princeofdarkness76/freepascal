@@ -17,9 +17,12 @@
 {****************************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$IFNDEF FPC_HAS_TYPE_EXTENDED}
 procedure DoubleToExtended(d : double; e : pointer);
 var mant : qword;
@@ -57,9 +60,12 @@ begin
 end;
 {$ENDIF}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure TBinaryObjectWriter.WriteWord(w : word); {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
 begin
@@ -80,9 +86,12 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure TBinaryObjectWriter.WriteExtended(e : extended); {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
 {$IFNDEF FPC_HAS_TYPE_EXTENDED}
 var ext : array[0..9] of byte;
@@ -100,9 +109,12 @@ begin
 {$ENDIF}
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 constructor TBinaryObjectWriter.Create(Stream: TStream; BufSize: Integer);
 begin
@@ -263,6 +275,9 @@ begin
     WriteValue(vaInt64);
     WriteQWord(qword(Value));
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2_2
   end;
 end;
 
@@ -365,6 +380,7 @@ begin
     {$ENDIF}
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
                       
 procedure TBinaryObjectWriter.WriteUnicodeString(const Value: UnicodeString);
@@ -388,6 +404,8 @@ begin
     Write(Value[1], len*sizeof(UnicodeChar));
     {$ENDIF}
   end;
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure TBinaryObjectWriter.WriteVariant(const VarValue: variant);
@@ -673,6 +691,7 @@ Var
   C : TComponent;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   if Assigned(FOnFindAncestor) then
     if (Ancestor=Nil) or (Ancestor is TComponent) then
@@ -694,6 +713,9 @@ begin
   SRA:=FRootAncestor;
 =======
 begin
+=======
+begin
+>>>>>>> origin/fixes_2_2
   if Assigned(FOnFindAncestor) then
     if (Ancestor=Nil) or (Ancestor is TComponent) then
       begin
@@ -712,7 +734,10 @@ var
 begin
   SR:=FRoot;
   SA:=FAncestor;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Try
     Component.FComponentState:=Component.FComponentState+[csWriting];
     Try
@@ -729,9 +754,12 @@ begin
     FAncestor:=SA;
     FRoot:=SR;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FRootAncestor:=SRA;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 end;
 
@@ -901,10 +929,14 @@ var
   Ident: String;
   IntToIdentFn: TIntToIdent;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 =======
   SingleV : Single;
 >>>>>>> graemeg/fixes_2_2
+=======
+  SingleV : Single;
+>>>>>>> origin/fixes_2_2
   FloatValue, DefFloatValue: Extended;
 {$endif}
   MethodValue: TMethod;
@@ -1135,6 +1167,7 @@ begin
                 and not (csTransient in Component.ComponentStyle) then
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
               Name:= '';
               C:= Component;
               While (C<>Nil) and (C.Name<>'') do
@@ -1158,6 +1191,8 @@ begin
                 if (Name<>'') then              //foreign root
                   Name:=Name+'.Owner';
 =======
+=======
+>>>>>>> origin/fixes_2_2
               { Determine the correct name of the component this property contains }
               if Component.Owner = LookupRoot then
                 Name := Component.Name
@@ -1181,9 +1216,12 @@ begin
               end; //(ObjValue <> AncestorObj)
             end // ObjValue.InheritsFrom(TComponent)
 <<<<<<< HEAD
+<<<<<<< HEAD
           else
             begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
           else if ObjValue.InheritsFrom(TCollection) then
             begin
             if (not HasAncestor) or (not CollectionsEqual(TCollection(ObjValue),
@@ -1202,7 +1240,10 @@ begin
             end // Tcollection
           else
             begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             SavedAncestor := Ancestor;
             SavedPropPath := FPropPath;
             try
@@ -1214,6 +1255,7 @@ begin
               Ancestor := SavedAncestor;
               FPropPath := SavedPropPath;
             end;
+<<<<<<< HEAD
 <<<<<<< HEAD
             if ObjValue.InheritsFrom(TCollection) then
               begin
@@ -1233,6 +1275,8 @@ begin
               end // Tcollection
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             end;
           end; // Inheritsfrom(TPersistent)
       end;

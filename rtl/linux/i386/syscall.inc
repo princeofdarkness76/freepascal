@@ -29,6 +29,7 @@ const
 
 type
   TAuxiliaryValue = cuInt32;
+<<<<<<< HEAD
 
   TInternalUnion = record
     a_val: cuint32;           //* Integer value */
@@ -170,6 +171,26 @@ asm
 var
   psysinfo: LongWord = 0;
 
+=======
+
+  TInternalUnion = record
+    a_val: cuint32;           //* Integer value */
+      {* We use to have pointer elements added here.  We cannot do that,
+         though, since it does not work when using 32-bit definitions
+         on 64-bit platforms and vice versa.  *}
+  end;
+
+  Elf32_auxv_t = record
+    a_type: cuint32;              //* Entry type */
+    a_un: TInternalUnion;
+  end;
+  TElf32AuxiliaryVector = Elf32_auxv_t;
+  PElf32AuxiliaryVector = ^TElf32AuxiliaryVector;
+
+var
+  psysinfo: LongWord = 0;
+
+>>>>>>> origin/fixes_2_2
 procedure InitSyscallIntf;
 var
   ep: PPChar;
@@ -197,9 +218,15 @@ begin
 end;
 
 {***********************SYSENTER CODE END******************************}
+<<<<<<< HEAD
 
 Procedure fpc_geteipasebx;[external name 'fpc_geteipasebx'];
 
+=======
+
+Procedure fpc_geteipasebx;[external name 'fpc_geteipasebx'];
+
+>>>>>>> origin/fixes_2_2
 function FpSysCall(sysnr:TSysParam):TSysResult; assembler; register; [public,alias:'FPC_SYSCALL0'];
 { Var sysnr located in register eax }
 asm
@@ -234,7 +261,10 @@ asm
         call psysinfo
   .LTail:
         movl  %ecx,%ebx
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         cmpl  $-4095,%eax
         jb    .LSyscOK
         negl  %eax
@@ -248,6 +278,7 @@ function FpSysCall(sysnr,param1,param2 : TSysParam):TSysResult; assembler; regis
   Var param1 located in register edx
   Var param2 located in register ecx }
 asm
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$ifdef FPC_PROFILE}
         push  %eax
@@ -291,6 +322,8 @@ asm
 	pop   %edx
 	pop   %ebx
 =======
+=======
+>>>>>>> origin/fixes_2_2
         push  %ebx
 //      movl  sysnr,%eax
         movl  %edx,%ebx
@@ -303,7 +336,10 @@ asm
         call psysinfo
   .LTail:
         pop   %ebx
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         cmpl  $-4095,%eax
         jb    .LSyscOK
         negl  %eax
@@ -317,6 +353,7 @@ function FpSysCall(sysnr,param1,param2,param3:TSysParam):TSysResult; assembler; 
   Var param1 located in register edx
   Var param2 located in register ecx
   Var param3 located at ebp+20 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 var
   _psysinfo: LongWord;
@@ -367,6 +404,8 @@ asm
 	pop   %edx
 	pop   %ebx
 =======
+=======
+>>>>>>> origin/fixes_2_2
 asm
         push  %ebx
 //      movl  sysnr,%eax
@@ -381,7 +420,10 @@ asm
         call psysinfo
   .LTail:
         pop   %ebx
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         cmpl  $-4095,%eax
         jb    .LSyscOK
         negl  %eax
@@ -396,6 +438,7 @@ function FpSysCall(sysnr,param1,param2,param3,param4:TSysParam):TSysResult; asse
   Var param2 located in register ecx
   Var param3 located at ebp+20
   Var param4 located at ebp+16 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 var
   _psysinfo: LongWord;
@@ -449,6 +492,8 @@ asm
   	pop   %esi
 	pop   %ebx
 =======
+=======
+>>>>>>> origin/fixes_2_2
 asm
         push  %ebx
         push  %esi
@@ -466,7 +511,10 @@ asm
   .LTail:
         pop   %esi
         pop   %ebx
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         cmpl  $-4095,%eax
         jb    .LSyscOK
         negl  %eax
@@ -482,6 +530,7 @@ function FpSysCall(sysnr,param1,param2,param3,param4,param5 : TSysParam):TSysRes
   Var param3 located at ebp+20
   Var param4 located at ebp+16
   Var param5 located at ebp+12 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 var
   _psysinfo: LongWord;
@@ -542,6 +591,8 @@ asm
 	pop   %edx
 	pop   %ebx
 =======
+=======
+>>>>>>> origin/fixes_2_2
 asm
         push  %ebx
         push  %esi
@@ -562,7 +613,10 @@ asm
         pop   %edi
         pop   %esi
         pop   %ebx
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         cmpl  $-4095,%eax
         jb    .LSyscOK
         negl  %eax
@@ -579,6 +633,7 @@ function FpSysCall(sysnr,param1,param2,param3,param4,param5,param6: TSysParam):T
   Var param4 located at ebp+16
   Var param5 located at ebp+12
   Var param6 located at ebp+8 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 var
   _psysinfo: LongWord;
@@ -644,6 +699,8 @@ asm
 	pop   %edx
 	pop   %ebx
 =======
+=======
+>>>>>>> origin/fixes_2_2
 asm
         push  %ebx
         push  %esi
@@ -667,7 +724,10 @@ asm
         pop   %edi
         pop   %esi
         pop   %ebx
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         cmpl  $-4095,%eax
         jb    .LSyscOK
         negl  %eax

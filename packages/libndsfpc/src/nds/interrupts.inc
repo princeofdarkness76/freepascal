@@ -1,8 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 type
   IRQ_MASK = cuint;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: interrupts.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -48,7 +51,10 @@ type
 type
   IRQ_MASKS = cuint;
   IRQ_MASK = IRQ_MASKS;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 const
   IRQ_VBLANK			    : IRQ_MASK =	(1 shl 0);		(* vertical blank interrupt mask *)
   IRQ_HBLANK			    : IRQ_MASK =	(1 shl 1);		(* horizontal blank interrupt mask *)
@@ -67,6 +73,7 @@ const
   IRQ_IPC_SYNC		    : IRQ_MASK =	(1 shl 16);	  (* IPC sync interrupt mask *)
   IRQ_FIFO_EMPTY		  : IRQ_MASK =	(1 shl 17);	  (* Send FIFO empty interrupt mask *)
   IRQ_FIFO_NOT_EMPTY	: IRQ_MASK =	(1 shl 18);	  (* Receive FIFO empty interrupt mask *)
+<<<<<<< HEAD
 <<<<<<< HEAD
   IRQ_CARD			      : IRQ_MASK =	(1 shl 19);	  (* interrupt mask DS Card Slot *)
   IRQ_CARD_LINE		    : IRQ_MASK =	(1 shl 20);	  (* interrupt mask *)
@@ -101,6 +108,8 @@ const
 
 function IRQ_TIMER(n: cint): cint; inline;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   IRQ_CARD			      : IRQ_MASK =	(1 shl 19);	  (* interrupt mask *)
   IRQ_CARD_LINE		    : IRQ_MASK =	(1 shl 20);	  (* interrupt mask *)
   IRQ_GEOMETRY_FIFO   : IRQ_MASK =	(1 shl 21);	  (* geometry FIFO interrupt mask *)
@@ -108,7 +117,10 @@ function IRQ_TIMER(n: cint): cint; inline;
   IRQ_SPI				      : IRQ_MASK =	(1 shl 23);	  (* SPI interrupt mask *)
   IRQ_WIFI			      : IRQ_MASK =	(1 shl 24);	  (* WIFI interrupt mask (ARM7)*)
   IRQ_ALL				      : IRQ_MASK =	 $FFFFFF {not 0};
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 const
   MAX_INTERRUPTS  = 25;
@@ -116,6 +128,7 @@ const
 
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
   REG_IE	 : pcuint32 = pointer($04000210);
   REG_AUXIE: pcuint32 = pointer($04000218);
@@ -127,6 +140,11 @@ const
   REG_IF	: pcuint32 = pointer($04000214);
   REG_IME	: pcuint16 = pointer($04000208);
 >>>>>>> graemeg/fixes_2_2
+=======
+  REG_IE	: pcuint32 = pointer($04000210);
+  REG_IF	: pcuint32 = pointer($04000214);
+  REG_IME	: pcuint16 = pointer($04000208);
+>>>>>>> origin/fixes_2_2
 
 type
   IME_VALUE = integer;
@@ -136,17 +154,21 @@ const
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
   TVoidFn = procedure of object;
   
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 var
 //  __irq_vector: array [0..0] of VoidFunctionPointer; cvar; external;
 //  __irq_vector: array [0..0] of Pointer; cvar; external;
 //  __irq_flags: array [0..0] of cuint32; cvar; external;
 //  __irq_flags: pcuint32; cvar; external;
 //  __irq_vector: ^VoidFunctionPointer; cvar; external;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 ///  __irq_vector: Pointer; cvar; external;
@@ -159,13 +181,18 @@ var
 {$define INTR_WAIT_FLAGS := __irq_flags}
 {$define INTR_WAIT_FLAGSAUX := __irq_flagsaux}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   __irq_vector: Pointer; cvar; external;
   __irq_flags: pcuint32; cvar; external;
 
 
 
 {$define VBLANK_INTR_WAIT_FLAGS := __irq_flags}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$define IRQ_HANDLER := __irq_vector}
 
 type
@@ -175,6 +202,7 @@ type
   end;
 
 procedure irqInit(); cdecl; external;
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure irqSet(irq: cuint32; handler: TVoidFn); cdecl; external;
 procedure irqSet(irq: cuint32; handler: pointer); cdecl; external;
@@ -222,6 +250,8 @@ end;
 {$endif NDS_IMPLEMENTATION}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 //procedure irqSet(irq: IRQ_MASK; handler: VoidFunctionPointer); cdecl; external;
 procedure irqSet(irq: IRQ_MASK; handler: pointer); cdecl; external;
 procedure irqClear(irq: IRQ_MASK); cdecl; external;
@@ -230,4 +260,7 @@ procedure irqInitHandler(handler: pointer); cdecl; external;
 procedure irqEnable(irq: cuint32); cdecl; external;
 procedure irqDisable(irq: cuint32); cdecl; external;
 {$endif NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

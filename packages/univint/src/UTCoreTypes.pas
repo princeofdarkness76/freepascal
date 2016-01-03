@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       UTCoreTypes.h
  
      Contains:   String constants for core uniform type identifiers
@@ -70,6 +71,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
      File:       LaunchServices/UTCoreTypes.h
  
      Contains:   String constants for core uniform type identifiers
@@ -88,7 +91,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -98,12 +104,17 @@
 unit UTCoreTypes;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -117,14 +128,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -133,11 +149,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -175,6 +194,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -182,6 +203,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -418,6 +440,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -426,7 +450,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -453,9 +480,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -465,6 +496,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,CFBase;
 {$endc} {not MACOSALLINCLUDE}
@@ -497,6 +529,9 @@ uses MacTypes,CFBase;
 =======
 uses CFBase;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses CFBase;
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -532,10 +567,14 @@ uses CFBase;
  *  kUTTypeApplication
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    base type for OS X applications, launchable items
 =======
  *    base type for Mac OS X applications, launchable items
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    base type for Mac OS X applications, launchable items
+>>>>>>> origin/fixes_2_2
  *
  *    UTI: com.apple.application
  *
@@ -568,6 +607,7 @@ uses CFBase;
  *    UTI: public.disk-image
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 var kUTTypeItem: CFStringRef; external name '_kUTTypeItem'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_3_0) *)
 var kUTTypeContent: CFStringRef; external name '_kUTTypeContent'; (* attribute const *)
@@ -587,6 +627,8 @@ var kUTTypeDiskImage: CFStringRef; external name '_kUTTypeDiskImage'; (* attribu
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  kUTTypeItem
  *  
@@ -667,7 +709,10 @@ var kUTTypeArchive: CFStringRef; external name '_kUTTypeArchive'; (* attribute c
  }
 var kUTTypeDiskImage: CFStringRef; external name '_kUTTypeDiskImage'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { ================================================================================ *
  *  Concrete base types                                                             *
  * ================================================================================ }
@@ -693,10 +738,14 @@ var kUTTypeDiskImage: CFStringRef; external name '_kUTTypeDiskImage'; (* attribu
  *  kUTTypeResolvable
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    symlink and alias file types conform to this UTI
 =======
  *    anything the Alias Manager can resolve
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    anything the Alias Manager can resolve
+>>>>>>> origin/fixes_2_2
  *
  *    UTI: com.apple.resolvable
  *
@@ -751,6 +800,7 @@ var kUTTypeDiskImage: CFStringRef; external name '_kUTTypeDiskImage'; (* attribu
  *    conforms to: public.url
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 var kUTTypeData: CFStringRef; external name '_kUTTypeData'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_3_0) *)
 var kUTTypeDirectory: CFStringRef; external name '_kUTTypeDirectory'; (* attribute const *)
@@ -772,6 +822,8 @@ var kUTTypeFileURL: CFStringRef; external name '_kUTTypeFileURL'; (* attribute c
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  kUTTypeData
  *  
@@ -862,7 +914,10 @@ var kUTTypeURL: CFStringRef; external name '_kUTTypeURL'; (* attribute const *)
  }
 var kUTTypeFileURL: CFStringRef; external name '_kUTTypeFileURL'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { ================================================================================ *
  *  Text types                                                                      *
  * ================================================================================ }
@@ -907,10 +962,14 @@ var kUTTypeFileURL: CFStringRef; external name '_kUTTypeFileURL'; (* attribute c
  *  kUTTypeUTF16PlainText
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    plain text, UTF-16 encoding, native byte order, optional BOM
 =======
  *    plain text, UTF-16 encoding, native byte order, no BOM
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    plain text, UTF-16 encoding, native byte order, no BOM
+>>>>>>> origin/fixes_2_2
  *    (OSType 'utxt')
  *
  *    UTI: public.utf16-plain-text
@@ -1005,6 +1064,7 @@ var kUTTypeFileURL: CFStringRef; external name '_kUTTypeFileURL'; (* attribute c
  *    conforms to: public.plain-text
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 var kUTTypeText: CFStringRef; external name '_kUTTypeText'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_3_0) *)
 var kUTTypePlainText: CFStringRef; external name '_kUTTypePlainText'; (* attribute const *)
@@ -1039,6 +1099,8 @@ var kUTTypeJavaSource: CFStringRef; external name '_kUTTypeJavaSource'; (* attri
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_3_0) *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  kUTTypeText
  *  
@@ -1199,7 +1261,10 @@ var kUTTypeCPlusPlusHeader: CFStringRef; external name '_kUTTypeCPlusPlusHeader'
  }
 var kUTTypeJavaSource: CFStringRef; external name '_kUTTypeJavaSource'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { ================================================================================ *
  *  Composite content types                                                         *
@@ -1247,6 +1312,7 @@ var kUTTypeJavaSource: CFStringRef; external name '_kUTTypeJavaSource'; (* attri
  *    conforms to: public.data, public.composite-content
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 var kUTTypePDF: CFStringRef; external name '_kUTTypePDF'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_3_0) *)
 var kUTTypeRTFD: CFStringRef; external name '_kUTTypeRTFD'; (* attribute const *)
@@ -1259,6 +1325,8 @@ var kUTTypeWebArchive: CFStringRef; external name '_kUTTypeWebArchive'; (* attri
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_3_0) *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  kUTTypePDF
  *  
@@ -1309,7 +1377,10 @@ var kUTTypeTXNTextAndMultimediaData: CFStringRef; external name '_kUTTypeTXNText
  }
 var kUTTypeWebArchive: CFStringRef; external name '_kUTTypeWebArchive'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { ================================================================================ *
  *  Image content types                                                             *
@@ -1403,6 +1474,7 @@ var kUTTypeWebArchive: CFStringRef; external name '_kUTTypeWebArchive'; (* attri
  *    conforms to: public.image
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 var kUTTypeImage: CFStringRef; external name '_kUTTypeImage'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_3_0) *)
 var kUTTypeJPEG: CFStringRef; external name '_kUTTypeJPEG'; (* attribute const *)
@@ -1427,6 +1499,8 @@ var kUTTypeICO: CFStringRef; external name '_kUTTypeICO'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_3_0) *)
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  kUTTypeImage
  *  
@@ -1537,7 +1611,10 @@ var kUTTypeBMP: CFStringRef; external name '_kUTTypeBMP'; (* attribute const *)
  }
 var kUTTypeICO: CFStringRef; external name '_kUTTypeICO'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 { ================================================================================ *
  *  Audiovisual content types                                                       *
@@ -1626,6 +1703,7 @@ var kUTTypeICO: CFStringRef; external name '_kUTTypeICO'; (* attribute const *)
  *    conforms to: public.audio
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 var kUTTypeAudiovisualContent: CFStringRef; external name '_kUTTypeAudiovisualContent'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_3_0) *)
 var kUTTypeMovie: CFStringRef; external name '_kUTTypeMovie'; (* attribute const *)
@@ -1649,6 +1727,8 @@ var kUTTypeAppleProtectedMPEG4Audio: CFStringRef; external name '_kUTTypeApplePr
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  kUTTypeAudiovisualContent
  *  
@@ -1749,7 +1829,10 @@ var kUTTypeMPEG4Audio: CFStringRef; external name '_kUTTypeMPEG4Audio'; (* attri
  }
 var kUTTypeAppleProtectedMPEG4Audio: CFStringRef; external name '_kUTTypeAppleProtectedMPEG4Audio'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { ================================================================================ *
  *  Directory types                                                                 *
  * ================================================================================ }
@@ -1794,6 +1877,7 @@ var kUTTypeAppleProtectedMPEG4Audio: CFStringRef; external name '_kUTTypeApplePr
  *    conforms to: com.apple.bundle
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 var kUTTypeFolder: CFStringRef; external name '_kUTTypeFolder'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_3_0) *)
 var kUTTypeVolume: CFStringRef; external name '_kUTTypeVolume'; (* attribute const *)
@@ -1807,6 +1891,8 @@ var kUTTypeFramework: CFStringRef; external name '_kUTTypeFramework'; (* attribu
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  kUTTypeFolder
  *  
@@ -1857,7 +1943,10 @@ var kUTTypeBundle: CFStringRef; external name '_kUTTypeBundle'; (* attribute con
  }
 var kUTTypeFramework: CFStringRef; external name '_kUTTypeFramework'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { ================================================================================ *
  *  Application types                                                               *
  * ================================================================================ }
@@ -1878,6 +1967,7 @@ var kUTTypeFramework: CFStringRef; external name '_kUTTypeFramework'; (* attribu
  *    conforms to: com.apple.application, public.data
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 var kUTTypeApplicationBundle: CFStringRef; external name '_kUTTypeApplicationBundle'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_3_0) *)
 var kUTTypeApplicationFile: CFStringRef; external name '_kUTTypeApplicationFile'; (* attribute const *)
@@ -1885,6 +1975,8 @@ var kUTTypeApplicationFile: CFStringRef; external name '_kUTTypeApplicationFile'
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  kUTTypeApplicationBundle
  *  
@@ -1905,7 +1997,10 @@ var kUTTypeApplicationBundle: CFStringRef; external name '_kUTTypeApplicationBun
  }
 var kUTTypeApplicationFile: CFStringRef; external name '_kUTTypeApplicationFile'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { ================================================================================ *
  *  Contact types                                                                   *
  * ================================================================================ }
@@ -1918,11 +2013,14 @@ var kUTTypeApplicationFile: CFStringRef; external name '_kUTTypeApplicationFile'
  *    conforms to: public.data, public.contact
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 var kUTTypeVCard: CFStringRef; external name '_kUTTypeVCard'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_3_0) *)
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  kUTTypeVCard
  *  
@@ -1933,7 +2031,10 @@ var kUTTypeVCard: CFStringRef; external name '_kUTTypeVCard'; (* attribute const
  }
 var kUTTypeVCard: CFStringRef; external name '_kUTTypeVCard'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { ================================================================================ *
  *  Misc. types                                                                     *
  * ================================================================================ }
@@ -1946,6 +2047,7 @@ var kUTTypeVCard: CFStringRef; external name '_kUTTypeVCard'; (* attribute const
  *    conforms to: public.data
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 var kUTTypeInkText: CFStringRef; external name '_kUTTypeInkText'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_3_0) *)
 
@@ -1954,6 +2056,8 @@ var kUTTypeInkText: CFStringRef; external name '_kUTTypeInkText'; (* attribute c
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  kUTTypeInkText
  *  
@@ -1967,4 +2071,7 @@ var kUTTypeInkText: CFStringRef; external name '_kUTTypeInkText'; (* attribute c
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

@@ -46,6 +46,7 @@ interface
     function max(a,b : longint) : longint;{$ifdef USEINLINE}inline;{$endif}
     function max(a,b : int64) : int64;{$ifdef USEINLINE}inline;{$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     { These functions are intenionally put here and not in the constexp unit.
       Since Tconstexprint may be automatically converted to int, which causes
@@ -69,11 +70,16 @@ interface
 
     function next_prime(l: longint): longint;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     {# Return value @var(i) aligned on @var(a) boundary }
     function align(i,a:longint):longint;{$ifdef USEINLINE}inline;{$endif}
     {# Return @var(b) with the bit order reversed }
     function reverse_byte(b: byte): byte;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     function used_align(varalign,minalign,maxalign:shortint):shortint;
     function isbetteralignedthan(new, org, limit: cardinal): boolean;
@@ -174,10 +180,13 @@ interface
     Function nextafter(x,y:double):double;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   { hide Sysutils.ExecuteProcess in units using this one after SysUtils}
   const
     ExecuteProcess = 'Do not use' deprecated 'Use cfileutil.RequotedExecuteProcess instead, ExecuteProcess cannot deal with single quotes as used by Unix command lines';
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef ver2_0}
 { RTL routines not available yet in 2.0.x }
 function SwapEndian(const AValue: SmallInt): SmallInt;
@@ -188,7 +197,10 @@ function SwapEndian(const AValue: Int64): Int64;
 function SwapEndian(const AValue: QWord): QWord;
 {$endif ver2_0}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 implementation
 
@@ -260,6 +272,7 @@ implementation
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     function max(const a,b : Tconstexprint) : Tconstexprint;{$ifdef USEINLINE}inline;{$endif}
     {
@@ -294,6 +307,8 @@ implementation
       end;
 >>>>>>> graemeg/fixes_2_2
 
+=======
+>>>>>>> origin/fixes_2_2
     function reverse_byte(b: byte): byte;
       const
         reverse_nible:array[0..15] of 0..15 =
@@ -351,7 +366,10 @@ implementation
   {$ifdef cpu64bitalu}
 =======
   {$ifdef cpu64bit}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
            { performance penalty for unaligned 8 byte access is much   }
            { higher than for unaligned 4 byte access, at least on ppc, }
            { so use 4 bytes even in some cases where a value could     }
@@ -1468,12 +1486,17 @@ implementation
     // Case x=NAN or y=NAN
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ( (ix>=$7ff00000) and ((longword(ix-$7ff00000) or lx) <> 0) )
         or ( (iy>=$7ff00000) and ((longword(iy-$7ff00000) OR ly) <> 0) )
 =======
     if ( (ix>=$7ff00000) and (((ix-$7ff00000) or lx) <> 0) )
         or ( (iy>=$7ff00000) and (((iy-$7ff00000) OR ly) <> 0) )
 >>>>>>> graemeg/fixes_2_2
+=======
+    if ( (ix>=$7ff00000) and (((ix-$7ff00000) or lx) <> 0) )
+        or ( (iy>=$7ff00000) and (((iy-$7ff00000) OR ly) <> 0) )
+>>>>>>> origin/fixes_2_2
     then exit(x+y);
 
     // Case x=y
@@ -1483,10 +1506,14 @@ implementation
     // Case x=0
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (longword(ix) or lx)=0
 =======
     if (ix or lx)=0
 >>>>>>> graemeg/fixes_2_2
+=======
+    if (ix or lx)=0
+>>>>>>> origin/fixes_2_2
     then begin
           twoword(x).hi:=hy and $80000000;  // return +-minimalSubnormal
           twoword(x).lo:=1;
@@ -1544,7 +1571,10 @@ implementation
     end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifdef ver2_0}
 function SwapEndian(const AValue: SmallInt): SmallInt;
@@ -1606,7 +1636,10 @@ function SwapEndian(const AValue: QWord): QWord;
            or (AValue shr 56);
   end;
 {$endif ver2_0}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 initialization
   internalerrorproc:=@defaulterror;

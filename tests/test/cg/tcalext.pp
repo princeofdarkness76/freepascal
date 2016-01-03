@@ -514,10 +514,14 @@ begin
   if global_u8bit <> RESULT_U8BIT then
     failed := true;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 =======
 {$endif FPC_HAS_TYPE_EXTENDED}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$endif FPC_HAS_TYPE_EXTENDED}
+>>>>>>> origin/fixes_2_2
 
   If failed then
    fail

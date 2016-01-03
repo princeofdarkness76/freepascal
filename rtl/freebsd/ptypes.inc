@@ -320,6 +320,13 @@ Type TStatFS =  {?} Record
     end;
     pmbstate_t = ^mbstate_t;
 
+    mbstate_t = record
+      case byte of
+        0: (__mbstate8: array[0..127] of char);
+        1: (_mbstateL: cint64); { for alignment }
+    end;
+    pmbstate_t = ^mbstate_t;
+
   ITimerVal= Record
               It_Interval,
               It_Value      : TimeVal;

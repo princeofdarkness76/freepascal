@@ -33,6 +33,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetO(AIndex: TJSONOption): Boolean;
     function GetOptions: TJSONOptions;
     function ParseNumber: TJSONNumber;
@@ -65,12 +66,18 @@ Type
   Protected
     procedure DoError(Msg: String);
 >>>>>>> graemeg/fixes_2_2
+=======
+    function ParseNumber: TJSONNumber;
+  Protected
+    procedure DoError(Msg: String);
+>>>>>>> origin/fixes_2_2
     function DoParse(AtCurrent,AllowEOF: Boolean): TJSONData;
     function GetNextToken: TJSONToken;
     function CurrentTokenString: String;
     function CurrentToken: TJSONToken;
     function ParseArray: TJSONArray;
     function ParseObject: TJSONObject;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Property Scanner : TJSONScanner read FScanner;
   Public
@@ -106,6 +113,8 @@ Type
   
   EJSONParser = Class(EParserError);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Public
     function Parse: TJSONData;
     Constructor Create(Source : TStream); overload;
@@ -114,7 +123,10 @@ Type
   end;
   
   EJSONScanner = Class(Exception);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   
 implementation
 
@@ -127,6 +139,7 @@ Resourcestring
   SErrExpectedElementName    = 'Expected element name, got token "%s"';
   SExpectedCommaorBraceClose = 'Expected , or ], got token "%s".';
   SErrInvalidNumber          = 'Number is not an integer or real number: %s';
+<<<<<<< HEAD
 <<<<<<< HEAD
   SErrNoScanner = 'No scanner. No source specified ?';
   
@@ -154,13 +167,18 @@ begin
   if (FScanner=Nil) then
     DoError(SErrNoScanner);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   
 { TJSONParser }
 
 Function TJSONParser.Parse : TJSONData;
 
 begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   Result:=DoParse(False,True);
 end;
 
@@ -172,15 +190,20 @@ end;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSONParser.CurrentToken: TJSONToken;
 =======
 Function TJSONParser.CurrentToken : TJSONToken;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function TJSONParser.CurrentToken : TJSONToken;
+>>>>>>> origin/fixes_2_2
 
 begin
   Result:=FScanner.CurToken;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TJSONParser.CurrentTokenString: String;
 
@@ -203,21 +226,30 @@ begin
   If CurrentToken in [tkString,tkIdentifier,tkNumber] then
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function TJSONParser.CurrentTokenString : String;
 
 begin
   If CurrentToken in [tkString,tkNumber] then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Result:=FScanner.CurTokenString
   else
     Result:=TokenInfos[CurrentToken];
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSONParser.DoParse(AtCurrent, AllowEOF: Boolean): TJSONData;
 =======
 Function TJSONParser.DoParse(AtCurrent,AllowEOF : Boolean) : TJSONData;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function TJSONParser.DoParse(AtCurrent,AllowEOF : Boolean) : TJSONData;
+>>>>>>> origin/fixes_2_2
 
 var
   T : TJSONToken;
@@ -233,6 +265,7 @@ begin
       tkEof : If Not AllowEof then
                 DoError(SErrUnexpectedEOF);
 <<<<<<< HEAD
+<<<<<<< HEAD
       tkNull  : Result:=CreateJSON;
       tkTrue,
       tkFalse : Result:=CreateJSON(t=tkTrue);
@@ -241,11 +274,16 @@ begin
                      else
                        Result:=CreateJSON(CurrentTokenString);
 =======
+=======
+>>>>>>> origin/fixes_2_2
       tkNull  : Result:=TJSONNull.Create;
       tkTrue,
       tkFalse : Result:=TJSONBoolean.Create(t=tkTrue);
       tkString : Result:=TJSONString.Create(CurrentTokenString);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       tkCurlyBraceOpen : Result:=ParseObject;
       tkCurlyBraceClose : DoError(SErrUnexpectedToken);
       tkSQuaredBraceOpen : Result:=ParseArray;
@@ -255,17 +293,23 @@ begin
     end;
   except
 <<<<<<< HEAD
+<<<<<<< HEAD
     FreeAndNil(Result);
 =======
     if assigned(Result) then
       FreeAndNil(Result);
 >>>>>>> graemeg/fixes_2_2
+=======
+    if assigned(Result) then
+      FreeAndNil(Result);
+>>>>>>> origin/fixes_2_2
     Raise;
   end;
 end;
 
 
 // Creates the correct JSON number type, based on the current token.
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TJSONParser.ParseNumber: TJSONNumber;
 
@@ -274,17 +318,23 @@ Var
   I64 : Int64;
   QW  : QWord;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function TJSONParser.ParseNumber : TJSONNumber;
 
 Var
   I : Integer;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   F : TJSONFloat;
   S : String;
 
 begin
   S:=CurrentTokenString;
   I:=0;
+<<<<<<< HEAD
 <<<<<<< HEAD
   if TryStrToQWord(S,QW) then
     begin
@@ -380,6 +430,8 @@ end;
 // Current token is {, on exit current token is }
 function TJSONParser.ParseObject: TJSONObject;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   If TryStrToInt(S,I) then
     Result:=TJSONIntegerNumber.Create(I)
   else
@@ -394,7 +446,10 @@ end;
 
 // Current token is {, on exit current token is }
 Function TJSONParser.ParseObject : TJSONObject;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 Var
   T : TJSONtoken;
@@ -403,19 +458,27 @@ Var
   
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=CreateJSONObject([]);
 =======
   Result:=TJSONObject.Create;
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TJSONObject.Create;
+>>>>>>> origin/fixes_2_2
   Try
     T:=GetNextToken;
     While T<>tkCurlyBraceClose do
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       If (T<>tkString) and (T<>tkIdentifier) then
 =======
       If T<>tkString then
 >>>>>>> graemeg/fixes_2_2
+=======
+      If T<>tkString then
+>>>>>>> origin/fixes_2_2
         DoError(SErrExpectedElementName);
       N:=CurrentTokenString;
       T:=GetNextToken;
@@ -437,10 +500,14 @@ end;
 
 // Current token is [, on exit current token is ]
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSONParser.ParseArray: TJSONArray;
 =======
 Function TJSONParser.ParseArray : TJSONArray;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function TJSONParser.ParseArray : TJSONArray;
+>>>>>>> origin/fixes_2_2
 
 Var
   T : TJSONtoken;
@@ -449,10 +516,14 @@ Var
   
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=CreateJSONArray([]);
 =======
   Result:=TJSONArray.Create;
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TJSONArray.Create;
+>>>>>>> origin/fixes_2_2
   LastComma:=False;
   Try
     Repeat
@@ -480,14 +551,19 @@ end;
 
 // Get next token, discarding whitespace
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSONParser.GetNextToken: TJSONToken;
 =======
 Function TJSONParser.GetNextToken : TJSONToken ;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function TJSONParser.GetNextToken : TJSONToken ;
+>>>>>>> origin/fixes_2_2
 
 begin
   Repeat
     Result:=FScanner.FetchToken;
+<<<<<<< HEAD
 <<<<<<< HEAD
   Until (Not (Result in [tkComment,tkWhiteSpace]));
 end;
@@ -510,11 +586,16 @@ Procedure TJSONParser.DoError(const Msg : String);
 Procedure TJSONParser.DoError(const Msg : String);
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Until (Result<>tkWhiteSpace);
 end;
 
 Procedure TJSONParser.DoError(Msg : String);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 Var
   S : String;
@@ -522,6 +603,7 @@ Var
 begin
   S:=Format(Msg,[CurrentTokenString]);
   S:=Format('Error at line %d, Pos %d:',[FScanner.CurRow,FSCanner.CurColumn])+S;
+<<<<<<< HEAD
 <<<<<<< HEAD
   Raise EJSONParser.Create(S);
 end;
@@ -551,6 +633,8 @@ constructor TJSONParser.Create(const Source: String; AOptions: TJSONOptions);
 begin
   FScanner:=TJSONScanner.Create(Source,AOptions);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   Raise EJSONScanner.Create(S);
 end;
 
@@ -564,7 +648,10 @@ constructor TJSONParser.Create(Source: TJSONStringType);
 begin
   Inherited Create;
   FScanner:=TJSONScanner.Create(Source);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 destructor TJSONParser.Destroy();
@@ -573,6 +660,7 @@ begin
   inherited Destroy();
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Procedure InitJSONHandler;
 
@@ -594,5 +682,7 @@ finalization
   DoneJSONHandler;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.
 

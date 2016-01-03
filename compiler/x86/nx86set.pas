@@ -408,7 +408,10 @@ implementation
          use_small:=(tsetdef(right.resultdef).settype=smallset) and not is_signed(left.resultdef) and
                     ((left.resultdef.typ=orddef) and (torddef(left.resultdef).high<32) or
                      (left.resultdef.typ=enumdef) and (tenumdef(left.resultdef).max<32));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
          { Can we generate jumps? Possible for all types of sets }
          genjumps:=(right.nodetype=setconstn) and
@@ -441,6 +444,7 @@ implementation
 {$endif i8086}
          if is_signed(left.resultdef) then
            opsize := tcgsize(ord(opsize)+(ord(OS_S8)-ord(OS_8)));
+<<<<<<< HEAD
          opdef:=cgsize_orddef(opsize);
 
          if not(left.location.loc in [LOC_REGISTER,LOC_CREGISTER,LOC_REFERENCE,LOC_CREFERENCE,LOC_CONSTANT]) then
@@ -453,6 +457,13 @@ implementation
          if (right.location.loc in [LOC_SUBSETREG,LOC_CSUBSETREG]) then
            location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
 >>>>>>> graemeg/fixes_2_2
+=======
+
+         if not(left.location.loc in [LOC_REGISTER,LOC_CREGISTER,LOC_REFERENCE,LOC_CREFERENCE,LOC_CONSTANT]) then
+           location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,true);
+         if (right.location.loc in [LOC_SUBSETREG,LOC_CSUBSETREG]) then
+           location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
+>>>>>>> origin/fixes_2_2
 
          if genjumps then
           begin
@@ -597,6 +608,7 @@ implementation
                         emit_reg_reg(A_TEST,S_W,hreg,right.location.register);
                       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
                      LOC_CREFERENCE,
                      LOC_REFERENCE :
                        begin
@@ -623,6 +635,8 @@ implementation
                       end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                      LOC_CREFERENCE,
                      LOC_REFERENCE :
                        begin
@@ -679,12 +693,17 @@ implementation
                      (setbase<>0) then
                     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                       hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,opdef,true);
                       register_maybe_adjust_setbase(current_asmdata.CurrAsmList,opdef,left.location,setbase);
 =======
                       location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,true);
                       register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
 >>>>>>> graemeg/fixes_2_2
+=======
+                      location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,true);
+                      register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
+>>>>>>> origin/fixes_2_2
                     end;
 
                   case left.location.loc of
@@ -738,10 +757,14 @@ implementation
                       begin
                         inc(right.location.reference.offset,(left.location.value-setbase) shr 3);
 <<<<<<< HEAD
+<<<<<<< HEAD
                         emit_const_ref(A_TEST,S_B,1 shl ((left.location.value-setbase) and 7),right.location.reference);
 =======
                         emit_const_ref(A_TEST,S_B,1 shl (left.location.value and 7),right.location.reference);
 >>>>>>> graemeg/fixes_2_2
+=======
+                        emit_const_ref(A_TEST,S_B,1 shl (left.location.value and 7),right.location.reference);
+>>>>>>> origin/fixes_2_2
                       end;
                     LOC_REGISTER,LOC_CREGISTER:
                       begin
@@ -851,6 +874,7 @@ implementation
 =======
                   location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,false);
 <<<<<<< HEAD
+<<<<<<< HEAD
                   register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
                   if (right.location.loc in [LOC_REGISTER,LOC_CREGISTER]) then
                     location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
@@ -874,6 +898,8 @@ implementation
                       ((tenumdef(left.resultdef).min < aint(tsetdef(right.resultdef).setbase)) or
                        (tenumdef(left.resultdef).max > aint(tsetdef(right.resultdef).setmax)))) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
                     register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
                   pleftreg:=left.location.register;
 
@@ -884,7 +910,10 @@ implementation
                      ((left.resultdef.typ=enumdef) and
                       ((tenumdef(left.resultdef).min < tsetdef(right.resultdef).setbase) or
                        (tenumdef(left.resultdef).max > tsetdef(right.resultdef).setmax))) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
                    begin
 
                     { we have to check if the value is < 0 or > setmax }

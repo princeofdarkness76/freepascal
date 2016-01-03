@@ -133,9 +133,13 @@ type
   flagword = LongWord;  (* 32 bits of flags *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   pppchar = ^ppchar;
 >>>>>>> graemeg/fixes_2_2
+=======
+  pppchar = ^ppchar;
+>>>>>>> origin/fixes_2_2
   Pbfd_byte = ^bfd_byte;
   bfd_byte = Byte;
   bfd_boolean = LongBool;

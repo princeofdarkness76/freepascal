@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -28,10 +29,16 @@
  
      Copyright:  © 1999-2005 by Apple Computer, Inc., all rights reserved.
 >>>>>>> graemeg/fixes_2_2
+=======
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 1999-2005 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -59,6 +66,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -69,7 +78,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -79,12 +91,17 @@
 unit CarbonEventsCore;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -98,14 +115,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -114,11 +136,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -156,6 +181,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -163,6 +190,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -411,6 +439,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -419,7 +449,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -446,9 +479,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -458,6 +495,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,CFBase,CGEventTypes,HIGeometry;
 {$endc} {not MACOSALLINCLUDE}
@@ -495,12 +533,18 @@ uses MacTypes,CFBase;
 
 
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,CFBase;
+
+
+>>>>>>> origin/fixes_2_2
 {$ALIGN MAC68K}
 
 {======================================================================================}
 {  The core data structure of the Carbon Event system                                  }
 {======================================================================================}
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -524,6 +568,9 @@ type
 =======
 	EventRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	EventRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 {======================================================================================}
 {  EVENT COMMON                                                                        }
 {======================================================================================}
@@ -543,10 +590,14 @@ const
 
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
    * You are attempting to modify a target that is currently in use,
 =======
    * You are attemtping to modify a target that is currently in use,
 >>>>>>> graemeg/fixes_2_2
+=======
+   * You are attemtping to modify a target that is currently in use,
+>>>>>>> origin/fixes_2_2
    * such as when dispatching.
    }
 	eventTargetBusyErr = -9861;
@@ -632,6 +683,7 @@ const
    * register a hotkey that is already registered in the current
    * process. (Note that it is not an error to register the same hotkey
 <<<<<<< HEAD
+<<<<<<< HEAD
    * in multiple processes.) Also returned if an attempt is made to
    * register a hotkey using the kEventHotKeyExclusive option when
    * another process has already registered the same hotkey with the
@@ -639,6 +691,9 @@ const
 =======
    * in multiple processes.)
 >>>>>>> graemeg/fixes_2_2
+=======
+   * in multiple processes.)
+>>>>>>> origin/fixes_2_2
    }
 	eventHotKeyExistsErr = -9878;
 
@@ -684,10 +739,14 @@ const
             typeHIAccessibleObjectRef
             
 <<<<<<< HEAD
+<<<<<<< HEAD
         Retained in 10.3 and later:
 =======
         Retained in Panther and later:
 >>>>>>> graemeg/fixes_2_2
+=======
+        Retained in Panther and later:
+>>>>>>> origin/fixes_2_2
         
             typeEventRef
             typeCFArrayRef
@@ -695,14 +754,19 @@ const
             typeCFMutableDictionaryRef
             
 <<<<<<< HEAD
+<<<<<<< HEAD
         Retained in 10.4 and later:
 =======
         Retained in Tiger and later:
 >>>>>>> graemeg/fixes_2_2
+=======
+        Retained in Tiger and later:
+>>>>>>> origin/fixes_2_2
         
             typeHIShapeRef
             typeMenuRef
             
+<<<<<<< HEAD
 <<<<<<< HEAD
         Retained in 10.5 and later:
         
@@ -712,6 +776,8 @@ const
             
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     Note that other data types may be retained in future releases of Mac OS X.
     Apple recommends that if you need to know whether a particular data type
     (other than the ones documented here) is retained, that you check the retain
@@ -719,10 +785,13 @@ const
 }
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 	typeDragRef = FourCharCode('drag'); { DragRef}
 	typeCTFontRef = FourCharCode('ctfr'); { CTFontRef}
 	typeCTGlyphInfoRef = FourCharCode('ctgi'); { CTGlyphInfoRef}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	typeCFStringRef = FourCharCode('cfst'); { CFStringRef}
 	typeCFMutableStringRef = FourCharCode('cfms'); { CFMutableStringRef}
 	typeCFArrayRef = FourCharCode('cfar'); { CFArrayRef}
@@ -731,7 +800,10 @@ const
 	typeCFMutableDictionaryRef = FourCharCode('cfmd'); { CFMutableDictionaryRef}
 	typeCFTypeRef = FourCharCode('cfty'); { CFTypeRef}
 	typeDragRef = FourCharCode('drag'); { DragRef}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  ¥ Event Flags, options                                                              }
@@ -820,10 +892,14 @@ const
 type
 	EventTypeSpec = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		eventClass: OSType;
 =======
 		eventClass: UInt32;
 >>>>>>> graemeg/fixes_2_2
+=======
+		eventClass: UInt32;
+>>>>>>> origin/fixes_2_2
 		eventKind: UInt32;
 	end;
 	EventTypeSpecPtr = ^EventTypeSpec;
@@ -861,6 +937,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EventLoopRef = ^OpaqueEventLoopRef; { an opaque type }
 	OpaqueEventLoopRef = record end;
 =======
@@ -878,6 +955,9 @@ type
 =======
 	EventLoopRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	EventLoopRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 {
  *  GetCurrentEventLoop()
  *  
@@ -959,6 +1039,7 @@ function RunCurrentEventLoop( inTimeout: EventTimeout ): OSStatus; external name
  *    specified to return immediately (as opposed to timing out).
  *    Typically this call is used in conjunction with
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    RunCurrentEventLoop. 
  *    
  *    Note that this call is meant to be used while the event loop is
@@ -969,6 +1050,9 @@ function RunCurrentEventLoop( inTimeout: EventTimeout ): OSStatus; external name
 =======
  *    RunCurrentEventLoop.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    RunCurrentEventLoop.
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Thread safe
@@ -1071,10 +1155,14 @@ function GetCFRunLoopFromEventLoop( inEventLoop: EventLoopRef ): CFTypeRef; exte
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function ReceiveNextEvent( inNumTypes: ItemCount; {const} inList: {variable-size-array} EventTypeSpecPtr; inTimeout: EventTimeout; inPullEvent: Boolean; var outEvent: EventRef ): OSStatus; external name '_ReceiveNextEvent';
 =======
 function ReceiveNextEvent( inNumTypes: UInt32; {const} inList: {variable-size-array} EventTypeSpecPtr; inTimeout: EventTimeout; inPullEvent: Boolean; var outEvent: EventRef ): OSStatus; external name '_ReceiveNextEvent';
 >>>>>>> graemeg/fixes_2_2
+=======
+function ReceiveNextEvent( inNumTypes: UInt32; {const} inList: {variable-size-array} EventTypeSpecPtr; inTimeout: EventTimeout; inPullEvent: Boolean; var outEvent: EventRef ): OSStatus; external name '_ReceiveNextEvent';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -1150,6 +1238,7 @@ const
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CreateEvent( inAllocator: CFAllocatorRef { can be NULL }; inClassID: OSType; inKind: UInt32; inWhen: EventTime; inAttributes: EventAttributes; var outEvent: EventRef ): OSStatus; external name '_CreateEvent';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 function MacCreateEvent__NAMED_CreateEvent( inAllocator: CFAllocatorRef { can be NULL }; inClassID: OSType; inKind: UInt32; inWhen: EventTime; inAttributes: EventAttributes; var outEvent: EventRef ): OSStatus; external name '_MacCreateEvent__NAMED_CreateEvent';
@@ -1158,6 +1247,11 @@ function CreateEvent( inAllocator: CFAllocatorRef { can be NULL }; inClassID: UI
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 function MacCreateEvent__NAMED_CreateEvent( inAllocator: CFAllocatorRef { can be NULL }; inClassID: UInt32; inKind: UInt32; inWhen: EventTime; inAttributes: EventAttributes; var outEvent: EventRef ): OSStatus; external name '_MacCreateEvent__NAMED_CreateEvent';
 >>>>>>> graemeg/fixes_2_2
+=======
+function CreateEvent( inAllocator: CFAllocatorRef { can be NULL }; inClassID: UInt32; inKind: UInt32; inWhen: EventTime; inAttributes: EventAttributes; var outEvent: EventRef ): OSStatus; external name '_CreateEvent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+function MacCreateEvent__NAMED_CreateEvent( inAllocator: CFAllocatorRef { can be NULL }; inClassID: UInt32; inKind: UInt32; inWhen: EventTime; inAttributes: EventAttributes; var outEvent: EventRef ): OSStatus; external name '_MacCreateEvent__NAMED_CreateEvent';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -1230,10 +1324,14 @@ function CopyEvent( inOther: EventRef ): EventRef; external name '_CopyEvent';
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CopyEventAs( inAllocator: CFAllocatorRef { can be NULL }; inOther: EventRef; inEventClass: OSType; inEventKind: UInt32 ): EventRef; external name '_CopyEventAs';
 =======
 function CopyEventAs( inAllocator: CFAllocatorRef { can be NULL }; inOther: EventRef; inEventClass: UInt32; inEventKind: UInt32 ): EventRef; external name '_CopyEventAs';
 >>>>>>> graemeg/fixes_2_2
+=======
+function CopyEventAs( inAllocator: CFAllocatorRef { can be NULL }; inOther: EventRef; inEventClass: UInt32; inEventKind: UInt32 ): EventRef; external name '_CopyEventAs';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
 
@@ -1295,10 +1393,14 @@ function RetainEvent( inEvent: EventRef ): EventRef; external name '_RetainEvent
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GetEventRetainCount( inEvent: EventRef ): ItemCount; external name '_GetEventRetainCount';
 =======
 function GetEventRetainCount( inEvent: EventRef ): UInt32; external name '_GetEventRetainCount';
 >>>>>>> graemeg/fixes_2_2
+=======
+function GetEventRetainCount( inEvent: EventRef ): UInt32; external name '_GetEventRetainCount';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -1373,10 +1475,14 @@ procedure ReleaseEvent( inEvent: EventRef ); external name '_ReleaseEvent';
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SetEventParameter( inEvent: EventRef; inName: EventParamName; inType: EventParamType; inSize: ByteCount; inDataPtr: {const} UnivPtr ): OSStatus; external name '_SetEventParameter';
 =======
 function SetEventParameter( inEvent: EventRef; inName: EventParamName; inType: EventParamType; inSize: UInt32; inDataPtr: {const} UnivPtr ): OSStatus; external name '_SetEventParameter';
 >>>>>>> graemeg/fixes_2_2
+=======
+function SetEventParameter( inEvent: EventRef; inName: EventParamName; inType: EventParamType; inSize: UInt32; inDataPtr: {const} UnivPtr ): OSStatus; external name '_SetEventParameter';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -1431,6 +1537,7 @@ function SetEventParameter( inEvent: EventRef; inName: EventParamName; inType: E
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GetEventParameter( inEvent: EventRef; inName: EventParamName; inDesiredType: EventParamType; outActualType: EventParamTypePtr { can be NULL }; inBufferSize: ByteCount; outActualSize: ByteCountPtr { can be NULL }; outData: UnivPtr { can be NULL } ): OSStatus; external name '_GetEventParameter';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -1466,11 +1573,16 @@ function RemoveEventParameter( inEvent: EventRef; inName: EventParamName ): OSSt
 
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function GetEventParameter( inEvent: EventRef; inName: EventParamName; inDesiredType: EventParamType; outActualType: EventParamTypePtr { can be NULL }; inBufferSize: UInt32; outActualSize: UInt32Ptr { can be NULL }; outData: UnivPtr { can be NULL } ): OSStatus; external name '_GetEventParameter';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  ¥ Getters for 'base-class' event info                                               }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -1498,10 +1610,14 @@ function GetEventParameter( inEvent: EventRef; inName: EventParamName; inDesired
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GetEventClass( inEvent: EventRef ): OSType; external name '_GetEventClass';
 =======
 function GetEventClass( inEvent: EventRef ): UInt32; external name '_GetEventClass';
 >>>>>>> graemeg/fixes_2_2
+=======
+function GetEventClass( inEvent: EventRef ): UInt32; external name '_GetEventClass';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -1599,6 +1715,7 @@ function SetEventTime( inEvent: EventRef; inTime: EventTime ): OSStatus; externa
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  ¥ CGEventRef support                                                                }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {
@@ -1688,10 +1805,13 @@ function CopyEventCGEvent( inEvent: EventRef ): CGEventRef; external name '_Copy
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {  ¥ Event Queue routines (posting, finding, flushing)                                 }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1714,6 +1834,9 @@ type
 =======
 	EventQueueRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	EventQueueRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 {
  *  GetCurrentEventQueue()
  *  
@@ -1826,6 +1949,7 @@ function InvokeEventComparatorUPP( inEvent: EventRef; inCompareData: UnivPtr; us
  *    Posts an event to the specified queue and increments the event's
  *    retain count. This automatically wakes up the event loop of the
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    thread to which the queue belongs. After posting the event, you
  *    may release the event, since it is retained by the queue. If the
  *    event is already contained in any event queue,
@@ -1856,6 +1980,10 @@ function InvokeEventComparatorUPP( inEvent: EventRef; inCompareData: UnivPtr; us
  *    thread the queue belongs to. After posting the event, you may
  *    release the event, since it is retained by the queue.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    thread the queue belongs to. After posting the event, you may
+ *    release the event, since it is retained by the queue.
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Thread safe
@@ -1873,12 +2001,16 @@ function InvokeEventComparatorUPP( inEvent: EventRef; inCompareData: UnivPtr; us
  *  
  *  Result:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    An operating system result code. eventAlreadyPostedErr is
  *    returned if the event is already contained in any event queue,
  *    and in this case the event will not be posted.
 =======
  *    An operating system result code.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    An operating system result code.
+>>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1895,6 +2027,7 @@ function PostEventToQueue( inQueue: EventQueueRef; inEvent: EventRef; inPriority
  *  Discussion:
  *    Flushes events matching a specified list of classes and kinds
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    from an event queue. 
  *    
  *    This API may be safely used by any thread to flush the events
@@ -1905,6 +2038,9 @@ function PostEventToQueue( inQueue: EventQueueRef; inEvent: EventRef; inPriority
 =======
  *    from an event queue.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    from an event queue.
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Thread safe
@@ -1929,10 +2065,14 @@ function PostEventToQueue( inQueue: EventQueueRef; inEvent: EventRef; inPriority
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function FlushEventsMatchingListFromQueue( inQueue: EventQueueRef; inNumTypes: ItemCount; {const} inList: {variable-size-array} EventTypeSpecPtr ): OSStatus; external name '_FlushEventsMatchingListFromQueue';
 =======
 function FlushEventsMatchingListFromQueue( inQueue: EventQueueRef; inNumTypes: UInt32; {const} inList: {variable-size-array} EventTypeSpecPtr ): OSStatus; external name '_FlushEventsMatchingListFromQueue';
 >>>>>>> graemeg/fixes_2_2
+=======
+function FlushEventsMatchingListFromQueue( inQueue: EventQueueRef; inNumTypes: UInt32; {const} inList: {variable-size-array} EventTypeSpecPtr ): OSStatus; external name '_FlushEventsMatchingListFromQueue';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -1940,6 +2080,7 @@ function FlushEventsMatchingListFromQueue( inQueue: EventQueueRef; inNumTypes: U
  *  FlushSpecificEventsFromQueue()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Flushes events that match a comparator function. 
  *    
@@ -1951,6 +2092,9 @@ function FlushEventsMatchingListFromQueue( inQueue: EventQueueRef; inNumTypes: U
 =======
  *    Flushes events that match a comparator function.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Flushes events that match a comparator function.
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Thread safe
@@ -1983,6 +2127,7 @@ function FlushSpecificEventsFromQueue( inQueue: EventQueueRef; inComparator: Eve
  *  
  *  Discussion:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Flushes all events from an event queue. 
  *    
  *    This API may be safely used by any thread to flush the events
@@ -1993,6 +2138,9 @@ function FlushSpecificEventsFromQueue( inQueue: EventQueueRef; inComparator: Eve
 =======
  *    Flushes all events from an event queue.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Flushes all events from an event queue.
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Thread safe
@@ -2073,10 +2221,14 @@ function FindSpecificEventInQueue( inQueue: EventQueueRef; inComparator: EventCo
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GetNumEventsInQueue( inQueue: EventQueueRef ): ItemCount; external name '_GetNumEventsInQueue';
 =======
 function GetNumEventsInQueue( inQueue: EventQueueRef ): UInt32; external name '_GetNumEventsInQueue';
 >>>>>>> graemeg/fixes_2_2
+=======
+function GetNumEventsInQueue( inQueue: EventQueueRef ): UInt32; external name '_GetNumEventsInQueue';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -2195,19 +2347,27 @@ const
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function AcquireFirstMatchingEventInQueue( inQueue: EventQueueRef; inNumTypes: ItemCount; {const} inList: {variable-size-array} EventTypeSpecPtr; inOptions: OptionBits ): EventRef; external name '_AcquireFirstMatchingEventInQueue';
 =======
 function AcquireFirstMatchingEventInQueue( inQueue: EventQueueRef; inNumTypes: UInt32; {const} inList: {variable-size-array} EventTypeSpecPtr; inOptions: OptionBits ): EventRef; external name '_AcquireFirstMatchingEventInQueue';
 >>>>>>> graemeg/fixes_2_2
+=======
+function AcquireFirstMatchingEventInQueue( inQueue: EventQueueRef; inNumTypes: UInt32; {const} inList: {variable-size-array} EventTypeSpecPtr; inOptions: OptionBits ): EventRef; external name '_AcquireFirstMatchingEventInQueue';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Queue-synchronized event and input device state                                     }
 =======
 {  Queue-synchronized event state                                                      }
 >>>>>>> graemeg/fixes_2_2
+=======
+{  Queue-synchronized event state                                                      }
+>>>>>>> origin/fixes_2_2
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {
  *  GetCurrentEvent()
@@ -2408,6 +2568,7 @@ function GetCurrentEventKeyModifiers: UInt32; external name '_GetCurrentEventKey
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Non-synchronized input device state                                                 }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 
@@ -2480,6 +2641,10 @@ procedure GetGlobalMouse( var globalMouse: Point ); external name '_GetGlobalMou
 {  Multiple-button support                                                             }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 >>>>>>> graemeg/fixes_2_2
+=======
+{  Multiple-button support                                                             }
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+>>>>>>> origin/fixes_2_2
 {
  *  GetCurrentButtonState()
  *  
@@ -2522,6 +2687,7 @@ function GetCurrentButtonState: UInt32; external name '_GetCurrentButtonState';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  *  GetCurrentKeyModifiers()
@@ -2567,6 +2733,8 @@ function GetCurrentKeyModifiers: UInt32; external name '_GetCurrentKeyModifiers'
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  ¥ Helpful utilities                                                                 }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -2633,6 +2801,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EventLoopTimerRef = ^__EventLoopTimer; { an opaque type }
 	__EventLoopTimer = record end;
 =======
@@ -2650,6 +2819,9 @@ type
 =======
 	EventLoopTimerRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	EventLoopTimerRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 
 {
  *  EventLoopTimerProcPtr
@@ -2843,9 +3015,12 @@ function InstallEventLoopTimer( inEventLoop: EventLoopRef; inFireDelay: EventTim
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  InstallEventLoopIdleTimer()
  *  
@@ -2900,10 +3075,14 @@ function InstallEventLoopTimer( inEventLoop: EventLoopRef; inFireDelay: EventTim
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2912,10 +3091,13 @@ function InstallEventLoopIdleTimer( inEventLoop: EventLoopRef; inDelay: EventTim
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  RemoveEventLoopTimer()
  *  
@@ -2992,6 +3174,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EventHandlerRef = ^OpaqueEventHandlerRef; { an opaque type }
 	OpaqueEventHandlerRef = record end;
 	EventHandlerRefPtr = ^EventHandlerRef;
@@ -3022,6 +3205,11 @@ type
 	EventHandlerRefPtr = ^EventHandlerRef;
 	EventHandlerCallRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	EventHandlerRef = ^SInt32; { an opaque 32-bit type }
+	EventHandlerRefPtr = ^EventHandlerRef;
+	EventHandlerCallRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 	EventHandlerCallRefPtr = ^EventHandlerCallRef;
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -3104,6 +3292,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EventTargetRef = ^OpaqueEventTargetRef; { an opaque type }
 	OpaqueEventTargetRef = record end;
 =======
@@ -3121,6 +3310,9 @@ type
 =======
 	EventTargetRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
+=======
+	EventTargetRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> origin/fixes_2_2
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  ¥ Installing Event Handlers                                                         }
 { Use these routines to install event handlers for a specific toolbox object. You may  }
@@ -3184,6 +3376,7 @@ type
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function InstallEventHandler( inTarget: EventTargetRef; inHandler: EventHandlerUPP; inNumTypes: ItemCount; {const} inList: {variable-size-array} EventTypeSpecPtr; inUserData: UnivPtr; outRef: EventHandlerRefPtr { can be NULL } ): OSStatus; external name '_InstallEventHandler';
 <<<<<<< HEAD
@@ -3313,6 +3506,8 @@ function RemoveEventHandler( inHandlerRef: EventHandlerRef ): OSStatus; external
  *    or earlier releases of Mac OS X.
 =======
 =======
+=======
+>>>>>>> origin/fixes_2_2
 function InstallEventHandler( inTarget: EventTargetRef; inHandler: EventHandlerUPP; inNumTypes: UInt32; {const} inList: {variable-size-array} EventTypeSpecPtr; inUserData: UnivPtr; outRef: EventHandlerRefPtr { can be NULL } ): OSStatus; external name '_InstallEventHandler';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -3324,11 +3519,15 @@ function InstallEventHandler( inTarget: EventTargetRef; inHandler: EventHandlerU
  *    Installs the standard event handler (if any) for an event target.
  *  
  *  Discussion:
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *    All event targets have default handlers installed on them by the
  *    toolbox to perform certain basic operations common to that type
  *    of target. Some targets also have standard handlers which are not
  *    installed by default, but may be requested. A standard handler
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    typically provides higher-level behavior for its target. Prior to
  *    Mac OS X 10.5, only  window event targets have a standard
@@ -3350,13 +3549,18 @@ function InstallEventHandler( inTarget: EventTargetRef; inHandler: EventHandlerU
  *    the standard handler until the count has been reduced to zero.
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    typically provides higher-level behavior for its target.
  *    Currently, only window event targets have a standard handler; the
  *    window standard event hander may also be installed by setting the
  *    kWindowStandardHandlerAttribute flag. Calling
  *    InstallStandardEventHandler on any other type of target
  *    (application, control, menu, etc.) has no effect.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -3365,15 +3569,20 @@ function InstallEventHandler( inTarget: EventTargetRef; inHandler: EventHandlerU
  *    
  *    inTarget:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      The target whose standard handler should be removed.
 =======
  *      The target whose standard handler should be installed.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *      The target whose standard handler should be installed.
+>>>>>>> origin/fixes_2_2
  *  
  *  Result:
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
@@ -3427,6 +3636,8 @@ function RemoveEventHandler( inHandlerRef: EventHandlerRef ): OSStatus; external
  *    the standard handler until the count has been reduced to zero.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
@@ -3445,7 +3656,10 @@ function InstallStandardEventHandler( inTarget: EventTargetRef ): OSStatus; exte
  *    As of Mac OS X 10.1, it is safe to remove an event handler from
  *    inside the handler function. This is not safe to do in CarbonLib
  *    or earlier releases of Mac OS X.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -3453,14 +3667,20 @@ function InstallStandardEventHandler( inTarget: EventTargetRef ): OSStatus; exte
  *  Parameters:
  *    
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    inTarget:
  *      The target whose standard handler should be removed.
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    inHandlerRef:
  *      The handler ref to remove (returned in a call to
  *      InstallEventHandler). After you call this function, the handler
  *      ref is considered to be invalid and can no longer be used.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Result:
  *    An operating system result code.
@@ -3468,14 +3688,19 @@ function InstallStandardEventHandler( inTarget: EventTargetRef ): OSStatus; exte
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function RemoveEventHandler( inHandlerRef: EventHandlerRef ): OSStatus; external name '_RemoveEventHandler';
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3608,6 +3833,9 @@ function RemoveStandardEventHandler( inTarget: EventTargetRef ): OSStatus; exter
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2_2
 
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -3625,10 +3853,13 @@ function RemoveStandardEventHandler( inTarget: EventTargetRef ): OSStatus; exter
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  AddEventTypesToHandler()
  *  
@@ -3659,10 +3890,14 @@ function RemoveStandardEventHandler( inTarget: EventTargetRef ): OSStatus; exter
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function AddEventTypesToHandler( inHandlerRef: EventHandlerRef; inNumTypes: ItemCount; {const} inList: {variable-size-array} EventTypeSpecPtr ): OSStatus; external name '_AddEventTypesToHandler';
 =======
 function AddEventTypesToHandler( inHandlerRef: EventHandlerRef; inNumTypes: UInt32; {const} inList: {variable-size-array} EventTypeSpecPtr ): OSStatus; external name '_AddEventTypesToHandler';
 >>>>>>> graemeg/fixes_2_2
+=======
+function AddEventTypesToHandler( inHandlerRef: EventHandlerRef; inNumTypes: UInt32; {const} inList: {variable-size-array} EventTypeSpecPtr ): OSStatus; external name '_AddEventTypesToHandler';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3696,10 +3931,14 @@ function AddEventTypesToHandler( inHandlerRef: EventHandlerRef; inNumTypes: UInt
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function RemoveEventTypesFromHandler( inHandlerRef: EventHandlerRef; inNumTypes: ItemCount; {const} inList: {variable-size-array} EventTypeSpecPtr ): OSStatus; external name '_RemoveEventTypesFromHandler';
 =======
 function RemoveEventTypesFromHandler( inHandlerRef: EventHandlerRef; inNumTypes: UInt32; {const} inList: {variable-size-array} EventTypeSpecPtr ): OSStatus; external name '_RemoveEventTypesFromHandler';
 >>>>>>> graemeg/fixes_2_2
+=======
+function RemoveEventTypesFromHandler( inHandlerRef: EventHandlerRef; inNumTypes: UInt32; {const} inList: {variable-size-array} EventTypeSpecPtr ): OSStatus; external name '_RemoveEventTypesFromHandler';
+>>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3957,6 +4196,7 @@ function IsSecureEventInputEnabled: Boolean; external name '_IsSecureEventInputE
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
@@ -3964,8 +4204,13 @@ function IsSecureEventInputEnabled: Boolean; external name '_IsSecureEventInputE
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

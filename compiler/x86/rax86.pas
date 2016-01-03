@@ -46,12 +46,15 @@ type
     Procedure SetCorrectSize(opcode:tasmop);override;
     Function CheckOperand: boolean; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     { handles the @Code symbol }
     Procedure SetupCode;
     { handles the @Data symbol }
     Procedure SetupData;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end;
 
   { Operands are always in AT&T order.
@@ -258,6 +261,9 @@ begin
     begin
       if not hasvar then
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2_2
         begin
           if (getsupreg(opr.ref.base)=RS_EBP) and (opr.ref.offset>0) then
             begin
@@ -273,6 +279,7 @@ begin
         end;
       if (cs_create_pic in current_settings.moduleswitches) and
          assigned(opr.ref.symbol) and
+<<<<<<< HEAD
 <<<<<<< HEAD
          not assigned(opr.ref.relsymbol) then
         begin
@@ -337,12 +344,17 @@ begin
         end;
       if (cs_create_pic in current_settings.moduleswitches) and
          assigned(opr.ref.symbol) and
+=======
+>>>>>>> origin/fixes_2_2
          not assigned(opr.ref.relsymbol) and
          (opr.ref.refaddr<>addr_pic) then
         begin
           message(asmr_e_need_pic_ref);
           result:=false;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         end;
     end;
 end;
@@ -1337,10 +1349,13 @@ begin
   { Set is_jmp, it enables asmwriter to emit short jumps if appropriate }
   if (opcode=A_JMP) or (opcode=A_JCC) then
     ai.is_jmp := True;
+<<<<<<< HEAD
 
   { Set is_jmp, it enables asmwriter to emit short jumps if appropriate }
   if (opcode=A_JMP) or (opcode=A_JCC) then
     ai.is_jmp := True;
+=======
+>>>>>>> origin/fixes_2_2
 
  { Concat the opcode or give an error }
   if assigned(ai) then

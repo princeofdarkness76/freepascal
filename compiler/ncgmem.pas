@@ -996,6 +996,7 @@ implementation
          if ((l mod 8) = 0) and
             (ispowerof2(l div 8,temp) or
 <<<<<<< HEAD
+<<<<<<< HEAD
              not is_ordinal(resultdef)
 {$ifndef cpu64bitalu}
              or is_64bitint(resultdef)
@@ -1004,6 +1005,9 @@ implementation
 =======
              not is_ordinal(resultdef)) then
 >>>>>>> graemeg/fixes_2_2
+=======
+             not is_ordinal(resultdef)) then
+>>>>>>> origin/fixes_2_2
            begin
              update_reference_reg_mul(maybe_const_reg,regsize,l div 8);
              exit;
@@ -1104,6 +1108,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if not(tprocdef(tparasymtable(tparavarsym(tloadnode(get_open_const_array(left)).symtableentry).owner).defowner).proccalloption in cdecl_pocalls) then
 =======
             if not(tprocdef(tparasymtable(tparavarsym(tloadnode(left).symtableentry).owner).defowner).proccalloption in cdecl_pocalls) then
@@ -1120,6 +1125,9 @@ implementation
 =======
             if not(tprocdef(tparasymtable(tparavarsym(tloadnode(left).symtableentry).owner).defowner).proccalloption in [pocall_cdecl,pocall_cppdecl]) then
 >>>>>>> graemeg/fixes_2_2
+=======
+            if not(tprocdef(tparasymtable(tparavarsym(tloadnode(left).symtableentry).owner).defowner).proccalloption in [pocall_cdecl,pocall_cppdecl]) then
+>>>>>>> origin/fixes_2_2
              begin
                { Get high value }
                hightree:=load_high_value_node(tparavarsym(tloadnode(get_open_const_array(left)).symtableentry));
@@ -1464,6 +1472,7 @@ implementation
               ispowerof2(mulsize div 8,temp)) or
               { only orddefs are bitpacked }
 <<<<<<< HEAD
+<<<<<<< HEAD
               not is_ordinal(resultdef)
 {$ifndef cpu64bitalu}
               or is_64bitint(resultdef)
@@ -1484,6 +1493,9 @@ implementation
 =======
               not is_ordinal(resultdef)) then
 >>>>>>> graemeg/fixes_2_2
+=======
+              not is_ordinal(resultdef)) then
+>>>>>>> origin/fixes_2_2
            dec(location.reference.offset,bytemulsize*tarraydef(left.resultdef).lowrange);
 >>>>>>> graemeg/cpstrnew
 

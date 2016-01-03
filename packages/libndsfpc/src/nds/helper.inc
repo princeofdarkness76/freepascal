@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 type
   time_t = cint;
@@ -54,6 +55,8 @@ end;
 {$endif NDS_IMPLEMENTATION}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 (*
   $Id: helper.inc 25 2007-12-10 21:06:46Z p4p3r0 $
   ------------------------------------------------------------------------------
@@ -193,4 +196,7 @@ function Randomize(seed: cint): cint;
 function Rand(): cint; 
 function Rand(value: cint): cint; 
 {$endif NDS_INTERFACE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

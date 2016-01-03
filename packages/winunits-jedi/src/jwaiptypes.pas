@@ -351,10 +351,14 @@ const
 type
   IF_OPER_STATUS = (
 <<<<<<< HEAD
+<<<<<<< HEAD
     IfOperStatusUp = 1,
 =======
     IfOperStatusUp,
 >>>>>>> graemeg/fixes_2_2
+=======
+    IfOperStatusUp,
+>>>>>>> origin/fixes_2_2
     IfOperStatusDown,
     IfOperStatusTesting,
     IfOperStatusUnknown,

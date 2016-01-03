@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
 constants.pas
 
@@ -124,6 +125,8 @@ implementation
 end.
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
 constants.pas
 
@@ -248,4 +251,7 @@ implementation
 
 end.
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

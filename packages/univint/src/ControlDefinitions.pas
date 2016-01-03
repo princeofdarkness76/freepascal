@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -28,10 +29,16 @@
  
      Copyright:  © 1999-2005 by Apple Computer, Inc., all rights reserved.
 >>>>>>> graemeg/fixes_2_2
+=======
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 1999-2005 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
                      http://bugs.freepascal.org
  
@@ -60,6 +67,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
                      http://www.freepascal.org/bugs.html
  
 }
@@ -70,7 +79,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -80,12 +92,17 @@
 unit ControlDefinitions;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -99,14 +116,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -115,11 +137,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -157,6 +182,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -164,6 +191,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -377,6 +405,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -385,7 +415,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -412,9 +445,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -424,6 +461,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,TextEdit,AXUIElement,AEDataModel,CFBase,Events,QuickdrawTypes,IconsCore,CFData,CFDictionary,CFString,DateTimeUtils,Drag,TextCommon,Appearance,CarbonEvents,Controls,Lists,MacHelp,Menus,HIObject;
 {$endc} {not MACOSALLINCLUDE}
@@ -449,6 +487,10 @@ uses MacTypes,TextEdit,AXUIElement,AEDataModel,CFBase,Events,QuickdrawTypes,Icon
 uses MacTypes,TextEdit,AXUIElement,AEDataModel,CFBase,Events,Quickdraw,Icons,CFData,CFDictionary,DateTimeUtils,Drag,TextCommon,Appearance,CarbonEvents,Controls,Lists,MacHelp,Menus,CFString;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+uses MacTypes,TextEdit,AXUIElement,AEDataModel,CFBase,Events,Quickdraw,Icons,CFData,CFDictionary,DateTimeUtils,Drag,TextCommon,Appearance,CarbonEvents,Controls,Lists,MacHelp,Menus,CFString;
+
+>>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
 
@@ -462,7 +504,10 @@ uses MacTypes,TextEdit,AXUIElement,AEDataModel,CFBase,Events,Quickdraw,Icons,CFD
  }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {  ¥ Resource Types                                                                                    }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 
@@ -514,7 +559,10 @@ const
 	popupTitleRightJust = $000000FF;
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {  ¥ Control Definition IDÕs                                                                           }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 { Standard System 7 procIDs}
@@ -555,6 +603,7 @@ const
 	kControlDataBrowserPart = 24;   { CarbonLib 1.0 and later}
 	kControlDataBrowserDraggedPart = 25;   { CarbonLib 1.0 and later}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {--------------------------------------------------------------------------------------}
 {  ¥ DEPRECATED                                                                        }
@@ -655,6 +704,8 @@ const
  *    the EditUnicodeText control, which handles Unicode and draws its
  *    text using antialiasing.
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  ¥ Control Types and IDÕs available only with Appearance 1.0 and later                               }
@@ -767,11 +818,15 @@ const
 { Creation API: Carbon Only }
 {
  *  CreateBevelButtonControl()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Parameters:
  *    
@@ -867,6 +922,8 @@ const
  *    Creates a picture control.
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -961,11 +1018,15 @@ const
 { Helper routines are available only thru the shared library/glue. }
 {
  *  GetBevelButtonMenuValue()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Parameters:
  *    
@@ -1065,6 +1126,8 @@ const
 {
  *  CreateListBoxControl()
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1137,12 +1200,16 @@ function SetBevelButtonContentInfo( inButton: ControlRef; inContent: ControlButt
 
 {
  *  SetBevelButtonTransform()
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -1250,6 +1317,8 @@ const
  *  CreateScrollingTextBoxControl()
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
@@ -1434,11 +1503,15 @@ const
  *    Mac OS X, a root control will be created for the window if one
  *    does not already exist. If a root control exists for the window,
  *    the Disclosure Triangle control will be embedded into it.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Parameters:
@@ -1560,6 +1633,8 @@ const
  *  CreateListBoxControl()
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inWindow:
@@ -1593,6 +1668,7 @@ const
  *    inAutoToggles:
  *      A Boolean indicating whether the Disclosure Triangle should
  *      change its own value (from "open" to "closed" and vice-versa)
+<<<<<<< HEAD
  *      automatically when it is clicked on.
  *    
  *    outControl:
@@ -1832,6 +1908,75 @@ const
  *  CreateScrollingTextBoxControl()
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+ *      automatically when it is clicked on.
+ *    
+ *    outControl:
+ *      On successful output, outControl will contain a reference to
+ *      the Disclosure Triangle control.
+ *  
+ *  Result:
+ *    An OSStatus code indicating success or failure.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+function CreateDisclosureTriangleControl( inWindow: WindowRef; const (*var*) inBoundsRect: Rect; inOrientation: ControlDisclosureTriangleOrientation; inTitle: CFStringRef; inInitialValue: SInt32; inDrawTitle: Boolean; inAutoToggles: Boolean; var outControl: ControlRef ): OSStatus; external name '_CreateDisclosureTriangleControl';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Tagged data supported by disclosure triangles }
+const
+	kControlTriangleLastValueTag = FourCharCode('last'); { SInt16}
+
+{ Helper routines are available only thru the shared library/glue. }
+{
+ *  SetDisclosureTriangleLastValue()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
+ }
+function SetDisclosureTriangleLastValue( inTabControl: ControlRef; inValue: SInt16 ): OSErr; external name '_SetDisclosureTriangleLastValue';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{  ¥ PROGRESS INDICATOR (CDEF 5)                                                       }
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{  This CDEF implements both determinate and indeterminate progress bars. To switch,   }
+{  just use SetControlData to set the indeterminate flag to make it indeterminate. Any }
+{  animation will automatically be handled by the toolbox on an event timer.           }
+{  We also use this same CDEF for Relevance bars. At this time this control does not   }
+{  idle.                                                                               }
+{ Progress Bar proc IDs }
+const
+	kControlProgressBarProc = 80;
+	kControlRelevanceBarProc = 81;
+
+{ Control Kind Tag }
+const
+	kControlKindProgressBar = FourCharCode('prgb');
+	kControlKindRelevanceBar = FourCharCode('relb');
+
+{ The HIObject class ID for the HIProgressBar class. }
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+{$definec kHIProgressBarClassID CFSTRP('com.apple.HIProgressBar')}
+{$endc}
+{ Creation API: Carbon only }
+{
+ *  CreateProgressBarControl()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+>>>>>>> origin/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -7706,13 +7851,17 @@ type
  *  Summary:
  *    Gets a description of the part of a Data Browser represented by a
  *    given AXUIElementRef.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    window:
  *      The window that should contain the control. May be NULL on 10.3
@@ -7770,6 +7919,8 @@ const
 {
  *  CreateListBoxControl()
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *    inElement:
  *      An AXUIElementRef representing part of a Data Browser.
  *    
@@ -7810,11 +7961,15 @@ function AXUIElementGetDataBrowserItemInfo( inElement: AXUIElementRef; inDataBro
  *  Summary:
  *    Creates an AXUIElementRef to represent some part of a Data
  *    Browser accessibility hierarchy.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
@@ -7870,6 +8025,8 @@ const
 {
  *  CreateScrollingTextBoxControl()
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    inDataBrowser:
@@ -7963,11 +8120,15 @@ const
  *    This is the preferred edit text control. Use it instead of the
  *    EditText control. This control handles Unicode and draws its text
  *    using antialiasing, which the other control does not.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
@@ -7995,6 +8156,8 @@ const
 	kControlScrollTextBoxContentsTag = FourCharCode('tres'); { SInt16 (resource ID of 'TEXT'/'styl') -- write only!}
 	kControlScrollTextBoxAnimatingTag = FourCharCode('anim'); { Boolean (whether the text box should auto-scroll)}
 =======
+=======
+>>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
  *    window:
@@ -8054,7 +8217,10 @@ const
 	kControlEditTextInsertTextBufferTag = FourCharCode('intx'); { data is an array of char; get or set the control's text as WorldScript-encoded text}
 	kControlEditTextInsertCFStringRefTag = FourCharCode('incf'); { data is a CFStringRef; get or set the control's text as a CFStringRef. Caller should release CFString if getting.}
 	kControlEditUnicodeTextPostUpdateProcTag = FourCharCode('upup'); { data is a UnicodePostUpdateUPP; get or set the post-update proc}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc OLDROUTINENAMES}
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -8062,15 +8228,21 @@ const
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	kControlCheckboxUncheckedValue = kControlCheckBoxUncheckedValue;
 	kControlCheckboxCheckedValue = kControlCheckBoxCheckedValue;
 	kControlCheckboxMixedValue = kControlCheckBoxMixedValue;
 
 const
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 	inLabel = kControlLabelPart;
 	inMenu = kControlMenuPart;
 	inTriangle = kControlTrianglePart;
@@ -8097,14 +8269,20 @@ const
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN MAC68K}
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

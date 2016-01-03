@@ -14,9 +14,12 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function FPUExceptionMaskToSoftFloatMask(const Mask: TFPUExceptionMask): byte;
 begin
     result:=0;
@@ -55,6 +58,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -64,6 +68,8 @@ end;
 >>>>>>> origin/cpstrnew
 {$if defined(wince)}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef wince}
 >>>>>>> graemeg/fixes_2_2
 
@@ -190,9 +196,13 @@ begin
   c:=_controlfp(c, _MCW_EM);
   Result:=ConvertExceptionMask(c);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   softfloat_exception_mask:=FPUExceptionMaskToSoftFloatMask(mask);
 >>>>>>> graemeg/fixes_2_2
+=======
+  softfloat_exception_mask:=FPUExceptionMaskToSoftFloatMask(mask);
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure ClearExceptions(RaisePending: Boolean =true);
@@ -775,10 +785,13 @@ function GetExceptionMask: TFPUExceptionMask;
   begin
 {$if not(defined(gba)) and not(defined(nds)) and not(defined(FPUSOFT)) and not(defined(FPULIBGCC))}
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result:=FPUCw2ExceptionMask(FPU_GetCW);
 {$else}
     Result:=softfloat_exception_mask;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     Result:=[];
     cw:=FPU_GetCW;
 
@@ -801,7 +814,10 @@ function GetExceptionMask: TFPUExceptionMask;
       include(Result,exPrecision);
 {$else}
     Result:=SoftFloatMaskToFPUExceptionMask(softfloat_exception_mask);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$endif}
   end;
 
@@ -814,10 +830,13 @@ function SetExceptionMask(const Mask: TFPUExceptionMask): TFPUExceptionMask;
   begin
 {$if not(defined(gba)) and not(defined(nds)) and not(defined(FPUSOFT)) and not(defined(FPULIBGCC))}
 <<<<<<< HEAD
+<<<<<<< HEAD
     cw:=FPU_GetCW;
     Result:=FPUCw2ExceptionMask(cw);
     cw:=cw or _FPU_MASK_ALL;
 =======
+=======
+>>>>>>> origin/fixes_2_2
     cw:=FPU_GetCW or _FPU_MASK_ALL;
 >>>>>>> graemeg/fixes_2_2
 
@@ -845,6 +864,7 @@ function SetExceptionMask(const Mask: TFPUExceptionMask): TFPUExceptionMask;
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     softfloat_exception_mask:=Mask;
 =======
     softfloat_exception_mask:=FPUExceptionMaskToSoftFloatMask(Mask);
@@ -862,6 +882,9 @@ function SetExceptionMask(const Mask: TFPUExceptionMask): TFPUExceptionMask;
 =======
     softfloat_exception_mask:=FPUExceptionMaskToSoftFloatMask(Mask);
 >>>>>>> graemeg/fixes_2_2
+=======
+    softfloat_exception_mask:=FPUExceptionMaskToSoftFloatMask(Mask);
+>>>>>>> origin/fixes_2_2
   end;
 
 

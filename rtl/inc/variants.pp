@@ -278,12 +278,16 @@ var
   NullAsStringValue: string = '';
   PackVarCreation: Boolean = True;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
   OleVariantInt64AsDouble: Boolean = False;
 {$endif}
 =======
   OleVariantInt64AsDouble: Boolean = False;
 >>>>>>> graemeg/fixes_2_2
+=======
+  OleVariantInt64AsDouble: Boolean = False;
+>>>>>>> origin/fixes_2_2
 
 
   VarDispProc: TVarDispProc;
@@ -368,11 +372,17 @@ uses
 {$IFOPT R-} {$DEFINE RANGECHECKINGOFF} {$ENDIF}
 {$IFOPT Q-} {$DEFINE OVERFLOWCHECKINGOFF} {$ENDIF}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2_2
 
 var
   customvarianttypes    : array of TCustomVariantType;
   customvarianttypelock : trtlcriticalsection;
+<<<<<<< HEAD
   customvariantcurrtype : LongInt;
+=======
+>>>>>>> origin/fixes_2_2
 
 const
   { all variants for which vType and varComplexType = 0 do not require
@@ -383,6 +393,7 @@ procedure DoVarClearComplex(var v : TVarData); forward;
 procedure DoVarCopy(var Dest : TVarData; const Source : TVarData); forward;
 procedure DoVarCast(var aDest : TVarData; const aSource : TVarData; aVarType : LongInt); forward;
 
+<<<<<<< HEAD
 =======
 
 var
@@ -399,6 +410,8 @@ procedure DoVarCopy(var Dest : TVarData; const Source : TVarData); forward;
 procedure DoVarCast(var aDest : TVarData; const aSource : TVarData; aVarType : LongInt); forward;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure DoVarClear(var v : TVarData); inline;
 begin
   if v.vType and varComplexType <> 0 then
@@ -682,6 +695,7 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 function sysvartoreal (const v : Variant) : Extended;
 var Handler: TCustomVariantType;
@@ -689,12 +703,16 @@ var Handler: TCustomVariantType;
 =======
 function sysvartoreal (const v : Variant) : Extended;
 >>>>>>> graemeg/fixes_2_2
+=======
+function sysvartoreal (const v : Variant) : Extended;
+>>>>>>> origin/fixes_2_2
 begin
   if VarType(v) = varNull then
     if NullStrictConvert then
       VarCastError(varNull, varDouble)
     else
       Result := 0
+<<<<<<< HEAD
 <<<<<<< HEAD
   { TODO: performance: custom variants must be handled after standard ones }
   else if FindCustomVariantType(TVarData(v).vType, Handler) then
@@ -705,6 +723,8 @@ begin
   end
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   else
     Result := VariantToDouble(TVarData(V));
 end;
@@ -723,6 +743,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CustomVarToLStr(const v: TVarData; out s: AnsiString): Boolean;
 var
   handler: TCustomVariantType;
@@ -740,6 +761,8 @@ begin
 end;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 procedure sysvartolstr (var s : AnsiString; const v : Variant);
 begin
@@ -749,16 +772,21 @@ begin
     else
       s := NullAsStringValue
 <<<<<<< HEAD
+<<<<<<< HEAD
   { TODO: performance: custom variants must be handled after standard ones }
   else if not CustomVarToLStr(TVarData(v), s) then
 =======
   else
 >>>>>>> graemeg/fixes_2_2
+=======
+  else
+>>>>>>> origin/fixes_2_2
     S := VariantToAnsiString(TVarData(V));
 end;
 
 
 procedure sysvartopstr (var s; const v : Variant);
+<<<<<<< HEAD
 <<<<<<< HEAD
 var
   tmp: AnsiString;
@@ -766,6 +794,8 @@ begin
   sysvartolstr(tmp, v);
   ShortString(s) := tmp;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 begin
   if VarType(v) = varNull then
     if NullStrictConvert then
@@ -774,7 +804,10 @@ begin
       ShortString(s) := NullAsStringValue
   else
     ShortString(s) := VariantToShortString(TVarData(V));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -850,9 +883,12 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function sysvartotdatetime (const v : Variant) : TDateTime;
 begin
   if VarType(v) = varNull then
@@ -876,6 +912,7 @@ begin
   inc(Pointer(TypeInfo),ord(pdynarraytypeinfo(TypeInfo)^.namelen)+2);
   TypeInfo:=AlignToPtr(TypeInfo);
   TypeInfo:=ppointer(TypeInfo+SizeOf(sizeint))^;
+<<<<<<< HEAD
 
   { check recursively? }
   if assigned(pdynarraytypeinfo(TypeInfo)) and (pdynarraytypeinfo(TypeInfo)^.kind=byte(tkDynArray)) then
@@ -1001,6 +1038,93 @@ begin
   with TVarData(Dest) do begin
     vType := varDouble;
     vDouble := Source;
+=======
+
+  { check recursively? }
+  if assigned(pdynarraytypeinfo(TypeInfo)) and (pdynarraytypeinfo(TypeInfo)^.kind=byte(tkDynArray)) then
+    begin
+      { set to dimension of first element }
+      arraysize:=psizeint(ppointer(p)^-SizeOf(sizeint))^;
+      { walk through all elements }
+      for i:=1 to psizeint(p-SizeOf(sizeint))^ do
+        begin
+          { ... and check dimension }
+          if psizeint(ppointer(p)^-SizeOf(sizeint))^<>arraysize then
+            exit;
+          if not(DynamicArrayIsRectangular(ppointer(p)^,TypeInfo)) then
+            exit;
+          inc(p,SizeOf(Pointer));
+        end;
+    end;
+    Result:=true;
+end;
+
+procedure sysvartodynarray (var dynarr : Pointer; const v : Variant; TypeInfo : Pointer);
+begin
+  DynArrayFromVariant(dynarr, v, TypeInfo);
+end;
+
+procedure sysvarfrombool (var Dest : Variant; const Source : Boolean);
+begin
+  DoVarClearIfComplex(TVarData(Dest));
+  with TVarData(Dest) do begin
+    vType := varBoolean;
+    vBoolean := Source;
+  end;
+end;
+
+procedure VariantErrorInvalidIntegerRange(Range: LongInt);
+begin
+  VariantError(Format(SErrInvalidIntegerRange,[Range]));
+end;
+
+procedure sysvarfromint (var Dest : Variant; const Source, Range : LongInt);
+begin
+  DoVarClearIfComplex(TVarData(Dest));
+  with TVarData(Dest) do
+    if PackVarCreation then
+      case Range of
+        -4 : begin
+          vType := varInteger;
+          vInteger := Source;
+        end;
+        -2 : begin
+          vType := varSmallInt;
+          vSmallInt := Source;
+        end;
+        -1 : Begin
+          vType := varShortInt;
+          vshortint := Source;
+        end;
+        1 : begin
+          vType := varByte;
+          vByte := Source;
+        end;
+        2 : begin
+          vType := varWord;
+          vWord := Source;
+        end;
+        4 : Begin
+          vType := varLongWord;
+          {use vInteger, not vLongWord as the value came passed in as an Integer }
+          vInteger := Source;
+        end;
+      else
+        VariantErrorInvalidIntegerRange(Range);
+      end
+    else begin
+      vType := varInteger;
+      vInteger := Source;
+    end;
+end;
+
+procedure sysvarfromint64 (var Dest : Variant; const Source : Int64);
+begin
+  DoVarClearIfComplex(TVarData(Dest));
+  with TVarData(Dest) do begin
+    vType := varInt64;
+    vInt64 := Source;
+>>>>>>> origin/fixes_2_2
   end;
 end;
 <<<<<<< HEAD
@@ -1008,16 +1132,34 @@ end;
 =======
 >>>>>>> graemeg/fixes_2_2
 
+<<<<<<< HEAD
 procedure sysvarfromcurr (var Dest : Variant; const Source : Currency);
 begin
   DoVarClearIfComplex(TVarData(Dest));
   with TVarData(Dest) do begin
     vType := varCurrency;
     vCurrency := Source;
+=======
+procedure sysvarfromword64 (var Dest : Variant; const Source : QWord);
+begin
+  DoVarClearIfComplex(TVarData(Dest));
+  with TVarData(Dest) do begin
+    vType := varQWord;
+    vQWord := Source;
+>>>>>>> origin/fixes_2_2
   end;
 end;
 
+procedure sysvarfromreal (var Dest : Variant; const Source : Extended);
+begin
+  DoVarClearIfComplex(TVarData(Dest));
+  with TVarData(Dest) do begin
+    vType := varDouble;
+    vDouble := Source;
+  end;
+end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifndef FPUNONE}
 =======
@@ -1034,8 +1176,27 @@ end;
 {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure sysvarfromsingle (var Dest : Variant; const Source : single);
+begin
+  DoVarClearIfComplex(TVarData(Dest));
+  with TVarData(Dest) do begin
+    vType := varSingle;
+    vSingle := Source;
+  end;
+end;
+>>>>>>> origin/fixes_2_2
 
+procedure sysvarfromdouble (var Dest : Variant; const Source : double);
+begin
+  DoVarClearIfComplex(TVarData(Dest));
+  with TVarData(Dest) do begin
+    vType := varDouble;
+    vDouble := Source;
+  end;
+end;
 
+<<<<<<< HEAD
 procedure sysvarfrompstr (var Dest : Variant; const Source : ShortString);
 begin
   DoVarClearIfComplex(TVarData(Dest));
@@ -1053,10 +1214,29 @@ begin
     vType := varString;
     vString := nil;
     AnsiString(vString) := Source;
+=======
+procedure sysvarfromcurr (var Dest : Variant; const Source : Currency);
+begin
+  DoVarClearIfComplex(TVarData(Dest));
+  with TVarData(Dest) do begin
+    vType := varCurrency;
+    vCurrency := Source;
   end;
 end;
 
 
+procedure sysvarfromtdatetime (var Dest : Variant; const Source : TDateTime);
+begin
+  DoVarClearIfComplex(TVarData(Dest));
+  with TVarData(Dest) do begin
+    vType := varDate;
+    vDate := Source;
+>>>>>>> origin/fixes_2_2
+  end;
+end;
+
+
+<<<<<<< HEAD
 procedure sysvarfromwstr (var Dest : Variant; const Source : WideString);
 begin
   DoVarClearIfComplex(TVarData(Dest));
@@ -1074,10 +1254,30 @@ begin
     vUnknown := nil;
     IInterface(vUnknown) := Source;
     vType := varUnknown;
+=======
+procedure sysvarfrompstr (var Dest : Variant; const Source : ShortString);
+begin
+  DoVarClearIfComplex(TVarData(Dest));
+  with TVarData(Dest) do begin
+    vType := varString;
+    vString := nil;
+    AnsiString(vString) := Source;
+  end;
+end;
+
+procedure sysvarfromlstr (var Dest : Variant; const Source : AnsiString);
+begin
+  DoVarClearIfComplex(TVarData(Dest));
+  with TVarData(Dest) do begin
+    vType := varString;
+    vString := nil;
+    AnsiString(vString) := Source;
+>>>>>>> origin/fixes_2_2
   end;
 end;
 
 
+<<<<<<< HEAD
 procedure sysvarfromdisp(var Dest : Variant; const Source : IDispatch);
 begin
   DoVarClearIfComplex(TVarData(Dest));
@@ -1101,6 +1301,27 @@ type
 >>>>>>> graemeg/fixes_2_2
 
   TCommonVarType = varEmpty..varQWord;
+=======
+procedure sysvarfromwstr (var Dest : Variant; const Source : WideString);
+begin
+  DoVarClearIfComplex(TVarData(Dest));
+  with TVarData(Dest) do begin
+    vType := varOleStr;
+    vOleStr := nil;
+    WideString(Pointer(vOleStr)) := Source;
+  end;
+end;
+
+procedure sysvarfromintf(var Dest : Variant; const Source : IInterface);
+begin
+  DoVarClearIfComplex(TVarData(Dest));
+  with TVarData(Dest) do begin
+    vUnknown := nil;
+    IInterface(vUnknown) := Source;
+    vType := varUnknown;
+  end;
+end;
+>>>>>>> origin/fixes_2_2
 
 const
 <<<<<<< HEAD
@@ -1110,8 +1331,28 @@ const
   ctCurrency = ctError;
 {$endif}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure sysvarfromdisp(var Dest : Variant; const Source : IDispatch);
+begin
+  DoVarClearIfComplex(TVarData(Dest));
+  with TVarData(Dest) do begin
+    vUnknown := nil;
+    IDispatch(vDispatch) := Source;
+    vType := varDispatch;
+  end;
+end;
+
+type
+  TCommonType = (ctEmpty,ctAny,ctError,ctLongInt,ctFloat,ctBoolean,
+    ctInt64,ctNull,ctWideStr,ctDate,ctCurrency,ctString);
+
+  TCommonVarType = varEmpty..varQWord;
+
+const
+>>>>>>> origin/fixes_2_2
   { get the basic type for a Variant type }
   VarTypeToCommonType : array[TCommonVarType] of TCommonType =
     (ctEmpty,           // varEmpty = 0;
@@ -1173,6 +1414,7 @@ end;
 const
   FindCmpCommonType : array[TCommonType, TCommonType] of TCommonType = (
 <<<<<<< HEAD
+<<<<<<< HEAD
      {              ctEmpty    ctAny    ctError  ctLongInt   ctBoolean                         ctFloat    ctDate   ctCurrency           ctInt64     ctNull   ctWideStr   ctString  }
     ({ ctEmpty }    ctEmpty,   ctEmpty, ctError, ctEmpty,    ctEmpty,    {$ifndef FPUNONE}ctEmpty,   ctEmpty, ctEmpty,    {$endif}ctEmpty,    ctEmpty, ctEmpty,    ctEmpty   ),
     ({ ctAny }      ctEmpty,   ctAny,   ctError, ctAny,      ctAny,      {$ifndef FPUNONE}ctAny,     ctAny,   ctAny,      {$endif}ctAny,      ctAny,   ctAny,      ctAny      ),
@@ -1189,6 +1431,8 @@ const
     ({ ctWideStr }  ctEmpty,   ctAny,   ctError, ctFloat,    ctWideStr,  {$ifndef FPUNONE}ctFloat,   ctDate,  ctCurrency, {$endif}ctFloat,    ctNull,  ctWideStr,  ctWideStr  ),
     ({ ctString }   ctEmpty,   ctAny,   ctError, ctFloat,    ctString,   {$ifndef FPUNONE}ctFloat,   ctDate,  ctCurrency, {$endif}ctFloat,    ctNull,  ctWideStr,  ctString   )
 =======
+=======
+>>>>>>> origin/fixes_2_2
      {              ctEmtpy    ctAny    ctError  ctLongInt   ctFloat    ctBoolean   ctInt64     ctNull   ctWideStr   ctDate   ctCurrency  ctString  }
     ({ ctEmpty }    ctEmpty,   ctEmpty, ctError, ctEmpty,    ctEmpty,   ctEmpty,    ctEmpty,    ctEmpty, ctEmpty,    ctEmpty, ctEmpty,    ctEmpty   ),
     ({ ctAny }      ctEmpty,   ctAny,   ctError, ctAny,      ctAny,     ctAny,      ctAny,      ctAny,   ctAny,      ctAny,   ctAny,      ctAny      ),
@@ -1202,7 +1446,10 @@ const
     ({ ctDate }     ctEmpty,   ctAny,   ctError, ctDate,     ctDate,    ctDate,     ctDate,     ctNull,  ctDate,     ctDate,  ctDate,     ctDate     ),
     ({ ctCurrency } ctEmpty,   ctAny,   ctError, ctCurrency, ctCurrency,ctCurrency, ctCurrency, ctNull,  ctCurrency, ctDate,  ctCurrency, ctCurrency ),
     ({ ctString }   ctEmpty,   ctAny,   ctError, ctFloat,    ctFloat,   ctString,   ctFloat,    ctNull,  ctWideStr,  ctDate,  ctCurrency, ctString   )
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     );
 
 function DoVarCmpSimple (const Left, Right, Common: TCommonType) : ShortInt; inline;
@@ -1215,6 +1462,16 @@ begin
   else
     Result := 1;
 end;
+<<<<<<< HEAD
+
+function DoVarCmpAny(const Left, Right: TVarData; const OpCode: TVarOp) : ShortInt;
+begin
+  VarInvalidOp(Left.vType, Right.vType, OpCode);
+  Result:=0;
+end;
+
+function DoVarCmpLongInt(const Left, Right: LongInt): ShortInt; inline;
+=======
 
 function DoVarCmpAny(const Left, Right: TVarData; const OpCode: TVarOp) : ShortInt;
 begin
@@ -1232,6 +1489,28 @@ begin
     Result := 0;
 end;
 
+function DoVarCmpFloat(const Left, Right: Double; const OpCode: TVarOp): ShortInt;
+begin
+  if SameValue(Left, Right) then
+    Result := 0
+  else if (OpCode in [opCmpEq, opCmpNe]) or (Left < Right) then
+    Result := -1
+  else
+    Result := 1;
+end;
+
+function DoVarCmpInt64(const Left, Right: Int64): ShortInt;
+>>>>>>> origin/fixes_2_2
+begin
+  if Left < Right then
+    Result := -1
+  else if Left > Right then
+    Result := 1
+  else
+    Result := 0;
+end;
+
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifndef FPUNONE}
 function DoVarCmpFloat(const Left, Right: Double; const OpCode: TVarOp): ShortInt;
@@ -1254,6 +1533,28 @@ end;
 >>>>>>> graemeg/fixes_2_2
 
 function DoVarCmpInt64(const Left, Right: Int64): ShortInt;
+=======
+function DoVarCmpNull(const Left, Right: TCommonType; const OpCode: TVarOp) : ShortInt;
+const
+  ResultMap: array [Boolean, opCmpEq..opCmpGe] of ShortInt =
+    ( ( -1, 0, 0, 1, 0, -1 ), ( 0, -1, -1, -1, 1, 1 ) );
+begin
+  if OpCode in [opCmpEq, opCmpNe] then
+    case NullEqualityRule of
+      ncrError:  VarInvalidNullOp;
+      ncrStrict: Result := ResultMap[False, OpCode];
+      ncrLoose:  Result := ResultMap[(Left = Right) xor (OpCode = opCmpNe), OpCode];
+    end
+  else
+    case NullMagnitudeRule of
+      ncrError:  VarInvalidNullOp;
+      ncrStrict: Result := ResultMap[False, OpCode];
+      ncrLoose:  Result := DoVarCmpSimple(Left, Right, ctNull);
+    end;
+end;
+
+function DoVarCmpCurr(const Left, Right: Currency): ShortInt;
+>>>>>>> origin/fixes_2_2
 begin
   if Left < Right then
     Result := -1
@@ -1262,6 +1563,7 @@ begin
   else
     Result := 0;
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 function DoVarCmpNull(const Left, Right: TCommonType; const OpCode: TVarOp) : ShortInt;
@@ -1389,17 +1691,7 @@ begin
       ncrStrict: Result := ResultMap[False, OpCode];
       ncrLoose:  Result := DoVarCmpSimple(Left, Right, ctNull);
     end;
-end;
-
-function DoVarCmpCurr(const Left, Right: Currency): ShortInt;
-begin
-  if Left < Right then
-    Result := -1
-  else if Left > Right then
-    Result := 1
-  else
-    Result := 0;
-end;
+=======
 
 function DoVarCmpWStrDirect(const Left, Right: Pointer; const OpCode: TVarOp): ShortInt; inline;
 begin
@@ -1414,6 +1706,176 @@ begin
 end;
 
 
+function DoVarCmpWStr(const Left, Right: TVarData; const OpCode: TVarOp): ShortInt;
+begin
+  { keep the temps away from the main proc }
+  Result := DoVarCmpWStrDirect(Pointer(VariantToWideString(Left)),
+    Pointer(VariantToWideString(Right)), OpCode);
+end;
+
+
+function DoVarCmpLStrDirect(const Left, Right: Pointer; const OpCode: TVarOp): ShortInt; inline;
+begin
+  { we can do this without ever copying the string }
+  if OpCode in [opCmpEq, opCmpNe] then
+    if Length(AnsiString(Left)) <> Length(AnsiString(Right)) then
+      Exit(-1);
+  Result := CompareStr(
+    AnsiString(Left),
+    AnsiString(Right)
+  );
+end;
+
+
+function DoVarCmpLStr(const Left, Right: TVarData; const OpCode: TVarOp): ShortInt;
+begin
+  { keep the temps away from the main proc }
+  Result := DoVarCmpLStrDirect(Pointer(VariantToAnsiString(Left)),
+    Pointer(VariantToAnsiString(Right)), OpCode);
+end;
+
+function DoVarCmpComplex(const Left, Right: TVarData; const OpCode: TVarOp): ShortInt;
+begin
+  {!! custom variants? }
+  VarInvalidOp(Left.vType, Right.vType, OpCode);
+  Result:=0;
+end;
+
+
+function DoVarCmp(const vl, vr : TVarData; const OpCode : TVarOp) : ShortInt;
+var
+  lct: TCommonType;
+  rct: TCommonType;
+begin
+  { as the function in cvarutil.inc can handle varByRef correctly we simply
+    resolve the final type }
+  lct := MapToCommonType(VarTypeDeRef(vl));
+  rct := MapToCommonType(VarTypeDeRef(vr));
+
+  {$IFDEF DEBUG_VARIANTS}
+  if __DEBUG_VARIANTS then begin
+    WriteLn('DoVarCmp $', IntToHex(Cardinal(@vl),8), ' ', GetEnumName(TypeInfo(TVarOp), Ord(OpCode)) ,' $', IntToHex(Cardinal(@vr),8));
+    DumpVariant('DoVarCmp/vl', vl);
+    WriteLn('lct ', GetEnumName(TypeInfo(TCommonType), Ord(lct)));
+
+    DumpVariant('DoVarCmp/vr', vr);
+    WriteLn('rct ', GetEnumName(TypeInfo(TCommonType), Ord(rct)));
+
+    WriteLn('common ', GetEnumName(TypeInfo(TCommonType), Ord(FindCmpCommonType[lct, rct])));
+  end;
+  {$ENDIF}
+
+  case FindCmpCommonType[lct, rct] of
+    ctEmpty:    Result := DoVarCmpSimple(lct, rct, ctEmpty);
+    ctAny:      Result := DoVarCmpAny(vl, vr, OpCode);
+    ctLongInt:  Result := DoVarCmpLongInt(VariantToLongInt(vl), VariantToLongInt(vr));
+    ctFloat:    Result := DoVarCmpFloat(VariantToDouble(vl), VariantToDouble(vr), OpCode);
+    ctBoolean:  Result := DoVarCmpLongInt(LongInt(VariantToBoolean(vl)), LongInt(VariantToBoolean(vr)));
+    ctInt64:    Result := DoVarCmpInt64(VariantToInt64(vl), VariantToInt64(vr));
+    ctNull:     Result := DoVarCmpNull(lct, rct, OpCode);
+    ctWideStr:
+      if (vl.vType = varOleStr) and (vr.vType = varOleStr) then
+        Result := DoVarCmpWStrDirect(Pointer(vl.vOleStr), Pointer(vr.vOleStr), OpCode)
+      else
+        Result := DoVarCmpWStr(vl, vr, OpCode);
+    ctDate:     Result := DoVarCmpFloat(VariantToDate(vl), VariantToDate(vr), OpCode);
+    ctCurrency: Result := DoVarCmpCurr(VariantToCurrency(vl), VariantToCurrency(vr));
+    ctString:
+      if (vl.vType = varString) and (vr.vType = varString) then
+        Result := DoVarCmpLStrDirect(Pointer(vl.vString), Pointer(vr.vString), OpCode)
+      else
+        Result := DoVarCmpLStr(vl, vr, OpCode);
+  else
+    Result := DoVarCmpComplex(vl, vr, OpCode);
+  end;
+end;
+
+function syscmpop (const Left, Right : Variant; const OpCode : TVarOp) : Boolean;
+var
+  CmpRes : ShortInt;
+begin
+  CmpRes:=DoVarCmp(TVarData(Left),TVarData(Right),OpCode);
+  case OpCode of
+    opCmpEq:
+      Result:=CmpRes=0;
+    opCmpNe:
+      Result:=CmpRes<>0;
+    opCmpLt:
+      Result:=CmpRes<0;
+    opCmpLe:
+      Result:=CmpRes<=0;
+    opCmpGt:
+      Result:=CmpRes>0;
+    opCmpGe:
+      Result:=CmpRes>=0;
+   else
+     VarInvalidOp;
+  end;
+>>>>>>> origin/fixes_2_2
+end;
+
+function DoVarCmpCurr(const Left, Right: Currency): ShortInt;
+begin
+  if Left < Right then
+    Result := -1
+  else if Left > Right then
+    Result := 1
+  else
+    Result := 0;
+end;
+
+<<<<<<< HEAD
+function DoVarCmpWStrDirect(const Left, Right: Pointer; const OpCode: TVarOp): ShortInt; inline;
+begin
+  { we can do this without ever copying the string }
+  if OpCode in [opCmpEq, opCmpNe] then
+    if Length(WideString(Left)) <> Length(WideString(Right)) then
+      Exit(-1);
+  Result := WideCompareStr(
+    WideString(Left),
+    WideString(Right)
+  );
+end;
+=======
+const
+  FindOpCommonType : array[TCommonType,TCommonType] of TCommonType = (
+     {              ctEmtpy  ctAny    ctError  ctLongInt   ctFloat     ctBoolean   ctInt64     ctNull    ctWideStr   ctDate   ctCurrency  ctString  }
+    ({ ctEmpty }    ctEmpty, ctAny,   ctError, ctEmpty,    ctEmpty,    ctEmpty,    ctEmpty,    ctEmpty,  ctEmpty,    ctEmpty, ctEmpty,    ctEmpty    ),
+    ({ ctAny }      ctAny,   ctAny,   ctError, ctAny,      ctAny,      ctAny,      ctAny,      ctAny,    ctAny,      ctAny,   ctAny,      ctAny      ),
+    ({ ctError }    ctError, ctError, ctError, ctError,    ctError,    ctError,    ctError,    ctError,  ctError,    ctError, ctError,    ctError    ),
+    ({ ctLongInt }  ctEmpty, ctAny,   ctError, ctLongInt,  ctFloat,    ctBoolean,  ctInt64,    ctNull,   ctFloat,    ctDate,  ctCurrency, ctFloat    ),
+    ({ ctFloat }    ctEmpty, ctAny,   ctError, ctFloat,    ctFloat,    ctFloat,    ctFloat,    ctNull,   ctFloat,    ctDate,  ctCurrency, ctFloat    ),
+    ({ ctBoolean }  ctEmpty, ctAny,   ctError, ctLongInt,  ctFloat,    ctBoolean,  ctInt64,    ctNull,   ctBoolean,  ctDate,  ctCurrency, ctBoolean  ),
+    ({ ctInt64 }    ctEmpty, ctAny,   ctError, ctInt64,    ctFloat,    ctInt64,    ctInt64,    ctNull,   ctFloat,    ctDate,  ctCurrency, ctFloat    ),
+    ({ ctNull }     ctEmpty, ctAny,   ctError, ctNull,     ctNull,     ctNull,     ctNull,     ctNull,   ctNull,     ctNull,  ctNull,     ctNull     ),
+    ({ ctWideStr }  ctEmpty, ctAny,   ctError, ctFloat,    ctFloat,    ctBoolean,  ctFloat,    ctNull,   ctWideStr,  ctDate,  ctCurrency, ctWideStr  ),
+    ({ ctDate }     ctEmpty, ctAny,   ctError, ctDate,     ctDate,     ctDate,     ctDate,     ctNull,   ctDate,     ctDate,  ctDate,     ctDate     ),
+    ({ ctCurrency } ctEmpty, ctAny,   ctError, ctCurrency, ctCurrency, ctCurrency, ctCurrency, ctNull,   ctCurrency, ctDate,  ctCurrency, ctCurrency ),
+    ({ ctString }   ctEmpty, ctAny,   ctError, ctFloat,    ctFloat,    ctBoolean,  ctFloat,    ctNull,   ctWideStr,  ctDate,  ctCurrency, ctString   )
+    );
+>>>>>>> origin/fixes_2_2
+
+procedure DoVarOpFloat(var vl :TVarData; const vr : TVarData; const OpCode : TVarOp);
+var
+  l, r : Double;
+begin
+  l := VariantToDouble(vl);
+  r := VariantToDouble(vr);
+  case OpCode of
+    opAdd      :  l := l  + r;
+    opSubtract :  l := l  - r;
+    opMultiply :  l := l  * r;
+    opDivide   :  l := l  / r;
+    opPower    :  l := l ** r;
+  else
+    VarInvalidOp(vl.vType, vr.vType, OpCode);
+  end;
+  DoVarClearIfComplex(vl);
+  vl.vType := varDouble;
+  vl.vDouble := l;
+end;
+
+<<<<<<< HEAD
 function DoVarCmpWStr(const Left, Right: TVarData; const OpCode: TVarOp): ShortInt;
 begin
   { keep the temps away from the main proc }
@@ -1683,12 +2145,380 @@ begin
     opXor        : l := l xor r;
   else
     VarInvalidOp(vl.vType, vr.vType, OpCode);
+=======
+procedure DoVarOpAny(var vl : TVarData; const vr : TVarData; const OpCode : TVarOp);
+begin
+  VarInvalidOp(vl.vType, vr.vType, OpCode);
+end;
+
+procedure DoVarOpLongInt(var vl : TVarData; const vr : TVarData; const OpCode : TVarOp);
+var
+  l, r: LongInt;
+begin
+  l := VariantToLongint(vl);
+  r := VariantToLongint(vr);
+  case OpCode of
+    opIntDivide  : l := l div r;
+    opModulus    : l := l mod r;
+    opShiftLeft  : l := l shl r;
+    opShiftRight : l := l shr r;
+    opAnd        : l := l and r;
+    opOr         : l := l  or r;
+    opXor        : l := l xor r;
+  else
+    VarInvalidOp(vl.vType, vr.vType, OpCode);
   end;
   DoVarClearIfComplex(vl);
   vl.vType := varInteger;
   vl.vInteger := l;
 end;
 
+procedure DoVarOpInt64(var vl : TVarData; const vr : TVarData; const OpCode : TVarOp);
+var
+  l, r     : Int64;
+  Overflow : Boolean;
+begin
+  l := VariantToInt64(vl);
+  r := VariantToInt64(vr);
+  Overflow := False;
+  case OpCode of
+    {$R+}{$Q+}
+    opAdd..opMultiply,opPower: try
+      case OpCode of
+        opAdd      :  l := l  + r;
+        opSubtract :  l := l  - r;
+        opMultiply :  l := l  * r;
+        opPower    :  l := l ** r;
+      end;
+    except
+      on E: SysUtils.ERangeError do
+        Overflow := True;
+      on E: SysUtils.EIntOverflow do
+        Overflow := True;
+    end;
+    {$IFDEF RANGECHECKINGOFF} {$R-} {$ENDIF} {$IFDEF OVERFLOWCHECKINGOFF} {$Q+} {$ENDIF}
+    opIntDivide  : l := l div r;
+    opModulus    : l := l mod r;
+    opShiftLeft  : l := l shl r;
+    opShiftRight : l := l shr r;
+    opAnd        : l := l and r;
+    opOr         : l := l  or r;
+    opXor        : l := l xor r;
+  else
+    VarInvalidOp(vl.vType, vr.vType, OpCode);
+  end;
+  if Overflow then
+    DoVarOpFloat(vl,vr,OpCode)
+  else begin
+    DoVarClearIfComplex(vl);
+    vl.vType := varInt64;
+    vl.vInt64 := l;
+  end;
+end;
+
+procedure DoVarOpInt64to32(var vl : TVarData; const vr : TVarData; const OpCode : TVarOp);
+begin
+  { can't do this well without an efficent way to check for overflows,
+    let the Int64 version handle it and check the Result if we can downgrade it
+    to integer }
+  DoVarOpInt64(vl, vr, OpCode);
+  with vl do
+    if (vType = varInt64) and (vInt64 >= Low(LongInt)) and (vInt64 <= High(LongInt)) then begin
+      vInteger := vInt64;
+      vType := varInteger;
+    end;
+end;
+
+
+procedure DoVarOpBool(var vl : TVarData; const vr : TVarData; const OpCode : TVarOp);
+var
+  l,r: Boolean;
+begin
+  l := VariantToBoolean(vl);
+  r := VariantToBoolean(vr);
+  case OpCode of
+    opAnd : l := l and r;
+    opOr  : l := l  or r;
+    opXor : l := l xor r;
+  else
+    VarInvalidOp(vl.vType, vr.vType, OpCode);
+  end;
+  DoVarClearIfComplex(vl);
+  vl.vType := varBoolean;
+  vl.vBoolean := l;
+end;
+
+procedure DoVarOpNull(var vl : TVarData; const vr : TVarData; const OpCode : TVarOp);
+begin
+  if (OpCode = opAnd) or (OpCode = opOr) then
+    if vl.vType = varNull then begin
+      if vr.vType = varNull then begin
+        {both null, do nothing }
+      end else begin
+        {Left null, Right not}
+        if OpCode = opAnd then begin
+          if not VariantToBoolean(vr) then
+            VarCopyProc(vl, vr);
+        end else {OpCode = opOr} begin
+          if VariantToBoolean(vr) then
+            VarCopyProc(vl, vr);
+        end;
+      end;
+    end else begin
+      if vr.vType = varNull then begin
+        {Right null, Left not}
+        if OpCode = opAnd then begin
+          if VariantToBoolean(vl) then begin
+            DoVarClearIfComplex(vl);
+            vl.vType := varNull;
+          end;
+        end else {OpCode = opOr} begin
+          if not VariantToBoolean(vl) then begin
+            DoVarClearIfComplex(vl);
+            vl.vType := varNull;
+          end;
+        end;
+      end else begin
+        { both not null, shouldn't happen }
+        VarInvalidOp(vl.vType, vr.vType, OpCode);
+      end;
+    end
+  else begin
+    DoVarClearIfComplex(vl);
+    vl.vType := varNull;
+  end;
+end;
+
+procedure DoVarOpWStrCat(var vl : TVarData; const vr : TVarData);
+var
+  ws: WideString;
+begin
+  ws := VariantToWideString(vl) + VariantToWideString(vr);
+  DoVarClearIfComplex(vl);
+  vl.vType := varOleStr;
+  { transfer the WideString without making a copy }
+  Pointer(vl.vOleStr) := Pointer(ws);
+  { prevent the WideString from being freed, the reference has been transfered
+    from the local to the variant and will be correctly finalized when the
+    variant is finalized. }
+  Pointer(ws) := nil;
+end;
+
+procedure DoVarOpLStrCat(var vl: TVarData; const vr : TVarData);
+var
+  s: AnsiString;
+begin
+  s := VariantToAnsiString(vl) + VariantToAnsiString(vr);
+  DoVarClearIfComplex(vl);
+  vl.vType := varString;
+  { transfer the AnsiString without making a copy }
+  Pointer(vl.vString) := Pointer(s);
+  { prevent the AnsiString from being freed, the reference has been transfered
+    from the local to the variant and will be correctly finalized when the
+    variant is finalized. }
+  Pointer(s) := nil;
+end;
+
+procedure DoVarOpDate(var vl : TVarData; const vr : TVarData; const OpCode : TVarOp);
+var
+  l, r : TDateTime;
+begin
+  l := VariantToDate(vl);
+  r := VariantToDate(vr);
+  case OpCode of
+    opAdd      : l := l + r;
+    opSubtract : l := l - r;
+  else
+    VarInvalidOp(vl.vType, vr.vType, OpCode);
+  end;
+  DoVarClearIfComplex(vl);
+  vl.vType := varDate;
+  vl.vDate := l;
+end;
+
+procedure DoVarOpCurr(var vl : TVarData; const vr : TVarData; const OpCode : TVarOp; const lct, rct : TCommonType);
+var
+  c  : Currency;
+  d  : Double;
+begin
+  case OpCode of
+    opAdd:
+      c := VariantToCurrency(vl) + VariantToCurrency(vr);
+    opSubtract:
+      c := VariantToCurrency(vl) - VariantToCurrency(vr);
+    opMultiply:
+      if lct = ctCurrency then
+        if rct = ctCurrency then {both Currency}
+          c := VariantToCurrency(vl) * VariantToCurrency(vr)
+        else {Left Currency}
+          c := VariantToCurrency(vl) * VariantToDouble(vr)
+      else
+        if rct = ctCurrency then {rigth Currency}
+          c := VariantToDouble(vl) * VariantToCurrency(vr)
+        else {non Currency, error}
+          VarInvalidOp(vl.vType, vr.vType, OpCode);
+    opDivide:
+      if lct = ctCurrency then
+        if rct = ctCurrency then {both Currency}
+          c := VariantToCurrency(vl) / VariantToCurrency(vr)
+        else {Left Currency}
+          c := VariantToCurrency(vl) / VariantToDouble(vr)
+      else
+        if rct = ctCurrency then begin {rigth Currency}
+          d := VariantToCurrency(vl) / VariantToCurrency(vr);
+          DoVarClearIfComplex(vl);
+          vl.vType := varDouble;
+          vl.vDouble := d;
+          Exit;
+        end else {non Currency, error}
+          VarInvalidOp(vl.vType, vr.vType, OpCode);
+    opPower:
+      if lct = ctCurrency then
+        if rct = ctCurrency then {both Currency}
+          c := VariantToCurrency(vl) ** VariantToCurrency(vr)
+        else {Left Currency}
+          c := VariantToCurrency(vl) ** VariantToDouble(vr)
+      else
+        if rct = ctCurrency then {rigth Currency}
+          c := VariantToDouble(vl) ** VariantToCurrency(vr)
+        else {non Currency, error}
+          VarInvalidOp(vl.vType, vr.vType, OpCode);
+  else
+    VarInvalidOp(vl.vType, vr.vType, OpCode);
+  end;
+  DoVarClearIfComplex(vl);
+  vl.vType := varCurrency;
+  vl.vCurrency := c;
+end;
+
+procedure DoVarOpComplex(var vl : TVarData; const vr : TVarData; const OpCode : TVarOp);
+begin
+  {custom Variant support? }
+   VarInvalidOp(vl.vType, vr.vType, OpCode);
+end;
+
+procedure SysVarOp(var Left : Variant; const Right : Variant; OpCode : TVarOp);
+var
+  lct: TCommonType;
+  rct: TCommonType;
+  {$IFDEF DEBUG_VARIANTS}
+  i: Integer;
+  {$ENDIF}
+begin
+  { as the function in cvarutil.inc can handle varByRef correctly we simply
+    resolve the final type }
+  lct := MapToCommonType(VarTypeDeRef(Left));
+  rct := MapToCommonType(VarTypeDeRef(Right));
+
+  {$IFDEF DEBUG_VARIANTS}
+  if __DEBUG_VARIANTS then begin
+    WriteLn('SysVarOp $', IntToHex(Cardinal(@TVarData(Left)),8), ' ', GetEnumName(TypeInfo(TVarOp), Ord(OpCode)) ,' $', IntToHex(Cardinal(@TVarData(Right)),8));
+    DumpVariant('SysVarOp/TVarData(Left)', TVarData(Left));
+    WriteLn('lct ', GetEnumName(TypeInfo(TCommonType), Ord(lct)));
+
+    DumpVariant('SysVarOp/TVarData(Right)', TVarData(Right));
+    WriteLn('rct ', GetEnumName(TypeInfo(TCommonType), Ord(rct)));
+
+    WriteLn('common ', GetEnumName(TypeInfo(TCommonType), Ord(FindOpCommonType[lct, rct])));
+  end;
+  {$ENDIF}
+
+  case FindOpCommonType[lct, rct] of
+    ctEmpty:
+      case OpCode of
+        opDivide:
+          Error(reZeroDivide);
+        opIntDivide, opModulus:
+          Error(reDivByZero);
+      else
+        DoVarClear(TVarData(Left));
+      end;
+    ctAny:
+      DoVarOpAny(TVarData(Left),TVarData(Right),OpCode);
+    ctLongInt:
+      case OpCode of
+        opAdd..opMultiply,opPower:
+          DoVarOpInt64to32(TVarData(Left),TVarData(Right),OpCode);
+        opDivide:
+          DoVarOpFloat(TVarData(Left),TVarData(Right),OpCode);
+      else
+        DoVarOpLongInt(TVarData(Left),TVarData(Right),OpCode);
+      end;
+    ctFloat:
+      if OpCode in [opAdd,opSubtract,opMultiply,opDivide] then
+        DoVarOpFloat(TVarData(Left),TVarData(Right),OpCode)
+      else
+        DoVarOpInt64to32(TVarData(Left),TVarData(Right),OpCode);
+    ctBoolean:
+      case OpCode of
+        opAdd..opMultiply, opPower:
+          DoVarOpFloat(TVarData(Left),TVarData(Right),OpCode);
+        opIntDivide..opShiftRight:
+          DoVarOpLongInt(TVarData(Left),TVarData(Right),OpCode);
+        opAnd..opXor:
+          DoVarOpBool(TVarData(Left),TVarData(Right),OpCode);
+      else
+        VarInvalidOp(TVarData(Left).vType, TVarData(Right).vType, OpCode);
+      end;
+    ctInt64:
+      if OpCode <> opDivide then
+        DoVarOpInt64(TVarData(Left),TVarData(Right),OpCode)
+      else
+        DoVarOpFloat(TVarData(Left),TVarData(Right),OpCode);
+    ctNull:
+      DoVarOpNull(TVarData(Left),TVarData(Right),OpCode);
+    ctWideStr:
+      case OpCode of
+        opAdd:
+          DoVarOpWStrCat(TVarData(Left),TVarData(Right));
+        opSubtract..opDivide,opPower:
+          DoVarOpFloat(TVarData(Left),TVarData(Right),OpCode);
+        opIntDivide..opXor:
+          DoVarOpInt64to32(TVarData(Left),TVarData(Right),OpCode);
+      else
+        VarInvalidOp(TVarData(Left).vType, TVarData(Right).vType, OpCode);
+      end;
+    ctDate:
+      case OpCode of
+        opAdd:
+          DoVarOpDate(TVarData(Left),TVarData(Right),OpCode);
+        opSubtract: begin
+          DoVarOpDate(TVarData(Left),TVarData(Right),OpCode);
+            if lct = rct then {both are date}
+              TVarData(Left).vType := varDouble;
+        end;
+        opMultiply, opDivide:
+          DoVarOpFloat(TVarData(Left),TVarData(Right),OpCode);
+      else
+        DoVarOpInt64to32(TVarData(Left),TVarData(Right),OpCode);
+      end;
+    ctCurrency:
+      if OpCode in [opAdd..opDivide, opPower] then
+        DoVarOpCurr(TVarData(Left),TVarData(Right),OpCode, lct, rct)
+      else
+        DoVarOpInt64to32(TVarData(Left),TVarData(Right),OpCode);
+    ctString:
+      case OpCode of
+        opAdd:
+          DoVarOpLStrCat(TVarData(Left),TVarData(Right));
+        opSubtract..opDivide,opPower:
+          DoVarOpFloat(TVarData(Left),TVarData(Right),OpCode);
+        opIntDivide..opXor:
+          DoVarOpInt64to32(TVarData(Left),TVarData(Right),OpCode);
+      else
+        VarInvalidOp(TVarData(Left).vType, TVarData(Right).vType, OpCode);
+      end;
+  else
+    { more complex case }
+    DoVarOpComplex(TVarData(Left),TVarData(Right),OpCode);
+>>>>>>> origin/fixes_2_2
+  end;
+  DoVarClearIfComplex(vl);
+  vl.vType := varInteger;
+  vl.vInteger := l;
+end;
+
+<<<<<<< HEAD
 procedure DoVarOpInt64(var vl : TVarData; const vr : TVarData; const OpCode : TVarOp);
 var
   l, r     : Int64;
@@ -3009,6 +3839,221 @@ begin
   VarInvalidOp(v.vType, opNot);
 end;
 
+=======
+procedure DoVarNegAny(var v: TVarData);
+begin
+  VarInvalidOp(v.vType, opNegate);
+end;
+
+procedure DoVarNegComplex(var v: TVarData);
+begin
+  { custom variants? }
+  VarInvalidOp(v.vType, opNegate);
+end;
+
+procedure sysvarneg(var v: Variant);
+const
+  BoolMap: array [Boolean] of SmallInt = (0, -1);
+begin
+  with TVarData(v) do case vType of
+    varEmpty: begin
+      vSmallInt := 0;
+      vType := varSmallInt;
+    end;
+    varNull:;
+    varSmallint: vSmallInt := -vSmallInt;
+    varInteger:  vInteger  := -vInteger;
+    varSingle:   vSingle   := -vSingle;
+    varDouble:   vDouble   := -vDouble;
+    varCurrency: vCurrency := -vCurrency;
+    varDate:     vDate     := -vDate;
+    varOleStr:   sysvarfromreal(v, -VariantToDouble(TVarData(v)));
+    varBoolean: begin
+      vSmallInt := BoolMap[vBoolean];
+      vType := varSmallInt;
+    end;
+    varShortInt: vShortInt := -vShortInt;
+    varByte: begin
+      vSmallInt := -vByte;
+      vType := varSmallInt;
+    end;
+    varWord: begin
+      vInteger := -vWord;
+      vType := varInteger;
+    end;
+    varLongWord:
+      if vLongWord and $80000000 <> 0 then begin
+        vInt64 := -vLongWord;
+        vType := varInt64;
+      end else begin
+        vInteger := -vLongWord;
+        vType := varInteger;
+      end;
+    varInt64:    vInt64    := -vInt64;
+    varQWord: begin
+      if vQWord and $8000000000000000 <> 0 then
+        VarRangeCheckError(varQWord, varInt64);
+      vInt64 := -vQWord;
+      vType := varInt64;
+    end;
+    varVariant:  v         := -Variant(PVarData(vPointer)^);
+  else {with TVarData(v) do case vType of}
+    case vType of
+      varString:   sysvarfromreal(v, -VariantToDouble(TVarData(v)));
+      varAny:      DoVarNegAny(TVarData(v));
+    else {case vType of}
+      if (vType and not varTypeMask) = varByRef then
+        case vType and varTypeMask of
+          varSmallInt: begin
+            vSmallInt := -PSmallInt(vPointer)^;
+            vType := varSmallInt;
+          end;
+          varInteger: begin
+            vInteger := -PInteger(vPointer)^;
+            vType := varInteger;
+          end;
+          varSingle: begin
+            vSingle := -PSingle(vPointer)^;
+            vType := varSingle;
+          end;
+          varDouble: begin
+            vDouble := -PDouble(vPointer)^;
+            vType := varDouble;
+          end;
+          varCurrency: begin
+            vCurrency := -PCurrency(vPointer)^;
+            vType := varCurrency;
+          end;
+          varDate: begin
+            vDate := -PDate(vPointer)^;
+            vType := varDate;
+          end;
+          varOleStr: sysvarfromreal(v, -VariantToDouble(TVarData(v)));
+          varBoolean: begin
+            vSmallInt := BoolMap[PWordBool(vPointer)^];
+            vType := varSmallInt;
+          end;
+          varShortInt: begin
+            vShortInt := -PShortInt(vPointer)^;
+            vType := varShortInt;
+          end;
+          varByte: begin
+            vSmallInt := -PByte(vPointer)^;
+            vType := varSmallInt;
+          end;
+          varWord: begin
+            vInteger := -PWord(vPointer)^;
+            vType := varInteger;
+          end;
+          varLongWord:
+            if PLongWord(vPointer)^ and $80000000 <> 0 then begin
+              vInt64 := -PLongWord(vPointer)^;
+              vType := varInt64;
+            end else begin
+              vInteger := -PLongWord(vPointer)^;
+              vType := varInteger;
+            end;
+          varInt64: begin
+            vInt64 := -PInt64(vPointer)^;
+            vType := varInt64;
+          end;
+          varQWord: begin
+            if PQWord(vPointer)^ and $8000000000000000 <> 0 then
+              VarRangeCheckError(varQWord, varInt64);
+            vInt64 := -PQWord(vPointer)^;
+            vType := varInt64;
+          end;
+          varVariant:
+            v := -Variant(PVarData(vPointer)^);
+        else {case vType and varTypeMask of}
+          DoVarNegComplex(TVarData(v));
+        end {case vType and varTypeMask of}
+      else {if (vType and not varTypeMask) = varByRef}
+        DoVarNegComplex(TVarData(v));
+    end; {case vType of}
+  end; {with TVarData(v) do case vType of}
+end;
+
+procedure DoVarNotAny(var v: TVarData);
+begin
+  VarInvalidOp(v.vType, opNot);
+end;
+
+procedure DoVarNotOrdinal(var v: TVarData);
+var
+  i: Int64;
+begin
+  { only called for types that do no require finalization }
+  i := VariantToInt64(v);
+  with v do
+    if (i < Low(Integer)) or (i > High(Integer)) then begin
+      vInt64 := not i;
+      vType := varInt64;
+    end else begin
+      vInteger := not Integer(i);
+      vType := varInteger;
+    end
+end;
+
+procedure DoVarNotWStr(var v: TVarData; const p: Pointer);
+var
+  i: Int64;
+  e: Word;
+  b: Boolean;
+begin
+  Val(WideString(p), i, e);
+  with v do
+    if e = 0 then begin
+      DoVarClearIfComplex(v);
+      if (i < Low(Integer)) or (i > High(Integer)) then begin
+        vInt64 := not i;
+        vType := varInt64;
+      end else begin
+        vInteger := not Integer(i);
+        vType := varInteger;
+      end
+    end else begin
+      if not TryStrToBool(WideString(p), b) then
+        VarInvalidOp(vType, opNot);
+      DoVarClearIfComplex(v);
+      vBoolean := not b;
+      vType := varBoolean;
+    end;
+end;
+
+procedure DoVarNotLStr(var v: TVarData; const p: Pointer);
+var
+  i: Int64;
+  e: Word;
+  b: Boolean;
+begin
+  Val(AnsiString(p), i, e);
+  with v do
+    if e = 0 then begin
+      DoVarClearIfComplex(v);
+      if (i < Low(Integer)) or (i > High(Integer)) then begin
+        vInt64 := not i;
+        vType := varInt64;
+      end else begin
+        vInteger := not Integer(i);
+        vType := varInteger;
+      end
+    end else begin
+      if not TryStrToBool(AnsiString(p), b) then
+        VarInvalidOp(v.vType, opNot);
+      DoVarClearIfComplex(v);
+      vBoolean := not b;
+      vType := varBoolean;
+    end;
+end;
+
+procedure DoVarNotComplex(var v: TVarData);
+begin
+  { custom variant support ?}
+  VarInvalidOp(v.vType, opNot);
+end;
+
+>>>>>>> origin/fixes_2_2
 procedure sysvarnot(var v: Variant);
 begin
   with TVarData(v) do case vType of
@@ -3119,6 +4164,7 @@ begin
     finally
       VarResultCheck(SafeArrayUnaccessData(arr));
     end;
+<<<<<<< HEAD
   end;
   VariantClear(VArray);
 end;
@@ -3371,6 +4417,177 @@ begin
   SysVarFromIntf(Variant(aDest), Intf);
 end;
 
+=======
+  end;
+  VariantClear(VArray);
+end;
+
+procedure DoVarClearComplex(var v : TVarData);
+var
+  Handler : TCustomVariantType;
+begin
+  with v do
+    if vType < varInt64 then
+      VarResultCheck(VariantClear(v))
+    else if vType = varString then begin
+      AnsiString(vString) := '';
+      vType := varEmpty
+    end else if vType = varAny then
+      ClearAnyProc(v)
+    else if vType and varArray <> 0 then
+      DoVarClearArray(v)
+    else if FindCustomVariantType(vType, Handler) then
+      Handler.Clear(v)
+    else begin
+      { ignore errors, if the OS doesn't know how to free it, we don't either }
+      VariantClear(v);
+      vType := varEmpty;
+    end;
+end;
+
+type
+  TVarArrayCopyCallback = procedure(var aDest: TVarData; const aSource: TVarData);
+
+procedure DoVarCopyArray(var aDest: TVarData; const aSource: TVarData; aCallback: TVarArrayCopyCallback);
+var
+  SourceArray : PVarArray;
+  SourcePtr   : Pointer;
+  DestArray   : PVarArray;
+  DestPtr     : Pointer;
+
+  Bounds      : array[0..63] of TVarArrayBound;
+  Iterator    : TVariantArrayIterator;
+
+  Dims        : Integer;
+  HighBound   : Integer;
+  i           : Integer;
+begin
+  with aSource do begin
+    if vType and varArray = 0 then
+      VarResultCheck(VAR_INVALIDARG);
+
+    if (vType and varTypeMask) = varVariant then begin
+
+      if (vType and varByRef) <> 0 then
+        SourceArray := PVarArray(vPointer^)
+      else
+        SourceArray := vArray;
+
+      Dims := SourceArray^.DimCount;
+      for i := 0 to Pred(Dims) do
+        with Bounds[i] do begin
+          VarResultCheck(SafeArrayGetLBound(SourceArray, Succ(i), LowBound));
+          VarResultCheck(SafeArrayGetUBound(SourceArray, Succ(i), HighBound));
+          ElementCount := HighBound - LowBound + 1;
+        end;
+
+      DestArray := SafeArrayCreate(varVariant, Dims, PVarArrayBoundArray(@Bounds)^);
+      if not Assigned(DestArray) then
+        VarArrayCreateError;
+
+      DoVarClearIfComplex(aDest);
+      with aDest do begin
+        vType := varVariant or varArray;
+        vArray := DestArray;
+      end;
+
+      Iterator.Init(Dims, @Bounds);
+      try
+        if not(Iterator.AtEnd) then
+          repeat
+            VarResultCheck(SafeArrayPtrOfIndex(SourceArray, Iterator.Coords, SourcePtr));
+            VarResultCheck(SafeArrayPtrOfIndex(DestArray, Iterator.Coords, DestPtr));
+            aCallback(PVarData(DestPtr)^, PVarData(SourcePtr)^);
+          until not Iterator.Next;
+      finally
+        Iterator.Done;
+      end;
+
+    end else
+      VarResultCheck(VariantCopy(aDest, aSource));
+  end;
+end;
+
+procedure DoVarCopyComplex(var Dest: TVarData; const Source: TVarData);
+var
+  Handler: TCustomVariantType;
+begin
+  DoVarClearIfComplex(Dest);
+
+  with Source do
+    if vType < varInt64 then
+      VarResultCheck(VariantCopy(Dest, Source))
+    else if vType = varString then begin
+      Dest.vType := varString;
+      Dest.vString := nil;
+      AnsiString(Dest.vString) := AnsiString(vString);
+    end else if vType = varAny then begin
+      Dest := Source;
+      RefAnyProc(Dest);
+    end else if vType and varArray <> 0 then
+      DoVarCopyArray(Dest, Source, @DoVarCopy)
+    else if FindCustomVariantType(vType, Handler) then
+      Handler.Copy(Dest, Source, False)
+    else
+      VarResultCheck(VariantCopy(Dest, Source));
+end;
+
+procedure DoVarCopy(var Dest : TVarData; const Source : TVarData);
+begin
+  if @Dest <> @Source then
+    if (Source.vType and varComplexType) = 0 then begin
+      DoVarClearIfComplex(Dest);
+      Dest := Source;
+    end else
+      DoVarCopyComplex(Dest, Source);
+end;
+
+procedure sysvarcopy (var Dest : Variant; const Source : Variant);
+begin
+  DoVarCopy(TVarData(Dest),TVarData(Source));
+end;
+
+procedure DoVarAddRef(var v : TVarData); inline;
+var
+  Dummy : TVarData;
+begin
+  Dummy := v;
+  v.vType := varEmpty;
+  DoVarCopy(v, Dummy);
+end;
+
+procedure sysvaraddref(var v : Variant);
+begin
+  DoVarAddRef(TVarData(v));
+end;
+
+procedure DoVarCastWStr(var aDest : TVarData; const aSource : TVarData);
+begin
+  SysVarFromWStr(Variant(aDest), VariantToWideString(aSource));
+end;
+
+procedure DoVarCastLStr(var aDest : TVarData; const aSource : TVarData);
+begin
+  SysVarFromLStr(Variant(aDest), VariantToAnsiString(aSource));
+end;
+
+procedure DoVarCastDispatch(var aDest : TVarData; const aSource : TVarData);
+var
+  Disp: IDispatch;
+begin
+  SysVarToDisp(Disp, Variant(aSource));
+  SysVarFromDisp(Variant(aDest), Disp);
+end;
+
+procedure DoVarCastInterface(var aDest : TVarData; const aSource : TVarData);
+var
+  Intf: IInterface;
+begin
+  SysVarToIntf(Intf, Variant(aSource));
+  SysVarFromIntf(Variant(aDest), Intf);
+end;
+
+>>>>>>> origin/fixes_2_2
 procedure DoVarCastAny(var aDest : TVarData; const aSource : TVarData; aVarType : LongInt);
 begin
   VarCastError(aSource.vType, aVarType)
@@ -3443,6 +4660,7 @@ begin
         end;
       end;
     end;
+<<<<<<< HEAD
 
 end;
 
@@ -3541,9 +4759,19 @@ begin
   sysvarfromwstr(Variant(TVarData(Dest)), Source);
 end;
 >>>>>>> graemeg/fixes_2_2
+=======
 
 end;
 
+procedure sysvarcast (var aDest : Variant; const aSource : Variant; aVarType : LongInt);
+begin
+  DoVarCast(TVarData(aDest), TVarData(aSource), aVarType);
+end;
+>>>>>>> origin/fixes_2_2
+
+end;
+
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure sysvarcast (var aDest : Variant; const aSource : Variant; aVarType : LongInt);
 begin
@@ -3553,6 +4781,13 @@ procedure sysolevarfromlstr(var Dest : olevariant; const Source : AnsiString);
 begin
   sysvarfromwstr(Variant(TVarData(Dest)), Source);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure sysvarfromdynarray(var Dest : Variant; const Source : Pointer; TypeInfo: Pointer);
+begin
+  DynArrayToVariant(Dest,Source,TypeInfo);
+  if VarIsEmpty(Dest) then
+    VarCastError;
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure DoOleVarFromAny(var aDest : TVarData; const aSource : TVarData);
@@ -3560,6 +4795,7 @@ begin
   VarCastErrorOle(aSource.vType);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure sysvarfromdynarray(var Dest : Variant; const Source : Pointer; TypeInfo: Pointer);
 begin
@@ -3570,11 +4806,25 @@ end;
 
 
 procedure sysolevarfrompstr(var Dest : olevariant; const Source : ShortString);
+=======
+procedure sysolevarfrompstr(var Dest : olevariant; const Source : ShortString);
 begin
   sysvarfromwstr(Variant(TVarData(Dest)), Source);
 end;
 
 
+procedure sysolevarfromlstr(var Dest : olevariant; const Source : AnsiString);
+>>>>>>> origin/fixes_2_2
+begin
+  sysvarfromwstr(Variant(TVarData(Dest)), Source);
+end;
+
+procedure DoOleVarFromAny(var aDest : TVarData; const aSource : TVarData);
+begin
+  VarCastErrorOle(aSource.vType);
+end;
+
+<<<<<<< HEAD
 procedure sysolevarfromlstr(var Dest : olevariant; const Source : AnsiString);
 begin
   sysvarfromwstr(Variant(TVarData(Dest)), Source);
@@ -3587,6 +4837,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 procedure DoOleVarFromVar(var aDest : TVarData; const aSource : TVarData);
 var
   Handler: TCustomVariantType;
@@ -3602,6 +4854,7 @@ begin
           if vLongWord and $80000000 = 0 then
             DoVarCast(aDest, aSource, varInteger)
           else
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifndef FPUNONE}
             if OleVariantInt64AsDouble then
@@ -3630,6 +4883,8 @@ begin
           else
             DoVarCast(aDest, aSource, varInteger);
 =======
+=======
+>>>>>>> origin/fixes_2_2
             if OleVariantInt64AsDouble then
               DoVarCast(aDest, aSource, varDouble)
             else
@@ -3650,7 +4905,10 @@ begin
               DoVarCast(aDest, aSource, varInt64)
           else
             DoVarCast(aDest, aSource, varInteger);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         varString:
           DoVarCast(aDest, aSource, varOleStr);
         varAny:
@@ -3769,19 +5027,26 @@ begin
       else
         p:=src.vArray;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifopt r+}
 {$define rangeon}
 {$r-}
 {$endif}
+=======
+
+>>>>>>> origin/fixes_2_2
       if highbound<p^.Bounds[p^.dimcount-1].LowBound-1 then
         VarInvalidArgError;
 
       newbounds.LowBound:=p^.Bounds[p^.dimcount-1].LowBound;
+<<<<<<< HEAD
 {$ifdef rangon}
 {$undef rangeon}
 {$r+}
 {$endif}
+=======
+>>>>>>> origin/fixes_2_2
       newbounds.ElementCount:=highbound-newbounds.LowBound+1;
 
       VarResultCheck(SafeArrayRedim(p,newbounds));
@@ -3800,6 +5065,7 @@ begin
     p := PVarData(p^.vPointer);
   Result := p^.vType;
 end;
+<<<<<<< HEAD
 
 =======
 
@@ -3886,6 +5152,10 @@ begin
 
   valuevtype:=getfinalvartype(TVarData(value));
 =======
+=======
+
+
+>>>>>>> origin/fixes_2_2
 function sysvararrayget(const a : Variant;indexcount : SizeInt;indices : psizeint) : Variant;cdecl;
 var
   src : TVarData;
@@ -3925,7 +5195,10 @@ begin
   else
     VarInvalidArgError(src.vType);
 end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   if not(VarTypeIsValidElementType(valuevtype)) and
     { varString isn't a valid varArray type but it is converted
@@ -3934,7 +5207,10 @@ end;
     VarCastError(valuevtype,Dest.vType);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 procedure sysvararrayput(var a : Variant; const value : Variant;indexcount : SizeInt;indices : psizeint);cdecl;
 var
   Dest : TVarData;
@@ -3958,7 +5234,10 @@ begin
     (valuevtype<>varString) then
     VarCastError(valuevtype,Dest.vType);
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   if (Dest.vType and varArray)<>0 then
     begin
       { get Pointer to the array }
@@ -3988,11 +5267,16 @@ begin
       else
         begin
 <<<<<<< HEAD
+<<<<<<< HEAD
           VarCast(tempvar,value,arrayelementtype);
 =======
           GetVariantManager(variantmanager);
           variantmanager.varcast(tempvar,value,arrayelementtype);
 >>>>>>> graemeg/fixes_2_2
+=======
+          GetVariantManager(variantmanager);
+          variantmanager.varcast(tempvar,value,arrayelementtype);
+>>>>>>> origin/fixes_2_2
           if arrayelementtype in [varOleStr,varDispatch,varUnknown] then
             VarResultCheck(SafeArrayPutElement(p,PVarArrayCoorArray(indices),TVarData(tempvar).vPointer))
           else
@@ -4006,10 +5290,14 @@ end;
 
 { import from system unit }
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure fpc_Write_Text_AnsiStr (Len : LongInt; Var f : Text; S : RawByteString); external name 'FPC_WRITE_TEXT_ANSISTR';
 =======
 Procedure fpc_Write_Text_AnsiStr (Len : LongInt; Var f : Text; S : AnsiString); external name 'FPC_WRITE_TEXT_ANSISTR';
 >>>>>>> graemeg/fixes_2_2
+=======
+Procedure fpc_Write_Text_AnsiStr (Len : LongInt; Var f : Text; S : AnsiString); external name 'FPC_WRITE_TEXT_ANSISTR';
+>>>>>>> origin/fixes_2_2
 
 
 function syswritevariant(var t : text; const v : Variant;width : LongInt) : Pointer;
@@ -4115,6 +5403,7 @@ function VarType(const V: Variant): TVarType;
 
 begin
   Result:=TVarData(V).vType;
+<<<<<<< HEAD
 end;
 
 
@@ -4136,16 +5425,38 @@ end;
 function VarTypeDeRef(const V: TVarData): TVarType;
 begin
   Result := VarTypeDeRef(Variant(v));
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 =======
 
+<<<<<<< HEAD
+=======
+function VarTypeDeRef(const V: Variant): TVarType;
+var
+  p: PVarData;
+begin
+  p := @TVarData(V);
+  Result := p^.vType and not varByRef;
+  while Result = varVariant do begin
+    p := p^.vPointer;
+    if not Assigned(p) then
+      VarBadTypeError;
+    Result := p^.vType and not varByRef;
+  end;
+end;
+
+>>>>>>> origin/fixes_2_2
 function VarTypeDeRef(const V: TVarData): TVarType;
 begin
   Result := VarTypeDeRef(Variant(v));
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function VarAsType(const V: Variant; aVarType: TVarType): Variant;
 
 begin
@@ -4171,6 +5482,7 @@ begin
   Result:=False;
   While Not Result and (I<=High(AVarTypes)) do
 <<<<<<< HEAD
+<<<<<<< HEAD
     begin
       Result:=((TVarData(V).vType and varTypeMask)=AVarTypes[I]);
       inc(i);
@@ -4178,6 +5490,9 @@ begin
 =======
     Result:=((TVarData(V).vType and varTypeMask)=AVarTypes[I]);
 >>>>>>> graemeg/fixes_2_2
+=======
+    Result:=((TVarData(V).vType and varTypeMask)=AVarTypes[I]);
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -4227,6 +5542,7 @@ Var
 begin
   VT:=TVarData(V).vType and varTypeMask;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if VT<CFirstUserType then
     Result:=(VT=varEmpty) or
             (((VT=varDispatch) or (VT=varUnknown))
@@ -4238,6 +5554,11 @@ begin
           (((VT=varDispatch) or (VT=varUnknown))
            and (TVarData(V).vDispatch=Nil));
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=(VT=varEmpty) or
+          (((VT=varDispatch) or (VT=varUnknown))
+           and (TVarData(V).vDispatch=Nil));
+>>>>>>> origin/fixes_2_2
 end;
 
 
@@ -4644,6 +5965,7 @@ function VarIsArray(const A: Variant): Boolean;
 function VarTypeIsValidArrayType(const aVarType: TVarType): Boolean;
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result:=aVarType in [varSmallInt,varInteger,
 {$ifndef FPUNONE}
       varSingle,varDouble,varDate,
@@ -4653,6 +5975,10 @@ function VarTypeIsValidArrayType(const aVarType: TVarType): Boolean;
     Result:=aVarType in [varSmallInt,varInteger,varSingle,varDouble,
       varCurrency,varDate,varOleStr,varDispatch,varError,varBoolean,
 >>>>>>> graemeg/fixes_2_2
+=======
+    Result:=aVarType in [varSmallInt,varInteger,varSingle,varDouble,
+      varCurrency,varDate,varOleStr,varDispatch,varError,varBoolean,
+>>>>>>> origin/fixes_2_2
       varVariant,varUnknown,varShortInt,varByte,varWord,varLongWord];
   end;
 
@@ -4662,6 +5988,7 @@ function VarTypeIsValidElementType(const aVarType: TVarType): Boolean;
     customvarianttype : TCustomVariantType;
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result:=((aVarType and not(varByRef) and not(varArray)) in [varEmpty,varNull,varSmallInt,varInteger,
 {$ifndef FPUNONE}
       varSingle,varDouble,varDate,
@@ -4670,6 +5997,8 @@ function VarTypeIsValidElementType(const aVarType: TVarType): Boolean;
       varVariant,varUnknown,varShortInt,varByte,varWord,varLongWord,varInt64]) or
     FindCustomVariantType(aVarType,customvarianttype);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     if FindCustomVariantType(aVarType,customvarianttype) then
       Result:=true
     else
@@ -4724,7 +6053,10 @@ procedure DynArrayToVariant(var V: Variant; const DynArray: Pointer; TypeInfo: P
     p : Pointer;
     temp : Variant;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
     variantmanager : tvariantmanager;
 >>>>>>> graemeg/fixes_2_2
     dynarraybounds : tdynarraybounds;
@@ -4745,7 +6077,10 @@ procedure DynArrayToVariant(var V: Variant; const DynArray: Pointer; TypeInfo: P
 =======
     GetVariantManager(variantmanager);
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { retrieve Bounds array }
     Setlength(dynarraybounds,Dims);
     GetMem(vararraybounds,Dims*SizeOf(TVarArrayBound));
@@ -4775,13 +6110,17 @@ procedure DynArrayToVariant(var V: Variant; const DynArray: Pointer; TypeInfo: P
             varInteger:
               temp:=PInteger(dynarriter.data)^;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             varSingle:
               temp:=PSingle(dynarriter.data)^;
             varDouble:
               temp:=PDouble(dynarriter.data)^;
+<<<<<<< HEAD
 <<<<<<< HEAD
             varDate:
               temp:=PDouble(dynarriter.data)^;
@@ -4794,6 +6133,12 @@ procedure DynArrayToVariant(var V: Variant; const DynArray: Pointer; TypeInfo: P
             varDate:
               temp:=PDouble(dynarriter.data)^;
 >>>>>>> graemeg/fixes_2_2
+=======
+            varCurrency:
+              temp:=PCurrency(dynarriter.data)^;
+            varDate:
+              temp:=PDouble(dynarriter.data)^;
+>>>>>>> origin/fixes_2_2
             varOleStr:
               temp:=PWideString(dynarriter.data)^;
             varDispatch:
@@ -4823,10 +6168,14 @@ procedure DynArrayToVariant(var V: Variant; const DynArray: Pointer; TypeInfo: P
           end;
           dynarriter.next;
 <<<<<<< HEAD
+<<<<<<< HEAD
           VarArrayPut(V,temp,Slice(iter.Coords^,Dims));
 =======
           variantmanager.VarArrayPut(V,temp,Dims,PSizeInt(iter.Coords));
 >>>>>>> graemeg/fixes_2_2
+=======
+          variantmanager.VarArrayPut(V,temp,Dims,PSizeInt(iter.Coords));
+>>>>>>> origin/fixes_2_2
         until not(iter.next);
       finally
         iter.done;
@@ -4848,9 +6197,13 @@ procedure DynArrayFromVariant(var DynArray: Pointer; const V: Variant; TypeInfo:
     temp : Variant;
     dynarrvartype : LongInt;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     variantmanager : tvariantmanager;
 >>>>>>> graemeg/fixes_2_2
+=======
+    variantmanager : tvariantmanager;
+>>>>>>> origin/fixes_2_2
     vararraybounds : PVarArrayBoundArray;
     dynarraybounds : tdynarraybounds;
     i : SizeInt;
@@ -4883,15 +6236,20 @@ procedure DynArrayFromVariant(var DynArray: Pointer; const V: Variant; TypeInfo:
         if not iter.AtEnd then
         repeat
 <<<<<<< HEAD
+<<<<<<< HEAD
           temp:=VarArrayGet(V,Slice(iter.Coords^,VarArrayDims));
 =======
           temp:=variantmanager.VarArrayGet(V,VarArrayDims,PSizeInt(iter.Coords));
 >>>>>>> graemeg/fixes_2_2
+=======
+          temp:=variantmanager.VarArrayGet(V,VarArrayDims,PSizeInt(iter.Coords));
+>>>>>>> origin/fixes_2_2
           case dynarrvartype of
             varSmallInt:
               PSmallInt(dynarriter.data)^:=temp;
             varInteger:
               PInteger(dynarriter.data)^:=temp;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifndef FPUNONE}
 =======
@@ -4907,11 +6265,20 @@ procedure DynArrayFromVariant(var DynArray: Pointer; const V: Variant; TypeInfo:
             varCurrency:
               PCurrency(dynarriter.data)^:=temp;
 =======
+=======
+            varSingle:
+              PSingle(dynarriter.data)^:=temp;
+            varDouble:
+              PDouble(dynarriter.data)^:=temp;
+>>>>>>> origin/fixes_2_2
             varCurrency:
               PCurrency(dynarriter.data)^:=temp;
             varDate:
               PDouble(dynarriter.data)^:=temp;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             varOleStr:
               PWideString(dynarriter.data)^:=temp;
             varDispatch:
@@ -5907,7 +7274,10 @@ var
  O : Integer;
  S : String;
  B : Boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
    // find the property
@@ -5920,12 +7290,16 @@ begin
      TypeData := GetTypeData(PropInfo^.PropType);
 =======
 //     TypeData := GetTypeData(PropInfo^.PropType);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
      // call Right SetxxxProp
      case PropInfo^.PropType^.Kind of
        tkBool:
          begin
          { to support the strings 'true' and 'false' }
+<<<<<<< HEAD
 <<<<<<< HEAD
          if (VarType(Value)=varOleStr) or
             (VarType(Value)=varString) or
@@ -5945,6 +7319,10 @@ begin
          B:=Value;
          SetOrdProp(Instance, PropInfo, ord(B));
 >>>>>>> graemeg/fixes_2_2
+=======
+         B:=Value;
+         SetOrdProp(Instance, PropInfo, ord(B));
+>>>>>>> origin/fixes_2_2
          end;
        tkInteger, tkChar, tkWChar:
          begin
@@ -5961,10 +7339,14 @@ begin
        tkEnumeration :
          begin
 <<<<<<< HEAD
+<<<<<<< HEAD
          if (VarType(Value)=varOleStr) or (VarType(Value)=varString) then
 =======
          if (VarType(Value)=varOleStr) or  (VarType(Value)=varString) then
 >>>>>>> graemeg/fixes_2_2
+=======
+         if (VarType(Value)=varOleStr) or  (VarType(Value)=varString) then
+>>>>>>> origin/fixes_2_2
            begin
            S:=Value;
            SetEnumProp(Instance,PropInfo,S);
@@ -5980,10 +7362,14 @@ begin
        tkSet :
          begin
 <<<<<<< HEAD
+<<<<<<< HEAD
          if (VarType(Value)=varOleStr) or (VarType(Value)=varString) then
 =======
          if (VarType(Value)=varOleStr) or  (VarType(Value)=varString) then
 >>>>>>> graemeg/fixes_2_2
+=======
+         if (VarType(Value)=varOleStr) or  (VarType(Value)=varString) then
+>>>>>>> origin/fixes_2_2
            begin
            S:=Value;
            SetSetProp(Instance,PropInfo,S);

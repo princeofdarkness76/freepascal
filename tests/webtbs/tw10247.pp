@@ -2,6 +2,7 @@
 uses classes, sysutils;
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   generic TNode<T> = class
   public
     type
@@ -58,6 +59,8 @@ type
 >>>>>>> origin/cpstrnew
   end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
         generic TNode<T> = class
         type public
                 PT = ^T;
@@ -81,7 +84,10 @@ type
                 function GetAddr: TTNode.PT;
                 procedure SetV(v: TTNode.T);
         end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 constructor TNode.Create;
 begin
@@ -90,10 +96,14 @@ end;
 destructor TNode.Destroy;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   inherited Destroy;
 =======
         inherited Destroy;
 >>>>>>> graemeg/fixes_2_2
+=======
+        inherited Destroy;
+>>>>>>> origin/fixes_2_2
 end;
 
 constructor TContainer.Create;
@@ -114,10 +124,14 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TContainer.SetV(v: TTNode.TAlias);
 =======
 procedure TContainer.SetV(v: TTNode.T);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TContainer.SetV(v: TTNode.T);
+>>>>>>> origin/fixes_2_2
 begin
   Data.Data:=v;
 end;
@@ -129,10 +143,15 @@ var
 begin
   c:=TStringContainer.Create;
 <<<<<<< HEAD
+<<<<<<< HEAD
   c.SetV('abc');
   Writeln(HexStr(c.GetAddr));
 =======
   c.Set('abc');
   Writeln(HexStr(c.Get));
 >>>>>>> graemeg/fixes_2_2
+=======
+  c.Set('abc');
+  Writeln(HexStr(c.Get));
+>>>>>>> origin/fixes_2_2
 end.

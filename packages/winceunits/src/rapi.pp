@@ -9,10 +9,14 @@ UNIT RAPI;
 INTERFACE
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses Windows, RAPITypes;
 =======
 uses Windows;
 >>>>>>> graemeg/fixes_2_2
+=======
+uses Windows;
+>>>>>>> origin/fixes_2_2
 
 const
   FAF_ATTRIBUTES = $00000001;
@@ -344,6 +348,7 @@ type
   TDeviceToDesktop = function(DesktopLocation, TableList: String; Sync: BOOL; Overwrite: Integer; DeviceLocation: String): Longint stdcall;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   TCeRapiUninit = function : LongInt stdcall;
   TCeFindAllFiles = function(Path: PWideChar; Attr: DWORD; var Count: DWord;
     var FindData: PCe_Find_Data_array): BOOL stdcall;
@@ -355,6 +360,8 @@ function CeRapiInit: LongInt;
 function CeRapiInitEx(var RInit: TRapiInit) : LongInt;
 function CeRapiUninit: LongInt;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   TCeRapiUnInit = function : LongInt stdcall;
   TCeFindAllFiles = function(Path: PWideChar; Attr: DWORD; var Count: DWord;
     var FindData: PCe_Find_Data_array): BOOL stdcall;
@@ -363,7 +370,10 @@ function CeRapiUninit: LongInt;
 function CeRapiInit: LongInt;
 function CeRapiInitEx(var RInit: TRapiInit) : LongInt;
 function CeRapiUnInit: LongInt;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 function CeFindAllFiles(Path: PWideChar; Attr: DWORD;
   var Count: DWord; var FindData: PCe_Find_Data_array): BOOL;
 procedure RapiFreeBuffer(p: Pointer);
@@ -453,20 +463,27 @@ function DesktopToDevice(DesktopLocation, TableList: String; Sync: BOOL; Overwri
 //added 01/19/2003 - Octavio Hernandez
 function DeviceToDesktop(DesktopLocation, TableList: String; Sync: BOOL; Overwrite: Integer; DeviceLocation: String): Longint;
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CeRapiInvoke(pDllPath: LPCWSTR; pFunctionName: LPCWSTR; cbInput: DWord; pInput: PByte;
   pcbOutput: PDWord; ppOutput: PPByte; ppIRAPIStream: PIRAPIStream; dwReserved: DWord): HResult;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 IMPLEMENTATION
 
 var
   mCeRapiInit : TCeRapiInit;
 <<<<<<< HEAD
+<<<<<<< HEAD
   mCeRapiUninit : TCeRapiUninit;
 =======
   mCeRapiUnInit : TCeRapiUnInit;
 >>>>>>> graemeg/fixes_2_2
+=======
+  mCeRapiUnInit : TCeRapiUnInit;
+>>>>>>> origin/fixes_2_2
   mCeFindAllFiles: TCeFindAllFiles;
   mRapiFreeBuffer : TRapiFreeBuffer;
   mCeRapiInitEx: TCeRapiInitEx;
@@ -533,9 +550,12 @@ var
   //added 01/19/2003 - Octavio Hernandez
   mDeviceToDesktop: TDeviceToDesktop;
 <<<<<<< HEAD
+<<<<<<< HEAD
   mCeRapiInvoke: TCeRapiInvoke;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   RapiModule, AdoCEModule: THandle;
 
@@ -556,10 +576,14 @@ begin
     @mCeRapiInit := GetProcAddress(RapiModule, 'CeRapiInit');
     @mCeRapiInitEx := GetProcAddress(RapiModule, 'CeRapiInitEx');
 <<<<<<< HEAD
+<<<<<<< HEAD
     @mCeRapiUninit := GetProcAddress(RapiModule, 'CeRapiUninit');
 =======
     @mCeRapiUnInit := GetProcAddress(RapiModule, 'CeRapiUnInit');
 >>>>>>> graemeg/fixes_2_2
+=======
+    @mCeRapiUnInit := GetProcAddress(RapiModule, 'CeRapiUnInit');
+>>>>>>> origin/fixes_2_2
     @mCeFindAllFiles := GetProcAddress(RapiModule, 'CeFindAllFiles');
     @mRapiFreeBuffer := GetProcAddress(RapiModule, 'RapiFreeBuffer');
 
@@ -623,9 +647,12 @@ begin
     @mCeGlobalMemoryStatus:= GetProcAddress(RapiModule, 'CeGlobalMemoryStatus');
     @mCeGetSystemPowerStatusEx:= GetProcAddress(RapiModule, 'CeGetSystemPowerStatusEx');
 <<<<<<< HEAD
+<<<<<<< HEAD
     @mCeRapiInvoke:= GetProcAddress(RapiModule, 'CeRapiInvoke');
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   end
   else
     Result := False;
@@ -1532,6 +1559,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CeRapiInvoke(pDllPath: LPCWSTR; pFunctionName: LPCWSTR;
   cbInput: DWord; pInput: PByte; pcbOutput: PDWord; ppOutput: PPByte;
   ppIRAPIStream: PIRAPIStream; dwReserved: DWord): HResult;
@@ -1549,6 +1577,8 @@ end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 INITIALIZATION
   RapiModule := 0;
   AdoCEModule := 0;

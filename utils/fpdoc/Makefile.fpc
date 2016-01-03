@@ -9,6 +9,7 @@ name=fpdoc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
 version=2.5.1
@@ -29,6 +30,11 @@ packages=rtl fpmkunit
 version=2.2.5
 
 [require]
+=======
+version=2.2.5
+
+[require]
+>>>>>>> origin/fixes_2_2
 packages=fcl-xml fcl-passrc chm
 
 [target]
@@ -85,7 +91,10 @@ FPMAKE_OPT+=-bu
 =======
 fpdoc$(EXEEXT): fpdoc.pp dglobals.pp dwriter.pp dw_xml.pp sh_pas.pp dw_html.pp\
   dw_latex.pp dwlinear.pp dw_txt.pp dw_linrtf.pp
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 fpmake$(SRCEXEEXT): fpmake.pp
 	$(FPCFPMAKE) fpmake.pp $(FPMAKE_SKIP_CONFIG) $(addprefix -Fu,$(COMPILER_FPMAKE_UNITDIR)) $(FPCMAKEOPT) $(OPT)

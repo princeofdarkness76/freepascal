@@ -22,6 +22,7 @@ compiled and executed as tests.
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Parallel test suite runs
 ------------------------
 
@@ -37,6 +38,8 @@ Make sure to clean the test suite between two runs for the same platform.
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 Directories
 -----------
 webtbs...........Tests for web-bug-database bugs (should compile/run)
@@ -81,6 +84,7 @@ RESULT.............Exit code of execution of test expected
 TIMEOUT............Timeout indication for test in seconds (only used if
                    enabled by defining TEST_TIMEOUT)
 <<<<<<< HEAD
+<<<<<<< HEAD
 FILES..............List of files (separated by spaces) required by test,
                    will be copied to remote before execution. If TEST_DELTEMP
                    is set, all these files will be deleted after the test.
@@ -91,6 +95,8 @@ DELFILES...........List of files (separated by spaces) to be deleted after
                    of that name, using appropriate exe and dll extensions.
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 GRAPH..............Requires graph unit
 FAIL...............Compilation must fail
 RECOMPILE..........After compiling a test, recompile the test for a second
@@ -116,6 +122,7 @@ KNOWNCOMPILEERROR..Known bug, which manifest itself at compile time. To
                    be logged as a bug.
 QUICKTEST..........If set, only tests without package dependencies are executed
 <<<<<<< HEAD
+<<<<<<< HEAD
 WPOPARAS...........Parameters to be added after -OW/-Ow to perform whole
                    program optimization tests
 WPOPASSES..........Number of whole program optimization iterations to perform
@@ -125,6 +132,8 @@ WPOPASSES..........Number of whole program optimization iterations to perform
                    using somefile2 as input and somefile3 as output, etc.)
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   NOTE: A list consists of comma separated items, e. g. CPU=i386,m68k,powerpc
         No space between the elements and the comma.
@@ -136,10 +145,14 @@ Calling "make full" will perform tests in a standard manner. To have
 more control of the test process one must distinguish between:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 * Driver environment: compiler/rtl etc. to be used by the tools which
 =======
 * Driver enviroment: compiler/rtl etc. to be used by the tools which
 >>>>>>> graemeg/fixes_2_2
+=======
+* Driver enviroment: compiler/rtl etc. to be used by the tools which
+>>>>>>> origin/fixes_2_2
   runs and analyze the tests. All normal options to make, like FPC
   OS_TARGET, OPT etc. controls this.
 
@@ -164,11 +177,15 @@ TEST_VERBOSE           let dotest be more verbose, only useful for debugging
 TEST_BENCH             display compilation/execution time of each test
 =======
 TEST_VERBOSE           let dotest be more verbose, only usefull for debugging
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 TEST_DELTEMP           delete temporary executable/object/ppu file,
                        default is off
 TEST_TIMEOUT           use timeout wrapper for (remote) execution
 V                      print dotest commandline
+<<<<<<< HEAD
 <<<<<<< HEAD
 TEST_ABI               test a certain abi, this influences where the
                        c object files are taken from: TEST_ABI=eabi
@@ -178,6 +195,8 @@ CHUNKSIZE              Number of tests per chunk that can be potentially execute
                        in parallel with other chunks
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   (Please add more test options if needed)
 
@@ -210,6 +229,7 @@ TEST_DELTEMP         delete executable after running, so the remote system
                      doesn't need much free disk space
 TEST_REMOTEPW        pass a password with -pw to remote tools,
 <<<<<<< HEAD
+<<<<<<< HEAD
                      mainly useful for putty
 
 
@@ -218,6 +238,11 @@ TEST_REMOTEPW        pass a password with -pw to remote tools,
 
 
 >>>>>>> graemeg/fixes_2_2
+=======
+                     mainly usefull for putty
+
+
+>>>>>>> origin/fixes_2_2
 Examples:
 -------
   make TEST_FPC=$HOME/fpc/compiler/ppcsparc TEST_BINUTILSPREFIX=sparc-linux- \
@@ -251,6 +276,7 @@ Examples:
 Example cross testing of target Mac OS with driver Darwin
 --------------------------------------------------------
 NOTE: Today, it is possible to run the test suite Mac OS native.
+<<<<<<< HEAD
 
 A machine with both Mac OS X and classic Mac OS installed is required.
 Note that make will not run the tests.  This has to be done in MPW with the
@@ -262,6 +288,19 @@ scripts in utils/MacOS.
 To clean. Note that same options as above has to be given so that the
 correct files will be removed.
 
+=======
+
+A machine with both Mac OS X and classic Mac OS installed is required.
+Note that make will not run the tests.  This has to be done in MPW with the
+scripts in utils/MacOS.
+
+  make clean alltest TEST_OS_TARGET=MacOS TEST_OPT="-WT -st" \
+       USEUNITDIR=/Projekt/Freepascal/fpc/rtl/MacOS
+
+To clean. Note that same options as above has to be given so that the
+correct files will be removed.
+
+>>>>>>> origin/fixes_2_2
   make clean TEST_OS_TARGET=MacOS USEUNITDIR=/Projekt/Freepascal/fpc/rtl/MacOS
 
 
@@ -295,7 +334,10 @@ On Windows:
   enabled to login automatically into www.freepascal.org
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Use TEST_USE_LONGLOG=1 as make parameter to pass information
 to server using longlog file instead of the whole output.
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

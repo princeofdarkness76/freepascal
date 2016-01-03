@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 { CoreGraphics - CGSession.h
    Copyright (c) 2003-2008 Apple Inc.
    All rights reserved. }
@@ -26,6 +27,8 @@
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {
  *  CGSession.h
  *  CoreGraphics
@@ -40,7 +43,10 @@
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -50,12 +56,17 @@
 unit CGSession;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> origin/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -69,14 +80,19 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> origin/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
@@ -85,11 +101,14 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
@@ -127,6 +146,8 @@ interface
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -134,6 +155,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
@@ -363,6 +385,8 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 	{$setc TARGET_CPU_X86 := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -371,7 +395,10 @@ interface
 	{$error Neither __ppc__ nor __i386__ is defined.}
 {$endc}
 {$setc TARGET_CPU_PPC_64 := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -398,9 +425,13 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> origin/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -411,6 +442,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFDictionary,CGBase;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
@@ -436,6 +468,8 @@ function CGSessionCopyCurrentDictionary: CFDictionaryRef; external name '_CGSess
 { The session's short user name as set by the login operation, specified as
    a CFString value. }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -459,11 +493,15 @@ function CGSessionCopyCurrentDictionary: CFDictionaryRef; external name '_CGSess
 {$definec kCGSessionUserIDKey CFSTRP('kCGSSessionUserIDKey')}
 {$endc}
         { value is a CFNumber encoding a uid_t for the session's current user. }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kCGSessionUserNameKey CFSTRP('kCGSSessionUserNameKey')}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 { The set of hardware composing a console, specified as a CFNumber 32-bit
@@ -471,10 +509,14 @@ function CGSessionCopyCurrentDictionary: CFDictionaryRef; external name '_CGSess
 =======
         { value is a CFString encoding the session's short user name as set by loginwindow }
 >>>>>>> graemeg/fixes_2_2
+=======
+        { value is a CFString encoding the session's short user name as set by loginwindow }
+>>>>>>> origin/fixes_2_2
 
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kCGSessionConsoleSetKey CFSTRP('kCGSSessionConsoleSetKey')}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 { An indication of whether the session is on a console, specified as a
@@ -482,10 +524,14 @@ function CGSessionCopyCurrentDictionary: CFDictionaryRef; external name '_CGSess
 =======
         { value is a CFNumber encoding a 32 bit unsigned  integer value representing a set of hardware composing a console }
 >>>>>>> graemeg/fixes_2_2
+=======
+        { value is a CFNumber encoding a 32 bit unsigned  integer value representing a set of hardware composing a console }
+>>>>>>> origin/fixes_2_2
 
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kCGSessionOnConsoleKey CFSTRP('kCGSSessionOnConsoleKey')}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 { An indication of whether the login operation has been done, specified as
@@ -493,10 +539,14 @@ function CGSessionCopyCurrentDictionary: CFDictionaryRef; external name '_CGSess
 =======
         { value is a CFBoolean, kCFBooleanTrue if the session is on a console, otherwise kCFBooleanFalse }
 >>>>>>> graemeg/fixes_2_2
+=======
+        { value is a CFBoolean, kCFBooleanTrue if the session is on a console, otherwise kCFBooleanFalse }
+>>>>>>> origin/fixes_2_2
 
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kCGSessionLoginDoneKey CFSTRP('kCGSessionLoginDoneKey')}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 { When the GUI session on a console changes, this notification is posted
@@ -514,6 +564,8 @@ const
 end.
 {$endc} {not MACOSALLINCLUDE}
 =======
+=======
+>>>>>>> origin/fixes_2_2
         { value is a CFBoolean, kCFBooleanTrue if login operation has been done, otherwise kCFBooleanFalse }
 
 {
@@ -529,4 +581,7 @@ const
 
 
 end.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2

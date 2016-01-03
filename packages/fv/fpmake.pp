@@ -15,6 +15,7 @@ begin
     P:=AddPackage('fv');
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -34,13 +35,18 @@ begin
     P.Dependencies.add('arosunits',[aros]);
     P.Dependencies.add('amunits',[amiga]);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     P.Directory:='fv';
 {$endif ALLPACKAGES}
     P.Version:='2.2.4';
 
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     T:=P.Targets.AddUnit('app.pas');
       with T.Dependencies do
@@ -56,9 +62,12 @@ begin
           AddUnit('fvconsts');
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.ResourceStrings := True;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('asciitab.pas');
       with T.Dependencies do
         begin
@@ -70,9 +79,12 @@ begin
         end;
     T:=P.Targets.AddUnit('buildfv.pas');
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.Install := false; // Build-unit
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       with T.Dependencies do
         begin
           AddUnit('fvcommon');
@@ -121,9 +133,12 @@ begin
           AddUnit('histlist');
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.ResourceStrings := True;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('drivers.pas');
       with T.Dependencies do
         begin
@@ -146,9 +161,12 @@ begin
           AddUnit('msgbox');
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.ResourceStrings := True;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('fvcommon.pas');
       with T.Dependencies do
         begin
@@ -205,9 +223,12 @@ begin
           AddUnit('app');
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.ResourceStrings := True;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('outline.pas');
       with T.Dependencies do
         begin
@@ -240,6 +261,7 @@ begin
           AddUnit('msgbox');
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.ResourceStrings := True;
     T:=P.Targets.AddUnit('sysmsg.pas');
       with T.Dependencies do
@@ -248,11 +270,16 @@ begin
           AddInclude('w32smsg.inc',[win32,win64]);
           AddInclude('go32smsg.inc',[go32v2]);
 =======
+=======
+>>>>>>> origin/fixes_2_2
     T:=P.Targets.AddUnit('sysmsg.pas');
       with T.Dependencies do
         begin
           AddInclude('unixsmsg.inc');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
         end;
     T:=P.Targets.AddUnit('tabs.pas');
       with T.Dependencies do
@@ -297,6 +324,7 @@ begin
           AddUnit('fvconsts');
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.ExamplePath.Add('examples');
     P.ExamplePath.Add('src');
     P.Targets.AddExampleProgram('examples/testapp.pas');
@@ -308,6 +336,8 @@ begin
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ifndef ALLPACKAGES}
     Run;
     end;

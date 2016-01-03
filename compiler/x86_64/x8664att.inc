@@ -585,6 +585,7 @@
 'extrq',
 'lzcnt',
 <<<<<<< HEAD
+<<<<<<< HEAD
 'pabsb',
 'pabsw',
 'pabsd',
@@ -1073,4 +1074,7 @@
 =======
 'popcnt'
 >>>>>>> graemeg/fixes_2_2
+=======
+'popcnt'
+>>>>>>> origin/fixes_2_2
 );

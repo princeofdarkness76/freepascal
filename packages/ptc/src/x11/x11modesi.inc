@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -81,6 +82,8 @@ begin
 procedure TX11ModesNoModeSwitching.GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat);
 begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Constructor TX11Modes.Create(ADisplay : PDisplay; AScreen : cint);
 
 Begin
@@ -100,12 +103,16 @@ End;
 Procedure TX11ModesNoModeSwitching.GetModes(Var AModes : TPTCModeDynArray; ACurrentDesktopFormat : TPTCFormat);
 
 Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   SetLength(AModes, 2);
   AModes[0] := TPTCMode.Create(FWidth,
                                FHeight,
                                ACurrentDesktopFormat);
   AModes[1] := TPTCMode.Create;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -171,6 +178,8 @@ begin
   if not XRRQueryExtension(FDisplay, @dummy1, @dummy2) then
     raise TPTCError.Create('Xrandr extension not available');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure TX11ModesNoModeSwitching.SetBestMode(AWidth, AHeight : Integer);
@@ -210,13 +219,17 @@ Begin
 
   If Not XRRQueryExtension(FDisplay, @dummy1, @dummy2) Then
     Raise TPTCError.Create('Xrandr extension not available');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   XRRQueryVersion(FDisplay, @Major, @Minor); // todo: check
   LOG('Xrandr version: ' + IntToStr(Major) + '.' + IntToStr(Minor));
 
   FRoot := RootWindow(FDisplay, FScreen);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   { is this necessary? }
   CreateScreenConfig;
@@ -743,6 +756,8 @@ begin
   if FModeList <> nil then
     exit;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   FXRRConfig := XRRGetScreenInfo(FDisplay, FRoot);
   If FXRRConfig = Nil Then
     Raise TPTCError.Create('XRRGetScreenInfo failed');
@@ -832,7 +847,10 @@ Begin
   { If we have been called before, do nothing }
   If FModeList <> Nil Then
     Exit;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   { Save previous mode }
   New(FSavedMode);
@@ -841,6 +859,7 @@ Begin
 
   { Get all available video modes }
   XF86VidModeGetAllModeLines(FDisplay, FScreen, @FModeListCount, @FModeList);
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -907,6 +926,8 @@ begin
     if (FModeList[I]^.hdisplay >= AWidth) and (FModeList[I]^.vdisplay = AHeight) then
       exit(I);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 End;
 
 Procedure TX11ModesXF86VidMode.GetModes(Var AModes : TPTCModeDynArray; ACurrentDesktopFormat : TPTCFormat);
@@ -946,12 +967,16 @@ Begin
   For I := 0 To FModeListCount - 1 Do
     If (FModeList[I]^.hdisplay >= AWidth) And (FModeList[I]^.vdisplay = AHeight) Then
       Exit(I);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   { Finally, find the mode that is bigger than the requested one and makes }
   { the least difference }
   found_mode := -1;
   min_diff := High(Integer);
+<<<<<<< HEAD
 <<<<<<< HEAD
   for I := 0 to FModeListCount - 1 do
     if (FModeList[I]^.hdisplay >= AWidth) and (FModeList[I]^.vdisplay >= AHeight) then
@@ -981,6 +1006,8 @@ begin
   if not XF86VidModeSwitchToMode(FDisplay, FScreen, FModeList[BestMode]) then
     raise TPTCError.Create('Error switching to the requested video mode');
 =======
+=======
+>>>>>>> origin/fixes_2_2
   For I := 0 To FModeListCount - 1 Do
     If (FModeList[I]^.hdisplay >= AWidth) And (FModeList[I]^.vdisplay >= AHeight) Then
     Begin
@@ -1010,12 +1037,16 @@ Begin
   BestMode := FindNumberOfBestMode(AWidth, AHeight);
   If Not XF86VidModeSwitchToMode(FDisplay, FScreen, FModeList[BestMode]) Then
     Raise TPTCError.Create('Error switching to the requested video mode');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   FWidth := FModeList[BestMode]^.hdisplay;
   FHeight := FModeList[BestMode]^.vdisplay;
 
   XWarpPointer(FDisplay, None, RootWindow(FDisplay, FScreen), 0, 0, 0, 0,
+<<<<<<< HEAD
 <<<<<<< HEAD
                FWidth div 2,
                FHeight div 2);
@@ -1031,6 +1062,8 @@ begin
   if FSavedMode <> nil then
   begin
 =======
+=======
+>>>>>>> origin/fixes_2_2
                FWidth Div 2,
                FHeight Div 2);
 
@@ -1046,7 +1079,10 @@ Var
 Begin
   If FSavedMode <> Nil Then
   Begin
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     {FSavedMode is a TXF86VidModeModeLine, but XF86VidModeSwitchToMode wants a
                      TXF86VidModeModeInfo :}
     FillChar(ModeInfo, SizeOf(ModeInfo), 0);
@@ -1065,6 +1101,7 @@ Begin
 
     XF86VidModeSwitchToMode(FDisplay, FScreen, @ModeInfo);
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
 end;
 
@@ -1078,6 +1115,8 @@ begin
   Result := FHeight;
 end;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   End;
 End;
 
@@ -1092,5 +1131,8 @@ Function TX11ModesXF86VidMode.GetHeight : Integer;
 Begin
   Result := FHeight;
 End;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF ENABLE_X11_EXTENSION_XF86VIDMODE}

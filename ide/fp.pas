@@ -54,11 +54,14 @@ uses
   dpmiexcp,
 {$endif go32v2}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef VESA}
   vesa,
 {$endif VESA}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   keyboard,video,mouse,
 {$ifdef HasSignal}
   fpcatch,
@@ -368,6 +371,7 @@ procedure InitCompilerSwitches;
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF HASAMIGA}
 procedure SetAmigaWindowTitle;
 begin
@@ -380,6 +384,9 @@ end;
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 {The square bullet needs an MS-DOS code page. On Unix it is for sure the code
  page is not available before video is initialized. (And only in certain
  circumstances after that, so, use a plain ascii character as bullet on Unix.)}

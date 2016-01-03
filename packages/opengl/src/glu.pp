@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {
    * SGI FREE SOFTWARE LICENSE B (Version 2.0, Sept. 18, 2008)
    * Copyright (C) 1991-2000 Silicon Graphics, Inc. All Rights Reserved.
@@ -32,6 +33,8 @@
 =======
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {
 
   Adaption of the delphi3d.net OpenGL units to FreePascal
@@ -87,6 +90,7 @@ Abstract:
 {******************************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {******************************************************************************}
 {  									       }
@@ -114,6 +118,10 @@ Abstract:
 {$MACRO ON}
 {$MODE Delphi}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$MACRO ON}
+{$MODE Delphi}
+>>>>>>> origin/fixes_2_2
 {$IFDEF Windows}
   {$DEFINE extdecl := stdcall}
 {$ELSE}
@@ -125,6 +133,7 @@ Abstract:
 {$DEFINE GLU_UNIT}
 {$ENDIF}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 unit glu;
 interface
@@ -142,11 +151,16 @@ interface
 }
     
 =======
+=======
+>>>>>>> origin/fixes_2_2
 unit GLu;
 
 interface
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 uses
   SysUtils,
   {$IFDEF Windows}
@@ -158,6 +172,7 @@ uses
   {$ENDIF}
   GL;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Const
 {$IFDEF Windows}
@@ -396,6 +411,8 @@ Type
   _GLUfuncptr = procedure ;extdecl;
   TCallback   =  _GLUfuncptr;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 type
   TViewPortArray = array [0..3] of GLint;
   T16dArray = array [0..15] of GLdouble;
@@ -424,7 +441,10 @@ type
   TGLUquadricObj = GLUquadricObj;
   TGLUtesselatorObj = GLUtesselatorObj;
   TGLUtriangulatorObj = GLUtriangulatorObj;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$IFDEF MORPHOS}
 
@@ -433,6 +453,7 @@ type
 {$INCLUDE tinyglh.inc}
 
 {$ELSE MORPHOS}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 var
@@ -539,6 +560,8 @@ var
 
 implementation
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var
   gluErrorString: function(errCode: GLenum): PChar; extdecl;
   gluErrorUnicodeStringEXT: function(errCode: GLenum): PWideChar; extdecl;
@@ -815,7 +838,10 @@ procedure FreeGLu;
 
 implementation
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$IFDEF MORPHOS}
 
 { MorphOS GL works differently due to different dynamic-library handling on Amiga-like }
@@ -823,6 +849,7 @@ implementation
 {$INCLUDE tinygl.inc}
 
 {$ELSE MORPHOS}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   uses
@@ -972,6 +999,8 @@ initialization
   LoadGLu(GLU_LIB);
 =======
 =======
+=======
+>>>>>>> origin/fixes_2_2
 uses
   dynlibs;
 
@@ -1125,7 +1154,10 @@ end;
 {$ENDIF MORPHOS}
 
 initialization
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
   {$IFDEF Windows}
   LoadGLu('glu32.dll');
@@ -1134,15 +1166,19 @@ initialization
   LoadGLu('/System/Library/Frameworks/OpenGL.framework/Libraries/libGLU.dylib');
   {$else}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$IFDEF haiku}
   LoadGLu('libGLU.so');
   {$ELSE}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   {$ifndef MorphOS}
   LoadGLu('libGLU.so.1');
   {$endif}
   {$ENDIF}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$ENDIF}
   {$endif}
@@ -1152,11 +1188,16 @@ finalization
   Freeglu;
 {$ENDIF MORPHOS}
 =======
+=======
+>>>>>>> origin/fixes_2_2
   {$endif}
 
 finalization
 
   FreeGLu;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end.

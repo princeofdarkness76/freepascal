@@ -7,10 +7,14 @@ unit cp866;
 
   uses
 <<<<<<< HEAD
+<<<<<<< HEAD
      {$ifdef VER2_2}ccharset{$else VER2_2}charset{$endif VER2_2};
 =======
      charset;
 >>>>>>> graemeg/fixes_2_2
+=======
+     charset;
+>>>>>>> origin/fixes_2_2
 
   const
      map : array[0..255] of tunicodecharmapping = (
@@ -274,11 +278,15 @@ unit cp866;
 
      unicodemap : tunicodemap = (
 <<<<<<< HEAD
+<<<<<<< HEAD
        cpname : 'cp866'; 
        cp : 866;     
 =======
        cpname : 'cp866';
 >>>>>>> graemeg/fixes_2_2
+=======
+       cpname : 'cp866';
+>>>>>>> origin/fixes_2_2
        map : @map;
        lastchar : 255;
        next : nil;

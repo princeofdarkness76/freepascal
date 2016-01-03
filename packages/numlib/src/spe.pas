@@ -1280,6 +1280,7 @@ const ErrorS : array[400..408,1..6] of char =
       'spelga');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //var ErrFil : text;
 
 begin
@@ -1293,6 +1294,8 @@ begin
        end;
 //     Close(ErrFil)
 =======
+=======
+>>>>>>> origin/fixes_2_2
 var ErrFil : text;
 
 begin
@@ -1305,7 +1308,10 @@ begin
          ExitCode := 201
        end;
      Close(ErrFil)
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 begin

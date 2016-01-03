@@ -51,7 +51,10 @@ unit sysinitgprof;
     procedure CMainDLL;cdecl;forward;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
     const
       STD_INPUT_HANDLE = dword(-10);
 
@@ -62,15 +65,21 @@ unit sysinitgprof;
     function DLL_entry(const info : TEntryInformation) : longbool; external name '_FPC_DLL_Entry';
     procedure PascalMain;stdcall;external name 'PASCALMAIN';
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure asm_exit;stdcall;public name 'asm_exit';
       begin
         _mcleanup;
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$i sysinit.inc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
     procedure SetupEntryInformation;
       begin
@@ -81,7 +90,10 @@ unit sysinitgprof;
         EntryInformation.valgrind_used:=valgrind_used;
       end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     procedure EXEgmon_start;
       begin
@@ -113,6 +125,7 @@ unit sysinitgprof;
         __main;
         SetupEntryInformation;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_USE_TLS_DIRECTORY}
         LinkIn(@tlsdir,@tls_callback_end,@tls_callback);
 {$endif}
@@ -120,6 +133,9 @@ unit sysinitgprof;
 =======
         EXE_Entry(EntryInformation);
 >>>>>>> graemeg/fixes_2_2
+=======
+        EXE_Entry(EntryInformation);
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -133,10 +149,14 @@ unit sysinitgprof;
         __main;
         SetupEntryInformation;
 <<<<<<< HEAD
+<<<<<<< HEAD
         DLL_Entry(SysInitEntryInformation);
 =======
         DLL_Entry(EntryInformation);
 >>>>>>> graemeg/fixes_2_2
+=======
+        DLL_Entry(EntryInformation);
+>>>>>>> origin/fixes_2_2
       end;
 
 
@@ -195,6 +215,7 @@ unit sysinitgprof;
 
 {$warnings off}
 <<<<<<< HEAD
+<<<<<<< HEAD
     {$linklib c}
     {$linklib gmon}
     {$linklib cygwin}
@@ -202,11 +223,16 @@ unit sysinitgprof;
     {$linklib kernel32}
     {$linklib gcc}
 =======
+=======
+>>>>>>> origin/fixes_2_2
     {$linklib gmon}
     {$linklib gcc}
     {$linklib cygwin}
     {$linklib user32}
     {$linklib kernel32}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 end.

@@ -439,10 +439,14 @@ const
   SYS_WIN32 = $00000001;
   SYS_MAC = $00000002;
 <<<<<<< HEAD
+<<<<<<< HEAD
   SYS_WIN64 = $00000003;
 =======
   SYS_WIN64 = $00000001;
 >>>>>>> graemeg/fixes_2_2
+=======
+  SYS_WIN64 = $00000001;
+>>>>>>> origin/fixes_2_2
 
 // Constants for enum __MIDL___MIDL_itf_ads_0120_0001
 type
@@ -1199,10 +1203,14 @@ type
 
   {$IFNDEF JWA_INCLUDEMODE}
 <<<<<<< HEAD
+<<<<<<< HEAD
   ULONG_PTR = PtrUint;
 =======
   ULONG_PTR = LongWord;
 >>>>>>> graemeg/fixes_2_2
+=======
+  ULONG_PTR = LongWord;
+>>>>>>> origin/fixes_2_2
   {$ENDIF JWA_INCLUDEMODE}
 
   tagIDLDESC = packed record

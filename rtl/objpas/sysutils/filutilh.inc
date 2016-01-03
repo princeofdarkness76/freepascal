@@ -180,9 +180,12 @@ Function FileSeek (Handle : THandle; FOffset: Int64; Origin: Longint) : Int64;
 Procedure FileClose (Handle : THandle);
 Function FileTruncate (Handle : THandle;Size: Int64) : boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function FindNext (Var Rslt : TRawByteSearchRec) : Longint;
 Procedure FindClose (Var F : TRawByteSearchrec);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function FileAge (Const FileName : String): Longint;
 Function FileExists (Const FileName : String) : Boolean;
 Function DirectoryExists (Const Directory : String) : Boolean;

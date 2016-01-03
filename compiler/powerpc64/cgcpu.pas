@@ -140,8 +140,14 @@ type
       len: aint); override;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     procedure g_external_wrapper(list: TAsmList; pd: TProcDef; const externalname: string); override;
+=======
+    procedure g_external_wrapper(list: TAsmList; pd: TProcDef; const externalname: string); override;
+
+  private
+>>>>>>> origin/fixes_2_2
 
 >>>>>>> graemeg/fixes_2_2
   private
@@ -306,10 +312,14 @@ begin
   if (target_info.system <> system_powerpc64_darwin) then
     // r13 is tls, do not use, r2 is not available
 <<<<<<< HEAD
+<<<<<<< HEAD
     rg[R_INTREGISTER] := trgintcpu.create(R_INTREGISTER, R_SUBWHOLE,
 =======
     rg[R_INTREGISTER] := trgcpu.create(R_INTREGISTER, R_SUBWHOLE,
 >>>>>>> graemeg/fixes_2_2
+=======
+    rg[R_INTREGISTER] := trgcpu.create(R_INTREGISTER, R_SUBWHOLE,
+>>>>>>> origin/fixes_2_2
       [{$ifdef user0} RS_R0, {$endif} RS_R3, RS_R4, RS_R5, RS_R6, RS_R7, RS_R8,
        RS_R9, RS_R10, RS_R11, RS_R12, RS_R31, RS_R30, RS_R29,
        RS_R28, RS_R27, RS_R26, RS_R25, RS_R24, RS_R23, RS_R22,
@@ -320,16 +330,22 @@ begin
     rg[R_INTREGISTER] := trgintcpu.create(R_INTREGISTER, R_SUBWHOLE,
       [{$ifdef user0} RS_R0, {$endif} RS_R2, RS_R3, RS_R4, RS_R5, RS_R6, RS_R7, RS_R8,
 <<<<<<< HEAD
+<<<<<<< HEAD
        RS_R9, RS_R10, RS_R11, RS_R12, RS_R31, RS_R30, RS_R29,
        RS_R28, RS_R27, RS_R26, RS_R25, RS_R24, RS_R23, RS_R22,
        RS_R21, RS_R20, RS_R19, RS_R18, RS_R17, RS_R16, RS_R15,
        RS_R14], first_int_imreg, []);	
 =======
+=======
+>>>>>>> origin/fixes_2_2
         RS_R9, RS_R10, RS_R11, RS_R12, RS_R31, RS_R30, RS_R29,
         RS_R28, RS_R27, RS_R26, RS_R25, RS_R24, RS_R23, RS_R22,
        RS_R21, RS_R20, RS_R19, RS_R18, RS_R17, RS_R16, RS_R15,
        RS_R14], first_int_imreg, []);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   rg[R_FPUREGISTER] := trgcpu.create(R_FPUREGISTER, R_SUBNONE,
     [RS_F0, RS_F1, RS_F2, RS_F3, RS_F4, RS_F5, RS_F6, RS_F7, RS_F8, RS_F9,
      RS_F10, RS_F11, RS_F12, RS_F13, RS_F31, RS_F30, RS_F29, RS_F28, RS_F27,
@@ -478,10 +494,14 @@ procedure tcgppc.a_call_name(list: TAsmList; const s: string; weak: boolean);
 begin
     if (target_info.system <> system_powerpc64_darwin) then
 <<<<<<< HEAD
+<<<<<<< HEAD
       a_call_name_direct(list, A_BL, s, weak, target_info.system=system_powerpc64_aix, true)
 =======
       a_call_name_direct(list, s, false, true)
 >>>>>>> graemeg/fixes_2_2
+=======
+      a_call_name_direct(list, s, false, true)
+>>>>>>> origin/fixes_2_2
     else
       begin
         list.concat(taicpu.op_sym(A_BL,get_darwin_call_stub(s,weak)));
@@ -722,7 +742,10 @@ begin
   fixref(list, ref2);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
   { unaligned 64 bit accesses are much slower than unaligned }
   { 32 bit accesses because they cause a hardware exception  }
   { (which isn't handled by linux, so there you even get a   }
@@ -747,7 +770,10 @@ begin
       exit;
     end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   op := loadinstr[fromsize, ref2.index <> NR_NO, false];
   { there is no LWAU instruction, simulate using ADDI and LWA }
   if (op = A_NOP) then begin
@@ -778,7 +804,10 @@ begin
   else if (fromsize = OS_S16) and
           (tosize = OS_32) then
     a_load_reg_reg(list,fromsize,tosize,reg,reg);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure tcgppc.a_load_reg_reg(list: TAsmList; fromsize, tosize: tcgsize;
@@ -982,9 +1011,12 @@ var
         calc_divconst_magic_unsigned(sizeof(aWord)*8, a, u_magic, u_add, u_shift);
         { load magic in divreg }
 <<<<<<< HEAD
+<<<<<<< HEAD
         a_load_const_reg(list, OS_INT, aint(u_magic), divreg);
         list.concat(taicpu.op_reg_reg_reg(A_MULHDU, dst, src, divreg));
 =======
+=======
+>>>>>>> origin/fixes_2_2
         cg.a_load_const_reg(current_asmdata.CurrAsmList, OS_INT, aint(u_magic), divreg);
         current_asmdata.CurrAsmList.concat(taicpu.op_reg_reg_reg(A_MULHDU, dst, src, divreg));
 >>>>>>> graemeg/fixes_2_2
@@ -1281,19 +1313,27 @@ begin
   if (target_info.system = system_powerpc64_darwin) then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       p := taicpu.op_sym(A_B,get_darwin_call_stub(s,false));
 =======
       p := taicpu.op_sym(A_B,get_darwin_call_stub(s));
 >>>>>>> graemeg/fixes_2_2
+=======
+      p := taicpu.op_sym(A_B,get_darwin_call_stub(s));
+>>>>>>> origin/fixes_2_2
       p.is_jmp := true;
       list.concat(p)
     end
   else
 <<<<<<< HEAD
+<<<<<<< HEAD
     a_jmp_name_direct(list, A_B, s, true);
 =======
     a_jmp_name_direct(list, s, true);
 >>>>>>> graemeg/fixes_2_2
+=======
+    a_jmp_name_direct(list, s, true);
+>>>>>>> origin/fixes_2_2
 end;
 
 procedure tcgppc.a_jmp_always(list: TAsmList; l: tasmlabel);
@@ -1735,10 +1775,14 @@ var
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (target_info.system in [system_powerpc64_darwin,system_powerpc64_aix]) then
 =======
   if (target_info.system = system_powerpc64_darwin) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if (target_info.system = system_powerpc64_darwin) then
+>>>>>>> origin/fixes_2_2
     begin
       inherited a_loadaddr_ref_reg(list,ref,r);
       exit;
@@ -1887,9 +1931,12 @@ begin
 
   tempreg:=getintregister(list,size);
 <<<<<<< HEAD
+<<<<<<< HEAD
   reference_reset(src,source.alignment);
   reference_reset(dst,dest.alignment);
 =======
+=======
+>>>>>>> origin/fixes_2_2
   reference_reset(src);
   reference_reset(dst);
 >>>>>>> graemeg/fixes_2_2
@@ -1979,8 +2026,11 @@ begin
 
 =======
 
+<<<<<<< HEAD
 end;
 
+=======
+>>>>>>> origin/fixes_2_2
 procedure tcgppc.g_external_wrapper(list: TAsmList; pd: TProcDef; const externalname: string);
 var
   href : treference;
@@ -2007,6 +2057,7 @@ begin
   ld r0, 16(r1)
   mtlr r0
   blr
+<<<<<<< HEAD
 
   }
   list.concat(taicpu.op_reg(A_MFLR, NR_R0));
@@ -2018,13 +2069,29 @@ begin
   list.concat(taicpu.op_sym(A_BL, current_asmdata.RefAsmSymbol(externalname)));
   list.concat(taicpu.op_none(A_NOP));
 
+=======
+
+  }
+  list.concat(taicpu.op_reg(A_MFLR, NR_R0));
+  reference_reset_base(href, NR_STACK_POINTER_REG, 16);
+  list.concat(taicpu.op_reg_ref(A_STD, NR_R0, href));
+  reference_reset_base(href, NR_STACK_POINTER_REG, -MINIMUM_STACKFRAME_SIZE);
+  list.concat(taicpu.op_reg_ref(A_STDU, NR_STACK_POINTER_REG, href));
+
+  list.concat(taicpu.op_sym(A_BL, current_asmdata.RefAsmSymbol(externalname)));
+  list.concat(taicpu.op_none(A_NOP));
+
+>>>>>>> origin/fixes_2_2
   list.concat(taicpu.op_reg_reg_const(A_ADDI, NR_STACK_POINTER_REG, NR_STACK_POINTER_REG, MINIMUM_STACKFRAME_SIZE));
 
   reference_reset_base(href, NR_STACK_POINTER_REG, LA_LR_ELF);
   list.concat(taicpu.op_reg_ref(A_LD, NR_R0, href));
   list.concat(taicpu.op_reg(A_MTLR, NR_R0));
   list.concat(taicpu.op_none(A_BLR));
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 {***************** This is private property, keep out! :) *****************}

@@ -21,6 +21,7 @@
 
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef Load_Dynamically}{$define LinkDynamically}{$endif}
 uses
 {$IFDEF LinkDynamically}
@@ -28,18 +29,24 @@ uses
 {$ENDIF}
      ctypes, dynlibs;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
 uses
 {$IFDEF LinkDynamically}
       sysutils,
 {$ENDIF}
      dynlibs,ctypes;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$IFDEF Unix}
   {$DEFINE extdecl:=cdecl}
   const
     mysqllib = 'libmysqlclient.'+sharedsuffix;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -71,6 +78,8 @@ uses
     mysqlvlib = mysqllib+'.12';
   {$ENDIF}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 
   {$IF DEFINED(mysql50)}
     mysqlvlib = 'libmysqlclient.'+sharedsuffix+'.15';
@@ -80,7 +89,10 @@ uses
     mysqlvlib = 'libmysqlclient.'+sharedsuffix+'.12';
   {$ENDIF}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
 {$IFDEF Windows}
   {$DEFINE extdecl:=stdcall}
@@ -89,6 +101,7 @@ uses
     mysqlvlib = 'libmysql.dll';
 {$ENDIF}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -121,6 +134,8 @@ uses
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$IFDEF mysql50}
   {$DEFINE mysql41}
 {$ENDIF mysql50}
@@ -151,6 +166,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        ppcchar = ^pcchar;
        psize_t = pointer;
 =======
@@ -171,6 +187,8 @@ uses
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
        PVIO = Pointer;
 
@@ -181,11 +199,17 @@ uses
        my_socket = cint;
        
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
        pppchar = ^ppchar;
        PPByte     = ^PByte;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+       pppchar = ^ppchar;
+       PPByte     = ^PByte;
+
+>>>>>>> origin/fixes_2_2
 {  ------------ Start of declaration in "mysql_com.h"   ---------------------  }
 
   {
@@ -195,6 +219,7 @@ uses
   { Field/table name length  }
 
   const
+<<<<<<< HEAD
 <<<<<<< HEAD
      HOSTNAME_LENGTH = 60;
 {$IFDEF mysql51}
@@ -214,11 +239,17 @@ uses
      HOSTNAME_LENGTH = 60;
      USERNAME_LENGTH = 16;
 >>>>>>> graemeg/fixes_2_2
+=======
+     NAME_LEN = 64;
+     HOSTNAME_LENGTH = 60;
+     USERNAME_LENGTH = 16;
+>>>>>>> origin/fixes_2_2
      SERVER_VERSION_LENGTH = 60;
      SQLSTATE_LENGTH = 5;
      LOCAL_HOST = 'localhost';
      LOCAL_HOST_NAMEDPIPE = '.';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   { Maximum length of comments }
   const
@@ -236,6 +267,8 @@ uses
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
   const
      MYSQL_NAMEDPIPE = 'MySQL';
      MYSQL_SERVICENAME = 'MySQL';
@@ -251,6 +284,7 @@ uses
 {$IFDEF mysql50}
        COM_STMT_PREPARE, COM_STMT_EXECUTE, COM_STMT_SEND_LONG_DATA, COM_STMT_CLOSE,
        COM_STMT_RESET, COM_SET_OPTION, COM_STMT_FETCH,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -279,6 +313,8 @@ uses
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ELSE}
   {$IFDEF mysql41}
        COM_PREPARE,COM_EXECUTE,COM_LONG_DATA,COM_CLOSE_STMT,
@@ -286,9 +322,12 @@ uses
   {$ENDIF}
 {$ENDIF}
 <<<<<<< HEAD
+<<<<<<< HEAD
        { Must be last }
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        COM_END
        );
 
@@ -326,16 +365,20 @@ uses
        NO_DEFAULT_VALUE_FLAG=4096; // Field doesn't have default value
 {$ENDIF}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF mysql51}
        ON_UPDATE_NOW_FLAG=8192;    // Field is set to NOW on UPDATE
 {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        NUM_FLAG = 32768;           // Field is num (for clients)
        PART_KEY_FLAG = 16384;      // Intern; Part of some key
        GROUP_FLAG = 32768;         // Intern: Group field
        UNIQUE_FLAG = 65536;        // Intern: Used by sql_yacc
        BINCMP_FLAG = 131072;       // Intern: Used by sql_yacc
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$IFDEF mysql51}
        GET_FIXED_FIELDS_FLAG = (1 shl 18);    // Used to get fields in item tree
@@ -358,6 +401,8 @@ uses
 {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
        REFRESH_GRANT = 1;          // Refresh grant tables
        REFRESH_LOG = 2;            // Start on new log file
@@ -368,6 +413,7 @@ uses
        REFRESH_SLAVE = 64;         // Reset master info and restart slave thread
        REFRESH_MASTER = 128;       // Remove all bin logs in the index and truncate the index
 <<<<<<< HEAD
+<<<<<<< HEAD
        REFRESH_ERROR_LOG = 256;    // Rotate only the erorr log
        REFRESH_ENGINE_LOG = 512;   // Flush all storage engine logs
        REFRESH_BINARY_LOG = 1024;  // Flush the binary log
@@ -376,6 +422,8 @@ uses
        REFRESH_SLOW_LOG = 8192;    // Flush the slow query log
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
     { The following can't be set with mysql_refresh()  }
        REFRESH_READ_LOCK = 16384;          // Lock tables for read
@@ -386,10 +434,13 @@ uses
        REFRESH_DES_KEY_FILE = $40000;
        REFRESH_USER_RESOURCES = $80000;
 <<<<<<< HEAD
+<<<<<<< HEAD
        REFRESH_FOR_EXPORT = $100000;       // FLUSH TABLES ... FOR EXPORT
        REFRESH_OPTIMIZER_COSTS = $200000;  // FLUSH OPTIMIZER_COSTS
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
        CLIENT_LONG_PASSWORD = 1;           // new more secure passwords
        CLIENT_FOUND_ROWS = 2;              // Found instead of affected rows
@@ -406,6 +457,7 @@ uses
        CLIENT_IGNORE_SIGPIPE = 4096;       // IGNORE sigpipes
        CLIENT_TRANSACTIONS = 8192;         // Client knows about transactions
        CLIENT_RESERVED = 16384;            // Old flag for 4.1 protocol
+<<<<<<< HEAD
 <<<<<<< HEAD
        CLIENT_SECURE_CONNECTION = 32768;   // Old flag for 4.1 authentication
        CLIENT_MULTI_STATEMENTS = 65536;    // Enable/disable multi-stmt support
@@ -426,6 +478,8 @@ uses
                                            //  of BEGIN or COMMIT AND CHAIN, or implicitly, by the first transactional
                                            //  statement, when autocommit=off
 =======
+=======
+>>>>>>> origin/fixes_2_2
        CLIENT_SECURE_CONNECTION = 32768;   // New 4.1 authentication
        CLIENT_MULTI_STATEMENTS = 65536;    // Enable/disable multi-stmt support
        CLIENT_MULTI_RESULTS = 131072;      // Enable/disable multi-results
@@ -433,7 +487,10 @@ uses
 
 
        SERVER_STATUS_IN_TRANS = 1;         // Transaction has started
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        SERVER_STATUS_AUTOCOMMIT = 2;       // Server in auto_commit mode
        SERVER_STATUS_MORE_RESULTS = 4;     // More results on server
        SERVER_MORE_RESULTS_EXISTS = 8;     // Multi query - next query exists
@@ -451,6 +508,7 @@ uses
        SERVER_STATUS_DB_DROPPED = 256;     // A database was dropped
 {$IFDEF mysql50}
        SERVER_STATUS_NO_BACKSLASH_ESCAPES = 512;
+<<<<<<< HEAD
 <<<<<<< HEAD
  {$IFDEF mysql51}
     {
@@ -504,6 +562,8 @@ uses
        SERVER_STATUS_METADATA_CHANGED = 1024;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
 
 {$IFDEF mysql41}
@@ -527,6 +587,7 @@ uses
        MAX_BIGINT_WIDTH = 20;           // Max width for a LONGLONG
        MAX_CHAR_WIDTH = 255;            // Max length for a CHAR colum
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF mysql51}
        MAX_BLOB_WIDTH = 16777216;       // Default width for blob
 {$ELSE}
@@ -535,20 +596,28 @@ uses
 =======
        MAX_BLOB_WIDTH = 8192;           // Default width for blob
 >>>>>>> graemeg/fixes_2_2
+=======
+       MAX_BLOB_WIDTH = 8192;           // Default width for blob
+>>>>>>> origin/fixes_2_2
 
     type
        Pst_net = ^st_net;
        st_net = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 { $if !defined(CHECK_EMBEDDED_DIFFERENCES) || !defined(EMBEDDED_LIBRARY)}
 >>>>>>> graemeg/fixes_2_2
+=======
+{ $if !defined(CHECK_EMBEDDED_DIFFERENCES) || !defined(EMBEDDED_LIBRARY)}
+>>>>>>> origin/fixes_2_2
             vio : PVio;
             buff : pcuchar;
             buff_end : pcuchar;
             write_pos : pcuchar;
             read_pos : pcuchar;
             fd : my_socket;     // For Perl DBI/dbd
+<<<<<<< HEAD
 <<<<<<< HEAD
             { The following variable is set if we are doing several queries in one
               command ( as in LOAD TABLE ... FROM MASTER ),
@@ -591,18 +660,24 @@ uses
             last_errno : cuint;
             {$ENDIF}
 =======
+=======
+>>>>>>> origin/fixes_2_2
             max_packet : culong;
             max_packet_size : culong;
 {$IFNDEF mysql41}
             last_errno : cuint;
 {$ENDIF}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             pkt_nr : cuint;
             compress_pkt_nr : cuint;
             write_timeout : cuint;
             read_timeout : cuint;
             retry_count : cuint;
             fcntl : cint;
+<<<<<<< HEAD
 <<<<<<< HEAD
             {$IFNDEF mysql41}
             last_error : array[0..(MYSQL_ERRMSG_SIZE)-1] of char;
@@ -614,6 +689,8 @@ uses
             command ( as in LOAD TABLE ... FROM MASTER ),
             and do not want to confuse the client with OK at the wrong time }
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$IFNDEF mysql41}
             last_error : array[0..(MYSQL_ERRMSG_SIZE)-1] of char;
             error : cuchar;
@@ -623,7 +700,10 @@ uses
     {   The following variable is set if we are doing several queries in one
         command ( as in LOAD TABLE ... FROM MASTER ),
         and do not want to confuse the client with OK at the wrong time }
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             remain_in_buf : culong;
             length : culong;
             buf_length : culong;
@@ -632,6 +712,7 @@ uses
             reading_or_writing : cuchar;
             save_char : cchar;
             no_send_ok : my_bool;     // For SPs and other things that do multiple stmts
+<<<<<<< HEAD
 <<<<<<< HEAD
             {$IFDEF mysql50}
             no_send_eof : my_bool;    // For SPs' first version read-only cursors
@@ -642,6 +723,8 @@ uses
                 queries in cache that have not stored its results yet }
             {$IFDEF mysql41}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$IFDEF mysql50}
             no_send_eof : my_bool;    // For SPs' first version read-only cursors
             no_send_error : my_bool;  // Set if OK packet is already sent, and
@@ -651,11 +734,15 @@ uses
         queries in cache that have not stored its results yet }
 { $endif}
 {$IFDEF mysql41}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             last_error : array[0..(MYSQL_ERRMSG_SIZE)-1] of char;
             sqlstate : array[0..(SQLSTATE_LENGTH+1)-1] of char;
             last_errno : cuint;
             error : cuchar;
+<<<<<<< HEAD
 <<<<<<< HEAD
             {$ENDIF}
             query_cache_query : gptr;
@@ -665,13 +752,18 @@ uses
             {$ENDIF}
 {$ENDIF} // pre 5.1 version ?
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
             query_cache_query : gptr;
 {$IFDEF mysql41}
             report_error : my_bool;   // We should report error (we have unreported error)
             return_errno : my_bool;
 {$ENDIF}
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          end;
        NET = st_net;
        PNET = ^NET;
@@ -689,6 +781,7 @@ uses
          MYSQL_TYPE_NEWDATE,
 {$IFDEF mysql50}
 <<<<<<< HEAD
+<<<<<<< HEAD
          MYSQL_TYPE_VARCHAR, MYSQL_TYPE_BIT,
  {$IFDEF mysql56}
          MYSQL_TYPE_TIMESTAMP2, MYSQL_TYPE_DATETIME2, MYSQL_TYPE_TIME2,
@@ -697,6 +790,9 @@ uses
 =======
          MYSQL_TYPE_VARCHAR, MYSQL_TYPE_BIT, MYSQL_TYPE_NEWDECIMAL=246,
 >>>>>>> graemeg/fixes_2_2
+=======
+         MYSQL_TYPE_VARCHAR, MYSQL_TYPE_BIT, MYSQL_TYPE_NEWDECIMAL=246,
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
          MYSQL_TYPE_ENUM := 247,
          MYSQL_TYPE_SET := 248,MYSQL_TYPE_TINY_BLOB := 249,
@@ -778,6 +874,7 @@ uses
          );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF mysql57}
     { Type of state change information that the server can include in the Ok
       packet.
@@ -798,6 +895,8 @@ uses
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     function net_new_transaction(net : st_net) : st_net;
 
 {$IFNDEF LinkDynamically}
@@ -805,15 +904,20 @@ uses
     procedure my_net_local_init(net:PNET);cdecl;external mysqllib name 'my_net_local_init';
     procedure net_end(net:PNET);cdecl;external mysqllib name 'net_end';
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure net_clear(net:PNET{$IFDEF mysql51};check_buffer:my_bool{$ENDIF});cdecl;external mysqllib name 'net_clear';
 =======
     procedure net_clear(net:PNET);cdecl;external mysqllib name 'net_clear';
 >>>>>>> graemeg/fixes_2_2
+=======
+    procedure net_clear(net:PNET);cdecl;external mysqllib name 'net_clear';
+>>>>>>> origin/fixes_2_2
     function net_realloc(net:PNET; length:culong):my_bool;cdecl;external mysqllib name 'net_realloc';
     function net_flush(net:PNET):my_bool;cdecl;external mysqllib name 'net_flush';
     function my_net_write(net:PNET; packet:Pchar; len:culong):my_bool;cdecl;external mysqllib name 'my_net_write';
     function net_write_command(net:PNET; command:cuchar; header:Pchar; head_len:culong; packet:Pchar;
                len:culong):my_bool;cdecl;external mysqllib name 'net_write_command';
+<<<<<<< HEAD
 <<<<<<< HEAD
  {$IFDEF mysql56}
     function net_write_packet(net:PNET; packet:Pchar; length:culong):my_bool;cdecl;external mysqllib name 'net_write_packet';
@@ -823,6 +927,9 @@ uses
 =======
     function net_real_write(net:PNET; packet:Pchar; len:culong):cint;cdecl;external mysqllib name 'net_real_write';
 >>>>>>> graemeg/fixes_2_2
+=======
+    function net_real_write(net:PNET; packet:Pchar; len:culong):cint;cdecl;external mysqllib name 'net_real_write';
+>>>>>>> origin/fixes_2_2
     function my_net_read(net:PNET):culong;cdecl;external mysqllib name 'my_net_read';
 {$ENDIF}
     { The following function is not meant for normal usage
@@ -867,11 +974,14 @@ uses
             attributes : PPChar;         // Pointer to attribute name
             attribute_lengths : pculong;  // Length of attribute arguments
 <<<<<<< HEAD
+<<<<<<< HEAD
  {$IFDEF mysql51}
             extension: pointer;
  {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
          end;
        UDF_ARGS = st_udf_args;
@@ -887,11 +997,14 @@ uses
             ptr : Pchar;                 // free pointer for function data
             const_item : my_bool;        // free pointer for function data
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF mysql51}
             extension: pointer;
 {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          end;
        UDF_INIT = st_udf_init;
        PUDF_INIT = ^UDF_INIT;
@@ -957,6 +1070,7 @@ uses
 
     const
 <<<<<<< HEAD
+<<<<<<< HEAD
        MYSQL_STMT_HEADER      = 4;
        MYSQL_LONG_DATA_HEADER = 6;
        NOT_FIXED_DEC          = 31;
@@ -964,10 +1078,15 @@ uses
        MYSQL_STMT_HEADER = 4;
        MYSQL_LONG_DATA_HEADER = 6;
 >>>>>>> graemeg/fixes_2_2
+=======
+       MYSQL_STMT_HEADER = 4;
+       MYSQL_LONG_DATA_HEADER = 6;
+>>>>>>> origin/fixes_2_2
 
 {  ------------ Stop of declaration in "mysql_com.h"   -----------------------  }
 
 { $include "mysql_time.h"}
+<<<<<<< HEAD
 <<<<<<< HEAD
     type
         mysql_timestamp_type = (
@@ -996,6 +1115,8 @@ uses
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 { $include "mysql_version.h"}
 { $include "typelib.h"}
 { $include "my_list.h" /* for LISTs used in 'MYSQL' and 'MYSQL_STMT' */}
@@ -1011,12 +1132,18 @@ uses
          CLIENT_NET_WRITE_TIMEOUT = 365*24*3600;    // Timeout on write
       
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef NETWARE}
 (** unsupported pragma#pragma pack(push, 8)		/* 8 byte alignment */*)
 {$endif}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     type
        Pst_mysql_field = ^st_mysql_field;
        st_mysql_field = record
@@ -1049,11 +1176,14 @@ uses
 {$ENDIF}
             ftype : enum_field_types; // Type of field. See mysql_com.h for types
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF mysql51}
             extension: pointer;
 {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          end;
        MYSQL_FIELD = st_mysql_field;
        PMYSQL_FIELD = ^MYSQL_FIELD;
@@ -1075,12 +1205,17 @@ uses
 {$if defined(NO_CLIENT_LONG_LONG)}
        my_ulonglong = culong;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$elseif defined(WINDOWS)}
        my_ulonglong = cuint64;
 =======
 {$elseif defined(mswindows)}
        my_ulonglong = cint64;
 >>>>>>> graemeg/fixes_2_2
+=======
+{$elseif defined(mswindows)}
+       my_ulonglong = cint64;
+>>>>>>> origin/fixes_2_2
 {$else}
        my_ulonglong = culonglong;
 {$endif}
@@ -1143,6 +1278,7 @@ uses
 
     type
 <<<<<<< HEAD
+<<<<<<< HEAD
        embedded_query_result = record end;
 
        Pst_mysql_data = ^st_mysql_data;
@@ -1160,10 +1296,15 @@ uses
        Pst_mysql_data = ^st_mysql_data;
        st_mysql_data = record
 >>>>>>> graemeg/fixes_2_2
+=======
+       Pst_mysql_data = ^st_mysql_data;
+       st_mysql_data = record
+>>>>>>> origin/fixes_2_2
             rows : my_ulonglong;
             fields : cuint;
             data : PMYSQL_ROWS;
             alloc : MEM_ROOT;
+<<<<<<< HEAD
 <<<<<<< HEAD
   { $if !defined(CHECK_EMBEDDED_DIFFERENCES) || defined(EMBEDDED_LIBRARY)}
   {$IFDEF mysql41}
@@ -1176,6 +1317,8 @@ uses
        PMYSQL_DATA = ^MYSQL_DATA;
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 { $if !defined(CHECK_EMBEDDED_DIFFERENCES) || defined(EMBEDDED_LIBRARY)}
 {$IFDEF mysql41}
             prev_ptr : ^PMYSQL_ROWS;
@@ -1185,7 +1328,10 @@ uses
          
        MYSQL_DATA = st_mysql_data;
        PMYSQL_DATA = ^MYSQL_DATA;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        mysql_option = (MYSQL_OPT_CONNECT_TIMEOUT,MYSQL_OPT_COMPRESS,
          MYSQL_OPT_NAMED_PIPE,MYSQL_INIT_COMMAND,
          MYSQL_READ_DEFAULT_FILE,MYSQL_READ_DEFAULT_GROUP,
@@ -1198,6 +1344,7 @@ uses
          MYSQL_SECURE_AUTH
 {$IFDEF MYSQL50}
          ,MYSQL_REPORT_DATA_TRUNCATION, MYSQL_OPT_RECONNECT
+<<<<<<< HEAD
 <<<<<<< HEAD
  {$IFDEF mysql51}
          ,MYSQL_OPT_SSL_VERIFY_SERVER_CERT
@@ -1218,6 +1365,8 @@ uses
  {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
          );
 
@@ -1242,10 +1391,13 @@ uses
        Pst_dynamic_array = ^st_dynamic_array;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
        st_mysql_options_extention = record end;
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
        Pst_mysql_options = ^st_mysql_options;
        st_mysql_options = record
             connect_timeout : cuint;
@@ -1303,6 +1455,7 @@ uses
 { $endif}
             methods_to_use : mysql_option;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF mysql56}
             ci: record case integer of  // C union
                 {The ip/hostname to use when authenticating
@@ -1319,6 +1472,9 @@ uses
 =======
             client_ip : Pchar;
 >>>>>>> graemeg/fixes_2_2
+=======
+            client_ip : Pchar;
+>>>>>>> origin/fixes_2_2
             secure_auth : my_bool;           // Refuse client connecting to server if it uses old (pre-4.1.1) protocol
 {$IFDEF mysql50}
             report_data_truncation : my_bool;// 0 - never report, 1 - always report (default)
@@ -1329,6 +1485,7 @@ uses
             local_infile_end : procedure (_para1:pointer);
             local_infile_error : function (_para1:pointer; _para2:Pchar; _para3:cuint):cint;
             local_infile_userdata : pointer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$IFDEF mysql51}
             extension : ^st_mysql_options_extention;
@@ -1342,12 +1499,17 @@ uses
 {$ENDIF}
        );
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
          end;
 
        mysql_status = (MYSQL_STATUS_READY,MYSQL_STATUS_GET_RESULT,
          MYSQL_STATUS_USE_RESULT);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
        mysql_protocol_type = (MYSQL_PROTOCOL_DEFAULT,MYSQL_PROTOCOL_TCP,
          MYSQL_PROTOCOL_SOCKET,MYSQL_PROTOCOL_PIPE,
@@ -1458,6 +1620,7 @@ uses
         from mysql_stmt_close if close had to cancel result set of this object.       }
             unbuffered_fetch_owner : Pmy_bool;
 <<<<<<< HEAD
+<<<<<<< HEAD
  {$IFDEF mysql50}
             info_buffer: ^cchar;
   {$IFDEF mysql51}
@@ -1466,6 +1629,8 @@ uses
  {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
          end;
        MYSQL = st_mysql;
@@ -1478,6 +1643,7 @@ uses
             fields : PMYSQL_FIELD;
             data : PMYSQL_DATA;
             data_cursor : PMYSQL_ROWS;
+<<<<<<< HEAD
 <<<<<<< HEAD
             lengths : pculong;           // column lengths of current row
             handle : PMYSQL;             // for unbuffered reads
@@ -1495,6 +1661,10 @@ uses
             lengths : pculong;            // column lengths of current row
             handle : PMYSQL;             // for unbuffered reads
 >>>>>>> graemeg/fixes_2_2
+=======
+            lengths : pculong;            // column lengths of current row
+            handle : PMYSQL;             // for unbuffered reads
+>>>>>>> origin/fixes_2_2
             field_alloc : MEM_ROOT;
             field_count : cuint;
             current_field : cuint;
@@ -1502,16 +1672,22 @@ uses
             current_row : MYSQL_ROW;     // buffer to current row
             eof : my_bool;               // Used by mysql_fetch_row
 <<<<<<< HEAD
+<<<<<<< HEAD
  {$IFDEF mysql41}
             unbuffered_fetch_cancelled : my_bool;  // mysql_stmt_close() had to cancel this result
             methods : Pst_mysql_methods;
  {$ENDIF}
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$IFDEF mysql41}
             unbuffered_fetch_cancelled : my_bool;  // mysql_stmt_close() had to cancel this result
 
             methods : Pst_mysql_methods;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
          end;
        MYSQL_RES = st_mysql_res;
@@ -1523,10 +1699,14 @@ uses
        st_mysql_methods = record
             read_query_result : function (mysql:PMYSQL):my_bool;cdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
             advanced_command : function (mysql:PMYSQL; command:enum_server_command; header:Pcuchar; header_length:culong; arg:Pcuchar;
 =======
             advanced_command : function (mysql:PMYSQL; command:enum_server_command; header:Pchar; header_length:culong; arg:Pchar;
 >>>>>>> graemeg/fixes_2_2
+=======
+            advanced_command : function (mysql:PMYSQL; command:enum_server_command; header:Pchar; header_length:culong; arg:Pchar;
+>>>>>>> origin/fixes_2_2
                          arg_length:culong; skip_check:my_bool):my_bool;
             read_rows : function (mysql:PMYSQL; mysql_fields:PMYSQL_FIELD; fields:cuint):PMYSQL_DATA;
             use_result : function (mysql:PMYSQL):PMYSQL_RES;
@@ -1558,6 +1738,7 @@ uses
             user : Pchar;
             passwd : Pchar;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF mysql51}
             net_buf, net_buf_pos, net_data_end : pcchar;
             port : cuint;
@@ -1571,6 +1752,8 @@ uses
 {$ELSE}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             port : cuint;
             free_me : my_bool;
             eof : my_bool;
@@ -1581,11 +1764,15 @@ uses
             net_data_end : Pchar;
             net_buf_size : cint;
 <<<<<<< HEAD
+<<<<<<< HEAD
             last_error : array[0..(MAX_MYSQL_MANAGER_ERR)-1] of cchar;
 {$ENDIF}
 =======
             last_error : array[0..(MAX_MYSQL_MANAGER_ERR)-1] of char;
 >>>>>>> graemeg/fixes_2_2
+=======
+            last_error : array[0..(MAX_MYSQL_MANAGER_ERR)-1] of char;
+>>>>>>> origin/fixes_2_2
          end;
        MYSQL_MANAGER = st_mysql_manager;
        PMYSQL_MANAGER = ^MYSQL_MANAGER;
@@ -1595,11 +1782,14 @@ uses
             p_max_allowed_packet : pculong;
             p_net_buffer_length : pculong;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF mysql51}
             extension : pointer;
 {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          end;
        MYSQL_PARAMETERS = st_mysql_parameters;
        PMYSQL_PARAMETERS = ^MYSQL_PARAMETERS;
@@ -1678,6 +1868,7 @@ uses
       Please note that MYSQL_BIND also has internals members.
     }
        Pst_mysql_bind = ^st_mysql_bind;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -1862,6 +2053,8 @@ uses
             mem_root : MEM_ROOT;            // root allocations
             list : LIST;                    // list to keep track of all stmts
 =======
+=======
+>>>>>>> origin/fixes_2_2
        st_mysql_bind = record
             length : culong;                // output length pointer
             is_null : Pmy_bool;             // Pointer to null indicator
@@ -1906,13 +2099,17 @@ uses
        st_mysql_stmt = record
             mem_root : MEM_ROOT;            // root allocations
 //            list : LIST;                    // list to keep track of all stmts
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             mysql : PMYSQL;                 // connection handle
             params : PMYSQL_BIND;           // input parameters
             bind : PMYSQL_BIND;             // input parameters
             fields : PMYSQL_FIELD;          // result set metadata
             result : MYSQL_DATA;            // cached result set
             data_cursor : PMYSQL_ROWS;      // current row in cached result
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$IFDEF mysql51}
             read_row_func : function (stmt:Pst_mysql_stmt; row:PPbyte):cint;cdecl;
@@ -1921,15 +2118,20 @@ uses
 {$ELSE}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             affected_rows : my_ulonglong;   // copy of mysql->affected_rows after statement execution
             insert_id : my_ulonglong;       // copy of mysql->insert_id
     {   mysql_stmt_fetch() calls this function to fetch one row (it's different
         for buffered, unbuffered and cursor fetch).       }
             read_row_func : function (stmt:Pst_mysql_stmt; row:PPbyte):cint;cdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
             stmt_id : culong;               // Id for prepared statement
 {$IFDEF mysql50}
             flags : culong;                 // i.e. type of cursor to open
@@ -1956,11 +2158,14 @@ uses
         metadata fields when doing mysql_stmt_store_result.       }
             update_max_length : my_bool;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF mysql51}
             extension: ^st_mysql_stmt_extension;
 {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
          end;
        MYSQL_STMT = st_mysql_stmt;
     {   When doing mysql_stmt_store_result calculate max_length attribute
@@ -1985,12 +2190,17 @@ uses
       work when linked against either the standard client library or the
       embedded server library, these functions should be called.     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     function mysql_server_init(argc:cint; argv:PPchar; groups:PPchar):cint;extdecl;external mysqllib name 'mysql_server_init';
     procedure mysql_server_end;extdecl;external mysqllib name 'mysql_server_end';
 =======
     function mysql_server_init(argc:cint; argv:PPchar; groups:PPchar):cint;cdecl;external mysqllib name 'mysql_server_init';
     procedure mysql_server_end;cdecl;external mysqllib name 'mysql_server_end';
 >>>>>>> graemeg/fixes_2_2
+=======
+    function mysql_server_init(argc:cint; argv:PPchar; groups:PPchar):cint;cdecl;external mysqllib name 'mysql_server_init';
+    procedure mysql_server_end;cdecl;external mysqllib name 'mysql_server_end';
+>>>>>>> origin/fixes_2_2
 
     { mysql_server_init/end need to be called when using libmysqld or
       libmysqlclient (exactly, mysql_server_init() is called by mysql_init() so
@@ -2001,12 +2211,17 @@ uses
       intend to promote these aliases over the mysql_server* ones.     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function mysql_library_init(argc:cint; argv:PPchar; groups:PPchar):cint;extdecl;external mysqllib name 'mysql_server_init';
     procedure mysql_library_end;extdecl;external mysqllib name 'mysql_server_end';
 =======
     function mysql_library_init(argc:cint; argv:PPchar; groups:PPchar):cint;cdecl;external mysqllib name 'mysql_server_init';
     procedure mysql_library_end;cdecl;external mysqllib name 'mysql_server_end';
 >>>>>>> graemeg/fixes_2_2
+=======
+    function mysql_library_init(argc:cint; argv:PPchar; groups:PPchar):cint;cdecl;external mysqllib name 'mysql_server_init';
+    procedure mysql_library_end;cdecl;external mysqllib name 'mysql_server_end';
+>>>>>>> origin/fixes_2_2
 
     function mysql_get_parameters:PMYSQL_PARAMETERS;extdecl;external mysqllib name 'mysql_get_parameters';
 
@@ -2049,6 +2264,7 @@ uses
     function mysql_store_result(mysql:PMYSQL):PMYSQL_RES;extdecl;external mysqllib name 'mysql_store_result';
     function mysql_use_result(mysql:PMYSQL):PMYSQL_RES;extdecl;external mysqllib name 'mysql_use_result';
 <<<<<<< HEAD
+<<<<<<< HEAD
  {$IFDEF mysql50}
     procedure mysql_get_character_set_info(mysql:PMYSQL; charset:PMY_CHARSET_INFO);extdecl;external mysqllib name 'mysql_get_character_set_info';
   {$IFDEF mysql57}
@@ -2058,21 +2274,29 @@ uses
  {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ELSE}
 
     var
+<<<<<<< HEAD
 <<<<<<< HEAD
       mysql_server_init: function (argc:cint; argv:PPchar; groups:PPchar):cint;extdecl;
       mysql_server_end: procedure ();extdecl;
       mysql_library_init: function (argc:cint; argv:PPchar; groups:PPchar):cint;extdecl;
       mysql_library_end: procedure ();extdecl;
 =======
+=======
+>>>>>>> origin/fixes_2_2
       mysql_server_init: function (argc:cint; argv:PPchar; groups:PPchar):cint;cdecl;
       mysql_server_end: procedure ;cdecl;
       mysql_library_init: function (argc:cint; argv:PPchar; groups:PPchar):cint;cdecl;
       mysql_library_end: procedure ;cdecl;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       mysql_num_rows: function (res:PMYSQL_RES):my_ulonglong;extdecl;
       mysql_num_fields: function (res:PMYSQL_RES):cuint;extdecl;
       mysql_eof: function (res:PMYSQL_RES):my_bool;extdecl;
@@ -2104,6 +2328,7 @@ uses
       mysql_store_result: function (mysql:PMYSQL):PMYSQL_RES;extdecl;
       mysql_use_result: function (mysql:PMYSQL):PMYSQL_RES;extdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
  {$IFDEF mysql50}
       mysql_get_character_set_info: procedure(mysql:PMYSQL; charset:PMY_CHARSET_INFO);extdecl;
   {$IFDEF mysql57}
@@ -2114,6 +2339,8 @@ uses
 
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
 
 {$IFNDEF LinkDynamically}
@@ -2125,11 +2352,17 @@ uses
     function mysql_slave_query(mysql:PMYSQL; q:Pchar; length:culong):my_bool;extdecl;external mysqllib name 'mysql_slave_query';
     function mysql_slave_send_query(mysql:PMYSQL; q:Pchar; length:culong):my_bool;extdecl;external mysqllib name 'mysql_slave_send_query';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$IFDEF mysql50}
     procedure mysql_get_character_set_info(mysql : PMYSQL; charset : PMY_CHARSET_INFO);extdecl;external mysqllib name 'mysql_get_character_set_info';
 {$ENDIF}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$IFDEF mysql50}
+    procedure mysql_get_character_set_info(mysql : PMYSQL; charset : PMY_CHARSET_INFO);extdecl;external mysqllib name 'mysql_get_character_set_info';
+{$ENDIF}
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
 
     { local infile support  }
@@ -2241,9 +2474,12 @@ uses
     function mysql_more_results(mysql:PMYSQL):my_bool;extdecl;external mysqllib name 'mysql_more_results';
     function mysql_next_result(mysql:PMYSQL):cint;extdecl;external mysqllib name 'mysql_next_result';
 <<<<<<< HEAD
+<<<<<<< HEAD
     function mysql_stmt_next_result(stmt:PMYSQL_STMT):cint;extdecl;external mysqllib name 'mysql_stmt_next_result';
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     procedure mysql_close(sock:PMYSQL);extdecl;external mysqllib name 'mysql_close';
 
 {$ELSE}
@@ -2267,6 +2503,7 @@ uses
       mysql_list_processes: function (mysql:PMYSQL):PMYSQL_RES;extdecl;
       mysql_options: function (mysql:PMYSQL; option:mysql_option; arg:Pchar):cint;extdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF mysql56}
       mysql_options4: function (mysql:PMYSQL; option:mysql_option; arg1,arg2:Pointer):cint;extdecl;
  {$IFDEF mysql57}
@@ -2275,6 +2512,8 @@ uses
 {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       mysql_free_result: procedure (result:PMYSQL_RES);extdecl;
       mysql_data_seek: procedure (result:PMYSQL_RES; offset:my_ulonglong);extdecl;
       mysql_row_seek: function (result:PMYSQL_RES; offset:MYSQL_ROW_OFFSET):MYSQL_ROW_OFFSET;extdecl;
@@ -2287,12 +2526,15 @@ uses
       mysql_hex_string: function (fto:Pchar; from:Pchar; from_length:culong):culong;extdecl;
       mysql_real_escape_string: function (mysql:PMYSQL; fto:Pchar; from:Pchar; length:culong):culong;extdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF mysql57}
       mysql_real_escape_string_quote: function(mysql:PMYSQL; fto:pcchar; from:pcchar; length:culong; quote: cchar):culong;extdecl;
       mysql_reset_connection: function(mysql:PMYSQL):cint;extdecl;
 {$ENDIF}
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       mysql_debug: procedure (debug:Pchar);extdecl;
 
       mysql_rollback: function (mysql:PMYSQL):my_bool;extdecl;
@@ -2330,9 +2572,12 @@ uses
       mysql_stmt_insert_id: function (stmt:PMYSQL_STMT):my_ulonglong;extdecl;
       mysql_stmt_field_count: function (stmt:PMYSQL_STMT):cuint;extdecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
       mysql_stmt_next_result: function (stmt:PMYSQL_STMT):cint;extdecl;
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 {$ENDIF}
 
@@ -2346,9 +2591,12 @@ uses
     function mysql_reload(mysql : PMySQL) : cint;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$define HAVE_MYSQL_REAL_CONNECT}
 
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$IFNDEF LinkDynamically}
 {$ifdef USE_OLD_FUNCTIONS}
     function mysql_connect(mysql:PMYSQL; host:Pchar; user:Pchar; passwd:Pchar):PMYSQL;extdecl;external External_library name 'mysql_connect';
@@ -2359,7 +2607,10 @@ uses
 {$endif}
 
 {$define HAVE_MYSQL_REAL_CONNECT}    
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     { The following functions are mainly exported because of mysqlbinlog;
       They are not for general usage     }
 
@@ -2368,6 +2619,7 @@ uses
     function net_safe_read(mysql:PMYSQL):cuint;cdecl;external mysqllib name 'net_safe_read';
 {$ENDIF}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {$IFDEF LinkDynamically}
@@ -2379,6 +2631,8 @@ Procedure ReleaseMysql;
 var MysqlLibraryHandle : TLibHandle;
   MysqlLoadedLibrary : String;
 =======
+=======
+>>>>>>> origin/fixes_2_2
 {$ifdef NETWARE}
 (** unsupported pragma#pragma pack(pop)		/* restore alignment */*)
 {$endif}
@@ -2389,7 +2643,10 @@ Function InitialiseMysql : Integer;
 Procedure ReleaseMysql;
 
 var MysqlLibraryHandle : TLibHandle;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 {$ENDIF}
 
 implementation
@@ -2404,14 +2661,20 @@ ResourceString
 var 
   RefCount : integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Function TryInitialiseMysql(Const LibraryName: AnsiString; argc: cint; argv: PPchar; groups: PPchar) : Integer;
 =======
+=======
+>>>>>>> origin/fixes_2_2
   LoadedLibrary : String;
 
 Function TryInitialiseMysql(Const LibraryName : String) : Integer;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 
 begin
   Result := 0;
@@ -2422,11 +2685,15 @@ begin
       Exit;
     Inc(RefCount);
 <<<<<<< HEAD
+<<<<<<< HEAD
     MysqlLoadedLibrary:=LibraryName;
 
 =======
     LoadedLibrary:=LibraryName;
 >>>>>>> graemeg/fixes_2_2
+=======
+    LoadedLibrary:=LibraryName;
+>>>>>>> origin/fixes_2_2
 // Only the procedure that are given in the c-library documentation are loaded, to
 // avoid problems with 'incomplete' libraries
     pointer(my_init) := GetProcedureAddress(MysqlLibraryHandle,'my_init');
@@ -2437,10 +2704,13 @@ begin
     pointer(mysql_autocommit) := GetProcedureAddress(MysqlLibraryHandle,'mysql_autocommit');
     pointer(mysql_change_user) := GetProcedureAddress(MysqlLibraryHandle,'mysql_change_user');
 <<<<<<< HEAD
+<<<<<<< HEAD
     pointer(mysql_close) := GetProcedureAddress(MysqlLibraryHandle,'mysql_close');
     pointer(mysql_commit) := GetProcedureAddress(MysqlLibraryHandle,'mysql_commit');
     pointer(mysql_data_seek) := GetProcedureAddress(MysqlLibraryHandle,'mysql_data_seek');
 =======
+=======
+>>>>>>> origin/fixes_2_2
 //    pointer(mysql_charset_name) := GetProcedureAddress(MysqlLibraryHandle,'mysql_charset_name');
     pointer(mysql_close) := GetProcedureAddress(MysqlLibraryHandle,'mysql_close');
     pointer(mysql_commit) := GetProcedureAddress(MysqlLibraryHandle,'mysql_commit');
@@ -2448,7 +2718,10 @@ begin
 //    pointer(mysql_create_db) := GetProcedureAddress(MysqlLibraryHandle,'mysql_create_db');
     pointer(mysql_data_seek) := GetProcedureAddress(MysqlLibraryHandle,'mysql_data_seek');
 //    pointer(mysql_drop_db) := GetProcedureAddress(MysqlLibraryHandle,'mysql_drop_db');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     pointer(mysql_debug) := GetProcedureAddress(MysqlLibraryHandle,'mysql_debug');
     pointer(mysql_dump_debug_info) := GetProcedureAddress(MysqlLibraryHandle,'mysql_dump_debug_info');
     pointer(mysql_eof) := GetProcedureAddress(MysqlLibraryHandle,'mysql_eof');
@@ -2492,9 +2765,13 @@ begin
     pointer(mysql_real_query) := GetProcedureAddress(MysqlLibraryHandle,'mysql_real_query');
     pointer(mysql_refresh) := GetProcedureAddress(MysqlLibraryHandle,'mysql_refresh');
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 //    pointer(mysql_reload) := GetProcedureAddress(MysqlLibraryHandle,'mysql_reload');
 >>>>>>> graemeg/fixes_2_2
+=======
+//    pointer(mysql_reload) := GetProcedureAddress(MysqlLibraryHandle,'mysql_reload');
+>>>>>>> origin/fixes_2_2
     pointer(mysql_rollback) := GetProcedureAddress(MysqlLibraryHandle,'mysql_rollback');
     pointer(mysql_row_seek) := GetProcedureAddress(MysqlLibraryHandle,'mysql_row_seek');
     pointer(mysql_row_tell) := GetProcedureAddress(MysqlLibraryHandle,'mysql_row_tell');
@@ -2502,9 +2779,12 @@ begin
     pointer(mysql_server_end) := GetProcedureAddress(MysqlLibraryHandle,'mysql_server_end');
     pointer(mysql_server_init) := GetProcedureAddress(MysqlLibraryHandle,'mysql_server_init');
 <<<<<<< HEAD
+<<<<<<< HEAD
     pointer(mysql_set_character_set) := GetProcedureAddress(MysqlLibraryHandle,'mysql_set_character_set');
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     pointer(mysql_set_server_option) := GetProcedureAddress(MysqlLibraryHandle,'mysql_set_server_option');
     pointer(mysql_sqlstate) := GetProcedureAddress(MysqlLibraryHandle,'mysql_sqlstate');
     pointer(mysql_shutdown) := GetProcedureAddress(MysqlLibraryHandle,'mysql_shutdown');
@@ -2512,9 +2792,13 @@ begin
     pointer(mysql_store_result) := GetProcedureAddress(MysqlLibraryHandle,'mysql_store_result');
     pointer(mysql_thread_id) := GetProcedureAddress(MysqlLibraryHandle,'mysql_thread_id');
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 //    pointer(mysql_thread_save) := GetProcedureAddress(MysqlLibraryHandle,'mysql_thread_save');
 >>>>>>> graemeg/fixes_2_2
+=======
+//    pointer(mysql_thread_save) := GetProcedureAddress(MysqlLibraryHandle,'mysql_thread_save');
+>>>>>>> origin/fixes_2_2
     pointer(mysql_use_result) := GetProcedureAddress(MysqlLibraryHandle,'mysql_use_result');
     pointer(mysql_warning_count) := GetProcedureAddress(MysqlLibraryHandle,'mysql_warning_count');
     pointer(mysql_stmt_init) := GetProcedureAddress(MysqlLibraryHandle,'mysql_stmt_init');
@@ -2545,6 +2829,7 @@ begin
     pointer(mysql_stmt_insert_id) := GetProcedureAddress(MysqlLibraryHandle,'mysql_stmt_insert_id');
     pointer(mysql_stmt_field_count) := GetProcedureAddress(MysqlLibraryHandle,'mysql_stmt_field_count');
 <<<<<<< HEAD
+<<<<<<< HEAD
     pointer(mysql_stmt_next_result) := GetProcedureAddress(MysqlLibraryHandle,'mysql_stmt_next_result');
 {$IFDEF mysql57}
     pointer(mysql_real_escape_string_quote) := GetProcedureAddress(MysqlLibraryHandle,'mysql_real_escape_string_quote');
@@ -2573,6 +2858,8 @@ begin
     If (TryInitialiseMysql(mysqllib,argc,argv,groups)=0)
        and (TryInitialiseMysql(mysqlvlib,argc,argv,groups)=0) then
 =======
+=======
+>>>>>>> origin/fixes_2_2
     end
   else
     inc(RefCount);
@@ -2585,11 +2872,15 @@ begin
   Result := 0;
   If (TryInitialiseMysql(mysqlvlib) = 0) and
      (TryInitialiseMysql(mysqllib) = 0) then
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
       Raise EInOutError.CreateFmt(SErrDefaultsFailed,[mysqlvlib,mysqllib]);
   Result := RefCount;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function InitialiseMysql(Const LibraryName: AnsiString) : Integer;
 
@@ -2609,6 +2900,8 @@ begin
     Result := RefCount;
     Raise EInOUtError.CreateFmt(SErrAlreadyLoaded,[MysqlLoadedLibrary]);
 =======
+=======
+>>>>>>> origin/fixes_2_2
 Function InitialiseMysql(Const LibraryName : String) : Integer;
 
 begin
@@ -2620,7 +2913,10 @@ begin
     Dec(RefCount);
     Result := RefCount;
     Raise EInOUtError.CreateFmt(SErrAlreadyLoaded,[LoadedLibrary]);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
     end;
 end;
 
@@ -2629,6 +2925,7 @@ Procedure ReleaseMysql;
 begin
   if RefCount> 1 then
     Dec(RefCount)
+<<<<<<< HEAD
 <<<<<<< HEAD
   else if RefCount = 1 then
     begin
@@ -2641,13 +2938,18 @@ begin
       end
     end
 =======
+=======
+>>>>>>> origin/fixes_2_2
   else if UnloadLibrary(MysqlLibraryHandle) then 
     begin
     Dec(RefCount);
     MysqlLibraryHandle := NilHandle;
     LoadedLibrary:='';
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
 end;
 
 {$ENDIF}
@@ -2684,6 +2986,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IF DEFINED(mysql55)}
       IS_NUM := ((t <= FIELD_TYPE_INT24) and (t<>FIELD_TYPE_TIMESTAMP)) or (t=FIELD_TYPE_YEAR) or (t=FIELD_TYPE_NEWDECIMAL);
 {$ELSEIF DEFINED(mysql50) or DEFINED(mysql51)}
@@ -2702,6 +3005,9 @@ end;
 =======
 {$IFDEF mysql50}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$IFDEF mysql50}
+>>>>>>> origin/fixes_2_2
       IS_NUM := (t <= FIELD_TYPE_INT24) or (t=FIELD_TYPE_YEAR) or (t=FIELD_TYPE_NEWDECIMAL);
 {$ELSE}
       IS_NUM := (t <= FIELD_TYPE_INT24) or (t=FIELD_TYPE_YEAR);
@@ -2726,6 +3032,7 @@ end;
     end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF LinkDynamically}
 initialization
   Refcount := 0;
@@ -2733,4 +3040,7 @@ initialization
 =======
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2_2
 end.
