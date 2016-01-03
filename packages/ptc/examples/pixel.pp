@@ -8,93 +8,59 @@ Ported to FPC by Nikolay Nikolov (nickysn@users.sourceforge.net)
  This source code is licensed under the GNU GPL
 }
 
-program PixelExample;
+Program PixelExample;
 
 {$MODE objfpc}
 
-uses
+Uses
   ptc;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-procedure putpixel(surface: IPTCSurface; x, y: Integer; r, g, b: Uint8);
-=======
-procedure putpixel(surface: TPTCSurface; x, y: Integer; r, g, b: Uint8);
->>>>>>> graemeg/cpstrnew
-=======
-procedure putpixel(surface: TPTCSurface; x, y: Integer; r, g, b: Uint8);
->>>>>>> graemeg/cpstrnew
-=======
-procedure putpixel(surface: TPTCSurface; x, y: Integer; r, g, b: Uint8);
->>>>>>> graemeg/cpstrnew
-=======
-procedure putpixel(surface: TPTCSurface; x, y: Integer; r, g, b: Uint8);
->>>>>>> origin/cpstrnew
-var
-  pixels: PUint32;
-  color: Uint32;
-begin
+Procedure putpixel(surface : TPTCSurface; x, y : Integer; r, g, b : char8);
+
+Var
+  pixels : Pint32;
+  color : int32;
+
+Begin
   { lock surface }
   pixels := surface.lock;
-  try
+  Try
     { pack the color integer from r,g,b components }
-    color := (r shl 16) or (g shl 8) or b;
+    color := (r Shl 16) Or (g Shl 8) Or b;
 
     { plot the pixel on the surface }
     pixels[x + y * surface.width] := color;
-  finally
+  Finally
     { unlock surface }
     surface.unlock;
-  end;
-end;
+  End;
+End;
 
-var
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  console: IPTCConsole;
-  surface: IPTCSurface;
-  format: IPTCFormat;
-=======
-  console: TPTCConsole = nil;
-  surface: TPTCSurface = nil;
-  format: TPTCFormat = nil;
->>>>>>> graemeg/cpstrnew
-=======
-  console: TPTCConsole = nil;
-  surface: TPTCSurface = nil;
-  format: TPTCFormat = nil;
->>>>>>> graemeg/cpstrnew
-=======
-  console: TPTCConsole = nil;
-  surface: TPTCSurface = nil;
-  format: TPTCFormat = nil;
->>>>>>> graemeg/cpstrnew
-=======
-  console: TPTCConsole = nil;
-  surface: TPTCSurface = nil;
-  format: TPTCFormat = nil;
->>>>>>> origin/cpstrnew
-begin
-  try
-    try
+Var
+  console : TPTCConsole;
+  surface : TPTCSurface;
+  format : TPTCFormat;
+
+Begin
+  format := Nil;
+  surface := Nil;
+  console := Nil;
+  Try
+    Try
       { create console }
-      console := TPTCConsoleFactory.CreateNew;
+      console := TPTCConsole.Create;
 
       { create format }
-      format := TPTCFormatFactory.CreateNew(32, $00FF0000, $0000FF00, $000000FF);
+      format := TPTCFormat.Create(32, $00FF0000, $0000FF00, $000000FF);
 
       { open the console }
       console.open('Pixel example', format);
 
       { create surface matching console dimensions }
-      surface := TPTCSurfaceFactory.CreateNew(console.width, console.height, format);
+      surface := TPTCSurface.Create(console.width, console.height, format);
 
       { plot a white pixel in the middle of the surface }
-      putpixel(surface, surface.width div 2, surface.height div 2, 255, 255, 255);
+      putpixel(surface, surface.width Div 2, surface.height Div 2, 255, 255, 255);
 
       { copy to console }
       surface.copy(console);
@@ -104,38 +70,15 @@ begin
 
       { read key }
       console.ReadKey;
-    finally
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      if Assigned(console) then
-        console.close;
-=======
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
+    Finally
       console.close;
       console.Free;
       surface.Free;
       format.Free;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-    end;
-  except
-    on error: TPTCError do
+    End;
+  Except
+    On error : TPTCError Do
       { report error }
       error.report;
-  end;
-end.
+  End;
+End.

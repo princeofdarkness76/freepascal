@@ -6,12 +6,17 @@ uses fpmkunit;
 
 Var
   P : TPackage;
+<<<<<<< HEAD
+=======
+  T : TTarget;
+>>>>>>> graemeg/fixes_2_2
 begin
   With Installer do
     begin
 {$endif ALLPACKAGES}
 
     P:=AddPackage('os2units');
+<<<<<<< HEAD
     P.ShortName:='os2';
     P.Description := 'Interface units for various libraries included with OS/2 and/or eComStation (multimedia, direct graphics I/O, management of disk partitions / volumes, simple FTP communication library, etc.).';
 {$ifdef ALLPACKAGES}
@@ -48,6 +53,17 @@ begin
     P.Targets.AddExampleProgram('lvmtest.pas');
     P.Sources.AddExampleFiles('examples/*',P.Directory,false,'.');
 
+=======
+{$ifdef ALLPACKAGES}
+    P.Directory:='os2units';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.SourcePath.Add('src');
+//    P.Dependencies.Add('x11');
+
+   // not compilable defunct for now
+
+>>>>>>> graemeg/fixes_2_2
 {$ifndef ALLPACKAGES}
     Run;
     end;

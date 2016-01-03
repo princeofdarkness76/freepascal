@@ -38,6 +38,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIServices-416~44
 =======
      Version:    HIServices-308~1
@@ -53,10 +54,16 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 2003-2008 by Apple Computer, Inc., all rights reserved.
+=======
+     Version:    HIServices-125.6~1
+ 
+     Copyright:  © 2003 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -85,6 +92,19 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -93,8 +113,13 @@
 
 unit Pasteboard;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -107,21 +132,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -156,6 +189,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -163,6 +198,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -396,6 +432,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -421,6 +467,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -431,10 +481,13 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFArray,CFData,CFURL;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ALIGN POWER}
 
@@ -499,6 +552,7 @@ uses MacTypes,CFBase,CFArray,CFData,CFURL;
  *    transported, provide a type inheritance mechanism and allow
  *    namespacing with a reverse DNS scheme.
  }
+<<<<<<< HEAD
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -528,6 +582,22 @@ const
 	duplicatePasteboardFlavorErr = -25134; { item flavor already exists}
 	notPasteboardOwnerErr = -25135; { client did not clear the pasteboard}
 	noPasteboardPromiseKeeperErr = -25136; { a promise is being added without a promise keeper}
+=======
+ 
+type
+    PasteboardRef				= ^SInt32; { an opaque 32-bit type }
+    PasteboardItemID			= Ptr;
+
+{ Pasteboard Manager error codes }
+const
+  badPasteboardSyncErr          = -25130; { pasteboard has been modified and must be synchronized }
+  badPasteboardIndexErr         = -25131; { item index does not exist }
+  badPasteboardItemErr          = -25132; { item reference does not exist }
+  badPasteboardFlavorErr        = -25133; { item flavor does not exist }
+  duplicatePasteboardFlavorErr  = -25134; { item flavor already exists }
+  notPasteboardOwnerErr         = -25135; { client did not clear the pasteboard }
+  noPasteboardPromiseKeeperErr  = -25136; { a promise is being added without a promise keeper }
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -539,9 +609,17 @@ const
  *    in relation to the global, cross process pasteboard resource.
  }
 type
+<<<<<<< HEAD
 	PasteboardSyncFlags = OptionBits;
 const
 {
+=======
+    PasteboardSyncFlags	= UInt32;
+
+const
+
+  {
+>>>>>>> graemeg/fixes_2_2
    * Indicates that the global pasteboard resource has been modified
    * since the last time it was accessed via the local pasteboard
    * reference. The call to PasteboardSynchronize() has updated the
@@ -550,14 +628,21 @@ const
    * the pasteboard to determine whether any tasty flavors have been
    * added and possibly enable pasting.
    }
+<<<<<<< HEAD
 	kPasteboardModified = 1 shl 0;
 
   {
+=======
+    kPasteboardModified           = $00000001; {(1 << 0)}
+
+ {
+>>>>>>> graemeg/fixes_2_2
    * Indicates that the global pasteboard resource was most recently
    * cleared by the this application. Any local pasteboard reference in
    * the client application may add data to the global pasteboard
    * resource.
    }
+<<<<<<< HEAD
 	kPasteboardClientIsOwner = 1 shl 1;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -677,6 +762,10 @@ const
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPasteboardTypeFilePromiseContent CFSTRP('com.apple.pasteboard.promised-file-content-type')}
 {$endc}
+=======
+    kPasteboardClientIsOwner      = $00000002; {(1 << 1)}
+
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  PasteboardFlavorFlags
@@ -691,12 +780,23 @@ const
  *    received via PasteboardGetItemFlavorFlags().
  }
 type
+<<<<<<< HEAD
 	PasteboardFlavorFlags = OptionBits;
 const
 {
    * No additional information exists for this flavor.
    }
 	kPasteboardFlavorNoFlags = 0;
+=======
+    PasteboardFlavorFlags	= UInt32;
+
+const
+
+  {
+   * No additional information exists for this flavor.
+   }
+    kPasteboardFlavorNoFlags      		= $00000000;
+>>>>>>> graemeg/fixes_2_2
 
   {
    * Only the process which has added this flavor can see it. If the
@@ -704,14 +804,22 @@ const
    * you'll never see it as the receiver so there's no reason to test
    * for it.
    }
+<<<<<<< HEAD
 	kPasteboardFlavorSenderOnly = 1 shl 0;
+=======
+    kPasteboardFlavorSenderOnly   		= $00000001; {(1 << 0)}
+>>>>>>> graemeg/fixes_2_2
 
   {
    * The data for this flavor was translated in some manner by the
    * sender before adding it to the pasteboard. Flavors marked with
    * this flag are not stored by the Finder in clipping files.
    }
+<<<<<<< HEAD
 	kPasteboardFlavorSenderTranslated = 1 shl 1;
+=======
+    kPasteboardFlavorSenderTranslated		= $00000002; {(1 << 1)}
+>>>>>>> graemeg/fixes_2_2
 
   {
    * Set by the sender if the flavor data should not be saved by the
@@ -719,7 +827,11 @@ const
    * drag. Flavors marked with this flag are not stored by the Finder
    * in clipping files.
    }
+<<<<<<< HEAD
 	kPasteboardFlavorNotSaved = 1 shl 2;
+=======
+    kPasteboardFlavorNotSaved     			= $00000004; {(1 << 2)}
+>>>>>>> graemeg/fixes_2_2
 
   {
    * Like kPasteboardFlavorSenderOnly, when the sender adds this flag,
@@ -731,7 +843,11 @@ const
    * applications to communicate without exporting their method of
    * communication.
    }
+<<<<<<< HEAD
 	kPasteboardFlavorRequestOnly = 1 shl 3;
+=======
+    kPasteboardFlavorRequestOnly  			= $00000008; {(1 << 3)}
+>>>>>>> graemeg/fixes_2_2
 
   {
    * The data for this flavor is provided by the Translation Manager as
@@ -740,7 +856,11 @@ const
    * by clients. It is automatically added by the Pasteboard Manager
    * when appropriate.
    }
+<<<<<<< HEAD
 	kPasteboardFlavorSystemTranslated = 1 shl 8;
+=======
+    kPasteboardFlavorSystemTranslated = $00000100; {(1 << 8)}
+>>>>>>> graemeg/fixes_2_2
 
   {
    * The data for this flavor has not yet been added to the pasteboard
@@ -750,6 +870,7 @@ const
    * This flag can not be added by clients. It is automatically added
    * by the Pasteboard Manager when appropriate.
    }
+<<<<<<< HEAD
 	kPasteboardFlavorPromised = 1 shl 9;
 
 
@@ -777,6 +898,9 @@ const
    * The receiver did not specify a paste location. This is the default.
    }
 	kPasteboardStandardLocationUnknown = FourCharCode('unkn');
+=======
+    kPasteboardFlavorPromised     = $00000200; {(1 << 9)}
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  PasteboardGetTypeID()
@@ -795,9 +919,15 @@ const
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function PasteboardGetTypeID: CFTypeID; external name '_PasteboardGetTypeID';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
+=======
+ 
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function PasteboardGetTypeID: CFTypeID; external name '_PasteboardGetTypeID';
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPasteboardClipboard CFSTRP('com.apple.pasteboard.clipboard')}
@@ -853,10 +983,19 @@ const
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function PasteboardCreate( inName: CFStringRef { can be NULL }; var outPasteboard: PasteboardRef ): OSStatus; external name '_PasteboardCreate';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
 
+=======
+
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function PasteboardCreate(
+  inName: CFStringRef;              { can be NULL }
+  var outPasteboard: PasteboardRef): OSStatus; external name '_PasteboardCreate';
+  
+>>>>>>> graemeg/fixes_2_2
 {
  *  PasteboardSynchronize()
  *  
@@ -884,8 +1023,14 @@ function PasteboardCreate( inName: CFStringRef { can be NULL }; var outPasteboar
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function PasteboardSynchronize( inPasteboard: PasteboardRef ): PasteboardSyncFlags; external name '_PasteboardSynchronize';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function PasteboardSynchronize(inPasteboard: PasteboardRef): PasteboardSyncFlags; external name '_PasteboardSynchronize';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -915,8 +1060,14 @@ function PasteboardSynchronize( inPasteboard: PasteboardRef ): PasteboardSyncFla
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function PasteboardClear( inPasteboard: PasteboardRef ): OSStatus; external name '_PasteboardClear';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function PasteboardClear(inPasteboard: PasteboardRef): OSStatus; external name '_PasteboardClear';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -977,8 +1128,16 @@ function PasteboardCopyName( inPasteboard: PasteboardRef; var outName: CFStringR
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function PasteboardGetItemCount( inPasteboard: PasteboardRef; var outItemCount: ItemCount ): OSStatus; external name '_PasteboardGetItemCount';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+ 
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function PasteboardGetItemCount(
+  inPasteboard: PasteboardRef;
+  var outItemCount: ItemCount): OSStatus; external name '_PasteboardGetItemCount';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -996,7 +1155,11 @@ function PasteboardGetItemCount( inPasteboard: PasteboardRef; var outItemCount: 
  *      A local pasteboard reference.
  *    
  *    inIndex:
+<<<<<<< HEAD
  *      A 1-based CFIndex requesting the nth pasteboard item reference.
+=======
+ *      A 1-based UInt32 index requesting the nth pasteboard item reference.
+>>>>>>> graemeg/fixes_2_2
  *    
  *    outItem:
  *      A PasteboardItemID which receives the nth pasteboard item
@@ -1010,9 +1173,18 @@ function PasteboardGetItemCount( inPasteboard: PasteboardRef; var outItemCount: 
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function PasteboardGetItemIdentifier( inPasteboard: PasteboardRef; inIndex: CFIndex; var outItem: PasteboardItemID ): OSStatus; external name '_PasteboardGetItemIdentifier';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
+=======
+ 
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function PasteboardGetItemIdentifier(
+  inPasteboard: PasteboardRef;
+  inIndex: UInt32;
+  var outItem: PasteboardItemID): OSStatus; external name '_PasteboardGetItemIdentifier';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  PasteboardCopyItemFlavors()
@@ -1045,8 +1217,17 @@ function PasteboardGetItemIdentifier( inPasteboard: PasteboardRef; inIndex: CFIn
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function PasteboardCopyItemFlavors( inPasteboard: PasteboardRef; inItem: PasteboardItemID; var outFlavorTypes: CFArrayRef ): OSStatus; external name '_PasteboardCopyItemFlavors';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function PasteboardCopyItemFlavors(
+  inPasteboard: PasteboardRef;
+  inItem: PasteboardItemID;
+  var outFlavorTypes: CFArrayRef): OSStatus; external name '_PasteboardCopyItemFlavors';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -1082,9 +1263,20 @@ function PasteboardCopyItemFlavors( inPasteboard: PasteboardRef; inItem: Pastebo
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
+<<<<<<< HEAD
  }
 function PasteboardGetItemFlavorFlags( inPasteboard: PasteboardRef; inItem: PasteboardItemID; inFlavorType: CFStringRef; var outFlags: PasteboardFlavorFlags ): OSStatus; external name '_PasteboardGetItemFlavorFlags';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+}
+
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function PasteboardGetItemFlavorFlags(
+  inPasteboard: PasteboardRef;
+  inItem: PasteboardItemID;
+  inFlavorType: CFStringRef;
+  var outFlags: PasteboardFlavorFlags): OSStatus; external name '_PasteboardGetItemFlavorFlags';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -1105,8 +1297,13 @@ function PasteboardGetItemFlavorFlags( inPasteboard: PasteboardRef; inItem: Past
  *      A pasteboard item identifier containing the flavor of interest.
  *    
  *    inFlavorType:
+<<<<<<< HEAD
  *      A Uniform Type Identifier-based flavor type whose data is being
  *      retrieved.
+=======
+ *      A Uniform Type Idendtifier based flavor type whose data is
+ *      being retrieved.
+>>>>>>> graemeg/fixes_2_2
  *    
  *    outData:
  *      A CFDataRef reference which receives the flavor data. It is the
@@ -1120,9 +1317,19 @@ function PasteboardGetItemFlavorFlags( inPasteboard: PasteboardRef; inItem: Past
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function PasteboardCopyItemFlavorData( inPasteboard: PasteboardRef; inItem: PasteboardItemID; inFlavorType: CFStringRef; var outData: CFDataRef ): OSStatus; external name '_PasteboardCopyItemFlavorData';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
+=======
+
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function PasteboardCopyItemFlavorData(
+  inPasteboard: PasteboardRef;
+  inItem: PasteboardItemID;
+  inFlavorType: CFStringRef;
+  var outData: CFDataRef): OSStatus; external name '_PasteboardCopyItemFlavorData';
+>>>>>>> graemeg/fixes_2_2
 
 const
     kPasteboardPromisedData = NIL;
@@ -1177,9 +1384,21 @@ const
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
+<<<<<<< HEAD
  }
 function PasteboardPutItemFlavor( inPasteboard: PasteboardRef; inItem: PasteboardItemID; inFlavorType: CFStringRef; inData: CFDataRef { can be NULL }; inFlags: PasteboardFlavorFlags ): OSStatus; external name '_PasteboardPutItemFlavor';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+}
+
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function PasteboardPutItemFlavor(
+  inPasteboard: PasteboardRef;
+  inItem: PasteboardItemID;
+  inFlavorType: CFStringRef;
+  inData: CFDataRef;             { can be NULL }
+  inFlags: PasteboardFlavorFlags): OSStatus; external name '_PasteboardPutItemFlavor';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -1209,8 +1428,16 @@ function PasteboardPutItemFlavor( inPasteboard: PasteboardRef; inItem: Pasteboar
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function PasteboardCopyPasteLocation( inPasteboard: PasteboardRef; var outPasteLocation: CFURLRef ): OSStatus; external name '_PasteboardCopyPasteLocation';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+ 
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function PasteboardCopyPasteLocation(
+  inPasteboard: PasteboardRef;
+  var outPasteLocation: CFURLRef): OSStatus; external name '_PasteboardCopyPasteLocation';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -1242,8 +1469,16 @@ function PasteboardCopyPasteLocation( inPasteboard: PasteboardRef; var outPasteL
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function PasteboardSetPasteLocation( inPasteboard: PasteboardRef; inPasteLocation: CFURLRef ): OSStatus; external name '_PasteboardSetPasteLocation';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+ 
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function PasteboardSetPasteLocation(
+  inPasteboard: PasteboardRef;
+  inPasteLocation: CFURLRef): OSStatus; external name '_PasteboardSetPasteLocation';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -1269,9 +1504,21 @@ function PasteboardSetPasteLocation( inPasteboard: PasteboardRef; inPasteLocatio
  *  
  *  Result:
  *    An operating system result code.
+<<<<<<< HEAD
  }
 type
 	PasteboardPromiseKeeperProcPtr = function( pasteboard: PasteboardRef; item: PasteboardItemID; flavorType: CFStringRef; context: UnivPtr ): OSStatus;
+=======
+}
+
+type
+{$ifc TYPED_FUNCTION_POINTERS}
+	PasteboardPromiseKeeperProcPtr = function(pasteboard: PasteboardRef; item: PasteboardItemID; flavorType: CFStringRef; context: Ptr): OSStatus;
+{$elsec}
+	PasteboardPromiseKeeperProcPtr = ProcPtr;
+{$endc}
+
+>>>>>>> graemeg/fixes_2_2
 {
  *  PasteboardSetPromiseKeeper()
  *  
@@ -1303,9 +1550,18 @@ type
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function PasteboardSetPromiseKeeper( inPasteboard: PasteboardRef; inPromiseKeeper: PasteboardPromiseKeeperProcPtr; inContext: UnivPtr ): OSStatus; external name '_PasteboardSetPromiseKeeper';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
+=======
+
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function PasteboardSetPromiseKeeper(
+  inPasteboard: PasteboardRef;
+  inPromiseKeeper: PasteboardPromiseKeeperProcPtr;
+  inContext: Ptr): OSStatus; external name '_PasteboardSetPromiseKeeper';
+>>>>>>> graemeg/fixes_2_2
 
 const
     kPasteboardResolveAllPromises = NIL;
@@ -1338,6 +1594,7 @@ const
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function PasteboardResolvePromises( inPasteboard: PasteboardRef ): OSStatus; external name '_PasteboardResolvePromises';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
@@ -1346,3 +1603,13 @@ function PasteboardResolvePromises( inPasteboard: PasteboardRef ): OSStatus; ext
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ 
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
+function PasteboardResolvePromises(inPasteboard: PasteboardRef): OSStatus; external name '_PasteboardResolvePromises';
+
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

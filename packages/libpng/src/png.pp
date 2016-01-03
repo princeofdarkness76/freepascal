@@ -13,7 +13,10 @@ interface
 {$PACKRECORDS C}
 
 uses
+<<<<<<< HEAD
  ctypes,
+=======
+>>>>>>> graemeg/fixes_2_2
  zlib;
 
 Const
@@ -25,10 +28,17 @@ Const
   LibPng = 'png'; // Library name
   { matching lib version for libpng, needed for initialization }
   PNG_LIBPNG_VER_STRING='1.2.12';
+<<<<<<< HEAD
   {$linklib png}
 {$endif windows}
 
 type
+=======
+{$endif windows}
+
+type
+   size_t = longint;
+>>>>>>> graemeg/fixes_2_2
    time_t = longint;
    int = longint;
    z_stream = TZStream;
@@ -49,7 +59,11 @@ type
    pppng_uint_16 = ^ppng_uint_16;
    pppng_int_16 = ^ppng_int_16;
    pppng_byte = ^ppng_byte;
+<<<<<<< HEAD
    png_size_t = csize_t;
+=======
+   png_size_t = size_t;
+>>>>>>> graemeg/fixes_2_2
    png_fixed_point = png_int_32;
    ppng_fixed_point = ^png_fixed_point;
    pppng_fixed_point = ^ppng_fixed_point;
@@ -79,7 +93,13 @@ type
    png_charpp = PPchar;
    ppng_charpp = ^png_charpp;
    png_fixed_point_pp = PPpng_fixed_point;
+<<<<<<< HEAD
    png_doublepp = PPdouble;
+=======
+   PPDouble = ^PDouble;
+   png_doublepp = PPdouble;
+   PPPChar = ^PPCHar;
+>>>>>>> graemeg/fixes_2_2
    png_charppp = PPPchar;
    Pcharf = Pchar;
    PPcharf = ^Pcharf;

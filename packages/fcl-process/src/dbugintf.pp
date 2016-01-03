@@ -50,7 +50,10 @@ ResourceString
   SEntering = '> Entering ';
   SExiting  = '< Exiting ';
   SSeparator = '>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-<';
+<<<<<<< HEAD
   SServerStartFailed = 'Failed to start debugserver. (%s)';
+=======
+>>>>>>> graemeg/fixes_2_2
 
 implementation
 
@@ -212,6 +215,7 @@ begin
   With TProcess.Create(Nil) do
     begin
     Try
+<<<<<<< HEAD
       CommandLine:='dbugsrv';
       Execute;
       Result:=ProcessID;
@@ -220,6 +224,13 @@ begin
       SendError := Format(SServerStartFailed,[E.Message]);
       Result := 0;
       end;
+=======
+      CommandLine:='debugserver';
+      Execute;
+      Result:=ProcessID;
+    Except
+      Result := 0;
+>>>>>>> graemeg/fixes_2_2
     end;
     Free;
     end;
@@ -262,7 +273,10 @@ begin
     if ServerID = 0 then
       begin
       DebugDisabled := True;
+<<<<<<< HEAD
       FreeAndNil(DebugClient);
+=======
+>>>>>>> graemeg/fixes_2_2
       Exit;
       end
     else
@@ -274,6 +288,7 @@ begin
       Sleep(100);
       end;
     end;
+<<<<<<< HEAD
   try
     DebugClient.Connect;
   except
@@ -281,6 +296,9 @@ begin
     DebugDisabled:=True;
     Raise;
   end;
+=======
+  DebugClient.Connect;
+>>>>>>> graemeg/fixes_2_2
   MsgBuffer:=TMemoryStream.Create;
   Msg.MsgType:=lctIdentify;
   Msg.MsgTimeStamp:=Now;

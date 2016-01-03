@@ -1279,6 +1279,7 @@ function SignalObjectAndWait( hObjectToSignal:THANDLE;  hObjectToWaitOn:THANDLE 
 function CancelWaitableTimer(hTimer:THandle):BOOL; external 'kernel32' name 'CancelWaitableTimer';
 function GetComboBoxInfo(hwndCombo:HWND;pcbi:PCOMBOBOXINFO):BOOL; external 'user32' name 'GetComboBoxInfo';
 function GetAncestor(HWnd: HWND; Flag: UINT): HWND; StdCall; External 'user32';
+<<<<<<< HEAD
 
 // #if(WINVER >= 0x0500)
 function GetMenuInfo(_hmenu:HMENU; lpcmi:LPMENUINFO):BOOL; external 'user32' name 'GetMenuInfo';
@@ -1302,6 +1303,8 @@ function IMAGE_FIRST_SECTION(ntheader : PIMAGE_NT_HEADERS):PIMAGE_SECTION_HEADER
 =======
 >>>>>>> origin/cpstrnew
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$endif read_interface}
 
 

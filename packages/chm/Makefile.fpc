@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for chm library
+>>>>>>> graemeg/fixes_2_2
 #
 
 [package]
 name=chm
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -17,10 +22,14 @@ version=3.1.1
 =======
 >>>>>>> origin/cpstrnew
 version=2.5.1
+=======
+version=2.2.5
+>>>>>>> graemeg/fixes_2_2
 
 [target]
 units=fasthtmlparser htmlutil paslzx paslzxcomp paslznonslide chmbase chmtypes \
       chmspecialfiles chmsitemap chmwriter chmfilewriter chmreader htmlindexer \
+<<<<<<< HEAD
       chmfiftimain lzxcompressthread itolitlstypes itsftransform itolitlsreader
 programs=chmcmd chmls
 examples=
@@ -28,6 +37,14 @@ examples=
 
 [require]
 packages=rtl fpmkunit
+=======
+      chmfiftimain
+programs=chmcmd chmls
+examples=
+
+[require]
+packages=rtl fcl-xml
+>>>>>>> graemeg/fixes_2_2
 
 [install]
 fpcpackage=y
@@ -35,6 +52,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -137,3 +155,15 @@ chmls$(EXEEXT): chmls.lpr
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+[compiler]
+includedir=src
+sourcedir=src tests
+
+[rules]
+.NOTPARALLEL:
+
+cdmcmd$(EXEEXT): chmcmd.lpr
+
+chmls$(EXEEXT): chmls.lpr
+>>>>>>> graemeg/fixes_2_2

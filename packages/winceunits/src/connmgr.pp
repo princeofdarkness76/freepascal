@@ -209,7 +209,11 @@ type
        guidSourceNet:GUID;         // @field GUID of source network.
 
        szDescription:PTCHAR;       // @field Name of connection, 0-terminated string or NULL if N/A.
+<<<<<<< HEAD
        szAdapterName:PTCHAR;       // @field Name of adapter, 0-terminated or NULL if N/A.
+=======
+       szAdapterName:GUID;       // @field Name of adapter, 0-terminated or NULL if N/A.
+>>>>>>> graemeg/fixes_2_2
 
        dwConnectionStatus:DWORD;   // @field One of CONNMGR_STATUS_*.
        LastConnectTime:SYSTEMTIME; // @field Time connection was last established.

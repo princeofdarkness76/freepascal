@@ -204,6 +204,13 @@ type
     _MUTEX_TYPE_MAX
   );
 
+<<<<<<< HEAD
+=======
+
+Const
+     MNAMLEN   = 88-2*sizeof(clong); // slightly machine specific.
+     MFSNamLen = 16;	
+>>>>>>> graemeg/fixes_2_2
 type
   fsid_t  = array[0..1] of cint32;
 
@@ -300,6 +307,13 @@ Type TStatFS =  {?} Record
   PStatFS4=^TStatFs4;
 
   mbstate_t = record
+      case byte of
+        0: (__mbstate8: array[0..127] of char);
+        1: (_mbstateL: cint64); { for alignment }
+    end;
+    pmbstate_t = ^mbstate_t;
+
+    mbstate_t = record
       case byte of
         0: (__mbstate8: array[0..127] of char);
         1: (_mbstateL: cint64); { for alignment }

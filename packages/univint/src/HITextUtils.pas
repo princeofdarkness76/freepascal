@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -22,10 +23,16 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 2002-2008 by Apple Computer, Inc., all rights reserved.
+=======
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 2002-2005 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -51,6 +58,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -59,8 +78,13 @@
 
 unit HITextUtils;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -73,21 +97,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -122,6 +154,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -129,6 +163,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -363,6 +398,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -388,6 +433,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -398,6 +447,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes, TextCommon, CFBase;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -407,6 +457,11 @@ uses MacTypes, TextCommon, CFBase;
 
 
 {$ifc not TARGET_CPU_64}
+=======
+{$ALIGN POWER}
+
+
+>>>>>>> graemeg/fixes_2_2
 {
  *  GetTextAndEncodingFromCFString()
  *  
@@ -468,7 +523,11 @@ uses MacTypes, TextCommon, CFBase;
  *      the output buffer.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.2.5 and later
  *    Non-Carbon CFM:   not available
  }
@@ -476,6 +535,7 @@ function GetTextAndEncodingFromCFString( inString: CFStringRef; outText: BytePtr
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 {$endc} {TARGET_OS_MAC}
@@ -483,3 +543,6 @@ function GetTextAndEncodingFromCFString( inString: CFStringRef; outText: BytePtr
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+end.
+>>>>>>> graemeg/fixes_2_2

@@ -15,8 +15,11 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure InitDynLibs;
 =======
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifdef readinterface}
 
 { ---------------------------------------------------------------------
@@ -28,8 +31,11 @@ Type
 
 Const
   NilHandle = 0;
+<<<<<<< HEAD
 // these are for easier crossplatform construction of dll names in dynloading libs.
   SharedSuffix = 'dll';
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$else}
 
@@ -39,7 +45,11 @@ Const
 
 Uses windows;
 
+<<<<<<< HEAD
 Function LoadLibrary(const Name : AnsiString) : TlibHandle;
+=======
+Function LoadLibrary(Name : AnsiString) : TlibHandle;
+>>>>>>> graemeg/fixes_2_2
 var
   ws: PWideChar;
 begin
@@ -48,7 +58,11 @@ begin
   FreeMem(ws);
 end;
 
+<<<<<<< HEAD
 Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Pointer;
+=======
+Function GetProcedureAddress(Lib : TLibHandle; ProcName : AnsiString) : Pointer;
+>>>>>>> graemeg/fixes_2_2
 var
   ws: PWideChar;
 begin
@@ -58,8 +72,16 @@ begin
 end;
 
 Function UnloadLibrary(Lib : TLibHandle) : Boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 begin
   { nothing to do here since Windows DynLibs is done in System }
 end;
 
+=======
+begin
+  Result:=Windows.FreeLibrary(Lib);
+end;
+
+{$endif}
+>>>>>>> graemeg/fixes_2_2

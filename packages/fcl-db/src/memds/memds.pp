@@ -11,7 +11,6 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
  **********************************************************************}
-{$IFDEF FPC}
 {$mode objfpc}
 {$H+}
 {$ENDIF}
@@ -60,8 +59,11 @@ type
   MDSError=class(Exception);
 >>>>>>> graemeg/cpstrnew
 
+<<<<<<< HEAD
   MDSError=class(Exception);
 
+=======
+>>>>>>> graemeg/fixes_2_2
   { TMemDataset }
 
   TMemDataset=class(TDataSet)
@@ -104,6 +106,7 @@ type
     FFilterBuffer: PChar;
     ffieldoffsets: PInteger;
     ffieldsizes: PInteger;
+<<<<<<< HEAD
     function GetCharPointer(p:PChar; Pos:Integer):PChar;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -117,16 +120,26 @@ type
 >>>>>>> origin/cpstrnew
     function GetIntegerPointer(p:PInteger; Pos:Integer):PInteger;
 
+=======
+>>>>>>> graemeg/fixes_2_2
     procedure calcrecordlayout;
     function  MDSGetRecordOffset(ARecNo: integer): longint;
     function  MDSGetFieldOffset(FieldNo: integer): integer;
     function  MDSGetBufferSize(FieldNo: integer): integer;
+<<<<<<< HEAD
     function  MDSGetActiveBuffer(out Buffer: TRecordBuffer): Boolean;
     procedure MDSReadRecord(Buffer:TRecordBuffer;ARecNo:Integer);
     procedure MDSWriteRecord(Buffer:TRecordBuffer;ARecNo:Integer);
     procedure MDSAppendRecord(Buffer:TRecordBuffer);
     function  MDSFilterRecord(Buffer:TRecordBuffer): Boolean;
     function  MDSLocateRecord(const KeyFields: string; const KeyValues: Variant; Options: TLocateOptions; out ARecNo: integer): Boolean;
+=======
+    function  MDSGetActiveBuffer(var Buffer: PChar): Boolean;
+    procedure MDSReadRecord(Buffer:PChar;ARecNo:Integer);
+    procedure MDSWriteRecord(Buffer:PChar;ARecNo:Integer);
+    procedure MDSAppendRecord(Buffer:PChar);
+    function  MDSFilterRecord(Buffer: PChar): Boolean;
+>>>>>>> graemeg/fixes_2_2
   protected
     // Mandatory
     function  AllocRecordBuffer: TRecordBuffer; override;
@@ -171,14 +184,22 @@ type
     // If SaveData=False, a size 0 block should be written.
     Procedure SaveDataToStream(F : TStream; SaveData : Boolean); virtual;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/fixes_2_2
   public
     constructor Create(AOwner:TComponent); override;
     destructor Destroy; override;
     function BookmarkValid(ABookmark: TBookmark): Boolean; override;
+<<<<<<< HEAD
     function CompareBookmarks(Bookmark1, Bookmark2: TBookmark): Longint; override;
     function CreateBlobStream(Field: TField; Mode: TBlobStreamMode): TStream; override;
     function Locate(const KeyFields: string; const KeyValues: Variant; Options: TLocateOptions): boolean; override;
     function Lookup(const KeyFields: string; const KeyValues: Variant; const ResultFields: string): Variant; override;
+=======
+    procedure CreateTable;
+>>>>>>> graemeg/fixes_2_2
 
     procedure CreateTable;
     Function  DataSize : Integer;
@@ -218,8 +239,11 @@ type
     Procedure CopyFromDataset(DataSet : TDataSet; CopyData : Boolean); {$IFNDEF FPC} overload; {$ENDIF}
 
     Property FileModified : Boolean Read FFileModified;
+<<<<<<< HEAD
     // TMemDataset does not implement Filter. Please use OnFilter instead.
     Property Filter; unimplemented;
+=======
+>>>>>>> graemeg/fixes_2_2
 
   published
     Property FileName : String Read FFileName Write FFileName;
@@ -261,6 +285,7 @@ ResourceString
   SErrInvalidMarkerAtPos    = 'Wrong data stream marker at position %d. Got %d, expected %d';
   SErrNoFileName            = 'Filename must not be empty.';
 
+<<<<<<< HEAD
 type
   TMDSRecInfo=record
     Bookmark: Longint;
@@ -295,6 +320,10 @@ type
 Const
   SizeRecInfo = SizeOf(TMDSRecInfo);
 
+=======
+Const
+  SizeRecInfo = SizeOf(TMTRecInfo);
+>>>>>>> graemeg/fixes_2_2
 
 procedure unsetfieldisnull(nullmask: pbyte; const x: integer);
 
@@ -462,8 +491,13 @@ begin
   FRecSize:=0;
   FRecInfoOffset:=0;
   FCurrRecNo:=-1;
+<<<<<<< HEAD
   BookmarkSize := sizeof(Longint);
   FBlobs := TMDSBlobList.Create;
+=======
+  BookmarkSize := sizeof(TMTRecInfo);
+  FIsOpen:=False;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 destructor TMemDataset.Destroy;
@@ -471,8 +505,11 @@ begin
   FStream.Free;
   FreeMem(FFieldOffsets);
   FreeMem(FFieldSizes);
+<<<<<<< HEAD
   FBlobs.Clear;
   FBlobs.Free;
+=======
+>>>>>>> graemeg/fixes_2_2
   inherited Destroy;
 end;
 
@@ -486,6 +523,7 @@ begin
   Result := (ReqBookmark>=0) and (ReqBookmark<FRecCount);
 end;
 
+<<<<<<< HEAD
 function TMemDataset.CompareBookmarks(Bookmark1, Bookmark2: TBookmark): Longint;
 const r: array[Boolean, Boolean] of ShortInt = ((2,-1),(1,0));
 begin
@@ -508,6 +546,8 @@ begin
   Result := TMDSBlobStream.Create(Field, Mode);
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 function TMemDataset.MDSGetRecordOffset(ARecNo: integer): longint;
 begin
   Result:=FRecSize*ARecNo
@@ -515,6 +555,7 @@ end;
 
 function TMemDataset.MDSGetFieldOffset(FieldNo: integer): integer;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -532,6 +573,9 @@ begin
 =======
  result:= getIntegerpointer(ffieldoffsets, fieldno-1)^;
 >>>>>>> origin/cpstrnew
+=======
+ result:= ffieldoffsets[fieldno-1];
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TMemDataset.RaiseError(Fmt: String; Args: array of const);
@@ -542,6 +586,7 @@ end;
 
 function TMemDataset.MDSGetBufferSize(FieldNo: integer): integer;
 var
+<<<<<<< HEAD
  FD: TFieldDef;
 begin
 <<<<<<< HEAD
@@ -573,10 +618,22 @@ begin
   ftSmallInt: result:=SizeOf(SmallInt);
   ftWord,
   ftAutoInc,
+=======
+ dt1: tfieldtype;
+begin
+ dt1:= FieldDefs.Items[FieldNo-1].Datatype;
+ case dt1 of
+  ftString:   result:=FieldDefs.Items[FieldNo-1].Size+1;
+  ftBoolean:  result:=SizeOf(Wordbool);
+  ftFloat:    result:=SizeOf(Double);
+  ftLargeInt: result:=SizeOf(int64);
+  ftSmallInt: result:=SizeOf(SmallInt);
+>>>>>>> graemeg/fixes_2_2
   ftInteger:  result:=SizeOf(longint);
   ftDateTime,
     ftTime,
     ftDate:   result:=SizeOf(TDateTime);
+<<<<<<< HEAD
   ftFmtBCD:   result:=SizeOf(TBCD);
   ftWideString, ftFixedWideChar:
               result:=(FD.Size+1)*SizeOf(WideChar);
@@ -586,6 +643,10 @@ begin
               result := SizeOf(TMDSBlobField);
  else
   RaiseError(SErrFieldTypeNotSupported,[FD.Name]);
+=======
+ else
+  RaiseError(SErrFieldTypeNotSupported,[FieldDefs.Items[FieldNo-1].Name]);
+>>>>>>> graemeg/fixes_2_2
  end;
 {$IFDEF FPC_REQUIRES_PROPER_ALIGNMENT}
  Result:=Align(Result,4);
@@ -594,6 +655,7 @@ end;
 
 function TMemDataset.MDSGetActiveBuffer(out Buffer: TRecordBuffer): Boolean;
 begin
+<<<<<<< HEAD
   case State of
     dsEdit,
     dsInsert:
@@ -609,6 +671,23 @@ begin
         Buffer:=ActiveBuffer;
   end;
   Result := Buffer<>nil;
+=======
+ case State of
+   dsBrowse:
+     if IsEmpty then
+       Buffer:=nil
+     else
+       Buffer:=ActiveBuffer;
+  dsEdit,
+  dsInsert:
+     Buffer:=ActiveBuffer;
+  dsFilter:
+     Buffer:=FFilterBuffer;
+ else
+   Buffer:=nil;
+ end;
+ Result:=(Buffer<>nil);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TMemDataset.MDSReadRecord(Buffer:TRecordBuffer;ARecNo:Integer);   //Reads a Rec from Stream in Buffer
@@ -647,9 +726,17 @@ begin
   FillChar(Buffer^,FRecSize,0);
 end;
 
+<<<<<<< HEAD
 procedure TMemDataset.ClearCalcFields(Buffer: TRecordBuffer);
 begin
   FillChar(Buffer[RecordSize], CalcFieldsSize, 0);
+=======
+var
+  I : integer;
+
+begin
+ fillchar(buffer^,frecsize,0);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TMemDataset.InternalDelete;
@@ -751,6 +838,7 @@ end;
 procedure TMemDataset.InternalOpen;
 
 begin
+  if not FTableIsCreated then CreateTable;
   If (FFileName<>'') then
     FOpenStream:=TFileStream.Create(FFileName,fmOpenRead);
   Try
@@ -902,8 +990,14 @@ begin
  FIsOpen:=False;
  FFileModified:=False;
  // BindFields(False);
+<<<<<<< HEAD
  if DefaultFields then
   DestroyFields;
+=======
+ if DefaultFields then begin
+  DestroyFields;
+ end;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TMemDataset.InternalPost;
@@ -924,7 +1018,11 @@ begin
   Result:=FIsOpen;
 end;
 
+<<<<<<< HEAD
 function TMemDataset.GetRecord(Buffer: TRecordBuffer; GetMode: TGetMode; DoCheck: Boolean): TGetResult;
+=======
+function TMemDataset.GetRecord(Buffer: PChar; GetMode: TGetMode; DoCheck: Boolean): TGetResult;
+>>>>>>> graemeg/fixes_2_2
 
 var
   Accepted: Boolean;
@@ -958,7 +1056,10 @@ begin
       MDSReadRecord(Buffer, FCurrRecNo);
       PRecInfo(Buffer+FRecInfoOffset)^.Bookmark:=FCurrRecNo;
       PRecInfo(Buffer+FRecInfoOffset)^.BookmarkFlag:=bfCurrent;
+<<<<<<< HEAD
       GetCalcFields(Buffer);
+=======
+>>>>>>> graemeg/fixes_2_2
       if (Filtered) then
         Accepted:=MDSFilterRecord(Buffer) //Filtering
       else
@@ -971,6 +1072,7 @@ end;
 
 function TMemDataset.GetFieldData(Field: TField; Buffer: Pointer): Boolean;
 var
+<<<<<<< HEAD
  SrcBuffer: TRecordBuffer;
  I: integer;
 begin
@@ -1006,16 +1108,32 @@ begin
 =======
    Move(getcharpointer(SrcBuffer,getintegerpointer(ffieldoffsets,I)^)^, Buffer^,GetIntegerPointer(FFieldSizes, I)^);
 >>>>>>> origin/cpstrnew
+=======
+ SrcBuffer: PChar;
+ I: integer;
+begin
+ I:= Field.FieldNo - 1;
+ result:= (I >= 0) and MDSGetActiveBuffer(SrcBuffer) and 
+          not getfieldisnull(pointer(srcbuffer),I);
+ if result and (buffer <> nil) then 
+   begin
+   Move((SrcBuffer+ffieldoffsets[I])^, Buffer^,FFieldSizes[I]);
+>>>>>>> graemeg/fixes_2_2
    end;
 end;
 
 procedure TMemDataset.SetFieldData(Field: TField; Buffer: Pointer);
 var
+<<<<<<< HEAD
  DestBuffer: TRecordBuffer;
+=======
+ DestBuffer: PChar;
+>>>>>>> graemeg/fixes_2_2
  I,J: integer;
 
 begin
  I:= Field.FieldNo - 1;
+<<<<<<< HEAD
  if not MDSGetActiveBuffer(DestBuffer) then Exit;
 
  if I >= 0 then
@@ -1033,11 +1151,16 @@ begin
        Dec(J); // Do not move terminating 0, which is in the size.
      Move(Buffer^, GetRecordBufferPointer(DestBuffer, getIntegerPointer(FFieldOffsets, I)^)^, J);
 =======
+=======
+ if (I >= 0) and  MDSGetActiveBuffer(DestBuffer) then 
+   begin
+>>>>>>> graemeg/fixes_2_2
    if buffer = nil then 
      setfieldisnull(pointer(destbuffer),I)
    else 
      begin 
      unsetfieldisnull(pointer(destbuffer),I);
+<<<<<<< HEAD
      J:=GetIntegerPointer(FFieldSizes, I)^;
      if Field.DataType=ftString then
        Dec(J); // Do not move terminating 0, which is in the size.
@@ -1056,6 +1179,15 @@ begin
 
  if not (State in [dsCalcFields, dsFilter, dsNewValue]) then
    DataEvent(deFieldChange, PtrInt(Field));
+=======
+     J:=FFieldSizes[I];
+     if Field.DataType=ftString then
+       Dec(J); // Do not move terminating 0, which is in the size.
+     Move(Buffer^,(DestBuffer+FFieldOffsets[I])^,J);
+     dataevent(defieldchange,ptrint(field));
+     end;
+   end;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TMemDataset.GetRecordSize: Word;
@@ -1087,13 +1219,21 @@ begin
   InternalGotoBookmark (@ReqBookmark);
 end;
 
+<<<<<<< HEAD
 function TMemDataset.GetBookmarkFlag(Buffer: TRecordBuffer): TBookmarkFlag;
+=======
+function TMemDataset.GetBookmarkFlag(Buffer: PChar): TBookmarkFlag;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   Result:=PRecInfo(Buffer+FRecInfoOffset)^.BookmarkFlag;
 end;
 
+<<<<<<< HEAD
 procedure TMemDataset.SetBookmarkFlag(Buffer: TRecordBuffer; Value: TBookmarkFlag);
+=======
+procedure TMemDataset.SetBookmarkFlag(Buffer: PChar; Value: TBookmarkFlag);
+>>>>>>> graemeg/fixes_2_2
 
 begin
   PRecInfo(Buffer+FRecInfoOffset)^.BookmarkFlag := Value;
@@ -1162,6 +1302,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 procedure TMemDataset.calcrecordlayout;
 var
   i,Count : integer;
@@ -1235,6 +1376,43 @@ begin
   CheckInactive;
   Clear(False);
   calcrecordlayout;
+=======
+procedure tmemdataset.calcrecordlayout;
+var
+  i,count : integer;
+begin
+ Count := fielddefs.count;
+ // Avoid mem-leak if CreateTable is called twice
+ FreeMem(ffieldoffsets);
+ Freemem(ffieldsizes);
+
+ FFieldOffsets:=getmem(Count*sizeof(integer));
+ FFieldSizes:=getmem(Count*sizeof(integer));
+ FRecSize:= (Count+7) div 8; //null mask
+{$IFDEF FPC_REQUIRES_PROPER_ALIGNMENT}
+ FRecSize:=Align(FRecSize,4);
+{$ENDIF}
+ for i:= 0 to Count-1 do
+   begin
+   ffieldoffsets[i] := frecsize;
+   ffieldsizes[i] := MDSGetbufferSize(i+1);
+   FRecSize:= FRecSize+FFieldSizes[i];
+   end;
+end;
+
+procedure TMemDataset.CreateTable;
+
+begin
+  CheckInactive;
+  FStream.Clear;
+  FRecCount:=0;
+  FCurrRecNo:=-1;
+  FIsOpen:=False;
+  calcrecordlayout;
+  FRecInfoOffset:=FRecSize;
+  FRecSize:=FRecSize+SizeRecInfo;
+  FRecBufferSize:=FRecSize;
+>>>>>>> graemeg/fixes_2_2
   FTableIsCreated:=True;
 end;
 
@@ -1260,8 +1438,13 @@ function TMemDataset.GetRecNo: Integer;
 
 begin
   UpdateCursorPos;
+<<<<<<< HEAD
   if (FCurrRecNo<0) or (FRecCount=0) or (State=dsInsert) then
     Result:=0
+=======
+  if (FCurrRecNo<0) then
+    Result:=1
+>>>>>>> graemeg/fixes_2_2
   else
     Result:=FCurrRecNo+1;
 end;

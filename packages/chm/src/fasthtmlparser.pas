@@ -1,5 +1,27 @@
+<<<<<<< HEAD
 {
   See the section LICENSE/TERMS below for details about the copyright.
+=======
+{ Copyright (C) <2005> <Andrew Haines> fasthtmlparser.pas
+
+  This library is free software; you can redistribute it and/or modify it
+  under the terms of the GNU Library General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or (at your
+  option) any later version.
+
+  This program is distributed in the hope that it will be useful, but WITHOUT
+  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+  FITNESS FOR A PARTICULAR PURPOSE. See the GNU Library General Public License
+  for more details.
+
+  You should have received a copy of the GNU Library General Public License
+  along with this library; if not, write to the Free Software Foundation,
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+}
+{
+  See the file COPYING.FPC, included in this distribution,
+  for details about the copyright.
+>>>>>>> graemeg/fixes_2_2
 }
 // TODO:
 {
@@ -152,14 +174,20 @@ type
       OnFoundTag: TOnFoundTag;
       OnFoundText: TOnFoundText;
       Raw: Pchar;
+<<<<<<< HEAD
       FCurrent : PChar;
+=======
+>>>>>>> graemeg/fixes_2_2
       constructor Create(sRaw: string);overload;
       constructor Create(pRaw: PChar);overload;
       procedure Exec;
       procedure NilOnFoundTag(NoCaseTag, ActualTag: string);
       procedure NilOnFoundText(Text: string);
+<<<<<<< HEAD
     Public
       Function CurrentPos : Integer;
+=======
+>>>>>>> graemeg/fixes_2_2
       property Done: Boolean read FDone write FDone;
   end;
 
@@ -173,9 +201,18 @@ begin
 end;
 
 function CopyBuffer(StartIndex: PChar; Length: Integer): string;
+<<<<<<< HEAD
 begin
   SetLength(Result, Length);
   StrLCopy(@Result[1], StartIndex, Length);
+=======
+var
+  S: string;
+begin
+  SetLength(S, Length);
+  StrLCopy(@S[1], StartIndex, Length);
+  Result:= S;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -204,6 +241,7 @@ procedure THTMLParser.NilOnFoundText(Text: string);
 begin 
 end;
 
+<<<<<<< HEAD
 function THTMLParser.CurrentPos: Integer;
 begin
   if Assigned(Raw) and Assigned(FCurrent) then
@@ -212,6 +250,8 @@ begin
     Result:=0;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 procedure THTMLParser.Exec;
 var
   L: Integer;
@@ -255,7 +295,10 @@ begin
       begin
         L:= P - TextStart;
         { Yes, copy to buffer }
+<<<<<<< HEAD
         FCurrent:=P;
+=======
+>>>>>>> graemeg/fixes_2_2
         OnFoundText( CopyBuffer(TextStart, L) );
       end else
       begin
@@ -291,7 +334,10 @@ begin
       { Copy this tag to buffer }
       L:= P - TagStart + 1;
 
+<<<<<<< HEAD
       FCurrent:=P;
+=======
+>>>>>>> graemeg/fixes_2_2
       OnFoundTag( uppercase(CopyBuffer(TagStart, L )), CopyBuffer(TagStart, L ) ); //L505: added uppercase
       Inc(P); Inc(I);
       if I >= TL then Break;

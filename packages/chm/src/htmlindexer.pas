@@ -12,7 +12,11 @@
 
   You should have received a copy of the GNU Library General Public License
   along with this library; if not, write to the Free Software Foundation,
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> graemeg/fixes_2_2
 }
 {
   See the file COPYING.FPC, included in this distribution,
@@ -21,6 +25,7 @@
 unit HTMLIndexer;
 {$MODE OBJFPC}{$H+}
 interface
+<<<<<<< HEAD
 uses Classes, SysUtils, FastHTMLParser,{$ifdef userb}fos_redblacktree_gen{$else}avl_tree{$endif};
 
 Type
@@ -45,6 +50,34 @@ Type
   TIndexedWord = class(TObject)
   private
     FIsTitle: Boolean;
+=======
+uses Classes, SysUtils, FastHTMLParser;
+
+Type
+
+  { TIndexedWord }
+
+  { TIndexDocument }
+
+  TIndexDocument = class(TObject)
+  private
+    FDocumentIndex: Integer;
+  public
+    WordIndex: array of Integer;
+    procedure AddWordIndex(AIndex: Integer);
+    constructor Create(ADocumentIndex: Integer);
+    property DocumentIndex: Integer read FDocumentIndex;
+  end;
+
+
+
+
+  TIndexedWord = class(TObject)
+  private
+    FIsTitle: Boolean;
+    FNextWord: TIndexedWord;
+    FPrevWord: TIndexedWord;
+>>>>>>> graemeg/fixes_2_2
     FTheWord: string;
     FCachedTopic: TIndexDocument;
     FDocuments: Array of TIndexDocument;
@@ -54,20 +87,32 @@ Type
     constructor Create(AWord: String; AIsTitle: Boolean);
     destructor Destroy; override;
     function GetLogicalDocument(AIndex: Integer): TIndexDocument;
+<<<<<<< HEAD
     property TheWord: string read FTheWord write ftheword; // Always lowercase
     property DocumentTopic[TopicIndexNum: Integer]: TIndexDocument read GetDocument;
     property DocumentCount: Integer read GetDocumentCount;
     property IsTitle: Boolean read FIsTitle write fistitle;
+=======
+    property TheWord: string read FTheWord; // Always lowercase
+    property PrevWord: TIndexedWord read FPrevWord write FPrevWord;
+    property NextWord: TIndexedWord read FNextWord write FNextWord;
+    property DocumentTopic[TopicIndexNum: Integer]: TIndexDocument read GetDocument;
+    property DocumentCount: Integer read GetDocumentCount;
+    property IsTitle: Boolean read FIsTitle;
+>>>>>>> graemeg/fixes_2_2
   end;
 
   { TIndexedWordList }
 
+<<<<<<< HEAD
   {$ifdef userb}
   TRBIndexTree = specialize TGFOS_RBTree<String,TIndexedWord>;
   {$endif}
 
   TForEachMethod = procedure (AWord:TIndexedWord) of object;
   TForEachProcedure = Procedure (AWord:TIndexedWord;state:pointer);
+=======
+>>>>>>> graemeg/fixes_2_2
   TIndexedWordList = class(TObject)
   private
     FIndexTitlesOnly: Boolean;
@@ -84,6 +129,7 @@ Type
     FTotalWordCount: DWord;
     FTotalWordLength: DWord;
     FLongestWord: DWord;
+<<<<<<< HEAD
     FParser: THTMLParser;
     {$ifdef userb}
     FAVLTree : TRBIndexTree;
@@ -93,6 +139,15 @@ Type
     {$endif}
 
     function AddGetWord(AWord: String; IsTitle: Boolean): TIndexedWord;
+=======
+    FFirstWord: TIndexedWord;
+    FCachedWord: TIndexedWord;
+    FParser: THTMLParser;
+    function AddGetWord(AWord: String; IsTitle: Boolean): TIndexedWord;
+    function GetWordForward(AWord: String; StartWord: TIndexedWord; out WrongWord: TIndexedWord; AIsTitle: Boolean): TIndexedWord;
+    function GetWordBackward(AWord: String; StartWord: TIndexedWord; out WrongWord: TIndexedWord; AIsTitle: Boolean): TIndexedWord;
+    function CompareWord(AWord: String; AIndexWord: TIndexedWord; AIsTitle: Boolean): Integer;
+>>>>>>> graemeg/fixes_2_2
     // callbacks
     procedure CBFoundTag(NoCaseTag, ActualTag: string);
     procedure CBFountText(Text: string);
@@ -103,9 +158,14 @@ Type
     destructor  Destroy; override;
     function  IndexFile(AStream: TStream; ATOPICIndex: Integer; AIndexOnlyTitles: Boolean): String; // returns the documents <Title>
     procedure Clear;
+<<<<<<< HEAD
     procedure AddWord(const AWord: TIndexedWord);
     procedure ForEach(Proc:TForEachMethod);
     procedure ForEach(Proc:TForEachProcedure;state:pointer);
+=======
+    procedure AddWord(const AWord: TIndexedWord; StartingWord: TIndexedWord; AIsTitle: Boolean);
+    property FirstWord: TIndexedWord read FFirstWord;
+>>>>>>> graemeg/fixes_2_2
     property IndexedFileCount: DWord read FIndexedFileCount;
     property LongestWord: DWord read FLongestWord;
     property TotalWordCount: DWord read FTotalWordCount;
@@ -117,8 +177,11 @@ Type
 
 implementation
 
+<<<<<<< HEAD
 Const GrowSpeed = 10;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 function Max(ANumber, BNumber: DWord): DWord;
 begin
   if ANumber > BNumber then
@@ -127,6 +190,7 @@ begin
     Result := BNumber;
 end;
 
+<<<<<<< HEAD
 const titlexlat : array [boolean] of char = ('0','1');
 
 function  makekey( n : string;istitle:boolean):string; inline;
@@ -176,10 +240,39 @@ begin
    result:=TIndexedWord(n.Data);
   {$endif}
   
+=======
+{ TIndexedWordList }
+
+function TIndexedWordList.AddGetWord(AWord: String; IsTitle: Boolean): TIndexedWord;
+var
+  //StartWord,
+  WrongWord: TIndexedWord;
+begin
+  Result := nil;
+  AWord := LowerCase(AWord);
+
+  {if FCachedWord <> nil then
+    StartWord := FCachedWord
+  else
+    StartWord := FFirstWord;
+
+  if StartWord <> nil then
+  begin
+    case CompareWord(AWord, StartWord, IsTitle) of
+      0: Exit(WrongWord);
+      1: Result := GetWordBackward(AWord, StartWord, WrongWord, IsTitle);
+     -1: Result := GetWordForward(AWord, StartWord, WrongWord, IsTitle);
+    end;
+  end
+  else}
+    Result := GetWordForward(AWord, FFirstWord, WrongWord, IsTitle);
+
+>>>>>>> graemeg/fixes_2_2
   if Result = nil then
   begin
     Inc(FTotalDifferentWordLength, Length(AWord));
     Inc(FTotalDIfferentWords);
+<<<<<<< HEAD
     {$ifdef  userb}
       result:=TIndexedWord.Create(AWord,IsTitle);
       favltree.add(key,result);
@@ -191,12 +284,82 @@ begin
 
     //  if IsTitle then
     //WriteLn('Creating word: ', AWord);
+=======
+    Result := TIndexedWord.Create(AWord,IsTitle);
+    AddWord(Result, WrongWord,IsTitle);
+    if IsTitle then
+    ;//WriteLn('Creating word: ', AWord);
+>>>>>>> graemeg/fixes_2_2
     FLongestWord := Max(FLongestWord, Length(AWord));
   end;
   Inc(FTotalWordLength, Length(AWord));
   Inc(FTotalWordCount);
 end;
 
+<<<<<<< HEAD
+=======
+function TIndexedWordList.GetWordForward(AWord: String; StartWord: TIndexedWord; out WrongWord: TIndexedWord; AIsTitle: Boolean): TIndexedWord;
+var
+  FCurrentWord: TIndexedWord;
+begin
+  Result := nil;
+  WrongWord := nil;
+  FCurrentWord := StartWord;
+  while (FCurrentWord <> nil) and (CompareWord(AWord, FCurrentWord, AIsTitle) <> 0) do
+  begin
+    WrongWord := FCurrentWord;
+    case CompareWord(AWord, FCurrentWord, AIsTitle) of
+      -1: FCurrentWord := nil;
+       0: Exit(FCurrentWord);
+       1: FCurrentWord := FCurrentWord.NextWord;
+    end;
+  end;
+
+  if FCurrentWord <> nil then
+    Result := FCurrentWord;
+end;
+
+function TIndexedWordList.GetWordBackward(AWord: String; StartWord: TIndexedWord; out WrongWord: TIndexedWord; AIsTitle: Boolean): TIndexedWord;
+var
+  FCurrentWord: TIndexedWord;
+begin
+  Result := nil;
+  WrongWord := nil;
+  FCurrentWord := StartWord;
+  while (FCurrentWord <> nil) and (CompareWord(AWord, FCurrentWord, AIsTitle) <> 0) do
+  begin
+    WrongWord := FCurrentWord;
+    case CompareWord(AWord, FCurrentWord, AIsTitle) of
+      -1:
+          begin
+            WrongWord := FCurrentWord;
+            FCurrentWord := nil
+          end;
+       0: Exit(FCurrentWord);
+       1: FCurrentWord := FCurrentWord.PrevWord;
+    end;
+  end;
+  if FCurrentWord <> nil then
+    Result := FCurrentWord;
+end;
+
+function TIndexedWordList.CompareWord ( AWord: String;
+  AIndexWord: TIndexedWord; AIsTitle: Boolean ) : Integer;
+begin
+  Result := CompareText(AWord, AIndexWord.TheWord);
+  if Result = 0 then
+  begin
+    Result := Result + ord(AIndexWord.IsTitle);
+    Result := Result - ord(AIsTitle);
+  end;
+  if Result < 0 then Result := -1
+  else if Result > 0 then Result := 1;
+  //if AIsTitle then
+    //WriteLn('Looking for title word :', AWord);
+  //WriteLn(Result);
+end;
+
+>>>>>>> graemeg/fixes_2_2
 procedure TIndexedWordList.CBFoundTag(NoCaseTag, ActualTag: string);
 begin
   if FInBody then begin
@@ -256,10 +419,19 @@ begin
         Delete(WordName, FPos, 1);
         FPos := Pos('''', WordName);
       end;
+<<<<<<< HEAD
       WordIndex := addgetword(wordname,istitle);
       InWord := False;
       IsNumberWord := False;
       WordIndex.DocumentTopic[FTopicIndex].AddWordIndex(FWordCount);
+=======
+      WordIndex := Self.Words[WordName, IsTitle];
+      InWord := False;
+      //if IsNumberWord then WriteLn('Following is NUMBER WORD: "', (WordStart[0]),'"'); ;
+      IsNumberWord := False;
+      WordIndex.DocumentTopic[FTopicIndex].AddWordIndex(FWordCount);
+      //WriteLn(FWordCount, ' "', WordName,'"');
+>>>>>>> graemeg/fixes_2_2
       //if not IsTitle then
         Inc(FWordCount);
 
@@ -269,6 +441,10 @@ begin
       InWord := True;
       WordStart := WordPtr;
       IsNumberWord := WordPtr^ in ['0'..'9'];
+<<<<<<< HEAD
+=======
+      //if IsNumberWord then WriteLn('Following is NUMBER WORD: "', WordPtr[0],'"'); ;
+>>>>>>> graemeg/fixes_2_2
     end;
     Inc(WordPtr);
   until WordPtr^ = #0;
@@ -276,9 +452,13 @@ begin
   if InWord then
   begin
     WordName := Copy(WordStart, 0, (WordPtr-WordStart));
+<<<<<<< HEAD
     try
     WordIndex := addgetword(wordname,istitle); // Self.Words[WordName, IsTitle];
     except on e:exception do writeln(wordname); end;
+=======
+    WordIndex := Self.Words[WordName, IsTitle];
+>>>>>>> graemeg/fixes_2_2
     WordIndex.DocumentTopic[FTopicIndex].AddWordIndex(FWordCount);
     InWord := False;
     //if IsNumberWord then WriteLn('Following is NUMBER WORD: "', (WordStart[0]),'"'); ;
@@ -286,6 +466,7 @@ begin
     //WriteLn(FWordCount, ' "', WordName,'"');
     if not IsTitle then
       Inc(FWordCount);
+<<<<<<< HEAD
   end;
 end;
 
@@ -293,11 +474,17 @@ function defaultindexedword : TIndexedWord;
 
 begin
   result:=Tindexedword.create('',false);
+=======
+
+  end;
+
+>>>>>>> graemeg/fixes_2_2
 end;
 
 constructor TIndexedWordList.Create;
 begin
   inherited;
+<<<<<<< HEAD
   {$ifdef userb}
   FAVLTree :=TRBIndexTree.create(@default_rb_string_compare,
                                  @defaultindexedword,
@@ -321,6 +508,13 @@ begin
   if assigned(spare) then spare.free;
   {$endif}
   favltree.free;
+=======
+end;
+
+destructor TIndexedWordList.Destroy;
+begin
+  Clear;
+>>>>>>> graemeg/fixes_2_2
   inherited Destroy;
 end;
 
@@ -357,6 +551,7 @@ begin
 end;
 
 procedure TIndexedWordList.Clear;
+<<<<<<< HEAD
 begin
   {$ifdef userb}
    fAvlTree.ClearN(@FreeObject);
@@ -428,6 +623,62 @@ begin
 end; 
 
 { TIndexedWord }
+=======
+var
+  FCurrentWord: TIndexedWord;
+begin
+  FCurrentWord := FFirstWord;
+  while FCurrentWord <> nil do
+  begin
+    FFirstWord := FCurrentWord.NextWord;
+    FCurrentWord.Free;
+    FCurrentWord := FFirstWord;
+  end;
+end;
+
+procedure TIndexedWordList.AddWord(const AWord: TIndexedWord; StartingWord: TIndexedWord; AIsTitle: Boolean);
+var
+  WrongWord: TIndexedWord;
+begin
+  if FFirstWord = nil then
+    FFirstWord := AWord
+  else begin
+    if StartingWord <> nil then
+      WrongWord := StartingWord;
+    case CompareWord(AWord.TheWord, StartingWord, AIsTitle) of
+       1: GetWordForward(AWord.TheWord, StartingWord, WrongWord, AIsTitle);
+       0: ; // uh oh
+      -1: GetWordBackward(AWord.TheWord, StartingWord, WrongWord, AIsTitle);
+    end;
+    if WrongWord = nil then
+       WrongWord := FirstWord;
+    case CompareWord(AWord.TheWord, WrongWord, AIsTitle) of
+       -1:
+          begin
+            AWord.PrevWord := WrongWord.PrevWord;
+            if AWord.PrevWord <> nil then
+              AWord.PrevWord.NextWord := AWord;
+            WrongWord.PrevWord := AWord;
+            AWord.NextWord := WrongWord;
+          end;
+        0: ;//WriteLn('Found word which shouldn''t happen'); // uh oh
+        1:
+          begin
+            AWord.PrevWord := WrongWord;
+            AWord.NextWord := WrongWord.NextWord;
+            WrongWord.NextWord := AWord;
+          end;
+    end;
+  end;
+  if AWord.PrevWord = nil then
+     FFirstWord := AWord;
+  FCachedWord := AWord;
+end;
+
+
+{ TIndexedWord }
+
+>>>>>>> graemeg/fixes_2_2
 function TIndexedWord.GetDocument ( TopicIndexNum: Integer ) : TIndexDocument;
 var
   i: Integer;
@@ -463,8 +714,15 @@ destructor TIndexedWord.Destroy;
 var
   i: Integer;
 begin
+<<<<<<< HEAD
   // here the word removed itself from the linked list. But it can't
   // touch the AVL tree here.
+=======
+  if FPrevWord <> nil then
+    FPrevWord.NextWord := FNextWord;
+  if FNextWord <> nil then
+    FNextWord.PrevWord := FPrevWord;
+>>>>>>> graemeg/fixes_2_2
   for i := 0 to High(FDocuments) do
     FreeAndNil(FDocuments[i]);
   inherited Destroy;
@@ -476,17 +734,26 @@ begin
 end;
 
 { TIndexDocument }
+<<<<<<< HEAD
 procedure TIndexDocument.AddWordIndex ( AIndex: Integer ) ;
 begin
   if FLastEntry>=Length(WordIndex) Then
   SetLength(WordIndex, Length(WordIndex)+GrowSpeed);
   WordIndex[FLastEntry] := AIndex;
   Inc(FLastEntry); 
+=======
+
+procedure TIndexDocument.AddWordIndex ( AIndex: Integer ) ;
+begin
+  SetLength(WordIndex, Length(WordIndex)+1);
+  WordIndex[High(WordIndex)] := AIndex;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 constructor TIndexDocument.Create ( ADocumentIndex: Integer ) ;
 begin
   FDocumentIndex := ADocumentIndex;
+<<<<<<< HEAD
   flastentry:=0;
 end;
 
@@ -498,6 +765,8 @@ end;
 function TIndexDocument.getindexentries:integer;
 begin
  result:=flastentry-1; 
+=======
+>>>>>>> graemeg/fixes_2_2
 end;
 
 end.

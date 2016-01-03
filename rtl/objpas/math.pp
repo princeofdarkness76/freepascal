@@ -143,10 +143,25 @@ Const
 {$push}
 {$R-}
 {$Q-}
+<<<<<<< HEAD
        NaN = 0.0/0.0;
        Infinity = 1.0/0.0;
        NegInfinity = -1.0/0.0;
 {$pop}
+=======
+{$endif opt Q+}
+       NaN = 0.0/0.0;
+       Infinity = 1.0/0.0;
+       NegInfinity = -1.0/0.0;
+{$ifdef RangeCheckWasOn}
+{$R+}
+{$undef RangeCheckWasOn}
+{$endif}
+{$ifdef OverflowCheckWasOn}
+{$Q+}
+{$undef OverflowCheckWasOn}
+{$endif}
+>>>>>>> graemeg/fixes_2_2
 
 { Min/max determination }
 function MinIntValue(const Data: array of Integer): Integer;
@@ -242,6 +257,7 @@ function IsZero(const A: Extended): Boolean;inline; overload;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IsNan(const d : Single): Boolean; overload;
 {$ifdef FPC_HAS_TYPE_DOUBLE}
 function IsNan(const d : Double): Boolean; overload;
@@ -261,6 +277,9 @@ function IsNan(const d : Double): Boolean; overload;
 =======
 function IsNan(const d : Double): Boolean; overload;
 >>>>>>> origin/cpstrnew
+=======
+function IsNan(const d : Double): Boolean;
+>>>>>>> graemeg/fixes_2_2
 function IsInfinite(const d : Double): Boolean;
 
 {$ifdef FPC_HAS_TYPE_EXTENDED}
@@ -516,7 +535,11 @@ function popnstddev(const data : PSingle; Const N : Integer) : float;
 function popnvariance(const data : PSingle; Const N : Integer) : float;
 function popnvariance(const data : array of Single) : float;inline;
 procedure momentskewkurtosis(const data : array of Single;
+<<<<<<< HEAD
   out m1,m2,m3,m4,skew,kurtosis : float);inline;
+=======
+  out m1,m2,m3,m4,skew,kurtosis : float);
+>>>>>>> graemeg/fixes_2_2
 procedure momentskewkurtosis(const data : PSingle; Const N : Integer;
   out m1,m2,m3,m4,skew,kurtosis : float);
 
@@ -547,7 +570,11 @@ function popnstddev(const data : PDouble; Const N : Integer) : float;
 function popnvariance(const data : PDouble; Const N : Integer) : float;
 function popnvariance(const data : array of Double) : float;inline;
 procedure momentskewkurtosis(const data : array of Double;
+<<<<<<< HEAD
   out m1,m2,m3,m4,skew,kurtosis : float);inline;
+=======
+  out m1,m2,m3,m4,skew,kurtosis : float);
+>>>>>>> graemeg/fixes_2_2
 procedure momentskewkurtosis(const data : PDouble; Const N : Integer;
   out m1,m2,m3,m4,skew,kurtosis : float);
 
@@ -578,7 +605,11 @@ function popnstddev(const data : PExtended; Const N : Integer) : float;
 function popnvariance(const data : PExtended; Const N : Integer) : float;
 function popnvariance(const data : array of Extended) : float;inline;
 procedure momentskewkurtosis(const data : array of Extended;
+<<<<<<< HEAD
   out m1,m2,m3,m4,skew,kurtosis : float);inline;
+=======
+  out m1,m2,m3,m4,skew,kurtosis : float);
+>>>>>>> graemeg/fixes_2_2
 procedure momentskewkurtosis(const data : PExtended; Const N : Integer;
   out m1,m2,m3,m4,skew,kurtosis : float);
 
@@ -1466,7 +1497,12 @@ function popnvariance(const data : PSingle; Const N : Integer) : float;
   end;
 
 procedure momentskewkurtosis(const data : array of single;
+<<<<<<< HEAD
   out m1,m2,m3,m4,skew,kurtosis : float); inline;
+=======
+  out m1,m2,m3,m4,skew,kurtosis : float);
+
+>>>>>>> graemeg/fixes_2_2
 begin
   momentskewkurtosis(PSingle(@Data[0]),High(Data)+1,m1,m2,m3,m4,skew,kurtosis);
 end;
@@ -1513,6 +1549,13 @@ begin
   m2 := reciprocalN * m2;
   m3 := reciprocalN * m3;
   m4 := reciprocalN * m4;
+<<<<<<< HEAD
+=======
+  
+  skew := m3 / (sqrt(m2)*m2);
+  kurtosis := m4 / (m2 * m2);
+end;
+>>>>>>> graemeg/fixes_2_2
 
   skew := m3 / (sqrt(m2)*m2);
   kurtosis := m4 / (m2 * m2);
@@ -1630,6 +1673,10 @@ function popnvariance(const data : PDouble; Const N : Integer) : float;
 
 procedure momentskewkurtosis(const data : array of Double;
   out m1,m2,m3,m4,skew,kurtosis : float);
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/fixes_2_2
 begin
   momentskewkurtosis(PDouble(@Data[0]),High(Data)+1,m1,m2,m3,m4,skew,kurtosis);
 end;
@@ -1659,6 +1706,7 @@ begin
     inc(value);
   end;
   m1 := reciprocalN * m1;
+<<<<<<< HEAD
 
   m2 := 0;
   m3 := 0;
@@ -1680,6 +1728,30 @@ begin
   skew := m3 / (sqrt(m2)*m2);
   kurtosis := m4 / (m2 * m2);
 end;
+=======
+
+  m2 := 0;
+  m3 := 0;
+  m4 := 0;
+  value := data;
+  for i := 0 to N-1 do
+  begin
+    deviation := (value^-m1);
+    deviation2 := deviation * deviation;
+    m2 := m2 + deviation2;
+    m3 := m3 + deviation2 * deviation;
+    m4 := m4 + deviation2 * deviation2;
+    inc(value);
+  end;
+  m2 := reciprocalN * m2;
+  m3 := reciprocalN * m3;
+  m4 := reciprocalN * m4;
+  
+  skew := m3 / (sqrt(m2)*m2);
+  kurtosis := m4 / (m2 * m2);
+end;
+
+>>>>>>> graemeg/fixes_2_2
 
 
 function norm(const data : array of Double) : float; inline;
@@ -1789,7 +1861,12 @@ function popnvariance(const data : PExtended; Const N : Integer) : float;
   end;
 
 procedure momentskewkurtosis(const data : array of Extended;
+<<<<<<< HEAD
   out m1,m2,m3,m4,skew,kurtosis : float); inline;
+=======
+  out m1,m2,m3,m4,skew,kurtosis : float);
+
+>>>>>>> graemeg/fixes_2_2
 begin
   momentskewkurtosis(PExtended(@Data[0]),High(Data)+1,m1,m2,m3,m4,skew,kurtosis);
 end;
@@ -1836,6 +1913,13 @@ begin
   m2 := reciprocalN * m2;
   m3 := reciprocalN * m3;
   m4 := reciprocalN * m4;
+<<<<<<< HEAD
+=======
+  
+  skew := m3 / (sqrt(m2)*m2);
+  kurtosis := m4 / (m2 * m2);
+end;
+>>>>>>> graemeg/fixes_2_2
 
   skew := m3 / (sqrt(m2)*m2);
   kurtosis := m4 / (m2 * m2);
@@ -2643,6 +2727,17 @@ begin
 end;
 
 function CompareValue(const A, B: QWord): TValueRelationship;
+
+begin
+  result:=GreaterThanValue;
+  if a=b then
+    result:=EqualsValue
+  else
+   if a<b then
+     result:=LessThanValue;
+end;
+
+function CompareValue ( const A, B : QWord) : TValueRelationship;
 
 begin
   result:=GreaterThanValue;

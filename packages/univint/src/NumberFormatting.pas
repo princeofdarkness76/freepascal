@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       CarbonCore/NumberFormatting.h
  
      Contains:   Utilites for formatting numbers
@@ -28,10 +29,20 @@
  
      Copyright:  © 1996-2008 by Apple Inc., all rights reserved.
 >>>>>>> origin/cpstrnew
+=======
+     File:       NumberFormatting.p
+ 
+     Contains:   Utilites for formatting numbers
+ 
+     Version:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1996-2002 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -58,6 +69,19 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -66,8 +90,13 @@
 
 unit NumberFormatting;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -80,21 +109,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -129,6 +166,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -136,6 +175,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -371,6 +411,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -396,6 +446,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -406,6 +460,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,ConditionalMacros,IntlResources;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -425,6 +480,9 @@ uses MacTypes,ConditionalMacros,IntlResources;
 {$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
+=======
+
+>>>>>>> graemeg/fixes_2_2
 
 {$ALIGN MAC68K}
 
@@ -448,6 +506,7 @@ uses MacTypes,ConditionalMacros,IntlResources;
 type
 	NumFormatStringPtr = ^NumFormatString;
 	NumFormatString = packed record
+<<<<<<< HEAD
 		fLength: UInt8;
 		fVersion: UInt8;
 		data: packed array [0..253] of char;              { private data }
@@ -483,10 +542,54 @@ const
 	fExtraPercent = 11;
 	fExtraSeparator = 12;
 	fEmptyFormatString = 13;
+=======
+		fLength:				UInt8;
+		fVersion:				UInt8;
+		data:					packed array [0..253] of char;			{  private data  }
+	end;
+
+	NumFormatStringRec					= NumFormatString;
+	NumFormatStringRecPtr 				= ^NumFormatStringRec;
+	FormatStatus						= SInt16;
+
+const
+	fVNumber					= 0;							{  first version of NumFormatString  }
+
+
+type
+	FormatClass							= SInt8;
+
+const
+	fPositive					= 0;
+	fNegative					= 1;
+	fZero						= 2;
+
+
+type
+	FormatResultType					= SInt8;
+
+const
+	fFormatOK					= 0;
+	fBestGuess					= 1;
+	fOutOfSynch					= 2;
+	fSpuriousChars				= 3;
+	fMissingDelimiter			= 4;
+	fExtraDecimal				= 5;
+	fMissingLiteral				= 6;
+	fExtraExp					= 7;
+	fFormatOverflow				= 8;
+	fFormStrIsNAN				= 9;
+	fBadPartsTable				= 10;
+	fExtraPercent				= 11;
+	fExtraSeparator				= 12;
+	fEmptyFormatString			= 13;
+
+>>>>>>> graemeg/fixes_2_2
 
 type
 	FVectorPtr = ^FVector;
 	FVector = record
+<<<<<<< HEAD
 		start: SInt16;
 		length: SInt16;
 	end;
@@ -734,3 +837,74 @@ function FormatRecToString( const (*var*) myCanonical: NumFormatString; const (*
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+		start:					SInt16;
+		length:					SInt16;
+	end;
+
+	{	 index by [fPositive..fZero] 	}
+	TripleInt							= array [0..2] of FVector;
+	{
+	 *  StringToNum()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+procedure StringToNum(const (*var*) theString: Str255; var theNum: SInt32); external name '_StringToNum';
+
+{
+ *  NumToString()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure NumToString(theNum: SInt32; var theString: Str255); external name '_NumToString';
+
+{
+ *  ExtendedToString()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ExtendedToString(const (*var*) x: extended80; const (*var*) myCanonical: NumFormatString; const (*var*) partsTable: NumberParts; var outString: Str255): FormatStatus; external name '_ExtendedToString';
+{
+ *  StringToExtended()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function StringToExtended(const (*var*) source: Str255; const (*var*) myCanonical: NumFormatString; const (*var*) partsTable: NumberParts; var x: extended80): FormatStatus; external name '_StringToExtended';
+{
+ *  StringToFormatRec()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function StringToFormatRec(const (*var*) inString: Str255; const (*var*) partsTable: NumberParts; var outString: NumFormatString): FormatStatus; external name '_StringToFormatRec';
+{
+ *  FormatRecToString()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function FormatRecToString(const (*var*) myCanonical: NumFormatString; const (*var*) partsTable: NumberParts; var outString: Str255; var positions: TripleInt): FormatStatus; external name '_FormatRecToString';
+{$ifc OLDROUTINENAMES}
+{$endc}  {OLDROUTINENAMES}
+
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

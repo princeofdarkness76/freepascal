@@ -48,7 +48,11 @@ uses Classes, DOM, PasTree, PParser, StrUtils;
 Var
   LEOL : Integer;
   modir : string;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/fixes_2_2
 resourcestring
   // Output strings
   SDocPackageTitle           = 'Reference for package ''%s''';
@@ -68,7 +72,10 @@ resourcestring
   SDocProceduresAndFunctions = 'Procedures and functions';
   SDocVariables              = 'Variables';
   SDocIdentifierIndex        = 'Index';
+<<<<<<< HEAD
   SDocPackageClassHierarchy  = 'Class hierarchy';
+=======
+>>>>>>> graemeg/fixes_2_2
   SDocModuleIndex            = 'Index of all identifiers in unit ''%s''';
   SDocPackageIndex           = 'Index of all identifiers in package ''%s''';
   SDocUnitOverview           = 'Overview of unit ''%s''';
@@ -117,9 +124,12 @@ resourcestring
   SDocVisibility             = 'Visibility';
   SDocOpaque                 = 'Opaque type';
   SDocDateGenerated          = 'Documentation generated on: %s';
+<<<<<<< HEAD
   // The next line requires leading/trailing space due to XML comment layout:
   SDocGeneratedByComment     = ' Generated using FPDoc - (c) 2000-2012 FPC contributors and Sebastian Guenther, sg@freepascal.org ';
   SDocNotes                  = 'Notes';
+=======
+>>>>>>> graemeg/fixes_2_2
   
   // Topics
   SDocRelatedTopics = 'Related topics';
@@ -147,7 +157,10 @@ resourcestring
   SHTMLHtmlSearch = 'Add search page with given name to the menu bar';
   SHTMLIndexColcount = 'Use N columns in the identifier index pages';
   SHTMLImageUrl = 'Prefix image URLs with url';
+<<<<<<< HEAD
   SHTMLDisableMenuBrackets = 'Disable ''['' and '']'' characters around menu items at the top of the page. Useful for custom css';
+=======
+>>>>>>> graemeg/fixes_2_2
     
   // CHM usage
   SCHMUsageTOC     = 'Use [File] as the table of contents. Usually a .hhc file.';
@@ -158,6 +171,7 @@ resourcestring
   SCHMUsageAutoTOC = 'Automatically generate a Table of Contents. Ignores --toc-file';
   SCHMUsageAutoIDX = 'Automatically generate an Index. Ignores --index-file';
   SCHMUsageMakeSearch = 'Automatically generate a Search Index from filenames that match *.htm*';
+<<<<<<< HEAD
   SCHMUsageChmTitle= 'Title of the chm. Defaults to the value from --package';
 
 <<<<<<< HEAD
@@ -177,6 +191,8 @@ resourcestring
   // Linear usage
   SLinearUsageDupLinkedDocsP1 = 'Duplicate linked element documentation in';
   SLinearUsageDupLinkedDocsP2 = 'descendant classes.';
+=======
+>>>>>>> graemeg/fixes_2_2
 
   STitle           = 'FPDoc - Free Pascal Documentation Tool';
   SVersion         = 'Version %s [%s]';
@@ -236,6 +252,7 @@ resourcestring
   SUsageOption160  = '--show-private    Show private methods.';
   SUsageOption170  = '--warn-no-node    Warn if no documentation node was found.';
   SUsageOption180  = '--mo-dir=dir      Set directory where language files reside to dir';
+<<<<<<< HEAD
   SUsageOption190  = '--parse-impl      (Experimental) try to parse implementation too';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -247,6 +264,9 @@ resourcestring
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  
+>>>>>>> graemeg/fixes_2_2
   SUsageFormats        = 'The following output formats are supported by this fpdoc:';
   SUsageBackendHelp    = 'Specify an output format, combined with --help to get more help for this backend.';
   SUsageFormatSpecific = 'Output format "%s" supports the following options:';
@@ -346,7 +366,10 @@ type
     FLink: String;
     FTopicNode : Boolean;
     FRefCount : Integer;
+<<<<<<< HEAD
     FVersion: TDomElement;
+=======
+>>>>>>> graemeg/fixes_2_2
   public
     constructor Create(const AName: String; ANode: TDOMElement);
     destructor Destroy; override;
@@ -381,12 +404,18 @@ type
   TOnParseUnitEvent = Procedure (Sender : TObject; Const AUnitName : String; Out AInputFile,OSTarget,CPUTarget : String) of  Object;
 
   { TFPDocEngine }
+<<<<<<< HEAD
   TFPDocEngine = class(TPasTreeContainer)
   private
     FDocLogLevels: TFPDocLogLevels;
     FOnParseUnit: TOnParseUnitEvent;
     function ResolveLinkInPackages(AModule: TPasModule; const ALinkDest: String; Strict: Boolean=False): String;
     function ResolveLinkInUsedUnits(AModule: TPasModule; const ALinkDest: String; Strict: Boolean=False): String;
+=======
+
+  TFPDocEngine = class(TPasTreeContainer)
+  private
+>>>>>>> graemeg/fixes_2_2
   protected
     FAlwaysVisible : TStringList;
     DescrDocs: TObjectList;             // List of XML documents
@@ -424,12 +453,17 @@ type
     // Link tree support
     procedure AddLink(const APathName, ALinkTo: String);
     function FindAbsoluteLink(const AName: String): String;
+<<<<<<< HEAD
     function ResolveLink(AModule: TPasModule; const ALinkDest: String; Strict : Boolean = False): String;
     function FindLinkedNode(ANode: TDocNode): TDocNode;
     Function ShowElement(El : TPasElement) : Boolean; inline;
 
     // Call this before documenting.
     Procedure StartDocumenting; virtual;
+=======
+    function ResolveLink(AModule: TPasModule; const ALinkDest: String): String;
+    function FindLinkedNode(ANode: TDocNode): TDocNode;
+>>>>>>> graemeg/fixes_2_2
 
     // Documentation file support
     procedure AddDocFile(const AFilename: String;DontTrim:boolean=false);
@@ -1879,7 +1913,10 @@ begin
       begin
       PackageDocNode := ReadNode(RootDocNode, TDOMElement(Node));
       PackageDocNode.IncRefCount;
+<<<<<<< HEAD
       PN:=PackageDocNode.Name;
+=======
+>>>>>>> graemeg/fixes_2_2
       // Scan all 'module' elements within this package element
       Subnode := Node.FirstChild;
       while Assigned(Subnode) do
@@ -2013,6 +2050,12 @@ end;
 
 function TFPDocEngine.FindLinkedNode(ANode : TDocNode) : TDocNode;
 
+<<<<<<< HEAD
+=======
+Var
+  S: String;
+
+>>>>>>> graemeg/fixes_2_2
 begin
   If (ANode.Link='') then
     Result:=Nil
@@ -2020,6 +2063,7 @@ begin
     Result:=FindDocNode(CurModule,ANode.Link);
 end;
 
+<<<<<<< HEAD
 function TFPDocEngine.ShowElement(El: TPasElement): Boolean;
 begin
   Case El.Visibility of
@@ -2043,6 +2087,8 @@ begin
   FAlwaysVisible.Sorted:=True;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 function TFPDocEngine.FindShortDescr(ARefModule: TPasModule;
   const AName: String): TDOMElement;
 

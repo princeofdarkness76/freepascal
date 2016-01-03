@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       AE/AEMach.h
  
      Contains:   AppleEvent over mach_msg interfaces
@@ -22,10 +23,21 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 2000-2008 by Apple Computer, Inc., all rights reserved.
+=======
+     File:       AEMach.p
+ 
+     Contains:   AppleEvent over mach_msg interfaces
+ 
+     Version:    Technology: For Mac OS X
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 2000-2002 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -52,6 +64,19 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -60,8 +85,13 @@
 
 unit AEMach;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -74,21 +104,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -123,6 +161,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -130,6 +170,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -363,6 +404,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -388,6 +439,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -397,11 +452,18 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,MacOSXPosix,AEDataModel;
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
+=======
+uses MacTypes,MixedMode,AEDataModel;
+
+
+{$ALIGN MAC68K}
+>>>>>>> graemeg/fixes_2_2
 
 {-
  * AE Mach API --
@@ -416,6 +478,7 @@ uses MacTypes,MacOSXPosix,AEDataModel;
  * the target parameter.)  If a port cannot be found,
  * procNotFound (-600) will be returned on AESend.
  *
+<<<<<<< HEAD
  * Of note is a new attribute for an AppleEvent, keyReplyPortAttr.
  * This specifies the mach_port_t to which an AppleEvent reply
  * should be directed.  By default, replies are sent to the
@@ -426,10 +489,22 @@ uses MacTypes,MacOSXPosix,AEDataModel;
  *
  * In the case of AESendMessage with kAEWaitReply specified, an 
  * anonymous port will be used to block until the reply is received.
+=======
+ * Of note is a new attribute for an AppleEvent, typeReplyPortAttr.
+ * This specifies the mach_port_t to which an AppleEvent reply
+ * should be directed.  By default, replies are sent to the
+ * processes registered port where they are culled from the normal  
+ * event stream if there is an outstanding AESend + kAEWaitReply.
+ * But it may be desirable for a client to specify their own port to
+ * receive quued replies.
+ * (In the case of AESendMessage with kAEWaitReply specified, an 
+ * anonymous port will be used to block until the reply is received.)
+>>>>>>> graemeg/fixes_2_2
  *
  * Not supplied is a convenience routine to block a server and
  * process AppleEvents.  This implementation will be detailed in a
  * tech note.
+<<<<<<< HEAD
  *
  * In general, the AppleEvent APIs are thread safe, but the mechanism
  * of their delivery (AEProcessAppleEvent, AEResumeTheCurrentEvent)
@@ -637,3 +712,90 @@ function AESendMessage( const (*var*) event: AppleEvent; reply: AppleEventPtr { 
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ *}
+
+const
+	typeReplyPortAttr			= FourCharCode('repp');
+
+{$ifc TARGET_RT_MAC_MACHO}
+{$ifc not undefined _MACH_MESSAGE_H_}
+	{	-
+	 * Return the mach_port_t that was registered with the bootstrap
+	 * server for this process.  This port is considered public, and
+	 * will be used by other applications to target your process.  You
+	 * are free to use this mach_port_t to add to a port set, if and
+	 * only if, you are not also using routines from HIToolbox.  In that
+	 * case, HIToolbox retains control of this port and AppleEvents are
+	 * dispatched through the main event loop.  
+	 *	}
+	{
+	 *  AEGetRegisteredMachPort()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   not available
+	 *    CarbonLib:        not available
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function AEGetRegisteredMachPort: mach_port_t; external name '_AEGetRegisteredMachPort';
+
+{-
+ * Decode a mach_msg into an AppleEvent and its related reply.  (The
+ * reply is set up from fields of the event.)  You can call this
+ * routine if you wish to dispatch or handle the event yourself.  To
+ * return a reply to the sender, you should call:
+ *
+ *  AESendMessage(reply, NULL, kAENoReply, kAENormalPriority, kAEDefaultTimeout);
+ *
+ * The contents of the header are invalid after this call.  
+ *}
+{
+ *  AEDecodeMessage()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available
+ *    Mac OS X:         in version 10.0 and later
+ }
+function AEDecodeMessage(var header: mach_msg_header_t; var event: AppleEvent; reply: AppleEventPtr): OSStatus; external name '_AEDecodeMessage';
+
+{-
+ * Decodes and dispatches an event to an event handler.  Handles
+ * packaging and returning the reply to the sender.
+ *
+ * The contents of the header are invalid after this call.
+ *}
+{
+ *  AEProcessMessage()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available
+ *    Mac OS X:         in version 10.0 and later
+ }
+function AEProcessMessage(var header: mach_msg_header_t): OSStatus; external name '_AEProcessMessage';
+
+{-
+ * Send an AppleEvent to a target process.  If the target is the
+ * current process (as specified by using typeProcessSerialNumber of
+ * ( 0, kCurrentProcess ) it is dispatched directly to the
+ * appropriate event handler in your process and not serialized.
+ *}
+{
+ *  AESendMessage()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available
+ *    Mac OS X:         in version 10.0 and later
+ }
+function AESendMessage(const (*var*) event: AppleEvent; reply: AppleEventPtr; sendMode: AESendMode; timeOutInTicks: SInt32): OSStatus; external name '_AESendMessage';
+
+{$endc}  {_MACH_MESSAGE_H_}
+{$endc}  {TARGET_RT_MAC_MACHO}
+
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

@@ -6,19 +6,7 @@
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
     License as published by the Free Software Foundation; either
-    version 2.1 of the License, or (at your option) any later version
-    with the following modification:
-
-    As a special exception, the copyright holders of this library give you
-    permission to link this library with independent modules to produce an
-    executable, regardless of the license terms of these independent modules,and
-    to copy and distribute the resulting executable under terms of your choice,
-    provided that you also meet, for each linked independent module, the terms
-    and conditions of the license of that module. An independent module is a
-    module which is not derived from or based on this library. If you modify
-    this library, you may extend this exception to your version of the library,
-    but you are not obligated to do so. If you do not wish to do so, delete this
-    exception statement from your version.
+    version 2.1 of the License, or (at your option) any later version.
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -30,124 +18,110 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
-constructor TDirectXHook.Create(AConsole: TDirectXConsole; AWindow: HWND; AThread: DWord; ACursor, AManaged, AFullscreen: Boolean);
-begin
-  FConsole := AConsole;
+Constructor TDirectXHook.Create(console : Pointer; window : HWND; thread : DWord; _cursor, managed, fullscreen : Boolean);
 
-  FCursor := ACursor;
-  FManaged := AManaged;
-  FFullscreen := AFullscreen;
+Begin
+  m_console := console;
+
+  m_cursor := _cursor;
+  m_managed := managed;
+  m_fullscreen := fullscreen;
 
   LOG('creating window hook');
 
-  inherited Create(AWindow, AThread);
-end;
+  Inherited Create(window, thread);
+End;
 
-destructor TDirectXHook.Destroy;
-begin
+Destructor TDirectXHook.Destroy;
+
+Begin
   LOG('destroying window hook');
-  inherited Destroy;
-end;
+  Inherited Destroy;
+End;
 
-procedure TDirectXHook.Cursor(AFlag: Boolean);
-begin
-  FCursor := AFlag;
-end;
+Procedure TDirectXHook.cursor(flag : Boolean);
 
-function TDirectXHook.WndProc(hWnd: HWND; message: DWord; wParam: WPARAM; lParam: LPARAM): LRESULT;
-var
-  active: Boolean;
-  thread: DWord;
-  placement: WINDOWPLACEMENT;
-  console: TDirectXConsole;
-begin
-  case message of
-    WM_PAINT: begin
+Begin
+  m_cursor := flag;
+End;
+
+Function TDirectXHook.WndProc(hWnd : HWND; message : DWord; wParam : WPARAM; lParam : LPARAM) : LRESULT;
+
+Var
+  active : Boolean;
+  thread : DWord;
+  placement : WINDOWPLACEMENT;
+  console : TDirectXConsole;
+
+Begin
+  Case message Of
+    WM_PAINT : Begin
       LOG('TDirectXHook WM_PAINT');
 
       { paint console }
-      FConsole.Paint;
-    end;
-    WM_ACTIVATEAPP: begin
+      TDirectXConsole(m_console).paint;
+    End;
+    WM_ACTIVATEAPP : Begin
       LOG('TDirectXHook WM_ACTIVATEAPP');
 
       { get window message data }
-      active := wParam <> 0;
+      active := Boolean(wParam);
       thread := lParam;
 
       { check active flag }
-      if active = False then
-      begin
-        if FConsole.FGrabMouse and (not FFullscreen) then
-	begin
-	  FConsole.FWindow.ConfineCursor(False);
-	end;
-
+      If active = False Then
+      Begin
         { deactivate }
-        Deactivate;
+        deactivate;
 
         { check cursor and fullscreen }
-        if (not FCursor) and FFullscreen then
+        If (Not m_cursor) And m_fullscreen Then
           { show cursor }
-          FConsole.FWin32Cursor.Show;
-      end
-      else
-      begin
-        { get window placement for active app }
-        if not GetWindowPlacement(hWnd, placement) then
-          { on failure set to normal show }
-          placement.showCmd := SW_SHOWNORMAL;
-
+          Win32Cursor_resurrect;
+      End
+      Else
+      Begin
         { check cursor and fullscreen }
-        if (not FCursor) and FFullscreen then
-        begin
-          { check show command is not minimize }
-          if placement.showCmd <> SW_SHOWMINIMIZED then
-	  begin
-            {hide cursor}
-            FConsole.FWin32Cursor.Hide;
-	  end;
-        end;
+        If (Not m_cursor) And m_fullscreen Then
+        Begin
+          { get window placement for active app }
+          If Not GetWindowPlacement(hWnd, placement) Then
+            { on failure set to normal show }
+            placement.showCmd := SW_SHOWNORMAL;
 
-	if FConsole.FGrabMouse and (not FFullscreen) then
-	begin
-          if placement.showCmd <> SW_SHOWMINIMIZED then
-	  begin
-            FConsole.FWindow.ConfineCursor(True);
-	  end;
-	end;
+          { check show command is not minimize }
+          If placement.showCmd <> SW_SHOWMINIMIZED Then
+            {hide cursor}
+            Win32Cursor_kill;
+        End;
 
         { activate }
-        Activate;
-      end;
+        activate;
+      End;
 
-      { pass to the next handler (or DefWindowProc) }
-      Result := 0;
-      exit;
-    end;
-    WM_SETCURSOR: begin
+      { handled }
+      WndProc := 1;
+      Exit;
+    End;
+    WM_SETCURSOR : Begin
       { check cursor }
-      if not FCursor then
-      begin
-        if FFullscreen or (LOWORD(lParam) = HTCLIENT) then
-	begin
-          { hide cursor }
-          SetCursor(0);
+      If Not m_cursor Then
+        { hide cursor }
+        SetCursor(12);
 
-          { handled }
-          Result := 1;
-	end;
-      end;
-    end;
-    WM_CLOSE: begin
+      { handled }
+      WndProc := 1;
+      Exit;
+    End;
+    WM_CLOSE : Begin
       LOG('TDirectXHook WM_CLOSE');
 
-      if FManaged then
-      begin
-        console := FConsole;
+      If m_managed Then
+      Begin
+        console := TDirectXConsole(m_console);
 
         { close console }
-        console.Close;
+        console.close;
 
         { note: at this point the hook object has been destroyed by the console! }
 
@@ -156,69 +130,77 @@ begin
 
         { halt }
         Halt(0);
-      end;
+      End;
 
       { handled }
-      Result := 1;
-      exit;
-    end;
-  end;
+      WndProc := 1;
+      Exit;
+    End;
+  End;
 
   { unhandled }
-  Result := 0;
-end;
+  WndProc := 0;
+End;
 
-procedure TDirectXHook.Activate;
-var
-  display: TDirectXDisplay;
-  primary: TDirectXPrimary;
-begin
+Procedure TDirectXHook.activate;
+
+Var
+  console : TDirectXConsole;
+  display : TDirectXDisplay;
+  primary : TDirectXPrimary;
+
+Begin
+  console := TDirectXConsole(m_console);
   { check if open }
-  if FConsole.FOpen then
-  begin
+  If console.m_open Then
+  Begin
     LOG('activate');
 
     { get console object references }
-    display := FConsole.FDisplay;
-    primary := FConsole.FPrimary;
+    display := console.m_display;
+    primary := console.m_primary;
 
     { check if primary is not active }
-    if not primary.Active then
-    begin
+    If Not primary.active Then
+    Begin
       { save display }
-      display.Save;
+      display.save;
 
       { activate primary }
-      primary.Activate;
-    end;
-  end;
-end;
+      primary.activate;
+    End;
+  End;
+End;
 
-procedure TDirectXHook.Deactivate;
-var
-  display: TDirectXDisplay;
-  primary: TDirectXPrimary;
-begin
+Procedure TDirectXHook.deactivate;
+
+Var
+  console : TDirectXConsole;
+  display : TDirectXDisplay;
+  primary : TDirectXPrimary;
+
+Begin
+  console := TDirectXConsole(m_console);
   { check if open }
-  if FConsole.FOpen then
-  begin
+  If console.m_open Then
+  Begin
     LOG('deactivate');
 
     { get console object references }
-    display := FConsole.FDisplay;
-    primary := FConsole.FPrimary;
+    display := console.m_display;
+    primary := console.m_primary;
 
     { check if primary is not active }
-    if primary.Active then
-    begin
+    If primary.active Then
+    Begin
       { save primary }
-      primary.Save;
+      primary.save;
 
       { deactivate primary }
-      primary.Deactivate;
+      primary.deactivate;
 
       { restore display }
-      display.Restore;
-    end;
-  end;
-end;
+      display.restore;
+    End;
+  End;
+End;

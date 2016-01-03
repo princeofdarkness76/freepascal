@@ -247,10 +247,14 @@
 {$else ENDIAN_BIG}
            true      : (IType       : tinterfaceentrytype);
 {$endif ENDIAN_BIG}
+<<<<<<< HEAD
            false     : (__pad_dummy : sizeint);
 {$else  VER2_6}
          IType       : tinterfaceentrytype;
 {$endif VER2_6}
+=======
+           false     : (__pad_dummy : pointer);
+>>>>>>> graemeg/fixes_2_2
        end;
 
        tinterfacetable = record
@@ -322,9 +326,14 @@
 
           { interface functions }
           function GetInterface(const iid : tguid; out obj) : boolean;
+<<<<<<< HEAD
           function GetInterface(const iidstr : shortstring;out obj) : boolean;
           function GetInterfaceByStr(const iidstr : shortstring; out obj) : boolean;
           function GetInterfaceWeak(const iid : tguid; out obj) : boolean; // equal to GetInterface but the interface returned is not referenced
+=======
+          function GetInterface(const iidstr : string;out obj) : boolean;{$ifdef SYSTEMINLINE}inline;{$endif}
+          function GetInterfaceByStr(const iidstr : string; out obj) : boolean;
+>>>>>>> graemeg/fixes_2_2
           class function GetInterfaceEntry(const iid : tguid) : pinterfaceentry;
           class function GetInterfaceEntryByStr(const iidstr : shortstring) : pinterfaceentry;
           class function GetInterfaceTable : pinterfacetable;
@@ -404,8 +413,13 @@
        end;
 
        TContainedObject = class(TAggregatedObject,IInterface)
+<<<<<<< HEAD
          protected
            function QueryInterface({$IFDEF FPC_HAS_CONSTREF}constref{$ELSE}const{$ENDIF} iid : tguid;out obj) : longint;virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+=======
+         protected 
+           function QueryInterface(const iid : tguid;out obj) : longint;virtual; stdcall;
+>>>>>>> graemeg/fixes_2_2
          end;
 
        { some pointer definitions }

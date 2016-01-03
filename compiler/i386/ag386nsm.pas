@@ -371,7 +371,11 @@ interface
                   if not ((opcode = A_LEA) or (opcode = A_LGS) or
                           (opcode = A_LSS) or (opcode = A_LFS) or
                           (opcode = A_LES) or (opcode = A_LDS) or
+<<<<<<< HEAD
                          // (opcode = A_SHR) or (opcode = A_SHL) or
+=======
+                          //(opcode = A_SHR) or (opcode = A_SHL) or
+>>>>>>> graemeg/fixes_2_2
                           (opcode = A_SAR) or (opcode = A_SAL) or
                           (opcode = A_OUT) or (opcode = A_IN)) then
                     AsmWrite(sizestr(s,dest));
@@ -391,7 +395,8 @@ interface
                   if o.ref^.offset>0 then
                    asmwrite('+');
                   asmwrite(tostr(o.ref^.offset));
-                end;
+
+                  end;
             end;
           else
             internalerror(10001);
@@ -437,10 +442,17 @@ interface
 
 
     const
+<<<<<<< HEAD
       ait_const2str : array[aitconst_128bit..aitconst_secrel32_symbol] of string[20]=(
         #9'FIXME_128BIT'#9,#9'FIXME_64BIT'#9,#9'DD'#9,#9'DW'#9,#9'DB'#9,
         #9'FIXME_SLEB128BIT'#9,#9'FIXME_ULEB128BIT'#9,
         #9'RVA'#9,#9'SECREL32'#9
+=======
+      ait_const2str : array[aitconst_128bit..aitconst_indirect_symbol] of string[20]=(
+        #9'FIXME_128BIT'#9,#9'FIXME_64BIT'#9,#9'DD'#9,#9'DW'#9,#9'DB'#9,
+        #9'FIXME_SLEB128BIT'#9,#9'FIXME_ULEB128BIT'#9,
+        #9'RVA'#9,#9'SECREL32'#9,#9'FIXMEINDIRECT'#9
+>>>>>>> graemeg/fixes_2_2
       );
 
     procedure T386NasmAssembler.WriteSection(atype:TAsmSectiontype;const aname:string);
@@ -462,6 +474,7 @@ interface
           '.fpc',
           '',
           '.init',
+<<<<<<< HEAD
           '.fini',
           '.objc_class',
           '.objc_meta_class',
@@ -497,6 +510,9 @@ interface
           '.objc_catlist',
           '.obcj_nlcatlist',
           '.objc_protolist'
+=======
+          '.fini'
+>>>>>>> graemeg/fixes_2_2
         );
       begin
         AsmLn;
@@ -677,7 +693,12 @@ interface
                  aitconst_16bit,
                  aitconst_8bit,
                  aitconst_rva_symbol,
+<<<<<<< HEAD
                  aitconst_secrel32_symbol :
+=======
+                 aitconst_secrel32_symbol,
+                 aitconst_indirect_symbol :
+>>>>>>> graemeg/fixes_2_2
                    begin
                      AsmWrite(ait_const2str[tai_const(hp).consttype]);
                      l:=0;
@@ -731,8 +752,11 @@ interface
                    AsmWrite(',');
                   AsmWrite(tostr(t80bitarray(e)[i]));
                 end;
+<<<<<<< HEAD
                 for i:=11 to tai_real_80bit(hp).savesize do
                   AsmWrite(',0');
+=======
+>>>>>>> graemeg/fixes_2_2
                AsmLn;
              end;
 {$else cpuextended}

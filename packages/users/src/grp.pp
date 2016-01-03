@@ -3,7 +3,11 @@ unit grp;
 interface
 
 uses
+<<<<<<< HEAD
   initc,unixtype,baseunix,ctypes;
+=======
+  initc,baseunix,ctypes;
+>>>>>>> graemeg/fixes_2_2
 
 {$IFDEF FPC}
 {$PACKRECORDS C}

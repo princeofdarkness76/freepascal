@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       OpenScripting/OSAGeneric.h
  
      Contains:   AppleScript Generic Component Interfaces.
@@ -22,10 +23,21 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 1992-2008 by Apple Computer, Inc., all rights reserved
+=======
+     File:       OSAGeneric.p
+ 
+     Contains:   AppleScript Generic Component Interfaces.
+ 
+     Version:    Technology: AppleScript 1.1
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1992-2002 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -53,6 +65,19 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -61,8 +86,13 @@
 
 unit OSAGeneric;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -75,21 +105,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -124,6 +162,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -131,6 +171,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -364,6 +405,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -389,6 +440,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -399,6 +454,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,AEDataModel,Components,MacErrors,AppleEvents,OSA;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
 
@@ -411,6 +467,11 @@ uses MacTypes,AEDataModel,Components,MacErrors,AppleEvents,OSA;
 >>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
+=======
+
+
+{$ALIGN MAC68K}
+>>>>>>> graemeg/fixes_2_2
 
 {    NOTE:   This interface defines a "generic scripting component."
             The Generic Scripting Component allows automatic dispatch to a
@@ -422,14 +483,21 @@ uses MacTypes,AEDataModel,Components,MacErrors,AppleEvents,OSA;
 
 
 const
+<<<<<<< HEAD
 { Component version this header file describes }
 	kGenericComponentVersion = $0100;
 
 const
+=======
+																{  Component version this header file describes  }
+	kGenericComponentVersion	= $0100;
+
+>>>>>>> graemeg/fixes_2_2
 	kGSSSelectGetDefaultScriptingComponent = $1001;
 	kGSSSelectSetDefaultScriptingComponent = $1002;
 	kGSSSelectGetScriptingComponent = $1003;
 	kGSSSelectGetScriptingComponentFromStored = $1004;
+<<<<<<< HEAD
 	kGSSSelectGenericToRealID = $1005;
 	kGSSSelectRealToGenericID = $1006;
 	kGSSSelectOutOfRange = $1007;
@@ -450,10 +518,31 @@ function OSAGetDefaultScriptingComponent( genericScriptingComponent: ComponentIn
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+	kGSSSelectGenericToRealID	= $1005;
+	kGSSSelectRealToGenericID	= $1006;
+	kGSSSelectOutOfRange		= $1007;
+
+
+type
+	ScriptingComponentSelector			= OSType;
+	GenericID							= OSAID;
+	{	 get and set the default scripting component 	}
+	{
+	 *  OSAGetDefaultScriptingComponent()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function OSAGetDefaultScriptingComponent(genericScriptingComponent: ComponentInstance; var scriptingSubType: ScriptingComponentSelector): OSAError; external name '_OSAGetDefaultScriptingComponent';
+>>>>>>> graemeg/fixes_2_2
 {
  *  OSASetDefaultScriptingComponent()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -462,11 +551,19 @@ function OSASetDefaultScriptingComponent( genericScriptingComponent: ComponentIn
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function OSASetDefaultScriptingComponent(genericScriptingComponent: ComponentInstance; scriptingSubType: ScriptingComponentSelector): OSAError; external name '_OSASetDefaultScriptingComponent';
+>>>>>>> graemeg/fixes_2_2
 { get a scripting component instance from its subtype code }
 {
  *  OSAGetScriptingComponent()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -475,11 +572,19 @@ function OSAGetScriptingComponent( genericScriptingComponent: ComponentInstance;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function OSAGetScriptingComponent(genericScriptingComponent: ComponentInstance; scriptingSubType: ScriptingComponentSelector; var scriptingInstance: ComponentInstance): OSAError; external name '_OSAGetScriptingComponent';
+>>>>>>> graemeg/fixes_2_2
 { get a scripting component selector (subType) from a stored script }
 {
  *  OSAGetScriptingComponentFromStored()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -488,11 +593,19 @@ function OSAGetScriptingComponentFromStored( genericScriptingComponent: Componen
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function OSAGetScriptingComponentFromStored(genericScriptingComponent: ComponentInstance; const (*var*) scriptData: AEDesc; var scriptingSubType: ScriptingComponentSelector): OSAError; external name '_OSAGetScriptingComponentFromStored';
+>>>>>>> graemeg/fixes_2_2
 { get a real component instance and script id from a generic id }
 {
  *  OSAGenericToRealID()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -501,11 +614,19 @@ function OSAGenericToRealID( genericScriptingComponent: ComponentInstance; var t
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function OSAGenericToRealID(genericScriptingComponent: ComponentInstance; var theScriptID: OSAID; var theExactComponent: ComponentInstance): OSAError; external name '_OSAGenericToRealID';
+>>>>>>> graemeg/fixes_2_2
 { get a generic id from a real component instance and script id }
 {
  *  OSARealToGenericID()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -518,3 +639,14 @@ function OSARealToGenericID( genericScriptingComponent: ComponentInstance; var t
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function OSARealToGenericID(genericScriptingComponent: ComponentInstance; var theScriptID: OSAID; theExactComponent: ComponentInstance): OSAError; external name '_OSARealToGenericID';
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

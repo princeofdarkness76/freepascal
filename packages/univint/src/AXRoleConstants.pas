@@ -8,6 +8,7 @@
  }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
@@ -32,6 +33,16 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+{	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -40,8 +51,13 @@
 
 unit AXRoleConstants;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -54,21 +70,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -103,6 +127,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -110,6 +136,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -346,6 +373,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -371,6 +408,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -381,11 +422,14 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -680,6 +724,7 @@ uses MacTypes;
 {$definec kAXRulerMarkerRole CFSTRP('AXRulerMarker')}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kAXGridRole CFSTRP('AXGrid')}
 {$endc}
@@ -718,6 +763,8 @@ uses MacTypes;
 =======
 >>>>>>> origin/cpstrnew
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 { Subroles                                                                                }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -736,9 +783,12 @@ uses MacTypes;
 {$definec kAXToolbarButtonSubrole CFSTRP('AXToolbarButton')}
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
+<<<<<<< HEAD
 {$definec kAXFullScreenButtonSubrole CFSTRP('AXFullScreenButton')}
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$definec kAXSecureTextFieldSubrole CFSTRP('AXSecureTextField')}
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
@@ -785,6 +835,7 @@ uses MacTypes;
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kAXSearchFieldSubrole CFSTRP('AXSearchField')}
 {$endc}
+<<<<<<< HEAD
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kAXTimelineSubrole CFSTRP('AXTimeline')}
 {$endc}
@@ -797,6 +848,8 @@ uses MacTypes;
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kAXDefinitionListSubrole CFSTRP('AXDefinitionList')}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 // dock subroles
 {$ifc USE_CFSTR_CONSTANT_MACROS}
@@ -821,6 +874,7 @@ uses MacTypes;
 {$definec kAXTrashDockItemSubrole CFSTRP('AXTrashDockItem')}
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
+<<<<<<< HEAD
 {$definec kAXSeparatorDockItemSubrole CFSTRP('AXSeparatorDockItem')}
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
@@ -832,3 +886,10 @@ uses MacTypes;
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+{$definec kAXProcessSwitcherListSubrole CFSTRP('AXProcessSwitcherList')}
+{$endc}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

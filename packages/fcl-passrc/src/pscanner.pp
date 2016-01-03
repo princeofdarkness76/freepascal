@@ -287,11 +287,14 @@ type
     FBaseDirectory: string;
     FIncludePaths: TStringList;
     FStrictFileCase : Boolean;
+<<<<<<< HEAD
   Protected
     procedure SetBaseDirectory(AValue: string); virtual;
     procedure SetStrictFileCase(AValue: Boolean); virtual;
     Function FindIncludeFileName(const AName: string): String;
     Property IncludePaths: TStringList Read FIncludePaths;
+=======
+>>>>>>> graemeg/fixes_2_2
   public
     constructor Create; virtual;
     destructor Destroy; override;
@@ -338,6 +341,7 @@ type
     function FindSourceFile(const AName: string): TLineReader;
     function FindIncludeFile(const AName: string): TLineReader;
     Property StrictFileCase : Boolean Read FStrictFileCase Write FStrictFileCase;
+<<<<<<< HEAD
     property BaseDirectory: string read FBaseDirectory write FBaseDirectory;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -349,6 +353,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
   end;
 
   EScannerError       = class(Exception);
@@ -402,6 +408,7 @@ type
     function GetCurColumn: Integer;
     procedure SetOptions(AValue: TPOptions);
   protected
+<<<<<<< HEAD
     Procedure DoLog(Const Msg : String; SkipSourceInfo : Boolean = False);overload;
     Procedure DoLog(Const Fmt : String; Args : Array of const;SkipSourceInfo : Boolean = False);overload;
     procedure Error(const Msg: string);overload;
@@ -424,6 +431,10 @@ type
 =======
 >>>>>>> origin/cpstrnew
     function DoFetchTextToken: TToken;
+=======
+    procedure Error(const Msg: string);overload;
+    procedure Error(const Msg: string; Args: array of Const);overload;
+>>>>>>> graemeg/fixes_2_2
     function DoFetchToken: TToken;
     procedure ClearFiles;
     Procedure ClearMacros;
@@ -1125,7 +1136,24 @@ begin
     While (Result=Nil) and (I<FIncludePaths.Count) do
       begin
       Try
+<<<<<<< HEAD
         FN:=SearchLowUpCase(FIncludePaths[i]+AName);
+=======
+        FN:=FIncludePaths[i]+AName;
+        If not FileExists(FN) then
+          If StrictFileCase then
+            FN:=''
+          else
+            begin 
+            fn:=LowerCase(FN);
+            If not FileExists(Fn) then
+              begin
+              FN:=uppercase(Fn);
+              If not FileExists(FN) then
+                FN:='';
+              end;    
+            end;  
+>>>>>>> graemeg/fixes_2_2
         If (FN<>'') then
           Result := TFileLineReader.Create(FN);
       except
@@ -2057,10 +2085,17 @@ begin
         else
           Result:=HandleMacro(index);
       end;
+<<<<<<< HEAD
   else
     if PPIsSkipping then
       Inc(TokenStr)
     else
+=======
+  else 
+    if PPIsSkipping then
+      Inc(TokenStr)
+    else  
+>>>>>>> graemeg/fixes_2_2
       Error(SErrInvalidCharacter, [TokenStr[0]]);
   end;
 

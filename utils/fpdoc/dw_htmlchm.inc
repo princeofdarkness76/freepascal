@@ -10,6 +10,7 @@ type
     FChm: TChmWriter;
     FTempUncompressed: TStream;
     FTempUncompressedName: String;
+<<<<<<< HEAD
     FChmTitle: String;
     FTOCName,
     FIndexName,
@@ -17,6 +18,13 @@ type
     FMakeSearchable,
     FNoBinToc,
     FNoBinIndex,
+=======
+    FTOCName,
+    FIndexName,
+    FDefaultPage: String;
+    FCSSFile: String;
+    FMakeSearchable,
+>>>>>>> graemeg/fixes_2_2
     FAutoTOC,
     FAutoIndex: Boolean;
     FOtherFiles: String;
@@ -31,8 +39,11 @@ type
     function  InterPretOption(const Cmd,Arg : String): boolean; override;
 
     class procedure Usage(List: TStrings); override;
+<<<<<<< HEAD
     Class Function FileNameExtension : String; override;
     Class procedure SplitImport(var AFilename, ALinkPrefix: String); override;
+=======
+>>>>>>> graemeg/fixes_2_2
   end;
 {$ELSE} // implementation
 
@@ -46,11 +57,16 @@ begin
     FDefaultPage := 'index.html'
   else
   begin
+<<<<<<< HEAD
     DoLog('Note: --index-page not assigned. Using default "index.html"');
+=======
+    WriteLn('Note: --index-page not assigned. Using default "index.html"');
+>>>>>>> graemeg/fixes_2_2
   end;
   
   if FCSSFile <> '' then
   begin
+<<<<<<< HEAD
     if not FileExists(FCSSFile) Then
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -78,6 +94,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
     TempStream := TMemoryStream.Create;
     TempStream.LoadFromFile(FCSSFile);
     TempStream.Position := 0;
@@ -141,7 +159,11 @@ begin
       FChm.AppendIndex(TmpStream);
     end;
   TmpStream.Free;
+<<<<<<< HEAD
   DoLog('Finishing compressing...');
+=======
+  WriteLn('Finishing compressing...');
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TOCSort(Item1, Item2: TChmSiteMapItem): Integer;
@@ -182,7 +204,11 @@ var
   AlphaRoutinesItem: TChmSiteMapItem;
 
 begin
+<<<<<<< HEAD
   DoLog('Generating Table of contents...');
+=======
+  WriteLn('Generating Table of contents...');
+>>>>>>> graemeg/fixes_2_2
   if Assigned(Package) then
   begin
     Toc := TChmSiteMap.Create(stTOC);
@@ -200,8 +226,11 @@ begin
     for i := 0 to Package.Modules.Count - 1 do
     begin
       AModule := TPasModule(Package.Modules[i]);
+<<<<<<< HEAD
       If not assigned(AModule.InterfaceSection) Then
          Continue;
+=======
+>>>>>>> graemeg/fixes_2_2
       ObjUnitItem := ObjByUnitItem.Children.NewItem;
       ObjUnitItem.Text := AModule.Name;
       RoutinesUnitItem := RoutinesByUnitItem.Children.NewItem;
@@ -265,9 +294,13 @@ begin
       TOC.Items.Item[i].Children.Item[j].Children.Sort(TListSortCompare(@TOCSort));
     end;
   end;
+<<<<<<< HEAD
 
   if not fnobintoc then
     fchm.AppendBinaryTOCFromSiteMap(Toc);  
+=======
+  
+>>>>>>> graemeg/fixes_2_2
   TOC.SaveToStream(Stream);
   TOC.Free;
 
@@ -310,17 +343,28 @@ var
   MemberItem: TChmSiteMapItem;
   Stream: TMemoryStream;
 begin
+<<<<<<< HEAD
   DoLog('Generating Index...');
 
   if Assigned(Package) then
   begin
+=======
+  WriteLn('Generating Index...');
+
+  if Assigned(Package) then
+  begin
+  try
+>>>>>>> graemeg/fixes_2_2
     Index := TChmSiteMap.Create(stIndex);
     Stream := TMemoryStream.Create;
     for i := 0 to Package.Modules.Count - 1 do
     begin
       AModule := TPasModule(Package.Modules[i]);
+<<<<<<< HEAD
       if not assigned(AModule.InterfaceSection) then
         continue;
+=======
+>>>>>>> graemeg/fixes_2_2
       ParentItem := Index.Items.NewItem;
       ParentItem.Text := AModule.Name;
       ParentItem.Local := FixHTMLpath(Allocator.GetFilename(AModule, 0));
@@ -370,7 +414,11 @@ begin
       begin
         ParentElement := TPasProcedureType(AModule.InterfaceSection.Functions[j]);
         TmpItem := Index.Items.NewItem;
+<<<<<<< HEAD
         TmpItem.Text := ParentElement.Name + ' ' + ParentElement.ElementTypeName;
+=======
+        TmpItem.Text := ParentElement.Name + ' ' + TPasFunction(ParentElement).ElementTypeName;
+>>>>>>> graemeg/fixes_2_2
         TmpItem.Local := FixHTMLpath(Allocator.GetFilename(ParentElement, 0));
       end;
       // consts
@@ -443,12 +491,22 @@ begin
 
     // save
     Index.SaveToStream(Stream);
+<<<<<<< HEAD
     if not fnobinindex then
       fchm.AppendBinaryindexFromSitemap(index,false);
+=======
+>>>>>>> graemeg/fixes_2_2
     Index.Free;
     Stream.Position :=0 ;
     FChm.AppendIndex(Stream);
     Stream.Free;
+<<<<<<< HEAD
+=======
+  except
+    Dump_Stack(StdOut, get_frame);
+    Halt(1);
+  end;
+>>>>>>> graemeg/fixes_2_2
   end;
 end;
 
@@ -460,6 +518,7 @@ var
   FileName: String;
   FilePath: String;
 begin
+<<<<<<< HEAD
   FileName := Engine.Output;
   if FileName = '' then
     Raise Exception.Create('Error: no --output option used.'); 
@@ -468,16 +527,36 @@ begin
     FileName := ChangeFileExt(FileName, FileNameExtension);
 
   FOutChm := TFileStream.Create(FileName, fmOpenReadWrite or fmCreate);
+=======
+  if Engine.Output = '' then
+  begin
+    WriteLn('Error: no --output option used.');
+    Exit;
+  end;
+  
+  if ExtractFileExt(Engine.Output) <> '.chm' then
+    ChangeFileExt(Engine.OutPut, '.chm');
+
+  FOutChm := TFileStream.Create(Engine.Output, fmOpenReadWrite or fmCreate);
+>>>>>>> graemeg/fixes_2_2
 
   FTempUncompressedName := GetTempFileName+IntToStr(GetProcessID) +'.raw';
   FTempUncompressed := TFileStream.Create(FTempUncompressedName, fmOpenReadWrite  or fmCreate);
   FChm := TChmWriter.Create(FOutChm, False);
+<<<<<<< HEAD
   FChm.Title := FChmTitle;
   FChm.TempRawStream := FTempUncompressed;
   FChm.OnGetFileData := @RetrieveOtherFiles;
   FChm.OnLastFile := @LastFileAdded;
   fchm.hasbinarytoc:=not fnobintoc;;
   fchm.hasbinaryindex:=not fnobinindex;
+=======
+  FChm.Title := Copy(Package.Name, 2, Length(Package.Name));
+  FChm.TempRawStream := FTempUncompressed;
+  FChm.OnGetFileData := @RetrieveOtherFiles;
+  FChm.OnLastFile := @LastFileAdded;
+  
+>>>>>>> graemeg/fixes_2_2
   ProcessOptions;
 
   FileStream := TMemoryStream.Create;
@@ -494,7 +573,11 @@ begin
           FChm.AddStreamToArchive(FileName, FilePath, FileStream, True);
         except
 	  on E: Exception do
+<<<<<<< HEAD
             DoLog(Format(SErrCouldNotCreateFile, [FileName, e.Message]));
+=======
+            WriteLn(Format(SErrCouldNotCreateFile, [FileName, e.Message]));
+>>>>>>> graemeg/fixes_2_2
         end;
       finally
         PageDoc.Free;
@@ -502,6 +585,7 @@ begin
       end;
     end;
   FileStream.Free;
+<<<<<<< HEAD
 
   DoLog('HTML Files written. Collecting other files and compressing...this could take some time');
 
@@ -525,6 +609,9 @@ begin
   end;
   FileStream.Free;
 
+=======
+  WriteLn('HTML Files written. Collecting other files and compressing...this could take some time');
+>>>>>>> graemeg/fixes_2_2
   FChm.Execute;
   FChm.Free;
   // we don't need to free FTempUncompressed
@@ -536,8 +623,11 @@ end;
 function TCHMHTMLWriter.InterPretOption(const Cmd, Arg: String): boolean;
 begin
   Result:=True;
+<<<<<<< HEAD
   FNoBinToc:=False;
   FnoBinIndex:=False;
+=======
+>>>>>>> graemeg/fixes_2_2
   if Cmd = '--toc-file' then
     FTOCName := arg
   else if Cmd = '--index-file' then
@@ -546,10 +636,16 @@ begin
     FDefaultPage := arg
   else if Cmd = '--other-files' then
     FOtherFiles := arg
+<<<<<<< HEAD
+=======
+  else if Cmd = '--css-file' then
+    FCSSFile := arg
+>>>>>>> graemeg/fixes_2_2
   else if Cmd = '--auto-index' then
     FAutoIndex := True
   else if Cmd = '--auto-toc' then
     FAutoTOC := True
+<<<<<<< HEAD
   else if Cmd = '--no-bintoc' then
     FNoBinToc := True
   else if Cmd = '--no-binindex' then
@@ -563,6 +659,12 @@ begin
 
   if Length(FChmTitle) = 0 then
     FChmTitle := Copy(Package.Name, 2, Length(Package.Name));
+=======
+  else if Cmd = '--make-searchable' then
+    FMakeSearchable := True
+  else
+    Result:=inherited InterPretOption(Cmd, Arg);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 class procedure TCHMHTMLWriter.Usage(List: TStrings);
@@ -584,6 +686,7 @@ begin
   List.Add(SCHMUsageAutoTOC);
   List.add('--make-searchable');
   List.Add(SCHMUsageMakeSearch);
+<<<<<<< HEAD
   List.Add('--chm-title');
   List.Add(SCHMUsageChmTitle);
 end;
@@ -610,5 +713,10 @@ begin
     AFilename := ChangeFileExt(AFilename, '.xct');
     end;
 end;
+=======
+end;
+
+
+>>>>>>> graemeg/fixes_2_2
 
 {$ENDIF}

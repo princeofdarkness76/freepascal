@@ -13,6 +13,7 @@ begin
 {$endif ALLPACKAGES}
 
     P:=AddPackage('fcl-net');
+<<<<<<< HEAD
     P.ShortName:='fcln';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -44,16 +45,31 @@ begin
     P.Description := 'Network related parts of Free Component Libraries (FCL), FPC''s OOP library.';
     P.NeedLibC:= false;
     P.OSes:=P.OSes-[embedded,msdos,win16];
+=======
+{$ifdef ALLPACKAGES}
+    P.Directory:='fcl-net';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+
+    P.Dependencies.Add('fcl-base');
+    P.Dependencies.Add('fcl-xml');
+    P.Dependencies.Add('fcl-passrc');
+    P.Dependencies.Add('fcl-async');
+>>>>>>> graemeg/fixes_2_2
 
     P.SourcePath.Add('src');
     P.IncludePath.Add('src/unix',AllUnixOSes);
     P.IncludePath.Add('src/win',AllWindowsOSes);
     P.IncludePath.Add('src/os2',[EMX]);
+<<<<<<< HEAD
     P.IncludePath.Add('src/amiga',[morphos]);
+=======
+>>>>>>> graemeg/fixes_2_2
     P.IncludePath.Add('src/$(OS)',AllOSes-AllWindowsOSes-AllUnixOSes-[EMX]);
 
     // IP and Sockets
     T:=P.Targets.AddUnit('netdb.pp',AllUnixOSes);
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('resolve.pp',AllUnixOSes+AllWindowsOSes+AllAmigaLikeOSes+[OS2,EMX]);
       with T.Dependencies do
         begin
@@ -62,10 +78,20 @@ begin
         end;
     T.ResourceStrings := True;
     T:=P.Targets.AddUnit('ssockets.pp',AllUnixOSes+AllWindowsOSes+AllAmigaLikeOSes+[OS2,EMX]);
+=======
+    T:=P.Targets.AddUnit('resolve.pp',AllUnixOSes+AllWindowsOSes+[OS2,EMX]);
+      with T.Dependencies do
+        begin
+          AddInclude('resolve.inc');
+          AddUnit('netdb');
+        end;
+    T:=P.Targets.AddUnit('ssockets.pp',AllUnixOSes+AllWindowsOSes+[OS2,EMX]);
+>>>>>>> graemeg/fixes_2_2
       with T.Dependencies do
         begin
           AddUnit('resolve');
         end;
+<<<<<<< HEAD
 <<<<<<< HEAD
     T.ResourceStrings := True;
     T:=P.Targets.AddUnit('sslsockets.pp',AllUnixOSes+AllWindowsOSes);
@@ -82,10 +108,17 @@ begin
     // HTTP Client
     T:=P.Targets.AddUnit('fpsock.pp',AllUnixOSes);
 >>>>>>> graemeg/cpstrnew
+=======
+
+    // HTTP Client
+    T:=P.Targets.AddUnit('servlets.pp');
+    T:=P.Targets.AddUnit('fpsock.pp',AllUnixOSes);
+>>>>>>> graemeg/fixes_2_2
       with T.Dependencies do
         begin
           AddUnit('resolve');
         end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -112,6 +145,32 @@ begin
     P.Targets.AddExampleProgram('examples/testhst.pp');
     P.Targets.AddExampleProgram('examples/testuri.pp');
     P.Targets.AddExampleProgram('examples/testproto.pp');
+=======
+    T:=P.Targets.AddUnit('httpbase.pp',AllUnixOSes);
+    T:=P.Targets.AddUnit('httpclient.pp',AllUnixOSes);
+      with T.Dependencies do
+        begin
+          AddUnit('httpbase');
+          AddUnit('fpsock');
+        end;
+    T:=P.Targets.AddUnit('httpsvlt.pp',AllUnixOSes);
+      with T.Dependencies do
+        begin
+          AddUnit('fpsock');
+          AddUnit('httpbase');
+          AddUnit('servlets');
+        end;
+
+    // XML-RPC
+    T:=P.Targets.AddUnit('xmlrpc.pp',AllUnixOSes);
+      with T.Dependencies do
+        begin
+          AddUnit('ssockets');
+          AddUnit('httpclient');
+          AddUnit('httpsvlt');
+        end;
+    T:=P.Targets.AddProgram('mkxmlrpc.pp',AllUnixOSes);
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

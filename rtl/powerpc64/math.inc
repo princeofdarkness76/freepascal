@@ -123,4 +123,7 @@ asm
   fmadd f0,f4,f2,f0   // (2**32)*high+low (only add can rnd)
 end;
 
+<<<<<<< HEAD
 {$endif ndef aix}
+=======
+>>>>>>> graemeg/fixes_2_2

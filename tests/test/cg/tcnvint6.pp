@@ -1,8 +1,11 @@
 
+<<<<<<< HEAD
 { This test requires overflow and range check to be off }
 {$Q-}
 {$R-}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 procedure error(n: longint);
 begin
   writeln('Test failed: ', n);

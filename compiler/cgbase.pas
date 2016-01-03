@@ -68,9 +68,14 @@ interface
        trefaddr = (
          addr_no,
          addr_full,
+<<<<<<< HEAD
          addr_pic,
          addr_pic_no_got
          {$IF defined(POWERPC) or defined(POWERPC64) or defined(SPARC) or defined(MIPS)}
+=======
+         addr_pic
+         {$IF defined(POWERPC) or defined(POWERPC64) or defined(SPARC)}
+>>>>>>> graemeg/fixes_2_2
          ,
          addr_low,         // bits 48-63
          addr_high,        // bits 32-47
@@ -84,6 +89,7 @@ interface
          addr_highera,     // bits 32-47, adjusted
          addr_highesta     // bits 48-63, adjusted
          {$ENDIF}
+<<<<<<< HEAD
          {$ENDIF POWERPC or POWERPC64 or SPARC or MIPS}
          {$IFDEF MIPS}
          ,
@@ -135,6 +141,9 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+         {$ENDIF}
+>>>>>>> graemeg/fixes_2_2
          );
 
 

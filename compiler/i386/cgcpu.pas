@@ -60,9 +60,19 @@ unit cgcpu;
         procedure a_loadaddr_ref_cgpara(list : TAsmList;const r : treference;const cgpara : tcgpara);override;
 
         procedure g_proc_exit(list : TAsmList;parasize:longint;nostackframe:boolean);override;
+<<<<<<< HEAD
         procedure g_copyvaluepara_openarray(list : TAsmList;const ref:treference;const lenloc:tlocation;elesize:tcgint;destreg:tregister);
         procedure g_releasevaluepara_openarray(list : TAsmList;const l:tlocation);
 
+=======
+        procedure g_copyvaluepara_openarray(list : TAsmList;const ref:treference;const lenloc:tlocation;elesize:aint;destreg:tregister);override;
+        procedure g_releasevaluepara_openarray(list : TAsmList;const l:tlocation);override;
+
+        procedure g_exception_reason_save(list : TAsmList; const href : treference);override;
+        procedure g_exception_reason_save_const(list : TAsmList; const href : treference; a: aint);override;
+        procedure g_exception_reason_load(list : TAsmList; const href : treference);override;
+        procedure g_intf_wrapper(list: TAsmList; procdef: tprocdef; const labelname: string; ioffset: longint);override;
+>>>>>>> graemeg/fixes_2_2
         procedure g_maybe_got_init(list: TAsmList); override;
      end;
 
@@ -111,6 +121,7 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (cs_useebp in current_settings.optimizerswitches) and assigned(current_procinfo) and (current_procinfo.framepointer<>NR_EBP) then
           rg[R_INTREGISTER]:=trgcpu.create(R_INTREGISTER,R_SUBWHOLE,[RS_EAX,RS_EDX,RS_ECX,RS_EBX,RS_ESI,RS_EDI,RS_EBP],first_int_imreg,[])
 =======
@@ -121,6 +132,9 @@ unit cgcpu;
 =======
 >>>>>>> origin/cpstrnew
         if not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) and
+=======
+        if (target_info.system<>system_i386_darwin) and
+>>>>>>> graemeg/fixes_2_2
            (cs_create_pic in current_settings.moduleswitches) then
           rg[R_INTREGISTER]:=trgcpu.create(R_INTREGISTER,R_SUBWHOLE,[RS_EAX,RS_EDX,RS_ECX,RS_ESI,RS_EDI],first_int_imreg,[RS_EBP])
 >>>>>>> graemeg/cpstrnew
@@ -140,6 +154,11 @@ unit cgcpu;
           begin
             if getsupreg(current_procinfo.got) < first_int_imreg then
               include(rg[R_INTREGISTER].used_in_proc,getsupreg(current_procinfo.got));
+<<<<<<< HEAD
+=======
+            { ebx is currently always used (do to getiepasebx call) }
+            include(rg[R_INTREGISTER].used_in_proc,RS_EBX);
+>>>>>>> graemeg/fixes_2_2
           end;
         inherited do_register_allocation(list,headertai);
       end;
@@ -365,6 +384,7 @@ unit cgcpu;
 
 
     procedure tcg386.g_proc_exit(list : TAsmList;parasize:longint;nostackframe:boolean);
+<<<<<<< HEAD
 
       procedure increase_sp(a : tcgint);
         var
@@ -375,6 +395,10 @@ unit cgcpu;
           list.concat(Taicpu.op_ref_reg(A_LEA,TCGSize2OpSize[OS_ADDR],href,NR_STACK_POINTER_REG));
         end;
 
+=======
+      var
+        stacksize : longint;
+>>>>>>> graemeg/fixes_2_2
       begin
         { MMX needs to call EMMS }
         if assigned(rg[R_MMXREGISTER]) and
@@ -479,6 +503,7 @@ unit cgcpu;
          begin
            { complex return values are removed from stack in C code PM }
            { but not on win32 }
+<<<<<<< HEAD
            { and not for safecall with hidden exceptions, because the result }
            { wich contains the exception is passed in EAX }
 <<<<<<< HEAD
@@ -503,6 +528,11 @@ unit cgcpu;
                (tf_safecall_exceptions in target_info.flags)) and
               paramanager.ret_in_param(current_procinfo.procdef.returndef,
                                        current_procinfo.procdef) then
+=======
+           if (target_info.system <> system_i386_win32) and
+              paramanager.ret_in_param(current_procinfo.procdef.returndef,
+                                       current_procinfo.procdef.proccalloption) then
+>>>>>>> graemeg/fixes_2_2
              list.concat(Taicpu.Op_const(A_RET,S_W,sizeof(aint)))
            else
              list.concat(Taicpu.Op_none(A_RET,S_NO));
@@ -711,6 +741,7 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
@@ -719,21 +750,30 @@ unit cgcpu;
 =======
 >>>>>>> origin/cpstrnew
         if paramanager.use_fixed_stack then
+=======
+        if use_fixed_stack then
+>>>>>>> graemeg/fixes_2_2
           begin
             inherited g_releasevaluepara_openarray(list,l);
             exit;
           end;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
         { Nothing to release }
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure tcg386.g_maybe_got_init(list: TAsmList);
       var
         i: longint;
         tmpreg: TRegister;
 =======
+=======
+>>>>>>> graemeg/fixes_2_2
     procedure tcg386.g_exception_reason_save(list : TAsmList; const href : treference);
       begin
         if not paramanager.use_fixed_stack then
@@ -765,6 +805,7 @@ unit cgcpu;
 
 
     procedure tcg386.g_maybe_got_init(list: TAsmList);
+<<<<<<< HEAD
       var
         notdarwin: boolean;
 <<<<<<< HEAD
@@ -777,12 +818,15 @@ unit cgcpu;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
       begin
         { allocate PIC register }
         if (cs_create_pic in current_settings.moduleswitches) and
            (tf_pic_uses_got in target_info.flags) and
            (pi_needs_got in current_procinfo.flags) then
           begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -888,6 +932,27 @@ unit cgcpu;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+            if (target_info.system<>system_i386_darwin) then
+              begin
+                current_module.requires_ebx_pic_helper:=true;
+                cg.a_call_name_static(list,'fpc_geteipasebx');
+                list.concat(taicpu.op_sym_ofs_reg(A_ADD,S_L,current_asmdata.RefAsmSymbol('_GLOBAL_OFFSET_TABLE_'),0,NR_PIC_OFFSET_REG));
+                list.concat(tai_regalloc.alloc(NR_PIC_OFFSET_REG,nil));
+                { ecx could be used in leaf procedures }
+                current_procinfo.got:=NR_EBX;
+              end
+            else
+              begin
+                { can't use ecx, since that one may overwrite a parameter }
+                current_module.requires_ebx_pic_helper:=true;
+                cg.a_call_name_static(list,'fpc_geteipasebx');
+                list.concat(tai_regalloc.alloc(NR_EBX,nil));
+                a_label(list,current_procinfo.CurrGotLabel);
+                { got is already set by ti386procinfo.allocate_got_register }
+                list.concat(tai_regalloc.dealloc(NR_EBX,nil));
+                a_load_reg_reg(list,OS_ADDR,OS_ADDR,NR_EBX,current_procinfo.got);
+>>>>>>> graemeg/fixes_2_2
               end;
           end;
       end;
@@ -1168,7 +1233,11 @@ unit cgcpu;
         case op of
           OP_AND,OP_OR,OP_XOR:
             begin
+<<<<<<< HEAD
               cg.a_op_const_ref(list,op,OS_32,tcgint(lo(value)),tempref);
+=======
+              cg.a_op_const_ref(list,op,OS_32,aint(lo(value)),tempref);
+>>>>>>> graemeg/fixes_2_2
               inc(tempref.offset,4);
               cg.a_op_const_ref(list,op,OS_32,tcgint(hi(value)),tempref);
             end;

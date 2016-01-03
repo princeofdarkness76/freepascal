@@ -66,7 +66,11 @@
 
 {$include gmarshal.inc}
 
+<<<<<<< HEAD
 {$IFDEF winDOWS}
+=======
+{$IFDEF win32}
+>>>>>>> graemeg/fixes_2_2
 {$include gwin32.inc}
 {$ENDIF}
 

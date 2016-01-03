@@ -16,6 +16,10 @@
 {$mode objfpc}
 {$goto on}
 {$H+}
+<<<<<<< HEAD
+=======
+{$goto on}
+>>>>>>> graemeg/fixes_2_2
 
 program dotest;
 uses
@@ -27,8 +31,12 @@ uses
   teststr,
   testu,
   redir,
+<<<<<<< HEAD
   bench,
   classes;
+=======
+  bench;
+>>>>>>> graemeg/fixes_2_2
 
 {$ifdef go32v2}
   {$define LIMIT83FS}
@@ -57,11 +65,15 @@ const
   SrcExeExt='.exe';
 {$endif MACOS}
 {$endif UNIX}
+<<<<<<< HEAD
   ExeExt : string = '';
   DllExt : string = '.so';
   DllPrefix: string = 'lib';
   DefaultTimeout=60;
   READ_ONLY = 0;
+=======
+  DefaultTimeout=60;
+>>>>>>> graemeg/fixes_2_2
 
 var
   Config : TConfig;
@@ -94,7 +106,11 @@ const
   DoKnown : boolean = false;
   DoAll : boolean = false;
   DoUsual : boolean = true;
+<<<<<<< HEAD
   { TargetDir : string = ''; unused }
+=======
+  TargetDir : string = '';
+>>>>>>> graemeg/fixes_2_2
   BenchmarkInfo : boolean = false;
   ExtraCompilerOpts : string = '';
   DelExecutable : TDelExecutables = [];
@@ -108,7 +124,11 @@ const
   RemoteShellNeedsExport : boolean = false;
   rshprog : string = 'rsh';
   rcpprog : string = 'rcp';
+<<<<<<< HEAD
   rquote : string = '''';
+=======
+  rquote : char = '''';
+>>>>>>> graemeg/fixes_2_2
   UseTimeout : boolean = false;
   emulatorname : string = '';
   TargetCanCompileLibraries : boolean = true;
@@ -1708,6 +1728,7 @@ var
   TestRemoteExe,
   TestExe  : string;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   LocalFile, RemoteFile: string;
   LocalPath, LTarget : string;
@@ -1735,12 +1756,19 @@ begin
 
   execres:=MaybeCopyFiles(TestExe);
 =======
+=======
+  execcmd  : string;
+  execres  : boolean;
+  EndTicks,
+  StartTicks : int64;
+>>>>>>> graemeg/fixes_2_2
   function ExecuteRemote(const prog,args:string):boolean;
     var
       Trials : longint;
     begin
       Verbose(V_Debug,'RemoteExecuting '+Prog+' '+args);
       StartTicks:=GetMicroSTicks;
+<<<<<<< HEAD
       ExecuteRemote:=false;
       Trials:=0;
       While (Trials<MaxTrials) and not ExecuteRemote do
@@ -1751,6 +1779,9 @@ begin
 
       if Trials>1 then
         Verbose(V_Debug,'Done in '+tostr(trials)+' trials');
+=======
+      ExecuteRemote:=ExecuteRedir(prog,args,'',EXELogFile,'stdout');
+>>>>>>> graemeg/fixes_2_2
       EndTicks:=GetMicroSTicks;
     end;
 
@@ -1801,7 +1832,11 @@ begin
       {$I+}
       ioresult;
       s:=CurrDir+SplitFileName(TestExe);
+<<<<<<< HEAD
       execres:=ExecuteEmulated(EmulatorName,s,FullExeLogFile,StartTicks,EndTicks);
+=======
+      execres:=ExecuteEmulated(EmulatorName,s);
+>>>>>>> graemeg/fixes_2_2
       {$I-}
        ChDir(OldDir);
       {$I+}
@@ -1809,6 +1844,7 @@ begin
   else if RemoteAddr<>'' then
     begin
       TestRemoteExe:=RemotePath+'/'+SplitFileName(TestExe);
+<<<<<<< HEAD
 <<<<<<< HEAD
       { rsh doesn't pass the exitcode, use a second command to print the exitcode
         on the remoteshell to stdout }
@@ -1940,6 +1976,28 @@ begin
       execcmd:=execcmd+rquote;
       execres:=ExecuteRemote(rshprog,execcmd);
 >>>>>>> graemeg/cpstrnew
+=======
+      if deBefore in DelExecutable then
+        ExecuteRemote(rshprog,RemotePara+' '+RemoteAddr+' rm -f '+TestRemoteExe);
+      ExecuteRemote(rcpprog,RemotePara+' '+TestExe+' '+RemoteAddr+':'+TestRemoteExe);
+      { rsh doesn't pass the exitcode, use a second command to print the exitcode
+        on the remoteshell to stdout }
+      execcmd:=RemotePara+' '+RemoteAddr+' '+rquote+'chmod 755 '+TestRemoteExe+
+        ' ; cd '+RemotePath+' ;';
+      if UseTimeout then
+      begin
+        execcmd:=execcmd+'timeout -9 ';
+        if Config.Timeout=0 then
+          Config.Timeout:=DefaultTimeout;
+        str(Config.Timeout,s);
+        execcmd:=execcmd+s;
+      end;
+      execcmd:=execcmd+' '+TestRemoteExe+' ; echo "TestExitCode: $?"';
+      if deAfter in DelExecutable then
+        execcmd:=execcmd+' ; rm -f '+TestRemoteExe;
+      execcmd:=execcmd+rquote;
+      execres:=ExecuteRemote(rshprog,execcmd);
+>>>>>>> graemeg/fixes_2_2
       { Check for TestExitCode error in output, sets ExecuteResult }
       if not CheckTestExitCode(EXELogFile) then
         Verbose(V_Debug,'Failed to check exit code for '+execcmd);
@@ -2043,7 +2101,11 @@ begin
      RunExecutable:=true;
    end;
 
+<<<<<<< HEAD
   if (deAfter in DelExecutable) and not Config.NeededAfter then
+=======
+  if deAfter in DelExecutable then
+>>>>>>> graemeg/fixes_2_2
     begin
       Verbose(V_Debug,'Deleting executable '+TestExe);
       RemoveFile(TestExe);
@@ -2100,6 +2162,7 @@ procedure getargs;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     writeln('  !ENV_NAME     parse environment variable ENV_NAME for options');
     writeln('  -A            include ALL tests');
     writeln('  -ADB          use ADB to run tests');
@@ -2115,12 +2178,15 @@ procedure getargs;
 =======
     writeln('  -A            include ALL tests');
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
     writeln('  -B            delete executable before remote upload');
     writeln('  -C<compiler>  set compiler to use');
     writeln('  -D            display execution time');
     writeln('  -E            execute test also');
     writeln('  -G            include graph tests');
     writeln('  -I            include interactive tests');
+<<<<<<< HEAD
     writeln('  -K            include known bug tests');
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2135,6 +2201,9 @@ procedure getargs;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+    writeln('  -O            use timeout wrapper for (remote) execution');
+>>>>>>> graemeg/fixes_2_2
     writeln('  -M<emulator>  run the tests using the given emulator');
     writeln('  -O            use timeout wrapper for (remote) execution');
     writeln('  -P<path>      path to the tests tree on the remote machine');
@@ -2200,6 +2269,7 @@ begin
            end;
 >>>>>>> graemeg/cpstrnew
 
+<<<<<<< HEAD
      'B' : Include(DelExecutable,deBefore);
 
      'C' : CompilerBin:=Para;
@@ -2211,6 +2281,11 @@ begin
          'D' : BenchMarkInfo:=true;
 =======
          'D' : BenchMarkInfo:=true;
+=======
+         'B' : Include(DelExecutable,deBefore);
+
+         'C' : CompilerBin:=Para;
+>>>>>>> graemeg/fixes_2_2
 
          'E' : DoExecute:=true;
 >>>>>>> origin/cpstrnew
@@ -2224,11 +2299,17 @@ begin
 
      'E' : DoExecute:=true;
 
+<<<<<<< HEAD
      'G' : begin
              DoGraph:=true;
              if para='-' then
                DoUsual:=false;
            end;
+=======
+         'O' : UseTimeout:=true;
+
+         'P' : RemotePath:=Para;
+>>>>>>> graemeg/fixes_2_2
 
      'I' : begin
              DoInteractive:=true;
@@ -2309,6 +2390,7 @@ begin
 
      'Y' : ExtraCompilerOpts:= ExtraCompilerOpts +' '+ Para;
 
+<<<<<<< HEAD
      'Z' : Include(DelExecutable,deAfter);
     end;
  end;
@@ -2324,6 +2406,12 @@ begin
    arg:=getenv(arg);
    Verbose(V_Debug,'Environment value is "'+arg+'"');
    while (length(arg)>0) do
+=======
+         'Z' : Include(DelExecutable,deAfter);
+        end;
+     end
+    else
+>>>>>>> graemeg/fixes_2_2
      begin
 <<<<<<< HEAD
 <<<<<<< HEAD

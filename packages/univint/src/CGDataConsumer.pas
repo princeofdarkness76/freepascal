@@ -4,6 +4,7 @@
  }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -26,6 +27,14 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -34,8 +43,13 @@
 
 unit CGDataConsumer;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -48,21 +62,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -97,6 +119,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -104,6 +128,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -313,6 +338,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -338,6 +373,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -348,12 +387,16 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFData,CGBase,CFURL;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -376,21 +419,40 @@ type
 
 { This callback is called to copy `count' bytes from `buffer' to the data
    consumer. }
+=======
+	CGDataConsumerRef = ^SInt32; { an opaque 32-bit type }
+
+
+{ This callback is called to copy `count' bytes from `buffer' to the
+ * data consumer. }
+>>>>>>> graemeg/fixes_2_2
 
 type
 	CGDataConsumerPutBytesCallback = function( info: UnivPtr; buffer: {const} UnivPtr; count: size_t ): size_t;
 
 { This callback is called to release the `info' pointer when the data
+<<<<<<< HEAD
    provider is freed. }
+=======
+ * provider is freed. }
+>>>>>>> graemeg/fixes_2_2
 
 type
 	CGDataConsumerReleaseInfoCallback = procedure( info: UnivPtr );
 
+<<<<<<< HEAD
 { Callbacks for writing data.
    `putBytes' copies `count' bytes from `buffer' to the consumer, and
      returns the number of bytes copied. It should return 0 if no more data
      can be written to the consumer.
    `releaseConsumer', if non-NULL, is called when the consumer is freed. }
+=======
+{ Callbacks for accessing data.
+ * `putBytes' copies `count' bytes from `buffer' to the consumer, and
+ * returns the number of bytes copied.  It should return 0 if no more data
+ * can be written to the consumer.
+ * `releaseConsumer', if non-NULL, is called when the consumer is freed. }
+>>>>>>> graemeg/fixes_2_2
 
 type
 	CGDataConsumerCallbacks = record
@@ -400,6 +462,7 @@ type
 
 { Return the CFTypeID for CGDataConsumerRefs. }
 
+<<<<<<< HEAD
 function CGDataConsumerGetTypeID: CFTypeID; external name '_CGDataConsumerGetTypeID';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 
@@ -408,28 +471,52 @@ function CGDataConsumerGetTypeID: CFTypeID; external name '_CGDataConsumerGetTyp
 
 function CGDataConsumerCreate( info: UnivPtr; const (*var*) callbacks: CGDataConsumerCallbacks ): CGDataConsumerRef; external name '_CGDataConsumerCreate';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+=======
+function CGDataConsumerGetTypeID: CFTypeID; external name '_CGDataConsumerGetTypeID'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+{ Create a data consumer using `callbacks' to handle the data.  `info' is
+ * passed to each of the callback functions. }
+
+function CGDataConsumerCreate( info: UnivPtr; const (*var*) callbacks: CGDataConsumerCallbacks ): CGDataConsumerRef; external name '_CGDataConsumerCreate';
+>>>>>>> graemeg/fixes_2_2
 
 { Create a data consumer which writes data to `url'. }
 
 function CGDataConsumerCreateWithURL( url: CFURLRef ): CGDataConsumerRef; external name '_CGDataConsumerCreateWithURL';
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
 { Create a data consumer which writes to `data'. }
 
 function CGDataConsumerCreateWithCFData( data: CFMutableDataRef ): CGDataConsumerRef; external name '_CGDataConsumerCreateWithCFData';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+=======
+
+{ Create a data consumer which writes to `data'. }
+
+function CGDataConsumerCreateWithCFData( data: CFMutableDataRef ): CGDataConsumerRef; external name '_CGDataConsumerCreateWithCFData'; (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 { Equivalent to `CFRetain(consumer)'. }
 
 function CGDataConsumerRetain( consumer: CGDataConsumerRef ): CGDataConsumerRef; external name '_CGDataConsumerRetain';
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+=======
+>>>>>>> graemeg/fixes_2_2
 
 { Equivalent to `CFRelease(consumer)'. }
 
 procedure CGDataConsumerRelease( consumer: CGDataConsumerRef ); external name '_CGDataConsumerRelease';
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

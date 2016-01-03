@@ -63,6 +63,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CurrentPPUVersion = 181;
 =======
   CurrentPPUVersion = 127;
@@ -76,6 +77,9 @@ const
 =======
   CurrentPPUVersion = 127;
 >>>>>>> origin/cpstrnew
+=======
+  CurrentPPUVersion = 91;
+>>>>>>> graemeg/fixes_2_2
 
 { buffer sizes }
   maxentrysize = 1024;
@@ -158,6 +162,7 @@ const
   ibnodetree       = 80;
   ibasmsymbols     = 81;
   ibresources      = 82;
+<<<<<<< HEAD
   ibcreatedobjtypes = 83;
   ibwpofile         = 84;
   ibmoduleoptions   = 85;
@@ -168,6 +173,12 @@ const
   { target-specific things }
   iblinkotherframeworks = 100;
   ibjvmnamespace = 101;
+=======
+
+  ibmainname       = 90;
+  { target-specific things }
+  iblinkotherframeworks = 100;
+>>>>>>> graemeg/fixes_2_2
 
 { unit flags }
   uf_init                = $000001; { unit has initialization section }
@@ -435,8 +446,14 @@ implementation
     fpccrc,
     cutils;
 
+<<<<<<< HEAD
 function swapendian_ppureal(d:ppureal):ppureal;
 
+=======
+
+function swapendian_ppureal(d:ppureal):ppureal;
+
+>>>>>>> graemeg/fixes_2_2
 type ppureal_bytes=array[0..sizeof(d)-1] of byte;
 
 var i:0..sizeof(d)-1;
@@ -570,7 +587,10 @@ begin
   header.size := swapendian(header.size);
   header.checksum := swapendian(header.checksum);
   header.interface_checksum := swapendian(header.interface_checksum);
+<<<<<<< HEAD
   header.indirect_checksum := swapendian(header.indirect_checksum);
+=======
+>>>>>>> graemeg/fixes_2_2
   header.deflistsize:=swapendian(header.deflistsize);
   header.symlistsize:=swapendian(header.symlistsize);
 {$ENDIF}
@@ -758,12 +778,20 @@ begin
      result:=0;
      exit;
    end;
+<<<<<<< HEAD
+=======
+{$ifdef FPC_UNALIGNED_FIXED}
+>>>>>>> graemeg/fixes_2_2
   if bufsize-bufidx>=sizeof(word) then
     begin
       result:=Unaligned(pword(@buf[bufidx])^);
       inc(bufidx,sizeof(word));
     end
   else
+<<<<<<< HEAD
+=======
+{$endif FPC_UNALIGNED_FIXED}
+>>>>>>> graemeg/fixes_2_2
     readdata(result,sizeof(word));
   if change_endian then
    result:=swapendian(result);
@@ -779,11 +807,16 @@ begin
      result:=0;
      exit;
    end;
+<<<<<<< HEAD
+=======
+{$ifdef FPC_UNALIGNED_FIXED}
+>>>>>>> graemeg/fixes_2_2
   if bufsize-bufidx>=sizeof(longint) then
     begin
       result:=Unaligned(plongint(@buf[bufidx])^);
       inc(bufidx,sizeof(longint));
     end
+<<<<<<< HEAD
   else
     readdata(result,sizeof(longint));
   if change_endian then
@@ -807,6 +840,11 @@ begin
     end
   else
     readdata(result,sizeof(dword));
+=======
+  else
+{$endif FPC_UNALIGNED_FIXED}
+    readdata(result,sizeof(longint));
+>>>>>>> graemeg/fixes_2_2
   if change_endian then
    result:=swapendian(result);
   inc(entryidx,4);
@@ -821,11 +859,16 @@ begin
      result:=0;
      exit;
    end;
+<<<<<<< HEAD
+=======
+{$ifdef FPC_UNALIGNED_FIXED}
+>>>>>>> graemeg/fixes_2_2
   if bufsize-bufidx>=sizeof(int64) then
     begin
       result:=Unaligned(pint64(@buf[bufidx])^);
       inc(bufidx,sizeof(int64));
     end
+<<<<<<< HEAD
   else
     readdata(result,sizeof(int64));
   if change_endian then
@@ -849,6 +892,11 @@ begin
     end
   else
     readdata(result,sizeof(qword));
+=======
+  else
+{$endif FPC_UNALIGNED_FIXED}
+    readdata(result,sizeof(int64));
+>>>>>>> graemeg/fixes_2_2
   if change_endian then
    result:=swapendian(result);
   inc(entryidx,8);
@@ -995,6 +1043,7 @@ begin
          result:=0;
          exit;
        end;
+<<<<<<< HEAD
       readdata(e,sizeof(e));
       if change_endian then
         result:=swapendian_ppureal(e)
@@ -1004,6 +1053,16 @@ begin
       exit;
     end;
   if sizeofreal=sizeof(d) then
+=======
+      readdata(hd,sizeof(hd));
+      if change_endian then
+        getreal:=swapendian(qword(hd))
+      else
+        getreal:=hd;
+      inc(entryidx,sizeof(hd));
+    end
+  else
+>>>>>>> graemeg/fixes_2_2
     begin
       if entryidx+sizeof(d)>entry.size then
        begin
@@ -1011,6 +1070,7 @@ begin
          result:=0;
          exit;
        end;
+<<<<<<< HEAD
       readdata(d,sizeof(d));
       if change_endian then
         result:=swapendian(pqword(@d)^)
@@ -1055,6 +1115,14 @@ begin
     begin
       d:=getrealsize(sizeof(d));
       getreal:=d;
+=======
+      readdata(d,sizeof(ppureal));
+      if change_endian then
+        getreal:=swapendian_ppureal(d)
+      else
+        getreal:=d;
+      inc(entryidx,sizeof(ppureal));
+>>>>>>> graemeg/fixes_2_2
     end;
 end;
 
@@ -1107,8 +1175,9 @@ begin
 =======
 function tppufile.getansistring: ansistring;
 var
-  l : longint;
+  i : longint;
 begin
+<<<<<<< HEAD
   l:=getlongint;
   if entryidx+l>entry.size then
 >>>>>>> origin/cpstrnew
@@ -1164,6 +1233,21 @@ var
 begin
   getdata(b,32);
   if change_endian then
+=======
+  getdata(b,4);
+  if change_endian then
+    for i:=0 to 3 do
+      Pbyte(@b)[i]:=reverse_byte(Pbyte(@b)[i]);
+end;
+
+
+procedure tppufile.getnormalset(var b);
+var
+  i : longint;
+begin
+  getdata(b,32);
+  if change_endian then
+>>>>>>> graemeg/fixes_2_2
     for i:=0 to 31 do
       Pbyte(@b)[i]:=reverse_byte(Pbyte(@b)[i]);
 end;
@@ -1225,7 +1309,10 @@ begin
 {reset}
   crc:=0;
   interface_crc:=0;
+<<<<<<< HEAD
   indirect_crc:=0;
+=======
+>>>>>>> graemeg/fixes_2_2
   do_interface_crc:=true;
   do_indirect_crc:=false;
   Error:=false;
@@ -1261,7 +1348,10 @@ begin
     header.size := swapendian(header.size);
     header.checksum := swapendian(header.checksum);
     header.interface_checksum := swapendian(header.interface_checksum);
+<<<<<<< HEAD
     header.indirect_checksum := swapendian(header.indirect_checksum);
+=======
+>>>>>>> graemeg/fixes_2_2
     header.deflistsize:=swapendian(header.deflistsize);
     header.symlistsize:=swapendian(header.symlistsize);
 {$endif not FPC_BIG_ENDIAN}
@@ -1493,12 +1583,17 @@ begin
 end;
 
 
+<<<<<<< HEAD
 procedure tppufile.putstring(const s:string);
+=======
+procedure tppufile.putstring(s:string);
+>>>>>>> graemeg/fixes_2_2
   begin
     putdata(s,length(s)+1);
   end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1631,6 +1726,60 @@ function tppufile.tempopen:boolean;
 
   { restore state }
     f.Position:=closepos;
+=======
+procedure tppufile.putsmallset(const b);
+  var
+    l : longint;
+  begin
+    l:=longint(b);
+    putlongint(l);
+  end;
+
+
+procedure tppufile.putnormalset(const b);
+  type
+    SetLongintArray = Array [0..7] of longint;
+  begin
+    putdata(b,32);
+  end;
+
+
+procedure tppufile.tempclose;
+  begin
+    if not closed then
+     begin
+       closepos:=filepos(f);
+       {$I-}
+        system.close(f);
+       {$I+}
+       if ioresult<>0 then;
+       closed:=true;
+       tempclosed:=true;
+     end;
+  end;
+
+
+function tppufile.tempopen:boolean;
+  var
+    ofm : byte;
+  begin
+    tempopen:=false;
+    if not closed or not tempclosed then
+     exit;
+    ofm:=filemode;
+    filemode:=0;
+    {$I-}
+     reset(f,1);
+    {$I+}
+    filemode:=ofm;
+    if ioresult<>0 then
+     exit;
+    closed:=false;
+    tempclosed:=false;
+
+  { restore state }
+    seek(f,closepos);
+>>>>>>> graemeg/fixes_2_2
     tempopen:=true;
   end;
 

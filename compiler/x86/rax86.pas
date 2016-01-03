@@ -45,10 +45,13 @@ type
     Procedure SetSize(_size:longint;force:boolean);override;
     Procedure SetCorrectSize(opcode:tasmop);override;
     Function CheckOperand: boolean; override;
+<<<<<<< HEAD
     { handles the @Code symbol }
     Procedure SetupCode;
     { handles the @Data symbol }
     Procedure SetupData;
+=======
+>>>>>>> graemeg/fixes_2_2
   end;
 
   { Operands are always in AT&T order.
@@ -254,6 +257,7 @@ begin
   if (opr.typ=OPR_Reference) then
     begin
       if not hasvar then
+<<<<<<< HEAD
         begin
           if (getsupreg(opr.ref.base)=RS_EBP) and (opr.ref.offset>0) then
             begin
@@ -317,6 +321,28 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+        begin
+          if (getsupreg(opr.ref.base)=RS_EBP) and (opr.ref.offset>0) then
+            begin
+              if current_procinfo.procdef.proccalloption=pocall_register then
+                message(asmr_w_no_direct_ebp_for_parameter)
+              else
+                message(asmr_w_direct_ebp_for_parameter_regcall);
+            end
+          else if (getsupreg(opr.ref.base)=RS_EBP) and (opr.ref.offset<0) then
+            message(asmr_w_direct_ebp_neg_offset)
+          else if (getsupreg(opr.ref.base)=RS_ESP) and (opr.ref.offset<0) then
+            message(asmr_w_direct_esp_neg_offset);
+        end;
+      if (cs_create_pic in current_settings.moduleswitches) and
+         assigned(opr.ref.symbol) and
+         not assigned(opr.ref.relsymbol) and
+         (opr.ref.refaddr<>addr_pic) then
+        begin
+          message(asmr_e_need_pic_ref);
+          result:=false;
+>>>>>>> graemeg/fixes_2_2
         end;
     end;
 end;
@@ -1307,6 +1333,10 @@ begin
  { Condition ? }
   if condition<>C_None then
    ai.SetCondition(condition);
+  
+  { Set is_jmp, it enables asmwriter to emit short jumps if appropriate }
+  if (opcode=A_JMP) or (opcode=A_JCC) then
+    ai.is_jmp := True;
 
   { Set is_jmp, it enables asmwriter to emit short jumps if appropriate }
   if (opcode=A_JMP) or (opcode=A_JCC) then

@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('sdl');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -25,6 +26,14 @@ begin
     if Defaults.CPU=arm then
        P.OSes := P.OSes - [darwin];
     P.OSes := P.OSes - [iphonesim,os2,emx,go32v2,watcom,nativent,embedded,android,amiga,aros,msdos,gba,nds,win16];
+=======
+    P.Directory:='sdl';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.SourcePath.Add('src');
+    P.Dependencies.Add('x11');
+    P.Dependencies.Add('pthreads');
+>>>>>>> graemeg/fixes_2_2
 
     T:=P.Targets.AddUnit('logger.pas');
       with T.Dependencies do
@@ -66,6 +75,11 @@ begin
       with T.Dependencies do
         begin
           AddInclude('jedi-sdl.inc');
+<<<<<<< HEAD
+=======
+          AddUnit('pthreads');
+          AddUnit('xlib');
+>>>>>>> graemeg/fixes_2_2
         end;
     T:=P.Targets.AddUnit('sdl_ttf.pas');
       with T.Dependencies do
@@ -73,6 +87,7 @@ begin
           AddInclude('jedi-sdl.inc');
           AddUnit('sdl');
         end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -93,6 +108,13 @@ begin
       with T.Dependencies do
         begin
           AddInclude('jedi-sdl.inc');
+=======
+    T:=P.Targets.AddUnit('sdlutils.pas');
+      with T.Dependencies do
+        begin
+          AddInclude('jedi-sdl.inc');
+          AddUnit('xlib');
+>>>>>>> graemeg/fixes_2_2
           AddUnit('sdl');
         end;
     T:=P.Targets.AddUnit('smpeg.pas');
@@ -101,16 +123,20 @@ begin
           AddInclude('jedi-sdl.inc');
           AddUnit('sdl');
         end;
+<<<<<<< HEAD
     P.Sources.AddSrc('LGPL');
     P.Sources.AddSrc('LGPL.addon');
     P.Sources.AddSrc('MPL-1.1');
     P.Sources.AddSrc('README.txt');
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;
     end;
 end.
 {$endif ALLPACKAGES}
+<<<<<<< HEAD
 
 
 
@@ -132,3 +158,5 @@ end.
 =======
  
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2

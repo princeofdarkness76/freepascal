@@ -16,6 +16,7 @@ type
 
   TTestBasics = class(TTestCase)
   private
+<<<<<<< HEAD
     procedure DeleteUserXmlFile;
   protected
   published
@@ -35,11 +36,17 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  protected
+  published
+    procedure TestSimpleWinRegistry;
+>>>>>>> graemeg/fixes_2_2
   end;
 
 implementation
 
 uses
+<<<<<<< HEAD
   registry
 {$ifdef windows}
   , tregistry2
@@ -68,6 +75,12 @@ begin
 {$endif}
 end;
 
+=======
+  registry;
+
+{ TTestBasics }
+
+>>>>>>> graemeg/fixes_2_2
 procedure TTestBasics.TestSimpleWinRegistry;
 var
   Registry : TRegistry;
@@ -77,6 +90,7 @@ begin
 
   // use a hopefully non existing key
   AssertFalse(Registry.KeyExists('FPC1234'));
+<<<<<<< HEAD
 {$ifdef windows}
   AssertTrue(Registry.KeyExists('SOFTWARE'));
 {$endif}  
@@ -247,9 +261,21 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+
+  AssertTrue(Registry.KeyExists('SOFTWARE'));
+
+  // Registry.OpenKey('FPC', False);
+  // Result:=Registry.ReadString('VALUE1');
+
+  Registry.Free;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 initialization
   RegisterTest(TTestBasics);
 end.
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/fixes_2_2

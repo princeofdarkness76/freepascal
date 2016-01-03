@@ -39,9 +39,13 @@ units=$(SYSTEMUNIT) fpintres ctypes objpas macpas iso7185 strings \
 #    winsysut
 
 # rsts=math varutils typinfo variants classes dateutils sysconst
+<<<<<<< HEAD
 implicitunits=exeinfo \
       cp1250 cp1251 cp1252 cp1253 cp1254 cp1255 cp1256 cp1257 cp1258 \
       cp437 cp646 cp850 cp856 cp866 cp874 cp8859_1 cp8859_5 cp8859_2 cp852
+=======
+implicitunits=exeinfo
+>>>>>>> graemeg/fixes_2_2
 
 # fake dll
 # programs=fpcmemdll
@@ -221,6 +225,19 @@ typinfo$(PPUEXT): $(OBJPASDIR)/typinfo.pp objpas$(PPUEXT)
 math$(PPUEXT): $(OBJPASDIR)/math.pp objpas$(PPUEXT) sysutils$(PPUEXT)
         $(COMPILER) $(OBJPASDIR)/math.pp
 
+<<<<<<< HEAD
+=======
+varutils$(PPUEXT) : $(OBJPASDIR)/cvarutil.inc $(OBJPASDIR)/varutils.inc \
+                    $(OBJPASDIR)/varutilh.inc varutils.pp sysutils$(PPUEXT)
+        $(COMPILER) -Fi$(OBJPASDIR) varutils.pp
+
+variants$(PPUEXT) : $(INC)/variants.pp varutils$(PPUEXT) sysutils$(PPUEXT) sysconst$(PPUEXT) typinfo$(PPUEXT) rtlconsts$(PPUEXT)
+        $(COMPILER) -Fi$(INC) $(INC)/variants.pp
+
+fmtbcd$(PPUEXT) : $(OBJPASDIR)/fmtbcd.pp objpas$(PPUEXT) sysutils$(PPUEXT) variants$(PPUEXT) classes$(PPUEXT) system$(PPUEXT)
+        $(COMPILER) $(OBJPASDIR)/fmtbcd.pp
+
+>>>>>>> graemeg/fixes_2_2
 types$(PPUEXT) : $(OBJPASDIR)/types.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
         $(COMPILER) $(OBJPASDIR)/types.pp
 
@@ -248,7 +265,10 @@ heaptrc$(PPUEXT) : $(INC)/heaptrc.pp $(SYSTEMUNIT)$(PPUEXT)
         $(COMPILER) -Sg $(INC)/heaptrc.pp
 
 lineinfo$(PPUEXT) : $(INC)/lineinfo.pp windows$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
+<<<<<<< HEAD
 	$(COMPILER) $(INC)/lineinfo.pp
+=======
+>>>>>>> graemeg/fixes_2_2
 
 lnfodwrf$(PPUEXT) : $(INC)/lnfodwrf.pp $(SYSTEMUNIT)$(PPUEXT)
 	$(COMPILER) $(INC)/lnfodwrf.pp

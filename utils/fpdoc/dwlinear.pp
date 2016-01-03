@@ -1680,6 +1680,7 @@ end;
 
 procedure TLinearWriter.WriteEndDocument;
 begin
+<<<<<<< HEAD
   // do nothing
 end;
 
@@ -1750,5 +1751,9 @@ end;
 =======
 >>>>>>> origin/cpstrnew
 
+=======
+end;
+
+>>>>>>> graemeg/fixes_2_2
 end.
 

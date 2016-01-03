@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for PTCPas
+>>>>>>> graemeg/fixes_2_2
 #
 
 [package]
 name=ptc
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -45,10 +50,30 @@ packages=hermes fcl-base
 packages_linux=x11
 packages_freebsd=x11
 >>>>>>> graemeg/cpstrnew
+=======
+version=2.2.5
+
+[target]
+units=ptc
+loaders=$(CPU_LOADERS)
+exampledirs=demos examples
+
+[compiler]
+unitdir=src/x11 src/dos/cga src/dos/fakemode src/dos/textfx2 src/dos/timeunit src/dos/vesa \
+        src/win32/directx src
+includedir=src
+targetdir=.
+
+[require]
+packages=hermes
+packages_linux=x11
+packages_freebsd=x11
+>>>>>>> graemeg/fixes_2_2
 
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -154,3 +179,8 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/fixes_2_2

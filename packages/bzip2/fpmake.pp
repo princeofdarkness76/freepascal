@@ -13,6 +13,7 @@ begin
 {$endif ALLPACKAGES}
 
     P:=AddPackage('bzip2');
+<<<<<<< HEAD
     P.ShortName:='bz2';
 
 {$ifdef ALLPACKAGES}
@@ -35,10 +36,20 @@ begin
     P.Dependencies.Add('rtl-extra');
 
     T:=P.Targets.AddUnit('bzip2comn.pp');
+=======
+{$ifdef ALLPACKAGES}
+    P.Directory:='bzip2';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.SourcePath.Add('src');
+    P.IncludePath.Add('src');
+
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('bzip2.pas');
       with T.Dependencies do
         begin
           AddInclude('bzip2i386.inc',[i386],AllOSes);
+<<<<<<< HEAD
           AddUnit('bzip2comn');
         end;
     T:=P.Targets.AddUnit('bzip2stream.pp');
@@ -52,6 +63,9 @@ begin
     P.ExamplePath.Add('examples');
     T:=P.Targets.AddExampleProgram('pasbzip.pas');
 
+=======
+        end;
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

@@ -1,6 +1,10 @@
 { lNet SMTP unit
 
+<<<<<<< HEAD
   CopyRight (C) 2005-2008 Ales Katona
+=======
+  CopyRight (C) 2005-2007 Ales Katona
+>>>>>>> graemeg/fixes_2_2
 
   This library is Free software; you can rediStribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -29,8 +33,12 @@ unit lsmtp;
 interface
 
 uses
+<<<<<<< HEAD
   Classes, SysUtils, Contnrs, Base64,
   lNet, lEvents, lCommon, lMimeWrapper, lMimeStreams;
+=======
+  Classes, SysUtils, Contnrs, lNet, lEvents, lCommon, lMimeWrapper, lMimeStreams;
+>>>>>>> graemeg/fixes_2_2
   
 type
   TLSMTP = class;
@@ -74,7 +82,10 @@ type
     procedure AddStreamSection(aStream: TStream; const FreeStream: Boolean = False);
     procedure DeleteSection(const i: Integer);
     procedure RemoveSection(aSection: TMimeSection);
+<<<<<<< HEAD
     procedure Reset;
+=======
+>>>>>>> graemeg/fixes_2_2
    public
     property MailText: string read FMailText write FMailText; deprecated; // use sections!
     property Sender: string read FSender write FSender;
@@ -115,8 +126,11 @@ type
     property SocketClass: TLSocketClass read GetSocketClass write SetSocketClass;
     property Eventer: TLEventer read GetEventer write SetEventer;
     property Timeout: Integer read GetTimeout write SetTimeout;
+<<<<<<< HEAD
     property Session: TLSession read GetSession write SetSession;
     property FeatureList: TStringList read FFeatureList;
+=======
+>>>>>>> graemeg/fixes_2_2
   end;
 
   { TLSMTPClient }
@@ -140,7 +154,10 @@ type
     FStatusSet: TLSMTPStatusSet;
     FBuffer: string;
     FDataBuffer: string; // intermediate wait buffer on DATA command
+<<<<<<< HEAD
     FTempBuffer: string; // used independently from FBuffer for feature list
+=======
+>>>>>>> graemeg/fixes_2_2
     FCharCount: Integer; // count of chars from last CRLF
     FStream: TStream;
    protected
@@ -159,9 +176,14 @@ type
     procedure EvaluateAnswer(const Ans: string);
     procedure ExecuteFrontCommand;
     
+<<<<<<< HEAD
     procedure AddToBuffer(s: string);
     procedure SendData(const FromStream: Boolean = False);
     function EncodeBase64(const s: string): string;
+=======
+    procedure ClearCR_LF;
+    procedure SendData(const FromStream: Boolean = False);
+>>>>>>> graemeg/fixes_2_2
    public
     constructor Create(aOwner: TComponent); override;
     destructor Destroy; override;
@@ -227,6 +249,7 @@ end;
 
 { TLSMTP }
 
+<<<<<<< HEAD
 function TLSMTP.GetSession: TLSession;
 begin
   Result := FConnection.Session;
@@ -244,6 +267,8 @@ begin
   FConnection.Creator := AValue;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 function TLSMTP.GetTimeout: Integer;
 begin
   Result := FConnection.Timeout;
@@ -577,7 +602,11 @@ begin
                             Eventize(FStatus.First.Status, True);
                           end;
                 300..399: begin
+<<<<<<< HEAD
                             AddToBuffer(FDataBuffer);
+=======
+                            FBuffer := FDataBuffer;
+>>>>>>> graemeg/fixes_2_2
                             FDataBuffer := '';
                             SendData(True);
                           end;
@@ -618,16 +647,25 @@ begin
   FCommandFront.Remove;
 end;
 
+<<<<<<< HEAD
 procedure TLSMTPClient.AddToBuffer(s: string);
+=======
+procedure TLSMTPClient.ClearCR_LF;
+>>>>>>> graemeg/fixes_2_2
 var
   i: Integer;
   Skip: Boolean = False;
 begin
+<<<<<<< HEAD
   for i := 1 to Length(s) do begin
+=======
+  for i := 1 to Length(FBuffer) do begin
+>>>>>>> graemeg/fixes_2_2
     if Skip then begin
       Skip := False;
       Continue;
     end;
+<<<<<<< HEAD
 
     if (s[i] = #13) or (s[i] = #10) then begin
       if s[i] = #13 then
@@ -642,18 +680,41 @@ begin
 
       if s[i] = #10 then begin
         System.Insert(#13, s, i);
+=======
+    
+    if (FBuffer[i] = #13) or (FBuffer[i] = #10) then begin
+      if FBuffer[i] = #13 then
+        if (i < Length(FBuffer)) and (FBuffer[i + 1] = #10) then begin
+          FCharCount := 0;
+          Skip := True; // skip the crlf
+        end else begin // insert LF to a standalone CR
+          System.Insert(#10, FBuffer, i + 1);
+          FCharCount := 0;
+          Skip := True; // skip the new crlf
+        end;
+        
+      if FBuffer[i] = #10 then begin
+        System.Insert(#13, FBuffer, i);
+>>>>>>> graemeg/fixes_2_2
         FCharCount := 0;
         Skip := True; // skip the new crlf
       end;
     end else if FCharCount >= 1000 then begin // line too long
+<<<<<<< HEAD
       System.Insert(CRLF, s, i);
+=======
+      System.Insert(CRLF, FBuffer, i);
+>>>>>>> graemeg/fixes_2_2
       FCharCount := 0;
       Skip := True;
     end else
       Inc(FCharCount);
   end;
+<<<<<<< HEAD
   
   FBuffer := FBuffer + s;
+=======
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TLSMTPClient.SendData(const FromStream: Boolean = False);
@@ -667,10 +728,17 @@ const
     SetLength(s, SBUF_SIZE - Length(FBuffer));
     SetLength(s, FStream.Read(s[1], Length(s)));
     
+<<<<<<< HEAD
     AddToBuffer(s);
     
     if FStream.Position = FStream.Size then begin // we finished the stream
       AddToBuffer(CRLF + '.' + CRLF);
+=======
+    FBuffer := FBuffer + s;
+    
+    if FStream.Position = FStream.Size then begin // we finished the stream
+      FBuffer := FBuffer + CRLF + '.' + CRLF;
+>>>>>>> graemeg/fixes_2_2
       FStream := nil;
     end;
   end;
@@ -685,6 +753,11 @@ begin
   n := 1;
   Sent := 0;
   while (Length(FBuffer) > 0) and (n > 0) do begin
+<<<<<<< HEAD
+=======
+    ClearCR_LF;
+  
+>>>>>>> graemeg/fixes_2_2
     n := FConnection.SendMessage(FBuffer);
     Sent := Sent + n;
     if n > 0 then
@@ -698,6 +771,7 @@ begin
     FOnSent(FConnection.Iterator, Sent);
 end;
 
+<<<<<<< HEAD
 function TLSMTPClient.EncodeBase64(const s: string): string;
 var
   Dummy: TBogusStream;
@@ -718,6 +792,8 @@ begin
   Dummy.Free;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 function TLSMTPClient.Connect(const aHost: string; const aPort: Word = 25): Boolean;
 begin
   Result := False;
@@ -769,7 +845,12 @@ begin
     FSL.CommaText := StringReplace(Recipients, ' ', ',', [rfReplaceAll]);
     for i := 0 to FSL.Count-1 do
       Rcpt(FSL[i]);
+<<<<<<< HEAD
     Data('From: ' + From + CRLF + 'Subject: ' + Subject + CRLF + 'To: ' + FSL.CommaText + CRLF + CRLF + Msg);
+=======
+    Data('From: ' + From + CRLF + 'Subject: ' + Subject + CRLF + 'To: ' + FSL.CommaText + CRLF + Msg);
+    Rset;
+>>>>>>> graemeg/fixes_2_2
   end;
 end;
 
@@ -789,6 +870,10 @@ begin
     for i := 0 to FSL.Count-1 do
       Rcpt(FSL[i]);
     Data('From: ' + From + CRLF + 'Subject: ' + Subject + CRLF + 'To: ' + FSL.CommaText + CRLF);
+<<<<<<< HEAD
+=======
+    Rset;
+>>>>>>> graemeg/fixes_2_2
   end;
 end;
 
@@ -806,7 +891,11 @@ begin
     aHost := FHost;
 
   if CanContinue(ssHelo, aHost, '') then begin
+<<<<<<< HEAD
     AddToBuffer('HELO ' + aHost + CRLF);
+=======
+    FBuffer := FBuffer + 'HELO ' + aHost + CRLF;
+>>>>>>> graemeg/fixes_2_2
     FStatus.Insert(MakeStatusRec(ssHelo, '', ''));
     SendData;
   end;
@@ -817,6 +906,7 @@ begin
   if Length(aHost) = 0 then
     aHost := FHost;
   if CanContinue(ssEhlo, aHost, '') then begin
+<<<<<<< HEAD
     FTempBuffer := ''; // for ehlo response
     AddToBuffer('EHLO ' + aHost + CRLF);
     FStatus.Insert(MakeStatusRec(ssEhlo, '', ''));
@@ -856,13 +946,22 @@ begin
     AddToBuffer('AUTH PLAIN' + CRLF);
     FStatus.Insert(MakeStatusRec(ssAuthPlain, aName, aPass));
     SendData;
+=======
+    FBuffer := FBuffer + 'EHLO ' + aHost + CRLF;
+    FStatus.Insert(MakeStatusRec(ssEhlo, '', ''));
+    SendData;
+>>>>>>> graemeg/fixes_2_2
   end;
 end;
 
 procedure TLSMTPClient.Mail(const From: string);
 begin
   if CanContinue(ssMail, From, '') then begin
+<<<<<<< HEAD
     AddToBuffer('MAIL FROM:' + '<' + From + '>' + CRLF);
+=======
+    FBuffer := FBuffer + 'MAIL FROM:' + '<' + From + '>' + CRLF;
+>>>>>>> graemeg/fixes_2_2
     FStatus.Insert(MakeStatusRec(ssMail, '', ''));
     SendData;
   end;
@@ -871,7 +970,11 @@ end;
 procedure TLSMTPClient.Rcpt(const RcptTo: string);
 begin
   if CanContinue(ssRcpt, RcptTo, '') then begin
+<<<<<<< HEAD
     AddToBuffer('RCPT TO:' + '<' + RcptTo + '>' + CRLF);
+=======
+    FBuffer := FBuffer + 'RCPT TO:' + '<' + RcptTo + '>' + CRLF;
+>>>>>>> graemeg/fixes_2_2
     FStatus.Insert(MakeStatusRec(ssRcpt, '', ''));
     SendData;
   end;
@@ -880,7 +983,11 @@ end;
 procedure TLSMTPClient.Data(const Msg: string);
 begin
   if CanContinue(ssData, Msg, '') then begin
+<<<<<<< HEAD
     AddToBuffer('DATA ' + CRLF);
+=======
+    FBuffer := 'DATA ' + CRLF;
+>>>>>>> graemeg/fixes_2_2
     FDataBuffer := '';
 
     if Assigned(FStream) then begin
@@ -897,7 +1004,11 @@ end;
 procedure TLSMTPClient.Rset;
 begin
   if CanContinue(ssRset, '', '') then begin
+<<<<<<< HEAD
     AddToBuffer('RSET' + CRLF);
+=======
+    FBuffer := FBuffer + 'RSET' + CRLF;
+>>>>>>> graemeg/fixes_2_2
     FStatus.Insert(MakeStatusRec(ssRset, '', ''));
     SendData;
   end;
@@ -906,7 +1017,11 @@ end;
 procedure TLSMTPClient.Quit;
 begin
   if CanContinue(ssQuit, '', '') then begin
+<<<<<<< HEAD
     AddToBuffer('QUIT' + CRLF);
+=======
+    FBuffer := FBuffer + 'QUIT' + CRLF;
+>>>>>>> graemeg/fixes_2_2
     FStatus.Insert(MakeStatusRec(ssQuit, '', ''));
     SendData;
   end;
@@ -976,11 +1091,14 @@ begin
   FMailStream.Remove(aSection);
 end;
 
+<<<<<<< HEAD
 procedure TMail.Reset;
 begin
   FMailStream.Reset;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 end.
 

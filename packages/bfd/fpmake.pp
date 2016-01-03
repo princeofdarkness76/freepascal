@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('bfd');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -25,6 +26,11 @@ begin
     P.NeedLibC:= true;
     P.OSes := [beos,haiku,freebsd,darwin,iphonesim,solaris,netbsd,openbsd,linux,aix,dragonfly];
 
+=======
+    P.Directory:='bfd';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+>>>>>>> graemeg/fixes_2_2
     P.SourcePath.Add('src');
 
     T:=P.Targets.AddUnit('bfd.pas');

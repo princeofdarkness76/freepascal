@@ -80,6 +80,7 @@ unit cgppc;
         procedure a_jmp_flags(list: TAsmList; const f: TResFlags; l: tasmlabel); override;
         procedure a_jmp_cond(list : TAsmList;cond : TOpCmp;l: tasmlabel);
 
+<<<<<<< HEAD
 
         procedure g_maybe_got_init(list: TAsmList); override;
 
@@ -94,6 +95,14 @@ unit cgppc;
         function  get_darwin_call_stub(const s: string; weak: boolean): tasmsymbol;
        protected
         function g_indirect_sym_load(list:TAsmList;const symname: string; const flags: tindsymflags): tregister; override;
+=======
+        procedure g_intf_wrapper(list: TAsmList; procdef: tprocdef; const labelname: string; ioffset: longint);override;
+
+        procedure g_maybe_got_init(list: TAsmList); override;
+       protected
+        function  get_darwin_call_stub(const s: string): tasmsymbol;
+        procedure a_load_subsetref_regs_noindex(list: TAsmList; subsetsize: tcgsize; loadbitsize: byte; const sref: tsubsetreference; valuereg, extra_value_reg: tregister); override;
+>>>>>>> graemeg/fixes_2_2
         { Make sure ref is a valid reference for the PowerPC and sets the }
         { base to the value of the index if (base = R_NO).                }
         { Returns true if the reference contained a base, index and an    }
@@ -109,9 +118,20 @@ unit cgppc;
         procedure a_jmp(list: TAsmList; op: tasmop;
                         c: tasmcondflag; crval: longint; l: tasmlabel);
 
+<<<<<<< HEAD
         function save_lr_in_prologue: boolean;
 
         function load_got_symbol(list : TAsmList; const symbol : string; const flags: tindsymflags) : tregister;
+=======
+        { returns true if the offset of the given reference can not be  }
+        { represented by a 16 bit immediate as required by some PowerPC }
+        { instructions                                                  }
+        function hasLargeOffset(const ref : TReference) : Boolean; inline;
+
+        function save_lr_in_prologue: boolean;
+
+        function load_got_symbol(list : TAsmList; symbol : string) : tregister;
+>>>>>>> graemeg/fixes_2_2
      end;
 
 
@@ -141,8 +161,17 @@ unit cgppc;
   const
     TOpCmp2AsmCond: Array[topcmp] of TAsmCondFlag = (C_NONE,C_EQ,C_GT,
                          C_LT,C_GE,C_LE,C_NE,C_LE,C_LT,C_GE,C_GT);
+<<<<<<< HEAD
     TocSecBaseName = 'toc_table';
 
+=======
+>>>>>>> graemeg/fixes_2_2
+
+{$ifdef extdebug}
+     function ref2string(const ref : treference) : string;
+     function cgsize2string(const size : TCgSize) : string;
+     function cgop2string(const op : TOpCg) : String;
+{$endif extdebug}
 
 {$ifdef extdebug}
      function ref2string(const ref : treference) : string;
@@ -158,11 +187,14 @@ unit cgppc;
        symconst,symsym,symtable,fmodule,
        rgobj,tgobj,cpupi,procinfo,paramgr;
 
+<<<<<<< HEAD
 { We know that macos_direct_globals is a const boolean
   but we don't care about this warning }
 {$NOTE Is macos_direct_globals still useful?}
 {$WARN 6018 OFF}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifdef extdebug}
      function ref2string(const ref : treference) : string;
        begin
@@ -170,29 +202,50 @@ unit cgppc;
          if (assigned(ref.symbol)) then
            result := result + ref.symbol.name;
        end;
+<<<<<<< HEAD
 
+=======
+     
+>>>>>>> graemeg/fixes_2_2
      function cgsize2string(const size : TCgSize) : string;
        const
          cgsize_strings : array[TCgSize] of string[8] = (
            'OS_NO', 'OS_8', 'OS_16', 'OS_32', 'OS_64', 'OS_128', 'OS_S8', 'OS_S16', 'OS_S32',
            'OS_S64', 'OS_S128', 'OS_F32', 'OS_F64', 'OS_F80', 'OS_C64', 'OS_F128',
+<<<<<<< HEAD
            'OS_M8', 'OS_M16', 'OS_M32', 'OS_M64', 'OS_M128', 'OS_M256', 'OS_MS8', 'OS_MS16', 'OS_MS32',
            'OS_MS64', 'OS_MS128', 'OS_MS256');
        begin
          result := cgsize_strings[size];
        end;
 
+=======
+           'OS_M8', 'OS_M16', 'OS_M32', 'OS_M64', 'OS_M128', 'OS_MS8', 'OS_MS16', 'OS_MS32',
+           'OS_MS64', 'OS_MS128');
+       begin
+         result := cgsize_strings[size];
+       end;
+     
+>>>>>>> graemeg/fixes_2_2
      function cgop2string(const op : TOpCg) : String;
        const
          opcg_strings : array[TOpCg] of string[6] = (
            'None', 'Move', 'Add', 'And', 'Div', 'IDiv', 'IMul', 'Mul',
+<<<<<<< HEAD
            'Neg', 'Not', 'Or', 'Sar', 'Shl', 'Shr', 'Sub', 'Xor', 'Rol', 'Ror'
+=======
+           'Neg', 'Not', 'Or', 'Sar', 'Shl', 'Shr', 'Sub', 'Xor'
+>>>>>>> graemeg/fixes_2_2
          );
        begin
          result := opcg_strings[op];
        end;
 {$endif extdebug}
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> graemeg/fixes_2_2
 
     function tcgppcgen.hasLargeOffset(const ref : TReference) : Boolean;
       begin
@@ -204,7 +257,11 @@ unit cgppc;
       begin
         result:=
         (not (po_assembler in current_procinfo.procdef.procoptions) and
+<<<<<<< HEAD
          ((pi_do_call in current_procinfo.flags) or
+=======
+         ((pi_do_call in current_procinfo.flags) or 
+>>>>>>> graemeg/fixes_2_2
           (cs_profile in init_settings.moduleswitches)))  or
         ([cs_lineinfo,cs_debuginfo] * current_settings.moduleswitches <> []);
       end;
@@ -280,6 +337,7 @@ unit cgppc;
       end;
 
 
+<<<<<<< HEAD
     procedure tcgppcgen.a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; srcsize, dstsize: tcgsize; src, dst: TRegister);
       var
         tmpreg: tregister;
@@ -328,6 +386,8 @@ unit cgppc;
       end;
 
 
+=======
+>>>>>>> graemeg/fixes_2_2
     procedure tcgppcgen.g_maybe_got_init(list: TAsmList);
       var
          instr: taicpu;
@@ -367,6 +427,7 @@ unit cgppc;
       end;
 
 
+<<<<<<< HEAD
     function tcgppcgen.g_indirect_sym_load(list: TAsmList; const symname: string; const flags: tindsymflags): tregister;
       begin
         case target_info.system of
@@ -380,6 +441,9 @@ unit cgppc;
 
 
     function tcgppcgen.get_darwin_call_stub(const s: string; weak: boolean): tasmsymbol;
+=======
+    function tcgppcgen.get_darwin_call_stub(const s: string): tasmsymbol;
+>>>>>>> graemeg/fixes_2_2
       var
         stubname: string;
         instr: taicpu;
@@ -401,10 +465,15 @@ unit cgppc;
         if current_asmdata.asmlists[al_imports]=nil then
           current_asmdata.asmlists[al_imports]:=TAsmList.create;
 
+<<<<<<< HEAD
+=======
+        current_asmdata.asmlists[al_imports].concat(Tai_section.create(sec_stub,'',0));
+>>>>>>> graemeg/fixes_2_2
         if (cs_create_pic in current_settings.moduleswitches) then
           stubalign:=32
         else
           stubalign:=16;
+<<<<<<< HEAD
         new_section(current_asmdata.asmlists[al_imports],sec_stub,'',stubalign);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -418,6 +487,9 @@ unit cgppc;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+        current_asmdata.asmlists[al_imports].concat(Tai_align.Create(stubalign));
+>>>>>>> graemeg/fixes_2_2
         result := current_asmdata.RefAsmSymbol(stubname);
 >>>>>>> graemeg/cpstrnew
         current_asmdata.asmlists[al_imports].concat(Tai_symbol.Create(result,0));
@@ -425,8 +497,13 @@ unit cgppc;
         if weak then
           current_asmdata.weakrefasmsymbol(s);
         current_asmdata.asmlists[al_imports].concat(tai_directive.create(asd_indirect_symbol,s));
+<<<<<<< HEAD
         l1 := current_asmdata.DefineAsmSymbol('L'+s+'$lazy_ptr',AB_LOCAL,AT_DATA);
         reference_reset_symbol(href,l1,0,sizeof(pint));
+=======
+        l1 := current_asmdata.RefAsmSymbol('L'+s+'$lazy_ptr');
+        reference_reset_symbol(href,l1,0);
+>>>>>>> graemeg/fixes_2_2
         href.refaddr := addr_higha;
         if (cs_create_pic in current_settings.moduleswitches) then
           begin
@@ -478,7 +555,11 @@ unit cgppc;
                begin
                  if macos_direct_globals then
                    begin
+<<<<<<< HEAD
                      reference_reset(tmpref,ref2.alignment);
+=======
+                     reference_reset(tmpref);
+>>>>>>> graemeg/fixes_2_2
                      tmpref.offset := ref2.offset;
                      tmpref.symbol := ref2.symbol;
                      tmpref.base := NR_NO;
@@ -486,14 +567,28 @@ unit cgppc;
                    end
                  else
                    begin
+<<<<<<< HEAD
                      reference_reset(tmpref,ref2.alignment);
+=======
+                     reference_reset(tmpref);
+>>>>>>> graemeg/fixes_2_2
                      tmpref.symbol := ref2.symbol;
                      tmpref.offset := 0;
                      tmpref.base := NR_RTOC;
                      list.concat(taicpu.op_reg_ref(A_LWZ,r,tmpref));
 
+<<<<<<< HEAD
                      if ref2.offset<>0 then
                        a_op_const_reg(list,OP_ADD,OS_ADDR,ref2.offset,r);
+=======
+                     if ref2.offset <> 0 then
+                       begin
+                         reference_reset(tmpref);
+                         tmpref.offset := ref2.offset;
+                         tmpref.base:= r;
+                         list.concat(taicpu.op_reg_ref(A_LA,r,tmpref));
+                       end;
+>>>>>>> graemeg/fixes_2_2
                    end;
 
                  if ref2.base <> NR_NO then
@@ -506,7 +601,11 @@ unit cgppc;
 
                  { add the symbol's value to the base of the reference, and if the }
                  { reference doesn't have a base, create one                       }
+<<<<<<< HEAD
                  reference_reset(tmpref,ref2.alignment);
+=======
+                 reference_reset(tmpref);
+>>>>>>> graemeg/fixes_2_2
                  tmpref.offset := ref2.offset;
                  tmpref.symbol := ref2.symbol;
                  tmpref.relsymbol := ref2.relsymbol;
@@ -721,6 +820,44 @@ unit cgppc;
        end;
 
 
+<<<<<<< HEAD
+=======
+  procedure tcgppcgen.a_load_subsetref_regs_noindex(list: TAsmList; subsetsize: tcgsize; loadbitsize: byte; const sref: tsubsetreference; valuereg, extra_value_reg: tregister);
+    var
+      fromsreg, tosreg: tsubsetregister;
+      restbits: byte;
+    begin
+      restbits := (sref.bitlen - (loadbitsize - sref.startbit));
+      if (subsetsize in [OS_S8..OS_S128]) then
+        begin
+         { sign extend }
+         a_op_const_reg(list,OP_SHL,OS_INT,AIntBits-loadbitsize+sref.startbit,valuereg);
+         a_op_const_reg(list,OP_SAR,OS_INT,AIntBits-sref.bitlen,valuereg);
+        end
+      else
+        begin
+          a_op_const_reg(list,OP_SHL,OS_INT,restbits,valuereg);
+          { mask other bits }
+          if (sref.bitlen <> AIntBits) then
+            a_op_const_reg(list,OP_AND,OS_INT,(aword(1) shl sref.bitlen)-1,valuereg);
+        end;
+      { use subsetreg routine, it may have been overridden with an optimized version }
+      fromsreg.subsetreg := extra_value_reg;
+      fromsreg.subsetregsize := OS_INT;
+      { subsetregs always count bits from right to left }
+      fromsreg.startbit := loadbitsize-restbits;
+      fromsreg.bitlen := restbits;
+
+      tosreg.subsetreg := valuereg;
+      tosreg.subsetregsize := OS_INT;
+      tosreg.startbit := 0;
+      tosreg.bitlen := restbits;
+
+      a_load_subsetreg_subsetreg(list,subsetsize,subsetsize,fromsreg,tosreg);
+    end;
+
+
+>>>>>>> graemeg/fixes_2_2
   procedure tcgppcgen.g_overflowcheck(list: TAsmList; const l: tlocation; def: tdef);
     var
       hl : tasmlabel;
@@ -763,7 +900,10 @@ unit cgppc;
   procedure tcgppcgen.g_profilecode(list: TAsmList);
     var
       paraloc1 : tcgpara;
+<<<<<<< HEAD
       pd : tprocdef;
+=======
+>>>>>>> graemeg/fixes_2_2
     begin
       if (target_info.system in [system_powerpc_darwin]) then
         begin
@@ -844,6 +984,7 @@ unit cgppc;
 
 
 
+<<<<<<< HEAD
   function tcgppcgen.load_got_symbol(list: TAsmList; const symbol : string; const flags: tindsymflags) : tregister;
     var
       l: tasmsymbol;
@@ -1059,6 +1200,57 @@ unit cgppc;
         if not(procdef.proctypeoption in [potype_function,potype_procedure]) then
           Internalerror(200006137);
         if not assigned(procdef.struct) or
+=======
+    procedure tcgppcgen.g_intf_wrapper(list: TAsmList; procdef: tprocdef; const labelname: string; ioffset: longint);
+
+        procedure loadvmttor11;
+        var
+          href : treference;
+        begin
+          reference_reset_base(href,NR_R3,0);
+          cg.a_load_ref_reg(list,OS_ADDR,OS_ADDR,href,NR_R11);
+        end;
+
+
+        procedure op_onr11methodaddr;
+        var
+          href : treference;
+        begin
+          if (procdef.extnumber=$ffff) then
+            Internalerror(200006139);
+          { call/jmp  vmtoffs(%eax) ; method offs }
+          reference_reset_base(href,NR_R11,procdef._class.vmtmethodoffset(procdef.extnumber));
+          if hasLargeOffset(href) then
+            begin
+{$ifdef cpu64}
+              if (longint(href.offset) <> href.offset) then
+                { add support for offsets > 32 bit }
+                internalerror(200510201);
+{$endif cpu64}
+              list.concat(taicpu.op_reg_reg_const(A_ADDIS,NR_R11,NR_R11,
+                smallint((href.offset shr 16)+ord(smallint(href.offset and $ffff) < 0))));
+              href.offset := smallint(href.offset and $ffff);
+            end;
+          a_load_ref_reg(list,OS_ADDR,OS_ADDR,href,NR_R11);
+          if (target_info.system = system_powerpc64_linux) then
+            begin
+              reference_reset_base(href, NR_R11, 0);
+              a_load_ref_reg(list, OS_ADDR, OS_ADDR, href, NR_R11);
+            end;
+          list.concat(taicpu.op_reg(A_MTCTR,NR_R11));
+          list.concat(taicpu.op_none(A_BCTR));
+          if (target_info.system = system_powerpc64_linux) then
+            list.concat(taicpu.op_none(A_NOP));
+        end;
+
+
+      var
+        make_global : boolean;
+      begin
+        if not(procdef.proctypeoption in [potype_function,potype_procedure]) then
+          Internalerror(200006137);
+        if not assigned(procdef._class) or
+>>>>>>> graemeg/fixes_2_2
            (procdef.procoptions*[po_classmethod, po_staticmethod,
              po_methodpointer, po_interrupt, po_iocheck]<>[]) then
           Internalerror(200006138);
@@ -1073,6 +1265,7 @@ unit cgppc;
 
         if make_global then
           List.concat(Tai_symbol.Createname_global(labelname,AT_FUNCTION,0))
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
         else
           internalerror(200112261);
@@ -1102,6 +1295,62 @@ unit cgppc;
       end;
 
 
+=======
+        else
+          List.concat(Tai_symbol.Createname(labelname,AT_FUNCTION,0));
+
+        { set param1 interface to self  }
+        g_adjust_self_value(list,procdef,ioffset);
+
+        { case 4 }
+        if po_virtualmethod in procdef.procoptions then
+          begin
+            loadvmttor11;
+            op_onr11methodaddr;
+          end
+        { case 0 }
+        else
+          case target_info.system of
+            system_powerpc_darwin,
+            system_powerpc64_darwin:
+              list.concat(taicpu.op_sym(A_B,get_darwin_call_stub(procdef.mangledname)));
+            system_powerpc64_linux:
+              {$note ts:todo add GOT change?? - think not needed :) }
+              list.concat(taicpu.op_sym(A_B,current_asmdata.RefAsmSymbol('.' + procdef.mangledname)));
+            else
+              list.concat(taicpu.op_sym(A_B,current_asmdata.RefAsmSymbol(procdef.mangledname)))
+          end;
+        List.concat(Tai_symbol_end.Createname(labelname));
+      end;
+
+
+    function tcgppcgen.load_got_symbol(list: TAsmList; symbol : string) : tregister;
+    var
+      l: tasmsymbol;
+      ref: treference;
+    begin
+      if (target_info.system <> system_powerpc64_linux) then
+        internalerror(2007102010);
+      l:=current_asmdata.getasmsymbol(symbol);
+      reference_reset_symbol(ref,l,0);
+      ref.base := NR_R2;
+      ref.refaddr := addr_pic;
+    
+      result := rg[R_INTREGISTER].getregister(list, R_SUBWHOLE);
+      {$IFDEF EXTDEBUG}
+      list.concat(tai_comment.create(strpnew('loading got reference for ' + symbol)));
+      {$ENDIF EXTDEBUG}
+    //  cg.a_load_ref_reg(list,OS_ADDR,OS_ADDR,ref,result);
+      
+{$ifdef cpu64bit}
+      list.concat(taicpu.op_reg_ref(A_LD, result, ref));
+{$else cpu64bit}
+      list.concat(taicpu.op_reg_ref(A_LWZ, result, ref));
+{$endif cpu64bit}
+    end;
+    
+    
+>>>>>>> graemeg/fixes_2_2
     function tcgppcgen.fixref(list: TAsmList; var ref: treference): boolean;
       var
         tmpreg: tregister;
@@ -1109,7 +1358,11 @@ unit cgppc;
         result := false;
 
         { Avoid recursion. }
+<<<<<<< HEAD
         if (ref.refaddr in [addr_pic,addr_pic_no_got]) then
+=======
+        if (ref.refaddr = addr_pic) then
+>>>>>>> graemeg/fixes_2_2
           exit;
 
         {$IFDEF EXTDEBUG}
@@ -1118,6 +1371,7 @@ unit cgppc;
         if (target_info.system in [system_powerpc_darwin,system_powerpc64_darwin]) and
            assigned(ref.symbol) and
            not assigned(ref.relsymbol) and
+<<<<<<< HEAD
            ((ref.symbol.bind in [AB_EXTERNAL,AB_WEAK_EXTERNAL,AB_PRIVATE_EXTERN,AB_COMMON]) or
             (cs_create_pic in current_settings.moduleswitches))then
           begin
@@ -1141,13 +1395,27 @@ unit cgppc;
 >>>>>>> origin/cpstrnew
               begin
                 tmpreg := g_indirect_sym_load(list,ref.symbol.name,asmsym2indsymflags(ref.symbol));
+=======
+           ((ref.symbol.bind = AB_EXTERNAL) or
+            (cs_create_pic in current_settings.moduleswitches))then
+          begin
+            if (ref.symbol.bind = AB_EXTERNAL) or
+               ((cs_create_pic in current_settings.moduleswitches) and
+                (ref.symbol.bind in [AB_COMMON,AB_GLOBAL])) then
+              begin
+                tmpreg := g_indirect_sym_load(list,ref.symbol.name);
+>>>>>>> graemeg/fixes_2_2
                 ref.symbol:=nil;
               end
             else
               begin
                 include(current_procinfo.flags,pi_needs_got);
+<<<<<<< HEAD
                 tmpreg := getaddressregister(list);
                 a_load_reg_reg(list,OS_ADDR,OS_ADDR,current_procinfo.got,tmpreg);
+=======
+                tmpreg := current_procinfo.got;
+>>>>>>> graemeg/fixes_2_2
                 if assigned(ref.relsymbol) then
                   internalerror(2007093501);
                 ref.relsymbol := current_procinfo.CurrGOTLabel;
@@ -1164,6 +1432,7 @@ unit cgppc;
           end;
 
         { if we have to create PIC, add the symbol to the TOC/GOT }
+<<<<<<< HEAD
         if (((target_info.system = system_powerpc64_linux) and
              (cs_create_pic in current_settings.moduleswitches)) or
             (target_info.system in systems_aix)) and
@@ -1171,6 +1440,13 @@ unit cgppc;
             not assigned(ref.relsymbol)) then
           begin
             tmpreg := load_got_symbol(list, ref.symbol.name, asmsym2indsymflags(ref.symbol));
+=======
+        if (target_info.system = system_powerpc64_linux) and
+           (cs_create_pic in current_settings.moduleswitches) and 
+           (assigned(ref.symbol)) then
+          begin
+            tmpreg := load_got_symbol(list, ref.symbol.name);
+>>>>>>> graemeg/fixes_2_2
             if (ref.base = NR_NO) then
               ref.base := tmpreg
             else if (ref.index = NR_NO) then
@@ -1218,9 +1494,12 @@ unit cgppc;
 
       var
         tmpreg: tregister;
+<<<<<<< HEAD
 {$ifdef cpu64bitaddr}
         tmpreg2: tregister;
 {$endif cpu64bitaddr}
+=======
+>>>>>>> graemeg/fixes_2_2
         tmpref: treference;
         largeOffset: Boolean;
 
@@ -1228,6 +1507,7 @@ unit cgppc;
         tmpreg := NR_NO;
         largeOffset:= hasLargeOffset(ref);
 
+<<<<<<< HEAD
         if target_info.system in ([system_powerpc_macos]+systems_aix) then
           begin
 
@@ -1240,19 +1520,36 @@ unit cgppc;
                 tmpref.symbol := ref.symbol;
                 tmpref.base := NR_RTOC;
                 tmpref.refaddr := addr_pic_no_got;
+=======
+        if target_info.system = system_powerpc_macos then
+          begin
+
+            if assigned(ref.symbol) then
+              begin {Load symbol's value}
+                tmpreg := rg[R_INTREGISTER].getregister(list,R_SUBWHOLE);
+
+                reference_reset(tmpref);
+                tmpref.symbol := ref.symbol;
+                tmpref.base := NR_RTOC;
+>>>>>>> graemeg/fixes_2_2
 
                 if macos_direct_globals then
                   list.concat(taicpu.op_reg_ref(A_LA,tmpreg,tmpref))
                 else
+<<<<<<< HEAD
 {$ifdef cpu64bitaddr}
                   list.concat(taicpu.op_reg_ref(A_LD,tmpreg,tmpref));
 {$else cpu64bitaddr}
                   list.concat(taicpu.op_reg_ref(A_LWZ,tmpreg,tmpref));
 {$endif cpu64bitaddr}
+=======
+                  list.concat(taicpu.op_reg_ref(A_LWZ,tmpreg,tmpref));
+>>>>>>> graemeg/fixes_2_2
               end;
 
             if largeOffset then
               begin {Add hi part of offset}
+<<<<<<< HEAD
                 reference_reset(tmpref,ref.alignment);
 
 {$ifdef cpu64bitaddr}
@@ -1279,6 +1576,21 @@ unit cgppc;
                   begin
                     tmpreg := getintregister(list,OS_ADDR);
                     list.concat(taicpu.op_reg_const(A_LIS,tmpreg,tmpref.offset));
+=======
+                reference_reset(tmpref);
+
+                if Smallint(Lo(ref.offset)) < 0 then
+                  tmpref.offset := Hi(ref.offset) + 1 {Compensate when lo part is negative}
+                else
+                  tmpref.offset := Hi(ref.offset);
+
+                if (tmpreg <> NR_NO) then
+                  list.concat(taicpu.op_reg_reg_ref(A_ADDIS,tmpreg, tmpreg,tmpref))
+                else
+                  begin
+                    tmpreg := rg[R_INTREGISTER].getregister(list,R_SUBWHOLE);
+                    list.concat(taicpu.op_reg_ref(A_LIS,tmpreg,tmpref));
+>>>>>>> graemeg/fixes_2_2
                   end;
               end;
 
@@ -1293,7 +1605,11 @@ unit cgppc;
                 ref.symbol:= nil;
                 ref.base:= tmpreg;
                 if largeOffset then
+<<<<<<< HEAD
                   ref.offset := Smallint(ref.offset);
+=======
+                  ref.offset := Smallint(Lo(ref.offset));
+>>>>>>> graemeg/fixes_2_2
 
                 list.concat(taicpu.op_reg_ref(op,reg,ref));
                 //list.concat(tai_comment.create(strpnew('*** a_load_store indirect global')));
@@ -1306,9 +1622,14 @@ unit cgppc;
             if assigned(ref.symbol) or
                largeOffset then
               begin
+<<<<<<< HEAD
                 // TODO: offsets > 32 bit
                 tmpreg := rg[R_INTREGISTER].getregister(list,R_SUBWHOLE);
                 reference_reset(tmpref,ref.alignment);
+=======
+                tmpreg := rg[R_INTREGISTER].getregister(list,R_SUBWHOLE);
+                reference_reset(tmpref);
+>>>>>>> graemeg/fixes_2_2
                 tmpref.symbol := ref.symbol;
                 tmpref.relsymbol := ref.relsymbol;
                 tmpref.offset := ref.offset;
@@ -1327,6 +1648,7 @@ unit cgppc;
           end;
       end;
 
+<<<<<<< HEAD
 
 
     { TPPCAsmData }
@@ -1342,6 +1664,8 @@ unit cgppc;
         entrynr:=fcurrenttocentries;
         inc(fcurrenttocentries);
       end;
+=======
+>>>>>>> graemeg/fixes_2_2
 
 begin
   casmdata:=TPPCAsmData;

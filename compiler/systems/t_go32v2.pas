@@ -190,7 +190,11 @@ procedure TExternalLinkerGo32v2.SetDefaultInfo;
 begin
   with Info do
    begin
+<<<<<<< HEAD
      ExeCmd[1]:='ld $OPT $RES';
+=======
+     ExeCmd[1]:='ld $RES';
+>>>>>>> graemeg/fixes_2_2
    end;
 end;
 
@@ -212,6 +216,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -229,12 +234,22 @@ begin
     LinkRes.Add('-Map '+maybequoted(bstoslash(ChangeFileExt(current_module.exefilename,'.map'))));
   if create_smartlink_sections then
     LinkRes.Add('--gc-sections');
+=======
+  
+  { Add all options to link.res instead of passing them via command line:
+    DOS command line is limited to 126 characters! }
+  LinkRes.Add('--script='+maybequoted(outputexedir+Info.ScriptName));
+>>>>>>> graemeg/fixes_2_2
   if info.ExtraOptions<>'' then
     LinkRes.Add(Info.ExtraOptions);
 (* Potential issues with older ld version??? *)
   if (cs_link_strip in current_settings.globalswitches) then
     LinkRes.Add('-s');
+<<<<<<< HEAD
   LinkRes.Add('-o '+maybequoted(bstoslash(current_module.exefilename)));
+=======
+  LinkRes.Add('-o '+maybequoted(current_module.exefilename^));
+>>>>>>> graemeg/fixes_2_2
 
   { Write staticlibraries }
   if not StaticLibFiles.Empty then
@@ -428,7 +443,11 @@ var
   success : boolean;
 begin
   if not(cs_link_nolink in current_settings.globalswitches) then
+<<<<<<< HEAD
    Message1(exec_i_linking,current_module.exefilename);
+=======
+   Message1(exec_i_linking,current_module.exefilename^);
+>>>>>>> graemeg/fixes_2_2
 
   { Write used files and libraries and our own ld script }
   WriteScript(false);
@@ -437,7 +456,10 @@ begin
 { Call linker }
   SplitBinCmd(Info.ExeCmd[1],binstr,cmdstr);
   Replace(cmdstr,'$RES','@'+maybequoted(outputexedir+Info.ResName));
+<<<<<<< HEAD
   Replace(cmdstr,'$OPT',Info.ExtraOptions);
+=======
+>>>>>>> graemeg/fixes_2_2
   success:=DoExec(FindUtil(utilsprefix+BinStr),cmdstr,true,false);
 
 { Remove ReponseFile }

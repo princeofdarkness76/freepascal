@@ -109,6 +109,7 @@ const
   scan_w_frameworks_darwin_only=02084;
   scan_e_illegal_minfpconstprec=02085;
   scan_w_multiple_main_name_overrides=02086;
+<<<<<<< HEAD
   scanner_w_illegal_warn_identifier=02087;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -133,6 +134,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
   parser_e_syntax_error=03000;
   parser_e_dont_nest_interrupt=03004;
   parser_w_proc_directive_ignored=03005;
@@ -352,6 +355,7 @@ const
   parser_e_no_common_type=03235;
   parser_e_no_generics_as_types=03236;
   parser_w_register_list_ignored=03237;
+<<<<<<< HEAD
   parser_e_implements_must_be_class_or_interface=03238;
   parser_e_implements_must_have_correct_type=03239;
   parser_e_implements_must_read_specifier=03240;
@@ -545,6 +549,10 @@ const
   parser_e_invalid_codepage=03307;
   parser_e_widestring_to_ansi_compile_time=03308;
 >>>>>>> origin/cpstrnew
+=======
+  parser_e_cant_export_var_different_name=03247;
+  parser_e_forward_mismatch=03249;
+>>>>>>> graemeg/fixes_2_2
   type_e_mismatch=04000;
   type_e_incompatible_types=04001;
   type_e_not_equal_types=04002;
@@ -618,6 +626,7 @@ const
   type_h_convert_sub_operands_to_prevent_overflow=04080;
   type_h_convert_mul_operands_to_prevent_overflow=04081;
   type_w_pointer_to_signed=04082;
+<<<<<<< HEAD
   type_e_interface_has_no_guid=04083;
   type_e_invalid_objc_selector_name=04084;
   type_e_expected_objc_method_but_got=04085;
@@ -671,6 +680,9 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  type_interface_has_no_guid=04083;
+>>>>>>> graemeg/fixes_2_2
   sym_e_id_not_found=05000;
   sym_f_internal_error_in_symtablestack=05001;
   sym_e_duplicate_id=05002;
@@ -805,6 +817,7 @@ const
   cg_f_unknown_system_type=06047;
   cg_h_inherited_ignored=06048;
   cg_e_goto_label_not_found=06049;
+<<<<<<< HEAD
   cg_f_unknown_type_in_unit=06050;
   cg_e_interprocedural_goto_only_to_outer_scope_allowed=06051;
   cg_e_labels_cannot_defined_outside_declaration_scope=06052;
@@ -825,6 +838,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
   asmr_d_start_reading=07000;
   asmr_d_finish_reading=07001;
   asmr_e_none_label_contain_at=07002;
@@ -928,6 +943,7 @@ const
   asmr_w_direct_esp_neg_offset=07105;
   asmr_e_no_vmtoffset_possible=07106;
   asmr_e_need_pic_ref=07107;
+<<<<<<< HEAD
   asmr_e_mixing_regtypes=07108;
   asmr_e_empty_regset=07109;
   asmr_w_useless_got_for_local=07110;
@@ -961,6 +977,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
   asmw_f_too_many_asm_files=08000;
   asmw_f_assembler_output_not_supported=08001;
   asmw_f_comp_not_supported=08002;
@@ -1103,6 +1121,7 @@ const
   unit_u_reresolving_unit=10058;
   unit_u_skipping_reresolving_unit=10059;
   unit_u_unload_resunit=10060;
+<<<<<<< HEAD
   unit_e_different_wpo_file=10061;
   unit_u_indirect_crc_changed=10062;
 <<<<<<< HEAD
@@ -1118,6 +1137,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
   option_usage=11000;
   option_only_one_source_support=11001;
   option_def_only_for_os2=11002;
@@ -1157,6 +1178,7 @@ const
   option_confict_asm_debug=11041;
   option_ppc386_deprecated=11042;
   option_else_without_if=11043;
+<<<<<<< HEAD
   option_unsupported_target=11044;
   option_unsupported_target_for_feature=11045;
   option_dwarf_smart_linking=11046;
@@ -1203,10 +1225,13 @@ const
   wpo_error_executing_symbol_prog=12017;
   wpo_symbol_live_info_needs_smart_linking=12018;
   wpo_cant_create_feedback_file=12019;
+=======
+>>>>>>> graemeg/fixes_2_2
   option_logo=11023;
   option_info=11024;
   option_help_pages=11025;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1244,4 +1269,11 @@ const
     24,88,309,99,84,54,111,22,202,63,
     49,20,1,1,1,1,1,1,1,1
 >>>>>>> origin/cpstrnew
+=======
+  MsgTxtSize = 46171;
+
+  MsgIdxMax : array[1..20] of longint=(
+    24,87,250,84,63,50,108,22,135,61,
+    44,1,1,1,1,1,1,1,1,1
+>>>>>>> graemeg/fixes_2_2
   );

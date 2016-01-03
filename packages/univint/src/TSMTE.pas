@@ -1,6 +1,7 @@
 {
      File:       HIToolbox/TSMTE.h
  
+<<<<<<< HEAD
      Contains:   Text Services Manager for TextEdit Interfaces. All TextEdit functions as well all functions in
  
 <<<<<<< HEAD
@@ -22,10 +23,18 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved
+=======
+     Contains:   Text Services Managerfor TextEdit Interfaces. All Textedit functions as well all functions in
+ 
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 1991-2005 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -51,6 +60,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -59,8 +80,13 @@
 
 unit TSMTE;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -73,21 +99,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -122,6 +156,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -129,6 +165,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -389,6 +426,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -414,6 +461,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -424,8 +475,11 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,TextEdit,Dialogs,AppleEvents,TextServices;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {****************************************************************************************************************
     
@@ -435,7 +489,10 @@ uses MacTypes,TextEdit,Dialogs,AppleEvents,TextServices;
 
 *****************************************************************************************************************}
 
+<<<<<<< HEAD
 {$ifc TARGET_OS_MAC}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ALIGN MAC68K}
 
@@ -459,22 +516,40 @@ const
 { callback procedure definitions}
 
 type
+<<<<<<< HEAD
 	TSMTEPreUpdateProcPtr = procedure( textH: TEHandle; refCon: SIGNEDLONG );
 	TSMTEPostUpdateProcPtr = procedure( textH: TEHandle; fixLen: SIGNEDLONG; inputAreaStart: SIGNEDLONG; inputAreaEnd: SIGNEDLONG; pinStart: SIGNEDLONG; pinEnd: SIGNEDLONG; refCon: SIGNEDLONG );
 	TSMTEPreUpdateUPP = TSMTEPreUpdateProcPtr;
 	TSMTEPostUpdateUPP = TSMTEPostUpdateProcPtr;
+=======
+	TSMTEPreUpdateProcPtr = procedure( textH: TEHandle; refCon: SInt32 );
+	TSMTEPostUpdateProcPtr = procedure( textH: TEHandle; fixLen: SInt32; inputAreaStart: SInt32; inputAreaEnd: SInt32; pinStart: SInt32; pinEnd: SInt32; refCon: SInt32 );
+	TSMTEPreUpdateUPP = TSMTEPreUpdateProcPtr;
+	TSMTEPostUpdateUPP = TSMTEPostUpdateProcPtr;
+
+
+>>>>>>> graemeg/fixes_2_2
 { data types}
 type
 	TSMTERec = record
 		textH: TEHandle;
 		preUpdateProc: TSMTEPreUpdateUPP;
 		postUpdateProc: TSMTEPostUpdateUPP;
+<<<<<<< HEAD
 		updateFlag: SIGNEDLONG;
 		refCon: SIGNEDLONG;
 	end;
 	TSMTERecPtr = ^TSMTERec;
 type
 	TSMTERecHandle = ^TSMTERecPtr;
+=======
+		updateFlag: SInt32;
+		refCon: SInt32;
+	end;
+	TSMTERecPtr = ^TSMTERec;
+	TSMTERecHandle = ^TSMTERecPtr;
+
+>>>>>>> graemeg/fixes_2_2
 {
  *  NewTSMTEPreUpdateUPP()
  *  
@@ -527,7 +602,11 @@ procedure DisposeTSMTEPostUpdateUPP( userUPP: TSMTEPostUpdateUPP ); external nam
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 procedure InvokeTSMTEPreUpdateUPP( textH: TEHandle; refCon: SIGNEDLONG; userUPP: TSMTEPreUpdateUPP ); external name '_InvokeTSMTEPreUpdateUPP';
+=======
+procedure InvokeTSMTEPreUpdateUPP( textH: TEHandle; refCon: SInt32; userUPP: TSMTEPreUpdateUPP ); external name '_InvokeTSMTEPreUpdateUPP';
+>>>>>>> graemeg/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 {
@@ -538,10 +617,16 @@ procedure InvokeTSMTEPreUpdateUPP( textH: TEHandle; refCon: SIGNEDLONG; userUPP:
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 procedure InvokeTSMTEPostUpdateUPP( textH: TEHandle; fixLen: SIGNEDLONG; inputAreaStart: SIGNEDLONG; inputAreaEnd: SIGNEDLONG; pinStart: SIGNEDLONG; pinEnd: SIGNEDLONG; refCon: SIGNEDLONG; userUPP: TSMTEPostUpdateUPP ); external name '_InvokeTSMTEPostUpdateUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 {$ifc not TARGET_CPU_64}
+=======
+procedure InvokeTSMTEPostUpdateUPP( textH: TEHandle; fixLen: SInt32; inputAreaStart: SInt32; inputAreaEnd: SInt32; pinStart: SInt32; pinEnd: SInt32; refCon: SInt32; userUPP: TSMTEPostUpdateUPP ); external name '_InvokeTSMTEPostUpdateUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> graemeg/fixes_2_2
 {
  *  IsTSMTEDialog()   *** DEPRECATED ***
  *  
@@ -549,7 +634,11 @@ procedure InvokeTSMTEPostUpdateUPP( textH: TEHandle; fixLen: SIGNEDLONG; inputAr
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
  }
@@ -565,7 +654,11 @@ function IsTSMTEDialog( dialog: DialogRef ): Boolean; external name '_IsTSMTEDia
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
  }
@@ -580,7 +673,11 @@ function GetTSMTEDialogDocumentID( dialog: DialogRef ): TSMDocumentID; external 
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
  }
@@ -596,7 +693,11 @@ function GetTSMTEDialogTSMTERecHandle( dialog: DialogRef ): TSMTERecHandle; exte
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
  }
@@ -611,7 +712,11 @@ procedure SetTSMTEDialogDocumentID( dialog: DialogRef; documentID: TSMDocumentID
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
  }
@@ -619,6 +724,7 @@ procedure SetTSMTEDialogTSMTERecHandle( dialog: DialogRef; tsmteRecHandle_: TSMT
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 {$endc} {TARGET_OS_MAC}
@@ -626,3 +732,8 @@ procedure SetTSMTEDialogTSMTERecHandle( dialog: DialogRef; tsmteRecHandle_: TSMT
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

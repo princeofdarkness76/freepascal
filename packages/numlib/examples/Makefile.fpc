@@ -8,6 +8,7 @@ name=iom
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
 version=2.5.1
@@ -21,6 +22,9 @@ version=2.5.1
 =======
 version=2.5.1
 >>>>>>> origin/cpstrnew
+=======
+version=2.2.5
+>>>>>>> graemeg/fixes_2_2
  
 [target]
 programs=invgenex invgpdex invgsyex iomremex iomrevex iomrewrsex iomwrmex iomwrvex

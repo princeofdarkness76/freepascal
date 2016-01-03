@@ -1,6 +1,7 @@
 {
      File:       HIToolbox/MacHelp.h
  
+<<<<<<< HEAD
      Contains:   Carbon Help Manager Interfaces.
  
 <<<<<<< HEAD
@@ -22,10 +23,18 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 1998-2008 by Apple Computer, Inc., all rights reserved
+=======
+     Contains:   Macintosh Help Package Interfaces.
+ 
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 1998-2005 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -51,6 +60,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -59,8 +80,13 @@
 
 unit MacHelp;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -73,21 +99,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -122,6 +156,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -129,6 +165,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -345,6 +382,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -370,6 +417,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -379,6 +430,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,CFBase,QuickdrawTypes,TextEdit,Controls,Dialogs,Events,MacWindows,Menus,HIObject,HIView;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -404,6 +456,10 @@ uses MacTypes,CFBase,QuickdrawTypes,TextEdit,Controls,Dialogs,Events,MacWindows,
 {$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
+=======
+uses MacTypes,CFBase,Quickdraw,TextEdit,Controls,Dialogs,Events,MacWindows,Menus;
+
+>>>>>>> graemeg/fixes_2_2
 
 {$ALIGN MAC68K}
 
@@ -422,6 +478,7 @@ const
 	kHMSupplyContent = 0;
 	kHMDisposeContent = 1;
 
+<<<<<<< HEAD
 
 {
  *  HMContentType
@@ -515,6 +572,18 @@ const
    * placed in the HMHelpContent.u.tagStrRes field. This help content
    * type is not supported in 64-bit mode.
    }
+=======
+type
+	HMContentType = UInt32;
+const
+	kHMNoContent = FourCharCode('none');
+	kHMCFStringContent = FourCharCode('cfst'); { CFStringRef}
+	kHMCFStringLocalizedContent = FourCharCode('cfsl'); { CFStringRef; name of a localized string. Supported by Jaguar and later.}
+	kHMPascalStrContent = FourCharCode('pstr');
+	kHMStringResContent = FourCharCode('str#');
+	kHMTEHandleContent = FourCharCode('txth'); { Supported by CarbonLib and Jaguar and later}
+	kHMTextResContent = FourCharCode('text'); { Supported by CarbonLib and Jaguar and later}
+>>>>>>> graemeg/fixes_2_2
 	kHMStrResContent = FourCharCode('str ');
 
 
@@ -541,10 +610,13 @@ const
    * To the left, centered vertically
    }
 	kHMOutsideLeftCenterAligned = 2;
+<<<<<<< HEAD
 
   {
    * Below, aligned with left or right depending on system script
    }
+=======
+>>>>>>> graemeg/fixes_2_2
 	kHMOutsideBottomScriptAligned = 3;
 
   {
@@ -573,11 +645,16 @@ const
 	kHMOutsideLeftBottomAligned = 8;
 
   {
+<<<<<<< HEAD
    * Below, aligned with left
+=======
+   * To the right, aligned with top
+>>>>>>> graemeg/fixes_2_2
    }
 	kHMOutsideBottomLeftAligned = 9;
 
   {
+<<<<<<< HEAD
    * Below, aligned with right
    }
 	kHMOutsideBottomRightAligned = 10;
@@ -590,6 +667,12 @@ const
   {
    * To the right, aligned with bottom
    }
+=======
+   * To the right, aligned with bottom
+   }
+	kHMOutsideBottomRightAligned = 10;
+	kHMOutsideRightTopAligned = 11;
+>>>>>>> graemeg/fixes_2_2
 	kHMOutsideRightBottomAligned = 12;
 
   {
@@ -694,6 +777,7 @@ type
 		contentType: HMContentType;
 		case SInt16 of
 		0: (
+<<<<<<< HEAD
 			tagCFString: CFStringRef;          { CFStringRef}
 			);
 		1: (
@@ -710,6 +794,24 @@ type
 			);
 		5: (
 			tagStrRes: SInt16;          { STR resource ID}
+=======
+			tagCFString:		CFStringRef;							{  CFStringRef }
+			);
+		1: (
+			tagString:			Str255;									{  Pascal String }
+			);
+		2: (
+			tagStringRes:		HMStringResType;						{  STR# resource ID and index }
+			);
+		3: (
+			tagTEHandle:		TEHandle;								{  TextEdit handle (NOT SUPPORTED ON MAC OS X) }
+			);
+		4: (
+			tagTextRes:			SInt16;									{  TEXT/styl resource ID (NOT SUPPORTED ON MAC OS X) }
+			);
+		5: (
+			tagStrRes:			SInt16;									{  STR resource ID }
+>>>>>>> graemeg/fixes_2_2
 			);
 	end;
 type
@@ -719,7 +821,10 @@ type
 		tagSide: HMTagDisplaySide;
 		content: array [0..1] of HMHelpContent;
 	end;
+<<<<<<< HEAD
 type
+=======
+>>>>>>> graemeg/fixes_2_2
 	HMHelpContentPtr = ^HMHelpContentRec;
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -727,12 +832,28 @@ type
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ }
 type
 	HMControlContentProcPtr = function( inControl: ControlRef; inGlobalMouse: Point; inRequest: HMContentRequest; var outContentProvided: HMContentProvidedType; ioHelpContent: HMHelpContentPtr ): OSStatus;
+<<<<<<< HEAD
 	HMWindowContentProcPtr = function( inWindow: WindowRef; inGlobalMouse: Point; inRequest: HMContentRequest; var outContentProvided: HMContentProvidedType; ioHelpContent: HMHelpContentPtr ): OSStatus;
 	HMMenuTitleContentProcPtr = function( inMenu: MenuRef; inRequest: HMContentRequest; var outContentProvided: HMContentProvidedType; ioHelpContent: HMHelpContentPtr ): OSStatus;
 	HMMenuItemContentProcPtr = function( const (*var*) inTrackingData: MenuTrackingData; inRequest: HMContentRequest; var outContentProvided: HMContentProvidedType; ioHelpContent: HMHelpContentPtr ): OSStatus;
 	HMControlContentUPP = HMControlContentProcPtr;
 	HMWindowContentUPP = HMWindowContentProcPtr;
 	HMMenuTitleContentUPP = HMMenuTitleContentProcPtr;
+=======
+type
+	HMWindowContentProcPtr = function( inWindow: WindowRef; inGlobalMouse: Point; inRequest: HMContentRequest; var outContentProvided: HMContentProvidedType; ioHelpContent: HMHelpContentPtr ): OSStatus;
+type
+	HMMenuTitleContentProcPtr = function( inMenu: MenuRef; inRequest: HMContentRequest; var outContentProvided: HMContentProvidedType; ioHelpContent: HMHelpContentPtr ): OSStatus;
+type
+	HMMenuItemContentProcPtr = function( const (*var*) inTrackingData: MenuTrackingData; inRequest: HMContentRequest; var outContentProvided: HMContentProvidedType; ioHelpContent: HMHelpContentPtr ): OSStatus;
+type
+	HMControlContentUPP = HMControlContentProcPtr;
+type
+	HMWindowContentUPP = HMWindowContentProcPtr;
+type
+	HMMenuTitleContentUPP = HMMenuTitleContentProcPtr;
+type
+>>>>>>> graemeg/fixes_2_2
 	HMMenuItemContentUPP = HMMenuItemContentProcPtr;
 {
  *  NewHMControlContentUPP()
@@ -870,7 +991,10 @@ function InvokeHMMenuItemContentUPP( const (*var*) inTrackingData: MenuTrackingD
 { API                                                                                      }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 { Help Menu }
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  HMGetHelpMenu()
  *  
@@ -890,7 +1014,11 @@ function InvokeHMMenuItemContentUPP( const (*var*) inTrackingData: MenuTrackingD
  *      first item added by the application. This parameter may be NULL.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
@@ -900,7 +1028,12 @@ function HMGetHelpMenu( var outHelpMenu: MenuRef; outFirstCustomItemIndex: MenuI
 
 { Installing/Retrieving Content }
 { Menu title and item help tags are not supported by CarbonLib. They are fully supported on Mac OS X. }
+<<<<<<< HEAD
 { Pass NULL for the inContent parameter of these APIs to remove help content from a control, window, or menu. }
+=======
+{ Pass NULL for the inContent parameter of HMSetControl/Window/MenuItemHelpContent to remove help content
+       from a control, window, or menu. }
+>>>>>>> graemeg/fixes_2_2
 {
  *  HMSetControlHelpContent()
  *  
@@ -908,7 +1041,11 @@ function HMGetHelpMenu( var outHelpMenu: MenuRef; outFirstCustomItemIndex: MenuI
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -923,7 +1060,11 @@ function HMSetControlHelpContent( inControl: ControlRef; {const} inContent: HMHe
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -938,7 +1079,11 @@ function HMGetControlHelpContent( inControl: ControlRef; var outContent: HMHelpC
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -953,7 +1098,11 @@ function HMSetWindowHelpContent( inWindow: WindowRef; {const} inContent: HMHelpC
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -968,7 +1117,11 @@ function HMGetWindowHelpContent( inWindow: WindowRef; var outContent: HMHelpCont
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -983,7 +1136,11 @@ function HMSetMenuItemHelpContent( inMenu: MenuRef; inItem: MenuItemIndex; {cons
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -999,7 +1156,11 @@ function HMGetMenuItemHelpContent( inMenu: MenuRef; inItem: MenuItemIndex; var o
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1014,7 +1175,11 @@ function HMInstallControlContentCallback( inControl: ControlRef; inContentUPP: H
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1029,7 +1194,11 @@ function HMInstallWindowContentCallback( inWindow: WindowRef; inContentUPP: HMWi
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1044,7 +1213,11 @@ function HMInstallMenuTitleContentCallback( inMenu: MenuRef; inContentUPP: HMMen
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1059,7 +1232,11 @@ function HMInstallMenuItemContentCallback( inMenu: MenuRef; inContentUPP: HMMenu
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1074,7 +1251,11 @@ function HMGetControlContentCallback( inControl: ControlRef; var outContentUPP: 
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1089,7 +1270,11 @@ function HMGetWindowContentCallback( inWindow: WindowRef; var outContentUPP: HMW
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1104,7 +1289,11 @@ function HMGetMenuTitleContentCallback( inMenu: MenuRef; var outContentUPP: HMMe
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1120,7 +1309,11 @@ function HMGetMenuItemContentCallback( inMenu: MenuRef; var outContentUPP: HMMen
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1135,7 +1328,11 @@ function HMAreHelpTagsDisplayed: Boolean; external name '_HMAreHelpTagsDisplayed
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1150,7 +1347,11 @@ function HMSetHelpTagsDisplayed( inDisplayTags: Boolean ): OSStatus; external na
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1165,7 +1366,11 @@ function HMSetTagDelay( inDelay: Duration ): OSStatus; external name '_HMSetTagD
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1173,6 +1378,54 @@ function HMGetTagDelay( var outDelay: Duration ): OSStatus; external name '_HMGe
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
+=======
+{ Compatibility }
+{
+ *  HMSetMenuHelpFromBalloonRsrc()
+ *  
+ *  Summary:
+ *    Not really implemented.
+ *  
+ *  Discussion:
+ *    Though this API is exported from CarbonLib and Mac OS X, it is
+ *    completely non-functional. We have no plans to implement it.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HMSetMenuHelpFromBalloonRsrc( inMenu: MenuRef; inHmnuRsrcID: SInt16 ): OSStatus; external name '_HMSetMenuHelpFromBalloonRsrc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  HMSetDialogHelpFromBalloonRsrc()
+ *  
+ *  Summary:
+ *    Not really implemented.
+ *  
+ *  Discussion:
+ *    Though this API is exported from CarbonLib and Mac OS X, it is
+ *    completely non-functional. We have no plans to implement it.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HMSetDialogHelpFromBalloonRsrc( inDialog: DialogRef; inHdlgRsrcID: SInt16; inItemStart: SInt16 ): OSStatus; external name '_HMSetDialogHelpFromBalloonRsrc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/fixes_2_2
 { Displaying tags }
 {
  *  HMDisplayTag()
@@ -1181,6 +1434,7 @@ function HMGetTagDelay( var outDelay: Duration ): OSStatus; external name '_HMGe
  *    Displays a help tag at a user-defined location.
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    Prior to Mac OS X 10.4, HMDisplayTag does not retain the help
  *    content that is passed to it, nor release it when the tag is
  *    closed. Your application must ensure that the help content
@@ -1190,6 +1444,14 @@ function HMGetTagDelay( var outDelay: Duration ): OSStatus; external name '_HMGe
  *    and later, HMDisplayTag makes a copy of the content and releases
  *    the copy when the tag closes, so you can release the content
  *    after HMDisplayTag returns.
+=======
+ *    Note that HMDisplayTag does not currently retain the help content
+ *    that is passed to it, nor release it when the tag is closed. Your
+ *    application must ensure that the help content remains valid as
+ *    long as the tag may be visible (which effectively means that your
+ *    application should never dispose of help content that is passed
+ *    to HMDisplayTag).
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1203,7 +1465,11 @@ function HMGetTagDelay( var outDelay: Duration ): OSStatus; external name '_HMGe
  *    An OSStatus code indicating success or failure.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1225,7 +1491,11 @@ function HMDisplayTag( const (*var*) inContent: HMHelpContentRec ): OSStatus; ex
  *    An OSStatus code indicating success or failure.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1233,9 +1503,12 @@ function HMHideTag: OSStatus; external name '_HMHideTag';
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 
 
+<<<<<<< HEAD
 {$endc} {TARGET_CPU_64}
 
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  Summary:
  *    Values for the inOptions parameter to HMHideTagWithOptions.
@@ -1254,7 +1527,10 @@ const
    }
 	kHMHideTagImmediately = 1 shl 1;
 
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  HMHideTagWithOptions()
  *  
@@ -1276,7 +1552,11 @@ const
  *    tag currently visible.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
@@ -1284,6 +1564,7 @@ function HMHideTagWithOptions( inOptions: OptionBits ): OSStatus; external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 
+<<<<<<< HEAD
 {--------------------------------------------------------------------------------------}
 {  ¥ DEPRECATED                                                                        }
 {  All functions below this point are either deprecated (they continue to function     }
@@ -1341,3 +1622,8 @@ function HMSetDialogHelpFromBalloonRsrc( inDialog: DialogRef; inHdlgRsrcID: SInt
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

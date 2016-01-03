@@ -127,12 +127,17 @@ implementation
                 end;
                 exit;
               end;
+<<<<<<< HEAD
             if rv = 0 then
+=======
+            if tordconstnode(right).value = 0 then
+>>>>>>> graemeg/fixes_2_2
               begin
                 Message(parser_e_division_by_zero);
                 { recover }
                 tordconstnode(right).value := 1;
               end;
+<<<<<<< HEAD
             { the following simplification is also required for correctness
               on x86, as its transformation of divisions by constants to
               multiplications and shifts does not handle -1 correctly }
@@ -150,6 +155,8 @@ implementation
                  { recover }
                  tordconstnode(right).value := 1;
                end;
+=======
+>>>>>>> graemeg/fixes_2_2
           end;
 
         if is_constintnode(right) and is_constintnode(left) then
@@ -223,10 +230,13 @@ implementation
         else_block,
         hp,t : tnode;
         rd,ld : torddef;
+<<<<<<< HEAD
         else_statements,
         statements : tstatementnode;
         result_data : ttempcreatenode;
         nd : torddef;
+=======
+>>>>>>> graemeg/fixes_2_2
       begin
          result:=nil;
          typecheckpass(left);
@@ -301,20 +311,32 @@ implementation
          { Additionally, do the same for cardinal/qwords and other positive types, but    }
          { always in a way that a smaller type is converted to a bigger type              }
          { (webtbs/tw8870)                                                                }
+<<<<<<< HEAD
          if (rd.ordtype in [u8bit,u16bit,u32bit,u64bit]) and
             ((is_constintnode(left) and
               (tordconstnode(left).value >= 0) and
               (tordconstnode(left).value <= get_max_value(rd))) or
+=======
+         if (rd.ordtype in [u32bit,u64bit]) and
+            ((is_constintnode(left) and
+              (tordconstnode(left).value >= 0)) or
+>>>>>>> graemeg/fixes_2_2
              (not is_signed(ld) and
               (rd.size >= ld.size))) then
            begin
              inserttypeconv(left,right.resultdef);
              ld:=torddef(left.resultdef);
            end;
+<<<<<<< HEAD
          if (ld.ordtype in [u8bit,u16bit,u32bit,u64bit]) and
             ((is_constintnode(right) and
               (tordconstnode(right).value >= 0) and
               (tordconstnode(right).value <= get_max_value(ld))) or
+=======
+         if (ld.ordtype in [u32bit,u64bit]) and
+            ((is_constintnode(right) and
+              (tordconstnode(right).value >= 0)) or
+>>>>>>> graemeg/fixes_2_2
              (not is_signed(rd) and
               (ld.size >= rd.size))) then
           begin
@@ -812,6 +834,7 @@ implementation
            begin
              { keep singness of orignal type }
              if is_signed(left.resultdef) then
+<<<<<<< HEAD
                begin
 {$if defined(cpu64bitalu) or defined(cpu32bitalu)}
                  inserttypeconv(left,s32inttype)
@@ -831,6 +854,11 @@ implementation
                  internalerror(2013031301);
 {$endif}
                end
+=======
+               inserttypeconv(left,s32inttype)
+             else
+               inserttypeconv(left,u32inttype);
+>>>>>>> graemeg/fixes_2_2
            end;
 
          inserttypeconv(right,sinttype);
@@ -975,6 +1003,7 @@ implementation
 {$endif SUPPORT_MMX}
          else if is_oversizedord(left.resultdef) then
            begin
+<<<<<<< HEAD
              if is_64bit(left.resultdef) then
                inserttypeconv(left,s64inttype)
              else if is_32bit(left.resultdef) then
@@ -984,6 +1013,10 @@ implementation
              else
                internalerror(2013040701);
              resultdef:=left.resultdef;
+=======
+             inserttypeconv(left,s64inttype);
+             resultdef:=left.resultdef
+>>>>>>> graemeg/fixes_2_2
            end
          else if (left.resultdef.typ=orddef) then
            begin
@@ -1020,8 +1053,31 @@ implementation
           begin
             if not(target_info.system in systems_wince) then
               begin
+<<<<<<< HEAD
                 expectloc:=LOC_REGISTER;
                 exit;
+=======
+                case tfloatdef(resultdef).floattype of
+                  s32real:
+                    begin
+                      procname:='float32_sub';
+                      fdef:=search_system_type('FLOAT32REC').typedef;
+                    end;
+                  s64real:
+                    begin
+                      procname:='float64_sub';
+                      fdef:=search_system_type('FLOAT64').typedef;
+                    end;
+                  {!!! not yet implemented
+                  s128real:
+                  }
+                  else
+                    internalerror(2005082801);
+                end;
+                result:=ctypeconvnode.create_internal(ccallnode.createintern(procname,ccallparanode.create(
+                  ctypeconvnode.create_internal(left,fDef),
+                  ccallparanode.create(ctypeconvnode.create_internal(crealconstnode.create(0,resultdef),fdef),nil))),resultdef);
+>>>>>>> graemeg/fixes_2_2
               end
             else
               begin
@@ -1278,6 +1334,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              { not-nodes are not range checked by the code generator -> also
                don't range check while inlining; the resultdef is a bit tricky
                though: the node's resultdef gets changed in most cases compared
@@ -1314,6 +1371,9 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+             t:=cordconstnode.create(v,def,false);
+>>>>>>> graemeg/fixes_2_2
              result:=t;
              exit;
           end;

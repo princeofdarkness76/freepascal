@@ -663,7 +663,10 @@ implementation
          bitsperop,l : longint;
          cgop : topcg;
          asmop : tasmop;
+<<<<<<< HEAD
          opdef : tdef;
+=======
+>>>>>>> graemeg/fixes_2_2
          opsize,
          orgsize: tcgsize;
         begin
@@ -720,7 +723,10 @@ implementation
               orgsize:=opsize;
               if opsize in [OS_8,OS_S8] then
                 begin
+<<<<<<< HEAD
                   opdef:=u32inttype;
+=======
+>>>>>>> graemeg/fixes_2_2
                   opsize:=OS_32;
                 end;
               { determine asm operator }
@@ -729,8 +735,13 @@ implementation
               else
                  asmop:=A_BTR;
 
+<<<<<<< HEAD
               hlcg.location_force_reg(current_asmdata.CurrAsmList,tcallparanode(tcallparanode(left).right).left.location,tcallparanode(tcallparanode(left).right).left.resultdef,opdef,true);
               register_maybe_adjust_setbase(current_asmdata.CurrAsmList,tcallparanode(tcallparanode(left).right).left.resultdef,tcallparanode(tcallparanode(left).right).left.location,setbase);
+=======
+              location_force_reg(current_asmdata.CurrAsmList,tcallparanode(tcallparanode(left).right).left.location,opsize,true);
+              register_maybe_adjust_setbase(current_asmdata.CurrAsmList,tcallparanode(tcallparanode(left).right).left.location,setbase);
+>>>>>>> graemeg/fixes_2_2
               hregister:=tcallparanode(tcallparanode(left).right).left.location.register;
               if (tcallparanode(left).left.location.loc=LOC_REFERENCE) then
                 emit_reg_ref(asmop,tcgsize2opsize[opsize],hregister,tcallparanode(left).left.location.reference)

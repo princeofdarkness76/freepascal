@@ -66,7 +66,11 @@ const
         // make d positive
         fabs    f1,f1
         // load 2^32 in f2
+<<<<<<< HEAD
         {$if not defined(macos) and not defined(aix)}
+=======
+        {$ifndef macos}
+>>>>>>> graemeg/fixes_2_2
         {$ifdef FPC_PIC}
         {$ifdef darwin}
         mflr   r0
@@ -83,10 +87,17 @@ const
         lis    r4,factor@ha
         lfd    f2,factor@l(r4)
         {$endif FPC_PIC}
+<<<<<<< HEAD
         {$else not macos/aix}
         lwz    r4,factor(r2)
         lfd    f2,0(r4)
         {$endif not macos/aix}
+=======
+        {$else not macos}
+        lwz    r4,factor(r2)
+        lfd    f2,0(r4)
+        {$endif not macos}
+>>>>>>> graemeg/fixes_2_2
         // check if value is < 0
         // f3 := d / 2^32;
         fdiv     f3,f1,f2
@@ -101,7 +112,11 @@ const
         stw      r0,temp
         xoris    r0,r3,0x8000
         stw      r0,temp+4
+<<<<<<< HEAD
         {$if not defined(macos) and not defined(aix)}
+=======
+        {$ifndef macos}
+>>>>>>> graemeg/fixes_2_2
         {$ifdef FPC_PIC}
         {$ifdef darwin}
         addis  r4,r5,(longint_to_real_helper-.Lpiclab)@ha
@@ -113,10 +128,17 @@ const
         lis    r4,longint_to_real_helper@ha
         lfd    f0,longint_to_real_helper@l(r4)
         {$endif FPC_PIC}
+<<<<<<< HEAD
         {$else not macos/aix}
         lwz    r4,longint_to_real_helper(r2)
         lfd    f0,0(r4)
         {$endif not macos/aix}
+=======
+        {$else not macos}
+        lwz    r4,longint_to_real_helper(r2)
+        lfd    f0,0(r4)
+        {$endif not macos}
+>>>>>>> graemeg/fixes_2_2
         lfd    f3,temp
         fsub   f3,f3,f0
 
@@ -127,7 +149,11 @@ const
         // now, convert to unsigned 32 bit
 
         // load 2^31 in f2
+<<<<<<< HEAD
         {$if not defined(macos) and not defined(aix)}
+=======
+        {$ifndef macos}
+>>>>>>> graemeg/fixes_2_2
         {$ifdef FPC_PIC}
         {$ifdef darwin}
         addis  r4,r5,(factor2-.Lpiclab)@ha
@@ -139,10 +165,17 @@ const
         lis    r4,factor2@ha
         lfd    f2,factor2@l(r4)
         {$endif FPC_PIC}
+<<<<<<< HEAD
         {$else not macos/aix}
         lwz    r4,factor2(r2)
         lfd    f2,0(r4)
         {$endif not macos/aix}
+=======
+        {$else not macos}
+        lwz    r4,factor2(r2)
+        lfd    f2,0(r4)
+        {$endif not macos}
+>>>>>>> graemeg/fixes_2_2
 
         // subtract 2^31
         fsub   f3,f4,f2
@@ -286,7 +319,11 @@ asm
            stw    r0,temp
            xoris  r3,r3,0x8000
            stw    r3,temp+4
+<<<<<<< HEAD
            {$if not defined(macos) and not defined(aix)}
+=======
+           {$ifndef macos}
+>>>>>>> graemeg/fixes_2_2
            {$ifdef FPC_PIC}
            {$ifdef darwin}
            mflr   r0
@@ -303,14 +340,22 @@ asm
            lis    r3,longint_to_real_helper@ha
            lfd    f1,longint_to_real_helper@l(r3)
            {$endif FPC_PIC}
+<<<<<<< HEAD
            {$else not macos/aix}
+=======
+           {$else not macos}
+>>>>>>> graemeg/fixes_2_2
            lwz    r3,longint_to_real_helper(r2)
            lfd    f1,0(r3)
            {$endif not mac os}
            lfd    f0,temp
            stw    r4,temp+4
            fsub   f0,f0,f1
+<<<<<<< HEAD
            {$if not defined(macos) and not defined(aix)}
+=======
+           {$ifndef macos}
+>>>>>>> graemeg/fixes_2_2
            {$ifdef FPC_PIC}
            {$ifdef darwin}
            addis  r4,r5,(cardinal_to_real_helper-.Lpiclab)@ha
@@ -328,13 +373,21 @@ asm
            lfd    f3,temp
            lfd    f2,int_to_real_factor@l(r4)
            {$endif FPC_PIC}
+<<<<<<< HEAD
            {$else not macos/aix}
+=======
+           {$else not macos}
+>>>>>>> graemeg/fixes_2_2
            lwz    r4,cardinal_to_real_helper(r2)
            lwz    r3,int_to_real_factor(r2)
            lfd    f3,temp
            lfd    f1,0(r4)
            lfd    f2,0(r3)
+<<<<<<< HEAD
            {$endif not macos/aix}
+=======
+           {$endif not macos}
+>>>>>>> graemeg/fixes_2_2
            fsub   f3,f3,f1
            fmadd  f1,f0,f2,f3
 end;
@@ -356,7 +409,11 @@ asm
            stw    r0,temp
            stw    r3,temp+4
            lfd    f0,temp
+<<<<<<< HEAD
            {$if not defined(macos) and not defined(aix)}
+=======
+           {$ifndef macos}
+>>>>>>> graemeg/fixes_2_2
            {$ifdef FPC_PIC}
            {$ifdef darwin}
            mflr   r0
@@ -373,6 +430,7 @@ asm
            lis    r3,cardinal_to_real_helper@ha
            lfd    f1,cardinal_to_real_helper@l(r3)
            {$endif FPC_PIC}
+<<<<<<< HEAD
            {$else not macos/aix}
            lwz    r3,longint_to_real_helper(r2)
            lfd    f1,0(r3)
@@ -381,6 +439,16 @@ asm
            fsub   f0,f0,f1
            lfd    f3,temp
            {$if not defined(macos) and not defined(aix)}
+=======
+           {$else not macos}
+           lwz    r3,longint_to_real_helper(r2)
+           lfd    f1,0(r3)
+           {$endif not macos}
+           stw    r4,temp+4
+           fsub   f0,f0,f1
+           lfd    f3,temp
+           {$ifndef macos}
+>>>>>>> graemeg/fixes_2_2
            {$ifdef FPC_PIC}
            {$ifdef darwin}
            addis  r4,r5,(int_to_real_factor-.Lpiclab)@ha
@@ -392,10 +460,17 @@ asm
            lis    r4,int_to_real_factor@ha
            lfd    f2,int_to_real_factor@l(r4)
            {$endif FPC_PIC}
+<<<<<<< HEAD
            {$else not macos/aix}
            lwz    r4,int_to_real_factor(r2)
            lfd    f2,0(r4)
            {$endif not macos/aix}
+=======
+           {$else not macos}
+           lwz    r4,int_to_real_factor(r2)
+           lfd    f2,0(r4)
+           {$endif not macos}
+>>>>>>> graemeg/fixes_2_2
            fsub   f3,f3,f1
            fmadd  f1,f0,f2,f3
 end;

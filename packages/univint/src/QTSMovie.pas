@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       QuickTime/QTSMovie.h
  
      Contains:   QuickTime Interfaces.
@@ -6,10 +7,20 @@
      Version:    QuickTime 7.6.3
  
      Copyright:  © 1990-2008 by Apple Inc., all rights reserved
+=======
+     File:       QTSMovie.p
+ 
+     Contains:   QuickTime Interfaces.
+ 
+     Version:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1990-2002 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -21,6 +32,19 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -29,8 +53,13 @@
 
 unit QTSMovie;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -43,21 +72,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -92,6 +129,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -99,6 +138,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -323,6 +363,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -348,6 +398,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -358,6 +412,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,Components,Movies,QuickTimeStreaming;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -435,11 +490,64 @@ const
 	kQTSMediaLostPercentInfo = FourCharCode('lspc'); { Fixed* }
 	kQTSMediaNumStreamsInfo = FourCharCode('nstr'); { UInt32* }
 	kQTSMediaIndSampleDescriptionInfo = FourCharCode('isdc'); { QTSMediaIndSampleDescriptionParams* }
+=======
+
+
+{$ALIGN MAC68K}
+
+
+const
+	kQTSStreamMediaType			= FourCharCode('strm');
+
+
+type
+	QTSSampleDescriptionPtr = ^QTSSampleDescription;
+	QTSSampleDescription = record
+		descSize:				SInt32;
+		dataFormat:				SInt32;
+		resvd1:					SInt32;								{  set to 0 }
+		resvd2:					SInt16;								{  set to 0 }
+		dataRefIndex:			SInt16;
+		version:				UInt32;
+		resvd3:					UInt32;									{  set to 0 }
+		flags:					SInt32;
+																		{  qt atoms follow: }
+																		{       long size, long type, some data }
+																		{       repeat as necessary }
+	end;
+
+	QTSSampleDescriptionHandle			= ^QTSSampleDescriptionPtr;
+
+const
+	kQTSSampleDescriptionVersion1 = 1;
+
+	kQTSDefaultMediaTimeScale	= 600;
+
+	{  sample description flags }
+	kQTSSampleDescPassSampleDataAsHandleFlag = $00000001;
+
+
+	{	============================================================================
+	        Stream Media Handler
+	============================================================================	}
+	{	-----------------------------------------
+	    Info Selectors
+	-----------------------------------------	}
+	{	 all indexes start at 1 	}
+
+	kQTSMediaPresentationInfo	= FourCharCode('pres');						{  QTSMediaPresentationParams*  }
+	kQTSMediaNotificationInfo	= FourCharCode('noti');						{  QTSMediaNotificationParams*  }
+	kQTSMediaTotalDataRateInfo	= FourCharCode('dtrt');						{  UInt32*, bits/sec  }
+	kQTSMediaLostPercentInfo	= FourCharCode('lspc');						{  Fixed*  }
+	kQTSMediaNumStreamsInfo		= FourCharCode('nstr');						{  UInt32*  }
+	kQTSMediaIndSampleDescriptionInfo = FourCharCode('isdc');					{  QTSMediaIndSampleDescriptionParams*  }
+>>>>>>> graemeg/fixes_2_2
 
 
 type
 	QTSMediaPresentationParamsPtr = ^QTSMediaPresentationParams;
 	QTSMediaPresentationParams = record
+<<<<<<< HEAD
 		presentationID: QTSPresentation;
 	end;
 type
@@ -481,10 +589,53 @@ function QTSMediaSetInfo( mh: MediaHandler; inSelector: OSType; ioParams: UnivPt
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+		presentationID:			QTSPresentation;
+	end;
+
+	QTSMediaNotificationParamsPtr = ^QTSMediaNotificationParams;
+	QTSMediaNotificationParams = record
+		notificationProc:		QTSNotificationUPP;
+		notificationRefCon:		Ptr;
+		flags:					SInt32;
+	end;
+
+	QTSMediaIndSampleDescriptionParamsPtr = ^QTSMediaIndSampleDescriptionParams;
+	QTSMediaIndSampleDescriptionParams = record
+		index:					SInt32;
+		returnedMediaType:		OSType;
+		returnedSampleDescription: SampleDescriptionHandle;
+	end;
+
+	{	-----------------------------------------
+	    QTS Media Handler Selectors
+	-----------------------------------------	}
+
+const
+	kQTSMediaSetInfoSelect		= $0100;
+	kQTSMediaGetInfoSelect		= $0101;
+	kQTSMediaSetIndStreamInfoSelect = $0102;
+	kQTSMediaGetIndStreamInfoSelect = $0103;
+
+	{	-----------------------------------------
+	    QTS Media Handler functions
+	-----------------------------------------	}
+	{
+	 *  QTSMediaSetInfo()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
+	 *    CarbonLib:        in CarbonLib 1.1 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 *    Windows:          in QTSClient.lib 4.0 and later
+	 	}
+function QTSMediaSetInfo(mh: MediaHandler; inSelector: OSType; ioParams: UnivPtr): ComponentResult; external name '_QTSMediaSetInfo';
+>>>>>>> graemeg/fixes_2_2
 {
  *  QTSMediaGetInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
@@ -494,10 +645,19 @@ function QTSMediaGetInfo( mh: MediaHandler; inSelector: OSType; ioParams: UnivPt
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in QTSClient.lib 4.0 and later
+ }
+function QTSMediaGetInfo(mh: MediaHandler; inSelector: OSType; ioParams: UnivPtr): ComponentResult; external name '_QTSMediaGetInfo';
+>>>>>>> graemeg/fixes_2_2
 {
  *  QTSMediaSetIndStreamInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
@@ -507,10 +667,19 @@ function QTSMediaSetIndStreamInfo( mh: MediaHandler; inIndex: SInt32; inSelector
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in QTSClient.lib 4.0 and later
+ }
+function QTSMediaSetIndStreamInfo(mh: MediaHandler; inIndex: SInt32; inSelector: OSType; ioParams: UnivPtr): ComponentResult; external name '_QTSMediaSetIndStreamInfo';
+>>>>>>> graemeg/fixes_2_2
 {
  *  QTSMediaGetIndStreamInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
@@ -544,3 +713,25 @@ const
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in QTSClient.lib 4.0 and later
+ }
+function QTSMediaGetIndStreamInfo(mh: MediaHandler; inIndex: SInt32; inSelector: OSType; ioParams: UnivPtr): ComponentResult; external name '_QTSMediaGetIndStreamInfo';
+{============================================================================
+        Hint Media Handler
+============================================================================}
+
+const
+	kQTSHintMediaType			= FourCharCode('hint');
+
+	kQTSHintTrackReference		= FourCharCode('hint');
+
+
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

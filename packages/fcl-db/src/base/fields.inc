@@ -1,6 +1,10 @@
 {
     This file is part of the Free Pascal run time library.
+<<<<<<< HEAD
     Copyright (c) 1999-2014 by Michael Van Canneyt, member of the
+=======
+    Copyright (c) 1999-2000 by Michael Van Canneyt, member of the
+>>>>>>> graemeg/fixes_2_2
     Free Pascal development team
 
     TFields and related components implementations.
@@ -15,7 +19,11 @@
  **********************************************************************}
 {Procedure DumpMem (P : Pointer;Size : Longint);
 
+<<<<<<< HEAD
 var i : longint;
+=======
+Var i : longint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   Write ('Memory dump : ');
@@ -31,7 +39,11 @@ end;}
 Constructor TFieldDef.Create(ACollection : TCollection);
 
 begin
+<<<<<<< HEAD
   Inherited Create(ACollection);
+=======
+  Inherited create(ACollection);
+>>>>>>> graemeg/fixes_2_2
   FFieldNo:=Index+1;
 end;
 
@@ -80,7 +92,11 @@ end;
 
 Function TFieldDef.CreateField(AOwner: TComponent): TField;
 
+<<<<<<< HEAD
 var TheField : TFieldClass;
+=======
+Var TheField : TFieldClass;
+>>>>>>> graemeg/fixes_2_2
 
 begin
 {$ifdef dsdebug}
@@ -89,31 +105,56 @@ begin
   TheField:=GetFieldClass;
   if TheField=Nil then
     DatabaseErrorFmt(SUnknownFieldType,[FName]);
+<<<<<<< HEAD
   Result:=TheField.Create(AOwner);
   Try
     Result.FFieldDef:=Self;
+=======
+  Result:=Thefield.Create(AOwner);
+  Try
+>>>>>>> graemeg/fixes_2_2
     Result.Size:=FSize;
     Result.Required:=FRequired;
     Result.FFieldName:=FName;
     Result.FDisplayLabel:=DisplayName;
     Result.FFieldNo:=Self.FieldNo;
     Result.SetFieldType(DataType);
+<<<<<<< HEAD
     Result.FReadOnly:=(faReadOnly in Attributes);
 {$ifdef dsdebug}
     Writeln ('TFieldDef.CreateField : Result Fieldno : ',Result.FieldNo,'; Self : ',FieldNo);
     Writeln ('TFieldDef.CreateField : Trying to set dataset');
+=======
+    Result.FReadOnly:= (faReadOnly in Attributes);
+{$ifdef dsdebug}
+    Writeln ('TFieldDef.CReateField : Trying to set dataset');
+{$endif dsdebug}
+{$ifdef dsdebug}
+    Writeln ('TFieldDef.CReateField : Result Fieldno : ',Result.FieldNo,' Self : ',FieldNo);
+>>>>>>> graemeg/fixes_2_2
 {$endif dsdebug}
     Result.Dataset:=TFieldDefs(Collection).Dataset;
     If (Result is TFloatField) then
       TFloatField(Result).Precision:=FPrecision;
     if (Result is TBCDField) then
       TBCDField(Result).Precision:=FPrecision;
+<<<<<<< HEAD
     if (Result is TFmtBCDField) then
       TFmtBCDField(Result).Precision:=FPrecision;
+=======
+    {Add when implemented:
+    if (Result is TFmtBCDField) then
+      TFmtBCDField(Result).Precision:=FPrecision;
+    }
+>>>>>>> graemeg/fixes_2_2
   except
     Result.Free;
     Raise;
   end;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TFieldDef.SetAttributes(AValue: TFieldAttributes);
@@ -191,11 +232,19 @@ procedure TFieldDefs.Add(const AName: string; ADataType: TFieldType; ASize: Word
 begin
   If Length(AName)=0 Then
     DatabaseError(SNeedFieldName);
+<<<<<<< HEAD
   // the fielddef will register itself here as an owned component.
   // fieldno is 1 based !
   BeginUpdate;
   try
     Add(AName,ADataType,ASize,Arequired,Count+1);
+=======
+  // the fielddef will register itself here as a owned component.
+  // fieldno is 1 based !
+  BeginUpdate;
+  try
+    TFieldDef.Create(Self,AName,ADataType,ASize,Arequired,Count+1);
+>>>>>>> graemeg/fixes_2_2
   finally
     EndUpdate;
   end;
@@ -212,6 +261,7 @@ begin
   inherited Items[Index] := AValue;
 end;
 
+<<<<<<< HEAD
 class function TFieldDefs.FieldDefClass: TFieldDefClass;
 begin
   Result:=TFieldDef;
@@ -225,11 +275,20 @@ end;
 function TFieldDefs.Add(const AName: string; ADataType: TFieldType; ASize: Word; ARequired: Boolean; AFieldNo: Integer): TFieldDef;
 begin
   Result:=FieldDefClass.create(Self,AName,ADataType,ASize,ARequired,AFieldNo);
+=======
+constructor TFieldDefs.Create(ADataset: TDataset);
+begin
+  Inherited Create(ADataset, Owner, TFieldDef);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TFieldDefs.Assign(FieldDefs: TFieldDefs);
 
+<<<<<<< HEAD
 var I : longint;
+=======
+Var I : longint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   Clear;
@@ -247,7 +306,11 @@ end;
 {
 procedure TFieldDefs.Clear;
 
+<<<<<<< HEAD
 var I : longint;
+=======
+Var I : longint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   For I:=FItems.Count-1 downto 0 do
@@ -279,10 +342,17 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 function TFieldDefs.AddFieldDef: TFieldDef;
 
 begin
   Result:=FieldDefClass.Create(Self,'',ftUnknown,0,False,Count+1);
+=======
+Function TFieldDefs.AddFieldDef : TFieldDef;
+
+begin
+  Result:=TFieldDef.Create(Self,'',ftUnknown,0,False,Count+1);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 { ---------------------------------------------------------------------
@@ -298,7 +368,10 @@ Const
   SLargeInt = 'LargeInt';
   SVariant = 'Variant';
   SString = 'String';
+<<<<<<< HEAD
   SBytes = 'Bytes';
+=======
+>>>>>>> graemeg/fixes_2_2
 
 constructor TField.Create(AOwner: TComponent);
 
@@ -382,6 +455,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 procedure TField.Bind(Binding: Boolean);
 
 begin
@@ -399,6 +473,8 @@ begin
     end;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 procedure TField.Change;
 
 begin
@@ -416,7 +492,12 @@ end;
 procedure TField.Clear;
 
 begin
+<<<<<<< HEAD
   SetData(Nil);
+=======
+  if FieldKind in [fkData, fkInternalCalc] then
+    SetData(Nil);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TField.DataChanged;
@@ -440,6 +521,7 @@ begin
   // TDataset manages the buffers.
 end;
 
+<<<<<<< HEAD
 function TField.GetAsBCD: TBCD;
 begin
   raise AccessError(SBCD);
@@ -455,6 +537,12 @@ begin
   SetLength(Result, DataSize);
   if assigned(result) and not GetData(@Result[0], False) then
     Result := nil;
+=======
+function TField.GetAsBoolean: Boolean;
+
+begin
+  raise AccessError(SBoolean);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TField.GetAsDateTime: TDateTime;
@@ -472,6 +560,7 @@ end;
 function TField.GetAsLongint: Longint;
 
 begin
+<<<<<<< HEAD
   Result:=GetAsInteger;
 end;
 
@@ -488,6 +577,24 @@ begin
 end;
 
 
+=======
+  raise AccessError(SInteger);
+end;
+
+function TField.GetAsVariant: Variant;
+
+begin
+  raise AccessError(SVariant);
+end;
+
+
+function TField.GetAsInteger: Integer;
+
+begin
+  Result:=GetAsLongint;
+end;
+
+>>>>>>> graemeg/fixes_2_2
 function TField.GetAsString: string;
 
 begin
@@ -499,7 +606,11 @@ begin
   Result := GetAsString;
 end;
 
+<<<<<<< HEAD
 function TField.GetOldValue: variant;
+=======
+function TField.GetOldValue: Variant;
+>>>>>>> graemeg/fixes_2_2
 
 var SaveState : TDatasetState;
 
@@ -561,6 +672,7 @@ begin
   Result:=Not ReadOnly;
   If Result then
     begin
+<<<<<<< HEAD
     Result := FieldKind in [fkData, fkInternalCalc];
     if Result then
       begin
@@ -568,6 +680,11 @@ begin
       If Result then
         Result:= DataSet.CanModify;
       end;
+=======
+    Result:=Assigned(DataSet);
+    If Result then
+      Result:= DataSet.CanModify;
+>>>>>>> graemeg/fixes_2_2
     end;
 end;
 
@@ -592,10 +709,17 @@ function TField.GetData(Buffer: Pointer; NativeFormat : Boolean): Boolean;
 begin
   IF FDataset=Nil then
     DatabaseErrorFmt(SNoDataset,[FieldName]);
+<<<<<<< HEAD
   If FValidating then
     begin
     result:=assigned(FValueBuffer);
     If Result and assigned(Buffer) then
+=======
+  If FVAlidating then
+    begin
+    result:=Not(FValueBuffer=Nil);
+    If Result then
+>>>>>>> graemeg/fixes_2_2
       Move (FValueBuffer^,Buffer^ ,DataSize);
     end
   else
@@ -623,18 +747,25 @@ begin
     Result:=FFieldName;
 end;
 
+<<<<<<< HEAD
 function TField.IsDisplayLabelStored: Boolean;
+=======
+Function TField.IsDisplayStored : Boolean;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   Result:=(DisplayLabel<>FieldName);
 end;
 
+<<<<<<< HEAD
 Function TField.IsDisplayWidthStored : Boolean;
 
 begin
   Result:=(FDisplayWidth<>0);
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 function TField.GetLookupList: TLookupList;
 begin
   if not Assigned(FLookupList) then
@@ -650,7 +781,11 @@ begin
     Value := FLookupDataSet.Lookup(FLookupKeyfields, FDataSet.FieldValues[FKeyFields], FLookupresultField);
 end;
 
+<<<<<<< HEAD
 function TField.GetIndex: longint;
+=======
+function TField.getIndex : longint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If Assigned(FDataset) then
@@ -659,6 +794,14 @@ begin
     Result:=-1;
 end;
 
+<<<<<<< HEAD
+=======
+function TField.GetAsBCD: TBCD;
+begin
+  raise AccessError(SBCD);
+end;
+
+>>>>>>> graemeg/fixes_2_2
 function TField.GetLookup: Boolean;
 begin
   Result := FieldKind = fkLookup;
@@ -678,12 +821,25 @@ procedure TField.SetAlignment(const AValue: TAlignMent);
 begin
   if FAlignment <> AValue then
     begin
+<<<<<<< HEAD
     FAlignment := AValue;
+=======
+    FAlignment := Avalue;
+>>>>>>> graemeg/fixes_2_2
     PropertyChanged(false);
     end;
 end;
 
+<<<<<<< HEAD
 procedure TField.SetIndex(const AValue: Longint);
+=======
+procedure TField.SetAsBCD(const AValue: TBCD);
+begin
+  Raise AccessError(SBCD);
+end;
+
+procedure TField.SetIndex(const AValue: Integer);
+>>>>>>> graemeg/fixes_2_2
 begin
   if FFields <> nil then FFields.SetFieldIndex(Self, AValue)
 end;
@@ -735,19 +891,32 @@ begin
   tmpActive := FLookupDataSet.Active;
   try
     FLookupDataSet.Active := True;
+<<<<<<< HEAD
     FFields.CheckFieldNames(FKeyFields);
     FLookupDataSet.Fields.CheckFieldNames(FLookupKeyFields);
     FLookupDataset.FieldByName(FLookupResultField); // I presume that if it doesn't exist it throws exception, and that a field with null value is still valid
+=======
+    FFields.CheckFieldNames(FLookupKeyfields);
+    FLookupDataset.FieldByName(FLookupresultField); // I presume that if it doesn't exist it throws exception, and that a field with null value is still valid
+>>>>>>> graemeg/fixes_2_2
     LookupList.Clear; // have to be F-less because we might be creating it here with getter!
 
     FLookupDataSet.DisableControls;
     try
+<<<<<<< HEAD
       FLookupDataSet.First;
       while not FLookupDataSet.Eof do
       begin
         FLookupList.Add(FLookupDataSet.FieldValues[FLookupKeyfields], FLookupDataSet.FieldValues[FLookupResultField]);
         FLookupDataSet.Next;
       end;
+=======
+      FLookupDataSet.Open;
+      repeat
+        FLookupList.Add(FLookupDataSet.FieldValues[FLookupKeyfields], FLookupDataSet.FieldValues[FLookupResultField]);
+        FLookupDataSet.Next;
+      until FLookupDataSet.EOF;
+>>>>>>> graemeg/fixes_2_2
     finally
       FLookupDataSet.EnableControls;
     end;
@@ -782,6 +951,7 @@ begin
     DataSet := TDataSet(Reader.Parent);
 end;
 
+<<<<<<< HEAD
 procedure TField.SetAsBCD(const AValue: TBCD);
 begin
   Raise AccessError(SBCD);
@@ -792,6 +962,8 @@ begin
   raise AccessError(SBytes);
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 procedure TField.SetAsBoolean(AValue: Boolean);
 
 begin
@@ -810,7 +982,11 @@ begin
   Raise AccessError(SFloat);
 end;
 
+<<<<<<< HEAD
 procedure TField.SetAsVariant(const AValue: variant);
+=======
+procedure TField.SetAsVariant(const AValue: Variant);
+>>>>>>> graemeg/fixes_2_2
 
 begin
   if VarIsNull(AValue) then
@@ -825,6 +1001,7 @@ end;
 
 
 procedure TField.SetAsLongint(AValue: Longint);
+<<<<<<< HEAD
 begin
   SetAsInteger(AValue);
 end;
@@ -835,18 +1012,42 @@ begin
 end;
 
 procedure TField.SetAsLargeInt(AValue: Largeint);
+=======
+
+begin
+  Raise AccessError(SInteger);
+end;
+
+procedure TField.SetAsInteger(AValue: Integer);
+
+begin
+  SetAsLongint(AValue);
+end;
+
+procedure TField.SetAsLargeint(AValue: Largeint);
+>>>>>>> graemeg/fixes_2_2
 begin
   Raise AccessError(SLargeInt);
 end;
 
 procedure TField.SetAsString(const AValue: string);
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/fixes_2_2
 begin
   Raise AccessError(SString);
 end;
 
+<<<<<<< HEAD
 procedure TField.SetAsWideString(const AValue: WideString);
 begin
   SetAsString(AValue);
+=======
+procedure TField.SetAsWideString(const aValue: WideString);
+begin
+  SetAsString(aValue);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -860,6 +1061,7 @@ procedure TField.SetData(Buffer: Pointer; NativeFormat : Boolean);
 
 begin
   If Not Assigned(FDataset) then
+<<<<<<< HEAD
     DatabaseErrorFmt(SNoDataset,[FieldName]);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -892,6 +1094,13 @@ begin
 end;
 
 procedure TField.SetDataset(AValue: TDataset);
+=======
+    EDatabaseError.CreateFmt(SNoDataset,[FieldName]);
+  FDataSet.SetFieldData(Self,Buffer, NativeFormat);
+end;
+
+Procedure TField.SetDataset (AValue : TDataset);
+>>>>>>> graemeg/fixes_2_2
 
 begin
 {$ifdef dsdebug}
@@ -964,7 +1173,11 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 class function TField.IsBlob: Boolean;
+=======
+class function Tfield.IsBlob: Boolean;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   Result:=False;
@@ -1007,9 +1220,15 @@ end;
 
 procedure TField.SetDisplayLabel(const AValue: string);
 begin
+<<<<<<< HEAD
   if FDisplayLabel<>AValue then
     begin
     FDisplayLabel:=AValue;
+=======
+  if FDisplayLabel<>Avalue then
+    begin
+    FDisplayLabel:=Avalue;
+>>>>>>> graemeg/fixes_2_2
     PropertyChanged(true);
     end;
 end;
@@ -1040,7 +1259,11 @@ end;
 
 procedure TField.SetReadOnly(const AValue: Boolean);
 begin
+<<<<<<< HEAD
   if (FReadOnly<>AValue) then
+=======
+  if (FReadOnly<>Avalue) then
+>>>>>>> graemeg/fixes_2_2
     begin
     FReadOnly:=AValue;
     PropertyChanged(True);
@@ -1049,7 +1272,11 @@ end;
 
 procedure TField.SetVisible(const AValue: Boolean);
 begin
+<<<<<<< HEAD
   if FVisible<>AValue then
+=======
+  if FVisible<>Avalue then
+>>>>>>> graemeg/fixes_2_2
     begin
     FVisible:=AValue;
     PropertyChanged(True);
@@ -1072,25 +1299,36 @@ begin
   FSize:=20;
 end;
 
+<<<<<<< HEAD
 procedure TStringField.SetFieldType(AValue: TFieldType);
 begin
   if AValue in [ftString, ftFixedChar] then
     SetDataType(AValue);
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 class procedure TStringField.CheckTypeSize(AValue: Longint);
 
 begin
 // A size of 0 is allowed, since for example Firebird allows
 // a query like: 'select '' as fieldname from table' which
 // results in a string with size 0.
+<<<<<<< HEAD
   If (AValue<0) Then
+=======
+  If (AValue<0) or (AValue>dsMaxStringSize) Then
+>>>>>>> graemeg/fixes_2_2
     databaseErrorFmt(SInvalidFieldSize,[AValue])
 end;
 
 function TStringField.GetAsBoolean: Boolean;
 
+<<<<<<< HEAD
 var S : String;
+=======
+Var S : String;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   S:=GetAsString;
@@ -1109,18 +1347,25 @@ begin
   Result:=StrToFloat(GetAsString);
 end;
 
+<<<<<<< HEAD
 function TStringField.GetAsInteger: Longint;
+=======
+function TStringField.GetAsLongint: Longint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   Result:=StrToInt(GetAsString);
 end;
 
+<<<<<<< HEAD
 function TStringField.GetAsLargeInt: Largeint;
 
 begin
   Result:=StrToInt64(GetAsString);
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 function TStringField.GetAsString: string;
 
 begin
@@ -1130,7 +1375,11 @@ end;
 
 function TStringField.GetAsVariant: Variant;
 
+<<<<<<< HEAD
 var s : string;
+=======
+Var s : string;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If GetValue(s) then
@@ -1144,6 +1393,7 @@ function TStringField.GetDataSize: Integer;
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=Size+1;
 =======
   if DataType=ftFixedChar then
@@ -1151,6 +1401,9 @@ begin
   else
     Result:=Size+1;
 >>>>>>> graemeg/cpstrnew
+=======
+  Result:=Size+1;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TStringField.GetDefaultWidth: Longint;
@@ -1167,6 +1420,7 @@ end;
 
 function TStringField.GetValue(var AValue: string): Boolean;
 
+<<<<<<< HEAD
 var Buf, TBuf : TStringFieldBuffer;
     DynBuf, TDynBuf : Array of char;
 
@@ -1203,6 +1457,22 @@ begin
         AValue:=pchar(DynBuf);
       end
     end;
+=======
+Var Buf, TBuf : TStringFieldBuffer;
+
+begin
+  Result:=GetData(@Buf);
+  If Result then
+    begin
+    if transliterate then
+      begin
+      DataSet.Translate(Buf,TBuf,False);
+      AValue:=TBuf;
+      end
+    else
+      AValue:=Buf
+    end
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TStringField.SetAsBoolean(AValue: Boolean);
@@ -1226,6 +1496,7 @@ begin
   SetAsString(FloatToStr(AValue));
 end;
 
+<<<<<<< HEAD
 procedure TStringField.SetAsInteger(AValue: Longint);
 
 begin
@@ -1236,11 +1507,18 @@ procedure TStringField.SetAsLargeInt(AValue: Largeint);
 
 begin
   SetAsString(IntToStr(AValue));
+=======
+procedure TStringField.SetAsLongint(AValue: Longint);
+
+begin
+  SetAsString(intToStr(AValue));
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TStringField.SetAsString(const AValue: string);
 
 var Buf      : TStringFieldBuffer;
+<<<<<<< HEAD
     DynBuf   : array of char;
 
 begin
@@ -1270,6 +1548,30 @@ begin
       StrPLCopy(PChar(DynBuf), AValue, Size);
     SetData(@DynBuf[0]);
     end
+=======
+
+begin
+  IF Length(AValue)=0 then
+    begin
+    Buf := #0;
+    SetData(@buf);
+    end
+  else if FTransliterate then
+    begin
+    DataSet.Translate(@AValue[1],Buf,True);
+    Buf[DataSize-1] := #0;
+    SetData(@buf);
+    end
+  else
+    begin
+    // The data is copied into the buffer, since some TDataset descendents copy
+    // the whole buffer-length in SetData. (See bug 8477)
+    Buf := AValue;
+    // If length(AValue) > Datasize the buffer isn't terminated properly
+    Buf[DataSize-1] := #0;
+    SetData(@Buf);
+    end;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TStringField.SetVarValue(const AValue: Variant);
@@ -1281,12 +1583,20 @@ end;
     TWideStringField
   ---------------------------------------------------------------------}
 
+<<<<<<< HEAD
 class procedure TWideStringField.CheckTypeSize(AValue: Integer);
+=======
+class procedure TWideStringField.CheckTypeSize(aValue: Integer);
+>>>>>>> graemeg/fixes_2_2
 begin
 // A size of 0 is allowed, since for example Firebird allows
 // a query like: 'select '' as fieldname from table' which
 // results in a string with size 0.
+<<<<<<< HEAD
   If (AValue<0) Then
+=======
+  If (AValue<0) or (AValue>(dsMaxStringSize div 2)) Then
+>>>>>>> graemeg/fixes_2_2
     databaseErrorFmt(SInvalidFieldSize,[AValue]);
 end;
 
@@ -1296,6 +1606,7 @@ begin
   SetDataType(ftWideString);
 end;
 
+<<<<<<< HEAD
 procedure TWideStringField.SetFieldType(AValue: TFieldType);
 begin
 <<<<<<< HEAD
@@ -1320,6 +1631,9 @@ end;
 
 function TWideStringField.GetValue(var aValue: WideString): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function TWideStringField.GetValue(var aValue: WideString): Boolean;
+>>>>>>> graemeg/fixes_2_2
 var
   FixBuffer : array[0..dsMaxStringSize div 2] of WideChar;
   DynBuffer : array of WideChar;
@@ -1327,15 +1641,24 @@ var
 begin
   if DataSize <= dsMaxStringSize then begin
     Result := GetData(@FixBuffer, False);
+<<<<<<< HEAD
     FixBuffer[Size]:=#0;     //limit string to Size
     AValue := FixBuffer;
+=======
+    aValue := FixBuffer;
+>>>>>>> graemeg/fixes_2_2
   end else begin
     SetLength(DynBuffer, Succ(Size));
     Buffer := PWideChar(DynBuffer);
     Result := GetData(Buffer, False);
+<<<<<<< HEAD
     Buffer[Size]:=#0;     //limit string to Size
     if Result then
       AValue := Buffer;
+=======
+    if Result then
+      aValue := Buffer;
+>>>>>>> graemeg/fixes_2_2
   end;
 end;
 
@@ -1344,9 +1667,15 @@ begin
   Result := GetAsWideString;
 end;
 
+<<<<<<< HEAD
 procedure TWideStringField.SetAsString(const AValue: string);
 begin
   SetAsWideString(AValue);
+=======
+procedure TWideStringField.SetAsString(const aValue: string);
+begin
+  SetAsWideString(aValue);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TWideStringField.GetAsVariant: Variant;
@@ -1359,9 +1688,15 @@ begin
     Result := Null;
 end;
 
+<<<<<<< HEAD
 procedure TWideStringField.SetVarValue(const AValue: Variant);
 begin
   SetAsWideString(AValue);
+=======
+procedure TWideStringField.SetVarValue(const aValue: Variant);
+begin
+  SetAsWideString(aValue);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TWideStringField.GetAsWideString: WideString;
@@ -1370,14 +1705,23 @@ begin
     Result := '';
 end;
 
+<<<<<<< HEAD
 procedure TWideStringField.SetAsWideString(const AValue: WideString);
+=======
+procedure TWideStringField.SetAsWideString(const aValue: WideString);
+>>>>>>> graemeg/fixes_2_2
 const
   NullWideChar : WideChar = #0;
 var
   Buffer : PWideChar;
 begin
+<<<<<<< HEAD
   if Length(AValue)>0 then
     Buffer := PWideChar(@AValue[1])
+=======
+  if Length(aValue)>0 then
+    Buffer := PWideChar(@aValue[1])
+>>>>>>> graemeg/fixes_2_2
   else
     Buffer := @NullWideChar;
   SetData(Buffer, False);
@@ -1414,7 +1758,11 @@ end;
 procedure TNumericField.RangeError(AValue, Min, Max: Double);
 
 begin
+<<<<<<< HEAD
   DatabaseErrorFmt(SRangeError,[AValue,Min,Max,FieldName]);
+=======
+  DatabaseErrorFMT(SRangeError,[AValue,Min,Max,FieldName]);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TNumericField.SetDisplayFormat(const AValue: string);
@@ -1430,9 +1778,15 @@ end;
 procedure TNumericField.SetEditFormat(const AValue: string);
 
 begin
+<<<<<<< HEAD
   If FEditFormat<>AValue then
     begin
     FEditFormat:=AValue;
+=======
+  If FEDitFormat<>AValue then
+    begin
+    FEDitFormat:=AVAlue;
+>>>>>>> graemeg/fixes_2_2
     PropertyChanged(True);
     end;
 end;
@@ -1442,11 +1796,14 @@ begin
   Result:=GetAsInteger<>0;
 end;
 
+<<<<<<< HEAD
 procedure TNumericField.SetAsBoolean(AValue: Boolean);
 begin
   SetAsInteger(ord(AValue));
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 { ---------------------------------------------------------------------
     TLongintField
   ---------------------------------------------------------------------}
@@ -1456,7 +1813,11 @@ constructor TLongintField.Create(AOwner: TComponent);
 
 begin
   Inherited Create(AOwner);
+<<<<<<< HEAD
   SetDataType(ftInteger);
+=======
+  SetDatatype(ftinteger);
+>>>>>>> graemeg/fixes_2_2
   FMinRange:=Low(LongInt);
   FMaxRange:=High(LongInt);
   FValidchars:=['+','-','0'..'9'];
@@ -1465,6 +1826,7 @@ end;
 function TLongintField.GetAsFloat: Double;
 
 begin
+<<<<<<< HEAD
   Result:=GetAsInteger;
 end;
 
@@ -1474,6 +1836,12 @@ begin
 end;
 
 function TLongintField.GetAsInteger: Longint;
+=======
+  Result:=GetAsLongint;
+end;
+
+function TLongintField.GetAsLongint: Longint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If Not GetValue(Result) then
@@ -1482,7 +1850,11 @@ end;
 
 function TLongintField.GetAsVariant: Variant;
 
+<<<<<<< HEAD
 var L : Longint;
+=======
+Var L : Longint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If GetValue(L) then
@@ -1493,7 +1865,11 @@ end;
 
 function TLongintField.GetAsString: string;
 
+<<<<<<< HEAD
 var L : Longint;
+=======
+Var L : Longint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If GetValue(L) then
@@ -1528,7 +1904,11 @@ end;
 
 function TLongintField.GetValue(var AValue: Longint): Boolean;
 
+<<<<<<< HEAD
 var L : Longint;
+=======
+Var L : Longint;
+>>>>>>> graemeg/fixes_2_2
     P : PLongint;
 
 begin
@@ -1536,6 +1916,7 @@ begin
   Result:=GetData(P);
   If Result then
     Case Datatype of
+<<<<<<< HEAD
       ftInteger,ftAutoinc  : AValue:=Plongint(P)^;
       ftWord               : AValue:=Pword(P)^;
       ftSmallint           : AValue:=PSmallint(P)^;
@@ -1557,45 +1938,98 @@ begin
 end;
 
 procedure TLongintField.SetAsInteger(AValue: Longint);
+=======
+      ftInteger,ftautoinc  : AValue:=Plongint(P)^;
+      ftword               : Avalue:=Pword(P)^;
+      ftsmallint           : AValue:=PSmallint(P)^;
+    end;
+end;
+
+procedure TLongintField.SetAsFloat(AValue: Double);
+
+begin
+  SetAsLongint(Round(Avalue));
+end;
+
+procedure TLongintField.SetAsLongint(AValue: Longint);
+
+>>>>>>> graemeg/fixes_2_2
 begin
   If CheckRange(AValue) then
     SetData(@AValue)
   else
+<<<<<<< HEAD
     if (FMinValue<>0) or (FMaxValue<>0) then
       RangeError(AValue,FMinValue,FMaxValue)
     else
       RangeError(AValue,FMinRange,FMaxRange);
+=======
+    RangeError(Avalue,FMinrange,FMaxRange);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TLongintField.SetVarValue(const AValue: Variant);
 begin
+<<<<<<< HEAD
   SetAsInteger(AValue);
+=======
+  SetAsLongint(AValue);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TLongintField.SetAsString(const AValue: string);
 
+<<<<<<< HEAD
 var L,Code : longint;
+=======
+Var L,Code : longint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If length(AValue)=0 then
     Clear
   else
     begin
+<<<<<<< HEAD
     Val(AValue,L,Code);
     If Code=0 then
       SetAsInteger(L)
     else
       DatabaseErrorFmt(SNotAnInteger,[AValue]);
+=======
+    Val(AVAlue,L,Code);
+    If Code=0 then
+      SetAsLongint(L)
+    else
+      DatabaseErrorFMT(SNotAnInteger,[Avalue]);
+>>>>>>> graemeg/fixes_2_2
     end;
 end;
 
 Function TLongintField.CheckRange(AValue : longint) : Boolean;
 
 begin
+<<<<<<< HEAD
   if (FMinValue<>0) or (FMaxValue<>0) then
     Result := (AValue>=FMinValue) and (AValue<=FMaxValue)
   else
     Result := (AValue>=FMinRange) and (AValue<=FMaxRange);
+=======
+  result := true;
+  if (FMaxValue=0) then
+    begin
+    if (AValue>FMaxRange) Then result := false;
+    end
+  else
+    if AValue>FMaxValue then result := false;
+
+  if (FMinValue=0) then
+    begin
+    if (AValue<FMinRange) Then result := false;
+    end
+  else
+    if AValue<FMinValue then result := false;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Procedure TLongintField.SetMaxValue (AValue : longint);
@@ -1625,7 +2059,11 @@ constructor TLargeintField.Create(AOwner: TComponent);
 
 begin
   Inherited Create(AOwner);
+<<<<<<< HEAD
   SetDataType(ftLargeint);
+=======
+  SetDatatype(ftLargeint);
+>>>>>>> graemeg/fixes_2_2
   FMinRange:=Low(Largeint);
   FMaxRange:=High(Largeint);
   FValidchars:=['+','-','0'..'9'];
@@ -1634,10 +2072,17 @@ end;
 function TLargeintField.GetAsFloat: Double;
 
 begin
+<<<<<<< HEAD
   Result:=GetAsLargeInt;
 end;
 
 function TLargeintField.GetAsLargeInt: Largeint;
+=======
+  Result:=GetAsLargeint;
+end;
+
+function TLargeintField.GetAsLargeint: Largeint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If Not GetValue(Result) then
@@ -1646,7 +2091,11 @@ end;
 
 function TLargeIntField.GetAsVariant: Variant;
 
+<<<<<<< HEAD
 var L : Largeint;
+=======
+Var L : Largeint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If GetValue(L) then
@@ -1655,15 +2104,26 @@ begin
     Result:=Null;
 end;
 
+<<<<<<< HEAD
 function TLargeintField.GetAsInteger: Longint;
 
 begin
   Result:=GetAsLargeInt;
+=======
+function TLargeintField.GetAsLongint: Longint;
+
+begin
+  Result:=GetAsLargeint;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TLargeintField.GetAsString: string;
 
+<<<<<<< HEAD
 var L : Largeint;
+=======
+Var L : Largeint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If GetValue(L) then
@@ -1680,7 +2140,11 @@ end;
 
 procedure TLargeintField.GetText(var AText: string; ADisplayText: Boolean);
 
+<<<<<<< HEAD
 var l : Largeint;
+=======
+var l : largeint;
+>>>>>>> graemeg/fixes_2_2
     fmt : string;
 
 begin
@@ -1698,7 +2162,14 @@ end;
 
 function TLargeintField.GetValue(var AValue: Largeint): Boolean;
 
+<<<<<<< HEAD
 var P : PLargeint;
+=======
+type
+  PLargeint = ^Largeint;
+
+Var P : PLargeint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   P:=@AValue;
@@ -1708,15 +2179,23 @@ end;
 procedure TLargeintField.SetAsFloat(AValue: Double);
 
 begin
+<<<<<<< HEAD
   SetAsLargeInt(Round(AValue));
 end;
 
 procedure TLargeintField.SetAsLargeInt(AValue: Largeint);
+=======
+  SetAsLargeint(Round(Avalue));
+end;
+
+procedure TLargeintField.SetAsLargeint(AValue: Largeint);
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If CheckRange(AValue) then
     SetData(@AValue)
   else
+<<<<<<< HEAD
     RangeError(AValue,FMinValue,FMaxValue);
 end;
 
@@ -1724,28 +2203,51 @@ procedure TLargeintField.SetAsInteger(AValue: Longint);
 
 begin
   SetAsLargeInt(AValue);
+=======
+    RangeError(Avalue,FMinrange,FMaxRange);
+end;
+
+procedure TLargeintField.SetAsLongint(AValue: Longint);
+
+begin
+  SetAsLargeint(Avalue);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TLargeintField.SetAsString(const AValue: string);
 
+<<<<<<< HEAD
 var L     : Largeint;
     code  : Longint;
+=======
+Var L     : largeint;
+    code  : longint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If length(AValue)=0 then
     Clear
   else
     begin
+<<<<<<< HEAD
     Val(AValue,L,Code);
     If Code=0 then
       SetAsLargeInt(L)
     else
       DatabaseErrorFmt(SNotAnInteger,[AValue]);
+=======
+    Val(AVAlue,L,Code);
+    If Code=0 then
+      SetAsLargeint(L)
+    else
+      DatabaseErrorFMT(SNotAnInteger,[Avalue]);
+>>>>>>> graemeg/fixes_2_2
     end;
 end;
 
 procedure TLargeintField.SetVarValue(const AValue: Variant);
 begin
+<<<<<<< HEAD
   SetAsLargeInt(AValue);
 end;
 
@@ -1759,6 +2261,31 @@ begin
 end;
 
 Procedure TLargeintField.SetMaxValue (AValue : Largeint);
+=======
+  SetAsLargeint(AValue);
+end;
+
+Function TLargeintField.CheckRange(AValue : largeint) : Boolean;
+
+begin
+  result := true;
+  if (FMaxValue=0) then
+    begin
+    if (AValue>FMaxRange) Then result := false;
+    end
+  else
+    if AValue>FMaxValue then result := false;
+
+  if (FMinValue=0) then
+    begin
+    if (AValue<FMinRange) Then result := false;
+    end
+  else
+    if AValue<FMinValue then result := false;
+end;
+
+Procedure TLargeintField.SetMaxValue (AValue : largeint);
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If (AValue>=FMinRange) and (AValue<=FMaxRange) then
@@ -1767,7 +2294,11 @@ begin
     RangeError(AValue,FMinRange,FMaxRange);
 end;
 
+<<<<<<< HEAD
 Procedure TLargeintField.SetMinValue (AValue : Largeint);
+=======
+Procedure TLargeintField.SetMinValue (AValue : largeint);
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If (AValue>=FMinRange) and (AValue<=FMaxRange) then
@@ -1820,6 +2351,7 @@ begin
   Inherited Create(AOWner);
   SetDataType(ftAutoInc);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   FReadOnly:=True;
   FProviderFlags:=FProviderFlags-[pfInUpdate];
@@ -1844,6 +2376,15 @@ begin
   //if not(FDataSet.State in [dsFilter,dsSetKey,dsInsert]) then
   //  DataBaseError(SCantSetAutoIncFields);
   inherited;
+=======
+  FReadOnly:=True;
+end;
+
+Procedure TAutoIncField.SetAsLongint(AValue : Longint);
+
+begin
+  DataBaseError(SCantSetAutoIncfields);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 { TFloatField }
@@ -1854,6 +2395,7 @@ begin
   FCurrency:=AValue;
 end;
 
+<<<<<<< HEAD
 procedure TFloatField.SetPrecision(const AValue: Longint);
 begin
   if (AValue = -1) or (AValue > 1) then
@@ -1871,6 +2413,8 @@ begin
     Result := NullBCD;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 function TFloatField.GetAsFloat: Double;
 
 begin
@@ -1880,7 +2424,11 @@ end;
 
 function TFloatField.GetAsVariant: Variant;
 
+<<<<<<< HEAD
 var f : Double;
+=======
+Var f : Double;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If GetData(@f) then
@@ -1889,12 +2437,16 @@ begin
     Result:=Null;
 end;
 
+<<<<<<< HEAD
 function TFloatField.GetAsLargeInt: LargeInt;
 begin
   Result:=Round(GetAsFloat);
 end;
 
 function TFloatField.GetAsInteger: Longint;
+=======
+function TFloatField.GetAsLongint: Longint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   Result:=Round(GetAsFloat);
@@ -1902,11 +2454,19 @@ end;
 
 function TFloatField.GetAsString: string;
 
+<<<<<<< HEAD
 var f : Double;
 
 begin
   If GetData(@f) then
     Result:=FloatToStr(f)
+=======
+Var R : Double;
+
+begin
+  If GetData(@R) then
+    Result:=FloatToStr(R)
+>>>>>>> graemeg/fixes_2_2
   else
     Result:='';
 end;
@@ -1952,20 +2512,28 @@ begin
     TheText:=FloatToStrF(E,ff,FPrecision,Digits);
 end;
 
+<<<<<<< HEAD
 procedure TFloatField.SetAsBCD(const AValue: TBCD);
 begin
   SetAsFloat(BCDToDouble(AValue));
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 procedure TFloatField.SetAsFloat(AValue: Double);
 
 begin
   If CheckRange(AValue) then
+<<<<<<< HEAD
     SetData(@AValue)
+=======
+    SetData(@Avalue)
+>>>>>>> graemeg/fixes_2_2
   else
     RangeError(AValue,FMinValue,FMaxValue);
 end;
 
+<<<<<<< HEAD
 procedure TFloatField.SetAsLargeInt(AValue: LargeInt);
 begin
   SetAsFloat(AValue);
@@ -1975,19 +2543,34 @@ procedure TFloatField.SetAsInteger(AValue: Longint);
 
 begin
   SetAsFloat(AValue);
+=======
+procedure TFloatField.SetAsLongint(AValue: Longint);
+
+begin
+  SetAsFloat(Avalue);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TFloatField.SetAsString(const AValue: string);
 
+<<<<<<< HEAD
 var f : Double;
+=======
+Var R : Double;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If (AValue='') then
     Clear
   else  
     try
+<<<<<<< HEAD
       f := StrToFloat(AValue);
       SetAsFloat(f);
+=======
+      R := StrToFloat(AValue);
+      SetAsFloat(R);
+>>>>>>> graemeg/fixes_2_2
     except
       DatabaseErrorFmt(SNotAFloat, [AValue]);
     end;
@@ -1995,14 +2578,22 @@ end;
 
 procedure TFloatField.SetVarValue(const AValue: Variant);
 begin
+<<<<<<< HEAD
   SetAsFloat(AValue);
+=======
+  SetAsFloat(Avalue);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 constructor TFloatField.Create(AOwner: TComponent);
 
 begin
   Inherited Create(AOwner);
+<<<<<<< HEAD
   SetDataType(ftFloat);
+=======
+  SetDatatype(ftfloat);
+>>>>>>> graemeg/fixes_2_2
   FPrecision:=15;
   FValidChars := [DecimalSeparator, '+', '-', '0'..'9', 'E', 'e'];
 end;
@@ -2010,8 +2601,13 @@ end;
 Function TFloatField.CheckRange(AValue : Double) : Boolean;
 
 begin
+<<<<<<< HEAD
   If (FMinValue<>0) or (FMaxValue<>0) then
     Result:=(AValue>=FMinValue) and (AValue<=FMaxValue)
+=======
+  If (FMinValue<>0) or (FmaxValue<>0) then
+    Result:=(AValue>=FMinValue) and (AVAlue<=FMAxValue)
+>>>>>>> graemeg/fixes_2_2
   else
     Result:=True;
 end;
@@ -2034,14 +2630,22 @@ var b : wordbool;
 
 begin
   If GetData(@b) then
+<<<<<<< HEAD
     Result := b
+=======
+    result := b
+>>>>>>> graemeg/fixes_2_2
   else
     Result:=False;
 end;
 
 function TBooleanField.GetAsVariant: Variant;
 
+<<<<<<< HEAD
 var b : wordbool;
+=======
+Var b : wordbool;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If GetData(@b) then
@@ -2052,10 +2656,17 @@ end;
 
 function TBooleanField.GetAsString: string;
 
+<<<<<<< HEAD
 var B : wordbool;
 
 begin
   If GetData(@B) then
+=======
+Var B : wordbool;
+
+begin
+  If Getdata(@B) then
+>>>>>>> graemeg/fixes_2_2
     Result:=FDisplays[False,B]
   else
     result:='';
@@ -2075,6 +2686,7 @@ begin
     Result:=Length(FDisplays[false,True]);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2117,6 +2729,8 @@ begin
 >>>>>>> origin/cpstrnew
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 procedure TBooleanField.SetAsBoolean(AValue: Boolean);
 
 var b : wordbool;
@@ -2128,7 +2742,11 @@ end;
 
 procedure TBooleanField.SetAsString(const AValue: string);
 
+<<<<<<< HEAD
 var Temp : string;
+=======
+Var Temp : string;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   Temp:=UpperCase(AValue);
@@ -2155,9 +2773,15 @@ begin
   DisplayValues:='True;False';
 end;
 
+<<<<<<< HEAD
 Procedure TBooleanField.SetDisplayValues(const AValue : String);
 
 var I : longint;
+=======
+Procedure TBooleanField.SetDisplayValues(AValue : String);
+
+Var I : longint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If FDisplayValues<>AValue then
@@ -2199,10 +2823,17 @@ end;
 
 function TDateTimeField.GetAsVariant: Variant;
 
+<<<<<<< HEAD
 var d : tDateTime;
 
 begin
   If GetData(@d,False) then
+=======
+Var d : tDateTime;
+
+begin
+  If Getdata(@d,False) then
+>>>>>>> graemeg/fixes_2_2
     Result := d
   else
     Result:=Null;
@@ -2231,11 +2862,19 @@ end;
 
 procedure TDateTimeField.GetText(var TheText: string; ADisplayText: Boolean);
 
+<<<<<<< HEAD
 var R : TDateTime;
     F : String;
 
 begin
   If Not GetData(@R,False) then
+=======
+Var R : TDateTime;
+    F : String;
+
+begin
+  If Not Getdata(@R,False) then
+>>>>>>> graemeg/fixes_2_2
     TheText:=''
   else
     begin
@@ -2243,7 +2882,11 @@ begin
       F:=FDisplayFormat
     else
       Case DataType of
+<<<<<<< HEAD
        ftTime : F:=LongTimeFormat;
+=======
+       ftTime : F:=ShortTimeFormat;
+>>>>>>> graemeg/fixes_2_2
        ftDate : F:=ShortDateFormat;
       else
        F:='c'
@@ -2256,7 +2899,11 @@ end;
 procedure TDateTimeField.SetAsDateTime(AValue: TDateTime);
 
 begin
+<<<<<<< HEAD
   SetData(@AValue,False);
+=======
+  SetData(@Avalue,False);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -2269,6 +2916,7 @@ end;
 
 procedure TDateTimeField.SetAsString(const AValue: string);
 
+<<<<<<< HEAD
 var R : TDateTime;
 
 begin
@@ -2279,6 +2927,13 @@ begin
     end
   else
     SetData(Nil);
+=======
+Var R : TDateTime;
+
+begin
+  R:=StrToDateTime(AVAlue);
+  SetData(@R,False);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -2310,6 +2965,7 @@ begin
 end;
 
 procedure TTimeField.SetAsString(const AValue: string);
+<<<<<<< HEAD
 var R : TDateTime;
 begin
   if AValue='' then
@@ -2319,6 +2975,12 @@ begin
     R:=StrToTime(AValue);
     SetData(@R,False);
     end;
+=======
+Var R : TDateTime;
+begin
+  R:=StrToTime(AVAlue);
+  SetData(@R);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -2331,6 +2993,7 @@ begin
   // Just check for really invalid stuff; actual size is
   // dependent on the record...
   If AValue<1 then
+<<<<<<< HEAD
     DatabaseErrorFmt(SInvalidFieldSize,[AValue]);
 end;
 
@@ -2338,10 +3001,14 @@ function TBinaryField.GetAsBytes: TBytes;
 begin
   if not GetValue(Result) then
     SetLength(Result, 0);
+=======
+    DatabaseErrorfmt(SInvalidFieldSize,[Avalue]);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
 function TBinaryField.GetAsString: string;
+<<<<<<< HEAD
 var B: TBytes;
 begin
   if not GetValue(B) then
@@ -2367,6 +3034,12 @@ begin
       VarArrayUnlock(Result);
     end;
   end;
+=======
+
+begin
+  Setlength(Result,DataSize);
+  GetData(Pointer(Result));
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -2377,6 +3050,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 function TBinaryField.GetValue(var AValue: TBytes): Boolean;
 var B: TBytes;
 begin
@@ -2434,12 +3108,33 @@ begin
     Move(AValue[1], B[0], Length(B));
     SetAsBytes(B);
   end;
+=======
+procedure TBinaryField.SetAsString(const AValue: string);
+
+Var Buf : PChar;
+    Allocated : Boolean;
+
+begin
+  Allocated:=False;
+  If Length(AVAlue)=DataSize then
+    Buf:=PChar(Avalue)
+  else
+    begin
+    GetMem(Buf,DataSize);
+    Move(Pchar(Avalue)[0],Buf^,DataSize);
+    Allocated:=True;
+    end;
+  SetData(Buf);
+  If Allocated then
+    FreeMem(Buf,DataSize);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
 procedure TBinaryField.SetText(const AValue: string);
 
 begin
+<<<<<<< HEAD
   SetAsString(AValue);
 end;
 
@@ -2462,6 +3157,14 @@ begin
   end
   else
     SetAsString(AValue);
+=======
+  SetAsString(Avalue);
+end;
+
+procedure TBinaryField.SetVarValue(const AValue: Variant);
+begin
+  SetAsString(Avalue);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -2505,7 +3208,11 @@ constructor TVarBytesField.Create(AOwner: TComponent);
 
 begin
   INherited Create(AOwner);
+<<<<<<< HEAD
   SetDataType(ftVarBytes);
+=======
+  SetDataType(ftvarbytes);
+>>>>>>> graemeg/fixes_2_2
   Size:=16;
 end;
 
@@ -2515,6 +3222,7 @@ class procedure TBCDField.CheckTypeSize(AValue: Longint);
 
 begin
   If not (AValue in [0..4]) then
+<<<<<<< HEAD
     DatabaseErrorFmt(SInvalidFieldSize,[AValue]);
 end;
 
@@ -2527,6 +3235,9 @@ begin
     Result:=CurrToBCD(c)
   else
     Result:=NullBCD;
+=======
+    DatabaseErrorfmt(SInvalidFieldSize,[Avalue]);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TBCDField.GetAsCurrency: Currency;
@@ -2538,7 +3249,11 @@ end;
 
 function TBCDField.GetAsVariant: Variant;
 
+<<<<<<< HEAD
 var c : system.Currency;
+=======
+Var c : system.Currency;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If GetData(@c) then
@@ -2554,7 +3269,11 @@ begin
 end;
 
 
+<<<<<<< HEAD
 function TBCDField.GetAsInteger: Longint;
+=======
+function TBCDField.GetAsLongint: Longint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   result := round(GetAsCurrency);
@@ -2587,8 +3306,13 @@ end;
 function TBCDField.GetDefaultWidth: Longint;
 
 begin
+<<<<<<< HEAD
   if Precision > 0 then Result := Precision+1
   else Result := 10;
+=======
+  if precision > 0 then result := precision
+    else result := 10;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TBCDField.GetText(var TheText: string; ADisplayText: Boolean);
@@ -2614,6 +3338,7 @@ begin
     TheText := '';
 end;
 
+<<<<<<< HEAD
 procedure TBCDField.SetAsBCD(const AValue: TBCD);
 var
   c:system.currency;
@@ -2622,13 +3347,21 @@ begin
     SetAsCurrency(c);
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 procedure TBCDField.SetAsCurrency(AValue: Currency);
 
 begin
   If CheckRange(AValue) then
+<<<<<<< HEAD
     SetData(@AValue)
   else
     RangeError(AValue,FMinValue,FMaxValue);
+=======
+    setdata(@AValue)
+  else
+    RangeError(AValue,FMinValue,FMaxvalue);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TBCDField.SetVarValue(const AValue: Variant);
@@ -2639,8 +3372,13 @@ end;
 Function TBCDField.CheckRange(AValue : Currency) : Boolean;
 
 begin
+<<<<<<< HEAD
   If (FMinValue<>0) or (FMaxValue<>0) then
     Result:=(AValue>=FMinValue) and (AValue<=FMaxValue)
+=======
+  If (FMinValue<>0) or (FmaxValue<>0) then
+    Result:=(AValue>=FMinValue) and (AVAlue<=FMaxValue)
+>>>>>>> graemeg/fixes_2_2
   else
     Result:=True;
 end;
@@ -2652,7 +3390,11 @@ begin
 end;
 
 
+<<<<<<< HEAD
 procedure TBCDField.SetAsInteger(AValue: Longint);
+=======
+procedure TBCDField.SetAsLongint(AValue: Longint);
+>>>>>>> graemeg/fixes_2_2
 
 begin
   SetAsCurrency(AValue);
@@ -2662,16 +3404,21 @@ end;
 procedure TBCDField.SetAsString(const AValue: string);
 
 begin
+<<<<<<< HEAD
   if AValue='' then
     Clear    // set to NULL
   else
     SetAsCurrency(strtocurr(AValue));
+=======
+  SetAsCurrency(strtocurr(AValue));
+>>>>>>> graemeg/fixes_2_2
 end;
 
 constructor TBCDField.Create(AOwner: TComponent);
 
 begin
   Inherited Create(AOwner);
+<<<<<<< HEAD
 <<<<<<< HEAD
   FMaxValue := 0;
   FMinValue := 0;
@@ -3646,6 +4393,61 @@ begin
       try
         Len := Size;
         SetLength(Result, (Len+1) div 2);
+=======
+  FMaxvalue := 0;
+  FMinvalue := 0;
+  SetDataType(ftBCD);
+  FPrecision := 15;
+  Size:=4;
+end;
+
+
+{ TBlobField }
+
+Function TBlobField.GetBlobStream(Mode : TBlobStreamMode) : TStream;
+
+begin
+  Result:=FDataset.CreateBlobStream(Self,Mode);
+end;
+
+procedure TBlobField.FreeBuffers;
+
+begin
+end;
+
+
+function TBlobField.GetAsString: string;
+var
+  Stream : TStream;
+  Len    : Integer;
+begin
+  Stream := GetBlobStream(bmRead);
+  if Stream <> nil then
+    With Stream do
+      try
+        Len := Size;
+        SetLength(Result, Len);
+        if Len > 0 then
+          ReadBuffer(Result[1], Len);
+      finally
+        Free
+      end
+  else
+    Result := '';
+end;
+
+function TBlobField.GetAsWideString: WideString;
+var
+  Stream : TStream;
+  Len    : Integer;
+begin
+  Stream := GetBlobStream(bmRead);
+  if Stream <> nil then
+    With Stream do
+      try
+        Len := Size;
+        SetLength(Result,Len div 2);
+>>>>>>> graemeg/fixes_2_2
         if Len > 0 then
           ReadBuffer(Result[1] ,Len);
       finally
@@ -3656,15 +4458,25 @@ begin
 end;
 
 function TBlobField.GetAsVariant: Variant;
+<<<<<<< HEAD
 var s : string;
+=======
+
+Var s : string;
+
+>>>>>>> graemeg/fixes_2_2
 begin
   if not GetIsNull then
     begin
     s := GetAsString;
     result := s;
     end
+<<<<<<< HEAD
   else
     result := Null;
+=======
+  else result := Null;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -3672,22 +4484,33 @@ function TBlobField.GetBlobSize: Longint;
 var
   Stream: TStream;
 begin
+<<<<<<< HEAD
   Stream := GetBlobStream(bmRead);
   if Stream <> nil then
     with Stream do
+=======
+  Stream := GetBlobStream(bmread);
+  if Stream <> nil then
+    With Stream do
+>>>>>>> graemeg/fixes_2_2
       try
         Result:=Size;
       finally
         Free;
       end
   else
+<<<<<<< HEAD
     Result := 0;
+=======
+    result := 0;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
 function TBlobField.GetIsNull: Boolean;
 
 begin
+<<<<<<< HEAD
   if Not Modified then
     Result:= inherited GetIsNull
   else
@@ -3695,6 +4518,15 @@ begin
       try
         Result:=(Size=0);
       finally
+=======
+  If Not Modified then
+    result:= inherited GetIsnull
+  else
+    With GetBlobStream(bmread) do
+      try
+        Result:=(Size=0);
+      Finally
+>>>>>>> graemeg/fixes_2_2
         Free;
       end;
 end;
@@ -3706,6 +4538,7 @@ begin
   TheText:=inherited GetAsString;
 end;
 
+<<<<<<< HEAD
 procedure TBlobField.SetAsBytes(const AValue: TBytes);
 var
   Len : Integer;
@@ -3720,10 +4553,13 @@ begin
     end;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 procedure TBlobField.SetAsString(const AValue: string);
 var
   Len : Integer;
+<<<<<<< HEAD
   S : String;
   
 begin
@@ -3741,20 +4577,40 @@ begin
           end;  
         WriteBuffer(S[1], Len);
         end;
+=======
+begin
+  With GetBlobStream(bmwrite) do
+    try
+      Len := Length(Avalue);
+      if Len > 0 then
+        WriteBuffer(aValue[1], Len);
+>>>>>>> graemeg/fixes_2_2
     finally
       Free;
     end;
 end;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/fixes_2_2
 procedure TBlobField.SetAsWideString(const AValue: WideString);
 var
   Len : Integer;
 begin
+<<<<<<< HEAD
   with GetBlobStream(bmWrite) do
     try
       Len := Length(AValue) * 2;
       if Len > 0 then
         WriteBuffer(AValue[1], Len);
+=======
+  With GetBlobStream(bmwrite) do
+    try
+      Len := Length(Avalue) * 2;
+      if Len > 0 then
+        WriteBuffer(aValue[1], Len);
+>>>>>>> graemeg/fixes_2_2
     finally
       Free;
     end;
@@ -3784,7 +4640,11 @@ end;
 procedure TBlobField.Clear;
 
 begin
+<<<<<<< HEAD
   GetBlobStream(bmWrite).Free;
+=======
+  GetBlobStream(bmWrite).free;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -3796,9 +4656,17 @@ end;
 
 
 procedure TBlobField.LoadFromFile(const FileName: string);
+<<<<<<< HEAD
 var S : TFileStream;
 begin
   S:=TFileStream.Create(FileName,fmOpenRead or fmShareDenyWrite);
+=======
+
+Var S : TFileStream;
+
+begin
+  S:=TFileStream.Create(FileName,fmOpenRead);
+>>>>>>> graemeg/fixes_2_2
   try
     LoadFromStream(S);
   finally
@@ -3810,8 +4678,13 @@ end;
 procedure TBlobField.LoadFromStream(Stream: TStream);
 
 begin
+<<<<<<< HEAD
   with GetBlobStream(bmWrite) do
     try
+=======
+  With GetBlobStream(bmWrite) do
+    Try
+>>>>>>> graemeg/fixes_2_2
       CopyFrom(Stream,0);
     finally
       Free;
@@ -3820,7 +4693,13 @@ end;
 
 
 procedure TBlobField.SaveToFile(const FileName: string);
+<<<<<<< HEAD
 var S : TFileStream;
+=======
+
+Var S : TFileStream;
+
+>>>>>>> graemeg/fixes_2_2
 begin
   S:=TFileStream.Create(FileName,fmCreate);
   try
@@ -3832,21 +4711,38 @@ end;
 
 
 procedure TBlobField.SaveToStream(Stream: TStream);
+<<<<<<< HEAD
 var S : TStream;
 begin
   S:=GetBlobStream(bmRead);
   Try
     If Assigned(S) then
       Stream.CopyFrom(S,0);
+=======
+
+Var S : TStream;
+
+begin
+  S:=GetBlobStream(bmRead);
+  Try
+    Stream.CopyFrom(S,0);
+>>>>>>> graemeg/fixes_2_2
   finally
     S.Free;
   end;
 end;
 
 procedure TBlobField.SetFieldType(AValue: TFieldType);
+<<<<<<< HEAD
 begin
   if AValue in ftBlobTypes then
     SetDataType(AValue);
+=======
+
+begin
+  If AValue in [Low(TBlobType)..High(TBlobType)] then
+    SetDatatype(Avalue);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 { TMemoField }
@@ -3863,9 +4759,15 @@ begin
   Result := GetAsString;
 end;
 
+<<<<<<< HEAD
 procedure TMemoField.SetAsWideString(const AValue: WideString);
 begin
   SetAsString(AValue);
+=======
+procedure TMemoField.SetAsWideString(const aValue: WideString);
+begin
+  SetAsString(aValue);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 { TWideMemoField }
@@ -3881,6 +4783,7 @@ begin
   Result := GetAsWideString;
 end;
 
+<<<<<<< HEAD
 procedure TWideMemoField.SetAsString(const AValue: string);
 begin
   SetAsWideString(AValue);
@@ -3888,6 +4791,17 @@ end;
 
 function TWideMemoField.GetAsVariant: Variant;
 var s : string;
+=======
+procedure TWideMemoField.SetAsString(const aValue: string);
+begin
+  SetAsWideString(aValue);
+end;
+
+function TWideMemoField.GetAsVariant: Variant;
+
+Var s : string;
+
+>>>>>>> graemeg/fixes_2_2
 begin
   if not GetIsNull then
     begin
@@ -3922,7 +4836,11 @@ end;
 
 class procedure TGuidField.CheckTypeSize(AValue: LongInt);
 begin
+<<<<<<< HEAD
   if AValue <> 38 then
+=======
+  if aValue <> 38 then
+>>>>>>> graemeg/fixes_2_2
     DatabaseErrorFmt(SInvalidFieldSize,[AValue]);
 end;
 
@@ -3944,9 +4862,15 @@ begin
   Result := 38;
 end;
 
+<<<<<<< HEAD
 procedure TGuidField.SetAsGuid(const AValue: TGUID);
 begin
   SetAsString(GuidToString(AValue));
+=======
+procedure TGuidField.SetAsGuid(const aValue: TGUID);
+begin
+  SetAsString(GuidToString(aValue));
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TVariantField.GetDefaultWidth: Integer;
@@ -4018,7 +4942,11 @@ begin
   SetVarValue(aValue);
 end;
 
+<<<<<<< HEAD
 procedure TVariantField.SetAsInteger(AValue: Longint);
+=======
+procedure TVariantField.SetAsInteger(aValue: Longint);
+>>>>>>> graemeg/fixes_2_2
 begin
   SetVarValue(aValue);
 end;
@@ -4038,6 +4966,7 @@ begin
   SetData(@aValue);
 end;
 
+<<<<<<< HEAD
 { TFieldsEnumerator }
 
 function TFieldsEnumerator.GetCurrent: TField;
@@ -4088,6 +5017,28 @@ begin
 end;
 
 procedure TFields.Changed;
+=======
+
+{ TFields }
+
+Constructor TFields.Create(ADataset : TDataset);
+
+begin
+  FDataSet:=ADataset;
+  FFieldList:=TList.Create;
+  FValidFieldKinds:=[fkData..fkInternalcalc];
+end;
+
+Destructor TFields.Destroy;
+
+begin
+  if FFieldList <> nil then Clear;
+  FFieldList.Free;
+  inherited Destroy;
+end;
+
+Procedure Tfields.Changed;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   if (FDataSet <> nil) and not (csDestroying in FDataSet.ComponentState) and FDataset.Active then
@@ -4096,33 +5047,56 @@ begin
     FOnChange(Self);
 end;
 
+<<<<<<< HEAD
 procedure TFields.CheckfieldKind(Fieldkind: TFieldKind; Field: TField);
+=======
+Procedure TFields.CheckfieldKind(Fieldkind : TFieldKind; Field : TField);
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If Not (FieldKind in ValidFieldKinds) Then
     DatabaseErrorFmt(SInvalidFieldKind,[Field.FieldName]);
 end;
 
+<<<<<<< HEAD
 function TFields.GetCount: Longint;
+=======
+Function Tfields.GetCount : Longint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   Result:=FFieldList.Count;
 end;
 
 
+<<<<<<< HEAD
 function TFields.GetField(Index: Integer): TField;
+=======
+Function TFields.GetField (Index : longint) : TField;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   Result:=Tfield(FFieldList[Index]);
 end;
 
+<<<<<<< HEAD
 procedure TFields.SetField(Index: Integer; Value: TField);
+=======
+procedure Tfields.SetField(Index: Integer; Value: TField);
+>>>>>>> graemeg/fixes_2_2
 begin
   Fields[Index].Assign(Value);
 end;
 
+<<<<<<< HEAD
 procedure TFields.SetFieldIndex(Field: TField; Value: Integer);
 var Old : Longint;
+=======
+Procedure TFields.SetFieldIndex (Field : TField;Value : Integer);
+
+Var Old : Longint;
+
+>>>>>>> graemeg/fixes_2_2
 begin
   Old := FFieldList.indexOf(Field);
   If Old=-1 then
@@ -4139,7 +5113,11 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 procedure TFields.Add(Field: TField);
+=======
+Procedure TFields.Add(Field : TField);
+>>>>>>> graemeg/fixes_2_2
 
 begin
   CheckFieldName(Field.FieldName);
@@ -4148,13 +5126,18 @@ begin
   Changed;
 end;
 
+<<<<<<< HEAD
 procedure TFields.CheckFieldName(const Value: String);
+=======
+Procedure TFields.CheckFieldName (Const Value : String);
+>>>>>>> graemeg/fixes_2_2
 
 begin
   If FindField(Value)<>Nil then
     DataBaseErrorFmt(SDuplicateFieldName,[Value],FDataset);
 end;
 
+<<<<<<< HEAD
 procedure TFields.CheckFieldNames(const Value: String);
 
 var
@@ -4182,10 +5165,38 @@ begin
     AField.FDataSet := Nil;
     AField.Free;
     FFieldList.Delete(FFieldList.Count - 1);
+=======
+Procedure TFields.CheckFieldNames (Const Value : String);
+
+
+Var I : longint;
+    S,T : String;
+begin
+  T:=Value;
+  Repeat
+    I:=Pos(';',T);
+    If I=0 Then I:=Length(T)+1;
+    S:=Copy(T,1,I-1);
+    Delete(T,1,I);
+    // Will raise an error if no such field...
+    FieldByName(S);
+  Until (T='');
+end;
+
+Procedure TFields.Clear;
+
+begin
+  with FFieldList do
+    while Count > 0 do begin
+      TField(Last).FDataSet := Nil;
+      TField(Last).Free;
+      FFieldList.Delete(Count - 1);
+>>>>>>> graemeg/fixes_2_2
     end;
   Changed;
 end;
 
+<<<<<<< HEAD
 function TFields.FindField(const Value: String): TField;
 var S : String;
     I : longint;
@@ -4206,6 +5217,28 @@ begin
 end;
 
 function TFields.FieldByName(const Value: String): TField;
+=======
+Function TFields.FindField (Const Value : String) : TField;
+
+Var S : String;
+    I : longint;
+
+begin
+  Result:=Nil;
+  S:=UpperCase(Value);
+  For I:=0 To FFieldList.Count-1 do
+    If S=UpperCase(TField(FFieldList[i]).FieldName) Then
+      Begin
+      {$ifdef dsdebug}
+      Writeln ('Found field ',Value);
+      {$endif}
+      Result:=TField(FFieldList[I]);
+      Exit;
+      end;
+end;
+
+Function TFields.FieldByName (Const Value : String) : TField;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   Result:=FindField(Value);
@@ -4213,6 +5246,7 @@ begin
     DatabaseErrorFmt(SFieldNotFound,[Value],FDataset);
 end;
 
+<<<<<<< HEAD
 function TFields.FieldByNumber(FieldNo: Integer): TField;
 var i : Longint;
 begin
@@ -4261,13 +5295,37 @@ end;
 
 procedure TFields.GetFieldNames(Values: TStrings);
 var i : longint;
+=======
+Function TFields.FieldByNumber(FieldNo : Integer) : TField;
+
+Var i : Longint;
+
+begin
+  Result:=Nil;
+  For I:=0 to FFieldList.Count-1 do
+    If FieldNo=TField(FFieldList[I]).FieldNo then
+      begin
+      Result:=TField(FFieldList[i]);
+      Exit;
+      end;
+end;
+
+Procedure TFields.GetFieldNames (Values : TStrings);
+
+Var i : longint;
+
+>>>>>>> graemeg/fixes_2_2
 begin
   Values.Clear;
   For I:=0 to FFieldList.Count-1 do
     Values.Add(Tfield(FFieldList[I]).FieldName);
 end;
 
+<<<<<<< HEAD
 function TFields.IndexOf(Field: TField): Longint;
+=======
+Function TFields.IndexOf(Field : TField) : Longint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   Result:=FFieldList.IndexOf(Field);

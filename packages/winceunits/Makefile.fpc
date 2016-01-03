@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for WinCE Units
+>>>>>>> graemeg/fixes_2_2
 #
 
 [package]
 name=winceunits
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -36,11 +41,27 @@ rsts=comconst
 >>>>>>> graemeg/cpstrnew
 
 [install]
+=======
+version=2.2.5
+
+[target]
+units_wince=buildwinceunits
+implicitunits_wince=aygshell commctrl commdlg iphlpapi notify oleauto power shellapi simmgr tapi \
+                    gpsapi todaycmn windbase cesync gx winioctl msgqueue pm service htmlctrl \
+                    sipapi cpl bt_api bt_sdp bthapi bthutil ril sms ws2bth keybd nled \
+                    phone connmgr devload devmgmt mmreg mmsystem msacm wininet ras raserror \
+                    sip projects wap
+units_win32=rapi cesync
+
+[install]
+buildunit=buildwinceunits
+>>>>>>> graemeg/fixes_2_2
 fpcpackage=y
 
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -126,3 +147,11 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[compiler]
+options=-Ur
+sourcedir=src
+
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/fixes_2_2

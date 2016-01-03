@@ -640,7 +640,11 @@ var
         case c of
           #0..#31:
             converted:=convert_lowascii_to_UTF8[c];
+<<<<<<< HEAD
           #127..#255:
+=======
+          #128..#255:
+>>>>>>> graemeg/fixes_2_2
             converted:=convert_cp437_to_UTF8[c];
           else
           begin
@@ -1011,6 +1015,9 @@ begin
          437 in the hope that the actual font has similarity to codepage 437.}
         internal_codepage:=cp437;
   end;
+  {$ifdef BEOS}
+  convert := cv_cp437_to_UTF8;  
+  {$endif}
 end;
 
 

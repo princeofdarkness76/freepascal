@@ -13,6 +13,7 @@ begin
 {$endif ALLPACKAGES}
 
     P:=AddPackage('fcl-json');
+<<<<<<< HEAD
     P.ShortName:='fclj';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -27,26 +28,42 @@ begin
     P.Description := 'Json interfacing, part of Free Component Libraries (FCL), FPC''s OOP library.';
     P.NeedLibC:= false;
     P.OSes:=AllOSes-[embedded,msdos,win16];
+=======
+{$ifdef ALLPACKAGES}
+    P.Directory:='fcl-json';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+
+    P.Dependencies.Add('fcl-base');
+>>>>>>> graemeg/fixes_2_2
 
     P.SourcePath.Add('src');
 
     T:=P.Targets.AddUnit('fpjson.pp');
+<<<<<<< HEAD
       T.ResourceStrings:=true;
     T:=P.Targets.AddUnit('jsonconf.pp');
       T.ResourceStrings:=true;
+=======
+    T:=P.Targets.AddUnit('jsonconf.pp');
+>>>>>>> graemeg/fixes_2_2
       with T.Dependencies do
         begin
           AddUnit('fpjson');
           AddUnit('jsonparser');
         end;
     T:=P.Targets.AddUnit('jsonparser.pp');
+<<<<<<< HEAD
       T.ResourceStrings:=true;
+=======
+>>>>>>> graemeg/fixes_2_2
       with T.Dependencies do
         begin
           AddUnit('fpjson');
           AddUnit('jsonscanner');
         end;
     T:=P.Targets.AddUnit('jsonscanner.pp');
+<<<<<<< HEAD
       T.ResourceStrings:=true;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -77,12 +94,17 @@ begin
     // simpledemo.lpi
     // confdemo.lpi
     // parsedemo.lpi
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;
     end;
 end.
 {$endif ALLPACKAGES}
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> graemeg/fixes_2_2

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 { %OPT=-Oonoconstprop }
+=======
+>>>>>>> graemeg/fixes_2_2
 { %result=215 }
 
 {$q+}

@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -22,11 +23,20 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 2001-2008 by Apple Computer, Inc., all rights reserved.
+=======
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 2001-2005 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
+=======
+                     http://www.freepascal.org/bugs.html
+>>>>>>> graemeg/fixes_2_2
  
 }
 {     File:       HIToolbar.p(.pas)																		}
@@ -64,6 +74,7 @@
 {This file was processed by Dan's Source Converter}
 {version 1.3 (this version modified by Ingemar Ragnemalm)}
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {       Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
 <<<<<<< HEAD
@@ -86,6 +97,14 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -94,8 +113,13 @@
 
 unit HIToolbar;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -108,21 +132,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -157,6 +189,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -164,6 +198,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -413,6 +448,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -438,6 +483,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -447,17 +496,25 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,CFArray,CFBase,CGImage,IconsCore,Menus,HIObject,QuickdrawTypes;
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
 
+=======
+uses MacTypes,CFArray,CFBase,CGImage,Icons,Menus,HIObjectCore,Quickdraw;
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
 type
 	HIToolbarRef = HIObjectRef;
+<<<<<<< HEAD
+=======
+type
+>>>>>>> graemeg/fixes_2_2
 	HIToolbarItemRef = HIObjectRef;
 {----------------------------------------------------------------------------------}
 { Config data keys used in HIToolbarSetItemsWithIdentifiers                        }
@@ -471,6 +528,7 @@ type
 {----------------------------------------------------------------------------------}
 { Standard Toolbox-provided item identifiers                                       }
 {----------------------------------------------------------------------------------}
+<<<<<<< HEAD
 {------------------------------------------------------------------------------------------}
 {  • DEPRECATED Toolbar identifiers as of Mac OS X 10.7                                    }
 {  Items using these identifiers will be created, but will no longer be drawn              }
@@ -478,6 +536,9 @@ type
 {      kHIToolbarCustomizeIdentifier                                                       }
 {      kHIToolbarSeparatorIdentifier                                                       }
 {------------------------------------------------------------------------------------------}
+=======
+
+>>>>>>> graemeg/fixes_2_2
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kHIToolbarSeparatorIdentifier CFSTRP('com.apple.hitoolbox.toolbar.separator')}
 {$endc}
@@ -609,6 +670,7 @@ const
 	kHICommandHideToolbar = FourCharCode('tbhd');
 
   {
+<<<<<<< HEAD
    * This command causes a window's toolbar visibility to be toggled:
    * if the toolbar is currently visible, then the toolbar is hidden,
    * and vice versa. You can set a menu item's command to this ID and
@@ -652,6 +714,8 @@ const
 	kHICommandCycleToolbarModeLarger = FourCharCode('tbml');
 
   {
+=======
+>>>>>>> graemeg/fixes_2_2
    * This command, when specified as a toolbar item’s command ID, will
    * cause a kEventToolbarItemPerformAction event to be generated when
    * the toolbar item’s menu item in the toolbar overflow menu is
@@ -1012,9 +1076,15 @@ const
  *  kEventClassToolbarItem / kEventToolbarItemImageChanged
  *  
  *  Summary:
+<<<<<<< HEAD
  *    This event is sent to the item when the image changes. Any
  *    interested parties can install handlers on the toolbar item to
  *    receive notifications.
+=======
+ *    This event is sent to the item (itself) when the image changes.
+ *    Any interested parties can install handlers on the toolbar item
+ *    to receive notifications.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1030,9 +1100,15 @@ const
  *  kEventClassToolbarItem / kEventToolbarItemLabelChanged
  *  
  *  Summary:
+<<<<<<< HEAD
  *    This event is sent to the item when the label changes. Any
  *    interested parties can install handlers on the toolbar item to
  *    receive notifications.
+=======
+ *    This event is sent to the item (itself) when the label changes.
+ *    Any interested parties can install handlers on the toolbar item
+ *    to receive notifications.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1048,9 +1124,15 @@ const
  *  kEventClassToolbarItem / kEventToolbarItemHelpTextChanged
  *  
  *  Summary:
+<<<<<<< HEAD
  *    This event is sent to the item when the help text changes. Any
  *    interested parties can install handlers on the toolbar item to
  *    receive notifications.
+=======
+ *    This event is sent to the item (itself) when the help text
+ *    changes. Any interested parties can install handlers on the
+ *    toolbar item to receive notifications.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1066,9 +1148,15 @@ const
  *  kEventClassToolbarItem / kEventToolbarItemCommandIDChanged
  *  
  *  Summary:
+<<<<<<< HEAD
  *    This event is sent to the item when the command ID changes. Any
  *    interested parties can install handlers on the toolbar item to
  *    receive notifications.
+=======
+ *    This event is sent to the item (itself) when the command ID
+ *    changes. Any interested parties can install handlers on the
+ *    toolbar item to receive notifications.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1084,12 +1172,21 @@ const
  *  kEventClassToolbarItem / kEventToolbarItemGetPersistentData
  *  
  *  Summary:
+<<<<<<< HEAD
  *    This event is sent to the item when the toolbar is going to write
  *    out the configuration information for the item. Any custom items
  *    can listen for this event and add any extra information to what
  *    is written out into the config so that it can be reanimated later
  *    on from the same config data. Typically, you'd not need to handle
  *    this event.
+=======
+ *    This event is sent to the item (itself) when the toolbar is going
+ *    to write out the configuration information for the item. Any
+ *    custom items can listen for this event and add any extra
+ *    information to what is written out into the config so that it can
+ *    be reanimated later on from the same config data. Typically,
+ *    you'd not need to handle this event.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1134,13 +1231,20 @@ const
  *  kEventClassToolbarItem / kEventToolbarItemEnabledStateChanged
  *  
  *  Summary:
+<<<<<<< HEAD
  *    This event is sent to the item when the enabled state changes.
  *    Any interested parties can install handlers on the toolbar item
  *    to receive notifications.
+=======
+ *    This event is sent to the item (itself) when the enabled state
+ *    changes. Any interested parties can install handlers on the
+ *    toolbar item to receive notifications.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
  *  Parameters:
  *    
  *    <-- kEventParamControlRef (out, typeControlRef)
@@ -1150,6 +1254,8 @@ const
  *          changing state across all windows that share the same
  *          toolbar.
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
  *    CarbonLib:        not available
@@ -1161,9 +1267,15 @@ const
  *  kEventClassToolbarItem / kEventToolbarItemSelectedStateChanged
  *  
  *  Summary:
+<<<<<<< HEAD
  *    This event is sent to the item when the selected state changes.
  *    Any interested parties can install handlers on the toolbar item
  *    to receive notifications.
+=======
+ *    This event is sent to the item (itself) when the selected state
+ *    changes. Any interested parties can install handlers on the
+ *    toolbar item to receive notifications.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1475,6 +1587,7 @@ const
 {======================================================================================}
 { FUNCTIONS                                                                            }
 {======================================================================================}
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 {
  *  HIToolbarCreate()
@@ -1489,6 +1602,18 @@ const
  *    are no routines to hide or show it here. Please look to
  *    MacWindows.h for the routines ShowHideWindowToolbar and
  *    IsWindowToolbarVisible for more information.
+=======
+{
+ *  HIToolbarCreate()
+ *  
+ *  Discussion:
+ *    Creates a toolbar. After creating a toolbar, one would normally
+ *    attach it to a window using SetWindowToolbar, described in
+ *    MacWindows.h. Since the toolbar is merely the model (as opposed
+ *    to the view), there are no routines to hide/show it here. Please
+ *    look to MacWindows.h for the routines ShowHideWindowToolbar and
+ *    IsWindowToolbarVisible there for more information.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1502,17 +1627,28 @@ const
  *      specify an identifier.
  *    
  *    inAttributes:
+<<<<<<< HEAD
  *      Any toolbar attributes you wish to specify, such as
  *      kHIToolbarAutoSavesConfig or kHIToolbarIsConfigurable.
  *    
  *    outToolbar:
  *      The toolbar reference to your new toolbar.
+=======
+ *      Any attributes you wish to specify.
+ *    
+ *    outToolbar:
+ *      The toolbar reference to your shiny new toolbar.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Result:
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1523,7 +1659,11 @@ function HIToolbarCreate( inIdentifier: CFStringRef; inAttributes: OptionBits; v
 {
  *  HIToolbarGetAttributes()
  *  
+<<<<<<< HEAD
  *  Summary:
+=======
+ *  Discussion:
+>>>>>>> graemeg/fixes_2_2
  *    Returns the attributes for the given toolbar.
  *  
  *  Mac OS X threading:
@@ -1532,7 +1672,11 @@ function HIToolbarCreate( inIdentifier: CFStringRef; inAttributes: OptionBits; v
  *  Parameters:
  *    
  *    inToolbar:
+<<<<<<< HEAD
  *      The toolbar whose attributes to retrieve.
+=======
+ *      The toolbar whose attributes you desire.
+>>>>>>> graemeg/fixes_2_2
  *    
  *    outAttributes:
  *      The attributes.
@@ -1541,7 +1685,11 @@ function HIToolbarCreate( inIdentifier: CFStringRef; inAttributes: OptionBits; v
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1552,7 +1700,11 @@ function HIToolbarGetAttributes( inToolbar: HIToolbarRef; var outAttributes: Opt
 {
  *  HIToolbarChangeAttributes()
  *  
+<<<<<<< HEAD
  *  Summary:
+=======
+ *  Discussion:
+>>>>>>> graemeg/fixes_2_2
  *    Changes the attributes of a toolbar.
  *  
  *  Mac OS X threading:
@@ -1573,7 +1725,11 @@ function HIToolbarGetAttributes( inToolbar: HIToolbarRef; var outAttributes: Opt
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1584,7 +1740,11 @@ function HIToolbarChangeAttributes( inToolbar: HIToolbarRef; inAttrsToSet: Optio
 {
  *  HIToolbarGetDisplayMode()
  *  
+<<<<<<< HEAD
  *  Summary:
+=======
+ *  Discussion:
+>>>>>>> graemeg/fixes_2_2
  *    Returns the current display mode of a toolbar.
  *  
  *  Mac OS X threading:
@@ -1602,7 +1762,11 @@ function HIToolbarChangeAttributes( inToolbar: HIToolbarRef; inAttrsToSet: Optio
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1613,7 +1777,11 @@ function HIToolbarGetDisplayMode( inToolbar: HIToolbarRef; var outDisplayMode: H
 {
  *  HIToolbarSetDisplayMode()
  *  
+<<<<<<< HEAD
  *  Summary:
+=======
+ *  Discussion:
+>>>>>>> graemeg/fixes_2_2
  *    Sets the current display mode of a toolbar.
  *  
  *  Mac OS X threading:
@@ -1631,7 +1799,11 @@ function HIToolbarGetDisplayMode( inToolbar: HIToolbarRef; var outDisplayMode: H
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1642,7 +1814,11 @@ function HIToolbarSetDisplayMode( inToolbar: HIToolbarRef; inDisplayMode: HITool
 {
  *  HIToolbarGetDisplaySize()
  *  
+<<<<<<< HEAD
  *  Summary:
+=======
+ *  Discussion:
+>>>>>>> graemeg/fixes_2_2
  *    Gets the current display size of a toolbar.
  *  
  *  Mac OS X threading:
@@ -1660,7 +1836,11 @@ function HIToolbarSetDisplayMode( inToolbar: HIToolbarRef; inDisplayMode: HITool
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1671,7 +1851,11 @@ function HIToolbarGetDisplaySize( inToolbar: HIToolbarRef; var outSize: HIToolba
 {
  *  HIToolbarSetDisplaySize()
  *  
+<<<<<<< HEAD
  *  Summary:
+=======
+ *  Discussion:
+>>>>>>> graemeg/fixes_2_2
  *    Sets the current display size of a toolbar.
  *  
  *  Mac OS X threading:
@@ -1689,7 +1873,11 @@ function HIToolbarGetDisplaySize( inToolbar: HIToolbarRef; var outSize: HIToolba
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1700,7 +1888,11 @@ function HIToolbarSetDisplaySize( inToolbar: HIToolbarRef; inSize: HIToolbarDisp
 {
  *  HIToolbarCopyIdentifier()
  *  
+<<<<<<< HEAD
  *  Summary:
+=======
+ *  Discussion:
+>>>>>>> graemeg/fixes_2_2
  *    Returns the identifier for a toolbar.
  *  
  *  Mac OS X threading:
@@ -1719,7 +1911,11 @@ function HIToolbarSetDisplaySize( inToolbar: HIToolbarRef; inSize: HIToolbarDisp
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1730,6 +1926,7 @@ function HIToolbarCopyIdentifier( inToolbar: HIToolbarRef; var outIdentifier: CF
 {
  *  HIToolbarSetItemsWithIdentifiers()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Allows you to set a toolbar's items all at once.
  *  
@@ -1744,6 +1941,15 @@ function HIToolbarCopyIdentifier( inToolbar: HIToolbarRef; var outIdentifier: CF
  *    toolbar item's configuration data, if the item requires it. The
  *    key for the identifier string is kHIToolbarIdentifierKey, and the
  *    key for the config data string is kHIToolbarDataKey.
+=======
+ *  Discussion:
+ *    Allows you to set a toolbar's items all at once. The array
+ *    contains either CFStringRefs of item identifiers, or a small
+ *    CFDictionaryRef containing the identifier string, and the config
+ *    data (if the item requires it). The key for the identifier string
+ *    is kHIToolbarIdentifierKey and the key for the config data string
+ *    is kHIToolbarDataKey.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1760,7 +1966,11 @@ function HIToolbarCopyIdentifier( inToolbar: HIToolbarRef; var outIdentifier: CF
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1771,7 +1981,11 @@ function HIToolbarSetItemsWithIdentifiers( inToolbar: HIToolbarRef; inArray: CFA
 {
  *  HIToolbarCopyItems()
  *  
+<<<<<<< HEAD
  *  Summary:
+=======
+ *  Discussion:
+>>>>>>> graemeg/fixes_2_2
  *    Returns the array of toolbar items for a toolbar.
  *  
  *  Mac OS X threading:
@@ -1790,7 +2004,11 @@ function HIToolbarSetItemsWithIdentifiers( inToolbar: HIToolbarRef; inArray: CFA
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1801,6 +2019,7 @@ function HIToolbarCopyItems( inToolbar: HIToolbarRef; var outItems: CFArrayRef )
 {
  *  HIToolbarCreateItemWithIdentifier()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Creates an item specified by a particular identifier.
  *  
@@ -1809,6 +2028,13 @@ function HIToolbarCopyItems( inToolbar: HIToolbarRef; var outItems: CFArrayRef )
  *    supports by naming its identifier. It also allows you to create
  *    standard items supplied by the Toolbox, such as the separator
  *    item.
+=======
+ *  Discussion:
+ *    Creates an item specified by a particular identifier. Using this
+ *    function allows you to create any item a delegate supports by
+ *    naming its identifier. It also allows you to create standard
+ *    items supplied by the Toolbox, such as the separator item.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1833,7 +2059,11 @@ function HIToolbarCopyItems( inToolbar: HIToolbarRef; var outItems: CFArrayRef )
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1844,10 +2074,15 @@ function HIToolbarCreateItemWithIdentifier( inToolbar: HIToolbarRef; inIdentifie
 {
  *  HIToolbarInsertItemAtIndex()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Inserts a toolbar item at a given index into a toolbar.
  *  
  *  Discussion:
+=======
+ *  Discussion:
+ *    Inserts a toolbar item at a given index into a toolbar.
+>>>>>>> graemeg/fixes_2_2
  *    Generally, you should always add items via identifier, and not
  *    with this routine.
  *  
@@ -1869,7 +2104,11 @@ function HIToolbarCreateItemWithIdentifier( inToolbar: HIToolbarRef; inIdentifie
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1880,12 +2119,18 @@ function HIToolbarInsertItemAtIndex( inToolbar: HIToolbarRef; inItem: HIToolbarI
 {
  *  HIToolbarAppendItem()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Appends an item to the end of a toolbar.
  *  
  *  Discussion:
  *    Generally, you should always add items via identifier, and not
  *    with this routine.
+=======
+ *  Discussion:
+ *    Appends an item to the end of a toolbar. Generally, you should
+ *    always add items via identifier, and not with this routine.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1902,7 +2147,11 @@ function HIToolbarInsertItemAtIndex( inToolbar: HIToolbarRef; inItem: HIToolbarI
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1913,7 +2162,11 @@ function HIToolbarAppendItem( inToolbar: HIToolbarRef; inItem: HIToolbarItemRef 
 {
  *  HIToolbarRemoveItemAtIndex()
  *  
+<<<<<<< HEAD
  *  Summary:
+=======
+ *  Discussion:
+>>>>>>> graemeg/fixes_2_2
  *    Removes an item at a given index from a toolbar.
  *  
  *  Mac OS X threading:
@@ -1931,7 +2184,11 @@ function HIToolbarAppendItem( inToolbar: HIToolbarRef; inItem: HIToolbarItemRef 
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1943,11 +2200,20 @@ function HIToolbarRemoveItemAtIndex( inToolbar: HIToolbarRef; inIndex: CFIndex )
  *  HIToolbarSetDelegate()
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    A delegate is required for the toolbar to work properly if the
  *    toolbar uses custom toolbar items. The delegate is asked to
  *    create toolbar items. If the delegate does not respond, the
  *    toolbar will attempt to create a toolbar item, but it can only
  *    create the standard items defined at the top of this header.
+=======
+ *    Sets the delegate event target for a toolbar. This is necessary
+ *    for a toolbar to work properly if it wants items of its own. The
+ *    delegate is who is asked to create toolbar items. If the delegate
+ *    does not respond, the toolbar will attempt to create a toolbar
+ *    item, but it can only create the standard items defined at the
+ *    top of this header.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1964,7 +2230,11 @@ function HIToolbarRemoveItemAtIndex( inToolbar: HIToolbarRef; inIndex: CFIndex )
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1990,7 +2260,11 @@ function HIToolbarSetDelegate( inToolbar: HIToolbarRef; inDelegate: HIObjectRef 
  *    An HIObjectRef.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2003,8 +2277,11 @@ function HIToolbarGetDelegate( inToolbar: HIToolbarRef ): HIObjectRef; external 
 {==========================================================================}
 { The HIObject class ID for the ToolbarItem class. }
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kHIToolbarItemClassID CFSTRP('com.apple.hitoolbaritem')}
 {$endc}
@@ -2014,10 +2291,16 @@ function HIToolbarGetDelegate( inToolbar: HIToolbarRef ): HIObjectRef; external 
 { You must pass these parameters in the initialization event if you are    }
 { subclassing the toolbar item                                             }
 {      kEventParamToolbarItemIdentifier            typeCFStringRef         }
+<<<<<<< HEAD
 {      kEventParamAttributes                       typeUInt32              }
 
 
 {$ifc not TARGET_CPU_64}
+=======
+{      kEventParamAttibutes                        typeUInt32              }
+
+
+>>>>>>> graemeg/fixes_2_2
 {
  *  HIToolbarItemCreate()
  *  
@@ -2045,7 +2328,11 @@ function HIToolbarGetDelegate( inToolbar: HIToolbarRef ): HIObjectRef; external 
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2053,6 +2340,10 @@ function HIToolbarItemCreate( inIdentifier: CFStringRef; inOptions: OptionBits; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+<<<<<<< HEAD
+=======
+// #define _HIToolbarItemCopyIdentifier HIToolbarItemCopyIdentifier
+>>>>>>> graemeg/fixes_2_2
 {
  *  HIToolbarItemCopyIdentifier()
  *  
@@ -2077,7 +2368,11 @@ function HIToolbarItemCreate( inIdentifier: CFStringRef; inOptions: OptionBits; 
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2106,7 +2401,11 @@ function HIToolbarItemCopyIdentifier( inItem: HIToolbarItemRef; var outIdentifie
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2142,7 +2441,11 @@ function HIToolbarItemGetAttributes( inItem: HIToolbarItemRef; var outAttributes
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2194,7 +2497,11 @@ function HIToolbarItemChangeAttributes( inItem: HIToolbarItemRef; inAttrsToSet: 
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2282,7 +2589,11 @@ function HIToolbarItemGetAttributesInWindow( inItem: HIToolbarItemRef; inWindow:
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2319,7 +2630,11 @@ function HIToolbarItemChangeAttributesInWindow( inItem: HIToolbarItemRef; inWind
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2350,7 +2665,11 @@ function HIToolbarGetSelectedItemInWindow( inToolbar: HIToolbarRef; inWindow: Wi
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2380,7 +2699,11 @@ function HIToolbarItemSetLabel( inItem: HIToolbarItemRef; inLabel: CFStringRef )
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2411,13 +2734,21 @@ function HIToolbarItemCopyLabel( inItem: HIToolbarItemRef; var outLabel: CFStrin
  *      The long help text. This is what is displayed by the help tag
  *      system when the user hovers over the toolbar item with the
  *      mouse and holds the command key down. This parameter is
+<<<<<<< HEAD
  *      optional; you may pass NULL.
+=======
+ *      optional, you may pass NULL.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Result:
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2457,7 +2788,11 @@ function HIToolbarItemSetHelpText( inItem: HIToolbarItemRef; inShortText: CFStri
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2490,7 +2825,11 @@ function HIToolbarItemCopyHelpText( inItem: HIToolbarItemRef; outShortText: CFSt
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2519,7 +2858,11 @@ function HIToolbarItemSetCommandID( inItem: HIToolbarItemRef; inCommandID: MenuC
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2550,7 +2893,11 @@ function HIToolbarItemGetCommandID( inItem: HIToolbarItemRef; var outCommandID: 
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2559,6 +2906,7 @@ function HIToolbarItemSetIconRef( inItem: HIToolbarItemRef; inIcon: IconRef ): O
 
 
 {
+<<<<<<< HEAD
  *  HIToolbarItemCopyIconRef()
  *  
  *  Discussion:
@@ -2590,6 +2938,8 @@ function HIToolbarItemCopyIconRef( inItem: HIToolbarItemRef; var outIcon: IconRe
 
 
 {
+=======
+>>>>>>> graemeg/fixes_2_2
  *  HIToolbarItemSetImage()
  *  
  *  Discussion:
@@ -2614,7 +2964,11 @@ function HIToolbarItemCopyIconRef( inItem: HIToolbarItemRef; var outIcon: IconRe
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2645,7 +2999,11 @@ function HIToolbarItemSetImage( inItem: HIToolbarItemRef; inImage: CGImageRef ):
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2684,7 +3042,11 @@ function HIToolbarItemCopyImage( inItem: HIToolbarItemRef; var outImage: CGImage
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2714,7 +3076,11 @@ function HIToolbarItemSetMenu( inItem: HIToolbarItemRef; inMenu: MenuRef { can b
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2726,6 +3092,7 @@ function HIToolbarItemCopyMenu( inItem: HIToolbarItemRef; var outMenu: MenuRef )
  *  HIToolbarItemGetToolbar()
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    Returns the toolbar containing a toolbar item. 
  *    
  *    Due to a bug in the toolbar item implementation in Mac OS X 10.2,
@@ -2733,6 +3100,9 @@ function HIToolbarItemCopyMenu( inItem: HIToolbarItemRef; var outMenu: MenuRef )
  *    return an invalid HIToolbarRef if called before toolbar item is
  *    inserted into a toolbar. This bug is fixed in Mac OS X 10.5 and
  *    later.
+=======
+ *    Gets the toolbar a toolbar item is attached to.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -2747,7 +3117,11 @@ function HIToolbarItemCopyMenu( inItem: HIToolbarItemRef; var outMenu: MenuRef )
  *    or NULL if this toolbar item is not attached to any toolbar.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2773,7 +3147,11 @@ function HIToolbarItemGetToolbar( inItem: HIToolbarItemRef ): HIToolbarRef; exte
  *    A boolean result.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2802,7 +3180,11 @@ function HIToolbarItemIsEnabled( inItem: HIToolbarItemRef ): Boolean; external n
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2833,7 +3215,11 @@ function HIToolbarItemSetEnabled( inItem: HIToolbarItemRef; inEnabled: Boolean )
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2841,6 +3227,7 @@ function HIToolbarItemConfigDataChanged( inItem: HIToolbarItemRef ): OSStatus; e
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 {$endc} {TARGET_OS_MAC}
@@ -2848,3 +3235,6 @@ function HIToolbarItemConfigDataChanged( inItem: HIToolbarItemRef ): OSStatus; e
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+end.
+>>>>>>> graemeg/fixes_2_2

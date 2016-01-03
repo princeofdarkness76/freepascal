@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for X11 Bindings
+>>>>>>> graemeg/fixes_2_2
 #
 
 [package]
 name=x11
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -24,6 +29,15 @@ units=x xlib xutil xresource xcms xshm xrender keysym xi xkb xkblib xatom xinera
 
 [require]
 packages=rtl fpmkunit
+=======
+version=2.2.5
+
+[target]
+units=x xlib xutil xresource xcms xshm xrender keysym xi xkb xkblib xatom xinerama xv xvlib cursorfont xrandr xf86dga xf86vmode
+
+[require]
+libc=y
+>>>>>>> graemeg/fixes_2_2
 
 [install]
 fpcpackage=y
@@ -31,6 +45,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -116,3 +131,14 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[compiler]
+includedir=src
+sourcedir=src tests
+
+[shared]
+build=n
+
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/fixes_2_2

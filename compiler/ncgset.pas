@@ -26,7 +26,11 @@ unit ncgset;
 interface
 
     uses
+<<<<<<< HEAD
        globtype,globals,constexp,symtype,
+=======
+       globtype,globals,
+>>>>>>> graemeg/fixes_2_2
        node,nset,cpubase,cgbase,cgutils,cgobj,aasmbase,aasmtai,aasmdata;
 
     type
@@ -41,6 +45,7 @@ interface
        end;
        Tsetparts=array[1..8] of Tsetpart;
 
+<<<<<<< HEAD
        { tcginnode }
 
        tcginnode = class(tinnode)
@@ -51,6 +56,14 @@ interface
        protected
          function checkgenjumps(out setparts: Tsetparts; out numparts: byte; out use_small: boolean): boolean; virtual;
          function analizeset(const Aset:Tconstset;out setparts: Tsetparts; out numparts: byte;is_small:boolean):boolean;virtual;
+=======
+       tcginnode = class(tinnode)
+          function pass_1: tnode;override;
+          procedure pass_generate_code;override;
+       protected
+          function checkgenjumps(out setparts: Tsetparts; out numparts: byte; out use_small: boolean): boolean; virtual;
+          function analizeset(const Aset:Tconstset;out setparts: Tsetparts; out numparts: byte;is_small:boolean):boolean;virtual;
+>>>>>>> graemeg/fixes_2_2
        end;
 
        tcgcasenode = class(tcasenode)
@@ -92,7 +105,11 @@ implementation
       paramgr,
       procinfo,pass_2,tgobj,
       nbas,ncon,nflw,
+<<<<<<< HEAD
       ncgutil,hlcgobj;
+=======
+      ncgutil;
+>>>>>>> graemeg/fixes_2_2
 
 
 {*****************************************************************************
@@ -207,8 +224,12 @@ implementation
       begin
          { check if we can use smallset operation using btl which is limited
            to 32 bits, the left side may also not contain higher values !! }
+<<<<<<< HEAD
          use_small:=is_smallset(right.resultdef) and
                     not is_signed(left.resultdef) and
+=======
+         use_small:=(tsetdef(right.resultdef).settype=smallset) and not is_signed(left.resultdef) and
+>>>>>>> graemeg/fixes_2_2
                     ((left.resultdef.typ=orddef) and (torddef(left.resultdef).high<32) or
                      (left.resultdef.typ=enumdef) and (tenumdef(left.resultdef).max<32));
 
@@ -234,9 +255,16 @@ implementation
        var
          adjustment,
          setbase    : aint;
+<<<<<<< HEAD
          l, l2      : tasmlabel;
          hr,
+=======
+				 l,l2,
+         otl, ofl   : tasmlabel;
+         hr,hr2,
+>>>>>>> graemeg/fixes_2_2
          pleftreg   : tregister;
+         href       : treference;
          setparts   : Tsetparts;
          opsize     : tcgsize;
          opdef      : tdef;
@@ -244,7 +272,8 @@ implementation
          uopdef     : tdef;
          orgopsize  : tcgsize;
          genjumps,
-         use_small  : boolean;
+         use_small,
+         isjump     : boolean;
          i,numparts : byte;
          needslabel : Boolean;
        begin
@@ -270,17 +299,46 @@ implementation
            end;
          needslabel := false;
 
+<<<<<<< HEAD
          if not genjumps then
            { calculate both operators }
            { the complex one first }
            { not in case of genjumps, because then we don't secondpass      }
+=======
+         isjump:=false;
+         if (left.expectloc=LOC_JUMP) then
+           begin
+             otl:=current_procinfo.CurrTrueLabel;
+             current_asmdata.getjumplabel(current_procinfo.CurrTrueLabel);
+             ofl:=current_procinfo.CurrFalseLabel;
+             current_asmdata.getjumplabel(current_procinfo.CurrFalseLabel);
+             isjump:=true;
+           end
+         else if not genjumps then
+           { calculate both operators }
+           { the complex one first }
+           { only if left will not be a LOC_JUMP, to keep complexity in the }
+           { code generator down. This almost never happens anyway, only in }
+           { case like "if ((a in someset) in someboolset) then" etc        }
+           { also not in case of genjumps, because then we don't secondpass }
+>>>>>>> graemeg/fixes_2_2
            { right at all (so we have to make sure that "right" really is   }
            { "right" and not "swapped left" in that case)                   }
            firstcomplex(self);
 
          secondpass(left);
+<<<<<<< HEAD
          if (left.expectloc=LOC_JUMP)<>
             (left.location.loc=LOC_JUMP) then
+=======
+         if isjump then
+           begin
+             location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,true);
+             current_procinfo.CurrTrueLabel:=otl;
+             current_procinfo.CurrFalseLabel:=ofl;
+           end
+         else if (left.location.loc=LOC_JUMP) then
+>>>>>>> graemeg/fixes_2_2
            internalerror(2007070101);
 
          { Only process the right if we are not generating jumps }
@@ -489,6 +547,7 @@ implementation
                   { load left in register }
                   location_force_reg(current_asmdata.CurrAsmList,left.location,location.size,true);
                   register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
+<<<<<<< HEAD
                   { emit bit test operation -- warning: do not use
                     location_force_reg() to force a set into a register, except
                     to a register of the same size as the set. The reason is
@@ -502,6 +561,13 @@ implementation
                   cg.a_bit_test_reg_loc_reg(current_asmdata.CurrAsmList,
                     left.location.size,location.size,
                     left.location.register,right.location,location.register);
+=======
+                  location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
+                  { emit bit test operation }
+                  cg.a_bit_test_reg_reg_reg(current_asmdata.CurrAsmList,
+                    left.location.size,right.location.size,location.size,
+                    left.location.register,right.location.register,location.register);
+>>>>>>> graemeg/fixes_2_2
 
                   { now zero the result if left > nr_of_bits_in_right_register }
                   hr := cg.getintregister(current_asmdata.CurrAsmList,location.size);
@@ -522,10 +588,44 @@ implementation
                     internalerror(2007020402);
 >>>>>>> graemeg/cpstrnew
 
+<<<<<<< HEAD
                          hlcg.a_cmp_const_reg_label(current_asmdata.CurrAsmList, opdef, OC_BE, tsetdef(right.resultdef).setmax-tsetdef(right.resultdef).setbase, pleftreg, l);
 
                          hlcg.a_load_const_reg(current_asmdata.CurrAsmList, uopdef, 0, location.register);
                          hlcg.a_jmp_always(current_asmdata.CurrAsmList, l2);
+=======
+                  cg.a_bit_test_const_loc_reg(current_asmdata.CurrAsmList,location.size,left.location.value-setbase,
+                    right.location,location.register);
+                end
+               else
+                begin
+                  location_force_reg(current_asmdata.CurrAsmList, left.location, opsize, true);
+                  register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
+                  pleftreg := left.location.register;
+
+                  if (opsize >= OS_S8) or { = if signed }
+                     ((left.resultdef.typ=orddef) and 
+                      ((torddef(left.resultdef).low < int64(tsetdef(right.resultdef).setbase)) or
+                       (torddef(left.resultdef).high > int64(tsetdef(right.resultdef).setmax)))) or
+                     ((left.resultdef.typ=enumdef) and
+                      ((tenumdef(left.resultdef).min < tsetdef(right.resultdef).setbase) or
+                       (tenumdef(left.resultdef).max > tsetdef(right.resultdef).setmax))) then
+                    begin
+                      current_asmdata.getjumplabel(l);
+                      current_asmdata.getjumplabel(l2);
+                      needslabel := True;
+
+                      cg.a_cmp_const_reg_label(current_asmdata.CurrAsmList, left.location.size, OC_BE, tsetdef(right.resultdef).setmax-tsetdef(right.resultdef).setbase, pleftreg, l);
+
+                      cg.a_load_const_reg(current_asmdata.CurrAsmList, location.size, 0, location.register);
+                      cg.a_jmp_always(current_asmdata.CurrAsmList, l2);
+
+                      cg.a_label(current_asmdata.CurrAsmList, l);
+                    end;
+
+                  cg.a_bit_test_reg_loc_reg(current_asmdata.CurrAsmList,left.location.size,location.size,
+                    pleftreg,right.location,location.register);
+>>>>>>> graemeg/fixes_2_2
 
                          hlcg.a_label(current_asmdata.CurrAsmList, l);
                        end;
@@ -629,7 +729,11 @@ implementation
                   begin
                      { have we to ajust the first value ? }
                      if (t^._low>get_min_value(left.resultdef)) or (get_min_value(left.resultdef)<>0) then
+<<<<<<< HEAD
                        gensub(tcgint(t^._low.svalue));
+=======
+                       gensub(aint(t^._low));
+>>>>>>> graemeg/fixes_2_2
                   end
                 else
                   begin
@@ -1144,11 +1248,16 @@ implementation
               load_all_regvars(current_asmdata.CurrAsmList);
 {$endif OLDREGVARS}
            end;
+<<<<<<< HEAD
 
          cg.executionweight:=oldexecutionweight;
 
          current_asmdata.CurrAsmList.concat(cai_align.create(current_settings.alignment.jumpalign));
          hlcg.a_label(current_asmdata.CurrAsmList,endlabel);
+=======
+         current_asmdata.CurrAsmList.concat(cai_align.create(current_settings.alignment.jumpalign));
+         cg.a_label(current_asmdata.CurrAsmList,endlabel);
+>>>>>>> graemeg/fixes_2_2
 
          { Reset labels }
          for i:=0 to blocks.count-1 do

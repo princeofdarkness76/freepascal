@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -22,10 +23,16 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 1997-2008 by Apple Computer, Inc., all rights reserved
+=======
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 1997-2005 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -51,6 +58,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -59,8 +78,13 @@
 
 unit Keyboards;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -73,21 +97,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -122,6 +154,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -129,6 +163,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -354,6 +389,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -379,6 +424,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -389,12 +438,133 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes, CFBase;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
 
 {$ALIGN POWER}
+=======
+{$ALIGN POWER}
+
+
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{  OBSOLETE                                                                        }
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{ These are obsolete.  Carbon does not support these. }
+{ Keyboard API Trap Number. Should be moved to Traps.i }
+const
+	_KeyboardDispatch = $AA7A;
+
+{ Gestalt selector and values for the Keyboard API }
+const
+	gestaltKeyboardsAttr = FourCharCode('kbds');
+	gestaltKBPS2Keyboards = 1;
+	gestaltKBPS2SetIDToAny = 2;
+	gestaltKBPS2SetTranslationTable = 4;
+
+{ Keyboard API Error Codes }
+{
+   I stole the range blow from the empty space in the Allocation project but should
+   be updated to the officially registered range.
+}
+const
+	errKBPS2KeyboardNotAvailable = -30850;
+	errKBIlligalParameters = -30851;
+	errKBFailSettingID = -30852;
+	errKBFailSettingTranslationTable = -30853;
+	errKBFailWritePreference = -30854;
+
+{
+ *  KBInitialize()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in KeyboardsLib 1.0 and later
+ }
+
+
+{
+ *  KBSetupPS2Keyboard()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in KeyboardsLib 1.0 and later
+ }
+
+
+{
+ *  KBGetPS2KeyboardID()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in KeyboardsLib 1.0 and later
+ }
+
+
+{
+ *  KBIsPS2KeyboardConnected()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in KeyboardsLib 1.0 and later
+ }
+
+
+{
+ *  KBIsPS2KeyboardEnabled()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in KeyboardsLib 1.0 and later
+ }
+
+
+{
+ *  KBGetPS2KeyboardAttributes()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in KeyboardsLib 1.0 and later
+ }
+
+
+{
+ *  KBSetKCAPForPS2Keyboard()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in KeyboardsLib 1.0 and later
+ }
+
+
+{
+ *  KBSetupPS2KeyboardFromLayoutType()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in KeyboardsLib 1.0 and later
+ }
+
+
+{
+ *  KBGetPS2KeyboardLayoutType()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in KeyboardsLib 1.0 and later
+ }
+>>>>>>> graemeg/fixes_2_2
 
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -409,7 +579,11 @@ uses MacTypes, CFBase;
  *    layout. They are returned by the KBGetLayoutType API.
  }
 type
+<<<<<<< HEAD
 	PhysicalKeyboardLayoutType = OSType;
+=======
+	PhysicalKeyboardLayoutType = UInt32;
+>>>>>>> graemeg/fixes_2_2
 const
 {
    * A JIS keyboard layout type.
@@ -452,6 +626,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	KeyboardLayoutRef = ^OpaqueKeyboardLayoutRef; { an opaque type }
 	OpaqueKeyboardLayoutRef = record end;
 =======
@@ -466,6 +641,9 @@ type
 =======
 	KeyboardLayoutRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	KeyboardLayoutRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  KeyboardLayoutPropertyTag
@@ -592,6 +770,7 @@ function KBGetLayoutType( iKeyboardType: SInt16 ): PhysicalKeyboardLayoutType; e
 
 { iterate keyboard layouts}
 
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 {
  *  KLGetKeyboardLayoutCount()   *** DEPRECATED ***
@@ -599,6 +778,10 @@ function KBGetLayoutType( iKeyboardType: SInt16 ): PhysicalKeyboardLayoutType; e
  *  Deprecated:
  *    Use TISCreateInputSourceList API to create a list of input
  *    sources that match specified properties.
+=======
+{
+ *  KLGetKeyboardLayoutCount()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Returns the number of keyboard layouts.
@@ -612,11 +795,16 @@ function KBGetLayoutType( iKeyboardType: SInt16 ): PhysicalKeyboardLayoutType; e
  *      On exit, the number of keyboard layouts
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
 function KLGetKeyboardLayoutCount( var oCount: CFIndex ): OSStatus; external name '_KLGetKeyboardLayoutCount';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -626,6 +814,13 @@ function KLGetKeyboardLayoutCount( var oCount: CFIndex ): OSStatus; external nam
  *  Deprecated:
  *    Use TISCreateInputSourceList API to create a list of input
  *    sources that match specified properties.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  KLGetKeyboardLayoutAtIndex()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Retrieves the keyboard layout at the given index.
@@ -645,12 +840,20 @@ function KLGetKeyboardLayoutCount( var oCount: CFIndex ): OSStatus; external nam
  *      On exit, the keyboard layout with the given index.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
 function KLGetKeyboardLayoutAtIndex( iIndex: CFIndex; var oKeyboardLayout: KeyboardLayoutRef ): OSStatus; external name '_KLGetKeyboardLayoutAtIndex';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -664,11 +867,15 @@ function KLGetKeyboardLayoutAtIndex( iIndex: CFIndex; var oKeyboardLayout: Keybo
 { get keyboard layout info}
 
 {
+<<<<<<< HEAD
  *  KLGetKeyboardLayoutProperty()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use TISGetInputSourceProperty API to query properties of a
  *    TISInputSourceRef.
+=======
+ *  KLGetKeyboardLayoutProperty()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Retrives property value for the given keyboard layout and tag.
@@ -690,23 +897,35 @@ function KLGetKeyboardLayoutAtIndex( iIndex: CFIndex; var oKeyboardLayout: Keybo
  *      tag.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
 function KLGetKeyboardLayoutProperty( iKeyboardLayout: KeyboardLayoutRef; iPropertyTag: KeyboardLayoutPropertyTag; var oValue: UnivPtr ): OSStatus; external name '_KLGetKeyboardLayoutProperty';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 { get keyboard layout with identifier or name}
 
 {
+<<<<<<< HEAD
  *  KLGetKeyboardLayoutWithIdentifier()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use TISCreateInputSourceList API to create a list of input
  *    sources that match specified properties, such as the
  *    kTISPropertyInputSourceID property.
+=======
+ *  KLGetKeyboardLayoutWithIdentifier()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Retrieves the keyboard layout with the given identifier.
@@ -730,11 +949,16 @@ function KLGetKeyboardLayoutProperty( iKeyboardLayout: KeyboardLayoutRef; iPrope
  *      On exit, the keyboard layout with the given identifier.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
 function KLGetKeyboardLayoutWithIdentifier( iIdentifier: KeyboardLayoutIdentifier; var oKeyboardLayout: KeyboardLayoutRef ): OSStatus; external name '_KLGetKeyboardLayoutWithIdentifier';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -745,6 +969,13 @@ function KLGetKeyboardLayoutWithIdentifier( iIdentifier: KeyboardLayoutIdentifie
  *    Use TISCreateInputSourceList API to create a list of input
  *    sources that match specified properties, such as the
  *    kTISPropertyInputSourceID property.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  KLGetKeyboardLayoutWithName()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Retrieves the keyboard layout with the given name.
@@ -761,17 +992,26 @@ function KLGetKeyboardLayoutWithIdentifier( iIdentifier: KeyboardLayoutIdentifie
  *      On exit, the keyboard layout with the given name.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
 function KLGetKeyboardLayoutWithName( iName: CFStringRef; var oKeyboardLayout: KeyboardLayoutRef ): OSStatus; external name '_KLGetKeyboardLayoutWithName';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 { get/set current keyboard layout of the current group identifier}
 
 {
+<<<<<<< HEAD
  *  KLGetCurrentKeyboardLayout()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -781,6 +1021,9 @@ function KLGetKeyboardLayoutWithName( iName: CFStringRef; var oKeyboardLayout: K
  *    source is an input method or one of its input modes, the TIS API
  *    will also return any keyboard override specified via
  *    TISSetInputMethodKeyboardLayoutOverride.
+=======
+ *  KLGetCurrentKeyboardLayout()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Retrieves the current keyboard layout.
@@ -800,11 +1043,16 @@ function KLGetKeyboardLayoutWithName( iName: CFStringRef; var oKeyboardLayout: K
  *      On exit, the current keyboard layout.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
 function KLGetCurrentKeyboardLayout( var oKeyboardLayout: KeyboardLayoutRef ): OSStatus; external name '_KLGetCurrentKeyboardLayout';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -825,6 +1073,13 @@ function KLGetCurrentKeyboardLayout( var oKeyboardLayout: KeyboardLayoutRef ): O
  *    will be visible to users of the Keyboard Viewer and allow them to
  *    see the underlying keyboard used for event delivery to your input
  *    method.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  KLSetCurrentKeyboardLayout()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Sets the current keyboard layout.
@@ -847,11 +1102,16 @@ function KLGetCurrentKeyboardLayout( var oKeyboardLayout: KeyboardLayoutRef ): O
  *      The keyboard layout.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
 function KLSetCurrentKeyboardLayout( iKeyboardLayout: KeyboardLayoutRef ): OSStatus; external name '_KLSetCurrentKeyboardLayout';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -888,3 +1148,9 @@ const
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

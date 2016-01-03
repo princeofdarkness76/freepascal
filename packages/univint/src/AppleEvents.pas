@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       AE/AppleEvents.h
  
      Contains:   AppleEvent Package Interfaces.
@@ -22,10 +23,21 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 1989-2008 by Apple Computer, Inc., all rights reserved
+=======
+     File:       AppleEvents.p
+ 
+     Contains:   AppleEvent Package Interfaces.
+ 
+     Version:    Technology: System 7.5
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1989-2002 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -50,6 +62,19 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -58,8 +83,13 @@
 
 unit AppleEvents;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -72,21 +102,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -121,6 +159,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -128,6 +168,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -362,6 +403,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -387,6 +438,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -397,16 +452,20 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,MixedMode,AEDataModel,AEInteraction, CFArray, CFBase, CFRunLoop, CFStream, CFURL;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {
     Note:   The functions and types for the building and parsing AppleEvent  
             messages has moved to AEDataModel.h
 }
 
+<<<<<<< HEAD
 
 {$ALIGN MAC68K}
 
@@ -586,6 +645,80 @@ function AEInstallEventHandler( theAEEventClass: AEEventClass; theAEEventID: AEE
 >>>>>>> origin/cpstrnew
 
 
+=======
+{
+    Note:   The functions for interacting with events has moved to AEInteraction.h
+}
+
+{$ALIGN MAC68K}
+
+
+const
+																{  Keywords for Apple event parameters  }
+	keyDirectObject				= FourCharCode('----');
+	keyErrorNumber				= FourCharCode('errn');
+	keyErrorString				= FourCharCode('errs');
+	keyProcessSerialNumber		= FourCharCode('psn ');						{  Keywords for special handlers  }
+	keyPreDispatch				= FourCharCode('phac');						{  preHandler accessor call  }
+	keySelectProc				= FourCharCode('selh');						{  more selector call  }
+																{  Keyword for recording  }
+	keyAERecorderCount			= FourCharCode('recr');						{  available only in vers 1.0.1 and greater  }
+																{  Keyword for version information  }
+	keyAEVersion				= FourCharCode('vers');						{  available only in vers 1.0.1 and greater  }
+
+	{	 Event Class 	}
+	kCoreEventClass				= FourCharCode('aevt');
+
+	{	 Event IDÕs 	}
+	kAEOpenApplication			= FourCharCode('oapp');
+	kAEOpenDocuments			= FourCharCode('odoc');
+	kAEPrintDocuments			= FourCharCode('pdoc');
+	kAEQuitApplication			= FourCharCode('quit');
+	kAEAnswer					= FourCharCode('ansr');
+	kAEApplicationDied			= FourCharCode('obit');
+	kAEShowPreferences			= FourCharCode('pref');						{  sent by Mac OS X when the user chooses the Preferences item  }
+	kAEAutosaveNow              = FourCharCode('asav');                       { sent by Mac OS X when it is advisable to autosave all the user's documents with uncommitted changes. }
+
+	{	 Constants for recording 	}
+	kAEStartRecording			= FourCharCode('reca');						{  available only in vers 1.0.1 and greater  }
+	kAEStopRecording			= FourCharCode('recc');						{  available only in vers 1.0.1 and greater  }
+	kAENotifyStartRecording		= FourCharCode('rec1');						{  available only in vers 1.0.1 and greater  }
+	kAENotifyStopRecording		= FourCharCode('rec0');						{  available only in vers 1.0.1 and greater  }
+	kAENotifyRecording			= FourCharCode('recr');						{  available only in vers 1.0.1 and greater  }
+
+
+	{	
+	 * AEEventSource is defined as an SInt8 for compatability with pascal.
+	 * Important note: keyEventSourceAttr is returned by AttributePtr as a typeShortInteger.
+	 * Be sure to pass at least two bytes of storage to AEGetAttributePtr - the result can be
+	 * compared directly against the following enums.
+	 	}
+
+type
+	AEEventSource 				= SInt8;
+const
+	kAEUnknownSource			= 0;
+	kAEDirectCall				= 1;
+	kAESameProcess				= 2;
+	kAELocalProcess				= 3;
+	kAERemoteProcess			= 4;
+
+	{	*************************************************************************
+	  These calls are used to set up and modify the event dispatch table.
+	*************************************************************************	}
+	{
+	 *  AEInstallEventHandler()
+	 *  
+	 *  Mac OS X threading:
+	 *    Thread safe since version 10.2
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function AEInstallEventHandler(theAEEventClass: AEEventClass; theAEEventID: AEEventID; handler: AEEventHandlerUPP; handlerRefcon: SInt32; isSysHandler: boolean): OSErr; external name '_AEInstallEventHandler';
+>>>>>>> graemeg/fixes_2_2
 {
  *  AERemoveEventHandler()
  *  
@@ -593,6 +726,7 @@ function AEInstallEventHandler( theAEEventClass: AEEventClass; theAEEventID: AEE
  *    Thread safe since version 10.2
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -617,6 +751,13 @@ function AERemoveEventHandler( theAEEventClass: AEEventClass; theAEEventID: AEEv
 >>>>>>> origin/cpstrnew
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function AERemoveEventHandler(theAEEventClass: AEEventClass; theAEEventID: AEEventID; handler: AEEventHandlerUPP; isSysHandler: boolean): OSErr; external name '_AERemoveEventHandler';
+>>>>>>> graemeg/fixes_2_2
 {
  *  AEGetEventHandler()
  *  
@@ -624,6 +765,7 @@ function AERemoveEventHandler( theAEEventClass: AEEventClass; theAEEventID: AEEv
  *    Thread safe since version 10.2
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -648,6 +790,13 @@ function AEGetEventHandler( theAEEventClass: AEEventClass; theAEEventID: AEEvent
 >>>>>>> origin/cpstrnew
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function AEGetEventHandler(theAEEventClass: AEEventClass; theAEEventID: AEEventID; var handler: AEEventHandlerUPP; var handlerRefcon: SInt32; isSysHandler: boolean): OSErr; external name '_AEGetEventHandler';
+>>>>>>> graemeg/fixes_2_2
 {*************************************************************************
   These calls are used to set up and modify special hooks into the
   AppleEvent manager.
@@ -659,6 +808,7 @@ function AEGetEventHandler( theAEEventClass: AEEventClass; theAEEventID: AEEvent
  *    Thread safe since version 10.2
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -683,6 +833,13 @@ function AEInstallSpecialHandler( functionClass: AEKeyword; handler: AEEventHand
 >>>>>>> origin/cpstrnew
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function AEInstallSpecialHandler(functionClass: AEKeyword; handler: AEEventHandlerUPP; isSysHandler: boolean): OSErr; external name '_AEInstallSpecialHandler';
+>>>>>>> graemeg/fixes_2_2
 {
  *  AERemoveSpecialHandler()
  *  
@@ -690,6 +847,7 @@ function AEInstallSpecialHandler( functionClass: AEKeyword; handler: AEEventHand
  *    Thread safe since version 10.2
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -714,6 +872,13 @@ function AERemoveSpecialHandler( functionClass: AEKeyword; handler: AEEventHandl
 >>>>>>> origin/cpstrnew
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function AERemoveSpecialHandler(functionClass: AEKeyword; handler: AEEventHandlerUPP; isSysHandler: boolean): OSErr; external name '_AERemoveSpecialHandler';
+>>>>>>> graemeg/fixes_2_2
 {
  *  AEGetSpecialHandler()
  *  
@@ -721,6 +886,7 @@ function AERemoveSpecialHandler( functionClass: AEKeyword; handler: AEEventHandl
  *    Thread safe since version 10.2
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -745,6 +911,13 @@ function AEGetSpecialHandler( functionClass: AEKeyword; var handler: AEEventHand
 >>>>>>> origin/cpstrnew
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function AEGetSpecialHandler(functionClass: AEKeyword; var handler: AEEventHandlerUPP; isSysHandler: boolean): OSErr; external name '_AEGetSpecialHandler';
+>>>>>>> graemeg/fixes_2_2
 {*************************************************************************
   This call was added in version 1.0.1. If called with the keyword
   keyAERecorderCount ('recr'), the number of recorders that are
@@ -758,6 +931,7 @@ function AEGetSpecialHandler( functionClass: AEKeyword; var handler: AEEventHand
  *    Thread safe since version 10.2
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -781,6 +955,13 @@ function AEManagerInfo( keyWord: AEKeyword; var result: SIGNEDLONG ): OSErr; ext
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function AEManagerInfo(keyWord: AEKeyword; var result: SInt32): OSErr; external name '_AEManagerInfo';
+>>>>>>> graemeg/fixes_2_2
 
 {
   AERemoteProcessResolver:
@@ -816,7 +997,11 @@ function AEManagerInfo( keyWord: AEKeyword; var result: SIGNEDLONG ): OSErr; ext
  *    Non-Carbon CFM:   not available
  }
 var kAERemoteProcessURLKey: CFStringRef; external name '_kAERemoteProcessURLKey'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_3, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 {
  *  kAERemoteProcessNameKey
  *  
@@ -830,7 +1015,11 @@ var kAERemoteProcessURLKey: CFStringRef; external name '_kAERemoteProcessURLKey'
  *    Non-Carbon CFM:   not available
  }
 var kAERemoteProcessNameKey: CFStringRef; external name '_kAERemoteProcessNameKey'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_3, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 {
  *  kAERemoteProcessUserIDKey
  *  
@@ -844,7 +1033,11 @@ var kAERemoteProcessNameKey: CFStringRef; external name '_kAERemoteProcessNameKe
  *    Non-Carbon CFM:   not available
  }
 var kAERemoteProcessUserIDKey: CFStringRef; external name '_kAERemoteProcessUserIDKey'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_3, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 {
  *  kAERemoteProcessProcessIDKey
  *  
@@ -858,7 +1051,11 @@ var kAERemoteProcessUserIDKey: CFStringRef; external name '_kAERemoteProcessUser
  *    Non-Carbon CFM:   not available
  }
 var kAERemoteProcessProcessIDKey: CFStringRef; external name '_kAERemoteProcessProcessIDKey'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_3, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  AERemoteProcessResolverContext
@@ -869,7 +1066,10 @@ var kAERemoteProcessProcessIDKey: CFStringRef; external name '_kAERemoteProcessP
  *    callback is made, the info pointer is passed to the callback.
  }
 type
+<<<<<<< HEAD
 	AERemoteProcessResolverContextPtr = ^AERemoteProcessResolverContext;
+=======
+>>>>>>> graemeg/fixes_2_2
 	AERemoteProcessResolverContext = record
 {
    * set to zero (0)
@@ -897,6 +1097,11 @@ type
 		copyDescription: CFAllocatorCopyDescriptionCallBack;
 	end;
 
+<<<<<<< HEAD
+=======
+    AERemoteProcessResolverContextPtr = ^AERemoteProcessResolverContext; { when a var xx: AERemoteProcessResolverContext parameter can be nil, it is changed to xx: AERemoteProcessResolverContextPtr }
+
+>>>>>>> graemeg/fixes_2_2
 {
  *  AERemoteProcessResolverRef
  *  
@@ -908,7 +1113,11 @@ type
  *    AERemoteProcessResolverRef is not a CFType.
  }
 type
+<<<<<<< HEAD
 	AERemoteProcessResolverRef = ^SInt32; { an opaque type }
+=======
+	AERemoteProcessResolverRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 {
  *  AECreateRemoteProcessResolver()
  *  
@@ -942,7 +1151,11 @@ type
  *    Non-Carbon CFM:   not available
  }
 function AECreateRemoteProcessResolver( allocator: CFAllocatorRef; url: CFURLRef ): AERemoteProcessResolverRef; external name '_AECreateRemoteProcessResolver';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_3, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -967,7 +1180,11 @@ function AECreateRemoteProcessResolver( allocator: CFAllocatorRef; url: CFURLRef
  *    Non-Carbon CFM:   not available
  }
 procedure AEDisposeRemoteProcessResolver( ref: AERemoteProcessResolverRef ); external name '_AEDisposeRemoteProcessResolver';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_3, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -1008,7 +1225,11 @@ procedure AEDisposeRemoteProcessResolver( ref: AERemoteProcessResolverRef ); ext
  *    Non-Carbon CFM:   not available
  }
 function AERemoteProcessResolverGetProcesses( ref: AERemoteProcessResolverRef; var outError: CFStreamError ): CFArrayRef; external name '_AERemoteProcessResolverGetProcesses';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_3, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -1061,6 +1282,7 @@ type
  *    Non-Carbon CFM:   not available
  }
 procedure AERemoteProcessResolverScheduleWithRunLoop( ref: AERemoteProcessResolverRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef; callback: AERemoteProcessResolverCallback; {const} ctx: AERemoteProcessResolverContextPtr { can be NULL } ); external name '_AERemoteProcessResolverScheduleWithRunLoop';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_3, __IPHONE_NA ) *)
 
 
@@ -1070,3 +1292,11 @@ procedure AERemoteProcessResolverScheduleWithRunLoop( ref: AERemoteProcessResolv
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

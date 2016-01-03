@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       CarbonCore/TextEncodingConverter.h
  
      Contains:   Text Encoding Conversion Interfaces.
@@ -28,10 +29,21 @@
  
      Copyright:  © 1994-2008 Apple Inc. All rights reserved.
 >>>>>>> origin/cpstrnew
+=======
+     File:       TextEncodingConverter.p
+ 
+     Contains:   Text Encoding Conversion Interfaces.
+ 
+     Version:    Technology: Mac OS 9.0
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1994-2002 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -58,6 +70,19 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -66,8 +91,13 @@
 
 unit TextEncodingConverter;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -80,21 +110,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -129,6 +167,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -136,6 +176,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -352,6 +393,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -377,6 +428,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -386,15 +441,20 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,TextCommon,CFBase;
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
+=======
+uses MacTypes,TextCommon;
+>>>>>>> graemeg/fixes_2_2
 
 
 {$ALIGN MAC68K}
 
+<<<<<<< HEAD
 type
 	TECPluginSignature = OSType;
 	TECPluginVersion = UInt32;
@@ -502,12 +562,55 @@ function TECCountAvailableTextEncodings( var numberEncodings: ItemCount ): OSSta
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+
+type
+	TECPluginSignature					= OSType;
+	TECPluginVersion					= UInt32;
+	{	 plugin signatures 	}
+
+const
+	kTECSignature				= FourCharCode('encv');
+	kTECUnicodePluginSignature	= FourCharCode('puni');
+	kTECJapanesePluginSignature	= FourCharCode('pjpn');
+	kTECChinesePluginSignature	= FourCharCode('pzho');
+	kTECKoreanPluginSignature	= FourCharCode('pkor');
+
+
+	{	 converter object reference 	}
+
+type
+	TECObjectRef    = ^SInt32; { an opaque 32-bit type }
+	TECObjectRefPtr = ^TECObjectRef;  { when a var xx:TECObjectRef parameter can be nil, it is changed to xx: TECObjectRefPtr }
+	TECSnifferObjectRef    = ^SInt32; { an opaque 32-bit type }
+	TECSnifferObjectRefPtr = ^TECSnifferObjectRef;  { when a var xx:TECSnifferObjectRef parameter can be nil, it is changed to xx: TECSnifferObjectRefPtr }
+	TECPluginSig						= OSType;
+	TECConversionInfoPtr = ^TECConversionInfo;
+	TECConversionInfo = record
+		sourceEncoding:			TextEncoding;
+		destinationEncoding:	TextEncoding;
+		reserved1:				UInt16;
+		reserved2:				UInt16;
+	end;
+
+	{	 return number of encodings types supported by user's configuraton of the encoding converter 	}
+	{
+	 *  TECCountAvailableTextEncodings()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function TECCountAvailableTextEncodings(var numberEncodings: ItemCount): OSStatus; external name '_TECCountAvailableTextEncodings';
+>>>>>>> graemeg/fixes_2_2
 
 { fill in an array of type TextEncoding passed in by the user with types of encodings the current configuration of the encoder can handle. }
 {
  *  TECGetAvailableTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -531,12 +634,20 @@ function TECGetAvailableTextEncodings( availableEncodings: {variable-size-array}
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECGetAvailableTextEncodings(availableEncodings: TextEncodingPtr; maxAvailableEncodings: ItemCount; var actualAvailableEncodings: ItemCount): OSStatus; external name '_TECGetAvailableTextEncodings';
+>>>>>>> graemeg/fixes_2_2
 
 { return number of from-to encoding conversion pairs supported  }
 {
  *  TECCountDirectTextEncodingConversions()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -560,12 +671,20 @@ function TECCountDirectTextEncodingConversions( var numberOfEncodings: ItemCount
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECCountDirectTextEncodingConversions(var numberOfEncodings: ItemCount): OSStatus; external name '_TECCountDirectTextEncodingConversions';
+>>>>>>> graemeg/fixes_2_2
 
 { fill in an array of type TextEncodingPair passed in by the user with types of encoding pairs the current configuration of the encoder can handle. }
 {
  *  TECGetDirectTextEncodingConversions()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -589,12 +708,20 @@ function TECGetDirectTextEncodingConversions( availableConversions: {variable-si
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECGetDirectTextEncodingConversions(availableConversions: TECConversionInfoPtr; maxAvailableConversions: ItemCount; var actualAvailableConversions: ItemCount): OSStatus; external name '_TECGetDirectTextEncodingConversions';
+>>>>>>> graemeg/fixes_2_2
 
 { return number of encodings a given encoding can be converter into }
 {
  *  TECCountDestinationTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -618,12 +745,20 @@ function TECCountDestinationTextEncodings( inputEncoding: TextEncoding; var numb
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECCountDestinationTextEncodings(inputEncoding: TextEncoding; var numberOfEncodings: ItemCount): OSStatus; external name '_TECCountDestinationTextEncodings';
+>>>>>>> graemeg/fixes_2_2
 
 { fill in an array of type TextEncodingPair passed in by the user with types of encodings pairs the current configuration of the encoder can handle. }
 {
  *  TECGetDestinationTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -647,12 +782,20 @@ function TECGetDestinationTextEncodings( inputEncoding: TextEncoding; destinatio
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECGetDestinationTextEncodings(inputEncoding: TextEncoding; destinationEncodings: TextEncodingPtr; maxDestinationEncodings: ItemCount; var actualDestinationEncodings: ItemCount): OSStatus; external name '_TECGetDestinationTextEncodings';
+>>>>>>> graemeg/fixes_2_2
 
 { get info about a text encoding }
 {
  *  TECGetTextEncodingInternetName()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
@@ -676,11 +819,19 @@ function TECGetTextEncodingInternetName( textEncoding_: TextEncoding; var encodi
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECGetTextEncodingInternetName(textEncoding_: TextEncoding; var encodingName: Str255): OSStatus; external name '_TECGetTextEncodingInternetName';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECGetTextEncodingFromInternetName()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
@@ -704,12 +855,20 @@ function TECGetTextEncodingFromInternetName( var textEncoding_: TextEncoding; co
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECGetTextEncodingFromInternetName(var textEncoding_: TextEncoding; const (*var*) encodingName: Str255): OSStatus; external name '_TECGetTextEncodingFromInternetName';
+>>>>>>> graemeg/fixes_2_2
 
 { create/dispose converters }
 {
  *  TECCreateConverter()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
@@ -733,11 +892,19 @@ function TECCreateConverter( var newEncodingConverter: TECObjectRef; inputEncodi
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECCreateConverter(var newEncodingConverter: TECObjectRef; inputEncoding: TextEncoding; outputEncoding: TextEncoding): OSStatus; external name '_TECCreateConverter';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECCreateConverterFromPath()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -761,11 +928,19 @@ function TECCreateConverterFromPath( var newEncodingConverter: TECObjectRef; {co
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECCreateConverterFromPath(var newEncodingConverter: TECObjectRef; inPath: TextEncodingPtr; inEncodings: ItemCount): OSStatus; external name '_TECCreateConverterFromPath';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECDisposeConverter()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
@@ -789,12 +964,20 @@ function TECDisposeConverter( newEncodingConverter: TECObjectRef ): OSStatus; ex
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECDisposeConverter(newEncodingConverter: TECObjectRef): OSStatus; external name '_TECDisposeConverter';
+>>>>>>> graemeg/fixes_2_2
 
 { convert text encodings }
 {
  *  TECClearConverterContextInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -818,11 +1001,19 @@ function TECClearConverterContextInfo( encodingConverter: TECObjectRef ): OSStat
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECClearConverterContextInfo(encodingConverter: TECObjectRef): OSStatus; external name '_TECClearConverterContextInfo';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECConvertText()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -846,11 +1037,19 @@ function TECConvertText( encodingConverter: TECObjectRef; inputBuffer: ConstText
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECConvertText(encodingConverter: TECObjectRef; inputBuffer: ConstTextPtr; inputBufferLength: ByteCount; var actualInputLength: ByteCount; outputBuffer: TextPtr; outputBufferLength: ByteCount; var actualOutputLength: ByteCount): OSStatus; external name '_TECConvertText';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECFlushText()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -874,12 +1073,20 @@ function TECFlushText( encodingConverter: TECObjectRef; outputBuffer: TextPtr; o
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECFlushText(encodingConverter: TECObjectRef; outputBuffer: TextPtr; outputBufferLength: ByteCount; var actualOutputLength: ByteCount): OSStatus; external name '_TECFlushText';
+>>>>>>> graemeg/fixes_2_2
 
 { one-to-many routines }
 {
  *  TECCountSubTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -903,11 +1110,19 @@ function TECCountSubTextEncodings( inputEncoding: TextEncoding; var numberOfEnco
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECCountSubTextEncodings(inputEncoding: TextEncoding; var numberOfEncodings: ItemCount): OSStatus; external name '_TECCountSubTextEncodings';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECGetSubTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -931,10 +1146,18 @@ function TECGetSubTextEncodings( inputEncoding: TextEncoding; subEncodings: {var
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECGetSubTextEncodings(inputEncoding: TextEncoding; subEncodings: TextEncodingPtr; maxSubEncodings: ItemCount; var actualSubEncodings: ItemCount): OSStatus; external name '_TECGetSubTextEncodings';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECGetEncodingList()
  *  
+<<<<<<< HEAD
  *  Parameters:
  *    
  *    encodingConverter:
@@ -972,11 +1195,20 @@ function TECGetEncodingList( encodingConverter: TECObjectRef; var numEncodings: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECGetEncodingList(encodingConverter: TECObjectRef; var numEncodings: ItemCount; var encodingList: Handle): OSStatus; external name '_TECGetEncodingList';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECCreateOneToManyConverter()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -1000,11 +1232,19 @@ function TECCreateOneToManyConverter( var newEncodingConverter: TECObjectRef; in
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECCreateOneToManyConverter(var newEncodingConverter: TECObjectRef; inputEncoding: TextEncoding; numOutputEncodings: ItemCount; outputEncodings: TextEncodingPtr): OSStatus; external name '_TECCreateOneToManyConverter';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECConvertTextToMultipleEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -1028,11 +1268,19 @@ function TECConvertTextToMultipleEncodings( encodingConverter: TECObjectRef; inp
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECConvertTextToMultipleEncodings(encodingConverter: TECObjectRef; inputBuffer: ConstTextPtr; inputBufferLength: ByteCount; var actualInputLength: ByteCount; outputBuffer: TextPtr; outputBufferLength: ByteCount; var actualOutputLength: ByteCount; var outEncodingsBuffer: TextEncodingRun; maxOutEncodingRuns: ItemCount; var actualOutEncodingRuns: ItemCount): OSStatus; external name '_TECConvertTextToMultipleEncodings';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECFlushMultipleEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -1056,12 +1304,20 @@ function TECFlushMultipleEncodings( encodingConverter: TECObjectRef; outputBuffe
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECFlushMultipleEncodings(encodingConverter: TECObjectRef; outputBuffer: TextPtr; outputBufferLength: ByteCount; var actualOutputLength: ByteCount; var outEncodingsBuffer: TextEncodingRun; maxOutEncodingRuns: ItemCount; var actualOutEncodingRuns: ItemCount): OSStatus; external name '_TECFlushMultipleEncodings';
+>>>>>>> graemeg/fixes_2_2
 
 { international internet info }
 {
  *  TECCountWebTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -1085,11 +1341,19 @@ function TECCountWebTextEncodings( locale: RegionCode; var numberEncodings: Item
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECCountWebTextEncodings(locale: RegionCode; var numberEncodings: ItemCount): OSStatus; external name '_TECCountWebTextEncodings';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECGetWebTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -1113,11 +1377,19 @@ function TECGetWebTextEncodings( locale: RegionCode; availableEncodings: {variab
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECGetWebTextEncodings(locale: RegionCode; availableEncodings: TextEncodingPtr; maxAvailableEncodings: ItemCount; var actualAvailableEncodings: ItemCount): OSStatus; external name '_TECGetWebTextEncodings';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECCountMailTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -1141,11 +1413,19 @@ function TECCountMailTextEncodings( locale: RegionCode; var numberEncodings: Ite
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECCountMailTextEncodings(locale: RegionCode; var numberEncodings: ItemCount): OSStatus; external name '_TECCountMailTextEncodings';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECGetMailTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -1169,12 +1449,20 @@ function TECGetMailTextEncodings( locale: RegionCode; availableEncodings: {varia
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECGetMailTextEncodings(locale: RegionCode; availableEncodings: TextEncodingPtr; maxAvailableEncodings: ItemCount; var actualAvailableEncodings: ItemCount): OSStatus; external name '_TECGetMailTextEncodings';
+>>>>>>> graemeg/fixes_2_2
 
 { examine text encodings }
 {
  *  TECCountAvailableSniffers()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -1198,11 +1486,19 @@ function TECCountAvailableSniffers( var numberOfEncodings: ItemCount ): OSStatus
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECCountAvailableSniffers(var numberOfEncodings: ItemCount): OSStatus; external name '_TECCountAvailableSniffers';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECGetAvailableSniffers()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -1226,11 +1522,19 @@ function TECGetAvailableSniffers( availableSniffers: {variable-size-array} TextE
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECGetAvailableSniffers(availableSniffers: TextEncodingPtr; maxAvailableSniffers: ItemCount; var actualAvailableSniffers: ItemCount): OSStatus; external name '_TECGetAvailableSniffers';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECCreateSniffer()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -1254,11 +1558,19 @@ function TECCreateSniffer( var encodingSniffer: TECSnifferObjectRef; {const} tes
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECCreateSniffer(var encodingSniffer: TECSnifferObjectRef; testEncodings: TextEncodingPtr; numTextEncodings: ItemCount): OSStatus; external name '_TECCreateSniffer';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECSniffTextEncoding()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -1282,11 +1594,19 @@ function TECSniffTextEncoding( encodingSniffer: TECSnifferObjectRef; inputBuffer
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECSniffTextEncoding(encodingSniffer: TECSnifferObjectRef; inputBuffer: TextPtr; inputBufferLength: ByteCount; testEncodings: TextEncodingPtr; numTextEncodings: ItemCount; var numErrsArray: ItemCount; maxErrs: ItemCount; var numFeaturesArray: ItemCount; maxFeatures: ItemCount): OSStatus; external name '_TECSniffTextEncoding';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECDisposeSniffer()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -1310,11 +1630,19 @@ function TECDisposeSniffer( encodingSniffer: TECSnifferObjectRef ): OSStatus; ex
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECDisposeSniffer(encodingSniffer: TECSnifferObjectRef): OSStatus; external name '_TECDisposeSniffer';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TECClearSnifferContextInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
@@ -1518,3 +1846,29 @@ function TECGetTextEncodingFromInternetNameOrMIB( var textEncodingPtr: TextEncod
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TECClearSnifferContextInfo(encodingSniffer: TECSnifferObjectRef): OSStatus; external name '_TECClearSnifferContextInfo';
+
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  TECSetBasicOptions()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.5 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function TECSetBasicOptions(encodingConverter: TECObjectRef; controlFlags: OptionBits): OSStatus; external name '_TECSetBasicOptions';
+
+{$endc}  {CALL_NOT_IN_CARBON}
+
+
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

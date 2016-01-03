@@ -3,284 +3,104 @@ Ported to FPC by Nikolay Nikolov (nickysn@users.sourceforge.net)
 }
 
 {
- Image example for OpenPTC 1.0 C++ implementation
+ Image example for OpenPTC 1.0 C++ Implementation
  Copyright (c) Glenn Fiedler (ptc@gaffer.org)
  This source code is in the public domain
 }
 
-program ImageExample;
+Program ImageExample;
 
 {$MODE objfpc}
 
-uses
-  SysUtils, ptc;
+Uses
+  ptc;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-procedure load(surface: IPTCSurface; filename: String);
-=======
-procedure load(surface: TPTCSurface; filename: String);
->>>>>>> graemeg/cpstrnew
-=======
-procedure load(surface: TPTCSurface; filename: String);
->>>>>>> graemeg/cpstrnew
-=======
-procedure load(surface: TPTCSurface; filename: String);
->>>>>>> graemeg/cpstrnew
-=======
-procedure load(surface: TPTCSurface; filename: String);
->>>>>>> origin/cpstrnew
-var
-  F: File;
-  width, height: Integer;
-  pixels: PByte = nil;
-  y: Integer;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  img_format: IPTCFormat;
-=======
-  img_format: TPTCFormat = nil;
-  img_palette: TPTCPalette = nil;
->>>>>>> graemeg/cpstrnew
-=======
-  img_format: TPTCFormat = nil;
-  img_palette: TPTCPalette = nil;
->>>>>>> graemeg/cpstrnew
-=======
-  img_format: TPTCFormat = nil;
-  img_palette: TPTCPalette = nil;
->>>>>>> graemeg/cpstrnew
-=======
-  img_format: TPTCFormat = nil;
-  img_palette: TPTCPalette = nil;
->>>>>>> origin/cpstrnew
-begin
+Procedure load(surface : TPTCSurface; filename : String);
+
+Var
+  F : File;
+  width, height : Integer;
+  pixels : PByte;
+  y : Integer;
+  tmp : TPTCFormat;
+  tmp2 : TPTCPalette;
+
+Begin
   { open image file }
-  AssignFile(F, filename);
+  ASSign(F, filename);
   Reset(F, 1);
 
-  try
-    { skip header }
-    Seek(F, 18);
+  { skip header }
+  Seek(F, 18);
 
-    { get surface dimensions }
-    width := surface.width;
-    height := surface.height;
+  { get surface dimensions }
+  width := surface.width;
+  height := surface.height;
 
-    { allocate image pixels }
-    pixels := GetMem(width * height * 3);
+  { allocate image pixels }
+  pixels := GetMem(width * height * 3);
 
-    { read image pixels one line at a time }
-    for y := height - 1 DownTo 0 do
-      BlockRead(F, pixels[width * y * 3], width * 3);
+  { read image pixels one line at a time }
+  For y := height - 1 DownTo 0 Do
+    BlockRead(F, pixels[width * y * 3], width * 3);
 
-    { load pixels to surface }
-    {$IFDEF FPC_LITTLE_ENDIAN}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    img_format := TPTCFormatFactory.CreateNew(24, $00FF0000, $0000FF00, $000000FF);
-    {$ELSE FPC_LITTLE_ENDIAN}
-    img_format := TPTCFormatFactory.CreateNew(24, $000000FF, $0000FF00, $00FF0000);
-    {$ENDIF FPC_LITTLE_ENDIAN}
-    surface.Load(pixels, width, height, width * 3, img_format, TPTCPaletteFactory.CreateNew);
-=======
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-    img_format := TPTCFormat.Create(24, $00FF0000, $0000FF00, $000000FF);
-    {$ELSE FPC_LITTLE_ENDIAN}
-    img_format := TPTCFormat.Create(24, $000000FF, $0000FF00, $00FF0000);
-    {$ENDIF FPC_LITTLE_ENDIAN}
-    img_palette := TPTCPalette.Create;
-    surface.load(pixels, width, height, width * 3, img_format, img_palette);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
+  { load pixels to surface }
+  tmp := TPTCFormat.Create(24, $00FF0000, $0000FF00, $000000FF);
+  tmp2 := TPTCPalette.Create;
+  surface.load(pixels, width, height, width * 3, tmp, tmp2);
+  tmp2.Free;
+  tmp.Free;
 
-  finally
-    CloseFile(F);
+  { free image pixels }
+  FreeMem(pixels);
+End;
 
-    { free image pixels }
-    FreeMem(pixels);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+Var
+  console : TPTCConsole;
+  format : TPTCFormat;
+  surface : TPTCSurface;
 
-    img_palette.Free;
-    img_format.Free;
->>>>>>> graemeg/cpstrnew
-=======
+Begin
+  Try
+    { create console }
+    console := TPTCConsole.Create;
 
-    img_palette.Free;
-    img_format.Free;
->>>>>>> graemeg/cpstrnew
-=======
+    { create format }
+    format := TPTCFormat.Create(32, $00FF0000, $0000FF00, $000000FF);
 
-    img_palette.Free;
-    img_format.Free;
->>>>>>> graemeg/cpstrnew
-=======
+    Try
+      { try to open the console matching the image resolution }
+      console.open('Image example', 320, 200, format);
+    Except
+      On TPTCError Do
+        { fallback to the default resolution }
+        console.open('Image example', format);
+    End;
 
-    img_palette.Free;
-    img_format.Free;
->>>>>>> origin/cpstrnew
-  end;
-end;
+    { create surface }
+    surface := TPTCSurface.Create(320, 200, format);
+    format.Free;
 
-var
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  console: IPTCConsole;
-  format: IPTCFormat;
-  surface: IPTCSurface;
-=======
-  console: TPTCConsole = nil;
-  format: TPTCFormat = nil;
-  surface: TPTCSurface = nil;
->>>>>>> graemeg/cpstrnew
-=======
-  console: TPTCConsole = nil;
-  format: TPTCFormat = nil;
-  surface: TPTCSurface = nil;
->>>>>>> graemeg/cpstrnew
-=======
-  console: TPTCConsole = nil;
-  format: TPTCFormat = nil;
-  surface: TPTCSurface = nil;
->>>>>>> graemeg/cpstrnew
-=======
-  console: TPTCConsole = nil;
-  format: TPTCFormat = nil;
-  surface: TPTCSurface = nil;
->>>>>>> origin/cpstrnew
-begin
-  try
-    try
-      { create console }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      console := TPTCConsoleFactory.CreateNew;
+    { load image to surface }
+    load(surface, 'image.tga');
 
-      { create format }
-      format := TPTCFormatFactory.CreateNew(32, $00FF0000, $0000FF00, $000000FF);
-=======
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-      console := TPTCConsole.Create;
+    { copy surface to console }
+    surface.copy(console);
 
-      { create format }
-      format := TPTCFormat.Create(32, $00FF0000, $0000FF00, $000000FF);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
+    { update console }
+    console.update;
 
-      try
-        { try to open the console matching the image resolution }
-        console.open('Image example', 320, 200, format);
-      except
-        on TPTCError do
-          { fallback to the default resolution }
-          console.open('Image example', format);
-      end;
+    { read key }
+    console.ReadKey;
 
-      { create surface }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      surface := TPTCSurfaceFactory.CreateNew(320, 200, format);
-=======
-      surface := TPTCSurface.Create(320, 200, format);
->>>>>>> graemeg/cpstrnew
-=======
-      surface := TPTCSurface.Create(320, 200, format);
->>>>>>> graemeg/cpstrnew
-=======
-      surface := TPTCSurface.Create(320, 200, format);
->>>>>>> graemeg/cpstrnew
-=======
-      surface := TPTCSurface.Create(320, 200, format);
->>>>>>> origin/cpstrnew
+    { close console }
+    console.close;
 
-      { load image to surface }
-      load(surface, 'image.tga');
-
-      { copy surface to console }
-      surface.copy(console);
-
-      { update console }
-      console.update;
-
-      { read key }
-      console.ReadKey;
-
-    finally
-      { close console }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      if Assigned(console) then
-        console.close;
-=======
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-      console.close;
-
-      console.Free;
-      surface.Free;
-      format.Free;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-    end;
-  except
-    on error: TPTCError do
+    console.Free;
+    surface.Free;
+  Except
+    On error : TPTCError Do
       { report error }
       error.report;
-  end;
-end.
+  End;
+End.

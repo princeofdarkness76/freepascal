@@ -1,6 +1,10 @@
 { lCommon
 
+<<<<<<< HEAD
   CopyRight (C) 2004-2008 Ales Katona
+=======
+  CopyRight (C) 2004-2007 Ales Katona
+>>>>>>> graemeg/fixes_2_2
 
   This library is Free software; you can rediStribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -138,18 +142,31 @@ type
   function StrToNetAddr(const IP: string): Cardinal; inline;
   function NetAddrToStr(const Entry: Cardinal): string; inline;
   
+<<<<<<< HEAD
   procedure FillAddressInfo(var aAddrInfo: TLSocketAddress; const aFamily: sa_family_t;
                             const Address: string; const aPort: Word);
+=======
+  procedure FillAddressInfo(var aAddrInfo: TInetSockAddr; const aFamily: sa_family_t;
+                            const Address: string; const aPort: Word); inline;
+>>>>>>> graemeg/fixes_2_2
                             
 implementation
 
 uses
+<<<<<<< HEAD
   StrUtils
+=======
+  StrUtils, lNet
+>>>>>>> graemeg/fixes_2_2
   
 {$IFNDEF UNIX}
 
 {$IFDEF WINDOWS}
+<<<<<<< HEAD
   , Windows, lws2tcpip;
+=======
+  , Windows;
+>>>>>>> graemeg/fixes_2_2
   
 {$IFDEF WINCE}
 
@@ -343,6 +360,7 @@ end;
 function IsBlockError(const anError: Integer): Boolean; inline;
 begin
   Result := anError = WSAEWOULDBLOCK;
+<<<<<<< HEAD
 end;
 
 function IsNonFatalError(const anError: Integer): Boolean; inline;
@@ -357,6 +375,8 @@ function IsPipeError(const anError: Integer): Boolean; inline;
 begin
   {$WARNING check these ambiguous errors}
   Result := anError = WSAECONNRESET;
+=======
+>>>>>>> graemeg/fixes_2_2
 end;
 
 {$ELSE}
@@ -400,6 +420,7 @@ begin
     Result := HostAddrToStr(Cardinal(HE.Addr)) // for localhost
   else if ResolveHostByName(Name, HE) then
     Result := NetAddrToStr(Cardinal(HE.Addr));
+<<<<<<< HEAD
 end;
 
 function GetHostName6(const Address: string): string;
@@ -422,6 +443,8 @@ begin
     Result := HostAddrToStr6(HE.Addr) // for localhost
   else} if ResolveHostByName6(Name, HE) then
     Result := NetAddrToStr6(HE.Addr);
+=======
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function SetBlocking(const aHandle: Integer; const aValue: Boolean): Boolean;
@@ -445,6 +468,7 @@ end;
 function IsBlockError(const anError: Integer): Boolean; inline;
 begin
   Result := (anError = ESysEWOULDBLOCK) or (anError = ESysENOBUFS);
+<<<<<<< HEAD
 end;
 
 function IsNonFatalError(const anError: Integer): Boolean; inline;
@@ -457,6 +481,8 @@ end;
 function IsPipeError(const anError: Integer): Boolean; inline;
 begin
   Result := anError = ESysEPIPE;
+=======
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TZSeconds: Integer; inline;
@@ -503,6 +529,7 @@ function IsIP6Empty(const aIP6: TInetSockAddr6): Boolean; inline;
 var
   i: Integer;
 begin
+<<<<<<< HEAD
   Result := True;
   for i := 0 to High(aIP6.sin6_addr.u6_addr32) do
     if aIP6.sin6_addr.u6_addr32[i] <> 0 then
@@ -573,6 +600,14 @@ begin
           aAddrInfo.IPv6.sin6_addr := StrToNetAddr6(GetHostIP6(Address));
       end;
   end;
+=======
+  aAddrInfo.family := AF_INET;
+  aAddrInfo.Port := htons(aPort);
+  aAddrInfo.Addr := StrToNetAddr(Address);
+  
+  if (Address <> LADDR_ANY) and (aAddrInfo.Addr = 0) then
+    aAddrInfo.Addr := StrToNetAddr(GetHostIP(Address));
+>>>>>>> graemeg/fixes_2_2
 end;
 
 

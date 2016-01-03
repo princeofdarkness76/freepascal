@@ -231,20 +231,33 @@ implementation
                   begin
                     p.free;
                     { switch to new node }
+<<<<<<< HEAD
                     p := hp;
                     { run firstpass }
                     firstpass(p);
+=======
+                    p:=hp;
+>>>>>>> graemeg/fixes_2_2
                   end
                  else
                    begin
                      { inlining happens in pass_1 and can cause new }
                      { simplify opportunities                       }
+<<<<<<< HEAD
                      hp:=p.simplify(true);
                      if assigned(hp) then
                        begin
                          p.free;
                          p := hp;
                          firstpass(p);
+=======
+                     hp:=p.simplify;
+                     if assigned(hp) then
+                       begin
+                         p.free;
+                         firstpass(hp);
+                         p:=hp;
+>>>>>>> graemeg/fixes_2_2
                        end;
                    end;
                  if codegenerror then

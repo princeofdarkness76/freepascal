@@ -252,12 +252,15 @@ destructor tobjectreader.destroy;
 begin
   if opened then
     closefile;
+<<<<<<< HEAD
 end;
 
 
 constructor tobjectreader.createAr(const Aarfn:string;allow_nonar:boolean=false);
 begin
   InternalError(2015081401);
+=======
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -271,9 +274,15 @@ begin
        exit;
     end;
   ffilename:=fn;
+<<<<<<< HEAD
   bufmax:=f.Size;
   getmem(buf,bufmax);
   f.read(buf^,bufmax);
+=======
+  getmem(buf,f.Size);
+  f.read(buf^,f.Size);
+  bufmax:=f.Size;
+>>>>>>> graemeg/fixes_2_2
   f.free;
   bufidx:=0;
   opened:=true;
@@ -330,6 +339,7 @@ end;
 function tobjectreader.getfilename : string;
   begin
     result:=ffilename;
+<<<<<<< HEAD
   end;
 
 function tobjectreader.GetPos: longint;
@@ -341,6 +351,8 @@ function tobjectreader.GetPos: longint;
 function tobjectreader.GetIsArchive: boolean;
   begin
     Result:=false;
+=======
+>>>>>>> graemeg/fixes_2_2
   end;
 
 end.

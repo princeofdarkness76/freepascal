@@ -271,7 +271,11 @@ implementation
             hreg64lo:=left.location.register64.reglo;
 
             shiftval := tordconstnode(right).value.svalue;
+<<<<<<< HEAD
             shiftval := shiftval and 63;
+=======
+	    shiftval := shiftval and 63;
+>>>>>>> graemeg/fixes_2_2
             if shiftval > 31 then
               begin
                 if nodetype = shln then

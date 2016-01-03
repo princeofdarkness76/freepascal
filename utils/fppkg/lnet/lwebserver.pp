@@ -1,6 +1,10 @@
 { Web server component, built on the HTTP server component
 
+<<<<<<< HEAD
   Copyright (C) 2006-2008 Micha Nelissen
+=======
+  Copyright (C) 2006-2007 Micha Nelissen
+>>>>>>> graemeg/fixes_2_2
 
   This library is Free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -30,7 +34,11 @@ interface
 
 uses
   sysutils, classes, lhttp, lhttputil, lmimetypes, levents,
+<<<<<<< HEAD
   lprocess, process, lfastcgi, fastcgi_base;
+=======
+  lprocess, process, lfastcgi, fastcgi;
+>>>>>>> graemeg/fixes_2_2
 
 type
   TLMultipartParameter = (mpContentType, mpContentDisposition, mpContentTransferEncoding,

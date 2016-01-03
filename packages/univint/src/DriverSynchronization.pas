@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       CarbonCore/DriverSynchronization.h
  
      Contains:   Driver Synchronization Interfaces.
@@ -21,6 +22,16 @@
      Version:    CarbonCore-859.2~1
  
      Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
+=======
+     File:       DriverSynchronization.p
+ 
+     Contains:   Driver Synchronization Interfaces.
+ 
+     Version:    Technology: MacOS 8
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -28,6 +39,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -46,6 +58,16 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -54,8 +76,13 @@
 
 unit DriverSynchronization;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -68,21 +95,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -117,6 +152,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -124,6 +161,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -390,6 +428,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -415,6 +463,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -424,6 +476,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -432,10 +485,29 @@ uses MacTypes;
 
 {$ALIGN POWER}
 
+=======
+uses MacTypes,ConditionalMacros;
+
+
+{$ALIGN MAC68K}
+
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  SynchronizeIO()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in DriverServicesLib 1.0 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure SynchronizeIO; external name '_SynchronizeIO';
+{$endc}  {CALL_NOT_IN_CARBON}
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  CompareAndSwap()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Compare and swap operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -490,10 +562,19 @@ function CompareAndSwap( oldValue: UInt32; newValue: UInt32; var address: UInt32
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function CompareAndSwap(oldVvalue: UInt32; newValue: UInt32; var OldValueAdr: UInt32): boolean; external name '_CompareAndSwap';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TestAndClear()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Bit test and clear operation, performed atomically with respect
  *    to all devices that participate in the coherency architecture of
@@ -553,10 +634,19 @@ function TestAndClear( bit: UInt32; address: UnivPtr ): Boolean; external name '
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TestAndClear(bit: UInt32; startAddress: UnivPtr): boolean; external name '_TestAndClear';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  TestAndSet()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Bit test and set operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -606,10 +696,19 @@ function TestAndSet( bit: UInt32; address: UnivPtr ): Boolean; external name '_T
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TestAndSet(bit: UInt32; startAddress: UnivPtr): boolean; external name '_TestAndSet';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  IncrementAtomic8()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    8-bit increment operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -655,10 +754,19 @@ function IncrementAtomic8( var address: SInt8 ): SInt8; external name '_Incremen
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function IncrementAtomic8(var value: SInt8): SInt8; external name '_IncrementAtomic8';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  DecrementAtomic8()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    8-bit decrement operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -704,10 +812,19 @@ function DecrementAtomic8( var address: SInt8 ): SInt8; external name '_Decremen
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function DecrementAtomic8(var value: SInt8): SInt8; external name '_DecrementAtomic8';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  AddAtomic8()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    8-bit add operation, performed atomically with respect to all
  *    devices that participate in the coherency architecture of the
@@ -756,10 +873,19 @@ function AddAtomic8( amount: SInt32; var address: SInt8 ): SInt8; external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function AddAtomic8(amount: SInt32; var value: SInt8): SInt8; external name '_AddAtomic8';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  BitAndAtomic8()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    8-bit logical and operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -809,10 +935,19 @@ function BitAndAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function BitAndAtomic8(mask: UInt32; var value: UInt8): ByteParameter; external name '_BitAndAtomic8';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  BitOrAtomic8()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    8-bit logical or operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -862,10 +997,19 @@ function BitOrAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function BitOrAtomic8(mask: UInt32; var value: UInt8): ByteParameter; external name '_BitOrAtomic8';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  BitXorAtomic8()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    8-bit logical xor operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -915,10 +1059,19 @@ function BitXorAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function BitXorAtomic8(mask: UInt32; var value: UInt8): ByteParameter; external name '_BitXorAtomic8';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  IncrementAtomic16()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    16-bit increment operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -964,10 +1117,19 @@ function IncrementAtomic16( var address: SInt16 ): SInt16; external name '_Incre
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function IncrementAtomic16(var value: SInt16): SInt16; external name '_IncrementAtomic16';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  DecrementAtomic16()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    16-bit decrement operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -1013,10 +1175,19 @@ function DecrementAtomic16( var address: SInt16 ): SInt16; external name '_Decre
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function DecrementAtomic16(var value: SInt16): SInt16; external name '_DecrementAtomic16';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  AddAtomic16()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    16-bit add operation, performed atomically with respect to all
  *    devices that participate in the coherency architecture of the
@@ -1065,10 +1236,19 @@ function AddAtomic16( amount: SInt32; var address: SInt16 ): SInt16; external na
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function AddAtomic16(amount: SInt32; var value: SInt16): SInt16; external name '_AddAtomic16';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  BitAndAtomic16()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    16-bit logical and operation, performed atomically with respect
  *    to all devices that participate in the coherency architecture of
@@ -1118,10 +1298,19 @@ function BitAndAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function BitAndAtomic16(mask: UInt32; var value: UInt16): UInt16; external name '_BitAndAtomic16';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  BitOrAtomic16()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    16-bit logical or operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -1171,10 +1360,19 @@ function BitOrAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external na
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function BitOrAtomic16(mask: UInt32; var value: UInt16): UInt16; external name '_BitOrAtomic16';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  BitXorAtomic16()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    16-bit logical xor operation, performed atomically with respect
  *    to all devices that participate in the coherency architecture of
@@ -1224,10 +1422,19 @@ function BitXorAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function BitXorAtomic16(mask: UInt32; var value: UInt16): UInt16; external name '_BitXorAtomic16';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  IncrementAtomic()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    32-bit increment operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -1273,10 +1480,19 @@ function IncrementAtomic( var address: SInt32 ): SInt32; external name '_Increme
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function IncrementAtomic(var value: SInt32): SInt32; external name '_IncrementAtomic';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  DecrementAtomic()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    32-bit decrement operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -1322,10 +1538,19 @@ function DecrementAtomic( var address: SInt32 ): SInt32; external name '_Decreme
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function DecrementAtomic(var value: SInt32): SInt32; external name '_DecrementAtomic';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  AddAtomic()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    32-bit add operation, performed atomically with respect to all
  *    devices that participate in the coherency architecture of the
@@ -1374,10 +1599,19 @@ function AddAtomic( amount: SInt32; var address: SInt32 ): SInt32; external name
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function AddAtomic(amount: SInt32; var value: SInt32): SInt32; external name '_AddAtomic';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  BitAndAtomic()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    32-bit logical and operation, performed atomically with respect
  *    to all devices that participate in the coherency architecture of
@@ -1427,10 +1661,19 @@ function BitAndAtomic( mask: UInt32; var address: UInt32 ): UInt32; external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function BitAndAtomic(mask: UInt32; var value: UInt32): UInt32; external name '_BitAndAtomic';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  BitOrAtomic()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    32-bit logical or operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -1480,10 +1723,19 @@ function BitOrAtomic( mask: UInt32; var address: UInt32 ): UInt32; external name
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function BitOrAtomic(mask: UInt32; var value: UInt32): UInt32; external name '_BitOrAtomic';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  BitXorAtomic()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    32-bit logical xor operation, performed atomically with respect
  *    to all devices that participate in the coherency architecture of
@@ -1538,3 +1790,17 @@ function BitXorAtomic( mask: UInt32; var address: UInt32 ): UInt32; external nam
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function BitXorAtomic(mask: UInt32; var value: UInt32): UInt32; external name '_BitXorAtomic';
+
+
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

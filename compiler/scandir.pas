@@ -1211,7 +1211,11 @@ unit scandir;
       var
         ident : string;
       begin
+<<<<<<< HEAD
         if not (target_info.system in (systems_all_windows)) then
+=======
+        if not (target_info.system in (system_all_windows)) then
+>>>>>>> graemeg/fixes_2_2
           Message(scan_w_setpeflags_not_support);
         current_scanner.skipspace;
         ident:=current_scanner.readid;
@@ -2035,7 +2039,10 @@ unit scandir;
         AddDirective('PACKSET',directive_all, @dir_packset);
         AddDirective('PASCALMAINNAME',directive_all, @dir_pascalmainname);
         AddDirective('PIC',directive_all, @dir_pic);
+<<<<<<< HEAD
         AddDirective('POINTERMATH',directive_all, @dir_pointermath);
+=======
+>>>>>>> graemeg/fixes_2_2
         AddDirective('POP',directive_all, @dir_pop);
         AddDirective('PROFILE',directive_all, @dir_profile);
         AddDirective('PUSH',directive_all, @dir_push);
@@ -2046,7 +2053,10 @@ unit scandir;
         AddDirective('RESOURCE',directive_all, @dir_resource);
         AddDirective('SATURATION',directive_all, @dir_saturation);
         AddDirective('SAFEFPUEXCEPTIONS',directive_all, @dir_safefpuexceptions);
+<<<<<<< HEAD
         AddDirective('SCOPEDENUMS',directive_all, @dir_scopedenums);
+=======
+>>>>>>> graemeg/fixes_2_2
         AddDirective('SETPEFLAGS', directive_all, @dir_setpeflags);
         AddDirective('SETPEOPTFLAGS', directive_all, @dir_setpeoptflags);
         AddDirective('SCREENNAME',directive_all, @dir_screenname);

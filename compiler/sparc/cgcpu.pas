@@ -76,7 +76,11 @@ interface
         procedure a_call_reg(list:TAsmList;Reg:TRegister);override;
         { General purpose instructions }
         procedure maybeadjustresult(list: TAsmList; op: TOpCg; size: tcgsize; dst: tregister);
+<<<<<<< HEAD
         procedure a_op_const_reg(list:TAsmList;Op:TOpCG;size:tcgsize;a:tcgint;reg:TRegister);override;
+=======
+        procedure a_op_const_reg(list:TAsmList;Op:TOpCG;size:tcgsize;a:aint;reg:TRegister);override;
+>>>>>>> graemeg/fixes_2_2
         procedure a_op_reg_reg(list:TAsmList;Op:TOpCG;size:TCGSize;src, dst:TRegister);override;
         procedure a_op_const_reg_reg(list:TAsmList;op:TOpCg;size:tcgsize;a:tcgint;src, dst:tregister);override;
         procedure a_op_reg_reg_reg(list:TAsmList;op:TOpCg;size:tcgsize;src1, src2, dst:tregister);override;
@@ -105,6 +109,7 @@ interface
         procedure g_overflowCheck_loc(List:TAsmList;const Loc:TLocation;def:TDef;ovloc : tlocation);override;
         procedure g_proc_entry(list : TAsmList;localsize : longint;nostackframe:boolean);override;
         procedure g_proc_exit(list : TAsmList;parasize:longint;nostackframe:boolean);override;
+<<<<<<< HEAD
         procedure g_maybe_got_init(list: TAsmList); override;
         procedure g_restore_registers(list:TAsmList);override;
         procedure g_save_registers(list : TAsmList);override;
@@ -116,6 +121,10 @@ interface
        private
         use_unlimited_pic_mode : boolean;
 =======
+=======
+        procedure g_restore_registers(list:TAsmList);override;
+        procedure g_save_registers(list : TAsmList);override;
+>>>>>>> graemeg/fixes_2_2
         procedure g_concatcopy(list : TAsmList;const source,dest : treference;len : aint);override;
         procedure g_concatcopy_unaligned(list : TAsmList;const source,dest : treference;len : aint);override;
         procedure g_concatcopy_move(list : TAsmList;const source,dest : treference;len : aint);
@@ -239,6 +248,7 @@ implementation
         hreg:=getintregister(list,OS_INT);
         if not (cs_create_pic in current_settings.moduleswitches) then
           begin
+<<<<<<< HEAD
             { absolute loads allow any offset to be encoded into relocation }
             href.refaddr:=addr_high;
             list.concat(taicpu.op_ref_reg(A_SETHI,href,hreg));
@@ -247,6 +257,27 @@ implementation
                 ref.base:=hreg;
                 ref.refaddr:=addr_low;
                 exit;
+=======
+            tmpreg:=GetIntRegister(list,OS_INT);
+            reference_reset(tmpref);
+            tmpref.symbol:=ref.symbol;
+            tmpref.offset:=ref.offset;
+            tmpref.refaddr:=addr_high;
+            list.concat(taicpu.op_ref_reg(A_SETHI,tmpref,tmpreg));
+            if (ref.offset=0) and (ref.index=NR_NO) and
+              (ref.base=NR_NO) then
+              begin
+                ref.refaddr:=addr_low;
+              end
+            else
+              begin
+                { Load the low part is left }
+                tmpref.refaddr:=addr_low;
+                list.concat(taicpu.op_reg_ref_reg(A_OR,tmpreg,tmpref,tmpreg));
+                ref.offset:=0;
+                { symbol is loaded }
+                ref.symbol:=nil;
+>>>>>>> graemeg/fixes_2_2
               end;
             { base present -> load the entire address and use it as index }
             href.refaddr:=addr_low;
@@ -681,12 +712,18 @@ implementation
              (tosize = OS_16)) then
            case tosize of
              OS_8 :
+<<<<<<< HEAD
                list.concat(taicpu.op_reg_const_reg(A_AND,reg1,$ff,reg2));
              OS_16 :
                begin
                  list.concat(taicpu.op_reg_const_reg(A_SLL,reg1,16,reg2));
                  list.concat(taicpu.op_reg_const_reg(A_SRL,reg2,16,reg2));
                end;
+=======
+               a_op_const_reg_reg(list,OP_AND,tosize,$ff,reg1,reg2);
+             OS_16 :
+               a_op_const_reg_reg(list,OP_AND,tosize,$ffff,reg1,reg2);
+>>>>>>> graemeg/fixes_2_2
              OS_32,
              OS_S32 :
                begin
@@ -759,9 +796,22 @@ implementation
         reference_reset_symbol(href,ref.symbol,ref.offset,ref.alignment);
         if (cs_create_pic in current_settings.moduleswitches) then
           begin
+<<<<<<< HEAD
             include(current_procinfo.flags,pi_needs_got);
             href.offset:=0;
             if use_unlimited_pic_mode then
+=======
+            hreg:=GetAddressRegister(list);
+            reference_reset(tmpref);
+            tmpref.symbol := href.symbol;
+            tmpref.offset := href.offset;
+            tmpref.refaddr := addr_high;
+            list.concat(taicpu.op_ref_reg(A_SETHI,tmpref,hreg));
+            { Only the low part is left }
+            tmpref.refaddr:=addr_low;
+            list.concat(taicpu.op_reg_ref_reg(A_OR,hreg,tmpref,hreg));
+            if href.base<>NR_NO then
+>>>>>>> graemeg/fixes_2_2
               begin
                 href.refaddr:=addr_high;
                 list.concat(taicpu.op_ref_reg(A_SETHI,href,r));
@@ -873,7 +923,11 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     procedure TCgSparc.a_op_const_reg(list:TAsmList;Op:TOpCG;size:tcgsize;a:tcgint;reg:TRegister);
+=======
+    procedure TCgSparc.a_op_const_reg(list:TAsmList;Op:TOpCG;size:tcgsize;a:aint;reg:TRegister);
+>>>>>>> graemeg/fixes_2_2
       begin
         optimize_op_const(size,op,a);
         case op of
@@ -886,8 +940,13 @@ implementation
           OP_NEG,OP_NOT:
             internalerror(200306011);
         else
+<<<<<<< HEAD
           a_op_const_reg_reg(list,op,size,a,reg,reg);
         end;
+=======
+          handle_reg_const_reg(list,TOpCG2AsmOp[op],reg,a,reg);
+        maybeadjustresult(list,op,size,reg);
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -909,7 +968,33 @@ implementation
       var
         l: TLocation;
       begin
+<<<<<<< HEAD
         a_op_const_reg_reg_checkoverflow(list,op,size,a,src,dst,false,l);
+=======
+        case op of
+          OP_MUL,
+          OP_IMUL:
+            begin
+              if ispowerof2(a,power) then
+                begin
+                  { can be done with a shift }
+                  inherited a_op_const_reg_reg(list,op,size,a,src,dst);
+                  exit;
+                end;
+            end;
+          OP_SUB,
+          OP_ADD :
+            begin
+              if (a=0) then
+                begin
+                  a_load_reg_reg(list,size,size,src,dst);
+                  exit;
+                end;
+            end;
+        end;
+        handle_reg_const_reg(list,TOpCG2AsmOp[op],src,a,dst);
+        maybeadjustresult(list,op,size,dst);
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -1496,6 +1581,7 @@ implementation
             if (procdef.extnumber=$ffff) then
               Internalerror(200006139);
             { mov  0(%rdi),%rax ; load vmt}
+<<<<<<< HEAD
             reference_reset_base(href,NR_O0,0,sizeof(pint));
             cg.a_load_ref_reg(list,OS_ADDR,OS_ADDR,href,NR_G1);
             g1_used:=true; 
@@ -1515,6 +1601,23 @@ implementation
             list.concat(taicpu.op_reg_ref_reg(A_OR,NR_G1,href,NR_G1));
             list.concat(taicpu.op_reg(A_JMP,NR_G1));
 	    g1_used:=false;
+=======
+            reference_reset_base(href,NR_O0,0);
+            cg.a_load_ref_reg(list,OS_ADDR,OS_ADDR,href,NR_G1);
+            { jmp *vmtoffs(%eax) ; method offs }
+            reference_reset_base(href,NR_G1,procdef._class.vmtmethodoffset(procdef.extnumber));
+            list.concat(taicpu.op_ref_reg(A_LD,href,NR_G1));
+            list.concat(taicpu.op_reg(A_JMP,NR_G1));
+          end
+        else
+          begin
+            reference_reset_symbol(href,current_asmdata.RefAsmSymbol(procdef.mangledname),0);
+            href.refaddr := addr_high;
+            list.concat(taicpu.op_ref_reg(A_SETHI,href,NR_G1));
+            href.refaddr := addr_low;
+            list.concat(taicpu.op_reg_ref_reg(A_OR,NR_G1,href,NR_G1));
+            list.concat(taicpu.op_reg(A_JMP,NR_G1));
+>>>>>>> graemeg/fixes_2_2
           end;
         { Delay slot }
         list.Concat(TAiCpu.Op_none(A_NOP));

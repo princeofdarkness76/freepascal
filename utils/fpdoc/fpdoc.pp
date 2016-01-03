@@ -22,6 +22,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  {$ifdef Unix}
   CThreads,
   cwstring,
@@ -39,10 +40,15 @@ uses
   SysUtils, Classes, Gettext, DOM, XMLWrite, PasTree, PParser, custapp,
   dGlobals,  // GLobal definitions, constants.
 >>>>>>> graemeg/cpstrnew
+=======
+  SysUtils, Classes, Gettext, DOM, XMLWrite, PasTree, PParser,
+  dGlobals,  // GLobal definitions, constants.
+>>>>>>> graemeg/fixes_2_2
   dwriter,   // TFPDocWriter definition.
   dwlinear,  // Linear (abstract) writer
   dw_LaTeX,  // TLaTex writer
   dw_XML,    // XML writer
+<<<<<<< HEAD
   dw_dxml,   // Delphi XML doc.
   dw_HTML,   // HTML writer
   dw_ipflin, // IPF writer (new linear output)
@@ -80,6 +86,13 @@ Type
 =======
 >>>>>>> origin/cpstrnew
   dw_txt, fpdocproj, fpdocxmlopts;    // TXT writer
+=======
+  dw_HTML,   // HTML writer
+  dw_ipf,    // IPF writer
+  dw_man,    // Man page writer
+  dw_linrtf, // lineair RTF writer
+  dw_txt;    // TXT writer
+>>>>>>> graemeg/fixes_2_2
 
 const
   DefOSTarget    = {$I %FPCTARGETOS%};
@@ -88,6 +101,7 @@ const
   DefFPCDate     = {$I %FPCDATE%};
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 Type
 
   { TFPDocAplication }
@@ -127,6 +141,15 @@ Procedure TFPDocApplication.Usage(AnExitCode : Byte);
 Procedure TFPDocAplication.Usage(AnExitCode : Byte);
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+var
+  Backend : String;
+  BackendOptions : TStrings;
+  InputFiles, DescrFiles: TStringList;
+  PackageName, DocLang, ContentFile : String;
+  Engine: TFPDocEngine;
+  StopOnParserError : Boolean;
+>>>>>>> graemeg/fixes_2_2
 
 
 Procedure TFPDocAplication.Usage(AnExitCode : Byte);
@@ -193,6 +216,7 @@ begin
   Writeln(SUsageOption160);
   Writeln(SUsageOption170);
   Writeln(SUsageOption180);
+<<<<<<< HEAD
   Writeln(SUsageOption190);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -215,6 +239,8 @@ begin
   Try
     Backend:=FCreator.OPtions.Backend;
 =======
+=======
+>>>>>>> graemeg/fixes_2_2
   L:=TStringList.Create;
   Try
     Backend:=FProject.OPtions.Backend;
@@ -291,6 +317,7 @@ end;
 function TFPDocAplication.SelectedPackage: TFPDocPackage;
 >>>>>>> graemeg/cpstrnew
 begin
+<<<<<<< HEAD
   Result:=FPackage;
   if (FPackage=Nil) or (FPackage.Name='') then
     begin
@@ -307,6 +334,13 @@ begin
       end;
     Usage(1);
     end;
+=======
+  InputFiles := TStringList.Create;
+  DescrFiles := TStringList.Create;
+  BackendOptions := TStringList.Create;
+  Engine := TFPDocEngine.Create;
+  StopOnParserError:=False;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TFPDocApplication.OutputLog(Sender: TObject; const Msg: String);
@@ -541,6 +575,7 @@ begin
   else if s = '--warn-no-node' then
     FCreator.Options.WarnNoNode := True
   else if s = '--show-private' then
+<<<<<<< HEAD
     FCreator.Options.ShowPrivate := True
   else if s = '--stop-on-parser-error' then
     FCreator.Options.StopOnParseError := True
@@ -578,6 +613,11 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+    Engine.HidePrivate := False
+  else if s = '--stop-on-parser-error' then
+    StopOnParserError := True
+>>>>>>> graemeg/fixes_2_2
   else
     begin
     i := Pos('=', s);
@@ -732,6 +772,7 @@ begin
 <<<<<<< HEAD
       FCreator.Options.OSTarget := Arg
     else if Cmd = '--cputarget' then
+<<<<<<< HEAD
       FCreator.Options.CPUTarget := Arg
     else if Cmd = '--mo-dir' then
       FCreator.Options.modir := Arg
@@ -739,6 +780,11 @@ begin
       FCreator.Options.InterfaceOnly:=false
     else if Cmd = '--write-project' then
       FWriteProjectFile:=Arg
+=======
+      CPUTarget := Arg
+    else if Cmd = '--mo-dir' then
+      modir := Arg
+>>>>>>> graemeg/fixes_2_2
     else
       begin
       FCreator.Options.BackendOptions.Add(Cmd);
@@ -819,6 +865,7 @@ var
   Cmd,Arg : String;
 
 begin
+<<<<<<< HEAD
   Engine:=TFPDocEngine.Create;
   try
     For J:=0 to Apackage.Imports.Count-1 do
@@ -867,6 +914,38 @@ begin
   finally
     FreeAndNil(Engine);
   end;
+=======
+  for i := 0 to DescrFiles.Count - 1 do
+    Engine.AddDocFile(DescrFiles[i]);
+  Engine.SetPackageName(PackageName);
+  if Length(DocLang) > 0 then
+    TranslateDocStrings(DocLang);
+  for i := 0 to InputFiles.Count - 1 do
+    try
+      ParseSource(Engine, InputFiles[i], OSTarget, CPUTarget);
+    except
+      on e: EParserError do
+        If StopOnParserError then
+          Raise
+        else 
+          WriteLn(StdErr, Format('%s(%d,%d): %s',
+                  [e.Filename, e.Row, e.Column, e.Message]));
+    end;
+  WriterClass:=GetWriterClass(Backend);
+  Writer:=WriterClass.Create(Engine.Package,Engine);
+  With Writer do
+    Try
+      If BackendOptions.Count>0 then
+        for I:=0 to ((BackendOptions.Count-1) div 2) do
+          If not InterPretOption(BackendOptions[I*2],BackendOptions[I*2+1]) then
+            WriteLn(StdErr, Format(SCmdLineInvalidOption,[BackendOptions[I*2]+' '+BackendOptions[I*2+1]]));
+      WriteDoc;
+    Finally
+      Free;
+    end;
+  if Length(ContentFile) > 0 then
+    Engine.WriteContentFile(ContentFile);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 

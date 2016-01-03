@@ -108,7 +108,10 @@ interface
           procedure readderefdata;
           procedure readImportSymbols;
           procedure readResources;
+<<<<<<< HEAD
           procedure readwpofile;
+=======
+>>>>>>> graemeg/fixes_2_2
 {$IFDEF MACRO_DIFF_HINT}
           procedure writeusedmacro(p:TNamedIndexItem;arg:pointer);
           procedure writeusedmacros;
@@ -443,16 +446,26 @@ var
          if not onlysource then
           begin
             fnd:=PPUSearchPath('.');
+<<<<<<< HEAD
             if (not fnd) and (outputpath<>'') then
              fnd:=PPUSearchPath(outputpath);
             if (not fnd) and Assigned(main_module) and (main_module.Path<>'')  then
              fnd:=PPUSearchPath(main_module.Path);
           end;
          if (not fnd) and (sourcefn<>'') then
+=======
+            if (not fnd) and (outputpath^<>'') then
+             fnd:=PPUSearchPath(outputpath^);
+            if (not fnd) and Assigned(main_module) and (main_module.Path^<>'')  then
+             fnd:=PPUSearchPath(main_module.Path^);
+          end;
+         if (not fnd) and (sourcefn^<>'') then
+>>>>>>> graemeg/fixes_2_2
           begin
             { the full filename is specified so we can't use here the
               searchpath (PFV) }
             if CheckVerbosity(V_Tried) then
+<<<<<<< HEAD
               Message1(unit_t_unitsearch,ChangeFileExt(sourcefn,sourceext));
             fnd:=FindFile(ChangeFileExt(sourcefn,sourceext),'',true,hs);
             if not fnd then
@@ -460,14 +473,28 @@ var
                if CheckVerbosity(V_Tried) then
                  Message1(unit_t_unitsearch,ChangeFileExt(sourcefn,pasext));
                fnd:=FindFile(ChangeFileExt(sourcefn,pasext),'',true,hs);
+=======
+              Message1(unit_t_unitsearch,ChangeFileExt(sourcefn^,sourceext));
+            fnd:=FindFile(ChangeFileExt(sourcefn^,sourceext),'',true,hs);
+            if not fnd then
+             begin
+               if CheckVerbosity(V_Tried) then
+                 Message1(unit_t_unitsearch,ChangeFileExt(sourcefn^,pasext));
+               fnd:=FindFile(ChangeFileExt(sourcefn^,pasext),'',true,hs);
+>>>>>>> graemeg/fixes_2_2
              end;
             if not fnd and
                ((m_mac in current_settings.modeswitches) or
                 (tf_p_ext_support in target_info.flags)) then
              begin
                if CheckVerbosity(V_Tried) then
+<<<<<<< HEAD
                  Message1(unit_t_unitsearch,ChangeFileExt(sourcefn,pext));
                fnd:=FindFile(ChangeFileExt(sourcefn,pext),'',true,hs);
+=======
+                 Message1(unit_t_unitsearch,ChangeFileExt(sourcefn^,pext));
+               fnd:=FindFile(ChangeFileExt(sourcefn^,pext),'',true,hs);
+>>>>>>> graemeg/fixes_2_2
              end;
             if fnd then
              begin
@@ -480,8 +507,13 @@ var
           end;
          if not fnd then
            fnd:=SourceSearchPath('.');
+<<<<<<< HEAD
          if (not fnd) and Assigned(main_module) and (main_module.Path<>'') then
            fnd:=SourceSearchPath(main_module.Path);
+=======
+         if (not fnd) and Assigned(main_module) and (main_module.Path^<>'') then
+           fnd:=SourceSearchPath(main_module.Path^);
+>>>>>>> graemeg/fixes_2_2
          if (not fnd) and Assigned(loaded_from) then
            fnd:=SearchPathList(loaded_from.LocalUnitSearchPath);
          if not fnd then
@@ -982,6 +1014,7 @@ var
       end;
 
 
+<<<<<<< HEAD
     procedure tppumodule.readwpofile;
       var
         orgwpofilename: string;
@@ -1001,6 +1034,8 @@ var
       end;
 
 
+=======
+>>>>>>> graemeg/fixes_2_2
     procedure tppumodule.load_interface;
       var
         b : byte;
@@ -1071,8 +1106,11 @@ var
                readderefdata;
              ibresources:
                readResources;
+<<<<<<< HEAD
              ibwpofile:
                readwpofile;
+=======
+>>>>>>> graemeg/fixes_2_2
              ibendinterface :
                break;
            else
@@ -1150,11 +1188,14 @@ var
          ppufile.putstring(realmodulename^);
          ppufile.writeentry(ibmodulename);
 
+<<<<<<< HEAD
          ppufile.putsmallset(moduleoptions);
          if mo_has_deprecated_msg in moduleoptions then
            ppufile.putstring(deprecatedmsg^);
          ppufile.writeentry(ibmoduleoptions);
 
+=======
+>>>>>>> graemeg/fixes_2_2
          { write the alternate main procedure name if any }
          if assigned(mainname) then
            begin
@@ -1735,6 +1776,7 @@ var
                   begin
                     printcomments;
                     if recompile_reason=rr_noppu then
+<<<<<<< HEAD
                       begin
                         pu:=tused_unit(loaded_from.used_units.first);
                         while assigned(pu) do
@@ -1748,6 +1790,9 @@ var
                         else
                           Message2(unit_f_cant_find_ppu,realmodulename^,loaded_from.realmodulename^);
                       end
+=======
+                      Message2(unit_f_cant_find_ppu,realmodulename^,loaded_from.realmodulename^)
+>>>>>>> graemeg/fixes_2_2
                     else
                       Message1(unit_f_cant_compile_unit,realmodulename^);
                   end;

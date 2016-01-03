@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       NavigationServices/Navigation.h
  
      Contains:   Navigation Services Interfaces
@@ -22,10 +23,21 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 1996-2008 by Apple Computer, Inc., all rights reserved
+=======
+     File:       Navigation.p
+ 
+     Contains:   Navigation Services Interfaces
+ 
+     Version:    Technology: Navigation 3.0
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1996-2002 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -54,6 +66,19 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -62,8 +87,13 @@
 
 unit Navigation;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -76,21 +106,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -125,6 +163,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -132,6 +172,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -377,6 +418,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -402,6 +453,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -411,6 +466,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,AEDataModel,CFBase,QuickdrawTypes,Finder,Events,AppleEvents,Translation,MacWindows,CodeFragments,MacErrors,CFArray,CFString;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -430,10 +486,16 @@ uses MacTypes,AEDataModel,CFBase,QuickdrawTypes,Finder,Events,AppleEvents,Transl
 
 >>>>>>> origin/cpstrnew
 {$ifc TARGET_OS_MAC}
+=======
+uses MacTypes,AEDataModel,CFBase,Quickdraw,Finder,Events,AppleEvents,Translation,MacWindows,CodeFragments,MacErrors,CFArray,CFString;
+{#I+}
+
+>>>>>>> graemeg/fixes_2_2
 
 {$ALIGN MAC68K}
 
 
+<<<<<<< HEAD
 {
  *  Navigation Services
  *  
@@ -514,10 +576,52 @@ const
 >>>>>>> origin/cpstrnew
 const
 	kNavFileOrFolderVersion = 1;
+=======
+type
+	NavAskSaveChangesAction 	= UInt32;
+const
+																{  input action codes for NavAskSaveChanges()  }
+	kNavSaveChangesClosingDocument = 1;
+	kNavSaveChangesQuittingApplication = 2;
+	kNavSaveChangesOther		= 0;
+
+
+type
+	NavAskSaveChangesResult 	= UInt32;
+const
+																{  result codes for NavAskSaveChanges()  }
+	kNavAskSaveChangesSave		= 1;
+	kNavAskSaveChangesCancel	= 2;
+	kNavAskSaveChangesDontSave	= 3;
+
+
+type
+	NavAskDiscardChangesResult 	= UInt32;
+const
+																{  result codes for NavAskDiscardChanges()  }
+	kNavAskDiscardChanges		= 1;
+	kNavAskDiscardChangesCancel	= 2;
+
+
+type
+	NavFilterModes 				= SInt16;
+const
+																{  which elements are being filtered for objects:  }
+	kNavFilteringBrowserList	= 0;
+	kNavFilteringFavorites		= 1;
+	kNavFilteringRecents		= 2;
+	kNavFilteringShortCutVolumes = 3;
+	kNavFilteringLocationPopup	= 4;							{  for v1.1 or greater  }
+
+
+	kNavFileOrFolderVersion		= 1;
+
+>>>>>>> graemeg/fixes_2_2
 
 type
 	NavFileOrFolderInfoPtr = ^NavFileOrFolderInfo;
 	NavFileOrFolderInfo = record
+<<<<<<< HEAD
 		version: UInt16;
 		isFolder: Boolean;
 		visible: Boolean;
@@ -546,6 +650,36 @@ type
 			finderDXInfo: DXInfo;
 			folderType: OSType;         { package type, For struct version >= 1 }
 			folderCreator: OSType;      { package creator, For struct version >= 1 }
+=======
+		version:				UInt16;
+		isFolder:				boolean;
+		visible:				boolean;
+		creationDate:			UInt32;
+		modificationDate:		UInt32;
+		case SInt16 of
+		0: (
+			locked:				boolean;								{  file is locked  }
+			resourceOpen:		boolean;								{  resource fork is opened  }
+			dataOpen:			boolean;								{  data fork is opened  }
+			reserved1:			boolean;
+			dataSize:			UInt32;									{  size of the data fork  }
+			resourceSize:		UInt32;									{  size of the resource fork  }
+			finderInfo:			FInfo;									{  more file info:  }
+			finderXInfo:		FXInfo;
+		   );
+		1: (
+			shareable:			boolean;
+			sharePoint:			boolean;
+			mounted:			boolean;
+			readable:			boolean;
+			writeable:			boolean;
+			reserved2:			boolean;
+			numberOfFiles:		UInt32;
+			finderDInfo:		DInfo;
+			finderDXInfo:		DXInfo;
+			folderType:			OSType;									{  package type, For struct version >= 1  }
+			folderCreator:		OSType;									{  package creator, For struct version >= 1  }
+>>>>>>> graemeg/fixes_2_2
 			reserved3:			packed array [0..205] of char;
 		   );
 	end;
@@ -554,6 +688,7 @@ type
 	NavEventDataInfo = record
 		case SInt16 of
 		0: (
+<<<<<<< HEAD
 			event: EventRecordPtr;                  { for event processing }
 			);
 		1: (
@@ -603,6 +738,40 @@ type
 =======
 	NavDialogRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+			event:				EventRecordPtr;							{  for event processing  }
+			);
+		1: (
+			param:				Ptr;									{  points to event specific data  }
+			);
+	end;
+
+	NavEventDataPtr = ^NavEventData;
+	NavEventData = record
+		eventDataParms:			NavEventDataInfo;						{  the event data  }
+		itemHit:				SInt16;									{  the dialog item number, for v1.1 or greater  }
+	end;
+
+
+	{
+	 *  NavDialogRef
+	 *  
+	 *  Summary:
+	 *    Opaque Navigation Services dialog identifier
+	 *  
+	 *  Discussion:
+	 *    A NavDialogRef is an opaque reference to an instance of a
+	 *    Navigation Services dialog. A new NavDialogRef is returned from
+	 *    any of the NavCreate*Dialog functions and is later disposed with
+	 *    the NavDialogDispose function. NavDialogRef is the new name for
+	 *    the NavContext type, and thus when a client's event proc is
+	 *    called, the value of the NavCBRec.context field is the same as
+	 *    the NavDialogRef returned from the corresponding
+	 *    NavCreate*Dialog. A NavDialogRef is distinct from, and is not
+	 *    interchangable with, a Dialog Manager DialogRef.
+	 	}
+	NavDialogRef    = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 	NavDialogRefPtr = ^NavDialogRef;  { when a var xx:NavDialogRef parameter can be nil, it is changed to xx: NavDialogRefPtr }
 {$ifc CALL_NOT_IN_CARBON}
 	{	 NavContext is the old name for NavDialogRef 	}
@@ -610,6 +779,7 @@ type
 {$endc}  {CALL_NOT_IN_CARBON}
 
 
+<<<<<<< HEAD
 {
  *  NavUserAction
  *  
@@ -888,10 +1058,152 @@ type
 function NewNavEventUPP( userRoutine: NavEventProcPtr ): NavEventUPP; external name '_NewNavEventUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+	{
+	 *  NavUserAction
+	 *  
+	 *  Summary:
+	 *    Indicates an action taken by the user
+	 *  
+	 *  Discussion:
+	 *    When the user clicks a button at the bottom of a Nav Services
+	 *    dialog (or makes an equivalent mouse or key gesture), a
+	 *    kNavCBUserAction event is sent to the client's event proc
+	 *    indicating which action was taken. Often, the action also
+	 *    dismisses the dialog. User action events are only generated when
+	 *    using dialogs created from a NavCreate*Dialog function. In the
+	 *    special case of a modeless GetFile dialog (supported only on Mac
+	 *    OS X), the user can option-click on the open button to keep the
+	 *    dialog from being dismissed, but the kNavCBUserAction event is
+	 *    sent so the client can get the reply record and open the selected
+	 *    files.
+	 	}
+	NavUserAction 				= UInt32;
+const
+	kNavUserActionNone			= 0;
+	kNavUserActionCancel		= 1;
+	kNavUserActionOpen			= 2;
+	kNavUserActionSaveAs		= 3;
+	kNavUserActionChoose		= 4;
+	kNavUserActionNewFolder		= 5;
+	kNavUserActionSaveChanges	= 6;
+	kNavUserActionDontSaveChanges = 7;
+	kNavUserActionDiscardChanges = 8;
+	kNavUserActionReviewDocuments = 9;
+	kNavUserActionDiscardDocuments = 10;
+
+
+	kNavCBRecVersion			= 1;
+
+
+	{
+	 *  NavCBRec
+	 *  
+	 *  Summary:
+	 *    A structure passed to event and preview callbacks
+	 *  
+	 *  Discussion:
+	 *    The NavCBRec structure is passed to the client's event proc or
+	 *    custom preview proc. It provides information that is specific to
+	 *    each event type. New for Carbon: the userAction field.
+	 	}
+
+type
+	NavCBRecPtr = ^NavCBRec;
+	NavCBRec = record
+		version:				UInt16;
+		context:				NavDialogRef;
+		window:					WindowRef;
+		customRect:				Rect;
+		previewRect:			Rect;
+		eventData:				NavEventData;
+		userAction:				NavUserAction;
+		reserved:				packed array [0..217] of char;
+	end;
+
+
+	{
+	 *  NavEventCallbackMessage
+	 *  
+	 *  Summary:
+	 *    Identifies the message type being sent to the client's event proc
+	 	}
+	NavEventCallbackMessage 	= SInt32;
+const
+	kNavCBEvent					= 0;
+	kNavCBCustomize				= 1;
+	kNavCBStart					= 2;
+	kNavCBTerminate				= 3;
+	kNavCBAdjustRect			= 4;
+	kNavCBNewLocation			= 5;
+	kNavCBShowDesktop			= 6;
+	kNavCBSelectEntry			= 7;
+	kNavCBPopupMenuSelect		= 8;
+	kNavCBAccept				= 9;
+	kNavCBCancel				= 10;
+	kNavCBAdjustPreview			= 11;
+	kNavCBUserAction			= 12;
+	kNavCBOpenSelection			= $80000000;
+
+
+type
+	NavCallBackUserData					= Ptr;
+	{	 for events and customization: 	}
+{$ifc TYPED_FUNCTION_POINTERS}
+	NavEventProcPtr = procedure(callBackSelector: NavEventCallbackMessage; callBackParms: NavCBRecPtr; callBackUD: UnivPtr);
+{$elsec}
+	NavEventProcPtr = ProcPtr;
+{$endc}
+
+	{	 for preview support: 	}
+{$ifc TYPED_FUNCTION_POINTERS}
+	NavPreviewProcPtr = function(callBackParms: NavCBRecPtr; callBackUD: UnivPtr): boolean;
+{$elsec}
+	NavPreviewProcPtr = ProcPtr;
+{$endc}
+
+	{	 filtering callback information: 	}
+{$ifc TYPED_FUNCTION_POINTERS}
+	NavObjectFilterProcPtr = function(var theItem: AEDesc; info: NavFileOrFolderInfoPtr; callBackUD: UnivPtr; filterMode: NavFilterModes): boolean;
+{$elsec}
+	NavObjectFilterProcPtr = ProcPtr;
+{$endc}
+
+{$ifc OPAQUE_UPP_TYPES}
+	NavEventUPP = ^SInt32; { an opaque UPP }
+{$elsec}
+	NavEventUPP = UniversalProcPtr;
+{$endc}	
+{$ifc OPAQUE_UPP_TYPES}
+	NavPreviewUPP = ^SInt32; { an opaque UPP }
+{$elsec}
+	NavPreviewUPP = UniversalProcPtr;
+{$endc}	
+{$ifc OPAQUE_UPP_TYPES}
+	NavObjectFilterUPP = ^SInt32; { an opaque UPP }
+{$elsec}
+	NavObjectFilterUPP = UniversalProcPtr;
+{$endc}	
+
+const
+	uppNavEventProcInfo = $00000FC0;
+	uppNavPreviewProcInfo = $000003D0;
+	uppNavObjectFilterProcInfo = $00002FD0;
+	{
+	 *  NewNavEventUPP()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   available as macro/inline
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function NewNavEventUPP(userRoutine: NavEventProcPtr): NavEventUPP; external name '_NewNavEventUPP'; { old name was NewNavEventProc }
+>>>>>>> graemeg/fixes_2_2
 {
  *  NewNavPreviewUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
@@ -899,10 +1211,18 @@ function NewNavEventUPP( userRoutine: NavEventProcPtr ): NavEventUPP; external n
 function NewNavPreviewUPP( userRoutine: NavPreviewProcPtr ): NavPreviewUPP; external name '_NewNavPreviewUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NewNavPreviewUPP(userRoutine: NavPreviewProcPtr): NavPreviewUPP; external name '_NewNavPreviewUPP'; { old name was NewNavPreviewProc }
+>>>>>>> graemeg/fixes_2_2
 {
  *  NewNavObjectFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
@@ -910,10 +1230,18 @@ function NewNavPreviewUPP( userRoutine: NavPreviewProcPtr ): NavPreviewUPP; exte
 function NewNavObjectFilterUPP( userRoutine: NavObjectFilterProcPtr ): NavObjectFilterUPP; external name '_NewNavObjectFilterUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NewNavObjectFilterUPP(userRoutine: NavObjectFilterProcPtr): NavObjectFilterUPP; external name '_NewNavObjectFilterUPP'; { old name was NewNavObjectFilterProc }
+>>>>>>> graemeg/fixes_2_2
 {
  *  DisposeNavEventUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
@@ -921,10 +1249,18 @@ function NewNavObjectFilterUPP( userRoutine: NavObjectFilterProcPtr ): NavObject
 procedure DisposeNavEventUPP( userUPP: NavEventUPP ); external name '_DisposeNavEventUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposeNavEventUPP(userUPP: NavEventUPP); external name '_DisposeNavEventUPP';
+>>>>>>> graemeg/fixes_2_2
 {
  *  DisposeNavPreviewUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
@@ -932,10 +1268,18 @@ procedure DisposeNavEventUPP( userUPP: NavEventUPP ); external name '_DisposeNav
 procedure DisposeNavPreviewUPP( userUPP: NavPreviewUPP ); external name '_DisposeNavPreviewUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposeNavPreviewUPP(userUPP: NavPreviewUPP); external name '_DisposeNavPreviewUPP';
+>>>>>>> graemeg/fixes_2_2
 {
  *  DisposeNavObjectFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
@@ -943,10 +1287,18 @@ procedure DisposeNavPreviewUPP( userUPP: NavPreviewUPP ); external name '_Dispos
 procedure DisposeNavObjectFilterUPP( userUPP: NavObjectFilterUPP ); external name '_DisposeNavObjectFilterUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposeNavObjectFilterUPP(userUPP: NavObjectFilterUPP); external name '_DisposeNavObjectFilterUPP';
+>>>>>>> graemeg/fixes_2_2
 {
  *  InvokeNavEventUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
@@ -954,10 +1306,18 @@ procedure DisposeNavObjectFilterUPP( userUPP: NavObjectFilterUPP ); external nam
 procedure InvokeNavEventUPP( callBackSelector: NavEventCallbackMessage; callBackParms: NavCBRecPtr; callBackUD: UnivPtr; userUPP: NavEventUPP ); external name '_InvokeNavEventUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure InvokeNavEventUPP(callBackSelector: NavEventCallbackMessage; callBackParms: NavCBRecPtr; callBackUD: UnivPtr; userRoutine: NavEventUPP); external name '_InvokeNavEventUPP'; { old name was CallNavEventProc }
+>>>>>>> graemeg/fixes_2_2
 {
  *  InvokeNavPreviewUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
@@ -965,10 +1325,18 @@ procedure InvokeNavEventUPP( callBackSelector: NavEventCallbackMessage; callBack
 function InvokeNavPreviewUPP( callBackParms: NavCBRecPtr; callBackUD: UnivPtr; userUPP: NavPreviewUPP ): Boolean; external name '_InvokeNavPreviewUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function InvokeNavPreviewUPP(callBackParms: NavCBRecPtr; callBackUD: UnivPtr; userRoutine: NavPreviewUPP): boolean; external name '_InvokeNavPreviewUPP'; { old name was CallNavPreviewProc }
+>>>>>>> graemeg/fixes_2_2
 {
  *  InvokeNavObjectFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
@@ -1815,10 +2183,370 @@ function NavCompleteSave( const (*var*) reply: NavReplyRecord; howToTranslate: N
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function InvokeNavObjectFilterUPP(var theItem: AEDesc; info: UnivPtr; callBackUD: UnivPtr; filterMode: NavFilterModes; userRoutine: NavObjectFilterUPP): boolean; external name '_InvokeNavObjectFilterUPP'; { old name was CallNavObjectFilterProc }
+type
+	NavCustomControlMessage 	= SInt32;
+const
+	kNavCtlShowDesktop			= 0;							{     show desktop,           parms = nil  }
+	kNavCtlSortBy				= 1;							{     sort key field,       parms->NavSortKeyField  }
+	kNavCtlSortOrder			= 2;							{     sort order,              parms->NavSortOrder  }
+	kNavCtlScrollHome			= 3;							{     scroll list home,       parms = nil  }
+	kNavCtlScrollEnd			= 4;							{     scroll list end,      parms = nil  }
+	kNavCtlPageUp				= 5;							{     page list up,          parms = nil  }
+	kNavCtlPageDown				= 6;							{     page list down,          parms = nil  }
+	kNavCtlGetLocation			= 7;							{     get current location,   parms<-AEDesc*  }
+	kNavCtlSetLocation			= 8;							{     set current location,   parms->AEDesc*  }
+	kNavCtlGetSelection			= 9;							{     get current selection,     parms<-AEDescList*  }
+	kNavCtlSetSelection			= 10;							{     set current selection,     parms->AEDescList*  }
+	kNavCtlShowSelection		= 11;							{     make selection visible,       parms = nil  }
+	kNavCtlOpenSelection		= 12;							{     open view of selection,       parms = nil  }
+	kNavCtlEjectVolume			= 13;							{     eject volume,          parms->vRefNum  }
+	kNavCtlNewFolder			= 14;							{     create a new folder,     parms->StringPtr  }
+	kNavCtlCancel				= 15;							{     cancel dialog,          parms = nil  }
+	kNavCtlAccept				= 16;							{     accept dialog default,     parms = nil  }
+	kNavCtlIsPreviewShowing		= 17;							{     query preview status,   parms<-Boolean  }
+	kNavCtlAddControl			= 18;							{   add one control to dialog,    parms->ControlHandle  }
+	kNavCtlAddControlList		= 19;							{     add control list to dialog,    parms->Handle (DITL rsrc)  }
+	kNavCtlGetFirstControlID	= 20;							{     get 1st control ID,         parms<-UInt16  }
+	kNavCtlSelectCustomType		= 21;							{     select a custom menu item  parms->NavMenuItemSpec*  }
+	kNavCtlSelectAllType		= 22;							{   select an "All" menu item parms->SInt16  }
+	kNavCtlGetEditFileName		= 23;							{     get save dlog's file name  parms<-StringPtr  }
+	kNavCtlSetEditFileName		= 24;							{     set save dlog's file name  parms->StringPtr  }
+	kNavCtlSelectEditFileName	= 25;							{     select save dlog file name parms->ControlEditTextSelectionRec*, v1.1 or greater  }
+	kNavCtlBrowserSelectAll		= 26;							{   re-scan the browser list  parms = nil, v2.0 or greater  }
+	kNavCtlGotoParent			= 27;							{   navigate to parent         parms = nil, v2.0 or greater  }
+	kNavCtlSetActionState		= 28;							{   restrict navigation      parms->NavActionState (flags), v2.0 or greater  }
+	kNavCtlBrowserRedraw		= 29;							{   rescan browser list      parms = nil, v2.0 or greater  }
+	kNavCtlTerminate			= 30;							{   terminate/dismiss dialog  parms = nil, v2.0 or greater  }
+
+
+type
+	NavActionState 				= UInt32;
+const
+	kNavNormalState				= $00000000;					{  normal/default state  }
+	kNavDontOpenState			= $00000001;					{  disallow opening files/folders  }
+	kNavDontSaveState			= $00000002;					{  disallow saving files  }
+	kNavDontChooseState			= $00000004;					{  disallow choosing objects  }
+	kNavDontNewFolderState		= $00000010;					{  disallow creating new folders  }
+
+
+type
+	NavPopupMenuItem 			= UInt16;
+const
+	kNavAllKnownFiles			= 0;
+	kNavAllReadableFiles		= 1;
+	kNavAllFiles				= 2;
+
+
+type
+	NavSortKeyField 			= UInt16;
+const
+	kNavSortNameField			= 0;
+	kNavSortDateField			= 1;
+
+
+type
+	NavSortOrder 				= UInt16;
+const
+	kNavSortAscending			= 0;
+	kNavSortDescending			= 1;
+
+
+type
+	NavDialogOptionFlags 		= UInt32;
+const
+	kNavDefaultNavDlogOptions	= $000000E4;					{  use defaults for all the options  }
+	kNavNoTypePopup				= $00000001;					{  don't show file type/extension popup on Open/Save  }
+	kNavDontAutoTranslate		= $00000002;					{  don't automatically translate on Open  }
+	kNavDontAddTranslateItems	= $00000004;					{  don't add translation choices on Open/Save  }
+	kNavAllFilesInPopup			= $00000010;					{  "All Files" menu item in the type popup on Open  }
+	kNavAllowStationery			= $00000020;					{  allow saving of stationery files  }
+	kNavAllowPreviews			= $00000040;					{  allow preview to show  }
+	kNavAllowMultipleFiles		= $00000080;					{  allow multiple items to be selected  }
+	kNavAllowInvisibleFiles		= $00000100;					{  allow invisible items to be shown  }
+	kNavDontResolveAliases		= $00000200;					{  don't resolve aliases  }
+	kNavSelectDefaultLocation	= $00000400;					{  make the default location the browser selection  }
+	kNavSelectAllReadableItem	= $00000800;					{  make the dialog select "All Readable Documents" on open  }
+	kNavSupportPackages			= $00001000;					{  recognize file system packages, v2.0 or greater  }
+	kNavAllowOpenPackages		= $00002000;					{  allow opening of packages, v2.0 or greater  }
+	kNavDontAddRecents			= $00004000;					{  don't add chosen objects to the recents list, v2.0 or greater  }
+	kNavDontUseCustomFrame		= $00008000;					{  don't draw the custom area bevel frame, v2.0 or greater  }
+	kNavDontConfirmReplacement	= $00010000;					{  don't show the "Replace File?" alert on save conflict, v3.0 or greater  }
+	kNavPreserveSaveFileExtension = $00020000;					{  extension in default file name is preserved and initially hidden, v3.1 or greater  }
+
+
+type
+	NavTranslationOptions 		= UInt32;
+const
+	kNavTranslateInPlace		= 0;							{     translate in place, replacing translation source file (default for Save)  }
+	kNavTranslateCopy			= 1;							{     translate to a copy of the source file (default for Open)  }
+
+
+	kNavMenuItemSpecVersion		= 0;
+
+
+type
+	NavMenuItemSpecPtr = ^NavMenuItemSpec;
+	NavMenuItemSpec = record
+		version:				UInt16;
+		menuCreator:			OSType;
+		menuType:				OSType;
+		menuItemName:			Str255;
+		reserved:				packed array [0..244] of char;
+	end;
+
+	NavMenuItemSpecArray				= array [0..0] of NavMenuItemSpec;
+	NavMenuItemSpecArrayPtr				= ^NavMenuItemSpecArray;
+	NavMenuItemSpecArrayHandle			= ^NavMenuItemSpecArrayPtr;
+	NavMenuItemSpecHandle				= NavMenuItemSpecArrayHandle;
+
+const
+	kNavGenericSignature		= FourCharCode('****');
+
+
+type
+	NavTypeListPtr = ^NavTypeList;
+	NavTypeList = record
+		componentSignature:		OSType_fix;
+		reserved:				SInt16;
+		osTypeCount:			SInt16;
+		osType:					array [0..0] of OSType_fix;
+	end;
+
+	NavTypeListHandle					= ^NavTypeListPtr;
+
+const
+	kNavDialogOptionsVersion	= 0;
+
+
+type
+	NavDialogOptionsPtr = ^NavDialogOptions;
+	NavDialogOptions = record
+		version:				UInt16;
+		dialogOptionFlags:		NavDialogOptionFlags;					{  option flags for affecting the dialog's behavior  }
+		location:				Point;									{  top-left location of the dialog, or (-1,-1) for default position  }
+		clientName:				Str255;
+		windowTitle:			Str255;
+		actionButtonLabel:		Str255;									{  label of the default button (or null string for default)  }
+		cancelButtonLabel:		Str255;									{  label of the cancel button (or null string for default)  }
+		savedFileName:			Str255;									{  default name for text box in NavPutFile (or null string for default)  }
+		message:				Str255;									{  custom message prompt (or null string for default)  }
+		preferenceKey:			UInt32;									{  a key for to managing preferences for using multiple utility dialogs  }
+		popupExtension:			NavMenuItemSpecArrayHandle;				{  extended popup menu items, an array of NavMenuItemSpecs  }
+		reserved:				packed array [0..493] of char;
+	end;
+
+
+const
+	kNavReplyRecordVersion		= 2;
+
+
+	{
+	 *  NavReplyRecord
+	 *  
+	 *  Summary:
+	 *    A structure describing the results of a Nav Services dialog
+	 *  
+	 *  Discussion:
+	 *    A reply record is the result of a Nav Services file dialog. Using
+	 *    the older API, which is always modal, the client passes the
+	 *    address of a reply record when invoking the dialog. In the Carbon
+	 *    API, dialogs may also be window modal or modeless, so the client
+	 *    requests the reply record by calling NavDialogGetReply when a
+	 *    kNavCBUserAction event is received. Either way, a reply record
+	 *    should be disposed of using NavDisposeReply.
+	 	}
+
+type
+	NavReplyRecordPtr = ^NavReplyRecord;
+	NavReplyRecord = record
+		version:				UInt16;
+		validRecord:			boolean;
+		replacing:				boolean;
+		isStationery:			boolean;
+		translationNeeded:		boolean;
+		selection:				AEDescList;
+		keyScript:				ScriptCode;
+		fileTranslation:		FileTranslationSpecArrayHandle;
+		reserved1:				UInt32;
+		saveFileName:			CFStringRef;
+		saveFileExtensionHidden: boolean;
+		reserved2:				SInt8;
+		reserved:				packed array [0..224] of char;
+	end;
+
+	{
+	 *  NavLoad()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         not available
+	 	}
+function NavLoad: OSErr; external name '_NavLoad';
+
+{
+ *  NavUnload()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+ }
+function NavUnload: OSErr; external name '_NavUnload';
+
+{
+ *  NavLibraryVersion()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavLibraryVersion: UInt32; external name '_NavLibraryVersion';
+
+{
+ *  NavGetDefaultDialogOptions()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavGetDefaultDialogOptions(var dialogOptions: NavDialogOptions): OSErr; external name '_NavGetDefaultDialogOptions';
+
+
+{
+ *  NavGetFile()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavGetFile(defaultLocation: AEDescPtr; var reply: NavReplyRecord; dialogOptions: NavDialogOptionsPtr; eventProc: NavEventUPP; previewProc: NavPreviewUPP; filterProc: NavObjectFilterUPP; typeList: NavTypeListHandle; callBackUD: UnivPtr): OSErr; external name '_NavGetFile';
+
+{
+ *  NavPutFile()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavPutFile(defaultLocation: AEDescPtr; var reply: NavReplyRecord; dialogOptions: NavDialogOptionsPtr; eventProc: NavEventUPP; fileType: OSType; fileCreator: OSType; callBackUD: UnivPtr): OSErr; external name '_NavPutFile';
+
+{
+ *  NavAskSaveChanges()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavAskSaveChanges(var dialogOptions: NavDialogOptions; action: NavAskSaveChangesAction; var reply: NavAskSaveChangesResult; eventProc: NavEventUPP; callBackUD: UnivPtr): OSErr; external name '_NavAskSaveChanges';
+
+{
+ *  NavCustomAskSaveChanges()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavCustomAskSaveChanges(var dialogOptions: NavDialogOptions; var reply: NavAskSaveChangesResult; eventProc: NavEventUPP; callBackUD: UnivPtr): OSErr; external name '_NavCustomAskSaveChanges';
+
+{
+ *  NavAskDiscardChanges()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavAskDiscardChanges(var dialogOptions: NavDialogOptions; var reply: NavAskDiscardChangesResult; eventProc: NavEventUPP; callBackUD: UnivPtr): OSErr; external name '_NavAskDiscardChanges';
+
+{
+ *  NavChooseFile()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavChooseFile(defaultLocation: AEDescPtr; var reply: NavReplyRecord; dialogOptions: NavDialogOptionsPtr; eventProc: NavEventUPP; previewProc: NavPreviewUPP; filterProc: NavObjectFilterUPP; typeList: NavTypeListHandle; callBackUD: UnivPtr): OSErr; external name '_NavChooseFile';
+
+{
+ *  NavChooseFolder()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavChooseFolder(defaultLocation: AEDescPtr; var reply: NavReplyRecord; dialogOptions: NavDialogOptionsPtr; eventProc: NavEventUPP; filterProc: NavObjectFilterUPP; callBackUD: UnivPtr): OSErr; external name '_NavChooseFolder';
+
+{
+ *  NavChooseVolume()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavChooseVolume(defaultSelection: AEDescPtr; var reply: NavReplyRecord; dialogOptions: NavDialogOptionsPtr; eventProc: NavEventUPP; filterProc: NavObjectFilterUPP; callBackUD: UnivPtr): OSErr; external name '_NavChooseVolume';
+
+{
+ *  NavChooseObject()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavChooseObject(defaultLocation: AEDescPtr; var reply: NavReplyRecord; dialogOptions: NavDialogOptionsPtr; eventProc: NavEventUPP; filterProc: NavObjectFilterUPP; callBackUD: UnivPtr): OSErr; external name '_NavChooseObject';
+
+{
+ *  NavNewFolder()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavNewFolder(defaultLocation: AEDescPtr; var reply: NavReplyRecord; dialogOptions: NavDialogOptionsPtr; eventProc: NavEventUPP; callBackUD: UnivPtr): OSErr; external name '_NavNewFolder';
+
+{
+ *  NavTranslateFile()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavTranslateFile(var reply: NavReplyRecord; howToTranslate: NavTranslationOptions): OSErr; external name '_NavTranslateFile';
+
+{
+ *  NavCompleteSave()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavCompleteSave(var reply: NavReplyRecord; howToTranslate: NavTranslationOptions): OSErr; external name '_NavCompleteSave';
+
+>>>>>>> graemeg/fixes_2_2
 {
  *  NavCustomControl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in NavigationLib 1.0 and later
@@ -1859,11 +2587,29 @@ function NavCustomControl( dialog: NavDialogRef; selector: NavCustomControlMessa
 function NavCreatePreview( var theObject: AEDesc; previewDataType: OSType; previewData: {const} UnivPtr; previewDataSize: Size ): OSErr; external name '_NavCreatePreview';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
+=======
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavCustomControl(dialog: NavDialogRef; selector: NavCustomControlMessage; parms: UnivPtr): OSErr; external name '_NavCustomControl';
+
+{
+ *  NavCreatePreview()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavCreatePreview(var theObject: AEDesc; previewDataType: OSType; previewData: UnivPtr; previewDataSize: Size): OSErr; external name '_NavCreatePreview';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  NavDisposeReply()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in NavigationLib 1.0 and later
@@ -2024,6 +2770,128 @@ type
  }
 function NavGetDefaultDialogCreationOptions( var outOptions: NavDialogCreationOptions ): OSStatus; external name '_NavGetDefaultDialogCreationOptions';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavDisposeReply(var reply: NavReplyRecord): OSErr; external name '_NavDisposeReply';
+
+{
+ *  NavServicesCanRun()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+ }
+function NavServicesCanRun: boolean; external name '_NavServicesCanRun';
+
+
+{$ifc TARGET_RT_MAC_CFM}
+{
+        NavServicesAvailable() is a macro available only in C/C++.
+        To get the same functionality from pascal or assembly, you need
+        to test if NavigationLib functions are not NULL and call NavServicesCanRun()
+        which will test if NavServices is properly installed.  For instance:
+
+            gNavServicesAvailable = FALSE;
+            IF @NavLibraryVersion <> kUnresolvedCFragSymbolAddress THEN
+                gNavServicesAvailable = NavServicesCanRun;
+            end
+
+}
+{$elsec}
+  {$ifc TARGET_RT_MAC_MACHO}
+{ Navigation is always available on OS X }
+  {$elsec}
+{  NavServicesAvailable() is implemented in Navigation.o for classic 68K clients }
+  {$ifc CALL_NOT_IN_CARBON}
+{
+ *  NavServicesAvailable()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function NavServicesAvailable: boolean; external name '_NavServicesAvailable';
+
+  {$endc}  {CALL_NOT_IN_CARBON}
+  {$endc}
+{$endc}
+
+{ Carbon API }
+{ Includes support for Unicode and long file names (where available). }
+
+
+const
+	kNavDialogCreationOptionsVersion = 0;
+
+
+	{
+	 *  NavDialogCreationOptions
+	 *  
+	 *  Summary:
+	 *    Options used to control the appearance and operation of a Nav
+	 *    Services dialog
+	 *  
+	 *  Discussion:
+	 *    NavDialogCreationOptions is a preferred replacement for
+	 *    NavDialogOptions. The new structure uses CFStrings in place of
+	 *    Pascal strings, and adds fields for setting the dialog modality
+	 *    and the parent window (for sheet dialogs). A
+	 *    NavDialogCreationOptions structure can be initialized using
+	 *    NavDialogGetDefaultCreationOptions. Each of the NavCreate*Dialog
+	 *    functions accepts a pointer to the client's
+	 *    NavDialogCreationOptions structure.
+	 	}
+
+type
+	NavDialogCreationOptionsPtr = ^NavDialogCreationOptions;
+	NavDialogCreationOptions = record
+		version:				UInt16;
+		optionFlags:			NavDialogOptionFlags;
+		location:				Point;
+		clientName:				CFStringRef;
+		windowTitle:			CFStringRef;
+		actionButtonLabel:		CFStringRef;
+		cancelButtonLabel:		CFStringRef;
+		saveFileName:			CFStringRef;
+		message:				CFStringRef;
+		preferenceKey:			UInt32;
+		popupExtension:			CFArrayRef;
+		modality:				WindowModality;
+		parentWindow:			WindowRef;
+		reserved:				packed array [0..15] of char;
+	end;
+
+	{
+	 *  NavGetDefaultDialogCreationOptions()
+	 *  
+	 *  Summary:
+	 *    Initialize the input structure to default values
+	 *  
+	 *  Discussion:
+	 *    Provided as a convenience to obtain the preferred default options
+	 *    for use in creating any Nav Services dialog.
+	 *  
+	 *  Parameters:
+	 *    
+	 *    outOptions:
+	 *      A pointer to the client-allocated options structure to
+	 *      initialize
+	 *  
+	 *  Result:
+	 *    A status code
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   not available
+	 *    CarbonLib:        in CarbonLib 1.1 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function NavGetDefaultDialogCreationOptions(var outOptions: NavDialogCreationOptions): OSStatus; external name '_NavGetDefaultDialogCreationOptions';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2071,12 +2939,20 @@ function NavGetDefaultDialogCreationOptions( var outOptions: NavDialogCreationOp
  *    A status code
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavCreateGetFileDialog( {const} inOptions: NavDialogCreationOptionsPtr { can be NULL }; inTypeList: NavTypeListHandle { can be NULL }; inEventProc: NavEventUPP { can be NULL }; inPreviewProc: NavPreviewUPP { can be NULL }; inFilterProc: NavObjectFilterUPP { can be NULL }; inClientData: UnivPtr { can be NULL }; var outDialog: NavDialogRef ): OSStatus; external name '_NavCreateGetFileDialog';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavCreateGetFileDialog(inOptions: {Const}NavDialogCreationOptionsPtr; inTypeList: NavTypeListHandle; inEventProc: NavEventUPP; inPreviewProc: NavPreviewUPP; inFilterProc: NavObjectFilterUPP; inClientData: UnivPtr; var outDialog: NavDialogRef): OSStatus; external name '_NavCreateGetFileDialog';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2122,12 +2998,20 @@ function NavCreateGetFileDialog( {const} inOptions: NavDialogCreationOptionsPtr 
  *    A status code
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavCreatePutFileDialog( {const} inOptions: NavDialogCreationOptionsPtr { can be NULL }; inFileType: OSType; inFileCreator: OSType; inEventProc: NavEventUPP { can be NULL }; inClientData: UnivPtr { can be NULL }; var outDialog: NavDialogRef ): OSStatus; external name '_NavCreatePutFileDialog';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavCreatePutFileDialog(inOptions: {Const}NavDialogCreationOptionsPtr; inFileType: OSType; inFileCreator: OSType; inEventProc: NavEventUPP; inClientData: UnivPtr; var outDialog: NavDialogRef): OSStatus; external name '_NavCreatePutFileDialog';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2178,12 +3062,20 @@ function NavCreatePutFileDialog( {const} inOptions: NavDialogCreationOptionsPtr 
  *    A status code
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavCreateAskReviewDocumentsDialog( const (*var*) inOptions: NavDialogCreationOptions; inDocumentCount: ItemCount; inEventProc: NavEventUPP { can be NULL }; inClientData: UnivPtr { can be NULL }; var outDialog: NavDialogRef ): OSStatus; external name '_NavCreateAskReviewDocumentsDialog';
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
+ *    Mac OS X:         in version 10.1 and later
+ }
+function NavCreateAskReviewDocumentsDialog(const (*var*) inOptions: NavDialogCreationOptions; inDocumentCount: UInt32; inEventProc: NavEventUPP; inClientData: UnivPtr; var outDialog: NavDialogRef): OSStatus; external name '_NavCreateAskReviewDocumentsDialog';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2227,12 +3119,20 @@ function NavCreateAskReviewDocumentsDialog( const (*var*) inOptions: NavDialogCr
  *    A status code
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavCreateAskSaveChangesDialog( const (*var*) inOptions: NavDialogCreationOptions; inAction: NavAskSaveChangesAction; inEventProc: NavEventUPP { can be NULL }; inClientData: UnivPtr { can be NULL }; var outDialog: NavDialogRef ): OSStatus; external name '_NavCreateAskSaveChangesDialog';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavCreateAskSaveChangesDialog(const (*var*) inOptions: NavDialogCreationOptions; inAction: NavAskSaveChangesAction; inEventProc: NavEventUPP; inClientData: UnivPtr; var outDialog: NavDialogRef): OSStatus; external name '_NavCreateAskSaveChangesDialog';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2270,12 +3170,20 @@ function NavCreateAskSaveChangesDialog( const (*var*) inOptions: NavDialogCreati
  *    A status code
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavCreateAskDiscardChangesDialog( const (*var*) inOptions: NavDialogCreationOptions; inEventProc: NavEventUPP { can be NULL }; inClientData: UnivPtr { can be NULL }; var outDialog: NavDialogRef ): OSStatus; external name '_NavCreateAskDiscardChangesDialog';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavCreateAskDiscardChangesDialog(const (*var*) inOptions: NavDialogCreationOptions; inEventProc: NavEventUPP; inClientData: UnivPtr; var outDialog: NavDialogRef): OSStatus; external name '_NavCreateAskDiscardChangesDialog';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2324,12 +3232,20 @@ function NavCreateAskDiscardChangesDialog( const (*var*) inOptions: NavDialogCre
  *    A status code
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavCreateChooseFileDialog( {const} inOptions: NavDialogCreationOptionsPtr { can be NULL }; inTypeList: NavTypeListHandle { can be NULL }; inEventProc: NavEventUPP { can be NULL }; inPreviewProc: NavPreviewUPP { can be NULL }; inFilterProc: NavObjectFilterUPP { can be NULL }; inClientData: UnivPtr { can be NULL }; var outDialog: NavDialogRef ): OSStatus; external name '_NavCreateChooseFileDialog';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavCreateChooseFileDialog(inOptions: {Const}NavDialogCreationOptionsPtr; inTypeList: NavTypeListHandle; inEventProc: NavEventUPP; inPreviewProc: NavPreviewUPP; inFilterProc: NavObjectFilterUPP; inClientData: UnivPtr; var outDialog: NavDialogRef): OSStatus; external name '_NavCreateChooseFileDialog';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2369,12 +3285,20 @@ function NavCreateChooseFileDialog( {const} inOptions: NavDialogCreationOptionsP
  *    A status code
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavCreateChooseFolderDialog( {const} inOptions: NavDialogCreationOptionsPtr { can be NULL }; inEventProc: NavEventUPP { can be NULL }; inFilterProc: NavObjectFilterUPP { can be NULL }; inClientData: UnivPtr { can be NULL }; var outDialog: NavDialogRef ): OSStatus; external name '_NavCreateChooseFolderDialog';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavCreateChooseFolderDialog(inOptions: {Const}NavDialogCreationOptionsPtr; inEventProc: NavEventUPP; inFilterProc: NavObjectFilterUPP; inClientData: UnivPtr; var outDialog: NavDialogRef): OSStatus; external name '_NavCreateChooseFolderDialog';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2414,12 +3338,20 @@ function NavCreateChooseFolderDialog( {const} inOptions: NavDialogCreationOption
  *    A status code
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavCreateChooseVolumeDialog( {const} inOptions: NavDialogCreationOptionsPtr { can be NULL }; inEventProc: NavEventUPP { can be NULL }; inFilterProc: NavObjectFilterUPP { can be NULL }; inClientData: UnivPtr { can be NULL }; var outDialog: NavDialogRef ): OSStatus; external name '_NavCreateChooseVolumeDialog';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavCreateChooseVolumeDialog(inOptions: {Const}NavDialogCreationOptionsPtr; inEventProc: NavEventUPP; inFilterProc: NavObjectFilterUPP; inClientData: UnivPtr; var outDialog: NavDialogRef): OSStatus; external name '_NavCreateChooseVolumeDialog';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2464,12 +3396,20 @@ function NavCreateChooseVolumeDialog( {const} inOptions: NavDialogCreationOption
  *    A status code
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavCreateChooseObjectDialog( {const} inOptions: NavDialogCreationOptionsPtr { can be NULL }; inEventProc: NavEventUPP { can be NULL }; inPreviewProc: NavPreviewUPP { can be NULL }; inFilterProc: NavObjectFilterUPP { can be NULL }; inClientData: UnivPtr { can be NULL }; var outDialog: NavDialogRef ): OSStatus; external name '_NavCreateChooseObjectDialog';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavCreateChooseObjectDialog(inOptions: {Const}NavDialogCreationOptionsPtr; inEventProc: NavEventUPP; inPreviewProc: NavPreviewUPP; inFilterProc: NavObjectFilterUPP; inClientData: UnivPtr; var outDialog: NavDialogRef): OSStatus; external name '_NavCreateChooseObjectDialog';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2507,12 +3447,20 @@ function NavCreateChooseObjectDialog( {const} inOptions: NavDialogCreationOption
  *    A status code
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavCreateNewFolderDialog( {const} inOptions: NavDialogCreationOptionsPtr { can be NULL }; inEventProc: NavEventUPP { can be NULL }; inClientData: UnivPtr { can be NULL }; var outDialog: NavDialogRef ): OSStatus; external name '_NavCreateNewFolderDialog';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavCreateNewFolderDialog(inOptions: {Const}NavDialogCreationOptionsPtr; inEventProc: NavEventUPP; inClientData: UnivPtr; var outDialog: NavDialogRef): OSStatus; external name '_NavCreateNewFolderDialog';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2549,12 +3497,20 @@ function NavCreateNewFolderDialog( {const} inOptions: NavDialogCreationOptionsPt
  *    A status code
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavDialogRun( inDialog: NavDialogRef ): OSStatus; external name '_NavDialogRun';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavDialogRun(inDialog: NavDialogRef): OSStatus; external name '_NavDialogRun';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2567,8 +3523,12 @@ function NavDialogRun( inDialog: NavDialogRef ): OSStatus; external name '_NavDi
  *    Call this function when completely finished with a Nav Services
  *    dialog. After calling NavDialogDispose, the dialog reference is
  *    no longer valid. NavDialogDispose is safe to call from within a
+<<<<<<< HEAD
  *    callback to the client's Nav Services event proc. On Mac OS X
  *    10.5 and later, -release and CFRelease may be used instead.
+=======
+ *    callback to the client's Nav Services event proc.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -2576,12 +3536,20 @@ function NavDialogRun( inDialog: NavDialogRef ): OSStatus; external name '_NavDi
  *      The dialog to dispose
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 procedure NavDialogDispose( inDialog: NavDialogRef ); external name '_NavDialogDispose';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure NavDialogDispose(inDialog: NavDialogRef); external name '_NavDialogDispose';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2604,12 +3572,20 @@ procedure NavDialogDispose( inDialog: NavDialogRef ); external name '_NavDialogD
  *    The window reference
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavDialogGetWindow( inDialog: NavDialogRef ): WindowRef; external name '_NavDialogGetWindow';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavDialogGetWindow(inDialog: NavDialogRef): WindowRef; external name '_NavDialogGetWindow';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2642,12 +3618,20 @@ function NavDialogGetWindow( inDialog: NavDialogRef ): WindowRef; external name 
  *    The user action
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavDialogGetUserAction( inDialog: NavDialogRef ): NavUserAction; external name '_NavDialogGetUserAction';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavDialogGetUserAction(inDialog: NavDialogRef): NavUserAction; external name '_NavDialogGetUserAction';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2677,12 +3661,20 @@ function NavDialogGetUserAction( inDialog: NavDialogRef ): NavUserAction; extern
  *    A status code
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavDialogGetReply( inDialog: NavDialogRef; var outReply: NavReplyRecord ): OSStatus; external name '_NavDialogGetReply';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavDialogGetReply(inDialog: NavDialogRef; var outReply: NavReplyRecord): OSStatus; external name '_NavDialogGetReply';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2712,12 +3704,20 @@ function NavDialogGetReply( inDialog: NavDialogRef; var outReply: NavReplyRecord
  *    semantics).
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavDialogGetSaveFileName( inPutFileDialog: NavDialogRef ): CFStringRef; external name '_NavDialogGetSaveFileName';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavDialogGetSaveFileName(inPutFileDialog: NavDialogRef): CFStringRef; external name '_NavDialogGetSaveFileName';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2740,19 +3740,31 @@ function NavDialogGetSaveFileName( inPutFileDialog: NavDialogRef ): CFStringRef;
  *      Which PutFile dialog
  *    
  *    inFileName:
+<<<<<<< HEAD
  *      The file name to use. A copy of the provided string is made for
  *      use by Navigation Services.
+=======
+ *      The file name to use
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Result:
  *    A status code
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavDialogSetSaveFileName( inPutFileDialog: NavDialogRef; inFileName: CFStringRef ): OSStatus; external name '_NavDialogSetSaveFileName';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NavDialogSetSaveFileName(inPutFileDialog: NavDialogRef; inFileName: CFStringRef): OSStatus; external name '_NavDialogSetSaveFileName';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2776,12 +3788,20 @@ function NavDialogSetSaveFileName( inPutFileDialog: NavDialogRef; inFileName: CF
  *    visible or there is no extension.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
  *    Non-Carbon CFM:   not available
  }
 function NavDialogGetSaveFileExtensionHidden( inPutFileDialog: NavDialogRef ): Boolean; external name '_NavDialogGetSaveFileExtensionHidden';
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
+ *    Mac OS X:         in version 10.1 and later
+ }
+function NavDialogGetSaveFileExtensionHidden(inPutFileDialog: NavDialogRef): boolean; external name '_NavDialogGetSaveFileExtensionHidden';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2808,6 +3828,7 @@ function NavDialogGetSaveFileExtensionHidden( inPutFileDialog: NavDialogRef ): B
  *    A status code
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
  *    Non-Carbon CFM:   not available
@@ -3161,3 +4182,15 @@ function NavServicesCanRun: Boolean; external name '_NavServicesCanRun';
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
+ *    Mac OS X:         in version 10.1 and later
+ }
+function NavDialogSetSaveFileExtensionHidden(inPutFileDialog: NavDialogRef; inHidden: boolean): OSStatus; external name '_NavDialogSetSaveFileExtensionHidden';
+
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

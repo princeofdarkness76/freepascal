@@ -625,6 +625,7 @@ var
   SubFirst: Char;
   pc : pchar;
 begin
+<<<<<<< HEAD
   PosEx:=0;
   SubLen := Length(SubStr);
   if (SubLen > 0) and (Offset > 0) and (Offset <= Cardinal(Length(S))) then
@@ -646,6 +647,14 @@ begin
       i := indexbyte(S[Offset],Length(S) - Offset + 1, Byte(SubFirst));
     end;
   end;
+=======
+  if (offset<1) or (offset>SizeUInt(length(s))) then exit(0);
+  i:=strpos(@s[offset],@substr[1]);
+  if i=nil then
+    PosEx:=0
+  else
+    PosEx:=succ(i-pchar(pointer(s)));
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Function PosEx(c:char; const S: string; Offset: Cardinal): Integer;
@@ -699,6 +708,39 @@ begin
   pcc := @s[1];
   lastpc := pc+Length(S);
 
+<<<<<<< HEAD
+=======
+function StringsReplace(const S: string; OldPattern, NewPattern: array of string;  Flags: TReplaceFlags): string;
+
+var pc,pcc,lastpc : pchar;
+    strcount      : integer;
+    ResStr,
+    CompStr       : string;
+    Found         : Boolean;
+    sc            : integer;
+
+begin
+  sc := length(OldPattern);
+  if sc <> length(NewPattern) then
+    raise exception.Create(SErrAmountStrings);
+
+  dec(sc);
+
+  if rfIgnoreCase in Flags then
+    begin
+    CompStr:=AnsiUpperCase(S);
+    for strcount := 0 to sc do
+      OldPattern[strcount] := AnsiUpperCase(OldPattern[strcount]);
+    end
+  else
+    CompStr := s;
+
+  ResStr := '';
+  pc := @CompStr[1];
+  pcc := @s[1];
+  lastpc := pc+Length(S);
+
+>>>>>>> graemeg/fixes_2_2
   while pc < lastpc do
     begin
     Found := False;
@@ -1425,6 +1467,7 @@ begin
        p^:=chr(48+(cardinal(value) and 1));
        value:=cardinal(value) shr 1;
        dec(p); 
+<<<<<<< HEAD
     end;
   digits:=p-p2+1;
   if digits>0 then
@@ -1446,10 +1489,36 @@ begin
        p^:=chr(48+(cardinal(value) and 1));
        value:=qword(value) shr 1;
        dec(p); 
+=======
+>>>>>>> graemeg/fixes_2_2
     end;
   digits:=p-p2+1;
   if digits>0 then
     fillchar(result[1],digits,#48);
+<<<<<<< HEAD
+=======
+end;
+
+function intToBin(Value: int64; Digits:integer): string;
+var p,p2 : pchar;
+begin
+  result:='';
+  if digits<=0 then exit;
+  setlength(result,digits);
+  p:=pchar(pointer(@result[digits]));
+  p2:=pchar(pointer(@result[1]));
+  // typecasts because we want to keep intto* delphi compat and take a signed val
+  // and avoid warnings
+  while (p>=p2) and (qword(value)>0) do     
+    begin
+       p^:=chr(48+(cardinal(value) and 1));
+       value:=qword(value) shr 1;
+       dec(p); 
+    end;
+  digits:=p-p2+1;
+  if digits>0 then
+    fillchar(result[1],digits,#48);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 

@@ -16,7 +16,11 @@
  **********************************************************************}
 
 
+<<<<<<< HEAD
 procedure SignalToRunerror(sig : longint; SigContext: PSigContextRec; uContext: Pvregs);public name '_FPC_DEFAULTSIGHANDLER';cdecl;
+=======
+procedure SignalToRunerror(sig : longint; SigContext: PSigContextRec; uContext: Pvregs);cdecl;
+>>>>>>> graemeg/fixes_2_2
 var
   res,fpustate : word;
 begin
@@ -72,6 +76,7 @@ begin
       begin
         res:=216;
       end;
+<<<<<<< HEAD
     SIGINT:
       begin
         res:=217
@@ -80,6 +85,8 @@ begin
       begin
         res:=233;
       end;
+=======
+>>>>>>> graemeg/fixes_2_2
   end;
   reenable_signal(sig);
 { give runtime error at the position where the signal was raised }

@@ -103,6 +103,7 @@ interface
           ait_regalloc,
           ait_tempalloc,
           { used to mark assembler blocks and inlined functions }
+<<<<<<< HEAD
           ait_marker,
           { used to describe a new location of a variable }
           ait_varloc,
@@ -118,6 +119,9 @@ interface
 {$endif}
           { SEH directives used in ARM,MIPS and x86_64 COFF targets }
           ait_seh_directive
+=======
+          ait_marker
+>>>>>>> graemeg/fixes_2_2
           );
 
         taiconst_type = (
@@ -132,6 +136,10 @@ interface
           aitconst_rva_symbol,
           aitconst_secrel32_symbol,
           { darwin only }
+<<<<<<< HEAD
+=======
+          aitconst_indirect_symbol,
+>>>>>>> graemeg/fixes_2_2
           { From gcc/config/darwin.c (darwin_asm_output_dwarf_delta):
             ***
             Output a difference of two labels that will be an assembly time
@@ -146,6 +154,7 @@ interface
             relsyms (nor do they support dwarf, for that matter)
           }
           aitconst_darwin_dwarf_delta64,
+<<<<<<< HEAD
           aitconst_darwin_dwarf_delta32,
           { ARM Thumb-2 only }
           aitconst_half16bit, { used for table jumps. The actual value is the 16bit value shifted left once }
@@ -182,6 +191,9 @@ interface
           aitrealconst_s80bit,
           aitrealconst_s128bit,
           aitrealconst_s64comp
+=======
+          aitconst_darwin_dwarf_delta32
+>>>>>>> graemeg/fixes_2_2
         );
 
     const
@@ -256,6 +268,7 @@ interface
           'cut',
           'regalloc',
           'tempalloc',
+<<<<<<< HEAD
           'marker',
           'varloc',
 {$ifdef JVM}
@@ -268,6 +281,9 @@ interface
           'llvmdecl',
 {$endif}
           'seh_directive'
+=======
+          'marker'
+>>>>>>> graemeg/fixes_2_2
           );
 
     type
@@ -372,6 +388,7 @@ interface
         a new ait type!                                                              }
       SkipInstr = [ait_comment, ait_symbol,ait_section
                    ,ait_stab, ait_function_name, ait_force_line
+<<<<<<< HEAD
                    ,ait_regalloc, ait_tempalloc, ait_symbol_end
                    ,ait_directive
                    ,ait_varloc,
@@ -379,6 +396,9 @@ interface
                    ait_jvar,
 {$endif JVM}
                    ait_seh_directive];
+=======
+                   ,ait_regalloc, ait_tempalloc, ait_symbol_end, ait_directive];
+>>>>>>> graemeg/fixes_2_2
 
       { ait_* types which do not have line information (and hence which are of type
         tai, otherwise, they are of type tailineinfo }
@@ -406,7 +426,10 @@ interface
 {$endif arm}
                      ait_real_32bit,ait_real_64bit,ait_real_80bit,ait_comp_64bit,ait_real_128bit,
                      ait_symbol
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
                     ];
 
 
@@ -818,7 +841,10 @@ interface
 =======
 >>>>>>> origin/cpstrnew
           constructor Createname(const name:string;ofs:aint);
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
           constructor ppuload(t:taitype;ppufile:tcompilerppufile);override;
           procedure ppuwrite(ppufile:tcompilerppufile);override;
           procedure derefimpl;override;
@@ -950,7 +976,10 @@ interface
           constructor dealloc(r : tregister;ainstr:tai);
           constructor sync(r : tregister);
           constructor resize(r : tregister);
+<<<<<<< HEAD
           constructor markused(r : tregister);
+=======
+>>>>>>> graemeg/fixes_2_2
           constructor ppuload(t:taitype;ppufile:tcompilerppufile);override;
           procedure ppuwrite(ppufile:tcompilerppufile);override;
        end;
@@ -1870,6 +1899,7 @@ implementation
     constructor tai_const.Create_sym(_sym:tasmsymbol);
       begin
          self.create_sym_offset(_sym,0);
+<<<<<<< HEAD
       end;
 
 
@@ -1925,6 +1955,8 @@ implementation
          { update sym info }
          if assigned(sym) then
            sym.increfs;
+=======
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -1932,7 +1964,11 @@ implementation
       begin
          inherited Create;
          typ:=ait_const;
+<<<<<<< HEAD
          consttype:=_typ;
+=======
+         consttype:=aitconst_ptr;
+>>>>>>> graemeg/fixes_2_2
          { sym is allowed to be nil, this is used to write nil pointers }
          sym:=_sym;
          endsym:=nil;
@@ -1977,7 +2013,12 @@ implementation
 <<<<<<< HEAD
     constructor tai_const.Createname(const name:string;ofs:asizeint);
       begin
+<<<<<<< HEAD
          self.Createname(name,AT_NONE,ofs);
+=======
+         self.create_sym_offset(_sym,0);
+         consttype:=aitconst_indirect_symbol;
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -1992,6 +2033,7 @@ implementation
     constructor tai_const.Createname(const name:string;ofs:aint);
 >>>>>>> graemeg/cpstrnew
       begin
+<<<<<<< HEAD
          self.create_sym_offset(current_asmdata.RefAsmSymbol(name,_symtyp),ofs);
       end;
 
@@ -2018,6 +2060,9 @@ implementation
     constructor tai_const.Create_nil_dataptr;
       begin
         self.Create_int_dataptr(0);
+=======
+         self.create_sym_offset(current_asmdata.RefAsmSymbol(name),ofs);
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -2155,6 +2200,10 @@ implementation
           aitconst_64bit,aitconst_darwin_dwarf_delta64:
 >>>>>>> origin/cpstrnew
             result:=8;
+<<<<<<< HEAD
+=======
+          aitconst_indirect_symbol,
+>>>>>>> graemeg/fixes_2_2
           aitconst_secrel32_symbol,
           aitconst_rva_symbol :
             if target_info.system=system_x86_64_win64 then
@@ -2936,6 +2985,7 @@ implementation
             if (ref^.segment<>NR_NO) and (ref^.segment<>NR_DS) then
               segprefix:=ref^.segment;
 {$endif}
+<<<<<<< HEAD
 {$ifndef llvm}
             if (cs_create_pic in current_settings.moduleswitches) and
               assigned(r.symbol) and
@@ -2950,6 +3000,13 @@ implementation
               then
               internalerror(200502052);
 {$endif not llvm}
+=======
+            if (cs_create_pic in current_settings.moduleswitches) and
+              assigned(r.symbol) and
+              not assigned(r.relsymbol) and
+              (r.refaddr=addr_no) then
+              internalerror(200502052);
+>>>>>>> graemeg/fixes_2_2
             typ:=top_ref;
             if assigned(add_reg_instruction_hook) then
               begin
@@ -3579,6 +3636,7 @@ implementation
 {$endif JVM}
 
 begin
+<<<<<<< HEAD
 {$push}{$warnings off}
   { taitype should fit into a 4 byte set for speed reasons }
   if ord(high(taitype))>31 then
@@ -3592,4 +3650,11 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  cai_cpu:=tai_cpu_abstract;
+  { aasmcpu is earlier in the unit order and can
+    already set the cai_align }
+  if not assigned(cai_align) then
+    cai_align:=tai_align_abstract;
+>>>>>>> graemeg/fixes_2_2
 end.

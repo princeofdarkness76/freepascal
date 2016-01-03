@@ -234,6 +234,7 @@ implementation
         hregister : tregister;
         signed : boolean;
       begin
+<<<<<<< HEAD
         case current_settings.fputype of
           fpu_fpa,
           fpu_fpa10,
@@ -261,6 +262,25 @@ implementation
               location.register:=cg.getfpuregister(current_asmdata.CurrAsmList,location.size);
               instr:=taicpu.op_reg_reg(A_FLT,location.register,left.location.register);
               if is_signed(left.resultdef) then
+=======
+
+        { convert first to double to avoid precision loss }
+        location_reset(location,LOC_FPUREGISTER,def_cgsize(resultdef));
+        location_force_reg(current_asmdata.CurrAsmList,left.location,OS_32,true);
+        location.register:=cg.getfpuregister(current_asmdata.CurrAsmList,location.size);
+        instr:=taicpu.op_reg_reg(A_FLT,location.register,left.location.register);
+        if is_signed(left.resultdef) then
+          begin
+            instr.oppostfix:=cgsize2fpuoppostfix[def_cgsize(resultdef)];
+            current_asmdata.CurrAsmList.concat(instr);
+          end
+        else
+          begin
+            { flt does a signed load, fix this }
+            case tfloatdef(resultdef).floattype of
+              s32real,
+              s64real:
+>>>>>>> graemeg/fixes_2_2
                 begin
                   instr.oppostfix:=cgsize2fpuoppostfix[def_cgsize(resultdef)];
                   current_asmdata.CurrAsmList.concat(instr);

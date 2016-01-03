@@ -25,6 +25,7 @@ unit fftw_s;
 {$MACRO on}
 {$INLINE on}
 
+<<<<<<< HEAD
 {$IFDEF Unix}
   const
     fftwlib = 'fftw3f';
@@ -33,6 +34,8 @@ unit fftw_s;
     fftwlib = 'libfftw3f';
 {$ENDIF}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 type    complex_single=record
           re,im:single;
         end;
@@ -56,6 +59,7 @@ type    complex_single=record
 {Complex to complex transformations.}
 function fftw_plan_dft_1d(n:cardinal;i,o:Pcomplex_single;
                           sign:fftw_sign;flags:fftw_flagset):fftw_plan_single;
+<<<<<<< HEAD
          external fftwlib name 'fftwf_plan_dft_1d';
 function fftw_plan_dft_2d(nx,ny:cardinal;i,o:Pcomplex_single;
                           sign:fftw_sign;flags:fftw_flagset):fftw_plan_single;
@@ -67,10 +71,24 @@ function fftw_plan_dft_3d(nx,ny,nz:cardinal;i,o:Pcomplex_single;
 function fftw_plan_dft(rank:cardinal;n:Pcardinal;i,o:Pcomplex_single;
                        sign:fftw_sign;flags:fftw_flagset):fftw_plan_single;
          external fftwlib name 'fftwf_plan_dft';
+=======
+         external 'fftw3f' name 'fftwf_plan_dft_1d';
+function fftw_plan_dft_2d(nx,ny:cardinal;i,o:Pcomplex_single;
+                          sign:fftw_sign;flags:fftw_flagset):fftw_plan_single;
+         external 'fftw3f' name 'fftwf_plan_dft_2d';
+function fftw_plan_dft_3d(nx,ny,nz:cardinal;i,o:Pcomplex_single;
+                          sign:fftw_sign;flags:fftw_flagset):fftw_plan_single;
+         external 'fftw3f' name 'fftwf_plan_dft_3d';
+
+function fftw_plan_dft(rank:cardinal;n:Pcardinal;i,o:Pcomplex_single;
+                       sign:fftw_sign;flags:fftw_flagset):fftw_plan_single;
+         external 'fftw3f' name 'fftwf_plan_dft';
+>>>>>>> graemeg/fixes_2_2
 
 {Real to complex transformations.}
 function fftw_plan_dft_1d(n:cardinal;i:Psingle;o:Pcomplex_single;
                           flags:fftw_flagset):fftw_plan_single;
+<<<<<<< HEAD
          external fftwlib name 'fftwf_plan_dft_r2c_1d';
 function fftw_plan_dft_2d(nx,ny:cardinal;i:Psingle;o:Pcomplex_single;
                           flags:fftw_flagset):fftw_plan_single;
@@ -81,10 +99,23 @@ function fftw_plan_dft_3d(nx,ny,nz:cardinal;i:Psingle;o:Pcomplex_single;
 function fftw_plan_dft(rank:cardinal;n:Pcardinal;i:Psingle;o:Pcomplex_single;
                        flags:fftw_flagset):fftw_plan_single;
          external fftwlib name 'fftwf_plan_dft_r2c';
+=======
+         external 'fftw3f' name 'fftwf_plan_dft_r2c_1d';
+function fftw_plan_dft_2d(nx,ny:cardinal;i:Psingle;o:Pcomplex_single;
+                          flags:fftw_flagset):fftw_plan_single;
+         external 'fftw3f' name 'fftwf_plan_dft_r2c_2d';
+function fftw_plan_dft_3d(nx,ny,nz:cardinal;i:Psingle;o:Pcomplex_single;
+                          flags:fftw_flagset):fftw_plan_single;
+         external 'fftw3f' name 'fftwf_plan_dft_r2c_3d';
+function fftw_plan_dft(rank:cardinal;n:Pcardinal;i:Psingle;o:Pcomplex_single;
+                       flags:fftw_flagset):fftw_plan_single;
+         external 'fftw3f' name 'fftwf_plan_dft_r2c';
+>>>>>>> graemeg/fixes_2_2
 
 {Complex to real transformations.}
 function fftw_plan_dft_1d(n:cardinal;i:Pcomplex_single;o:Psingle;
                           flags:fftw_flagset):fftw_plan_single;
+<<<<<<< HEAD
          external fftwlib name 'fftwf_plan_dft_c2r_1d';
 function fftw_plan_dft_2d(nx,ny:cardinal;i:Pcomplex_single;o:Psingle;
                           flags:fftw_flagset):fftw_plan_single;
@@ -105,11 +136,30 @@ procedure fftw_execute(plan:fftw_plan_single);
 {$calling register} {Back to normal!}
 procedure fftw_getmem(var p:pointer;size:sizeint);
 procedure fftw_freemem(p:pointer);inline;
+=======
+         external 'fftw3f' name 'fftwf_plan_dft_c2r_1d';
+function fftw_plan_dft_2d(nx,ny:cardinal;i:Pcomplex_single;o:Psingle;
+                          flags:fftw_flagset):fftw_plan_single;
+         external 'fftw3f' name 'fftwf_plan_dft_c2r_2d';
+function fftw_plan_dft_3d(nx,ny,nz:cardinal;i:Pcomplex_single;o:Psingle;
+                          flags:fftw_flagset):fftw_plan_single;
+         external 'fftw3f' name 'fftwf_plan_dft_c2r_3d';
+function fftw_plan_dft(rank:cardinal;n:Pcardinal;i:Pcomplex_single;o:Psingle;
+                       flags:fftw_flagset):fftw_plan_single;
+         external 'fftw3f' name 'fftwf_plan_dft_c2r';
+
+
+procedure fftw_destroy_plan(plan:fftw_plan_single);
+          external 'fftw3f' name 'fftwf_destroy_plan';
+procedure fftw_execute(plan:fftw_plan_single);
+          external 'fftw3f' name 'fftwf_execute';
+>>>>>>> graemeg/fixes_2_2
 
 {*****************************************************************************}
                                   implementation
 {*****************************************************************************}
 
+<<<<<<< HEAD
 {$ifndef Windows}
 {$LINKLIB fftw3f}
 {$endif}
@@ -118,6 +168,16 @@ procedure fftw_freemem(p:pointer);inline;
 { $LINKLIB gcc}
 { $LINKLIB c}
 { $LINKLIB m}
+=======
+{$LINKLIB fftw3f}
+
+{Required libraries by libfftw3}
+{$LINKLIB gcc}
+{$LINKLIB c}
+{$LINKLIB m}
+
+{$calling register} {Back to normal!}
+>>>>>>> graemeg/fixes_2_2
 
 {Better don't use fftw_malloc and fftw_free, but provide Pascal replacements.}
 
@@ -127,6 +187,7 @@ procedure fftw_freemem(p:pointer);inline;
 
 procedure fftw_getmem(var p:pointer;size:sizeint);
 
+<<<<<<< HEAD
 {$IFDEF align}
 var
   originalptr:pointer;
@@ -140,6 +201,13 @@ begin
   PPointer(ptruint(p) - SizeOf(Pointer))^:=originalptr;
 {$ELSE}
 begin
+=======
+begin
+{$IFDEF align}
+  getmem(p,size+16-1);
+  ptruint(p):=(ptruint(p)+align-1) and not (align-1);
+{$ELSE}
+>>>>>>> graemeg/fixes_2_2
   getmem(p,size);
 {$ENDIF}
 end;
@@ -147,11 +215,15 @@ end;
 procedure fftw_freemem(p:pointer);inline;
 
 begin
+<<<<<<< HEAD
 {$IFDEF align}
   freemem(PPointer(ptruint(p) - SizeOf(Pointer))^);
 {$ELSE}
   freemem(p);
 {$ENDIF}
+=======
+  freemem(p);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 end.

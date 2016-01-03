@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
     This unit implements support information structures for Nintendo DS
+=======
+    This unit implements support information structures for GameBoy Advance
+>>>>>>> graemeg/fixes_2_2
 
     Copyright (c) 1998-2002 by Peter Vreman
 
@@ -34,8 +38,13 @@ unit i_nds;
             system       : system_arm_nds;
             name         : 'Nintendo DS';
             shortname    : 'nds';
+<<<<<<< HEAD
             flags        : [tf_needs_symbol_size,tf_files_case_sensitive,
                             tf_requires_proper_alignment,tf_smartlink_sections];
+=======
+            flags        : [tf_needs_symbol_size,tf_files_case_sensitive,tf_use_function_relative_addresses
+	                          ,tf_smartlink_sections,tf_requires_proper_alignment];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_arm;
             unit_env     : '';
             extradefines : '';
@@ -57,15 +66,23 @@ unit i_nds;
             staticClibext : '.a';
             staticClibprefix : 'lib';
             sharedClibprefix : 'lib';
+<<<<<<< HEAD
             importlibprefix : 'libimp';
             importlibext : '.a';
+=======
+>>>>>>> graemeg/fixes_2_2
             Cprefix      : '';
             newline      : #10;
             dirsep       : '/';
             assem        : as_gas;
             assemextern  : as_gas;
+<<<<<<< HEAD
             link         : ld_none;
             linkextern   : ld_nds;
+=======
+            link         : nil;
+            linkextern   : nil;
+>>>>>>> graemeg/fixes_2_2
             ar           : ar_gnu_ar;
             res          : res_none;
             dbg          : dbg_stabs;
@@ -77,6 +94,7 @@ unit i_nds;
                 loopalign       : 4;
                 jumpalign       : 0;
                 constalignmin   : 0;
+<<<<<<< HEAD
                 constalignmax   : 8;//4;
                 varalignmin     : 0;
                 varalignmax     : 8;//4;
@@ -107,6 +125,20 @@ unit i_nds;
 =======
             abi : abi_eabi
 >>>>>>> origin/cpstrnew
+=======
+                constalignmax   : 4;
+                varalignmin     : 0;
+                varalignmax     : 4;
+                localalignmin   : 4;
+                localalignmax   : 8;
+                recordalignmin  : 0;
+                recordalignmax  : 4;
+                maxCrecordalign : 4
+              );
+            first_parm_offset : 8;
+            stacksize    : 16384;
+            abi : abi_default
+>>>>>>> graemeg/fixes_2_2
           );
 
   implementation

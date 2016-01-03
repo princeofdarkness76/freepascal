@@ -34,7 +34,11 @@ implementation
        { common }
        cutils,
        { global }
+<<<<<<< HEAD
        globals,globtype,tokens,verbose,constexp,
+=======
+       globals,globtype,tokens,verbose,
+>>>>>>> graemeg/fixes_2_2
        systems,
        ppu,fmodule,
        { symtable }
@@ -185,6 +189,7 @@ implementation
                        else
                         DefString:=srsym.realname+'='+InternalProcName; {Index ignored!}
                      end;
+<<<<<<< HEAD
                     if try_to_consume(_NAME) then
                      begin
 <<<<<<< HEAD
@@ -339,6 +344,94 @@ implementation
                       end;
                     end;
                 end
+=======
+                   if length(InternalProcName)<2 then
+                    Message(parser_e_procname_to_short_for_export);
+                   DefString:=srsym.realname+'='+InternalProcName;
+                 end;
+                if try_to_consume(_INDEX) then
+                 begin
+                   pt:=comp_expr(true);
+                   if pt.nodetype=ordconstn then
+                     index:=tordconstnode(pt).value
+                   else
+                    begin
+                      index:=0;
+                      consume(_INTCONST);
+                    end;
+                   options:=options or eo_index;
+                   pt.free;
+                   if target_info.system in [system_i386_win32,system_i386_wdosx,system_arm_wince,system_i386_wince] then
+                    DefString:=srsym.realname+'='+InternalProcName+' @ '+tostr(index)
+                   else
+                    DefString:=srsym.realname+'='+InternalProcName; {Index ignored!}
+                 end;
+                if try_to_consume(_NAME) then
+                 begin
+                   pt:=comp_expr(true);
+                   if pt.nodetype=stringconstn then
+                    hpname:=strpas(tstringconstnode(pt).value_str)
+                   else
+                    begin
+                      consume(_CSTRING);
+                    end;
+                   options:=options or eo_name;
+                   pt.free;
+                   DefString:=hpname+'='+InternalProcName;
+                 end;
+                if try_to_consume(_RESIDENT) then
+                 begin
+                   options:=options or eo_resident;
+                   DefString:=srsym.realname+'='+InternalProcName;{Resident ignored!}
+                 end;
+                if (DefString<>'') and UseDeffileForExports then
+                 DefFile.AddExport(DefString);
+
+                if srsym.typ=procsym then
+                  begin
+                    { if no specific name or index was given, then if }
+                    { the procedure has aliases defined export those, }
+                    { otherwise export the name as it appears in the  }
+                    { export section (it doesn't make sense to export }
+                    { the generic mangled name, because the name of   }
+                    { the parent unit is used in that)                }
+                    if ((options and (eo_name or eo_index))=0) and
+                       (tprocdef(tprocsym(srsym).procdeflist[0]).aliasnames.count>1) then
+                      exportallprocsymnames(tprocsym(srsym),options)
+                    else
+                      begin
+                        { there's a name or an index -> export only one name   }
+                        { correct? Or can you export multiple names with the   }
+                        { same index? And/or should we also export the aliases }
+                        { if a name is specified? (JM)                         }
+
+                        if ((options and eo_name)=0) then
+                          { Export names are not mangled on Windows and OS/2 }
+                          if (target_info.system in (system_all_windows+[system_i386_emx, system_i386_os2])) then
+                            hpname:=orgs
+                          { Use set mangled name in case of cdecl/cppdecl/mwpascal }
+                          { and no name specified                                  }
+                          else if (tprocdef(tprocsym(srsym).procdeflist[0]).proccalloption in [pocall_cdecl,pocall_mwpascal]) then
+                            hpname:=target_info.cprefix+tprocsym(srsym).realname
+                          else if (tprocdef(tprocsym(srsym).procdeflist[0]).proccalloption in [pocall_cppdecl]) then
+                            hpname:=target_info.cprefix+tprocdef(tprocsym(srsym).procdeflist[0]).cplusplusmangledname
+                          else
+                            hpname:=orgs;
+
+                        exportprocsym(srsym,hpname,index,options);
+                      end
+                  end
+                else
+                  begin
+                    if ((options and eo_name)=0) then
+                      { for "cvar" }
+                      if (vo_has_mangledname in tstaticvarsym(srsym).varoptions) then
+                        hpname:=srsym.mangledname
+                      else
+                        hpname:=orgs;
+                    exportvarsym(srsym,hpname,index,options);
+                  end;
+>>>>>>> graemeg/fixes_2_2
              end
            else
              consume(_ID);

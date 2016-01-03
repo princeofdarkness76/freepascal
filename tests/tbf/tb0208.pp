@@ -1,5 +1,9 @@
 { %fail }
+<<<<<<< HEAD
 { %opt=-Sew -vw }
+=======
+{ %opt=-Sew }
+>>>>>>> graemeg/fixes_2_2
 
 procedure test;
 var

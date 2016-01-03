@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 1999-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -40,6 +41,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+ * Copyright (c) 1999-2004 Apple Computer, Inc.
+ * All rights reserved.
+ }
+{       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -48,8 +61,13 @@
 
 unit CGDataProvider;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -62,21 +80,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -111,6 +137,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -118,6 +146,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -358,6 +387,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -383,6 +422,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -392,13 +435,18 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,MacOSXPosix,CFBase,CFData,CGBase,CFURL;
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+uses MacTypes,CFBase,CFData,CGBase,CFURL;
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -421,11 +469,19 @@ type
 
 { This callback is called to copy `count' bytes from the sequential data
    stream to `buffer'. }
+=======
+	CGDataProviderRef = ^SInt32; { an opaque 32-bit type }
+
+
+{ This callback is called to copy `count' bytes from the sequential data
+ * stream to `buffer'. }
+>>>>>>> graemeg/fixes_2_2
 
 type
 	CGDataProviderGetBytesCallback = function( info: UnivPtr; buffer: UnivPtr; count: size_t ): size_t;
 
 { This callback is called to skip `count' bytes forward in the sequential
+<<<<<<< HEAD
    data stream. It should return the number of bytes that were actually
    skipped. }
 
@@ -434,17 +490,31 @@ type
 
 { This callback is called to rewind to the beginning of sequential data
    stream. }
+=======
+ * data stream. }
+
+type
+	CGDataProviderSkipBytesCallback = procedure( info: UnivPtr; count: size_t );
+
+{ This callback is called to rewind to the beginning of sequential data
+ * stream. }
+>>>>>>> graemeg/fixes_2_2
 
 type
 	CGDataProviderRewindCallback = procedure( info: UnivPtr );
 
 { This callback is called to release the `info' pointer when the data
+<<<<<<< HEAD
    provider is freed. }
+=======
+ * provider is freed. }
+>>>>>>> graemeg/fixes_2_2
 
 type
 	CGDataProviderReleaseInfoCallback = procedure( info: UnivPtr );
 
 { Callbacks for sequentially accessing data.
+<<<<<<< HEAD
    `version' is the version of this structure. It should be set to 0.
    `getBytes' is called to copy `count' bytes from the sequential data
      stream to `buffer'. It should return the number of bytes copied, or 0
@@ -466,6 +536,24 @@ type
 		skipForward: CGDataProviderSkipForwardCallback;
 		rewind: CGDataProviderRewindCallback;
 		releaseInfo: CGDataProviderReleaseInfoCallback;
+=======
+ * `getBytes' is called to copy `count' bytes from the sequential data
+ *   stream to `buffer'.  It should return the number of bytes copied, or 0
+ *   if there's no more data.
+ * `skipBytes' is called to skip ahead in the sequential data stream by
+ *   `count' bytes.
+ * `rewind' is called to rewind the sequential data stream to the beginning
+ *   of the data.
+ * `releaseProvider', if non-NULL, is called to release the `info' pointer
+ *   when the provider is freed. }
+
+type
+	CGDataProviderCallbacks = record
+		getBytes: CGDataProviderGetBytesCallback;
+		skipBytes: CGDataProviderSkipBytesCallback;
+		rewind: CGDataProviderRewindCallback;
+		releaseProvider: CGDataProviderReleaseInfoCallback;
+>>>>>>> graemeg/fixes_2_2
 	end;
 
 { This callback is called to get a pointer to the entire block of data. }
@@ -474,11 +562,16 @@ type
 	CGDataProviderGetBytePointerCallback = function( info: UnivPtr ): UnivPtr;
 
 { This callback is called to release the pointer to entire block of
+<<<<<<< HEAD
    data. }
+=======
+ * data. }
+>>>>>>> graemeg/fixes_2_2
 
 type
 	CGDataProviderReleaseBytePointerCallback = procedure( info: UnivPtr; pointr: {const} UnivPtr );
 
+<<<<<<< HEAD
 { This callback is called to copy `count' bytes at byte offset `position'
    into `buffer'. }
 
@@ -510,10 +603,37 @@ type
 		releaseBytePointer: CGDataProviderReleaseBytePointerCallback;
 		getBytesAtPosition: CGDataProviderGetBytesAtPositionCallback;
 		releaseInfo: CGDataProviderReleaseInfoCallback;
+=======
+{ This callback is called to copy `count' bytes at byte offset `offset'
+ * into `buffer'. }
+
+type
+	CGDataProviderGetBytesAtOffsetCallback = function( info: UnivPtr; buffer: UnivPtr; offset: size_t; count: size_t ): size_t;
+
+{ Callbacks for directly accessing data.
+ * `getBytePointer', if non-NULL, is called to return a pointer to the
+ *   provider's entire block of data.
+ * `releaseBytePointer', if non-NULL, is called to release a pointer to
+ *   the provider's entire block of data.
+ * `getBytes', if non-NULL, is called to copy `count' bytes at offset
+ * `offset' from the provider's data to `buffer'.  It should return the
+ *   number of bytes copied, or 0 if there's no more data.
+ * `releaseProvider', if non-NULL, is called when the provider is freed.
+ *
+ * At least one of `getBytePointer' or `getBytes' must be non-NULL.  }
+
+type
+	CGDataProviderDirectAccessCallbacks = record
+		getBytePointer: CGDataProviderGetBytePointerCallback;
+		releaseBytePointer: CGDataProviderReleaseBytePointerCallback;
+		getBytes: CGDataProviderGetBytesAtOffsetCallback;
+		releaseProvider: CGDataProviderReleaseInfoCallback;
+>>>>>>> graemeg/fixes_2_2
 	end;
 
 { Return the CFTypeID for CGDataProviderRefs. }
 
+<<<<<<< HEAD
 function CGDataProviderGetTypeID: CFTypeID; external name '_CGDataProviderGetTypeID';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 
@@ -545,6 +665,19 @@ function CGDataProviderCreateSequential( info: UnivPtr; const (*var*) callbacks:
 
 function CGDataProviderCreateDirect( info: UnivPtr; size: off_t; const (*var*) callbacks: CGDataProviderDirectCallbacks ): CGDataProviderRef; external name '_CGDataProviderCreateDirect';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
+=======
+function CGDataProviderGetTypeID: CFTypeID; external name '_CGDataProviderGetTypeID'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+{ Create a sequential-access data provider using `callbacks' to provide
+ * the data.  `info' is passed to each of the callback functions. }
+
+function CGDataProviderCreate( info: UnivPtr; const (*var*) callbacks: CGDataProviderCallbacks ): CGDataProviderRef; external name '_CGDataProviderCreate';
+
+{ Create a direct-access data provider using `callbacks' to supply `size'
+ * bytes of data. `info' is passed to each of the callback functions. }
+
+function CGDataProviderCreateDirectAccess( info: UnivPtr; size: size_t; const (*var*) callbacks: CGDataProviderDirectAccessCallbacks ): CGDataProviderRef; external name '_CGDataProviderCreateDirectAccess';
+>>>>>>> graemeg/fixes_2_2
 
 { The callback used by `CGDataProviderCreateWithData'. }
 
@@ -552,6 +685,7 @@ type
 	CGDataProviderReleaseDataCallback = procedure( info: UnivPtr; data: {const} UnivPtr; size: size_t );
 
 { Create a direct-access data provider using `data', an array of `size'
+<<<<<<< HEAD
    bytes. `releaseData' is called when the data provider is freed, and is
    passed `info' as its first argument. }
 
@@ -821,3 +955,34 @@ function CGDataProviderCreateDirectAccess( info: UnivPtr; size: size_t; const (*
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ * bytes.  `releaseData' is called when the data provider is freed, and is
+ * passed `info' as its first argument. }
+
+function CGDataProviderCreateWithData( info: UnivPtr; data: {const} UnivPtr; size: size_t; releaseData: CGDataProviderReleaseDataCallback ): CGDataProviderRef; external name '_CGDataProviderCreateWithData';
+
+{ Create a direct-access data provider which reads from `data'. }
+
+function CGDataProviderCreateWithCFData( data: CFDataRef ): CGDataProviderRef; external name '_CGDataProviderCreateWithCFData'; (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+{ Create a data provider using `url'. }
+
+function CGDataProviderCreateWithURL( url: CFURLRef ): CGDataProviderRef; external name '_CGDataProviderCreateWithURL';
+
+{ Equivalent to `CFRetain(provider)'. }
+
+function CGDataProviderRetain( provider: CGDataProviderRef ): CGDataProviderRef; external name '_CGDataProviderRetain';
+
+{ Equivalent to `CFRelease(provider)'. }
+
+procedure CGDataProviderRelease( provider: CGDataProviderRef ); external name '_CGDataProviderRelease';
+
+{* DEPRECATED FUNCTIONS *}
+
+{ Don't use this function; use CGDataProviderCreateWithURL instead. }
+
+function CGDataProviderCreateWithFilename( filename: ConstCStringPtr ): CGDataProviderRef; external name '_CGDataProviderCreateWithFilename';
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

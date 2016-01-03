@@ -331,25 +331,37 @@ Implementation
         relsym: string;
         asmsymtyp: tasmsymtype;
         l: aint;
+<<<<<<< HEAD
         sym: tasmsymbol;
+=======
+>>>>>>> graemeg/fixes_2_2
       begin
         case actasmtoken of
           AS_AT:
             begin
               { darwin/i386 needs a relsym instead, and we can't }
               { generate this automatically                      }
+<<<<<<< HEAD
               if (target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
+=======
+              if (target_info.system=system_i386_darwin) then
+>>>>>>> graemeg/fixes_2_2
                 Message(asmr_e_invalid_reference_syntax);
               consume(AS_AT);
               if actasmtoken=AS_ID then
                 begin
 {$ifdef x86_64}
+<<<<<<< HEAD
                   if (actasmpattern='GOTPCREL') or
 		     (actasmpattern='PLT') then
+=======
+                  if actasmpattern='GOTPCREL' then
+>>>>>>> graemeg/fixes_2_2
 {$endif x86_64}
 {$ifdef i386}
                   if actasmpattern='GOT' then
 {$endif i386}
+<<<<<<< HEAD
 {$ifdef i8086}
                   if actasmpattern='GOT' then
 {$endif i8086}
@@ -381,6 +393,10 @@ Implementation
                          (oper.opr.ref.symbol.bind=AB_LOCAL) then
 			Message(asmr_w_useless_got_for_local);
 {$endif x86_64}
+=======
+                    begin
+                      oper.opr.ref.refaddr:=addr_pic;
+>>>>>>> graemeg/fixes_2_2
                       consume(AS_ID);
                     end
                   else
@@ -726,6 +742,7 @@ Implementation
                             OPR_CONSTANT :
                               inc(oper.opr.val,l);
                             OPR_LOCAL :
+<<<<<<< HEAD
                               begin
                                 inc(oper.opr.localsymofs,l);
                                 inc(oper.opr.localconstoffset, l);
@@ -735,6 +752,11 @@ Implementation
                                 inc(oper.opr.ref.offset,l);
                                 inc(oper.opr.constoffset, l);
                               end;
+=======
+                              inc(oper.opr.localsymofs,l);
+                            OPR_REFERENCE :
+                              inc(oper.opr.ref.offset,l);
+>>>>>>> graemeg/fixes_2_2
                             else
                               internalerror(200309202);
                           end;

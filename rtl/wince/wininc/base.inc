@@ -56,8 +56,12 @@
   type
 
      MAKEINTRESOURCE = pwidechar;
+<<<<<<< HEAD
      
      ATOM = word;                     //windef
+=======
+	 ATOM = word;                     //windef
+>>>>>>> graemeg/fixes_2_2
      TAtom = ATOM;
 
      WINBOOL = longbool;
@@ -155,11 +159,19 @@
      LCID   = DWORD;         //winnt
      PLCID  = ^LCID;         //+winnt
      LCTYPE = DWORD;
+<<<<<<< HEAD
      LPARAM = ptrint;        //windef LONG_PTR
 
      LP     = ^word;
      LPBOOL = ^WINBOOL;      //windef
      LPBYTE = System.pbyte;         //windef
+=======
+     LPARAM = longint;       //windef LONG_PTR
+
+     LP     = ^word;
+     LPBOOL = ^WINBOOL;      //windef
+     LPBYTE = ^BYTE;         //windef
+>>>>>>> graemeg/fixes_2_2
      LPCCH  = PCHAR;         //winnt
      LPCH   = PCHAR;         //winnt
 
@@ -175,7 +187,11 @@
      LPCWCH  = Pwidechar;   //winnt
      LPCWSTR = Pwidechar;   //winnt
 
+<<<<<<< HEAD
      LPDWORD = system.pdword;      //windef
+=======
+     LPDWORD = ^DWORD;      //windef
+>>>>>>> graemeg/fixes_2_2
 
      LPHANDLE = ^HANDLE;    //windef
      LPINT  = ^longint;     //windef
@@ -197,7 +213,11 @@
      LPCVOID = pointer;     //windef
 
      LPWCH  = Pwidechar;
+<<<<<<< HEAD
      LPWORD = system.pword;        //windef
+=======
+     LPWORD = ^word;        //windef
+>>>>>>> graemeg/fixes_2_2
      LPWSTR = Pwidechar;    //winnt
 
      //
@@ -297,7 +317,11 @@
      WINT_T = WCHAR_T;      //+stdlib
      WCTYPE_T = WCHAR_T;    //+stdlib
      TIME_T=ULONG;          //+stdlib
+<<<<<<< HEAD
      WPARAM = ptruint;      //windef UINT_PTR
+=======
+     WPARAM = Longint;      //windef UINT_PTR
+>>>>>>> graemeg/fixes_2_2
 
 // The left side of these typedefs are machine and compiler dependent.
 // From types.h
@@ -473,6 +497,7 @@ type
   { argument types are unknown }
   function HIWORD(l : longint) : WORD;      //windef
 
+<<<<<<< HEAD
 type
      LOBYTE = byte;
 (*
@@ -480,6 +505,11 @@ type
   { argument types are unknown }
   function LOBYTE(w : longint) : BYTE;      //windef
 *)
+=======
+  { was #define dname(params) def_expr }
+  { argument types are unknown }
+  function LOBYTE(w : longint) : BYTE;      //windef
+>>>>>>> graemeg/fixes_2_2
 
   { was #define dname(params) def_expr }
   { argument types are unknown }
@@ -524,7 +554,12 @@ type
 
   { was #define dname(params) def_expr }
   { argument types are unknown }
+<<<<<<< HEAD
   function MAKEINTATOM(i : longint) : LPTSTR; 
+=======
+  function MAKEINTATOM(i : longint) : LPTSTR;
+
+>>>>>>> graemeg/fixes_2_2
 
   { was #define dname(params) def_expr }
   { argument types are unknown }
@@ -842,18 +877,28 @@ type
        HIWORD:=WORD(((DWORD(l)) shr 16) and $FFFF);
     end;
 
+<<<<<<< HEAD
 (*
+=======
+>>>>>>> graemeg/fixes_2_2
   { was #define dname(params) def_expr }
   { argument types are unknown }
   function LOBYTE(w : longint) : BYTE;
     begin
        LOBYTE:=BYTE(w);
     end;
+<<<<<<< HEAD
 *)
 
   { was #define dname(params) def_expr }
   { argument types are unknown }
   function LOWORD(l : longint) : WORD; inline;
+=======
+
+  { was #define dname(params) def_expr }
+  { argument types are unknown }
+  function LOWORD(l : longint) : WORD;
+>>>>>>> graemeg/fixes_2_2
     begin
        LOWORD:=WORD(l);
     end;
@@ -917,11 +962,19 @@ type
 
   { was #define dname(params) def_expr }
   { argument types are unknown }
+<<<<<<< HEAD
   function MAKEINTATOM(i : longint) : LPTSTR; inline;
+=======
+  function MAKEINTATOM(i : longint) : LPTSTR;
+>>>>>>> graemeg/fixes_2_2
     begin
        MAKEINTATOM:=LPTSTR(DWORD(WORD(i)));
     end;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/fixes_2_2
   { was #define dname(params) def_expr }
   { argument types are unknown }
   { return type might be wrong }

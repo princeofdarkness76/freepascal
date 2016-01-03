@@ -31,7 +31,11 @@ unit SAX_HTML;
 
 interface
 
+<<<<<<< HEAD
 uses SysUtils, Classes, SAX, DOM, DOM_HTML,htmldefs,xmlutils;
+=======
+uses SysUtils, Classes, SAX, DOM, DOM_HTML,htmldefs;
+>>>>>>> graemeg/fixes_2_2
 
 type
 

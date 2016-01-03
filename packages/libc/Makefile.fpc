@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for libc binding
+>>>>>>> graemeg/fixes_2_2
 #
 
 [package]
 name=libc
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -24,10 +29,20 @@ units=kerneldefs kernelioctl libc
 
 [require]
 packages=rtl fpmkunit
+=======
+version=2.2.5
+
+[target]
+units=kerneldefs kernelioctl libc
+
+[require]
+libc=y
+>>>>>>> graemeg/fixes_2_2
 
 [install]
 fpcpackage=y
 
+<<<<<<< HEAD
 [default]
 fpcdir=../..
 
@@ -116,3 +131,17 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[compiler]
+includedir=src
+sourcedir=src tests
+
+[default]
+fpcdir=../..
+
+[shared]
+build=n
+
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/fixes_2_2

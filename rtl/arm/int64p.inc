@@ -62,5 +62,9 @@ asm
 .Lexit:
   ldmfd sp!,{r4,r5,r6,r15}
 end;
+<<<<<<< HEAD
 {$endif (not defined(CPUTHUMB)) and defined(CPUARM_HAS_UMULL)}
+=======
+
+>>>>>>> graemeg/fixes_2_2
 

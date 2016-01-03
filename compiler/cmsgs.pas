@@ -75,9 +75,13 @@ type
     procedure ResetStates;
     procedure CreateIdx;
     function  GetPChar(nr:longint):pchar;
+<<<<<<< HEAD
     { function  ClearVerbosity(nr:longint):boolean; not used anymore }
     function  SetVerbosity(nr:longint;newstate:tmsgstate):boolean;
     function  Get(nr:longint;const args:array of TMsgStr):ansistring;
+=======
+    function  Get(nr:longint;const args:array of string):ansistring;
+>>>>>>> graemeg/fixes_2_2
   end;
 
 { this will read a line until #10 or #0 and also increase p }
@@ -91,11 +95,19 @@ uses
   cutils;
 
 
+<<<<<<< HEAD
 function MsgReplace(const s:TMsgStr;const args:array of TMsgStr):ansistring;
 var
   last,
   i  : longint;
   hs : TMsgStr;
+=======
+function MsgReplace(const s:string;const args:array of string):ansistring;
+var
+  last,
+  i  : longint;
+  hs : ansistring;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   if s='' then
@@ -492,7 +504,11 @@ begin
 end;
 }
 
+<<<<<<< HEAD
 function TMessage.Get(nr:longint;const args:array of TMsgStr):ansistring;
+=======
+function TMessage.Get(nr:longint;const args:array of string):ansistring;
+>>>>>>> graemeg/fixes_2_2
 var
   hp : pchar;
 begin
@@ -505,6 +521,7 @@ begin
     Get:='msg nr '+tostr(nr)
   else
     Get:=MsgReplace(system.strpas(hp),args);
+<<<<<<< HEAD
 end;
 
 procedure TMessage.ResetStates;
@@ -523,6 +540,8 @@ begin
         msgstates[i]^[j]:=state;
       end;
   has_local_changes:=false;
+=======
+>>>>>>> graemeg/fixes_2_2
 end;
 
 

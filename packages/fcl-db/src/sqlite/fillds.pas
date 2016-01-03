@@ -4,6 +4,12 @@ program fillds;
 {$H+}
 {$define DEBUGHEAP}
 
+<<<<<<< HEAD
+=======
+//To test the sqlite3 version replace sqliteds by sqlite3ds
+//  and TSqliteDataset by TSqlite3Dataset
+
+>>>>>>> graemeg/fixes_2_2
 uses 
 {$ifdef DEBUGHEAP}
   Heaptrc,
@@ -11,6 +17,7 @@ uses
 {$ifdef Linux}
   cmem,
 {$endif}
+<<<<<<< HEAD
   sqlite3ds,
   sysutils,db,IniFiles;
 
@@ -24,11 +31,30 @@ var
   dsTest: TSqlite3Dataset;
   ini: TIniFile;
 
+=======
+  sqliteds,
+  sysutils,db,IniFiles;
+
+const
+  SQLITEDS_TESTS_INI_FILE = 'sqlitedstests.ini';
+  DEFAULT_TABLENAME = 'tabletest';
+  DEFAULT_FILENAME = 'test.db';
+  MEMOTEST_FILENAME = 'createds.pas';
+
+var 
+  dsTest:TSqliteDataset;
+  ini: TIniFile;
+
+>>>>>>> graemeg/fixes_2_2
 begin 
   {$ifdef DEBUGHEAP}
   SetHeapTraceOutput(ExtractFileName(ParamStr(0))+'.heap.log');
   {$endif}
+<<<<<<< HEAD
   dsTest:=TSqlite3Dataset.Create(nil);
+=======
+  dsTest:=TSqliteDataset.Create(nil);
+>>>>>>> graemeg/fixes_2_2
   with dsTest do
   begin
      //Load Database properties from a inifile
@@ -88,7 +114,10 @@ begin
     FieldByName('Date').AsDateTime:=Date;
     FieldByName('Currency').AsFloat:=20.08;
     Post;
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/fixes_2_2
     //Save the added data to database
     ApplyUpdates;
     writeln('ReturnString after ApplyUpdates: ',ReturnString);

@@ -75,6 +75,11 @@ unit cgcpu;
         { that's the case, we can use rlwinm to do an AND operation        }
         function get_rlwi_const(a: aint; var l1, l2: longint): boolean;
 
+<<<<<<< HEAD
+=======
+      protected
+       procedure a_load_regconst_subsetreg_intern(list : TAsmList; fromsize, subsetsize: tcgsize; fromreg: tregister; const sreg: tsubsetregister; slopt: tsubsetloadopt); override;
+>>>>>>> graemeg/fixes_2_2
       private
 
         (* NOT IN USE: *)
@@ -292,6 +297,7 @@ const
             fromsize := tosize;
           op := loadinstr[fromsize,ref2.index<>NR_NO,false];
           a_load_store(list,op,reg,ref2);
+<<<<<<< HEAD
           { sign extend shortint if necessary (because there is
 	   no load instruction to sign extend an 8 bit value automatically)
 	   and mask out extra sign bits when loading from a smaller signed
@@ -301,6 +307,16 @@ const
 	      a_load_reg_reg(list, OS_8, OS_S8, reg, reg);
 	      a_load_reg_reg(list, OS_S8, tosize, reg, reg);
 	    end;
+=======
+          { sign extend shortint if necessary, since there is no }
+          { load instruction that does that automatically (JM)   }
+          if (fromsize = OS_S8) then
+            begin
+              list.concat(taicpu.op_reg_reg(A_EXTSB,reg,reg));
+              if (tosize = OS_16) then
+                a_load_reg_reg(list,fromsize,tosize,reg,reg);
+            end;
+>>>>>>> graemeg/fixes_2_2
        end;
 
 
@@ -837,7 +853,11 @@ const
 
         if usesfpr then
           begin
+<<<<<<< HEAD
              reference_reset_base(href,NR_R1,-8,8);
+=======
+             reference_reset_base(href,NR_R1,-8);
+>>>>>>> graemeg/fixes_2_2
              for regcounter:=firstregfpu to RS_F31 do
                begin
                  a_loadfpu_reg_ref(list,OS_F64,OS_F64,newreg(R_FPUREGISTER,regcounter,R_SUBNONE),href);

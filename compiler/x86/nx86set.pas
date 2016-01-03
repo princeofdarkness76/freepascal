@@ -399,10 +399,16 @@ implementation
 
          { check if we can use smallset operation using btl which is limited
            to 32 bits, the left side may also not contain higher values or be signed !! }
+<<<<<<< HEAD
          use_small:=is_smallset(right.resultdef) and
                     not is_signed(left.resultdef) and
                     ((left.resultdef.typ=orddef) and (torddef(left.resultdef).high.svalue<{$ifdef i8086}16{$else}32{$endif}) or
                      (left.resultdef.typ=enumdef) and (tenumdef(left.resultdef).max<{$ifdef i8086}16{$else}32{$endif}));
+=======
+         use_small:=(tsetdef(right.resultdef).settype=smallset) and not is_signed(left.resultdef) and
+                    ((left.resultdef.typ=orddef) and (torddef(left.resultdef).high<32) or
+                     (left.resultdef.typ=enumdef) and (tenumdef(left.resultdef).max<32));
+>>>>>>> graemeg/fixes_2_2
 
          { Can we generate jumps? Possible for all types of sets }
          genjumps:=(right.nodetype=setconstn) and
@@ -438,9 +444,15 @@ implementation
          opdef:=cgsize_orddef(opsize);
 
          if not(left.location.loc in [LOC_REGISTER,LOC_CREGISTER,LOC_REFERENCE,LOC_CREFERENCE,LOC_CONSTANT]) then
+<<<<<<< HEAD
            hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,opdef,true);
          if (right.location.loc in [LOC_SUBSETREG,LOC_CSUBSETREG]) then
            hlcg.location_force_reg(current_asmdata.CurrAsmList,right.location,left.resultdef,opdef,true);
+=======
+           location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,true);
+         if (right.location.loc in [LOC_SUBSETREG,LOC_CSUBSETREG]) then
+           location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
+>>>>>>> graemeg/fixes_2_2
 
          if genjumps then
           begin
@@ -554,6 +566,7 @@ implementation
                 end
                else
                 begin
+<<<<<<< HEAD
 {$ifdef i8086}
                   register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.resultdef,left.location,setbase);
                   cg.getcpuregister(current_asmdata.CurrAsmList,NR_CX);
@@ -568,6 +581,14 @@ implementation
                   hreg:=cg.getintregister(current_asmdata.CurrAsmList,OS_16);
                   emit_const_reg(A_MOV,S_W,1,hreg);
                   emit_reg_reg(A_SHL,S_W,NR_CL,hreg);
+=======
+                  location_force_reg(current_asmdata.CurrAsmList,left.location,OS_32,true);
+                  register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
+                  if (tcgsize2size[right.location.size] < 4) or
+                     (right.location.loc = LOC_CONSTANT) then
+                    location_force_reg(current_asmdata.CurrAsmList,right.location,OS_32,true);
+                  hreg:=left.location.register;
+>>>>>>> graemeg/fixes_2_2
 
                   case right.location.loc of
                     LOC_REGISTER,
@@ -575,6 +596,7 @@ implementation
                       begin
                         emit_reg_reg(A_TEST,S_W,hreg,right.location.register);
                       end;
+<<<<<<< HEAD
                      LOC_CREFERENCE,
                      LOC_REFERENCE :
                        begin
@@ -599,6 +621,8 @@ implementation
                       begin
                         emit_reg_reg(A_BT,S_L,hreg,right.location.register);
                       end;
+=======
+>>>>>>> graemeg/fixes_2_2
                      LOC_CREFERENCE,
                      LOC_REFERENCE :
                        begin
@@ -654,8 +678,13 @@ implementation
                   if (left.location.loc=LOC_CONSTANT) or
                      (setbase<>0) then
                     begin
+<<<<<<< HEAD
                       hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,opdef,true);
                       register_maybe_adjust_setbase(current_asmdata.CurrAsmList,opdef,left.location,setbase);
+=======
+                      location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,true);
+                      register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
+>>>>>>> graemeg/fixes_2_2
                     end;
 
                   case left.location.loc of
@@ -708,7 +737,11 @@ implementation
                     LOC_REFERENCE,LOC_CREFERENCE:
                       begin
                         inc(right.location.reference.offset,(left.location.value-setbase) shr 3);
+<<<<<<< HEAD
                         emit_const_ref(A_TEST,S_B,1 shl ((left.location.value-setbase) and 7),right.location.reference);
+=======
+                        emit_const_ref(A_TEST,S_B,1 shl (left.location.value and 7),right.location.reference);
+>>>>>>> graemeg/fixes_2_2
                       end;
                     LOC_REGISTER,LOC_CREGISTER:
                       begin
@@ -817,6 +850,7 @@ implementation
                     hlcg.location_force_reg(current_asmdata.CurrAsmList,right.location,right.resultdef,opdef,true);
 =======
                   location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,false);
+<<<<<<< HEAD
                   register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
                   if (right.location.loc in [LOC_REGISTER,LOC_CREGISTER]) then
                     location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
@@ -839,6 +873,18 @@ implementation
                      ((left.resultdef.typ=enumdef) and
                       ((tenumdef(left.resultdef).min < aint(tsetdef(right.resultdef).setbase)) or
                        (tenumdef(left.resultdef).max > aint(tsetdef(right.resultdef).setmax)))) then
+=======
+                    register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
+                  pleftreg:=left.location.register;
+
+                  if (opsize >= OS_S8) or { = if signed }
+                     ((left.resultdef.typ=orddef) and 
+                      ((torddef(left.resultdef).low < int64(tsetdef(right.resultdef).setbase)) or
+                       (torddef(left.resultdef).high > int64(tsetdef(right.resultdef).setmax)))) or
+                     ((left.resultdef.typ=enumdef) and
+                      ((tenumdef(left.resultdef).min < tsetdef(right.resultdef).setbase) or
+                       (tenumdef(left.resultdef).max > tsetdef(right.resultdef).setmax))) then
+>>>>>>> graemeg/fixes_2_2
                    begin
 
                     { we have to check if the value is < 0 or > setmax }

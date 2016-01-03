@@ -11,6 +11,7 @@ loaders=prt0 cprt0 func dllprt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=system uuchar baseunix unixtype ctypes objpas macpas iso7185 extpas strings \
 =======
 units=system baseunix unixtype ctypes objpas macpas iso7185 strings \
@@ -36,6 +37,19 @@ rsts=math typinfo sysconst rtlconsts
 implicitunits=exeinfo \
       cp1250 cp1251 cp1252 cp1253 cp1254 cp1255 cp1256 cp1257 cp1258 \
       cp437 cp646 cp850 cp856 cp866 cp874 cp8859_1 cp8859_5 cp8859_2 cp852
+=======
+units=system baseunix unixtype ctypes objpas macpas strings \
+#      beos \
+      errors dos dl objects \
+      sysconst sysutils \
+      types charset ucomplex typinfo classes fgl math varutils \
+      cpu mmx getopts heaptrc lineinfo lnfodwrf variants \
+      rtlconsts syscall unix unixutil strutils termio initc \
+      cmem crt video mouse keyboard \
+      dateutils fmtbcd sockets dynlibs cwstring
+rsts=math varutils typinfo variants sysconst rtlconsts dateutils
+implicitunits=exeinfo
+>>>>>>> graemeg/fixes_2_2
 
 [require]
 nortl=y
@@ -58,10 +72,17 @@ libname=libfprtl.so
 libversion=2.0.0
 libunits=$(SYSTEMUNIT) objpas strings \
       unix  \
+<<<<<<< HEAD
       dos crt  \
       sysutils typinfo math \
       $(CPU_UNITS) getopts heaptrc \
       errors dynlibs
+=======
+      dos crt objects printer \
+      sysutils typinfo math \
+      $(CPU_UNITS) getopts heaptrc \
+      errors sockets ipc dynlibs
+>>>>>>> graemeg/fixes_2_2
 
 
 [prerules]
@@ -125,6 +146,7 @@ dllprt$(OEXT) : $(CPU_TARGET)/dllprt.as
 system$(PPUEXT) : system.pp $(SYSDEPS) $(UNIXINC)/sysunixh.inc
         $(COMPILER) -Us -Sg $(SYSTEMUNIT).pp
 
+<<<<<<< HEAD
 uuchar$(PPUEXT): $(SYSTEMUNIT)$(PPUEXT) $(INC)/uuchar.pp
 
 objpas$(PPUEXT): $(OBJPASDIR)/objpas.pp $(INC)/except.inc $(SYSTEMUNIT)$(PPUEXT)
@@ -133,6 +155,14 @@ objpas$(PPUEXT): $(OBJPASDIR)/objpas.pp $(INC)/except.inc $(SYSTEMUNIT)$(PPUEXT)
 dateutils$(PPUEXT): $(OBJPASDIR)/dateutils.pp baseunix$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT) types$(PPUEXT)
 	$(COMPILER) -I$(OBJPASDIR) $(OBJPASDIR)/dateutils.pp
 
+=======
+objpas$(PPUEXT): $(OBJPASDIR)/objpas.pp $(INC)/except.inc $(SYSTEMUNIT)$(PPUEXT)
+        $(COMPILER) -Fi$(OBJPASDIR) $(OBJPASDIR)/objpas.pp
+
+dateutils$(PPUEXT): $(OBJPASDIR)/dateutils.pp baseunix$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT) types$(PPUEXT)
+	$(COMPILER) -I$(OBJPASDIR) $(OBJPASDIR)/dateutils.pp
+
+>>>>>>> graemeg/fixes_2_2
 strings$(PPUEXT) : $(INC)/strings.pp $(INC)/stringsi.inc \
                    $(PROCINC)/strings.inc $(PROCINC)/stringss.inc \
                    $(SYSTEMUNIT)$(PPUEXT)
@@ -161,6 +191,7 @@ unixcp$(PPUEXT) : $(UNIXINC)/unixcp.pp $(SYSTEMUNIT)$(PPUEXT) objpas$(PPUEXT) ba
 
 # dos$(PPUEXT) : dos.pp $(INC)/filerec.inc $(INC)/textrec.inc strings$(PPUEXT) \
 #               beos$(PPUEXT) system$(PPUEXT)
+<<<<<<< HEAD
 
 dos$(PPUEXT) : $(UNIXINC)/dos.pp $(INC)/filerec.inc $(INC)/textrec.inc strings$(PPUEXT) \
                unix$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
@@ -169,6 +200,16 @@ dos$(PPUEXT) : $(UNIXINC)/dos.pp $(INC)/filerec.inc $(INC)/textrec.inc strings$(
 crt$(PPUEXT) : crt.pp $(INC)/textrec.inc termio.pp system$(PPUEXT)
         $(COMPILER) $(UNIXINC)/crt.pp $(REDIR)
 
+=======
+
+dos$(PPUEXT) : $(UNIXINC)/dos.pp $(INC)/filerec.inc $(INC)/textrec.inc strings$(PPUEXT) \
+               unix$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
+        $(COMPILER) -I$(INC) -Fu$(INC) $(UNIXINC)/dos.pp
+                       
+crt$(PPUEXT) : crt.pp $(INC)/textrec.inc termio.pp system$(PPUEXT)
+        $(COMPILER) $(UNIXINC)/crt.pp $(REDIR)
+
+>>>>>>> graemeg/fixes_2_2
 video$(PPUEXT) : video.pp $(INC)/textrec.inc termio.pp system$(PPUEXT)
         $(COMPILER) -Fu$(UNIXINC) $(UNIXINC)/video.pp $(REDIR)
         
@@ -218,6 +259,13 @@ sysconst$(PPUEXT) : $(OBJPASDIR)/sysconst.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUE
 
 rtlconsts$(PPUEXT) : $(OBJPASDIR)/rtlconsts.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
          $(COMPILER) $(OBJPASDIR)/rtlconsts.pp
+<<<<<<< HEAD
+=======
+
+strutils$(PPUEXT) : $(OBJPASDIR)/strutils.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT) \
+                    sysutils$(PPUEXT)
+        $(COMPILER) $(OBJPASDIR)/strutils.pp
+>>>>>>> graemeg/fixes_2_2
 
 #
 # Mac Pascal Model
@@ -245,9 +293,12 @@ lnfodwrf$(PPUEXT) : $(INC)/lnfodwrf.pp $(SYSTEMUNIT)$(PPUEXT) strings$(PPUEXT)
 
 charset$(PPUEXT) : $(INC)/charset.pp objpas$(PPUEXT)
 
+<<<<<<< HEAD
 cpall$(PPUEXT): $(RTL)/charmaps/cpall.pas system$(PPUEXT) charset$(PPUEXT)
         $(COMPILER) -Fu$(INC) -Fi$(RTL)/charmaps $(RTL)/charmaps/cpall.pas
 
+=======
+>>>>>>> graemeg/fixes_2_2
 ucomplex$(PPUEXT) : $(INC)/ucomplex.pp math$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT) math$(PPUEXT)
 
 #
@@ -261,6 +312,11 @@ mouse$(PPUEXT) : baseunix$(PPUEXT) video$(PPUEXT)
 
 dl$(PPUEXT) : $(SYSTEMUNIT)$(PPUEXT) unixtype$(PPUEXT)
 
+<<<<<<< HEAD
+=======
+sockets$(PPUEXT) : $(UNIXINC)/sockets.pp $(INC)/textrec.inc $(INC)/filerec.inc \
+                   unix$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
+>>>>>>> graemeg/fixes_2_2
 
 dynlibs$(PPUEXT) : $(INC)/dynlibs.pas $(UNIXINC)/dynlibs.inc dl$(PPUEXT) objpas$(PPUEXT)
 
@@ -271,7 +327,11 @@ ctypes$(PPUEXT) :  $(INC)/ctypes.pp $(SYSTEMUNIT)$(PPUEXT)
 variants$(PPUEXT) : $(INC)/variants.pp sysutils$(PPUEXT) sysconst$(PPUEXT) varutils$(PPUEXT) typinfo$(PPUEXT) rtlconsts$(PPUEXT) math$(PPUEXT)
         $(COMPILER) -Fi$(INC) $(INC)/variants.pp
 
+<<<<<<< HEAD
 cwstring$(PPUEXT) : $(UNIXINC)/cwstring.pp $(SYSTEMUNIT)$(PPUEXT) sysutils$(PPUEXT) baseunix$(PPUEXT) unix$(PPUEXT) unixtype$(PPUEXT) ctypes$(PPUEXT) dynlibs$(PPUEXT)
+=======
+cwstring$(PPUEXT) : $(UNIXINC)/cwstring.pp $(SYSTEMUNIT)$(PPUEXT) sysutils$(PPUEXT) baseunix$(PPUEXT) unix$(PPUEXT) unixtype$(PPUEXT) ctypes$(PPUEXT)
+>>>>>>> graemeg/fixes_2_2
 
 
 

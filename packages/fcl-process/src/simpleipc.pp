@@ -48,9 +48,12 @@ Type
     FOwner  : TSimpleIPCServer;
   Protected  
     Function  GetInstanceID : String; virtual; abstract;
+<<<<<<< HEAD
     Procedure DoError(Msg : String; Args : Array of const);
     Procedure SetMsgType(AMsgType: TMessageType); 
     Function MsgData : TStream;
+=======
+>>>>>>> graemeg/fixes_2_2
   Public
     Constructor Create(AOwner : TSimpleIPCServer); virtual;
     Property Owner : TSimpleIPCServer read FOwner;
@@ -76,7 +79,10 @@ Type
     Procedure CheckActive;
     Procedure Activate; virtual; abstract;
     Procedure Deactivate; virtual; abstract;
+<<<<<<< HEAD
     Procedure Loaded; override;
+=======
+>>>>>>> graemeg/fixes_2_2
     Property Busy : Boolean Read FBusy;
   Published
     Property Active : Boolean Read FActive Write SetActive;
@@ -121,8 +127,11 @@ Type
   TIPCClientComm = Class(TObject)
   private
     FOwner: TSimpleIPCClient;
+<<<<<<< HEAD
   protected
    Procedure DoError(Msg : String; Args : Array of const);
+=======
+>>>>>>> graemeg/fixes_2_2
   Public
     Constructor Create(AOwner : TSimpleIPCClient); virtual;
     Property  Owner : TSimpleIPCClient read FOwner;
@@ -178,11 +187,15 @@ implementation
   as well as the communication class itself.
   
   This comes first, to allow the uses clause to be set.
+<<<<<<< HEAD
   If the include file defines OSNEEDIPCINITDONE then the unit will
   call IPCInit and IPCDone in the initialization/finalization code.
   
   --------------------------------------------------------------------- }
 {$UNDEF OSNEEDIPCINITDONE}
+=======
+  --------------------------------------------------------------------- }
+>>>>>>> graemeg/fixes_2_2
 
 {$i simpleipc.inc}
 
@@ -195,6 +208,7 @@ begin
   FOwner:=AOWner;
 end;
 
+<<<<<<< HEAD
 Procedure TIPCServerComm.DoError(Msg : String; Args : Array of const);
 
 begin
@@ -213,6 +227,8 @@ begin
   Fowner.FMsgType:=AMsgType;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 { ---------------------------------------------------------------------
     TIPCClientComm
   ---------------------------------------------------------------------}
@@ -222,12 +238,15 @@ begin
   FOwner:=AOwner;
 end;
 
+<<<<<<< HEAD
 Procedure TIPCClientComm.DoError(Msg : String; Args : Array of const);
 
 begin
   FOwner.DoError(Msg,Args);
 end;  
 
+=======
+>>>>>>> graemeg/fixes_2_2
 { ---------------------------------------------------------------------
     TSimpleIPC
   ---------------------------------------------------------------------}
@@ -239,22 +258,33 @@ end;
 
 procedure TSimpleIPC.CheckInactive;
 begin
+<<<<<<< HEAD
   if not (csLoading in ComponentState) then
     If Active then
       DoError(SErrActive,[]);
+=======
+  If Active then
+    DoError(SErrActive,[]);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TSimpleIPC.CheckActive;
 begin
+<<<<<<< HEAD
   if not (csLoading in ComponentState) then
     If Not Active then
       DoError(SErrInActive,[]);
+=======
+  If Not Active then
+    DoError(SErrInActive,[]);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TSimpleIPC.SetActive(const AValue: Boolean);
 begin
   if (FActive<>AValue) then
     begin
+<<<<<<< HEAD
     if (csLoading in ComponentState) then
       FActive:=AValue
     else  
@@ -262,6 +292,12 @@ begin
         Activate
       else
         Deactivate;
+=======
+    If AValue then
+      Activate
+    else
+      Deactivate;
+>>>>>>> graemeg/fixes_2_2
     end;
 end;
 
@@ -274,6 +310,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 Procedure TSimpleIPC.Loaded; 
 
 Var
@@ -288,6 +325,8 @@ begin
     end;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 { ---------------------------------------------------------------------
     TSimpleIPCServer
   ---------------------------------------------------------------------}
@@ -394,9 +433,12 @@ begin
   StopServer;
 end;
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> graemeg/fixes_2_2
 { ---------------------------------------------------------------------
     TSimpleIPCClient
   ---------------------------------------------------------------------}
@@ -509,11 +551,14 @@ begin
   SendStringMessage(MsgType, Format(Msg,Args));
 end;
 
+<<<<<<< HEAD
 {$IFDEF OSNEEDIPCINITDONE}
 initialization
   IPCInit;
 finalization
   IPCDone;
 {$ENDIF}  
+=======
+>>>>>>> graemeg/fixes_2_2
 end.
 

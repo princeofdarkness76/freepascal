@@ -1257,11 +1257,26 @@ implementation
         begin
           if (def.typ<>errordef) and assigned(current_objectdef.childof) then
             begin
+<<<<<<< HEAD
               if def<>current_objectdef.childof.extendeddef then
                 begin
                   Message1(type_e_record_helper_must_extend_same_record,current_objectdef.childof.extendeddef.typename);
                   def:=generrordef;
                 end;
+=======
+              stringdispose(aktobjectdef.iidstr);
+              aktobjectdef.iidstr:=stringdup(strpas(tstringconstnode(p).value_str)); { or upper? }
+              p.free;
+              valid:=string2guid(aktobjectdef.iidstr^,aktobjectdef.iidguid^);
+              if (classtype in [odt_interfacecom,odt_dispinterface]) and not assigned(aktobjectdef.iidguid) and not valid then
+                Message(parser_e_improper_guid_syntax);
+              include(aktobjectdef.objectoptions,oo_has_valid_guid);
+            end
+          else
+            begin
+              p.free;
+              Message(parser_e_illegal_expression);
+>>>>>>> graemeg/fixes_2_2
             end;
         end;
 
@@ -1374,6 +1389,7 @@ implementation
 {$ifdef jvm}
           if is_java_class_or_interface(pd.struct) then
             begin
+<<<<<<< HEAD
               { mark all non-virtual instance methods as "virtual; final;",
                 because
                  a) that's the only way to guarantee "non-virtual" behaviour
@@ -1411,6 +1427,67 @@ implementation
       procedure chkobjc(pd: tprocdef);
         begin
           if is_objc_class_or_protocol(pd.struct) then
+=======
+              { use single_type instead of id_type for specialize support }
+              single_type(hdef,false);
+              if (not assigned(hdef)) or
+                 (hdef.typ<>objectdef) then
+                begin
+                  if assigned(hdef) then
+                    Message1(type_e_class_type_expected,hdef.typename);
+                end
+              else
+                begin
+                  childof:=tobjectdef(hdef);
+                  { a mix of class, interfaces, objects and cppclasses
+                    isn't allowed }
+                  case classtype of
+                     odt_class:
+                       if not(is_class(childof)) then
+                         begin
+                            if is_interface(childof) then
+                              begin
+                                 { we insert the interface after the child
+                                   is set, see below
+                                 }
+                                 intfchildof:=childof;
+                                 childof:=class_tobject;
+                              end
+                            else
+                              Message(parser_e_mix_of_classes_and_objects);
+                         end;
+                     odt_interfacecorba,
+                     odt_interfacecom:
+                       begin
+                         if not(is_interface(childof)) then
+                           Message(parser_e_mix_of_classes_and_objects);
+                         classtype:=childof.objecttype;
+                         aktobjectdef.objecttype:=classtype;
+                       end;
+                     odt_cppclass:
+                       if not(is_cppclass(childof)) then
+                         Message(parser_e_mix_of_classes_and_objects);
+                     odt_object:
+                       if not(is_object(childof)) then
+                         Message(parser_e_mix_of_classes_and_objects);
+                     odt_dispinterface:
+                       Message(parser_e_dispinterface_cant_have_parent);
+                  end;
+                end;
+              hasparentdefined:=true;
+            end;
+
+          { no generic as parents }
+          if assigned(childof) and
+             (df_generic in childof.defoptions) then
+            begin
+              Message(parser_e_no_generics_as_types);
+              childof:=nil;
+            end;
+
+          { if no parent class, then a class get tobject as parent }
+          if not assigned(childof) then
+>>>>>>> graemeg/fixes_2_2
             begin
               include(pd.procoptions,po_objc);
 <<<<<<< HEAD
@@ -1714,6 +1791,7 @@ implementation
         if (current_objectdef.objecttype in [odt_class,odt_objcclass,odt_javaclass]) and
 =======
         pd : tprocdef;
+<<<<<<< HEAD
         has_destructor,
         oldparse_only: boolean;
         object_member_blocktype : tblock_type;
@@ -1846,6 +1924,108 @@ implementation
                 if is_objcprotocol(current_structdef) and
                    ((idtoken=_REQUIRED) or
                     (idtoken=_OPTIONAL)) then
+=======
+        dummysymoptions : tsymoptions;
+        i : longint;
+        generictype : ttypesym;
+        current_blocktype : tblock_type;
+        oldaktobjectdef : tobjectdef;
+        old_parse_generic : boolean;
+      begin
+         old_object_option:=current_object_option;
+         oldaktobjectdef:=aktobjectdef;
+         old_parse_generic:=parse_generic;
+
+         { objects and class types can't be declared local }
+         if not(symtablestack.top.symtabletype in [globalsymtable,staticsymtable]) and
+            not assigned(genericlist) then
+           Message(parser_e_no_local_objects);
+
+         storetypecanbeforward:=typecanbeforward;
+         { for tp7 don't allow forward types }
+         if (m_tp7 in current_settings.modeswitches) then
+           typecanbeforward:=false;
+
+         if not(readobjecttype) then
+           exit;
+
+         if assigned(fd) then
+           begin
+             if fd.objecttype<>classtype then
+               begin
+                 Message(parser_e_forward_mismatch);
+                 { recover }
+                 aktobjectdef:=tobjectdef.create(classtype,n,nil);
+                 include(aktobjectdef.objectoptions,oo_is_forward);
+               end
+             else
+               aktobjectdef:=fd
+           end
+         else
+           begin
+             { anonym objects aren't allow (o : object a : longint; end;) }
+             if n='' then
+               Message(parser_f_no_anonym_objects);
+             aktobjectdef:=tobjectdef.create(classtype,n,nil);
+             { include forward flag, it'll be removed after the parent class have been
+               added. This is to prevent circular childof loops }
+             include(aktobjectdef.objectoptions,oo_is_forward);
+           end;
+
+         { read list of parent classes }
+         readparentclasses;
+
+         { default access is public }
+         there_is_a_destructor:=false;
+         current_object_option:=[sp_public];
+
+         { set class flags and inherits published }
+         setclassattributes;
+
+         symtablestack.push(aktobjectdef.symtable);
+         testcurobject:=1;
+
+         { add generic type parameters }
+         aktobjectdef.genericdef:=genericdef;
+         if assigned(genericlist) then
+           begin
+             for i:=0 to genericlist.count-1 do
+               begin
+                 generictype:=ttypesym(genericlist[i]);
+                 if generictype.typedef.typ=undefineddef then
+                   begin
+                     include(aktobjectdef.defoptions,df_generic);
+                     parse_generic:=true;
+                   end
+                 else
+                   include(aktobjectdef.defoptions,df_specialization);
+                 symtablestack.top.insert(generictype);
+               end;
+           end;
+
+         { short class declaration ? }
+         if (classtype<>odt_class) or (token<>_SEMICOLON) then
+          begin
+            { Parse componenten }
+            current_blocktype:=bt_general;
+            repeat
+              case token of
+                _TYPE :
+                  begin
+                    if ([df_generic,df_specialization]*aktobjectdef.defoptions)=[] then
+                      Message(parser_e_type_and_var_only_in_generics);
+                     consume(_TYPE);
+                     current_blocktype:=bt_type;
+                  end;
+                _VAR :
+                  begin
+                    if ([df_generic,df_specialization]*aktobjectdef.defoptions)=[] then
+                      Message(parser_e_type_and_var_only_in_generics);
+                    consume(_VAR);
+                    current_blocktype:=bt_general;
+                  end;
+                _ID :
+>>>>>>> graemeg/fixes_2_2
                   begin
                     current_structdef.symtable.currentlyoptional:=(idtoken=_OPTIONAL);
                     consume(idtoken)
@@ -2084,6 +2264,7 @@ implementation
                           types_dec(true,hadgeneric)
                         else if object_member_blocktype=bt_const then
                           begin
+<<<<<<< HEAD
                             typedconstswritable:=false;
                             if final_fields then
                               begin
@@ -2185,6 +2366,79 @@ implementation
                 { interface mappings, i.e. mapping to a method  }
                 { which isn't declared yet                      }
                 if assigned(pd) then
+=======
+                            if current_blocktype=bt_general then
+                              begin
+                                if is_interface(aktobjectdef) then
+                                  Message(parser_e_no_vars_in_interfaces);
+
+                                if (sp_published in current_object_option) and
+                                  not(oo_can_have_published in aktobjectdef.objectoptions) then
+                                  Message(parser_e_cant_have_published);
+
+                                read_record_fields([vd_object])
+                              end
+                            else
+                              types_dec;
+                          end;
+                    end;
+                  end;
+                _PROPERTY :
+                  begin
+                    property_dec;
+                  end;
+                _PROCEDURE,
+                _FUNCTION,
+                _CLASS :
+                  begin
+                    if (sp_published in current_object_option) and
+                       not(oo_can_have_published in aktobjectdef.objectoptions) then
+                      Message(parser_e_cant_have_published);
+
+                    oldparse_only:=parse_only;
+                    parse_only:=true;
+                    pd:=parse_proc_dec(aktobjectdef);
+
+                    { this is for error recovery as well as forward }
+                    { interface mappings, i.e. mapping to a method  }
+                    { which isn't declared yet                      }
+                    if assigned(pd) then
+                     begin
+                       parse_object_proc_directives(pd);
+
+                       { all Macintosh Object Pascal methods are virtual.  }
+                       { this can't be a class method, because macpas mode }
+                       { has no m_class                                    }
+                       if (m_mac in current_settings.modeswitches) then
+                         include(pd.procoptions,po_virtualmethod);
+
+                       handle_calling_convention(pd);
+
+                       { add definition to procsym }
+                       proc_add_definition(pd);
+
+                       { add procdef options to objectdef options }
+                       if (po_msgint in pd.procoptions) then
+                        include(aktobjectdef.objectoptions,oo_has_msgint);
+                       if (po_msgstr in pd.procoptions) then
+                         include(aktobjectdef.objectoptions,oo_has_msgstr);
+                       if (po_virtualmethod in pd.procoptions) then
+                         include(aktobjectdef.objectoptions,oo_has_virtual);
+
+                       chkcpp(pd);
+                     end;
+
+                    { Support hint directives }
+                    dummysymoptions:=[];
+                    while try_consume_hintdirective(dummysymoptions) do
+                      Consume(_SEMICOLON);
+                    if assigned(pd) then
+                      pd.symoptions:=pd.symoptions+dummysymoptions;
+
+                    parse_only:=oldparse_only;
+                  end;
+                _CONSTRUCTOR :
+>>>>>>> graemeg/fixes_2_2
                   begin
                     parse_object_proc_directives(pd);
 
@@ -2808,6 +3062,7 @@ implementation
             symtablestack.pop(current_structdef.symtable);
           end;
 
+<<<<<<< HEAD
         { generate vmt space if needed }
         if not(oo_has_vmt in current_structdef.objectoptions) and
            not(oo_is_forward in current_structdef.objectoptions) and
@@ -2912,6 +3167,14 @@ implementation
         current_genericdef:=old_current_genericdef;
         current_specializedef:=old_current_specializedef;
         parse_generic:=old_parse_generic;
+=======
+         { restore old state }
+         aktobjectdef:=oldaktobjectdef;
+         testcurobject:=0;
+         typecanbeforward:=storetypecanbeforward;
+         parse_generic:=old_parse_generic;
+         current_object_option:=old_object_option;
+>>>>>>> graemeg/fixes_2_2
       end;
 
 end.

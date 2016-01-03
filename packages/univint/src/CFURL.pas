@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -33,6 +34,17 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+	Copyright (c) 1998-2005, Apple, Inc. All rights reserved.
+}
+{	  Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, November 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -41,8 +53,13 @@
 
 unit CFURL;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -55,21 +72,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -104,6 +129,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -111,6 +138,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -353,6 +381,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -378,6 +416,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -387,6 +429,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -406,10 +449,14 @@ uses MacTypes,CFBase,CFData,CFError,CFString,Files;
 >>>>>>> origin/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+uses MacTypes,CFBase,CFData,CFString,Files;
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -433,6 +480,17 @@ const
 	kCFURLWindowsPathStyle = 2;
 
 { CFURLRef moved to CFBase to avoid circular dependency with Files unit }    
+=======
+	CFURLPathStyle = SInt32;
+const
+	kCFURLPOSIXPathStyle = 0;
+	kCFURLHFSPathStyle = 1;
+	kCFURLWindowsPathStyle = 2;
+    
+type
+	CFURLRef = ^SInt32; { an opaque 32-bit type }
+	CFURLRefPtr = ^CFURLRef;
+>>>>>>> graemeg/fixes_2_2
 
 { CFURLs are composed of two fundamental pieces - their string, and a }
 { (possibly NULL) base URL.  A relative URL is one in which the string }
@@ -452,11 +510,14 @@ function CFURLGetTypeID: CFTypeID; external name '_CFURLGetTypeID';
 
 { encoding will be used both to interpret the bytes of URLBytes, and to }
 { interpret any percent-escapes within the bytes. }
+<<<<<<< HEAD
 { Using a string encoding which isn't a superset of ASCII encoding is not }
 { supported because CFURLGetBytes and CFURLGetByteRangeForComponent require }
 { 7-bit ASCII characters to be stored in a single 8-bit byte. }
 { CFStringEncodings which are a superset of ASCII encoding include MacRoman, }
 { WindowsLatin1, ISOLatin1, NextStepLatin, ASCII, and UTF8. }
+=======
+>>>>>>> graemeg/fixes_2_2
 function CFURLCreateWithBytes( allocator: CFAllocatorRef; URLBytes: UInt8Ptr; length: CFIndex; encoding: CFStringEncoding; baseURL: CFURLRef ): CFURLRef; external name '_CFURLCreateWithBytes';
 
 { Escapes any character that is not 7-bit ASCII with the byte-code }
@@ -480,12 +541,16 @@ function CFURLCreateWithString( allocator: CFAllocatorRef; URLString: CFStringRe
 { in relative portion, leading "../" components are removed from the }
 { final URL's path, and if the relative portion contains only }
 { resource specifier pieces (query, parameters, and fragment), then }
+<<<<<<< HEAD
 { the last path component of the base URL will not be deleted.  }
 { Using a string encoding which isn't a superset of ASCII encoding is not }
 { supported because CFURLGetBytes and CFURLGetByteRangeForComponent require }
 { 7-bit ASCII characters to be stored in a single 8-bit byte. }
 { CFStringEncodings which are a superset of ASCII encoding include MacRoman, }
 { WindowsLatin1, ISOLatin1, NextStepLatin, ASCII, and UTF8. }
+=======
+{ the last path component of the base URL will not be deleted  }
+>>>>>>> graemeg/fixes_2_2
 function CFURLCreateAbsoluteURLWithBytes( alloc: CFAllocatorRef; relativeURLBytes: UInt8Ptr; length: CFIndex; encoding: CFStringEncoding; baseURL: CFURLRef; useCompatibilityMode: Boolean ): CFURLRef; external name '_CFURLCreateAbsoluteURLWithBytes';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 {#endif}
@@ -500,12 +565,15 @@ function CFURLCreateWithFileSystemPath( allocator: CFAllocatorRef; filePath: CFS
 
 function CFURLCreateFromFileSystemRepresentation( allocator: CFAllocatorRef; buffer: CStringPtr; bufLen: CFIndex; isDirectory: Boolean ): CFURLRef; external name '_CFURLCreateFromFileSystemRepresentation';
 
+<<<<<<< HEAD
 { The path style of the baseURL must match the path style of the relative }
 { url or the results are undefined.  If the provided filePath looks like an }
 { absolute path ( starting with '/' if pathStyle is kCFURLPosixPathStyle, }
 { not starting with ':' for kCFURLHFSPathStyle, or starting with what looks }
 { like a drive letter and colon for kCFURLWindowsPathStyle ) then the baseURL }
 { is ignored. }
+=======
+>>>>>>> graemeg/fixes_2_2
 function CFURLCreateWithFileSystemPathRelativeToBase( allocator: CFAllocatorRef; filePath: CFStringRef; pathStyle: CFURLPathStyle; isDirectory: Boolean; baseURL: CFURLRef ): CFURLRef; external name '_CFURLCreateWithFileSystemPathRelativeToBase';
 
 function CFURLCreateFromFileSystemRepresentationRelativeToBase( allocator: CFAllocatorRef; buffer: CStringPtr; bufLen: CFIndex; isDirectory: Boolean; baseURL: CFURLRef ): CFURLRef; external name '_CFURLCreateFromFileSystemRepresentationRelativeToBase';
@@ -588,14 +656,22 @@ to request that none be.
 }
 
 { Returns true if anURL conforms to RFC 1808 }
+<<<<<<< HEAD
 function CFURLCanBeDecomposed( anURL: CFURLRef ): Boolean; external name '_CFURLCanBeDecomposed'; 
+=======
+function CFURLCanBeDecomposed( anURL: CFURLRef ): Boolean; external name '_CFURLCanBeDecomposed';
+>>>>>>> graemeg/fixes_2_2
 
 { The next several methods leave any percent escape sequences intact }
 
 function CFURLCopyScheme( anURL: CFURLRef ): CFStringRef; external name '_CFURLCopyScheme';
 
 { NULL if CFURLCanBeDecomposed(anURL) is false }
+<<<<<<< HEAD
 function CFURLCopyNetLocation( anURL: CFURLRef ): CFStringRef; external name '_CFURLCopyNetLocation'; 
+=======
+function CFURLCopyNetLocation( anURL: CFURLRef ): CFStringRef; external name '_CFURLCopyNetLocation';
+>>>>>>> graemeg/fixes_2_2
 
 { NULL if CFURLCanBeDecomposed(anURL) is false; also does not resolve the URL }
 { against its base.  See also CFURLCopyAbsoluteURL().  Note that, strictly }
@@ -620,7 +696,11 @@ function CFURLHasDirectoryPath( anURL: CFURLRef ): Boolean; external name '_CFUR
 
 { Any additional resource specifiers after the path.  For URLs }
 { that cannot be decomposed, this is everything except the scheme itself. }
+<<<<<<< HEAD
 function CFURLCopyResourceSpecifier( anURL: CFURLRef ): CFStringRef; external name '_CFURLCopyResourceSpecifier'; 
+=======
+function CFURLCopyResourceSpecifier( anURL: CFURLRef ): CFStringRef; external name '_CFURLCopyResourceSpecifier';
+>>>>>>> graemeg/fixes_2_2
 
 function CFURLCopyHostName( anURL: CFURLRef ): CFStringRef; external name '_CFURLCopyHostName';
 
@@ -672,6 +752,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFURLComponentType = CFIndex;
 =======
 	CFURLComponentType = SIGNEDLONG;
@@ -685,11 +766,18 @@ type
 =======
 	CFURLComponentType = SIGNEDLONG;
 >>>>>>> origin/cpstrnew
+=======
+	CFURLComponentType = SInt32;
+>>>>>>> graemeg/fixes_2_2
 const
 	kCFURLComponentScheme = 1;
 	kCFURLComponentNetLocation = 2;
 	kCFURLComponentPath = 3;
 	kCFURLComponentResourceSpecifier = 4;
+<<<<<<< HEAD
+=======
+	
+>>>>>>> graemeg/fixes_2_2
 	kCFURLComponentUser = 5;
 	kCFURLComponentPassword = 6;
 	kCFURLComponentUserInfo = 7;
@@ -793,6 +881,7 @@ function CFURLCreateStringByReplacingPercentEscapesUsingEncoding( allocator: CFA
 { charactersToLeaveUnescaped.  To simply correct any non-URL characters }
 { in an otherwise correct URL string, do: }
 
+<<<<<<< HEAD
 { newString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, origString, NULL, NULL, kCFStringEncodingUTF8); }
 function CFURLCreateStringByAddingPercentEscapes( allocator: CFAllocatorRef; originalString: CFStringRef; charactersToLeaveUnescaped: CFStringRef; legalURLCharactersToBeEscaped: CFStringRef; encoding: CFStringEncoding ): CFStringRef; external name '_CFURLCreateStringByAddingPercentEscapes';
 
@@ -1680,3 +1769,18 @@ procedure CFURLStopAccessingSecurityScopedResource( url: CFURLRef ); external na
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+{ newString = CFURLCreateStringByAddingPercentEscapes(NULL, origString, NULL, NULL, kCFStringEncodingUTF8); }
+function CFURLCreateStringByAddingPercentEscapes( allocator: CFAllocatorRef; originalString: CFStringRef; charactersToLeaveUnescaped: CFStringRef; legalURLCharactersToBeEscaped: CFStringRef; encoding: CFStringEncoding ): CFStringRef; external name '_CFURLCreateStringByAddingPercentEscapes';
+
+{#ifndef CF_OPEN_SOURCE}
+
+function CFURLCreateFromFSRef( allocator: CFAllocatorRef; const (*var*) fsRef_: FSRef ): CFURLRef; external name '_CFURLCreateFromFSRef';
+
+function CFURLGetFSRef( url: CFURLRef; var fsRef_: FSRef ): Boolean; external name '_CFURLGetFSRef';
+
+{#endif} // !CF_OPEN_SOURCE
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

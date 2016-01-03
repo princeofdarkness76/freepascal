@@ -2272,7 +2272,11 @@ Begin
 End; {slegtr}
 
 Begin
+<<<<<<< HEAD
   {$ifdef fixate_random}
   randseed := 12345
   {$endif}
+=======
+  randseed := 12345
+>>>>>>> graemeg/fixes_2_2
 End.

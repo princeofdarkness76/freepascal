@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       ATS/ATSFont.h
  
      Contains:   Public interface to the font access and data management functions of ATS.
@@ -78,6 +79,31 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+     File:       ATSFont.p
+ 
+     Contains:   Public interface to the font access and data management functions of ATS.
+ 
+     Version:    Technology: Mac OS
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 2000-2002 by Apple Computer, Inc., all rights reserved.
+ 
+     Bugs?:      For bug reports, consult the following page on
+                 the World Wide Web:
+ 
+                     http://www.freepascal.org/bugs.html
+ 
+}
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -86,8 +112,13 @@
 
 unit ATSFont;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -100,21 +131,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -149,6 +188,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -156,6 +197,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -403,6 +445,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -428,6 +480,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -437,6 +493,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,CFBase,CFRunLoop,CFPropertyList,ATSTypes,CFString,CFURL,Files,TextCommon,SFNTTypes;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -485,6 +542,20 @@ const
 	kATSOptionFlagsUseDataForkAsResourceFork = 1 shl 8; { ATSFontActivateFromFileSpecification }
 	kATSOptionFlagsUseResourceFork = 2 shl 8;
 	kATSOptionFlagsUseDataFork = 3 shl 8;
+=======
+uses MacTypes,CFBase,CFRunLoop,CFPropertyList,ATSTypes,CFString,Files,TextCommon,SFNTTypes;
+
+
+{$ALIGN MAC68K}
+
+
+const
+	kATSOptionFlagsDefault		= 0;
+	kATSOptionFlagsComposeFontPostScriptName = $01;				{  ATSFontGetPostScriptName  }
+	kATSOptionFlagsUseDataForkAsResourceFork = $0100;			{  ATSFontActivateFromFileSpecification  }
+	kATSOptionFlagsUseResourceFork = $0200;
+	kATSOptionFlagsUseDataFork	= $0300;
+>>>>>>> graemeg/fixes_2_2
 
 	kATSIterationCompleted		= -980;
 	kATSInvalidFontFamilyAccess	= -981;
@@ -492,6 +563,7 @@ const
 	kATSIterationScopeModified	= -983;
 	kATSInvalidFontTableAccess	= -984;
 	kATSInvalidFontContainerAccess = -985;
+<<<<<<< HEAD
     kATSInvalidGlyphAccess        = -986;
 
 
@@ -530,19 +602,85 @@ const
 
 type
 	ATSFontFilterSelector = SInt32;
+=======
+  kATSInvalidGlyphAccess        = -986;
+
+
+type
+	ATSFontContext						= UInt32;
+
+const
+	kATSFontContextUnspecified	= 0;
+	kATSFontContextGlobal		= 1;
+  kATSFontContextLocal          = 2;
+
+const
+  kATSOptionFlagsProcessSubdirectories = $00000001 shl 6; { Used by activation/deactivation & iteration }
+  kATSOptionFlagsDoNotNotify    = $00000001 shl 7; { Do not notify after global activation/deactivation }
+
+{ Iteration Option Flags }
+const
+  kATSOptionFlagsIterateByPrecedenceMask = $00000001 shl 5;
+  kATSOptionFlagsIterationScopeMask = $00000007 shl 12; { Mask option bits 12-14 for iteration scopes }
+  kATSOptionFlagsDefaultScope   = $00000000 shl 12;
+  kATSOptionFlagsUnRestrictedScope = $00000001 shl 12;
+  kATSOptionFlagsRestrictedScope = $00000002 shl 12;
+
+
+type
+	ATSFontFormat						= UInt32;
+
+const
+	kATSFontFormatUnspecified	= 0;
+
+
+type
+{$ifc TYPED_FUNCTION_POINTERS}
+	ATSFontFamilyApplierFunction = function(iFamily: ATSFontFamilyRef; iRefCon: UnivPtr): OSStatus;
+{$elsec}
+	ATSFontFamilyApplierFunction = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	ATSFontApplierFunction = function(iFont: ATSFontRef; iRefCon: UnivPtr): OSStatus;
+{$elsec}
+	ATSFontApplierFunction = ProcPtr;
+{$endc}
+
+	ATSFontFamilyIterator    = ^SInt32; { an opaque 32-bit type }
+	ATSFontFamilyIteratorPtr = ^ATSFontFamilyIterator;  { when a var xx:ATSFontFamilyIterator parameter can be nil, it is changed to xx: ATSFontFamilyIteratorPtr }
+	ATSFontIterator    = ^SInt32; { an opaque 32-bit type }
+	ATSFontIteratorPtr = ^ATSFontIterator;  { when a var xx:ATSFontIterator parameter can be nil, it is changed to xx: ATSFontIteratorPtr }
+
+const
+	kATSFontFilterCurrentVersion = 0;
+
+
+type
+	ATSFontFilterSelector 		= SInt32;
+>>>>>>> graemeg/fixes_2_2
 const
 	kATSFontFilterSelectorUnspecified = 0;
 	kATSFontFilterSelectorGeneration = 3;
 	kATSFontFilterSelectorFontFamily = 7;
 	kATSFontFilterSelectorFontFamilyApplierFunction = 8;
 	kATSFontFilterSelectorFontApplierFunction = 9;
+<<<<<<< HEAD
 	kATSFileReferenceFilterSelector = 10;
+=======
+
+>>>>>>> graemeg/fixes_2_2
 
 type
 	ATSFontFilterPtr = ^ATSFontFilter;
 	ATSFontFilter = record
+<<<<<<< HEAD
 		version: UInt32;
 		filterSelector: ATSFontFilterSelector;
+=======
+		version:				UInt32;
+		filterSelector:			ATSFontFilterSelector;
+>>>>>>> graemeg/fixes_2_2
 		case SInt16 of
 		0: (
 			generationFilter:	ATSGeneration;
@@ -556,6 +694,7 @@ type
 		3: (
 			fontApplierFunctionFilter: ATSFontApplierFunction;
 			);
+<<<<<<< HEAD
 		4: (
 			fontFileRefFilter: {const} FSRefPtr;
 			);
@@ -567,6 +706,15 @@ type
 	ATSFontNotificationRefPtr = ^ATSFontNotificationRef;
 	ATSFontNotificationInfoRef_ = record end;
 	ATSFontNotificationInfoRef = ^ATSFontNotificationInfoRef_;
+=======
+	end;
+
+{ Notification related }
+type
+	ATSFontNotificationRef    = ^SInt32; { an opaque 32-bit type }
+	ATSFontNotificationRefPtr = ^ATSFontNotificationRef;
+	ATSFontNotificationInfoRef    = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 	ATSFontNotificationInfoRefPtr = ^ATSFontNotificationInfoRef;
 
 {
@@ -577,6 +725,7 @@ type
  *    options that follow may be used together in order to alter the
  *    default behavior of ATS notifications.
  }
+<<<<<<< HEAD
 
 	ATSFontNotifyOption = SInt32;
 const
@@ -584,6 +733,16 @@ const
    * Default behavior of ATSFontNotificationSubscribe.
    }
 	kATSFontNotifyOptionDefault = 0;
+=======
+type
+	ATSFontNotifyOption = SInt32;
+const
+
+  {
+   * Default behavior of ATSFontNotificationSubscribe.
+   }
+  kATSFontNotifyOptionDefault   = 0;
+>>>>>>> graemeg/fixes_2_2
 
   {
    * Normally applications will only receive ATS notifications while in
@@ -593,8 +752,12 @@ const
    * that performs font management functions and require immediate
    * notification when something changes.
    }
+<<<<<<< HEAD
 	kATSFontNotifyOptionReceiveWhileSuspended = 1 shl 0;
 
+=======
+  kATSFontNotifyOptionReceiveWhileSuspended = 1 shl 0;
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontNotifyAction
@@ -607,14 +770,23 @@ const
 type
 	ATSFontNotifyAction = SInt32;
 const
+<<<<<<< HEAD
 {
+=======
+
+  {
+>>>>>>> graemeg/fixes_2_2
    * Used after a batch (de)activation of fonts occurs.   Typically the
    * caller has exercised multiple global (De)Activation calls with the
    * kATSOptionFlagsDoNotNotify set. Once all calls are completed, one
    * may use ATSFontNotify with this action to ask ATS to notify all
    * clients.
    }
+<<<<<<< HEAD
 	kATSFontNotifyActionFontsChanged = 1;
+=======
+  kATSFontNotifyActionFontsChanged = 1;
+>>>>>>> graemeg/fixes_2_2
 
   {
    * The ATS system with the help of the Finder keeps track of changes
@@ -624,7 +796,11 @@ const
    * is used to let ATS server to rescan these directories and post
    * notifications if necessary.
    }
+<<<<<<< HEAD
 	kATSFontNotifyActionDirectoriesChanged = 2;
+=======
+  kATSFontNotifyActionDirectoriesChanged = 2;
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -642,6 +818,7 @@ const
  *    refCon:
  *      User data/state to be supplied to callback function
  }
+<<<<<<< HEAD
 type
 	ATSNotificationCallback = procedure( info: ATSFontNotificationInfoRef; refCon: UnivPtr );
 { ----------------------------------------------------------------------------------------- }
@@ -910,10 +1087,37 @@ function ATSFontActivateFromFileSpecification( const (*var*) iFile: FSSpec; iCon
 function ATSFontActivateFromFileReference( const (*var*) iFile: FSRef; iContext: ATSFontContext; iFormat: ATSFontFormat; iRefCon: UnivPtr; iOptions: ATSOptionFlags; var oContainer: ATSFontContainerRef ): OSStatus; external name '_ATSFontActivateFromFileReference';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
+=======
+type ATSNotificationCallback = procedure( info: ATSFontNotificationInfoRef; refCon: UnivPtr );
+
+	{	 ----------------------------------------------------------------------------------------- 	}
+	{	 Font container                                                                            	}
+	{	 ----------------------------------------------------------------------------------------- 	}
+	{
+	 *  ATSGetGeneration()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   not available
+	 *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function ATSGetGeneration: ATSGeneration; external name '_ATSGetGeneration';
+
+{
+ *  ATSFontActivateFromFileSpecification()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontActivateFromFileSpecification(const (*var*) iFile: FSSpec; iContext: ATSFontContext; iFormat: ATSFontFormat; iReserved: UnivPtr; iOptions: ATSOptionFlags; var oContainer: ATSFontContainerRef): OSStatus; external name '_ATSFontActivateFromFileSpecification';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontActivateFromMemory()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -1457,6 +1661,24 @@ function ATSFontIsEnabled( iFont: ATSFontRef ): Boolean; external name '_ATSFont
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontActivateFromMemory(iData: LogicalAddress; iLength: ByteCount; iContext: ATSFontContext; iFormat: ATSFontFormat; iReserved: UnivPtr; iOptions: ATSOptionFlags; var oContainer: ATSFontContainerRef): OSStatus; external name '_ATSFontActivateFromMemory';
+
+{
+ *  ATSFontDeactivate()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontDeactivate(iContainer: ATSFontContainerRef; iRefCon: UnivPtr; iOptions: ATSOptionFlags): OSStatus; external name '_ATSFontDeactivate';
+>>>>>>> graemeg/fixes_2_2
 
 { ----------------------------------------------------------------------------------------- }
 { Font family                                                                               }
@@ -1464,6 +1686,7 @@ function ATSFontIsEnabled( iFont: ATSFontRef ): Boolean; external name '_ATSFont
 {
  *  ATSFontFamilyApplyFunction()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -1499,10 +1722,19 @@ function ATSFontFamilyApplyFunction( iFunction: ATSFontFamilyApplierFunction; iR
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontFamilyApplyFunction(iFunction: ATSFontFamilyApplierFunction; iRefCon: UnivPtr): OSStatus; external name '_ATSFontFamilyApplyFunction';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontFamilyIteratorCreate()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -1538,10 +1770,19 @@ function ATSFontFamilyIteratorCreate( iContext: ATSFontContext; {const} iFilter:
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontFamilyIteratorCreate(iContext: ATSFontContext; iFilter: {Const}ATSFontFilterPtr; iRefCon: UnivPtr; iOptions: ATSOptionFlags; var ioIterator: ATSFontFamilyIterator): OSStatus; external name '_ATSFontFamilyIteratorCreate';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontFamilyIteratorRelease()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -1569,10 +1810,19 @@ function ATSFontFamilyIteratorRelease( var ioIterator: ATSFontFamilyIterator ): 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontFamilyIteratorRelease(var ioIterator: ATSFontFamilyIterator): OSStatus; external name '_ATSFontFamilyIteratorRelease';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontFamilyIteratorReset()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -1600,10 +1850,19 @@ function ATSFontFamilyIteratorReset( iContext: ATSFontContext; {const} iFilter: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontFamilyIteratorReset(iContext: ATSFontContext; iFilter: {Const}ATSFontFilterPtr; iRefCon: UnivPtr; iOptions: ATSOptionFlags; var ioIterator: ATSFontFamilyIterator): OSStatus; external name '_ATSFontFamilyIteratorReset';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontFamilyIteratorNext()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -1631,10 +1890,19 @@ function ATSFontFamilyIteratorNext( iIterator: ATSFontFamilyIterator; var oFamil
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontFamilyIteratorNext(iIterator: ATSFontFamilyIterator; var oFamily: ATSFontFamilyRef): OSStatus; external name '_ATSFontFamilyIteratorNext';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontFamilyFindFromName()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -1670,10 +1938,19 @@ function ATSFontFamilyFindFromName( iName: CFStringRef; iOptions: ATSOptionFlags
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontFamilyFindFromName(iName: CFStringRef; iOptions: ATSOptionFlags): ATSFontFamilyRef; external name '_ATSFontFamilyFindFromName';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontFamilyGetGeneration()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -1709,10 +1986,19 @@ function ATSFontFamilyGetGeneration( iFamily: ATSFontFamilyRef ): ATSGeneration;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontFamilyGetGeneration(iFamily: ATSFontFamilyRef): ATSGeneration; external name '_ATSFontFamilyGetGeneration';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontFamilyGetName()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -1748,10 +2034,19 @@ function ATSFontFamilyGetName( iFamily: ATSFontFamilyRef; iOptions: ATSOptionFla
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontFamilyGetName(iFamily: ATSFontFamilyRef; iOptions: ATSOptionFlags; var oName: CFStringRef): OSStatus; external name '_ATSFontFamilyGetName';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontFamilyGetEncoding()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -1787,6 +2082,14 @@ function ATSFontFamilyGetEncoding( iFamily: ATSFontFamilyRef ): TextEncoding; ex
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontFamilyGetEncoding(iFamily: ATSFontFamilyRef): TextEncoding; external name '_ATSFontFamilyGetEncoding';
+>>>>>>> graemeg/fixes_2_2
 
 { ----------------------------------------------------------------------------------------- }
 { Font                                                                                      }
@@ -1794,6 +2097,7 @@ function ATSFontFamilyGetEncoding( iFamily: ATSFontFamilyRef ): TextEncoding; ex
 {
  *  ATSFontApplyFunction()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -1829,10 +2133,19 @@ function ATSFontApplyFunction( iFunction: ATSFontApplierFunction; iRefCon: UnivP
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontApplyFunction(iFunction: ATSFontApplierFunction; iRefCon: UnivPtr): OSStatus; external name '_ATSFontApplyFunction';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontIteratorCreate()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -1868,10 +2181,19 @@ function ATSFontIteratorCreate( iContext: ATSFontContext; {const} iFilter: ATSFo
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontIteratorCreate(iContext: ATSFontContext; iFilter: {Const}ATSFontFilterPtr; iRefCon: UnivPtr; iOptions: ATSOptionFlags; var ioIterator: ATSFontIterator): OSStatus; external name '_ATSFontIteratorCreate';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontIteratorRelease()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -1899,10 +2221,19 @@ function ATSFontIteratorRelease( var ioIterator: ATSFontIterator ): OSStatus; ex
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontIteratorRelease(var ioIterator: ATSFontIterator): OSStatus; external name '_ATSFontIteratorRelease';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontIteratorReset()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -1930,10 +2261,19 @@ function ATSFontIteratorReset( iContext: ATSFontContext; {const} iFilter: ATSFon
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontIteratorReset(iContext: ATSFontContext; iFilter: {Const}ATSFontFilterPtr; iRefCon: UnivPtr; iOptions: ATSOptionFlags; var ioIterator: ATSFontIterator): OSStatus; external name '_ATSFontIteratorReset';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontIteratorNext()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -1961,10 +2301,19 @@ function ATSFontIteratorNext( iIterator: ATSFontIterator; var oFont: ATSFontRef 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontIteratorNext(iIterator: ATSFontIterator; var oFont: ATSFontRef): OSStatus; external name '_ATSFontIteratorNext';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontFindFromName()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -2000,10 +2349,19 @@ function ATSFontFindFromName( iName: CFStringRef; iOptions: ATSOptionFlags ): AT
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontFindFromName(iName: CFStringRef; iOptions: ATSOptionFlags): ATSFontRef; external name '_ATSFontFindFromName';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontFindFromPostScriptName()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -2039,10 +2397,19 @@ function ATSFontFindFromPostScriptName( iName: CFStringRef; iOptions: ATSOptionF
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontFindFromPostScriptName(iName: CFStringRef; iOptions: ATSOptionFlags): ATSFontRef; external name '_ATSFontFindFromPostScriptName';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontFindFromContainer()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -2078,10 +2445,19 @@ function ATSFontFindFromContainer( iContainer: ATSFontContainerRef; iOptions: AT
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontFindFromContainer(iContainer: ATSFontContainerRef; iOptions: ATSOptionFlags; iCount: ItemCount; var ioArray: ATSFontRef; var oCount: ItemCount): OSStatus; external name '_ATSFontFindFromContainer';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontGetGeneration()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -2117,10 +2493,19 @@ function ATSFontGetGeneration( iFont: ATSFontRef ): ATSGeneration; external name
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontGetGeneration(iFont: ATSFontRef): ATSGeneration; external name '_ATSFontGetGeneration';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontGetName()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -2156,10 +2541,19 @@ function ATSFontGetName( iFont: ATSFontRef; iOptions: ATSOptionFlags; var oName:
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontGetName(iFont: ATSFontRef; iOptions: ATSOptionFlags; var oName: CFStringRef): OSStatus; external name '_ATSFontGetName';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontGetPostScriptName()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -2195,10 +2589,19 @@ function ATSFontGetPostScriptName( iFont: ATSFontRef; iOptions: ATSOptionFlags; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontGetPostScriptName(iFont: ATSFontRef; iOptions: ATSOptionFlags; var oName: CFStringRef): OSStatus; external name '_ATSFontGetPostScriptName';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontGetTableDirectory()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -2234,10 +2637,19 @@ function ATSFontGetTableDirectory( iFont: ATSFontRef; iBufferSize: ByteCount; io
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontGetTableDirectory(iFont: ATSFontRef; iBufferSize: ByteCount; ioBuffer: UnivPtr; oSize: ByteCountPtr): OSStatus; external name '_ATSFontGetTableDirectory';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontGetTable()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -2273,10 +2685,19 @@ function ATSFontGetTable( iFont: ATSFontRef; iTag: FourCharCode; iOffset: ByteOf
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontGetTable(iFont: ATSFontRef; iTag: FourCharCode; iOffset: ByteOffset; iBufferSize: ByteCount; ioBuffer: UnivPtr; oSize: ByteCountPtr): OSStatus; external name '_ATSFontGetTable';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontGetHorizontalMetrics()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -2312,10 +2733,19 @@ function ATSFontGetHorizontalMetrics( iFont: ATSFontRef; iOptions: ATSOptionFlag
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontGetHorizontalMetrics(iFont: ATSFontRef; iOptions: ATSOptionFlags; var oMetrics: ATSFontMetrics): OSStatus; external name '_ATSFontGetHorizontalMetrics';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontGetVerticalMetrics()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -2354,10 +2784,22 @@ function ATSFontGetVerticalMetrics( iFont: ATSFontRef; iOptions: ATSOptionFlags;
 
 { ----------------------------------------------------------------------------------------- }
 { Compatibility                                                                             }
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontGetVerticalMetrics(iFont: ATSFontRef; iOptions: ATSOptionFlags; var oMetrics: ATSFontMetrics): OSStatus; external name '_ATSFontGetVerticalMetrics';
+
+{ ----------------------------------------------------------------------------------------- }
+{ Compatibiity                                                                              }
+>>>>>>> graemeg/fixes_2_2
 { ----------------------------------------------------------------------------------------- }
 {
  *  ATSFontFamilyFindFromQuickDrawName()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -2393,10 +2835,19 @@ function ATSFontFamilyFindFromQuickDrawName( const (*var*) iName: Str255 ): ATSF
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontFamilyFindFromQuickDrawName(const (*var*) iName: Str255): ATSFontFamilyRef; external name '_ATSFontFamilyFindFromQuickDrawName';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontFamilyGetQuickDrawName()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -2533,10 +2984,29 @@ function ATSFontGetFileReference( iFont: ATSFontRef; var oFile: FSRef ): OSStatu
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontFamilyGetQuickDrawName(iFamily: ATSFontFamilyRef; var oName: Str255): OSStatus; external name '_ATSFontFamilyGetQuickDrawName';
+
+{
+ *  ATSFontGetFileSpecification()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontGetFileSpecification(iFont: ATSFontRef; var oFile: FSSpec): OSStatus; external name '_ATSFontGetFileSpecification';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontGetFontFamilyResource()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
@@ -2572,6 +3042,14 @@ function ATSFontGetFontFamilyResource( iFont: ATSFontRef; iBufferSize: ByteCount
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ATSFontGetFontFamilyResource(iFont: ATSFontRef; iBufferSize: ByteCount; ioBuffer: UnivPtr; oSize: ByteCountPtr): OSStatus; external name '_ATSFontGetFontFamilyResource';
+>>>>>>> graemeg/fixes_2_2
 
 { ----------------------------------------------------------------------------------------- }
 { Notification                                                                              }
@@ -2583,9 +3061,12 @@ function ATSFontGetFontFamilyResource( iFont: ATSFontRef; iBufferSize: ByteCount
  *    Used to alert ATS that an action which may require notification
  *    to clients has occurred.
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Parameters:
  *    
  *    action:
@@ -2593,7 +3074,11 @@ function ATSFontGetFontFamilyResource( iFont: ATSFontRef; iBufferSize: ByteCount
  *    
  *    info:
  *      Any required or optional information that may be required by
+<<<<<<< HEAD
  *      the action taken.
+=======
+ *      the action taken. can be NULL
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Result:
  *    noErr Action successfully reported paramErr Invalid action passed
@@ -2603,6 +3088,7 @@ function ATSFontGetFontFamilyResource( iFont: ATSFontRef; iBufferSize: ByteCount
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2627,6 +3113,11 @@ function ATSFontNotify( action: ATSFontNotifyAction; info: UnivPtr { can be NULL
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+// AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+function ATSFontNotify( action: ATSFontNotifyAction; info: UnivPtr ): OSStatus; external name '_ATSFontNotify';
+
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontNotificationSubscribe()
@@ -2637,9 +3128,12 @@ function ATSFontNotify( action: ATSFontNotifyAction; info: UnivPtr { can be NULL
  *    order to receive notifications. Any Appkit or Carbon event loop
  *    based application will have one by default.
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Parameters:
  *    
  *    callback:
@@ -2651,10 +3145,17 @@ function ATSFontNotify( action: ATSFontNotifyAction; info: UnivPtr { can be NULL
  *      behavior of ATS Notifications.
  *    
  *    iRefcon:
+<<<<<<< HEAD
  *      User data/state which will be passed to the callback funtion
  *    
  *    oNotificationRef:
  *      You may use this reference to un-subscribe to this notification.
+=======
+ *      User data/state which will be passed to the callback funtion. can be NULL
+ *    
+ *    oNotificationRef:
+ *      You may use this reference to un-subscribe to this notification. can be NULL
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Result:
  *    noErr Subscribed successfully paramErr NULL callback was passed.
@@ -2670,6 +3171,7 @@ function ATSFontNotify( action: ATSFontNotifyAction; info: UnivPtr { can be NULL
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { "Register for kCTFontManagerRegisteredFontsChangedNotification notifications" }
 function ATSFontNotificationSubscribe( callback: ATSNotificationCallback; options: ATSFontNotifyOption; iRefcon: UnivPtr { can be NULL }; oNotificationRef: ATSFontNotificationRefPtr { can be NULL } ): OSStatus; external name '_ATSFontNotificationSubscribe';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_8 *)
@@ -2690,6 +3192,11 @@ function ATSFontNotificationSubscribe( callback: ATSNotificationCallback; option
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+// AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+function ATSFontNotificationSubscribe( callback: ATSNotificationCallback; options: ATSFontNotifyOption; iRefcon: UnivPtr; oNotificationRef: ATSFontNotificationRefPtr ): OSStatus; external name '_ATSFontNotificationSubscribe';
+
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontNotificationUnsubscribe()
@@ -2698,9 +3205,12 @@ function ATSFontNotificationSubscribe( callback: ATSNotificationCallback; option
  *    Release subscription and stop receiving notifications for a given
  *    reference.
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Parameters:
  *    
  *    notificationRef:
@@ -2722,6 +3232,7 @@ function ATSFontNotificationSubscribe( callback: ATSNotificationCallback; option
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { "Unregister for kCTFontManagerRegisteredFontsChangedNotification notifications" }
 function ATSFontNotificationUnsubscribe( notificationRef: ATSFontNotificationRef ): OSStatus; external name '_ATSFontNotificationUnsubscribe';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_8 *)
@@ -2738,6 +3249,11 @@ function ATSFontNotificationUnsubscribe( notificationRef: ATSFontNotificationRef
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 >>>>>>> graemeg/cpstrnew
+=======
+// AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+function ATSFontNotificationUnsubscribe( notificationRef: ATSFontNotificationRef ): OSStatus; external name '_ATSFontNotificationUnsubscribe';
+
+>>>>>>> graemeg/fixes_2_2
 
 { ----------------------------------------------------------------------------------------- }
 { Font query message hooks                                                                  }
@@ -2751,9 +3267,15 @@ function ATSFontNotificationUnsubscribe( notificationRef: ATSFontNotificationRef
  *    and passed back to an ATSFontQueryCallback function.
  }
 type
+<<<<<<< HEAD
 	ATSFontQuerySourceContextPtr = ^ATSFontQuerySourceContext;
 	ATSFontQuerySourceContext = record
 {
+=======
+	ATSFontQuerySourceContext = record
+
+  {
+>>>>>>> graemeg/fixes_2_2
    * A 32-bit unsigned integer that indicates the version of this
    * structure. This should be set to 0.
    }
@@ -2763,7 +3285,11 @@ type
    * A pointer-sized client datum that should be passed back to an
    * ATSFontQueryCallback function.
    }
+<<<<<<< HEAD
 		refCon: UnivPtr;
+=======
+		refCon: Ptr;
+>>>>>>> graemeg/fixes_2_2
 
   {
    * The callback used to add a retain to the refCon.
@@ -2775,6 +3301,10 @@ type
    }
 		release: CFAllocatorReleaseCallBack;
 	end;
+<<<<<<< HEAD
+=======
+	ATSFontQuerySourceContextPtr = ^ATSFontQuerySourceContext;
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ATSFontQueryMessageID
@@ -2782,16 +3312,28 @@ type
  *  Discussion:
  *    Constants for ATS font query message types.
  }
+<<<<<<< HEAD
 
 	ATSFontQueryMessageID = SInt32;
 const
 {
+=======
+type
+	ATSFontQueryMessageID = SInt32;
+const
+
+  {
+>>>>>>> graemeg/fixes_2_2
    * The message ID for a font request query. The data for a message
    * with this ID is a flattened CFDictionaryRef with keys and values
    * as decribed below. A query dictionary may have any or all of these
    * entries.
    }
+<<<<<<< HEAD
 	kATSQueryActivateFontMessage = FourCharCode('atsa');
+=======
+  kATSQueryActivateFontMessage  = FourCharCode('atsa');
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2817,8 +3359,12 @@ const
  *    A CFPropertyListRef that represents the message type-specific
  *    response to the query. May be NULL.
  }
+<<<<<<< HEAD
 type
 	ATSFontQueryCallback = function( msgid: ATSFontQueryMessageID; data: CFPropertyListRef; refCon: UnivPtr ): CFPropertyListRef;
+=======
+type ATSFontQueryCallback = function( msgid: ATSFontQueryMessageID; data: CFPropertyListRef; refCon: UnivPtr ): CFPropertyListRef;
+>>>>>>> graemeg/fixes_2_2
 {
  *  ATSCreateFontQueryRunLoopSource()
  *  
@@ -2826,9 +3372,12 @@ type
  *    Creates a CFRunLoopSourceRef that will be used to convey font
  *    queries from ATS.
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version Jaguar
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Parameters:
  *    
  *    queryOrder:
@@ -2862,6 +3411,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { "Use CTFontManagerCreateFontRequestRunLoopSource()" }
 function ATSCreateFontQueryRunLoopSource( queryOrder: CFIndex; sourceOrder: CFIndex; callout: ATSFontQueryCallback; {const} context: ATSFontQuerySourceContextPtr { can be NULL } ): CFRunLoopSourceRef; external name '_ATSCreateFontQueryRunLoopSource';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_8 *)
@@ -2882,6 +3432,10 @@ function ATSCreateFontQueryRunLoopSource( queryOrder: CFIndex; sourceOrder: CFIn
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+// AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+function ATSCreateFontQueryRunLoopSource( queryOrder: CFIndex; sourceOrder: CFIndex; callout: ATSFontQueryCallback; context: ATSFontQuerySourceContextPtr ): CFRunLoopSourceRef; external name '_ATSCreateFontQueryRunLoopSource';
+>>>>>>> graemeg/fixes_2_2
 
 { ----------------------------------------------------------------------------------------- }
 { Font request query message content                                                        }
@@ -2889,6 +3443,10 @@ function ATSCreateFontQueryRunLoopSource( queryOrder: CFIndex; sourceOrder: CFIn
 { Keys in a font request query dictionary. }
 { These keys appear in the dictionary for a kATSQueryActivateFontMessage query. }
 
+<<<<<<< HEAD
+=======
+//const
+>>>>>>> graemeg/fixes_2_2
 {
  *  kATSQueryClientPID
  *  
@@ -3006,6 +3564,7 @@ function ATSCreateFontQueryRunLoopSource( queryOrder: CFIndex; sourceOrder: CFIn
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kATSFontNameTableBytes CFSTRP('font name table bytes')}
 {$endc}
+<<<<<<< HEAD
 { ----------------------------------------------------------------------------------------- }
 { Auto activation settings                                                                  }
 { ----------------------------------------------------------------------------------------- }
@@ -3336,3 +3895,10 @@ function ATSFontGetAutoActivationSettingForApplication( iApplicationFileURL: CFU
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

@@ -59,12 +59,20 @@ unit i_bsd;
             system       : system_i386_FreeBSD;
             name         : 'FreeBSD/ELF for i386';
             shortname    : 'FreeBSD';
+<<<<<<< HEAD
             flags        : [tf_pic_uses_got,tf_files_case_sensitive,
 {$ifdef segment_threadvars}
                             tf_section_threadvars,
 {$endif segment_threadvars}
                             tf_needs_symbol_type,tf_needs_symbol_size
                             ,tf_smartlink_sections,tf_has_winlike_resources];
+=======
+            flags        : [tf_pic_uses_got,tf_files_case_sensitive,tf_use_function_relative_addresses,
+            {$ifdef segment_threadvars}
+                                        tf_section_threadvars,
+            {$endif segment_threadvars}
+                           tf_needs_symbol_type,tf_needs_symbol_size,tf_smartlink_library {,tf_smartlink_sections}];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_i386;
             unit_env     : 'BSDUNITS';
             extradefines : 'UNIX;BSD;HASUNIX';
@@ -129,6 +137,7 @@ unit i_bsd;
             system       : system_x86_64_freebsd;
             name         : 'FreeBSD for x86-64';
             shortname    : 'FreeBSD';
+<<<<<<< HEAD
             flags        : [tf_needs_symbol_size,tf_needs_dwarf_cfi,tf_library_needs_pic,tf_needs_symbol_type,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -148,6 +157,11 @@ unit i_bsd;
                             tf_dwarf_only_local_labels
                             { tf_pic_uses_got,tf_smartlink_sections},tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
+=======
+            flags        : [tf_needs_symbol_size,tf_needs_dwarf_cfi,{Linux: tf_library_needs_pic,}tf_needs_symbol_type,
+                            tf_files_case_sensitive,tf_use_function_relative_addresses,tf_smartlink_library
+                                {	tf_pic_uses_got,tf_smartlink_sections}];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_x86_64;
             unit_env     : 'BSDUNITS';
             extradefines : 'UNIX;HASUNIX;BSD';
@@ -179,7 +193,11 @@ unit i_bsd;
             link         : ld_none;
             linkextern   : ld_bsd;
             ar           : ar_gnu_ar;
+<<<<<<< HEAD
             res          : res_elf;
+=======
+            res          : res_none;
+>>>>>>> graemeg/fixes_2_2
             dbg          : dbg_dwarf2;            //dbg_stabs;
             script       : script_unix;
             endian       : endian_little;
@@ -196,6 +214,7 @@ unit i_bsd;
                 localalignmax   : 16;
                 recordalignmin  : 0;
                 recordalignmax  : 16;
+<<<<<<< HEAD
                 maxCrecordalign : 16
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -276,6 +295,9 @@ unit i_bsd;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+                maxCrecordalign : 8
+>>>>>>> graemeg/fixes_2_2
               );
             first_parm_offset : 16;
             stacksize    : 256*1024;
@@ -294,6 +316,7 @@ unit i_bsd;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_pic_uses_got,tf_under_development,tf_files_case_sensitive,tf_smartlink_library,tf_has_winlike_resources];
 =======
             flags        : [tf_under_development,tf_files_case_sensitive,tf_smartlink_library,tf_has_winlike_resources];
@@ -307,6 +330,9 @@ unit i_bsd;
 =======
             flags        : [tf_under_development,tf_files_case_sensitive,tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> origin/cpstrnew
+=======
+            flags        : [tf_under_development,tf_files_case_sensitive,tf_smartlink_library,tf_use_function_relative_addresses];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_i386;
             unit_env     : 'BSDUNITS';
             extradefines : 'UNIX;BSD;HASUNIX';
@@ -373,6 +399,7 @@ unit i_bsd;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_pic_uses_got,tf_under_development,tf_files_case_sensitive,tf_smartlink_sections,tf_has_winlike_resources];
 =======
             flags        : [tf_under_development,tf_files_case_sensitive,tf_smartlink_library,tf_has_winlike_resources];
@@ -386,6 +413,9 @@ unit i_bsd;
 =======
             flags        : [tf_under_development,tf_files_case_sensitive,tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> origin/cpstrnew
+=======
+            flags        : [tf_under_development,tf_files_case_sensitive,tf_use_function_relative_addresses,tf_smartlink_library];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_i386;
             unit_env     : 'BSDUNITS';
             extradefines : 'UNIX;BSD;HASUNIX';
@@ -515,7 +545,11 @@ unit i_bsd;
             system       : system_m68k_NetBSD;
             name         : 'NetBSD for m68k';
             shortname    : 'NetBSD';
+<<<<<<< HEAD
             flags        : [tf_under_development,tf_files_case_sensitive,tf_smartlink_library,tf_has_winlike_resources];
+=======
+            flags        : [tf_under_development,tf_files_case_sensitive,tf_use_function_relative_addresses,tf_smartlink_library];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_m68k;
             unit_env     : 'BSDUNITS';
             extradefines : 'UNIX;BSD;HASUNIX';
@@ -578,7 +612,11 @@ unit i_bsd;
             system       : system_powerpc_netbsd;
             name         : 'NetBSD for PowerPC';
             shortname    : 'NetBSD';
+<<<<<<< HEAD
             flags        : [tf_under_development,tf_files_case_sensitive,tf_smartlink_library,tf_has_winlike_resources];
+=======
+            flags        : [tf_under_development,tf_files_case_sensitive,tf_use_function_relative_addresses,tf_smartlink_library];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_powerpc;
             unit_env     : '';
             extradefines : 'UNIX;BSD;HASUNIX';
@@ -708,7 +746,11 @@ unit i_bsd;
             system       : system_powerpc_darwin;
             name         : 'Darwin for PowerPC';
             shortname    : 'Darwin';
+<<<<<<< HEAD
             flags        : [tf_p_ext_support,tf_files_case_sensitive,tf_smartlink_sections,tf_dwarf_relative_addresses,tf_dwarf_only_local_labels,tf_pic_default,tf_has_winlike_resources];
+=======
+            flags        : [tf_p_ext_support,tf_files_case_aware,tf_smartlink_sections,tf_dwarf_relative_addresses,tf_dwarf_only_local_labels,tf_pic_default];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_powerpc;
             unit_env     : 'BSDUNITS';
             extradefines : 'UNIX;BSD;HASUNIX';
@@ -773,7 +815,11 @@ unit i_bsd;
             system       : system_i386_darwin;
             name         : 'Darwin for i386';
             shortname    : 'Darwin';
+<<<<<<< HEAD
             flags        : [tf_p_ext_support,tf_files_case_sensitive,tf_smartlink_sections,tf_dwarf_relative_addresses,tf_dwarf_only_local_labels,tf_pic_uses_got,tf_pic_default,tf_has_winlike_resources];
+=======
+            flags        : [tf_p_ext_support,tf_files_case_aware,tf_smartlink_sections,tf_dwarf_relative_addresses,tf_dwarf_only_local_labels,tf_pic_uses_got,tf_pic_default];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_i386;
             unit_env     : 'BSDUNITS';
             extradefines : 'UNIX;BSD;HASUNIX';
@@ -898,6 +944,72 @@ unit i_bsd;
             abi         : abi_default;
           );
 
+<<<<<<< HEAD
+=======
+
+       system_powerpc64_darwin_info  : tsysteminfo =
+          (
+            system       : system_powerpc64_darwin;
+            name         : 'Darwin for PowerPC64';
+            shortname    : 'Darwin';
+            flags        : [tf_p_ext_support,tf_files_case_aware,tf_smartlink_sections,tf_dwarf_relative_addresses,tf_dwarf_only_local_labels,tf_pic_default];
+            cpu          : cpu_powerpc64;
+            unit_env     : 'BSDUNITS';
+            extradefines : 'UNIX;BSD;HASUNIX';
+            exeext       : '';
+            defext       : '.def';
+            scriptext    : '.sh';
+            smartext     : '.sl';
+            unitext      : '.ppu';
+            unitlibext   : '.ppl';
+            asmext       : '.s';
+            objext       : '.o';
+            resext       : '.res';
+            resobjext    : '.or';
+            sharedlibext : '.dylib';
+            staticlibext : '.a';
+            staticlibprefix : 'libp';
+            sharedlibprefix : 'lib';
+            sharedClibext : '.dylib';
+            staticClibext : '.a';
+            staticClibprefix : 'lib';
+            sharedClibprefix : 'lib';
+            Cprefix      : '_';
+            newline      : #10;
+            dirsep       : '/';
+            assem        : as_darwin;
+            assemextern  : as_darwin;
+            link         : nil;
+            linkextern   : nil;
+            ar           : ar_gnu_ar;
+            res          : res_none;
+            dbg          : dbg_dwarf2;
+            script       : script_unix;
+            endian       : endian_big;
+            alignment    :
+              (
+                procalign       : 16;
+                loopalign       : 4;
+                jumpalign       : 0;
+                constalignmin   : 4;
+                constalignmax   : 8;
+                varalignmin     : 4;
+                varalignmax     : 8;
+                localalignmin   : 4;
+                localalignmax   : 8;
+                recordalignmin  : 0;
+                recordalignmax  : 8;
+                maxCrecordalign : 8
+              );
+            first_parm_offset : 48;
+            stacksize   : 262144;
+            abi : abi_powerpc_aix;
+          );
+
+
+
+  implementation
+>>>>>>> graemeg/fixes_2_2
 
 
        system_powerpc64_darwin_info  : tsysteminfo =
@@ -1576,6 +1688,7 @@ initialization
      set_source_info(system_powerpc64_darwin_info);
   {$endif Darwin}
 {$endif powerpc64}
+<<<<<<< HEAD
 {$ifdef cpuarm}
   {$ifdef Darwin}
      set_source_info(system_arm_darwin_info);
@@ -1586,4 +1699,6 @@ initialization
      set_source_info(system_aarch64_darwin_info);
   {$endif Darwin}
 {$endif cpuaarch64}
+=======
+>>>>>>> graemeg/fixes_2_2
 end.

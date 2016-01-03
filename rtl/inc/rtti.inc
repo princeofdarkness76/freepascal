@@ -226,6 +226,7 @@ end;
     { Elements: array[count] of TRecordElement }
   end;
 
+<<<<<<< HEAD
   PArrayInfo=^TArrayInfo;
   TArrayInfo=packed record
     ElSize: SizeInt;
@@ -317,6 +318,8 @@ begin
   end;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 { if you modify this procedure, fpc_copy must be probably modified as well }
 procedure RecordRTTI(Data,TypeInfo:Pointer;rttiproc:TRTTIProc);
 var
@@ -352,7 +355,10 @@ end;
 
 
 { if you modify this procedure, fpc_copy must be probably modified as well }
+<<<<<<< HEAD
 {$ifdef VER2_6}
+=======
+>>>>>>> graemeg/fixes_2_2
 procedure ArrayRTTI(Data,TypeInfo:Pointer;rttiproc:TRTTIProc);
 var
 <<<<<<< HEAD
@@ -470,7 +476,11 @@ begin
   {$ifndef VER2_2}
     tkUstring :
       begin
+<<<<<<< HEAD
         fpc_UnicodeStr_Decr_Ref(PPointer(Data)^);
+=======
+        fpc_AnsiStr_Decr_Ref(PPointer(Data)^);
+>>>>>>> graemeg/fixes_2_2
         PPointer(Data)^:=nil;
       end;
   {$endif VER2_2}
@@ -519,6 +529,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -528,6 +539,8 @@ begin
 >>>>>>> origin/cpstrnew
 {$endif FPC_HAS_FEATURE_DYNARRAYS}
 {$ifdef FPC_HAS_FEATURE_VARIANTS}
+=======
+>>>>>>> graemeg/fixes_2_2
     tkVariant:
       variant_clear(PVarData(Data)^);
 {$endif FPC_HAS_FEATURE_VARIANTS}
@@ -642,7 +655,10 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
 { define alias for internal use in the system unit }
 Function fpc_Copy_internal (Src, Dest, TypeInfo : Pointer) : SizeInt;[external name 'FPC_COPY'];
 
@@ -660,6 +676,7 @@ var
 =======
   ArrayInfo: PArrayInfo;
   Temp : pbyte;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
   ArrayInfo: PArrayInfo;
@@ -669,10 +686,14 @@ var
   ArrayInfo: PArrayInfo;
   Temp : pbyte;
 >>>>>>> origin/cpstrnew
+=======
+  namelen : byte;
+>>>>>>> graemeg/fixes_2_2
   copiedsize,
   expectedoffset,
   count,
   offset,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -686,6 +707,9 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  size,
+>>>>>>> graemeg/fixes_2_2
   i : SizeInt;
   info : pointer;
 >>>>>>> graemeg/cpstrnew
@@ -717,6 +741,7 @@ begin
   {$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
     tkWstring:
       fpc_WideStr_Assign(PPointer(Dest)^,PPointer(Src)^);
+<<<<<<< HEAD
   {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -778,26 +803,77 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+    tkArray:
+      begin
+        Temp:=PByte(TypeInfo);
+        inc(Temp);
+        { Skip Name }
+        namelen:=Temp^;
+        inc(temp,namelen+1);
+        temp:=aligntoptr(temp);
+
+        { Element size }
+        size:=PSizeInt(Temp)^;
+        inc(Temp,sizeof(Size));
+
+        { Element count }
+        Count:=PSizeInt(Temp)^;
+        inc(Temp,sizeof(Count));
+        Info:=PPointer(Temp)^;
+        inc(Temp,sizeof(Info));
+        { Process elements }
+        for I:=0 to Count-1 do
+          fpc_Copy_internal(Src+(I*size),Dest+(I*size),Info);
+        Result:=size*count;
+>>>>>>> graemeg/fixes_2_2
       end;
 {$ifdef FPC_HAS_FEATURE_OBJECTS}
     tkobject,
 {$endif FPC_HAS_FEATURE_OBJECTS}
     tkrecord:
       begin
+<<<<<<< HEAD
         Temp:=aligntoptr(typeInfo+2+PByte(typeInfo)[1]);
 
         Result:=PRecordInfo(Temp)^.Size;
         Count:=PRecordInfo(Temp)^.Count;
         Inc(PRecordInfo(Temp));
+=======
+        Temp:=PByte(TypeInfo);
+        inc(Temp);
+        { Skip Name }
+        namelen:=Temp^;
+        inc(temp,namelen+1);
+        temp:=aligntoptr(temp);
+
+        Result:=plongint(temp)^;
+
+        { Skip size }
+        inc(Temp,4);
+
+        { Element count }
+        Count:=PLongint(Temp)^;
+        inc(Temp,sizeof(longint));
+>>>>>>> graemeg/fixes_2_2
         expectedoffset:=0;
         { Process elements with rtti }
         for i:=1 to count Do
           begin
+<<<<<<< HEAD
             Info:=PRecordElement(Temp)^.TypeInfo;
             Offset:=PRecordElement(Temp)^.Offset;
             Inc(PRecordElement(Temp));
             if Offset>expectedoffset then
               move((Src+expectedoffset)^,(Dest+expectedoffset)^,Offset-expectedoffset);
+=======
+            Info:=PPointer(Temp)^;
+            inc(Temp,sizeof(Info));
+            Offset:=PLongint(Temp)^;
+            if Offset>expectedoffset then
+              move((Src+expectedoffset)^,(Dest+expectedoffset)^,Offset-expectedoffset);
+            inc(Temp,sizeof(longint));
+>>>>>>> graemeg/fixes_2_2
             copiedsize:=fpc_Copy_internal(Src+Offset,Dest+Offset,Info);
             expectedoffset:=Offset+copiedsize;
           end;
@@ -805,7 +881,10 @@ begin
         if result>expectedoffset then
           move((Src+expectedoffset)^,(Dest+expectedoffset)^,Result-expectedoffset);
       end;
+<<<<<<< HEAD
 {$ifdef FPC_HAS_FEATURE_DYNARRAYS}
+=======
+>>>>>>> graemeg/fixes_2_2
     tkDynArray:
 <<<<<<< HEAD
       fpc_dynarray_assign(PPointer(Dest)^,PPointer(Src)^,typeinfo);
@@ -841,9 +920,23 @@ begin
         VarCopyProc(pvardata(dest)^,pvardata(src)^);
         result:=sizeof(tvardata);
       end;
+<<<<<<< HEAD
 {$endif FPC_HAS_FEATURE_VARIANTS}
   end;
 end;
+=======
+  end;
+end;
+
+
+{ For internal use by the compiler, because otherwise $x- can cause trouble. }
+{ Generally disabling extended syntax checking for all compilerprocs may     }
+{ have unintended side-effects                                               }
+procedure fpc_Copy_proc (Src, Dest, TypeInfo : Pointer);compilerproc; inline;
+begin
+  fpc_copy_internal(src,dest,typeinfo);
+end;
+>>>>>>> graemeg/fixes_2_2
 
 
 { For internal use by the compiler, because otherwise $x- can cause trouble. }

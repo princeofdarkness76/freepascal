@@ -1,6 +1,7 @@
 {
  * Copyright (c) 2000-2003 Apple Computer, Inc. All Rights Reserved.
  * 
+<<<<<<< HEAD
  * @APPLE_LICENSE_HEADER_START@
  * 
  * This file contains Original Code and/or Modifications of Original Code
@@ -46,6 +47,36 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+ * The contents of this file constitute Original Code as defined in and are
+ * subject to the Apple Public Source License Version 1.2 (the 'License').
+ * You may not use this file except in compliance with the License. Please obtain
+ * a copy of the License at http://www.apple.com/publicsource and read it before
+ * using this file.
+ * 
+ * This Original Code and all software distributed under the License are
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY of ANY KIND, EITHER EXPRESS
+ * OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES, INCLUDING WITHOUT
+ * LIMITATION, ANY WARRANTIES of MERCHANTABILITY, FITNESS FOR A PARTICULAR
+ * PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT. Please see the License for the
+ * specific language governing rights and limitations under the License.
+ }
+{	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
+
+
+{
+ *  AuthSession.h
+ *  AuthSession - APIs for managing login, authorization, and security Sessions.
+ }
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -54,8 +85,13 @@
 
 unit AuthSession;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -68,21 +104,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -117,6 +161,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -124,6 +170,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -341,6 +388,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -366,6 +423,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -376,6 +437,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,Authorization;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -389,6 +451,9 @@ uses MacTypes,Authorization;
  *  AuthSession - APIs for managing login, authorization, and security Sessions.
  }
 
+=======
+{$ALIGN MAC68K}
+>>>>>>> graemeg/fixes_2_2
 {!
 	@header AuthSession
 
@@ -429,11 +494,17 @@ type
     Here are some special values for SecuritySessionId. You may specify those
         on input to SessionAPI functions. They will never be returned from such
         functions.
+<<<<<<< HEAD
     
     Note: -2 is reserved (see 4487137).  
 }
 const
 	noSecuritySession = 0;     { definitely not a valid SecuritySessionId }
+=======
+}
+const
+	noSecuritySession                      = 0;     { definitely not a valid SecuritySessionId }
+>>>>>>> graemeg/fixes_2_2
 	callerSecuritySession = -1;     { the Session I (the caller) am in }
 
 
@@ -475,11 +546,18 @@ const
     Note that the AuthSession APIs can also return Authorization API error codes.
 }
 const
+<<<<<<< HEAD
 	errSessionSuccess = 0;      { all is well }
 	errSessionInvalidId = -60500; { invalid session id specified }
 	errSessionInvalidAttributes = -60501; { invalid set of requested attribute bits }
 	errSessionAuthorizationDenied = -60502; { you are not allowed to do this }
 	errSessionValueNotSet = -60503; { the session attribute you requested has not been set }
+=======
+	errSessionSuccess                       = 0;      { all is well }
+	errSessionInvalidId                     = -60500; { invalid session id specified }
+	errSessionInvalidAttributes             = -60501; { invalid set of requested attribute bits }
+	errSessionAuthorizationDenied           = -60502; { you are not allowed to do this }
+>>>>>>> graemeg/fixes_2_2
 
 	errSessionInternal                      = errAuthorizationInternal;	{ internal error }
 	errSessionInvalidFlags                  = errAuthorizationInvalidFlags; { invalid flags/options }
@@ -499,7 +577,11 @@ const
         
     @param attributes (output/optional) Receives the attribute bits for the session.
 
+<<<<<<< HEAD
     @result An OSStatus indicating success (errSecSuccess) or an error cause.
+=======
+    @result An OSStatus indicating success (noErr) or an error cause.
+>>>>>>> graemeg/fixes_2_2
     
     errSessionInvalidId -60500 Invalid session id specified
 
@@ -532,7 +614,11 @@ function SessionGetInfo( session: SecuritySessionId; sessionId: SecuritySessionI
     @param attributes The set of attribute bits to set for the new session.
         Not all bits can be set this way.
     
+<<<<<<< HEAD
     @result An OSStatus indicating success (errSecSuccess) or an error cause.
+=======
+    @result An OSStatus indicating success (noErr) or an error cause.
+>>>>>>> graemeg/fixes_2_2
     
     errSessionInvalidAttributes -60501 Attempt to set invalid attribute bits	
     errSessionAuthorizationDenied -60502 Attempt to re-initialize a session
@@ -541,8 +627,12 @@ function SessionGetInfo( session: SecuritySessionId; sessionId: SecuritySessionI
 }
 function SessionCreate( flags: SessionCreationFlags; attributes: SessionAttributeBits ): OSStatus; external name '_SessionCreate';
 
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+end.
+>>>>>>> graemeg/fixes_2_2

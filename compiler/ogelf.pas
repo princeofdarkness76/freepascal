@@ -527,9 +527,25 @@ implementation
           if source_info.endian<>target_info.endian then
             with h do
               begin
+<<<<<<< HEAD
                 address:=swapendian(address);
                 info:=swapendian(info);
                 addend:=swapendian(addend);
+=======
+                result.e_type:=swapendian(e_type);
+                result.e_machine:=swapendian(e_machine);
+                result.e_version:=swapendian(e_version);
+                result.e_entry:=swapendian(e_entry);
+                result.e_phoff:=swapendian(e_phoff);
+                result.e_shoff:=swapendian(e_shoff);
+                result.e_flags:=swapendian(e_flags);
+                result.e_ehsize:=swapendian(e_ehsize);
+                result.e_phentsize:=swapendian(e_phentsize);
+                result.e_phnum:=swapendian(e_phnum);
+                result.e_shentsize:=swapendian(e_shentsize);
+                result.e_shnum:=swapendian(e_shnum);
+                result.e_shstrndx:=swapendian(e_shstrndx);
+>>>>>>> graemeg/fixes_2_2
               end;
         end;
 
@@ -539,9 +555,25 @@ implementation
           if source_info.endian<>target_info.endian then
             with h do
               begin
+<<<<<<< HEAD
                 address:=swapendian(address);
                 info:=swapendian(info);
                 addend:=swapendian(addend);
+=======
+                result.e_type:=swapendian(e_type);
+                result.e_machine:=swapendian(e_machine);
+                result.e_version:=swapendian(e_version);
+                result.e_entry:=swapendian(e_entry);
+                result.e_phoff:=swapendian(e_phoff);
+                result.e_shoff:=swapendian(e_shoff);
+                result.e_flags:=swapendian(e_flags);
+                result.e_ehsize:=swapendian(e_ehsize);
+                result.e_phentsize:=swapendian(e_phentsize);
+                result.e_phnum:=swapendian(e_phnum);
+                result.e_shentsize:=swapendian(e_shentsize);
+                result.e_shnum:=swapendian(e_shnum);
+                result.e_shstrndx:=swapendian(e_shstrndx);
+>>>>>>> graemeg/fixes_2_2
               end;
         end;
 
@@ -551,8 +583,21 @@ implementation
           if source_info.endian<>target_info.endian then
             with h do
               begin
+<<<<<<< HEAD
                 d_tag:=swapendian(d_tag);
                 d_val:=swapendian(d_val);
+=======
+                result.sh_name:=swapendian(sh_name);
+                result.sh_type:=swapendian(sh_type);
+                result.sh_flags:=swapendian(sh_flags);
+                result.sh_addr:=swapendian(sh_addr);
+                result.sh_offset:=swapendian(sh_offset);
+                result.sh_size:=swapendian(sh_size);
+                result.sh_link:=swapendian(sh_link);
+                result.sh_info:=swapendian(sh_info);
+                result.sh_addralign:=swapendian(sh_addralign);
+                result.sh_entsize:=swapendian(sh_entsize);
+>>>>>>> graemeg/fixes_2_2
               end;
         end;
 
@@ -562,8 +607,21 @@ implementation
           if source_info.endian<>target_info.endian then
             with h do
               begin
+<<<<<<< HEAD
                 d_tag:=swapendian(d_tag);
                 d_val:=swapendian(d_val);
+=======
+                result.sh_name:=swapendian(sh_name);
+                result.sh_type:=swapendian(sh_type);
+                result.sh_flags:=swapendian(sh_flags);
+                result.sh_addr:=swapendian(sh_addr);
+                result.sh_offset:=swapendian(sh_offset);
+                result.sh_size:=swapendian(sh_size);
+                result.sh_link:=swapendian(sh_link);
+                result.sh_info:=swapendian(sh_info);
+                result.sh_addralign:=swapendian(sh_addralign);
+                result.sh_entsize:=swapendian(sh_entsize);
+>>>>>>> graemeg/fixes_2_2
               end;
         end;
 
@@ -573,6 +631,7 @@ implementation
           if source_info.endian<>target_info.endian then
             with h do
               begin
+<<<<<<< HEAD
                 vd_version:=swapendian(vd_version);
                 vd_flags:=swapendian(vd_flags);
                 vd_ndx:=swapendian(vd_ndx);
@@ -580,6 +639,12 @@ implementation
                 vd_hash:=swapendian(vd_hash);
                 vd_aux:=swapendian(vd_aux);
                 vd_next:=swapendian(vd_next);
+=======
+                result.st_name:=swapendian(st_name);
+                result.st_value:=swapendian(st_value);
+                result.st_size:=swapendian(st_size);
+                result.st_shndx:=swapendian(st_shndx);
+>>>>>>> graemeg/fixes_2_2
               end;
         end;
 
@@ -589,8 +654,15 @@ implementation
           if source_info.endian<>target_info.endian then
             with h do
               begin
+<<<<<<< HEAD
                 vda_name:=swapendian(vda_name);
                 vda_next:=swapendian(vda_next);
+=======
+                result.st_name:=swapendian(st_name);
+                result.st_value:=swapendian(st_value);
+                result.st_size:=swapendian(st_size);
+                result.st_shndx:=swapendian(st_shndx);
+>>>>>>> graemeg/fixes_2_2
               end;
         end;
 
@@ -600,11 +672,16 @@ implementation
           if source_info.endian<>target_info.endian then
             with h do
               begin
+<<<<<<< HEAD
                 vn_version:=swapendian(vn_version);
                 vn_cnt:=swapendian(vn_cnt);
                 vn_file:=swapendian(vn_file);
                 vn_aux:=swapendian(vn_aux);
                 vn_next:=swapendian(vn_next);
+=======
+                result.address:=swapendian(address);
+                result.info:=swapendian(info);
+>>>>>>> graemeg/fixes_2_2
               end;
         end;
 
@@ -614,11 +691,16 @@ implementation
           if source_info.endian<>target_info.endian then
             with h do
               begin
+<<<<<<< HEAD
                 vna_hash:=swapendian(vna_hash);
                 vna_flags:=swapendian(vna_flags);
                 vna_other:=swapendian(vna_other);
                 vna_name:=swapendian(vna_name);
                 vna_next:=swapendian(vna_next);
+=======
+                result.address:=swapendian(address);
+                result.info:=swapendian(info);
+>>>>>>> graemeg/fixes_2_2
               end;
         end;
 
@@ -794,8 +876,15 @@ implementation
 =======
 >>>>>>> origin/cpstrnew
 {$ifdef userodata}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
           '.text','.data','.data','.rodata','.bss','.threadvar',
+=======
+          '.text','.data','.data','.rodata','.bss','.threadvar',
+{$else userodata}
+          '.text','.data','.data','.data','.bss','.threadvar',
+{$endif userodata}
+>>>>>>> graemeg/fixes_2_2
           '.pdata',
           '.text', { darwin stubs }
           '__DATA,__nl_symbol_ptr',
@@ -809,6 +898,7 @@ implementation
           '.fpc',
           '.toc',
           '.init',
+<<<<<<< HEAD
           '.fini',
           '.objc_class',
           '.objc_meta_class',
@@ -858,6 +948,9 @@ implementation
 =======
 >>>>>>> origin/cpstrnew
           '.objc_protolist'
+=======
+          '.fini'
+>>>>>>> graemeg/fixes_2_2
         );
         secnames_pic : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
           '.text',
@@ -880,6 +973,7 @@ implementation
           '.fpc',
           '.toc',
           '.init',
+<<<<<<< HEAD
           '.fini',
           '.objc_class',
           '.objc_meta_class',
@@ -925,11 +1019,15 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+          '.fini'
+>>>>>>> graemeg/fixes_2_2
         );
       var
         sep : string[3];
         secname : string;
       begin
+<<<<<<< HEAD
         { section type user gives the user full controll on the section name }
         if atype=sec_user then
           result:=aname
@@ -982,6 +1080,32 @@ implementation
             else
               result:=secname;
           end;
+=======
+        if (cs_create_pic in current_settings.moduleswitches) and
+           not(target_info.system in systems_darwin) then
+          secname:=secnames_pic[atype]
+        else
+          secname:=secnames[atype];
+        if (atype=sec_fpc) and (Copy(aname,1,3)='res') then
+          begin
+            result:=secname+'.'+aname;
+            exit;
+          end;
+        if create_smartlink_sections and (aname<>'') then
+          begin
+            case aorder of
+              secorder_begin :
+                sep:='.b_';
+              secorder_end :
+                sep:='.z_';
+              else
+                sep:='.n_';
+            end;
+            result:=secname+sep+aname
+          end
+        else
+          result:=secname;
+>>>>>>> graemeg/fixes_2_2
       end;
 
 

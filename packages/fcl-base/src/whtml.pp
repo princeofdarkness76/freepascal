@@ -339,7 +339,11 @@ Var
 begin
   A:='NAME="'+Name+'" TYPE="checkbox" VALUE="'+Value+'"';
   If Checked then
+<<<<<<< HEAD
     A:=A+' CHECKED="checked"';
+=======
+    A:=A+' CHECKED=1';
+>>>>>>> graemeg/fixes_2_2
   TagStart('INPUT',A);
 end;
 
@@ -357,7 +361,11 @@ Var
 begin
   A:='NAME="'+Name+'" TYPE="checkbox" VALUE="'+Value+'"';
   If Checked then
+<<<<<<< HEAD
     A:=A+' CHECKED="checked"';
+=======
+    A:=A+' CHECKED=1';
+>>>>>>> graemeg/fixes_2_2
   TagStart('INPUT',A);
 
 end;
@@ -410,7 +418,11 @@ begin
         end;
       end;
     If (Value<>'') and (V=Value) then
+<<<<<<< HEAD
       A:=A+' SELECTED="selected"';
+=======
+      A:=A+' SELECTED';
+>>>>>>> graemeg/fixes_2_2
     TagStart('OPTION',A);
     end;
   TagEnd('SELECT')

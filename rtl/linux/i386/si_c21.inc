@@ -38,6 +38,12 @@
 var
   dlexitproc: pointer; { atexit from loader }
 
+<<<<<<< HEAD
+=======
+procedure libc_exit; external name '__libc_exit';
+procedure libc_init; external name '__libc_init';
+procedure libc_setfpucw; external name '__setfpucw';
+>>>>>>> graemeg/fixes_2_2
 procedure libc_start_main; external name '__libc_start_main';
 procedure PASCALMAIN; external name 'PASCALMAIN';
 
@@ -51,6 +57,7 @@ end;
 {******************************************************************************
                        glibc 2.1 lib + profiling start/halt
  ******************************************************************************}
+{$asmmode ATT}
 
 procedure _FPC_libc21_start; assembler; nostackframe; public name '_start';
 asm

@@ -21,6 +21,16 @@ begin
   fPreferStringValues:=True; // Delphi compatibility
 end;
 
+constructor TRegIniFile.Create(const FN: String;aaccess:longword);
+begin
+  inherited Create(aaccess);
+  fFileName := FN;
+  if fFileName<>'' then
+   fPath := fFileName + '\'
+  else
+   fPath := '';
+end;
+
 procedure TRegIniFile.DeleteKey(const Section, Ident: String);
 begin
   if OpenSection(Section) then
@@ -262,10 +272,14 @@ begin
   if OpenSection(Section) then
 	try
     if ValueExists(Ident) then
+<<<<<<< HEAD
       if (not fPreferStringValues) or (GetDataType(Ident)=rdInteger) then
   	    Result := inherited ReadBool(Ident)
       else
         Result := StrToBool(inherited ReadString(Ident));
+=======
+	    Result := inherited ReadBool(Ident);
+>>>>>>> graemeg/fixes_2_2
 	finally
     CloseSection;
 	end;
@@ -277,10 +291,14 @@ begin
   if OpenSection(Section) then
   try
     if ValueExists(Ident) then
+<<<<<<< HEAD
       if (not fPreferStringValues) or (GetDataType(Ident)=rdInteger) then
         Result := inherited ReadInteger(Ident)
       else
         Result := StrToInt(inherited ReadString(Ident));
+=======
+      Result := inherited ReadInteger(Ident);
+>>>>>>> graemeg/fixes_2_2
   finally
     CloseSection;
   end;

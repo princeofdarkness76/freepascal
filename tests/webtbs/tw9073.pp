@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 { %opt=-CN }
 
 { the -CN is to generated null pointer load checks for AIX,
   ignored on other platforms because there the OS performs
   this checking for you }
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$mode objfpc}
 
 uses

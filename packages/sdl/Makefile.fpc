@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for SDL bindings
+>>>>>>> graemeg/fixes_2_2
 #
 
 [package]
 name=sdl
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -20,6 +25,9 @@ packages=rtl fpmkunit
 =======
 >>>>>>> origin/cpstrnew
 version=2.5.1
+=======
+version=2.2.5
+>>>>>>> graemeg/fixes_2_2
 
 [require]
 libc=y
@@ -33,6 +41,7 @@ units_i386_freebsd=sdlutils
 units_win32=sdlutils
 units_powerpc_darwin=sdlutils
 units_i386_darwin=sdlutils
+<<<<<<< HEAD
 units_i386_iphonesim=sdlutils
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -44,6 +53,8 @@ units_i386_iphonesim=sdlutils
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
 
 [install]
 fpcpackage=y
@@ -51,6 +62,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -136,3 +148,11 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[compiler]
+includedir=src
+sourcedir=src tests
+
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/fixes_2_2

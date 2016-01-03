@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for cdrom
+>>>>>>> graemeg/fixes_2_2
 #
 
 [package]
 name=cdrom
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -24,10 +29,20 @@ version=2.5.1
 
 [require]
 packages=rtl fpmkunit
+=======
+version=2.2.5
+
+[target]
+units=cdrom discid
+implicitunits_win32=scsidefs wnaspi32 cdromioctl wincd
+implicitunits_linux=major lincd
+exampledirs=examples
+>>>>>>> graemeg/fixes_2_2
 
 [install]
 fpcpackage=y
 
+<<<<<<< HEAD
 [default]
 fpcdir=../..
 
@@ -116,3 +131,14 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[compiler]
+includedir=src
+sourcedir=src tests
+
+[default]
+fpcdir=../..
+
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/fixes_2_2

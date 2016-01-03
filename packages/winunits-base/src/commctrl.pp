@@ -43,10 +43,13 @@ Unit CommCtrl;
 Interface
 
 {$Mode ObjFPC}
+<<<<<<< HEAD
 
 {$ifdef FPC_OS_UNICODE}
   {$define UNICODE}
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 Uses Windows,CTypes,ActiveX;
 
 // --------------------
@@ -63,6 +66,7 @@ CONST CommCtrlDLL = 'comctl32.dll';
 {$DEFINE IE3PLUS}
 {$DEFINE IE4PLUS}
 {$define IE5plus}
+<<<<<<< HEAD
 {$define WIN32XP} 
 {$define win32vista} // till WC_STATICA
 {$define ie501plus}
@@ -72,6 +76,14 @@ CONST CommCtrlDLL = 'comctl32.dll';
 {$define ie6plus}
 {$define ntddi_vista}
 {$define NTDDI_WIN7}
+=======
+{$define WIN32XP}
+{$define ie501plus}
+
+{$ifdef win32}
+  {$define _win32}
+{$endif win32}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifdef win64}
   {$define _win32}
@@ -110,6 +122,7 @@ CONST CommCtrlDLL = 'comctl32.dll';
 //    NOSCROLLBAR  Scrollbar control.
 //
 //=============================================================================
+<<<<<<< HEAD
 // Moved items due to forward defining limitations
 
 Const
@@ -130,6 +143,8 @@ Type
 //         PLITEM               = ^tagLITEM;
 
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 // include <prsht.h>
 
@@ -250,10 +265,13 @@ CONST
          BCN_LAST                       = (0-1350);
 {$ENDIF}
 
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 TRBN_FIRST              	= cardinal(0-1501);       // trackbar
 	 TRBN_LAST               	= cardinal(0-1519);
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
          MSGF_COMMCTRL_BEGINDRAG        = $4200;
          MSGF_COMMCTRL_SIZEHEADER       = $4201;
          MSGF_COMMCTRL_DRAGSELECT       = $4202;
@@ -268,7 +286,11 @@ CONST
 
 {$ifdef ie4plus}
          PGM_FIRST                      = $1400;              // Pager control messages
+<<<<<<< HEAD
 {$ifdef win32xp}// actually 0x501=2003 or some sp?
+=======
+{$ifdef win32xp}
+>>>>>>> graemeg/fixes_2_2
          ECM_FIRST                      = $1500;              // Edit control messages
          BCM_FIRST                      = $1600;              // Button control messages
          CBM_FIRST                      = $1700;              // Combobox control messages
@@ -298,7 +320,11 @@ CONST
          CCM_GETUNICODEFORMAT           = (CCM_FIRST + 6);
 
 {$ifdef ie5plus}
+<<<<<<< HEAD
 {$ifdef win32xp} 
+=======
+{$ifdef win32xp}
+>>>>>>> graemeg/fixes_2_2
          COMCTL32_VERSION               = 6;
 {$ELSE}
          COMCTL32_VERSION               = 5;
@@ -359,11 +385,14 @@ CONST
          NM_RDOWN                       = (NM_FIRST-21);
          NM_THEMECHANGED                = (NM_FIRST-22);
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 NM_FONTCHANGED                  = (NM_FIRST-23);
 	 NM_CUSTOMTEXT                   = (NM_FIRST-24);   // uses NMCUSTOMTEXT struct
 	 NM_TVSTATEIMAGECHANGING         = (NM_FIRST-24);   // uses NMTVSTATEIMAGECHANGING struct, defined after HTREEITEM
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$IFNDEF CCSIZEOF_STRUCT}
 
@@ -451,6 +480,7 @@ Type
          TNMCHAR              = tagNMCHAR;
          PNMCHAR              = ^tagNMCHAR;
 
+<<<<<<< HEAD
 {$ifdef win32vista}
          tagNMCUSTOMTEXT      = Record
 			         hdr      : NMHDR;
@@ -467,6 +497,9 @@ Type
 	 TNMCUSTOMTEXT 		= tagNMCUSTOMTEXT;
 	 PNMCUSTOMTEXT 		= LPNMCUSTOMTEXT;
 {$endif}
+=======
+
+>>>>>>> graemeg/fixes_2_2
 {$ENDIF}           // _WIN32_IE >= 0x0400
 
 
@@ -489,7 +522,11 @@ CONST
 {$ENDIF}
          CDRF_NOTIFYPOSTERASE           = $00000040;
          CDRF_NOTIFYITEMERASE           = $00000080;  // according to lazarus headers. Can't find in sdk 6.0 (Vista sdk)
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> graemeg/fixes_2_2
 
 // drawstage flags
 // values under 0x00010000 are reserved for global custom draw values.
@@ -521,11 +558,14 @@ CONST
 {$ifdef win32xp}
          CDIS_SHOWKEYBOARDCUES          = $0200;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 CDIS_NEARHOT            	= $0400;
 	 CDIS_OTHERSIDEHOT       	= $0800;
 	 CDIS_DROPHILITED        	= $1000;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 TYPE
 
@@ -618,10 +658,13 @@ CONST
          ILC_MIRROR                     = $00002000;          // Mirror the icons contained, if the process is mirrored
          ILC_PERITEMMIRROR              = $00008000;          // Causes the mirroring code to mirror each item when inserting a set of images, verses the whole strip
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
          ILC_ORIGINALSIZE        	= $00010000;      // Imagelist should accept smaller than set images and apply OriginalSize based on image added
          ILC_HIGHQUALITYSCALE    	= $00020000;      // Imagelist should enable use of the high quality scaler.
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 function ImageList_Create(cx:cint;cy:cint;flags:UINT;cInitial:cint;cGrow:cint):HIMAGELIST; stdcall; external commctrldll name 'ImageList_Create';
 function ImageList_Destroy(himl:HIMAGELIST):BOOL; stdcall; external commctrldll name 'ImageList_Destroy';
@@ -660,9 +703,12 @@ CONST
          ILD_PRESERVEALPHA              = $00001000;          // This preserves the alpha channel in dest
          ILD_SCALE                      = $00002000;          // Causes the image to be scaled to cx, cy instead of clipped
          ILD_DPISCALE                   = $00004000;
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 ILD_ASYNC               	= $00008000;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
          ILD_SELECTED                   = ILD_BLEND50;
          ILD_FOCUS                      = ILD_BLEND25;
@@ -675,20 +721,26 @@ CONST
          ILS_SATURATE                   = $00000004;
          ILS_ALPHA                      = $00000008;
 
+<<<<<<< HEAD
 {$ifdef win32vista}
          ILGT_NORMAL             	= $00000000;
 	 ILGT_ASYNC              	= $00000001;
 {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 function ImageList_Draw(himl:HIMAGELIST;i:cint;hdcDst:HDC;x:cint;y:cint;fStyle:UINT):BOOL; stdcall; external commctrldll name 'ImageList_Draw';
 
 
 {$IFDEF _WIN32}
 
+<<<<<<< HEAD
 {$ifdef win32vista}
 const 
   HBITMAP_CALLBACK               =HBITMAP(-1);       // only for SparseImageList
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 function ImageList_Replace(himl:HIMAGELIST;i:cint;hbmImage:HBITMAP;hbmMask:HBITMAP):BOOL; stdcall; external commctrldll name 'ImageList_Replace';
 
 function ImageList_AddMasked(himl:HIMAGELIST;hbmImage:HBITMAP;crMask:COLORREF):cint; stdcall; external commctrldll name 'ImageList_AddMasked';
@@ -795,10 +847,17 @@ function ImageList_Duplicate(himl:HIMAGELIST):HIMAGELIST; stdcall; external comm
 {$IFNDEF NOHEADER}
 
 {$IFDEF _WIN32}
+<<<<<<< HEAD
 // L'xx' translates to 'xx'#$0000 because that forces a wide literal in FPC.
 CONST
          WC_HEADERA                     = 'SysHeader32';
          WC_HEADERW                     = {L}'SysHeader32'#$0000;
+=======
+
+CONST
+         WC_HEADERA                     = 'SysHeader32';
+         WC_HEADERW                     = {L}'SysHeader32';
+>>>>>>> graemeg/fixes_2_2
 {$IFDEF UNICODE}
          WC_HEADER           = WC_HEADERW;
 {$ELSE}
@@ -833,11 +892,14 @@ CONST
 {$ifdef win32xp}
          HDS_FLAT                       = $0200;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
          HDS_CHECKBOXES          	= $0400;
 	 HDS_NOSIZING            	= $0800;
 	 HDS_OVERFLOW            	= $1000;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 // end_r_commctrl
 
 {$ifdef ie5plus}
@@ -903,9 +965,12 @@ TYPE
                                  _type        : UINT;          // [in] filter type (defined what pvFilter is a pointer to)
                                  pvFilter     : Pointer;       // [in] fillter data see above
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 			         state	      : UINT;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
                                  END;
          HDITEMA              = _HD_ITEMA;
          pHDITEMA             = ^_HD_ITEMA;
@@ -937,9 +1002,12 @@ TYPE
                                  _type        : UINT;          // [in] filter type (defined what pvFilter is a pointer to)
                                  pvFilter     : Pointer;       // [in] fillter data see above
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 			         state	      : UINT;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
                                  END;
          HDITEMW              = _HD_ITEMW;
          pHDITEMW             = ^_HD_ITEMW;
@@ -979,9 +1047,12 @@ CONST
 {$ifdef ie5plus}
          HDI_FILTER                     = $0100;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 	HDI_STATE               	= $0200;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
          HDF_LEFT                       = $0000;
          HDF_RIGHT                      = $0001;
@@ -1001,6 +1072,7 @@ CONST
          HDF_SORTUP                     = $0400;
          HDF_SORTDOWN                   = $0200;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 HDF_CHECKBOX            	= $0040;
 	 HDF_CHECKED             	= $0080;
@@ -1012,6 +1084,8 @@ CONST
 	 HDIS_FOCUSED            	= $00000001;
 {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
          HDM_GETITEMCOUNT               = (HDM_FIRST + 0);
 
@@ -1102,11 +1176,15 @@ CONST
          HHT_BELOW                      = $0200;
          HHT_TORIGHT                    = $0400;
          HHT_TOLEFT                     = $0800;
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 HHT_ONITEMSTATEICON     	= $1000;
 	 HHT_ONDROPDOWN          	= $2000;
 	 HHT_ONOVERFLOW          	= $4000;
 {$endif}
+=======
+
+>>>>>>> graemeg/fixes_2_2
 
 TYPE
          _HD_HITTESTINFO      = Record
@@ -1251,6 +1329,7 @@ Function Header_ClearAllFilters( hwnd : hwnd):cint;
 
 {$ENDIF}
 
+<<<<<<< HEAD
 {$ifdef win32vista}
 //  HDM_TRANSLATEACCELERATOR    = CCM_TRANSLATEACCELERATOR; // CCM_* not defined anywhere yet in w7 sdk
 
@@ -1267,6 +1346,8 @@ function Header_GetFocusedItem (hwnd : hwnd):cint;
 function Header_SetFocusedItem (hwnd:hwnd; iItem:cint):BOOL;
 {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 CONST
          HDN_ITEMCHANGINGA              = (HDN_FIRST-0);
          HDN_ITEMCHANGINGW              = (HDN_FIRST-20);
@@ -1294,6 +1375,7 @@ CONST
          HDN_FILTERCHANGE               = (HDN_FIRST-12);
          HDN_FILTERBTNCLICK             = (HDN_FIRST-13);
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
          HDN_BEGINFILTEREDIT            = (HDN_FIRST-14);
          HDN_ENDFILTEREDIT              = (HDN_FIRST-15);
@@ -1303,6 +1385,8 @@ CONST
          HDN_DROPDOWN                   = (HDN_FIRST-18);
          HDN_OVERFLOWCLICK              = (HDN_FIRST-19);
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$IFDEF UNICODE}
          HDN_ITEMCHANGING               = HDN_ITEMCHANGINGW;
@@ -1440,7 +1524,11 @@ TYPE
 {$IFDEF _WIN32}
 
 CONST
+<<<<<<< HEAD
          TOOLBARCLASSNAMEW              = {L}'ToolbarWindow32'#$0000;
+=======
+         TOOLBARCLASSNAMEW              = {L}'ToolbarWindow32';
+>>>>>>> graemeg/fixes_2_2
          TOOLBARCLASSNAMEA              = 'ToolbarWindow32';
 
 {$IFDEF  UNICODE}
@@ -1450,7 +1538,10 @@ CONST
 {$ENDIF}
 
 {$ELSE}
+<<<<<<< HEAD
 CONST
+=======
+>>>>>>> graemeg/fixes_2_2
          TOOLBARCLASSNAME               = 'ToolbarWindow';
 {$ENDIF}
 
@@ -1606,9 +1697,12 @@ CONST
          TBCDRF_BLENDICON               = $00200000;          // Use ILD_BLEND50 on the icon image
          TBCDRF_NOBACKGROUND            = $00400000;          // Use ILD_BLEND50 on the icon image
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 TBCDRF_USECDCOLORS          	= $00800000;  // Use CustomDrawColors to RenderText regardless of VisualStyle
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 CONST
          TB_ENABLEBUTTON                = (WM_USER + 1);
@@ -1656,12 +1750,15 @@ CONST
          IDB_HIST_SMALL_COLOR           = 8;
          IDB_HIST_LARGE_COLOR           = 9;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
          IDB_HIST_NORMAL                = 12;
          IDB_HIST_HOT                   = 13;
          IDB_HIST_DISABLED              = 14;
          IDB_HIST_PRESSED               = 15;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 // icon indexes for standard bitmap
 
@@ -1742,7 +1839,11 @@ TYPE
                                  pszValueName : LPCWSTR;
                                  END;
          TBSAVEPARAMSW        = tagTBSAVEPARAMSW;
+<<<<<<< HEAD
          LPTBSAVEPARAMSW      = ^tagTBSAVEPARAMSW;
+=======
+         LPTBSAVEPARAMW       = ^tagTBSAVEPARAMSW;
+>>>>>>> graemeg/fixes_2_2
          TTBSAVEPARAMSW       = tagTBSAVEPARAMSW;
          PTBSAVEPARAMSW       = ^tagTBSAVEPARAMSW;
 
@@ -2025,10 +2126,13 @@ CONST
          TB_SETMETRICS                  = (WM_USER + 102);
 {$ENDIF}
 
+<<<<<<< HEAD
 {$ifdef win32vista}
          TB_SETPRESSEDIMAGELIST         = (WM_USER + 104);
          TB_GETPRESSEDIMAGELIST         = (WM_USER + 105);
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifdef win32xp}
          TB_SETWINDOWTHEME              = CCM_SETWINDOWTHEME;
@@ -2252,9 +2356,13 @@ TYPE
                                  END;
          NMTOOLBARA           = tagNMTOOLBARA;
          LPNMTOOLBARA         = ^tagNMTOOLBARA;
+<<<<<<< HEAD
          {$ifndef unicode}
          LPNMTOOLBAR          = LPNMTOOLBARA;
          {$endif}
+=======
+         LPNMTOOLBAR          = LPNMTOOLBARA;
+>>>>>>> graemeg/fixes_2_2
          TNMTOOLBARA          = tagNMTOOLBARA;
          PNMTOOLBARA          = LPNMTOOLBARA;
 {$ENDIF}
@@ -2318,7 +2426,11 @@ TYPE
 {$IFDEF _WIN32}
 
 CONST
+<<<<<<< HEAD
          REBARCLASSNAMEW                = {L}'ReBarWindow32'#$0000;
+=======
+         REBARCLASSNAMEW                = {L}'ReBarWindow32';
+>>>>>>> graemeg/fixes_2_2
          REBARCLASSNAMEA                = 'ReBarWindow32';
 
 {$IFDEF  UNICODE}
@@ -2408,10 +2520,13 @@ CONST
          RBBIM_LPARAM                   = $00000400;
          RBBIM_HEADERSIZE               = $00000800;          // control the size of the header
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 RBBIM_CHEVRONLOCATION 		= $00001000;
 	 RBBIM_CHEVRONSTATE    		= $00002000;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 TYPE
 
@@ -2438,10 +2553,13 @@ TYPE
                                  lParam       : LPARAM;
                                  cxHeader     : UINT;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 			         rcChevronLocation : RECT;  // the rect is in client co-ord wrt hwndChild
     			         uChevronState     : cUINT;      // STATE_SYSTEM_*
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
                                  END;
          REBARBANDINFOA       = tagREBARBANDINFOA;
          LPREBARBANDINFOA     = ^tagREBARBANDINFOA;
@@ -2476,11 +2594,14 @@ TYPE
                                  lParam       : LPARAM;
                                  cxHeader     : UINT;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 			         rcChevronLocation : RECT;  // the rect is in client co-ord wrt hwndChild
     			         uChevronState     : cUINT;      // STATE_SYSTEM_*
 {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
                                  END;
          REBARBANDINFOW       = tagREBARBANDINFOW;
          LPREBARBANDINFOW     = ^tagREBARBANDINFOW;
@@ -2597,19 +2718,25 @@ CONST
          RB_GETBANDMARGINS              = (WM_USER + 40);
          RB_SETWINDOWTHEME              = CCM_SETWINDOWTHEME;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 RB_SETEXTENDEDSTYLE 		= (WM_USER + 41);
 	 RB_GETEXTENDEDSTYLE 		= (WM_USER + 42);
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifdef ie5plus}
          RB_PUSHCHEVRON                 = (WM_USER + 43);
 {$ENDIF}      // _WIN32_IE >= 0x0500
 
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 RB_SETBANDWIDTH     		= (WM_USER + 44);   // set width for docked band
 {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
          RBN_HEIGHTCHANGE               = (RBN_FIRST - 0);
 
 {$ifdef ie4plus}
@@ -2625,9 +2752,13 @@ CONST
 {$ifdef ie5plus}
          RBN_CHEVRONPUSHED              = (RBN_FIRST - 10);
 {$ENDIF}      // _WIN32_IE >= 0x0500
+<<<<<<< HEAD
 {$ifdef win32vista}
  	 RBN_SPLITTERDRAG    		= (RBN_FIRST - 11);
 {$endif}
+=======
+
+>>>>>>> graemeg/fixes_2_2
 
 {$ifdef ie5plus}
          RBN_MINMAX                     = (RBN_FIRST - 21);
@@ -2701,6 +2832,7 @@ TYPE
          PNMREBARCHEVRON      = ^tagNMREBARCHEVRON;
 
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 	tagNMREBARSPLITTER    = record
 				 hdr:      NMHDR;
@@ -2711,6 +2843,8 @@ TYPE
 	TNMREBARSPLITTER      = tagNMREBARSPLITTER;
 	PNMREBARSPLITTER      = LPNMREBARSPLITTER;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifdef Win32XP}
 CONST
@@ -2743,9 +2877,12 @@ CONST
 {$ifdef ie5plus}
          RBHT_CHEVRON                   = $0008;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 RBHT_SPLITTER   		= $0010;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 TYPE
          _RB_HITTESTINFO      = Record
@@ -2772,7 +2909,11 @@ TYPE
 {$IFDEF _WIN32}
 
 CONST
+<<<<<<< HEAD
          TOOLTIPS_CLASSW                = {L}'tooltips_class32'#$0000;
+=======
+         TOOLTIPS_CLASSW                = {L}'tooltips_class32';
+>>>>>>> graemeg/fixes_2_2
          TOOLTIPS_CLASSA                = 'tooltips_class32';
 
 {$IFDEF UNICODE}
@@ -2887,9 +3028,12 @@ CONST
          TTS_BALLOON                    = $40;
          TTS_CLOSE                      = $80;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 TTS_USEVISUALSTYLE      	= $100;  // Use themed hyperlinks
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 // end_r_commctrl
 
@@ -2925,11 +3069,14 @@ CONST
          TTI_INFO                       = 1;
          TTI_WARNING                    = 2;
          TTI_ERROR                      = 3;
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 TTI_INFO_LARGE          	= 4;
 	 TTI_WARNING_LARGE       	= 5;
 	 TTI_ERROR_LARGE         	= 6;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 // Tool Tip Messages
          TTM_ACTIVATE                   = (WM_USER + 1);
@@ -3201,6 +3348,7 @@ Procedure DrawStatusTextW(hDC:HDC;lprc:LPRECT;pszText:LPCWSTR;uFlags:UINT); stdc
 function CreateStatusWindowA(style:LONG;lpszText:LPCSTR;hwndParent:HWND;wID:UINT):HWND; stdcall; external commctrldll name 'CreateStatusWindowA';
 function CreateStatusWindowW(style:LONG;lpszText:LPCWSTR;hwndParent:HWND;wID:UINT):HWND; stdcall; external commctrldll name 'CreateStatusWindowW';
 
+<<<<<<< HEAD
 function CreateStatusWindow(style:LONG;lpszText:LPCSTR;hwndParent:HWND;wID:UINT):HWND; stdcall; external commctrldll name 'CreateStatusWindowA';
 procedure DrawStatusText(hDC:HDC;lprc:LPRECT;pszText:LPCSTR;uFlags:UINT); stdcall; external commctrldll name 'DrawStatusTextA';
 function CreateStatusWindow(style:LONG;lpszText:LPCWSTR;hwndParent:HWND;wID:UINT):HWND; stdcall; external commctrldll name 'CreateStatusWindowW';
@@ -3209,6 +3357,20 @@ Procedure DrawStatusText(hDC:HDC;lprc:LPRECT;pszText:LPCWSTR;uFlags:UINT); stdca
 CONST
 {$IFDEF _WIN32}
          STATUSCLASSNAMEW               = {L}'msctls_statusbar32'#$0000;
+=======
+
+{$IFDEF UNICODE}
+function CreateStatusWindow(style:LONG;lpszText:LPCSTR;hwndParent:HWND;wID:UINT):HWND; stdcall; external commctrldll name 'CreateStatusWindowA';
+procedure DrawStatusText(hDC:HDC;lprc:LPRECT;pszText:LPCSTR;uFlags:UINT); stdcall; external commctrldll name 'DrawStatusTextA';
+{$ELSE}
+function CreateStatusWindow(style:LONG;lpszText:LPCWSTR;hwndParent:HWND;wID:UINT):HWND; stdcall; external commctrldll name 'CreateStatusWindowW';
+Procedure DrawStatusText(hDC:HDC;lprc:LPRECT;pszText:LPCWSTR;uFlags:UINT); stdcall; external commctrldll name 'DrawStatusTextW';
+{$ENDIF}
+
+CONST
+{$IFDEF _WIN32}
+         STATUSCLASSNAMEW               = {L}'msctls_statusbar32';
+>>>>>>> graemeg/fixes_2_2
          STATUSCLASSNAMEA               = 'msctls_statusbar32';
 
 {$IFDEF UNICODE}
@@ -3309,7 +3471,11 @@ CONST
 {$IFDEF _WIN32}
 
          TRACKBAR_CLASSA                = 'msctls_trackbar32';
+<<<<<<< HEAD
          TRACKBAR_CLASSW                = {L}'msctls_trackbar32'#$0000;
+=======
+         TRACKBAR_CLASSW                = {L}'msctls_trackbar32';
+>>>>>>> graemeg/fixes_2_2
 
 {$IFDEF UNICODE}
          TRACKBAR_CLASS                 = TRACKBAR_CLASSW;
@@ -3344,12 +3510,15 @@ CONST
 {$ifdef ie501plus}
          TBS_DOWNISLEFT                 = $0400;              // Down=Left and Up=Right (default is Down=Right and Up=Left)
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 TBS_NOTIFYBEFOREMOVE    	= $0800;  // Trackbar should notify parent before repositioning the slider due to user action (enables snapping)
 {$endif}
 {$ifdef NTDDI_VISTA}
 	 TBS_TRANSPARENTBKGND    	= $1000;  // Background is painted by the parent via WM_PRINTCLIENT
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 // end_r_commctrl
 
@@ -3417,9 +3586,13 @@ CONST
          TBCD_THUMB                     = $0002;
          TBCD_CHANNEL                   = $0003;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 TRBN_THUMBPOSCHANGING       	= (TRBN_FIRST-1);
 {$endif}
+=======
+
+>>>>>>> graemeg/fixes_2_2
 {$ENDIF} // trackbar
 
 //====== DRAG LIST CONTROL ====================================================
@@ -3465,7 +3638,11 @@ CONST
 {$IFDEF _WIN32}
 
          UPDOWN_CLASSA                  = 'msctls_updown32';
+<<<<<<< HEAD
          UPDOWN_CLASSW                  = {L}'msctls_updown32'#$0000;
+=======
+         UPDOWN_CLASSW                  = {L}'msctls_updown32';
+>>>>>>> graemeg/fixes_2_2
 
 {$IFDEF UNICODE}
          UPDOWN_CLASS                   = UPDOWN_CLASSW;
@@ -3564,7 +3741,11 @@ CONST
 {$IFDEF _WIN32}
 
          PROGRESS_CLASSA                = 'msctls_progress32';
+<<<<<<< HEAD
          PROGRESS_CLASSW                = {L}'msctls_progress32'#$0000;
+=======
+         PROGRESS_CLASSW                = {L}'msctls_progress32';
+>>>>>>> graemeg/fixes_2_2
 
 {$IFDEF UNICODE}
          PROGRESS_CLASS      = PROGRESS_CLASSW;
@@ -3612,6 +3793,7 @@ CONST
          PBM_SETBKCOLOR                 = CCM_SETBKCOLOR;     // lParam = bkColor
 {$ENDIF}      // _WIN32_IE >= 0x0300
 
+<<<<<<< HEAD
 {$ifdef win32xp}  //_WIN32_WINNT >= 0x0501
          PBS_MARQUEE                    = $08;
          PBM_SETMARQUEE                 = (WM_USER+10);
@@ -3636,6 +3818,8 @@ CONST
 
 // end_r_commctrl
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ENDIF}  // NOPROGRESS
 
@@ -3705,7 +3889,11 @@ CONST
 
 {$IFDEF _WIN32}
          WC_LISTVIEWA                   = 'SysListView32';
+<<<<<<< HEAD
          WC_LISTVIEWW                   = {L}'SysListView32'#$0000;
+=======
+         WC_LISTVIEWW                   = {L}'SysListView32';
+>>>>>>> graemeg/fixes_2_2
 {$IFDEF UNICODE}
          WC_LISTVIEW                    = WC_LISTVIEWW;
 {$ELSE}
@@ -3782,7 +3970,11 @@ CONST
          LVSIL_NORMAL                   = 0;
          LVSIL_SMALL                    = 1;
          LVSIL_STATE                    = 2;
+<<<<<<< HEAD
 	 LVSIL_GROUPHEADER       	= 3;
+=======
+
+>>>>>>> graemeg/fixes_2_2
          LVM_SETIMAGELIST               = (LVM_FIRST + 3);
 
 // Macro 43
@@ -3807,9 +3999,12 @@ CONST
          LVIF_GROUPID                   = $0100;
          LVIF_COLUMNS                   = $0200;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 LVIF_COLFMT                    = $00010000; // The piColFmt member is valid in addition to puColumns
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
          LVIS_FOCUSED                   = $0001;
          LVIS_SELECTED                  = $0002;
@@ -3860,10 +4055,13 @@ TYPE
                                  cColumns     : UINT;          // tile view columns
                                  puColumns    : PUINT;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 				 piColFmt : pcint;
 				 iGroup   : cint; // readonly. only valid for owner data.
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
                                  END;
          LVITEMA              = tagLVITEMA;
          LPLVITEMA            = ^tagLVITEMA;
@@ -3889,10 +4087,13 @@ TYPE
                                  cColumns     : UINT;          // tile view columns
                                  puColumns    : PUINT;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 				 piColFmt : pcint;
 				 iGroup   : cint; // readonly. only valid for owner data.
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
                                  END;
 
          LVITEMW              = tagLVITEMW;
@@ -3929,8 +4130,12 @@ Type
          LV_ITEM                        = LVITEM;
          TLVItem                        = LVITEM;
          PLVItem                        = LPLVITEM;
+<<<<<<< HEAD
          TLV_ITEM                       = LVITEM;
          PLV_ITEM                       = PLVITEM;
+=======
+
+>>>>>>> graemeg/fixes_2_2
 CONST
          LPSTR_TEXTCALLBACKW = LPWSTR(-1);
          LPSTR_TEXTCALLBACKA = LPSTR (-1);
@@ -4163,10 +4368,13 @@ TYPE
 {$ifdef ie3plus}
                                  iSubItem     : cint;          // this is was NOT in win95.  valid only for LVM_SUBITEMHITTEST
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 				 iGroup       : cint;  // readonly. index of group. only valid for owner data.
 				                       // supports single item in multiple groups.
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
                                  END;
          LVHITTESTINFO        = tagLVHITTESTINFO;
          LPLVHITTESTINFO      = ^tagLVHITTESTINFO;
@@ -4255,11 +4463,14 @@ TYPE
                                  iImage       : cint;
                                  iOrder       : cint;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 		 		 cxmin 	      : cint; // min snap point
 				 cxDefault    : cint;   // default snap point
 				 cxIdeal      : cint;     // read only. ideal may not eqaul current width if auto sized (LVS_EX_AUTOSIZECOLUMNS) to a lesser width.
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
                                  END;
          LVCOLUMNA            = tagLVCOLUMNA;
          LPLVCOLUMNA          = ^tagLVCOLUMNA;
@@ -4278,11 +4489,14 @@ TYPE
                                  iImage       : cint;
                                  iOrder       : cint;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 		 		 cxmin 	      : cint; // min snap point
 				 cxDefault    : cint;   // default snap point
 				 cxIdeal      : cint;     // read only. ideal may not eqaul current width if auto sized (LVS_EX_AUTOSIZECOLUMNS) to a lesser width.
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
                                  END;
          LVCOLUMNW            = tagLVCOLUMNW;
          LPLVCOLUMNW          = ^tagLVCOLUMNW;
@@ -4324,11 +4538,14 @@ CONST
          LVCF_IMAGE                     = $0010;
          LVCF_ORDER                     = $0020;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 LVCF_MINWIDTH           	= $0040;
 	 LVCF_DEFAULTWIDTH       	= $0080;
 	 LVCF_IDEALWIDTH         	= $0100;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
          LVCFMT_LEFT                    = $0000;
          LVCFMT_RIGHT                   = $0001;
@@ -4340,11 +4557,14 @@ CONST
          LVCFMT_BITMAP_ON_RIGHT         = $1000;
          LVCFMT_COL_HAS_IMAGES          = $8000;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 LVCFMT_FIXED_WIDTH          	= $00100;  // Can't resize the column; same as HDF_FIXEDWIDTH
 	 LVCFMT_NO_DPI_SCALE         	= $40000;  // If not set, CCM_DPISCALE will govern scaling up fixed width
 	 LVCFMT_FIXED_RATIO          	= $80000;  // Width will augment with the row height
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
          LVM_GETCOLUMNA                 = (LVM_FIRST + 25);
          LVM_GETCOLUMNW                 = (LVM_FIRST + 95);
@@ -4647,6 +4867,7 @@ CONST
          LVS_EX_SNAPTOGRID              = $00080000;          // Icons automatically snap to grid.
          LVS_EX_SIMPLESELECT            = $00100000;          // Also changes overlay rendering to top right for icon mode.
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
          LVS_EX_JUSTIFYCOLUMNS          = $00200000;  // Icons are lined up in columns that use up the whole view area.
          LVS_EX_TRANSPARENTBKGND        = $00400000;  // Background is painted by the parent via WM_PRINTCLIENT
@@ -4658,6 +4879,8 @@ CONST
          LVS_EX_COLUMNSNAPPOINTS        = $40000000;
          LVS_EX_COLUMNOVERFLOW          = $80000000;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
          LVM_GETSUBITEMRECT             = (LVM_FIRST + 56);
 
@@ -4863,6 +5086,7 @@ CONST
          LVGF_ALIGN                     = $00000008;
          LVGF_GROUPID                   = $00000010;
 
+<<<<<<< HEAD
 {$ifdef win32vista}
          LVGF_SUBTITLE                 = $00000100;  // pszSubtitle is valid
          LVGF_TASK                     = $00000200;  // pszTask is valid
@@ -4875,6 +5099,8 @@ CONST
          LVGF_SUBSETITEMS              = $00010000;  // readonly, cItems holds count of items in visible subset, iFirstItem is valid
 {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
          LVGS_NORMAL                    = $00000000;
          LVGS_COLLAPSED                 = $00000001;
          LVGS_HIDDEN                    = $00000002;
@@ -4899,6 +5125,7 @@ TYPE
                                  stateMask    : UINT;
                                  state        : UINT;
                                  uAlign       : UINT;
+<<<<<<< HEAD
 {$ifdef win32vista}
                                  pszSubtitle         : LPWSTR;
                                  cchSubtitle         : UINT;
@@ -4915,6 +5142,8 @@ TYPE
                                  pszSubsetTitle      : LPWSTR;// NULL if group is not subset
                                  cchSubsetTitle      : UINT;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
                                  END;
          LVGROUP              = tagLVGROUP;
          PLVGROUP             = ^tagLVGROUP;
@@ -5045,14 +5274,21 @@ CONST
          LVTVIF_FIXEDWIDTH              = $00000001;
          LVTVIF_FIXEDHEIGHT             = $00000002;
          LVTVIF_FIXEDSIZE               = $00000003;
+<<<<<<< HEAD
 {$ifdef win32vista}
   	 LVTVIF_EXTENDED       		= $00000004;
 {$endif}
+=======
+
+>>>>>>> graemeg/fixes_2_2
          LVTVIM_TILESIZE                = $00000001;
          LVTVIM_COLUMNS                 = $00000002;
          LVTVIM_LABELMARGIN             = $00000004;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/fixes_2_2
 TYPE
 
          tagLVTILEVIEWINFO    = Record
@@ -5073,9 +5309,12 @@ TYPE
                                  iItem        : cint;
                                  cColumns     : UINT;
                                  puColumns    : PUINT;
+<<<<<<< HEAD
 				{$ifdef win32vista}
  				 piColFmt     : PCINT;
 				{$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
                                  END;
          LVTILEINFO           = tagLVTILEINFO;
          PLVTILEINFO          = ^tagLVTILEINFO;
@@ -5222,6 +5461,7 @@ CONST
 
 // Macro 153
 Function ListView_MapIDToIndex( hwnd : hwnd; id : WPARAM):UINT;
+<<<<<<< HEAD
 
 const    LVM_ISITEMVISIBLE    		= (LVM_FIRST + 182);
 
@@ -5312,6 +5552,10 @@ function ListView_GetNextItemIndex(hwnd:HWND;plvii:PLVITEMINDEX; flags:LPARAM):B
 
 {$endif}
 
+=======
+{$ENDIF}
+
+>>>>>>> graemeg/fixes_2_2
 Type
 
 {$IFDEF UNICODE}
@@ -5648,6 +5892,7 @@ CONST
          LVN_MARQUEEBEGIN               = (LVN_FIRST-56);
 {$ENDIF}
 
+<<<<<<< HEAD
 {$ifdef win32vista}
 Type
 	 tagNMLVLIN           = Record
@@ -5661,6 +5906,8 @@ Type
 	 PNMLVLINK	      = ^tagNMLVLIN;
 {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifdef ie4plus}
 TYPE
 
@@ -5708,6 +5955,7 @@ CONST
 
          LVN_GETINFOTIPA                = (LVN_FIRST-57);
          LVN_GETINFOTIPW                = (LVN_FIRST-58);
+<<<<<<< HEAD
 	 LVN_INCREMENTALSEARCHA   	= (LVN_FIRST-62);
 	 LVN_INCREMENTALSEARCHW   	= (LVN_FIRST-63);
 
@@ -5719,6 +5967,8 @@ CONST
 	 LVN_COLUMNDROPDOWN       	= (LVN_FIRST-64);
 	 LVN_COLUMNOVERFLOWCLICK  	= (LVN_FIRST-66);
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 Const
 {$IFDEF UNICODE}
@@ -5735,7 +5985,11 @@ type
 {$ENDIF}      // _WIN32_IE >= 0x0400
 
 
+<<<<<<< HEAD
 {$ifdef win32xp} // actually 2003
+=======
+{$ifdef win32xp}
+>>>>>>> graemeg/fixes_2_2
          tagNMLVSCROLL        = Record
                                  hdr          : NMHDR;
                                  dx           : cint;
@@ -5748,6 +6002,7 @@ type
 
 
 CONST
+<<<<<<< HEAD
          LVN_BEGINSCROLL                = (LVN_FIRST-80);
          LVN_ENDSCROLL                  = (LVN_FIRST-81);
 // {$ENDIF}
@@ -5771,6 +6026,12 @@ Type
 
 {$endif}
 
+=======
+         LVN_BEGINSCROLL                = (LVN_FIRST-80)          ;
+         LVN_ENDSCROLL                  = (LVN_FIRST-81);
+// {$ENDIF}
+
+>>>>>>> graemeg/fixes_2_2
 {$ENDIF} // NOLISTVIEW
 
 //====== TREEVIEW CONTROL =====================================================
@@ -5780,7 +6041,11 @@ Type
 CONST
 {$IFDEF _WIN32}
          WC_TREEVIEWA                   = 'SysTreeView32';
+<<<<<<< HEAD
          WC_TREEVIEWW                   = {L}'SysTreeView32'#$0000;
+=======
+         WC_TREEVIEWW                   = {L}'SysTreeView32';
+>>>>>>> graemeg/fixes_2_2
 
 {$IFDEF UNICODE}
          WC_TREEVIEW                    = WC_TREEVIEWW;
@@ -5815,6 +6080,7 @@ CONST
 {$ifdef ie5plus}
          TVS_NOHSCROLL                  = $8000;              // TVS_NOSCROLL overrides this
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
          TVS_EX_MULTISELECT             = $0002;
          TVS_EX_DOUBLEBUFFER            = $0004;
@@ -5829,6 +6095,11 @@ CONST
 {$endif}
 {$ENDIF}
 
+=======
+{$ENDIF}
+
+
+>>>>>>> graemeg/fixes_2_2
 // end_r_commctrl
 
 TYPE
@@ -5845,10 +6116,13 @@ CONST
 {$ifdef ie4plus}
          TVIF_INTEGRAL                  = $0080;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef win32vista}
  	 TVIF_STATEEX            	= $0100;	
 	 TVIF_EXPANDEDIMAGE      	= $0200;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
          TVIS_SELECTED                  = $0002;
          TVIS_CUT                       = $0004;
          TVIS_DROPHILITED               = $0008;
@@ -5863,6 +6137,7 @@ CONST
          TVIS_STATEIMAGEMASK            = $F000;
          TVIS_USERMASK                  = $F000;
 
+<<<<<<< HEAD
 // IE6
 	 TVIS_EX_FLAT            	= $0001;
 {$ifdef win32vista}
@@ -5882,6 +6157,8 @@ Type
 	 LPNMTVSTATEIMAGECHANGING  = ^tagNMTVSTATEIMAGECHANGING;
 
 Const
+=======
+>>>>>>> graemeg/fixes_2_2
          I_CHILDRENCALLBACK             = (-1);
 Type
          tagTVITEMA           = Record
@@ -5895,6 +6172,7 @@ Type
                                  iSelectedImage : cint;
                                  cChildren    : cint;
                                  lParam       : LPARAM;
+<<<<<<< HEAD
 {$ifdef ie6plus}
                                  uStateEx     : cUINT;
                                  hwnd         : HWND;
@@ -5903,6 +6181,8 @@ Type
 {$ifdef NTDDI_WIN7}
 				 iPadding        : cint;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
                                  END;
          TVITEMA              = tagTVITEMA;
          LPTVITEMA            = ^tagTVITEMA;
@@ -5921,6 +6201,7 @@ Type
                                  iSelectedImage : cint;
                                  cChildren    : cint;
                                  lParam       : LPARAM;
+<<<<<<< HEAD
 {$ifdef ie6plus}
                                  uStateEx     : cUINT;
                                  hwnd         : HWND;
@@ -5929,6 +6210,8 @@ Type
 {$ifdef NTDDI_WIN7}
 				 iPadding        : cint;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
                                  END;
          TVITEMW              = tagTVITEMW;
          LPTVITEMW            = ^tagTVITEMW;
@@ -6190,6 +6473,7 @@ CONST
          TVGN_PREVIOUSVISIBLE           = $0007;
          TVGN_DROPHILITE                = $0008;
          TVGN_CARET                     = $0009;
+<<<<<<< HEAD
 {$ifdef ie4plus}
          TVGN_LASTVISIBLE               = $000A;
 {$ENDIF}      // _WIN32_IE >= 0x0400
@@ -6197,6 +6481,14 @@ CONST
 	 TVGN_NEXTSELECTED       	= $000B;
 {$endif}
 {$ifdef win32xp}  // 0x501
+=======
+
+{$ifdef ie4plus}
+         TVGN_LASTVISIBLE               = $000A;
+{$ENDIF}      // _WIN32_IE >= 0x0400
+
+{$ifdef win32xp}
+>>>>>>> graemeg/fixes_2_2
          TVSI_NOSINGLEEXPAND            = $8000;              // Should not conflict with TVGN flags.
 {$ENDIF}
 
@@ -6213,9 +6505,12 @@ function TreeView_GetDropHilite(hwnd:hwnd) : HTREEITEM;inline;
 function TreeView_GetRoot(hwnd:hwnd) : HTREEITEM;inline;
 function TreeView_GetLastVisible(hwnd:hwnd) : HTREEITEM;inline;
 
+<<<<<<< HEAD
 {$ifdef win32vista}
 function  TreeView_GetNextSelected(hwnd:hwnd; hitem:HTREEITEM):HTREEITEM;inline;   
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 CONST
          TVM_SELECTITEM                 = (TV_FIRST + 11);
@@ -6237,6 +6532,11 @@ CONST
          TVM_GETITEMW                   = (TV_FIRST + 62);
 
 {$IFDEF UNICODE}
+<<<<<<< HEAD
+=======
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          TVM_GETITEM         = TVM_GETITEMW;
 {$ELSE}
          TVM_GETITEM         = TVM_GETITEMA;
@@ -6255,6 +6555,11 @@ CONST
          TVM_SETITEMW                   = (TV_FIRST + 63);
 
 {$IFDEF UNICODE}
+<<<<<<< HEAD
+=======
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          TVM_SETITEM         = TVM_SETITEMW;
 {$ELSE}
          TVM_SETITEM         = TVM_SETITEMA;
@@ -6270,6 +6575,11 @@ CONST
          TVM_EDITLABELA                 = (TV_FIRST + 14);
          TVM_EDITLABELW                 = (TV_FIRST + 65);
 {$IFDEF UNICODE}
+<<<<<<< HEAD
+=======
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          TVM_EDITLABEL       = TVM_EDITLABELW;
 {$ELSE}
          TVM_EDITLABEL       = TVM_EDITLABELA;
@@ -6398,6 +6708,11 @@ CONST
          TVM_GETISEARCHSTRINGW          = (TV_FIRST + 64);
 
 {$IFDEF UNICODE}
+<<<<<<< HEAD
+=======
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          TVM_GETISEARCHSTRING= TVM_GETISEARCHSTRINGW;
 {$ELSE}
          TVM_GETISEARCHSTRING= TVM_GETISEARCHSTRINGA;
@@ -6563,11 +6878,19 @@ CONST
          TVM_GETITEMSTATE               = (TV_FIRST + 39);
 
 // Macro 211
+<<<<<<< HEAD
 Function TreeView_GetItemState( hwndTV : hwnd; hti : HTreeItem; statemask : UINT):UINT;
 
 
 // Macro 212
 Function TreeView_GetCheckState( hwndTV : hwnd; hti : HTreeItem):UINT;
+=======
+Function TreeView_GetItemState( hwndTV : hwnd; hti : WPARAM; mask : LPARAM):UINT;
+
+
+// Macro 212
+Function TreeView_GetCheckState( hwndTV : hwnd; hti : WPARAM):UINT;
+>>>>>>> graemeg/fixes_2_2
 
 
 CONST
@@ -6600,6 +6923,7 @@ CONST
 // Macro 216
 Function TreeView_MapHTREEITEMToAccID( hwnd : hwnd; htreeitem : WPARAM):UINT;
 
+<<<<<<< HEAD
 {$ENDIF}
 
 {$ifdef win32vista}
@@ -6634,6 +6958,11 @@ function  TreeView_GetItemPartRect(hwnd:HWND; hitem:HTREEITEM; prc:prect; partid
 
 {$endif}
 
+=======
+
+
+{$ENDIF}
+>>>>>>> graemeg/fixes_2_2
 
 TYPE
          PFNTVCOMPARE =function (lparam1:LPARAM;lparam2:LPARAM;lParamSort:LParam): cint; STDCALL;
@@ -6768,6 +7097,7 @@ Type
          LPNMTVDISPINFO      = LPNMTVDISPINFOA;
 {$ENDIF}
 
+<<<<<<< HEAD
 {$ifdef IE6plus}
  	 tagTVDISPINFOEXA    = Record
 				hdr  : NMHDR;
@@ -6797,6 +7127,8 @@ Type
 
 
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifdef ie3plus}
           TV_DISPINFOA        = NMTVDISPINFOA;
@@ -6843,6 +7175,7 @@ CONST
          TVNRET_SKIPOLD                 = 1;
          TVNRET_SKIPNEW                 = 2;
 
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 TVN_ITEMCHANGINGA       	= (TVN_FIRST-16);
 	 TVN_ITEMCHANGINGW       	= (TVN_FIRST-17);
@@ -6851,6 +7184,8 @@ CONST
 	 TVN_ASYNCDRAW           	= (TVN_FIRST-20);
 {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ENDIF} // 0x400
 
 
@@ -6981,6 +7316,7 @@ CONST
 
 {$ENDIF}      // _WIN32_IE >= 0x0400
 
+<<<<<<< HEAD
 {$ifdef ie6plus}
 Type
      tagTVITEMCHANGE = packed record
@@ -7016,6 +7352,8 @@ CONST
 {$ENDIF}
 {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ENDIF}      // NOTREEVIEW
 
 {$ifdef ie3plus}
@@ -7024,7 +7362,11 @@ CONST
 
 ////////////////////  ComboBoxEx ////////////////////////////////
 
+<<<<<<< HEAD
          WC_COMBOBOXEXW                 = {L}'ComboBoxEx32'#$0000;
+=======
+         WC_COMBOBOXEXW                 = {L}'ComboBoxEx32';
+>>>>>>> graemeg/fixes_2_2
          WC_COMBOBOXEXA                 = 'ComboBoxEx32';
 
 
@@ -7141,9 +7483,13 @@ CONST
 {$ifdef ie4plus}
          CBES_EX_NOSIZELIMIT            = $00000008;
          CBES_EX_CASESENSITIVE          = $00000010;
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 CBES_EX_TEXTENDELLIPSIS      	= $00000020;
 {$endif}
+=======
+
+>>>>>>> graemeg/fixes_2_2
 TYPE
 
          DummyStruct9         = Record
@@ -7336,9 +7682,17 @@ TYPE
 
 CONST
          WC_TABCONTROLA                 = 'SysTabControl32';
+<<<<<<< HEAD
          WC_TABCONTROLW                 = {L}'SysTabControl32'#$0000;
 
 {$IFDEF UNICODE}
+=======
+         WC_TABCONTROLW                 = {L}'SysTabControl32';
+
+{$IFDEF UNICODE}
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          WC_TABCONTROL       = WC_TABCONTROLW;
 {$ELSE}
          WC_TABCONTROL       = WC_TABCONTROLA;
@@ -7560,6 +7914,11 @@ CONST
          TCM_GETITEMW                   = (TCM_FIRST + 60);
 
 {$IFDEF UNICODE}
+<<<<<<< HEAD
+=======
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          TCM_GETITEM         = TCM_GETITEMW;
 {$ELSE}
          TCM_GETITEM         = TCM_GETITEMA;
@@ -7576,6 +7935,11 @@ CONST
          TCM_SETITEMW                   = (TCM_FIRST + 61);
 
 {$IFDEF UNICODE}
+<<<<<<< HEAD
+=======
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          TCM_SETITEM         = TCM_SETITEMW;
 {$ELSE}
          TCM_SETITEM         = TCM_SETITEMA;
@@ -7859,7 +8223,11 @@ CONST
 
 {$IFDEF _WIN32}
 
+<<<<<<< HEAD
          ANIMATE_CLASSW                 = {L}'SysAnimate32'#$0000;
+=======
+         ANIMATE_CLASSW                 = {L}'SysAnimate32';
+>>>>>>> graemeg/fixes_2_2
          ANIMATE_CLASSA                 = 'SysAnimate32';
 
 {$IFDEF UNICODE}
@@ -7937,7 +8305,11 @@ Function Animate_Create(hwndP :HWND;id:HMENU;dwStyle:dword;hInstance:HINST):HWND
 
 
 CONST
+<<<<<<< HEAD
          MONTHCAL_CLASSW                = {L}'SysMonthCal32'#$0000;
+=======
+         MONTHCAL_CLASSW                = {L}'SysMonthCal32';
+>>>>>>> graemeg/fixes_2_2
          MONTHCAL_CLASSA                = 'SysMonthCal32';
 
 
@@ -8141,12 +8513,15 @@ TYPE
                                  pt           : POINT;
                                  uHit         : UINT;          // out param
                                  st           : SYSTEMTIME;
+<<<<<<< HEAD
 {$ifdef NTDDI_VISTA}
 				 rc 	      : RECT;
 				 iOffset      : cint;
 				 iRow         : cint;
 				 iCol	      : cint;
 {$endif}				 
+=======
+>>>>>>> graemeg/fixes_2_2
                                  END;
          MCHITTESTINFO        = DummyStruct16;
          PMCHITTESTINFO       = ^DummyStruct16;
@@ -8280,6 +8655,7 @@ CONST
 
 Function MonthCal_GetUnicodeFormat( hwnd : hwnd):BOOL;
 
+<<<<<<< HEAD
 {$ifdef NTDDI_VISTA}
 Const
 // View
@@ -8367,6 +8743,8 @@ function MonthCal_SetCurrentView(hmc:HWND; dwNewView:DWord):BOOL;
 
 {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ENDIF}
 
 // MCN_SELCHANGE is sent whenever the currently displayed date changes
@@ -8437,11 +8815,17 @@ CONST
 {$ELSE}
          MCS_NOTODAY                    = $0008;
 {$ENDIF}
+<<<<<<< HEAD
 {$ifdef NTDDI_Vista}
 	 MCS_NOTRAILINGDATES  		= $0040;
 	 MCS_SHORTDAYSOFWEEK  		= $0080;
 	 MCS_NOSELCHANGEONNAV 		= $0100;
 {$endif}
+=======
+
+
+// end_r_commctrl
+>>>>>>> graemeg/fixes_2_2
 
          GMR_VISIBLE                    = 0;                  // visible portion of display
          GMR_DAYSTATE                   = 1;                  // above plus the grayed out parts of
@@ -8457,15 +8841,25 @@ CONST
 {$IFNDEF NODATETIMEPICK}
 {$IFDEF _WIN32}
 
+<<<<<<< HEAD
          DATETIMEPICK_CLASSW            = {L}'SysDateTimePick32'#$0000;
          DATETIMEPICK_CLASSA            = 'SysDateTimePick32';
 
 {$IFDEF UNICODE}
+=======
+         DATETIMEPICK_CLASSW            = {L}'SysDateTimePick32';
+         DATETIMEPICK_CLASSA            = 'SysDateTimePick32';
+
+{$IFDEF UNICODE}
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          DATETIMEPICK_CLASS  = DATETIMEPICK_CLASSW;
 {$ELSE}
          DATETIMEPICK_CLASS  = DATETIMEPICK_CLASSA;
 {$ENDIF}
 
+<<<<<<< HEAD
 {$ifdef NTDDI_VISTA}
 Type
 	tagDATETIMEPICKERINFO = packed record
@@ -8483,6 +8877,8 @@ Type
      LPDATETIMEPICKERINFO = PDATETIMEPICKERINFO;
      TDATETIMEPICKERINFO  = DATETIMEPICKERINFO;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 CONST
          DTM_FIRST                      = $1000;
@@ -8541,6 +8937,11 @@ CONST
          DTM_SETFORMATW                 = (DTM_FIRST + 50);
 
 {$IFDEF UNICODE}
+<<<<<<< HEAD
+=======
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          DTM_SETFORMAT       = DTM_SETFORMATW;
 {$ELSE}
          DTM_SETFORMAT       = DTM_SETFORMATA;
@@ -8581,14 +8982,21 @@ function DateTime_GetMonthCal(hdp: HWND): HWND;inline;
 
 CONST
          DTM_SETMCFONT                  = (DTM_FIRST + 9);
+<<<<<<< HEAD
 
 // Macro 284
 procedure DateTime_SetMonthCalFont(hdp:HWND; hfont:HFONT; fRedraw:LPARAM);
 //  SNDMSG(hdp, DTM_SETMCFONT, (WPARAM)(hfont), (LPARAM)(fRedraw))
+=======
+// Macro 284
+
+// #define DateTime_SetMonthCalFont(hdp, hfont, fRedraw) SNDMSG(hdp, DTM_SETMCFONT, (WPARAM)(hfont), (LPARAM)(fRedraw))
+>>>>>>> graemeg/fixes_2_2
 
 
 CONST
          DTM_GETMCFONT                  = (DTM_FIRST + 10);
+<<<<<<< HEAD
 
 // Macro 285
 function DateTime_GetMonthCalFont(hdp:HWND):HFONT;
@@ -8622,6 +9030,11 @@ function DateTime_GetIdealSize(hdp:HWND; ps:PSIZE): LResult;
 
 {$endif}
 
+=======
+// Macro 285
+
+// #define DateTime_GetMonthCalFont(hdp) SNDMSG(hdp, DTM_GETMCFONT, 0, 0)
+>>>>>>> graemeg/fixes_2_2
 
 {$ENDIF}      // _WIN32_IE >= 0x0400
 
@@ -8872,10 +9285,19 @@ CONST
          IPM_SETFOCUS                   = (WM_USER+104);      // wparam = field
          IPM_ISBLANK                    = (WM_USER+105);      // no parameters
 
+<<<<<<< HEAD
          WC_IPADDRESSW                  = {L}'SysIPAddress32'#$0000;
          WC_IPADDRESSA                  = 'SysIPAddress32';
 
 {$IFDEF UNICODE}
+=======
+         WC_IPADDRESSW                  = {L}'SysIPAddress32';
+         WC_IPADDRESSA                  = 'SysIPAddress32';
+
+{$IFDEF UNICODE}
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          WC_IPADDRESS        = WC_IPADDRESSW;
 {$ELSE}
          WC_IPADDRESS        = WC_IPADDRESSA;
@@ -8940,10 +9362,19 @@ TYPE
 //Pager Class Name
 
 CONST
+<<<<<<< HEAD
          WC_PAGESCROLLERW               = {L}'SysPager'#$0000;
          WC_PAGESCROLLERA               = 'SysPager';
 
 {$IFDEF UNICODE}
+=======
+         WC_PAGESCROLLERW               = {L}'SysPager';
+         WC_PAGESCROLLERA               = 'SysPager';
+
+{$IFDEF UNICODE}
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          WC_PAGESCROLLER     = WC_PAGESCROLLERW;
 {$ELSE}
          WC_PAGESCROLLER     = WC_PAGESCROLLERA;
@@ -9211,10 +9642,19 @@ TYPE
 //NativeFont Class Name
 
 CONST
+<<<<<<< HEAD
          WC_NATIVEFONTCTLW              = {L}'NativeFontCtl'#$0000;
          WC_NATIVEFONTCTLA              = 'NativeFontCtl';
 
 {$IFDEF UNICODE}
+=======
+         WC_NATIVEFONTCTLW              = {L}'NativeFontCtl';
+         WC_NATIVEFONTCTLA              = 'NativeFontCtl';
+
+{$IFDEF UNICODE}
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          WC_NATIVEFONTCTL    = WC_NATIVEFONTCTLW;
 {$ELSE}
          WC_NATIVEFONTCTL    = WC_NATIVEFONTCTLA;
@@ -9245,7 +9685,11 @@ CONST
 
 // Button Class Name
          WC_BUTTONA                     = 'Button';
+<<<<<<< HEAD
          WC_BUTTONW                     = {L}'Button'#$0000;
+=======
+         WC_BUTTONW                     = {L}'Button';
+>>>>>>> graemeg/fixes_2_2
 
 CONST
 {$IFDEF UNICODE}
@@ -9340,6 +9784,7 @@ CONST
          BCN_HOTITEMCHANGE              = (BCN_FIRST + $0001);
 
          BST_HOT                        = $0200;
+<<<<<<< HEAD
 {$ifdef win32vista}
          BST_DROPDOWNPUSHED      = $0400;
 
@@ -9427,20 +9872,39 @@ function Button_SetElevationRequiredState(hwnd:HWND; fRequired:BOOL) :LRESULT;
 {$ENDIF} // NOBUTTON
 
 
+=======
+
+{$ENDIF}
+
+
+{$ENDIF} // NOBUTTON
+
+>>>>>>> graemeg/fixes_2_2
 /// =====================  End Button Control =========================
 
 /// ====================== Static Control =============================
 
 {$IFNDEF NOSTATIC}
 
+<<<<<<< HEAD
 const
+=======
+>>>>>>> graemeg/fixes_2_2
 {$IFDEF _WIN32}
 
 // Static Class Name
          WC_STATICA                     = 'Static';
+<<<<<<< HEAD
          WC_STATICW                     = {L}'Static'#$0000;
 
 {$IFDEF UNICODE}
+=======
+         WC_STATICW                     = {L}'Static';
+
+{$IFDEF UNICODE}
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          WC_STATIC           = WC_STATICW;
 {$ELSE}
          WC_STATIC           = WC_STATICA;
@@ -9464,9 +9928,17 @@ CONST
 
 // Edit Class Name
          WC_EDITA                       = 'Edit';
+<<<<<<< HEAD
          WC_EDITW                       = {L}'Edit'#$0000;
 
 {$IFDEF UNICODE}
+=======
+         WC_EDITW                       = {L}'Edit';
+
+{$IFDEF UNICODE}
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          WC_EDIT             = WC_EDITW;
 {$ELSE}
          WC_EDIT             = WC_EDITA;
@@ -9523,6 +9995,7 @@ CONST
 
 Function Edit_HideBalloonTip( hwnd : hwnd):BOOL;
 
+<<<<<<< HEAD
 {$ifdef win32vista}
 const
 	 EM_SETHILITE        		= (ECM_FIRST + 5);
@@ -9536,6 +10009,8 @@ function Edit_GetHilite(hwndCtl:hwnd):DWORD;
 // ((DWORD)SNDMSG((hwndCtl), EM_GETHILITE, 0L, 0L))
 {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ENDIF}
 
 {$ENDIF} // NOEDIT
@@ -9552,9 +10027,17 @@ function Edit_GetHilite(hwndCtl:hwnd):DWORD;
 
 CONST
          WC_LISTBOXA                    = 'ListBox';
+<<<<<<< HEAD
          WC_LISTBOXW                    = 'ListBox'#$0000;
 
 {$IFDEF UNICODE}
+=======
+         WC_LISTBOXW                    = {L}'ListBox';
+
+{$IFDEF UNICODE}
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          WC_LISTBOX          = WC_LISTBOXW;
 {$ELSE}
          WC_LISTBOX          = WC_LISTBOXA;
@@ -9579,9 +10062,17 @@ CONST
 
 // Combobox Class Name
          WC_COMBOBOXA                   = 'ComboBox';
+<<<<<<< HEAD
          WC_COMBOBOXW                   = {L}'ComboBox'#$0000;
 
 {$IFDEF UNICODE}
+=======
+         WC_COMBOBOXW                   = {L}'ComboBox';
+
+{$IFDEF UNICODE}
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          WC_COMBOBOX         = WC_COMBOBOXW;
 {$ELSE}
          WC_COMBOBOX         = WC_COMBOBOXA;
@@ -9628,9 +10119,17 @@ Function ComboBox_GetMinVisible( hwnd : hwnd):cint;
 
 CONST
          WC_SCROLLBARA                  = 'ScrollBar';
+<<<<<<< HEAD
          WC_SCROLLBARW                  = {L}'ScrollBar'#$0000;
 
 {$IFDEF UNICODE}
+=======
+         WC_SCROLLBARW                  = {L}'ScrollBar';
+
+{$IFDEF UNICODE}
+
+TYPE
+>>>>>>> graemeg/fixes_2_2
          WC_SCROLLBAR        = WC_SCROLLBARW;
 {$ELSE}
          WC_SCROLLBAR        = WC_SCROLLBARA;
@@ -9654,14 +10153,22 @@ CONST
 {$ifdef win32xp}
 
          INVALID_LINK_INDEX             = (-1);
+<<<<<<< HEAD
 
 
 
          WC_LINK                        = {L}'SysLink'#$0000;
+=======
+         MAX_LINKID_TEXT                = 48;
+         L_MAX_URL_LENGTH               = (2048 + 32 + length('://'));
+
+         WC_LINK                        = {L}'SysLink';
+>>>>>>> graemeg/fixes_2_2
 
          LWS_TRANSPARENT                = $0001;
          LWS_IGNORERETURN               = $0002;
 
+<<<<<<< HEAD
 {$ifdef win32vista}
          LWS_NOPREFIX                   = $0004;
          LWS_USEVISUALSTYLE             = $0008;
@@ -9669,6 +10176,8 @@ CONST
          LWS_RIGHT                      = $0020;
 {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
          LIF_ITEMINDEX                  = $00000001;
          LIF_STATE                      = $00000002;
          LIF_ITEMID                     = $00000004;
@@ -9677,6 +10186,7 @@ CONST
          LIS_FOCUSED                    = $00000001;
          LIS_ENABLED                    = $00000002;
          LIS_VISITED                    = $00000004;
+<<<<<<< HEAD
 {$ifdef win32vista}
 	 LIS_HOTTRACK        		= $00000008;
 	 LIS_DEFAULTCOLORS   		= $00000010; // Don't use any custom text colors
@@ -9684,6 +10194,24 @@ CONST
 
 TYPE
 
+=======
+
+TYPE
+
+         tagLITEM             = Record
+                                 mask         : UINT;
+                                 iLink        : cint;
+                                 state        : UINT;
+                                 stateMask    : UINT;
+                                 szID         : Array [0..MAX_LINKID_TEXT-1] OF WCHAR;
+                                 szUrl        : Array [0..L_MAX_URL_LENGTH-1] OF WCHAR;
+                                 END;
+         LITEM                = tagLITEM;
+         PLITEM               = ^tagLITEM;
+         TLITEM               = tagLITEM;
+//         PLITEM               = ^tagLITEM;
+
+>>>>>>> graemeg/fixes_2_2
 
          tagLHITTESTINFO      = Record
                                  pt           : POINT;
@@ -9880,6 +10408,7 @@ function RemoveWindowSubclass(hWnd:HWND;pfnSubclass:SUBCLASSPROC;uIdSubclass:UIN
 function DefSubclassProc(hWnd:HWND;uMsg:UINT;wParam:WPARAM;lParam:LPARAM):LRESULT; stdcall; external commctrldll name 'DefSubclassProc';
 {$ENDIF}
 
+<<<<<<< HEAD
 {$ifdef NTDDI_VISTA}
 type _LI_METRIC= (
 
@@ -9891,12 +10420,15 @@ Function LoadIconMetric( hinst:HINST; pszName:LPCWStr;lims:cint; var phico: HICO
 Function LoadIconWithScaleDown( hinst:HINST; pszName:LPCWStr;cx:cint;cy:cint;var phico: HICON ):HRESULT; stdcall; external commctrldll name 'LoadIconMetric';
 
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifdef win32xp}
 
 function DrawShadowText(hdc:HDC;pszText:LPCWSTR;cch:UINT;prc:PRECT;dwFlags:DWORD;crText:COLORREF;crShadow:COLORREF;ixOffset:cint;iyOffset:cint):cint; stdcall; external commctrldll name 'DrawShadowText';
 {$ENDIF}
 
+<<<<<<< HEAD
 // ===================== Task Dialog =========================
 
 Type
@@ -10043,6 +10575,8 @@ var
 
 // ==================== End TaskDialog =======================
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 IMPLEMENTATION
 
@@ -10359,6 +10893,7 @@ Begin
  Result:=cint(SendMessage((hwnd), HDM_CLEARFILTER, WPARAM(-1), 0))
 end;
 {$endif}
+<<<<<<< HEAD
 {$ifdef win32vista}
 // macro 37a ..37d
 function Header_GetOverflowRect( hwnd : hwnd; lprc:lprect):bool;
@@ -10380,6 +10915,8 @@ begin
   result:=bool(sendmessage(hwnd, HDM_GETITEMDROPDOWNRECT, WPARAM(iItem), LPARAM(lprc)));
 end;
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 // Macro 38
 // #define ListView_SetUnicodeFormat(hwnd, fUnicode)  \
@@ -10894,7 +11431,10 @@ end;
 //   SNDMSG((hwndLV), LVM_SETITEMSTATE, (WPARAM)(i), (LPARAM)(LV_ITEM *)&_ms_lvi);\
 // }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/fixes_2_2
 Procedure ListView_SetItemState(hwndLV :hwnd; i :cint ;data,mask:UINT);
 
 Var _ms_lvi : LV_ITEM;
@@ -10940,7 +11480,11 @@ end;
 Function ListView_GetCheckState( hwndLV : hwnd; i : WPARAM):UINT;
 
 Begin
+<<<<<<< HEAD
  Result:=(SendMessage((hwndLV), LVM_GETITEMSTATE, (i), LVIS_STATEIMAGEMASK) shr 12) -1;
+=======
+ Result:=(SendMessage((hwndLV), LVM_GETITEMSTATE, (i), LVIS_STATEIMAGEMASK) shl 12) -1;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -11676,6 +12220,7 @@ Function ListView_MapIDToIndex( hwnd : hwnd; id : WPARAM):UINT;
 Begin
  Result:=UINT(SendMessage((hwnd), LVM_MAPIDTOINDEX, id, LPARAM(0)));
 end;
+<<<<<<< HEAD
 
 function  ListView_IsItemVisible(hwnd:hwnd; aindex:cuint):cuint;
 begin
@@ -11747,6 +12292,10 @@ begin
 end;
 {$endif}
 
+=======
+{$ENDIF}
+
+>>>>>>> graemeg/fixes_2_2
 // Macro 154
 // #define ListView_SetBkImage(hwnd, plvbki) \
 //     (BOOL)SNDMSG((hwnd), LVM_SETBKIMAGE, 0, (LPARAM)(plvbki))
@@ -11979,7 +12528,11 @@ end;
 function TreeView_GetRoot(hwnd:hwnd) : HTREEITEM;inline;
 
 begin
+<<<<<<< HEAD
   Result:=TreeView_GetNextItem(hwnd, NIL,  TVGN_ROOT);
+=======
+  TreeView_GetNextItem(hwnd, NIL,  TVGN_ROOT);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 // Macro 177
@@ -11988,7 +12541,11 @@ end;
 
 function TreeView_GetLastVisible(hwnd:hwnd) : HTREEITEM;inline;
 begin
+<<<<<<< HEAD
   Result:=TreeView_GetNextItem(hwnd, NIL,  TVGN_LASTVISIBLE)
+=======
+  TreeView_GetNextItem(hwnd, NIL,  TVGN_LASTVISIBLE)
+>>>>>>> graemeg/fixes_2_2
 end;
 
 // Macro 178
@@ -12412,26 +12969,47 @@ end;
 
 
 {$ifdef IE5plus}
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/fixes_2_2
 // Macro 211
 
 //#define TreeView_GetItemState(hwndTV, hti, mask) \
 //    (UINT)SNDMSG((hwndTV), TVM_GETITEMSTATE, (WPARAM)(hti), (LPARAM)(mask))
 
+<<<<<<< HEAD
 Function TreeView_GetItemState( hwndTV : hwnd; hti : HTreeItem; statemask : UINT):UINT;
 
 Begin
  Result:=UINT(SendMessage((hwndTV), TVM_GETITEMSTATE, WPARAM(hti), LPARAM(statemask)))
 end;
 
+=======
+Function TreeView_GetItemState( hwndTV : hwnd; hti : WPARAM; mask : LPARAM):UINT;
+
+Begin
+ Result:=UINT(SendMessage((hwndTV), TVM_GETITEMSTATE, hti, mask))
+end;
+
+
+
+>>>>>>> graemeg/fixes_2_2
 // Macro 212
 // #define TreeView_GetCheckState(hwndTV, hti) \
 //    ((((UINT)(SNDMSG((hwndTV), TVM_GETITEMSTATE, (WPARAM)(hti), TVIS_STATEIMAGEMASK))) >> 12) -1)
 
+<<<<<<< HEAD
 Function TreeView_GetCheckState( hwndTV : hwnd; hti : HTreeItem):UINT;
 
 Begin
  Result:=((UINT(SendMessage((hwndTV), TVM_GETITEMSTATE, wparam(hti), TVIS_STATEIMAGEMASK) shr 12) -1));
+=======
+Function TreeView_GetCheckState( hwndTV : hwnd; hti : WPARAM):UINT;
+
+Begin
+ Result:=((UINT(SendMessage((hwndTV), TVM_GETITEMSTATE, hti, TVIS_STATEIMAGEMASK) shr 12) -1));
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -12481,6 +13059,7 @@ Begin
 end;
 {$endif}
 
+<<<<<<< HEAD
 {$ifdef win32vista}
 function  TreeView_GetSelectedCount(hwnd:hwnd):DWORD;
 Begin
@@ -12502,6 +13081,8 @@ Begin
 end;
 {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 // Macro 217
 
 //#define TabCtrl_GetImageList(hwnd) \
@@ -12570,7 +13151,11 @@ end;
 Function TabCtrl_InsertItem( hwnd : hwnd; iItem : cint;const  pitem : TC_ITEM ):cint;
 
 Begin
+<<<<<<< HEAD
  Result:=cint(SendMessage((hwnd), TCM_INSERTITEM, iItem, LPARAM(@pitem)));
+=======
+ Result:=cint(SendMessage((hwnd), TCM_INSERTITEM, iItem, LPARAM(@pitem)))
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -13525,6 +14110,7 @@ Begin
  Result:=cint(SendMessage((hwnd), CB_GETMINVISIBLE, 0, 0))
 end;
 
+<<<<<<< HEAD
 {$ifdef win32vista}
 function  TreeView_GetNextSelected(hwnd:hwnd; hitem:HTREEITEM):HTREEITEM;inline;   
 begin
@@ -13722,4 +14308,7 @@ initialization
   Initialize;
 Finalization
   Finalize;  
+=======
+
+>>>>>>> graemeg/fixes_2_2
 End.

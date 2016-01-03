@@ -181,6 +181,7 @@ interface
         locallibrarysearchpath,
         localframeworksearchpath : TSearchPathList;
 
+<<<<<<< HEAD
         moduleoptions: tmoduleoptions;
         deprecatedmsg: pshortstring;
 
@@ -226,6 +227,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
         {create creates a new module which name is stored in 's'. LoadedFrom
         points to the module calling it. It is nil for the first compiled
         module. This allow inheritence of all path lists. MUST pay attention
@@ -243,7 +246,11 @@ interface
         procedure allunitsused;
         procedure end_of_parsing;virtual;
         procedure setmodulename(const s:string);
+<<<<<<< HEAD
         procedure AddExternalImport(const libname,symname,symmangledname:string;OrdNr: longint;isvar:boolean;ImportByOrdinalOnly:boolean);
+=======
+        procedure AddExternalImport(const libname,symname:string;OrdNr: longint;isvar:boolean;ImportByOrdinalOnly:boolean);
+>>>>>>> graemeg/fixes_2_2
         property ImportLibraryList : TFPHashObjectList read FImportLibraryList;
       end;
 
@@ -274,7 +281,10 @@ interface
        SmartLinkOFiles   : TCmdStrList; { List of .o files which are generated,
                                           used to delete them after linking }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/fixes_2_2
     procedure set_current_module(p:tmodule);
     function get_module(moduleindex : longint) : tmodule;
     function get_source_file(moduleindex,fileindex : longint) : tinputfile;
@@ -288,7 +298,11 @@ implementation
       SysUtils,globals,
       verbose,systems,
       scanner,ppu,dbgbase,
+<<<<<<< HEAD
       procinfo,symdef;
+=======
+      procinfo;
+>>>>>>> graemeg/fixes_2_2
 
 {$ifdef MEMDEBUG}
     var
@@ -307,7 +321,12 @@ implementation
         hp:=tmodule(loaded_units.first);
         while assigned(hp) do
           begin
+<<<<<<< HEAD
             if (hp.moduleid=st.moduleid) then
+=======
+            if (hp.globalsymtable=st) or
+               (hp.localsymtable=st) then
+>>>>>>> graemeg/fixes_2_2
               begin
                 result:=hp;
                 exit;
@@ -335,7 +354,11 @@ implementation
               begin
                 current_scanner.tempopeninputfile;
                 current_scanner.gettokenpos;
+<<<<<<< HEAD
                 parser_current_file:=current_scanner.inputfile.name;
+=======
+                parser_current_file:=current_scanner.inputfile.name^;
+>>>>>>> graemeg/fixes_2_2
               end
             else
               begin
@@ -529,6 +552,7 @@ implementation
 
     constructor tmodule.create(LoadedFrom:TModule;const amodulename: string; const afilename:TPathStr;_is_unit:boolean);
       var
+<<<<<<< HEAD
         n:string;
         fn:TPathStr;
       begin
@@ -540,6 +564,11 @@ implementation
           fn:=amodulename
         else
           fn:=afilename;
+=======
+        n : string;
+      begin
+        n:=ChangeFileExt(ExtractFileName(s),'');
+>>>>>>> graemeg/fixes_2_2
         { Programs have the name 'Program' to don't conflict with dup id's }
         if _is_unit then
          inherited create(amodulename)
@@ -634,8 +663,13 @@ implementation
 >>>>>>> origin/cpstrnew
         _exports:=TLinkedList.Create;
         dllscannerinputlist:=TFPHashList.Create;
+<<<<<<< HEAD
         asmdata:=casmdata.create(modulename);
         InitDebugInfo(self,false);
+=======
+        asmdata:=TAsmData.create(realmodulename^);
+        InitDebugInfo(self);
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -791,6 +825,7 @@ implementation
             asmdata.free;
             asmdata:=nil;
           end;
+<<<<<<< HEAD
         DoneDebugInfo(self,current_debuginfo_reset);
         globalsymtable.free;
         globalsymtable:=nil;
@@ -800,6 +835,29 @@ implementation
         globalmacrosymtable:=nil;
         localmacrosymtable.free;
         localmacrosymtable:=nil;
+=======
+        DoneDebugInfo(self);
+        if assigned(globalsymtable) then
+          begin
+            globalsymtable.free;
+            globalsymtable:=nil;
+          end;
+        if assigned(localsymtable) then
+          begin
+            localsymtable.free;
+            localsymtable:=nil;
+          end;
+        if assigned(globalmacrosymtable) then
+          begin
+            globalmacrosymtable.free;
+            globalmacrosymtable:=nil;
+          end;
+        if assigned(localmacrosymtable) then
+          begin
+            localmacrosymtable.free;
+            localmacrosymtable:=nil;
+          end;
+>>>>>>> graemeg/fixes_2_2
         deflist.free;
         deflist:=TFPObjectList.Create(false);
         symlist.free;
@@ -838,8 +896,14 @@ implementation
         derefdataintflen:=0;
         sourcefiles.free;
         sourcefiles:=tinputfilemanager.create;
+<<<<<<< HEAD
         asmdata:=casmdata.create(modulename);
         InitDebugInfo(self,current_debuginfo_reset);
+=======
+        asmdata:=TAsmData.create(realmodulename^);
+        DoneDebugInfo(self);
+        InitDebugInfo(self);
+>>>>>>> graemeg/fixes_2_2
         _exports.free;
         _exports:=tlinkedlist.create;
         dllscannerinputlist.free;
@@ -1171,8 +1235,12 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     procedure TModule.AddExternalImport(const libname,symname,symmangledname:string;
               OrdNr: longint;isvar:boolean;ImportByOrdinalOnly:boolean);
+=======
+    procedure TModule.AddExternalImport(const libname,symname:string;OrdNr: longint;isvar:boolean;ImportByOrdinalOnly:boolean);
+>>>>>>> graemeg/fixes_2_2
       var
         ImportLibrary,OtherIL : TImportLibrary;
         ImportSymbol  : TImportSymbol;
@@ -1184,6 +1252,7 @@ implementation
         ImportSymbol:=TImportSymbol(ImportLibrary.ImportSymbolList.Find(symname));
         if not assigned(ImportSymbol) then
           begin
+<<<<<<< HEAD
             { Check that the same name does not exist in another library }
             { If it does and the same mangled name is used, issue a warning }
             if ImportLibraryList.Count>1 then
@@ -1205,6 +1274,12 @@ implementation
               OrdNr:=-OrdNr;
             ImportSymbol:=TImportSymbol.Create(ImportLibrary.ImportSymbolList,
               symname,symmangledname,OrdNr,isvar);
+=======
+            if not ImportByOrdinalOnly then
+              { negative ordinal number indicates import by name with ordinal number as hint }
+              OrdNr:=-OrdNr;
+            ImportSymbol:=TImportSymbol.Create(ImportLibrary.ImportSymbolList,symname,OrdNr,isvar);
+>>>>>>> graemeg/fixes_2_2
           end;
       end;
 

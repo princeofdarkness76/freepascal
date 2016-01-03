@@ -1,8 +1,11 @@
 { Copyright (C) <2005> <Andrew Haines> chmls.lpr
+<<<<<<< HEAD
   Mostly rewritten by Marco van de Voort 2009-2012
 
   An util that concentrates on listing and decompiling various sections
    of a CHM.
+=======
+>>>>>>> graemeg/fixes_2_2
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -16,8 +19,14 @@
 
   You should have received a copy of the GNU Library General Public License
   along with this library; if not, write to the Free Software Foundation,
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+}
+{
+>>>>>>> graemeg/fixes_2_2
   See the file COPYING, included in this distribution,
   for details about the copyright.
 }
@@ -30,6 +39,7 @@ program chmls;
 {$mode objfpc}{$H+}
 
 uses
+<<<<<<< HEAD
   Classes, GetOpts, SysUtils, Types,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -325,6 +335,27 @@ end;
 procedure WriteStrAdj(Str: String; CharWidth: Integer);
 // Changed to WriteStrADJ (for adjust), since 2.4.0 writestr is a builtin
 // Why doesn't Write() allow left aligned columns?, sigh.
+=======
+  Classes, chmreader, chmbase, Sysutils
+  { add your units here };
+type
+
+  { TJunkObject }
+
+  TJunkObject = class
+    procedure OnFileEntry(Name: String; Offset, UncompressedSize, ASection: Integer);
+  end;
+  
+
+var
+  ITS: TITSFReader;
+  Stream: TFileStream;
+  I : Integer;
+  Section: Integer = -1;
+  JunkObject: TJunkObject;
+
+procedure WriteStr(Str: String; CharWidth: Integer);
+>>>>>>> graemeg/fixes_2_2
   var
     OutString: String;
     Len: Integer;
@@ -332,6 +363,7 @@ procedure WriteStrAdj(Str: String; CharWidth: Integer);
     Len := Length(Str);
     SetLength(OutString, CharWidth-Len);
     FillChar(OutString[1], CharWidth-Len, ' ');
+<<<<<<< HEAD
     Write(OutString + Str); // to stdout
   end;
 
@@ -1428,5 +1460,61 @@ begin
      halt;
    end;
 
+=======
+
+    Write(OutString + Str); // to sdtout
+  end;
+
+{ TJunkObject }
+
+procedure TJunkObject.OnFileEntry(Name: String; Offset, UncompressedSize,
+  ASection: Integer);
+begin
+  Inc(I);
+  if (Section > -1) and (ASection <> Section) then Exit;
+  if (I = 1) or (I mod 40 = 0) then
+    WriteLn(StdErr, '<Section> <Offset> <UnCompSize>  <Name>');
+  Write(' ');
+  Write(ASection);
+  Write('      ');
+  WriteStr(IntToStr(Offset), 10);
+  Write('  ');
+  WriteStr(IntToStr(UncompressedSize), 11);
+  Write('  ');
+  WriteLn(Name);
+end;
+
+Procedure Usage;
+
+begin
+  WriteLn('   Usage:  chmls filename.chm [section number]');
+  Halt(1);
+end;
+
+// Start of program
+begin
+  if (Paramcount < 1) or (Paramstr(1)='-h') or (Paramstr(1)='-?') then 
+    begin
+    usage;
+    end;
+  if ParamCount > 1 then 
+    begin
+    Section := StrToIntDef(ParamStr(2),-1);
+    If (Section=-1) then
+      begin
+      Usage;
+      Halt(1);
+      end;
+    end; 
+  Stream := TFileStream.Create(ParamStr(1), fmOpenRead);
+  JunkObject := TJunkObject.Create;
+  ITS:= TITSFReader.Create(Stream, True);
+  I := 0;
+  ITS.GetCompleteFileList(@JunkObject.OnFileEntry);
+  
+  WriteLn('Total Files in chm: ', I);
+  ITS.Free;
+  JunkObject.Free;
+>>>>>>> graemeg/fixes_2_2
 end.
 

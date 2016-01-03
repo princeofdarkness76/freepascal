@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for Hermes
+>>>>>>> graemeg/fixes_2_2
 #
 
 [package]
 name=hermes
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -35,10 +40,20 @@ options_i386_freebsd=-dI386_ASSEMBLER
 options_i386_haiku=-dI386_ASSEMBLER
 options_i386_beos=-dI386_ASSEMBLER
 
+=======
+version=2.2.5
+
+[target]
+units=hermes
+loaders=$(CPU_LOADERS)
+
+[compiler]
+>>>>>>> graemeg/fixes_2_2
 unitdir=
 targetdir=.
 includedir=src
 sourcedir=src tests
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
 [install]
@@ -50,10 +65,13 @@ fpcpackage=y
 
 [install]
 fpcpackage=y
+=======
+>>>>>>> graemeg/fixes_2_2
 
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -156,3 +174,32 @@ fpcdir=../..
 [rules]
 .NOTPARALLEL:
 >>>>>>> origin/cpstrnew
+=======
+[rules]
+.NOTPARALLEL:
+mmx_clr$(OEXT):src/$(CPU_TARGET)/mmx_clr.as
+        $(AS) --32 -o $(UNITTARGETDIRPREFIX)mmx_clr$(OEXT) src/$(CPU_TARGET)/mmx_clr.as
+
+mmxp_32$(OEXT):src/$(CPU_TARGET)/mmxp_32.as
+        $(AS) --32 -o $(UNITTARGETDIRPREFIX)mmxp_32$(OEXT) src/$(CPU_TARGET)/mmxp_32.as
+
+mmx_main$(OEXT):src/$(CPU_TARGET)/mmx_main.as
+        $(AS) --32 -o $(UNITTARGETDIRPREFIX)mmx_main$(OEXT) src/$(CPU_TARGET)/mmx_main.as
+
+mmxp2_32$(OEXT):src/$(CPU_TARGET)/mmxp2_32.as
+        $(AS) --32 -o $(UNITTARGETDIRPREFIX)mmxp2_32$(OEXT) src/$(CPU_TARGET)/mmxp2_32.as
+
+hm_i386$(OEXT): $(I386_LOADERSSRC)
+        $(AS) --32 -o $(UNITTARGETDIRPREFIX)hm_i386$(OEXT) $(I386_LOADERSSRC)
+
+[prerules]
+I386_LOADERSSRC=src/i386/x86_main.as src/i386/x86p_cpy.as \
+        src/i386/x86pscpy.as src/i386/x86p_16.as \
+        src/i386/x86p_i8.as src/i386/x86_clr.as \
+        src/i386/x86p_32.as src/i386/x86p_s32.as
+ifeq ($(CPU_TARGET),i386)
+CPU_LOADERS=mmx_clr mmxp_32 mmx_main mmxp2_32 hm_i386
+else
+CPU_LOADERS=
+endif
+>>>>>>> graemeg/fixes_2_2

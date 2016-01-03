@@ -40,19 +40,25 @@ interface
 
 {$i systemh.inc}
 {$i ndsbiosh.inc}
+<<<<<<< HEAD
 {$i ndsh.inc}
 {$i libch.inc}
 
 
+=======
+{$i systemh.inc}
+>>>>>>> graemeg/fixes_2_2
 
 {$define fpc_softfpu_interface}
 {$i softfpu.pp}
 {$undef fpc_softfpu_interface}
 
+function IsARM9(): boolean;
 
 const
   LineEnding = #10;
   LFNSupport = true;
+<<<<<<< HEAD
   DirectorySeparator = '/';
   DriveSeparator = ':';
   ExtensionSeparator = '.';
@@ -65,6 +71,24 @@ const
   AllFilesMask = '*';
 
   UnusedHandle    = -1;
+=======
+  CtrlZMarksEOF: boolean = false;
+  DirectorySeparator = '/';
+  DriveSeparator = ':';
+  ExtensionSeparator = '.';
+  PathSeparator = ';';
+  AllowDirectorySeparators : set of char = ['\','/'];
+  AllowDriveSeparators : set of char = [':'];
+  FileNameCaseSensitive = false;
+  maxExitCode = 255;
+  MaxPathLen = 255;
+  AllFilesMask = '*';
+
+  sLineBreak: string[1] = LineEnding;
+  DefaultTextLineBreakStyle: TTextLineBreakStyle = tlbsCRLF;
+
+  UnusedHandle    = $ffff;
+>>>>>>> graemeg/fixes_2_2
   StdInputHandle  = 0;
   StdOutputHandle = 1;
   StdErrorHandle  = 2;
@@ -92,6 +116,7 @@ var
   argc: LongInt = 0;
   argv: PPChar;
   envp: PPChar;
+<<<<<<< HEAD
 //  errno: integer;
   fake_heap_end: ^byte; cvar; external;
   irq_vector: integer; external name '__irq_vector';
@@ -99,6 +124,10 @@ var
 function get_cmdline:Pchar;
 
 property cmdline:Pchar read get_cmdline;
+=======
+  errno: integer;
+  fake_heap_end: ^byte; cvar;
+>>>>>>> graemeg/fixes_2_2
 
 implementation
 
@@ -130,6 +159,30 @@ const
 {$i libc.inc}
 
 
+
+
+{
+  NDS CPU detecting function (thanks to 21o6):
+  --------------------------------------------
+   "You see, the ARM7 can't write to bank A of VRAM, but it doesn't give any
+    error ... it just doesn't write there... so it's easily determinable what
+    CPU is running the code"
+
+   ARM946E-S processor can handle dsp extensions extensions, but ARM7TDMI does
+   not. FPC can't retrieve the CPU target at compiling time, so this small
+   function takes care to check if the code is running on an ARM9 or on an ARM7
+   CPU. It works on Nintendo DS only, I guess :)
+}
+function IsARM9(): boolean;
+var
+  Dummy : pword absolute $06800000;
+  tmp: word;
+begin
+  tmp := Dummy^;
+  Dummy^ := $C0DE;
+  IsARM9 := Dummy^ = $C0DE;
+  Dummy^ := tmp;
+end;
 
 {$ifdef FPC_HAS_FEATURE_PROCESSES}
 function GetProcessID: SizeUInt;
@@ -164,6 +217,7 @@ procedure randomize;
 var
   IPC_Timer: array [0..2] of byte absolute $27FF01B;
 begin
+<<<<<<< HEAD
   RandSeed := (IPC_Timer[0]  * 3600) + (IPC_Timer[1] * 60) + IPC_Timer[2]; 
 end;
 
@@ -171,6 +225,9 @@ function random(): integer;
 begin	
 	RandSeed := QRAN_A * RandSeed + QRAN_C;
 	random := (RandSeed shr 16) and QRAN_MAX;
+=======
+  paramcount := 0;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function random(value: integer): integer; 
@@ -228,6 +285,7 @@ var
   end;
 
 begin
+<<<<<<< HEAD
   if argc<=0 then
     exit;
   GetMem(buf,ARG_MAX);
@@ -285,6 +343,9 @@ begin
    end;
   AddBuf;
   FreeMem(buf,ARG_MAX);
+=======
+  paramstr := '';
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function get_cmdline:Pchar;
@@ -305,9 +366,13 @@ function get_cmdline:Pchar;
 
 >>>>>>> origin/cpstrnew
 begin
+<<<<<<< HEAD
   if calculated_cmdline=nil then
     setupcmdline;
   get_cmdline:=calculated_cmdline;
+=======
+  // Boo!
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -355,15 +420,25 @@ end;
 
 begin
   StackLength := CheckInitialStkLen(InitialStkLen);
+<<<<<<< HEAD
   StackBottom := Sptr - StackLength;
 { OS specific startup }
 
 { Set up signals handlers }
   fpc_cpucodeinit;
+=======
+  StackBottom := StackTop - StackLength;
+{ OS specific startup }
+
+{ Set up signals handlers }
+  if IsARM9 then
+    fpc_cpucodeinit;
+>>>>>>> graemeg/fixes_2_2
 
 { Setup heap }
   InitHeap;
   SysInitExceptions;
+<<<<<<< HEAD
 
   SetupCmdLine;
   
@@ -394,4 +469,13 @@ begin
   { threading }
   InitSystemThreads;
 {$endif FPC_HAS_FEATURE_THREADING}
+=======
+{ Setup stdin, stdout and stderr }
+  SysInitStdIO;
+{ Reset IO Error }
+  InOutRes:=0;
+{ Arguments }
+  InitSystemThreads;
+  initvariantmanager;
+>>>>>>> graemeg/fixes_2_2
 end.

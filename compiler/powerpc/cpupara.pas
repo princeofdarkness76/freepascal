@@ -152,12 +152,16 @@ unit cpupara;
               result:=LOC_REGISTER;
             classrefdef:
               result:=LOC_REGISTER;
+<<<<<<< HEAD
             procvardef:
               if (target_info.abi in [abi_powerpc_aix,abi_powerpc_darwin]) or
                  (p.size = sizeof(pint)) then
                 result:=LOC_REGISTER
               else
                 result:=LOC_REFERENCE;
+=======
+            procvardef,
+>>>>>>> graemeg/fixes_2_2
             recorddef:
               if not(target_info.system in systems_aix) and
                  (not(target_info.abi in [abi_powerpc_aix,abi_powerpc_darwin]) or
@@ -212,6 +216,7 @@ unit cpupara;
           variantdef,
           formaldef :
             result:=true;
+<<<<<<< HEAD
           { regular procvars must be passed by value, because you cannot pass
             the address of a local stack location when calling e.g.
             pthread_create with the address of a function (first of all it
@@ -230,6 +235,10 @@ unit cpupara;
               not(target_info.abi in [abi_powerpc_aix,abi_powerpc_darwin]) and
               (def.size <> sizeof(pint));
           recorddef :
+=======
+          recorddef,
+          procvardef :
+>>>>>>> graemeg/fixes_2_2
             result :=
               not(target_info.abi in [abi_powerpc_aix,abi_powerpc_darwin]) or
               ((varspez = vs_const) and
@@ -380,8 +389,18 @@ unit cpupara;
             paraloc^.size:=retcgsize;
             exit;
           end;
+<<<<<<< HEAD
 
         paraloc:=result.add_location;
+=======
+        { Return is passed as var parameter }
+        if ret_in_param(p.returndef,p.proccalloption) then
+          begin
+            p.funcretloc[side].loc:=LOC_REFERENCE;
+            p.funcretloc[side].size:=retcgsize;
+            exit;
+          end;
+>>>>>>> graemeg/fixes_2_2
         { Return in FPU register? }
         if def.typ=floatdef then
 <<<<<<< HEAD
@@ -705,6 +724,7 @@ unit cpupara;
                     begin
                       paraloc^.loc := loc;
                       { make sure we don't lose whether or not the type is signed }
+<<<<<<< HEAD
                       if (paradef.typ<>orddef) then
                         begin
                           paracgsize:=int_cgsize(paralen);
@@ -715,6 +735,12 @@ unit cpupara;
                           paraloc^.size:=OS_INT;
                           paraloc^.def:=u32inttype;
                         end
+=======
+                      if (paradef.typ <> orddef) then
+                        paracgsize := int_cgsize(paralen);
+                      if (paracgsize in [OS_NO,OS_64,OS_S64,OS_128,OS_S128]) then
+                        paraloc^.size := OS_INT
+>>>>>>> graemeg/fixes_2_2
                       else
                         begin
                           paraloc^.size:=paracgsize;

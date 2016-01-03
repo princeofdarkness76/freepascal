@@ -66,11 +66,19 @@ const
         movw   tmp,%ax
         andl   $0xffff,%eax  { clears bits 32-63 }
       end;
+<<<<<<< HEAD
 
 
     procedure SetMXCSR(w : dword);
       begin
         defaultmxcsr:=w;
+=======
+    
+    
+    procedure SetSSECSR(w : dword);
+      begin
+        mxcsr:=w;
+>>>>>>> graemeg/fixes_2_2
         asm
           ldmxcsr w
         end;

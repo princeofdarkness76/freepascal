@@ -186,7 +186,11 @@ initialization
   RegisterLinker(ld_windows,TExternalLinkerWin);
   RegisterLinker(ld_int_windows,TInternalLinkerWin);
 {$ifdef i386}
+<<<<<<< HEAD
   ///RegisterInternalLinker(system_i386_symbian_info,TExternalLinkerWin);
+=======
+  RegisterInternalLinker(system_i386_symbian_info,TExternalLinkerWin);
+>>>>>>> graemeg/fixes_2_2
   RegisterImport(system_i386_symbian,TImportLibWin);
   RegisterExport(system_i386_symbian,TExportLibWin);
   RegisterDLLScanner(system_i386_symbian,TDLLScannerWin);

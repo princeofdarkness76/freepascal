@@ -195,6 +195,7 @@ begin
   act.sa_flags:=SA_SIGINFO or SA_64REGSET;
 {$else}
   act.sa_flags:=SA_SIGINFO;
+<<<<<<< HEAD
 {$endif}
   FpSigAction(signum,@act,@oldact);
 end;
@@ -219,6 +220,17 @@ begin
   FpSigAction(SIGSEGV,@oldsigsegv,nil);
   FpSigAction(SIGBUS,@oldsigbus,nil);
   FpSigAction(SIGILL,@oldsigill,nil);
+=======
+{$if defined(darwin) and defined(cpu64)}
+  act.sa_flags:=SA_SIGINFO or SA_64REGSET;
+{$else}
+  act.sa_flags:=SA_SIGINFO;
+{$endif}
+  FpSigAction(SIGFPE,act,oldact);
+  FpSigAction(SIGSEGV,act,oldact);
+  FpSigAction(SIGBUS,act,oldact);
+  FpSigAction(SIGILL,act,oldact);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -339,6 +351,13 @@ Begin
   { Set up signals handlers (may be needed by init code to test cpu features) }
   InstallSignals;
 
+<<<<<<< HEAD
+=======
+  SysResetFPU;
+  if not(IsLibrary) then
+    SysInitFPU;
+
+>>>>>>> graemeg/fixes_2_2
 {$if defined(cpui386) or defined(cpuarm)}
   fpc_cpucodeinit;
 {$endif cpui386}

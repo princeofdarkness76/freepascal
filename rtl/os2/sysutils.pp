@@ -288,8 +288,157 @@ type
  end;
 >>>>>>> graemeg/cpstrnew
 
+<<<<<<< HEAD
 threadvar
   LastOSError: cardinal;
+=======
+const
+ ilStandard      = 1;
+ ilQueryEAsize   = 2;
+ ilQueryEAs      = 3;
+ ilQueryFullName = 5;
+
+ quFIFO     = 0;
+ quLIFO     = 1;
+ quPriority = 2;
+
+ quNoConvert_Address = 0;
+ quConvert_Address   = 4;
+
+{Start the new session independent or as a child.}
+ ssf_Related_Independent = 0;    {Start new session independent
+                                  of the calling session.}
+ ssf_Related_Child       = 1;    {Start new session as a child
+                                  session to the calling session.}
+
+{Start the new session in the foreground or in the background.}
+ ssf_FgBg_Fore           = 0;    {Start new session in foreground.}
+ ssf_FgBg_Back           = 1;    {Start new session in background.}
+
+{Should the program started in the new session
+ be executed under conditions for tracing?}
+ ssf_TraceOpt_None       = 0;    {No trace.}
+ ssf_TraceOpt_Trace      = 1;    {Trace with no notification
+                                  of descendants.}
+ ssf_TraceOpt_TraceAll   = 2;    {Trace all descendant sessions.
+                                  A termination queue must be
+                                  supplied and Related must be
+                                  ssf_Related_Child (=1).}
+
+{Will the new session inherit open file handles
+ and environment from the calling process.}
+ ssf_InhertOpt_Shell     = 0;    {Inherit from the shell.}
+ ssf_InhertOpt_Parent    = 1;    {Inherit from the calling process.}
+
+{Specifies the type of session to start.}
+ ssf_Type_Default        = 0;    {Use program's type.}
+ ssf_Type_FullScreen     = 1;    {OS/2 full screen.}
+ ssf_Type_WindowableVIO  = 2;    {OS/2 window.}
+ ssf_Type_PM             = 3;    {Presentation Manager.}
+ ssf_Type_VDM            = 4;    {DOS full screen.}
+ ssf_Type_WindowedVDM    = 7;    {DOS window.}
+{Additional values for Windows programs}
+ Prog_31_StdSeamlessVDM    = 15; {Windows 3.1 program in its
+                                  own windowed session.}
+ Prog_31_StdSeamlessCommon = 16; {Windows 3.1 program in a
+                                  common windowed session.}
+ Prog_31_EnhSeamlessVDM    = 17; {Windows 3.1 program in enhanced
+                                  compatibility mode in its own
+                                  windowed session.}
+ Prog_31_EnhSeamlessCommon = 18; {Windows 3.1 program in enhanced
+                                  compatibility mode in a common
+                                  windowed session.}
+ Prog_31_Enh               = 19; {Windows 3.1 program in enhanced
+                                  compatibility mode in a full
+                                  screen session.}
+ Prog_31_Std               = 20; {Windows 3.1 program in a full
+                                  screen session.}
+
+{Specifies the initial attributes for a OS/2 window or DOS window session.}
+ ssf_Control_Visible      = 0;   {Window is visible.}
+ ssf_Control_Invisible    = 1;   {Window is invisible.}
+ ssf_Control_Maximize     = 2;   {Window is maximized.}
+ ssf_Control_Minimize     = 4;   {Window is minimized.}
+ ssf_Control_NoAutoClose  = 8;   {Window will not close after
+                                  the program has ended.}
+ ssf_Control_SetPos   = 32768;   {Use InitXPos, InitYPos,
+                                  InitXSize, and InitYSize for
+                                  the size and placement.}
+
+
+function DosSetFileInfo (Handle: THandle; InfoLevel: cardinal; AFileStatus: PFileStatus;
+        FileStatusLen: cardinal): cardinal; cdecl; external 'DOSCALLS' index 218;
+
+function DosQueryFSInfo (DiskNum, InfoLevel: cardinal; var Buffer: TFSInfo;
+               BufLen: cardinal): cardinal; cdecl; external 'DOSCALLS' index 278;
+
+function DosQueryFileInfo (Handle: THandle; InfoLevel: cardinal;
+           AFileStatus: PFileStatus; FileStatusLen: cardinal): cardinal; cdecl;
+                                                 external 'DOSCALLS' index 279;
+
+function DosScanEnv (Name: PChar; var Value: PChar): cardinal; cdecl;
+                                                 external 'DOSCALLS' index 227;
+
+function DosFindFirst (FileMask: PChar; var Handle: THandle; Attrib: cardinal;
+                       AFileStatus: PFileStatus; FileStatusLen: cardinal;
+                    var Count: cardinal; InfoLevel: cardinal): cardinal; cdecl;
+                                                 external 'DOSCALLS' index 264;
+
+function DosFindNext (Handle: THandle; AFileStatus: PFileStatus;
+                FileStatusLen: cardinal; var Count: cardinal): cardinal; cdecl;
+                                                 external 'DOSCALLS' index 265;
+
+function DosFindClose (Handle: THandle): cardinal; cdecl;
+                                                 external 'DOSCALLS' index 263;
+
+function DosQueryCtryInfo (Size: cardinal; var Country: TCountryCode;
+           var Res: TCountryInfo; var ActualSize: cardinal): cardinal; cdecl;
+                                                        external 'NLS' index 5;
+
+function DosMapCase (Size: cardinal; var Country: TCountryCode;
+                      AString: PChar): cardinal; cdecl; external 'NLS' index 7;
+
+function DosDelete(FileName:PChar): cardinal; cdecl;
+    external 'DOSCALLS' index 259;
+
+function DosMove(OldFile, NewFile:PChar): cardinal; cdecl;
+    external 'DOSCALLS' index 271;
+
+function DosQueryPathInfo(FileName:PChar;InfoLevel:cardinal;
+              AFileStatus:PFileStatus;FileStatusLen:cardinal): cardinal; cdecl;
+    external 'DOSCALLS' index 223;
+
+function DosSetPathInfo(FileName:PChar;InfoLevel:cardinal;
+                        AFileStatus:PFileStatus;FileStatusLen,
+                        Options:cardinal):cardinal; cdecl;
+    external 'DOSCALLS' index 219;
+
+function DosClose(Handle: THandle): cardinal; cdecl;
+    external 'DOSCALLS' index 257;
+
+function DosRead(Handle:THandle; var Buffer; Count: cardinal;
+                                      var ActCount: cardinal): cardinal; cdecl;
+    external 'DOSCALLS' index 281;
+
+function DosWrite(Handle: THandle; Buffer: pointer; Count: cardinal;
+                                      var ActCount: cardinal): cardinal; cdecl;
+    external 'DOSCALLS' index 282;
+
+procedure DosSleep (MSec: cardinal); cdecl; external 'DOSCALLS' index 229;
+
+function DosCreateQueue (var Handle: THandle; Priority:longint;
+                        Name: PChar): cardinal; cdecl;
+                                                  external 'QUECALLS' index 16;
+
+function DosReadQueue (Handle: THandle; var ReqBuffer: TRequestData;
+                      var DataLen: cardinal; var DataPtr: pointer;
+                      Element, Wait: cardinal; var Priority: byte;
+                      ASem: THandle): cardinal; cdecl;
+                                                   external 'QUECALLS' index 9;
+
+function DosCloseQueue (Handle: THandle): cardinal; cdecl;
+                                                  external 'QUECALLS' index 11;
+>>>>>>> graemeg/fixes_2_2
 
 {$DEFINE FPC_FEXPAND_UNC} (* UNC paths are supported *)
 {$DEFINE FPC_FEXPAND_DRIVES} (* Full paths begin with drive specification *)
@@ -317,17 +466,27 @@ const
  FindResvdMask = $00003737; {Allowed bits in attribute
                              specification for DosFindFirst call.}
 
+<<<<<<< HEAD
 function FileOpen (const FileName: rawbytestring; Mode: integer): THandle;
+=======
+function FileOpen (const FileName: string; Mode: integer): THandle;
+>>>>>>> graemeg/fixes_2_2
 Var
   SystemFileName: RawByteString;
   Handle: THandle;
   Rc, Action: cardinal;
 begin
+<<<<<<< HEAD
   SystemFileName:=ToSingleByteFileSystemEncodedFileName(FileName);
 (* DenyReadWrite if sharing not specified. *)
   if (Mode and 112 = 0) or (Mode and 112 > 64) then
    Mode := Mode or doDenyRW;
   Rc:=Sys_DosOpenL(PChar (SystemFileName), Handle, Action, 0, 0, 1, Mode, nil);
+=======
+(* DenyNone if sharing not specified. *)
+  if Mode and 112 = 0 then Mode:=Mode or 64;
+  Rc:=Sys_DosOpenL(PChar (FileName), Handle, Action, 0, 0, 1, Mode, nil);
+>>>>>>> graemeg/fixes_2_2
   If Rc=0 then
     FileOpen:=Handle
   else
@@ -338,6 +497,7 @@ begin
    end;
 end;
 
+<<<<<<< HEAD
 function FileCreate (const FileName: RawByteString): THandle;
 begin
   FileCreate := FileCreate (FileName, doDenyRW, 777); (* Sharing to DenyAll *)
@@ -372,12 +532,36 @@ begin
    end;
 End;
 
+=======
+function FileCreate (const FileName: string): THandle;
+Const
+  Mode = ofReadWrite or faCreate or doDenyRW;   (* Sharing to DenyAll *)
+Var
+  Handle: THandle;
+  RC, Action: cardinal;
+Begin
+  RC:=Sys_DosOpenL(PChar (FileName), Handle, Action, 0, 0, $12, Mode, Nil);
+  If RC=0 then
+    FileCreate:=Handle
+  else
+    FileCreate:=feInvalidHandle;
+End;
+
+function FileCreate (const FileName: string; Mode: integer): THandle;
+begin
+ FileCreate := FileCreate(FileName);
+end;
+>>>>>>> graemeg/fixes_2_2
 
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 >>>>>>> origin/cpstrnew
 function FileRead (Handle: THandle; Out Buffer; Count: longint): longint;
+=======
+function FileRead (Handle: THandle; var Buffer; Count: longint): longint;
+>>>>>>> graemeg/fixes_2_2
 Var
   T: cardinal;
   RC: cardinal;
@@ -410,10 +594,16 @@ end;
 function FileSeek (Handle: THandle; FOffset, Origin: longint): longint;
 var
   NPos: int64;
+<<<<<<< HEAD
   RC: cardinal;
 begin
   RC := Sys_DosSetFilePtrL (Handle, FOffset, Origin, NPos);
   if (RC = 0) and (NPos < high (longint)) then
+=======
+begin
+  if (Sys_DosSetFilePtrL (Handle, FOffset, Origin, NPos) = 0)
+                                               and (NPos < high (longint)) then
+>>>>>>> graemeg/fixes_2_2
     FileSeek:= longint (NPos)
   else
    begin
@@ -425,6 +615,7 @@ end;
 function FileSeek (Handle: THandle; FOffset: Int64; Origin: Longint): Int64;
 var
   NPos: int64;
+<<<<<<< HEAD
   RC: cardinal;
 begin
   RC := Sys_DosSetFilePtrL (Handle, FOffset, Origin, NPos);
@@ -440,6 +631,16 @@ end;
 procedure FileClose (Handle: THandle);
 var
   RC: cardinal;
+=======
+begin
+  if Sys_DosSetFilePtrL (Handle, FOffset, Origin, NPos) = 0 then
+    FileSeek:= NPos
+  else
+    FileSeek:=-1;
+end;
+
+procedure FileClose (Handle: THandle);
+>>>>>>> graemeg/fixes_2_2
 begin
   RC := DosClose (Handle);
   if RC <> 0 then
@@ -447,6 +648,7 @@ begin
 end;
 
 function FileTruncate (Handle: THandle; Size: Int64): boolean;
+<<<<<<< HEAD
 var
   RC: cardinal;
 begin
@@ -456,6 +658,11 @@ begin
    FileSeek(Handle, 0, 2)
   else
    OSErrorWatch (RC);
+=======
+begin
+  FileTruncate:=Sys_DosSetFileSizeL(Handle, Size)=0;
+  FileSeek(Handle, 0, 2);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function FileAge (const FileName: RawByteString): longint;

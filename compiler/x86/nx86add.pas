@@ -35,10 +35,15 @@ unit nx86add;
       tx86addnode = class(tcgaddnode)
       protected
         function  getresflags(unsigned : boolean) : tresflags;
+<<<<<<< HEAD
         function  getfpuresflags : tresflags;
         procedure left_must_be_reg(opdef: tdef; opsize:TCGSize;noswap:boolean);
         procedure force_left_and_right_fpureg;
         procedure prepare_x87_locations(out refnode: tnode);
+=======
+        procedure left_must_be_reg(opsize:TCGSize;noswap:boolean);
+        procedure check_left_and_right_fpureg(force_fpureg: boolean);
+>>>>>>> graemeg/fixes_2_2
         procedure emit_op_right_left(op:TAsmOp;opsize:TCgSize);
         procedure emit_generic_code(op:TAsmOp;opsize:TCgSize;unsigned,extra_not,mboverflow:boolean);
 
@@ -238,6 +243,7 @@ unit nx86add;
             end;
           end;
         if (right.location.loc<>LOC_CONSTANT) and
+<<<<<<< HEAD
            (tcgsize2unsigned[right.location.size]<>tcgsize2unsigned[opsize]) then
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -277,12 +283,42 @@ unit nx86add;
         else if (left.location.loc<>LOC_FPUREGISTER) then
           begin
             hlcg.location_force_fpureg(current_asmdata.CurrAsmList,left.location,left.resultdef,false)
+=======
+           (tcgsize2unsigned[right.location.size]<>opsize) then
+          location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
+        if (left.location.loc<>LOC_CONSTANT) and
+           (tcgsize2unsigned[left.location.size]<>opsize) then
+          location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,false);
+       end;
+
+
+    procedure tx86addnode.check_left_and_right_fpureg(force_fpureg: boolean);
+      begin
+        if (right.location.loc<>LOC_FPUREGISTER) then
+         begin
+           if (force_fpureg) then
+             begin
+               location_force_fpureg(current_asmdata.CurrAsmList,right.location,false);
+                if (left.location.loc<>LOC_FPUREGISTER) then
+                  location_force_fpureg(current_asmdata.CurrAsmList,left.location,false)
+                else
+                  { left was on the stack => swap }
+                  toggleflag(nf_swapped);
+             end
+         end
+        { the nominator in st0 }
+        else if (left.location.loc<>LOC_FPUREGISTER) then
+          begin
+            if (force_fpureg) then
+              location_force_fpureg(current_asmdata.CurrAsmList,left.location,false)
+>>>>>>> graemeg/fixes_2_2
           end
         else
           begin
             { fpu operands are always in the wrong order on the stack }
             toggleflag(nf_swapped);
           end;
+<<<<<<< HEAD
       end;
 
 
@@ -341,6 +377,8 @@ unit nx86add;
         else
           InternalError(2013090802);
         end;
+=======
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -470,7 +508,10 @@ unit nx86add;
     procedure tx86addnode.second_addsmallset;
       var
         setbase : aint;
+<<<<<<< HEAD
         opdef  : tdef;
+=======
+>>>>>>> graemeg/fixes_2_2
         opsize : TCGSize;
         op     : TAsmOp;
         extra_not,
@@ -483,8 +524,12 @@ unit nx86add;
         noswap:=false;
         extra_not:=false;
         all_member_optimization:=false;
+<<<<<<< HEAD
         opdef:=resultdef;
         opsize:=int_cgsize(opdef.size);
+=======
+        opsize:=int_cgsize(resultdef.size);
+>>>>>>> graemeg/fixes_2_2
         if (left.resultdef.typ=setdef) then
           setbase:=tsetdef(left.resultdef).setbase
         else
@@ -508,9 +553,15 @@ unit nx86add;
                      opdef:=u32inttype;
                    end;
                  { bts requires both elements to be registers }
+<<<<<<< HEAD
                  hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,opdef,false);
                  hlcg.location_force_reg(current_asmdata.CurrAsmList,right.location,right.resultdef,opdef,true);
                  register_maybe_adjust_setbase(current_asmdata.CurrAsmList,opdef,right.location,setbase);
+=======
+                 location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,false);
+                 location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
+                 register_maybe_adjust_setbase(current_asmdata.CurrAsmList,right.location,setbase);
+>>>>>>> graemeg/fixes_2_2
                  op:=A_BTS;
                  noswap:=true;
                end
@@ -555,14 +606,22 @@ unit nx86add;
                 location_swap(left.location,right.location);
                 toggleflag(nf_swapped);
               end;
+<<<<<<< HEAD
             hlcg.location_force_reg(current_asmdata.currAsmList,right.location,right.resultdef,opdef,false);
+=======
+            location_force_reg(current_asmdata.currAsmList,right.location,opsize,false);
+>>>>>>> graemeg/fixes_2_2
             emit_reg(A_NOT,TCGSize2Opsize[opsize],right.location.register);
             location:=right.location;
           end
         else
           begin
             { left must be a register }
+<<<<<<< HEAD
             left_must_be_reg(opdef,opsize,noswap);
+=======
+            left_must_be_reg(opsize,noswap);
+>>>>>>> graemeg/fixes_2_2
             emit_generic_code(op,opsize,true,extra_not,false);
             location_freetemp(current_asmdata.CurrAsmList,right.location);
 
@@ -991,9 +1050,13 @@ unit nx86add;
 {$endif dummy}
 
         pass_left_right;
+<<<<<<< HEAD
         { fpu operands are always in reversed order on the stack }
         if (left.location.loc=LOC_FPUREGISTER) and (right.location.loc=LOC_FPUREGISTER) then
           toggleflag(nf_swapped);
+=======
+        check_left_and_right_fpureg(false);
+>>>>>>> graemeg/fixes_2_2
 
         if (nf_swapped in flags) then
           { can't use swapleftright if both are on the fpu stack, since then }
@@ -1287,9 +1350,16 @@ unit nx86add;
             internalerror(2003042214);
         end;
 
+<<<<<<< HEAD
         if hasref then
           emit_ref(op,tcgsize2opsize[refnode.location.size],refnode.location.reference)
         else
+=======
+        check_left_and_right_fpureg(true);
+
+        { if we swaped the tree nodes, then use the reverse operator }
+        if nf_swapped in flags then
+>>>>>>> graemeg/fixes_2_2
           begin
             emit_reg_reg(op,S_NO,NR_ST,NR_ST1);
             tcgx86(cg).dec_fpu_stack;
@@ -1313,7 +1383,11 @@ unit nx86add;
           end;
 
         pass_left_right;
+<<<<<<< HEAD
         force_left_and_right_fpureg;
+=======
+        check_left_and_right_fpureg(true);
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef x86_64}
         if current_settings.cputype<cpu_Pentium2 then

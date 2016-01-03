@@ -101,6 +101,11 @@ interface
        end;
 
 
+      TAoutGNUAssembler=class(TGNUAssembler)
+        function sectionname(atype:TAsmSectiontype;const aname:string;aorder:TAsmSectionOrder):string;override;
+       end;
+
+
 implementation
 
     uses
@@ -163,7 +168,11 @@ implementation
       ait_const2str : array[aitconst_128bit..aitconst_darwin_dwarf_delta32] of string[20]=(
         #9'.fixme128'#9,#9'.quad'#9,#9'.long'#9,#9'.short'#9,#9'.byte'#9,
         #9'.sleb128'#9,#9'.uleb128'#9,
+<<<<<<< HEAD
         #9'.rva'#9,#9'.secrel32'#9,#9'.quad'#9,#9'.long'#9
+=======
+        #9'.rva'#9,#9'.secrel32'#9,#9'.indirect_symbol'#9,#9'.quad'#9,#9'.long'#9
+>>>>>>> graemeg/fixes_2_2
       );
 >>>>>>> graemeg/cpstrnew
 
@@ -213,6 +222,7 @@ implementation
           '.text',
           '.data',
 { why doesn't .rodata work? (FK) }
+<<<<<<< HEAD
 { sometimes we have to create a data.rel.ro instead of .rodata, e.g. for  }
 { vtables (and anything else containing relocations), otherwise those are }
 { not relocated properly on e.g. linux/ppc64. g++ generates there for a   }
@@ -220,6 +230,10 @@ implementation
 { .section .data.rel.ro._ZTV6Window,"awG",@progbits,_ZTV6Window,comdat    }
 { TODO: .data.ro not yet working}
 {$if defined(arm) or defined(powerpc)}
+=======
+{$warning TODO .data.ro not yet working}
+{$if defined(arm) or defined(powerpc)} 
+>>>>>>> graemeg/fixes_2_2
           '.rodata',
 {$else arm}
           '.data',
@@ -227,7 +241,11 @@ implementation
 {$if defined(m68k)} { Amiga/m68k GNU AS doesn't seem to like .rodata (KB) }
           '.data',
 {$else}
+<<<<<<< HEAD
           '.rodata',
+=======
+	  '.rodata',
+>>>>>>> graemeg/fixes_2_2
 {$endif}
           '.bss',
           '.threadvar',
@@ -245,6 +263,7 @@ implementation
           '.fpc',
           '.toc',
           '.init',
+<<<<<<< HEAD
           '.fini',
           '.objc_class',
           '.objc_meta_class',
@@ -298,6 +317,9 @@ implementation
 =======
           '.objc_protolist'
 >>>>>>> origin/cpstrnew
+=======
+          '.fini'
+>>>>>>> graemeg/fixes_2_2
         );
         secnames_pic : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
           '.text',
@@ -320,6 +342,7 @@ implementation
           '.fpc',
           '.toc',
           '.init',
+<<<<<<< HEAD
           '.fini',
           '.objc_class',
           '.objc_meta_class',
@@ -373,6 +396,9 @@ implementation
 =======
           '.objc_protolist'
 >>>>>>> origin/cpstrnew
+=======
+          '.fini'
+>>>>>>> graemeg/fixes_2_2
         );
       var
         sep     : string[3];
@@ -399,12 +425,17 @@ implementation
           secname:='.tls';
 
         { go32v2 stub only loads .text and .data sections, and allocates space for .bss.
+<<<<<<< HEAD
           Thus, data which normally goes into .rodata and .rodata_norel sections must
+=======
+          Thus, data which normally goes into .rodata and .rodata_norel sections must 
+>>>>>>> graemeg/fixes_2_2
           end up in .data section }
         if (atype in [sec_rodata,sec_rodata_norel]) and
           (target_info.system=system_i386_go32v2) then
           secname:='.data';
 
+<<<<<<< HEAD
         { section type user gives the user full controll on the section name }
         if atype=sec_user then
           secname:=aname;
@@ -421,6 +452,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
         { For bss we need to set some flags that are target dependent,
           it is easier to disable it for smartlinking. It doesn't take up
           filespace }
@@ -523,6 +556,7 @@ implementation
          system_m68k_amiga: ; { amiga has old GNU AS (2.14), which blews up from .section (KB) }
          system_powerpc_darwin,
          system_i386_darwin,
+<<<<<<< HEAD
          system_i386_iphonesim,
          system_powerpc64_darwin,
          system_x86_64_darwin,
@@ -531,6 +565,10 @@ implementation
          system_x86_64_iphonesim,
          system_powerpc_aix,
          system_powerpc64_aix:
+=======
+         system_powerpc64_darwin,
+         system_x86_64_darwin:
+>>>>>>> graemeg/fixes_2_2
            begin
              if (atype in [sec_stub,sec_objc_data,sec_objc_const,sec_data_coalesced]) then
 <<<<<<< HEAD
@@ -566,6 +604,7 @@ implementation
                 system_powerpc_darwin,
                 system_powerpc64_darwin:
                   if (cs_create_pic in current_settings.moduleswitches) then
+<<<<<<< HEAD
                     writer.AsmWriteln('__TEXT,__picsymbolstub1,symbol_stubs,pure_instructions,32')
                   else
 <<<<<<< HEAD
@@ -586,6 +625,14 @@ implementation
                     writer.AsmWriteln('__TEXT,__symbol_stub4,symbol_stubs,none,12')
                 { darwin/(x86-64/AArch64) uses PC-based GOT addressing, no
                   explicit symbol stubs }
+=======
+                    AsmWriteln('__TEXT,__picsymbolstub1,symbol_stubs,pure_instructions,32')
+                  else
+                    AsmWriteln('__TEXT,__symbol_stub1,symbol_stubs,pure_instructions,16');
+                system_i386_darwin:
+                  AsmWriteln('__IMPORT,__jump_table,symbol_stubs,self_modifying_code+pure_instructions,5');
+                { darwin/x86-64 uses RIP-based GOT addressing }
+>>>>>>> graemeg/fixes_2_2
                 else
                   internalerror(2006031101);
               end;
@@ -611,7 +658,11 @@ implementation
                writer.AsmWrite(','+s);
            end;
         end;
+<<<<<<< HEAD
         writer.AsmLn;
+=======
+        AsmLn;
+>>>>>>> graemeg/fixes_2_2
         LastSecType:=atype;
       end;
 
@@ -798,11 +849,17 @@ implementation
       do_line  : boolean;
 
       sepChar : char;
+<<<<<<< HEAD
       replaceforbidden: boolean;
     begin
       if not assigned(p) then
        exit;
       replaceforbidden:=asminfo^.dollarsign<>'$';
+=======
+    begin
+      if not assigned(p) then
+       exit;
+>>>>>>> graemeg/fixes_2_2
 
       last_align := 2;
       InlineLevel:=0;
@@ -863,6 +920,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                doalign(tai_align_abstract(hp).aligntype,tai_align_abstract(hp).use_op,tai_align_abstract(hp).fillop,last_align,lasthp);
 =======
                doalign(tai_align_abstract(hp).aligntype,tai_align_abstract(hp).use_op,tai_align_abstract(hp).fillop,last_align);
@@ -876,6 +934,31 @@ implementation
 =======
                doalign(tai_align_abstract(hp).aligntype,tai_align_abstract(hp).use_op,tai_align_abstract(hp).fillop,last_align);
 >>>>>>> origin/cpstrnew
+=======
+               if tai_align_abstract(hp).aligntype>1 then
+                 begin
+                   if not(target_info.system in systems_darwin) then
+                     begin
+                       AsmWrite(#9'.balign '+tostr(tai_align_abstract(hp).aligntype));
+                       if tai_align_abstract(hp).use_op then
+                         AsmWrite(','+tostr(tai_align_abstract(hp).fillop))
+{$ifdef x86}
+                       { force NOP as alignment op code }
+                       else if LastSecType=sec_code then
+                         AsmWrite(',0x90');
+{$endif x86}
+                     end
+                   else
+                     begin
+                       { darwin as only supports .align }
+                       if not ispowerof2(tai_align_abstract(hp).aligntype,i) then
+                         internalerror(2003010305);
+                       AsmWrite(#9'.align '+tostr(i));
+                       last_align := i;
+                     end;
+                   AsmLn;
+                 end;
+>>>>>>> graemeg/fixes_2_2
              end;
 
            ait_section :
@@ -906,6 +989,7 @@ implementation
                    }
                    if tai_datablock(hp).is_global then
                      begin
+<<<<<<< HEAD
                        writer.AsmWrite('.globl ');
                        writer.AsmWriteln(tai_datablock(hp).sym.name);
                        writer.AsmWriteln('.data');
@@ -914,6 +998,16 @@ implementation
                        writer.AsmWriteln(', '+tostr(tai_datablock(hp).size)+','+tostr(last_align));
                        if not(LastSecType in [sec_data,sec_none]) then
                          writesection(LastSecType,'',secorder_default,1 shl last_align);
+=======
+                       asmwrite('.globl ');
+                       asmwriteln(tai_datablock(hp).sym.name);
+                       asmwriteln('.data');
+                       asmwrite('.zerofill __DATA, __common, ');
+                       asmwrite(tai_datablock(hp).sym.name);
+                       asmwriteln(', '+tostr(tai_datablock(hp).size)+','+tostr(last_align));
+                       if not(LastSecType in [sec_data,sec_none]) then
+                         writesection(LastSecType,'',secorder_default);
+>>>>>>> graemeg/fixes_2_2
                      end
                    else
                      begin
@@ -1095,6 +1189,7 @@ implementation
                  aitconst_8bit,
                  aitconst_rva_symbol,
                  aitconst_secrel32_symbol,
+<<<<<<< HEAD
                  aitconst_darwin_dwarf_delta32,
                  aitconst_darwin_dwarf_delta64,
                  aitconst_half16bit,
@@ -1112,6 +1207,14 @@ implementation
                      if (target_info.system in systems_aix) and
                         (constdef in [aitconst_128bit,aitconst_64bit,aitconst_32bit,aitconst_16bit]) and
                         not assigned(tai_const(hp).sym) then
+=======
+                 aitconst_indirect_symbol,
+                 aitconst_darwin_dwarf_delta32,
+                 aitconst_darwin_dwarf_delta64:
+                   begin
+                     if (target_info.system in systems_darwin) and
+                        (constdef in [aitconst_uleb128bit,aitconst_sleb128bit]) then
+>>>>>>> graemeg/fixes_2_2
                        begin
                          WriteAixIntConst(tai_const(hp));
                        end
@@ -1128,6 +1231,7 @@ implementation
                        end
                      else
                        begin
+<<<<<<< HEAD
                          if (constdef in ait_unaligned_consts) and
                             (target_info.system in use_ua_sparc_systems) then
                            writer.AsmWrite(ait_ua_sparc_const2str[constdef])
@@ -1143,6 +1247,9 @@ implementation
                            writer.AsmWrite(ait_solaris_const2str[constdef])
                          else
                            writer.AsmWrite(ait_const2str[constdef]);
+=======
+                         AsmWrite(ait_const2str[constdef]);
+>>>>>>> graemeg/fixes_2_2
                          l:=0;
                          t := '';
                          repeat
@@ -1243,8 +1350,20 @@ implementation
 
            ait_string :
              begin
+<<<<<<< HEAD
                pos:=0;
                if not(target_info.system in systems_aix) then
+=======
+               if do_line then
+                AsmWriteLn(target_asm.comment+'value: '+double2str(tai_real_64bit(hp).value));
+               d:=tai_real_64bit(hp).value;
+               { swap the values to correct endian if required }
+               if source_info.endian <> target_info.endian then
+                 swap64bitarray(t64bitarray(d));
+               AsmWrite(#9'.byte'#9);
+{$ifdef arm}
+               if tai_real_64bit(hp).formatoptions=fo_hiloswapped then
+>>>>>>> graemeg/fixes_2_2
                  begin
                    for i:=1 to tai_string(hp).len do
                     begin
@@ -1273,7 +1392,86 @@ implementation
                     end;
                  end
                else
+<<<<<<< HEAD
                  WriteAixStringConst(tai_string(hp));
+=======
+{$endif arm}
+                 begin
+                   for i:=0 to 7 do
+                     begin
+                       if i<>0 then
+                         AsmWrite(',');
+                       AsmWrite(tostr(t64bitarray(d)[i]));
+                     end;
+                 end;
+               AsmLn;
+             end;
+
+           ait_real_32bit :
+             begin
+               if do_line then
+                AsmWriteLn(target_asm.comment+'value: '+single2str(tai_real_32bit(hp).value));
+               sin:=tai_real_32bit(hp).value;
+               { swap the values to correct endian if required }
+               if source_info.endian <> target_info.endian then
+                 swap32bitarray(t32bitarray(sin));
+               AsmWrite(#9'.byte'#9);
+               for i:=0 to 3 do
+                begin
+                  if i<>0 then
+                   AsmWrite(',');
+                  AsmWrite(tostr(t32bitarray(sin)[i]));
+                end;
+               AsmLn;
+             end;
+
+           ait_comp_64bit :
+             begin
+               if do_line then
+                AsmWriteLn(target_asm.comment+'value: '+extended2str(tai_comp_64bit(hp).value));
+               AsmWrite(#9'.byte'#9);
+               co:=comp(tai_comp_64bit(hp).value);
+               { swap the values to correct endian if required }
+               if source_info.endian <> target_info.endian then
+                 swap64bitarray(t64bitarray(co));
+               for i:=0 to 7 do
+                begin
+                  if i<>0 then
+                   AsmWrite(',');
+                  AsmWrite(tostr(t64bitarray(co)[i]));
+                end;
+               AsmLn;
+             end;
+
+           ait_string :
+             begin
+               pos:=0;
+               for i:=1 to tai_string(hp).len do
+                begin
+                  if pos=0 then
+                   begin
+                     AsmWrite(#9'.ascii'#9'"');
+                     pos:=20;
+                   end;
+                  ch:=tai_string(hp).str[i-1];
+                  case ch of
+                     #0, {This can't be done by range, because a bug in FPC}
+                #1..#31,
+             #128..#255 : s:='\'+tostr(ord(ch) shr 6)+tostr((ord(ch) and 63) shr 3)+tostr(ord(ch) and 7);
+                    '"' : s:='\"';
+                    '\' : s:='\\';
+                  else
+                   s:=ch;
+                  end;
+                  AsmWrite(s);
+                  inc(pos,length(s));
+                  if (pos>line_length) or (i=tai_string(hp).len) then
+                   begin
+                     AsmWriteLn('"');
+                     pos:=0;
+                   end;
+                end;
+>>>>>>> graemeg/fixes_2_2
              end;
 
            ait_label :
@@ -1371,12 +1569,21 @@ implementation
                   use_dotted_functions and
                  (tai_symbol(hp).sym.typ=AT_FUNCTION) then
                  begin
+<<<<<<< HEAD
                    writer.AsmWriteLn('.section ".opd", "aw"');
                    writer.AsmWriteLn('.align 3');
                    writer.AsmWriteLn(tai_symbol(hp).sym.name + ':');
                    writer.AsmWriteLn('.quad .' + tai_symbol(hp).sym.name + ', .TOC.@tocbase, 0');
                    writer.AsmWriteLn('.previous');
                    writer.AsmWriteLn('.size ' + tai_symbol(hp).sym.name + ', 24');
+=======
+                   AsmWriteLn('.section ".opd", "aw"');
+                   AsmWriteLn('.align 3');
+                   AsmWriteLn(tai_symbol(hp).sym.name + ':');
+                   AsmWriteLn('.quad .' + tai_symbol(hp).sym.name + ', .TOC.@tocbase, 0');
+                   AsmWriteLn('.previous');
+                   AsmWriteLn('.size ' + tai_symbol(hp).sym.name + ', 24');
+>>>>>>> graemeg/fixes_2_2
                    if (tai_symbol(hp).is_global) then
                      writer.AsmWriteLn('.globl .' + tai_symbol(hp).sym.name);
                    writer.AsmWriteLn('.type .' + tai_symbol(hp).sym.name + ', @function');
@@ -1560,6 +1767,7 @@ implementation
              end;
 
            ait_force_line,
+<<<<<<< HEAD
            ait_function_name :
              begin
 {$ifdef DEBUG_AGGAS}
@@ -1567,6 +1775,9 @@ implementation
                writer.AsmWriteLn('# '+s);
 {$endif DEBUG_AGGAS}
              end;
+=======
+           ait_function_name : ;
+>>>>>>> graemeg/fixes_2_2
 
            ait_cutobject :
              begin
@@ -1590,8 +1801,13 @@ implementation
                      hp:=tai(hp.next);
                    end;
                   if LastSecType<>sec_none then
+<<<<<<< HEAD
                     WriteSection(LastSecType,'',secorder_default,last_align);
                   writer.MarkEmpty;
+=======
+                    WriteSection(LastSecType,'',secorder_default);
+                  AsmStartSize:=AsmSize;
+>>>>>>> graemeg/fixes_2_2
                 end;
              end;
 
@@ -1863,8 +2079,13 @@ implementation
        Comment(V_Debug,'Start writing gas-styled assembler output for '+current_module.mainsource);
 {$endif}
 
+<<<<<<< HEAD
       if current_module.mainsource<>'' then
         n:=ExtractFileName(current_module.mainsource)
+=======
+      if assigned(current_module.mainsource) then
+        n:=ExtractFileName(current_module.mainsource^)
+>>>>>>> graemeg/fixes_2_2
       else
         n:=InputFileName;
 
@@ -1888,6 +2109,7 @@ implementation
             end;
         end;
 
+<<<<<<< HEAD
       { add weak symbol markers }
       for i:=0 to current_asmdata.asmsymboldict.count-1 do
         if (tasmsymbol(current_asmdata.asmsymboldict[i]).bind=AB_WEAK_EXTERNAL) then
@@ -1918,6 +2140,11 @@ implementation
         begin
           writer.AsmWriteLn('.section .note.GNU-stack,"",%progbits');
         end;
+=======
+      if create_smartlink_sections and
+         (target_info.system in systems_darwin) then
+        AsmWriteLn(#9'.subsections_via_symbols');
+>>>>>>> graemeg/fixes_2_2
 
       writer.AsmLn;
       WriteExtraFooter;
@@ -1991,6 +2218,7 @@ implementation
                     exit;
                   end;
               end;
+<<<<<<< HEAD
             sec_data_nonlazy:
               begin
                 result:='.section __DATA, __nl_symbol_ptr,non_lazy_symbol_pointers';
@@ -2166,6 +2394,8 @@ implementation
                 result:='.section __DATA, __objc_protolist, coalesced, no_dead_strip';
                 exit;
               end;
+=======
+>>>>>>> graemeg/fixes_2_2
           end;
         result := inherited sectionname(atype,aname,aorder);
       end;
@@ -2275,6 +2505,53 @@ implementation
 =======
          sec_none (* sec_objc_protlist *)
 >>>>>>> origin/cpstrnew
+        );
+      begin
+        Result := inherited SectionName (SecXTable [AType], AName, AOrder);
+      end;
+
+
+{****************************************************************************}
+{                       a.out/GNU Assembler writer                           }
+{****************************************************************************}
+
+    function TAoutGNUAssembler.sectionname(atype:TAsmSectiontype;const aname:string;aorder:TAsmSectionOrder):string;
+    const
+(* Translation table - replace unsupported section types with basic ones. *)
+        SecXTable: array[TAsmSectionType] of TAsmSectionType = (
+         sec_none,
+         sec_code,
+         sec_data,
+         sec_data (* sec_rodata *),
+         sec_data (* sec_rodata_norel *),
+         sec_bss,
+         sec_data (* sec_threadvar *),
+         { used for wince exception handling }
+         sec_code (* sec_pdata *),
+         { used for darwin import stubs }
+         sec_code (* sec_stub *),
+         { stabs }
+         sec_stab,sec_stabstr,
+         { win32 }
+         sec_data (* sec_idata2 *),
+         sec_data (* sec_idata4 *),
+         sec_data (* sec_idata5 *),
+         sec_data (* sec_idata6 *),
+         sec_data (* sec_idata7 *),
+         sec_data (* sec_edata *),
+         { C++ exception handling unwinding (uses dwarf) }
+         sec_eh_frame,
+         { dwarf }
+         sec_debug_frame,
+         sec_debug_info,
+         sec_debug_line,
+         sec_debug_abbrev,
+         { ELF resources (+ references to stabs debug information sections) }
+         sec_code (* sec_fpc *),
+         { Table of contents section }
+         sec_code (* sec_toc *),
+         sec_code (* sec_init *),
+         sec_code (* sec_fini *)
         );
       begin
         Result := inherited SectionName (SecXTable [AType], AName, AOrder);

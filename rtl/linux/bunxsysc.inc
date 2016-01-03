@@ -561,6 +561,7 @@ begin
 end;
 {$endif}
 
+<<<<<<< HEAD
 Function fpLstat(path:pchar;Info:pstat):cint;
 {
   Get all information on a link (the link itself), and return it in info.
@@ -580,6 +581,8 @@ begin
 {$endif}
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 function fpNice(N:cint):cint;
 {

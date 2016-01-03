@@ -14,8 +14,7 @@
   limitations under the License.
 
   ImageMagick Application Programming Interface declarations.
-}
-{
+  
   Converted from c by: Felipe Monteiro de Carvalho Dez/2005
 
 	Bug-fixed by Ángel Eduardo García Hernández
@@ -31,60 +30,15 @@ unit ImageMagick;
 
 interface
 
-uses SysUtils, ctypes;
+uses SysUtils;
 
-{$z4}
-
-// Fix to compile in older FPC versions
-{$ifdef VER2_2}
-type
-  Pcsize_t = ^size_t;
-{$endif}
-
-// Fix to compile in older FPC versions
-{$ifdef VER2_2}
-type
-  Pcsize_t = ^size_t;
-{$endif}
-
-// Fix to compile in older FPC versions
-{$ifdef VER2_2}
-type
-  Pcsize_t = ^size_t;
-{$endif}
-
-// Fix to compile in older FPC versions
-{$ifdef VER2_2}
-type
-  Pcsize_t = ^size_t;
-{$endif}
-
-// Fix to compile in older FPC versions
-{$ifdef VER2_2}
-type
-  Pcsize_t = ^size_t;
-{$endif}
+{$MINENUMSIZE 1}
 
 const
-<<<<<<< HEAD
-{$ifdef Windows}
-=======
 {$ifdef Win32}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-  MagickExport = 'CORE_RL_magick_.dll';
   WandExport = 'CORE_RL_wand_.dll';
 {$else}
-  MagickExport = 'libMagickCore';
-  WandExport = 'libMagickWand'; // Previous ImageMagick versions used 'libWand'
+  WandExport = 'libWand';
 {$endif}
 
 {# include "magick/methods.h"
@@ -96,7 +50,7 @@ const
 {#$include annotate.inc}
 {#$include attribute.inc}
 {#$include blob.inc}
-{$include cache.inc}
+{#$include cache.inc}
 {$include cache_view.inc}
 {#include "magick/coder.h"
 #include "magick/client.h"

@@ -16,7 +16,11 @@
 **
 ** You should have received a copy of the GNU Lesser General Public License
 ** along with this program; if not, write to the Free Software
+<<<<<<< HEAD
 ** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+=======
+** Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> graemeg/fixes_2_2
 
 ** sndfile.h -- system-wide definitions
 **
@@ -255,7 +259,10 @@ type
   TSF_INFO = record
                frames     : Tsf_count_t; // Used to be called samples.  Changed to avoid confusion.
                samplerate : ctypes.cint;
+<<<<<<< HEAD
                channels   : ctypes.cint;
+=======
+>>>>>>> graemeg/fixes_2_2
                format     : ctypes.cint;
                sections   : ctypes.cint;
                seekable   : ctypes.cint;
@@ -277,7 +284,11 @@ type
   TSF_FORMAT_INFO = record
                       format    : ctypes.cint;
                       name      : ctypes.pcchar;
+<<<<<<< HEAD
                       extension : ctypes.pcchar;
+=======
+                      extention : ctypes.pcchar;
+>>>>>>> graemeg/fixes_2_2
                     end;
 
 {
@@ -410,7 +421,11 @@ type
 ** to sf_perror () or sf_error_str ().
 ** All calls to sf_open() should be matched with a call to sf_close().
 }
+<<<<<<< HEAD
 function sf_open (path : pChar; mode : ctypes.cint; sfinfo : PSF_INFO) : PSNDFILE; cdecl;
+=======
+function sf_open (path : ctypes.pcchar; mode : ctypes.cint; sfinfo : PSF_INFO) : PSNDFILE; cdecl;
+>>>>>>> graemeg/fixes_2_2
   external sndfilelib  name 'sf_open';
 
 {

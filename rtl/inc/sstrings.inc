@@ -134,8 +134,13 @@ begin
   if (Length(SubStr)>0) and (Offset>0) and (Offset<=Length(S)) then
    begin
      MaxLen:=sizeint(Length(s))-Length(SubStr);
+<<<<<<< HEAD
      i:=Offset-1;
      pc:=@s[Offset];
+=======
+     i:=0;
+     pc:=@s[1];
+>>>>>>> graemeg/fixes_2_2
      while (i<=MaxLen) do
       begin
         inc(i);
@@ -386,11 +391,35 @@ end;
 {$endif FPC_HAS_QWORD_BIN_SHORTSTR}
 
 
+<<<<<<< HEAD
 {$ifndef FPC_HAS_HEXSTR_POINTER_SHORTSTR}
 {$define FPC_HAS_HEXSTR_POINTER_SHORTSTR}
 function hexstr(val : pointer) : shortstring;
 var
   i : ObjpasInt;
+=======
+Function  hexStr(Val:qword;cnt:byte):shortstring;
+begin
+  hexStr:=hexStr(int64(Val),cnt);
+end;
+
+
+Function  OctStr(Val:qword;cnt:byte):shortstring;
+begin
+  OctStr:=OctStr(int64(Val),cnt);
+end;
+
+
+Function  binStr(Val:qword;cnt:byte):shortstring;
+begin
+  binStr:=binStr(int64(Val),cnt);
+end;
+
+
+function hexstr(val : pointer) : shortstring;
+var
+  i : longint;
+>>>>>>> graemeg/fixes_2_2
   v : ptruint;
 begin
   v:=ptruint(val);
@@ -434,15 +463,25 @@ end;
 
 {$ifndef CPU64}
 
+<<<<<<< HEAD
 procedure fpc_shortstr_qword(v : qword;len : SizeInt;out s : shortstring);[public,alias:'FPC_SHORTSTR_QWORD']; compilerproc;
 begin
   int_str_unsigned(v,s);
+=======
+procedure fpc_shortstr_qword(v : qword;len : longint;out s : shortstring);[public,alias:'FPC_SHORTSTR_QWORD']; compilerproc;
+begin
+  int_str(v,s);
+>>>>>>> graemeg/fixes_2_2
   if length(s)<len then
     s:=space(len-length(s))+s;
 end;
 
 
+<<<<<<< HEAD
 procedure fpc_shortstr_int64(v : int64;len : SizeInt;out s : shortstring);[public,alias:'FPC_SHORTSTR_INT64'];  compilerproc;
+=======
+procedure fpc_shortstr_int64(v : int64;len : longint;out s : shortstring);[public,alias:'FPC_SHORTSTR_INT64'];  compilerproc;
+>>>>>>> graemeg/fixes_2_2
 begin
   int_str(v,s);
   if length(s)<len then
@@ -497,7 +536,10 @@ end;
 {$endif FLOAT_ASCII_FALLBACK}
 {$endif}
 
+<<<<<<< HEAD
 {$ifndef FPUNONE}
+=======
+>>>>>>> graemeg/fixes_2_2
 procedure fpc_shortstr_float(d : ValReal;len,fr,rt : SizeInt;out s : shortstring);[public,alias:'FPC_SHORTSTR_FLOAT']; compilerproc;
 begin
   str_real(len,fr,d,treal_type(rt),s);
@@ -803,7 +845,10 @@ procedure fpc_shortstr_bool(b : boolean;len:sizeint;out s:shortstring);external 
 
 
 procedure fpc_shortstr_currency(c : currency; len,f : SizeInt; out s : shortstring);[public,alias:'FPC_SHORTSTR_CURRENCY']; compilerproc;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
 const
   MinLen = 8; { Minimal string length in scientific format }
 var
@@ -910,11 +955,16 @@ begin
               k:=1
             else
               k:=0;
+<<<<<<< HEAD
             end;
+=======
+            end; 
+>>>>>>> graemeg/fixes_2_2
           Inc(i);
           if i>tlen  then
             break;
         end;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
       If (k=1) and (buf[i-1]='0') then
 	    begin
@@ -953,6 +1003,10 @@ begin
 			  inc(tlen);
 			end;
 		end;		
+=======
+      If (k=1) and (buf[i-1]='0') then
+        buf[i]:=chr(Ord(buf[i])+1);
+>>>>>>> graemeg/fixes_2_2
     end;
   { preparing result string }
   if reslen<len then
@@ -1142,6 +1196,7 @@ var
   ss : shortstring;
   maxlen : SizeInt;
 begin
+<<<<<<< HEAD
   int_str_unsigned(v,ss);
   if length(ss)<len then
     ss:=space(len-length(ss))+ss;
@@ -1150,11 +1205,65 @@ begin
   else
     maxlen:=high(a)+1;
   fpc_shortstr_chararray_intern_charmove(ss,a,maxlen);
+=======
+  code:=1;
+  negativ:=false;
+  base:=10;
+  if length(s)=0 then 
+    begin
+      InitVal:=code;
+      Exit;
+    end;
+{Skip Spaces and Tab}
+  while (code<=length(s)) and (s[code] in [' ',#9]) do
+   inc(code);
+{Sign}
+  case s[code] of
+   '-' : begin
+           negativ:=true;
+           inc(code);
+         end;
+   '+' : inc(code);
+  end;
+{Base}
+  if code<=length(s) then
+   begin
+     case s[code] of
+      '$',
+      'X',
+      'x' : begin
+              base:=16;
+              inc(code);
+            end;
+      '%' : begin
+              base:=2;
+              inc(code);
+            end;
+      '&' : begin
+              Base:=8;
+              inc(code);
+            end;
+      '0' : begin
+              if (code < length(s)) and (s[code+1] in ['x', 'X']) then
+              begin
+                inc(code, 2);
+                base := 16;
+              end;
+            end;
+     end;
+  end;
+  { strip leading zeros }
+  while ((code < length(s)) and (s[code] = '0')) do begin
+    inc(code);
+  end;
+  InitVal:=code;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
 procedure fpc_chararray_smallint(v : smallint;len : SizeInt;out a : array of char);compilerproc;
 var
+<<<<<<< HEAD
   ss : shortstring;
   maxlen : SizeInt;
 begin
@@ -1382,6 +1491,12 @@ var
   base,u : byte;
   negative : boolean;
 begin
+=======
+  temp, prev, maxPrevValue, maxNewValue: ValUInt;
+  base,u : byte;
+  negative : boolean;
+begin
+>>>>>>> graemeg/fixes_2_2
   fpc_Val_SInt_ShortStr := 0;
   Temp:=0;
   Code:=InitVal(s,negative,base);
@@ -1445,6 +1560,10 @@ Function int_Val_SInt_ShortStr(DestSize: SizeInt; Const S: ShortString; out Code
 
 Function fpc_Val_UInt_Shortstr(Const S: ShortString; out Code: ValSInt): ValUInt; [public, alias:'FPC_VAL_UINT_SHORTSTR']; compilerproc;
 var
+<<<<<<< HEAD
+=======
+  prev : ValUInt;
+>>>>>>> graemeg/fixes_2_2
   base,u : byte;
   negative : boolean;
 begin
@@ -1485,8 +1604,12 @@ end;
 
   Function fpc_val_int64_shortstr(Const S: ShortString; out Code: ValSInt): Int64; [public, alias:'FPC_VAL_INT64_SHORTSTR']; compilerproc;
 
+<<<<<<< HEAD
   var  u : sizeuint;
        temp, prev, maxprevvalue, maxnewvalue : qword;
+=======
+  var  u, temp, prev, maxprevvalue, maxnewvalue : qword;
+>>>>>>> graemeg/fixes_2_2
        base : byte;
        negative : boolean;
 
@@ -1546,7 +1669,11 @@ end;
 
   Function fpc_val_qword_shortstr(Const S: ShortString; out Code: ValSInt): QWord; [public, alias:'FPC_VAL_QWORD_SHORTSTR']; compilerproc;
 
+<<<<<<< HEAD
   var  u : sizeuint;
+=======
+  var  u, prev: QWord;
+>>>>>>> graemeg/fixes_2_2
        base : byte;
        negative : boolean;
 
@@ -2299,11 +2426,14 @@ function fpc_val_enum_shortstr(str2ordindex:pointer;const s:shortstring;out code
 {$endif FPC_STR_ENUM_INTERN}
 
 function fpc_Val_Currency_ShortStr(const s : shortstring; out Code : ValSInt): currency; [public, alias:'FPC_VAL_CURRENCY_SHORTSTR']; compilerproc;
+<<<<<<< HEAD
 {$ifdef EXCLUDE_COMPLEX_PROCS}
 begin
   runerror(217);
 end;
 {$else EXCLUDE_COMPLEX_PROCS}
+=======
+>>>>>>> graemeg/fixes_2_2
 const
   MaxInt64 : Int64  = $7FFFFFFFFFFFFFFF;
   Int64Edge : Int64 = ($7FFFFFFFFFFFFFFF - 10) div 10;
@@ -2492,5 +2622,43 @@ begin
     ShortCompareText := L1 - L2;
 end;
 {$endif FPC_HAS_COMPARETEXT_SHORTSTR}
+
+
+function ShortCompareText(const S1, S2: shortstring): SizeInt;
+var
+  c1, c2: Byte;
+  i: Integer;
+  L1, L2, Count: SizeInt;
+  P1, P2: PChar;
+begin
+  L1 := Length(S1);
+  L2 := Length(S2);
+  if L1 > L2 then
+    Count := L2
+  else
+    Count := L1;
+  i := 0;
+  P1 := @S1[1];
+  P2 := @S2[1];
+  while i < count do
+  begin
+    c1 := byte(p1^);
+    c2 := byte(p2^);
+    if c1 <> c2 then
+    begin
+      if c1 in [97..122] then
+        Dec(c1, 32);
+      if c2 in [97..122] then
+        Dec(c2, 32);
+      if c1 <> c2 then
+        Break;
+    end;
+    Inc(P1); Inc(P2); Inc(I);
+  end;
+  if i < count then
+    ShortCompareText := c1 - c2
+  else
+    ShortCompareText := L1 - L2;
+end;
 
 

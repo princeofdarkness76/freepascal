@@ -133,7 +133,11 @@ type
 >>>>>>> origin/cpstrnew
 
   TPasMemberVisibilities = set of TPasMemberVisibility;
+<<<<<<< HEAD
   TPasMemberHint = (hDeprecated,hLibrary,hPlatform,hExperimental,hUnimplemented);
+=======
+  TPasMemberHint = (hDeprecated,hLibrary,hPlatform);
+>>>>>>> graemeg/fixes_2_2
   TPasMemberHints = set of TPasMemberHint; 
 
   TPTreeElement = class of TPasElement;
@@ -152,6 +156,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FHintMessage : String;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -163,6 +168,8 @@ type
 >>>>>>> origin/cpstrnew
   protected
     procedure ProcessHints(const ASemiColonPrefix: boolean; var AResult: string); virtual;
+=======
+>>>>>>> graemeg/fixes_2_2
   public
     SourceFilename: string;
     SourceLinenumber: Integer;
@@ -179,11 +186,15 @@ type
     function ElementTypeName: string; virtual;
     Function HintsString : String;
     function GetDeclaration(full : Boolean) : string; virtual;
+<<<<<<< HEAD
     procedure Accept(Visitor: TPassTreeVisitor); override;
+=======
+>>>>>>> graemeg/fixes_2_2
     property RefCount: LongWord read FRefCount;
     property Name: string read FName write FName;
     property Parent: TPasElement read FParent;
     Property Hints : TPasMemberHints Read FHints Write FHints;
+<<<<<<< HEAD
     Property CustomData : TObject Read FData Write FData;
     Property HintMessage : String Read FHintMessage Write FHintMessage;
     Property DocComment : String Read FDocComment Write FDocComment;
@@ -208,6 +219,20 @@ type
     Kind      : TPasExprKind;
     OpCode    : TexprOpcode;
     constructor Create(AParent : TPasElement; AKind: TPasExprKind; AOpCode: TexprOpcode); virtual; overload;
+=======
+  end;
+
+  TPasSection = class(TPasElement)
+  public
+    constructor Create(const AName: string; AParent: TPasElement); override;
+    destructor Destroy; override;
+    function ElementTypeName: string; override;
+    procedure AddUnitToUsesList(const AUnitName: string);
+  public
+    UsesList: TList;            // TPasUnresolvedTypeRef or TPasModule elements
+    Declarations, ResStrings, Types, Consts, Classes,
+    Functions, Variables, Properties: TList;
+>>>>>>> graemeg/fixes_2_2
   end;
 
   TUnaryExpr = class(TPasExpr)
@@ -215,6 +240,14 @@ type
     constructor Create(AParent : TPasElement; AOperand: TPasExpr; AOpCode: TExprOpCode); overload;
     function GetDeclaration(full : Boolean) : string; override;
     destructor Destroy; override;
+<<<<<<< HEAD
+=======
+    function ElementTypeName: string; override;
+    function GetDeclaration(full : boolean) : string; override;
+  public
+    InterfaceSection, ImplementationSection: TPasSection;
+    PackageName: string;
+>>>>>>> graemeg/fixes_2_2
   end;
 
   { TBinaryExpr }
@@ -226,12 +259,26 @@ type
     constructor CreateRange(AParent : TPasElement; xleft, xright: TPasExpr); overload;
     function GetDeclaration(full : Boolean) : string; override;
     destructor Destroy; override;
+<<<<<<< HEAD
   end;
 
   TPrimitiveExpr = class(TPasExpr)
     Value     : AnsiString;
     constructor Create(AParent : TPasElement; AKind: TPasExprKind; const AValue : Ansistring); overload;
     function GetDeclaration(full : Boolean) : string; override;
+=======
+    function ElementTypeName: string; override;
+  public
+    Modules: TList;     // List of TPasModule objects
+  end;
+
+  TPasResString = class(TPasElement)
+  public
+    function ElementTypeName: string; override;
+    function GetDeclaration(full : Boolean) : string; Override;
+  public
+    Value: string;
+>>>>>>> graemeg/fixes_2_2
   end;
   
   TBoolConstExpr = class(TPasExpr)
@@ -240,6 +287,7 @@ type
     function GetDeclaration(full : Boolean) : string; override;
   end;
 
+<<<<<<< HEAD
   { TNilExpr }
 
   TNilExpr = class(TPasExpr)
@@ -253,6 +301,24 @@ type
   Public
     constructor Create(AParent : TPasElement); overload;
     function GetDeclaration(full : Boolean) : string; override;
+=======
+  TPasPointerType = class(TPasType)
+  public
+    destructor Destroy; override;
+    function ElementTypeName: string; override;
+    function GetDeclaration(full : Boolean): string; override;
+  public
+    DestType: TPasType;
+  end;
+
+  TPasAliasType = class(TPasType)
+  public
+    destructor Destroy; override;
+    function ElementTypeName: string; override;
+    function GetDeclaration(full : Boolean): string; override;
+  public
+    DestType: TPasType;
+>>>>>>> graemeg/fixes_2_2
   end;
 
   { TSelfExpr }
@@ -276,17 +342,35 @@ type
 
   { TRecordValues }
 
+<<<<<<< HEAD
   TRecordValuesItem = record
     Name      : AnsiString;
     ValueExp  : TPasExpr;
+=======
+  TPasRangeType = class(TPasType)
+  public
+    function ElementTypeName: string; override;
+    function GetDeclaration(full : boolean) : string; override;
+  public
+    RangeStart, RangeEnd: string;
+>>>>>>> graemeg/fixes_2_2
   end;
 
   TRecordValues = class(TPasExpr)
     Fields    : array of TRecordValuesItem;
     constructor Create(AParent : TPasElement); overload;
     destructor Destroy; override;
+<<<<<<< HEAD
     procedure AddField(const AName: AnsiString; Value: TPasExpr);
     function GetDeclaration(full : Boolean) : string; override;
+=======
+    function ElementTypeName: string; override;
+    function GetDeclaration(full : boolean) : string; override;
+  public
+    IndexRange : string;
+    IsPacked : Boolean;          // 12/04/04 - Dave - Added
+    ElType: TPasType;
+>>>>>>> graemeg/fixes_2_2
   end;
 
   { TArrayValues }
@@ -295,6 +379,7 @@ type
     Values    : array of TPasExpr;
     constructor Create(AParent : TPasElement); overload;
     destructor Destroy; override;
+<<<<<<< HEAD
     procedure AddValues(AValue: TPasExpr);
     function GetDeclaration(full : Boolean) : string; override;
   end;
@@ -320,6 +405,21 @@ type
     Kind      : TPasExprKind;
     OpCode    : TexprOpcode;
     constructor Create(AParent : TPasElement; AKind: TPasExprKind; AOpCode: TexprOpcode); virtual; overload;
+=======
+    function ElementTypeName: string; override;
+    function GetDeclaration(full : boolean) : string; override;
+  public
+    ElType: TPasType;
+  end;
+
+  TPasEnumValue = class(TPasElement)
+  public
+    function ElementTypeName: string; override;
+  public
+    IsValueUsed: Boolean;
+    Value: Integer;
+    AssignedValue : string;
+>>>>>>> graemeg/fixes_2_2
   end;
 
   TUnaryExpr = class(TPasExpr)
@@ -327,6 +427,14 @@ type
     constructor Create(AParent : TPasElement; AOperand: TPasExpr; AOpCode: TExprOpCode); overload;
     function GetDeclaration(full : Boolean) : string; override;
     destructor Destroy; override;
+<<<<<<< HEAD
+=======
+     function ElementTypeName: string; override;
+    function GetDeclaration(full : boolean) : string; override;
+    Procedure GetEnumNames(Names : TStrings);
+  public
+    Values: TList;      // List of TPasEnumValue objects
+>>>>>>> graemeg/fixes_2_2
   end;
 
   { TBinaryExpr }
@@ -338,6 +446,13 @@ type
     constructor CreateRange(AParent : TPasElement; xleft, xright: TPasExpr); overload;
     function GetDeclaration(full : Boolean) : string; override;
     destructor Destroy; override;
+<<<<<<< HEAD
+=======
+    function ElementTypeName: string; override;
+    function GetDeclaration(full : boolean) : string; override;
+  public
+    EnumType: TPasType;
+>>>>>>> graemeg/fixes_2_2
   end;
 
   TPrimitiveExpr = class(TPasExpr)
@@ -352,6 +467,7 @@ type
     function GetDeclaration(full : Boolean) : string; override;
   end;
 
+<<<<<<< HEAD
   { TNilExpr }
 
   TNilExpr = class(TPasExpr)
@@ -364,6 +480,30 @@ type
   TInheritedExpr = class(TPasExpr)
     constructor Create(AParent : TPasElement); overload;
     function GetDeclaration(full : Boolean) : string; override;
+=======
+  TPasVariant = class(TPasElement)
+  public
+    constructor Create(const AName: string; AParent: TPasElement); override;
+    destructor Destroy; override;
+  public
+    Values: TStringList;
+    Members: TPasRecordType;
+  end;
+
+  TPasRecordType = class(TPasType)
+  public
+    constructor Create(const AName: string; AParent: TPasElement); override;
+    destructor Destroy; override;
+    function ElementTypeName: string; override;
+    function GetDeclaration(full : boolean) : string; override;
+  public
+    IsPacked: Boolean;
+    IsBitPacked : Boolean;
+    Members: TList;     // array of TPasVariable elements
+    VariantName: string;
+    VariantType: TPasType;
+    Variants: TList;	// array of TPasVariant elements, may be nil!
+>>>>>>> graemeg/fixes_2_2
   end;
 
   { TSelfExpr }
@@ -382,22 +522,56 @@ type
     constructor Create(AParent : TPasElement; AKind: TPasExprKind); overload;
     function GetDeclaration(full : Boolean) : string; override;
     destructor Destroy; override;
+<<<<<<< HEAD
     procedure AddParam(xp: TPasExpr);
+=======
+    function ElementTypeName: string; override;
+  public
+    ObjKind: TPasObjKind;
+    AncestorType: TPasType;     // TPasClassType or TPasUnresolvedTypeRef
+    IsPacked: Boolean;        // 12/04/04 - Dave - Added
+    IsForward : Boolean;
+    Members: TList;     // array of TPasElement objects
+    InterfaceGUID : string; // 15/06/07 - Inoussa
+>>>>>>> graemeg/fixes_2_2
   end;
 
   { TRecordValues }
 
+<<<<<<< HEAD
   TRecordValuesItem = record
     Name      : AnsiString;
     ValueExp  : TPasExpr;
+=======
+  TPasArgument = class(TPasElement)
+  public
+    destructor Destroy; override;
+    function ElementTypeName: string; override;
+    function GetDeclaration(full : boolean) : string; override;
+  public
+    Access: TArgumentAccess;
+    ArgType: TPasType;
+    Value: string;
+>>>>>>> graemeg/fixes_2_2
   end;
 
   TRecordValues = class(TPasExpr)
     Fields    : array of TRecordValuesItem;
     constructor Create(AParent : TPasElement); overload;
     destructor Destroy; override;
+<<<<<<< HEAD
     procedure AddField(const AName: AnsiString; Value: TPasExpr);
     function GetDeclaration(full : Boolean) : string; override;
+=======
+    class function TypeName: string; virtual;
+    function ElementTypeName: string; override;
+    function GetDeclaration(full : boolean) : string; override;
+    procedure GetArguments(List : TStrings);
+    function CreateArgument(const AName, AUnresolvedTypeName: string):TPasArgument;
+  public
+    IsOfObject: Boolean;
+    Args: TList;        // List of TPasArgument objects
+>>>>>>> graemeg/fixes_2_2
   end;
 
 <<<<<<< HEAD
@@ -428,6 +602,12 @@ type
     constructor Create(AParent : TPasElement; AOperand: TPasExpr; AOpCode: TExprOpCode); overload;
     function GetDeclaration(full : Boolean) : string; override;
     destructor Destroy; override;
+<<<<<<< HEAD
+=======
+    function ElementTypeName : string; override;
+  public
+    ResultType: TPasType;
+>>>>>>> graemeg/fixes_2_2
   end;
 
   { TBinaryExpr }
@@ -439,6 +619,141 @@ type
     constructor CreateRange(AParent : TPasElement; xleft, xright: TPasExpr); overload;
     function GetDeclaration(full : Boolean) : string; override;
     destructor Destroy; override;
+<<<<<<< HEAD
+=======
+    class function TypeName: string; override;
+    function ElementTypeName: string; override;
+    function GetDeclaration(Full : boolean) : string; override;
+  public
+    ResultEl: TPasResultElement;
+>>>>>>> graemeg/fixes_2_2
+  end;
+
+  TPrimitiveExpr = class(TPasExpr)
+    Value     : AnsiString;
+    constructor Create(AParent : TPasElement; AKind: TPasExprKind; const AValue : Ansistring); overload;
+    function GetDeclaration(full : Boolean) : string; override;
+  end;
+  
+  TBoolConstExpr = class(TPasExpr)
+    Value     : Boolean;
+    constructor Create(AParent : TPasElement; AKind: TPasExprKind; const ABoolValue : Boolean); overload;
+    function GetDeclaration(full : Boolean) : string; override;
+  end;
+
+  { TNilExpr }
+
+  TNilExpr = class(TPasExpr)
+    constructor Create(AParent : TPasElement); overload;
+    function GetDeclaration(full : Boolean) : string; override;
+  end;
+
+<<<<<<< HEAD
+  { TInheritedExpr }
+
+  TInheritedExpr = class(TPasExpr)
+    constructor Create(AParent : TPasElement); overload;
+    function GetDeclaration(full : Boolean) : string; override;
+=======
+  TPasVariable = class(TPasElement)
+  public
+    destructor Destroy; override;
+    function ElementTypeName: string; override;
+    function GetDeclaration(full : boolean) : string; override;
+  public
+    VarType: TPasType;
+    Value: string;
+    Modifiers : string;
+    AbsoluteLocation : String;
+>>>>>>> graemeg/fixes_2_2
+  end;
+
+  { TSelfExpr }
+
+  TSelfExpr = class(TPasExpr)
+    constructor Create(AParent : TPasElement); overload;
+    function GetDeclaration(full : Boolean) : string; override;
+  end;
+
+  { TParamsExpr }
+
+  TParamsExpr = class(TPasExpr)
+    Value     : TPasExpr;
+    Params    : array of TPasExpr;
+    {pekArray, pekFuncCall, pekSet}
+    constructor Create(AParent : TPasElement; AKind: TPasExprKind); overload;
+    function GetDeclaration(full : Boolean) : string; override;
+    destructor Destroy; override;
+<<<<<<< HEAD
+    procedure AddParam(xp: TPasExpr);
+=======
+    function ElementTypeName: string; override;
+    function GetDeclaration(full : boolean) : string; override;
+  public
+    Args: TList;        // List of TPasArgument objects
+    IndexValue, ReadAccessorName, WriteAccessorName,ImplementsName,
+      StoredAccessorName, DefaultValue: string;
+    IsDefault, IsNodefault: Boolean;
+>>>>>>> graemeg/fixes_2_2
+  end;
+
+<<<<<<< HEAD
+=======
+  TPasExprKind = (pekIdent, pekNumber, pekString, pekSet, pekNil, pekBoolConst, pekRange,
+     pekUnary, pekBinary, pekFuncParams, pekArrayParams, pekListOfExp, pekInherited, pekSelf);
+
+  TExprOpCode = (eopNone,
+                 eopAdd,eopSubtract,eopMultiply,eopDivide, eopDiv,eopMod, eopPower,// arithmetic
+                 eopShr,eopSHl, // bit operations
+                 eopNot,eopAnd,eopOr,eopXor, // logical/bit
+                 eopEqual, eopNotEqual,  // Logical
+                 eopLessThan,eopGreaterThan, eopLessthanEqual,eopGreaterThanEqual, // ordering
+                 eopIn,eopIs,eopAs, eopSymmetricaldifference, // Specials
+                 eopAddress, eopDeref, // Pointers
+                 eopSubIdent); // SomeRec.A, A is subIdent of SomeRec
+
+  { TPasExpr }
+
+  TPasExpr = class(TPasElement)
+    Kind      : TPasExprKind;
+    OpCode    : TexprOpcode;
+    constructor Create(AParent : TPasElement; AKind: TPasExprKind; AOpCode: TexprOpcode); virtual; overload;
+  end;
+
+  TUnaryExpr = class(TPasExpr)
+    Operand   : TPasExpr;
+    constructor Create(AParent : TPasElement; AOperand: TPasExpr; AOpCode: TExprOpCode); overload;
+    function GetDeclaration(full : Boolean) : string; override;
+    destructor Destroy; override;
+<<<<<<< HEAD
+=======
+    function ElementTypeName: string; override;
+    function TypeName: string; override;
+  public
+    Overloads: TList;           // List of TPasProcedure nodes
+>>>>>>> graemeg/fixes_2_2
+  end;
+
+  { TBinaryExpr }
+
+  TBinaryExpr = class(TPasExpr)
+    left      : TPasExpr;
+    right     : TPasExpr;
+    constructor Create(AParent : TPasElement; xleft, xright: TPasExpr; AOpCode: TExprOpCode); overload;
+    constructor CreateRange(AParent : TPasElement; xleft, xright: TPasExpr); overload;
+    function GetDeclaration(full : Boolean) : string; override;
+    destructor Destroy; override;
+<<<<<<< HEAD
+=======
+    function ElementTypeName: string; override;
+    function TypeName: string; override;
+    function GetDeclaration(full: Boolean): string; override;
+    procedure GetModifiers(List: TStrings);
+  public
+    ProcType: TPasProcedureType;
+    IsVirtual, IsDynamic, IsAbstract, IsOverride,
+      IsOverload, IsMessage, isReintroduced, isStatic: Boolean;
+>>>>>>> graemeg/fixes_2_2
   end;
 
   TPrimitiveExpr = class(TPasExpr)
@@ -483,93 +798,16 @@ type
     constructor Create(AParent : TPasElement; AKind: TPasExprKind); overload;
     function GetDeclaration(full : Boolean) : string; override;
     destructor Destroy; override;
-    procedure AddParam(xp: TPasExpr);
-  end;
-
 <<<<<<< HEAD
-=======
-  TPasExprKind = (pekIdent, pekNumber, pekString, pekSet, pekNil, pekBoolConst, pekRange,
-     pekUnary, pekBinary, pekFuncParams, pekArrayParams, pekListOfExp, pekInherited, pekSelf);
-
-  TExprOpCode = (eopNone,
-                 eopAdd,eopSubtract,eopMultiply,eopDivide, eopDiv,eopMod, eopPower,// arithmetic
-                 eopShr,eopSHl, // bit operations
-                 eopNot,eopAnd,eopOr,eopXor, // logical/bit
-                 eopEqual, eopNotEqual,  // Logical
-                 eopLessThan,eopGreaterThan, eopLessthanEqual,eopGreaterThanEqual, // ordering
-                 eopIn,eopIs,eopAs, eopSymmetricaldifference, // Specials
-                 eopAddress, eopDeref, // Pointers
-                 eopSubIdent); // SomeRec.A, A is subIdent of SomeRec
-
-  { TPasExpr }
-
-  TPasExpr = class(TPasElement)
-    Kind      : TPasExprKind;
-    OpCode    : TexprOpcode;
-    constructor Create(AParent : TPasElement; AKind: TPasExprKind; AOpCode: TexprOpcode); virtual; overload;
-  end;
-
-  TUnaryExpr = class(TPasExpr)
-    Operand   : TPasExpr;
-    constructor Create(AParent : TPasElement; AOperand: TPasExpr; AOpCode: TExprOpCode); overload;
-    function GetDeclaration(full : Boolean) : string; override;
-    destructor Destroy; override;
-  end;
-
-  { TBinaryExpr }
-
-  TBinaryExpr = class(TPasExpr)
-    left      : TPasExpr;
-    right     : TPasExpr;
-    constructor Create(AParent : TPasElement; xleft, xright: TPasExpr; AOpCode: TExprOpCode); overload;
-    constructor CreateRange(AParent : TPasElement; xleft, xright: TPasExpr); overload;
-    function GetDeclaration(full : Boolean) : string; override;
-    destructor Destroy; override;
-  end;
-
-  TPrimitiveExpr = class(TPasExpr)
-    Value     : AnsiString;
-    constructor Create(AParent : TPasElement; AKind: TPasExprKind; const AValue : Ansistring); overload;
-    function GetDeclaration(full : Boolean) : string; override;
-  end;
-  
-  TBoolConstExpr = class(TPasExpr)
-    Value     : Boolean;
-    constructor Create(AParent : TPasElement; AKind: TPasExprKind; const ABoolValue : Boolean); overload;
-    function GetDeclaration(full : Boolean) : string; override;
-  end;
-
-  { TNilExpr }
-
-  TNilExpr = class(TPasExpr)
-    constructor Create(AParent : TPasElement); overload;
-    function GetDeclaration(full : Boolean) : string; override;
-  end;
-
-  { TInheritedExpr }
-
-  TInheritedExpr = class(TPasExpr)
-    constructor Create(AParent : TPasElement); overload;
-    function GetDeclaration(full : Boolean) : string; override;
-  end;
-
-  { TSelfExpr }
-
-  TSelfExpr = class(TPasExpr)
-    constructor Create(AParent : TPasElement); overload;
-    function GetDeclaration(full : Boolean) : string; override;
-  end;
-
-  { TParamsExpr }
-
-  TParamsExpr = class(TPasExpr)
-    Value     : TPasExpr;
-    Params    : array of TPasExpr;
-    {pekArray, pekFuncCall, pekSet}
-    constructor Create(AParent : TPasElement; AKind: TPasExprKind); overload;
-    function GetDeclaration(full : Boolean) : string; override;
-    destructor Destroy; override;
     procedure AddParam(xp: TPasExpr);
+=======
+    function ElementTypeName: string; override;
+    function TypeName: string; virtual;
+  public
+    ProcType: TPasProcedureType;
+    Locals: TList;
+    Body: TPasImplBlock;
+>>>>>>> graemeg/fixes_2_2
   end;
 
 >>>>>>> graemeg/cpstrnew
@@ -637,6 +875,11 @@ type
     constructor Create(AParent : TPasElement; AOperand: TPasExpr; AOpCode: TExprOpCode); overload;
     function GetDeclaration(full : Boolean) : string; override;
     destructor Destroy; override;
+<<<<<<< HEAD
+=======
+  public
+    Commands: TStrings;
+>>>>>>> graemeg/fixes_2_2
   end;
 
   { TBinaryExpr }
@@ -648,6 +891,7 @@ type
     constructor CreateRange(AParent : TPasElement; xleft, xright: TPasExpr); overload;
     function GetDeclaration(full : Boolean) : string; override;
     destructor Destroy; override;
+<<<<<<< HEAD
   end;
 
   TPrimitiveExpr = class(TPasExpr)
@@ -667,6 +911,33 @@ type
   TNilExpr = class(TPasExpr)
     constructor Create(AParent : TPasElement); overload;
     function GetDeclaration(full : Boolean) : string; override;
+=======
+  public
+    Condition: string;
+    IfBranch, ElseBranch: TPasImplElement;
+  end;
+
+  TPasImplForLoop = class(TPasImplElement)
+  public
+    destructor Destroy; override;
+  public
+    Variable: TPasVariable;
+    StartValue, EndValue: string;
+    Body: TPasImplElement;
+  end;
+
+  TPasImplBlock = class(TPasImplElement)
+  public
+    constructor Create(const AName: string; AParent: TPasElement); override;
+    destructor Destroy; override;
+    function AddCommand(const ACommand: string): TPasImplCommand;
+    function AddCommands: TPasImplCommands;
+    function AddIfElse(const ACondition: string): TPasImplIfElse;
+    function AddForLoop(AVar: TPasVariable;
+      const AStartValue, AEndValue: string): TPasImplForLoop;
+  public
+    Elements: TList;    // TPasImplElement objects
+>>>>>>> graemeg/fixes_2_2
   end;
 
   { TInheritedExpr }
@@ -7909,11 +8180,18 @@ begin
   Labels:=TList.Create;
 end;
 
+<<<<<<< HEAD
 destructor TProcedureBody.Destroy;
 begin
   FreeAndNil(Labels);
   inherited Destroy;
 end;
+=======
+{$IFNDEF FPC}
+  const
+    LineEnding = sLineBreak;
+{$ENDIF}
+>>>>>>> graemeg/fixes_2_2
 
 { TPasImplWhileDo }
 
@@ -8055,15 +8333,28 @@ constructor TPasImplWithDo.Create(const AName: string; AParent: TPasElement);
 begin
 <<<<<<< HEAD
   inherited Create(AName, AParent);
+<<<<<<< HEAD
   Expressions:=TStringList.Create;
 =======
   Result := TPasImplIfElse.Create('', Self);
   Result.Condition := ACondition;
   AddElement(Result);
+=======
+  UsesList := TList.Create;
+  Declarations := TList.Create;
+  ResStrings := TList.Create;
+  Types := TList.Create;
+  Consts := TList.Create;
+  Classes := TList.Create;
+  Functions := TList.Create;
+  Variables := TList.Create;
+  Properties := TList.Create;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TPasImplBlock.AddWhileDo(const ACondition: string): TPasImplWhileDo;
 begin
+<<<<<<< HEAD
   Result := TPasImplWhileDo.Create('', Self);
   Result.Condition := ACondition;
   AddElement(Result);
@@ -8075,6 +8366,18 @@ begin
   Result.AddExpression(Expression);
   AddElement(Result);
 end;
+=======
+  Variables.Free;
+  Functions.Free;
+  Classes.Free;
+  Consts.Free;
+  Types.Free;
+  ResStrings.Free;
+  Properties.Free;
+  for i := 0 to Declarations.Count - 1 do
+    TPasElement(Declarations[i]).Release;
+  Declarations.Free;
+>>>>>>> graemeg/fixes_2_2
 
 function TPasImplBlock.AddCaseOf(const Expression: string): TPasImplCaseOf;
 begin
@@ -8845,16 +9148,39 @@ end;
 
 procedure TPasImplExceptOn.AddElement(Element: TPasImplElement);
 begin
+<<<<<<< HEAD
   inherited AddElement(Element);
   if Body=nil then
     Body:=Element;
+=======
+  Result:='Array';
+  If (IndexRange<>'') then
+    Result:=Result+'['+IndexRange+']';
+  Result:=Result+' of ';
+  If IsPacked then
+     Result := 'packed '+Result;      // 12/04/04 Dave - Added
+  If Assigned(Eltype) then
+    Result:=Result+ElType.Name
+  else
+    Result:=Result+'const';
+  If Full Then
+    Result:=Name+' = '+Result;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 { TPasImplStatement }
 
 function TPasImplStatement.CloseOnSemicolon: boolean;
 begin
+<<<<<<< HEAD
   Result:=true;
+=======
+  Result:='File';
+  If Assigned(Eltype) then
+    Result:=Result+' of '+ElType.Name;
+  If Full Then
+    Result:=Name+' = '+Result;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 { TPasExpr }
@@ -8903,6 +9229,7 @@ end;
 Function TUnaryExpr.GetDeclaration(Full : Boolean):AnsiString;
 
 begin
+<<<<<<< HEAD
   Result:=OpCodeStrings[Opcode];
   If Assigned(Operand) then
     Result:=Result+Operand.GetDeclaration(Full);
@@ -8932,6 +9259,41 @@ begin
     Result:=Left.GetDeclaration(Full)+Result;
   If Assigned(Right) then
     Result:=Result +Right.GetDeclaration(Full);
+=======
+  S:=TStringList.Create;
+  T:=TstringList.Create;
+  Try
+    Temp:='record';
+    If IsPacked then
+      if IsBitPacked then
+        Temp:='bitpacked '+Temp
+      else
+        Temp:='packed '+Temp;
+    If Full then
+      Temp:=Name+' = '+Temp;
+    S.Add(Temp);
+    For I:=0 to Members.Count-1 do
+      begin
+      Temp:=TPasVariable(Members[i]).GetDeclaration(True);
+      If Pos(LineEnding,Temp)>0 then
+        begin
+        T.Text:=Temp;
+        For J:=0 to T.Count-1 do
+          if J=T.Count-1 then
+            S.Add('  '+T[J]+';')
+          else
+            S.Add('  '+T[J])
+        end
+      else
+        S.Add('  '+Temp+';');
+      end;
+    S.Add('end');
+    Result:=S.Text;
+  finally
+    S.free;
+    T.free;
+  end;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -9069,7 +9431,22 @@ begin
       Result:=Result+', ';
     Result:=Result+Values[i].getDeclaration(Full);
     end;
+<<<<<<< HEAD
   Result:='('+Result+')';
+=======
+  If S<>'' then
+    S:='['+S+']'
+  else
+    S:=' ';
+  If Full then
+    begin
+    Result:=Name+S+': '+Result;
+    If (ImplementsName<>'') then
+       Result:=Result+' implements '+ImplementsName;
+    end;   
+  If IsDefault then
+    Result:=Result+'; default'
+>>>>>>> graemeg/fixes_2_2
 end;
 
 constructor TArrayValues.Create(AParent : TPasElement);

@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -22,10 +23,16 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
+=======
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 1985-2005 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -52,6 +59,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -60,8 +79,13 @@
 
 unit Events;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -74,21 +98,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -123,6 +155,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -130,6 +164,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -363,6 +398,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -388,6 +433,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -397,6 +446,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,OSUtils,QuickdrawTypes,Endian;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -420,10 +470,19 @@ uses MacTypes,OSUtils,QuickdrawTypes,Endian;
 {$ifc TARGET_OS_MAC}
 >>>>>>> origin/cpstrnew
 
+=======
+uses MacTypes,OSUtils,Quickdraw,Endian;
+
+
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN MAC68K}
 
 type
 	EventKind = UInt16;
+<<<<<<< HEAD
+=======
+type
+>>>>>>> graemeg/fixes_2_2
 	EventMask = UInt16;
 const
 	nullEvent = 0;
@@ -550,6 +609,7 @@ const
 	kBulletUnicode = $2022; { Unicode BULLET}
 	kAppleLogoUnicode = $F8FF; { Unicode APPLE LOGO}
 
+<<<<<<< HEAD
 
 {
  *  Summary:
@@ -699,6 +759,12 @@ type
 	EventRecord = record
 		what: EventKind;
 		message: UNSIGNEDLONG;
+=======
+type
+	EventRecord = record
+		what: EventKind;
+		message: UInt32;
+>>>>>>> graemeg/fixes_2_2
 		when: UInt32;
 		where: Point;
 		modifiers: EventModifiers;
@@ -706,6 +772,10 @@ type
 	EventRecordPtr = ^EventRecord;
 type
 	FKEYProcPtr = procedure;
+<<<<<<< HEAD
+=======
+type
+>>>>>>> graemeg/fixes_2_2
 	FKEYUPP = FKEYProcPtr;
 {
  *  NewFKEYUPP()
@@ -734,22 +804,32 @@ type
  *    Non-Carbon CFM:   available as macro/inline
  }
 
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 {
  *  GetMouse()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use HIGetMousePosition instead.
+=======
+{
+ *  GetMouse()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure GetMouse( var mouseLoc: Point ); external name '_GetMouse';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -770,20 +850,37 @@ procedure GetMouse( var mouseLoc: Point ); external name '_GetMouse';
  *  
  *  Deprecated:
  *    Use GetCurrentButtonState or GetCurrentEventButtonState instead.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  Button()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.6
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function Button: Boolean; external name '_Button';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 
 
 {$ifc not TARGET_CPU_64}
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/fixes_2_2
 {
  *  StillDown()
  *  
@@ -791,7 +888,11 @@ function Button: Boolean; external name '_Button';
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -806,7 +907,11 @@ function StillDown: Boolean; external name '_StillDown';
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -815,21 +920,33 @@ function WaitMouseUp: Boolean; external name '_WaitMouseUp';
 
 
 {
+<<<<<<< HEAD
  *  KeyTranslate()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use UCKeyTranslate instead.
+=======
+ *  KeyTranslate()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.6
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function KeyTranslate( transData: {const} UnivPtr; keycode: UInt16; var state: UInt32 ): UInt32; external name '_KeyTranslate';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -839,13 +956,18 @@ function KeyTranslate( transData: {const} UnivPtr; keycode: UInt16; var state: U
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetCaretTime: UInt32; external name '_GetCaretTime';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
 
 {$endc} {not TARGET_CPU_64}
 
@@ -878,6 +1000,8 @@ function GetCaretTime: UInt32; external name '_GetCaretTime';
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
 { 
     QuickTime 3.0 supports GetKeys() on unix and win32
 }
@@ -903,9 +1027,12 @@ procedure __GetKeys( var theKeys: KeyMap ); external name '_GetKeys';
 
 procedure GetKeys( var theKeys: KeyMap );
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64 or not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 
+=======
+>>>>>>> graemeg/fixes_2_2
 { Obsolete event types & masks }
 const
 	networkEvt = 10;
@@ -926,7 +1053,11 @@ type
 		qLink: QElemPtr;
 		qType: SInt16;
 		evtQWhat: EventKind;               { this part is identical to the EventRecord as defined above }
+<<<<<<< HEAD
 		evtQMessage: UNSIGNEDLONG;
+=======
+		evtQMessage: UInt32;
+>>>>>>> graemeg/fixes_2_2
 		evtQWhen: UInt32;
 		evtQWhere: Point;
 		evtQModifiers: EventModifiers;
@@ -934,6 +1065,10 @@ type
 	EvQElPtr = ^EvQEl;
 type
 	GetNextEventFilterProcPtr = procedure( var theEvent: EventRecord; var result: Boolean );
+<<<<<<< HEAD
+=======
+type
+>>>>>>> graemeg/fixes_2_2
 	GetNextEventFilterUPP = GetNextEventFilterProcPtr;
 {
  *  NewGetNextEventFilterUPP()
@@ -964,6 +1099,7 @@ type
 
 type
 	GNEFilterUPP = GetNextEventFilterUPP;
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 {
  *  GetDblTime()
@@ -987,6 +1123,16 @@ type
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+{
+ *  GetDblTime()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1001,7 +1147,11 @@ function GetDblTime: UInt32; external name '_GetDblTime';
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1010,20 +1160,49 @@ procedure SetEventMask( value: EventMask ); external name '_SetEventMask';
 
 
 {
+<<<<<<< HEAD
  *  GetNextEvent()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use ReceiveNextEvent instead.
+=======
+ *  GetEvQHdr()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+{
+ *  PPostEvent()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+{
+ *  GetNextEvent()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.6
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetNextEvent( eventMask_: EventMask; var theEvent: EventRecord ): Boolean; external name '_GetNextEvent';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 
 
@@ -1032,16 +1211,28 @@ function GetNextEvent( eventMask_: EventMask; var theEvent: EventRecord ): Boole
  *  
  *  Deprecated:
  *    Use ReceiveNextEvent instead.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  WaitNextEvent()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.6
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function WaitNextEvent( eventMask_: EventMask; var theEvent: EventRecord; sleep: UInt32; mouseRgn: RgnHandle { can be NULL } ): Boolean; external name '_WaitNextEvent';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 
 
@@ -1050,16 +1241,28 @@ function WaitNextEvent( eventMask_: EventMask; var theEvent: EventRecord; sleep:
  *  
  *  Deprecated:
  *    Use FindSpecificEventInQueue instead.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  EventAvail()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.6
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function EventAvail( eventMask_: EventMask; var theEvent: EventRecord ): Boolean; external name '_EventAvail';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 
 
@@ -1068,16 +1271,28 @@ function EventAvail( eventMask_: EventMask; var theEvent: EventRecord ): Boolean
  *  
  *  Deprecated:
  *    Use PostEventToQueue or CGEventPost instead.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  PostEvent()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.6
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function PostEvent( eventNum: EventKind; eventMsg: UInt32 ): OSErr; external name '_PostEvent';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 <<<<<<< HEAD
 
@@ -1096,16 +1311,55 @@ function PostEvent( eventNum: EventKind; eventMsg: UInt32 ): OSErr; external nam
  *  Deprecated:
  *    Use FlushEventsMatchingListFromQueue,
  *    FlushSpecificEventsFromQueue, or FlushEventQueue instead.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+    For Carbon, use EventAvail, TickCount, GetGlobalMouse,
+    GetKeys, or GetCurrentKeyModifiers instead of
+    OSEventAvail, and use GetNextEvent or WaitNextEvent
+    instead of GetOSEvent.
+}
+
+{
+ *  OSEventAvail()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+{
+ *  GetOSEvent()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+{
+ *  FlushEvents()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.6
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure FlushEvents( whichMask: EventMask; stopMask: EventMask ); external name '_FlushEvents';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 <<<<<<< HEAD
 
@@ -1114,11 +1368,46 @@ procedure FlushEvents( whichMask: EventMask; stopMask: EventMask ); external nam
 
 
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  SystemClick()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+{
+ *  SystemTask()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+{
+ *  SystemEvent()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+>>>>>>> graemeg/fixes_2_2
 (*
 #if OLDROUTINENAMES
 #define KeyTrans(transData, keycode, state) KeyTranslate(transData, keycode, state)
 #endif  { OLDROUTINENAMES }
 *)
+<<<<<<< HEAD
 
 
 {$ifc not TARGET_CPU_64}
@@ -1133,10 +1422,23 @@ procedure FlushEvents( whichMask: EventMask; stopMask: EventMask ); external nam
  *  
  *  Summary:
  *    Switch to the specified script's default (last used) input source.
+=======
+{
+    GetGlobalMouse, GetCurrentKeyModifiers, and CheckEventQueueForUserCancel
+    are only available as part of the Carbon API.
+}
+
+{
+ *  GetGlobalMouse()
+ *  
+ *  Summary:
+ *    Returns the position of the mouse in global coordinates.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1167,17 +1469,125 @@ procedure KeyScript( code: SInt16 ); external name '_KeyScript';
  *  
  *  Deprecated:
  *    Use IsUserCancelEventRef or CheckEventQueueForUserCancel instead.
+=======
+ *  Parameters:
+ *    
+ *    globalMouse:
+ *      On exit, contains the mouse position in global coordinates.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later
+ }
+procedure GetGlobalMouse( var globalMouse: Point ); external name '_GetGlobalMouse';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetCurrentKeyModifiers()
+ *  
+ *  Summary:
+ *    Returns the current hardware keyboard modifier state.
+ *  
+ *  Discussion:
+ *    In most cases, you should not use GetCurrentKeyModifiers, but
+ *    should use the GetCurrentEventKeyModifiers function instead.
+ *    GetCurrentEventKeyModifiers is much faster than
+ *    GetCurrentKeyModifiers because it returns the locally cached
+ *    modifier state; GetCurrentKeyModifiers must get the modifier
+ *    state from the window server, which is slower. Using
+ *    GetCurrentKeyModifiers also can prevent your application from
+ *    being operated by remote posting of events, since the hardware
+ *    input device is not actually changing state in that case. Most
+ *    commonly, you might need to use GetCurrentKeyModifiers when your
+ *    application is not the active application (as determined by the
+ *    Process Manager function GetFrontProcess). In that case, the
+ *    cached modifier state returned by GetCurrentEventKeyModifiers is
+ *    not valid because modifier-changed events are not flowing to your
+ *    application, and you must use GetCurrentKeyModifiers to determine
+ *    the current hardware state.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Result:
+ *    The hardware state of the keyboard modifiers. The format of the
+ *    return value is the same as the modifiers field of an EventRecord
+ *    (but only includes keyboard modifiers and not the other modifier
+ *    flags included in an EventRecord).
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+function GetCurrentKeyModifiers: UInt32; external name '_GetCurrentKeyModifiers';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  CheckEventQueueForUserCancel()
+ *  
+ *  Summary:
+ *    Determines if there is a cancel event in the main thread's event
+ *    queue.
+ *  
+ *  Discussion:
+ *    This API supports two cancel events: Escape and Cmd-Period. The
+ *    cancel event itself, as well as mouse or keyboard events in front
+ *    of the cancel event in the event queue, will be removed from the
+ *    queue.
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function CheckEventQueueForUserCancel: Boolean; external name '_CheckEventQueueForUserCancel';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  KeyScript()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure KeyScript( code: SInt16 ); external name '_KeyScript';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  IsCmdChar()
+>>>>>>> graemeg/fixes_2_2
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.6
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function IsCmdChar( const (*var*) event: EventRecord; test: SInt16 ): Boolean; external name '_IsCmdChar';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 { 
@@ -1198,7 +1608,10 @@ function LMGetKeyThresh: SInt16; external name '_LMGetKeyThresh';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  LMSetKeyThresh()
  *  
@@ -1206,7 +1619,11 @@ function LMGetKeyThresh: SInt16; external name '_LMGetKeyThresh';
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1214,8 +1631,11 @@ procedure LMSetKeyThresh( value: SInt16 ); external name '_LMSetKeyThresh';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  LMGetKeyRepThresh()
  *  
@@ -1231,7 +1651,10 @@ function LMGetKeyRepThresh: SInt16; external name '_LMGetKeyRepThresh';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  LMSetKeyRepThresh()
  *  
@@ -1239,7 +1662,11 @@ function LMGetKeyRepThresh: SInt16; external name '_LMGetKeyRepThresh';
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1247,8 +1674,11 @@ procedure LMSetKeyRepThresh( value: SInt16 ); external name '_LMSetKeyRepThresh'
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  LMGetKbdLast()
  *  
@@ -1264,7 +1694,10 @@ function LMGetKbdLast: UInt8; external name '_LMGetKbdLast';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  LMSetKbdLast()
  *  
@@ -1272,7 +1705,11 @@ function LMGetKbdLast: UInt8; external name '_LMGetKbdLast';
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1280,8 +1717,11 @@ procedure LMSetKbdLast( value: UInt8 ); external name '_LMSetKbdLast';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  LMGetKbdType()
  *  
@@ -1297,7 +1737,10 @@ function LMGetKbdType: UInt8; external name '_LMGetKbdType';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  LMSetKbdType()
  *  
@@ -1305,7 +1748,11 @@ function LMGetKbdType: UInt8; external name '_LMGetKbdType';
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1313,6 +1760,7 @@ procedure LMSetKbdType( value: UInt8 ); external name '_LMSetKbdType';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 {$endc} {TARGET_OS_MAC}
 <<<<<<< HEAD
@@ -1348,6 +1796,11 @@ implementation
 
 >>>>>>> origin/cpstrnew
 {$ifc TARGET_OS_MAC}
+=======
+implementation
+
+
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc TARGET_RT_BIG_ENDIAN}
 
@@ -1370,6 +1823,7 @@ end;
 
 {$endc}
 
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1386,3 +1840,7 @@ end;
 end.
 
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+end.
+>>>>>>> graemeg/fixes_2_2

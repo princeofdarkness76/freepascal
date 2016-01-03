@@ -43,7 +43,10 @@ units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
       aio nwsnut nwserv nwnit nwprot netware nwcalls ctypes nwpre
 rsts=math varutils variants typinfo classes dateutils sysconst convutils rtlconsts
 implicitunits=exeinfo
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
 
 [require]
 nortl=y

@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
@@ -36,6 +37,17 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+
+{	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -44,8 +56,13 @@
 
 unit CVImageBuffer;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -58,21 +75,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -107,6 +132,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -114,6 +141,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -340,6 +368,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -365,6 +403,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -374,6 +416,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -405,6 +448,9 @@ uses CFBase, CGColorSpace, CGGeometry,CVBuffer;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+uses CFBase, CGColorSpace, CGGeometry, CVBuffer;
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
  
@@ -419,6 +465,7 @@ uses CFBase, CGColorSpace, CGGeometry,CVBuffer;
 //#pragma mark CVImageBufferRef attachment keys
 
 var kCVImageBufferCGColorSpaceKey: CFStringRef; external name '_kCVImageBufferCGColorSpaceKey'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)				// CGColorSpaceRef
 
 var kCVImageBufferCleanApertureKey: CFStringRef; external name '_kCVImageBufferCleanApertureKey'; (* attribute const *)
@@ -646,6 +693,61 @@ var kCVImageBufferChromaSubsampling_411: CFStringRef; external name '_kCVImageBu
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)				// CGColorSpaceRef
+
+var kCVImageBufferCleanApertureKey: CFStringRef; external name '_kCVImageBufferCleanApertureKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)				// CFDictionary containing the following four keys
+var kCVImageBufferCleanApertureWidthKey: CFStringRef; external name '_kCVImageBufferCleanApertureWidthKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)			// CFNumber
+var kCVImageBufferCleanApertureHeightKey: CFStringRef; external name '_kCVImageBufferCleanApertureHeightKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)			// CFNumber
+var kCVImageBufferCleanApertureHorizontalOffsetKey: CFStringRef; external name '_kCVImageBufferCleanApertureHorizontalOffsetKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)		// CFNumber
+var kCVImageBufferCleanApertureVerticalOffsetKey: CFStringRef; external name '_kCVImageBufferCleanApertureVerticalOffsetKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)		// CFNumber
+var kCVImageBufferPreferredCleanApertureKey: CFStringRef; external name '_kCVImageBufferPreferredCleanApertureKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)			// CFDictionary containing same keys as kCVImageBufferCleanApertureKey
+
+var kCVImageBufferFieldCountKey: CFStringRef; external name '_kCVImageBufferFieldCountKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)				// CFNumber
+var kCVImageBufferFieldDetailKey: CFStringRef; external name '_kCVImageBufferFieldDetailKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)				// CFString with one of the following four values
+var kCVImageBufferFieldDetailTemporalTopFirst: CFStringRef; external name '_kCVImageBufferFieldDetailTemporalTopFirst'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)		// CFString
+var kCVImageBufferFieldDetailTemporalBottomFirst: CFStringRef; external name '_kCVImageBufferFieldDetailTemporalBottomFirst'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)		// CFString
+var kCVImageBufferFieldDetailSpatialFirstLineEarly: CFStringRef; external name '_kCVImageBufferFieldDetailSpatialFirstLineEarly'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)		// CFString
+var kCVImageBufferFieldDetailSpatialFirstLineLate: CFStringRef; external name '_kCVImageBufferFieldDetailSpatialFirstLineLate'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)		// CFString
+
+var kCVImageBufferPixelAspectRatioKey: CFStringRef; external name '_kCVImageBufferPixelAspectRatioKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)				// CFDictionary with the following two keys
+var kCVImageBufferPixelAspectRatioHorizontalSpacingKey: CFStringRef; external name '_kCVImageBufferPixelAspectRatioHorizontalSpacingKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	// CFNumber
+var kCVImageBufferPixelAspectRatioVerticalSpacingKey: CFStringRef; external name '_kCVImageBufferPixelAspectRatioVerticalSpacingKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	// CFNumber
+
+var kCVImageBufferDisplayDimensionsKey: CFStringRef; external name '_kCVImageBufferDisplayDimensionsKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)				// CFDictionary with the following two keys
+var kCVImageBufferDisplayWidthKey: CFStringRef; external name '_kCVImageBufferDisplayWidthKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)				// CFNumber
+var kCVImageBufferDisplayHeightKey: CFStringRef; external name '_kCVImageBufferDisplayHeightKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)				// CFNumber
+
+var kCVImageBufferGammaLevelKey: CFStringRef; external name '_kCVImageBufferGammaLevelKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)				// CFNumber describing the gamma level
+var kCVImageBufferYCbCrMatrixKey: CFStringRef; external name '_kCVImageBufferYCbCrMatrixKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)				// CFString describing the color matrix for YCbCr->RGB. This key can be one of the following values:
+var kCVImageBufferYCbCrMatrix_ITU_R_709_2: CFStringRef; external name '_kCVImageBufferYCbCrMatrix_ITU_R_709_2'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)			// CFString
+var kCVImageBufferYCbCrMatrix_ITU_R_601_4: CFStringRef; external name '_kCVImageBufferYCbCrMatrix_ITU_R_601_4'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)			// CFString
+var kCVImageBufferYCbCrMatrix_SMPTE_240M_1995: CFStringRef; external name '_kCVImageBufferYCbCrMatrix_SMPTE_240M_1995'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)		// CFString
+
+>>>>>>> graemeg/fixes_2_2
 
 //#pragma mark CVImageBufferRef
 
@@ -666,7 +768,11 @@ type
 		Returns zero size if called with a non-CVImageBufferRef type or NULL.
 }
 function CVImageBufferGetEncodedSize( imageBuffer: CVImageBufferRef ): CGSize; external name '_CVImageBufferGetEncodedSize';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVImageBufferGetDisplaySize
@@ -677,7 +783,11 @@ function CVImageBufferGetEncodedSize( imageBuffer: CVImageBufferRef ): CGSize; e
 		Returns zero size if called with a non-CVImageBufferRef type or NULL.
 }
 function CVImageBufferGetDisplaySize( imageBuffer: CVImageBufferRef ): CGSize; external name '_CVImageBufferGetDisplaySize';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVImageBufferGetCleanRect
@@ -691,6 +801,7 @@ function CVImageBufferGetDisplaySize( imageBuffer: CVImageBufferRef ): CGSize; e
 		Returns zero rect if called with a non-CVImageBufferRef type or NULL.
 }
 function CVImageBufferGetCleanRect( imageBuffer: CVImageBufferRef ): CGRect; external name '_CVImageBufferGetCleanRect';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 
 {!
@@ -704,6 +815,10 @@ function CVImageBufferIsFlipped( imageBuffer: CVImageBufferRef ): Boolean; exter
 
 
 {$ifc TARGET_OS_MAC}
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+>>>>>>> graemeg/fixes_2_2
 {!
     @function   CVImageBufferGetColorSpace
     @abstract   Returns the color space of a CVImageBuffer.
@@ -712,6 +827,7 @@ function CVImageBufferIsFlipped( imageBuffer: CVImageBufferRef ): Boolean; exter
 		Returns NULL if called with a non-CVImageBufferRef type or NULL.
 }
 function CVImageBufferGetColorSpace( imageBuffer: CVImageBufferRef ): CGColorSpaceRef; external name '_CVImageBufferGetColorSpace';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 
 {!
@@ -756,3 +872,9 @@ function CVImageBufferCreateColorSpaceFromAttachments( attachments: CFDictionary
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

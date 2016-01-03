@@ -6,7 +6,11 @@
 main=fcl
 
 [target]
+<<<<<<< HEAD
 examples=dbtestframework testsqlfiles 
+=======
+examples=dbtestframework
+>>>>>>> graemeg/fixes_2_2
 units=toolsunit dbftoolsunit memdstoolsunit sqldbtoolsunit sdfdstoolsunit
 
 [install]

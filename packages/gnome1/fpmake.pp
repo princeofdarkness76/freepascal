@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('gnome1');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -27,6 +28,12 @@ begin
     P.Email := '';
     P.Description := 'Header for main library of Gnome (1?).';
     P.NeedLibC:= true;  // true for headers that indirectly link to libc?
+=======
+    P.Directory:='gnome1';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.OSes:=AllUnixOSes;
+>>>>>>> graemeg/fixes_2_2
 
     P.Dependencies.Add('gtk1');
     P.Dependencies.Add('imlib');
@@ -230,6 +237,7 @@ begin
           AddInclude('vtx.inc');
         end;
 
+<<<<<<< HEAD
     P.ExamplePath.Add('examples');
     P.Targets.AddExampleProgram('examples/testzvt.pp');
     P.Targets.AddExampleProgram('examples/gconfcallback2.pp');
@@ -237,6 +245,8 @@ begin
     P.Targets.AddExampleProgram('examples/gconfcallback1.pp');
     P.Targets.AddExampleProgram('examples/gnometest.pp');
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

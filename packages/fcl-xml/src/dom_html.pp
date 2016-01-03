@@ -14,6 +14,12 @@
 
  **********************************************************************}
 
+<<<<<<< HEAD
+=======
+{ Please note that this is a very early version, most properties and methods
+  are not implemented yet. }
+
+>>>>>>> graemeg/fixes_2_2
 {$mode objfpc}
 {$H+}
 

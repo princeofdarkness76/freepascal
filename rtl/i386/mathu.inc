@@ -70,6 +70,7 @@ function cotan(x : float) : float;assembler;
     fldt X
     fptan
     fdivp %st,%st(1)
+<<<<<<< HEAD
     fwait
   end;
 
@@ -84,6 +85,8 @@ function log2(x : float) : float;assembler;
     fld1
     fldt x
     fyl2x
+=======
+>>>>>>> graemeg/fixes_2_2
     fwait
   end;
 

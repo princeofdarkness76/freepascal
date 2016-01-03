@@ -592,11 +592,19 @@
 'xsha256',
 'dmint',
 'rdm',
+<<<<<<< HEAD
+=======
+'movabs',
+'movsxd',
+'cqo',
+'cmpxchg16b',
+>>>>>>> graemeg/fixes_2_2
 'movntss',
 'movntsd',
 'insertq',
 'extrq',
 'lzcnt',
+<<<<<<< HEAD
 'pabsb',
 'pabsw',
 'pabsd',
@@ -1103,4 +1111,7 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+'popcnt'
+>>>>>>> graemeg/fixes_2_2
 );

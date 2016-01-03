@@ -75,6 +75,7 @@ Function Length(A : DynArrayType) : Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function Power(Base:double;expon:double):double;
 Function Power(Base:Longint;expon:Longint):Longint;
 =======
@@ -115,3 +116,5 @@ Var
   memw : array[0..($7fffffff div sizeof(word))-1] of word;
   meml : array[0..($7fffffff div sizeof(longint))-1] of longint;
 {$ENDIF}
+=======
+>>>>>>> graemeg/fixes_2_2

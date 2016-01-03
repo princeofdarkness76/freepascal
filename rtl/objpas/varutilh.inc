@@ -59,12 +59,19 @@ function VariantToSmallInt(const VargSrc : TVarData) : SmallInt;
 function VariantToLongint(const VargSrc : TVarData) : Longint;
 function VariantToShortint(const VargSrc : TVarData) : ShortInt;
 function VariantToCardinal(const VargSrc : TVarData) : Cardinal;
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 function VariantToSingle(const VargSrc : TVarData) : Single;
 function VariantToDouble(const VargSrc : TVarData) : Double;
 function VariantToDate(const VargSrc : TVarData) : TDateTime;
 {$endif}
 function VariantToCurrency(const VargSrc : TVarData) : Currency;
+=======
+function VariantToSingle(const VargSrc : TVarData) : Single;
+function VariantToDouble(const VargSrc : TVarData) : Double;
+function VariantToCurrency(const VargSrc : TVarData) : Currency;
+function VariantToDate(const VargSrc : TVarData) : TDateTime;
+>>>>>>> graemeg/fixes_2_2
 function VariantToBoolean(const VargSrc : TVarData) : Boolean;
 function VariantToByte(const VargSrc : TVarData) : Byte;
 function VariantToInt64(const VargSrc : TVarData ) : Int64;
@@ -104,6 +111,11 @@ const
 
   VAR_LOCALE_USER_DEFAULT = $400; // = Windows.LOCALE_USER_DEFAULT
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> graemeg/fixes_2_2
   // only the byval types.
   CVarTypeToElementInfo : array[varempty..varqword] of TVarTypeToElementInfo = (
    {varempty    }     (Validbase :  true     ;ValidElement:  true    ;Size:     0       ;Flags :  ARR_NONE),

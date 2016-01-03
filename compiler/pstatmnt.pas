@@ -292,8 +292,13 @@ implementation
                        CGMessage(parser_e_case_lower_less_than_upper_bound);
                      if not casedeferror then
                        begin
+<<<<<<< HEAD
                          testrange(casedef,hl1,false,false);
                          testrange(casedef,hl2,false,false);
+=======
+                         testrange(casedef,casedef,hl1,false);
+                         testrange(casedef,casedef,hl2,false);
+>>>>>>> graemeg/fixes_2_2
                        end;
                    end
                  else
@@ -306,6 +311,7 @@ implementation
                end
              else
                begin
+<<<<<<< HEAD
                  { type check for string case statements }
                  if (caseofstring and (not is_conststring_or_constcharnode(p))) or
                  { type checking for ordinal case statements }
@@ -324,6 +330,15 @@ implementation
                        testrange(casedef,hl1,false,false);
                      casenode.addlabel(blockid,hl1,hl1);
                    end;
+=======
+                  { type checking for case statements }
+                  if not is_subequal(casedef, p.resultdef) then
+                    CGMessage(parser_e_case_mismatch);
+                  hl1:=get_ordinal_value(p);
+                  if not casedeferror then
+                    testrange(casedef,casedef,hl1,false);
+                  casenode.addlabel(blockid,hl1,hl1);
+>>>>>>> graemeg/fixes_2_2
                end;
              p.free;
              sl1.free;
@@ -648,6 +663,7 @@ implementation
          hloopvar:=factor(false,[]);
          valid_for_loopvar(hloopvar,true);
 
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
@@ -707,6 +723,51 @@ implementation
                    loopvarsym:=tsubscriptnode(hp).vs;
                  hp:=tunarynode(hp).left;
                end;
+=======
+         { Check loop variable }
+         loopvarsym:=nil;
+
+         { variable must be an ordinal, int64 is not allowed for 32bit targets }
+         if not(is_ordinal(hloopvar.resultdef))
+{$ifndef cpu64bit}
+            or is_64bitint(hloopvar.resultdef)
+{$endif cpu64bit}
+            then
+           MessagePos(hloopvar.fileinfo,type_e_ordinal_expr_expected);
+
+         hp:=hloopvar;
+         while assigned(hp) and
+               (
+                { record/object fields and array elements are allowed }
+                { in tp7 mode only                                    }
+                (
+                 (m_tp7 in current_settings.modeswitches) and
+                 (
+                  ((hp.nodetype=subscriptn) and
+                   ((tsubscriptnode(hp).left.resultdef.typ=recorddef) or
+                    is_object(tsubscriptnode(hp).left.resultdef))
+                  ) or
+                  { constant array index }
+                  (
+                   (hp.nodetype=vecn) and
+                   is_constintnode(tvecnode(hp).right)
+                  )
+                 )
+                ) or
+                { equal typeconversions }
+                (
+                 (hp.nodetype=typeconvn) and
+                 (ttypeconvnode(hp).convtype=tc_equal)
+                )
+               ) do
+           begin
+             { Use the recordfield for loopvarsym }
+             if not assigned(loopvarsym) and
+                (hp.nodetype=subscriptn) then
+               loopvarsym:=tsubscriptnode(hp).vs;
+             hp:=tunarynode(hp).left;
+           end;
+>>>>>>> graemeg/fixes_2_2
 
              if assigned(hp) and
                 (hp.nodetype=loadn) then
@@ -956,6 +1017,7 @@ implementation
              consume(_ASSIGNMENT); // fail
              result:=cerrornode.create;
            end;
+<<<<<<< HEAD
 =======
            consume(_ASSIGNMENT); // fail
 >>>>>>> graemeg/cpstrnew
@@ -968,6 +1030,39 @@ implementation
 =======
            consume(_ASSIGNMENT); // fail
 >>>>>>> origin/cpstrnew
+=======
+
+         hto:=comp_expr(true);
+         consume(_DO);
+
+         { Check if the constants fit in the range }
+         check_range(hfrom);
+         check_range(hto);
+
+         { first set the varstate for from and to, so
+           uses of loopvar in those expressions will also
+           trigger a warning when it is not used yet. This
+           needs to be done before the instruction block is
+           parsed to have a valid hloopvar }
+         typecheckpass(hfrom);
+         set_varstate(hfrom,vs_read,[vsf_must_be_valid]);
+         typecheckpass(hto);
+         set_varstate(hto,vs_read,[vsf_must_be_valid]);
+         typecheckpass(hloopvar);
+         { in two steps, because vs_readwritten may turn on vsf_must_be_valid }
+         { for some subnodes                                                  }
+         set_varstate(hloopvar,vs_written,[]);
+         set_varstate(hloopvar,vs_read,[vsf_must_be_valid]);
+
+         { ... now the instruction block }
+         hblock:=statement;
+
+         { variable is not used for loop counter anymore }
+         if assigned(loopvarsym) then
+           exclude(loopvarsym.varoptions,vo_is_loop_counter);
+
+         result:=cfornode.create(hloopvar,hfrom,hto,hblock,backward);
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -1577,12 +1672,17 @@ implementation
                   reg:=std_regnum_search(lower(cstringpattern));
                   if reg<>NR_NO then
                     begin
+<<<<<<< HEAD
                       if not(po_assembler in current_procinfo.procdef.procoptions) and assigned(hl) then
                         begin
                           hl.Insert(tai_regalloc.alloc(reg,nil));
                           hl.Insert(tai_regalloc.markused(reg));
                           hl.Concat(tai_regalloc.dealloc(reg,nil));
                         end;
+=======
+                      if (getregtype(reg)=R_INTREGISTER) and not(po_assembler in current_procinfo.procdef.procoptions) then
+                        include(asmstat.used_regs_int,getsupreg(reg));
+>>>>>>> graemeg/fixes_2_2
                     end
                   else
                     Message(asmr_e_invalid_register);
@@ -1684,6 +1784,7 @@ implementation
                        begin
                          { goto outside the current scope? }
                          if srsym.owner<>current_procinfo.procdef.localst then
+<<<<<<< HEAD
                            begin
                              { allowed? }
                              if not(m_non_local_goto in current_settings.modeswitches) then
@@ -1702,6 +1803,9 @@ implementation
 =======
 >>>>>>> origin/cpstrnew
                            end;
+=======
+                           CGMessage(parser_e_goto_outside_proc);
+>>>>>>> graemeg/fixes_2_2
                          code:=cgotonode.create(tlabelsym(srsym));
                          tgotonode(code).labelsym:=tlabelsym(srsym);
                          { set flag that this label is used }
@@ -1886,10 +1990,14 @@ implementation
              if not(p.nodetype in [nothingn,errorn,calln,ifn,assignn,breakn,inlinen,
                                    continuen,labeln,blockn,exitn]) or
                 ((p.nodetype=inlinen) and
+<<<<<<< HEAD
                  not is_void(p.resultdef)) or
                 ((p.nodetype=calln) and
                  (assigned(tcallnode(p).procdefinition)) and
                  (tcallnode(p).procdefinition.proctypeoption=potype_operator)) then
+=======
+                 not is_void(p.resultdef)) then
+>>>>>>> graemeg/fixes_2_2
                Message(parser_e_illegal_expression);
 
              if not assigned(p.resultdef) then

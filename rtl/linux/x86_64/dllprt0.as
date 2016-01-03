@@ -35,6 +35,7 @@
 */
 .section .init
 	.align 16
+<<<<<<< HEAD
 	.globl FPC_SHARED_LIB_START
 	.type FPC_SHARED_LIB_START,@function
 FPC_SHARED_LIB_START:
@@ -44,6 +45,19 @@ FPC_SHARED_LIB_START:
 	.globl _startlib
 	.type _startlib,@function
 _startlib:
+=======
+	.globl FPC_LIB_START
+	.type FPC_LIB_START,@function
+FPC_LIB_START:
+	jmp	_startlib@PLT
+
+        .text
+	.globl _start
+	.type _start,@function
+_startlib:
+#       movq %rdx,%r9                 /* Address of the shared library termination
+#               	                 function.  */
+>>>>>>> graemeg/fixes_2_2
 	pushq	 %rbx
         movq     operatingsystem_parameter_argc@GOTPCREL(%rip),%rbx
         movq     %rdi,(%rbx)
@@ -52,7 +66,11 @@ _startlib:
         movq     operatingsystem_parameter_envp@GOTPCREL(%rip),%rbx
         movq     %rdx,(%rbx)
 
+<<<<<<< HEAD
         movq    operatingsystem_islibrary@GOTPCREL(%rip),%rbx
+=======
+        movq    TC_SYSTEM_ISLIBRARY@GOTPCREL(%rip),%rbx
+>>>>>>> graemeg/fixes_2_2
         movb    $1,(%rbx)
 
         /* Save initial stackpointer */
@@ -63,6 +81,7 @@ _startlib:
 	popq	%rbx
 	ret
 
+<<<<<<< HEAD
 /* this routine is only called when the halt() routine of the RTL embedded in
   the shared library is called */
         .globl  _haltproc
@@ -71,6 +90,11 @@ _haltproc:
 	.globl FPC_SHARED_LIB_EXIT
 	.type FPC_SHARED_LIB_EXIT,@function
 FPC_SHARED_LIB_EXIT:
+=======
+        .globl  _haltproc
+        .type   _haltproc,@function
+_haltproc:
+>>>>>>> graemeg/fixes_2_2
         movl    $231,%eax                 /* exit_group call */
         movq    operatingsystem_result@GOTPCREL(%rip),%rbx
         movzwl  (%rbx),%edi

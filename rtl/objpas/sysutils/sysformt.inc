@@ -482,7 +482,11 @@ begin
               end;
         'P' : Begin
               CheckArg(vtpointer,true);
+<<<<<<< HEAD
               ToAdd:=TFormatString(HexStr(ptruint(Args[DoArg].VPointer),sizeof(Ptruint)*2));
+=======
+              ToAdd:=HexStr(ptruint(Args[DoArg].VPointer),sizeof(Ptruint)*2);
+>>>>>>> graemeg/fixes_2_2
               // Insert ':'. Is this needed in 32 bit ? No it isn't.
               // Insert(':',ToAdd,5);
               end;
@@ -505,7 +509,11 @@ begin
                    index:=31;
                  end;
               If Prec>index then
+<<<<<<< HEAD
                 ToAdd:=TFormatString(HexStr(int64(vq),index))
+=======
+                ToAdd:=HexStr(int64(vq),index)
+>>>>>>> graemeg/fixes_2_2
               else
                 begin
                 // determine minimum needed number of hex digits.
@@ -514,7 +522,11 @@ begin
                   inc(Index);
                 If Index>Prec then
                   Prec:=Index;
+<<<<<<< HEAD
                 ToAdd:=TFormatString(HexStr(int64(vq),Prec));
+=======
+                ToAdd:=HexStr(int64(vq),Prec);
+>>>>>>> graemeg/fixes_2_2
                 end;
               end;
         '%': ToAdd:='%';

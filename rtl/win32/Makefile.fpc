@@ -44,6 +44,7 @@ implicitunits=sysinitpas sysinitcyg sysinitgprof \
       convutils stdconvs cpu mmx charset ucomplex getopts \
       winevent sockets printer \
       video mouse keyboard fmtbcd \
+<<<<<<< HEAD
       winsysut sharemem exeinfo fpintres windirs
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -55,6 +56,9 @@ implicitunits=sysinitpas sysinitcyg sysinitgprof \
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+      winsysut sharemem exeinfo
+>>>>>>> graemeg/fixes_2_2
 
 # shared=$(DLLS)
 
@@ -131,7 +135,11 @@ objpas$(PPUEXT): $(OBJPASDIR)/objpas.pp $(INC)/except.inc system$(PPUEXT)
         $(COMPILER) -I$(OBJPASDIR) $(OBJPASDIR)/objpas.pp
 
 macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) buildrtl$(PPUEXT)
+<<<<<<< HEAD
         $(COMPILER) $(INC)/macpas.pp
+=======
+        $(COMPILER) $(INC)/macpas.pp $(REDIR)
+>>>>>>> graemeg/fixes_2_2
 
 iso7185$(PPUEXT) : $(INC)/iso7185.pp buildrtl$(PPUEXT)
         $(COMPILER) $(INC)/iso7185.pp

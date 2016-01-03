@@ -188,6 +188,10 @@ begin
   begin
     SetLength (dir, i);
     Move (P, dir[1], i);
+<<<<<<< HEAD
+=======
+    BYTE(dir[0]) := i;
+>>>>>>> graemeg/fixes_2_2
     DoDirSeparators(dir);
     // fix / after volume, the compiler needs that
     // normaly root of a volumes is SERVERNAME/SYS:, change that

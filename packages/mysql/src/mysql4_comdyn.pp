@@ -141,7 +141,11 @@ end;
   function packet_error : longint;
       { return type might be wrong }
       begin
+<<<<<<< HEAD
          packet_error:= not ({dword}(0));
+=======
+         packet_error:= not (dword(0));
+>>>>>>> graemeg/fixes_2_2
       end;
 
 // Next function also defined in mysql4_com

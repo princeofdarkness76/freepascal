@@ -6,6 +6,7 @@
  }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
@@ -30,6 +31,16 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+{	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -38,8 +49,13 @@
 
 unit AXTextAttributedString;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -52,21 +68,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -101,6 +125,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -108,6 +134,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -326,6 +353,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -351,6 +388,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -361,6 +402,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes, CFBase;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -514,6 +556,33 @@ var kAXVisibleNameKey: CFStringRef; external name '_kAXVisibleNameKey'; (* attri
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	// CFStringRef - not required
 var kAXFontSizeKey: CFStringRef; external name '_kAXFontSizeKey'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	// CFNumberRef - required
+=======
+{$ALIGN POWER}
+
+var kAXFontTextAttribute: CFStringRef; external name '_kAXFontTextAttribute'; (* attribute const *)		// CFDictionaryRef - see kAXFontTextAttribute keys below
+var kAXForegroundColorTextAttribute: CFStringRef; external name '_kAXForegroundColorTextAttribute'; (* attribute const *)	// CGColorRef
+var kAXBackgroundColorTextAttribute: CFStringRef; external name '_kAXBackgroundColorTextAttribute'; (* attribute const *)	// CGColorRef
+var kAXUnderlineColorTextAttribute: CFStringRef; external name '_kAXUnderlineColorTextAttribute'; (* attribute const *)	// CGColorRef
+var kAXStrikethroughColorTextAttribute: CFStringRef; external name '_kAXStrikethroughColorTextAttribute'; (* attribute const *)	// CGColorRef
+var kAXUnderlineTextAttribute: CFStringRef; external name '_kAXUnderlineTextAttribute'; (* attribute const *)		// CFNumberRef - AXUnderlineStyle
+var kAXSuperscriptTextAttribute: CFStringRef; external name '_kAXSuperscriptTextAttribute'; (* attribute const *)		// CFNumberRef = + number for superscript - for subscript
+var kAXStrikethroughTextAttribute: CFStringRef; external name '_kAXStrikethroughTextAttribute'; (* attribute const *)	// CFBooleanRef
+var kAXShadowTextAttribute: CFStringRef; external name '_kAXShadowTextAttribute'; (* attribute const *)		// CFBooleanRef
+
+var kAXAttachmentTextAttribute: CFStringRef; external name '_kAXAttachmentTextAttribute'; (* attribute const *)		// AXUIElementRef
+var kAXLinkTextAttribute: CFStringRef; external name '_kAXLinkTextAttribute'; (* attribute const *)		// AXUIElementRef
+
+var kAXNaturalLanguageTextAttribute: CFStringRef; external name '_kAXNaturalLanguageTextAttribute'; (* attribute const *)	// CFStringRef - the spoken language of the text
+var kAXReplacementStringTextAttribute: CFStringRef; external name '_kAXReplacementStringTextAttribute'; (* attribute const *)	// CFStringRef
+
+var kAXMisspelledTextAttribute: CFStringRef; external name '_kAXMisspelledTextAttribute'; (* attribute const *)		// AXUIElementRef
+
+// kAXFontTextAttribute keys
+var kAXFontNameKey: CFStringRef; external name '_kAXFontNameKey'; (* attribute const *)		// CFStringRef - required
+var kAXFontFamilyKey: CFStringRef; external name '_kAXFontFamilyKey'; (* attribute const *)		// CFStringRef - not required
+var kAXVisibleNameKey: CFStringRef; external name '_kAXVisibleNameKey'; (* attribute const *)		// CFStringRef - not required
+var kAXFontSizeKey: CFStringRef; external name '_kAXFontSizeKey'; (* attribute const *)		// CFNumberRef - required
+>>>>>>> graemeg/fixes_2_2
 
 const
 	kAXUnderlineStyleNone = $0;
@@ -525,6 +594,7 @@ type
 
 
 // DO NOT USE. This is an old, misspelled version of one of the above constants.
+<<<<<<< HEAD
 var kAXForegoundColorTextAttribute: CFStringRef; external name '_kAXForegoundColorTextAttribute'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	// CGColorRef
 
@@ -533,3 +603,8 @@ var kAXForegoundColorTextAttribute: CFStringRef; external name '_kAXForegoundCol
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+var kAXForegoundColorTextAttribute: CFStringRef; external name '_kAXForegoundColorTextAttribute'; (* attribute const *)	// CGColorRef
+
+end.
+>>>>>>> graemeg/fixes_2_2

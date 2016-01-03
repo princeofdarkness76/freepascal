@@ -395,8 +395,13 @@ implementation
                  get_used_regvars(left,usedregvars);
                  { loop body }
                  get_used_regvars(t2,usedregvars);
+<<<<<<< HEAD
                  { end value can't be a regvar, but may be a temp in register }
                  get_used_regvars(t1,usedregvars);
+=======
+                 { end value (t1) is not necessary (it cannot be a regvar, }
+                 { see webtbs/tw8883)                                      }
+>>>>>>> graemeg/fixes_2_2
 
                  gen_sync_regvars(current_asmdata.CurrAsmList,usedregvars);
                end
@@ -491,6 +496,10 @@ implementation
          if t1.nodetype<>ordconstn then
            begin
               do_loopvar_at_end:=false;
+<<<<<<< HEAD
+=======
+              location_force_reg(current_asmdata.CurrAsmList,t1.location,t1.location.size,false);
+>>>>>>> graemeg/fixes_2_2
               temptovalue:=true;
            end
          else
@@ -992,13 +1001,21 @@ implementation
 {$ifdef OLDREGVARS}
          load_all_regvars(current_asmdata.CurrAsmList);
 {$endif OLDREGVARS}
+<<<<<<< HEAD
          hlcg.a_label(current_asmdata.CurrAsmList,getasmlabel);
+=======
+         cg.a_label(current_asmdata.CurrAsmList,getasmlabel);
+>>>>>>> graemeg/fixes_2_2
 
          { Write also extra label if this label was referenced from
            assembler block }
          if assigned(labsym) and
             assigned(labsym.asmblocklabel) then
+<<<<<<< HEAD
            hlcg.a_label(current_asmdata.CurrAsmList,labsym.asmblocklabel);
+=======
+           cg.a_label(current_asmdata.CurrAsmList,labsym.asmblocklabel);
+>>>>>>> graemeg/fixes_2_2
 
          secondpass(left);
       end;
@@ -1809,6 +1826,7 @@ implementation
              if codegenerror then
                exit;
 <<<<<<< HEAD
+<<<<<<< HEAD
              if (tf_safecall_exceptions in target_info.flags) and
                 (current_procinfo.procdef.proccalloption=pocall_safecall) then
                handle_safecall_exception
@@ -1828,6 +1846,21 @@ implementation
 >>>>>>> graemeg/cpstrnew
              else
                 hlcg.g_call_system_proc(current_asmdata.CurrAsmList,'fpc_reraise',[],nil);
+=======
+{$if defined(x86) or defined(arm)}
+             if current_procinfo.procdef.proccalloption=pocall_safecall then
+               begin
+                 { Remove and destroy the last exception object }
+                 cg.a_call_name(current_asmdata.CurrAsmList,'FPC_POPOBJECTSTACK');
+                 cg.a_call_name(current_asmdata.CurrAsmList,'FPC_DESTROYEXCEPTION');
+                 { Set return value of safecall procedure to indicate exception.       }
+                 { Exception will be raised after procedure exit based on return value }
+                 cg.a_load_const_reg(current_asmdata.CurrAsmList,OS_ADDR,aint($8000FFFF),NR_FUNCTION_RETURN_REG);
+               end
+             else
+{$endif}
+               cg.a_call_name(current_asmdata.CurrAsmList,'FPC_RERAISE');
+>>>>>>> graemeg/fixes_2_2
            end
          else
            begin

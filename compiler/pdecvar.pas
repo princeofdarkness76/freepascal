@@ -58,7 +58,11 @@ interface
 
     procedure read_public_and_external(vs: tabstractvarsym);
 
+<<<<<<< HEAD
     procedure try_consume_sectiondirective(var asection: ansistring);
+=======
+    procedure read_public_and_external(vs: tabstractvarsym);
+>>>>>>> graemeg/fixes_2_2
 
 implementation
 
@@ -70,10 +74,14 @@ implementation
        globtype,globals,tokens,verbose,constexp,
        systems,
        { symtable }
+<<<<<<< HEAD
        symconst,symbase,symtype,defutil,defcmp,symcreat,
 {$if defined(i386) or defined(i8086)}
        symcpu,
 {$endif}
+=======
+       symconst,symbase,symtype,symtable,defutil,defcmp,
+>>>>>>> graemeg/fixes_2_2
        fmodule,htypechk,
        { pass 1 }
        node,pass_1,aasmdata,
@@ -157,7 +165,11 @@ implementation
                            begin
                              sym:=tsym(st.Find(pattern));
                              if not(assigned(sym)) and is_object(def) then
+<<<<<<< HEAD
                                sym:=search_struct_member(tobjectdef(def),pattern);
+=======
+                               sym:=search_class_member(tobjectdef(def),pattern);
+>>>>>>> graemeg/fixes_2_2
                              if assigned(sym) then
                               begin
                                 pl.addsym(sl_subscript,sym);
@@ -220,11 +232,15 @@ implementation
                                  begin
                                    { type/range checking }
                                    inserttypeconv(p,tarraydef(def).rangedef);
+<<<<<<< HEAD
                                    if (Tordconstnode(p).value<int64(low(longint))) or
                                       (Tordconstnode(p).value>int64(high(longint))) then
                                      message(parser_e_array_range_out_of_bounds)
                                    else
                                      idx:=Tordconstnode(p).value.svalue
+=======
+                                   idx:=tordconstnode(p).value
+>>>>>>> graemeg/fixes_2_2
                                  end
                                else
                                 Message(type_e_ordinal_expr_expected)
@@ -277,6 +293,7 @@ implementation
                (ppo_hasparameters in p.propoptions);
           end;
 
+<<<<<<< HEAD
           procedure create_accessor_procsym(p: tpropertysym; pd: tprocdef; const prefix: string;
               accesstype: tpropaccesslisttypes);
             var
@@ -454,6 +471,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
       var
          sym : tsym;
          srsymtable: tsymtable;
@@ -531,11 +550,16 @@ implementation
               exit;
            end;
          { Generate propertysym and insert in symtablestack }
+<<<<<<< HEAD
          p:=cpropertysym.create(orgpattern);
          p.visibility:=symtablestack.top.currentvisibility;
          p.default:=longint($80000000);
          if is_classproperty then
            include(p.symoptions, sp_static);
+=======
+         p:=tpropertysym.create(orgpattern);
+         p.default:=longint($80000000);
+>>>>>>> graemeg/fixes_2_2
          symtablestack.top.insert(p);
          consume(_ID);
          { property parameters ? }
@@ -1390,7 +1414,11 @@ implementation
       { only allowed for one var }
       vs:=tabstractvarsym(sc[0]);
       if sc.count>1 then
+<<<<<<< HEAD
         Message1(parser_e_directive_only_one_var,arraytokeninfo[idtoken].str);
+=======
+        Message(parser_e_absolute_only_one_var);
+>>>>>>> graemeg/fixes_2_2
       read_public_and_external(vs);
     end;
 
@@ -1400,10 +1428,16 @@ implementation
       is_dll,
       is_cdecl,
       is_external_var,
+<<<<<<< HEAD
       is_weak_external,
       is_public_var  : boolean;
       dll_name,section_name,
       C_name,mangledname      : string;
+=======
+      is_public_var  : boolean;
+      dll_name,
+      C_name      : string;
+>>>>>>> graemeg/fixes_2_2
     begin
       { only allowed for one var }
       { only allow external and public on global symbols }
@@ -1417,8 +1451,11 @@ implementation
       is_cdecl:=false;
       is_external_var:=false;
       is_public_var:=false;
+<<<<<<< HEAD
       section_name := '';
       dll_name := '';
+=======
+>>>>>>> graemeg/fixes_2_2
       C_name:=vs.realname;
 
       { macpas specific handling due to some switches}
@@ -1444,6 +1481,7 @@ implementation
         end;
 
       { external }
+<<<<<<< HEAD
       is_weak_external:=try_to_consume(_WEAKEXTERNAL);
       if is_weak_external or
          try_to_consume(_EXTERNAL) then
@@ -1458,6 +1496,23 @@ implementation
             end;
           if not(is_cdecl) and try_to_consume(_NAME) then
             C_name:=get_stringconst;
+=======
+      if try_to_consume(_EXTERNAL) then
+        begin
+          is_external_var:=true;
+          if not is_cdecl then
+            begin
+              if idtoken<>_NAME then
+                begin
+                  is_dll:=true;
+                  dll_name:=get_stringconst;
+                  if ExtractFileExt(dll_name)='' then
+                    dll_name:=ChangeFileExt(dll_name,target_info.sharedlibext);
+                end;
+              if try_to_consume(_NAME) then
+                C_name:=get_stringconst;
+            end;
+>>>>>>> graemeg/fixes_2_2
           consume(_SEMICOLON);
         end;
 
@@ -1471,15 +1526,19 @@ implementation
             is_public_var:=true;
           if try_to_consume(_NAME) then
             C_name:=get_stringconst;
+<<<<<<< HEAD
           if (target_info.system in systems_allow_section_no_semicolon) and
              (vs.typ=staticvarsym) and
              try_to_consume (_SECTION) then
             section_name:=get_stringconst;
+=======
+>>>>>>> graemeg/fixes_2_2
           consume(_SEMICOLON);
         end;
 
       { Windows uses an indirect reference using import tables }
       if is_dll and
+<<<<<<< HEAD
          (target_info.system in systems_all_windows) then
         include(vs.varoptions,vo_is_dll_var);
 
@@ -1491,6 +1550,11 @@ implementation
         end;
 
 
+=======
+         (target_info.system in system_all_windows) then
+        include(vs.varoptions,vo_is_dll_var);
+
+>>>>>>> graemeg/fixes_2_2
       { Add C _ prefix }
       if is_cdecl or
          (
@@ -1507,7 +1571,10 @@ implementation
           inc(vs.refs);
         end;
 
+<<<<<<< HEAD
       mangledname:=C_name;
+=======
+>>>>>>> graemeg/fixes_2_2
       { now we can insert it in the import lib if its a dll, or
         add it to the externals }
       if is_external_var then
@@ -1515,6 +1582,7 @@ implementation
           if vo_is_typed_const in vs.varoptions then
             Message(parser_e_initialized_not_for_external);
           include(vs.varoptions,vo_is_external);
+<<<<<<< HEAD
           if (is_weak_external) then
             begin
               if not(target_info.system in systems_weak_linking) then
@@ -1530,12 +1598,18 @@ implementation
 
               current_module.AddExternalImport(dll_name,C_Name,mangledname,0,true,false);
             end
+=======
+          vs.varregable := vr_none;
+          if is_dll then
+            current_module.AddExternalImport(dll_name,C_Name,0,true,false)
+>>>>>>> graemeg/fixes_2_2
           else
             if tf_has_dllscanner in target_info.flags then
               current_module.dllscannerinputlist.Add(vs.mangledname,vs);
         end;
 
       { Set the assembler name }
+<<<<<<< HEAD
       tstaticvarsym(vs).set_mangledbasename(mangledname);
       tstaticvarsym(vs).set_mangledname(mangledname);
     end;
@@ -1604,6 +1678,12 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+      tstaticvarsym(vs).set_mangledname(C_Name);
+    end;
+
+
+>>>>>>> graemeg/fixes_2_2
     procedure read_var_decls(options:Tvar_dec_options);
 >>>>>>> graemeg/cpstrnew
 
@@ -1859,6 +1939,130 @@ implementation
             end;
         end;
 
+<<<<<<< HEAD
+=======
+        procedure read_public_and_external(sc:TFPObjectList);
+        var
+          vs          : tabstractvarsym;
+          is_dll,
+          is_cdecl,
+          is_external_var,
+          is_public_var  : boolean;
+          dll_name,
+          C_name      : string;
+        begin
+          { only allowed for one var }
+          vs:=tabstractvarsym(sc[0]);
+          if sc.count>1 then
+            Message(parser_e_absolute_only_one_var);
+          { only allow external and public on global symbols }
+          if vs.typ<>staticvarsym then
+            begin
+              Message(parser_e_no_local_var_external);
+              exit;
+            end;
+          { defaults }
+          is_dll:=false;
+          is_cdecl:=false;
+          is_external_var:=false;
+          is_public_var:=false;
+          C_name:=vs.realname;
+
+          { macpas specific handling due to some switches}
+          if (m_mac in current_settings.modeswitches) then
+            begin
+              if (cs_external_var in current_settings.localswitches) then
+                begin {The effect of this is the same as if cvar; external; has been given as directives.}
+                  is_cdecl:=true;
+                  is_external_var:=true;
+                end
+              else if (cs_externally_visible in current_settings.localswitches) then
+                begin {The effect of this is the same as if cvar has been given as directives and it's made public.}
+                  is_cdecl:=true;
+                  is_public_var:=true;
+                end;
+            end;
+
+          { cdecl }
+          if try_to_consume(_CVAR) then
+            begin
+              consume(_SEMICOLON);
+              is_cdecl:=true;
+            end;
+
+          { external }
+          if try_to_consume(_EXTERNAL) then
+            begin
+              is_external_var:=true;
+              if not is_cdecl then
+                begin
+                  if idtoken<>_NAME then
+                    begin
+                      is_dll:=true;
+                      dll_name:=get_stringconst;
+                      if ExtractFileExt(dll_name)='' then
+                        dll_name:=ChangeFileExt(dll_name,target_info.sharedlibext);
+                    end;
+                  if try_to_consume(_NAME) then
+                    C_name:=get_stringconst;
+                end;
+              consume(_SEMICOLON);
+            end;
+
+          { export or public }
+          if idtoken in [_EXPORT,_PUBLIC] then
+            begin
+              consume(_ID);
+              if is_external_var then
+                Message(parser_e_not_external_and_export)
+              else
+                is_public_var:=true;
+              if try_to_consume(_NAME) then
+                C_name:=get_stringconst;
+              consume(_SEMICOLON);
+            end;
+
+          { Windows uses an indirect reference using import tables }
+          if is_dll and
+             (target_info.system in system_all_windows) then
+            include(vs.varoptions,vo_is_dll_var);
+
+          { Add C _ prefix }
+          if is_cdecl or
+             (
+              is_dll and
+              (target_info.system in systems_darwin)
+             ) then
+            C_Name := target_info.Cprefix+C_Name;
+
+          if is_public_var then
+            begin
+              include(vs.varoptions,vo_is_public);
+              vs.varregable := vr_none;
+              { mark as referenced }
+              inc(vs.refs);
+            end;
+
+          { now we can insert it in the import lib if its a dll, or
+            add it to the externals }
+          if is_external_var then
+            begin
+              if vo_is_typed_const in vs.varoptions then
+                Message(parser_e_initialized_not_for_external);
+              include(vs.varoptions,vo_is_external);
+              vs.varregable := vr_none;
+              if is_dll then
+                current_module.AddExternalImport(dll_name,C_Name,0,true,false)
+              else
+                if tf_has_dllscanner in target_info.flags then
+                  current_module.dllscannerinputlist.Add(vs.mangledname,vs);
+            end;
+
+          { Set the assembler name }
+          tstaticvarsym(vs).set_mangledname(C_Name);
+        end;
+
+>>>>>>> graemeg/fixes_2_2
       var
          sc   : TFPObjectList;
          vs   : tabstractvarsym;
@@ -2071,6 +2275,7 @@ implementation
                  )
                 ) then
                read_public_and_external_sc(sc);
+<<<<<<< HEAD
 
              { try to parse a section directive }
 <<<<<<< HEAD
@@ -2133,6 +2338,8 @@ implementation
                        end;
                    end;
                end;
+=======
+>>>>>>> graemeg/fixes_2_2
 
              { allocate normal variable (non-external and non-typed-const) staticvarsyms }
              for i:=0 to sc.count-1 do
@@ -2208,6 +2415,7 @@ implementation
 =======
 >>>>>>> origin/cpstrnew
          semicoloneaten: boolean;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 {$if defined(powerpc) or defined(powerpc64)}
          tempdef: tdef;
@@ -2231,6 +2439,21 @@ implementation
 >>>>>>> origin/cpstrnew
          old_block_type: tblock_type;
       begin
+=======
+{$if defined(powerpc) or defined(powerpc64)}
+         tempdef: tdef;
+         is_first_field: boolean;
+{$endif powerpc or powerpc64}
+      begin
+         recst:=tabstractrecordsymtable(symtablestack.top);
+{$if defined(powerpc) or defined(powerpc64)}
+         is_first_field := true;
+{$endif powerpc or powerpc64}
+         old_current_object_option:=current_object_option;
+         { all variables are public if not in a object declaration }
+         if not(vd_object in options) then
+          current_object_option:=[sp_public];
+>>>>>>> graemeg/fixes_2_2
          old_block_type:=block_type;
          block_type:=bt_var;
          recst:=tabstractrecordsymtable(symtablestack.top);
@@ -2268,12 +2491,16 @@ implementation
                 (idtoken in [_PUBLIC,_PRIVATE,_PUBLISHED,_PROTECTED,_STRICT])) do
 >>>>>>> graemeg/cpstrnew
            begin
+<<<<<<< HEAD
              visibility:=symtablestack.top.currentvisibility;
+=======
+>>>>>>> graemeg/fixes_2_2
              semicoloneaten:=false;
              sc.clear;
              repeat
                sorg:=orgpattern;
                if token=_ID then
+<<<<<<< HEAD
                  begin
                    vs:=cfieldvarsym.create(sorg,vs_value,generrordef,[],false);
 
@@ -2301,6 +2528,14 @@ implementation
                  end
                else
                  vs.free;
+=======
+                 begin
+                   vs:=tfieldvarsym.create(sorg,vs_value,generrordef,[]);
+                   sc.add(vs);
+                   recst.insert(vs);
+                 end;
+               consume(_ID);
+>>>>>>> graemeg/fixes_2_2
              until not try_to_consume(_COMMA);
              if m_delphi in current_settings.modeswitches then
                block_type:=bt_var_type
@@ -2441,6 +2676,7 @@ implementation
                  the alignment of the first field.  */
              }
 <<<<<<< HEAD
+<<<<<<< HEAD
              { TODO: check whether this is also for AIX }
              if (target_info.abi in [abi_powerpc_aix,abi_powerpc_darwin]) and
 =======
@@ -2456,6 +2692,10 @@ implementation
 =======
 >>>>>>> origin/cpstrnew
                 is_first_type and
+=======
+             if (target_info.system in [system_powerpc_darwin, system_powerpc_macos, system_powerpc64_darwin]) and
+                is_first_field and
+>>>>>>> graemeg/fixes_2_2
                 (symtablestack.top.symtabletype=recordsymtable) and
                 (trecordsymtable(symtablestack.top).usefieldalignment=C_alignment) then
                begin
@@ -2470,7 +2710,11 @@ implementation
                  if (maxpadalign>4) and
                     (maxpadalign>trecordsymtable(symtablestack.top).padalignment) then
                    trecordsymtable(symtablestack.top).padalignment:=maxpadalign;
+<<<<<<< HEAD
                  is_first_type:=false;
+=======
+                 is_first_field:=false;
+>>>>>>> graemeg/fixes_2_2
                end;
 {$endif powerpc or powerpc64}
 
@@ -2642,6 +2886,17 @@ implementation
                      exclude(options,vd_class);
                      removeclassoption:=false;
                    end;
+<<<<<<< HEAD
+=======
+               end
+             else
+              if (sp_published in current_object_option) and
+                 not(oo_can_have_published in tobjectdef(hdef).objectoptions) and
+                 not(m_delphi in current_settings.modeswitches) then
+               begin
+                 Message(parser_e_only_publishable_classes_can_be_published);
+                 exclude(current_object_option,sp_published);
+>>>>>>> graemeg/fixes_2_2
                end;
              if vd_final in options then
                begin
@@ -2826,12 +3081,17 @@ implementation
 {$if defined(powerpc) or defined(powerpc64)}
               { parent inherits the alignment padding if the variant is the first "field" of the parent record/variant }
               if (target_info.system in [system_powerpc_darwin, system_powerpc_macos, system_powerpc64_darwin]) and
+<<<<<<< HEAD
                  is_first_type and
+=======
+                 is_first_field and
+>>>>>>> graemeg/fixes_2_2
                  (recst.usefieldalignment=C_alignment) and
                  (maxpadalign>recst.padalignment) then
                 recst.padalignment:=maxpadalign;
 {$endif powerpc or powerpc64}
               { Align the offset where the union symtable is added }
+<<<<<<< HEAD
               case recst.usefieldalignment of
                 { allow the unionsymtable to be aligned however it wants }
                 { (within the global min/max limits)                     }
@@ -2848,6 +3108,13 @@ implementation
                 else
                   usedalign:=used_align(recst.fieldalignment,current_settings.alignment.recordalignmin,current_settings.alignment.recordalignmax);
               end;
+=======
+              if (recst.usefieldalignment=C_alignment) then
+                usedalign:=used_align(unionsymtable.recordalignment,current_settings.alignment.recordalignmin,current_settings.alignment.maxCrecordalign)
+              else
+                usedalign:=used_align(unionsymtable.recordalignment,current_settings.alignment.recordalignmin,current_settings.alignment.recordalignmax);
+
+>>>>>>> graemeg/fixes_2_2
               offset:=align(recst.datasize,usedalign);
               recst.datasize:=offset+unionsymtable.datasize;
 

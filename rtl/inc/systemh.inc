@@ -78,8 +78,11 @@
 {$define FPC_HAS_FEATURE_PROCESSES}
 {$define FPC_HAS_FEATURE_STACKCHECK}
 {$define FPC_HAS_FEATURE_DYNLIBS}
+<<<<<<< HEAD
 {$define FPC_HAS_FEATURE_OBJECTIVEC1}
 {$define FPC_HAS_FEATURE_UNICODESTRINGS}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$endif FPC_HAS_FEATURE_SUPPORT}
 
 <<<<<<< HEAD
@@ -221,6 +224,7 @@ Type
 
 {$ifdef CPUM68K}
   {$define DEFAULT_DOUBLE}
+<<<<<<< HEAD
 
   {$ifdef FPUSOFT}
     {$define FPC_INCLUDE_SOFTWARE_MOD_DIV}
@@ -229,13 +233,19 @@ Type
 
   { m68k int64 shl/shr uses soft helper for non constaznt values }
   {$define FPC_INCLUDE_SOFTWARE_SHIFT_INT64}
+=======
+>>>>>>> graemeg/fixes_2_2
 
   {$define SUPPORT_SINGLE}
   {$define SUPPORT_DOUBLE}
 
+<<<<<<< HEAD
   {$ifndef FPUNONE}
     ValReal = Real;
   {$endif}
+=======
+  ValReal = Real;
+>>>>>>> graemeg/fixes_2_2
 
   { Comp type does not exist on fpu }
   Comp    = int64;
@@ -603,8 +613,12 @@ Type
 
 {$ifndef FPUNONE}
   PDate               = ^TDateTime;
+<<<<<<< HEAD
   PDateTime           = ^TDateTime;
 {$endif}
+=======
+  PDateTime	      = ^TDateTime;
+>>>>>>> graemeg/fixes_2_2
   PError              = ^TError;
   PVariant            = ^Variant;
   POleVariant         = ^OleVariant;
@@ -653,6 +667,7 @@ Type
 { platform-dependent types }
 {$i sysosh.inc}
 
+<<<<<<< HEAD
 { platform-dependent defines }
 {$i rtldefs.inc}
 
@@ -671,6 +686,9 @@ type
   { Needed for fpc_get_output }
   PText               = ^Text;
 
+=======
+type
+>>>>>>> graemeg/fixes_2_2
   TEntryInformation = record
     InitFinalTable : Pointer;
     ThreadvarTablesTable : Pointer;
@@ -772,7 +790,11 @@ const
   ThreadingAlreadyUsed : boolean = FALSE;
   { Indicates if there was an error }
   StackError : boolean = FALSE;
+<<<<<<< HEAD
   InitProc : CodePointer = nil;
+=======
+  InitProc : Pointer = nil;
+>>>>>>> graemeg/fixes_2_2
   { compatibility }
   ModuleIsLib : Boolean = FALSE;
   ModuleIsPackage : Boolean = FALSE;
@@ -867,6 +889,7 @@ function StackTop: Pointer;
   {$endif}
 {$endif}
 
+<<<<<<< HEAD
 Procedure Move(const source;var dest;count:{$ifdef MOVE_HAS_SIZEUINT_COUNT}SizeUInt{$else}SizeInt{$endif});
 Procedure FillChar(var x;count:{$ifdef FILLCHAR_HAS_SIZEUINT_COUNT}SizeUInt{$else}SizeInt{$endif};Value:Byte);
 Procedure FillChar(var x;count:{$ifdef FILLCHAR_HAS_SIZEUINT_COUNT}SizeUInt{$else}SizeInt{$endif};Value:Boolean);
@@ -882,16 +905,38 @@ function  IndexDWord(const buf;len:SizeInt;b:DWord):SizeInt;
 function  IndexQWord(const buf;len:SizeInt;b:QWord):SizeInt;
 function  CompareChar(const buf1,buf2;len:SizeInt):SizeInt;
 function  CompareByte(const buf1,buf2;len:SizeInt):SizeInt;
+=======
+Procedure Move(const source;var dest;count:SizeInt);{$ifdef INLINEGENERICS}inline;{$endif}
+Procedure FillChar(var x;count:SizeInt;Value:Byte);{$ifdef INLINEGENERICS}inline;{$endif}
+Procedure FillChar(var x;count:SizeInt;Value:Boolean);{$ifdef SYSTEMINLINE}inline;{$endif}
+Procedure FillChar(var x;count:SizeInt;Value:Char);{$ifdef SYSTEMINLINE}inline;{$endif}
+procedure FillByte(var x;count:SizeInt;value:byte);{$ifdef SYSTEMINLINE}inline;{$endif}
+Procedure FillWord(var x;count:SizeInt;Value:Word);
+procedure FillDWord(var x;count:SizeInt;value:DWord);
+function  IndexChar(const buf;len:SizeInt;b:char):SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
+function  IndexByte(const buf;len:SizeInt;b:byte):SizeInt;{$ifdef INLINEGENERICS}inline;{$endif}
+function  Indexword(const buf;len:SizeInt;b:word):SizeInt;
+function  IndexDWord(const buf;len:SizeInt;b:DWord):SizeInt;
+function  CompareChar(const buf1,buf2;len:SizeInt):SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
+function  CompareByte(const buf1,buf2;len:SizeInt):SizeInt;{$ifdef INLINEGENERICS}inline;{$endif}
+>>>>>>> graemeg/fixes_2_2
 function  CompareWord(const buf1,buf2;len:SizeInt):SizeInt;
 function  CompareDWord(const buf1,buf2;len:SizeInt):SizeInt;
 procedure MoveChar0(const buf1;var buf2;len:SizeInt);
 function  IndexChar0(const buf;len:SizeInt;b:char):SizeInt;
 function  CompareChar0(const buf1,buf2;len:SizeInt):SizeInt;
 procedure prefetch(const mem);[internproc:fpc_in_prefetch_var];
+<<<<<<< HEAD
 procedure ReadBarrier;
 procedure ReadDependencyBarrier;
 procedure ReadWriteBarrier;
 procedure WriteBarrier;
+=======
+procedure ReadBarrier;{$ifdef INLINEGENERICS}inline;{$endif}
+procedure ReadDependencyBarrier;{$ifdef INLINEGENERICS}inline;{$endif}
+procedure ReadWriteBarrier;{$ifdef INLINEGENERICS}inline;{$endif}
+procedure WriteBarrier;{$ifdef INLINEGENERICS}inline;{$endif}
+>>>>>>> graemeg/fixes_2_2
 
 
 {****************************************************************************
@@ -1340,6 +1385,7 @@ Function  Sseg:Word;{$ifdef SYSTEMINLINE}inline;{$endif}
 ****************************************************************************}
 
 function strpas(p:pchar):shortstring;{$ifdef SYSTEMINLINE}inline;{$endif}
+<<<<<<< HEAD
 function strlen(p:pchar):sizeint;external name 'FPC_PCHAR_LENGTH';
 
 { result:
@@ -1349,6 +1395,9 @@ function strlen(p:pchar):sizeint;external name 'FPC_PCHAR_LENGTH';
       parameter was true)
 }
 function Utf8CodePointLen(P: PAnsiChar; MaxLookAhead: SizeInt; IncludeCombiningDiacriticalMarks: Boolean): SizeInt;
+=======
+function strlen(p:pchar):longint;external name 'FPC_PCHAR_LENGTH';
+>>>>>>> graemeg/fixes_2_2
 
 { Shortstring functions }
 Procedure Delete(var s:shortstring;index:SizeInt;count:SizeInt);
@@ -1391,7 +1440,11 @@ Procedure SetString (out S : AnsiString; Buf : PChar; Len : SizeInt);
 Procedure SetString (out S : AnsiString; Buf : PWideChar; Len : SizeInt);
 >>>>>>> origin/cpstrnew
 {$endif FPC_HAS_FEATURE_ANSISTRINGS}
+<<<<<<< HEAD
 Procedure {$ifdef FPC_HAS_CPSTRING}fpc_setstring_shortstr{$else}SetString{$endif}(out S : Shortstring; Buf : PChar; Len : SizeInt); {$ifdef FPC_HAS_CPSTRING} compilerproc; {$endif FPC_HAS_CPSTRING}
+=======
+Procedure SetString (out S : Shortstring; Buf : PChar; Len : SizeInt);
+>>>>>>> graemeg/fixes_2_2
 function  ShortCompareText(const S1, S2: shortstring): SizeInt;
 Function  upCase(const s:shortstring):shortstring;
 Function  lowerCase(const s:shortstring):shortstring; overload;
@@ -1405,11 +1458,14 @@ Function  binStr(Val:int64;cnt:byte):shortstring;
 Function  hexStr(Val:qword;cnt:byte):shortstring;
 Function  OctStr(Val:qword;cnt:byte):shortstring;
 Function  binStr(Val:qword;cnt:byte):shortstring;
+<<<<<<< HEAD
 {$ifdef CPUI8086}
 Function  hexStr(Val:NearPointer):shortstring;
 Function  hexStr(Val:FarPointer):shortstring;
 Function  hexStr(Val:HugePointer):shortstring;{$ifdef SYSTEMINLINE}inline;{$endif}
 {$else CPUI8086}
+=======
+>>>>>>> graemeg/fixes_2_2
 Function  hexStr(Val:Pointer):shortstring;
 {$endif CPUI8086}
 
@@ -1665,7 +1721,11 @@ function get_caller_frame(framebp:pointer;addr:codepointer=nil):pointer;
 procedure get_caller_stackinfo(var framebp : pointer; var addr : codepointer);
 
 Function IOResult:Word;
+<<<<<<< HEAD
 Function Sptr:Pointer;[internconst:fpc_in_const_ptr];
+=======
+Function Sptr:Pointer;{$ifdef SYSTEMINLINE}inline;{$endif}[internconst:fpc_in_const_ptr];
+>>>>>>> graemeg/fixes_2_2
 
 {$ifdef FPC_HAS_FEATURE_PROCESSES}
 Function GetProcessID:SizeUInt;
@@ -1744,11 +1804,20 @@ Function  ParamCount:Longint;
 Function  ParamStr(l:Longint):string;
 {$endif FPC_HAS_FEATURE_COMMANDARGS}
 
+<<<<<<< HEAD
 Procedure Dump_Stack(var f : text;fp:pointer;addr : codepointer = nil);
 procedure Dump_Stack(var f : text;skipframes : longint);
 {$ifdef FPC_HAS_FEATURE_EXCEPTIONS}
 procedure DumpExceptionBackTrace(var f:text);
 {$endif FPC_HAS_FEATURE_EXCEPTIONS}
+=======
+{$ifdef FPC_HAS_FEATURE_CONSOLEIO}
+Procedure Dump_Stack(var f : text;bp:pointer);
+{$ifdef FPC_HAS_FEATURE_EXCEPTIONS}
+procedure DumpExceptionBackTrace(var f:text);
+{$endif FPC_HAS_FEATURE_EXCEPTIONS}
+{$endif FPC_HAS_FEATURE_CONSOLEIO}
+>>>>>>> graemeg/fixes_2_2
 
 Procedure RunError(w:Word);
 Procedure RunError;{$ifdef SYSTEMINLINE}inline;{$endif}
@@ -1768,10 +1837,15 @@ procedure SysInitStdIO;
 procedure SysFlushStdIO;
 {$endif EMBEDDED}
 {$endif FPC_HAS_FEATURE_CONSOLEIO}
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 Procedure SysResetFPU;
 Procedure SysInitFPU;
 {$endif}
+=======
+Procedure SysResetFPU;{$ifdef SYSTEMINLINE}inline;{$endif}
+Procedure SysInitFPU;{$ifdef SYSTEMINLINE}inline;{$endif}
+>>>>>>> graemeg/fixes_2_2
 
 {*****************************************************************************
                          Abstract/Assert/Error Handling

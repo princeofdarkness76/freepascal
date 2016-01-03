@@ -277,6 +277,7 @@ interface
           { enable set support in dwarf debug info, breaks gdb versions }
           { without support for that tag (they refuse to parse the rest }
           { of the debug information)                                   }
+<<<<<<< HEAD
           ds_dwarf_sets,
           { use absolute paths for include files in stabs. Pro: gdb     }
           { always knows full path to file. Con: doesn't work anymore   }
@@ -336,6 +337,12 @@ interface
        );
        ttargetswitches = set of ttargetswitch;
 
+=======
+          ds_dwarf_sets
+       );
+       tdebugswitches = set of tdebugswitch;
+       
+>>>>>>> graemeg/fixes_2_2
 
        { adding a new entry here requires also adding the appropriate define in
          systemh.inc (FK)
@@ -344,6 +351,7 @@ interface
          f_heap,f_init_final,f_rtti,f_classes,f_exceptions,f_exitcode,
          f_ansistrings,f_widestrings,f_textio,f_consoleio,f_fileio,
          f_random,f_variants,f_objects,f_dynarrays,f_threading,f_commandargs,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -362,6 +370,9 @@ interface
 =======
          f_processes,f_stackcheck,f_dynlibs,f_softfpu,f_objectivec1,f_resources
 >>>>>>> origin/cpstrnew
+=======
+         f_processes,f_stackcheck,f_dynlibs
+>>>>>>> graemeg/fixes_2_2
        );
        tfeatures = set of tfeature;
 
@@ -449,6 +460,9 @@ interface
 =======
 >>>>>>> origin/cpstrnew
 
+       DebugSwitchStr : array[tdebugswitch] of string[9] = ('',
+         'DWARFSETS');
+
        { switches being applied to all CPUs at the given level }
        genericlevel1optimizerswitches = [cs_opt_level1,cs_opt_peephole];
        genericlevel2optimizerswitches = [cs_opt_level2,cs_opt_remove_emtpy_proc];
@@ -468,6 +482,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          'PROCESSES','STACKCHECK','DYNLIBS','SOFTFPU','OBJECTIVEC1','RESOURCES',
          'UNICODESTRINGS'
 =======
@@ -482,6 +497,9 @@ interface
 =======
          'PROCESSES','STACKCHECK','DYNLIBS','SOFTFPU','OBJECTIVEC1','RESOURCES'
 >>>>>>> origin/cpstrnew
+=======
+         'PROCESSES','STACKCHECK','DYNLIBS'
+>>>>>>> graemeg/fixes_2_2
        );
 
     type
@@ -576,11 +594,18 @@ interface
          app_gui,       { graphic user-interface application }
          app_cui,       { console application }
          app_fs,        { full-screen type application (OS/2 and EMX only) }
+<<<<<<< HEAD
          app_tool,      { tool application, (MPW tool for MacOS, MacOS only) }
          app_arm7,      { for Nintendo DS target }
          app_arm9,      { for Nintendo DS target }
          app_bundle,    { dynamically loadable bundle, Darwin only }
          app_com        { DOS .COM file }
+=======
+         app_tool,      { tool application, (MPW tool for MacOS, MacOS only)}
+         app_arm7,
+         app_arm9,
+         app_bundle     { dynamically loadable bundle, Darwin only }
+>>>>>>> graemeg/fixes_2_2
        );
 
        { interface types }
@@ -794,6 +819,7 @@ interface
          { stack frame optimization not possible (only on x86 probably) }
          pi_needs_stackframe,
          { set if the procedure has at least one register saved on the stack }
+<<<<<<< HEAD
          pi_has_saved_regs,
          { dfa was generated for this proc }
          pi_dfaavailable,
@@ -829,14 +855,23 @@ interface
 =======
          pi_has_interproclabel
 >>>>>>> origin/cpstrnew
+=======
+         pi_has_saved_regs
+>>>>>>> graemeg/fixes_2_2
        );
        tprocinfoflags=set of tprocinfoflag;
 
     type
+<<<<<<< HEAD
       { float types -- warning, this enum/order is used internally by the RTL
         as well in rtl/inc/real2str.inc }
       tfloattype = (
         s32real,s64real,s80real,sc80real { the C "long double" type on x86 },
+=======
+      { float types }
+      tfloattype = (
+        s32real,s64real,s80real,
+>>>>>>> graemeg/fixes_2_2
         s64comp,s64currency,s128real
       );
 
@@ -845,6 +880,7 @@ interface
       TRADirection = (rad_forward, rad_backwards, rad_backwards_reinit);
 
     type
+<<<<<<< HEAD
       TIDString = string[maxidlen];
 
       tnormalset = set of byte; { 256 elements set }
@@ -865,6 +901,27 @@ interface
         fileindex : word;
         moduleindex : word;
       end;
+=======
+       TIDString = string[maxidlen];
+
+       tnormalset = set of byte; { 256 elements set }
+       pnormalset = ^tnormalset;
+
+       pboolean   = ^boolean;
+       pdouble    = ^double;
+       pbyte      = ^byte;
+       pword      = ^word;
+       plongint   = ^longint;
+       plongintarray = plongint;
+
+       Tconstant=record
+            case signed:boolean of
+                false:
+                    (valueu:cardinal);
+                true:
+                    (values:longint);
+       end;
+>>>>>>> graemeg/fixes_2_2
 
   {$ifndef xFPC}
     type

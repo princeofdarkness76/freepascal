@@ -15,6 +15,14 @@
 {$H+}
 
 
+<<<<<<< HEAD
+=======
+{$IFDEF VER2_0}
+// Sanity check
+{$UNDEF FPC_TESTGENERICS}
+{$ENDIF}
+
+>>>>>>> graemeg/fixes_2_2
 {$ifdef CLASSESINLINE}{$inline on}{$endif}
 
 
@@ -218,6 +226,7 @@ Type
 {$IFNDEF FPC_TESTGENERICS}
 
   TListAssignOp = (laCopy, laAnd, laOr, laXor, laSrcUnique, laDestUnique);
+<<<<<<< HEAD
   TFPList = class;
 
   TFPListEnumerator = class
@@ -230,6 +239,8 @@ Type
     function MoveNext: Boolean;
     property Current: Pointer read GetCurrent;
   end;
+=======
+>>>>>>> graemeg/fixes_2_2
 
   TFPList = class(TObject)
   private
@@ -282,6 +293,7 @@ Type
   end;
 
 {$else}
+<<<<<<< HEAD
 
   TFPPtrList = specialize TFPGList<Pointer>;
 
@@ -296,7 +308,22 @@ Type
 {$endif}
 
 { TList class}
+=======
+>>>>>>> graemeg/fixes_2_2
 
+  TFPPtrList = specialize TFPGList<Pointer>;
+
+  TFPList = class(TFPPtrList)
+  public
+    procedure Assign(Source: TFPList);
+    procedure Sort(Compare: TListSortCompare);
+    procedure ForEachCall(Proc2call: TListCallback; Arg: Pointer);
+    procedure ForEachCall(Proc2call: TListStaticCallback; Arg: Pointer);
+  end;
+
+{$endif}
+
+{ TList class}
   TListNotification = (lnAdded, lnExtracted, lnDeleted);
   TList = class;
 
@@ -311,10 +338,17 @@ Type
     property Current: Pointer read GetCurrent;
   end;
 
+<<<<<<< HEAD
   TList = class(TObject,IFPObserved)
   private
     FList: TFPList;
     FObservers : TFPList;
+=======
+
+  TList = class(TObject)
+  private
+    FList: TFPList;
+>>>>>>> graemeg/fixes_2_2
     procedure CopyMove (aList : TList);
     procedure MergeMove (aList : TList);
     procedure DoCopy(ListA, ListB : TList);
@@ -336,9 +370,12 @@ Type
   public
     constructor Create;
     destructor Destroy; override;
+<<<<<<< HEAD
     Procedure FPOAttachObserver(AObserver : TObject);
     Procedure FPODetachObserver(AObserver : TObject);
     Procedure FPONotifyObservers(ASender : TObject; AOperation : TFPObservedOperation; Data : Pointer);
+=======
+>>>>>>> graemeg/fixes_2_2
     Procedure AddList(AList : TList);
     function Add(Item: Pointer): Integer;
     procedure Clear; virtual;
@@ -387,11 +424,15 @@ const
    BITSHIFT = 5;
    MASK = 31; {for longs that are 32-bit in size}
    // to further increase, signed integer limits have to be researched.
+<<<<<<< HEAD
 {$ifdef cpu16}
    MaxBitFlags = $7FE0;
 {$else cpu16}
    MaxBitFlags = $7FFFFFE0;
 {$endif cpu16}
+=======
+   MaxBitFlags = $7FFFFFE0;
+>>>>>>> graemeg/fixes_2_2
    MaxBitRec = MaxBitFlags Div (SizeOf(cardinal)*8);
 type
    TBitArray = array[0..MaxBitRec - 1] of cardinal;
@@ -410,6 +451,10 @@ type
       procedure SetSize(value : longint);
    Protected   
       procedure CheckBitIndex (Bit : longint;CurrentSize : Boolean);
+<<<<<<< HEAD
+=======
+      procedure Resize(Nbit : longint);
+>>>>>>> graemeg/fixes_2_2
    public
       { Public declarations }
       constructor Create(TheSize : longint = 0); virtual;
@@ -645,14 +690,22 @@ type
     FUpdateCount: Integer;
     FAdapter: IStringsAdapter;
     FLBS : TTextLineBreakStyle;
+<<<<<<< HEAD
     FSkipLastLineBreak : Boolean;
     FStrictDelimiter : Boolean;
     FLineBreak : String;
+=======
+    FStrictDelimiter : Boolean;
+>>>>>>> graemeg/fixes_2_2
     function GetCommaText: string;
     function GetName(Index: Integer): string;
     function GetValue(const Name: string): string;
     Function GetLBS : TTextLineBreakStyle;
+<<<<<<< HEAD
     Procedure SetLBS (AValue : TTextLineBreakStyle);
+=======
+    Procedure SetLBS (AValue : TTextLineBreakStyle); 
+>>>>>>> graemeg/fixes_2_2
     procedure ReadData(Reader: TReader);
     procedure SetCommaText(const Value: string);
     procedure SetStringsAdapter(const Value: IStringsAdapter);
@@ -727,12 +780,20 @@ type
     procedure GetNameValue(Index : Integer; Out AName,AValue : String);
     function  ExtractName(Const S:String):String;
     Property TextLineBreakStyle : TTextLineBreakStyle Read GetLBS Write SetLBS;
+<<<<<<< HEAD
     property Delimiter: Char read GetDelimiter write SetDelimiter;
     property DelimitedText: string read GetDelimitedText write SetDelimitedText;
     property LineBreak : string Read GetLineBreak write SetLineBreak;
     Property StrictDelimiter : Boolean Read FStrictDelimiter Write FStrictDelimiter;
     property QuoteChar: Char read GetQuoteChar write SetQuoteChar;
     Property NameValueSeparator : Char Read GetNameValueSeparator Write SetNameValueSeparator;
+=======
+    property Delimiter: Char read FDelimiter write SetDelimiter;
+    property DelimitedText: string read GetDelimitedText write SetDelimitedText;
+    Property StrictDelimiter : Boolean Read FStrictDelimiter Write FStrictDelimiter;
+    property QuoteChar: Char read FQuoteChar write SetQuoteChar;
+    Property NameValueSeparator : Char Read FNameValueSeparator Write SetNameValueSeparator;
+>>>>>>> graemeg/fixes_2_2
     property ValueFromIndex[Index: Integer]: string read GetValueFromIndex write SetValueFromIndex;
     property Capacity: Integer read GetCapacity write SetCapacity;
     property CommaText: string read GetCommaText write SetCommaText;
@@ -886,6 +947,7 @@ type
     property OwnsObjects : boolean read FOwnsObjects write FOwnsObjects;
   end;
 
+<<<<<<< HEAD
 {$endif}
   
 <<<<<<< HEAD
@@ -898,6 +960,62 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+{$else}
+
+  TFPStrObjMap = specialize TFPGMap<string, TObject>;
+
+  TStringListTextCompare = function(const s1, s2: string): PtrInt of object;
+
+  TStringList = class(TStrings)
+  private
+    FMap: TFPStrObjMap;
+    FCaseSensitive: Boolean;
+    FOnChange: TNotifyEvent;
+    FOnChanging: TNotifyEvent;
+    FOnCompareText: TStringListTextCompare;
+    procedure SetCaseSensitive(NewSensitive: Boolean);
+  protected
+    procedure Changed; virtual;
+    procedure Changing; virtual;
+    function DefaultCompareText(const s1, s2: string): PtrInt;
+    function DoCompareText(const s1, s2: string): PtrInt; override;
+    function Get(Index: Integer): string; override;
+    function GetCapacity: Integer; override;
+    function GetDuplicates: TDuplicates;
+    function GetCount: Integer; override;
+    function GetObject(Index: Integer): TObject; override;
+    function GetSorted: Boolean; {$ifdef CLASSESINLINE} inline; {$endif}
+    function MapPtrCompare(Key1, Key2: Pointer): Integer;
+    procedure Put(Index: Integer; const S: string); override;
+    procedure PutObject(Index: Integer; AObject: TObject); override;
+    procedure QuickSort(L, R: Integer; CompareFn: TStringListSortCompare);
+    procedure SetCapacity(NewCapacity: Integer); override;
+    procedure SetDuplicates(NewDuplicates: TDuplicates);
+    procedure SetSorted(NewSorted: Boolean); {$ifdef CLASSESINLINE} inline; {$endif}
+    procedure SetUpdateState(Updating: Boolean); override;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    function Add(const S: string): Integer; override;
+    procedure Clear; override;
+    procedure Delete(Index: Integer); override;
+    procedure Exchange(Index1, Index2: Integer); override;
+    function Find(const S: string; var Index: Integer): Boolean; virtual;
+    function IndexOf(const S: string): Integer; override;
+    procedure Insert(Index: Integer; const S: string); override;
+    procedure Sort; virtual;
+    procedure CustomSort(CompareFn: TStringListSortCompare);
+    property Duplicates: TDuplicates read GetDuplicates write SetDuplicates;
+    property Sorted: Boolean read GetSorted write SetSorted;
+    property CaseSensitive: Boolean read FCaseSensitive write SetCaseSensitive;
+    property OnChange: TNotifyEvent read FOnChange write FOnChange;
+    property OnChanging: TNotifyEvent read FOnChanging write FOnChanging;
+    property OnCompareText: TStringListTextCompare read FOnCompareText write FOnCompareText;
+  end;
+
+{$endif}
+>>>>>>> graemeg/fixes_2_2
 
 { TStream abstract class }
 
@@ -914,8 +1032,13 @@ type
     procedure SetSize64(const NewSize: Int64); virtual;
     procedure SetSize(NewSize: Longint); virtual;overload;
     procedure SetSize(const NewSize: Int64); virtual;overload;
+<<<<<<< HEAD
     procedure ReadNotImplemented;
     procedure WriteNotImplemented;
+=======
+	procedure ReadNotImplemented;
+	procedure WriteNotImplemented;
+>>>>>>> graemeg/fixes_2_2
   public
     function Read(var Buffer; Count: Longint): Longint; virtual;
     function Write(const Buffer; Count: Longint): Longint; virtual;
@@ -941,7 +1064,10 @@ type
     procedure WriteByte(b : Byte);
     procedure WriteWord(w : Word);
     procedure WriteDWord(d : Cardinal);
+<<<<<<< HEAD
     procedure WriteQWord(q : QWord);
+=======
+>>>>>>> graemeg/fixes_2_2
     Procedure WriteAnsiString (const S : String);
     property Position: Int64 read GetPosition write SetPosition;
     property Size: Int64 read GetSize write SetSize64;
@@ -1207,14 +1333,20 @@ type
 { Implements OLE IStream on TStream }
   TStreamAdapter = class(TInterfacedObject, IStream)
   private
+<<<<<<< HEAD
     FStream    : TStream;
     FOwnership : TStreamOwnership;
     m_bReverted: Boolean;
+=======
+    FStream: TStream;
+    FOwnership: TStreamOwnership;
+>>>>>>> graemeg/fixes_2_2
   public
     constructor Create(Stream: TStream; Ownership: TStreamOwnership = soReference);
     destructor Destroy; override;
     function Read(pv: Pointer; cb: DWORD; pcbRead: PDWORD): HResult; virtual; stdcall;
     function Write(pv: Pointer; cb: DWORD; pcbWritten: PDWORD): HResult; virtual; stdcall;
+<<<<<<< HEAD
     function Seek(dlibMove: LargeUint; dwOrigin: Longint; out libNewPosition: LargeUint): HResult; virtual; stdcall;
     function SetSize(libNewSize: LargeUint): HResult; virtual; stdcall;
     function CopyTo(stm: IStream; cb: LargeUint; out cbRead: LargeUint; out cbWritten: LargeUint): HResult; virtual; stdcall;
@@ -1222,6 +1354,15 @@ type
     function Revert: HResult; virtual; stdcall;
     function LockRegion(libOffset: LargeUint; cb: LargeUint; dwLockType: Longint): HResult; virtual; stdcall;
     function UnlockRegion(libOffset: LargeUint; cb: LargeUint; dwLockType: Longint): HResult; virtual; stdcall;
+=======
+    function Seek(dlibMove: Largeint; dwOrigin: Longint; out libNewPosition: Largeint): HResult; virtual; stdcall;
+    function SetSize(libNewSize: Largeint): HResult; virtual; stdcall;
+    function CopyTo(stm: IStream; cb: Largeint; out cbRead: Largeint; out cbWritten: Largeint): HResult; virtual; stdcall;
+    function Commit(grfCommitFlags: Longint): HResult; virtual; stdcall;
+    function Revert: HResult; virtual; stdcall;
+    function LockRegion(libOffset: Largeint; cb: Largeint; dwLockType: Longint): HResult; virtual; stdcall;
+    function UnlockRegion(libOffset: Largeint; cb: Largeint; dwLockType: Longint): HResult; virtual; stdcall;
+>>>>>>> graemeg/fixes_2_2
     function Stat(out statstg: TStatStg; grfStatFlag: Longint): HResult; virtual; stdcall;
     function Clone(out stm: IStream): HResult; virtual; stdcall;
     property Stream: TStream read FStream;
@@ -1314,6 +1455,7 @@ type
     FBufSize: Integer;
     FBufPos: Integer;
     FBufEnd: Integer;
+<<<<<<< HEAD
 
     function ReadWord : word; {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
     function ReadDWord : longword; {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
@@ -1321,6 +1463,13 @@ type
 {$ifndef FPUNONE}
     function ReadExtended : extended; {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
 {$endif}
+=======
+    
+    function ReadWord : word; {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
+    function ReadDWord : longword; {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
+    function ReadQWord : qword; {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
+    function ReadExtended : extended; {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
+>>>>>>> graemeg/fixes_2_2
     procedure SkipProperty;
     procedure SkipSetBody;
   public
@@ -1392,7 +1541,11 @@ type
     FOwner: TComponent;
     FParent: TComponent;
     FFixups: TObject;
+<<<<<<< HEAD
     FLoaded: TFpList;
+=======
+    FLoaded: TList;
+>>>>>>> graemeg/fixes_2_2
     FOnFindMethod: TFindMethodEvent;
     FOnSetMethodProperty: TSetMethodPropertyEvent;
     FOnSetName: TSetNameEvent;
@@ -1544,12 +1697,21 @@ type
     FBufSize: Integer;
     FBufPos: Integer;
     FBufEnd: Integer;
+<<<<<<< HEAD
     procedure WriteWord(w : word); {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
     procedure WriteDWord(lw : longword); {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
     procedure WriteQWord(qw : qword); {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
 {$ifndef FPUNONE}
     procedure WriteExtended(e : extended); {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
 {$endif}
+=======
+    FSignatureWritten: Boolean;
+
+    procedure WriteWord(w : word); {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
+    procedure WriteDWord(lw : longword); {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
+    procedure WriteQWord(qw : qword); {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
+    procedure WriteExtended(e : extended); {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
+>>>>>>> graemeg/fixes_2_2
     procedure FlushBuffer;
     procedure WriteValue(Value: TValueType);
   public
@@ -1710,7 +1872,10 @@ type
     function GetHexValue(c : char) : byte; {$ifdef CLASSESINLINE} inline; {$endif CLASSESINLINE}
     function GetAlphaNum : string;
     procedure HandleNewLine;
+<<<<<<< HEAD
     procedure SkipBOM;
+=======
+>>>>>>> graemeg/fixes_2_2
     procedure SkipSpaces;
     procedure SkipWhitespace;
     procedure HandleEof;
@@ -1718,8 +1883,12 @@ type
     procedure HandleNumber;
     procedure HandleHexNumber;
     function HandleQuotedString : string;
+<<<<<<< HEAD
     procedure HandleDecimalCharacter(var ascii : boolean;
                                      out WideChr: widechar; out StringChr: char);
+=======
+    function HandleDecimalString(var ascii : boolean) : widestring;
+>>>>>>> graemeg/fixes_2_2
     procedure HandleString;
     procedure HandleMinus;
     procedure HandleUnknown;
@@ -1735,9 +1904,13 @@ type
     function NextToken: Char;
     function SourcePos: Longint;
     function TokenComponentIdent: string;
+<<<<<<< HEAD
 {$ifndef FPUNONE}
     function TokenFloat: Extended;
 {$endif}
+=======
+    function TokenFloat: Extended;
+>>>>>>> graemeg/fixes_2_2
     function TokenInt: Int64;
     function TokenString: string;
     function TokenWideString: WideString;
@@ -1842,6 +2015,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1850,6 +2024,8 @@ type
 =======
 >>>>>>> origin/cpstrnew
     FSuspendedInternal: longbool;
+=======
+>>>>>>> graemeg/fixes_2_2
     FThreadReaped: boolean;
 {$endif}
 {$ifdef netwlibc}
@@ -1957,6 +2133,11 @@ type
     function GetComponent:TComponent;
    end;
 
+  IInterfaceComponentReference = interface 
+    ['{3FEEC8E1-E400-4A24-BCAC-1F01476439B1}']
+    function GetComponent:TComponent;
+   end;
+
   IDesignerNotify = interface
     ['{B971E807-E3A6-11D1-AAB1-00C04FB16FBC}']
     procedure Modified;
@@ -2030,6 +2211,7 @@ type
     procedure ValidateContainer(AComponent: TComponent); dynamic;
     procedure ValidateInsert(AComponent: TComponent); dynamic;
     { IUnknown }
+<<<<<<< HEAD
     function QueryInterface({$IFDEF FPC_HAS_CONSTREF}constref{$ELSE}const{$ENDIF} IID: TGUID; out Obj): Hresult; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2053,6 +2235,11 @@ type
     function _AddRef: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
     function _Release: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 >>>>>>> origin/cpstrnew
+=======
+    function QueryInterface(const IID: TGUID; out Obj): Hresult; virtual; stdcall;
+    function _AddRef: Integer; stdcall;
+    function _Release: Integer; stdcall;
+>>>>>>> graemeg/fixes_2_2
     function iicrGetComponent: TComponent;
     { IDispatch }
     function GetTypeInfoCount(out Count: Integer): HResult; stdcall;
@@ -2066,7 +2253,11 @@ type
     // fpdoc doesn't handle this yet :(
 {$ifndef fpdocsystem}
     function IInterfaceComponentReference.GetComponent=iicrgetcomponent;
+<<<<<<< HEAD
 {$endif}
+=======
+{$endif}    
+>>>>>>> graemeg/fixes_2_2
     procedure WriteState(Writer: TWriter); virtual;
     constructor Create(AOwner: TComponent); virtual;
     destructor Destroy; override;
@@ -2104,7 +2295,11 @@ type
 >>>>>>> origin/cpstrnew
     procedure SetSubComponent(ASubComponent: Boolean);
     function UpdateAction(Action: TBasicAction): Boolean; dynamic;
+<<<<<<< HEAD
     property ComObject: IUnknown read GetComObject;
+=======
+    // property ComObject: IUnknown read GetComObject;
+>>>>>>> graemeg/fixes_2_2
     function IsImplementorOf (const Intf:IInterface):boolean;
     procedure ReferenceInterface(const intf:IInterface;op:TOperation);
     property Components[Index: Integer]: TComponent read GetComponent;

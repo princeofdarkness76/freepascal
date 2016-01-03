@@ -26,6 +26,7 @@ type
     procedure CreateFieldDataset; override;
     procedure DropNDatasets; override;
     procedure DropFieldDataset; override;
+<<<<<<< HEAD
     // InternalGetNDataset reroutes to ReallyInternalGetNDataset
     function InternalGetNDataset(n: integer): TDataset; override;
     function InternalGetFieldDataset: TDataSet; override;
@@ -57,6 +58,19 @@ type
   TDbfTraceDataset = class(TdbfAutoClean)
   protected
     procedure SetCurrentRecord(Index: longint); override;
+=======
+    Function InternalGetNDataset(n : integer) : TDataset; override;
+    Function InternalGetFieldDataset : TDataSet; override;
+  public
+    function GetTraceDataset(AChange : Boolean) : TDataset; override;
+  end;
+
+  { TDbfTraceDataset }
+
+  TDbfTraceDataset = class(Tdbf)
+  protected
+    procedure SetCurrentRecord(Index: Longint); override;
+>>>>>>> graemeg/fixes_2_2
     procedure RefreshInternalCalcFields(Buffer: PChar); override;
     procedure InternalInitFieldDefs; override;
     procedure CalculateFields(Buffer: PChar); override;
@@ -171,7 +185,36 @@ end;
 
 procedure TDBFDBConnector.CreateNDatasets;
 begin
+<<<<<<< HEAD
   // All datasets are created in InternalGet*Dataset
+=======
+  for n := 0 to MaxDataSet do
+    begin
+    with TDbf.Create(nil) do
+      begin
+      FilePath := dbname;
+      TableName := 'fpdev_'+inttostr(n)+'.db';
+      FieldDefs.Add('ID',ftInteger);
+      FieldDefs.Add('NAME',ftString,50);
+      CreateTable;
+      Open;
+      if n > 0 then for countId := 1 to n do
+        begin
+        Append;
+        FieldByName('ID').AsInteger := countID;
+        FieldByName('NAME').AsString := 'TestName'+inttostr(countID);
+        // Explicitly call .post, since there could be a bug which disturbs
+        // the automatic call to post. (example: when TDataset.DataEvent doesn't
+        // work properly)
+        Post;
+        end;
+      if state = dsinsert then
+        Post;
+      Close;
+      Free;
+      end;
+    end;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TDBFDBConnector.CreateFieldDataset;
@@ -387,6 +430,51 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
+=======
+function TDBFDBConnector.GetTraceDataset(AChange: Boolean): TDataset;
+var ADS, AResDS : TDbf;
+begin
+  ADS := GetNDataset(AChange,15) as TDbf;
+  AResDS := TDbfTraceDataset.Create(nil);
+  AResDS.FilePath:=ADS.FilePath;
+  AResDs.TableName:=ADS.TableName;
+  Result:=AResDS;
+end;
+
+{ TDbfTraceDataset }
+
+procedure TDbfTraceDataset.SetCurrentRecord(Index: Longint);
+begin
+  DataEvents := DataEvents + 'SetCurrentRecord' + ';';
+  inherited SetCurrentRecord(Index);
+end;
+
+procedure TDbfTraceDataset.RefreshInternalCalcFields(Buffer: PChar);
+begin
+  DataEvents := DataEvents + 'RefreshInternalCalcFields' + ';';
+  inherited RefreshInternalCalcFields(Buffer);
+end;
+
+procedure TDbfTraceDataset.InternalInitFieldDefs;
+var i : integer;
+    IntCalcFieldName : String;
+begin
+  // To fake a internal calculated field, set it's fielddef InternalCalcField
+  // property to true, before the dataset is opened.
+  // This procedure takes care of setting the automatically created fielddef's
+  // InternalCalcField property to true. (works for only one field)
+  IntCalcFieldName:='';
+  for i := 0 to FieldDefs.Count -1 do
+    if fielddefs[i].InternalCalcField then IntCalcFieldName := FieldDefs[i].Name;
+  inherited InternalInitFieldDefs;
+  if IntCalcFieldName<>'' then with FieldDefs.find(IntCalcFieldName) do
+    begin
+    InternalCalcField := True;
+    end;
+end;
+
+>>>>>>> graemeg/fixes_2_2
 procedure TDbfTraceDataset.CalculateFields(Buffer: PChar);
 begin
   DataEvents := DataEvents + 'CalculateFields' + ';';

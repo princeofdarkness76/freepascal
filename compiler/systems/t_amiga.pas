@@ -70,6 +70,7 @@ begin
   StaticLibFiles.doubles:=true;
 end;
 
+<<<<<<< HEAD
 
 procedure TLinkerAmiga.SetAmiga68kInfo;
 begin
@@ -84,6 +85,13 @@ begin
       ExeCmd[1]:='vlink -b amigahunk $OPT $STRIP -o $EXE -T $RES';
      end;
    end;
+=======
+procedure TLinkerAmiga.SetAmiga68kInfo;
+begin
+  with Info do begin
+    ExeCmd[1]:='m68k-amiga-ld $OPT -d -n -o $EXE $RES';
+  end;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TLinkerAmiga.SetAmigaPPCInfo;
@@ -219,13 +227,17 @@ var
   BinStr,
   CmdStr  : TCmdStr;
   StripStr: string[40];
+<<<<<<< HEAD
   DynLinkStr : string;
+=======
+>>>>>>> graemeg/fixes_2_2
 begin
   StripStr:='';
   if (cs_link_strip in current_settings.globalswitches) then StripStr:='-s';
 
   { Call linker }
   SplitBinCmd(Info.ExeCmd[1],BinStr,CmdStr);
+<<<<<<< HEAD
   binstr:=FindUtil(utilsprefix+BinStr);
   Replace(cmdstr,'$OPT',Info.ExtraOptions);
   Replace(cmdstr,'$EXE',Unix2AmigaPath(maybequoted(ScriptFixFileName(current_module.exefilename))));
@@ -237,6 +249,13 @@ begin
     DynLinkStr:='';
   Replace(cmdstr,'$DYNLINK',DynLinkStr);
   MakeAmiga68kExe:=DoExec(BinStr,CmdStr,true,false);
+=======
+  Replace(cmdstr,'$OPT',Info.ExtraOptions);
+  Replace(cmdstr,'$EXE',PathConv(maybequoted(ScriptFixFileName(current_module.exefilename^))));
+  Replace(cmdstr,'$RES',PathConv(maybequoted(ScriptFixFileName(outputexedir+Info.ResName))));
+  Replace(cmdstr,'$STRIP',StripStr);
+  MakeAmiga68kExe:=DoExec(FindUtil(BinStr),CmdStr,true,false);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -296,7 +315,12 @@ end;
 
 initialization
 {$ifdef m68k}
+<<<<<<< HEAD
   RegisterLinker(ld_amiga,TLinkerAmiga);
+=======
+{$warning No executable creation support for m68k yet!}
+  RegisterExternalLinker(system_m68k_Amiga_info,TLinkerAmiga);
+>>>>>>> graemeg/fixes_2_2
   RegisterTarget(system_m68k_Amiga_info);
   RegisterRes(res_ext_info, TWinLikeResourceFile);
 {$endif m68k}

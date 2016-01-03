@@ -15,15 +15,21 @@
 Unit BaseUnix;
 
 Interface
+<<<<<<< HEAD
 {$modeswitch out}
 {$inline on}
 Uses UnixType;
 
 {$i osdefs.inc}       { Compile time defines }
+=======
+
+uses UnixType;
+>>>>>>> graemeg/fixes_2_2
 
 {$i aliasptp.inc}
 
 {$packrecords C}
+<<<<<<< HEAD
 
 {$ifndef FPC_USE_LIBC}
   {$define FPC_USE_SYSCALL}
@@ -38,6 +44,28 @@ Uses UnixType;
   {$i oscdeclh.inc}
 {$ELSE}
   {$i bunxh.inc}		{ Functions}
+=======
+{$define oldreaddir}		// Keep using readdir system call instead
+				// of userland getdents stuff.
+{$define usedomain}		// Allow uname with "domain" entry.
+				// (which is a GNU extension)
+{$define posixworkaround}	// Temporary ugly workaround for signal handler.
+				// (mainly until baseunix migration is complete)
+
+{$ifndef FPC_USE_LIBC}
+{$define FPC_USE_SYSCALL}
+{$endif}
+
+{$i errno.inc}		{ Error numbers }
+{$i ostypes.inc}
+
+{$ifdef FPC_USE_LIBC}
+const clib = 'root';
+const netlib = 'net';
+{$i oscdeclh.inc}
+{$ELSE}
+{$i bunxh.inc}		{ Functions}
+>>>>>>> graemeg/fixes_2_2
 {$ENDIF}
 
 function fpgeterrno:longint; 
@@ -59,8 +87,11 @@ Function  FpNanoSleep  (req : ptimespec;rem : ptimespec):cint;
 {$endif}
 {$endif}
 
+<<<<<<< HEAD
 {$i genfunch.inc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 { Fairly portable constants. I'm not going to waste time to duplicate and alias
 them anywhere}
 
@@ -82,20 +113,30 @@ Const
 
 implementation
 
+<<<<<<< HEAD
 {$ifdef hassysctl}
 Uses Sysctl;
 {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$i genfuncs.inc}       // generic calls. (like getenv)
 {$I gensigset.inc}     // general sigset funcs implementation.
 {$I genfdset.inc}      // general fdset funcs.
 
+<<<<<<< HEAD
 {$ifdef FPC_USE_LIBC}
   {$i oscdecl.inc}        // implementation of wrappers in oscdeclh.inc
 {$else}
   {$i syscallh.inc}       // do_syscall declarations themselves
   {$i sysnr.inc}          // syscall numbers.
   {$i bsyscall.inc}       // cpu specific syscalls
+=======
+{$ifndef FPC_USE_LIBC}
+  {$i syscallh.inc}       // do_syscall declarations themselves
+  {$i sysnr.inc}          // syscall numbers.
+  {$i bsyscall.inc}  			// cpu specific syscalls
+>>>>>>> graemeg/fixes_2_2
   {$i bunxsysc.inc}       // syscalls in system unit.
 //  {$i settimeo.inc}
 {$endif}

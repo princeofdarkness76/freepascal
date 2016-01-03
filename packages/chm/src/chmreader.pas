@@ -12,7 +12,11 @@
 
   You should have received a copy of the GNU Library General Public License
   along with this library; if not, write to the Free Software Foundation,
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> graemeg/fixes_2_2
 }
 {
   See the file COPYING.modifiedLGPL, included in this distribution,
@@ -28,18 +32,31 @@ unit chmreader;
 interface
 
 uses
+<<<<<<< HEAD
   Classes, SysUtils, Contnrs, chmbase, paslzx, chmFIftiMain, chmsitemap;
 
 type
 
   TLZXResetTableArr = array of QWord;
 
+=======
+  Classes, SysUtils, chmbase, paslzx, chmFIftiMain;
+  
+type
+
+  TLZXResetTableArr = array of QWord;
+  
+>>>>>>> graemeg/fixes_2_2
   PContextItem = ^TContextItem;
   TContextItem = record
     Context: THelpContext;
     Url: String;
   end;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/fixes_2_2
   TContextList = class(TList)
   public
     procedure AddContext(Context: THelpContext; Url: String);
@@ -54,12 +71,17 @@ type
   protected
     fStream: TStream;
     fFreeStreamOnDestroy: Boolean;
+<<<<<<< HEAD
     fITSFHeader: TITSFHeader;
+=======
+    fChmHeader: TITSFHeader;
+>>>>>>> graemeg/fixes_2_2
     fHeaderSuffix: TITSFHeaderSuffix;
     fDirectoryHeader: TITSPHeader;
     fDirectoryHeaderPos: QWord;
     fDirectoryHeaderLength: QWord;
     fDirectoryEntriesStartPos: QWord;
+<<<<<<< HEAD
     fCachedEntry: TPMGListChunkEntry; //contains the last entry found by ObjectExists
     fDirectoryEntriesCount: LongWord;
     procedure ReadHeader; virtual;
@@ -67,13 +89,25 @@ type
     function  GetChunkType(Stream: TMemoryStream; ChunkIndex: LongInt): TDirChunkType;
     procedure GetSections(out Sections: TStringList);
   private
+=======
+    fDirectoryEntries: array of TPMGListChunkEntry;
+    fCachedEntry: TPMGListChunkEntry; //contains the last entry found by ObjectExists
+    fDirectoryEntriesCount: LongWord;
+  private
+    procedure ReadHeader;
+    function  GetChunkType(Stream: TMemoryStream; ChunkIndex: LongInt): TPMGchunktype;
+>>>>>>> graemeg/fixes_2_2
     function  GetDirectoryChunk(Index: Integer; OutStream: TStream): Integer;
     function  ReadPMGLchunkEntryFromStream(Stream: TMemoryStream; var PMGLEntry: TPMGListChunkEntry): Boolean;
     function  ReadPMGIchunkEntryFromStream(Stream: TMemoryStream; var PMGIEntry: TPMGIIndexChunkEntry): Boolean;
     procedure LookupPMGLchunk(Stream: TMemoryStream; out PMGLChunk: TPMGListChunk);
     procedure LookupPMGIchunk(Stream: TMemoryStream; out PMGIChunk: TPMGIIndexChunk);
 
+<<<<<<< HEAD
 
+=======
+    procedure GetSections(out Sections: TStringList);
+>>>>>>> graemeg/fixes_2_2
     function  GetBlockFromSection(SectionPrefix: String; StartPos: QWord; BlockLength: QWord): TMemoryStream;
     function  FindBlocksFromUnCompressedAddr(var ResetTableEntry: TPMGListChunkEntry;
        out CompressedSize: QWord; out UnCompressedSize: QWord; out LZXResetTable: TLZXResetTableArr): QWord;  // Returns the blocksize
@@ -83,6 +117,7 @@ type
   public
     ChmLastError: LongInt;
     function IsValidFile: Boolean;
+<<<<<<< HEAD
     procedure GetCompleteFileList(ForEach: TFileEntryForEach; AIncludeInternalFiles: Boolean = True); virtual;
     function ObjectExists(Name: String): QWord; virtual; // zero if no. otherwise it is the size of the object
                                                 // NOTE directories will return zero size even if they exist
@@ -90,6 +125,15 @@ type
     property CachedEntry: TPMGListChunkEntry read fCachedEntry;
   end;
 
+=======
+    procedure GetCompleteFileList(ForEach: TFileEntryForEach);
+    function ObjectExists(Name: String): QWord; // zero if no. otherwise it is the size of the object
+                                                // NOTE directories will return zero size even if they exist
+    function GetObject(Name: String): TMemoryStream; // YOU must Free the stream
+    property CachedEntry: TPMGListChunkEntry read fCachedEntry;
+  end;
+  
+>>>>>>> graemeg/fixes_2_2
   { TChmReader }
 
   TChmReader = class(TITSFReader)
@@ -105,6 +149,7 @@ type
     fURLTBLStream,
     fStringsStream: TMemoryStream;
     fLocaleID: DWord;
+<<<<<<< HEAD
     fWindowsList : TObjectList;
     fDefaultWindow: String;
   private
@@ -135,6 +180,19 @@ type
     function LookupTopicByID(ATopicID: Integer; out ATitle: String): String; // returns a url
     function GetTOCSitemap(ForceXML:boolean=false): TChmSiteMap;
     function GetIndexSitemap(ForceXML:boolean=false): TChmSiteMap;
+=======
+  private
+    FSearchReader: TChmSearchReader;
+    procedure ReadCommonData;
+    function  ReadStringsEntry(APosition: DWord): String;
+    function  ReadURLSTR(APosition: DWord): String;
+  public
+    constructor Create(AStream: TStream; FreeStreamOnDestroy: Boolean); override;
+    destructor Destroy; override;
+  public
+    function GetContextUrl(Context: THelpContext): String;
+    function LookupTopicByID(ATopicID: Integer; out ATitle: String): String; // returns a url
+>>>>>>> graemeg/fixes_2_2
     function HasContextList: Boolean;
     property DefaultPage: String read fDefaultPage;
     property IndexFile: String read fIndexFile;
@@ -143,9 +201,12 @@ type
     property PreferedFont: String read fPreferedFont;
     property LocaleID: dword read fLocaleID;
     property SearchReader: TChmSearchReader read FSearchReader write FSearchReader;
+<<<<<<< HEAD
     property contextlist : tcontextlist read fcontextlist;
     property Windows : TObjectlist read fWindowsList;
     property DefaultWindow : string read fdefaultwindow;
+=======
+>>>>>>> graemeg/fixes_2_2
   end;
 
   { TChmFileList }
@@ -169,13 +230,21 @@ type
     destructor Destroy; override;
     function GetObject(Name: String): TMemoryStream;
     function IsAnOpenFile(AFileName: String): Boolean;
+<<<<<<< HEAD
     function ObjectExists(Name: String; var fChm: TChmReader): QWord;
+=======
+    function ObjectExists(Name: String; var fChm: TChmReader = nil): QWord;
+>>>>>>> graemeg/fixes_2_2
     //properties
     property Chm[Index: Integer]: TChmReader read GetChm;
     property FileName[Index: Integer]: String read GetFileName;
     property OnOpenNewFile: TChmFileOpenEvent read fOnOpenNewFile write SetOnOpenNewFile;
   end;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/fixes_2_2
 //ErrorCodes
 const
   ERR_NO_ERR = 0;
@@ -183,11 +252,18 @@ const
   ERR_NOT_SUPPORTED_VERSION = 2;
   ERR_NOT_VALID_FILE = 3;
   ERR_UNKNOWN_ERROR = 10;
+<<<<<<< HEAD
 
   function ChmErrorToStr(Error: Integer): String;
 
 implementation
 uses ChmTypes;
+=======
+  
+  function ChmErrorToStr(Error: Integer): String;
+
+implementation
+>>>>>>> graemeg/fixes_2_2
 
 function ChmErrorToStr(Error: Integer): String;
 begin
@@ -200,7 +276,11 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 function ChunkType(Stream: TMemoryStream): TDirChunkType;
+=======
+function ChunkType(Stream: TMemoryStream): TPMGchunktype;
+>>>>>>> graemeg/fixes_2_2
 var
   ChunkID: array[0..3] of char;
 begin
@@ -208,14 +288,19 @@ begin
   if Stream.Size< 4 then exit;
   Move(Stream.Memory^, ChunkId[0], 4);
   if ChunkID = 'PMGL' then Result := ctPMGL
+<<<<<<< HEAD
   else if ChunkID = 'PMGI' then Result := ctPMGI
   else if ChunkID = 'AOLL' then Result := ctAOLL
   else if ChunkID = 'AOLI' then Result := ctAOLI;
+=======
+  else if ChunkID = 'PMGI' then Result := ctPMGI;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 { TITSFReader }
 
 procedure TITSFReader.ReadHeader;
+<<<<<<< HEAD
 begin
   fStream.Read(fITSFHeader,SizeOf(fITSFHeader));
 
@@ -248,6 +333,35 @@ begin
   fHeaderSuffix.Offset := LEtoN(fHeaderSuffix.Offset);
   // otherwise this is set in fill directory entries
 
+=======
+var
+fHeaderEntries: array [0..1] of TITSFHeaderEntry;
+begin
+  fStream.Position := 0;
+  fStream.Read(fChmHeader,SizeOf(fChmHeader));
+
+  // Fix endian issues
+  {$IFDEF ENDIAN_BIG}
+  fChmHeader.Version := LEtoN(fChmHeader.Version);
+  fChmHeader.HeaderLength := LEtoN(fChmHeader.HeaderLength);
+  //Unknown_1
+  fChmHeader.TimeStamp := BEtoN(fChmHeader.TimeStamp);//bigendian
+  fChmHeader.LanguageID := LEtoN(fChmHeader.LanguageID);
+  //Guid1
+  //Guid2
+  {$ENDIF}
+  
+  if not IsValidFile then Exit;
+  
+  // Copy EntryData into memory
+  fStream.Read(fHeaderEntries[0], SizeOf(fHeaderEntries));
+
+  if fChmHeader.Version > 2 then
+    fStream.Read(fHeaderSuffix.Offset, SizeOf(QWord));
+  fHeaderSuffix.Offset := LEtoN(fHeaderSuffix.Offset);
+  // otherwise this is set in fill directory entries
+  
+>>>>>>> graemeg/fixes_2_2
   fStream.Position := LEtoN(fHeaderEntries[1].PosFromZero);
   fDirectoryHeaderPos := LEtoN(fHeaderEntries[1].PosFromZero);
   fStream.Read(fDirectoryHeader, SizeOf(fDirectoryHeader));
@@ -272,7 +386,10 @@ begin
   {$IFDEF CHM_DEBUG}
   WriteLn('PMGI depth = ', fDirectoryHeader.IndexTreeDepth);
   WriteLn('PMGI Root =  ', fDirectoryHeader.IndexOfRootChunk);
+<<<<<<< HEAD
   Writeln('DirCount  =  ', fDirectoryHeader.DirectoryChunkCount);
+=======
+>>>>>>> graemeg/fixes_2_2
   {$ENDIF}
   fDirectoryEntriesStartPos := fStream.Position;
   fDirectoryHeaderLength := LEtoN(fHeaderEntries[1].Length);
@@ -280,11 +397,16 @@ end;
 
 procedure TChmReader.ReadCommonData;
    // A little helper proc to make reading a null terminated string easier
+<<<<<<< HEAD
    function ReadString(const Stream: TStream; StartPos: DWord; FixURL: Boolean): String;
+=======
+   function ReadString(const Stream: TStream): String;
+>>>>>>> graemeg/fixes_2_2
    var
      buf: array[0..49] of char;
    begin
      Result := '';
+<<<<<<< HEAD
      Stream.Position := StartPos;
      repeat
        Stream.Read(buf, 50);
@@ -305,6 +427,12 @@ procedure TChmReader.ReadCommonData;
 >>>>>>> origin/cpstrnew
      if FixURL then
        Result := StringReplace(Result, '\', '/', [rfReplaceAll]);
+=======
+     repeat
+       Stream.Read(buf, 50);
+       Result := Result + buf;
+     until Pos(#0, buf) > -1;
+>>>>>>> graemeg/fixes_2_2
    end;
    procedure ReadFromSystem;
    var
@@ -401,6 +529,10 @@ procedure TChmReader.ReadCommonData;
      EntryCount,
      EntrySize: DWord;
      EntryStart: QWord;
+<<<<<<< HEAD
+=======
+     StrPosition: DWord;
+>>>>>>> graemeg/fixes_2_2
      X: Integer;
      OffSet: QWord;
    begin
@@ -426,6 +558,7 @@ procedure TChmReader.ReadCommonData;
        EntryStart := OffSet + (X*EntrySize);
        if fTitle = '' then begin
          fWindows.Position := EntryStart + $14;
+<<<<<<< HEAD
          fTitle := '/'+ReadString(fStrings, LEtoN(fWindows.ReadDWord), False);
        end;
        if fTOCFile = '' then begin
@@ -442,6 +575,31 @@ procedure TChmReader.ReadCommonData;
        end;
      end;
      ReadWindows(FWindows);
+=======
+         StrPosition := LEtoN(fWindows.ReadDWord);
+         fStrings.Position := StrPosition;
+         fTitle := '/'+ReadString(fStrings);
+       end;
+       if fTOCFile = '' then begin
+         fWindows.Position := EntryStart + $60;
+         StrPosition := LEtoN(fWindows.ReadDWord);
+         fStrings.Position := StrPosition;
+         fTOCFile := '/'+ReadString(fStrings);
+       end;
+       if fIndexFile = '' then begin
+         fWindows.Position := EntryStart + $64;
+         StrPosition := LEtoN(fWindows.ReadDWord);
+         fStrings.Position := StrPosition;
+         fIndexFile := '/'+ReadString(fStrings);
+       end;
+       if fDefaultPage = '' then begin
+         fWindows.Position := EntryStart + $68;
+         StrPosition := LEtoN(fWindows.ReadDWord);
+         fStrings.Position := StrPosition;
+         fDefaultPage := '/'+ReadString(fStrings);
+       end;
+     end;
+>>>>>>> graemeg/fixes_2_2
    end;
    procedure ReadContextIds;
    var
@@ -452,7 +610,11 @@ procedure TChmReader.ReadCommonData;
      OffSet: DWord;
      //TotalSize: DWord;
    begin
+<<<<<<< HEAD
      fIVB := GetObject('/#IVB');
+=======
+     fIVB := GetObject('/#IBV');
+>>>>>>> graemeg/fixes_2_2
      if fIVB = nil then Exit;
      fStrings := GetObject('/#STRINGS');
      if fStrings = nil then begin
@@ -464,7 +626,12 @@ procedure TChmReader.ReadCommonData;
      while fIVB.Position < fIVB.Size do begin
        Value := LEtoN(fIVB.ReadDWord);
        OffSet := LEtoN(fIVB.ReadDWord);
+<<<<<<< HEAD
        Str := '/'+ ReadString(fStrings, Offset, True);
+=======
+       fStrings.Position := Offset;
+       Str := '/'+ReadString(fStrings);
+>>>>>>> graemeg/fixes_2_2
        fContextList.AddContext(Value, Str);
      end;
    end;
@@ -472,7 +639,11 @@ begin
    ReadFromSystem;
    ReadFromWindows;
    ReadContextIds;
+<<<<<<< HEAD
    {$IFDEF CHM_DEBUG}
+=======
+   {$IFDEF CHM_DEBUG}   
+>>>>>>> graemeg/fixes_2_2
    WriteLn('TOC=',fTocfile);
    WriteLn('DefaultPage=',fDefaultPage);
    {$ENDIF}
@@ -491,6 +662,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 function TChmReader.ReadStringsEntryFromStream ( strm:TStream ) : String;
 var APosition : DWord;
 begin
@@ -498,10 +670,13 @@ begin
   result:=ReadStringsEntry(APosition);
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 function TChmReader.ReadURLSTR ( APosition: DWord ) : String;
 var
   URLStrURLOffset: DWord;
 begin
+<<<<<<< HEAD
   if not CheckCommonStreams then
     Exit;
 
@@ -519,10 +694,13 @@ function TChmReader.CheckCommonStreams: Boolean;
 begin
   if fTOPICSStream = nil then
     fTOPICSStream := GetObject('/#TOPICS');
+=======
+>>>>>>> graemeg/fixes_2_2
   if fURLSTRStream = nil then
     fURLSTRStream := GetObject('/#URLSTR');
   if fURLTBLStream = nil then
     fURLTBLStream := GetObject('/#URLTBL');
+<<<<<<< HEAD
 
   Result :=     (fTOPICSStream <> nil)
             and (fURLSTRStream <> nil)
@@ -596,10 +774,25 @@ begin
      fWindowslist.Add(x);
      dec(cnt);
    end;
+=======
+  if (fURLTBLStream <> nil) and (fURLSTRStream <> nil) then
+  begin
+
+    fURLTBLStream.Position := APosition;
+    fURLTBLStream.ReadDWord; // unknown
+    fURLTBLStream.ReadDWord; // TOPIC index #
+    fURLSTRStream.Position := LEtoN(fURLTBLStream.ReadDWord);
+    fURLSTRStream.ReadDWord;
+    fURLSTRStream.ReadDWord;
+    if fURLSTRStream.Position < fURLSTRStream.Size-1 then
+      Result := '/'+PChar(fURLSTRStream.Memory+fURLSTRStream.Position);
+  end;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 constructor TChmReader.Create(AStream: TStream; FreeStreamOnDestroy: Boolean);
 begin
+<<<<<<< HEAD
   fContextList := TContextList.Create;
   fWindowslist      := TObjectlist.Create(True);
   fDefaultWindow:='';
@@ -607,13 +800,23 @@ begin
   inherited Create(AStream, FreeStreamOnDestroy);
   if not IsValidFile then exit;
 
+=======
+  inherited Create(AStream, FreeStreamOnDestroy);
+  if not IsValidFile then exit;
+
+  fContextList := TContextList.Create;
+>>>>>>> graemeg/fixes_2_2
   ReadCommonData;
 end;
 
 destructor TChmReader.Destroy;
 begin
+<<<<<<< HEAD
   FreeAndNil(fContextList);
   FreeAndNil(FWindowslist);
+=======
+  fContextList.Free;
+>>>>>>> graemeg/fixes_2_2
   FreeAndNil(FSearchReader);
   FreeAndNil(fTOPICSStream);
   FreeAndNil(fURLSTRStream);
@@ -622,7 +825,11 @@ begin
   inherited Destroy;
 end;
 
+<<<<<<< HEAD
 function TITSFReader.GetChunkType(Stream: TMemoryStream; ChunkIndex: LongInt): TDirChunkType;
+=======
+function TITSFReader.GetChunkType(Stream: TMemoryStream; ChunkIndex: LongInt): TPMGchunktype;
+>>>>>>> graemeg/fixes_2_2
 var
   Sig: array[0..3] of char;
 begin
@@ -631,9 +838,13 @@ begin
 
   Stream.Read(Sig, 4);
   if Sig = 'PMGL' then Result := ctPMGL
+<<<<<<< HEAD
   else if Sig = 'PMGI' then Result := ctPMGI
   else if Sig = 'AOLL' then Result := ctAOLL
   else if Sig = 'AOLI' then Result := ctAOLI;
+=======
+  else if Sig = 'PMGI' then Result := ctPMGI;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TITSFReader.GetDirectoryChunk(Index: Integer; OutStream: TStream): Integer;
@@ -705,7 +916,11 @@ begin
 
   buf[NameLength] := #0;
   PMGIEntry.Name := buf;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/fixes_2_2
   PMGIEntry.ListingChunk := GetCompressedInteger(Stream);
   if NameLength = 0 then Exit; // failed GetCompressedInteger sanity check
   Result := True;
@@ -714,7 +929,10 @@ end;
 constructor TITSFReader.Create(AStream: TStream; FreeStreamOnDestroy: Boolean);
 begin
   fStream := AStream;
+<<<<<<< HEAD
   fStream.Position := 0;
+=======
+>>>>>>> graemeg/fixes_2_2
   fFreeStreamOnDestroy := FreeStreamOnDestroy;
   ReadHeader;
   if not IsValidFile then Exit;
@@ -722,6 +940,10 @@ end;
 
 destructor TITSFReader.Destroy;
 begin
+<<<<<<< HEAD
+=======
+  SetLength(fDirectoryEntries, 0);
+>>>>>>> graemeg/fixes_2_2
   if fFreeStreamOnDestroy then FreeAndNil(fStream);
 
   inherited Destroy;
@@ -730,15 +952,24 @@ end;
 function TITSFReader.IsValidFile: Boolean;
 begin
   if (fStream = nil) then ChmLastError := ERR_STREAM_NOT_ASSIGNED
+<<<<<<< HEAD
   else if (fITSFHeader.ITSFsig <> 'ITSF') then ChmLastError := ERR_NOT_VALID_FILE
   //else if (fITSFHeader.Version <> 2) and (fITSFHeader.Version <> 3)
   else if not (fITSFHeader.Version in [2..4])
   then
+=======
+  else if (fChmHeader.ITSFsig <> 'ITSF') then ChmLastError := ERR_NOT_VALID_FILE
+  else if (fChmHeader.Version <> 2) and (fChmHeader.Version <> 3) then
+>>>>>>> graemeg/fixes_2_2
     ChmLastError := ERR_NOT_SUPPORTED_VERSION;
   Result := ChmLastError = ERR_NO_ERR;
 end;
 
+<<<<<<< HEAD
 procedure TITSFReader.GetCompleteFileList(ForEach: TFileEntryForEach; AIncludeInternalFiles: Boolean = True);
+=======
+procedure TITSFReader.GetCompleteFileList(ForEach: TFileEntryForEach);
+>>>>>>> graemeg/fixes_2_2
 var
   ChunkStream: TMemoryStream;
   I : Integer;
@@ -779,12 +1010,16 @@ begin
          Entry.DecompressedLength := GetCompressedInteger(ChunkStream);
          if ChunkStream.Position > CutOffPoint then Break; // we have entered the quickref section
          fCachedEntry := Entry; // if the caller trys to get this data we already know where it is :)
+<<<<<<< HEAD
          if  (Length(Entry.Name) = 1)
          or (AIncludeInternalFiles
               or
              ((Length(Entry.Name) > 1) and (not(Entry.Name[2] in ['#','$',':']))))
          then
           ForEach(Entry.Name, Entry.ContentOffset, Entry.DecompressedLength, Entry.ContentSection);
+=======
+         ForEach(Entry.Name, Entry.ContentOffset, Entry.DecompressedLength, Entry.ContentSection);
+>>>>>>> graemeg/fixes_2_2
        end;
      end;
     {$IFDEF CHM_DEBUG_CHUNKS}
@@ -820,9 +1055,15 @@ var
     I: Integer;
   begin
     OldPosn := ChunkStream.Position;
+<<<<<<< HEAD
     Posn := ChunkStream.Size-SizeOf(Word);
     ChunkStream.Position := Posn;
 
+=======
+    Posn := ChunkStream.Size-1-SizeOf(Word);
+    ChunkStream.Position := Posn;
+    
+>>>>>>> graemeg/fixes_2_2
     ItemCount := LEToN(ChunkStream.ReadWord);
     //WriteLn('Max ITems for next block = ', ItemCount-1);
     QuickRefCount := ItemCount  div (1 + (1 shl fDirectoryHeader.Density));
@@ -844,16 +1085,27 @@ var
 
     NameLength := GetCompressedInteger(ChunkStream);
     SetLength(Result, NameLength);
+<<<<<<< HEAD
     if NameLength>0 then
       ChunkStream.Read(Result[1], NameLength);
+=======
+    ChunkStream.Read(Result[1], NameLength);
+>>>>>>> graemeg/fixes_2_2
   end;
 var
   PMGLChunk: TPMGListChunk;
   PMGIChunk: TPMGIIndexChunk;
+<<<<<<< HEAD
   //ChunkStream: TMemoryStream; declared above
   Entry: TPMGListChunkEntry;
   NextIndex: Integer;
   EntryName: String;
+=======
+  //ChunkStream: TMemoryStream; declared above  
+  Entry: TPMGListChunkEntry;
+  NextIndex: Integer;
+  EntryName: String;  
+>>>>>>> graemeg/fixes_2_2
   CRes: Integer;
   I: Integer;
 begin
@@ -869,14 +1121,22 @@ begin
   ChunkStream := TMemoryStream.Create;
 
   try
+<<<<<<< HEAD
 
   NextIndex := fDirectoryHeader.IndexOfRootChunk;
   if NextIndex < 0 then NextIndex := 0; // no PMGI chunks
 
+=======
+  
+  NextIndex := fDirectoryHeader.IndexOfRootChunk;
+  if NextIndex < 0 then NextIndex := 0; // no PMGI chunks
+  
+>>>>>>> graemeg/fixes_2_2
   while NextIndex > -1  do begin
     GetDirectoryChunk(NextIndex, ChunkStream);
     NextIndex := -1;
     ReadQuickRefSection;
+<<<<<<< HEAD
     {$IFDEF CHM_DEBUG}
     WriteLn('In Block ', NextIndex);
     {$endif}
@@ -884,11 +1144,22 @@ begin
       ctUnknown: // something is wrong
         begin
           {$IFDEF CHM_DEBUG}WriteLn(NextIndex, ' << Unknown BlockType!');{$ENDIF}
+=======
+    //WriteLn('In Block ', ChunkIndex);
+    case ChunkType(ChunkStream) of
+      ctUnknown: // something is wrong
+        begin
+          {$IFDEF CHM_DEBUG}WriteLn(ChunkIndex, ' << Unknown BlockType!');{$ENDIF}
+>>>>>>> graemeg/fixes_2_2
           Break;
         end;
       ctPMGI: // we must follow the PMGI tree until we reach a PMGL block
         begin
+<<<<<<< HEAD
           LookupPMGIchunk(ChunkStream, PMGIChunk);
+=======
+          LookupPMGIchunk(ChunkStream, PMGIChunk);          
+>>>>>>> graemeg/fixes_2_2
 
           //QuickRefIndex[0] := ChunkStream.Position;
 
@@ -899,13 +1170,21 @@ begin
             if ChunkStream.Position >= ChunkStream.Size - PMGIChunk.UnusedSpace then break;
             CRes := ChmCompareText(Name, EntryName);
             if CRes = 0 then begin
+<<<<<<< HEAD
               // no more need of this block. onto the next!
+=======
+              // no more need of this block. onto the next!              
+>>>>>>> graemeg/fixes_2_2
               NextIndex := GetCompressedInteger(ChunkStream);
               Break;
             end;
             if  CRes < 0 then begin
               if I = 0 then Break; // File doesn't exist
+<<<<<<< HEAD
               // file is in previous entry
+=======
+              // file is in previous entry              
+>>>>>>> graemeg/fixes_2_2
               Break;
             end;
             NextIndex := GetCompressedInteger(ChunkStream);
@@ -918,7 +1197,11 @@ begin
           QuickRefIndex[0] := ChunkStream.Position;
           I := 0;
           while ChunkStream.Position <= ChunkStream.Size - PMGLChunk.UnusedSpace do begin
+<<<<<<< HEAD
             // we consume the entry by reading it
+=======
+            // we consume the entry by reading it            
+>>>>>>> graemeg/fixes_2_2
             Entry.Name := ReadString;
             if Entry.Name = '' then break;
             if ChunkStream.Position >= ChunkStream.Size - PMGLChunk.UnusedSpace then break;
@@ -930,7 +1213,11 @@ begin
             CRes := ChmCompareText(Name, Entry.Name);
             if CRes = 0 then begin
               fCachedEntry := Entry;
+<<<<<<< HEAD
               Result := Entry.DecompressedLength;
+=======
+              Result := Entry.DecompressedLength;              
+>>>>>>> graemeg/fixes_2_2
               Break;
             end;
             Inc(I);
@@ -963,7 +1250,11 @@ begin
   end
   else begin // we have to get it from ::DataSpace/Storage/[MSCompressed,Uncompressed]/ControlData
     GetSections(SectionNames);
+<<<<<<< HEAD
     FmtStr(SectionName, '::DataSpace/Storage/%s/',[SectionNames[Entry.ContentSection]]);
+=======
+    FmtStr(SectionName, '::DataSpace/Storage/%s/',[SectionNames[Entry.ContentSection-1]]);
+>>>>>>> graemeg/fixes_2_2
     Result := GetBlockFromSection(SectionName, Entry.ContentOffset, Entry.DecompressedLength);
     SectionNames.Free;
   end;
@@ -984,7 +1275,13 @@ begin
   Result := '';
   ATitle := '';
   //WriteLn('Getting topic# ',ATopicID);
+<<<<<<< HEAD
   if not CheckCommonStreams then
+=======
+  if fTOPICSStream = nil then
+    fTOPICSStream := GetObject('/#TOPICS');
+  if fTOPICSStream = nil then
+>>>>>>> graemeg/fixes_2_2
     Exit;
   fTOPICSStream.Position := ATopicID * 16;
   if fTOPICSStream.Position = ATopicID * 16 then
@@ -999,6 +1296,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 const DefBlockSize = 2048;
 
 function LoadBtreeHeader(m:TMemoryStream;var btreehdr:TBtreeHeader):boolean;
@@ -1593,6 +1891,8 @@ begin
 >>>>>>> origin/cpstrnew
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 function TChmReader.HasContextList: Boolean;
 begin
   Result := fContextList.Count > 0;
@@ -1617,7 +1917,11 @@ begin
     //WriteLn('Failed to get ::DataSpace/NameList!');
     exit;
   end;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/fixes_2_2
   Stream.Position := 2;
   EntryCount := LEtoN(Stream.ReadWord);
   for X := 0 to EntryCount -1 do begin
@@ -1630,6 +1934,11 @@ begin
     {$ENDIF}
     Sections.Add(WString);
   end;
+<<<<<<< HEAD
+=======
+  // the sections are sorted alphabetically, this way section indexes will jive
+  Sections.Sort;
+>>>>>>> graemeg/fixes_2_2
   Stream.Free;
 end;
 
@@ -1711,7 +2020,11 @@ begin
       Exit;
     end;
     // if FirstBlock is odd (1,3,5,7 etc) we have to read the even block before it first.
+<<<<<<< HEAD
     if FirstBlock and 1 = 1 then begin
+=======
+    if (FirstBlock <> 0) and (FirstBlock mod 2 > 0) then begin
+>>>>>>> graemeg/fixes_2_2
       fStream.Position := fHeaderSuffix.Offset + fCachedEntry.ContentOffset + (ResetTable[FirstBLock-1]);
       ReadCount := ResetTable[FirstBlock] - ResetTable[FirstBlock-1];
       BlockWriteLength:=BlockSize;
@@ -1733,7 +2046,11 @@ begin
         ReadCount := ResetTable[X+1] - ResetTable[X];
 
       BlockWriteLength := BlockSize;
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> graemeg/fixes_2_2
       if FirstBlock = LastBlock then begin
         WriteCount := BlockLength;
       end
@@ -1759,9 +2076,15 @@ begin
         LZXteardown(LZXState);
         Exit;
       end;
+<<<<<<< HEAD
 
       // if the next block is an even numbered block we have to reset the decompressor state
       if (X < LastBlock) and (X and 1 = 1) then LZXreset(LZXState);
+=======
+      
+      // if the next block is an even numbered block we have to reset the decompressor state
+      if (X < LastBlock) and (X mod 2 > 0) then LZXreset(LZXState);
+>>>>>>> graemeg/fixes_2_2
 
     end;
     FreeMem(OutBuf);
@@ -1872,6 +2195,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AStream := TFileStream.Create(AFileName, fmOpenRead or fmShareDenyWrite);
 =======
   AStream := TFileStream.Create(AFileName, fmOpenRead, fmShareDenyWrite);
@@ -1885,6 +2209,9 @@ begin
 =======
   AStream := TFileStream.Create(AFileName, fmOpenRead, fmShareDenyWrite);
 >>>>>>> origin/cpstrnew
+=======
+  AStream := TFileStream.Create(AFileName, fmOpenRead);
+>>>>>>> graemeg/fixes_2_2
   AChm := TChmReader.Create(AStream, True);
   AIndex := AddObject(AFileName, AChm);
   fLastChm := AChm;
@@ -1895,7 +2222,11 @@ end;
 function TChmFileList.CheckOpenFile(AFileName: String): Boolean;
 var
   X: Integer;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/fixes_2_2
 begin
   Result := False;
   for X := 0 to Count-1 do begin
@@ -1979,7 +2310,11 @@ begin
   fUnNotifiedFiles.Clear;
 end;
 
+<<<<<<< HEAD
 function TChmFileList.ObjectExists(Name: String; var fChm: TChmReader): QWord;
+=======
+function TChmFileList.ObjectExists(Name: String; var fChm: TChmReader = nil): QWord;
+>>>>>>> graemeg/fixes_2_2
 begin
   Result := 0;
   if Count = 0 then exit;

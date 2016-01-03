@@ -584,6 +584,7 @@
 'insertq',
 'extrq',
 'lzcnt',
+<<<<<<< HEAD
 'pabsb',
 'pabsw',
 'pabsd',
@@ -1069,4 +1070,7 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+'popcnt'
+>>>>>>> graemeg/fixes_2_2
 );

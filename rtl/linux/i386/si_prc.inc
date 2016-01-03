@@ -45,6 +45,10 @@ end;
 {******************************************************************************
                           Process start/halt
  ******************************************************************************}
+{$asmmode ATT}
+
+var
+  dlexitproc: pointer;
 
 var
   dlexitproc : pointer;
@@ -144,8 +148,16 @@ asm
 	movl  dlexitproc@GOT(%ebx),%ecx
 	movl  %edx,(%ecx)
 
+<<<<<<< HEAD
 	movl  operatingsystem_parameter_envp@GOT(%ebx),%ecx
 	movl  %eax,(%ecx)
+=======
+  movl    %edx, dlexitproc
+
+  fninit                           { initialize fpu }
+  fwait
+  fldcw   Default8087CW
+>>>>>>> graemeg/fixes_2_2
 
 	movl  operatingsystem_parameter_argc@GOT(%ebx),%edx
 	popl  %ecx
@@ -232,6 +244,7 @@ asm
 >>>>>>> origin/cpstrnew
 
 .Lhaltproc:
+<<<<<<< HEAD
   {$ifdef FPC_PIC}
         call  fpc_geteipasebx
 <<<<<<< HEAD
@@ -250,6 +263,9 @@ asm
   {$else FPC_PIC}
   	movl    dlexitproc,%eax
   {$endif FPC_PIC}
+=======
+  movl    dlexitproc,%eax
+>>>>>>> graemeg/fixes_2_2
   testl   %eax,%eax
   je      .Lnodlexitproc
   call    *%eax

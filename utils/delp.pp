@@ -332,7 +332,11 @@ begin
   AddMask('*.tpu *.tpp *.tpw *.tr');
   AddMask('*.dcu *.dcp *.bpl');
   AddMask('*.log *.bak *.~pas *.~pp *.*~');
+<<<<<<< HEAD
   AddMask('*.ppu *.o *.a *.s *.or *.compiled');
+=======
+  AddMask('*.ppu *.o *.a *.s');
+>>>>>>> graemeg/fixes_2_2
   AddMask('*.pp1 *.o1 *.a1 *.s1');
   AddMask('*.ppo *.oo *.ao *.so');
   AddMask('*.rst *.rsj');

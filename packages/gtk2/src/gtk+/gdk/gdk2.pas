@@ -15,8 +15,13 @@
 
    You should have received a copy of the GNU Lesser General Public
    License along with this library; if not, write to the
+<<<<<<< HEAD
    Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
    MA 02110-1301, USA.
+=======
+   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
+>>>>>>> graemeg/fixes_2_2
 }
 unit gdk2; // keep unit name lowercase for kylix
 
@@ -29,11 +34,19 @@ unit gdk2; // keep unit name lowercase for kylix
 
 interface
 
+<<<<<<< HEAD
 uses glib2, gdk2pixbuf, pango, cairo;
 
 const
 // OS dependent defines
 {$ifdef windows}
+=======
+uses glib2, gdk2pixbuf, pango;
+
+const
+// OS dependent defines
+{$ifdef win32}
+>>>>>>> graemeg/fixes_2_2
   {$DEFINE GDK_WINDOWING_WIN32}
   gdklib = 'libgdk-win32-2.0-0.dll';
   {$IFDEF FPC}
@@ -179,7 +192,11 @@ procedure gdk_event_send_clientmessage_toall(event:PGdkEvent); cdecl; external g
 {$IFNDEF KYLIX}
 { Threading }
 var
+<<<<<<< HEAD
   {$IFDEF WINDOWS}
+=======
+  {$IFDEF WIN32}
+>>>>>>> graemeg/fixes_2_2
   gdk_threads_mutex : PGMutex; external gdklib name 'gdk_threads_mutex';
   {$ELSE}
   gdk_threads_mutex : PGMutex; cvar; external;

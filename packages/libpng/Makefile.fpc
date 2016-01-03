@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for PNG Library interface
+>>>>>>> graemeg/fixes_2_2
 #
 
 [package]
 name=libpng
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -24,6 +29,16 @@ version=2.5.1
 
 [require]
 packages=rtl fpmkunit
+=======
+version=2.2.5
+
+[require]
+packages=zlib
+libc=y
+
+[target]
+units=png
+>>>>>>> graemeg/fixes_2_2
 
 [install]
 fpcpackage=y
@@ -31,6 +46,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -116,3 +132,14 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[compiler]
+includedir=src
+sourcedir=src tests
+
+[shared]
+build=n
+
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/fixes_2_2

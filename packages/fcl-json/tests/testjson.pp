@@ -18,6 +18,7 @@ program testjson;
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, testjsondata, testjsonparser, consoletestrunner; //, testjsonrtti, fpjsonrtti;
 =======
   Classes, consoletestrunner, testjsondata, testjsonparser,
@@ -32,6 +33,10 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  Classes, consoletestrunner, testjsondata, testjsonparser,
+  fpcunitconsolerunner;
+>>>>>>> graemeg/fixes_2_2
 type
   { TLazTestRunner }
    TMyTestRunner = class(TTestRunner)
@@ -42,9 +47,12 @@ type
 var
   Application: TMyTestRunner;
 begin
+<<<<<<< HEAD
   DefaultFormat := fPlain;
   DefaultRunAllTests := True;
 
+=======
+>>>>>>> graemeg/fixes_2_2
   Application := TMyTestRunner.Create(nil); 
   Application.Initialize;
   Application.Run;  

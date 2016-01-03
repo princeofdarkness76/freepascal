@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('iconvenc');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -25,16 +26,24 @@ begin
     P.Description := 'A libiconv header translation.';
     P.NeedLibC:= true;
 
+=======
+    P.Directory:='iconvenc';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+>>>>>>> graemeg/fixes_2_2
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');
 
     T:=P.Targets.AddUnit('iconvenc.pas');
+<<<<<<< HEAD
     T.Dependencies.AddInclude('iconvert.inc');
     T:=P.Targets.AddUnit('iconvenc_dyn.pas');
     T.Dependencies.AddInclude('iconvert.inc');
 
     P.ExamplePath.Add('examples');
     P.Targets.AddExampleProgram('iconvtest.pp');
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

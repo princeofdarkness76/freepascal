@@ -1,12 +1,20 @@
 {
+<<<<<<< HEAD
  *  ABGlobalsC.h
  *  AddressBook Framework
  *
  *  Copyright (c) 2003-2007 Apple Inc.  All rights reserved.
+=======
+ *  ABGlobals.h
+ *  AddressBook Framework
+ *
+ *  Copyright (c) 2002-2003 Apple Computer. All rights reserved.
+>>>>>>> graemeg/fixes_2_2
  *
  }
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, Feburary 2006 }
+<<<<<<< HEAD
 {	  Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, November 2009 }
 
 {
@@ -16,6 +24,15 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -24,8 +41,13 @@
 
 unit ABGlobals;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -38,21 +60,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -87,6 +117,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -94,6 +126,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -318,6 +351,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -343,6 +386,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -353,6 +400,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -361,6 +409,10 @@ uses MacTypes,CFBase;
 {$ALIGN POWER}
 
 
+=======
+{$ALIGN POWER}
+
+>>>>>>> graemeg/fixes_2_2
 // NOTE: This header is for C programmers. For Objective-C use ABGlobals.h
 
 // ================================================================
@@ -416,6 +468,10 @@ var kABAddressWorkLabel: CFStringRef; external name '_kABAddressWorkLabel'; (* a
  * kABAddressCountryCodeKey code must be one of the following:
  * iso country codes
  *
+<<<<<<< HEAD
+=======
+ *    ae = United Arab Emirates
+>>>>>>> graemeg/fixes_2_2
  *    ar = Argentina
  *    at = Austria
  *    au = Australia
@@ -474,6 +530,10 @@ var kABAddressWorkLabel: CFStringRef; external name '_kABAddressWorkLabel'; (* a
  *    uk = United Kingdom
  *    us = United States
  *    ye = Yemen
+<<<<<<< HEAD
+=======
+ *    yu = Serbia and Montenegro
+>>>>>>> graemeg/fixes_2_2
  *    za = South Africa
  *
  }
@@ -578,6 +638,7 @@ var kABHomeLabel: CFStringRef; external name '_kABHomeLabel'; (* attribute const
 var kABOtherLabel: CFStringRef; external name '_kABOtherLabel'; (* attribute const *)
 
 // ================================================================
+<<<<<<< HEAD
 //      RecordTypes
 // ================================================================
 
@@ -588,6 +649,8 @@ var kABPersonRecordType : CFStringRef; external name '_kABPersonRecordType'; (* 
 var kABGroupRecordType : CFStringRef; external name '_kABGroupRecordType'; (* attribute const *)
 
 // ================================================================
+=======
+>>>>>>> graemeg/fixes_2_2
 //      Notifications published when something changes
 // ================================================================
 // These notifications are not sent until ABGetSharedAddressBook()
@@ -620,8 +683,12 @@ var kABDeletedRecords: CFStringRef; external name '_kABDeletedRecords'; (* attri
     // Returns propertyOrLabel if not found (e.g. if not built in)
 function ABLocalizedPropertyOrLabel( propertyOrLabel: CFStringRef ): CFStringRef; external name '_ABLocalizedPropertyOrLabel';
 
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+end.
+>>>>>>> graemeg/fixes_2_2

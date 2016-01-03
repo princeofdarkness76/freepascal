@@ -141,6 +141,8 @@ unit cgx86;
 
         procedure g_overflowcheck(list: TAsmList; const l:tlocation;def:tdef);override;
 
+        procedure g_external_wrapper(list: TAsmList; procdef: tprocdef; const externalname: string); override;
+
         procedure make_simple_ref(list:TAsmList;var ref: treference);
 
         function get_darwin_call_stub(const s: string; weak: boolean): tasmsymbol;
@@ -213,6 +215,7 @@ unit cgx86;
        globals,verbose,systems,cutils,
        defutil,paramgr,procinfo,
        tgobj,ncgutil,
+<<<<<<< HEAD
        fmodule,symsym,symcpu;
 
     function UseAVX: boolean;
@@ -246,6 +249,9 @@ unit cgx86;
         Result:=current_settings.cputype>=cpu_186;
 {$endif}
       end;
+=======
+       fmodule;
+>>>>>>> graemeg/fixes_2_2
 
     const
       TOpCG2AsmOp: Array[topcg] of TAsmOp = (A_NONE,A_MOV,A_ADD,A_AND,A_DIV,
@@ -717,6 +723,7 @@ unit cgx86;
 
                 end;
           end;
+<<<<<<< HEAD
 {$elseif defined(i386)}
         add_hreg:=false;
         if (target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
@@ -765,6 +772,43 @@ unit cgx86;
             href.refaddr:=addr_pic;
             include(current_procinfo.flags,pi_needs_got);
             hreg:=getaddressregister(list);
+=======
+{$else x86_64}
+        add_hreg:=false;
+        if (target_info.system=system_i386_darwin) then
+          begin
+            if assigned(ref.symbol) and
+               not(assigned(ref.relsymbol)) and
+               ((ref.symbol.bind = AB_EXTERNAL) or
+                (cs_create_pic in current_settings.moduleswitches)) then
+             begin
+               if (ref.symbol.bind = AB_EXTERNAL) or
+                  ((cs_create_pic in current_settings.moduleswitches) and
+                   (ref.symbol.bind in [AB_COMMON,AB_GLOBAL])) then
+                 begin
+                   hreg:=g_indirect_sym_load(list,ref.symbol.name);
+                   ref.symbol:=nil;
+                 end
+               else
+                 begin
+                   include(current_procinfo.flags,pi_needs_got);
+                   hreg:=current_procinfo.got;
+                   ref.relsymbol:=current_procinfo.CurrGOTLabel;
+                 end;
+               add_hreg:=true
+             end
+          end
+        else if (cs_create_pic in current_settings.moduleswitches) and
+           assigned(ref.symbol) and
+           not((ref.symbol.bind=AB_LOCAL) and
+               (ref.symbol.typ in [AT_LABEL,AT_FUNCTION])) then
+          begin
+            reference_reset_symbol(href,ref.symbol,0);
+            href.base:=current_procinfo.got;
+            href.refaddr:=addr_pic;
+            include(current_procinfo.flags,pi_needs_got);
+            hreg:=cg.getaddressregister(list);
+>>>>>>> graemeg/fixes_2_2
             list.concat(taicpu.op_ref_reg(A_MOV,S_L,href,hreg));
             ref.symbol:=nil;
             add_hreg:=true;
@@ -934,11 +978,19 @@ unit cgx86;
       var
         r: treference;
       begin
+<<<<<<< HEAD
         if (target_info.system <> system_i386_darwin) then
           list.concat(taicpu.op_sym(A_JMP,S_NO,current_asmdata.RefAsmSymbol(s)))
         else
           begin
             reference_reset_symbol(r,get_darwin_call_stub(s,false),0,sizeof(pint));
+=======
+        if (target_info.system<>system_i386_darwin) then
+          list.concat(taicpu.op_sym(A_JMP,S_NO,current_asmdata.RefAsmSymbol(s)))
+        else
+          begin 
+            reference_reset_symbol(r,get_darwin_call_stub(s),0);
+>>>>>>> graemeg/fixes_2_2
             r.refaddr:=addr_full;
             list.concat(taicpu.op_ref(A_JMP,S_NO,r));
           end;
@@ -1222,6 +1274,7 @@ unit cgx86;
               begin
                 if assigned(ref.symbol) then
                   begin
+<<<<<<< HEAD
                     if (target_info.system in [system_i386_darwin,system_i386_iphonesim]) and
                        ((ref.symbol.bind in [AB_EXTERNAL,AB_WEAK_EXTERNAL]) or
                         (cs_create_pic in current_settings.moduleswitches)) then
@@ -1233,17 +1286,35 @@ unit cgx86;
                              reference_reset_base(tmpref,
                                g_indirect_sym_load(list,ref.symbol.name,asmsym2indsymflags(ref.symbol)),
                                offset,sizeof(pint));
+=======
+                    if (target_info.system=system_i386_darwin) and
+                       ((ref.symbol.bind = AB_EXTERNAL) or
+                        (cs_create_pic in current_settings.moduleswitches)) then
+                      begin
+                        if (ref.symbol.bind = AB_EXTERNAL) or
+                           ((cs_create_pic in current_settings.moduleswitches) and
+                            (ref.symbol.bind in [AB_COMMON,AB_GLOBAL])) then
+                          begin
+                             reference_reset_base(tmpref,
+                               g_indirect_sym_load(list,ref.symbol.name),
+                               offset);
+>>>>>>> graemeg/fixes_2_2
                              a_loadaddr_ref_reg(list,tmpref,r);
                           end
                        else
                          begin
                            include(current_procinfo.flags,pi_needs_got);
+<<<<<<< HEAD
                            reference_reset_base(tmpref,current_procinfo.got,offset,ref.alignment);
+=======
+                           reference_reset_base(tmpref,current_procinfo.got,offset);
+>>>>>>> graemeg/fixes_2_2
                            tmpref.symbol:=symbol;
                            tmpref.relsymbol:=current_procinfo.CurrGOTLabel;
                            list.concat(Taicpu.op_ref_reg(A_LEA,tcgsize2opsize[OS_ADDR],tmpref,r));
                          end;
                       end
+<<<<<<< HEAD
                     else if (cs_create_pic in current_settings.moduleswitches)
 {$ifdef x86_64}
 <<<<<<< HEAD
@@ -1269,6 +1340,9 @@ unit cgx86;
 >>>>>>> origin/cpstrnew
 {$endif x86_64}
                             then
+=======
+                    else if (cs_create_pic in current_settings.moduleswitches) then
+>>>>>>> graemeg/fixes_2_2
                       begin
 {$ifdef x86_64}
                         reference_reset_symbol(tmpref,ref.symbol,0,ref.alignment);
@@ -1397,7 +1471,11 @@ unit cgx86;
             (tosize<fromsize) then
            begin
              { can't round down to lower precision in x87 :/ }
+<<<<<<< HEAD
              tg.gettemp(list,tcgsize2size[tosize],tcgsize2size[tosize],tt_normal,href);
+=======
+             tg.gettemp(list,tcgsize2size[tosize],tt_normal,href);
+>>>>>>> graemeg/fixes_2_2
              a_loadfpu_reg_ref(list,fromsize,tosize,NR_ST,href);
              a_loadfpu_ref_reg(list,tosize,tosize,href,NR_ST);
              tg.ungettemp(list,href);
@@ -2620,6 +2698,7 @@ unit cgx86;
       helpsize:=3*sizeof(aword);
       if cs_opt_size in current_settings.optimizerswitches then
         helpsize:=2*sizeof(aword);
+<<<<<<< HEAD
 {$ifndef i8086}
       { avx helps only to reduce size, using it in general does at least not help on
         an i7-4770 (FK) }
@@ -2642,6 +2721,8 @@ unit cgx86;
       else
 {$endif dummy}
 {$endif i8086}
+=======
+>>>>>>> graemeg/fixes_2_2
       if (cs_mmx in current_settings.localswitches) and
          not(pi_uses_fpu in current_procinfo.flags) and
          ((len=8) or (len=16) or (len=24) or (len=32)) then
@@ -2656,7 +2737,13 @@ unit cgx86;
       if (source.segment<>NR_NO) or
          (dest.segment<>NR_NO) then
         cm:=copy_string;
+<<<<<<< HEAD
 {$endif not i8086}
+=======
+      if (source.segment<>NR_NO) or
+         (dest.segment<>NR_NO) then
+        cm:=copy_string;
+>>>>>>> graemeg/fixes_2_2
       case cm of
         copy_move:
           begin
@@ -2682,8 +2769,12 @@ unit cgx86;
                     copysize:=4;
                     cgsize:=OS_32;
                   end
+<<<<<<< HEAD
 {$endif cpu32bitalu or cpu64bitalu}
 {$ifdef cpu64bitalu}
+=======
+{$ifdef cpu64bit}
+>>>>>>> graemeg/fixes_2_2
                 else if len<16 then
                   begin
                     copysize:=8;
@@ -2870,6 +2961,7 @@ unit cgx86;
         else {copy_string, should be a good fallback in case of unhandled}
           begin
             getcpuregister(list,REGDI);
+<<<<<<< HEAD
             if (dest.segment=NR_NO) and
                (segment_regs_equal(NR_SS,NR_DS) or ((dest.base<>NR_BP) and (dest.base<>NR_SP))) then
               begin
@@ -2880,11 +2972,16 @@ unit cgx86;
                 list.concat(taicpu.op_reg(A_POP,push_segment_size,NR_ES));
 {$endif volatile_es}
               end
+=======
+            if (dest.segment=NR_NO) then
+              a_loadaddr_ref_reg(list,dest,REGDI)
+>>>>>>> graemeg/fixes_2_2
             else
               begin
                 dstref:=dest;
                 dstref.segment:=NR_NO;
                 a_loadaddr_ref_reg(list,dstref,REGDI);
+<<<<<<< HEAD
 {$ifdef volatile_es}
                 saved_es:=false;
 {$else volatile_es}
@@ -2908,11 +3005,21 @@ unit cgx86;
                 a_loadaddr_ref_reg(list,srcref,REGSI);
                 saved_ds:=false;
               end
+=======
+                list.concat(taicpu.op_reg(A_PUSH,S_L,NR_ES));
+                list.concat(taicpu.op_reg(A_PUSH,S_L,dest.segment));
+                list.concat(taicpu.op_reg(A_POP,S_L,NR_ES));
+              end;
+            getcpuregister(list,REGSI);
+            if (source.segment=NR_NO) then
+              a_loadaddr_ref_reg(list,source,REGSI)
+>>>>>>> graemeg/fixes_2_2
             else
               begin
                 srcref:=source;
                 srcref.segment:=NR_NO;
                 a_loadaddr_ref_reg(list,srcref,REGSI);
+<<<<<<< HEAD
                 list.concat(taicpu.op_reg(A_PUSH,push_segment_size,NR_DS));
                 saved_ds:=true;
                 if source.segment<>NR_NO then
@@ -2927,6 +3034,17 @@ unit cgx86;
             getcpuregister(list,REGCX);
             if ts_cld in current_settings.targetswitches then
               list.concat(Taicpu.op_none(A_CLD,S_NO));
+=======
+                list.concat(taicpu.op_reg(A_PUSH,S_L,NR_DS));
+                list.concat(taicpu.op_reg(A_PUSH,S_L,source.segment));
+                list.concat(taicpu.op_reg(A_POP,S_L,NR_DS));
+              end;
+
+            getcpuregister(list,REGCX);
+{$ifdef i386}
+           list.concat(Taicpu.op_none(A_CLD,S_NO));
+{$endif i386}
+>>>>>>> graemeg/fixes_2_2
             if (cs_opt_size in current_settings.optimizerswitches) and
                (len>sizeof(aint)+(sizeof(aint) div 2)) then
               begin
@@ -2969,10 +3087,17 @@ unit cgx86;
             ungetcpuregister(list,REGCX);
             ungetcpuregister(list,REGSI);
             ungetcpuregister(list,REGDI);
+<<<<<<< HEAD
             if saved_ds then
               list.concat(taicpu.op_reg(A_POP,push_segment_size,NR_DS));
             if saved_es then
               list.concat(taicpu.op_reg(A_POP,push_segment_size,NR_ES));
+=======
+            if (source.segment<>NR_NO) then
+              list.concat(taicpu.op_reg(A_POP,S_L,NR_DS));
+            if (dest.segment<>NR_NO) then
+              list.concat(taicpu.op_reg(A_POP,S_L,NR_ES));
+>>>>>>> graemeg/fixes_2_2
           end;
         end;
     end;
@@ -3354,6 +3479,7 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                ((target_info.stackalign>sizeof(pint)) and
 =======
                ((target_info.system in systems_need_16_byte_stack_alignment) and
@@ -3367,10 +3493,15 @@ unit cgx86;
 =======
                ((target_info.system in systems_need_16_byte_stack_alignment) and
 >>>>>>> origin/cpstrnew
+=======
+               ((target_info.system in [system_i386_darwin,
+                 system_x86_64_win64,system_x86_64_linux,system_x86_64_freebsd]) and
+>>>>>>> graemeg/fixes_2_2
                 (stackmisalignment <> 0) and
                 ((pi_do_call in current_procinfo.flags) or
                  (po_assembler in current_procinfo.procdef.procoptions))) then
               begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3386,6 +3517,10 @@ unit cgx86;
 =======
 >>>>>>> origin/cpstrnew
                 if (target_info.system in systems_need_16_byte_stack_alignment) then
+=======
+                if (target_info.system in [system_i386_darwin,
+                      system_x86_64_win64,system_x86_64_linux,system_x86_64_freebsd]) then
+>>>>>>> graemeg/fixes_2_2
                   localsize := align(localsize+stackmisalignment,16)-stackmisalignment;
                 cg.g_stackpointer_alloc(list,localsize);
 >>>>>>> graemeg/cpstrnew
@@ -3531,13 +3666,20 @@ unit cgx86;
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/fixes_2_2
     procedure tcgx86.g_external_wrapper(list: TAsmList; procdef: tprocdef; const externalname: string);
       var
         ref : treference;
         sym : tasmsymbol;
       begin
+<<<<<<< HEAD
        if (target_info.system = system_i386_darwin) then
+=======
+       if (target_info.system=system_i386_darwin) then
+>>>>>>> graemeg/fixes_2_2
          begin
            { a_jmp_name jumps to a stub which is always pic-safe on darwin }
            inherited g_external_wrapper(list,procdef,externalname);
@@ -3545,6 +3687,7 @@ unit cgx86;
          end;
 
         sym:=current_asmdata.RefAsmSymbol(externalname);
+<<<<<<< HEAD
         reference_reset_symbol(ref,sym,0,sizeof(pint));
 
         { create pic'ed? }
@@ -3552,6 +3695,19 @@ unit cgx86;
            { darwin/x86_64's assembler doesn't want @PLT after call symbols }
            not(target_info.system in [system_x86_64_darwin,system_i386_iphonesim]) then
           ref.refaddr:=addr_pic
+=======
+        reference_reset_symbol(ref,sym,0);
+
+        { create pic'ed? }
+        if cs_create_pic in current_settings.moduleswitches then
+          begin
+            { it could be that we're called from a procedure not having the
+              got loaded
+            }
+            g_maybe_got_init(list);
+            ref.refaddr:=addr_pic
+          end
+>>>>>>> graemeg/fixes_2_2
         else
           ref.refaddr:=addr_full;
         list.concat(taicpu.op_ref(A_JMP,S_NO,ref));

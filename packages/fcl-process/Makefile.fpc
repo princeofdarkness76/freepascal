@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for Free Component Library
+>>>>>>> graemeg/fixes_2_2
 #
 
 [package]
 name=fcl-process
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -20,14 +25,22 @@ packages=rtl
 =======
 >>>>>>> origin/cpstrnew
 version=2.5.1
+=======
+version=2.2.5
+>>>>>>> graemeg/fixes_2_2
 
 [target]
 units=pipes process
 units_beos=simpleipc dbugmsg dbugintf
+<<<<<<< HEAD
 units_haiku=simpleipc dbugmsg dbugintf
 units_freebsd=simpleipc dbugmsg dbugintf
 units_darwin=simpleipc dbugmsg dbugintf
 units_iphonesim=simpleipc dbugmsg dbugintf
+=======
+units_freebsd=simpleipc dbugmsg dbugintf
+units_darwin=simpleipc dbugmsg dbugintf
+>>>>>>> graemeg/fixes_2_2
 units_solaris=simpleipc dbugmsg dbugintf
 units_netbsd=simpleipc dbugmsg dbugintf
 units_openbsd=simpleipc dbugmsg dbugintf
@@ -43,6 +56,7 @@ rsts=process simpleipc
 [compiler]
 options=-S2h
 includedir=src/$(OS_TARGET) src
+<<<<<<< HEAD
 includedir_linux=src/unix src/dummy
 includedir_freebsd=src/unix src/dummy
 includedir_darwin=src/unix src/dummy
@@ -65,6 +79,21 @@ includedir_netware=src/dummy
 includedir_netwlibc=src/dummy
 sourcedir=src/$(OS_TARGET) src
 >>>>>>> graemeg/cpstrnew
+=======
+includedir_linux=src/unix
+includedir_freebsd=src/unix
+includedir_darwin=src/unix
+includedir_netbsd=src/unix
+includedir_openbsd=src/unix
+includedir_solaris=src/unix
+includedir_qnx=src/unix
+includedir_beos=src/unix
+includedir_emx=src/os2
+includedir_win32=src/win
+includedir_win64=src/win
+includedir_wince=src/win
+sourcedir=src/$(OS_TARGET) src
+>>>>>>> graemeg/fixes_2_2
 
 [install]
 fpcpackage=y
@@ -72,6 +101,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -183,3 +213,7 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/fixes_2_2

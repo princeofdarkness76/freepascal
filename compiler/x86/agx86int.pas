@@ -59,6 +59,7 @@ implementation
     const
       line_length = 70;
 
+<<<<<<< HEAD
       secnames : array[TAsmSectiontype] of string[4] = ('','',
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -74,6 +75,10 @@ implementation
 >>>>>>> origin/cpstrnew
         'CODE','DATA','DATA','DATA','BSS','',
 >>>>>>> graemeg/cpstrnew
+=======
+      secnames : array[TAsmSectiontype] of string[4] = ('',
+        'CODE','DATA','DATA','DATA','BSS','',
+>>>>>>> graemeg/fixes_2_2
         '','','','','','',
         '','','','',
         '',
@@ -85,6 +90,7 @@ implementation
         '',
         '',
         '',
+<<<<<<< HEAD
         '',
         '',
         '',
@@ -151,6 +157,13 @@ implementation
 >>>>>>> origin/cpstrnew
         '_TEXT','_DATE','_DATA','_DATA','_BSS','',
 >>>>>>> graemeg/cpstrnew
+=======
+        ''
+      );
+
+      secnamesml64 : array[TAsmSectiontype] of string[7] = ('',
+        '_TEXT','_DATE','_DATA','_DATA','_BSS','',
+>>>>>>> graemeg/fixes_2_2
         '','','','',
         'idata$2','idata$4','idata$5','idata$6','idata$7','edata',
         '',
@@ -162,6 +175,7 @@ implementation
         '',
         '',
         '',
+<<<<<<< HEAD
         '',
         '',
         '',
@@ -210,6 +224,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
         ''
       );
 
@@ -512,7 +528,11 @@ implementation
       ait_const2str : array[aitconst_128bit..aitconst_secrel32_symbol] of string[20]=(
         #9''#9,#9'DQ'#9,#9'DD'#9,#9'DW'#9,#9'DB'#9,
         #9'FIXMESLEB',#9'FIXEMEULEB',
+<<<<<<< HEAD
         #9'DD RVA'#9,#9'DD SECREL32'#9
+=======
+        #9'DD RVA'#9,#9'DD SECREL32'#9,#9'FIXMEINDIRECT'#9
+>>>>>>> graemeg/fixes_2_2
       );
 
     Function PadTabs(const p:string;addch:char):string;
@@ -688,7 +708,12 @@ implementation
                  aitconst_16bit,
                  aitconst_8bit,
                  aitconst_rva_symbol,
+<<<<<<< HEAD
                  aitconst_secrel32_symbol :
+=======
+                 aitconst_secrel32_symbol,
+                 aitconst_indirect_symbol :
+>>>>>>> graemeg/fixes_2_2
                    begin
                      writer.AsmWrite(ait_const2str[consttype]);
                      l:=0;
@@ -704,7 +729,11 @@ implementation
                          end
                        else
                          s:=tostr(tai_const(hp).value);
+<<<<<<< HEAD
                        writer.AsmWrite(s);
+=======
+                       AsmWrite(s);
+>>>>>>> graemeg/fixes_2_2
                        inc(l,length(s));
                        if (l>line_length) or
                           (hp.next=nil) or
@@ -724,6 +753,7 @@ implementation
                end;
              end;
 
+<<<<<<< HEAD
            ait_realconst:
              begin
                case tai_realconst(hp).realtyp of
@@ -739,6 +769,16 @@ implementation
                    internalerror(2014050604);
                end;
              end;
+=======
+           ait_real_32bit :
+             AsmWriteLn(#9#9'DD'#9+single2str(tai_real_32bit(hp).value));
+           ait_real_64bit :
+             AsmWriteLn(#9#9'DQ'#9+double2str(tai_real_64bit(hp).value));
+           ait_real_80bit :
+             AsmWriteLn(#9#9'DT'#9+extended2str(tai_real_80bit(hp).value));
+           ait_comp_64bit :
+             AsmWriteLn(#9#9'DQ'#9+extended2str(tai_comp_64bit(hp).value));
+>>>>>>> graemeg/fixes_2_2
            ait_string :
              begin
                counter := 0;
@@ -871,17 +911,24 @@ implementation
                    (fixed_opcode =  A_REPZ) or
                    (fixed_opcode = A_REPNE)) then
                 Begin
+<<<<<<< HEAD
                   prefix:=std_op2str[fixed_opcode]+#9;
+=======
+                  prefix:=std_op2str[taicpu(hp).opcode]+#9;
+>>>>>>> graemeg/fixes_2_2
                   { there can be a stab inbetween when the opcode was on
                     a different line in the source code }
                   repeat
                     hp:=tai(hp.next);
                   until (hp=nil) or (hp.typ=ait_instruction);
+<<<<<<< HEAD
 
                   { next instruction ... }
                   fixed_opcode:=taicpu(hp).FixNonCommutativeOpcodes;
                   taicpu(hp).SetOperandOrder(op_intel);
 
+=======
+>>>>>>> graemeg/fixes_2_2
                   { this is theorically impossible... }
                   if hp=nil then
                    begin
@@ -1058,7 +1105,11 @@ implementation
       if current_module.mainsource<>'' then
        comment(v_info,'Start writing intel-styled assembler output for '+current_module.mainsource);
 {$endif}
+<<<<<<< HEAD
       if asminfo^.id<>as_x86_64_masm then
+=======
+      if target_asm.id<>as_x86_64_masm then
+>>>>>>> graemeg/fixes_2_2
         begin
           writer.AsmWriteLn(#9'.386p');
           { masm 6.11 does not seem to like LOCALS PM }
@@ -1084,6 +1135,7 @@ implementation
 
       { better do this at end of WriteTree, but then there comes a trouble with
         al_const which does not have leading ait_section and thus goes out of segment }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1109,6 +1161,16 @@ implementation
 
       writer.AsmWriteLn(#9'END');
       writer.AsmLn;
+=======
+        
+      { TODO: probably ml64 needs 'closing' last section, too }
+      if LastSecType <> sec_none then
+        AsmWriteLn('_'+secnames[LasTSecType]+#9#9'ENDS');
+      LastSecType := sec_none;
+
+      AsmWriteLn(#9'END');
+      AsmLn;
+>>>>>>> graemeg/fixes_2_2
 
 {$ifdef EXTDEBUG}
       if current_module.mainsource<>'' then

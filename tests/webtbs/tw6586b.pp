@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 { %target=win32,win64,wince,darwin,linux,freebsd,solaris,beos,aix,android }
 { %needlibrary }
 { %delfiles=tw6586a }
+=======
+{ %target=win32,win64,wince,darwin,linux,freebsd,solaris,beos }
+{ %needlibrary }
+>>>>>>> graemeg/fixes_2_2
 
 program project1;
 

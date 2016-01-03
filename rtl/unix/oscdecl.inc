@@ -16,17 +16,22 @@
                                               
  ***********************************************************************}
 
+<<<<<<< HEAD
 
 { ********************************************************************* }
 { fpioctl                                                               }
 { ********************************************************************* }
 
+=======
+{$if defined(bsd) or defined(solaris)}
+>>>>>>> graemeg/fixes_2_2
 function  real_FpIOCtl   (Handle:cint;Ndx: TIOCtlRequest):cint; cdecl; varargs; external clib name 'ioctl';
 
 function  FpIOCtl   (Handle:cint;Ndx: TIOCtlRequest;Data: Pointer):cint;
 begin
   FpIOCtl:=real_FpIOCtl(Handle, Ndx, Data);
 end;
+<<<<<<< HEAD
 
 
 { ********************************************************************* }
@@ -69,3 +74,7 @@ begin
     using fmCreate) }
   FpOpen:=real_FpOpen(path,flags,mode);
 end;
+=======
+{$endif bsd or solaris}
+
+>>>>>>> graemeg/fixes_2_2

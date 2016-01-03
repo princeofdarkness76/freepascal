@@ -80,11 +80,14 @@ interface
     procedure PrepareReport;
 
     function  CheckVerbosity(v:longint):boolean;
+<<<<<<< HEAD
     function  SetMessageVerbosity(v:longint;state:tmsgstate):boolean;
     procedure RestoreLocalVerbosity(pstate : pmessagestaterecord);
     procedure FreeLocalVerbosity(var fstate : pmessagestaterecord);
 
     function ChangeMessageVerbosity(s: string; var i: integer;state:tmsgstate): boolean;
+=======
+>>>>>>> graemeg/fixes_2_2
     procedure ShowStatus;
     function  ErrorCount:longint;
     procedure SetErrorFlags(const s:string);
@@ -127,6 +130,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       comphook,fmodule,constexp,globals,cfileutl,switches;
 =======
       comphook,fmodule,constexp,globals,cfileutl;
@@ -140,6 +144,10 @@ implementation
 =======
       comphook,fmodule,constexp,globals,cfileutl;
 >>>>>>> origin/cpstrnew
+=======
+      comphook,fmodule;
+
+>>>>>>> graemeg/fixes_2_2
 
 {****************************************************************************
                        Extra Handlers for default compiler
@@ -487,6 +495,7 @@ implementation
       { fix status }
         status.currentline:=current_filepos.line;
         status.currentcolumn:=current_filepos.column;
+<<<<<<< HEAD
         if (current_filepos.moduleindex <> lastmoduleidx) or
            (current_filepos.fileindex <> lastfileidx) then
         begin
@@ -525,6 +534,27 @@ implementation
               lastmoduleidx:=module.unit_index;
             end;
         end;
+=======
+        module:=get_module(current_filepos.moduleindex);
+        if assigned(module) and
+           assigned(module.sourcefiles) and
+           ((module.unit_index<>lastmoduleidx) or
+            (current_filepos.fileindex<>lastfileidx)) then
+         begin
+           { update status record }
+           status.currentmodule:=module.modulename^;
+					 status.currentmodulestate:=ModuleStateStr[module.state];
+           status.currentsource:=module.sourcefiles.get_file_name(current_filepos.fileindex);
+           status.currentsourcepath:=module.sourcefiles.get_file_path(current_filepos.fileindex);
+
+           { update lastfileidx only if name known PM }
+           if status.currentsource<>'' then
+             lastfileidx:=current_filepos.fileindex
+           else
+             lastfileidx:=0;
+           lastmoduleidx:=module.unit_index;
+         end;
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -642,7 +672,11 @@ implementation
            (status.errorwarning and ((l and V_Warning)<>0)) or
            (status.errornote and ((l and V_Note)<>0)) or
            (status.errorhint and ((l and V_Hint)<>0)) then
+<<<<<<< HEAD
          GenerateError
+=======
+         inc(status.errorcount)
+>>>>>>> graemeg/fixes_2_2
         else
          if l and V_Warning <> 0 then
           inc(status.countWarnings)

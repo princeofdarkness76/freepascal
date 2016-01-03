@@ -71,9 +71,13 @@ end;
 
 procedure DestroyRegExprEngine(var regexpr: TRegExprEngine);
 begin
+<<<<<<< HEAD
   if regexpr <> nil then
     regexpr.Free;
   regexpr := nil;
+=======
+  regexpr.Free;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function RegExprPos(RegExprEngine: TRegExprEngine; p: pchar; var index,
@@ -83,11 +87,14 @@ begin
   Result := RegExprEngine.MatchString(p,index,len);
   Len := Len - index;
   Dec(Index);
+<<<<<<< HEAD
   if not Result then
     begin
       index := -1;
       len := 0;
     end;
+=======
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function RegExprReplaceAll(RegExprEngine: TRegExprEngine; const src,

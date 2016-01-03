@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIServices-416~44
 =======
      Version:    HIServices-308~1
@@ -22,10 +23,16 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 1989-2008 by Apple Computer, Inc., all rights reserved
+=======
+     Version:    HIServices-162.0.81~21
+ 
+     Copyright:  © 1989-2005 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -53,6 +60,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -61,8 +80,13 @@
 
 unit Processes;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -75,21 +99,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -124,6 +156,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -131,6 +165,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -379,6 +414,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -404,6 +449,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -413,6 +462,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,CFBase,CFDictionary,Events,Files,MacOSXPosix;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -438,6 +488,10 @@ uses MacTypes,CFBase,CFDictionary,Events,Files,MacOSXPosix;
 {$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
+=======
+uses MacTypes,CFBase,CFDictionary,Quickdraw,AEDataModel,Events,Files,TextCommon,CFString,MacOSXPosix;
+
+>>>>>>> graemeg/fixes_2_2
 
 {$ALIGN MAC68K}
 
@@ -469,6 +523,7 @@ type
 	end;
 	AppParametersPtr = ^AppParameters;
 { Parameter block to _Launch }
+<<<<<<< HEAD
 {$ifc TARGET_CPU_64}
 type
 	LaunchParamBlockRec = record
@@ -487,6 +542,10 @@ type
 	end;
 {$elsec}
 type
+=======
+type
+	LaunchParamBlockRecPtr = ^LaunchParamBlockRec;
+>>>>>>> graemeg/fixes_2_2
 	LaunchParamBlockRec = record
 		reserved1: UInt32;
 		reserved2: UInt16;
@@ -501,9 +560,12 @@ type
 		launchAvailableSize: UInt32;
 		launchAppParameters: AppParametersPtr;
 	end;
+<<<<<<< HEAD
 {$endc} {TARGET_CPU_64}
 	LaunchParamBlockRecPtr = ^LaunchParamBlockRec;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 type
 	LaunchPBPtr = LaunchParamBlockRecPtr;
 { Set launchBlockID to extendedBlock to specify that extensions exist.
@@ -536,8 +598,11 @@ type
 	ProcessApplicationTransformState = UInt32;
 const
 	kProcessTransformToForegroundApplication = 1;
+<<<<<<< HEAD
 	kProcessTransformToBackgroundApplication = 2; { functional in Mac OS X Barolo and later }
 	kProcessTransformToUIElementApplication = 4; { functional in Mac OS X Barolo and later }
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {
    Record returned by GetProcessInformation
@@ -561,6 +626,7 @@ const
     set.
     
 }
+<<<<<<< HEAD
 {$ifc TARGET_CPU_64}
 type
 	ProcessInfoRec = record
@@ -579,6 +645,8 @@ type
 		processAppRef: FSRefPtr;
 	end;
 {$elsec}
+=======
+>>>>>>> graemeg/fixes_2_2
 type
 	ProcessInfoRec = record
 		processInfoLength: UInt32;
@@ -595,8 +663,11 @@ type
 		processActiveTime: UInt32;
 		processAppSpec: FSSpecPtr;
 	end;
+<<<<<<< HEAD
 {$endc} {TARGET_CPU_64}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 	ProcessInfoRecPtr = ^ProcessInfoRec;
 {
     Some applications assumed the size of a ProcessInfoRec would never change,
@@ -620,6 +691,7 @@ type
     set.
     
 }
+<<<<<<< HEAD
 {$ifc TARGET_CPU_64}
 type
 	ProcessInfoExtendedRec = record
@@ -640,6 +712,8 @@ type
 		processPurgeableTempMemTotal: UInt32;
 	end;
 {$elsec}
+=======
+>>>>>>> graemeg/fixes_2_2
 type
 	ProcessInfoExtendedRec = record
 		processInfoLength: UInt32;
@@ -658,8 +732,11 @@ type
 		processTempMemTotal: UInt32;
 		processPurgeableTempMemTotal: UInt32;
 	end;
+<<<<<<< HEAD
 {$endc} {TARGET_CPU_64}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 	ProcessInfoExtendedRecPtr = ^ProcessInfoExtendedRec;
 { Record corresponding to the SIZE resource definition }
 type
@@ -705,9 +782,12 @@ const
 {
  *  LaunchApplication()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -717,19 +797,29 @@ function LaunchApplication( LaunchParams: LaunchPBPtr ): OSErr; external name '_
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  LaunchDeskAccessory()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available [32-bit only]
+=======
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  [Mac]GetCurrentProcess()
  *  
@@ -783,9 +873,12 @@ function LaunchApplication( LaunchParams: LaunchPBPtr ): OSErr; external name '_
  *    or use it in an AppleEvent, you do need to get the canonical PSN
  *    with this routine.
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Parameters:
  *    
  *    PSN:
@@ -800,19 +893,30 @@ function LaunchApplication( LaunchParams: LaunchPBPtr ): OSErr; external name '_
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 {$ifc TARGET_OS_MAC}
 function MacGetCurrentProcess( var PSN: ProcessSerialNumber ): OSErr; external name '_GetCurrentProcess';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 {$endc} {TARGET_OS_MAC}
 function GetCurrentProcess( var PSN: ProcessSerialNumber ): OSErr; external name '_GetCurrentProcess';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+function GetCurrentProcess( var PSN: ProcessSerialNumber ): OSErr; external name '_GetCurrentProcess';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+function MacGetCurrentProcess( var PSN: ProcessSerialNumber ): OSErr; external name '_GetCurrentProcess';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  GetFrontProcess()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -825,9 +929,12 @@ function GetFrontProcess( var PSN: ProcessSerialNumber ): OSErr; external name '
 {
  *  GetNextProcess()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -866,6 +973,7 @@ function GetNextProcess( var PSN: ProcessSerialNumber ): OSErr; external name '_
  *    
  *    On Mac OS X, the processSize and processFreeMem fields are
  *    returned with the value 0.
+<<<<<<< HEAD
  *    
  *    On Mac OS X 10.6 and later, the processLaunchDate field is an
  *    integer value with the same scale as CFAbsoluteTime.  Prior
@@ -876,6 +984,8 @@ function GetNextProcess( var PSN: ProcessSerialNumber ): OSErr; external name '_
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.3
+=======
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -903,9 +1013,12 @@ function GetProcessInformation( const (*var*) PSN: ProcessSerialNumber; var info
  *    process. This is intended to return a superset of the information
  *    returned by GetProcessInformation(), in more modern datatypes.
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Parameters:
  *    
  *    PSN:
@@ -929,7 +1042,11 @@ function GetProcessInformation( const (*var*) PSN: ProcessSerialNumber; var info
  *    loaded into an application's address space.  The assigned values
  *    at present are:  Mac OS Classic aplications have the value 0,
  *    Carbon applications have the value 2, Cocoa applications have the
+<<<<<<< HEAD
  *    value 3. Other undocumented values may also be returned.
+=======
+ *    value 4. Other undocumented values may also be returned.
+>>>>>>> graemeg/fixes_2_2
  *     "Attributes"                CFNumber, kCFNumberSInt32 
  *     "ParentPSN" *               CFNumber, kCFNumberLongLong 
  *     "FileType" *                CFString, file type 
@@ -939,6 +1056,7 @@ function GetProcessInformation( const (*var*) PSN: ProcessSerialNumber; var info
  *    "LSUIElement"               CFBoolean 
  *    "IsHiddenAttr"              CFBoolean 
  *    "IsCheckedInAttr"           CFBoolean 
+<<<<<<< HEAD
  *    "RequiresCarbon"            CFBoolean 
  *    "LSUserQuitOnly" *          CFBoolean 
  *    "LSUIPresentationMode"      CFNumber, kCFNumberShortType 
@@ -946,6 +1064,16 @@ function GetProcessInformation( const (*var*) PSN: ProcessSerialNumber; var info
  *    kCFBundleExecutableKey *    CFString 
  *    kCFBundleNameKey *          CFString 
  *    kCFBundleIdentifierKey *    CFString
+=======
+ *    "RequiresClassic"           CFBoolean 
+ *    "RequiresCarbon"            CFBoolean 
+ *    "LSUserQuitOnly"            CFBoolean 
+ *    "LSUIPresentationMode"      CFNumber, kCFNumberShortType 
+ *     "BundlePath" *              CFString 
+ *    kIOBundleExecutableKey *    CFString 
+ *    kIOBundleNameKey *          CFString 
+ *    kIOBundleIdentifierKey *    CFString
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
@@ -959,9 +1087,12 @@ function ProcessInformationCopyDictionary( const (*var*) PSN: ProcessSerialNumbe
 {
  *  SetFrontProcess()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -982,7 +1113,10 @@ const
    * brought forward.
    }
 	kSetFrontProcessFrontWindowOnly = 1 shl 0;
+<<<<<<< HEAD
 	kSetFrontProcessCausedByUser = 1 shl 1; {    indicates that direct user activity is causing this SetFrontProcessWithOptions() call }
+=======
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -997,9 +1131,12 @@ const
  *    without bringing all of the process's windows forward (just the
  *    front window of the process will come forward).
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Parameters:
  *    
  *    inProcess:
@@ -1023,9 +1160,12 @@ function SetFrontProcessWithOptions( const (*var*) inProcess: ProcessSerialNumbe
 {
  *  WakeUpProcess()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1038,9 +1178,12 @@ function WakeUpProcess( const (*var*) PSN: ProcessSerialNumber ): OSErr; externa
 {
  *  SameProcess()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1054,6 +1197,7 @@ function SameProcess( const (*var*) PSN1: ProcessSerialNumber; const (*var*) PSN
 {
  *  ExitToShell()
  *  
+<<<<<<< HEAD
  *  Discussion:
  *    In general, you need to call ExitToShell only if you want your
  *    application to terminate without reaching the end of its main
@@ -1065,6 +1209,8 @@ function SameProcess( const (*var*) PSN1: ProcessSerialNumber; const (*var*) PSN
  *    necessary, the Application Died Apple event is sent to the
  *    process that launched your application.
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1086,9 +1232,12 @@ procedure ExitToShell; external name '_ExitToShell';
  *    target application will be killed, even if this function returns
  *    noErr and seems to work.
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Parameters:
  *    
  *    inProcess:
@@ -1110,19 +1259,29 @@ function KillProcess( const (*var*) inProcess: ProcessSerialNumber ): OSErr; ext
    LaunchControlPanel is similar to LaunchDeskAccessory, but for Control Panel files instead.
    It launches a control panel in an application shell maintained by the Process Manager.
 }
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  LaunchControlPanel()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available [32-bit only]
+=======
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 9.0 and later
  }
 
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  GetProcessBundleLocation()
  *  
@@ -1136,9 +1295,12 @@ function KillProcess( const (*var*) inProcess: ProcessSerialNumber ): OSErr; ext
  *    bundle, this will be the app bundle directory; otherwise it will
  *    be the location of the executable itself.
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Parameters:
  *    
  *    psn:
@@ -1171,9 +1333,12 @@ function GetProcessBundleLocation( const (*var*) psn: ProcessSerialNumber; var l
  *    multi-lingual name, whereas previously only a mac-encoded string
  *    was possible.
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Parameters:
  *    
  *    psn:
@@ -1204,9 +1369,12 @@ function CopyProcessName( const (*var*) psn: ProcessSerialNumber; var name: CFSt
  *    sense for Classic apps, since they all share a single UNIX
  *    process ID.
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Parameters:
  *    
  *    psn:
@@ -1236,9 +1404,12 @@ function GetProcessPID( const (*var*) psn: ProcessSerialNumber; var pid: pid_t )
  *    not make sense for Classic apps, since they all share a single
  *    UNIX process ID.
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Parameters:
  *    
  *    psn:
@@ -1269,9 +1440,12 @@ function GetProcessForPID( pid: pid_t; var psn: ProcessSerialNumber ): OSStatus;
  *    Given a psn, this call will return true or false depending on
  *    whether or not the process is currently visible.
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Parameters:
  *    
  *    psn:
@@ -1298,9 +1472,12 @@ function IsProcessVisible( const (*var*) psn: ProcessSerialNumber ): Boolean; ex
  *    or hide the process with the visible parameter. True passed into
  *    visible indicates you wish for the process to become visible.
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Parameters:
  *    
  *    psn:
@@ -1326,6 +1503,7 @@ function ShowHideProcess( const (*var*) psn: ProcessSerialNumber; visible: Boole
  *     The type is specified in the transformState parameter.
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    Given a psn for an application, this call transforms that
  *    application into the given type.  Foreground applications have a
  *    menu bar and appear in the Dock.  Background applications do not
@@ -1359,6 +1537,16 @@ function ShowHideProcess( const (*var*) psn: ProcessSerialNumber; visible: Boole
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.3
+=======
+ *    Given a psn which is a background-only application, this call can
+ *    cause that application to be transformed into a foreground
+ *    application.  A background only application does not appear in
+ *    the Dock or in the Force Quit dialog, and never has a menu bar or
+ *    is frontmost, while a foreground application does appear in the
+ *    Dock and Force Quit dialog and does have a menu bar.  This call
+ *    does not cause the application to be brought to the front ( use
+ *    SetFrontProcess for that ).
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1405,8 +1593,14 @@ const
 { Control Panel Default Proc }
 
 
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

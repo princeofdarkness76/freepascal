@@ -285,12 +285,21 @@ type
     function  CalcTagOffset(AIndex: Integer): Pointer;
 
     function  FindKey(AInsert: boolean): Integer;
+<<<<<<< HEAD
     function  InsertKey(Buffer: TRecordBuffer): Boolean;
     procedure DeleteKey(Buffer: TRecordBuffer);
     function  InsertCurrent: Boolean;
     procedure DeleteCurrent;
     function  UpdateCurrent(PrevBuffer, NewBuffer: TRecordBuffer): Boolean;
     function  UpdateIndex(Index: Integer; PrevBuffer, NewBuffer: TRecordBuffer): Boolean;
+=======
+    function  InsertKey(Buffer: PChar): Boolean;
+    procedure DeleteKey(Buffer: PChar);
+    function  InsertCurrent: Boolean;
+    procedure DeleteCurrent;
+    function  UpdateCurrent(PrevBuffer, NewBuffer: PChar): Boolean;
+    function  UpdateIndex(Index: Integer; PrevBuffer, NewBuffer: PChar): Boolean;
+>>>>>>> graemeg/fixes_2_2
     procedure ReadIndexes;
     procedure Resync(Relative: boolean);
     procedure ResyncRoot;
@@ -337,12 +346,21 @@ type
     procedure AddNewLevel;
     procedure UnlockHeader;
     procedure InsertError;
+<<<<<<< HEAD
     function  Insert(RecNo: Integer; Buffer:TRecordBuffer ): Boolean;
     function  Update(RecNo: Integer; PrevBuffer, NewBuffer: TRecordBuffer): Boolean;
     procedure Delete(RecNo: Integer; Buffer: TRecordBuffer);
     function  CheckKeyViolation(Buffer: TRecordBuffer): Boolean;
     procedure RecordDeleted(RecNo: Integer; Buffer: TRecordBuffer);
     function  RecordRecalled(RecNo: Integer; Buffer: TRecordBuffer): Boolean;
+=======
+    function  Insert(RecNo: Integer; Buffer: PChar): Boolean;
+    function  Update(RecNo: Integer; PrevBuffer, NewBuffer: PChar): Boolean;
+    procedure Delete(RecNo: Integer; Buffer: PChar);
+    function  CheckKeyViolation(Buffer: PChar): Boolean;
+    procedure RecordDeleted(RecNo: Integer; Buffer: PChar);
+    function  RecordRecalled(RecNo: Integer; Buffer: PChar): Boolean;
+>>>>>>> graemeg/fixes_2_2
     procedure DeleteIndex(const AIndexName: string);
     procedure RepageFile;
     procedure CompactFile;
@@ -1725,7 +1743,11 @@ const
   AnsiFuncsToMode: array[boolean] of TStringFieldMode = (smRaw, smAnsi);
 var
   TempRec: PExpressionRec;
+<<<<<<< HEAD
   TempBuffer: TRecordBuffer;
+=======
+  TempBuffer: pchar;
+>>>>>>> graemeg/fixes_2_2
   I: integer;
   hasAnsiFuncs: boolean;
 begin
@@ -2818,7 +2840,11 @@ begin
     UnlockPage(0);
 end;
 
+<<<<<<< HEAD
 function TIndexFile.Insert(RecNo: Integer; Buffer: TRecordBuffer): Boolean; {override;}
+=======
+function TIndexFile.Insert(RecNo: Integer; Buffer: PChar): Boolean; {override;}
+>>>>>>> graemeg/fixes_2_2
 var
   I, curSel, count: Integer;
 begin
@@ -3003,12 +3029,20 @@ end;
 function TIndexFile.ExtractKeyFromBuffer(Buffer: TRecordBuffer): PChar;
 begin
   // execute expression to get key
+<<<<<<< HEAD
   Result := PrepareKey(TRecordBuffer(FCurrentParser.ExtractFromBuffer(Buffer)), FCurrentParser.ResultType);
+=======
+  Result := PrepareKey(FCurrentParser.ExtractFromBuffer(Buffer), FCurrentParser.ResultType);
+>>>>>>> graemeg/fixes_2_2
   if FCurrentParser.StringFieldMode <> smRaw then
     TranslateString(GetACP, FCodePage, Result, Result, KeyLen);
 end;
 
+<<<<<<< HEAD
 function TIndexFile.InsertKey(Buffer: TRecordBuffer): boolean;
+=======
+function TIndexFile.InsertKey(Buffer: PChar): boolean;
+>>>>>>> graemeg/fixes_2_2
 begin
   Result := true;
   // ignore deleted records
@@ -3066,6 +3100,18 @@ begin
   SetLength(InfoKey, KeyLen);
   FLastError := Format(STRING_KEY_VIOLATION, [GetName,
     PhysicalRecNo, TrimRight(InfoKey)]);
+<<<<<<< HEAD
+=======
+end;
+
+procedure TIndexFile.InsertError;
+var
+  errorStr: string;
+begin
+  errorStr := FLastError;
+  FLastError := '';
+  raise EDbfError.Create(errorStr);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TIndexFile.InsertError;
@@ -3131,13 +3177,21 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 function TIndexFile.UpdateIndex(Index: Integer; PrevBuffer, NewBuffer: TRecordBuffer): Boolean;
+=======
+function TIndexFile.UpdateIndex(Index: Integer; PrevBuffer, NewBuffer: PChar): Boolean;
+>>>>>>> graemeg/fixes_2_2
 begin
   SelectIndexVars(Index);
   Result := UpdateCurrent(PrevBuffer, NewBuffer);
 end;
 
+<<<<<<< HEAD
 function TIndexFile.Update(RecNo: Integer; PrevBuffer, NewBuffer: TRecordBuffer): Boolean;
+=======
+function TIndexFile.Update(RecNo: Integer; PrevBuffer, NewBuffer: PChar): Boolean;
+>>>>>>> graemeg/fixes_2_2
 var
   I, curSel, count: Integer;
 begin
@@ -3175,7 +3229,11 @@ begin
     ResyncRange(true);
 end;
 
+<<<<<<< HEAD
 function TIndexFile.UpdateCurrent(PrevBuffer, NewBuffer: TRecordBuffer): boolean;
+=======
+function TIndexFile.UpdateCurrent(PrevBuffer, NewBuffer: PChar): boolean;
+>>>>>>> graemeg/fixes_2_2
 var
   InsertKey, DeleteKey: PChar;
   TempBuffer: array [0..100] of Char;
@@ -3429,7 +3487,11 @@ begin
   FModifyMode := mmNormal;
 end;
 
+<<<<<<< HEAD
 function TIndexFile.RecordRecalled(RecNo: Integer; Buffer: TRecordBuffer): Boolean;
+=======
+function TIndexFile.RecordRecalled(RecNo: Integer; Buffer: PChar): Boolean;
+>>>>>>> graemeg/fixes_2_2
 begin
   // are we distinct -> then reinsert record in index
   FModifyMode := mmDeleteRecall;

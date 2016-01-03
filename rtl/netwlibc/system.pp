@@ -49,7 +49,11 @@ const
  PathSeparator = ';';
  AllowDirectorySeparators : set of char = ['\','/'];
  AllowDriveSeparators : set of char = [':'];
+<<<<<<< HEAD
 { FileNameCaseSensitive and FileNameCasePreserving are defined separately below!!! }
+=======
+{ FileNameCaseSensitive is defined separately below!!! }
+>>>>>>> graemeg/fixes_2_2
  maxExitCode = $ffff;
  MaxPathLen = 256;
  AllFilesMask = '*';

@@ -942,10 +942,16 @@ implementation
         maybe_call_procvar(left,true);
         resultdef:=vs.vardef;
 
+<<<<<<< HEAD
         // don't put records from which we load float fields
         // in integer registers
         if (left.resultdef.typ=recorddef) and
            (resultdef.typ=floatdef) then
+=======
+        // don't put records from which we load fields which aren't regable in integer registers
+        if (left.resultdef.typ = recorddef) and
+           not(tstoreddef(resultdef).is_intregable) then
+>>>>>>> graemeg/fixes_2_2
           make_not_regable(left,[ra_addr_regable]);
       end;
 
@@ -1019,8 +1025,12 @@ implementation
     function tvecnode.pass_typecheck:tnode;
       var
          hightree: tnode;
+<<<<<<< HEAD
          htype,elementdef,elementptrdef : tdef;
          newordtyp: tordtype;
+=======
+         htype,elementdef : tdef;
+>>>>>>> graemeg/fixes_2_2
          valid : boolean;
       begin
          result:=nil;
@@ -1137,7 +1147,11 @@ implementation
 >>>>>>> origin/cpstrnew
            do not convert enums, char (why not? (JM))
            and do not convert range nodes }
+<<<<<<< HEAD
          if (right.nodetype<>rangen) and (is_integer(right.resultdef) or is_boolean(right.resultdef) or (left.resultdef.typ<>arraydef)) then
+=======
+         if (right.nodetype<>rangen) and (is_integer(right.resultdef) or (left.resultdef.typ<>arraydef)) then
+>>>>>>> graemeg/fixes_2_2
            case left.resultdef.typ of
              arraydef:
                if ado_isvariant in Tarraydef(left.resultdef).arrayoptions then
@@ -1150,21 +1164,28 @@ implementation
                  {Arrays without a high bound (dynamic arrays, open arrays) are zero based,
                   convert indexes into these arrays to aword.}
                  inserttypeconv(right,uinttype)
+<<<<<<< HEAD
                { convert between pasbool and cbool if necessary }
                else if is_boolean(right.resultdef) then
                  inserttypeconv(right,tarraydef(left.resultdef).rangedef)
+=======
+>>>>>>> graemeg/fixes_2_2
                else
                  {Convert array indexes to low_bound..high_bound.}
                  inserttypeconv(right,Torddef.create(Torddef(sinttype).ordtype,
                                                      int64(Tarraydef(left.resultdef).lowrange),
                                                      int64(Tarraydef(left.resultdef).highrange)
                                                     ));
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
              stringdef:
                if is_open_string(left.resultdef) then
                  inserttypeconv(right,u8inttype)
                else if is_shortstring(left.resultdef) then
                  {Convert shortstring indexes to 0..length.}
+<<<<<<< HEAD
                  inserttypeconv(right,corddef.create(u8bit,0,int64(Tstringdef(left.resultdef).len),true))
                else
                  {Convert indexes into dynamically allocated strings to aword.}
@@ -1173,6 +1194,14 @@ implementation
                inserttypeconv(right,tpointerdef(left.resultdef).pointer_arithmetic_int_type);
              else
                {Others, (are there any?) indexes to aint.}
+=======
+                 inserttypeconv(right,Torddef.create(u8bit,0,int64(Tstringdef(left.resultdef).len)))
+               else
+                 {Convert indexes into dynamically allocated strings to aword.}
+                 inserttypeconv(right,uinttype);
+             else
+               {Others, i.e. pointer indexes to aint.}
+>>>>>>> graemeg/fixes_2_2
                inserttypeconv(right,sinttype);
            end;
 
@@ -1211,6 +1240,7 @@ implementation
                if (cs_check_range in current_settings.localswitches) and
                   (is_open_array(left.resultdef) or
 <<<<<<< HEAD
+<<<<<<< HEAD
                    is_array_of_const(left.resultdef)) then
 =======
                    is_array_of_const(left.resultdef)) and
@@ -1240,6 +1270,19 @@ implementation
                          hightree.free;
                        end;
                    end;
+=======
+                   is_array_of_const(left.resultdef)) and
+                  { cdecl functions don't have high() so we can not check the range }
+                  { (can't use current_procdef, since it may be a nested procedure) }
+                  not(tprocdef(tparasymtable(tparavarsym(tloadnode(left).symtableentry).owner).defowner).proccalloption in [pocall_cdecl,pocall_cppdecl]) then
+                   begin
+                     { load_high_value_node already typechecks }
+                     hightree:=load_high_value_node(tparavarsym(tloadnode(left).symtableentry));
+                     hightree.free;
+                   end;
+      
+      
+>>>>>>> graemeg/fixes_2_2
              end;
            pointerdef :
              begin
@@ -1340,6 +1383,7 @@ implementation
          else if is_widestring(left.resultdef) and (tf_winlikewidestring in target_info.flags) then
            exclude(flags,nf_callunique);
 
+<<<<<<< HEAD
          { a range node as array index can only appear in function calls, and
            those convert the range node into something else in
            tcallnode.gen_high_tree }
@@ -1359,6 +1403,61 @@ implementation
 =======
 >>>>>>> origin/cpstrnew
          else if (not is_packed_array(left.resultdef)) or
+=======
+         { the register calculation is easy if a const index is used }
+         if right.nodetype=ordconstn then
+           begin
+              registersint:=left.registersint;
+
+              { for ansi/wide strings, we need at least one register }
+              if is_ansistring(left.resultdef) or
+                is_widestring(left.resultdef) or
+              { ... as well as for dynamic arrays }
+                is_dynamic_array(left.resultdef) then
+                registersint:=max(registersint,1);
+           end
+         else
+           begin
+              { this rules are suboptimal, but they should give }
+              { good results                                }
+              registersint:=max(left.registersint,right.registersint);
+
+              { for ansi/wide strings, we need at least one register }
+              if is_ansistring(left.resultdef) or
+                is_widestring(left.resultdef) or
+              { ... as well as for dynamic arrays }
+                is_dynamic_array(left.resultdef) then
+                registersint:=max(registersint,1);
+
+              { need we an extra register when doing the restore ? }
+              if (left.registersint<=right.registersint) and
+              { only if the node needs less than 3 registers }
+              { two for the right node and one for the       }
+              { left address                             }
+                (registersint<3) then
+                inc(registersint);
+
+              { need we an extra register for the index ? }
+              if (right.expectloc<>LOC_REGISTER)
+              { only if the right node doesn't need a register }
+                and (right.registersint<1) then
+                inc(registersint);
+
+              { not correct, but what works better ?
+              if left.registersint>0 then
+                registersint:=max(registersint,2)
+              else
+                 min. one register
+                registersint:=max(registersint,1);
+              }
+           end;
+
+         registersfpu:=max(left.registersfpu,right.registersfpu);
+{$ifdef SUPPORT_MMX}
+         registersmmx:=max(left.registersmmx,right.registersmmx);
+{$endif SUPPORT_MMX}
+         if (not is_packed_array(left.resultdef)) or
+>>>>>>> graemeg/fixes_2_2
             ((tarraydef(left.resultdef).elepackedbitsize mod 8) = 0) then
            if left.expectloc=LOC_CREFERENCE then
              expectloc:=LOC_CREFERENCE

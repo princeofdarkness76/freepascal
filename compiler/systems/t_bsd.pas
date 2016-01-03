@@ -36,7 +36,11 @@ implementation
     verbose,systems,globtype,globals,
     symconst,script,
     fmodule,aasmbase,aasmtai,aasmdata,aasmcpu,cpubase,symsym,symdef,
+<<<<<<< HEAD
     import,export,link,comprsrc,rescmn,i_bsd,expunix,
+=======
+    import,export,link,i_bsd,expunix,
+>>>>>>> graemeg/fixes_2_2
     cgutils,cgbase,cgobj,cpuinfo,ogbase;
 
   type
@@ -61,7 +65,10 @@ implementation
       LdSupportsNoResponseFile : boolean;
       LibrarySuffix : Char;
       Function  WriteResponseFile(isdll:boolean) : Boolean;
+<<<<<<< HEAD
       function GetDarwinCrt1ObjName(isdll: boolean): TCmdStr;
+=======
+>>>>>>> graemeg/fixes_2_2
       Function GetDarwinPrtobjName(isdll: boolean): TCmdStr;
     public
       constructor Create;override;
@@ -88,14 +95,24 @@ implementation
 
     procedure texportlibdarwin.setinitname(list: TAsmList; const s: string);
       begin
+<<<<<<< HEAD
         new_section(list,sec_init_func,'',sizeof(pint));
+=======
+        list.concat(tai_directive.create(asd_mod_init_func,''));
+        list.concat(tai_align.create(sizeof(aint)));
+>>>>>>> graemeg/fixes_2_2
         list.concat(Tai_const.Createname(s,0));
       end;
 
 
     procedure texportlibdarwin.setfininame(list: TAsmList; const s: string);
       begin
+<<<<<<< HEAD
         new_section(list,sec_term_func,'',sizeof(pint));
+=======
+        list.concat(tai_directive.create(asd_mod_term_func,''));
+        list.concat(tai_align.create(sizeof(aint)));
+>>>>>>> graemeg/fixes_2_2
         list.concat(Tai_const.Createname(s,0));
       end;
 
@@ -151,6 +168,7 @@ begin
            end
          else
            begin
+<<<<<<< HEAD
 {$ifndef cpu64bitaddr}
              { Set the size of the page at address zero to 64kb, so nothing
                is loaded below that address. This avoids problems with the
@@ -244,6 +262,13 @@ begin
              else
                DllCmd[1]:='ld $PRTOBJ $OPT $GCSECTIONS -dynamic -bundle -multiply_defined suppress -L. -o $EXE `cat $RES`'
 >>>>>>> origin/cpstrnew
+=======
+             ExeCmd[1]:='ld $PRTOBJ $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -multiply_defined suppress -L. -o $EXE `cat $RES`';
+             if (apptype<>app_bundle) then
+               DllCmd[1]:='libtool $PRTOBJ $OPT -dynamic -multiply_defined suppress -L. -o $EXE `cat $RES`'
+             else
+               DllCmd[1]:='ld $PRTOBJ $OPT -dynamic -bundle -multiply_defined suppress -L. -o $EXE `cat $RES`'
+>>>>>>> graemeg/fixes_2_2
            end
        end
      else
@@ -294,6 +319,7 @@ else
 End;
 
 
+<<<<<<< HEAD
 function TLinkerBSD.GetDarwinCrt1ObjName(isdll: boolean): TCmdStr;
 begin
   if not isdll then
@@ -355,10 +381,26 @@ begin
             Info.ExeCmd[1]:=Info.ExeCmd[1]+' -no_new_main';
         end;
     end
+=======
+Function TLinkerBSD.GetDarwinPrtobjName(isdll: boolean): TCmdStr;
+begin
+  if not(isdll) then
+    if not(cs_profile in current_settings.moduleswitches) then
+      begin
+        if not librarysearchpath.FindFile('crt1.o',false,result) then
+          result:='/usr/lib/crt1.o';
+      end
+    else
+      begin
+        if not librarysearchpath.FindFile('gcrt1.o',false,result) then
+          result:='/usr/lib/gcrt1.o';
+      end
+>>>>>>> graemeg/fixes_2_2
   else
     begin
       if (apptype=app_bundle) then
         begin
+<<<<<<< HEAD
           case target_info.system of
             system_powerpc_darwin,
             system_powerpc64_darwin,
@@ -461,6 +503,15 @@ begin
     result:='';
   result:=maybequoted(result);
 end;
+=======
+          if not librarysearchpath.FindFile('bundle1.o',false,result) then
+            result:='/usr/lib/bundle1.o'
+        end
+      else
+        result:=''
+    end;
+end;    
+>>>>>>> graemeg/fixes_2_2
 
 
 Function TLinkerBSD.WriteResponseFile(isdll:boolean) : Boolean;
@@ -481,7 +532,10 @@ Var
 begin
   WriteResponseFile:=False;
   ReOrder:=False;
+<<<<<<< HEAD
   linkdynamic:=False;
+=======
+>>>>>>> graemeg/fixes_2_2
   IsDarwin:=target_info.system in systems_darwin;
 { set special options for some targets }
   if not IsDarwin Then
@@ -546,6 +600,7 @@ begin
 
   if (target_info.system in systems_darwin) and
      (sysrootpath<>'') then
+<<<<<<< HEAD
     begin
       LinkRes.Add('-syslibroot');
       LinkRes.Add(sysrootpath);
@@ -575,25 +630,43 @@ begin
         else
           internalerror(2014121801);
 =======
+=======
+    begin
+      LinkRes.Add('-syslibroot');
+      LinkRes.Add(sysrootpath);
+    end;
+
+  if (not isdll) or
+     (apptype=app_bundle) then
+    begin
+>>>>>>> graemeg/fixes_2_2
       if (target_info.system in systems_darwin) then
         begin
           LinkRes.Add('-arch');
           case target_info.system of
             system_powerpc_darwin:
               LinkRes.Add('ppc');
+<<<<<<< HEAD
             system_i386_darwin,
             system_i386_iphonesim:
+=======
+            system_i386_darwin:
+>>>>>>> graemeg/fixes_2_2
               LinkRes.Add('i386');
             system_powerpc64_darwin:
               LinkRes.Add('ppc64');
             system_x86_64_darwin:
               LinkRes.Add('x86_64');
+<<<<<<< HEAD
             system_arm_darwin:
               { don't specify architecture subtype, because then CPU_SUBTYPE_ALL
                 files, such as compiled resources, are rejected }
               LinkRes.Add('arm');
           end;
 >>>>>>> graemeg/cpstrnew
+=======
+          end;
+>>>>>>> graemeg/fixes_2_2
       end;
       if MacOSXVersionMin<>'' then
         begin
@@ -641,6 +714,7 @@ begin
          HPath:=TCmdStrListItem(HPath.Next);
        end;
     end;
+<<<<<<< HEAD
       { force local symbol resolution (i.e., inside the shared }
       { library itself) for all non-exorted symbols, otherwise }
       { several RTL symbols of FPC-compiled shared libraries   }
@@ -663,6 +737,8 @@ begin
           LinkRes.add('  };');
           LinkRes.add('}');
         end;
+=======
+>>>>>>> graemeg/fixes_2_2
 
   if not LdSupportsNoResponseFile then
     LinkRes.Add('INPUT(');
@@ -757,7 +833,11 @@ begin
      if not LdSupportsNoResponseFile then
        LinkRes.Add(')');
    end;
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> graemeg/fixes_2_2
   { frameworks for Darwin }
   if IsDarwin then
     while not FrameworkFiles.empty do
@@ -765,7 +845,11 @@ begin
         LinkRes.Add('-framework');
         LinkRes.Add(FrameworkFiles.GetFirst);
       end;
+<<<<<<< HEAD
 
+=======
+     
+>>>>>>> graemeg/fixes_2_2
   { objects which must be at the end }
   if linklibc and
      not IsDarwin Then
@@ -797,14 +881,18 @@ function TLinkerBSD.MakeExecutable:boolean;
 var
   binstr,
   cmdstr,
+<<<<<<< HEAD
   targetstr,
   emulstr,
+=======
+>>>>>>> graemeg/fixes_2_2
   extdbgbinstr,
   extdbgcmdstr: TCmdStr;
   linkscript: TAsmScript;
   DynLinkStr : string[60];
   GCSectionsStr,
   StaticStr,
+<<<<<<< HEAD
   StripStr   : string[63];
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -821,6 +909,10 @@ var
 >>>>>>> origin/cpstrnew
   success : boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+  StripStr   : string[40];
+  success : boolean;
+>>>>>>> graemeg/fixes_2_2
 begin
   if not(cs_link_nolink in current_settings.globalswitches) then
    Message1(exec_i_linking,current_module.exefilename);
@@ -865,7 +957,11 @@ begin
     if not(target_info.system in systems_darwin) then
       GCSectionsStr:='--gc-sections'
     else
+<<<<<<< HEAD
       GCSectionsStr:='-dead_strip -no_dead_strip_inits_and_terms';
+=======
+      GCSectionsStr:='-dead_strip';
+>>>>>>> graemeg/fixes_2_2
 
    if(not(target_info.system in systems_darwin) and
       (cs_profile in current_settings.moduleswitches)) or
@@ -912,7 +1008,11 @@ begin
      (cs_link_separate_dbg_file in current_settings.globalswitches) then
     begin
       extdbgbinstr:=FindUtil(utilsprefix+'dsymutil');
+<<<<<<< HEAD
       extdbgcmdstr:=maybequoted(current_module.exefilename);
+=======
+      extdbgcmdstr:=maybequoted(current_module.exefilename^);
+>>>>>>> graemeg/fixes_2_2
     end;
 
   if (LdSupportsNoResponseFile) and
@@ -930,8 +1030,12 @@ begin
       CmdStr:='';
     end;
 
+<<<<<<< HEAD
   useshell:=not (tf_no_backquote_support in source_info.flags);
   success:=DoExec(BinStr,CmdStr,true,LdSupportsNoResponseFile or useshell);
+=======
+  success:=DoExec(BinStr,CmdStr,true,LdSupportsNoResponseFile);
+>>>>>>> graemeg/fixes_2_2
   if (success and
       (extdbgbinstr<>'') and
       (cs_link_nolink in current_settings.globalswitches)) then
@@ -945,7 +1049,11 @@ begin
        begin
          DeleteFile(linkscript.fn);
          linkscript.free
+<<<<<<< HEAD
        end;
+=======
+       end; 
+>>>>>>> graemeg/fixes_2_2
    end;
 
   MakeExecutable:=success;   { otherwise a recursive call to link method }
@@ -960,11 +1068,16 @@ var
   linkscript: TAsmScript;
   binstr,
   cmdstr,
+<<<<<<< HEAD
   targetstr,
   emulstr,
   extdbgbinstr,
   extdbgcmdstr  : TCmdStr;
   GCSectionsStr : string[63];
+=======
+  extdbgbinstr,
+  extdbgcmdstr  : TCmdStr;
+>>>>>>> graemeg/fixes_2_2
   exportedsyms: text;
   success : boolean;
 begin
@@ -1055,6 +1168,7 @@ begin
      (cs_link_separate_dbg_file in current_settings.globalswitches) then
     begin
       extdbgbinstr:=FindUtil(utilsprefix+'dsymutil');
+<<<<<<< HEAD
       extdbgcmdstr:=maybequoted(current_module.sharedlibfilename);
     end;
 
@@ -1088,6 +1202,41 @@ begin
       CmdStr:='';
     end;
 
+=======
+      extdbgcmdstr:=maybequoted(current_module.sharedlibfilename^);
+    end;
+
+  if (target_info.system in systems_darwin) then
+    begin
+      { exported symbols for darwin }
+      if not texportlibunix(exportlib).exportedsymnames.empty then
+        begin
+          assign(exportedsyms,outputexedir+'linksyms.fpc');
+          rewrite(exportedsyms);
+          repeat
+            writeln(exportedsyms,texportlibunix(exportlib).exportedsymnames.getfirst);
+          until texportlibunix(exportlib).exportedsymnames.empty;
+          close(exportedsyms);
+          cmdstr:=cmdstr+' -exported_symbols_list '+maybequoted(outputexedir)+'linksyms.fpc';
+        end;
+    end;
+
+  if (LdSupportsNoResponseFile) and
+     not(cs_link_nolink in current_settings.globalswitches) then
+    begin
+      { we have to use a script to use the IFS hack }
+      linkscript:=TAsmScriptUnix.create(outputexedir+'ppaslink');
+      linkscript.AddLinkCommand(BinStr,CmdStr,'');
+      if (extdbgbinstr<>'') then
+        linkscript.AddLinkCommand(extdbgbinstr,extdbgcmdstr,'');
+      linkscript.WriteToDisk;
+      BinStr:=linkscript.fn;
+      if not path_absolute(BinStr) then
+        BinStr:='./'+BinStr;
+      CmdStr:='';
+    end;
+
+>>>>>>> graemeg/fixes_2_2
   success:=DoExec(BinStr,cmdstr,true,LdSupportsNoResponseFile);
   if (success and
       (extdbgbinstr<>'') and
@@ -1098,7 +1247,11 @@ begin
   if success and (cs_link_strip in current_settings.globalswitches) then
    begin
      SplitBinCmd(Info.DllCmd[2],binstr,cmdstr);
+<<<<<<< HEAD
      Replace(cmdstr,'$EXE',maybequoted(current_module.sharedlibfilename));
+=======
+     Replace(cmdstr,'$EXE',maybequoted(current_module.sharedlibfilename^));
+>>>>>>> graemeg/fixes_2_2
      success:=DoExec(FindUtil(utilsprefix+binstr),cmdstr,false,false);
    end;
 
@@ -1113,7 +1266,11 @@ begin
         end;
       if (target_info.system in systems_darwin) then
         DeleteFile(outputexedir+'linksyms.fpc');
+<<<<<<< HEAD
     end;
+=======
+    end;     
+>>>>>>> graemeg/fixes_2_2
 
   MakeSharedLibrary:=success;   { otherwise a recursive call to link method }
 end;
@@ -1189,15 +1346,24 @@ initialization
   RegisterExport(system_powerpc_darwin,texportlibdarwin);
   RegisterTarget(system_powerpc_darwin_info);
 
+<<<<<<< HEAD
+=======
+  RegisterExternalLinker(system_powerpc_netbsd_info,TLinkerBSD);
+>>>>>>> graemeg/fixes_2_2
   RegisterImport(system_powerpc_netbsd,timportlibbsd);
   RegisterExport(system_powerpc_netbsd,texportlibbsd);
   RegisterTarget(system_powerpc_netbsd_info);
 {$endif powerpc}
 {$ifdef powerpc64}
+<<<<<<< HEAD
+=======
+  RegisterExternalLinker(system_powerpc64_darwin_info,TLinkerBSD);
+>>>>>>> graemeg/fixes_2_2
   RegisterImport(system_powerpc64_darwin,timportlibdarwin);
   RegisterExport(system_powerpc64_darwin,texportlibdarwin);
   RegisterTarget(system_powerpc64_darwin_info);
 {$endif powerpc64}
+<<<<<<< HEAD
 {$ifdef arm}
   RegisterImport(system_arm_darwin,timportlibdarwin);
   RegisterExport(system_arm_darwin,texportlibdarwin);
@@ -1211,4 +1377,6 @@ initialization
 
   RegisterRes(res_elf_info,TWinLikeResourceFile);
   RegisterRes(res_macho_info,TWinLikeResourceFile);
+=======
+>>>>>>> graemeg/fixes_2_2
 end.

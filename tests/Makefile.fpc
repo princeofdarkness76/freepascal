@@ -77,12 +77,17 @@ TEST_FULL_TARGET=$(TEST_CPU_TARGET)-$(TEST_OS_TARGET)
 ifneq ($(findstring $(OS_SOURCE),$(LIMIT83fs)),)
 TEST_TARGETSUFFIX=$(TEST_OS_TARGET)
 else
+<<<<<<< HEAD
 ifneq ($(findstring $(TEST_OS_TARGET),$(LIMIT83fs)),)
 TEST_TARGETSUFFIX=$(TEST_OS_TARGET)
 else
 TEST_TARGETSUFFIX=$(TEST_FULL_TARGET)
 endif
 endif
+=======
+TEST_TARGETSUFFIX=$(TEST_FULL_TARGET)
+endif
+>>>>>>> graemeg/fixes_2_2
 
 ifndef TEST_CCOMPILER
 ifeq ($(CPU_TARGET),$(TEST_CPU_TARGET))
@@ -102,7 +107,10 @@ endif
 
 # Target dir where the ppu and binaries are created
 TEST_OUTPUTDIR=output/$(TEST_TARGETSUFFIX)
+<<<<<<< HEAD
 C_SUBDIR=$(TEST_OS_TARGET)/$(TEST_CPU_TARGET)
+=======
+>>>>>>> graemeg/fixes_2_2
 
 # Date and time the testsuite was run
 ifneq ($(DATE),__missing_command_DATE)
@@ -142,7 +150,10 @@ endif
 ifeq ($(OS_SOURCE),go32v2)
 inWinDOS=1
 inDOS=1
+<<<<<<< HEAD
 SINGLEDOTESTRUNS=1
+=======
+>>>>>>> graemeg/fixes_2_2
 endif
 
 ################################
@@ -170,6 +181,7 @@ LOGEXT=.testlog .tbslog .tbflog .webtbslog .webtbflog
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 TESTSUBDIRS=cg cg/variants cg/cdecl cpu16 cpu16/i8086 library opt units/system units/dos units/crt units/objects units/strings units/sysutils units/math units/sharemem units/strutils units/matrix units/lineinfo units/ucomplex units/fpwidestring units/cpu units/fmtbcd
 TESTPACKAGESUBDIRS=packages/win-base packages/webtbs packages/hash packages/fcl-registry packages/fcl-process packages/zlib packages/fcl-db packages/fcl-base packages/fcl-xml packages/cocoaint packages/bzip2
 =======
@@ -188,10 +200,15 @@ TESTPACKAGESUBDIRS=packages/win-base packages/webtbs packages/hash packages/fcl-
 TESTSUBDIRS=cg cg/variants cg/cdecl opt units/system units/dos units/crt units/objects units/strings units/sysutils units/math units/sharemem units/strutils
 TESTPACKAGESUBDIRS=packages/win-base packages/webtbs packages/hash packages/fcl-registry packages/fcl-process packages/zlib packages/fcl-db packages/fcl-base packages/fcl-xml packages/cocoaint
 >>>>>>> origin/cpstrnew
+=======
+TESTSUBDIRS=cg cg/variants cg/cdecl opt units/system units/dos units/crt units/objects units/strings units/sysutils units/math units/sharemem
+TESTPACKAGESUBDIRS=cg packages/win-base packages/webtbs packages/hash packages/fcl-registry packages/fcl-process packages/zlib packages/fcl-base
+>>>>>>> graemeg/fixes_2_2
 
 ifdef QUICKTEST
 export QUICKTEST
 else
+<<<<<<< HEAD
 override TESTSUBDIRS+=$(TESTPACKAGESUBDIRS) alglib
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -210,6 +227,9 @@ export CHUNKSIZE:=100
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+override TESTSUBDIRS+=TESTSUBDIRS $(TESTPACKAGESUBDIRS)
+>>>>>>> graemeg/fixes_2_2
 endif
 
 # All full dirnames in the test/ dir including the subdir self
@@ -464,10 +484,13 @@ endif
 ifdef TEST_VERBOSE
 override DOTESTOPT+=-V
 endif
+<<<<<<< HEAD
 # Also display benchmarks
 ifdef TEST_BENCH
 override DOTESTOPT+=-D
 endif
+=======
+>>>>>>> graemeg/fixes_2_2
 ifdef V
 Q=
 QECHO=
@@ -527,6 +550,7 @@ DIRS=webtbs webtbf tbs tbf $(TESTDIRS)
 
 vpath %.log $(TEST_OUTPUTDIR)
 vpath %.elg $(TEST_OUTPUTDIR)
+<<<<<<< HEAD
 vpath %.o $(C_SUBDIR)
 
 ifdef SINGLEDOTESTRUNS
@@ -571,6 +595,17 @@ ifdef TEST_CCOMPILER
 =======
 >>>>>>> origin/cpstrnew
 endif
+=======
+
+%.log : %.pp
+	$(call QECHO,"  COMPILE $<")
+	$(Q)$(DOTEST) $(DOTESTOPT) $<
+
+%.elg : %.pp
+	$(call QECHO,"  EXECUTE $<")
+	$(Q)$(DOTEST) $(DOTESTOPT) -e $<
+
+>>>>>>> graemeg/fixes_2_2
 
 ################################
 # Compile tests
@@ -762,7 +797,12 @@ clean_sources:
 
 clean_test:
         -$(DELTREE) $(TEST_OUTPUTDIR)
+<<<<<<< HEAD
         -$(DEL) core gmon.out testprep-stamp.$(TEST_FULL_TARGET) dotgz$(SRCBATCHEXT)
+=======
+        -$(DEL) $(LOG) $(LONGLOG) $(FAILLIST)
+        -$(DEL) core gmon.out testprep-stamp.$(TEST_FULL_TARGET) dotgz.bat
+>>>>>>> graemeg/fixes_2_2
 
 clean: clean_sources fpc_clean
         $(MAKE) clean_test CPU_TARGET=$(TEST_CPU_TARGET) OS_TARGET=$(TEST_OS_TARGET) SUBARCH=$(TEST_SUBARCH)
@@ -834,6 +874,7 @@ else
 TARFROM=--files-from=tar.lst
 endif
 
+<<<<<<< HEAD
 # Pass option -ll to perpup if we use longlog file
 # instead of add all *.log and *.elg files to DB_TARGZ
 ifneq ($(TEST_USE_LONGLOG),)
@@ -850,6 +891,8 @@ endif
 =======
 >>>>>>> origin/cpstrnew
 
+=======
+>>>>>>> graemeg/fixes_2_2
 ifndef inWinDOS
 $(TEST_OUTPUTDIR)/tar.lst:
 ifdef inOS2
@@ -896,6 +939,7 @@ endif
 else
 $(TEST_OUTPUTDIR)/$(DB_TARGZ): $(TEST_OUTPUTDIR)/dbdigest.cfg
 ifdef inDOS
+<<<<<<< HEAD
         $(ECHOREDIR) @echo off > dotgz$(SRCBATCHEXT)
         $(ECHOREDIR) cd $(subst /,\,$(TEST_OUTPUTDIR)) >> dotgz$(SRCBATCHEXT)
         $(ECHOREDIR) $(subst /,\,../../$(PREPUP)) $(DB_TARGZ) >> dotgz$(SRCBATCHEXT)
@@ -922,6 +966,21 @@ endif
 
 uploadrun: $(TEST_OUTPUTDIR)/$(DB_TARGZ)
 ifdef UsePutty
+=======
+        $(ECHOREDIR) @echo off > dotgz.bat
+        $(ECHOREDIR) cd $(subst /,\,$(TEST_OUTPUTDIR)) >> dotgz.bat
+        $(ECHOREDIR) $(subst /,\,../../$(PREPUP)) $(DB_TARGZ) >> dotgz.bat
+        $(ECHOREDIR) if errorlevel 1 $(DEL) $(DB_TARGZ) >> dotgz.bat
+        $(ECHOREDIR) cd $(subst /,\,../../) >> dotgz.bat
+        $(RUNBATCH) dotgz.bat
+else
+        cd "$(TEST_OUTPUTDIR)" && "../../$(PREPUP)" $(DB_TARGZ)
+endif
+endif
+
+uploadrun: $(TEST_OUTPUTDIR)/$(DB_TARGZ)
+ifdef inWinDOS
+>>>>>>> graemeg/fixes_2_2
         pscp -load "fpc@www.freepascal.org" $(TEST_OUTPUTDIR)/$(DB_TARGZ) $(DB_HOST):$(DB_UPLOADDIR)/$(DB_TARGZ).part $(SSH_EXTRA)
         plink -load "fpc@www.freepascal.org" "mv $(DB_UPLOADDIR)/$(DB_TARGZ).part $(DB_UPLOADDIR)/$(DB_TARGZ)"
 else

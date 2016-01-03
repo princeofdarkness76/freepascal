@@ -51,6 +51,7 @@ uses
 { some type definitions }
 type
   Bool8 = ByteBool;
+<<<<<<< HEAD
 
 const
   EBUF_SIZE = 100;
@@ -61,6 +62,12 @@ var
   e : TExeFile;
   EBuf: Array [0..EBUF_SIZE-1] of Byte;
   EBufCnt, EBufPos: Integer;
+=======
+
+var
+  { the input file to read DWARF debug info from, i.e. paramstr(0) }
+  e : TExeFile;
+>>>>>>> graemeg/fixes_2_2
   DwarfErr : boolean;
   { the offset and size of the DWARF debug_line section in the file }
   DwarfOffset : longint;
@@ -158,7 +165,11 @@ begin
         exit;
     end;
 
+<<<<<<< HEAD
   e.processaddress:=ptruint(baseaddr)-e.processaddress;
+=======
+  e.processaddress:=e.processaddress+dword(baseaddr);
+>>>>>>> graemeg/fixes_2_2
 
   if FindExeSection(e,'.debug_line',dwarfoffset,dwarfsize) then
     Opendwarf:=true
@@ -182,8 +193,11 @@ begin
   limit := aLimit;
   Init := (aBase + limit) <= e.size;
   seek(e.f, base);
+<<<<<<< HEAD
   EBufCnt := 0;
   EBufPos := 0;
+=======
+>>>>>>> graemeg/fixes_2_2
   index := 0;
 end;
 
@@ -203,13 +217,17 @@ procedure Seek(const newIndex : Int64);
 begin
   index := newIndex;
   system.seek(e.f, base + index);
+<<<<<<< HEAD
   EBufCnt := 0;
   EBufPos := 0;
+=======
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
 { Returns the next Byte from the input stream, or -1 if there has been
   an error }
+<<<<<<< HEAD
 function ReadNext() : Longint; inline;
 var
   bytesread : SizeInt;
@@ -267,6 +285,38 @@ begin
   ReadNext := r;
 end;
 
+=======
+function ReadNext() : Longint;
+var
+  bytesread : SizeInt;
+  b : Byte;
+begin
+  ReadNext := -1;
+  if (index < limit) then begin
+    blockread(e.f, b, 1, bytesread);
+    ReadNext := b;
+    inc(index);
+  end;
+  if (bytesread <> 1) then
+    ReadNext := -1;
+end;
+
+{ Reads the next size bytes into dest. Returns true if successful,
+  false otherwise. Note that dest may be partially overwritten after
+  returning false. }
+function ReadNext(var dest; size : SizeInt) : Boolean;
+var
+  bytesread : SizeInt;
+begin
+  bytesread := 0;
+  if ((index + size) < limit) then begin
+    blockread(e.f, dest, size, bytesread);
+    inc(index, size);
+  end;
+  ReadNext := (bytesread = size);
+end;
+
+>>>>>>> graemeg/fixes_2_2
 
 { Reads an unsigned LEB encoded number from the input stream }
 function ReadULEB128() : QWord;
@@ -483,7 +533,11 @@ var
   adjusted_opcode : Int64;
 
   opcode : PtrInt;
+<<<<<<< HEAD
   extended_opcode : PtrInt;
+=======
+  extended_opcode : Byte;
+>>>>>>> graemeg/fixes_2_2
   extended_opcode_length : PtrInt;
   i, addrIncrement, lineIncrement : PtrInt;
 

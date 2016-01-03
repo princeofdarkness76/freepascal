@@ -182,9 +182,13 @@ interface
           constructor ppuload(ppufile:tcompilerppufile);
           function getcopy : tstoreddef;override;
           function GetTypeName:string;override;
+<<<<<<< HEAD
           { do not override this routine in platform-specific subclasses,
             override ppuwrite_platform instead }
           procedure ppuwrite(ppufile:tcompilerppufile);override;final;
+=======
+          procedure ppuwrite(ppufile:tcompilerppufile);override;
+>>>>>>> graemeg/fixes_2_2
           function  getvardef:longint;override;
           procedure setsize;
           function is_publishable : boolean;override;
@@ -328,6 +332,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        private
           rttistring     : string;
        public
@@ -393,6 +398,13 @@ interface
           procedure check_forwards; virtual;
           function find_procdef_bytype(pt:tproctypeoption): tprocdef;
           function GetSymtable(t:tGetSymtable):TSymtable;override;
+=======
+          symtable : TSymtable;
+          cloneddef      : tabstractrecorddef;
+          cloneddefderef : tderef;
+          procedure reset;override;
+          function  GetSymtable(t:tGetSymtable):TSymtable;override;
+>>>>>>> graemeg/fixes_2_2
           function is_packed:boolean;
           function RttiName: string;
           { enumerator support }
@@ -532,6 +544,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           { for Object Pascal helpers }
           extendeddef   : tdef;
           extendeddefderef: tderef;
@@ -553,6 +566,11 @@ interface
 >>>>>>> origin/cpstrnew
           { for Objective-C: protocols and classes can have the same name there }
           objextname     : pshortstring;
+=======
+          objname,
+          objrealname    : pshortstring;
+          objectoptions  : tobjectoptions;
+>>>>>>> graemeg/fixes_2_2
           { to be able to have a variable vmt position }
           { and no vmt field for objects without virtuals }
           vmtentries     : TFPList;
@@ -606,9 +624,14 @@ interface
           function GetTypeName:string;override;
           procedure buildderef;override;
           procedure deref;override;
+<<<<<<< HEAD
           procedure derefimpl;override;
           procedure resetvmtentries;
           procedure copyvmtentries(objdef:tobjectdef);
+=======
+          procedure buildderefimpl;override;
+          procedure derefimpl;override;
+>>>>>>> graemeg/fixes_2_2
           function  getparentdef:tdef;override;
           function  size : asizeint;override;
           function  alignment:shortint;override;
@@ -711,6 +734,7 @@ interface
           _elementdefderef : tderef;
           procedure setelementdef(def:tdef);
        public
+<<<<<<< HEAD
           function elesize : asizeint;
           function elepackedbitsize : asizeint;
           function elecount : asizeuint;
@@ -739,6 +763,11 @@ interface
           constructor create(l,h:asizeint;def:tdef);
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+          function elesize : aint;
+          function elepackedbitsize : aint;
+          function elecount : aword;
+>>>>>>> graemeg/fixes_2_2
           constructor create_from_pointer(def:tdef);
           constructor create(l,h:asizeint;def:tdef);
 >>>>>>> origin/cpstrnew
@@ -1376,6 +1405,7 @@ interface
           elementdefderef : tderef;
           setbase,
 <<<<<<< HEAD
+<<<<<<< HEAD
           setmax   : asizeint;
           constructor create(def: tdef; low, high: asizeint; doregister: boolean);virtual;
 =======
@@ -1391,6 +1421,10 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+          setmax   : aint;
+          constructor create(def:tdef;low, high : aint);
+>>>>>>> graemeg/fixes_2_2
           constructor ppuload(ppufile:tcompilerppufile);
           function getcopy : tstoreddef;override;
           { do not override this routine in platform-specific subclasses,
@@ -1741,9 +1775,12 @@ interface
 <<<<<<< HEAD
     function is_classhelper(def: tdef): boolean;
     function is_class_or_interface(def: tdef): boolean;
+<<<<<<< HEAD
     function is_class_or_interface_or_objc(def: tdef): boolean;
     function is_class_or_interface_or_objc_or_java(def: tdef): boolean;
     function is_class_or_interface_or_dispinterface_or_objc_or_java(def: tdef): boolean;
+=======
+>>>>>>> graemeg/fixes_2_2
     function is_class_or_interface_or_object(def: tdef): boolean;
     function is_class_or_interface_or_dispinterface(def: tdef): boolean;
     function is_implicit_pointer_object_type(def: tdef): boolean;
@@ -1989,7 +2026,11 @@ implementation
            newlen:=length(s);
            { Replace with CRC if the parameter line is very long }
            if (newlen-oldlen>12) and
+<<<<<<< HEAD
               ((newlen+length(prefix)>100) or (newlen-oldlen>32)) then
+=======
+              ((newlen+length(prefix)>128) or (newlen-oldlen>32)) then
+>>>>>>> graemeg/fixes_2_2
              begin
                crc:=0;
                for i:=0 to tprocdef(st.defowner).paras.count-1 do
@@ -2500,6 +2541,7 @@ implementation
          ppufile.getderef(typesymderef);
          ppufile.getsmallset(defoptions);
          ppufile.getsmallset(defstates);
+<<<<<<< HEAD
          if df_genconstraint in defoptions then
            begin
              genconstraintdata:=tgenericconstraintdata.create;
@@ -2521,6 +2563,8 @@ implementation
                    end;
                end;
            end;
+=======
+>>>>>>> graemeg/fixes_2_2
          if df_generic in defoptions then
            begin
              sizeleft:=ppufile.getlongint;
@@ -2750,6 +2794,7 @@ implementation
         oldintfcrc:=ppufile.do_crc;
         ppufile.do_crc:=false;
         ppufile.putsmallset(defstates);
+<<<<<<< HEAD
         if df_genconstraint in defoptions then
           genconstraintdata.ppuwrite(ppufile);
         if [df_generic,df_specialization]*defoptions<>[] then
@@ -2768,6 +2813,8 @@ implementation
                   end;
               end;
           end;
+=======
+>>>>>>> graemeg/fixes_2_2
         if df_generic in defoptions then
           begin
             if assigned(generictokenbuf) then
@@ -3381,10 +3428,15 @@ implementation
             alignment:=voidpointertype.alignment;
           st_longstring,
           st_shortstring:
+<<<<<<< HEAD
               { char to string accesses byte 0 and 1 with one word access }
             if (tf_requires_proper_alignment in target_info.flags) or
               { macpas needs an alignment of 2 (MetroWerks compatible) }
                (m_mac in current_settings.modeswitches) then
+=======
+            if (tf_requires_proper_alignment in target_info.flags) then
+              { char to string accesses byte 0 and 1 with one word access }
+>>>>>>> graemeg/fixes_2_2
               alignment:=size_2_align(2)
             else
               alignment:=size_2_align(1);
@@ -3856,14 +3908,20 @@ implementation
         if ordtype = uvoid then
           exit;
 
+<<<<<<< HEAD
 {$ifndef cpu64bitalu}
         if (ordtype in [s64bit,u64bit]) then
 {$else not cpu64bitalu}
+=======
+>>>>>>> graemeg/fixes_2_2
         if (ordtype = u64bit) or
            ((ordtype = s64bit) and
             ((low <= (system.low(int64) div 2)) or
              (high > (system.high(int64) div 2)))) then
+<<<<<<< HEAD
 {$endif cpu64bitalu}
+=======
+>>>>>>> graemeg/fixes_2_2
           result := 64
         else if (low >= 0) and
            (high <= 1) then
@@ -3903,8 +3961,12 @@ implementation
 >>>>>>> origin/cpstrnew
           varbyte,varword,varlongword,varqword,
           varshortint,varsmallint,varinteger,varint64,
+<<<<<<< HEAD
           varboolean,varboolean,varboolean,varUndefined,varUndefined,
 >>>>>>> graemeg/cpstrnew
+=======
+          varboolean,varboolean,varUndefined,varUndefined,
+>>>>>>> graemeg/fixes_2_2
           varUndefined,varUndefined,varCurrency);
       begin
         result:=basetype2vardef[ordtype];
@@ -4326,6 +4388,12 @@ implementation
       end;
 
 
+    function tvariantdef.getvardef : longint;
+      begin
+        Result:=varVariant;
+      end;
+
+
     procedure tvariantdef.setsize;
       begin
 {$ifdef cpu64bitaddr}
@@ -4727,6 +4795,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor tsetdef.create(def: tdef; low, high: asizeint; doregister: boolean);
 =======
     constructor tsetdef.create(def:tdef;low, high : asizeint);
@@ -4744,10 +4813,17 @@ implementation
         setallocbits: aint;
         packedsavesize: aint;
         actual_setalloc: ShortInt;
+=======
+    constructor tsetdef.create(def:tdef;low, high : aint);
+      var
+        setallocbits: aint;
+        packedsavesize: aint;
+>>>>>>> graemeg/fixes_2_2
       begin
          inherited create(setdef,doregister);
          elementdef:=def;
          setmax:=high;
+<<<<<<< HEAD
          actual_setalloc:=current_settings.setalloc;
 {$if defined(cpu8bitalu) or defined(cpu16bitalu)}
          if actual_setalloc=0 then
@@ -4760,11 +4836,27 @@ implementation
                savesize:=Sizeof(longint)
              else if (high<256) then
                savesize:=32
+=======
+         if (current_settings.setalloc=0) then
+           begin
+             setbase:=0;
+             if (high<32) then
+               begin
+                 settype:=smallset;
+                 savesize:=Sizeof(longint)
+               end
+             else if (high<256) then
+               begin
+                 settype:=normset;
+                 savesize:=32
+               end
+>>>>>>> graemeg/fixes_2_2
              else
                savesize:=(high+7) div 8
            end
          else
            begin
+<<<<<<< HEAD
              setallocbits:=actual_setalloc*8;
              setbase:=low and not(setallocbits-1);
              packedsavesize:=actual_setalloc*((((high+setallocbits)-setbase)) DIV setallocbits);
@@ -4773,6 +4865,20 @@ implementation
              if savesize=3 then
                savesize:=4;
 {$endif}
+=======
+             setallocbits:=current_settings.setalloc*8;
+             setbase:=low and not(setallocbits-1);
+             packedsavesize:=current_settings.setalloc*((((high+setallocbits)-setbase)) DIV setallocbits);
+             savesize:=packedsavesize;
+             if (packedsavesize<=4) then
+               begin
+                 settype:=smallset;
+                 if savesize=3 then
+                   savesize:=4;
+               end
+             else if (packedsavesize<=32) then
+               settype:=normset;
+>>>>>>> graemeg/fixes_2_2
            end;
       end;
 
@@ -4790,7 +4896,11 @@ implementation
 
     function tsetdef.getcopy : tstoreddef;
       begin
+<<<<<<< HEAD
         result:=csetdef.create(elementdef,setbase,setmax,true);
+=======
+        result:=tsetdef.create(elementdef,setbase,setmax);
+>>>>>>> graemeg/fixes_2_2
         { the copy might have been created with a different setalloc setting }
         tsetdef(result).savesize:=savesize;
       end;
@@ -4903,6 +5013,7 @@ implementation
           elecount: asizeint;
         end;
       begin
+<<<<<<< HEAD
         if not assigned(current_module) then
           internalerror(2011081301);
         arrdesc.def:=def;
@@ -4926,6 +5037,12 @@ implementation
             exit;
           end;
         result:=tarraydef(res^.Data);
+=======
+         { use -1 so that the elecount will not overflow }
+         self.create(0,high(aint)-1,s32inttype);
+         arrayoptions:=[ado_IsConvertedPointer];
+         setelementdef(def);
+>>>>>>> graemeg/fixes_2_2
       end;
 
     class function tarraydef.getreusable_no_free(def: tdef; elems: asizeint): tarraydef;
@@ -5087,7 +5204,11 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     function tarraydef.elecount : asizeuint;
+=======
+    function tarraydef.elecount : aword;
+>>>>>>> graemeg/fixes_2_2
       var
         qhigh,qlow : qword;
       begin
@@ -5101,7 +5222,11 @@ implementation
             qhigh:=highrange;
             qlow:=qword(-lowrange);
             { prevent overflow, return 0 to indicate overflow }
+<<<<<<< HEAD
             if qhigh+qlow>qword(high(asizeint)-1) then
+=======
+            if qhigh+qlow>qword(high(aint)-1) then
+>>>>>>> graemeg/fixes_2_2
               result:=0
             else
               result:=qhigh+qlow+1;
@@ -5113,8 +5238,13 @@ implementation
 
     function tarraydef.size : asizeint;
       var
+<<<<<<< HEAD
         cachedelecount : asizeuint;
         cachedelesize : asizeint;
+=======
+        cachedelecount : aword;
+        cachedelesize : aint;
+>>>>>>> graemeg/fixes_2_2
       begin
         if ado_IsDynamicArray in arrayoptions then
           begin
@@ -5313,17 +5443,45 @@ implementation
 
     constructor tabstractrecorddef.ppuload(dt:tdeftyp;ppufile:tcompilerppufile);
       begin
+<<<<<<< HEAD
         inherited ppuload(dt,ppufile);
         objrealname:=stringdup(ppufile.getstring);
         objname:=stringdup(upper(objrealname^));
         ppufile.getsmallset(objectoptions);
+=======
+         inherited create(recorddef);
+         symtable:=p;
+         { we can own the symtable only if nobody else owns a copy so far }
+         if symtable.refcount=1 then
+           symtable.defowner:=self;
+         isunion:=false;
+>>>>>>> graemeg/fixes_2_2
       end;
 
     procedure tabstractrecorddef.ppuwrite(ppufile: tcompilerppufile);
       begin
+<<<<<<< HEAD
         inherited ppuwrite(ppufile);
         ppufile.putstring(objrealname^);
         ppufile.putsmallset(objectoptions);
+=======
+         inherited ppuload(recorddef,ppufile);
+         if df_copied_def in defoptions then
+           ppufile.getderef(cloneddefderef)
+         else
+           begin
+             symtable:=trecordsymtable.create(0);
+             trecordsymtable(symtable).fieldalignment:=shortint(ppufile.getbyte);
+             trecordsymtable(symtable).recordalignment:=shortint(ppufile.getbyte);
+             trecordsymtable(symtable).padalignment:=shortint(ppufile.getbyte);
+             trecordsymtable(symtable).usefieldalignment:=shortint(ppufile.getbyte);
+             trecordsymtable(symtable).datasize:=ppufile.getaint;
+             trecordsymtable(symtable).ppuload(ppufile);
+             { requires usefieldalignment to be set }
+             symtable.defowner:=self;
+           end;
+         isunion:=false;
+>>>>>>> graemeg/fixes_2_2
       end;
 
     destructor tabstractrecorddef.destroy;
@@ -5335,7 +5493,13 @@ implementation
 
     procedure tabstractrecorddef.check_forwards;
       begin
+<<<<<<< HEAD
         tstoredsymtable(symtable).check_forwards;
+=======
+        result:=trecorddef.create(symtable.getcopy);
+        trecorddef(result).isunion:=isunion;
+        include(trecorddef(result).defoptions,df_copied_def);
+>>>>>>> graemeg/fixes_2_2
       end;
 
     function tabstractrecorddef.find_procdef_bytype(pt:tproctypeoption): tprocdef;
@@ -5358,27 +5522,73 @@ implementation
 
     function tabstractrecorddef.GetSymtable(t:tGetSymtable):TSymtable;
       begin
+<<<<<<< HEAD
         if t=gs_record then
           GetSymtable:=symtable
         else
           GetSymtable:=nil;
 >>>>>>> origin/cpstrnew
+=======
+         inherited buildderef;
+         if df_copied_def in defoptions then
+           cloneddefderef.build(symtable.defowner)
+         else
+           tstoredsymtable(symtable).buildderef;
+>>>>>>> graemeg/fixes_2_2
       end;
 
     constructor tabstractrecorddef.ppuload(dt:tdeftyp;ppufile:tcompilerppufile);
       begin
+<<<<<<< HEAD
         inherited ppuload(dt,ppufile);
         objrealname:=stringdup(ppufile.getstring);
         objname:=stringdup(upper(objrealname^));
         ppufile.getsmallset(objectoptions);
+=======
+         inherited deref;
+         { now dereference the definitions }
+         if df_copied_def in defoptions then
+           begin
+             cloneddef:=trecorddef(cloneddefderef.resolve);
+             symtable:=cloneddef.symtable.getcopy;
+           end
+         else
+           tstoredsymtable(symtable).deref;
+         { assign TGUID? load only from system unit }
+         if not(assigned(rec_tguid)) and
+            (upper(typename)='TGUID') and
+            assigned(owner) and
+            assigned(owner.name) and
+            (owner.name^='SYSTEM') then
+           rec_tguid:=self;
+>>>>>>> graemeg/fixes_2_2
       end;
 
 <<<<<<< HEAD
     procedure tabstractrecorddef.ppuwrite(ppufile: tcompilerppufile);
       begin
+<<<<<<< HEAD
         inherited ppuwrite(ppufile);
         ppufile.putstring(objrealname^);
         ppufile.putsmallset(objectoptions);
+=======
+         inherited ppuwrite(ppufile);
+         if df_copied_def in defoptions then
+           ppufile.putderef(cloneddefderef)
+         else
+           begin
+             ppufile.putbyte(byte(trecordsymtable(symtable).fieldalignment));
+             ppufile.putbyte(byte(trecordsymtable(symtable).recordalignment));
+             ppufile.putbyte(byte(trecordsymtable(symtable).padalignment));
+             ppufile.putbyte(byte(trecordsymtable(symtable).usefieldalignment));
+             ppufile.putaint(trecordsymtable(symtable).datasize);
+           end;
+
+         ppufile.writeentry(ibrecorddef);
+
+         if not(df_copied_def in defoptions) then
+           trecordsymtable(symtable).ppuwrite(ppufile);
+>>>>>>> graemeg/fixes_2_2
       end;
 
     destructor tabstractrecorddef.destroy;
@@ -5752,6 +5962,7 @@ implementation
       var
         tmp: tabstractrecorddef;
       begin
+<<<<<<< HEAD
         Result:=OwnerHierarchyName+objrealname^;
 =======
     constructor tabstractrecorddef.create(const n:string; dt:tdeftyp);
@@ -5760,6 +5971,93 @@ implementation
         objname:=stringdup(upper(n));
         objrealname:=stringdup(n);
         objectoptions:=[];
+=======
+        s:='';
+        first:=true;
+        for i:=0 to paras.count-1 do
+         begin
+           hp:=tparavarsym(paras[i]);
+           if not(vo_is_hidden_para in hp.varoptions) or
+              (showhidden) then
+            begin
+               if first then
+                begin
+                  s:=s+'(';
+                  first:=false;
+                end
+               else
+                s:=s+',';
+               if vo_is_hidden_para in hp.varoptions then
+                 s:=s+'<';
+               case hp.varspez of
+                 vs_var :
+                   s:=s+'var';
+                 vs_const :
+                   s:=s+'const';
+                 vs_out :
+                   s:=s+'out';
+               end;
+               if assigned(hp.vardef.typesym) then
+                 begin
+                   if s<>'(' then
+                    s:=s+' ';
+                   hs:=hp.vardef.typesym.realname;
+                   if hs[1]<>'$' then
+                     s:=s+hp.vardef.typesym.realname
+                   else
+                     s:=s+hp.vardef.GetTypeName;
+                 end
+               else
+                 s:=s+hp.vardef.GetTypeName;
+               { default value }
+               if assigned(hp.defaultconstsym) then
+                begin
+                  hpc:=tconstsym(hp.defaultconstsym);
+                  hs:='';
+                  case hpc.consttyp of
+                    conststring,
+                    constresourcestring :
+                      begin
+                      If hpc.value.len>0 then
+                        begin
+                        setLength(hs,hpc.value.len);
+                        move(hpc.value.valueptr^,hs[1],hpc.value.len);
+                        end;
+                      end;
+                    constreal :
+                      str(pbestreal(hpc.value.valueptr)^,hs);
+                    constpointer :
+                      hs:=tostr(hpc.value.valueordptr);
+                    constord :
+                      begin
+                        if is_boolean(hpc.constdef) then
+                          begin
+                            if hpc.value.valueord<>0 then
+                             hs:='TRUE'
+                            else
+                             hs:='FALSE';
+                          end
+                        else
+                          hs:=tostr(hpc.value.valueord);
+                      end;
+                    constnil :
+                      hs:='nil';
+                    constset :
+                      hs:='<set>';
+                  end;
+                  if hs<>'' then
+                   s:=s+'="'+hs+'"';
+                end;
+               if vo_is_hidden_para in hp.varoptions then
+                 s:=s+'>';
+             end;
+         end;
+        if not first then
+         s:=s+')';
+        if (po_varargs in procoptions) then
+         s:=s+';VarArgs';
+        typename_paras:=s;
+>>>>>>> graemeg/fixes_2_2
       end;
 
     constructor tabstractrecorddef.ppuload(dt:tdeftyp;ppufile:tcompilerppufile);
@@ -5979,6 +6277,7 @@ implementation
         // then search for public property Current
         for i:=0 to symtable.SymList.Count-1 do
           begin
+<<<<<<< HEAD
             sym:=TSym(symtable.SymList[i]);
             if (sym.typ=propertysym) and (ppo_enumerator_current in tpropertysym(sym).propoptions) then
             begin
@@ -5994,6 +6293,34 @@ implementation
             result:=sym;
             exit;
           end;
+=======
+            for t:=NOTOKEN to last_overloaded do
+              if procsym.realname='$'+overloaded_names[t] then
+                begin
+                  s:='operator '+arraytokeninfo[t].str+typename_paras(showhidden);
+                  break;
+                end;
+          end
+        else
+          s:=s+procsym.realname+typename_paras(showhidden);
+        case proctypeoption of
+          potype_constructor:
+            s:='constructor '+s;
+          potype_destructor:
+            s:='destructor '+s;
+          else
+            if assigned(returndef) and
+              not(is_void(returndef)) then
+              s:=s+':'+returndef.GetTypeName;
+        end;
+        s:=s+';';
+        { forced calling convention? }
+        if (po_hascallingconvention in procoptions) then
+          s:=s+' '+ProcCallOptionStr[proccalloption]+';';
+        if po_staticmethod in procoptions then
+          s:=s+' Static;';
+        fullprocname:=s;
+>>>>>>> graemeg/fixes_2_2
       end;
 
 {***************************************************************************
@@ -10090,6 +10417,7 @@ implementation
         if (objecttype in [odt_class,odt_object,odt_objcclass]) then
 >>>>>>> origin/cpstrnew
           begin
+<<<<<<< HEAD
             tObjectSymtable(symtable).datasize:=tObjectSymtable(symtable).datasize+tObjectSymtable(c.symtable).datasize;
             { inherit recordalignment }
             tObjectSymtable(symtable).recordalignment:=tObjectSymtable(c.symtable).recordalignment;
@@ -10107,6 +10435,10 @@ implementation
               tObjectSymtable(symtable).datasize:=tObjectSymtable(symtable).datasize-sizeof(pint);
             { if parent has a vmt field then the offset is the same for the child PM }
             if (oo_has_vmt in c.objectoptions) or is_class(self) then
+=======
+            crc:=0;
+            for i:=0 to paras.count-1 do
+>>>>>>> graemeg/fixes_2_2
               begin
                 vmt_field:=c.vmt_field;
                 include(objectoptions,oo_has_vmt);
@@ -10142,6 +10474,7 @@ implementation
              tObjectSymtable(symtable).datasize:=align(tObjectSymtable(symtable).datasize,
                  tObjectSymtable(symtable).fieldalignment);
 
+<<<<<<< HEAD
              if (tf_requires_proper_alignment in target_info.flags) then
                begin
                  { Align VMT pointer and whole object instance if target CPU requires alignment. }
@@ -10184,6 +10517,24 @@ implementation
              include(objectoptions,oo_has_vmt);
           end;
      end;
+=======
+      begin
+        { outdated gcc 2.x name mangling scheme }
+{$ifdef NAMEMANGLING_GCC2}
+
+         s := procsym.realname;
+         if procsym.owner.symtabletype=ObjectSymtable then
+           begin
+              s2:=upper(tobjectdef(procsym.owner.defowner).objrealname^);
+              case proctypeoption of
+                 potype_destructor:
+                   s:='_$_'+tostr(length(s2))+s2;
+                 potype_constructor:
+                   s:='___'+tostr(length(s2))+s2;
+                 else
+                   s:='_'+s+'__'+tostr(length(s2))+s2;
+              end;
+>>>>>>> graemeg/fixes_2_2
 
 
    function tobjectdef.vmt_offset: asizeint;
@@ -10197,6 +10548,7 @@ implementation
      end;
 
 
+<<<<<<< HEAD
    procedure tobjectdef.check_forwards;
      begin
 <<<<<<< HEAD
@@ -10224,6 +10576,62 @@ implementation
              exclude(objectoptions,oo_is_forward);
           end;
      end;
+=======
+         { now we handle the parameters }
+         if maxparacount>0 then
+           begin
+             for i:=0 to paras.count-1 do
+               begin
+                 hp:=tparavarsym(paras[i]);
+                 s2:=getcppparaname(hp.vardef);
+                 if hp.varspez in [vs_var,vs_out] then
+                   s2:='R'+s2;
+                 s:=s+s2;
+               end;
+           end
+         else
+           s:=s+'v';
+         cplusplusmangledname:=s;
+{$endif NAMEMANGLING_GCC2}
+
+         { gcc 3.x name mangling scheme }
+         if procsym.owner.symtabletype=ObjectSymtable then
+           begin
+             s:='_ZN';
+
+             s2:=tobjectdef(procsym.owner.defowner).objrealname^;
+             s:=s+tostr(length(s2))+s2;
+             case proctypeoption of
+                potype_constructor:
+                  s:=s+'C1';
+                potype_destructor:
+                  s:=s+'D1';
+                else
+                  s:=s+tostr(length(procsym.realname))+procsym.realname;
+             end;
+
+             s:=s+'E';
+           end
+         else
+           s:=procsym.realname;
+
+         { now we handle the parameters }
+         if maxparacount>0 then
+           begin
+             for i:=0 to paras.count-1 do
+               begin
+                 hp:=tparavarsym(paras[i]);
+                 s2:=getcppparaname(hp.vardef);
+                 if hp.varspez in [vs_var,vs_out] then
+                   s2:='R'+s2;
+                 s:=s+s2;
+               end;
+           end
+         else
+           s:=s+'v';
+         cplusplusmangledname:=s;
+      end;
+>>>>>>> graemeg/fixes_2_2
 
 
 <<<<<<< HEAD
@@ -10688,6 +11096,13 @@ implementation
           end;
       end;
 
+<<<<<<< HEAD
+=======
+         if df_copied_def in defoptions then
+           ppufile.getderef(cloneddefderef)
+         else
+           tObjectSymtable(symtable).ppuload(ppufile);
+>>>>>>> graemeg/fixes_2_2
 
     function tobjectdef.members_need_inittable : boolean;
       begin
@@ -10695,7 +11110,11 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     function tobjectdef.is_publishable : boolean;
+=======
+    destructor tobjectdef.destroy;
+>>>>>>> graemeg/fixes_2_2
       begin
 <<<<<<< HEAD
          is_publishable:=objecttype in [odt_class,odt_interfacecom,odt_interfacecorba,odt_dispinterface];
@@ -10731,9 +11150,36 @@ implementation
 
     function tobjectdef.rtti_mangledname(rt: trttitype): string;
       begin
+<<<<<<< HEAD
         if not(objecttype in [odt_objcclass,odt_objcprotocol]) then
           result:=inherited rtti_mangledname(rt)
         else
+=======
+        result:=tobjectdef.create(objecttype,objname^,childof);
+        { the constructor allocates a symtable which we release to avoid memory leaks }
+        tobjectdef(result).symtable.free;
+        tobjectdef(result).symtable:=symtable.getcopy;
+        if assigned(objname) then
+          tobjectdef(result).objname:=stringdup(objname^);
+        if assigned(objrealname) then
+          tobjectdef(result).objrealname:=stringdup(objrealname^);
+        tobjectdef(result).objectoptions:=objectoptions;
+        include(tobjectdef(result).defoptions,df_copied_def);
+        tobjectdef(result).vmt_offset:=vmt_offset;
+        if assigned(iidguid) then
+          begin
+            new(tobjectdef(result).iidguid);
+            move(iidguid^,tobjectdef(result).iidguid^,sizeof(iidguid^));
+          end;
+        if assigned(iidstr) then
+          tobjectdef(result).iidstr:=stringdup(iidstr^);
+        if assigned(ImplementedInterfaces) then
+          begin
+            for i:=0 to ImplementedInterfaces.count-1 do
+              tobjectdef(result).ImplementedInterfaces.Add(TImplementedInterface(ImplementedInterfaces[i]).Getcopy);
+          end;
+        if assigned(vmtentries) then
+>>>>>>> graemeg/fixes_2_2
           begin
             { necessary in case of a dynamic array of nsobject, or
               if an nsobject field appears in a record that needs
@@ -10895,12 +11341,22 @@ implementation
           end;
       end;
 
+<<<<<<< HEAD
 
     function tobjectdef.members_need_inittable : boolean;
 >>>>>>> graemeg/cpstrnew
       begin
         inc(fcurrent_dispid);
         result:=fcurrent_dispid;
+=======
+         if df_copied_def in defoptions then
+           ppufile.putderef(cloneddefderef);
+
+         ppufile.writeentry(ibobjectdef);
+
+         if not(df_copied_def in defoptions) then
+           tObjectSymtable(symtable).ppuwrite(ppufile);
+>>>>>>> graemeg/fixes_2_2
       end;
 
     function tobjectdef.search_enumerator_get: tprocdef;
@@ -10922,8 +11378,23 @@ implementation
     function tobjectdef.members_need_inittable : boolean;
 >>>>>>> origin/cpstrnew
       begin
+<<<<<<< HEAD
         inc(fcurrent_dispid);
         result:=fcurrent_dispid;
+=======
+         inherited buildderef;
+         childofderef.build(childof);
+         if df_copied_def in defoptions then
+           cloneddefderef.build(symtable.defowner)
+         else
+           tstoredsymtable(symtable).buildderef;
+
+         if objecttype in [odt_class,odt_interfacecorba] then
+           begin
+             for i:=0 to ImplementedInterfaces.count-1 do
+               TImplementedInterface(ImplementedInterfaces[i]).buildderef;
+           end;
+>>>>>>> graemeg/fixes_2_2
       end;
 
     function tobjectdef.search_enumerator_get: tprocdef;
@@ -10937,8 +11408,25 @@ implementation
 =======
     function tobjectdef.get_next_dispid: longint;
       begin
+<<<<<<< HEAD
         inc(fcurrent_dispid);
         result:=fcurrent_dispid;
+=======
+         inherited deref;
+         childof:=tobjectdef(childofderef.resolve);
+         if df_copied_def in defoptions then
+           begin
+             cloneddef:=tobjectdef(cloneddefderef.resolve);
+             symtable:=cloneddef.symtable.getcopy;
+           end
+         else
+           tstoredsymtable(symtable).deref;
+         if objecttype in [odt_class,odt_interfacecorba] then
+           begin
+             for i:=0 to ImplementedInterfaces.count-1 do
+               TImplementedInterface(ImplementedInterfaces[i]).deref;
+           end;
+>>>>>>> graemeg/fixes_2_2
       end;
 
     function tobjectdef.search_enumerator_get: tprocdef;
@@ -10948,10 +11436,32 @@ implementation
           result:=childof.search_enumerator_get;
       end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
     function tobjectdef.get_next_dispid: longint;
+=======
+    procedure tobjectdef.buildderefimpl;
+      var
+         i : longint;
+      begin
+         inherited buildderefimpl;
+         if not (df_copied_def in defoptions) then
+           tstoredsymtable(symtable).buildderefimpl;
+      end;
+
+
+    procedure tobjectdef.derefimpl;
+      begin
+         inherited derefimpl;
+         if not (df_copied_def in defoptions) then
+           tstoredsymtable(symtable).derefimpl;
+      end;
+
+
+    function tobjectdef.getparentdef:tdef;
+>>>>>>> graemeg/fixes_2_2
       begin
         inc(fcurrent_dispid);
         result:=fcurrent_dispid;
@@ -10983,9 +11493,42 @@ implementation
 >>>>>>> origin/cpstrnew
     function tobjectdef.search_enumerator_move: tprocdef;
       begin
+<<<<<<< HEAD
         result:=inherited;
         if not assigned(result) and assigned(childof) then
           result:=childof.search_enumerator_move;
+=======
+        { nothing to do if the parent was not forward !}
+        if assigned(childof) then
+          exit;
+        childof:=c;
+        { some options are inherited !! }
+        if assigned(c) then
+          begin
+             { only important for classes }
+             objectoptions:=objectoptions+(c.objectoptions*inherited_objectoptions);
+             if not (objecttype in [odt_interfacecom,odt_interfacecorba,odt_dispinterface]) then
+               begin
+                  { add the data of the anchestor class }
+                  tObjectSymtable(symtable).datasize:=
+                    tObjectSymtable(symtable).datasize+
+                    tObjectSymtable(c.symtable).datasize;
+                  { inherit recordalignment }
+                  tObjectSymtable(symtable).recordalignment:=tObjectSymtable(c.symtable).recordalignment;
+                  if (oo_has_vmt in objectoptions) and
+                     (oo_has_vmt in c.objectoptions) then
+                    tObjectSymtable(symtable).datasize:=
+                      tObjectSymtable(symtable).datasize-sizeof(aint);
+                  { if parent has a vmt field then
+                    the offset is the same for the child PM }
+                  if (oo_has_vmt in c.objectoptions) or is_class(self) then
+                    begin
+                       vmt_offset:=c.vmt_offset;
+                       include(objectoptions,oo_has_vmt);
+                    end;
+               end;
+          end;
+>>>>>>> graemeg/fixes_2_2
       end;
 
 <<<<<<< HEAD
@@ -11009,8 +11552,21 @@ implementation
       begin
         if not classref_created_in_current_module then
           begin
+<<<<<<< HEAD
             classref_created_in_current_module:=true;
             current_module.wpoinfo.addcreatedobjtypeforclassref(self);
+=======
+             tObjectSymtable(symtable).datasize:=align(tObjectSymtable(symtable).datasize,
+                 tObjectSymtable(symtable).fieldalignment);
+
+             if (tf_requires_proper_alignment in target_info.flags) then
+               tObjectSymtable(symtable).datasize:=align(tObjectSymtable(symtable).datasize,sizeof(aint));
+
+             vmt_offset:=tObjectSymtable(symtable).datasize;
+             tObjectSymtable(symtable).datasize:=
+               tObjectSymtable(symtable).datasize+sizeof(aint);
+             include(objectoptions,oo_has_vmt);
+>>>>>>> graemeg/fixes_2_2
           end;
       end;
 
@@ -11157,6 +11713,7 @@ implementation
         res: pboolean absolute arg;
         founderrordef: tdef;
       begin
+<<<<<<< HEAD
         if (def.typ<>procdef) then
           exit;
         { check parameter types for validity }
@@ -11167,6 +11724,23 @@ implementation
             MessagePos1(tprocdef(def).funcretsym.fileinfo,type_e_objc_type_unsupported,founderrordef.typename);
             res^:=false;
           end;
+=======
+         case objecttype of
+            odt_dispinterface,
+            odt_class :
+              needs_inittable:=false;
+            odt_interfacecom:
+              needs_inittable:=true;
+            odt_interfacecorba:
+              needs_inittable:=is_related(interface_iunknown);
+            odt_object:
+              needs_inittable:=tObjectSymtable(symtable).needs_init_final;
+            odt_cppclass:
+              needs_inittable:=false;
+            else
+              internalerror(200108267);
+         end;
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -11500,7 +12074,11 @@ implementation
 
     constructor terrordef.create;
       begin
+<<<<<<< HEAD
         inherited create(errordef,true);
+=======
+        inherited create(errordef);
+>>>>>>> graemeg/fixes_2_2
         { prevent consecutive faults }
         savesize:=1;
       end;
@@ -11619,6 +12197,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     function is_objcclass(def: tdef): boolean;
       begin
         is_objcclass:=
@@ -11717,6 +12296,8 @@ implementation
 =======
 >>>>>>> origin/cpstrnew
 
+=======
+>>>>>>> graemeg/fixes_2_2
     function is_class_or_interface(def: tdef): boolean;
       begin
         result:=
@@ -11726,6 +12307,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     function is_class_or_interface_or_objc(def: tdef): boolean;
       begin
         result:=
@@ -11765,6 +12347,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
     function is_class_or_interface_or_object(def: tdef): boolean;
       begin
         result:=

@@ -20,6 +20,7 @@
       OS Memory allocation / deallocation
  ****************************************************************************}
 
+<<<<<<< HEAD
 function sbrk2(size: longint): pointer; cdecl; external name 'sbrk';
 
 function SysOSAlloc(size: ptruint): pointer;
@@ -36,6 +37,8 @@ end;
 
 
 (*
+=======
+>>>>>>> graemeg/fixes_2_2
 var
   heap_start: longint; external name '_end';
   
@@ -50,4 +53,7 @@ procedure SysOSFree(p: pointer; size: ptruint);
 begin
   
 end;
+<<<<<<< HEAD
 *)
+=======
+>>>>>>> graemeg/fixes_2_2

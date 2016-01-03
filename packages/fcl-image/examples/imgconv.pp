@@ -78,7 +78,11 @@ begin
   else if T = 'T' then
     Writer := TFPWriterTARGA.Create
   else if T = 'N' then
+<<<<<<< HEAD
     Writer := TFPWriterPNM.Create
+=======
+    Writer := TFPWriterPNM.Create(4)
+>>>>>>> graemeg/fixes_2_2
   else
     begin
     Writeln('Unknown file format : ',T);

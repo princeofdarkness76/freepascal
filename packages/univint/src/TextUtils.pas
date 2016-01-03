@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       CarbonCore/TextUtils.h
  
      Contains:   Text Utilities Interfaces.
@@ -28,10 +29,21 @@
  
      Copyright:  © 1985-2008 Apple Inc. All rights reserved.
 >>>>>>> origin/cpstrnew
+=======
+     File:       TextUtils.p
+ 
+     Contains:   Text Utilities Interfaces.
+ 
+     Version:    Technology: Mac OS 8
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -58,6 +70,19 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -66,8 +91,13 @@
 
 unit TextUtils;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -80,21 +110,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -129,6 +167,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -136,6 +176,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -387,6 +428,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -412,6 +463,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -421,11 +476,15 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,IntlResources;
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
+=======
+uses MacTypes,IntlResources,NumberFormatting,StringCompare,DateTimeUtils;
+>>>>>>> graemeg/fixes_2_2
 
 
 {$ALIGN MAC68K}
@@ -459,6 +518,7 @@ uses MacTypes,IntlResources;
 }
 
 { TruncCode, StyledLineBreakCode, and truncation constants moved to QuickDrawText.i }
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 type
 	ScriptRunStatusPtr = ^ScriptRunStatus;
@@ -928,33 +988,186 @@ function FindScriptRun( textPtr: Ptr; textLen: SIGNEDLONG; var lenUsed: SIGNEDLO
 >>>>>>> origin/cpstrnew
 
 
+=======
+
+type
+	ScriptRunStatusPtr = ^ScriptRunStatus;
+	ScriptRunStatus = record
+		script:					SInt8;
+		runVariant:				SInt8;
+	end;
+
+	BreakTablePtr = ^BreakTable;
+	BreakTable = record
+		charTypes:				packed array [0..255] of char;
+		tripleLength:			SInt16;
+		triples:				array [0..0] of SInt16;
+	end;
+
+	NBreakTablePtr = ^NBreakTable;
+	NBreakTable = record
+		flags1:					SInt8;
+		flags2:					SInt8;
+		version:				SInt16;
+		classTableOff:			SInt16;
+		auxCTableOff:			SInt16;
+		backwdTableOff:			SInt16;
+		forwdTableOff:			SInt16;
+		doBackup:				SInt16;
+		length:					SInt16;								{  length of NBreakTable  }
+		charTypes:				packed array [0..255] of char;
+		tables:					array [0..0] of SInt16;
+	end;
+
+	{  The following functions are new names that work on 68k and PowerPC }
+	{
+	 *  Munger()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function Munger(h: Handle; offset: SInt32; ptr1: UnivPtr; len1: SInt32; ptr2: UnivPtr; len2: SInt32): SInt32; external name '_Munger';
+{
+ *  NewString()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function NewString(const (*var*) theString: Str255): StringHandle; external name '_NewString';
+{
+ *  SetString()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure SetString(theString: StringHandle; const (*var*) strNew: Str255); external name '_SetString';
+{
+ *  GetString()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function GetString(stringID: SInt16): StringHandle; external name '_GetString';
+{
+ *  GetIndString()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure GetIndString(var theString: Str255; strListID: SInt16; index: SInt16); external name '_GetIndString';
+
+{
+ *  FindWordBreaks()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure FindWordBreaks(textPtr: Ptr; textLength: SInt16; offset: SInt16; leadingEdge: boolean; breaks: BreakTablePtr; var offsets: OffsetTable; script: ScriptCode); external name '_FindWordBreaks';
+{
+ *  LowercaseText()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure LowercaseText(textPtr: Ptr; len: SInt16; script: ScriptCode); external name '_LowercaseText';
+{
+ *  UppercaseText()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure UppercaseText(textPtr: Ptr; len: SInt16; script: ScriptCode); external name '_UppercaseText';
+{
+ *  StripDiacritics()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure StripDiacritics(textPtr: Ptr; len: SInt16; script: ScriptCode); external name '_StripDiacritics';
+{
+ *  UppercaseStripDiacritics()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure UppercaseStripDiacritics(textPtr: Ptr; len: SInt16; script: ScriptCode); external name '_UppercaseStripDiacritics';
+{
+ *  FindScriptRun()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function FindScriptRun(textPtr: Ptr; textLen: SInt32; var lenUsed: SInt32): ScriptRunStatus; external name '_FindScriptRun';
+>>>>>>> graemeg/fixes_2_2
 {
     The following functions are old names, but are required for PowerPC builds
     because InterfaceLib exports these names, instead of the new ones.
 }
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
+=======
+{$ifc CALL_NOT_IN_CARBON}
+>>>>>>> graemeg/fixes_2_2
 {
  *  FindWord()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure FindWord(textPtr: Ptr; textLength: SInt16; offset: SInt16; leadingEdge: boolean; breaks: BreakTablePtr; var offsets: OffsetTable); external name '_FindWord';
+>>>>>>> graemeg/fixes_2_2
 {
  *  NFindWord()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure NFindWord(textPtr: Ptr; textLength: SInt16; offset: SInt16; leadingEdge: boolean; nbreaks: NBreakTablePtr; var offsets: OffsetTable); external name '_NFindWord';
+>>>>>>> graemeg/fixes_2_2
 {
    On 68K machines, LwrText, LowerText, StripText, UpperText and StripUpperText
    return an error code in register D0, but System 7 PowerMacs do not emulate
@@ -965,46 +1178,79 @@ function FindScriptRun( textPtr: Ptr; textLen: SIGNEDLONG; var lenUsed: SIGNEDLO
  *  LwrText()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure LwrText(textPtr: Ptr; len: SInt16); external name '_LwrText';
+>>>>>>> graemeg/fixes_2_2
 {
  *  LowerText()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure LowerText(textPtr: Ptr; len: SInt16); external name '_LowerText';
+>>>>>>> graemeg/fixes_2_2
 {
  *  StripText()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure StripText(textPtr: Ptr; len: SInt16); external name '_StripText';
+>>>>>>> graemeg/fixes_2_2
 {
  *  UpperText()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure UpperText(textPtr: Ptr; len: SInt16); external name '_UpperText';
+>>>>>>> graemeg/fixes_2_2
 {
  *  StripUpperText()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -1101,15 +1347,47 @@ procedure upperstring( theString: CStringPtr; diacSensitive: Boolean ); external
 
 >>>>>>> origin/cpstrnew
 { Old routine name but no new names are mapped to it:}
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure StripUpperText(textPtr: Ptr; len: SInt16); external name '_StripUpperText';
+{  The following are new names which are exported by InterfaceLib }
+
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  UpperString()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure UpperString(var theString: Str255; diacSensitive: boolean); external name '_UpperString';
+
+{  Old routine name but no new names are mapped to it: }
+{$ifc CALL_NOT_IN_CARBON}
+>>>>>>> graemeg/fixes_2_2
 {
  *  UprText()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure UprText(textPtr: Ptr; len: SInt16); external name '_UprText';
+{$endc}  {CALL_NOT_IN_CARBON}
+>>>>>>> graemeg/fixes_2_2
 
 {
     Functions for converting between C and Pascal Strings
@@ -1128,6 +1406,7 @@ procedure upperstring( theString: CStringPtr; diacSensitive: Boolean ); external
           then they are available as a macro.
     
 }
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 {
  *  c2pstrcpy()   *** DEPRECATED ***
@@ -1381,3 +1660,93 @@ function P2CStr( pString: StringPtr ): Ptr; external name '_P2CStr';
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+{
+ *  c2pstrcpy()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure c2pstrcpy(var dst: Str255; src: ConstCStringPtr); external name '_c2pstrcpy';
+
+{
+ *  p2cstrcpy()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure p2cstrcpy(dst: CStringPtr; const (*var*) src: Str255); external name '_p2cstrcpy';
+
+{
+ *  CopyPascalStringToC()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure CopyPascalStringToC(const (*var*) src: Str255; dst: CStringPtr); external name '_CopyPascalStringToC';
+
+{
+ *  CopyCStringToPascal()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure CopyCStringToPascal(src: ConstCStringPtr; var dst: Str255); external name '_CopyCStringToPascal';
+
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  C2PStrProc()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure C2PStrProc(aStr: UnivPtr); external name '_C2PStrProc';
+
+{
+ *  P2CStrProc()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure P2CStrProc(aStr: StringPtr); external name '_P2CStrProc';
+
+{
+ *  C2PStr()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function C2PStr(cString: UnivPtr): StringPtr; external name '_C2PStr';
+
+{
+ *  P2CStr()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function P2CStr(pString: StringPtr): Ptr; external name '_P2CStr';
+
+{$endc}  {CALL_NOT_IN_CARBON}
+
+
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

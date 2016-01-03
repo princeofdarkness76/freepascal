@@ -5,6 +5,7 @@
   This is used by testgen program to convert w3.org XML test descriptions into 
   fpcUnit-compatible Pascal code.
  -->
+<<<<<<< HEAD
 <!DOCTYPE test-data [
 <!ELEMENT test-data (blacklist*, uses*, api)>
 <!ELEMENT api (item)+ >
@@ -31,6 +32,19 @@
 <blacklist>HTMLTableElement24</blacklist>
 <uses pattern="/html" unit="dom_html"/>
 <uses pattern="/xpath" unit="xpath"/>
+=======
+<!DOCTYPE api [
+<!ELEMENT api (item)+ >
+<!ELEMENT item (arg*)>
+<!ELEMENT arg (#PCDATA)>
+<!ATTLIST item
+  id ID #REQUIRED
+  type (func|prop|method) "func"
+  result CDATA #IMPLIED
+  objtype CDATA #IMPLIED
+  gc (yes|no) #IMPLIED>
+]>
+>>>>>>> graemeg/fixes_2_2
 <api>
 <item id="createDocumentFragment"/>
 <item id="createTextNode">
@@ -89,9 +103,12 @@
 <item id="publicId" type="prop"/> <!-- settable for DOM lvl 3 LSInput -->
 <item id="systemId" type="prop"/>
 <item id="notationName"/>
+<<<<<<< HEAD
 <item id="item" result="Node" type="defprop">
   <arg>index</arg>
 </item>
+=======
+>>>>>>> graemeg/fixes_2_2
 <item id="getNamedItem" result="Node">
   <arg>name</arg>
 </item>
@@ -153,10 +170,17 @@
 <item id="cloneNode" result="Node">
   <arg>deep</arg>
 </item>
+<<<<<<< HEAD
 <item id="getElementsByTagName">
   <arg>tagname</arg>
 </item>
 <item id="childNodes"/>
+=======
+<item id="getElementsByTagName" gc="yes">
+  <arg>tagname</arg>
+</item>
+<item id="childNodes" gc="yes"/>
+>>>>>>> graemeg/fixes_2_2
 
 <item id="value" type="prop"/>
 <item id="nodeValue" type="prop"/>
@@ -195,7 +219,11 @@
   <arg>namespaceURI</arg>
   <arg>qualifiedName</arg>
 </item>
+<<<<<<< HEAD
 <item id="createDocument" gc="yes">
+=======
+<item id="createDocument">
+>>>>>>> graemeg/fixes_2_2
   <arg>namespaceURI</arg>
   <arg>qualifiedName</arg>
   <arg>doctype</arg>
@@ -240,7 +268,11 @@
   <arg>namespaceURI</arg>
   <arg>localName</arg>
 </item>
+<<<<<<< HEAD
 <item id="getElementsByTagNameNS">
+=======
+<item id="getElementsByTagNameNS" gc="yes">
+>>>>>>> graemeg/fixes_2_2
   <arg>namespaceURI</arg>
   <arg>localName</arg>
 </item>
@@ -248,7 +280,11 @@
 
 <!-- Level 3 -->
 <item id="textContent" type="prop"/>
+<<<<<<< HEAD
 <item id="isElementContentWhitespace"/>
+=======
+<!-- item id="isElementContentWhitespace"/ --><!-- not there yet -->
+>>>>>>> graemeg/fixes_2_2
 <!--
 <item id="domConfig"/>
 <item id="schemaTypeInfo"/>
@@ -258,12 +294,17 @@
 <item id="canSetParameter"/>
 <item id="setParameter"/>
 <item id="normalizeDocument"/>
+<<<<<<< HEAD
 -->
 <item id="isId"/>
 <item id="documentURI" type="prop"/>
 <item id="baseURI"/>
 <!--
 <item id="baseURI"/>
+=======
+<item id="isId"/>
+
+>>>>>>> graemeg/fixes_2_2
 // assertNotEquals
 // assertLowerSeverity
 
@@ -271,6 +312,7 @@
 <item id="setUserData"/>
 <item id="isEqualNode"/>
 <item id="isSameNode"/>
+<<<<<<< HEAD
 -->
 <item id="lookupNamespaceURI">
   <arg>prefix</arg>
@@ -282,11 +324,17 @@
   <arg>namespaceURI</arg>
 </item>  
 <!--
+=======
+<item id="lookupNamespaceURI"/>
+<item id="lookupPrefix"/>
+<item id="isDefaultNamespace"/>
+>>>>>>> graemeg/fixes_2_2
 <item id="adoptNode"/>
 <item id="renameNode"/>
 <item id="replaceWholeText"/>
 <item id="wholeText"/>
 -->
+<<<<<<< HEAD
 <item id="inputEncoding"/>
 <item id="xmlEncoding"/>
 <item id="xmlVersion" type="prop"/>
@@ -731,3 +779,6 @@
 
 </api>
 </test-data>
+=======
+</api>
+>>>>>>> graemeg/fixes_2_2

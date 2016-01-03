@@ -420,6 +420,7 @@ begin
   result.init;
   result.alignment:=get_para_align(p.proccalloption);
   { void has no location }
+<<<<<<< HEAD
   if is_void(def) then
     begin
       paraloc:=result.add_location;
@@ -483,6 +484,36 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  if is_void(p.returndef) then begin
+    p.funcretloc[side].loc := LOC_VOID;
+    exit;
+  end;
+  { Return is passed as var parameter }
+  if ret_in_param(p.returndef, p.proccalloption) then
+    begin
+      p.funcretloc[side].loc := LOC_REFERENCE;
+      p.funcretloc[side].size := retcgsize;
+      exit;
+    end;
+  { Return in FPU register? }
+  if p.returndef.typ = floatdef then begin
+    p.funcretloc[side].loc := LOC_FPUREGISTER;
+    p.funcretloc[side].register := NR_FPU_RESULT_REG;
+    p.funcretloc[side].size := retcgsize;
+  end else
+    { Return in register }
+    begin
+      p.funcretloc[side].loc := LOC_REGISTER;
+      p.funcretloc[side].size := retcgsize;
+      if side = callerside then
+        p.funcretloc[side].register := newreg(R_INTREGISTER,
+          RS_FUNCTION_RESULT_REG, cgsize2subreg(retcgsize))
+      else
+        p.funcretloc[side].register := newreg(R_INTREGISTER,
+          RS_FUNCTION_RETURN_REG, cgsize2subreg(retcgsize));
+    end;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function tcpuparamanager.create_paraloc_info(p: tabstractprocdef; side:
@@ -814,8 +845,15 @@ implemented
         if (paracgsize <> OS_NO) and (paradef.typ <> orddef) then
 >>>>>>> graemeg/cpstrnew
           paracgsize := int_cgsize(paralen);
+<<<<<<< HEAD
           locdef:=get_paraloc_def(paradef, paralen, firstparaloc);
         end;
+=======
+        if (paracgsize in [OS_NO,OS_128,OS_S128]) then
+          paraloc^.size := OS_INT
+        else 
+          paraloc^.size := paracgsize;
+>>>>>>> graemeg/fixes_2_2
 
       { Partial aggregate data may have to be left-aligned. If so, add tail
         padding }

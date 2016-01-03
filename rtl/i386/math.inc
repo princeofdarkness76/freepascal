@@ -41,6 +41,7 @@
                             FPU Control word
  ****************************************************************************}
 
+<<<<<<< HEAD
 {$push}
 {$codealign constmin=16}
 const
@@ -48,6 +49,8 @@ const
   FPC_ABSMASK_DOUBLE: array[0..1] of qword=($7fffffffffffffff,$7fffffffffffffff); cvar; public;
 {$pop}
 
+=======
+>>>>>>> graemeg/fixes_2_2
     procedure Set8087CW(cw:word);
       begin
         { pic-safe ; cw will not be a regvar because it's accessed from }
@@ -67,10 +70,16 @@ const
         popl %eax
       end;
 
+<<<<<<< HEAD
 
     procedure SetMXCSR(w : dword);
       begin
         defaultmxcsr:=w;
+=======
+    procedure SetSSECSR(w : dword);
+      begin
+        mxcsr:=w;
+>>>>>>> graemeg/fixes_2_2
         asm
           ldmxcsr w
         end;
@@ -158,9 +167,12 @@ const
       + PIC support
       * return +Inf/0 for +Inf/-Inf input, instead of NaN }
     function fpc_exp_real(d : ValReal) : ValReal;assembler;compilerproc;
+      var
+        cw1,cw2: word;
       asm
         fldt        d
         fldl2e
+<<<<<<< HEAD
         fmul        %st(1),%st        { z = d * log2(e) }
         frndint
       { Calculate frac(z) using modular arithmetic to avoid precision loss.
@@ -213,12 +225,30 @@ const
         fmulp       %st,%st(1)
         jmp         .L2
 .L1:
+=======
+        fmulp       %st,%st(1)
+        fstcw       CW1
+        fstcw       CW2
+        fwait
+        andw        $0xf3ff,CW2
+        orw         $0x0400,CW2
+        fldcw       CW2
+        fld         %st(0)
+        frndint
+        fldcw       CW1
+        fxch        %st(1)
+        fsub        %st(1),%st
+>>>>>>> graemeg/fixes_2_2
         f2xm1
 .L2:
         fld1
         faddp       %st,%st(1)
         fscale
         fstp        %st(1)
+<<<<<<< HEAD
+=======
+        fclex
+>>>>>>> graemeg/fixes_2_2
      end;
 
 

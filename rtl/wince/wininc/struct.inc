@@ -53,7 +53,11 @@
 {$ifdef read_interface}
 
   type
+<<<<<<< HEAD
     {$i typshrdh.inc}
+=======
+
+>>>>>>> graemeg/fixes_2_2
     { WARNING
       the variable argument list
       is not implemented for FPC
@@ -265,6 +269,7 @@
      TANIMATIONINFO = ANIMATIONINFO;
      PANIMATIONINFO = ^ANIMATIONINFO;
 
+<<<<<<< HEAD
      POINT = TPOINT;
      LPPOINT = PPOINT;
      tagPOINT = TPOINT;
@@ -273,12 +278,24 @@
      RECT = TRect;
      LPRECT = PRECT;
 =======
+=======
+     POINT = record
+          x : LONG;
+          y : LONG;
+       end;
+     LPPOINT = ^POINT;
+     tagPOINT = POINT;
+     TPOINT = POINT;
+     PPOINT = ^POINT;
+
+>>>>>>> graemeg/fixes_2_2
      RECT = record
           case Integer of
              0: (Left,Top,Right,Bottom : Longint);
              1: (TopLeft,BottomRight : TPoint);
        end;
      LPRECT = ^RECT;
+<<<<<<< HEAD
      LPCRECT = ^RECT;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -292,6 +309,12 @@
 >>>>>>> origin/cpstrnew
      _RECT = RECT;
      LPRCECT = PRECT;
+=======
+     _RECT = RECT;
+     TRECT = RECT;
+     PRECT = ^RECT;
+     tagRECT = RECT; //+windef
+>>>>>>> graemeg/fixes_2_2
 
      RECTL = record
           left : LONG;
@@ -546,6 +569,15 @@
      TPOINTL = POINTL;
      PPOINTL = ^POINTL;
 
+<<<<<<< HEAD
+=======
+     TSmallPoint = record
+       X,
+       Y : SmallInt;
+       end;
+
+
+>>>>>>> graemeg/fixes_2_2
      POINTS = record
           x : SHORT;
           y : SHORT;
@@ -3246,9 +3278,20 @@
      TEMRFORMAT = EMRFORMAT;
      PEMRFORMAT = ^EMRFORMAT;
 
+<<<<<<< HEAD
      SIZE = TSize;
      LPSIZE = PSIZE;
      tagSIZE = SIZE;
+=======
+     SIZE = record
+          cx : LONG;
+          cy : LONG;
+       end;
+     LPSIZE = ^SIZE;
+     tagSIZE = SIZE;
+     TSIZE = SIZE;
+     PSIZE = ^SIZE;
+>>>>>>> graemeg/fixes_2_2
 
      SIZEL = SIZE;        //windef
      TSIZEL = SIZE;       //windef
@@ -5344,18 +5387,24 @@
      _GUID = GUID;
      TGUID = GUID;
      PGUID = ^GUID;
+<<<<<<< HEAD
      REFGUID = ^GUID;
+=======
+>>>>>>> graemeg/fixes_2_2
 
      CLSID = GUID;
      LPCLSID = ^CLSID;
      TCLSID = CLSID;
      PCLSID = ^CLSID;
+<<<<<<< HEAD
      REFCLSID = ^CLSID;
 
      FMTID = GUID;
      LPFMTID = ^FMTID;
      REFFMTID = ^FMTID;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
      SERVICE_INFO = record
           lpServiceType : LPGUID;
@@ -7725,6 +7774,7 @@ type
     PINPUT = ^tagINPUT;
     LPINPUT = ^tagINPUT;
 
+<<<<<<< HEAD
 
 // For EnumDisplayMonitors
 type
@@ -7765,6 +7815,8 @@ type
      PDISPLAY_DEVICE = ^_DISPLAY_DEVICE;
      LPDISPLAY_DEVICE = ^_DISPLAY_DEVICE;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$endif read_interface}
 
 
@@ -8230,6 +8282,9 @@ type
        a.flag0:=a.flag0 or ((__fAckReq shl bp_DDEUP_fAckReq) and bm_DDEUP_fAckReq);
     end;
 
+<<<<<<< HEAD
  {$i typshrd.inc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$endif read_implementation}
 

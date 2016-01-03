@@ -1,4 +1,5 @@
 { CoreGraphics - CGColorSpace.h
+<<<<<<< HEAD
    Copyright (c) 1999-2009 Apple Inc.
    All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -25,6 +26,20 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+ * Copyright (c) 1999-2004 Apple Computer, Inc.
+ * All rights reserved.
+ }
+{       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{       Pascal Translation Updated:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -33,8 +48,13 @@
 
 unit CGColorSpace;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -47,21 +67,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -96,6 +124,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -103,6 +133,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -346,6 +377,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -371,6 +412,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -380,13 +425,18 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,CFBase,CFData,CFString,CGBase,CGDataProvider;
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+uses MacTypes,CFBase,CFString,CMTypes,CGBase,CGDataProvider;
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -413,6 +463,15 @@ type
 	Single9 = array[0..8] of CGFloat;
 
 { Color rendering intents. }
+=======
+	CGColorSpaceRef = ^SInt32; { an opaque 32-bit type }
+
+type
+	TristimulusValue = array[0..2] of Float32;
+	RedGreenBlueValue = array[0..2] of Float32;
+	Single4 = array[0..3] of Float32;
+	Single9 = array[0..8] of Float32;
+>>>>>>> graemeg/fixes_2_2
 
 type
 	CGColorRenderingIntent = SInt32;
@@ -423,6 +482,7 @@ const
 	kCGRenderingIntentPerceptual = 3;
 	kCGRenderingIntentSaturation = 4;
 
+<<<<<<< HEAD
 { The model of a color space. }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -623,6 +683,63 @@ function CGColorSpaceCreateLab(const (*var*) whitePoint: TristimulusValue; const
 <<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
+=======
+var kCGColorSpaceGenericGray: CFStringRef; external name '_kCGColorSpaceGenericGray'; (* attribute const *) (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+var kCGColorSpaceGenericRGB: CFStringRef; external name '_kCGColorSpaceGenericRGB'; (* attribute const *) (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+var kCGColorSpaceGenericCMYK: CFStringRef; external name '_kCGColorSpaceGenericCMYK'; (* attribute const *) (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{ Return the CFTypeID for CGColorSpaces. }
+
+function CGColorSpaceGetTypeID: CFTypeID; external name '_CGColorSpaceGetTypeID'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+{* Device-dependent color spaces.  *}
+
+{ Create a DeviceGray colorspace. }
+
+function CGColorSpaceCreateDeviceGray: CGColorSpaceRef; external name '_CGColorSpaceCreateDeviceGray';
+
+{ Create a DeviceRGB colorspace. }
+
+function CGColorSpaceCreateDeviceRGB: CGColorSpaceRef; external name '_CGColorSpaceCreateDeviceRGB';
+
+{ Create a DeviceCMYK colorspace. }
+
+function CGColorSpaceCreateDeviceCMYK: CGColorSpaceRef; external name '_CGColorSpaceCreateDeviceCMYK';
+
+{* Device-independent color spaces. *}
+
+{ Create a calibrated gray colorspace.  `whitePoint' is an array of 3
+ * numbers specifying the tristimulus value, in the CIE 1931 XYZ-space, of
+ * the diffuse white point.  `blackPoint' is an array of 3 numbers
+ * specifying the tristimulus value, in CIE 1931 XYZ-space, of the diffuse
+ * black point. `gamma' defines the gamma for the gray component. }
+
+function CGColorSpaceCreateCalibratedGray( const (*var*) whitePoint: TristimulusValue; const (*var*) blackPoint: TristimulusValue; gamma: Float32 ): CGColorSpaceRef; external name '_CGColorSpaceCreateCalibratedGray';
+
+{ Create a calibrated RGB colorspace.  `whitePoint' is an array of 3
+ * numbers specifying the tristimulus value, in the CIE 1931 XYZ-space, of
+ * the diffuse white point.  `blackPoint' is an array of 3 numbers
+ * specifying the tristimulus value, in CIE 1931 XYZ-space, of the diffuse
+ * black point. `gamma' is an array of 3 numbers specifying the gamma for
+ * the red, green, and blue components of the color space. `matrix' is an
+ * array of 9 numbers specifying the linear interpretation of the
+ * gamma-modified RGB values of the colorspace with respect to the final
+ * XYZ representation. }
+
+function CGColorSpaceCreateCalibratedRGB( const (*var*) whitePoint: TristimulusValue; const (*var*) blackPoint: TristimulusValue; const (*var*) gamma: RedGreenBlueValue; const (*var*) matrix: Single9 ): CGColorSpaceRef; external name '_CGColorSpaceCreateCalibratedRGB';
+
+{ Create an L*a*b* colorspace.  `whitePoint' is an array of 3 numbers
+ * specifying the tristimulus value, in the CIE 1931 XYZ-space, of the
+ * diffuse white point.  `blackPoint' is an array of 3 numbers specifying
+ * the tristimulus value, in CIE 1931 XYZ-space, of the diffuse black
+ * point. `range' is an array of four numbers specifying the range of valid
+ * values for the a* and b* components of the color space. }
+
+function CGColorSpaceCreateLab(const (*var*) whitePoint: TristimulusValue; const (*var*) blackPoint: TristimulusValue; const (*var*) range: Single4): CGColorSpaceRef; external name '_CGColorSpaceCreateLab';
+>>>>>>> graemeg/fixes_2_2
 
 { Create an ICC-based colorspace.  `nComponents' specifies the number of
  * color components in the color space defined by the ICC profile data.
@@ -637,6 +754,7 @@ function CGColorSpaceCreateLab(const (*var*) whitePoint: TristimulusValue; const
  * is NULL, then the color space used will be DeviceGray, DeviceRGB, or
  * DeviceCMYK, depending on whether `nComponents' is 1, 3, or 4,
  * respectively. }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -957,6 +1075,58 @@ procedure CGColorSpaceGetColorTable( space: CGColorSpaceRef; table: UInt8Ptr ); 
 function CGColorSpaceCopyICCProfile( space: CGColorSpaceRef ): CFDataRef; external name '_CGColorSpaceCopyICCProfile';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
 {$endc}
+=======
+
+function CGColorSpaceCreateICCBased( nComponents: size_t; {const} range: {variable-size-array} Float32Ptr; profile: CGDataProviderRef; alternate: CGColorSpaceRef ): CGColorSpaceRef; external name '_CGColorSpaceCreateICCBased';
+
+{* Special colorspaces. *}
+
+{ Create an indexed colorspace.  A sample value in an indexed color space
+ * is treated as an index into the color table of the color space.  `base'
+ * specifies the base color space in which the values in the color table
+ * are to be interpreted. `lastIndex' is an integer which specifies the
+ * maximum valid index value; it must be less than or equal to 255.
+ * `colorTable' is an array of m * (lastIndex + 1) bytes, where m is
+ * the number of color components in the base color space.  Each byte
+ * is an unsigned integer in the range 0 to 255 that is scaled to the
+ * range of the corresponding color component in the base color space. }
+
+function CGColorSpaceCreateIndexed( baseSpace: CGColorSpaceRef; lastIndex: size_t; colorTable: UInt8Ptr ): CGColorSpaceRef; external name '_CGColorSpaceCreateIndexed';
+
+{ Create a pattern colorspace. `baseSpace' is the underlying colorspace of
+ * the pattern colorspace.  For colored patterns, `baseSpace' should be
+ * NULL; for uncolored patterns, `baseSpace' specifies the colorspace of
+ * colors which will be painted through the pattern. }
+
+function CGColorSpaceCreatePattern( baseSpace: CGColorSpaceRef ): CGColorSpaceRef; external name '_CGColorSpaceCreatePattern';
+
+{ Create a CGColorSpace using `platformColorSpaceReference', a
+ * platform-specific color space reference. For MacOS X,
+ * `platformColorSpaceReference' should be a CMProfileRef. }
+
+function CGColorSpaceCreateWithPlatformColorSpace( platformColorSpaceReference: UnivPtr ): CGColorSpaceRef; external name '_CGColorSpaceCreateWithPlatformColorSpace';
+
+{ Create a colorspace using `name' as the identifier for the colorspace. }
+
+function CGColorSpaceCreateWithName( name: CFStringRef ): CGColorSpaceRef; external name '_CGColorSpaceCreateWithName'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+{* Colorspace information. *}
+
+{ Return the number of color components in the colorspace `cs'. }
+
+function CGColorSpaceGetNumberOfComponents( cs: CGColorSpaceRef ): size_t; external name '_CGColorSpaceGetNumberOfComponents';
+
+{* Retaining & releasing colorspaces. *}
+
+{ Equivalent to `CFRetain(cs)'. }
+
+function CGColorSpaceRetain( cs: CGColorSpaceRef ): CGColorSpaceRef; external name '_CGColorSpaceRetain';
+
+{ Equivalent to `CFRelease(cs)'. }
+
+procedure CGColorSpaceRelease( cs: CGColorSpaceRef ); external name '_CGColorSpaceRelease';
+
+>>>>>>> graemeg/fixes_2_2
 
 {* Deprecated APIs. *}
 
@@ -975,7 +1145,12 @@ function CGColorSpaceCopyICCProfile( space: CGColorSpaceRef ): CFDataRef; extern
 {$definec kCGColorSpaceUserCMYK CFSTRP('kCGColorSpaceUserCMYK')}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+end.
+>>>>>>> graemeg/fixes_2_2

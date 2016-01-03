@@ -13,6 +13,7 @@
 
  **********************************************************************}
 unit Graph;
+<<<<<<< HEAD
 
 interface
 
@@ -44,6 +45,10 @@ interface
   {$define USE_SYSTEM_BEGIN_THREAD}
 {$endif ndef USE_WINDOWS_API_THREAD_FUNCTIONS}
 
+=======
+interface
+
+>>>>>>> graemeg/fixes_2_2
 uses
   windows;
 
@@ -151,6 +156,13 @@ const
 
 {$i graph.inc}
 
+<<<<<<< HEAD
+=======
+
+{ used to create a file containing all calls to WM_PAINT
+  WARNING this probably creates HUGE files PM }
+{ $define DEBUG_WM_PAINT}
+>>>>>>> graemeg/fixes_2_2
 var
    savedscreen : hbitmap;
    graphrunning : boolean;
@@ -167,6 +179,7 @@ var
    pal : ^rgbrec;
 //   SavePtr : pointer; { we don't use that pointer }
    MessageThreadHandle : Handle;
+<<<<<<< HEAD
 {$ifdef WIN64}
   {$ifdef USE_SYSTEM_BEGIN_THREAD}
      MessageThreadId : Qword;
@@ -176,6 +189,9 @@ var
 {$else not WIN64}
    MessageThreadID : DWord;
 {$endif not WIN64}
+=======
+   MessageThreadID : DWord;
+>>>>>>> graemeg/fixes_2_2
 
 function GetPaletteEntry(r,g,b : word) : word;
 
@@ -332,7 +348,10 @@ procedure OutTextXYWin32GUI(x,y : smallint;const TextString : string);
      curX2, curY2, xpos2, ypos2, x2, y2: graph_float;
      oldvalues     : linesettingstype;
      fontbitmap    : TBitmapChar;
+<<<<<<< HEAD
      fontbitmapbyte: byte;
+=======
+>>>>>>> graemeg/fixes_2_2
      chr           : char;
      curx2i,cury2i,
      xpos2i,ypos2i : longint;
@@ -411,6 +430,7 @@ procedure OutTextXYWin32GUI(x,y : smallint;const TextString : string);
                       Fontbitmap:=TBitmapChar(DefaultFontData[textstring[i+1]]);
 
                       for j:=0 to 7 do
+<<<<<<< HEAD
                         begin
                           fontbitmapbyte:=Fontbitmap[j];
                           for k:=0 to 7 do
@@ -422,6 +442,13 @@ procedure OutTextXYWin32GUI(x,y : smallint;const TextString : string);
                               fontbitmapbyte:=fontbitmapbyte shl 1;
                             end;
                         end;
+=======
+                         for k:=0 to 7 do
+                           if Fontbitmap[j,k]<>0 then
+                             SetPixelV(chardc,k,j,$ffffff)
+                           else
+                             SetPixelV(chardc,k,j,0);
+>>>>>>> graemeg/fixes_2_2
                       bitmapfonthorizoncache[byte(textstring[i+1])]:=charbitmap;
                       SelectObject(chardc,oldcharbitmap);
                    end;
@@ -568,6 +595,7 @@ procedure OutTextXYWin32GUI(x,y : smallint;const TextString : string);
                       Fontbitmap:=TBitmapChar(DefaultFontData[textstring[i+1]]);
 
                       for j:=0 to 7 do
+<<<<<<< HEAD
                         begin
                           fontbitmapbyte:=Fontbitmap[j];
                           for k:=0 to 7 do
@@ -579,6 +607,13 @@ procedure OutTextXYWin32GUI(x,y : smallint;const TextString : string);
                               fontbitmapbyte:=fontbitmapbyte shl 1;
                             end;
                         end;
+=======
+                         for k:=0 to 7 do
+                           if Fontbitmap[j,k]<>0 then
+                             SetPixelV(chardc,j,7-k,$ffffff)
+                           else
+                             SetPixelV(chardc,j,7-k,0);
+>>>>>>> graemeg/fixes_2_2
                       bitmapfontverticalcache[byte(textstring[i+1])]:=charbitmap;
                       SelectObject(chardc,oldcharbitmap);
                    end;
@@ -1359,7 +1394,11 @@ begin
          Exit;
       end
     else
+<<<<<<< HEAD
       WindowProcGraph := DefWindowProcA(Window, AMessage, WParam, LParam);
+=======
+      WindowProcGraph := DefWindowProc(Window, AMessage, WParam, LParam);
+>>>>>>> graemeg/fixes_2_2
   end;
 end;
 
@@ -1385,7 +1424,11 @@ begin
       if assigned(commandmessagehandler) then
         WindowProcParent:=commandmessagehandler(window,amessage,wparam,lparam);
     else
+<<<<<<< HEAD
       WindowProcParent := DefWindowProcA(Window, AMessage, WParam, LParam);
+=======
+      WindowProcParent := DefWindowProc(Window, AMessage, WParam, LParam);
+>>>>>>> graemeg/fixes_2_2
   end;
 end;
 
@@ -1469,7 +1512,11 @@ begin
   WinCreate:=0;
   if UseChildWindow then
     begin
+<<<<<<< HEAD
        ParentWindow:=CreateWindowA('FPCGraphWindowMain', windowtitle,
+=======
+       ParentWindow:=CreateWindow('FPCGraphWindowMain', windowtitle,
+>>>>>>> graemeg/fixes_2_2
                   WS_OVERLAPPEDWINDOW or WS_CLIPCHILDREN or extrastyle, longint(CW_USEDEFAULT), 0,
                   maxx+ChildOffset.Left+ChildOffset.Right+1+
                     2*GetSystemMetrics(SM_CXFRAME),
@@ -1484,7 +1531,11 @@ begin
          end
        else
          exit;
+<<<<<<< HEAD
        hWindow:=CreateWindowA('FPCGraphWindowChild',nil,
+=======
+       hWindow:=CreateWindow('FPCGraphWindowChild',nil,
+>>>>>>> graemeg/fixes_2_2
                   WS_CHILD, ChildOffset.Left,ChildOffset.Top,
                   maxx+1,maxy+1,
                   ParentWindow, 0, system.MainInstance, nil);
@@ -1499,7 +1550,11 @@ begin
     end
   else
     begin
+<<<<<<< HEAD
        hWindow:=CreateWindowA('FPCGraphWindow', windowtitle,
+=======
+       hWindow:=CreateWindow('FPCGraphWindow', windowtitle,
+>>>>>>> graemeg/fixes_2_2
                   ws_OverlappedWindow or extrastyle, longint(CW_USEDEFAULT), 0,
                   maxx+1+2*GetSystemMetrics(SM_CXFRAME),
                   maxy+1+2*GetSystemMetrics(SM_CYFRAME)+
@@ -1517,6 +1572,7 @@ end;
 const
    winregistered : boolean = false;
 
+<<<<<<< HEAD
    { Thread functions have different return type and calling convention
      for system unit funcitons andfor windows API. }
 {$ifdef USE_SYSTEM_BEGIN_THREAD}
@@ -1524,6 +1580,9 @@ function MessageHandleThread(p : pointer) : ptrint;
 {$else not USE_SYSTEM_BEGIN_THREAD}
 function MessageHandleThread(p : pointer) : DWord; stdcall;
 {$endif not USE_SYSTEM_BEGIN_THREAD}
+=======
+function MessageHandleThread(p : pointer) : DWord;StdCall;
+>>>>>>> graemeg/fixes_2_2
 
   var
      AMessage: Msg;
@@ -1536,11 +1595,15 @@ function MessageHandleThread(p : pointer) : DWord; stdcall;
                if not(WinRegisterWithChild) then
                  begin
                     MessageBox(0, 'Window registration failed', nil, mb_Ok);
+<<<<<<< HEAD
 {$ifdef USE_SYSTEM_BEGIN_THREAD}
                     System.EndThread(1);
 {$else not USE_SYSTEM_BEGIN_THREAD}
                     Windows.ExitThread(1);
 {$endif not USE_SYSTEM_BEGIN_THREAD}
+=======
+                    ExitThread(1);
+>>>>>>> graemeg/fixes_2_2
                  end;
             end
           else
@@ -1548,11 +1611,15 @@ function MessageHandleThread(p : pointer) : DWord; stdcall;
                if not(WinRegister) then
                  begin
                     MessageBox(0, 'Window registration failed', nil, mb_Ok);
+<<<<<<< HEAD
 {$ifdef USE_SYSTEM_BEGIN_THREAD}
                     System.EndThread(1);
 {$else not USE_SYSTEM_BEGIN_THREAD}
                     Windows.ExitThread(1);
 {$endif not USE_SYSTEM_BEGIN_THREAD}
+=======
+                    ExitThread(1);
+>>>>>>> graemeg/fixes_2_2
                  end;
             end;
           winregistered:=true;
@@ -1560,11 +1627,15 @@ function MessageHandleThread(p : pointer) : DWord; stdcall;
      GraphWindow:=WinCreate;
      if longint(GraphWindow) = 0 then begin
        MessageBox(0, 'Window creation failed', nil, mb_Ok);
+<<<<<<< HEAD
 {$ifdef USE_SYSTEM_BEGIN_THREAD}
        System.EndThread(1);
 {$else not USE_SYSTEM_BEGIN_THREAD}
        Windows.ExitThread(1);
 {$endif not USE_SYSTEM_BEGIN_THREAD}
+=======
+       ExitThread(1);
+>>>>>>> graemeg/fixes_2_2
      end;
      while longint(GetMessage(@AMessage, 0, 0, 0))=longint(true) do
        begin
@@ -1592,6 +1663,7 @@ procedure InitWin32GUI16colors;
      { start graph subsystem }
      InitializeCriticalSection(graphdrawing);
      graphrunning:=false;
+<<<<<<< HEAD
      {Use system BeginThread instead of CreteThreead
      function BeginThread(sa : Pointer;stacksize : SizeUInt;
   ThreadFunction : tthreadfunc;p : pointer;creationFlags : dword;
@@ -1603,6 +1675,10 @@ procedure InitWin32GUI16colors;
      MessageThreadHandle:=CreateThread(nil,0,@MessageHandleThread,
        nil,0,MessageThreadID);
 {$endif not USE_SYSTEM_BEGIN_THREAD}
+=======
+     MessageThreadHandle:=CreateThread(nil,0,@MessageHandleThread,
+       nil,0,MessageThreadID);
+>>>>>>> graemeg/fixes_2_2
      repeat
        GetExitCodeThread(MessageThreadHandle,@threadexitcode);
      until graphrunning or (threadexitcode<>STILL_ACTIVE);

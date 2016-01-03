@@ -243,6 +243,7 @@ unit cpupara;
             paraloc^.loc:=LOC_VOID;
             exit;
           end;
+<<<<<<< HEAD
         { Constructors return self instead of a boolean }
         if (p.proctypeoption=potype_constructor) then
           begin
@@ -266,6 +267,15 @@ unit cpupara;
           end;
 
         paraloc:=result.add_location;
+=======
+        { Return is passed as var parameter }
+        if ret_in_param(p.returndef,p.proccalloption) then
+          begin
+            p.funcretloc[side].loc:=LOC_REFERENCE;
+            p.funcretloc[side].size:=retcgsize;
+            exit;
+          end;
+>>>>>>> graemeg/fixes_2_2
         { Return in FPU register? }
         if not (cs_fp_emulation in current_settings.moduleswitches) and
            not (current_settings.fputype=fpu_soft) and (result.def.typ=floatdef) then
@@ -401,6 +411,12 @@ unit cpupara;
             if (p.proccalloption in cstylearrayofconst) and
                is_array_of_const(paradef) then
               begin
+<<<<<<< HEAD
+=======
+{$ifdef DEBUG_CHARLIE}
+                writeln('loc register');
+{$endif DEBUG_CHARLIE}
+>>>>>>> graemeg/fixes_2_2
                 paraloc:=hp.paraloc[side].add_location;
                 { hack: the paraloc must be valid, but is not actually used }
                 paraloc^.loc:=LOC_REGISTER;
@@ -412,7 +428,15 @@ unit cpupara;
 
             if push_addr_param(hp.varspez,paradef,p.proccalloption) then
               begin
+<<<<<<< HEAD
                 paradef:=cpointerdef.getreusable_no_free(paradef);
+=======
+{$ifdef DEBUG_CHARLIE}
+                writeln('loc register');
+{$endif DEBUG_CHARLIE}
+                paradef:=voidpointertype;
+                loc:=LOC_REGISTER;
+>>>>>>> graemeg/fixes_2_2
                 paracgsize := OS_ADDR;
                 paralen := tcgsize2size[OS_ADDR];
               end
@@ -463,11 +487,26 @@ unit cpupara;
                   paraloc^.reference.index:=NR_STACK_POINTER_REG
                 else
                   begin
+<<<<<<< HEAD
                     paraloc^.reference.index:=NR_FRAME_POINTER_REG;
                     inc(paraloc^.reference.offset,target_info.first_parm_offset);
                     { M68K is a big-endian target }
                     if (paralen<tcgsize2size[OS_INT]) then
                       inc(paraloc^.reference.offset,4-paralen);
+=======
+{$ifdef DEBUG_CHARLIE}
+		    writeln('loc reference');
+{$endif DEBUG_CHARLIE}
+                    paraloc^.loc:=LOC_REFERENCE;
+                    paraloc^.size:=int_cgsize(paralen);
+                    if (side = callerside) then
+                      paraloc^.reference.index:=NR_STACK_POINTER_REG
+                    else
+                      paraloc^.reference.index:=NR_FRAME_POINTER_REG;
+                    paraloc^.reference.offset:=stack_offset;
+                    inc(stack_offset,align(paralen,4));
+                    paralen := 0;
+>>>>>>> graemeg/fixes_2_2
                   end;
                 inc(cur_stack_offset,align(paralen,4));
                 paralen := 0;

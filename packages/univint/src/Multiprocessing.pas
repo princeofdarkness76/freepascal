@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       CarbonCore/Multiprocessing.h
  
      Contains:   Multiprocessing interfaces
@@ -20,6 +21,16 @@
      Version:    CarbonCore-859.2~1
  
      Copyright:  © 1995-2008 DayStar Digital, Inc.
+=======
+     File:       Multiprocessing.p
+ 
+     Contains:   Multiprocessing interfaces
+ 
+     Version:    Technology: Multiprocessing API version 2.4, integrated NanoKernel support
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1995-2002 DayStar Digital, Inc.
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -27,6 +38,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -45,6 +57,24 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+
+
+{
+   ===========================================================================================
+   *** WARNING: You must properly check the availability of MP services before calling them!
+   See the section titled "Checking API Availability".
+   ===========================================================================================
+}
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -53,8 +83,13 @@
 
 unit Multiprocessing;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -67,21 +102,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -116,6 +159,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -123,6 +168,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -357,6 +403,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -382,6 +438,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -392,6 +452,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -420,12 +481,15 @@ uses MacTypes;
    See the section titled "Checking API Availability".
    ===========================================================================================
 }
+=======
+>>>>>>> graemeg/fixes_2_2
 
 
 {$ALIGN POWER}
 
 
 {
+<<<<<<< HEAD
    ======================================= NOTICE ============================================
    As of Mac OS X v10.6, the APIs in this header file are discouraged. These APIs are slated
    for deprecation in the next major release of OS X. The new dispatch APIs (see dispatch(3))
@@ -463,6 +527,10 @@ uses MacTypes;
 =======
 >>>>>>> origin/cpstrnew
    This is the header file for version 2.2 of the Mac OS multiprocessing support.  This version
+=======
+   ===========================================================================================
+   This is the header file for version 2.4 of the Mac OS multiprocessing support.  This version
+>>>>>>> graemeg/fixes_2_2
    has been totally reimplemented and has significant new services.  The main goal of the
    reimplementation has been to transfer task management into the core operating system to provide
    much more reliable and more efficient operation, including on single processor machines.
@@ -598,6 +666,7 @@ uses MacTypes;
    ===========================
 }
 
+<<<<<<< HEAD
 const
   MPCopyrightNotice = 'Copyright © 1995-2000 Apple Computer, Inc.';
 const
@@ -611,10 +680,18 @@ const
 	MPLibrary_MajorVersion = 2;    { ! When these change be sure to update the build versions}
 	MPLibrary_MinorVersion = 3;    { !  used in the startup check in MPInitializeAPI!}
 	MPLibrary_Release = 1;
+=======
+
+const
+	MPLibrary_MajorVersion		= 2;							{  ! When these change be sure to update the build versions }
+	MPLibrary_MinorVersion		= 4;							{  !  used in the startup check in MPInitializeAPI! }
+	MPLibrary_Release			= 1;
+>>>>>>> graemeg/fixes_2_2
 	MPLibrary_DevelopmentRevision = 1;
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -895,6 +972,114 @@ function MPProcessorsScheduled: ItemCount; external name '_MPProcessorsScheduled
 
 
 { Those currently in use.}
+=======
+	MPProcessID    = ^SInt32; { an opaque 32-bit type }
+	MPProcessIDPtr = ^MPProcessID;  { when a var xx:MPProcessID parameter can be nil, it is changed to xx: MPProcessIDPtr }
+	MPTaskID    = ^SInt32; { an opaque 32-bit type }
+	MPTaskIDPtr = ^MPTaskID;  { when a var xx:MPTaskID parameter can be nil, it is changed to xx: MPTaskIDPtr }
+	MPQueueID    = ^SInt32; { an opaque 32-bit type }
+	MPQueueIDPtr = ^MPQueueID;  { when a var xx:MPQueueID parameter can be nil, it is changed to xx: MPQueueIDPtr }
+	MPSemaphoreID    = ^SInt32; { an opaque 32-bit type }
+	MPSemaphoreIDPtr = ^MPSemaphoreID;  { when a var xx:MPSemaphoreID parameter can be nil, it is changed to xx: MPSemaphoreIDPtr }
+	MPCriticalRegionID    = ^SInt32; { an opaque 32-bit type }
+	MPCriticalRegionIDPtr = ^MPCriticalRegionID;  { when a var xx:MPCriticalRegionID parameter can be nil, it is changed to xx: MPCriticalRegionIDPtr }
+	MPTimerID    = ^SInt32; { an opaque 32-bit type }
+	MPTimerIDPtr = ^MPTimerID;  { when a var xx:MPTimerID parameter can be nil, it is changed to xx: MPTimerIDPtr }
+	MPEventID    = ^SInt32; { an opaque 32-bit type }
+	MPEventIDPtr = ^MPEventID;  { when a var xx:MPEventID parameter can be nil, it is changed to xx: MPEventIDPtr }
+	MPAddressSpaceID    = ^SInt32; { an opaque 32-bit type }
+	MPAddressSpaceIDPtr = ^MPAddressSpaceID;  { when a var xx:MPAddressSpaceID parameter can be nil, it is changed to xx: MPAddressSpaceIDPtr }
+	MPNotificationID    = ^SInt32; { an opaque 32-bit type }
+	MPNotificationIDPtr = ^MPNotificationID;  { when a var xx:MPNotificationID parameter can be nil, it is changed to xx: MPNotificationIDPtr }
+	MPCoherenceID    = ^SInt32; { an opaque 32-bit type }
+	MPCoherenceIDPtr = ^MPCoherenceID;  { when a var xx:MPCoherenceID parameter can be nil, it is changed to xx: MPCoherenceIDPtr }
+	MPCpuID    = ^SInt32; { an opaque 32-bit type }
+	MPCpuIDPtr = ^MPCpuID;  { when a var xx:MPCpuID parameter can be nil, it is changed to xx: MPCpuIDPtr }
+	MPAreaID    = ^SInt32; { an opaque 32-bit type }
+	MPAreaIDPtr = ^MPAreaID;  { when a var xx:MPAreaID parameter can be nil, it is changed to xx: MPAreaIDPtr }
+	MPConsoleID    = ^SInt32; { an opaque 32-bit type }
+	MPConsoleIDPtr = ^MPConsoleID;  { when a var xx:MPConsoleID parameter can be nil, it is changed to xx: MPConsoleIDPtr }
+	MPOpaqueID    = ^SInt32; { an opaque 32-bit type }
+	MPOpaqueIDPtr = ^MPOpaqueID;  { when a var xx:MPOpaqueID parameter can be nil, it is changed to xx: MPOpaqueIDPtr }
+
+const
+																{  Values for MPOpaqueIDClass. }
+	kOpaqueAnyID				= 0;
+	kOpaqueProcessID			= 1;
+	kOpaqueTaskID				= 2;
+	kOpaqueTimerID				= 3;
+	kOpaqueQueueID				= 4;
+	kOpaqueSemaphoreID			= 5;
+	kOpaqueCriticalRegionID		= 6;
+	kOpaqueCpuID				= 7;
+	kOpaqueAddressSpaceID		= 8;
+	kOpaqueEventID				= 9;
+	kOpaqueCoherenceID			= 10;
+	kOpaqueAreaID				= 11;
+	kOpaqueNotificationID		= 12;
+	kOpaqueConsoleID			= 13;
+
+
+type
+	MPOpaqueIDClass						= UInt32;
+
+
+const
+	kMPNoID						= 0;							{  New code should use kInvalidID everywhere. }
+
+
+type
+	MPTaskOptions						= OptionBits;
+	TaskStorageIndex					= UInt32;
+	TaskStorageValue					= UInt32;
+	MPSemaphoreCount					= ItemCount;
+	MPTaskWeight						= UInt32;
+	MPEventFlags						= UInt32;
+	MPEventFlagsPtr						= ^MPEventFlags; { when a VAR xx: MPEventFlags parameter can be nil, it is changed to xx: MPEventFlagsPtr }
+	MPExceptionKind						= UInt32;
+	MPTaskStateKind						= UInt32;
+	MPPageSizeClass						= UInt32;
+
+
+const
+	kDurationImmediate			= 0;
+	kDurationForever			= $7FFFFFFF;
+	kDurationMillisecond		= 1;
+	kDurationMicrosecond		= -1;
+
+
+	{
+	   ¤
+	   ===========================================================================================
+	   Process/Processor Services
+	   ==========================
+	}
+
+
+	{
+	 *  MPProcessors()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function MPProcessors: ItemCount; external name '_MPProcessors';
+
+{  The physical total. }
+
+{
+ *  MPProcessorsScheduled()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPProcessorsScheduled: ItemCount; external name '_MPProcessorsScheduled';
+
+{  Those currently in use. }
+>>>>>>> graemeg/fixes_2_2
 
 {
    ¤
@@ -905,6 +1090,7 @@ function MPProcessorsScheduled: ItemCount; external name '_MPProcessorsScheduled
 
 
 const
+<<<<<<< HEAD
 { For MPCreateTask options}
 	kMPCreateTaskSuspendedMask = 1 shl 0; {    not supported on Mac OS X}
 	kMPCreateTaskTakesAllExceptionsMask = 1 shl 1;
@@ -1335,11 +1521,107 @@ function MPCurrentTaskID: MPTaskID; external name '_MPCurrentTaskID';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+																{  For MPCreateTask options }
+	kMPCreateTaskTakesAllExceptionsMask = $00000002;
+	kMPCreateTaskNotDebuggableMask = $00000004;
+	kMPCreateTaskValidOptionsMask = $00000006;
+
+
+	{  ------------------------------------------------------------------------------------------- }
+
+
+type
+{$ifc TYPED_FUNCTION_POINTERS}
+	TaskProc = function(parameter: UnivPtr): OSStatus;
+{$elsec}
+	TaskProc = ProcPtr;
+{$endc}
+
+
+	{
+	 *  MPCreateTask()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function MPCreateTask(entryPoint: TaskProc; parameter: UnivPtr; stackSize: ByteCount; notifyQueue: MPQueueID; terminationParameter1: UnivPtr; terminationParameter2: UnivPtr; options: MPTaskOptions; task: MPTaskIDPtr): OSStatus; external name '_MPCreateTask';
+
+
+{
+ *  MPTerminateTask()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPTerminateTask(task: MPTaskID; terminationStatus: OSStatus): OSStatus; external name '_MPTerminateTask';
+
+
+{
+ *  MPSetTaskWeight()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPSetTaskWeight(task: MPTaskID; weight: MPTaskWeight): OSStatus; external name '_MPSetTaskWeight';
+
+
+{
+ *  MPTaskIsPreemptive()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPTaskIsPreemptive(taskID: MPTaskID): boolean; external name '_MPTaskIsPreemptive';
+
+{  May be kInvalidID. }
+
+{
+ *  MPExit()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure MPExit(status: OSStatus); external name '_MPExit';
+
+
+{
+ *  MPYield()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure MPYield; external name '_MPYield';
+
+
+{
+ *  MPCurrentTaskID()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPCurrentTaskID: MPTaskID; external name '_MPCurrentTaskID';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  MPSetTaskType()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe
  *  
@@ -1369,6 +1651,17 @@ function MPSetTaskType( task: MPTaskID; taskType: OSType ): OSStatus; external n
 
 
 { -------------------------------------------------------------------------------------------}
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.3 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPSetTaskType(task: MPTaskID; taskType: OSType): OSStatus; external name '_MPSetTaskType';
+
+
+{  ------------------------------------------------------------------------------------------- }
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -1378,6 +1671,7 @@ function MPSetTaskType( task: MPTaskID; taskType: OSType ): OSStatus; external n
 
 
 {
+<<<<<<< HEAD
  *  MPAllocateTaskStorageIndex()   *** DEPRECATED ***
  *  
  *  Mac OS X threading:
@@ -1611,6 +1905,49 @@ function MPGetTaskStorageValue( taskIndex: TaskStorageIndex ): TaskStorageValue;
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+ *  MPAllocateTaskStorageIndex()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPAllocateTaskStorageIndex(var index: TaskStorageIndex): OSStatus; external name '_MPAllocateTaskStorageIndex';
+
+
+{
+ *  MPDeallocateTaskStorageIndex()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPDeallocateTaskStorageIndex(index: TaskStorageIndex): OSStatus; external name '_MPDeallocateTaskStorageIndex';
+
+
+{
+ *  MPSetTaskStorageValue()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPSetTaskStorageValue(index: TaskStorageIndex; value: TaskStorageValue): OSStatus; external name '_MPSetTaskStorageValue';
+
+
+{
+ *  MPGetTaskStorageValue()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPGetTaskStorageValue(index: TaskStorageIndex): TaskStorageValue; external name '_MPGetTaskStorageValue';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -1622,6 +1959,7 @@ function MPGetTaskStorageValue( taskIndex: TaskStorageIndex ): TaskStorageValue;
 
 
 {
+<<<<<<< HEAD
  *  MPCreateQueue()   *** DEPRECATED ***
  *  
  *  Mac OS X threading:
@@ -2633,6 +2971,201 @@ function MPWaitForEvent( event: MPEventID; flags: MPEventFlagsPtr; timeout: Dura
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  MPCreateQueue()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPCreateQueue(var queue: MPQueueID): OSStatus; external name '_MPCreateQueue';
+
+
+{
+ *  MPDeleteQueue()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPDeleteQueue(queue: MPQueueID): OSStatus; external name '_MPDeleteQueue';
+
+
+{
+ *  MPNotifyQueue()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPNotifyQueue(queue: MPQueueID; param1: UnivPtr; param2: UnivPtr; param3: UnivPtr): OSStatus; external name '_MPNotifyQueue';
+
+
+{
+ *  MPWaitOnQueue()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPWaitOnQueue(queue: MPQueueID; param1: UnivPtr; param2: UnivPtr; param3: UnivPtr; timeout: Duration): OSStatus; external name '_MPWaitOnQueue';
+
+
+{
+ *  MPSetQueueReserve()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPSetQueueReserve(queue: MPQueueID; count: ItemCount): OSStatus; external name '_MPSetQueueReserve';
+
+
+{  ------------------------------------------------------------------------------------------- }
+
+
+{
+ *  MPCreateSemaphore()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPCreateSemaphore(maximumValue: MPSemaphoreCount; initialValue: MPSemaphoreCount; var semaphore: MPSemaphoreID): OSStatus; external name '_MPCreateSemaphore';
+
+
+{
+ *  MPDeleteSemaphore()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPDeleteSemaphore(semaphore: MPSemaphoreID): OSStatus; external name '_MPDeleteSemaphore';
+
+
+{
+ *  MPSignalSemaphore()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPSignalSemaphore(semaphore: MPSemaphoreID): OSStatus; external name '_MPSignalSemaphore';
+
+
+{
+ *  MPWaitOnSemaphore()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPWaitOnSemaphore(semaphore: MPSemaphoreID; timeout: Duration): OSStatus; external name '_MPWaitOnSemaphore';
+
+
+{  ------------------------------------------------------------------------------------------- }
+
+
+{
+ *  MPCreateCriticalRegion()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPCreateCriticalRegion(var criticalRegion: MPCriticalRegionID): OSStatus; external name '_MPCreateCriticalRegion';
+
+
+{
+ *  MPDeleteCriticalRegion()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPDeleteCriticalRegion(criticalRegion: MPCriticalRegionID): OSStatus; external name '_MPDeleteCriticalRegion';
+
+
+{
+ *  MPEnterCriticalRegion()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPEnterCriticalRegion(criticalRegion: MPCriticalRegionID; timeout: Duration): OSStatus; external name '_MPEnterCriticalRegion';
+
+
+{
+ *  MPExitCriticalRegion()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPExitCriticalRegion(criticalRegion: MPCriticalRegionID): OSStatus; external name '_MPExitCriticalRegion';
+
+
+{  ------------------------------------------------------------------------------------------- }
+
+
+{
+ *  MPCreateEvent()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPCreateEvent(var event: MPEventID): OSStatus; external name '_MPCreateEvent';
+
+
+{
+ *  MPDeleteEvent()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPDeleteEvent(event: MPEventID): OSStatus; external name '_MPDeleteEvent';
+
+
+{
+ *  MPSetEvent()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPSetEvent(event: MPEventID; flags: MPEventFlags): OSStatus; external name '_MPSetEvent';
+
+
+{
+ *  MPWaitForEvent()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPWaitForEvent(event: MPEventID; flags: MPEventFlagsPtr; timeout: Duration): OSStatus; external name '_MPWaitForEvent';
+>>>>>>> graemeg/fixes_2_2
 
 {
    ¤
@@ -2645,6 +3178,7 @@ function MPWaitForEvent( event: MPEventID; flags: MPEventFlagsPtr; timeout: Dura
 {
  *  MPCreateNotification()
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe
  *  
@@ -2921,6 +3455,58 @@ function MPCauseNotification( notificationID: MPNotificationID ): OSStatus; exte
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPCreateNotification(var notificationID: MPNotificationID): OSStatus; external name '_MPCreateNotification';
+
+
+{
+ *  MPDeleteNotification()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPDeleteNotification(notificationID: MPNotificationID): OSStatus; external name '_MPDeleteNotification';
+
+
+{
+ *  MPModifyNotification()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPModifyNotification(notificationID: MPNotificationID; anID: MPOpaqueID; notifyParam1: UnivPtr; notifyParam2: UnivPtr; notifyParam3: UnivPtr): OSStatus; external name '_MPModifyNotification';
+
+
+{
+ *  MPModifyNotificationParameters()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.3 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPModifyNotificationParameters(notificationID: MPNotificationID; kind: MPOpaqueIDClass; notifyParam1: UnivPtr; notifyParam2: UnivPtr; notifyParam3: UnivPtr): OSStatus; external name '_MPModifyNotificationParameters';
+
+
+{
+ *  MPCauseNotification()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPCauseNotification(notificationID: MPNotificationID): OSStatus; external name '_MPCauseNotification';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -2937,6 +3523,7 @@ function MPCauseNotification( notificationID: MPNotificationID ): OSStatus; exte
 }
 
 
+<<<<<<< HEAD
 const
 { For MPArmTimer options}
 	kMPPreserveTimerIDMask = 1 shl 0;
@@ -3007,10 +3594,40 @@ function MPDelayUntil( var expirationTime: AbsoluteTime ): OSStatus; external na
 >>>>>>> origin/cpstrnew
 
 
+=======
+{
+   Utilities you might want to use from DriverServices
+    extern AbsoluteTime UpTime              ( void );
+    extern AbsoluteTime DurationToAbsolute  ( Duration      duration );
+    extern Duration     AbsoluteToDuration  ( AbsoluteTime  time );
+}
+
+
+const
+																{  For MPArmTimer options }
+	kMPPreserveTimerIDMask		= $00000001;
+	kMPTimeIsDeltaMask			= $00000002;
+	kMPTimeIsDurationMask		= $00000004;
+
+
+	{
+	 *  MPDelayUntil()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function MPDelayUntil(var expirationTime: AbsoluteTime): OSStatus; external name '_MPDelayUntil';
+
+
+{$ifc CALL_NOT_IN_CARBON}
+>>>>>>> graemeg/fixes_2_2
 {
  *  MPDelayUntilSys()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in MPLibrary 2.1 and later
@@ -3325,6 +3942,70 @@ function MPCancelTimer( timerID: MPTimerID; timeRemaining: AbsoluteTimePtr ): OS
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+ *    Non-Carbon CFM:   in MPLibrary 2.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function MPDelayUntilSys(var expirationTime: AbsoluteTime): OSStatus; external name '_MPDelayUntilSys';
+
+
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  MPCreateTimer()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPCreateTimer(var timerID: MPTimerID): OSStatus; external name '_MPCreateTimer';
+
+
+{
+ *  MPDeleteTimer()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPDeleteTimer(timerID: MPTimerID): OSStatus; external name '_MPDeleteTimer';
+
+
+{
+ *  MPSetTimerNotify()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPSetTimerNotify(timerID: MPTimerID; anID: MPOpaqueID; notifyParam1: UnivPtr; notifyParam2: UnivPtr; notifyParam3: UnivPtr): OSStatus; external name '_MPSetTimerNotify';
+
+
+{
+ *  MPArmTimer()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPArmTimer(timerID: MPTimerID; var expirationTime: AbsoluteTime; options: OptionBits): OSStatus; external name '_MPArmTimer';
+
+
+{
+ *  MPCancelTimer()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPCancelTimer(timerID: MPTimerID; timeRemaining: AbsoluteTimePtr): OSStatus; external name '_MPCancelTimer';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -3336,6 +4017,7 @@ function MPCancelTimer( timerID: MPTimerID; timeRemaining: AbsoluteTimePtr ): OS
 
 
 const
+<<<<<<< HEAD
 { Maximum allocation request size is 1GB.}
 	kMPMaxAllocSize = 1073741824;
 <<<<<<< HEAD
@@ -3893,6 +4575,119 @@ procedure MPDataToCode( address: LogicalAddress; size: ByteCount ); external nam
 { NOTE:    MPDataToCode is not supported for 64-bit applications. Use mprotect(2) instead.}
 
 
+=======
+																{  Maximum allocation request size is 1GB. }
+	kMPMaxAllocSize				= 1073741824;
+
+																{  Values for the alignment parameter to MPAllocateAligned. }
+	kMPAllocateDefaultAligned	= 0;
+	kMPAllocate8ByteAligned		= 3;
+	kMPAllocate16ByteAligned	= 4;
+	kMPAllocate32ByteAligned	= 5;
+	kMPAllocate1024ByteAligned	= 10;
+	kMPAllocate4096ByteAligned	= 12;
+	kMPAllocateMaxAlignment		= 16;							{  Somewhat arbitrary limit on expectations. }
+	kMPAllocateAltiVecAligned	= 4;							{  The P.C. name. }
+	kMPAllocateVMXAligned		= 4;							{  The older, common name. }
+	kMPAllocateVMPageAligned	= 254;							{  Pseudo value, converted at runtime. }
+	kMPAllocateInterlockAligned	= 255;							{  Pseudo value, converted at runtime. }
+
+
+																{  Values for the options parameter to MPAllocateAligned. }
+	kMPAllocateClearMask		= $0001;						{  Zero the allocated block. }
+	kMPAllocateGloballyMask		= $0002;						{  Allocate from the globally visible pool. }
+	kMPAllocateResidentMask		= $0004;						{  Allocate from the RAM-resident pool. }
+	kMPAllocateNoGrowthMask		= $0010;						{  Do not attempt to grow the pool. }
+	kMPAllocateNoCreateMask		= $0020;						{  Do not attempt to create the pool if it doesn't exist yet. }
+
+
+	{  ------------------------------------------------------------------------------------------- }
+
+
+	{
+	 *  MPAllocateAligned()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function MPAllocateAligned(size: ByteCount; alignment: ByteParameter; options: OptionBits): LogicalAddress; external name '_MPAllocateAligned';
+
+{  ! MPAllocateAligned is new in version 2.0. }
+
+{
+ *  MPAllocate()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPAllocate(size: ByteCount): LogicalAddress; external name '_MPAllocate';
+
+{  Use MPAllocateAligned instead. }
+
+{
+ *  MPFree()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure MPFree(objct: LogicalAddress); external name '_MPFree';
+
+
+{
+ *  MPGetAllocatedBlockSize()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPGetAllocatedBlockSize(objct: LogicalAddress): ByteCount; external name '_MPGetAllocatedBlockSize';
+
+
+{  ------------------------------------------------------------------------------------------- }
+
+
+{
+ *  MPBlockCopy()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure MPBlockCopy(source: LogicalAddress; destination: LogicalAddress; size: ByteCount); external name '_MPBlockCopy';
+
+
+{
+ *  MPBlockClear()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure MPBlockClear(address: LogicalAddress; size: ByteCount); external name '_MPBlockClear';
+
+{  ! MPBlockClear is new in version 2.0. }
+
+{
+ *  MPDataToCode()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure MPDataToCode(address: LogicalAddress; size: ByteCount); external name '_MPDataToCode';
+
+{  ! MPDataToCode is new in version 2.0. }
+>>>>>>> graemeg/fixes_2_2
 {
    ¤
    ===========================================================================================
@@ -3937,6 +4732,7 @@ procedure MPDataToCode( address: LogicalAddress; size: ByteCount ); external nam
 }
 
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 <<<<<<< HEAD
@@ -4281,10 +5077,86 @@ function MPSetExceptionHandler( task: MPTaskID; exceptionQ: MPQueueID ): OSStatu
  *    Thread safe
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+const
+																{  Values for the TaskStateKind to MPExtractTaskState and MPSetTaskState. }
+	kMPTaskStateRegisters		= 0;							{  The task general registers. }
+	kMPTaskStateFPU				= 1;							{  The task floating point registers }
+	kMPTaskStateVectors			= 2;							{  The task vector registers }
+	kMPTaskStateMachine			= 3;							{  The task machine registers }
+	kMPTaskState32BitMemoryException = 4;						{  The task memory exception information for 32-bit CPUs. }
+	kMPTaskStateTaskInfo		= 5;							{  Static and dynamic information about the task. }
+
+
+																{  Option bits and numbers for MPDisposeTaskException. }
+	kMPTaskPropagate			= 0;							{  The exception is propagated. }
+	kMPTaskResumeStep			= 1;							{  The task is resumed and single step is enabled. }
+	kMPTaskResumeBranch			= 2;							{  The task is resumed and branch stepping is enabled. }
+	kMPTaskResumeMask			= $0000;						{  The task is resumed. }
+	kMPTaskPropagateMask		= $01;							{  The exception is propagated. }
+	kMPTaskResumeStepMask		= $02;							{  The task is resumed and single step is enabled. }
+	kMPTaskResumeBranchMask		= $04;							{  The task is resumed and branch stepping is enabled. }
+
+
+																{  For kMPTaskStateTaskInfo, the task's runState }
+	kMPTaskBlocked				= 0;							{  Task is blocked (queued on resource) }
+	kMPTaskReady				= 1;							{  Task is runnable }
+	kMPTaskRunning				= 2;							{  Task is running }
+
+																{  For kMPTaskStateTaskInfo, the version of the MPTaskInfo structure requested. }
+	kMPTaskInfoVersion			= 3;
+
+
+type
+	MPTaskInfoPtr = ^MPTaskInfo;
+	MPTaskInfo = record
+		version:				PBVersion;								{  Version 3 of the data structure requested }
+		name:					OSType;									{  Task name }
+		queueName:				OSType;									{  Task's queue owner name }
+		runState:				UInt16;									{  Running, ready, blocked }
+		lastCPU:				UInt16;									{  Address of CPU where task previously ran }
+		weight:					UInt32;									{  Processing weight: 1 - 10,000 }
+		processID:				MPProcessID;							{  Owning process ID }
+		cpuTime:				AbsoluteTime;							{  Accumulated task time }
+		schedTime:				AbsoluteTime;							{  Time when last scheduled }
+		creationTime:			AbsoluteTime;							{  Time when task created }
+		codePageFaults:			ItemCount;								{  Page faults from code execution }
+		dataPageFaults:			ItemCount;								{  Page faults from data access }
+		preemptions:			ItemCount;								{  Number of times task was preempted }
+		cpuID:					MPCpuID;								{  ID of CPU where task previously ran. }
+		blockedObject:			MPOpaqueID;								{  ID of blocked object. }
+		spaceID:				MPAddressSpaceID;						{  Address space ID of this task. }
+		stackBase:				LogicalAddress;							{  Base of stack (lowest address). }
+		stackLimit:				LogicalAddress;							{  Stack limit (highest address). }
+		stackCurr:				LogicalAddress;							{  Current stack address. }
+	end;
+
+	{
+	    Upon a task exception, the following message is sent to the designated queue:
+	      1. The MPTaskID, 
+	      2. The exception kind. These are enumerated in the interfaces header MachineExceptions.h 
+	      3. N/A
+	}
+
+
+	{  ------------------------------------------------------------------------------------------- }
+
+
+	{
+	 *  MPSetExceptionHandler()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function MPSetExceptionHandler(task: MPTaskID; exceptionQ: MPQueueID): OSStatus; external name '_MPSetExceptionHandler';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  MPDisposeTaskException()
+<<<<<<< HEAD
 >>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
@@ -4659,6 +5531,81 @@ function MPUnregisterDebugger( queue: MPQueueID ): OSStatus; external name '_MPU
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPDisposeTaskException(task: MPTaskID; action: OptionBits): OSStatus; external name '_MPDisposeTaskException';
+
+
+{
+ *  MPExtractTaskState()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPExtractTaskState(task: MPTaskID; kind: MPTaskStateKind; info: UnivPtr): OSStatus; external name '_MPExtractTaskState';
+
+
+{
+ *  MPSetTaskState()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPSetTaskState(task: MPTaskID; kind: MPTaskStateKind; info: UnivPtr): OSStatus; external name '_MPSetTaskState';
+
+
+{
+ *  MPThrowException()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPThrowException(task: MPTaskID; kind: MPExceptionKind): OSStatus; external name '_MPThrowException';
+
+
+{  ------------------------------------------------------------------------------------------- }
+
+
+type
+	MPDebuggerLevel 			= UInt32;
+const
+	kMPLowLevelDebugger			= $00000000;					{  MacsBug-like }
+	kMPMidLevelDebugger			= $10000000;					{  Jasik-like }
+	kMPHighLevelDebugger		= $20000000;					{  Metrowerks-like }
+
+
+	{
+	 *  MPRegisterDebugger()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function MPRegisterDebugger(queue: MPQueueID; level: MPDebuggerLevel): OSStatus; external name '_MPRegisterDebugger';
+
+
+{
+ *  MPUnregisterDebugger()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function MPUnregisterDebugger(queue: MPQueueID): OSStatus; external name '_MPUnregisterDebugger';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -4670,6 +5617,7 @@ function MPUnregisterDebugger( queue: MPQueueID ): OSStatus; external name '_MPU
 
 
 type
+<<<<<<< HEAD
 	MPRemoteProcedure = function( parameter: UnivPtr ): UnivPtr;
 
 type
@@ -4912,6 +5860,34 @@ function MPRemoteCallCFM( remoteProc: MPRemoteProcedure; parameter: UnivPtr; con
 >>>>>>> origin/cpstrnew
 
 
+=======
+{$ifc TYPED_FUNCTION_POINTERS}
+	MPRemoteProcedure = function(parameter: UnivPtr): Ptr;
+{$elsec}
+	MPRemoteProcedure = ProcPtr;
+{$endc}
+
+	MPRemoteContext						= UInt8;
+
+const
+	kMPAnyRemoteContext			= 0;
+	kMPOwningProcessRemoteContext = 1;
+	kMPInterruptRemoteContext	= 2;
+	kMPAsyncInterruptRemoteContext = 3;
+
+
+	{
+	 *  MPRemoteCall()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function MPRemoteCall(remoteProc: MPRemoteProcedure; parameter: UnivPtr; context: ByteParameter): Ptr; external name '_MPRemoteCall';
+
+{  ! MPRemoteCall is new in version 2.0. }
+>>>>>>> graemeg/fixes_2_2
 {
    ¤
    ===========================================================================================
@@ -4977,6 +5953,7 @@ function MPRemoteCallCFM( remoteProc: MPRemoteProcedure; parameter: UnivPtr; con
 
 
 {
+<<<<<<< HEAD
  *  _MPIsFullyInitialized()   *** DEPRECATED ***
  *  
  *  Mac OS X threading:
@@ -5108,6 +6085,50 @@ procedure _MPLibraryVersion( versionCString: ConstCStringPtrPtr; major: UInt32Pt
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+ *  _MPIsFullyInitialized()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function _MPIsFullyInitialized: boolean; external name '__MPIsFullyInitialized';
+
+
+type
+{$ifc TYPED_FUNCTION_POINTERS}
+	MPIsFullyInitializedProc = function: boolean;
+{$elsec}
+	MPIsFullyInitializedProc = ProcPtr;
+{$endc}
+
+	{
+	   ===========================================================================================
+	   The MPLibraryIsLoaded service is a macro under C that expands to the logical expression:
+	        ( (UInt32)MPProcessors != (UInt32)kUnresolvedCFragSymbolAddress )
+	   The intention is to check if the imported symbol MPProcessors is resolved.  For other
+	   languages use the equivalent expression.
+	   ===========================================================================================
+	}
+	{
+	   ¤
+	   ===========================================================================================
+	   Miscellaneous Services
+	   ======================
+	}
+
+
+	{
+	 *  _MPLibraryVersion()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+procedure _MPLibraryVersion(versionCString: ConstCStringPtrPtr; major: UInt32Ptr; minor: UInt32Ptr; release: UInt32Ptr; revision: UInt32Ptr); external name '__MPLibraryVersion';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -5129,10 +6150,15 @@ procedure _MPLibraryVersion( versionCString: ConstCStringPtrPtr; major: UInt32Pt
 }
 
 {$ifc CALL_NOT_IN_CARBON}
+<<<<<<< HEAD
+=======
+{$ifc CALL_NOT_IN_CARBON}
+>>>>>>> graemeg/fixes_2_2
 {
  *  _MPAllocateSys()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
@@ -5140,10 +6166,20 @@ procedure _MPLibraryVersion( versionCString: ConstCStringPtrPtr; major: UInt32Pt
 
 
 { Use MPAllocateAligned instead.}
+=======
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function _MPAllocateSys(size: ByteCount): LogicalAddress; external name '__MPAllocateSys';
+
+{  Use MPAllocateAligned instead. }
+>>>>>>> graemeg/fixes_2_2
 {
  *  _MPRPC()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
@@ -5151,10 +6187,20 @@ procedure _MPLibraryVersion( versionCString: ConstCStringPtrPtr; major: UInt32Pt
 
 
 { Use _MPRemoteCall instead.}
+=======
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function _MPRPC(remoteProc: MPRemoteProcedure; parameter: UnivPtr): Ptr; external name '__MPRPC';
+
+{  Use _MPRemoteCall instead. }
+>>>>>>> graemeg/fixes_2_2
 {
  *  _MPTaskIsToolboxSafe()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
@@ -5205,6 +6251,27 @@ function _MPLibraryIsCompatible( versionCString: ConstCStringPtr; major: UInt32;
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function _MPTaskIsToolboxSafe(task: MPTaskID): boolean; external name '__MPTaskIsToolboxSafe';
+
+{$endc}  {CALL_NOT_IN_CARBON}
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{
+ *  _MPLibraryIsCompatible()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function _MPLibraryIsCompatible(versionCString: ConstCStringPtr; major: UInt32; minor: UInt32; release: UInt32; revision: UInt32): boolean; external name '__MPLibraryIsCompatible';
+
+>>>>>>> graemeg/fixes_2_2
 
 {
    ¤
@@ -5218,30 +6285,51 @@ function _MPLibraryIsCompatible( versionCString: ConstCStringPtr; major: UInt32;
 {$setc MPIncludeDefunctServices := 0}
 {$endc}
 {$ifc MPIncludeDefunctServices}
+<<<<<<< HEAD
+=======
+{$ifc CALL_NOT_IN_CARBON}
+>>>>>>> graemeg/fixes_2_2
 {
  *  _MPDebugStr()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in MPLibraryObsolete 1.0 and later
  }
 
+=======
+ *    Non-Carbon CFM:   in MPLibraryObsolete 1.0 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure _MPDebugStr(const (*var*) msg: Str255); external name '__MPDebugStr';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  _MPStatusPString()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in MPLibraryObsolete 1.0 and later
  }
 
+=======
+ *    Non-Carbon CFM:   in MPLibraryObsolete 1.0 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function _MPStatusPString(status: OSStatus): StringPtr; external name '__MPStatusPString';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  _MPStatusCString()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in MPLibraryObsolete 1.0 and later
@@ -5280,3 +6368,23 @@ type
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ *    Non-Carbon CFM:   in MPLibraryObsolete 1.0 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function _MPStatusCString(status: OSStatus): ConstCStringPtr; external name '__MPStatusCString';
+
+
+{$endc}  {CALL_NOT_IN_CARBON}
+{$endc}  {MPIncludeDefunctServices}
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{  =========================================================================================== }
+
+
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

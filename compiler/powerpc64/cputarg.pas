@@ -41,9 +41,12 @@ implementation
     {$ifndef NOTARGETBSD}
       ,t_bsd
     {$endif}
+<<<<<<< HEAD
     {$ifndef NOTARGETAIX}
       ,t_aix
     {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {**************************************
              Assemblers

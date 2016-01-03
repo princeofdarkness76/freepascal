@@ -36,6 +36,7 @@ interface
     type
       tpdflag=(
         pd_body,         { directive needs a body }
+<<<<<<< HEAD
         pd_implemen,     { directive can be used in implementation section }
         pd_interface,    { directive can be used in interface section }
         pd_object,       { directive can be used with object declaration }
@@ -68,6 +69,17 @@ interface
 =======
         pd_objcprot      { directive can be used with objcprotocol }
 >>>>>>> origin/cpstrnew
+=======
+        pd_implemen,     { directive can be used implementation section }
+        pd_interface,    { directive can be used interface section }
+        pd_object,       { directive can be used object declaration }
+        pd_procvar,      { directive can be used procvar declaration }
+        pd_notobject,    { directive can not be used object declaration }
+        pd_notobjintf,   { directive can not be used interface declaration }
+        pd_notprocvar,   { directive can not be used procvar declaration }
+        pd_dispinterface,{ directive can be used with dispinterface methods }
+        pd_cppobject     { directive can be used with cppclass }
+>>>>>>> graemeg/fixes_2_2
       );
       tpdflags=set of tpdflag;
 
@@ -288,6 +300,7 @@ implementation
              paranr:=paranr_result;
            { Generate result variable accessing function result }
            vs:=tparavarsym.create('$result',paranr,vs_var,pd.returndef,[vo_is_funcret,vo_is_hidden_para]);
+           vs.symoptions:=[sp_public];
            pd.parast.insert(vs);
            { Store the this symbol as funcretsym for procedures }
            if pd.typ=procdef then
@@ -344,6 +357,7 @@ implementation
             vs:=tparavarsym.create('$parentfp',paranr,vs_value
                   ,voidpointertype,[vo_is_parentfp,vo_is_hidden_para]);
             vs.varregable:=vr_none;
+            vs.symoptions:=[sp_public];
             pd.parast.insert(vs);
 
             current_tokenpos:=storepos;
@@ -419,6 +433,7 @@ implementation
            pd.is_methodpointer then
 >>>>>>> graemeg/cpstrnew
           begin
+<<<<<<< HEAD
             { insert Objective-C self and selector parameters }
             vs:=tparavarsym.create('$_cmd',paranr_objc_cmd,vs_value,objc_seltype,[vo_is_msgsel,vo_is_hidden_para]);
             pd.parast.insert(vs);
@@ -436,6 +451,11 @@ implementation
               hdef:=tprocdef(pd).struct;
 
             vs:=tparavarsym.create('$self',paranr_objc_self,vs_value,hdef,[vo_is_self,vo_is_hidden_para]);
+=======
+            { Generate self variable }
+            vs:=tparavarsym.create('$self',paranr_self,vs_value,voidpointertype,[vo_is_self,vo_is_hidden_para]);
+            vs.symoptions:=[sp_public];
+>>>>>>> graemeg/fixes_2_2
             pd.parast.insert(vs);
           end
         else if (pd.typ=procvardef) and
@@ -460,19 +480,29 @@ implementation
                 (pd.parast.symtablelevel=normal_function_level) then
               begin
                 { static class methods have no hidden self/vmt pointer }
+<<<<<<< HEAD
                 if pd.no_self_node then
+=======
+                if (po_staticmethod in pd.procoptions) and
+                   (po_classmethod in pd.procoptions) then
+>>>>>>> graemeg/fixes_2_2
                    exit;
 
                 storepos:=current_tokenpos;
                 current_tokenpos:=tprocdef(pd).fileinfo;
 
                 { Generate VMT variable for constructor/destructor }
+<<<<<<< HEAD
                 if (pd.proctypeoption in [potype_constructor,potype_destructor]) and
                    not(is_cppclass(tprocdef(pd).struct) or is_record(tprocdef(pd).struct)) then
+=======
+                if (pd.proctypeoption in [potype_constructor,potype_destructor]) and not(is_cppclass(tprocdef(pd)._class)) then
+>>>>>>> graemeg/fixes_2_2
                  begin
                    { can't use classrefdef as type because inheriting
                      will then always file because of a type mismatch }
                    vs:=tparavarsym.create('$vmt',paranr_vmt,vs_value,voidpointertype,[vo_is_vmt,vo_is_hidden_para]);
+                   vs.symoptions:=[sp_public];
                    pd.parast.insert(vs);
                  end;
 
@@ -490,6 +520,7 @@ implementation
                     hdef:=tprocdef(pd).struct;
                   end;
                 vs:=tparavarsym.create('$self',paranr_self,vsp,hdef,[vo_is_self,vo_is_hidden_para]);
+                vs.symoptions:=[sp_public];
                 pd.parast.insert(vs);
 
                 current_tokenpos:=storepos;
@@ -573,7 +604,11 @@ implementation
            if paramanager.push_high_param(varspez,vardef,pd.proccalloption) then
              begin
                hvs:=tparavarsym.create('$high'+name,paranr+1,vs_const,sinttype,[vo_is_high_para,vo_is_hidden_para]);
+<<<<<<< HEAD
                hvs.symoptions:=[];
+=======
+               hvs.symoptions:=[sp_public];
+>>>>>>> graemeg/fixes_2_2
                owner.insert(hvs);
              end
            else
@@ -695,6 +730,10 @@ implementation
         varspez : Tvarspez;
         defaultvalue : tconstsym;
         defaultrequired : boolean;
+<<<<<<< HEAD
+=======
+        old_object_option : tsymoptions;
+>>>>>>> graemeg/fixes_2_2
         old_block_type : tblock_type;
         currparast : tparasymtable;
         parseprocvar : tppv;
@@ -764,6 +803,10 @@ implementation
 =======
 >>>>>>> origin/cpstrnew
       begin
+<<<<<<< HEAD
+=======
+        old_object_option:=current_object_option;
+>>>>>>> graemeg/fixes_2_2
         old_block_type:=block_type;
         explicit_paraloc:=false;
         consume(_LKLAMMER);
@@ -778,8 +821,15 @@ implementation
         sc:=TFPObjectList.create(false);
         defaultrequired:=false;
         paranr:=0;
+<<<<<<< HEAD
         block_type:=bt_var;
         is_univ:=false;
+=======
+        { the variables are always public }
+        current_object_option:=[sp_public];
+        inc(testcurobject);
+        block_type:=bt_type;
+>>>>>>> graemeg/fixes_2_2
         repeat
           parseprocvar:=pv_none;
           if try_to_consume(_VAR) then
@@ -1091,6 +1141,11 @@ implementation
         { remove parasymtable from stack }
         sc.free;
         { reset object options }
+<<<<<<< HEAD
+=======
+        dec(testcurobject);
+        current_object_option:=old_object_option;
+>>>>>>> graemeg/fixes_2_2
         block_type:=old_block_type;
         consume(_RKLAMMER);
       end;
@@ -1145,6 +1200,7 @@ implementation
         popclass : integer;
         ImplIntf : TImplementedInterface;
         old_parse_generic : boolean;
+<<<<<<< HEAD
         old_current_structdef: tabstractrecorddef;
         old_current_genericdef,
         old_current_specializedef: tstoreddef;
@@ -1556,6 +1612,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
       begin
         sp:='';
         orgsp:='';
@@ -1735,6 +1793,7 @@ implementation
            (symtablestack.top.symtablelevel=main_program_level) and
            try_to_consume(_POINT) then
          begin
+<<<<<<< HEAD
            repeat
              searchagain:=false;
              if not assigned(astruct) then
@@ -1787,6 +1846,54 @@ implementation
              else
               Message(parser_e_class_id_expected);
            until not searchagain;
+=======
+           { search for object name }
+           storepos:=current_tokenpos;
+           current_tokenpos:=procstartfilepos;
+           searchsym(sp,srsym,srsymtable);
+           if not assigned(srsym) then
+            begin
+              identifier_not_found(orgsp);
+              srsym:=generrorsym;
+            end;
+           current_tokenpos:=storepos;
+           { consume proc name }
+           sp:=pattern;
+           orgsp:=orgpattern;
+           procstartfilepos:=current_tokenpos;
+           consume(_ID);
+           { qualifier is class name ? }
+           if (srsym.typ=typesym) and
+              (ttypesym(srsym).typedef.typ=objectdef) then
+            begin
+              aclass:=tobjectdef(ttypesym(srsym).typedef);
+              srsym:=tsym(aclass.symtable.Find(sp));
+              if assigned(srsym) then
+               begin
+                 if srsym.typ=procsym then
+                   aprocsym:=tprocsym(srsym)
+                 else
+                   begin
+                     {  we use a different error message for tp7 so it looks more compatible }
+                     if (m_fpc in current_settings.modeswitches) then
+                       Message1(parser_e_overloaded_no_procedure,srsym.realname)
+                     else
+                       Message(parser_e_methode_id_expected);
+                     { rename the name to an unique name to avoid an
+                       error when inserting the symbol in the symtable }
+                     orgsp:=orgsp+'$'+tostr(current_filepos.line);
+                   end;
+               end
+              else
+               begin
+                 Message(parser_e_methode_id_expected);
+                 { recover by making it a normal procedure instead of method }
+                 aclass:=nil;
+               end;
+            end
+           else
+            Message(parser_e_class_id_expected);
+>>>>>>> graemeg/fixes_2_2
          end
         else
          begin
@@ -1860,8 +1967,19 @@ implementation
                  { Check if overloaded is a procsym }
                  if assigned(srsym) then
                    begin
+<<<<<<< HEAD
                      if srsym.typ=procsym then
                        aprocsym:=tprocsym(srsym)
+=======
+                     { when the other symbol is a unit symbol then hide the unit
+                       symbol, this is not supported in tp7 }
+                     if not(m_tp7 in current_settings.modeswitches) and
+                        (srsym.typ=unitsym) then
+                      begin
+                        HideSym(srsym);
+                        searchagain:=true;
+                      end
+>>>>>>> graemeg/fixes_2_2
                      else
                        begin
                          { when the other symbol is a unit symbol then hide the unit
@@ -2040,15 +2158,26 @@ implementation
           insert_generic_parameter_types(pd,tstoreddef(genericdef),generictypelist);
 
         { methods inherit df_generic or df_specialization from the objectdef }
+<<<<<<< HEAD
         if assigned(pd.struct) and
            (pd.parast.symtablelevel=normal_function_level) then
           begin
             if (df_generic in pd.struct.defoptions) then
+=======
+        if assigned(pd._class) and
+           (pd.parast.symtablelevel=normal_function_level) then
+          begin
+            if (df_generic in pd._class.defoptions) then
+>>>>>>> graemeg/fixes_2_2
               begin
                 include(pd.defoptions,df_generic);
                 parse_generic:=true;
               end;
+<<<<<<< HEAD
             if (df_specialization in pd.struct.defoptions) then
+=======
+            if (df_specialization in pd._class.defoptions) then
+>>>>>>> graemeg/fixes_2_2
               begin
 <<<<<<< HEAD
                 if assigned(current_specializedef) then
@@ -2266,6 +2395,7 @@ implementation
         pd: tprocdef;
 >>>>>>> origin/cpstrnew
         locationstr: string;
+<<<<<<< HEAD
         i: integer;
         found: boolean;
 
@@ -2372,6 +2502,10 @@ implementation
             parse_generic:=old_parse_generic;
           end;
 
+=======
+        old_parse_generic,
+        popclass : boolean;
+>>>>>>> graemeg/fixes_2_2
       begin
         locationstr:='';
 <<<<<<< HEAD
@@ -2603,7 +2737,29 @@ implementation
                     begin
                       if try_to_consume(_COLON) then
                        begin
+<<<<<<< HEAD
                          read_returndef(pd);
+=======
+                         old_parse_generic:=parse_generic;
+                         inc(testcurobject);
+                         { Add ObjectSymtable to be able to find generic type definitions }
+                         popclass:=false;
+                         if assigned(pd._class) and
+                            (pd.parast.symtablelevel=normal_function_level) and
+                            (symtablestack.top.symtabletype<>ObjectSymtable) then
+                           begin
+                             symtablestack.push(pd._class.symtable);
+                             popclass:=true;
+                             parse_generic:=(df_generic in pd._class.defoptions);
+                           end;
+                         single_type(pd.returndef,false);
+                         if popclass then
+                           symtablestack.pop(pd._class.symtable);
+                         pd.test_if_fpu_result;
+                         dec(testcurobject);
+                         parse_generic:=old_parse_generic;
+
+>>>>>>> graemeg/fixes_2_2
                          if (target_info.system in [system_m68k_amiga]) then
                           begin
                            if (idtoken=_LOCATION) then
@@ -2778,6 +2934,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               parse_proc_head(astruct,potype_operator,false,nil,nil,pd);
               block_type:=old_block_type;
               if assigned(pd) then
@@ -2790,6 +2947,28 @@ implementation
 =======
 >>>>>>> origin/cpstrnew
               parse_proc_head(astruct,potype_operator,pd);
+=======
+              if (token in [first_overloaded..last_overloaded]) then
+               begin
+                 optoken:=token;
+               end
+              else
+               begin
+                 case token of
+                   _CARET:
+                     Message1(parser_e_overload_operator_failed,'**');
+                   _UNEQUAL:
+                     Message1(parser_e_overload_operator_failed,'=');
+                   else
+                     Message1(parser_e_overload_operator_failed,'');
+                 end;
+                 { Use the dummy NOTOKEN that is also declared
+                   for the overloaded_operator[] }
+                 optoken:=NOTOKEN;
+               end;
+              consume(token);
+              parse_proc_head(aclass,potype_operator,pd);
+>>>>>>> graemeg/fixes_2_2
               if assigned(pd) then
                 begin
                   { operators always need to be searched in all units }
@@ -2855,6 +3034,7 @@ implementation
                 end;
             end;
         end;
+<<<<<<< HEAD
 
         if recover and not(check_proc_directive(false)) then
           begin
@@ -2872,6 +3052,15 @@ implementation
             assigned(pd.genericdecltokenbuf) then
           current_scanner.stoprecordtokens;
 
+=======
+        { file types can't be function results }
+        if assigned(pd) and
+           (pd.returndef.typ=filedef) then
+          message(parser_e_illegal_function_result);
+        { support procedure proc stdcall export; }
+        if not(check_proc_directive(false)) then
+          consume(_SEMICOLON);
+>>>>>>> graemeg/fixes_2_2
         result:=pd;
       end;
 
@@ -3978,6 +4167,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_implemen,pd_interface,pd_notobject,pd_notobjintf,pd_cppobject,pd_notrecord,pd_nothelper,pd_javaclass,pd_intfjava];
 =======
       pd_flags : [pd_implemen,pd_interface,pd_notobject,pd_notobjintf,pd_cppobject,pd_notrecord];
@@ -3997,6 +4187,15 @@ const
       mutexclpocall : [pocall_syscall];
       { allowed for external cpp classes }
       mutexclpotype : [{potype_constructor,potype_destructor}potype_class_constructor,potype_class_destructor];
+=======
+      pd_flags : [pd_implemen,pd_interface,pd_notobject,pd_notobjintf,pd_cppobject];
+      handler  : @pd_external;
+      pocall   : pocall_none;
+      pooption : [po_external];
+      mutexclpocall : [pocall_internproc,pocall_syscall];
+      { allowed for external cpp classes }
+      mutexclpotype : [{potype_constructor,potype_destructor}];
+>>>>>>> graemeg/fixes_2_2
       mutexclpo     : [po_public,po_exports,po_interrupt,po_assembler,po_inline]
     ),(
       idtok:_FAR;
@@ -4423,6 +4622,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_interface,pd_implemen,pd_body,pd_object,pd_record,pd_javaclass,pd_notobjintf];
 =======
       pd_flags : [pd_interface,pd_implemen,pd_body,pd_object,pd_record,pd_notobjintf];
@@ -4436,6 +4636,9 @@ const
 =======
       pd_flags : [pd_interface,pd_implemen,pd_body,pd_object,pd_record,pd_notobjintf];
 >>>>>>> origin/cpstrnew
+=======
+      pd_flags : [pd_interface,pd_implemen,pd_body,pd_object,pd_notobjintf];
+>>>>>>> graemeg/fixes_2_2
       handler  : @pd_static;
       pocall   : pocall_none;
       pooption : [po_staticmethod];
@@ -4712,6 +4915,7 @@ const
         if (pd_notobject in proc_direcdata[p].pd_flags) and
            (symtablestack.top.symtabletype=ObjectSymtable) and
            { directive allowed for cpp classes? }
+<<<<<<< HEAD
            not((pd_cppobject in proc_direcdata[p].pd_flags) and is_cppclass(tdef(symtablestack.top.defowner))) and
            not((pd_javaclass in proc_direcdata[p].pd_flags) and is_javaclass(tdef(symtablestack.top.defowner))) and
            not((pd_intfjava in proc_direcdata[p].pd_flags) and is_javainterface(tdef(symtablestack.top.defowner))) then
@@ -4749,6 +4953,9 @@ const
 
         if (pd_notrecord in proc_direcdata[p].pd_flags) and
            (symtablestack.top.symtabletype=recordsymtable) then
+=======
+           not(is_cppclass(tdef(symtablestack.top.defowner)) and (pd_cppobject in proc_direcdata[p].pd_flags)) then
+>>>>>>> graemeg/fixes_2_2
            exit;
 
         { Conflicts between directives ? }
@@ -4904,7 +5111,11 @@ const
 *)
                 if assigned(pd.import_name) then
                   begin
+<<<<<<< HEAD
                     if target_info.system in (systems_all_windows + systems_nativent +
+=======
+                    if target_info.system in (system_all_windows +
+>>>>>>> graemeg/fixes_2_2
                                        [system_i386_emx, system_i386_os2]) then
                    { cprefix is not used in DLL imports under Windows or OS/2 }
                       result:=pd.import_name^
@@ -4990,6 +5201,7 @@ const
                     if s<>'' then
                       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                         { Replace ? and @ in import name, since GNU AS does not allow these characters in symbol names. }
                         { This allows to import VC++ mangled names from DLLs. }
@@ -5003,6 +5215,16 @@ const
 {$endif arm}
                           end;
 >>>>>>> graemeg/cpstrnew
+=======
+                        { Replace ? and @ in import name }
+                        { these replaces broke existing code on i386-win32 at least, while fixed 
+                          bug 8391 on arm-wince so limit this to arm-wince (KB) }
+                        if target_info.system in [system_arm_wince] then 
+                          begin
+                            Replace(s,'?','__q$$');
+                            Replace(s,'@','__a$$');
+                          end;
+>>>>>>> graemeg/fixes_2_2
                         pd.setmangledname(s);
                       end;
                     { since this is an external declaration, there won't be an
@@ -5454,6 +5676,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                (compare_paras(fwpd.paras,currpd.paras,cp_none,[cpo_ignorehidden,cpo_openequalisexact,cpo_ignoreuniv])=te_exact) and
 =======
                (compare_paras(currpd.paras,fwpd.paras,cp_none,[cpo_comparedefaultvalue,cpo_ignorehidden,cpo_openequalisexact,cpo_ignoreuniv])=te_exact) and
@@ -5468,6 +5691,10 @@ const
                (compare_paras(currpd.paras,fwpd.paras,cp_none,[cpo_comparedefaultvalue,cpo_ignorehidden,cpo_openequalisexact,cpo_ignoreuniv])=te_exact) and
 >>>>>>> origin/cpstrnew
                (compare_defs(fwpd.returndef,currpd.returndef,nothingn)=te_exact)
+=======
+               (compare_paras(currpd.paras,fwpd.paras,cp_none,[cpo_comparedefaultvalue,cpo_ignorehidden,cpo_openequalisexact])=te_exact) and
+               (fwpd.returndef=currpd.returndef)
+>>>>>>> graemeg/fixes_2_2
               ) then
              begin
                { Check if we've found the forwarddef, if found then
@@ -5479,9 +5706,15 @@ const
 
                    if not(m_repeat_forward in current_settings.modeswitches) and
                       (fwpd.proccalloption<>currpd.proccalloption) then
+<<<<<<< HEAD
                      paracompopt:=[cpo_ignorehidden,cpo_comparedefaultvalue,cpo_openequalisexact,cpo_ignoreuniv]
                    else
                      paracompopt:=[cpo_comparedefaultvalue,cpo_openequalisexact,cpo_ignoreuniv];
+=======
+                     paracompopt:=[cpo_ignorehidden,cpo_comparedefaultvalue,cpo_openequalisexact]
+                   else
+                     paracompopt:=[cpo_comparedefaultvalue,cpo_openequalisexact];
+>>>>>>> graemeg/fixes_2_2
 
                    { Check calling convention }
                    if (fwpd.proccalloption<>currpd.proccalloption) then
@@ -5541,6 +5774,7 @@ const
                    if ((m_repeat_forward in current_settings.modeswitches) or
                        not is_bareprocdef(currpd)) and
 <<<<<<< HEAD
+<<<<<<< HEAD
                        (
                          (
                            fwpd.is_generic and
@@ -5571,6 +5805,10 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+                      ((compare_paras(currpd.paras,fwpd.paras,cp_all,paracompopt)<>te_exact) or
+                       (fwpd.returndef<>currpd.returndef)) then
+>>>>>>> graemeg/fixes_2_2
                      begin
                        MessagePos1(currpd.fileinfo,parser_e_header_dont_match_forward,
                                    fwpd.fullprocname(false));

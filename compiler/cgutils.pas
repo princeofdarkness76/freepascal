@@ -218,6 +218,9 @@ unit cgutils;
     procedure calc_divconst_magic_signed(N: byte; d: aInt; out magic_m: aInt; out magic_s: byte);
     procedure calc_divconst_magic_unsigned(N: byte; d: aWord; out magic_m: aWord; out magic_add: boolean; out magic_shift: byte);
 
+    { returns r with the given alignment }
+    function setalignment(const r : treference;b : byte) : treference;
+
 implementation
 
 uses
@@ -404,6 +407,7 @@ uses
         ad,anc,delta,q1,r1,q2,r2,t: aWord;
         two_N_minus_1: aWord;
       begin
+<<<<<<< HEAD
         assert((d<-1) or (d>1));
         two_N_minus_1:=aWord(1) shl (N-1);
 
@@ -437,6 +441,17 @@ uses
         if (d<0) then
           magic_m:=-magic_m;  { resulting magic number }
         magic_s:=p-N;         { resulting shift }
+=======
+{$ifdef i386}
+        result := (target_info.system in [system_i386_darwin,system_x86_64_darwin]);
+{$else i386}
+{$ifdef cputargethasfixedstack}
+        result := true;
+{$else cputargethasfixedstack}
+        result := false;
+{$endif cputargethasfixedstack}
+{$endif i386}
+>>>>>>> graemeg/fixes_2_2
       end;
 
 

@@ -11,6 +11,11 @@
 
 program mandelbrot;
 
+<<<<<<< HEAD
+=======
+{$FPUTYPE SSE2}{$I-}
+
+>>>>>>> graemeg/fixes_2_2
 var n: longint;
     TextBuf: array[0..$FFF] of byte;
     OutFile: PText;
@@ -20,7 +25,11 @@ procedure run;
 var
   Cy, Step: double;
   x, y, bits,bit: Longint;
+<<<<<<< HEAD
   function CalculatePoint(Cx, Cy: double): boolean; inline;
+=======
+  function CalculatePoint(Cx, Cy: double): boolean; nostackframe; inline;
+>>>>>>> graemeg/fixes_2_2
   const
     Limit = 4;
   var

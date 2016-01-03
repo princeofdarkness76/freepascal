@@ -320,15 +320,19 @@ begin
   DateTimeToString(Result, 'ddddd', Date);
 end ;
 
+<<<<<<< HEAD
 function DateToStr(Date: TDateTime; const FormatSettings: TFormatSettings): string;
 begin
   DateTimeToString(result, FormatSettings.ShortDateFormat, Date, FormatSettings);
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {  TimeToStr returns a string representation of Time using LongTimeFormat   }
 
 function TimeToStr(Time: TDateTime): string;
 begin
+<<<<<<< HEAD
   DateTimeToString(Result, 'tt', Time);
 end ;
 
@@ -355,6 +359,12 @@ begin
 =======
   DateTimeToString(Result, 'c', DateTime);
 end ;
+=======
+  result := FormatDateTime('tt', Time);
+end ;
+
+{   DateTimeToStr returns a string representation of DateTime using LongDateTimeFormat   }
+>>>>>>> graemeg/fixes_2_2
 
 function DateTimeToStr(DateTime: TDateTime; const FormatSettings: TFormatSettings): string;
 begin
@@ -474,10 +484,17 @@ begin
      { space can be part of the shortdateformat, and is defaultly in slovak
        windows, therefor it shouldn't be taken as separator (unless so specified)
        and ignored }
+<<<<<<< HEAD
      if (Separator <> ' ') and (s[i] = ' ') then
        Continue;
 
      if (s[i] = separator) or ((i = len) and (s[i] in ['0'..'9'])) then
+=======
+     if (DateSeparator <> ' ') and (s[i] = ' ') then
+       Continue;
+
+     if (s[i] = dateseparator) or ((i = length(s)) and (s[i] in ['0'..'9'])) then
+>>>>>>> graemeg/fixes_2_2
       begin
         inc(n);
         if n>3 then
@@ -618,8 +635,12 @@ const
 type
   TTimeValues = array[tiHour..tiMSec] of Word;
 var
+<<<<<<< HEAD
    AmPm: integer;
    TimeValues: TTimeValues;
+=======
+   Len, Current: integer; PM: integer;
+>>>>>>> graemeg/fixes_2_2
 
     function StrPas(Src : PChar; len: integer = 0) : ShortString;
     begin
@@ -641,6 +662,7 @@ var
       AmPmStr: ShortString;
       CurChar: Char;
    begin
+<<<<<<< HEAD
      Result := False;
      AmPm := AMPM_None; //No Am or PM in string found yet
      MSecPending := False;
@@ -768,6 +790,66 @@ begin
   if not TryEncodeTime(TimeValues[tiHour], TimeValues[tiMin], TimeValues[tiSec], TimeValues[tiMSec], result) Then
     //errormsg:='Invalid time.';
     ErrorMsg:=Format(SErrInvalidTimeFormat,[StrPas(S, Len)]);
+=======
+   result := -1;
+   Inc(Current);
+   while (result = -1) and (Current <= Len) do
+     begin
+       if S[Current] in ['0'..'9'] then 
+          begin
+            j := Current;
+            while (Current < Len) and (s[Current + 1] in ['0'..'9']) do
+              Inc(Current);
+            val(copy(S, j, 1 + Current - j), result, c);
+          end
+       else if ((TimeAMString<>'') and (S[Current] = TimeAMString[1])) or (S[Current] in ['a', 'A']) then 
+          begin
+            pm:=1;
+            Current := 1 + Len;
+          end
+       else if ((TimePMString<>'') and (S[Current] = TimePMString[1])) or (S[Current] in ['p', 'P']) then 
+         begin
+           Current := 1 + Len;
+           PM := 2;
+         end
+       else if (S[Current] = TimeSeparator) or (S[Current] = ' ') then
+         Inc(Current)
+      else
+        raise EConvertError.Create('Invalid Time format');
+      end ;
+   end ;
+
+var
+   i: integer;
+   TimeValues: array[0..4] of integer;
+
+begin
+  Current := 0;
+  Len := length(s);
+  PM := 0;
+  for i:=0 to 4 do
+    timevalues[i]:=0;
+  i := 0;
+  TimeValues[i] := GetElement;
+  while (i < 5) and (TimeValues[i] <> -1) do 
+    begin
+     i := i + 1;
+     TimeValues[i] := GetElement;
+   end ;
+  If (i<5) and (TimeValues[I]=-1) then
+    TimeValues[I]:=0;
+  if PM=2 then
+    begin
+     if (TimeValues[0] <> 12) then
+       Inc(TimeValues[0], 12);
+    end
+  else
+    begin
+      if (pm=1) and ((TimeValues[0]=12)) then
+        TimeValues[0]:=0;
+    end;
+  result := EncodeTime(TimeValues[0], TimeValues[1], TimeValues[2], TimeValues[3]);
+>>>>>>> graemeg/fixes_2_2
 end ;
 
 function StrToTime(const S: PChar; Len : integer; separator : char = #0): TDateTime;
@@ -807,6 +889,7 @@ end;
 
 function StrToDateTime(const s: string): TDateTime;
 var
+<<<<<<< HEAD
   I: integer;
 begin
   I:=Pos(DefaultFormatSettings.TimeSeparator,S);
@@ -822,6 +905,35 @@ begin
   else
     Result:=StrToDate(S);
 end;
+=======
+  i, j, k, l: integer;
+  sd, st: string;
+begin
+  l := Length(s);
+  i := 1;
+  while (i <= l) and (s[i] = ' ') do
+    Inc(i);
+  j := i;
+  while (j <= l) and (s[j] <> ' ') do
+    Inc(j);
+  k := j;
+  while (k <= l) and (s[k] = ' ') do
+    Inc(k);
+  sd := Copy(s, i, j - i);
+  st := Copy(s, k, l);
+  if (st = '') and (Pos(TimeSeparator, sd) > 0) then
+  begin
+    st := sd;
+    sd := '';
+  end;
+  if (sd <> '') and (st <> '') then
+    Result := ComposeDateTime(StrToDate(sd), StrToTime(st))
+  else if st = '' then
+    Result := StrToDate(sd)
+  else
+    Result := StrToTime(st);
+end ;
+>>>>>>> graemeg/fixes_2_2
 
 function StrToDateTime(const s: AnsiString; const UseFormat : TFormatSettings): TDateTime;
 var
@@ -1000,6 +1112,7 @@ var
   var Len: integer;
   begin
    Len := Length(Str);
+<<<<<<< HEAD
    if ResultLen + Len < SizeOf(ResultBuffer) then
      begin
        StrMove(ResultCurrent, pchar(Str), Len);
@@ -1023,11 +1136,32 @@ var
     end;
     StoreStr(pchar(@S[1]), Length(S));
   end ;
+=======
+   if ResultLen + Len < SizeOf(ResultBuffer) then begin // strmove not safe
+      StrMove(ResultCurrent, pchar(Str), Len);
+      ResultCurrent := ResultCurrent + Len;
+      ResultLen := ResultLen + Len;
+      end;
+   end;
+
+   procedure StoreInt(Value, Digits: integer);
+   var S: string; Len: integer;
+   begin
+   S := IntToStr(Value);
+   Len := Length(S);
+   if Len < Digits then begin
+      S := copy('0000', 1, Digits - Len) + S;
+      Len := Digits;
+      end ;
+   StoreStr(pchar(@S[1]), Len);
+   end ;
+>>>>>>> graemeg/fixes_2_2
 
 var
   Year, Month, Day, DayOfWeek, Hour, Minute, Second, MilliSecond: word;
 
 
+<<<<<<< HEAD
   procedure StoreFormat(const FormatStr: string; Nesting: Integer; TimeFlag: Boolean);
   var
     Token, lastformattoken: char;
@@ -1063,6 +1197,24 @@ var
              (StrLIComp(P, 'AMPM', 4) = 0) or
              (StrLIComp(P, 'AM/PM', 5) = 0) then
           begin
+=======
+   begin
+   FormatCurrent := Pchar(pointer(FormatStr));
+   FormatEnd := FormatCurrent + Length(FormatStr);
+   Clock12 := false;
+   P := FormatCurrent;
+   while P < FormatEnd do begin
+      Token := UpCase(P^);
+      if Token in ['"', ''''] then begin
+         P := P + 1;
+         while (P < FormatEnd) and (P^ <> Token) do
+            P := P + 1;
+         end
+      else if Token = 'A' then begin
+         if (StrLIComp(P, 'A/P', 3) = 0) or
+            (StrLIComp(P, 'AMPM', 4) = 0) or
+            (StrLIComp(P, 'AM/PM', 5) = 0) then begin
+>>>>>>> graemeg/fixes_2_2
             Clock12 := true;
             break;
           end;
@@ -1129,6 +1281,7 @@ var
             'M': begin
               if (lastformattoken = 'H') or TimeFlag then
               begin
+<<<<<<< HEAD
                 if Count = 1 then
                   StoreInt(Minute, 0)
                 else
@@ -1142,6 +1295,85 @@ var
                   3: StoreString(FormatSettings.ShortMonthNames[Month]);
                 else
                   StoreString(FormatSettings.LongMonthNames[Month]);
+=======
+                while (P < FormatEnd) and (UpCase(P^) = Token) do
+                  P := P + 1;
+                Count := P - FormatCurrent;
+                case Token of
+                   ' ': StoreStr(FormatCurrent, Count);
+                   'Y': begin
+                         if Count>2 then
+                           StoreInt(Year, 4)
+                         else
+                           StoreInt(Year mod 100, 2);
+                        end;
+                   'M': begin
+                         if lastformattoken='H' then
+                           begin
+                             if Count = 1 then
+                               StoreInt(Minute, 0)
+                             else
+                               StoreInt(Minute, 2);
+
+                           end
+                         else
+                           begin
+                             case Count of
+                                1: StoreInt(Month, 0);
+                                2: StoreInt(Month, 2);
+                                3: StoreString(ShortMonthNames[Month]);
+                                4: StoreString(LongMonthNames[Month]);
+                             end;
+                           end;
+                      end;
+                   'D': begin
+                         case Count of
+                            1: StoreInt(Day, 0);
+                            2: StoreInt(Day, 2);
+                            3: StoreString(ShortDayNames[DayOfWeek]);
+                            4: StoreString(LongDayNames[DayOfWeek]);
+                            5: StoreFormat(ShortDateFormat);
+                            6: StoreFormat(LongDateFormat);
+                         end ;
+                      end ;
+                   'H': begin
+                      if Clock12 then begin
+                         tmp:=hour mod 12;
+                         if tmp=0 then tmp:=12;
+                         if Count = 1 then StoreInt(tmp, 0)
+                         else StoreInt(tmp, 2);
+                         end
+                      else begin
+                         if Count = 1 then StoreInt(Hour, 0)
+                         else StoreInt(Hour, 2);
+                         end ;
+                      end ;
+                   'N': begin
+                      if Count = 1 then StoreInt(Minute, 0)
+                      else StoreInt(Minute, 2);
+                      end ;
+                   'S': begin
+                      if Count = 1 then StoreInt(Second, 0)
+                      else StoreInt(Second, 2);
+                      end ;
+                   'Z': begin
+                      if Count = 1 then StoreInt(MilliSecond, 0)
+                      else StoreInt(MilliSecond, 3);
+                      end ;
+                   'T': begin
+                      if Count = 1 then StoreFormat(ShortTimeFormat)
+                      else StoreFormat(LongTimeFormat);
+                      end ;
+                   'C':
+                     begin
+                       StoreFormat(ShortDateFormat);
+                       if (Hour<>0) or (Minute<>0) or (Second<>0) then
+                        begin
+                          StoreString(' ');
+                          StoreFormat(LongTimeFormat);
+                        end;
+                     end;
+>>>>>>> graemeg/fixes_2_2
                 end;
               end;
             end;
@@ -3146,6 +3378,7 @@ procedure ReplaceTime(var dati:TDateTime; NewTime : TDateTime);inline;
 begin
   dati:= ComposeDateTime(dati, newtime);
 end;
+<<<<<<< HEAD
 
 procedure ReplaceDate(var DateTime: TDateTime; const NewDate: TDateTime); inline;
 var
@@ -3158,8 +3391,21 @@ end;
 
 {$IFNDEF HAS_LOCALTIMEZONEOFFSET}
 Function GetLocalTimeOffset : Integer;
+=======
+>>>>>>> graemeg/fixes_2_2
 
+procedure ReplaceDate(var DateTime: TDateTime; const NewDate: TDateTime); inline;
+var
+  tmp : TDateTime;
 begin
+<<<<<<< HEAD
   Result:=0;
 end;
 {$ENDIF}
+=======
+  tmp:=NewDate;
+  ReplaceTime(tmp,DateTime);
+  DateTime:=tmp;
+end;
+
+>>>>>>> graemeg/fixes_2_2

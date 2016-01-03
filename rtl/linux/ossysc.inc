@@ -81,7 +81,11 @@ begin
   result:=do_syscall(syscall_nr_lseek,tsysparam(fd),tsysparam(offset),tsysparam(whence));
 {$else}
   if do_syscall(syscall_nr__llseek,tsysparam(fd),
+<<<<<<< HEAD
 //      {$ifdef FPC_ABI_EABI}      0,  { align parameters as required with dummy } {$endif FPC_ABI_EABI}
+=======
+      {$ifdef FPC_ABI_EABI}      0,  { align parameters as required with dummy } {$endif FPC_ABI_EABI}
+>>>>>>> graemeg/fixes_2_2
       tsysparam(hi(offset)),tsysparam(lo(offset)),
       tsysparam(@result), tsysparam(whence)) = -1 then
     result:=off_t(-1);

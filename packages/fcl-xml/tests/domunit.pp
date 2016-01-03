@@ -20,7 +20,11 @@ unit domunit;
 interface
 
 uses
+<<<<<<< HEAD
   Classes, SysUtils, xmlutils, DOM, XMLRead, contnrs, fpcunit;
+=======
+  Classes, SysUtils, DOM, XMLRead, contnrs, fpcunit;
+>>>>>>> graemeg/fixes_2_2
 
 type
 { these two types are separated for the purpose of readability }
@@ -36,6 +40,7 @@ type
     function GetTestFilesURI: string; virtual;
   protected
     FParser: TDOMParser;
+<<<<<<< HEAD
     FAutoFree: TObjectList;
     procedure SetUp; override;
     procedure TearDown; override;
@@ -56,6 +61,14 @@ type
 >>>>>>> origin/cpstrnew
     function getResourceURI(const res: WideString): WideString;
 >>>>>>> graemeg/cpstrnew
+=======
+    FAutoFree: TFPObjectList;
+    procedure SetUp; override;
+    procedure TearDown; override;
+    procedure GC(obj: TObject);
+    procedure Load(out doc: TDOMDocument; const uri: string);
+    function getResourceURI(const res: WideString): WideString;
+>>>>>>> graemeg/fixes_2_2
     function ContentTypeIs(const t: string): Boolean;
     function GetImplementation: TDOMImplementation;
     procedure CheckFeature(const name: string);
@@ -63,16 +76,25 @@ type
     procedure assertEquals(const id: string; exp, act: TObject); overload;
     procedure assertEqualsList(const id: string; const exp: array of DOMString; const act: _list);
     procedure assertEqualsCollection(const id: string; const exp: array of DOMString; const act: _collection);
+<<<<<<< HEAD
     procedure assertEqualsW(const id: string; const exp, act: DOMString);
     procedure assertEqualsNoCase(const id: string; const exp, act: DOMString);
+=======
+>>>>>>> graemeg/fixes_2_2
     procedure assertSame(const id: string; exp, act: TDOMNode);
     procedure assertSize(const id: string; size: Integer; obj: TDOMNodeList);
     procedure assertSize(const id: string; size: Integer; obj: TDOMNamedNodeMap);
     procedure assertInstanceOf(const id: string; obj: TObject; const typename: string);
     procedure assertURIEquals(const id: string;
+<<<<<<< HEAD
       scheme, path, host, file_, name, query, fragment: PChar;
       IsAbsolute: Boolean; const Actual: DOMString);
     function bad_condition(const TagName: XMLString): Boolean;
+=======
+      const scheme, path, host, file_, name, query, fragment: DOMString;
+      IsAbsolute: Boolean; const Actual: DOMString);
+    function bad_condition(const TagName: WideString): Boolean;
+>>>>>>> graemeg/fixes_2_2
     property implementationAttribute[const name: string]: Boolean read getImplAttr write setImplAttr;
   end;
 
@@ -112,8 +134,12 @@ procedure TDOMTestBase.SetUp;
 begin
   FParser := TDOMParser.Create;
   FParser.Options.PreserveWhitespace := True;
+<<<<<<< HEAD
   //FParser.Options.ExpandEntities := True;
   FAutoFree := TObjectList.Create(True);
+=======
+  FAutoFree := TFPObjectList.Create(True);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TDOMTestBase.TearDown;
@@ -134,7 +160,11 @@ begin
     assertNotNull(id, exp);
     assertNotNull(id, act);
     assertEquals(id, exp.nodeType, act.nodeType);
+<<<<<<< HEAD
     assertEqualsW(id, exp.nodeValue, act.nodeValue);
+=======
+    assertEquals(id, exp.nodeValue, act.nodeValue);
+>>>>>>> graemeg/fixes_2_2
   end;
 end;
 
@@ -154,10 +184,17 @@ procedure TDOMTestBase.assertEqualsList(const id: string;
 var
   I: Integer;
 begin
+<<<<<<< HEAD
   AssertEquals(id+'(length)', Length(exp), Length(act));
   // compare ordered
   for I := 0 to High(exp) do
     AssertEqualsW(id+'['+IntToStr(I)+']', exp[I], act[I]);
+=======
+  AssertEquals(id, Length(exp), Length(act));
+  // compare ordered
+  for I := 0 to High(exp) do
+    AssertEquals(id, exp[I], act[I]);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TDOMTestBase.assertEqualsCollection(const id: string; const exp: array of DOMString; const act: _collection);
@@ -177,6 +214,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure TDOMTestBase.assertEqualsW(const id: string; const exp, act: DOMString);
 begin
   AssertTrue(id + ComparisonMsg(exp, act), exp = act);
@@ -188,6 +226,8 @@ begin
   AssertTrue(id + ComparisonMsg(exp, act), WideSameText(exp, act));
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 procedure TDOMTestBase.assertSize(const id: string; size: Integer; obj: TDOMNodeList);
 begin
   AssertNotNull(id, obj);
@@ -200,6 +240,7 @@ begin
   AssertEquals(id, size, obj.Length);
 end;
 
+<<<<<<< HEAD
 function TDOMTestBase.getResourceURI(const res: XMLString): XMLString;
 var
   Base, Base2: XMLString;
@@ -224,6 +265,15 @@ begin
         Exit;
   end;
   CheckFile(Base, Result);
+=======
+function TDOMTestBase.getResourceURI(const res: WideString): WideString;
+var
+  Base, Level: WideString;
+begin
+  Base := GetTestFilesURI + 'files/';
+  if not ResolveRelativeURI(Base, res+'.xml', Result) then
+    Result := '';
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TDOMTestBase.getImplAttr(const name: string): Boolean;
@@ -263,6 +313,7 @@ begin
     Fail('Unknown implementation attribute: ''' + name + '''');
 end;
 
+<<<<<<< HEAD
 procedure TDOMTestBase.Load(out doc; const uri: string);
 var
   t: TXMLDocument;
@@ -270,6 +321,15 @@ begin
   TObject(doc) := nil;
   FParser.ParseURI(getResourceURI(uri), t);
   TObject(doc) := t;
+=======
+procedure TDOMTestBase.Load(out doc: TDOMDocument; const uri: string);
+var
+  t: TXMLDocument;
+begin
+  doc := nil;
+  FParser.ParseURI(getResourceURI(uri), t);
+  doc := t;
+>>>>>>> graemeg/fixes_2_2
   GC(t);
 end;
 
@@ -278,13 +338,20 @@ begin
   AssertTrue(id, obj.ClassNameIs(typename));
 end;
 
+<<<<<<< HEAD
 { expected args already UTF-8 encoded }
 procedure TDOMTestBase.assertURIEquals(const id: string; scheme, path,
   host, file_, name, query, fragment: PChar; IsAbsolute: Boolean;
+=======
+// TODO: This is a very basic implementation, needs to be completed.
+procedure TDOMTestBase.assertURIEquals(const id: string; const scheme, path,
+  host, file_, name, query, fragment: DOMString; IsAbsolute: Boolean;
+>>>>>>> graemeg/fixes_2_2
   const Actual: DOMString);
 var
   URI: TURI;
 begin
+<<<<<<< HEAD
   AssertTrue(id+'#0', Actual <> '');
   URI := ParseURI(utf8Encode(Actual));
   if fragment <> nil then
@@ -309,6 +376,16 @@ end;
 function TDOMTestBase.bad_condition(const TagName: XMLString): Boolean;
 begin
   Fail('Unsupported condition: '+ AnsiString(TagName));
+=======
+  AssertTrue(id, Actual <> '');
+  URI := ParseURI(utf8Encode(Actual));
+  AssertEquals(id, URI.Document, utf8Encode(file_));
+end;
+
+function TDOMTestBase.bad_condition(const TagName: WideString): Boolean;
+begin
+  Fail('Unsupported condition: '+ TagName);
+>>>>>>> graemeg/fixes_2_2
   Result := False;
 end;
 
@@ -335,6 +412,7 @@ begin
   result := '';
 end;
 
+<<<<<<< HEAD
 procedure TDOMTestBase.LoadStringData(out Doc; const data: string);
 var
   src: TXMLInputSource;
@@ -348,5 +426,7 @@ begin
   end;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 end.
 

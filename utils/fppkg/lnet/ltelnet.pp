@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 { lTelnet CopyRight (C) 2004-2008 Ales Katona
+=======
+{ lTelnet CopyRight (C) 2004-2007 Ales Katona
+>>>>>>> graemeg/fixes_2_2
 
   This library is Free software; you can rediStribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -95,6 +99,7 @@ type
     FOnError: TLSocketErrorEvent;
     FCommandArgs: string[3];
     FOrders: TLTelnetControlChars;
+<<<<<<< HEAD
     FBuffer: array of Char;
     FBufferIndex: Integer;
     FBufferEnd: Integer;
@@ -118,6 +123,13 @@ type
     
     function GetConnected: Boolean;
     
+=======
+    FConnected: Boolean;
+    FBuffer: string;
+
+    function Question(const Command: Char; const Value: Boolean): Char;
+    
+>>>>>>> graemeg/fixes_2_2
     function GetTimeout: Integer;
     procedure SetTimeout(const Value: Integer);
 
@@ -187,7 +199,11 @@ type
     procedure SendCommand(const aCommand: Char; const How: TLHowEnum); virtual;
    public
     property Output: TMemoryStream read FOutput;
+<<<<<<< HEAD
     property Connected: Boolean read GetConnected;
+=======
+    property Connected: Boolean read FConnected;
+>>>>>>> graemeg/fixes_2_2
     property Timeout: Integer read GetTimeout write SetTimeout;
     property OnReceive: TLSocketEvent read FOnReceive write FOnReceive;
     property OnDisconnect: TLSocketEvent read FOnDisconnect write FOnDisconnect;
@@ -208,7 +224,11 @@ type
     procedure OnRe(aSocket: TLSocket);
     procedure OnCo(aSocket: TLSocket);
 
+<<<<<<< HEAD
     function React(const Operation, Command: Char): boolean; override;
+=======
+    procedure React(const Operation, Command: Char); override;
+>>>>>>> graemeg/fixes_2_2
     
     procedure SendCommand(const Command: Char; const Value: Boolean); override;
    public
@@ -264,8 +284,12 @@ constructor TLTelnet.Create(aOwner: TComponent);
 begin
   inherited Create(aOwner);
   
+<<<<<<< HEAD
   FConnection := TLTCP.Create(nil);
   FConnection.Creator := Self;
+=======
+  FConnection := TLTCP.Create(aOwner);
+>>>>>>> graemeg/fixes_2_2
   FConnection.OnCanSend := @OnCs;
   
   FOutput := TMemoryStream.Create;
@@ -426,6 +450,20 @@ begin
   end;
 end;
 
+procedure TLTelnet.OnCs(aSocket: TLSocket);
+var
+  n: Integer;
+begin
+  n := 1;
+
+  while n > 0 do begin
+    n := FConnection.SendMessage(FBuffer);
+
+    if n > 0 then
+      System.Delete(FBuffer, 1, n);
+  end;
+end;
+
 function TLTelnet.OptionIsSet(const Option: Char): Boolean;
 begin
   Result := False;
@@ -507,7 +545,11 @@ begin
   {$ifdef debug}
   Writeln('**SENT** ', TNames[Char(How)], ' ', TNames[aCommand]);
   {$endif}
+<<<<<<< HEAD
   AddToBuffer(TS_IAC + Char(How) + aCommand);
+=======
+  FBuffer := FBuffer + TS_IAC + Char(How) + aCommand;
+>>>>>>> graemeg/fixes_2_2
   OnCs(nil);
 end;
 
@@ -521,6 +563,10 @@ begin
   FConnection.OnReceive := @OnRe;
   FConnection.OnConnect := @OnCo;
 
+<<<<<<< HEAD
+=======
+  FConnected := False;
+>>>>>>> graemeg/fixes_2_2
   FPossible := [TS_ECHO, TS_HYI, TS_SGA];
   FActiveOpts := [];
   FOrders := [];
@@ -563,7 +609,11 @@ function TLTelnetClient.React(const Operation, Command: Char): boolean;
     {$ifdef debug}
     Writeln('**SENT** ', TNames[Operation], ' ', TNames[Command]);
     {$endif}
+<<<<<<< HEAD
     AddToBuffer(TS_IAC + Operation + Command);
+=======
+    FBuffer := FBuffer + TS_IAC + Operation + Command;
+>>>>>>> graemeg/fixes_2_2
     OnCs(nil);
   end;
   
@@ -573,7 +623,11 @@ function TLTelnetClient.React(const Operation, Command: Char): boolean;
     {$ifdef debug}
     Writeln('**SENT** ', TNames[Operation], ' ', TNames[Command]);
     {$endif}
+<<<<<<< HEAD
     AddToBuffer(TS_IAC + Operation + Command);
+=======
+    FBuffer := FBuffer + TS_IAC + Operation + Command;
+>>>>>>> graemeg/fixes_2_2
     OnCs(nil);
   end;
 
@@ -675,7 +729,11 @@ begin
     case Question(Command, Value) of
       TS_WILL : FActiveOpts := FActiveOpts + [Command];
     end;
+<<<<<<< HEAD
     AddToBuffer(TS_IAC + Question(Command, Value) + Command);
+=======
+    FBuffer := FBuffer + TS_IAC + Question(Command, Value) + Command;
+>>>>>>> graemeg/fixes_2_2
     OnCs(nil);
   end;
 end;
@@ -725,7 +783,11 @@ begin
     if LocalEcho and (not OptionIsSet(TS_ECHO)) and (not OptionIsSet(TS_HYI)) then
       FOutput.Write(PChar(Tmp)^, Length(Tmp));
       
+<<<<<<< HEAD
     AddToBuffer(Tmp);
+=======
+    FBuffer := FBuffer + Tmp;
+>>>>>>> graemeg/fixes_2_2
     OnCs(nil);
     
     Result := aSize;

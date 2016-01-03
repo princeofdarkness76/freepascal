@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -22,10 +23,16 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 2000-2008 by Apple Computer, Inc., all rights reserved.
+=======
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 2000-2005 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -51,6 +58,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -59,8 +78,13 @@
 
 unit TypeSelect;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -73,21 +97,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -122,6 +154,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -129,6 +163,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -373,6 +408,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -398,6 +443,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -408,6 +457,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,Events;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -435,6 +485,12 @@ uses MacTypes,Events;
  *    Applications should use the UCTypeSelect API in
  *    UnicodeUtilities.h.
  }
+=======
+
+
+{$ALIGN MAC68K}
+
+>>>>>>> graemeg/fixes_2_2
 type
 	TSCode = SInt16;
 const
@@ -449,11 +505,15 @@ type
 		tsrScript: ScriptCode;
 		tsrKeyStrokes: Str63;
 	end;
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
+=======
+>>>>>>> graemeg/fixes_2_2
 type
 	IndexToStringProcPtr = function( item: SInt16; var itemsScript: ScriptCode; var itemsStringPtr: StringPtr; yourDataPtr: UnivPtr ): Boolean;
 	IndexToStringUPP = IndexToStringProcPtr;
 {
+<<<<<<< HEAD
  *  NewIndexToStringUPP()
  *  
  *  Availability:
@@ -498,12 +558,26 @@ function InvokeIndexToStringUPP( item: SInt16; var itemsScript: ScriptCode; var 
  *  Discussion:
  *    This function is no longer recommended. Please use
  *    UCTypeSelectFlushSelectorData instead.
+=======
+ *  TypeSelectClear()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFStringUppercase instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFStringUppercase instead.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -521,17 +595,29 @@ procedure TypeSelectClear( var tsr: TypeSelectRecord ); external name '_TypeSele
  *  TypeSelectNewKey()   *** DEPRECATED ***
  *  
  *  Deprecated:
+<<<<<<< HEAD
  *    Use UCTypeSelectAddKeyToSelector instead.
  *  
  *  Discussion:
  *    This function is no longer recommended. Please use
  *    UCTypeSelectAddKeyToSelector instead.
+=======
+ *    use UCTypeSelect instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use UCTypeSelect
+ *    instead.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -543,17 +629,29 @@ function TypeSelectNewKey( const (*var*) theEvent: EventRecord; var tsr: TypeSel
  *  TypeSelectFindItem()   *** DEPRECATED ***
  *  
  *  Deprecated:
+<<<<<<< HEAD
  *    Use UCTypeSelectFindItem instead.
  *  
  *  Discussion:
  *    This function is no longer recommended. Please use
  *    UCTypeSelectFindItem instead.
+=======
+ *    use UCTypeSelect instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use UCTypeSelect
+ *    instead.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -565,17 +663,29 @@ function TypeSelectFindItem( const (*var*) tsr: TypeSelectRecord; listSize: SInt
  *  TypeSelectCompare()   *** DEPRECATED ***
  *  
  *  Deprecated:
+<<<<<<< HEAD
  *    Use UCTypeSelectCompare instead.
  *  
  *  Discussion:
  *    This function is no longer recommended. Please use
  *    UCTypeSelectCompare instead.
+=======
+ *    use CFStringUppercase instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFStringUppercase instead.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -583,6 +693,7 @@ function TypeSelectCompare( const (*var*) tsr: TypeSelectRecord; testStringScrip
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 {$endc} {TARGET_OS_MAC}
@@ -590,3 +701,42 @@ function TypeSelectCompare( const (*var*) tsr: TypeSelectRecord; testStringScrip
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+{
+ *  NewIndexToStringUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewIndexToStringUPP( userRoutine: IndexToStringProcPtr ): IndexToStringUPP; external name '_NewIndexToStringUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  DisposeIndexToStringUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeIndexToStringUPP( userUPP: IndexToStringUPP ); external name '_DisposeIndexToStringUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  InvokeIndexToStringUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeIndexToStringUPP( item: SInt16; var itemsScript: ScriptCode; var itemsStringPtr: StringPtr; yourDataPtr: UnivPtr; userUPP: IndexToStringUPP ): Boolean; external name '_InvokeIndexToStringUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

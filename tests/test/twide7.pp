@@ -2,7 +2,11 @@
 
 uses
 {$ifdef unix}
+<<<<<<< HEAD
   {$ifdef darwin}iosxwstr{$else}cwstring{$endif},
+=======
+  cwstring,
+>>>>>>> graemeg/fixes_2_2
 {$endif unix}
   sysutils;
 

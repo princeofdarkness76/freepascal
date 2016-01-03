@@ -733,7 +733,11 @@ begin
   CompilerStatus:=false;
 end;
 
+<<<<<<< HEAD
 Function  CompilerGetNamedFileTime(const filename : ansistring) : Longint;
+=======
+Function  CompilerGetNamedFileTime(const filename : string) : Longint;
+>>>>>>> graemeg/fixes_2_2
 var t: longint;
     W: PSourceWindow;
 begin
@@ -745,7 +749,11 @@ begin
   CompilerGetNamedFileTime:=t;
 end;
 
+<<<<<<< HEAD
 function CompilerOpenInputFile(const filename: ansistring): tinputfile;
+=======
+function CompilerOpenInputFile(const filename: string): tinputfile;
+>>>>>>> graemeg/fixes_2_2
 var f: tinputfile;
     W: PSourceWindow;
 begin

@@ -37,9 +37,12 @@ interface
       TDebugInfo=class
       protected
         { definitions }
+<<<<<<< HEAD
         { collect all defs in one list so we can reset them easily }
         defnumberlist      : TFPObjectList;
         deftowritelist     : TFPObjectList;
+=======
+>>>>>>> graemeg/fixes_2_2
         procedure appenddef(list:TAsmList;def:tdef);
         procedure beforeappenddef(list:TAsmList;def:tdef);virtual;
         procedure afterappenddef(list:TAsmList;def:tdef);virtual;
@@ -50,7 +53,10 @@ interface
         procedure appenddef_array(list:TAsmList;def:tarraydef);virtual;
         procedure appenddef_record(list:TAsmList;def:trecorddef);virtual;
         procedure appenddef_object(list:TAsmList;def:tobjectdef);virtual;
+<<<<<<< HEAD
         procedure appenddef_classref(list:TAsmList;def: tclassrefdef);virtual;
+=======
+>>>>>>> graemeg/fixes_2_2
         procedure appenddef_pointer(list:TAsmList;def:tpointerdef);virtual;
         procedure appenddef_string(list:TAsmList;def:tstringdef);virtual;
         procedure appenddef_procvar(list:TAsmList;def:tprocvardef);virtual;
@@ -59,7 +65,10 @@ interface
         procedure appenddef_formal(list:TAsmList;def:tformaldef);virtual;
         procedure appenddef_undefined(list:TAsmList;def: tundefineddef);virtual;
         procedure appendprocdef(list:TAsmList;def:tprocdef);virtual;
+<<<<<<< HEAD
         procedure write_remaining_defs_to_write(list:TAsmList);
+=======
+>>>>>>> graemeg/fixes_2_2
         { symbols }
         procedure appendsym(list:TAsmList;sym:tsym);
         procedure beforeappendsym(list:TAsmList;sym:tsym);virtual;
@@ -75,7 +84,10 @@ interface
         procedure appendsym_absolute(list:TAsmList;sym:tabsolutevarsym);virtual;
         procedure appendsym_property(list:TAsmList;sym:tpropertysym);virtual;
         { symtable }
+<<<<<<< HEAD
         procedure write_symtable_parasyms(list:TAsmList;paras: tparalist);
+=======
+>>>>>>> graemeg/fixes_2_2
         procedure write_symtable_syms(list:TAsmList;st:TSymtable);
         procedure write_symtable_defs(list:TAsmList;st:TSymtable);
         procedure write_symtable_procdefs(list:TAsmList;st:TSymtable);
@@ -94,8 +106,13 @@ interface
       CDebugInfo : array[tdbg] of TDebugInfoClass;
       current_debuginfo : tdebuginfo;
 
+<<<<<<< HEAD
     procedure InitDebugInfo(hp:tmodule; restore_current_debuginfo : boolean);
     procedure DoneDebugInfo(hp:tmodule;var current_debuginfo_reset : boolean);
+=======
+    procedure InitDebugInfo(hp:tmodule);
+    procedure DoneDebugInfo(hp:tmodule);
+>>>>>>> graemeg/fixes_2_2
     procedure RegisterDebugInfo(const r:tdbginfo;c:TDebugInfoClass);
 
 
@@ -166,6 +183,7 @@ implementation
 
 
     procedure TDebugInfo.appenddef_undefined(list:TAsmList;def: tundefineddef);
+<<<<<<< HEAD
       begin
       end;
 
@@ -187,15 +205,50 @@ implementation
 
 
     procedure TDebugInfo.appenddef_variant(list:TAsmList;def: tvariantdef);
+=======
+>>>>>>> graemeg/fixes_2_2
       begin
       end;
 
 
+<<<<<<< HEAD
     procedure TDebugInfo.appenddef_enum(list:TAsmList;def:tenumdef);
+=======
+    procedure TDebugInfo.appenddef_set(list:TAsmList;def: tsetdef);
+>>>>>>> graemeg/fixes_2_2
       begin
       end;
 
 
+<<<<<<< HEAD
+    procedure TDebugInfo.appenddef_file(list:TAsmList;def: tfiledef);
+=======
+    procedure TDebugInfo.appenddef_object(list:TAsmList;def: tobjectdef);
+>>>>>>> graemeg/fixes_2_2
+      begin
+      end;
+
+
+<<<<<<< HEAD
+    procedure TDebugInfo.appenddef_array(list:TAsmList;def:tarraydef);
+=======
+    procedure TDebugInfo.appenddef_variant(list:TAsmList;def: tvariantdef);
+>>>>>>> graemeg/fixes_2_2
+      begin
+      end;
+
+
+<<<<<<< HEAD
+    procedure TDebugInfo.appenddef_record(list:TAsmList;def:trecorddef);
+=======
+    procedure TDebugInfo.appenddef_enum(list:TAsmList;def:tenumdef);
+>>>>>>> graemeg/fixes_2_2
+      begin
+      end;
+
+
+<<<<<<< HEAD
+=======
     procedure TDebugInfo.appenddef_file(list:TAsmList;def: tfiledef);
       begin
       end;
@@ -211,6 +264,7 @@ implementation
       end;
 
 
+>>>>>>> graemeg/fixes_2_2
     procedure TDebugInfo.appenddef_pointer(list:TAsmList;def:tpointerdef);
       begin
       end;
@@ -260,7 +314,11 @@ implementation
           variantdef :
             appenddef_variant(list,tvariantdef(def));
           classrefdef :
+<<<<<<< HEAD
             appenddef_classref(list,tclassrefdef(def));
+=======
+            appenddef_pointer(list,tpointerdef(pvmttype));
+>>>>>>> graemeg/fixes_2_2
           setdef :
             appenddef_set(list,tsetdef(def));
           formaldef :
@@ -287,6 +345,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     procedure TDebugInfo.write_remaining_defs_to_write(list:TAsmList);
       var
         n       : integer;
@@ -530,10 +589,195 @@ implementation
                   parasyms again as well. }
                 sym.isdbgwritten:=false;
               end;
+=======
+{**************************************
+          Symbols
+**************************************}
+
+    procedure TDebugInfo.beforeappendsym(list:TAsmList;sym:tsym);
+      begin
+      end;
+
+
+    procedure TDebugInfo.afterappendsym(list:TAsmList;sym:tsym);
+      begin
+      end;
+
+
+    procedure TDebugInfo.appendsym_staticvar(list:TAsmList;sym:tstaticvarsym);
+      begin
+      end;
+
+
+    procedure TDebugInfo.appendsym_paravar(list:TAsmList;sym: tparavarsym);
+      begin
+      end;
+
+
+    procedure TDebugInfo.appendsym_localvar(list:TAsmList;sym: tlocalvarsym);
+      begin
+      end;
+
+
+    procedure TDebugInfo.appendsym_fieldvar(list:TAsmList;sym: tfieldvarsym);
+      begin
+      end;
+
+
+    procedure TDebugInfo.appendsym_const(list:TAsmList;sym:tconstsym);
+      begin
+      end;
+
+
+    procedure TDebugInfo.appendsym_label(list:TAsmList;sym: tlabelsym);
+      begin
+      end;
+
+
+    procedure TDebugInfo.appendsym_property(list:TAsmList;sym: tpropertysym);
+      begin
+      end;
+
+
+    procedure TDebugInfo.appendsym_type(list:TAsmList;sym: ttypesym);
+      begin
+      end;
+
+
+    procedure TDebugInfo.appendsym_unit(list:TAsmList;sym: tunitsym);
+      begin
+      end;
+
+
+    procedure TDebugInfo.appendsym_absolute(list:TAsmList;sym:tabsolutevarsym);
+      begin
+      end;
+
+
+    procedure TDebugInfo.appendsym(list:TAsmList;sym:tsym);
+      begin
+        if sym.isdbgwritten then
+          exit;
+        beforeappendsym(list,sym);
+        case sym.typ of
+          staticvarsym :
+            appendsym_staticvar(list,tstaticvarsym(sym));
+          unitsym:
+            appendsym_unit(list,tunitsym(sym));
+          labelsym :
+            appendsym_label(list,tlabelsym(sym));
+          localvarsym :
+            appendsym_localvar(list,tlocalvarsym(sym));
+          paravarsym :
+            appendsym_paravar(list,tparavarsym(sym));
+          constsym :
+            appendsym_const(list,tconstsym(sym));
+          typesym :
+            appendsym_type(list,ttypesym(sym));
+          enumsym :
+            { ignore enum syms, they are written by the owner }
+            ;
+          syssym :
+            { ignore sys syms, they are only of internal use }
+            ;
+          procsym :
+            { ignore proc syms, they are written by procdefs }
+            ;
+          absolutevarsym :
+            appendsym_absolute(list,tabsolutevarsym(sym));
+          propertysym :
+            appendsym_property(list,tpropertysym(sym));
+          else
+            internalerror(200601242);
+        end;
+        afterappendsym(list,sym);
+        sym.isdbgwritten:=true;
+      end;
+
+
+{**************************************
+          Symtables
+**************************************}
+
+    procedure TDebugInfo.write_symtable_defs(list:TAsmList;st:TSymtable);
+      var
+        def : tdef;
+        i   : longint;
+      begin
+        case st.symtabletype of
+          staticsymtable :
+            list.concat(tai_comment.Create(strpnew('Defs - Begin Staticsymtable')));
+          globalsymtable :
+            list.concat(tai_comment.Create(strpnew('Defs - Begin unit '+st.name^+' has index '+tostr(st.moduleid))));
+        end;
+        for i:=0 to st.DefList.Count-1 do
+          begin
+            def:=tdef(st.DefList[i]);
+            if (def.dbg_state in [dbg_state_used,dbg_state_queued]) then
+              appenddef(list,def);
+          end;
+        case st.symtabletype of
+          staticsymtable :
+            list.concat(tai_comment.Create(strpnew('Defs - End Staticsymtable')));
+          globalsymtable :
+            list.concat(tai_comment.Create(strpnew('Defs - End unit '+st.name^+' has index '+tostr(st.moduleid))));
+        end;
+      end;
+
+
+    procedure TDebugInfo.write_symtable_syms(list:TAsmList;st:TSymtable);
+      var
+        i   : longint;
+        sym : tsym;
+      begin
+        case st.symtabletype of
+          staticsymtable :
+            list.concat(tai_comment.Create(strpnew('Syms - Begin Staticsymtable')));
+          globalsymtable :
+            list.concat(tai_comment.Create(strpnew('Syms - Begin unit '+st.name^+' has index '+tostr(st.moduleid))));
+        end;
+        for i:=0 to st.SymList.Count-1 do
+          begin
+            sym:=tsym(st.SymList[i]);
+            if not(sp_hidden in sym.symoptions) and
+               (not sym.isdbgwritten) then
+              appendsym(list,sym);
+          end;
+        case st.symtabletype of
+          staticsymtable :
+            list.concat(tai_comment.Create(strpnew('Syms - End Staticsymtable')));
+          globalsymtable :
+            list.concat(tai_comment.Create(strpnew('Syms - End unit '+st.name^+' has index '+tostr(st.moduleid))));
+        end;
+      end;
+
+
+    procedure TDebugInfo.write_symtable_procdefs(list:TAsmList;st:TSymtable);
+      var
+        i   : longint;
+        def : tdef;
+      begin
+        for i:=0 to st.DefList.Count-1 do
+          begin
+            def:=tdef(st.DefList[i]);
+            case def.typ of
+              procdef :
+                begin
+                  appendprocdef(list,tprocdef(def));
+                  if assigned(tprocdef(def).localst) then
+                    write_symtable_procdefs(list,tprocdef(def).localst);
+                end;
+              objectdef :
+                begin
+                  write_symtable_procdefs(list,tobjectdef(def).symtable);
+                end;
+            end;
+>>>>>>> graemeg/fixes_2_2
           end;
       end;
 
 
+<<<<<<< HEAD
     procedure TDebugInfo.write_symtable_syms(list:TAsmList;st:TSymtable);
       var
         i   : longint;
@@ -596,6 +840,15 @@ implementation
         hp:=tmodule(loaded_units.first);
         while assigned(hp) do
           begin
+=======
+    procedure TDebugInfo.reset_unit_type_info;
+      var
+        hp : tmodule;
+      begin
+        hp:=tmodule(loaded_units.first);
+        while assigned(hp) do
+          begin
+>>>>>>> graemeg/fixes_2_2
             hp.is_dbginfo_written:=false;
             hp:=tmodule(hp.next);
           end;
@@ -629,7 +882,11 @@ implementation
                            Init / Done
 ****************************************************************************}
 
+<<<<<<< HEAD
     procedure InitDebugInfo(hp:tmodule; restore_current_debuginfo : boolean);
+=======
+    procedure InitDebugInfo(hp:tmodule);
+>>>>>>> graemeg/fixes_2_2
       begin
         if not assigned(CDebugInfo[target_dbg.id]) then
           begin
@@ -637,6 +894,7 @@ implementation
             exit;
           end;
         hp.DebugInfo:=CDebugInfo[target_dbg.id].Create;
+<<<<<<< HEAD
         if restore_current_debuginfo then
           begin
             if current_debuginfo=nil then
@@ -657,6 +915,15 @@ implementation
                 current_debuginfo:=nil;
                 current_debuginfo_reset:=true;
               end;
+=======
+      end;
+
+
+    procedure DoneDebugInfo(hp:tmodule);
+      begin
+        if assigned(hp.DebugInfo) then
+          begin
+>>>>>>> graemeg/fixes_2_2
             hp.DebugInfo.Free;
             hp.DebugInfo:=nil;
           end;

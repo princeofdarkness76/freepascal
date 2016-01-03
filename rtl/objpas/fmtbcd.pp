@@ -862,10 +862,13 @@ IMPLEMENTATION
       procedure BinaryOp(var Left: TVarData; const Right: TVarData; const Operation: TVarOp); override;
       procedure Clear(var V: TVarData); override;
       procedure Copy(var Dest: TVarData; const Source: TVarData; const Indirect: Boolean); override;
+<<<<<<< HEAD
       function CompareOp(const Left, Right: TVarData; const Operation: TVarOp): Boolean; override;
       procedure Compare(const Left, Right: TVarData; var Relationship: TVarCompareResult); override;
       procedure Cast(var Dest: TVarData; const Source: TVarData); override;
       procedure CastTo(var Dest: TVarData; const Source: TVarData; const aVarType: TVarType); override;
+=======
+>>>>>>> graemeg/fixes_2_2
     end;
 
     TFMTBcdVarData = CLASS(TPersistent)
@@ -1643,6 +1646,16 @@ IMPLEMENTATION
           pack_BCD ( bh, result );
        _endSELECT;
      end;
+<<<<<<< HEAD
+=======
+{$warnings off}
+  function VarToBCD ( const aValue : Variant ) : tBCD;
+
+    begin
+      not_implemented;
+     end;
+{$warnings on}
+>>>>>>> graemeg/fixes_2_2
 
   function CurrToBCD ( const Curr : currency;
                          var BCD : tBCD;
@@ -3991,6 +4004,7 @@ procedure TFMTBcdFactory.Copy(var Dest: TVarData; const Source: TVarData; const 
       Dest.VPointer:=Source.VPointer
     else
       Dest.VPointer:=TFMTBcdVarData.Create(TFMTBcdVarData(Source.VPointer).BCD);
+<<<<<<< HEAD
     Dest.VType:=VarType;
   end;
 
@@ -4021,6 +4035,10 @@ begin
   else
     inherited;
 end;
+=======
+    Dest.VType:=Vartype;
+  end;
+>>>>>>> graemeg/fixes_2_2
 
 {$if declared ( myMinIntBCD ) }
 (*

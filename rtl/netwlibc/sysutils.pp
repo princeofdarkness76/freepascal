@@ -285,8 +285,13 @@ begin
   end;
   SystemEncodedPath := ToSingleByteEncodedFileName(Path);
   Rslt.FindData._attr := attr;
+<<<<<<< HEAD
   p := length (SystemEncodedPath);
   while (p > 0) and (not (SystemEncodedPath[p] in AllowDirectorySeparators)) do
+=======
+  p := length (path);
+  while (p > 0) and (not (path[p] in AllowDirectorySeparators)) do
+>>>>>>> graemeg/fixes_2_2
     dec (p);
   if p > 0 then
   begin

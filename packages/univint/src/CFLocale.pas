@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 2002-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -35,6 +36,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+	Copyright (c) 2002-2005, Apple, Inc. All rights reserved.
+}
+{	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
+{	  Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -43,8 +56,13 @@
 
 unit CFLocale;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -57,21 +75,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -106,6 +132,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -113,6 +141,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -330,6 +359,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -355,6 +394,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -365,8 +408,11 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFArray,CFDictionary;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -374,6 +420,7 @@ uses MacTypes,CFBase,CFArray,CFDictionary;
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -392,6 +439,9 @@ type
 =======
 	CFLocaleRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	CFLocaleRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 
 function CFLocaleGetTypeID: CFTypeID; external name '_CFLocaleGetTypeID';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
@@ -431,6 +481,7 @@ function CFLocaleCopyISOCountryCodes: CFArrayRef; external name '_CFLocaleCopyIS
 function CFLocaleCopyISOCurrencyCodes: CFArrayRef; external name '_CFLocaleCopyISOCurrencyCodes';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 	// Returns an array of CFStrings that represents all known legal ISO
+<<<<<<< HEAD
 	// currency codes.  Note: some of these currencies may be obsolete, or
 	// represent other financial instruments.
 
@@ -479,6 +530,15 @@ function CFLocaleCreateCanonicalLanguageIdentifierFromString( allocator: CFAlloc
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 	// Map an arbitrary language identification string (something close at
 	// least) to a canonical language identifier.
+=======
+	// currency codes.  Note: some of these may not have any supporting
+	// locale data in Mac OS X.
+
+function CFLocaleCreateCanonicalLanguageIdentifierFromString( allocator: CFAllocatorRef; localeIdentifier: CFStringRef ): CFStringRef; external name '_CFLocaleCreateCanonicalLanguageIdentifierFromString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+	// Map an arbitrary locale identification string (something close at
+	// least) to a canonical language-only identifier.
+>>>>>>> graemeg/fixes_2_2
 
 function CFLocaleCreateCanonicalLocaleIdentifierFromString( allocator: CFAllocatorRef; localeIdentifier: CFStringRef ): CFStringRef; external name '_CFLocaleCreateCanonicalLocaleIdentifierFromString';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
@@ -489,6 +549,7 @@ function CFLocaleCreateCanonicalLocaleIdentifierFromScriptManagerCodes( allocato
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 	// Map a Mac OS LangCode and RegionCode to the canonical locale identifier.
 
+<<<<<<< HEAD
 function CFLocaleCreateLocaleIdentifierFromWindowsLocaleCode( allocator: CFAllocatorRef; lcid: UInt32 ): CFStringRef; external name '_CFLocaleCreateLocaleIdentifierFromWindowsLocaleCode';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -567,6 +628,8 @@ function CFLocaleGetLanguageLineDirection( isoLangCode: CFStringRef ): CFLocaleL
 =======
 >>>>>>> origin/cpstrnew
 
+=======
+>>>>>>> graemeg/fixes_2_2
 function CFLocaleCreateComponentsFromLocaleIdentifier( allocator: CFAllocatorRef; localeID: CFStringRef ): CFDictionaryRef; external name '_CFLocaleCreateComponentsFromLocaleIdentifier';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 	// Parses a locale ID consisting of language, script, country, variant,
@@ -612,6 +675,7 @@ function CFLocaleCopyDisplayNameForPropertyValue( displayLocale: CFLocaleRef; ke
 	// not all locale property keys have values with display name values.
 
 
+<<<<<<< HEAD
 var kCFLocaleCurrentLocaleDidChangeNotification: CFStringRef; external name '_kCFLocaleCurrentLocaleDidChangeNotification'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -632,6 +696,8 @@ var kCFLocaleCurrentLocaleDidChangeNotification: CFStringRef; external name '_kC
 >>>>>>> origin/cpstrnew
 
 
+=======
+>>>>>>> graemeg/fixes_2_2
 // Locale Keys
 var kCFLocaleIdentifier: CFStringRef; external name '_kCFLocaleIdentifier'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -664,6 +730,7 @@ var kCFLocaleCurrencySymbol: CFStringRef; external name '_kCFLocaleCurrencySymbo
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 var kCFLocaleCurrencyCode: CFStringRef; external name '_kCFLocaleCurrencyCode'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *) // ISO 3-letter currency code
+<<<<<<< HEAD
 var kCFLocaleCollatorIdentifier: CFStringRef; external name '_kCFLocaleCollatorIdentifier'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -704,6 +771,8 @@ var kCFLocaleAlternateQuotationEndDelimiterKey: CFStringRef; external name '_kCF
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
 
 // Values for kCFLocaleCalendarIdentifier
 var kCFGregorianCalendar: CFStringRef; external name '_kCFGregorianCalendar'; (* attribute const *)
@@ -720,6 +789,7 @@ var kCFIslamicCivilCalendar: CFStringRef; external name '_kCFIslamicCivilCalenda
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 var kCFJapaneseCalendar: CFStringRef; external name '_kCFJapaneseCalendar'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 var kCFRepublicOfChinaCalendar: CFStringRef; external name '_kCFRepublicOfChinaCalendar'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -761,3 +831,13 @@ var kCFISO8601Calendar: CFStringRef; external name '_kCFISO8601Calendar'; (* att
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+
+
+
+{#endif}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

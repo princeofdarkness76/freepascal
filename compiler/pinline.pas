@@ -121,7 +121,11 @@ implementation
               classh := classh.childof;
             if is_new then
               begin
+<<<<<<< HEAD
                 sym:=search_struct_member(classh,'CREATE');
+=======
+                sym:=search_class_member(classh,'CREATE');
+>>>>>>> graemeg/fixes_2_2
                 p2 := cloadvmtaddrnode.create(ctypenode.create(p.resultdef));
               end
             else

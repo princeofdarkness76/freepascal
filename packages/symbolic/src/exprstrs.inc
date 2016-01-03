@@ -15,8 +15,11 @@
  **********************************************************************}
 
 resourcestring
+<<<<<<< HEAD
    SEvalUnknownParameterType='QuickEvaluate: unknown variable type for parameter "%s".';
    SEvalUndefinedVar	    ='QuickEvaluate: No value for parameter "%s".';
+=======
+>>>>>>> graemeg/fixes_2_2
    SEvalIE                  ='TEvaluator: Internal Error: ';
    SEvalStackDepthExceeded  ='TEvaluator: Stack depth Evaluate exceeded';
    SEvalBadNumberOfVars     ='TEvaluator: Invalid number of variables';

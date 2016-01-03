@@ -5,6 +5,7 @@
  *
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {  Pascal Translation Updated:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
@@ -31,6 +32,17 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+{	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
+{     Pascal Translation Updated:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -39,8 +51,13 @@
 
 unit AXUIElement;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -53,21 +70,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -102,6 +127,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -109,6 +136,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -303,6 +331,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -328,6 +366,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -338,6 +380,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFArray,AXErrors,CFRunLoop,CGRemoteOperation,MacOSXPosix;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -358,6 +401,9 @@ uses MacTypes,CFBase,CFArray,AXErrors,CFRunLoop,CGRemoteOperation,MacOSXPosix;
 >>>>>>> origin/cpstrnew
 {$ALIGN MAC68K}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ALIGN MAC68K}
+>>>>>>> graemeg/fixes_2_2
 
 function AXAPIEnabled: Boolean; external name '_AXAPIEnabled';
 function AXIsProcessTrusted: Boolean; external name '_AXIsProcessTrusted';
@@ -367,6 +413,7 @@ function AXMakeProcessTrusted( executablePath: CFStringRef ): AXError; external 
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -385,6 +432,9 @@ type
 =======
 	AXUIElementRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	AXUIElementRef    = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 
 const
 	kAXCopyMultipleAttributeOptionStopOnError = $1;
@@ -437,6 +487,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	AXObserverRef = ^__AXObserver; { an opaque type }
 	__AXObserver = record end;
 =======
@@ -454,6 +505,12 @@ type
 
 type
 	AXObserverCallback = procedure( observer: AXObserverRef; element: AXUIElementRef; notification: CFStringRef; refcon: UnivPtr );
+=======
+	AXObserverRef    = ^SInt32; { an opaque 32-bit type }
+
+type
+    AXObserverCallback = procedure( observer: AXObserverRef; element: AXUIElementRef; notification: CFStringRef; refcon: UnivPtr );
+>>>>>>> graemeg/fixes_2_2
 
 function AXObserverGetTypeID: CFTypeID; external name '_AXObserverGetTypeID';
 
@@ -464,8 +521,12 @@ function AXObserverRemoveNotification( observer: AXObserverRef; element: AXUIEle
 
 function AXObserverGetRunLoopSource( observer: AXObserverRef ): CFRunLoopSourceRef; external name '_AXObserverGetRunLoopSource';
 
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+end.
+>>>>>>> graemeg/fixes_2_2

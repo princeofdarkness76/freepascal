@@ -37,7 +37,11 @@ Type
   PDWord    = ^DWord;
   PDouble   = ^Double;
 $endif}
+<<<<<<< HEAD
 //  PPPChar   = ^PPChar;
+=======
+  PPPChar   = ^PPChar;
+>>>>>>> graemeg/fixes_2_2
   void      = pointer;
   cint      = longint;
   TNLMHandle = Pointer;

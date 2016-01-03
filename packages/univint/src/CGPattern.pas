@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 2000-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -40,6 +41,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+ * Copyright (c) 2000-2002 Apple Computer, Inc.
+ * All rights reserved.
+ }
+{       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -48,8 +61,13 @@
 
 unit CGPattern;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -62,21 +80,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -111,6 +137,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -118,6 +146,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -330,6 +359,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -355,6 +394,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -365,8 +408,11 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CGGeometry,CGAffineTransforms,CGBase,CGContext;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -374,6 +420,7 @@ uses MacTypes,CFBase,CGGeometry,CGAffineTransforms,CGBase,CGContext;
 
 
 { kCGPatternTilingNoDistortion: The pattern cell is not distorted when
+<<<<<<< HEAD
    painted, however the spacing between pattern cells may vary by as much as
    1 device pixel.
 
@@ -385,6 +432,19 @@ uses MacTypes,CFBase,CGGeometry,CGAffineTransforms,CGBase,CGContext;
    with kCGPatternTilingConstantSpacingMinimalDistortion, however the
    pattern cell may be distorted additionally to permit a more efficient
    implementation. }
+=======
+ * painted, however the spacing between pattern cells may vary by as much
+ * as 1 device pixel.
+ *
+ * kCGPatternTilingConstantSpacingMinimalDistortion: Pattern cells are
+ * spaced consistently, however the pattern cell may be distorted by as
+ * much as 1 device pixel when the pattern is painted.
+ *
+ * kCGPatternTilingConstantSpacing: Pattern cells are spaced consistently
+ * as with kCGPatternTilingConstantSpacingMinimalDistortion, however the
+ * pattern cell may be distorted additionally to permit a more efficient
+ * implementation. }
+>>>>>>> graemeg/fixes_2_2
 
 type
 	CGPatternTiling = SInt32;
@@ -393,6 +453,7 @@ const
 	kCGPatternTilingConstantSpacingMinimalDistortion = 1;
 	kCGPatternTilingConstantSpacing = 2;
 
+<<<<<<< HEAD
 { The drawing of the pattern is delegated to the callbacks. The callbacks
    may be called one or many times to draw the pattern.
     `version' is the version number of the structure passed in as a
@@ -404,21 +465,43 @@ const
 
 type
 	CGPatternDrawPatternCallback = procedure( info: UnivPtr; c: CGContextRef );
+=======
+
+{ The drawing of the pattern is delegated to the callbacks.  The callbacks
+ * may be called one or many times to draw the pattern.
+ *
+ * `version' is the version number of the structure passed in as a
+ * parameter to the CGPattern creation functions. The structure defined
+ * below is version 0.
+ *
+ * `drawPattern' should draw the pattern in the context `c'. `info' is the
+ * parameter originally passed to the CGPattern creation functions.
+ *
+ * `releaseInfo' is called when the pattern is deallocated. }
+
+type
+	CGPatternDrawPatternCallback = procedure( info: UnivPtr; c: CGContextRef );
+type
+>>>>>>> graemeg/fixes_2_2
 	CGPatternReleaseInfoCallback = procedure( info: UnivPtr );
 
 type
 	CGPatternCallbacksPtr = ^CGPatternCallbacks;
 	CGPatternCallbacks = record
 		version: UInt32;
+<<<<<<< HEAD
 {$ifc TARGET_CPU_64}
 		__alignment_dummy: UInt32;
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 		drawPattern: CGPatternDrawPatternCallback;
 		releaseInfo: CGPatternReleaseInfoCallback;
 	end;
 
 { Return the CFTypeID for CGPatternRefs. }
 
+<<<<<<< HEAD
 function CGPatternGetTypeID: CFTypeID; external name '_CGPatternGetTypeID';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 
@@ -459,3 +542,23 @@ procedure CGPatternRelease( pattern: CGPatternRef ); external name '_CGPatternRe
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+function CGPatternGetTypeID: CFTypeID; external name '_CGPatternGetTypeID'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+{ Create a pattern. }
+
+function CGPatternCreate( info: UnivPtr; bounds: CGRect; matrix: CGAffineTransform; xStep: Float32; yStep: Float32; tiling: CGPatternTiling; isColored: CBool; const (*var*) callbacks: CGPatternCallbacks ): CGPatternRef; external name '_CGPatternCreate';
+
+{ Equivalent to `CFRetain(pattern)', except it doesn't crash (as CF does)
+ * if `pattern' is NULL. }
+
+function CGPatternRetain( pattern: CGPatternRef ): CGPatternRef; external name '_CGPatternRetain';
+
+{ Equivalent to `CFRelease(pattern)', except it doesn't crash (as CF does)
+ * if `pattern' is NULL. }
+
+procedure CGPatternRelease( pattern: CGPatternRef ); external name '_CGPatternRelease';
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

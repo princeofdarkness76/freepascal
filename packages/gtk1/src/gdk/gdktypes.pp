@@ -8,6 +8,10 @@
 {$ifdef read_interface}
 
    type
+<<<<<<< HEAD
+=======
+     PPPChar   = ^PPchar;
+>>>>>>> graemeg/fixes_2_2
      PPguchar  = Pguchar;
      PPgchar   = ^Pgchar;
      PPPgchar  = ^PPgchar;

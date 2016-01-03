@@ -1279,6 +1279,7 @@ const ErrorS : array[400..408,1..6] of char =
       'spegam',
       'spelga');
 
+<<<<<<< HEAD
 //var ErrFil : text;
 
 begin
@@ -1291,6 +1292,20 @@ begin
          ExitCode := 201
        end;
 //     Close(ErrFil)
+=======
+var ErrFil : text;
+
+begin
+     ExitProc := ExitSave;
+     Assign(ErrFil, 'CON');
+     ReWrite(ErrFil);
+     if (ExitCode>=400) AND (ExitCode<=408) then
+       begin
+         write(ErrFil, 'critical error in ', ErrorS[ExitCode]);
+         ExitCode := 201
+       end;
+     Close(ErrFil)
+>>>>>>> graemeg/fixes_2_2
 end;
 
 begin

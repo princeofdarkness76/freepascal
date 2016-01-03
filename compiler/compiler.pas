@@ -126,6 +126,7 @@ uses
 {$ifdef symbian}
   ,i_symbian
 {$endif symbian}
+<<<<<<< HEAD
 {$ifdef nativent}
   ,i_nativent
 {$endif nativent}
@@ -147,6 +148,11 @@ uses
   ,globtype;
 
 function Compile(const cmd:TCmdStr):longint;
+=======
+  ;
+
+function Compile(const cmd:string):longint;
+>>>>>>> graemeg/fixes_2_2
 
 implementation
 

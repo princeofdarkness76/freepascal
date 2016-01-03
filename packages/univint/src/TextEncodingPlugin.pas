@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       CarbonCore/TextEncodingPlugin.h
  
      Contains:   Required interface for Text Encoding Converter-Plugins
@@ -28,10 +29,21 @@
  
      Copyright:  © 1996-2008 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/cpstrnew
+=======
+     File:       TextEncodingPlugin.p
+ 
+     Contains:   Required interface for Text Encoding Converter-Plugins
+ 
+     Version:    Technology: Mac OS 8
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1996-2002 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -58,6 +70,19 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -66,8 +91,13 @@
 
 unit TextEncodingPlugin;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -80,21 +110,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -129,6 +167,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -136,6 +176,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -390,6 +431,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -415,6 +466,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -425,6 +480,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,TextCommon,TextEncodingConverter;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -449,6 +505,9 @@ uses MacTypes,TextCommon,TextEncodingConverter;
 {$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
+=======
+
+>>>>>>> graemeg/fixes_2_2
 
 {$ALIGN MAC68K}
 
@@ -458,6 +517,7 @@ uses MacTypes,TextCommon,TextEncodingConverter;
   ####################################################################################
 }
 {
+<<<<<<< HEAD
    This constant is needed for MacOS X development only. It is the name in which the
    function to grab the plugin's dispatch table must go by. 
 }
@@ -486,11 +546,14 @@ const
 	kTECResourceID = 128;
 
 {
+=======
+>>>>>>> graemeg/fixes_2_2
   ####################################################################################
         Structs
   ####################################################################################
 }
 
+<<<<<<< HEAD
 { These structs are needed for TEC plugins.}
 
 type
@@ -687,10 +750,202 @@ const
 	kTECPluginDispatchTableVersion1_1 = $00010001; { 1.1 releases}
 	kTECPluginDispatchTableVersion1_2 = $00010002; { 1.2 releases}
 	kTECPluginDispatchTableCurrentVersion = kTECPluginDispatchTableVersion1_2;
+=======
+type
+	TECBufferContextRecPtr = ^TECBufferContextRec;
+	TECBufferContextRec = record
+		textInputBuffer:		TextPtr;
+		textInputBufferEnd:		TextPtr;
+		textOutputBuffer:		TextPtr;
+		textOutputBufferEnd:	TextPtr;
+		encodingInputBuffer:	TextEncodingRunPtr;
+		encodingInputBufferEnd:	TextEncodingRunPtr;
+		encodingOutputBuffer:	TextEncodingRunPtr;
+		encodingOutputBufferEnd: TextEncodingRunPtr;
+	end;
+
+	TECPluginStateRecPtr = ^TECPluginStateRec;
+	TECPluginStateRec = record
+		state1:					SInt8;
+		state2:					SInt8;
+		state3:					SInt8;
+		state4:					SInt8;
+		longState1:				UInt32;
+		longState2:				UInt32;
+		longState3:				UInt32;
+		longState4:				UInt32;
+	end;
+
+	TECConverterContextRecPtr = ^TECConverterContextRec;
+	TECConverterContextRec = record
+																		{  public - manipulated externally and by plugin }
+		pluginRec:				Ptr;
+		sourceEncoding:			TextEncoding;
+		destEncoding:			TextEncoding;
+		reserved1:				UInt32;
+		reserved2:				UInt32;
+		bufferContext:			TECBufferContextRec;
+																		{  private - manipulated only within Plugin }
+		contextRefCon:			UInt32;
+		conversionProc:			ProcPtr;
+		flushProc:				ProcPtr;
+		clearContextInfoProc:	ProcPtr;
+		options1:				UInt32;
+		options2:				UInt32;
+		pluginState:			TECPluginStateRec;
+	end;
+
+	TECSnifferContextRecPtr = ^TECSnifferContextRec;
+	TECSnifferContextRec = record
+																		{  public - manipulated externally }
+		pluginRec:				Ptr;
+		encoding:				TextEncoding;
+		maxErrors:				ItemCount;
+		maxFeatures:			ItemCount;
+		textInputBuffer:		TextPtr;
+		textInputBufferEnd:		TextPtr;
+		numFeatures:			ItemCount;
+		numErrors:				ItemCount;
+																		{  private - manipulated only within Plugin }
+		contextRefCon:			UInt32;
+		sniffProc:				ProcPtr;
+		clearContextInfoProc:	ProcPtr;
+		pluginState:			TECPluginStateRec;
+	end;
+
+	{
+	  ####################################################################################
+	        Functional Messages
+	  ####################################################################################
+	}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginNewEncodingConverterPtr = function(var newEncodingConverter: TECObjectRef; var plugContext: TECConverterContextRec; inputEncoding: TextEncoding; outputEncoding: TextEncoding): OSStatus;
+{$elsec}
+	TECPluginNewEncodingConverterPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginClearContextInfoPtr = function(encodingConverter: TECObjectRef; var plugContext: TECConverterContextRec): OSStatus;
+{$elsec}
+	TECPluginClearContextInfoPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginConvertTextEncodingPtr = function(encodingConverter: TECObjectRef; var plugContext: TECConverterContextRec): OSStatus;
+{$elsec}
+	TECPluginConvertTextEncodingPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginFlushConversionPtr = function(encodingConverter: TECObjectRef; var plugContext: TECConverterContextRec): OSStatus;
+{$elsec}
+	TECPluginFlushConversionPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginDisposeEncodingConverterPtr = function(newEncodingConverter: TECObjectRef; var plugContext: TECConverterContextRec): OSStatus;
+{$elsec}
+	TECPluginDisposeEncodingConverterPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginNewEncodingSnifferPtr = function(var encodingSniffer: TECSnifferObjectRef; var snifContext: TECSnifferContextRec; inputEncoding: TextEncoding): OSStatus;
+{$elsec}
+	TECPluginNewEncodingSnifferPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginClearSnifferContextInfoPtr = function(encodingSniffer: TECSnifferObjectRef; var snifContext: TECSnifferContextRec): OSStatus;
+{$elsec}
+	TECPluginClearSnifferContextInfoPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginSniffTextEncodingPtr = function(encodingSniffer: TECSnifferObjectRef; var snifContext: TECSnifferContextRec): OSStatus;
+{$elsec}
+	TECPluginSniffTextEncodingPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginDisposeEncodingSnifferPtr = function(encodingSniffer: TECSnifferObjectRef; var snifContext: TECSnifferContextRec): OSStatus;
+{$elsec}
+	TECPluginDisposeEncodingSnifferPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginGetCountAvailableTextEncodingsPtr = function(availableEncodings: TextEncodingPtr; maxAvailableEncodings: ItemCount; var actualAvailableEncodings: ItemCount): OSStatus;
+{$elsec}
+	TECPluginGetCountAvailableTextEncodingsPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginGetCountAvailableTextEncodingPairsPtr = function(availableEncodings: TECConversionInfoPtr; maxAvailableEncodings: ItemCount; var actualAvailableEncodings: ItemCount): OSStatus;
+{$elsec}
+	TECPluginGetCountAvailableTextEncodingPairsPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginGetCountDestinationTextEncodingsPtr = function(inputEncoding: TextEncoding; destinationEncodings: TextEncodingPtr; maxDestinationEncodings: ItemCount; var actualDestinationEncodings: ItemCount): OSStatus;
+{$elsec}
+	TECPluginGetCountDestinationTextEncodingsPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginGetCountSubTextEncodingsPtr = function(inputEncoding: TextEncoding; subEncodings: TextEncodingPtr; maxSubEncodings: ItemCount; var actualSubEncodings: ItemCount): OSStatus;
+{$elsec}
+	TECPluginGetCountSubTextEncodingsPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginGetCountAvailableSniffersPtr = function(availableEncodings: TextEncodingPtr; maxAvailableEncodings: ItemCount; var actualAvailableEncodings: ItemCount): OSStatus;
+{$elsec}
+	TECPluginGetCountAvailableSniffersPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginGetTextEncodingInternetNamePtr = function(textEncoding_: TextEncoding; var encodingName: Str255): OSStatus;
+{$elsec}
+	TECPluginGetTextEncodingInternetNamePtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginGetTextEncodingFromInternetNamePtr = function(var textEncoding_: TextEncoding; encodingName: Str255): OSStatus;
+{$elsec}
+	TECPluginGetTextEncodingFromInternetNamePtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginGetCountWebEncodingsPtr = function(availableEncodings: TextEncodingPtr; maxAvailableEncodings: ItemCount; var actualAvailableEncodings: ItemCount): OSStatus;
+{$elsec}
+	TECPluginGetCountWebEncodingsPtr = ProcPtr;
+{$endc}
+
+{$ifc TYPED_FUNCTION_POINTERS}
+	TECPluginGetCountMailEncodingsPtr = function(availableEncodings: TextEncodingPtr; maxAvailableEncodings: ItemCount; var actualAvailableEncodings: ItemCount): OSStatus;
+{$elsec}
+	TECPluginGetCountMailEncodingsPtr = ProcPtr;
+{$endc}
+
+	{
+	  ####################################################################################
+	        Dispatch Table Definition
+	  ####################################################################################
+	}
+
+
+const
+	kTECPluginDispatchTableVersion1 = $00010000;				{  1.0 through 1.0.3 releases }
+	kTECPluginDispatchTableVersion1_1 = $00010001;				{  1.1 releases }
+	kTECPluginDispatchTableVersion1_2 = $00010002;				{  1.2 releases }
+	kTECPluginDispatchTableCurrentVersion = $00010002;
+
+>>>>>>> graemeg/fixes_2_2
 
 type
 	TECPluginDispatchTablePtr = ^TECPluginDispatchTable;
 	TECPluginDispatchTable = record
+<<<<<<< HEAD
 		version: TECPluginVersion;
 		compatibleVersion: TECPluginVersion;
 		PluginID: TECPluginSignature;
@@ -701,11 +956,24 @@ type
 		PluginFlushConversion: TECPluginFlushConversionPtr;
 		PluginDisposeEncodingConverter: TECPluginDisposeEncodingConverterPtr;
 
+=======
+		version:				TECPluginVersion;
+		compatibleVersion:		TECPluginVersion;
+		PluginID:				TECPluginSignature;
+		PluginNewEncodingConverter: TECPluginNewEncodingConverterPtr;
+		PluginClearContextInfo:	TECPluginClearContextInfoPtr;
+		PluginConvertTextEncoding: TECPluginConvertTextEncodingPtr;
+		PluginFlushConversion:	TECPluginFlushConversionPtr;
+		PluginDisposeEncodingConverter: TECPluginDisposeEncodingConverterPtr;
+>>>>>>> graemeg/fixes_2_2
 		PluginNewEncodingSniffer: TECPluginNewEncodingSnifferPtr;
 		PluginClearSnifferContextInfo: TECPluginClearSnifferContextInfoPtr;
 		PluginSniffTextEncoding: TECPluginSniffTextEncodingPtr;
 		PluginDisposeEncodingSniffer: TECPluginDisposeEncodingSnifferPtr;
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/fixes_2_2
 		PluginGetCountAvailableTextEncodings: TECPluginGetCountAvailableTextEncodingsPtr;
 		PluginGetCountAvailableTextEncodingPairs: TECPluginGetCountAvailableTextEncodingPairsPtr;
 		PluginGetCountDestinationTextEncodings: TECPluginGetCountDestinationTextEncodingsPtr;
@@ -713,6 +981,7 @@ type
 		PluginGetCountAvailableSniffers: TECPluginGetCountAvailableSniffersPtr;
 		PluginGetCountWebTextEncodings: TECPluginGetCountWebEncodingsPtr;
 		PluginGetCountMailTextEncodings: TECPluginGetCountMailEncodingsPtr;
+<<<<<<< HEAD
 
 		PluginGetTextEncodingInternetName: TECPluginGetTextEncodingInternetNamePtr;
 		PluginGetTextEncodingFromInternetName: TECPluginGetTextEncodingFromInternetNamePtr;
@@ -734,3 +1003,14 @@ type
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+		PluginGetTextEncodingInternetName: TECPluginGetTextEncodingInternetNamePtr;
+		PluginGetTextEncodingFromInternetName: TECPluginGetTextEncodingFromInternetNamePtr;
+	end;
+
+
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

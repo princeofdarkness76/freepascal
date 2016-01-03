@@ -146,6 +146,7 @@ interface
              system_powerpc64_embedded, { 58 }
              system_i386_symbian,       { 59 }
              system_arm_symbian,        { 60 }
+<<<<<<< HEAD
              system_x86_64_darwin,      { 61 }
              system_avr_embedded,       { 62 }
              system_i386_haiku,         { 63 }
@@ -156,6 +157,9 @@ interface
              system_i386_nativent,      { 68 }
              system_i386_iphonesim,     { 69 }
              system_powerpc_wii         { 70 }
+=======
+             system_x86_64_darwin       { 61 }
+>>>>>>> graemeg/fixes_2_2
        );
 
      type
@@ -202,7 +206,12 @@ interface
             ,res_gnu_windres,res_watcom_wrc_os2
             ,res_m68k_palmos,res_m68k_mpw
             ,res_powerpc_mpw,res_elf
+<<<<<<< HEAD
             ,res_win64_gorc, res_macho, res_ext
+=======
+            ,res_gnu_wince_windres
+            ,res_win64_gorc
+>>>>>>> graemeg/fixes_2_2
        );
 
        tresinfoflags = (res_external_file,res_arch_in_file_name
@@ -288,11 +297,19 @@ interface
        tresinfo = record
           id      : tres;
           { Compiler for resource (.rc or .res) to obj }
+<<<<<<< HEAD
           resbin  : string[10];
           rescmd  : string[50];
           { Optional compiler for resource script (.rc) to binary resource (.res). }
           { If it is not provided resbin and rescmd will be used.                 }
           rcbin   : string[10];
+=======
+          resbin  : string[8];
+          rescmd  : string[50];
+          { Optional compiler for resource script (.rc) to binary resource (.res). }
+          { If it is not provided resbin and rescmd will be used.                 }
+          rcbin   : string[8];
+>>>>>>> graemeg/fixes_2_2
           rccmd   : string[50];
           resourcefileclass : TAbstractResourceFileClass;
           resflags : set of tresinfoflags;
@@ -331,6 +348,7 @@ interface
             tf_no_pic_supported,
             tf_pic_default,
             { the os does some kind of stack checking and it can be converted into a rte 202 }
+<<<<<<< HEAD
             tf_no_generic_stackcheck,
             tf_has_winlike_resources,
             tf_safecall_clearstack,             // With this flag set, after safecall calls the caller cleans up the stack
@@ -364,6 +382,9 @@ interface
             tf_safecall_exceptions              // Exceptions in safecall calls are not raised, but passed to the caller as an ordinal (hresult) in the function result.
                                                 // The original result (if it exists) is passed as an extra parameter
 >>>>>>> origin/cpstrnew
+=======
+            tf_no_generic_stackcheck
+>>>>>>> graemeg/fixes_2_2
        );
 
        psysteminfo = ^tsysteminfo;
@@ -580,6 +601,10 @@ interface
 
        { systems supporting "blocks" }
        systems_blocks_supported = systems_darwin;
+
+       { all darwin systems }
+       systems_darwin = [system_powerpc_darwin,system_i386_darwin,
+                         system_powerpc64_darwin,system_x86_64_darwin];
 
        { all systems supporting exports from programs or units }
        systems_unit_program_exports = [system_i386_win32,
@@ -1149,14 +1174,19 @@ begin
     default_target(system_i386_darwin);
     {$define default_target_set}
    {$endif}
+<<<<<<< HEAD
    {$ifdef android}
     {$define default_target_set}
     default_target(system_i386_android);
    {$endif}
   {$endif cpui386}
+=======
+  {$endif cpu86}
+
+>>>>>>> graemeg/fixes_2_2
   { default is linux }
   {$ifndef default_target_set}
-   default_target(system_i386_linux);
+    default_target(system_i386_linux);
   {$endif default_target_set}
 {$endif i386}
 
@@ -1185,6 +1215,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    {$ifdef openbsd}
     default_target(system_x86_64_openbsd);
     {$define default_target_set}
@@ -1205,6 +1236,8 @@ begin
     default_target(system_x86_64_solaris);
     {$define default_target_set}
    {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
    {$ifdef darwin}
     default_target(system_x86_64_darwin);
     {$define default_target_set}
@@ -1252,6 +1285,7 @@ begin
     default_target(source_info.system);
     {$define default_target_set}
   {$else cpupowerpc64}
+<<<<<<< HEAD
     {$ifdef darwin}
      default_target(system_powerpc64_darwin);
      {$define default_target_set}
@@ -1269,6 +1303,15 @@ begin
     default_target(system_powerpc64_linux);
     {$define default_target_set}
   {$endif}
+=======
+  {$ifdef darwin}
+    default_target(system_powerpc64_darwin);
+  {$else darwin}
+    default_target(system_powerpc64_linux);
+    {$define default_target_set}
+  {$endif darwin}
+  {$endif cpupowerpc64}
+>>>>>>> graemeg/fixes_2_2
 {$endif POWERPC64}
 
 {$ifdef sparc}
@@ -1284,6 +1327,7 @@ begin
     default_target(source_info.system);
   {$else cpuarm}
     {$ifdef WINDOWS}
+<<<<<<< HEAD
       {$define default_target_set}
       default_target(system_arm_wince);
     {$endif}
@@ -1303,6 +1347,12 @@ begin
       default_target(system_arm_linux);
       {$define default_target_set}
     {$endif}
+=======
+      default_target(system_arm_wince);
+    {$else WINDOWS}
+      default_target(system_arm_linux);
+    {$endif WINDOWS}
+>>>>>>> graemeg/fixes_2_2
   {$endif cpuarm}
 {$endif arm}
 

@@ -12,7 +12,11 @@
 
   You should have received a copy of the GNU Library General Public License
   along with this library; if not, write to the Free Software Foundation,
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> graemeg/fixes_2_2
 }
 {
   See the file COPYING, included in this distribution,
@@ -23,6 +27,7 @@ program chmcmd;
 {$mode objfpc}{$H+}
 
 uses
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -43,10 +48,14 @@ Const
 =======
   Classes, Sysutils, chmfilewriter, GetOpts;
 >>>>>>> origin/cpstrnew
+=======
+  Classes, chmfilewriter;
+>>>>>>> graemeg/fixes_2_2
 
 Procedure Usage;
 
 begin
+<<<<<<< HEAD
   Writeln(StdErr,'Usage: chmcmd [options] <filename>');
   writeln(stderr);
   writeln(stderr,'The following options are available :');
@@ -396,10 +405,17 @@ begin
 end;
 
 procedure Processfile(name:string);
+=======
+  Writeln(StdErr,'Usage: chmcmd  <filename>');
+  Halt(1);
+end;
+
+>>>>>>> graemeg/fixes_2_2
 
 var
   OutStream: TFileStream;
   Project: TChmProject;
+<<<<<<< HEAD
   xmlname: string;
   ishhp  : boolean;
 
@@ -579,5 +595,22 @@ begin
      Usage;
      halt;
    end;
+=======
+
+begin
+  if (Paramcount=1) and (ParamStr(1)<>'-h') and (ParamStr(1)<>'-?') then 
+    begin
+    Project := TChmProject.Create;
+    Project.LoadFromFile(ParamStr(1));
+    OutStream := TFileStream.Create(Project.OutputFileName, fmCreate, fmOpenWrite);
+    Project.WriteChm(OutStream);
+    OutStream.Free;
+    Project.Free;
+    end
+  else
+    begin
+    Usage;
+    end; 
+>>>>>>> graemeg/fixes_2_2
 end.
 

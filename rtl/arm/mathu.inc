@@ -13,7 +13,10 @@
  **********************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/fixes_2_2
 function FPUExceptionMaskToSoftFloatMask(const Mask: TFPUExceptionMask): byte;
 begin
     result:=0;
@@ -51,6 +54,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -59,6 +63,9 @@ end;
 =======
 >>>>>>> origin/cpstrnew
 {$if defined(wince)}
+=======
+{$ifdef wince}
+>>>>>>> graemeg/fixes_2_2
 
 const
   _DN_SAVE  = $00000000;
@@ -103,6 +110,16 @@ function SetRoundMode(const RoundMode: TFPURoundingMode): TFPURoundingMode;
 var
   c: dword;
 begin
+  case (RoundMode) of
+    rmNearest :
+      softfloat_rounding_mode := float_round_nearest_even;
+    rmTruncate :
+      softfloat_rounding_mode := float_round_to_zero;
+    rmUp :
+      softfloat_rounding_mode := float_round_up;
+    rmDown :
+      softfloat_rounding_mode := float_round_down;
+  end;
   c:=Ord(RoundMode) shl 16;
   c:=_controlfp(c, _MCW_RC);
   Result:=TFPURoundingMode((c shr 16) and 3);
@@ -172,6 +189,10 @@ begin
     c:=c or _EM_INEXACT;
   c:=_controlfp(c, _MCW_EM);
   Result:=ConvertExceptionMask(c);
+<<<<<<< HEAD
+=======
+  softfloat_exception_mask:=FPUExceptionMaskToSoftFloatMask(mask);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure ClearExceptions(RaisePending: Boolean =true);
@@ -753,9 +774,34 @@ function SetPrecisionMode(const Precision: TFPUPrecisionMode): TFPUPrecisionMode
 function GetExceptionMask: TFPUExceptionMask;
   begin
 {$if not(defined(gba)) and not(defined(nds)) and not(defined(FPUSOFT)) and not(defined(FPULIBGCC))}
+<<<<<<< HEAD
     Result:=FPUCw2ExceptionMask(FPU_GetCW);
 {$else}
     Result:=softfloat_exception_mask;
+=======
+    Result:=[];
+    cw:=FPU_GetCW;
+
+    if (cw and _FPU_MASK_IM)=0 then
+      include(Result,exInvalidOp);
+
+    if (cw and _FPU_MASK_DM)=0 then
+      include(Result,exDenormalized);
+
+    if (cw and _FPU_MASK_ZM)=0 then
+      include(Result,exZeroDivide);
+
+    if (cw and _FPU_MASK_OM)=0 then
+      include(Result,exOverflow);
+
+    if (cw and _FPU_MASK_UM)=0 then
+      include(Result,exUnderflow);
+
+    if (cw and _FPU_MASK_PM)=0 then
+      include(Result,exPrecision);
+{$else}
+    Result:=SoftFloatMaskToFPUExceptionMask(softfloat_exception_mask);
+>>>>>>> graemeg/fixes_2_2
 {$endif}
   end;
 
@@ -767,9 +813,13 @@ function SetExceptionMask(const Mask: TFPUExceptionMask): TFPUExceptionMask;
 {$endif}
   begin
 {$if not(defined(gba)) and not(defined(nds)) and not(defined(FPUSOFT)) and not(defined(FPULIBGCC))}
+<<<<<<< HEAD
     cw:=FPU_GetCW;
     Result:=FPUCw2ExceptionMask(cw);
     cw:=cw or _FPU_MASK_ALL;
+=======
+    cw:=FPU_GetCW or _FPU_MASK_ALL;
+>>>>>>> graemeg/fixes_2_2
 
     if exInvalidOp in Mask then
       cw:=cw and not(_FPU_MASK_IM);
@@ -794,6 +844,7 @@ function SetExceptionMask(const Mask: TFPUExceptionMask): TFPUExceptionMask;
     Result:=softfloat_exception_mask;
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
     softfloat_exception_mask:=Mask;
 =======
     softfloat_exception_mask:=FPUExceptionMaskToSoftFloatMask(Mask);
@@ -808,6 +859,9 @@ function SetExceptionMask(const Mask: TFPUExceptionMask): TFPUExceptionMask;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+    softfloat_exception_mask:=FPUExceptionMaskToSoftFloatMask(Mask);
+>>>>>>> graemeg/fixes_2_2
   end;
 
 

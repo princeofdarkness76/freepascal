@@ -71,7 +71,11 @@ type
 var
   InFilename, OutFilename: String;
   ConstItems: TCollection;
+<<<<<<< HEAD
   HeaderCharSet: String;
+=======
+  CharSet: String;
+>>>>>>> graemeg/fixes_2_2
   Identifier: String;
   OutputCodePage: Longint;
   FirstMessage: Word;
@@ -187,12 +191,20 @@ begin
   Assign(f, OutFilename);
   Rewrite(f);
   
+<<<<<<< HEAD
   if HeaderCharSet<>'' then begin
+=======
+  if CharSet<>'' then begin
+>>>>>>> graemeg/fixes_2_2
     // Write file header  with
     WriteLn(f, 'msgid ""');
     WriteLn(f, 'msgstr ""');
     WriteLn(f, '"MIME-Version: 1.0\n"');
+<<<<<<< HEAD
     WriteLn(f, '"Content-Type: text/plain; charset=', HeaderCharSet, '\n"');
+=======
+    WriteLn(f, '"Content-Type: text/plain; charset=', CharSet, '\n"');
+>>>>>>> graemeg/fixes_2_2
     WriteLn(f, '"Content-Transfer-Encoding: 8bit\n"');
     WriteLn(f);
   end;
@@ -378,7 +390,11 @@ begin
 
   ConversionProc := @ConvertToGettextPO;
   OutputFormat:='';
+<<<<<<< HEAD
   HeaderCharSet:='';
+=======
+  CharSet:='';
+>>>>>>> graemeg/fixes_2_2
   Identifier:='';
   FirstMessage:=0;
   MessageTable:=True;
@@ -420,11 +436,19 @@ begin
       Inc(i, 2);
     end else if ParamStr(i) = '-c' then begin
       if (OutputFormat='') or (OutputFormat='po') then begin
+<<<<<<< HEAD
         if HeaderCharSet <> '' then begin
           WriteLn(StdErr, OptionAlreadySpecified, '-c');
           Halt(1);
         end;
         HeaderCharSet:=ParamStr(i+1);
+=======
+        if CharSet <> '' then begin
+          WriteLn(StdErr, OptionAlreadySpecified, '-c');
+          Halt(1);
+        end;
+        CharSet:=ParamStr(i+1);
+>>>>>>> graemeg/fixes_2_2
       end else
       begin
         if Identifier <> '' then begin
@@ -482,7 +506,11 @@ begin
     end;
   end;
 
+<<<<<<< HEAD
   If ((OutputFormat<>'') and (OutputFormat<>'po')) and (HeaderCharSet<>'')  then begin
+=======
+  If ((OutputFormat<>'') and (OutputFormat<>'po')) and (CharSet<>'')  then begin
+>>>>>>> graemeg/fixes_2_2
     WriteLn(StdErr, InvalidOption, '');
     Halt(1);
   end;

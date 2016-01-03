@@ -294,6 +294,7 @@ begin
 {$ENDIF DIRECT}
 {$I+}
  GetDir (0, CurDir);
+<<<<<<< HEAD
 {$IFDEF DIRECT}
  {$IFNDEF FPC_FEXPAND_DRIVES}
  I := Pos (System.DriveSeparator, CurDir);
@@ -301,6 +302,8 @@ begin
   Delete (CurDir, 1, I);
  {$ENDIF FPC_FEXPAND_DRIVES}
 {$ENDIF DIRECT}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$IFNDEF NODRIVEC}
  GetDir (3, CDir);
 {$ENDIF NODRIVEC}
@@ -320,11 +323,19 @@ begin
 if CDir [Length (CDir)] = DirSep then Check ('c:anything', CDir + 'anything')
                          else Check ('c:anything', CDir + DirSep + 'anything');
  Check (CC + DirSep, CDrive + DirSep);
+<<<<<<< HEAD
  {$IFDEF NODOTS}
  Check ('C:.', 'C:.');
  Check (CC + DirSep + '.', CDrive + DirSep + '.');
  Check (CC + DirSep + '..', CDrive + DirSep + '..');
  {$ELSE NODOTS}
+=======
+{$IFDEF NODOTS}
+ Check ('C:.', 'C:.');
+ Check (CC + DirSep + '.', CDrive + DirSep + '.');
+ Check (CC + DirSep + '..', CDrive + DirSep + '..');
+{$ELSE NODOTS}
+>>>>>>> graemeg/fixes_2_2
  Check ('C:.', CDir);
  Check (CC + DirSep + '.', CDrive + DirSep);
  Check (CC + DirSep + '..', CDrive + DirSep);
@@ -347,7 +358,11 @@ if CDir [Length (CDir)] = DirSep then Check ('c:anything', CDir + 'anything')
                                                                DirSep + 'DOS');
  Check ('C:' + DirSep + 'DOS' + DirSep + 'TEST' + DirSep + '..' + DirSep,
                                              CDrive + DirSep + 'DOS' + DirSep);
+<<<<<<< HEAD
  {$ENDIF NODOTS}
+=======
+{$ENDIF NODOTS}
+>>>>>>> graemeg/fixes_2_2
 {$ENDIF NODRIVEC}
 
 {$IFNDEF MACOS}

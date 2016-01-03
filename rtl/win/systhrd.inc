@@ -112,7 +112,11 @@ var
       end;
 
 
+<<<<<<< HEAD
     procedure SysAllocateThreadVars; public name '_FPC_SysAllocateThreadVars';
+=======
+    procedure SysAllocateThreadVars;
+>>>>>>> graemeg/fixes_2_2
       var
         dataindex : pointer;
         errorsave : dword;
@@ -187,10 +191,12 @@ var
 >>>>>>> origin/cpstrnew
       end;
 
+
     function SysRelocateThreadvar(offset : dword) : pointer;
       var
         dataindex : pointer;
         errorsave : dword;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -220,6 +226,16 @@ var
           .LAddressInEAX:
            movl (%eax,%edx,4),%eax
           .LToDataIndex:
+=======
+      begin
+{$ifdef dummy}
+        { I've no clue why this doesn't read dataindex, imo it should (FK) }
+        asm
+          movl TLSKey,%edx
+          movl $0x2c,%eax
+          movl %fs:(%eax),%eax
+          movl (%eax,%edx,4),%eax
+>>>>>>> graemeg/fixes_2_2
           movl %eax,dataindex
         end;
         if DataIndex=nil then
@@ -230,16 +246,25 @@ var
             SetLastError(errorsave);
           end;
 {$else win32}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
         errorsave:=GetLastError;
         dataindex:=TlsGetValue(tlskey);
         if dataindex=nil then
           begin
             SysAllocateThreadVars;
             dataindex:=TlsGetValue(tlskey);
+<<<<<<< HEAD
             InitThread($1000000);
           end;
         SetLastError(errorsave);
+=======
+          end;
+        SetLastError(errorsave);
+{$endif win32}
+>>>>>>> graemeg/fixes_2_2
         SysRelocateThreadvar:=DataIndex+Offset;
       end;
 
@@ -267,7 +292,11 @@ var
       tthreadinfo = record
         f : tthreadfunc;
         p : pointer;
+<<<<<<< HEAD
         stklen : ptruint;
+=======
+        stklen : cardinal;
+>>>>>>> graemeg/fixes_2_2
       end;
 
     function ThreadMain(param : pointer) : Longint; {$ifdef wince}cdecl{$else}stdcall{$endif};
@@ -462,6 +491,52 @@ begin
 end;
 
 
+<<<<<<< HEAD
+=======
+{*****************************************************************************
+                           Heap Mutex Protection
+*****************************************************************************}
+
+{$ifndef HAS_MT_MEMORYMANAGER}
+    var
+      HeapMutex : TRTLCriticalSection;
+
+    procedure Win32HeapMutexInit;
+      begin
+         InitCriticalSection(heapmutex);
+      end;
+
+    procedure Win32HeapMutexDone;
+      begin
+         DoneCriticalSection(heapmutex);
+      end;
+
+    procedure Win32HeapMutexLock;
+      begin
+         EnterCriticalSection(heapmutex);
+      end;
+
+    procedure Win32HeapMutexUnlock;
+      begin
+         LeaveCriticalSection(heapmutex);
+      end;
+
+    const
+      Win32MemoryMutexManager : TMemoryMutexManager = (
+        MutexInit : @Win32HeapMutexInit;
+        MutexDone : @Win32HeapMutexDone;
+        MutexLock : @Win32HeapMutexLock;
+        MutexUnlock : @Win32HeapMutexUnlock;
+      );
+
+    procedure InitHeapMutexes;
+      begin
+        SetMemoryMutexManager(Win32MemoryMutexManager);
+      end;
+
+{$endif HAS_MT_MEMORYMANAGER}
+
+>>>>>>> graemeg/fixes_2_2
 Const
   wrSignaled = 0;
   wrTimeout  = 1;

@@ -687,15 +687,25 @@ implementation
           type is not available. The rtti for pvmt will be written implicitly
           by thev tblarray below }
         systemunit.insert(ttypesym.create('$pvmt',pvmttype));
+<<<<<<< HEAD
         addfield(hrecst,tfieldvarsym.create('$length',vs_value,ptrsinttype,[]));
         addfield(hrecst,tfieldvarsym.create('$mlength',vs_value,ptrsinttype,[]));
         addfield(hrecst,tfieldvarsym.create('$parent',vs_value,pvmttype,[]));
+=======
+        hrecst.insertfield(tfieldvarsym.create('$length',vs_value,ptrsinttype,[]));
+        hrecst.insertfield(tfieldvarsym.create('$mlength',vs_value,ptrsinttype,[]));
+        hrecst.insertfield(tfieldvarsym.create('$parent',vs_value,pvmttype,[]));
+>>>>>>> graemeg/fixes_2_2
         { it seems vmttype is used both for TP objects and Delphi classes,
           so the next entry could either be the first virtual method (vm1)
           (object) or the class name (class). We can't easily create separate
           vtable formats for both, as gdb is hard coded to search for
           __vtbl_ptr_type in all cases (JM) }
+<<<<<<< HEAD
         addfield(hrecst,tfieldvarsym.create('$vm1_or_classname',vs_value,tpointerdef.create(cshortstringtype),[]));
+=======
+        hrecst.insertfield(tfieldvarsym.create('$vm1_or_classname',vs_value,tpointerdef.create(cshortstringtype),[]));
+>>>>>>> graemeg/fixes_2_2
         vmtarraytype:=tarraydef.create(0,0,s32inttype);
         tarraydef(vmtarraytype).elementdef:=voidpointertype;
         addfield(hrecst,tfieldvarsym.create('$__pfn',vs_value,vmtarraytype,[]));
@@ -826,8 +836,22 @@ implementation
         loadtype('methodpointer',methodpointertype);
         loadtype('nestedprocpointer',nestedprocpointertype);
         loadtype('HRESULT',hresultdef);
+<<<<<<< HEAD
         set_default_int_types;
         set_default_ptr_types;
+=======
+{$ifdef cpu64bit}
+        uinttype:=u64inttype;
+        sinttype:=s64inttype;
+        ptruinttype:=u64inttype;
+        ptrsinttype:=s64inttype;
+{$else cpu64bit}
+        uinttype:=u32inttype;
+        sinttype:=s32inttype;
+        ptruinttype:=u32inttype;
+        ptrsinttype:=s32inttype;
+{$endif cpu64bit}
+>>>>>>> graemeg/fixes_2_2
         set_current_module(oldcurrentmodule);
       end;
 
@@ -973,11 +997,14 @@ implementation
         aiclass[ait_regalloc]:=tai_regalloc;
         aiclass[ait_tempalloc]:=tai_tempalloc;
         aiclass[ait_marker]:=tai_marker;
+<<<<<<< HEAD
         aiclass[ait_seh_directive]:=tai_seh_directive;
 {$ifdef JVM}
         aiclass[ait_jvar]:=tai_jvar;
         aiclass[ait_jcatch]:=tai_jcatch;
 {$endif JVM}
+=======
+>>>>>>> graemeg/fixes_2_2
       end;
 
 end.

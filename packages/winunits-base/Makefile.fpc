@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for WinUnits
+>>>>>>> graemeg/fixes_2_2
 #
 
 [package]
 name=winunits-base
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -23,23 +28,37 @@ version=2.5.1
 
 [require]
 packages=fcl-registry fcl-base
+=======
+version=2.2.5
+>>>>>>> graemeg/fixes_2_2
 
 [target]
 units=buildwinutilsbase
 implicitunits=flatsb winver mmsystem comobj comconst commdlg commctrl ole2 activex shellapi shlobj oleserver \
+<<<<<<< HEAD
 	shfolder richedit imagehlp wininet uxtheme dwmapi multimon htmlhelp winutils comserv winspool imm imm_dyn nb30
+=======
+               shfolder richedit imagehlp wininet
+>>>>>>> graemeg/fixes_2_2
 
 examples=examples
 
 rsts = jwawintype comconst
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
 [install]
+=======
+
+[install]
+buildunit=buildwinutilsbase
+>>>>>>> graemeg/fixes_2_2
 fpcpackage=y
 
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -125,3 +144,11 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[compiler]
+options=-Ur
+sourcedir=src
+
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/fixes_2_2

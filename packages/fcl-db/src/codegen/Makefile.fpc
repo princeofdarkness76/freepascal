@@ -10,7 +10,10 @@ packages=fcl-base
 
 [target]
 units=fpddcodegen fpcgcreatedbf fpcgdbcoll fpcgsqlconst fpcgtiopf fpddpopcode
+<<<<<<< HEAD
 rsts=fpddcodegen fpcgsqlconst fpddpopcode
+=======
+>>>>>>> graemeg/fixes_2_2
 
 [compiler]
 options=-S2h

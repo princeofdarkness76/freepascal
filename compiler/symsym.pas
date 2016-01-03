@@ -183,6 +183,7 @@ interface
 
        tabstractvarsym = class(tstoredsym)
           varoptions    : tvaroptions;
+          notifications : Tlinkedlist;
           varspez       : tvarspez;  { sets the type of access }
           varregable    : tvarregable;
           varstate      : tvarstate;
@@ -191,7 +192,11 @@ interface
           { could also be part of tabstractnormalvarsym, but there's }
           { one byte left here till the next 4 byte alignment        }
           addr_taken     : boolean;
+<<<<<<< HEAD
           constructor create(st:tsymtyp;const n : string;vsp:tvarspez;def:tdef;vopts:tvaroptions;doregister:boolean);
+=======
+          constructor create(st:tsymtyp;const n : string;vsp:tvarspez;def:tdef;vopts:tvaroptions);
+>>>>>>> graemeg/fixes_2_2
           constructor ppuload(st:tsymtyp;ppufile:tcompilerppufile);
           procedure ppuwrite(ppufile:tcompilerppufile);override;
           procedure buildderef;override;
@@ -458,11 +463,19 @@ interface
           constdefderef : tderef;
           consttyp    : tconsttyp;
           value       : tconstvalue;
+<<<<<<< HEAD
           constructor create_ord(const n : string;t : tconsttyp;v : tconstexprint;def:tdef);virtual;
           constructor create_ordptr(const n : string;t : tconsttyp;v : tconstptruint;def:tdef);virtual;
           constructor create_ptr(const n : string;t : tconsttyp;v : pointer;def:tdef);virtual;
           constructor create_string(const n : string;t : tconsttyp;str:pchar;l:longint;def:tdef);virtual;
           constructor create_wstring(const n : string;t : tconsttyp;pw:pcompilerwidestring);virtual;
+=======
+          constructor create_ord(const n : string;t : tconsttyp;v : tconstexprint;def:tdef);
+          constructor create_ordptr(const n : string;t : tconsttyp;v : tconstptruint;def:tdef);
+          constructor create_ptr(const n : string;t : tconsttyp;v : pointer;def:tdef);
+          constructor create_string(const n : string;t : tconsttyp;str:pchar;l:longint);
+          constructor create_wstring(const n : string;t : tconsttyp;pw:pcompilerwidestring);
+>>>>>>> graemeg/fixes_2_2
           constructor ppuload(ppufile:tcompilerppufile);
           destructor  destroy;override;
           procedure buildderef;override;
@@ -773,6 +786,10 @@ implementation
      begin
        if (asmblocklabel=nil) then
          begin
+<<<<<<< HEAD
+=======
+           defined:=true;
+>>>>>>> graemeg/fixes_2_2
            if nonlocal then
              current_asmdata.getglobaljumplabel(asmblocklabel)
            else
@@ -3026,7 +3043,10 @@ implementation
                value.len:=ppufile.getlongint;
                getmem(pc,value.len+1);
                ppufile.getdata(pc^,value.len);
+<<<<<<< HEAD
                pc[value.len]:=#0;
+=======
+>>>>>>> graemeg/fixes_2_2
                value.valueptr:=pc;
              end;
            constreal :

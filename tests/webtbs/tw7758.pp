@@ -2,7 +2,11 @@
 
 uses
 {$ifdef unix}
+<<<<<<< HEAD
   {$ifdef darwin}iosxwstr{$else}cwstring{$endif},
+=======
+  cwstring,
+>>>>>>> graemeg/fixes_2_2
 {$endif}
   sysutils;
 
@@ -11,13 +15,20 @@ const
   c2=widechar('é');
   c3=widestring('é');
 var
+<<<<<<< HEAD
   c: ansichar;
+=======
+  c: char;
+>>>>>>> graemeg/fixes_2_2
   wc,wc2: widechar;
   s,s2,a: ansistring;
   w: widestring;
   ss: shortstring;
 begin
+<<<<<<< HEAD
   SetMultiByteConversionCodePage(CP_UTF8);
+=======
+>>>>>>> graemeg/fixes_2_2
   c:=#0;
   w:=c;
   if (length(w)<>1) or
@@ -140,10 +151,18 @@ begin
      (w[1] <> c2) then
     halt(21);
 
+<<<<<<< HEAD
+=======
+{$ifdef dummy}
+>>>>>>> graemeg/fixes_2_2
   wc:=c2;
   writestr(s,wc);
   w:=s;
   if (length(w)<>1) or
      (w[1]<>c2) then
     halt(22);
+<<<<<<< HEAD
+=======
+{$endif}
+>>>>>>> graemeg/fixes_2_2
 end.

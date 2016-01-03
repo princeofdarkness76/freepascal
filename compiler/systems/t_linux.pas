@@ -112,7 +112,11 @@ implementation
         { the problem with not having a .fini section is that a finalization
           routine in regular code can get "smart" linked away -> reference it
           just like the debug info }
+<<<<<<< HEAD
         new_section(list,sec_fpc,'links',0);
+=======
+        list.concat(Tai_section.create(sec_fpc,'links',0));
+>>>>>>> graemeg/fixes_2_2
         list.concat(Tai_const.Createname(s,0));
         inherited setfininame(list,s);
       end;
@@ -126,6 +130,7 @@ begin
   if not Dontlinkstdlibpath Then
     begin
 {$ifdef x86_64}
+<<<<<<< HEAD
       LibrarySearchPath.AddPath(sysrootpath,'/lib64;/usr/lib64;/usr/X11R6/lib64',true);
 {$else}
 {$ifdef powerpc64}
@@ -135,6 +140,14 @@ begin
         LibrarySearchPath.AddPath(sysrootpath,'/lib64;/usr/lib/powerpc64le-linux-gnu;/usr/X11R6/powerpc64le-linux-gnu',true);
 {$else powerpc64}
       LibrarySearchPath.AddPath(sysrootpath,'/lib;/usr/lib;/usr/X11R6/lib',true);
+=======
+   LibrarySearchPath.AddPath(sysrootpath,'/lib64;/usr/lib64;/usr/X11R6/lib64',true);
+{$else}
+{$ifdef powerpc64}
+   LibrarySearchPath.AddPath(sysrootpath,'/lib64;/usr/lib64;/usr/X11R6/lib64',true);
+{$else powerpc64}
+   LibrarySearchPath.AddPath(sysrootpath,'/lib;/usr/lib;/usr/X11R6/lib',true);
+>>>>>>> graemeg/fixes_2_2
 {$endif powerpc64}
 {$endif x86_64}
 
@@ -196,6 +209,7 @@ begin
      ExtDbgCmd[1]:='objcopy --only-keep-debug $EXE $DBG';
      ExtDbgCmd[2]:='objcopy --add-gnu-debuglink=$DBG $EXE';
      ExtDbgCmd[3]:='strip --strip-unneeded $EXE';
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
 {$ifdef m68k}
@@ -380,6 +394,85 @@ begin
      ExtDbgCmd[3]:='strip --strip-unneeded $EXE';
 
      SetupDynlinker(DynamicLinker,libctype);
+=======
+
+{$ifdef m68k}
+     { experimental, is this correct? }
+     defdynlinker:='/lib/ld-linux.so.2';
+{$endif m68k}
+
+{$ifdef i386}
+     defdynlinker:='/lib/ld-linux.so.2';
+{$endif}
+
+{$ifdef x86_64}
+     defdynlinker:='/lib64/ld-linux-x86-64.so.2';
+{$endif x86_64}
+
+{$ifdef sparc}
+     defdynlinker:='/lib/ld-linux.so.2';
+{$endif sparc}
+
+{$ifdef powerpc}
+     defdynlinker:='/lib/ld.so.1';
+{$endif powerpc}
+
+{$ifdef powerpc64}
+     defdynlinker:='/lib64/ld64.so.1';
+{$endif powerpc64}
+
+{$ifdef arm}
+{$ifdef FPC_ARMEL}
+     defdynlinker:='/lib/ld-linux.so.3';
+{$else FPC_ARMEL}
+     defdynlinker:='/lib/ld-linux.so.2';
+{$endif FPC_ARMEL}
+{$endif arm}
+
+     {
+       Search order:
+         glibc 2.1+
+         uclibc
+         glibc 2.0
+       If none is found (e.g. when cross compiling) glibc21 is assumed
+     }
+     if fileexists(sysrootpath+defdynlinker,false) then
+       begin
+         DynamicLinker:=defdynlinker;
+{$ifdef i386}
+         libctype:=glibc21;
+{$else i386}
+         libctype:=glibc2;
+{$endif i386}
+       end
+     else if fileexists(sysrootpath+'/lib/ld-uClibc.so.0',false) then
+       begin
+         dynamiclinker:='/lib/ld-uClibc.so.0';
+         libctype:=uclibc;
+       end
+{$ifdef i386}
+     else if FileExists(sysrootpath+'/lib/ld-linux.so.1',false) then
+       begin
+         DynamicLinker:='/lib/ld-linux.so.1';
+         libctype:=glibc2;
+       end
+{$endif i386}
+     else
+       begin
+         { when no dyn. linker is found, we are probably
+           cross compiling, so use the default dyn. linker }
+         DynamicLinker:=defdynlinker;
+         {
+           the default c startup script is gcrt0.as on all platforms
+           except i386
+         }
+{$ifdef i386}
+         libctype:=glibc21;
+{$else i386}
+         libctype:=glibc2;
+{$endif i386}
+       end;
+>>>>>>> graemeg/fixes_2_2
    end;
 end;
 
@@ -500,6 +593,7 @@ begin
       { try to add crti and crtbegin if linking to C }
       if linklibc and (libctype<>uclibc) then
        begin
+<<<<<<< HEAD
          { crti.o must come first }
          if librarysearchpath.FindFile('crti.o',false,s) then
 <<<<<<< HEAD
@@ -564,6 +658,24 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+         { x86_64 requires this to use entry/exit code with pic,
+           see also issue #8210 regarding a discussion
+           no idea about the other non i386 CPUs (FK)
+         }
+{$ifdef x86_64}
+         if current_module.islibrary then
+           begin
+             if librarysearchpath.FindFile('crtbeginS.o',false,s) then
+               AddFileName(s);
+           end
+         else
+{$endif x86_64}
+           if librarysearchpath.FindFile('crtbegin.o',false,s) then
+             AddFileName(s);
+         if librarysearchpath.FindFile('crti.o',false,s) then
+           AddFileName(s);
+>>>>>>> graemeg/fixes_2_2
        end;
       { main objectfiles }
       while not ObjectFiles.Empty do
@@ -669,6 +781,7 @@ begin
       { objects which must be at the end }
       if linklibc and (libctype<>uclibc) then
        begin
+<<<<<<< HEAD
          if cs_create_pic in current_settings.moduleswitches then
            begin
              found1:=librarysearchpath.FindFile('crtendS.o',false,s1);
@@ -682,6 +795,18 @@ begin
                Message1(exec_w_init_file_not_found,'crtend.o');
            end;
 
+=======
+         { x86_64 requires this to use entry/exit code with pic,
+           see also issue #8210 regarding a discussion
+           no idea about the other non i386 CPUs (FK)
+         }
+{$ifdef x86_64}
+         if current_module.islibrary then
+           found1:=librarysearchpath.FindFile('crtendS.o',false,s1)
+         else
+{$endif x86_64}
+           found1:=librarysearchpath.FindFile('crtend.o',false,s1);
+>>>>>>> graemeg/fixes_2_2
          found2:=librarysearchpath.FindFile('crtn.o',false,s2);
          if not(found2) then
            Message1(exec_w_init_file_not_found,'crtn.o');
@@ -734,6 +859,7 @@ begin
         begin
 {$ifdef x86_64}
 {$define LINKERSCRIPT_INCLUDED}
+<<<<<<< HEAD
           add('SECTIONS');
           add('{');
           {Read-only sections, merged into text segment:}
@@ -863,6 +989,137 @@ begin
           add('  .debug_varnames  0 : { *(.debug_varnames) }');
           add('  /DISCARD/ : { *(.note.GNU-stack) }');
           add('}');
+=======
+      add('SECTIONS');
+      add('{');
+      {Read-only sections, merged into text segment:}
+      if current_module.islibrary  then
+        add('  . = 0 +  SIZEOF_HEADERS;')
+      else
+        add('  PROVIDE (__executable_start = 0x0400000); . = 0x0400000 +  SIZEOF_HEADERS;');
+      add('  . = 0 +  SIZEOF_HEADERS;');
+      add('  .interp         : { *(.interp) }');
+      add('  .hash           : { *(.hash) }');
+      add('  .dynsym         : { *(.dynsym) }');
+      add('  .dynstr         : { *(.dynstr) }');
+      add('  .gnu.version    : { *(.gnu.version) }');
+      add('  .gnu.version_d  : { *(.gnu.version_d) }');
+      add('  .gnu.version_r  : { *(.gnu.version_r) }');
+      add('  .rel.dyn        :');
+      add('    {');
+      add('      *(.rel.init)');
+      add('      *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)');
+      add('      *(.rel.fini)');
+      add('      *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)');
+      add('      *(.rel.data.rel.ro*)');
+      add('      *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)');
+      add('      *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)');
+      add('      *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)');
+      add('      *(.rel.got)');
+      add('      *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)');
+      add('    }');
+      add('  .rela.dyn       :');
+      add('    {');
+      add('      *(.rela.init)');
+      add('      *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)');
+      add('      *(.rela.fini)');
+      add('      *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)');
+      add('      *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)');
+      add('      *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)');
+      add('      *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)');
+      add('      *(.rela.got)');
+      add('      *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)');
+      add('    }');
+      add('  .rel.plt        : { *(.rel.plt) }');
+      add('  .rela.plt       : { *(.rela.plt) }');
+      add('  .init           :');
+      add('  {');
+      add('    KEEP (*(.init))');
+      add('  } =0x90909090');
+      add('  .plt            : { *(.plt) }');
+      add('  .text           :');
+      add('  {');
+      add('    *(.text .stub .text.* .gnu.linkonce.t.*)');
+      add('    KEEP (*(.text.*personality*))');
+      {.gnu.warning sections are handled specially by elf32.em.}
+      add('    *(.gnu.warning)');
+      add('  } =0x90909090');
+      add('  .fini           :');
+      add('  {');
+      add('    KEEP (*(.fini))');
+      add('  } =0x90909090');
+      add('  PROVIDE (_etext = .);');
+      add('  .rodata         :');
+      add('  {');
+      add('    *(.rodata .rodata.* .gnu.linkonce.r.*)');
+      add('  }');
+      {Adjust the address for the data segment.  We want to adjust up to
+       the same address within the page on the next page up.}
+      add('  . = ALIGN (0x1000) - ((0x1000 - .) & (0x1000 - 1));');
+      add('  .dynamic        : { *(.dynamic) }');
+      add('  .got            : { *(.got .toc) }');
+      add('  .got.plt        : { *(.got.plt .toc.plt) }');
+      add('  .data           :');
+      add('  {');
+      add('    *(.data .data.* .gnu.linkonce.d.*)');
+      add('    KEEP (*(.fpc .fpc.n_version .fpc.n_links))');
+      add('    KEEP (*(.gnu.linkonce.d.*personality*))');
+      add('  }');
+      add('  PROVIDE (_edata = .);');
+      add('  PROVIDE (edata = .);');
+    {$ifdef zsegment_threadvars}
+      add('  _z = .;');
+      add('  .threadvar 0 : AT (_z) { *(.threadvar .threadvar.* .gnu.linkonce.tv.*) }');
+      add('  PROVIDE (_threadvar_size = SIZEOF(.threadvar));');
+      add('  . = _z + SIZEOF (.threadvar);');
+    {$else}
+      add('  .threadvar : { *(.threadvar .threadvar.* .gnu.linkonce.tv.*) }');
+    {$endif}
+      add('  __bss_start = .;');
+      add('  .bss            :');
+      add('  {');
+      add('   *(.dynbss)');
+      add('   *(.bss .bss.* .gnu.linkonce.b.*)');
+      add('   *(COMMON)');
+      {Align here to ensure that the .bss section occupies space up to
+       _end.  Align after .bss to ensure correct alignment even if the
+       .bss section disappears because there are no input sections.}
+      add('   . = ALIGN(32 / 8);');
+      add('  }');
+      add('  . = ALIGN(32 / 8);');
+      add('  PROVIDE (_end = .);');
+      add('  PROVIDE (end = .);');
+      {Stabs debugging sections.}
+      add('  .stab          0 : { *(.stab) }');
+      add('  .stabstr       0 : { *(.stabstr) }');
+      add('  /* DWARF debug sections.');
+      add('     Symbols in the DWARF debugging sections are relative to the beginning');
+      add('     of the section so we begin them at 0.  */');
+      add('  /* DWARF 1 */');
+      add('  .debug          0 : { *(.debug) }');
+      add('  .line           0 : { *(.line) }');
+      add('  /* GNU DWARF 1 extensions */');
+      add('  .debug_srcinfo  0 : { *(.debug_srcinfo) }');
+      add('  .debug_sfnames  0 : { *(.debug_sfnames) }');
+      add('  /* DWARF 1.1 and DWARF 2 */');
+      add('  .debug_aranges  0 : { *(.debug_aranges) }');
+      add('  .debug_pubnames 0 : { *(.debug_pubnames) }');
+      add('  /* DWARF 2 */');
+      add('  .debug_info     0 : { *(.debug_info .gnu.linkonce.wi.*) }');
+      add('  .debug_abbrev   0 : { *(.debug_abbrev) }');
+      add('  .debug_line     0 : { *(.debug_line) }');
+      add('  .debug_frame    0 : { *(.debug_frame) }');
+      add('  .debug_str      0 : { *(.debug_str) }');
+      add('  .debug_loc      0 : { *(.debug_loc) }');
+      add('  .debug_macinfo  0 : { *(.debug_macinfo) }');
+      add('  /* SGI/MIPS DWARF 2 extensions */');
+      add('  .debug_weaknames 0 : { *(.debug_weaknames) }');
+      add('  .debug_funcnames 0 : { *(.debug_funcnames) }');
+      add('  .debug_typenames 0 : { *(.debug_typenames) }');
+      add('  .debug_varnames  0 : { *(.debug_varnames) }');
+      add('  /DISCARD/ : { *(.note.GNU-stack) }');
+      add('}');
+>>>>>>> graemeg/fixes_2_2
 {$endif x86_64}
 
 {$ifdef AArch64}
@@ -1303,6 +1560,7 @@ begin
 {$endif ARM}
 
 {$ifndef LINKERSCRIPT_INCLUDED}
+<<<<<<< HEAD
           begin
             {Sections.}
             add('SECTIONS');
@@ -1405,6 +1663,108 @@ begin
             add('  .stabstr       0 : { *(.stabstr) }');
             add('}');
           end;
+=======
+      {Sections.}
+      add('SECTIONS');
+      add('{');
+      {Read-only sections, merged into text segment:}
+      add('  PROVIDE (__executable_start = 0x010000); . = 0x010000 +0x100;');
+      add('  .interp         : { *(.interp) }');
+      add('  .hash           : { *(.hash) }');
+      add('  .dynsym         : { *(.dynsym) }');
+      add('  .dynstr         : { *(.dynstr) }');
+      add('  .gnu.version    : { *(.gnu.version) }');
+      add('  .gnu.version_d  : { *(.gnu.version_d) }');
+      add('  .gnu.version_r  : { *(.gnu.version_r) }');
+      add('  .rel.dyn        :');
+      add('    {');
+      add('      *(.rel.init)');
+      add('      *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)');
+      add('      *(.rel.fini)');
+      add('      *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)');
+      add('      *(.rel.data.rel.ro*)');
+      add('      *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)');
+      add('      *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)');
+      add('      *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)');
+      add('      *(.rel.got)');
+      add('      *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)');
+      add('    }');
+      add('  .rela.dyn       :');
+      add('    {');
+      add('      *(.rela.init)');
+      add('      *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)');
+      add('      *(.rela.fini)');
+      add('      *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)');
+      add('      *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)');
+      add('      *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)');
+      add('      *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)');
+      add('      *(.rela.got)');
+      add('      *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)');
+      add('    }');
+      add('  .rel.plt        : { *(.rel.plt) }');
+      add('  .rela.plt       : { *(.rela.plt) }');
+      add('  .init           :');
+      add('  {');
+      add('    KEEP (*(.init))');
+      add('  } =0x90909090');
+      add('  .plt            : { *(.plt) }');
+      add('  .text           :');
+      add('  {');
+      add('    *(.text .stub .text.* .gnu.linkonce.t.*)');
+      add('    KEEP (*(.text.*personality*))');
+      {.gnu.warning sections are handled specially by elf32.em.}
+      add('    *(.gnu.warning)');
+      add('  } =0x90909090');
+      add('  .fini           :');
+      add('  {');
+      add('    KEEP (*(.fini))');
+      add('  } =0x90909090');
+      add('  PROVIDE (_etext = .);');
+      add('  .rodata         :');
+      add('  {');
+      add('    *(.rodata .rodata.* .gnu.linkonce.r.*)');
+      add('  }');
+      {Adjust the address for the data segment.  We want to adjust up to
+       the same address within the page on the next page up.}
+      add('  . = ALIGN (0x1000) - ((0x1000 - .) & (0x1000 - 1));');
+      add('  .dynamic        : { *(.dynamic) }');
+      add('  .got            : { *(.got) }');
+      add('  .got.plt        : { *(.got.plt) }');
+      add('  .data           :');
+      add('  {');
+      add('    *(.data .data.* .gnu.linkonce.d.*)');
+      add('    KEEP (*(.fpc .fpc.n_version .fpc.n_links))');
+      add('    KEEP (*(.gnu.linkonce.d.*personality*))');
+      add('  }');
+      add('  PROVIDE (_edata = .);');
+      add('  PROVIDE (edata = .);');
+    {$ifdef zsegment_threadvars}
+      add('  _z = .;');
+      add('  .threadvar 0 : AT (_z) { *(.threadvar .threadvar.* .gnu.linkonce.tv.*) }');
+      add('  PROVIDE (_threadvar_size = SIZEOF(.threadvar));');
+      add('  . = _z + SIZEOF (.threadvar);');
+    {$else}
+      add('  .threadvar : { *(.threadvar .threadvar.* .gnu.linkonce.tv.*) }');
+    {$endif}
+      add('  __bss_start = .;');
+      add('  .bss            :');
+      add('  {');
+      add('   *(.dynbss)');
+      add('   *(.bss .bss.* .gnu.linkonce.b.*)');
+      add('   *(COMMON)');
+      {Align here to ensure that the .bss section occupies space up to
+       _end.  Align after .bss to ensure correct alignment even if the
+       .bss section disappears because there are no input sections.}
+      add('   . = ALIGN(32 / 8);');
+      add('  }');
+      add('  . = ALIGN(32 / 8);');
+      add('  PROVIDE (_end = .);');
+      add('  PROVIDE (end = .);');
+      {Stabs debugging sections.}
+      add('  .stab          0 : { *(.stab) }');
+      add('  .stabstr       0 : { *(.stabstr) }');
+      add('}');
+>>>>>>> graemeg/fixes_2_2
 {$endif LINKERSCRIPT_INCLUDED}
         end;
       { Write and Close response }
@@ -1441,9 +1801,14 @@ begin
      not(cs_link_separate_dbg_file in current_settings.globalswitches) then
    StripStr:='-s';
   if (cs_link_map in current_settings.globalswitches) then
+<<<<<<< HEAD
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename,'.map'));
   if (cs_link_smart in current_settings.globalswitches) and
      create_smartlink_sections then
+=======
+   StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
+  if create_smartlink_sections then
+>>>>>>> graemeg/fixes_2_2
    GCSectionsStr:='--gc-sections';
   If (cs_profile in current_settings.moduleswitches) or
      ((Info.DynamicLinker<>'') and (not SharedLibFiles.Empty)) then
@@ -1480,9 +1845,15 @@ begin
       for i:=1 to 3 do
         begin
           SplitBinCmd(Info.ExtDbgCmd[i],binstr,cmdstr);
+<<<<<<< HEAD
           Replace(cmdstr,'$EXE',maybequoted(current_module.exefilename));
           Replace(cmdstr,'$DBGFN',maybequoted(extractfilename(current_module.dbgfilename)));
           Replace(cmdstr,'$DBG',maybequoted(current_module.dbgfilename));
+=======
+          Replace(cmdstr,'$EXE',maybequoted(current_module.exefilename^));
+          Replace(cmdstr,'$DBGFN',maybequoted(extractfilename(current_module.dbgfilename^)));
+          Replace(cmdstr,'$DBG',maybequoted(current_module.dbgfilename^));
+>>>>>>> graemeg/fixes_2_2
           success:=DoExec(FindUtil(utilsprefix+BinStr),CmdStr,true,false);
           if not success then
             break;
@@ -1515,7 +1886,11 @@ begin
 
  { Create some replacements }
  { note: linux does not use exportlib.initname/fininame due to the custom startup code }
+<<<<<<< HEAD
   InitStr:='-init FPC_SHARED_LIB_START';
+=======
+  InitStr:='-init FPC_LIB_START';
+>>>>>>> graemeg/fixes_2_2
   FiniStr:='-fini FPC_LIB_EXIT';
   SoNameStr:='-soname '+ExtractFileName(current_module.sharedlibfilename);
 
@@ -1884,6 +2259,15 @@ initialization
   RegisterImport(system_i386_linux,timportliblinux);
   RegisterExport(system_i386_linux,texportliblinux);
   RegisterTarget(system_i386_linux_info);
+<<<<<<< HEAD
+=======
+  RegisterRes(res_elf32_info,TWinLikeResourceFile);
+
+  RegisterExternalLinker(system_x86_6432_linux_info,TLinkerLinux);
+  RegisterImport(system_x86_6432_linux,timportliblinux);
+  RegisterExport(system_x86_6432_linux,texportliblinux);
+  RegisterTarget(system_x86_6432_linux_info);
+>>>>>>> graemeg/fixes_2_2
 {$endif i386}
 {$ifdef m68k}
   RegisterImport(system_m68k_linux,timportliblinux);
@@ -1910,6 +2294,10 @@ initialization
   RegisterImport(system_x86_64_linux,timportliblinux);
   RegisterExport(system_x86_64_linux,texportliblinux);
   RegisterTarget(system_x86_64_linux_info);
+<<<<<<< HEAD
+=======
+  RegisterRes(res_elf64_info,TWinLikeResourceFile);
+>>>>>>> graemeg/fixes_2_2
 {$endif x86_64}
 {$ifdef SPARC}
   RegisterImport(system_SPARC_linux,timportliblinux);

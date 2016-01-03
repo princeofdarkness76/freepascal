@@ -503,7 +503,10 @@ interface
     { Additionally to searching for a macro, also checks whether it's still }
     { actually defined (could be disable using "undef")                     }
     function  defined_macro(const s : string):boolean;
+<<<<<<< HEAD
     { Look for a system procedure (no overloads supported) }
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {*** Object Helpers ***}
 <<<<<<< HEAD
@@ -1028,6 +1031,7 @@ implementation
       begin
          if (tsym(sym).typ in [staticvarsym,localvarsym,paravarsym,fieldvarsym]) and
             ((tsym(sym).owner.symtabletype in
+<<<<<<< HEAD
              [parasymtable,localsymtable,ObjectSymtable,recordsymtable,staticsymtable])) then
            begin
 <<<<<<< HEAD
@@ -1154,6 +1158,53 @@ implementation
           end
         else if ((tsym(sym).owner.symtabletype in
               [ObjectSymtable,parasymtable,localsymtable,staticsymtable,recordsymtable])) then
+=======
+             [parasymtable,localsymtable,ObjectSymtable,staticsymtable])) then
+          begin
+           { unused symbol should be reported only if no }
+           { error is reported                     }
+           { if the symbol is in a register it is used   }
+           { also don't count the value parameters which have local copies }
+           { also don't claim for high param of open parameters (PM) }
+           if (Errorcount<>0) or
+              ([vo_is_hidden_para,vo_is_funcret] * tabstractvarsym(sym).varoptions = [vo_is_hidden_para]) then
+             exit;
+           if (tstoredsym(sym).refs=0) then
+             begin
+                if (vo_is_funcret in tabstractvarsym(sym).varoptions) then
+                  begin
+                    { don't warn about the result of constructors }
+                    if (tsym(sym).owner.symtabletype<>localsymtable) or
+                       (tprocdef(tsym(sym).owner.defowner).proctypeoption<>potype_constructor) then
+                      MessagePos(tsym(sym).fileinfo,sym_w_function_result_not_set)
+                  end
+                else if (tsym(sym).owner.symtabletype=parasymtable) then
+                  MessagePos1(tsym(sym).fileinfo,sym_h_para_identifier_not_used,tsym(sym).realname)
+                else if (tsym(sym).owner.symtabletype=ObjectSymtable) then
+                  MessagePos2(tsym(sym).fileinfo,sym_n_private_identifier_not_used,tsym(sym).owner.realname^,tsym(sym).realname)
+                else
+                  MessagePos1(tsym(sym).fileinfo,sym_n_local_identifier_not_used,tsym(sym).realname);
+             end
+           else if tabstractvarsym(sym).varstate in [vs_written,vs_initialised] then
+             begin
+                if (tsym(sym).owner.symtabletype=parasymtable) then
+                  begin
+                    if not(tabstractvarsym(sym).varspez in [vs_var,vs_out]) and
+                       not(vo_is_funcret in tabstractvarsym(sym).varoptions) then
+                      MessagePos1(tsym(sym).fileinfo,sym_h_para_identifier_only_set,tsym(sym).realname)
+                  end
+                else if (tsym(sym).owner.symtabletype=ObjectSymtable) then
+                  MessagePos2(tsym(sym).fileinfo,sym_n_private_identifier_only_set,tsym(sym).owner.realname^,tsym(sym).realname)
+                else if tabstractvarsym(sym).varoptions*[vo_is_funcret,vo_is_public,vo_is_external]=[] then
+                  MessagePos1(tsym(sym).fileinfo,sym_n_local_identifier_only_set,tsym(sym).realname);
+             end
+           else if (tabstractvarsym(sym).varstate = vs_read_not_warned) and
+                   ([vo_is_public,vo_is_external] * tabstractvarsym(sym).varoptions = []) then
+             MessagePos1(tsym(sym).fileinfo,sym_w_identifier_only_read,tsym(sym).realname)
+         end
+      else if ((tsym(sym).owner.symtabletype in
+              [ObjectSymtable,parasymtable,localsymtable,staticsymtable])) then
+>>>>>>> graemeg/fixes_2_2
           begin
            if (Errorcount<>0) or
               (sp_internal in tsym(sym).symoptions) then
@@ -1723,6 +1774,7 @@ implementation
             { static data fields are already inserted in the globalsymtable }
             if not(sp_static in fieldvs.symoptions) then
               begin
+<<<<<<< HEAD
                 { read_record_fields already set the visibility of the fields,
                   because a single list can contain symbols with different
                   visibility }
@@ -1747,6 +1799,24 @@ implementation
             if (sym.typ=fieldvarsym) and
                not(sp_static in sym.symoptions) and
                (tfieldvarsym(sym).fieldoffset>=offset) then
+=======
+                databitsize:=_datasize*8;
+                sym.fieldoffset:=databitsize;
+                if (l>high(aint) div 8) then
+                  Message(sym_e_segment_too_large);
+                l:=l*8;
+              end;
+            { bit packed records are limited to high(aint) bits }
+            { instead of bytes to avoid double precision        }
+            { arithmetic in offset calculations                 }
+            if int64(l)>high(aint)-sym.fieldoffset then
+              begin
+                Message(sym_e_segment_too_large);
+                _datasize:=high(aint);
+                databitsize:=high(aint);
+              end
+            else
+>>>>>>> graemeg/fixes_2_2
               begin
                 result:=tfieldvarsym(sym);
                 exit;
@@ -1844,7 +1914,11 @@ implementation
         varalignfield:=used_align(varalign,current_settings.alignment.recordalignmin,fieldalignment);
 
         sym.fieldoffset:=align(_datasize,varalignfield);
+<<<<<<< HEAD
         if l>high(asizeint)-sym.fieldoffset then
+=======
+        if l>high(aint)-sym.fieldoffset then
+>>>>>>> graemeg/fixes_2_2
           begin
             Message(sym_e_segment_too_large);
             _datasize:=high(aint);
@@ -2213,7 +2287,11 @@ implementation
         i : integer;
         varalignrecord,varalign,
         storesize,storealign : aint;
+<<<<<<< HEAD
         bitsize: tcgint;
+=======
+        bitsize: aint;
+>>>>>>> graemeg/fixes_2_2
       begin
         storesize:=_datasize;
         storealign:=fieldalignment;
@@ -2266,11 +2344,19 @@ implementation
                 else
                   begin
                     bitsize:=tfieldvarsym(sym).getsize;
+<<<<<<< HEAD
                     if (bitsize>high(asizeint) div 8) then
                       Message(sym_e_segment_too_large);
                     bitsize:=bitsize*8;
                   end;
                 if bitsize>high(asizeint)-databitsize then
+=======
+                    if (bitsize>high(aint) div 8) then
+                      Message(sym_e_segment_too_large);
+                    bitsize:=bitsize*8;
+                  end;
+                if bitsize>high(aint)-databitsize then
+>>>>>>> graemeg/fixes_2_2
                   begin
                     Message(sym_e_segment_too_large);
                     _datasize:=high(asizeint);
@@ -2286,10 +2372,17 @@ implementation
               end
             else
               begin
+<<<<<<< HEAD
                 if tfieldvarsym(sym).getsize>high(asizeint)-_datasize then
                   begin
                     Message(sym_e_segment_too_large);
                     _datasize:=high(asizeint);
+=======
+                if tfieldvarsym(sym).getsize>high(aint)-_datasize then
+                  begin
+                    Message(sym_e_segment_too_large);
+                    _datasize:=high(aint);
+>>>>>>> graemeg/fixes_2_2
                   end
                 else
                   _datasize:=tfieldvarsym(sym).fieldoffset+offset;
@@ -2352,9 +2445,14 @@ implementation
               hsym:=search_struct_member(tobjectdef(defowner),hashedid.id);
               if assigned(hsym) and
                  (
+<<<<<<< HEAD
                   (
                    not(m_delphi in current_settings.modeswitches) and
                    is_visible_for_object(hsym,tobjectdef(defowner))
+=======
+                  (not(m_delphi in current_settings.modeswitches) and
+                   tsym(hsym).is_visible_for_object(tobjectdef(defowner),tobjectdef(defowner))
+>>>>>>> graemeg/fixes_2_2
                   ) or
                   (
                    { In Delphi, you can repeat members of a parent class. You can't }
@@ -2381,7 +2479,14 @@ implementation
                 end;
            end
          else
+<<<<<<< HEAD
            result:=inherited checkduplicate(hashedid,sym);
+=======
+           begin
+             if not(m_duplicate_names in current_settings.modeswitches) then
+               result:=inherited checkduplicate(hashedid,sym);
+           end;
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -2823,6 +2928,7 @@ implementation
           as the procsym }
         if not is_funcret_sym(sym) and
            (defowner.typ=procdef) and
+<<<<<<< HEAD
            assigned(tprocdef(defowner).struct) and
            (tprocdef(defowner).owner.defowner=tprocdef(defowner).struct) and
            (
@@ -2830,6 +2936,15 @@ implementation
             is_object(tprocdef(defowner).struct)
            ) then
           result:=tprocdef(defowner).struct.symtable.checkduplicate(hashedid,sym);
+=======
+           assigned(tprocdef(defowner)._class) and
+           (tprocdef(defowner).owner.defowner=tprocdef(defowner)._class) and
+           (
+            not(m_delphi in current_settings.modeswitches) or
+            is_object(tprocdef(defowner)._class)
+           ) then
+          result:=tprocdef(defowner)._class.symtable.checkduplicate(hashedid,sym);
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -2859,6 +2974,7 @@ implementation
            assigned(tprocdef(defowner).owner) and
 =======
            (defowner.typ=procdef) and
+<<<<<<< HEAD
            assigned(tprocdef(defowner).struct) and
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2884,6 +3000,15 @@ implementation
           defowner.owner.insertdef(def)
         else
           inherited insertdef(def);
+=======
+           assigned(tprocdef(defowner)._class) and
+           (tprocdef(defowner).owner.defowner=tprocdef(defowner)._class) and
+           (
+            not(m_delphi in current_settings.modeswitches) or
+            is_object(tprocdef(defowner)._class)
+           ) then
+          result:=tprocdef(defowner)._class.symtable.checkduplicate(hashedid,sym);
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -3018,7 +3143,25 @@ implementation
 
     function tstaticsymtable.checkduplicate(var hashedid:THashedIDString;sym:TSymEntry):boolean;
       begin
+<<<<<<< HEAD
         result:=inherited checkduplicate(hashedid,sym);
+=======
+        result:=false;
+        hsym:=tsym(FindWithHash(hashedid));
+        if assigned(hsym) then
+          begin
+            { Delphi (contrary to TP) you can have a symbol with the same name as the
+              unit, the unit can then not be accessed anymore using
+              <unit>.<id>, so we can hide the symbol }
+            if (m_delphi in current_settings.modeswitches) and
+               (hsym.typ=symconst.unitsym) then
+              HideSym(hsym)
+            else
+              DuplicateSym(hashedid,sym,hsym);
+            result:=true;
+            exit;
+          end;
+>>>>>>> graemeg/fixes_2_2
 
         if not result and
            (current_module.localsymtable=self) and
@@ -3070,6 +3213,7 @@ implementation
 
     constructor tspecializesymtable.create(const n : string;id:word);
       begin
+<<<<<<< HEAD
         inherited create(n,id);
         { the specialize symtable does not own the syms and defs as they are all
           moved to a different symtable before the symtable is destroyed; this
@@ -3081,6 +3225,23 @@ implementation
     function tspecializesymtable.iscurrentunit: boolean;
       begin
         Result:=true;
+=======
+        result:=false;
+        hsym:=tsym(FindWithHash(hashedid));
+        if assigned(hsym) then
+          begin
+            { Delphi (contrary to TP) you can have a symbol with the same name as the
+              unit, the unit can then not be accessed anymore using
+              <unit>.<id>, so we can hide the symbol }
+            if (m_delphi in current_settings.modeswitches) and
+               (hsym.typ=symconst.unitsym) then
+              HideSym(hsym)
+            else
+              DuplicateSym(hashedid,sym,hsym);
+            result:=true;
+            exit;
+          end;
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -4213,6 +4374,7 @@ implementation
           end;
         result:=false;
         hashedid.id:=s;
+<<<<<<< HEAD
         { an Objective-C protocol can inherit from multiple other protocols
           -> uses ImplementedInterfaces instead }
         if is_objcprotocol(classh) then
@@ -4240,6 +4402,10 @@ implementation
                   end;
               end;
           end
+=======
+        if assigned(current_procinfo) and assigned(current_procinfo.procdef) then
+          currentclassh:=current_procinfo.procdef._class
+>>>>>>> graemeg/fixes_2_2
         else
           begin
             while assigned(classh) do
@@ -5623,6 +5789,29 @@ implementation
 
 
     function defined_macro(const s : string):boolean;
+<<<<<<< HEAD
+=======
+      var
+        mac: tmacro;
+      begin
+        mac:=tmacro(search_macro(s));
+        if assigned(mac) then
+          begin
+            mac.is_used:=true;
+            defined_macro:=mac.defined;
+          end
+        else
+          defined_macro:=false;
+      end;
+
+
+{****************************************************************************
+                              Object Helpers
+****************************************************************************}
+
+    procedure search_class_overloads(aprocsym : tprocsym);
+    { searches n in symtable of pd and all anchestors }
+>>>>>>> graemeg/fixes_2_2
       var
         mac: tmacro;
       begin
@@ -5860,6 +6049,7 @@ implementation
        interface_iunknown:=nil;
        interface_idispatch:=nil;
        rec_tguid:=nil;
+       aktobjectdef:=nil;
        dupnr:=0;
      end;
 

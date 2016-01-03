@@ -377,6 +377,7 @@ implementation
         op: TAsmOp;
 >>>>>>> origin/cpstrnew
       begin
+<<<<<<< HEAD
         load_fpu_location(singleprec);
         case current_settings.fputype of
           fpu_fpa,
@@ -434,6 +435,10 @@ implementation
         else
           internalerror(2009111402);
         end;
+=======
+        load_fpu_location;
+        current_asmdata.CurrAsmList.concat(setoppostfix(taicpu.op_reg_reg(A_ABS,location.register,left.location.register),get_fpu_postfix(resultdef)));
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -532,6 +537,7 @@ implementation
         op: TAsmOp;
 >>>>>>> origin/cpstrnew
       begin
+<<<<<<< HEAD
         load_fpu_location(singleprec);
         case current_settings.fputype of
           fpu_fpa,
@@ -582,6 +588,10 @@ implementation
         else
           internalerror(2009111402);
         end;
+=======
+        load_fpu_location;
+        current_asmdata.CurrAsmList.concat(setoppostfix(taicpu.op_reg_reg(A_SQT,location.register,left.location.register),get_fpu_postfix(resultdef)));
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -637,6 +647,7 @@ implementation
           end;
       end;
 
+<<<<<<< HEAD
     procedure tarminlinenode.second_abs_long;
       var
         opsize : tcgsize;
@@ -663,6 +674,8 @@ implementation
 
         cg.a_reg_dealloc(current_asmdata.CurrAsmList,NR_DEFAULTFLAGS);
       end;
+=======
+>>>>>>> graemeg/fixes_2_2
 
 begin
   cinlinenode:=tarminlinenode;

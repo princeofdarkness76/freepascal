@@ -31,7 +31,11 @@ unit agppcgas;
   interface
   
     uses
+<<<<<<< HEAD
        systems,aasmbase,
+=======
+       aasmbase,
+>>>>>>> graemeg/fixes_2_2
        aasmtai,aasmdata,
        aggas,
        cpubase,cgutils,
@@ -43,11 +47,16 @@ unit agppcgas;
     end;
 
     TPPCGNUAssembler=class(TGNUassembler)
+<<<<<<< HEAD
       constructor create(info: pasminfo; smart: boolean); override;
+=======
+      constructor create(smart: boolean); override;
+>>>>>>> graemeg/fixes_2_2
       procedure WriteExtraHeader; override;
     end;
 
     TPPCAppleGNUAssembler=class(TAppleGNUassembler)
+<<<<<<< HEAD
       constructor create(info: pasminfo; smart: boolean); override;
       function MakeCmdLine: TCmdStr; override;
     end;
@@ -63,6 +72,17 @@ unit agppcgas;
 
     topstr = string[4];
 
+=======
+      constructor create(smart: boolean); override;
+      function MakeCmdLine: TCmdStr; override;
+    end;
+
+    topstr = string[4];
+
+    function getreferencestring(var ref : treference) : string;
+    function getopstr_jmp(const o:toper) : string;
+    function getopstr(const o:toper) : string;
+>>>>>>> graemeg/fixes_2_2
     function branchmode(o: tasmop): topstr;
     function cond2str(op: tasmop; c: tasmcond): string;  
 
@@ -70,11 +90,16 @@ unit agppcgas;
 
     uses
        cutils,globals,verbose,
+<<<<<<< HEAD
        cgbase,
+=======
+       cgbase,systems,
+>>>>>>> graemeg/fixes_2_2
        assemble,
        itcpugas,cpuinfo,
        aasmcpu;
 
+<<<<<<< HEAD
 {$ifdef cpu64bitaddr}
     const
       refaddr2str: array[trefaddr] of string[9] = ('', '', '', '', '@l', '@h', '@higher', '@highest', '@ha', '@highera', '@highesta');
@@ -89,6 +114,22 @@ unit agppcgas;
 
 
     function getreferencestring(asminfo: pasminfo; var ref : treference) : string;
+=======
+{$ifdef cpu64bit}
+    const
+      refaddr2str: array[trefaddr] of string[9] = ('', '', '', '@l', '@h', '@higher', '@highest', '@ha', '@highera', '@highesta');
+      verbose_refaddrs = [addr_low, addr_high, addr_higher, addr_highest, addr_higha, addr_highera, addr_highesta];
+      refaddr2str_darwin: array[trefaddr] of string[4] = ('','','','lo16', 'hi16', '@err', '@err', 'ha16', '@err', '@err');
+{$else cpu64bit}
+    const
+      refaddr2str: array[trefaddr] of string[3] = ('','','','@l','@h','@ha');
+      refaddr2str_darwin: array[trefaddr] of string[4] = ('','','','lo16','hi16','ha16');
+      verbose_refaddrs = [addr_low,addr_high,addr_higha];
+{$endif cpu64bit}
+
+
+    function getreferencestring(var ref : treference) : string;
+>>>>>>> graemeg/fixes_2_2
     var
       s : string;
     begin
@@ -97,6 +138,7 @@ unit agppcgas;
           if ((offset < -32768) or (offset > 32767)) and
              (refaddr = addr_no) then
             internalerror(2006052501);
+<<<<<<< HEAD
           case refaddr of
             addr_no:
               s := '';
@@ -138,6 +180,24 @@ unit agppcgas;
                   end;
               end;
           end;
+=======
+          if (refaddr = addr_no) then
+            s := ''
+          else
+            begin
+              if target_info.system in [system_powerpc_darwin,system_powerpc64_darwin] then
+                s := refaddr2str_darwin[refaddr]
+              else
+                s :='';
+              s := s+'(';
+              if assigned(symbol) then
+                begin
+                  s:=s+symbol.name;
+                  if assigned(relsymbol) then
+                    s:=s+'-'+relsymbol.name;
+                end;
+            end;
+>>>>>>> graemeg/fixes_2_2
           if offset<0 then
            s:=s+tostr(offset)
           else
@@ -149,6 +209,7 @@ unit agppcgas;
                 s:=s+tostr(offset);
             end;
 
+<<<<<<< HEAD
            if not(refaddr in [addr_no,addr_pic_no_got]) then
              begin
                s := s+')';
@@ -163,17 +224,38 @@ unit agppcgas;
 {$endif cpu64bitaddr}
 
            if (index=NR_NO) then
+=======
+           if (refaddr in verbose_refaddrs) then
+             begin
+               s := s+')';
+               if not(target_info.system in [system_powerpc_darwin,system_powerpc64_darwin]) then
+                 s := s+refaddr2str[refaddr];
+             end;
+{$ifdef cpu64bit}
+           if (refaddr = addr_pic) then
+	     if (target_info.system <> system_powerpc64_linux) then
+	       s := s + ')'
+	     else
+	       s := s + ')@got';
+{$endif cpu64bit}
+
+           if (index=NR_NO) and (base<>NR_NO) then
+>>>>>>> graemeg/fixes_2_2
              begin
                 if offset=0 then
                   begin
                     if not (assigned(symbol)) then
                       s:=s+'0';
                   end;
+<<<<<<< HEAD
                 if (base<>NR_NO) then
                   s:=s+'('+gas_regname(base)+')'
                 else if not assigned(symbol) and
                         not(refaddr in verbose_refaddrs) then
                   s:=s+'(0)';
+=======
+                s:=s+'('+gas_regname(base)+')';
+>>>>>>> graemeg/fixes_2_2
              end
            else if (index<>NR_NO) and (base<>NR_NO) then
              begin
@@ -187,7 +269,11 @@ unit agppcgas;
     end;
     
 
+<<<<<<< HEAD
     function getopstr_jmp(asminfo: pasminfo; const o:toper) : string;
+=======
+    function getopstr_jmp(const o:toper) : string;
+>>>>>>> graemeg/fixes_2_2
     var
       hs : string;
     begin
@@ -200,10 +286,15 @@ unit agppcgas;
         top_ref :
           begin
             if o.ref^.refaddr<>addr_full then
+<<<<<<< HEAD
               internalerror(200402267);
             hs:=o.ref^.symbol.name;
             if asminfo^.dollarsign<>'$' then
               hs:=ReplaceForbiddenAsmSymbolChars(hs);
+=======
+              internalerror(200402262);
+            hs:=o.ref^.symbol.name;
+>>>>>>> graemeg/fixes_2_2
             if o.ref^.offset>0 then
               hs:=hs+'+'+tostr(o.ref^.offset)
             else
@@ -219,7 +310,11 @@ unit agppcgas;
     end;
 
 
+<<<<<<< HEAD
     function getopstr(asminfo: pasminfo; const o:toper) : string;
+=======
+    function getopstr(const o:toper) : string;
+>>>>>>> graemeg/fixes_2_2
     var
       hs : string;
     begin
@@ -232,8 +327,11 @@ unit agppcgas;
           if o.ref^.refaddr=addr_full then
             begin
               hs:=o.ref^.symbol.name;
+<<<<<<< HEAD
               if asminfo^.dollarsign<>'$' then
                 hs:=ReplaceForbiddenAsmSymbolChars(hs);
+=======
+>>>>>>> graemeg/fixes_2_2
               if o.ref^.offset>0 then
                hs:=hs+'+'+tostr(o.ref^.offset)
               else
@@ -242,7 +340,11 @@ unit agppcgas;
               getopstr:=hs;
             end
           else
+<<<<<<< HEAD
             getopstr:=getreferencestring(asminfo,o.ref^);
+=======
+            getopstr:=getreferencestring(o.ref^);
+>>>>>>> graemeg/fixes_2_2
         else
           internalerror(2002070604);
       end;
@@ -363,8 +465,13 @@ unit agppcgas;
             begin
               { first write the current contents of s, because the symbol }
               { may be 255 characters                                     }
+<<<<<<< HEAD
               owner.writer.AsmWrite(s);
               s:=getopstr_jmp(owner.asminfo,taicpu(hp).oper[0]^);
+=======
+              owner.asmwrite(s);
+              s:=getopstr_jmp(taicpu(hp).oper[0]^);
+>>>>>>> graemeg/fixes_2_2
             end;
         end
       else
@@ -384,12 +491,20 @@ unit agppcgas;
                    // debug code
                    // writeln(s);
                    // writeln(taicpu(hp).fileinfo.line);
+<<<<<<< HEAD
                    s:=s+sep+getopstr(owner.asminfo,taicpu(hp).oper[i]^);
+=======
+                   s:=s+sep+getopstr(taicpu(hp).oper[i]^);
+>>>>>>> graemeg/fixes_2_2
                    sep:=',';
                 end;
             end;
         end;
+<<<<<<< HEAD
       owner.writer.AsmWriteLn(s);
+=======
+      owner.AsmWriteLn(s);
+>>>>>>> graemeg/fixes_2_2
     end;
 
 
@@ -397,9 +512,15 @@ unit agppcgas;
 {                         GNU PPC Assembler writer                           }
 {****************************************************************************}
 
+<<<<<<< HEAD
     constructor TPPCGNUAssembler.create(info: pasminfo; smart: boolean);
       begin
         inherited;
+=======
+    constructor TPPCGNUAssembler.create(smart: boolean);
+      begin
+        inherited create(smart);
+>>>>>>> graemeg/fixes_2_2
         InstrWriter := TPPCInstrWriter.create(self);
       end;
 
@@ -408,12 +529,19 @@ unit agppcgas;
       var
          i : longint;
       begin
+<<<<<<< HEAD
         if target_info.abi = abi_powerpc_elfv2 then
           writer.AsmWriteln(#9'.abiversion 2');
         for i:=0 to 31 do
           writer.AsmWriteln(#9'.set'#9'r'+tostr(i)+','+tostr(i));
         for i:=0 to 31 do
           writer.AsmWriteln(#9'.set'#9'f'+tostr(i)+','+tostr(i));
+=======
+        for i:=0 to 31 do
+          AsmWriteln(#9'.set'#9'r'+tostr(i)+','+tostr(i));
+        for i:=0 to 31 do
+          AsmWriteln(#9'.set'#9'f'+tostr(i)+','+tostr(i));
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -421,9 +549,15 @@ unit agppcgas;
 {                      GNU/Apple PPC Assembler writer                        }
 {****************************************************************************}
 
+<<<<<<< HEAD
     constructor TPPCAppleGNUAssembler.create(info: pasminfo; smart: boolean);
       begin
         inherited;
+=======
+    constructor TPPCAppleGNUAssembler.create(smart: boolean);
+      begin
+        inherited create(smart);
+>>>>>>> graemeg/fixes_2_2
         InstrWriter := TPPCInstrWriter.create(self);
       end;
 
@@ -431,9 +565,15 @@ unit agppcgas;
     function TPPCAppleGNUAssembler.MakeCmdLine: TCmdStr;
       begin
         result := inherited MakeCmdLine;
+<<<<<<< HEAD
 {$ifdef cpu64bitaddr}
         Replace(result,'$ARCH','ppc64')
 {$else cpu64bitaddr}
+=======
+{$ifdef cpu64bit}
+        Replace(result,'$ARCH','ppc64')
+{$else cpu64bit}
+>>>>>>> graemeg/fixes_2_2
         case current_settings.cputype of
           cpu_PPC7400:
             Replace(result,'$ARCH','ppc7400');
@@ -442,6 +582,7 @@ unit agppcgas;
           else
             Replace(result,'$ARCH','ppc')
         end;
+<<<<<<< HEAD
 {$endif cpu64bitaddr}
       end;
 
@@ -526,6 +667,14 @@ unit agppcgas;
         end;
       end;
 
+=======
+{$endif cpu64bit}
+      end;
+
+
+
+
+>>>>>>> graemeg/fixes_2_2
 
 {*****************************************************************************
                                   Initialize
@@ -538,6 +687,7 @@ unit agppcgas;
 
          idtxt  : 'AS';
          asmbin : 'as';
+<<<<<<< HEAD
 {$ifdef cpu64bitaddr}
          asmcmd : '-a64 -o $OBJ $EXTRAOPT $ASM';
 {$else cpu64bitaddr}
@@ -548,6 +698,17 @@ unit agppcgas;
          labelprefix : '.L';
          comment : '# ';
          dollarsign: '$';
+=======
+{$ifdef cpu64bit}
+         asmcmd : '-a64 -o $OBJ $ASM';
+{$else cpu64bit}
+         asmcmd: '-o $OBJ $ASM';
+{$endif cpu64bit}
+         supported_target : system_any;
+         flags : [af_allowdirect,af_needar,af_smartlink_sections];
+         labelprefix : '.L';
+         comment : '# ';
+>>>>>>> graemeg/fixes_2_2
        );
 
 
@@ -555,6 +716,7 @@ unit agppcgas;
        (
          id     : as_darwin;
 
+<<<<<<< HEAD
          idtxt  : 'AS-DARWIN';
          asmbin : 'as';
          asmcmd : '-o $OBJ $EXTRAOPT $ASM -arch $ARCH';
@@ -631,4 +793,19 @@ begin
   RegisterAssembler(as_ppc_gas_darwin_powerpc_info,TPPCAppleGNUAssembler);
   RegisterAssembler(as_ppc_aix_powerpc_info,TPPCAIXAssembler);
   RegisterAssembler(as_ppc_gas_aix_powerpc_info,TPPCAIXAssembler);
+=======
+         idtxt  : 'AS-Darwin';
+         asmbin : 'as';
+         asmcmd : '-o $OBJ $ASM -arch $ARCH';
+         supported_target : system_any;
+         flags : [af_allowdirect,af_needar,af_smartlink_sections,af_supports_dwarf];
+         labelprefix : 'L';
+         comment : '# ';
+       );
+
+
+begin
+  RegisterAssembler(as_ppc_gas_info,TPPCGNUAssembler);
+  RegisterAssembler(as_ppc_gas_darwin_powerpc_info,TPPCAppleGNUAssembler);
+>>>>>>> graemeg/fixes_2_2
 end.

@@ -22,6 +22,7 @@ interface
 uses SysUtils, Classes;
 
 resourcestring
+<<<<<<< HEAD
   SErrInvalidCharacter = 'Invalid character at line %d, pos %d: ''%s''';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -36,6 +37,9 @@ resourcestring
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  SErrInvalidCharacter = 'Invalid character ''%s''';
+>>>>>>> graemeg/fixes_2_2
   SErrOpenString = 'string exceeds end of line';
 
 type
@@ -55,6 +59,7 @@ type
     tkCurlyBraceClose,       // '}'
     tkSquaredBraceOpen,       // '['
     tkSquaredBraceClose,      // ']'
+<<<<<<< HEAD
     tkIdentifier,            // Any Javascript identifier
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -95,11 +100,22 @@ Type
   TJSONScanner = class
   private
     FAllowComments: Boolean;
+=======
+    tkUnknown
+    );
+
+  EScannerError       = class(Exception);
+
+
+  TJSONScanner = class
+  private
+>>>>>>> graemeg/fixes_2_2
     FSource : TStringList;
     FCurRow: Integer;
     FCurToken: TJSONToken;
     FCurTokenString: string;
     FCurLine: string;
+<<<<<<< HEAD
     FStrict: Boolean;
     TokenStr: PChar;
     FOptions : TJSONOptions;
@@ -129,6 +145,17 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+    TokenStr: PChar;
+    function GetCurColumn: Integer;
+  protected
+    procedure Error(const Msg: string);overload;
+    procedure Error(const Msg: string; Args: array of Const);overload;
+    function DoFetchToken: TJSONToken;
+  public
+    constructor Create(Source : TStream); overload;
+    constructor Create(Source : String); overload;
+>>>>>>> graemeg/fixes_2_2
     destructor Destroy; override;
     function FetchToken: TJSONToken;
 
@@ -139,6 +166,7 @@ Type
 
     property CurToken: TJSONToken read FCurToken;
     property CurTokenString: string read FCurTokenString;
+<<<<<<< HEAD
     // Use strict JSON: " for strings, object members are strings, not identifiers
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -161,6 +189,8 @@ Type
 =======
     Property Strict : Boolean Read FStrict Write FStrict;
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
   end;
 
 const
@@ -178,6 +208,7 @@ const
     '}',
     '[',
     ']',
+<<<<<<< HEAD
     'identifier',
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -192,12 +223,15 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
     ''
   );
 
 
 implementation
 
+<<<<<<< HEAD
 constructor TJSONScanner.Create(Source : TStream; AUseUTF8 : Boolean = True);
 
 Var
@@ -253,6 +287,19 @@ begin
   FSource:=TStringList.Create;
   FSource.Text:=Source;
   FOptions:=AOptions;
+=======
+constructor TJSONScanner.Create(Source : TStream);
+
+begin
+  FSource:=TStringList.Create;
+  FSource.LoadFromStream(Source);
+end;
+
+constructor TJSONScanner.Create(Source : String);
+begin
+  FSource:=TStringList.Create;
+  FSource.Text:=Source;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 destructor TJSONScanner.Destroy;
@@ -273,7 +320,11 @@ begin
   raise EScannerError.Create(Msg);
 end;
 
+<<<<<<< HEAD
 procedure TJSONScanner.Error(const Msg: string; const Args: array of const);
+=======
+procedure TJSONScanner.Error(const Msg: string; Args: array of Const);
+>>>>>>> graemeg/fixes_2_2
 begin
   raise EScannerError.CreateFmt(Msg, Args);
 end;
@@ -301,10 +352,15 @@ var
   it : TJSONToken;
   I : Integer;
   OldLength, SectionLength, Index: Integer;
+<<<<<<< HEAD
   C : char;
   S : String;
   IsStar,EOC: Boolean;
 
+=======
+  S : String;
+  
+>>>>>>> graemeg/fixes_2_2
 begin
   if TokenStr = nil then
     if not FetchLine then
@@ -335,6 +391,7 @@ begin
           end;
       until not (TokenStr[0] in [#9, ' ']);
       end;
+<<<<<<< HEAD
     '"','''':
       begin
         C:=TokenStr[0];
@@ -356,11 +413,20 @@ begin
         If (C='''') and Strict then
 >>>>>>> origin/cpstrnew
           Error(SErrInvalidCharacter, [CurRow,CurColumn,TokenStr[0]]);
+=======
+    '"':
+      begin
+>>>>>>> graemeg/fixes_2_2
         Inc(TokenStr);
         TokenStart := TokenStr;
         OldLength := 0;
         FCurTokenString := '';
+<<<<<<< HEAD
         while not (TokenStr[0] in [#0,C]) do
+=======
+
+        while not (TokenStr[0] in [#0,'"']) do
+>>>>>>> graemeg/fixes_2_2
           begin
           if (TokenStr[0]='\') then
             begin
@@ -370,7 +436,10 @@ begin
             // Read escaped token
             Case TokenStr[0] of
               '"' : S:='"';
+<<<<<<< HEAD
               '''' : S:='''';
+=======
+>>>>>>> graemeg/fixes_2_2
               't' : S:=#9;
               'b' : S:=#8;
               'n' : S:=#10;
@@ -387,6 +456,7 @@ begin
                         '0'..'9','A'..'F','a'..'f' :
                           S[i]:=Upcase(TokenStr[0]);
                       else
+<<<<<<< HEAD
                         Error(SErrInvalidCharacter, [CurRow,CurColumn,TokenStr[0]]);
                       end;
                       end;
@@ -399,6 +469,17 @@ begin
               #0  : Error(SErrOpenString);
             else
               Error(SErrInvalidCharacter, [CurRow,CurColumn,TokenStr[0]]);
+=======
+                        Error(SErrInvalidCharacter, [TokenStr[0]]);
+                      end;
+                      end;
+                    // Takes care of conversion...  
+                    S:=WideChar(StrToInt('$'+S));  
+                    end;
+              #0  : Error(SErrOpenString);
+            else
+              Error(SErrInvalidCharacter, [TokenStr[0]]);  
+>>>>>>> graemeg/fixes_2_2
             end;
             SetLength(FCurTokenString, OldLength + SectionLength+1+Length(S));
             if SectionLength > 0 then
@@ -427,7 +508,11 @@ begin
         Inc(TokenStr);
         Result := tkComma;
       end;
+<<<<<<< HEAD
     '0'..'9','.','-':
+=======
+    '0'..'9','-':
+>>>>>>> graemeg/fixes_2_2
       begin
         TokenStart := TokenStr;
         while true do
@@ -461,6 +546,7 @@ begin
         end;
         SectionLength := TokenStr - TokenStart;
 <<<<<<< HEAD
+<<<<<<< HEAD
         SetString(FCurTokenString, TokenStart, SectionLength);
 =======
         SetLength(FCurTokenString, SectionLength);
@@ -478,6 +564,11 @@ begin
 >>>>>>> origin/cpstrnew
         If (FCurTokenString[1]='.') then
           FCurTokenString:='0'+FCurTokenString;
+=======
+        SetLength(FCurTokenString, SectionLength);
+        if SectionLength > 0 then
+          Move(TokenStart^, FCurTokenString[1], SectionLength);
+>>>>>>> graemeg/fixes_2_2
         Result := tkNumber;
       end;
     ':':
@@ -505,6 +596,7 @@ begin
         Inc(TokenStr);
         Result := tkSquaredBraceClose;
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -566,13 +658,22 @@ begin
 =======
     'a'..'z','_':
 >>>>>>> origin/cpstrnew
+=======
+    'T','t','F','f','N','n' :
+>>>>>>> graemeg/fixes_2_2
       begin
         TokenStart := TokenStr;
         repeat
           Inc(TokenStr);
         until not (TokenStr[0] in ['A'..'Z', 'a'..'z', '0'..'9', '_']);
         SectionLength := TokenStr - TokenStart;
+<<<<<<< HEAD
         SetString(FCurTokenString, TokenStart, SectionLength);
+=======
+        SetLength(FCurTokenString, SectionLength);
+        if SectionLength > 0 then
+          Move(TokenStart^, FCurTokenString[1], SectionLength);
+>>>>>>> graemeg/fixes_2_2
         for it := tkTrue to tkNull do
           if CompareText(CurTokenString, TokenInfos[it]) = 0 then
             begin
@@ -580,6 +681,7 @@ begin
             FCurToken := Result;
             exit;
             end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -603,6 +705,12 @@ begin
       end;
   else
     Error(SErrInvalidCharacter, [CurRow,CurCOlumn,TokenStr[0]]);
+=======
+        Error(SErrInvalidCharacter, [TokenStart[0]]);
+      end;
+  else
+    Error(SErrInvalidCharacter, [TokenStr[0]]);
+>>>>>>> graemeg/fixes_2_2
   end;
 
   FCurToken := Result;
@@ -613,6 +721,7 @@ begin
   Result := TokenStr - PChar(CurLine);
 end;
 
+<<<<<<< HEAD
 function TJSONScanner.GetO(AIndex: TJSONOption): Boolean;
 begin
   Result:=AIndex in FOptions;
@@ -626,4 +735,6 @@ begin
     Exclude(Foptions,AIndex)
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 end.

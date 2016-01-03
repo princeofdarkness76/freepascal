@@ -34,9 +34,14 @@ type
 
 const
   { For floattodatetime and VariantToDate }
+<<<<<<< HEAD
 {$ifndef FPUNONE}
   MinDateTime: TDateTime =  -693593.0;        { 01/01/0001 12:00:00.000 AM }
   MaxDateTime: TDateTime =  2958465.99999999; { 12/31/9999 11:59:59.999 PM }
+=======
+  MinDateTime: TDateTime =  -693593.0;     { 01/01/0001 12:00:00.000 AM }
+  MaxDateTime: TDateTime =  2958465.99999; { 12/31/9999 11:59:59.999 PM }
+>>>>>>> graemeg/fixes_2_2
 
 {$if defined(FPC_HAS_TYPE_EXTENDED) or defined(FPC_HAS_TYPE_FLOAT128)}
   MinCurrency: Currency = -922337203685477.5808;
@@ -74,8 +79,13 @@ function LowerCase(const s: string): string; overload;
   version for a variant }
 function LowerCase(const V: variant): string; overload;{$ifdef SYSUTILSINLINE}inline;{$endif}
 function CompareStr(const S1, S2: string): Integer; overload;
+<<<<<<< HEAD
 function CompareMemRange(P1, P2: Pointer; Length: PtrUInt): integer;{$ifdef SYSUTILSINLINE}inline;{$endif}
 function CompareMem(P1, P2: Pointer; Length: PtrUInt): Boolean;{$ifdef SYSUTILSINLINE}inline;{$endif}
+=======
+function CompareMemRange(P1, P2: Pointer; Length: cardinal): integer;
+function CompareMem(P1, P2: Pointer; Length: cardinal): Boolean;
+>>>>>>> graemeg/fixes_2_2
 function CompareText(const S1, S2: string): integer;
 function SameText(const s1,s2:String):Boolean;
 
@@ -110,13 +120,22 @@ function IntToStr(Value: QWord): string;
 function IntToHex(Value: Longint; Digits: integer): string;
 function IntToHex(Value: Int64; Digits: integer): string;
 function IntToHex(Value: QWord; Digits: integer): string;
+<<<<<<< HEAD
 function StrToInt(const s: string): Longint;
 function TryStrToInt(const s: string; Out i : Longint) : boolean;
+=======
+function StrToInt(const s: string): integer;
+function TryStrToInt(const s: string; Out i : integer) : boolean;
+>>>>>>> graemeg/fixes_2_2
 function StrToInt64(const s: string): int64;
 function TryStrToInt64(const s: string; Out i : int64) : boolean;
 function StrToQWord(const s: string): QWord;
 function TryStrToQWord(const s: string; Out Q : QWord) : boolean;
+<<<<<<< HEAD
 function StrToIntDef(const S: string; Default: Longint): Longint;
+=======
+function StrToIntDef(const S: string; Default: integer): integer;
+>>>>>>> graemeg/fixes_2_2
 function StrToInt64Def(const S: string; Default: int64): int64;
 function StrToQWordDef(const S: string; Default: QWord): QWord;
 function LoadStr(Ident: integer): string;

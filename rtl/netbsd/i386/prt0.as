@@ -40,11 +40,15 @@ __progname:
 __ps_strings:
 	.long 0
 	.align 4
+<<<<<<< HEAD
 .ifdef CPREFIX
 ___fpucw:
 .else
 __fpucw:
 .endif
+=======
+___fpucw:
+>>>>>>> graemeg/fixes_2_2
         .long   0x1332
 
         .globl  ___fpc_brk_addr         /* heap management */
@@ -54,7 +58,11 @@ ___fpc_brk_addr:
         .long   0
 
 #APP
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> graemeg/fixes_2_2
 	.text
 	.align	4
 	.globl	__start
@@ -82,15 +90,24 @@ ___start:
 	movl %esp,%ebp
 	movl 16(%ebp),%eax
 	movl %eax,environ
+<<<<<<< HEAD
 	movl %eax,operatingsystem_parameter_envp
 	movl 8(%ebp),%eax
 	movl %eax,operatingsystem_parameter_argc
 	movl 12(%ebp),%eax
 	movl %eax,operatingsystem_parameter_argv
+=======
+	movl %eax,U_SYSTEM_ENVP
+	movl 8(%ebp),%eax
+	movl %eax,U_SYSTEM_ARGC
+	movl 12(%ebp),%eax
+	movl %eax,U_SYSTEM_ARGV
+>>>>>>> graemeg/fixes_2_2
 	movl (%eax),%edx
 	movl %edx,__progname
 	testl %edx,%edx
 	je .L2
+<<<<<<< HEAD
         movl __progname,%edx
         // Increase until 0 found
         movl $0,%ebx
@@ -112,6 +129,16 @@ ___start:
         movl %eax,__progname
 .LL4:
         cmpl $0,__progname
+=======
+	pushl $47
+	movl __progname,%eax
+	pushl %eax
+	call _strrchr
+	addl $8,%esp
+	movl %eax,%eax
+	movl %eax,__progname
+	cmpl $0,__progname
+>>>>>>> graemeg/fixes_2_2
 	jne .L3
 	movl 12(%ebp),%eax
 	movl (%eax),%edx
@@ -135,6 +162,7 @@ ___start:
 
         finit                           /* initialize fpu */
         fwait
+<<<<<<< HEAD
  .ifdef CPREFIX
         fldcw   ___fpucw
  .else
@@ -148,6 +176,14 @@ ___start:
 	call main
 .endif
 pushl %eax
+=======
+        fldcw   ___fpucw
+
+        xorl    %ebp,%ebp
+
+	call _main
+	pushl %eax
+>>>>>>> graemeg/fixes_2_2
 	jmp  _haltproc
 
 .p2align 2,0x90
@@ -156,7 +192,11 @@ pushl %eax
 
 _haltproc:
            mov $1,%eax
+<<<<<<< HEAD
            movzwl operatingsystem_result,%ebx
+=======
+           movzwl U_SYSTEM_EXITCODE,%ebx
+>>>>>>> graemeg/fixes_2_2
            pushl %ebx
            call _actualsyscall
            addl  $4,%esp
@@ -185,9 +225,12 @@ _actualsyscall:
 .long 1
 .ascii "NetBSD\0\0"
 .long 199905
+<<<<<<< HEAD
 
         .comm environ,4,4
         .comm operatingsystem_parameter_envp,4,4
         .comm operatingsystem_parameter_argc,4,4
         .comm operatingsystem_parameter_argv,4,4
 
+=======
+>>>>>>> graemeg/fixes_2_2

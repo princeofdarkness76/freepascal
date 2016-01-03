@@ -1,4 +1,5 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 #
 
@@ -17,14 +18,27 @@ version=3.1.1
 =======
 >>>>>>> origin/cpstrnew
 version=2.5.1
+=======
+#   Makefile.fpc for odbc bindings
+#
+[package]
+name=odbc
+version=2.2.5
+>>>>>>> graemeg/fixes_2_2
 
 [target]
 units=odbcsql odbcsqldyn
 exampledirs=examples
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
 [require]
 packages=rtl fpmkunit
+=======
+
+[require]
+libc=n
+>>>>>>> graemeg/fixes_2_2
 
 [install]
 fpcpackage=y
@@ -32,6 +46,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -117,3 +132,15 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[compiler]
+includedir=src
+sourcedir=src
+
+[shared]
+build=n
+
+[rules]
+.NOTPARALLEL:
+
+>>>>>>> graemeg/fixes_2_2

@@ -32,6 +32,7 @@ begin
 >>>>>>> graemeg/cpstrnew
 procedure dirfn(afunc : TDirFnType;s:pchar;len:integer);
 begin
+<<<<<<< HEAD
 =======
 procedure dirfn(afunc : TDirFnType;s:pchar;len:integer);
 begin
@@ -42,6 +43,12 @@ begin
 >>>>>>> origin/cpstrnew
   DoDirSeparators(s);
   if not aFunc(s) then
+=======
+  move(s[1],buffer,length(s));
+  buffer[length(s)]:=#0;
+  DoDirSeparators(pchar(@buffer));
+  if not aFunc(@buffer) then
+>>>>>>> graemeg/fixes_2_2
     begin
       errno:=GetLastError;
       Errno2InoutRes;

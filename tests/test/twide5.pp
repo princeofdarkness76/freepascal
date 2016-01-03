@@ -2,7 +2,10 @@
 
 var
   ws: widestring;
+<<<<<<< HEAD
   uns: unicodestring;
+=======
+>>>>>>> graemeg/fixes_2_2
   us: UCS4String;
 begin
 // the compiler does not yet support characters which require
@@ -43,6 +46,7 @@ begin
      (ws[7]<>#$d87e) or
      (ws[8]<>#$dc04) then
     halt(3);
+<<<<<<< HEAD
   uns:='éłŁćçŹ'#$d87e#$dc04;
   if (length(uns)<>8) or
      (uns[1]<>'é') or
@@ -54,4 +58,6 @@ begin
      (uns[7]<>#$d87e) or
      (uns[8]<>#$dc04) then
     halt(4);
+=======
+>>>>>>> graemeg/fixes_2_2
 end.

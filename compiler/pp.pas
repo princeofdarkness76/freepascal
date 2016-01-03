@@ -143,11 +143,14 @@ program pp;
   {$endif i386}
 {$endif support_mmx}
 
+<<<<<<< HEAD
 
 { Don't care about minstacksize or maxstacksize not beeing supported by current OS }
 {$WARN 2077 OFF}
 {$WARN 2078 OFF}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifdef win32}
   { 256 MB stack }
   { under windows the stack can't grow }
@@ -159,7 +162,11 @@ program pp;
     {$MAXSTACKSIZE 512000000}
   {$else win64}
     { 1 MB stack }
+<<<<<<< HEAD
     {$MINSTACKSIZE 1000000}
+=======
+    {$STACKSIZE 1000000}
+>>>>>>> graemeg/fixes_2_2
   {$endif win64}
 {$endif win32}
 

@@ -284,8 +284,19 @@ type
   PFiletime = Windows.PFileTime;
 {$endif Windows}
 
+<<<<<<< HEAD
 type
   tagSTATSTG = record
+=======
+{$endif Windows}
+
+type
+  tagSTATSTG =
+{$ifndef FPC_REQUIRES_PROPER_ALIGNMENT}
+  packed
+{$endif FPC_REQUIRES_PROPER_ALIGNMENT}
+  record
+>>>>>>> graemeg/fixes_2_2
      pwcsName      : POleStr;
      dwType        : DWord;
      cbSize        : Large_uint;
@@ -301,8 +312,13 @@ type
   TStatStg = tagSTATSTG;
   STATSTG = TStatStg;
   PStatStg = ^TStatStg;
+<<<<<<< HEAD
 
   { classes depends on these interfaces, we can't use the activex unit in classes though }
+=======
+  
+  { classes depends on these interfaces, we can't use the activex unit in classes though }  
+>>>>>>> graemeg/fixes_2_2
   IClassFactory = Interface(IUnknown) ['{00000001-0000-0000-C000-000000000046}']
      Function CreateInstance(Const unkOuter : IUnknown;Const riid : TGUID;Out vObject) : HResult;StdCall;
      Function LockServer(fLock : LongBool) : HResult;StdCall;
@@ -313,7 +329,7 @@ type
      function Read(pv : Pointer;cb : DWORD;pcbRead : PDWORD) : HRESULT;stdcall;
      function Write(pv : Pointer;cb : DWORD;pcbWritten : PDWORD): HRESULT;stdcall;
   end;
-
+  
   IStream = interface(ISequentialStream) ['{0000000C-0000-0000-C000-000000000046}']
      function Seek(dlibMove : LargeUInt; dwOrigin : Longint; out libNewPosition : LargeUInt) : HResult;stdcall;
      function SetSize(libNewSize : LargeUInt) : HRESULT;stdcall;

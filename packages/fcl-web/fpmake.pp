@@ -13,6 +13,7 @@ begin
 {$endif ALLPACKAGES}
 
     P:=AddPackage('fcl-web');
+<<<<<<< HEAD
     P.ShortName:='fclw';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -87,6 +88,24 @@ begin
         begin
           AddUnit('httpprotocol');
           AddUnit('cgiprotocol');
+=======
+{$ifdef ALLPACKAGES}
+    P.Directory:='fcl-web';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+
+    P.Dependencies.Add('fcl-db');
+    P.Dependencies.Add('fcl-xml');
+    P.Dependencies.Add('fcl-base');
+    P.Dependencies.Add('fcl-process');
+
+    P.SourcePath.Add('src');
+
+    T:=P.Targets.AddUnit('cgiapp.pp');
+    T:=P.Targets.AddUnit('custcgi.pp');
+      with T.Dependencies do
+        begin
+>>>>>>> graemeg/fixes_2_2
           AddUnit('httpdefs');
         end;
     T:=P.Targets.AddUnit('ezcgi.pp');
@@ -102,24 +121,36 @@ begin
           AddUnit('fphtml');
         end;
     T:=P.Targets.AddUnit('fphtml.pp');
+<<<<<<< HEAD
     T.ResourceStrings:=true;
+=======
+>>>>>>> graemeg/fixes_2_2
       with T.Dependencies do
         begin
           AddUnit('httpdefs');
           AddUnit('fphttp');
         end;
     T:=P.Targets.AddUnit('fphttp.pp');
+<<<<<<< HEAD
     T.ResourceStrings:=true;
+=======
+>>>>>>> graemeg/fixes_2_2
       with T.Dependencies do
         begin
           AddUnit('httpdefs');
         end;
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('fpweb.pp');
     T.ResourceStrings:=true;
+=======
+    T:=P.Targets.AddUnit('fptemplate.pp');
+    T:=P.Targets.AddUnit('fpweb.pp');
+>>>>>>> graemeg/fixes_2_2
       with T.Dependencies do
         begin
           AddUnit('httpdefs');
           AddUnit('fphttp');
+<<<<<<< HEAD
           AddUnit('websession');
         end;
     T:=P.Targets.AddUnit('httpprotocol.pp');
@@ -151,21 +182,32 @@ begin
     T:=P.Targets.AddUnit('websession.pp');
 >>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
+=======
+          AddUnit('fptemplate');
+          AddUnit('websession');
+        end;
+    T:=P.Targets.AddUnit('httpdefs.pp');
+    T:=P.Targets.AddUnit('websession.pp');
+>>>>>>> graemeg/fixes_2_2
       with T.Dependencies do
         begin
           AddUnit('fphttp');
           AddUnit('httpdefs');
         end;
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('websession.pp');
       with T.Dependencies do
         begin
           AddUnit('iniwebsession');
         end;
+=======
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('webutil.pp');
       with T.Dependencies do
         begin
           AddUnit('httpdefs');
         end;
+<<<<<<< HEAD
     with P.Targets.AddUnit('custweb.pp') do
       begin
         ResourceStrings:=true;
@@ -453,6 +495,9 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+
+>>>>>>> graemeg/fixes_2_2
 {$ifndef ALLPACKAGES}
     Run;
     end;

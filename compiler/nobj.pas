@@ -71,10 +71,16 @@ implementation
 
     uses
        SysUtils,
+<<<<<<< HEAD
        globals,verbose,systems,fmodule,
        node,
        symbase,symtable,symconst,symtype,defcmp,defutil,
        symcpu,
+=======
+       globals,verbose,systems,
+       node,
+       symbase,symtable,symconst,symtype,defcmp,
+>>>>>>> graemeg/fixes_2_2
        dbgbase,
        wpobase
        ;
@@ -230,6 +236,7 @@ implementation
         begin
           result:=false;
 
+<<<<<<< HEAD
           { ignore hidden entries (e.g. virtual overridden by a static) that are not visible anymore }
           if vmtentryvis=vis_hidden then
             exit;
@@ -381,6 +388,63 @@ implementation
 >>>>>>> origin/cpstrnew
                       MessagePos1(pd.fileinfo,parser_w_should_use_override,pd.fullprocname(false))
                     else
+=======
+        { compare with all stored definitions }
+        for i:=0 to VMTSymEntry.ProcdefList.Count-1 do
+          begin
+            procdefcoll:=pprocdefentry(VMTSymEntry.ProcdefList[i]);
+            { skip definitions that are already hidden }
+            if procdefcoll^.hidden then
+              continue;
+
+            { check if one of the two methods has virtual }
+            if (po_virtualmethod in procdefcoll^.data.procoptions) or
+               (po_virtualmethod in pd.procoptions) then
+              begin
+                { if the current definition has no virtual then hide the
+                  old virtual if the new definition has the same arguments or
+                  when it has no overload directive and no overloads }
+                if not(po_virtualmethod in pd.procoptions) then
+                  begin
+                    if procdefcoll^.visible and
+                       (
+                        not(pdoverload or hasoverloads) or
+                        (compare_paras(procdefcoll^.data.paras,pd.paras,cp_all,[])>=te_equal)
+                       ) then
+                      begin
+                        if is_visible then
+                          procdefcoll^.hidden:=true;
+                        if (pd._class=procdefcoll^.data._class) then
+                           MessagePos(pd.fileinfo,parser_e_overloaded_have_same_parameters)
+                        else if (_class=pd._class) and not(po_reintroduce in pd.procoptions) then
+                          MessagePos1(pd.fileinfo,parser_w_should_use_override,pd.fullprocname(false));
+                      end;
+                  end
+                { if both are virtual we check the header }
+                else if (po_virtualmethod in pd.procoptions) and
+                        (po_virtualmethod in procdefcoll^.data.procoptions) then
+                  begin
+                    { new one has not override }
+                    if is_class_or_interface(_class) and
+                       not(po_overridingmethod in pd.procoptions) then
+                      begin
+                        { we start a new virtual tree, hide the old }
+                        if (not(pdoverload or hasoverloads) or
+                            (compare_paras(procdefcoll^.data.paras,pd.paras,cp_all,[])>=te_equal)) and
+                           (procdefcoll^.visible) then
+                          begin
+                            if is_visible then
+                              procdefcoll^.hidden:=true;
+                            if (pd._class=procdefcoll^.data._class) then
+                              MessagePos(pd.fileinfo,parser_e_overloaded_have_same_parameters)
+                            else if (_class=pd._class) and not(po_reintroduce in pd.procoptions) then
+                              MessagePos1(pd.fileinfo,parser_w_should_use_override,pd.fullprocname(false));
+                          end;
+                      end
+                    { same parameter and return types (parameter specifiers will be checked below) }
+                    else if (compare_paras(procdefcoll^.data.paras,pd.paras,cp_none,[])>=te_equal) and
+                            compatible_childmethod_resultdef(procdefcoll^.data.returndef,pd.returndef) then
+>>>>>>> graemeg/fixes_2_2
                       begin
                         { In Objective-C, you cannot create a new VMT entry to
                           start a new inheritance tree. We therefore give an
@@ -415,6 +479,7 @@ implementation
                               else
                                 MessagePos1(pd.fileinfo,parser_h_should_use_reintroduce_objc,FullTypeName(tdef(vmtpd.owner.defowner),nil));
                           end;
+<<<<<<< HEAD
                         { no new entry, but copy the message name if any from
                           the procdef in the parent class }
                         if not is_objc_class_or_protocol(_class) or
@@ -438,6 +503,39 @@ implementation
                             vmtpd:=pd;
                           end;
                         result:=true;
+=======
+
+                        { All parameter specifiers and some procedure the flags have to match
+                          except abstract and override }
+                        if (compare_paras(procdefcoll^.data.paras,pd.paras,cp_all,[])<te_equal) or
+                           (procdefcoll^.data.proccalloption<>pd.proccalloption) or
+                           (procdefcoll^.data.proctypeoption<>pd.proctypeoption) or
+                           ((procdefcoll^.data.procoptions*po_comp)<>(pd.procoptions*po_comp)) then
+                           begin
+                             MessagePos1(pd.fileinfo,parser_e_header_dont_match_forward,pd.fullprocname(false));
+                             tprocsym(procdefcoll^.data.procsym).write_parameter_lists(pd);
+                           end;
+
+                        { check if the method to override is visible, check is only needed
+                          for the current parsed class. Parent classes are already validated and
+                          need to include all virtual methods including the ones not visible in the
+                          current class }
+                        if (_class=pd._class) and
+                           (po_overridingmethod in pd.procoptions) and
+                           (not procdefcoll^.visible) then
+                          MessagePos1(pd.fileinfo,parser_e_nothing_to_be_overridden,pd.fullprocname(false));
+
+                        { override old virtual method in VMT }
+                        if (procdefcoll^.data.extnumber>=_class.VMTEntries.Count) or
+                           (_class.VMTEntries[procdefcoll^.data.extnumber]<>procdefcoll^.data) then
+                          internalerror(200611084);
+                        _class.VMTEntries[procdefcoll^.data.extnumber]:=pd;
+                        pd.extnumber:=procdefcoll^.data.extnumber;
+                        procdefcoll^.data:=pd;
+                        if is_visible then
+                          procdefcoll^.visible:=true;
+
+>>>>>>> graemeg/fixes_2_2
                         exit;
 {$ifdef jvm}
                       end
@@ -530,8 +628,28 @@ implementation
                      (vmtpd.proctypeoption<>pd.proctypeoption) or
                      ((vmtpd.procoptions*po_comp)<>(pd.procoptions*po_comp)) then
                      begin
+<<<<<<< HEAD
                        MessagePos1(pd.fileinfo,parser_e_header_dont_match_forward,pd.fullprocname(false));
                        tprocsym(vmtpd.procsym).write_parameter_lists(pd);
+=======
+                       { when we got an override directive then can search futher for
+                         the procedure to override.
+                         If we are starting a new virtual tree then hide the old tree }
+                       if not(po_overridingmethod in pd.procoptions) and
+                          not (pdoverload or hasoverloads) then
+                        begin
+                          if is_visible then
+                            procdefcoll^.hidden:=true;
+                          if (pd._class=procdefcoll^.data._class) then
+                            MessagePos(pd.fileinfo,parser_e_overloaded_have_same_parameters)
+                          else if (_class=pd._class) and not(po_reintroduce in pd.procoptions) then
+                            if not is_object(_class) then
+                              MessagePos1(pd.fileinfo,parser_w_should_use_override,pd.fullprocname(false))
+                            else
+                              { objects don't allow starting a new virtual tree }
+                              MessagePos1(pd.fileinfo,parser_e_header_dont_match_forward,procdefcoll^.data.fullprocname(false));
+                        end;
+>>>>>>> graemeg/fixes_2_2
                      end;
 
                   check_msg_str(vmtpd,pd);
@@ -787,6 +905,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        (compare_paras(proc.paras,implprocdef.paras,cp_all,[cpo_ignorehidden,cpo_ignoreuniv])>=te_equal) and
 =======
                        (compare_paras(proc.paras,implprocdef.paras,cp_all,[cpo_ignorehidden,cpo_comparedefaultvalue,cpo_ignoreuniv])>=te_equal) and
@@ -814,6 +933,14 @@ implementation
 {$else}
                           MessagePos2(implprocdef.fileinfo,type_w_interface_lower_visibility,proc.fullprocname(false),implprocdef.fullprocname(false));
 {$endif}
+=======
+                       (compare_paras(proc.paras,implprocdef.paras,cp_all,[cpo_ignorehidden,cpo_comparedefaultvalue])>=te_equal) and
+                       (compare_defs(proc.returndef,implprocdef.returndef,nothingn)>=te_equal) and
+                       (proc.proccalloption=implprocdef.proccalloption) and
+                       (proc.proctypeoption=implprocdef.proctypeoption) and
+                       ((proc.procoptions*po_comp)=((implprocdef.procoptions+[po_virtualmethod])*po_comp)) then
+                      begin
+>>>>>>> graemeg/fixes_2_2
                         result:=implprocdef;
                         exit;
                       end;
@@ -857,6 +984,7 @@ implementation
 
                 { Add procdef to the implemented interface }
                 if assigned(implprocdef) then
+<<<<<<< HEAD
                   begin
                     if (tobjectdef(implprocdef.struct).objecttype<>odt_objcclass) then
 <<<<<<< HEAD
@@ -904,6 +1032,9 @@ implementation
                           end;
                       end;
                   end
+=======
+                  ImplIntf.AddImplProc(implprocdef)
+>>>>>>> graemeg/fixes_2_2
                 else
                   if (ImplIntf.IType=etStandard) and
                      not(po_optional in tprocdef(def).procoptions) then
@@ -1694,8 +1825,13 @@ implementation
                (sym.visibility=vis_published) then
               begin
                 if (tf_requires_proper_alignment in target_info.flags) then
+<<<<<<< HEAD
                   current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(pint)));
                 current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_pint(tfieldvarsym(sym).fieldoffset));
+=======
+                  current_asmdata.asmlists[al_rtti].concat(cai_align.Create(sizeof(AInt)));
+                current_asmdata.asmlists[al_rtti].concat(Tai_const.Create_aint(tfieldvarsym(sym).fieldoffset));
+>>>>>>> graemeg/fixes_2_2
                 classindex:=classtablelist.IndexOf(tfieldvarsym(sym).vardef);
                 if classindex=-1 then
                   internalerror(200611033);

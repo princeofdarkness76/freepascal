@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (*---------------------------------------------------------------------------------
 
 	libnds Copyright (C) 2005
@@ -29,6 +30,8 @@
    Free Pascal porting by Francesco Lombardi.
 ---------------------------------------------------------------------------------*)
 
+=======
+>>>>>>> graemeg/fixes_2_2
 unit nds9;
 {$mode objfpc} 
 {$apptype arm9}
@@ -38,7 +41,11 @@ unit nds9;
 {$INLINE ON}
 {$MACRO ON}
 {$PACKRECORDS C}
+<<<<<<< HEAD
 {$ASSERTIONS ON}
+=======
+
+>>>>>>> graemeg/fixes_2_2
 interface
 
 uses
@@ -48,22 +55,33 @@ uses
 
 {$linklib c}
 {$linklib gcc}
+<<<<<<< HEAD
 {$linklib g}
 {$linklib sysbase}
 
 
+=======
+{$linklib sysbase}
+
+>>>>>>> graemeg/fixes_2_2
 {$define NDS_INTERFACE}
 {$include nds/ndsinclude.inc}
 {$undef NDS_INTERFACE}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/fixes_2_2
 implementation
 
 {$define NDS_IMPLEMENTATION}
 {$include nds/ndsinclude.inc}
 {$undef NDS_IMPLEMENTATION}
 
+<<<<<<< HEAD
 initialization
   AssertErrorProc := @AssertErrorHandler;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 end.

@@ -161,6 +161,10 @@ interface
 >>>>>>> origin/cpstrnew
       );
 
+      ppcSuffix : array[TCpu] of string=(
+        '386','m68k','ppc','sparc','x86_64','arm','ppc64'
+      );
+
       OSStr : array[TOS] of string=(
         'linux','go32v2','win32','os2','freebsd','beos','haiku','netbsd',
         'amiga','atari','solaris', 'qnx', 'netware','openbsd','wdosx',
@@ -213,6 +217,7 @@ interface
 
       { This table is kept OS,Cpu because it is easier to maintain (PFV) }
       OSCpuPossible : array[TOS,TCpu] of boolean = (
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -305,6 +310,36 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+        { os          i386    m68k  ppc    sparc  x86_64 arm    ppc64}
+        { linux }   ( true,  true,  true,  true,  true,  true,  true),
+        { go32v2 }  ( true,  false, false, false, false, false, false),
+        { win32 }   ( true,  false, false, false, false, false, false),
+        { os2 }     ( true,  false, false, false, false, false, false),
+        { freebsd } ( true,  true,  false, false, true,  false, false),
+        { beos }    ( true,  false, false, false, false, false, false),
+        { netbsd }  ( true,  true,  true,  true,  false, false, false),
+        { amiga }   ( false, true,  true,  false, false, false, false),
+        { atari }   ( false, true,  false, false, false, false, false),
+        { solaris } ( true,  false, false, true,  false, false, false),
+        { qnx }     ( true,  false, false, false, false, false, false),
+        { netware } ( true,  false, false, false, false, false, false),
+        { openbsd } ( true,  true,  false, false, false, false, false),
+        { wdosx }   ( true,  false, false, false, false, false, false),
+        { palmos }  ( false, true,  false, false, false, true,  false),
+        { macos }   ( false, false, true,  false, false, false, false),
+        { darwin }  ( true,  false, true,  false, true, false, true),
+        { emx }     ( true,  false, false, false, false, false, false),
+        { watcom }  ( true,  false, false, false ,false, false, false),
+        { morphos } ( false, false, true,  false ,false, false, false),
+        { netwlibc }( true,  false, false, false, false, false, false),
+        { win64   } ( false, false, false, false, true,  false, false),
+        { wince    }( true,  false, false, false, false, true,  false),
+        { gba    }  ( false, false, false, false, false, true,  false),
+        { nds    }  ( false, false, false, false, false, true,  false),
+        { embedded }( true,  true,  true,  true,  true,  true,  true),
+        { symbian } ( true,  false, false, false, false, true,  false)
+>>>>>>> graemeg/fixes_2_2
       );
 
     type

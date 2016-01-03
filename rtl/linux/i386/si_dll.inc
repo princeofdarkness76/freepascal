@@ -69,8 +69,13 @@ end;
 {******************************************************************************
                         Shared library start/halt
  ******************************************************************************}
+{$asmmode ATT}
 
+<<<<<<< HEAD
 procedure _FPC_shared_lib_start(argc : dword;argv,envp : pointer); cdecl; public name 'FPC_SHARED_LIB_START'; public name '_start';
+=======
+procedure _FPC_shared_lib_start(argc : dword;argv,envp : pointer); cdecl; public name '_FPC_SHARED_LIB_START_LOCAL'; public name '_start';
+>>>>>>> graemeg/fixes_2_2
 begin
 
   operatingsystem_parameter_argc:=argc;    { Copy the argument count      }
@@ -134,6 +139,7 @@ begin
   PASCALMAIN;
 end;
 
+<<<<<<< HEAD
 { this routine is only called when the halt() routine of the RTL embedded in
   the shared library is called }
 <<<<<<< HEAD
@@ -150,6 +156,33 @@ asm
 =======
 >>>>>>> graemeg/cpstrnew
 procedure _FPC_shared_lib_haltproc; assembler; nostackframe; public name 'FPC_SHARED_LIB_EXIT'; public name '_haltproc';
+=======
+{$ifndef VER2_0}
+
+{ this hack is needed so we can make the reference below to _FPC_shared_lib_start }
+{ local in compiler/systems/t_linux.pas                                           }
+procedure _FPC_SHARED_LIB_START_LOCAL(argc : dword;argv,envp : pointer); cdecl; external;
+
+procedure initdummy; assembler; nostackframe;
+label
+  FPC_LIB_START;
+asm
+.init
+  .align 16
+  .globl FPC_LIB_START
+//    .type FPC_LIB_START,@function
+FPC_LIB_START:
+{$ifdef FPC_PIC}
+  jmp	_FPC_SHARED_LIB_START_LOCAL@PLT
+{$else FPC_PIC}
+  jmp	_FPC_SHARED_LIB_START_LOCAL
+{$endif FPC_PIC}
+.text
+end;
+{$endif VER_2_0}
+
+procedure _FPC_shared_lib_haltproc; assembler; nostackframe; public name '_haltproc';
+>>>>>>> graemeg/fixes_2_2
 asm
 .Lhaltproc:
 =======

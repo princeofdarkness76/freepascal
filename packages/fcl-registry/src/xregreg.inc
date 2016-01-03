@@ -256,3 +256,10 @@ begin
     TXMLRegistry(FSysData).SetRootKey(TXMLRegistry(FSysData).RootKey);
   end;
 end;
+
+procedure TRegistry.CloseKey(key:HKEY);
+
+begin
+  TXMLRegistry(FSysData).Flush;
+  TXMLRegistry(FSysData).SetRootKey(TXMLRegistry(FSysData).RootKey);
+end;

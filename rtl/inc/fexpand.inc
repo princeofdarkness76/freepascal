@@ -162,7 +162,11 @@ begin
 (* by converting all to the native one.           *)
 {$warnings off}
 	  for I := 1 to Length (Pa) do
+<<<<<<< HEAD
 	    if CharInSet(Pa [I], AllowDirectorySeparators)  then
+=======
+	    if Pa [I] in AllowDirectorySeparators  then
+>>>>>>> graemeg/fixes_2_2
 	      Pa [I] := DirectorySeparator;
 {$warnings on}
 {$ENDIF not FPC_FEXPAND_SYSUTILS}

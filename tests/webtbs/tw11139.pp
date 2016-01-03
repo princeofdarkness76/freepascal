@@ -5,12 +5,20 @@ end;
 
 function f(const s: shortstring): shortstring; overload;
 begin
+<<<<<<< HEAD
   halt(3);
+=======
+  f:=lowercase(s);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function f(const a: ansistring): ansistring; overload;
 begin
+<<<<<<< HEAD
   f:=lowercase(a);
+=======
+  halt(3);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Procedure DoIt;

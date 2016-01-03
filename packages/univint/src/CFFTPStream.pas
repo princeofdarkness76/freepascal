@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	 File:	   CFNetwork/CFFTPStream.h
  
 	 Contains:   CoreFoundation FTP stream header
@@ -48,6 +49,31 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+     File:       CFNetwork/CFFTPStream.h
+ 
+     Contains:   CoreFoundation FTP stream header
+ 
+     Version:    CFNetwork-71.2~1
+ 
+     Copyright:  © 2001-2003 by Apple Computer, Inc., all rights reserved
+ 
+     Bugs?:      For bug reports, consult the following page on
+                 the World Wide Web:
+ 
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -56,8 +82,13 @@
 
 unit CFFTPStream;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -70,21 +101,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -119,6 +158,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -126,6 +167,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -378,6 +420,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -403,6 +455,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -413,15 +469,20 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFStream,CFURL,CFDictionary;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 {$ALIGN POWER}
 
+=======
+{$ALIGN MAC68K}
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  kCFStreamErrorDomainFTP
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	Result code returned by FTP server
  *  
  *  Availability:
@@ -431,6 +492,17 @@ uses MacTypes,CFBase,CFStream,CFURL,CFDictionary;
  }
 var kCFStreamErrorDomainFTP: SInt32; external name '_kCFStreamErrorDomainFTP'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    Result code returned by FTP server
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFStreamErrorDomainFTP: SInt32; external name '_kCFStreamErrorDomainFTP'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -446,6 +518,7 @@ as definition) indicates the value type of the property.
  *  kCFStreamPropertyFTPUserName
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	Stream property key, for both set and copy operations.  CFString
  *	type to hold login user name.  Don't set this property if you
  *	want anonymous FTP.
@@ -457,12 +530,26 @@ as definition) indicates the value type of the property.
  }
 var kCFStreamPropertyFTPUserName: CFStringRef; external name '_kCFStreamPropertyFTPUserName'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    Stream property key, for both set and copy operations.  CFString
+ *    type to hold login user name.  Don't set this property if you
+ *    want anonymous FTP.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFStreamPropertyFTPUserName: CFStringRef; external name '_kCFStreamPropertyFTPUserName'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  kCFStreamPropertyFTPPassword
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	Stream property key, for both set and copy operations. CFString
  *	type to hold login password.  Don't set this property if you want
  *	anonymous FTP.
@@ -474,12 +561,26 @@ var kCFStreamPropertyFTPUserName: CFStringRef; external name '_kCFStreamProperty
  }
 var kCFStreamPropertyFTPPassword: CFStringRef; external name '_kCFStreamPropertyFTPPassword'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    Stream property key, for both set and copy operations. CFString
+ *    type to hold login password.  Don't set this property if you want
+ *    anonymous FTP.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFStreamPropertyFTPPassword: CFStringRef; external name '_kCFStreamPropertyFTPPassword'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  kCFStreamPropertyFTPUsePassiveMode
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	Stream property key, for both set and copy operations. CFBoolean
  *	type. kCFBooleanTrue means use passive mode, kCFBooleanFalse
  *	otherwise
@@ -491,12 +592,26 @@ var kCFStreamPropertyFTPPassword: CFStringRef; external name '_kCFStreamProperty
  }
 var kCFStreamPropertyFTPUsePassiveMode: CFStringRef; external name '_kCFStreamPropertyFTPUsePassiveMode'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    Stream property key, for both set and copy operations. CFBoolean
+ *    type. kCFBooleanTrue means use passive mode, kCFBooleanFalse
+ *    otherwise
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFStreamPropertyFTPUsePassiveMode: CFStringRef; external name '_kCFStreamPropertyFTPUsePassiveMode'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  kCFStreamPropertyFTPResourceSize
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	Stream property key, for read stream copy operations.  CFNumber
  *	of kCFNumberLongLongType to hold resource size in bytes.
  *  
@@ -507,12 +622,25 @@ var kCFStreamPropertyFTPUsePassiveMode: CFStringRef; external name '_kCFStreamPr
  }
 var kCFStreamPropertyFTPResourceSize: CFStringRef; external name '_kCFStreamPropertyFTPResourceSize'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    Stream property key, for read stream copy operations.  CFNumber
+ *    of kCFNumberLongLongType to hold resource size in bytes.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFStreamPropertyFTPResourceSize: CFStringRef; external name '_kCFStreamPropertyFTPResourceSize'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  kCFStreamPropertyFTPFetchResourceInfo
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	Stream property key, for both set and copy operations.  CFBoolean
  *	type.  TRUE means that resource info, such as size, must be
  *	provided before download starts at higher cost.  Don't set if
@@ -526,12 +654,28 @@ var kCFStreamPropertyFTPResourceSize: CFStringRef; external name '_kCFStreamProp
  }
 var kCFStreamPropertyFTPFetchResourceInfo: CFStringRef; external name '_kCFStreamPropertyFTPFetchResourceInfo'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    Stream property key, for both set and copy operations.  CFBoolean
+ *    type.  TRUE means that resource info, such as size, must be
+ *    provided before download starts at higher cost.  Don't set if
+ *    resource size/other info is unnecessary.  Initially, only
+ *    resource size is implemented.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFStreamPropertyFTPFetchResourceInfo: CFStringRef; external name '_kCFStreamPropertyFTPFetchResourceInfo'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  kCFStreamPropertyFTPFileTransferOffset
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	Stream property key, for both set and copy operations.  CFNumber
  *	of kCFNumberLongLongType for the file offset to start transfer at.
  *  
@@ -542,12 +686,25 @@ var kCFStreamPropertyFTPFetchResourceInfo: CFStringRef; external name '_kCFStrea
  }
 var kCFStreamPropertyFTPFileTransferOffset: CFStringRef; external name '_kCFStreamPropertyFTPFileTransferOffset'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    Stream property key, for both set and copy operations.  CFNumber
+ *    of kCFNumberLongLongType for the file offset to start transfer at.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFStreamPropertyFTPFileTransferOffset: CFStringRef; external name '_kCFStreamPropertyFTPFileTransferOffset'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  kCFStreamPropertyFTPAttemptPersistentConnection
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	Stream property key, for both set and copy operations.  CFBoolean
  *	type.  TRUE by default, set to FALSE to avoid reusing existing
  *	server connections.
@@ -559,12 +716,26 @@ var kCFStreamPropertyFTPFileTransferOffset: CFStringRef; external name '_kCFStre
  }
 var kCFStreamPropertyFTPAttemptPersistentConnection: CFStringRef; external name '_kCFStreamPropertyFTPAttemptPersistentConnection'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    Stream property key, for both set and copy operations.  CFBoolean
+ *    type.  TRUE by default, set to FALSE to avoid reusing existing
+ *    server connections.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFStreamPropertyFTPAttemptPersistentConnection: CFStringRef; external name '_kCFStreamPropertyFTPAttemptPersistentConnection'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  kCFStreamPropertyFTPProxy
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	Stream property key, for both set and copy operations. 
  *	CFDictionary type that holds key-value pairs of proxy dictionary.
  *	 The dictionary returned by SystemConfiguration can also be
@@ -577,12 +748,27 @@ var kCFStreamPropertyFTPAttemptPersistentConnection: CFStringRef; external name 
  }
 var kCFStreamPropertyFTPProxy: CFStringRef; external name '_kCFStreamPropertyFTPProxy'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    Stream property key, for both set and copy operations. 
+ *    CFDictionary type that holds key-value pairs of proxy dictionary.
+ *     The dictionary returned by SystemConfiguration can also be
+ *    passed directly as the value.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFStreamPropertyFTPProxy: CFStringRef; external name '_kCFStreamPropertyFTPProxy'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  kCFStreamPropertyFTPProxyHost
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	Stream property key or FTP Proxy dictionary key, for both set and
  *	copy operations.  It matches kSCPropNetProxiesFTPProxy defined in
  *	SCSchemaDefinitions.h.  CFString for proxy server host name. 
@@ -596,12 +782,28 @@ var kCFStreamPropertyFTPProxy: CFStringRef; external name '_kCFStreamPropertyFTP
  }
 var kCFStreamPropertyFTPProxyHost: CFStringRef; external name '_kCFStreamPropertyFTPProxyHost'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    Stream property key or FTP Proxy dictionary key, for both set and
+ *    copy operations.  It matches kSCPropNetProxiesFTPProxy defined in
+ *    SCSchemaDefinitions.h.  CFString for proxy server host name. 
+ *    This property can be set and copied individually or via a
+ *    CFDictionary.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFStreamPropertyFTPProxyHost: CFStringRef; external name '_kCFStreamPropertyFTPProxyHost'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  kCFStreamPropertyFTPProxyPort
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	Stream property key or FTP Proxy dictionary key, for both set and
  *	copy operations.  It matches kSCPropNetProxiesFTPPort defined in
  *	SCSchemaDefinitions.h.  CFNumber of kCFNumberIntType for proxy
@@ -615,27 +817,60 @@ var kCFStreamPropertyFTPProxyHost: CFStringRef; external name '_kCFStreamPropert
  }
 var kCFStreamPropertyFTPProxyPort: CFStringRef; external name '_kCFStreamPropertyFTPProxyPort'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    Stream property key or FTP Proxy dictionary key, for both set and
+ *    copy operations.  It matches kSCPropNetProxiesFTPPort defined in
+ *    SCSchemaDefinitions.h.  CFNumber of kCFNumberIntType for proxy
+ *    server port number.  This property can be set and copied
+ *    individually or via a CFDictionary.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFStreamPropertyFTPProxyPort: CFStringRef; external name '_kCFStreamPropertyFTPProxyPort'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  kCFStreamPropertyFTPProxyUser
  *  
  *  Availability:
+<<<<<<< HEAD
  *	Mac OS X:		 in version 10.3 and later in CoreServices.framework
  *	CarbonLib:		not available
  *	Non-Carbon CFM:   not available
  }
 var kCFStreamPropertyFTPProxyUser: CFStringRef; external name '_kCFStreamPropertyFTPProxyUser'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFStreamPropertyFTPProxyUser: CFStringRef; external name '_kCFStreamPropertyFTPProxyUser'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 {
  *  kCFStreamPropertyFTPProxyPassword
  *  
  *  Availability:
+<<<<<<< HEAD
  *	Mac OS X:		 in version 10.3 and later in CoreServices.framework
  *	CarbonLib:		not available
  *	Non-Carbon CFM:   not available
  }
 var kCFStreamPropertyFTPProxyPassword: CFStringRef; external name '_kCFStreamPropertyFTPProxyPassword'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFStreamPropertyFTPProxyPassword: CFStringRef; external name '_kCFStreamPropertyFTPProxyPassword'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -649,6 +884,7 @@ CFFTPCreateParsedResourceListing.
  *  kCFFTPResourceMode
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	CFDictionary key, for get value operation.  CFNumber to hold the
  *	resource access permission defined in sys/types.h.
  *  
@@ -659,12 +895,25 @@ CFFTPCreateParsedResourceListing.
  }
 var kCFFTPResourceMode: CFStringRef; external name '_kCFFTPResourceMode'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    CFDictinary key, for get value operation.  CFNumber to hold the
+ *    resource access permission defined in sys/types.h.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFFTPResourceMode: CFStringRef; external name '_kCFFTPResourceMode'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  kCFFTPResourceName
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	CFDictionary key, for get value operation.  CFString that holds
  *	the resource name.
  *  
@@ -675,12 +924,25 @@ var kCFFTPResourceMode: CFStringRef; external name '_kCFFTPResourceMode'; (* att
  }
 var kCFFTPResourceName: CFStringRef; external name '_kCFFTPResourceName'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    CFDictinary key, for get value operation.  CFString that holds
+ *    the resource name.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFFTPResourceName: CFStringRef; external name '_kCFFTPResourceName'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  kCFFTPResourceOwner
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	CFDictionary key, for get value operation.  CFString that holds
  *	the resource owner's name.
  *  
@@ -691,12 +953,25 @@ var kCFFTPResourceName: CFStringRef; external name '_kCFFTPResourceName'; (* att
  }
 var kCFFTPResourceOwner: CFStringRef; external name '_kCFFTPResourceOwner'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    CFDictinary key, for get value operation.  CFString that holds
+ *    the resource owner's name.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFFTPResourceOwner: CFStringRef; external name '_kCFFTPResourceOwner'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  kCFFTPResourceGroup
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	CFDictionary key, for get value operation.  CFString to hold the
  *	name of the group that shares the resource.
  *  
@@ -707,12 +982,25 @@ var kCFFTPResourceOwner: CFStringRef; external name '_kCFFTPResourceOwner'; (* a
  }
 var kCFFTPResourceGroup: CFStringRef; external name '_kCFFTPResourceGroup'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    CFDictinary key, for get value operation.  CFString to hold the
+ *    name of the group that shares the resource.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFFTPResourceGroup: CFStringRef; external name '_kCFFTPResourceGroup'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  kCFFTPResourceLink
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	CFDictionary key, for get value operation.  CFString to hold
  *	symbolic link information.  If the item is a symbolic link the
  *	string will contain the path to the item the link references.
@@ -724,12 +1012,26 @@ var kCFFTPResourceGroup: CFStringRef; external name '_kCFFTPResourceGroup'; (* a
  }
 var kCFFTPResourceLink: CFStringRef; external name '_kCFFTPResourceLink'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    CFDictinary key, for get value operation.  CFString to hold
+ *    symbolic link information.  If the item is a symbolic link the
+ *    string will contain the path to the item the link references.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFFTPResourceLink: CFStringRef; external name '_kCFFTPResourceLink'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  kCFFTPResourceSize
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	CFDictionary key, for get value operation.  CFNumber of
  *	kCFNumberLongLongType to hold the resource length in bytes.
  *  
@@ -740,12 +1042,25 @@ var kCFFTPResourceLink: CFStringRef; external name '_kCFFTPResourceLink'; (* att
  }
 var kCFFTPResourceSize: CFStringRef; external name '_kCFFTPResourceSize'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    CFDictinary key, for get value operation.  CFNumber of
+ *    kCFNumberLongLongType to hold the resource length in bytes.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFFTPResourceSize: CFStringRef; external name '_kCFFTPResourceSize'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  kCFFTPResourceType
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	CFDictionary key, for get value operation.  CFNumber to hold the
  *	resource type as defined in sys/dirent.h.
  *  
@@ -756,12 +1071,25 @@ var kCFFTPResourceSize: CFStringRef; external name '_kCFFTPResourceSize'; (* att
  }
 var kCFFTPResourceType: CFStringRef; external name '_kCFFTPResourceType'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    CFDictinary key, for get value operation.  CFNumber to hold the
+ *    resource type as defined in sys/dirent.h.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFFTPResourceType: CFStringRef; external name '_kCFFTPResourceType'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  kCFFTPResourceModDate
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	CFDictionary key, for get value operation.  CFDate to hold the
  *	last modification date and time information.
  *  
@@ -772,12 +1100,25 @@ var kCFFTPResourceType: CFStringRef; external name '_kCFFTPResourceType'; (* att
  }
 var kCFFTPResourceModDate: CFStringRef; external name '_kCFFTPResourceModDate'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    CFDictinary key, for get value operation.  CFDate to hold the
+ *    last modification date and time information.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFFTPResourceModDate: CFStringRef; external name '_kCFFTPResourceModDate'; (* attribute const *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  CFReadStreamCreateWithFTPURL()
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	Create an FTP read stream for downloading operation from an FTP
  *	URL. If the URL refers to a directory, the stream is a filtered
  *	line-at-a-time read stream corresponding to the listing results
@@ -812,12 +1153,49 @@ var kCFFTPResourceModDate: CFStringRef; external name '_kCFFTPResourceModDate'; 
  }
 function CFReadStreamCreateWithFTPURL( alloc: CFAllocatorRef; ftpURL: CFURLRef ): CFReadStreamRef; external name '_CFReadStreamCreateWithFTPURL';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    Create an FTP read stream for downloading operation from an FTP
+ *    URL. If the URL refers to a directory, the stream is a filtered
+ *    line-at-a-time read stream corresponding to the listing results
+ *    provided by the server. If it's a file, then the stream is a
+ *    regular read stream providing the data for that file.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Parameters:
+ *    
+ *    alloc:
+ *      A pointer to the CFAllocator which should be used to allocate
+ *      memory for the CF read stream and its storage for values. If
+ *      this reference is not a valid CFAllocator, the behavior is
+ *      undefined.
+ *    
+ *    ftpURL:
+ *      A pointer to a CFURL structure created by CFURLCreateWithString
+ *      function.  If this parameter is not a pointer to a valid CFURL
+ *      structure, the behavior is undefined.
+ *  
+ *  Result:
+ *    A pointer to the CF read stream created, or NULL if failed. It is
+ *    caller's responsibilty to release the memory allocated for the
+ *    read stream.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function CFReadStreamCreateWithFTPURL( alloc: CFAllocatorRef; ftpURL: CFURLRef ): CFReadStreamRef; external name '_CFReadStreamCreateWithFTPURL';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  CFFTPCreateParsedResourceListing()
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	Parse a line of file or folder listing of Unix format, and store
  *	the extracted result in a CFDictionary.
  *  
@@ -857,12 +1235,54 @@ function CFReadStreamCreateWithFTPURL( alloc: CFAllocatorRef; ftpURL: CFURLRef )
  }
 function CFFTPCreateParsedResourceListing( alloc: CFAllocatorRef; buffer: UnivPtr; bufferLength: CFIndex; var parsed: CFDictionaryRef ): CFIndex; external name '_CFFTPCreateParsedResourceListing';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+ *    Parse a line of file or folder listing of Unix format, and store
+ *    the extracted result in a CFDictionary.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Parameters:
+ *    
+ *    alloc:
+ *      A pointer to the CFAllocator which should be used to allocate
+ *      memory for the CFDictionary to hold resource info.  If this
+ *      reference is not a valid CFAllocator, the behavior is undefined.
+ *    
+ *    buffer:
+ *      A pointer to a buffer that may hold lines of resource listing,
+ *      but only the first line starting from buffer[0] will be parsed
+ *      each call.
+ *    
+ *    bufferLength:
+ *      The maximum buffer size in bytes started from the location
+ *      pointed by "buffer."
+ *    
+ *    parsed:
+ *      A pointer to a CFDictionary pointer.  The dictionary holds the
+ *      extracted resource information.  When parsing fails, a NULL
+ *      pointer will be returned.  It is caller's responsibilty to
+ *      release the memory allocated for the dictionary.
+ *  
+ *  Result:
+ *    The number of bytes consumed from buffer, 0 if there are not
+ *    enough bytes, or -1 if a parse failure occurs.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function CFFTPCreateParsedResourceListing( alloc: CFAllocatorRef; buffer: UnivPtr; bufferLength: CFIndex; var parsed: CFDictionaryRef ): CFIndex; external name '_CFFTPCreateParsedResourceListing';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  CFWriteStreamCreateWithFTPURL()
  *  
  *  Discussion:
+<<<<<<< HEAD
  *	Create an FTP write stream for uploading operation to a FTP URL.
  *	If the URL specifies a directory, the open will be followed by a
  *	close event/state and the directory will have been created. 
@@ -901,3 +1321,40 @@ function CFWriteStreamCreateWithFTPURL( alloc: CFAllocatorRef; ftpURL: CFURLRef 
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ *    Create an FTP write stream for uploading operation to a FTP URL.
+ *    If the URL specifies a directory, the open will be followed by a
+ *    close event/state and the directory will have been created. 
+ *    Intermediary directory structure is not created.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Parameters:
+ *    
+ *    alloc:
+ *      A pointer to the CFAllocator which should be used to allocate
+ *      memory for the CF read stream and its storage for values. If
+ *      this reference is not a valid CFAllocator, the behavior is
+ *      undefined.
+ *    
+ *    ftpURL:
+ *      A pointer to a CFURL structure created by CFURLCreateWithString
+ *      function.  If this parameter is not a pointer to a valid CFURL
+ *      structure, the behavior is undefined.
+ *  
+ *  Result:
+ *    A pointer to the CF write stream created, or NULL if failed. It
+ *    is caller's responsibilty to release the memory allocated for the
+ *    write stream.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function CFWriteStreamCreateWithFTPURL( alloc: CFAllocatorRef; ftpURL: CFURLRef ): CFWriteStreamRef; external name '_CFWriteStreamCreateWithFTPURL';
+
+end.
+>>>>>>> graemeg/fixes_2_2

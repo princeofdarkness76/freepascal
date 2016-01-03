@@ -564,7 +564,11 @@ unit regexpr;
                                begin
                                  if not parseOccurences(currentPos,minOccurs,maxOccurs) then
                                    exit;
+<<<<<<< HEAD
                                   // currentpos is increased by parseOccurences
+=======
+                                  inc(currentpos);
+>>>>>>> graemeg/fixes_2_2
                                   new(hp3);
                                   doregister(hp3);
                                   hp3^.typ:=ret_pattern;

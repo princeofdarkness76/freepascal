@@ -138,6 +138,7 @@ implementation
         { keep that default for everyone else (ncgcal decreases popsize by }
         { sizeof(aint) in case of ret_in_param())                          }
 <<<<<<< HEAD
+<<<<<<< HEAD
         { This is only correct if the hidden funcret parameter
           is not passed as a register.
           As it is inserted in parast after all other hidden parameters,
@@ -164,6 +165,11 @@ implementation
 =======
 >>>>>>> origin/cpstrnew
           inc(pop_size,sizeof(aint));
+=======
+        if (target_info.system = system_i386_win32) and
+            paramanager.ret_in_param(procdefinition.returndef,procdefinition.proccalloption) then
+           inc(pop_size,sizeof(aint));
+>>>>>>> graemeg/fixes_2_2
 
         { better than an add on all processors }
         if pop_size=4 then

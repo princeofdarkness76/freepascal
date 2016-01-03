@@ -1,5 +1,9 @@
 { %fail }
+<<<<<<< HEAD
 { %opt=-Se1w2 -vw }
+=======
+{ %opt=-Se1w2 }
+>>>>>>> graemeg/fixes_2_2
 
 var
   pc: pchar;

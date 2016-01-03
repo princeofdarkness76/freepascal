@@ -1,5 +1,6 @@
 { %norun }
 
+<<<<<<< HEAD
 {$inline on}
 program TEST;
 {$EXTENDEDSYNTAX OFF}
@@ -15,3 +16,16 @@ end;
 BEGIN
    IO:=test;
 END.
+=======
+program TEST;
+{$EXTENDEDSYNTAX OFF}
+USES
+  DOS;
+VAR
+  IO: WORD; { or LONGINT if wanted }
+BEGIN
+  IO:=IORESULT;
+END.
+
+
+>>>>>>> graemeg/fixes_2_2

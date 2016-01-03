@@ -17,7 +17,11 @@
 
 unit XMLWrite;
 
+<<<<<<< HEAD
 {$ifdef fpc}{$MODE objfpc}{$endif}
+=======
+{$MODE objfpc}
+>>>>>>> graemeg/fixes_2_2
 {$H+}
 
 interface
@@ -40,6 +44,7 @@ implementation
 uses SysUtils, xmlutils;
 
 type
+<<<<<<< HEAD
   TXMLWriter = class;
   TSpecialCharCallback = procedure(Sender: TXMLWriter; const s: DOMString;
     var idx: Integer);
@@ -67,6 +72,9 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  TSpecialCharCallback = procedure(c: WideChar) of object;
+>>>>>>> graemeg/fixes_2_2
 
   TXMLWriter = class(TObject)
   private
@@ -130,9 +138,15 @@ type
     procedure DecNesting; {$IFDEF HAS_INLINE} inline; {$ENDIF}
     procedure wrtStr(const ws: XMLString); {$IFDEF HAS_INLINE} inline; {$ENDIF}
     procedure wrtChr(c: WideChar); {$IFDEF HAS_INLINE} inline; {$ENDIF}
+<<<<<<< HEAD
     procedure wrtIndent(EndElement: Boolean = False);
     procedure wrtQuotedLiteral(const ws: XMLString);
     procedure ConvWrite(const s: XMLString; const SpecialChars: TSetOfChar;
+=======
+    procedure wrtIndent; {$IFDEF HAS_INLINE} inline; {$ENDIF}
+    procedure wrtQuotedLiteral(const ws: WideString);
+    procedure ConvWrite(const s: WideString; const SpecialChars: TSetOfChar;
+>>>>>>> graemeg/fixes_2_2
       const SpecialCharCallback: TSpecialCharCallback);
     procedure WriteNSDef(B: TBinding);
     procedure NamespaceFixup(Element: TDOMElement);
@@ -281,6 +295,7 @@ begin
   // Initialize Indent string
   // TODO: this must be done in setter of FLineBreak
   SetLength(FIndent, 100);
+<<<<<<< HEAD
   FIndent[1] := FLineBreak[1];
   if Length(FLineBreak) > 1 then
     FIndent[2] := FLineBreak[2]
@@ -295,6 +310,10 @@ begin
   SetLength(FNodes, 16);
   FNSHelper := TNSSupport.Create(ANameTable);
 =======
+=======
+  FIndent[1] := #10;
+  for I := 2 to 100 do FIndent[I] := ' ';
+>>>>>>> graemeg/fixes_2_2
   FIndentCount := 0;
   FNSHelper := TNSSupport.Create;
 >>>>>>> graemeg/cpstrnew
@@ -352,7 +371,13 @@ begin
 
     wc := Cardinal(Src^);  Inc(Src);
     case wc of
+<<<<<<< HEAD
       0..$7F:  begin
+=======
+      $0A: pb := StrECopy(pb, PChar(FLineBreak));
+
+      0..$09, $0B..$7F:  begin
+>>>>>>> graemeg/fixes_2_2
         pb^ := char(wc); Inc(pb);
       end;
 
@@ -401,6 +426,7 @@ procedure TXMLWriter.wrtChr(c: WideChar); { inline }
 begin
   FBufPos^ := char(ord(c));
   Inc(FBufPos);
+<<<<<<< HEAD
 end;
 
 procedure TXMLWriter.wrtIndent(EndElement: Boolean);
@@ -425,6 +451,16 @@ begin
 end;
 
 procedure TXMLWriter.IncNesting;
+=======
+end;
+
+procedure TXMLWriter.wrtIndent; { inline }
+begin
+  wrtChars(PWideChar(FIndent), FIndentCount*2+1);
+end;
+
+procedure TXMLWriter.IncIndent;
+>>>>>>> graemeg/fixes_2_2
 var
   I, NewLen, OldLen: Integer;
 begin
@@ -458,6 +494,7 @@ begin
   if FIndentCount>0 then dec(FIndentCount);
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -465,6 +502,13 @@ end;
 >>>>>>> origin/cpstrnew
 procedure TXMLWriter.ConvWrite(const s: WideString; const SpecialChars: TSetOfChar;
 >>>>>>> graemeg/cpstrnew
+=======
+const
+  AttrSpecialChars = ['<', '"', '&', #9, #10, #13];
+  TextSpecialChars = ['<', '>', '&'];
+
+procedure TXMLWriter.ConvWrite(const s: WideString; const SpecialChars: TSetOfChar;
+>>>>>>> graemeg/fixes_2_2
   const SpecialCharCallback: TSpecialCharCallback);
 var
   StartPos, EndPos: Integer;
@@ -473,7 +517,11 @@ begin
   EndPos := 1;
   while EndPos <= Length(s) do
   begin
+<<<<<<< HEAD
     if (s[EndPos] < #128) and (Char(ord(s[EndPos])) in SpecialChars) then
+=======
+    if (s[EndPos] < #255) and (Char(ord(s[EndPos])) in SpecialChars) then
+>>>>>>> graemeg/fixes_2_2
     begin
       wrtChars(@s[StartPos], EndPos - StartPos);
       SpecialCharCallback(Self, s, EndPos);
@@ -1031,6 +1079,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1046,17 +1095,30 @@ begin
     begin
       child := node.Attributes.Item[i];
       if FCanonical or TDOMAttr(child).Specified then
+=======
+  // FIX: Accessing Attributes was causing them to be created for every element :(
+  if node.HasAttributes then
+    for i := 0 to node.Attributes.Length - 1 do
+    begin
+      child := node.Attributes.Item[i];
+      if TDOMAttr(child).Specified then
+>>>>>>> graemeg/fixes_2_2
         VisitAttribute(child);
     end;
   Child := node.FirstChild;
   if Child = nil then
+<<<<<<< HEAD
     WriteEndElement(True)
+=======
+    wrtChars('/>', 2)
+>>>>>>> graemeg/fixes_2_2
   else
   begin
     // TODO: presence of zero-length textnodes triggers the indenting logic,
     // while they should be ignored altogeter.
     SavedInsideTextNode := FInsideTextNode;
     wrtChr('>');
+<<<<<<< HEAD
     FInsideTextNode := FCanonical or (Child.NodeType in [TEXT_NODE, CDATA_SECTION_NODE]);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1069,12 +1131,16 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+    FInsideTextNode := Child.NodeType in [TEXT_NODE, CDATA_SECTION_NODE];
+>>>>>>> graemeg/fixes_2_2
     IncIndent;
 >>>>>>> graemeg/cpstrnew
     repeat
       WriteNode(Child);
       Child := Child.NextSibling;
     until Child = nil;
+<<<<<<< HEAD
     if not (node.LastChild.NodeType in [TEXT_NODE, CDATA_SECTION_NODE]) then
       wrtIndent(True);
     FInsideTextNode := SavedInsideTextNode;
@@ -1092,10 +1158,21 @@ begin
   wrtChr('<');
   wrtStr(Name);
   FNodes[FNesting].Name := Name;
+=======
+    DecIndent;
+    if not (node.LastChild.NodeType in [TEXT_NODE, CDATA_SECTION_NODE]) then
+      wrtIndent;
+    FInsideTextNode := SavedInsideTextNode;
+    wrtChars('</', 2);
+    wrtStr(TDOMElement(Node).TagName);
+    wrtChr('>');
+  end;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TXMLWriter.WriteEndElement(shortForm: Boolean);
 begin
+<<<<<<< HEAD
   if shortForm then
     wrtChars('/>', 2)
   else
@@ -1143,12 +1220,16 @@ begin
 =======
   ConvWrite(TDOMCharacterData(node).Data, TextSpecialChars, TextnodeCallbacks[FCanonical]);
 >>>>>>> origin/cpstrnew
+=======
+  ConvWrite(TDOMCharacterData(node).Data, TextSpecialChars, {$IFDEF FPC}@{$ENDIF}TextnodeSpecialCharCallback);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TXMLWriter.WriteCDATA(const Text: XMLString);
 begin
   if not FInsideTextNode then
     wrtIndent;
+<<<<<<< HEAD
   if FCanonical then
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1183,6 +1264,11 @@ begin
 >>>>>>> origin/cpstrnew
     wrtChars(']]>', 3);
   end;
+=======
+  wrtChars('<![CDATA[', 9);
+  wrtStr(TDOMCharacterData(node).Data);
+  wrtChars(']]>', 3);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TXMLWriter.WriteEntityRef(const Name: XMLString);
@@ -1238,6 +1324,7 @@ procedure TXMLWriter.WriteComment(const Text: XMLString);
 begin
   if not FInsideTextNode then wrtIndent;
   wrtChars('<!--', 4);
+<<<<<<< HEAD
   // TODO: How does this comply with c14n??
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1256,6 +1343,9 @@ begin
 =======
   ConvWrite(TDOMCharacterData(node).Data, LineEndingChars, @TextnodeNormalCallback);
 >>>>>>> origin/cpstrnew
+=======
+  wrtStr(TDOMCharacterData(node).Data);
+>>>>>>> graemeg/fixes_2_2
   wrtChars('-->', 3);
 end;
 
@@ -1281,6 +1371,7 @@ begin
       wrtStr('no');
     wrtChr('"');
   end;
+<<<<<<< HEAD
 
   wrtStr('?>');
 end;
@@ -1292,10 +1383,15 @@ begin
   // Here we ignore doc.xmlEncoding and write a fixed utf-8 label,
   // because it is the only output encoding currently supported.
   WriteXMLDecl(TXMLDocument(node).XMLVersion, 'utf-8', (ord(TXMLDocument(node).XMLStandalone)-1) or 1);
+=======
+*)
+  wrtStr('?>');
+>>>>>>> graemeg/fixes_2_2
 
   // TODO: now handled as a regular PI, remove this?
   if node is TXMLDocument then
   begin
+<<<<<<< HEAD
     if Length(TXMLDocument(node).StylesheetType) > 0 then
     begin
       wrtStr(FLineBreak);
@@ -1305,6 +1401,13 @@ begin
       wrtStr(TXMLDocument(node).StylesheetHRef);
       wrtStr('"?>');
     end;
+=======
+    wrtStr(#10'<?xml-stylesheet type="');
+    wrtStr(TXMLDocument(node).StylesheetType);
+    wrtStr('" href="');
+    wrtStr(TXMLDocument(node).StylesheetHRef);
+    wrtStr('"?>');
+>>>>>>> graemeg/fixes_2_2
   end;
 
   child := node.FirstChild;
@@ -1313,6 +1416,7 @@ begin
     WriteNode(Child);
     Child := Child.NextSibling;
   end;
+<<<<<<< HEAD
   wrtStr(FLineBreak);
 end;
 
@@ -1365,6 +1469,9 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  wrtChars(#10, 1);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TXMLWriter.VisitAttribute(Node: TDOMNode);
@@ -1381,7 +1488,11 @@ begin
       ENTITY_REFERENCE_NODE:
         VisitEntityRef(Child);
       TEXT_NODE:
+<<<<<<< HEAD
         ConvWrite(TDOMCharacterData(Child).Data, AttrSpecialChars, @AttrSpecialCharCallback);
+=======
+        ConvWrite(TDOMCharacterData(Child).Data, AttrSpecialChars, {$IFDEF FPC}@{$ENDIF}AttrSpecialCharCallback);
+>>>>>>> graemeg/fixes_2_2
     end;
     Child := Child.NextSibling;
   end;
@@ -1390,6 +1501,7 @@ end;
 
 procedure TXMLWriter.VisitDocumentType(Node: TDOMNode);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1429,6 +1541,12 @@ begin
     wrtQuotedLiteral(SysId);
   end;
   if Subset <> '' then
+=======
+  wrtStr(#10'<!DOCTYPE ');
+  wrtStr(Node.NodeName);
+  wrtChr(' ');
+  with TDOMDocumentType(Node) do
+>>>>>>> graemeg/fixes_2_2
   begin
     wrtChr('[');
     ConvWrite(Subset, LineEndingChars, @TextnodeNormalCallback);

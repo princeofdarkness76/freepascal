@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
  * Copyright (c) 2001, 2002, 2004, 2005, 2008 Apple Inc. All rights reserved.
+=======
+ * Copyright (c) 2001-2002 Apple Computer, Inc. All rights reserved.
+>>>>>>> graemeg/fixes_2_2
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -11,15 +15,22 @@
  * file.
  * 
  * The Original Code and all software distributed under the License are
+<<<<<<< HEAD
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
+=======
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY of ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES of MERCHANTABILITY,
+>>>>>>> graemeg/fixes_2_2
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
  * 
  * @APPLE_LICENSE_HEADER_END@
  }
+<<<<<<< HEAD
 {  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {  Unit name changed to SCDynamicStoreCopyDHCPInfos to avoid conflict with 
       SCDynamicStoreCopyDHCPInfo function }
@@ -48,6 +59,19 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+{	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
+{	  Unit name changed to SCDynamicStoreCopyDHCPInfos to avoid conflict with 
+      SCDynamicStoreCopyDHCPInfo function }
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -56,8 +80,13 @@
 
 unit SCDynamicStoreCopyDHCPInfos;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -70,21 +99,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -119,6 +156,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -126,6 +165,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -352,6 +392,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -377,6 +427,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -387,6 +441,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,SCDynamicStore,CFDictionary,CFData,CFDate;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 <<<<<<< HEAD
@@ -453,11 +508,35 @@ uses MacTypes,CFBase,SCDynamicStore,CFDictionary,CFData,CFDate;
 	@result Returns a dictionary containing DHCP information if successful;
 		NULL otherwise.
 		Use the DHCPInfoGetOption function to retrieve
+=======
+{$ALIGN MAC68K}
+
+{!
+	@header SCDynamicStoreCopyDHCPInfo.h
+	The following APIs allow an application to retrieve DHCP/BOOTP
+	information, in particular DHCP/BOOTP options.
+ }
+
+{!
+	@function SCDynamicStoreCopyDHCPInfo
+	@discussion Copies the DHCP/BOOTP information dictionary for the
+		requested serviceID, or the primary service if
+		serviceID == NULL.
+	@param store An SCDynamicStoreRef that should be used for communication
+		with the server.
+		If NULL, a temporary session will be used.
+	@param serviceID A CFStringRef containing the requested service.
+		If NULL, returns information for the primary service.
+	@result A dictionary containing DHCP/BOOTP information if successful,
+		NULL otherwise.
+		Use the DHCPInfoGetOption() to retrieve
+>>>>>>> graemeg/fixes_2_2
 		individual options from the returned dictionary.
 
 		A non-NULL return value must be released using CFRelease().
  }
 function SCDynamicStoreCopyDHCPInfo( store: SCDynamicStoreRef; serviceID: CFStringRef ): CFDictionaryRef; external name '_SCDynamicStoreCopyDHCPInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 
 {!
@@ -470,25 +549,50 @@ function SCDynamicStoreCopyDHCPInfo( store: SCDynamicStoreRef; serviceID: CFStri
 		data for.
 	@result Returns a non-NULL CFDataRef containing the option data;
 		NULL if the requested option data is not present.
+=======
+
+{!
+	@function DHCPInfoGetOptionData
+	@discussion Returns a non-NULL CFDataRef containing the BOOTP/DHCP
+		option data if present, NULL otherwise.
+	@param info The non-NULL DHCP information dictionary returned by
+		calling SCDynamicStoreCopyDHCPInfo.
+	@param code The DHCP/BOOTP option code (see RFC 2132) to return
+		data for.
+	@result A non-NULL CFDataRef containing the option data,
+		NULL otherwise.
+>>>>>>> graemeg/fixes_2_2
 
 		The return value must NOT be released.
  }
 function DHCPInfoGetOptionData( info: CFDictionaryRef; code: UInt8 ): CFDataRef; external name '_DHCPInfoGetOptionData';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {!
 	@function DHCPInfoGetLeaseStartTime
 	@discussion Returns a CFDateRef corresponding to the lease start time,
+<<<<<<< HEAD
 		if present.
 	@param info The non-NULL DHCP information dictionary returned by
 		calling SCDynamicStoreCopyDHCPInfo.
 	@result Returns a non-NULL CFDateRef if lease start time information is
 		present; NULL if the information is not present or if the
 		configuration method is not DHCP.
+=======
+		if present, NULL otherwise.  A NULL return value is returned
+		if the configuration method is BOOTP.
+	@param info The non-NULL DHCP information dictionary returned by
+		calling SCDynamicStoreCopyDHCPInfo.
+	@result A non-NULL CFDateRef if present, NULL otherwise.
+>>>>>>> graemeg/fixes_2_2
 
 		The return value must NOT be released.
  }
 function DHCPInfoGetLeaseStartTime( info: CFDictionaryRef ): CFDateRef; external name '_DHCPInfoGetLeaseStartTime';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 
 <<<<<<< HEAD
@@ -529,3 +633,7 @@ function DHCPInfoGetLeaseExpirationTime( info: CFDictionaryRef ): CFDateRef; ext
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+end.
+>>>>>>> graemeg/fixes_2_2

@@ -374,8 +374,11 @@ interface
 
     function spilling_create_load(const ref:treference;r:tregister):Taicpu;
     function spilling_create_store(r:tregister; const ref:treference):Taicpu;
+<<<<<<< HEAD
 
     function MemRefInfo(aAsmop: TAsmOp): TInsTabMemRefSizeInfoRec;
+=======
+>>>>>>> graemeg/fixes_2_2
 
     procedure InitAsm;
     procedure DoneAsm;
@@ -435,6 +438,7 @@ implementation
        IF_SVM    = $00100000;
        { SSE4 instructions  }
        IF_SSE4   = $00200000;
+<<<<<<< HEAD
        { TODO: These flags were added to make x86ins.dat more readable.
          Values must be reassigned to make any other use of them. }
        IF_SSSE3  = $00200000;
@@ -449,6 +453,9 @@ implementation
        IF_FMA4   = $00200000;
 
        IF_PLEVEL = $0F000000;  { mask for processor level }
+=======
+
+>>>>>>> graemeg/fixes_2_2
        IF_8086   = $00000000;  { 8086 instruction  }
        IF_186    = $01000000;  { 186+ instruction  }
        IF_286    = $02000000;  { 286+ instruction  }
@@ -675,6 +682,7 @@ implementation
            localsize:=fillsize;
            while (localsize>0) do
             begin
+<<<<<<< HEAD
 {$ifndef i8086}
               if CPUX86_HAS_CMOV in cpu_capabilities[current_settings.cputype] then
                 begin
@@ -695,6 +703,14 @@ implementation
                   inc(bufptr,length(alignarray[j]));
                   dec(localsize,length(alignarray[j]));
                 end
+=======
+              for j:=low(alignarray) to high(alignarray) do
+               if (localsize>=length(alignarray[j])) then
+                break;
+              move(alignarray[j][1],bufptr^,length(alignarray[j]));
+              inc(bufptr,length(alignarray[j]));
+              dec(localsize,length(alignarray[j]));
+>>>>>>> graemeg/fixes_2_2
             end;
          end;
         calculatefillbuf:=pchar(@buf);
@@ -1285,6 +1301,7 @@ implementation
                 end;
               top_const :
                 begin
+<<<<<<< HEAD
                   // if opcode is a SSE or AVX-instruction then we need a
                   // special handling (opsize can different from const-size)
                   // (e.g. "pextrw  reg/m16, xmmreg, imm8" =>> opsize (16 bit), const-size (8 bit)
@@ -1320,6 +1337,17 @@ implementation
                     if (val=1) and (i=1) then
                       ot := ot or OT_ONENESS;
                   end;
+=======
+                  { allow 2nd or 3rd operand being a constant and expect no size for shuf* etc. }
+                  if (opsize=S_NO) and not(i in [1,2]) then
+                    message(asmr_e_invalid_opcode_and_operand);
+                  if (opsize<>S_W) and (aint(val)>=-128) and (val<=127) then
+                    ot:=OT_IMM8 or OT_SIGNED
+                  else
+                    ot:=OT_IMMEDIATE or opsize_2_type[i,opsize];
+                  if (val=1) and (i=1) then
+                    ot := ot or OT_ONENESS;
+>>>>>>> graemeg/fixes_2_2
                 end;
               top_none :
                 begin
@@ -2521,7 +2549,10 @@ implementation
        *                 field the register value of operand b.
        * \2ab          - a ModRM, calculated on EA in operand a, with the spare
        *                 field equal to digit b.
+<<<<<<< HEAD
        * \254,\255,\256 - a signed 32-bit immediate to be extended to 64 bits
+=======
+>>>>>>> graemeg/fixes_2_2
        * \300,\301,\302 - might be an 0x67, depending on the address size of
        *                 the memory reference in operand x.
        * \310          - indicates fixed 16-bit address size, i.e. optional 0x67.
@@ -3226,11 +3257,19 @@ implementation
               end;
             &333 :
               begin
+<<<<<<< HEAD
                 if not(needed_VEX) then
                 begin
                   bytes[0]:=$f3;
                   objdata.writebytes(bytes,1);
                 end;
+=======
+                bytes[0]:=$f3;
+                objdata.writebytes(bytes,1);
+{$ifdef x86_64}
+                maybewriterex;
+{$endif x86_64}
+>>>>>>> graemeg/fixes_2_2
               end;
             &334 :
               begin
@@ -3595,8 +3634,11 @@ implementation
 
 
     function spilling_create_load(const ref:treference;r:tregister):Taicpu;
+<<<<<<< HEAD
       var
         tmpref: treference;
+=======
+>>>>>>> graemeg/fixes_2_2
       begin
         tmpref:=ref;
 {$ifdef i8086}
@@ -3669,6 +3711,7 @@ implementation
 
 
     function spilling_create_store(r:tregister; const ref:treference):Taicpu;
+<<<<<<< HEAD
       var
         size: topsize;
 <<<<<<< HEAD
@@ -3684,6 +3727,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
       begin
         tmpref:=ref;
 {$ifdef i8086}

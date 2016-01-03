@@ -1,6 +1,7 @@
 {
  * Copyright (c) 2003 Apple Computer, Inc. All Rights Reserved.
  * 
+<<<<<<< HEAD
  * @APPLE_LICENSE_HEADER_START@
  * 
  * This file contains Original Code and/or Modifications of Original Code
@@ -47,6 +48,35 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+ * The contents of this file constitute Original Code as defined in and are
+ * subject to the Apple Public Source License Version 1.2 (the 'License').
+ * You may not use this file except in compliance with the License. Please obtain
+ * a copy of the License at http://www.apple.com/publicsource and read it before
+ * using this file.
+ * 
+ * This Original Code and all software distributed under the License are
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY of ANY KIND, EITHER EXPRESS
+ * OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES, INCLUDING WITHOUT
+ * LIMITATION, ANY WARRANTIES of MERCHANTABILITY, FITNESS FOR A PARTICULAR
+ * PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT. Please see the License for the
+ * specific language governing rights and limitations under the License.
+ }
+{	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
+
+{
+ *  AuthorizationDB.h -- APIs for managing the authorization policy database
+ *  and daemons.
+ }
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -55,8 +85,13 @@
 
 unit AuthorizationDB;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -69,21 +104,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -118,6 +161,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -125,6 +170,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -375,6 +421,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -400,6 +456,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -410,6 +470,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,Authorization,CFBase,CFDictionary,CFString,CFBundle;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -425,12 +486,16 @@ uses MacTypes,Authorization,CFBase,CFDictionary,CFString,CFBundle;
  }
 
 
+=======
+{$ALIGN MAC68K}
+>>>>>>> graemeg/fixes_2_2
 {!
 	@header AuthorizationDB
 	Version 1.0
 
 	This API allows for any programs to get, modify, delete and add new right definitions to the policy database.  Meta-rights specify whether and what authorization is required to make these modifications.
 	
+<<<<<<< HEAD
 	AuthorizationRightSet(authRef, "com.ifoo.ifax.send", CFSTR(kRuleIsAdmin), CFSTR("You must authenticate to send a fax."), NULL, NULL)
 
 	add a rule for letting admins send faxes using a canned rule, delegating to a pre-specified rule that authorizes everyone who is an admin.
@@ -440,6 +505,17 @@ uses MacTypes,Authorization,CFBase,CFDictionary,CFString,CFBundle;
 	add identical rule, but specify additional attributes this time.
 
 	Keep in mind while specifying a comment to be specific about what you need to authorize for (1 fax), in terms of a general message for user.  The means of proof required for kRuleIsAdmin (enter username/password for example) should not be included here, since it could be configured differently.  Also note that the "authRef" variable used in each of the above examples must be a vaild AuthorizationRef obtained from AuthorizationCreate().
+=======
+	AuthorizationRightSet(NULL, "com.ifoo.ifax.send", CFSTR(kRuleIsAdmin), CFSTR("You must authenticate to send a fax."), NULL, NULL)
+
+	add a rule for letting admins send faxes using a canned rule, delegating to a pre-specified rule that authorizes everyone who is an admin.
+	
+	AuthorizationRightSet(NULL, "com.ifoo.ifax.send", [[CFSTR(kRightRule), CFSTR(kRuleIsAdmin)], [CFSTR(kRightComment), CFSTR("authorizes sending of 1 fax message")]], CFSTR("Authorize sending of a fax"), NULL, NULL)
+
+	add identical rule, but specify additional attributes this time.
+
+	Keep in mind while specifying a comment to be specific about what you need to authorize for (1 fax), in terms of a general message for user.  The means of proof required for kRuleIsAdmin (enter username/password for example) should not be included here, since it could be configured differently.
+>>>>>>> graemeg/fixes_2_2
 
 }
 
@@ -447,45 +523,73 @@ uses MacTypes,Authorization,CFBase,CFDictionary,CFString,CFBundle;
 	rule delegation key.  Instead of specifying exact behavior some canned rules
    are shipped that may be switched by configurable security.
 }
+<<<<<<< HEAD
 const
 	kAuthorizationRightRule = 'rule';
+=======
+const kAuthorizationRightRule					= 'rule';
+>>>>>>> graemeg/fixes_2_2
 
 {! @defined kRuleIsAdmin
 	canned rule values for use with rule delegation definitions: require user to be an admin.
 }
+<<<<<<< HEAD
 const
 	kAuthorizationRuleIsAdmin = 'is-admin';
+=======
+const kAuthorizationRuleIsAdmin				= 'is-admin';
+>>>>>>> graemeg/fixes_2_2
 
 {! @defined kRuleAuthenticateAsSessionUser
 	canned rule value for use with rule delegation definitions: require user to authenticate as the session owner (logged-in user).
 }
+<<<<<<< HEAD
 const
 	kAuthorizationRuleAuthenticateAsSessionUser = 'authenticate-session-owner';
+=======
+const kAuthorizationRuleAuthenticateAsSessionUser= 'authenticate-session-user';
+>>>>>>> graemeg/fixes_2_2
 
 {! @defined kRuleAuthenticateAsAdmin
 	Canned rule value for use with rule delegation definitions: require user to authenticate as admin.
 }
+<<<<<<< HEAD
 const
 	kAuthorizationRuleAuthenticateAsAdmin = 'authenticate-admin';
+=======
+const kAuthorizationRuleAuthenticateAsAdmin	= 'authenticate-admin';
+>>>>>>> graemeg/fixes_2_2
 
 {! @defined kAuthorizationRuleClassAllow
 	Class that allows anything.
 }
+<<<<<<< HEAD
 const
 	kAuthorizationRuleClassAllow = 'allow';
+=======
+const kAuthorizationRuleClassAllow		= 'allow';
+>>>>>>> graemeg/fixes_2_2
 
 {! @defined kAuthorizationRuleClassDeny
 	Class that denies anything. 
 }
+<<<<<<< HEAD
 const
 	kAuthorizationRuleClassDeny = 'deny';
+=======
+const kAuthorizationRuleClassDeny			= 'deny';
+>>>>>>> graemeg/fixes_2_2
 
 {! @defined kAuthorizationComment
     comments for the administrator on what is being customized here;
    as opposed to (localized) descriptions presented to the user.
 }
+<<<<<<< HEAD
 const
 	kAuthorizationComment = 'comment';
+=======
+const kAuthorizationComment = 'comment';
+>>>>>>> graemeg/fixes_2_2
 
 
 {!
@@ -502,6 +606,10 @@ const
 
 }
 function AuthorizationRightGet( rightName: ConstCStringPtr; rightDefinition: CFDictionaryRefPtr ): OSStatus; external name '_AuthorizationRightGet';
+<<<<<<< HEAD
+=======
+// attribute(weak_import);
+>>>>>>> graemeg/fixes_2_2
 
 {!
 	@function AuthorizationRightSet
@@ -524,7 +632,12 @@ function AuthorizationRightGet( rightName: ConstCStringPtr; rightDefinition: CFD
 	errAuthorizationInteractionNotAllowed -60007 Interaction was required but not possible.
 
 }
+<<<<<<< HEAD
 function AuthorizationRightSet( authRef: AuthorizationRef; rightName: ConstCStringPtr; rightDefinition: CFTypeRef; descriptionKey: CFStringRef; bundle: CFBundleRef; localeTableName: CFStringRef ): OSStatus; external name '_AuthorizationRightSet';
+=======
+function AuthorizationRightSet(authRef: AuthorizationRef; rightName: ConstCStringPtr; rightDefinition: CFTypeRef; descriptionKey: CFStringRef; bundle: CFBundleRef; localeTableName: CFStringRef): OSStatus; external name '_AuthorizationRightSet';
+// attribute(weak_import);
+>>>>>>> graemeg/fixes_2_2
 
 
 {!
@@ -536,6 +649,7 @@ function AuthorizationRightSet( authRef: AuthorizationRef; rightName: ConstCStri
 	@param rightName (input) the rightname (ASCII).  Wildcard rightnames are not okay.
 	
 }
+<<<<<<< HEAD
 function AuthorizationRightRemove( authRef: AuthorizationRef; rightName: ConstCStringPtr ): OSStatus; external name '_AuthorizationRightRemove';
 
 {$endc} {TARGET_OS_MAC}
@@ -543,3 +657,8 @@ function AuthorizationRightRemove( authRef: AuthorizationRef; rightName: ConstCS
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+function AuthorizationRightRemove(authRef: AuthorizationRef; rightName: ConstCStringPtr): OSStatus; external name '_AuthorizationRightRemove';
+
+end.
+>>>>>>> graemeg/fixes_2_2

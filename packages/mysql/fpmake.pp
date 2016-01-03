@@ -13,6 +13,7 @@ begin
 {$endif ALLPACKAGES}
 
     P:=AddPackage('mysql');
+<<<<<<< HEAD
     P.ShortName:='mysq';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -21,6 +22,13 @@ begin
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');
     P.OSes := AllUnixOSes+AllWindowsOSes-[qnx];
+=======
+{$ifdef ALLPACKAGES}
+    P.Directory:='mysql';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.SourcePath.Add('src');
+>>>>>>> graemeg/fixes_2_2
 
     T:=P.Targets.AddUnit('my4_sys.pp');
     T:=P.Targets.AddUnit('mysql3_comdyn.pp');
@@ -55,7 +63,10 @@ begin
         begin
           AddInclude('mysql.inc');
         end;
+<<<<<<< HEAD
     T.ResourceStrings := True;
+=======
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('mysql40.pp');
       with T.Dependencies do
         begin
@@ -66,7 +77,10 @@ begin
         begin
           AddInclude('mysql.inc');
         end;
+<<<<<<< HEAD
     T.ResourceStrings := True;;
+=======
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('mysql41.pp');
       with T.Dependencies do
         begin
@@ -91,7 +105,10 @@ begin
           AddUnit('my4_sys');
           AddUnit('mysql4_comdyn');
         end;
+<<<<<<< HEAD
     T.ResourceStrings := True;
+=======
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('mysql4.pp');
       with T.Dependencies do
         begin
@@ -106,12 +123,16 @@ begin
         begin
           AddInclude('mysql.inc');
         end;
+<<<<<<< HEAD
     T.ResourceStrings := True;
+=======
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('mysql50.pp');
       with T.Dependencies do
         begin
           AddInclude('mysql.inc');
         end;
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('mysql51.pp');
       with T.Dependencies do
         begin
@@ -153,6 +174,8 @@ begin
     P.Targets.AddExampleProgram('testdb4.pp');
     P.Targets.AddExampleProgram('mysqls.pp');
     // 'mysqls.c
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

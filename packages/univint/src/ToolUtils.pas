@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       CarbonCore/ToolUtils.h
  
      Contains:   Toolbox Utilities Interfaces.
@@ -20,6 +21,16 @@
      Version:    CarbonCore-859.2~1
  
      Copyright:  © 1990-2008 by Apple Computer, Inc., all rights reserved
+=======
+     File:       ToolUtils.p
+ 
+     Contains:   Toolbox Utilities Interfaces.
+ 
+     Version:    Technology: System 7.5
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1990-2002 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -27,6 +38,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {    Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
 <<<<<<< HEAD
@@ -46,6 +58,16 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -54,8 +76,13 @@
 
 unit ToolUtils;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -68,21 +95,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -117,6 +152,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -124,6 +161,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -342,6 +380,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -367,6 +415,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -376,11 +428,15 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,FixMath,TextUtils,IconsCore,QuickdrawTypes;
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
+=======
+uses MacTypes,FixMath,TextUtils,Icons,Quickdraw;
+>>>>>>> graemeg/fixes_2_2
 
 {$ALIGN MAC68K}
 
@@ -422,6 +478,7 @@ uses MacTypes,FixMath,TextUtils,IconsCore,QuickdrawTypes;
  *  BitTst()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -446,10 +503,18 @@ function BitTst( bytePtr: {const} UnivPtr; bitNum: SIGNEDLONG ): Boolean; extern
 >>>>>>> origin/cpstrnew
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function BitTst(bytePtr: UnivPtr; bitNum: SInt32): boolean; external name '_BitTst';
+>>>>>>> graemeg/fixes_2_2
 {
  *  BitSet()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -474,10 +539,18 @@ procedure BitSet( bytePtr: UnivPtr; bitNum: SIGNEDLONG ); external name '_BitSet
 >>>>>>> origin/cpstrnew
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure BitSet(bytePtr: UnivPtr; bitNum: SInt32); external name '_BitSet';
+>>>>>>> graemeg/fixes_2_2
 {
  *  BitClr()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -502,10 +575,18 @@ procedure BitClr( bytePtr: UnivPtr; bitNum: SIGNEDLONG ); external name '_BitClr
 >>>>>>> origin/cpstrnew
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure BitClr(bytePtr: UnivPtr; bitNum: SInt32); external name '_BitClr';
+>>>>>>> graemeg/fixes_2_2
 {
  *  BitAnd()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -530,10 +611,18 @@ function BitAnd( value1: SIGNEDLONG; value2: SIGNEDLONG ): SIGNEDLONG; external 
 >>>>>>> origin/cpstrnew
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function BitAnd(value1: SInt32; value2: SInt32): SInt32; external name '_BitAnd';
+>>>>>>> graemeg/fixes_2_2
 {
  *  BitOr()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -558,10 +647,18 @@ function BitOr( value1: SIGNEDLONG; value2: SIGNEDLONG ): SIGNEDLONG; external n
 >>>>>>> origin/cpstrnew
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function BitOr(value1: SInt32; value2: SInt32): SInt32; external name '_BitOr';
+>>>>>>> graemeg/fixes_2_2
 {
  *  BitXor()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -586,10 +683,18 @@ function BitXor( value1: SIGNEDLONG; value2: SIGNEDLONG ): SIGNEDLONG; external 
 >>>>>>> origin/cpstrnew
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function BitXor(value1: SInt32; value2: SInt32): SInt32; external name '_BitXor';
+>>>>>>> graemeg/fixes_2_2
 {
  *  BitNot()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -614,10 +719,18 @@ function BitNot( value: SIGNEDLONG ): SIGNEDLONG; external name '_BitNot';
 >>>>>>> origin/cpstrnew
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function BitNot(value: SInt32): SInt32; external name '_BitNot';
+>>>>>>> graemeg/fixes_2_2
 {
  *  BitShift()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -640,6 +753,34 @@ function BitShift( value: SIGNEDLONG; count: SInt16 ): SIGNEDLONG; external name
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function BitShift(value: SInt32; count: SInt16): SInt32; external name '_BitShift';
+{$ifc TARGET_CPU_68K}
+
+type
+	Int64BitPtr = ^Int64Bit;
+	Int64Bit = record
+		hiLong:					SInt32;
+		loLong:					UInt32;
+	end;
+
+{$ifc CALL_NOT_IN_CARBON}
+	{
+	 *  LongMul()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   not available
+	 *    CarbonLib:        not available
+	 *    Mac OS X:         not available
+	 	}
+procedure LongMul(a: SInt32; b: SInt32; var result: Int64Bit); external name '_LongMul';
+{$endc}  {CALL_NOT_IN_CARBON}
+{$endc}  {TARGET_CPU_68K}
+>>>>>>> graemeg/fixes_2_2
 
 {
    HiWord and LoWord are not in Carbon, but Metrowerks 
@@ -672,12 +813,18 @@ function LoWord(arg: UInt32): UInt16; inline; overload;
 
 {$ALIGN MAC68K}
 
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 implementation
 
 {$ifc TARGET_OS_MAC}
+=======
+
+
+implementation
+>>>>>>> graemeg/fixes_2_2
 
 
 
@@ -705,8 +852,12 @@ begin
 end;
   
 
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
 
 end.
 
 {$endc} {not MACOSALLINCLUDE}
+=======
+end.
+>>>>>>> graemeg/fixes_2_2

@@ -20,6 +20,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils,bufdataset,sqldb,db,ctypes,
 {$IFDEF mysql57}
   mysql57dyn;
@@ -64,6 +65,19 @@ uses
       {$ELSE}
         mysql40dyn;
       {$EndIf}
+=======
+  Classes, SysUtils,bufdataset,sqldb,db,dynlibs,
+{$IfDef mysql50}
+  mysql50dyn;
+{$ELSE}
+  {$IfDef mysql41}
+    mysql41dyn;
+  {$ELSE}
+    {$IFDEF mysql4} // temporary backwards compatibility for Lazarus
+      mysql40dyn;
+    {$ELSE}
+      mysql40dyn;
+>>>>>>> graemeg/fixes_2_2
     {$EndIf}
   {$EndIf}
 {$endif}
@@ -208,7 +222,10 @@ Type
 
   TConnectionName = class (TSQLConnection)
   private
+<<<<<<< HEAD
     FSkipLibrarVersionCheck : Boolean;
+=======
+>>>>>>> graemeg/fixes_2_2
     FHostInfo: String;
     FServerInfo: String;
     FMySQL : PMySQL;
@@ -253,13 +270,19 @@ Type
     function GetSchemaInfoSQL(SchemaType : TSchemaType; SchemaObjectName, SchemaPattern : string) : string; override;
     procedure UpdateIndexDefs(IndexDefs : TIndexDefs;TableName : string); override;
     function RowsAffected(cursor: TSQLCursor): TRowsCount; override;
+<<<<<<< HEAD
     function RefreshLastInsertID(Query : TCustomSQLQuery; Field : TField): Boolean; override;
+=======
+>>>>>>> graemeg/fixes_2_2
   Public
     constructor Create(AOwner : TComponent); override;
     procedure GetFieldNames(const TableName : string; List :  TStrings); override;
     procedure GetTableNames(List : TStrings; SystemTables : Boolean = false); override;
+<<<<<<< HEAD
     function GetConnectionInfo(InfoType:TConnInfoType): string; override;
     Function GetInsertID: int64;
+=======
+>>>>>>> graemeg/fixes_2_2
     procedure CreateDB; override;
     procedure DropDB; override;
     Property ServerInfo : String Read FServerInfo;
@@ -267,7 +290,10 @@ Type
     property ClientInfo: string read GetClientInfo;
     property ServerStatus : String read GetServerStatus;
   published
+<<<<<<< HEAD
     Property SkipLibrarVersionCheck : Boolean Read FSkipLibrarVersionCheck Write FSkipLibrarVersionCheck;
+=======
+>>>>>>> graemeg/fixes_2_2
     property DatabaseName;
     property HostName;
     property KeepConnection;
@@ -338,8 +364,36 @@ Type
   {$ENDIF}
   {$ENDIF}
 
+{$IfDef mysql50}
+  TMySQL50Connection = Class(TConnectionName);
+  TMySQL50ConnectionDef = Class(TMySQLConnectionDef);
+  TMySQL50Transaction = Class(TTransactionName);
+  TMySQL50Cursor = Class(TCursorName);
+{$ELSE}
+  {$IfDef mysql41}
+    TMySQL41Connection = Class(TConnectionName);
+    TMySQL41ConnectionDef = Class(TMySQLConnectionDef);
+    TMySQL41Transaction = Class(TTransactionName);
+    TMySQL41Cursor = Class(TCursorName);
+  {$ELSE}
+    {$IFDEF mysql4} // temporary backwards compatibility for Lazarus
+      TMySQLConnection = Class(TConnectionName);
+      TMySQL40ConnectionDef = Class(TMySQLConnectionDef);
+      TMySQLTransaction = Class(TTransactionName);
+      TMySQLCursor = Class(TCursorName);
+    {$ELSE}
+      TMySQL40Connection = Class(TConnectionName);
+      TMySQL40ConnectionDef = Class(TMySQLConnectionDef);
+      TMySQL40Transaction = Class(TTransactionName);
+      TMySQL40Cursor = Class(TCursorName);
+    {$EndIf}
+  {$EndIf}
+{$EndIf}
+
+
 implementation
 
+<<<<<<< HEAD
 uses
   dbconst,
   StrUtils,
@@ -347,6 +401,9 @@ uses
   FmtBCD;
 =======
   EMySQLError = Class(Exception);
+=======
+uses dbconst,ctypes,strutils;
+>>>>>>> graemeg/fixes_2_2
 
   {$IfDef mysql51}
     TMySQL51Connection = Class(TConnectionName);
@@ -593,9 +650,13 @@ Var
   OptInt: cuint;
   Opt: pointer;
 
+Var
+  APort : Cardinal;
+
 begin
   HMySQL := mysql_init(HMySQL);
   APort:=Abs(StrToIntDef(Params.Values['Port'],0));
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -623,6 +684,8 @@ begin
       end;
     end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
   HMySQL:=mysql_real_connect(HMySQL,PChar(H),PChar(U),Pchar(P),Nil,APort,Nil,0);
   If (HMySQL=Nil) then
     MySQlError(Nil,SErrServerConnectFailed,Self);
@@ -662,23 +725,37 @@ end;
 function TConnectionName.GetAsSQLText(Field : TField) : string;
 
 begin
+<<<<<<< HEAD
   if (not assigned(Field)) or Field.IsNull then
     Result := 'Null'
   else if Field.DataType = ftString then
     Result := '''' + EscapeString(Field.AsString) + ''''
   else
     Result := inherited GetAsSqlText(Field);
+=======
+  if (not assigned(field)) or field.IsNull then Result := 'Null'
+  else if field.DataType = ftString then
+    Result := '''' + EscapeString(field.AsString) + ''''
+  else Result := inherited GetAsSqlText(field);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TConnectionName.GetAsSQLText(Param: TParam) : string;
 
 begin
+<<<<<<< HEAD
   if (not assigned(Param)) or Param.IsNull then
     Result := 'Null'
   else if Param.DataType in [ftString,ftFixedChar,ftBlob,ftMemo,ftBytes,ftVarBytes] then
     Result := '''' + EscapeString(Param.AsString) + ''''
   else
     Result := inherited GetAsSqlText(Param);
+=======
+  if (not assigned(param)) or param.IsNull then Result := 'Null'
+  else if param.DataType in [ftString,ftBlob,ftMemo] then
+    Result := '''' + EscapeString(Param.AsString) + ''''
+  else Result := inherited GetAsSqlText(Param);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -710,7 +787,12 @@ end;
 
 procedure TConnectionName.ExecuteDirectMySQL(const query : string);
 
+<<<<<<< HEAD
 var AMySQL      : PMySQL;
+=======
+var H,U,P       : String;
+    AMySQL      : PMySQL;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   CheckDisConnected;
@@ -735,6 +817,16 @@ function TConnectionName.EscapeString(const Str: string): string;
 
 var Len : integer;
 
+<<<<<<< HEAD
+=======
+  ReleaseMysql;
+end;
+
+function TConnectionName.EscapeString(const Str: string): string;
+
+var Len : integer;
+
+>>>>>>> graemeg/fixes_2_2
 begin
   SetLength(result,length(str)*2+1);
   Len := mysql_real_escape_string(FMySQL,pchar(Result),pchar(Str),length(Str));
@@ -750,6 +842,7 @@ var
   FullVersion: string;
 begin
   InitialiseMysql;
+<<<<<<< HEAD
   if not SkipLibrarVersionCheck then
     begin
     FullVersion:=strpas(mysql_get_client_info());
@@ -797,6 +890,20 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+{$IFDEF mysql50}
+  if copy(strpas(mysql_get_client_info()),1,3)<>'5.0' then
+    Raise EInOutError.CreateFmt(SErrNotversion50,[strpas(mysql_get_client_info())]);
+{$ELSE}
+  {$IFDEF mysql41}
+  if copy(strpas(mysql_get_client_info()),1,3)<>'4.1' then
+    Raise EInOutError.CreateFmt(SErrNotversion41,[strpas(mysql_get_client_info())]);
+  {$ELSE}
+  if copy(strpas(mysql_get_client_info()),1,3)<>'4.0' then
+    Raise EInOutError.CreateFmt(SErrNotversion40,[strpas(mysql_get_client_info())]);
+  {$ENDIF}
+{$ENDIF}
+>>>>>>> graemeg/fixes_2_2
   inherited DoInternalConnect;
   ConnectToServer;
   SelectDatabase;
@@ -817,6 +924,7 @@ end;
 
 Function TConnectionName.AllocateCursorHandle: TSQLCursor;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -896,6 +1004,21 @@ begin
   {$EndIf}
   {$ENDIF}
   {$ENDIF}
+=======
+  {$IfDef mysql50}
+    Result:=TMySQL50Cursor.Create;
+  {$ELSE}
+    {$IfDef mysql41}
+      Result:=TMySQL41Cursor.Create;
+    {$ELSE}
+      {$IFDEF mysql4} // temporary backwards compatibility for Lazarus
+        Result:=TMySQLCursor.Create;
+      {$ELSE}
+        Result:=TMySQL40Cursor.Create;
+      {$EndIf}
+    {$EndIf}
+  {$EndIf}
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Procedure TConnectionName.DeAllocateCursorHandle(var cursor : TSQLCursor);
@@ -959,7 +1082,10 @@ Var
   C : TCursorName;
   i : integer;
   ParamNames,ParamValues : array of string;
+<<<<<<< HEAD
   Res: PMYSQL_RES;
+=======
+>>>>>>> graemeg/fixes_2_2
 
 begin
   C:=Cursor as TCursorName;
@@ -977,6 +1103,7 @@ begin
       // paramreplacestring kan een probleem geven bij postgres als hij niet meer gewoon $ is?
       C.FStatement := stringsreplace(C.FStatement,ParamNames,ParamValues,[rfReplaceAll]);
       end;
+<<<<<<< HEAD
 
     if LogEvent(detParamValue) then
       LogParams(AParams);
@@ -985,6 +1112,8 @@ begin
     if LogEvent(detActualSQL) then
       Log(detActualSQL,C.FStatement);
 
+=======
+>>>>>>> graemeg/fixes_2_2
     if mysql_query(FMySQL,Pchar(C.FStatement))<>0 then
       begin
       if not ForcedClose then
@@ -1030,10 +1159,25 @@ function TConnectionName.MySQLDataType(AField: PMYSQL_FIELD; var NewType: TField
 var ASize, ADecimals: integer;
 begin
   Result := True;
+<<<<<<< HEAD
   ASize := AField^.length;
   NewSize := 0;
   case AField^.ftype of
     FIELD_TYPE_LONGLONG:
+=======
+  case AType of
+    FIELD_TYPE_LONGLONG:
+      begin
+      NewType := ftLargeint;
+      NewSize := 0;
+      end;
+    FIELD_TYPE_TINY, FIELD_TYPE_SHORT:
+      begin
+      NewType := ftSmallint;
+      NewSize := 0;
+      end;
+    FIELD_TYPE_LONG, FIELD_TYPE_INT24:
+>>>>>>> graemeg/fixes_2_2
       begin
       NewType := ftLargeint;
       end;
@@ -1054,6 +1198,7 @@ begin
 {$ifdef mysql50_up}
     FIELD_TYPE_NEWDECIMAL,
 {$endif}
+<<<<<<< HEAD
     FIELD_TYPE_DECIMAL: 
       begin
         ADecimals:=AField^.decimals;
@@ -1065,6 +1210,18 @@ begin
           NewType := ftFmtBCD;
         NewSize := ADecimals;
       end;
+=======
+    FIELD_TYPE_DECIMAL: if ADecimals < 5 then
+                          begin
+                          NewType := ftBCD;
+                          NewSize := ADecimals;
+                          end
+                        else
+                          begin
+                          NewType := ftFloat;
+                          NewSize := 0;
+                          end;
+>>>>>>> graemeg/fixes_2_2
     FIELD_TYPE_FLOAT, FIELD_TYPE_DOUBLE:
       begin
       NewType := ftFloat;
@@ -1085,6 +1242,7 @@ begin
       begin
       // Since mysql server version 5.0.3 string-fields with a length of more
       // then 256 characters are suported
+<<<<<<< HEAD
       if AField^.ftype = FIELD_TYPE_STRING then
         NewType := ftFixedChar
       else
@@ -1097,6 +1255,18 @@ begin
           NewType := ftVarBytes;
 {$ENDIF}
       NewSize := ASize;
+=======
+      if ASize>dsMaxStringSize then
+        begin
+        NewType := ftMemo;
+        NewSize := 0;
+        end
+      else
+        begin
+        NewType := ftString;
+        NewSize := ASize;
+        end;
+>>>>>>> graemeg/fixes_2_2
       end;
     FIELD_TYPE_TINY_BLOB..FIELD_TYPE_BLOB:
       begin
@@ -1148,9 +1318,13 @@ begin
 
     if MySQLDataType(field, DFT, DFS) then
       begin
+<<<<<<< HEAD
       FieldDefs.Add(FieldDefs.MakeNameUnique(field^.name), DFT, DFS,
                     (field^.flags and (AUTO_INCREMENT_FLAG or NOT_NULL_FLAG {$IFDEF MYSQL50_UP}or NO_DEFAULT_VALUE_FLAG{$ENDIF})) = (NOT_NULL_FLAG {$IFDEF MYSQL50_UP}or NO_DEFAULT_VALUE_FLAG{$ENDIF}),
                     TF);
+=======
+      TFieldDef.Create(FieldDefs, FieldDefs.MakeNameUnique(field^.name), DFT, DFS, False, TF);
+>>>>>>> graemeg/fixes_2_2
       c.MapDSRowToMSQLRow[TF-1] := I;
       inc(TF);
       end
@@ -1200,8 +1374,13 @@ procedure TConnectionName.LoadBlobIntoBuffer(FieldDef: TFieldDef;
   ABlobBuf: PBufBlobField; cursor: TSQLCursor; ATransaction: TSQLTransaction);
 var
   C : TCursorName;
+<<<<<<< HEAD
   i : integer;
   len : longint;
+=======
+  li : longint;
+  Lengths : pculong;
+>>>>>>> graemeg/fixes_2_2
 begin
   C:=Cursor as TCursorName;
   if (C.Row=nil) or (C.Lengths=nil) then
@@ -1366,7 +1545,10 @@ var
   VI: Integer;
   VL: LargeInt;
   VS: Smallint;
+<<<<<<< HEAD
   VW: Word;
+=======
+>>>>>>> graemeg/fixes_2_2
   VF: Double;
   VC: Currency;
   VD: TDateTime;
@@ -1378,6 +1560,7 @@ begin
   CreateBlob := False;
   if Source = Nil then // If the pointer is NULL, the field is NULL
     exit;
+<<<<<<< HEAD
   SetString(Src, Source, Len);
 
   if Len > FieldDef.Size then
@@ -1385,6 +1568,19 @@ begin
 
   case FieldDef.DataType of
     ftSmallint:
+=======
+  Src:=StrPas(Source);
+  case AType of
+    FIELD_TYPE_TINY, FIELD_TYPE_SHORT:
+      begin
+      if (Src<>'') then
+        VS := StrToInt(Src)
+      else
+        VS := 0;
+      Move(VS, Dest^, SizeOf(smallint));
+      end;
+    FIELD_TYPE_LONG, FIELD_TYPE_INT24:
+>>>>>>> graemeg/fixes_2_2
       begin
       VS := InternalStrToInt(Src);
       Move(VS, Dest^, SizeOf(Smallint));
@@ -1401,6 +1597,7 @@ begin
       end;
     ftLargeInt:
       begin
+<<<<<<< HEAD
       {$IFDEF MYSQL50_UP}
       if AField^.ftype = FIELD_TYPE_BIT then
         begin
@@ -1411,6 +1608,9 @@ begin
       else
       {$ENDIF}
       if Src <> '' then
+=======
+      if (Src<>'') then
+>>>>>>> graemeg/fixes_2_2
         VL := StrToInt64(Src)
       else
         VL := 0;
@@ -1495,8 +1695,29 @@ begin
       // String-fields which can contain more then dsMaxStringSize characters
       // are mapped to ftBlob fields, while their mysql-datatype is FIELD_TYPE_BLOB
       begin
+<<<<<<< HEAD
       Move(Source^, Dest^, Len);
       (Dest+Len)^ := #0;
+=======
+{      Write('Moving string of size ',asize,' : ');
+      P:=Source;
+      If (P<>nil) then
+        While P[0]<>#0 do
+          begin
+          Write(p[0]);
+          inc(p);
+          end;
+      Writeln;
+}
+      // String-fields which can contain more then dsMaxStringSize characters
+      // are mapped to ftBlob fields, while their mysql-datatype is FIELD_TYPE_BLOB
+      if AFieldType in [ftBlob,ftMemo] then
+        CreateBlob := True
+      else if Src<> '' then
+        Move(Source^, Dest^, ASize)
+      else
+        Dest^ := #0;
+>>>>>>> graemeg/fixes_2_2
       end;
     ftVarBytes:
       begin
@@ -1558,12 +1779,15 @@ begin
     Result := -1;
 end;
 
+<<<<<<< HEAD
 function TConnectionName.RefreshLastInsertID(Query: TCustomSQLQuery; Field: TField): Boolean;
 begin
   Field.AsLargeInt:=GetInsertID;
   Result := True;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 constructor TConnectionName.Create(AOwner: TComponent);
 const SingleBackQoutes: TQuoteChars = ('`','`');
 begin
@@ -1575,6 +1799,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1583,6 +1808,8 @@ begin
 =======
 >>>>>>> origin/cpstrnew
   FieldNameQuoteChars:=SingleBackQoutes;
+=======
+>>>>>>> graemeg/fixes_2_2
   FMySQL := Nil;
 end;
 
@@ -1594,6 +1821,7 @@ end;
 procedure TConnectionName.GetTableNames(List: TStrings; SystemTables: Boolean);
 begin
   GetDBInfo(stTables,'','tables_in_'+DatabaseName,List)
+<<<<<<< HEAD
 end;
 
 function TConnectionName.GetConnectionInfo(InfoType: TConnInfoType): string;
@@ -1620,6 +1848,8 @@ begin
   finally
     ReleaseMysql;
   end;
+=======
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TConnectionName.GetTransactionHandle(trans: TSQLHandle): pointer;
@@ -1688,6 +1918,18 @@ begin
   end; {case}
 end;
 
+function TConnectionName.GetSchemaInfoSQL(SchemaType: TSchemaType;
+  SchemaObjectName, SchemaPattern: string): string;
+
+begin
+  case SchemaType of
+    stTables     : result := 'show tables';
+    stColumns    : result := 'show columns from ' + EscapeString(SchemaObjectName);
+  else
+    DatabaseError(SMetadataUnavailable)
+  end; {case}
+end;
+
 { TMySQLConnectionDef }
 
 class function TMySQLConnectionDef.TypeName: String;
@@ -1697,6 +1939,7 @@ end;
 
 class function TMySQLConnectionDef.ConnectionClass: TSQLConnectionClass;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1788,6 +2031,21 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  {$IfDef mysql50}
+    Result:=TMySQL50Connection;
+  {$ELSE}
+    {$IfDef mysql41}
+      Result:=TMySQL41Connection;
+    {$ELSE}
+      {$IFDEF mysql4} // temporary backwards compatibility for Lazarus
+        Result:=TMySQLConnection;
+      {$ELSE}
+        Result:=TMySQL40Connection;
+      {$EndIf}
+    {$EndIf}
+  {$EndIf}
+>>>>>>> graemeg/fixes_2_2
 end;
 
 class function TMySQLConnectionDef.Description: String;
@@ -1817,6 +2075,7 @@ begin
   Result:=MysqlLoadedLibrary;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$IFDEF mysql57}
@@ -1957,5 +2216,32 @@ end;
 =======
 >>>>>>> origin/cpstrnew
 {$ENDIF}
+=======
+{$IfDef mysql50}
+  initialization
+    RegisterConnection(TMySQL50ConnectionDef);
+  finalization
+    UnRegisterConnection(TMySQL50ConnectionDef);
+{$ELSE}
+  {$IfDef mysql41}
+    initialization
+      RegisterConnection(TMySQL41ConnectionDef);
+    finalization
+      UnRegisterConnection(TMySQL41ConnectionDef);
+  {$ELSE}
+    {$IFDEF mysql4} // temporary backwards compatibility for Lazarus
+      initialization
+        RegisterConnection(TMySQL40ConnectionDef);
+      finalization
+        UnRegisterConnection(TMySQL40ConnectionDef);
+    {$ELSE}
+      initialization
+        RegisterConnection(TMySQL40ConnectionDef);
+      finalization
+        UnRegisterConnection(TMySQL40ConnectionDef);
+    {$EndIf}
+  {$EndIf}
+{$EndIf}
+>>>>>>> graemeg/fixes_2_2
 
 end.

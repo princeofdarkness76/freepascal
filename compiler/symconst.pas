@@ -266,6 +266,7 @@ type
     sp_has_overloaded,
     sp_internal,            { internal symbol, not reported as unused }
     sp_implicitrename,
+<<<<<<< HEAD
     sp_hint_experimental,
     sp_generic_para,
 <<<<<<< HEAD
@@ -291,6 +292,11 @@ type
 =======
     sp_has_deprecated_msg
 >>>>>>> origin/cpstrnew
+=======
+    sp_hidden,
+    sp_hint_experimental,
+    sp_generic_para
+>>>>>>> graemeg/fixes_2_2
   );
   tsymoptions=set of tsymoption;
 
@@ -303,6 +309,7 @@ type
     { type is a specialization of a generic type }
     df_specialization,
     { def has been copied from another def so symtable is not owned }
+<<<<<<< HEAD
     df_copied_def,
     { def was created as a generic constraint and thus is only "shallow" }
     df_genconstraint,
@@ -315,6 +322,9 @@ type
     { don't pack this record at the llvm level -- can't do this via symllvm
       because we have to access this information in the symtable unit }
     df_llvm_no_struct_packing
+=======
+    df_copied_def
+>>>>>>> graemeg/fixes_2_2
   );
   tdefoptions=set of tdefoption;
 
@@ -357,8 +367,11 @@ type
     uchar,uwidechar,scurrency
   );
 
+<<<<<<< HEAD
   tordtypeset = set of tordtype;
 
+=======
+>>>>>>> graemeg/fixes_2_2
   { string types }
   tstringtype = (
     st_shortstring,
@@ -649,6 +662,7 @@ type
     oo_has_msgint,
     oo_can_have_published,{ the class has rtti, i.e. you can publish properties }
     oo_has_default_property,
+<<<<<<< HEAD
     oo_has_valid_guid,
     oo_has_enumerator_movenext,
     oo_has_enumerator_current,
@@ -675,6 +689,9 @@ type
 =======
     oo_has_class_destructor   { the object/class has a class destructor  }
 >>>>>>> origin/cpstrnew
+=======
+    oo_has_valid_guid
+>>>>>>> graemeg/fixes_2_2
   );
   tobjectoptions=set of tobjectoption;
 
@@ -927,7 +944,10 @@ type
   tequaltype = (
     te_incompatible,
     te_convert_operator,
+<<<<<<< HEAD
     te_convert_l6,
+=======
+>>>>>>> graemeg/fixes_2_2
     te_convert_l5,     { ad infinitum... }
     te_convert_l4,     { and yet even less preferred conversion }
     te_convert_l3,     { even less preferred conversion (possibly with loss of data) }
@@ -987,6 +1007,7 @@ var
 const
 {$ifndef jvm}
    inherited_objectoptions : tobjectoptions = [oo_has_virtual,oo_has_private,oo_has_protected,
+<<<<<<< HEAD
                 oo_has_strictprotected,oo_has_strictprivate,oo_has_constructor,oo_has_destructor,
                 oo_can_have_published];
 <<<<<<< HEAD
@@ -1007,6 +1028,12 @@ inherited_objectoptions : tobjectoptions = [oo_has_virtual,oo_has_private,oo_has
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+                oo_has_strictprotected,oo_has_strictprivate,oo_has_constructor,oo_has_destructor];
+   clearstack_pocalls = [
+     pocall_cdecl,pocall_cppdecl,pocall_syscall,pocall_mwpascal
+   ];
+>>>>>>> graemeg/fixes_2_2
 
 {$ifdef i386}
    { we only take this into account on i386, on other platforms we always
@@ -1036,8 +1063,13 @@ inherited_objectoptions : tobjectoptions = [oo_has_virtual,oo_has_private,oo_has
      );
 
      EqualTypeName : array[tequaltype] of string[16] = (
+<<<<<<< HEAD
        'incompatible','convert_operator','convert_l6', 'convert_l5','convert_l4','convert_l3',
        'convert_l2','convert_l1','equal','exact'
+=======
+       'incompatible','convert_operator','convert_l5','convert_l4','convert_l3','convert_l2',
+       'convert_l1','equal','exact'
+>>>>>>> graemeg/fixes_2_2
      );
 
      visibilityName : array[tvisibility] of string[16] = (

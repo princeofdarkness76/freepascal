@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -33,6 +34,17 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+	Copyright (c) 1998-2005, Apple, Inc. All rights reserved.
+}
+{   Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -41,8 +53,13 @@
 
 unit CFBinaryHeap;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -55,21 +72,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -104,6 +129,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -111,6 +138,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -335,6 +363,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -360,6 +398,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -370,8 +412,11 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 {!
@@ -417,7 +462,11 @@ type
 }
 type
 	CFBinaryHeapCallBacks = record
+<<<<<<< HEAD
 	  version: CFIndex;
+=======
+	    version: CFIndex;
+>>>>>>> graemeg/fixes_2_2
 		retain: function( allocator: CFAllocatorRef; info: {const} UnivPtr ): UnivPtr;
 		release: procedure( allocator: CFAllocatorRef; info: {const} UnivPtr );
 		copyDescription: function( info: {const} UnivPtr ): CFStringRef;
@@ -449,8 +498,12 @@ type
 	This is the type of a reference to CFBinaryHeaps.
 }
 type
+<<<<<<< HEAD
 	CFBinaryHeapRef = ^__CFBinaryHeap; { an opaque type }
 	__CFBinaryHeap = record end;
+=======
+	CFBinaryHeapRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 
 {!
 	@function CFBinaryHeapGetTypeID
@@ -460,24 +513,34 @@ function CFBinaryHeapGetTypeID: CFTypeID; external name '_CFBinaryHeapGetTypeID'
 
 {!
 	@function CFBinaryHeapCreate
+<<<<<<< HEAD
 	 Creates a new mutable
 #if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4
 	 or fixed-mutable
 #endif
 	 binary heap with the given values.
+=======
+	Creates a new mutable or fixed-mutable binary heap with the given values.
+>>>>>>> graemeg/fixes_2_2
 	@param allocator The CFAllocator which should be used to allocate
 		memory for the binary heap and its storage for values. This
 		parameter may be NULL in which case the current default
 		CFAllocator is used. If this reference is not a valid
 		CFAllocator, the behavior is undefined.
+<<<<<<< HEAD
 #if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4
 	@param capacity The maximum number of values that can be contained
 	by the CFBinaryHeap. The binary heap starts empty, and can grow to this
+=======
+	@param capacity The maximum number of values that can be contained
+		by the CFBinaryHeap. The binary heap starts empty, and can grow to this
+>>>>>>> graemeg/fixes_2_2
 		number of values (and it can have less). If this parameter
 		is 0, the binary heap's maximum capacity is unlimited (or rather,
 		only limited by address space and available memory
 		constraints). If this parameter is negative, the behavior is
 		undefined.
+<<<<<<< HEAD
 #else
 	@param capacity A hint about the number of values that will be held
 		by the CFBinaryHeap. Pass 0 for no hint. The implementation may
@@ -486,6 +549,8 @@ function CFBinaryHeapGetTypeID: CFTypeID; external name '_CFBinaryHeapGetTypeID'
 		address space and available memory constraints). If this 
 		parameter is negative, the behavior is undefined.
 #endif
+=======
+>>>>>>> graemeg/fixes_2_2
 	@param callBacks A pointer to a CFBinaryHeapCallBacks structure
 		initialized with the callbacks for the binary heap to use on
 		each value in the binary heap. A copy of the contents of the
@@ -511,30 +576,42 @@ function CFBinaryHeapGetTypeID: CFTypeID; external name '_CFBinaryHeapGetTypeID'
 		the behavior is undefined. If any of the values put into the
 		binary heap is not one understood by one of the callback functions
 		the behavior when that callback function is used is undefined.
+<<<<<<< HEAD
   @param compareContext A pointer to a CFBinaryHeapCompareContext structure.
+=======
+        @param compareContext A pointer to a CFBinaryHeapCompareContext structure.
+>>>>>>> graemeg/fixes_2_2
 	@result A reference to the new CFBinaryHeap.
 }
 function CFBinaryHeapCreate( allocator: CFAllocatorRef; capacity: CFIndex; callBacks: CFBinaryHeapCallBacksPtr; const (*var*) compareContext: CFBinaryHeapCompareContext ): CFBinaryHeapRef; external name '_CFBinaryHeapCreate';
 
 {!
 	@function CFBinaryHeapCreateCopy
+<<<<<<< HEAD
 	 Creates a new mutable
 #if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4
 	 or fixed-mutable
 #endif
 	 binary heap with the values from the given binary heap.
+=======
+	Creates a new mutable or fixed-mutable binary heap with the values from the given binary heap.
+>>>>>>> graemeg/fixes_2_2
 	@param allocator The CFAllocator which should be used to allocate
 		memory for the binary heap and its storage for values. This
 		parameter may be NULL in which case the current default
 		CFAllocator is used. If this reference is not a valid
 		CFAllocator, the behavior is undefined.
+<<<<<<< HEAD
 #if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4
+=======
+>>>>>>> graemeg/fixes_2_2
 	@param capacity The maximum number of values that can be contained
 		by the CFBinaryHeap. The binary heap starts empty, and can grow to this
 		number of values (and it can have less). If this parameter
 		is 0, the binary heap's maximum capacity is unlimited (or rather,
 		only limited by address space and available memory
 		constraints). If this parameter is negative, or less than the number of
+<<<<<<< HEAD
     values in the given binary heap, the behavior is undefined.
 #else
   @param capacity A hint about the number of values that will be held
@@ -547,6 +624,9 @@ function CFBinaryHeapCreate( allocator: CFAllocatorRef; capacity: CFIndex; callB
 		behavior is undefined. If this parameter is negative, the
 		behavior is undefined.
 #endif
+=======
+                values in the given binary heap, the behavior is undefined.
+>>>>>>> graemeg/fixes_2_2
 	@param heap The binary heap which is to be copied. The values from the
 		binary heap are copied as pointers into the new binary heap (that is,
 		the values themselves are copied, not that which the values
@@ -555,6 +635,7 @@ function CFBinaryHeapCreate( allocator: CFAllocatorRef; capacity: CFIndex; callB
 		be the same as the given binary heap. The new binary heap uses the same
 		callbacks as the binary heap to be copied. If this parameter is
 		not a valid CFBinaryHeap, the behavior is undefined.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -572,6 +653,9 @@ function CFBinaryHeapCreate( allocator: CFAllocatorRef; capacity: CFIndex; callB
 =======
 	@result A reference to the new binary heap.
 >>>>>>> origin/cpstrnew
+=======
+	@result A reference to the new mutable or fixed-mutable binary heap.
+>>>>>>> graemeg/fixes_2_2
 }
 function CFBinaryHeapCreateCopy( allocator: CFAllocatorRef; capacity: CFIndex; heap: CFBinaryHeapRef ): CFBinaryHeapRef; external name '_CFBinaryHeapCreateCopy';
 
@@ -675,6 +759,7 @@ procedure CFBinaryHeapApplyFunction( heap: CFBinaryHeapRef; applier: CFBinaryHea
 
 {!
 	@function CFBinaryHeapAddValue
+<<<<<<< HEAD
 	 Adds the value to the binary heap.
 	@param heap The binary heap to which the value is to be added. If this parameter is not a
 	 valid mutable CFBinaryHeap, the behavior is undefined.
@@ -682,6 +767,13 @@ procedure CFBinaryHeapApplyFunction( heap: CFBinaryHeapRef; applier: CFBinaryHea
 	 If the binary heap is a fixed-capacity binary heap and it
 	 is full before this operation, the behavior is undefined.
 #endif
+=======
+	Adds the value to the binary heap.
+	@param heap The binary heap to which the value is to be added. If this parameter is not a
+		valid mutable CFBinaryHeap, the behavior is undefined.
+                If the binary heap is a fixed-capacity binary heap and it
+		is full before this operation, the behavior is undefined.
+>>>>>>> graemeg/fixes_2_2
 	@param value The value to add to the binary heap. The value is retained by
 		the binary heap using the retain callback provided when the binary heap
 		was created. If the value is not of the sort expected by the
@@ -706,7 +798,12 @@ procedure CFBinaryHeapRemoveMinimumValue( heap: CFBinaryHeapRef ); external name
 }
 procedure CFBinaryHeapRemoveAllValues( heap: CFBinaryHeapRef ); external name '_CFBinaryHeapRemoveAllValues';
 
+<<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+end.
+>>>>>>> graemeg/fixes_2_2

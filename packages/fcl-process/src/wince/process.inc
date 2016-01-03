@@ -11,6 +11,7 @@
 
  **********************************************************************}
 
+<<<<<<< HEAD
 Uses
   Windows;
 
@@ -22,6 +23,8 @@ Resourcestring
   SErrNoTerminalProgram = 'Could not detect X-Terminal program';
 }
 
+=======
+>>>>>>> graemeg/fixes_2_2
 Const
   PriorityConstants : Array [TProcessPriority] of Cardinal =
                       (HIGH_PRIORITY_CLASS,IDLE_PRIORITY_CLASS,
@@ -152,6 +155,7 @@ begin
      end;
 end;
 
+<<<<<<< HEAD
 Procedure CreatePipes(Var HI,HO,HE : Thandle; Var SI : TStartupInfo; CE : Boolean; APipeBufferSize : Cardinal);
 
 begin
@@ -159,6 +163,15 @@ begin
   CreatePipeHandles(HO,Si.hStdOutput,APipeBufferSize);
   if CE then
     CreatePipeHandles(HE,SI.hStdError,APipeBufferSize)
+=======
+Procedure CreatePipes(Var HI,HO,HE : Thandle; Var SI : TStartupInfo; CE : Boolean);
+
+begin
+  CreatePipeHandles(SI.hStdInput,HI);
+  CreatePipeHandles(HO,Si.hStdOutput);
+  if CE then
+    CreatePipeHandles(HE,SI.hStdError)
+>>>>>>> graemeg/fixes_2_2
   else
     begin
     SI.hStdError:=SI.hStdOutput;
@@ -181,6 +194,10 @@ Var
   HI,HO,HE : THandle;
 
 begin
+<<<<<<< HEAD
+=======
+  FInheritHandles:=True;
+>>>>>>> graemeg/fixes_2_2
   PName:=Nil;
   PCommandLine:=Nil;
   PDir:=Nil;
@@ -212,12 +229,20 @@ begin
     InitThreadAttributes(Self,FThreadAttributes);
     InitStartupInfo(Self,FStartUpInfo);
     If poUsePipes in FProcessOptions then
+<<<<<<< HEAD
       CreatePipes(HI,HO,HE,FStartupInfo,Not(poStdErrToOutPut in FProcessOptions),FPipeBufferSize);
+=======
+      CreatePipes(HI,HO,HE,FStartupInfo,Not(poStdErrToOutPut in FProcessOptions));
+>>>>>>> graemeg/fixes_2_2
     Try
       If Not CreateProcess (PName,PCommandLine,@FProcessAttributes,@FThreadAttributes,
                    FInheritHandles,FCreationFlags,FEnv,PDir,@FStartupInfo,
                    fProcessInformation) then
+<<<<<<< HEAD
         Raise EProcess.CreateFmt(SErrCannotExecute,[FCommandLine,GetLastError]);
+=======
+        Raise EProcess.CreateFmt('Failed to execute %s : %d',[FCommandLine,GetLastError]);
+>>>>>>> graemeg/fixes_2_2
       FProcessHandle:=FProcessInformation.hProcess;
       FThreadHandle:=FProcessInformation.hThread;
       FProcessID:=FProcessINformation.dwProcessID;

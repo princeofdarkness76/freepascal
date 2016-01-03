@@ -37,7 +37,11 @@ units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
 #      intuition aboxlib mui \
 # these can be moved to packages later
 #      clipboard datatypes asl ahi tinygl get9 muihelper \
+<<<<<<< HEAD
 rsts=math rtlconsts typinfo classes sysconst
+=======
+rsts=math rtlconsts varutils typinfo variants classes sysconst dateutil
+>>>>>>> graemeg/fixes_2_2
 #implicitunits=exeinfo
 
 [require]

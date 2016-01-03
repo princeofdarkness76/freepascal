@@ -14,16 +14,24 @@ begin
 
     P:=AddPackage('uuid');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
     P.SourcePath.Add('src');
     P.OSes := [linux];
     P.Dependencies.Add('rtl-extra');
+=======
+    P.Directory:='uuid';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.SourcePath.Add('src');
+>>>>>>> graemeg/fixes_2_2
 
     T:=P.Targets.AddUnit('libuuid.pp');
     T:=P.Targets.AddUnit('macuuid.pp');
 
+<<<<<<< HEAD
     P.Sources.AddSrc('README.txt');
 
     P.ExamplePath.Add('examples');
@@ -32,6 +40,8 @@ begin
     P.Sources.AddExampleFiles('examples/*',P.Directory,false,'.');
 
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifndef ALLPACKAGES}
     Run;
     end;

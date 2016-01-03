@@ -2,7 +2,11 @@
 Const
   GraphDir = 'inc/graph/';
   SysUtilsDir = 'objpas/sysutils/';
+<<<<<<< HEAD
   Unixes = [darwin,dragonfly,freebsd,linux,netbsd,openbsd];
+=======
+  Unixes = [darwin,freebsd,linux,netbsd,openbsd];
+>>>>>>> graemeg/fixes_2_2
 
 
 Function CurrentOS : String;
@@ -247,4 +251,8 @@ begin
     // T:=AddUnit('inc/pagemem.pp');
     end;
   AddSystemDependencies(Installer.Targets);
+<<<<<<< HEAD
 end;
+=======
+end;
+>>>>>>> graemeg/fixes_2_2

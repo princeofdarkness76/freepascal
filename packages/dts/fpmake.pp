@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('dts');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -26,6 +27,11 @@ begin
     P.NeedLibC:= true;
     P.OSes := [linux];
 
+=======
+    P.Directory:='dts';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+>>>>>>> graemeg/fixes_2_2
     P.SourcePath.Add('src');
 
     T:=P.Targets.AddUnit('dts.pas');

@@ -8,6 +8,7 @@ name=fcl-base
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -24,12 +25,20 @@ version=2.5.1
 [require]
 packages_darwin=univint
 packages_iphonesim=univint
+=======
+version=2.2.5
+
+[require]
+packages_win32=winunits-base winunits-jedi
+packages_win64=winunits-base winunits-jedi
+>>>>>>> graemeg/fixes_2_2
 
 [target]
 units=contnrs inifiles rtfpars idea base64 gettext \
       iostream cachecls avl_tree uriparser \
       eventlog custapp wformat whtml wtex rttiutils bufstream \
       streamex blowfish streamio inicol pooledmm libtar streamcoll \
+<<<<<<< HEAD
       maskutils fpexprpars ascii85 fptemplate
 units_beos=syncobjs
 units_haiku=syncobjs
@@ -42,6 +51,18 @@ units_openbsd= fptimer
 units_linux=syncobjs   fptimer
 units_win32=fileinfo syncobjs  fptimer
 units_win64=fileinfo syncobjs  fptimer
+=======
+      maskutils fpexprpars
+units_beos=syncobjs 
+units_freebsd=syncobjs daemonapp fptimer
+units_darwin=syncobjs daemonapp fptimer 
+units_solaris=syncobjs daemonapp fptimer
+units_netbsd=daemonapp fptimer
+units_openbsd=daemonapp fptimer
+units_linux=syncobjs daemonapp fptimer
+units_win32=fileinfo syncobjs daemonapp ServiceManager fptimer
+units_win64=fileinfo syncobjs daemonapp ServiceManager fptimer
+>>>>>>> graemeg/fixes_2_2
 units_wince=fileinfo syncobjs fptimer
 # syncobjs requires GetLastOSError function
 units_netware=syncobjs
@@ -50,7 +71,11 @@ rsts=cachecls custapp cgiapp eventlog registry streamcoll inicol
 
 [compiler]
 options=-S2h
+<<<<<<< HEAD
 includedir=src/$(OS_TARGET) src src/dummy
+=======
+includedir=src/$(OS_TARGET) src
+>>>>>>> graemeg/fixes_2_2
 includedir_linux=src/unix
 includedir_freebsd=src/unix
 includedir_darwin=src/unix
@@ -74,14 +99,20 @@ endif
 ifeq ($(OS_TARGET),win64)
 INSTALL_DATADIR=${INSTALL_UNITDIR}
 endif
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
 
 [install]
 fpcpackage=y
+files_win32=src/win/fclel.res
+files_win64=src/win/fclel.res
 
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -167,3 +198,7 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/fixes_2_2

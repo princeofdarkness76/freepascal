@@ -43,6 +43,7 @@ var
   oldp: pchar;
   RC: cardinal;
 begin
+<<<<<<< HEAD
   oldp:=p;
   DoDirSeparators(p,pchangeable);
   RC := DosDelete (P);
@@ -53,6 +54,10 @@ begin
    end;
   if p<>oldp then
     freemem(p);
+=======
+  DoDirSeparators(p);
+  inoutres:=DosDelete(p);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure do_rename(p1,p2:Pchar; p1changeable, p2changeable: boolean);
@@ -60,6 +65,7 @@ var
   oldp1, oldp2 : pchar;
   RC: cardinal;
 begin
+<<<<<<< HEAD
   oldp1:=p1;
   oldp2:=p2;
   DoDirSeparators(p1,p1changeable);
@@ -74,6 +80,11 @@ begin
     freemem(p1);
   if p2<>oldp2 then
     freemem(p2);
+=======
+  DoDirSeparators(p1);
+  DoDirSeparators(p2);
+  inoutres:=DosMove(p1, p2);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function do_read(h:thandle;addr:pointer;len:longint):longint;
@@ -121,12 +132,16 @@ var
   PosActual: int64;
   RC: cardinal;
 begin
+<<<<<<< HEAD
   RC := Sys_DosSetFilePtrL (Handle, 0, 1, PosActual);
   if RC <> 0 then
    begin
     InOutRes := longint (RC);
     OSErrorWatch (RC);
    end;
+=======
+  InOutRes := Sys_DosSetFilePtrL (Handle, 0, 1, PosActual);
+>>>>>>> graemeg/fixes_2_2
   Do_FilePos := PosActual;
 {$ifdef IODEBUG}
   writeln('do_filepos: handle=', Handle, ', actual_pos=', PosActual, ', InOutRes=', InOutRes);
@@ -138,12 +153,16 @@ var
   PosActual: int64;
   RC: cardinal;
 begin
+<<<<<<< HEAD
   RC := Sys_DosSetFilePtrL(Handle, Pos, 0 {ZeroBased}, PosActual);
   if RC <> 0 then
    begin
     InOutRes := longint (RC);
     OSErrorWatch (RC);
    end;
+=======
+  InOutRes:=Sys_DosSetFilePtrL(Handle, Pos, 0 {ZeroBased}, PosActual);
+>>>>>>> graemeg/fixes_2_2
 {$ifdef IODEBUG}
   writeln('do_seek: handle=', Handle, ', pos=', pos, ', actual_pos=', PosActual, ', InOutRes=', InOutRes);
 {$endif}
@@ -154,6 +173,7 @@ var
   PosActual: int64;
   RC: cardinal;
 begin
+<<<<<<< HEAD
   RC := Sys_DosSetFilePtrL (Handle, 0, 2 {EndBased}, PosActual);
   if RC <> 0 then
    begin
@@ -163,6 +183,10 @@ begin
    end
   else
    Do_SeekEnd := PosActual;
+=======
+  InOutRes := Sys_DosSetFilePtrL (Handle, 0, 2 {EndBased}, PosActual);
+  Do_SeekEnd := PosActual;
+>>>>>>> graemeg/fixes_2_2
 {$ifdef IODEBUG}
   writeln('do_seekend: handle=', Handle, ', actual_pos=', PosActual, ', InOutRes=', InOutRes);
 {$endif}
@@ -184,6 +208,7 @@ procedure Do_Truncate (Handle: THandle; Pos: int64);
 var
   RC: cardinal;
 begin
+<<<<<<< HEAD
   RC := Sys_DosSetFileSizeL (Handle, Pos);
   if RC <> 0 then
    begin
@@ -192,6 +217,10 @@ begin
    end
   else
    Do_SeekEnd (Handle);
+=======
+  InOutRes := Sys_DosSetFileSizeL (Handle, Pos);
+  Do_SeekEnd (Handle);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -234,6 +263,12 @@ var
   oldp : pchar;
   RC: cardinal;
 begin
+<<<<<<< HEAD
+=======
+  // convert unix slashes to normal slashes
+  DoDirSeparators(p);
+
+>>>>>>> graemeg/fixes_2_2
   // close first if opened
   if ((flags and $10000)=0) then
   begin
@@ -294,6 +329,7 @@ begin
   DoDirSeparators(p,pchangeable);
   Attrib:=32 {faArchive};
 
+<<<<<<< HEAD
   RC := Sys_DosOpenL(p, FileRec(F).Handle, Action, 0, Attrib, OpenFlags, FM, nil);
   if RC <> 0 then
    begin
@@ -314,6 +350,16 @@ begin
     end;
   if RC <> 0 then
    FileRec(F).Handle:=UnusedHandle;
+=======
+  InOutRes:=Sys_DosOpenL(p, FileRec(F).Handle, Action, 0, Attrib, OpenFlags, FM, nil);
+
+  // If too many open files try to set more file handles and open again
+  if (InOutRes = 4) then
+    if Increase_File_Handle_Count then
+      InOutRes:=Sys_DosOpenL(p, FileRec(F).Handle, Action, 0, Attrib, OpenFlags, FM, nil);
+
+  If InOutRes<>0 then FileRec(F).Handle:=UnusedHandle;
+>>>>>>> graemeg/fixes_2_2
 
   // If Handle created -> make some things
   if (FileRec(F).Handle <> UnusedHandle) then

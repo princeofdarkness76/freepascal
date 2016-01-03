@@ -19,6 +19,7 @@
         .globl  _startlib
         .type   _startlib,@function
 _startlib:
+<<<<<<< HEAD
         .globl  FPC_SHARED_LIB_START
         .type   FPC_SHARED_LIB_START,@function
 <<<<<<< HEAD
@@ -42,6 +43,11 @@ FPC_SHARED_LIB_START:
 =======
 >>>>>>> origin/cpstrnew
 FPC_SHARED_LIB_START:
+=======
+        .globl  FPC_LIB_START
+        .type   FPC_LIB_START,@function
+FPC_LIB_START:
+>>>>>>> graemeg/fixes_2_2
 |
 |       The args and envs are not tested yet
 |
@@ -50,6 +56,7 @@ FPC_SHARED_LIB_START:
         move.l   %a0, U_SYSLINUX_ENVP
         move.l   %sp,U_SYSLINUX_ARGV
         move.l   %d0,U_SYSLINUX_ARGC
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
         jsr      PASCALMAIN
         unlk     %a6
@@ -80,6 +87,19 @@ FPC_SHARED_LIB_EXIT:
         trap      #0
         bra       _haltproc
 .size _haltproc,.-_haltproc
+=======
+        jsr      PASCALMAIN
+        rts
+
+        .globl  _haltproc
+        .type   _haltproc,@function
+haltproc:
+        moveq.l   #1,%d0
+        move.w    U_SYSLINUX_EXITCODE,%d1
+        trap      #0
+        bra       _haltproc
+
+>>>>>>> graemeg/fixes_2_2
 
         .data
 	.align  4
@@ -87,6 +107,7 @@ FPC_SHARED_LIB_EXIT:
 ___fpc_brk_addr:
         .long   0
 
+<<<<<<< HEAD
         .bss
         .type   __stkptr,@object
         .size   __stkptr,4
@@ -105,4 +126,21 @@ operatingsystem_parameters:
         .set operatingsystem_parameter_envp,operatingsystem_parameters+0
         .set operatingsystem_parameter_argc,operatingsystem_parameters+4
         .set operatingsystem_parameter_argv,operatingsystem_parameters+8
+=======
+|
+| $Log: dllprt0.as,v $
+| Revision 1.1.2.4  2001/08/01 13:26:17  pierre
+|  * syntax adapted to GNU as
+|
+| Revision 1.1.2.3  2001/07/13 15:13:47  pierre
+|  + add and fix some comments
+|
+| Revision 1.1.2.2  2001/07/13 15:04:35  pierre
+|  * correct assembler error
+|
+| Revision 1.1.2.1  2001/07/13 15:03:02  pierre
+|  + New file converted from i386 version
+|
+|
+>>>>>>> graemeg/fixes_2_2
 

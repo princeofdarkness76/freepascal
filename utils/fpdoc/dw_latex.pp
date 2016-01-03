@@ -144,7 +144,11 @@ Type
     Property ImageDir : String Read FImageDir Write FImageDir;
   public
     Function InterPretOption(Const Cmd,Arg : String) : boolean; override;
+<<<<<<< HEAD
     Class Function FileNameExtension : String; override;
+=======
+    Property ImageDir : String Read FImageDir Write FImageDir;
+>>>>>>> graemeg/fixes_2_2
   end;
 
 
@@ -691,6 +695,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TLaTeXWriter.WriteOverviewMember(const ALabel, AName, Access,
   ADescr: String);
 =======
@@ -705,11 +710,15 @@ procedure TLatexWriter.WriteOverviewMember(const ALabel,AName,Access,ADescr : St
 =======
 procedure TLatexWriter.WriteOverviewMember(const ALabel,AName,Access,ADescr : String);
 >>>>>>> origin/cpstrnew
+=======
+procedure TLatexWriter.WriteOverviewMember(ALabel,AName,Access,ADescr : String);
+>>>>>>> graemeg/fixes_2_2
 
 begin
   WriteLnF('\pageref{%s} & %s & %s & %s \\',[ALabel,EscapeText(AName),Access,ADescr]);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -727,6 +736,9 @@ procedure TLatexWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
 =======
 procedure TLatexWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
 >>>>>>> origin/cpstrnew
+=======
+procedure TLatexWriter.WriteOverviewMember(ALabel,AName,ADescr : String);
+>>>>>>> graemeg/fixes_2_2
 
 begin
   WriteLnF('\pageref{%s} & %s  & %s \\',[ALabel,EscapeText(AName),ADescr]);

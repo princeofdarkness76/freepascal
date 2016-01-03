@@ -85,6 +85,7 @@ unit cpupi;
              exit;
           end;
         if tg.direction = -1 then
+<<<<<<< HEAD
           begin
             if (target_info.system<>system_arm_darwin) then
               { Non-Darwin, worst case: r4-r10,r11,r13,r14,r15 is saved -> -28-16, but we
@@ -162,6 +163,11 @@ unit cpupi;
 
             stackframesize:=Align(stackframesize,8);
           end;
+=======
+          tg.setfirsttemp(-12-28)
+        else
+          tg.setfirsttemp(maxpushedparasize);
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -318,6 +324,7 @@ unit cpupi;
             end;
         end;
         floatsavesize:=align(floatsavesize,max(current_settings.alignment.localalignmin,4));
+<<<<<<< HEAD
         result:=Align(tg.direction*tg.lasttemp,max(current_settings.alignment.localalignmin,4))+maxpushedparasize+aint(floatsavesize);
         floatregstart:=tg.direction*result+maxpushedparasize;
         if tg.direction=1 then
@@ -338,6 +345,12 @@ unit cpupi;
         { darwin doesn't use a got }
         if tf_pic_uses_got in target_info.flags then
           got := cg.getaddressregister(list);
+=======
+        result:=Align(tg.direction*tg.lasttemp,max(current_settings.alignment.localalignmin,4))+maxpushedparasize+floatsavesize;
+        floatregstart:=tg.direction*result+maxpushedparasize;
+        if tg.direction=1 then
+          dec(floatregstart,floatsavesize);
+>>>>>>> graemeg/fixes_2_2
       end;
 
 

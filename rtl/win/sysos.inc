@@ -271,6 +271,9 @@ type
      stdcall;external KernelDLL name 'GetCommandLineA';
    {$endif}
 
+   function GetCommandLineW : pwidechar;
+     stdcall;external KernelDLL name 'GetCommandLineW';
+
   function GetCurrentProcessId:DWORD;
     stdcall; external KernelDLL name 'GetCurrentProcessId';
 

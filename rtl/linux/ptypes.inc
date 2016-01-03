@@ -106,10 +106,13 @@ Type
     TOff     = off_t;
     pOff     = ^off_t;
 
+<<<<<<< HEAD
     off64_t  = cint64;
     TOff64   = off64_t;
     pOff64   = ^off64_t;
 
+=======
+>>>>>>> graemeg/fixes_2_2
     pid_t    = cint;          { used as process identifier   }
     TPid     = pid_t;
     pPid     = ^pid_t;
@@ -154,7 +157,11 @@ Type
     pUid     = ^uid_t;
     TGid     = gid_t;
     pGid     = ^gid_t;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> graemeg/fixes_2_2
     TIOCtlRequest = cInt;
 
 
@@ -162,7 +169,11 @@ Type
     TSockLen = socklen_t;
     pSockLen = ^socklen_t;
 
+<<<<<<< HEAD
   timeval     = record
+=======
+  timeval     = packed record
+>>>>>>> graemeg/fixes_2_2
                  tv_sec:time_t;
                  tv_usec:clong;
                 end;
@@ -177,7 +188,11 @@ Type
   TTimeSpec   = timespec;
 
   {$ifdef cpu64}
+<<<<<<< HEAD
   TStatfs = record
+=======
+  TStatfs = packed record
+>>>>>>> graemeg/fixes_2_2
     fstype,            { File system type }
     bsize   : clong;    { Optimal block trensfer size }
     blocks,            { Data blocks in system }
@@ -191,7 +206,11 @@ Type
     spare   : array [0..4] of clong; { For later use }
   end;
   {$else}
+<<<<<<< HEAD
   TStatfs = record
+=======
+  TStatfs = packed record
+>>>>>>> graemeg/fixes_2_2
     fstype,            { File system type }
     bsize   : cint;    { Optimal block trensfer size }
     blocks,            { Data blocks in system }
@@ -212,7 +231,11 @@ Type
       0: (__wch: wint_t);
       1: (__wchb: array[0..3] of char);
   end;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/fixes_2_2
   mbstate_t = record
     __count: cint;
     __value: mbstate_value_t;

@@ -41,6 +41,7 @@
 
 { Some helpers }
 
+<<<<<<< HEAD
 {$ifdef FPC_PIC}
 function fpc0geteipasebx : pointer; compilerproc; nostackframe; assembler; 
 asm  
@@ -124,6 +125,13 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+procedure libc_atexit; external name 'atexit';
+procedure libc_exit; external name '__libc_exit';
+procedure libc_init; external name '__libc_init';
+procedure libc_setfpucw; external name '__setfpucw';
+procedure libc_start_main; external name '__libc_start_main';
+>>>>>>> graemeg/fixes_2_2
 
 { Some helpers }
 
@@ -192,6 +200,7 @@ var
 {******************************************************************************
                           Process start/halt
  ******************************************************************************}
+{$asmmode ATT}
 
 procedure _FPC_libc21_gprof_gmon_start; public name '_FPC_libc21_gprof_gmon_start';
 begin

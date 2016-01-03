@@ -7,7 +7,12 @@ name=fpcm
 version=3.1.1
 
 [require]
+<<<<<<< HEAD
 packages=rtl fpmkunit
+=======
+packages=fcl-base
+tools=data2inc
+>>>>>>> graemeg/fixes_2_2
 
 [install]
 fpcpackage=y

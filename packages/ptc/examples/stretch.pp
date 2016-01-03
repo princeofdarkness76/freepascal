@@ -3,211 +3,125 @@ Ported to FPC by Nikolay Nikolov (nickysn@users.sourceforge.net)
 }
 
 {
- Stretch example for OpenPTC 1.0 C++ implementation
+ Stretch example for OpenPTC 1.0 C++ Implementation
  Copyright (c) Glenn Fiedler (ptc@gaffer.org)
  This source code is in the public domain
 }
 
-program StretchExample;
+Program StretchExample;
 
 {$MODE objfpc}
 
-uses
+Uses
   ptc;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-procedure load(surface: IPTCSurface; filename: string);
-=======
-procedure load(surface: TPTCSurface; filename: String);
->>>>>>> graemeg/cpstrnew
-=======
-procedure load(surface: TPTCSurface; filename: String);
->>>>>>> graemeg/cpstrnew
-=======
-procedure load(surface: TPTCSurface; filename: String);
->>>>>>> graemeg/cpstrnew
-=======
-procedure load(surface: TPTCSurface; filename: String);
->>>>>>> origin/cpstrnew
-var
-  F: File;
-  width, height: Integer;
-  pixels: PByte = nil;
-  y: Integer;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  format: IPTCFormat;
-=======
-  tmp: TPTCFormat;
-  tmp2: TPTCPalette;
->>>>>>> graemeg/cpstrnew
-=======
-  tmp: TPTCFormat;
-  tmp2: TPTCPalette;
->>>>>>> graemeg/cpstrnew
-=======
-  tmp: TPTCFormat;
-  tmp2: TPTCPalette;
->>>>>>> graemeg/cpstrnew
-=======
-  tmp: TPTCFormat;
-  tmp2: TPTCPalette;
->>>>>>> origin/cpstrnew
-begin
+Procedure load(surface : TPTCSurface; filename : String);
+
+Var
+  F : File;
+  width, height : Integer;
+  pixels : PByte;
+  y : Integer;
+  tmp : TPTCFormat;
+  tmp2 : TPTCPalette;
+
+Begin
   { open image file }
-  AssignFile(F, filename);
+  ASSign(F, filename);
   Reset(F, 1);
 
-  try
-    { skip header }
-    Seek(F, 18);
+  { skip header }
+  Seek(F, 18);
 
-    { get surface dimensions }
-    width := surface.width;
-    height := surface.height;
+  { get surface dimensions }
+  width := surface.width;
+  height := surface.height;
 
-    { allocate image pixels }
-    pixels := GetMem(width * height * 3);
-
+  { allocate image pixels }
+  pixels := GetMem(width * height * 3);
+  Try
     { read image pixels one line at a time }
-    for y := height - 1 downto 0 do
+    For y := height - 1 DownTo 0 Do
       BlockRead(F, pixels[width * y * 3], width * 3);
 
     { load pixels to surface }
-    {$IFDEF FPC_LITTLE_ENDIAN}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    format := TPTCFormatFactory.CreateNew(24, $00FF0000, $0000FF00, $000000FF);
-    {$ELSE FPC_LITTLE_ENDIAN}
-    format := TPTCFormatFactory.CreateNew(24, $000000FF, $0000FF00, $00FF0000);
-    {$ENDIF FPC_LITTLE_ENDIAN}
-    surface.Load(pixels, width, height, width * 3, format, TPTCPaletteFactory.CreateNew);
-=======
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
     tmp := TPTCFormat.Create(24, $00FF0000, $0000FF00, $000000FF);
-    {$ELSE FPC_LITTLE_ENDIAN}
-    tmp := TPTCFormat.Create(24, $000000FF, $0000FF00, $00FF0000);
-    {$ENDIF FPC_LITTLE_ENDIAN}
-    try
+    Try
       tmp2 := TPTCPalette.Create;
-      try
+      Try
         surface.load(pixels, width, height, width * 3, tmp, tmp2);
-      finally
+      Finally
         tmp2.Free;
-      end;
-    finally
+      End;
+    Finally
       tmp.Free;
-    end;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-  finally
+    End;
+  Finally
     { free image pixels }
     FreeMem(pixels);
+  End;
+End;
 
-    { close file }
-    CloseFile(F);
-  end;
-end;
+Var
+  console : TPTCConsole;
+  surface : TPTCSurface;
+  image : TPTCSurface;
+  format : TPTCFormat;
+  timer : TPTCTimer;
+  area : TPTCArea;
+  color : TPTCColor;
+  time : Double;
+  zoom : Single;
+  x, y, x1, y1, x2, y2, dx, dy : Integer;
 
-var
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  console: IPTCConsole;
-  surface: IPTCSurface;
-  image: IPTCSurface;
-  format: IPTCFormat;
-  timer: IPTCTimer;
-  area: IPTCArea;
-=======
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-  console: TPTCConsole = nil;
-  surface: TPTCSurface = nil;
-  image: TPTCSurface = nil;
-  format: TPTCFormat = nil;
-  timer: TPTCTimer = nil;
-  area: TPTCArea = nil;
-  color: TPTCColor = nil;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-  time: Double;
-  zoom: Single;
-  x, y, x1, y1, x2, y2, dx, dy: Integer;
-begin
-  try
-    try
+Begin
+  format := Nil;
+  color := Nil;
+  timer := Nil;
+  image := Nil;
+  surface := Nil;
+  console := Nil;
+  Try
+    Try
       { create console }
-      console := TPTCConsoleFactory.CreateNew;
+      console := TPTCConsole.Create;
 
       { create format }
-      format := TPTCFormatFactory.CreateNew(32, $00FF0000, $0000FF00, $000000FF);
+      format := TPTCFormat.Create(32, $00FF0000, $0000FF00, $000000FF);
 
       { open the console }
       console.open('Stretch example', format);
 
       { create surface matching console dimensions }
-      surface := TPTCSurfaceFactory.CreateNew(console.width, console.height, format);
+      surface := TPTCSurface.Create(console.width, console.height, format);
 
       { create image surface }
-      image := TPTCSurfaceFactory.CreateNew(320, 140, format);
+      image := TPTCSurface.Create(320, 140, format);
 
       { load image to surface }
       load(image, 'stretch.tga');
 
       { setup stretching parameters }
-      x := surface.width div 2;
-      y := surface.height div 2;
-      dx := surface.width div 2;
-      dy := surface.height div 3;
+      x := surface.width Div 2;
+      y := surface.height Div 2;
+      dx := surface.width Div 2;
+      dy := surface.height Div 3;
 
       { create timer }
-      timer := TPTCTimerFactory.CreateNew;
+      timer := TPTCTimer.Create;
 
       { start timer }
       timer.start;
+      color := TPTCColor.Create(1, 1, 1);
 
       { loop until a key is pressed }
-      while not console.KeyPressed do
-      begin
+      While Not console.KeyPressed Do
+      Begin
         { get current time from timer }
         time := timer.time;
 
         { clear surface to white background }
-        surface.clear(TPTCColorFactory.CreateNew(1, 1, 1));
+        surface.clear(color);
 
         { calculate zoom factor at current time }
         zoom := 2.5 * (1 - cos(time));
@@ -219,24 +133,8 @@ begin
         y2 := Trunc(y + zoom * dy);
 
         { setup image copy area }
-<<<<<<< HEAD
-        area := TPTCAreaFactory.CreateNew(x1, y1, x2, y2);
-
-        { copy and stretch image to surface }
-        image.copy(surface, image.area, area);
-
-        { copy surface to console }
-        surface.copy(console);
-
-        { update console }
-        console.update;
-      end;
-    finally
-      if Assigned(console) then
-        console.close;
-=======
         area := TPTCArea.Create(x1, y1, x2, y2);
-        try
+	Try
           { copy and stretch image to surface }
           image.copy(surface, image.area, area);
 
@@ -245,11 +143,11 @@ begin
 
           { update console }
           console.update;
-        finally
+	Finally
           area.Free;
-        end;
-      end;
-    finally
+	End;
+      End;
+    Finally
       console.close;
       console.Free;
       surface.Free;
@@ -257,20 +155,10 @@ begin
       image.Free;
       color.Free;
       timer.Free;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-    end;
-  except
-    on error: TPTCError do
+    End;
+  Except
+    On error : TPTCError Do
       { report error }
       error.report;
-  end;
-end.
+  End;
+End.

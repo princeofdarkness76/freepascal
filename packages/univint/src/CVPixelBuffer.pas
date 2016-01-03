@@ -6,6 +6,7 @@
  *
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
 {  Pascal Translation Update:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, 2009 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
@@ -31,6 +32,16 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+ {	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
+ 
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -39,8 +50,13 @@
 
 unit CVPixelBuffer;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -53,21 +69,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -102,6 +126,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -109,6 +135,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -324,6 +351,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -349,6 +386,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -359,6 +400,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes, CFArray, CFBase, CFDictionary, CVBase, CVImageBuffer, CVReturns;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -382,6 +424,8 @@ uses MacTypes, CFArray, CFBase, CFDictionary, CVBase, CVImageBuffer, CVReturns;
 {$ifc TARGET_OS_MAC}
 
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
  
@@ -392,6 +436,7 @@ uses MacTypes, CFArray, CFBase, CFDictionary, CVBase, CVImageBuffer, CVReturns;
 		   
 }
 
+<<<<<<< HEAD
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -648,6 +693,34 @@ var kCVPixelBufferIOSurfaceCoreAnimationCompatibilityKey: CFStringRef; external 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+
+//#pragma mark BufferAttributeKeys
+var kCVPixelBufferPixelFormatTypeKey: CFStringRef; external name '_kCVPixelBufferPixelFormatTypeKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)		    // A single CFNumber or a CFArray of CFNumbers (OSTypes)
+var kCVPixelBufferMemoryAllocatorKey: CFStringRef; external name '_kCVPixelBufferMemoryAllocatorKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)		    // CFAllocatorRef
+var kCVPixelBufferWidthKey: CFStringRef; external name '_kCVPixelBufferWidthKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)			    // CFNumber
+var kCVPixelBufferHeightKey: CFStringRef; external name '_kCVPixelBufferHeightKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)			    // CFNumber
+var kCVPixelBufferExtendedPixelsLeftKey: CFStringRef; external name '_kCVPixelBufferExtendedPixelsLeftKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	    // CFNumber
+var kCVPixelBufferExtendedPixelsTopKey: CFStringRef; external name '_kCVPixelBufferExtendedPixelsTopKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)		    // CFNumber
+var kCVPixelBufferExtendedPixelsRightKey: CFStringRef; external name '_kCVPixelBufferExtendedPixelsRightKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	    // CFNumber
+var kCVPixelBufferExtendedPixelsBottomKey: CFStringRef; external name '_kCVPixelBufferExtendedPixelsBottomKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	    // CFNumber
+var kCVPixelBufferBytesPerRowAlignmentKey: CFStringRef; external name '_kCVPixelBufferBytesPerRowAlignmentKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	    // CFNumber
+var kCVPixelBufferCGBitmapContextCompatibilityKey: CFStringRef; external name '_kCVPixelBufferCGBitmapContextCompatibilityKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)  // CFBoolean
+var kCVPixelBufferCGImageCompatibilityKey: CFStringRef; external name '_kCVPixelBufferCGImageCompatibilityKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	    // CFBoolean
+var kCVPixelBufferOpenGLCompatibilityKey: CFStringRef; external name '_kCVPixelBufferOpenGLCompatibilityKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	    // CFBoolean
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @typedef	CVPixelBufferRef
@@ -658,7 +731,11 @@ type
 	CVPixelBufferRef = CVImageBufferRef;
 
 function CVPixelBufferGetTypeID: CFTypeID; external name '_CVPixelBufferGetTypeID';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferRetain
@@ -668,7 +745,11 @@ function CVPixelBufferGetTypeID: CFTypeID; external name '_CVPixelBufferGetTypeI
     @result     A CVPixelBuffer object that is the same as the passed in buffer.
 }
 function CVPixelBufferRetain( texture: CVPixelBufferRef ): CVPixelBufferRef; external name '_CVPixelBufferRetain';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferRelease
@@ -677,7 +758,11 @@ function CVPixelBufferRetain( texture: CVPixelBufferRef ): CVPixelBufferRef; ext
     @param      buffer A CVPixelBuffer object that you want to release.
 }
 procedure CVPixelBufferRelease( texture: CVPixelBufferRef ); external name '_CVPixelBufferRelease';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferCreateResolvedAttributesDictionary
@@ -689,7 +774,11 @@ procedure CVPixelBufferRelease( texture: CVPixelBufferRef ); external name '_CVP
     @result     Return value that may be useful in discovering why resolution failed.
 }
 function CVPixelBufferCreateResolvedAttributesDictionary( allocator: CFAllocatorRef; attributes: CFArrayRef; var resolvedDictionaryOut: CFDictionaryRef ): CVReturn; external name '_CVPixelBufferCreateResolvedAttributesDictionary';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {!
@@ -699,12 +788,20 @@ function CVPixelBufferCreateResolvedAttributesDictionary( allocator: CFAllocator
     @param      width   Width of the PixelBuffer in pixels.
     @param      height  Height of the PixelBuffer in pixels.
     @param	pixelFormatType		Pixel format indentified by its respective OSType.
+<<<<<<< HEAD
     @param	pixelBufferAttributes      A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+=======
+    @param	pixelBufferAttributes      A dictionary with additonal attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+>>>>>>> graemeg/fixes_2_2
     @param      pixelBufferOut          The new pixel buffer will be returned here
     @result	returns kCVReturnSuccess on success.
 }    
 function CVPixelBufferCreate( allocator: CFAllocatorRef; width: size_t; height: size_t; pixelFormatType: OSType; pixelBufferAttributes: CFDictionaryRef; var pixelBufferOut: CVPixelBufferRef ): CVReturn; external name '_CVPixelBufferCreate';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 type
 	CVPixelBufferReleaseBytesCallback = procedure( releaseRefCon: UnivPtr; baseAddress: {const} UnivPtr );
@@ -720,12 +817,20 @@ type
     @param      bytesPerRow		Row bytes of the pixel storage memory.
     @param      releaseCallback         CVPixelBufferReleaseBytePointerCallback function that gets called when the PixelBuffer gets destroyed.
     @param      releaseRefCon           User data identifying the PixelBuffer for the release callback.
+<<<<<<< HEAD
     @param      pixelBufferAttributes      A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+=======
+    @param      pixelBufferAttributes      A dictionary with additonal attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+>>>>>>> graemeg/fixes_2_2
     @param      pixelBufferOut          The new pixel buffer will be returned here
     @result	returns kCVReturnSuccess on success.
 }
 function CVPixelBufferCreateWithBytes( allocator: CFAllocatorRef; width: size_t; height: size_t; pixelFormatType: OSType; baseAddress: UnivPtr; bytesPerRow: size_t; releaseCallback: CVPixelBufferReleaseBytesCallback; releaseRefCon: UnivPtr; pixelBufferAttributes: CFDictionaryRef; var pixelBufferOut: CVPixelBufferRef ): CVReturn; external name '_CVPixelBufferCreateWithBytes';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 type
 	CVPixelBufferReleasePlanarBytesCallback = procedure( releaseRefCon: UnivPtr; dataPtr: {const} UnivPtr; dataSize: size_t; numberOfPlanes: size_t; {const} planeAddresses: {variable-size-array} UnivPtr );
@@ -746,11 +851,16 @@ type
     @param	planeBytesPerRow	Array of plane bytesPerRow values.
     @param	releaseCallback		CVPixelBufferReleaseBytePointerCallback function that gets called when the PixelBuffer gets destroyed.
     @param	releaseRefCon		User data identifying the PixelBuffer for the release callback.
+<<<<<<< HEAD
     @param	pixelBufferAttributes      A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+=======
+    @param	pixelBufferAttributes      A dictionary with additonal attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+>>>>>>> graemeg/fixes_2_2
     @param      pixelBufferOut          The new pixel buffer will be returned here
     @result	returns kCVReturnSuccess on success.
 }
 function CVPixelBufferCreateWithPlanarBytes( allocator: CFAllocatorRef; width: size_t; height: size_t; pixelFormatType: OSType; dataPtr: {pass a pointer to a plane descriptor block, or NULL} UnivPtr; dataSize: {pass size if planes are contiguous, NULL if not} size_t; numberOfPlanes: size_t; planeAddresses: {variable-size-array} UnivPtr; planeWidth: {variable-size-array} size_t_Ptr; planeHeight: {variable-size-array} size_t_Ptr; planeBytesPerRow: {variable-size-array} size_t_Ptr; releaseCallback: CVPixelBufferReleasePlanarBytesCallback; releaseRefCon: UnivPtr; pixelBufferAttributes: CFDictionaryRef; var pixelBufferOut: CVPixelBufferRef ): CVReturn; external name '_CVPixelBufferCreateWithPlanarBytes';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 
 
@@ -773,6 +883,30 @@ function CVPixelBufferLockBaseAddress( pixelBuffer: CVPixelBufferRef; lockFlags:
 }
 function CVPixelBufferUnlockBaseAddress( pixelBuffer: CVPixelBufferRef; unlockFlags: CVOptionFlags ): CVReturn; external name '_CVPixelBufferUnlockBaseAddress';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{!
+    @function   CVPixelBufferLockBaseAddress
+    @abstract   Description Locks the BaseAddress of the PixelBuffer to ensure that the is available.
+    @param      pixelBuffer Target PixelBuffer.
+    @param      lockFlags No options currently defined, pass 0.
+    @result     kCVReturnSuccess if the lock succeeded, or error code on failure
+}
+function CVPixelBufferLockBaseAddress( pixelBuffer: CVPixelBufferRef; lockFlags: CVOptionFlags ): CVReturn; external name '_CVPixelBufferLockBaseAddress';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+{!
+    @function   CVPixelBufferUnlockBaseAddress
+    @abstract   Description Unlocks the BaseAddress of the PixelBuffer.
+    @param      pixelBuffer Target PixelBuffer.
+    @param      unlockFlags No options currently defined, pass 0.
+    @result     kCVReturnSuccess if the unlock succeeded, or error code on failure
+}
+function CVPixelBufferUnlockBaseAddress( pixelBuffer: CVPixelBufferRef; unlockFlags: CVOptionFlags ): CVReturn; external name '_CVPixelBufferUnlockBaseAddress';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferGetWidth
@@ -781,7 +915,11 @@ function CVPixelBufferUnlockBaseAddress( pixelBuffer: CVPixelBufferRef; unlockFl
     @result     Width in pixels.
 }
 function CVPixelBufferGetWidth( pixelBuffer: CVPixelBufferRef ): size_t; external name '_CVPixelBufferGetWidth';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferGetHeight
@@ -790,7 +928,11 @@ function CVPixelBufferGetWidth( pixelBuffer: CVPixelBufferRef ): size_t; externa
     @result     Height in pixels.
 }
 function CVPixelBufferGetHeight( pixelBuffer: CVPixelBufferRef ): size_t; external name '_CVPixelBufferGetHeight';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferGetPixelFormatType
@@ -799,7 +941,11 @@ function CVPixelBufferGetHeight( pixelBuffer: CVPixelBufferRef ): size_t; extern
     @result     OSType identifying the pixel format by its type.
 }
 function CVPixelBufferGetPixelFormatType( pixelBuffer: CVPixelBufferRef ): OSType; external name '_CVPixelBufferGetPixelFormatType';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferGetBaseAddress
@@ -812,7 +958,11 @@ function CVPixelBufferGetPixelFormatType( pixelBuffer: CVPixelBufferRef ): OSTyp
 		For planar buffers this will return a pointer to a PlanarComponentInfo struct (defined in QuickTime).
 }
 function CVPixelBufferGetBaseAddress( pixelBuffer: CVPixelBufferRef ): UnivPtr; external name '_CVPixelBufferGetBaseAddress';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferGetBytesPerRow
@@ -822,7 +972,11 @@ function CVPixelBufferGetBaseAddress( pixelBuffer: CVPixelBufferRef ): UnivPtr; 
                 will cover the entire image including all planes.
 }
 function CVPixelBufferGetBytesPerRow( pixelBuffer: CVPixelBufferRef ): size_t; external name '_CVPixelBufferGetBytesPerRow';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferGetDataSize
@@ -831,7 +985,11 @@ function CVPixelBufferGetBytesPerRow( pixelBuffer: CVPixelBufferRef ): size_t; e
     @result     Data size used in CVPixelBufferCreateWithPlanarBytes.
 }
 function CVPixelBufferGetDataSize( pixelBuffer: CVPixelBufferRef ): size_t; external name '_CVPixelBufferGetDataSize';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferIsPlanar
@@ -840,7 +998,11 @@ function CVPixelBufferGetDataSize( pixelBuffer: CVPixelBufferRef ): size_t; exte
     @result     True if the PixelBuffer was created using CVPixelBufferCreateWithPlanarBytes.
 }
 function CVPixelBufferIsPlanar( pixelBuffer: CVPixelBufferRef ): Boolean; external name '_CVPixelBufferIsPlanar';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferGetPlaneCount
@@ -849,7 +1011,11 @@ function CVPixelBufferIsPlanar( pixelBuffer: CVPixelBufferRef ): Boolean; extern
     @result     Number of planes.  Returns 0 for non-planar CVPixelBufferRefs.
 }
 function CVPixelBufferGetPlaneCount( pixelBuffer: CVPixelBufferRef ): size_t; external name '_CVPixelBufferGetPlaneCount';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferGetWidthOfPlane
@@ -859,7 +1025,11 @@ function CVPixelBufferGetPlaneCount( pixelBuffer: CVPixelBufferRef ): size_t; ex
     @result     Width in pixels, or 0 for non-planar CVPixelBufferRefs.
 }
 function CVPixelBufferGetWidthOfPlane( pixelBuffer: CVPixelBufferRef; planeIndex: size_t ): size_t; external name '_CVPixelBufferGetWidthOfPlane';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferGetHeightOfPlane
@@ -869,7 +1039,11 @@ function CVPixelBufferGetWidthOfPlane( pixelBuffer: CVPixelBufferRef; planeIndex
     @result     Height in pixels, or 0 for non-planar CVPixelBufferRefs.
 }
 function CVPixelBufferGetHeightOfPlane( pixelBuffer: CVPixelBufferRef; planeIndex: size_t ): size_t; external name '_CVPixelBufferGetHeightOfPlane';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferGetBaseAddressOfPlane
@@ -881,7 +1055,11 @@ function CVPixelBufferGetHeightOfPlane( pixelBuffer: CVPixelBufferRef; planeInde
     @result     Base address of the plane, or NULL for non-planar CVPixelBufferRefs.
 }
 function CVPixelBufferGetBaseAddressOfPlane( pixelBuffer: CVPixelBufferRef; planeIndex: size_t ): UnivPtr; external name '_CVPixelBufferGetBaseAddressOfPlane';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferGetBytesPerRowOfPlane
@@ -891,7 +1069,11 @@ function CVPixelBufferGetBaseAddressOfPlane( pixelBuffer: CVPixelBufferRef; plan
     @result     Row bytes of the plane, or NULL for non-planar CVPixelBufferRefs.
 }
 function CVPixelBufferGetBytesPerRowOfPlane( pixelBuffer: CVPixelBufferRef; planeIndex: size_t ): size_t; external name '_CVPixelBufferGetBytesPerRowOfPlane';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferGetExtendedPixels
@@ -903,6 +1085,7 @@ function CVPixelBufferGetBytesPerRowOfPlane( pixelBuffer: CVPixelBufferRef; plan
     @param      extraRowsOnBottom Returns the pixel row padding to the bottom. May be NULL.
 }
 procedure CVPixelBufferGetExtendedPixels( pixelBuffer: CVPixelBufferRef; var extraColumnsOnLeft: size_t; var extraColumnsOnRight: size_t; var extraRowsOnTop: size_t; var extraRowsOnBottom: size_t ); external name '_CVPixelBufferGetExtendedPixels';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 
 {!
@@ -1053,3 +1236,17 @@ function CVPixelBufferCreateWithIOSurface( allocator: CFAllocatorRef; surface: I
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+{!
+    @function   CVPixelBufferFillExtendedPixels
+    @abstract   Fills the extended pixels of the PixelBuffer with Zero.   This function replicates edge pixels to fill the entire extended region of the image.
+    @param      pixelBuffer Target PixelBuffer.
+}
+function CVPixelBufferFillExtendedPixels( pixelBuffer: CVPixelBufferRef ): CVReturn; external name '_CVPixelBufferFillExtendedPixels';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

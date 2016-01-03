@@ -8,6 +8,7 @@ name=installer
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
 version=2.5.1
@@ -21,13 +22,19 @@ version=2.5.1
 =======
 version=2.5.1
 >>>>>>> origin/cpstrnew
+=======
+version=2.2.5
+>>>>>>> graemeg/fixes_2_2
 
 [target]
 programs_go32v2=install writeidx
 programs_win32=install writeidx
 programs_os2=install writeidx
 programs_linux=installer writeidx
+<<<<<<< HEAD
 programs_freebsd=installer writeidx
+=======
+>>>>>>> graemeg/fixes_2_2
 
 [clean]
 units=scroll insthelp

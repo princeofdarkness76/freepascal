@@ -76,8 +76,12 @@ implementation
     uses
       globtype,widestr,systems,
       verbose,globals,cutils,
+<<<<<<< HEAD
       aasmcnst,
       symconst,symdef,aasmtai,aasmdata,aasmcpu,defutil,
+=======
+      symconst,symdef,aasmbase,aasmtai,aasmdata,aasmcpu,defutil,
+>>>>>>> graemeg/fixes_2_2
       cpuinfo,cpubase,
       cgbase,cgobj,cgutils,
 <<<<<<< HEAD
@@ -216,7 +220,11 @@ implementation
                   entry^.Data:=lastlabel;
                   lab_real:=lastlabel;
                   maybe_new_object_file(current_asmdata.asmlists[al_typedconsts]);
+<<<<<<< HEAD
                   new_section(current_asmdata.asmlists[al_typedconsts],sec_rodata_norel,lastlabel.name,const_align(resultdef.alignment));
+=======
+                  new_section(current_asmdata.asmlists[al_typedconsts],sec_rodata_norel,lastlabel.name,const_align(resultdef.size));
+>>>>>>> graemeg/fixes_2_2
                   current_asmdata.asmlists[al_typedconsts].concat(Tai_label.Create(lastlabel));
                   case realait of
                     aitrealconst_s32bit :
@@ -224,7 +232,11 @@ implementation
                         current_asmdata.asmlists[al_typedconsts].concat(tai_realconst.create_s32real(ts32real(value_real)));
                         { range checking? }
                         if floating_point_range_check_error and
+<<<<<<< HEAD
                            (tai_realconst(current_asmdata.asmlists[al_typedconsts].last).value.s32val=MathInf.Value) then
+=======
+                          (tai_real_32bit(current_asmdata.asmlists[al_typedconsts].last).value=MathInf.Value) then
+>>>>>>> graemeg/fixes_2_2
                           Message(parser_e_range_check_error);
                       end;
 
@@ -239,7 +251,11 @@ implementation
 
                         { range checking? }
                         if floating_point_range_check_error and
+<<<<<<< HEAD
                            (tai_realconst(current_asmdata.asmlists[al_typedconsts].last).value.s64val=MathInf.Value) then
+=======
+                          (tai_real_64bit(current_asmdata.asmlists[al_typedconsts].last).value=MathInf.Value) then
+>>>>>>> graemeg/fixes_2_2
                           Message(parser_e_range_check_error);
                      end;
 
@@ -265,7 +281,11 @@ implementation
 
                         { range checking? }
                         if floating_point_range_check_error and
+<<<<<<< HEAD
                            (tai_realconst(current_asmdata.asmlists[al_typedconsts].last).value.s80val=MathInf.Value) then
+=======
+                          (tai_real_80bit(current_asmdata.asmlists[al_typedconsts].last).value=MathInf.Value) then
+>>>>>>> graemeg/fixes_2_2
                           Message(parser_e_range_check_error);
                       end;
 {$ifdef cpufloat128}
@@ -275,7 +295,11 @@ implementation
 
                         { range checking? }
                         if floating_point_range_check_error and
+<<<<<<< HEAD
                            (tai_realconst(current_asmdata.asmlists[al_typedconsts].last).value.s128val=MathInf.Value) then
+=======
+                          (tai_real_128bit(current_asmdata.asmlists[al_typedconsts].last).value=MathInf.Value) then
+>>>>>>> graemeg/fixes_2_2
                           Message(parser_e_range_check_error);
                       end;
 {$endif cpufloat128}
@@ -331,6 +355,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          lastlabel: tasmlabofs;
          pc: pchar;
          l: longint;
@@ -341,6 +366,10 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+         hp1,hp2 : tai;
+         l1,
+>>>>>>> graemeg/fixes_2_2
          lastlabel   : tasmlabel;
          pc       : pchar;
          l: longint;
@@ -412,6 +441,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   datatcb:=ctai_typedconstbuilder.create([tcalo_is_lab,tcalo_make_dead_strippable]);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -421,6 +451,18 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+                   current_asmdata.getdatalabel(lastlabel);
+                   lab_str:=lastlabel;
+                   maybe_new_object_file(current_asmdata.asmlists[al_typedconsts]);
+                   if (len=0) or
+                      not(cst_type in [cst_ansistring,cst_widestring]) then
+                     new_section(current_asmdata.asmlists[al_typedconsts],sec_rodata_norel,lastlabel.name,const_align(sizeof(aint)))
+                   else
+                     new_section(current_asmdata.asmlists[al_typedconsts],sec_rodata,lastlabel.name,const_align(sizeof(aint)));
+                   current_asmdata.asmlists[al_typedconsts].concat(Tai_label.Create(lastlabel));
+                   { generate an ansi string ? }
+>>>>>>> graemeg/fixes_2_2
                    case cst_type of
                       cst_ansistring:
                         begin
@@ -432,11 +474,30 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
                              begin
+<<<<<<< HEAD
                                lastlabel:=datatcb.emit_ansistring_const(current_asmdata.AsmLists[al_typedconsts],value_str,len,tstringdef(resultdef).encoding);
                                { because we hardcode the offset below due to it
                                  not being stored in the hashset, check here }
                                if lastlabel.ofs<>datatcb.get_string_symofs(st_ansistring,false) then
                                  internalerror(2012051703);
+=======
+                                current_asmdata.getdatalabel(l1);
+                                current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_sym(l1));
+                                current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_aint(-1));
+                                current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_aint(len));
+                                { make sure the string doesn't get dead stripped if the header is referenced }
+                                if (target_info.system in systems_darwin) then
+                                  current_asmdata.asmlists[al_typedconsts].concat(tai_directive.create(asd_reference,l1.name));
+                                current_asmdata.asmlists[al_typedconsts].concat(Tai_label.Create(l1));
+                                { ... and vice versa }
+                                if (target_info.system in systems_darwin) then
+                                  current_asmdata.asmlists[al_typedconsts].concat(tai_directive.create(asd_reference,lab_str.name));
+                                { include also terminating zero }
+                                getmem(pc,len+1);
+                                move(value_str^,pc^,len);
+                                pc[len]:=#0;
+                                current_asmdata.asmlists[al_typedconsts].concat(Tai_string.Create_pchar(pc,len+1));
+>>>>>>> graemeg/fixes_2_2
                              end;
                            { no contents of the datatcb itself to concatenate,
                              as we will just return the address of the emitted
@@ -465,6 +526,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
                              begin
+<<<<<<< HEAD
                                lastlabel:=datatcb.emit_unicodestring_const(current_asmdata.AsmLists[al_typedconsts],
                                                value_str,
                                                tstringdef(resultdef).encoding,
@@ -473,6 +535,32 @@ implementation
                                  not being stored in the hashset, check here }
                                if lastlabel.ofs<>datatcb.get_string_symofs(tstringdef(resultdef).stringtype,winlikewidestring) then
                                  internalerror(2012051704);
+=======
+                                current_asmdata.getdatalabel(l1);
+                                current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_sym(l1));
+
+                                { we use always UTF-16 coding for constants }
+                                { at least for now                          }
+                                { Consts.concat(Tai_const.Create_8bit(2)); }
+                                if tf_winlikewidestring in target_info.flags then
+                                  current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_32bit(len*cwidechartype.size))
+                                else
+                                  begin
+                                    current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_aint(-1));
+                                    current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_aint(len*cwidechartype.size));
+                                  end;
+                                { make sure the string doesn't get dead stripped if the header is referenced }
+                                if (target_info.system in systems_darwin) then
+                                  current_asmdata.asmlists[al_typedconsts].concat(tai_directive.create(asd_reference,l1.name));
+                                current_asmdata.asmlists[al_typedconsts].concat(Tai_label.Create(l1));
+                                { ... and vice versa }
+                                if (target_info.system in systems_darwin) then
+                                  current_asmdata.asmlists[al_typedconsts].concat(tai_directive.create(asd_reference,lab_str.name));
+                                for i:=0 to len-1 do
+                                  current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_16bit(pcompilerwidestring(value_str)^.data[i]));
+                                { terminating zero }
+                                current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_16bit(0));
+>>>>>>> graemeg/fixes_2_2
                              end;
                            { no contents of the datatcb itself to concatenate,
                              as we will just return the address of the emitted
@@ -631,7 +719,16 @@ implementation
                            TCGSETCONSTNODE
 *****************************************************************************}
 
+<<<<<<< HEAD
     function tcgsetconstnode.emitvarsetconst: tasmsymbol;
+=======
+    procedure tcgsetconstnode.pass_generate_code;
+      var
+         hp1         : tai;
+         lastlabel   : tasmlabel;
+         i, diff     : longint;
+         neededtyp   : taiconst_type;
+>>>>>>> graemeg/fixes_2_2
       type
         setbytes=array[0..31] of byte;
         Psetbytes=^setbytes;
@@ -640,6 +737,7 @@ implementation
         i: longint;
         tcb: ttai_typedconstbuilder;
       begin
+<<<<<<< HEAD
         current_asmdata.getglobaldatalabel(lab);
         result:=lab;
         lab_set:=lab;
@@ -672,6 +770,134 @@ implementation
              if not assigned(entry^.Data) then
                entry^.Data:=emitvarsetconst;
              lab_set := TAsmSymbol(entry^.Data);
+=======
+        adjustforsetbase;
+
+        { small sets are loaded as constants }
+        if not(is_varset(resultdef)) then
+         begin
+           location_reset(location,LOC_CONSTANT,int_cgsize(resultdef.size));
+           if (source_info.endian=target_info.endian) then
+             begin
+{$if defined(FPC_NEW_BIGENDIAN_SETS) or defined(FPC_LITTLE_ENDIAN)}
+               { not plongint, because that will "sign extend" the set on 64 bit platforms }
+               { if changed to "paword", please also modify "32-resultdef.size*8" and      }
+               { cross-endian code below                                                   }
+               location.value:=pCardinal(value_set)^
+{$else}
+               location.value:=reverse_byte(Psetbytes(value_set)^[0]);
+               location.value:=location.value or (reverse_byte(Psetbytes(value_set)^[1]) shl 8);
+               location.value:=location.value or (reverse_byte(Psetbytes(value_set)^[2]) shl 16);
+               location.value:=location.value or (reverse_byte(Psetbytes(value_set)^[3]) shl 24);
+{$endif}
+             end
+           else
+             begin
+               location.value:=swapendian(Pcardinal(value_set)^);
+               location.value:= reverse_byte (location.value         and $ff)         or
+                               (reverse_byte((location.value shr  8) and $ff) shl  8) or
+                               (reverse_byte((location.value shr 16) and $ff) shl 16) or
+                               (reverse_byte((location.value shr 24) and $ff) shl 24);
+             end;
+           if (target_info.endian=endian_big) then
+             location.value:=location.value shr (32-resultdef.size*8);
+           exit;
+         end;
+        location_reset(location,LOC_CREFERENCE,OS_NO);
+        neededtyp:=aitconst_8bit;
+        lastlabel:=nil;
+        { const already used ? }
+        if not assigned(lab_set) then
+          begin
+             { tries to found an old entry }
+             hp1:=tai(current_asmdata.asmlists[al_typedconsts].first);
+             while assigned(hp1) do
+               begin
+                  if hp1.typ=ait_label then
+                    lastlabel:=tai_label(hp1).labsym
+                  else
+                    begin
+                      if (lastlabel<>nil) and
+                        (hp1.typ=ait_const) and
+                        (tai_const(hp1).consttype=neededtyp) then
+                        begin
+                          if (tai_const(hp1).consttype=aitconst_8bit) then
+                           begin
+                             { compare normal set }
+                             i:=0;
+                             while assigned(hp1) and (i<32) do
+                              begin
+                                if (source_info.endian=target_info.endian) then
+                                  begin
+{$if defined(FPC_NEW_BIGENDIAN_SETS) or defined(FPC_LITTLE_ENDIAN)}
+                                    if tai_const(hp1).value<>Psetbytes(value_set)^[i ] then
+{$else}
+                                    if tai_const(hp1).value<>reverse_byte(Psetbytes(value_set)^[i xor 3]) then
+{$endif}
+                                      break
+                                  end
+                                else if tai_const(hp1).value<>reverse_byte(Psetbytes(value_set)^[i]) then
+                                  break;
+                                inc(i);
+                                hp1:=tai(hp1.next);
+                              end;
+                             if i=32 then
+                              begin
+                                { found! }
+                                lab_set:=lastlabel;
+                                break;
+                              end;
+                             { leave when the end of consts is reached, so no
+                               hp1.next is done }
+                             if not assigned(hp1) then
+                              break;
+                           end
+                          else
+                           begin
+                             { compare small set }
+                             if paint(value_set)^=tai_const(hp1).value then
+                              begin
+                                { found! }
+                                lab_set:=lastlabel;
+                                break;
+                              end;
+                           end;
+                        end;
+                      lastlabel:=nil;
+                    end;
+                  hp1:=tai(hp1.next);
+               end;
+             { :-(, we must generate a new entry }
+             if not assigned(lab_set) then
+               begin
+                 current_asmdata.getdatalabel(lastlabel);
+                 lab_set:=lastlabel;
+                 maybe_new_object_file(current_asmdata.asmlists[al_typedconsts]);
+                 new_section(current_asmdata.asmlists[al_typedconsts],sec_rodata_norel,lastlabel.name,const_align(sizeof(aint)));
+                 current_asmdata.asmlists[al_typedconsts].concat(Tai_label.Create(lastlabel));
+                 { already handled at the start of this method?? (JM)
+                 if tsetdef(resultdef).settype=smallset then
+                  begin
+                    move(value_set^,i,sizeof(longint));
+                    Consts.concat(Tai_const.Create_32bit(i));
+                  end
+                 else
+                 }
+                  begin
+                    if (source_info.endian=target_info.endian) then
+{$if defined(FPC_NEW_BIGENDIAN_SETS) or defined(FPC_LITTLE_ENDIAN)}
+                      for i:=0 to 31 do
+                        current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_8bit(Psetbytes(value_set)^[i]))
+{$else}
+                      for i:=0 to 31 do
+                        current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_8bit(reverse_byte(Psetbytes(value_set)^[i xor 3])))
+{$endif}
+                    else
+                      for i:=0 to 31 do
+                        current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_8bit(reverse_byte(Psetbytes(value_set)^[i])));
+                  end;
+               end;
+>>>>>>> graemeg/fixes_2_2
           end;
         location.reference.symbol:=lab_set;
       end;

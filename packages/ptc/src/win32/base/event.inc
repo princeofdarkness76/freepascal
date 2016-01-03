@@ -6,6 +6,7 @@
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
     License as published by the Free Software Foundation; either
+<<<<<<< HEAD
     version 2.1 of the License, or (at your option) any later version
     with the following modification:
 
@@ -19,6 +20,9 @@
     this library, you may extend this exception to your version of the library,
     but you are not obligated to do so. If you do not wish to do so, delete this
     exception statement from your version.
+=======
+    version 2.1 of the License, or (at your option) any later version.
+>>>>>>> graemeg/fixes_2_2
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -30,6 +34,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 constructor TWin32Event.Create;
 begin
   { create event handle }
@@ -65,3 +70,45 @@ begin
   { wait for event }
   WaitForSingleObject(FEvent, INFINITE);
 end;
+=======
+Constructor TWin32Event.Create;
+
+Begin
+  { create event handle }
+  m_event := CreateEvent(Nil, True, False, Nil);
+
+  { check event handle }
+  If m_event = 0 Then
+    Raise TPTCError.Create('could not create event');
+End;
+
+Destructor TWin32Event.Destroy;
+
+Begin
+  { close handle }
+  CloseHandle(m_event);
+
+  Inherited Destroy;
+End;
+
+Procedure TWin32Event._set;
+
+Begin
+  { set event }
+  SetEvent(m_event);
+End;
+
+Procedure TWin32Event.reset;
+
+Begin
+  { reset event }
+  ResetEvent(m_event);
+End;
+
+Procedure TWin32Event.wait;
+
+Begin
+  { wait for event }
+  WaitForSingleObject(m_event, INFINITE);
+End;
+>>>>>>> graemeg/fixes_2_2

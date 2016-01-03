@@ -430,11 +430,18 @@ interface
              if (left.location.loc in [LOC_CREFERENCE,LOC_REFERENCE]) then
                hlcg.location_force_fpureg(current_asmdata.CurrAsmList,left.location,left.resultdef,false);
              { round them down to the proper precision }
+<<<<<<< HEAD
              tg.gethltemp(current_asmdata.currasmlist,resultdef,resultdef.size,tt_normal,tr);
              hlcg.a_loadfpu_reg_ref(current_asmdata.CurrAsmList,left.resultdef,resultdef,left.location.register,tr);
              location_reset_ref(left.location,LOC_REFERENCE,location.size,tr.alignment);
              left.location.reference:=tr;
              left.resultdef:=resultdef;
+=======
+             tg.gettemp(current_asmdata.currasmlist,resultdef.size,tt_normal,tr);
+             cg.a_loadfpu_reg_ref(current_asmdata.CurrAsmList,left.location.size,location.size,left.location.register,tr);
+             location_reset(left.location,LOC_REFERENCE,location.size);
+             left.location.reference:=tr;
+>>>>>>> graemeg/fixes_2_2
            end;
 {$endif x86}
          { ARM VFP values are in integer registers when they are function results }
@@ -663,12 +670,25 @@ interface
       end;
 
     procedure Tcgtypeconvnode.second_nil_to_methodprocvar;
+<<<<<<< HEAD
     begin
       location_reset(location,LOC_REGISTER,def_cgsize(resultdef));
       location.registerhi:=hlcg.getaddressregister(current_asmdata.currasmlist,voidpointertype);
       hlcg.a_load_const_reg(current_asmdata.currasmlist,voidpointertype,0,location.registerhi);
       location.register:=hlcg.getaddressregister(current_asmdata.currasmlist,voidcodepointertype);
       hlcg.a_load_const_reg(current_asmdata.currasmlist,voidcodepointertype,0,location.register);
+=======
+    
+    var r:Treference;
+
+    begin
+      tg.gettemp(current_asmdata.currasmlist,2*sizeof(aword),tt_normal,r);
+      location_reset(location,LOC_REFERENCE,OS_NO);
+      location.reference:=r;
+      cg.a_load_const_ref(current_asmdata.currasmlist,OS_ADDR,0,r);
+      inc(r.offset,sizeof(aword));
+      cg.a_load_const_ref(current_asmdata.currasmlist,OS_ADDR,0,r);
+>>>>>>> graemeg/fixes_2_2
     end;
 
     procedure tcgtypeconvnode.second_bool_to_int;
@@ -810,12 +830,15 @@ interface
     procedure tcgtypeconvnode.second_char_to_char;
       begin
         internalerror(2007081202);
+<<<<<<< HEAD
       end;
 
     procedure tcgtypeconvnode.second_elem_to_openarray;
       begin
         { nothing special to do by default }
         second_nothing;
+=======
+>>>>>>> graemeg/fixes_2_2
       end;
 
 

@@ -80,7 +80,10 @@ Procedure RaiseLastWin32Error;
 function GetFileVersion(const AFileName: string): Cardinal;
 
 procedure GetFormatSettings;
+<<<<<<< HEAD
 procedure GetLocaleFormatSettings(LCID: Integer; var FormatSettings: TFormatSettings); platform;
+=======
+>>>>>>> graemeg/fixes_2_2
 
 implementation
 
@@ -1322,7 +1325,11 @@ begin
     CommandLine := CommandLine + ' ' + '"' + ComLine [I] + '"'
    else
     CommandLine := CommandLine + ' ' + Comline [I];
+<<<<<<< HEAD
   ExecuteProcess := ExecuteProcess (Path, CommandLine,Flags);
+=======
+  ExecuteProcess := ExecuteProcess (Path, CommandLine);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Procedure Sleep(Milliseconds : Cardinal);
@@ -1349,6 +1356,10 @@ Procedure LoadVersionInfo;
 Var
    versioninfo : TOSVERSIONINFO;
 begin
+<<<<<<< HEAD
+=======
+  kernel32dll:=0;
+>>>>>>> graemeg/fixes_2_2
   GetDiskFreeSpaceEx:=nil;
   versioninfo.dwOSVersionInfoSize:=sizeof(versioninfo);
   GetVersionEx(versioninfo);
@@ -1366,9 +1377,15 @@ end;
 Function GetAppConfigDir(Global : Boolean) : String;
 begin
   If Global then
+<<<<<<< HEAD
     Result:=GetWindowsSpecialDir(CSIDL_COMMON_APPDATA)
   else
     Result:=GetWindowsSpecialDir(CSIDL_LOCAL_APPDATA);
+=======
+    Result:=GetSpecialDir(CSIDL_COMMON_APPDATA)
+  else
+    Result:=GetSpecialDir(CSIDL_LOCAL_APPDATA);
+>>>>>>> graemeg/fixes_2_2
   If (Result<>'') then
     begin
       if VendorName<>'' then
@@ -1388,7 +1405,11 @@ end;
 Function GetUserDir : String;
 
 begin
+<<<<<<< HEAD
   Result:=GetWindowsSpecialDir(CSIDL_PROFILE);
+=======
+  Result:=GetSpecialDir(CSIDL_PROFILE);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Procedure InitSysConfigDir;
@@ -1402,6 +1423,7 @@ end;
                     Target Dependent WideString stuff
 ****************************************************************************}
 
+<<<<<<< HEAD
 { This is the case of Win9x. Limited to current locale of course, but it's better
   than not working at all. }
 function DoCompareStringA(P1, P2: PWideChar; L1, L2: PtrUInt; Flags: DWORD): PtrInt;
@@ -1418,6 +1440,9 @@ function DoCompareStringA(P1, P2: PWideChar; L1, L2: PtrUInt; Flags: DWORD): Ptr
   end;
 
 function DoCompareStringW(P1, P2: PWideChar; L1, L2: PtrUInt; Flags: DWORD): PtrInt;
+=======
+function Win32CompareWideString(const s1, s2 : WideString) : PtrInt;
+>>>>>>> graemeg/fixes_2_2
   begin
     SetLastError(0);
     Result:=CompareStringW(LOCALE_USER_DEFAULT,Flags,P1,L1,P2,L2)-2;
@@ -1590,6 +1615,7 @@ function Win32CompareTextUnicodeString(const s1, s2 : UnicodeString) : PtrInt;
   are relevant already for the system unit }
 procedure InitWin32Widestrings;
   begin
+<<<<<<< HEAD
     { return value: number of code points in the string. Whenever an invalid
       code point is encountered, all characters part of this invalid code point
       are considered to form one "character" and the next character is
@@ -1600,6 +1626,9 @@ procedure InitWin32Widestrings;
       0 if NULL character,
       > 0 if that's the length in bytes of the code point }
 //!!!!    CodePointLengthProc : function(const Str: PChar; MaxLookAead: PtrInt): Ptrint;
+=======
+//!!!    CharLengthPCharProc : function(const Str: PChar): PtrInt;
+>>>>>>> graemeg/fixes_2_2
     widestringmanager.CompareWideStringProc:=@Win32CompareWideString;
     widestringmanager.UpperAnsiStringProc:=@Win32AnsiUpperCase;
     widestringmanager.LowerAnsiStringProc:=@Win32AnsiLowerCase;

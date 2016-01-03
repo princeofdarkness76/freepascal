@@ -13,8 +13,13 @@
 
    You should have received a copy of the GNU Lesser General Public
    License along with this library; if not, write to the
+<<<<<<< HEAD
    Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
+=======
+   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
+>>>>>>> graemeg/fixes_2_2
   }
 unit gtk2; // keep unit name lowercase for kylix
 
@@ -72,7 +77,11 @@ uses
 
 const
 // OS dependent defines
+<<<<<<< HEAD
 {$ifdef windows}
+=======
+{$ifdef win32}
+>>>>>>> graemeg/fixes_2_2
   {$DEFINE GTK_WINDOWING_WIN32}
   gtklib = 'libgtk-win32-2.0-0.dll';
   {$IFDEF FPC}
@@ -93,6 +102,7 @@ const
       {$linklib gobject-2.0.0}
       {$linklib gdk_pixbuf-2.0.0}
       {$linklib atk-1.0.0}
+<<<<<<< HEAD
       {$linklib gthread-2.0}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -107,6 +117,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
     {$else}
       {$ifdef UseCustomLibs}
       gtklib = '';

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
      File:       OSServices/SystemSound.h
  
@@ -21,10 +22,21 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+(*
+     File:       OSServices/SystemSound.h
+ 
+     Contains:   SystemSound include file
+ 
+     Version:    OSServices-97~320
+ 
+     Copyright:  © 2000-2005 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -55,6 +67,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+*)
+{       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -63,8 +87,13 @@
 
 unit SystemSound;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -77,21 +106,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -126,6 +163,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -133,6 +172,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -383,6 +423,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -408,6 +458,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -418,6 +472,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,Files,CFBase,CFRunLoop;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -429,11 +484,20 @@ uses MacTypes,Files,CFBase,CFRunLoop;
 { ================================================================================ }
 { Errors                                                                           }
 { ================================================================================ }
+=======
+{$ALIGN POWER}
+
+
+(* ================================================================================ *)
+(* Errors                                                                           *)
+(* ================================================================================ *)
+>>>>>>> graemeg/fixes_2_2
 const
 	kSystemSoundNoError = 0;
 	kSystemSoundUnspecifiedError = -1500;
 	kSystemSoundClientTimedOutError = -1501;
 
+<<<<<<< HEAD
 { ================================================================================ }
 { Types                                                                            }
 { ================================================================================ }
@@ -560,6 +624,52 @@ function InvokeSystemSoundCompletionUPP( actionID: SystemSoundActionID; userData
  *  Deprecated:
  *    Use AudioServicesPlayAlertSound(). Found in
  *    <AudioToolbox/AudioServices.h>
+=======
+(* ================================================================================ *)
+(* Types                                                                            *)
+(* ================================================================================ *)
+type
+	SystemSoundActionID = UInt32;
+type
+	SystemSoundCompletionProcPtr = function( actionID: SystemSoundActionID; userData: UnivPtr ): OSStatus;
+type
+	SystemSoundCompletionUPP = SystemSoundCompletionProcPtr;
+(*
+ *  NewSystemSoundCompletionUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ *)
+function NewSystemSoundCompletionUPP( userRoutine: SystemSoundCompletionProcPtr ): SystemSoundCompletionUPP; external name '_NewSystemSoundCompletionUPP'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+(*
+ *  DisposeSystemSoundCompletionUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ *)
+procedure DisposeSystemSoundCompletionUPP( userUPP: SystemSoundCompletionUPP ); external name '_DisposeSystemSoundCompletionUPP'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+(*
+ *  InvokeSystemSoundCompletionUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ *)
+function InvokeSystemSoundCompletionUPP( actionID: SystemSoundActionID; userData: UnivPtr; userUPP: SystemSoundCompletionUPP ): OSStatus; external name '_InvokeSystemSoundCompletionUPP'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+(* ================================================================================ *)
+(* Public APIs                                                                      *)
+(* ================================================================================ *)
+(*
+ *  AlertSoundPlay()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Play an Alert Sound
@@ -569,6 +679,7 @@ function InvokeSystemSoundCompletionUPP( actionID: SystemSoundActionID; userData
  *    playing alert sound.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework but deprecated in 10.5
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
@@ -599,6 +710,17 @@ procedure AlertSoundPlay; external name '_AlertSoundPlay';
  *  Deprecated:
  *    Use AudioServicesPlayAlertSound(). Found in
  *    <AudioToolbox/AudioServices.h>
+=======
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x
+ *    Non-Carbon CFM:   not available
+ *)
+procedure AlertSoundPlay; external name '_AlertSoundPlay'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+(*
+ *  AlertSoundPlayCustomSound()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Play a User designated Alert Sound
@@ -614,6 +736,7 @@ procedure AlertSoundPlay; external name '_AlertSoundPlay';
  *      with AlertSound behavior.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework but deprecated in 10.5
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
@@ -644,6 +767,17 @@ procedure AlertSoundPlayCustomSound( inAction: SystemSoundActionID ); external n
  *  Deprecated:
  *    Use AudioServicesPlaySystemSound(). Found in
  *    <AudioToolbox/AudioServices.h>
+=======
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x
+ *    Non-Carbon CFM:   not available
+ *)
+procedure AlertSoundPlayCustomSound( inAction: SystemSoundActionID ); external name '_AlertSoundPlayCustomSound'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+(*
+ *  SystemSoundPlay()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Play a System Sound
@@ -660,6 +794,7 @@ procedure AlertSoundPlayCustomSound( inAction: SystemSoundActionID ); external n
  *      played.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework but deprecated in 10.5
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
@@ -690,6 +825,17 @@ procedure SystemSoundPlay( inAction: SystemSoundActionID ); external name '_Syst
  *  Deprecated:
  *    Use AudioServicesCreateSystemSoundID(). Found in
  *    <AudioToolbox/AudioServices.h>
+=======
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x
+ *    Non-Carbon CFM:   not available
+ *)
+procedure SystemSoundPlay( inAction: SystemSoundActionID ); external name '_SystemSoundPlay'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+(*
+ *  SystemSoundGetActionID()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Create a 'custom' System Sound by providing an audio file.
@@ -716,6 +862,7 @@ procedure SystemSoundPlay( inAction: SystemSoundActionID ); external name '_Syst
  *      turn can be passed to SystemSoundPlay().
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework but deprecated in 10.5
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
@@ -746,6 +893,17 @@ function SystemSoundGetActionID( const (*var*) userFile: FSRef; var outAction: S
  *  Deprecated:
  *    Use AudioServicesDisposeSystemSoundID(). Found in
  *    <AudioToolbox/AudioServices.h>
+=======
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x
+ *    Non-Carbon CFM:   not available
+ *)
+function SystemSoundGetActionID( const (*var*) userFile: FSRef; var outAction: SystemSoundActionID ): OSStatus; external name '_SystemSoundGetActionID'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+(*
+ *  SystemSoundRemoveActionID()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Remove a 'custom' System Sound.
@@ -763,6 +921,7 @@ function SystemSoundGetActionID( const (*var*) userFile: FSRef; var outAction: S
  *      removed.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework but deprecated in 10.5
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
@@ -793,6 +952,17 @@ function SystemSoundRemoveActionID( inAction: SystemSoundActionID ): OSStatus; e
  *  Deprecated:
  *    Use AudioServicesAddSystemSoundCompletion(). Found in
  *    <AudioToolbox/AudioServices.h>
+=======
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x
+ *    Non-Carbon CFM:   not available
+ *)
+function SystemSoundRemoveActionID( inAction: SystemSoundActionID ): OSStatus; external name '_SystemSoundRemoveActionID'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+(*
+ *  SystemSoundSetCompletionRoutine()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Call the provided Completion Routine when the provided
@@ -827,6 +997,7 @@ function SystemSoundRemoveActionID( inAction: SystemSoundActionID ): OSStatus; e
  *      A void * to pass user data to the completion routine.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework but deprecated in 10.5
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
@@ -857,6 +1028,17 @@ function SystemSoundSetCompletionRoutine( inAction: SystemSoundActionID; inRunLo
  *  Deprecated:
  *    Use AudioServicesRemoveSystemSoundCompletion(). Found in
  *    <AudioToolbox/AudioServices.h>
+=======
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x
+ *    Non-Carbon CFM:   not available
+ *)
+function SystemSoundSetCompletionRoutine( inAction: SystemSoundActionID; inRunLoop: CFRunLoopRef; inRunLoopMode: CFStringRef; inCompletionRoutine: SystemSoundCompletionUPP; inUserData: UnivPtr ): OSStatus; external name '_SystemSoundSetCompletionRoutine'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+(*
+ *  SystemSoundRemoveCompletionRoutine()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Remove the Completion Routine being used for the provided
@@ -874,6 +1056,7 @@ function SystemSoundSetCompletionRoutine( inAction: SystemSoundActionID; inRunLo
  *      completion routine.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework but deprecated in 10.5
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
@@ -902,3 +1085,13 @@ procedure SystemSoundRemoveCompletionRoutine( inAction: SystemSoundActionID ); e
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x
+ *    Non-Carbon CFM:   not available
+ *)
+procedure SystemSoundRemoveCompletionRoutine( inAction: SystemSoundActionID ); external name '_SystemSoundRemoveCompletionRoutine'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

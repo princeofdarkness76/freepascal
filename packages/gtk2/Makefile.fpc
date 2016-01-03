@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for Free Pascal GTK 2.x.y Bindings
+>>>>>>> graemeg/fixes_2_2
 #
 
 [package]
 name=gtk2
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -26,17 +31,28 @@ libc=y
 packages=cairo
 packages_beos=x11
 packages_haiku=x11
+=======
+version=2.2.5
+
+[require]
+libc=y
+packages_beos=x11
+>>>>>>> graemeg/fixes_2_2
 packages_linux=x11
 packages_freebsd=x11
 packages_solaris=x11
 packages_openbsd=x11
 packages_netbsd=x11
 packages_darwin=x11
+<<<<<<< HEAD
 packages_iphonesim=x11
+=======
+>>>>>>> graemeg/fixes_2_2
 
 [target]
 units=src/buildgtk2 
 exampledirs=examples
+<<<<<<< HEAD
 implicitunits=glib2 atk pango pangocairo gdk2pixbuf gdk2 gtk2 libglade2 gtkglext gdkglext gtk2ext $(GDK2X)
 
 [compiler]
@@ -47,10 +63,26 @@ includedir=$(GTK2X11INCLUDE)
 [install]
 fpcpackage=y
 
+=======
+implicitunits=glib2 gtkhtml atk pango gdk2pixbuf gdk2 gtk2 libglade2 gtkglext gdkglext gtk2ext $(GDK2X)
+
+[compiler]
+unitdir=src src/glib src/atk src/pango src/gtk+/gdk-pixbuf src/gtk+/gdk src/gtk+/gtk src/libglade src/gtkglext src/gtkhtml src/gtkext src/$(GTK2X11)
+includedir=$(GTK2X11INCLUDE)
+
+[install]
+buildunit=buildgtk2
+fpcpackage=y
+
+[shared]
+build=n
+
+>>>>>>> graemeg/fixes_2_2
 [default]
 fpcdir=../..
 
 [prerules]
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -151,3 +183,13 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+ifneq ($(findstring $(OS_TARGET),linux freebsd netbsd openbsd solaris darwin beos ),)
+GDK2X=gdk2x
+GTK2X11=gtk2x11
+GTK2X11INCLUDE=src/gtk2x11/include
+endif
+
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/fixes_2_2

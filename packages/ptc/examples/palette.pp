@@ -3,230 +3,100 @@ Ported to FPC by Nikolay Nikolov (nickysn@users.sourceforge.net)
 }
 
 {
- Palette example for OpenPTC 1.0 C++ implementation
+ Palette example for OpenPTC 1.0 C++ Implementation
  Copyright (c) Glenn Fiedler (ptc@gaffer.org)
  This source code is in the public domain
 }
 
-program PaletteExample;
+Program PaletteExample;
 
 {$MODE objfpc}
 
-uses
+Uses
   ptc;
 
-var
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  console: IPTCConsole;
-  surface: IPTCSurface;
-  format: IPTCFormat;
-  palette: IPTCPalette;
-=======
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-  console: TPTCConsole = nil;
-  surface: TPTCSurface = nil;
-  format: TPTCFormat = nil;
-  palette: TPTCPalette = nil;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-  data: array [0..255] of Uint32;
-  pixels: PUint8;
-  width, height: Integer;
-  i: Integer;
-  x, y, index: Integer;
-begin
-  try
-    try
-      { create console }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      console := TPTCConsoleFactory.CreateNew;
+Var
+  console : TPTCConsole;
+  surface : TPTCSurface;
+  format : TPTCFormat;
+  palette : TPTCPalette;
+  data : Array[0..255] Of int32;
+  pixels : Pchar8;
+  width, height : Integer;
+  i : Integer;
+  x, y, index : Integer;
 
-      { create format }
-      format := TPTCFormatFactory.CreateNew(8);
-=======
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-      console := TPTCConsole.Create;
+Begin
+  Try
+    { create console }
+    console := TPTCConsole.Create;
 
-      { create format }
-      format := TPTCFormat.Create(8);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
+    { create format }
+    format := TPTCFormat.Create(8);
 
-      { open console }
-      console.open('Palette example', format);
+    { open console }
+    console.open('Palette example', format);
 
-      { create surface }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      surface := TPTCSurfaceFactory.CreateNew(console.width, console.height, format);
+    { create surface }
+    surface := TPTCSurface.Create(console.width, console.height, format);
+    format.Free;
 
-      { create palette }
-      palette := TPTCPaletteFactory.CreateNew;
-=======
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-      surface := TPTCSurface.Create(console.width, console.height, format);
+    { create palette }
+    palette := TPTCPalette.Create;
 
-      { create palette }
-      palette := TPTCPalette.Create;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
+    { generate palette }
+    For i := 0 To 255 Do
+      data[i] := i;
 
-      { generate palette }
-      for i := 0 to 255 do
-        data[i] := i;
+    { load palette data }
+    palette.load(data);
 
-      { load palette data }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      palette.Load(data);
+    { set console palette }
+    console.palette(palette);
 
-      { set console palette }
-      console.Palette(palette);
+    { set surface palette }
+    surface.palette(palette);
+    palette.Free;
 
-      { set surface palette }
-      surface.Palette(palette);
-=======
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-      palette.load(data);
+    { loop until a key is pressed }
+    While Not console.KeyPressed Do
+    Begin
+      { lock surface }
+      pixels := surface.lock;
 
-      { set console palette }
-      console.palette(palette);
+      { get surface dimensions }
+      width := surface.width;
+      height := surface.height;
 
-      { set surface palette }
-      surface.palette(palette);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
+      { draw random pixels }
+      For i := 1 To 100 Do
+      Begin
+        { get random position }
+	x := Random(width);
+	y := Random(height);
 
-      { loop until a key is pressed }
-      while not console.KeyPressed do
-      begin
-        { lock surface }
-        pixels := surface.lock;
+        { get random color index }
+	index := Random(256);
 
-        try
-          { get surface dimensions }
-          width := surface.width;
-          height := surface.height;
+        { draw color [index] at position [x,y] }
+	pixels[x + y * width] := index;
+      End;
 
-          { draw random pixels }
-          for i := 1 to 100 do
-          begin
-            { get random position }
-            x := Random(width);
-            y := Random(height);
+      { unlock surface }
+      surface.unlock;
 
-            { get random color index }
-            index := Random(256);
+      { copy to console }
+      surface.copy(console);
 
-            { draw color [index] at position [x,y] }
-            pixels[x + y * width] := index;
-          end;
-        finally
-          { unlock surface }
-          surface.unlock;
-        end;
-
-        { copy to console }
-        surface.copy(console);
-
-        { update console }
-        console.update;
-      end;
-    finally
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      if Assigned(console) then
-        console.close;
-=======
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-      console.close;
-      console.Free;
-      surface.Free;
-      palette.Free;
-      format.Free;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-    end;
-  except
-    on error: TPTCError do
+      { update console }
+      console.update;
+    End;
+    console.close;
+    console.Free;
+    surface.Free;
+  Except
+    On error : TPTCError Do
       { report error }
       error.report;
-  end;
-end.
+  End;
+End.

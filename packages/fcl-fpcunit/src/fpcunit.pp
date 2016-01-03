@@ -338,8 +338,12 @@ Resourcestring
   SNoValidInheritance = ' does not inherit from TTestCase';
   SNoValidTests = 'No valid tests found in ';
   SNoException = 'no exception';
+<<<<<<< HEAD
   SAssertNotCalled = 'Assert not called during test.';
   
+=======
+
+>>>>>>> graemeg/fixes_2_2
 implementation
 
 uses
@@ -873,7 +877,11 @@ begin
   FailMsg:='';
   try
     AMethod;
+<<<<<<< HEAD
     FailMsg:=MisMatch(SNoException);
+=======
+    ExceptionName:=SNoException;
+>>>>>>> graemeg/fixes_2_2
   except
     on E: Exception do
       begin
@@ -1313,7 +1321,14 @@ end;
 
 procedure TTestSuite.AddTest(ATest: TTest);
 begin
+<<<<<<< HEAD
   DoAddTest(ATest);
+=======
+  FTests.Add(ATest);
+  if ATest.TestSuiteName = '' then
+    ATest.TestSuiteName := Self.TestName;
+  ATest.EnableIgnores := Self.EnableIgnores;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 

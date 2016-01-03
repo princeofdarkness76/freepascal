@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
@@ -15,6 +16,21 @@
     <BuildModes Count="1">
       <Item1 Name="default" Default="True"/>
     </BuildModes>
+=======
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectOptions>
+    <PathDelim Value="/"/>
+    <Version Value="5"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <TargetFileExt Value=""/>
+    </General>
+    <VersionInfo>
+      <ProjectVersion Value=""/>
+    </VersionInfo>
+>>>>>>> graemeg/fixes_2_2
     <PublishOptions>
       <Version Value="2"/>
       <IgnoreBinaries Value="False"/>
@@ -27,19 +43,37 @@
         <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>
+<<<<<<< HEAD
     <RequiredPackages Count="1">
       <Item1>
         <PackageName Value="FCL"/>
       </Item1>
+=======
+    <RequiredPackages Count="2">
+      <Item1>
+        <PackageName Value="FPCUnitConsoleRunner"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="FCL"/>
+      </Item2>
+>>>>>>> graemeg/fixes_2_2
     </RequiredPackages>
     <Units Count="3">
       <Unit0>
         <Filename Value="testjsonconf.pp"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
+=======
+        <UnitName Value="testjsonconf"/>
+>>>>>>> graemeg/fixes_2_2
       </Unit0>
       <Unit1>
         <Filename Value="jsonconftest.pp"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
+=======
+        <UnitName Value="jsonconftest"/>
+>>>>>>> graemeg/fixes_2_2
       </Unit1>
       <Unit2>
         <Filename Value="../src/jsonconf.pp"/>
@@ -49,6 +83,7 @@
     </Units>
   </ProjectOptions>
   <CompilerOptions>
+<<<<<<< HEAD
     <Version Value="11"/>
     <SearchPaths>
       <OtherUnitFiles Value="../src"/>
@@ -58,5 +93,17 @@
         <UseAnsiStrings Value="False"/>
       </SyntaxOptions>
     </Parsing>
+=======
+    <Version Value="5"/>
+    <SearchPaths>
+      <OtherUnitFiles Value="../src/"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <Generate Value="Faster"/>
+    </CodeGeneration>
+    <Other>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+>>>>>>> graemeg/fixes_2_2
   </CompilerOptions>
 </CONFIG>

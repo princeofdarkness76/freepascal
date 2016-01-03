@@ -20,7 +20,10 @@
 type
   PIID = PGUID;
   TIID = TGUID;
+<<<<<<< HEAD
   REFIID = ^TIID;
+=======
+>>>>>>> graemeg/fixes_2_2
   THANDLE = HANDLE;
 
   PSmallRect = ^TSmallRect;

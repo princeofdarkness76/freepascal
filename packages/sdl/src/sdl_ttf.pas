@@ -172,9 +172,12 @@ uses
   Windows,
   {$ENDIF}
 {$ENDIF}
+<<<<<<< HEAD
 {$IFDEF MORPHOS}
   exec,
 {$ENDIF}
+=======
+>>>>>>> graemeg/fixes_2_2
   sdl;
 
 const
@@ -198,10 +201,13 @@ const
   SDLttfLibName = 'SDL_ttf';
 {$ENDIF}
 
+<<<<<<< HEAD
 {$IFDEF MACOS}
   SDLttfLibName = 'powersdl_ttf.library';
 {$ENDIF}
 
+=======
+>>>>>>> graemeg/fixes_2_2
   {* Printable format: "%d.%d.%d", MAJOR, MINOR, PATCHLEVEL *}
   SDL_TTF_MAJOR_VERSION = 2;
 {$EXTERNALSYM SDL_TTF_MAJOR_VERSION}
@@ -239,10 +245,13 @@ type
 procedure SDL_TTF_VERSION( var X : TSDL_version );
 {$EXTERNALSYM SDL_TTF_VERSION}
 
+<<<<<<< HEAD
 {$IFDEF MORPHOS}
 {$INCLUDE powersdl_ttf.inc}
 {$ELSE MORPHOS}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 { This function gets the version of the dynamically linked SDL_ttf library.
      It should NOT be used to fill a version structure, instead you should use the
      SDL_TTF_VERSION() macro. }
@@ -471,8 +480,11 @@ function TTF_WasInit : integer;
 cdecl; external {$IFDEF __GPC__}name 'TTF_WasInit'{$ELSE} SDLttfLibName{$ENDIF __GPC__};
 {$EXTERNALSYM TTF_WasInit}
 
+<<<<<<< HEAD
 {$ENDIF MORPHOS}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 // We'll use SDL for reporting errors
 procedure TTF_SetError( fmt : PChar );
 

@@ -13,6 +13,7 @@ begin
 {$endif ALLPACKAGES}
 
     P:=AddPackage('oggvorbis');
+<<<<<<< HEAD
     P.ShortName:='oggv';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -20,6 +21,13 @@ begin
     P.Version:='3.1.1';
     P.SourcePath.Add('src');
     P.OSes := [linux,win32,wince];
+=======
+{$ifdef ALLPACKAGES}
+    P.Directory:='oggvorbis';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.SourcePath.Add('src');
+>>>>>>> graemeg/fixes_2_2
 //    P.Dependencies.Add('x11');
 
    T:=P.Targets.AddUnit('ogg.pas');

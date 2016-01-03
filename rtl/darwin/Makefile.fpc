@@ -40,10 +40,17 @@ units=$(SYSTEMUNIT) unixtype ctypes objpas macpas iso7185 \
       dos dl objects printer sockets \
       sysutils typinfo fgl classes math varutils types \
       charset ucomplex getopts heaptrc lineinfo lnfodwrf \
+<<<<<<< HEAD
       errors ipc terminfo termio video crt mouse keyboard  \
       variants dateutils convutils stdconvs \
       sysconst cthreads strutils rtlconsts cwstring bsd fmtbcd \
       fpintres fpextres clocale objc objcbase
+=======
+      errors terminfo termio video crt mouse keyboard console \
+      variants dateutils convutils stdconvs \
+      sysconst cthreads strutils rtlconsts cwstring bsd fmtbcd \
+      clocale
+>>>>>>> graemeg/fixes_2_2
 implicitunits=exeinfo
 
 rsts=math varutils typinfo classes variants dateutils sysconst rtlconsts
@@ -66,7 +73,7 @@ sourcedir=$(INC) $(PROCINC) $(UNIXINC) $(BSDINC) $(COMMON)
 
 [lib]
 libname=libfprtl.so
-libversion=2.0.0
+libversion=2.2.1
 libunits=$(SYSTEMUNIT) objpas strings \
       unix  \
       dos crt objects  \
@@ -148,6 +155,7 @@ SYSDEPS=$(SYSINCDEPS) $(SYSCPUDEPS)
 $(SYSTEMUNIT)$(PPUEXT) : $(BSDINC)/$(SYSTEMUNIT).pp $(SYSDEPS)
         $(COMPILER) -Us -Sg $(BSDINC)/$(SYSTEMUNIT).pp
 
+<<<<<<< HEAD
 uuchar$(PPUEXT): $(SYSTEMUNIT)$(PPUEXT) $(INC)/uuchar.pp
 
 fpintres$(PPUEXT): $(SYSTEMUNIT)$(PPUEXT)
@@ -167,6 +175,9 @@ iso7185$(PPUEXT): $(SYSTEMUNIT)$(PPUEXT)
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+clocale$(PPUEXT): initc$(PPUEXT) sysutils$(PPUEXT) unixtype$(PPUEXT)
+>>>>>>> graemeg/fixes_2_2
 
 objpas$(PPUEXT): $(SYSTEMUNIT)$(PPUEXT) $(OBJPASDIR)/objpas.pp $(INC)/except.inc $(SYSTEMUNIT)$(PPUEXT)
         $(COMPILER) -I$(OBJPASDIR) $(OBJPASDIR)/objpas.pp
@@ -275,6 +286,24 @@ sysconst$(PPUEXT) : $(OBJPASDIR)/sysconst.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUE
 rtlconsts$(PPUEXT) : $(OBJPASDIR)/rtlconsts.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
         $(COMPILER) $(OBJPASDIR)/rtlconsts.pp
 
+<<<<<<< HEAD
+=======
+strutils$(PPUEXT) : $(OBJPASDIR)/strutils.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT) \
+                    sysutils$(PPUEXT)
+        $(COMPILER) $(OBJPASDIR)/strutils.pp
+
+variants$(PPUEXT) : $(INC)/variants.pp sysutils$(PPUEXT) sysconst$(PPUEXT) varutils$(PPUEXT) typinfo$(PPUEXT) rtlconsts$(PPUEXT) math$(PPUEXT)
+        $(COMPILER) -Fi$(INC) $(INC)/variants.pp
+
+convutils$(PPUEXT) : $(OBJPASDIR)/convutils.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT) \
+                    sysutils$(PPUEXT)
+        $(COMPILER) $(OBJPASDIR)/convutils.pp
+
+stdconvs$(PPUEXT) : $(OBJPASDIR)/stdconvs.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT) \
+                    sysutils$(PPUEXT) convutils$(PPUEXT)
+        $(COMPILER) $(OBJPASDIR)/stdconvs.pp
+
+>>>>>>> graemeg/fixes_2_2
 #
 # Mac Pascal Model
 #
@@ -324,8 +353,11 @@ heaptrc$(PPUEXT) : $(INC)/heaptrc.pp $(SYSTEMUNIT)$(PPUEXT)
 lineinfo$(PPUEXT) : $(INC)/lineinfo.pp $(SYSTEMUNIT)$(PPUEXT) strings$(PPUEXT) $(INC)/exeinfo.pp
 
 lnfodwrf$(PPUEXT) : $(INC)/lnfodwrf.pp $(SYSTEMUNIT)$(PPUEXT) strings$(PPUEXT) $(INC)/exeinfo.pp lineinfo$(PPUEXT)
+<<<<<<< HEAD
 
 lnfogdb$(PPUEXT) : $(UNIXINC)/lnfogdb.pp $(SYSTEMUNIT)$(PPUEXT) ctypes$(PPUEXT) baseunix$(PPUEXT) unix$(PPUEXT)
+=======
+>>>>>>> graemeg/fixes_2_2
 
 charset$(PPUEXT) : $(INC)/charset.pp objpas$(PPUEXT)
 

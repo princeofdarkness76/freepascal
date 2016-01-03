@@ -13,6 +13,7 @@ begin
 {$endif ALLPACKAGES}
 
     P:=AddPackage('fpgtk');
+<<<<<<< HEAD
     P.ShortName:='fpgt';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -33,10 +34,24 @@ begin
     P.SourcePath.Add('src');
 
     T:=P.Targets.AddUnit('fpglib.pp');
+=======
+{$ifdef ALLPACKAGES}
+    P.Directory:='fpgtk';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.SourcePath.Add('src');
+
+    T:=P.Targets.AddUnit('fpglib.pp');
+      with T.Dependencies do
+        begin
+          AddUnit('glib');
+        end;
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('fpgtkext.pp');
       with T.Dependencies do
         begin
           AddUnit('fpgtk');
+<<<<<<< HEAD
         end;
     T.ResourceStrings := True;
     T:=P.Targets.AddUnit('fpgtk.pp');
@@ -52,6 +67,21 @@ begin
     // 'examples/Makefile
     // 'examples/Makefile.fpc
     // 'examples/testgtk.ppr
+=======
+          AddUnit('gtk');
+          AddUnit('gdk');
+          AddUnit('glib');
+        end;
+    T:=P.Targets.AddUnit('fpgtk.pp');
+      with T.Dependencies do
+        begin
+          AddUnit('gtk');
+          AddUnit('gdk');
+          AddUnit('glib');
+          AddUnit('fpglib');
+        end;
+
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

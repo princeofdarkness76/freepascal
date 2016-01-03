@@ -35,7 +35,11 @@
 { For more information about the LGPL: http://www.gnu.org/copyleft/lesser.html }
 {                                                                              }
 {******************************************************************************}
+<<<<<<< HEAD
 {$Z4}
+=======
+{$A+,Z4}
+>>>>>>> graemeg/fixes_2_2
 
 // This file is intended for C header conversions.
 // It defines several mutually exclusive IFDEFs which determine
@@ -329,4 +333,8 @@ Standalone compiling would be useless!
  {$DEFINE HTMLHELP11_UP}
 {$ENDIF HTMLHELP11}
 
+<<<<<<< HEAD
 {$ENDIF ~JEDIAPILIB_INC}
+=======
+{$ENDIF ~JEDIAPILIB_INC}
+>>>>>>> graemeg/fixes_2_2

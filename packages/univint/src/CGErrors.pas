@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 { CoreGraphics - CGError.h
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -35,6 +36,21 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+{
+ *  CGError.h
+ *  CoreGraphics
+ *
+ *  Copyright (c) 2000 Apple Computer, Inc. All rights reserved.
+ *
+ }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -43,8 +59,13 @@
 
 unit CGErrors;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -57,21 +78,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -106,6 +135,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -113,6 +144,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -366,6 +398,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -391,6 +433,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -401,6 +447,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CGBase;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 {$ALIGN POWER}
@@ -413,10 +460,23 @@ type
 const
 	kCGErrorSuccess = 0;
 	kCGErrorFailure = 1000;
+=======
+{$ALIGN POWER}
+
+
+{ Types used for error and error handler }
+type
+	CGError 					= SInt32;
+const
+	kCGErrorSuccess = 0;
+	kCGErrorFirst = 1000;
+	kCGErrorFailure = kCGErrorFirst;
+>>>>>>> graemeg/fixes_2_2
 	kCGErrorIllegalArgument = 1001;
 	kCGErrorInvalidConnection = 1002;
 	kCGErrorInvalidContext = 1003;
 	kCGErrorCannotComplete = 1004;
+<<<<<<< HEAD
 	kCGErrorNotImplemented = 1006;
 	kCGErrorRangeCheck = 1007;
 	kCGErrorTypeCheck = 1008;
@@ -426,6 +486,16 @@ const
   { Obsolete errors. }
 	kCGErrorNameTooLong = 1005;
 	kCGErrorNoCurrentPoint = 1009;
+=======
+	kCGErrorNameTooLong = 1005;
+	kCGErrorNotImplemented = 1006;
+	kCGErrorRangeCheck = 1007;
+	kCGErrorTypeCheck = 1008;
+	kCGErrorNoCurrentPoint = 1009;
+	kCGErrorInvalidOperation = 1010;
+	kCGErrorNoneAvailable = 1011;
+    {	internal errors have taken 1012, 1013, and 1014 }
+>>>>>>> graemeg/fixes_2_2
 
 	kCGErrorApplicationRequiresNewerSystem = 1015;
 		{	the application being launched says in it's bundle info that it requires a }
@@ -459,6 +529,7 @@ const
 	kCGErrorForkFailed = 1028;
 		{	CPS was unable to fork a new process in order to launch an application. }
 
+<<<<<<< HEAD
 	kCGErrorRetryRegistration = 1029;
 	kCGErrorFirst = 1000;
 	kCGErrorLast = 1029;
@@ -467,3 +538,9 @@ const
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+	kCGErrorLast = kCGErrorForkFailed;
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

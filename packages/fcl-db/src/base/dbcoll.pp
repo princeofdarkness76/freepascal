@@ -57,7 +57,11 @@ type
 implementation
 
 resourcestring
+<<<<<<< HEAD
   SErrNoDatasetForField = '%s: no dataset to search field %s in.';
+=======
+  SErrNoDatasetForField = '%s: Geen dataset om veld %s in te zoeken.';
+>>>>>>> graemeg/fixes_2_2
 
 { TFieldMap }
 

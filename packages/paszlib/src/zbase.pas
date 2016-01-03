@@ -88,11 +88,17 @@ const
 { Maximum value for windowBits in deflateInit2 and inflateInit2 }
 const
 {$IFDEF TP}
+<<<<<<< HEAD
   MAX_WBITS = 14; { 16K LZ77 window }
   maxzbaseint = maxint;
 {$ELSE}
   MAX_WBITS = 15; { 32K LZ77 window }
   maxzbaseint = maxlongint;
+=======
+  MAX_WBITS = 14; { 32K LZ77 window }
+{$ELSE}
+  MAX_WBITS = 15; { 32K LZ77 window }
+>>>>>>> graemeg/fixes_2_2
 {$ENDIF}
 
 { default windowBits for decompression. MAX_WBITS is for compression only }
@@ -104,10 +110,17 @@ type  Pbytearray=^Tbytearray;
       Pwordarray=^Twordarray;
       Pcardinalarray=^Tcardinalarray;
 
+<<<<<<< HEAD
       Tbytearray = array [0..maxzbaseint div sizeof(byte)-1] of byte;
       Twordarray = array [0..maxzbaseint div sizeof(word)-1] of word;
       Tintegerarray = array [0..maxzbaseint div sizeof(integer)-1] of integer;
       Tcardinalarray = array [0..maxzbaseint div sizeof(cardinal)-1] of cardinal;
+=======
+      Tbytearray = array [0..maxint div sizeof(byte)-1] of byte;
+      Twordarray = array [0..maxint div sizeof(word)-1] of word;
+      Tintegerarray = array [0..maxint div sizeof(integer)-1] of integer;
+      Tcardinalarray = array [0..maxint div sizeof(cardinal)-1] of cardinal;
+>>>>>>> graemeg/fixes_2_2
 
 
 { The memory requirements for deflate are (in bytes):
@@ -138,7 +151,11 @@ type
   End;
 
 type
+<<<<<<< HEAD
   huft_field = Array[0..(maxzbaseint div SizeOf(inflate_huft))-1] of inflate_huft;
+=======
+  huft_field = Array[0..(maxint div SizeOf(inflate_huft))-1] of inflate_huft;
+>>>>>>> graemeg/fixes_2_2
   huft_ptr = ^huft_field;
 type
   ppInflate_huft = ^pInflate_huft;
@@ -412,7 +429,11 @@ resourcestring Sneed_dict     = 'need dictionary';
                Sversion_error = 'incompatible version';
 
 const
+<<<<<<< HEAD
   z_verbose : longint = 1;
+=======
+  z_verbose = 1;
+>>>>>>> graemeg/fixes_2_2
 
 {$IFDEF ZLIB_DEBUG}
 procedure z_error (m : string);
@@ -502,4 +523,8 @@ begin
     WriteLn(x);
 end;
 
+<<<<<<< HEAD
 end.
+=======
+end.
+>>>>>>> graemeg/fixes_2_2

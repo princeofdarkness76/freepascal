@@ -164,9 +164,15 @@ implementation
             (target_dbg.id in [dbg_dwarf2, dbg_dwarf3])
            ) then
           begin
+<<<<<<< HEAD
             current_asmdata.asmlists[al_dwarf_frame].Free;
             current_asmdata.asmlists[al_dwarf_frame] := TAsmList.create;
             current_asmdata.asmcfi.generate_code(current_asmdata.asmlists[al_dwarf_frame]);
+=======
+            current_asmdata.asmlists[al_dwarf].Free;
+            current_asmdata.asmlists[al_dwarf] := TAsmList.create;
+            current_asmdata.asmcfi.generate_code(current_asmdata.asmlists[al_dwarf]);
+>>>>>>> graemeg/fixes_2_2
           end;
       end;
 
@@ -639,9 +645,15 @@ implementation
         if not(tf_no_generic_stackcheck in target_info.flags) then
           begin
             { stacksize can be specified and is now simulated }
+<<<<<<< HEAD
             new_section(current_asmdata.asmlists[al_globals],sec_data,'__stklen', sizeof(pint));
             current_asmdata.asmlists[al_globals].concat(Tai_symbol.Createname_global('__stklen',AT_DATA,sizeof(pint)));
             current_asmdata.asmlists[al_globals].concat(Tai_const.Create_pint(stacksize));
+=======
+            new_section(current_asmdata.asmlists[al_globals],sec_data,'__stklen', sizeof(aint));
+            current_asmdata.asmlists[al_globals].concat(Tai_symbol.Createname_global('__stklen',AT_DATA,sizeof(aint)));
+            current_asmdata.asmlists[al_globals].concat(Tai_const.Create_aint(stacksize));
+>>>>>>> graemeg/fixes_2_2
           end;
 {$IFDEF POWERPC}
         { AmigaOS4 "stack cookie" support }
@@ -715,6 +727,7 @@ implementation
         { Variants unit is not loaded yet, load it now }
         Message(parser_w_implicit_uses_of_variants_unit);
         AddUnit('variants');
+<<<<<<< HEAD
       end;
 
 
@@ -767,6 +780,8 @@ implementation
             unloaded_units.Concat(hp);
           end;
         MaybeRemoveResUnit:=resources_used;
+=======
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -843,6 +858,7 @@ implementation
         { Objpas unit? }
         if m_objpas in current_settings.modeswitches then
           AddUnit('objpas');
+<<<<<<< HEAD
 
         { Macpas unit? }
         if m_mac in current_settings.modeswitches then
@@ -889,6 +905,11 @@ implementation
                (current_module.modulename^<>'OBJCBASE') then
               AddUnit('objcbase');
           end;
+=======
+        { Macpas unit? }
+        if m_mac in current_settings.modeswitches then
+          AddUnit('macpas');
+>>>>>>> graemeg/fixes_2_2
         { Profile unit? Needed for go32v2 only }
         if (cs_profile in current_settings.moduleswitches) and
            (target_info.system in [system_i386_go32v2,system_i386_watcom]) then
@@ -2833,7 +2854,11 @@ type
          { AV error when DLL is loaded and relocation is needed.  }
          { Internal linker does not have this problem.            }
          if RelocSection and
+<<<<<<< HEAD
             (target_info.system in systems_all_windows+[system_i386_wdosx]) and
+=======
+            (target_info.system in system_all_windows+[system_i386_wdosx]) and
+>>>>>>> graemeg/fixes_2_2
             (cs_link_extern in current_settings.globalswitches) then
            begin
               include(current_settings.globalswitches,cs_link_strip);
@@ -3056,12 +3081,20 @@ type
           begin
             main_procinfo:=create_main_proc(make_mangledname('',current_module.localsymtable,mainaliasname),potype_proginit,current_module.localsymtable);
             { Win32 startup code needs a single name }
+<<<<<<< HEAD
             if not(target_info.system in (systems_darwin+systems_aix)) then
+=======
+            if not(target_info.system in systems_darwin) then
+>>>>>>> graemeg/fixes_2_2
               main_procinfo.procdef.aliasnames.insert('PASCALMAIN')
             else
               main_procinfo.procdef.aliasnames.insert(target_info.Cprefix+'PASCALMAIN')
           end
+<<<<<<< HEAD
          else if (target_info.system in ([system_i386_netware,system_i386_netwlibc,system_powerpc_macos]+systems_darwin+systems_aix)) then
+=======
+         else if (target_info.system in ([system_i386_netware,system_i386_netwlibc,system_powerpc_macos]+systems_darwin)) then
+>>>>>>> graemeg/fixes_2_2
            begin
              { create a stub with the name of the desired main routine, with
                the same signature as the C "main" function, and call through to
@@ -3359,10 +3392,14 @@ type
          { We might need the symbols info if not using
            the default do_extractsymbolinfo
            which is a dummy function PM }
+<<<<<<< HEAD
          needsymbolinfo:=
            (do_extractsymbolinfo<>@def_extractsymbolinfo) or
            ((current_settings.genwpoptimizerswitches*WPOptimizationsNeedingAllUnitInfo)<>[]);
 
+=======
+         needsymbolinfo:=do_extractsymbolinfo<>@def_extractsymbolinfo;
+>>>>>>> graemeg/fixes_2_2
          { release all local symtables that are not needed anymore }
          if (not needsymbolinfo) then
            free_localsymtables(current_module.localsymtable);

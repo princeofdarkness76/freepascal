@@ -21,6 +21,7 @@ directory. Then webtbs/webtbf/test/tbs/tbf are searched for t*.pp to be
 compiled and executed as tests.
 
 
+<<<<<<< HEAD
 Parallel test suite runs
 ------------------------
 
@@ -34,6 +35,8 @@ that can be compiled and run in parallel. E.g.
 Make sure to clean the test suite between two runs for the same platform.
 
 
+=======
+>>>>>>> graemeg/fixes_2_2
 Directories
 -----------
 webtbs...........Tests for web-bug-database bugs (should compile/run)
@@ -77,6 +80,7 @@ MAXVERSION.........Compiler with at most this version number required.
 RESULT.............Exit code of execution of test expected
 TIMEOUT............Timeout indication for test in seconds (only used if
                    enabled by defining TEST_TIMEOUT)
+<<<<<<< HEAD
 FILES..............List of files (separated by spaces) required by test,
                    will be copied to remote before execution. If TEST_DELTEMP
                    is set, all these files will be deleted after the test.
@@ -85,6 +89,8 @@ DELFILES...........List of files (separated by spaces) to be deleted after
                    set. If no extension is specified for a file, the dotest
                    program will try to delete executable and shared library
                    of that name, using appropriate exe and dll extensions.
+=======
+>>>>>>> graemeg/fixes_2_2
 GRAPH..............Requires graph unit
 FAIL...............Compilation must fail
 RECOMPILE..........After compiling a test, recompile the test for a second
@@ -109,6 +115,7 @@ KNOWNCOMPILEERROR..Known bug, which manifest itself at compile time. To
                    from compiler, followed by an optional note. Will not
                    be logged as a bug.
 QUICKTEST..........If set, only tests without package dependencies are executed
+<<<<<<< HEAD
 WPOPARAS...........Parameters to be added after -OW/-Ow to perform whole
                    program optimization tests
 WPOPASSES..........Number of whole program optimization iterations to perform
@@ -116,6 +123,8 @@ WPOPASSES..........Number of whole program optimization iterations to perform
                     and then again with "-FWsomefile2 -OW<wpoparas>
                     -Fwsomefile1 -Ow<wpoparas>", "2" means another pass but
                    using somefile2 as input and somefile3 as output, etc.)
+=======
+>>>>>>> graemeg/fixes_2_2
 
   NOTE: A list consists of comma separated items, e. g. CPU=i386,m68k,powerpc
         No space between the elements and the comma.
@@ -126,7 +135,11 @@ Controling testing in more detail
 Calling "make full" will perform tests in a standard manner. To have
 more control of the test process one must distinguish between:
 
+<<<<<<< HEAD
 * Driver environment: compiler/rtl etc. to be used by the tools which
+=======
+* Driver enviroment: compiler/rtl etc. to be used by the tools which
+>>>>>>> graemeg/fixes_2_2
   runs and analyze the tests. All normal options to make, like FPC
   OS_TARGET, OPT etc. controls this.
 
@@ -146,18 +159,25 @@ TEST_OPT               defaults to ""
 TEST_FPC_VERSION       defaults to version of TEST_FPC
 TEST_CCOMPILER         defaults to installed gcc compiler, but only
                        if driver and test full-targets are the same.
+<<<<<<< HEAD
 TEST_VERBOSE           let dotest be more verbose, only useful for debugging
 TEST_BENCH             display compilation/execution time of each test
+=======
+TEST_VERBOSE           let dotest be more verbose, only usefull for debugging
+>>>>>>> graemeg/fixes_2_2
 TEST_DELTEMP           delete temporary executable/object/ppu file,
                        default is off
 TEST_TIMEOUT           use timeout wrapper for (remote) execution
 V                      print dotest commandline
+<<<<<<< HEAD
 TEST_ABI               test a certain abi, this influences where the
                        c object files are taken from: TEST_ABI=eabi
                        takes the c*.o files from
                        test/cg/obj/linux/arm-eabi
 CHUNKSIZE              Number of tests per chunk that can be potentially executed
                        in parallel with other chunks
+=======
+>>>>>>> graemeg/fixes_2_2
 
   (Please add more test options if needed)
 
@@ -189,9 +209,15 @@ TEST_DELBEFORE       delete remote executable before uploading
 TEST_DELTEMP         delete executable after running, so the remote system
                      doesn't need much free disk space
 TEST_REMOTEPW        pass a password with -pw to remote tools,
+<<<<<<< HEAD
                      mainly useful for putty
 
 
+=======
+                     mainly usefull for putty
+
+
+>>>>>>> graemeg/fixes_2_2
 Examples:
 -------
   make TEST_FPC=$HOME/fpc/compiler/ppcsparc TEST_BINUTILSPREFIX=sparc-linux- \
@@ -268,5 +294,8 @@ On Windows:
 - There must be a putty session named fpc@www.freepascal.org which is
   enabled to login automatically into www.freepascal.org
 
+<<<<<<< HEAD
 Use TEST_USE_LONGLOG=1 as make parameter to pass information
 to server using longlog file instead of the whole output.
+=======
+>>>>>>> graemeg/fixes_2_2

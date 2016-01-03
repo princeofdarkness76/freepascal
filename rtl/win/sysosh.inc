@@ -58,6 +58,7 @@ const
   ApiSuffix = 'A';
 {$endif WINCE}
 
+<<<<<<< HEAD
 function OleStrToString(source: PWideChar) : UnicodeString;inline;
 procedure OleStrToStrVar(source : PWideChar;var dest : UnicodeString);inline;
 procedure OleStrToStrVar(source : PWideChar;var dest : AnsiString);inline;
@@ -97,6 +98,11 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+function OleStrToString(source: PWideChar) : ansistring;inline;
+procedure OleStrToStrVar(source : PWideChar;var dest : ansistring);inline;
+function StringToOleStr(const source : ansistring) : PWideChar;inline;
+>>>>>>> graemeg/fixes_2_2
 
 { package stuff }
 type
@@ -112,6 +118,7 @@ type
 
 var
   LibModuleList: PLibModule = nil;
+<<<<<<< HEAD
 
 {$ifdef FPC_USE_WIN64_SEH}
 procedure _fpc_local_unwind(frame,target: Pointer);compilerproc;
@@ -120,3 +127,5 @@ procedure _fpc_local_unwind(frame,target: Pointer);compilerproc;
 function fpc_tls_add(addr: pointer):pointer;compilerproc;
 {$endif FPC_SECTION_THREADVARS}
 
+=======
+>>>>>>> graemeg/fixes_2_2

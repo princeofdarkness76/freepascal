@@ -956,8 +956,18 @@ unit cpupara;
             paraloc^.size:=retcgsize;
             exit;
           end;
+<<<<<<< HEAD
 
         paraloc:=result.add_location;
+=======
+        { Return is passed as var parameter }
+        if ret_in_param(p.returndef,p.proccalloption) then
+          begin
+            p.funcretloc[side].loc:=LOC_REFERENCE;
+            p.funcretloc[side].size:=retcgsize;
+            exit;
+          end;
+>>>>>>> graemeg/fixes_2_2
         { Return in FPU register? }
         if def.typ=floatdef then
           begin
@@ -1198,6 +1208,10 @@ unit cpupara;
 =======
 >>>>>>> origin/cpstrnew
               end;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/fixes_2_2
           end;
       end;
 

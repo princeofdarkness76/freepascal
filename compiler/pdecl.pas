@@ -472,6 +472,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -480,6 +481,9 @@ implementation
 =======
 >>>>>>> origin/cpstrnew
                       read_typed_const(tclist,tstaticvarsym(sym),in_structure);
+=======
+                      read_typed_const(tclist,tstaticvarsym(sym));
+>>>>>>> graemeg/fixes_2_2
                     end;
                 end;
 
@@ -781,6 +785,7 @@ implementation
 
       procedure finalize_objc_class_or_protocol_external_status(od: tobjectdef);
         begin
+<<<<<<< HEAD
           if  [oo_is_external,oo_is_forward] <= od.objectoptions then
             begin
               { formal definition: x = objcclass external; }
@@ -900,6 +905,18 @@ implementation
               exclude(od.objectoptions,oo_is_forward);
               include(od.objectoptions,oo_is_formal);
             end;
+=======
+          result:=TFPObjectList.Create(false);
+          repeat
+            if token=_ID then
+              begin
+                generictype:=ttypesym.create(orgpattern,cundefinedtype);
+                include(generictype.symoptions,sp_generic_para);
+                result.add(generictype);
+              end;
+            consume(_ID);
+          until not try_to_consume(_COMMA) ;
+>>>>>>> graemeg/fixes_2_2
         end;
 
       var
@@ -1495,6 +1512,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
            if not (m_delphi in current_settings.modeswitches) and
                (token=_ID) and (idtoken=_GENERIC) then
@@ -1529,6 +1547,13 @@ implementation
          resolve_forward_types;
          current_module.checkforwarddefs.free;
          current_module.checkforwarddefs:=old_checkforwarddefs;
+=======
+           if assigned(generictypelist) then
+             generictypelist.free;
+         until token<>_ID;
+         typecanbeforward:=false;
+         symtablestack.top.SymList.ForEachCall(@resolve_type_forward,nil);
+>>>>>>> graemeg/fixes_2_2
          block_type:=old_block_type;
       end;
 

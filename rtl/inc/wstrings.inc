@@ -14,6 +14,7 @@
 
  **********************************************************************}
 
+<<<<<<< HEAD
 {
   This file contains the implementation of the WideString type,
   and all things that are needed for it.
@@ -1875,3 +1876,6 @@ procedure initwidestringmanager;
     widestringmanager.CodePointLengthProc:=@DefaultCodePointLength;
   end;
 >>>>>>> graemeg/cpstrnew
+=======
+{$i wustrings.inc}
+>>>>>>> graemeg/fixes_2_2

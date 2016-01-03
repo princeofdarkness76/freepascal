@@ -671,15 +671,22 @@ procedure VarArrayRedim(var A: Variant; HighBound: SizeInt);
     variantmanager.vararrayredim(a,highbound);
   end;
 
+<<<<<<< HEAD
 procedure VarArrayPut(var A: Variant; const Value: Variant; const Indices: array of Longint);
   begin
     if Length(Indices)>0 then
+=======
+procedure VarArrayPut(var A: Variant; const Value: Variant; const Indices: array of SizeInt);
+  begin
+    if Length(Indices)>0 then 
+>>>>>>> graemeg/fixes_2_2
       variantmanager.vararrayput(A, Value, Length(Indices), @Indices[0])
     else
       variantmanager.vararrayput(A, Value, 0, nil);
   end;
 
 
+<<<<<<< HEAD
 function VarArrayGet(const A: Variant; const Indices: array of Longint): Variant;
   begin
     if Length(Indices)>0 then
@@ -689,6 +696,17 @@ function VarArrayGet(const A: Variant; const Indices: array of Longint): Variant
   end;
 
 
+=======
+function VarArrayGet(const A: Variant; const Indices: array of SizeInt): Variant;
+  begin
+    if Length(Indices)>0 then 
+      Result:=variantmanager.vararrayget(A, Length(Indices), @Indices[0])
+    else 
+      Result:=variantmanager.vararrayget(A, 0, nil);
+  end;
+  
+ 
+>>>>>>> graemeg/fixes_2_2
 procedure VarCast(var dest : variant;const source : variant;vartype : longint);
 
   begin
@@ -851,11 +869,15 @@ operator :=(const source : olevariant) dest : extended;{$ifdef SYSTEMINLINE}inli
 {$ifdef SUPPORT_COMP}
 operator :=(const source : olevariant) dest : comp;{$ifdef SYSTEMINLINE}inline;{$endif}
   begin
+<<<<<<< HEAD
 {$ifdef FPUNONE}
     dest:=comp(variantmanager.vartoint64(variant(tvardata(source))));
 {$else}
     dest:=comp(variantmanager.vartoreal(variant(tvardata(source))));
 {$endif}
+=======
+    dest:=comp(variantmanager.vartoreal(variant(tvardata(source))));
+>>>>>>> graemeg/fixes_2_2
   end;
 {$endif SUPPORT_COMP}
 

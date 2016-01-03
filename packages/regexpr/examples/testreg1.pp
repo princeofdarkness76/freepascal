@@ -4,7 +4,11 @@
 
 program testreg1;
 uses
+<<<<<<< HEAD
    oldregexpr;
+=======
+   regexpr;
+>>>>>>> graemeg/fixes_2_2
 
 var
    r         : tregexprengine;
@@ -24,6 +28,7 @@ var
 begin
    writeln('*** Testing unit regexpr ***');
 
+<<<<<<< HEAD
    { runtime error test }
     initok:=GenerateRegExprEngine('[o]{1,2}',[],r);
     if not initok then
@@ -34,11 +39,14 @@ begin
     // if it has bug, error  An unhandled exception when r.Free
     DestroyregExprEngine(r); // bug:Test for rcClear
 
+=======
+>>>>>>> graemeg/fixes_2_2
    writeln('*** Searching tests ***');
    { basic tests }
 
    initok:=GenerateRegExprEngine('.*',[],r);
    if not initok then
+<<<<<<< HEAD
      do_error(50);
    if not(RegExprPos(r,'CXXXX',index,len)) or
      (index<>0) or (len<>5) then
@@ -67,6 +75,12 @@ begin
    if not(RegExprPos(r,'- abc \w',index,len)) or
      (index<>2) or (len<>1) then
      do_error(54);
+=======
+     do_error(90);
+   if not(RegExprPos(r,'CXXXX',index,len)) or
+     (index<>0) or (len<>5) then
+     do_error(91);
+>>>>>>> graemeg/fixes_2_2
    DestroyregExprEngine(r);
 
    { java package name }
@@ -398,6 +412,7 @@ begin
      do_error(718);
    DestroyregExprEngine(r);
 
+<<<<<<< HEAD
    initok:=GenerateRegExprEngine('o{2}',[],r);
    if not initok then
      do_error(719);
@@ -406,6 +421,8 @@ begin
      do_error(719);
    DestroyregExprEngine(r);
 
+=======
+>>>>>>> graemeg/fixes_2_2
    (* {n,m} tests *)
    initok:=GenerateRegExprEngine('Cat(AZ){1,3}',[],r);
    if not initok then
@@ -454,6 +471,7 @@ begin
      do_error(729);
    DestroyregExprEngine(r);
 
+<<<<<<< HEAD
    initok:=GenerateRegExprEngine('o{2,2}',[],r);
    if not initok then
      do_error(730);
@@ -462,6 +480,8 @@ begin
      do_error(730);
    DestroyregExprEngine(r);
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
    { ()* tests }
    initok:=GenerateRegExprEngine('(AZ)*',[],r);

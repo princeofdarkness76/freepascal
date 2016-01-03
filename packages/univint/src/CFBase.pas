@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -35,6 +36,17 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+	Copyright (c) 1998-2005, Apple, Inc. All rights reserved.
+}
+{       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -43,8 +55,13 @@
 
 unit CFBase;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -57,21 +74,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -106,6 +131,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -113,6 +140,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -355,6 +383,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -380,6 +418,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -390,6 +432,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 {$ALIGN POWER}
@@ -706,6 +749,57 @@ type
 	CFStringRef = ^SInt32; { an opaque type }
 	CFStringRefPtr = ^CFStringRef;
 	CFMutableStringRef = ^SInt32; { an opaque type }
+=======
+{$ALIGN POWER}
+
+
+var kCFCoreFoundationVersionNumber: Float64; external name '_kCFCoreFoundationVersionNumber'; (* attribute const *)
+
+const
+	kCFCoreFoundationVersionNumber10_0 = 196.4;
+const
+	kCFCoreFoundationVersionNumber10_0_3 = 196.5;
+const
+	kCFCoreFoundationVersionNumber10_1 = 226.0;
+{ Note the next two do not follow the usual numbering policy from the base release }
+const
+	kCFCoreFoundationVersionNumber10_1_2 = 227.2;
+const
+	kCFCoreFoundationVersionNumber10_1_4 = 227.3;
+const
+	kCFCoreFoundationVersionNumber10_2 = 263.0;
+const
+	kCFCoreFoundationVersionNumber10_3 = 299.0;
+const
+	kCFCoreFoundationVersionNumber10_3_3 = 299.3;
+const
+	kCFCoreFoundationVersionNumber10_3_4 = 299.31;
+
+{$ifc TARGET_CPU_PPC_64}
+type
+	CFTypeID = UInt32;
+	CFOptionFlags = UInt64;
+	CFHashCode = UInt32;
+	CFIndex = SInt64;
+	CFIndexPtr = ^CFIndex;
+{$elsec}
+type
+	CFTypeID = UInt32;
+	CFOptionFlags = UInt32;
+	CFHashCode = UInt32;
+	CFIndex = SInt32;
+	CFIndexPtr = ^CFIndex;
+{$endc}
+
+{ Base "type" of all "CF objects", and polymorphic functions on them }
+type
+	CFTypeRef = ^SInt32; { an opaque 32-bit type }
+
+type
+	CFStringRef = ^SInt32; { an opaque 32-bit type }
+	CFStringRefPtr = ^CFStringRef;
+	CFMutableStringRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 	CFMutableStringRefPtr = ^CFMutableStringRef;
 
 {
@@ -770,8 +864,12 @@ var kCFNull: CFNullRef; external name '_kCFNull'; (* attribute const *)	// the s
    You should rarely use kCFAllocatorSystemDefault, the default default allocator.
 }
 type
+<<<<<<< HEAD
 	CFAllocatorRef = ^__CFAllocator; { an opaque type }
 	__CFAllocator = record end;
+=======
+	CFAllocatorRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 	CFAllocatorRefPtr = ^CFAllocatorRef;
 
 { This is a synonym for NULL, if you'd rather use a named constant. }
@@ -880,11 +978,19 @@ function CFRetain( cf: CFTypeRef ): CFTypeRef; external name '_CFRetain';
 
 procedure CFRelease( cf: CFTypeRef ); external name '_CFRelease';
 
+<<<<<<< HEAD
 function CFAutorelease( arg: CFTypeRef {CF_RELEASES_ARGUMENT} ): CFTypeRef; external name '_CFAutorelease';
 (* CF_AVAILABLE_STARTING(10_9, 7_0) *)
 
 function CFGetRetainCount( cf: CFTypeRef ): CFIndex; external name '_CFGetRetainCount';
 
+=======
+function CFGetRetainCount( cf: CFTypeRef ): CFIndex; external name '_CFGetRetainCount';
+
+function CFMakeCollectable( cf: CFTypeRef ): CFTypeRef; external name '_CFMakeCollectable';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+>>>>>>> graemeg/fixes_2_2
 function CFEqual( cf1: CFTypeRef; cf2: CFTypeRef ): Boolean; external name '_CFEqual';
 
 function CFHash( cf: CFTypeRef ): CFHashCode; external name '_CFHash';
@@ -893,6 +999,7 @@ function CFCopyDescription( cf: CFTypeRef ): CFStringRef; external name '_CFCopy
 
 function CFGetAllocator( cf: CFTypeRef ): CFAllocatorRef; external name '_CFGetAllocator';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -914,3 +1021,7 @@ function CFMakeCollectable( cf: CFTypeRef ): CFTypeRef; external name '_CFMakeCo
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+end.
+>>>>>>> graemeg/fixes_2_2

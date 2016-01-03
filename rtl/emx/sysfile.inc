@@ -44,8 +44,12 @@ procedure do_erase(p:Pchar; pchangeable: boolean);
 var
   oldp: pchar;
 begin
+<<<<<<< HEAD
     oldp:=p;
     DoDirSeparators(p,pchangeable);
+=======
+    DoDirSeparators(p);
+>>>>>>> graemeg/fixes_2_2
     asm
         movl P,%edx
         movb $0x41,%ah
@@ -62,10 +66,15 @@ procedure do_rename(p1,p2:Pchar; p1changeable, p2changeable: boolean);
 var
   oldp1, oldp2 : pchar;
 begin
+<<<<<<< HEAD
     oldp1:=p1;
     oldp2:=p2;
     DoDirSeparators(p1,p1changeable);
     DoDirSeparators(p2,p2changeable);
+=======
+    DoDirSeparators(p1);
+    DoDirSeparators(p2);
+>>>>>>> graemeg/fixes_2_2
     asm
         movl P1, %edx
         movl P2, %edi
@@ -279,6 +288,10 @@ var
   Action: cardinal;
   oldp : pchar;
 begin
+<<<<<<< HEAD
+=======
+    DoDirSeparators(p);
+>>>>>>> graemeg/fixes_2_2
     { close first if opened }
     if ((flags and $10000)=0) then
         begin

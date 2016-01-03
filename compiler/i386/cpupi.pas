@@ -45,7 +45,11 @@ unit cpupi;
     uses
       cutils,
       systems,globals,globtype,
+<<<<<<< HEAD
       cgobj,tgobj,paramgr,
+=======
+      cgobj,tgobj,
+>>>>>>> graemeg/fixes_2_2
       cpubase,
       cgutils,
       symconst;
@@ -115,6 +119,7 @@ unit cpupi;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (cs_create_pic in current_settings.moduleswitches) then
 =======
 =======
@@ -126,6 +131,10 @@ unit cpupi;
         if (target_info.system in [system_i386_darwin,system_i386_iphonesim]) and
            (cs_create_pic in current_settings.moduleswitches) then
 >>>>>>> graemeg/cpstrnew
+=======
+        if (target_info.system = system_i386_darwin) and
+           (cs_create_pic in current_settings.moduleswitches) then
+>>>>>>> graemeg/fixes_2_2
           begin
             got := cg.getaddressregister(list);
           end;

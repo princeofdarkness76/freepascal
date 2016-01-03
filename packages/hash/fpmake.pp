@@ -11,6 +11,7 @@ begin
   With Installer do
     begin
 {$endif ALLPACKAGES}
+<<<<<<< HEAD
     P:=AddPackage('hash');
 
 {$ifdef ALLPACKAGES}
@@ -73,6 +74,22 @@ begin
 =======
 >>>>>>> origin/cpstrnew
     // md5.ref
+=======
+
+    P:=AddPackage('hash');
+{$ifdef ALLPACKAGES}
+    P.Directory:='hash';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    T:=P.Targets.AddUnit('src/md5.pp');
+    T:=P.Targets.AddUnit('src/crc.pas');
+    T:=P.Targets.AddUnit('src/ntlm.pas');
+    T:=P.Targets.AddUnit('src/uuid.pas');
+    T:=P.Targets.AddUnit('src/unixcrypt.pas');
+      T.OSes:=[Linux];
+    T:=P.Targets.AddExampleunit('examples/mdtest.pas');
+
+>>>>>>> graemeg/fixes_2_2
 {$ifndef ALLPACKAGES}
     Run;
     end;

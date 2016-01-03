@@ -2,9 +2,14 @@
 
 type
    generic TList<_T>=class(TObject)
+<<<<<<< HEAD
    public
      var
        data : _T;
+=======
+   var public
+     data : _T;
+>>>>>>> graemeg/fixes_2_2
      procedure Add(item: _T);
      procedure Assign(Source: specialize TList<_T>);
    end;

@@ -2251,7 +2251,10 @@ end;
         while assigned(NewNode) do
          begin
            Next:=NewNode.Next;
+<<<<<<< HEAD
            prefetch(next.next);
+=======
+>>>>>>> graemeg/fixes_2_2
            NewNode.Free;
            NewNode:=Next;
           end;

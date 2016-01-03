@@ -203,6 +203,7 @@ end;
 Function OpenQuery (Qry : String; Out res : TSQLQuery; Silent : Boolean) : Boolean ;
 
 begin
+<<<<<<< HEAD
   Result:=False;
   Verbose(V_SQL,'Running query:'+Qry);
   Res:=CreateQuery(Qry);
@@ -231,6 +232,9 @@ Function RunSilentQuery (Qry : String; Var res : TQueryResult) : Boolean ;
 
 begin
   Verbose(V_DEBUG,'Running silent query:'+Qry);
+=======
+  Verbose(V_DEBUG,'Running query:'+Qry);
+>>>>>>> graemeg/fixes_2_2
   Result:=mysql_query(@Connection,PChar(qry))=0;
   If Not Result then
     Verbose(V_DEBUG,'Silent query : '+Qry+'Failed : '+Strpas(mysql_error(@connection)))
@@ -403,7 +407,11 @@ end;
 Function GetCategoryID(Name : String) : Integer;
 
 Const
+<<<<<<< HEAD
   SFromName = 'SELECT TCAT_ID FROM TESTCATEGORY WHERE (TCAT_NAME=''%s'')';
+=======
+  SFromName = 'SELECT TCAT_ID FROM TESTCATEGORY WHERE (TCAT_NAME="%s")';
+>>>>>>> graemeg/fixes_2_2
 
 begin
   Result:=IDQuery(Format(SFromName,[Name]));
@@ -423,18 +431,22 @@ begin
   Result:=IDQuery(Format(SFromIDS,[OSID,CPUID,VERSIONID,SQLDate(Date)]));
 end;
 
+<<<<<<< HEAD
 Function InsertQuery(const Query : string) : Integer;
 
 begin
   Result:=IDQuery(Query);
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 Function AddRun(OSID, CPUID, VERSIONID, CATEGORYID : Integer; Date : TDateTime) : Integer;
 
 Const
   SInsertRun = 'INSERT INTO TESTRUN '+
                '(TU_OS_FK,TU_CPU_FK,TU_VERSION_FK,TU_CATEGORY_FK,TU_DATE)'+
                ' VALUES '+
+<<<<<<< HEAD
                '(%d,%d,%d,%d,''%s'') RETURNING TU_ID';
 var
   Qry : string;
@@ -442,6 +454,9 @@ begin
   qry:=Format(SInsertRun,[OSID,CPUID,VERSIONID,CATEGORYID,SQLDate(Date)]);
   Result:=IDQuery(Qry);
 end;
+=======
+               '(%d,%d,%d,%d,"%s")';
+>>>>>>> graemeg/fixes_2_2
 
 function posr(c : Char; const s : AnsiString) : integer;
 var
@@ -462,6 +477,7 @@ var
   s          : string;
   t          : text;
 begin
+<<<<<<< HEAD
   Result := False;
   FillChar(r,sizeof(r),0);
   if pos('.',fn) > 0 then exit; // This is normally not a unit-test
@@ -475,6 +491,10 @@ begin
     ClassName := copy(Path,slashpos+1,length(Path));
     Path := copy(Path,1,slashpos-1);
     end
+=======
+  If RunQuery(Format(SInsertRun,[OSID,CPUID,VERSIONID,CATEGORYID,SQLDate(Date)]),Res) then
+    Result:=mysql_insert_id(@connection)
+>>>>>>> graemeg/fixes_2_2
   else
     begin
     ClassName := Path;
@@ -536,6 +556,89 @@ begin
   close(t);
 end;
 
+<<<<<<< HEAD
+=======
+function posr(c : Char; const s : AnsiString) : integer;
+var
+  i : integer;
+begin
+  i := length(s);
+  while (i>0) and (s[i] <> c) do dec(i);
+  Result := i;
+end;
+
+function GetUnitTestConfig(const fn : string; var r : TConfig) : Boolean;
+var
+  Path       : string;
+  ClassName  : string;
+  MethodName : string;
+  slashpos   : integer;
+  FileName   : string;
+  s          : string;
+  t          : text;
+begin
+  Result := False;
+  FillChar(r,sizeof(r),0);
+  if pos('.',fn) > 0 then exit; // This is normally not a unit-test
+  slashpos := posr('/',fn);
+  if slashpos < 1 then exit;
+  MethodName := copy(fn,slashpos+1,length(fn));
+  Path := copy(fn,1,slashpos-1);
+  slashpos := posr('/',Path);
+  if slashpos > 0 then
+    begin
+    ClassName := copy(Path,slashpos+1,length(Path));
+    Path := copy(Path,1,slashpos-1);
+    end
+  else
+    begin
+    ClassName := Path;
+    path := '.';
+    end;
+  if upper(ClassName[1])<>'T' then exit;
+  FileName := TestSrcDir+RelSrcDir+Path+DirectorySeparator+copy(lowercase(ClassName),2,length(classname));
+  if FileExists(FileName+'.pas') then
+    FileName := FileName + '.pas'
+  else if FileExists(FileName+'.pp') then
+    FileName := FileName + '.pp'
+  else exit;
+  
+  Verbose(V_Debug,'Reading '+FileName);
+  assign(t,FileName);
+  {$I-}
+   reset(t);
+  {$I+}
+  if ioresult<>0 then
+   begin
+     Verbose(V_Error,'Can''t open '+FileName);
+     exit;
+   end;
+  while not eof(t) do
+   begin
+     readln(t,s);
+
+     if s<>'' then
+      begin
+        TrimB(s);
+        if SameText(copy(s,1,9),'PROCEDURE') then
+         begin
+           if pos(';',s)>11 then
+            begin
+              s := copy(s,11,pos(';',s)-11);
+              TrimB(s);
+              if SameText(s,ClassName+'.'+MethodName) then
+               begin
+                 Result := True;
+                 r.Note:= 'unittest';
+               end;
+            end;
+         end;
+      end;
+   end;
+  close(t);
+end;
+
+>>>>>>> graemeg/fixes_2_2
 Function AddTest(Name : String; AddSource : Boolean) : Integer;
 
 Const

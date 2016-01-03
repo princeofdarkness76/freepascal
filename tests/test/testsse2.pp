@@ -22,6 +22,7 @@ begin
        psubq     %xmm1,%xmm2
        psubq     q-.LPIC(%ecx),%xmm4
 {$else darwin}
+<<<<<<< HEAD
        addl      $_GLOBAL_OFFSET_TABLE_+1,%ecx
        movdqa    %xmm1,%xmm2
        movl      q@GOT(%ecx),%eax
@@ -29,6 +30,13 @@ begin
        psubq     %xmm1,%xmm2
        movl      q@GOT(%ecx),%eax
        psubq     (%eax),%xmm4
+=======
+       addl      $_GLOBAL_OFFSET_TABLE_,%ecx
+       movdqa    %xmm1,%xmm2
+       movdqa    q@GOT(%ecx),%xmm4
+       psubq     %xmm1,%xmm2
+       psubq     q@GOT(%ecx),%xmm4
+>>>>>>> graemeg/fixes_2_2
 {$endif darwin}
 {$else FPC_PIC}
        movdqa    %xmm1,%xmm2

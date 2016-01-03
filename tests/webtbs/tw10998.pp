@@ -1,6 +1,10 @@
 program statictest;
 
+<<<<<<< HEAD
 {$mode delphi}
+=======
+{$mode delphi}{$STATIC ON}
+>>>>>>> graemeg/fixes_2_2
 
 type
   TMyClass = class

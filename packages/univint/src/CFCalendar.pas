@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 2004-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -34,6 +35,17 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+	Copyright (c) 2004-2005, Apple, Inc. All rights reserved.
+}
+{       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -42,8 +54,13 @@
 
 unit CFCalendar;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -56,21 +73,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -105,6 +130,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -112,6 +139,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -336,6 +364,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -361,6 +399,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -371,8 +413,11 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFLocale,CFDate,CFTimeZone;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -380,6 +425,7 @@ uses MacTypes,CFBase,CFLocale,CFDate,CFTimeZone;
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -398,6 +444,9 @@ type
 =======
 	CFCalendarRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	CFCalendarRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 
 function CFCalendarGetTypeID: CFTypeID; external name '_CFCalendarGetTypeID';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -440,7 +489,11 @@ procedure CFCalendarSetMinimumDaysInFirstWeek( calendar: CFCalendarRef; mwd: CFI
 
 
 type
+<<<<<<< HEAD
 	CFCalendarUnit = UNSIGNEDLONG;
+=======
+	CFCalendarUnit = SInt32;
+>>>>>>> graemeg/fixes_2_2
 const
 	kCFCalendarUnitEra = 1 shl 1;
 	kCFCalendarUnitYear = 1 shl 2;
@@ -452,6 +505,7 @@ const
 	kCFCalendarUnitWeek = 1 shl 8;
 	kCFCalendarUnitWeekday = 1 shl 9;
 	kCFCalendarUnitWeekdayOrdinal = 1 shl 10;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -480,6 +534,8 @@ const
 	kCFCalendarUnitQuarter = 1 shl 11;
 {#endif}
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
 
 function CFCalendarGetMinimumRangeOfUnit( calendar: CFCalendarRef; unt: CFCalendarUnit ): CFRange; external name '_CFCalendarGetMinimumRangeOfUnit';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -493,8 +549,11 @@ function CFCalendarGetRangeOfUnit( calendar: CFCalendarRef; smallerUnit: CFCalen
 function CFCalendarGetOrdinalityOfUnit( calendar: CFCalendarRef; smallerUnit: CFCalendarUnit; biggerUnit: CFCalendarUnit; at: CFAbsoluteTime ): CFIndex; external name '_CFCalendarGetOrdinalityOfUnit';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
+<<<<<<< HEAD
 function CFCalendarGetTimeRangeOfUnit( calendar: CFCalendarRef; unt: CFCalendarUnit; at: CFAbsoluteTime; var startp: CFAbsoluteTime; var tip: CFTimeInterval ): Boolean; external name '_CFCalendarGetTimeRangeOfUnit';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+>>>>>>> graemeg/fixes_2_2
 
 function CFCalendarComposeAbsoluteTime( calendar: CFCalendarRef; var at: { out } CFAbsoluteTime; componentDesc: ConstCStringPtr; ... ): Boolean; external name '_CFCalendarComposeAbsoluteTime';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -506,7 +565,11 @@ function CFCalendarDecomposeAbsoluteTime( calendar: CFCalendarRef; at: CFAbsolut
 const
 	kCFCalendarComponentsWrap = 1 shl 0;  // option for adding
 
+<<<<<<< HEAD
 function CFCalendarAddComponents( calendar: CFCalendarRef; var at: { inout } CFAbsoluteTime; options: CFOptionFlags; componentDesc: ConstCStringPtr; ... ): Boolean; external name '_CFCalendarAddComponents';
+=======
+function CFCalendarAddComponents( calendar: CFCalendarRef; var at: { out } CFAbsoluteTime; options: CFOptionFlags; componentDesc: ConstCStringPtr; ... ): Boolean; external name '_CFCalendarAddComponents';
+>>>>>>> graemeg/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 function CFCalendarGetComponentDifference( calendar: CFCalendarRef; startingAT: CFAbsoluteTime; resultAT: CFAbsoluteTime; options: CFOptionFlags; componentDesc: ConstCStringPtr; ... ): Boolean; external name '_CFCalendarGetComponentDifference';
@@ -516,7 +579,12 @@ function CFCalendarGetComponentDifference( calendar: CFCalendarRef; startingAT: 
 
 {#endif}
 
+<<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+end.
+>>>>>>> graemeg/fixes_2_2

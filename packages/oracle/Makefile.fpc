@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#  Makefile.fpc for oracle units
+>>>>>>> graemeg/fixes_2_2
 #
 
 [package]
 name=oracle
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -17,14 +22,23 @@ version=3.1.1
 =======
 >>>>>>> origin/cpstrnew
 version=2.5.1
+=======
+version=2.2.5
+>>>>>>> graemeg/fixes_2_2
 
 [target]
 units=oci ocidyn oratypes oraoci
 exampledirs=examples
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
 [require]
 packages=rtl fpmkunit
+=======
+
+[require]
+libc=y
+>>>>>>> graemeg/fixes_2_2
 
 [install]
 fpcpackage=y
@@ -32,6 +46,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -117,3 +132,20 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[compiler]
+includedir=src
+sourcedir=src tests
+
+# in libdir variable must be path to libraries
+# libclntsh.*,libnlsrtl3.*
+#[compiler]
+#libdir=/usr/local/oracle8cli/lib
+
+[shared]
+build=n
+
+[rules]
+.NOTPARALLEL:
+
+>>>>>>> graemeg/fixes_2_2

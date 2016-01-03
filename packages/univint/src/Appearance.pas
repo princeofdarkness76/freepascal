@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -22,10 +23,16 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 1994-2008 by Apple Computer, Inc., all rights reserved
+=======
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 1994-2005 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -51,6 +58,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -59,8 +78,13 @@
 
 unit Appearance;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -73,21 +97,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -122,6 +154,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -129,6 +163,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -340,6 +375,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -365,6 +410,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -374,15 +423,22 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,CFBase,CGContext,Collections,QuickdrawText,QuickdrawTypes,MacErrors;
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+uses MacTypes,CFBase,CGContext,Collections,Processes,QuickdrawText,TextCommon,Quickdraw,TextEdit,QDOffscreen,MacErrors,TextUtils,CFString;
+>>>>>>> graemeg/fixes_2_2
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 { Appearance Manager constants, etc.                                               }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 { Appearance Manager Apple Events (1.1 and later)              }
 
+<<<<<<< HEAD
 {$ifc TARGET_OS_MAC}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ALIGN MAC68K}
 
@@ -526,8 +582,12 @@ const
 	kAppearanceRegionCollapseBox = 7;
 	kAppearanceRegionTitleProxyIcon = 8;  { Mac OS 8.5 forward}
 	kAppearanceRegionStructure = 32;
+<<<<<<< HEAD
 	kAppearanceRegionContent = 33;   { Content area of the window; empty when the window is collapsed}
 	kAppearanceRegionToolbarButton = 41;
+=======
+	kAppearanceRegionContent = 33;    { Content area of the window; empty when the window is collapsed}
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -591,6 +651,7 @@ const
 	kThemeBrushDocumentWindowBackground = 15;
 	kThemeBrushFinderWindowBackground = 16;
 
+<<<<<<< HEAD
   {
    * Available in Appearance 1.1 (Mac OS 8.5) and later.
    }
@@ -752,6 +813,63 @@ const
 	kThemeBrushNotificationWindowBackground = 48;
 
   {
+=======
+
+{
+ *  Discussion:
+ *    ThemeBrushes introduced in Appearance 1.1 (Mac OS 8.5) and later
+ }
+const
+	kThemeBrushScrollBarDelimiterActive = 17;
+	kThemeBrushScrollBarDelimiterInactive = 18;
+	kThemeBrushFocusHighlight = 19;
+	kThemeBrushPopupArrowActive = 20;
+	kThemeBrushPopupArrowPressed = 21;
+	kThemeBrushPopupArrowInactive = 22;
+	kThemeBrushAppleGuideCoachmark = 23;
+	kThemeBrushIconLabelBackgroundSelected = 24;
+	kThemeBrushStaticAreaFill = 25;
+	kThemeBrushActiveAreaFill = 26;
+	kThemeBrushButtonFrameActive = 27;
+	kThemeBrushButtonFrameInactive = 28;
+	kThemeBrushButtonFaceActive = 29;
+	kThemeBrushButtonFaceInactive = 30;
+	kThemeBrushButtonFacePressed = 31;
+	kThemeBrushButtonActiveDarkShadow = 32;
+	kThemeBrushButtonActiveDarkHighlight = 33;
+	kThemeBrushButtonActiveLightShadow = 34;
+	kThemeBrushButtonActiveLightHighlight = 35;
+	kThemeBrushButtonInactiveDarkShadow = 36;
+	kThemeBrushButtonInactiveDarkHighlight = 37;
+	kThemeBrushButtonInactiveLightShadow = 38;
+	kThemeBrushButtonInactiveLightHighlight = 39;
+	kThemeBrushButtonPressedDarkShadow = 40;
+	kThemeBrushButtonPressedDarkHighlight = 41;
+	kThemeBrushButtonPressedLightShadow = 42;
+	kThemeBrushButtonPressedLightHighlight = 43;
+	kThemeBrushBevelActiveLight = 44;
+	kThemeBrushBevelActiveDark = 45;
+	kThemeBrushBevelInactiveLight = 46;
+	kThemeBrushBevelInactiveDark = 47;
+
+
+{
+ *  Discussion:
+ *    ThemeBrushes introduced in Appearance 1.1.1 (Mac OS 9.0) and
+ *    later.
+ }
+const
+	kThemeBrushNotificationWindowBackground = 48;
+
+
+{
+ *  Discussion:
+ *    ThemeBrushes introduced in Carbon. Available in Mac OS X, and
+ *    Carbon Lib 1.3 and later.
+ }
+const
+{
+>>>>>>> graemeg/fixes_2_2
    * Use with kMovableModalWindowClass windows. Available in Mac OS X,
    * and CarbonLib 1.3 and later.
    }
@@ -771,6 +889,7 @@ const
    }
 	kThemeBrushDrawerBackground = 51;
 
+<<<<<<< HEAD
   {
    * Use with kToolbarWindowClass. Available in Mac OS X, and Carbon
    * Lib 1.6 and later.
@@ -778,6 +897,28 @@ const
 	kThemeBrushToolbarBackground = 52;
 
   {
+=======
+
+{
+ *  Discussion:
+ *    ThemeBrushes introduced in Carbon. Available in Mac OS X, and
+ *    Carbon Lib 1.6 and later.
+ }
+const
+{
+   * Use with kToolbarWindowClass.
+   }
+	kThemeBrushToolbarBackground = 52;
+
+
+{
+ *  Discussion:
+ *    ThemeBrushes introduced in Mac OS X 10.1. Available in Mac OS X
+ *    10.1 and CarbonLib 1.6, and later.
+ }
+const
+{
+>>>>>>> graemeg/fixes_2_2
    * Use with kSheetWindowClass and kSheetAlertWindowClass. Not fully
    * transparent -- this brush is the semi-transparent background seen
    * with modern sheets. Available in Mac OS X 10.1 and CarbonLib 1.6,
@@ -795,17 +936,34 @@ const
    }
 	kThemeBrushMenuBackgroundSelected = 55;
 
+<<<<<<< HEAD
   {
    * For lists that use different colors as the background for odd and
    * even rows (like iTunes), this brush is the background for the odd
    * numbered rows. Available in Mac OS X 10.3 and later.
+=======
+
+{
+ *  Discussion:
+ *    ThemeBrushes introduced in Mac OS X 10.3.
+ }
+const
+{
+   * For lists that use different colors as the background for odd and
+   * even rows (like iTunes), this brush is the background for the odd
+   * numbered rows. Available in Mac OS X 10.4 and later.
+>>>>>>> graemeg/fixes_2_2
    }
 	kThemeBrushListViewOddRowBackground = 56;
 
   {
    * For lists that use different colors as the background for odd and
    * even rows (like iTunes), this brush is the background for the even
+<<<<<<< HEAD
    * numbered rows. Available in Mac OS X 10.3 and later.
+=======
+   * numbered rows. Available in Mac OS X 10.4 and later.
+>>>>>>> graemeg/fixes_2_2
    }
 	kThemeBrushListViewEvenRowBackground = 57;
 
@@ -813,6 +971,7 @@ const
    * The color for the divider lines drawn between columns in some list
    * views. This brush may have an alpha value associated with it.
    * Drawing this brush with QuickDraw or fetching it as an RGBColor
+<<<<<<< HEAD
    * will not necessarily yield satisfactory results. Available in Mac
    * OS X 10.3 and later.
    }
@@ -841,20 +1000,51 @@ const
   {
    * This is a theme meta-brush. It is a specific color that does not
    * change from theme to theme. Use it instead of a direct RGB value.
+=======
+   * will not necessarily yield satisfactory results.
+   }
+	kThemeBrushListViewColumnDivider = 58;
+
+
+{
+ *  Discussion:
+ *    ThemeBrush compatibility synonyms. The newer names are preferred.
+ }
+const
+	kThemeBrushSheetBackground = kThemeBrushSheetBackgroundOpaque;
+
+
+{
+ *  Discussion:
+ *    Theme meta-brushes. They are specific colors that do not change
+ *    from theme to theme. Use them instead of using direct RGB values.
+ }
+const
+	kThemeBrushBlack = -1;
+	kThemeBrushWhite = -2;
+
+  {
+>>>>>>> graemeg/fixes_2_2
    * Available in Mac OS 10.1 and CarbonLib 1.6, and later.
    }
 	kThemeBrushPrimaryHighlightColor = -3;
 
   {
+<<<<<<< HEAD
    * This is a theme meta-brush. It is a specific color that does not
    * change from theme to theme. Use it instead of a direct RGB value.
+=======
+>>>>>>> graemeg/fixes_2_2
    * Available in Mac OS 10.1 and CarbonLib 1.6, and later.
    }
 	kThemeBrushSecondaryHighlightColor = -4;
 
   {
+<<<<<<< HEAD
    * This is a theme meta-brush. It is a specific color that does not
    * change from theme to theme. Use it instead of a direct RGB value.
+=======
+>>>>>>> graemeg/fixes_2_2
    * Available in Mac OS 10.1 and CarbonLib 1.6, and later.
    }
 	kThemeBrushAlternatePrimaryHighlightColor = -5;
@@ -996,7 +1186,11 @@ const
    * A special cursor to indicate that letting up the mouse will cause
    * a dragged item to go away. When the item goes away, a poof cloud
    * animation should occur. This cursor should be updated dynamically
+<<<<<<< HEAD
    * depending on whether the mouse up action will remove the item.
+=======
+   * dependeding on whether the mouse up action will remove the item.
+>>>>>>> graemeg/fixes_2_2
    * Available in Mac OS X 10.3 or later.
    }
 	kThemePoofCursor = 22;
@@ -1049,7 +1243,10 @@ const
 	kThemeMenuItemPopUpBackground = $0800; { item is within a popped up menu}
 	kThemeMenuItemHasIcon = $8000; { add into non-arrow type when icon present}
 	kThemeMenuItemNoBackground = $4000; { don't draw the menu background while drawing this item (Mac OS X only)}
+<<<<<<< HEAD
 	kThemeMenuItemAlignRight = $2000; { right-align the content of this menu item (SnowLeopard and later)}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 type
 	ThemeMenuItemType = UInt16;
@@ -1207,7 +1404,11 @@ const
    * The font used to draw file and folder names in Finder windows or
    * other browsable lists.
    }
+<<<<<<< HEAD
 	kThemeViewsFont = 3;
+=======
+	kThemeViewsFont = 3;    { The following ID's are only available with MacOS X or CarbonLib 1.3 and later}
+>>>>>>> graemeg/fixes_2_2
 
   {
    * Identical to kThemeSystemFont, except it draws bolded (or
@@ -1232,8 +1433,11 @@ const
    * available on Mac OS X or CarbonLib 1.3 or later.
    }
 	kThemeLabelFont = 6;
+<<<<<<< HEAD
 	kThemeSystemFontDetail = 7;
 	kThemeSystemFontDetailEmphasized = 8;
+=======
+>>>>>>> graemeg/fixes_2_2
 
   {
    * The font used to draw menu titles in the menu bar. Only available
@@ -1282,6 +1486,7 @@ const
    * alert window. Only available on Mac OS X or CarbonLib 1.3 or later.
    }
 	kThemeAlertHeaderFont = 107;
+<<<<<<< HEAD
 
   {
    * The font used to draw the label of a toolbar item. Available in
@@ -1294,6 +1499,10 @@ const
    * Mac OS X 10.3 or later.
    }
 	kThemeMiniSystemFont = 109;
+=======
+	kThemeSystemFontDetail = 7;
+	kThemeSystemFontDetailEmphasized = 8;
+>>>>>>> graemeg/fixes_2_2
 
   {
    * Unlike the other ThemeFontIDs, this one doesn't map to a font
@@ -1320,6 +1529,7 @@ const
 	kThemeCurrentPortFont = 200;
 
   {
+<<<<<<< HEAD
    * Only to be used as a fontID parameter in the HIThemeTextInfo
    * structure. It allows the caller to measure and draw text using a
    * CTFontRef and is the correct method for using custom fonts due to
@@ -1333,6 +1543,22 @@ const
 { This is the total of the PUBLIC ThemeFontIDs!}
 const
 	kPublicThemeFontCount = 21;
+=======
+   * The font used to draw the label of a toolbar item. Available in
+   * Mac OS X 10.2 or later.
+   }
+	kThemeToolbarFont = 108;
+
+  {
+   * The appropriate system font for mini-sized controls. Available in
+   * Mac OS X 10.3 or later.
+   }
+	kThemeMiniSystemFont = 109;
+
+{ This is the total of the PUBLIC ThemeFontIDs!}
+const
+	kPublicThemeFontCount = 20;
+>>>>>>> graemeg/fixes_2_2
 
 type
 	ThemeFontID = UInt16;
@@ -1588,6 +1814,7 @@ const
 
   {
    * The thumb has focus.  This attribute currently has effect only on
+<<<<<<< HEAD
    * sliders.  Available only in Mac OS X 10.2 and later.
    }
 	kThemeTrackHasFocus = 1 shl 5;
@@ -1599,6 +1826,12 @@ const
    }
 	kThemeTrackHideTrack = 1 shl 6;
 
+=======
+   * sliders.  Available only in Mac OS X after 10.1.
+   }
+	kThemeTrackHasFocus = 1 shl 5;
+
+>>>>>>> graemeg/fixes_2_2
 type
 	ThemeTrackAttributes = UInt16;
 
@@ -1667,7 +1900,11 @@ type
 {
    * A UInt8 indicating the current phase of the track fill.
    }
+<<<<<<< HEAD
 		phase: UInt8;                  { phase for indeterminate progress }
+=======
+		phase: SInt8;                  { phase for indeterminate progress }
+>>>>>>> graemeg/fixes_2_2
 		pad: SInt8
 	end;
 
@@ -1732,6 +1969,7 @@ type
    }
 		filler1: SInt8;
 		case SInt16 of
+<<<<<<< HEAD
 			0: (
 				scrollbar: ScrollBarTrackInfo;
 				);
@@ -1741,6 +1979,17 @@ type
 			2: (
 				progress: ProgressTrackInfo;
 				);
+=======
+		0: (
+			scrollbar:			ScrollBarTrackInfo;
+			);
+		1: (
+			slider:				SliderTrackInfo;
+			);
+		2: (
+			progress:			ProgressTrackInfo;
+			);
+>>>>>>> graemeg/fixes_2_2
 	end;
 
 {
@@ -1851,7 +2100,10 @@ const
 	kThemeWidgetZoomBox = 1;
 	kThemeWidgetCollapseBox = 2;
 	kThemeWidgetDirtyCloseBox = 6;
+<<<<<<< HEAD
 	kThemeWidgetToolbarButton = 7;
+=======
+>>>>>>> graemeg/fixes_2_2
 
 const
 { Old/Obsolete name to be removed}
@@ -2100,7 +2352,11 @@ const
    * normal size. Since a mini variant was introduced in Mac OS X 10.3,
    * smaller than normal size is can also mean mini. To avoid confusion
    * with existing code, the mini variant will never be implicitly
+<<<<<<< HEAD
    * determined and must be explicitly requested with the
+=======
+   * determined and must be explicity requested with the
+>>>>>>> graemeg/fixes_2_2
    * kThemePushButtonMini constant.
    }
 	kThemePushButtonMini = 27;
@@ -2130,7 +2386,11 @@ const
    * were normal size. Since a mini variant was introduced in Mac OS X
    * 10.3, smaller than normal size is can also mean mini. To avoid
    * confusion with existing code, the mini variant will never be
+<<<<<<< HEAD
    * implicitly determined and must be explicitly requested with the
+=======
+   * implicitly determined and must be explicity requested with the
+>>>>>>> graemeg/fixes_2_2
    * kThemePopupButtonMini constant.
    }
 	kThemePopupButtonMini = 30;
@@ -2148,6 +2408,7 @@ const
 	kThemeBevelButtonInset = 31;
 
   {
+<<<<<<< HEAD
    * This is the primitive used to draw the textured variant of the
    * push button. Similar to kThemePushButtonNormal, but textured, to
    * be rendered on a textured window.
@@ -2160,6 +2421,18 @@ const
    * to be rendered on a textured window.
    }
 	kThemePushButtonTexturedSmall = 33;
+=======
+   * This is the primitive used to draw the inset variant of the push
+   * button. Similar to kThemePushButtonNormal, but inset.
+   }
+	kThemePushButtonInset = 32;
+
+  {
+   * This is the primitive used to draw the small, inset variant of the
+   * push button. Similar to kThemePushButtonSmall, but inset.
+   }
+	kThemePushButtonInsetSmall = 33;
+>>>>>>> graemeg/fixes_2_2
 
   {
    * This is the primitive used to draw the help variant of the round
@@ -2167,6 +2440,7 @@ const
    }
 	kThemeRoundButtonHelp = 34;
 
+<<<<<<< HEAD
   {
    * This is a synonym for kThemePushButtonTextured for code
    * compatibility. Please use kThemePushButtonTextured instead.
@@ -2179,6 +2453,8 @@ const
    }
 	kThemePushButtonInsetSmall = kThemePushButtonTexturedSmall;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  Discussion:
@@ -2317,6 +2593,7 @@ const
    }
 	kThemeAdornmentArrowUpArrow = 1 shl 9;
 
+<<<<<<< HEAD
   {
    * Draw a right disclosure triangle. Can be combined with
    * kThemeAdornmentArrowDownArrow to draw an intermediate disclosure
@@ -2324,6 +2601,8 @@ const
    }
 	kThemeAdornmentArrowRightArrow = 1 shl 10;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  Discussion:
@@ -2413,7 +2692,11 @@ type
 	ThemeDragSoundKind = OSType;
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 { State-change sounds                                                      }
+<<<<<<< HEAD
 { State-change sounds are played asynchronously as a one-shot.             }
+=======
+{ State-change sounds are played asynchonously as a one-shot.              }
+>>>>>>> graemeg/fixes_2_2
 { Call PlayThemeSound to play the sound.  The sound will play              }
 { asynchronously until complete, then stop automatically.                  }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -2570,6 +2853,7 @@ type
 		popupTabWidth: SInt16;
 		popupTabPosition: UInt16;
 	end;
+<<<<<<< HEAD
 	ThemeWindowMetricsPtr = ^ThemeWindowMetrics;
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 { Drawing State                                                                            }
@@ -2811,6 +3095,550 @@ type
 type
 >>>>>>> origin/cpstrnew
 	ThemeIteratorProcPtr = function( const (*var*) inFileName: Str255; resID: SInt16; inThemeSettings: Collection; inUserData: PRefCon ): Boolean;
+=======
+type
+	ThemeWindowMetricsPtr = ^ThemeWindowMetrics;
+
+{
+ *  Summary:
+ *    Theme metrics allow you to find out sizes of things in the
+ *    current environment, such as how wide a scroll bar is, etc.
+ *  
+ *  Discussion:
+ *    ThemeMetrics
+ }
+const
+{
+   * The width (or height if horizontal) of a scroll bar.
+   }
+	kThemeMetricScrollBarWidth = 0;
+
+  {
+   * The width (or height if horizontal) of a small scroll bar.
+   }
+	kThemeMetricSmallScrollBarWidth = 1;
+
+  {
+   * The height of the non-label part of a check box control.
+   }
+	kThemeMetricCheckBoxHeight = 2;
+
+  {
+   * The height of the non-label part of a radio button control.
+   }
+	kThemeMetricRadioButtonHeight = 3;
+
+  {
+   * The amount of white space surrounding the text Rect of the text
+   * inside of an Edit Text control.  If you select all of the text in
+   * an Edit Text control, you can see the white space. The metric is
+   * the number of pixels, per side, that the text Rect is outset to
+   * create the whitespace Rect.
+   }
+	kThemeMetricEditTextWhitespace = 4;
+
+  {
+   * The thickness of the Edit Text frame that surrounds the whitespace
+   * Rect (that is surrounding the text Rect). The metric is the number
+   * of pixels, per side, that the frame Rect is outset from the
+   * whitespace Rect.
+   }
+	kThemeMetricEditTextFrameOutset = 5;
+
+  {
+   * The number of pixels that the list box frame is outset from the
+   * content of the list box.
+   }
+	kThemeMetricListBoxFrameOutset = 6;
+
+  {
+   * This is a deprecated metric.  Don't use it.  It used to describe
+   * how far the focus rect used to draw from a control, but control
+   * focus drawing no longer uses this information to draw its focus.
+   }
+	kThemeMetricFocusRectOutset = 7;
+
+  {
+   * The thickness of the frame drawn by DrawThemeGenericWell.
+   }
+	kThemeMetricImageWellThickness = 8;
+
+  {
+   * The number of pixels a scrollbar should overlap (actually
+   * underlap) any bounding box which surrounds it and scrollable
+   * content. This also includes the window frame when a scrolbar is
+   * along an edge of the window.
+   }
+	kThemeMetricScrollBarOverlap = 9;
+
+  {
+   * The height of the large tab of a tab control.
+   }
+	kThemeMetricLargeTabHeight = 10;
+
+  {
+   * The width of the caps (end pieces) of the large tabs of a tab
+   * control.
+   }
+	kThemeMetricLargeTabCapsWidth = 11;
+
+  {
+   * The amount to add to the tab height (kThemeMetricLargeTabHeight)
+   * to find out the rectangle height to use with the various Tab
+   * drawing primitives. This amount is also the amount that each tab
+   * overlaps the tab pane.
+   }
+	kThemeMetricTabFrameOverlap = 12;
+
+  {
+   * If less than zero, this indicates that the text should be centered
+   * on each tab. If greater than zero, the text should be justified
+   * (according to the system script direction) and the amount is the
+   * offset from the appropriate edge at which the text should start
+   * drawing.
+   }
+	kThemeMetricTabIndentOrStyle = 13;
+
+  {
+   * The amount of space that every tab's drawing rectangle overlaps
+   * the one on either side of it.
+   }
+	kThemeMetricTabOverlap = 14;
+
+  {
+   * The height of the small tab of a tab control.  This includes the
+   * pixels that overlap the tab pane and/or tab pane bar.
+   }
+	kThemeMetricSmallTabHeight = 15;
+
+  {
+   * The width of the caps (end pieces) of the small tabs of a tab
+   * control.
+   }
+	kThemeMetricSmallTabCapsWidth = 16;
+
+  {
+   * The height and the width of the push button control.
+   }
+	kThemeMetricPushButtonHeight = 19;
+
+  {
+   * The height of the list header field of the data browser control.
+   }
+	kThemeMetricListHeaderHeight = 20;
+
+  {
+   * The height of a disclosure triangle control.  This triangle is the
+   * not the center of the disclosure button, but its own control.
+   }
+	kThemeMetricDisclosureTriangleHeight = 25;
+
+  {
+   * The width of a disclosure triangle control.
+   }
+	kThemeMetricDisclosureTriangleWidth = 26;
+
+  {
+   * The height of a little arrows control.
+   }
+	kThemeMetricLittleArrowsHeight = 27;
+
+  {
+   * The width of a little arrows control.
+   }
+	kThemeMetricLittleArrowsWidth = 28;
+
+  {
+   * The height of a popup button control.
+   }
+	kThemeMetricPopupButtonHeight = 30;
+
+  {
+   * The height of a small popup button control.
+   }
+	kThemeMetricSmallPopupButtonHeight = 31;
+
+  {
+   * The height of the large progress bar, not including its shadow.
+   }
+	kThemeMetricLargeProgressBarThickness = 32;
+
+  {
+   * This metric is not used.
+   }
+	kThemeMetricPullDownHeight = 33;
+
+  {
+   * This metric is not used.
+   }
+	kThemeMetricSmallPullDownHeight = 34;
+
+  {
+   * The height of the window grow box control.
+   }
+	kThemeMetricResizeControlHeight = 38;
+
+  {
+   * The width of the window grow box control.
+   }
+	kThemeMetricSmallResizeControlHeight = 39;
+
+  {
+   * The height of the horizontal slider control.
+   }
+	kThemeMetricHSliderHeight = 41;
+
+  {
+   * The height of the tick marks for a horizontal slider control.
+   }
+	kThemeMetricHSliderTickHeight = 42;
+
+  {
+   * The width of the vertical slider control.
+   }
+	kThemeMetricVSliderWidth = 45;
+
+  {
+   * The width of the tick marks for a vertical slider control.
+   }
+	kThemeMetricVSliderTickWidth = 46;
+
+  {
+   * The height of the title bar widgets (grow, close, and zoom boxes)
+   * for a document window.
+   }
+	kThemeMetricTitleBarControlsHeight = 49;
+
+  {
+   * The width of the non-label part of a check box control.
+   }
+	kThemeMetricCheckBoxWidth = 50;
+
+  {
+   * The width of the non-label part of a radio button control.
+   }
+	kThemeMetricRadioButtonWidth = 52;
+
+  {
+   * The height of the normal bar, not including its shadow.
+   }
+	kThemeMetricNormalProgressBarThickness = 58;
+
+  {
+   * The number of pixels of shadow depth drawn below the progress bar.
+   }
+	kThemeMetricProgressBarShadowOutset = 59;
+
+  {
+   * The number of pixels of shadow depth drawn below the small
+   * progress bar.
+   }
+	kThemeMetricSmallProgressBarShadowOutset = 60;
+
+  {
+   * The number of pixels that the content of a primary group box is
+   * from the bounds of the control.
+   }
+	kThemeMetricPrimaryGroupBoxContentInset = 61;
+
+  {
+   * The number of pixels that the content of a secondary group box is
+   * from the bounds of the control.
+   }
+	kThemeMetricSecondaryGroupBoxContentInset = 62;
+
+  {
+   * Width allocated to draw the mark character in a menu.
+   }
+	kThemeMetricMenuMarkColumnWidth = 63;
+
+  {
+   * Width allocated for the mark character in a menu item when the
+   * menu has kMenuAttrExcludesMarkColumn.
+   }
+	kThemeMetricMenuExcludedMarkColumnWidth = 64;
+
+  {
+   * Indent into the interior of the mark column at which the mark
+   * character is drawn.
+   }
+	kThemeMetricMenuMarkIndent = 65;
+
+  {
+   * Whitespace at the leading edge of menu item text.
+   }
+	kThemeMetricMenuTextLeadingEdgeMargin = 66;
+
+  {
+   * Whitespace at the trailing edge of menu item text.
+   }
+	kThemeMetricMenuTextTrailingEdgeMargin = 67;
+
+  {
+   * Width per indent level (set by SetMenuItemIndent) of a menu item.
+   }
+	kThemeMetricMenuIndentWidth = 68;
+
+  {
+   * Whitespace at the trailing edge of a menu icon (if the item also
+   * has text).
+   }
+	kThemeMetricMenuIconTrailingEdgeMargin = 69;
+
+
+{
+ *  Discussion:
+ *    The following metrics are only available in OS X.
+ }
+const
+{
+   * The height of a disclosure button.
+   }
+	kThemeMetricDisclosureButtonHeight = 17;
+
+  {
+   * The height and the width of the round button control.
+   }
+	kThemeMetricRoundButtonSize = 18;
+
+  {
+   * The height of the non-label part of a small check box control.
+   }
+	kThemeMetricSmallCheckBoxHeight = 21;
+
+  {
+   * The width of a disclosure button.
+   }
+	kThemeMetricDisclosureButtonWidth = 22;
+
+  {
+   * The height of a small disclosure button.
+   }
+	kThemeMetricSmallDisclosureButtonHeight = 23;
+
+  {
+   * The width of a small disclosure button.
+   }
+	kThemeMetricSmallDisclosureButtonWidth = 24;
+
+  {
+   * The height (or width if vertical) of a pane splitter.
+   }
+	kThemeMetricPaneSplitterHeight = 29;
+
+  {
+   * The height of the small push button control.
+   }
+	kThemeMetricSmallPushButtonHeight = 35;
+
+  {
+   * The height of the non-label part of a small radio button control.
+   }
+	kThemeMetricSmallRadioButtonHeight = 36;
+
+  {
+   * The height of the relevance indicator control.
+   }
+	kThemeMetricRelevanceIndicatorHeight = 37;
+
+  {
+   * The height and the width of the large round button control.
+   }
+	kThemeMetricLargeRoundButtonSize = 40;
+
+  {
+   * The height of the small, horizontal slider control.
+   }
+	kThemeMetricSmallHSliderHeight = 43;
+
+  {
+   * The height of the tick marks for a small, horizontal slider
+   * control.
+   }
+	kThemeMetricSmallHSliderTickHeight = 44;
+
+  {
+   * The width of the small, vertical slider control.
+   }
+	kThemeMetricSmallVSliderWidth = 47;
+
+  {
+   * The width of the tick marks for a small, vertical slider control.
+   }
+	kThemeMetricSmallVSliderTickWidth = 48;
+
+  {
+   * The width of the non-label part of a small check box control.
+   }
+	kThemeMetricSmallCheckBoxWidth = 51;
+
+  {
+   * The width of the non-label part of a small radio button control.
+   }
+	kThemeMetricSmallRadioButtonWidth = 53;
+
+  {
+   * The minimum width of the thumb of a small, horizontal slider
+   * control.
+   }
+	kThemeMetricSmallHSliderMinThumbWidth = 54;
+
+  {
+   * The minimum width of the thumb of a small, vertical slider control.
+   }
+	kThemeMetricSmallVSliderMinThumbHeight = 55;
+
+  {
+   * The offset of the tick marks from the appropriate side of a small
+   * horizontal slider control.
+   }
+	kThemeMetricSmallHSliderTickOffset = 56;
+
+  {
+   * The offset of the tick marks from the appropriate side of a small
+   * vertical slider control.
+   }
+	kThemeMetricSmallVSliderTickOffset = 57;
+
+
+{
+ *  Discussion:
+ *    The following metrics are only available in Mac OS X 10.3 and
+ *    later.
+ }
+const
+	kThemeMetricComboBoxLargeBottomShadowOffset = 70;
+	kThemeMetricComboBoxLargeRightShadowOffset = 71;
+	kThemeMetricComboBoxSmallBottomShadowOffset = 72;
+	kThemeMetricComboBoxSmallRightShadowOffset = 73;
+	kThemeMetricComboBoxLargeDisclosureWidth = 74;
+	kThemeMetricComboBoxSmallDisclosureWidth = 75;
+	kThemeMetricRoundTextFieldContentInsetLeft = 76;
+	kThemeMetricRoundTextFieldContentInsetRight = 77;
+	kThemeMetricRoundTextFieldContentInsetBottom = 78;
+	kThemeMetricRoundTextFieldContentInsetTop = 79;
+	kThemeMetricRoundTextFieldContentHeight = 80;
+	kThemeMetricComboBoxMiniBottomShadowOffset = 81;
+	kThemeMetricComboBoxMiniDisclosureWidth = 82;
+	kThemeMetricComboBoxMiniRightShadowOffset = 83;
+	kThemeMetricLittleArrowsMiniHeight = 84;
+	kThemeMetricLittleArrowsMiniWidth = 85;
+	kThemeMetricLittleArrowsSmallHeight = 86;
+	kThemeMetricLittleArrowsSmallWidth = 87;
+	kThemeMetricMiniCheckBoxHeight = 88;
+	kThemeMetricMiniCheckBoxWidth = 89;
+	kThemeMetricMiniDisclosureButtonHeight = 90;
+	kThemeMetricMiniDisclosureButtonWidth = 91;
+	kThemeMetricMiniHSliderHeight = 92;
+	kThemeMetricMiniHSliderMinThumbWidth = 93;
+	kThemeMetricMiniHSliderTickHeight = 94;
+	kThemeMetricMiniHSliderTickOffset = 95;
+	kThemeMetricMiniPopupButtonHeight = 96;
+	kThemeMetricMiniPullDownHeight = 97;
+	kThemeMetricMiniPushButtonHeight = 98;
+	kThemeMetricMiniRadioButtonHeight = 99;
+	kThemeMetricMiniRadioButtonWidth = 100;
+	kThemeMetricMiniTabCapsWidth = 101;
+	kThemeMetricMiniTabFrameOverlap = 102;
+	kThemeMetricMiniTabHeight = 103;
+	kThemeMetricMiniTabOverlap = 104;
+	kThemeMetricMiniVSliderMinThumbHeight = 105;
+	kThemeMetricMiniVSliderTickOffset = 106;
+	kThemeMetricMiniVSliderTickWidth = 107;
+	kThemeMetricMiniVSliderWidth = 108;
+	kThemeMetricRoundTextFieldContentInsetWithIconLeft = 109;
+	kThemeMetricRoundTextFieldContentInsetWithIconRight = 110;
+	kThemeMetricRoundTextFieldMiniContentHeight = 111;
+	kThemeMetricRoundTextFieldMiniContentInsetBottom = 112;
+	kThemeMetricRoundTextFieldMiniContentInsetLeft = 113;
+	kThemeMetricRoundTextFieldMiniContentInsetRight = 114;
+	kThemeMetricRoundTextFieldMiniContentInsetTop = 115;
+	kThemeMetricRoundTextFieldMiniContentInsetWithIconLeft = 116;
+	kThemeMetricRoundTextFieldMiniContentInsetWithIconRight = 117;
+	kThemeMetricRoundTextFieldSmallContentHeight = 118;
+	kThemeMetricRoundTextFieldSmallContentInsetBottom = 119;
+	kThemeMetricRoundTextFieldSmallContentInsetLeft = 120;
+	kThemeMetricRoundTextFieldSmallContentInsetRight = 121;
+	kThemeMetricRoundTextFieldSmallContentInsetTop = 122;
+	kThemeMetricRoundTextFieldSmallContentInsetWithIconLeft = 123;
+	kThemeMetricRoundTextFieldSmallContentInsetWithIconRight = 124;
+	kThemeMetricSmallTabFrameOverlap = 125;
+	kThemeMetricSmallTabOverlap = 126;
+
+  {
+   * The height of a small pane splitter. Should only be used in a
+   * window with thick borders, like a metal window.
+   }
+	kThemeMetricSmallPaneSplitterHeight = 127;
+
+
+{
+ *  Discussion:
+ *    The following metrics are only available in Mac OS X 10.4 and
+ *    later.
+ }
+const
+{
+   * The horizontal start offset for the first tick mark on a
+   * horizontal slider.
+   }
+	kThemeMetricHSliderTickOffset = 128;
+
+  {
+   * The vertical start offset for the first tick mark on a vertical
+   * slider.
+   }
+	kThemeMetricVSliderTickOffset = 129;
+
+  {
+   * The minimum thumb height for a thumb on a slider.
+   }
+	kThemeMetricSliderMinThumbHeight = 130;
+	kThemeMetricSliderMinThumbWidth = 131;
+
+  {
+   * The minimum thumb height for a thumb on a scroll bar.
+   }
+	kThemeMetricScrollBarMinThumbHeight = 132;
+
+  {
+   * The minimum thumb width for a thumb on a scroll bar.
+   }
+	kThemeMetricScrollBarMinThumbWidth = 133;
+
+  {
+   * The minimum thumb height for a thumb on a small scroll bar.
+   }
+	kThemeMetricSmallScrollBarMinThumbHeight = 134;
+
+  {
+   * The minimum thumb width for a thumb on a small scroll bar.
+   }
+	kThemeMetricSmallScrollBarMinThumbWidth = 135;
+
+
+type
+	ThemeMetric = UInt32;
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{ Drawing State                                                                            }
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+type
+	ThemeDrawingState = ^SInt32; { an opaque 32-bit type }
+	ThemeDrawingStatePtr = ^ThemeDrawingState;  { when a var xx:ThemeDrawingState parameter can be nil, it is changed to xx: ThemeDrawingStatePtr }
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{ Callback procs                                                                           }
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+type
+	ThemeTabTitleDrawProcPtr = procedure( const (*var*) bounds: Rect; style: ThemeTabStyle; direction: ThemeTabDirection; depth: SInt16; isColorDev: Boolean; userData: UInt32 );
+type
+	ThemeEraseProcPtr = procedure( const (*var*) bounds: Rect; eraseData: UInt32; depth: SInt16; isColorDev: Boolean );
+type
+	ThemeButtonDrawProcPtr = procedure( const (*var*) bounds: Rect; kind: ThemeButtonKind; const (*var*) info: ThemeButtonDrawInfo; userData: UInt32; depth: SInt16; isColorDev: Boolean );
+type
+	WindowTitleDrawingProcPtr = procedure( const (*var*) bounds: Rect; depth: SInt16; colorDevice: Boolean; userData: UInt32 );
+type
+	ThemeIteratorProcPtr = function( const (*var*) inFileName: Str255; resID: SInt16; inThemeSettings: Collection; inUserData: UnivPtr ): Boolean;
+>>>>>>> graemeg/fixes_2_2
 type
 	ThemeTabTitleDrawUPP = ThemeTabTitleDrawProcPtr;
 type
@@ -2830,7 +3658,11 @@ type
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewThemeTabTitleDrawUPP( userRoutine: ThemeTabTitleDrawProcPtr ): ThemeTabTitleDrawUPP; external name '_NewThemeTabTitleDrawUPP';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  NewThemeEraseUPP()
@@ -2841,7 +3673,11 @@ function NewThemeTabTitleDrawUPP( userRoutine: ThemeTabTitleDrawProcPtr ): Theme
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewThemeEraseUPP( userRoutine: ThemeEraseProcPtr ): ThemeEraseUPP; external name '_NewThemeEraseUPP';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  NewThemeButtonDrawUPP()
@@ -2852,7 +3688,11 @@ function NewThemeEraseUPP( userRoutine: ThemeEraseProcPtr ): ThemeEraseUPP; exte
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewThemeButtonDrawUPP( userRoutine: ThemeButtonDrawProcPtr ): ThemeButtonDrawUPP; external name '_NewThemeButtonDrawUPP';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  NewWindowTitleDrawingUPP()
@@ -2863,7 +3703,11 @@ function NewThemeButtonDrawUPP( userRoutine: ThemeButtonDrawProcPtr ): ThemeButt
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewWindowTitleDrawingUPP( userRoutine: WindowTitleDrawingProcPtr ): WindowTitleDrawingUPP; external name '_NewWindowTitleDrawingUPP';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  NewThemeIteratorUPP()
@@ -2874,7 +3718,11 @@ function NewWindowTitleDrawingUPP( userRoutine: WindowTitleDrawingProcPtr ): Win
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewThemeIteratorUPP( userRoutine: ThemeIteratorProcPtr ): ThemeIteratorUPP; external name '_NewThemeIteratorUPP';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  DisposeThemeTabTitleDrawUPP()
@@ -2885,7 +3733,11 @@ function NewThemeIteratorUPP( userRoutine: ThemeIteratorProcPtr ): ThemeIterator
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeThemeTabTitleDrawUPP( userUPP: ThemeTabTitleDrawUPP ); external name '_DisposeThemeTabTitleDrawUPP';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  DisposeThemeEraseUPP()
@@ -2896,7 +3748,11 @@ procedure DisposeThemeTabTitleDrawUPP( userUPP: ThemeTabTitleDrawUPP ); external
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeThemeEraseUPP( userUPP: ThemeEraseUPP ); external name '_DisposeThemeEraseUPP';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  DisposeThemeButtonDrawUPP()
@@ -2907,7 +3763,11 @@ procedure DisposeThemeEraseUPP( userUPP: ThemeEraseUPP ); external name '_Dispos
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeThemeButtonDrawUPP( userUPP: ThemeButtonDrawUPP ); external name '_DisposeThemeButtonDrawUPP';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  DisposeWindowTitleDrawingUPP()
@@ -2918,7 +3778,11 @@ procedure DisposeThemeButtonDrawUPP( userUPP: ThemeButtonDrawUPP ); external nam
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeWindowTitleDrawingUPP( userUPP: WindowTitleDrawingUPP ); external name '_DisposeWindowTitleDrawingUPP';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  DisposeThemeIteratorUPP()
@@ -2929,7 +3793,11 @@ procedure DisposeWindowTitleDrawingUPP( userUPP: WindowTitleDrawingUPP ); extern
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeThemeIteratorUPP( userUPP: ThemeIteratorUPP ); external name '_DisposeThemeIteratorUPP';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  InvokeThemeTabTitleDrawUPP()
@@ -2939,8 +3807,13 @@ procedure DisposeThemeIteratorUPP( userUPP: ThemeIteratorUPP ); external name '_
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 procedure InvokeThemeTabTitleDrawUPP( const (*var*) bounds: Rect; style: ThemeTabStyle; direction: ThemeTabDirection; depth: SInt16; isColorDev: Boolean; userData: URefCon; userUPP: ThemeTabTitleDrawUPP ); external name '_InvokeThemeTabTitleDrawUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+procedure InvokeThemeTabTitleDrawUPP( const (*var*) bounds: Rect; style: ThemeTabStyle; direction: ThemeTabDirection; depth: SInt16; isColorDev: Boolean; userData: UInt32; userUPP: ThemeTabTitleDrawUPP ); external name '_InvokeThemeTabTitleDrawUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  InvokeThemeEraseUPP()
@@ -2950,8 +3823,13 @@ procedure InvokeThemeTabTitleDrawUPP( const (*var*) bounds: Rect; style: ThemeTa
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 procedure InvokeThemeEraseUPP( const (*var*) bounds: Rect; eraseData: URefCon; depth: SInt16; isColorDev: Boolean; userUPP: ThemeEraseUPP ); external name '_InvokeThemeEraseUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+procedure InvokeThemeEraseUPP( const (*var*) bounds: Rect; eraseData: UInt32; depth: SInt16; isColorDev: Boolean; userUPP: ThemeEraseUPP ); external name '_InvokeThemeEraseUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  InvokeThemeButtonDrawUPP()
@@ -2961,8 +3839,13 @@ procedure InvokeThemeEraseUPP( const (*var*) bounds: Rect; eraseData: URefCon; d
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 procedure InvokeThemeButtonDrawUPP( const (*var*) bounds: Rect; kind: ThemeButtonKind; const (*var*) info: ThemeButtonDrawInfo; userData: URefCon; depth: SInt16; isColorDev: Boolean; userUPP: ThemeButtonDrawUPP ); external name '_InvokeThemeButtonDrawUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+procedure InvokeThemeButtonDrawUPP( const (*var*) bounds: Rect; kind: ThemeButtonKind; const (*var*) info: ThemeButtonDrawInfo; userData: UInt32; depth: SInt16; isColorDev: Boolean; userUPP: ThemeButtonDrawUPP ); external name '_InvokeThemeButtonDrawUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  InvokeWindowTitleDrawingUPP()
@@ -2972,14 +3855,20 @@ procedure InvokeThemeButtonDrawUPP( const (*var*) bounds: Rect; kind: ThemeButto
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 procedure InvokeWindowTitleDrawingUPP( const (*var*) bounds: Rect; depth: SInt16; colorDevice: Boolean; userData: URefCon; userUPP: WindowTitleDrawingUPP ); external name '_InvokeWindowTitleDrawingUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+procedure InvokeWindowTitleDrawingUPP( const (*var*) bounds: Rect; depth: SInt16; colorDevice: Boolean; userData: UInt32; userUPP: WindowTitleDrawingUPP ); external name '_InvokeWindowTitleDrawingUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  InvokeThemeIteratorUPP()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
@@ -3007,6 +3896,21 @@ type
  }
 type
 	MenuItemDrawingProcPtr = procedure( const (*var*) inBounds: Rect; inDepth: SInt16; inIsColorDevice: Boolean; inUserData: SRefCon );
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeThemeIteratorUPP( const (*var*) inFileName: Str255; resID: SInt16; inThemeSettings: Collection; inUserData: UnivPtr; userUPP: ThemeIteratorUPP ): Boolean; external name '_InvokeThemeIteratorUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{ Menu Drawing callbacks                                                           }
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+type
+	MenuTitleDrawingProcPtr = procedure( const (*var*) inBounds: Rect; inDepth: SInt16; inIsColorDevice: Boolean; inUserData: SInt32 );
+type
+	MenuItemDrawingProcPtr = procedure( const (*var*) inBounds: Rect; inDepth: SInt16; inIsColorDevice: Boolean; inUserData: SInt32 );
+>>>>>>> graemeg/fixes_2_2
 type
 	MenuTitleDrawingUPP = MenuTitleDrawingProcPtr;
 type
@@ -3020,7 +3924,11 @@ type
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewMenuTitleDrawingUPP( userRoutine: MenuTitleDrawingProcPtr ): MenuTitleDrawingUPP; external name '_NewMenuTitleDrawingUPP';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  NewMenuItemDrawingUPP()
@@ -3031,7 +3939,11 @@ function NewMenuTitleDrawingUPP( userRoutine: MenuTitleDrawingProcPtr ): MenuTit
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewMenuItemDrawingUPP( userRoutine: MenuItemDrawingProcPtr ): MenuItemDrawingUPP; external name '_NewMenuItemDrawingUPP';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  DisposeMenuTitleDrawingUPP()
@@ -3042,7 +3954,11 @@ function NewMenuItemDrawingUPP( userRoutine: MenuItemDrawingProcPtr ): MenuItemD
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeMenuTitleDrawingUPP( userUPP: MenuTitleDrawingUPP ); external name '_DisposeMenuTitleDrawingUPP';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  DisposeMenuItemDrawingUPP()
@@ -3053,7 +3969,11 @@ procedure DisposeMenuTitleDrawingUPP( userUPP: MenuTitleDrawingUPP ); external n
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeMenuItemDrawingUPP( userUPP: MenuItemDrawingUPP ); external name '_DisposeMenuItemDrawingUPP';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  InvokeMenuTitleDrawingUPP()
@@ -3063,8 +3983,13 @@ procedure DisposeMenuItemDrawingUPP( userUPP: MenuItemDrawingUPP ); external nam
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 procedure InvokeMenuTitleDrawingUPP( const (*var*) inBounds: Rect; inDepth: SInt16; inIsColorDevice: Boolean; inUserData: SRefCon; userUPP: MenuTitleDrawingUPP ); external name '_InvokeMenuTitleDrawingUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+procedure InvokeMenuTitleDrawingUPP( const (*var*) inBounds: Rect; inDepth: SInt16; inIsColorDevice: Boolean; inUserData: SInt32; userUPP: MenuTitleDrawingUPP ); external name '_InvokeMenuTitleDrawingUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  InvokeMenuItemDrawingUPP()
@@ -3074,13 +3999,19 @@ procedure InvokeMenuTitleDrawingUPP( const (*var*) inBounds: Rect; inDepth: SInt
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 procedure InvokeMenuItemDrawingUPP( const (*var*) inBounds: Rect; inDepth: SInt16; inIsColorDevice: Boolean; inUserData: SRefCon; userUPP: MenuItemDrawingUPP ); external name '_InvokeMenuItemDrawingUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+procedure InvokeMenuItemDrawingUPP( const (*var*) inBounds: Rect; inDepth: SInt16; inIsColorDevice: Boolean; inUserData: SInt32; userUPP: MenuItemDrawingUPP ); external name '_InvokeMenuItemDrawingUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  Appearance Manager APIs                                                         }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 { Registering Appearance-Savvy Applications }
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 {
  *  RegisterAppearanceClient()   *** DEPRECATED ***
@@ -3090,16 +4021,25 @@ procedure InvokeMenuItemDrawingUPP( const (*var*) inBounds: Rect; inDepth: SInt1
  *  
  *  Summary:
  *    Registers a process as a client of the Appearance Manager.
+=======
+{
+ *  RegisterAppearanceClient()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function RegisterAppearanceClient: OSStatus; external name '_RegisterAppearanceClient';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3111,16 +4051,28 @@ function RegisterAppearanceClient: OSStatus; external name '_RegisterAppearanceC
  *  
  *  Summary:
  *    Unregisters a process as a client of the Appearance Manager.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  UnregisterAppearanceClient()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function UnregisterAppearanceClient: OSStatus; external name '_UnregisterAppearanceClient';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3133,17 +4085,32 @@ function UnregisterAppearanceClient: OSStatus; external name '_UnregisterAppeara
  *  Summary:
  *    Indicates whether a process is registered with the Appearance
  *    Manager.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  IsAppearanceClient()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function IsAppearanceClient( const (*var*) process: ProcessSerialNumber ): Boolean; external name '_IsAppearanceClient';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {****************************************************************************
@@ -3159,6 +4126,7 @@ function IsAppearanceClient( const (*var*) process: ProcessSerialNumber ): Boole
 ****************************************************************************}
 
 {
+<<<<<<< HEAD
  *  SetThemePen()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -3168,16 +4136,24 @@ function IsAppearanceClient( const (*var*) process: ProcessSerialNumber ): Boole
  *  Summary:
  *    Sets the foreground color and/or pen pattern of the current
  *    GrafPort to allow drawing with a specified theme brush.
+=======
+ *  SetThemePen()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function SetThemePen( inBrush: ThemeBrush; inDepth: SInt16; inIsColorDevice: Boolean ): OSStatus; external name '_SetThemePen';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3191,16 +4167,28 @@ function SetThemePen( inBrush: ThemeBrush; inDepth: SInt16; inIsColorDevice: Boo
  *  Summary:
  *    Sets the background color and/or fill pattern of the current
  *    GrafPort to allow drawing with a specified theme brush.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  SetThemeBackground()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function SetThemeBackground( inBrush: ThemeBrush; inDepth: SInt16; inIsColorDevice: Boolean ): OSStatus; external name '_SetThemeBackground';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3214,16 +4202,28 @@ function SetThemeBackground( inBrush: ThemeBrush; inDepth: SInt16; inIsColorDevi
  *  Summary:
  *    Sets the foreground color and/or pen pattern of the current
  *    GrafPort to allow drawing with a specified theme text color.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  SetThemeTextColor()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function SetThemeTextColor( inColor: ThemeTextColor; inDepth: SInt16; inIsColorDevice: Boolean ): OSStatus; external name '_SetThemeTextColor';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3236,16 +4236,32 @@ function SetThemeTextColor( inColor: ThemeTextColor; inDepth: SInt16; inIsColorD
  *  
  *  Summary:
  *    Draws a window header theme primitive.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  SetThemeWindowBackground() has moved to MacWindows.h
+ }
+{ Window Placards, Headers and Frames }
+{
+ *  DrawThemeWindowHeader()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function DrawThemeWindowHeader( const (*var*) inRect: Rect; inState: ThemeDrawState ): OSStatus; external name '_DrawThemeWindowHeader';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3258,16 +4274,28 @@ function DrawThemeWindowHeader( const (*var*) inRect: Rect; inState: ThemeDrawSt
  *  Summary:
  *    Draws a window header theme primitive that is suitable for use at
  *    the top of a list view.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeWindowListViewHeader()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function DrawThemeWindowListViewHeader( const (*var*) inRect: Rect; inState: ThemeDrawState ): OSStatus; external name '_DrawThemeWindowListViewHeader';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3279,16 +4307,28 @@ function DrawThemeWindowListViewHeader( const (*var*) inRect: Rect; inState: The
  *  
  *  Summary:
  *    Draws a placard theme primitive.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemePlacard()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function DrawThemePlacard( const (*var*) inRect: Rect; inState: ThemeDrawState ): OSStatus; external name '_DrawThemePlacard';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3301,16 +4341,28 @@ function DrawThemePlacard( const (*var*) inRect: Rect; inState: ThemeDrawState )
  *  Summary:
  *    Draws a frame theme primitive suitable for use around an edit
  *    text control.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeEditTextFrame()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function DrawThemeEditTextFrame( const (*var*) inRect: Rect; inState: ThemeDrawState ): OSStatus; external name '_DrawThemeEditTextFrame';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3322,21 +4374,37 @@ function DrawThemeEditTextFrame( const (*var*) inRect: Rect; inState: ThemeDrawS
  *  
  *  Summary:
  *    Draws a frame theme primitive suitable for use around a list box.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeListBoxFrame()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function DrawThemeListBoxFrame( const (*var*) inRect: Rect; inState: ThemeDrawState ): OSStatus; external name '_DrawThemeListBoxFrame';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 { Keyboard Focus Drawing }
 {
+<<<<<<< HEAD
  *  DrawThemeFocusRect()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -3348,21 +4416,33 @@ function DrawThemeListBoxFrame( const (*var*) inRect: Rect; inState: ThemeDrawSt
  *  
  *  Summary:
  *    Draws a focus ring around a specified rectangle.
+=======
+ *  DrawThemeFocusRect()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function DrawThemeFocusRect( const (*var*) inRect: Rect; inHasFocus: Boolean ): OSStatus; external name '_DrawThemeFocusRect';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 { Dialog Group Boxes and Separators }
 {
+<<<<<<< HEAD
  *  DrawThemePrimaryGroup()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -3370,16 +4450,24 @@ function DrawThemeFocusRect( const (*var*) inRect: Rect; inHasFocus: Boolean ): 
  *  
  *  Summary:
  *    Draws a primary group theme primitive.
+=======
+ *  DrawThemePrimaryGroup()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function DrawThemePrimaryGroup( const (*var*) inRect: Rect; inState: ThemeDrawState ): OSStatus; external name '_DrawThemePrimaryGroup';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3391,16 +4479,28 @@ function DrawThemePrimaryGroup( const (*var*) inRect: Rect; inState: ThemeDrawSt
  *  
  *  Summary:
  *    Draws a secondary group theme primitive.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeSecondaryGroup()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function DrawThemeSecondaryGroup( const (*var*) inRect: Rect; inState: ThemeDrawState ): OSStatus; external name '_DrawThemeSecondaryGroup';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3412,16 +4512,28 @@ function DrawThemeSecondaryGroup( const (*var*) inRect: Rect; inState: ThemeDraw
  *  
  *  Summary:
  *    Draws a separator theme primitive.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeSeparator()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function DrawThemeSeparator( const (*var*) inRect: Rect; inState: ThemeDrawState ): OSStatus; external name '_DrawThemeSeparator';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3435,16 +4547,31 @@ function DrawThemeSeparator( const (*var*) inRect: Rect; inState: ThemeDrawState
  *  
  *  Summary:
  *    Draws a modeless dialog window frame theme primitive.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ BEGIN APPEARANCE 1.0.1 ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{ The following Appearance Manager APIs are only available }
+{ in Appearance 1.0.1 or later                             }
+{
+ *  DrawThemeModelessDialogFrame()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function DrawThemeModelessDialogFrame( const (*var*) inRect: Rect; inState: ThemeDrawState ): OSStatus; external name '_DrawThemeModelessDialogFrame';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3456,16 +4583,28 @@ function DrawThemeModelessDialogFrame( const (*var*) inRect: Rect; inState: Them
  *  
  *  Summary:
  *    Draws an image well theme primitive.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeGenericWell()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function DrawThemeGenericWell( const (*var*) inRect: Rect; inState: ThemeDrawState; inFillCenter: Boolean ): OSStatus; external name '_DrawThemeGenericWell';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3481,16 +4620,28 @@ function DrawThemeGenericWell( const (*var*) inRect: Rect; inState: ThemeDrawSta
  *  
  *  Summary:
  *    Draws a focus ring around a specified region.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeFocusRegion()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function DrawThemeFocusRegion( inRegion: RgnHandle; inHasFocus: Boolean ): OSStatus; external name '_DrawThemeFocusRegion';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3504,16 +4655,28 @@ function DrawThemeFocusRegion( inRegion: RgnHandle; inHasFocus: Boolean ): OSSta
  *  Summary:
  *    Indicates whether the current theme would be drawn in color or
  *    black and white.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  IsThemeInColor()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function IsThemeInColor( inDepth: SInt16; inIsColorDevice: Boolean ): Boolean; external name '_IsThemeInColor';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3531,16 +4694,30 @@ function IsThemeInColor( inDepth: SInt16; inIsColorDevice: Boolean ): Boolean; e
  *    GetThemeAccentColors will only work in the platinum theme on Mac
  *    OS 8.x and 9.x. It returns an error on Mac OS X, since the Aqua
  *    theme does not support accent colors.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ IMPORTANT: GetThemeAccentColors will only work in the platinum theme. Any other theme will }
+{ most likely return an error }
+{
+ *  GetThemeAccentColors()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function GetThemeAccentColors( var outColors: CTabHandle ): OSStatus; external name '_GetThemeAccentColors';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3552,16 +4729,28 @@ function GetThemeAccentColors( var outColors: CTabHandle ): OSStatus; external n
  *  
  *  Summary:
  *    Draws a menubar background theme primitive.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeMenuBarBackground()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function DrawThemeMenuBarBackground( const (*var*) inBounds: Rect; inState: ThemeMenuBarState; inAttributes: UInt32 ): OSStatus; external name '_DrawThemeMenuBarBackground';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3573,22 +4762,39 @@ function DrawThemeMenuBarBackground( const (*var*) inBounds: Rect; inState: Them
  *  
  *  Summary:
  *    Draws a menu title theme primitive.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeMenuTitle()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function DrawThemeMenuTitle( const (*var*) inMenuBarRect: Rect; const (*var*) inTitleRect: Rect; inState: ThemeMenuState; inAttributes: UInt32; inTitleProc: MenuTitleDrawingUPP { can be NULL }; inTitleData: URefCon ): OSStatus; external name '_DrawThemeMenuTitle';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
+ }
+function DrawThemeMenuTitle( const (*var*) inMenuBarRect: Rect; const (*var*) inTitleRect: Rect; inState: ThemeMenuState; inAttributes: UInt32; inTitleProc: MenuTitleDrawingUPP { can be NULL }; inTitleData: UInt32 ): OSStatus; external name '_DrawThemeMenuTitle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  GetThemeMenuBarHeight()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Returns the height of the menubar, in points.
  *  
@@ -3602,6 +4808,13 @@ function DrawThemeMenuTitle( const (*var*) inMenuBarRect: Rect; const (*var*) in
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
@@ -3610,6 +4823,7 @@ function GetThemeMenuBarHeight( var outHeight: SInt16 ): OSStatus; external name
 
 
 {
+<<<<<<< HEAD
  *  DrawThemeMenuBackground()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -3617,16 +4831,24 @@ function GetThemeMenuBarHeight( var outHeight: SInt16 ): OSStatus; external name
  *  
  *  Summary:
  *    Draws a menu background theme primitive.
+=======
+ *  DrawThemeMenuBackground()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function DrawThemeMenuBackground( const (*var*) inMenuRect: Rect; inMenuType: ThemeMenuType ): OSStatus; external name '_DrawThemeMenuBackground';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3638,11 +4860,34 @@ function DrawThemeMenuBackground( const (*var*) inMenuRect: Rect; inMenuType: Th
  *  
  *  Summary:
  *    Constructs a region that covers the entire area of a menu.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeMenuBackgroundRegion()
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
+ }
+function GetThemeMenuBackgroundRegion( const (*var*) inMenuRect: Rect; menuType: ThemeMenuType; region: RgnHandle ): OSStatus; external name '_GetThemeMenuBackgroundRegion';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeMenuItem()
+>>>>>>> graemeg/fixes_2_2
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
@@ -3659,11 +4904,39 @@ function GetThemeMenuBackgroundRegion( const (*var*) inMenuRect: Rect; menuType:
  *  
  *  Summary:
  *    Draws a menu item theme primitive.
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
+ }
+function DrawThemeMenuItem( const (*var*) inMenuRect: Rect; const (*var*) inItemRect: Rect; inVirtualMenuTop: SInt16; inVirtualMenuBottom: SInt16; inState: ThemeMenuState; inItemType: ThemeMenuItemType; inDrawProc: MenuItemDrawingUPP { can be NULL }; inUserData: UInt32 ): OSStatus; external name '_DrawThemeMenuItem';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeMenuSeparator()
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
+ }
+function DrawThemeMenuSeparator( const (*var*) inItemRect: Rect ): OSStatus; external name '_DrawThemeMenuSeparator';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeMenuSeparatorHeight()
+>>>>>>> graemeg/fixes_2_2
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
@@ -3680,17 +4953,53 @@ function DrawThemeMenuItem( const (*var*) inMenuRect: Rect; const (*var*) inItem
  *  
  *  Summary:
  *    Draws a menu item separator theme primitive.
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
+ }
+function GetThemeMenuSeparatorHeight( var outHeight: SInt16 ): OSStatus; external name '_GetThemeMenuSeparatorHeight';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeMenuItemExtra()
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
+ }
+function GetThemeMenuItemExtra( inItemType: ThemeMenuItemType; var outHeight: SInt16; var outWidth: SInt16 ): OSStatus; external name '_GetThemeMenuItemExtra';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeMenuTitleExtra()
+>>>>>>> graemeg/fixes_2_2
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
 function DrawThemeMenuSeparator( const (*var*) inItemRect: Rect ): OSStatus; external name '_DrawThemeMenuSeparator';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
+ }
+function GetThemeMenuTitleExtra( var outWidth: SInt16; inIsSquished: Boolean ): OSStatus; external name '_GetThemeMenuTitleExtra';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ BEGIN APPEARANCE 1.1 ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -3701,6 +5010,7 @@ function DrawThemeMenuSeparator( const (*var*) inItemRect: Rect ): OSStatus; ext
 {
  *  GetTheme()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Returns information about the current theme.
  *  
@@ -3717,6 +5027,13 @@ function DrawThemeMenuSeparator( const (*var*) inItemRect: Rect ): OSStatus; ext
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
@@ -3725,6 +5042,7 @@ function GetTheme( ioCollection: Collection ): OSStatus; external name '_GetThem
 
 
 {
+<<<<<<< HEAD
  *  SetTheme()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -3732,16 +5050,24 @@ function GetTheme( ioCollection: Collection ): OSStatus; external name '_GetThem
  *  
  *  Summary:
  *    Sets information about the current theme.
+=======
+ *  SetTheme()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function SetTheme( ioCollection: Collection ): OSStatus; external name '_SetTheme';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3754,21 +5080,38 @@ function SetTheme( ioCollection: Collection ): OSStatus; external name '_SetThem
  *  
  *  Summary:
  *    Iterates over all known themes.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  IterateThemes()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function IterateThemes( inProc: ThemeIteratorUPP; inUserData: PRefCon { can be NULL } ): OSStatus; external name '_IterateThemes';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
+ }
+function IterateThemes( inProc: ThemeIteratorUPP; inUserData: UnivPtr { can be NULL } ): OSStatus; external name '_IterateThemes';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ TABS ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {
+<<<<<<< HEAD
  *  DrawThemeTabPane()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -3776,16 +5119,24 @@ function IterateThemes( inProc: ThemeIteratorUPP; inUserData: PRefCon { can be N
  *  
  *  Summary:
  *    Draws a tab pane theme primitive.
+=======
+ *  DrawThemeTabPane()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function DrawThemeTabPane( const (*var*) inRect: Rect; inState: ThemeDrawState ): OSStatus; external name '_DrawThemeTabPane';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3797,11 +5148,19 @@ function DrawThemeTabPane( const (*var*) inRect: Rect; inState: ThemeDrawState )
  *  
  *  Summary:
  *    Draws a tab theme primitive.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeTab()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
@@ -3818,23 +5177,44 @@ function DrawThemeTab( const (*var*) inRect: Rect; inStyle: ThemeTabStyle; inDir
  *  
  *  Summary:
  *    Constructs a region that covers the area of a tab.
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
+ }
+function DrawThemeTab( const (*var*) inRect: Rect; inStyle: ThemeTabStyle; inDirection: ThemeTabDirection; labelProc: ThemeTabTitleDrawUPP { can be NULL }; userData: UInt32 ): OSStatus; external name '_DrawThemeTab';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeTabRegion()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function GetThemeTabRegion( const (*var*) inRect: Rect; inStyle: ThemeTabStyle; inDirection: ThemeTabDirection; ioRgn: RgnHandle ): OSStatus; external name '_GetThemeTabRegion';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ CURSORS ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {
  *  SetThemeCursor()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Sets the current cursor to a specified theme-compliant cursor.
  *  
@@ -3848,6 +5228,13 @@ function GetThemeTabRegion( const (*var*) inRect: Rect; inStyle: ThemeTabStyle; 
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
@@ -3858,6 +5245,7 @@ function SetThemeCursor( inCursor: ThemeCursor ): OSStatus; external name '_SetT
 {
  *  SetAnimatedThemeCursor()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Sets the current cursor to the next frame of a specified
  *    theme-compliant cursor.
@@ -3878,6 +5266,13 @@ function SetThemeCursor( inCursor: ThemeCursor ): OSStatus; external name '_SetT
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
@@ -3889,6 +5284,7 @@ function SetAnimatedThemeCursor( inCursor: ThemeCursor; inAnimationStep: UInt32 
 {
  *  GetThemeScrollBarThumbStyle()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Retrieves the current scrollbar thumb style, which may be
  *    proportional or non-proportional.
@@ -3903,6 +5299,13 @@ function SetAnimatedThemeCursor( inCursor: ThemeCursor; inAnimationStep: UInt32 
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
@@ -3913,6 +5316,7 @@ function GetThemeScrollBarThumbStyle( var outStyle: ThemeScrollBarThumbStyle ): 
 {
  *  GetThemeScrollBarArrowStyle()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Retrieves the current scrollbar arrow style. Arrows may be single
  *    at each end of the scrollbar, double at one end, or double at
@@ -3928,6 +5332,13 @@ function GetThemeScrollBarThumbStyle( var outStyle: ThemeScrollBarThumbStyle ): 
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
@@ -3938,6 +5349,7 @@ function GetThemeScrollBarArrowStyle( var outStyle: ThemeScrollBarArrowStyle ): 
 {
  *  GetThemeCheckBoxStyle()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Retrieves the current checkbox style, which may use an X or a
  *    checkmark.
@@ -3952,6 +5364,13 @@ function GetThemeScrollBarArrowStyle( var outStyle: ThemeScrollBarArrowStyle ): 
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
@@ -3961,6 +5380,7 @@ function GetThemeCheckBoxStyle( var outStyle: ThemeCheckBoxStyle ): OSStatus; ex
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ FONTS/TEXT ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {
+<<<<<<< HEAD
  *  UseThemeFont()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -3969,16 +5389,24 @@ function GetThemeCheckBoxStyle( var outStyle: ThemeCheckBoxStyle ): OSStatus; ex
  *  Summary:
  *    Sets the font of the current GrafPort to allow drawing with a
  *    specified theme font.
+=======
+ *  UseThemeFont()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function UseThemeFont( inFontID: ThemeFontID; inScript: ScriptCode ): OSStatus; external name '_UseThemeFont';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -3992,16 +5420,28 @@ function UseThemeFont( inFontID: ThemeFontID; inScript: ScriptCode ): OSStatus; 
  *  Summary:
  *    Retrieves the QuickDraw font name, size, and style for a
  *    specified theme font.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeFont()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function GetThemeFont( inFontID: ThemeFontID; inScript: ScriptCode; outFontName: StringPtr { can be NULL }; var outFontSize: SInt16; var outStyle: Style ): OSStatus; external name '_GetThemeFont';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4010,6 +5450,13 @@ function GetThemeFont( inFontID: ThemeFontID; inScript: ScriptCode; outFontName:
  *  
  *  Deprecated:
  *    On Mac OS X 10.3 and later, use HIThemeDrawTextBox.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeTextBox()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Draws text into the area you specify.
@@ -4086,6 +5533,7 @@ function GetThemeFont( inFontID: ThemeFontID; inScript: ScriptCode; outFontName:
  *      parameter is ignored.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -4101,6 +5549,18 @@ function DrawThemeTextBox( inString: CFStringRef; inFontID: ThemeFontID; inState
  *    On Mac OS X 10.3 and later, use HIThemeGetTextDimensions or
  *    HIThemeDrawTextBox. There is currently no replacement API that
  *    actually alters the string.
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   not available
+ }
+function DrawThemeTextBox( inString: CFStringRef; inFontID: ThemeFontID; inState: ThemeDrawState; inWrapToWidth: Boolean; const (*var*) inBoundingBox: Rect; inJust: SInt16; inContext: UnivPtr ): OSStatus; external name '_DrawThemeTextBox';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  TruncateThemeText()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Truncates text to fit within the width you specify.
@@ -4150,11 +5610,16 @@ function DrawThemeTextBox( inString: CFStringRef; inFontID: ThemeFontID; inState
  *      string was not (and did not need to be) truncated.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
 function TruncateThemeText( inString: CFMutableStringRef; inFontID: ThemeFontID; inState: ThemeDrawState; inPixelWidthLimit: SInt16; inTruncWhere: TruncCode; outTruncated: BooleanPtr { can be NULL } ): OSStatus; external name '_TruncateThemeText';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4163,6 +5628,13 @@ function TruncateThemeText( inString: CFMutableStringRef; inFontID: ThemeFontID;
  *  
  *  Deprecated:
  *    On Mac OS X 10.3 and later, use HIThemeGetTextDimensions.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeTextDimensions()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Tells you the height, width, and baseline for a string.
@@ -4217,12 +5689,20 @@ function TruncateThemeText( inString: CFMutableStringRef; inFontID: ThemeFontID;
  *      if you don't want this information.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
 function GetThemeTextDimensions( inString: CFStringRef; inFontID: ThemeFontID; inState: ThemeDrawState; inWrapToWidth: Boolean; var ioBounds: Point; outBaseline: SInt16Ptr { can be NULL } ): OSStatus; external name '_GetThemeTextDimensions';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -4265,7 +5745,11 @@ function GetThemeTextDimensions( inString: CFStringRef; inFontID: ThemeFontID; i
  *      will either be positive values or zero.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -4275,6 +5759,7 @@ function GetThemeTextShadowOutset( inFontID: ThemeFontID; inState: ThemeDrawStat
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ TRACKS ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {
+<<<<<<< HEAD
  *  DrawThemeTrack()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -4282,11 +5767,15 @@ function GetThemeTextShadowOutset( inFontID: ThemeFontID; inState: ThemeDrawStat
  *  
  *  Summary:
  *    Draws a track theme primitive, such as a slider or scrollbar.
+=======
+ *  DrawThemeTrack()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
@@ -4303,16 +5792,33 @@ function DrawThemeTrack( const (*var*) drawInfo: ThemeTrackDrawInfo; rgnGhost: R
  *  
  *  Summary:
  *    Determines the part of a track that is is under a specified point.
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
+ }
+function DrawThemeTrack( const (*var*) drawInfo: ThemeTrackDrawInfo; rgnGhost: RgnHandle { can be NULL }; eraseProc: ThemeEraseUPP { can be NULL }; eraseData: UInt32 ): OSStatus; external name '_DrawThemeTrack';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  HitTestThemeTrack()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function HitTestThemeTrack( const (*var*) drawInfo: ThemeTrackDrawInfo; mousePoint: Point; var partHit: AppearancePartCode ): Boolean; external name '_HitTestThemeTrack';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4324,16 +5830,28 @@ function HitTestThemeTrack( const (*var*) drawInfo: ThemeTrackDrawInfo; mousePoi
  *  
  *  Summary:
  *    Retrieves the bounds of a track theme primitive.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeTrackBounds()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function GetThemeTrackBounds( const (*var*) drawInfo: ThemeTrackDrawInfo; var bounds: Rect ): OSStatus; external name '_GetThemeTrackBounds';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4361,16 +5879,28 @@ function GetThemeTrackBounds( const (*var*) drawInfo: ThemeTrackDrawInfo; var bo
 =======
  *    Constructs a region that covers the ara of a track thumb.
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeTrackThumbRgn()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function GetThemeTrackThumbRgn( const (*var*) drawInfo: ThemeTrackDrawInfo; thumbRgn: RgnHandle ): OSStatus; external name '_GetThemeTrackThumbRgn';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4382,16 +5912,28 @@ function GetThemeTrackThumbRgn( const (*var*) drawInfo: ThemeTrackDrawInfo; thum
  *  
  *  Summary:
  *    Retrieves the bounds of a track dragging area.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeTrackDragRect()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function GetThemeTrackDragRect( const (*var*) drawInfo: ThemeTrackDrawInfo; var dragRect: Rect ): OSStatus; external name '_GetThemeTrackDragRect';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4403,11 +5945,19 @@ function GetThemeTrackDragRect( const (*var*) drawInfo: ThemeTrackDrawInfo; var 
  *  
  *  Summary:
  *    Draws the tick marks for a track theme primitive.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeTrackTickMarks()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
@@ -4426,16 +5976,33 @@ function DrawThemeTrackTickMarks( const (*var*) drawInfo: ThemeTrackDrawInfo; nu
  *  Summary:
  *    Retrieves a track's thumb position based on its offset in the
  *    track bounds.
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
+ }
+function DrawThemeTrackTickMarks( const (*var*) drawInfo: ThemeTrackDrawInfo; numTicks: ItemCount; eraseProc: ThemeEraseUPP { can be NULL }; eraseData: UInt32 ): OSStatus; external name '_DrawThemeTrackTickMarks';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeTrackThumbPositionFromOffset()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function GetThemeTrackThumbPositionFromOffset( const (*var*) drawInfo: ThemeTrackDrawInfo; thumbOffset: Point; var relativePosition: SInt32 ): OSStatus; external name '_GetThemeTrackThumbPositionFromOffset';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4449,16 +6016,28 @@ function GetThemeTrackThumbPositionFromOffset( const (*var*) drawInfo: ThemeTrac
  *  Summary:
  *    Retrieves a track's thumb position based on a region covering the
  *    thumb.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeTrackThumbPositionFromRegion()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function GetThemeTrackThumbPositionFromRegion( const (*var*) drawInfo: ThemeTrackDrawInfo; thumbRgn: RgnHandle; var relativePosition: SInt32 ): OSStatus; external name '_GetThemeTrackThumbPositionFromRegion';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4471,21 +6050,37 @@ function GetThemeTrackThumbPositionFromRegion( const (*var*) drawInfo: ThemeTrac
  *  Summary:
  *    Retrieves the value that a track would have based on a thumb
  *    position.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeTrackLiveValue()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function GetThemeTrackLiveValue( const (*var*) drawInfo: ThemeTrackDrawInfo; relativePosition: SInt32; var value: SInt32 ): OSStatus; external name '_GetThemeTrackLiveValue';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ SCROLLBAR ARROWS ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {
+<<<<<<< HEAD
  *  DrawThemeScrollBarArrows()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -4495,16 +6090,24 @@ function GetThemeTrackLiveValue( const (*var*) drawInfo: ThemeTrackDrawInfo; rel
  *  Summary:
  *    Draws the arrows at each or both ends of a scrollbar theme
  *    primitive.
+=======
+ *  DrawThemeScrollBarArrows()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function DrawThemeScrollBarArrows( const (*var*) bounds: Rect; enableState: ThemeTrackEnableState; pressState: ThemeTrackPressState; isHoriz: Boolean; var trackBounds: Rect ): OSStatus; external name '_DrawThemeScrollBarArrows';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4516,16 +6119,28 @@ function DrawThemeScrollBarArrows( const (*var*) bounds: Rect; enableState: Them
  *  
  *  Summary:
  *    Retrieves the bounds of a scrollbar track.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeScrollBarTrackRect()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function GetThemeScrollBarTrackRect( const (*var*) bounds: Rect; enableState: ThemeTrackEnableState; pressState: ThemeTrackPressState; isHoriz: Boolean; var trackBounds: Rect ): OSStatus; external name '_GetThemeScrollBarTrackRect';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4537,21 +6152,37 @@ function GetThemeScrollBarTrackRect( const (*var*) bounds: Rect; enableState: Th
  *  
  *  Summary:
  *    Determines which scrollbar arrow is under a specified point.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  HitTestThemeScrollBarArrows()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function HitTestThemeScrollBarArrows( const (*var*) scrollBarBounds: Rect; enableState: ThemeTrackEnableState; pressState: ThemeTrackPressState; isHoriz: Boolean; ptHit: Point; var trackBounds: Rect; var partcode: AppearancePartCode ): Boolean; external name '_HitTestThemeScrollBarArrows';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ WINDOWS ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {
+<<<<<<< HEAD
  *  GetThemeWindowRegion()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -4559,16 +6190,24 @@ function HitTestThemeScrollBarArrows( const (*var*) scrollBarBounds: Rect; enabl
  *  
  *  Summary:
  *    Constructs a region that covers a specified part of a window.
+=======
+ *  GetThemeWindowRegion()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function GetThemeWindowRegion( flavor: ThemeWindowType; const (*var*) contRect: Rect; state: ThemeDrawState; const (*var*) metrics: ThemeWindowMetrics; attributes: ThemeWindowAttributes; winRegion: AppearanceRegionCode; rgn: RgnHandle ): OSStatus; external name '_GetThemeWindowRegion';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4580,11 +6219,19 @@ function GetThemeWindowRegion( flavor: ThemeWindowType; const (*var*) contRect: 
  *  
  *  Summary:
  *    Draws a window frame theme primitive.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeWindowFrame()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
@@ -4598,6 +6245,18 @@ function DrawThemeWindowFrame( flavor: ThemeWindowType; const (*var*) contRect: 
  *  
  *  Deprecated:
  *    On Mac OS X 10.3 and later, use HIThemeDrawTitleBarWidget.
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
+ }
+function DrawThemeWindowFrame( flavor: ThemeWindowType; const (*var*) contRect: Rect; state: ThemeDrawState; const (*var*) metrics: ThemeWindowMetrics; attributes: ThemeWindowAttributes; titleProc: WindowTitleDrawingUPP { can be NULL }; titleData: UInt32 ): OSStatus; external name '_DrawThemeWindowFrame';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeTitleBarWidget()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Summary:
  *    Draws the requested theme title bar widget.
@@ -4647,11 +6306,16 @@ function DrawThemeWindowFrame( flavor: ThemeWindowType; const (*var*) contRect: 
  *      draw.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function DrawThemeTitleBarWidget( flavor: ThemeWindowType; const (*var*) contRect: Rect; state: ThemeDrawState; const (*var*) metrics: ThemeWindowMetrics; attributes: ThemeWindowAttributes; widget: ThemeTitleBarWidget ): OSStatus; external name '_DrawThemeTitleBarWidget';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4663,16 +6327,28 @@ function DrawThemeTitleBarWidget( flavor: ThemeWindowType; const (*var*) contRec
  *  
  *  Summary:
  *    Determines the window part that is under a specified point.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeWindowRegionHit()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function GetThemeWindowRegionHit( flavor: ThemeWindowType; const (*var*) inContRect: Rect; state: ThemeDrawState; const (*var*) metrics: ThemeWindowMetrics; inAttributes: ThemeWindowAttributes; inPoint: Point; var outRegionHit: AppearanceRegionCode ): Boolean; external name '_GetThemeWindowRegionHit';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4684,21 +6360,37 @@ function GetThemeWindowRegionHit( flavor: ThemeWindowType; const (*var*) inContR
  *  
  *  Summary:
  *    Draws the scrollbar delimeters in a window frame.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeScrollBarDelimiters()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function DrawThemeScrollBarDelimiters( flavor: ThemeWindowType; const (*var*) inContRect: Rect; state: ThemeDrawState; attributes: ThemeWindowAttributes ): OSStatus; external name '_DrawThemeScrollBarDelimiters';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ BUTTONS ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {
+<<<<<<< HEAD
  *  DrawThemeButton()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -4706,11 +6398,15 @@ function DrawThemeScrollBarDelimiters( flavor: ThemeWindowType; const (*var*) in
  *  
  *  Summary:
  *    Draws a button theme primitive.
+=======
+ *  DrawThemeButton()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
@@ -4727,16 +6423,33 @@ function DrawThemeButton( const (*var*) inBounds: Rect; inKind: ThemeButtonKind;
  *  
  *  Summary:
  *    Constructs a region that covers the area of a button.
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
+ }
+function DrawThemeButton( const (*var*) inBounds: Rect; inKind: ThemeButtonKind; const (*var*) inNewInfo: ThemeButtonDrawInfo; {const} inPrevInfo: ThemeButtonDrawInfoPtr { can be NULL }; inEraseProc: ThemeEraseUPP { can be NULL }; inLabelProc: ThemeButtonDrawUPP { can be NULL }; inUserData: UInt32 ): OSStatus; external name '_DrawThemeButton';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeButtonRegion()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function GetThemeButtonRegion( const (*var*) inBounds: Rect; inKind: ThemeButtonKind; const (*var*) inNewInfo: ThemeButtonDrawInfo; outRegion: RgnHandle ): OSStatus; external name '_GetThemeButtonRegion';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4748,16 +6461,28 @@ function GetThemeButtonRegion( const (*var*) inBounds: Rect; inKind: ThemeButton
  *  
  *  Summary:
  *    Retrieves the bounds of a button's content.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeButtonContentBounds()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function GetThemeButtonContentBounds( const (*var*) inBounds: Rect; inKind: ThemeButtonKind; const (*var*) inDrawInfo: ThemeButtonDrawInfo; var outBounds: Rect ): OSStatus; external name '_GetThemeButtonContentBounds';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4769,17 +6494,32 @@ function GetThemeButtonContentBounds( const (*var*) inBounds: Rect; inKind: Them
  *  
  *  Summary:
  *    Retrieves the bounds of a button's background.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeButtonBackgroundBounds()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function GetThemeButtonBackgroundBounds( const (*var*) inBounds: Rect; inKind: ThemeButtonKind; const (*var*) inDrawInfo: ThemeButtonDrawInfo; var outBounds: Rect ): OSStatus; external name '_GetThemeButtonBackgroundBounds';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ INTERFACE SOUNDS ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -4787,6 +6527,7 @@ function GetThemeButtonBackgroundBounds( const (*var*) inBounds: Rect; inKind: T
 {
  *  PlayThemeSound()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Plays a theme-compliant sound. Note that this API does not play
  *    sound on any version of Mac OS X.
@@ -4801,6 +6542,13 @@ function GetThemeButtonBackgroundBounds( const (*var*) inBounds: Rect; inKind: T
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
@@ -4811,6 +6559,7 @@ function PlayThemeSound( kind: ThemeSoundKind ): OSStatus; external name '_PlayT
 {
  *  BeginThemeDragSound()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Begins playing a theme-compliant sound to indicate that a drag is
  *    occuring. Note that this API does not play sound on any version
@@ -4829,6 +6578,13 @@ function PlayThemeSound( kind: ThemeSoundKind ): OSStatus; external name '_PlayT
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
@@ -4839,6 +6595,7 @@ function BeginThemeDragSound( kind: ThemeDragSoundKind ): OSStatus; external nam
 {
  *  EndThemeDragSound()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Stops playing a theme-compliant sound to indicate that a drag is
  *    occuring.
@@ -4847,11 +6604,17 @@ function BeginThemeDragSound( kind: ThemeDragSoundKind ): OSStatus; external nam
  *    This API should only be called after BeginThemeDragSound has been
  *    called.
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
@@ -4861,6 +6624,7 @@ function EndThemeDragSound: OSStatus; external name '_EndThemeDragSound';
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ PRIMITIVES ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {
+<<<<<<< HEAD
  *  DrawThemeTickMark()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -4868,16 +6632,24 @@ function EndThemeDragSound: OSStatus; external name '_EndThemeDragSound';
  *  
  *  Summary:
  *    Draws a tick mark theme primitive.
+=======
+ *  DrawThemeTickMark()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function DrawThemeTickMark( const (*var*) bounds: Rect; state: ThemeDrawState ): OSStatus; external name '_DrawThemeTickMark';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4889,11 +6661,19 @@ function DrawThemeTickMark( const (*var*) bounds: Rect; state: ThemeDrawState ):
  *  
  *  Summary:
  *    Draws a chasing arrows theme primitive.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeChasingArrows()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
@@ -4910,11 +6690,24 @@ function DrawThemeChasingArrows( const (*var*) bounds: Rect; theIndex: UInt32; s
  *  
  *  Summary:
  *    Draws a popup arrow theme primitive.
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
+ }
+function DrawThemeChasingArrows( const (*var*) bounds: Rect; index: UInt32; state: ThemeDrawState; eraseProc: ThemeEraseUPP { can be NULL }; eraseData: UInt32 ): OSStatus; external name '_DrawThemeChasingArrows';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemePopupArrow()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
@@ -4932,16 +6725,33 @@ function DrawThemePopupArrow( const (*var*) bounds: Rect; orientation: ThemeArro
  *  Summary:
  *    Draws a grow box theme primitive that is designed to be detached
  *    from the window frame.
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
+ }
+function DrawThemePopupArrow( const (*var*) bounds: Rect; orientation: ThemeArrowOrientation; size: ThemePopupArrowSize; state: ThemeDrawState; eraseProc: ThemeEraseUPP { can be NULL }; eraseData: UInt32 ): OSStatus; external name '_DrawThemePopupArrow';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeStandaloneGrowBox()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function DrawThemeStandaloneGrowBox( origin: Point; growDirection: ThemeGrowDirection; isSmall: Boolean; state: ThemeDrawState ): OSStatus; external name '_DrawThemeStandaloneGrowBox';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4954,16 +6764,28 @@ function DrawThemeStandaloneGrowBox( origin: Point; growDirection: ThemeGrowDire
  *  Summary:
  *    Draws a blank area that can be used to fill in the corner of two
  *    scrollbars, when no grow box is required.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DrawThemeStandaloneNoGrowBox()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function DrawThemeStandaloneNoGrowBox( origin: Point; growDirection: ThemeGrowDirection; isSmall: Boolean; state: ThemeDrawState ): OSStatus; external name '_DrawThemeStandaloneNoGrowBox';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -4975,17 +6797,32 @@ function DrawThemeStandaloneNoGrowBox( origin: Point; growDirection: ThemeGrowDi
  *  
  *  Summary:
  *    Retrieves the bounds of a standalone grow box theme primitive.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetThemeStandaloneGrowBoxBounds()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function GetThemeStandaloneGrowBoxBounds( origin: Point; growDirection: ThemeGrowDirection; isSmall: Boolean; var bounds: Rect ): OSStatus; external name '_GetThemeStandaloneGrowBoxBounds';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ DRAWING STATE ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -5011,14 +6848,21 @@ function GetThemeStandaloneGrowBoxBounds( origin: Point; growDirection: ThemeGro
 {
  *  NormalizeThemeDrawingState()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Normalizes the drawing state of the current GrafPort.
  *  
+=======
+>>>>>>> graemeg/fixes_2_2
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
@@ -5029,6 +6873,7 @@ function NormalizeThemeDrawingState: OSStatus; external name '_NormalizeThemeDra
 {
  *  GetThemeDrawingState()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Retrieves the drawing state of the current port.
  *  
@@ -5044,6 +6889,13 @@ function NormalizeThemeDrawingState: OSStatus; external name '_NormalizeThemeDra
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
@@ -5054,6 +6906,7 @@ function GetThemeDrawingState( var outState: ThemeDrawingState ): OSStatus; exte
 {
  *  SetThemeDrawingState()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Restores saved drawing state of the current port.
  *  
@@ -5070,6 +6923,13 @@ function GetThemeDrawingState( var outState: ThemeDrawingState ): OSStatus; exte
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
@@ -5080,6 +6940,7 @@ function SetThemeDrawingState( inState: ThemeDrawingState; inDisposeNow: Boolean
 {
  *  DisposeThemeDrawingState()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Releases the memory used by a saved drawing state object.
  *  
@@ -5093,6 +6954,13 @@ function SetThemeDrawingState( inState: ThemeDrawingState; inDisposeNow: Boolean
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
@@ -5101,6 +6969,7 @@ function DisposeThemeDrawingState( inState: ThemeDrawingState ): OSStatus; exter
 
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ MISCELLANEOUS ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+<<<<<<< HEAD
 {
  *  ApplyThemeBackground()   *** DEPRECATED ***
  *  
@@ -5122,10 +6991,19 @@ function DisposeThemeDrawingState( inState: ThemeDrawingState ): OSStatus; exter
  *    rectangle you would use if you were calling the drawing primitive
  *    that corresponds to the ThemeBackgroundKind that you provide to
  *    this API.
+=======
+{ ApplyThemeBackground is used to set up the background for embedded controls  }
+{ It is normally called by controls that are embedders. The standard controls  }
+{ call this API to ensure a correct background for the current theme. You pass }
+{ in the same rectangle you would if you were calling the drawing primitive.   }
+{
+ *  ApplyThemeBackground()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
  *  Parameters:
  *    
  *    inKind:
@@ -5153,10 +7031,15 @@ function DisposeThemeDrawingState( inState: ThemeDrawingState ): OSStatus; exter
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function ApplyThemeBackground( inKind: ThemeBackgroundKind; const (*var*) bounds: Rect; inState: ThemeDrawState; inDepth: SInt16; inColorDev: Boolean ): OSStatus; external name '_ApplyThemeBackground';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -5168,22 +7051,41 @@ function ApplyThemeBackground( inKind: ThemeBackgroundKind; const (*var*) bounds
  *  
  *  Summary:
  *    Indicates whether a specified file type is used for theme files.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  SetThemeTextColorForWindow() has moved to MacWindows.h
+ }
+{
+ *  IsValidAppearanceFileType()
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
 function IsValidAppearanceFileType( fileType: OSType ): Boolean; external name '_IsValidAppearanceFileType';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  GetThemeBrushAsColor()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Retrieves the color that most closely matches a theme brush.
  *  
@@ -5216,6 +7118,13 @@ function IsValidAppearanceFileType( fileType: OSType ): Boolean; external name '
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
@@ -5226,6 +7135,7 @@ function GetThemeBrushAsColor( inBrush: ThemeBrush; inDepth: SInt16; inColorDev:
 {
  *  GetThemeTextColor()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Retrieves the color that is used to draw a specified type of text.
  *  
@@ -5252,6 +7162,13 @@ function GetThemeBrushAsColor( inBrush: ThemeBrush; inDepth: SInt16; inColorDev:
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.1 and later
  }
@@ -5259,6 +7176,7 @@ function GetThemeTextColor( inColor: ThemeTextColor; inDepth: SInt16; inColorDev
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 {--------------------------------------- MOVED ROUTINES -------------------------------------------}
 { The following routines have been moved to HITheme.h                                              }
 { GetThemeMenuSeparatorHeight                                                                      }
@@ -5269,11 +7187,47 @@ function GetThemeTextColor( inColor: ThemeTextColor; inDepth: SInt16; inColorDev
 {--------------------------------------------------------------------------------------------------}
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ BEGIN CARBON ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+=======
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ BEGIN CARBON ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{
+ *  GetThemeMetric()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+function GetThemeMetric( inMetric: ThemeMetric; var outMetric: SInt32 ): OSStatus; external name '_GetThemeMetric';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  CopyThemeIdentifier()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.4 and later
+ *    Non-Carbon CFM:   not available
+ }
+function CopyThemeIdentifier( var outIdentifier: CFStringRef ): OSStatus; external name '_CopyThemeIdentifier';
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+
+
+>>>>>>> graemeg/fixes_2_2
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 { Obsolete symbolic names                                                                          }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 { Obsolete error codes - use the new ones, s'il vous plait / kudasai }
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
+=======
+>>>>>>> graemeg/fixes_2_2
 const
 	appearanceBadBrushIndexErr = themeInvalidBrushErr; { pattern index invalid }
 	appearanceProcessRegisteredErr = themeProcessRegisteredErr;
@@ -5365,14 +7319,32 @@ const
 	kThemeBrushPassiveAreaFill = kThemeBrushStaticAreaFill;
 
 const
+<<<<<<< HEAD
+=======
+	kThemeMetricCheckBoxGlyphHeight = kThemeMetricCheckBoxHeight;
+	kThemeMetricRadioButtonGlyphHeight = kThemeMetricRadioButtonHeight;
+	kThemeMetricDisclosureButtonSize = kThemeMetricDisclosureButtonHeight;
+	kThemeMetricBestListHeaderHeight = kThemeMetricListHeaderHeight;
+	kThemeMetricSmallProgressBarThickness = kThemeMetricNormalProgressBarThickness; { obsolete }
+	kThemeMetricProgressBarThickness = kThemeMetricLargeProgressBarThickness; { obsolete }
+
+const
+>>>>>>> graemeg/fixes_2_2
 	kThemeScrollBar = kThemeMediumScrollBar;
 	kThemeSlider = kThemeMediumSlider;
 	kThemeProgressBar = kThemeMediumProgressBar;
 	kThemeIndeterminateBar = kThemeMediumIndeterminateBar;
 
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

@@ -23,9 +23,12 @@ unit sdl_gfx;
 interface
 
 uses
+<<<<<<< HEAD
 {$IFDEF MORPHOS}
   exec,
 {$ENDIF}
+=======
+>>>>>>> graemeg/fixes_2_2
   sdl;
 
 const
@@ -45,10 +48,13 @@ const
   SDLgfxLibName = 'SDL_gfx';
 {$ENDIF}
 
+<<<<<<< HEAD
 {$IFDEF MORPHOS}
   SDLgfxLibName = 'powersdl_gfx.library';
 {$ENDIF}
 
+=======
+>>>>>>> graemeg/fixes_2_2
   // Some rates in Hz
   FPS_UPPER_LIMIT	= 200;
   FPS_LOWER_LIMIT	= 1;
@@ -84,10 +90,13 @@ type
     y :	Uint8;
   end;
 
+<<<<<<< HEAD
 {$IFDEF MORPHOS}
 {$INCLUDE powersdl_gfx.inc}
 {$ELSE MORPHOS}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {
 
  SDL_framerate: framerate manager
@@ -697,8 +706,11 @@ procedure zoomSurfaceSize( width : integer; height : integer; zoomx : double; zo
 cdecl; external {$IFDEF __GPC__}name 'zoomSurfaceSize'{$ELSE} SDLgfxLibName{$ENDIF __GPC__};
 {$EXTERNALSYM zoomSurfaceSize}
 
+<<<<<<< HEAD
 {$ENDIF MORPHOS}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 implementation
 
 end.

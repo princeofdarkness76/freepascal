@@ -368,7 +368,11 @@
 (Ch: (Ch_All, Ch_None, Ch_None)),
 (Ch: (Ch_All, Ch_None, Ch_None)),
 (Ch: (Ch_All, Ch_None, Ch_None)),
+<<<<<<< HEAD
 (Ch: (Ch_ROp1, Ch_RWOp2, Ch_RFLAGS)),
+=======
+(Ch: (Ch_ROp1, Ch_WOp2, Ch_RFLAGS)),
+>>>>>>> graemeg/fixes_2_2
 (Ch: (Ch_RFLAGS, Ch_None, Ch_None)),
 (Ch: (Ch_RFLAGS, Ch_WOp1, Ch_None)),
 (Ch: (Ch_Mop2, Ch_Rop1, Ch_None)),
@@ -739,16 +743,21 @@
 (Ch: (Ch_All, Ch_None, Ch_None)),
 (Ch: (Ch_Wop2, Ch_Rop1, Ch_None)),
 (Ch: (Ch_Wop2, Ch_Rop1, Ch_None)),
+<<<<<<< HEAD
 (Ch: (Ch_Wop2, Ch_Rop1, Ch_None)),
 (Ch: (Ch_Wop2, Ch_Rop1, Ch_None)),
 (Ch: (Ch_Wop2, Ch_Rop1, Ch_None)),
 (Ch: (Ch_Wop2, Ch_Rop1, Ch_None)),
+=======
+(Ch: (Ch_MRAX, Ch_WRDX, Ch_None)),
+>>>>>>> graemeg/fixes_2_2
 (Ch: (Ch_All, Ch_None, Ch_None)),
 (Ch: (Ch_All, Ch_None, Ch_None)),
 (Ch: (Ch_All, Ch_None, Ch_None)),
 (Ch: (Ch_All, Ch_None, Ch_None)),
 (Ch: (Ch_All, Ch_None, Ch_None)),
 (Ch: (Ch_All, Ch_None, Ch_None)),
+<<<<<<< HEAD
 (Ch: (Ch_All, Ch_None, Ch_None)),
 (Ch: (Ch_All, Ch_None, Ch_None)),
 (Ch: (Ch_Wop2, Ch_Rop1, Ch_None)),
@@ -1333,6 +1342,8 @@
 >>>>>>> origin/cpstrnew
 (Ch: (Ch_RRAX, Ch_WMemEDI, Ch_RWRDI)),
 (Ch: (Ch_WRAX, Ch_RWRSI, Ch_None)),
+=======
+>>>>>>> graemeg/fixes_2_2
 (Ch: (Ch_All, Ch_None, Ch_None))
 >>>>>>> graemeg/cpstrnew
 );

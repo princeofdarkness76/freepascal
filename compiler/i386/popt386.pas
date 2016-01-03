@@ -1096,8 +1096,12 @@ begin
                          (taicpu(hp1).oper[0]^.reg = taicpu(p).oper[1]^.reg) then
                         begin
                           {we have "mov x, %treg; mov %treg, y}
+<<<<<<< HEAD
                           if not(RegInOp(getsupreg(taicpu(p).oper[1]^.reg),taicpu(hp1).oper[1]^)) and
                              not(RegUsedAfterInstruction(taicpu(p).oper[1]^.reg, hp1, TmpUsedRegs)) then
+=======
+                          if not(RegUsedAfterInstruction(taicpu(p).oper[1]^.reg, hp1, TmpUsedRegs)) then
+>>>>>>> graemeg/fixes_2_2
                             {we've got "mov x, %treg; mov %treg, y; with %treg is not used after }
                             case taicpu(p).oper[0]^.typ Of
                               top_reg:
@@ -1369,6 +1373,7 @@ begin
                                 end
                         end;
                       if GetNextInstruction(p, hp1) and
+<<<<<<< HEAD
                          MatchInstruction(hp1,A_BTS,A_BTR,[Taicpu(p).opsize]) and
                          GetNextInstruction(hp1, hp2) and
                          MatchInstruction(hp2,A_OR,[Taicpu(p).opsize]) and
@@ -1376,6 +1381,22 @@ begin
                          (Taicpu(p).oper[1]^.typ = top_reg) and
                          MatchOperand(Taicpu(p).oper[1]^,Taicpu(hp1).oper[1]^) and
                          MatchOperand(Taicpu(p).oper[1]^,Taicpu(hp2).oper[1]^) then
+=======
+                         (Tai(hp1).typ = ait_instruction) and
+                         ((Taicpu(hp1).opcode = A_BTS) or (Taicpu(hp1).opcode = A_BTR)) and
+                         (Taicpu(hp1).opsize = Taicpu(p).opsize) and
+                         GetNextInstruction(hp1, hp2) and
+                         (Tai(hp2).typ = ait_instruction) and
+                         (Taicpu(hp2).opcode = A_OR) and
+                         (Taicpu(hp1).opsize = Taicpu(p).opsize) and 
+                         (Taicpu(hp2).opsize = Taicpu(p).opsize) and 
+                         (Taicpu(p).oper[0]^.typ = top_const) and (Taicpu(p).oper[0]^.val=0) and
+                         (Taicpu(p).oper[1]^.typ = top_reg) and
+                         (Taicpu(hp1).oper[1]^.typ = top_reg) and
+                         (Taicpu(p).oper[1]^.reg=Taicpu(hp1).oper[1]^.reg) and
+                         (Taicpu(hp2).oper[1]^.typ = top_reg) and
+                         (Taicpu(p).oper[1]^.reg=Taicpu(hp2).oper[1]^.reg) then
+>>>>>>> graemeg/fixes_2_2
                          {mov reg1,0
                           bts reg1,operand1             -->      mov reg1,operand2
                           or  reg1,operand2                      bts reg1,operand1}
@@ -1385,6 +1406,7 @@ begin
                           insertllitem(asml,hp2,hp2.next,hp1);
                           asml.remove(p);
                           p.free;
+<<<<<<< HEAD
                           p:=hp1;
                         end;
                       if GetNextInstruction(p, hp1) and
@@ -1412,6 +1434,8 @@ begin
                               p.free;
                               p:=hp1;
                             end;
+=======
+>>>>>>> graemeg/fixes_2_2
                         end;
                     end;
 
@@ -2269,6 +2293,7 @@ begin
               end;
             case taicpu(p).opcode Of
               A_CALL:
+<<<<<<< HEAD
                 begin
                   { don't do this on modern CPUs, this really hurts them due to
                     broken call/ret pairing }
@@ -2310,6 +2335,22 @@ begin
                       hp1.free;
                     end;
                 end;
+=======
+                if (current_settings.optimizecputype < cpu_Pentium2) and
+                   not(cs_create_pic in current_settings.moduleswitches) and
+                   GetNextInstruction(p, hp1) and
+                   (hp1.typ = ait_instruction) and
+                   (taicpu(hp1).opcode = A_JMP) and
+                   ((taicpu(hp1).oper[0]^.typ=top_ref) and (taicpu(hp1).oper[0]^.ref^.refaddr=addr_full)) then
+                  begin
+                    hp2 := taicpu.Op_sym(A_PUSH,S_L,taicpu(hp1).oper[0]^.ref^.symbol);
+                    InsertLLItem(asml, p.previous, p, hp2);
+                    taicpu(p).opcode := A_JMP;
+                    taicpu(p).is_jmp := true;
+                    asml.remove(hp1);
+                    hp1.free;
+                  end;
+>>>>>>> graemeg/fixes_2_2
               A_CMP:
                 begin
                   if (taicpu(p).oper[0]^.typ = top_const) and

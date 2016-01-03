@@ -1,4 +1,5 @@
 { CoreGraphics - CGPSConverter.h
+<<<<<<< HEAD
  * Copyright (c) 2003-2008 Apple Inc.
  * All rights reserved. }
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -24,6 +25,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+ * Copyright (c) 2003 Apple Computer, Inc.
+ * All rights reserved.
+ }
+{       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -32,8 +45,13 @@
 
 unit CGPSConverter;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -46,21 +64,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -95,6 +121,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -102,6 +130,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -351,6 +380,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -376,6 +415,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -386,8 +429,11 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFDictionary,CGBase,CGDataConsumer,CGDataProvider;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -395,6 +441,7 @@ uses MacTypes,CFBase,CFDictionary,CGBase,CGDataConsumer,CGDataProvider;
 
 
 { CGPSConverter callbacks.
+<<<<<<< HEAD
  
    `version' is the version number of the structure passed in as a parameter
    to the converter creation functions. The structure defined below is
@@ -420,6 +467,33 @@ uses MacTypes,CFBase,CFDictionary,CGBase,CGDataConsumer,CGDataProvider;
 
    `releaseInfo', if non-NULL, is called when the converter is
    deallocated. }
+=======
+ *
+ * `version' is the version number of the structure passed in as a
+ * parameter to the converter creation functions. The structure defined
+ * below is version 0.
+ *
+ * `beginDocument', if non-NULL, is called at the beginning of the
+ * conversion of the PostScript document.
+ *
+ * `endDocument', if non-NULL, is called at the end of conversion of the
+ * PostScript document.
+ *
+ * `beginPage', if non-NULL, is called at the start of the conversion of
+ * each page in the PostScript document.
+ *
+ * `endPage', if non-NULL, is called at the end of the conversion of each
+ * page in the PostScript document.
+ *
+ * `noteProgress', if non-NULL, is called periodically during the
+ * conversion to indicate that conversion is proceeding.
+ *
+ * `noteMessage', if non-NULL, is called to pass any messages that might
+ * result during the conversion.
+ *
+ * `releaseInfo', if non-NULL, is called when the converter is
+ * deallocated. }
+>>>>>>> graemeg/fixes_2_2
 
 type
 	CGPSConverterBeginDocumentCallback = procedure( info: UnivPtr );
@@ -445,9 +519,12 @@ type
 type
 	CGPSConverterCallbacks = record
 		version: UInt32;
+<<<<<<< HEAD
 {$ifc TARGET_CPU_64}
 		__alignment_dummy: UInt32;
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 		beginDocument: CGPSConverterBeginDocumentCallback;
 		endDocument: CGPSConverterEndDocumentCallback;
 		beginPage: CGPSConverterBeginPageCallback;
@@ -457,6 +534,7 @@ type
 		releaseInfo: CGPSConverterReleaseInfoCallback;
 	end;
 
+<<<<<<< HEAD
 {$ifc TARGET_OS_MAC}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -520,3 +598,32 @@ function CGPSConverterGetTypeID: CFTypeID; external name '_CGPSConverterGetTypeI
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+{ Create a CGPSConverter, using `callbacks' to populate its callback
+ * table. Each callback will be supplied the `info' value when called. }
+
+function CGPSConverterCreate( info: UnivPtr; const (*var*) callbacks: CGPSConverterCallbacks; options: CFDictionaryRef ): CGPSConverterRef; external name '_CGPSConverterCreate'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{ Use `converter' to convert PostScript data to PDF data.  The PostScript
+ * data is supplied by `provider'; the resulting PDF is written to
+ * `consumer'.  Returns true if the conversion succeeded; false
+ * otherwise. }
+
+function CGPSConverterConvert( converter: CGPSConverterRef; provider: CGDataProviderRef; consumer: CGDataConsumerRef; options: CFDictionaryRef ): CBool; external name '_CGPSConverterConvert'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{ Tell the `converter' to abort conversion at the next possible
+ * opportunity. }
+
+function CGPSConverterAbort( converter: CGPSConverterRef ): CBool; external name '_CGPSConverterAbort'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{ Return true if `converter' is currently converting data. }
+
+function CGPSConverterIsConverting( converter: CGPSConverterRef ): CBool; external name '_CGPSConverterIsConverting'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{ Return the CFTypeID of the CGPSConverter class. }
+
+function CGPSConverterGetTypeID: CFTypeID; external name '_CGPSConverterGetTypeID'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

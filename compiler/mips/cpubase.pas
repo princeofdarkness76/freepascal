@@ -393,6 +393,7 @@ unit cpubase;
         This value can be deduced from the CALLED_USED_REGISTERS array in the
         GCC source.
       }
+<<<<<<< HEAD
       saved_standard_registers : array[0..0] of tsuperregister =
         (RS_NO);
 
@@ -413,6 +414,14 @@ unit cpubase;
 =======
 >>>>>>> origin/cpstrnew
 
+=======
+      saved_standard_registers : array[0..8] of tsuperregister =
+        (RS_R16,RS_R17,RS_R18,RS_R19,RS_R20,RS_R21,RS_R22,RS_R23,RS_R30);
+        
+      { this is only for the generic code which is not used for this architecture }
+      saved_mm_registers : array[0..0] of tsuperregister = (RS_NO);
+      
+>>>>>>> graemeg/fixes_2_2
       { Required parameter alignment when calling a routine declared as
         stdcall and cdecl. The alignment value should be the one defined
         by GCC or the target ABI.

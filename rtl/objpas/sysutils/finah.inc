@@ -15,6 +15,7 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if not declared(TFilenameCaseMatch)}
 type
   TFilenameCaseMatch = (mkNone, mkExactMatch, mkSingleMatch, mkAmbiguous);
@@ -43,6 +44,8 @@ Function SetDirSeparators (Const FileName : PathStr) : PathStr;
 Function GetDirs (Var DirName : PathStr; Var Dirs : Array of PathPChar) : Longint; {$ifdef FPC_HAS_CPSTRING}rtlproc;{$endif}
 function ConcatPaths(const Paths: array of PathStr): PathStr;
 =======
+=======
+>>>>>>> graemeg/fixes_2_2
 function ChangeFileExt(const FileName, Extension: string): string;
 function ExtractFilePath(const FileName: string): string;
 function ExtractFileDrive(const FileName: string): string;

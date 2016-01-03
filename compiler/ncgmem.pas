@@ -995,11 +995,15 @@ implementation
          { everything can be handled using the the regular array code.        }
          if ((l mod 8) = 0) and
             (ispowerof2(l div 8,temp) or
+<<<<<<< HEAD
              not is_ordinal(resultdef)
 {$ifndef cpu64bitalu}
              or is_64bitint(resultdef)
 {$endif not cpu64bitalu}
              ) then
+=======
+             not is_ordinal(resultdef)) then
+>>>>>>> graemeg/fixes_2_2
            begin
              update_reference_reg_mul(maybe_const_reg,regsize,l div 8);
              exit;
@@ -1099,6 +1103,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if not(tprocdef(tparasymtable(tparavarsym(tloadnode(get_open_const_array(left)).symtableentry).owner).defowner).proccalloption in cdecl_pocalls) then
 =======
             if not(tprocdef(tparasymtable(tparavarsym(tloadnode(left).symtableentry).owner).defowner).proccalloption in cdecl_pocalls) then
@@ -1112,6 +1117,9 @@ implementation
 =======
             if not(tprocdef(tparasymtable(tparavarsym(tloadnode(left).symtableentry).owner).defowner).proccalloption in cdecl_pocalls) then
 >>>>>>> origin/cpstrnew
+=======
+            if not(tprocdef(tparasymtable(tparavarsym(tloadnode(left).symtableentry).owner).defowner).proccalloption in [pocall_cdecl,pocall_cppdecl]) then
+>>>>>>> graemeg/fixes_2_2
              begin
                { Get high value }
                hightree:=load_high_value_node(tparavarsym(tloadnode(get_open_const_array(left)).symtableentry));
@@ -1455,6 +1463,7 @@ implementation
              ((mulsize mod 8 = 0) and
               ispowerof2(mulsize div 8,temp)) or
               { only orddefs are bitpacked }
+<<<<<<< HEAD
               not is_ordinal(resultdef)
 {$ifndef cpu64bitalu}
               or is_64bitint(resultdef)
@@ -1472,12 +1481,16 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+              not is_ordinal(resultdef)) then
+>>>>>>> graemeg/fixes_2_2
            dec(location.reference.offset,bytemulsize*tarraydef(left.resultdef).lowrange);
 >>>>>>> graemeg/cpstrnew
 
          if right.nodetype=ordconstn then
            begin
               { offset can only differ from 0 if arraydef }
+<<<<<<< HEAD
               if cs_check_range in current_settings.localswitches then
                 begin
                   secondpass(right);
@@ -1488,6 +1501,83 @@ implementation
                       rangecheck_string;
                   end;
                 end;
+=======
+              case left.resultdef.typ of
+                arraydef :
+                  begin
+                     if not(is_open_array(left.resultdef)) and
+                        not(is_array_of_const(left.resultdef)) and
+                        not(is_dynamic_array(left.resultdef)) and
+                        not(ado_isconvertedpointer in tarraydef(left.resultdef).arrayoptions) then
+                       begin
+                          if (tordconstnode(right).value>tarraydef(left.resultdef).highrange) or
+                             (tordconstnode(right).value<tarraydef(left.resultdef).lowrange) then
+                            begin
+                              { this should be caught in the typecheckpass! (JM) }
+                              if (cs_check_range in current_settings.localswitches) then
+                                CGMessage(parser_e_range_check_error)
+                              else
+                                CGMessage(parser_w_range_check_error);
+                            end;
+                       end
+                     else
+                       begin
+                          { range checking for open and dynamic arrays needs
+                            runtime code }
+                          secondpass(right);
+                          if (cs_check_range in current_settings.localswitches) then
+                            rangecheck_array;
+                       end;
+                  end;
+                stringdef :
+                  begin
+                    if (cs_check_range in current_settings.localswitches) then
+                     begin
+                       case tstringdef(left.resultdef).stringtype of
+                         { it's the same for ansi- and wide strings }
+                         st_widestring,
+                         st_ansistring:
+                           begin
+                              paramanager.getintparaloc(pocall_default,1,paraloc1);
+                              paramanager.getintparaloc(pocall_default,2,paraloc2);
+                              paramanager.allocparaloc(current_asmdata.CurrAsmList,paraloc2);
+                              cg.a_param_const(current_asmdata.CurrAsmList,OS_INT,tordconstnode(right).value,paraloc2);
+                              href:=location.reference;
+                              paramanager.allocparaloc(current_asmdata.CurrAsmList,paraloc1);
+                              if not(tf_winlikewidestring in target_info.flags) or
+                                 (tstringdef(left.resultdef).stringtype<>st_widestring) then
+                                begin
+                                  dec(href.offset,sizeof(aint)-offsetdec);
+                                  cg.a_param_ref(current_asmdata.CurrAsmList,OS_ADDR,href,paraloc1);
+                                end
+                              else
+                                begin
+                                  { winlike widestrings have a 4 byte length }
+                                  dec(href.offset,4-offsetdec);
+                                  cg.a_param_ref(current_asmdata.CurrAsmList,OS_32,href,paraloc1);
+                                end;
+                              paramanager.freeparaloc(current_asmdata.CurrAsmList,paraloc1);
+                              paramanager.freeparaloc(current_asmdata.CurrAsmList,paraloc2);
+                              cg.allocallcpuregisters(current_asmdata.CurrAsmList);
+                              cg.a_call_name(current_asmdata.CurrAsmList,'FPC_'+upper(tstringdef(left.resultdef).stringtypname)+'_RANGECHECK');
+                              cg.deallocallcpuregisters(current_asmdata.CurrAsmList);
+                           end;
+
+                         st_shortstring:
+                           begin
+                              {!!!!!!!!!!!!!!!!!}
+                              { if this one is implemented making use of the high parameter for openshortstrings, update ncgutils.do_get_used_regvars() too (JM) }
+                           end;
+
+                         st_longstring:
+                           begin
+                              {!!!!!!!!!!!!!!!!!}
+                           end;
+                       end;
+                     end;
+                   end;
+              end;
+>>>>>>> graemeg/fixes_2_2
               if not(is_packed_array(left.resultdef)) or
                  ((mulsize mod 8 = 0) and
                   (ispowerof2(mulsize div 8,temp) or
@@ -1596,7 +1686,54 @@ implementation
                  if left.resultdef.typ=arraydef then
                    rangecheck_array
                  else if (left.resultdef.typ=stringdef) then
+<<<<<<< HEAD
                    rangecheck_string;
+=======
+                   begin
+                      case tstringdef(left.resultdef).stringtype of
+                         { it's the same for ansi- and wide strings }
+                         st_widestring,
+                         st_ansistring:
+                           begin
+                              paramanager.getintparaloc(pocall_default,1,paraloc1);
+                              paramanager.getintparaloc(pocall_default,2,paraloc2);
+                              paramanager.allocparaloc(current_asmdata.CurrAsmList,paraloc2);
+                              cg.a_param_reg(current_asmdata.CurrAsmList,OS_INT,right.location.register,paraloc2);
+                              href:=location.reference;
+                              dec(href.offset,sizeof(aint)-offsetdec);
+
+                              href:=location.reference;
+                              paramanager.allocparaloc(current_asmdata.CurrAsmList,paraloc1);
+                              if not(tf_winlikewidestring in target_info.flags) or
+                                 (tstringdef(left.resultdef).stringtype<>st_widestring) then
+                                begin
+                                  dec(href.offset,sizeof(aint)-offsetdec);
+                                  cg.a_param_ref(current_asmdata.CurrAsmList,OS_ADDR,href,paraloc1);
+                                end
+                              else
+                                begin
+                                  { winlike widestrings have a 4 byte length }
+                                  dec(href.offset,4-offsetdec);
+                                  cg.a_param_ref(current_asmdata.CurrAsmList,OS_32,href,paraloc1);
+                                end;
+
+                              paramanager.freeparaloc(current_asmdata.CurrAsmList,paraloc1);
+                              paramanager.freeparaloc(current_asmdata.CurrAsmList,paraloc2);
+                              cg.allocallcpuregisters(current_asmdata.CurrAsmList);
+                              cg.a_call_name(current_asmdata.CurrAsmList,'FPC_'+upper(tstringdef(left.resultdef).stringtypname)+'_RANGECHECK');
+                              cg.deallocallcpuregisters(current_asmdata.CurrAsmList);
+                           end;
+                         st_shortstring:
+                           begin
+                              {!!!!!!!!!!!!!!!!!}
+                           end;
+                         st_longstring:
+                           begin
+                              {!!!!!!!!!!!!!!!!!}
+                           end;
+                      end;
+                   end;
+>>>>>>> graemeg/fixes_2_2
                end;
 
               { insert the register and the multiplication factor in the

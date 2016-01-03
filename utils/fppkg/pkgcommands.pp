@@ -109,6 +109,7 @@ type
   Public
     Procedure Execute;override;
   end;
+<<<<<<< HEAD
 
   { TCommandListSettings }
 
@@ -172,6 +173,52 @@ end;
 
 procedure TCommandScanPackages.Execute;
 begin
+=======
+
+
+procedure TCommandAddConfig.Execute;
+begin
+{
+  Log(vlInfo,SLogGeneratingCompilerConfig,[S]);
+  Options.InitCompilerDefaults(Args[2]);
+  Options.SaveCompilerToFile(S);
+}
+end;
+
+
+procedure TCommandUpdate.Execute;
+var
+  PackagesURL :  String;
+begin
+  // Download and load mirrors.xml
+  // This can be skipped when a custom RemoteRepository is configured
+  if (GlobalOptions.RemoteMirrorsURL<>'') and
+     (GlobalOptions.RemoteRepository='auto') then
+    begin
+      Log(vlCommands,SLogDownloading,[GlobalOptions.RemoteMirrorsURL,GlobalOptions.LocalMirrorsFile]);
+      DownloadFile(GlobalOptions.RemoteMirrorsURL,GlobalOptions.LocalMirrorsFile);
+      LoadLocalAvailableMirrors;
+    end;
+  // Download packages.xml
+  PackagesURL:=GetRemoteRepositoryURL(PackagesFileName);
+  Log(vlCommands,SLogDownloading,[PackagesURL,GlobalOptions.LocalPackagesFile]);
+  DownloadFile(PackagesURL,GlobalOptions.LocalPackagesFile);
+  // Read the repository again
+  LoadLocalAvailableRepository;
+  // no need to log errors again
+  FindInstalledPackages(CompilerOptions,False);
+end;
+
+
+procedure TCommandListPackages.Execute;
+begin
+  ListPackages;
+end;
+
+
+procedure TCommandScanPackages.Execute;
+begin
+>>>>>>> graemeg/fixes_2_2
   { nothing, already handled in fppkg.pp as special case
     before the local fppkg directory is processed }
 end;
@@ -246,6 +293,7 @@ end;
 
 
 procedure TCommandBuild.Execute;
+<<<<<<< HEAD
 var
   P: TFPPackage;
 begin
@@ -372,6 +420,109 @@ begin
   L:=TStringList.Create;
   for i:=0 to P.Dependencies.Count-1 do
     begin
+=======
+begin
+  if PackageName<>'' then
+    begin
+      // For local files we need the information inside the zip to get the
+      // dependencies
+      if (PackageName=CmdLinePackageName) then
+        begin
+          ExecuteAction(PackageName,'unzip');
+          ExecuteAction(PackageName,'installdependencies');
+        end
+      else
+        if (PackageName=CurrentDirPackageName) then
+          begin
+            ExecuteAction(PackageName,'installdependencies');
+          end
+      else
+        begin
+          ExecuteAction(PackageName,'installdependencies');
+          ExecuteAction(PackageName,'unzip');
+        end;
+    end;
+  ExecuteAction(PackageName,'fpmakebuild');
+end;
+
+
+procedure TCommandInstall.Execute;
+var
+  UFN,S : String;
+  P   : TFPPackage;
+begin
+  if PackageName<>'' then
+    begin
+      ExecuteAction(PackageName,'build');
+      ExecuteAction(PackageName,'fpmakeinstall');
+      if (PackageName=CmdLinePackageName) or (PackageName=CurrentDirPackageName) then
+        begin
+          // Load package name from manifest
+          if not FileExists(ManifestFileName) then
+            ExecuteAction(PackageName,'fpmakemanifest');
+          P:=LoadManifestFromFile(ManifestFileName);
+          S:=P.Name;
+          FreeAndNil(P);
+        end
+      else
+        S:=PackageName;
+      P:=InstalledRepository.FindPackage(S);
+      if not assigned(P) then
+        P:=InstalledRepository.AddPackage(S);
+      if GlobalOptions.InstallGlobal then
+        UFN:=CompilerOptions.GlobalUnitDir
+      else
+        UFN:=CompilerOptions.LocalUnitDir;
+      UFN:=IncludeTrailingPathDelimiter(UFN)+S+PathDelim+UnitConfigFileName;
+      LoadUnitConfigFromFile(P,UFN);
+    end
+  else
+    ExecuteAction(PackageName,'fpmakeinstall');
+end;
+
+
+procedure TCommandClean.Execute;
+begin
+  ExecuteAction(PackageName,'fpmakeclean');
+end;
+
+
+procedure TCommandArchive.Execute;
+begin
+  ExecuteAction(PackageName,'fpmakearchive');
+end;
+
+
+procedure TCommandInstallDependencies.Execute;
+var
+  i : Integer;
+  MissingDependency,
+  D : TFPDependency;
+  P,
+  InstalledP,
+  AvailP : TFPPackage;
+  L : TStringList;
+  status : string;
+  FreeManifest : boolean;
+begin
+  if PackageName='' then
+    Error(SErrNoPackageSpecified);
+  FreeManifest:=false;
+  // Load dependencies for local packages
+  if (PackageName=CmdLinePackageName) or (PackageName=CurrentDirPackageName) then
+    begin
+      ExecuteAction(PackageName,'fpmakemanifest');
+      P:=LoadManifestFromFile(ManifestFileName);
+      FreeManifest:=true;
+    end
+  else
+    P:=AvailableRepository.PackageByName(PackageName);
+  // Find and List dependencies
+  MissingDependency:=nil;
+  L:=TStringList.Create;
+  for i:=0 to P.Dependencies.Count-1 do
+    begin
+>>>>>>> graemeg/fixes_2_2
       D:=P.Dependencies[i];
       if (CompilerOptions.CompilerOS in D.OSes) and
          (CompilerOptions.CompilerCPU in D.CPUs) then
@@ -396,7 +547,11 @@ begin
             end
           else
             begin
+<<<<<<< HEAD
               if PackageIsBroken(InstalledP, True) then
+=======
+              if PackageIsBroken(InstalledP) then
+>>>>>>> graemeg/fixes_2_2
                 begin
                   status:='Broken, recompiling';
                   L.Add(D.PackageName);
@@ -410,6 +565,7 @@ begin
         end
       else
         Log(vlDebug,SDbgPackageDependencyOtherTarget,[D.PackageName,MakeTargetString(CompilerOptions.CompilerCPU,CompilerOptions.CompilerOS)]);
+<<<<<<< HEAD
     end;
   // Give error on first missing dependency
   if assigned(MissingDependency) then
@@ -428,6 +584,15 @@ begin
       if DependenciesDepth=0 then
         pkgglobals.Log(vlProgres,SProgrDependenciesInstalled);
     end;
+=======
+    end;
+  // Give error on first missing dependency
+  if assigned(MissingDependency) then
+    Error(SErrNoPackageAvailable,[MissingDependency.PackageName,MissingDependency.MinVersion.AsString]);
+  // Install needed updates
+  for i:=0 to L.Count-1 do
+    ExecuteAction(L[i],'install');
+>>>>>>> graemeg/fixes_2_2
   FreeAndNil(L);
   if FreeManifest then
     FreeAndNil(P);
@@ -444,7 +609,10 @@ begin
     FindBrokenPackages(SL);
     if SL.Count=0 then
       break;
+<<<<<<< HEAD
     pkgglobals.Log(vlProgres,SProgrReinstallDependent);
+=======
+>>>>>>> graemeg/fixes_2_2
     for i:=0 to SL.Count-1 do
       begin
         ExecuteAction(SL[i],'build');
@@ -469,5 +637,8 @@ initialization
   RegisterPkgHandler('archive',TCommandArchive);
   RegisterPkgHandler('installdependencies',TCommandInstallDependencies);
   RegisterPkgHandler('fixbroken',TCommandFixBroken);
+<<<<<<< HEAD
   RegisterPkgHandler('listsettings',TCommandListSettings);
+=======
+>>>>>>> graemeg/fixes_2_2
 end.

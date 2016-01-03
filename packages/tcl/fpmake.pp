@@ -13,6 +13,7 @@ begin
 {$endif ALLPACKAGES}
 
     P:=AddPackage('tcl');
+<<<<<<< HEAD
     P.Description := 'Interface unit for invoking Tcl interpreter using a library.';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -26,6 +27,16 @@ begin
     P.ExamplePath.Add('tests/');
     P.Targets.AddExampleProgram('tcl_demo.pp');
     // 'test.tcl
+=======
+{$ifdef ALLPACKAGES}
+    P.Directory:='tcl';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.SourcePath.Add('src');
+
+    T:=P.Targets.AddUnit('tcl80.pp');
+
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

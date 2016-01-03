@@ -67,7 +67,10 @@
           { internal instructions }
           'fmovd',
           'fabsd','fabsq',
+<<<<<<< HEAD
           'fnegd','fnegq',
+=======
+>>>>>>> graemeg/fixes_2_2
           { memory barrier instructions }
           'stbar',
           'membar'

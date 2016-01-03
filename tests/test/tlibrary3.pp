@@ -1,4 +1,5 @@
 { %NORUN }
+<<<<<<< HEAD
 { %SKIPTARGET=macos, go32v2, win64 }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -13,6 +14,9 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+{ %SKIPTARGET=macos, win64 }
+>>>>>>> graemeg/fixes_2_2
 
 {$ifdef darwin}
 {$PIC+}

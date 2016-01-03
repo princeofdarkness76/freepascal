@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -94,3 +95,22 @@ type
 >>>>>>> origin/cpstrnew
     property Pixels: Pointer read FPixels;
   end;
+=======
+Type
+  TWin32DIB = Class(TObject)
+  Private
+    FBitmapInfo : PBITMAPINFO;
+    FPixels : Pointer;
+    FFormat : TPTCFormat;
+    FWidth, FHeight, FPitch : Integer;
+  Public
+    Constructor Create(AWidth, AHeight : Integer);
+    Destructor Destroy; Override;
+    Property BMI : PBITMAPINFO Read FBitmapInfo;
+    Property Width : Integer Read FWidth;
+    Property Height : Integer Read FHeight;
+    Property Pitch : Integer Read FPitch;
+    Property Format : TPTCFormat Read FFormat;
+    Property Pixels : Pointer Read FPixels;
+  End;
+>>>>>>> graemeg/fixes_2_2

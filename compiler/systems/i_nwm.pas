@@ -38,6 +38,7 @@ unit i_nwm;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_smartlink_sections,tf_dwarf_only_local_labels];
 =======
             flags        : [tf_smartlink_library,tf_smartlink_sections,tf_dwarf_only_local_labels];
@@ -51,6 +52,9 @@ unit i_nwm;
 =======
             flags        : [tf_smartlink_library,tf_smartlink_sections,tf_dwarf_only_local_labels];
 >>>>>>> origin/cpstrnew
+=======
+            flags        : [tf_use_function_relative_addresses,tf_smartlink_library];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_i386;
             unit_env     : 'NETWAREUNITS';
             extradefines : 'NETWARE_CLIB';
@@ -103,9 +107,13 @@ unit i_nwm;
               );
             first_parm_offset : 8;
             stacksize    : 16384;
+<<<<<<< HEAD
             stackalign   : 4;
             abi : abi_default;
             llvmdatalayout : 'todo';
+=======
+            abi : abi_default
+>>>>>>> graemeg/fixes_2_2
           );
 
   implementation

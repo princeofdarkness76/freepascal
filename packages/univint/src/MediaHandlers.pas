@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       QuickTime/MediaHandlers.h
  
      Contains:   QuickTime Interfaces.
@@ -30,10 +31,21 @@
  
      Copyright:  © 1990-2008 by Apple Inc., all rights reserved
 >>>>>>> origin/cpstrnew
+=======
+     File:       MediaHandlers.p
+ 
+     Contains:   QuickTime Interfaces.
+ 
+     Version:    Technology: QuickTime 6.0
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1990-2002 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -62,6 +74,19 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -70,8 +95,13 @@
 
 unit MediaHandlers;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -84,21 +114,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -133,6 +171,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -140,6 +180,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -368,6 +409,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -393,6 +444,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -402,6 +457,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,Components,Events,ImageCompression,Movies,QuickdrawTypes,Sound;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -604,11 +660,162 @@ function CallComponentExecuteWiredAction( ci: ComponentInstance; actionContainer
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+uses MacTypes,Quickdraw,Events,ImageCompression,ConditionalMacros,Components,Sound,Movies;
+
+
+{$ALIGN MAC68K}
+
+
+type
+{$ifc TYPED_FUNCTION_POINTERS}
+	PrePrerollCompleteProcPtr = procedure(mh: MediaHandler; err: OSErr; refcon: UnivPtr);
+{$elsec}
+	PrePrerollCompleteProcPtr = ProcPtr;
+{$endc}
+
+{$ifc OPAQUE_UPP_TYPES}
+	PrePrerollCompleteUPP = ^SInt32; { an opaque UPP }
+{$elsec}
+	PrePrerollCompleteUPP = UniversalProcPtr;
+{$endc}	
+
+const
+	handlerHasSpatial			= $01;
+	handlerCanClip				= $02;
+	handlerCanMatte				= $04;
+	handlerCanTransferMode		= $08;
+	handlerNeedsBuffer			= $10;
+	handlerNoIdle				= $20;
+	handlerNoScheduler			= $40;
+	handlerWantsTime			= $80;
+	handlerCGrafPortOnly		= $0100;
+	handlerCanSend				= $0200;
+	handlerCanHandleComplexMatrix = $0400;
+	handlerWantsDestinationPixels = $0800;
+	handlerCanSendImageData		= $1000;
+	handlerCanPicSave			= $2000;
+
+	{	 media task flags 	}
+	mMustDraw					= $08;
+	mAtEnd						= $10;
+	mPreflightDraw				= $20;
+	mSyncDrawing				= $40;
+	mPrecompositeOnly			= $0200;
+	mSoundOnly					= $0400;
+	mDoIdleActionsBeforeDraws	= $0800;
+	mDisableIdleActions			= $1000;
+
+	{	 media task result flags 	}
+	mDidDraw					= $01;
+	mNeedsToDraw				= $04;
+	mDrawAgain					= $08;
+	mPartialDraw				= $10;
+	mWantIdleActions			= $20;
+
+	forceUpdateRedraw			= $01;
+	forceUpdateNewBuffer		= $02;
+
+	{	 media hit test flags 	}
+	mHitTestBounds				= $00000001;					{     point must only be within targetRefCon's bounding box  }
+	mHitTestImage				= $00000002;					{   point must be within the shape of the targetRefCon's image  }
+	mHitTestInvisible			= $00000004;					{   invisible targetRefCon's may be hit tested  }
+	mHitTestIsClick				= $00000008;					{   for codecs that want mouse events  }
+
+	{	 media is opaque flags 	}
+	mOpaque						= $00000001;
+	mInvisible					= $00000002;
+
+	{	 MediaSetPublicInfo/MediaGetPublicInfo selectors 	}
+	kMediaQTIdleFrequencySelector = FourCharCode('idfq');
+
+
+type
+	GetMovieCompleteParamsPtr = ^GetMovieCompleteParams;
+	GetMovieCompleteParams = record
+		version:				SInt16;
+		theMovie:				Movie;
+		theTrack:				Track;
+		theMedia:				Media;
+		movieScale:				TimeScale;
+		mediaScale:				TimeScale;
+		movieDuration:			TimeValue;
+		trackDuration:			TimeValue;
+		mediaDuration:			TimeValue;
+		effectiveRate:			Fixed;
+		timeBase:				TimeBase_fix;
+		volume:					SInt16;
+		width:					Fixed;
+		height:					Fixed;
+		trackMovieMatrix:		MatrixRecord;
+		moviePort:				CGrafPtr;
+		movieGD:				GDHandle;
+		trackMatte:				PixMapHandle;
+		inputMap:				QTAtomContainer;
+		mediaContextID:			QTMediaContextID;
+	end;
+
+
+const
+	kMediaVideoParamBrightness	= 1;
+	kMediaVideoParamContrast	= 2;
+	kMediaVideoParamHue			= 3;
+	kMediaVideoParamSharpness	= 4;
+	kMediaVideoParamSaturation	= 5;
+	kMediaVideoParamBlackLevel	= 6;
+	kMediaVideoParamWhiteLevel	= 7;
+
+	{  These are for MediaGetInfo() and MediaSetInfo(). }
+	kMHInfoEncodedFrameRate		= FourCharCode('orat');						{  Parameter is a MHInfoEncodedFrameRateRecord*. }
+
+	{  This holds the frame rate at which the track was encoded. }
+
+type
+	MHInfoEncodedFrameRateRecordPtr = ^MHInfoEncodedFrameRateRecord;
+	MHInfoEncodedFrameRateRecord = record
+		encodedFrameRate:		Fixed;
+	end;
+
+	dataHandlePtr						= ^Handle;
+	dataHandleHandle					= ^dataHandlePtr;
+
+	QTCustomActionTargetRecordPtr = ^QTCustomActionTargetRecord;
+	QTCustomActionTargetRecord = record
+		movie:					Movie_fix;
+		doMCActionCallbackProc:	DoMCActionUPP;
+		callBackRefcon:			SInt32;
+		track:					Track_fix;
+		trackObjectRefCon:		SInt32;
+		defaultTrack:			Track_fix;
+		defaultObjectRefCon:	SInt32;
+		reserved1:				SInt32;
+		reserved2:				SInt32;
+	end;
+
+	QTCustomActionTargetPtr				= ^QTCustomActionTargetRecord;
+	MediaEQSpectrumBandsRecordPtr = ^MediaEQSpectrumBandsRecord;
+	MediaEQSpectrumBandsRecord = record
+		count:					SInt16;
+		frequency:				UnsignedFixedPtr;						{  pointer to array of frequencies }
+	end;
+
+	{
+	 *  CallComponentExecuteWiredAction()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+	 *    CarbonLib:        in CarbonLib 1.0.2 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 *    Windows:          in qtmlClient.lib 4.0 and later
+	 	}
+function CallComponentExecuteWiredAction(ci: ComponentInstance; actionContainer: QTAtomContainer; actionAtom: QTAtom; target: QTCustomActionTargetPtr; event: QTEventRecordPtr): ComponentResult; external name '_CallComponentExecuteWiredAction';
+>>>>>>> graemeg/fixes_2_2
 { MediaCallRange2 }
 { These are unique to each type of media handler }
 { They are also included in the public interfaces }
 
 
+<<<<<<< HEAD
 { Flags for MediaSetChunkManagementFlags}
 const
 	kEmptyPurgableChunksOverAllowance = 1;
@@ -626,10 +833,28 @@ function MediaSetChunkManagementFlags( mh: MediaHandler; flags: UInt32; flagsMas
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+=======
+{  Flags for MediaSetChunkManagementFlags }
+
+const
+	kEmptyPurgableChunksOverAllowance = 1;
+
+	{
+	 *  MediaSetChunkManagementFlags()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+	 *    CarbonLib:        in CarbonLib 1.6 and later
+	 *    Mac OS X:         in version 10.2 and later
+	 *    Windows:          in qtmlClient.lib 6.0 and later
+	 	}
+function MediaSetChunkManagementFlags(mh: MediaHandler; flags: UInt32; flagsMask: UInt32): ComponentResult; external name '_MediaSetChunkManagementFlags';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetChunkManagementFlags()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
@@ -639,10 +864,19 @@ function MediaGetChunkManagementFlags( mh: MediaHandler; var flags: UInt32 ): Co
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Mac OS X:         in version 10.2 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MediaGetChunkManagementFlags(mh: MediaHandler; var flags: UInt32): ComponentResult; external name '_MediaGetChunkManagementFlags';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetPurgeableChunkMemoryAllowance()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
@@ -652,10 +886,19 @@ function MediaSetPurgeableChunkMemoryAllowance( mh: MediaHandler; allowance: Siz
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Mac OS X:         in version 10.2 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MediaSetPurgeableChunkMemoryAllowance(mh: MediaHandler; allowance: Size): ComponentResult; external name '_MediaSetPurgeableChunkMemoryAllowance';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetPurgeableChunkMemoryAllowance()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
@@ -665,10 +908,19 @@ function MediaGetPurgeableChunkMemoryAllowance( mh: MediaHandler; var allowance:
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Mac OS X:         in version 10.2 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MediaGetPurgeableChunkMemoryAllowance(mh: MediaHandler; var allowance: Size): ComponentResult; external name '_MediaGetPurgeableChunkMemoryAllowance';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaEmptyAllPurgeableChunks()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
@@ -678,11 +930,20 @@ function MediaEmptyAllPurgeableChunks( mh: MediaHandler ): ComponentResult; exte
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Mac OS X:         in version 10.2 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MediaEmptyAllPurgeableChunks(mh: MediaHandler): ComponentResult; external name '_MediaEmptyAllPurgeableChunks';
+>>>>>>> graemeg/fixes_2_2
 {**** These are the calls for dealing with the Generic media handler ****}
 {
  *  MediaInitialize()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -692,10 +953,19 @@ function MediaInitialize( mh: MediaHandler; var gmc: GetMovieCompleteParams ): C
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaInitialize(mh: MediaHandler; var gmc: GetMovieCompleteParams): ComponentResult; external name '_MediaInitialize';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetHandlerCapabilities()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -705,10 +975,19 @@ function MediaSetHandlerCapabilities( mh: MediaHandler; flags: SIGNEDLONG; flags
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetHandlerCapabilities(mh: MediaHandler; flags: SInt32; flagsMask: SInt32): ComponentResult; external name '_MediaSetHandlerCapabilities';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaIdle()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -718,10 +997,19 @@ function MediaIdle( mh: MediaHandler; atMediaTime: TimeValue; flagsIn: SIGNEDLON
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaIdle(mh: MediaHandler; atMediaTime: TimeValue; flagsIn: SInt32; var flagsOut: SInt32; const (*var*) movieTime: TimeRecord): ComponentResult; external name '_MediaIdle';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetMediaInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -731,10 +1019,19 @@ function MediaGetMediaInfo( mh: MediaHandler; h: Handle ): ComponentResult; exte
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetMediaInfo(mh: MediaHandler; h: Handle): ComponentResult; external name '_MediaGetMediaInfo';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaPutMediaInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -744,10 +1041,19 @@ function MediaPutMediaInfo( mh: MediaHandler; h: Handle ): ComponentResult; exte
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaPutMediaInfo(mh: MediaHandler; h: Handle): ComponentResult; external name '_MediaPutMediaInfo';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetActive()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -757,10 +1063,19 @@ function MediaSetActive( mh: MediaHandler; enableMedia: Boolean ): ComponentResu
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetActive(mh: MediaHandler; enableMedia: boolean): ComponentResult; external name '_MediaSetActive';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetRate()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -770,10 +1085,19 @@ function MediaSetRate( mh: MediaHandler; rate: Fixed ): ComponentResult; externa
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetRate(mh: MediaHandler; rate: Fixed): ComponentResult; external name '_MediaSetRate';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGGetStatus()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -783,10 +1107,19 @@ function MediaGGetStatus( mh: MediaHandler; var statusErr: ComponentResult ): Co
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGGetStatus(mh: MediaHandler; var statusErr: ComponentResult): ComponentResult; external name '_MediaGGetStatus';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaTrackEdited()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -796,10 +1129,19 @@ function MediaTrackEdited( mh: MediaHandler ): ComponentResult; external name '_
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaTrackEdited(mh: MediaHandler): ComponentResult; external name '_MediaTrackEdited';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetMediaTimeScale()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -809,10 +1151,19 @@ function MediaSetMediaTimeScale( mh: MediaHandler; newTimeScale: TimeScale ): Co
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetMediaTimeScale(mh: MediaHandler; newTimeScale: TimeScale): ComponentResult; external name '_MediaSetMediaTimeScale';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetMovieTimeScale()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -822,10 +1173,19 @@ function MediaSetMovieTimeScale( mh: MediaHandler; newTimeScale: TimeScale ): Co
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetMovieTimeScale(mh: MediaHandler; newTimeScale: TimeScale): ComponentResult; external name '_MediaSetMovieTimeScale';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetGWorld()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -835,10 +1195,19 @@ function MediaSetGWorld( mh: MediaHandler; aPort: CGrafPtr; aGD: GDHandle ): Com
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetGWorld(mh: MediaHandler; aPort: CGrafPtr; aGD: GDHandle): ComponentResult; external name '_MediaSetGWorld';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetDimensions()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -848,10 +1217,19 @@ function MediaSetDimensions( mh: MediaHandler; width: Fixed; height: Fixed ): Co
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetDimensions(mh: MediaHandler; width: Fixed; height: Fixed): ComponentResult; external name '_MediaSetDimensions';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetClip()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -861,10 +1239,19 @@ function MediaSetClip( mh: MediaHandler; theClip: RgnHandle ): ComponentResult; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetClip(mh: MediaHandler; theClip: RgnHandle): ComponentResult; external name '_MediaSetClip';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetMatrix()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -874,10 +1261,19 @@ function MediaSetMatrix( mh: MediaHandler; var trackMovieMatrix: MatrixRecord ):
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetMatrix(mh: MediaHandler; var trackMovieMatrix: MatrixRecord): ComponentResult; external name '_MediaSetMatrix';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetTrackOpaque()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -887,10 +1283,19 @@ function MediaGetTrackOpaque( mh: MediaHandler; var trackIsOpaque: Boolean ): Co
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetTrackOpaque(mh: MediaHandler; var trackIsOpaque: boolean): ComponentResult; external name '_MediaGetTrackOpaque';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetGraphicsMode()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -900,10 +1305,19 @@ function MediaSetGraphicsMode( mh: MediaHandler; mode: SIGNEDLONG; const (*var*)
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetGraphicsMode(mh: MediaHandler; mode: SInt32; const (*var*) opColor: RGBColor): ComponentResult; external name '_MediaSetGraphicsMode';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetGraphicsMode()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -913,10 +1327,19 @@ function MediaGetGraphicsMode( mh: MediaHandler; var mode: SIGNEDLONG; var opCol
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetGraphicsMode(mh: MediaHandler; var mode: SInt32; var opColor: RGBColor): ComponentResult; external name '_MediaGetGraphicsMode';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGSetVolume()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -926,10 +1349,19 @@ function MediaGSetVolume( mh: MediaHandler; volume: SInt16 ): ComponentResult; e
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGSetVolume(mh: MediaHandler; volume: SInt16): ComponentResult; external name '_MediaGSetVolume';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetSoundBalance()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -939,10 +1371,19 @@ function MediaSetSoundBalance( mh: MediaHandler; balance: SInt16 ): ComponentRes
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetSoundBalance(mh: MediaHandler; balance: SInt16): ComponentResult; external name '_MediaSetSoundBalance';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetSoundBalance()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -952,10 +1393,19 @@ function MediaGetSoundBalance( mh: MediaHandler; var balance: SInt16 ): Componen
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetSoundBalance(mh: MediaHandler; var balance: SInt16): ComponentResult; external name '_MediaGetSoundBalance';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetNextBoundsChange()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -965,10 +1415,19 @@ function MediaGetNextBoundsChange( mh: MediaHandler; var when: TimeValue ): Comp
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetNextBoundsChange(mh: MediaHandler; var when: TimeValue): ComponentResult; external name '_MediaGetNextBoundsChange';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetSrcRgn()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -978,10 +1437,19 @@ function MediaGetSrcRgn( mh: MediaHandler; rgn: RgnHandle; atMediaTime: TimeValu
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetSrcRgn(mh: MediaHandler; rgn: RgnHandle; atMediaTime: TimeValue): ComponentResult; external name '_MediaGetSrcRgn';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaPreroll()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -991,10 +1459,19 @@ function MediaPreroll( mh: MediaHandler; time: TimeValue; rate: Fixed ): Compone
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaPreroll(mh: MediaHandler; time: TimeValue; rate: Fixed): ComponentResult; external name '_MediaPreroll';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSampleDescriptionChanged()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1004,10 +1481,19 @@ function MediaSampleDescriptionChanged( mh: MediaHandler; index: SIGNEDLONG ): C
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSampleDescriptionChanged(mh: MediaHandler; index: SInt32): ComponentResult; external name '_MediaSampleDescriptionChanged';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaHasCharacteristic()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1017,10 +1503,19 @@ function MediaHasCharacteristic( mh: MediaHandler; characteristic: OSType; var h
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaHasCharacteristic(mh: MediaHandler; characteristic: OSType; var hasIt: boolean): ComponentResult; external name '_MediaHasCharacteristic';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetOffscreenBufferSize()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1030,10 +1525,19 @@ function MediaGetOffscreenBufferSize( mh: MediaHandler; var bounds: Rect; depth:
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetOffscreenBufferSize(mh: MediaHandler; var bounds: Rect; depth: SInt16; ctab: CTabHandle): ComponentResult; external name '_MediaGetOffscreenBufferSize';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetHints()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1043,10 +1547,19 @@ function MediaSetHints( mh: MediaHandler; hints: SIGNEDLONG ): ComponentResult; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetHints(mh: MediaHandler; hints: SInt32): ComponentResult; external name '_MediaSetHints';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetName()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1056,10 +1569,19 @@ function MediaGetName( mh: MediaHandler; var name: Str255; requestedLanguage: SI
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetName(mh: MediaHandler; var name: Str255; requestedLanguage: SInt32; var actualLanguage: SInt32): ComponentResult; external name '_MediaGetName';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaForceUpdate()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1069,10 +1591,19 @@ function MediaForceUpdate( mh: MediaHandler; forceUpdateFlags: SIGNEDLONG ): Com
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaForceUpdate(mh: MediaHandler; forceUpdateFlags: SInt32): ComponentResult; external name '_MediaForceUpdate';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetDrawingRgn()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1082,10 +1613,19 @@ function MediaGetDrawingRgn( mh: MediaHandler; var partialRgn: RgnHandle ): Comp
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetDrawingRgn(mh: MediaHandler; var partialRgn: RgnHandle): ComponentResult; external name '_MediaGetDrawingRgn';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGSetActiveSegment()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1095,10 +1635,19 @@ function MediaGSetActiveSegment( mh: MediaHandler; activeStart: TimeValue; activ
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGSetActiveSegment(mh: MediaHandler; activeStart: TimeValue; activeDuration: TimeValue): ComponentResult; external name '_MediaGSetActiveSegment';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaInvalidateRegion()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1108,10 +1657,19 @@ function MediaInvalidateRegion( mh: MediaHandler; invalRgn: RgnHandle ): Compone
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaInvalidateRegion(mh: MediaHandler; invalRgn: RgnHandle): ComponentResult; external name '_MediaInvalidateRegion';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetNextStepTime()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1121,10 +1679,19 @@ function MediaGetNextStepTime( mh: MediaHandler; flags: SInt16; mediaTimeIn: Tim
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetNextStepTime(mh: MediaHandler; flags: SInt16; mediaTimeIn: TimeValue; var mediaTimeOut: TimeValue; rate: Fixed): ComponentResult; external name '_MediaGetNextStepTime';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetNonPrimarySourceData()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1134,10 +1701,19 @@ function MediaSetNonPrimarySourceData( mh: MediaHandler; inputIndex: SIGNEDLONG;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetNonPrimarySourceData(mh: MediaHandler; inputIndex: SInt32; dataDescriptionSeed: SInt32; dataDescription: Handle; data: UnivPtr; dataSize: SInt32; asyncCompletionProc: ICMCompletionProcRecordPtr; transferProc: ICMConvertDataFormatUPP; refCon: UnivPtr): ComponentResult; external name '_MediaSetNonPrimarySourceData';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaChangedNonPrimarySource()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1147,10 +1723,19 @@ function MediaChangedNonPrimarySource( mh: MediaHandler; inputIndex: SIGNEDLONG 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaChangedNonPrimarySource(mh: MediaHandler; inputIndex: SInt32): ComponentResult; external name '_MediaChangedNonPrimarySource';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaTrackReferencesChanged()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1160,10 +1745,19 @@ function MediaTrackReferencesChanged( mh: MediaHandler ): ComponentResult; exter
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaTrackReferencesChanged(mh: MediaHandler): ComponentResult; external name '_MediaTrackReferencesChanged';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetSampleDataPointer()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1173,10 +1767,19 @@ function MediaGetSampleDataPointer( mh: MediaHandler; sampleNum: SIGNEDLONG; var
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetSampleDataPointer(mh: MediaHandler; sampleNum: SInt32; var dataPtr: Ptr; var dataSize: SInt32; var sampleDescIndex: SInt32): ComponentResult; external name '_MediaGetSampleDataPointer';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaReleaseSampleDataPointer()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1186,10 +1789,19 @@ function MediaReleaseSampleDataPointer( mh: MediaHandler; sampleNum: SIGNEDLONG 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaReleaseSampleDataPointer(mh: MediaHandler; sampleNum: SInt32): ComponentResult; external name '_MediaReleaseSampleDataPointer';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaTrackPropertyAtomChanged()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1199,10 +1811,19 @@ function MediaTrackPropertyAtomChanged( mh: MediaHandler ): ComponentResult; ext
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaTrackPropertyAtomChanged(mh: MediaHandler): ComponentResult; external name '_MediaTrackPropertyAtomChanged';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetTrackInputMapReference()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1212,10 +1833,19 @@ function MediaSetTrackInputMapReference( mh: MediaHandler; inputMap: QTAtomConta
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetTrackInputMapReference(mh: MediaHandler; inputMap: QTAtomContainer): ComponentResult; external name '_MediaSetTrackInputMapReference';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetVideoParam()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1225,10 +1855,19 @@ function MediaSetVideoParam( mh: MediaHandler; whichParam: SIGNEDLONG; var value
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetVideoParam(mh: MediaHandler; whichParam: SInt32; var value: UInt16): ComponentResult; external name '_MediaSetVideoParam';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetVideoParam()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1238,10 +1877,19 @@ function MediaGetVideoParam( mh: MediaHandler; whichParam: SIGNEDLONG; var value
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetVideoParam(mh: MediaHandler; whichParam: SInt32; var value: UInt16): ComponentResult; external name '_MediaGetVideoParam';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaCompare()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1251,10 +1899,19 @@ function MediaCompare( mh: MediaHandler; var isOK: Boolean; srcMedia: Media; src
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaCompare(mh: MediaHandler; var isOK: boolean; srcMedia: Media; srcMediaComponent: ComponentInstance): ComponentResult; external name '_MediaCompare';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetClock()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1264,10 +1921,19 @@ function MediaGetClock( mh: MediaHandler; var clock: ComponentInstance ): Compon
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetClock(mh: MediaHandler; var clock: ComponentInstance): ComponentResult; external name '_MediaGetClock';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetSoundOutputComponent()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1277,10 +1943,19 @@ function MediaSetSoundOutputComponent( mh: MediaHandler; outputComponent: Compon
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetSoundOutputComponent(mh: MediaHandler; outputComponent: Component): ComponentResult; external name '_MediaSetSoundOutputComponent';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetSoundOutputComponent()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1290,10 +1965,19 @@ function MediaGetSoundOutputComponent( mh: MediaHandler; var outputComponent: Co
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetSoundOutputComponent(mh: MediaHandler; var outputComponent: Component): ComponentResult; external name '_MediaGetSoundOutputComponent';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetSoundLocalizationData()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1303,10 +1987,19 @@ function MediaSetSoundLocalizationData( mh: MediaHandler; data: Handle ): Compon
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetSoundLocalizationData(mh: MediaHandler; data: Handle): ComponentResult; external name '_MediaSetSoundLocalizationData';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetInvalidRegion()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1316,10 +2009,19 @@ function MediaGetInvalidRegion( mh: MediaHandler; rgn: RgnHandle ): ComponentRes
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetInvalidRegion(mh: MediaHandler; rgn: RgnHandle): ComponentResult; external name '_MediaGetInvalidRegion';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSampleDescriptionB2N()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1329,10 +2031,19 @@ function MediaSampleDescriptionB2N( mh: MediaHandler; sampleDescriptionH: Sample
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSampleDescriptionB2N(mh: MediaHandler; sampleDescriptionH: SampleDescriptionHandle): ComponentResult; external name '_MediaSampleDescriptionB2N';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSampleDescriptionN2B()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1342,10 +2053,19 @@ function MediaSampleDescriptionN2B( mh: MediaHandler; sampleDescriptionH: Sample
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSampleDescriptionN2B(mh: MediaHandler; sampleDescriptionH: SampleDescriptionHandle): ComponentResult; external name '_MediaSampleDescriptionN2B';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaQueueNonPrimarySourceData()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1355,10 +2075,19 @@ function MediaQueueNonPrimarySourceData( mh: MediaHandler; inputIndex: SIGNEDLON
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaQueueNonPrimarySourceData(mh: MediaHandler; inputIndex: SInt32; dataDescriptionSeed: SInt32; dataDescription: Handle; data: UnivPtr; dataSize: SInt32; asyncCompletionProc: ICMCompletionProcRecordPtr; const (*var*) frameTime: ICMFrameTimeRecord; transferProc: ICMConvertDataFormatUPP; refCon: UnivPtr): ComponentResult; external name '_MediaQueueNonPrimarySourceData';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaFlushNonPrimarySourceData()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1368,10 +2097,19 @@ function MediaFlushNonPrimarySourceData( mh: MediaHandler; inputIndex: SIGNEDLON
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaFlushNonPrimarySourceData(mh: MediaHandler; inputIndex: SInt32): ComponentResult; external name '_MediaFlushNonPrimarySourceData';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetURLLink()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1381,10 +2119,19 @@ function MediaGetURLLink( mh: MediaHandler; displayWhere: Point; var urlLink: Ha
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetURLLink(mh: MediaHandler; displayWhere: Point; var urlLink: Handle): ComponentResult; external name '_MediaGetURLLink';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaMakeMediaTimeTable()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1394,10 +2141,19 @@ function MediaMakeMediaTimeTable( mh: MediaHandler; var offsets: SIGNEDLONGPtr; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaMakeMediaTimeTable(mh: MediaHandler; var offsets: SInt32Ptr; startTime: TimeValue; endTime: TimeValue; timeIncrement: TimeValue; firstDataRefIndex: SInt16; lastDataRefIndex: SInt16; var retDataRefSkew: SInt32): ComponentResult; external name '_MediaMakeMediaTimeTable';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaHitTestForTargetRefCon()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1407,10 +2163,19 @@ function MediaHitTestForTargetRefCon( mh: MediaHandler; flags: SIGNEDLONG; loc: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaHitTestForTargetRefCon(mh: MediaHandler; flags: SInt32; loc: Point; var targetRefCon: SInt32): ComponentResult; external name '_MediaHitTestForTargetRefCon';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaHitTestTargetRefCon()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1420,10 +2185,19 @@ function MediaHitTestTargetRefCon( mh: MediaHandler; targetRefCon: SIGNEDLONG; f
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaHitTestTargetRefCon(mh: MediaHandler; targetRefCon: SInt32; flags: SInt32; loc: Point; var wasHit: boolean): ComponentResult; external name '_MediaHitTestTargetRefCon';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetActionsForQTEvent()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1433,10 +2207,19 @@ function MediaGetActionsForQTEvent( mh: MediaHandler; event: QTEventRecordPtr; t
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaGetActionsForQTEvent(mh: MediaHandler; event: QTEventRecordPtr; targetRefCon: SInt32; var container: QTAtomContainer; var atom: QTAtom): ComponentResult; external name '_MediaGetActionsForQTEvent';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaDisposeTargetRefCon()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1446,10 +2229,19 @@ function MediaDisposeTargetRefCon( mh: MediaHandler; targetRefCon: SIGNEDLONG ):
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaDisposeTargetRefCon(mh: MediaHandler; targetRefCon: SInt32): ComponentResult; external name '_MediaDisposeTargetRefCon';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaTargetRefConsEqual()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1459,10 +2251,19 @@ function MediaTargetRefConsEqual( mh: MediaHandler; firstRefCon: SIGNEDLONG; sec
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaTargetRefConsEqual(mh: MediaHandler; firstRefCon: SInt32; secondRefCon: SInt32; var equal: boolean): ComponentResult; external name '_MediaTargetRefConsEqual';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetActionsCallback()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1472,10 +2273,19 @@ function MediaSetActionsCallback( mh: MediaHandler; actionsCallbackProc: Actions
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaSetActionsCallback(mh: MediaHandler; actionsCallbackProc: ActionsUPP; refcon: UnivPtr): ComponentResult; external name '_MediaSetActionsCallback';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaPrePrerollBegin()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1485,10 +2295,19 @@ function MediaPrePrerollBegin( mh: MediaHandler; time: TimeValue; rate: Fixed; c
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaPrePrerollBegin(mh: MediaHandler; time: TimeValue; rate: Fixed; completeProc: PrePrerollCompleteUPP; refcon: UnivPtr): ComponentResult; external name '_MediaPrePrerollBegin';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaPrePrerollCancel()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1498,10 +2317,19 @@ function MediaPrePrerollCancel( mh: MediaHandler; refcon: UnivPtr ): ComponentRe
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaPrePrerollCancel(mh: MediaHandler; refcon: UnivPtr): ComponentResult; external name '_MediaPrePrerollCancel';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaEnterEmptyEdit()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1511,10 +2339,19 @@ function MediaEnterEmptyEdit( mh: MediaHandler ): ComponentResult; external name
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaEnterEmptyEdit(mh: MediaHandler): ComponentResult; external name '_MediaEnterEmptyEdit';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaCurrentMediaQueuedData()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -1524,10 +2361,19 @@ function MediaCurrentMediaQueuedData( mh: MediaHandler; var milliSecs: SIGNEDLON
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MediaCurrentMediaQueuedData(mh: MediaHandler; var milliSecs: SInt32): ComponentResult; external name '_MediaCurrentMediaQueuedData';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetEffectiveVolume()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -1537,10 +2383,19 @@ function MediaGetEffectiveVolume( mh: MediaHandler; var volume: SInt16 ): Compon
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MediaGetEffectiveVolume(mh: MediaHandler; var volume: SInt16): ComponentResult; external name '_MediaGetEffectiveVolume';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaResolveTargetRefCon()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -1550,10 +2405,19 @@ function MediaResolveTargetRefCon( mh: MediaHandler; container: QTAtomContainer;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MediaResolveTargetRefCon(mh: MediaHandler; container: QTAtomContainer; atom: QTAtom; var targetRefCon: SInt32): ComponentResult; external name '_MediaResolveTargetRefCon';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetSoundLevelMeteringEnabled()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -1563,10 +2427,19 @@ function MediaGetSoundLevelMeteringEnabled( mh: MediaHandler; var enabled: Boole
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MediaGetSoundLevelMeteringEnabled(mh: MediaHandler; var enabled: boolean): ComponentResult; external name '_MediaGetSoundLevelMeteringEnabled';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetSoundLevelMeteringEnabled()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -1576,10 +2449,19 @@ function MediaSetSoundLevelMeteringEnabled( mh: MediaHandler; enable: Boolean ):
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MediaSetSoundLevelMeteringEnabled(mh: MediaHandler; enable: boolean): ComponentResult; external name '_MediaSetSoundLevelMeteringEnabled';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetSoundLevelMeterInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -1589,10 +2471,19 @@ function MediaGetSoundLevelMeterInfo( mh: MediaHandler; levelInfo: LevelMeterInf
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MediaGetSoundLevelMeterInfo(mh: MediaHandler; levelInfo: LevelMeterInfoPtr): ComponentResult; external name '_MediaGetSoundLevelMeterInfo';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetEffectiveSoundBalance()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -1602,10 +2493,19 @@ function MediaGetEffectiveSoundBalance( mh: MediaHandler; var balance: SInt16 ):
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MediaGetEffectiveSoundBalance(mh: MediaHandler; var balance: SInt16): ComponentResult; external name '_MediaGetEffectiveSoundBalance';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetScreenLock()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -1615,10 +2515,19 @@ function MediaSetScreenLock( mh: MediaHandler; lockIt: Boolean ): ComponentResul
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MediaSetScreenLock(mh: MediaHandler; lockIt: boolean): ComponentResult; external name '_MediaSetScreenLock';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetDoMCActionCallback()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -1628,10 +2537,19 @@ function MediaSetDoMCActionCallback( mh: MediaHandler; doMCActionCallbackProc: D
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MediaSetDoMCActionCallback(mh: MediaHandler; doMCActionCallbackProc: DoMCActionUPP; refcon: UnivPtr): ComponentResult; external name '_MediaSetDoMCActionCallback';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetErrorString()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -1641,10 +2559,19 @@ function MediaGetErrorString( mh: MediaHandler; theError: ComponentResult; var e
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MediaGetErrorString(mh: MediaHandler; theError: ComponentResult; var errorString: Str255): ComponentResult; external name '_MediaGetErrorString';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetSoundEqualizerBands()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -1654,10 +2581,19 @@ function MediaGetSoundEqualizerBands( mh: MediaHandler; spectrumInfo: MediaEQSpe
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MediaGetSoundEqualizerBands(mh: MediaHandler; spectrumInfo: MediaEQSpectrumBandsRecordPtr): ComponentResult; external name '_MediaGetSoundEqualizerBands';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetSoundEqualizerBands()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -1667,10 +2603,19 @@ function MediaSetSoundEqualizerBands( mh: MediaHandler; spectrumInfo: MediaEQSpe
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MediaSetSoundEqualizerBands(mh: MediaHandler; spectrumInfo: MediaEQSpectrumBandsRecordPtr): ComponentResult; external name '_MediaSetSoundEqualizerBands';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetSoundEqualizerBandLevels()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -1680,10 +2625,19 @@ function MediaGetSoundEqualizerBandLevels( mh: MediaHandler; var bandLevels: UIn
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MediaGetSoundEqualizerBandLevels(mh: MediaHandler; var bandLevels: UInt8): ComponentResult; external name '_MediaGetSoundEqualizerBandLevels';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaDoIdleActions()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -1693,10 +2647,19 @@ function MediaDoIdleActions( mh: MediaHandler ): ComponentResult; external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MediaDoIdleActions(mh: MediaHandler): ComponentResult; external name '_MediaDoIdleActions';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetSoundBassAndTreble()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -1706,10 +2669,19 @@ function MediaSetSoundBassAndTreble( mh: MediaHandler; bass: SInt16; treble: SIn
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MediaSetSoundBassAndTreble(mh: MediaHandler; bass: SInt16; treble: SInt16): ComponentResult; external name '_MediaSetSoundBassAndTreble';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetSoundBassAndTreble()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -1719,10 +2691,19 @@ function MediaGetSoundBassAndTreble( mh: MediaHandler; var bass: SInt16; var tre
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MediaGetSoundBassAndTreble(mh: MediaHandler; var bass: SInt16; var treble: SInt16): ComponentResult; external name '_MediaGetSoundBassAndTreble';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaTimeBaseChanged()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -1732,10 +2713,19 @@ function MediaTimeBaseChanged( mh: MediaHandler ): ComponentResult; external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MediaTimeBaseChanged(mh: MediaHandler): ComponentResult; external name '_MediaTimeBaseChanged';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaMCIsPlayerEvent()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
@@ -1745,10 +2735,19 @@ function MediaMCIsPlayerEvent( mh: MediaHandler; const (*var*) e: EventRecord; v
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ }
+function MediaMCIsPlayerEvent(mh: MediaHandler; const (*var*) e: EventRecord; var handledIt: boolean): ComponentResult; external name '_MediaMCIsPlayerEvent';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetMediaLoadState()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
@@ -1758,10 +2757,19 @@ function MediaGetMediaLoadState( mh: MediaHandler; var mediaLoadState: SIGNEDLON
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ }
+function MediaGetMediaLoadState(mh: MediaHandler; var mediaLoadState: SInt32): ComponentResult; external name '_MediaGetMediaLoadState';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaVideoOutputChanged()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
@@ -1771,10 +2779,19 @@ function MediaVideoOutputChanged( mh: MediaHandler; vout: ComponentInstance ): C
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function MediaVideoOutputChanged(mh: MediaHandler; vout: ComponentInstance): ComponentResult; external name '_MediaVideoOutputChanged';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaEmptySampleCache()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
@@ -1784,10 +2801,19 @@ function MediaEmptySampleCache( mh: MediaHandler; sampleNum: SIGNEDLONG; sampleC
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function MediaEmptySampleCache(mh: MediaHandler; sampleNum: SInt32; sampleCount: SInt32): ComponentResult; external name '_MediaEmptySampleCache';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetPublicInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
@@ -1797,10 +2823,19 @@ function MediaGetPublicInfo( mh: MediaHandler; infoSelector: OSType; infoDataPtr
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function MediaGetPublicInfo(mh: MediaHandler; infoSelector: OSType; infoDataPtr: UnivPtr; var ioDataSize: Size): ComponentResult; external name '_MediaGetPublicInfo';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetPublicInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
@@ -1810,10 +2845,19 @@ function MediaSetPublicInfo( mh: MediaHandler; infoSelector: OSType; infoDataPtr
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function MediaSetPublicInfo(mh: MediaHandler; infoSelector: OSType; infoDataPtr: UnivPtr; dataSize: Size): ComponentResult; external name '_MediaSetPublicInfo';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGetUserPreferredCodecs()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
@@ -1823,10 +2867,19 @@ function MediaGetUserPreferredCodecs( mh: MediaHandler; var userPreferredCodecs:
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function MediaGetUserPreferredCodecs(mh: MediaHandler; var userPreferredCodecs: CodecComponentHandle): ComponentResult; external name '_MediaGetUserPreferredCodecs';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaSetUserPreferredCodecs()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
@@ -1837,11 +2890,21 @@ function MediaSetUserPreferredCodecs( mh: MediaHandler; userPreferredCodecs: Cod
 
 
 { Keyboard Focus Support}
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Mac OS X:         in version 10.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function MediaSetUserPreferredCodecs(mh: MediaHandler; userPreferredCodecs: CodecComponentHandle): ComponentResult; external name '_MediaSetUserPreferredCodecs';
+{  Keyboard Focus Support }
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  MediaRefConSetProperty()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
@@ -1851,10 +2914,19 @@ function MediaRefConSetProperty( mh: MediaHandler; refCon: SIGNEDLONG; propertyT
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Mac OS X:         in version 10.2 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MediaRefConSetProperty(mh: MediaHandler; refCon: SInt32; propertyType: SInt32; propertyValue: UnivPtr): ComponentResult; external name '_MediaRefConSetProperty';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaRefConGetProperty()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
@@ -1864,10 +2936,19 @@ function MediaRefConGetProperty( mh: MediaHandler; refCon: SIGNEDLONG; propertyT
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Mac OS X:         in version 10.2 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MediaRefConGetProperty(mh: MediaHandler; refCon: SInt32; propertyType: SInt32; propertyValue: UnivPtr): ComponentResult; external name '_MediaRefConGetProperty';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaNavigateTargetRefCon()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
@@ -1877,10 +2958,19 @@ function MediaNavigateTargetRefCon( mh: MediaHandler; navigation: SIGNEDLONG; va
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Mac OS X:         in version 10.2 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MediaNavigateTargetRefCon(mh: MediaHandler; navigation: SInt32; var refCon: SInt32): ComponentResult; external name '_MediaNavigateTargetRefCon';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGGetIdleManager()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
@@ -1890,10 +2980,19 @@ function MediaGGetIdleManager( mh: MediaHandler; var pim: IdleManager ): Compone
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Mac OS X:         in version 10.2 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MediaGGetIdleManager(mh: MediaHandler; var pim: IdleManager): ComponentResult; external name '_MediaGGetIdleManager';
+>>>>>>> graemeg/fixes_2_2
 {
  *  MediaGSetIdleManager()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
@@ -2161,10 +3260,31 @@ const
 function NewPrePrerollCompleteUPP( userRoutine: PrePrerollCompleteProcPtr ): PrePrerollCompleteUPP; external name '_NewPrePrerollCompleteUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Mac OS X:         in version 10.2 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MediaGSetIdleManager(mh: MediaHandler; im: IdleManager): ComponentResult; external name '_MediaGSetIdleManager';
+const
+	uppPrePrerollCompleteProcInfo = $00000EC0;
+{$ifc CALL_NOT_IN_CARBON}
+	{
+	 *  NewPrePrerollCompleteUPP()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   available as macro/inline
+	 *    CarbonLib:        not available
+	 *    Mac OS X:         not available
+	 	}
+function NewPrePrerollCompleteUPP(userRoutine: PrePrerollCompleteProcPtr): PrePrerollCompleteUPP; external name '_NewPrePrerollCompleteUPP'; { old name was NewPrePrerollCompleteProc }
+>>>>>>> graemeg/fixes_2_2
 {
  *  DisposePrePrerollCompleteUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   available as macro/inline
@@ -2172,10 +3292,18 @@ function NewPrePrerollCompleteUPP( userRoutine: PrePrerollCompleteProcPtr ): Pre
 procedure DisposePrePrerollCompleteUPP( userUPP: PrePrerollCompleteUPP ); external name '_DisposePrePrerollCompleteUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure DisposePrePrerollCompleteUPP(userUPP: PrePrerollCompleteUPP); external name '_DisposePrePrerollCompleteUPP';
+>>>>>>> graemeg/fixes_2_2
 {
  *  InvokePrePrerollCompleteUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   available as macro/inline
@@ -2192,3 +3320,16 @@ procedure InvokePrePrerollCompleteUPP( mh: MediaHandler; err: OSErr; refcon: Uni
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure InvokePrePrerollCompleteUPP(mh: MediaHandler; err: OSErr; refcon: UnivPtr; userRoutine: PrePrerollCompleteUPP); external name '_InvokePrePrerollCompleteUPP'; { old name was CallPrePrerollCompleteProc }
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

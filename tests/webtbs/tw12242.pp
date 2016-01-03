@@ -7,7 +7,11 @@
 }
 program staticbug;
 
+<<<<<<< HEAD
 {$mode delphi}
+=======
+{$mode delphi}{$STATIC ON}
+>>>>>>> graemeg/fixes_2_2
 
 uses
   Classes, SysUtils;

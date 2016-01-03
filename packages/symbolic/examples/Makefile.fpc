@@ -3,7 +3,11 @@
 #
 
 [target]
+<<<<<<< HEAD
 programs=evaltest rpnthing easyevalexample
+=======
+programs=evaltest rpnthing
+>>>>>>> graemeg/fixes_2_2
 
 [require]
 packages=symbolic

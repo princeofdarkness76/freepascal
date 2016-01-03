@@ -2662,14 +2662,25 @@ implementation
 
        procedure factor_read_id(out p1:tnode;var again:boolean);
          var
+<<<<<<< HEAD
            srsym : tsym;
+=======
+           pc    : pchar;
+           srsym : tsym;
+           unit_found : boolean;
+>>>>>>> graemeg/fixes_2_2
            srsymtable : TSymtable;
            hdef  : tdef;
            orgstoredpattern,
            storedpattern : string;
+<<<<<<< HEAD
            callflags: tcallnodeflags;
            t : ttoken;
            unit_found : boolean;
+=======
+           len   : longint;
+           t : ttoken;
+>>>>>>> graemeg/fixes_2_2
          begin
            { allow post fix operators }
            again:=true;
@@ -2693,7 +2704,13 @@ implementation
                storedpattern:=pattern;
                orgstoredpattern:=orgpattern;
                consume(t);
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+
+               { named parameter support }
+               found_arg_name:=false;
+>>>>>>> graemeg/fixes_2_2
 
     function handle_factor_typenode(hdef:tdef;getaddr:boolean;var again:boolean;sym:tsym;typeonly:boolean):tnode;
       var
@@ -4015,6 +4032,7 @@ implementation
       end; { while again }
     end;
 
+<<<<<<< HEAD
     function is_member_read(sym: tsym; st: tsymtable; var p1: tnode;
                             out memberparentdef: tdef): boolean;
       var
@@ -4034,6 +4052,55 @@ implementation
             begin
               if assigned(p1) then
                internalerror(2007012002);
+=======
+                propertysym :
+                  begin
+                    { property of a class/object? }
+                    if is_member_read(srsym,srsymtable,p1,hdef) then
+                      begin
+                        if (srsymtable.symtabletype=ObjectSymtable) then
+                          p1:=load_self_node;
+                        { not srsymtable.symtabletype since that can be }
+                        { withsymtable as well                          }
+                        if (srsym.owner.symtabletype=ObjectSymtable) then
+                          do_member_read(tobjectdef(hdef),getaddr,srsym,p1,again,[])
+                        else
+                          { no propertysyms in records (yet) }
+                          internalerror(2007012006);
+                      end
+                    else
+                    { no method pointer }
+                      begin
+                        p1:=nil;
+                        handle_propertysym(tpropertysym(srsym),srsymtable,p1);
+                      end;
+                  end;
+
+                labelsym :
+                  begin
+                    { Support @label }
+                    if getaddr then
+                      begin
+                        if srsym.owner<>current_procinfo.procdef.localst then
+                          CGMessage(parser_e_label_outside_proc);
+                        p1:=cloadnode.create(srsym,srsym.owner)
+                      end
+                    else
+                      begin
+                        consume(_COLON);
+                        if tlabelsym(srsym).defined then
+                          Message(sym_e_label_already_defined);
+                        if symtablestack.top.symtablelevel<>srsymtable.symtablelevel then
+                          begin
+                            tlabelsym(srsym).nonlocal:=true;
+                            exclude(current_procinfo.procdef.procoptions,po_inline);
+                          end;
+                        tlabelsym(srsym).defined:=true;
+                        p1:=clabelnode.create(nil,tlabelsym(srsym));
+                        tlabelsym(srsym).code:=p1;
+                      end;
+                  end;
+>>>>>>> graemeg/fixes_2_2
 
               hdef:=tnode(twithsymtable(st).withrefnode).resultdef;
               p1:=tnode(twithsymtable(st).withrefnode).getcopy;
@@ -4115,6 +4182,7 @@ implementation
            { avoid warning }
            fillchar(dummypos,sizeof(dummypos),0);
 
+<<<<<<< HEAD
            allowspecialize:=not (m_delphi in current_settings.modeswitches) and
                             not (ef_had_specialize in flags) and
                             (block_type in inline_specialization_block_types);
@@ -4125,6 +4193,33 @@ implementation
              end
            else
              isspecialize:=ef_had_specialize in flags;
+=======
+        { tries to avoid syntax errors after invalid qualifiers }
+        procedure recoverconsume_postfixops;
+          begin
+            repeat
+              if not try_to_consume(_CARET) then
+                if try_to_consume(_POINT) then
+                  try_to_consume(_ID)
+                else if try_to_consume(_LECKKLAMMER) then
+                  begin
+                    repeat
+                      comp_expr(true);
+                    until not try_to_consume(_COMMA);
+                    consume(_RECKKLAMMER);
+                  end
+                else if try_to_consume(_LKLAMMER) then
+                  begin
+                    repeat
+                      comp_expr(true);
+                    until not try_to_consume(_COMMA);
+                    consume(_RKLAMMER);
+                  end
+                else
+                  break;
+            until false;
+          end;
+>>>>>>> graemeg/fixes_2_2
 
            { first check for identifier }
            if token<>_ID then
@@ -4164,6 +4259,7 @@ implementation
                { named parameter support }
                found_arg_name:=false;
 
+<<<<<<< HEAD
                if not(unit_found) and
                    not isspecialize and
                   named_args_allowed and
@@ -4174,6 +4270,41 @@ implementation
                     consume(_ASSIGNMENT);
                     exit;
                   end;
+=======
+            { get temp for array of indicies,
+              we set the real size later }
+            temp:=ctempcreatenode.create(s32inttype,4,tt_persistent,false);
+            addstatement(newstatement,temp);
+
+            countindices:=0;
+            repeat
+              p4:=comp_expr(true);
+
+              addstatement(newstatement,cassignmentnode.create(
+                ctemprefnode.create_offset(temp,countindices*s32inttype.size),p4));
+               inc(countindices);
+            until not try_to_consume(_COMMA);
+
+            { set real size }
+            temp.size:=countindices*s32inttype.size;
+
+            consume(_RECKKLAMMER);
+
+            { we need only a write access if a := follows }
+            if token=_ASSIGNMENT then
+              begin
+                consume(_ASSIGNMENT);
+                p4:=comp_expr(true);
+
+                { create call to fpc_vararray_put }
+                paras:=ccallparanode.create(cordconstnode.create
+                      (countindices,s32inttype,true),
+                   ccallparanode.create(caddrnode.create_internal
+                  (ctemprefnode.create(temp)),
+                   ccallparanode.create(ctypeconvnode.create_internal(p4,cvarianttype),
+                   ccallparanode.create(ctypeconvnode.create_internal(p1,cvarianttype)
+                     ,nil))));
+>>>>>>> graemeg/fixes_2_2
 
                if isspecialize then
                  begin
@@ -4345,11 +4476,15 @@ implementation
                 paravarsym,
                 fieldvarsym :
                   begin
+<<<<<<< HEAD
                     { check if we are reading a field of an object/class/   }
                     { record. is_member_read() will deal with withsymtables }
                     { if needed.                                            }
                     p1:=nil;
                     if is_member_read(srsym,srsymtable,p1,hdef) then
+=======
+                    if is_class_or_interface_or_object(p1.resultdef) then
+>>>>>>> graemeg/fixes_2_2
                       begin
 <<<<<<< HEAD
                         { if the field was originally found in an     }
@@ -4419,12 +4554,104 @@ implementation
                           p1:=csubscriptnode.create(srsym,p1);
                       end
                     else
+<<<<<<< HEAD
                       { regular non-field load }
                       p1:=cloadnode.create(srsym,srsymtable);
+=======
+                      begin
+                        consume(_LECKKLAMMER);
+                        repeat
+                          case p1.resultdef.typ of
+                            pointerdef:
+                              begin
+                                 { support delphi autoderef }
+                                 if (tpointerdef(p1.resultdef).pointeddef.typ=arraydef) and
+                                    (m_autoderef in current_settings.modeswitches) then
+                                   p1:=cderefnode.create(p1);
+                                 p2:=comp_expr(true);
+                                 { Support Pbytevar[0..9] which returns array [0..9].}
+                                 if try_to_consume(_POINTPOINT) then
+                                   p2:=crangenode.create(p2,comp_expr(true));
+                                 p1:=cvecnode.create(p1,p2);
+                              end;
+                            variantdef:
+                              begin
+                                handle_variantarray;
+                                { the RECKKLAMMER is already read }
+                                goto skipreckklammercheck;
+                              end;
+                            stringdef :
+                              begin
+                                p2:=comp_expr(true);
+                                { Support string[0..9] which returns array [0..9] of char.}
+                                if try_to_consume(_POINTPOINT) then
+                                  p2:=crangenode.create(p2,comp_expr(true));
+                                p1:=cvecnode.create(p1,p2);
+                              end;
+                            arraydef:
+                              begin
+                                p2:=comp_expr(true);
+                                { support SEG:OFS for go32v2 Mem[] }
+                                if (target_info.system in [system_i386_go32v2,system_i386_watcom]) and
+                                   (p1.nodetype=loadn) and
+                                   assigned(tloadnode(p1).symtableentry) and
+                                   assigned(tloadnode(p1).symtableentry.owner.name) and
+                                   (tloadnode(p1).symtableentry.owner.name^='SYSTEM') and
+                                   ((tloadnode(p1).symtableentry.name='MEM') or
+                                    (tloadnode(p1).symtableentry.name='MEMW') or
+                                    (tloadnode(p1).symtableentry.name='MEML')) then
+                                  begin
+                                    if try_to_consume(_COLON) then
+                                     begin
+                                       p3:=caddnode.create(muln,cordconstnode.create($10,s32inttype,false),p2);
+                                       p2:=comp_expr(true);
+                                       p2:=caddnode.create(addn,p2,p3);
+                                       if try_to_consume(_POINTPOINT) then
+                                         { Support mem[$a000:$0000..$07ff] which returns array [0..$7ff] of memtype.}
+                                         p2:=crangenode.create(p2,caddnode.create(addn,comp_expr(true),p3.getcopy));
+                                       p1:=cvecnode.create(p1,p2);
+                                       include(tvecnode(p1).flags,nf_memseg);
+                                       include(tvecnode(p1).flags,nf_memindex);
+                                     end
+                                    else
+                                     begin
+                                       if try_to_consume(_POINTPOINT) then
+                                         { Support mem[$80000000..$80000002] which returns array [0..2] of memtype.}
+                                         p2:=crangenode.create(p2,comp_expr(true));
+                                       p1:=cvecnode.create(p1,p2);
+                                       include(tvecnode(p1).flags,nf_memindex);
+                                     end;
+                                  end
+                                else
+                                  begin
+                                    if try_to_consume(_POINTPOINT) then
+                                      { Support arrayvar[0..9] which returns array [0..9] of arraytype.}
+                                      p2:=crangenode.create(p2,comp_expr(true));
+                                    p1:=cvecnode.create(p1,p2);
+                                  end;
+                              end;
+                            else
+                              begin
+                                if p1.resultdef.typ<>undefineddef then
+                                  Message(parser_e_invalid_qualifier);
+                                p1.destroy;
+                                p1:=cerrornode.create;
+                                comp_expr(true);
+                                again:=false;
+                              end;
+                          end;
+                          do_typecheckpass(p1);
+                        until not try_to_consume(_COMMA);
+                        consume(_RECKKLAMMER);
+                        { handle_variantarray eats the RECKKLAMMER and jumps here }
+                      skipreckklammercheck:
+                      end;
+>>>>>>> graemeg/fixes_2_2
                   end;
 
                 syssym :
                   begin
+<<<<<<< HEAD
                     p1:=statement_syssym(tsyssym(srsym).number);
                   end;
 
@@ -4441,6 +4668,73 @@ implementation
                        if (m_delphi in current_settings.modeswitches) and
                            (sp_generic_dummy in srsym.symoptions) and
                            (token in [_LT,_LSHARPBRACKET]) then
+=======
+                    consume(_POINT);
+                    if (p1.resultdef.typ=pointerdef) and
+                       (m_autoderef in current_settings.modeswitches) then
+                      begin
+                        p1:=cderefnode.create(p1);
+                        do_typecheckpass(p1);
+                      end;
+                    case p1.resultdef.typ of
+                      recorddef:
+                        begin
+                          if token=_ID then
+                            begin
+                              srsym:=tsym(trecorddef(p1.resultdef).symtable.Find(pattern));
+                              if assigned(srsym) and
+                                 (srsym.typ=fieldvarsym) then
+                                begin
+                                  check_hints(srsym,srsym.symoptions);
+                                  p1:=csubscriptnode.create(srsym,p1)
+                                end
+                              else
+                                begin
+                                  Message1(sym_e_illegal_field,pattern);
+                                  p1.destroy;
+                                  p1:=cerrornode.create;
+                                end;
+                             end;
+                           consume(_ID);
+                         end;
+                       variantdef:
+                         begin
+                           { dispatch call? }
+                           if token=_ID then
+                             begin
+                               dispatchstring:=orgpattern;
+                               consume(_ID);
+                               if try_to_consume(_LKLAMMER) then
+                                 begin
+                                   p2:=parse_paras(false,true,_RKLAMMER);
+                                   consume(_RKLAMMER);
+                                 end
+                               else
+                                 p2:=nil;
+                               { property setter? }
+                               if (token=_ASSIGNMENT) and not(afterassignment) then
+                                 begin
+                                   consume(_ASSIGNMENT);
+                                   { read the expression }
+                                   p3:=comp_expr(true);
+                                   { concat value parameter too }
+                                   p2:=ccallparanode.create(p3,p2);
+                                   { passing p3 here is only for information purposes }
+                                   p1:=translate_disp_call(p1,p2,p3,dispatchstring,0,false);
+                                 end
+                               else
+                                 begin
+                                   p1:=translate_disp_call(p1,p2,nil,dispatchstring,0,
+                                     { this is only an approximation
+                                       setting useresult if not necessary is only a waste of time, no more, no less (FK) }
+                                     afterassignment or in_args or (token<>_SEMICOLON));
+                                 end;
+                             end
+                           else { Error }
+                             Consume(_ID);
+                          end;
+                       classrefdef:
+>>>>>>> graemeg/fixes_2_2
                          begin
                            if block_type in [bt_type,bt_const_type,bt_var_type] then
                              begin
@@ -4543,6 +4837,49 @@ implementation
                                    p1:=handle_factor_typenode(hdef,getaddr,again,srsym,ef_type_only in flags);
                                  end;
                              end
+<<<<<<< HEAD
+=======
+                           else { Error }
+                             Consume(_ID);
+                         end;
+                       pointerdef:
+                         begin
+                           Message(parser_e_invalid_qualifier);
+                           if tpointerdef(p1.resultdef).pointeddef.typ in [recorddef,objectdef,classrefdef] then
+                             Message(parser_h_maybe_deref_caret_missing);
+                         end;
+                       else
+                         begin
+                           if p1.resultdef.typ<>undefineddef then
+                             Message(parser_e_invalid_qualifier);
+                           p1.destroy;
+                           p1:=cerrornode.create;
+                           { Error }
+                           consume(_ID);
+                         end;
+                    end;
+                  end;
+
+               else
+                 begin
+                   { is this a procedure variable ? }
+                   if assigned(p1.resultdef) and
+                      (p1.resultdef.typ=procvardef) then
+                     begin
+                       { Typenode for typecasting or expecting a procvar }
+                       if (p1.nodetype=typen) or
+                          (
+                           assigned(getprocvardef) and
+                           equal_defs(p1.resultdef,getprocvardef)
+                          ) then
+                         begin
+                           if try_to_consume(_LKLAMMER) then
+                             begin
+                               p1:=comp_expr(true);
+                               consume(_RKLAMMER);
+                               p1:=ctypeconvnode.create_explicit(p1,p1.resultdef);
+                             end
+>>>>>>> graemeg/fixes_2_2
                            else
                              p1:=cspecializenode.create(nil,getaddr,srsym)
                          end
@@ -6516,6 +6853,7 @@ implementation
                end;
            _OBJCPROTOCOL:
              begin
+<<<<<<< HEAD
                { The @protocol keyword is used in two ways in Objective-C:
                    1) to declare protocols (~ Object Pascal interfaces)
                    2) to obtain the metaclass (~ Object Pascal) "class of")
@@ -6528,6 +6866,103 @@ implementation
                p1:=factor(false,false);
                consume(_RKLAMMER);
                p1:=cinlinenode.create(in_objc_protocol_x,false,p1);
+=======
+               again:=true;
+               consume(_INHERITED);
+               if assigned(current_procinfo) and
+                  assigned(current_procinfo.procdef._class) then
+                begin
+                  hclassdef:=current_procinfo.procdef._class.childof;
+                  { if inherited; only then we need the method with
+                    the same name }
+                  if token in endtokens then
+                   begin
+                     hs:=current_procinfo.procdef.procsym.name;
+                     hsorg:=current_procinfo.procdef.procsym.realname;
+                     anon_inherited:=true;
+                     { For message methods we need to search using the message
+                       number or string }
+                     pd:=tprocdef(tprocsym(current_procinfo.procdef.procsym).ProcdefList[0]);
+                     srdef:=nil;
+                     if (po_msgint in pd.procoptions) then
+                       searchsym_in_class_by_msgint(hclassdef,pd.messageinf.i,srdef,srsym,srsymtable)
+                     else
+                      if (po_msgstr in pd.procoptions) then
+                        searchsym_in_class_by_msgstr(hclassdef,pd.messageinf.str^,srsym,srsymtable)
+                     else
+                       searchsym_in_class(hclassdef,current_procinfo.procdef._class,hs,srsym,srsymtable);
+                   end
+                  else
+                   begin
+                     hs:=pattern;
+                     hsorg:=orgpattern;
+                     consume(_ID);
+                     anon_inherited:=false;
+                     searchsym_in_class(hclassdef,current_procinfo.procdef._class,hs,srsym,srsymtable);
+                   end;
+                  if assigned(srsym) then
+                   begin
+                     check_hints(srsym,srsym.symoptions);
+                     { load the procdef from the inherited class and
+                       not from self }
+                     case srsym.typ of
+                       procsym:
+                         begin
+                           hdef:=hclassdef;
+                           if (po_classmethod in current_procinfo.procdef.procoptions) or
+                              (po_staticmethod in current_procinfo.procdef.procoptions) then
+                             hdef:=tclassrefdef.create(hdef);
+                           p1:=ctypenode.create(hdef);
+                         end;
+                       propertysym:
+                         ;
+                       else
+                         begin
+                           Message(parser_e_methode_id_expected);
+                           p1:=cerrornode.create;
+                         end;
+                     end;
+                     do_member_read(hclassdef,getaddr,srsym,p1,again,[cnf_inherited,cnf_anon_inherited]);
+                   end
+                  else
+                   begin
+                     if anon_inherited then
+                      begin
+                        { For message methods we need to call DefaultHandler }
+                        if (po_msgint in pd.procoptions) or
+                           (po_msgstr in pd.procoptions) then
+                          begin
+                            searchsym_in_class(hclassdef,hclassdef,'DEFAULTHANDLER',srsym,srsymtable);
+                            if not assigned(srsym) or
+                               (srsym.typ<>procsym) then
+                              internalerror(200303171);
+                            p1:=nil;
+                            do_proc_call(srsym,srsym.owner,hclassdef,false,again,p1,[]);
+                          end
+                        else
+                          begin
+                            { we need to ignore the inherited; }
+                            p1:=cnothingnode.create;
+                          end;
+                      end
+                     else
+                      begin
+                        Message1(sym_e_id_no_member,hsorg);
+                        p1:=cerrornode.create;
+                      end;
+                     again:=false;
+                   end;
+                  { turn auto inheriting off }
+                  anon_inherited:=false;
+                end
+               else
+                 begin
+                    Message(parser_e_generic_methods_only_in_methods);
+                    again:=false;
+                    p1:=cerrornode.create;
+                 end;
+               postfixoperators(p1,again);
+>>>>>>> graemeg/fixes_2_2
              end;
 
 >>>>>>> graemeg/cpstrnew
@@ -6728,6 +7163,7 @@ implementation
                        again:=true;
                        postfixoperators(p1,again);
                      end
+<<<<<<< HEAD
                     else
                     consume(_RKLAMMER);
                   end
@@ -6764,6 +7200,44 @@ implementation
                     postfixoperators(p1,again);
                   end;
                end;
+=======
+                   else
+                     begin
+                        consume(_INTCONST);
+                        p1:=crealconstnode.create(d,pbestrealtype^);
+                     end;
+                 end
+               else
+                 { the necessary range checking has already been done by val }
+                 tordconstnode(p1).rangecheck:=false;
+             end;
+
+           _REALNUMBER :
+             begin
+               val(pattern,d,code);
+               if code<>0 then
+                begin
+                  Message(parser_e_error_in_real);
+                  d:=1.0;
+                end;
+               consume(_REALNUMBER);
+{$ifdef FPC_REAL2REAL_FIXED}
+               if (current_settings.minfpconstprec=s32real) and
+                  (d = single(d)) then
+                 p1:=crealconstnode.create(d,s32floattype)
+               else if (current_settings.minfpconstprec=s64real) and
+                       (d = double(d)) then
+                 p1:=crealconstnode.create(d,s64floattype)
+               else
+{$endif FPC_REAL2REAL_FIXED}
+                 p1:=crealconstnode.create(d,pbestrealtype^);
+{$ifdef FPC_HAS_STR_CURRENCY}
+               val(pattern,cur,code);
+               if code=0 then
+                 trealconstnode(p1).value_currency:=cur;
+{$endif FPC_HAS_STR_CURRENCY}
+             end;
+>>>>>>> graemeg/fixes_2_2
 
              _LECKKLAMMER :
                begin
@@ -7547,7 +8021,11 @@ implementation
                  p1:=caddnode.create(xorn,p1,p2);
                _ASSIGNMENT :
                  p1:=cassignmentnode.create(p1,p2);
+<<<<<<< HEAD
                _NE :
+=======
+               _UNEQUAL :
+>>>>>>> graemeg/fixes_2_2
                  p1:=caddnode.create(unequaln,p1,p2);
              end;
              p1.fileinfo:=filepos;

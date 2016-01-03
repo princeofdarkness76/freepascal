@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       OpenScripting/ASDebugging.h
  
      Contains:   AppleScript Debugging Interfaces.
@@ -22,10 +23,21 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 1992-2008 by Apple Computer, Inc., all rights reserved
+=======
+     File:       ASDebugging.p
+ 
+     Contains:   AppleScript Debugging Interfaces.
+ 
+     Version:    Technology: AppleScript 1.1
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1992-2002 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -53,6 +65,19 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -61,8 +86,13 @@
 
 unit ASDebugging;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -75,21 +105,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -124,6 +162,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -131,6 +171,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -376,6 +417,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -401,6 +452,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -410,6 +465,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,AEDataModel,OSA,Files,Components,AppleEvents,AppleScript,CFBase,CFData,CFURL;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -456,6 +512,12 @@ uses MacTypes,AEDataModel,OSA,Files,Components,AppleEvents,AppleScript,CFBase,CF
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+uses MacTypes,AEDataModel,OSA,Files,Components,AppleEvents,AppleScript;
+
+
+{$ALIGN MAC68K}
+>>>>>>> graemeg/fixes_2_2
 
 {*************************************************************************
     Mode Flags
@@ -465,6 +527,7 @@ uses MacTypes,AEDataModel,OSA,Files,Components,AppleEvents,AppleScript,CFBase,CF
     that doesn't already have bindings for them. An error is returned if
     a current binding doesn't already exist. 
 }
+<<<<<<< HEAD
 const
 	kOSAModeDontDefine = $0001;
 
@@ -501,10 +564,46 @@ function OSASetProperty( scriptingComponent: ComponentInstance; modeFlags: SInt3
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+
+const
+	kOSAModeDontDefine			= $0001;
+
+	{	*************************************************************************
+	    Component Selectors
+	*************************************************************************	}
+	kASSelectSetPropertyObsolete = $1101;
+	kASSelectGetPropertyObsolete = $1102;
+	kASSelectSetHandlerObsolete	= $1103;
+	kASSelectGetHandlerObsolete	= $1104;
+	kASSelectGetAppTerminologyObsolete = $1105;
+	kASSelectSetProperty		= $1106;
+	kASSelectGetProperty		= $1107;
+	kASSelectSetHandler			= $1108;
+	kASSelectGetHandler			= $1109;
+	kASSelectGetAppTerminology	= $110A;
+	kASSelectGetSysTerminology	= $110B;
+	kASSelectGetPropertyNames	= $110C;
+	kASSelectGetHandlerNames	= $110D;
+
+	{	*************************************************************************
+	    Context Accessors
+	*************************************************************************	}
+	{
+	 *  OSASetProperty()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function OSASetProperty(scriptingComponent: ComponentInstance; modeFlags: SInt32; contextID: OSAID; const (*var*) variableName: AEDesc; scriptValueID: OSAID): OSAError; external name '_OSASetProperty';
+>>>>>>> graemeg/fixes_2_2
 {
  *  OSAGetProperty()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -513,10 +612,18 @@ function OSAGetProperty( scriptingComponent: ComponentInstance; modeFlags: SInt3
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function OSAGetProperty(scriptingComponent: ComponentInstance; modeFlags: SInt32; contextID: OSAID; const (*var*) variableName: AEDesc; var resultingScriptValueID: OSAID): OSAError; external name '_OSAGetProperty';
+>>>>>>> graemeg/fixes_2_2
 {
  *  OSAGetPropertyNames()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -525,10 +632,18 @@ function OSAGetPropertyNames( scriptingComponent: ComponentInstance; modeFlags: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function OSAGetPropertyNames(scriptingComponent: ComponentInstance; modeFlags: SInt32; contextID: OSAID; var resultingPropertyNames: AEDescList): OSAError; external name '_OSAGetPropertyNames';
+>>>>>>> graemeg/fixes_2_2
 {
  *  OSASetHandler()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -537,10 +652,18 @@ function OSASetHandler( scriptingComponent: ComponentInstance; modeFlags: SInt32
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function OSASetHandler(scriptingComponent: ComponentInstance; modeFlags: SInt32; contextID: OSAID; const (*var*) handlerName: AEDesc; compiledScriptID: OSAID): OSAError; external name '_OSASetHandler';
+>>>>>>> graemeg/fixes_2_2
 {
  *  OSAGetHandler()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -549,10 +672,18 @@ function OSAGetHandler( scriptingComponent: ComponentInstance; modeFlags: SInt32
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function OSAGetHandler(scriptingComponent: ComponentInstance; modeFlags: SInt32; contextID: OSAID; const (*var*) handlerName: AEDesc; var resultingCompiledScriptID: OSAID): OSAError; external name '_OSAGetHandler';
+>>>>>>> graemeg/fixes_2_2
 {
  *  OSAGetHandlerNames()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -657,10 +788,52 @@ function OSACopyScriptingDefinitionFromURL( url: CFURLRef; modeFlags: SInt32; va
 }
 //#if !__LP64__
 {$ifc not TARGET_CPU_64}
+=======
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function OSAGetHandlerNames(scriptingComponent: ComponentInstance; modeFlags: SInt32; contextID: OSAID; var resultingHandlerNames: AEDescList): OSAError; external name '_OSAGetHandlerNames';
+{
+ *  OSAGetAppTerminology()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function OSAGetAppTerminology(scriptingComponent: ComponentInstance; modeFlags: SInt32; var fileSpec: FSSpec; terminologyID: SInt16; var didLaunch: boolean; var terminologyList: AEDesc): OSAError; external name '_OSAGetAppTerminology';
+{ Errors:
+       errOSASystemError        operation failed
+    }
+{
+ *  OSAGetSysTerminology()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function OSAGetSysTerminology(scriptingComponent: ComponentInstance; modeFlags: SInt32; terminologyID: SInt16; var terminologyList: AEDesc): OSAError; external name '_OSAGetSysTerminology';
+{ Errors:
+       errOSASystemError        operation failed
+    }
+{ Notes on terminology ID
+
+    A terminology ID is derived from script code and language code
+    as follows;
+
+        terminologyID = ((scriptCode & 0x7F) << 8) | (langCode & 0xFF)
+}
+{*************************************************************************
+    Obsolete versions provided for backward compatibility:
+}
+>>>>>>> graemeg/fixes_2_2
 {
  *  ASSetProperty()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -669,10 +842,18 @@ function ASSetProperty( scriptingComponent: ComponentInstance; contextID: OSAID;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ASSetProperty(scriptingComponent: ComponentInstance; contextID: OSAID; const (*var*) variableName: AEDesc; scriptValueID: OSAID): OSAError; external name '_ASSetProperty';
+>>>>>>> graemeg/fixes_2_2
 {
  *  ASGetProperty()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -681,10 +862,18 @@ function ASGetProperty( scriptingComponent: ComponentInstance; contextID: OSAID;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ASGetProperty(scriptingComponent: ComponentInstance; contextID: OSAID; const (*var*) variableName: AEDesc; var resultingScriptValueID: OSAID): OSAError; external name '_ASGetProperty';
+>>>>>>> graemeg/fixes_2_2
 {
  *  ASSetHandler()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -693,10 +882,18 @@ function ASSetHandler( scriptingComponent: ComponentInstance; contextID: OSAID; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ASSetHandler(scriptingComponent: ComponentInstance; contextID: OSAID; const (*var*) handlerName: AEDesc; compiledScriptID: OSAID): OSAError; external name '_ASSetHandler';
+>>>>>>> graemeg/fixes_2_2
 {
  *  ASGetHandler()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -705,10 +902,18 @@ function ASGetHandler( scriptingComponent: ComponentInstance; contextID: OSAID; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ASGetHandler(scriptingComponent: ComponentInstance; contextID: OSAID; const (*var*) handlerName: AEDesc; var resultingCompiledScriptID: OSAID): OSAError; external name '_ASGetHandler';
+>>>>>>> graemeg/fixes_2_2
 {
  *  ASGetAppTerminology()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
@@ -717,12 +922,20 @@ function ASGetAppTerminology( scriptingComponent: ComponentInstance; var fileSpe
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in AppleScriptLib 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ASGetAppTerminology(scriptingComponent: ComponentInstance; var fileSpec: FSSpec; terminologID: SInt16; var didLaunch: boolean; var terminologyList: AEDesc): OSAError; external name '_ASGetAppTerminology';
+>>>>>>> graemeg/fixes_2_2
 { Errors:
         errOSASystemError       operation failed
     }
 {************************************************************************}
 
 
+<<<<<<< HEAD
 {$endc}	{ TARGET_CPU_64 }
 
 {$endc} {TARGET_OS_MAC}
@@ -730,3 +943,9 @@ function ASGetAppTerminology( scriptingComponent: ComponentInstance; var fileSpe
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

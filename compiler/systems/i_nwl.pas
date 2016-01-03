@@ -34,7 +34,11 @@ unit i_nwl;
             system       : system_i386_netwlibc;
             name         : 'Netware for i386(libc)';
             shortname    : 'Netwlibc';
+<<<<<<< HEAD
             flags        : [tf_smartlink_library];
+=======
+            flags        : [tf_use_function_relative_addresses,tf_smartlink_library];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_i386;
             unit_env     : 'NETWLIBCUNITS';
             extradefines : 'NETWARE;NETWARE_LIBC';
@@ -87,9 +91,13 @@ unit i_nwl;
               );
             first_parm_offset : 8;
             stacksize    : 16384;
+<<<<<<< HEAD
             stackalign   : 4;
             abi : abi_default;
             llvmdatalayout : 'todo';
+=======
+            abi : abi_default
+>>>>>>> graemeg/fixes_2_2
           );
 
   implementation

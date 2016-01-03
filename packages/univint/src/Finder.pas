@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       CarbonCore/Finder.h
  
      Contains:   Finder flags and container types.
@@ -20,6 +21,16 @@
      Version:    CarbonCore-859.2~1
  
      Copyright:  © 1990-2008 by Apple Computer, Inc., all rights reserved
+=======
+     File:       Finder.p
+ 
+     Contains:   Finder flags and container types.
+ 
+     Version:    Technology: Mac OS 8.5
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1990-2002 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -27,6 +38,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -45,6 +57,16 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -53,8 +75,13 @@
 
 unit Finder;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -67,21 +94,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -116,6 +151,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -123,6 +160,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -378,6 +416,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -403,6 +451,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -413,6 +465,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
 =======
@@ -422,10 +475,14 @@ uses MacTypes;
 {$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
+=======
+
+>>>>>>> graemeg/fixes_2_2
 
 {$ALIGN MAC68K}
 
 { Creator and type of clipping files }
+<<<<<<< HEAD
 const
 	kClippingCreator = FourCharCode('drag');
 	kClippingPictureType = FourCharCode('clpp');
@@ -623,10 +680,79 @@ const
 >>>>>>> origin/cpstrnew
 	kRoutingResourceType = FourCharCode('rout');
 	kRoutingResourceID = 0;
+=======
+
+const
+	kClippingCreator			= FourCharCode('drag');
+	kClippingPictureType		= FourCharCode('clpp');
+	kClippingTextType			= FourCharCode('clpt');
+	kClippingSoundType			= FourCharCode('clps');
+	kClippingUnknownType		= FourCharCode('clpu');
+
+
+	{	 Creator and type of Internet Location files 	}
+	kInternetLocationCreator	= FourCharCode('drag');
+	kInternetLocationHTTP		= FourCharCode('ilht');
+	kInternetLocationFTP		= FourCharCode('ilft');
+	kInternetLocationFile		= FourCharCode('ilfi');
+	kInternetLocationMail		= FourCharCode('ilma');
+	kInternetLocationNNTP		= FourCharCode('ilnw');
+	kInternetLocationAFP		= FourCharCode('ilaf');
+	kInternetLocationAppleTalk	= FourCharCode('ilat');
+	kInternetLocationNSL		= FourCharCode('ilns');
+	kInternetLocationGeneric	= FourCharCode('ilge');
+
+
+	kCustomIconResource			= -16455;						{  Custom icon family resource ID  }
+
+	{	 In order to specify any of the information described in the 	}
+	{	 CustomBadgeResource data structure you must clear the kExtendedFlagsAreInvalid 	}
+	{	 and set kExtendedFlagHasCustomBadge of the FXInfo.fdXFlags or DXInfo.frXFlags field, 	}
+	{	 and add a resource of type kCustomBadgeResourceType and ID kCustomBadgeResourceID to 	}
+	{	 the file or to the "Icon/n" file for a folder 	}
+	kCustomBadgeResourceType	= FourCharCode('badg');
+	kCustomBadgeResourceID		= -16455;
+	kCustomBadgeResourceVersion	= 0;
+
+
+type
+	CustomBadgeResourcePtr = ^CustomBadgeResource;
+	CustomBadgeResource = record
+		version:				SInt16;									{  This is version kCustomBadgeResourceVersion }
+		customBadgeResourceID:	SInt16;									{  If not 0, the ID of a resource to use on top }
+																		{  of the icon for this file or folder }
+		customBadgeType:		OSType;									{  If not 0, the type and creator of an icon }
+		customBadgeCreator:		OSType;									{  to use on top of the icon }
+		windowBadgeType:		OSType;									{  If not 0, the type and creator of an icon }
+		windowBadgeCreator:		OSType;									{  to display in the header of the window for this  }
+																		{  file or folder }
+		overrideType:			OSType;									{  If not 0, the type and creator of an icon to }
+		overrideCreator:		OSType;									{  use INSTEAD of the icon for this file or folder }
+	end;
+
+	CustomBadgeResourceHandle			= ^CustomBadgeResourcePtr;
+	{	 You can specify routing information for a file by including a 'rout' 0 
+	    resource in it and setting the kExtendedFlagHasRoutingInfo bit in the extended 
+	    Finder flags. 
+	    The 'rout' resource is an array of RoutingResourceEntry. Each entry is considered
+	    in turn. The first matching entry is used.
+	    If the creator and fileType match the file being dropped and targetFolder match
+	    the folder ID of the folder being dropped onto, then the file is rerouted 
+	    into the specified destination folder.
+	    The only target folder currently supported is the system folder, 
+	    kSystemFolderType = 'macs'.
+		}
+
+const
+	kRoutingResourceType		= FourCharCode('rout');
+	kRoutingResourceID			= 0;
+
+>>>>>>> graemeg/fixes_2_2
 
 type
 	RoutingResourceEntryPtr = ^RoutingResourceEntry;
 	RoutingResourceEntry = record
+<<<<<<< HEAD
 		creator: OSType;                { Use '****' or 0 to match any creator }
 		fileType: OSType;               { Use '****' or 0 to match any file type }
 		targetFolder: OSType;           { Folder ID of the folder this file was dropped onto }
@@ -772,10 +898,128 @@ const
    Use these data structures preferably to FInfo, etc...
 }
 {------------------------------------------------------------------------}
+=======
+		creator:				OSType;									{  Use '****' or 0 to match any creator  }
+		fileType:				OSType;									{  Use '****' or 0 to match any file type  }
+		targetFolder:			OSType;									{  Folder ID of the folder this file was dropped onto  }
+		destinationFolder:		OSType;									{  Folder that the source will be routed to  }
+		reservedField:			OSType;									{  Set to 0  }
+	end;
+
+	RoutingResourcePtr					= ^RoutingResourceEntry;
+	RoutingResourceHandle				= ^RoutingResourcePtr;
+
+	{	 Types for special container aliases 	}
+
+const
+	kContainerFolderAliasType	= FourCharCode('fdrp');						{  type for folder aliases  }
+	kContainerTrashAliasType	= FourCharCode('trsh');						{  type for trash folder aliases  }
+	kContainerHardDiskAliasType	= FourCharCode('hdsk');						{  type for hard disk aliases  }
+	kContainerFloppyAliasType	= FourCharCode('flpy');						{  type for floppy aliases  }
+	kContainerServerAliasType	= FourCharCode('srvr');						{  type for server aliases  }
+	kApplicationAliasType		= FourCharCode('adrp');						{  type for application aliases  }
+	kContainerAliasType			= FourCharCode('drop');						{  type for all other containers  }
+	kDesktopPrinterAliasType	= FourCharCode('dtpa');						{  type for Desktop Printer alias  }
+	kContainerCDROMAliasType	= FourCharCode('cddr');						{  type for CD-ROM alias  }
+	kApplicationCPAliasType		= FourCharCode('acdp');						{  type for application control panel alias  }
+	kApplicationDAAliasType		= FourCharCode('addp');						{  type for application DA alias  }
+	kPackageAliasType			= FourCharCode('fpka');						{  type for plain package alias  }
+	kAppPackageAliasType		= FourCharCode('fapa');						{  type for application package alias  }
+
+	{	 Types for Special folder aliases 	}
+	kSystemFolderAliasType		= FourCharCode('fasy');
+	kAppleMenuFolderAliasType	= FourCharCode('faam');
+	kStartupFolderAliasType		= FourCharCode('fast');
+	kPrintMonitorDocsFolderAliasType = FourCharCode('fapn');
+	kPreferencesFolderAliasType	= FourCharCode('fapf');
+	kControlPanelFolderAliasType = FourCharCode('fact');
+	kExtensionFolderAliasType	= FourCharCode('faex');
+
+	{	 Types for AppleShare folder aliases 	}
+	kExportedFolderAliasType	= FourCharCode('faet');
+	kDropFolderAliasType		= FourCharCode('fadr');
+	kSharedFolderAliasType		= FourCharCode('fash');
+	kMountedFolderAliasType		= FourCharCode('famn');
+
+	{	 Finder flags (finderFlags, fdFlags and frFlags) 	}
+	{	 Any flag reserved or not specified should be set to 0. 	}
+	{	 If a flag applies to a file, but not to a folder, make sure to check 	}
+	{	 that the item is not a folder by checking ((ParamBlockRec.ioFlAttrib & ioDirMask) == 0) 	}
+	kIsOnDesk					= $0001;						{  Files and folders (System 6)  }
+	kColor						= $000E;						{  Files and folders  }
+																{  bit 0x0020 was kRequireSwitchLaunch, but is now reserved for future use }
+	kIsShared					= $0040;						{  Files only (Applications only)  }
+																{  If clear, the application needs to write to  }
+																{  its resource fork, and therefore cannot be  }
+																{  shared on a server  }
+	kHasNoINITs					= $0080;						{  Files only (Extensions/Control Panels only)  }
+																{  This file contains no INIT resource  }
+	kHasBeenInited				= $0100;						{  Files only  }
+																{  Clear if the file contains desktop database  }
+																{  resources ('BNDL', 'FREF', 'open', 'kind'...)  }
+																{  that have not been added yet. Set only by the Finder  }
+																{  Reserved for folders - make sure this bit is cleared for folders  }
+																{  bit 0x0200 was the letter bit for AOCE, but is now reserved for future use  }
+	kHasCustomIcon				= $0400;						{  Files and folders  }
+	kIsStationery				= $0800;						{  Files only  }
+	kNameLocked					= $1000;						{  Files and folders  }
+	kHasBundle					= $2000;						{  Files only  }
+	kIsInvisible				= $4000;						{  Files and folders  }
+	kIsAlias					= $8000;						{  Files only  }
+
+	{	 Obsolete. Use names defined above. 	}
+	fOnDesk						= $0001;
+	fHasBundle					= $2000;
+	fInvisible					= $4000;
+
+	{	 Obsolete 	}
+	fTrash						= -3;
+	fDesktop					= -2;
+	fDisk						= 0;
+
+{$ifc OLDROUTINENAMES}
+	kIsStationary				= $0800;
+
+{$endc}  {OLDROUTINENAMES}
+
+	{	 Extended flags (extendedFinderFlags, fdXFlags and frXFlags) 	}
+	{	 Any flag not specified should be set to 0. 	}
+	kExtendedFlagsAreInvalid	= $8000;						{  If set the other extended flags are ignored  }
+	kExtendedFlagHasCustomBadge	= $0100;						{  Set if the file or folder has a badge resource  }
+	kExtendedFlagHasRoutingInfo	= $0004;						{  Set if the file contains routing info resource  }
+
+
+	{	 Use a filetype in this range to indicate that a file is temporarily busy 	}
+	{	 (while it is being downloaded or installed, for example).  This prevents 	}
+	{	 Finder 8.5 and later from trying to change the item's attributes before it 	}
+	{	 is fully created. -- If you provide a series of 'BNDL' icons for your creator 	}
+	{	 and some of these filetypes, you can achieve limited icon animation while 	}
+	{	 the file creation progresses. 	}
+	kFirstMagicBusyFiletype		= FourCharCode('bzy ');
+	kLastMagicBusyFiletype		= FourCharCode('bzy?');
+
+	{	 Use this date as a file's or folder's creation date to indicate that it is 	}
+	{	 temporarily busy (while it is being downloaded or installed, for example). 	}
+	{	 This prevents Finder from trying to change the item's attributes before it 	}
+	{	 is fully created (Finder 8.5 and 8.6 check file creation dates; later Finders 	}
+	{	 may check folder creation dates as well). 	}
+	kMagicBusyCreationDate		= $4F3AFDB0;
+
+
+	{	------------------------------------------------------------------------	}
+	{
+	   The following data structures are binary compatible with FInfo, DInfo,
+	   FXInfo and DXInfo but represent the Mac OS 8 semantic of the fields.
+	   Use these data structures preferably to FInfo, etc...
+	}
+	{	------------------------------------------------------------------------	}
+
+>>>>>>> graemeg/fixes_2_2
 
 type
 	FileInfoPtr = ^FileInfo;
 	FileInfo = record
+<<<<<<< HEAD
 		fileType: OSType;               { The type of the file }
 		fileCreator: OSType;            { The file's creator }
 		finderFlags: UInt16;            { ex: kHasBundle, kIsInvisible... }
@@ -899,3 +1143,115 @@ type
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+		fileType:				OSType;									{  The type of the file  }
+		fileCreator:			OSType;									{  The file's creator  }
+		finderFlags:			UInt16;									{  ex: kHasBundle, kIsInvisible...  }
+		location:				Point;									{  File's location in the folder  }
+																		{  If set to (0, 0), the Finder will place the item automatically  }
+		reservedField:			UInt16;									{  (set to 0)  }
+	end;
+
+	FolderInfoPtr = ^FolderInfo;
+	FolderInfo = record
+		windowBounds:			Rect;									{  The position and dimension of the folder's window  }
+		finderFlags:			UInt16;									{  ex. kIsInvisible, kNameLocked, etc. }
+		location:				Point;									{  Folder's location in the parent folder  }
+																		{  If set to (0, 0), the Finder will place the item automatically  }
+		reservedField:			UInt16;									{  (set to 0)  }
+	end;
+
+	ExtendedFileInfoPtr = ^ExtendedFileInfo;
+	ExtendedFileInfo = record
+		reserved1:				array [0..3] of SInt16;					{  Reserved (set to 0)  }
+		extendedFinderFlags:	UInt16;									{  Extended flags (custom badge, routing info...)  }
+		reserved2:				SInt16;									{  Reserved (set to 0). Comment ID if high-bit is clear  }
+		putAwayFolderID:		SInt32;									{  Put away folder ID  }
+	end;
+
+	ExtendedFolderInfoPtr = ^ExtendedFolderInfo;
+	ExtendedFolderInfo = record
+		scrollPosition:			Point;									{  Scroll position (for icon views)  }
+		reserved1:				SInt32;									{  Reserved (set to 0)  }
+		extendedFinderFlags:	UInt16;									{  Extended flags (custom badge, routing info...)  }
+		reserved2:				SInt16;									{  Reserved (set to 0). Comment ID if high-bit is clear  }
+		putAwayFolderID:		SInt32;									{  Put away folder ID  }
+	end;
+
+	{	------------------------------------------------------------------------	}
+	{
+	   The following data structures are here for compatibility.
+	   Use the new data structures replacing them if possible (i.e. FileInfo 
+	   instead of FInfo, etc...)
+	}
+	{	------------------------------------------------------------------------	}
+	{	 File info 	}
+	{
+	     IMPORTANT:
+	     In MacOS 8, the fdFldr field has become reserved for the Finder.
+	}
+	FInfoPtr = ^FInfo;
+	FInfo = record
+		fdType:					OSType;									{  The type of the file  }
+		fdCreator:				OSType;									{  The file's creator  }
+		fdFlags:				UInt16;									{  Flags ex. kHasBundle, kIsInvisible, etc.  }
+		fdLocation:				Point;									{  File's location in folder.  }
+																		{  If set to (0, 0), the Finder will place the item automatically  }
+		fdFldr:					SInt16;									{  Reserved (set to 0)  }
+	end;
+
+	{	 Extended file info 	}
+	{
+	     IMPORTANT:
+	     In MacOS 8, the fdIconID and fdComment fields were changed
+	     to become reserved fields for the Finder.
+	     The fdScript has become an extended flag.
+	}
+	FXInfoPtr = ^FXInfo;
+	FXInfo = record
+		fdIconID:				SInt16;									{  Reserved (set to 0)  }
+		fdReserved:				array [0..2] of SInt16;					{  Reserved (set to 0)  }
+		fdScript:				SInt8;									{  Extended flags. Script code if high-bit is set  }
+		fdXFlags:				SInt8;									{  Extended flags  }
+		fdComment:				SInt16;									{  Reserved (set to 0). Comment ID if high-bit is clear  }
+		fdPutAway:				SInt32;									{  Put away folder ID  }
+	end;
+
+	{	 Folder info 	}
+	{
+	     IMPORTANT:
+	     In MacOS 8, the frView field was changed to become reserved 
+	     field for the Finder.
+	}
+	DInfoPtr = ^DInfo;
+	DInfo = record
+		frRect:					Rect;									{  Folder's window bounds  }
+		frFlags:				UInt16;									{  Flags ex. kIsInvisible, kNameLocked, etc. }
+		frLocation:				Point;									{  Folder's location in parent folder  }
+																		{  If set to (0, 0), the Finder will place the item automatically  }
+		frView:					SInt16;									{  Reserved (set to 0)  }
+	end;
+
+	{	 Extended folder info 	}
+	{
+	     IMPORTANT:
+	     In MacOS 8, the frOpenChain and frComment fields were changed
+	     to become reserved fields for the Finder.
+	     The frScript has become an extended flag.
+	}
+	DXInfoPtr = ^DXInfo;
+	DXInfo = record
+		frScroll:				Point;									{  Scroll position  }
+		frOpenChain:			SInt32;									{  Reserved (set to 0)  }
+		frScript:				SInt8;									{  Extended flags. Script code if high-bit is set  }
+		frXFlags:				SInt8;									{  Extended flags  }
+		frComment:				SInt16;									{  Reserved (set to 0). Comment ID if high-bit is clear  }
+		frPutAway:				SInt32;									{  Put away folder ID  }
+	end;
+
+	{  ControlPanelDefProcPtr and cdev constants have all been moved to Processes.i }
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

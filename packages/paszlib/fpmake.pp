@@ -14,6 +14,7 @@ begin
 {$endif ALLPACKAGES}
 
     P:=AddPackage('paszlib');
+<<<<<<< HEAD
     P.ShortName:='pzl';
     P.Description := 'Pascal port of the ZLIB library - support for deflate compression method using for GZIP, PNG, ZIP, etc.';
 {$ifdef ALLPACKAGES}
@@ -25,6 +26,14 @@ begin
     D:=P.Dependencies.Add('hash');
       D.Version:='3.1.1';
 
+=======
+{$ifdef ALLPACKAGES}
+    P.Directory:='paszlib';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    D:=P.Dependencies.Add('hash');
+      D.Version:='2.2.4';
+>>>>>>> graemeg/fixes_2_2
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');
     T:=P.Targets.AddUnit('paszlib.pas');
@@ -49,7 +58,10 @@ begin
       T.Dependencies.AddUnit('ziputils');
     T:=P.Targets.AddUnit('zipper.pp');
       T.Dependencies.AddUnit('paszlib');
+<<<<<<< HEAD
     T.ResourceStrings := True;
+=======
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddImplicitUnit('adler.pas');
       T.Dependencies.AddInclude('zconf.inc');
     T:=P.Targets.AddImplicitUnit('gzio.pas');
@@ -60,14 +72,20 @@ begin
     T:=P.Targets.AddImplicitUnit('infutil.pas');
     T:=P.Targets.AddImplicitUnit('trees.pas');
     T:=P.Targets.AddImplicitUnit('zbase.pas');
+<<<<<<< HEAD
     T.ResourceStrings := True;
+=======
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddImplicitUnit('zcompres.pas');
     T:=P.Targets.AddImplicitUnit('zdeflate.pas');
     T:=P.Targets.AddImplicitUnit('zinflate.pas');
     T:=P.Targets.AddImplicitUnit('zuncompr.pas');
     T:=P.Targets.AddImplicitUnit('ziputils.pas');
     T:=P.Targets.AddImplicitUnit('zstream.pp');
+<<<<<<< HEAD
     T.ResourceStrings := True;
+=======
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddExampleProgram('examples/example.pas');
     T:=P.Targets.AddExampleProgram('examples/minigzip.pas');
     T:=P.Targets.AddExampleProgram('examples/miniunz.pas');

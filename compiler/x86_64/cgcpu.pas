@@ -35,6 +35,13 @@ unit cgcpu;
     type
       tcgx86_64 = class(tcgx86)
         procedure init_register_allocators;override;
+<<<<<<< HEAD
+=======
+        procedure done_register_allocators;override;
+
+        procedure g_proc_exit(list : TAsmList;parasize:longint;nostackframe:boolean);override;
+        procedure g_intf_wrapper(list: TAsmList; procdef: tprocdef; const labelname: string; ioffset: longint);override;
+>>>>>>> graemeg/fixes_2_2
 
         procedure a_loadfpu_ref_cgpara(list: TAsmList; size: tcgsize; const ref: treference; const cgpara: TCGPara); override;
         procedure a_loadfpu_reg_ref(list: TAsmList; fromsize, tosize: tcgsize; reg: tregister; const ref: treference); override;
@@ -97,14 +104,20 @@ unit cgcpu;
 
         if (length(saved_standard_registers)<>saved_regs_length[target_info.system=system_x86_64_win64]) then
           begin
+<<<<<<< HEAD
             if target_info.system=system_x86_64_win64 then
               begin
                 SetLength(saved_standard_registers,Length(win64_saved_std_regs));
                 SetLength(saved_mm_registers,Length(win64_saved_xmm_regs));
+=======
+            SetLength(saved_standard_registers,Length(win64_saved_std_regs));
+            SetLength(saved_mm_registers,Length(win64_saved_xmm_regs));
+>>>>>>> graemeg/fixes_2_2
 
                 for i:=low(win64_saved_std_regs) to high(win64_saved_std_regs) do
                   saved_standard_registers[i]:=win64_saved_std_regs[i];
 
+<<<<<<< HEAD
                 for i:=low(win64_saved_xmm_regs) to high(win64_saved_xmm_regs) do
                   saved_mm_registers[i]:=win64_saved_xmm_regs[i];
               end
@@ -112,11 +125,21 @@ unit cgcpu;
               begin
                 SetLength(saved_standard_registers,Length(others_saved_std_regs));
                 SetLength(saved_mm_registers,0);
+=======
+            for i:=low(win64_saved_xmm_regs) to high(win64_saved_xmm_regs) do
+              saved_mm_registers[i]:=win64_saved_xmm_regs[i];
+          end
+        else
+          begin
+            SetLength(saved_standard_registers,Length(others_saved_std_regs));
+            SetLength(saved_mm_registers,0);
+>>>>>>> graemeg/fixes_2_2
 
                 for i:=low(others_saved_std_regs) to high(others_saved_std_regs) do
                   saved_standard_registers[i]:=others_saved_std_regs[i];
               end;
           end;
+<<<<<<< HEAD
         if target_info.system=system_x86_64_win64 then
           begin
             if (cs_userbp in current_settings.optimizerswitches) and assigned(current_procinfo) and (current_procinfo.framepointer=NR_STACK_POINTER_REG) then
@@ -128,6 +151,10 @@ unit cgcpu;
               rg[R_INTREGISTER]:=trgcpu.create(R_INTREGISTER,R_SUBWHOLE,[RS_RAX,RS_RDX,RS_RCX,RS_R8,RS_R9,RS_R10,
                 RS_R11,RS_RBX,RS_RSI,RS_RDI,RS_R12,RS_R13,RS_R14,RS_R15],first_int_imreg,[])
           end
+=======
+        if assigned(current_procinfo) then
+          framepointer:=getsupreg(current_procinfo.framepointer)
+>>>>>>> graemeg/fixes_2_2
         else
 <<<<<<< HEAD
           rg[R_INTREGISTER]:=trgcpu.create(R_INTREGISTER,R_SUBWHOLE,[RS_RAX,RS_RDX,RS_RCX,RS_RSI,RS_RDI,RS_R8,
@@ -158,6 +185,7 @@ unit cgcpu;
       end;
 
 
+<<<<<<< HEAD
     procedure tcgx86_64.a_loadfpu_ref_cgpara(list: TAsmList; size: tcgsize; const ref: treference; const cgpara: TCGPara);
       begin
         { a record containing an extended value is returned on the x87 stack
@@ -358,6 +386,48 @@ unit cgcpu;
           begin
             for r:=low(saved_standard_registers) to high(saved_standard_registers) do
               if saved_standard_registers[r] in rg[R_INTREGISTER].used_in_proc then
+=======
+    procedure Tcgx86_64.done_register_allocators;
+      begin
+        inherited done_register_allocators;
+        setlength(saved_standard_registers,0);
+        setlength(saved_mm_registers,0);
+      end;
+
+
+    procedure tcgx86_64.a_param_ref(list : TAsmList;size : tcgsize;const r : treference;const paraloc : TCGPara);
+      var
+        tmpref, ref: treference;
+        location: pcgparalocation;
+        sizeleft: aint;
+        sourcesize: tcgsize;
+      begin
+        location := paraloc.location;
+        tmpref := r;
+        { make sure we handle passing a 32 bit value in memory to a }
+        { 64 bit register location etc. correctly                   }
+        if (size<>OS_NO) and
+           (tcgsize2size[size]<paraloc.intsize) then
+          begin
+            paraloc.check_simple_location;
+            if not(location^.loc in [LOC_REGISTER,LOC_CREGISTER]) then
+              internalerror(2008031801);
+            sizeleft:=tcgsize2size[size]
+          end
+        else
+          sizeleft:=paraloc.intsize;
+        while assigned(location) do
+          begin
+            case location^.loc of
+              LOC_REGISTER,LOC_CREGISTER:
+                begin
+                  sourcesize:=int_cgsize(sizeleft);
+                  if (sourcesize=OS_NO) then
+                    sourcesize:=location^.size;
+                  a_load_ref_reg(list,sourcesize,location^.size,tmpref,location^.register);
+                end;
+              LOC_REFERENCE:
+>>>>>>> graemeg/fixes_2_2
                 begin
                   templist.concat(cai_seh_directive.create_reg_offset(ash_savereg,
                     newreg(R_INTREGISTER,saved_standard_registers[r],R_SUBWHOLE),
@@ -457,7 +527,11 @@ unit cgcpu;
                 list.concat(Taicpu.op_reg(A_POP,tcgsize2opsize[OS_ADDR],current_procinfo.framepointer));
 =======
                 stacksize:=current_procinfo.calc_stackframe_size;
+<<<<<<< HEAD
                 if (target_info.system in systems_need_16_byte_stack_alignment) and
+=======
+                if (target_info.system in [system_x86_64_win64,system_x86_64_linux,system_x86_64_freebsd]) and
+>>>>>>> graemeg/fixes_2_2
                    ((stacksize <> 0) or
                     (pi_do_call in current_procinfo.flags) or
                     { can't detect if a call in this case -> use nostackframe }
@@ -667,6 +741,7 @@ unit cgcpu;
       end;
 
 
+<<<<<<< HEAD
     procedure create_codegen;
       begin
         cg:=tcgx86_64.create;
@@ -685,4 +760,8 @@ unit cgcpu;
 >>>>>>> origin/cpstrnew
       end;
 
+=======
+begin
+  cg:=tcgx86_64.create;
+>>>>>>> graemeg/fixes_2_2
 end.

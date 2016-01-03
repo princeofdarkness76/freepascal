@@ -52,6 +52,7 @@ unit raatt;
         {------------------ Assembler directives --------------------}
         AS_DB,AS_DW,AS_DD,AS_DQ,AS_GLOBAL,
         AS_ALIGN,AS_BALIGN,AS_P2ALIGN,AS_ASCII,
+<<<<<<< HEAD
         AS_ASCIIZ,AS_LCOMM,AS_COMM,AS_SINGLE,AS_DOUBLE,AS_EXTENDED,AS_CEXTENDED,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -68,6 +69,10 @@ unit raatt;
 >>>>>>> origin/cpstrnew
         AS_DATA,AS_TEXT,AS_INIT,AS_FINI,AS_END,
 >>>>>>> graemeg/cpstrnew
+=======
+        AS_ASCIIZ,AS_LCOMM,AS_COMM,AS_SINGLE,AS_DOUBLE,AS_EXTENDED,
+        AS_DATA,AS_TEXT,AS_INIT,AS_FINI,AS_END,
+>>>>>>> graemeg/fixes_2_2
         {------------------ Assembler Operators  --------------------}
         AS_TYPE,AS_SIZEOF,AS_VMTOFFSET,AS_MOD,AS_SHL,AS_SHR,AS_NOT,AS_AND,AS_OR,AS_XOR,AS_NOR,AS_AT,
         AS_LO,AS_HI,
@@ -92,6 +97,7 @@ unit raatt;
         '=',
         '.byte','.word','.long','.quad','.globl',
         '.align','.balign','.p2align','.ascii',
+<<<<<<< HEAD
         '.asciz','.lcomm','.comm','.single','.double','.tfloat','.tcfloat',
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -108,6 +114,9 @@ unit raatt;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+        '.asciz','.lcomm','.comm','.single','.double','.tfloat',
+>>>>>>> graemeg/fixes_2_2
         '.data','.text','.init','.fini','END',
         'TYPE','SIZEOF','VMTOFFSET','%','<<','>>','!','&','|','^','~','@','lo','hi');
 >>>>>>> graemeg/cpstrnew

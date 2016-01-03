@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       CarbonCore/StringCompare.h
  
      Contains:   Public interfaces for String Comparison and related operations
@@ -20,6 +21,16 @@
      Version:    CarbonCore-859.2~1
  
      Copyright:  © 1985-2008 by Apple Inc., all rights reserved.
+=======
+     File:       StringCompare.p
+ 
+     Contains:   Public interfaces for String Comparison and related operations
+ 
+     Version:    Technology: Mac OS 8
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -27,6 +38,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -45,6 +57,16 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -53,8 +75,13 @@
 
 unit StringCompare;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -67,21 +94,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -116,6 +151,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -123,6 +160,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -360,6 +398,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -385,6 +433,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -394,6 +446,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,MixedMode,TextCommon,Script;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -428,6 +481,11 @@ uses MacTypes,MixedMode,TextCommon,Script;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+uses MacTypes,MixedMode,TextCommon,Script,TypeSelect;
+
+{$ALIGN MAC68K}
+>>>>>>> graemeg/fixes_2_2
 
 {
 
@@ -460,6 +518,7 @@ uses MacTypes,MixedMode,TextCommon,Script;
     
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 { Special language code values for Language Order}
@@ -812,86 +871,258 @@ function LanguageOrder( language1: LangCode; language2: LangCode ): SInt16; exte
 >>>>>>> origin/cpstrnew
 
 
+=======
+
+const
+																{  Special language code values for Language Order }
+	systemCurLang				= -2;							{  current (itlbLang) lang for system script }
+	systemDefLang				= -3;							{  default (table) lang for system script }
+	currentCurLang				= -4;							{  current (itlbLang) lang for current script }
+	currentDefLang				= -5;							{  default lang for current script }
+	scriptCurLang				= -6;							{  current (itlbLang) lang for specified script }
+	scriptDefLang				= -7;							{  default language for a specified script }
+
+	{  obsolete names }
+	iuSystemCurLang				= -2;
+	iuSystemDefLang				= -3;
+	iuCurrentCurLang			= -4;
+	iuCurrentDefLang			= -5;
+	iuScriptCurLang				= -6;
+	iuScriptDefLang				= -7;
+
+
+	{	
+	 *  These routines are available in Carbon with the new names.
+	 	}
+	{
+	 *  [Mac]ReplaceText()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function ReplaceText(baseText: Handle; substitutionText: Handle; var key: Str15): SInt16; external name '_ReplaceText';
+{
+ *  ScriptOrder()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ScriptOrder(script1: ScriptCode; script2: ScriptCode): SInt16; external name '_ScriptOrder';
+{
+ *  [Mac]CompareString()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function CompareString(const (*var*) aStr: Str255; const (*var*) bStr: Str255; itl2Handle: Handle): SInt16; external name '_CompareString';
+
+{
+ *  IdenticalString()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function IdenticalString(const (*var*) aStr: Str255; const (*var*) bStr: Str255; itl2Handle: Handle): SInt16; external name '_IdenticalString';
+
+{
+ *  StringOrder()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function StringOrder(const (*var*) aStr: Str255; const (*var*) bStr: Str255; aScript: ScriptCode; bScript: ScriptCode; aLang: LangCode; bLang: LangCode): SInt16; external name '_StringOrder';
+
+{
+ *  CompareText()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function CompareText(aPtr: UnivPtr; bPtr: UnivPtr; aLen: SInt16; bLen: SInt16; itl2Handle: Handle): SInt16; external name '_CompareText';
+{
+ *  IdenticalText()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function IdenticalText(aPtr: UnivPtr; bPtr: UnivPtr; aLen: SInt16; bLen: SInt16; itl2Handle: Handle): SInt16; external name '_IdenticalText';
+{
+ *  TextOrder()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TextOrder(aPtr: UnivPtr; bPtr: UnivPtr; aLen: SInt16; bLen: SInt16; aScript: ScriptCode; bScript: ScriptCode; aLang: LangCode; bLang: LangCode): SInt16; external name '_TextOrder';
+{
+ *  LanguageOrder()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function LanguageOrder(language1: LangCode; language2: LangCode): SInt16; external name '_LanguageOrder';
+>>>>>>> graemeg/fixes_2_2
 {
  *  These routines are available in InterfaceLib with old names.
  *  Macros are provided for C to allow source code use to the new names.
  }
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
+=======
+{$ifc CALL_NOT_IN_CARBON}
+>>>>>>> graemeg/fixes_2_2
 {
  *  IUMagPString()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function IUMagPString(aPtr: UnivPtr; bPtr: UnivPtr; aLen: SInt16; bLen: SInt16; itl2Handle: Handle): SInt16; external name '_IUMagPString';
+>>>>>>> graemeg/fixes_2_2
 {
  *  IUMagIDPString()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function IUMagIDPString(aPtr: UnivPtr; bPtr: UnivPtr; aLen: SInt16; bLen: SInt16; itl2Handle: Handle): SInt16; external name '_IUMagIDPString';
+>>>>>>> graemeg/fixes_2_2
 {
  *  IUTextOrder()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function IUTextOrder(aPtr: UnivPtr; bPtr: UnivPtr; aLen: SInt16; bLen: SInt16; aScript: ScriptCode; bScript: ScriptCode; aLang: LangCode; bLang: LangCode): SInt16; external name '_IUTextOrder';
+>>>>>>> graemeg/fixes_2_2
 {
  *  IULangOrder()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function IULangOrder(language1: LangCode; language2: LangCode): SInt16; external name '_IULangOrder';
+>>>>>>> graemeg/fixes_2_2
 {
  *  IUScriptOrder()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function IUScriptOrder(script1: ScriptCode; script2: ScriptCode): SInt16; external name '_IUScriptOrder';
+>>>>>>> graemeg/fixes_2_2
 {
  *  IUMagString()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function IUMagString(aPtr: UnivPtr; bPtr: UnivPtr; aLen: SInt16; bLen: SInt16): SInt16; external name '_IUMagString';
+>>>>>>> graemeg/fixes_2_2
 {
  *  IUMagIDString()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function IUMagIDString(aPtr: UnivPtr; bPtr: UnivPtr; aLen: SInt16; bLen: SInt16): SInt16; external name '_IUMagIDString';
+{$endc}  {CALL_NOT_IN_CARBON}
+
+{$ifc CALL_NOT_IN_CARBON}
+>>>>>>> graemeg/fixes_2_2
 {
  *  IUCompPString()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -1183,3 +1414,79 @@ function relstring( str1: ConstCStringPtr; str2: ConstCStringPtr; caseSensitive:
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function IUCompPString(const (*var*) aStr: Str255; const (*var*) bStr: Str255; itl2Handle: Handle): SInt16; external name '_IUCompPString';
+
+{
+ *  IUEqualPString()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function IUEqualPString(const (*var*) aStr: Str255; const (*var*) bStr: Str255; itl2Handle: Handle): SInt16; external name '_IUEqualPString';
+
+{
+ *  IUStringOrder()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function IUStringOrder(const (*var*) aStr: Str255; const (*var*) bStr: Str255; aScript: ScriptCode; bScript: ScriptCode; aLang: LangCode; bLang: LangCode): SInt16; external name '_IUStringOrder';
+
+{
+ *  IUCompString()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function IUCompString(const (*var*) aStr: Str255; const (*var*) bStr: Str255): SInt16; external name '_IUCompString';
+
+{
+ *  IUEqualString()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function IUEqualString(const (*var*) aStr: Str255; const (*var*) bStr: Str255): SInt16; external name '_IUEqualString';
+
+{$endc}  {CALL_NOT_IN_CARBON}
+
+
+{
+ *  RelString()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function RelString(const (*var*) str1: Str255; const (*var*) str2: Str255; caseSensitive: boolean; diacSensitive: boolean): SInt16; external name '_RelString';
+
+{
+ *  EqualString()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function EqualString(const (*var*) str1: Str255; const (*var*) str2: Str255; caseSensitive: boolean; diacSensitive: boolean): boolean; external name '_EqualString';
+
+
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

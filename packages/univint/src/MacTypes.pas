@@ -3,6 +3,7 @@
  
      Contains:   Basic Macintosh data types.
  
+<<<<<<< HEAD
      Version:    CarbonCore-769~1
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -49,6 +50,25 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+     Version:    CarbonCore-654.0.85~1
+ 
+     Copyright:  © 1985-2005 by Apple Computer, Inc., all rights reserved.
+ 
+     Bugs?:      For bug reports, consult the following page on
+                 the World Wide Web:
+ 
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -57,8 +77,13 @@
 
 unit MacTypes;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -71,21 +96,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -120,6 +153,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -127,6 +162,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -375,6 +411,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -400,6 +446,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -410,8 +460,11 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses ConditionalMacros;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 
 {$ALIGN MAC68K}
@@ -441,6 +494,7 @@ type
     SInt64 = Int64;
     UInt64 = QWord;
 
+<<<<<<< HEAD
 type
     UNSIGNEDBYTE = UInt8;
     SIGNEDBYTE = SInt8;
@@ -458,6 +512,8 @@ type
 {$endc}
     MacPtrUInt = UNSIGNEDLONG;
     MacPtrSInt = SIGNEDLONG;
+=======
+>>>>>>> graemeg/fixes_2_2
 
 
 {$ifc TARGET_RT_BIG_ENDIAN}
@@ -517,8 +573,11 @@ type
     UInt64Ptr = ^UInt64;
     widePtr = ^wide;
     UnsignedWidePtr = ^UnsignedWide;
+<<<<<<< HEAD
     SIGNEDLONGPtr = ^SIGNEDLONG;
     UNSIGNEDLONGPtr = ^UNSIGNEDLONG;
+=======
+>>>>>>> graemeg/fixes_2_2
 
 	{	*******************************************************************************
 	
@@ -535,12 +594,17 @@ type
 	********************************************************************************	}
 	ByteParameter = SInt8;
 
+<<<<<<< HEAD
 // For interfaces that use Cs "bool" type
 {$ifc TARGET_CPU_PPC}
 	CBool = SInt32;
 {$elsec}
 	CBool = SInt8;
 {$endc}
+=======
+// For interfaces that use Cs "bool" type, which is a 32 bit number
+	CBool = SInt32; 
+>>>>>>> graemeg/fixes_2_2
 
 {*******************************************************************************
 
@@ -591,12 +655,15 @@ type
 		man: array [0..3] of UInt16;
 	end;
 
+<<<<<<< HEAD
 const
   Float32_Min = 1.5e-45;
   Float32_Max = 3.4e+38;
   Float64_Min = 5.0e-324;
   Float64_Max = 1.7e+308;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 type
 	Float96 = record
 		exp: SInt16;
@@ -608,16 +675,26 @@ type
 		x: Float32;
 		y: Float32;
 	end;
+<<<<<<< HEAD
 {GK: Need in AudioUnitCarbonViews.pas }
 	Float32PointPtr = ^Float32Point;
 	
+=======
+
+>>>>>>> graemeg/fixes_2_2
 {*******************************************************************************
 	Unix compatibility types        
 ********************************************************************************}
 type
+<<<<<<< HEAD
 	size_t = UNSIGNEDLONG;
 	size_t_ptr = ^size_t;
 	ssize_t = SIGNEDLONG;
+=======
+	size_t = UInt32;
+	size_t_ptr = ^size_t;
+	ssize_t = SInt32;
+>>>>>>> graemeg/fixes_2_2
 	ssize_t_ptr = ^ssize_t;
 
 {*******************************************************************************
@@ -634,7 +711,11 @@ type
 	PtrPtr = ^Ptr;       
 	Handle = ^Ptr;
 	Handle_fix = Handle; { used as field type when a record declaration contains a Handle field identifier }
+<<<<<<< HEAD
 	Size = SIGNEDLONG;
+=======
+	Size = SInt32;
+>>>>>>> graemeg/fixes_2_2
 	Size_fix = Size; { used as field type when a record declaration contains a Size field identifier }
 	SizePtr = ^Size;
 	UnivPtr = Pointer;
@@ -673,16 +754,26 @@ type
 	ConstLogicalAddress = UnivPtr;
 	PhysicalAddress = UnivPtr;
 	BytePtr = UInt8Ptr;
+<<<<<<< HEAD
 	ByteCount = UNSIGNEDLONG;
  	ByteCountPtr = ^ByteCount;
 	ByteOffset = UNSIGNEDLONG;
+=======
+	ByteCount = UInt32;
+ 	ByteCountPtr = ^ByteCount;
+	ByteOffset = UInt32;
+>>>>>>> graemeg/fixes_2_2
  	ByteOffsetPtr = ^ByteOffset;
 	Duration = SInt32;
 	AbsoluteTime = UnsignedWide;
 	AbsoluteTimePtr = ^AbsoluteTime;
 	OptionBits = UInt32;
 	OptionBitsPtr = ^OptionBits;
+<<<<<<< HEAD
 	ItemCount = UNSIGNEDLONG;
+=======
+	ItemCount = UInt32;
+>>>>>>> graemeg/fixes_2_2
  	ItemCountPtr = ^ItemCount;
 	PBVersion = UInt32;
 	ScriptCode = SInt16;
@@ -696,7 +787,10 @@ type
 	OSType_fix = OSType; { used as field type when a record declaration contains a OSType field identifier }
 	ResType = FourCharCode;
 	OSTypePtr = ^OSType;
+<<<<<<< HEAD
 	OSTypeHandle = ^OSTypePtr;
+=======
+>>>>>>> graemeg/fixes_2_2
 	ResTypePtr = ^ResType;
 {*******************************************************************************
 
@@ -736,6 +830,7 @@ type
 
 {*******************************************************************************
 
+<<<<<<< HEAD
     RefCon Types
     
         For access to private data in callbacks, etc.; refcons are generally
@@ -767,6 +862,8 @@ type
 
 {*******************************************************************************
 
+=======
+>>>>>>> graemeg/fixes_2_2
     Common Constants
     
         noErr                   OSErr: function performed properly - no error
@@ -774,6 +871,7 @@ type
         kInvalidID              KernelID: NULL is for pointers as kInvalidID is for ID's
         kVariableLengthArray    array bounds: variable length array
 
+<<<<<<< HEAD
     Note: kVariableLengthArray was used in array bounds to specify a variable length array,
           usually the last field in a struct.  Now that the C language supports 
 		  the concept of flexible array members, you can instead use: 
@@ -789,6 +887,18 @@ type
 		the count elements
 
 		struct BarList* l = (struct BarList*) malloc( sizeof(BarList) + count * sizeof(Bar) );
+=======
+    Note: kVariableLengthArray is used in array bounds to specify a variable length array.
+          It is ususally used in variable length structs when the last field is an array
+          of any size.  Before ANSI C, we used zero as the bounds of variable length 
+          array, but zero length array are illegal in ANSI C.  Example usage:
+    
+        struct FooList 
+        (
+            short   listLength;
+            Foo     elements[kVariableLengthArray];
+        );
+>>>>>>> graemeg/fixes_2_2
         
 ********************************************************************************}
 const
@@ -859,13 +969,20 @@ const
 type
 	UnicodeScalarValue = UInt32;
 	UTF32Char = UInt32;
+<<<<<<< HEAD
 	UTF32CharPtr = ^UTF32Char;
+=======
+>>>>>>> graemeg/fixes_2_2
 	UniChar = UInt16;
 	UTF16Char = UInt16;
 	UTF8Char = UInt8;
 	UniCharPtr = ^UniChar;
 	ConstUniCharPtr = UniCharPtr;
+<<<<<<< HEAD
 	UniCharCount = UNSIGNEDLONG;
+=======
+	UniCharCount = UInt32;
+>>>>>>> graemeg/fixes_2_2
 	UniCharCountPtr = ^UniCharCount;
 	Str15 = STRING[15];
 	Str27 = STRING[27];
@@ -1014,7 +1131,10 @@ type
 type
 	TimeValue = SInt32;
 	TimeScale = SInt32;
+<<<<<<< HEAD
 	TimeScalePtr = ^TimeScale;
+=======
+>>>>>>> graemeg/fixes_2_2
 	TimeScale_fix = TimeScale; { used as field type when a record declaration contains a TimeScale field identifier }
 	CompTimeValue = wide;
 	CompTimeValuePtr = ^CompTimeValue;
@@ -1101,6 +1221,11 @@ type
         
 ********************************************************************************}
 type
+<<<<<<< HEAD
+=======
+	Byte = UInt8;
+	SignedByte = SInt8;
+>>>>>>> graemeg/fixes_2_2
 	extended80 = Float80;
 	extended80Ptr = ^extended80;
 	extended96 = Float96;
@@ -1111,8 +1236,11 @@ type
     Debugger functions
     
 ********************************************************************************}
+<<<<<<< HEAD
 
 {$ifc TARGET_OS_MAC}
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  Debugger()
  *  
@@ -1122,7 +1250,11 @@ type
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure Debugger; external name '_Debugger';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -1134,8 +1266,13 @@ procedure Debugger; external name '_Debugger';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure DebugStr( const (*var*) debuggerMsg: Str255 ); external name '_DebugStr';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 {$endc}
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  debugstr()
@@ -1147,7 +1284,10 @@ procedure DebugStr( const (*var*) debuggerMsg: Str255 ); external name '_DebugSt
  }
 
 
+<<<<<<< HEAD
 {$ifc TARGET_CPU_PPC}
+=======
+>>>>>>> graemeg/fixes_2_2
 { Only for Mac OS native drivers }
 {
  *  SysDebug()
@@ -1169,9 +1309,13 @@ procedure DebugStr( const (*var*) debuggerMsg: Str255 ); external name '_DebugSt
  }
 
 
+<<<<<<< HEAD
 {$endc}
 
 {$ifc TARGET_OS_MAC}
+=======
+
+>>>>>>> graemeg/fixes_2_2
 { SADE break points }
 {
  *  SysBreak()
@@ -1182,7 +1326,11 @@ procedure DebugStr( const (*var*) debuggerMsg: Str255 ); external name '_DebugSt
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SysBreak; external name '_SysBreak';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -1194,7 +1342,11 @@ procedure SysBreak; external name '_SysBreak';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SysBreakStr( const (*var*) debuggerMsg: Str255 ); external name '_SysBreakStr';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -1206,13 +1358,23 @@ procedure SysBreakStr( const (*var*) debuggerMsg: Str255 ); external name '_SysB
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SysBreakFunc( const (*var*) debuggerMsg: Str255 ); external name '_SysBreakFunc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 {$endc}
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/fixes_2_2
 
 
 
 
+<<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+end.
+>>>>>>> graemeg/fixes_2_2

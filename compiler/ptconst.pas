@@ -272,7 +272,11 @@ implementation
                 begin
                    if is_constintnode(n) then
                      begin
+<<<<<<< HEAD
                        testrange(def,tordconstnode(n).value,false,false);
+=======
+                       testrange(n.resultdef,def,tordconstnode(n).value,false);
+>>>>>>> graemeg/fixes_2_2
                        case def.size of
                          1 :
                            list.concat(Tai_const.Create_8bit(byte(tordconstnode(n).value.svalue)));
@@ -572,7 +576,11 @@ implementation
                         list.concat(Tai_const.Createname(tlabelsym(srsym).mangledname,offset));
                       constsym :
                         if tconstsym(srsym).consttyp=constresourcestring then
+<<<<<<< HEAD
                           list.concat(Tai_const.Createname(make_mangledname('RESSTR',tconstsym(srsym).owner,tconstsym(srsym).name),sizeof(pint)))
+=======
+                          list.concat(Tai_const.Createname(make_mangledname('RESSTR',tconstsym(srsym).owner,tconstsym(srsym).name),sizeof(aint)))
+>>>>>>> graemeg/fixes_2_2
                         else
                           Message(type_e_variable_id_expected);
                       else
@@ -621,11 +629,22 @@ implementation
               else
                 begin
                   tsetconstnode(p).adjustforsetbase;
+<<<<<<< HEAD
                   { this writing is endian-dependant   }
+=======
+                  { this writing is endian independant   }
+                  { untrue - because they are considered }
+                  { arrays of 32-bit values CEC          }
+>>>>>>> graemeg/fixes_2_2
                   if source_info.endian = target_info.endian then
                     begin
+{$if defined(FPC_NEW_BIGENDIAN_SETS) or defined(FPC_LITTLE_ENDIAN)}
                       for i:=0 to p.resultdef.size-1 do
                         list.concat(tai_const.create_8bit(Psetbytes(tsetconstnode(p).value_set)^[i]));
+{$else}
+                      for i:=0 to p.resultdef.size-1 do
+                        list.concat(tai_const.create_8bit(reverse_byte(Psetbytes(tsetconstnode(p).value_set)^[i xor 3])));
+{$endif}
                     end
                   else
                     begin
@@ -670,7 +689,7 @@ implementation
           strlength : aint;
           strval    : pchar;
           strch     : char;
-          ll        : tasmlabel;
+          ll,ll2    : tasmlabel;
           ca        : pchar;
           winlike   : boolean;
         begin
@@ -750,8 +769,32 @@ implementation
                      if (strlength=0) then
                        ll := nil
                      else
+<<<<<<< HEAD
                        ll := emit_ansistring_const(current_asmdata.asmlists[al_const],strval,strlength,def.encoding);
                      hr.list.concat(Tai_const.Create_sym(ll));
+=======
+                       begin
+                         current_asmdata.getdatalabel(ll);
+                         list.concat(Tai_const.Create_sym(ll));
+                         current_asmdata.getdatalabel(ll2);
+                         current_asmdata.asmlists[al_const].concat(tai_align.create(const_align(sizeof(aint))));
+                         current_asmdata.asmlists[al_const].concat(Tai_label.Create(ll2));
+                         current_asmdata.asmlists[al_const].concat(Tai_const.Create_aint(-1));
+                         current_asmdata.asmlists[al_const].concat(Tai_const.Create_aint(strlength));
+                         { make sure the string doesn't get dead stripped if the header is referenced }
+                         if (target_info.system in systems_darwin) then
+                           current_asmdata.asmlists[al_typedconsts].concat(tai_directive.create(asd_reference,ll.name));
+                         current_asmdata.asmlists[al_const].concat(Tai_label.Create(ll));
+                         { ... and vice versa }
+                         if (target_info.system in systems_darwin) then
+                           list.concat(tai_directive.create(asd_reference,ll2.name));
+                         getmem(ca,strlength+1);
+                         move(strval^,ca^,strlength);
+                         { The terminating #0 to be stored in the .data section (JM) }
+                         ca[strlength]:=#0;
+                         current_asmdata.asmlists[al_const].concat(Tai_string.Create_pchar(ca,strlength+1));
+                       end;
+>>>>>>> graemeg/fixes_2_2
                   end;
                 st_unicodestring,
                 st_widestring:
@@ -770,10 +813,36 @@ implementation
                        { collect global Windows widestrings }
                        if winlike then
                        begin
+<<<<<<< HEAD
                          current_asmdata.WideInits.Concat(
                             TTCInitItem.Create(hr.origsym, hr.offset, ll)
                          );
                          ll := nil;
+=======
+                         current_asmdata.getdatalabel(ll);
+                         list.concat(Tai_const.Create_sym(ll));
+                         current_asmdata.getdatalabel(ll2);
+                         current_asmdata.asmlists[al_const].concat(tai_align.create(const_align(sizeof(aint))));
+                         current_asmdata.asmlists[al_const].concat(Tai_label.Create(ll2));
+                         if tf_winlikewidestring in target_info.flags then
+                           current_asmdata.asmlists[al_const].concat(Tai_const.Create_32bit(strlength*cwidechartype.size))
+                         else
+                           begin
+                             current_asmdata.asmlists[al_const].concat(Tai_const.Create_aint(-1));
+                             current_asmdata.asmlists[al_const].concat(Tai_const.Create_aint(strlength*cwidechartype.size));
+                           end;
+                         { make sure the string doesn't get dead stripped if the header is referenced }
+                         if (target_info.system in systems_darwin) then
+                           current_asmdata.asmlists[al_typedconsts].concat(tai_directive.create(asd_reference,ll.name));
+                         current_asmdata.asmlists[al_const].concat(Tai_label.Create(ll));
+                         { ... and vice versa }
+                         if (target_info.system in systems_darwin) then
+                           current_asmdata.asmlists[al_typedconsts].concat(tai_directive.create(asd_reference,ll2.name));
+                         for i:=0 to strlength-1 do
+                           current_asmdata.asmlists[al_const].concat(Tai_const.Create_16bit(pcompilerwidestring(strval)^.data[i]));
+                         { ending #0 }
+                         current_asmdata.asmlists[al_const].concat(Tai_const.Create_16bit(0))
+>>>>>>> graemeg/fixes_2_2
                        end;
                      end;
                      hr.list.concat(Tai_const.Create_sym(ll));
@@ -1286,8 +1355,12 @@ implementation
                           flush_packed_value(hr.list,bp);
                           curroffset:=align(curroffset,8);
                         end;
+<<<<<<< HEAD
                       hr.offset:=startoffset+tfieldvarsym(srsym).fieldoffset;
                       read_typed_const_data(hr,tfieldvarsym(srsym).vardef);
+=======
+                      read_typed_const_data(list,tfieldvarsym(srsym).vardef);
+>>>>>>> graemeg/fixes_2_2
                     end
                   else
                     begin
@@ -1515,6 +1588,7 @@ implementation
       var
         storefilepos : tfileposinfo;
         cursectype   : TAsmSectionType;
+<<<<<<< HEAD
         hrec         : threc;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1526,6 +1600,9 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+        valuelist    : tasmlist;
+>>>>>>> graemeg/fixes_2_2
       begin
         { mark the staticvarsym as typedconst }
         include(sym.varoptions,vo_is_typed_const);
@@ -1561,6 +1638,7 @@ implementation
 =======
           cursectype:=sec_data;
         maybe_new_object_file(list);
+<<<<<<< HEAD
         hrec.list:=tasmlist.create;
         hrec.origsym:=sym;
         hrec.offset:=0;
@@ -1578,15 +1656,29 @@ implementation
 
         { Parse hints }
         try_consume_hintdirective(sym.symoptions,sym.deprecatedmsg);
+=======
+        valuelist:=tasmlist.create;
+        read_typed_const_data(valuelist,sym.vardef);
+
+        { Parse hints }
+        try_consume_hintdirective(sym.symoptions);
+>>>>>>> graemeg/fixes_2_2
 
         consume(_SEMICOLON);
 
         { parse public/external/export/... }
+<<<<<<< HEAD
         if not in_structure and
            (
             (
              (token = _ID) and
              (idtoken in [_EXPORT,_EXTERNAL,_WEAKEXTERNAL,_PUBLIC,_CVAR]) and
+=======
+        if (
+            (
+             (token = _ID) and
+             (idtoken in [_EXPORT,_EXTERNAL,_PUBLIC,_CVAR]) and
+>>>>>>> graemeg/fixes_2_2
              (m_cvar_support in current_settings.modeswitches)
             ) or
             (
@@ -1599,6 +1691,7 @@ implementation
            ) then
           read_public_and_external(sym);
 
+<<<<<<< HEAD
 
         { try to parse a section directive }
         if not in_structure and (target_info.system in systems_allow_section) and
@@ -1641,6 +1734,24 @@ implementation
         hrec.list.free;
         list.concat(tai_symbol_end.Createname(sym.mangledname));
 >>>>>>> graemeg/cpstrnew
+=======
+        { only now add items based on the symbolname, because it may }
+        { have been modified by the directives parsed above          }
+        new_section(list,cursectype,lower(sym.mangledname),const_align(sym.vardef.alignment));
+        if (sym.owner.symtabletype=globalsymtable) or
+           create_smartlink or
+           (assigned(current_procinfo) and
+            (po_inline in current_procinfo.procdef.procoptions)) or
+           DLLSource then
+          list.concat(Tai_symbol.Createname_global(sym.mangledname,AT_DATA,0))
+        else
+          list.concat(Tai_symbol.Createname(sym.mangledname,AT_DATA,0));
+
+        { add the parsed value }
+        list.concatlist(valuelist);
+        valuelist.free;
+        list.concat(tai_symbol_end.Createname(sym.mangledname));
+>>>>>>> graemeg/fixes_2_2
         current_filepos:=storefilepos;
       end;
 

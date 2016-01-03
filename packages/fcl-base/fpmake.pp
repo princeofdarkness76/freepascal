@@ -13,6 +13,7 @@ begin
 {$endif ALLPACKAGES}
 
     P:=AddPackage('fcl-base');
+<<<<<<< HEAD
     P.ShortName:='fclb';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -104,6 +105,40 @@ begin
     T:=P.Targets.AddUnit('custapp.pp');
       T.ResourceStrings:=true;
 >>>>>>> origin/cpstrnew
+=======
+{$ifdef ALLPACKAGES}
+    P.Directory:='fcl-base';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+
+    P.Dependencies.Add('winunits-jedi',[Win32,Win64]);
+
+    P.SourcePath.Add('src');
+    P.SourcePath.Add('src/unix',AllUnixOSes);
+    P.SourcePath.Add('src/win',AllWindowsOSes);
+    P.SourcePath.Add('src/$(OS)',AllOSes-AllWindowsOSes-AllUnixOSes);
+    P.IncludePath.Add('src');
+    P.IncludePath.Add('src/unix',AllUnixOSes);
+    P.IncludePath.Add('src/win',AllWindowsOSes);
+    P.IncludePath.Add('src/$(OS)',AllOSes-AllWindowsOSes-AllUnixOSes);
+
+    T:=P.Targets.AddUnit('avl_tree.pp');
+    T:=P.Targets.AddUnit('base64.pp');
+    T:=P.Targets.AddUnit('blowfish.pp');
+    T:=P.Targets.AddUnit('bufstream.pp');
+    T:=P.Targets.AddUnit('cachecls.pp');
+      T.ResourceStrings:=true;
+    T:=P.Targets.AddUnit('contnrs.pp');
+    T:=P.Targets.AddUnit('custapp.pp');
+      T.ResourceStrings:=true;
+    T:=P.Targets.AddUnit('daemonapp.pp',AllWindowsOSes+AllUnixOSes);
+      with T.Dependencies do
+        begin
+          AddInclude('daemonapp.inc');
+          AddUnit('custapp');
+          AddUnit('eventlog');
+        end;
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('eventlog.pp');
       T.ResourceStrings:=true;
       with T.Dependencies do
@@ -113,9 +148,13 @@ begin
     T:=P.Targets.AddUnit('fptimer.pp',AllWindowsOSes+AllUnixOSes);
     T:=P.Targets.AddUnit('gettext.pp');
     T:=P.Targets.AddUnit('idea.pp');
+<<<<<<< HEAD
 
     T:=P.Targets.AddUnit('inicol.pp');
 
+=======
+    T:=P.Targets.AddUnit('inicol.pp');
+>>>>>>> graemeg/fixes_2_2
       T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -127,9 +166,14 @@ begin
           AddUnit('contnrs');
         end;
     T:=P.Targets.AddUnit('iostream.pp');
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('nullstream.pp');
     T:=P.Targets.AddUnit('maskutils.pp');
       T.ResourceStrings:=true;
+=======
+    T:=P.Targets.AddUnit('libtar.pp');
+    T:=P.Targets.AddUnit('maskutils.pp');
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('pooledmm.pp');
     T:=P.Targets.AddUnit('rtfpars.pp');
       with T.Dependencies do
@@ -141,6 +185,7 @@ begin
       T.ResourceStrings:=true;
     T:=P.Targets.AddUnit('streamex.pp');
     T:=P.Targets.AddUnit('streamio.pp');
+<<<<<<< HEAD
       T.ResourceStrings:=true;
     T:=P.Targets.AddUnit('fptemplate.pp');
       T.ResourceStrings:=true;
@@ -158,6 +203,9 @@ begin
 >>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('syncobjs.pp',AllOSes-[GO32v2,OS2,EMX]);
 >>>>>>> graemeg/cpstrnew
+=======
+    T:=P.Targets.AddUnit('syncobjs.pp',AllOSes-[GO32v2,OS2,EMX]);
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('uriparser.pp');
     T:=P.Targets.AddUnit('wformat.pp');
     T:=P.Targets.AddUnit('whtml.pp');
@@ -171,6 +219,7 @@ begin
           AddUnit('wformat');
         end;
     T:=P.Targets.AddUnit('fpexprpars.pp');
+<<<<<<< HEAD
       T.ResourceStrings:=true;
 
 <<<<<<< HEAD
@@ -272,10 +321,22 @@ begin
       // simple.xml
       // parser.dat
       // testcgi.html
+=======
+
+    // Windows units
+    T:=P.Targets.AddUnit('ServiceManager.pas',[Win32,Win64]);
+    T:=P.Targets.AddUnit('fileinfo',AllWindowsOSes);
+
+    // Additional sources
+    P.Sources.AddSrcFiles('src/win/fclel.*');
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;
     end;
 end.
 {$endif ALLPACKAGES}
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/fixes_2_2

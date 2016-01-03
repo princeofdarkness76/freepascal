@@ -14,13 +14,19 @@
  **********************************************************************}
 unit xmlutils;
 
+<<<<<<< HEAD
 {$ifdef fpc}{$mode objfpc}{$endif}
 {$H+}
 {$ifopt Q+}{$define overflow_check}{$endif}
+=======
+{$mode objfpc}
+{$H+}
+>>>>>>> graemeg/fixes_2_2
 
 interface
 
 uses
+<<<<<<< HEAD
   SysUtils, Classes;
 
 type
@@ -102,10 +108,24 @@ type
     dtNmTokens,
     dtNotation
   );
+=======
+  SysUtils;
+
+function IsXmlName(const Value: WideString; Xml11: Boolean = False): Boolean; overload;
+function IsXmlName(Value: PWideChar; Len: Integer; Xml11: Boolean = False): Boolean; overload;
+function IsXmlNames(const Value: WideString; Xml11: Boolean = False): Boolean;
+function IsXmlNmToken(const Value: WideString; Xml11: Boolean = False): Boolean;
+function IsXmlNmTokens(const Value: WideString; Xml11: Boolean = False): Boolean;
+function IsValidXmlEncoding(const Value: WideString): Boolean;
+function Xml11NamePages: PByteArray;
+procedure NormalizeSpaces(var Value: WideString);
+function Hash(InitValue: LongWord; Key: PWideChar; KeyLen: Integer): LongWord;
+>>>>>>> graemeg/fixes_2_2
 
 { a simple hash table with WideString keys }
 
 type
+<<<<<<< HEAD
 {$ifndef fpc}
   PtrInt = LongInt;
   TFPList = TList;
@@ -131,10 +151,17 @@ type
   PHashItem = ^THashItem;
   THashItem = record
     Key: XMLString;
+=======
+  PPHashItem = ^PHashItem;
+  PHashItem = ^THashItem;
+  THashItem = record
+    Key: WideString;
+>>>>>>> graemeg/fixes_2_2
     HashValue: LongWord;
     Next: PHashItem;
     Data: TObject;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -157,6 +184,8 @@ type
   THashItemArray = array[0..MaxInt div sizeof(Pointer)-1] of PHashItem;
 >>>>>>> origin/cpstrnew
   PHashItemArray = ^THashItemArray;
+=======
+>>>>>>> graemeg/fixes_2_2
 
   THashForEach = function(Entry: PHashItem; arg: Pointer): Boolean;
 
@@ -164,9 +193,15 @@ type
   private
     FCount: LongWord;
     FBucketCount: LongWord;
+<<<<<<< HEAD
     FBucket: PHashItemArray;
     FOwnsObjects: Boolean;
     function Lookup(Key: PWideChar; KeyLength: Integer; out Found: Boolean; CanCreate: Boolean): PHashItem;
+=======
+    FBucket: PPHashItem;
+    FOwnsObjects: Boolean;
+    function Lookup(Key: PWideChar; KeyLength: Integer; var Found: Boolean; CanCreate: Boolean): PHashItem;
+>>>>>>> graemeg/fixes_2_2
     procedure Resize(NewCapacity: LongWord);
   public
     constructor Create(InitSize: Integer; OwnObjects: Boolean);
@@ -175,14 +210,20 @@ type
     function Find(Key: PWideChar; KeyLen: Integer): PHashItem;
     function FindOrAdd(Key: PWideChar; KeyLen: Integer; var Found: Boolean): PHashItem; overload;
     function FindOrAdd(Key: PWideChar; KeyLen: Integer): PHashItem; overload;
+<<<<<<< HEAD
     function FindOrAdd(const Key: XMLString): PHashItem; overload;
     function Get(Key: PWideChar; KeyLen: Integer): TObject;
     function Remove(Entry: PHashItem): Boolean;
     function RemoveData(aData: TObject): Boolean;
+=======
+    function Get(Key: PWideChar; KeyLen: Integer): TObject;
+    function Remove(Entry: PHashItem): Boolean;
+>>>>>>> graemeg/fixes_2_2
     procedure ForEach(proc: THashForEach; arg: Pointer);
     property Count: LongWord read FCount;
   end;
 
+<<<<<<< HEAD
 { another hash, for detecting duplicate namespaced attributes without memory allocations }
 
   TExpHashEntry = record
@@ -542,6 +583,42 @@ function Decode_8859_1(Context: Pointer; InBuf: PChar; var InCnt: Cardinal; OutB
 {$i names.inc}
 
 implementation
+=======
+{$i names.inc}
+
+implementation
+
+var
+  Xml11Pg: PByteArray = nil;
+
+function Xml11NamePages: PByteArray;
+var
+  I: Integer;
+  p: PByteArray;
+begin
+  if Xml11Pg = nil then
+  begin
+    GetMem(p, 512);
+    for I := 0 to 255 do
+      p^[I] := ord(Byte(I) in Xml11HighPages);
+    p^[0] := 2;
+    p^[3] := $2c;
+    p^[$20] := $2a;
+    p^[$21] := $2b;
+    p^[$2f] := $29;
+    p^[$30] := $2d;
+    p^[$fd] := $28;
+    p^[$ff] := $30;
+
+    Move(p^, p^[256], 256);
+    p^[$100] := $19;
+    p^[$103] := $2E;
+    p^[$120] := $2F;
+    Xml11Pg := p;
+  end;
+  Result := Xml11Pg;
+end;
+>>>>>>> graemeg/fixes_2_2
 
 function IsXml11Char(Value: PWideChar; var Index: Integer): Boolean; overload;
 begin
@@ -554,7 +631,11 @@ begin
     Result := False;
 end;
 
+<<<<<<< HEAD
 function IsXml11Char(const Value: XMLString; var Index: Integer): Boolean; overload;
+=======
+function IsXml11Char(const Value: WideString; var Index: Integer): Boolean; overload;
+>>>>>>> graemeg/fixes_2_2
 begin
   if (Value[Index] >= #$D800) and (Value[Index] <= #$DB7F) then
   begin
@@ -565,11 +646,16 @@ begin
     Result := False;
 end;
 
+<<<<<<< HEAD
 function IsXmlName(const Value: XMLString; Xml11: Boolean): Boolean;
+=======
+function IsXmlName(const Value: WideString; Xml11: Boolean): Boolean;
+>>>>>>> graemeg/fixes_2_2
 begin
   Result := IsXmlName(PWideChar(Value), Length(Value), Xml11);
 end;
 
+<<<<<<< HEAD
 function IsXmlName(Value: PWideChar; Len: Integer; Xml11: Boolean = False): Boolean;
 var
   I: Integer;
@@ -578,23 +664,59 @@ begin
   I := 0;
   if (Len = 0) or not ((Byte(Value[I]) in NamingBitmap[NamePages[hi(Word(Value[I]))]]) or
     (Value[I] = ':') or IsXml11Char(Value, I)) then
+=======
+function IsXmlName(Value: PWideChar; Len: Integer; Xml11: Boolean = False): Boolean; overload;
+var
+  Pages: PByteArray;
+  I: Integer;
+begin
+  Result := False;
+  if Xml11 then
+    Pages := Xml11NamePages
+  else
+    Pages := @NamePages;
+
+  I := 0;
+  if (Len = 0) or not ((Byte(Value[I]) in NamingBitmap[Pages^[hi(Word(Value[I]))]]) or
+    (Value[I] = ':') or
+    (Xml11 and IsXml11Char(Value, I))) then
+>>>>>>> graemeg/fixes_2_2
       Exit;
   Inc(I);
   while I < Len do
   begin
+<<<<<<< HEAD
     if not ((Byte(Value[I]) in NamingBitmap[NamePages[$100+hi(Word(Value[I]))]]) or
       (Value[I] = ':') or IsXml11Char(Value, I)) then
+=======
+    if not ((Byte(Value[I]) in NamingBitmap[Pages^[$100+hi(Word(Value[I]))]]) or
+      (Value[I] = ':') or
+      (Xml11 and IsXml11Char(Value, I))) then
+>>>>>>> graemeg/fixes_2_2
         Exit;
     Inc(I);
   end;
   Result := True;
 end;
 
+<<<<<<< HEAD
 function IsXmlNames(const Value: XMLString; Xml11: Boolean): Boolean;
 var
   I: Integer;
   Offset: Integer;
 begin
+=======
+function IsXmlNames(const Value: WideString; Xml11: Boolean): Boolean;
+var
+  Pages: PByteArray;
+  I: Integer;
+  Offset: Integer;
+begin
+  if Xml11 then
+    Pages := Xml11NamePages
+  else
+    Pages := @NamePages;
+>>>>>>> graemeg/fixes_2_2
   Result := False;
   if Value = '' then
     Exit;
@@ -602,8 +724,14 @@ begin
   Offset := 0;
   while I <= Length(Value) do
   begin
+<<<<<<< HEAD
     if not ((Byte(Value[I]) in NamingBitmap[NamePages[Offset+hi(Word(Value[I]))]]) or
       (Value[I] = ':') or IsXml11Char(Value, I)) then
+=======
+    if not ((Byte(Value[I]) in NamingBitmap[Pages^[Offset+hi(Word(Value[I]))]]) or
+      (Value[I] = ':') or
+      (Xml11 and IsXml11Char(Value, I))) then
+>>>>>>> graemeg/fixes_2_2
     begin
       if (I = Length(Value)) or (Value[I] <> #32) then
         Exit;
@@ -617,36 +745,72 @@ begin
   Result := True;
 end;
 
+<<<<<<< HEAD
 function IsXmlNmToken(const Value: XMLString; Xml11: Boolean): Boolean;
 var
   I: Integer;
 begin
+=======
+function IsXmlNmToken(const Value: WideString; Xml11: Boolean): Boolean;
+var
+  I: Integer;
+  Pages: PByteArray;
+begin
+  if Xml11 then
+    Pages := Xml11NamePages
+  else
+    Pages := @NamePages;
+>>>>>>> graemeg/fixes_2_2
   Result := False;
   if Value = '' then
     Exit;
   I := 1;
   while I <= Length(Value) do
   begin
+<<<<<<< HEAD
     if not ((Byte(Value[I]) in NamingBitmap[NamePages[$100+hi(Word(Value[I]))]]) or
       (Value[I] = ':') or IsXml11Char(Value, I)) then
+=======
+    if not ((Byte(Value[I]) in NamingBitmap[Pages^[$100+hi(Word(Value[I]))]]) or
+      (Value[I] = ':') or
+      (Xml11 and IsXml11Char(Value, I))) then
+>>>>>>> graemeg/fixes_2_2
         Exit;
     Inc(I);
   end;
   Result := True;
 end;
 
+<<<<<<< HEAD
 function IsXmlNmTokens(const Value: XMLString; Xml11: Boolean): Boolean;
 var
   I: Integer;
 begin
+=======
+function IsXmlNmTokens(const Value: WideString; Xml11: Boolean): Boolean;
+var
+  I: Integer;
+  Pages: PByteArray;
+begin
+  if Xml11 then
+    Pages := Xml11NamePages
+  else
+    Pages := @NamePages;
+>>>>>>> graemeg/fixes_2_2
   I := 1;
   Result := False;
   if Value = '' then
     Exit;
   while I <= Length(Value) do
   begin
+<<<<<<< HEAD
     if not ((Byte(Value[I]) in NamingBitmap[NamePages[$100+hi(Word(Value[I]))]]) or
       (Value[I] = ':') or IsXml11Char(Value, I)) then
+=======
+    if not ((Byte(Value[I]) in NamingBitmap[Pages^[$100+hi(Word(Value[I]))]]) or
+      (Value[I] = ':') or
+      (Xml11 and IsXml11Char(Value, I))) then
+>>>>>>> graemeg/fixes_2_2
     begin
       if (I = Length(Value)) or (Value[I] <> #32) then
         Exit;
@@ -656,7 +820,11 @@ begin
   Result := True;
 end;
 
+<<<<<<< HEAD
 function IsValidXmlEncoding(const Value: XMLString): Boolean;
+=======
+function IsValidXmlEncoding(const Value: WideString): Boolean;
+>>>>>>> graemeg/fixes_2_2
 var
   I: Integer;
 begin
@@ -669,7 +837,11 @@ begin
   Result := True;
 end;
 
+<<<<<<< HEAD
 procedure NormalizeSpaces(var Value: XMLString);
+=======
+procedure NormalizeSpaces(var Value: WideString);
+>>>>>>> graemeg/fixes_2_2
 var
   I, J: Integer;
 begin
@@ -690,6 +862,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 function IsXmlWhiteSpace(c: WideChar): Boolean;
 begin
   Result := (c = #32) or (c = #9) or (c = #10) or (c = #13);
@@ -747,11 +920,14 @@ begin
       Inc(word(S[i]), 32);
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 function Hash(InitValue: LongWord; Key: PWideChar; KeyLen: Integer): LongWord;
 begin
   Result := InitValue;
   while KeyLen <> 0 do
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -779,11 +955,15 @@ begin
     Result := Result * $F4243 xor ord(Key^);
 {$ifdef overflow_check}{$q+}{$endif}
 >>>>>>> origin/cpstrnew
+=======
+    Result := Result * $F4243 xor ord(Key^);
+>>>>>>> graemeg/fixes_2_2
     Inc(Key);
     Dec(KeyLen);
   end;
 end;
 
+<<<<<<< HEAD
 function KeyCompare(const Key1: XMLString; Key2: Pointer; Key2Len: Integer): Boolean;
 begin
 <<<<<<< HEAD
@@ -813,6 +993,11 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+function KeyCompare(const Key1: WideString; Key2: Pointer; Key2Len: Integer): Boolean;
+begin
+  Result := (Length(Key1)=Key2Len) and (CompareWord(Pointer(Key1)^, Key2^, Key2Len) = 0);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 { THashTable }
@@ -843,7 +1028,11 @@ var
 begin
   for I := 0 to FBucketCount-1 do
   begin
+<<<<<<< HEAD
     item := FBucket^[I];
+=======
+    item := FBucket[I];
+>>>>>>> graemeg/fixes_2_2
     while Assigned(item) do
     begin
       next := item^.Next;
@@ -852,8 +1041,13 @@ begin
       Dispose(item);
       item := next;
     end;
+<<<<<<< HEAD
     FBucket^[I] := nil;
   end;
+=======
+  end;
+  FillChar(FBucket^, FBucketCount * sizeof(PHashItem), 0);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function THashTable.Find(Key: PWideChar; KeyLen: Integer): PHashItem;
@@ -876,6 +1070,7 @@ begin
   Result := Lookup(Key, KeyLen, Dummy, True);
 end;
 
+<<<<<<< HEAD
 function THashTable.FindOrAdd(const Key: XMLString): PHashItem;
 var
   Dummy: Boolean;
@@ -883,6 +1078,8 @@ begin
   Result := Lookup(PWideChar(Key), Length(Key), Dummy, True);
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 function THashTable.Get(Key: PWideChar; KeyLen: Integer): TObject;
 var
   e: PHashItem;
@@ -892,17 +1089,29 @@ begin
   if Assigned(e) then
     Result := e^.Data
   else
+<<<<<<< HEAD
     Result := nil;
 end;
 
 function THashTable.Lookup(Key: PWideChar; KeyLength: Integer;
   out Found: Boolean; CanCreate: Boolean): PHashItem;
+=======
+    Result := nil;  
+end;
+
+function THashTable.Lookup(Key: PWideChar; KeyLength: Integer;
+  var Found: Boolean; CanCreate: Boolean): PHashItem;
+>>>>>>> graemeg/fixes_2_2
 var
   Entry: PPHashItem;
   h: LongWord;
 begin
   h := Hash(0, Key, KeyLength);
+<<<<<<< HEAD
   Entry := @FBucket^[h mod FBucketCount];
+=======
+  Entry := @FBucket[h mod FBucketCount];
+>>>>>>> graemeg/fixes_2_2
   while Assigned(Entry^) and not ((Entry^^.HashValue = h) and KeyCompare(Entry^^.Key, Key, KeyLength) ) do
     Entry := @Entry^^.Next;
   Found := Assigned(Entry^);
@@ -919,9 +1128,13 @@ begin
   else
   begin
     New(Result);
+<<<<<<< HEAD
     // SetString for WideStrings trims on zero chars [fixed, #14740]
     SetLength(Result^.Key, KeyLength);
     Move(Key^, Pointer(Result^.Key)^, KeyLength*sizeof(WideChar));
+=======
+    SetString(Result^.Key, Key, KeyLength);
+>>>>>>> graemeg/fixes_2_2
     Result^.HashValue := h;
     Result^.Data := nil;
     Result^.Next := nil;
@@ -932,18 +1145,29 @@ end;
 
 procedure THashTable.Resize(NewCapacity: LongWord);
 var
+<<<<<<< HEAD
   p: PHashItemArray;
   chain: PPHashItem;
+=======
+  p, chain: PPHashItem;
+>>>>>>> graemeg/fixes_2_2
   i: Integer;
   e, n: PHashItem;
 begin
   p := AllocMem(NewCapacity * sizeof(PHashItem));
   for i := 0 to FBucketCount-1 do
   begin
+<<<<<<< HEAD
     e := FBucket^[i];
     while Assigned(e) do
     begin
       chain := @p^[e^.HashValue mod NewCapacity];
+=======
+    e := FBucket[i];
+    while Assigned(e) do
+    begin
+      chain := @p[e^.HashValue mod NewCapacity];
+>>>>>>> graemeg/fixes_2_2
       n := e^.Next;
       e^.Next := chain^;
       chain^ := e;
@@ -959,7 +1183,11 @@ function THashTable.Remove(Entry: PHashItem): Boolean;
 var
   chain: PPHashItem;
 begin
+<<<<<<< HEAD
   chain := @FBucket^[Entry^.HashValue mod FBucketCount];
+=======
+  chain := @FBucket[Entry^.HashValue mod FBucketCount];
+>>>>>>> graemeg/fixes_2_2
   while Assigned(chain^) do
   begin
     if chain^ = Entry then
@@ -977,6 +1205,7 @@ begin
   Result := False;
 end;
 
+<<<<<<< HEAD
 // this does not free the aData object
 function THashTable.RemoveData(aData: TObject): Boolean;
 var
@@ -1004,6 +1233,8 @@ begin
   Result := False;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 procedure THashTable.ForEach(proc: THashForEach; arg: Pointer);
 var
   i: Integer;
@@ -1011,7 +1242,11 @@ var
 begin
   for i := 0 to FBucketCount-1 do
   begin
+<<<<<<< HEAD
     e := FBucket^[i];
+=======
+    e := FBucket[i];
+>>>>>>> graemeg/fixes_2_2
     while Assigned(e) do
     begin
       if not proc(e, arg) then
@@ -1021,6 +1256,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 { TDblHashArray }
 
 destructor TDblHashArray.Destroy;
@@ -1930,5 +2166,12 @@ begin
     Result := OutCnt-i;
   OutCnt := i;
 end;
+=======
+initialization
+
+finalization
+  if Assigned(Xml11Pg) then
+    FreeMem(Xml11Pg);
+>>>>>>> graemeg/fixes_2_2
 
 end.

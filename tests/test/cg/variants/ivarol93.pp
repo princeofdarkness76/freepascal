@@ -20,6 +20,10 @@ procedure test93(a: cardinal); overload;
 procedure test93(a: widechar); overload;
   begin
     writeln('widechar called instead of cardinal');
+<<<<<<< HEAD
+=======
+    halt(1)
+>>>>>>> graemeg/fixes_2_2
   end;
 
 var
@@ -42,11 +46,17 @@ begin
   try
     v := y93;
     test93(v);
+<<<<<<< HEAD
     Writeln('Expected exception, none was raised');
     Halt(1);
   except
     on E : TObject do
       Writeln('Caught exception, as expected : ',E.ClassName);
+=======
+  except
+    on E : TObject do
+      halt(1);
+>>>>>>> graemeg/fixes_2_2
   end;
 end;
 

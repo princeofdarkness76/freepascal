@@ -14,6 +14,7 @@ begin
 {$endif ALLPACKAGES}
 
     P:=AddPackage('fcl-xml');
+<<<<<<< HEAD
     P.ShortName:='fclx';
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
@@ -31,6 +32,17 @@ begin
     P.Description := 'XML and DOM parts of Free Component Libraries (FCL), FPC''s OOP library.';
     P.NeedLibC:= false;
     P.OSes:=AllOSes-[embedded,msdos,win16];
+=======
+{$ifdef ALLPACKAGES}
+    P.Directory:='fcl-xml';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+
+    D:=P.Dependencies.Add('paszlib');
+      D.Version:='2.2.4';
+    D:=P.Dependencies.Add('fcl-base');
+      D.Version:='2.2.4';
+>>>>>>> graemeg/fixes_2_2
 
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');
@@ -63,7 +75,10 @@ begin
           AddUnit('htmlelements');
           AddUnit('htmldefs');
         end;
+<<<<<<< HEAD
     T.ResourceStrings:=True;
+=======
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('htmwrite.pp');
       with T.Dependencies do
         begin
@@ -79,7 +94,10 @@ begin
           AddUnit('htmldefs');
         end;
     T:=P.Targets.AddUnit('sax.pp');
+<<<<<<< HEAD
     T.ResourceStrings:=True;
+=======
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('xhtml.pp');
       with T.Dependencies do
         begin
@@ -93,7 +111,10 @@ begin
           AddUnit('xmlread');
           AddUnit('xmlwrite');
         end;
+<<<<<<< HEAD
     T.ResourceStrings:=True;
+=======
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('xmlconf.pp');
       with T.Dependencies do
         begin
@@ -101,6 +122,7 @@ begin
           AddUnit('xmlread');
           AddUnit('xmlwrite');
         end;
+<<<<<<< HEAD
     T.ResourceStrings:=True;
     T:=P.Targets.AddUnit('xmlreader.pp');
       with T.Dependencies do
@@ -114,13 +136,18 @@ begin
           AddUnit('xmlreader');
           AddUnit('dtdmodel');
         end;
+=======
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('xmlread.pp');
       with T.Dependencies do
         begin
           AddUnit('dom');
           AddUnit('xmlutils');
+<<<<<<< HEAD
           AddUnit('xmlreader');
           AddUnit('xmltextreader');
+=======
+>>>>>>> graemeg/fixes_2_2
         end;
     T:=P.Targets.AddUnit('xmlstreaming.pp');
       with T.Dependencies do
@@ -140,10 +167,15 @@ begin
     T:=P.Targets.AddUnit('xpath.pp');
       with T.Dependencies do
         begin
+<<<<<<< HEAD
           AddInclude('xpathkw.inc');
           AddUnit('dom');
         end;
     T.ResourceStrings:=True;
+=======
+          AddUnit('dom');
+        end;
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('sax_xml.pp');
       with T.Dependencies do
         begin
@@ -151,6 +183,7 @@ begin
           AddUnit('dom');
           AddUnit('htmldefs');
         end;
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('xmliconv.pas',[linux,freebsd,darwin,iphonesim,haiku,beos,aix]);
       with T.Dependencies do
         begin
@@ -193,10 +226,15 @@ begin
     // 'tests/README
     // 'tests/template.xml
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;
     end;
 end.
 {$endif ALLPACKAGES}
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/fixes_2_2

@@ -57,11 +57,17 @@ end;
 
 procedure TPipeClientComm.Connect;
 begin
+<<<<<<< HEAD
   try
     FStream := TFileStream.Create (FFileName, fmOpenWrite);
   finally
     Owner.DoError (SErrServerNotActive, [Owner.ServerID]);
   end;
+=======
+  If Not ServerRunning then
+    Owner.DoError (SErrServerNotActive, [Owner.ServerID]);
+  FStream := TFileStream.Create (FFileName, fmOpenWrite);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -85,8 +91,12 @@ end;
 
 function TPipeClientComm.ServerRunning: boolean;
 begin
+<<<<<<< HEAD
 {$WARNING Fake TPipeClientComm.ServerRunning - no safe solution known}
   Result := true;
+=======
+  Result := FileExists (FFileName);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -127,7 +137,11 @@ procedure TPipeServerComm.StartServer;
 var
   H: THandle;
 begin
+<<<<<<< HEAD
   if not (Assigned (FStream)) then
+=======
+  if not FileExists (FFileName) then
+>>>>>>> graemeg/fixes_2_2
     if (DosCreateNPipe (PChar (FFileName), H, np_Access_Inbound,
         np_ReadMode_Message or np_WriteMode_Message or 1, PipeBufSize,
                                                PipeBufSize, 0) <> 0) or
@@ -171,7 +185,10 @@ begin
   Owner.FMsgType := Hdr.MsgType;
   if Hdr.MsgLen > 0 then
     begin
+<<<<<<< HEAD
       Owner.FMsgData.Size:=0;
+=======
+>>>>>>> graemeg/fixes_2_2
       Owner.FMsgData.Seek (0, soFromBeginning);
       Owner.FMsgData.CopyFrom (FStream, Hdr.MsgLen);
     end

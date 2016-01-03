@@ -2,6 +2,7 @@ program tclock;
 {$MODE OBJFPC}
 
 uses
+<<<<<<< HEAD
   ncurses, sysutils, initc;
 
 procedure setlocale(cat : integer; p : pchar); cdecl; external clib;
@@ -9,6 +10,9 @@ procedure setlocale(cat : integer; p : pchar); cdecl; external clib;
 
 const
   LC_ALL = 6;
+=======
+  libc, ncurses, sysutils;
+>>>>>>> graemeg/fixes_2_2
 
 const
   ASPECT = 2.2;

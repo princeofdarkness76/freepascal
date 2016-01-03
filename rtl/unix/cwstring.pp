@@ -15,7 +15,10 @@
 
 {$mode objfpc}
 {$inline on}
+<<<<<<< HEAD
 {$implicitexceptions off}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 unit cwstring;
 
@@ -27,6 +30,7 @@ implementation
 
 {$linklib c}
 
+<<<<<<< HEAD
 // Linux (and maybe glibc platforms in general), have iconv in glibc.
 {$if defined(linux) or defined(solaris)}
   {$define iconv_is_in_libc}
@@ -45,6 +49,10 @@ implementation
  {$else}
    {$linklib iconv}
  {$endif}
+=======
+{$if not defined(linux) and not defined(solaris)}  // Linux (and maybe glibc platforms in general), have iconv in glibc.
+ {$linklib iconv}
+>>>>>>> graemeg/fixes_2_2
  {$define useiconv}
 {$endif not iconv_is_in_libc}
 
@@ -84,6 +92,7 @@ function towupper(__wc:wint_t):wint_t;cdecl;external clib name 'towupper';
 
 function wcscoll (__s1:pwchar_t; __s2:pwchar_t):cint;cdecl;external clib name 'wcscoll';
 function strcoll (__s1:pchar; __s2:pchar):cint;cdecl;external clib name 'strcoll';
+<<<<<<< HEAD
 {$ifdef netbsd}
   { NetBSD has a new setlocale function defined in /usr/include/locale.h
     that should be used }
@@ -92,6 +101,10 @@ function setlocale(category: cint; locale: pchar): pchar; cdecl; external clib n
 function setlocale(category: cint; locale: pchar): pchar; cdecl; external clib name 'setlocale';
 {$endif}
 {$if not(defined(beos) and not defined(haiku))}
+=======
+function setlocale(category: cint; locale: pchar): pchar; cdecl; external clib name 'setlocale';
+{$ifndef beos}
+>>>>>>> graemeg/fixes_2_2
 function mbrtowc(pwc: pwchar_t; const s: pchar; n: size_t; ps: pmbstate_t): size_t; cdecl; external clib name 'mbrtowc';
 function wcrtomb(s: pchar; wc: wchar_t; ps: pmbstate_t): size_t; cdecl; external clib name 'wcrtomb';
 function mbrlen(const s: pchar; n: size_t; ps: pmbstate_t): size_t; cdecl; external clib name 'mbrlen';
@@ -112,7 +125,12 @@ const
 {$elseif defined(darwin)}
   CODESET = 0;
   LC_ALL = 0;
+<<<<<<< HEAD
 {$elseif defined(FreeBSD)} // actually FreeBSD5. internationalisation is afaik not default on 4.
+=======
+{$else darwin}
+{$ifdef FreeBSD} // actually FreeBSD5. internationalisation is afaik not default on 4.
+>>>>>>> graemeg/fixes_2_2
   __LC_CTYPE = 0;
   LC_ALL = 0;
   _NL_CTYPE_CLASS = (__LC_CTYPE shl 16);
@@ -122,6 +140,7 @@ const
   {$define ACCEPT_646}
   CODESET=49;
   LC_ALL = 6;
+<<<<<<< HEAD
 {$elseif defined(beos)}
   {$ifdef haiku}
   CODESET= 0; // Checked for Haiku
@@ -153,18 +172,39 @@ const
 {$error lookup the value of CODESET in /usr/include/langinfo.h, and the value of LC_ALL in /usr/include/locale.h for your OS }
 // and while doing it, check if iconv is in libc, and if the symbols are prefixed with iconv_ or libiconv_
 {$endif}
+=======
+{$else solaris}
+{$ifdef beos}
+  {$warning check correct value for BeOS}
+  CODESET=49;
+  LC_ALL = 6; // Checked for BeOS, but 0 under Haiku...
+  ESysEILSEQ = EILSEQ;
+{$else}
+{$error lookup the value of CODESET in /usr/include/langinfo.h, and the value of LC_ALL in /usr/include/locale.h for your OS }
+// and while doing it, check if iconv is in libc, and if the symbols are prefixed with iconv_ or libiconv_
+{$endif beos}
+{$endif solaris}
+{$endif FreeBSD}
+{$endif darwin}
+{$endif linux}
+>>>>>>> graemeg/fixes_2_2
 
 { unicode encoding name }
 {$ifdef FPC_LITTLE_ENDIAN}
   unicode_encoding2 = 'UTF-16LE';
   unicode_encoding4 = 'UCS-4LE';
 {$else  FPC_LITTLE_ENDIAN}
+<<<<<<< HEAD
 {$ifdef AIX}
   unicode_encoding2 = 'UTF-16';
 {$else AIX}
   unicode_encoding2 = 'UTF-16BE';
   unicode_encoding4 = 'UCS-4BE';
 {$endif AIX}
+=======
+  unicode_encoding2 = 'UTF-16BE';
+  unicode_encoding4 = 'UCS-4BE';
+>>>>>>> graemeg/fixes_2_2
 {$endif  FPC_LITTLE_ENDIAN}
 
 { en_US.UTF-8 needs maximally 6 chars, UCS-4/UTF-32 needs 4   }
@@ -174,6 +214,7 @@ const
 { breaks backwards compatibility every now and then           }
   MB_CUR_MAX = 10;
 
+<<<<<<< HEAD
 { Requests for iconvctl }
   ICONV_TRIVIALP          = 0; // int *argument
   ICONV_GET_TRANSLITERATE = 1; // int *argument
@@ -183,10 +224,13 @@ const
   ICONV_SET_HOOKS         = 5; // const struct iconv_hooks *argument
   ICONV_SET_FALLBACKS     = 6; // const struct iconv_fallbacks *argument
 
+=======
+>>>>>>> graemeg/fixes_2_2
 type
   piconv_t = ^iconv_t;
   iconv_t = pointer;
   nl_item = cint;
+<<<<<<< HEAD
 
 {$ifdef haiku}
 <<<<<<< HEAD
@@ -213,6 +257,13 @@ type
 {$endif}
 
 {$if (not defined(bsd) and not defined(beos)) or defined(iconv_is_in_libc) or (defined(darwin) and not defined(cpupowerpc32))}
+=======
+{$ifndef beos}
+function nl_langinfo(__item:nl_item):pchar;cdecl;external libiconvname name 'nl_langinfo';
+{$endif}
+
+{$if (not defined(bsd) and not defined(beos)) or defined(darwin)}
+>>>>>>> graemeg/fixes_2_2
 function iconv_open(__tocode:pchar; __fromcode:pchar):iconv_t;cdecl;external libiconvname name 'iconv_open';
 function iconv(__cd:iconv_t; __inbuf:ppchar; __inbytesleft:psize_t; __outbuf:ppchar; __outbytesleft:psize_t):size_t;cdecl;external libiconvname name 'iconv';
 function iconv_close(__cd:iconv_t):cint;cdecl;external libiconvname name 'iconv_close';
@@ -234,6 +285,7 @@ procedure fpc_rangeerror; [external name 'FPC_RANGEERROR'];
 threadvar
   iconv_ansi2wide,
   iconv_wide2ansi : iconv_t;
+<<<<<<< HEAD
   { since we cache the iconv_t converters, we have to do the same
     for the DefaultSystemCodePage variable since if it changes, we
     have to re-initialize the converters too. We can't do that via
@@ -274,9 +326,26 @@ begin
   begin
     transliterate:=1;
     iconvctl(iconv_wide2ansi,ICONV_SET_TRANSLITERATE,@transliterate);
+=======
+
+{$ifdef beos}
+function nl_langinfo(__item:nl_item):pchar;
+begin
+  {$warning TODO BeOS nl_langinfo or more uptodate port of iconv...}
+  // Now implement the minimum required to correctly initialize WideString support
+  case __item of
+    CODESET : Result := 'UTF-8'; // BeOS use UTF-8
+    else
+    begin
+      Assert(False, 'nl_langinfo was called with an unknown nl_item value');
+      Result := '';
+    end;
+>>>>>>> graemeg/fixes_2_2
   end;
 end;
+{$endif}
 
+<<<<<<< HEAD
 
 procedure FiniThread;
 begin
@@ -356,6 +425,9 @@ function open_iconv_for_cps(cp: TSystemCodePage; const otherencoding: pchar; cp_
 =======
 >>>>>>> origin/cpstrnew
 procedure Wide2AnsiMove(source:pwidechar; var dest:RawByteString; cp:TSystemCodePage; len:SizeInt);
+=======
+procedure Wide2AnsiMove(source:pwidechar;var dest:ansistring;len:SizeInt);
+>>>>>>> graemeg/fixes_2_2
   var
     outlength,
     outoffset,
@@ -366,12 +438,16 @@ procedure Wide2AnsiMove(source:pwidechar; var dest:RawByteString; cp:TSystemCode
     destpos: pchar;
     mynil : pchar;
     my0 : size_t;
+<<<<<<< HEAD
     err : longint;
     transliterate: cint;
     free_iconv: boolean;
 {$ifdef aix}
     intermediate: rawbytestring;
 {$endif aix}
+=======
+    err: cint;
+>>>>>>> graemeg/fixes_2_2
   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -457,7 +533,11 @@ procedure Wide2AnsiMove(source:pwidechar; var dest:RawByteString; cp:TSystemCode
     srcpos:=source;
     destpos:=pchar(dest);
     outleft:=outlength;
+<<<<<<< HEAD
     while iconv(use_iconv,ppchar(@srcpos),@srclen,@destpos,@outleft)=size_t(-1) do
+=======
+    while iconv(iconv_wide2ansi,ppchar(@srcpos),@srclen,@destpos,@outleft)=size_t(-1) do
+>>>>>>> graemeg/fixes_2_2
       begin
         err:=fpgetCerrno;
         case err of
@@ -473,7 +553,11 @@ procedure Wide2AnsiMove(source:pwidechar; var dest:RawByteString; cp:TSystemCode
               inc(destpos);
               dec(outleft);
               { reset }
+<<<<<<< HEAD
               iconv(use_iconv,@mynil,@my0,@mynil,@my0);
+=======
+              iconv(iconv_wide2ansi,@mynil,@my0,@mynil,@my0);
+>>>>>>> graemeg/fixes_2_2
               if err=ESysEINVAL then
                 break;
             end;
@@ -510,11 +594,14 @@ procedure Ansi2WideMove(source:pchar; cp:TSystemCodePage; var dest:widestring; l
     mynil : pchar;
     my0 : size_t;
     err: cint;
+<<<<<<< HEAD
     iconvindex: longint;
     free_iconv: boolean;
 {$ifdef aix}
     intermediate: rawbytestring;
 {$endif aix}
+=======
+>>>>>>> graemeg/fixes_2_2
   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -598,7 +685,11 @@ procedure Ansi2WideMove(source:pchar; cp:TSystemCodePage; var dest:widestring; l
     srcpos:=source;
     destpos:=pchar(dest);
     outleft:=outlength*2;
+<<<<<<< HEAD
     while iconv(use_iconv,@srcpos,psize(@len),@destpos,@outleft)=size_t(-1) do
+=======
+    while iconv(iconv_ansi2wide,@srcpos,psize(@len),@destpos,@outleft)=size_t(-1) do
+>>>>>>> graemeg/fixes_2_2
       begin
         err:=fpgetCerrno;
         case err of
@@ -612,7 +703,11 @@ procedure Ansi2WideMove(source:pchar; cp:TSystemCodePage; var dest:widestring; l
               inc(destpos,2);
               dec(outleft,2);
               { reset }
+<<<<<<< HEAD
               iconv(use_iconv,@mynil,@my0,@mynil,@my0);
+=======
+              iconv(iconv_ansi2wide,@mynil,@my0,@mynil,@my0);
+>>>>>>> graemeg/fixes_2_2
               if err=ESysEINVAL then
                 break;
             end;
@@ -676,7 +771,11 @@ end;
 
 
 { concatenates an utf-32 char to a widestring. S *must* be unique when entering. }
+<<<<<<< HEAD
 {$if not(defined(beos) and not defined(haiku))}
+=======
+{$ifndef beos}
+>>>>>>> graemeg/fixes_2_2
 procedure ConcatUTF32ToAnsiStr(const nc: wint_t; var S: AnsiString; var index: SizeInt; var mbstate: mbstate_t);
 {$else not beos}
 procedure ConcatUTF32ToAnsiStr(const nc: wint_t; var S: AnsiString; var index: SizeInt);
@@ -692,7 +791,11 @@ begin
   else
     begin
       EnsureAnsiLen(s,index+MB_CUR_MAX);
+<<<<<<< HEAD
 {$if not(defined(beos) and not defined(haiku))}
+=======
+{$ifndef beos}
+>>>>>>> graemeg/fixes_2_2
       mblen:=wcrtomb(p,wchar_t(nc),@mbstate);
 {$else not beos}
       mblen:=wctomb(p,wchar_t(nc));
@@ -714,13 +817,21 @@ function LowerAnsiString(const s : AnsiString) : AnsiString;
     i, slen,
     resindex : SizeInt;
     mblen    : size_t;
+<<<<<<< HEAD
 {$if not(defined(beos) and not defined(haiku))}
+=======
+{$ifndef beos}
+>>>>>>> graemeg/fixes_2_2
     ombstate,
     nmbstate : mbstate_t;
 {$endif beos}
     wc       : wchar_t;
   begin
+<<<<<<< HEAD
 {$if not(defined(beos) and not defined(haiku))}
+=======
+{$ifndef beos}
+>>>>>>> graemeg/fixes_2_2
     fillchar(ombstate,sizeof(ombstate),0);
     fillchar(nmbstate,sizeof(nmbstate),0);
 {$endif beos}
@@ -736,7 +847,11 @@ function LowerAnsiString(const s : AnsiString) : AnsiString;
             mblen:= 1;
           end
         else
+<<<<<<< HEAD
 {$if not(defined(beos) and not defined(haiku))}
+=======
+{$ifndef beos}
+>>>>>>> graemeg/fixes_2_2
           mblen:=mbrtowc(@wc, pchar(@s[i]), slen-i+1, @ombstate);
 {$else not beos}
           mblen:=mbtowc(@wc, pchar(@s[i]), slen-i+1);
@@ -763,7 +878,11 @@ function LowerAnsiString(const s : AnsiString) : AnsiString;
               { even if mblen = 1, the lowercase version may have a }
               { different length                                     }
               { We can't do anything special if wchar_t is 16 bit... }
+<<<<<<< HEAD
 {$if not(defined(beos) and not defined(haiku))}
+=======
+{$ifndef beos}
+>>>>>>> graemeg/fixes_2_2
               ConcatUTF32ToAnsiStr(towlower(wint_t(wc)),result,resindex,nmbstate);
 {$else not beos}
               ConcatUTF32ToAnsiStr(towlower(wint_t(wc)),result,resindex);
@@ -781,13 +900,21 @@ function UpperAnsiString(const s : AnsiString) : AnsiString;
     i, slen,
     resindex : SizeInt;
     mblen    : size_t;
+<<<<<<< HEAD
 {$if not(defined(beos) and not defined(haiku))}
+=======
+{$ifndef beos}
+>>>>>>> graemeg/fixes_2_2
     ombstate,
     nmbstate : mbstate_t;
 {$endif beos}
     wc       : wchar_t;
   begin
+<<<<<<< HEAD
 {$if not(defined(beos) and not defined(haiku))}
+=======
+{$ifndef beos}
+>>>>>>> graemeg/fixes_2_2
     fillchar(ombstate,sizeof(ombstate),0);
     fillchar(nmbstate,sizeof(nmbstate),0);
 {$endif beos}
@@ -803,7 +930,11 @@ function UpperAnsiString(const s : AnsiString) : AnsiString;
             mblen:= 1;
           end
         else
+<<<<<<< HEAD
 {$if not(defined(beos) and not defined(haiku))}
+=======
+{$ifndef beos}
+>>>>>>> graemeg/fixes_2_2
           mblen:=mbrtowc(@wc, pchar(@s[i]), slen-i+1, @ombstate);
 {$else not beos}
           mblen:=mbtowc(@wc, pchar(@s[i]), slen-i+1);
@@ -830,7 +961,11 @@ function UpperAnsiString(const s : AnsiString) : AnsiString;
               { even if mblen = 1, the uppercase version may have a }
               { different length                                     }
               { We can't do anything special if wchar_t is 16 bit... }
+<<<<<<< HEAD
 {$if not(defined(beos) and not defined(haiku))}
+=======
+{$ifndef beos}
+>>>>>>> graemeg/fixes_2_2
               ConcatUTF32ToAnsiStr(towupper(wint_t(wc)),result,resindex,nmbstate);
 {$else not beos}
               ConcatUTF32ToAnsiStr(towupper(wint_t(wc)),result,resindex);
@@ -842,10 +977,20 @@ function UpperAnsiString(const s : AnsiString) : AnsiString;
     SetLength(result,resindex-1);
   end;
 
+<<<<<<< HEAD
+=======
+
+function utf16toutf32(const S: WideString; const index: SizeInt; out len: longint): UCS4Char; external name 'FPC_UTF16TOUTF32';
+
+>>>>>>> graemeg/fixes_2_2
 function WideStringToUCS4StringNoNulls(const s : WideString) : UCS4String;
   var
     i, slen,
     destindex : SizeInt;
+<<<<<<< HEAD
+=======
+    len       : longint;
+>>>>>>> graemeg/fixes_2_2
     uch       : UCS4Char;
   begin
     slen:=length(s);
@@ -854,6 +999,7 @@ function WideStringToUCS4StringNoNulls(const s : WideString) : UCS4String;
     destindex:=0;
     while (i<=slen) do
       begin
+<<<<<<< HEAD
         uch:=UCS4Char(s[i]);
         if (uch=0) then
           result[destindex]:=32
@@ -876,6 +1022,18 @@ function WideStringToUCS4StringNoNulls(const s : WideString) : UCS4String;
     { Trimming length in this particular case is just a waste of time,
       because result will be interpreted as null-terminated and discarded
       almost immediately }
+=======
+        uch:=utf16toutf32(s,i,len);
+        if (uch=UCS4Char(0)) then
+          uch:=UCS4Char(32);
+        result[destindex]:=uch;
+        inc(destindex);
+        inc(i,len);
+      end;
+    result[destindex]:=UCS4Char(0);
+    { destindex <= slen }
+    setlength(result,destindex+1);
+>>>>>>> graemeg/fixes_2_2
   end;
 
 
@@ -908,6 +1066,7 @@ function CompareWideString(const s1, s2 : WideString; Options : TCompareOptions)
     us1,us2 : WideString;
     hs1, hs2: array of widechar;
   begin
+<<<<<<< HEAD
     if coIgnoreCase in Options then
       begin
       us1:=UpperWideString(s1);
@@ -935,6 +1094,11 @@ function CompareWideString(const s1, s2 : WideString; Options : TCompareOptions)
       else
         hs2[i-1]:=#32;
     hs2[len]:=#0;
+=======
+    { wcscoll interprets null chars as end-of-string -> filter out }
+    hs1:=WideStringToUCS4StringNoNulls(s1);
+    hs2:=WideStringToUCS4StringNoNulls(s2);
+>>>>>>> graemeg/fixes_2_2
     result:=wcscoll(pwchar_t(hs1),pwchar_t(hs2));
   end;
 {$endif}
@@ -1076,6 +1240,71 @@ function CompareStrAnsiString(const s1, s2: ansistring): PtrInt;
   end;
 
 
+function CharLengthPChar(const Str: PChar): PtrInt;
+  var
+    nextlen: ptrint;
+    s: pchar;
+{$ifndef beos}
+    mbstate: mbstate_t;
+{$endif not beos}
+  begin
+    result:=0;
+    s:=str;
+    repeat
+{$ifdef beos}
+      nextlen:=ptrint(mblen(str,MB_CUR_MAX));
+{$else beos}
+      nextlen:=ptrint(mbrlen(str,MB_CUR_MAX,@mbstate));
+{$endif beos}
+      { skip invalid/incomplete sequences }
+      if (nextlen<0) then
+        nextlen:=1;
+      inc(result,nextlen);
+      inc(s,nextlen);
+    until (nextlen=0);
+  end;
+
+
+function StrCompAnsiIntern(s1,s2 : PChar; len1, len2: PtrInt; canmodifys1, canmodifys2: boolean): PtrInt;
+  var
+    a,b: pchar;
+    i: PtrInt;
+  begin
+    if not(canmodifys1) then
+      getmem(a,len1+1)
+    else
+      a:=s1;
+    for i:=0 to len1-1 do
+      if s1[i]<>#0 then
+        a[i]:=s1[i]
+      else
+        a[i]:=#32;
+    a[len1]:=#0;
+
+    if not(canmodifys2) then
+      getmem(b,len2+1)
+    else
+      b:=s2;
+    for i:=0 to len2-1 do
+      if s2[i]<>#0 then
+        b[i]:=s2[i]
+      else
+        b[i]:=#32;
+    b[len2]:=#0;
+    result:=strcoll(a,b);
+    if not(canmodifys1) then
+      freemem(a);
+    if not(canmodifys2) then
+      freemem(b);
+  end;
+
+
+function CompareStrAnsiString(const s1, s2: ansistring): PtrInt;
+  begin
+    result:=StrCompAnsiIntern(pchar(s1),pchar(s2),length(s1),length(s2),false,false);
+  end;
+
+
 function StrCompAnsi(s1,s2 : PChar): PtrInt;
   begin
     result:=strcoll(s1,s2);
@@ -1174,6 +1403,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 function envvarset(const varname: pchar): boolean;
 var
   varval: pchar;
@@ -1239,6 +1469,23 @@ end;
 
 var
   OrgWideStringManager: TUnicodeStringManager;
+=======
+procedure InitThread;
+begin
+  iconv_wide2ansi:=iconv_open(nl_langinfo(CODESET),unicode_encoding2);
+  iconv_ansi2wide:=iconv_open(unicode_encoding2,nl_langinfo(CODESET));
+end;
+
+
+procedure FiniThread;
+begin
+  if (iconv_wide2ansi <> iconv_t(-1)) then
+    iconv_close(iconv_wide2ansi);
+  if (iconv_ansi2wide <> iconv_t(-1)) then
+    iconv_close(iconv_ansi2wide);
+end;
+
+>>>>>>> graemeg/fixes_2_2
 
 Procedure SetCWideStringManager;
 Var
@@ -1255,10 +1502,16 @@ begin
       LowerWideStringProc:=@LowerWideString;
 
       CompareWideStringProc:=@CompareWideString;
+<<<<<<< HEAD
 //      CompareTextWideStringProc:=@CompareTextWideString;
 
       CharLengthPCharProc:=@CharLengthPChar;
       CodePointLengthProc:=@CodePointLength;
+=======
+      CompareTextWideStringProc:=@CompareTextWideString;
+
+      CharLengthPCharProc:=@CharLengthPChar;
+>>>>>>> graemeg/fixes_2_2
 
       UpperAnsiStringProc:=@UpperAnsiString;
       LowerAnsiStringProc:=@LowerAnsiString;
@@ -1272,6 +1525,7 @@ begin
       StrUpperAnsiStringProc:=@AnsiStrUpper;
       ThreadInitProc:=@InitThread;
       ThreadFiniProc:=@FiniThread;
+<<<<<<< HEAD
       { Unicode }
       Unicode2AnsiMoveProc:=@Wide2AnsiMove;
       Ansi2UnicodeMoveProc:=@Ansi2WideMove;
@@ -1296,6 +1550,8 @@ begin
 =======
       CompareTextUnicodeStringProc:=@CompareTextWideString;
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
     end;
   SetUnicodeStringManager(CWideStringManager);
 end;
@@ -1311,6 +1567,7 @@ initialization
   { (some OSes do this automatically, but e.g. Darwin and Solaris don't)    }
   setlocale(LC_ALL,'');
 
+<<<<<<< HEAD
   { load iconvctl function }
   iconvlib:=LoadLibrary(libprefix+libiconvname+'.'+SharedSuffix);
   if iconvlib<>0 then
@@ -1325,15 +1582,20 @@ initialization
   SetStdIOCodePages;
   {$endif FPC_HAS_CPSTRING}
 
+=======
+>>>>>>> graemeg/fixes_2_2
   { init conversion tables for main program }
   InitThread;
 finalization
   { fini conversion tables for main program }
   FiniThread;
+<<<<<<< HEAD
   { unload iconv library }
   if iconvlib<>0 then
     FreeLibrary(iconvlib);
   { restore previous (probably default) widestring manager so that subsequent calls
     into the widestring manager won't trigger the finalized functionality }
   SetWideStringManager(OrgWideStringManager);
+=======
+>>>>>>> graemeg/fixes_2_2
 end.

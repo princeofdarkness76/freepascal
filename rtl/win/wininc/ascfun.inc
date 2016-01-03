@@ -380,7 +380,11 @@ function GetLogColorSpaceA(_para1:HCOLORSPACE; _para2:LPLOGCOLORSPACE; _para3:DW
 function GetICMProfileA(_para1:HDC; _para2:DWORD; _para3:LPSTR):WINBOOL; external 'gdi32' name 'GetICMProfileA';
 function SetICMProfileA(_para1:HDC; _para2:LPSTR):WINBOOL; external 'gdi32' name 'SetICMProfileA';
 function UpdateICMRegKeyA(_para1:DWORD; _para2:DWORD; _para3:LPSTR; _para4:UINT):WINBOOL; external 'gdi32' name 'UpdateICMRegKeyA';
+<<<<<<< HEAD
 function EnumICMProfilesA(_para1:HDC; _para2:ICMENUMPROCA; _para3:LPARAM):longint; external 'gdi32' name 'EnumICMProfilesA';
+=======
+function EnumICMProfilesA(_para1:HDC; _para2:ICMENUMPROC; _para3:LPARAM):longint; external 'gdi32' name 'EnumICMProfilesA';
+>>>>>>> graemeg/fixes_2_2
 {
 function PropertySheetA(lppsph:LPCPROPSHEETHEADER):longint; external 'comctl32' name 'PropertySheetA';
 function ImageList_LoadImageA(hi:HINST; lpbmp:LPCSTR; cx:longint; cGrow:longint; crMask:COLORREF;uType:UINT; uFlags:UINT):HIMAGELIST; external 'comctl32' name 'ImageList_LoadImageA';
@@ -515,6 +519,7 @@ function DdeInitializeA(_para1:LPDWORD; _para2:PFNCALLBACK; _para3:DWORD; _para4
 function DdeQueryStringA(_para1:DWORD; _para2:HSZ; _para3:pchar;_para4:DWORD; _para5:longint):DWORD; external 'user32' name 'DdeQueryStringA';
 function LogonUserA(_para1:LPSTR; _para2:LPSTR; _para3:LPSTR; _para4:DWORD; _para5:DWORD;_para6:PHANDLE):WINBOOL; external 'advapi32' name 'LogonUserA';
 function CreateProcessAsUserA(_para1:HANDLE; _para2:LPCTSTR; _para3:LPTSTR; _para4:LPSECURITY_ATTRIBUTES; _para5:LPSECURITY_ATTRIBUTES;_para6:WINBOOL; _para7:DWORD; _para8:LPVOID; _para9:LPCTSTR;
+<<<<<<< HEAD
   _para10:LPSTARTUPINFOA; _para11:LPPROCESS_INFORMATION):WINBOOL; external 'advapi32' name 'CreateProcessAsUserA';
 function CreateWaitableTimerA(lpTimerAttributes :LPSECURITY_ATTRIBUTES; bManualReset:BOOl;lpTimerName:LPCTSTR):THandle;external 'kernel32' name 'CreateWaitableTimerA'; 
 function OpenWaitableTimerA(dwDesiredAccess:DWORD;bInheritHandle:BOOL;lpTimerName:LPCTSTR):THandle;external 'kernel32' name 'OpenWaitableTimerA'; 
@@ -545,6 +550,11 @@ function FindFirstFileExA(lpfilename : LPCStr;fInfoLevelId:FINDEX_INFO_LEVELS ;l
 // winver>$0600
 function FindFirstFileTransactedA(lpfilename : LPCStr;fInfoLevelId:FINDEX_INFO_LEVELS ;lpFindFileData:pointer;fSearchOp : FINDEX_SEARCH_OPS;lpSearchFilter:pointer;dwAdditionalFlags:dword;htransaction : HANDLE):Handle; stdcall; external name 'FindFirstFileTransactedA';
 >>>>>>> origin/cpstrnew
+=======
+  _para10:LPSTARTUPINFO; _para11:LPPROCESS_INFORMATION):WINBOOL; external 'advapi32' name 'CreateProcessAsUserA';
+function CreateWaitableTimerA(lpTimerAttributes :LPSECURITY_ATTRIBUTES; bManualReset:BOOl;lpTimerName:LPCTSTR):THandle;external 'kernel32' name 'CreateWaitableTimerA'; 
+function OpenWaitableTimerA(dwDesiredAccess:DWORD;bInheritHandle:BOOL;lpTimerName:LPCTSTR):THandle;external 'kernel32' name 'OpenWaitableTimerA'; 
+>>>>>>> graemeg/fixes_2_2
 
 {$endif read_interface}
 

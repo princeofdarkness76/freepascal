@@ -2,7 +2,10 @@
 program tb0524;
 
 uses sockets,baseunix,sysutils;
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 const port=6667;
    textfile = 'tb0524.txt';
@@ -198,6 +201,7 @@ begin
     begin
       {Give server some time to start.}
       sleep(2000);
+<<<<<<< HEAD
       if server_failed then
         begin
           writeln('Server startup failed, test can not be completed');
@@ -205,5 +209,8 @@ begin
         end
       else
         do_client;
+=======
+      do_client;
+>>>>>>> graemeg/fixes_2_2
     end;
 end.

@@ -10,6 +10,7 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
  **********************************************************************}
+<<<<<<< HEAD
  
 {$DEFINE OS_HASEXITCODE}
 uses
@@ -25,6 +26,8 @@ Resourcestring
   SErrCannotFork        = 'Failed to Fork process';
   SErrCannotCreatePipes = 'Failed to create pipes';
 
+=======
+>>>>>>> graemeg/fixes_2_2
 Const
   PriorityConstants : Array [TProcessPriority] of Integer =
                       (20,20,0,-20);
@@ -39,6 +42,7 @@ begin
  // Do nothing. Win32 call.
 end;
 
+<<<<<<< HEAD
 Function TProcess.GetExitCode : Integer;
 
 begin
@@ -58,6 +62,16 @@ begin
   result:=res=Handle;
   If Not Result then
     FexitCode:=cardinal(-1); // was 0, better testable for abnormal exit.
+=======
+Function TProcess.PeekExitStatus : Boolean;
+
+begin
+  Result:=fpWaitPid(Handle,pcint(@FExitCode),WNOHANG)=Handle;
+  If Result then
+    FExitCode:=wexitstatus(FExitCode)
+  else
+    FexitCode:=0;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Type
@@ -97,6 +111,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 
 Function DetectXterm : String;
 
@@ -176,12 +191,76 @@ Const
   TerminalApp = 'Terminal';
 {$endif}
   
+=======
+Procedure CommandToList(S : String; List : TStrings);
+
+  Function GetNextWord : String;
+
+  Const
+    WhiteSpace = [' ',#8,#10];
+    Literals = ['"',''''];
+
+  Var
+    Wstart,wend : Integer;
+    InLiteral : Boolean;
+    LastLiteral : char;
+
+  begin
+    WStart:=1;
+    While (WStart<=Length(S)) and (S[WStart] in WhiteSpace) do
+      Inc(WStart);
+    WEnd:=WStart;
+    InLiteral:=False;
+    LastLiteral:=#0;
+    While (Wend<=Length(S)) and (Not (S[Wend] in WhiteSpace) or InLiteral) do
+      begin
+      if S[Wend] in Literals then
+        If InLiteral then
+          InLiteral:=Not (S[Wend]=LastLiteral)
+        else
+          begin
+          InLiteral:=True;
+          LastLiteral:=S[Wend];
+          end;
+       inc(wend);
+       end;
+
+     Result:=Copy(S,WStart,WEnd-WStart);
+
+     if  (Length(Result) > 0)
+     and (Result[1] = Result[Length(Result)]) // if 1st char = last char and..
+     and (Result[1] in Literals) then // it's one of the literals, then
+       Result:=Copy(Result, 2, Length(Result) - 2); //delete the 2 (but not others in it)
+
+     While (WEnd<=Length(S)) and (S[Wend] in WhiteSpace) do
+       inc(Wend);
+     Delete(S,1,WEnd-1);
+
+  end;
+
+Var
+  W : String;
+
+begin
+  While Length(S)>0 do
+    begin
+    W:=GetNextWord;
+    If (W<>'') then
+      List.Add(W);
+    end;
+end;
+
+
+Function MakeCommand(P : TProcess) : PPchar;
+
+>>>>>>> graemeg/fixes_2_2
 Var
   Cmd : String;
   S  : TStringList;
   G : String;
   
 begin
+<<<<<<< HEAD
   If (P.ApplicationName='') and (P.CommandLine='') and (P.Executable='') then
     Raise EProcess.Create(SNoCommandline);
   S:=TStringList.Create;
@@ -211,6 +290,26 @@ begin
       {$if defined(darwin) or defined(haiku)}
       S.Insert(0,TerminalApp);
       {$else}
+=======
+  if (P.ApplicationName='') then
+    begin
+    If (P.CommandLine='') then
+      Raise EProcess.Create(SNoCommandline);
+    Cmd:=P.CommandLine;
+    end
+  else
+    begin
+    If (P.CommandLine='') then
+      Cmd:=P.ApplicationName
+    else
+      Cmd:=P.CommandLine;
+    end;
+  S:=TStringList.Create;
+  try
+    CommandToList(Cmd,S);
+    if poNewConsole in P.Options then
+      begin
+>>>>>>> graemeg/fixes_2_2
       S.Insert(0,'-e');
       If (P.ApplicationName<>'') then
         begin
@@ -222,6 +321,7 @@ begin
         S.Insert(0,Format('%dx%d',[P.dwXCountChars,P.dwYCountChars]));
         S.Insert(0,'-geometry');
         end;
+<<<<<<< HEAD
 <<<<<<< HEAD
       If (P.XTermProgram<>'') then
         S.Insert(0,P.XTermProgram)
@@ -242,6 +342,10 @@ begin
       {$endif}
       end;
     {$ifndef haiku}
+=======
+      S.Insert(0,'xterm');
+      end;
+>>>>>>> graemeg/fixes_2_2
     if (P.ApplicationName<>'') then
       begin
       S.Add(TitleOption);
@@ -257,7 +361,10 @@ begin
       S.Add(GeometryOption);
       S.Add(g);
       end;
+<<<<<<< HEAD
     {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
     Result:=StringsToPcharList(S);
   Finally
     S.free;
@@ -280,7 +387,11 @@ Procedure CreatePipes(Var HI,HO,HE : TPipePair; CE : Boolean);
 
    begin
     If not CreatePipeHandles(P[peRead],P[peWrite]) then
+<<<<<<< HEAD
       Raise EProcess.Create(SErrCannotCreatePipes);
+=======
+      Raise EProcess.Create('Failed to create pipes');
+>>>>>>> graemeg/fixes_2_2
    end;
 
   Procedure ClosePair(Var P : TPipePair);
@@ -310,6 +421,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 Function safefpdup2(fildes, fildes2 : cInt): cInt;
 begin
   repeat
@@ -317,6 +429,8 @@ begin
   until (safefpdup2<>-1) or (fpgeterrno<>ESysEINTR);
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 Procedure TProcess.Execute;
 
 Var
@@ -325,7 +439,10 @@ Var
   FEnv     : PPChar;
   Argv     : PPChar;
   fd       : Integer;
+<<<<<<< HEAD
   res      : cint;
+=======
+>>>>>>> graemeg/fixes_2_2
   FoundName,
   PName    : String;
 
@@ -358,6 +475,7 @@ begin
             raise EProcess.CreateFmt(SErrNoSuchProgram,[PName]);
         end;
 
+<<<<<<< HEAD
 {$if (defined(DARWIN) or defined(SUNOS))}
         { can't use vfork in case the child has to be
           suspended immediately, because with vfork the
@@ -471,6 +589,52 @@ begin
             else
               fpexecv(PName,argv);
             fpExit(127);
+=======
+        Pid:=fpfork;
+        if Pid<0 then
+          Raise EProcess.Create('Failed to Fork process');
+        if (PID>0) then
+          begin
+          // Parent process. Copy process information.
+          FProcessHandle:=PID;
+          FThreadHandle:=PID;
+          FProcessId:=PID;
+          //FThreadId:=PID;
+          end
+        else
+          begin
+          { We're in the child }
+          if (FCurrentDirectory<>'') then
+             ChDir(FCurrentDirectory);
+          if PoUsePipes in Options then
+            begin
+            fpclose(HI[peWrite]);
+            fpdup2(HI[peRead],0);
+            fpclose(HO[peRead]);
+            fpdup2(HO[peWrite],1);
+            if (poStdErrToOutPut in Options) then
+              fpdup2(HO[peWrite],2)
+            else
+              begin
+              fpclose(HE[peRead]);
+              fpdup2(HE[peWrite],2);
+              end
+            end
+          else if poNoConsole in Options then
+            begin
+            fd:=FileOpen('/dev/null',fmOpenReadWrite);
+            fpdup2(fd,0);
+            fpdup2(fd,1);
+            fpdup2(fd,2);
+            end;
+          if (poRunSuspended in Options) then
+            sigraise(SIGSTOP);
+          if FEnv<>Nil then
+            fpexecve(PName,Argv,Fenv)
+          else
+            fpexecv(PName,argv);
+          Halt(127);
+>>>>>>> graemeg/fixes_2_2
           end
       Finally
         FreePcharList(Argv);
@@ -482,11 +646,19 @@ begin
   Finally
     if POUsePipes in FProcessOptions then
       begin
+<<<<<<< HEAD
         FileClose(HO[peWrite]);
         FileClose(HI[peRead]);
         if Not (poStdErrToOutPut in FProcessOptions) then
           FileClose(HE[peWrite]);
         CreateStreams(HI[peWrite],HO[peRead],HE[peRead]);
+=======
+      FileClose(HO[peWrite]);
+      FileClose(HI[peRead]);
+      if Not (poStdErrToOutPut in FProcessOptions) then
+        FileClose(HE[peWrite]);
+      CreateStreams(HI[peWrite],HO[peRead],HE[peRead]);
+>>>>>>> graemeg/fixes_2_2
       end;
   end;
   FRunning:=True;
@@ -502,9 +674,16 @@ Var
   R : Dword;
 
 begin
+<<<<<<< HEAD
   if FRunning then
     fexitcode:=waitprocess(handle);
   Result:=(fexitcode>=0);
+=======
+  R:=fpWaitPid(Handle,pcint(@FExitCode),0);
+  Result:=(R=Handle);
+  If Result then
+    FExitCode:=WExitStatus(FExitCode);
+>>>>>>> graemeg/fixes_2_2
   FRunning:=False;
 end;
 
@@ -536,11 +715,15 @@ begin
     If Running then
       Result:=fpkill(Handle,SIGKILL)=0;
     end;
+<<<<<<< HEAD
   { the fact that the signal has been sent does not
     mean that the process has already handled the
     signal -> wait instead of calling getexitstatus }
   if Result then
     WaitOnExit;
+=======
+  GetExitStatus;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Procedure TProcess.SetShowWindow (Value : TShowWindowOptions);

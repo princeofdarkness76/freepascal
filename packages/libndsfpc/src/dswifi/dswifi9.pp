@@ -21,12 +21,20 @@ uses
 {$linklib sysbase}
 
 {$define NDS_INTERFACE}
+<<<<<<< HEAD
 {$include inc/dswifi9.inc}
+=======
+{$include dswifi9.inc}
+>>>>>>> graemeg/fixes_2_2
 {$undef NDS_INTERFACE}
 
 implementation
 {$define NDS_IMPLEMENTATION}
+<<<<<<< HEAD
 {$include inc/dswifi9.inc}
+=======
+{$include dswifi9.inc}
+>>>>>>> graemeg/fixes_2_2
 {$undef NDS_IMPLEMENTATION}
 
 end.

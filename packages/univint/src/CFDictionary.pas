@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -33,6 +34,17 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+	Copyright (c) 1998-2005, Apple, Inc. All rights reserved.
+}
+{   Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -41,8 +53,13 @@
 
 unit CFDictionary;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -55,21 +72,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -104,6 +129,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -111,6 +138,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -313,6 +341,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -338,6 +376,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -348,8 +390,11 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -371,7 +416,10 @@ uses MacTypes,CFBase;
 	dictionary form a set; that is, no two keys which are equal to
 	one another are present in the dictionary at any time.
 
+<<<<<<< HEAD
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
+=======
+>>>>>>> graemeg/fixes_2_2
 	Dictionaries come in two flavors, immutable, which cannot have
 	values added to them or removed from them after the dictionary is
 	created, and mutable, to which you can add values or from which
@@ -383,6 +431,7 @@ uses MacTypes,CFBase;
 	amount of available memory). Fixed-capacity dictionaries can be
 	somewhat higher performing, if you can put a definate upper limit
 	on the number of values that might be put into the dictionary.
+<<<<<<< HEAD
 #else
 	Dictionaries come in two flavors, immutable, which cannot have
 	values added to them or removed from them after the dictionary is
@@ -391,6 +440,8 @@ uses MacTypes,CFBase;
 	of values (or rather, limited only by constraints external to
 	CFDictionary, like the amount of available memory).
 #endif
+=======
+>>>>>>> graemeg/fixes_2_2
 
 	As with all CoreFoundation collection types, dictionaries maintain
 	hard references on the values you put in them, but the retaining and
@@ -412,9 +463,15 @@ uses MacTypes,CFBase;
 
 	Computational Complexity
 	The access time for a value in the dictionary is guaranteed to be at
+<<<<<<< HEAD
 	worst O(N) for any implementation, current and future, but will
 	often be O(1) (constant time). Insertion or deletion operations
 	will typically be constant time as well, but are O(N*N) in the
+=======
+	worst O(lg N) for any implementation, current and future, but will
+	often be O(1) (constant time). Insertion or deletion operations
+	will typically be constant time as well, but are O(N*lg N) in the
+>>>>>>> graemeg/fixes_2_2
 	worst case in some implementations. Access of values through a key
 	is faster than accessing values directly (if there are any such
 	operations). Dictionaries will tend to use significantly more memory
@@ -543,6 +600,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFDictionaryRef = ^__CFDictionary; { an opaque type }
 	__CFDictionary = record end;
 =======
@@ -557,6 +615,9 @@ type
 =======
 	CFDictionaryRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	CFDictionaryRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 	CFDictionaryRefPtr = ^CFDictionaryRef;
 
 {!
@@ -688,7 +749,10 @@ function CFDictionaryCreateCopy( allocator: CFAllocatorRef; theDict: CFDictionar
 		parameter may be NULL in which case the current default
 		CFAllocator is used. If this reference is not a valid
 		CFAllocator, the behavior is undefined.
+<<<<<<< HEAD
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
+=======
+>>>>>>> graemeg/fixes_2_2
 	@param capacity The maximum number of values that can be contained by
 		the CFDictionary. The dictionary starts empty, and can grow
 		to this number of values (and it can have less). If this
@@ -696,6 +760,7 @@ function CFDictionaryCreateCopy( allocator: CFAllocatorRef; theDict: CFDictionar
 		(or rather, only limited by address space and available memory
 		constraints). If this parameter is negative, the behavior is
 		undefined.
+<<<<<<< HEAD
 #else
   @param capacity A hint about the number of values that will be held
     by the CFDictionary. Pass 0 for no hint. The implementation may
@@ -704,6 +769,8 @@ function CFDictionaryCreateCopy( allocator: CFAllocatorRef; theDict: CFDictionar
     address space and available memory constraints). If this 
     parameter is negative, the behavior is undefined.
 #endif
+=======
+>>>>>>> graemeg/fixes_2_2
 	@param keyCallBacks A pointer to a CFDictionaryKeyCallBacks structure
 		initialized with the callbacks for the dictionary to use on
 		each key in the dictionary. A copy of the contents of the
@@ -770,7 +837,10 @@ function CFDictionaryCreateMutable( allocator: CFAllocatorRef; capacity: CFIndex
 		parameter may be NULL in which case the current default
 		CFAllocator is used. If this reference is not a valid
 		CFAllocator, the behavior is undefined.
+<<<<<<< HEAD
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
+=======
+>>>>>>> graemeg/fixes_2_2
 	@param capacity The maximum number of values that can be contained
 		by the CFDictionary. The dictionary starts empty, and can grow
 		to this number of values (and it can have less). If this
@@ -780,6 +850,7 @@ function CFDictionaryCreateMutable( allocator: CFAllocatorRef; capacity: CFIndex
 		to the count of the dictionary which is to be copied, or the
 		behavior is undefined. If this parameter is negative, the
 		behavior is undefined.
+<<<<<<< HEAD
 #else
   @param capacity A hint about the number of values that will be held
     by the CFDictionary. Pass 0 for no hint. The implementation may
@@ -791,6 +862,8 @@ function CFDictionaryCreateMutable( allocator: CFAllocatorRef; capacity: CFIndex
     behavior is undefined. If this parameter is negative, the
     behavior is undefined.
 #endif
+=======
+>>>>>>> graemeg/fixes_2_2
 	@param theDict The dictionary which is to be copied. The keys and values
 		from the dictionary are copied as pointers into the new
 		dictionary (that is, the values themselves are copied, not
@@ -970,11 +1043,16 @@ procedure CFDictionaryApplyFunction( theDict: CFDictionaryRef; applier: CFDictio
 	Adds the key-value pair to the dictionary if no such key already exists.
 	@param theDict The dictionary to which the value is to be added. If this
 		parameter is not a valid mutable CFDictionary, the behavior is
+<<<<<<< HEAD
 		undefined.
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 		If the dictionary is a fixed-capacity dictionary and
 		it is full before this operation, the behavior is undefined.
 #endif
+=======
+		undefined. If the dictionary is a fixed-capacity dictionary and
+		it is full before this operation, the behavior is undefined.
+>>>>>>> graemeg/fixes_2_2
 	@param key The key of the value to add to the dictionary. The key is
 		retained by the dictionary using the retain callback provided
 		when the dictionary was created. If the key is not of the sort
@@ -993,12 +1071,18 @@ procedure CFDictionaryAddValue( theDict: CFMutableDictionaryRef; key: {const} Un
 	Sets the value of the key in the dictionary.
 	@param theDict The dictionary to which the value is to be set. If this
 		parameter is not a valid mutable CFDictionary, the behavior is
+<<<<<<< HEAD
 		undefined.
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 		If the dictionary is a fixed-capacity dictionary and
 		it is full before this operation, and the key does not exist in
 		the dictionary, the behavior is undefined.
 #endif
+=======
+		undefined. If the dictionary is a fixed-capacity dictionary and
+		it is full before this operation, and the key does not exist in
+		the dictionary, the behavior is undefined.
+>>>>>>> graemeg/fixes_2_2
 	@param key The key of the value to set into the dictionary. If a key 
 		which matches this key is already present in the dictionary, only
 		the value is changed ("add if absent, replace if present"). If
@@ -1055,7 +1139,12 @@ procedure CFDictionaryRemoveValue( theDict: CFMutableDictionaryRef; key: {const}
 }
 procedure CFDictionaryRemoveAllValues( theDict: CFMutableDictionaryRef ); external name '_CFDictionaryRemoveAllValues';
 
+<<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+end.
+>>>>>>> graemeg/fixes_2_2

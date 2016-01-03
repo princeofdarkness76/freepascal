@@ -3,6 +3,7 @@
  *  HIServices
  *
  *  Created by John Louch on Wed Feb 25 2004.
+<<<<<<< HEAD
  *  Copyright (c) 2004, 2006 Apple Computer, Inc. All rights reserved.
  *
  }
@@ -32,6 +33,20 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+ *  Copyright (c) 2004 Apple Computer, Inc. All rights reserved.
+ *
+ }
+
+{	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -40,8 +55,13 @@
 
 unit AXAttributeConstants;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -54,21 +74,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -103,6 +131,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -110,6 +140,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -328,6 +359,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -353,6 +394,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -363,11 +408,14 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -405,7 +453,10 @@ uses MacTypes;
 	
 	// value attributes
 	kAXValueAttribute
+<<<<<<< HEAD
     kAXValueDescriptionAttribute
+=======
+>>>>>>> graemeg/fixes_2_2
 	kAXMinValueAttribute
 	kAXMaxValueAttribute
 	kAXValueIncrementAttribute
@@ -415,7 +466,10 @@ uses MacTypes;
 	// text-specific attributes
 	kAXSelectedTextAttribute
 	kAXSelectedTextRangeAttribute
+<<<<<<< HEAD
     kAXSelectedTextRangesAttribute
+=======
+>>>>>>> graemeg/fixes_2_2
 	kAXVisibleCharacterRangeAttribute
 	kAXNumberOfCharactersAttribute
 	kAXSharedTextUIElementsAttribute
@@ -450,8 +504,12 @@ uses MacTypes;
 	kAXMainWindowAttribute
 	kAXFocusedWindowAttribute
 	kAXFocusedUIElementAttribute
+<<<<<<< HEAD
 	kAXExtrasMenuBarAttribute
  
+=======
+	
+>>>>>>> graemeg/fixes_2_2
 	// date/time-specific attributes
 	kAXHourFieldAttribute
 	kAXMinuteFieldAttribute
@@ -661,6 +719,7 @@ uses MacTypes;
 
 
 {
+<<<<<<< HEAD
     kAXValueDescriptionAttribute
     
     Used to supplement kAXValueAttribute.  This attribute returns a string description that best 
@@ -684,6 +743,8 @@ uses MacTypes;
 
 
 {
+=======
+>>>>>>> graemeg/fixes_2_2
 	kAXMinValueAttribute
 	
 	Only used in conjunction with kAXValueAttribute and kAXMaxValueAttribute, this
@@ -762,6 +823,7 @@ uses MacTypes;
 
 
 {
+<<<<<<< HEAD
 	kAXPlaceholderValueAttribute
 	
 	The value of placeholder text as found in a text field.
@@ -778,6 +840,8 @@ uses MacTypes;
 
 
 {
+=======
+>>>>>>> graemeg/fixes_2_2
 	kAXEnabledAttribute
 	
 	Indicates whether the element can be interacted with by the user. For example,
@@ -982,7 +1046,11 @@ uses MacTypes;
 {
 	kAXOrientationAttribute
 	
+<<<<<<< HEAD
 	An indication of whether an element is drawn and/or interacted with in a
+=======
+	An indiciation of whether an element is drawn and/or interacted with in a
+>>>>>>> graemeg/fixes_2_2
 	vertical or horizontal manner. Elements such as scroll bars and sliders offer
 	the kAXOrientationAttribute.
 	
@@ -1002,11 +1070,19 @@ uses MacTypes;
 {
 	kAXDescriptionAttribute
 	
+<<<<<<< HEAD
 	A localized, human-readable string that indicates an element's purpose in a way
 	that is slightly more specific than the kAXRoleDescriptionAttribute, but which
 	is less wordy than the kAXHelpAttribute. Typically, the description should be
 	an adjective or short phrase that describes the element's usage. For example,
 	the description of a slider in a font panel might be "font size". The string
+=======
+	An indication of an element's purpose, in a way that is slightly more specific
+	than the kAXRoleDescriptionAttribute, but which is less wordy than the
+	kAXHelpAttribute. In English, the description should typically be a concatenation
+	of a usage adjective with the element's role description. For example, the
+	description of a slider in a font panel might be "font size slider". The string
+>>>>>>> graemeg/fixes_2_2
 	should be all lower-case and contain no punctuation.
 	
 	Value: A localized, human-readable CFStringRef.
@@ -1019,9 +1095,16 @@ uses MacTypes;
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kAXDescriptionAttribute CFSTRP('AXDescription')}
 {$endc}
+<<<<<<< HEAD
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kAXDescription CFSTRP('AXDescription')}
 {$endc} // old name
+=======
+// old name
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+{$definec kAXDescription CFSTRP('AXDescription')}
+{$endc}
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -1056,6 +1139,7 @@ uses MacTypes;
 {$definec kAXSelectedTextRangeAttribute CFSTRP('AXSelectedTextRange')}
 {$endc}
 
+<<<<<<< HEAD
 {
 	kAXSelectedTextRangesAttribute
 	
@@ -1072,6 +1156,8 @@ uses MacTypes;
 {$definec kAXSelectedTextRangesAttribute CFSTRP('AXSelectedTextRanges')}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {
 	kAXVisibleCharacterRangeAttribute
@@ -1086,7 +1172,10 @@ uses MacTypes;
 	Required for elements of role kAXTextAreaRole. Not required for any other
 	elements, including those of role kAXTextFieldRole.
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kAXVisibleCharacterRangeAttribute CFSTRP('AXVisibleCharacterRange')}
 {$endc}
@@ -1243,6 +1332,7 @@ uses MacTypes;
 
 
 {
+<<<<<<< HEAD
  kAXFullScreenButtonAttribute
  
  A convenience attribute so assistive apps can quickly access a window's full screen
@@ -1260,6 +1350,8 @@ uses MacTypes;
 
 
 {
+=======
+>>>>>>> graemeg/fixes_2_2
 	kAXProxyAttribute
 	
 	A convenience attribute so assistive apps can quickly access a window's document
@@ -1383,11 +1475,17 @@ uses MacTypes;
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kAXFocusedUIElementAttribute CFSTRP('AXFocusedUIElement')}
+<<<<<<< HEAD
 {$endc} 
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kAXExtrasMenuBarAttribute CFSTRP('AXExtrasMenuBar')}
 {$endc}
 
+=======
+{$endc}
+
+
+>>>>>>> graemeg/fixes_2_2
 {
 	kAXHeaderAttribute
 	
@@ -1689,6 +1787,12 @@ uses MacTypes;
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kAXSortDirectionAttribute CFSTRP('AXSortDirection')}
 {$endc}
+<<<<<<< HEAD
+=======
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+{$definec kAXColumnHeaderUIElementsAttribute CFSTRP('AXColumnHeaderUIElements')}
+{$endc}
+>>>>>>> graemeg/fixes_2_2
 
 // row/column attributes
 {$ifc USE_CFSTR_CONSTANT_MACROS}
@@ -1752,6 +1856,7 @@ uses MacTypes;
 {$definec kAXFocusedApplicationAttribute CFSTRP('AXFocusedApplication')}
 {$endc}
 
+<<<<<<< HEAD
 // grid attributes
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kAXRowCountAttribute CFSTRP('AXRowCount')}
@@ -1810,6 +1915,8 @@ uses MacTypes;
 {$definec kAXHandlesAttribute CFSTRP('AXHandles')}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 // obsolete/unknown attributes
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kAXTextAttribute CFSTRP('AXText')}
@@ -1824,11 +1931,14 @@ uses MacTypes;
 {$definec kAXColumnTitlesAttribute CFSTRP('AXColumnTitles')}
 {$endc}
 
+<<<<<<< HEAD
 // UI element identification attributes
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kAXIdentifierAttribute CFSTRP('AXIdentifier')}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 { Parameterized Attributes                                                             }
@@ -1863,6 +1973,7 @@ uses MacTypes;
 {$definec kAXStyleRangeForIndexParameterizedAttribute CFSTRP('AXStyleRangeForIndex')}
 {$endc}
 
+<<<<<<< HEAD
 // cell-based table parameterized attributes
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kAXCellForColumnAndRowParameterizedAttribute CFSTRP('AXCellForColumnAndRow')}
@@ -1887,3 +1998,7 @@ uses MacTypes;
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+end.
+>>>>>>> graemeg/fixes_2_2

@@ -24,17 +24,27 @@ program ppudump;
 {$H+}
 
 uses
+<<<<<<< HEAD
   { do NOT add symconst or globtype to make merging easier }
   SysUtils,
   constexp,
+=======
+  SysUtils,
+>>>>>>> graemeg/fixes_2_2
   ppu,
   globals,
   tokens;
 
 const
+<<<<<<< HEAD
   Version   = 'Version 2.5.1';
   Title     = 'PPU-Analyser';
   Copyright = 'Copyright (c) 1998-2010 by the Free Pascal Development Team';
+=======
+  Version   = 'Version 2.2.0';
+  Title     = 'PPU-Analyser';
+  Copyright = 'Copyright (c) 1998-2007 by the Free Pascal Development Team';
+>>>>>>> graemeg/fixes_2_2
 
 { verbosity }
   v_none           = $0;
@@ -194,6 +204,7 @@ type
         target_arm_symbian,        { 60 }
         target_x86_64_darwin,      { 61 }
         target_avr_embedded,       { 62 }
+<<<<<<< HEAD
         target_i386_haiku,         { 63 }
         target_arm_darwin,         { 64 }
         target_x86_64_solaris,     { 65 }
@@ -202,6 +213,11 @@ type
         target_i386_nativent,      { 68 }
         target_i386_iphonesim      { 69 }
   );
+=======
+        target_i386_haiku          { 63 }             
+  );
+
+>>>>>>> graemeg/fixes_2_2
 const
   Targets : array[ttarget] of string[18]=(
   { 0 }   'none',
@@ -267,6 +283,7 @@ const
   { 60 }  'Symbian-arm',
   { 61 }  'MacOSX-x64',
   { 62 }  'Embedded-avr',
+<<<<<<< HEAD
   { 63 }  'Haiku-i386',
   { 64 }  'Darwin-ARM',
   { 65 }  'Solaris-x86-64',
@@ -274,6 +291,9 @@ const
   { 67 }  'Linux-MIPSel',
   { 68 }  'NativeNT-i386',
   { 69 }  'iPhoneSim-i386'
+=======
+  { 63 }  'Haiku-i386'        
+>>>>>>> graemeg/fixes_2_2
   );
 begin
   if w<=ord(high(ttarget)) then
@@ -889,6 +909,10 @@ const
      (mask:ds_dwarf_dbg_info_written;str:'Dwarf DbgInfo Written')
   );
 var
+<<<<<<< HEAD
+=======
+  defoptions : tdefoptions;
+>>>>>>> graemeg/fixes_2_2
   defstates  : tdefstates;
   i      : longint;
   first  : boolean;
@@ -925,7 +949,11 @@ begin
   if defstates<>[] then
     begin
       first:=true;
+<<<<<<< HEAD
       for i:=1to high(defstate) do
+=======
+      for i:=1to defstateinfos do
+>>>>>>> graemeg/fixes_2_2
        if (defstate[i].mask in defstates) then
         begin
           if first then
@@ -1432,10 +1460,16 @@ type
     str  : string[30];
   end;
 const
+<<<<<<< HEAD
   symopt : array[1..ord(high(tobjectoption))] of tsymopt=(
      (mask:oo_is_forward;         str:'IsForward'),
      (mask:oo_is_abstract;        str:'IsAbstract'),
      (mask:oo_is_sealed;          str:'IsSealed'),
+=======
+  symopts=14;
+  symopt : array[1..symopts] of tsymopt=(
+     (mask:oo_is_forward;         str:'IsForward'),
+>>>>>>> graemeg/fixes_2_2
      (mask:oo_has_virtual;        str:'HasVirtual'),
      (mask:oo_has_private;        str:'HasPrivate'),
      (mask:oo_has_protected;      str:'HasProtected'),
@@ -2206,7 +2240,11 @@ begin
 
          ibformaldef :
            begin
+<<<<<<< HEAD
              readcommondef('Generic definition (void-typ)',defoptions);
+=======
+             readcommondef('Generic definition (void-typ)');
+>>>>>>> graemeg/fixes_2_2
              writeln(space,'         Is Typed : ',(getbyte<>0));
            end;
 

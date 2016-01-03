@@ -97,6 +97,7 @@ program install;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      installerversion='3.1.1';
      installercopyright='Copyright (c) 1993-2015 Florian Klaempfl';
 
@@ -135,6 +136,14 @@ program install;
      maxpacks=20;
      maxpackages=40;
 >>>>>>> origin/cpstrnew
+=======
+     installerversion='2.2.5';
+     installercopyright='Copyright (c) 1993-2009 Florian Klaempfl';
+
+
+     maxpacks=30;
+     maxpackages=28;
+>>>>>>> graemeg/fixes_2_2
      maxdefcfgs=1024;
 
      HTMLIndexExt = '.htx';
@@ -1882,7 +1891,11 @@ end;
     begin
       GetExtent(R);
       R.A.Y := R.B.Y - 1;
+<<<<<<< HEAD
       //R.B.X := R.B.X - 2;
+=======
+      R.B.X := R.B.X - 12;
+>>>>>>> graemeg/fixes_2_2
       New(StatusLine,
         Init(R,
           NewStatusDef(0, $EFFF,nil,nil

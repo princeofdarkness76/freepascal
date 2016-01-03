@@ -84,10 +84,13 @@ type
      constructor Create(p:pointer;mysize:integer);
    end;
 
+<<<<<<< HEAD
 {
   Generated from fpmkunit.pp, using data2inc:
   data2inc -b -s fpmkunit.pp fpmkunitsrc.inc fpmkunitsrc
 }
+=======
+>>>>>>> graemeg/fixes_2_2
 {$i fpmkunitsrc.inc}
 
 procedure CreateFPMKUnitSource(const AFileName:string);
@@ -189,6 +192,7 @@ begin
       if Not HaveFPMake then
         Error(SErrMissingFPMake);
       AddOption('-n');
+<<<<<<< HEAD
       AddOption('-dCOMPILED_BY_FPPKG');
       for i:=0 to high(FPMKUnitDeps) do
         begin
@@ -200,6 +204,16 @@ begin
                 Error(SErrMissingInstallPackage,[FPMKUnitDeps[i].package]);
               if FPMKUnitDeps[i].def<>'' then
                 AddOption('-d'+FPMKUnitDeps[i].def);
+=======
+      for i:=1 to FPMKUnitDepCount do
+        begin
+          if FPMKUnitDepAvailable[i] then
+            begin
+              if CheckUnitDir(FPMKUnitDeps[i].package,DepDir) then
+                AddOption(maybequoted('-Fu'+DepDir))
+              else
+                Error(SErrMissingInstallPackage,[FPMKUnitDeps[i].package]);
+>>>>>>> graemeg/fixes_2_2
             end
           else
             begin
@@ -251,7 +265,10 @@ end;
 
 Function TFPMakeRunner.RunFPMake(const Command:string) : Integer;
 Var
+<<<<<<< HEAD
   ManifestPackage,
+=======
+>>>>>>> graemeg/fixes_2_2
   P : TFPPackage;
   FPMakeBin,
   OOptions : string;
@@ -263,16 +280,20 @@ Var
     OOptions:=OOptions+maybequoted(s);
   end;
 
+<<<<<<< HEAD
   procedure CondAddOption(const Name,Value:string);
   begin
     if Value<>'' then
       AddOption(Name+'='+Value);
   end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 begin
   OOptions:='';
   // Does the current package support this CPU-OS?
   if PackageName<>'' then
+<<<<<<< HEAD
     begin
       P:=AvailableRepository.PackageByName(PackageName);
       if (PackageName=CurrentDirPackageName) and (FileExists(ManifestFileName)) then
@@ -283,18 +304,27 @@ begin
           ManifestPackage.Free;
         end;
     end
+=======
+    P:=AvailableRepository.PackageByName(PackageName)
+>>>>>>> graemeg/fixes_2_2
   else
     P:=nil;
   if assigned(P) then
     begin
+<<<<<<< HEAD
       if (command<>'archive') and (command<>'manifest') and
          (not(CompilerOptions.CompilerOS in P.OSes) or
           not(CompilerOptions.CompilerCPU in P.CPUs)) then
+=======
+      if not(CompilerOptions.CompilerOS in P.OSes) or
+         not(CompilerOptions.CompilerCPU in P.CPUs) then
+>>>>>>> graemeg/fixes_2_2
         Error(SErrPackageDoesNotSupportTarget,[P.Name,MakeTargetString(CompilerOptions.CompilerCPU,CompilerOptions.CompilerOS)]);
     end;
   { Maybe compile fpmake executable? }
   ExecuteAction(PackageName,'compilefpmake');
   { Create options }
+<<<<<<< HEAD
   if vlDebug in LogLevels then
     AddOption('--debug')
   else if vlInfo in LogLevels then
@@ -332,6 +362,21 @@ begin
         AddOption(GlobalOptions.CustomFPMakeOptions);
         end;
     end;
+=======
+  AddOption('--nofpccfg');
+  if vlInfo in LogLevels then
+    AddOption('--verbose');
+  AddOption('--compiler='+CompilerOptions.Compiler);
+  AddOption('--cpu='+CPUToString(CompilerOptions.CompilerCPU));
+  AddOption('--os='+OSToString(CompilerOptions.CompilerOS));
+  if IsSuperUser or GlobalOptions.InstallGlobal then
+    AddOption('--baseinstalldir='+CompilerOptions.GlobalInstallDir)
+  else
+    AddOption('--baseinstalldir='+CompilerOptions.LocalInstallDir);
+  if CompilerOptions.LocalInstallDir<>'' then
+    AddOption('--localunitdir='+CompilerOptions.LocalUnitDir);
+  AddOption('--globalunitdir='+CompilerOptions.GlobalUnitDir);
+>>>>>>> graemeg/fixes_2_2
   { Run FPMake }
   FPMakeBin:='fpmake'+ExeExt;
   SetCurrentDir(PackageBuildPath(P));
@@ -351,8 +396,13 @@ procedure TFPMakeRunnerBuild.Execute;
 begin
   RunFPMake('build');
 end;
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/fixes_2_2
 procedure TFPMakeRunnerInstall.Execute;
 begin
   RunFPMake('install');

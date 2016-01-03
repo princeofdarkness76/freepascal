@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for gdbm bindings
+>>>>>>> graemeg/fixes_2_2
 #
 
 [package]
 name=gdbm
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -17,21 +22,34 @@ version=3.1.1
 =======
 >>>>>>> origin/cpstrnew
 version=2.5.1
+=======
+version=2.2.5
+>>>>>>> graemeg/fixes_2_2
 
 [target]
 units=gdbm
 exampledirs=examples
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
 [require]
 packages=rtl fpmkunit
 
 [install]
+=======
+
+[require]
+package=rtl
+
+[install]
+examplesubdir=gdbm
+>>>>>>> graemeg/fixes_2_2
 fpcpackage=y
 
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -117,3 +135,16 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[compiler]
+includedir=src
+sourcedir=src tests
+
+
+[shared]
+build=n
+
+[rules]
+.NOTPARALLEL:
+
+>>>>>>> graemeg/fixes_2_2

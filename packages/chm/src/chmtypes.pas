@@ -12,7 +12,11 @@
 
   You should have received a copy of the GNU Library General Public License
   along with this library; if not, write to the Free Software Foundation,
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> graemeg/fixes_2_2
 }
 {
   See the file COPYING.FPC, included in this distribution,
@@ -25,6 +29,7 @@ unit chmtypes;
 interface
 
 uses
+<<<<<<< HEAD
   Classes, SysUtils,xmlcfg;
 
 type
@@ -32,6 +37,15 @@ type
 
   TSectionNames = set of TSectionName;
 
+=======
+  Classes, SysUtils; 
+  
+type
+  TSectionName = (snMSCompressed, snUnCompressed);
+  
+  TSectionNames = set of TSectionName;
+  
+>>>>>>> graemeg/fixes_2_2
    { TDirectoryChunk }
 
   TDirectoryChunk = class(TObject)
@@ -52,7 +66,11 @@ type
     property ItemCount: Word read FItemCount;
     constructor Create(AHeaderSize: Integer);
   end;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/fixes_2_2
   { TPMGIDirectoryChunk }
 
   TPMGIDirectoryChunk = class(TDirectoryChunk)
@@ -91,6 +109,7 @@ type
 
   end;
 
+<<<<<<< HEAD
   TValidWindowFieldsEnum = (valid_Unknown1 {:=1},
                             valid_Navigation_pane_style {:= 2},
                             valid_Window_style_flags {:= 4},
@@ -253,10 +272,13 @@ Const defvalidflags = [valid_Navigation_pane_style,valid_Window_style_flags,vali
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
 
 implementation
 uses chmbase;
 
+<<<<<<< HEAD
 function PageBookInfoRecordSize(ARecord: PTOCEntryPageBookInfo): Integer;
 begin
   if (TOC_ENTRY_HAS_CHILDREN and ARecord^.Props) > 0 then
@@ -265,11 +287,17 @@ begin
     Result := 20;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 { TDirectoryChunk }
 
 function TDirectoryChunk.CanHold(ASize: Integer): Boolean;
 begin
+<<<<<<< HEAD
   Result := CurrentPos < $1000 - ASize - (SizeOf(Word) * (FQuickRefEntries+2));
+=======
+  Result := CurrentPos < $1000-1 - ASize - (SizeOf(Word) * (FQuickRefEntries+2));
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TDirectoryChunk.FreeSpace: Integer;
@@ -291,12 +319,21 @@ begin
   Move(Data^, Buffer[CurrentPos], Size);
   Inc(CurrentPos, Size);
   Inc(FItemCount);
+<<<<<<< HEAD
 
   // now put a quickref entry if needed
   if ItemCount mod 5 = 0 then begin
     Inc(FQuickRefEntries);
     ReversePos := ($1000) - SizeOf(Word) - (SizeOf(Word)*FQuickRefEntries);
     Value := NtoLE(Word(CurrentPos - Size - FHeaderSize));
+=======
+  
+  // now put a quickref entry if needed
+  if ItemCount mod 5 = 0 then begin
+    Inc(FQuickRefEntries);
+    ReversePos := ($1000-1) - SizeOf(Word) - (SizeOf(Word)*FQuickRefEntries);
+    Value := NtoLE(Word(CurrentPos - Size));
+>>>>>>> graemeg/fixes_2_2
     Move(Value, Buffer[ReversePos], SizeOf(Word));
   end;
 end;
@@ -304,11 +341,18 @@ end;
 procedure TDirectoryChunk.WriteChunkToStream(Stream: TStream);
 var
   ReversePos: Integer;
+<<<<<<< HEAD
   TmpItemCount: Word;
 begin
   ReversePos := $1000 - SizeOf(Word);
   TmpItemCount := NtoLE(Word(FItemCount));
   Move(TmpItemCount, Buffer[ReversePos], SizeOf(Word));
+=======
+begin
+  ReversePos := $1000-1 - SizeOf(Word);
+  FItemCount := NtoLE(ItemCount);
+  Move(ItemCount, Buffer[ReversePos], SizeOf(Word));
+>>>>>>> graemeg/fixes_2_2
 
   Stream.Write(Buffer[0], $1000);
   {$IFDEF DEBUG_CHM_CHUNKS}
@@ -421,9 +465,13 @@ var
   end;
 begin
   if FItemCount < 1 then begin
+<<<<<<< HEAD
     {$ifdef chm_debug}
     WriteLn('WHAT ARE YOU DOING!!');
     {$endif}
+=======
+    WriteLn('WHAT ARE YOU DOING!!');
+>>>>>>> graemeg/fixes_2_2
     Dec(AIndex);
     Exit;
   end;
@@ -431,7 +479,11 @@ begin
   WriteChunkToStream(Stream);
   NewPos := Stream.Position;
   Inc(FChunkLevelCount);
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/fixes_2_2
   if Final and (ChunkLevelCount < 2) then begin
     FParentChunk.Free;
     FParentChunk := nil;
@@ -451,12 +503,17 @@ begin
   if not FParentChunk.CanHold(WriteSize) then begin
     FinishBlock;
   end;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/fixes_2_2
   FParentChunk.WriteEntry(WriteSize, @NewBuffer[0]);
   if Final then FinishBlock;
   //WriteLn(ChunkLevelCount);
 end;
 
+<<<<<<< HEAD
 function getnext(const s:string;var i: integer;len:integer):string;
 var
     ind : integer;
@@ -785,3 +842,7 @@ begin
 end;
 
 end.
+=======
+end.
+
+>>>>>>> graemeg/fixes_2_2

@@ -48,7 +48,10 @@ Classes
 
 function FormatMaskText(const EditMask: string; const Value: string): string;
 function FormatMaskInput(const EditMask: string): string;
+<<<<<<< HEAD
 function MaskDoFormatText(const EditMask: string; const Value: string; Blank: Char): string;
+=======
+>>>>>>> graemeg/fixes_2_2
 
 
 
@@ -63,20 +66,34 @@ type
   );
 
   TParseState = set of TStepState;
+<<<<<<< HEAD
   
   TEditMask = type string;
+=======
+
+
+>>>>>>> graemeg/fixes_2_2
 
 { TMaskUtils }
 
 type
   TMaskUtils = class(TObject)
+<<<<<<< HEAD
   private
+=======
+    private
+>>>>>>> graemeg/fixes_2_2
     FValue: string;
     SourcePosition,Position : Integer;
     FEditMask,FMask : string;
     SourceVal,ExitVal : string;
+<<<<<<< HEAD
     FMatched : Boolean;
     FMissChar : Char;
+=======
+    Matched : Boolean;
+    MissChar : Char;
+>>>>>>> graemeg/fixes_2_2
     State : TParseState;
     procedure EvaluateExit;
     procedure EvaluateMissing;
@@ -97,14 +114,22 @@ type
     function GetInputMask: string;
     procedure SetMask(const AValue: string);
     procedure SetValue(const AValue: string);
+<<<<<<< HEAD
   protected
+=======
+    protected
+>>>>>>> graemeg/fixes_2_2
     procedure RaiseError;
     procedure ExtractMask;
     function MaskPtr : Char;
     function SourcePtr : Char;
+<<<<<<< HEAD
     property Matched: Boolean read FMatched write FMatched;
     property MissChar: Char read FMissChar write FMissChar;
   public
+=======
+    public
+>>>>>>> graemeg/fixes_2_2
     function ValidateInput : string;
     property Mask : string read FEditMask write SetMask;
     property Value : string read FValue write SetValue;
@@ -574,6 +599,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 {
   Format Value string using EditMask, dont use 2d and 3d fields of EditMask,
   set own Blank char and Matched = False
@@ -594,6 +620,8 @@ begin
     msk.Free;
   end;
 end;
+=======
+>>>>>>> graemeg/fixes_2_2
 
 end.
 

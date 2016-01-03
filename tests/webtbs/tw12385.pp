@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 {$ifdef fpc}
 {$mode objfpc}
 {$endif}
+=======
+{$mode objfpc}
+>>>>>>> graemeg/fixes_2_2
 program tw12385;
 
 uses
@@ -10,6 +14,7 @@ var
   s: string; 
   cr: Extended; 
 
+<<<<<<< HEAD
 Procedure TestIt(CR : Extended; Fmt,Expected : String);
   
 begin
@@ -35,4 +40,20 @@ begin
   TestIt(-2.45,'#,##0.00','-2.45');
   TestIt(-1400,'#,##0.00','-1,400.00');
   TestIt(-1400,'##,##0.00','-1,400.00');
+=======
+begin
+  cr := -1234.567;
+  s:=FormatFloat('0.00', cr);
+  if s<>'-1234.57' then 
+    begin
+    Writeln(S,'<> -1234.57 (latter is correct)');
+    Halt(1);
+    end;
+  S:=FormatFloat('000.000',-1); //returns 0-1.000
+  if s<>'-001.000' then
+     begin
+     Writeln(S,'<> -001.000 (latter is correct)');
+     Halt(1);
+     end;
+>>>>>>> graemeg/fixes_2_2
 end.

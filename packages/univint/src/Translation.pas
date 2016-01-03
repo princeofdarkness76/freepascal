@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -22,10 +23,16 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved.
+=======
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 1991-2005 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -51,6 +58,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -59,8 +78,13 @@
 
 unit Translation;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -73,21 +97,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -122,6 +154,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -129,6 +163,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -370,6 +405,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -395,6 +440,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -405,16 +454,25 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,Files,Components,TranslationExtensions;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
+=======
+
+
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN MAC68K}
 
 {
    Carbon clients should use Translation Services. The definitions below will NOT work for Carbon and
    are only defined for those files that need to build pre-Carbon applications.
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/fixes_2_2
 { enumerated types on how a document can be opened}
 type
 	DocOpenMethod = SInt16;
@@ -437,7 +495,11 @@ type
 	FileTranslationSpecPtr = ^FileTranslationSpec;
 	FileTranslationSpec = record
 		componentSignature: OSType;
+<<<<<<< HEAD
 		translationSystemInfo: {const} UnivPtr;
+=======
+		translationSystemInfo: UnivPtr;
+>>>>>>> graemeg/fixes_2_2
 		src: FileTypeSpec;
 		dst: FileTypeSpec;
 	end;
@@ -445,7 +507,11 @@ type
 	FileTranslationSpecArray = array [0..$7F000000 div SizeOf(FileTranslationSpec)-1] of FileTranslationSpec;
 	FileTranslationSpecArrayPtr = ^FileTranslationSpecArray;
 	FileTranslationSpecArrayHandle = ^FileTranslationSpecArrayPtr;
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
+=======
+
+>>>>>>> graemeg/fixes_2_2
 {
  *  GetFileTypesThatAppCanNativelyOpen()   *** DEPRECATED ***
  *  
@@ -456,7 +522,11 @@ type
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Translation 1.0 and later
  }
@@ -474,7 +544,11 @@ function GetFileTypesThatAppCanNativelyOpen( appVRefNumHint: SInt16; appSignatur
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Translation 1.0 and later
  }
@@ -492,7 +566,11 @@ function ExtendFileTypeList( originalTypeList: {variable-size-array} FileTypePtr
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Translation 1.0 and later
  }
@@ -510,7 +588,11 @@ function CanDocBeOpened( const (*var*) targetDocument: FSSpec; appVRefNumHint: S
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Translation 1.0 and later
  }
@@ -530,7 +612,11 @@ function GetFileTranslationPaths( const (*var*) srcDocument: FSSpec; dstDocType:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Translation 1.0 and later
  }
@@ -548,7 +634,11 @@ function GetPathFromTranslationDialog( const (*var*) theDocument: FSSpec; const 
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Translation 1.0 and later
  }
@@ -566,7 +656,11 @@ function TranslateFile( const (*var*) sourceDocument: FSSpec; const (*var*) dest
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Translation 1.0 and later
  }
@@ -587,7 +681,11 @@ function GetDocumentKindString( docVRefNum: SInt16; docType: OSType; docCreator:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Translation 1.0 and later
  }
@@ -595,9 +693,12 @@ function GetTranslationExtensionName( const (*var*) translationMethod: FileTrans
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  GetScrapDataProcPtr
  }
@@ -639,7 +740,10 @@ function InvokeGetScrapDataUPP( requestedFormat: ScrapType; dataH: Handle; srcDa
 
 type
 	GetScrapData = GetScrapDataUPP;
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  TranslateScrap()   *** DEPRECATED ***
  *  
@@ -650,7 +754,11 @@ type
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.3
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.3
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in Translation 1.0 and later
  }
@@ -658,6 +766,7 @@ function TranslateScrap( sourceDataGetter: GetScrapDataUPP; sourceDataGetterRefC
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 
@@ -667,3 +776,8 @@ function TranslateScrap( sourceDataGetter: GetScrapDataUPP; sourceDataGetterRefC
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

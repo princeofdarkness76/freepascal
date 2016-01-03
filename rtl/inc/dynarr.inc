@@ -109,6 +109,32 @@ procedure fpc_dynarray_clear(var p : pointer;ti : pointer); [Public,Alias:'FPC_D
 Procedure fpc_dynarray_clear (var p : pointer;ti : pointer);[external name 'FPC_DYNARRAY_CLEAR'];
 
 
+<<<<<<< HEAD
+=======
+procedure fpc_dynarray_decr_ref(var p : pointer;ti : pointer); [Public,Alias:'FPC_DYNARRAY_DECR_REF']; compilerproc;
+  var
+     realp : pdynarray;
+  begin
+     if p=nil then
+       exit;
+
+     realp:=pdynarray(p-sizeof(tdynarray));
+     if realp^.refcount=0 then
+       HandleErrorFrame(204,get_frame);
+
+     { decr. ref. count }
+     { should we remove the array? }
+     if declocked(realp^.refcount) then
+       begin
+         fpc_dynarray_clear_internal(realp,pdynarraytypeinfo(ti));
+         p := nil;
+       end;
+  end;
+
+{ provide local access to dynarr_decr_ref for dynarr_setlength }
+procedure fpc_dynarray_decr_ref(var p : pointer;ti : pointer); [external name 'FPC_DYNARRAY_DECR_REF'];
+
+>>>>>>> graemeg/fixes_2_2
 procedure fpc_dynarray_incr_ref(p : pointer);[Public,Alias:'FPC_DYNARRAY_INCR_REF']; compilerproc;
   var
      realp : pdynarray;
@@ -174,6 +200,8 @@ procedure fpc_dynarray_setlength(var p : pointer;pti : pointer;
      { not assigned yet? }
      if not(assigned(p)) then
        begin
+          if dims[dimcount-1]<0 then
+            HandleErrorFrame(201,get_frame);
           { do we have to allocate memory? }
           if dims[0] = 0 then
             exit;

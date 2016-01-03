@@ -328,8 +328,74 @@ implementation
     { second_handle_ the sizeof and typeof routines }
     procedure tcginlinenode.second_SizeOfTypeOf;
       begin
+<<<<<<< HEAD
         { handled in pass 1 }
         internalerror(2015122701);
+=======
+        if inlinenumber=in_sizeof_x then
+          location_reset(location,LOC_REGISTER,def_cgsize(resultdef))
+        else
+          location_reset(location,LOC_REGISTER,OS_ADDR);
+        { for both cases load vmt }
+        if left.nodetype=typen then
+          begin
+            hregister:=cg.getaddressregister(current_asmdata.CurrAsmList);
+            reference_reset_symbol(href,current_asmdata.RefAsmSymbol(tobjectdef(left.resultdef).vmt_mangledname),0);
+            cg.a_loadaddr_ref_reg(current_asmdata.CurrAsmList,href,hregister);
+          end
+        else
+          begin
+            secondpass(left);
+            hregister:=cg.getaddressregister(current_asmdata.CurrAsmList);
+
+            { handle self inside a method of a class }
+            case left.location.loc of
+              LOC_CREGISTER,
+              LOC_REGISTER :
+                begin
+                  if (left.resultdef.typ=classrefdef) or
+                     (po_staticmethod in current_procinfo.procdef.procoptions) then
+                    cg.a_load_reg_reg(current_asmdata.CurrAsmList,OS_ADDR,OS_ADDR,left.location.register,hregister)
+                  else
+                   begin
+                     { load VMT pointer }
+                     reference_reset_base(hrefvmt,left.location.register,tobjectdef(left.resultdef).vmt_offset);
+                     cg.a_load_ref_reg(current_asmdata.CurrAsmList,OS_ADDR,OS_ADDR,hrefvmt,hregister);
+                   end
+                end;
+              LOC_REFERENCE,
+              LOC_CREFERENCE :
+                begin
+                  if is_class(left.resultdef) then
+                   begin
+                     { deref class }
+                     cg.a_load_ref_reg(current_asmdata.CurrAsmList,OS_ADDR,OS_ADDR,left.location.reference,hregister);
+                     cg.g_maybe_testself(current_asmdata.CurrAsmList,hregister);
+                     { load VMT pointer }
+                     reference_reset_base(hrefvmt,hregister,tobjectdef(left.resultdef).vmt_offset);
+                     cg.a_load_ref_reg(current_asmdata.CurrAsmList,OS_ADDR,OS_ADDR,hrefvmt,hregister);
+                   end
+                  else
+                   begin
+                     { load VMT pointer, but not for classrefdefs }
+                     if (left.resultdef.typ=objectdef) then
+                       inc(left.location.reference.offset,tobjectdef(left.resultdef).vmt_offset);
+                     cg.a_load_ref_reg(current_asmdata.CurrAsmList,OS_ADDR,OS_ADDR,left.location.reference,hregister);
+                   end;
+                end;
+              else
+                internalerror(200301301);
+            end;
+          end;
+        { in sizeof load size }
+        if inlinenumber=in_sizeof_x then
+           begin
+             reference_reset_base(href,hregister,0);
+             hregister:=cg.getintregister(current_asmdata.CurrAsmList,OS_INT);
+             cg.a_load_ref_reg(current_asmdata.CurrAsmList,OS_INT,OS_INT,href,hregister);
+           end;
+        location.register:=hregister;
+>>>>>>> graemeg/fixes_2_2
      end;
 
 
@@ -581,6 +647,7 @@ implementation
 
           if elepara.location.loc=LOC_CONSTANT then
             begin
+<<<<<<< HEAD
               hlcg.a_bit_set_const_loc(current_asmdata.CurrAsmList,(inlinenumber=in_include_x_y),
                 setpara.resultdef,elepara.location.value-tsetdef(setpara.resultdef).setbase,setpara.location);
             end
@@ -590,6 +657,17 @@ implementation
               register_maybe_adjust_setbase(current_asmdata.CurrAsmList,u32inttype,elepara.location,tsetdef(setpara.resultdef).setbase);
               hlcg.a_bit_set_reg_loc(current_asmdata.CurrAsmList,(inlinenumber=in_include_x_y),
                 u32inttype,setpara.resultdef,elepara.location.register,setpara.location);
+=======
+              cg.a_bit_set_const_loc(current_asmdata.CurrAsmList,(inlinenumber=in_include_x_y),
+                elepara.location.value-tsetdef(setpara.resultdef).setbase,setpara.location);
+            end
+          else
+            begin
+              location_force_reg(current_asmdata.CurrAsmList,elepara.location,OS_INT,true);
+              register_maybe_adjust_setbase(current_asmdata.CurrAsmList,elepara.location,tsetdef(setpara.resultdef).setbase);
+              cg.a_bit_set_reg_loc(current_asmdata.CurrAsmList,(inlinenumber=in_include_x_y),
+                elepara.location.size,elepara.location.register,setpara.location);
+>>>>>>> graemeg/fixes_2_2
             end;
         end;
 

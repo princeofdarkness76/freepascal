@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 2002-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -40,6 +41,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+ * Copyright (c) 2002-2004 Apple Computer, Inc.
+ * All rights reserved.
+ }
+{       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -48,8 +61,13 @@
 
 unit CGPDFObject;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -62,21 +80,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -111,6 +137,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -118,6 +146,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -324,6 +353,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -349,6 +388,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -359,8 +402,11 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CGBase;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -372,16 +418,25 @@ type
 { A type for integer values. }
 
 type
+<<<<<<< HEAD
 	CGPDFInteger = SIGNEDLONG;
+=======
+	CGPDFInteger = SInt32;
+>>>>>>> graemeg/fixes_2_2
 
 { A type for real values. }
 
 type
+<<<<<<< HEAD
 	CGPDFReal = CGFloat;
+=======
+	CGPDFReal = Float32;
+>>>>>>> graemeg/fixes_2_2
 
 { A type to hold any object. }
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -400,6 +455,9 @@ type
 =======
 	CGPDFObjectRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	CGPDFObjectRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 
 { An identifier to describe an object's type. }
 
@@ -416,6 +474,7 @@ const
 	kCGPDFObjectTypeDictionary = 8;
 	kCGPDFObjectTypeStream = 9;
 
+<<<<<<< HEAD
 { Return the type of `object'. }
 
 function CGPDFObjectGetType( objct: CGPDFObjectRef ): CGPDFObjectType; external name '_CGPDFObjectGetType';
@@ -435,3 +494,21 @@ function CGPDFObjectGetValue( objct: CGPDFObjectRef; typ: CGPDFObjectType; value
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+{ Return the type of `object'. }
+
+function CGPDFObjectGetType( objct: CGPDFObjectRef ): CGPDFObjectType; external name '_CGPDFObjectGetType'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{ Get the value of `object'.  If the type of `object' is equal to `type',
+ * then copy the value of `object' to `value' (if it's non-NULL) and return
+ * true.  Otherwise, if the type of `object' is `kCGPDFObjectTypeInteger'
+ * and `type' is equal to `kCGPDFObjectTypeReal', then convert the value of
+ * `object' to floating point and copy the result to `value' (if it's
+ * non-NULL) and return true. Otherwise, return false. }
+
+function CGPDFObjectGetValue( objct: CGPDFObjectRef; typ: CGPDFObjectType; value: UnivPtr ): CBool; external name '_CGPDFObjectGetValue'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

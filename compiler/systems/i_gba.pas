@@ -34,8 +34,13 @@ unit i_gba;
             system       : system_arm_gba;
             name         : 'GameBoy Advance';
             shortname    : 'gba';
+<<<<<<< HEAD
             flags        : [tf_needs_symbol_size,tf_files_case_sensitive,
                             tf_requires_proper_alignment,tf_smartlink_sections];
+=======
+            flags        : [tf_needs_symbol_size,tf_files_case_sensitive,tf_use_function_relative_addresses
+	                          ,tf_smartlink_sections,tf_requires_proper_alignment];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_arm;
             unit_env     : '';
             extradefines : '';

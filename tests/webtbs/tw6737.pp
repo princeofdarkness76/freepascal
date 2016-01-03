@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 { %skiptarget=os2,emx }
+=======
+>>>>>>> graemeg/fixes_2_2
 {$mode objfpc}
 {$H+}
 

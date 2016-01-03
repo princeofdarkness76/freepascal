@@ -21,6 +21,16 @@
                                Primitives
 ****************************************************************************}
 
+<<<<<<< HEAD
+=======
+procedure fpc_cpuinit;
+  begin
+    SysResetFPU;
+    if not(IsLibrary) then
+      SysInitFPU;
+  end;
+
+>>>>>>> graemeg/fixes_2_2
 {$define FPC_SYSTEM_HAS_SPTR}
 Function Sptr : Pointer;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
 asm
@@ -2360,6 +2370,7 @@ const
   MM_MaskPrecision = %0001000000000000;
 
 
+<<<<<<< HEAD
 procedure fpc_cpuinit;
   begin
     { don't let libraries influence the FPU cw set by the host program }
@@ -2430,6 +2441,10 @@ Procedure SysInitFPU;
     localmxcsr: dword;
     localfpucw: word;
  
+=======
+{$define FPC_SYSTEM_HAS_SYSINITFPU}
+Procedure SysInitFPU;
+>>>>>>> graemeg/fixes_2_2
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2445,7 +2460,18 @@ begin
   localmxcsr:=mxcsr;
   localfpucw:=fpucw;
   asm
+<<<<<<< HEAD
     fldcw localfpucw
+=======
+{$ifdef FPC_PIC}
+    movq fpucw@GOTPCREL(%rip),%rax
+    fldcw (%rax)
+    { set sse exceptions }
+    movq mxcsr@GOTPCREL(%rip),%rax
+    ldmxcsr (%rax)
+{$else FPC_PIC}
+    fldcw fpucw
+>>>>>>> graemeg/fixes_2_2
     { set sse exceptions }
     ldmxcsr localmxcsr
   end ['RAX'];
@@ -2563,3 +2589,49 @@ asm
 {$endif win64}
   bswap %rax
 end;
+
+
+{$define FPC_SYSTEM_HAS_SYSRESETFPU}
+Procedure SysResetFPU;
+  var
+    { these locals are so we don't have to hack pic code in the assembler }
+    localmxcsr: dword;
+    localfpucw: word;
+  begin
+    localfpucw:=Default8087CW;
+    localmxcsr:=mxcsr;
+    asm
+      fninit
+      fwait
+      fldcw   localfpucw
+      ldmxcsr localmxcsr
+    end;
+    { x86-64 might use softfloat code }
+    softfloat_exception_flags:=0;
+  end;
+
+
+{$ifndef FPC_SYSTEM_HAS_MEM_BARRIER}
+{$define FPC_SYSTEM_HAS_MEM_BARRIER}
+
+procedure ReadBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
+asm
+  lfence
+end;
+
+procedure ReadDependencyBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
+asm
+  { reads imply barrier on earlier reads depended on }
+end;
+
+procedure ReadWriteBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
+asm
+  mfence
+end;
+
+procedure WriteBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
+asm
+  { no write reordering on intel CPUs (yet) }
+end;
+
+{$endif}

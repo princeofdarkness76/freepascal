@@ -133,7 +133,11 @@ How to Install
 interface
 
 uses
+<<<<<<< HEAD
   DB, Classes, SysUtils, DBConst;
+=======
+  DB, Classes, SysUtils;
+>>>>>>> graemeg/fixes_2_2
 
 type
 //-----------------------------------------------------------------------------
@@ -182,9 +186,16 @@ type
     FRecBufSize         :Integer;
     FRecInfoOfs         :Integer;
     FLastBookmark       :PtrInt;
+<<<<<<< HEAD
     FSaveChanges        :Boolean;
     FDefaultRecordLength:Cardinal;
     FDataOffset         : Integer;
+=======
+    FRecInfoOfs         :Integer;
+    FBookmarkOfs        :Integer;
+    FSaveChanges        :Boolean;
+    FDefaultRecordLength:Cardinal;
+>>>>>>> graemeg/fixes_2_2
   protected
     function AllocRecordBuffer: TRecordBuffer; override;
     procedure FreeRecordBuffer(var Buffer: TRecordBuffer); override;
@@ -309,11 +320,19 @@ constructor TFixedFormatDataSet.Create(AOwner : TComponent);
 begin
   FDefaultRecordLength := 250;
   FFileMustExist  := TRUE;
+<<<<<<< HEAD
   FLoadFromStream := False;
   FRecordSize   := 0;
   FTrimSpace    := TRUE;
   FSchema       := TStringList.Create;
   FData         := TSDFStringList.Create;  // Load the textfile into a StringList
+=======
+  FLoadfromStream := False;
+  FRecordSize   := 0;
+  FTrimSpace     := TRUE;
+  FSchema       := TStringList.Create;
+  FData         := TStringList.Create;  // Load the textfile into a stringlist
+>>>>>>> graemeg/fixes_2_2
   inherited Create(AOwner);
 end;
 
@@ -370,10 +389,15 @@ begin
       MaxLen := Len;
     FData.Objects[i] := TObject(Pointer(i+1));   // Fabricate Bookmarks
   end;
+<<<<<<< HEAD
   if (MaxLen = 0) then
     MaxLen := FDefaultRecordLength;
 
   FRecordSize := 0;
+=======
+  if (Maxlen = 0) then
+    Maxlen := FDefaultRecordLength;
+>>>>>>> graemeg/fixes_2_2
   LstFields := TStringList.Create;
   try
     LoadFieldScheme(LstFields, MaxLen);
@@ -413,6 +437,11 @@ begin
   if DefaultFields then
     CreateFields;
   BindFields(TRUE);
+<<<<<<< HEAD
+=======
+  if FRecordSize = 0 then
+    FRecordSize := FDefaultRecordLength;
+>>>>>>> graemeg/fixes_2_2
   BookmarkSize := SizeOf(PtrInt);
   FRecInfoOfs := FRecordSize + CalcFieldsSize; // Initialize the offset for TRecInfo in the buffer
 {$IFDEF FPC_REQUIRES_PROPER_ALIGNMENT}
@@ -755,8 +784,20 @@ begin
       Field.Validate(Buffer);
     if Assigned(Buffer) and (Field.FieldKind <> fkInternalCalc) then
     begin
+<<<<<<< HEAD
       SetFieldOfs(TRecordBuffer(RecBuf), Field.FieldNo);
       Move(Buffer^, RecBuf[0], Field.DataSize);
+=======
+      SetFieldPos(RecBuf, Field.FieldNo);
+      BufEnd := StrEnd(ActiveBuffer);  // Fill with blanks when necessary
+      if BufEnd > RecBuf then
+        BufEnd := RecBuf;
+      FillChar(BufEnd[0], Field.Size + PtrInt(RecBuf) - PtrInt(BufEnd), Ord(' '));
+      p := StrLen(Buffer);
+      if p > Field.Size then
+        p := Field.Size;
+      Move(Buffer^, RecBuf[0], p);
+>>>>>>> graemeg/fixes_2_2
     end;
   end
   else // fkCalculated, fkLookup

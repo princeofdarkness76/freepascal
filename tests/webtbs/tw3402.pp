@@ -1,5 +1,8 @@
 { %norun }
+<<<<<<< HEAD
 { %needlibrary }
+=======
+>>>>>>> graemeg/fixes_2_2
 { %skiptarget=go32v2 }
 { %opt=-Cg }
 { %delfiles=tw3402 }

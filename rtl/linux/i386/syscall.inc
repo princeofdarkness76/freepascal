@@ -43,6 +43,7 @@ type
   end;
   TElf32AuxiliaryVector = Elf32_auxv_t;
   PElf32AuxiliaryVector = ^TElf32AuxiliaryVector;
+<<<<<<< HEAD
 
 var
   psysinfo: LongWord = 0;
@@ -164,6 +165,76 @@ asm
   .LTail:
 	pop   %ecx
 	pop   %ebx
+=======
+
+var
+  psysinfo: LongWord = 0;
+
+procedure InitSyscallIntf;
+var
+  ep: PPChar;
+  auxv: PElf32AuxiliaryVector;
+begin
+
+  psysinfo := 0;
+  ep := envp;
+  while ep^ <> nil do
+    Inc(ep);
+
+  Inc(ep);
+
+  auxv := PElf32AuxiliaryVector(ep);
+
+  repeat
+    if auxv^.a_type = AT_SYSINFO then begin
+      psysinfo := auxv^.a_un.a_val;
+      if psysinfo <> 0 then
+        sysenter_supported := 1; // descision factor in asm syscall routines
+      Break;
+    end;
+    Inc(auxv);
+  until auxv^.a_type = AT_NULL;
+end;
+
+{***********************SYSENTER CODE END******************************}
+
+Procedure fpc_geteipasebx;[external name 'fpc_geteipasebx'];
+
+function FpSysCall(sysnr:TSysParam):TSysResult; assembler; register; [public,alias:'FPC_SYSCALL0'];
+{ Var sysnr located in register eax }
+asm
+//      movl  sysnr,%eax
+        cmp  $0, sysenter_supported
+        jne  .LSysEnter
+        int $0x80
+        jmp   .LTail
+  .LSysEnter:
+        call psysinfo
+  .LTail:
+        cmpl  $-4095,%eax
+        jb    .LSyscOK
+        negl  %eax
+        call  seterrno
+        movl  $-1,%eax
+  .LSyscOK:
+end;
+
+function FpSysCall(sysnr,param1 : TSysParam):TSysResult; assembler; register; [public,alias:'FPC_SYSCALL1'];
+{ Var sysnr located in register eax
+  Var param1 located in register edx }
+asm
+        movl  %ebx,%ecx
+//      movl  sysnr,%eax
+        movl  %edx,%ebx
+        cmp   $0, sysenter_supported
+        jne   .LSysEnter
+        int   $0x80
+        jmp   .LTail
+  .LSysEnter:
+        call psysinfo
+  .LTail:
+        movl  %ecx,%ebx
+>>>>>>> graemeg/fixes_2_2
         cmpl  $-4095,%eax
         jb    .LSyscOK
         negl  %eax
@@ -177,6 +248,7 @@ function FpSysCall(sysnr,param1,param2 : TSysParam):TSysResult; assembler; regis
   Var param1 located in register edx
   Var param2 located in register ecx }
 asm
+<<<<<<< HEAD
   {$ifdef FPC_PROFILE}
         push  %eax
         push  %edx
@@ -218,6 +290,20 @@ asm
   .LTail:
 	pop   %edx
 	pop   %ebx
+=======
+        push  %ebx
+//      movl  sysnr,%eax
+        movl  %edx,%ebx
+//      movl  param2,%ecx
+        cmp   $0, sysenter_supported
+        jne   .LSysEnter
+        int   $0x80
+        jmp   .LTail
+  .LSysEnter:
+        call psysinfo
+  .LTail:
+        pop   %ebx
+>>>>>>> graemeg/fixes_2_2
         cmpl  $-4095,%eax
         jb    .LSyscOK
         negl  %eax
@@ -231,6 +317,7 @@ function FpSysCall(sysnr,param1,param2,param3:TSysParam):TSysResult; assembler; 
   Var param1 located in register edx
   Var param2 located in register ecx
   Var param3 located at ebp+20 }
+<<<<<<< HEAD
 var
   _psysinfo: LongWord;
 asm
@@ -279,6 +366,22 @@ asm
   .LTail:
 	pop   %edx
 	pop   %ebx
+=======
+asm
+        push  %ebx
+//      movl  sysnr,%eax
+        movl  %edx,%ebx
+//      movl  param2,%ecx
+        movl  param3,%edx
+        cmp   $0, sysenter_supported
+        jne   .LSysEnter
+        int   $0x80
+        jmp   .LTail
+  .LSysEnter:
+        call psysinfo
+  .LTail:
+        pop   %ebx
+>>>>>>> graemeg/fixes_2_2
         cmpl  $-4095,%eax
         jb    .LSyscOK
         negl  %eax
@@ -293,6 +396,7 @@ function FpSysCall(sysnr,param1,param2,param3,param4:TSysParam):TSysResult; asse
   Var param2 located in register ecx
   Var param3 located at ebp+20
   Var param4 located at ebp+16 }
+<<<<<<< HEAD
 var
   _psysinfo: LongWord;
 asm
@@ -344,6 +448,25 @@ asm
   .LTail:
   	pop   %esi
 	pop   %ebx
+=======
+asm
+        push  %ebx
+        push  %esi
+//      movl  sysnr,%eax
+        movl  %edx,%ebx
+//      movl  param2,%ecx
+        movl  param3,%edx
+        movl  param4,%esi
+        cmp   $0, sysenter_supported
+        jne   .LSysEnter
+        int   $0x80
+        jmp  .LTail
+  .LSysEnter:
+        call psysinfo
+  .LTail:
+        pop   %esi
+        pop   %ebx
+>>>>>>> graemeg/fixes_2_2
         cmpl  $-4095,%eax
         jb    .LSyscOK
         negl  %eax
@@ -359,6 +482,7 @@ function FpSysCall(sysnr,param1,param2,param3,param4,param5 : TSysParam):TSysRes
   Var param3 located at ebp+20
   Var param4 located at ebp+16
   Var param5 located at ebp+12 }
+<<<<<<< HEAD
 var
   _psysinfo: LongWord;
 asm
@@ -417,6 +541,28 @@ asm
   	pop   %esi
 	pop   %edx
 	pop   %ebx
+=======
+asm
+        push  %ebx
+        push  %esi
+        push  %edi
+//      movl  sysnr,%eax
+        movl  %edx,%ebx
+//      movl  param2,%ecx
+        movl  param3,%edx
+        movl  param4,%esi
+        movl  param5,%edi
+        cmp   $0, sysenter_supported
+        jne   .LSysEnter
+        int   $0x80
+        jmp   .LTail
+  .LSysEnter:
+        call psysinfo
+  .LTail:
+        pop   %edi
+        pop   %esi
+        pop   %ebx
+>>>>>>> graemeg/fixes_2_2
         cmpl  $-4095,%eax
         jb    .LSyscOK
         negl  %eax
@@ -433,6 +579,7 @@ function FpSysCall(sysnr,param1,param2,param3,param4,param5,param6: TSysParam):T
   Var param4 located at ebp+16
   Var param5 located at ebp+12
   Var param6 located at ebp+8 }
+<<<<<<< HEAD
 var
   _psysinfo: LongWord;
 asm
@@ -496,6 +643,31 @@ asm
   	pop   %esi
 	pop   %edx
 	pop   %ebx
+=======
+asm
+        push  %ebx
+        push  %esi
+        push  %edi
+        push  %ebp
+//      movl  sysnr,%eax
+        movl  %edx,%ebx
+//      movl  param2,%ecx
+        movl  param3,%edx
+        movl  param4,%esi
+        movl  param5,%edi
+        movl  param6,%ebp
+        cmp   $0, sysenter_supported
+        jne   .LSysEnter
+        int   $0x80
+        jmp   .LTail
+  .LSysEnter:
+        call psysinfo
+  .LTail:
+        pop   %ebp
+        pop   %edi
+        pop   %esi
+        pop   %ebx
+>>>>>>> graemeg/fixes_2_2
         cmpl  $-4095,%eax
         jb    .LSyscOK
         negl  %eax

@@ -13,6 +13,7 @@ begin
 {$endif ALLPACKAGES}
 
     P:=AddPackage('libgd');
+<<<<<<< HEAD
     P.ShortName:='lgd';
     P.Description := 'Interface unit for library libgd - image processing';
 {$ifdef ALLPACKAGES}
@@ -28,6 +29,15 @@ begin
     P.Targets.AddExampleProgram('gdtestcgi.pp');
     P.Targets.AddExampleProgram('gdtest.pp');
     P.Sources.AddExampleFiles('examples/*',P.Directory,false,'.');
+=======
+{$ifdef ALLPACKAGES}
+    P.Directory:='libgd';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.SourcePath.Add('src');
+
+    T:=P.Targets.AddUnit('gd.pp');
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

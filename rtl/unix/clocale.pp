@@ -43,7 +43,11 @@ Uses
   SysUtils, unixtype, initc;
 
 Const
+<<<<<<< HEAD
 {$if defined(BSD) or defined(SUNOS)}
+=======
+{$ifdef BSD}
+>>>>>>> graemeg/fixes_2_2
   // Darwin and FreeBSD. Note the lead underscores are added.
  {$i clocale.inc}
 {$else}
@@ -92,7 +96,11 @@ Const
 function setlocale(category: cint; locale: pchar): pchar; cdecl; external clib name 'setlocale';
 function nl_langinfo(__item: cint):Pchar;cdecl;external clib name 'nl_langinfo';
 
+<<<<<<< HEAD
 procedure GetFormatSettings(out fmts: TFormatSettings);
+=======
+procedure GetFormatSettings;
+>>>>>>> graemeg/fixes_2_2
 
   function GetLocaleStr(item: cint): string;
   begin
@@ -104,6 +112,7 @@ procedure GetFormatSettings(out fmts: TFormatSettings);
     GetLocaleChar := nl_langinfo(item)^;
   end;
 
+<<<<<<< HEAD
   procedure OmitModifiers(const s: string; var i: integer);
   var
     l: Integer;
@@ -117,15 +126,29 @@ procedure GetFormatSettings(out fmts: TFormatSettings);
   function FindSeparator(const s: string; Def: char): char;
   var
     i: integer;
+=======
+  function FindSeparator(const s: string; Def: char): char;
+  var
+    i, l: integer;
+>>>>>>> graemeg/fixes_2_2
   begin
     FindSeparator := Def;
     i := Pos('%', s);
     if i=0 then
       Exit;
+<<<<<<< HEAD
     inc(i);
     OmitModifiers(s, i);
     inc(i);
     if i<=Length(s) then
+=======
+    l := Length(s);
+    inc(i);
+    if (i<=l) and (s[i] in ['E', 'O']) then //possible modifier
+      inc(i);
+    inc(i); 
+    if i<=l then
+>>>>>>> graemeg/fixes_2_2
       FindSeparator := s[i];
   end;
 
@@ -141,7 +164,12 @@ procedure GetFormatSettings(out fmts: TFormatSettings);
     while i<=l do begin
       if s[i]='%' then begin
         inc(i);
+<<<<<<< HEAD
         OmitModifiers(s, i);
+=======
+        if (i<=l) and (s[i] in ['E', 'O']) then //ignore modifier
+          inc(i);
+>>>>>>> graemeg/fixes_2_2
         if i>l then
           Exit;
         case s[i] of
@@ -224,13 +252,18 @@ const
 var
   i: integer;
   prec, sep, signp: byte;
+<<<<<<< HEAD
   {$if defined(BSD) or defined(SUNOS)}
+=======
+  {$ifdef BSD}
+>>>>>>> graemeg/fixes_2_2
    plocale : plconv;
   {$ENDIF}
 begin
   setlocale(__LC_ALL,'');
   for i := 1 to 12 do
     begin
+<<<<<<< HEAD
     fmts.ShortMonthNames[i]:=GetLocaleStr(ABMON_1+i-1);
     fmts.LongMonthNames[i]:=GetLocaleStr(MON_1+i-1);
     end;
@@ -273,14 +306,62 @@ begin
     fmts.LongTimeFormat := TransformFormatStr(fmts.LongTimeFormat);
 
   {$if defined(BSD) or defined(SUNOS)}
+=======
+    ShortMonthNames[i]:=GetLocaleStr(ABMON_1+i-1);
+    LongMonthNames[i]:=GetLocaleStr(MON_1+i-1);
+    end;
+  for i := 1 to 7 do
+    begin
+    ShortDayNames[i]:=GetLocaleStr(ABDAY_1+i-1);
+    LongDayNames[i]:=GetLocaleStr(DAY_1+i-1);
+    end;
+  //Date stuff
+  ShortDateFormat := GetLocaleStr(D_FMT);
+ 
+{$ifdef localedebug}
+  OrgFormatSettings.ShortDateFormat:=shortdateformat;
+{$endif}
+ 
+  DateSeparator := FindSeparator(ShortDateFormat, DateSeparator);
+  ShortDateFormat := TransformFormatStr(ShortDateFormat);
+  LongDateFormat := GetLocaleStr(D_T_FMT);
+{$ifdef localedebug}
+  OrgFormatSettings.LongDateFormat:=longdateformat;
+{$endif}
+  LongDateFormat := TransformFormatStr(LongDateFormat);
+  //Time stuff
+  TimeAMString := GetLocaleStr(AM_STR);
+  TimePMString := GetLocaleStr(PM_STR);
+  ShortTimeFormat := GetLocaleStr(T_FMT);
+{$ifdef localedebug}
+  OrgFormatSettings.ShortTimeFormat:=shorttimeformat;
+{$endif}
+  TimeSeparator := FindSeparator(ShortTimeFormat, TimeSeparator);
+  ShortTimeFormat := TransformFormatStr(ShortTimeFormat);
+  LongTimeFormat := GetLocaleStr(T_FMT_AMPM);
+{$ifdef localedebug}
+  OrgFormatSettings.LongTimeFormat:=longtimeformat;
+{$endif}
+
+  LongTimeFormat := TransformFormatStr(LongTimeFormat);
+
+  {$Ifdef BSD}
+>>>>>>> graemeg/fixes_2_2
      plocale:=localeconv;
      // for these fields there is a separate BSD derived POSIX function.
      if not assigned(plocale) then exit; // for now.
 
+<<<<<<< HEAD
      fmts.CurrencyString:=plocale^.currency_symbol; // int_CURR_SYMBOL (in latin chars)
      if fmts.CurrencyString='' then
         fmts.CurrencyString:=plocale^.int_curr_symbol;
      fmts.CurrencyDecimals:=ord(plocale^.FRAC_DIGITS);
+=======
+     CurrencyString:=plocale^.currency_symbol; // int_CURR_SYMBOL (in latin chars)
+     if CurrencyString='' then
+        CurrencyString:=plocale^.int_curr_symbol;
+     CurrencyDecimals:=ord(plocale^.FRAC_DIGITS);
+>>>>>>> graemeg/fixes_2_2
 {$ifdef localedebug}
   OrgFormatSettings.CurrencyString1:=plocale^.currency_symbol;
   OrgFormatSettings.CurrencyString2:=plocale^.int_curr_symbol;
@@ -288,11 +369,16 @@ begin
      prec:=ord(plocale^.P_CS_PRECEDES);
      sep:=ord(plocale^.P_SEP_BY_SPACE);
      if (prec<=1) and (sep<=1) then
+<<<<<<< HEAD
        fmts.CurrencyFormat := byte(not boolean(prec)) + sep shl 1;
+=======
+       CurrencyFormat := byte(not boolean(prec)) + sep shl 1;
+>>>>>>> graemeg/fixes_2_2
      prec := ord(plocale^.N_CS_PRECEDES);
      sep := ord(plocale^.N_SEP_BY_SPACE);
      signp := ord(plocale^.N_SIGN_POSN);
      if (signp in [0..4]) and (prec in [0, 1]) and (sep in [0, 1]) then
+<<<<<<< HEAD
        fmts.NegCurrFormat := NegFormatsTable[signp, prec, sep];
   //Number stuff
      fmts.ThousandSeparator:=plocale^.THOUSANDS_SEP[0];
@@ -309,10 +395,29 @@ begin
   sep := byte(GetLocaleChar(__P_SEP_BY_SPACE));
   if (prec<=1) and (sep<=1) then
     fmts.CurrencyFormat := byte(not boolean(prec)) + sep shl 1;
+=======
+       NegCurrFormat := NegFormatsTable[signp, prec, sep];
+  //Number stuff
+     ThousandSeparator:=plocale^.THOUSANDS_SEP[0];
+  {$else}
+   //Currency stuff
+  CurrencyString := GetLocaleStr(_NL_MONETARY_CRNCYSTR);
+{$ifdef localedebug}
+  OrgFormatSettings.CurrencyString1:=currencystring;
+  OrgFormatSettings.CurrencyString2:='';
+{$endif}
+  CurrencyString := Copy(CurrencyString, 2, Length(CurrencyString));
+  CurrencyDecimals := StrToIntDef(GetLocaleStr(__FRAC_DIGITS), CurrencyDecimals);
+  prec := byte(GetLocaleChar(__P_CS_PRECEDES));
+  sep := byte(GetLocaleChar(__P_SEP_BY_SPACE));
+  if (prec<=1) and (sep<=1) then
+    CurrencyFormat := byte(not boolean(prec)) + sep shl 1;
+>>>>>>> graemeg/fixes_2_2
   prec := byte(GetLocaleChar(__N_CS_PRECEDES));
   sep := byte(GetLocaleChar(__N_SEP_BY_SPACE));
   signp := byte(GetLocaleChar(__N_SIGN_POSN));
   if (signp in [0..4]) and (prec in [0, 1]) and (sep in [0, 1]) then
+<<<<<<< HEAD
     fmts.NegCurrFormat := NegFormatsTable[signp, prec, sep];
   //Number stuff
   fmts.ThousandSeparator:=GetLocaleChar(__THOUSANDS_SEP);
@@ -325,5 +430,16 @@ end;
 
 initialization
   GetFormatSettings(DefaultFormatSettings);
+=======
+    NegCurrFormat := NegFormatsTable[signp, prec, sep];
+  //Number stuff
+  ThousandSeparator:=GetLocaleChar(__THOUSANDS_SEP);
+  {$endif}
+  DecimalSeparator:=GetLocaleChar(RADIXCHAR);
+end;
+
+initialization
+  GetFormatSettings;
+>>>>>>> graemeg/fixes_2_2
 
 end.

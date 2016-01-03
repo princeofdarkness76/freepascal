@@ -78,10 +78,14 @@ begin
  if assigned(intf) and supports(intf,IInterfaceComponentReference,ref) then
    begin
     comp:=ref.getcomponent;
+<<<<<<< HEAD
     if op = opInsert then
       comp.FreeNotification(Self)
     else
       comp.RemoveFreeNotification(Self); 
+=======
+    comp.notification(self,op); 
+>>>>>>> graemeg/fixes_2_2
    end;
 end;
 
@@ -804,6 +808,7 @@ begin
     Result := E_NOTIMPL;
 end;
 
+<<<<<<< HEAD
 function TComponent.GetIDsOfNames(const IID: TGUID; Names: Pointer; NameCount,
   LocaleID: Integer; DispIDs: Pointer): HResult; stdcall;
 begin
@@ -822,4 +827,10 @@ begin
       VarResult, ExcepInfo, ArgErr)
   else
     Result := E_NOTIMPL;
+=======
+function TComponent.iicrGetComponent: TComponent;
+
+begin
+  result:=self;
+>>>>>>> graemeg/fixes_2_2
 end;

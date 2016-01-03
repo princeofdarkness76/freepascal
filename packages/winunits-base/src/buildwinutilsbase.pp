@@ -13,8 +13,13 @@
 
    You should have received a copy of the GNU Lesser General Public
    License along with this library; if not, write to the
+<<<<<<< HEAD
    Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
+=======
+   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
+>>>>>>> graemeg/fixes_2_2
 }
 unit buildwinutilsbase;
 
@@ -22,6 +27,7 @@ interface
 
 uses
     flatsb, winver, mmsystem, comconst, commctrl, comobj, commdlg,
+<<<<<<< HEAD
     ole2, activex, shellapi, shlobj, oleserver,  shfolder, richedit,
     imagehlp, wininet, uxtheme, dwmapi, multimon, htmlhelp, winutils,
 <<<<<<< HEAD
@@ -43,6 +49,9 @@ uses
 =======
     comserv, winspool, imm, imm_dyn, nb30;
 >>>>>>> origin/cpstrnew
+=======
+    ole2, activex, shellapi, shlobj, oleserver,  shfolder, richedit,imagehlp,wininet;
+>>>>>>> graemeg/fixes_2_2
 
 implementation
 

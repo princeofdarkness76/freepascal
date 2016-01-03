@@ -8,6 +8,7 @@ name=fcl-db
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
 =======
@@ -26,16 +27,35 @@ dirs_linux=src/dbase src/sqlite src/paradox src/export src/datadict src/codegen
 dirs_freebsd=src/dbase src/sqlite src/paradox src/export src/datadict src/codegen
 dirs_darwin=src/dbase src/sqlite
 dirs_iphonesim=src/dbase src/sqlite
+=======
+version=2.2.5
+
+[target]
+dirs=src/sdf src/memds src/sqldb src/base 
+dirs_beos=src/dbase src/sqlite src/paradox src/export src/datadict src/codegen
+dirs_linux=src/dbase src/sqlite src/paradox src/export src/datadict src/codegen 
+dirs_freebsd=src/dbase src/sqlite src/paradox src/export src/datadict src/codegen
+dirs_darwin=src/dbase src/sqlite
+>>>>>>> graemeg/fixes_2_2
 dirs_solaris=src/dbase src/sqlite
 dirs_netbsd=src/dbase src/sqlite src/paradox
 dirs_openbsd=src/dbase src/sqlite src/paradox
 dirs_win32=src/dbase src/paradox src/sqlite src/export src/datadict src/codegen 
 dirs_win64=src/dbase src/export src/datadict src/codegen 
 dirs_wince=src/dbase src/sqlite src/export src/datadict src/codegen
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
 [require]
 packages=rtl fpmkunit
+=======
+
+[require]
+packages=fcl-base fcl-xml
+
+[compiler]
+options=-S2h
+>>>>>>> graemeg/fixes_2_2
 
 [install]
 fpcpackage=y
@@ -163,6 +183,7 @@ src/dbase_debug: src/base_debug
 src/dbase_smart: src/base_smart
 src/dbase_release: src/base_release
 src/dbase_shared: src/base_shared
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -174,3 +195,5 @@ src/dbase_shared: src/base_shared
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2

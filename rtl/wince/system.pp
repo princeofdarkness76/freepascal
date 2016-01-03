@@ -43,7 +43,11 @@ const
  PathSeparator = ';';
  AllowDirectorySeparators : set of char = ['\','/'];
  AllowDriveSeparators : set of char = [':'];
+<<<<<<< HEAD
 { FileNameCaseSensitive and FileNameCasePreserving are defined separately below!!! }
+=======
+{ FileNameCaseSensitive is defined separately below!!! }
+>>>>>>> graemeg/fixes_2_2
  maxExitCode = 65535;
  MaxPathLen = 260;
  AllFilesMask = '*';
@@ -55,8 +59,12 @@ const
   StdOutputHandle : THandle = 0;
   StdErrorHandle  : THandle = 0;
 
+<<<<<<< HEAD
   FileNameCaseSensitive : boolean = false;
   FileNameCasePreserving: boolean = true;
+=======
+  FileNameCaseSensitive : boolean = true;
+>>>>>>> graemeg/fixes_2_2
   CtrlZMarksEOF: boolean = true; (* #26 is considered as end of file *)
 
   sLineBreak = LineEnding;
@@ -819,6 +827,10 @@ begin
        end;
      DLL_THREAD_ATTACH :
        begin
+<<<<<<< HEAD
+=======
+         inclocked(Thread_count);
+>>>>>>> graemeg/fixes_2_2
 { Allocate Threadvars ?!}
          if assigned(Dll_Thread_Attach_Hook) then
            Dll_Thread_Attach_Hook(DllParam);

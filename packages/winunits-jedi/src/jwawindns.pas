@@ -80,6 +80,17 @@ type
 {$ENDIF JWA_INCLUDEMODE}
 
 //
+<<<<<<< HEAD
+=======
+//  Define QWORD -- not yet defined globally 
+//
+
+type
+  QWORD = Int64;
+  {$EXTERNALSYM QWORD}
+
+//
+>>>>>>> graemeg/fixes_2_2
 //  DNS public types
 //
 
@@ -159,7 +170,11 @@ type
 //  IP6 string max is 45 bytes
 //      - 6 WORDs in colon+hex (5 chars)
 //      - last DWORD as IP4 (15 chars)
+<<<<<<< HEAD
 //
+=======
+//  
+>>>>>>> graemeg/fixes_2_2
 
 const
   IP6_ADDRESS_STRING_LENGTH        = 47;
@@ -1882,7 +1897,11 @@ end;
 
 function DNS_HEADER_FLAGS(pHead: PDNS_HEADER): WORD;
 begin
+<<<<<<< HEAD
   Result := PWORD(@pHead^.Flags)^;
+=======
+  Result := PWORD(Integer(pHead) + SizeOf(WORD))^;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure DNS_BYTE_FLIP_HEADER_COUNTS(var pHeader: PDNS_HEADER);
@@ -1907,17 +1926,29 @@ end;
 
 function IS_WORD_ALIGNED(P: Pointer): BOOL;
 begin
+<<<<<<< HEAD
   Result := (PtrUInt(P) and 1) = 0;
+=======
+  Result := (Integer(P) and 1) = 0;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function IS_DWORD_ALIGNED(P: Pointer): BOOL;
 begin
+<<<<<<< HEAD
   Result := (PtrUInt(P) and 3) = 0;
+=======
+  Result := (Integer(P) and 3) = 0;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function IS_QWORD_ALIGNED(P: Pointer): BOOL;
 begin
+<<<<<<< HEAD
   Result := (PtrUInt(P) and 7) = 0;
+=======
+  Result := (Integer(P) and 7) = 0;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function DNS_TEXT_RECORD_LENGTH(StringCount: Integer): Integer;

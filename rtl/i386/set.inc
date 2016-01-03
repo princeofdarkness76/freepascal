@@ -13,6 +13,7 @@
 
  **********************************************************************}
 
+<<<<<<< HEAD
 { the following code is exactly big endian set-related, but specific to the old
   scheme whereby sets were either 4 or 32 bytes. I've left the routines here
   so if someone wants to, they can create equivalents of the new varset helpers
@@ -20,6 +21,9 @@
 }
 
 {$ifdef FPC_OLD_BIGENDIAN_SETS}
+=======
+{$ifndef FPC_NEW_BIGENDIAN_SETS}
+>>>>>>> graemeg/fixes_2_2
 
 {$define FPC_SYSTEM_HAS_FPC_SET_LOAD_SMALL}
 function fpc_set_load_small(l: fpc_small_set): fpc_normal_set;assembler;[public,alias:'FPC_SET_LOAD_SMALL']; compilerproc;
@@ -591,4 +595,8 @@ end;
 
 {$endif LARGESET}
 
+<<<<<<< HEAD
 {$endif FPC_OLD_BIGENDIAN_SETS}
+=======
+{$endif ndef FPC_NEW_BIGENDIAN_SETS}
+>>>>>>> graemeg/fixes_2_2

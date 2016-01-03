@@ -584,6 +584,7 @@ A_MOVNTSD,
 A_INSERTQ,
 A_EXTRQ,
 A_LZCNT,
+<<<<<<< HEAD
 A_PABSB,
 A_PABSW,
 A_PABSD,
@@ -1069,4 +1070,7 @@ A_CMPSQ
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+A_POPCNT
+>>>>>>> graemeg/fixes_2_2
 );

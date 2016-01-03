@@ -170,12 +170,18 @@ Begin
   FpStat:=FpStat(pchar(SystemPath),buf);
 End;
 
+<<<<<<< HEAD
 Function  fpLstat   (const path: RawByteString; Info: pstat):cint; inline;
 var
   SystemPath: RawByteString;
 Begin
   SystemPath:=ToSingleByteFileSystemEncodedFileName(path);
   fplstat:=fplstat(pchar(SystemPath), info);
+=======
+Function  fpLstat   (path: Ansistring; Info: pstat):cint; inline;
+begin
+  fplstat:=fplstat(pchar(path), info);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Function  fpLstat   (path:pchar;var Info:stat):cint; inline;
@@ -184,7 +190,17 @@ begin
   fpLstat:=fplstat(path,@info);
 end;
 
+<<<<<<< HEAD
 Function  fpLstat   (const Filename: RawByteString;var Info:stat):cint; inline;
+=======
+Function  fpLstat   (Filename: ansistring;var Info:stat):cint; inline;
+
+begin
+  fpLstat:=fplstat(filename,@info);
+end;
+
+Function FpAccess (pathname : AnsiString; aMode : cInt): cInt; {$ifdef VER2_0}inline;{$endif}
+>>>>>>> graemeg/fixes_2_2
 Begin
   fpLstat:=fplstat(filename,@info);
 end;

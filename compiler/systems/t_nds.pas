@@ -785,12 +785,19 @@ begin
   SplitBinCmd(Info.ExeCmd[1],binstr,cmdstr);
   Replace(cmdstr,'$OPT',Info.ExtraOptions);
 
+<<<<<<< HEAD
   Replace(cmdstr,'$EXE',(maybequoted(ScriptFixFileName(ChangeFileExt(current_module.exefilename,preName)))));
+=======
+  Replace(cmdstr,'$EXE',(maybequoted(ScriptFixFileName(ChangeFileExt(current_module.exefilename^,preName)))));
+>>>>>>> graemeg/fixes_2_2
   Replace(cmdstr,'$RES',(maybequoted(ScriptFixFileName(outputexedir+Info.ResName))));
   Replace(cmdstr,'$STATIC',StaticStr);
   Replace(cmdstr,'$STRIP',StripStr);
   Replace(cmdstr,'$GCSECTIONS',GCSectionsStr);
+<<<<<<< HEAD
   Replace(cmdstr,'$MAP',MapStr);
+=======
+>>>>>>> graemeg/fixes_2_2
   Replace(cmdstr,'$DYNLINK',DynLinkStr);
   
   success:=DoExec(FindUtil(utilsprefix+BinStr),cmdstr,true,false);
@@ -803,8 +810,13 @@ begin
   if success then
     begin
       success:=DoExec(FindUtil(utilsprefix + 'objcopy'), '-O binary '+ 
+<<<<<<< HEAD
         ChangeFileExt(current_module.exefilename, preName) + ' ' + 
         ChangeFileExt(current_module.exefilename, preName+target_info.exeext),
+=======
+        ChangeFileExt(current_module.exefilename^, preName) + ' ' + 
+        ChangeFileExt(current_module.exefilename^, preName+target_info.exeext),
+>>>>>>> graemeg/fixes_2_2
         true,false);
     end;
 

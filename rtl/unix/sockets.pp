@@ -17,6 +17,7 @@ Interface
 Uses baseunix,UnixType;
 {$endif}
 
+<<<<<<< HEAD
 {$i osdefs.inc}       { Compile time defines }
 
 {$if 
@@ -29,6 +30,15 @@ Uses baseunix,UnixType;
 
 Type 
  TSockLen = BaseUnix.TSocklen;
+=======
+{$ifdef FreeBSD}
+{$DEFINE SOCK_HAS_SINLEN}               // BSD definition of socketaddr
+{$endif}
+
+{$ifdef Darwin}
+{$DEFINE SOCK_HAS_SINLEN}               // BSD definition of socketaddr
+{$endif}
+>>>>>>> graemeg/fixes_2_2
 
 {$i unxsockh.inc}
 {$i socketsh.inc}

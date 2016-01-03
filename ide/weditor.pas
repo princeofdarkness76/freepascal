@@ -58,6 +58,7 @@ const
       cmCollapseFold         = 51266;
       cmExpandFold           = 51267;
       cmDelToEndOfWord       = 51268;
+<<<<<<< HEAD
       cmInputLineLen         = 51269;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -79,6 +80,13 @@ const
       EditorTextBufSize = 32768;
       MaxLineLength     = 255;
       MaxLineCount      = 2000000;
+=======
+
+      EditorTextBufSize = 32768;
+      MaxLineLength     = 255;
+      MaxLineCount      = 2000000;
+
+>>>>>>> graemeg/fixes_2_2
 
       CodeTemplateCursorChar = '|'; { char to signal cursor pos in templates }
 

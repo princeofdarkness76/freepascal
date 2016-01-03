@@ -1,6 +1,7 @@
 {$mode objfpc}{$h+}
 uses classes, sysutils;
 type
+<<<<<<< HEAD
   generic TNode<T> = class
   public
     type
@@ -56,6 +57,31 @@ type
     procedure SetV(v: TTNode.T);
 >>>>>>> origin/cpstrnew
   end;
+=======
+        generic TNode<T> = class
+        type public
+                PT = ^T;
+        var private
+                Data: T;
+        public
+                constructor Create;
+                destructor Destroy; override;
+        end;
+
+        generic TContainer<T> = class
+        type public
+                TTNode = specialize TNode<T>;
+        var
+        private
+                Data: TTNode;
+        public
+                constructor Create;
+                destructor Destroy; override;
+
+                function GetAddr: TTNode.PT;
+                procedure SetV(v: TTNode.T);
+        end;
+>>>>>>> graemeg/fixes_2_2
 
 constructor TNode.Create;
 begin
@@ -63,7 +89,11 @@ end;
 
 destructor TNode.Destroy;
 begin
+<<<<<<< HEAD
   inherited Destroy;
+=======
+        inherited Destroy;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 constructor TContainer.Create;
@@ -83,7 +113,11 @@ begin
 end;
 
 
+<<<<<<< HEAD
 procedure TContainer.SetV(v: TTNode.TAlias);
+=======
+procedure TContainer.SetV(v: TTNode.T);
+>>>>>>> graemeg/fixes_2_2
 begin
   Data.Data:=v;
 end;
@@ -94,6 +128,11 @@ var
   c : TStringContainer;
 begin
   c:=TStringContainer.Create;
+<<<<<<< HEAD
   c.SetV('abc');
   Writeln(HexStr(c.GetAddr));
+=======
+  c.Set('abc');
+  Writeln(HexStr(c.Get));
+>>>>>>> graemeg/fixes_2_2
 end.

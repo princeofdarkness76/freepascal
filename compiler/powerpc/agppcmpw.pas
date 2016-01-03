@@ -79,6 +79,7 @@ interface
         'csect', {read only data}
         'csect', {read only data - no relocations}
         'csect', {bss} 'csect', '',
+<<<<<<< HEAD
         'csect','csect','csect','csect','csect',
         'csect','csect','csect',
          '','','','','','','','','','','','','','',
@@ -130,6 +131,10 @@ interface
 =======
 >>>>>>> origin/cpstrnew
         ''
+=======
+        'csect','csect','csect','csect',
+         '','','','','','','','','','','','','',''
+>>>>>>> graemeg/fixes_2_2
       );
 
     type
@@ -756,7 +761,11 @@ interface
             ait_section:
               begin
                  {if LastSecType<>sec_none then
+<<<<<<< HEAD
                   writer.AsmWriteLn('_'+asminfo^.secnames[LastSecType]+#9#9'ENDS');}
+=======
+                  AsmWriteLn('_'+target_asm.secnames[LastSecType]+#9#9'ENDS');}
+>>>>>>> graemeg/fixes_2_2
 
                  if tai_section(hp).sectype<>sec_none then
                   begin
@@ -1214,9 +1223,15 @@ interface
     procedure TPPCMPWAssembler.WriteAsmFileHeader;
 
     begin
+<<<<<<< HEAD
       writer.AsmWriteLn(#9'string asis');  {Interpret strings just to be the content between the quotes.}
       writer.AsmWriteLn(#9'aligning off'); {We do our own aligning.}
       writer.AsmLn;
+=======
+      AsmWriteLn(#9'string asis');  {Interpret strings just to be the content between the quotes.}
+      AsmWriteLn(#9'aligning off'); {We do our own aligning.}
+      AsmLn;
+>>>>>>> graemeg/fixes_2_2
     end;
 
     procedure TPPCMPWAssembler.WriteAsmList;

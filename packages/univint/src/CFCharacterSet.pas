@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1999-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -33,6 +34,17 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+	Copyright (c) 1999-2005, Apple, Inc. All rights reserved.
+}
+{   Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -41,8 +53,13 @@
 
 unit CFCharacterSet;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -55,21 +72,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -104,6 +129,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -111,6 +138,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
@@ -332,6 +360,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -357,6 +395,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -367,8 +409,11 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFData;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -408,6 +453,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFCharacterSetRef = ^__CFCharacterSet; { an opaque type }
 	__CFCharacterSet = record end;
 =======
@@ -422,6 +468,9 @@ type
 =======
 	CFCharacterSetRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	CFCharacterSetRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 	CFCharacterSetRefPtr = ^CFCharacterSetRef;
 
 {!
@@ -441,6 +490,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFCharacterSetPredefinedSet = CFIndex;
 =======
 	CFCharacterSetPredefinedSet = SIGNEDLONG;
@@ -454,6 +504,9 @@ type
 =======
 	CFCharacterSetPredefinedSet = SIGNEDLONG;
 >>>>>>> origin/cpstrnew
+=======
+	CFCharacterSetPredefinedSet = SInt32;
+>>>>>>> graemeg/fixes_2_2
 const
 	kCFCharacterSetControl = 1; { Control character set (Unicode General Category Cc and Cf) }
 	kCFCharacterSetWhitespace = 2; { Whitespace character set (Unicode General Category Zs and U0009 CHARACTER TABULATION) }
@@ -538,6 +591,7 @@ function CFCharacterSetCreateWithCharactersInString( alloc: CFAllocatorRef; theS
                 bitmap representation of the Unicode character points
                 the character set is filled with.  The bitmap
                 representation could contain all the Unicode character
+<<<<<<< HEAD
                 range starting from BMP to Plane 16.  The first 8192 bytes
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -561,6 +615,15 @@ function CFCharacterSetCreateWithCharactersInString( alloc: CFAllocatorRef; theS
                 For example, the bitmap representing the BMP and Plane 2
                 has the size of 16385 bytes (8192 bytes for BMP, 1 byte
                 index + 8192 bytes bitmap for Plane 2).  The plane index
+=======
+                range starting from BMP to Plane 16.  The first 8K bytes
+                of the data represents the BMP range.  The BMP range 8K
+                bytes can be followed by zero to sixteen 8K byte
+                bitmaps, each one with the plane index byte prepended.
+                For example, the bitmap representing the BMP and Plane 2
+                has the size of 16385 bytes (8K bytes for BMP, 1 byte
+                index + 8K bytes bitmap for Plane 2).  The plane index
+>>>>>>> graemeg/fixes_2_2
                 byte, in this case, contains the integer value two.  If
                 this parameter is not a valid CFData or it contains a
                 Plane index byte outside of the valid Plane range
@@ -783,7 +846,12 @@ procedure CFCharacterSetIntersect( theSet: CFMutableCharacterSetRef; theOtherSet
 }
 procedure CFCharacterSetInvert( theSet: CFMutableCharacterSetRef ); external name '_CFCharacterSetInvert';
 
+<<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+end.
+>>>>>>> graemeg/fixes_2_2

@@ -327,6 +327,24 @@ unit cgobj;
           { bit scan instructions }
           procedure a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; size: tcgsize; src, dst: TRegister); virtual; abstract;
 
+          { bit test instructions }
+          procedure a_bit_test_reg_reg_reg(list : TAsmList; bitnumbersize,valuesize,destsize: tcgsize;bitnumber,value,destreg: tregister); virtual;
+          procedure a_bit_test_const_ref_reg(list: TAsmList; destsize: tcgsize; bitnumber: aint; const ref: treference; destreg: tregister); virtual;
+          procedure a_bit_test_const_reg_reg(list: TAsmList; setregsize, destsize: tcgsize; bitnumber: aint; setreg, destreg: tregister); virtual;
+          procedure a_bit_test_const_subsetreg_reg(list: TAsmList; setregsize, destsize: tcgsize; bitnumber: aint; const setreg: tsubsetregister; destreg: tregister); virtual;
+          procedure a_bit_test_reg_ref_reg(list: TAsmList; bitnumbersize, destsize: tcgsize; bitnumber: tregister; const ref: treference; destreg: tregister); virtual;
+          procedure a_bit_test_reg_loc_reg(list: TAsmList; bitnumbersize, destsize: tcgsize; bitnumber: tregister; const loc: tlocation; destreg: tregister);
+          procedure a_bit_test_const_loc_reg(list: TAsmList; destsize: tcgsize; bitnumber: aint; const loc: tlocation; destreg: tregister);
+
+          { bit set/clear instructions }
+          procedure a_bit_set_reg_reg(list : TAsmList; doset: boolean; bitnumbersize, destsize: tcgsize; bitnumber,dest: tregister); virtual;
+          procedure a_bit_set_const_ref(list: TAsmList; doset: boolean;destsize: tcgsize; bitnumber: aint; const ref: treference); virtual;
+          procedure a_bit_set_const_reg(list: TAsmList; doset: boolean; destsize: tcgsize; bitnumber: aint; destreg: tregister); virtual;
+          procedure a_bit_set_const_subsetreg(list: TAsmList; doset: boolean; destsize: tcgsize; bitnumber: aint; const destreg: tsubsetregister); virtual;
+          procedure a_bit_set_reg_ref(list: TAsmList; doset: boolean; bitnumbersize: tcgsize; bitnumber: tregister; const ref: treference); virtual;
+          procedure a_bit_set_reg_loc(list: TAsmList; doset: boolean; bitnumbersize: tcgsize; bitnumber: tregister; const loc: tlocation);
+          procedure a_bit_set_const_loc(list: TAsmList; doset: boolean; bitnumber: aint; const loc: tlocation);
+
           { fpu move instructions }
           procedure a_loadfpu_reg_reg(list: TAsmList; fromsize, tosize:tcgsize; reg1, reg2: tregister); virtual; abstract;
           procedure a_loadfpu_ref_reg(list: TAsmList; fromsize, tosize: tcgsize; const ref: treference; reg: tregister); virtual; abstract;
@@ -541,6 +559,7 @@ unit cgobj;
              @param(usedinproc Registers which are used in the code of this routine)
           }
           procedure g_restore_registers(list:TAsmList);virtual;
+<<<<<<< HEAD
 
           procedure g_adjust_self_value(list:TAsmList;procdef: tprocdef;ioffset: tcgint);virtual;
 
@@ -557,6 +576,32 @@ unit cgobj;
 
          protected
           function g_indirect_sym_load(list:TAsmList;const symname: string; const flags: tindsymflags): tregister;virtual;
+=======
+                    
+          procedure g_intf_wrapper(list: TAsmList; procdef: tprocdef; const labelname: string; ioffset: longint);virtual;abstract;
+          procedure g_adjust_self_value(list:TAsmList;procdef: tprocdef;ioffset: aint);virtual;
+
+          function g_indirect_sym_load(list:TAsmList;const symname: string): tregister;virtual;
+          { generate a stub which only purpose is to pass control the given external method,
+          setting up any additional environment before doing so (if required).
+
+          The default implementation issues a jump instruction to the external name. }
+          procedure g_external_wrapper(list : TAsmList; procdef: tprocdef; const externalname: string); virtual;
+
+          { initialize the pic/got register }
+          procedure g_maybe_got_init(list: TAsmList); virtual;
+        protected
+          procedure get_subsetref_load_info(const sref: tsubsetreference; out loadsize: tcgsize; out extra_load: boolean);
+          procedure a_load_subsetref_regs_noindex(list: TAsmList; subsetsize: tcgsize; loadbitsize: byte; const sref: tsubsetreference; valuereg, extra_value_reg: tregister); virtual;
+          procedure a_load_subsetref_regs_index(list: TAsmList; subsetsize: tcgsize; loadbitsize: byte; const sref: tsubsetreference; valuereg, extra_value_reg: tregister); virtual;
+
+          procedure a_load_regconst_subsetref_intern(list : TAsmList; fromsize, subsetsize: tcgsize; fromreg: tregister; const sref: tsubsetreference; slopt: tsubsetloadopt); virtual;
+          procedure a_load_regconst_subsetreg_intern(list : TAsmList; fromsize, subsetsize: tcgsize; fromreg: tregister; const sreg: tsubsetregister; slopt: tsubsetloadopt); virtual;
+
+          function get_bit_const_ref_sref(bitnumber: aint; const ref: treference): tsubsetreference;
+          function get_bit_const_reg_sreg(setregsize: tcgsize; bitnumber: aint; setreg: tregister): tsubsetregister;
+          function get_bit_reg_ref_sref(list: TAsmList; bitnumbersize: tcgsize; bitnumber: tregister; const ref: treference): tsubsetreference;
+>>>>>>> graemeg/fixes_2_2
        end;
 
 {$ifdef cpu64bitalu}
@@ -1601,6 +1646,7 @@ implementation
       var
         href : treference;
       begin
+<<<<<<< HEAD
          case paraloc.loc of
            LOC_REGISTER :
              begin
@@ -1671,6 +1717,16 @@ implementation
              internalerror(2002081302);
          end;
       end;
+=======
+        intloadsize := packedbitsloadsize(sref.bitlen);
+
+        if (intloadsize = 0) then
+          internalerror(2006081310);
+
+        if (intloadsize > sizeof(aint)) then
+          intloadsize := sizeof(aint);
+        loadsize := int_cgsize(intloadsize);
+>>>>>>> graemeg/fixes_2_2
 
 
 {****************************************************************************
@@ -1791,6 +1847,23 @@ implementation
             { if there are no bits in extra_value_reg, then sref.bitindex was      }
             { < loadsize-sref.bitlen, and therefore tmpreg will now be >= loadsize }
             { => extra_value_reg is now 0                                          }
+<<<<<<< HEAD
+=======
+
+{$ifdef sparc}
+            { except on sparc, where "shr X" = "shr (X and (bitsize-1))" }
+            if (loadbitsize = AIntBits) then
+              begin
+                { if (tmpreg >= cpu_bit_size) then tmpreg := 1 else tmpreg := 0 }
+                a_op_const_reg(list,OP_SHR,OS_INT,{$ifdef cpu64bit}6{$else}5{$endif},tmpreg);
+                { if (tmpreg = cpu_bit_size) then tmpreg := 0 else tmpreg := -1 }
+                a_op_const_reg(list,OP_SUB,OS_INT,1,tmpreg);
+                { if (tmpreg = cpu_bit_size) then extra_value_reg := 0 }
+                a_op_reg_reg(list,OP_AND,OS_INT,tmpreg,extra_value_reg);
+              end;
+{$endif sparc}
+
+>>>>>>> graemeg/fixes_2_2
             { merge }
             a_op_reg_reg(list,OP_OR,OS_INT,extra_value_reg,valuereg);
             { no need to mask, necessary masking happened earlier on }
@@ -2073,7 +2146,11 @@ implementation
                   SL_SETZERO,
                   SL_SETMAX:
                     a_load_regconst_subsetreg_intern(list,fromsize,subsetsize,fromreg,tosreg,slopt);
+<<<<<<< HEAD
                   else
+=======
+                  else                 
+>>>>>>> graemeg/fixes_2_2
                     a_load_subsetreg_subsetreg(list,subsetsize,subsetsize,fromsreg,tosreg);
                 end;
                 valuereg := makeregsize(list,valuereg,loadsize);
@@ -2105,7 +2182,11 @@ implementation
                   SL_SETZERO,
                   SL_SETMAX:
                     a_load_regconst_subsetreg_intern(list,fromsize,subsetsize,fromreg,tosreg,slopt);
+<<<<<<< HEAD
                   else
+=======
+                  else                 
+>>>>>>> graemeg/fixes_2_2
                     a_load_subsetreg_subsetreg(list,subsetsize,subsetsize,fromsreg,tosreg);
                 end;
                 extra_value_reg := makeregsize(list,extra_value_reg,loadsize);
@@ -2199,6 +2280,20 @@ implementation
                         a_op_reg_reg(list,OP_NEG,OS_INT,tmpindexreg,tmpindexreg);
                         a_load_const_reg(list,OS_INT,aint((aword(1) shl sref.bitlen)-1),maskreg);
                         a_op_reg_reg(list,OP_SHL,OS_INT,tmpindexreg,maskreg);
+{$ifdef sparc}
+                        {  on sparc, "shr X" = "shr (X and (bitsize-1))" -> fix so shr (x>32) = 0 }
+                        if (loadbitsize = AIntBits) then
+                          begin
+                            { if (tmpindexreg >= cpu_bit_size) then tmpreg := 1 else tmpreg := 0 }
+                            a_op_const_reg_reg(list,OP_SHR,OS_INT,{$ifdef cpu64bit}6{$else}5{$endif},tmpindexreg,valuereg);
+                            { if (tmpindexreg = cpu_bit_size) then maskreg := 0 else maskreg := -1 }
+                            a_op_const_reg(list,OP_SUB,OS_INT,1,valuereg);
+                            { if (tmpindexreg = cpu_bit_size) then maskreg := 0 }
+                            if (slopt <> SL_SETZERO) then
+                              a_op_reg_reg(list,OP_AND,OS_INT,valuereg,tmpreg);
+                            a_op_reg_reg(list,OP_AND,OS_INT,valuereg,maskreg);
+                          end;
+{$endif sparc}
                       end
                     else
                       begin
@@ -2616,7 +2711,11 @@ implementation
         tmpreg : tregister;
         i : longint;
       begin
+<<<<<<< HEAD
         if ref.alignment<tcgsize2size[fromsize] then
+=======
+        if ref.alignment<>0 then
+>>>>>>> graemeg/fixes_2_2
           begin
             tmpref:=ref;
             { we take care of the alignment now }
@@ -2641,7 +2740,10 @@ implementation
                 end;
               OS_32,OS_S32:
                 begin
+<<<<<<< HEAD
                   { could add an optimised case for ref.alignment=2 }
+=======
+>>>>>>> graemeg/fixes_2_2
                   tmpreg:=getintregister(list,OS_32);
                   a_load_reg_reg(list,fromsize,OS_32,register,tmpreg);
                   if target_info.endian=endian_big then
@@ -2670,22 +2772,31 @@ implementation
       end;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
     procedure tcg.a_load_ref_reg_unaligned(list : TAsmList;fromsize,tosize : tcgsize;const ref : treference;register : tregister);
       var
         tmpref : treference;
         tmpreg,
         tmpreg2 : tregister;
         i : longint;
+<<<<<<< HEAD
         hisize : tcgsize;
       begin
         if ref.alignment in [1,2] then
+=======
+      begin
+        if ref.alignment<>0 then
+>>>>>>> graemeg/fixes_2_2
           begin
             tmpref:=ref;
             { we take care of the alignment now }
             tmpref.alignment:=0;
             case FromSize of
               OS_16,OS_S16:
+<<<<<<< HEAD
                 if ref.alignment=2 then
                   a_load_ref_reg(list,fromsize,tosize,tmpref,register)
                 else
@@ -2747,6 +2858,43 @@ implementation
                       end;
                     a_load_reg_reg(list,OS_32,tosize,tmpreg,register);
                   end
+=======
+                begin
+                  { first load in tmpreg, because the target register }
+                  { may be used in ref as well                        }
+                  if target_info.endian=endian_little then
+                    inc(tmpref.offset);
+                  tmpreg:=getintregister(list,OS_8);
+                  a_load_ref_reg(list,OS_8,OS_8,tmpref,tmpreg);
+                  tmpreg:=makeregsize(list,tmpreg,OS_16);
+                  a_op_const_reg(list,OP_SHL,OS_16,8,tmpreg);
+                  if target_info.endian=endian_little then
+                    dec(tmpref.offset)
+                  else
+                    inc(tmpref.offset);
+                  a_load_ref_reg(list,OS_8,OS_16,tmpref,register);
+                  a_op_reg_reg(list,OP_OR,OS_16,tmpreg,register);
+                end;
+              OS_32,OS_S32:
+                begin
+                  if target_info.endian=endian_little then
+                    inc(tmpref.offset,3);
+                  tmpreg:=getintregister(list,OS_32);
+                  a_load_ref_reg(list,OS_8,OS_32,tmpref,tmpreg);
+                  tmpreg2:=getintregister(list,OS_32);
+                  for i:=1 to 3 do
+                    begin
+                      a_op_const_reg(list,OP_SHL,OS_32,8,tmpreg);
+                      if target_info.endian=endian_little then
+                        dec(tmpref.offset)
+                      else
+                        inc(tmpref.offset);
+                      a_load_ref_reg(list,OS_8,OS_32,tmpref,tmpreg2);
+                      a_op_reg_reg(list,OP_OR,OS_32,tmpreg2,tmpreg);
+                    end;
+                  a_load_reg_reg(list,OS_32,OS_32,tmpreg,register);
+                end
+>>>>>>> graemeg/fixes_2_2
               else
                 a_load_ref_reg(list,fromsize,tosize,tmpref,register);
             end;
@@ -2991,7 +3139,11 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     procedure tcg.a_loadfpu_reg_cgpara(list : TAsmList;size : tcgsize;const r : tregister;const cgpara : TCGPara);
+=======
+    procedure tcg.a_paramfpu_reg(list : TAsmList;size : tcgsize;const r : tregister;const cgpara : TCGPara);
+>>>>>>> graemeg/fixes_2_2
       var
          ref : treference;
       begin
@@ -3117,7 +3269,33 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     procedure tcg.a_op_const_loc(list : TAsmList; Op: TOpCG; a: tcgint; const loc: tlocation);
+=======
+    procedure tcg.a_op_const_subsetreg(list : TAsmList; Op : TOpCG; size, subsetsize : TCGSize; a : aint; const sreg: tsubsetregister);
+      var
+        tmpreg: tregister;
+      begin
+        tmpreg := getintregister(list, size);
+        a_load_subsetreg_reg(list,subsetsize,size,sreg,tmpreg);
+        a_op_const_reg(list,op,size,a,tmpreg);
+        a_load_reg_subsetreg(list,size,subsetsize,tmpreg,sreg);
+      end;
+
+
+    procedure tcg.a_op_const_subsetref(list : TAsmList; Op : TOpCG; size, subsetsize : TCGSize; a : aint; const sref: tsubsetreference);
+      var
+        tmpreg: tregister;
+      begin
+        tmpreg := getintregister(list, size);
+        a_load_subsetref_reg(list,subsetsize,size,sref,tmpreg);
+        a_op_const_reg(list,op,size,a,tmpreg);
+        a_load_reg_subsetref(list,size,subsetsize,tmpreg,sref);
+      end;
+
+
+    procedure tcg.a_op_const_loc(list : TAsmList; Op: TOpCG; a: aint; const loc: tlocation);
+>>>>>>> graemeg/fixes_2_2
       begin
         case loc.loc of
           LOC_REGISTER, LOC_CREGISTER:
@@ -3164,6 +3342,31 @@ implementation
       end;
 
 
+<<<<<<< HEAD
+=======
+    procedure tcg.a_op_reg_subsetreg(list : TAsmList; Op : TOpCG; opsize, subsetsize : TCGSize; reg: TRegister; const sreg: tsubsetregister);
+      var
+        tmpreg: tregister;
+      begin
+        tmpreg := getintregister(list, opsize);
+        a_load_subsetreg_reg(list,subsetsize,opsize,sreg,tmpreg);
+        a_op_reg_reg(list,op,opsize,reg,tmpreg);
+        a_load_reg_subsetreg(list,opsize,subsetsize,tmpreg,sreg);
+      end;
+
+
+    procedure tcg.a_op_reg_subsetref(list : TAsmList; Op : TOpCG; opsize, subsetsize : TCGSize; reg: TRegister; const sref: tsubsetreference);
+      var
+        tmpreg: tregister;
+      begin
+        tmpreg := getintregister(list, opsize);
+        a_load_subsetref_reg(list,subsetsize,opsize,sref,tmpreg);
+        a_op_reg_reg(list,op,opsize,reg,tmpreg);
+        a_load_reg_subsetref(list,opsize,subsetsize,tmpreg,sref);
+      end;
+
+
+>>>>>>> graemeg/fixes_2_2
     procedure tcg.a_op_reg_loc(list : TAsmList; Op: TOpCG; reg: tregister; const loc: tlocation);
 
       begin
@@ -4050,9 +4253,64 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     procedure tcg.g_concatcopy_unaligned(list : TAsmList;const source,dest : treference;len : tcgint);
       begin
         g_concatcopy(list,source,dest,len);
+=======
+        if from_signed xor to_signed then
+          begin
+             if from_signed then
+               { from is signed, to is unsigned }
+               begin
+                 { if high(from) < 0 -> always range error }
+                 if (hfrom < 0) or
+                    { if low(to) > maxlongint also range error }
+                    (lto > aintmax) then
+                   begin
+                     a_call_name(list,'FPC_RANGEERROR');
+                     exit
+                   end;
+                 { from is signed and to is unsigned -> when looking at to }
+                 { as an signed value, it must be < maxaint (otherwise     }
+                 { it will become negative, which is invalid since "to" is unsigned) }
+                 if hto > aintmax then
+                   hto := aintmax;
+               end
+             else
+               { from is unsigned, to is signed }
+               begin
+                 if (lfrom > aintmax) or
+                    (hto < 0) then
+                   begin
+                     a_call_name(list,'FPC_RANGEERROR');
+                     exit
+                   end;
+                 { from is unsigned and to is signed -> when looking at to }
+                 { as an unsigned value, it must be >= 0 (since negative   }
+                 { values are the same as values > maxlongint)             }
+                 if lto < 0 then
+                   lto := 0;
+               end;
+          end;
+        hreg:=getintregister(list,OS_INT);
+        a_load_loc_reg(list,OS_INT,l,hreg);
+        a_op_const_reg(list,OP_SUB,OS_INT,aint(int64(lto)),hreg);
+        current_asmdata.getjumplabel(neglabel);
+        {
+        if from_signed then
+          a_cmp_const_reg_label(list,OS_INT,OC_GTE,aint(hto-lto),hreg,neglabel)
+        else
+        }
+{$ifdef cpu64bit}
+        if qword(hto-lto)>qword(aintmax) then
+          a_cmp_const_reg_label(list,OS_INT,OC_BE,aintmax,hreg,neglabel)
+        else
+{$endif cpu64bit}
+          a_cmp_const_reg_label(list,OS_INT,OC_BE,aint(int64(hto-lto)),hreg,neglabel);
+        a_call_name(list,'FPC_RANGEERROR');
+        a_label(list,neglabel);
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -4241,10 +4499,13 @@ implementation
         for r:=low(saved_standard_registers) to high(saved_standard_registers) do
           if saved_standard_registers[r] in rg[R_INTREGISTER].used_in_proc then
             inc(size,sizeof(aint));
+<<<<<<< HEAD
         if uses_registers(R_ADDRESSREGISTER) then
           for r:=low(saved_address_registers) to high(saved_address_registers) do
             if saved_address_registers[r] in rg[R_ADDRESSREGISTER].used_in_proc then
               inc(size,sizeof(aint));
+=======
+>>>>>>> graemeg/fixes_2_2
 
         { mm registers }
         if uses_registers(R_MMREGISTER) then
@@ -4261,7 +4522,11 @@ implementation
 
         if size>0 then
           begin
+<<<<<<< HEAD
             tg.GetTemp(list,size,sizeof(aint),tt_noreuse,current_procinfo.save_regs_ref);
+=======
+            tg.GetTemp(list,size,tt_noreuse,current_procinfo.save_regs_ref);
+>>>>>>> graemeg/fixes_2_2
             include(current_procinfo.flags,pi_has_saved_regs);
 
             { Copy registers to temp }
@@ -4276,6 +4541,7 @@ implementation
                 include(rg[R_INTREGISTER].preserved_by_proc,saved_standard_registers[r]);
               end;
 
+<<<<<<< HEAD
             if uses_registers(R_ADDRESSREGISTER) then
               for r:=low(saved_address_registers) to high(saved_address_registers) do
                 begin
@@ -4287,6 +4553,8 @@ implementation
                   include(rg[R_ADDRESSREGISTER].preserved_by_proc,saved_address_registers[r]);
                 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
             if uses_registers(R_MMREGISTER) then
               begin
                 if (href.offset mod tcgsize2size[OS_VECTOR])<>0 then
@@ -4294,6 +4562,7 @@ implementation
 
                 for r:=low(saved_mm_registers) to high(saved_mm_registers) do
                   begin
+<<<<<<< HEAD
                     { the array has to be declared even if no MM registers are saved
                       (such as with SSE on i386), and since 0-element arrays don't
                       exist, they contain a single RS_INVALID element in that case
@@ -4307,6 +4576,14 @@ implementation
                           end;
                         include(rg[R_MMREGISTER].preserved_by_proc,saved_mm_registers[r]);
                       end;
+=======
+                    if saved_mm_registers[r] in rg[R_MMREGISTER].used_in_proc then
+                      begin
+                        a_loadmm_reg_ref(list,OS_VECTOR,OS_VECTOR,newreg(R_MMREGISTER,saved_mm_registers[r],R_SUBNONE),href,nil);
+                        inc(href.offset,tcgsize2size[OS_VECTOR]);
+                      end;
+                    include(rg[R_MMREGISTER].preserved_by_proc,saved_mm_registers[r]);
+>>>>>>> graemeg/fixes_2_2
                   end;
               end;
           end;
@@ -4332,6 +4609,30 @@ implementation
               a_load_ref_reg(list,OS_ADDR,OS_ADDR,href,hreg);
               inc(href.offset,sizeof(aint));
             end;
+<<<<<<< HEAD
+=======
+
+        if uses_registers(R_MMREGISTER) then
+          begin
+            if (href.offset mod tcgsize2size[OS_VECTOR])<>0 then
+              inc(href.offset,tcgsize2size[OS_VECTOR]-(href.offset mod tcgsize2size[OS_VECTOR]));
+
+            for r:=low(saved_mm_registers) to high(saved_mm_registers) do
+              begin
+                if saved_mm_registers[r] in rg[R_MMREGISTER].used_in_proc then
+                  begin
+                    hreg:=newreg(R_MMREGISTER,saved_mm_registers[r],R_SUBNONE);
+                    { Allocate register so the optimizer does not remove the load }
+                    a_reg_alloc(list,hreg);
+                    a_loadmm_ref_reg(list,OS_VECTOR,OS_VECTOR,href,hreg,nil);
+                    inc(href.offset,tcgsize2size[OS_VECTOR]);
+                  end;
+              end;
+          end;
+        tg.UnGetTemp(list,current_procinfo.save_regs_ref);
+      end;
+
+>>>>>>> graemeg/fixes_2_2
 
         if uses_registers(R_ADDRESSREGISTER) then
           for r:=low(saved_address_registers) to high(saved_address_registers) do
@@ -4393,7 +4694,11 @@ implementation
                   begin
                     { offset in the wrapper needs to be adjusted for the stored
                       return address }
+<<<<<<< HEAD
                     reference_reset_base(href,reference.index,reference.offset+sizeof(pint),sizeof(pint));
+=======
+                    reference_reset_base(href,reference.index,reference.offset+sizeof(aint));
+>>>>>>> graemeg/fixes_2_2
                     a_op_const_ref(list,OP_SUB,size,ioffset,href);
                   end
                 else
@@ -4403,6 +4708,11 @@ implementation
             end;
       end;
 
+
+    procedure tcg.g_external_wrapper(list : TAsmList; procdef: tprocdef; const externalname: string);
+      begin
+        a_jmp_name(list,externalname);
+      end;
 
     procedure tcg.a_call_name_static(list : TAsmList;const s : string);
       begin
@@ -4420,14 +4730,20 @@ implementation
         case target_info.system of
           system_powerpc_darwin,
           system_i386_darwin,
+<<<<<<< HEAD
           system_i386_iphonesim,
           system_powerpc64_darwin,
           system_arm_darwin:
+=======
+          system_powerpc64_darwin,
+          system_x86_64_darwin:
+>>>>>>> graemeg/fixes_2_2
             begin
               nlsymname:='L'+symname+'$non_lazy_ptr';
               l:=current_asmdata.getasmsymbol(nlsymname);
               if not(assigned(l)) then
                 begin
+<<<<<<< HEAD
                   new_section(current_asmdata.asmlists[al_picdata],sec_data_nonlazy,'',sizeof(pint));
                   l:=current_asmdata.DefineAsmSymbol(nlsymname,AB_LOCAL,AT_DATA);
                   current_asmdata.asmlists[al_picdata].concat(tai_symbol.create(l,0));
@@ -4456,6 +4772,19 @@ implementation
                 end;
               result := getaddressregister(list);
               reference_reset_symbol(ref,l,0,sizeof(pint));
+=======
+                  l:=current_asmdata.DefineAsmSymbol('L'+symname+'$non_lazy_ptr',AB_LOCAL,AT_DATA);
+                  current_asmdata.asmlists[al_picdata].concat(tai_symbol.create(l,0));
+                  current_asmdata.asmlists[al_picdata].concat(tai_const.create_indirect_sym(current_asmdata.RefAsmSymbol(symname)));
+{$ifdef cpu64bit}
+                  current_asmdata.asmlists[al_picdata].concat(tai_const.create_64bit(0));
+{$else cpu64bit}
+                  current_asmdata.asmlists[al_picdata].concat(tai_const.create_32bit(0));
+{$endif cpu64bit}
+                end;
+              result := getaddressregister(list);
+              reference_reset_symbol(ref,l,0);
+>>>>>>> graemeg/fixes_2_2
               { a_load_ref_reg will turn this into a pic-load if needed }
               a_load_ref_reg(list,OS_ADDR,OS_ADDR,ref,result);
             end;
@@ -4583,6 +4912,10 @@ implementation
           InternalError(2014060601);
       end;
 
+
+    procedure tcg.g_maybe_got_init(list: TAsmList);
+      begin
+      end;
 
 {*****************************************************************************
                                     TCG64

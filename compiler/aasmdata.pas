@@ -440,6 +440,7 @@ implementation
         CurrAsmList:=TAsmList.create;
         for hal:=low(TAsmListType) to high(TAsmListType) do
           AsmLists[hal]:=TAsmList.create;
+<<<<<<< HEAD
         WideInits :=TLinkedList.create;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -454,6 +455,11 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+        { PIC data }
+        if (target_info.system in systems_darwin) then
+          AsmLists[al_picdata].concat(tai_directive.create(asd_non_lazy_symbol_pointer,''));
+>>>>>>> graemeg/fixes_2_2
         { CFI }
         FAsmCFI:=CAsmCFI.Create;
       end;
@@ -651,6 +657,7 @@ implementation
 
     procedure TAsmData.getglobaljumplabel(out l : TAsmLabel);
       begin
+<<<<<<< HEAD
         l:=TAsmLabel.createglobal(AsmSymbolDict,name^,FNextLabelNr[alt_jump],alt_jump);
         inc(FNextLabelNr[alt_jump]);
       end;
@@ -669,6 +676,11 @@ implementation
         inc(FNextLabelNr[alt_data]);
       end;
 
+=======
+        l:=TAsmLabel.createglobal(AsmSymbolDict,name,FNextLabelNr[alt_jump],alt_jump);
+        inc(FNextLabelNr[alt_jump]);
+      end;
+>>>>>>> graemeg/fixes_2_2
 
     procedure TAsmData.getlocaldatalabel(out l: TAsmLabel);
       begin

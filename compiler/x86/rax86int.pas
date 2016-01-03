@@ -1383,10 +1383,13 @@ Unit Rax86int;
                           end
                         else
                           oper.opr.ref.relsymbol:=hl;
+<<<<<<< HEAD
 {$ifdef i8086}
                         if oper.opr.ref.segment=NR_NO then
                           oper.opr.ref.segment:=NR_CS;
 {$endif i8086}
+=======
+>>>>>>> graemeg/fixes_2_2
                       end
                    else
                     if oper.SetupVar(tempstr,GotOffset) then

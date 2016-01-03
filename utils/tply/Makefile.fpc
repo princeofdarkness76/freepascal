@@ -8,6 +8,7 @@ name=tply
 version=3.1.1
 =======
 name=lexyacc
+<<<<<<< HEAD
 version=2.5.1
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -19,6 +20,9 @@ version=2.5.1
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+version=2.2.5
+>>>>>>> graemeg/fixes_2_2
 
 [require]
 packages=rtl fpmkunit

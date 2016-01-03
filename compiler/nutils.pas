@@ -312,9 +312,44 @@ implementation
         fen_false:
           result := false; }
       end;
+<<<<<<< HEAD
       if (procmethod=pm_postprocess) or (procmethod=pm_postandagain) then
         result:=process_children(result);
       if procmethod=pm_postandagain then
+=======
+      case n.nodetype of
+        asn:
+          if assigned(tasnode(n).call) then
+            begin
+              result := foreachnode(tasnode(n).call,f,arg);
+              exit
+            end;
+        calln:
+          begin
+            { not in one statement, won't work because of b- }
+            result := foreachnode(tcallnode(n).methodpointerinit,f,arg) or result;
+            result := foreachnode(tcallnode(n).methodpointer,f,arg) or result;
+            result := foreachnode(tcallnode(n)._funcretnode,f,arg) or result;
+            result := foreachnode(tcallnode(n).methodpointerdone,f,arg) or result;
+          end;
+        ifn, whilerepeatn, forn, tryexceptn, tryfinallyn:
+          begin
+            { not in one statement, won't work because of b- }
+            result := foreachnode(tloopnode(n).t1,f,arg) or result;
+            result := foreachnode(tloopnode(n).t2,f,arg) or result;
+          end;
+        raisen:
+          result := foreachnode(traisenode(n).frametree,f,arg) or result;
+        casen:
+          begin
+            for i := 0 to tcasenode(n).blocks.count-1 do
+              if assigned(tcasenode(n).blocks[i]) then
+                result := foreachnode(pcaseblock(tcasenode(n).blocks[i])^.statement,f,arg) or result;
+            result := foreachnode(tcasenode(n).elseblock,f,arg) or result;
+          end;
+      end;
+      if n.inheritsfrom(tbinarynode) then
+>>>>>>> graemeg/fixes_2_2
         begin
           case f(n,arg) of
             fen_norecurse_false:
@@ -355,8 +390,13 @@ implementation
             begin
               result := foreachnodestatic(procmethod,tnode(tcallnode(n).callinitblock),f,arg) or result;
               result := foreachnodestatic(procmethod,tcallnode(n).methodpointer,f,arg) or result;
+<<<<<<< HEAD
               result := foreachnodestatic(procmethod,tcallnode(n).funcretnode,f,arg) or result;
               result := foreachnodestatic(procmethod,tnode(tcallnode(n).callcleanupblock),f,arg) or result;
+=======
+              result := foreachnodestatic(procmethod,tcallnode(n)._funcretnode,f,arg) or result;
+              result := foreachnodestatic(procmethod,tcallnode(n).methodpointerdone,f,arg) or result;
+>>>>>>> graemeg/fixes_2_2
             end;
           ifn, whilerepeatn, forn, tryexceptn, tryfinallyn:
             begin
@@ -553,6 +593,31 @@ implementation
       end;
 
 
+    function get_local_or_para_sym(const aname:string):tsym;
+      var
+        pd : tprocdef;
+      begin
+        { we can't use searchsym here, because the
+          symtablestack is not fully setup when pass1
+          is run for nested procedures }
+        pd:=current_procinfo.procdef;
+        repeat
+          result := tsym(pd.localst.Find(aname));
+          if assigned(result) then
+            break;
+          result := tsym(pd.parast.Find(aname));
+          if assigned(result) then
+            break;
+          { try the parent of a nested function }
+          if assigned(pd.owner.defowner) and
+             (pd.owner.defowner.typ=procdef) then
+            pd:=tprocdef(pd.owner.defowner)
+          else
+            break;
+        until false;
+      end;
+
+
     function load_high_value_node(vs:tparavarsym):tnode;
       var
         srsym : tsym;
@@ -579,7 +644,11 @@ implementation
         if assigned(srsym) then
           begin
             result:=cloadnode.create(srsym,srsym.owner);
+<<<<<<< HEAD
             include(tloadnode(result).loadnodeflags,loadnf_is_self);
+=======
+            include(result.flags,nf_is_self);
+>>>>>>> graemeg/fixes_2_2
           end
         else
           begin
@@ -616,7 +685,11 @@ implementation
         if assigned(srsym) then
           begin
             result:=cloadnode.create(srsym,srsym.owner);
+<<<<<<< HEAD
             include(tloadnode(result).loadnodeflags,loadnf_load_self_pointer);
+=======
+            include(result.flags,nf_load_self_pointer);
+>>>>>>> graemeg/fixes_2_2
           end
         else
           begin
@@ -867,10 +940,17 @@ implementation
                cnilnode.create
                ));
           end
+<<<<<<< HEAD
         else if is_unicodestring(p.resultdef) then
           begin
             result:=internalstatements(newstatement);
             addstatement(newstatement,ccallnode.createintern('fpc_unicodestr_decr_ref',
+=======
+        else if is_interfacecom(p.resultdef) then
+          begin
+            result:=internalstatements(newstatement);
+            addstatement(newstatement,ccallnode.createintern('fpc_intf_decr_ref',
+>>>>>>> graemeg/fixes_2_2
                   ccallparanode.create(
                     ctypeconvnode.create_internal(p,voidpointertype),
                   nil)));
@@ -879,6 +959,7 @@ implementation
                cnilnode.create
                ));
           end
+<<<<<<< HEAD
         else if is_interfacecom_or_dispinterface(p.resultdef) then
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -917,6 +998,17 @@ implementation
             addstatement(stat,ctemprefnode.create(vmt_temp));
             result:=block;
           end
+=======
+        else
+          result:=ccallnode.createintern('fpc_finalize',
+                ccallparanode.create(
+                    caddrnode.create_internal(
+                        crttinode.create(
+                            tstoreddef(p.resultdef),initrtti)),
+                ccallparanode.create(
+                    caddrnode.create_internal(p),
+                nil)));
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -971,6 +1063,7 @@ implementation
                     result := NODE_COMPLEXITY_INF;
                   exit;
                 end;
+<<<<<<< HEAD
               subscriptn:
                 begin
 <<<<<<< HEAD
@@ -1004,6 +1097,11 @@ implementation
                 end;
               labeln,
               blockn:
+=======
+              subscriptn,
+              blockn,
+              callparan:
+>>>>>>> graemeg/fixes_2_2
                 p := tunarynode(p).left;
               callparan:
                 begin
@@ -1346,6 +1444,7 @@ implementation
 <<<<<<< HEAD
 =======
           begin
+<<<<<<< HEAD
             // Try to simplify condition
             doinlinesimplify(tloopnode(n).left);
             // call directly second part below,
@@ -1378,6 +1477,12 @@ implementation
                 n:=hn;
                 typecheckpass(n);
               end;
+=======
+            treechanged:=true;
+            n.free;
+            n:=hn;
+            typecheckpass(n);
+>>>>>>> graemeg/fixes_2_2
           end;
       end;
 

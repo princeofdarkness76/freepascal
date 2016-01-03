@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for Free Pascal GTK 2.x.y Bindings
+>>>>>>> graemeg/fixes_2_2
 #
 
 [package]
 name=imagemagick
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -116,3 +121,31 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+version=2.2.5
+
+[require]
+libc=y
+
+[target]
+units=buildim 
+exampledirs=
+implicitunits=magick_wand imagemagick
+
+[compiler]
+includedir=src
+sourcedir=src tests
+
+[install]
+buildunit=buildgtk2
+fpcpackage=y
+
+[shared]
+build=n
+
+[default]
+fpcdir=../..
+
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/fixes_2_2

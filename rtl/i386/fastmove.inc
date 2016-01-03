@@ -373,9 +373,12 @@ end; {SmallBackwardMove}
 }
 procedure Forwards_Valgrind;assembler;nostackframe;
 asm
+<<<<<<< HEAD
 {$ifdef FPC_ENABLED_CLD}
   cld
 {$endif FPC_ENABLED_CLD}
+=======
+>>>>>>> graemeg/fixes_2_2
   push    esi
   push    edi
   mov     esi,eax
@@ -869,10 +872,18 @@ asm
 end;
 
 {$asmmode att}
+<<<<<<< HEAD
+=======
+{$ifdef FPC_HAS_VALGRINDBOOL}
+>>>>>>> graemeg/fixes_2_2
 {$ifndef FPC_HAS_INDIRECT_MAIN_INFORMATION}
 var
   valgrind_used : boolean;external name '__fpc_valgrind';
 {$endif FPC_HAS_INDIRECT_MAIN_INFORMATION}
+<<<<<<< HEAD
+=======
+{$endif FPC_HAS_VALGRINDBOOL}
+>>>>>>> graemeg/fixes_2_2
 
 procedure setup_fastmove;{$ifdef SYSTEMINLINE}inline;{$endif}
   begin
@@ -887,6 +898,10 @@ procedure setup_fastmove;{$ifdef SYSTEMINLINE}inline;{$endif}
         fastmoveproc_backward:=@Backwards_Valgrind;
       end
     else
+<<<<<<< HEAD
+=======
+{$endif FPC_HAS_VALGRINDBOOL}
+>>>>>>> graemeg/fixes_2_2
 
     if has_sse_support then
       begin

@@ -11,7 +11,11 @@ type
   protected
     procedure Clear(var V: TVarData); override;
     procedure Copy(var Dest: TVarData; const Source: TVarData; const Indirect: Boolean ); override;
+<<<<<<< HEAD
     procedure DispInvoke(Dest: PVarData; var Source: TVarData; CallDesc: PCallDesc; Params: Pointer); override;
+=======
+    procedure DispInvoke(Dest: PVarData; const Source: TVarData; CallDesc: PCallDesc; Params: Pointer); override;
+>>>>>>> graemeg/fixes_2_2
   end;
 
 procedure TSampleVariant.Clear(var V: TVarData);
@@ -30,7 +34,11 @@ end;
 var
   p : pointer;
 
+<<<<<<< HEAD
 procedure TSampleVariant.DispInvoke(Dest: PVarData; var Source: TVarData; CallDesc: PCallDesc; Params: Pointer);
+=======
+procedure TSampleVariant.DispInvoke(Dest: PVarData; const Source: TVarData; CallDesc: PCallDesc; Params: Pointer);
+>>>>>>> graemeg/fixes_2_2
 begin
   Writeln('Dest is 0x', IntToStr(Cardinal(Dest)));
   p:=Dest;

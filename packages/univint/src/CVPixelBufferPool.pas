@@ -6,6 +6,7 @@
  *
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
 {  Pascal Translation Update:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, 2009 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
@@ -22,6 +23,16 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+ {	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
+ 
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -30,8 +41,13 @@
 
 unit CVPixelBufferPool;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -44,21 +60,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -93,6 +117,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -100,6 +126,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -306,6 +333,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -331,6 +368,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -341,6 +382,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes, CFBase, CFDictionary, CVBase, CVPixelBuffer, CVReturns;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -364,6 +406,8 @@ uses MacTypes, CFBase, CFDictionary, CVBase, CVPixelBuffer, CVReturns;
 {$ifc TARGET_OS_MAC}
 
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -376,6 +420,7 @@ uses MacTypes, CFBase, CFDictionary, CVBase, CVPixelBuffer, CVReturns;
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -394,11 +439,15 @@ type
 =======
 	CVPixelBufferPoolRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	CVPixelBufferPoolRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 
 // By default, buffers will age out after one second.   If required, setting an age of zero will disable
 // the age-out mechanism completely.
 
 var kCVPixelBufferPoolMinimumBufferCountKey: CFStringRef; external name '_kCVPixelBufferPoolMinimumBufferCountKey'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 var kCVPixelBufferPoolMaximumBufferAgeKey: CFStringRef; external name '_kCVPixelBufferPoolMaximumBufferAgeKey'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
@@ -406,6 +455,15 @@ var kCVPixelBufferPoolMaximumBufferAgeKey: CFStringRef; external name '_kCVPixel
 
 function CVPixelBufferPoolGetTypeID: CFTypeID; external name '_CVPixelBufferPoolGetTypeID';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kCVPixelBufferPoolMaximumBufferAgeKey: CFStringRef; external name '_kCVPixelBufferPoolMaximumBufferAgeKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+function CVPixelBufferPoolGetTypeID: CFTypeID; external name '_CVPixelBufferPoolGetTypeID';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferPoolRetain
@@ -415,7 +473,11 @@ function CVPixelBufferPoolGetTypeID: CFTypeID; external name '_CVPixelBufferPool
     @result     A CVPixelBufferPoolRef object that is the same as the passed in buffer.
 }
 function CVPixelBufferPoolRetain( pixelBufferPool: CVPixelBufferPoolRef ): CVPixelBufferPoolRef; external name '_CVPixelBufferPoolRetain';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *) // NULL-safe
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *) // NULL-safe
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferPoolRelease
@@ -424,7 +486,11 @@ function CVPixelBufferPoolRetain( pixelBufferPool: CVPixelBufferPoolRef ): CVPix
     @param      buffer A CVPixelBufferPoolRef object that you want to release.
 }
 procedure CVPixelBufferPoolRelease( pixelBufferPool: CVPixelBufferPoolRef ); external name '_CVPixelBufferPoolRelease';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *) // NULL-safe
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *) // NULL-safe
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferPoolCreate
@@ -435,7 +501,11 @@ procedure CVPixelBufferPoolRelease( pixelBufferPool: CVPixelBufferPoolRef ); ext
     @result     Returns kCVReturnSuccess on success
 }
 function CVPixelBufferPoolCreate( allocator: CFAllocatorRef; poolAttributes: CFDictionaryRef; pixelBufferAttributes: CFDictionaryRef; var poolOut: CVPixelBufferPoolRef ): CVReturn; external name '_CVPixelBufferPoolCreate';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferPoolGetAttributes
@@ -444,7 +514,11 @@ function CVPixelBufferPoolCreate( allocator: CFAllocatorRef; poolAttributes: CFD
     @result     Returns the pool attributes dictionary, or NULL on failure.
 }
 function CVPixelBufferPoolGetAttributes( pool: CVPixelBufferPoolRef ): CFDictionaryRef; external name '_CVPixelBufferPoolGetAttributes';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferPoolGetPixelBufferAttributes
@@ -455,7 +529,11 @@ function CVPixelBufferPoolGetAttributes( pool: CVPixelBufferPoolRef ): CFDiction
     @result     Returns the pixel buffer attributes dictionary, or NULL on failure.
 }
 function CVPixelBufferPoolGetPixelBufferAttributes( pool: CVPixelBufferPoolRef ): CFDictionaryRef; external name '_CVPixelBufferPoolGetPixelBufferAttributes';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVPixelBufferPoolCreatePixelBuffer
@@ -467,6 +545,7 @@ function CVPixelBufferPoolGetPixelBufferAttributes( pool: CVPixelBufferPoolRef )
     @result     Returns kCVReturnSuccess on success
 }
 function CVPixelBufferPoolCreatePixelBuffer( allocator: CFAllocatorRef; pixelBufferPool: CVPixelBufferPoolRef; var pixelBufferOut: CVPixelBufferRef ): CVReturn; external name '_CVPixelBufferPoolCreatePixelBuffer';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 
 
@@ -520,3 +599,9 @@ var kCVPixelBufferPoolFreeBufferNotification: CFStringRef; external name '_kCVPi
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

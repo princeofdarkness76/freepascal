@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
@@ -28,6 +29,22 @@
     <BuildModes Count="1">
       <Item1 Name="default" Default="True"/>
     </BuildModes>
+=======
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectOptions>
+    <PathDelim Value="/"/>
+    <Version Value="5"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <IconPath Value="./"/>
+      <TargetFileExt Value=""/>
+    </General>
+    <VersionInfo>
+      <ProjectVersion Value=""/>
+    </VersionInfo>
+>>>>>>> graemeg/fixes_2_2
     <PublishOptions>
       <Version Value="2"/>
       <IgnoreBinaries Value="False"/>
@@ -37,6 +54,7 @@
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -66,14 +84,43 @@
       <Unit0>
         <Filename Value="testjson.pp"/>
         <IsPartOfProject Value="True"/>
+=======
+        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="4">
+      <Item1>
+        <PackageName Value="fpcunitconsolerunner"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="FPCUnitTestRunner"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="FCL"/>
+      </Item4>
+    </RequiredPackages>
+    <Units Count="3">
+      <Unit0>
+        <Filename Value="testjson.pp"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="testjson"/>
+>>>>>>> graemeg/fixes_2_2
       </Unit0>
       <Unit1>
         <Filename Value="testjsonparser.pp"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
+=======
+        <UnitName Value="testjsonparser"/>
+>>>>>>> graemeg/fixes_2_2
       </Unit1>
       <Unit2>
         <Filename Value="testjsondata.pp"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
       </Unit2>
       <Unit3>
         <Filename Value="testjsonrtti.pp"/>
@@ -178,4 +225,22 @@
       </Item2>
     </Exceptions>
   </Debugging>
+=======
+        <UnitName Value="testjsondata"/>
+      </Unit2>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="5"/>
+    <SearchPaths>
+      <OtherUnitFiles Value="../src/"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <Generate Value="Faster"/>
+    </CodeGeneration>
+    <Other>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+>>>>>>> graemeg/fixes_2_2
 </CONFIG>

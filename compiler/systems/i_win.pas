@@ -38,6 +38,7 @@ unit i_win;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_files_case_aware,tf_has_dllscanner
 =======
             flags        : [tf_files_case_aware,tf_has_dllscanner,tf_smartlink_library
@@ -72,6 +73,12 @@ unit i_win;
 =======
                             tf_safecall_exceptions];
 >>>>>>> origin/cpstrnew
+=======
+            flags        : [tf_files_case_aware,tf_has_dllscanner,tf_use_function_relative_addresses,tf_smartlink_library
+                            ,tf_smartlink_sections{,tf_section_threadvars}{,tf_needs_dwarf_cfi},
+                            tf_winlikewidestring,tf_no_pic_supported,
+                            tf_no_generic_stackcheck];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_i386;
             unit_env     : 'WIN32UNITS';
             extradefines : 'MSWINDOWS;WINDOWS';
@@ -124,7 +131,10 @@ unit i_win;
               );
             first_parm_offset : 8;
             stacksize    : 16*1024*1024;
+<<<<<<< HEAD
             stackalign   : 4;
+=======
+>>>>>>> graemeg/fixes_2_2
             abi          : abi_default;
             llvmdatalayout : 'e-p:32:32:32-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-f80:128:128-v64:64:64-v128:128:128-a0:0:64-f80:32:32-n8:16:32-S32';
           );
@@ -134,6 +144,7 @@ unit i_win;
             system       : system_x86_64_win64;
             name         : 'Win64 for x64';
             shortname    : 'Win64';
+<<<<<<< HEAD
             flags        : [tf_files_case_aware,tf_has_dllscanner,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -156,6 +167,11 @@ unit i_win;
                             tf_dwarf_only_local_labels,
                             tf_no_generic_stackcheck,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
+=======
+            flags        : [tf_files_case_aware,tf_has_dllscanner,tf_use_function_relative_addresses,
+                            tf_smartlink_sections,tf_smartlink_library,tf_winlikewidestring,tf_no_pic_supported,
+                            tf_no_generic_stackcheck];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_x86_64;
             unit_env     : 'WIN64UNITS';
             extradefines : 'MSWINDOWS;WINDOWS';
@@ -187,8 +203,13 @@ unit i_win;
             link         : ld_int_windows;
             linkextern   : ld_windows;
             ar           : ar_gnu_ar;
+<<<<<<< HEAD
             res          : res_gnu_windres;
             dbg          : dbg_dwarf2;
+=======
+            res          : res_win64_gorc;
+            dbg          : dbg_stabs;
+>>>>>>> graemeg/fixes_2_2
             script       : script_dos;
             endian       : endian_little;
             alignment    :
@@ -208,7 +229,10 @@ unit i_win;
               );
             first_parm_offset : 16;
             stacksize    : 16*1024*1024;
+<<<<<<< HEAD
             stackalign   : 16;
+=======
+>>>>>>> graemeg/fixes_2_2
             abi          : abi_default;
             llvmdatalayout : 'e-p:64:64:64-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-v64:64:64-v128:128:128-a0:0:64-s0:64:64-f80:128:128-n8:16:32:64-S128';
           );
@@ -218,10 +242,15 @@ unit i_win;
             system       : system_arm_wince;
             name         : 'WinCE for ARM';
             shortname    : 'WinCE';
+<<<<<<< HEAD
             flags        : [tf_files_case_aware{,tf_winlikewidestring},
                             tf_smartlink_sections,tf_requires_proper_alignment,tf_no_pic_supported,
                             tf_has_winlike_resources,
                             tf_safecall_exceptions,tf_no_backquote_support];
+=======
+            flags        : [tf_files_case_aware,tf_use_function_relative_addresses{,tf_winlikewidestring},
+                            tf_smartlink_sections,tf_requires_proper_alignment,tf_no_pic_supported];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_arm;
             unit_env     : '';
             extradefines : 'UNDER_CE;WINDOWS;FPC_OS_UNICODE';
@@ -284,10 +313,15 @@ unit i_win;
             system       : system_i386_wince;
             name         : 'WinCE for i386';
             shortname    : 'WinCE';
+<<<<<<< HEAD
             flags        : [tf_files_case_aware
                             {,tf_winlikewidestring},tf_smartlink_sections,tf_no_pic_supported,
                             tf_has_winlike_resources,
                             tf_safecall_exceptions,tf_no_backquote_support];
+=======
+            flags        : [tf_files_case_aware,tf_use_function_relative_addresses
+                            {,tf_winlikewidestring},tf_smartlink_sections,tf_no_pic_supported];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_i386;
             unit_env     : '';
             extradefines : 'UNDER_CE;WINDOWS;FPC_OS_UNICODE';

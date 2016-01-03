@@ -36,11 +36,19 @@ uses
   Classes, SysUtils, fpDBExport;
   
 Type
+<<<<<<< HEAD
   TStdExportformat = (sefCSV,sefFixedLength,sefSimpleXMl,sefXMLXSD,sefSimpleJSON,sefSQL,seTeX,seRTF,sefDBF);
   TStdExportformats = Set of TStdExportFormat;
 
 Const
   AllStdExportFormats = [sefCSV,sefFixedLength,sefSimpleXMl,sefXMLXSD,sefSimpleJSON,sefSQL,seTeX,seRTF,sefDBF];
+=======
+  TStdExportformat = (sefCSV,sefFixedLength,sefSimpleXMl,sefSimpleJSON,sefSQL,seTeX,seRTF,sefDBF);
+  TStdExportformats = Set of TStdExportFormat;
+
+Const
+  AllStdExportFormats = [sefCSV,sefFixedLength,sefSimpleXMl,sefSimpleJSON,sefSQL,seTeX,seRTF,sefDBF];
+>>>>>>> graemeg/fixes_2_2
 
 Type
 
@@ -73,7 +81,10 @@ uses
   fpcsvexport,
   fpfixedexport,
   fpsimplexmlexport,
+<<<<<<< HEAD
   fpxmlxsdexport,
+=======
+>>>>>>> graemeg/fixes_2_2
   fpsimplejsonexport,
   fpsqlexport,
   fptexexport,
@@ -82,6 +93,7 @@ uses
 
 Const
   StdExportNames : Array[TStdExportFormat] of string
+<<<<<<< HEAD
                  = (SCSVExport,SFixedLengthExport,SSimpleXML, SXMLXSD,
                     SSimpleJSON,SSQLExport,STexExport,SRTFExport,SDBFExport);
   StdExportRegProcs : Array[TStdExportFormat] of Procedure
@@ -90,6 +102,16 @@ Const
                     ,@RegisterRTFExporter,@RegisterDBFExportFormat);
   StdExportUnRegProcs : Array[TStdExportFormat] of Procedure
                  = (@UnRegisterCSVExportFormat,@UNRegisterFixedExportFormat,@UnRegisterSimpleXMLExportFormat,@UnRegisterXMLXSDExportFormat,
+=======
+                 = (SCSVExport,SFixedLengthExport,SSimpleXML,
+                    SSimpleJSON,SSQLExport,STexExport,SRTFExport,SDBFExport);
+  StdExportRegProcs : Array[TStdExportFormat] of Procedure
+                 = (@RegisterCSVExportFormat,@RegisterFixedExportFormat,@RegisterSimpleXMLExportFormat,
+                    @RegisterSimpleJSONExportFormat,@RegisterSQLExportFormat,@RegisterTexExportFormat
+                    ,@RegisterRTFExporter,@RegisterDBFExportFormat);
+  StdExportUnRegProcs : Array[TStdExportFormat] of Procedure
+                 = (@UnRegisterCSVExportFormat,@UNRegisterFixedExportFormat,@UnRegisterSimpleXMLExportFormat,
+>>>>>>> graemeg/fixes_2_2
                     @UnRegisterSimpleJSONExportFormat,@UnRegisterSQLExportFormat,@UnRegisterTexExportFormat,
                     @UnRegisterRTFExporter,@UnRegisterDBFExportFormat);
 

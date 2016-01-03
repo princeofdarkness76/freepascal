@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('fftw');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -35,6 +36,16 @@ begin
     P.Targets.AddExampleProgram('examples/example.pas');
 
 
+=======
+    P.Directory:='fftw';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.SourcePath.Add('src');
+//    P.Dependencies.Add('x11');
+
+    T:=P.Targets.AddUnit('fftw_s.pas');
+
+>>>>>>> graemeg/fixes_2_2
 {$ifndef ALLPACKAGES}
     Run;
     end;

@@ -51,7 +51,10 @@ Unit rax64att;
         instr.AddReferenceSizes;
         instr.SetInstructionOpsize;
         instr.CheckOperandSizes;
+<<<<<<< HEAD
         instr.FixupOpcode;
+=======
+>>>>>>> graemeg/fixes_2_2
         instr.ConcatInstruction(curlist);
         instr.Free;
       end;

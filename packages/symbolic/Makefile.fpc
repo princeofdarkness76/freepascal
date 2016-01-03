@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for Free Pascal ImLib 1.x Packages
+>>>>>>> graemeg/fixes_2_2
 #
 
 [package]
 name=symbolic
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -27,10 +32,28 @@ packages=rtl fpmkunit
 
 [install]
 fpcpackage=y
+=======
+version=2.2.5
+
+[target]
+units=symbolic
+
+[require]
+libc=y
+
+[compiler]
+includedir=src
+sourcedir=src tests
+
+[install]
+fpcpackage=y
+fpcsubdir=packages
+>>>>>>> graemeg/fixes_2_2
 
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -116,3 +139,10 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[shared]
+build=n
+
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/fixes_2_2

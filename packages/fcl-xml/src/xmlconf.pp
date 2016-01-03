@@ -32,7 +32,11 @@ uses
   SysUtils, Classes, DOM, XMLRead, XMLWrite;
 
 resourcestring
+<<<<<<< HEAD
   SWrongRootName = 'XML file has wrong root element name: expected "%s" but was "%s"';
+=======
+  SWrongRootName = 'XML file has wrong root element name';
+>>>>>>> graemeg/fixes_2_2
 
 type
   EXMLConfigError = class(Exception);
@@ -43,15 +47,22 @@ type
    is the name of the value. The path components will be mapped to XML
    elements, the name will be an element attribute.}
 
+<<<<<<< HEAD
   { TXMLConfig }
 
+=======
+>>>>>>> graemeg/fixes_2_2
   TXMLConfig = class(TComponent)
   private
     FFilename: String;
     FStartEmpty: Boolean;
     FRootName: DOMString;
     FDummy: DOMString;
+<<<<<<< HEAD
     FPathStack: array of DOMString;
+=======
+    FPathStack: array of WideString;
+>>>>>>> graemeg/fixes_2_2
     FPathCount: Integer;
     FPathDirty: Boolean;
     FElement: TDOMElement;
@@ -59,20 +70,30 @@ type
     procedure SetFilename(const AFilename: String);
     procedure SetStartEmpty(AValue: Boolean);
     procedure SetRootName(const AValue: DOMString);
+<<<<<<< HEAD
     function DoFindNode(const APath: DOMString; var Ident: DOMString;
       Flags: TPathFlags): TDomElement;
     function FindNode(const APath: DOMString; out Ident: DOMString;
+=======
+    function DoFindNode(const APath: WideString; var Ident: DOMString;
+      Flags: TPathFlags): TDomElement;
+    function FindNode(const APath: WideString; out Ident: DOMString;
+>>>>>>> graemeg/fixes_2_2
       Flags: TPathFlags): TDOMElement;
   protected
     Doc: TXMLDocument;
     FModified: Boolean;
+<<<<<<< HEAD
     FReadOnly: Boolean;
+=======
+>>>>>>> graemeg/fixes_2_2
     procedure Loaded; override;
   public
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
     procedure Clear;
     procedure Flush;    // Writes the XML file
+<<<<<<< HEAD
     procedure OpenKey(const aPath: DOMString);
     procedure CloseKey;
     procedure ResetKey;
@@ -94,12 +115,34 @@ type
 
     procedure DeletePath(const APath: DOMString);
     procedure DeleteValue(const APath: DOMString);
+=======
+    procedure OpenKey(const aPath: WideString);
+    procedure CloseKey;
+    procedure ResetKey;
+
+    function  GetValue(const APath: WideString; const ADefault: WideString): WideString; overload;
+    function  GetValue(const APath: WideString; ADefault: Integer): Integer; overload;
+    function  GetValue(const APath: WideString; ADefault: Boolean): Boolean; overload;
+    procedure SetValue(const APath: WideString; const AValue: WideString); overload;
+    procedure SetValue(const APath: WideString; AValue: Integer); overload;
+    procedure SetValue(const APath: WideString; AValue: Boolean); overload;
+
+    procedure SetDeleteValue(const APath: WideString; const AValue, DefValue: WideString); overload;
+    procedure SetDeleteValue(const APath: WideString; AValue, DefValue: Integer); overload;
+    procedure SetDeleteValue(const APath: WideString; AValue, DefValue: Boolean); overload;
+
+    procedure DeletePath(const APath: WideString);
+    procedure DeleteValue(const APath: WideString);
+>>>>>>> graemeg/fixes_2_2
     property Modified: Boolean read FModified;
   published
     property Filename: String read FFilename write SetFilename;
     property StartEmpty: Boolean read FStartEmpty write SetStartEmpty;
     property RootName: DOMString read FRootName write SetRootName;
+<<<<<<< HEAD
     property ReadOnly: Boolean read FReadOnly write FReadOnly;
+=======
+>>>>>>> graemeg/fixes_2_2
   end;
 
 
@@ -132,6 +175,7 @@ end;
 
 procedure TXMLConfig.Flush;
 begin
+<<<<<<< HEAD
   if Modified and not FReadOnly then
     if (FFileName<>'') then
       SaveToFile(FFilename)
@@ -182,6 +226,16 @@ begin
 end;
 
 function TXMLConfig.GetValue(const APath: DOMString; const ADefault: DOMString): DOMString;
+=======
+  if Modified and (Filename <> '') then
+  begin
+    WriteXMLFile(Doc, Filename);
+    FModified := False;
+  end;
+end;
+
+function TXMLConfig.GetValue(const APath: WideString; const ADefault: WideString): WideString;
+>>>>>>> graemeg/fixes_2_2
 var
   Node: TDOMElement;
   Attr: TDOMAttr;
@@ -198,12 +252,20 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 function TXMLConfig.GetValue(const APath: DOMString; ADefault: Integer): Integer;
+=======
+function TXMLConfig.GetValue(const APath: WideString; ADefault: Integer): Integer;
+>>>>>>> graemeg/fixes_2_2
 begin
   Result := StrToIntDef(GetValue(APath, ''),ADefault);
 end;
 
+<<<<<<< HEAD
 function TXMLConfig.GetValue(const APath: DOMString; ADefault: Boolean): Boolean;
+=======
+function TXMLConfig.GetValue(const APath: WideString; ADefault: Boolean): Boolean;
+>>>>>>> graemeg/fixes_2_2
 var
   s: DOMString;
 begin
@@ -217,7 +279,11 @@ begin
     Result := ADefault;
 end;
 
+<<<<<<< HEAD
 procedure TXMLConfig.SetValue(const APath: DOMString; const AValue: DOMString);
+=======
+procedure TXMLConfig.SetValue(const APath: WideString; const AValue: WideString);
+>>>>>>> graemeg/fixes_2_2
 var
   Node: TDOMElement;
   Attr: TDOMAttr;
@@ -233,7 +299,11 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure TXMLConfig.SetDeleteValue(const APath: DOMString; const AValue, DefValue: DOMString);
+=======
+procedure TXMLConfig.SetDeleteValue(const APath: WideString; const AValue, DefValue: WideString);
+>>>>>>> graemeg/fixes_2_2
 begin
   if AValue = DefValue then
     DeleteValue(APath)
@@ -241,12 +311,20 @@ begin
     SetValue(APath, AValue);
 end;
 
+<<<<<<< HEAD
 procedure TXMLConfig.SetValue(const APath: DOMString; AValue: Integer);
+=======
+procedure TXMLConfig.SetValue(const APath: WideString; AValue: Integer);
+>>>>>>> graemeg/fixes_2_2
 begin
   SetValue(APath, IntToStr(AValue));
 end;
 
+<<<<<<< HEAD
 procedure TXMLConfig.SetDeleteValue(const APath: DOMString; AValue,
+=======
+procedure TXMLConfig.SetDeleteValue(const APath: WideString; AValue,
+>>>>>>> graemeg/fixes_2_2
   DefValue: Integer);
 begin
   if AValue = DefValue then
@@ -255,7 +333,11 @@ begin
     SetValue(APath, AValue);
 end;
 
+<<<<<<< HEAD
 procedure TXMLConfig.SetValue(const APath: DOMString; AValue: Boolean);
+=======
+procedure TXMLConfig.SetValue(const APath: WideString; AValue: Boolean);
+>>>>>>> graemeg/fixes_2_2
 begin
   if AValue then
     SetValue(APath, 'True')
@@ -263,7 +345,11 @@ begin
     SetValue(APath, 'False');
 end;
 
+<<<<<<< HEAD
 procedure TXMLConfig.SetDeleteValue(const APath: DOMString; AValue,
+=======
+procedure TXMLConfig.SetDeleteValue(const APath: WideString; AValue,
+>>>>>>> graemeg/fixes_2_2
   DefValue: Boolean);
 begin
   if AValue = DefValue then
@@ -272,7 +358,11 @@ begin
     SetValue(APath,AValue);
 end;
 
+<<<<<<< HEAD
 procedure TXMLConfig.DeletePath(const APath: DOMString);
+=======
+procedure TXMLConfig.DeletePath(const APath: WideString);
+>>>>>>> graemeg/fixes_2_2
 var
   Node: TDomNode;
   Ident: DOMString;
@@ -287,7 +377,11 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure TXMLConfig.DeleteValue(const APath: DOMString);
+=======
+procedure TXMLConfig.DeleteValue(const APath: WideString);
+>>>>>>> graemeg/fixes_2_2
 var
   Node: TDOMElement;
   Ident: DOMString;
@@ -335,7 +429,11 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 function TXMLConfig.FindNode(const APath: DOMString; out Ident: DOMString;
+=======
+function TXMLConfig.FindNode(const APath: WideString; out Ident: DOMString;
+>>>>>>> graemeg/fixes_2_2
   Flags: TPathFlags): TDOMElement;
 var
   I: Integer;
@@ -344,12 +442,20 @@ begin
   begin
     for I := 0 to FPathCount-1 do
       FElement := DoFindNode(FPathStack[I], FDummy, Flags - [pfHasValue]);
+<<<<<<< HEAD
     if Assigned(FElement) then FPathDirty := False;
+=======
+    FPathDirty := False;      
+>>>>>>> graemeg/fixes_2_2
   end;
   Result := DoFindNode(APath, Ident, Flags);
 end;
 
+<<<<<<< HEAD
 function TXMLConfig.DoFindNode(const APath: DOMString; var Ident: DOMString;
+=======
+function TXMLConfig.DoFindNode(const APath: WideString; var Ident: DOMString;
+>>>>>>> graemeg/fixes_2_2
   Flags: TPathFlags): TDomElement;
 var
   StartPos, EndPos: integer;
@@ -401,6 +507,7 @@ begin
     
   Flush;
   FreeAndNil(Doc);
+<<<<<<< HEAD
   if csLoading in ComponentState then
     exit;
   if FileExists(AFilename) and not FStartEmpty then
@@ -411,6 +518,26 @@ begin
     Doc := TXMLDocument.Create;
     Doc.AppendChild(Doc.CreateElement(FRootName))
     end;
+=======
+    
+  FFilename := AFilename;
+
+  if csLoading in ComponentState then
+    exit;
+
+  if FileExists(AFilename) and not FStartEmpty then
+    ReadXMLFile(Doc, AFilename);
+
+  if not Assigned(Doc) then
+    Doc := TXMLDocument.Create;
+
+  if not Assigned(Doc.DocumentElement) then
+    Doc.AppendChild(Doc.CreateElement(FRootName))
+  else
+    if Doc.DocumentElement.NodeName <> FRootName then
+      raise EXMLConfigError.Create(SWrongRootName);
+
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TXMLConfig.SetFilename(const AFilename: String);
@@ -455,7 +582,11 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure TXMLConfig.OpenKey(const aPath: DOMString);
+=======
+procedure TXMLConfig.OpenKey(const aPath: WideString);
+>>>>>>> graemeg/fixes_2_2
 begin
   if aPath <> '' then
   begin
@@ -473,7 +604,11 @@ procedure TXMLConfig.ResetKey;
 var
   I: Integer;
 begin
+<<<<<<< HEAD
   for I := Length(FPathStack)-1 downto 0 do
+=======
+  for I := Length(FPathStack) downto 0 do
+>>>>>>> graemeg/fixes_2_2
     FPathStack[I] := '';
   FElement := nil;    
   FPathDirty := False;

@@ -954,6 +954,7 @@ interface
               ) then
               expectloc:=LOC_FLAGS;
           end;
+<<<<<<< HEAD
       end;
 
     function tarmaddnode.first_addfloat: tnode;
@@ -1031,6 +1032,8 @@ interface
           end
         else
           result:=inherited first_addfloat;
+=======
+>>>>>>> graemeg/fixes_2_2
       end;
 
 

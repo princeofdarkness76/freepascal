@@ -1,6 +1,10 @@
 {
     This file is part of the Free Pascal Classes Library (FCL).
+<<<<<<< HEAD
     Copyright (c) 2006-2014 by the Free Pascal development team
+=======
+    Copyright (c) 2006 by the Free Pascal development team
+>>>>>>> graemeg/fixes_2_2
 
     SQLite3 connection for SQLDB
 
@@ -16,11 +20,14 @@
 { 
   Based on an implementation by Martin Schreiber, part of MSEIDE.
   Reworked all code so it conforms to FCL coding standards.
+<<<<<<< HEAD
 
   TSQLite3Connection properties
       Params - "foreign_keys=ON" - enable foreign key support for this connection:
                                    http://www.sqlite.org/foreignkeys.html#fk_enable
 
+=======
+>>>>>>> graemeg/fixes_2_2
 } 
  
 unit sqlite3conn;
@@ -38,6 +45,12 @@ const
 type
   PDateTime = ^TDateTime;
   
+<<<<<<< HEAD
+=======
+  TSqliteOption = (sloTransactions,sloDesignTransactions);
+  TSqliteOptions = set of TSqliteOption;
+ 
+>>>>>>> graemeg/fixes_2_2
   TStringArray = Array of string;
   PStringArray = ^TStringArray;
  
@@ -49,12 +62,22 @@ type
   TSQLite3Connection = class(TSQLConnection)
   private
     fhandle: psqlite3;
+<<<<<<< HEAD
   protected
+=======
+    foptions: TSQLiteOptions;
+    procedure setoptions(const avalue: tsqliteoptions);
+  protected
+    function stringsquery(const asql: string): TArrayStringArray;
+    procedure checkerror(const aerror: integer);
+    
+>>>>>>> graemeg/fixes_2_2
     procedure DoInternalConnect; override;
     procedure DoInternalDisconnect; override;
     function GetHandle : pointer; override;
  
     Function AllocateCursorHandle : TSQLCursor; override;
+<<<<<<< HEAD
     Procedure DeAllocateCursorHandle(var cursor : TSQLCursor); override;
     Function AllocateTransactionHandle : TSQLHandle; override;
  
@@ -169,6 +192,49 @@ const
   dbconst, sysutils, dateutils,FmtBCD;
  
 >>>>>>> graemeg/cpstrnew
+=======
+                        //aowner used as blob cache
+    Procedure DeAllocateCursorHandle(var cursor : TSQLCursor); override;
+    Function AllocateTransactionHandle : TSQLHandle; override;
+ 
+    procedure PrepareStatement(cursor: TSQLCursor; ATransaction : TSQLTransaction; 
+                          buf: string; AParams : TParams); override;
+    procedure Execute(cursor: TSQLCursor;atransaction:tSQLtransaction; AParams : TParams); override;
+    function Fetch(cursor : TSQLCursor) : boolean; override;
+    procedure AddFieldDefs(cursor: TSQLCursor; FieldDefs : TfieldDefs); override;
+    procedure UnPrepareStatement(cursor : TSQLCursor); override;
+ 
+    procedure FreeFldBuffers(cursor : TSQLCursor); override;
+    function LoadField(cursor : TSQLCursor;FieldDef : TfieldDef;buffer : pointer; out CreateBlob : boolean) : boolean; override;
+           //if bufsize < 0 -> buffer was to small, should be -bufsize
+    function GetTransactionHandle(trans : TSQLHandle): pointer; override;
+    function Commit(trans : TSQLHandle) : boolean; override;
+    function RollBack(trans : TSQLHandle) : boolean; override;
+    function StartdbTransaction(trans : TSQLHandle; aParams : string) : boolean; override;
+    procedure CommitRetaining(trans : TSQLHandle); override;
+    procedure RollBackRetaining(trans : TSQLHandle); override;
+    procedure LoadBlobIntoBuffer(FieldDef: TFieldDef;ABlobBuf: PBufBlobField; cursor: TSQLCursor; ATransaction : TSQLTransaction); override;
+    // New methods
+    procedure execsql(const asql: string);
+    procedure UpdateIndexDefs(IndexDefs : TIndexDefs;TableName : string); override; // Differs from SQLDB.
+    function getprimarykeyfield(const atablename: string; const acursor: tsqlcursor): string;
+    function RowsAffected(cursor: TSQLCursor): TRowsCount; override;
+    function GetSchemaInfoSQL(SchemaType : TSchemaType; SchemaObjectName, SchemaPattern : string) : string; override;
+    function StrToStatementType(s : string) : TStatementType; override;
+  public
+    constructor Create(AOwner : TComponent); override;
+    function GetInsertID: int64;
+    procedure GetFieldNames(const TableName : string; List :  TStrings); override;
+  published
+    property Options: TSqliteOptions read FOptions write SetOptions;
+  end;
+ 
+implementation
+
+uses
+  dbconst, sysutils, typinfo, dateutils;
+ 
+>>>>>>> graemeg/fixes_2_2
 type
 
  TStorageType = (stNone,stInteger,stFloat,stText,stBlob,stNull);
@@ -176,14 +242,21 @@ type
  TSQLite3Cursor = class(tsqlcursor)
   private
    fhandle : psqlite3;
+<<<<<<< HEAD
    fconnection: TSQLite3Connection;
+=======
+>>>>>>> graemeg/fixes_2_2
    fstatement: psqlite3_stmt;
    ftail: pchar;
    fstate: integer;
    fparambinding: array of Integer;
    procedure checkerror(const aerror: integer);
    procedure bindparams(AParams : TParams);
+<<<<<<< HEAD
    Procedure Prepare(Buf : String; AParams : TParams);
+=======
+   Procedure Prepare(Buf : String; APArams : TParams);
+>>>>>>> graemeg/fixes_2_2
    Procedure UnPrepare;
    Procedure Execute;
    Function Fetch : Boolean;
@@ -197,8 +270,21 @@ begin
 end;
 
 procedure TSQLite3Cursor.checkerror(const aerror: integer);
+<<<<<<< HEAD
 begin
   fconnection.checkerror(aerror);
+=======
+
+Var
+  S : String;
+
+begin
+ if (aerror<>sqlite_ok) then 
+   begin
+   S:=strpas(sqlite3_errmsg(fhandle));
+   DatabaseError(S);
+   end;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Procedure TSQLite3Cursor.bindparams(AParams : TParams);
@@ -214,6 +300,7 @@ Procedure TSQLite3Cursor.bindparams(AParams : TParams);
 Var
   I : Integer;
   P : TParam;  
+<<<<<<< HEAD
   str1: string;
   wstr1: widestring;
   
@@ -290,10 +377,51 @@ begin
         end
       else 
         DatabaseErrorFmt(SUnsupportedParameter, [Fieldtypenames[P.DataType], Self]);
+=======
+  pc : pchar;
+  str1: string;
+  cu1: currency;
+  do1: double;
+  parms : array of Integer;
+  
+begin
+  for I:=1  to high(fparambinding)+1 do 
+    begin
+    P:=aparams[fparambinding[I-1]];
+    if P.isnull then 
+      checkerror(sqlite3_bind_null(fstatement,I))
+    else 
+      case P.datatype of
+        ftinteger,
+        ftboolean,
+        ftsmallint: checkerror(sqlite3_bind_int(fstatement,I,p.asinteger));
+        ftword:     checkerror(sqlite3_bind_int(fstatement,I,P.asword));
+        ftlargeint: checkerror(sqlite3_bind_int64(fstatement,I,P.aslargeint));
+        ftbcd,
+        ftfloat,
+        ftcurrency,
+        ftdatetime,
+        ftdate,
+        fttime: begin
+                do1:= P.asfloat;
+                checkerror(sqlite3_bind_double(fstatement,I,do1));
+                end;
+        ftstring: begin
+                  str1:= p.asstring;
+                  checkerror(sqlite3_bind_text(fstatement,I,pcharstr(str1), length(str1),@freebindstring));
+                  end;
+        ftblob: begin
+                str1:= P.asstring;
+                checkerror(sqlite3_bind_blob(fstatement,I,pcharstr(str1), length(str1),@freebindstring));
+                end; 
+      else 
+        databaseerror('Parameter type '+getenumname(typeinfo(tfieldtype),ord(P.datatype))+' not supported.');
+>>>>>>> graemeg/fixes_2_2
       end; { Case }
     end;   
 end;
 
+<<<<<<< HEAD
 Procedure TSQLite3Cursor.Prepare(Buf : String; AParams : TParams);
 
 begin
@@ -302,6 +430,14 @@ begin
   if (detActualSQL in fconnection.LogEvents) then
     fconnection.Log(detActualSQL,Buf);
   checkerror(sqlite3_prepare(fhandle,pchar(Buf),length(Buf),@fstatement,@ftail));
+=======
+Procedure TSQLite3Cursor.Prepare(Buf : String; APArams : TParams);
+
+begin
+  if assigned(aparams) and (aparams.count > 0) then 
+    buf := aparams.parsesql(buf,false,false,false,psinterbase,fparambinding);
+  checkerror(sqlite3_prepare(fhandle,pchar(buf),length(buf),@fstatement,@ftail));
+>>>>>>> graemeg/fixes_2_2
   FPrepared:=True;
 end;
 
@@ -331,9 +467,14 @@ begin
 {$endif}
   if (fstate<=sqliteerrormax) then
     checkerror(sqlite3_reset(fstatement));
+<<<<<<< HEAD
   FSelectable :=sqlite3_column_count(fstatement)>0;
   RowsAffected:=sqlite3_changes(fhandle);
   if (fstate=sqlite_row) then
+=======
+  RowsAffected:=sqlite3_changes(fhandle);
+  if (fstate=sqlite_row) then 
+>>>>>>> graemeg/fixes_2_2
     fstate:= sqliteerrormax; //first row
 end;  
 
@@ -353,6 +494,7 @@ end;
 
 { TSQLite3Connection }
 
+<<<<<<< HEAD
 constructor TSQLite3Connection.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
@@ -361,17 +503,24 @@ begin
 end;
 
 procedure TSQLite3Connection.LoadBlobIntoBuffer(FieldDef: TFieldDef; ABlobBuf: PBufBlobField; cursor: TSQLCursor; ATransaction : TSQLTransaction);
+=======
+procedure TSQLite3Connection.LoadBlobIntoBuffer(FieldDef: TFieldDef;ABlobBuf: PBufBlobField; cursor: TSQLCursor; ATransaction : TSQLTransaction); 
+>>>>>>> graemeg/fixes_2_2
 
 var
  int1: integer;
  st: psqlite3_stmt;
  fnum: integer;
+<<<<<<< HEAD
  p1: Pointer;
+=======
+>>>>>>> graemeg/fixes_2_2
 
 begin
   st:=TSQLite3Cursor(cursor).fstatement;
   fnum:= FieldDef.fieldno - 1;
 
+<<<<<<< HEAD
   case FieldDef.DataType of
     ftWideMemo:
       begin
@@ -393,6 +542,13 @@ begin
   ReAllocMem(ABlobBuf^.BlobBuffer^.Buffer, int1);
   if int1 > 0 then
     move(p1^, ABlobBuf^.BlobBuffer^.Buffer^, int1);
+=======
+  int1:= sqlite3_column_bytes(st,fnum);
+
+  ReAllocMem(ABlobBuf^.BlobBuffer^.Buffer,int1);
+  if int1 > 0 then
+    move(sqlite3_column_text(st,fnum)^,ABlobBuf^.BlobBuffer^.Buffer^,int1);
+>>>>>>> graemeg/fixes_2_2
   ABlobBuf^.BlobBuffer^.Size := int1;
 end;
 
@@ -412,6 +568,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Res.fconnection:=Self;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -421,6 +578,9 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  Res.fhandle:=self.fhandle;
+>>>>>>> graemeg/fixes_2_2
   Result:=Res;
 end;
 
@@ -429,6 +589,7 @@ begin
   freeandnil(cursor);
 end;
 
+<<<<<<< HEAD
 function TSQLite3Connection.StrToStatementType(s: string): TStatementType;
 begin
   S:=Lowercase(s);
@@ -440,6 +601,11 @@ procedure TSQLite3Connection.PrepareStatement(cursor: TSQLCursor;
                ATransaction: TSQLTransaction; buf: string; AParams: TParams);
 begin
   TSQLite3Cursor(cursor).fhandle:=self.fhandle;
+=======
+procedure TSQLite3Connection.PrepareStatement(cursor: TSQLCursor;
+               ATransaction: TSQLTransaction; buf: string; AParams: TParams);
+begin
+>>>>>>> graemeg/fixes_2_2
   TSQLite3Cursor(cursor).Prepare(Buf,AParams);
 end;
 
@@ -447,7 +613,10 @@ procedure TSQLite3Connection.UnPrepareStatement(cursor: TSQLCursor);
 
 begin
   TSQLite3Cursor(cursor).UnPrepare;
+<<<<<<< HEAD
   TSQLite3Cursor(cursor).fhandle:=nil;
+=======
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -458,6 +627,7 @@ Type
   end;
   
 Const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -482,6 +652,14 @@ Const
    (n:'SMALLINT'; t: ftSmallint),
    (n:'TINYINT'; t: ftSmallint),
    (n:'WORD'; t: ftWord),
+=======
+  FieldMapCount = 19;
+  FieldMap : Array [1..FieldMapCount] of TFieldMap = (
+   (n:'INT'; t: ftInteger),
+   (n:'LARGEINT'; t:ftlargeInt),
+   (n:'WORD'; t: ftWord),
+   (n:'SMALLINT'; t: ftSmallint),
+>>>>>>> graemeg/fixes_2_2
    (n:'BOOLEAN'; t: ftBoolean),
    (n:'REAL'; t: ftFloat),
    (n:'FLOAT'; t: ftFloat),
@@ -491,6 +669,7 @@ Const
    (n:'DATE'; t: ftDate),
    (n:'TIME'; t: ftTime),
    (n:'CURRENCY'; t: ftCurrency),
+<<<<<<< HEAD
    (n:'MONEY'; t: ftCurrency),
    (n:'VARCHAR'; t: ftString),
    (n:'CHAR'; t: ftFixedChar),
@@ -510,11 +689,20 @@ Const
    (n:'CLOB'; t: ftmemo),
    (n:'BLOB'; t: ftBlob)
 >>>>>>> graemeg/cpstrnew
+=======
+   (n:'VARCHAR'; t: ftString),
+   (n:'CHAR'; t: ftString),
+   (n:'NUMERIC'; t: ftBCD),
+   (n:'DECIMAL'; t: ftBCD),
+   (n:'TEXT'; t: ftmemo),
+   (n:'BLOB'; t: ftBlob)
+>>>>>>> graemeg/fixes_2_2
 { Template:
   (n:''; t: ft)
 }
   );
 
+<<<<<<< HEAD
 procedure TSQLite3Connection.AddFieldDefs(cursor: TSQLCursor; FieldDefs: TFieldDefs);
 var
  i, fi : integer;
@@ -566,6 +754,20 @@ var
 
 begin
   PrimaryKeyFields := GetPrimaryKeyFields;
+=======
+procedure TSQLite3Connection.AddFieldDefs(cursor: TSQLCursor;
+               FieldDefs: TfieldDefs);
+var
+ i     : integer;
+ FN,FD : string;
+ ft1   : tfieldtype;
+ size1 : word;
+ ar1   : TStringArray;
+ fi    : integer;
+ st    : psqlite3_stmt;
+ 
+begin
+>>>>>>> graemeg/fixes_2_2
   st:=TSQLite3Cursor(cursor).fstatement;
   for i:= 0 to sqlite3_column_count(st) - 1 do 
     begin
@@ -578,6 +780,7 @@ begin
       ft1:=FieldMap[fi].t;
       break;
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -631,6 +834,14 @@ begin
                end;
       ftUnknown : DatabaseErrorFmt('Unknown or unsupported data type %s of column %s', [FD, FN]);
 =======
+=======
+    // Empty field types are allowed and used in calculated columns (aggregates)
+    // and by pragma-statements
+    if FD='' then ft1 := ftString;
+    // handle some specials.
+    size1:=0;
+    case ft1 of
+>>>>>>> graemeg/fixes_2_2
       ftString: begin
                 fi:=pos('(',FD);
                 if (fi>0) then
@@ -649,12 +860,16 @@ begin
                   System.Delete(FD,1,fi);
                   fi:=pos(')',FD);
                   size1:=StrToIntDef(trim(copy(FD,1,fi-1)),255);
+<<<<<<< HEAD
                   if size1>4 then
                     ft1 := ftFMTBcd;
+=======
+>>>>>>> graemeg/fixes_2_2
                   end
                 else size1 := 4;
                 end;
       ftUnknown : DatabaseError('Unknown record type: '+FN);
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
     end; // Case
     FieldDefs.Add(FieldDefs.MakeNameUnique(FN),ft1,size1,false,i+1);
@@ -663,6 +878,14 @@ end;
 
 procedure TSQLite3Connection.Execute(cursor: TSQLCursor;
   atransaction: tSQLtransaction; AParams: TParams);
+=======
+    end; // Case
+    tfielddef.create(fielddefs,FieldDefs.MakeNameUnique(FN),ft1,size1,false,i+1);
+    end;
+end;
+
+procedure TSQLite3Connection.Execute(cursor: TSQLCursor; atransaction: tsqltransaction; AParams: TParams);
+>>>>>>> graemeg/fixes_2_2
 var
  SC : TSQLite3Cursor;
             
@@ -671,9 +894,13 @@ begin
   checkerror(sqlite3_reset(sc.fstatement));
   If (AParams<>Nil) and (AParams.count > 0) then
     SC.BindParams(AParams);
+<<<<<<< HEAD
   If LogEvent(detParamValue) then
     LogParams(AParams);
   SC.Execute;
+=======
+  SC.Execute;    
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Function NextWord(Var S : ShortString; Sep : Char) : String;
@@ -689,14 +916,18 @@ begin
   Delete(S,1,P);
 end;
 
+<<<<<<< HEAD
 // Parses string-formatted date into TDateTime value
 // Expected format: '2013-12-31 ' (without ')
+=======
+>>>>>>> graemeg/fixes_2_2
 Function ParseSQLiteDate(S : ShortString) : TDateTime;
 
 Var
   Year, Month, Day : Integer;
 
 begin
+<<<<<<< HEAD
   Result:=0;
   If TryStrToInt(NextWord(S,'-'),Year) then
     if TryStrToInt(NextWord(S,'-'),Month) then
@@ -713,11 +944,25 @@ Function ParseSQLiteTime(S : ShortString; Interval: boolean) : TDateTime;
 
 Var
   Hour, Min, Sec, MSec : Integer;
+=======
+ Result:=0;
+ If TryStrToInt(NextWord(S,'-'),Year) then
+   if TryStrToInt(NextWord(S,'-'),Month) then
+     if TryStrToInt(NextWord(S,'-'),Day) then
+        Result:=EncodeDate(Year,Month,Day);
+end;
+
+Function ParseSQLiteTime(S : ShortString) : TDateTime;
+
+Var
+  Hour, Min, Sec : Integer;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   Result:=0;
   If TryStrToInt(NextWord(S,':'),Hour) then
     if TryStrToInt(NextWord(S,':'),Min) then
+<<<<<<< HEAD
     begin
       if TryStrToInt(NextWord(S,'.'),Sec) then
         // 23:59:59 or 23:59:59.999
@@ -735,6 +980,12 @@ begin
 end;
 
 // Parses string-formatted date/time into TDateTime value
+=======
+      if TryStrToInt(NextWord(S,':'),Sec) then
+        Result:=EncodeTime(Hour,Min,Sec,0);
+end;
+
+>>>>>>> graemeg/fixes_2_2
 Function ParseSQLiteDateTime(S : String) : TDateTime;
 
 var
@@ -744,9 +995,13 @@ var
 begin
   DS:='';
   TS:='';
+<<<<<<< HEAD
   P:=Pos('T',S); //allow e.g. YYYY-MM-DDTHH:MM
   if P=0 then
     P:=Pos(' ',S); //allow e.g. YYYY-MM-DD HH:MM
+=======
+  P:=Pos(' ',S);
+>>>>>>> graemeg/fixes_2_2
   If (P<>0) then
     begin
     DS:=Copy(S,1,P-1);
@@ -760,14 +1015,21 @@ begin
     else if (Pos(':',S)<>0) then
       TS:=S;
     end;
+<<<<<<< HEAD
   Result:=ComposeDateTime(ParseSQLiteDate(DS),ParseSQLiteTime(TS,False));
 end;
 
 function TSQLite3Connection.LoadField(cursor : TSQLCursor; FieldDef : TFieldDef; buffer : pointer; out CreateBlob : boolean) : boolean;
+=======
+  Result:=ComposeDateTime(ParseSQLiteDate(DS),ParseSQLiteTime(TS));
+end;
+function TSQLite3Connection.LoadField(cursor : TSQLCursor;FieldDef : TfieldDef;buffer : pointer; out CreateBlob : boolean) : boolean;
+>>>>>>> graemeg/fixes_2_2
 
 var
  st1: TStorageType;
  fnum: integer;
+<<<<<<< HEAD
  str1: string;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -788,6 +1050,13 @@ var
  bcdstr: FmtBCDStringtype;
  ar1,ar2: TStringArray;
 >>>>>>> graemeg/cpstrnew
+=======
+ i: integer;
+ i64: int64;
+ int1,int2: integer;
+ str1: string;
+ ar1,ar2: TStringArray;
+>>>>>>> graemeg/fixes_2_2
  st    : psqlite3_stmt;
 
 begin
@@ -798,8 +1067,12 @@ begin
   result:= st1 <> stnull;
   if Not result then 
     Exit;
+<<<<<<< HEAD
   case FieldDef.DataType of
     ftAutoInc,
+=======
+  case FieldDef.datatype of
+>>>>>>> graemeg/fixes_2_2
     ftInteger  : pinteger(buffer)^  := sqlite3_column_int(st,fnum);
     ftSmallInt : psmallint(buffer)^ := sqlite3_column_int(st,fnum);
     ftWord     : pword(buffer)^     := sqlite3_column_int(st,fnum);
@@ -811,6 +1084,7 @@ begin
     ftDateTime,
     ftDate,
     ftTime:  if st1 = sttext then 
+<<<<<<< HEAD
                begin { Stored as string }
                setlength(str1,sqlite3_column_bytes(st,fnum));
                move(sqlite3_column_text(st,fnum)^,str1[1],length(str1));
@@ -827,12 +1101,22 @@ begin
                   PDateTime(buffer)^ := PDateTime(buffer)^ + JulianEpoch; //backward compatibility hack
                end;
     ftFixedChar,
+=======
+               begin
+               setlength(str1,sqlite3_column_bytes(st,fnum));
+               move(sqlite3_column_text(st,fnum)^,str1[1],length(str1));
+               PDateTime(Buffer)^:=ParseSqliteDateTime(str1)
+               end
+             else
+               Pdatetime(buffer)^:= sqlite3_column_double(st,fnum);
+>>>>>>> graemeg/fixes_2_2
     ftString: begin
               int1:= sqlite3_column_bytes(st,fnum);
               if int1>FieldDef.Size then 
                 int1:=FieldDef.Size;
               if int1 > 0 then 
                  move(sqlite3_column_text(st,fnum)^,buffer^,int1);
+<<<<<<< HEAD
               PAnsiChar(buffer + int1)^ := #0;
               end;
     ftFmtBCD: begin
@@ -954,6 +1238,9 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+              end;
+>>>>>>> graemeg/fixes_2_2
     ftMemo,
     ftBlob: CreateBlob:=True;
   else { Case }
@@ -989,7 +1276,12 @@ begin
   result:= true;
 end;
 
+<<<<<<< HEAD
 function TSQLite3Connection.StartDBTransaction(trans: TSQLHandle; aParams: string): boolean;
+=======
+function TSQLite3Connection.StartdbTransaction(trans: TSQLHandle;
+               aParams: string): boolean;
+>>>>>>> graemeg/fixes_2_2
 begin
   execsql('BEGIN');
   result:= true;
@@ -1009,6 +1301,7 @@ end;
 
 procedure TSQLite3Connection.DoInternalConnect;
 var
+<<<<<<< HEAD
   filename: ansistring;
 begin
   Inherited;
@@ -1036,17 +1329,33 @@ begin
   str1:= databasename;
   checkerror(sqlite3_open(pchar(str1),@fhandle));
 >>>>>>> graemeg/cpstrnew
+=======
+  str1: string;
+begin
+  if Length(databasename)=0 then
+    DatabaseError(SErrNoDatabaseName,self);
+  initialisesqlite;
+  str1:= databasename;
+  checkerror(sqlite3_open(pchar(str1),@fhandle));
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TSQLite3Connection.DoInternalDisconnect;
 
 begin
+<<<<<<< HEAD
   Inherited;
+=======
+>>>>>>> graemeg/fixes_2_2
   if fhandle <> nil then 
     begin
     checkerror(sqlite3_close(fhandle));
     fhandle:= nil;
+<<<<<<< HEAD
     ReleaseSQLite;
+=======
+    releasesqlite;
+>>>>>>> graemeg/fixes_2_2
     end; 
 end;
 
@@ -1058,15 +1367,24 @@ end;
 procedure TSQLite3Connection.checkerror(const aerror: integer);
 
 Var
+<<<<<<< HEAD
   ErrMsg : String;
   ErrCode : integer;
+=======
+  S : String;
+>>>>>>> graemeg/fixes_2_2
 
 begin
  if (aerror<>sqlite_ok) then 
    begin
+<<<<<<< HEAD
    ErrMsg := strpas(sqlite3_errmsg(fhandle));
    ErrCode := sqlite3_extended_errcode(fhandle);
    raise ESQLDatabaseError.CreateFmt(ErrMsg, [], Self, ErrCode, '');
+=======
+   S:=strpas(sqlite3_errmsg(fhandle));
+   DatabaseError(S,Self);
+>>>>>>> graemeg/fixes_2_2
    end;
 end;
 
@@ -1125,6 +1443,7 @@ begin
   checkerror(sqlite3_exec(fhandle,pchar(asql),@execscallback,@result,nil));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1208,6 +1527,31 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+function TSQLite3Connection.getprimarykeyfield(const atablename: string;
+                                const acursor: tsqlcursor): string;
+var
+  int1,int2: integer;
+  ar1: TArrayStringArray;
+  str1: string;
+  
+begin
+  result:= '';
+  if atablename <> '' then 
+    begin
+    ar1:= stringsquery('PRAGMA table_info('+atablename+');');
+    for int1:= 0 to high(ar1) do 
+      begin
+      if (high(ar1[int1]) >= 5) and (ar1[int1][5] <> '0') then 
+        begin
+        result:= ar1[int1][1];
+        break;
+        end;
+      end;
+    end;
+end;
+
+>>>>>>> graemeg/fixes_2_2
 function TSQLite3Connection.RowsAffected(cursor: TSQLCursor): TRowsCount;
 begin
   if assigned(cursor) then
@@ -1216,6 +1560,7 @@ begin
     Result := -1;
 end;
 
+<<<<<<< HEAD
 function TSQLite3Connection.RefreshLastInsertID(Query: TCustomSQLQuery; Field: TField): Boolean;
 begin
   Field.AsLargeInt:=GetInsertID;
@@ -1329,10 +1674,36 @@ end;
   inherited Create(AOwner);
   FConnOptions := FConnOptions + [sqEscapeRepeat] + [sqEscapeSlash];
   FieldNameQuoteChars:=DoubleQuotes;
+=======
+function TSQLite3Connection.GetSchemaInfoSQL(SchemaType: TSchemaType;
+  SchemaObjectName, SchemaPattern: string): string;
+  
+begin
+  case SchemaType of
+    stTables     : result := 'select name as table_name from sqlite_master where type = ''table''';
+    stColumns    : result := 'pragma table_info(''' + (SchemaObjectName) + ''')';
+  else
+    DatabaseError(SMetadataUnavailable)
+  end; {case}
+end;
+
+function TSQLite3Connection.StrToStatementType(s: string): TStatementType;
+begin
+  S:=Lowercase(s);
+  if s = 'pragma' then exit(stSelect);
+  result := inherited StrToStatementType(s);
+end;
+
+constructor TSQLite3Connection.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  FConnOptions := FConnOptions + [sqEscapeRepeat] + [sqEscapeSlash] + [sqQuoteFieldnames];
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TSQLite3Connection.UpdateIndexDefs(IndexDefs: TIndexDefs; TableName: string);
 var
+<<<<<<< HEAD
   artableinfo, arindexlist, arindexinfo: TArrayStringArray;
   il,ii: integer;
   IndexName: string;
@@ -1444,4 +1815,53 @@ initialization
 finalization
   UnRegisterConnection(TSQLite3ConnectionDef);
 
+=======
+  str1: string;
+  
+begin
+  str1:= getprimarykeyfield(tablename,nil);
+  if str1 <> '' then 
+    begin
+    indexdefs.add('$PRIMARY_KEY$',str1,[ixPrimary,ixUnique]);
+    end;
+end;
+{
+procedure TSQLite3Connection.UpdateIndexDefs(var IndexDefs: TIndexDefs;
+                              const TableName: string);
+var
+ int1,int2: integer;
+ ar1: TArrayStringArray;
+ str1: string;
+begin
+ ar1:= stringsquery('PRAGMA table_info('+tablename+');');
+ for int1:= 0 to high(ar1) do begin
+  if (high(ar1[int1]) >= 5) and (ar1[int1][5] <> '0') then begin
+   indexdefs.add('$PRIMARY_KEY$',ar1[int1][1],[ixPrimary,ixUnique]);
+   break;
+  end;
+ end;
+end;
+}
+
+function TSQLite3Connection.getinsertid: int64;
+begin
+ result:= sqlite3_last_insert_rowid(fhandle);
+end;
+
+procedure TSQLite3Connection.GetFieldNames(const TableName: string;
+  List: TStrings);
+begin
+  GetDBInfo(stColumns,TableName,'name',List);
+end;
+
+procedure TSQLite3Connection.setoptions(const avalue: tsqliteoptions);
+begin
+ if avalue <> foptions then 
+   begin
+   checkdisconnected;
+   foptions:= avalue;
+   end;
+end;
+
+>>>>>>> graemeg/fixes_2_2
 end.

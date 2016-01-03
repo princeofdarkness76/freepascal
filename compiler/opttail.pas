@@ -198,7 +198,11 @@ unit opttail;
                is_managed_type(vardef)) then
                exit;
 
+<<<<<<< HEAD
         labelsym:=clabelsym.create('$opttail');
+=======
+        labelsym:=tlabelsym.create('$opttail');
+>>>>>>> graemeg/fixes_2_2
         labelnode:=clabelnode.create(cnothingnode.create,labelsym);
         if find_and_replace_tailcalls(n) then
           begin

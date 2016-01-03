@@ -8,6 +8,7 @@ program nlshello;
 {$mode objfpc}
 
 uses
+<<<<<<< HEAD
   gettext, ncurses, initc;
 
 procedure setlocale(cat : integer; p : pchar); cdecl; external clib;
@@ -16,6 +17,9 @@ procedure setlocale(cat : integer; p : pchar); cdecl; external clib;
 const
   LC_ALL = 6;
 
+=======
+  gettext, libc, ncurses;
+>>>>>>> graemeg/fixes_2_2
 
 resourcestring
   hello_world = 'Hello world!';

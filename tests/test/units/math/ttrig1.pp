@@ -94,7 +94,11 @@ for i:=1 to 8 do
   Ref := i*10;
   Value := arctan(tan(i*10/float(180)*pi))/pi*float(180);
   Delta := Value - Ref;
+<<<<<<< HEAD
   if Abs(Delta) > arctan_res then
+=======
+  if Abs(Delta) > {$ifdef cpuarm} 1E-13 {$else} 1E-14 {$endif} then
+>>>>>>> graemeg/fixes_2_2
     begin
       writeln('  Error for ArcTan(',i*10,') was:',Value,' should be:',Ref);
       halt(1);
@@ -107,7 +111,11 @@ for i:=-1 downto -8 do
   Ref := i*10;
   Value := arctan(tan(i*10/float(180)*pi))/pi*float(180);
   Delta := Value - Ref;
+<<<<<<< HEAD
   if Abs(Delta) > arctan_res then
+=======
+  if Abs(Delta) > {$ifdef cpuarm} 1E-13 {$else} 1E-14 {$endif} then
+>>>>>>> graemeg/fixes_2_2
     begin
       writeln('  Error for ArcTan(',i*10,') was:',Value,' should be:',Ref);
       halt(1);

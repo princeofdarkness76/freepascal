@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('xforms');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -25,11 +26,19 @@ begin
 
     P.IncludePath.Add('src');
     P.Dependencies.Add('x11');
+=======
+    P.Directory:='xforms';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.SourcePath.Add('src');
+//    P.Dependencies.Add('x11');
+>>>>>>> graemeg/fixes_2_2
 
     T:=P.Targets.AddUnit('xforms.pp');
       with T.Dependencies do
         begin
           AddInclude('cursorfont.inc');
+<<<<<<< HEAD
         end;
     T:=P.Targets.AddProgram('fd2pascal.pp');
 
@@ -106,6 +115,11 @@ begin
     // 'srs.xbm
     // 'bm1.xbm
     // 'porsche.xpm
+=======
+          AddUnit('xlib');
+          AddUnit('xresource');
+        end;
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

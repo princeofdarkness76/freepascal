@@ -47,10 +47,13 @@ begin
       res:=214;
     SIGSEGV :
       res:=216;
+<<<<<<< HEAD
     SIGINT:
         res:=217;
     SIGQUIT:
         res:=233;
+=======
+>>>>>>> graemeg/fixes_2_2
   end;
   {$ifdef FPC_USE_SIGPROCMASK}
    reenable_signal(sig);

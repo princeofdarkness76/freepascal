@@ -146,7 +146,11 @@ type
     constructor create(optype : tcoperand);virtual;
     destructor  destroy;override;
     { converts the instruction to an instruction how it's used by the assembler writer
+<<<<<<< HEAD
       and concats it to the passed list. The newly created item is returned if the
+=======
+      and concats it to the passed list. The newly created item is returned if the 
+>>>>>>> graemeg/fixes_2_2
       instruction was valid, otherwise nil is returned }
     function ConcatInstruction(p:TAsmList) : tai;virtual;
   end;
@@ -923,7 +927,34 @@ Begin
               opr.localscale:=0;
               opr.localgetoffset:=GetOffset;
               if paramanager.push_addr_param(tabstractvarsym(sym).varspez,tabstractvarsym(sym).vardef,current_procinfo.procdef.proccalloption) then
+<<<<<<< HEAD
                 SetSize(sizeof(pint),false);
+=======
+                SetSize(sizeof(aint),false);
+            end;
+        end;
+        case tabstractvarsym(sym).vardef.typ of
+          orddef,
+          enumdef,
+          pointerdef,
+          floatdef :
+            SetSize(tabstractvarsym(sym).getsize,false);
+          arraydef :
+            begin
+              { for arrays try to get the element size, take care of
+                multiple indexes }
+              harrdef:=tarraydef(tabstractvarsym(sym).vardef);
+              while assigned(harrdef.elementdef) and
+                    (harrdef.elementdef.typ=arraydef) do
+               harrdef:=tarraydef(harrdef.elementdef);
+              if not is_packed_array(harrdef) then
+                SetSize(harrdef.elesize,false)
+               else
+                 begin
+                   if (harrdef.elepackedbitsize mod 8) = 0 then
+                     SetSize(harrdef.elepackedbitsize div 8,false);
+                 end;
+>>>>>>> graemeg/fixes_2_2
             end;
         end;
         setvarsize(tabstractvarsym(sym));
@@ -1508,11 +1539,15 @@ Begin
             current_asmdata.getjumplabel(tlabelsym(sym).asmblocklabel);
         hl:=tlabelsym(sym).asmblocklabel;
         if emit then
+<<<<<<< HEAD
           begin
             if tlabelsym(sym).defined then
               Message(sym_e_label_already_defined);
             tlabelsym(sym).defined:=true
           end
+=======
+          tlabelsym(sym).defined:=true
+>>>>>>> graemeg/fixes_2_2
         else
           tlabelsym(sym).used:=true;
         SearchLabel:=true;
@@ -1609,7 +1644,11 @@ end;
           s64real :
 {$ifdef ARM}
            if is_double_hilo_swapped then
+<<<<<<< HEAD
              p.concat(tai_realconst.create_s64real_hiloswapped(value))
+=======
+             p.concat(Tai_real_64bit.Create_hiloswapped(value))
+>>>>>>> graemeg/fixes_2_2
            else
 {$endif ARM}
 <<<<<<< HEAD

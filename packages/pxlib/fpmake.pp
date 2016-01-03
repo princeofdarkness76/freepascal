@@ -13,6 +13,7 @@ begin
 {$endif ALLPACKAGES}
     P:=AddPackage('pxlib');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
 <<<<<<< HEAD
@@ -46,6 +47,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+    P.Directory:='pxlib';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    T:=P.Targets.AddUnit('src/pxlib.pp');
+      T.OSes:=[Linux];
+    T:=P.Targets.AddExampleunit('examples/ppxview.pp');
+>>>>>>> graemeg/fixes_2_2
 {$ifndef ALLPACKAGES}
     Run;
     end;

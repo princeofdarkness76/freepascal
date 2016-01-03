@@ -214,6 +214,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ENoDynLibsSupport = class(Exception);
    ENotImplemented = class(Exception);
 
@@ -233,6 +234,9 @@ type
 =======
    ENotImplemented = class(Exception);
 >>>>>>> origin/cpstrnew
+=======
+
+>>>>>>> graemeg/fixes_2_2
 
    { Exception handling routines }
    function ExceptObject: TObject;
@@ -348,9 +352,15 @@ Type
 
   function SafeLoadLibrary(const FileName: AnsiString;
     ErrorMode: DWord = {$ifdef windows}SEM_NOOPENFILEERRORBOX{$else windows}0{$endif windows}): HMODULE;
+<<<<<<< HEAD
 
   function GetModuleName(Module: HMODULE): string;
 
+=======
+    
+  function GetModuleName(Module: HMODULE): string;
+  
+>>>>>>> graemeg/fixes_2_2
 { some packages and unit related constants for compatibility }
 
 const

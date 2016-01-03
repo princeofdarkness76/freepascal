@@ -55,6 +55,7 @@ Type
 
    tfputype =
      (fpu_none,
+<<<<<<< HEAD
 //      fpu_soft,  { generic }
       fpu_sse64,
       fpu_sse3,
@@ -63,6 +64,10 @@ Type
       fpu_sse42,
       fpu_avx,
       fpu_avx2
+=======
+      fpu_soft,  { generic }
+      fpu_sse64
+>>>>>>> graemeg/fixes_2_2
      );
 
    tcontrollertype =
@@ -117,6 +122,7 @@ Const
    );
 
    fputypestr : array[tfputype] of string[6] = ('',
+<<<<<<< HEAD
 //     'SOFT',
      'SSE64',
      'SSE3',
@@ -125,6 +131,10 @@ Const
      'SSE42',
      'AVX',
      'AVX2'
+=======
+     'SOFT',
+     'SSE64'
+>>>>>>> graemeg/fixes_2_2
    );
 
 <<<<<<< HEAD

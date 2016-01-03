@@ -416,6 +416,7 @@ procedure TThread.Synchronize(AMethod: TThreadMethod);
 
 Function PopThreadQueueHead : TThread.PThreadQueueEntry;
 
+<<<<<<< HEAD
 begin
   Result:=ThreadQueueHead;
   if (Result<>Nil) then
@@ -470,6 +471,18 @@ begin
       tmpentry^.Exception := exceptobj;
       RtlEventSetEvent(tmpentry^.SyncEvent)
       end
+=======
+function CheckSynchronize(timeout : longint=0) : boolean;
+  { assumes being called from GUI thread }
+  begin
+    result:=false;
+    { first sanity check }
+    if Not IsMultiThread then
+      Exit
+    { second sanity check }
+    else if GetCurrentThreadID<>MainThreadID then
+      raise EThread.CreateFmt(SCheckSynchronizeError,[GetCurrentThreadID])
+>>>>>>> graemeg/fixes_2_2
     else
       begin
       { for Queue entries we dispose the entry and raise the exception }
@@ -481,6 +494,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 
 class function TThread.GetCurrentThread: TThread;
 begin
@@ -554,6 +568,19 @@ begin
         lastentry := entry;
         entry := entry^.Next;
         Continue;
+=======
+        if DoSynchronizeMethod then
+          begin
+            DoSynchronizeMethod:=false;
+            try
+              SynchronizeMethod;
+              result:=true;
+            except
+              SynchronizeException:=Exception(AcquireExceptionObject);
+            end;
+            RtlEventSetEvent(ExecuteEvent);
+          end;
+>>>>>>> graemeg/fixes_2_2
       end;
 
       { ok, we need to remove this entry }
@@ -729,7 +756,11 @@ end;
  *       Miscellaneous procedures and functions                       *
  **********************************************************************}
 
+<<<<<<< HEAD
 function ExtractStrings(Separators, WhiteSpace: TSysCharSet; Content: PChar; Strings: TStrings; AddEmptyStrings : Boolean = False): Integer;
+=======
+function ExtractStrings(Separators, WhiteSpace: TSysCharSet; Content: PChar; Strings: TStrings): Integer;
+>>>>>>> graemeg/fixes_2_2
 var
   b, c : pchar;
 
@@ -745,13 +776,21 @@ var
       s : string;
     begin
       l := c-b;
+<<<<<<< HEAD
       if (l > 0) or AddEmptyStrings then
+=======
+      if l > 0 then
+>>>>>>> graemeg/fixes_2_2
         begin
           if assigned(Strings) then
             begin
               setlength(s, l);
+<<<<<<< HEAD
               if l>0 then
                 move (b^, s[1],l*SizeOf(char));
+=======
+              move (b^, s[1],l);
+>>>>>>> graemeg/fixes_2_2
               Strings.Add (s);
             end;
           inc (result);
@@ -979,7 +1018,11 @@ end;
 
 { TPropFixup }
 // Tainted. TPropFixup is being removed.
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> graemeg/fixes_2_2
 Type
   TInitHandler = Class(TObject)
     AHandler : TInitComponentHandler;
@@ -1197,11 +1240,19 @@ end;
 Function FindNestedComponent(Root : TComponent; APath : String; CStyle : Boolean = True) : TComponent;
 
   Function GetNextName : String; {$ifdef CLASSESINLINE} inline; {$endif CLASSESINLINE}
+<<<<<<< HEAD
 
   Var
     P : Integer;
     CM : Boolean;
 
+=======
+  
+  Var
+    P : Integer;
+    CM : Boolean;
+    
+>>>>>>> graemeg/fixes_2_2
   begin
     P:=Pos('.',APath);
     CM:=False;
@@ -1391,6 +1442,7 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
    if p = nil then begin
     res:= '''''';
    end
+<<<<<<< HEAD
    else
     begin
     res := '';
@@ -1400,10 +1452,22 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
       NewInString := InString;
       w := CharToOrdfunc(P);
       if w = ord('''') then
+=======
+   else 
+    begin
+    res := '';
+    InString := False;
+    while P < LastP do 
+      begin
+      NewInString := InString;
+      w := CharToOrdfunc(P);
+      if w = ord('''') then 
+>>>>>>> graemeg/fixes_2_2
         begin //quote char
         if not InString then
           NewInString := True;
         NewStr := '''''';
+<<<<<<< HEAD
 <<<<<<< HEAD
         end
 =======
@@ -1425,19 +1489,37 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
         NewStr := char(w);
         end
       else
+=======
+        end 
+      else if (Ord(w) >= 32) and (Ord(w) < 127) then 
+        begin //printable ascii
+        if not InString then
+          NewInString := True;
+        NewStr := char(w);
+        end 
+      else 
+>>>>>>> graemeg/fixes_2_2
         begin //ascii control chars, non ascii
         if InString then
           NewInString := False;
         NewStr := '#' + IntToStr(w);
         end;
+<<<<<<< HEAD
       if NewInString <> InString then
+=======
+      if NewInString <> InString then 
+>>>>>>> graemeg/fixes_2_2
         begin
         NewStr := '''' + NewStr;
         InString := NewInString;
         end;
       res := res + NewStr;
       end;
+<<<<<<< HEAD
     if InString then
+=======
+    if InString then 
+>>>>>>> graemeg/fixes_2_2
       res := res + '''';
     end;
    OutStr(res);
@@ -1531,6 +1613,72 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
   {$ENDIF}
 {$endif}
 
+<<<<<<< HEAD
+=======
+  function ReadWord : word; {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
+  begin
+    Result:=Input.ReadWord;
+    Result:=LEtoN(Result);
+  end;
+
+  function ReadDWord : longword; {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
+  begin
+    Result:=Input.ReadDWord;
+    Result:=LEtoN(Result);
+  end;
+
+  function ReadQWord : qword; {$ifdef CLASSESINLINE}inline;{$endif CLASSESINLINE}
+  begin
+    Input.ReadBuffer(Result,sizeof(Result));
+    Result:=LEtoN(Result);
+  end;
+
+  {$IFNDEF FPC_HAS_TYPE_EXTENDED}
+  function ExtendedToDouble(e : pointer) : double;
+  var mant : qword;
+      exp : smallint;
+      sign : boolean;
+      d : qword;
+  begin
+    move(pbyte(e)[0],mant,8); //mantissa         : bytes 0..7
+    move(pbyte(e)[8],exp,2);  //exponent and sign: bytes 8..9
+    mant:=LEtoN(mant);
+    exp:=LetoN(word(exp));
+    sign:=(exp and $8000)<>0;
+    if sign then exp:=exp and $7FFF;
+    case exp of
+          0 : mant:=0;  //if denormalized, value is too small for double,
+                        //so it's always zero
+      $7FFF : exp:=2047 //either infinity or NaN
+      else
+      begin
+        dec(exp,16383-1023);
+        if (exp>=-51) and (exp<=0) then //can be denormalized
+        begin
+          mant:=mant shr (-exp);
+          exp:=0;
+        end
+        else
+        if (exp<-51) or (exp>2046) then //exponent too large.
+        begin
+          Result:=0;
+          exit;
+        end
+        else //normalized value
+          mant:=mant shl 1; //hide most significant bit
+      end;
+    end;
+    d:=word(exp);
+    d:=d shl 52;
+
+    mant:=mant shr 12;
+    d:=d or mant;
+    if sign then d:=d or $8000000000000000;
+    Result:=pdouble(@d)^;
+  end;
+  {$ENDIF}
+
+>>>>>>> graemeg/fixes_2_2
   function ReadInt(ValueType: TValueType): Int64;
   begin
     case ValueType of
@@ -1544,6 +1692,19 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
   function ReadInt: Int64;
   begin
     Result := ReadInt(TValueType(Input.ReadByte));
+  end;
+  
+  function ReadExtended : extended;
+  {$IFNDEF FPC_HAS_TYPE_EXTENDED}
+  var ext : array[0..9] of byte;
+  {$ENDIF}
+  begin
+    {$IFNDEF FPC_HAS_TYPE_EXTENDED}
+    Input.ReadBuffer(ext[0],10);
+    Result:=ExtendedToDouble(@(ext[0]));
+    {$ELSE}
+    Input.ReadBuffer(Result,sizeof(Result));
+    {$ENDIF}
   end;
 
 {$ifndef FPUNONE}
@@ -1587,6 +1748,7 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
   {$IFDEF ENDIAN_BIG}
     i : integer;
   {$ENDIF}
+<<<<<<< HEAD
   begin
     len := ReadDWord;
     SetLength(Result, len);
@@ -1606,6 +1768,8 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
   {$IFDEF ENDIAN_BIG}
     i : integer;
   {$ENDIF}
+=======
+>>>>>>> graemeg/fixes_2_2
   begin
     len := ReadDWord;
     SetLength(Result, len);
@@ -1673,7 +1837,10 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
         vaInt16: OutLn( IntToStr(SmallInt(ReadWord)));
         vaInt32: OutLn(IntToStr(LongInt(ReadDWord)));
         vaInt64: OutLn(IntToStr(Int64(ReadQWord)));
+<<<<<<< HEAD
 {$ifndef FPUNONE}
+=======
+>>>>>>> graemeg/fixes_2_2
         vaExtended: begin
             ext:=ReadExtended;
             Str(ext,S);// Do not use localized strings.
@@ -1828,8 +1995,12 @@ var
     qw:=NtoLE(qw);
     Output.WriteBuffer(qw,sizeof(qword));
   end;
+<<<<<<< HEAD
 
 {$ifndef FPUNONE}
+=======
+  
+>>>>>>> graemeg/fixes_2_2
   {$IFNDEF FPC_HAS_TYPE_EXTENDED}
   procedure DoubleToExtended(d : double; e : pointer);
   var mant : qword;
@@ -1879,7 +2050,10 @@ var
     Output.WriteBuffer(e,sizeof(e));
     {$ENDIF}
   end;
+<<<<<<< HEAD
 {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 
   procedure WriteString(s: String);
   var size : byte;
@@ -1934,7 +2108,25 @@ var
     end else begin
       Output.WriteByte(ord(vaInt64));
       WriteQWord(qword(value));
+<<<<<<< HEAD
     end;
+  end;
+
+  procedure ProcessWideString(const left : widestring);
+  var ws : widestring;
+  begin
+    ws:=left+parser.TokenWideString;
+    while parser.NextToken = '+' do
+    begin
+      parser.NextToken;   // Get next string fragment
+      if not (parser.Token in [toString,toWString]) then
+        parser.CheckToken(toWString);
+      ws:=ws+parser.TokenWideString;
+=======
+>>>>>>> graemeg/fixes_2_2
+    end;
+    Output.WriteByte(Ord(vaWstring));
+    WriteWString(ws);
   end;
 
   procedure ProcessWideString(const left : widestring);
@@ -1951,7 +2143,7 @@ var
     Output.WriteByte(Ord(vaWstring));
     WriteWString(ws);
   end;
-
+  
   procedure ProcessProperty; forward;
 
   procedure ProcessValue;
@@ -1986,7 +2178,11 @@ var
             case parser.Token of
               toString  : s:=s+parser.TokenString;
               toWString : begin
+<<<<<<< HEAD
                             ProcessWideString(WideString(s));
+=======
+                            ProcessWideString(s);
+>>>>>>> graemeg/fixes_2_2
                             exit;
                           end
               else parser.CheckToken(toString);
@@ -2233,8 +2429,11 @@ begin
   SynchronizeTimeoutEvent:=RtlEventCreate;
   InitCriticalSection(ThreadQueueLock);
   MainThreadID:=GetCurrentThreadID;
+<<<<<<< HEAD
   ExternalThreads := TThreadList.Create;
   TThread.FProcessorCount := CPUCount;
+=======
+>>>>>>> graemeg/fixes_2_2
   InitCriticalsection(ResolveSection);
   InitHandlerList:=Nil;
   FindGlobalComponentList:=nil;

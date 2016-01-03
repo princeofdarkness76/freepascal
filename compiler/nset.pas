@@ -97,6 +97,7 @@ interface
           procedure ppuwrite(ppufile:tcompilerppufile);override;
           procedure buildderefimpl;override;
           procedure derefimpl;override;
+          procedure derefnode;override;
           function dogetcopy : tnode;override;
           procedure printnodetree(var t:text);override;
           procedure insertintolist(l : tnodelist);override;
@@ -241,8 +242,18 @@ implementation
          t:=self;
          if isbinaryoverloaded(t) then
            begin
+<<<<<<< HEAD
              result:=t;
              exit;
+=======
+             { we need to create a setconstn }
+             pst:=createsetconst(tsetdef(ttypenode(right).resultdef));
+             t:=csetconstnode.create(pst,ttypenode(right).resultdef);
+             dispose(pst);
+             right.free;
+             right:=t;
+             typecheckpass(right);
+>>>>>>> graemeg/fixes_2_2
            end;
 
          if right.resultdef.typ<>setdef then
@@ -321,12 +332,21 @@ implementation
                  { to the rule above -> will give range check error if      }
                  { value > high(longint) if we don't take the signedness    }
                  { into account                                             }
+<<<<<<< HEAD
                  if Tordconstnode(left).value.signed then
                    t:=cordconstnode.create(byte(tordconstnode(left).value.svalue in Tsetconstnode(right).value_set^),
                      pasbool8type,true)
                  else
                    t:=cordconstnode.create(byte(tordconstnode(left).value.uvalue in Tsetconstnode(right).value_set^),
                      pasbool8type,true);
+=======
+                 if is_signed(left.resultdef) then
+                   t:=cordconstnode.create(byte(tordconstnode(left).value in Tsetconstnode(right).value_set^),
+                     booltype,true)
+                 else
+                   t:=cordconstnode.create(byte(TConstExprUInt(tordconstnode(left).value) in Tsetconstnode(right).value_set^),
+                     booltype,true);                   
+>>>>>>> graemeg/fixes_2_2
                  typecheckpass(t);
                  result:=t;
                  exit;
@@ -635,6 +655,18 @@ implementation
           elseblock.derefimpl;
         for i:=0 to blocks.count-1 do
           pcaseblock(blocks[i])^.statement.derefimpl;
+      end;
+
+
+    procedure tcasenode.derefnode;
+      var
+        i : integer;
+      begin
+        inherited derefnode;
+        if assigned(elseblock) then
+          elseblock.derefnode;
+        for i:=0 to blocks.count-1 do
+          pcaseblock(blocks[i])^.statement.derefnode;
       end;
 
 

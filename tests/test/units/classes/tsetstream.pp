@@ -2,7 +2,11 @@ program storedfalse;
 {$ifdef FPC}{$mode objfpc}{$h+}{$INTERFACES CORBA}{$endif}
 {$ifdef mswindows}{$apptype console}{$endif}
 uses
+<<<<<<< HEAD
  {$ifdef FPC}{$ifdef unix}cthreads,{$endif}{$endif}
+=======
+ {$ifdef FPC}{$ifdef linux}cthreads,{$endif}{$endif}
+>>>>>>> graemeg/fixes_2_2
  sysutils,classes;
 
 type

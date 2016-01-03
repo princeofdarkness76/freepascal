@@ -46,6 +46,10 @@ interface
         constructor create(info: pasminfo; smart: boolean); override;
       end;
 
+      Tx86AoutGNUAssembler=class(TAoutGNUassembler)
+        constructor create(smart: boolean); override;
+      end;
+
 
      Tx86InstrWriter=class(TCPUInstrWriter)
        private
@@ -159,6 +163,16 @@ interface
       end;
 
 {****************************************************************************
+                          Tx86AoutGNUAssembler
+ ****************************************************************************}
+
+    constructor Tx86AoutGNUAssembler.create(smart: boolean);
+      begin
+        inherited create(smart);
+        InstrWriter := Tx86InstrWriter.create(self);
+      end;
+
+{****************************************************************************
                             Tx86InstrWriter
  ****************************************************************************}
 
@@ -173,9 +187,15 @@ interface
            if segment<>NR_NO then
              owner.writer.AsmWrite(gas_regname(segment)+':');
            if assigned(symbol) then
+<<<<<<< HEAD
              owner.writer.AsmWrite(symbol.name);
            if assigned(relsymbol) then
              owner.writer.AsmWrite('-'+relsymbol.name);
+=======
+             owner.AsmWrite(symbol.name);
+           if assigned(relsymbol) then
+             owner.AsmWrite('-'+relsymbol.name);
+>>>>>>> graemeg/fixes_2_2
            if ref.refaddr=addr_pic then
              begin
                { @GOT and @GOTPCREL references are only allowed for symbol alone,
@@ -850,8 +870,12 @@ initialization
   RegisterAssembler(as_i386_gas_info,Tx86ATTAssembler);
   RegisterAssembler(as_i386_yasm_info,Tx86ATTAssembler);
   RegisterAssembler(as_i386_gas_darwin_info,Tx86AppleGNUAssembler);
+<<<<<<< HEAD
   RegisterAssembler(as_i386_clang_darwin_info,Tx86AppleGNUAssembler);
   RegisterAssembler(as_i386_as_aout_info,Tx86AoutGNUAssembler);
   RegisterAssembler(as_i386_solaris_info,Tx86ATTAssembler);
+=======
+  RegisterAssembler(as_i386_as_aout_info,Tx86AoutGNUAssembler);
+>>>>>>> graemeg/fixes_2_2
 {$endif x86_64}
 end.

@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('rexx');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -26,11 +27,22 @@ begin
     P.ExamplePath.Add('examples');
     P.Targets.AddExampleProgram('callrexx.pas');
     // 'backward.fnc
+=======
+    P.Directory:='rexx';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.SourcePath.Add('src');
+    P.Oses:=[emx,os2];
+//    P.Dependencies.Add('x11');
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;
     end;
 end.
 {$endif ALLPACKAGES}
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> graemeg/fixes_2_2

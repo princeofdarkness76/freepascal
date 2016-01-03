@@ -39,11 +39,57 @@
 
   { variant error codes }
   {$i varerror.inc}
+<<<<<<< HEAD
   
   { Type helpers}
   {$IFNDEF VER2_6}
   {$i syshelp.inc}
   {$ENDIF}
+=======
+
+    Function FileSearch (Const Name, DirList : String; ImplicitCurrentDir : Boolean = True) : String;
+    Var
+      I : longint;
+      Temp : String;
+
+    begin
+      Result:=Name;
+      temp:=SetDirSeparators(DirList);
+      // Start with checking the file in the current directory
+      If ImplicitCurrentDir and (Result <> '') and FileExists(Result) Then
+        exit;
+      while True do begin
+        If Temp = '' then
+          Break; // No more directories to search - fail
+        I:=pos(PathSeparator,Temp);
+        If I<>0 then
+          begin
+            Result:=Copy (Temp,1,i-1);
+            system.Delete(Temp,1,I);
+          end
+        else
+          begin
+            Result:=Temp;
+            Temp:='';
+          end;
+        If Result<>'' then
+          Result:=IncludeTrailingPathDelimiter(Result)+name;
+        If (Result <> '') and FileExists(Result) Then
+          exit;
+      end;
+      result:='';
+    end;
+
+    Function ExeSearch (Const Name, DirList : String) : String;
+
+    begin
+    {$ifdef unix}
+      Result := FileSearch(Name, DirList, False);
+    {$else unix}
+      Result := FileSearch(Name, DirList, True);
+    {$endif unix}
+    end;
+>>>>>>> graemeg/fixes_2_2
 
   {$ifndef OS_FILEISREADONLY}
   Function FileIsReadOnly(const FileName: RawByteString): Boolean;
@@ -293,6 +339,7 @@ Procedure CatchUnhandledException (Obj : TObject; Addr: CodePointer; FrameCount:
 Var
   i : longint;
   hstdout : ^text;
+<<<<<<< HEAD
   
 begin
   if WriteErrorsToStdErr then
@@ -311,6 +358,18 @@ begin
   WriteLn (HStdOut^, 'Last OS error detected in the RTL: ', GetLastOSError);
  {$ENDIF DEBUG_EXCEPTIONS_LASTOSERROR}
 {$ENDIF HAS_OSERROR}
+=======
+begin
+  hstdout:=@stdout;
+  Writeln(hstdout^,'An unhandled exception occurred at $',HexStr(PtrUInt(Addr),sizeof(PtrUInt)*2),' :');
+  if Obj is exception then
+   begin
+     Message:=Exception(Obj).ClassName+' : '+Exception(Obj).Message;
+     Writeln(hstdout^,Message);
+   end
+  else
+   Writeln(hstdout^,'Exception object ',Obj.ClassName,' is not of class Exception.');
+>>>>>>> graemeg/fixes_2_2
   Writeln(hstdout^,BackTraceStrFunc(Addr));
   if (FrameCount>0) then
     begin
@@ -384,11 +443,19 @@ Var OutOfMemory : EOutOfMemory;
     InValidPointer : EInvalidPointer;
 
 
+<<<<<<< HEAD
 Procedure RunErrorToExcept (ErrNo : Longint; Address : CodePointer; Frame : Pointer);
 var
   E: Exception;
   HS: PString;
   Entry: PExceptMapEntry;
+=======
+Procedure RunErrorToExcept (ErrNo : Longint; Address,Frame : Pointer);
+
+Var E : Exception;
+    HS : PString;
+
+>>>>>>> graemeg/fixes_2_2
 begin
   Case Errno of
    1,203 : E:=OutOfMemory;
@@ -415,10 +482,14 @@ begin
        105 : HS:=@SFileNotOpenForOutput;
        106 : HS:=@SInvalidInput;
      end;
+<<<<<<< HEAD
      if Assigned(HS) then
        E:=EInOutError.CreateRes(HS)
      else
        E:=EInOutError.CreateResFmt(@SUnknownRunTimeError,[errno]);
+=======
+     E:=EinOutError.Create (HS^);
+>>>>>>> graemeg/fixes_2_2
      // this routine can be called from FPC_IOCHECK,
      // which clears inoutres and then passes its
      // original value to HandleErrorFrame() (which calls
@@ -428,6 +499,38 @@ begin
      EInoutError(E).ErrorCode:=errno;
      inoutres:=0;
      end;
+<<<<<<< HEAD
+=======
+  // We don't set abstracterrorhandler, but we do it here.
+  // Unless the use sets another handler we'll get here anyway...
+  200 : E:=EDivByZero.Create(SDivByZero);
+  201 : E:=ERangeError.Create(SRangeError);
+  205 : E:=EOverflow.Create(SOverflow);
+  206 : E:=EOverflow.Create(SUnderflow);
+  207 : E:=EInvalidOp.Create(SInvalidOp);
+  211 : E:=EAbstractError.Create(SAbstractError);
+  212 : E:=EExternalException.Create(SExternalException);
+  214 : E:=EBusError.Create(SBusError);
+  215 : E:=EIntOverflow.Create(SIntOverflow);
+  216 : E:=EAccessViolation.Create(SAccessViolation);
+  217 : E:=EControlC.Create(SControlC);
+  218 : E:=EPrivilege.Create(SPrivilege);
+  219 : E:=EInvalidCast.Create(SInvalidCast);
+  220 : E:=EVariantError.Create(SInvalidVarCast);
+  221 : E:=EVariantError.Create(SInvalidVarOp);
+  222 : E:=EVariantError.Create(SDispatchError);
+  223 : E:=EVariantError.Create(SVarArrayCreate);
+  224 : E:=EVariantError.Create(SVarNotArray);
+  225 : E:=EVariantError.Create(SVarArrayBounds);
+  227 : E:=EAssertionFailed.Create(SAssertionFailed);
+  228 : E:=EIntfCastError.Create(SIntfCastError);
+  229 : E:=ESafecallException.Create(SSafecallException);
+  231 : E:=EConvertError.Create(SiconvError);
+  232 : E:=ENoThreadSupport.Create(SNoThreadSupport);
+  233 : E:=ENoWideStringSupport.Create(SMissingWStringManager);
+  else
+   E:=Exception.CreateFmt (SUnKnownRunTimeError,[Errno]);
+>>>>>>> graemeg/fixes_2_2
   end;
   Raise E at Address,Frame;
 end;
@@ -470,7 +573,11 @@ begin
     S:=SAssertionFailed
   else
     S:=Msg;
+<<<<<<< HEAD
   Raise EAssertionFailed.Createfmt(SAssertError,[S,Fn,LineNo]) at get_caller_addr(theAddr), get_caller_frame(theAddr);
+=======
+  Raise EAssertionFailed.Createfmt(SAssertError,[S,Fn,LineNo]) at Pointer(theAddr);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 {$pop} //{$S-} for Error handling functions
@@ -642,6 +749,7 @@ end;
     Diskh functions, OS independent.
   ---------------------------------------------------------------------}
 
+<<<<<<< HEAD
 Function GetCurrentDir: {$ifdef FPC_UNICODE_RTL}UnicodeString{$else}AnsiString{$endif};
 begin
   GetDir(0,Result);
@@ -650,6 +758,55 @@ end;
 { ---------------------------------------------------------------------
     Other functions, OS independent.
   ---------------------------------------------------------------------}
+
+Var
+  GUIDCalledRandomize : Boolean = False;
+=======
+function ForceDirectories(Const Dir: string): Boolean;
+
+var
+  E: EInOutError;
+  ADrv : String;
+
+function DoForceDirectories(Const Dir: string): Boolean;
+var
+  ADir : String;
+  APath: String;
+begin
+  Result:=True;
+  ADir:=ExcludeTrailingPathDelimiter(Dir);
+  if (ADir='') then Exit;
+  if Not DirectoryExists(ADir) then
+    begin
+      APath := ExtractFilePath(ADir);
+      //this can happen on Windows if user specifies Dir like \user\name/test/
+      //and would, if not checked for, cause an infinite recusrsion and a stack overflow
+      if (APath = ADir) then Result := False
+        else Result:=DoForceDirectories(APath);
+    If Result then
+      Result := CreateDir(ADir);
+    end;
+end;
+
+function IsUncDrive(const Drv: String): Boolean;
+begin
+  Result := (Length(Drv) > 2) and (Drv[1] = PathDelim) and (Drv[2] = PathDelim);
+end;
+
+begin
+  Result := False;
+  ADrv := ExtractFileDrive(Dir);
+  if (ADrv<>'') and (not DirectoryExists(ADrv))
+  {$IFNDEF FORCEDIR_NO_UNC_SUPPORT} and (not IsUncDrive(ADrv)){$ENDIF} then Exit;
+  if Dir='' then
+    begin
+      E:=EInOutError.Create(SCannotCreateEmptyDir);
+      E.ErrorCode:=3;
+      Raise E;
+    end;
+  Result := DoForceDirectories(SetDirSeparators(Dir));
+end;
+>>>>>>> graemeg/fixes_2_2
 
 Var
   GUIDCalledRandomize : Boolean = False;
@@ -737,11 +894,16 @@ function GetModuleName(Module: HMODULE): string;
 begin
 {$ifdef MSWINDOWS}
   SetLength(Result,MAX_PATH);
+<<<<<<< HEAD
   SetLength(Result,GetModuleFileNameA(Module, Pchar(Result),Length(Result)));
+=======
+  SetLength(Result,GetModuleFileName(Module, Pchar(Result),Length(Result)));
+>>>>>>> graemeg/fixes_2_2
 {$ELSE}
   Result:='';
 {$ENDIF}
 end;
+<<<<<<< HEAD
 
 { Beep support }
 
@@ -763,3 +925,5 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2

@@ -370,6 +370,7 @@ implementation
         { occurs                                                            }
         if (tsym(p).typ=localvarsym) and
            (tlocalvarsym(p).refs>0) and
+<<<<<<< HEAD
            is_managed_type(tlocalvarsym(p).vardef) then
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -390,6 +391,10 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+           not(is_class(tlocalvarsym(p).vardef)) and
+           tlocalvarsym(p).vardef.needs_inittable then
+>>>>>>> graemeg/fixes_2_2
           include(current_procinfo.flags,pi_needs_implicit_finally);
 >>>>>>> graemeg/cpstrnew
       end;
@@ -1843,10 +1848,16 @@ implementation
             procdef.localst.SymList.ForEachCall(@check_finalize_locals,nil);
           end;
 
+<<<<<<< HEAD
 {$ifdef SUPPORT_SAFECALL}
         { set implicit_finally flag for if procedure is safecall }
         if (tf_safecall_exceptions in target_info.flags) and
            (procdef.proccalloption=pocall_safecall) then
+=======
+{$if defined(x86) or defined(arm)}
+        { set implicit_finally flag for if procedure is safecall }
+        if procdef.proccalloption=pocall_safecall then
+>>>>>>> graemeg/fixes_2_2
           include(flags, pi_needs_implicit_finally);
 {$endif}
         { firstpass everything }
@@ -2074,7 +2085,11 @@ implementation
             generate_parameter_info;
 
             { allocate got register if needed }
+<<<<<<< HEAD
             allocate_got_register(aktproccode);
+=======
+            current_procinfo.allocate_got_register(aktproccode);
+>>>>>>> graemeg/fixes_2_2
 
             { Allocate space in temp/registers for parast and localst }
             current_filepos:=entrypos;
@@ -2093,6 +2108,7 @@ implementation
             assign_regvars(code);
 {$endif oldreg}
             current_filepos:=entrypos;
+<<<<<<< HEAD
 
 <<<<<<< HEAD
             hlcg.gen_load_para_value(templist);
@@ -2108,6 +2124,14 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+            { record which registers are allocated here, since all code }
+            { allocating registers comes after it                       }
+            cg.set_regalloc_live_range_direction(rad_backwards);
+
+            gen_load_para_value(templist);
+            cg.set_regalloc_live_range_direction(rad_forward);
+>>>>>>> graemeg/fixes_2_2
 
             { caller paraloc info is also necessary in the stackframe_entry
               code of the ppc (and possibly other processors)               }
@@ -2189,9 +2213,15 @@ implementation
             { make sure the got/pic register doesn't get freed in the }
             { middle of a loop                                        }
             if (cs_create_pic in current_settings.moduleswitches) and
+<<<<<<< HEAD
                (pi_needs_got in flags) and
                (got<>NR_NO) then
               cg.a_reg_sync(aktproccode,got);
+=======
+               (pi_needs_got in current_procinfo.flags) and
+               (current_procinfo.got<>NR_NO) then
+              cg.a_reg_sync(aktproccode,current_procinfo.got);
+>>>>>>> graemeg/fixes_2_2
 
             gen_free_symtable(aktproccode,procdef.localst);
             gen_free_symtable(aktproccode,procdef.parast);
@@ -2234,6 +2264,7 @@ implementation
 
             aktproccode.insertlistafter(headertai,templist);
 
+<<<<<<< HEAD
             { re-enable if more code at the end is ever generated here
             cg.set_regalloc_live_range_direction(rad_forward);
             }
@@ -2259,6 +2290,9 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+            cg.set_regalloc_live_range_direction(rad_forward);
+>>>>>>> graemeg/fixes_2_2
 
             { The procedure body is finished, we can now
               allocate the registers }
@@ -2268,6 +2302,7 @@ implementation
               this is necessary for debuginfo and verbose assembler output
               when SSA will be implented, this will be more complicated because we've to
               maintain location lists }
+<<<<<<< HEAD
             procdef.parast.SymList.ForEachCall(@translate_registers,templist);
             procdef.localst.SymList.ForEachCall(@translate_registers,templist);
             if (cs_create_pic in current_settings.moduleswitches) and
@@ -2275,6 +2310,15 @@ implementation
                not(cs_no_regalloc in current_settings.globalswitches) and
                (got<>NR_NO) then
               cg.translate_register(got);
+=======
+            current_procinfo.procdef.parast.SymList.ForEachCall(@translate_registers,templist);
+            current_procinfo.procdef.localst.SymList.ForEachCall(@translate_registers,templist);
+            if (cs_create_pic in current_settings.moduleswitches) and
+               (pi_needs_got in current_procinfo.flags) and
+               not(cs_no_regalloc in current_settings.globalswitches) and
+               (current_procinfo.got<>NR_NO) then
+              cg.translate_register(current_procinfo.got);
+>>>>>>> graemeg/fixes_2_2
 
             { Add save and restore of used registers }
             current_filepos:=entrypos;
@@ -2300,10 +2344,16 @@ implementation
             current_filepos:=entrypos;
             gen_proc_entry_code(templist);
             aktproccode.insertlistafter(headertai,templist);
+<<<<<<< HEAD
 {$ifdef SUPPORT_SAFECALL}
             { Set return value of safecall procedure if implicit try/finally blocks are disabled }
             if not (cs_implicit_exceptions in current_settings.moduleswitches) and
                (tf_safecall_exceptions in target_info.flags) and
+=======
+{$if defined(x86) or defined(arm)}
+            { Set return value of safecall procedure if implicit try/finally blocks are disabled }
+            if not (cs_implicit_exceptions in current_settings.moduleswitches) and
+>>>>>>> graemeg/fixes_2_2
                (procdef.proccalloption=pocall_safecall) then
               cg.a_load_const_reg(aktproccode,OS_ADDR,0,NR_FUNCTION_RETURN_REG);
 {$endif}
@@ -2483,7 +2533,11 @@ implementation
             case currpara.vardef.typ of
               formaldef :
                 begin
+<<<<<<< HEAD
                   if (currpara.varspez in [vs_out,vs_var,vs_const,vs_constref]) then
+=======
+                  if (currpara.varspez in [vs_out,vs_var,vs_const]) then
+>>>>>>> graemeg/fixes_2_2
                     begin
                       Message1(parser_w_not_supported_for_inline,'formal parameter');
                       Message(parser_w_inlining_disabled);
@@ -2625,7 +2679,11 @@ implementation
                st:=st.defowner.owner;
              if (pi_uses_static_symtable in flags) and
                 (st.symtabletype<>staticsymtable) then
+<<<<<<< HEAD
                Message(parser_e_global_generic_references_static);
+=======
+               Comment(V_Error,'Global Generic template references static symtable');
+>>>>>>> graemeg/fixes_2_2
            end;
 
          { save exit info }
@@ -2835,6 +2893,24 @@ implementation
           for all defered nested procedures and the current procedure }
         if not isnestedproc then
           begin
+<<<<<<< HEAD
+=======
+            { We can't support inlining for procedures that have nested
+              procedures because the nested procedures use a fixed offset
+              for accessing locals in the parent procedure (PFV) }
+            if (tcgprocinfo(current_procinfo).nestedprocs.count>0) then
+              begin
+                if (df_generic in current_procinfo.procdef.defoptions) then
+                  Comment(V_Error,'Generic methods cannot have nested procedures')
+                else
+                 if (po_inline in current_procinfo.procdef.procoptions) then
+                  begin
+                    Message1(parser_w_not_supported_for_inline,'nested procedures');
+                    Message(parser_w_inlining_disabled);
+                    exclude(current_procinfo.procdef.procoptions,po_inline);
+                  end;
+              end;
+>>>>>>> graemeg/fixes_2_2
             if not(df_generic in current_procinfo.procdef.defoptions) then
               tcgprocinfo(current_procinfo).generate_code_tree;
           end;
@@ -2945,7 +3021,16 @@ implementation
             if (not current_module.in_interface) then
               include(pdflags,pd_implemen);
             if (not current_module.is_unit) or
+<<<<<<< HEAD
                create_smartlink_library then
+=======
+               create_smartlink or
+              {
+                taking addresses of static procedures goes wrong
+                if they aren't global when pic is used (FK)
+              }
+              (cs_create_pic in current_settings.moduleswitches) then
+>>>>>>> graemeg/fixes_2_2
               include(pd.procoptions,po_global);
             pd.forwarddef:=false;
           end;
@@ -3040,6 +3125,7 @@ implementation
 >>>>>>> graemeg/cpstrnew
                  { Import DLL specified? }
                  if assigned(pd.import_dll) then
+<<<<<<< HEAD
                    begin
                      if assigned (pd.import_name) then
                        current_module.AddExternalImport(pd.import_dll^,
@@ -3050,6 +3136,9 @@ implementation
                          proc_get_importname(pd),proc_get_importname(pd),
                          pd.import_nr,false,true);
                    end
+=======
+                   current_module.AddExternalImport(pd.import_dll^,proc_get_importname(pd),pd.import_nr,false,pd.import_name=nil)
+>>>>>>> graemeg/fixes_2_2
                  else
                    begin
                      { add import name to external list for DLL scanning }
@@ -3610,20 +3699,35 @@ implementation
         oldsymtablestack   : tsymtablestack;
         pu : tused_unit;
         hmodule : tmodule;
+<<<<<<< HEAD
         specobj : tabstractrecorddef;
       begin
         if not((tsym(p).typ=typesym) and
                (ttypesym(p).typedef.typesym=tsym(p)) and
                (ttypesym(p).typedef.typ in [objectdef,recorddef]) and
+=======
+        specobj : tobjectdef;
+      begin
+        if not((tsym(p).typ=typesym) and
+               (ttypesym(p).typedef.typesym=tsym(p)) and
+               (ttypesym(p).typedef.typ=objectdef) and
+>>>>>>> graemeg/fixes_2_2
                (df_specialization in ttypesym(p).typedef.defoptions)
               ) then
           exit;
 
         { Setup symtablestack a definition time }
+<<<<<<< HEAD
         specobj:=tabstractrecorddef(ttypesym(p).typedef);
         oldsymtablestack:=symtablestack;
         symtablestack:=tsymtablestack.create;
         if not assigned(specobj.genericdef) then
+=======
+        specobj:=tobjectdef(ttypesym(p).typedef);
+        oldsymtablestack:=symtablestack;
+        symtablestack:=tsymtablestack.create;
+        if not assigned(tobjectdef(ttypesym(p).typedef).genericdef) then
+>>>>>>> graemeg/fixes_2_2
           internalerror(200705151);
         hmodule:=find_module_from_symtable(specobj.genericdef.owner);
         if hmodule=nil then
@@ -3642,7 +3746,11 @@ implementation
           symtablestack.push(hmodule.localsymtable);
 
         { procedure definitions for classes or objects }
+<<<<<<< HEAD
         if is_class_or_object(specobj) or is_record(specobj) then
+=======
+        if is_class(specobj) or is_object(specobj) then
+>>>>>>> graemeg/fixes_2_2
           begin
             for i:=0 to specobj.symtable.DefList.Count-1 do
               begin
@@ -3667,6 +3775,7 @@ implementation
                  end;
              end;
           end;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
               { procedure definitions for classes or objects }
@@ -3676,6 +3785,12 @@ implementation
             end
           else
             tabstractrecorddef(ttypesym(p).typedef).symtable.symlist.whileeachcall(@specialize_objectdefs,nil);
+=======
+
+        { Restore symtablestack }
+        symtablestack.free;
+        symtablestack:=oldsymtablestack;
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -3684,7 +3799,11 @@ implementation
         if assigned(current_module.globalsymtable) then
           current_module.globalsymtable.SymList.WhileEachCall(@specialize_objectdefs,nil);
         if assigned(current_module.localsymtable) then
+<<<<<<< HEAD
           current_module.localsymtable.SymList.WhileEachCall(@specialize_objectdefs,nil);
+=======
+          current_module.localsymtable.SymList.ForEachCall(@specialize_objectdefs,nil);
+>>>>>>> graemeg/fixes_2_2
       end;
 
 end.

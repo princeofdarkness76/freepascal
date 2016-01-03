@@ -1,6 +1,10 @@
 { Utility routines for HTTP server component
 
+<<<<<<< HEAD
   Copyright (C) 2006-2008 by Micha Nelissen
+=======
+  Copyright (C) 2006-2007 Micha Nelissen
+>>>>>>> graemeg/fixes_2_2
 
   This library is Free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -51,7 +55,11 @@ type
   function HTTPEncode(const AStr: string): string;
   function HexToNum(AChar: char): byte;
   
+<<<<<<< HEAD
   function DecomposeURL(const URL: string; out Host, URI: string; out Port: Word): Boolean;
+=======
+  procedure DecomposeURL(const URL: string; out Host, URI: string; out Port: Word);
+>>>>>>> graemeg/fixes_2_2
   function ComposeURL(Host, URI: string; const Port: Word): string;
 
 implementation
@@ -232,6 +240,7 @@ begin
   until false;
 end;
 
+<<<<<<< HEAD
 function DecomposeURL(const URL: string; out Host, URI: string; out Port: Word): Boolean;
 var
   n: Integer;
@@ -273,12 +282,33 @@ begin
     URI := '';
     Port := 0;
   end;
+=======
+procedure DecomposeURL(const URL: string; out Host, URI: string; out Port: Word);
+var
+  index: Integer;
+begin
+  index := PosEx('/', URL, 8);
+  Host := Copy(URL, 8, index-8);
+  URI := Copy(URL, index, Length(URL)+1-index);
+
+  index := Pos(':', Host);
+  if index > 0 then begin
+    Port := StrToIntDef(Copy(Host, index+1, Length(Host)-index), -1);
+
+    SetLength(Host, index-1);
+  end else
+    Port := 80;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function ComposeURL(Host, URI: string; const Port: Word): string;
 begin
   Host := Trim(Host);
+<<<<<<< HEAD
   URI := StringReplace(Trim(URI), '%20', ' ', [rfReplaceAll]);
+=======
+  URI := Trim(URI);
+>>>>>>> graemeg/fixes_2_2
 
   if (Pos('http://', Host) <> 1)
   and (Pos('https://', Host) <> 1) then

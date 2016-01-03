@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
  * Copyright (c) 2000-2004,2007 Apple Inc. All Rights Reserved.
  * 
  * @APPLE_LICENSE_HEADER_START@
@@ -56,6 +57,38 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+ * Copyright (c) 2000-2002 Apple Computer, Inc. All Rights Reserved.
+ * 
+ * The contents of this file constitute Original Code as defined in and are
+ * subject to the Apple Public Source License Version 1.2 (the 'License').
+ * You may not use this file except in compliance with the License. Please obtain
+ * a copy of the License at http://www.apple.com/publicsource and read it before
+ * using this file.
+ * 
+ * This Original Code and all software distributed under the License are
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY of ANY KIND, EITHER EXPRESS
+ * OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES, INCLUDING WITHOUT
+ * LIMITATION, ANY WARRANTIES of MERCHANTABILITY, FITNESS FOR A PARTICULAR
+ * PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT. Please see the License for the
+ * specific language governing rights and limitations under the License.
+ }
+{	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
+
+
+{
+ *  Authorization.h -- APIs for implementing access control in applications
+ *  and daemons.
+ }
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -64,8 +97,13 @@
 
 unit Authorization;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -78,21 +116,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -127,6 +173,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -134,6 +182,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -354,6 +403,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -379,6 +438,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -389,6 +452,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -403,6 +467,9 @@ uses MacTypes;
  }
 
 
+=======
+{$ALIGN MAC68K}
+>>>>>>> graemeg/fixes_2_2
 {!
 	@header Authorization
 	Version 1.0 10/16/2000
@@ -437,6 +504,7 @@ const kAuthorizationEmptyEnvironment = nil;
     The comments must not be multi-line, and should be in a form meaningful to an end user. If
     a different or additional comment is needed, it can be put in the header doc format, or on a
     line that does not start with errZZZ.
+<<<<<<< HEAD
 
     errAuthorizationSuccess can't include a string as it's also errSecSuccess in libsecurity_keychain/lib/SecBase.h
 }
@@ -457,6 +525,26 @@ const
 	errAuthorizationToolExecuteFailure = -60031; { The specified program could not be executed. }
 	errAuthorizationToolEnvironmentError = -60032; { An invalid status was returned during execution of a privileged tool. }
 	errAuthorizationBadAddress = -60033; { The requested socket address is invalid (must be 0-1023 inclusive). }
+=======
+}
+
+const
+	errAuthorizationSuccess					= 0;      { The operation completed successfully. }
+	errAuthorizationInvalidSet				= -60001; { The set parameter is invalid. }
+	errAuthorizationInvalidRef				= -60002; { The authorization parameter is invalid. }
+	errAuthorizationInvalidTag				= -60003; { The tag parameter is invalid. }
+	errAuthorizationInvalidPointer			= -60004; { The authorizedRights parameter is invalid. }
+	errAuthorizationDenied					= -60005; { The authorization was denied. }
+	errAuthorizationCanceled				= -60006; { The authorization was cancelled by the user. }
+	errAuthorizationInteractionNotAllowed	= -60007; { The authorization was denied since no user interaction was possible. }
+	errAuthorizationInternal                = -60008; { something else went wrong }
+	errAuthorizationExternalizeNotAllowed	= -60009; { authorization externalization denied }
+	errAuthorizationInternalizeNotAllowed	= -60010; { authorization internalization denied }
+	errAuthorizationInvalidFlags            = -60011; { invalid option flag(s) }
+	errAuthorizationToolExecuteFailure      = -60031; { cannot execute privileged tool }
+	errAuthorizationToolEnvironmentError    = -60032; { privileged tool environment error }
+	errAuthorizationBadAddress				= -60033; { invalid socket address requested }
+>>>>>>> graemeg/fixes_2_2
 
 
 {!
@@ -464,6 +552,7 @@ const
 	Optional flags passed in to serveral Authorization APIs. See the description of AuthorizationCreate, AuthorizationCopyRights and AuthorizationFree for a description of how they affect those calls.
 }
 const
+<<<<<<< HEAD
 	kAuthorizationFlagDefaults = 0;
 	kAuthorizationFlagInteractionAllowed = 1 shl 0;
 	kAuthorizationFlagExtendRights = 1 shl 1;
@@ -473,14 +562,29 @@ const
 	
 	// private bits (do not use)
 	kAuthorizationFlagNoData = 1 shl 20;
+=======
+	kAuthorizationFlagDefaults              = 0;
+	kAuthorizationFlagInteractionAllowed	= (1 shl 0);
+	kAuthorizationFlagExtendRights			= (1 shl 1);
+	kAuthorizationFlagPartialRights			= (1 shl 2);
+	kAuthorizationFlagDestroyRights			= (1 shl 3);
+	kAuthorizationFlagPreAuthorize			= (1 shl 4);
+	
+	// private bits (do not use)
+	kAuthorizationFlagNoData                = (1 shl 20);
+>>>>>>> graemeg/fixes_2_2
 
 
 {!
 	@typedef AuthorizationFlags
 	Optional flags passed in to AuthorizationCreate.
 }
+<<<<<<< HEAD
 type
 	AuthorizationFlags = UInt32;
+=======
+type AuthorizationFlags = UInt32;
+>>>>>>> graemeg/fixes_2_2
 
 
 {!
@@ -488,7 +592,11 @@ type
 	Flags returned in the flags field of ItemSet Items when calling AuthorizationCopyRights().
 }
 const
+<<<<<<< HEAD
 	kAuthorizationFlagCanNotPreAuthorize = 1 shl 0;
+=======
+	kAuthorizationFlagCanNotPreAuthorize = (1 shl 0);
+>>>>>>> graemeg/fixes_2_2
 
 
 {!
@@ -496,6 +604,7 @@ const
 	Opaque reference to an authorization object.
 }
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -514,6 +623,9 @@ type
 =======
 	AuthorizationRef = ^SInt32;
 >>>>>>> origin/cpstrnew
+=======
+	AuthorizationRef							= ^SInt32;
+>>>>>>> graemeg/fixes_2_2
 
 
 {!
@@ -521,7 +633,11 @@ type
 	A zero terminated string in UTF-8 encoding.
 }
 type AuthorizationString = CStringPtr;
+<<<<<<< HEAD
 	 ConstAuthorizationString = ConstCStringPtr;	{ will need later in AuthorizationPlugin }
+=======
+
+>>>>>>> graemeg/fixes_2_2
 
 {!
 	@struct AuthorizationItem
@@ -538,8 +654,13 @@ type AuthorizationString = CStringPtr;
 type
 	AuthorizationItem = record
 		name: AuthorizationString;
+<<<<<<< HEAD
 		valueLength: size_t;
 		value: UnivPtr;
+=======
+		valueLength: UInt32;
+		value: Ptr;
+>>>>>>> graemeg/fixes_2_2
 		flags: UInt32;
 	end;
 	AuthorizationItemPtr = ^AuthorizationItem;
@@ -570,8 +691,12 @@ type
 	SECURITY NOTE: Applications should take care to not disclose the AuthorizationExternalForm to
 	potential attackers since it would authorize rights to them.
 }
+<<<<<<< HEAD
 const
 	kAuthorizationExternalFormLength = 32;
+=======
+const kAuthorizationExternalFormLength = 32;
+>>>>>>> graemeg/fixes_2_2
 
 type
 	AuthorizationExternalForm = record
@@ -628,7 +753,11 @@ type AuthorizationEnvironmentPtr = ^AuthorizationEnvironment;
 
 	errAuthorizationInteractionNotAllowed -60007 The authorization was denied since no interaction with the user was allowed.
 }
+<<<<<<< HEAD
 function AuthorizationCreate( rights: AuthorizationRightsPtr; environment: AuthorizationEnvironmentPtr; flags: AuthorizationFlags; var authorization: AuthorizationRef ): OSStatus; external name '_AuthorizationCreate';
+=======
+function AuthorizationCreate(rights: AuthorizationRightsPtr; environment: AuthorizationEnvironmentPtr; flags: AuthorizationFlags; var authorization: AuthorizationRef): OSStatus; external name '_AuthorizationCreate';
+>>>>>>> graemeg/fixes_2_2
 
 
 {!
@@ -647,8 +776,12 @@ function AuthorizationCreate( rights: AuthorizationRightsPtr; environment: Autho
 
     errAuthorizationInvalidRef -60002 The authorization parameter is invalid.
 }
+<<<<<<< HEAD
 function AuthorizationFree( authorization: AuthorizationRef; flags: AuthorizationFlags ): OSStatus; external name '_AuthorizationFree';
 
+=======
+function AuthorizationFree(authorization: AuthorizationRef;flags: AuthorizationFlags): OSStatus; external name '_AuthorizationFree';
+>>>>>>> graemeg/fixes_2_2
 
 {!
 	@function AuthorizationCopyRights
@@ -683,7 +816,11 @@ function AuthorizationFree( authorization: AuthorizationRef; flags: Authorizatio
 
     errAuthorizationInvalidPointer -60004 The authorizedRights parameter is invalid.
 }
+<<<<<<< HEAD
 function AuthorizationCopyRights( authorization: AuthorizationRef; const (*var*) rights: AuthorizationRights; environment: AuthorizationEnvironmentPtr; flags: AuthorizationFlags; authorizedRights: AuthorizationRightsPtrPtr ): OSStatus; external name '_AuthorizationCopyRights';
+=======
+function AuthorizationCopyRights(authorization: AuthorizationRef; const (*var*) rights: AuthorizationRights; environment: AuthorizationEnvironmentPtr; flags: AuthorizationFlags; authorizedRights: AuthorizationRightsPtrPtr): OSStatus; external name '_AuthorizationCopyRights';
+>>>>>>> graemeg/fixes_2_2
 
 {!
 	@function AuthorizationCopyInfo
@@ -702,7 +839,11 @@ function AuthorizationCopyRights( authorization: AuthorizationRef; const (*var*)
 
     errAuthorizationInvalidPointer -60004 The info parameter is invalid.
 }
+<<<<<<< HEAD
 function AuthorizationCopyInfo( authorization: AuthorizationRef; tag: AuthorizationString; var info: AuthorizationItemSetPtr ): OSStatus; external name '_AuthorizationCopyInfo';
+=======
+function AuthorizationCopyInfo(authorization: AuthorizationRef; tag: AuthorizationString; var info: AuthorizationItemSetPtr): OSStatus; external name '_AuthorizationCopyInfo';
+>>>>>>> graemeg/fixes_2_2
 
 {!
 	@function AuthorizationMakeExternalForm
@@ -723,19 +864,35 @@ function AuthorizationCopyInfo( authorization: AuthorizationRef; tag: Authorizat
 
 
 }
+<<<<<<< HEAD
 function AuthorizationMakeExternalForm( authorization: AuthorizationRef; var extForm: AuthorizationExternalForm ): OSStatus; external name '_AuthorizationMakeExternalForm';
+=======
+function AuthorizationMakeExternalForm(authorization: AuthorizationRef; var extForm: AuthorizationExternalForm): OSStatus; external name '_AuthorizationMakeExternalForm';
+>>>>>>> graemeg/fixes_2_2
 
 
 {!
 	@function AuthorizationCreateFromExternalForm
+<<<<<<< HEAD
 	Internalize the external "byte blob" form of an authorization reference.
+=======
+	Turn an Authorization into an external "byte blob" form so it can be
+	transmitted to another process.
+	Note that *storing* the external form somewhere will probably not do what
+	you want, since authorizations are bounded by sessions, processes, and possibly
+	time limits. This is for online transmission of authorizations.
+>>>>>>> graemeg/fixes_2_2
 	
 	@param extForm Pointer to an AuthorizationExternalForm value.
 	@param authorization Will be filled with a valid AuthorizationRef on success.
 	
 	@result errAuthorizationInternalizeNotAllowed -60010 Internalizing this authorization is not allowed.
 }
+<<<<<<< HEAD
 function AuthorizationCreateFromExternalForm( const (*var*) extForm: AuthorizationExternalForm; var authorization: AuthorizationRef ): OSStatus; external name '_AuthorizationCreateFromExternalForm';
+=======
+function AuthorizationCreateFromExternalForm(const (*var*) extForm: AuthorizationExternalForm; var authorization: AuthorizationRef): OSStatus; external name '_AuthorizationCreateFromExternalForm';
+>>>>>>> graemeg/fixes_2_2
 
 
 {!
@@ -749,7 +906,11 @@ function AuthorizationCreateFromExternalForm( const (*var*) extForm: Authorizati
 
     errAuthorizationInvalidSet -60001 The set parameter is invalid.
 }
+<<<<<<< HEAD
 function AuthorizationFreeItemSet( var setx: AuthorizationItemSet ): OSStatus; external name '_AuthorizationFreeItemSet';
+=======
+function AuthorizationFreeItemSet(var setx: AuthorizationItemSet): OSStatus; external name '_AuthorizationFreeItemSet';
+>>>>>>> graemeg/fixes_2_2
 
 
 {!
@@ -768,14 +929,18 @@ function AuthorizationFreeItemSet( var setx: AuthorizationItemSet ): OSStatus; e
 	a bidirectional pipe to communicate with the tool. The tool will have
 	this pipe as its standard I/O channels (stdin/stdout). If NULL, do not
 	establish a communications pipe.
+<<<<<<< HEAD
 
  	@discussion This function has been deprecated and should no longer be used.
  	Use a launchd-launched helper tool and/or the Service Mangement framework
  	for this functionality.
+=======
+>>>>>>> graemeg/fixes_2_2
  }
 type
   Arg10000Type = array[0..10000] of CStringPtr;
   Arg10000TypePtr = ^Arg10000Type;
+<<<<<<< HEAD
 function AuthorizationExecuteWithPrivileges( authorization: AuthorizationRef; pathToTool: CStringPtr; options: AuthorizationFlags; arguments: Arg10000TypePtr; communicationsPipe: UnivPtr ): OSStatus; external name '_AuthorizationExecuteWithPrivileges';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -790,6 +955,9 @@ function AuthorizationExecuteWithPrivileges( authorization: AuthorizationRef; pa
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+function AuthorizationExecuteWithPrivileges(authorization: AuthorizationRef; pathToTool: CStringPtr; options: AuthorizationFlags; arguments: Arg10000TypePtr; communicationsPipe: UnivPtr): OSStatus; external name '_AuthorizationExecuteWithPrivileges';
+>>>>>>> graemeg/fixes_2_2
 // communicationsPipe not yet supported
 
 
@@ -800,6 +968,7 @@ function AuthorizationExecuteWithPrivileges( authorization: AuthorizationRef; pa
 	While AuthorizationExecuteWithPrivileges already verified the authorization to
 	launch your tool, the tool may want to avail itself of any additional pre-authorizations
 	the caller may have obtained through that reference.
+<<<<<<< HEAD
  
 	@discussion This function has been deprecated and should no longer be used.
 	Use a launchd-launched helper tool and/or the Service Mangement framework
@@ -826,3 +995,9 @@ function AuthorizationCopyPrivilegedReference( var authorization: AuthorizationR
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ }
+function AuthorizationCopyPrivilegedReference(var authorization: AuthorizationRef; flags: AuthorizationFlags): OSStatus; external name '_AuthorizationCopyPrivilegedReference';
+
+end.
+>>>>>>> graemeg/fixes_2_2

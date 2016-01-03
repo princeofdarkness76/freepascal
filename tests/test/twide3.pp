@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %skiptarget=win32,win64,wince,os2,emx }
 { This test is only useful if the local codepage is utf-8 which
   usually not the case on windows (and never can be the case on OS/2)
@@ -7,25 +8,42 @@
 { This test is only useful if the local codepage is utf-8 which
   usually not the case on windows
 >>>>>>> graemeg/cpstrnew
+=======
+{ %skiptarget=win32,win64,wince }
+{ This test is only usefull if the local codepage is utf-8 which
+  usually not the case on windows
+>>>>>>> graemeg/fixes_2_2
 }
 {$codepage utf-8}
 
 {$mode objfpc}
+<<<<<<< HEAD
 
 uses
 {$ifdef unix}
   {$ifdef darwin}iosxwstr{$else}cwstring{$endif},
 {$endif}
   SysUtils;
+=======
+uses
+{$ifdef unix}
+  cwstring,
+{$endif}
+  sysutils;
+>>>>>>> graemeg/fixes_2_2
 
 {$i+}
 
 var
   t: text;
   w: widestring;
+<<<<<<< HEAD
   u: unicodestring;
   a: ansistring;
   wc: widechar;
+=======
+  a: ansistring;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   assign(t,'twide3.txt');
@@ -33,6 +51,7 @@ begin
   writeln(t,'łóżka');
   close(t);
   reset(t);
+<<<<<<< HEAD
   
   try
     read(t,wc);
@@ -45,10 +64,13 @@ begin
   end;
     
   reset(t);
+=======
+>>>>>>> graemeg/fixes_2_2
   try
     readln(t,a);
     w:=a;
     if (w<>'łóżka') then
+<<<<<<< HEAD
       raise Exception.create('wrong ansistring read');
   except
     close(t);
@@ -72,10 +94,14 @@ begin
     readln(t,u);
     if (u<>'łóżka') then
       raise Exception.create('wrong unicodestring read');
+=======
+      raise Exception.create('wrong string read');
+>>>>>>> graemeg/fixes_2_2
   finally
     close(t);
     erase(t);
   end;
+<<<<<<< HEAD
 
   readstr(u,a);
   if u<>a then
@@ -83,4 +109,6 @@ begin
   readstr(w,a);
   if w<>u then
     raise Exception.create('wrong readstr(w,a)');
+=======
+>>>>>>> graemeg/fixes_2_2
 end.

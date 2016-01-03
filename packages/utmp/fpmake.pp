@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('utmp');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -24,6 +25,15 @@ begin
 
     P.ExamplePath.Add('examples');
     P.Targets.AddExampleProgram('testutmp.pp');
+=======
+    P.Directory:='utmp';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.SourcePath.Add('src');
+
+    T:=P.Targets.AddUnit('utmp.pp');
+
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

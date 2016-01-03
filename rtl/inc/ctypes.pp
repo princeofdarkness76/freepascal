@@ -138,6 +138,7 @@ type
 =======
 >>>>>>> origin/cpstrnew
 
+<<<<<<< HEAD
 {$ifndef FPUNONE}
 {$if defined(longdouble_is_double) or not defined(FPC_HAS_CEXTENDED)}
   clongdouble=double;
@@ -191,6 +192,9 @@ operator >=(const c:clongdouble;const e:Double) r:boolean;inline;
 operator <=(const e:Double;const c:clongdouble) r:boolean;inline;
 operator <=(const c:clongdouble;const e:Double) r:boolean;inline;
 {$endif dummy}
+=======
+  coff_t = clong;
+>>>>>>> graemeg/fixes_2_2
 {$endif}
 {$endif FPUNONE}
 

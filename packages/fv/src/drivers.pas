@@ -83,7 +83,11 @@ USES
    {$ENDIF}
 
    {$IFDEF OS_UNIX}
+<<<<<<< HEAD
        unixtype,baseunix,unix,
+=======
+       baseunix,unix,
+>>>>>>> graemeg/fixes_2_2
    {$ENDIF}
 
    {$IFDEF OS_NETWARE_LIBC}
@@ -93,10 +97,13 @@ USES
       nwserv,
    {$ENDIF}
 
+<<<<<<< HEAD
    {$IFDEF OS_AMIGA}
       dos, amigados,
    {$ENDIF}
 
+=======
+>>>>>>> graemeg/fixes_2_2
    video,
    SysMsg,
    FVCommon, Objects;                                 { GFV standard units }
@@ -483,12 +490,15 @@ be used after a call to this. Read(ln)/write(ln) can be used again.
 
 procedure donekeyboard;
 
+<<<<<<< HEAD
 {-DetectVideo---------------------------------------------------------
 Detects the current video mode without initializing or otherwise
 changing the current screen.
 ---------------------------------------------------------------------}
 procedure DetectVideo;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {-InitVideo---------------------------------------------------------
 Initializes the video manager, Saves the current screen mode in
 StartupMode, and switches to the mode indicated by ScreenMode.
@@ -718,9 +728,13 @@ VAR
    EventQueue : Array [0..EventQSize - 1] Of TEvent;  { Event queue }
    EventQLast : RECORD END;                           { Simple end marker }
    StartupScreenMode : TVideoMode;
+<<<<<<< HEAD
    {$ifdef OS_AMIGA}
    StartupTicks: Int64; // ticks at Startup for GetDOSTicks
    {$endif}
+=======
+
+>>>>>>> graemeg/fixes_2_2
 {---------------------------------------------------------------------------}
 {  GetDosTicks (18.2 Hz)                                                    }
 {---------------------------------------------------------------------------}
@@ -769,11 +783,14 @@ var
     GetDosTicks := Nwserv.GetCurrentTicks;
   end;
 {$ENDIF}
+<<<<<<< HEAD
 {$IFDEF OS_AMIGA}
   begin
     GetDosTicks:= ((dos.GetMsCount div 55) - StartupTicks) and $7FFFFFFF;
   end;
 {$ENDIF OS_AMIGA}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 
 procedure GiveUpTimeSlice;
@@ -822,6 +839,7 @@ end;
     Delay (10);
   end;
 {$ENDIF}
+<<<<<<< HEAD
 {$IFDEF OS_AMIGA}
   begin
     { AmigaOS Delay() wait's argument in 1/50 seconds }
@@ -829,6 +847,8 @@ end;
     Keyboard.WaitForSystemEvent(150);
   end;
 {$ENDIF OS_AMIGA}
+=======
+>>>>>>> graemeg/fixes_2_2
 
 
 {---------------------------------------------------------------------------}
@@ -1074,10 +1094,17 @@ begin
      keyshift:=KeyBoard.GetKeyEventShiftState(key);
      // some kbds still honour old XT E0 prefix. (org IBM ps/2, win98?) bug #8978
      if (keycode and $FF = $E0) and
+<<<<<<< HEAD
         (byte(keycode shr 8) in
               [$1C,$1D,$2A,$35..$38,$46..$49,$4b,$4d,$4f,$50..$53]) Then
           keycode := keycode and $FF00;
 
+=======
+        (byte(keycode shr 8) in  
+              [$1C,$1D,$2A,$35..$38,$46..$49,$4b,$4d,$4f,$50..$53]) Then
+          keycode := keycode and $FF00;
+     
+>>>>>>> graemeg/fixes_2_2
      { fixup shift-keys }
      if keyshift and kbShift<>0 then
        begin
@@ -1343,10 +1370,17 @@ begin
     exit;
   GetVideoMode(StartupScreenMode);
   GetVideoMode(ScreenMode);
+<<<<<<< HEAD
 {$ifdef OS_WINDOWS}
   { Force the console to the current screen mode }
   Video.SetVideoMode(ScreenMode);
 {$endif OS_WINDOWS}
+=======
+{$ifdef win32}
+  { Force the console to the current screen mode }
+  Video.SetVideoMode(ScreenMode);
+{$endif win32}
+>>>>>>> graemeg/fixes_2_2
 
   If (StoreScreenMode.Col<>0) and
      ((StoreScreenMode.color<>ScreenMode.color) or
@@ -1585,14 +1619,21 @@ END;
 {                      UNIT INITIALIZATION ROUTINE                          }
 {***************************************************************************}
 BEGIN
+<<<<<<< HEAD
 {$IFDEF OS_AMIGA}
   StartupTicks := (dos.GetMsCount div 55);
 {$ENDIF}
+=======
+>>>>>>> graemeg/fixes_2_2
    ButtonCount := DetectMouse;                        { Detect mouse }
    DetectVideo;                                       { Detect video }
 {   InitKeyboard;}
    InitSystemMsg;
+<<<<<<< HEAD
 {$ifdef OS_WINDOWS}
+=======
+{$ifdef win32}
+>>>>>>> graemeg/fixes_2_2
    SetFileApisToOEM;
 {$endif}
 

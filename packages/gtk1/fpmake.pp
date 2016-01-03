@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('gtk1');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -29,6 +30,13 @@ begin
       P.OSes := P.OSes + [darwin];
 
     P.Dependencies.Add('opengl',AllUnixOSes+[Win32,Win64]);
+=======
+    P.Directory:='gtk1';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.OSes:=AllUnixOSes+[Win32,Win64];
+    P.Dependencies.Add('opengl');
+>>>>>>> graemeg/fixes_2_2
 
     T:=P.Targets.AddUnit('src/gdk/gdkpixbuf.pp');
       with T.Dependencies do
@@ -294,6 +302,7 @@ begin
           AddUnit('glib');
           AddUnit('gdk');
         end;
+<<<<<<< HEAD
     P.ExamplePath.Add('examples');
     P.Targets.AddExampleProgram('entry.pp');
     P.Targets.AddExampleProgram('filesel.pp');
@@ -327,6 +336,8 @@ begin
     // 'examples/tutorial/Makefile
     // 'examples/tutorial/Makefile.fpc
     // 'examples/tutorial/info.xpm
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

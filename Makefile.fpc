@@ -8,6 +8,7 @@ name=fpc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
 version=2.5.1
@@ -21,6 +22,9 @@ version=2.5.1
 =======
 version=2.5.1
 >>>>>>> origin/cpstrnew
+=======
+version=2.2.5
+>>>>>>> graemeg/fixes_2_2
 
 [target]
 dirs=compiler rtl utils packages ide installer
@@ -219,6 +223,7 @@ ifneq ($(wildcard ide),)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 IDETARGETS=go32v2 win32 win64 linux freebsd os2 emx beos haiku
 =======
 IDETARGETS=go32v2 win32 win64 linux freebsd os2 emx beos haiku 
@@ -232,11 +237,15 @@ IDETARGETS=go32v2 win32 win64 linux freebsd os2 emx beos haiku
 =======
 IDETARGETS=go32v2 win32 win64 linux freebsd os2 emx beos haiku 
 >>>>>>> origin/cpstrnew
+=======
+IDETARGETS=go32v2 win32 linux freebsd os2 emx beos
+>>>>>>> graemeg/fixes_2_2
 ifneq ($(findstring $(OS_TARGET),$(IDETARGETS)),)
 IDE=1
 endif
 endif
 endif
+<<<<<<< HEAD
 
 # CPU targets for which we only build the compiler/rtl
 BuildOnlyBaseCPUs=jvm
@@ -249,6 +258,8 @@ UTILS=1
 endif
 endif
 endif
+=======
+>>>>>>> graemeg/fixes_2_2
 
 [rules]
 .NOTPARALLEL:
@@ -342,7 +353,10 @@ endif
 # clean
         $(MAKE) rtl_clean $(CLEANOPTS)
         $(MAKE) packages_clean $(CLEANOPTS)
+<<<<<<< HEAD
 ifdef UTILS
+=======
+>>>>>>> graemeg/fixes_2_2
         $(MAKE) utils_clean $(CLEANOPTS)
 endif
 ifdef IDE
@@ -352,7 +366,10 @@ endif
 # build everything
         $(MAKE) rtl_$(ALLTARGET) $(BUILDOPTS)
         $(MAKE) packages_$(ALLTARGET) $(BUILDOPTS)
+<<<<<<< HEAD
 ifdef UTILS
+=======
+>>>>>>> graemeg/fixes_2_2
         $(MAKE) utils_all $(BUILDOPTS)
 endif
 ifdef IDE
@@ -387,7 +404,10 @@ installbase: base.$(BUILDSTAMP)
 
 installother:
         $(MAKE) packages_$(INSTALLTARGET) $(INSTALLOPTS)
+<<<<<<< HEAD
 ifdef UTILS
+=======
+>>>>>>> graemeg/fixes_2_2
         $(MAKE) utils_$(INSTALLTARGET) $(INSTALLOPTS)
 endif
 ifdef IDE
@@ -399,7 +419,10 @@ zipinstallbase:
 
 zipinstallother:
         $(MAKE) packages_zip$(INSTALLTARGET) $(INSTALLOPTS) ZIPPREFIX=$(PKGUNITSPRE)
+<<<<<<< HEAD
 ifdef UTILS
+=======
+>>>>>>> graemeg/fixes_2_2
         $(MAKE) utils_zip$(INSTALLTARGET) $(INSTALLOPTS)
 endif
 ifdef IDE

@@ -62,7 +62,11 @@ type
     function FormButton (aname, caption, aOnClick: DOMstring) : THTML_Input;
     function FormHidden (aname, aValue: DOMstring) : THTML_Input;
     function FormFile (aname, aValue:DOMstring) : THTML_Input;
+<<<<<<< HEAD
     { Other useful links to elements }
+=======
+    { Other usefull links to elements }
+>>>>>>> graemeg/fixes_2_2
     function Meta (aname, ahtpequiv,acontent: DOMString) : THTML_meta;
     function Link (arel, ahref, athetype, amedia: DOMString) : THTML_link;
     function Script (s, athetype, asrc: DOMString) : THTML_script;
@@ -132,10 +136,14 @@ begin
   if assigned (d) then
     begin
     result := THTMLCustomElement(d);
+<<<<<<< HEAD
     if result.ParentNode = FDocument then
       FCurrentElement := nil
     else
       FCurrentElement := THTMLCustomElement(result.ParentNode);
+=======
+    FCurrentElement := THTMLCustomElement(result.ParentNode);
+>>>>>>> graemeg/fixes_2_2
     end
   else
     raise HTMLWriterException.CreateFmt (sErrNoCorespondingParent, [tag.ClassName]);

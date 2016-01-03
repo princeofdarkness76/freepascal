@@ -353,10 +353,13 @@ uses
         { nothing to add }
       end;
 
+<<<<<<< HEAD
       tai_thumb_func = class(tai)
         constructor create;
       end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
     function spilling_create_load(const ref:treference;r:tregister):Taicpu;
     function spilling_create_store(r:tregister; const ref:treference):Taicpu;
 
@@ -917,6 +920,7 @@ implementation
                   ((opcode in [A_VMOV]) and (regtype = R_MMREGISTER) and (oppostfix in [PF_F32,PF_F64]))
 =======
         result:=(((opcode=A_MOV) and (regtype = R_INTREGISTER)) or
+<<<<<<< HEAD
                  ((opcode=A_MVF) and (regtype = R_FPUREGISTER) and (oppostfix in [PF_None,PF_D])) or
                  (((opcode=A_FCPYS) or (opcode=A_FCPYD)) and (regtype = R_MMREGISTER))
 <<<<<<< HEAD
@@ -929,6 +933,9 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+                 ((opcode=A_MVF) and (regtype = R_FPUREGISTER) and (oppostfix in [PF_None,PF_D]))
+>>>>>>> graemeg/fixes_2_2
                 ) and
                 ((oppostfix in [PF_None,PF_D]) or (opcode = A_VMOV)) and
                 (condition=C_None) and
@@ -940,8 +947,11 @@ implementation
 
 
     function spilling_create_load(const ref:treference;r:tregister):Taicpu;
+<<<<<<< HEAD
       var
         op: tasmop;
+=======
+>>>>>>> graemeg/fixes_2_2
       begin
         case getregtype(r) of
           R_INTREGISTER :
@@ -992,8 +1002,11 @@ implementation
 
 
     function spilling_create_store(r:tregister; const ref:treference):Taicpu;
+<<<<<<< HEAD
       var
         op: tasmop;
+=======
+>>>>>>> graemeg/fixes_2_2
       begin
         case getregtype(r) of
           R_INTREGISTER :
@@ -1789,6 +1802,7 @@ implementation
             if SimpleGetNextInstruction(curtai,hp) and
               (tai(hp).typ=ait_instruction) then
               begin
+<<<<<<< HEAD
                 case taicpu(hp).opcode of
                   A_MOV,
                   A_LDR,
@@ -1899,6 +1913,21 @@ implementation
             doinsert:=doinsert or
               (not(curdata.empty) and
                (curinspos-lastinspos+penalty+extradataoffset>limit));
+=======
+                penalty:=1;
+                hp:=tai(curtai.next.next);
+                while assigned(hp) and (hp.typ=ait_const) do
+                  begin
+                    inc(penalty);
+                    hp:=tai(hp.next);
+                  end;
+              end
+            else
+              penalty:=0;
+
+            { don't miss an insert }
+            doinsert:=doinsert or (curpos-lastpos+penalty>1016);
+>>>>>>> graemeg/fixes_2_2
 
             { split only at real instructions else the test below fails }
             if doinsert and (curtai.typ=ait_instruction) and
@@ -1919,6 +1948,7 @@ implementation
                    )
               ) then
               begin
+<<<<<<< HEAD
                 lastinspos:=-1;
                 extradataoffset:=0;
 <<<<<<< HEAD
@@ -1973,6 +2003,11 @@ implementation
                 limit:=1016;
 >>>>>>> origin/cpstrnew
                 doinsert:=false;
+=======
+                lastpos:=curpos;
+                doinsert:=false;
+                hp:=tai(curtai.next);
+>>>>>>> graemeg/fixes_2_2
                 current_asmdata.getjumplabel(l);
 
                 { align jump in thumb .text section to 4 bytes }
@@ -4817,6 +4852,7 @@ implementation
                         bytes:=bytes or (((Rd and $1E) shr 1) shl 16);
                         bytes:=bytes or ((Rd and $1) shl 7);
 
+<<<<<<< HEAD
                         bytes:=bytes or (Rm shl 12);
                       end;
                   end;
@@ -4828,6 +4864,29 @@ implementation
 
                     Rd:=getmmreg(oper[0]^.reg);
                     Rm:=getmmreg(oper[1]^.reg);
+=======
+{$ifdef dummy}
+      (*
+static void gencode (long segment, long offset, int bits,
+                     insn *ins, char *codes, long insn_end)
+{
+    int has_S_code;             /* S - setflag */
+    int has_B_code;             /* B - setflag */
+    int has_T_code;             /* T - setflag */
+    int has_W_code;             /* ! => W flag */
+    int has_F_code;             /* ^ => S flag */
+    int keep;
+    unsigned char c;
+    unsigned char bytes[4];
+    long          data, size;
+    static int cc_code[] =      /* bit pattern of cc */
+  {                             /* order as enum in  */
+    0x0E, 0x03, 0x02, 0x00,     /* nasm.h            */
+    0x0A, 0x0C, 0x08, 0x0D,
+    0x09, 0x0B, 0x04, 0x01,
+    0x05, 0x07, 0x06,
+  };
+>>>>>>> graemeg/fixes_2_2
 
                     bytes:=bytes or (((Rd and $1E) shr 1) shl 12);
                     bytes:=bytes or ((Rd and $1) shl 22);
@@ -6594,3 +6653,14 @@ begin
   cai_align:=tai_align;
 end.
 
+<<<<<<< HEAD
+=======
+*)
+{$endif dummy
+}
+
+begin
+  cai_align:=tai_align;
+end.
+
+>>>>>>> graemeg/fixes_2_2

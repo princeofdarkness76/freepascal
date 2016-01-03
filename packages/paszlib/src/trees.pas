@@ -106,7 +106,11 @@ type
   dtree_type = array[0..2*D_CODES+1-1] of ct_data;  { distance tree }
   htree_type = array[0..2*BL_CODES+1-1] of ct_data;  { Huffman tree for bit lengths }
   { generic tree type }
+<<<<<<< HEAD
   tree_type = array[0..(maxzbaseint div SizeOf(ct_data))-1] of ct_data;
+=======
+  tree_type = array[0..(maxint div SizeOf(ct_data))-1] of ct_data;
+>>>>>>> graemeg/fixes_2_2
 
   tree_ptr = ^ct_data;
   ltree_ptr = ^ltree_type;
@@ -139,7 +143,11 @@ type
 
   pPosf = ^Posf;
 
+<<<<<<< HEAD
   zPosfArray = array[0..(maxzbaseint div SizeOf(Posf))-1] of Posf;
+=======
+  zPosfArray = array[0..(maxint div SizeOf(Posf))-1] of Posf;
+>>>>>>> graemeg/fixes_2_2
   pzPosfArray = ^zPosfArray;
 
 { A Pos is an index in the character window. We use short instead of integer to
@@ -509,7 +517,11 @@ const
 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 28
 );
 
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/fixes_2_2
 { First normalized length for each code (0 = MIN_MATCH) }
   base_length : array[0..LENGTH_CODES-1] of integer = (
 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16, 20, 24, 28, 32, 40, 48, 56,
@@ -752,9 +764,14 @@ begin
   { If not enough room in bi_buf, use (valid) bits from bi_buf and
     (16 - bi_valid) bits from value, leaving (width - (16-bi_valid))
     unused bits in value. }
+<<<<<<< HEAD
   {$PUSH}
   {$Q-}
   {$R-}
+=======
+  {$IFOPT Q+} {$Q-} {$DEFINE NoOverflowCheck} {$ENDIF}
+  {$IFOPT R+} {$R-} {$DEFINE NoRangeCheck} {$ENDIF}
+>>>>>>> graemeg/fixes_2_2
   if (s.bi_valid > integer(Buf_size) - length) then
   begin
     s.bi_buf := s.bi_buf or integer(value shl s.bi_valid);
@@ -772,7 +789,12 @@ begin
     s.bi_buf := s.bi_buf or integer(value shl s.bi_valid);
     inc(s.bi_valid, length);
   end;
+<<<<<<< HEAD
   {$POP}
+=======
+  {$IFDEF NoOverflowCheck} {$Q+} {$UNDEF NoOverflowCheck} {$ENDIF}
+  {$IFDEF NoRangeCheck} {$Q+} {$UNDEF NoRangeCheck} {$ENDIF}
+>>>>>>> graemeg/fixes_2_2
 end;
 
 {$else} { !ZLIB_DEBUG }
@@ -906,9 +928,15 @@ var
   i : integer;
 begin
   system.assign(header, 'trees.inc');
+<<<<<<< HEAD
   {$push}{$I-}
   ReWrite(header);
   {$pop}
+=======
+  {$I-}
+  ReWrite(header);
+  {$I+}
+>>>>>>> graemeg/fixes_2_2
   Assert (IOresult <> 0, 'Can''t open trees.h');
   WriteLn(header,
     '{ header created automatically with -DGEN_TREES_H }'^M);
@@ -1476,9 +1504,13 @@ begin
   for n := 0 to max_code do
   begin
     curlen := nextlen;
+<<<<<<< HEAD
 {$push}{$R-}
     nextlen := tree[n+1].dl.Len;
 {$pop}
+=======
+    nextlen := tree[n+1].dl.Len;
+>>>>>>> graemeg/fixes_2_2
     inc(count);
     if (count < max_count) and (curlen = nextlen) then
       continue

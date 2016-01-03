@@ -34,11 +34,17 @@ uses
   ATSUnicodeGlyphs,
   ATSUnicodeObjects,
   ATSUnicodeTypes,
+<<<<<<< HEAD
   AUComponent,
   AVLTree,
   AXActionConstants,
   AXAttributeConstants,
   AXConstants,
+=======
+  AVLTree,
+  AXActionConstants,
+  AXAttributeConstants,
+>>>>>>> graemeg/fixes_2_2
   AXErrors,
   AXNotificationConstants,
   AXRoleConstants,
@@ -46,13 +52,17 @@ uses
   AXUIElement,
   AXValue,
   AXValueConstants,
+<<<<<<< HEAD
   Accessibility,
+=======
+>>>>>>> graemeg/fixes_2_2
   Aliases,
   Appearance,
   AppleDiskPartitions,
   AppleEvents,
   AppleHelp,
   AppleScript,
+<<<<<<< HEAD
   AudioCodecs,
   AudioComponents,
   AudioHardware,
@@ -80,6 +90,13 @@ uses
   AuthorizationPlugin,
   AuthorizationTags,
   BackupCore,
+=======
+  AudioHardware,
+  AuthSession,
+  Authorization,
+  AuthorizationDB,
+  AuthorizationTags,
+>>>>>>> graemeg/fixes_2_2
   CFArray,
   CFAttributedString,
   CFBag,
@@ -94,6 +111,7 @@ uses
   CFDate,
   CFDateFormatter,
   CFDictionary,
+<<<<<<< HEAD
   CFError,
   CFFTPStream,
 <<<<<<< HEAD
@@ -111,15 +129,22 @@ uses
 =======
 >>>>>>> origin/cpstrnew
   CFHTTPAuthentication,
+=======
+  CFFTPStream,
+>>>>>>> graemeg/fixes_2_2
   CFHTTPMessage,
   CFHTTPStream,
   CFHost,
   CFLocale,
   CFMachPort,
   CFMessagePort,
+<<<<<<< HEAD
   CFNetDiagnostics,
   CFNetServices,
   CFNetworkErrorss,
+=======
+  CFNetServices,
+>>>>>>> graemeg/fixes_2_2
   CFNotificationCenter,
   CFNumber,
   CFNumberFormatter,
@@ -127,7 +152,10 @@ uses
   CFPlugInCOM,
   CFPreferences,
   CFPropertyList,
+<<<<<<< HEAD
   CFProxySupport,
+=======
+>>>>>>> graemeg/fixes_2_2
   CFRunLoop,
   CFSet,
   CFSocket,
@@ -135,12 +163,18 @@ uses
   CFStream,
   CFString,
   CFStringEncodingExt,
+<<<<<<< HEAD
   CFStringTokenizer,
+=======
+>>>>>>> graemeg/fixes_2_2
   CFTimeZone,
   CFTree,
   CFURL,
   CFURLAccess,
+<<<<<<< HEAD
   CFURLEnumerator,
+=======
+>>>>>>> graemeg/fixes_2_2
   CFUUID,
   CFUserNotification,
   CFXMLNode,
@@ -165,6 +199,7 @@ uses
   CGFunction,
   CGGLContext,
   CGGeometry,
+<<<<<<< HEAD
   CGGradient,
   CGImage,
   CGImageDestination,
@@ -176,6 +211,12 @@ uses
   CGLProfiler,
   CGLProfilerFunctionEnums,
   CGLRenderers,
+=======
+  CGImage,
+  CGImageDestination,
+  CGImageProperties,
+  CGImageSource,
+>>>>>>> graemeg/fixes_2_2
   CGLTypes,
   CGLayer,
   CGPDFArray,
@@ -195,6 +236,7 @@ uses
   CGRemoteOperation,
   CGSession,
   CGShading,
+<<<<<<< HEAD
   CGWindow,
   CGWindowLevels,
   CMCalibrator,
@@ -229,11 +271,23 @@ uses
   CTStringAttributes,
   CTTextTab,
   CTTypesetter,
+=======
+  CGWindowLevels,
+  CMApplication,
+  CMCalibrator,
+  CMDeviceIntegration,
+  CMICCProfile,
+  CMMComponent,
+  CMPRComponent,
+  CMScriptingPlugin,
+  CMTypes,
+>>>>>>> graemeg/fixes_2_2
   CVBase,
   CVBuffer,
   CVDisplayLink,
   CVHostTime,
   CVImageBuffer,
+<<<<<<< HEAD
   CVOpenGLBuffer,
   CVOpenGLBufferPool,
   CVOpenGLTexture,
@@ -244,16 +298,25 @@ uses
   CVPixelFormatDescription,
   CVReturns,
   CaptiveNetwork,
+=======
+  CVPixelBuffer,
+  CVPixelBufferPool,
+  CVPixelFormatDescription,
+  CVReturns,
+>>>>>>> graemeg/fixes_2_2
   CarbonEvents,
   CarbonEventsCore,
   CodeFragments,
   Collections,
   ColorPicker,
+<<<<<<< HEAD
   ColorSyncCMM,
   ColorSyncDeprecated,
   ColorSyncDevice,
   ColorSyncProfile,
   ColorSyncTransform,
+=======
+>>>>>>> graemeg/fixes_2_2
   Components,
   ConditionalMacros,
   ControlDefinitions,
@@ -261,6 +324,7 @@ uses
   CoreAudioTypes,
   CoreFoundation,
   CoreGraphics,
+<<<<<<< HEAD
   CoreText,
   DADisk,
   DASession,
@@ -293,6 +357,25 @@ uses
   FSEvents,
   FileTypesAndCreators,
   Files,
+=======
+  DHCPClientPreferences,
+  DateTimeUtils,
+  Debugging,
+  Devices,
+  Dialogs,
+  Dictionary,
+  Displays,
+  Drag,
+  DrawSprocket,
+  DriverFamilyMatching,
+  DriverGestalt,
+  DriverSynchronization,
+  Endian,
+  Events,
+  FileTypesAndCreators,
+  Files,
+  FindByContent,
+>>>>>>> graemeg/fixes_2_2
   Finder,
   FinderRegistry,
   FixMath,
@@ -300,6 +383,7 @@ uses
   FontPanel,
   FontSync,
   Fonts,
+<<<<<<< HEAD
   GestaltEqu,
   HFSVolumes,
   HIAccessibility,
@@ -335,17 +419,37 @@ uses
   HIToolboxDebugging,
   HIView,
   HIWindowViews,
+=======
+  GXTypes,
+  GestaltEqu,
+  HFSVolumes,
+  HIArchive,
+  HIGeometry,
+  HIMovieView,
+  HIObject,
+  HIObjectCore,
+  HIShape,
+  HITextUtils,
+  HITheme,
+  HIToolbar,
+  HIToolbox,
+  HIView,
+>>>>>>> graemeg/fixes_2_2
   HTMLRendering,
   HostTime,
   IBCarbonRuntime,
   ICAApplication,
   ICACamera,
   ICADevice,
+<<<<<<< HEAD
   IOKitReturn,
   IOSurfaceAPI,
   IconStorage,
   Icons,
   IconsCore,
+=======
+  Icons,
+>>>>>>> graemeg/fixes_2_2
   ImageCodec,
   ImageCompression,
   InternetConfig,
@@ -353,6 +457,7 @@ uses
   Keyboards,
   KeychainCore,
   KeychainHI,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -386,13 +491,22 @@ uses
   MIDIServices,
   MIDISetup,
   MIDIThruConnection,
+=======
+  LanguageAnalysis,
+  LaunchServices,
+  Lists,
+  LowMem,
+>>>>>>> graemeg/fixes_2_2
   MacApplication,
   MacErrors,
   MacHelp,
   MacLocales,
   MacMemory,
   MacOSXPosix,
+<<<<<<< HEAD
   MacOpenGL,
+=======
+>>>>>>> graemeg/fixes_2_2
   MacTextEditor,
   MacTypes,
   MacWindows,
@@ -403,11 +517,18 @@ uses
   MixedMode,
   Movies,
   MoviesFormat,
+<<<<<<< HEAD
   MultiProcessingInfo,
   Multiprocessing,
   MusicDevice,
   NSL,
   NSLCore,
+=======
+  Multiprocessing,
+  NSL,
+  NSLCore,
+  NameRegistry,
+>>>>>>> graemeg/fixes_2_2
   Navigation,
   Notification,
   NumberFormatting,
@@ -422,6 +543,7 @@ uses
   PEFBinaryFormat,
   PLStringFuncs,
   PMApplication,
+<<<<<<< HEAD
   PMApplicationDeprecated,
   PMCore,
   PMCoreDeprecated,
@@ -431,10 +553,15 @@ uses
   PMPrintAETypes,
   PMPrintSettingsKeys,
   PMPrintingDialogExtensions,
+=======
+  PMCore,
+  PMDefinitions,
+>>>>>>> graemeg/fixes_2_2
   Palettes,
   Pasteboard,
   PictUtils,
   Power,
+<<<<<<< HEAD
   Processes,
   QDCMCommon,
   QDOffscreen,
@@ -455,25 +582,40 @@ uses
 =======
 >>>>>>> origin/cpstrnew
   QLThumbnailImage,
+=======
+  Printing,
+  Processes,
+  QDOffscreen,
+  QDPictToCGContext,
+>>>>>>> graemeg/fixes_2_2
   QTML,
   QTSMovie,
   QTStreamingComponents,
   QuickTimeComponents,
+<<<<<<< HEAD
   QuickTimeErrors,
+=======
+>>>>>>> graemeg/fixes_2_2
   QuickTimeMusic,
   QuickTimeStreaming,
   QuickTimeVR,
   QuickTimeVRFormat,
   Quickdraw,
   QuickdrawText,
+<<<<<<< HEAD
   QuickdrawTypes,
+=======
+>>>>>>> graemeg/fixes_2_2
   Resources,
   SCDynamicStore,
   SCDynamicStoreCopyDHCPInfos,
   SCDynamicStoreCopySpecific,
   SCDynamicStoreKey,
   SCNetwork,
+<<<<<<< HEAD
   SCNetworkConfiguration,
+=======
+>>>>>>> graemeg/fixes_2_2
   SCNetworkConnection,
   SCNetworkReachability,
   SCPreferences,
@@ -483,6 +625,7 @@ uses
   SCSchemaDefinitions,
   SFNTLayoutTypes,
   SFNTTypes,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -505,6 +648,10 @@ uses
   Script,
   SecBase,
   SecTrust,
+=======
+  Scrap,
+  Script,
+>>>>>>> graemeg/fixes_2_2
   Sound,
   SpeechRecognition,
   SpeechSynthesis,
@@ -516,7 +663,10 @@ uses
   TextEdit,
   TextEncodingConverter,
   TextEncodingPlugin,
+<<<<<<< HEAD
   TextInputSources,
+=======
+>>>>>>> graemeg/fixes_2_2
   TextServices,
   TextUtils,
   Threads,
@@ -527,6 +677,10 @@ uses
   TranslationServices,
   TypeSelect,
   URLAccess,
+<<<<<<< HEAD
+=======
+  USB,
+>>>>>>> graemeg/fixes_2_2
   UTCUtils,
   UTCoreTypes,
   UTType,
@@ -534,6 +688,7 @@ uses
   UnicodeUtilities,
   UniversalAccess,
   Video,
+<<<<<<< HEAD
   WSMethodInvocation,
   WSProtocolHandler,
   WSTypes,
@@ -570,6 +725,13 @@ uses
   vBLAS,
   vDSP,
   x509defs,
+=======
+  WorldScript,
+  fenv,
+  fp,
+  vBLAS,
+  vDSP,
+>>>>>>> graemeg/fixes_2_2
   xattr,
   GPCStrings;
 

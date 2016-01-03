@@ -16,16 +16,21 @@
 {$mode objfpc}
 unit shlobj;
 
+<<<<<<< HEAD
 interface
 
 {$ifdef FPC_OS_UNICODE}
   {$define UNICODE}
 {$endif}
+=======
+  interface
+>>>>>>> graemeg/fixes_2_2
 
 uses
       windows,activex,shellapi,commctrl;
 
 Const 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -43,6 +48,8 @@ Const
 =======
    IID_IShellExtInit    ='{000214E8-0000-0000-C000-000000000046}';
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
    IID_IShellFolder    : TGUID ='{000214E6-0000-0000-C000-000000000046}';
    IID_IEnumList       : TGUID ='{000214F2-0000-0000-C000-000000000046}';
    IID_IAutoComplete   : TGUID ='{00bb2762-6a77-11d0-a535-00c04fd7d062}';
@@ -58,6 +65,7 @@ Const
    IID_IEXtractIconW   : TGUID ='{000214fa-0000-0000-c000-000000000046}';
    IID_IEXtractIconA   : TGUID ='{000214eb-0000-0000-c000-000000000046}';
    IID_IShellLinkA     : TGUID ='{000214EE-0000-0000-C000-000000000046}';
+<<<<<<< HEAD
    IID_IShellLinkW     : TGUID ='{000214F9-0000-0000-C000-000000000046}';
    IID_IShellBrowser   : TGUID ='{000214E2-0000-0000-C000-000000000046}';
    IID_IShellDetails   : TGUID ='{000214EC-0000-0000-C000-000000000046}';
@@ -69,6 +77,8 @@ Const
    CGID_Explorer       : TGUID ='{000214D0-0000-0000-C000-000000000046}';
    CGID_ShellDocView   : TGUID ='{000214D1-0000-0000-C000-000000000046}';
 
+=======
+>>>>>>> graemeg/fixes_2_2
    CLSID_StdMarshal                    : TGUID = '{00000017-0000-0000-c000-000000000046}';
    CLSID_IdentityUnmarshal             : TGUID = '{0000001b-0000-0000-c000-000000000046}';
    CLSID_InProcFreeMarshaler           : TGUID = '{0000001c-0000-0000-c000-000000000046}';
@@ -229,9 +239,12 @@ Const
    CLSID_PersistPropset                : TGUID = '{fb8f0821-0164-101b-84ed-08002b2ec713}';
    CLSID_ConvertVBX                    : TGUID = '{fb8f0822-0164-101b-84ed-08002b2ec713}';
    CLSID_InternetShortcut              : TGUID = '{fbf23b40-e3f0-101b-8488-00aa003e56f8}';
+<<<<<<< HEAD
    CLSID_ShellItem                     : TGUID = '{9ac9fbe1-e0a2-4ad6-b4ee-e212013ea917}';
    CLSID_FileOpenDialog                : TGUID = '{DC1C5A9C-E88A-4dde-A5A1-60F82A20AEF7}';
    CLSID_FileSaveDialog                : TGUID = '{C0B4E2F3-BA21-4773-8DBA-335EC946EB8B}';
+=======
+>>>>>>> graemeg/fixes_2_2
 
 Const
   SV2GV_CURRENTVIEW  = DWORD(-1);
@@ -259,12 +272,15 @@ Const
   GCS_HELPTEXTW    = $00000005;     // help text (unicode version)
   GCS_VALIDATEW    = $00000006;     // validate command exists (unicode)
   GCS_UNICODE      = $00000004;     // for bit testing - Unicode string
+<<<<<<< HEAD
   CMIC_MASK_ICON          = $00000010;
   CMIC_MASK_HOTKEY        = $00000020;
   CMIC_MASK_FLAG_NO_UI    = $00000400;
   CMIC_MASK_UNICODE       = $00004000;
   CMIC_MASK_NO_CONSOLE    = $00008000;
   CMIC_MASK_ASYNCOK       = $00100000;
+=======
+>>>>>>> graemeg/fixes_2_2
   CMIC_MASK_SHIFT_DOWN    = $10000000;
   CMIC_MASK_CONTROL_DOWN  = $40000000;
   CMIC_MASK_PTINVOKE      = $20000000;
@@ -430,6 +446,7 @@ Const
   BIF_BROWSEFORPRINTER            = $2000;  // Browsing for Printers
   BIF_BROWSEINCLUDEFILES          = $4000;  // Browsing for Everything
   BIF_SHAREABLE                   = $8000;  // sharable resources displayed (remote shares, requires BIF_USENEWUI)
+<<<<<<< HEAD
   BFFM_INITIALIZED                = $0001;
   BFFM_SELCHANGED                 = $0002;
   BFFM_VALIDATEFAILEDA            = $0003;
@@ -450,6 +467,8 @@ Const
   BFFM_SETSELECTION   = BFFM_SETSELECTIONA;
   BFFM_VALIDATEFAILED = BFFM_VALIDATEFAILEDA;
   {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
   PROGDLG_NORMAL                  = $00000000;      // default normal progress dlg behavior
   PROGDLG_MODAL                   = $00000001;      // the dialog is modal to its hwndParent (default is modeless)
   PROGDLG_AUTOTIME                = $00000002;      // automatically updates the "Line3" text with the "time remaining" (you cant call SetLine3 if you passs this!)
@@ -576,6 +595,7 @@ Const
   QITIPF_USESLOWTIP       = $00000008;  // Flag says it's OK to take a long time generating tip
   QIF_CACHED          = $00000001;
   QIF_DONTEXPANDFOLDER= $00000002;
+<<<<<<< HEAD
   SHARD_PIDL            = DWord($00000001);
   SHARD_PATHA           = DWord($00000002);
   SHARD_PATHW           = DWord($00000003);
@@ -584,6 +604,11 @@ Const
   SHARD_LINK            = DWord($00000006);
   SHARD_APPIDINFOLINK   = DWord($00000007);
   SHARD_SHELLITEM       = DWord($00000008);
+=======
+  SHARD_PIDL          = DWord($00000001);
+  SHARD_PATHA         = DWord($00000002);
+  SHARD_PATHW         = DWord($00000003);
+>>>>>>> graemeg/fixes_2_2
   PRF_VERIFYEXISTS            = $0001;
   PRF_TRYPROGRAMEXTENSIONS    = ($0002 or PRF_VERIFYEXISTS);
   PRF_FIRSTDIRDEF             = $0004;
@@ -904,6 +929,7 @@ Const
   SMSET_DONTOWN           = $00000001;    // The Menuband doesn't own the non-ref counted object
   SMINV_REFRESH           = $00000001;
   SMINV_ID                = $00000008;
+<<<<<<< HEAD
   FDEOR_DEFAULT           = 0;
   FDEOR_ACCEPT	          = 1;
   FDEOR_REFUSE            = 2;
@@ -1021,6 +1047,13 @@ Type
       PSICHINTF  = ^SICHINTF; 
 
 
+=======
+
+Type
+      SFGAOF = ULONG;
+      TSFGAOF = SFGAOF;
+      PSFGAOF = ^SFGAOF;
+>>>>>>> graemeg/fixes_2_2
       PROPERTYUI_NAME_FLAGS = DWord; // enum
       PROPERTYUI_FORMAT_FLAGS = DWord;
       PROPERTYUI_FLAGS = Dword;
@@ -1253,6 +1286,7 @@ Type
      LPSHFOLDERCUSTOMSETTINGSW = PSHFOLDERCUSTOMSETTINGSW;
      PLPSHFOLDERCUSTOMSETTINGSW = ^LPSHFOLDERCUSTOMSETTINGSW;
      TSHFOLDERCUSTOMSETTINGSW = SHFOLDERCUSTOMSETTINGSW;
+<<<<<<< HEAD
      {$ifdef unicode}
        LPSHFOLDERCUSTOMSETTINGS  = PSHFOLDERCUSTOMSETTINGSW;
        PLPSHFOLDERCUSTOMSETTINGS = PLPSHFOLDERCUSTOMSETTINGSW;
@@ -1264,6 +1298,9 @@ Type
        TSHFOLDERCUSTOMSETTINGS   = SHFOLDERCUSTOMSETTINGSA;
        SHFOLDERCUSTOMSETTINGS    = SHFOLDERCUSTOMSETTINGSA;
      {$endif}
+=======
+
+>>>>>>> graemeg/fixes_2_2
      _browseinfoA = record
           hwndOwner : HWND;
           pidlRoot : LPCITEMIDLIST;
@@ -1297,6 +1334,7 @@ Type
      LPBROWSEINFOW = PbrowseinfoW;
      PLPBROWSEINFOW = ^LPBROWSEINFOW;
      TBROWSEINFOW = BROWSEINFOW;
+<<<<<<< HEAD
      {$IFDEF UNICODE}
      BROWSEINFO     = _browseinfoW;
      PBROWSEINFO    = PBROWSEINFOW;
@@ -1312,6 +1350,9 @@ Type
      LPBROWSEINFO   = PbrowseinfoA;
      PLPBROWSEINFO  = PLPBROWSEINFOA;
      {$endif}
+=======
+
+>>>>>>> graemeg/fixes_2_2
      P_EnumImageStoreDATAtag = ^_EnumImageStoreDATAtag;
      _EnumImageStoreDATAtag = record
           szPath : array[0..(MAX_PATH)-1] of WCHAR;
@@ -1449,7 +1490,11 @@ Type
      PSHCOLUMNINFO = ^SHCOLUMNINFO;
      SHCOLUMNINFO = record
           scid : SHCOLUMNID;                                                { OUT the unique identifier of this column}
+<<<<<<< HEAD
           vt : TVarType;                                                    { OUT the native type of the data return}
+=======
+          vt : VARTYPE;                                                     { OUT the native type of the data return}
+>>>>>>> graemeg/fixes_2_2
           fmt : DWORD;                                                      { OUT this listview format (LVCFMT_LEFT}
           cChars : UINT;                                                    { OUT the default width of the column,}
           csFlags : DWORD;                                                  { OUT SHCOLSTATE flags }
@@ -1557,6 +1602,7 @@ Type
      PFILEDESCRIPTORW = ^FILEDESCRIPTORW;
      LPFILEDESCRIPTORW = PFILEDESCRIPTORW;
      PLPFILEDESCRIPTORW = ^LPFILEDESCRIPTORW;
+<<<<<<< HEAD
      {$Ifdef Unicode}
        _FILEDESCRIPTOR   = _FILEDESCRIPTORW;
        FILEDESCRIPTOR    = _FILEDESCRIPTORW;
@@ -1572,6 +1618,9 @@ Type
        LPFILEDESCRIPTOR  = PFILEDESCRIPTORA;
        PLPFILEDESCRIPTOR = PLPFILEDESCRIPTORA;
      {$endif}
+=======
+
+>>>>>>> graemeg/fixes_2_2
      _FILEGROUPDESCRIPTORA = record
           cItems : UINT;
           fgd : array[0..0] of FILEDESCRIPTORA;
@@ -1591,6 +1640,7 @@ Type
      PFILEGROUPDESCRIPTORW = ^FILEGROUPDESCRIPTORW;
      LPFILEGROUPDESCRIPTORW = PFILEGROUPDESCRIPTORW;
      PLPFILEGROUPDESCRIPTORW = ^LPFILEGROUPDESCRIPTORW;
+<<<<<<< HEAD
      {$ifdef Unicode}
      _FILEGROUPDESCRIPTOR    = _FILEGROUPDESCRIPTORW;
      FILEGROUPDESCRIPTOR     = _FILEGROUPDESCRIPTORW;
@@ -1606,6 +1656,9 @@ Type
      LPFILEGROUPDESCRIPTOR   = PFILEGROUPDESCRIPTORA;
      PLPFILEGROUPDESCRIPTOR  = PLPFILEGROUPDESCRIPTORA;
      {$endif}
+=======
+  
+>>>>>>> graemeg/fixes_2_2
      _DROPFILES = record
           pFiles : DWORD;        { offset of file list }
           pt : POINT;            { drop point (client coords) }
@@ -1893,6 +1946,10 @@ Type
      LPSHELLSTATEA = PSHELLSTATEA;           {Indicates if the Whistler StartPage on desktop is ON or OFF. }
      PLPSHELLSTATEA = ^LPSHELLSTATEA;
      TSHELLSTATEA = SHELLSTATEA;
+<<<<<<< HEAD
+=======
+     LPSHELLSTATE = LPSHELLSTATEA;
+>>>>>>> graemeg/fixes_2_2
 
      PSHELLSTATEW = ^SHELLSTATEW;
      SHELLSTATEW = record
@@ -1907,6 +1964,7 @@ Type
        end;                            {Indicates if the Whistler StartPage on desktop is ON or OFF. }
      LPSHELLSTATEW = PSHELLSTATEW;     { If you need a new flag, steal a bit from from fSpareFlags. }
      PLPSHELLSTATEW = ^LPSHELLSTATEW;
+<<<<<<< HEAD
      {$ifdef Unicode}
      SHELLSTATE     = SHELLSTATEW;
      LPSHELLSTATE   = PSHELLSTATEW;
@@ -1918,6 +1976,10 @@ Type
      TSHELLSTATE   = SHELLSTATEA;
      SHELLSTAT     = SHELLSTATEA;
      {$endif}
+=======
+     TSHELLSTATE = SHELLSTATEW;
+
+>>>>>>> graemeg/fixes_2_2
      PSHELLFLAGSTATE = ^SHELLFLAGSTATE;
      SHELLFLAGSTATE = record
           flag0 : word;
@@ -1953,6 +2015,7 @@ Type
      LPAASHELLMENUITEM = PtagAASHELLMENUITEM;
      PLPAASHELLMENUITEM = ^LPAASHELLMENUITEM;
 
+<<<<<<< HEAD
    FDE_OVERWRITE_RESPONSE       = longint;
    TFDE_OVERWRITE_RESPONSE      = FDE_OVERWRITE_RESPONSE;
    PFDE_OVERWRITE_RESPONSE      = ^longint;
@@ -1975,6 +2038,9 @@ Type
    PCOMDLG_FILTERSPEC = ^_COMDLG_FILTERSPEC;
 
 	
+=======
+
+>>>>>>> graemeg/fixes_2_2
    IPersistFolder = Interface(IPersist)
         ['{000214EA-0000-0000-C000-000000000046}']
         function Initialize (pild : LPCITEMIDLIST): HResult; StdCall;
@@ -2004,6 +2070,7 @@ Type
        function Skip(celt: ULONG): HRESULT; stdcall; function Reset: HRESULT; stdcall;
        function Clone(out ppenum: IEnumExtraSearch): HRESULT; stdcall;
       end;
+<<<<<<< HEAD
 
    IShellDetails = interface(IUnknown)
         ['{000214EC-0000-0000-C000-000000000046}']
@@ -2011,6 +2078,9 @@ Type
         function ColumnClick(iColumn:UINT):HResult;StdCall;
       end;
 
+=======
+    
+>>>>>>> graemeg/fixes_2_2
    IShellFolder = interface(IUnknown)
         ['{000214E6-0000-0000-C000-000000000046}']
         function ParseDisplayName(hwndOwner: HWND; pbcReserved: Pointer; lpszDisplayName: POLESTR; out pchEaten: ULONG; out ppidl: PItemIDList; var dwAttributes: ULONG): HRESULT; stdcall;
@@ -2030,7 +2100,11 @@ Type
       function GetDefaultSearchGUID(out guid:TGUID):HResult;StdCall;
       function EnumSearches(out ppenum:IEnumExtraSearch):HResult;StdCall;    
       function GetDefaultColumn(dwres:DWORD;psort :pulong; pdisplay:pulong):HResult;StdCall;   
+<<<<<<< HEAD
       function GetDefaultColumnState(icolumn:UINT;pscflag:PSHCOLSTATEF):HResult;StdCall;   
+=======
+      function GetDefaultColumnStart(icolumn:UINT;pscflag:PSHCOLSTATEF):HResult;StdCall;   
+>>>>>>> graemeg/fixes_2_2
       function GetDetailsEx(pidl:LPCITEMIDLIST;pscid:PSHCOLUMNID; pv : pOLEvariant):HResult;StdCall;   
       function GetDetailsOf(pidl:LPCITEMIDLIST;iColumn:UINT;psd:PSHELLDETAILS):HResult;StdCall;   
       function MapColumnToSCID(iColumn:UINT;pscid:PSHCOLUMNID):HResult;StdCall;   
@@ -2218,6 +2292,7 @@ Type
         function GetInfoTip (dwFlags:DWord;var pwsztip:pwchar):HResult;StdCall;
         function GetInfoFlags (var dwflags:dword):HResult;Stdcall;
         end;
+<<<<<<< HEAD
 
     ITaskbarList = interface(IUnknown)
       ['{56FDF342-FD6D-11d0-958A-006097C9A090}']
@@ -2347,6 +2422,8 @@ type
       function GetCount(out pcElem: UINT): HResult; stdcall;
       function GetAt(iElem: UINT; const riid: REFIID; out ppv): HResult; stdcall;
     end;
+=======
+>>>>>>> graemeg/fixes_2_2
  
     IShellLinkA  = Interface(IUnknown)
         ['{000214EE-0000-0000-C000-000000000046}']
@@ -2393,6 +2470,7 @@ type
         end;
      IShellLink = IShellLinkA;
 
+<<<<<<< HEAD
     PIShellItem= ^IShellItem;
     IShellItem = interface(IUnknown)
                ['{43826d1e-e718-42ee-bc55-a1e261c37bfe}']
@@ -2607,10 +2685,17 @@ type LPPCITEMIDLIST = ^LPCITEMIDLIST;
 
 function  SHOpenFolderAndSelectItems(pidlFolder:LPCITEMIDLIST;cidl:UINT;var  apidl: LPCITEMIDLIST; dwflags: DWORD):HResult;StdCall; external 'shell32' name 'SHOpenFolderAndSelectItems';
 function  SHOpenFolderAndSelectItems(pidlFolder:LPCITEMIDLIST;cidl:UINT; apidl: LPPCITEMIDLIST; dwflags: DWORD):HResult;StdCall; external 'shell32' name 'SHOpenFolderAndSelectItems';
+=======
+function SHGetMalloc(out ppmalloc: IMalloc):HResult;StdCall; external 'shell32' name 'SHGetMalloc';
+function SHGetDesktopFolder(out ppshf:IShellFolder):HResult;StdCall; external 'shell32' name 'SHGetDesktopFolder';
+
+function  SHOpenFolderAndSelectItems(pidlFolder:LPCITEMIDLIST;cidl:UINT;var  apidl: LPCITEMIDLIST; dwflags: DWORD):HResult;StdCall; external 'shell32' name 'SHOpenFolderAndSelectItems';
+>>>>>>> graemeg/fixes_2_2
 //function  SHCreateShellItem( pidlParent:LPCITEMIDLIST; psfparent:IShellFolder; pidl: LPCITEMIDLIST pidl; out ppsi: IShellItem):HResult;StdCall; external 'shell32' name 'SHCreateShellItem';
 function  SHGetSpecialFolderLocation( hwnd:HWND; csidl:longint;out ppidl: LPITEMIDLIST):HResult;StdCall; external 'shell32' name 'SHGetSpecialFolderLocation';
 procedure SHFlushSFCache;StdCall; external 'shell32' name 'SHFlushSFCache';
 function  SHCloneSpecialIDList(HWND:hwnd; csidl:longint;fcreate:BOOL):LPITEMIDLIST; StdCall; external 'shell32' name 'SHCloneSpecialIDList';
+<<<<<<< HEAD
 
 function  SHGetSpecialFolderPathA(HWND:hwnd;pszpath: LPSTR; csidl:Longint;fcreate:bool):bool;StdCall; external 'shell32' name 'SHGetSpecialFolderPathA';
 function  SHGetSpecialFolderPathW(HWND:hwnd;pszpath: LPWSTR; csidl:Longint;fcreate:bool):bool;StdCall; external 'shell32' name 'SHGetSpecialFolderPathW';
@@ -2638,12 +2723,27 @@ function  SHGetFolderPathAndSubDir (HWND:hwnd;csidl:longint;htoken:THandle;dwfla
 
 function  SHFolderLocation(HWND:hwnd;csidl:longint;htoken:THandle;dwflags:dword;var ppidl:LPITEMIDLIST):HRESULT;StdCall; external 'shell32' name 'SHFolderLocation';
 
+=======
+function  SHGetSpecialFolderPathA(HWND:hwnd;pszpath: LPSTR; csidl:Longint;fcreate:bool):bool;StdCall; external 'shell32' name 'SHGetSpecialFolderPathA';
+function  SHGetSpecialFolderPath(HWND:hwnd;pszpath: LPSTR; csidl:Longint;fcreate:bool):bool;StdCall; external 'shell32' name 'SHGetSpecialFolderPathA';
+function  SHGetSpecialFolderPathW(HWND:hwnd;pszpath: LPWSTR; csidl:Longint;fcreate:bool):bool;StdCall; external 'shell32' name 'SHGetSpecialFolderPathW';
+function  SHGetFolderPathA(HWND:hwnd;csidl:longint;htoken:THandle;dwflags:dword;pszpath:lpstr):HResult;StdCall; external 'shell32' name 'SHGetFolderPathA';
+function  SHGetFolderPath(HWND:hwnd;csidl:longint;htoken:THandle;dwflags:dword;pszpath:lpstr):HResult;StdCall; external 'shell32' name 'SHGetFolderPathA';
+function  SHGetFolderPathW(HWND:hwnd;csidl:longint;htoken:THandle;dwflags:dword;pszpath:lpWstr):HResult;StdCall; external 'shell32' name 'SHGetFolderPathW';
+function  SHGetFolderPathAndSubDirA(HWND:hwnd;csidl:longint;htoken:THandle;dwflags:dword;pszsubdir:LPCStr;pszpath:lpstr):HResult;StdCall; external 'shell32' name 'SHGetFolderPathAndSubDirA';
+function  SHGetFolderPathAndSubDir(HWND:hwnd;csidl:longint;htoken:THandle;dwflags:dword;pszsubdir:LPCStr;pszpath:lpstr):HResult;StdCall; external 'shell32' name 'SHGetFolderPathAndSubDirA';
+function  SHGetFolderPathAndSubDirW(HWND:hwnd;csidl:longint;htoken:THandle;dwflags:dword;pszsubdir:LPCWStr;pszpath:lpWstr):HResult; external 'shell32' name 'SHGetFolderPathAndSubDirW';
+function  SHFolderLocation(HWND:hwnd;csidl:longint;htoken:THandle;dwflags:dword;var ppidl:LPITEMIDLIST):HRESULT;StdCall; external 'shell32' name 'SHFolderLocation';
+
+
+>>>>>>> graemeg/fixes_2_2
 Const External_Library = 'shell32';
 
   function SHAlloc(cb:SIZE_T):pointer;StdCall;external External_library name 'SHAlloc';
   procedure SHFree(pv:pointer);StdCall;external External_library name 'SHFree';
   function SHGetIconOverlayIndexA(pszIconPath:lpcstr; iIconIndex:Longint):Longint;StdCall;external External_library name 'SHGetIconOverlayIndexA';
   function SHGetIconOverlayIndexW(pszIconPath:lpcwstr; iIconIndex:Longint):Longint;StdCall;external External_library name 'SHGetIconOverlayIndexW';
+<<<<<<< HEAD
   {$ifdef Unicode}
   function SHGetIconOverlayIndex (pszIconPath:lpcwstr; iIconIndex:Longint):Longint;StdCall;external External_library name 'SHGetIconOverlayIndexW';
   {$else}
@@ -2667,6 +2767,13 @@ Const External_Library = 'shell32';
   function SHCreateDirectoryEx (hwnd:HWND; pszPath:lpcstr; psa:LPSECURITY_ATTRIBUTES):Longint;StdCall;external External_library name 'SHCreateDirectoryExA';
   {$endif}
 
+=======
+  function SHGetPathFromIDListA(pidl:LPCITEMIDLIST; pszPath:LPStr):BOOL;StdCall;external External_library name 'SHGetPathFromIDListA';
+  function SHGetPathFromIDListW(pidl:LPCITEMIDLIST; pszPath:LPWStr):BOOL;StdCall;external External_library name 'SHGetPathFromIDListW';
+  function SHCreateDirectory(hwnd:HWND; pszPath:lpcwstr):Longint;StdCall;external External_library name 'SHCreateDirectory';
+  function SHCreateDirectoryExA(hwnd:HWND; pszPath:lpcstr; psa:LPSECURITY_ATTRIBUTES):Longint;StdCall;external External_library name 'SHCreateDirectoryExA';
+  function SHCreateDirectoryExW(hwnd:HWND; pszPath:lpcwstr; psa:LPSECURITY_ATTRIBUTES):Longint;StdCall;external External_library name 'SHCreateDirectoryExW';
+>>>>>>> graemeg/fixes_2_2
 {
   function SHOpenFolderAndSelectItems(pidlFolder:LPCITEMIDLIST; cidl:UINT; var apidl:LPCITEMIDLIST; dwFlags:DWord):HRESULT;StdCall;external External_library name 'SHOpenFolderAndSelectItems';
   function SHCreateShellItem(pidlParent:LPCITEMIDLIST; psfParent:IShellFolder; pidl:LPCITEMIDLIST;out ppsi:IShellItem):HRESULT;StdCall;external External_library name 'SHCreateShellItem';
@@ -2679,6 +2786,7 @@ Const External_Library = 'shell32';
 }
   function SHGetSetFolderCustomSettingsA(pfcs:LPSHFOLDERCUSTOMSETTINGSA; pszPath:lpcstr; dwReadWrite:DWord):HRESULT;StdCall;external External_library name 'SHGetSetFolderCustomSettingsA';
   function SHGetSetFolderCustomSettingsW(pfcs:LPSHFOLDERCUSTOMSETTINGSW; pszPath:lpcwstr; dwReadWrite:DWord):HRESULT;StdCall;external External_library name 'SHGetSetFolderCustomSettingsW';
+<<<<<<< HEAD
   {$ifdef unicode}
   function SHGetSetFolderCustomSettings (pfcs:LPSHFOLDERCUSTOMSETTINGSW; pszPath:lpcwstr; dwReadWrite:DWord):HRESULT;StdCall;external External_library name 'SHGetSetFolderCustomSettingsW';
   {$else}
@@ -2699,12 +2807,17 @@ Const External_Library = 'shell32';
   function SHBrowseForFolder (var lpbi:BROWSEINFOA):LPITEMIDLIST;StdCall;external External_library name 'SHBrowseForFolderA';
   {$endif}
 
+=======
+  function SHBrowseForFolderA(lpbi:LPBROWSEINFOA):LPITEMIDLIST;StdCall;external External_library name 'SHBrowseForFolderA';
+  function SHBrowseForFolderW(lpbi:LPBROWSEINFOW):LPITEMIDLIST;StdCall;external External_library name 'SHBrowseForFolderW';
+>>>>>>> graemeg/fixes_2_2
   function SHLoadInProc(const rclsid:Tguid):HRESULT;StdCall;external External_library name 'SHLoadInProc';
   function SHEnableServiceObject(const rclsid:Tguid; fEnable:BOOL):HRESULT;StdCall;external External_library name 'SHEnableServiceObject';
 //  function SHGetDesktopFolder(out ppshf:IShellFolder):HRESULT;StdCall;external External_library name 'SHGetDesktopFolder';
   procedure SHChangeNotify(wEventId:LONG; uFlags:UINT; dwItem1:POINTER; dwItem2:POINTER);StdCall;external External_library name 'SHChangeNotify';
   procedure SHAddToRecentDocs(uFlags:UINT; pv:POINTER);StdCall;external External_library name 'SHAddToRecentDocs';
   function SHHandleUpdateImage(pidlExtra:LPCITEMIDLIST):Longint;StdCall;external External_library name 'SHHandleUpdateImage';
+<<<<<<< HEAD
 
   procedure SHUpdateImageA(pszHashItem:lpcstr; iIndex:Longint; uFlags:UINT; iImageIndex:Longint);StdCall;external External_library name 'SHUpdateImageA';
   procedure SHUpdateImageW(pszHashItem:lpcwstr; iIndex:Longint; uFlags:UINT; iImageIndex:Longint);StdCall;external External_library name 'SHUpdateImageW';
@@ -2714,6 +2827,10 @@ Const External_Library = 'shell32';
   procedure SHUpdateImage (pszHashItem:lpcstr; iIndex:Longint; uFlags:UINT; iImageIndex:Longint);StdCall;external External_library name 'SHUpdateImageA';
   {$endif}
 
+=======
+  procedure SHUpdateImageA(pszHashItem:lpcstr; iIndex:Longint; uFlags:UINT; iImageIndex:Longint);StdCall;external External_library name 'SHUpdateImageA';
+  procedure SHUpdateImageW(pszHashItem:lpcwstr; iIndex:Longint; uFlags:UINT; iImageIndex:Longint);StdCall;external External_library name 'SHUpdateImageW';
+>>>>>>> graemeg/fixes_2_2
   function SHChangeNotifyRegister(hwnd:HWND; fSources:Longint; fEvents:LONG; wMsg:UINT; cEntries:Longint; 
              pshcne:PSHChangeNotifyEntry):ULONG;StdCall;external External_library name 'SHChangeNotifyRegister';
   function SHChangeNotifyDeregister(ulID:ulong):BOOL;StdCall;external External_library name 'SHChangeNotifyDeregister';
@@ -2723,12 +2840,15 @@ Const External_Library = 'shell32';
   function SHGetInstanceExplorer(out ppunk:IUnknown):HRESULT;StdCall;external External_library name 'SHGetInstanceExplorer';
   function SHGetDataFromIDListA(psf:IShellFolder; pidl:LPCITEMIDLIST; nFormat:Longint; pv:pointer; cb:Longint):HRESULT;StdCall;external External_library name 'SHGetDataFromIDListA';
   function SHGetDataFromIDListW(psf:IShellFolder; pidl:LPCITEMIDLIST; nFormat:Longint; pv:pointer; cb:Longint):HRESULT;StdCall;external External_library name 'SHGetDataFromIDListW';
+<<<<<<< HEAD
   {$ifdef Unicode}
   function SHGetDataFromIDList (psf:IShellFolder; pidl:LPCITEMIDLIST; nFormat:Longint; pv:pointer; cb:Longint):HRESULT;StdCall;external External_library name 'SHGetDataFromIDListW';
   {$else}
   function SHGetDataFromIDList (psf:IShellFolder; pidl:LPCITEMIDLIST; nFormat:Longint; pv:pointer; cb:Longint):HRESULT;StdCall;external External_library name 'SHGetDataFromIDListA';
   {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
   function RestartDialog(hwnd:HWND; lpPrompt:lpcwstr; dwReturn:DWord):Longint;StdCall;external External_library name 'RestartDialog';
   function RestartDialogEx(hwnd:HWND; lpPrompt:lpcwstr; dwReturn:DWord; dwReasonCode:DWord):Longint;StdCall;external External_library name 'RestartDialogEx';
   function SHCoCreateInstance(pszCLSID:lpcwstr; pclsid:PCLSID; pUnkOuter:IUnknown; riid:TREFIID; ppv:Ppointer):HRESULT;StdCall;external External_library name 'SHCoCreateInstance';
@@ -2749,12 +2869,15 @@ Const External_Library = 'shell32';
   function PathIsExe(pszPath:lpcwstr):BOOL;StdCall;external External_library name 'PathIsExe';
   function PathIsSlowA(pszFile:lpcstr; dwAttr:DWord):BOOL;StdCall;external External_library name 'PathIsSlowA';
   function PathIsSlowW(pszFile:lpcwstr; dwAttr:DWord):BOOL;StdCall;external External_library name 'PathIsSlowW';
+<<<<<<< HEAD
   {$ifdef Unicode}
   function PathIsSlow (pszFile:lpcwstr; dwAttr:DWord):BOOL;StdCall;external External_library name 'PathIsSlowW';
   {$else}
   function PathIsSlow (pszFile:lpcstr; dwAttr:DWord):BOOL;StdCall;external External_library name 'PathIsSlowA';
   {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
   function PathCleanupSpec(pszDir:lpcwstr; pszSpec:LPWStr):Longint;StdCall;external External_library name 'PathCleanupSpec';
   function PathResolve(pszPath:LPWStr; dirs:array of lpcwstr; fFlags:UINT):Longint;StdCall;external External_library name 'PathResolve';
   function GetFileNameFromBrowse(hwnd:HWND; pszFilePath:LPWStr; cbFilePath:UINT; pszWorkingDir:lpcwstr; pszDefExt:lpcwstr; 
@@ -2782,11 +2905,15 @@ Const External_Library = 'shell32';
   function ILSaveToStream(pstm:IStream; pidl:LPCITEMIDLIST):HRESULT;StdCall;external External_library name 'ILSaveToStream';
   function ILCreateFromPathA(pszPath:lpcstr):LPITEMIDLIST;StdCall;external External_library name 'ILCreateFromPathA';
   function ILCreateFromPathW(pszPath:lpcwstr):LPITEMIDLIST;StdCall;external External_library name 'ILCreateFromPathW';
+<<<<<<< HEAD
   {$ifdef Unicode}
   function ILCreateFromPath(pszPath:lpcwstr):LPITEMIDLIST;StdCall;external External_library name 'ILCreateFromPathW';
   {$else}
   function ILCreateFromPath(pszPath:lpcstr):LPITEMIDLIST;StdCall;external External_library name 'ILCreateFromPathA';
   {$endif}
+=======
+  function ILCreateFromPath(pszPath:LPCTSTR):LPITEMIDLIST;StdCall;external External_library name 'ILCreateFromPath';
+>>>>>>> graemeg/fixes_2_2
   function SHILCreateFromPath(szPath:lpcwstr;var ppidl:LPITEMIDLIST; rgfInOut:PDWORD):HRESULT;StdCall;external External_library name 'SHILCreateFromPath';
   function OpenRegStream(hkey:HKEY; pszSubkey:lpcwstr; pszValue:lpcwstr; grfMode:DWord):IStream;StdCall;external External_library name 'OpenRegStream';
   function SHFindFiles(pidlFolder:LPCITEMIDLIST; pidlSaveFile:LPCITEMIDLIST):BOOL;StdCall;external External_library name 'SHFindFiles';
@@ -2800,16 +2927,20 @@ Const External_Library = 'shell32';
   function SHLoadOLE(lParam:lparam):HRESULT;StdCall;external External_library name 'SHLoadOLE';
   function SHStartNetConnectionDialogA(hwnd:HWND; pszRemoteName:lpcstr; dwType:DWord):HRESULT;StdCall;external External_library name 'SHStartNetConnectionDialogA';
   function SHStartNetConnectionDialogW(hwnd:HWND; pszRemoteName:lpcwstr; dwType:DWord):HRESULT;StdCall;external External_library name 'SHStartNetConnectionDialogW';
+<<<<<<< HEAD
   {$ifdef Unicode}
   function SHStartNetConnectionDialog (hwnd:HWND; pszRemoteName:lpcwstr; dwType:DWord):HRESULT;StdCall;external External_library name 'SHStartNetConnectionDialogW';
   {$else}
   function SHStartNetConnectionDialog (hwnd:HWND; pszRemoteName:lpcstr; dwType:DWord):HRESULT;StdCall;external External_library name 'SHStartNetConnectionDialogA';
   {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
   function SHDefExtractIconA(pszIconFile:lpcstr; iIndex:Longint; uFlags:UINT; phiconLarge:PHICON; phiconSmall:PHICON; 
              nIconSize:UINT):HRESULT;StdCall;external External_library name 'SHDefExtractIconA';
   function SHDefExtractIconW(pszIconFile:lpcwstr; iIndex:Longint; uFlags:UINT; phiconLarge:PHICON; phiconSmall:PHICON; 
              nIconSize:UINT):HRESULT;StdCall;external External_library name 'SHDefExtractIconW';
+<<<<<<< HEAD
   {$ifdef Unicode}
   function SHDefExtractIcon (pszIconFile:lpcwstr; iIndex:Longint; uFlags:UINT; phiconLarge:PHICON; phiconSmall:PHICON;
              nIconSize:UINT):HRESULT;StdCall;external External_library name 'SHDefExtractIconW';
@@ -2817,6 +2948,8 @@ Const External_Library = 'shell32';
   function SHDefExtractIcon (pszIconFile:lpcstr; iIndex:Longint; uFlags:UINT; phiconLarge:PHICON; phiconSmall:PHICON;
              nIconSize:UINT):HRESULT;StdCall;external External_library name 'SHDefExtractIconA';
   {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
   function Shell_GetImageLists(var phiml:HIMAGELIST; var phimlSmall:HIMAGELIST):BOOL;StdCall;external External_library name 'Shell_GetImageLists';
   function Shell_GetCachedImageIndex(pszIconPath:lpcwstr; iIconIndex:Longint; uIconFlags:UINT):Longint;StdCall;external External_library name 'Shell_GetCachedImageIndex';
   function SHValidateUNC(hwndOwner:HWND; pszFile:LPWStr; fConnect:UINT):BOOL;StdCall;external External_library name 'SHValidateUNC';
@@ -2834,6 +2967,7 @@ Const External_Library = 'shell32';
              psb:IShellBrowser; pStartPage:lpcstr):BOOL;StdCall;external External_library name 'SHOpenPropSheetA';
   function SHOpenPropSheetW(pszCaption:lpcwstr; ahkeys:array of HKEY; cikeys:UINT; pclsidDefault:PCLSID; pdtobj:IDataObject; 
              psb:IShellBrowser; pStartPage:lpcwstr):BOOL;StdCall;external External_library name 'SHOpenPropSheetW';
+<<<<<<< HEAD
   {$ifdef Unicode}
   function SHOpenPropSheet (pszCaption:lpcwstr; ahkeys:array of HKEY; cikeys:UINT; pclsidDefault:PCLSID; pdtobj:IDataObject;
              psb:IShellBrowser; pStartPage:lpcwstr):BOOL;StdCall;external External_library name 'SHOpenPropSheetW';
@@ -2841,6 +2975,8 @@ Const External_Library = 'shell32';
   function SHOpenPropSheet (pszCaption:lpcstr; ahkeys:array of HKEY; cikeys:UINT; pclsidDefault:PCLSID; pdtobj:IDataObject;
              psb:IShellBrowser; pStartPage:lpcstr):BOOL;StdCall;external External_library name 'SHOpenPropSheetA';
   {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
   function SHFind_InitMenuPopup(hmenu:HMENU; hwndOwner:HWND; idCmdFirst:UINT; idCmdLast:UINT):IContextMenu;StdCall;external External_library name 'SHFind_InitMenuPopup';
   function SHCreateShellFolderViewEx(pcsfv:LPCSFV; out ppsv:IShellView):HRESULT;StdCall;external External_library name 'SHCreateShellFolderViewEx';
   procedure SHGetSetSettings(lpss:LPSHELLSTATE; dwMask:DWord; bSet:BOOL);StdCall;external External_library name 'SHGetSetSettings';
@@ -2849,11 +2985,14 @@ Const External_Library = 'shell32';
   function SHParseDisplayName(pszName:PCWSTR; pbc:IBindCtx; var ppidl:LPITEMIDLIST; sfgaoIn:TSFGAOF; psfgaoOut:PSFGAOF):HRESULT;StdCall;external External_library name 'SHParseDisplayName';
   function SHPathPrepareForWriteA(hwnd:HWND; punkEnableModless:IUnknown; pszPath:lpcstr; dwFlags:DWord):HRESULT;StdCall;external External_library name 'SHPathPrepareForWriteA';
   function SHPathPrepareForWriteW(hwnd:HWND; punkEnableModless:IUnknown; pszPath:lpcwstr; dwFlags:DWord):HRESULT;StdCall;external External_library name 'SHPathPrepareForWriteW';
+<<<<<<< HEAD
   {$ifdef Unicode}
   function SHPathPrepareForWrite (hwnd:HWND; punkEnableModless:IUnknown; pszPath:lpcwstr; dwFlags:DWord):HRESULT;StdCall;external External_library name 'SHPathPrepareForWriteW';
   {$else}
   function SHPathPrepareForWrite (hwnd:HWND; punkEnableModless:IUnknown; pszPath:lpcstr; dwFlags:DWord):HRESULT;StdCall;external External_library name 'SHPathPrepareForWriteA';
   {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
 {  function SHPropStgCreate(psstg:IPropertySetStorage; fmtid:TREFFMTID; pclsid:PCLSID; grfFlags:DWord; grfMode:DWord; 
              dwDisposition:DWord; out ppstg:IPropertyStorage; puCodePage:PUINT):HRESULT;StdCall;external External_library name 'SHPropStgCreate';
   function SHPropStgReadMultiple(pps:IPropertyStorage; uCodePage:UINT; cpspec:ULONG; rgpspec:array of TPROPSPEC; rgvar:array of TPROPVARIANT):HRESULT;StdCall;external External_library name 'SHPropStgReadMultiple';
@@ -2862,11 +3001,14 @@ Const External_Library = 'shell32';
 }
   function SHCreateFileExtractIconA(pszFile:lpcstr; dwFileAttributes:DWord; riid:TREFIID; ppv:Ppointer):HRESULT;StdCall;external External_library name 'SHCreateFileExtractIconA';
   function SHCreateFileExtractIconW(pszFile:lpcwstr; dwFileAttributes:DWord; riid:TREFIID; ppv:Ppointer):HRESULT;StdCall;external External_library name 'SHCreateFileExtractIconW';
+<<<<<<< HEAD
   {$ifdef Unicode}
   function SHCreateFileExtractIcon (pszFile:lpcwstr; dwFileAttributes:DWord; riid:TREFIID; ppv:Ppointer):HRESULT;StdCall;external External_library name 'SHCreateFileExtractIconW';
   {$else}
   function SHCreateFileExtractIcon (pszFile:lpcstr; dwFileAttributes:DWord; riid:TREFIID; ppv:Ppointer):HRESULT;StdCall;external External_library name 'SHCreateFileExtractIconA';
   {$endif}
+=======
+>>>>>>> graemeg/fixes_2_2
   function SHLimitInputEdit(hwndEdit:HWND; psf:IShellFolder):HRESULT;StdCall;external External_library name 'SHLimitInputEdit';
   function SHMultiFileProperties(pdtobj:IDataObject; dwFlags:DWord):HRESULT;StdCall;external External_library name 'SHMultiFileProperties';
 //  function SHMapIDListToImageListIndexAsync(pts:IShellTaskScheduler; psf:IShellFolder; pidl:LPCITEMIDLIST; flags:UINT; pfn:TPFNASYNCICONTASKBALLBACK; 
@@ -2874,6 +3016,9 @@ Const External_Library = 'shell32';
   function SHMapPIDLToSystemImageListIndex(pshf:IShellFolder; pidl:LPCITEMIDLIST; piIndexSel:plongint):Longint;StdCall;external External_library name 'SHMapPIDLToSystemImageListIndex';
 
 implementation
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> graemeg/fixes_2_2
 end.

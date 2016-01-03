@@ -383,6 +383,7 @@ implementation
                begin
                  { don't push a node that already generated a pointer type
                    by address for implicit hidden parameters }
+<<<<<<< HEAD
                  pushaddr:=(vo_is_funcret in parasym.varoptions) or
                    { pass "this" in C++ classes explicitly as pointer
                      because push_addr_param might not be true for them }
@@ -400,6 +401,13 @@ implementation
                           (tobjectdef(aktcallnode.procdefinition.owner.defowner).extendeddef.typ=pointerdef)
                         )
                       ) and
+=======
+                 if (vo_is_funcret in parasym.varoptions) or
+                   { pass "this" in C++ classes explicitly as pointer
+                     because push_addr_param might not be true for them }
+                   (is_cppclass(parasym.vardef) and (vo_is_self in parasym.varoptions)) or
+                    (not(left.resultdef.typ in [pointerdef,classrefdef]) and
+>>>>>>> graemeg/fixes_2_2
                      paramanager.push_addr_param(parasym.varspez,parasym.vardef,
                          aktcallnode.procdefinition.proccalloption));
 
@@ -663,8 +671,61 @@ implementation
             exit;
           end;
 
+<<<<<<< HEAD
         if not assigned(typedef) then
           realresdef:=tstoreddef(resultdef)
+=======
+              retloc:=procdefinition.funcretloc[callerside];
+{$ifndef cpu64bit}
+              if cgsize in [OS_64,OS_S64] then
+                begin
+                  { the function result registers are already allocated }
+                  if getsupreg(retloc.register64.reglo)<first_int_imreg then
+                    cg.ungetcpuregister(current_asmdata.CurrAsmList,retloc.register64.reglo);
+                  retloc.register64.reglo:=cg.getintregister(current_asmdata.CurrAsmList,OS_32);
+                  cg.a_load_reg_reg(current_asmdata.CurrAsmList,OS_32,OS_32,procdefinition.funcretloc[callerside].register64.reglo,retloc.register64.reglo);
+                  if getsupreg(retloc.register64.reghi)<first_int_imreg then
+                    cg.ungetcpuregister(current_asmdata.CurrAsmList,retloc.register64.reghi);
+                  retloc.register64.reghi:=cg.getintregister(current_asmdata.CurrAsmList,OS_32);
+                  cg.a_load_reg_reg(current_asmdata.CurrAsmList,OS_32,OS_32,procdefinition.funcretloc[callerside].register64.reghi,retloc.register64.reghi);
+                end
+              else
+{$endif cpu64bit}
+                begin
+                  { the FUNCTION_RESULT_REG is already allocated }
+                  if getsupreg(retloc.register)<first_int_imreg then
+                    cg.ungetcpuregister(current_asmdata.CurrAsmList,retloc.register);
+
+                  { reg_ref could generate two instrcutions and allocate a register so we've to
+                    save the result first before releasing it }
+                  retloc.register:=cg.getaddressregister(current_asmdata.CurrAsmList);
+                  cg.a_load_reg_reg(current_asmdata.CurrAsmList,OS_ADDR,OS_ADDR,procdefinition.funcretloc[callerside].register,retloc.register);
+                end;
+
+              if not assigned(funcretnode) then
+                begin
+                  location_reset(location,LOC_REFERENCE,cgsize);
+                  location.reference:=refcountedtemp;
+                end
+              else
+                begin
+                  { in case of a regular funcretnode with ret_in_param, the }
+                  { original funcretnode isn't touched -> make sure it's    }
+                  { the same here (not sure if it's necessary)              }
+                  tempnode := funcretnode.getcopy;
+                  tempnode.pass_generate_code;
+                  location := tempnode.location;
+                  tempnode.free;
+                  cg.g_decrrefcount(current_asmdata.CurrAsmList,resultdef,location.reference);
+               end;
+{$ifndef cpu64bit}
+              if cgsize in [OS_64,OS_S64] then
+                cg64.a_load64_reg_ref(current_asmdata.CurrAsmList,retloc.register64,location.reference)
+              else
+{$endif}
+                cg.a_load_reg_ref(current_asmdata.CurrAsmList,cgsize,cgsize,retloc.register,location.reference);
+            end
+>>>>>>> graemeg/fixes_2_2
         else
           realresdef:=tstoreddef(typedef);
 
@@ -1160,9 +1221,13 @@ implementation
         sym : tasmsymbol;
         vmtoffset : aint;
 {$endif vtentry}
+<<<<<<< HEAD
 {$ifdef SUPPORT_SAFECALL}
         cgpara : tcgpara;
 {$endif}
+=======
+        cgpara : tcgpara;
+>>>>>>> graemeg/fixes_2_2
       begin
          if not assigned(procdefinition) or
             not(procdefinition.has_paraloc_info in [callerside,callbothsides]) then
@@ -1612,8 +1677,37 @@ implementation
                    else
                      internalerror(2004110214);
                  end;
+<<<<<<< HEAD
                  retlocitem:=retlocitem^.next;
                end;
+=======
+               LOC_FPUREGISTER,
+               LOC_CFPUREGISTER:
+                 exclude(regs_to_save_fpu,getsupreg(procdefinition.funcretloc[callerside].register));
+               LOC_MMREGISTER,
+               LOC_CMMREGISTER:
+                 exclude(regs_to_save_mm,getsupreg(procdefinition.funcretloc[callerside].register));
+               LOC_REFERENCE,
+               LOC_VOID:
+                 ;
+               else
+                 internalerror(2004110214);
+              end;
+           end;
+
+{$if defined(x86) or defined(arm)}
+         if procdefinition.proccalloption=pocall_safecall then
+           begin
+{$ifdef x86_64}
+             cgpara.init;
+             paramanager.getintparaloc(pocall_default,1,cgpara);
+             cg.a_param_reg(current_asmdata.CurrAsmList,OS_ADDR,NR_RAX,cgpara);
+             cgpara.done;          
+{$endif x86_64}
+             cg.allocallcpuregisters(current_asmdata.CurrAsmList);
+             cg.a_call_name(current_asmdata.CurrAsmList,'FPC_SAFECALLCHECK');
+             cg.deallocallcpuregisters(current_asmdata.CurrAsmList);
+>>>>>>> graemeg/fixes_2_2
            end;
 
          if cg.uses_registers(R_MMREGISTER) then

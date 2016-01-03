@@ -14,10 +14,14 @@
   limitations under the License.
 
   ImageMagick MagickWand API.
+<<<<<<< HEAD
 }
 {
   Based on ImageMagick 6.2
 
+=======
+  
+>>>>>>> graemeg/fixes_2_2
   Converted from c by: Felipe Monteiro de Carvalho Dez/2005
 
 	Bug-fixed by Ángel Eduardo García Hernández
@@ -31,27 +35,50 @@ unit magick_wand;
 	{$PACKRECORDS C}
 {$ENDIF}
 
+<<<<<<< HEAD
 {$z4}
 
 interface
 
 uses ImageMagick, ctypes;
+=======
+{$MINENUMSIZE 1}
+
+interface
+
+uses ImageMagick;
+>>>>>>> graemeg/fixes_2_2
 
 { Various types }
 type
   MagickWand = record
+<<<<<<< HEAD
     id: culong;
+=======
+    id: Cardinal;
+>>>>>>> graemeg/fixes_2_2
     name: array[1..MaxTextExtent] of Char;
     exception: ExceptionInfo;
     image_info: PImageInfo;
     quantize_info: PQuantizeInfo;
     images: PImage;
     active, pend, debug: MagickBooleanType;
+<<<<<<< HEAD
     signature: culong;
+=======
+    signature: Cardinal;
+>>>>>>> graemeg/fixes_2_2
   end;
 
   PMagickWand = ^MagickWand;
 
+<<<<<<< HEAD
+=======
+  size_t = Integer;
+  
+  Psize_t = ^size_t;
+
+>>>>>>> graemeg/fixes_2_2
 {$include pixel_wand.inc}
 {$include drawing_wand.inc}
 {$include magick_attribute.inc}

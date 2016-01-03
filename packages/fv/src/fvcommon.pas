@@ -61,7 +61,11 @@ UNIT FVCommon;
 {$I platform.inc}
 {====================================================================}
 
+<<<<<<< HEAD
 {$ifdef OS_WINDOWS}
+=======
+{$ifdef win32}
+>>>>>>> graemeg/fixes_2_2
   uses
     Windows;
 {$endif}
@@ -99,7 +103,11 @@ CONST
 {$IFDEF BIT_16}                                       { 16 BIT DEFINITION }
    MaxBytes = 65520;                                  { Maximum data size }
 {$ENDIF}
+<<<<<<< HEAD
 {$IFDEF BIT_32_OR_MORE}                                       { 32 BIT DEFINITION }
+=======
+{$IFDEF BIT_32}                                       { 32 BIT DEFINITION }
+>>>>>>> graemeg/fixes_2_2
    MaxBytes = 128*1024*1024;                          { Maximum data size }
 {$ENDIF}
    MaxWords = MaxBytes DIV SizeOf(Word);              { Max words }
@@ -117,7 +125,11 @@ CONST
 {                           CPU TYPE DEFINITIONS                            }
 {---------------------------------------------------------------------------}
 TYPE
+<<<<<<< HEAD
 {$IFDEF BIT_32_OR_MORE}                               { 32 BIT CODE }
+=======
+{$IFDEF BIT_32}                                       { 32 BIT CODE }
+>>>>>>> graemeg/fixes_2_2
    CPUWord = Longint;                                 { CPUWord is 32 bit }
    CPUInt = Longint;                                  { CPUInt is 32 bit }
 {$ELSE}                                               { 16 BIT CODE }
@@ -133,7 +145,11 @@ TYPE
    Sw_Word    = Word;                                 { Standard word }
    Sw_Integer = Integer;                              { Standard integer }
 {$ENDIF}
+<<<<<<< HEAD
 {$IFDEF BIT_32_OR_MORE}                               { 32 BIT DEFINITIONS }
+=======
+{$IFDEF BIT_32}                                       { 32 BIT DEFINITIONS }
+>>>>>>> graemeg/fixes_2_2
    Sw_Word    = Cardinal;                             { Long integer now }
    Sw_Integer = LongInt;                              { Long integer now }
 {$ENDIF}

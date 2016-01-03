@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       CarbonCore/fp.h
  
      Contains:   FPCE Floating-Point Definitions and Declarations.
@@ -14,6 +15,30 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+     File:       fp.p
+ 
+     Contains:   FPCE Floating-Point Definitions and Declarations.
+ 
+     Version:    Technology: MathLib v2
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1987-2002 by Apple Computer, Inc., all rights reserved.
+ 
+     Bugs?:      For bug reports, consult the following page on
+                 the World Wide Web:
+ 
+                     http://www.freepascal.org/bugs.html
+ 
+}
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -22,8 +47,13 @@
 
 unit fp;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -36,21 +66,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -85,6 +123,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -92,6 +132,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -376,6 +417,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -401,6 +452,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -411,8 +466,11 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,ConditionalMacros;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {*******************************************************************************
 *                                                                               *
@@ -451,6 +509,7 @@ uses MacTypes,ConditionalMacros;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc TARGET_CPU_PPC or TARGET_CPU_PPC64 or TARGET_CPU_ARM or TARGET_CPU_ARM64}
 =======
 {$ifc TARGET_CPU_PPC or TARGET_CPU_PPC64 or TARGET_CPU_ARM}
@@ -464,6 +523,9 @@ uses MacTypes,ConditionalMacros;
 =======
 {$ifc TARGET_CPU_PPC or TARGET_CPU_PPC64 or TARGET_CPU_ARM}
 >>>>>>> origin/cpstrnew
+=======
+{$ifc TARGET_CPU_PPC}
+>>>>>>> graemeg/fixes_2_2
 
 type
 	float_t								= Float32;
@@ -474,7 +536,11 @@ type
     float_t                             = extended;
     double_t                            = extended;
   {$elsec}
+<<<<<<< HEAD
     {$ifc TARGET_CPU_X86 or TARGET_CPU_X86_64}
+=======
+    {$ifc TARGET_CPU_X86}
+>>>>>>> graemeg/fixes_2_2
 
 type
 	float_t								= Float64;
@@ -539,77 +605,133 @@ const
  *  cos()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function cos( x: double_t ): double_t; external name '_cos';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function cos(x: double_t): double_t; external name '_cos';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  sin()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function sin( x: double_t ): double_t; external name '_sin';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function sin(x: double_t): double_t; external name '_sin';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  tan()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function tan( x: double_t ): double_t; external name '_tan';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function tan(x: double_t): double_t; external name '_tan';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  acos()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function acos( x: double_t ): double_t; external name '_acos';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function acos(x: double_t): double_t; external name '_acos';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  asin()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function asin( x: double_t ): double_t; external name '_asin';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function asin(x: double_t): double_t; external name '_asin';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  atan()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function atan( x: double_t ): double_t; external name '_atan';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function atan(x: double_t): double_t; external name '_atan';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  atan2()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function atan2( y: double_t; x: double_t ): double_t; external name '_atan2';
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function atan2(y: double_t; x: double_t): double_t; external name '_atan2';
+>>>>>>> graemeg/fixes_2_2
 
 
 {*******************************************************************************
@@ -621,66 +743,114 @@ function atan2( y: double_t; x: double_t ): double_t; external name '_atan2';
  *  cosh()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function cosh( x: double_t ): double_t; external name '_cosh';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function cosh(x: double_t): double_t; external name '_cosh';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  sinh()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function sinh( x: double_t ): double_t; external name '_sinh';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function sinh(x: double_t): double_t; external name '_sinh';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  tanh()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function tanh( x: double_t ): double_t; external name '_tanh';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function tanh(x: double_t): double_t; external name '_tanh';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  acosh()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function acosh( x: double_t ): double_t; external name '_acosh';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function acosh(x: double_t): double_t; external name '_acosh';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  asinh()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function asinh( x: double_t ): double_t; external name '_asinh';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function asinh(x: double_t): double_t; external name '_asinh';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  atanh()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function atanh( x: double_t ): double_t; external name '_atanh';
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function atanh(x: double_t): double_t; external name '_atanh';
+>>>>>>> graemeg/fixes_2_2
 
 
 {*******************************************************************************
@@ -709,130 +879,226 @@ function atanh( x: double_t ): double_t; external name '_atanh';
  *  exp()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function exp( x: double_t ): double_t; external name '_exp';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function exp(x: double_t): double_t; external name '_exp';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  expm1()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function expm1( x: double_t ): double_t; external name '_expm1';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function expm1(x: double_t): double_t; external name '_expm1';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  exp2()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function exp2( x: double_t ): double_t; external name '_exp2';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function exp2(x: double_t): double_t; external name '_exp2';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  frexp()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function frexp( x: double_t; var exponent: SInt32 ): double_t; external name '_frexp';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function frexp(x: double_t; var exponent: SInt32): double_t; external name '_frexp';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ldexp()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function ldexp( x: double_t; n: SInt32 ): double_t; external name '_ldexp';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ldexp(x: double_t; n: SInt32): double_t; external name '_ldexp';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  log()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function log( x: double_t ): double_t; external name '_log';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function log(x: double_t): double_t; external name '_log';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  log2()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function log2( x: double_t ): double_t; external name '_log2';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function log2(x: double_t): double_t; external name '_log2';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  log1p()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function log1p( x: double_t ): double_t; external name '_log1p';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function log1p(x: double_t): double_t; external name '_log1p';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  log10()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function log10( x: double_t ): double_t; external name '_log10';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function log10(x: double_t): double_t; external name '_log10';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  logb()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function logb( x: double_t ): double_t; external name '_logb';
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function logb(x: double_t): double_t; external name '_logb';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  modf()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function modf( x: double_t; var iptr: double_t ): double_t; external name '_modf';
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function modf(x: double_t; var iptr: double_t): double_t; external name '_modf';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  modff()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function modff( x: Float32; var iptrf: Float32 ): Float32; external name '_modff';
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function modff(x: Single; var iptrf: Single): Single; external name '_modff';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
@@ -840,6 +1106,7 @@ function modff( x: Float32; var iptrf: Float32 ): Float32; external name '_modff
             int  on Mac OS X 
             long on Mac OS
 }
+<<<<<<< HEAD
 type
 	_scalb_n_type = SInt32;
 {
@@ -851,6 +1118,20 @@ type
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function scalb( x: double_t; n: _scalb_n_type ): double_t; external name '_scalb';
+=======
+
+type
+	_scalb_n_type						= SInt32;
+	{
+	 *  scalb()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in MathLib 1.0 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function scalb(x: double_t; n: _scalb_n_type): double_t; external name '_scalb';
+>>>>>>> graemeg/fixes_2_2
 
 
 {*******************************************************************************
@@ -867,44 +1148,76 @@ function scalb( x: double_t; n: _scalb_n_type ): double_t; external name '_scalb
  *  fabs()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function fabs( x: double_t ): double_t; external name '_fabs';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function fabs(x: double_t): double_t; external name '_fabs';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  hypot()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function hypot( x: double_t; y: double_t ): double_t; external name '_hypot';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function hypot(x: double_t; y: double_t): double_t; external name '_hypot';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  pow()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 2.0 and later
  }
 function pow( x: double_t; y: double_t ): double_t; external name '_pow';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function pow(x: double_t; y: double_t): double_t; external name '_pow';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  sqrt()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function sqrt( x: double_t ): double_t; external name '_sqrt';
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function sqrt(x: double_t): double_t; external name '_sqrt';
+>>>>>>> graemeg/fixes_2_2
 
 
 {*******************************************************************************
@@ -922,43 +1235,75 @@ function sqrt( x: double_t ): double_t; external name '_sqrt';
  *  erf()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function erf( x: double_t ): double_t; external name '_erf';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function erf(x: double_t): double_t; external name '_erf';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  erfc()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function erfc( x: double_t ): double_t; external name '_erfc';
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function erfc(x: double_t): double_t; external name '_erfc';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  gamma()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function gamma( x: double_t ): double_t; external name '_gamma';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function gamma(x: double_t): double_t; external name '_gamma';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  lgamma()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function lgamma( x: double_t ): double_t; external name '_lgamma';
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function lgamma(x: double_t): double_t; external name '_lgamma';
+>>>>>>> graemeg/fixes_2_2
 
 
 {*******************************************************************************
@@ -993,76 +1338,132 @@ function lgamma( x: double_t ): double_t; external name '_lgamma';
  *  ceil()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function ceil( x: double_t ): double_t; external name '_ceil';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ceil(x: double_t): double_t; external name '_ceil';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  floor()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function floor( x: double_t ): double_t; external name '_floor';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function floor(x: double_t): double_t; external name '_floor';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  rint()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function rint( x: double_t ): double_t; external name '_rint';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function rint(x: double_t): double_t; external name '_rint';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  nearbyint()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function nearbyint( x: double_t ): double_t; external name '_nearbyint';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function nearbyint(x: double_t): double_t; external name '_nearbyint';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  rinttol()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function rinttol( x: double_t ): SIGNEDLONG; external name '_rinttol';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function rinttol(x: double_t): SInt32; external name '_rinttol';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  round()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function roundd( x: double_t ): double_t; external name '_round';
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function roundd(x: double_t): double_t; external name '_round';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  roundtol()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function roundtol( round: double_t ): SIGNEDLONG; external name '_roundtol';
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function roundtol(round: double_t): SInt32; external name '_roundtol';
+>>>>>>> graemeg/fixes_2_2
 
 {
     Note: For compatiblity trunc(x) has a return type of
@@ -1078,6 +1479,7 @@ type
 type
 	_trunc_return_type					= double_t;
 {$endc}  {TARGET_RT_MAC_68881}
+<<<<<<< HEAD
 {
  *  trunc()
  *  
@@ -1087,6 +1489,17 @@ type
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function truncd( x: double_t ): _trunc_return_type; external name '_trunc';
+=======
+	{
+	 *  trunc()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in MathLib 1.0 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function truncd(x: double_t): _trunc_return_type; external name '_trunc';
+>>>>>>> graemeg/fixes_2_2
 
 
 {*******************************************************************************
@@ -1103,33 +1516,57 @@ function truncd( x: double_t ): _trunc_return_type; external name '_trunc';
  *  fmod()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function fmod( x: double_t; y: double_t ): double_t; external name '_fmod';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function fmod(x: double_t; y: double_t): double_t; external name '_fmod';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  remainder()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function remainder( x: double_t; y: double_t ): double_t; external name '_remainder';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function remainder(x: double_t; y: double_t): double_t; external name '_remainder';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  remquo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function remquo( x: double_t; y: double_t; var quo: SInt32 ): double_t; external name '_remquo';
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function remquo(x: double_t; y: double_t; var quo: SInt32): double_t; external name '_remquo';
+>>>>>>> graemeg/fixes_2_2
 
 
 {*******************************************************************************
@@ -1154,172 +1591,298 @@ function remquo( x: double_t; y: double_t; var quo: SInt32 ): double_t; external
  *  copysign()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function copysign( x: double_t; y: double_t ): double_t; external name '_copysign';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function copysign(x: double_t; y: double_t): double_t; external name '_copysign';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  nan()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function nan( tagp: ConstCStringPtr ): Float64; external name '_nan';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function nan(tagp: ConstCStringPtr): Double; external name '_nan';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  nanf()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function nanf( tagp: ConstCStringPtr ): Float32; external name '_nanf';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function nanf(tagp: ConstCStringPtr): Single; external name '_nanf';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  nextafterd()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function nextafterd( x: Float64; y: Float64 ): Float64; external name '_nextafterd';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function nextafterd(x: Double; y: Double): Double; external name '_nextafterd';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  nextafterf()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function nextafterf( x: Float32; y: Float32 ): Float32; external name '_nextafterf';
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function nextafterf(x: Single; y: Single): Single; external name '_nextafterf';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  __fpclassifyd()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function __fpclassifyd( x: Float64 ): SIGNEDLONG; external name '___fpclassifyd';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function __fpclassifyd(x: Double): SInt32; external name '___fpclassifyd';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  __fpclassifyf()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function __fpclassifyf( x: Float32 ): SIGNEDLONG; external name '___fpclassifyf';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function __fpclassifyf(x: Single): SInt32; external name '___fpclassifyf';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  __isnormald()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function __isnormald( x: Float64 ): SIGNEDLONG; external name '___isnormald';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function __isnormald(x: Double): SInt32; external name '___isnormald';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  __isnormalf()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function __isnormalf( x: Float32 ): SIGNEDLONG; external name '___isnormalf';
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function __isnormalf(x: Single): SInt32; external name '___isnormalf';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  __isfinited()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function __isfinited( x: Float64 ): SIGNEDLONG; external name '___isfinited';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function __isfinited(x: Double): SInt32; external name '___isfinited';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  __isfinitef()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function __isfinitef( x: Float32 ): SIGNEDLONG; external name '___isfinitef';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function __isfinitef(x: Single): SInt32; external name '___isfinitef';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  __isnand()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function __isnand( x: Float64 ): SIGNEDLONG; external name '___isnand';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function __isnand(x: Double): SInt32; external name '___isnand';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  __isnanf()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function __isnanf( x: Float32 ): SIGNEDLONG; external name '___isnanf';
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function __isnanf(x: Single): SInt32; external name '___isnanf';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  __signbitd()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function __signbitd( x: Float64 ): SIGNEDLONG; external name '___signbitd';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function __signbitd(x: Double): SInt32; external name '___signbitd';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  __signbitf()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function __signbitf( x: Float32 ): SIGNEDLONG; external name '___signbitf';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function __signbitf(x: Single): SInt32; external name '___signbitf';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  __inf()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+>>>>>>> graemeg/fixes_2_2
  }
 function __inf: double_t; external name '___inf';
 
@@ -1328,7 +1891,11 @@ function __inf: double_t; external name '___inf';
 *                                                                               *
 *                              Inquiry macros                                   *
 *                                                                               *
+<<<<<<< HEAD
 *   fpclassify      Returns one of the FP_Å values.                             *
+=======
+*   fpclassify      Returns one of the FP_≈ values.                             *
+>>>>>>> graemeg/fixes_2_2
 *   isnormal        Non-zero if and only if the argument x is normalized.       *
 *   isfinite        Non-zero if and only if the argument x is finite.           *
 *   isnan           Non-zero if and only if the argument x is a NaN.            *
@@ -1346,6 +1913,7 @@ const
 	FP_SUBNORMAL				= 5;							{       denormal numbers                       }
 
 
+<<<<<<< HEAD
 {*******************************************************************************
 *                                                                               *
 *                      Max, Min and Positive Difference                         *
@@ -1378,27 +1946,76 @@ const
  }
 function fdim( x: double_t; y: double_t ): double_t; external name '_fdim';
 
+=======
+	{	*******************************************************************************
+	*                                                                               *
+	*                      Max, Min and Positive Difference                         *
+	*                                                                               *
+	*   fdim        Determines the 'positive difference' between its arguments:     *
+	*               ( x - y, if x > y ), ( +0, if x <= y ).  If one argument is     *
+	*               NaN, then fdim returns that NaN.  if both arguments are NaNs,   *
+	*               then fdim returns the first argument.                           *
+	*                                                                               *
+	*   fmax        Returns the maximum of the two arguments.  Corresponds to the   *
+	*               max function in FORTRAN.  NaN arguments are treated as missing  *
+	*               data.  If one argument is NaN and the other is a number, then   *
+	*               the number is returned.  If both are NaNs then the first        *
+	*               argument is returned.                                           *
+	*                                                                               *
+	*   fmin        Returns the minimum of the two arguments.  Corresponds to the   *
+	*               min function in FORTRAN.  NaN arguments are treated as missing  *
+	*               data.  If one argument is NaN and the other is a number, then   *
+	*               the number is returned.  If both are NaNs then the first        *
+	*               argument is returned.                                           *
+	*                                                                               *
+	*******************************************************************************	}
+	{
+	 *  fdim()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in MathLib 1.0 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function fdim(x: double_t; y: double_t): double_t; external name '_fdim';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  fmax()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function fmax( x: double_t; y: double_t ): double_t; external name '_fmax';
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function fmax(x: double_t; y: double_t): double_t; external name '_fmax';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  fmin()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function fmin( x: double_t; y: double_t ): double_t; external name '_fmin';
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function fmin(x: double_t; y: double_t): double_t; external name '_fmin';
+>>>>>>> graemeg/fixes_2_2
 
 
 {******************************************************************************
@@ -1432,6 +2049,7 @@ const
  *  compound()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
@@ -1439,17 +2057,32 @@ const
 function compound( rate: Float64; periods: Float64 ): Float64; external name '_compound';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function compound(rate: double_t; periods: double_t): double_t; external name '_compound';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  annuity()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function annuity( rate: Float64; periods: Float64 ): Float64; external name '_annuity';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function annuity(rate: double_t; periods: double_t): double_t; external name '_annuity';
+>>>>>>> graemeg/fixes_2_2
 
 
 {*******************************************************************************
@@ -1464,18 +2097,27 @@ function annuity( rate: Float64; periods: Float64 ): Float64; external name '_an
  *  randomx()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function randomx( var x: double_t ): double_t; external name '_randomx';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function randomx(var x: double_t): double_t; external name '_randomx';
+>>>>>>> graemeg/fixes_2_2
 
 
 {******************************************************************************
 *                              Relational operator                             *
 ******************************************************************************}
 {      relational operator      }
+<<<<<<< HEAD
 type
 	relop = SInt16;
 const
@@ -1496,6 +2138,27 @@ function relation( x: double_t; y: double_t ): relop; external name '_relation';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 
 
+=======
+
+type
+	relop								= SInt16;
+
+const
+	GREATERTHAN					= 0;
+	LESSTHAN					= 1;
+	EQUALTO						= 2;
+	UNORDERED					= 3;
+
+	{
+	 *  relation()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   in MathLib 1.0 and later
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function relation(x: double_t; y: double_t): relop; external name '_relation';
+>>>>>>> graemeg/fixes_2_2
 
 
 {*******************************************************************************
@@ -1546,6 +2209,7 @@ type
  *  num2dec()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
@@ -1553,11 +2217,19 @@ type
 procedure num2dec( const (*var*) f: decform; x: double_t; var d: decimal ); external name '_num2dec';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure num2dec(const (*var*) f: decform; x: double_t; var d: decimal); external name '_num2dec';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  dec2num()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
@@ -1565,11 +2237,19 @@ procedure num2dec( const (*var*) f: decform; x: double_t; var d: decimal ); exte
 function dec2num( const (*var*) d: decimal ): double_t; external name '_dec2num';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function dec2num(const (*var*) d: decimal): double_t; external name '_dec2num';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  dec2str()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
@@ -1577,17 +2257,32 @@ function dec2num( const (*var*) d: decimal ): double_t; external name '_dec2num'
 procedure dec2str( const (*var*) f: decform; const (*var*) d: decimal; var s: char ); external name '_dec2str';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure dec2str(const (*var*) f: decform; const (*var*) d: decimal; s: CStringPtr); external name '_dec2str';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  str2dec()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 procedure str2dec( s: ConstCStringPtr; var ix: SInt16; var d: decimal; var vp: SInt16 ); external name '_str2dec';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure str2dec(s: ConstCStringPtr; var ix: SInt16; var d: decimal; var vp: SInt16); external name '_str2dec';
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc TARGET_CPU_68K}
 {$ifc CALL_NOT_IN_CARBON}
@@ -1607,6 +2302,7 @@ function dec2d(const (*var*) d: decimal): Double; external name '_dec2d';
  *  dec2f()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
@@ -1614,11 +2310,19 @@ function dec2d(const (*var*) d: decimal): Double; external name '_dec2d';
 function dec2f( const (*var*) d: decimal ): Float32; external name '_dec2f';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function dec2f(const (*var*) d: decimal): Single; external name '_dec2f';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  dec2s()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
@@ -1626,17 +2330,32 @@ function dec2f( const (*var*) d: decimal ): Float32; external name '_dec2f';
 function dec2s( const (*var*) d: decimal ): SInt16; external name '_dec2s';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function dec2s(const (*var*) d: decimal): SInt16; external name '_dec2s';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  dec2l()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later
  }
 function dec2l( const (*var*) d: decimal ): SIGNEDLONG; external name '_dec2l';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function dec2l(const (*var*) d: decimal): SInt32; external name '_dec2l';
+>>>>>>> graemeg/fixes_2_2
 
 
 {*******************************************************************************
@@ -1675,15 +2394,25 @@ procedure x80tox96(const (*var*) x80: extended80; var x: extended96); external n
 *                                                                               *
 *******************************************************************************}
 
+<<<<<<< HEAD
 {$ifc TARGET_CPU_PPC or TARGET_CPU_PPC64}
+=======
+{$ifc TARGET_CPU_PPC}
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  cosl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function cosl(x: LongDouble): LongDouble; external name '_cosl';
 
@@ -1692,9 +2421,15 @@ function cosl(x: LongDouble): LongDouble; external name '_cosl';
  *  sinl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function sinl(x: LongDouble): LongDouble; external name '_sinl';
 
@@ -1703,9 +2438,15 @@ function sinl(x: LongDouble): LongDouble; external name '_sinl';
  *  tanl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function tanl(x: LongDouble): LongDouble; external name '_tanl';
 
@@ -1714,9 +2455,15 @@ function tanl(x: LongDouble): LongDouble; external name '_tanl';
  *  acosl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function acosl(x: LongDouble): LongDouble; external name '_acosl';
 
@@ -1725,9 +2472,15 @@ function acosl(x: LongDouble): LongDouble; external name '_acosl';
  *  asinl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function asinl(x: LongDouble): LongDouble; external name '_asinl';
 
@@ -1736,9 +2489,15 @@ function asinl(x: LongDouble): LongDouble; external name '_asinl';
  *  atanl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function atanl(x: LongDouble): LongDouble; external name '_atanl';
 
@@ -1747,9 +2506,15 @@ function atanl(x: LongDouble): LongDouble; external name '_atanl';
  *  atan2l()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function atan2l(y: LongDouble; x: LongDouble): LongDouble; external name '_atan2l';
 
@@ -1758,9 +2523,15 @@ function atan2l(y: LongDouble; x: LongDouble): LongDouble; external name '_atan2
  *  coshl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function coshl(x: LongDouble): LongDouble; external name '_coshl';
 
@@ -1769,9 +2540,15 @@ function coshl(x: LongDouble): LongDouble; external name '_coshl';
  *  sinhl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function sinhl(x: LongDouble): LongDouble; external name '_sinhl';
 
@@ -1780,9 +2557,15 @@ function sinhl(x: LongDouble): LongDouble; external name '_sinhl';
  *  tanhl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function tanhl(x: LongDouble): LongDouble; external name '_tanhl';
 
@@ -1791,9 +2574,15 @@ function tanhl(x: LongDouble): LongDouble; external name '_tanhl';
  *  acoshl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function acoshl(x: LongDouble): LongDouble; external name '_acoshl';
 
@@ -1802,9 +2591,15 @@ function acoshl(x: LongDouble): LongDouble; external name '_acoshl';
  *  asinhl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function asinhl(x: LongDouble): LongDouble; external name '_asinhl';
 
@@ -1813,9 +2608,15 @@ function asinhl(x: LongDouble): LongDouble; external name '_asinhl';
  *  atanhl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function atanhl(x: LongDouble): LongDouble; external name '_atanhl';
 
@@ -1824,9 +2625,15 @@ function atanhl(x: LongDouble): LongDouble; external name '_atanhl';
  *  expl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function expl(x: LongDouble): LongDouble; external name '_expl';
 
@@ -1835,9 +2642,15 @@ function expl(x: LongDouble): LongDouble; external name '_expl';
  *  expm1l()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function expm1l(x: LongDouble): LongDouble; external name '_expm1l';
 
@@ -1846,9 +2659,15 @@ function expm1l(x: LongDouble): LongDouble; external name '_expm1l';
  *  exp2l()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function exp2l(x: LongDouble): LongDouble; external name '_exp2l';
 
@@ -1857,9 +2676,15 @@ function exp2l(x: LongDouble): LongDouble; external name '_exp2l';
  *  frexpl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function frexpl(x: LongDouble; var exponent: SInt32): LongDouble; external name '_frexpl';
 
@@ -1868,9 +2693,15 @@ function frexpl(x: LongDouble; var exponent: SInt32): LongDouble; external name 
  *  ldexpl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function ldexpl(x: LongDouble; n: SInt32): LongDouble; external name '_ldexpl';
 
@@ -1879,9 +2710,15 @@ function ldexpl(x: LongDouble; n: SInt32): LongDouble; external name '_ldexpl';
  *  logl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function logl(x: LongDouble): LongDouble; external name '_logl';
 
@@ -1890,9 +2727,15 @@ function logl(x: LongDouble): LongDouble; external name '_logl';
  *  log1pl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function log1pl(x: LongDouble): LongDouble; external name '_log1pl';
 
@@ -1901,9 +2744,15 @@ function log1pl(x: LongDouble): LongDouble; external name '_log1pl';
  *  log10l()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function log10l(x: LongDouble): LongDouble; external name '_log10l';
 
@@ -1912,9 +2761,15 @@ function log10l(x: LongDouble): LongDouble; external name '_log10l';
  *  log2l()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function log2l(x: LongDouble): LongDouble; external name '_log2l';
 
@@ -1923,9 +2778,15 @@ function log2l(x: LongDouble): LongDouble; external name '_log2l';
  *  logbl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function logbl(x: LongDouble): LongDouble; external name '_logbl';
 
@@ -1934,9 +2795,15 @@ function logbl(x: LongDouble): LongDouble; external name '_logbl';
  *  scalbl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function scalbl(x: LongDouble; n: SInt32): LongDouble; external name '_scalbl';
 
@@ -1945,9 +2812,15 @@ function scalbl(x: LongDouble; n: SInt32): LongDouble; external name '_scalbl';
  *  fabsl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function fabsl(x: LongDouble): LongDouble; external name '_fabsl';
 
@@ -1956,9 +2829,15 @@ function fabsl(x: LongDouble): LongDouble; external name '_fabsl';
  *  hypotl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function hypotl(x: LongDouble; y: LongDouble): LongDouble; external name '_hypotl';
 
@@ -1967,9 +2846,15 @@ function hypotl(x: LongDouble; y: LongDouble): LongDouble; external name '_hypot
  *  powl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function powl(x: LongDouble; y: LongDouble): LongDouble; external name '_powl';
 
@@ -1978,9 +2863,15 @@ function powl(x: LongDouble; y: LongDouble): LongDouble; external name '_powl';
  *  sqrtl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function sqrtl(x: LongDouble): LongDouble; external name '_sqrtl';
 
@@ -1989,9 +2880,15 @@ function sqrtl(x: LongDouble): LongDouble; external name '_sqrtl';
  *  erfl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function erfl(x: LongDouble): LongDouble; external name '_erfl';
 
@@ -2000,9 +2897,15 @@ function erfl(x: LongDouble): LongDouble; external name '_erfl';
  *  erfcl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function erfcl(x: LongDouble): LongDouble; external name '_erfcl';
 
@@ -2011,9 +2914,15 @@ function erfcl(x: LongDouble): LongDouble; external name '_erfcl';
  *  gammal()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function gammal(x: LongDouble): LongDouble; external name '_gammal';
 
@@ -2022,9 +2931,15 @@ function gammal(x: LongDouble): LongDouble; external name '_gammal';
  *  lgammal()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function lgammal(x: LongDouble): LongDouble; external name '_lgammal';
 
@@ -2033,9 +2948,15 @@ function lgammal(x: LongDouble): LongDouble; external name '_lgammal';
  *  ceill()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 2.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 2.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function ceill(x: LongDouble): LongDouble; external name '_ceill';
 
@@ -2044,9 +2965,15 @@ function ceill(x: LongDouble): LongDouble; external name '_ceill';
  *  floorl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function floorl(x: LongDouble): LongDouble; external name '_floorl';
 
@@ -2055,9 +2982,15 @@ function floorl(x: LongDouble): LongDouble; external name '_floorl';
  *  rintl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function rintl(x: LongDouble): LongDouble; external name '_rintl';
 
@@ -2066,9 +2999,15 @@ function rintl(x: LongDouble): LongDouble; external name '_rintl';
  *  nearbyintl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function nearbyintl(x: LongDouble): LongDouble; external name '_nearbyintl';
 
@@ -2077,9 +3016,15 @@ function nearbyintl(x: LongDouble): LongDouble; external name '_nearbyintl';
  *  rinttoll()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function rinttoll(x: LongDouble): SInt32; external name '_rinttoll';
 
@@ -2088,9 +3033,15 @@ function rinttoll(x: LongDouble): SInt32; external name '_rinttoll';
  *  roundl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function roundl(x: LongDouble): LongDouble; external name '_roundl';
 
@@ -2099,9 +3050,15 @@ function roundl(x: LongDouble): LongDouble; external name '_roundl';
  *  roundtoll()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function roundtoll(x: LongDouble): SInt32; external name '_roundtoll';
 
@@ -2110,9 +3067,15 @@ function roundtoll(x: LongDouble): SInt32; external name '_roundtoll';
  *  truncl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function truncl(x: LongDouble): LongDouble; external name '_truncl';
 
@@ -2121,9 +3084,15 @@ function truncl(x: LongDouble): LongDouble; external name '_truncl';
  *  remainderl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function remainderl(x: LongDouble; y: LongDouble): LongDouble; external name '_remainderl';
 
@@ -2132,9 +3101,15 @@ function remainderl(x: LongDouble; y: LongDouble): LongDouble; external name '_r
  *  remquol()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function remquol(x: LongDouble; y: LongDouble; var quo: SInt32): LongDouble; external name '_remquol';
 
@@ -2143,9 +3118,15 @@ function remquol(x: LongDouble; y: LongDouble; var quo: SInt32): LongDouble; ext
  *  copysignl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function copysignl(x: LongDouble; y: LongDouble): LongDouble; external name '_copysignl';
 
@@ -2154,9 +3135,15 @@ function copysignl(x: LongDouble; y: LongDouble): LongDouble; external name '_co
  *  fdiml()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function fdiml(x: LongDouble; y: LongDouble): LongDouble; external name '_fdiml';
 
@@ -2165,9 +3152,15 @@ function fdiml(x: LongDouble; y: LongDouble): LongDouble; external name '_fdiml'
  *  fmaxl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function fmaxl(x: LongDouble; y: LongDouble): LongDouble; external name '_fmaxl';
 
@@ -2176,9 +3169,15 @@ function fmaxl(x: LongDouble; y: LongDouble): LongDouble; external name '_fmaxl'
  *  fminl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function fminl(x: LongDouble; y: LongDouble): LongDouble; external name '_fminl';
 
@@ -2187,9 +3186,15 @@ function fminl(x: LongDouble; y: LongDouble): LongDouble; external name '_fminl'
  *  relationl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function relationl(x: LongDouble; y: LongDouble): relop; external name '_relationl';
 
@@ -2198,9 +3203,15 @@ function relationl(x: LongDouble; y: LongDouble): relop; external name '_relatio
  *  num2decl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 procedure num2decl(const (*var*) f: decform; x: LongDouble; var d: decimal); external name '_num2decl';
 
@@ -2209,9 +3220,15 @@ procedure num2decl(const (*var*) f: decform; x: LongDouble; var d: decimal); ext
  *  dec2numl()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 function dec2numl(const (*var*) d: decimal): LongDouble; external name '_dec2numl';
 
@@ -2230,6 +3247,7 @@ function dec2numl(const (*var*) d: decimal): LongDouble; external name '_dec2num
  *  x80tod()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 2.0 and later
@@ -2237,11 +3255,19 @@ function dec2numl(const (*var*) d: decimal): LongDouble; external name '_dec2num
 function x80tod( const (*var*) x80: extended80 ): Float64; external name '_x80tod';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 
+=======
+ *    Non-Carbon CFM:   in MathLib 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function x80tod(const (*var*) x80: extended80): Double; external name '_x80tod';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  dtox80()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 2.0 and later
@@ -2250,13 +3276,28 @@ procedure dtox80( const (*var*) x: Float64; var x80: extended80 ); external name
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 
 
+=======
+ *    Non-Carbon CFM:   in MathLib 2.0 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure dtox80((*const*) var x: Double; var x80: extended80); external name '_dtox80';
+
+{$ifc TARGET_CPU_PPC}
+>>>>>>> graemeg/fixes_2_2
 {
  *  x80told()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+>>>>>>> graemeg/fixes_2_2
  }
 procedure x80told(const (*var*) x80: extended80; var x: LongDouble); external name '_x80told';
 
@@ -2265,6 +3306,7 @@ procedure x80told(const (*var*) x80: extended80; var x: LongDouble); external na
  *  ldtox80()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
@@ -2278,3 +3320,18 @@ procedure ldtox80((*const*) var x: LongDouble; var x80: extended80); external na
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ *    Non-Carbon CFM:   in MathLib 1.0 and later or as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         not available
+ }
+procedure ldtox80((*const*) var x: LongDouble; var x80: extended80); external name '_ldtox80';
+
+{$endc} {TARGET_CPU_PPC}
+{$endc}
+
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

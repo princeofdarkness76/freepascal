@@ -91,11 +91,16 @@ implementation
        { target }
        paramgr,procinfo,
        { symtable }
+<<<<<<< HEAD
        symconst,symsym,symtable,symcreat,
        defutil,defcmp,objcdef,
 {$ifdef jvm}
        jvmdef,
 {$endif}
+=======
+       symconst,symsym,symtable,
+       defutil,defcmp,
+>>>>>>> graemeg/fixes_2_2
        { modules }
        fmodule,
        { pass 1 }
@@ -284,6 +289,7 @@ implementation
 <<<<<<< HEAD
     procedure id_type(var def : tdef;isforwarddef,checkcurrentrecdef,allowgenericsyms,allowunitsym:boolean;out srsym:tsym;out srsymtable:tsymtable;out is_specialize:boolean); forward;
 
+<<<<<<< HEAD
 
     { def is the outermost type in which other types have to be searched
 
@@ -314,6 +320,9 @@ implementation
 =======
 >>>>>>> origin/cpstrnew
     procedure generate_specialization(var tt:tdef;parse_class_parent:boolean);
+=======
+    procedure generate_specialization(var tt:tdef);
+>>>>>>> graemeg/fixes_2_2
       var
         st  : TSymtable;
         srsym : tsym;
@@ -322,6 +331,7 @@ implementation
         err : boolean;
         i   : longint;
         sym : tsym;
+        old_block_type : tblock_type;
         genericdef : tstoreddef;
         generictype : ttypesym;
         generictypelist : TFPObjectList;
@@ -333,7 +343,10 @@ implementation
         vmtbuilder : TVMTBuilder;
         onlyparsepara : boolean;
         specializest : tsymtable;
+<<<<<<< HEAD
         item: psymtablestackitem;
+=======
+>>>>>>> graemeg/fixes_2_2
       begin
         { retrieve generic def that we are going to replace }
         genericdef:=tstoreddef(tt);
@@ -347,6 +360,7 @@ implementation
             onlyparsepara:=true;
           end;
 
+<<<<<<< HEAD
         { only need to record the tokens, then we don't know the type yet  ... }
         if parse_generic then
           begin
@@ -356,6 +370,12 @@ implementation
             tt:=tundefineddef.create;
             if parse_class_parent then
               tt:=genericdef;
+=======
+        { Only need to record the tokens, then we don't know the type yet }
+        if parse_generic then
+          begin
+            tt:=cundefinedtype;
+>>>>>>> graemeg/fixes_2_2
             onlyparsepara:=true;
           end;
 
@@ -372,8 +392,14 @@ implementation
             exit;
           end;
 
+<<<<<<< HEAD
         if not try_to_consume(_LT) then
           consume(_LSHARPBRACKET);
+=======
+        consume(_LSHARPBRACKET);
+        old_block_type:=block_type;
+        block_type:=bt_specialize;
+>>>>>>> graemeg/fixes_2_2
         { Parse generic parameters, for each undefineddef in the symtable of
           the genericdef we need to have a new def }
         err:=false;
@@ -392,6 +418,11 @@ implementation
           else
             internalerror(200511182);
         end;
+<<<<<<< HEAD
+=======
+        if not assigned(st) then
+          internalerror(200511182);
+>>>>>>> graemeg/fixes_2_2
 
         { Parse type parameters }
         if not assigned(genericdef.typesym) then
@@ -414,9 +445,14 @@ implementation
                     generictype:=ttypesym.create(sym.realname,pt2.resultdef);
                     generictypelist.add(generictype);
                     if not assigned(pt2.resultdef.typesym) then
+<<<<<<< HEAD
                       message(type_e_generics_cannot_reference_itself)
                     else
                       specializename:=specializename+'$'+pt2.resultdef.typesym.realname;
+=======
+                      internalerror(200710172);
+                    specializename:=specializename+'$'+pt2.resultdef.typesym.realname;
+>>>>>>> graemeg/fixes_2_2
                   end
                 else
                   begin
@@ -428,6 +464,7 @@ implementation
           end;
         uspecializename:=upper(specializename);
         { force correct error location if too much type parameters are passed }
+<<<<<<< HEAD
         if not (token in [_RSHARPBRACKET,_GT]) then
           consume(_RSHARPBRACKET);
 
@@ -435,12 +472,22 @@ implementation
         if assigned(current_structdef) and
            (current_structdef.objname^=uspecializename) then
           tt:=current_structdef;
+=======
+        if token<>_RSHARPBRACKET then
+          consume(_RSHARPBRACKET);
+
+        { Special case if we are referencing the current defined object }
+        if assigned(aktobjectdef) and
+           (aktobjectdef.objname^=uspecializename) then
+          tt:=aktobjectdef;
+>>>>>>> graemeg/fixes_2_2
 
         { for units specializations can already be needed in the interface, therefor we
           will use the global symtable. Programs don't have a globalsymtable and there we
           use the localsymtable }
         if current_module.is_unit then
           specializest:=current_module.globalsymtable
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
         else
           structstackindex:=-1;
@@ -735,6 +782,84 @@ implementation
              else
                break;
           end;
+=======
+        else
+          specializest:=current_module.localsymtable;
+
+        { Can we reuse an already specialized type? }
+        if not assigned(tt) then
+          begin
+            srsym:=tsym(specializest.find(uspecializename));
+            if assigned(srsym) then
+              begin
+                if srsym.typ<>typesym then
+                  internalerror(200710171);
+                tt:=ttypesym(srsym).typedef;
+              end;
+          end;
+
+        if not assigned(tt) then
+          begin
+            { Setup symtablestack at definition time
+              to get types right, however this is not perfect, we should probably record
+              the resolved symbols }
+            oldsymtablestack:=symtablestack;
+            symtablestack:=tsymtablestack.create;
+            if not assigned(genericdef) then
+              internalerror(200705151);
+            hmodule:=find_module_from_symtable(genericdef.owner);
+            if hmodule=nil then
+              internalerror(200705152);
+            pu:=tused_unit(hmodule.used_units.first);
+            while assigned(pu) do
+              begin
+                if not assigned(pu.u.globalsymtable) then
+                  internalerror(200705153);
+                symtablestack.push(pu.u.globalsymtable);
+                pu:=tused_unit(pu.next);
+              end;
+
+            if assigned(hmodule.globalsymtable) then
+              symtablestack.push(hmodule.globalsymtable);
+
+            { hacky, but necessary to insert the newly generated class properly }
+            symtablestack.push(oldsymtablestack.top);
+
+            { Reparse the original type definition }
+            if not err then
+              begin
+                { Firsta new typesym so we can reuse this specialization and
+                  references to this specialization can be handled }
+                srsym:=ttypesym.create(specializename,generrordef);
+                specializest.insert(srsym);
+
+                if not assigned(genericdef.generictokenbuf) then
+                  internalerror(200511171);
+                current_scanner.startreplaytokens(genericdef.generictokenbuf);
+                read_named_type(tt,specializename,genericdef,generictypelist,false);
+                ttypesym(srsym).typedef:=tt;
+                tt.typesym:=srsym;
+                { Consume the semicolon if it is also recorded }
+                try_to_consume(_SEMICOLON);
+
+                { Build VMT indexes for classes }
+                if (tt.typ=objectdef) then
+                  begin
+                    vmtbuilder:=TVMTBuilder.Create(tobjectdef(tt));
+                    vmtbuilder.generate_vmt;
+                    vmtbuilder.free;
+                  end;
+              end;
+
+            { Restore symtablestack }
+            symtablestack.free;
+            symtablestack:=oldsymtablestack;
+          end;
+
+        generictypelist.free;
+        consume(_RSHARPBRACKET);
+        block_type:=old_block_type;
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -792,7 +917,10 @@ implementation
         pos : tfileposinfo;
         s,sorg : TIDString;
         t : ttoken;
+<<<<<<< HEAD
         structdef : tabstractrecorddef;
+=======
+>>>>>>> graemeg/fixes_2_2
       begin
          srsym:=nil;
          srsymtable:=nil;
@@ -835,6 +963,7 @@ implementation
          searchsym_type(s,srsym,srsymtable);
 >>>>>>> graemeg/cpstrnew
          { handle unit specification like System.Writeln }
+<<<<<<< HEAD
          if allowunitsym then
            is_unit_specific:=try_consume_unitsym(srsym,srsymtable,t,true,true,is_specialize)
          else
@@ -849,6 +978,10 @@ implementation
              srsym:=nil;
              srsymtable:=nil;
            end;
+=======
+         is_unit_specific:=try_consume_unitsym(srsym,srsymtable,t);
+         consume(t);
+>>>>>>> graemeg/fixes_2_2
          { Types are first defined with an error def before assigning
            the real type so check if it's an errordef. if so then
            give an error. Only check for typesyms in the current symbol
@@ -914,6 +1047,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     procedure single_type(var def:tdef;options:TSingleTypeOptions);
        var
          t2 : tdef;
@@ -925,10 +1059,20 @@ implementation
        begin
          dospecialize:=false;
          srsym:=nil;
+=======
+    procedure single_type(var def:tdef;isforwarddef:boolean);
+       var
+         t2 : tdef;
+         dospecialize,
+         again : boolean;
+       begin
+         dospecialize:=false;
+>>>>>>> graemeg/fixes_2_2
          repeat
            again:=false;
              case token of
                _STRING:
+<<<<<<< HEAD
                  string_dec(def,stoAllowTypeDef in options);
 
                _FILE:
@@ -2046,6 +2190,9 @@ implementation
                             parse_record_proc_directives(pd);
 
                             handle_calling_convention(pd);
+=======
+                 string_dec(def);
+>>>>>>> graemeg/fixes_2_2
 
                             { add definition to procsym }
                             proc_add_definition(pd);
@@ -2094,6 +2241,7 @@ implementation
                    not((token=_ID) and (idtoken=_OPERATOR)) then
                   Message(parser_e_procedure_or_function_expected);
 
+<<<<<<< HEAD
                 is_classdef:=true;
               end;
             _PROCEDURE,
@@ -2214,6 +2362,57 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+               _ID:
+                 begin
+                   if try_to_consume(_SPECIALIZE) then
+                     begin
+                       dospecialize:=true;
+                       again:=true;
+                     end
+                   else
+                     begin
+                       id_type(def,isforwarddef);
+                       { handle types inside classes for generics, e.g. TNode.TLongint }
+                       while (token=_POINT) do
+                         begin
+                           if parse_generic then
+                             begin
+                                consume(_POINT);
+                                consume(_ID);
+                             end
+                            else if ((def.typ=objectdef) and (df_specialization in def.defoptions)) then
+                              begin
+                                symtablestack.push(tobjectdef(def).symtable);
+                                consume(_POINT);
+                                id_type(t2,isforwarddef);
+                                symtablestack.pop(tobjectdef(def).symtable);
+                                def:=t2;
+                              end
+                            else
+                              break;
+                         end;
+                     end;
+                 end;
+
+               else
+                 begin
+                   message(type_e_type_id_expected);
+                   def:=generrordef;
+                 end;
+            end;
+        until not again;
+        if dospecialize then
+          generate_specialization(def)
+        else
+          begin
+            if (df_generic in def.defoptions)  then
+              begin
+                Message(parser_e_no_generics_as_types);
+                def:=generrordef;
+              end;
+          end;
+>>>>>>> graemeg/fixes_2_2
       end;
 
     { reads a record declaration }
@@ -2412,6 +2611,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            newdef  : tdef;
            sym     : tsym;
            genstr  : string;
@@ -2428,6 +2628,8 @@ implementation
 =======
            structdef: tdef;
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
         begin
            old_block_type:=block_type;
            dospecialize:=false;
@@ -2436,6 +2638,7 @@ implementation
            if (token=_ID) then
              if try_parse_structdef_nested_type(def,current_structdef,false) then
                exit;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2466,6 +2669,14 @@ implementation
            { we can't accept a equal in type }
 >>>>>>> origin/cpstrnew
            pt1:=comp_expr(false,true);
+=======
+             end;
+           { Generate a specialization? }
+           if try_to_consume(_SPECIALIZE) then
+             dospecialize:=true;
+           { we can't accept a equal in type }
+           pt1:=comp_expr(false);
+>>>>>>> graemeg/fixes_2_2
            if not dospecialize and
               try_to_consume(_POINTPOINT) then
              begin
@@ -2529,6 +2740,7 @@ implementation
                if (pt1.nodetype=typen) then
                  begin
                    def:=ttypenode(pt1).resultdef;
+<<<<<<< HEAD
                    { Delphi mode specialization? }
                    if (m_delphi in current_settings.modeswitches) then
 <<<<<<< HEAD
@@ -2692,6 +2904,17 @@ implementation
                            Message(parser_e_no_category_as_types);
                            def:=generrordef
                          end
+=======
+                   if dospecialize then
+                     generate_specialization(def)
+                   else
+                     begin
+                       if (df_generic in def.defoptions)  then
+                         begin
+                           Message(parser_e_no_generics_as_types);
+                           def:=generrordef;
+                         end;
+>>>>>>> graemeg/fixes_2_2
                      end;
                  end
                else
@@ -2714,8 +2937,13 @@ implementation
                enumdef :
                  if (tenumdef(tt2).min>=0) and
                     (tenumdef(tt2).max<=255) then
+<<<<<<< HEAD
                   // !! def:=csetdef.create(tt2,tenumdef(tt2.def).min,tenumdef(tt2.def).max),true)
                   def:=csetdef.create(tt2,tenumdef(tt2).min,tenumdef(tt2).max,true)
+=======
+                  // !! def:=tsetdef.create(tt2,tenumdef(tt2.def).min,tenumdef(tt2.def).max))
+                  def:=tsetdef.create(tt2,tenumdef(tt2).min,tenumdef(tt2).max)
+>>>>>>> graemeg/fixes_2_2
                  else
                   Message(sym_e_ill_type_decl_set);
                orddef :
@@ -2723,11 +2951,19 @@ implementation
                    if (torddef(tt2).ordtype<>uvoid) and
                       (torddef(tt2).ordtype<>uwidechar) and
                       (torddef(tt2).low>=0) then
+<<<<<<< HEAD
                      // !! def:=csetdef.create(tt2,torddef(tt2.def).low,torddef(tt2.def).high),true)
                      if Torddef(tt2).high>int64(high(byte)) then
                        message(sym_e_ill_type_decl_set)
                      else
                        def:=csetdef.create(tt2,torddef(tt2).low.svalue,torddef(tt2).high.svalue,true)
+=======
+                     // !! def:=tsetdef.create(tt2,torddef(tt2.def).low,torddef(tt2.def).high))
+                     if Torddef(tt2).high>int64(high(byte)) then
+                       message(sym_e_ill_type_decl_set)
+                     else
+                       def:=tsetdef.create(tt2,torddef(tt2).low,torddef(tt2).high)
+>>>>>>> graemeg/fixes_2_2
                    else
                      Message(sym_e_ill_type_decl_set);
                  end;
@@ -2888,7 +3124,11 @@ implementation
                        setdefdecl(pt.resultdef)
                      else
                        begin
+<<<<<<< HEAD
                          if pt.nodetype=rangen then
+=======
+                         if (pt.nodetype=rangen) then
+>>>>>>> graemeg/fixes_2_2
                            begin
                              { pure ordconstn expressions can be checked for
                                generics as well, but don't give an error in case
@@ -2909,8 +3149,13 @@ implementation
                                     Message(parser_e_array_lower_less_than_upper_bound);
                                     highval:=lowval;
                                   end
+<<<<<<< HEAD
                                  else if (lowval<int64(low(asizeint))) or
                                          (highval>high(asizeint)) then
+=======
+                                 else if (lowval<int64(low(aint))) or
+                                         (highval > high(aint)) then
+>>>>>>> graemeg/fixes_2_2
                                    begin
                                      Message(parser_e_array_range_out_of_bounds);
                                      lowval :=0;
@@ -2922,11 +3167,15 @@ implementation
                                    indexdef:=trangenode(pt).left.resultdef;
                                end
                              else
+<<<<<<< HEAD
                                if not parse_generic then
                                  Message(type_e_cant_eval_constant_expr)
                                else
                                  { we need a valid range for debug information }
                                  range_to_type(lowval,highval,indexdef);
+=======
+                               Message(type_e_cant_eval_constant_expr);
+>>>>>>> graemeg/fixes_2_2
                            end
                          else
                            Message(sym_e_error_in_type_def)

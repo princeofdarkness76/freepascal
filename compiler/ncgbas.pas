@@ -377,7 +377,11 @@ interface
 {$endif}
                        { fixup the references }
                        for i:=1 to taicpu(hp).ops do
+<<<<<<< HEAD
                          ResolveRef(taicpu(hp).fileinfo,taicpu(hp).oper[i-1]^);
+=======
+                         ResolveRef(taicpu(hp).oper[i-1]^);
+>>>>>>> graemeg/fixes_2_2
 {$ifdef x86}
                       { can only be checked now that all local operands }
                       { have been resolved                              }
@@ -505,8 +509,11 @@ interface
 >>>>>>> graemeg/cpstrnew
           end;
         include(tempinfo^.flags,ti_valid);
+<<<<<<< HEAD
         if assigned(tempinfo^.tempinitcode) then
           include(tempinfo^.flags,ti_executeinitialisation);
+=======
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -563,7 +570,10 @@ interface
           LOC_REFERENCE:
             begin
               inc(location.reference.offset,offset);
+<<<<<<< HEAD
               location.reference.alignment:=newalignment(location.reference.alignment,offset);
+=======
+>>>>>>> graemeg/fixes_2_2
               { ti_valid should be excluded if it's a normal temp }
             end;
           LOC_REGISTER,

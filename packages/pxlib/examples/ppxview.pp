@@ -55,7 +55,10 @@ var
   buf, fbuf,value : Pchar;
   longv : clong;
   y,m,d : cint;
+<<<<<<< HEAD
   si: shortint;
+=======
+>>>>>>> graemeg/fixes_2_2
   R : Double;
   c : char;
   
@@ -82,6 +85,7 @@ begin
         pxfDate:
            if PX_get_data_long(Doc,fbuf,flen,@longv)>0 then
               begin
+<<<<<<< HEAD
               {$ifdef windows}
               S:=DateToStr(Longv+1721425-2415019);
               {$else}
@@ -92,6 +96,14 @@ begin
         pxfShort:
           if PX_get_data_short(Doc,fbuf, flen, @si)>0 then
             S:=IntToStr(si);
+=======
+              PX_SdnToGregorian(longv+1721425,@Y,@M,@D);
+              S:=DateToStr(EncodeDate(Y,M,D));
+              end;
+        pxfShort:
+          if PX_get_data_short(Doc,fbuf, flen, @D)>0 then
+            S:=IntToStr(D);
+>>>>>>> graemeg/fixes_2_2
         pxfAutoInc,
         pxfLong:
           if (PX_get_data_long(Doc,fbuf,flen,@longv)>0) then
@@ -159,7 +171,10 @@ begin
       Inc(Pxf);
       end;
     end;  
+<<<<<<< HEAD
   FreeMem(Buf);
+=======
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Var

@@ -11,7 +11,11 @@
 //------------------------------------------------------------------------------
 
 {$IFDEF read_interface_rest}
+<<<<<<< HEAD
 {$ifdef WINDOWS}
+=======
+{$ifdef WIN32}
+>>>>>>> graemeg/fixes_2_2
 
   { On native Win32, directory separator is the backslash, and search path
      separator is the semicolon.
@@ -105,7 +109,11 @@
        must not be freed.  }
     function g_getenv(variable:Pgchar):Pgchar;cdecl;external gliblib name 'g_getenv';
 
+<<<<<<< HEAD
     { we try to provide a useful equivalent for ATEXIT if it is
+=======
+    { we try to provide a usefull equivalent for ATEXIT if it is
+>>>>>>> graemeg/fixes_2_2
        not defined, but use is actually abandoned. people should
        use g_atexit() instead.
       }

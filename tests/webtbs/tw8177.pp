@@ -9,10 +9,13 @@ program ValidateStrToInt;
 {$ifdef cpuarm}
   {$define slowcpu}
 {$endif}
+<<<<<<< HEAD
 {$ifdef cpumips}
   {$define slowcpu}
 {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 uses
   SysUtils;

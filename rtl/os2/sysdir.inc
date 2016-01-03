@@ -27,6 +27,7 @@ Procedure do_MkDir(s: rawbytestring);
 var 
     Rc : word;
 begin
+<<<<<<< HEAD
   DoDirSeparators(s);
   Rc := DosCreateDir(pchar(s),nil);
 =======
@@ -95,6 +96,19 @@ end;
 
 =======
     end;
+=======
+  If (s='') or (InOutRes <> 0) then
+   exit;
+      move(s[1],buffer,length(s));
+      buffer[length(s)]:=#0;
+      DoDirSeparators(Pchar(@buffer));
+      Rc := DosCreateDir(buffer,nil);
+      if Rc <> 0 then
+       begin
+         InOutRes := Rc;
+         Errno2Inoutres;
+       end;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 >>>>>>> graemeg/cpstrnew
@@ -114,6 +128,7 @@ var
 begin
   if (len=1) and (s^ = '.' ) then
     InOutRes := 16;
+<<<<<<< HEAD
   If not assigned(s) or (len=0) or (InOutRes <> 0) then
     exit;
   DoDirSeparators(s);
@@ -146,6 +161,19 @@ begin
 =======
 >>>>>>> origin/cpstrnew
     end;
+=======
+  If (s='') or (InOutRes <> 0) then
+   exit;
+      move(s[1],buffer,length(s));
+      buffer[length(s)]:=#0;
+      DoDirSeparators(Pchar(@buffer));
+      Rc := DosDeleteDir(buffer);
+      if Rc <> 0 then
+       begin
+         InOutRes := Rc;
+         Errno2Inoutres;
+       end;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 {$ASMMODE INTEL}
@@ -207,6 +235,7 @@ begin
     else
       if Len > 2 then
       begin
+<<<<<<< HEAD
         DoDirSeparators (s);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -227,6 +256,12 @@ begin
 =======
         RC := DosSetCurrentDir (s);
 >>>>>>> origin/cpstrnew
+=======
+        Move (S [1], Buffer, Length (S));
+        Buffer [Length (S)] := #0;
+        DoDirSeparators (PChar (@Buffer));
+        RC := DosSetCurrentDir (@Buffer);
+>>>>>>> graemeg/fixes_2_2
         if RC <> 0 then
         begin
           InOutRes := RC;
@@ -235,6 +270,7 @@ begin
         end;
       end;
   end else begin
+<<<<<<< HEAD
     DoDirSeparators (s);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -255,6 +291,12 @@ begin
 =======
     RC := DosSetCurrentDir (s);
 >>>>>>> origin/cpstrnew
+=======
+    Move (S [1], Buffer, Length (S));
+    Buffer [Length (S)] := #0;
+    DoDirSeparators (PChar (@Buffer));
+    RC := DosSetCurrentDir (@Buffer);
+>>>>>>> graemeg/fixes_2_2
     if RC <> 0 then
     begin
       InOutRes:= RC;
@@ -303,6 +345,10 @@ begin
             { convert path name to DOS }
             if dir[i] in AllowDirectorySeparators then
               dir[i]:=DirectorySeparator;
+<<<<<<< HEAD
+=======
+            dir[0]:=char(i);
+>>>>>>> graemeg/fixes_2_2
             inc(i);
         end;
     setlength(dir,i-1);

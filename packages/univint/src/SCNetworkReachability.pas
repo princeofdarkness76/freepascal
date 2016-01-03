@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2003-2005, 2008-2010 Apple Inc. All rights reserved.
 =======
  * Copyright (c) 2003-2005, 2008, 2009 Apple Inc. All rights reserved.
@@ -16,6 +17,9 @@
 =======
  * Copyright (c) 2003-2005, 2008, 2009 Apple Inc. All rights reserved.
 >>>>>>> origin/cpstrnew
+=======
+ * Copyright (c) 2003 Apple Computer, Inc. All rights reserved.
+>>>>>>> graemeg/fixes_2_2
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -27,15 +31,22 @@
  * file.
  * 
  * The Original Code and all software distributed under the License are
+<<<<<<< HEAD
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
+=======
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY of ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES of MERCHANTABILITY,
+>>>>>>> graemeg/fixes_2_2
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
  * 
  * @APPLE_LICENSE_HEADER_END@
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
@@ -60,6 +71,17 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+{	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -68,8 +90,13 @@
 
 unit SCNetworkReachability;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -82,21 +109,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -131,6 +166,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -138,6 +175,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -371,6 +409,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -396,6 +444,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -406,6 +458,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,SCNetwork,MacOSXPosix,CFRunLoop;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 {$ALIGN POWER}
@@ -423,10 +476,27 @@ uses MacTypes,CFBase,SCNetwork,MacOSXPosix,CFRunLoop;
 		computer.
 		Note that reachability does <i>not</i> guarantee that the data
 		packet will actually be received by the host.
+=======
+{$ALIGN MAC68K}
+
+{!
+	@header SCNetworkReachability
+	The SCNetworkReachabilityXXX() APIs allow an application to determine the status
+	of a system's current network configuration and the reachability
+	of a target host.  In addition, the reachability can be monitored
+	with a notification being provided when/if the status has changed.
+
+	The term "reachable" reflects whether a data packet, sent by
+	an application into the network stack, can be sent to the
+	the target host/address.  Please note that there is no
+	guarantee that the data packet will actually be received by
+	the host.
+>>>>>>> graemeg/fixes_2_2
  }
 
 {!
 	@typedef SCNetworkReachabilityRef
+<<<<<<< HEAD
 	@discussion This is the handle to a network address or name.
  }
 type
@@ -448,10 +518,17 @@ type
 =======
 	SCNetworkReachabilityRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	@discussion This is the handle to a network address/name.
+ }
+type
+	SCNetworkReachabilityRef    = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 
 
 {!
 	@typedef SCNetworkReachabilityContext
+<<<<<<< HEAD
 	Structure containing user-specified data and callbacks for SCNetworkReachability.
 	@field version The version number of the structure type being passed
 		in as a parameter to the SCDynamicStore creation function.
@@ -466,19 +543,29 @@ type
 		The value may be NULL.
 	@field copyDescription The callback used to provide a description of
 		the info field.
+=======
+>>>>>>> graemeg/fixes_2_2
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 type
 	SCNetworkReachabilityContext = record
     version: CFIndex;
+<<<<<<< HEAD
     info: UnivPtr;
 		retain: function( info: UnivPtr ): UnivPtr;
 		release: procedure( info: UnivPtr );
 		copyDescription: function( info: UnivPtr ): CFStringRef;
+=======
+    info: Ptr;
+		retain: function( info: Ptr ): Ptr;
+		release: procedure( info: Ptr );
+		copyDescription: function( info: Ptr ): CFStringRef;
+>>>>>>> graemeg/fixes_2_2
 	end;
 	SCNetworkReachabilityContextPtr = ^SCNetworkReachabilityContext;
 
 {!
+<<<<<<< HEAD
 	@enum SCNetworkReachabilityFlags
 	@discussion Flags that indicate whether the specified network
 		nodename or address is reachable, whether a connection is
@@ -574,10 +661,23 @@ type
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 type SCNetworkReachabilityCallBack = procedure( target: SCNetworkReachabilityRef; flags: SCNetworkReachabilityFlags; info: UnivPtr );
+=======
+	@typedef SCNetworkReachabilityCallBack
+	@discussion Type of the callback function used when the
+		reachability of a network address/name changes.
+	@param target The SCNetworkReachability reference being monitored for changes.
+	@param flags The new SCNetworkConnectionFlags representing the
+		reachability status of the network address/name.
+	@param info ....
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+type SCNetworkReachabilityCallBack = procedure( target: SCNetworkReachabilityRef; flags: SCNetworkConnectionFlags; info: UnivPtr );
+>>>>>>> graemeg/fixes_2_2
 
 {!
 	@function SCNetworkReachabilityCreateWithAddress
 	@discussion Creates a reference to the specified network
+<<<<<<< HEAD
 		address.  This reference can be used later to monitor the
 		reachability of the target host.
 	@param address The address of the desired host.
@@ -587,16 +687,33 @@ type SCNetworkReachabilityCallBack = procedure( target: SCNetworkReachabilityRef
  }
 function SCNetworkReachabilityCreateWithAddress( allocator: CFAllocatorRef;  address: sockaddr_ptr ): SCNetworkReachabilityRef; external name '_SCNetworkReachabilityCreateWithAddress';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+		address.  This reference can later be used to monitor
+		the reachability of the target host.
+	@param address The address of the desired host.
+	@result A reference to the new immutable SCNetworkReachabilityRef.
+
+		 You must release the returned value.
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function SCNetworkReachabilityCreateWithAddress( allocator: CFAllocatorRef; address: sockaddr_ptr ): SCNetworkReachabilityRef; external name '_SCNetworkReachabilityCreateWithAddress';
+>>>>>>> graemeg/fixes_2_2
 
 {!
 	@function SCNetworkReachabilityCreateWithAddressPair
 	@discussion Creates a reference to the specified network
+<<<<<<< HEAD
 		address.  This reference can be used later to monitor the
 		reachability of the target host.
+=======
+		address.  This reference can later be used to monitor
+		the reachability of the target host.
+>>>>>>> graemeg/fixes_2_2
 	@param localAddress The local address associated with a network
 		connection.  If NULL, only the remote address is of interest.
 	@param remoteAddress The remote address associated with a network
 		connection.  If NULL, only the local address is of interest.
+<<<<<<< HEAD
 	@result Returns a reference to the new immutable SCNetworkReachabilityRef.
 
 		 You must release the returned value.
@@ -626,12 +743,42 @@ function SCNetworkReachabilityCreateWithName( allocator: CFAllocatorRef; nodenam
  }
 function SCNetworkReachabilityGetTypeID: CFTypeID; external name '_SCNetworkReachabilityGetTypeID';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+	@result A reference to the new immutable SCNetworkReachabilityRef.
+
+		 You must release the returned value.
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function SCNetworkReachabilityCreateWithAddressPair( allocator: CFAllocatorRef; localAddress: sockaddr_ptr; remoteAddress: sockaddr_ptr ): SCNetworkReachabilityRef; external name '_SCNetworkReachabilityCreateWithAddressPair';
+
+{!
+	@function SCNetworkReachabilityCreateWithName
+	@discussion Creates a reference to the specified network host/node
+		name.  This reference can later be used to monitor the
+		reachability of the target host.
+	@param nodename The node name of the desired host. This name would
+		be the same as that passed to gethostbyname() or getaddrinfo().
+	@result A reference to the new immutable SCNetworkReachabilityRef.
+
+		You must release the returned value.
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function SCNetworkReachabilityCreateWithName( allocator: CFAllocatorRef; nodename: CStringPtr ): SCNetworkReachabilityRef; external name '_SCNetworkReachabilityCreateWithName';
+
+{!
+	@function SCNetworkReachabilityGetTypeID
+	Returns the type identifier of all SCNetworkReachability instances.
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function SCNetworkReachabilityGetTypeID: CFTypeID; external name '_SCNetworkReachabilityGetTypeID';
+>>>>>>> graemeg/fixes_2_2
 
 
 {!
 	@function SCNetworkReachabilityGetFlags
 	@discussion Determines if the given target is reachable using the
 		current network configuration.
+<<<<<<< HEAD
 	@param target The network reference associated with the address or name
 		to be checked for reachability.
 	@param flags A pointer to memory that will be filled with the
@@ -642,11 +789,24 @@ function SCNetworkReachabilityGetTypeID: CFTypeID; external name '_SCNetworkReac
  }
 function SCNetworkReachabilityGetFlags( target: SCNetworkReachabilityRef; var flags: SCNetworkReachabilityFlags ): Boolean; external name '_SCNetworkReachabilityGetFlags';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+=======
+	@param target The network reference associated with the address/name
+		to be checked for reachability.
+	@param flags A pointer to memory that will be filled with the
+		SCNetworkConnectionFlags detailing the reachability
+		of the specified target.
+	@result TRUE if the network connection flags are valid; FALSE if the
+		status could not be determined.
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function SCNetworkReachabilityGetFlags( target: SCNetworkReachabilityRef; var flags: SCNetworkConnectionFlags ): Boolean; external name '_SCNetworkReachabilityGetFlags';
+>>>>>>> graemeg/fixes_2_2
 
 {!
 	@function SCNetworkReachabilitySetCallback
 	@discussion Assigns a client to a target, which receives callbacks
 		when the reachability of the target changes.
+<<<<<<< HEAD
 	@param target The network reference associated with the address or
 		name to be checked for reachability.
 	@param callout The function to be called when the reachability of the
@@ -741,3 +901,38 @@ function SCNetworkReachabilitySetDispatchQueue( target: SCNetworkReachabilityRef
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+	@param target The network reference associated with the address/name
+		to be checked for reachability.
+	@param callout The function to be called when the reachability of
+		target changes.  If NULL, the current client for the target
+		is removed.
+	@param context The SCNetworkReachabilityContext associated with
+		the callout.
+	@result TRUE if the notification client was successfully set.
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function SCNetworkReachabilitySetCallback( target: SCNetworkReachabilityRef; callout: SCNetworkReachabilityCallBack; var context: SCNetworkReachabilityContext ): Boolean; external name '_SCNetworkReachabilitySetCallback';
+
+{!
+	@function SCNetworkReachabilityScheduleWithRunLoop
+	@discussion Schedule the given target from the given run loop and mode.
+	@param target The address/name which is set up for asynchronous mode.  Must be non-NULL.
+	@param runLoop A reference to a runloop on which the target should be scheduled.  Must be non-NULL.
+	@param runLoopMode The mode on which to schedule the target.  Must be non-NULL.
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function SCNetworkReachabilityScheduleWithRunLoop( target: SCNetworkReachabilityRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ): Boolean; external name '_SCNetworkReachabilityScheduleWithRunLoop';
+
+{!
+	@function SCNetworkReachabilityUnscheduleFromRunLoop
+	@discussion Unschedule the given target from the given run loop and mode.
+	@param target The address/name which is set up for asynchronous mode.  Must be non-NULL.
+	@param runLoop A reference to a runloop on which the target should be scheduled.  Must be non-NULL.
+	@param runLoopMode The mode on which to schedule the target.  Must be non-NULL.
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+function SCNetworkReachabilityUnscheduleFromRunLoop( target: SCNetworkReachabilityRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ): Boolean; external name '_SCNetworkReachabilityUnscheduleFromRunLoop';
+
+end.
+>>>>>>> graemeg/fixes_2_2

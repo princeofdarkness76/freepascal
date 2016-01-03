@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 2000-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -40,6 +41,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+ * Copyright (c) 2000-2003 Apple Computer, Inc.
+ * All rights reserved.
+ }
+{       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -48,8 +61,13 @@
 
 unit CGPDFDocument;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -62,21 +80,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -111,6 +137,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -118,6 +146,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -340,6 +369,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -365,6 +404,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -375,12 +418,16 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CGBase,CGDataProvider,CGGeometry,CFURL;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -405,10 +452,20 @@ type
 
 function CGPDFDocumentCreateWithProvider( provider: CGDataProviderRef ): CGPDFDocumentRef; external name '_CGPDFDocumentCreateWithProvider';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+=======
+	CGPDFDocumentRef = ^SInt32; { an opaque 32-bit type }
+
+
+{ Create a PDF document, using `provider' to obtain the document's
+ * data. }
+
+function CGPDFDocumentCreateWithProvider( provider: CGDataProviderRef ): CGPDFDocumentRef; external name '_CGPDFDocumentCreateWithProvider';
+>>>>>>> graemeg/fixes_2_2
 
 { Create a PDF document from `url'. }
 
 function CGPDFDocumentCreateWithURL( url: CFURLRef ): CGPDFDocumentRef; external name '_CGPDFDocumentCreateWithURL';
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
 { Equivalent to `CFRetain(document)', except it doesn't crash (as CFRetain
@@ -465,10 +522,60 @@ function CGPDFDocumentAllowsPrinting( document: CGPDFDocumentRef ): CBool; exter
 
 function CGPDFDocumentAllowsCopying( document: CGPDFDocumentRef ): CBool; external name '_CGPDFDocumentAllowsCopying';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
+=======
+
+{ Equivalent to `CFRetain(document)', except it doesn't crash (as CFRetain
+ * does) if `document' is NULL. }
+
+function CGPDFDocumentRetain( document: CGPDFDocumentRef ): CGPDFDocumentRef; external name '_CGPDFDocumentRetain';
+
+{ Equivalent to `CFRelease(document)', except it doesn't crash (as
+ * CFRelease does) if `document' is NULL. }
+
+procedure CGPDFDocumentRelease( document: CGPDFDocumentRef ); external name '_CGPDFDocumentRelease';
+
+{ Return the major and minor version numbers of `document'. }
+
+procedure CGPDFDocumentGetVersion( document: CGPDFDocumentRef; var majorVersion: SInt32; var minorVersion: SInt32 ); external name '_CGPDFDocumentGetVersion'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{ Return true if the PDF file associated with `document' is encrypted;
+ * false otherwise.  If the PDF file is encrypted, then a password must be
+ * supplied before certain operations are enabled; different passwords may
+ * enable different operations. }
+
+function CGPDFDocumentIsEncrypted( document: CGPDFDocumentRef ): CBool; external name '_CGPDFDocumentIsEncrypted'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+{ Use `password' to decrypt `document' and grant permission for certain
+ * operations.  Returns true if `password' is a valid password; false
+ * otherwise. }
+
+function CGPDFDocumentUnlockWithPassword( document: CGPDFDocumentRef; password: ConstCStringPtr ): CBool; external name '_CGPDFDocumentUnlockWithPassword'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+{ Return true if `document' is unlocked; false otherwise.  A document is
+ * unlocked if it isn't encrypted, or if it is encrypted and a valid password
+ * was previously specified with CGPDFDocumentUnlockWithPassword. }
+
+function CGPDFDocumentIsUnlocked( document: CGPDFDocumentRef ): CBool; external name '_CGPDFDocumentIsUnlocked'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+{ Return true if `document' allows printing; false otherwise.  Typically,
+ * this function returns false only if the document is encrypted and the
+ * document's current password doesn't grant permission to perform
+ * printing. }
+
+function CGPDFDocumentAllowsPrinting( document: CGPDFDocumentRef ): CBool; external name '_CGPDFDocumentAllowsPrinting'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+{ Return true if `document' allows copying; false otherwise.  Typically,
+ * this function returns false only if the document is encrypted and the
+ * document's current password doesn't grant permission to perform
+ * copying. }
+
+function CGPDFDocumentAllowsCopying( document: CGPDFDocumentRef ): CBool; external name '_CGPDFDocumentAllowsCopying'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 { Return the number of pages in `document'. }
 
 function CGPDFDocumentGetNumberOfPages( document: CGPDFDocumentRef ): size_t; external name '_CGPDFDocumentGetNumberOfPages';
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
 { Return the page corresponding to `pageNumber', or NULL if no such page
@@ -498,36 +605,72 @@ function CGPDFDocumentGetTypeID: CFTypeID; external name '_CGPDFDocumentGetTypeI
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 
 {$ifc TARGET_OS_MAC}
+=======
+
+{ Return the page corresponding to `pageNumber', or NULL if no such page
+ * exists in the document.  Pages are numbered starting at 1. }
+
+function CGPDFDocumentGetPage( document: CGPDFDocumentRef; pageNumber: size_t ): CGPDFPageRef; external name '_CGPDFDocumentGetPage'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{ Return the document catalog of `document'. }
+
+function CGPDFDocumentGetCatalog( document: CGPDFDocumentRef ): CGPDFDictionaryRef; external name '_CGPDFDocumentGetCatalog'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{ Return the info dictionary of `document'. }
+
+function CGPDFDocumentGetInfo( document: CGPDFDocumentRef ): CGPDFDictionaryRef; external name '_CGPDFDocumentGetInfo'; (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+{ Return the "file identifier" of `document'. }
+
+function CGPDFDocumentGetID( document: CGPDFDocumentRef ): CGPDFArrayRef; external name '_CGPDFDocumentGetID'; (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+{ Return the CFTypeID for CGPDFDocumentRefs. }
+
+function CGPDFDocumentGetTypeID: CFTypeID; external name '_CGPDFDocumentGetTypeID'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 { The following functions are deprecated in favor of the CGPDFPage API. }
 
 { DEPRECATED; return the media box of page number `page' in `document'. }
 
 function CGPDFDocumentGetMediaBox( document: CGPDFDocumentRef; page: SInt32 ): CGRect; external name '_CGPDFDocumentGetMediaBox';
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5,
 	__IPHONE_NA, __IPHONE_NA) *)
+=======
+>>>>>>> graemeg/fixes_2_2
 
 { DEPRECATED; return the crop box of page number `page' in `document'. }
 
 function CGPDFDocumentGetCropBox( document: CGPDFDocumentRef; page: SInt32 ): CGRect; external name '_CGPDFDocumentGetCropBox';
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5,
 	__IPHONE_NA, __IPHONE_NA) *)
+=======
+>>>>>>> graemeg/fixes_2_2
 
 { DEPRECATED; return the bleed box of page number `page' in `document'. }
 
 function CGPDFDocumentGetBleedBox( document: CGPDFDocumentRef; page: SInt32 ): CGRect; external name '_CGPDFDocumentGetBleedBox';
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5,
 	__IPHONE_NA, __IPHONE_NA) *)
+=======
+>>>>>>> graemeg/fixes_2_2
 
 { DEPRECATED; return the trim box of page number `page' in `document'. }
 
 function CGPDFDocumentGetTrimBox( document: CGPDFDocumentRef; page: SInt32 ): CGRect; external name '_CGPDFDocumentGetTrimBox';
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5,
 	__IPHONE_NA, __IPHONE_NA) *)
+=======
+>>>>>>> graemeg/fixes_2_2
 
 { DEPRECATED; return the art box of page number `page' in `document'. }
 
 function CGPDFDocumentGetArtBox( document: CGPDFDocumentRef; page: SInt32 ): CGRect; external name '_CGPDFDocumentGetArtBox';
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5,
 	__IPHONE_NA, __IPHONE_NA) *)
 
@@ -543,3 +686,13 @@ function CGPDFDocumentGetRotationAngle( document: CGPDFDocumentRef; page: SInt32
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+{ DEPRECATED; return the rotation angle (in degrees) of page number `page'
+ * in `document'. }
+
+function CGPDFDocumentGetRotationAngle( document: CGPDFDocumentRef; page: SInt32 ): SInt32; external name '_CGPDFDocumentGetRotationAngle';
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

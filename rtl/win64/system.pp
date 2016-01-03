@@ -46,7 +46,11 @@ const
  PathSeparator = ';';
  AllowDirectorySeparators : set of char = ['\','/'];
  AllowDriveSeparators : set of char = [':'];
+<<<<<<< HEAD
 { FileNameCaseSensitive and FileNameCasePreserving are defined separately below!!! }
+=======
+{ FileNameCaseSensitive is defined separately below!!! }
+>>>>>>> graemeg/fixes_2_2
  maxExitCode = 65535;
  MaxPathLen = 260;
  AllFilesMask = '*';
@@ -66,8 +70,12 @@ const
   StdErrorHandle  : THandle = 0;
   System_exception_frame : PEXCEPTION_FRAME =nil;
 
+<<<<<<< HEAD
   FileNameCaseSensitive : boolean = false;
   FileNameCasePreserving: boolean = true;
+=======
+  FileNameCaseSensitive : boolean = true;
+>>>>>>> graemeg/fixes_2_2
   CtrlZMarksEOF: boolean = true; (* #26 is considered as end of file *)
 
   sLineBreak = LineEnding;
@@ -525,6 +533,7 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
 =======
 {$else}
         movl %eax,_SS
+<<<<<<< HEAD
 {$endif}
         xorq %rbp,%rbp
 <<<<<<< HEAD
@@ -537,6 +546,9 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+        xorl %rbp,%rbp
+>>>>>>> graemeg/fixes_2_2
         call PASCALMAIN
 {$endif FPC_USE_WIN64_SEH}
         movq %rsi,%rbp
@@ -845,6 +857,21 @@ function CharLowerBuff(lpsz:LPWSTR; cchLength:DWORD):DWORD;
     stdcall; external 'user32' name 'CharLowerBuffW';
 
 
+<<<<<<< HEAD
+=======
+procedure Win32Wide2AnsiMove(source:pwidechar;var dest:ansistring;len:SizeInt);
+  var
+    destlen: SizeInt;
+  begin
+    // retrieve length including trailing #0
+    // not anymore, because this must also be usable for single characters
+    destlen:=WideCharToMultiByte(CP_ACP, WC_NO_BEST_FIT_CHARS, source, len, nil, 0, nil, nil);
+    // this will null-terminate
+    setlength(dest, destlen);
+    WideCharToMultiByte(CP_ACP, WC_NO_BEST_FIT_CHARS, source, len, @dest[1], destlen, nil, nil);
+  end;
+
+>>>>>>> graemeg/fixes_2_2
 procedure Win32Ansi2WideMove(source:pchar;var dest:widestring;len:SizeInt);
   var
     destlen: SizeInt;
@@ -855,6 +882,18 @@ procedure Win32Ansi2WideMove(source:pchar;var dest:widestring;len:SizeInt);
     // this will null-terminate
     setlength(dest, destlen);
     MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, source, len, @dest[1], destlen);
+<<<<<<< HEAD
+=======
+  end;
+
+
+function Win32WideUpper(const s : WideString) : WideString;
+  begin
+    result:=s;
+    UniqueString(result);
+    if length(result)>0 then
+      CharUpperBuff(LPWSTR(result),length(result));
+>>>>>>> graemeg/fixes_2_2
   end;
 >>>>>>> graemeg/cpstrnew
 
@@ -908,6 +947,7 @@ function fpc_tls_add(addr: pointer): pointer; assembler; nostackframe;
   end;
 {$endif FPC_SECTION_THREADVARS}
 
+<<<<<<< HEAD
 function CheckInitialStkLen(stklen : SizeUInt) : SizeUInt;
   type
     tdosheader = packed record
@@ -979,6 +1019,19 @@ function CheckInitialStkLen(stklen : SizeUInt) : SizeUInt;
   end;
 
 begin
+=======
+function CheckInitialStkLen(stklen : SizeUInt) : SizeUInt;assembler;
+asm
+  movq  %gs:(8),%rax
+  subq  %gs:(16),%rax
+end;
+
+
+begin
+  SysResetFPU;
+  if not(IsLibrary) then
+    SysInitFPU;
+>>>>>>> graemeg/fixes_2_2
   { pass dummy value }
   StackLength := CheckInitialStkLen($1000000);
   StackBottom := StackTop - StackLength;

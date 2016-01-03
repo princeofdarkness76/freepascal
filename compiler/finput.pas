@@ -168,8 +168,12 @@ interface
           mapfilename,              { fullname of the mapfile }
           exefilename,              { fullname of the exefile }
           dbgfilename,              { fullname of the debug info file }
+<<<<<<< HEAD
           path,                     { path where the module is find/created }
           outputpath   : TPathStr;  { path where the .s / .o / exe are created }
+=======
+          mainsource   : pshortstring;   { name of the main sourcefile }
+>>>>>>> graemeg/fixes_2_2
           constructor create(const s:string);
           destructor destroy;override;
           procedure setfilename(const fn:TPathStr;allowoutput:boolean);
@@ -637,6 +641,21 @@ uses
         prefix,
         suffix : TPathStr;
       begin
+<<<<<<< HEAD
+=======
+         stringdispose(objfilename);
+         stringdispose(asmfilename);
+         stringdispose(ppufilename);
+         stringdispose(importlibfilename);
+         stringdispose(staticlibfilename);
+         stringdispose(sharedlibfilename);
+         stringdispose(mapfilename);
+         stringdispose(exefilename);
+         stringdispose(dbgfilename);
+         stringdispose(outputpath);
+         stringdispose(path);
+         stringdispose(paramfn);
+>>>>>>> graemeg/fixes_2_2
          { Create names }
          paramfn := fn;
          paramallowoutput := allowoutput;
@@ -689,8 +708,13 @@ uses
                suffix := '';
              sharedlibfilename:=p+prefix+n+suffix+target_info.sharedlibext;
            end;
+<<<<<<< HEAD
          mapfilename:=p+n+'.map';
          dbgfilename:=p+n+'.dbg';
+=======
+         mapfilename:=stringdup(p+n+'.map');
+         dbgfilename:=stringdup(p+n+'.dbg');
+>>>>>>> graemeg/fixes_2_2
       end;
 
 
@@ -698,6 +722,7 @@ uses
       begin
         modulename:=stringdup(Upper(s));
         realmodulename:=stringdup(s);
+<<<<<<< HEAD
         mainsource:='';
         ppufilename:='';
         objfilename:='';
@@ -711,6 +736,21 @@ uses
         outputpath:='';
         paramfn:='';
         path:='';
+=======
+        mainsource:=nil;
+        ppufilename:=nil;
+        objfilename:=nil;
+        asmfilename:=nil;
+        importlibfilename:=nil;
+        staticlibfilename:=nil;
+        sharedlibfilename:=nil;
+        exefilename:=nil;
+        dbgfilename:=nil;
+        mapfilename:=nil;
+        outputpath:=nil;
+        paramfn:=nil;
+        path:=nil;
+>>>>>>> graemeg/fixes_2_2
         { status }
         state:=ms_registered;
         { unit index }
@@ -726,6 +766,20 @@ uses
         if assigned(sourcefiles) then
          sourcefiles.free;
         sourcefiles:=nil;
+<<<<<<< HEAD
+=======
+        stringdispose(objfilename);
+        stringdispose(asmfilename);
+        stringdispose(ppufilename);
+        stringdispose(importlibfilename);
+        stringdispose(staticlibfilename);
+        stringdispose(sharedlibfilename);
+        stringdispose(exefilename);
+        stringdispose(dbgfilename);
+        stringdispose(mapfilename);
+        stringdispose(outputpath);
+        stringdispose(path);
+>>>>>>> graemeg/fixes_2_2
         stringdispose(modulename);
         stringdispose(realmodulename);
         inherited destroy;

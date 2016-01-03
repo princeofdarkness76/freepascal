@@ -16,12 +16,20 @@
 
 procedure TStream.ReadNotImplemented;
 begin
+<<<<<<< HEAD
   raise EStreamError.CreateFmt(SStreamNoReading, [ClassName]) at get_caller_addr(get_frame), get_caller_frame(get_frame);
+=======
+  raise EStreamError.CreateFmt(SStreamNoReading, [ClassName]) at get_caller_addr(get_frame);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 procedure TStream.WriteNotImplemented;
 begin
+<<<<<<< HEAD
   raise EStreamError.CreateFmt(SStreamNoWriting, [ClassName]) at get_caller_addr(get_frame), get_caller_frame(get_frame);
+=======
+  raise EStreamError.CreateFmt(SStreamNoWriting, [ClassName]) at get_caller_addr(get_frame);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TStream.Read(var Buffer; Count: Longint): Longint;
@@ -331,7 +339,11 @@ end;
 
     end;
 
+<<<<<<< HEAD
   procedure TStream.WriteResourceHeader(const ResName: string; {!!!: out} var FixupInfo: Longint);
+=======
+  procedure TStream.WriteResourceHeader(const ResName: string; {!!!: out} var FixupInfo: Integer);
+>>>>>>> graemeg/fixes_2_2
     var
       ResType, Flags : word;
     begin
@@ -357,7 +369,11 @@ end;
   procedure TStream.FixupResourceHeader(FixupInfo: Longint);
 
     var
+<<<<<<< HEAD
        ResSize,TmpResSize : Longint;
+=======
+       ResSize,TmpResSize : Integer;
+>>>>>>> graemeg/fixes_2_2
 
     begin
 
@@ -1036,9 +1052,12 @@ begin
   inherited Create;
   FStream:=Stream;
   FOwnership:=Ownership;
+<<<<<<< HEAD
   m_bReverted:=false;   // mantis 15003
 			// http://www.tech-archive.net/Archive/German/microsoft.public.de.vc/2005-08/msg00791.html
 			// http://code.google.com/p/ddab-lib/wiki/TPJIStreamWrapper
+=======
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -1048,6 +1067,7 @@ begin
     FreeAndNil(FStream);
   inherited Destroy;
 end;
+<<<<<<< HEAD
 
 {$warnings off}
 function TStreamAdapter.Read(pv: Pointer; cb: DWORD; pcbRead: PDWORD): HResult; stdcall;
@@ -1835,4 +1855,72 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  
+{$warnings off}
+function TStreamAdapter.Read(pv: Pointer; cb: DWORD; pcbRead: PDWORD): HResult; stdcall;
+begin
+  runerror(217);
+end;
+
+
+function TStreamAdapter.Write(pv: Pointer; cb: DWORD; pcbWritten: PDWORD): HResult; stdcall;
+begin
+  runerror(217);
+end;
+
+
+function TStreamAdapter.Seek(dlibMove: Largeint; dwOrigin: Longint; out libNewPosition: Largeint): HResult; stdcall;
+begin
+  runerror(217);
+end;
+
+
+function TStreamAdapter.SetSize(libNewSize: Largeint): HResult; stdcall;
+begin
+  runerror(217);
+end;
+
+
+function TStreamAdapter.CopyTo(stm: IStream; cb: Largeint; out cbRead: Largeint; out cbWritten: Largeint): HResult; stdcall;
+begin
+  runerror(217);
+end;
+
+
+function TStreamAdapter.Commit(grfCommitFlags: Longint): HResult; stdcall;
+begin
+  runerror(217);
+end;
+
+
+function TStreamAdapter.Revert: HResult; stdcall;
+begin
+  runerror(217);
+end;
+
+
+function TStreamAdapter.LockRegion(libOffset: Largeint; cb: Largeint; dwLockType: Longint): HResult; stdcall;
+begin
+  runerror(217);
+end;
+
+
+function TStreamAdapter.UnlockRegion(libOffset: Largeint; cb: Largeint; dwLockType: Longint): HResult; stdcall;
+begin
+  runerror(217);
+end;
+
+
+function TStreamAdapter.Stat(out statstg: TStatStg; grfStatFlag: Longint): HResult; stdcall;
+begin
+  runerror(217);
+end;
+
+
+function TStreamAdapter.Clone(out stm: IStream): HResult; stdcall;
+begin
+  runerror(217);
+end;
+>>>>>>> graemeg/fixes_2_2
 {$warnings on}

@@ -592,11 +592,19 @@ A_XSHA1,
 A_XSHA256,
 A_DMINT,
 A_RDM,
+<<<<<<< HEAD
+=======
+A_MOVABS,
+A_MOVSXD,
+A_CQO,
+A_CMPXCHG16B,
+>>>>>>> graemeg/fixes_2_2
 A_MOVNTSS,
 A_MOVNTSD,
 A_INSERTQ,
 A_EXTRQ,
 A_LZCNT,
+<<<<<<< HEAD
 A_PABSB,
 A_PABSW,
 A_PABSD,
@@ -1103,4 +1111,7 @@ A_CMPSQ
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+A_POPCNT
+>>>>>>> graemeg/fixes_2_2
 );

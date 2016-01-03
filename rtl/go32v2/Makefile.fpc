@@ -44,7 +44,10 @@ units=system objpas macpas iso7185 strings \
       sysconst rtlconst dateutil convutil strutils
 rsts=math varutils typinfo classes variants dateutil sysconst
 implicitunits=exeinfo
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
 [require]
 nortl=y
 [install]
@@ -180,6 +183,7 @@ sysutils$(PPUEXT) : sysutils.pp $(wildcard $(OBJPASDIR)/sysutils/*.inc) \
 	$(EXECPPAS)
 
 classes$(PPUEXT) : classes.pp $(wildcard $(OBJPASDIR)/classes/*.inc) \
+<<<<<<< HEAD
 		   sysutils$(PPUEXT) typinfo$(PPUEXT) rtlconst$(PPUEXT) types$(PPUEXT) fgl$(PPUEXT)
 	$(COMPILER) -Fi$(OBJPASDIR)/classes classes.pp
 
@@ -187,6 +191,12 @@ fgl$(PPUEXT) : $(OBJPASDIR)/fgl.pp objpas$(PPUEXT) types$(PPUEXT) system$(PPUEXT
 	$(COMPILER) $(OBJPASDIR)/fgl.pp
 	$(EXECPPAS)
 
+=======
+                   sysutils$(PPUEXT) typinfo$(PPUEXT) rtlconst$(PPUEXT) types$(PPUEXT) fgl$(PPUEXT)
+        $(COMPILER) -Fi$(OBJPASDIR)/classes classes.pp
+fgl$(PPUEXT) : $(OBJPASDIR)/fgl.pp objpas$(PPUEXT) types$(PPUEXT) system$(PPUEXT) sysutils$(PPUEXT)
+        $(COMPILER) $(OBJPASDIR)/fgl.pp
+>>>>>>> graemeg/fixes_2_2
 math$(PPUEXT): $(OBJPASDIR)/math.pp objpas$(PPUEXT) sysutils$(PPUEXT)
 	$(COMPILER) $(OBJPASDIR)/math.pp
 	$(EXECPPAS)
@@ -211,8 +221,12 @@ sysconst$(PPUEXT) : $(OBJPASDIR)/sysconst.pp objpas$(PPUEXT)
 # Mac Pascal Model
 #
 macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) math$(PPUEXT)
+<<<<<<< HEAD
 	$(COMPILER) $(INC)/macpas.pp $(REDIR)
 	$(EXECPPAS)
+=======
+        $(COMPILER) $(INC)/macpas.pp $(REDIR)
+>>>>>>> graemeg/fixes_2_2
 #
 # Other system-independent RTL Units
 #
@@ -264,6 +278,7 @@ msmouse$(PPUEXT) : msmouse.pp system$(PPUEXT)
 	$(EXECPPAS)
 
 callspec$(PPUEXT) : $(INC)/callspec.pp system$(PPUEXT)
+<<<<<<< HEAD
 	$(COMPILER) $(INC)/callspec.pp
 	$(EXECPPAS)
 
@@ -274,3 +289,6 @@ cmem$(PPUEXT) : $(INC)/cmem.pp $(SYSTEMUNIT)$(PPUEXT)
 ctypes$(PPUEXT) : $(INC)/ctypes.pp system$(PPUEXT)
 	$(COMPILER) $(INC)/ctypes.pp
 	$(EXECPPAS)
+=======
+ctypes$(PPUEXT) : $(INC)/ctypes.pp system$(PPUEXT)
+>>>>>>> graemeg/fixes_2_2

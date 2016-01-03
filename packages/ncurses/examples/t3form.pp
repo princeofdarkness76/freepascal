@@ -6,6 +6,7 @@ program form_test_3;
 {$MODE OBJFPC}
 
 uses
+<<<<<<< HEAD
   ncurses, form, initc;
 
 procedure setlocale(cat : integer; p : pchar); cdecl; external clib;
@@ -13,6 +14,10 @@ procedure setlocale(cat : integer; p : pchar); cdecl; external clib;
 
 const
   LC_ALL = 6;
+=======
+  ncurses, form, libc;
+
+>>>>>>> graemeg/fixes_2_2
 
 
 function st_middle(scrlen, itemlen: Smallint): Smallint; inline;

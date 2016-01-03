@@ -367,6 +367,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     Case DataType of
       dtDWORD : S:=IntToStr(PCardinal(@Data)^);
@@ -416,6 +417,28 @@ begin
       end
     else
       DataNode.Free;
+=======
+    Result:=DataNode<>Nil;  // Bug 9879. Create child here?
+    If Result Then
+      begin 
+        Case DataType of
+          dtDWORD : DataNode.NodeValue:=IntToStr(PCardinal(@Data)^);
+          dtString : begin
+                     SetLength(S,DataSize);
+                     If (DataSize>0) then
+                       Move(Data,S[1],DataSize);
+                     DataNode.NodeValue:=S;
+                     end;
+          dtBinary : begin
+                     S:=BufToHex(Data,DataSize);
+                     DataNode.NodeValue:=S;
+                     end;
+        end;
+      end;
+    end;
+  If Result then
+    begin
+>>>>>>> graemeg/fixes_2_2
     FDirty:=True;
     MaybeFlush;
     end;

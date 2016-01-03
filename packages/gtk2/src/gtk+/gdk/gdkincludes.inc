@@ -28,5 +28,8 @@
 {$include gdktypes.inc}
 {$include gdkvisual.inc}
 {$include gdkwindow.inc}
+<<<<<<< HEAD
 {$include gdkcairo.inc}
+=======
+>>>>>>> graemeg/fixes_2_2
 

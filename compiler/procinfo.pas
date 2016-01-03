@@ -177,6 +177,7 @@ unit procinfo;
 
           { Allocate got register }
           procedure allocate_got_register(list: TAsmList);virtual;
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -230,6 +231,8 @@ unit procinfo;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
        end;
        tcprocinfo = class of tprocinfo;
 
@@ -517,5 +520,11 @@ implementation
       begin
         { no action by default }
       end;
+
+    procedure tprocinfo.allocate_got_register(list: TAsmList);
+      begin
+        { most os/cpu combo's don't use this yet, so not yet abstract }
+      end;
+
 
 end.

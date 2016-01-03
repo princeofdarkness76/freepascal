@@ -62,6 +62,11 @@
            302    LoadHTML
            241    LoadStringEtcOver
            180    NotifyAppsOnEvent
+<<<<<<< HEAD
+=======
+            24    PathAddBackslash
+            26    PathCombine
+>>>>>>> graemeg/fixes_2_2
             23    PathFindExtension
             27    PathFindFileName
            160    PathFindNextComponent
@@ -80,6 +85,12 @@
            288    SHBorderRectangle
            104    SHBox
            103    SHBoxEx
+<<<<<<< HEAD
+=======
+           114    SHChangeNotifyDeregister
+           115    SHChangeNotifyFree
+           113    SHChangeNotifyRegister
+>>>>>>> graemeg/fixes_2_2
             48    SHCheckForContextMenu
             86    SHClearStartedBit
             55    SHColorDisplay
@@ -92,6 +103,10 @@
             41    SHCreateContextMenu
             43    SHCreateMainWindow
             74    SHCreateMenuBarInternal
+<<<<<<< HEAD
+=======
+           108    SHCreateNewItem
+>>>>>>> graemeg/fixes_2_2
             53    SHCreateSystemFont
             35    SHCreateWorkerWindow
            329    SHDeleteTodayWallpaper
@@ -123,6 +138,10 @@
             72    SHFontMgrManageFonts
             33    SHForceBaseState
             99    SHForceBaseStateEx
+<<<<<<< HEAD
+=======
+           102    SHFreeContextMenuExtensions
+>>>>>>> graemeg/fixes_2_2
            120    SHFreeScanners
            213    SHGetActiveDialog
            292    SHGetBitmapDimensions
@@ -131,7 +150,13 @@
            224    SHGetCarrierBrandingFlag
             96    SHGetDeviceFeatureLevel
            299    SHGetDisplayRotation
+<<<<<<< HEAD
            218    SHGetFontHeight
+=======
+           128    SHGetEmergencyCallList
+           218    SHGetFontHeight
+           232    SHGetInputContext
+>>>>>>> graemeg/fixes_2_2
            133    SHGetKOBits
            305    SHGetLandscapeRotationSettings
            345    SHGetLegacySupportWindow
@@ -161,9 +186,17 @@
            149    SHInitPresetMessages
            181    SHInsertPresetMessage
            129    SHInvalidateScreen
+<<<<<<< HEAD
            123    SHIsLocked
            295    SHIsPreOzoneUpdate
             94    SHIsPreRapierApp
+=======
+           101    SHInvokeContextMenuCommand
+           123    SHIsLocked
+           295    SHIsPreOzoneUpdate
+            94    SHIsPreRapierApp
+           100    SHLoadContextMenuExtensions
+>>>>>>> graemeg/fixes_2_2
            230    SHLoadFileContextMenuExtensions
            313    SHLoadFontFromResource
             91    SHLoadMenuPopup
@@ -173,6 +206,13 @@
            235    SHMakeValidFilename
             32    SHMessageBox
             80    SHNewProfileObj
+<<<<<<< HEAD
+=======
+           155    SHNotificationAdd
+           173    SHNotificationGetData
+           157    SHNotificationRemove
+           156    SHNotificationUpdate
+>>>>>>> graemeg/fixes_2_2
            208    SHNotifyAppsOnCallConnect
            210    SHNotifyAppsOnCarkit
            165    SHNotifyAppsOnDock
@@ -207,9 +247,17 @@
            119    SHScanFile
             97    SHSendBackToFocusWindow
            169    SHSetAsWatermark
+<<<<<<< HEAD
            161    SHSetBubbleRegion
            298    SHSetDisplayRotation
            131    SHSetForegroundLastActivePopup
+=======
+           184    SHSetBack
+           161    SHSetBubbleRegion
+           298    SHSetDisplayRotation
+           131    SHSetForegroundLastActivePopup
+           231    SHSetInputContext
+>>>>>>> graemeg/fixes_2_2
            134    SHSetKOBits
            154    SHSetPresetMessage
            170    SHSetSimToolkitMenu
@@ -269,8 +317,11 @@ unit aygshell;
 
 interface
 
+<<<<<<< HEAD
 {$MODE OBJFPC}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 uses windows;
 
 {$calling cdecl}
@@ -443,6 +494,7 @@ type
   
   SIPSTATE= (SIP_UP= 0,SIP_DOWN,SIP_FORCEDOWN,SIP_UNCHANGED,SIP_INPUTDIALOG);
 
+<<<<<<< HEAD
   CAMERACAPTURE_STILLQUALITY= (CAMERACAPTURE_STILLQUALITY_DEFAULT=0, CAMERACAPTURE_STILLQUALITY_LOW, CAMERACAPTURE_STILLQUALITY_NORMAL,
     CAMERACAPTURE_STILLQUALITY_HIGH);
 
@@ -602,10 +654,13 @@ const
 //////////////////////////////////////////////////////////////////////////////
 
 
+=======
+>>>>>>> graemeg/fixes_2_2
 //*****************************************************************************
 // functions
 //*****************************************************************************
 
+<<<<<<< HEAD
 function PathAddBackslash(lpszPath:LPTSTR):LPTSTR; external UserDLLAyg name 'PathAddBackslash'; // index 24
 function PathCombine(lpszDest:LPTSTR; lpszDir:LPCTSTR; lpszFile:LPCTSTR):LPTSTR; external UserDLLAyg name 'PathCombine'; // index 26
 
@@ -632,11 +687,21 @@ function SHGetAutoRunPath( pAutoRunPath : LPTSTR ): WINBOOL; external UserDLLAyg
 //       Gets a list of emergency calls
 function SHGetEmergencyCallList(pwszBuffer:PTCHAR; uLenBuf:UINT):HRESULT; external UserDLLAyg name 'SHGetEmergencyCallList'; // index 128    
 
+=======
+function ExitWindowsEx(uFlags:UINT; dwReserved:DWORD):WINBOOL; external UserDLLAyg name 'ExitWindowsEx';
+function SHCloseApps( dwMemSought : DWORD ): WINBOOL; external UserDLLAyg name 'SHCloseApps';
+function SHCreateMenuBar(pmbi : PSHMENUBARINFO ): WINBOOL; external UserDLLAyg name 'SHCreateMenuBar';
+function SHDoneButton(hwndRequester: HWND ; dwState : DWORD ): WINBOOL; external UserDLLAyg name 'SHDoneButton';
+function SHFindMenuBar(hwnd:HWND) : HWND; external UserDLLAyg name 'SHFindMenuBar';
+function SHFullScreen(hwmdRequester: hWnd; dwState: DWord): WINBOOL; external UserDLLAyg name 'SHFullScreen';  {Pocket PC  special controls}
+function SHGetAutoRunPath( pAutoRunPath : LPTSTR ): WINBOOL; external UserDLLAyg name 'SHGetAutoRunPath';  
+>>>>>>> graemeg/fixes_2_2
 function SHHandleWMActivate(hwnd:HWND; wParam:WPARAM; lParam:LPARAM; psai: PSHACTIVATEINFO; dwFlags:DWORD  ): WINBOOL; external UserDLLAyg index 84;
 function SHHandleWMSettingChange(hwnd:HWND; wParam:WPARAM; lParam:LPARAM; psai: PSHACTIVATEINFO): WINBOOL; external UserDLLAyg index 83;
 function SHInitDialog(pshidi: PSHINITDLGINFO): WINBOOL; external UserDLLAyg name 'SHInitDialog';
 function SHInitExtraControls: WINBOOL; external UserDLLAyg name 'SHInitExtraControls';
 procedure SHInputDialog(hwnd : HWND; uMsg : UINT; wParam: WPARAM ); external UserDLLAyg name 'SHInputDialog';
+<<<<<<< HEAD
 
 //    Invokes a command from a context menu.  Issues the command in the
 //    extension that added it to the menu.
@@ -649,6 +714,8 @@ function SHLoadContextMenuExtensions(punkOwner:IUnknown;
                                      idCmdFirst:UINT;
                                      idCmdLast:UINT;
                                      phCMExtensions:LPHANDLE):BOOL; external UserDLLAyg name 'SHLoadContextMenuExtensions'; // index 100
+=======
+>>>>>>> graemeg/fixes_2_2
 function SHGetAppKeyAssoc( ptszApp: LPCTSTR ): Byte; external UserDLLAyg name 'SHGetAppKeyAssoc';
 function SHSetAppKeyWndAssoc( bVk: BYTE ; hwnd : HWND ): WINBOOL; external UserDLLAyg name 'SHSetAppKeyWndAssoc';
 function SHSetNavBarText(hwndRequester : HWND; pszText : LPCTSTR): WINBOOL; external UserDLLAyg name 'SHSetNavBarText';
@@ -658,6 +725,7 @@ procedure SHNavigateBack; external UserDLLAyg index 183;
 function SHSipInfo(uiAction: UINT; uiParam: UINT; pvParam: PVOID; fWinIni: UINT  ): WINBOOL; external UserDLLAyg name 'SHSipInfo';
 function SHSipPreference(hwnd: HWND ; st : SIPSTATE ) : WINBOOL; external UserDLLAyg name 'SHSipPreference';
 function SHRecognizeGesture(var shrg : SHRGINFO): DWORD; external UserDLLAyg name 'SHRecognizeGesture';
+<<<<<<< HEAD
 function SHCameraCapture(var shcc: TSHCAMERACAPTURE): HRESULT; external UserDLLAyg name 'SHCameraCapture';
 
 //////////////////////////////////////////////////////////////////////////////
@@ -1035,6 +1103,8 @@ function SHNotificationGetData(pclsid:LPCLSID; dwID:DWORD; pndBuffer:LPSHNOTIFIC
 // This function is not implemented.
 // It is provided as a stub in the operating system (OS) for application compatibility.
 procedure SHSetBack(eOp:longint; _hwnd:HWND); external UserDLLAyg name 'SHSetBack'; // index 184    
+=======
+>>>>>>> graemeg/fixes_2_2
 
 implementation
 

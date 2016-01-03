@@ -38,15 +38,25 @@ var
   oldp: pwidechar;
   err: longword;
 begin
+<<<<<<< HEAD
    oldp:=p;
    DoDirSeparators(p,pchangeable);
    if DeleteFileW(p)=0 then
+=======
+   DoDirSeparators(p);
+   if DeleteFile(p)=0 then
+>>>>>>> graemeg/fixes_2_2
     Begin
       err:=GetLastError;
       if err=5 then
        begin
+<<<<<<< HEAD
          if ((GetFileAttributesW(p) and FILE_ATTRIBUTE_DIRECTORY)=FILE_ATTRIBUTE_DIRECTORY) then
           err:=2;
+=======
+         if ((GetFileAttributes(p) and FILE_ATTRIBUTE_DIRECTORY)=FILE_ATTRIBUTE_DIRECTORY) then
+          errno:=2;
+>>>>>>> graemeg/fixes_2_2
        end;
       Errno2InoutRes(err);
     end;
@@ -59,6 +69,7 @@ procedure do_rename(p1,p2: pwidechar; p1changeable, p2changeable: boolean);
 var
   oldp1,oldp2: pwidechar;
 begin
+<<<<<<< HEAD
   oldp1:=p1;
   oldp2:=p2;
   DoDirSeparators(p1,p1changeable);
@@ -71,6 +82,15 @@ begin
     freemem(p1);
   if p2<>oldp2 then
     freemem(p2);
+=======
+  DoDirSeparators(p1);
+  DoDirSeparators(p2);
+  if MoveFile(p1,p2)=0 then
+   Begin
+      errno:=GetLastError;
+      Errno2InoutRes;
+   end;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 
@@ -291,6 +311,10 @@ Var
   security : TSecurityAttributes;
   oldp : pwidechar;
 begin
+<<<<<<< HEAD
+=======
+  DoDirSeparators(p);
+>>>>>>> graemeg/fixes_2_2
   { close first if opened }
   if ((flags and $10000)=0) then
    begin

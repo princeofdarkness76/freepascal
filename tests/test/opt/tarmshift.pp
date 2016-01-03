@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+{ %norun }
+>>>>>>> graemeg/fixes_2_2
 { %opt=-O2 }
 var
   i : longint;

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	 File:	   CFNetwork/CFHTTPStream.h
  
 	 Contains:   CoreFoundation Network HTTP streams header
@@ -50,6 +51,31 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+     File:       CFNetwork/CFHTTPStream.h
+ 
+     Contains:   CoreFoundation Network HTTP streams header
+ 
+     Version:    CFNetwork-71.2~1
+ 
+     Copyright:  © 2001-2003 by Apple Computer, Inc., all rights reserved
+ 
+     Bugs?:      For bug reports, consult the following page on
+                 the World Wide Web:
+ 
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -58,8 +84,13 @@
 
 unit CFHTTPStream;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -72,21 +103,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -121,6 +160,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -128,6 +169,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -346,6 +388,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -371,6 +423,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -381,13 +437,18 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFStream,CFBase,CFHTTPMessage;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 {$ALIGN POWER}
+=======
+{$ALIGN MAC68K}
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  kCFStreamErrorDomainHTTP
  *  
+<<<<<<< HEAD
  *  Discussion:
  *	Result code returned by HTTP server
  *  
@@ -813,3 +874,200 @@ procedure CFHTTPReadStreamSetProxy( httpStream: CFReadStreamRef; proxyHost: CFSt
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.1 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
+var kCFStreamErrorDomainHTTP: SInt32; external name '_kCFStreamErrorDomainHTTP'; (* attribute const *)
+type
+	CFStreamErrorHTTP = SInt32;
+const
+  kCFStreamErrorHTTPParseFailure = -1;
+  kCFStreamErrorHTTPRedirectionLoop = -2;
+  kCFStreamErrorHTTPBadURL      = -3;
+
+{ Value is a CFHTTPMessage with 0 bytes data. }
+{
+ *  kCFStreamPropertyHTTPResponseHeader
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.1 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
+var kCFStreamPropertyHTTPResponseHeader: CFStringRef; external name '_kCFStreamPropertyHTTPResponseHeader'; (* attribute const *)
+{ Value is the CFURL from the final request; will only differ from the URL in the original request if an autoredirection has occurred. }
+{
+ *  kCFStreamPropertyHTTPFinalURL
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+var kCFStreamPropertyHTTPFinalURL: CFStringRef; external name '_kCFStreamPropertyHTTPFinalURL'; (* attribute const *)
+{************************************}
+{Set-able properties on HTTP streams }
+{************************************}
+{ HTTP proxy information is set the same way as SOCKS proxies (see CFSocketStream.h).
+   Call CFReadStreamSetProperty() passing an HTTP stream and the property kCFStreamPropertyHTTPProxy.  
+   The value should be a CFDictionary that includes at least one Host/Port pair from the keys below.  
+   The dictionary returned by SystemConfiguration.framework can also be passed directly as the value }
+{
+ *  kCFStreamPropertyHTTPProxy
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+var kCFStreamPropertyHTTPProxy: CFStringRef; external name '_kCFStreamPropertyHTTPProxy'; (* attribute const *)
+{
+ *  kCFStreamPropertyHTTPProxyHost
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+var kCFStreamPropertyHTTPProxyHost: CFStringRef; external name '_kCFStreamPropertyHTTPProxyHost'; (* attribute const *)
+{ matches kSCPropNetProxiesHTTPProxy; value should be a CFString}
+{
+ *  kCFStreamPropertyHTTPProxyPort
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+var kCFStreamPropertyHTTPProxyPort: CFStringRef; external name '_kCFStreamPropertyHTTPProxyPort'; (* attribute const *)
+{ matches kSCPropNetProxiesHTTPPort; value should be a CFNumber }
+{
+ *  kCFStreamPropertyHTTPSProxyHost
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+var kCFStreamPropertyHTTPSProxyHost: CFStringRef; external name '_kCFStreamPropertyHTTPSProxyHost'; (* attribute const *)
+{ matches kSCPropNetProxiesHTTPSProxy; value should be a CFString }
+{
+ *  kCFStreamPropertyHTTPSProxyPort
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+var kCFStreamPropertyHTTPSProxyPort: CFStringRef; external name '_kCFStreamPropertyHTTPSProxyPort'; (* attribute const *)
+{ matches kSCPropNetProxiesHTTPSPort; value should be a CFNumber }
+{ Value should be a CFBoolean }
+{
+ *  kCFStreamPropertyHTTPShouldAutoredirect
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+var kCFStreamPropertyHTTPShouldAutoredirect: CFStringRef; external name '_kCFStreamPropertyHTTPShouldAutoredirect'; (* attribute const *)
+{ Value should be a CFBoolean.  If this property is set to true, an HTTP stream will look for an appropriate extant persistent connection to use, and if it finds none, will try to create one.  }
+{
+ *  kCFStreamPropertyHTTPAttemptPersistentConnection
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+var kCFStreamPropertyHTTPAttemptPersistentConnection: CFStringRef; external name '_kCFStreamPropertyHTTPAttemptPersistentConnection'; (* attribute const *)
+{ Value is a CFNumber; this property can only be retrieved, not set.  The number returned is the number of bytes from the body of the request that have been written to the underlying socket }
+{
+ *  kCFStreamPropertyHTTPRequestBytesWrittenCount
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+var kCFStreamPropertyHTTPRequestBytesWrittenCount: CFStringRef; external name '_kCFStreamPropertyHTTPRequestBytesWrittenCount'; (* attribute const *)
+{*******************}
+{ Creation routines }
+{*******************}
+{ Creates a read stream for the response to the given request; when the stream is opened,
+  it will begin transmitting the request.  The bytes returned are the pure body bytes; the response header has been parsed off.
+  To retrieve the response header, ask for kCFStreamPropertyHTTPResponseHeader, above, any time after the first bytes arrive on 
+  the stream (or when stream end is reported, if there are no data bytes).
+}
+{
+ *  CFReadStreamCreateForHTTPRequest()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.1 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
+function CFReadStreamCreateForHTTPRequest( alloc: CFAllocatorRef; request: CFHTTPMessageRef ): CFReadStreamRef; external name '_CFReadStreamCreateForHTTPRequest';
+
+
+{ Creates a read stream for the response to the given requestHeaders plus requestBody.  Use in preference to
+  CFReadStreamCreateForHTTPRequest() when the body of the request is larger than you wish to be resident in memory.  Note that 
+  because streams cannot be reset, read streams created this way cannot have autoredirection enabled.  If the Content-Length 
+  header is set in requestHeaders, it is assumed that the caller got the length right and that requestBody will report 
+  end-of-stream after precisely Content-Length bytes have been read from it.  If the Content-Length header is not set, the 
+  chunked transfer-encoding will be added to requestHeaders, and bytes read from requestBody will be transmitted chunked.
+  The body of requestHeaders is ignored.
+}
+{
+ *  CFReadStreamCreateForStreamedHTTPRequest()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+function CFReadStreamCreateForStreamedHTTPRequest( alloc: CFAllocatorRef; requestHeaders: CFHTTPMessageRef; requestBody: CFReadStreamRef ): CFReadStreamRef; external name '_CFReadStreamCreateForStreamedHTTPRequest';
+
+
+{ Deprecated - Use the properties kCFStreamPropertyHTTPShouldAutoredirect and kCFStreamPropertyHTTPProxy above instead }
+{
+ *  CFHTTPReadStreamSetRedirectsAutomatically()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.1 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
+procedure CFHTTPReadStreamSetRedirectsAutomatically( httpStream: CFReadStreamRef; shouldAutoRedirect: Boolean ); external name '_CFHTTPReadStreamSetRedirectsAutomatically';
+
+
+{
+ *  CFHTTPReadStreamSetProxy()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.1 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+// AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
+procedure CFHTTPReadStreamSetProxy( httpStream: CFReadStreamRef; proxyHost: CFStringRef; proxyPort: CFIndex ); external name '_CFHTTPReadStreamSetProxy';
+
+end.
+>>>>>>> graemeg/fixes_2_2

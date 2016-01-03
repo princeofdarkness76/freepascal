@@ -107,6 +107,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                  [cs_opt_regvar,cs_opt_loopunroll,cs_opt_nodecse,
                                   cs_opt_tailrecursion,cs_opt_reorder_fields,cs_opt_fastmath];
 =======
@@ -124,6 +125,12 @@ Const
 
    level1optimizerswitches = genericlevel1optimizerswitches;
    level2optimizerswitches = genericlevel2optimizerswitches + level1optimizerswitches + [cs_opt_regvar,cs_opt_nodecse,cs_opt_tailrecursion];
+=======
+                                 [cs_opt_regvar,cs_opt_loopunroll,cs_opt_tailrecursion];
+
+   level1optimizerswitches = genericlevel1optimizerswitches;
+   level2optimizerswitches = genericlevel2optimizerswitches + level1optimizerswitches + [cs_opt_regvar,cs_opt_tailrecursion];
+>>>>>>> graemeg/fixes_2_2
    level3optimizerswitches = genericlevel3optimizerswitches + level2optimizerswitches + [{,cs_opt_loopunroll}];
    level4optimizerswitches = genericlevel4optimizerswitches + level3optimizerswitches + [];
 

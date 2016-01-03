@@ -18,7 +18,11 @@ unit ssockets;
 interface
 
 uses
+<<<<<<< HEAD
  SysUtils, Classes, ctypes, sockets;
+=======
+ SysUtils, Classes, sockets;
+>>>>>>> graemeg/fixes_2_2
 
 type
 
@@ -37,6 +41,7 @@ type
 
   ESocketError = class(Exception)
     Code: TSocketErrorType;
+<<<<<<< HEAD
     constructor Create(ACode: TSocketErrorType; const MsgArgs: array of const);overload;
   end;
 
@@ -80,12 +85,25 @@ type
     FWriteFlags: Integer;
     FHandler : TSocketHandler;
     function GetLastError: Integer;
+=======
+    constructor Create(ACode: TSocketErrorType; const MsgArgs: array of const);
+  end;
+
+  TSocketStream = class(THandleStream)
+  Private
+    FSocketInitialized : Boolean;
+    FSocketOptions : TSocketOptions;
+>>>>>>> graemeg/fixes_2_2
     Procedure GetSockOptions;
     Procedure SetSocketOptions(Value : TSocketOptions);
     function GetLocalAddress: TSockAddr;
     function GetRemoteAddress: TSockAddr;
   Public
+<<<<<<< HEAD
     Constructor Create (AHandle : Longint; AHandler : TSocketHandler = Nil);virtual;
+=======
+    Constructor Create (AHandle : Longint);virtual;
+>>>>>>> graemeg/fixes_2_2
     destructor Destroy; override;
     function Seek(Offset: Longint; Origin: Word): Longint; override;
     Function Read (Var Buffer; Count : Longint) : longint; Override;
@@ -94,20 +112,29 @@ type
                                             Write SetSocketOptions;
     property LocalAddress: TSockAddr read GetLocalAddress;
     property RemoteAddress: TSockAddr read GetRemoteAddress;
+<<<<<<< HEAD
     Property LastError : Integer Read GetLastError;
     Property ReadFlags : Integer Read FReadFlags Write FReadFlags;
     Property WriteFlags : Integer Read FWriteFlags Write FWriteFlags;
+=======
+>>>>>>> graemeg/fixes_2_2
   end;
 
   TConnectEvent = Procedure (Sender : TObject; Data : TSocketStream) Of Object;
   TConnectQuery = Procedure (Sender : TObject; ASocket : Longint; Var Allow : Boolean) of Object;
+<<<<<<< HEAD
   TOnAcceptError = Procedure (Sender : TObject; ASocket : Longint; E : Exception; Var ErrorAction : TAcceptErrorAction) of Object;
+=======
+>>>>>>> graemeg/fixes_2_2
 
   { TSocketServer }
 
   TSocketServer = Class(TObject)
   Private
+<<<<<<< HEAD
     FOnAcceptError: TOnAcceptError;
+=======
+>>>>>>> graemeg/fixes_2_2
     FOnIdle : TNotifyEvent;
     FNonBlocking : Boolean;
     FSocket : longint;
@@ -117,6 +144,7 @@ type
     FQueueSize : Longint;
     FOnConnect : TConnectEvent;
     FOnConnectQuery : TConnectQuery;
+<<<<<<< HEAD
     FHandler : TSocketHandler;
     Procedure DoOnIdle;
     Function GetReuseAddress: Boolean;
@@ -125,6 +153,9 @@ type
     Procedure SetReuseAddress (AValue : Boolean);
     Procedure SetKeepAlive (AValue : Boolean);
     Procedure SetLinger(ALinger : Integer);
+=======
+    Procedure DoOnIdle;
+>>>>>>> graemeg/fixes_2_2
   Protected
     FSockType : Longint;
     FBound : Boolean;
@@ -134,6 +165,7 @@ type
     Function  Accept: Longint;Virtual;Abstract;
     Function  SockToStream (ASocket : Longint) : TSocketStream;Virtual;Abstract;
     Procedure Close; Virtual;
+<<<<<<< HEAD
     Procedure Abort;
     function GetConnection: TSocketStream; virtual; abstract;
     Function HandleAcceptError(E : ESocketError) : TAcceptErrorAction;
@@ -149,24 +181,41 @@ type
     Procedure SetNonBlocking;
     Property Bound : Boolean Read FBound;
     // Maximium number of connections in total. *Not* the simultaneous connection count. -1 keeps accepting.
+=======
+  Public
+    Constructor Create(ASocket : Longint);
+    Destructor Destroy; Override;
+    Procedure Listen;
+    Procedure StartAccepting;
+    Procedure StopAccepting;
+    Procedure SetNonBlocking;
+    Property Bound : Boolean Read FBound;
+>>>>>>> graemeg/fixes_2_2
     Property MaxConnections : longint Read FMaxConnections Write FMaxConnections;
     Property QueueSize : Longint Read FQueueSize Write FQueueSize default 5;
     Property OnConnect : TConnectEvent Read FOnConnect Write FOnConnect;
     Property OnConnectQuery : TConnectQuery Read FOnConnectQuery Write FOnConnectQuery;
+<<<<<<< HEAD
     Property OnAcceptError : TOnAcceptError Read FOnAcceptError Write FOnAcceptError;
+=======
+>>>>>>> graemeg/fixes_2_2
     Property OnIdle : TNotifyEvent Read FOnIdle Write FOnIdle;
     Property NonBlocking : Boolean Read FNonBlocking;
     Property Socket : Longint Read FSocket;
     Property SockType : Longint Read FSockType;
+<<<<<<< HEAD
     Property KeepAlive : Boolean Read GetKeepAlive Write SetKeepAlive;
     Property ReuseAddress : Boolean Read GetReuseAddress Write SetReuseAddress;
     // -1 means no linger. Any value >=0 sets linger on.
     Property Linger: Integer Read GetLinger Write Setlinger;
+=======
+>>>>>>> graemeg/fixes_2_2
   end;
 
   { TInetServer }
 
   TInetServer = Class(TSocketServer)
+<<<<<<< HEAD
   private
   Protected
     FAddr : TINetSockAddr;
@@ -179,6 +228,18 @@ type
     Procedure Bind; Override;
     Constructor Create(APort: Word);
     Constructor Create(const aHost: string; const APort: Word; AHAndler : TSocketHandler = Nil);
+=======
+  Protected
+    FAddr : TINetSockAddr;
+    Function  SockToStream (ASocket : Longint) : TSocketStream;Override;
+    Function Accept : Longint;override;
+    FPort : Word;
+    FHost: string;
+  Public
+    Procedure Bind; Override;
+    Constructor Create(APort: Word);
+    Constructor Create(const aHost: string; const APort: Word);
+>>>>>>> graemeg/fixes_2_2
     Property Port : Word Read FPort;
     Property Host : string Read FHost;
   end;
@@ -197,21 +258,35 @@ type
     Function SockToStream (ASocket : Longint) : TSocketStream;Override;
     Procedure Close; override;
   Public
+<<<<<<< HEAD
     Constructor Create(AFileName : String; AHandler : TSocketHandler = Nil);
+=======
+    Constructor Create(AFileName : String);
+>>>>>>> graemeg/fixes_2_2
     Property FileName : String Read FFileName;
   end;
 {$endif}
 
+<<<<<<< HEAD
   { TInetSocket }
 
+=======
+>>>>>>> graemeg/fixes_2_2
   TInetSocket = Class(TSocketStream)
   Private
     FHost : String;
     FPort : Word;
   Protected
+<<<<<<< HEAD
   Public
     Constructor Create(const AHost: String; APort: Word; AHandler : TSocketHandler = Nil); Overload;
     Procedure Connect; Virtual;
+=======
+    Procedure DoConnect(ASocket : longint); Virtual;
+  Public
+    Constructor Create(ASocket : longint); Override; Overload;
+    Constructor Create(const AHost: String; APort: Word); Overload;
+>>>>>>> graemeg/fixes_2_2
     Property Host : String Read FHost;
     Property Port : Word Read FPort;
   end;
@@ -253,6 +328,7 @@ resourcestring
   strSocketConnectFailed = 'Connect to %s failed.';
   strSocketAcceptFailed = 'Could not accept a client connection on socket: %d, error %d';
   strSocketAcceptWouldBlock = 'Accept would block on socket: %d';
+<<<<<<< HEAD
   strErrNoStream = 'Socket stream not assigned';
 { TSocketHandler }
 
@@ -342,6 +418,8 @@ Function TSocketHandler.Close: Boolean;
 begin
   Result:=True;
 end;
+=======
+>>>>>>> graemeg/fixes_2_2
 
 constructor ESocketError.Create(ACode: TSocketErrorType; const MsgArgs: array of const);
 var
@@ -364,24 +442,39 @@ end;
 { ---------------------------------------------------------------------
     TSocketStream
   ---------------------------------------------------------------------}
+<<<<<<< HEAD
 Constructor TSocketStream.Create (AHandle : Longint; AHandler : TSocketHandler = Nil);
+=======
+Constructor TSocketStream.Create (AHandle : Longint);
+>>>>>>> graemeg/fixes_2_2
 
 begin
   Inherited Create(AHandle);
   FSocketInitialized := true;
   GetSockOptions;
+<<<<<<< HEAD
   FHandler:=AHandler;
   If (FHandler=Nil) then
     FHandler:=TSocketHandler.Create;
   FHandler.SetSocket(Self);
+=======
+>>>>>>> graemeg/fixes_2_2
 end;
 
 destructor TSocketStream.Destroy;
 begin
   if FSocketInitialized then
+<<<<<<< HEAD
     FHandler.Close; // Ignore the result
   FreeAndNil(FHandler);  
   CloseSocket(Handle);
+=======
+  {$ifdef netware}
+  CloseSocket(Handle);
+  {$else}
+  FileClose(Handle);
+  {$endif}
+>>>>>>> graemeg/fixes_2_2
   inherited Destroy;
 end;
 
@@ -390,17 +483,24 @@ Procedure TSocketStream.GetSockOptions;
 begin
 end;
 
+<<<<<<< HEAD
 function TSocketStream.GetLastError: Integer;
 begin
   Result:=FHandler.LastError;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 Procedure TSocketStream.SetSocketOptions(Value : TSocketOptions);
 
 begin
 end;
 
+<<<<<<< HEAD
 function TSocketStream.Seek(Offset: Longint; Origin: Word): Longint;
+=======
+Function TSocketStream.Seek(Offset: Longint; Origin: Word): Longint;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   Result:=0;
@@ -408,6 +508,7 @@ end;
 
 Function TSocketStream.Read (Var Buffer; Count : Longint) : longint;
 
+<<<<<<< HEAD
 begin
 <<<<<<< HEAD
   Result:=FHandler.Recv(Buffer,Count);
@@ -424,10 +525,19 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+Var
+  Flags : longint;
+
+begin
+  Flags:=0;
+  Result:=recv(handle,Buffer,count,flags);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Function TSocketStream.Write (Const Buffer; Count : Longint) :Longint;
 
+<<<<<<< HEAD
 begin
 <<<<<<< HEAD
   Result:=FHandler.Send(Buffer,Count);
@@ -444,6 +554,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+Var
+  Flags : longint;
+
+begin
+  Flags:=0;
+  Result:=send(handle,Buffer,count,flags);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TSocketStream.GetLocalAddress: TSockAddr;
@@ -451,7 +569,11 @@ var
   len: LongInt;
 begin
   len := SizeOf(TSockAddr);
+<<<<<<< HEAD
   if fpGetSockName(Handle, @Result, @len) <> 0 then
+=======
+  if GetSocketName(Handle, Result, len) <> 0 then
+>>>>>>> graemeg/fixes_2_2
     FillChar(Result, SizeOf(Result), 0);
 end;
 
@@ -460,7 +582,11 @@ var
   len: LongInt;
 begin
   len := SizeOf(TSockAddr);
+<<<<<<< HEAD
   if fpGetPeerName(Handle, @Result, @len) <> 0 then
+=======
+  if GetPeerName(Handle, Result, len) <> 0 then
+>>>>>>> graemeg/fixes_2_2
     FillChar(Result, SizeOf(Result), 0);
 end;
 
@@ -469,29 +595,40 @@ end;
     TSocketServer
   ---------------------------------------------------------------------}
 
+<<<<<<< HEAD
 Constructor TSocketServer.Create(ASocket : Longint; AHandler : TSocketHandler);
+=======
+Constructor TSocketServer.Create(ASocket : Longint);
+>>>>>>> graemeg/fixes_2_2
 
 begin
   FSocket:=ASocket;
   FQueueSize :=5;
+<<<<<<< HEAD
   FMaxConnections:=-1;
   if (AHandler=Nil) then
     AHandler:=TSocketHandler.Create;
   FHandler:=AHandler;
+=======
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Destructor TSocketServer.Destroy;
 
 begin
   Close;
+<<<<<<< HEAD
   FreeAndNil(FHandler);
   Inherited;
+=======
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Procedure TSocketServer.Close;
 
 begin
   If FSocket<>-1 Then
+<<<<<<< HEAD
     CloseSocket(FSocket);
   FSocket:=-1;
 end;
@@ -512,11 +649,22 @@ begin
 {$endif}
 end;
 
+=======
+    {$ifdef netware}
+    CloseSocket(FSocket);
+    {$else}
+    FileClose(FSocket);
+    {$endif}
+  FSocket:=-1;
+end;
+
+>>>>>>> graemeg/fixes_2_2
 Procedure TSocketServer.Listen;
 
 begin
   If Not FBound then
     Bind;
+<<<<<<< HEAD
   If  Sockets.FpListen(FSocket,FQueueSize)<>0 then
     Raise ESocketError.Create(seListenFailed,[FSocket,SocketError]);
 end;
@@ -565,15 +713,30 @@ Procedure TSocketServer.StartAccepting;
 
 Var
  NoConnections : Integer;
+=======
+  If Not Sockets.Listen(FSocket,FQueueSize) then
+    Raise ESocketError.Create(seListenFailed,[FSocket,SocketError]);
+end;
+
+Procedure TSocketServer.StartAccepting;
+
+Var
+ NoConnections,
+ NewSocket : longint;
+>>>>>>> graemeg/fixes_2_2
  Stream : TSocketStream;
 
 begin
   FAccepting := True;
+<<<<<<< HEAD
   NoConnections := 0;
+=======
+>>>>>>> graemeg/fixes_2_2
   Listen;
   Repeat
     Repeat
       Try
+<<<<<<< HEAD
         Stream:=GetConnection;
         if Assigned(Stream) then
           begin
@@ -592,10 +755,18 @@ begin
 =======
 >>>>>>> origin/cpstrnew
           If FAccepting and DoConnectQuery(NewSocket) Then
+=======
+        NewSocket:=Accept;
+        If NewSocket>=0 then
+          begin
+          Inc (NoConnections);
+          If DoConnectQuery(NewSocket) Then
+>>>>>>> graemeg/fixes_2_2
             begin
             Stream:=SockToStream(NewSocket);
             DoConnect(Stream);
             end
+<<<<<<< HEAD
           else
             begin
             CloseSocket(NewSocket);
@@ -626,6 +797,29 @@ begin
   FAccepting:=False;
   If DoAbort then
     Abort;
+=======
+          end
+      except
+        On E : ESocketError do
+        begin
+          If E.Code=seAcceptWouldBlock then
+            begin
+            DoOnIdle;
+            NewSocket:=-1;
+            end
+          else
+            Raise;
+        end;
+       end;
+    Until (NewSocket>=0) or (Not NonBlocking);
+  Until Not (FAccepting) or ((FMaxConnections<>-1) and (NoConnections>=FMaxConnections));
+end;
+
+Procedure TSocketServer.StopAccepting;
+
+begin
+  FAccepting:=False;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Procedure TSocketServer.DoOnIdle;
@@ -635,6 +829,7 @@ begin
     FOnIdle(Self);
 end;
 
+<<<<<<< HEAD
 function TSocketServer.GetReuseAddress: Boolean;
 Var
   L : cint;
@@ -684,6 +879,8 @@ begin
     Result:=l.l_linger;
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 Procedure TSocketServer.DoConnect(ASocket : TSocketStream);
 
 begin
@@ -708,6 +905,7 @@ begin
   FNonBlocking:=True;
 end;
 
+<<<<<<< HEAD
 procedure TSocketServer.SetLinger(ALinger: Integer);
 Var
   L : linger;
@@ -743,6 +941,8 @@ begin
 {$ENDIF}
 end;
 
+=======
+>>>>>>> graemeg/fixes_2_2
 { ---------------------------------------------------------------------
     TInetServer
   ---------------------------------------------------------------------}
@@ -753,22 +953,34 @@ begin
   Create('0.0.0.0', aPort);
 end;
 
+<<<<<<< HEAD
 Constructor TInetServer.Create(const aHost: string; const APort: Word; AHAndler : TSocketHandler = Nil);
+=======
+Constructor TInetServer.Create(const aHost: string; const APort: Word);
+>>>>>>> graemeg/fixes_2_2
 
 Var S : longint;
 
 begin
   FHost:=aHost;
   FPort:=APort;
+<<<<<<< HEAD
   S:=Sockets.FpSocket(AF_INET,SOCK_STREAM,0);
   If S=-1 Then
     Raise ESocketError.Create(seCreationFailed,[Format('%d',[APort])]);
   Inherited Create(S,AHandler);
+=======
+  S:=Sockets.Socket(AF_INET,SOCK_STREAM,0);
+  If S=-1 Then
+    Raise ESocketError.Create(seCreationFailed,[Format('%d',[APort])]);
+  Inherited Create(S);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Procedure TInetServer.Bind;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   Faddr.sin_family := AF_INET;
   Faddr.sin_port := ShortHostToNet(FPort);
@@ -788,6 +1000,12 @@ begin
 =======
 >>>>>>> origin/cpstrnew
   if  Sockets.fpBind(FSocket, @FAddr, Sizeof(FAddr))<>0 then
+=======
+  Faddr.family := AF_INET;
+  Faddr.port := ShortHostToNet(FPort);
+  Faddr.addr := LongWord(StrToNetAddr(FHost));
+  if not Sockets.Bind(FSocket, FAddr, Sizeof(FAddr)) then
+>>>>>>> graemeg/fixes_2_2
     raise ESocketError.Create(seBindFailed, [IntToStr(FPort)]);
   FBound:=True;
 end;
@@ -802,6 +1020,7 @@ end;
 
 Function TInetServer.Accept : Longint;
 
+<<<<<<< HEAD
 Var
   L : longint;
   R : integer;
@@ -839,23 +1058,49 @@ begin
     CloseSocket(Result);
     Raise ESocketError.Create(seAcceptFailed,[Socket,SocketError])
     end;
+=======
+Var l : longint;
+
+begin
+  L:=SizeOf(FAddr);
+  Result:=Sockets.Accept(Socket,Faddr,L);
+  If Result<0 then
+{$ifdef Unix}
+    If SocketError=ESysEWOULDBLOCK then
+      Raise ESocketError.Create(seAcceptWouldBlock,[socket])
+    else
+{$endif}
+      Raise ESocketError.Create(seAcceptFailed,[Socket,SocketError]);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 { ---------------------------------------------------------------------
     TUnixServer
   ---------------------------------------------------------------------}
 {$ifdef Unix}
+<<<<<<< HEAD
 Constructor TUnixServer.Create(AFileName : String; AHandler : TSocketHandler = Nil);
+=======
+Constructor TUnixServer.Create(AFileName : String);
+>>>>>>> graemeg/fixes_2_2
 
 Var S : Longint;
 
 begin
   FFileName:=AFileName;
+<<<<<<< HEAD
   S:=Sockets.fpSocket(AF_UNIX,SOCK_STREAM,0);
   If S=-1 then
     Raise ESocketError.Create(seCreationFailed,[AFileName])
   else
     Inherited Create(S,AHandler);
+=======
+  S:=Sockets.Socket(AF_UNIX,SOCK_STREAM,0);
+  If S=-1 then
+    Raise ESocketError.Create(seCreationFailed,[AFileName])
+  else
+    Inherited Create(S);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 Procedure TUnixServer.Close;
@@ -871,7 +1116,11 @@ var
   AddrLen  : longint;
 begin
   Str2UnixSockAddr(FFilename,FUnixAddr,AddrLen);
+<<<<<<< HEAD
   If  Sockets.FpBind(Socket,@FUnixAddr,AddrLen)<>0 then
+=======
+  If Not Sockets.Bind(Socket,FUnixAddr,AddrLen) then
+>>>>>>> graemeg/fixes_2_2
     Raise ESocketError.Create(seBindFailed,[FFileName]);
   FBound:=True;
 end;
@@ -882,7 +1131,11 @@ Var L : longint;
 
 begin
   L:=Length(FFileName);
+<<<<<<< HEAD
   Result:=Sockets.fpAccept(Socket,@FUnixAddr,@L);
+=======
+  Result:=Sockets.Accept(Socket,FUnixAddr,L);
+>>>>>>> graemeg/fixes_2_2
   If Result<0 then
     If SocketError=ESysEWOULDBLOCK then
       Raise ESocketError.Create(seAcceptWouldBlock,[socket])
@@ -902,8 +1155,18 @@ end;
 { ---------------------------------------------------------------------
     TInetSocket
   ---------------------------------------------------------------------}
+<<<<<<< HEAD
 
 Constructor TInetSocket.Create(const AHost: String; APort: Word;AHandler : TSocketHandler = Nil);
+=======
+Constructor TInetSocket.Create(ASocket : Longint);
+
+begin
+  Inherited Create(ASocket);
+end;
+
+Constructor TInetSocket.Create(const AHost: String; APort: Word);
+>>>>>>> graemeg/fixes_2_2
 
 Var
   S : Longint;
@@ -911,6 +1174,7 @@ Var
 begin
   FHost:=AHost;
   FPort:=APort;
+<<<<<<< HEAD
   S:=fpSocket(AF_INET,SOCK_STREAM,0);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -937,6 +1201,19 @@ Var
   A : THostAddr;
   addr: TInetSockAddr;
   Res : Integer;
+=======
+  S:=Socket(AF_INET,SOCK_STREAM,0);
+  DoConnect(S);
+  Inherited Create(S);
+end;
+
+Procedure TInetSocket.DoConnect(ASocket : Longint);
+
+Var
+  TheHost: THostResolver;
+  A : THostAddr;
+  addr: TInetSockAddr;
+>>>>>>> graemeg/fixes_2_2
 
 begin
   A := StrToHostAddr(FHost);
@@ -949,6 +1226,7 @@ begin
       finally
         free;
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
   addr.sin_family := AF_INET;
   addr.sin_port := ShortHostToNet(FPort);
@@ -974,6 +1252,14 @@ begin
   If  Sockets.fpConnect(ASocket, @addr, sizeof(addr))<>0 then
     raise ESocketError.Create(seConnectFailed, [Format('%s:%d',[FHost, FPort])]);
 >>>>>>> graemeg/cpstrnew
+=======
+  addr.family := AF_INET;
+  addr.port := ShortHostToNet(FPort);
+  addr.addr := a.s_addr;
+
+  If not Sockets.Connect(ASocket, addr, sizeof(addr)) then
+    raise ESocketError.Create(seConnectFailed, [Format('%s:%d',[FHost, FPort])]);
+>>>>>>> graemeg/fixes_2_2
 end;
 
 { ---------------------------------------------------------------------
@@ -992,7 +1278,11 @@ Var S : Longint;
 
 begin
   FFileName:=AFileName;
+<<<<<<< HEAD
   S:=FpSocket(AF_UNIX,SOCK_STREAM,0);
+=======
+  S:=Socket(AF_UNIX,SOCK_STREAM,0);
+>>>>>>> graemeg/fixes_2_2
   DoConnect(S);
   Inherited Create(S);
 end;
@@ -1004,7 +1294,11 @@ Var
   AddrLen  : longint;
 begin
   Str2UnixSockAddr(FFilename,UnixAddr,AddrLen);
+<<<<<<< HEAD
   If  FpConnect(ASocket,@UnixAddr,AddrLen)<>0 then
+=======
+  If Not Connect(ASocket,UnixAddr,AddrLen) then
+>>>>>>> graemeg/fixes_2_2
     Raise ESocketError.Create(seConnectFailed,[FFilename]);
 end;
 {$endif}

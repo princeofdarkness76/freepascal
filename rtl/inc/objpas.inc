@@ -420,8 +420,13 @@
            ovmt : PVmt;
 
         begin
+<<<<<<< HEAD
            ovmt:=PVmt(self);
            while assigned(ovmt) do
+=======
+           vmt:=self;
+           while assigned(vmt) do
+>>>>>>> graemeg/fixes_2_2
              begin
                 methodtable:=pmethodnametable(ovmt^.vMethodTable);
                 if assigned(methodtable) then
@@ -491,7 +496,11 @@
            end;
 
         var
+<<<<<<< HEAD
            ovmt: PVmt;
+=======
+           CurClassType: TClass;
+>>>>>>> graemeg/fixes_2_2
            FieldTable: PFieldTable;
            FieldInfo: PFieldInfo;
            i: longint;
@@ -499,8 +508,13 @@
         begin
            if Length(name) > 0 then
            begin
+<<<<<<< HEAD
              ovmt := PVmt(ClassType);
              while ovmt <> nil do
+=======
+             CurClassType := ClassType;
+             while CurClassType <> nil do
+>>>>>>> graemeg/fixes_2_2
              begin
                FieldTable := PFieldTable(ovmt^.vFieldTable);
                if FieldTable <> nil then
@@ -566,8 +580,12 @@
       class function TObject.ClassNameIs(const name : string) : boolean;
 
         begin
+<<<<<<< HEAD
         // call to ClassName inlined here, this eliminates stack and string copying.
            ClassNameIs:=ShortCompareText(PVmt(Self)^.vClassName^, name) = 0;
+=======
+           ClassNameIs:=ShortCompareText(ClassName, name) = 0;
+>>>>>>> graemeg/fixes_2_2
         end;
 
       class function TObject.InheritsFrom(aclass : TClass) : Boolean;
@@ -881,10 +899,51 @@
             IInterface(obj)._AddRef;
         end;
 
+<<<<<<< HEAD
       function TObject.GetInterfaceWeak(const iid : tguid; out obj) : boolean;
         var
           IEntry: PInterfaceEntry;
           Instance: TObject;
+=======
+      function getcorbainterfacebyentry(Instance: pointer; IEntry: pinterfaceentry; out obj): boolean;
+        var
+          Getter: function: IInterface of object;
+        begin
+          Pointer(Obj) := nil;
+          if Assigned(IEntry) and Assigned(Instance) then
+          begin
+            case IEntry^.IType of
+              etStandard:
+                begin
+                  //writeln('Doing etStandard cast of ', TObject(Instance).classname(), ' with self = ', ptruint(Instance), ' and offset = ', IEntry^.IOffset);
+                  Pbyte(Obj):=Pbyte(instance)+IEntry^.IOffset;
+                end;
+              etFieldValue:
+                begin
+                  //writeln('Doing etFieldValue cast of ', TObject(Instance).classname(), ' with offset = ', IEntry^.IOffset);
+                  Pointer(obj) := ppointer(Pbyte(Instance)+IEntry^.IOffset)^;
+                end;
+              etVirtualMethodResult:
+                begin
+                  //writeln('Doing etVirtualMethodResult cast of ', TObject(Instance).classname());
+                  TMethod(Getter).data := Instance;
+                  TMethod(Getter).code := ppointer(Pbyte(Instance) + IEntry^.IOffset)^;
+                  Pointer(obj) := Pointer(Getter());
+                end;
+              etStaticMethodResult:
+                begin
+                  //writeln('Doing etStaticMethodResult cast of ', TObject(Instance).classname());
+                  TMethod(Getter).data := Instance;
+                  TMethod(Getter).code := pointer(IEntry^.IOffset);
+                  Pointer(obj) := Pointer(Getter());
+                end;
+            end;
+          end;
+          result := assigned(pointer(obj));
+        end;
+
+      function TObject.getinterface(const iid : tguid;out obj) : boolean;
+>>>>>>> graemeg/fixes_2_2
         begin
           if IsGUIDEqual(IObjectInstance,iid) then
           begin
@@ -942,7 +1001,16 @@
 
       function TObject.GetInterface(const iidstr : shortstring;out obj) : boolean;
         begin
+<<<<<<< HEAD
           Result := GetInterfaceByStr(iidstr,obj);
+=======
+          Result := getcorbainterfacebyentry(self, getinterfaceentrybystr(iidstr), obj);
+        end;
+
+      function TObject.getinterface(const iidstr : string;out obj) : boolean;{$ifdef SYSTEMINLINE}inline;{$endif}
+        begin
+          Result := getinterfacebystr(iidstr,obj);
+>>>>>>> graemeg/fixes_2_2
         end;
 
       class function TObject.GetInterfaceEntry(const iid : tguid) : pinterfaceentry;
@@ -1133,6 +1201,7 @@
 ****************************************************************************}
 
     function TContainedObject.QueryInterface(
+<<<<<<< HEAD
             {$IFDEF FPC_HAS_CONSTREF}constref{$ELSE}const{$ENDIF} iid : tguid;out obj) : longint; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 
     begin
@@ -1140,6 +1209,15 @@
         result:=S_OK
       else
         result:=longint(E_NOINTERFACE);
+=======
+            const iid : tguid;out obj) : longint; stdcall;
+
+    begin
+      if getinterface(iid,obj) then
+        result:=0
+      else
+        result:=longint(E_NOINTERFACE); 
+>>>>>>> graemeg/fixes_2_2
     end;
 
 {****************************************************************************

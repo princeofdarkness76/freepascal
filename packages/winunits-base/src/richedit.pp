@@ -4,10 +4,13 @@ unit richedit;
 {$mode objfpc}
 {$calling stdcall}
 
+<<<<<<< HEAD
 {$ifdef FPC_OS_UNICODE}
   {$define UNICODE}
 {$endif}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 interface
 
 uses Messages, Windows;
@@ -370,7 +373,11 @@ uses Messages, Windows;
      EDITSTREAMCALLBACK = function (dwCookie:PDWORD; pbBuff:LPBYTE; cb:LONG; var pcb:LONG):DWORD;
 
      _editstream = record
+<<<<<<< HEAD
           dwCookie : DWORD_PTR;
+=======
+          dwCookie : DWORD;
+>>>>>>> graemeg/fixes_2_2
           dwError : DWORD;
           pfnCallback : EDITSTREAMCALLBACK;
        end;

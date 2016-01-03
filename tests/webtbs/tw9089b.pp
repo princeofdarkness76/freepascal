@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 { %target=win32,win64,wince,darwin,linux,freebsd,solaris,beos,aix,android }
+=======
+{ %target=win32,win64,wince,darwin,linux,freebsd,solaris,beos}
+>>>>>>> graemeg/fixes_2_2
 { %norun }
 { %needlibrary }
 
@@ -15,12 +19,20 @@ const
 {$endif}
 
 var
+<<<<<<< HEAD
   myvar: longint; cvar; external {$ifdef windows}libname{$endif windows};
+=======
+  myvar: longint; cvar; external;
+>>>>>>> graemeg/fixes_2_2
 
 function Test: Integer; cdecl; export;
 begin
   Result := 0;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/fixes_2_2
   Writeln('Test');
 end;
 

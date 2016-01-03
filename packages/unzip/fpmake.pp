@@ -13,6 +13,7 @@ begin
 {$endif ALLPACKAGES}
 
     P:=AddPackage('unzip');
+<<<<<<< HEAD
     P.ShortName:='zip';
     P.Description := 'Support for decompression of ZIP archives - either using a Pascal port of the library from InfoZIP, or interface to using the dynamically linked version of this library.';
 {$ifdef ALLPACKAGES}
@@ -23,6 +24,15 @@ begin
     P.OSes := P.OSes - [embedded,nativent,msdos,win16];
 
     T:=P.Targets.AddUnit('unzip51g.pp');
+=======
+{$ifdef ALLPACKAGES}
+    P.Directory:='unzip';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.SourcePath.Add('src');
+
+    T:=P.Targets.AddUnit('unzip.pp');
+>>>>>>> graemeg/fixes_2_2
       with T.Dependencies do
         begin
           AddUnit('ziptypes');

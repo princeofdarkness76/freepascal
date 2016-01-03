@@ -20,6 +20,10 @@ procedure test80(a: longint); overload;
 procedure test80(a: widechar); overload;
   begin
     writeln('widechar called instead of longint');
+<<<<<<< HEAD
+=======
+    halt(1)
+>>>>>>> graemeg/fixes_2_2
   end;
 
 var
@@ -42,11 +46,17 @@ begin
   try
     v := y80;
     test80(v);
+<<<<<<< HEAD
     Writeln('Exception expected, but none was raised');
     Halt(1)
   except
     on E : TObject do
       Writeln('Exception caught, as expected: ',E.ClassName);
+=======
+  except
+    on E : TObject do
+      halt(1);
+>>>>>>> graemeg/fixes_2_2
   end;
 end;
 

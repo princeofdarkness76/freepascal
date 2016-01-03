@@ -7,6 +7,7 @@
  }
  
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
 {  Pascal Translation Update:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, 2009 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
@@ -32,6 +33,16 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+{	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -40,8 +51,13 @@
 
 unit CVBuffer;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -54,21 +70,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -103,6 +127,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -110,6 +136,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -365,6 +392,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -390,6 +427,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -400,6 +441,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes, CFBase, CFDictionary, CVBase, CVReturns;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -423,6 +465,8 @@ uses MacTypes, CFBase, CFDictionary, CVBase, CVReturns;
 {$ifc TARGET_OS_MAC}
 
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
  
@@ -442,6 +486,7 @@ uses MacTypes, CFBase, CFDictionary, CVBase, CVReturns;
    an initial set of default buffer attachments to automatically be attached to the buffer when it is created. }
 var kCVBufferPropagatedAttachmentsKey: CFStringRef; external name '_kCVBufferPropagatedAttachmentsKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -457,10 +502,17 @@ var kCVBufferPropagatedAttachmentsKey: CFStringRef; external name '_kCVBufferPro
 >>>>>>> origin/cpstrnew
 var kCVBufferNonPropagatedAttachmentsKey: CFStringRef; external name '_kCVBufferNonPropagatedAttachmentsKey'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+var kCVBufferNonPropagatedAttachmentsKey: CFStringRef; external name '_kCVBufferNonPropagatedAttachmentsKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 //#pragma mark CVBufferRef attachment keys
 
 var kCVBufferMovieTimeKey: CFStringRef; external name '_kCVBufferMovieTimeKey'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)	// Generally only available for frames emitted by QuickTime; CFDictionary containing these two keys:
 var kCVBufferTimeValueKey: CFStringRef; external name '_kCVBufferTimeValueKey'; (* attribute const *)
@@ -481,6 +533,15 @@ var kCVBufferTimeValueKey: CFStringRef; external name '_kCVBufferTimeValueKey'; 
 >>>>>>> origin/cpstrnew
 var kCVBufferTimeScaleKey: CFStringRef; external name '_kCVBufferTimeScaleKey'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	// Generally only available for frames emitted by QuickTime; CFDictionary containing these two keys:
+
+var kCVBufferTimeValueKey: CFStringRef; external name '_kCVBufferTimeValueKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+var kCVBufferTimeScaleKey: CFStringRef; external name '_kCVBufferTimeScaleKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 //#pragma mark CVBufferRef
@@ -501,6 +562,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CVBufferRef = ^__CVBuffer; { an opaque type }
 	__CVBuffer = record end;
 =======
@@ -515,6 +577,9 @@ type
 =======
 	CVBufferRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	CVBufferRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVBufferRetain
@@ -524,7 +589,11 @@ type
     @result     A CVBuffer object that is the same as the passed in buffer.
 }
 function CVBufferRetain( buffer: CVBufferRef ): CVBufferRef; external name '_CVBufferRetain';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 {!
     @function   CVBufferRelease
     @abstract   Release a CVBuffer object
@@ -532,7 +601,11 @@ function CVBufferRetain( buffer: CVBufferRef ): CVBufferRef; external name '_CVB
     @param      buffer A CVBuffer object that you want to release.
 }
 procedure CVBufferRelease( buffer: CVBufferRef ); external name '_CVBufferRelease';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 //#pragma mark CVBufferAttachment
 
@@ -547,7 +620,11 @@ procedure CVBufferRelease( buffer: CVBufferRef ); external name '_CVBufferReleas
                                 a single mode at a time.
 }
 procedure CVBufferSetAttachment( buffer: CVBufferRef; key: CFStringRef; value: CFTypeRef; attachmentMode: CVAttachmentMode ); external name '_CVBufferSetAttachment';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 
 {!
@@ -560,7 +637,11 @@ procedure CVBufferSetAttachment( buffer: CVBufferRef; key: CFStringRef; value: C
     @result     If found the attachment object
 }
 function CVBufferGetAttachment( buffer: CVBufferRef; key: CFStringRef; var attachmentMode: CVAttachmentMode ): CFTypeRef; external name '_CVBufferGetAttachment';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVBufferRemoveAttachment
@@ -570,7 +651,11 @@ function CVBufferGetAttachment( buffer: CVBufferRef; key: CFStringRef; var attac
     @param      key	Key in form of a CFString identifying the desired attachment.
 }
 procedure CVBufferRemoveAttachment( buffer: CVBufferRef; key: CFStringRef ); external name '_CVBufferRemoveAttachment';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVBufferRemoveAllAttachments
@@ -579,7 +664,11 @@ procedure CVBufferRemoveAttachment( buffer: CVBufferRef; key: CFStringRef ); ext
     @param      buffer  Target CVBuffer object.
 }
 procedure CVBufferRemoveAllAttachments( buffer: CVBufferRef ); external name '_CVBufferRemoveAllAttachments';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVBufferGetAttachments
@@ -590,7 +679,11 @@ procedure CVBufferRemoveAllAttachments( buffer: CVBufferRef ); external name '_C
 		for invalid attachment mode.
 }
 function CVBufferGetAttachments( buffer: CVBufferRef; attachmentMode: CVAttachmentMode ): CFDictionaryRef; external name '_CVBufferGetAttachments';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVBufferSetAttachments
@@ -599,7 +692,11 @@ function CVBufferGetAttachments( buffer: CVBufferRef; attachmentMode: CVAttachme
     @param      buffer  Target CVBuffer object.
 }
 procedure CVBufferSetAttachments( buffer: CVBufferRef; theAttachments: CFDictionaryRef; attachmentMode: CVAttachmentMode ); external name '_CVBufferSetAttachments';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/fixes_2_2
 
 {!
     @function   CVBufferPropagateAttachments
@@ -610,6 +707,7 @@ procedure CVBufferSetAttachments( buffer: CVBufferRef; theAttachments: CFDiction
     @param      destinationBuffer  CVBuffer to copy attachments to.
 }
 procedure CVBufferPropagateAttachments( sourceBuffer: CVBufferRef; destinationBuffer: CVBufferRef ); external name '_CVBufferPropagateAttachments';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 
@@ -633,3 +731,9 @@ procedure CVBufferPropagateAttachments( sourceBuffer: CVBufferRef; destinationBu
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

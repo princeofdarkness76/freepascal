@@ -267,8 +267,21 @@ type
     Axis: TAxis;
     NodeTestType: TNodeTestType;
     NodeTestString: DOMString;
+<<<<<<< HEAD
     NSTestString: DOMString;
     constructor Create(aAxis: TAxis; aTest: TNodeTestType);
+=======
+    Predicates: TList;
+  end;
+
+  TXPathLocationPathNode = class(TXPathExprNode)
+  private
+    FFirstStep: TStep;
+    FIsAbsolutePath: Boolean;
+  public
+    constructor Create(AIsAbsolutePath: Boolean);
+    destructor destroy;override;
+>>>>>>> graemeg/fixes_2_2
     function Evaluate(AContext: TXPathContext;
       AEnvironment: TXPathEnvironment): TXPathVariable; override;
   end;
@@ -494,9 +507,14 @@ type
   public
     { CompleteExpresion specifies wether the parser should check for gargabe
       after the recognised part. True => Throw exception if there is garbage }
+<<<<<<< HEAD
     constructor Create(AScanner: TXPathScanner; CompleteExpression: Boolean;
       AResolver: TXPathNSResolver = nil);
     destructor Destroy; override;
+=======
+    constructor Create(AScanner: TXPathScanner; CompleteExpression: Boolean);
+    destructor destroy;override;
+>>>>>>> graemeg/fixes_2_2
     function Evaluate(AContextNode: TDOMNode): TXPathVariable;
     function Evaluate(AContextNode: TDOMNode;
       AEnvironment: TXPathEnvironment): TXPathVariable;
@@ -1087,6 +1105,21 @@ var
   Node, Node2: TDOMNode;
   Attr: TDOMNamedNodeMap;
   i: Integer;
+<<<<<<< HEAD
+=======
+begin
+  for i := 0 to Predicates.Count - 1 do
+    TXPathExprNode(Predicates[i]).Free;
+  Predicates.Free;
+  inherited destroy;
+end;
+
+constructor TXPathLocationPathNode.Create(AIsAbsolutePath: Boolean);
+begin
+  inherited Create;
+  FIsAbsolutePath := AIsAbsolutePath;
+end;
+>>>>>>> graemeg/fixes_2_2
 
   procedure DoNodeTest(Node: TDOMNode);
   begin
@@ -1351,6 +1384,19 @@ begin
   Result := TXPathNodeSetVariable.Create(ResultNodeSet);
 end;
 
+<<<<<<< HEAD
+=======
+destructor TXPathLocationPathNode.destroy;
+var tmp:TStep;
+begin
+ while FFirstStep<>nil do begin
+  tmp:=FFirstStep.NextStep;
+  FFirstStep.free;
+  FFirstStep:=tmp;
+ end;
+end;
+
+>>>>>>> graemeg/fixes_2_2
 { Exceptions }
 
 procedure EvaluationError(const Msg: String);
@@ -2868,10 +2914,16 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 destructor TXPathExpression.Destroy;
 begin
   FRootNode.Free;
   inherited Destroy;
+=======
+destructor TXPathExpression.destroy;
+begin
+ FRootNode.free;
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function TXPathExpression.Evaluate(AContextNode: TDOMNode;

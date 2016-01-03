@@ -251,11 +251,19 @@ end;
 
 
 function TCollection.GetNamePath: string;
+<<<<<<< HEAD
 var o : TPersistent;
 begin
   o:=getowner;
   if assigned(o) and (propname<>'') then 
      result:=o.getnamepath+'.'+propname
+=======
+var o : TObject;
+begin
+  o:=getowner;
+  if assigned(o) and (propname<>'') and (o IS TPersistent) then 
+     result:=TPersistent(o).getnamepath+'.'+propname
+>>>>>>> graemeg/fixes_2_2
    else
      result:=classname;
 end;

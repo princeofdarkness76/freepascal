@@ -1,4 +1,5 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 #
 
@@ -24,6 +25,20 @@ version=2.5.1
 
 [require]
 packages=rtl fpmkunit
+=======
+#   Makefile.fpc for fpgtk
+#
+[require]
+packages=fcl-base gtk1
+
+[package]
+name=fpgtk
+version=2.2.5
+
+[target]
+units=fpglib fpgtk fpgtkext
+rsts=fpgtk fpgtkext
+>>>>>>> graemeg/fixes_2_2
 
 [install]
 fpcpackage=y
@@ -31,6 +46,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -116,3 +132,11 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[compiler]
+includedir=src
+sourcedir=src src/editor src/def src/pgtk tests
+
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/fixes_2_2

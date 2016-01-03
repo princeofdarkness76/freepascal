@@ -2802,7 +2802,11 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 function TDbfFile.Insert(Buffer: TRecordBuffer): integer;
+=======
+function TDbfFile.Insert(Buffer: PChar): integer;
+>>>>>>> graemeg/fixes_2_2
 type
   TErrorContext = (ecNone, ecInsert, ecWriteIndex, ecWriteDbf);
 var
@@ -2909,7 +2913,11 @@ begin
     Dec(PDbfHdr(Header)^.RecordCount);
     WriteHeader;
     UnlockPage(0);
+<<<<<<< HEAD
     // roll back indexes, too
+=======
+    // roll back indexes too
+>>>>>>> graemeg/fixes_2_2
     RollbackIndexesAndRaise(FIndexFiles.Count, ecWriteDbf);
   end else
     Result := newRecord;

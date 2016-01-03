@@ -80,6 +80,7 @@ unit cpupara;
       paraintsupregs_winx64 : array[0..3] of tsuperregister = (RS_RCX,RS_RDX,RS_R8,RS_R9);
       parammsupregs_winx64 : array[0..3] of tsuperregister = (RS_XMM0,RS_XMM1,RS_XMM2,RS_XMM3);
 
+<<<<<<< HEAD
 {
    The argument classification code largely comes from libffi:
 <<<<<<< HEAD
@@ -1844,6 +1845,131 @@ unit cpupara;
             { 4 can only happen for _m256 vectors, not yet supported }
             internalerror(2010021501);
 >>>>>>> origin/cpstrnew
+=======
+
+    function structure_in_registers(varspez:tvarspez;size:longint):boolean;
+      begin
+        if (target_info.system=system_x86_64_win64) then
+{$warning Temporary hack: vs_const parameters are always passed by reference for win64}
+          result:=(varspez=vs_value) and (size in [1,2,4,8])
+        else
+          result:=(size<=16);
+      end;
+
+
+    procedure getvalueparaloc(varspez:tvarspez;p : tdef;var loc1,loc2:tcgloc);
+      begin
+        loc1:=LOC_INVALID;
+        loc2:=LOC_INVALID;
+        case p.typ of
+           orddef:
+             begin
+               loc1:=LOC_REGISTER;
+               {$warning TODO 128bit also needs lochigh}
+             end;
+           floatdef:
+             begin
+               case tfloatdef(p).floattype of
+                  s80real:
+                    loc1:=LOC_REFERENCE;
+                  s32real,
+                  s64real :
+                    loc1:=LOC_MMREGISTER;
+                  s64currency,
+                  s64comp :
+                    loc1:=LOC_REGISTER;
+                  s128real:
+                    begin
+                      loc1:=LOC_MMREGISTER;
+                      loc2:=LOC_MMREGISTER;
+                      {$warning TODO float 128bit needs SSEUP lochigh}
+                    end;
+               end;
+             end;
+           recorddef:
+             begin
+               if structure_in_registers(varspez,p.size) then
+                 begin
+                   loc1:=LOC_REGISTER;
+                   if p.size>8 then
+                     loc2:=LOC_REGISTER;
+                 end
+               else
+                 loc1:=LOC_REFERENCE;
+             end;
+           objectdef:
+             begin
+               if is_object(p) then
+                 begin
+                   if structure_in_registers(varspez,p.size) then
+                     loc1:=LOC_REGISTER
+                   else
+                     loc1:=LOC_REFERENCE;
+                 end
+               else
+                 loc1:=LOC_REGISTER;
+             end;
+           arraydef:
+             begin
+               if not(is_special_array(p)) and
+                  (target_info.system=system_x86_64_win64) and
+                  structure_in_registers(varspez,p.size) then
+                 begin
+                   loc1:=LOC_REGISTER;
+                   if p.size>8 then
+                     loc2:=LOC_REGISTER;
+                 end
+               else
+                 loc1:=LOC_REFERENCE;
+             end;
+           variantdef:
+             { linux abi }
+             if target_info.system<>system_x86_64_win64 then
+               loc1:=LOC_REGISTER
+             else
+               loc1:=LOC_REFERENCE;
+           stringdef:
+             if is_shortstring(p) or is_longstring(p) then
+               begin
+                 { handle long and shortstrings like arrays }
+                 if structure_in_registers(varspez,p.size) then
+                   begin
+                     loc1:=LOC_REGISTER;
+                     if p.size>8 then
+                       loc2:=LOC_REGISTER;
+                   end
+                 else
+                   loc1:=LOC_REFERENCE;
+               end
+             else
+               loc1:=LOC_REGISTER;
+           setdef:
+             if is_smallset(p) then
+               loc1:=LOC_REGISTER
+             else
+               loc1:=LOC_REFERENCE;
+           procvardef:
+             begin
+               if (po_methodpointer in tprocvardef(p).procoptions) then
+                 begin
+                   { This is a record of 16 bytes }
+                   if structure_in_registers(varspez,p.size) then
+                     begin
+                       loc1:=LOC_REGISTER;
+                       loc2:=LOC_REGISTER;
+                     end
+                   else
+                     loc1:=LOC_REFERENCE;
+                 end
+               else
+                 loc1:=LOC_REGISTER;
+             end;
+           else
+             begin
+               { default for pointers,enums,etc }
+               loc1:=LOC_REGISTER;
+             end;
+>>>>>>> graemeg/fixes_2_2
         end;
       end;
 
@@ -2059,6 +2185,7 @@ unit cpupara;
             result:=true;
           recorddef :
             begin
+<<<<<<< HEAD
               { MetroWerks Pascal: const records always passed by reference
                 (for Mac OS X interfaces) }
               if (calloption=pocall_mwpascal) and
@@ -2095,12 +2222,20 @@ unit cpupara;
                 end
               else
               { SysV ABI always passes it as value parameter }
+=======
+              { Win ABI depends on size to pass it in a register or not }
+              if (target_info.system=system_x86_64_win64) then
+                result:=not structure_in_registers(varspez,def.size)
+              else
+              { linux ABI always passes it as value parameter }
+>>>>>>> graemeg/fixes_2_2
                 result:=false;
             end;
           arraydef :
             begin
               { cdecl array of const need to be ignored and therefor be puhsed
                 as value parameter with length 0 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2141,6 +2276,30 @@ unit cpupara;
           variantdef,
           stringdef,
           procvardef,
+=======
+              if (calloption in [pocall_cdecl,pocall_cppdecl]) and
+                 (is_array_of_const(def) or
+                  is_dynamic_array(def)) then
+                result:=false
+              else
+                result:=true;
+            end;
+          objectdef :
+            begin
+              if is_object(def) then
+                result:=not structure_in_registers(varspez,def.size);
+            end;
+          stringdef :
+            begin
+              if (tstringdef(def).stringtype in [st_shortstring,st_longstring]) then
+                result:=not structure_in_registers(varspez,def.size);
+            end;
+          procvardef :
+            begin
+              if (po_methodpointer in tprocvardef(def).procoptions) then
+                result:=not structure_in_registers(varspez,def.size);
+            end;
+>>>>>>> graemeg/fixes_2_2
           setdef :
             begin
               numclasses:=classify_argument(def,vs_value,def.size,classes,0);
@@ -2278,11 +2437,23 @@ unit cpupara;
             paraloc^.size:=retcgsize;
             exit;
           end;
+<<<<<<< HEAD
 
         { Return in FPU register? -> don't use classify_argument(), because
           currency and comp need special treatment here (they are integer class
           when passing as parameter, but LOC_FPUREGISTER as function result) }
         if def.typ=floatdef then
+=======
+        { Return is passed as var parameter }
+        if ret_in_param(p.returndef,p.proccalloption) then
+          begin
+            p.funcretloc[side].loc:=LOC_REFERENCE;
+            p.funcretloc[side].size:=retcgsize;
+            exit;
+          end;
+        { Return in FPU register? }
+        if p.returndef.typ=floatdef then
+>>>>>>> graemeg/fixes_2_2
           begin
             paraloc:=result.add_location;
             case tfloatdef(def).floattype of
@@ -2348,6 +2519,7 @@ unit cpupara;
         else
          { Return in register }
           begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2555,6 +2727,14 @@ unit cpupara;
                     internalerror(2010021504);
                 end;
               end;
+=======
+            p.funcretloc[side].loc:=LOC_REGISTER;
+            p.funcretloc[side].size:=retcgsize;
+            if side=callerside then
+              p.funcretloc[side].register:=newreg(R_INTREGISTER,RS_FUNCTION_RESULT_REG,cgsize2subreg(retcgsize))
+            else
+              p.funcretloc[side].register:=newreg(R_INTREGISTER,RS_FUNCTION_RETURN_REG,cgsize2subreg(retcgsize));
+>>>>>>> graemeg/fixes_2_2
           end;
       end;
 
@@ -2626,9 +2806,15 @@ unit cpupara;
               end
             else
               begin
+<<<<<<< HEAD
                 getvalueparaloc(hp.varspez,paradef,loc[1],loc[2]);
                 paralen:=push_size(hp.varspez,paradef,p.proccalloption);
                 paracgsize:=def_cgsize(paradef);
+=======
+                getvalueparaloc(hp.varspez,hp.vardef,loc[1],loc[2]);
+                paralen:=push_size(hp.varspez,hp.vardef,p.proccalloption);
+                paracgsize:=def_cgsize(hp.vardef);
+>>>>>>> graemeg/fixes_2_2
               end;
 
             { cheat for now, we should copy the value to an mm reg as well (FK) }
@@ -2955,7 +3141,10 @@ unit cpupara;
                         begin
                           paraloc:=hp.paraloc[side].add_location;
                           paraloc^.loc:=LOC_REFERENCE;
+<<<<<<< HEAD
                           paraloc^.def:=loc[locidx].def;
+=======
+>>>>>>> graemeg/fixes_2_2
                           {Hack alert!!! We should modify int_cgsize to handle OS_128,
                            however, since int_cgsize is called in many places in the
                            compiler where only a few can already handle OS_128, fixing it

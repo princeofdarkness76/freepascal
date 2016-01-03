@@ -14,12 +14,19 @@ begin
 
     P:=AddPackage('numlib');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');
     P.OSes := AllUnixOSes+AllWindowsOSes-[qnx];
+=======
+    P.Directory:='numlib';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.SourcePath.Add('src');
+>>>>>>> graemeg/fixes_2_2
 //    P.Dependencies.Add('x11');
 
     T:=P.Targets.AddUnit('det.pas');
@@ -129,6 +136,7 @@ begin
           AddInclude('direct.inc');
         end;
 
+<<<<<<< HEAD
     P.ExamplePath.Add('examples');
     P.Targets.AddExampleProgram('iomwrvex.pas');
     P.Targets.AddExampleProgram('iomremex.pas');
@@ -277,6 +285,8 @@ begin
     // 'speashte.dat
     // 'spepowte.dat
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifndef ALLPACKAGES}
     Run;
     end;

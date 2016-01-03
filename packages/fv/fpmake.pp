@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('fv');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -32,6 +33,14 @@ begin
     P.Dependencies.add('morphunits',[morphos]);
     P.Dependencies.add('arosunits',[aros]);
     P.Dependencies.add('amunits',[amiga]);
+=======
+    P.Directory:='fv';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+
+    P.SourcePath.Add('src');
+    P.IncludePath.Add('src');
+>>>>>>> graemeg/fixes_2_2
 
     T:=P.Targets.AddUnit('app.pas');
       with T.Dependencies do
@@ -46,7 +55,10 @@ begin
           AddUnit('msgbox');
           AddUnit('fvconsts');
         end;
+<<<<<<< HEAD
     T.ResourceStrings := True;
+=======
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('asciitab.pas');
       with T.Dependencies do
         begin
@@ -57,7 +69,10 @@ begin
           AddUnit('app');
         end;
     T:=P.Targets.AddUnit('buildfv.pas');
+<<<<<<< HEAD
     T.Install := false; // Build-unit
+=======
+>>>>>>> graemeg/fixes_2_2
       with T.Dependencies do
         begin
           AddUnit('fvcommon');
@@ -105,7 +120,10 @@ begin
           AddUnit('app');
           AddUnit('histlist');
         end;
+<<<<<<< HEAD
     T.ResourceStrings := True;
+=======
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('drivers.pas');
       with T.Dependencies do
         begin
@@ -127,7 +145,10 @@ begin
           AddUnit('stddlg');
           AddUnit('msgbox');
         end;
+<<<<<<< HEAD
     T.ResourceStrings := True;
+=======
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('fvcommon.pas');
       with T.Dependencies do
         begin
@@ -183,7 +204,10 @@ begin
           AddUnit('views');
           AddUnit('app');
         end;
+<<<<<<< HEAD
     T.ResourceStrings := True;
+=======
+>>>>>>> graemeg/fixes_2_2
     T:=P.Targets.AddUnit('outline.pas');
       with T.Dependencies do
         begin
@@ -215,6 +239,7 @@ begin
           AddUnit('histlist');
           AddUnit('msgbox');
         end;
+<<<<<<< HEAD
     T.ResourceStrings := True;
     T:=P.Targets.AddUnit('sysmsg.pas');
       with T.Dependencies do
@@ -222,6 +247,12 @@ begin
           AddInclude('unixsmsg.inc',AllUnixOSes);
           AddInclude('w32smsg.inc',[win32,win64]);
           AddInclude('go32smsg.inc',[go32v2]);
+=======
+    T:=P.Targets.AddUnit('sysmsg.pas');
+      with T.Dependencies do
+        begin
+          AddInclude('unixsmsg.inc');
+>>>>>>> graemeg/fixes_2_2
         end;
     T:=P.Targets.AddUnit('tabs.pas');
       with T.Dependencies do
@@ -265,6 +296,7 @@ begin
           AddUnit('drivers');
           AddUnit('fvconsts');
         end;
+<<<<<<< HEAD
     P.ExamplePath.Add('examples');
     P.ExamplePath.Add('src');
     P.Targets.AddExampleProgram('examples/testapp.pas');
@@ -274,6 +306,8 @@ begin
     // 'examples/Makefile.fpc
 
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifndef ALLPACKAGES}
     Run;
     end;

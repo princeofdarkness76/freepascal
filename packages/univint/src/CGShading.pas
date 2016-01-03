@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 2001-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -40,6 +41,18 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+ * Copyright (c) 2001-2002 Apple Computer, Inc.
+ * All rights reserved.
+ }
+{       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -48,8 +61,13 @@
 
 unit CGShading;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -62,21 +80,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -111,6 +137,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -118,6 +146,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -339,6 +368,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -364,6 +403,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -374,12 +417,16 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CGBase,CGColorSpace,CGFunction,CGGeometry,CFBase;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -456,3 +503,94 @@ procedure CGShadingRelease( shading: CGShadingRef ); external name '_CGShadingRe
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+	CGShadingRef = ^SInt32; { an opaque 32-bit type }
+
+
+{! @function CGShadingGetTypeID
+ *   Return the CFTypeID for CGShadingRefs.
+ }
+
+function CGShadingGetTypeID: CFTypeID; external name '_CGShadingGetTypeID'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+{! @function CGShadingCreateAxial
+ *
+ * Create a shading defining a color blend which varies along a linear axis
+ * between two endpoints and extends indefinitely perpendicular to that
+ * axis. The shading may optionally extend beyond either endpoint by
+ * continuing the boundary colors indefinitely.
+ *
+ * @param colorspace
+ *   The colorspace in which color values are expressed.
+ * @param start
+ *   The starting point of the axis, in the shading's target coordinate space.
+ * @param end
+ *   The ending point of the axis, in the shading's target coordinate space.
+ * @param function
+ *   A 1-in, N-out function, where N is one more (for alpha) than the
+ *   number of color components in the shading's colorspace.  The input
+ *   value 0 corresponds to the color at the starting point of the shading;
+ *   the input value 1 corresponds to the color at the ending point of the
+ *   shading.
+ * @param extendStart
+ *   A boolean specifying whether to extend the shading beyond the starting
+ *   point of the axis.
+ * @param extendEnd
+ *   A boolean specifying whether to extend the shading beyond the ending
+ *   point of the axis.
+ }
+
+function CGShadingCreateAxial( colorspace: CGColorSpaceRef; start: CGPoint; finish: CGPoint; func: CGFunctionRef; extendStart: CBool; extendEnd: CBool ): CGShadingRef; external name '_CGShadingCreateAxial'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+{! @function CGShadingCreateRadial
+ *
+ * Create a shading defining a color blend which varies between two
+ * circles.  The shading may optionally extend beyond either circle by
+ * continuing the boundary colors.
+ *
+ * @param colorspace
+ *   The colorspace in which color values are expressed.
+ * @param start
+ *   The center of the starting circle, in the shading's target coordinate
+ *   space.
+ * @param startRadius
+ *   The radius of the starting circle, in the shading's target coordinate
+ *   space.
+ * @param end
+ *   The center of the ending circle, in the shading's target coordinate
+ *   space.
+ * @param endRadius
+ *   The radius of the ending circle, in the shading's target coordinate
+ *   space.
+ * @param function
+ *   A 1-in, N-out function, where N is one more (for alpha) than the
+ *   number of color components in the shading's colorspace.  The input
+ *   value 0 corresponds to the color of the starting circle; the input
+ *   value 1 corresponds to the color of the ending circle.
+ * @param extendStart
+ *   A boolean specifying whether to extend the shading beyond the starting
+ *   circle.
+ * @param extendEnd
+ *   A boolean specifying whether to extend the shading beyond the ending
+ *   circle.
+ }
+
+function CGShadingCreateRadial( colorspace: CGColorSpaceRef; start: CGPoint; startRadius: Float32; finish: CGPoint; endRadius: Float32; func: CGFunctionRef; extendStart: CBool; extendEnd: CBool ): CGShadingRef; external name '_CGShadingCreateRadial'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+{! @function CGShadingRetain
+ *
+ * Equivalent to <tt>CFRetain(shading)</tt>.
+ }
+
+function CGShadingRetain( shading: CGShadingRef ): CGShadingRef; external name '_CGShadingRetain'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+{! @function CGShadingRelease
+ *
+ * Equivalent to <tt>CFRelease(shading)</tt>.
+ }
+
+procedure CGShadingRelease( shading: CGShadingRef ); external name '_CGShadingRelease'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

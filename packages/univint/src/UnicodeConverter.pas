@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       CarbonCore/UnicodeConverter.h
  
      Contains:   Types, constants, and prototypes for Unicode Converter
@@ -28,10 +29,21 @@
  
      Copyright:  © 1994-2008 Apple Inc. All rights reserved.
 >>>>>>> origin/cpstrnew
+=======
+     File:       UnicodeConverter.p
+ 
+     Contains:   Types, constants, and prototypes for Unicode Converter
+ 
+     Version:    Technology: Mac OS 9.0
+                 Release:    Universal Interfaces 3.4.2
+ 
+     Copyright:  © 1994-2002 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -58,6 +70,19 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+
+
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -66,8 +91,13 @@
 
 unit UnicodeConverter;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -80,21 +110,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -129,6 +167,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -136,6 +176,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -373,6 +414,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -398,6 +449,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -407,6 +462,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,TextCommon;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -427,12 +483,17 @@ uses MacTypes,TextCommon;
 {$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
+=======
+uses MacTypes,TextCommon,MixedMode;
+
+>>>>>>> graemeg/fixes_2_2
 
 {$ALIGN MAC68K}
 
 { Unicode conversion contexts: }
 
 type
+<<<<<<< HEAD
 	TextToUnicodeInfo = ^SInt32; { an opaque type }
 	TextToUnicodeInfoPtr = ^TextToUnicodeInfo;  { when a var xx:TextToUnicodeInfo parameter can be nil, it is changed to xx: TextToUnicodeInfoPtr }
 	UnicodeToTextInfo = ^SInt32; { an opaque type }
@@ -755,10 +816,200 @@ function InvokeUnicodeToTextFallbackUPP( iSrcUniStr: UniCharPtr; iSrcUniStrLen: 
 >>>>>>> origin/cpstrnew
 
 { Function prototypes }
+=======
+	TextToUnicodeInfo    = ^SInt32; { an opaque 32-bit type }
+	TextToUnicodeInfoPtr = ^TextToUnicodeInfo;  { when a var xx:TextToUnicodeInfo parameter can be nil, it is changed to xx: TextToUnicodeInfoPtr }
+	UnicodeToTextInfo    = ^SInt32; { an opaque 32-bit type }
+	UnicodeToTextInfoPtr = ^UnicodeToTextInfo;  { when a var xx:UnicodeToTextInfo parameter can be nil, it is changed to xx: UnicodeToTextInfoPtr }
+	UnicodeToTextRunInfo    = ^SInt32; { an opaque 32-bit type }
+	UnicodeToTextRunInfoPtr = ^UnicodeToTextRunInfo;  { when a var xx:UnicodeToTextRunInfo parameter can be nil, it is changed to xx: UnicodeToTextRunInfoPtr }
+	ConstTextToUnicodeInfo				= TextToUnicodeInfo;
+	ConstUnicodeToTextInfo				= UnicodeToTextInfo;
+	{	 UnicodeMapVersion type & values 	}
+	UnicodeMapVersion					= SInt32;
+
+const
+	kUnicodeUseLatestMapping	= -1;
+	kUnicodeUseHFSPlusMapping	= 4;
+
+	{	 Types used in conversion 	}
+
+type
+	UnicodeMappingPtr = ^UnicodeMapping;
+	UnicodeMapping = record
+		unicodeEncoding:		TextEncoding;
+		otherEncoding:			TextEncoding;
+		mappingVersion:			UnicodeMapVersion;
+	end;
+
+	ConstUnicodeMappingPtr				= ^UnicodeMapping;
+	{	 Control flags for ConvertFromUnicodeToText and ConvertFromTextToUnicode 	}
+
+const
+	kUnicodeUseFallbacksBit		= 0;
+	kUnicodeKeepInfoBit			= 1;
+	kUnicodeDirectionalityBits	= 2;
+	kUnicodeVerticalFormBit		= 4;
+	kUnicodeLooseMappingsBit	= 5;
+	kUnicodeStringUnterminatedBit = 6;
+	kUnicodeTextRunBit			= 7;
+	kUnicodeKeepSameEncodingBit	= 8;
+	kUnicodeForceASCIIRangeBit	= 9;
+	kUnicodeNoHalfwidthCharsBit	= 10;
+	kUnicodeTextRunHeuristicsBit = 11;
+
+	kUnicodeUseFallbacksMask	= $00000001;
+	kUnicodeKeepInfoMask		= $00000002;
+	kUnicodeDirectionalityMask	= $0000000C;
+	kUnicodeVerticalFormMask	= $00000010;
+	kUnicodeLooseMappingsMask	= $00000020;
+	kUnicodeStringUnterminatedMask = $00000040;
+	kUnicodeTextRunMask			= $00000080;
+	kUnicodeKeepSameEncodingMask = $00000100;
+	kUnicodeForceASCIIRangeMask	= $00000200;
+	kUnicodeNoHalfwidthCharsMask = $00000400;
+	kUnicodeTextRunHeuristicsMask = $00000800;
+
+	{	 Values for kUnicodeDirectionality field 	}
+	kUnicodeDefaultDirection	= 0;
+	kUnicodeLeftToRight			= 1;
+	kUnicodeRightToLeft			= 2;
+
+	{	 Directionality masks for control flags 	}
+	kUnicodeDefaultDirectionMask = $00;
+	kUnicodeLeftToRightMask		= $04;
+	kUnicodeRightToLeftMask		= $08;
+
+
+	{	 Control flags for TruncateForUnicodeToText: 	}
+	{
+	   Now TruncateForUnicodeToText uses control flags from the same set as used by
+	   ConvertFromTextToUnicode, ConvertFromUnicodeToText, etc., but only
+	   kUnicodeStringUnterminatedMask is meaningful for TruncateForUnicodeToText.
+	   
+	   Previously two special control flags were defined for TruncateForUnicodeToText:
+	        kUnicodeTextElementSafeBit = 0
+	        kUnicodeRestartSafeBit = 1
+	   However, neither of these was implemented.
+	   Instead of implementing kUnicodeTextElementSafeBit, we now use
+	   kUnicodeStringUnterminatedMask since it accomplishes the same thing and avoids
+	   having special flags just for TruncateForUnicodeToText
+	   Also, kUnicodeRestartSafeBit is unnecessary, since restart-safeness is handled by
+	   setting kUnicodeKeepInfoBit with ConvertFromUnicodeToText.
+	   If TruncateForUnicodeToText is called with one or both of the old special control
+	   flags set (bits 0 or 1), it will not generate a paramErr, but the old bits have no
+	   effect on its operation.
+	}
+
+	{	 Filter bits for filter field in QueryUnicodeMappings and CountUnicodeMappings: 	}
+	kUnicodeMatchUnicodeBaseBit	= 0;
+	kUnicodeMatchUnicodeVariantBit = 1;
+	kUnicodeMatchUnicodeFormatBit = 2;
+	kUnicodeMatchOtherBaseBit	= 3;
+	kUnicodeMatchOtherVariantBit = 4;
+	kUnicodeMatchOtherFormatBit	= 5;
+
+	kUnicodeMatchUnicodeBaseMask = $00000001;
+	kUnicodeMatchUnicodeVariantMask = $00000002;
+	kUnicodeMatchUnicodeFormatMask = $00000004;
+	kUnicodeMatchOtherBaseMask	= $00000008;
+	kUnicodeMatchOtherVariantMask = $00000010;
+	kUnicodeMatchOtherFormatMask = $00000020;
+
+	{	 Control flags for SetFallbackUnicodeToText 	}
+	kUnicodeFallbackSequencingBits = 0;
+
+	kUnicodeFallbackSequencingMask = $00000003;
+	kUnicodeFallbackInterruptSafeMask = $00000004;				{  To indicate that caller fallback routine doesnÕt move memory }
+
+	{	 values for kUnicodeFallbackSequencing field 	}
+	kUnicodeFallbackDefaultOnly	= 0;
+	kUnicodeFallbackCustomOnly	= 1;
+	kUnicodeFallbackDefaultFirst = 2;
+	kUnicodeFallbackCustomFirst	= 3;
+
+
+	{	 Caller-supplied entry point to a fallback handler 	}
+
+type
+{$ifc TYPED_FUNCTION_POINTERS}
+	UnicodeToTextFallbackProcPtr = function(iSrcUniStr: UniCharPtr; iSrcUniStrLen: ByteCount; var oSrcConvLen: ByteCount; oDestStr: TextPtr; iDestStrLen: ByteCount; var oDestConvLen: ByteCount; iInfoPtr: LogicalAddress; iUnicodeMappingPtr: ConstUnicodeMappingPtr): OSStatus;
+{$elsec}
+	UnicodeToTextFallbackProcPtr = ProcPtr;
+{$endc}
+
+{$ifc OPAQUE_UPP_TYPES}
+	UnicodeToTextFallbackUPP = ^SInt32; { an opaque UPP }
+{$elsec}
+	UnicodeToTextFallbackUPP = UniversalProcPtr;
+{$endc}	
+
+const
+	uppUnicodeToTextFallbackProcInfo = $003FFFF0;
+	{
+	 *  NewUnicodeToTextFallbackUPP()
+	 *  
+	 *  Availability:
+	 *    Non-Carbon CFM:   available as macro/inline
+	 *    CarbonLib:        in CarbonLib 1.0 and later
+	 *    Mac OS X:         in version 10.0 and later
+	 	}
+function NewUnicodeToTextFallbackUPP(userRoutine: UnicodeToTextFallbackProcPtr): UnicodeToTextFallbackUPP; external name '_NewUnicodeToTextFallbackUPP'; { old name was NewUnicodeToTextFallbackProc }
+{
+ *  DisposeUnicodeToTextFallbackUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+procedure DisposeUnicodeToTextFallbackUPP(userUPP: UnicodeToTextFallbackUPP); external name '_DisposeUnicodeToTextFallbackUPP';
+{
+ *  InvokeUnicodeToTextFallbackUPP()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   available as macro/inline
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function InvokeUnicodeToTextFallbackUPP(iSrcUniStr: UniCharPtr; iSrcUniStrLen: ByteCount; var oSrcConvLen: ByteCount; oDestStr: TextPtr; iDestStrLen: ByteCount; var oDestConvLen: ByteCount; iInfoPtr: LogicalAddress; iUnicodeMappingPtr: ConstUnicodeMappingPtr; userRoutine: UnicodeToTextFallbackUPP): OSStatus; external name '_InvokeUnicodeToTextFallbackUPP'; { old name was CallUnicodeToTextFallbackProc }
+{ Function prototypes }
+{$ifc TARGET_CPU_68K AND NOT TARGET_RT_MAC_CFM}
+{
+    Routine to Initialize the Unicode Converter and cleanup once done with it. 
+    These routines must be called from Static Library clients.
+}
+{$ifc CALL_NOT_IN_CARBON}
+{
+ *  InitializeUnicodeConverter()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+function InitializeUnicodeConverter(TECFileName: StringPtr): OSStatus; external name '_InitializeUnicodeConverter';
+
+{
+ *  TerminateUnicodeConverter()
+ *  
+ *  Availability:
+ *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available
+ *    Mac OS X:         not available
+ }
+procedure TerminateUnicodeConverter; external name '_TerminateUnicodeConverter';
+
+{  Note: the old names (InitializeUnicode, TerminateUnicode) for the above are still exported. }
+{$endc}  {CALL_NOT_IN_CARBON}
+{$endc}
+
+>>>>>>> graemeg/fixes_2_2
 {
  *  CreateTextToUnicodeInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -782,11 +1033,19 @@ function CreateTextToUnicodeInfo( iUnicodeMapping: ConstUnicodeMappingPtr; var o
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function CreateTextToUnicodeInfo(iUnicodeMapping: ConstUnicodeMappingPtr; var oTextToUnicodeInfo: TextToUnicodeInfo): OSStatus; external name '_CreateTextToUnicodeInfo';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  CreateTextToUnicodeInfoByEncoding()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -810,11 +1069,19 @@ function CreateTextToUnicodeInfoByEncoding( iEncoding: TextEncoding; var oTextTo
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function CreateTextToUnicodeInfoByEncoding(iEncoding: TextEncoding; var oTextToUnicodeInfo: TextToUnicodeInfo): OSStatus; external name '_CreateTextToUnicodeInfoByEncoding';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  CreateUnicodeToTextInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -838,11 +1105,19 @@ function CreateUnicodeToTextInfo( iUnicodeMapping: ConstUnicodeMappingPtr; var o
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function CreateUnicodeToTextInfo(iUnicodeMapping: ConstUnicodeMappingPtr; var oUnicodeToTextInfo: UnicodeToTextInfo): OSStatus; external name '_CreateUnicodeToTextInfo';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  CreateUnicodeToTextInfoByEncoding()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -866,11 +1141,19 @@ function CreateUnicodeToTextInfoByEncoding( iEncoding: TextEncoding; var oUnicod
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function CreateUnicodeToTextInfoByEncoding(iEncoding: TextEncoding; var oUnicodeToTextInfo: UnicodeToTextInfo): OSStatus; external name '_CreateUnicodeToTextInfoByEncoding';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  CreateUnicodeToTextRunInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -894,11 +1177,19 @@ function CreateUnicodeToTextRunInfo( iNumberOfMappings: ItemCount; {const} iUnic
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function CreateUnicodeToTextRunInfo(iNumberOfMappings: ItemCount; const (*var*) iUnicodeMappings: UnicodeMapping; var oUnicodeToTextInfo: UnicodeToTextRunInfo): OSStatus; external name '_CreateUnicodeToTextRunInfo';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  CreateUnicodeToTextRunInfoByEncoding()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -922,11 +1213,19 @@ function CreateUnicodeToTextRunInfoByEncoding( iNumberOfEncodings: ItemCount; {c
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function CreateUnicodeToTextRunInfoByEncoding(iNumberOfEncodings: ItemCount; iEncodings: TextEncodingPtr; var oUnicodeToTextInfo: UnicodeToTextRunInfo): OSStatus; external name '_CreateUnicodeToTextRunInfoByEncoding';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  CreateUnicodeToTextRunInfoByScriptCode()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -950,12 +1249,20 @@ function CreateUnicodeToTextRunInfoByScriptCode( iNumberOfScriptCodes: ItemCount
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function CreateUnicodeToTextRunInfoByScriptCode(iNumberOfScriptCodes: ItemCount; iScripts: ScriptCodePtr; var oUnicodeToTextInfo: UnicodeToTextRunInfo): OSStatus; external name '_CreateUnicodeToTextRunInfoByScriptCode';
+>>>>>>> graemeg/fixes_2_2
 
 { Change the TextToUnicodeInfo to another mapping. }
 {
  *  ChangeTextToUnicodeInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -979,12 +1286,20 @@ function ChangeTextToUnicodeInfo( ioTextToUnicodeInfo: TextToUnicodeInfo; iUnico
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ChangeTextToUnicodeInfo(ioTextToUnicodeInfo: TextToUnicodeInfo; iUnicodeMapping: ConstUnicodeMappingPtr): OSStatus; external name '_ChangeTextToUnicodeInfo';
+>>>>>>> graemeg/fixes_2_2
 
 { Change the UnicodeToTextInfo to another mapping. }
 {
  *  ChangeUnicodeToTextInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1007,12 +1322,20 @@ function ChangeUnicodeToTextInfo( ioUnicodeToTextInfo: UnicodeToTextInfo; iUnico
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ChangeUnicodeToTextInfo(ioUnicodeToTextInfo: UnicodeToTextInfo; iUnicodeMapping: ConstUnicodeMappingPtr): OSStatus; external name '_ChangeUnicodeToTextInfo';
+>>>>>>> graemeg/fixes_2_2
 
 
 {
  *  DisposeTextToUnicodeInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1036,11 +1359,19 @@ function DisposeTextToUnicodeInfo( var ioTextToUnicodeInfo: TextToUnicodeInfo ):
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function DisposeTextToUnicodeInfo(var ioTextToUnicodeInfo: TextToUnicodeInfo): OSStatus; external name '_DisposeTextToUnicodeInfo';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  DisposeUnicodeToTextInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1064,11 +1395,19 @@ function DisposeUnicodeToTextInfo( var ioUnicodeToTextInfo: UnicodeToTextInfo ):
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function DisposeUnicodeToTextInfo(var ioUnicodeToTextInfo: UnicodeToTextInfo): OSStatus; external name '_DisposeUnicodeToTextInfo';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  DisposeUnicodeToTextRunInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1092,11 +1431,19 @@ function DisposeUnicodeToTextRunInfo( var ioUnicodeToTextRunInfo: UnicodeToTextR
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function DisposeUnicodeToTextRunInfo(var ioUnicodeToTextRunInfo: UnicodeToTextRunInfo): OSStatus; external name '_DisposeUnicodeToTextRunInfo';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ConvertFromTextToUnicode()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1120,11 +1467,19 @@ function ConvertFromTextToUnicode( iTextToUnicodeInfo: TextToUnicodeInfo; iSourc
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ConvertFromTextToUnicode(iTextToUnicodeInfo: TextToUnicodeInfo; iSourceLen: ByteCount; iSourceStr: ConstLogicalAddress; iControlFlags: OptionBits; iOffsetCount: ItemCount; iOffsetArray: ByteOffsetPtr; oOffsetCount: ItemCountPtr; oOffsetArray: ByteOffsetPtr; iOutputBufLen: ByteCount; var oSourceRead: ByteCount; var oUnicodeLen: ByteCount; oUnicodeStr: UniCharPtr): OSStatus; external name '_ConvertFromTextToUnicode';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ConvertFromUnicodeToText()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1148,11 +1503,19 @@ function ConvertFromUnicodeToText( iUnicodeToTextInfo: UnicodeToTextInfo; iUnico
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ConvertFromUnicodeToText(iUnicodeToTextInfo: UnicodeToTextInfo; iUnicodeLen: ByteCount; iUnicodeStr: UniCharPtr; iControlFlags: OptionBits; iOffsetCount: ItemCount; iOffsetArray: ByteOffsetPtr; oOffsetCount: ItemCountPtr; oOffsetArray: ByteOffsetPtr; iOutputBufLen: ByteCount; var oInputRead: ByteCount; var oOutputLen: ByteCount; oOutputStr: LogicalAddress): OSStatus; external name '_ConvertFromUnicodeToText';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ConvertFromUnicodeToTextRun()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1176,11 +1539,19 @@ function ConvertFromUnicodeToTextRun( iUnicodeToTextInfo: UnicodeToTextRunInfo; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ConvertFromUnicodeToTextRun(iUnicodeToTextInfo: UnicodeToTextRunInfo; iUnicodeLen: ByteCount; iUnicodeStr: UniCharPtr; iControlFlags: OptionBits; iOffsetCount: ItemCount; iOffsetArray: ByteOffsetPtr; oOffsetCount: ItemCountPtr; oOffsetArray: ByteOffsetPtr; iOutputBufLen: ByteCount; var oInputRead: ByteCount; var oOutputLen: ByteCount; oOutputStr: LogicalAddress; iEncodingRunBufLen: ItemCount; var oEncodingRunOutLen: ItemCount; var oEncodingRuns: TextEncodingRun): OSStatus; external name '_ConvertFromUnicodeToTextRun';
+>>>>>>> graemeg/fixes_2_2
 
 {
  *  ConvertFromUnicodeToScriptCodeRun()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1204,12 +1575,20 @@ function ConvertFromUnicodeToScriptCodeRun( iUnicodeToTextInfo: UnicodeToTextRun
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ConvertFromUnicodeToScriptCodeRun(iUnicodeToTextInfo: UnicodeToTextRunInfo; iUnicodeLen: ByteCount; iUnicodeStr: UniCharPtr; iControlFlags: OptionBits; iOffsetCount: ItemCount; iOffsetArray: ByteOffsetPtr; oOffsetCount: ItemCountPtr; oOffsetArray: ByteOffsetPtr; iOutputBufLen: ByteCount; var oInputRead: ByteCount; var oOutputLen: ByteCount; oOutputStr: LogicalAddress; iScriptRunBufLen: ItemCount; var oScriptRunOutLen: ItemCount; var oScriptCodeRuns: ScriptCodeRun): OSStatus; external name '_ConvertFromUnicodeToScriptCodeRun';
+>>>>>>> graemeg/fixes_2_2
 
 { Truncate a multibyte string at a safe place. }
 {
  *  TruncateForTextToUnicode()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1233,12 +1612,20 @@ function TruncateForTextToUnicode( iTextToUnicodeInfo: ConstTextToUnicodeInfo; i
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TruncateForTextToUnicode(iTextToUnicodeInfo: ConstTextToUnicodeInfo; iSourceLen: ByteCount; iSourceStr: ConstLogicalAddress; iMaxLen: ByteCount; var oTruncatedLen: ByteCount): OSStatus; external name '_TruncateForTextToUnicode';
+>>>>>>> graemeg/fixes_2_2
 
 { Truncate a Unicode string at a safe place. }
 {
  *  TruncateForUnicodeToText()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1262,12 +1649,20 @@ function TruncateForUnicodeToText( iUnicodeToTextInfo: ConstUnicodeToTextInfo; i
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function TruncateForUnicodeToText(iUnicodeToTextInfo: ConstUnicodeToTextInfo; iSourceLen: ByteCount; iSourceStr: ConstUniCharPtr; iControlFlags: OptionBits; iMaxLen: ByteCount; var oTruncatedLen: ByteCount): OSStatus; external name '_TruncateForUnicodeToText';
+>>>>>>> graemeg/fixes_2_2
 
 { Convert a Pascal string to Unicode string. }
 {
  *  ConvertFromPStringToUnicode()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1291,12 +1686,20 @@ function ConvertFromPStringToUnicode( iTextToUnicodeInfo: TextToUnicodeInfo; con
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ConvertFromPStringToUnicode(iTextToUnicodeInfo: TextToUnicodeInfo; const (*var*) iPascalStr: Str255; iOutputBufLen: ByteCount; var oUnicodeLen: ByteCount; oUnicodeStr: UniCharPtr): OSStatus; external name '_ConvertFromPStringToUnicode';
+>>>>>>> graemeg/fixes_2_2
 
 { Convert a Unicode string to Pascal string. }
 {
  *  ConvertFromUnicodeToPString()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1320,12 +1723,20 @@ function ConvertFromUnicodeToPString( iUnicodeToTextInfo: UnicodeToTextInfo; iUn
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ConvertFromUnicodeToPString(iUnicodeToTextInfo: UnicodeToTextInfo; iUnicodeLen: ByteCount; iUnicodeStr: UniCharPtr; var oPascalStr: Str255): OSStatus; external name '_ConvertFromUnicodeToPString';
+>>>>>>> graemeg/fixes_2_2
 
 { Count the available conversion mappings. }
 {
  *  CountUnicodeMappings()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1349,12 +1760,20 @@ function CountUnicodeMappings( iFilter: OptionBits; iFindMapping: ConstUnicodeMa
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function CountUnicodeMappings(iFilter: OptionBits; iFindMapping: ConstUnicodeMappingPtr; var oActualCount: ItemCount): OSStatus; external name '_CountUnicodeMappings';
+>>>>>>> graemeg/fixes_2_2
 
 { Get a list of the available conversion mappings. }
 {
  *  QueryUnicodeMappings()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1378,12 +1797,20 @@ function QueryUnicodeMappings( iFilter: OptionBits; iFindMapping: ConstUnicodeMa
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function QueryUnicodeMappings(iFilter: OptionBits; iFindMapping: ConstUnicodeMappingPtr; iMaxCount: ItemCount; var oActualCount: ItemCount; var oReturnedMappings: UnicodeMapping): OSStatus; external name '_QueryUnicodeMappings';
+>>>>>>> graemeg/fixes_2_2
 
 { Setup the fallback handler for converting Unicode To Text. }
 {
  *  SetFallbackUnicodeToText()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1407,12 +1834,20 @@ function SetFallbackUnicodeToText( iUnicodeToTextInfo: UnicodeToTextInfo; iFallb
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function SetFallbackUnicodeToText(iUnicodeToTextInfo: UnicodeToTextInfo; iFallback: UnicodeToTextFallbackUPP; iControlFlags: OptionBits; iInfoPtr: LogicalAddress): OSStatus; external name '_SetFallbackUnicodeToText';
+>>>>>>> graemeg/fixes_2_2
 
 { Setup the fallback handler for converting Unicode To TextRuns. }
 {
  *  SetFallbackUnicodeToTextRun()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1436,12 +1871,20 @@ function SetFallbackUnicodeToTextRun( iUnicodeToTextRunInfo: UnicodeToTextRunInf
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function SetFallbackUnicodeToTextRun(iUnicodeToTextRunInfo: UnicodeToTextRunInfo; iFallback: UnicodeToTextFallbackUPP; iControlFlags: OptionBits; iInfoPtr: LogicalAddress): OSStatus; external name '_SetFallbackUnicodeToTextRun';
+>>>>>>> graemeg/fixes_2_2
 
 { Re-initialize all state information kept by the context objects. }
 {
  *  ResetTextToUnicodeInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.3 and later
@@ -1465,12 +1908,20 @@ function ResetTextToUnicodeInfo( ioTextToUnicodeInfo: TextToUnicodeInfo ): OSSta
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.3 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ResetTextToUnicodeInfo(ioTextToUnicodeInfo: TextToUnicodeInfo): OSStatus; external name '_ResetTextToUnicodeInfo';
+>>>>>>> graemeg/fixes_2_2
 
 { Re-initialize all state information kept by the context objects. }
 {
  *  ResetUnicodeToTextInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1494,12 +1945,20 @@ function ResetUnicodeToTextInfo( ioUnicodeToTextInfo: UnicodeToTextInfo ): OSSta
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ResetUnicodeToTextInfo(ioUnicodeToTextInfo: UnicodeToTextInfo): OSStatus; external name '_ResetUnicodeToTextInfo';
+>>>>>>> graemeg/fixes_2_2
 
 { Re-initialize all state information kept by the context objects in TextRun conversions. }
 {
  *  ResetUnicodeToTextRunInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
@@ -1538,3 +1997,16 @@ function ResetUnicodeToTextRunInfo( ioUnicodeToTextRunInfo: UnicodeToTextRunInfo
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later
+ }
+function ResetUnicodeToTextRunInfo(ioUnicodeToTextRunInfo: UnicodeToTextRunInfo): OSStatus; external name '_ResetUnicodeToTextRunInfo';
+
+
+{$ALIGN MAC68K}
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

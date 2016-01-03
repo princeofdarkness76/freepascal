@@ -5,11 +5,18 @@ var
   ps : ansistring;
   sticks : int64;
 begin
+<<<<<<< HEAD
   ps:='';
   if paramcount>0 then
     begin
       for i:=2 to paramcount do
         ps:=ps+' "'+paramstr(i)+'"';
+=======
+  if paramcount>0 then
+    begin
+      for i:=2 to paramcount do
+        ps:=ps+' '+paramstr(i);
+>>>>>>> graemeg/fixes_2_2
       sticks:=GetMicroSTicks;
       ExecuteProcess(paramstr(1),ps);
       writeln(stderr,(GetMicroSTicks-sticks)/1000:0:3,' ms');

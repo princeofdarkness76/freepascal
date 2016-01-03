@@ -11,6 +11,7 @@ uses
   fpcunit,  testreport, testregistry,
   DigestTestReport,
   toolsunit,
+<<<<<<< HEAD
 // List of supported database connectors
   sqldbtoolsunit,
   dbftoolsunit,
@@ -35,12 +36,18 @@ uses
 
 Procedure LegacyOutput;
 
+=======
+// Units wich contains the tests
+  testbasics, testfieldtypes, TestDatasources, testdbbasics;
+  
+>>>>>>> graemeg/fixes_2_2
 var
   FXMLResultsWriter: TXMLResultsWriter;
   FDigestResultsWriter: TDigestResultsWriter;
   testResult: TTestResult;
 
 begin
+  InitialiseDBConnector;
   testResult := TTestResult.Create;
   FXMLResultsWriter := TXMLResultsWriter.Create;
   FDigestResultsWriter := TDigestResultsWriter.Create(nil);

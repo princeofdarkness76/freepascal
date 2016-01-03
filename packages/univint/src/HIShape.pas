@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
      File:       HIServices/HIShape.h
  
      Contains:   Generic Abstract Shape API
@@ -22,11 +23,24 @@
 >>>>>>> origin/cpstrnew
  
      Copyright:  © 2001-2008 by Apple Computer, Inc., all rights reserved.
+=======
+     File:       HIToolbox/HIShape.h
+ 
+     Contains:   Generic Abstract Shape API
+ 
+     Version:    HIToolbox-219.4.81~2
+ 
+     Copyright:  © 2001-2005 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/fixes_2_2
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
+=======
+                     http://www.freepascal.org/bugs.html
+>>>>>>> graemeg/fixes_2_2
  
 }
 {     File:       HIShape.p(.pas)																		}
@@ -53,6 +67,7 @@
 {This file was processed by Dan's Source Converter}
 {version 1.3 (this version modified by Ingemar Ragnemalm)}
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -74,6 +89,14 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -82,8 +105,13 @@
 
 unit HIShape;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -96,21 +124,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -145,6 +181,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -152,6 +190,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -428,6 +467,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -453,6 +502,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -462,12 +515,16 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,CFBase,CGBase,CGContext,CGGeometry,Drag,QuickdrawTypes,CarbonEvents,HIGeometry;
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
 
+=======
+uses MacTypes,CFBase,CGContext,Drag,Quickdraw,CarbonEvents,HIGeometry;
+>>>>>>> graemeg/fixes_2_2
 {$ALIGN POWER}
 
 
@@ -486,6 +543,7 @@ uses MacTypes,CFBase,CGBase,CGContext,CGGeometry,Drag,QuickdrawTypes,CarbonEvent
  *    created and passed around and 'copied' very quickly, since they
  *    are actually refcounted when copied. This avoids needing to do
  *    the handle-to-handle copies that occur right now with
+<<<<<<< HEAD
  *    RgnHandle-based APIs. 
  *    
  *    Thread Safety Information 
@@ -822,6 +880,30 @@ type
  *  
  *  Availability:
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+=======
+ *    RgnHandle-based APIs.
+ }
+type
+	HIShapeRef = ^SInt32; { an opaque 32-bit type }
+type
+	HIMutableShapeRef = ^SInt32; { an opaque 32-bit type }
+
+
+{
+ *  HIShapeGetTypeID()
+ *  
+ *  Discussion:
+ *    Returns the CF type ID for the HIShape class.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Result:
+ *    A CF type ID.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -836,6 +918,7 @@ function HIShapeGetTypeID: CFTypeID; external name '_HIShapeGetTypeID';
  *  HIShapeCreateEmpty()
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    Creates an immutable empty shape. Useful at times. 
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -844,12 +927,22 @@ function HIShapeGetTypeID: CFTypeID; external name '_HIShapeGetTypeID';
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *    Creates an immutable empty shape. Useful at times.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Result:
  *    An immutable, empty HIShape reference.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -862,6 +955,7 @@ function HIShapeCreateEmpty: HIShapeRef; external name '_HIShapeCreateEmpty';
  *  
  *  Discussion:
  *    Creates an immutable shape based on an existing Quickdraw region
+<<<<<<< HEAD
  *    handle. 
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -870,6 +964,12 @@ function HIShapeCreateEmpty: HIShapeRef; external name '_HIShapeCreateEmpty';
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *    handle.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -880,7 +980,11 @@ function HIShapeCreateEmpty: HIShapeRef; external name '_HIShapeCreateEmpty';
  *    An immutable HIShape reference.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -893,6 +997,7 @@ function HIShapeCreateWithQDRgn( inRgn: RgnHandle ): HIShapeRef; external name '
  *  
  *  Discussion:
  *    Creates an immutable, rectangular shape based on a given
+<<<<<<< HEAD
  *    rectangle. 
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -901,21 +1006,39 @@ function HIShapeCreateWithQDRgn( inRgn: RgnHandle ): HIShapeRef; external name '
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *    rectangle.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
  *    inRect:
+<<<<<<< HEAD
  *      The CGRect from which to create the resulting shape.
+=======
+ *      The HIRect from which to create the resulting shape.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Result:
  *    An immutable HIShape reference.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
 function HIShapeCreateWithRect( const (*var*) inRect: CGRect ): HIShapeRef; external name '_HIShapeCreateWithRect';
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HIShapeCreateWithRect( const (*var*) inRect: HIRect ): HIShapeRef; external name '_HIShapeCreateWithRect';
+>>>>>>> graemeg/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
@@ -924,6 +1047,7 @@ function HIShapeCreateWithRect( const (*var*) inRect: CGRect ): HIShapeRef; exte
  *  
  *  Discussion:
  *    Creates an immutable copy of a mutable or immutable HIShape.
+<<<<<<< HEAD
  *    
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -932,6 +1056,11 @@ function HIShapeCreateWithRect( const (*var*) inRect: CGRect ): HIShapeRef; exte
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -942,7 +1071,11 @@ function HIShapeCreateWithRect( const (*var*) inRect: CGRect ): HIShapeRef; exte
  *    An immutable HIShape reference.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -955,6 +1088,7 @@ function HIShapeCreateCopy( inShape: HIShapeRef ): HIShapeRef; external name '_H
  *  
  *  Discussion:
  *    Creates a new immutable shape which is the intersection of two
+<<<<<<< HEAD
  *    others. 
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -963,6 +1097,12 @@ function HIShapeCreateCopy( inShape: HIShapeRef ): HIShapeRef; external name '_H
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *    others.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -976,7 +1116,11 @@ function HIShapeCreateCopy( inShape: HIShapeRef ): HIShapeRef; external name '_H
  *    A new immutable HIShapeRef.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -989,6 +1133,7 @@ function HIShapeCreateIntersection( inShape1: HIShapeRef; inShape2: HIShapeRef )
  *  
  *  Discussion:
  *    Creates a new immutable shape which is the difference of two
+<<<<<<< HEAD
  *    others. The second shape is subtracted from the first. 
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -997,6 +1142,12 @@ function HIShapeCreateIntersection( inShape1: HIShapeRef; inShape2: HIShapeRef )
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *    others. The second shape is subtracted from the first.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1010,7 +1161,11 @@ function HIShapeCreateIntersection( inShape1: HIShapeRef; inShape2: HIShapeRef )
  *    A new immutable HIShapeRef.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1023,6 +1178,7 @@ function HIShapeCreateDifference( inShape1: HIShapeRef; inShape2: HIShapeRef ): 
  *  
  *  Discussion:
  *    Creates a new immutable shape which is the union of two others.
+<<<<<<< HEAD
  *    
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -1031,6 +1187,11 @@ function HIShapeCreateDifference( inShape1: HIShapeRef; inShape2: HIShapeRef ): 
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1044,7 +1205,11 @@ function HIShapeCreateDifference( inShape1: HIShapeRef; inShape2: HIShapeRef ): 
  *    A new immutable HIShapeRef.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1053,6 +1218,7 @@ function HIShapeCreateUnion( inShape1: HIShapeRef; inShape2: HIShapeRef ): HISha
 
 
 {
+<<<<<<< HEAD
  *  HIShapeCreateXor()
  *  
  *  Discussion:
@@ -1087,10 +1253,13 @@ function HIShapeCreateXor( inShape1: HIShapeRef; inShape2: HIShapeRef ): HIShape
 
 
 {
+=======
+>>>>>>> graemeg/fixes_2_2
  *  HIShapeIsEmpty()
  *  
  *  Discussion:
  *    Returns true if the given HIShapeRef is empty, i.e. its area is
+<<<<<<< HEAD
  *    empty. 
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -1099,6 +1268,12 @@ function HIShapeCreateXor( inShape1: HIShapeRef; inShape2: HIShapeRef ): HIShape
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *    empty.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1109,7 +1284,11 @@ function HIShapeCreateXor( inShape1: HIShapeRef; inShape2: HIShapeRef ): HIShape
  *    A boolean result.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1121,6 +1300,7 @@ function HIShapeIsEmpty( inShape: HIShapeRef ): Boolean; external name '_HIShape
  *  HIShapeIsRectangular()
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    Returns true if the given HIShapeRef is rectangular. 
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -1129,6 +1309,12 @@ function HIShapeIsEmpty( inShape: HIShapeRef ): Boolean; external name '_HIShape
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *    Returns true if the given HIShapeRef is rectangular.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1139,7 +1325,11 @@ function HIShapeIsEmpty( inShape: HIShapeRef ): Boolean; external name '_HIShape
  *    A boolean result.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1151,6 +1341,7 @@ function HIShapeIsRectangular( inShape: HIShapeRef ): Boolean; external name '_H
  *  HIShapeContainsPoint()
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    Returns true if the given HIShapeRef contains the point passed
  *    in. 
  *    
@@ -1160,6 +1351,12 @@ function HIShapeIsRectangular( inShape: HIShapeRef ): Boolean; external name '_H
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *    Returns true if the given HIShapeRef contains the point passed in.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1173,11 +1370,19 @@ function HIShapeIsRectangular( inShape: HIShapeRef ): Boolean; external name '_H
  *    A boolean result.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
 function HIShapeContainsPoint( inShape: HIShapeRef; const (*var*) inPoint: CGPoint ): Boolean; external name '_HIShapeContainsPoint';
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HIShapeContainsPoint( inShape: HIShapeRef; const (*var*) inPoint: HIPoint ): Boolean; external name '_HIShapeContainsPoint';
+>>>>>>> graemeg/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
@@ -1186,6 +1391,7 @@ function HIShapeContainsPoint( inShape: HIShapeRef; const (*var*) inPoint: CGPoi
  *  
  *  Discussion:
  *    Returns true if the given HIShapeRef intersects the rect passed
+<<<<<<< HEAD
  *    in. 
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -1194,6 +1400,12 @@ function HIShapeContainsPoint( inShape: HIShapeRef; const (*var*) inPoint: CGPoi
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *    in.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1207,11 +1419,19 @@ function HIShapeContainsPoint( inShape: HIShapeRef; const (*var*) inPoint: CGPoi
  *    A boolean result.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
 function HIShapeIntersectsRect( inShape: HIShapeRef; const (*var*) inRect: CGRect ): Boolean; external name '_HIShapeIntersectsRect';
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HIShapeIntersectsRect( inShape: HIShapeRef; const (*var*) inRect: HIRect ): Boolean; external name '_HIShapeIntersectsRect';
+>>>>>>> graemeg/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 
@@ -1219,6 +1439,7 @@ function HIShapeIntersectsRect( inShape: HIShapeRef; const (*var*) inRect: CGRec
  *  HIShapeGetBounds()
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    Returns the bounding rectangle of a given HIShapeRef. 
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -1227,6 +1448,12 @@ function HIShapeIntersectsRect( inShape: HIShapeRef; const (*var*) inRect: CGRec
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *    Returns the bounding rectangle of a given HIShapeRef.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1240,11 +1467,19 @@ function HIShapeIntersectsRect( inShape: HIShapeRef; const (*var*) inRect: CGRec
  *    A pointer to the rectangle you passed in, for convenience.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
 function HIShapeGetBounds( inShape: HIShapeRef; var outRect: CGRect ): CGRectPtr; external name '_HIShapeGetBounds';
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HIShapeGetBounds( inShape: HIShapeRef; var outRect: HIRect ): HIRectPtr; external name '_HIShapeGetBounds';
+>>>>>>> graemeg/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
@@ -1255,6 +1490,7 @@ function HIShapeGetBounds( inShape: HIShapeRef; var outRect: CGRect ): CGRectPtr
  *    Changes a given Quickdraw region handle to have the same shape as
  *    a given HIShapeRef. Essentially you are converting an HIShapeRef
  *    into a RgnHandle. This conversion may lose fidelity depending on
+<<<<<<< HEAD
  *    how the shape was created originally. 
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -1263,6 +1499,12 @@ function HIShapeGetBounds( inShape: HIShapeRef; var outRect: CGRect ): CGRectPtr
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *    how the shape was created originally.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1276,7 +1518,11 @@ function HIShapeGetBounds( inShape: HIShapeRef; var outRect: CGRect ): CGRectPtr
  *    An operating system status code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1291,6 +1537,7 @@ function HIShapeGetAsQDRgn( inShape: HIShapeRef; outRgn: RgnHandle ): OSStatus; 
  *    Given an HIShapeRef and a CGContextRef, make the current path in
  *    the context represent the shape. You might use this to clip to a
  *    shape, for example. You could call this function and then
+<<<<<<< HEAD
  *    immediately call CGContextClip. 
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -1299,6 +1546,12 @@ function HIShapeGetAsQDRgn( inShape: HIShapeRef; outRgn: RgnHandle ): OSStatus; 
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *    immediately call CGContextClip.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1312,7 +1565,11 @@ function HIShapeGetAsQDRgn( inShape: HIShapeRef; outRgn: RgnHandle ): OSStatus; 
  *    An operating system status code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1320,12 +1577,16 @@ function HIShapeReplacePathInCGContext( inShape: HIShapeRef; inContext: CGContex
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
+=======
+>>>>>>> graemeg/fixes_2_2
 {
  *  HIShapeSetQDClip()
  *  
  *  Discussion:
  *    Given an HIShapeRef and a Quickdraw port, set the current clip in
+<<<<<<< HEAD
  *    the port to the shape. 
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -1334,6 +1595,12 @@ function HIShapeReplacePathInCGContext( inShape: HIShapeRef; inContext: CGContex
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *    the port to the shape.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1347,7 +1614,11 @@ function HIShapeReplacePathInCGContext( inShape: HIShapeRef; inContext: CGContex
  *    An operating system status code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1355,6 +1626,7 @@ function HIShapeSetQDClip( inShape: HIShapeRef; inPort: CGrafPtr ): OSStatus; ex
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 {
@@ -1399,6 +1671,8 @@ function HIShapeEnumerate( inShape: HIShapeRef; inOptions: OptionBits; inProc: H
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {======================================================================================}
 {  MUTABLE FUNCTIONS                                                                   }
 {======================================================================================}
@@ -1406,6 +1680,7 @@ function HIShapeEnumerate( inShape: HIShapeRef; inOptions: OptionBits; inProc: H
  *  HIShapeCreateMutable()
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    Creates a new, mutable, empty shape. 
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -1414,12 +1689,22 @@ function HIShapeEnumerate( inShape: HIShapeRef; inOptions: OptionBits; inProc: H
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *    Creates a new, mutable, empty shape.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Result:
  *    A mutable shape reference.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1432,6 +1717,7 @@ function HIShapeCreateMutable: HIMutableShapeRef; external name '_HIShapeCreateM
  *  
  *  Discussion:
  *    Given an existing HIShapeRef, creates a new mutable copy.
+<<<<<<< HEAD
  *    
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -1440,6 +1726,11 @@ function HIShapeCreateMutable: HIMutableShapeRef; external name '_HIShapeCreateM
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1450,7 +1741,11 @@ function HIShapeCreateMutable: HIMutableShapeRef; external name '_HIShapeCreateM
  *    A mutable shape reference.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1459,6 +1754,7 @@ function HIShapeCreateMutableCopy( inOrig: HIShapeRef ): HIMutableShapeRef; exte
 
 
 {
+<<<<<<< HEAD
  *  HIShapeCreateMutableWithRect()
  *  
  *  Discussion:
@@ -1497,6 +1793,15 @@ function HIShapeCreateMutableWithRect( const (*var*) inRect: CGRect ): HIMutable
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *  HIShapeSetEmpty()
+ *  
+ *  Discussion:
+ *    Sets a mutable shape to be an empty shape.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1507,7 +1812,11 @@ function HIShapeCreateMutableWithRect( const (*var*) inRect: CGRect ): HIMutable
  *    An operating system status code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1516,6 +1825,7 @@ function HIShapeSetEmpty( inShape: HIMutableShapeRef ): OSStatus; external name 
 
 
 {
+<<<<<<< HEAD
  *  HIShapeSetWithShape()
  *  
  *  Discussion:
@@ -1551,10 +1861,13 @@ function HIShapeSetWithShape( inDestShape: HIMutableShapeRef; inSrcShape: HIShap
 
 
 {
+=======
+>>>>>>> graemeg/fixes_2_2
  *  HIShapeIntersect()
  *  
  *  Discussion:
  *    Takes two shapes and sets a third to be their intersection.
+<<<<<<< HEAD
  *    
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -1563,6 +1876,11 @@ function HIShapeSetWithShape( inDestShape: HIMutableShapeRef; inSrcShape: HIShap
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1574,13 +1892,21 @@ function HIShapeSetWithShape( inDestShape: HIMutableShapeRef; inSrcShape: HIShap
  *    
  *    outResult:
  *      The shape to receive the result of the intersection. This can
+<<<<<<< HEAD
  *      be one of the source shapes. This shape must be mutable.
+=======
+ *      be one of the source shapes.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Result:
  *    An operating system status code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1593,6 +1919,7 @@ function HIShapeIntersect( inShape1: HIShapeRef; inShape2: HIShapeRef; outResult
  *  
  *  Discussion:
  *    Takes two shapes and sets a third to be their difference. The
+<<<<<<< HEAD
  *    second shape is subtracted from the first. 
  *    
  *    This API is thread safe only on Mac OS X 10.5 and later; see the
@@ -1601,6 +1928,12 @@ function HIShapeIntersect( inShape1: HIShapeRef; inShape2: HIShapeRef; outResult
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *    second shape is subtracted from the first.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1612,13 +1945,21 @@ function HIShapeIntersect( inShape1: HIShapeRef; inShape2: HIShapeRef; outResult
  *    
  *    outResult:
  *      The shape to receive the result of the intersection. This can
+<<<<<<< HEAD
  *      be one of the source shapes. This shape must be mutable.
+=======
+ *      be one of the source shapes.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Result:
  *    An operating system status code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1630,6 +1971,7 @@ function HIShapeDifference( inShape1: HIShapeRef; inShape2: HIShapeRef; outResul
  *  HIShapeUnion()
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    Takes two shapes and sets a third to be their union. 
  *    
  *    On Mac OS X 10.2 and 10.3, this API incorrectly required that the
@@ -1644,6 +1986,12 @@ function HIShapeDifference( inShape1: HIShapeRef; inShape2: HIShapeRef; outResul
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *    Takes two shapes and sets a third to be their union.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1655,15 +2003,23 @@ function HIShapeDifference( inShape1: HIShapeRef; inShape2: HIShapeRef; outResul
  *    
  *    outResult:
  *      The shape to receive the result of the union. This can be one
+<<<<<<< HEAD
  *      of the source shapes. On Mac OS X 10.2 and 10.3, this shape
  *      must be immutable, but it will be set to the unioned shape
  *      anyways. On Mac OS X 10.4 and later, this shape must be mutable.
+=======
+ *      of the source shapes.
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Result:
  *    An operating system status code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1672,6 +2028,7 @@ function HIShapeUnion( inShape1: HIShapeRef; inShape2: HIShapeRef; outResult: HI
 
 
 {
+<<<<<<< HEAD
  *  HIShapeXor()
  *  
  *  Discussion:
@@ -1721,6 +2078,15 @@ function HIShapeXor( inShape1: HIShapeRef; inShape2: HIShapeRef; outResult: HIMu
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.5
+=======
+ *  HIShapeOffset()
+ *  
+ *  Discussion:
+ *    Offsets a shape by some delta.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> graemeg/fixes_2_2
  *  
  *  Parameters:
  *    
@@ -1737,6 +2103,7 @@ function HIShapeXor( inShape1: HIShapeRef; inShape2: HIShapeRef; outResult: HIMu
  *    An operating system status code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
@@ -1818,3 +2185,14 @@ function HIShapeUnionWithRect( inShape: HIMutableShapeRef; const (*var*) inRect:
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HIShapeOffset( inShape: HIMutableShapeRef; inDX: Float32; inDY: Float32 ): OSStatus; external name '_HIShapeOffset';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

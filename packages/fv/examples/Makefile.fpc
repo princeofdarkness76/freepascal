@@ -5,9 +5,12 @@
 [target]
 programs=testapp
 
+<<<<<<< HEAD
 [compiler]
 includedir=../src
 
+=======
+>>>>>>> graemeg/fixes_2_2
 [require]
 packages=fv
 

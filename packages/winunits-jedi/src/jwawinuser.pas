@@ -11935,7 +11935,11 @@ end;
 
 function RAWINPUT_ALIGN(x: Pointer): Pointer;
 begin
+<<<<<<< HEAD
   Result := Pointer((PtrUInt(x) + (SizeOf(DWORD) - 1)) and not (SizeOf(DWORD) - 1));
+=======
+  Result := Pointer((Integer(x) + SizeOf(DWORD) - 1) and not (SizeOf(DWORD) - 1));
+>>>>>>> graemeg/fixes_2_2
 end;
 
 function NEXTRAWINPUTBLOCK(ptr: PRawInput): PRawInput;

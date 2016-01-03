@@ -9,7 +9,11 @@ program MiniUnz;
         -x like -e, but extract without path information
         -o overwrite an existing file without warning
 
+<<<<<<< HEAD
   Pascal translation
+=======
+  Pascal tranlastion
+>>>>>>> graemeg/fixes_2_2
   Copyright (C) 2000 by Jacques Nomssi Nzali
   For conditions of distribution and use, see copyright notice in readme.txt
 }{$ifdef WIN32}
@@ -27,8 +31,11 @@ uses
    zlib,ctypes,
   {$endif}
   ziputils,
+<<<<<<< HEAD
   paszlib,
   ctypes,
+=======
+>>>>>>> graemeg/fixes_2_2
   unzip;
 
 const
@@ -66,7 +73,11 @@ begin
                       0,NIL,OPEN_EXISTING,0,0);
   GetFileTime(hFile, @ftCreate, @ftLastAcc, @ftLastWrite);
   DosDateTimeToFileTime(WORD((dosdate shl 16)), WORD(dosdate), @ftLocal);
+<<<<<<< HEAD
   LocalFileTimeToFileTime(ftLocal, ftm);
+=======
+  LocalFileTimeToFileTime(ftLocal, @ftm);
+>>>>>>> graemeg/fixes_2_2
   SetFileTime(hFile,ftm, ftLastAcc, ftm);
   CloseHandle(hFile);
 end;

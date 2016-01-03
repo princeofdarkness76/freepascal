@@ -34,6 +34,7 @@ unit i_sunos;
             system       : system_i386_solaris;
             name         : 'Solaris for i386';
             shortname    : 'solaris';
+<<<<<<< HEAD
             flags        : [tf_under_development,tf_needs_symbol_size,
                             tf_files_case_sensitive,tf_requires_proper_alignment,
 <<<<<<< HEAD
@@ -50,6 +51,9 @@ unit i_sunos;
 =======
 >>>>>>> origin/cpstrnew
                             tf_smartlink_library,tf_has_winlike_resources];
+=======
+            flags        : [tf_under_development,tf_files_case_sensitive,tf_use_function_relative_addresses,tf_smartlink_library];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_i386;
             unit_env     : 'SOLARISUNITS';
             extradefines : 'UNIX;LIBC;SUNOS;HASUNIX';
@@ -279,6 +283,7 @@ unit i_sunos;
             system       : system_sparc_solaris;
             name         : 'Solaris for SPARC';
             shortname    : 'solaris';
+<<<<<<< HEAD
             flags        : [tf_needs_symbol_size,tf_under_development,
                             tf_files_case_sensitive,
 <<<<<<< HEAD
@@ -296,6 +301,10 @@ unit i_sunos;
 >>>>>>> origin/cpstrnew
                             tf_requires_proper_alignment,tf_smartlink_library,
                             tf_has_winlike_resources];
+=======
+            flags        : [tf_needs_symbol_size,tf_under_development,tf_files_case_sensitive,tf_use_function_relative_addresses,
+                            tf_requires_proper_alignment,tf_smartlink_library];
+>>>>>>> graemeg/fixes_2_2
             cpu          : cpu_SPARC;
             unit_env     : 'SOLARISUNITS';
             extradefines : 'UNIX;LIBC;SUNOS;HASUNIX';

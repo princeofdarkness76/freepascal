@@ -32,9 +32,15 @@
    guint64  = qword;
 
    pgssize  = ^gssize;
+<<<<<<< HEAD
    gssize   = SizeInt;
    pgsize   = ^gsize;
    gsize    = SizeUInt;
+=======
+   gssize   = longint;
+   pgsize   = ^gsize;
+   gsize    = dword;
+>>>>>>> graemeg/fixes_2_2
 
 {$ENDIF read_forward_definitions}
 
@@ -102,7 +108,11 @@ const
    GLIB_SYSDEF_POLLHUP   = 16;
    GLIB_SYSDEF_POLLNVAL  = 32;
 
+<<<<<<< HEAD
 {$ifdef windows}
+=======
+{$ifdef win32}
+>>>>>>> graemeg/fixes_2_2
    G_MODULE_SUFFIX  = 'dll';
 {$else}
    G_MODULE_SUFFIX  = 'so';

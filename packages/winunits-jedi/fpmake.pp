@@ -15,6 +15,7 @@ begin
 
     P:=AddPackage('winunits-jedi');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -26,6 +27,12 @@ begin
     P.Email := '';
     P.Description := 'Very complete set of Windows units by Jedi Apilib';
     P.NeedLibC:= true;
+=======
+    P.Directory:='winunits-jedi';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.OSes:=[win32,win64];
+>>>>>>> graemeg/fixes_2_2
 
     P.Dependencies.Add('winunits-base');
 
@@ -257,9 +264,12 @@ begin
     // Build unit depending on all implicit units
     TBuild:=P.Targets.AddUnit('buildjwa.pp');
       TBuild.Install:=False;
+<<<<<<< HEAD
       TBuild.Dependencies.AddInclude('src/jediapilib.inc');
       TBuild.Dependencies.AddInclude('src/jedi.inc');
       TBuild.Dependencies.AddInclude('src/ModuleLoader.pas');
+=======
+>>>>>>> graemeg/fixes_2_2
       For I:=0 to P.Targets.Count-1 do
         begin
           T:=P.Targets.TargetItems[I];

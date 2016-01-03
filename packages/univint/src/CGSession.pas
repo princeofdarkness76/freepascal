@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 { CoreGraphics - CGSession.h
    Copyright (c) 2003-2008 Apple Inc.
    All rights reserved. }
@@ -24,6 +25,22 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+{
+ *  CGSession.h
+ *  CoreGraphics
+ *
+ *  Copyright (c) 2003 Apple Computer, Inc. All rights reserved.
+ *
+ }
+{       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -32,8 +49,13 @@
 
 unit CGSession;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -46,21 +68,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -95,6 +125,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -102,6 +134,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -329,6 +362,16 @@ interface
 >>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -354,6 +397,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -364,6 +411,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFDictionary,CGBase;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 {$ALIGN POWER}
@@ -387,31 +435,69 @@ function CGSessionCopyCurrentDictionary: CFDictionaryRef; external name '_CGSess
 
 { The session's short user name as set by the login operation, specified as
    a CFString value. }
+=======
+{$ALIGN POWER}
+
+
+{
+ * Fetch the current session's dictionary
+ * Returns NULL if the caller is not within a GUI session, as when the caller is a UNIX daemon,
+ * or if a system is configured to not run a Quartz GUI (window server disabled)
+ }
+function CGSessionCopyCurrentDictionary: CFDictionaryRef; external name '_CGSessionCopyCurrentDictionary';
+
+{
+ * Predefined keys for the Session dictionaries
+ * Values are provided as CFSTR() macros rather than extern C data for PEF/CFM support.
+ * Constant values will remain unchanged in future releases for PEF/CFM compatibility.
+ *
+ * These keys are guaranteed by the system to be present in a session dictionary.
+ * Additional keys and values may be defined and added to the dictionary by
+ * other system components as needed.
+ }
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+{$definec kCGSessionUserIDKey CFSTRP('kCGSSessionUserIDKey')}
+{$endc}
+        { value is a CFNumber encoding a uid_t for the session's current user. }
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kCGSessionUserNameKey CFSTRP('kCGSSessionUserNameKey')}
 {$endc}
+<<<<<<< HEAD
 
 { The set of hardware composing a console, specified as a CFNumber 32-bit
    unsigned integer value. }
+=======
+        { value is a CFString encoding the session's short user name as set by loginwindow }
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kCGSessionConsoleSetKey CFSTRP('kCGSSessionConsoleSetKey')}
 {$endc}
+<<<<<<< HEAD
 
 { An indication of whether the session is on a console, specified as a
    CFBoolean value. }
+=======
+        { value is a CFNumber encoding a 32 bit unsigned  integer value representing a set of hardware composing a console }
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kCGSessionOnConsoleKey CFSTRP('kCGSSessionOnConsoleKey')}
 {$endc}
+<<<<<<< HEAD
 
 { An indication of whether the login operation has been done, specified as
    a CFBoolean value. }
+=======
+        { value is a CFBoolean, kCFBooleanTrue if the session is on a console, otherwise kCFBooleanFalse }
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kCGSessionLoginDoneKey CFSTRP('kCGSessionLoginDoneKey')}
 {$endc}
+<<<<<<< HEAD
 
 { When the GUI session on a console changes, this notification is posted
    via `notify_post'. }
@@ -427,3 +513,20 @@ const
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+        { value is a CFBoolean, kCFBooleanTrue if login operation has been done, otherwise kCFBooleanFalse }
+
+{
+ * When the GUI session on a console changes, a notification
+ * is posted via the notify_post() API.  See notify (3) and
+ * notify.h for details.
+ }
+const
+	kCGNotifyGUIConsoleSessionChanged = 'com.apple.coregraphics.GUIConsoleSessionChanged';
+{ When a user logs in or out of a session we post a notification via notify_post() }
+const
+	kCGNotifyGUISessionUserChanged = 'com.apple.coregraphics.GUISessionUserChanged';
+
+
+end.
+>>>>>>> graemeg/fixes_2_2

@@ -470,11 +470,15 @@
 
   MakeIntResourceA = PAnsiChar;
   MakeIntResourceW = PWideChar;
+<<<<<<< HEAD
   {$ifdef UNICODE}
     MakeIntResource = MakeIntResourceW;
   {$else}
     MakeIntResource = MakeIntResourceA;
   {$endif}
+=======
+  MakeIntResource = MakeIntResourceA;
+>>>>>>> graemeg/fixes_2_2
 
   { was #define dname(params) def_expr }
   { argument types are unknown }
@@ -552,7 +556,11 @@
 
   { was #define dname(params) def_expr }
   { argument types are unknown }
+<<<<<<< HEAD
   function MAKEINTATOM(i : longint) : LPTSTR; inline;
+=======
+  function MAKEINTATOM(i : longint) : LPTSTR;
+>>>>>>> graemeg/fixes_2_2
 
   { was #define dname(params) def_expr }
   { argument types are unknown }

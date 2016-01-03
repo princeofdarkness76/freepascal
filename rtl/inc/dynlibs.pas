@@ -43,6 +43,7 @@ Function GetLoadErrorStr: string; inline;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function FreeLibrary(Lib : TLibHandle) : Boolean; inline;
 Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : {$ifdef cpui8086}FarPointer{$else}Pointer{$endif}; inline;
 =======
@@ -55,6 +56,11 @@ Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : {$ifdef
 Function SafeLoadLibrary(const Name : AnsiString) : TLibHandle;
 Function LoadLibrary(const Name : AnsiString) : TLibHandle;
 Function GetProcedureAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer;
+=======
+Function SafeLoadLibrary(Name : AnsiString) : TLibHandle;
+Function LoadLibrary(Name : AnsiString) : TLibHandle;
+Function GetProcedureAddress(Lib : TlibHandle; ProcName : AnsiString) : Pointer;
+>>>>>>> graemeg/fixes_2_2
 Function UnloadLibrary(Lib : TLibHandle) : Boolean;
 
 // Kylix/Delphi compability
@@ -75,6 +81,25 @@ Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer
 Type
   HModule = TLibHandle; 
 
+<<<<<<< HEAD
+=======
+// these are for easier crossplatform construction of dll names in dynloading libs.
+Const
+ {$ifdef Windows}
+  SharedSuffix  = 'dll';
+ {$else}
+   {$ifdef Darwin}
+     SharedSuffix = 'dylib';
+   {$else}
+     {$ifdef OS2}
+       SharedSuffix = 'dll';
+     {$else}
+       SharedSuffix = 'so';  
+     {$endif}
+   {$endif}
+ {$endif}      
+      
+>>>>>>> graemeg/fixes_2_2
 Implementation
 
 
@@ -167,10 +192,31 @@ begin
   Result:=System.GetProcedureAddress(Lib,Procname);
 end;
 
+<<<<<<< HEAD
 initialization
   InitDynLibs;
 finalization
 {$if declared(DoneDynLibs)}
   DoneDynLibs;
 {$endif}
+=======
+Function SafeLoadLibrary(Name : AnsiString) : TLibHandle;
+
+{$ifdef i386}
+ var w : word;
+{$endif}
+
+
+Begin
+{$ifdef i386}
+  w:=get8087cw;
+{$endif}
+ result:=loadlibrary(name);
+
+{$ifdef i386}
+  set8087cw(w);
+{$endif}
+End;
+
+>>>>>>> graemeg/fixes_2_2
 end.

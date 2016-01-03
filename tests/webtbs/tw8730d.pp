@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 { %target=darwin,linux,freebsd,solaris,beos,aix,android}
 { %NEEDLIBRARY }
 { %delfiles=tw8730a tw8730b }
+=======
+{ %target=darwin,linux,freebsd,solaris,beos}
+{ %NEEDLIBRARY }
+>>>>>>> graemeg/fixes_2_2
 
 { same as tw8730c, but linking to libc so it uses different }
 { startup code                                              }

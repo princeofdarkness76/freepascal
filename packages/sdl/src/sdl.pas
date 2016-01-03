@@ -297,6 +297,7 @@ uses
   Windows;
 {$ENDIF}
 
+<<<<<<< HEAD
 {$IFDEF OS2}
   doscalls;
 {$ENDIF OS2}
@@ -305,6 +306,11 @@ uses
   {$IFDEF FPC}
   pthreads,
   unixtype,
+=======
+{$IFDEF UNIX}
+  {$IFDEF FPC}
+  pthreads,
+>>>>>>> graemeg/fixes_2_2
   baseunix,
   {$IFNDEF GP2X}    
   unix,
@@ -334,10 +340,13 @@ const
   SDLLibName = 'SDL.dll';
 {$ENDIF}
 
+<<<<<<< HEAD
 {$IFDEF OS2}
   SDLLibName = 'SDL12.dll';
 {$ENDIF OS2}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 {$IFDEF UNIX}
 {$IFDEF DARWIN}
   SDLLibName = 'libSDL-1.2.0.dylib';
@@ -4211,10 +4220,13 @@ begin
   Result := libc.getenv(name);  
   {$ENDIF}
 
+<<<<<<< HEAD
   {$ELSE UNIX}
    {$IFDEF OS2}
   DosScanEnv (Name, Result);
    {$ENDIF OS2}
+=======
+>>>>>>> graemeg/fixes_2_2
   {$ENDIF}
 
   {$ENDIF}

@@ -8,6 +8,7 @@ name=fcl-image
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
 =======
@@ -17,6 +18,9 @@ version=3.1.1
 =======
 >>>>>>> origin/cpstrnew
 version=2.5.1
+=======
+version=2.2.5
+>>>>>>> graemeg/fixes_2_2
 
 [target]
 units=fpimgcmn fpimage pngcomn fpreadpng fpwritepng fpreadxpm fpwritexpm \
@@ -32,6 +36,7 @@ units_haiku=freetypeh freetype ftfont
 units_linux=freetypeh freetype ftfont
 units_freebsd=freetypeh freetype ftfont
 units_darwin=freetypeh freetype ftfont
+<<<<<<< HEAD
 units_iphonesim=freetypeh freetype ftfont
 units_solaris=freetypeh freetype ftfont
 rsts=pscanvas
@@ -40,6 +45,18 @@ exampledirs=examples
 
 [require]
 packages=rtl fpmkunit
+=======
+units_solaris=freetypeh freetype ftfont
+rsts=pscanvas
+exampledirs=examples
+
+[require]
+packages=pasjpeg paszlib fcl-base
+
+[compiler]
+options=-S2h
+sourcedir=src
+>>>>>>> graemeg/fixes_2_2
 
 [install]
 fpcpackage=y

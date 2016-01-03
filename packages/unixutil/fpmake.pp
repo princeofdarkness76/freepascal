@@ -14,6 +14,7 @@ begin
 
     P:=AddPackage('unixutil');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
 <<<<<<< HEAD
@@ -37,6 +38,18 @@ begin
 >>>>>>> origin/cpstrnew
     P.SourcePath.Add('src');
     T:=P.Targets.AddUnit('unixutils.pp');
+=======
+    P.Directory:='unixutil';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.4';
+    P.SourcePath.Add('src');
+
+    T:=P.Targets.AddUnit('unixutils.pp');
+      with T.Dependencies do
+        begin
+          AddUnit('libc');
+        end;
+>>>>>>> graemeg/fixes_2_2
 
 {$ifndef ALLPACKAGES}
     Run;

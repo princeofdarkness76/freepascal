@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -33,6 +34,17 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+	Copyright (c) 1998-2005, Apple, Inc. All rights reserved.
+}
+{	  Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, November 2005 }
+{
+    Modified for use with Free Pascal
+    Version 210
+    Please report any bugs to <gpc@microbizz.nl>
+}
+
+>>>>>>> graemeg/fixes_2_2
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -41,8 +53,13 @@
 
 unit CFXMLNode;
 interface
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0342}
+{$setc GAP_INTERFACES_VERSION := $0210}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -55,21 +72,29 @@ interface
 	{$error Conflicting initial definitions for FPC_BIG_ENDIAN and FPC_LITTLE_ENDIAN}
 {$endc}
 
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC}
+>>>>>>> graemeg/fixes_2_2
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/fixes_2_2
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -104,6 +129,8 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+=======
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -111,6 +138,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -342,6 +370,16 @@ interface
 {$elsec}
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+{$elifc defined __i386__ and __i386__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_X86 := TRUE}
+{$elsec}
+	{$error Neither __ppc__ nor __i386__ is defined.}
+{$endc}
+{$setc TARGET_CPU_PPC_64 := FALSE}
+>>>>>>> graemeg/fixes_2_2
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -367,6 +405,10 @@ interface
 {$setc TARGET_CPU_68K := FALSE}
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
+<<<<<<< HEAD
+=======
+{$setc TARGET_OS_MAC := TRUE}
+>>>>>>> graemeg/fixes_2_2
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -377,6 +419,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFArray,CFDictionary,CFString,CFTree,CFURL;
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 {$ALIGN POWER}
@@ -385,10 +428,16 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFString,CFTree,CFURL;
 {  CFXMLParser (and thus CFXMLNode) are deprecated as of Mac OS X 10.8 and iOS 6.0. The suggested replacements are the Foundation classes NSXMLParser and NSXMLDocument, or the libxml2 library. }
 
 
+=======
+{$ALIGN POWER}
+
+
+>>>>>>> graemeg/fixes_2_2
 const
 	kCFXMLNodeCurrentVersion = 1;
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -407,6 +456,9 @@ type
 =======
 	CFXMLNodeRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	CFXMLNodeRef = ^SInt32; { an opaque 32-bit type }
+>>>>>>> graemeg/fixes_2_2
 	CFXMLNodeRefPtr = ^CFXMLNodeRef;
 	CFXMLTreeRef = CFTreeRef;
 
@@ -436,6 +488,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFXMLNodeTypeCode = CFIndex;
 =======
 	CFXMLNodeTypeCode = SIGNEDLONG;
@@ -449,6 +502,9 @@ type
 =======
 	CFXMLNodeTypeCode = SIGNEDLONG;
 >>>>>>> origin/cpstrnew
+=======
+	CFXMLNodeTypeCode = SInt32;
+>>>>>>> graemeg/fixes_2_2
 const
 	kCFXMLNodeTypeDocument = 1;
 	kCFXMLNodeTypeElement = 2;
@@ -472,7 +528,11 @@ type
 		attributes: CFDictionaryRef;
 		attributeOrder: CFArrayRef;
 		isEmpty: Boolean;
+<<<<<<< HEAD
 		_reserved: array [0..3-1] of SInt8;
+=======
+		_reserved1,_reserved2,_reserved3: SInt8;
+>>>>>>> graemeg/fixes_2_2
 	end;
 
 type
@@ -535,6 +595,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFXMLEntityTypeCode = CFIndex;
 =======
 	CFXMLEntityTypeCode = SIGNEDLONG;
@@ -548,6 +609,9 @@ type
 =======
 	CFXMLEntityTypeCode = SIGNEDLONG;
 >>>>>>> origin/cpstrnew
+=======
+	CFXMLEntityTypeCode = SInt32;
+>>>>>>> graemeg/fixes_2_2
 const
 	kCFXMLEntityTypeParameter = 0;							{  Implies parsed, internal  }
 	kCFXMLEntityTypeParsedInternal = 1;
@@ -591,6 +655,7 @@ type
 }
 
 function CFXMLNodeGetTypeID: CFTypeID; external name '_CFXMLNodeGetTypeID';
+<<<<<<< HEAD
 (* CF_DEPRECATED(10_0, 10_8, 2_0, 6_0) *)
 
 { Creates a new node based on xmlType, dataString, and additionalInfoPtr.  version (together with xmlType) determines the expected structure of additionalInfoPtr }
@@ -612,11 +677,28 @@ function CFXMLNodeGetInfoPtr( node: CFXMLNodeRef ): UnivPtr; external name '_CFX
 
 function CFXMLNodeGetVersion( node: CFXMLNodeRef ): CFIndex; external name '_CFXMLNodeGetVersion';
 (* CF_DEPRECATED(10_0, 10_8, 2_0, 6_0) *)
+=======
+
+{ Creates a new node based on xmlType, dataString, and additionalInfoPtr.  version (together with xmlType) determines the expected structure of additionalInfoPtr }
+function CFXMLNodeCreate( alloc: CFAllocatorRef; xmlType: CFXMLNodeTypeCode; dataString: CFStringRef; additionalInfoPtr: {const} UnivPtr; version: CFIndex ): CFXMLNodeRef; external name '_CFXMLNodeCreate';
+
+{ Creates a copy of origNode (which may not be NULL). }
+function CFXMLNodeCreateCopy( alloc: CFAllocatorRef; origNode: CFXMLNodeRef ): CFXMLNodeRef; external name '_CFXMLNodeCreateCopy';
+
+function CFXMLNodeGetTypeCode( node: CFXMLNodeRef ): CFXMLNodeTypeCode; external name '_CFXMLNodeGetTypeCode';
+
+function CFXMLNodeGetString( node: CFXMLNodeRef ): CFStringRef; external name '_CFXMLNodeGetString';
+
+function CFXMLNodeGetInfoPtr( node: CFXMLNodeRef ): UnivPtr; external name '_CFXMLNodeGetInfoPtr';
+
+function CFXMLNodeGetVersion( node: CFXMLNodeRef ): CFIndex; external name '_CFXMLNodeGetVersion';
+>>>>>>> graemeg/fixes_2_2
 
 { CFXMLTreeRef }
 
 { Creates a childless, parentless tree from node }
 function CFXMLTreeCreateWithNode( allocator: CFAllocatorRef; node: CFXMLNodeRef ): CFXMLTreeRef; external name '_CFXMLTreeCreateWithNode';
+<<<<<<< HEAD
 (* CF_DEPRECATED(10_0, 10_8, 2_0, 6_0) *)
 
 { Extracts and returns the node stored in xmlTree }
@@ -627,3 +709,11 @@ function CFXMLTreeGetNode( xmlTree: CFXMLTreeRef ): CFXMLNodeRef; external name 
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+=======
+
+{ Extracts and returns the node stored in xmlTree }
+function CFXMLTreeGetNode( xmlTree: CFXMLTreeRef ): CFXMLNodeRef; external name '_CFXMLTreeGetNode';
+
+
+end.
+>>>>>>> graemeg/fixes_2_2
