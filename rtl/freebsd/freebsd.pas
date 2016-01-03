@@ -242,10 +242,13 @@ function clock_gettime(clk_id: clockid_t; tp: ptimespec): cint;  {$ifdef FPC_USE
 function clock_settime(clk_id: clockid_t; tp: ptimespec): cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'clock_settime'; {$ENDIF}
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/graemeg/clock_gettime
 implementation
 
 Uses Sysctl,
@@ -350,6 +353,9 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/graemeg/clock_gettime
 
 function clock_getres(clk_id: clockid_t; res: ptimespec): cint;
 begin
@@ -366,6 +372,7 @@ begin
   clock_settime := do_SysCall(syscall_nr_clock_settime,tsysparam(clk_id),tsysparam(tp));
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -374,6 +381,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/graemeg/clock_gettime
 {$ENDIF}
 
 function kernproc_getgenvalue(pid:pid_t;kernproc_variable:cint;var s:ansistring):cint;
