@@ -37,17 +37,22 @@
 =======
 >>>>>>> origin/fixes_2_2
  {	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
- 
+ {	 Pascal Translation Update:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, 2009 }
+
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -56,6 +61,7 @@
 
 unit CVPixelBuffer;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -68,6 +74,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -82,6 +92,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -89,21 +100,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -111,6 +131,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -121,6 +144,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -138,6 +162,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -145,10 +171,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -156,6 +185,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -376,18 +406,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/fixes_2.4
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -415,12 +502,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -431,6 +521,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes, CFArray, CFBase, CFDictionary, CVBase, CVImageBuffer, CVReturns;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
@@ -460,6 +551,13 @@ uses MacTypes, CFArray, CFBase, CFDictionary, CVBase, CVImageBuffer, CVReturns;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> origin/fixes_2.4
 {$ALIGN POWER}
 
  
@@ -472,6 +570,7 @@ uses MacTypes, CFArray, CFBase, CFDictionary, CVBase, CVImageBuffer, CVReturns;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -484,6 +583,9 @@ uses MacTypes, CFArray, CFBase, CFDictionary, CVBase, CVImageBuffer, CVReturns;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+{
+>>>>>>> origin/fixes_2.4
 #if COREVIDEO_SUPPORTS_IOSURFACE
 #endif // COREVIDEO_SUPPORTS_IOSURFACE
 }
@@ -495,6 +597,7 @@ uses MacTypes, CFArray, CFBase, CFDictionary, CVBase, CVImageBuffer, CVReturns;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -502,6 +605,8 @@ uses MacTypes, CFArray, CFBase, CFDictionary, CVBase, CVImageBuffer, CVReturns;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 CoreVideo pixel format type constants.
 CoreVideo does not provide support for all of these formats; this list just defines their names.
 }
@@ -533,6 +638,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kCVPixelFormatType_30RGB = FourCharCode('R10k');     { 30 bit RGB, 10-bit big-endian samples, 2 unused padding bits (at least significant end). }
 	kCVPixelFormatType_422YpCbCr8 = FourCharCode('2vuy');     { Component Y'CbCr 8-bit 4:2:2, ordered Cb Y'0 Cr Y'1 }
 	kCVPixelFormatType_4444YpCbCrA8 = FourCharCode('v408');     { Component Y'CbCrA 8-bit 4:4:4:4, ordered Cb Y' Cr A }
@@ -559,11 +665,17 @@ const
 	kCVPixelFormatType_4444YpCbCrA8 = FourCharCode('v408');     { Component Y'CbCrA 8-bit 4:4:4:4, ordered Cb Y' Cr A }
 	kCVPixelFormatType_4444YpCbCrA8R = FourCharCode('r408');     { Component Y'CbCrA 8-bit 4:4:4:4, rendering format. full range alpha, zero biased YUV, ordered A Y' Cb Cr }
 >>>>>>> origin/cpstrnew
+=======
+	kCVPixelFormatType_422YpCbCr8 = FourCharCode('2vuy');     { Component Y'CbCr 8-bit 4:2:2, ordered Cb Y'0 Cr Y'1 }
+	kCVPixelFormatType_4444YpCbCrA8 = FourCharCode('v408');     { Component Y'CbCrA 8-bit 4:4:4:4, ordered Cb Y' Cr A }
+	kCVPixelFormatType_4444YpCbCrA8R = FourCharCode('r408');     { Component Y'CbCrA 8-bit 4:4:4:4, rendering format. full range alpha, zero biased YUV, ordered A Y' Cb Cr }
+>>>>>>> origin/fixes_2.4
 	kCVPixelFormatType_444YpCbCr8 = FourCharCode('v308');     { Component Y'CbCr 8-bit 4:4:4 }
 	kCVPixelFormatType_422YpCbCr16 = FourCharCode('v216');     { Component Y'CbCr 10,12,14,16-bit 4:2:2 }
 	kCVPixelFormatType_422YpCbCr10 = FourCharCode('v210');     { Component Y'CbCr 10-bit 4:2:2 }
 	kCVPixelFormatType_444YpCbCr10 = FourCharCode('v410');     { Component Y'CbCr 10-bit 4:4:4 }
 	kCVPixelFormatType_420YpCbCr8Planar = FourCharCode('y420');   { Planar Component Y'CbCr 8-bit 4:2:0.  baseAddr points to a big-endian CVPlanarPixelBufferInfo_YCbCrPlanar struct }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -594,6 +706,9 @@ const
 =======
 	kCVPixelFormatType_422YpCbCr_4A_8BiPlanar = FourCharCode('a2vy'); { First plane: Video-range Component Y'CbCr 8-bit 4:2:2, ordered Cb Y'0 Cr Y'1; second plane: alpha 8-bit 0-255 }
 >>>>>>> origin/cpstrnew
+=======
+	kCVPixelFormatType_422YpCbCr_4A_8BiPlanar = FourCharCode('a2vy'); { First plane: Video-range Component Y'CbCr 8-bit 4:2:2, ordered Cb Y'0 Cr Y'1; second plane: alpha 8-bit 0-255 }
+>>>>>>> origin/fixes_2.4
 
 	
 {!
@@ -628,6 +743,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		componentInfo: array [0..1-1] of CVPlanarComponentInfo;
 =======
 	  componentInfo	: array[0..0] of CVPlanarComponentInfo;
@@ -641,6 +757,9 @@ type
 =======
 	  componentInfo	: array[0..0] of CVPlanarComponentInfo;
 >>>>>>> origin/cpstrnew
+=======
+	  componentInfo	: array[0..0] of CVPlanarComponentInfo;
+>>>>>>> origin/fixes_2.4
 	end;
 type
 	CVPlanarPixelBufferInfo_YCbCrPlanarPtr = ^CVPlanarPixelBufferInfo_YCbCrPlanar;
@@ -649,6 +768,7 @@ type
 		componentInfoCb: CVPlanarComponentInfo;
 		componentInfoCr: CVPlanarComponentInfo;
 	end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -731,6 +851,8 @@ var kCVPixelBufferIOSurfaceCoreAnimationCompatibilityKey: CFStringRef; external 
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 //#pragma mark BufferAttributeKeys
 var kCVPixelBufferPixelFormatTypeKey: CFStringRef; external name '_kCVPixelBufferPixelFormatTypeKey'; (* attribute const *)
@@ -758,9 +880,26 @@ var kCVPixelBufferCGImageCompatibilityKey: CFStringRef; external name '_kCVPixel
 var kCVPixelBufferOpenGLCompatibilityKey: CFStringRef; external name '_kCVPixelBufferOpenGLCompatibilityKey'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	    // CFBoolean
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+var kCVPixelBufferPlaneAlignmentKey: CFStringRef; external name '_kCVPixelBufferPlaneAlignmentKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)		    // CFNumber
+var kCVPixelBufferIOSurfacePropertiesKey: CFStringRef; external name '_kCVPixelBufferIOSurfacePropertiesKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)     // CFDictionary; presence requests buffer allocation via IOSurface
+// Ensures that CGLTexImageIOSurface2D() will succeed in creating a valid texture object from the CVPixelBuffer's IOSurface.
+var kCVPixelBufferIOSurfaceOpenGLTextureCompatibilityKey: CFStringRef; external name '_kCVPixelBufferIOSurfaceOpenGLTextureCompatibilityKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)	// CFBoolean
+// Ensures that CGLTexImageIOSurface2D() will succeed in creating a valid texture object from the CVPixelBuffer's IOSurface AND that the resulting texture may be used as a color buffer attachment to a OpenGL frame buffer object.
+var kCVPixelBufferIOSurfaceOpenGLFBOCompatibilityKey: CFStringRef; external name '_kCVPixelBufferIOSurfaceOpenGLFBOCompatibilityKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)	// CFBoolean
+// Ensures that the CVPixelBuffer's IOSurfaceRef can be displayed in an CoreAnimation CALayer.
+var kCVPixelBufferIOSurfaceCoreAnimationCompatibilityKey: CFStringRef; external name '_kCVPixelBufferIOSurfaceCoreAnimationCompatibilityKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)	// CFBoolean
+
+>>>>>>> origin/fixes_2.4
 
 {!
     @typedef	CVPixelBufferRef
@@ -846,6 +985,7 @@ function CVPixelBufferCreateResolvedAttributesDictionary( allocator: CFAllocator
     @param	pixelFormatType		Pixel format indentified by its respective OSType.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     @param	pixelBufferAttributes      A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
 =======
     @param	pixelBufferAttributes      A dictionary with additonal attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
@@ -853,6 +993,9 @@ function CVPixelBufferCreateResolvedAttributesDictionary( allocator: CFAllocator
 =======
     @param	pixelBufferAttributes      A dictionary with additonal attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
 >>>>>>> origin/fixes_2_2
+=======
+    @param	pixelBufferAttributes      A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+>>>>>>> origin/fixes_2.4
     @param      pixelBufferOut          The new pixel buffer will be returned here
     @result	returns kCVReturnSuccess on success.
 }    
@@ -883,6 +1026,7 @@ type
     @param      releaseRefCon           User data identifying the PixelBuffer for the release callback.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     @param      pixelBufferAttributes      A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
 =======
     @param      pixelBufferAttributes      A dictionary with additonal attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
@@ -890,6 +1034,9 @@ type
 =======
     @param      pixelBufferAttributes      A dictionary with additonal attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
 >>>>>>> origin/fixes_2_2
+=======
+    @param      pixelBufferAttributes      A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+>>>>>>> origin/fixes_2.4
     @param      pixelBufferOut          The new pixel buffer will be returned here
     @result	returns kCVReturnSuccess on success.
 }
@@ -925,6 +1072,7 @@ type
     @param	releaseRefCon		User data identifying the PixelBuffer for the release callback.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     @param	pixelBufferAttributes      A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
 =======
     @param	pixelBufferAttributes      A dictionary with additonal attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
@@ -932,6 +1080,9 @@ type
 =======
     @param	pixelBufferAttributes      A dictionary with additonal attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
 >>>>>>> origin/fixes_2_2
+=======
+    @param	pixelBufferAttributes      A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+>>>>>>> origin/fixes_2.4
     @param      pixelBufferOut          The new pixel buffer will be returned here
     @result	returns kCVReturnSuccess on success.
 }
@@ -967,21 +1118,21 @@ function CVPixelBufferUnlockBaseAddress( pixelBuffer: CVPixelBufferRef; unlockFl
 
 
 {!
-    @function   CVPixelBufferLockBaseAddress
-    @abstract   Description Locks the BaseAddress of the PixelBuffer to ensure that the is available.
-    @param      pixelBuffer Target PixelBuffer.
-    @param      lockFlags No options currently defined, pass 0.
-    @result     kCVReturnSuccess if the lock succeeded, or error code on failure
+	@function   CVPixelBufferLockBaseAddress
+	@abstract   Description Locks the BaseAddress of the PixelBuffer to ensure that the memory is accessible.
+	@param      pixelBuffer Target PixelBuffer.
+	@param      lockFlags See CVPixelBufferLockFlags.
+	@result     kCVReturnSuccess if the lock succeeded, or error code on failure
 }
 function CVPixelBufferLockBaseAddress( pixelBuffer: CVPixelBufferRef; lockFlags: CVOptionFlags ): CVReturn; external name '_CVPixelBufferLockBaseAddress';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 {!
-    @function   CVPixelBufferUnlockBaseAddress
-    @abstract   Description Unlocks the BaseAddress of the PixelBuffer.
-    @param      pixelBuffer Target PixelBuffer.
-    @param      unlockFlags No options currently defined, pass 0.
-    @result     kCVReturnSuccess if the unlock succeeded, or error code on failure
+	@function   CVPixelBufferUnlockBaseAddress
+	@abstract   Description Unlocks the BaseAddress of the PixelBuffer.
+	@param      pixelBuffer Target PixelBuffer.
+	@param      unlockFlags See CVPixelBufferLockFlags.
+	@result     kCVReturnSuccess if the unlock succeeded, or error code on failure
 }
 function CVPixelBufferUnlockBaseAddress( pixelBuffer: CVPixelBufferRef; unlockFlags: CVOptionFlags ): CVReturn; external name '_CVPixelBufferUnlockBaseAddress';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -1380,9 +1531,45 @@ end.
 function CVPixelBufferFillExtendedPixels( pixelBuffer: CVPixelBufferRef ): CVReturn; external name '_CVPixelBufferFillExtendedPixels';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
+{$ifc COREVIDEO_SUPPORTS_IOSURFACE}
+
+{!
+	@function   CVPixelBufferGetIOSurface
+	@abstract   Returns the IOSurface backing the pixel buffer, or NULL if it is not backed by an IOSurface.
+	@param      pixelBuffer Target PixelBuffer.
+}
+function CVPixelBufferGetIOSurface( pixelBuffer: CVPixelBufferRef ): IOSurfaceRef; external name '_CVPixelBufferGetIOSurface';
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+
+{!
+    @function   CVPixelBufferCreateWithIOSurface
+    @abstract   Call to create a single CVPixelBuffer for a passed-in IOSurface.
+    @discussion The CVPixelBuffer will retain the IOSurface.
+    	IMPORTANT NOTE: If you are using IOSurface to share CVPixelBuffers between processes
+    	and those CVPixelBuffers are allocated via a CVPixelBufferPool, it is important
+    	that the CVPixelBufferPool does not reuse CVPixelBuffers whose IOSurfaces are still
+    	in use in other processes.  
+    	CoreVideo and IOSurface will take care of this for if you use IOSurfaceCreateMachPort 
+    	and IOSurfaceLookupFromMachPort, but NOT if you pass IOSurfaceIDs.
+    @param      surface		            The IOSurface to wrap.
+    @param      pixelBufferAttributes   A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+    @param      pixelBufferOut          The new pixel buffer will be returned here
+    @result     returns kCVReturnSuccess on success.
+}
+function CVPixelBufferCreateWithIOSurface( allocator: CFAllocatorRef; surface: IOSurfaceRef; pixelBufferAttributes: CFDictionaryRef; var pixelBufferOut: CVPixelBufferRef ): CVReturn; external name '_CVPixelBufferCreateWithIOSurface';
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+
+{$endc} // COREVIDEO_SUPPORTS_IOSURFACE
+
+{$endc} {TARGET_OS_MAC}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

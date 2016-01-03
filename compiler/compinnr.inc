@@ -75,6 +75,7 @@ const
    in_ror_x             = 65;
    in_ror_x_y           = 66;
    in_rol_x             = 67;
+<<<<<<< HEAD
    in_rol_x_y           = 68;
    in_objc_selector_x   = 69;
    in_objc_protocol_x   = 70;
@@ -101,6 +102,10 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+   in_rol_x_x           = 68;
+
+>>>>>>> origin/fixes_2.4
 
 { Internal constant functions }
    in_const_sqr        = 100;

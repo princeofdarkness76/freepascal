@@ -56,6 +56,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function getResourceURI(const res: XMLString): XMLString;
 =======
 =======
@@ -74,6 +75,8 @@ type
     procedure TearDown; override;
     procedure GC(obj: TObject);
     procedure Load(out doc: TDOMDocument; const uri: string);
+=======
+>>>>>>> origin/fixes_2.4
     function getResourceURI(const res: WideString): WideString;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -155,6 +158,9 @@ begin
   FParser.Options.PreserveWhitespace := True;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
   //FParser.Options.ExpandEntities := True;
   FAutoFree := TObjectList.Create(True);
 =======
@@ -302,6 +308,7 @@ begin
         Exit;
   end;
   CheckFile(Base, Result);
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -316,6 +323,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 end;
 
 function TDOMTestBase.getImplAttr(const name: string): Boolean;
@@ -474,6 +483,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 procedure TDOMTestBase.LoadStringData(out Doc; const data: string);
 var
   src: TXMLInputSource;
@@ -481,15 +493,22 @@ begin
   src := TXMLInputSource.Create(data);
   try
     FParser.Parse(src, TXMLDocument(Doc));
+<<<<<<< HEAD
     GC(TObject(Doc));
+=======
+    GC(Doc);
+>>>>>>> origin/fixes_2.4
   finally
     src.Free;
   end;
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 end.
 

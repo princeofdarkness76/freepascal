@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 programs=mdtest crctest sha1test md5performancetest  sha1performancetest
 =======
 programs=mdtest crctest sha1test
@@ -29,6 +30,9 @@ packages=hash rtl-extra rtl-objpas
 =======
 >>>>>>> origin/fixes_2_2
 programs=mdtest
+=======
+programs=mdtest crctest sha1test
+>>>>>>> origin/fixes_2.4
 
 [require]
 packages=hash

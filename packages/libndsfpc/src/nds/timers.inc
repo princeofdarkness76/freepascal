@@ -207,6 +207,23 @@ const
   TIMER2_CR   : pcuint16 = pointer($0400010A);
   //!	Same as %TIMER_CR(3).
   TIMER3_CR   : pcuint16 = pointer($0400010E);
+<<<<<<< HEAD
+=======
+function TIMER_CR(n: cint): pcuint16; inline;
+
+const
+  TIMER_ENABLE    = (1 shl 7);
+  TIMER_IRQ_REQ   = (1 shl 6);
+  TIMER_CASCADE   = (1 shl 2);
+  TIMER_DIV_1     = (0);
+  TIMER_DIV_64    = (1);
+  TIMER_DIV_256   = (2);
+  TIMER_DIV_1024  = (3);
+
+procedure timerStop(channel: cint); inline;
+procedure cpuStartTiming(timer: cuint32); cdecl; external;
+function cpuEndTiming(): cuint32; cdecl; external;
+>>>>>>> origin/fixes_2.4
 {$endif NDS_INTERFACE}
 
 {$ifdef NDS_IMPLEMENTATION}

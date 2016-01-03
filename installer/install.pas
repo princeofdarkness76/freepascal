@@ -145,11 +145,15 @@ program install;
 
 
      maxpacks=30;
+<<<<<<< HEAD
      maxpackages=28;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     maxpackages=29;
+>>>>>>> origin/fixes_2.4
      maxdefcfgs=1024;
 
      HTMLIndexExt = '.htx';

@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  CTLine.h
  *  CoreText
  *
@@ -19,6 +20,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
  *	CTLine.h
  *	CoreText
  *
@@ -29,6 +32,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -36,6 +40,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {
     Modified for use with Free Pascal
     Version 308
@@ -94,6 +100,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -107,6 +114,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -129,6 +138,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -154,6 +164,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -164,6 +179,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -189,6 +205,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -199,6 +220,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -208,6 +230,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -221,6 +245,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -230,6 +255,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -240,6 +267,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -271,12 +299,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -302,10 +336,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -329,6 +366,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/fixes_2.4
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -378,6 +419,7 @@ uses MacTypes,CFBase,CFArray,CFAttributedString,CGBase,CGContext,CGGeometry;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifc TARGET_OS_MAC}
 
@@ -394,6 +436,10 @@ uses MacTypes,CFBase,CFArray,CFAttributedString,CGBase,CGContext,CGGeometry;
 {$ifc TARGET_OS_MAC}
 
 >>>>>>> origin/cpstrnew
+=======
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> origin/fixes_2.4
 {$ALIGN POWER}
 
 
@@ -415,6 +461,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CTLineRef = ^__CTLine; { an opaque type }
 	__CTLine = record end;
 =======
@@ -429,10 +476,14 @@ type
 =======
 	CTLineRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	CTLineRef = ^SInt32; { an opaque type }
+>>>>>>> origin/fixes_2.4
 	CTLineRefPtr = ^CTLineRef;
 
 
 {!
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -495,6 +546,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	@enum		CTLineTruncationType
 	@abstract	Truncation types required by CTLineCreateTruncatedLine. These
 				will tell truncation engine which type of truncation is being
@@ -514,6 +567,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -521,6 +575,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 }
 
 const
@@ -532,6 +588,7 @@ type
 
 
 {!
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -549,12 +606,15 @@ function CTLineGetTypeID: CFTypeID; external name '_CTLineGetTypeID';
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	@function	CTLineGetTypeID
 	@abstract	Returns the CFType of the line object
 }
 
 function CTLineGetTypeID: CFTypeID; external name '_CTLineGetTypeID';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -565,6 +625,8 @@ function CTLineGetTypeID: CFTypeID; external name '_CTLineGetTypeID';
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 
 { --------------------------------------------------------------------------- }
@@ -572,6 +634,7 @@ function CTLineGetTypeID: CFTypeID; external name '_CTLineGetTypeID';
 { --------------------------------------------------------------------------- }
 
 {!
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -663,6 +726,8 @@ function CTLineCreateJustifiedLine( line: CTLineRef; justificationFactor: CGFloa
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	@function	CTLineCreateWithAttributedString
 	@abstract	Creates a single immutable line object directly from an
 				attributed string.
@@ -746,6 +811,7 @@ function CTLineCreateJustifiedLine( line: CTLineRef; justificationFactor: CGFloa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -753,6 +819,8 @@ function CTLineCreateJustifiedLine( line: CTLineRef; justificationFactor: CGFloa
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 
 { --------------------------------------------------------------------------- }
@@ -760,6 +828,7 @@ function CTLineCreateJustifiedLine( line: CTLineRef; justificationFactor: CGFloa
 { --------------------------------------------------------------------------- }
 
 {!
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -862,6 +931,8 @@ procedure CTLineDraw( line: CTLineRef; context: CGContextRef ); external name '_
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	@function	CTLineGetGlyphCount
 	@abstract	Returns the total glyph count for the line object.
 
@@ -956,6 +1027,7 @@ procedure CTLineDraw( line: CTLineRef; context: CGContextRef ); external name '_
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -963,6 +1035,8 @@ procedure CTLineDraw( line: CTLineRef; context: CGContextRef ); external name '_
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 
 { --------------------------------------------------------------------------- }
@@ -970,6 +1044,7 @@ procedure CTLineDraw( line: CTLineRef; context: CGContextRef ); external name '_
 { --------------------------------------------------------------------------- }
 
 {!
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1082,6 +1157,8 @@ function CTLineGetImageBounds( line: CTLineRef; context: CGContextRef ): CGRect;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	@function	CTLineGetImageBounds
 	@abstract	Calculates the image bounds for a line.
 
@@ -1150,6 +1227,7 @@ function CTLineGetTrailingWhitespaceWidth( line: CTLineRef ): Float64; external 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1157,6 +1235,8 @@ function CTLineGetTrailingWhitespaceWidth( line: CTLineRef ): Float64; external 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 
 { --------------------------------------------------------------------------- }
@@ -1164,6 +1244,7 @@ function CTLineGetTrailingWhitespaceWidth( line: CTLineRef ): Float64; external 
 { --------------------------------------------------------------------------- }
 
 {!
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1236,6 +1317,8 @@ function CTLineGetOffsetForStringIndex( line: CTLineRef; charIndex: CFIndex; sec
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	@function	CTLineGetStringIndexForPosition
 	@abstract	Performs hit testing.
 
@@ -1301,6 +1384,7 @@ function CTLineGetOffsetForStringIndex( line: CTLineRef; charIndex: CFIndex; sec
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1308,6 +1392,8 @@ function CTLineGetOffsetForStringIndex( line: CTLineRef; charIndex: CFIndex; sec
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

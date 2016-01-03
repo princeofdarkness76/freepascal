@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 #
 
@@ -22,6 +23,8 @@ fpcpackage=y
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 #   Makefile.fpc for Free Pascal ImLib 1.x Packages
 #
 
@@ -47,6 +50,7 @@ fpcsubdir=packages
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -54,10 +58,13 @@ fpcsubdir=packages
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -154,11 +161,14 @@ endif
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 [shared]
 build=n
 
 [rules]
 .NOTPARALLEL:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -169,3 +179,5 @@ build=n
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4

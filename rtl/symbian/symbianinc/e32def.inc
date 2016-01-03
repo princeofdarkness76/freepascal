@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {%MainUnit ../symbian.pas}
 
 {
@@ -2865,6 +2868,7 @@ variables passed or returned by value.
 #endif /* __SOFTFP }
 
 
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -5737,3 +5741,5 @@ variables passed or returned by value.
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4

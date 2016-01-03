@@ -126,6 +126,7 @@ interface
          sec_init,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          sec_fini,
          {Objective-C common and fragile ABI }
          sec_objc_class,
@@ -189,6 +190,9 @@ interface
 =======
          sec_fini
 >>>>>>> origin/fixes_2_2
+=======
+         sec_fini
+>>>>>>> origin/fixes_2.4
        );
 
        TAsmSectionOrder = (secorder_begin,secorder_default,secorder_end);

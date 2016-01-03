@@ -840,7 +840,30 @@ begin
     ErrorFmt(SParWrongTokenSymbol,[s,fLastTokenStr]);
 end;
 
+<<<<<<< HEAD
 procedure TParser.Error(const Ident: string);
+=======
+procedure TParser.SkipBOM;
+var
+  i : integer;
+  bom : string[3];
+  backup : integer;
+begin
+  i:=1;
+  bom:='   ';
+  backup:=fPos;
+  while (fBuf[fPos] in [#$BB,#$BF,#$EF]) and (i<=3) do
+  begin
+    bom[i]:=fBuf[fPos];
+    inc(fPos);
+    inc(i);
+  end;
+  if (bom<>(#$EF+#$BB+#$BF)) then
+    fPos:=backup;
+end;
+
+procedure TParser.SkipSpaces;
+>>>>>>> origin/fixes_2.4
 begin
   ErrorStr(Ident);
 end;
@@ -1050,6 +1073,7 @@ begin
   fFloatType:=#0;
   fToken:=#0;
   LoadBuffer;
+  SkipBom;
   NextToken;
 end;
 

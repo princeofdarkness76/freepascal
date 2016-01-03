@@ -42,7 +42,7 @@ exampledirs=examples
 version=2.2.5
 
 [target]
-units=md5 crc ntlm uuid
+units=md5 crc ntlm uuid sha1
 units_linux=unixcrypt
 exampledirs=examples
 <<<<<<< HEAD

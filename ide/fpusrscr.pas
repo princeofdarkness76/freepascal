@@ -26,6 +26,7 @@ uses
   termio,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef linux}
   linuxvcs,
 {$endif}
@@ -33,6 +34,11 @@ uses
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifdef linux}
+  linuxvcs,
+{$endif}
+>>>>>>> origin/fixes_2.4
 {$endif}
   video,Objects;
 
@@ -786,15 +792,21 @@ begin
                 TTYFd:=fpOpen(FName, &666, O_RdWr); { open console }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
                 if TTYFd = -1 then
                 begin
                   if try_grab_vcsa then
                     TTYFd:=fpOpen(FName, &666, O_RdWr); { try again }
                 end;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
                 If TTYFd <>-1 Then
                   Console:=ttyLinux;
 {$endif}

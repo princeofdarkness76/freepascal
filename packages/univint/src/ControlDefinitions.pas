@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -34,6 +35,11 @@
  
      Copyright:  © 1999-2005 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2_2
+=======
+     Version:    HIToolbox-437~1
+ 
+     Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -73,16 +79,22 @@
  
 }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+{       Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -91,6 +103,7 @@
 
 unit ControlDefinitions;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -103,6 +116,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -117,6 +134,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -124,21 +142,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -146,6 +173,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -156,6 +186,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -173,6 +204,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -180,10 +213,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -191,6 +227,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -407,18 +444,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/fixes_2.4
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -446,12 +540,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -461,6 +558,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,TextEdit,AXUIElement,AEDataModel,CFBase,Events,QuickdrawTypes,IconsCore,CFData,CFDictionary,CFString,DateTimeUtils,Drag,TextCommon,Appearance,CarbonEvents,Controls,Lists,MacHelp,Menus,HIObject;
@@ -491,6 +589,13 @@ uses MacTypes,TextEdit,AXUIElement,AEDataModel,CFBase,Events,Quickdraw,Icons,CFD
 uses MacTypes,TextEdit,AXUIElement,AEDataModel,CFBase,Events,Quickdraw,Icons,CFData,CFDictionary,DateTimeUtils,Drag,TextCommon,Appearance,CarbonEvents,Controls,Lists,MacHelp,Menus,CFString;
 
 >>>>>>> origin/fixes_2_2
+=======
+uses MacTypes,TextEdit,AXUIElement,AEDataModel,CFBase,Events,QuickdrawTypes,IconsCore,CFData,CFDictionary,CFString,DateTimeUtils,Drag,TextCommon,Appearance,CarbonEvents,Controls,Lists,MacHelp,Menus,HIObject;
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+>>>>>>> origin/fixes_2.4
 
 {$ALIGN MAC68K}
 
@@ -503,6 +608,7 @@ uses MacTypes,TextEdit,AXUIElement,AEDataModel,CFBase,Events,Quickdraw,Icons,CFD
  *    applications to use. They are described herein.
  }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -563,6 +669,8 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {  ¥ Control Definition IDÕs                                                                           }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 { Standard System 7 procIDs}
@@ -605,6 +713,9 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {--------------------------------------------------------------------------------------}
 {  ¥ DEPRECATED                                                                        }
 {  All functions below this point are either deprecated (they continue to function     }
@@ -618,6 +729,7 @@ const
     Use the EditUnicodeText control to replace the Edit Text control. It uses the same
     data tags as the Edit Text control.
 }
+<<<<<<< HEAD
 
 { Edit Text proc IDs }
 <<<<<<< HEAD
@@ -706,126 +818,145 @@ const
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
-{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
-{  ¥ Control Types and IDÕs available only with Appearance 1.0 and later                               }
-{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
-{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
-{  ¥ BEVEL BUTTON INTERFACE (CDEF 2)                                                   }
-{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
-{  Bevel buttons allow you to control the content type (pict/icon/etc.), the behavior  }
-{ (pushbutton/toggle/sticky), and the bevel size. You also have the option of          }
-{  attaching a menu to it. When a menu is present, you can specify which way the       }
-{  popup arrow is facing (down or right).                                              }
-{  This is all made possible by overloading the Min, Max, and Value parameters for the }
-{  control, as well as adjusting the variant. Here's the breakdown of what goes where: }
-{  Parameter                   What Goes Here                                          }
-{  ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ         ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ    }
-{  Min                         Hi Byte = Behavior, Lo Byte = content type.             }
-{  Max                         ResID for resource-based content types.                 }
-{  Value                       MenuID to attach, 0 = no menu, please.                  }
-{  The variant is broken down into two halfs. The low 2 bits control the bevel type.   }
-{  Bit 2 controls the popup arrow direction (if a menu is present) and bit 3 controls  }
-{  whether or not to use the control's owning window's font.                           }
-{  Constants for all you need to put this together are below. The values for behaviors }
-{  are set up so that you can simply add them to the content type and pass them into   }
-{  the Min parameter of NewControl.                                                    }
-{  An example call:                                                                    }
-{  control = NewControl( window, &bounds, "\p", true, 0, kControlContentIconSuiteRes + }
-{                          kBehaviorToggles, myIconSuiteID, bevelButtonSmallBevelProc, }
-{                          0L );                                                       }
-{  Attaching a menu:                                                                   }
-{  control = NewControl( window, &bounds, "\p", true, kMyMenuID,                       }
-{          kControlContentIconSuiteRes, myIconSuiteID, bevelButtonSmallBevelProc +     }
-{          kBevelButtonMenuOnRight, 0L );                                              }
-{  This will attach menu ID kMyMenuID to the button, with the popup arrow facing right.}
-{  This also puts the menu up to the right of the button. You can also specify that a  }
-{  menu can have multiple items checked at once by adding kBehaviorMultiValueMenus     }
-{  into the Min parameter. If you do use multivalue menus, the GetBevelButtonMenuValue }
-{  helper function will return the last item chosen from the menu, whether or not it   }
-{  was checked.                                                                        }
-{  NOTE:   Bevel buttons with menus actually have *two* values. The value of the       }
-{          button (on/off), and the value of the menu. The menu value can be gotten    }
-{          with the GetBevelButtonMenuValue helper function.                           }
-{  Handle-based Content                                                                }
-{  ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ                                                                }
-{  You can create your control and then set the content to an existing handle to an    }
-{  icon suite, etc. using the macros below. Please keep in mind that resource-based    }
-{  content is owned by the control, handle-based content is owned by you. The CDEF will}
-{  not try to dispose of handle-based content. If you are changing the content type of }
-{  the button on the fly, you must make sure that if you are replacing a handle-       }
-{  based content with a resource-based content to properly dispose of the handle,      }
-{  else a memory leak will ensue.                                                      }
-{  Textual Content                                                                     }
-{  ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ                                                                }
-{  Please note that if a bevel button gets its textual content from the title          }
-{  of the control. To alter the textual content of a bevel button, use the             }
-{  SetControlTitle[WithCFString] API.                                                  }
-{ Bevel Button Proc IDs }
+{ Edit Text proc IDs }
 const
-	kControlBevelButtonSmallBevelProc = 32;
-	kControlBevelButtonNormalBevelProc = 33;
-	kControlBevelButtonLargeBevelProc = 34;
+	kControlEditTextProc = 272;
+	kControlEditTextPasswordProc = 274;
 
-{ Add these variant codes to kBevelButtonSmallBevelProc to change the type of button }
+{ proc IDs available with Appearance 1.1 or later }
 const
-	kControlBevelButtonSmallBevelVariant = 0;
-	kControlBevelButtonNormalBevelVariant = 1 shl 0;
-	kControlBevelButtonLargeBevelVariant = 1 shl 1;
-	kControlBevelButtonMenuOnRightVariant = 1 shl 2;
-
-{ Bevel Thicknesses }
-type
-	ControlBevelThickness = UInt16;
-const
-	kControlBevelButtonSmallBevel = 0;
-	kControlBevelButtonNormalBevel = 1;
-	kControlBevelButtonLargeBevel = 2;
-
-{ Behaviors of bevel buttons. These are set up so you can add  }
-{ them together with the content types.                        }
-const
-	kControlBehaviorPushbutton = 0;
-	kControlBehaviorToggles = $0100;
-	kControlBehaviorSticky = $0200;
-	kControlBehaviorSingleValueMenu = 0;
-	kControlBehaviorMultiValueMenu = $4000; { only makes sense when a menu is attached.}
-	kControlBehaviorOffsetContents = $8000;
-
-{ Behaviors for 1.0.1 or later }
-const
-	kControlBehaviorCommandMenu = $2000; { menu holds commands, not choices. Overrides multi-value bit.}
-
-type
-	ControlBevelButtonBehavior = UInt16;
-type
-	ControlBevelButtonMenuBehavior = UInt16;
-{ Bevel Button Menu Placements }
-type
-	ControlBevelButtonMenuPlacement = UInt16;
-const
-	kControlBevelButtonMenuOnBottom = 0;
-	kControlBevelButtonMenuOnRight = 1 shl 2;
+	kControlEditTextInlineInputProc = 276; { Can't combine with the other variants}
 
 { Control Kind Tag }
 const
-	kControlKindBevelButton = FourCharCode('bevl');
+	kControlKindEditText = FourCharCode('etxt');
 
-{ The HIObject class ID for the HIBevelButton class. }
-{$ifc USE_CFSTR_CONSTANT_MACROS}
-{$definec kHIBevelButtonClassID CFSTRP('com.apple.HIBevelButton')}
-{$endc}
-{ Creation API: Carbon Only }
+{$ifc not TARGET_CPU_64}
 {
+ *  CreateEditTextControl()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use CreateEditUnicodeTextControl API instead.
+ *  
+ *  Summary:
+ *    Creates a new edit text control.
+ *  
+ *  Discussion:
+ *    This control is a legacy control. It is deprecated in favor of
+ *    the EditUnicodeText control, which handles Unicode and draws its
+ *    text using antialiasing.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    window:
+ *      The window in which the control should be placed. May be NULL
+ *      in 10.3 and later.
+ *    
+ *    boundsRect:
+ *      The bounds of the control, in local coordinates of the window.
+ *    
+ *    text:
+ *      The text of the control. May be NULL.
+ *    
+ *    isPassword:
+ *      A Boolean indicating whether the field is to be used as a
+ *      password field. Passing false indicates that the field is to
+ *      display entered text normally. True means that the field will
+ *      be used as a password field and any text typed into the field
+ *      will be displayed only as bullets.
+ *    
+ *    useInlineInput:
+ *      A Boolean indicating whether or not the control is to accept
+ *      inline input. Pass true to to accept inline input, otherwise
+ *      pass false.
+ *    
+ *    style:
+ *      The control's font style, size, color, and so on. May be NULL.
+ *    
+ *    outControl:
+ *      On exit, contains the new control (if noErr is returned as the
+ *      result code).
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+function CreateEditTextControl( window: WindowRef; const (*var*) boundsRect: Rect; text: CFStringRef { can be NULL }; isPassword: Boolean; useInlineInput: Boolean; {const} style: ControlFontStyleRecPtr { can be NULL }; var outControl: ControlRef ): OSStatus; external name '_CreateEditTextControl';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{ ControlData tags supported only by the classic EditText control}
+{$endc} {not TARGET_CPU_64}
+
+const
+	kControlEditTextTEHandleTag = FourCharCode('than'); { The TEHandle of the text edit record}
+	kControlEditTextInlinePreUpdateProcTag = FourCharCode('prup'); { TSMTEPreUpdateUPP and TSMTEPostUpdateUpp. For use with inline input variant...}
+	kControlEditTextInlinePostUpdateProcTag = FourCharCode('poup'); { ...The refCon parameter will contain the ControlRef.}
+
+{
+    The classic EditText control also supports these tags defined for the EditUnicodeText control:
+    
+        kControlEditTextLockedTag
+        kControlEditTextStyleTag
+        kControlEditTextFixedTextTag
+        kControlEditTextTextTag
+        kControlEditTextKeyFilterTag
+        kControlEditTextValidationProcTag
+        kControlEditTextSelectionTag
+        kControlEditTextKeyScriptBehaviorTag
+        kControlEditTextCFStringTag
+        kControlEditTextPasswordTag
+        kControlEditTextPasswordCFStringTag
+}
+
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{  ¥ PICTURE CONTROL (CDEF 19)                                                         }
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{  Value parameter should contain the ID of the picture you wish to display when       }
+{  creating controls of this type. If you don't want the control tracked at all, use   }
+{  the 'no track' variant.                                                             }
+{ Picture control proc IDs }
+const
+	kControlPictureProc = 304;
+	kControlPictureNoTrackProc = 305;   { immediately returns kControlPicturePart}
+
+{ Control Kind Tag }
+const
+	kControlKindPicture = FourCharCode('pict');
+
+{ The HIObject class ID for the HIPictureView class. }
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+{$definec kHIPictureViewClassID CFSTRP('com.apple.HIPictureView')}
+{$endc}
+{$ifc not TARGET_CPU_64}
+{
+<<<<<<< HEAD
  *  CreateBevelButtonControl()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  CreatePictureControl()
+ *  
+ *  Summary:
+ *    Creates a picture control.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Parameters:
@@ -924,108 +1055,134 @@ const
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  Parameters:
+ *    
+ *    window:
+ *      The window that should contain the control. May be NULL on 10.3
+ *      and later.
+ *    
+ *    boundsRect:
+ *      The bounding box of the control.
+ *    
+ *    content:
+ *      The descriptor for the picture you want the control to display.
+ *    
+ *    dontTrack:
+ *      A Boolean value indicating whether the control should hilite
+ *      when it is clicked on. False means hilite and track the mouse.
+ *    
+ *    outControl:
+ *      On exit, contains the new control.
+ *  
+>>>>>>> origin/fixes_2.4
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
-function CreateBevelButtonControl( window: WindowRef; const (*var*) boundsRect: Rect; title: CFStringRef; thickness: ControlBevelThickness; behavior: ControlBevelButtonBehavior; info: ControlButtonContentInfoPtr; menuID: SInt16; menuBehavior: ControlBevelButtonMenuBehavior; menuPlacement: ControlBevelButtonMenuPlacement; var outControl: ControlRef ): OSStatus; external name '_CreateBevelButtonControl';
+function CreatePictureControl( window: WindowRef { can be NULL }; const (*var*) boundsRect: Rect; const (*var*) content: ControlButtonContentInfo; dontTrack: Boolean; var outControl: ControlRef ): OSStatus; external name '_CreatePictureControl';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
-{ Graphic Alignments }
-type
-	ControlButtonGraphicAlignment = SInt16;
+{ Tagged data supported by picture controls }
+{$endc} {not TARGET_CPU_64}
+
 const
-	kControlBevelButtonAlignSysDirection = -1; { only left or right}
-	kControlBevelButtonAlignCenter = 0;
-	kControlBevelButtonAlignLeft = 1;
-	kControlBevelButtonAlignRight = 2;
-	kControlBevelButtonAlignTop = 3;
-	kControlBevelButtonAlignBottom = 4;
-	kControlBevelButtonAlignTopLeft = 5;
-	kControlBevelButtonAlignBottomLeft = 6;
-	kControlBevelButtonAlignTopRight = 7;
-	kControlBevelButtonAlignBottomRight = 8;
+	kControlPictureHandleTag = FourCharCode('pich'); { PicHandle}
 
-{ Text Alignments }
-type
-	ControlButtonTextAlignment = SInt16;
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{  ¥ LIST BOX (CDEF 22)                                                                }
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{  Lists use an auxiliary resource to define their format. The resource type used is   }
+{  'ldes' and a definition for it can be found in Appearance.r. The resource ID for    }
+{  the ldes is passed in the 'value' parameter when creating the control. You may pass }
+{  zero in value. This tells the List Box control to not use a resource. The list will }
+{  be created with default values, and will use the standard LDEF (0). You can change  }
+{  the list by getting the list handle. You can set the LDEF to use by using the tag   }
+{  below (kControlListBoxLDEFTag)                                                      }
+{ List Box proc IDs }
 const
-	kControlBevelButtonAlignTextSysDirection = teFlushDefault;
-	kControlBevelButtonAlignTextCenter = teCenter;
-	kControlBevelButtonAlignTextFlushRight = teFlushRight;
-	kControlBevelButtonAlignTextFlushLeft = teFlushLeft;
+	kControlListBoxProc = 352;
+	kControlListBoxAutoSizeProc = 353;
 
-{ Text Placements }
-type
-	ControlButtonTextPlacement = SInt16;
+{ Control Kind Tag }
 const
-	kControlBevelButtonPlaceSysDirection = -1; { if graphic on right, then on left}
-	kControlBevelButtonPlaceNormally = 0;
-	kControlBevelButtonPlaceToRightOfGraphic = 1;
-	kControlBevelButtonPlaceToLeftOfGraphic = 2;
-	kControlBevelButtonPlaceBelowGraphic = 3;
-	kControlBevelButtonPlaceAboveGraphic = 4;
+	kControlKindListBox = FourCharCode('lbox');
 
-
-{ Data tags supported by the bevel button controls }
-const
-	kControlBevelButtonContentTag = FourCharCode('cont'); { ButtonContentInfo}
-	kControlBevelButtonTransformTag = FourCharCode('tran'); { IconTransformType}
-	kControlBevelButtonTextAlignTag = FourCharCode('tali'); { ButtonTextAlignment}
-	kControlBevelButtonTextOffsetTag = FourCharCode('toff'); { SInt16}
-	kControlBevelButtonGraphicAlignTag = FourCharCode('gali'); { ButtonGraphicAlignment}
-	kControlBevelButtonGraphicOffsetTag = FourCharCode('goff'); { Point}
-	kControlBevelButtonTextPlaceTag = FourCharCode('tplc'); { ButtonTextPlacement}
-	kControlBevelButtonMenuValueTag = FourCharCode('mval'); { SInt16}
-	kControlBevelButtonMenuHandleTag = FourCharCode('mhnd'); { MenuRef}
-	kControlBevelButtonMenuRefTag = FourCharCode('mhnd'); { MenuRef}
-	kControlBevelButtonCenterPopupGlyphTag = FourCharCode('pglc'); { Boolean: true = center, false = bottom right}
-
-{ These are tags in 1.0.1 or later }
-const
-	kControlBevelButtonLastMenuTag = FourCharCode('lmnu'); { SInt16: menuID of last menu item selected from}
-	kControlBevelButtonMenuDelayTag = FourCharCode('mdly'); { SInt32: ticks to delay before menu appears}
-
-{ tags available with Appearance 1.1 or later }
-const
-{ Boolean: True = if an icon of the ideal size for}
-                                        { the button isn't available, scale a larger or}
-                                        { smaller icon to the ideal size. False = don't}
-                                        { scale; draw a smaller icon or clip a larger icon.}
-                                        { Default is false. Only applies to IconSuites and}
-	kControlBevelButtonScaleIconTag = FourCharCode('scal'); { IconRefs.}
-
-{ tags available in Mac OS X and later }
-const
-	kControlBevelButtonOwnedMenuRefTag = FourCharCode('omrf'); { MenuRef (control will dispose)}
-	kControlBevelButtonKindTag = FourCharCode('bebk'); { ThemeButtonKind ( kTheme[Small,Medium,Large,Rounded]BevelButton )}
-
-
+{$ifc not TARGET_CPU_64}
 {
- *  Summary:
- *    Tags available with Mac OS X 10.3 or later
+ *  CreateListBoxControl()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   not available
  }
-const
-{
-   * Passed data is an Boolean.  Gets or sets whether or not the
-   * associated menu is a multi-value menu or not.  True means that the
-   * menu can have multiple selections.
-   }
-	kControlBevelButtonIsMultiValueMenuTag = FourCharCode('mult');
+function CreateListBoxControl( window: WindowRef; const (*var*) boundsRect: Rect; autoSize: Boolean; numRows: SInt16; numColumns: SInt16; horizScroll: Boolean; vertScroll: Boolean; cellHeight: SInt16; cellWidth: SInt16; hasGrowSpace: Boolean; const (*var*) listDef: ListDefSpec; var outControl: ControlRef ): OSStatus; external name '_CreateListBoxControl';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
-{ Helper routines are available only thru the shared library/glue. }
+
+{ Tagged data supported by list box }
+{$endc} {not TARGET_CPU_64}
+
+const
+	kControlListBoxListHandleTag = FourCharCode('lhan'); { ListHandle}
+	kControlListBoxKeyFilterTag = kControlKeyFilterTag; { ControlKeyFilterUPP}
+	kControlListBoxFontStyleTag = kControlFontStyleTag; { ControlFontStyleRec}
+
+{ New tags in 1.0.1 or later }
+const
+	kControlListBoxDoubleClickTag = FourCharCode('dblc'); { Boolean. Was last click a double-click?}
+	kControlListBoxLDEFTag = FourCharCode('ldef'); { SInt16. ID of LDEF to use.}
+
+{ Resource Types }
+const
+	kControlListDescResType = FourCharCode('ldes'); { used for list box control (Appearance 1.0 and later)}
+
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{  ¥ SCROLL TEXT BOX (CDEF 27)                                                         }
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{  This control implements a scrolling box of (non-editable) text. This is useful for  }
+{  credits in about boxes, etc.                                                        }
+{  The standard version of this control has a scroll bar, but the autoscrolling        }
+{  variant does not. The autoscrolling variant needs two pieces of information to      }
+{  work: delay (in ticks) before the scrolling starts, and time (in ticks) between     }
+{  scrolls. It will scroll one pixel at a time, unless changed via SetControlData.     }
+{  Parameter                   What Goes Here                                          }
+{  ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ         ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ    }
+{  Value                       Resource ID of 'TEXT'/'styl' content.                   }
+{  Min                         Scroll start delay (in ticks)                       .   }
+{  Max                         Delay (in ticks) between scrolls.                       }
+{  NOTE: This control is only available with Appearance 1.1.                           }
+{ Scroll Text Box Proc IDs }
+const
+	kControlScrollTextBoxProc = 432;
+	kControlScrollTextBoxAutoScrollProc = 433;
+
+{ Control Kind Tag }
+const
+	kControlKindScrollingTextBox = FourCharCode('stbx');
+
+{$ifc not TARGET_CPU_64}
 {
+<<<<<<< HEAD
  *  GetBevelButtonMenuValue()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  CreateScrollingTextBoxControl()
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Parameters:
@@ -8130,6 +8287,8 @@ const
  *  
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -8139,6 +8298,7 @@ function CreateScrollingTextBoxControl( window: WindowRef; const (*var*) boundsR
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 =======
 function CreateScrollingTextBoxControl( window: WindowRef; const (*var*) boundsRect: Rect; contentResID: SInt16; autoScroll: Boolean; delayBeforeAutoScroll: UInt32; delayBetweenAutoScroll: UInt32; autoScrollAmount: UInt16; var outControl: ControlRef ): OSStatus; external name '_CreateScrollingTextBoxControl';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -8221,12 +8381,24 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{ Tagged data supported by Scroll Text Box }
+{$endc} {not TARGET_CPU_64}
+
+const
+	kControlScrollTextBoxDelayBeforeAutoScrollTag = FourCharCode('stdl'); { UInt32 (ticks until autoscrolling starts)}
+	kControlScrollTextBoxDelayBetweenAutoScrollTag = FourCharCode('scdl'); { UInt32 (ticks between scrolls)}
+	kControlScrollTextBoxAutoScrollAmountTag = FourCharCode('samt'); { UInt16 (pixels per scroll) -- defaults to 1}
+	kControlScrollTextBoxContentsTag = FourCharCode('tres'); { SInt16 (resource ID of 'TEXT'/'styl') -- write only!}
+	kControlScrollTextBoxAnimatingTag = FourCharCode('anim'); { Boolean (whether the text box should auto-scroll)}
+>>>>>>> origin/fixes_2.4
 
 {$ifc OLDROUTINENAMES}
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 {  ¥ OLDROUTINENAMES                                                                   }
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -8243,6 +8415,8 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 	inLabel = kControlLabelPart;
 	inMenu = kControlMenuPart;
 	inTriangle = kControlTrianglePart;
@@ -8270,6 +8444,7 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
@@ -8286,3 +8461,10 @@ end.
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {TARGET_OS_MAC}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+
+end.
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

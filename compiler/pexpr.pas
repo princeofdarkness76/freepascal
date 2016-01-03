@@ -1461,6 +1461,7 @@ implementation
               statement_syssym := inline_setlength;
             end;
 
+<<<<<<< HEAD
           in_objc_selector_x:
             begin
               if (m_objectivec1 in current_settings.modeswitches) then
@@ -1496,6 +1497,8 @@ implementation
                 end;
             end;
 
+=======
+>>>>>>> origin/fixes_2.4
           in_length_x:
             begin
               consume(_LKLAMMER);
@@ -4190,8 +4193,13 @@ implementation
            p1:=nil;
            spezcontext:=nil;
 
+<<<<<<< HEAD
            { avoid warning }
            fillchar(dummypos,sizeof(dummypos),0);
+=======
+      { returns whether or not p1 has been changed }
+      function postfixoperators(var p1:tnode;var again:boolean): boolean;
+>>>>>>> origin/fixes_2.4
 
 <<<<<<< HEAD
            allowspecialize:=not (m_delphi in current_settings.modeswitches) and
@@ -4429,6 +4437,7 @@ implementation
                  end;
              end;
 
+<<<<<<< HEAD
            { Access to funcret or need to call the function? }
            if (srsym.typ in [absolutevarsym,localvarsym,paravarsym]) and
               (vo_is_funcret in tabstractvarsym(srsym).varoptions) and
@@ -4466,6 +4475,28 @@ implementation
                 end;
               srsymtable:=srsym.owner;
             end;
+=======
+        var
+          protsym  : tpropertysym;
+          p2,p3  : tnode;
+          srsym  : tsym;
+          srsymtable : TSymtable;
+          classh     : tobjectdef;
+          { shouldn't be used that often, so the extra overhead is ok to save
+            stack space }
+          dispatchstring : ansistring;
+          nodechanged    : boolean;
+        label
+          skipreckklammercheck;
+        begin
+          result:=false;
+          again:=true;
+          while again do
+           begin
+             { we need the resultdef }
+             do_typecheckpass_changed(p1,nodechanged);
+             result:=result or nodechanged;
+>>>>>>> origin/fixes_2.4
 
             begin
               case srsym.typ of
@@ -4576,6 +4607,7 @@ implementation
                       begin
                         consume(_LECKKLAMMER);
                         repeat
+                          { in all of the cases below, p1 is changed }
                           case p1.resultdef.typ of
                             pointerdef:
                               begin
@@ -6691,6 +6723,7 @@ implementation
                     postfixoperators(p1,again);
 >>>>>>> graemeg/cpstrnew
                   end;
+<<<<<<< HEAD
                  got_addrn:=false;
                  p1:=caddrnode.create(p1);
                  p1.fileinfo:=filepos;
@@ -6728,6 +6761,16 @@ implementation
 >>>>>>> graemeg/cpstrnew
                   end;
                end;
+=======
+             end;
+
+             { we only try again if p1 was changed }
+             if again or
+                (p1.nodetype=errorn) then
+               result:=true;
+           end; { while again }
+        end;
+>>>>>>> origin/fixes_2.4
 
              _LECKKLAMMER :
                begin
@@ -6747,6 +6790,7 @@ implementation
                  p1:=cunaryplusnode.create(p1);
                end;
 
+<<<<<<< HEAD
              _MINUS :
                begin
                  consume(_MINUS);
@@ -6815,6 +6859,40 @@ implementation
                   end;
                end;
            _OBJCPROTOCOL:
+=======
+      var
+         l          : longint;
+         ic         : int64;
+         qc         : qword;
+         p1         : tnode;
+         code       : integer;
+         srsym      : tsym;
+         srsymtable : TSymtable;
+         pd         : tprocdef;
+         hclassdef  : tobjectdef;
+         d          : bestreal;
+         cur        : currency;
+         hs,hsorg   : string;
+         hdef       : tdef;
+         filepos    : tfileposinfo;
+         again,
+         updatefpos,
+         nodechanged  : boolean;
+      begin
+        { can't keep a copy of p1 and compare pointers afterwards, because
+          p1 may be freed and reallocated in the same place!  }
+        updatefpos:=false;
+        p1:=nil;
+        filepos:=current_tokenpos;
+        again:=false;
+        if token=_ID then
+         begin
+           again:=true;
+           { Handle references to self }
+           if (idtoken=_SELF) and
+              not(block_type in [bt_const,bt_type,bt_const_type,bt_var_type]) and
+              assigned(current_objectdef) then
+>>>>>>> origin/fixes_2.4
              begin
                { The @protocol keyword is used in two ways in Objective-C:
                    1) to declare protocols (~ Object Pascal interfaces)
@@ -6830,6 +6908,7 @@ implementation
                p1:=cinlinenode.create(in_objc_protocol_x,false,p1);
              end;
 
+<<<<<<< HEAD
 =======
                      p1:=sub_expr(oppower,false,false);
                      p1:=cunaryminusnode.create(p1);
@@ -7217,26 +7296,184 @@ implementation
                end;
 =======
                    else
-                     begin
-                        consume(_INTCONST);
-                        p1:=crealconstnode.create(d,pbestrealtype^);
-                     end;
-                 end
-               else
-                 { the necessary range checking has already been done by val }
-                 tordconstnode(p1).rangecheck:=false;
-             end;
-
-           _REALNUMBER :
-             begin
-               val(pattern,d,code);
-               if code<>0 then
+=======
+           if assigned(p1) then
+            begin
+              { factor_read_id will set the filepos to after the id,
+                and in case of _SELF the filepos will already be the
+                same as filepos (so setting it again doesn't hurt).  }
+              p1.fileinfo:=filepos;
+              filepos:=current_tokenpos;
+            end;
+           { handle post fix operators }
+           updatefpos:=postfixoperators(p1,again);
+         end
+        else
+         begin
+           updatefpos:=true;
+           case token of
+             _RETURN :
                 begin
-                  Message(parser_e_error_in_real);
-                  d:=1.0;
+                  consume(_RETURN);
+                  if not(token in [_SEMICOLON,_ELSE,_END]) then
+                    p1 := cexitnode.create(comp_expr(true))
+                  else
+                    p1 := cexitnode.create(nil);
                 end;
-               consume(_REALNUMBER);
+             _INHERITED :
+               begin
+                 again:=true;
+                 consume(_INHERITED);
+                 if assigned(current_procinfo) and
+                    assigned(current_objectdef) then
+                  begin
+                    hclassdef:=current_objectdef.childof;
+                    { if inherited; only then we need the method with
+                      the same name }
+                    if token in endtokens then
+                     begin
+                       hs:=current_procinfo.procdef.procsym.name;
+                       hsorg:=current_procinfo.procdef.procsym.realname;
+                       anon_inherited:=true;
+                       { For message methods we need to search using the message
+                         number or string }
+                       pd:=tprocdef(tprocsym(current_procinfo.procdef.procsym).ProcdefList[0]);
+                       srdef:=nil;
+                       if (po_msgint in pd.procoptions) then
+                         searchsym_in_class_by_msgint(hclassdef,pd.messageinf.i,srdef,srsym,srsymtable)
+                       else
+                        if (po_msgstr in pd.procoptions) then
+                          searchsym_in_class_by_msgstr(hclassdef,pd.messageinf.str^,srsym,srsymtable)
+                       else
+                         searchsym_in_class(hclassdef,current_objectdef,hs,srsym,srsymtable);
+                     end
+                    else
+                     begin
+                       hs:=pattern;
+                       hsorg:=orgpattern;
+                       consume(_ID);
+                       anon_inherited:=false;
+                       searchsym_in_class(hclassdef,current_objectdef,hs,srsym,srsymtable);
+                     end;
+                    if assigned(srsym) then
+                     begin
+                       check_hints(srsym,srsym.symoptions);
+                       { load the procdef from the inherited class and
+                         not from self }
+                       case srsym.typ of
+                         procsym:
+                           begin
+                             hdef:=hclassdef;
+                             if (po_classmethod in current_procinfo.procdef.procoptions) or
+                                (po_staticmethod in current_procinfo.procdef.procoptions) then
+                               hdef:=tclassrefdef.create(hdef);
+                             p1:=ctypenode.create(hdef);
+                           end;
+                         propertysym:
+                           ;
+                         else
+                           begin
+                             Message(parser_e_methode_id_expected);
+                             p1:=cerrornode.create;
+                           end;
+                       end;
+                       do_member_read(hclassdef,getaddr,srsym,p1,again,[cnf_inherited,cnf_anon_inherited]);
+                     end
+                    else
+>>>>>>> origin/fixes_2.4
+                     begin
+                       if anon_inherited then
+                        begin
+                          { For message methods we need to call DefaultHandler }
+                          if (po_msgint in pd.procoptions) or
+                             (po_msgstr in pd.procoptions) then
+                            begin
+                              searchsym_in_class(hclassdef,hclassdef,'DEFAULTHANDLER',srsym,srsymtable);
+                              if not assigned(srsym) or
+                                 (srsym.typ<>procsym) then
+                                internalerror(200303171);
+                              p1:=nil;
+                              do_proc_call(srsym,srsym.owner,hclassdef,false,again,p1,[]);
+                            end
+                          else
+                            begin
+                              { we need to ignore the inherited; }
+                              p1:=cnothingnode.create;
+                            end;
+                        end
+                       else
+                        begin
+                          Message1(sym_e_id_no_member,hsorg);
+                          p1:=cerrornode.create;
+                        end;
+                       again:=false;
+                     end;
+                    { turn auto inheriting off }
+                    anon_inherited:=false;
+                  end
+                 else
+                   begin
+                      Message(parser_e_generic_methods_only_in_methods);
+                      again:=false;
+                      p1:=cerrornode.create;
+                   end;
+                 postfixoperators(p1,again);
+               end;
+
+             _INTCONST :
+               begin
+                 {Try first wether the value fits in an int64.}
+                 val(pattern,ic,code);
+                 if code=0 then
+                   begin
+                      consume(_INTCONST);
+                      int_to_type(ic,hdef);
+                      p1:=cordconstnode.create(ic,hdef,true);
+                   end
+                 else
+                   begin
+                     { try qword next }
+                     val(pattern,qc,code);
+                     if code=0 then
+                       begin
+                          consume(_INTCONST);
+                          int_to_type(qc,hdef);
+                          p1:=cordconstnode.create(qc,hdef,true);
+                       end;
+                   end;
+                 if code<>0 then
+                   begin
+                     { finally float }
+                     val(pattern,d,code);
+                     if code<>0 then
+                       begin
+                          Message(parser_e_invalid_integer);
+                          consume(_INTCONST);
+                          l:=1;
+                          p1:=cordconstnode.create(l,sinttype,true);
+                       end
+                     else
+                       begin
+                          consume(_INTCONST);
+                          p1:=crealconstnode.create(d,pbestrealtype^);
+                       end;
+                   end
+                 else
+                   { the necessary range checking has already been done by val }
+                   tordconstnode(p1).rangecheck:=false;
+               end;
+
+             _REALNUMBER :
+               begin
+                 val(pattern,d,code);
+                 if code<>0 then
+                  begin
+                    Message(parser_e_error_in_real);
+                    d:=1.0;
+                  end;
+                 consume(_REALNUMBER);
 {$ifdef FPC_REAL2REAL_FIXED}
+<<<<<<< HEAD
                if (current_settings.minfpconstprec=s32real) and
                   (d = single(d)) then
                  p1:=crealconstnode.create(d,s32floattype)
@@ -7244,13 +7481,25 @@ implementation
                        (d = double(d)) then
                  p1:=crealconstnode.create(d,s64floattype)
                else
+=======
+                 if current_settings.fputype=fpu_none then
+                   Message(parser_e_unsupported_real);
+                 if (current_settings.minfpconstprec=s32real) and
+                    (d = single(d)) then
+                   p1:=crealconstnode.create(d,s32floattype)
+                 else if (current_settings.minfpconstprec=s64real) and
+                         (d = double(d)) then
+                   p1:=crealconstnode.create(d,s64floattype)
+                 else
+>>>>>>> origin/fixes_2.4
 {$endif FPC_REAL2REAL_FIXED}
-                 p1:=crealconstnode.create(d,pbestrealtype^);
+                   p1:=crealconstnode.create(d,pbestrealtype^);
 {$ifdef FPC_HAS_STR_CURRENCY}
-               val(pattern,cur,code);
-               if code=0 then
-                 trealconstnode(p1).value_currency:=cur;
+                 val(pattern,cur,code);
+                 if code=0 then
+                   trealconstnode(p1).value_currency:=cur;
 {$endif FPC_HAS_STR_CURRENCY}
+<<<<<<< HEAD
              end;
 >>>>>>> graemeg/fixes_2_2
 
@@ -7332,6 +7581,71 @@ implementation
                  consume(_CWCHAR);
                end;
 
+=======
+               end;
+
+             _STRING :
+               begin
+                 string_dec(hdef,true);
+                 { STRING can be also a type cast }
+                 if try_to_consume(_LKLAMMER) then
+                  begin
+                    p1:=comp_expr(true);
+                    consume(_RKLAMMER);
+                    p1:=ctypeconvnode.create_explicit(p1,hdef);
+                    { handle postfix operators here e.g. string(a)[10] }
+                    again:=true;
+                    postfixoperators(p1,again);
+                  end
+                 else
+                  p1:=ctypenode.create(hdef);
+               end;
+
+             _FILE :
+               begin
+                 hdef:=cfiletype;
+                 consume(_FILE);
+                 { FILE can be also a type cast }
+                 if try_to_consume(_LKLAMMER) then
+                  begin
+                    p1:=comp_expr(true);
+                    consume(_RKLAMMER);
+                    p1:=ctypeconvnode.create_explicit(p1,hdef);
+                    { handle postfix operators here e.g. string(a)[10] }
+                    again:=true;
+                    postfixoperators(p1,again);
+                  end
+                 else
+                  begin
+                    p1:=ctypenode.create(hdef);
+                  end;
+               end;
+
+             _CSTRING :
+               begin
+                 p1:=cstringconstnode.createstr(pattern);
+                 consume(_CSTRING);
+               end;
+
+             _CCHAR :
+               begin
+                 p1:=cordconstnode.create(ord(pattern[1]),cchartype,true);
+                 consume(_CCHAR);
+               end;
+
+             _CWSTRING:
+               begin
+                 p1:=cstringconstnode.createwstr(patternw);
+                 consume(_CWSTRING);
+               end;
+
+             _CWCHAR:
+               begin
+                 p1:=cordconstnode.create(ord(getcharwidestring(patternw,0)),cwidechartype,true);
+                 consume(_CWCHAR);
+               end;
+
+>>>>>>> origin/fixes_2.4
              _KLAMMERAFFE :
                begin
                  consume(_KLAMMERAFFE);
@@ -7339,7 +7653,11 @@ implementation
                  { support both @<x> and @(<x>) }
                  if try_to_consume(_LKLAMMER) then
                   begin
+<<<<<<< HEAD
                     p1:=factor(true,false);
+=======
+                    p1:=factor(true);
+>>>>>>> origin/fixes_2.4
                     if token in [_CARET,_POINT,_LECKKLAMMER] then
                      begin
                        again:=true;
@@ -7349,7 +7667,11 @@ implementation
                     consume(_RKLAMMER);
                   end
                  else
+<<<<<<< HEAD
                   p1:=factor(true,false);
+=======
+                  p1:=factor(true);
+>>>>>>> origin/fixes_2.4
                  if token in [_CARET,_POINT,_LECKKLAMMER] then
                   begin
                     again:=true;
@@ -7371,7 +7693,11 @@ implementation
              _LKLAMMER :
                begin
                  consume(_LKLAMMER);
+<<<<<<< HEAD
                  p1:=comp_expr(true,false);
+=======
+                 p1:=comp_expr(true);
+>>>>>>> origin/fixes_2.4
                  consume(_RKLAMMER);
                  { it's not a good solution     }
                  { but (a+b)^ makes some problems  }
@@ -7392,8 +7718,15 @@ implementation
              _PLUS :
                begin
                  consume(_PLUS);
+<<<<<<< HEAD
                  p1:=factor(false,false);
                  p1:=cunaryplusnode.create(p1);
+=======
+                 p1:=factor(false);
+                 { we must generate a new node to do 0+<p1> otherwise the + will
+                   not be checked }
+                 p1:=caddnode.create(addn,genintconstnode(0),p1);
+>>>>>>> origin/fixes_2.4
                end;
 
              _MINUS :
@@ -7404,7 +7737,11 @@ implementation
                       { ugly hack, but necessary to be able to parse }
                       { -9223372036854775808 as int64 (JM)           }
                       pattern := '-'+pattern;
+<<<<<<< HEAD
                       p1:=sub_expr(oppower,false,false);
+=======
+                      p1:=sub_expr(oppower,false);
+>>>>>>> origin/fixes_2.4
                       {  -1 ** 4 should be - (1 ** 4) and not
                          (-1) ** 4
                          This was the reason of tw0869.pp test failure PM }
@@ -7427,7 +7764,11 @@ implementation
                     end
                  else
                    begin
+<<<<<<< HEAD
                      p1:=sub_expr(oppower,false,false);
+=======
+                     p1:=sub_expr(oppower,false);
+>>>>>>> origin/fixes_2.4
                      p1:=cunaryminusnode.create(p1);
                    end;
                end;
@@ -7435,7 +7776,11 @@ implementation
              _OP_NOT :
                begin
                  consume(_OP_NOT);
+<<<<<<< HEAD
                  p1:=factor(false,false);
+=======
+                 p1:=factor(false);
+>>>>>>> origin/fixes_2.4
                  p1:=cnotnode.create(p1);
                end;
 
@@ -7451,7 +7796,10 @@ implementation
                  p1:=cordconstnode.create(0,booltype,false);
                end;
 
+<<<<<<< HEAD
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
              _NIL :
                begin
                  consume(_NIL);
@@ -7463,6 +7811,7 @@ implementation
                     postfixoperators(p1,again);
                   end;
                end;
+<<<<<<< HEAD
            _OBJCPROTOCOL:
              begin
                { The @protocol keyword is used in two ways in Objective-C:
@@ -7486,6 +7835,9 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+
+>>>>>>> origin/fixes_2.4
              else
                begin
                  Message(parser_e_illegal_expression);
@@ -7515,6 +7867,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -7522,6 +7875,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
           begin
             do_typecheckpass_changed(p1,nodechanged);
             updatefpos:=updatefpos or nodechanged;

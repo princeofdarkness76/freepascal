@@ -13,6 +13,7 @@
 
  **********************************************************************}
 
+<<<<<<< HEAD
 Procedure VariantTypeMismatch; overload;
 begin
   Raise EVariantError.CreateCode(VAR_TYPEMISMATCH);
@@ -21,6 +22,14 @@ end;
 <<<<<<< HEAD
 =======
 Procedure VariantTypeMismatch; overload;
+=======
+Resourcestring
+
+  SNoInterfaces  = 'No interfaces supported';
+
+Procedure NoInterfaces;
+
+>>>>>>> origin/fixes_2.4
 begin
   Raise EVariantError.CreateCode(VAR_TYPEMISMATCH);
 end;
@@ -832,8 +841,12 @@ begin
       else
         VariantTypeMismatch(vType, varSingle);
       end;
+<<<<<<< HEAD
       varByRef: if Assigned(vPointer) then case vType of
 >>>>>>> graemeg/fixes_2_2
+=======
+      varByRef: if Assigned(vPointer) then case vType and varTypeMask of
+>>>>>>> origin/fixes_2.4
         varSmallInt : Result := PSmallInt(vPointer)^;
         varShortInt : Result := PShortInt(vPointer)^;
         varInteger  : Result := PInteger(vPointer)^;
@@ -1126,6 +1139,7 @@ begin
         VariantTypeMismatch(vType, varDouble);
       end;
       varByRef: if Assigned(vPointer) then case vType and varTypeMask of
+<<<<<<< HEAD
 =======
         varOleStr   : Result := WStrToSingle(vOleStr);
         varString   : Result := LStrToSingle(vString);
@@ -1134,6 +1148,8 @@ begin
       end;
       varByRef: if Assigned(vPointer) then case vType of
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
         varSmallInt : Result := PSmallInt(vPointer)^;
         varShortInt : Result := PShortInt(vPointer)^;
         varInteger  : Result := PInteger(vPointer)^;
@@ -1252,7 +1268,7 @@ begin
       else
         VariantTypeMismatch(vType, varDouble);
       end;
-      varByRef: if Assigned(vPointer) then case vType of
+      varByRef: if Assigned(vPointer) then case vType and varTypeMask of
         varSmallInt : Result := PSmallInt(vPointer)^;
         varShortInt : Result := PShortInt(vPointer)^;
         varInteger  : Result := PInteger(vPointer)^;
@@ -1613,11 +1629,15 @@ begin
       else
         VariantTypeMismatch(vType, varDate);
       end;
+<<<<<<< HEAD
       varByRef: if Assigned(vPointer) then case vType of
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      varByRef: if Assigned(vPointer) then case vType and varTypeMask of
+>>>>>>> origin/fixes_2.4
         varSmallInt : Result := PSmallInt(vPointer)^;
         varShortInt : Result := PShortInt(vPointer)^;
         varInteger  : Result := PInteger(vPointer)^;
@@ -2572,9 +2592,15 @@ begin
         VariantTypeMismatch(vType, varString);
       end;
       varByRef: if Assigned(vPointer) then case vType and varTypeMask of
+<<<<<<< HEAD
         varSmallInt : Result := IntToStr(PSmallInt(vPointer)^);
         varShortInt : Result := IntToStr(PShortInt(vPointer)^);
         varInteger  : Result := IntToStr(PInteger(vPointer)^);
+=======
+        varSmallInt : Result := byte(PSmallInt(vPointer)^);
+        varShortInt : Result := byte(PShortInt(vPointer)^);
+        varInteger  : Result := byte(PInteger(vPointer)^);
+>>>>>>> origin/fixes_2.4
 {$ifndef FPUNONE}
         varSingle   : Result := FloatToStr(PSingle(vPointer)^);
         varDouble   : Result := FloatToStr(PDouble(vPointer)^);
@@ -2639,6 +2665,7 @@ begin
       else
         VariantTypeMismatch(vType, varOleStr);
       end;
+<<<<<<< HEAD
       varByRef: if Assigned(vPointer) then case vType of
         varSmallInt : Result := IntToStr(PSmallInt(vPointer)^);
         varShortInt : Result := IntToStr(PShortInt(vPointer)^);
@@ -2656,6 +2683,27 @@ begin
         varQword    : Result := IntToStr(PQWord(vPointer)^);
         varOleStr   : Result := WideString(PPointer(vPointer)^);
         varString   : Result := AnsiString(PPointer(vPointer)^);
+=======
+      varByRef: if Assigned(vPointer) then case vType and varTypeMask of
+        varSmallInt : Result := PSmallInt(vPointer)^;
+        varShortInt : Result := PShortInt(vPointer)^;
+        varInteger  : Result := PInteger(vPointer)^;
+{$ifndef FPUNONE}
+        varSingle   : Result := Round(PSingle(vPointer)^);
+        varDouble   : Result := Round(PDouble(vPointer)^);
+        varCurrency : Result := Round(PCurrency(vPointer)^);
+        varDate     : Result := Round(PDate(vPointer)^);
+{$endif}
+        varBoolean  : Result := SmallInt(PWordBool(vPointer)^);
+        varVariant  : Result := VariantToInt64(PVarData(vPointer)^);
+        varByte     : Result := PByte(vPointer)^;
+        varWord     : Result := PWord(vPointer)^;
+        varLongWord : Result := PLongWord(vPointer)^;
+        varInt64    : Result := PInt64(vPointer)^;
+        varQword    : Result := PQWord(vPointer)^;
+        varOleStr   : Result := WStrToInt64(PPointer(vPointer)^);
+        varString   : Result := LStrToInt64(PPointer(vPointer)^);
+>>>>>>> origin/fixes_2.4
       else { other vtype }
         VariantTypeMismatch(vType, varOleStr);
       end else { pointer is nil }
@@ -2693,7 +2741,7 @@ begin
       else
         VariantTypeMismatch(vType, varQWord);
       end;
-      varByRef: if Assigned(vPointer) then case vType of
+      varByRef: if Assigned(vPointer) then case vType and varTypeMask of
         varSmallInt : Result := qword(PSmallInt(vPointer)^);
         varShortInt : Result := qword(PShortInt(vPointer)^);
         varInteger  : Result := qword(PInteger(vPointer)^);
@@ -2754,7 +2802,7 @@ begin
       else
         VariantTypeMismatch(vType, varOleStr);
       end;
-      varByRef: if Assigned(vPointer) then case vType of
+      varByRef: if Assigned(vPointer) then case vType and varTypeMask of
         varSmallInt : Result := IntToStr(PSmallInt(vPointer)^);
         varShortInt : Result := IntToStr(PShortInt(vPointer)^);
         varInteger  : Result := IntToStr(PInteger(vPointer)^);
@@ -2816,7 +2864,7 @@ begin
       else
         VariantTypeMismatch(vType, varString);
       end;
-      varByRef: if Assigned(vPointer) then case vType of
+      varByRef: if Assigned(vPointer) then case vType and varTypeMask of
         varSmallInt : Result := IntToStr(PSmallInt(vPointer)^);
         varShortInt : Result := IntToStr(PShortInt(vPointer)^);
         varInteger  : Result := IntToStr(PInteger(vPointer)^);

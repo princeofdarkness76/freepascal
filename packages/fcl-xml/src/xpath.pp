@@ -589,7 +589,11 @@ var
 begin
   Val(s, Result, Code);
 {$push}
+<<<<<<< HEAD
 {$r-,q-}
+=======
+{$r-}
+>>>>>>> origin/fixes_2.4
   if Code <> 0 then
     Result := NaN;
 {$pop}
@@ -831,7 +835,11 @@ begin
           NumberResult := Op1 / Op2;
         opMod: if IsNan(Op1) or IsNan(Op2) then
 {$push}
+<<<<<<< HEAD
 {$r-,q-}
+=======
+{$r-}
+>>>>>>> origin/fixes_2.4
           NumberResult := NaN
 {$pop}
         else

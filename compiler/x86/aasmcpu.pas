@@ -3676,6 +3676,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             begin
               if getsubreg(r)=R_SUBH then
                 inc(tmpref.offset);
@@ -3689,6 +3690,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
             { we don't need special code here for 32 bit loads on x86_64, since
               those will automatically zero-extend the upper 32 bits. }
             result:=taicpu.op_ref_reg(A_MOV,reg2opsize(r),ref,r);
@@ -3738,6 +3741,7 @@ implementation
     function spilling_create_store(r:tregister; const ref:treference):Taicpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       var
         size: topsize;
 <<<<<<< HEAD
@@ -3757,6 +3761,10 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      var
+        size: topsize;
+>>>>>>> origin/fixes_2.4
       begin
         tmpref:=ref;
 {$ifdef i8086}
@@ -3766,6 +3774,7 @@ implementation
         case getregtype(r) of
           R_INTREGISTER :
             begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3780,6 +3789,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
               size:=reg2opsize(r);
 {$ifdef x86_64}
               { even if it's a 32 bit reg, we still have to spill 64 bits
@@ -3794,6 +3805,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               result:=taicpu.op_reg_ref(A_MOV,size,r,tmpref);
 =======
 =======
@@ -3802,6 +3814,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
               result:=taicpu.op_reg_ref(A_MOV,size,r,ref);
             end;
           R_MMREGISTER :

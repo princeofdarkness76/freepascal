@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 { %fail }
 
 {$IFDEF FPC}
@@ -19,6 +22,7 @@ begin
 end;
 
 end.
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -45,3 +49,5 @@ end.
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4

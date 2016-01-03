@@ -185,6 +185,7 @@ const
         { instead, round based on the next whole digit }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (int(intPartStack[stackPtr]-corrVal) >= 5.0) then
 =======
         if (int(intPartStack[stackPtr]-corrVal+roundcorr) >= 5.0) then
@@ -192,6 +193,9 @@ const
 =======
         if (int(intPartStack[stackPtr]-corrVal+roundcorr) >= 5.0) then
 >>>>>>> origin/fixes_2_2
+=======
+        if (int(intPartStack[stackPtr]-corrVal) >= 5.0) then
+>>>>>>> origin/fixes_2.4
            roundStr(temp,spos);
         end;
 {$ifdef DEBUG_NASM}
@@ -459,6 +463,9 @@ begin
           corrval := corrval / factor;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
           { for single, we may write more significant digits than are available,
             so the rounding correction itself can show up -> don't round in that
             case

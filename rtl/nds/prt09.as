@@ -7,6 +7,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	.equ	_libnds_argv,0x02FFFE70
 =======
 	.equ	_libnds_argv,	0x027FFF70
@@ -14,6 +15,9 @@
 =======
 	.equ	_libnds_argv,	0x027FFF70
 >>>>>>> origin/fixes_2_2
+=======
+	.equ	_libnds_argv,0x02FFFE70
+>>>>>>> origin/fixes_2.4
 
 @---------------------------------------------------------------------------------
 	.section ".init"
@@ -27,6 +31,7 @@ _start:
 	mov	r0, #0x04000000			@ IME = 0;
 	str	r0, [r0, #0x208]
 	
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	@ set sensible stacks to allow bios call
@@ -165,6 +170,10 @@ _start:
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	ldr	r3,=__libnds_mpu_setup
+	blx	r3
+>>>>>>> origin/fixes_2.4
 
 	mov	r0, #0x12		@ Switch to IRQ Mode
 	msr	cpsr, r0
@@ -226,6 +235,7 @@ _start:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -243,6 +253,8 @@ _start:
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 	ldr	r0,	=_libnds_argv
 
 	@ reset heap base
@@ -252,6 +264,9 @@ _start:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 	ldr	r1, =fake_heap_end	@ set heap end
 	sub	r8,r8,#0xc000
 	str	r8, [r1]
@@ -270,6 +285,7 @@ _start:
 	ldr	r3, =main
 	ldr	lr,=__libnds_exit
 	bx	r3			@ jump to user code
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -291,6 +307,8 @@ ILoop:
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 @---------------------------------------------------------------------------------
 @ check for a commandline
@@ -304,11 +322,15 @@ checkARGV:
  	  	 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 	ldr	r3, [r0]		@ argv magic number
 	ldr	r2, =0x5f617267		@ '_arg'
 	cmp	r3, r2
 	strne	r1,[r0,#20]
   bxne	lr                      @ bail out if no magic
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -320,6 +342,8 @@ checkARGV:
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 	ldr	r1, [r0, #4]            @ command line address
 	ldr	r2, [r0, #8]            @ length of command line

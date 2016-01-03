@@ -3,6 +3,7 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Contains:   Carbon Help Manager Interfaces.
  
 <<<<<<< HEAD
@@ -28,14 +29,21 @@
 =======
 >>>>>>> origin/fixes_2_2
      Contains:   Macintosh Help Package Interfaces.
+=======
+     Contains:   Carbon Help Manager Interfaces.
+>>>>>>> origin/fixes_2.4
  
-     Version:    HIToolbox-219.4.81~2
+     Version:    HIToolbox-437~1
  
+<<<<<<< HEAD
      Copyright:  © 1998-2005 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     Copyright:  © 1998-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -74,16 +82,21 @@
  
 }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -92,6 +105,7 @@
 
 unit MacHelp;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -104,6 +118,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -118,6 +136,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -125,21 +144,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -147,6 +175,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -157,6 +188,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -174,6 +206,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -181,10 +215,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -192,6 +229,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -413,18 +451,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -452,12 +547,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -467,6 +565,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,CFBase,QuickdrawTypes,TextEdit,Controls,Dialogs,Events,MacWindows,Menus,HIObject,HIView;
@@ -496,12 +595,18 @@ uses MacTypes,CFBase,QuickdrawTypes,TextEdit,Controls,Dialogs,Events,MacWindows,
 {$ifc TARGET_OS_MAC}
 =======
 uses MacTypes,CFBase,Quickdraw,TextEdit,Controls,Dialogs,Events,MacWindows,Menus;
+=======
+uses MacTypes,CFBase,QuickdrawTypes,TextEdit,Controls,Dialogs,Events,MacWindows,Menus,HIObject,HIView;
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 
 >>>>>>> graemeg/fixes_2_2
 =======
 uses MacTypes,CFBase,Quickdraw,TextEdit,Controls,Dialogs,Events,MacWindows,Menus;
 
 >>>>>>> origin/fixes_2_2
+
+{$ifc TARGET_OS_MAC}
 
 {$ALIGN MAC68K}
 
@@ -522,6 +627,9 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 
 {
  *  HMContentType
@@ -530,6 +638,7 @@ const
  *    These constants should be used in the contentType field of the
  *    HMHelpContent structure.
  }
+<<<<<<< HEAD
 type
 	HMContentType = UInt32;
 const
@@ -618,20 +727,102 @@ const
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 type
 	HMContentType = UInt32;
 const
+{
+   * No help content is provided.
+   }
 	kHMNoContent = FourCharCode('none');
-	kHMCFStringContent = FourCharCode('cfst'); { CFStringRef}
-	kHMCFStringLocalizedContent = FourCharCode('cfsl'); { CFStringRef; name of a localized string. Supported by Jaguar and later.}
+
+  {
+   * Help content is a CFStringRef in the HMHelpContent.u.tagCFString
+   * field. 
+   * 
+   * The string is automatically retained by the Help Manager when
+   * provided to the HMSetControl/Window/MenuItemHelpContent APIs, and
+   * automatically released when the control/window/menu is destroyed.
+   * When this type of help content is provided by a
+   * control/window/menu title/menu item help content proc, then the
+   * string is not automatically released, but the content proc will be
+   * called again later with the kHMDisposeContent message to allow
+   * your application to release the string, if appropriate.
+   }
+	kHMCFStringContent = FourCharCode('cfst');
+
+  {
+   * Help content is a localized string loaded automatically by the
+   * Help Manager using CFCopyLocalizedString. The key that identifies
+   * the localized string should be placed in the
+   * HMHelpContent.u.tagCFString field. 
+   * 
+   * The string is automatically retained by the Help Manager when
+   * provided to the HMSetControl/Window/MenuItemHelpContent APIs, and
+   * automatically released when the control/window/menu is destroyed.
+   * When this type of help content is provided by a
+   * control/window/menu title/menu item help content proc, then the
+   * string is not automatically released, but the content proc will be
+   * called again later with the kHMDisposeContent message to allow
+   * your application to release the string, if appropriate.
+   }
+	kHMCFStringLocalizedContent = FourCharCode('cfsl');
+
+  {
+   * Help content is a Pascal string in the application's text encoding
+   * in the HMHelpContent.u.tagString field.
+   }
 	kHMPascalStrContent = FourCharCode('pstr');
+
+  {
+   * Help content is text in the application's text encoding loaded
+   * from a 'TEXT' resource. The 'TEXT' resource ID should be placed in
+   * the HMHelpContent.u.tagTextRes field. This help content type is
+   * available in Mac OS X 10.2 and later.
+   }
+	kHMTextResContent = FourCharCode('text');
+
+  {
+   * Help content is a TEHandle in the HMHelpContent.u.tagTEHandle.
+   * Note that Mac OS X ignores all style information contained in the
+   * TEHandle and only uses the text. This help content type is
+   * available in Mac OS X 10.2 and later. It is not supported in
+   * 64-bit mode. 
+   * 
+   * When this type of help content is provided to the
+   * HMSetControl/Window/MenuItemHelpContent APIs, the TEHandle is
+   * _not_ released when the control/window/menu is destroyed. When
+   * this type of help content is provided by a control/window/menu
+   * title/menu item help content proc, then the content proc will be
+   * called again later with the kHMDisposeContent message to allow
+   * your application to release the TEHandle, if appropriate.
+   }
+	kHMTEHandleContent = FourCharCode('txth');
+
+  {
+   * Help content is a Pascal string in the application's text encoding
+   * loaded from a 'STR#' resource. The 'STR#' resource ID and string
+   * index should be placed in the HMHelpContent.u.tagStringRes field.
+   * This help content type is not supported in 64-bit mode.
+   }
 	kHMStringResContent = FourCharCode('str#');
+<<<<<<< HEAD
 	kHMTEHandleContent = FourCharCode('txth'); { Supported by CarbonLib and Jaguar and later}
 	kHMTextResContent = FourCharCode('text'); { Supported by CarbonLib and Jaguar and later}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+  {
+   * Help content is a Pascal string in the application's text encoding
+   * loaded from a 'STR ' resource. The 'STR ' resource ID should be
+   * placed in the HMHelpContent.u.tagStrRes field. This help content
+   * type is not supported in 64-bit mode.
+   }
+>>>>>>> origin/fixes_2.4
 	kHMStrResContent = FourCharCode('str ');
 
 
@@ -660,14 +851,20 @@ const
 	kHMOutsideLeftCenterAligned = 2;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 
   {
    * Below, aligned with left or right depending on system script
    }
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 	kHMOutsideBottomScriptAligned = 3;
 
   {
@@ -698,6 +895,7 @@ const
   {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    * Below, aligned with left
 =======
    * To the right, aligned with top
@@ -705,10 +903,14 @@ const
 =======
    * To the right, aligned with top
 >>>>>>> origin/fixes_2_2
+=======
+   * Below, aligned with left
+>>>>>>> origin/fixes_2.4
    }
 	kHMOutsideBottomLeftAligned = 9;
 
   {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    * Below, aligned with right
@@ -727,13 +929,27 @@ const
 =======
 >>>>>>> origin/fixes_2_2
    * To the right, aligned with bottom
+=======
+   * Below, aligned with right
+>>>>>>> origin/fixes_2.4
    }
 	kHMOutsideBottomRightAligned = 10;
+
+  {
+   * To the right, aligned with top
+   }
 	kHMOutsideRightTopAligned = 11;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+  {
+   * To the right, aligned with bottom
+   }
+>>>>>>> origin/fixes_2.4
 	kHMOutsideRightBottomAligned = 12;
 
   {
@@ -840,6 +1056,7 @@ type
 		0: (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			tagCFString: CFStringRef;          { CFStringRef}
 			);
 		1: (
@@ -860,25 +1077,32 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 			tagCFString:		CFStringRef;							{  CFStringRef }
+=======
+			tagCFString: CFStringRef;          { CFStringRef}
+>>>>>>> origin/fixes_2.4
 			);
 		1: (
-			tagString:			Str255;									{  Pascal String }
+			tagString: Str255;          { Pascal String}
 			);
 		2: (
-			tagStringRes:		HMStringResType;						{  STR# resource ID and index }
+			tagStringRes: HMStringResType;          { STR# resource ID and index}
 			);
 		3: (
-			tagTEHandle:		TEHandle;								{  TextEdit handle (NOT SUPPORTED ON MAC OS X) }
+			tagTEHandle: TEHandle;          { TextEdit handle (NOT SUPPORTED ON MAC OS X)}
 			);
 		4: (
-			tagTextRes:			SInt16;									{  TEXT/styl resource ID (NOT SUPPORTED ON MAC OS X) }
+			tagTextRes: SInt16;          { TEXT/styl resource ID (NOT SUPPORTED ON MAC OS X)}
 			);
 		5: (
+<<<<<<< HEAD
 			tagStrRes:			SInt16;									{  STR resource ID }
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+			tagStrRes: SInt16;          { STR resource ID}
+>>>>>>> origin/fixes_2.4
 			);
 	end;
 type
@@ -890,11 +1114,15 @@ type
 	end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+type
+>>>>>>> origin/fixes_2.4
 	HMHelpContentPtr = ^HMHelpContentRec;
 
 {ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
@@ -904,6 +1132,7 @@ type
 	HMControlContentProcPtr = function( inControl: ControlRef; inGlobalMouse: Point; inRequest: HMContentRequest; var outContentProvided: HMContentProvidedType; ioHelpContent: HMHelpContentPtr ): OSStatus;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	HMWindowContentProcPtr = function( inWindow: WindowRef; inGlobalMouse: Point; inRequest: HMContentRequest; var outContentProvided: HMContentProvidedType; ioHelpContent: HMHelpContentPtr ): OSStatus;
 	HMMenuTitleContentProcPtr = function( inMenu: MenuRef; inRequest: HMContentRequest; var outContentProvided: HMContentProvidedType; ioHelpContent: HMHelpContentPtr ): OSStatus;
 	HMMenuItemContentProcPtr = function( const (*var*) inTrackingData: MenuTrackingData; inRequest: HMContentRequest; var outContentProvided: HMContentProvidedType; ioHelpContent: HMHelpContentPtr ): OSStatus;
@@ -914,22 +1143,22 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 type
+=======
+>>>>>>> origin/fixes_2.4
 	HMWindowContentProcPtr = function( inWindow: WindowRef; inGlobalMouse: Point; inRequest: HMContentRequest; var outContentProvided: HMContentProvidedType; ioHelpContent: HMHelpContentPtr ): OSStatus;
-type
 	HMMenuTitleContentProcPtr = function( inMenu: MenuRef; inRequest: HMContentRequest; var outContentProvided: HMContentProvidedType; ioHelpContent: HMHelpContentPtr ): OSStatus;
-type
 	HMMenuItemContentProcPtr = function( const (*var*) inTrackingData: MenuTrackingData; inRequest: HMContentRequest; var outContentProvided: HMContentProvidedType; ioHelpContent: HMHelpContentPtr ): OSStatus;
-type
 	HMControlContentUPP = HMControlContentProcPtr;
-type
 	HMWindowContentUPP = HMWindowContentProcPtr;
-type
 	HMMenuTitleContentUPP = HMMenuTitleContentProcPtr;
+<<<<<<< HEAD
 type
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 	HMMenuItemContentUPP = HMMenuItemContentProcPtr;
 {
  *  NewHMControlContentUPP()
@@ -1069,11 +1298,15 @@ function InvokeHMMenuItemContentUPP( const (*var*) inTrackingData: MenuTrackingD
 { Help Menu }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 {
  *  HMGetHelpMenu()
  *  
@@ -1095,6 +1328,7 @@ function InvokeHMMenuItemContentUPP( const (*var*) inTrackingData: MenuTrackingD
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1102,6 +1336,9 @@ function InvokeHMMenuItemContentUPP( const (*var*) inTrackingData: MenuTrackingD
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1113,6 +1350,7 @@ function HMGetHelpMenu( var outHelpMenu: MenuRef; outFirstCustomItemIndex: MenuI
 { Menu title and item help tags are not supported by CarbonLib. They are fully supported on Mac OS X. }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Pass NULL for the inContent parameter of these APIs to remove help content from a control, window, or menu. }
 =======
 { Pass NULL for the inContent parameter of HMSetControl/Window/MenuItemHelpContent to remove help content
@@ -1122,6 +1360,9 @@ function HMGetHelpMenu( var outHelpMenu: MenuRef; outFirstCustomItemIndex: MenuI
 { Pass NULL for the inContent parameter of HMSetControl/Window/MenuItemHelpContent to remove help content
        from a control, window, or menu. }
 >>>>>>> origin/fixes_2_2
+=======
+{ Pass NULL for the inContent parameter of these APIs to remove help content from a control, window, or menu. }
+>>>>>>> origin/fixes_2.4
 {
  *  HMSetControlHelpContent()
  *  
@@ -1131,6 +1372,7 @@ function HMGetHelpMenu( var outHelpMenu: MenuRef; outFirstCustomItemIndex: MenuI
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1138,6 +1380,9 @@ function HMGetHelpMenu( var outHelpMenu: MenuRef; outFirstCustomItemIndex: MenuI
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1154,6 +1399,7 @@ function HMSetControlHelpContent( inControl: ControlRef; {const} inContent: HMHe
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1161,6 +1407,9 @@ function HMSetControlHelpContent( inControl: ControlRef; {const} inContent: HMHe
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1177,6 +1426,7 @@ function HMGetControlHelpContent( inControl: ControlRef; var outContent: HMHelpC
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1184,6 +1434,9 @@ function HMGetControlHelpContent( inControl: ControlRef; var outContent: HMHelpC
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1200,6 +1453,7 @@ function HMSetWindowHelpContent( inWindow: WindowRef; {const} inContent: HMHelpC
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1207,6 +1461,9 @@ function HMSetWindowHelpContent( inWindow: WindowRef; {const} inContent: HMHelpC
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1223,6 +1480,7 @@ function HMGetWindowHelpContent( inWindow: WindowRef; var outContent: HMHelpCont
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1230,6 +1488,9 @@ function HMGetWindowHelpContent( inWindow: WindowRef; var outContent: HMHelpCont
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1246,6 +1507,7 @@ function HMSetMenuItemHelpContent( inMenu: MenuRef; inItem: MenuItemIndex; {cons
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1253,6 +1515,9 @@ function HMSetMenuItemHelpContent( inMenu: MenuRef; inItem: MenuItemIndex; {cons
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1270,6 +1535,7 @@ function HMGetMenuItemHelpContent( inMenu: MenuRef; inItem: MenuItemIndex; var o
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1277,6 +1543,9 @@ function HMGetMenuItemHelpContent( inMenu: MenuRef; inItem: MenuItemIndex; var o
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1293,6 +1562,7 @@ function HMInstallControlContentCallback( inControl: ControlRef; inContentUPP: H
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1300,6 +1570,9 @@ function HMInstallControlContentCallback( inControl: ControlRef; inContentUPP: H
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1316,6 +1589,7 @@ function HMInstallWindowContentCallback( inWindow: WindowRef; inContentUPP: HMWi
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1323,6 +1597,9 @@ function HMInstallWindowContentCallback( inWindow: WindowRef; inContentUPP: HMWi
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1339,6 +1616,7 @@ function HMInstallMenuTitleContentCallback( inMenu: MenuRef; inContentUPP: HMMen
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1346,6 +1624,9 @@ function HMInstallMenuTitleContentCallback( inMenu: MenuRef; inContentUPP: HMMen
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1362,6 +1643,7 @@ function HMInstallMenuItemContentCallback( inMenu: MenuRef; inContentUPP: HMMenu
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1369,6 +1651,9 @@ function HMInstallMenuItemContentCallback( inMenu: MenuRef; inContentUPP: HMMenu
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1385,6 +1670,7 @@ function HMGetControlContentCallback( inControl: ControlRef; var outContentUPP: 
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1392,6 +1678,9 @@ function HMGetControlContentCallback( inControl: ControlRef; var outContentUPP: 
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1408,6 +1697,7 @@ function HMGetWindowContentCallback( inWindow: WindowRef; var outContentUPP: HMW
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1415,6 +1705,9 @@ function HMGetWindowContentCallback( inWindow: WindowRef; var outContentUPP: HMW
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1431,6 +1724,7 @@ function HMGetMenuTitleContentCallback( inMenu: MenuRef; var outContentUPP: HMMe
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1438,6 +1732,9 @@ function HMGetMenuTitleContentCallback( inMenu: MenuRef; var outContentUPP: HMMe
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1455,6 +1752,7 @@ function HMGetMenuItemContentCallback( inMenu: MenuRef; var outContentUPP: HMMen
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1462,6 +1760,9 @@ function HMGetMenuItemContentCallback( inMenu: MenuRef; var outContentUPP: HMMen
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1478,6 +1779,7 @@ function HMAreHelpTagsDisplayed: Boolean; external name '_HMAreHelpTagsDisplayed
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1485,6 +1787,9 @@ function HMAreHelpTagsDisplayed: Boolean; external name '_HMAreHelpTagsDisplayed
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1501,6 +1806,7 @@ function HMSetHelpTagsDisplayed( inDisplayTags: Boolean ): OSStatus; external na
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1508,6 +1814,9 @@ function HMSetHelpTagsDisplayed( inDisplayTags: Boolean ): OSStatus; external na
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1524,6 +1833,7 @@ function HMSetTagDelay( inDelay: Duration ): OSStatus; external name '_HMSetTagD
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1531,6 +1841,9 @@ function HMSetTagDelay( inDelay: Duration ): OSStatus; external name '_HMSetTagD
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1538,6 +1851,7 @@ function HMGetTagDelay( var outDelay: Duration ): OSStatus; external name '_HMGe
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -1592,6 +1906,8 @@ function HMSetDialogHelpFromBalloonRsrc( inDialog: DialogRef; inHdlgRsrcID: SInt
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 { Displaying tags }
 {
  *  HMDisplayTag()
@@ -1602,6 +1918,9 @@ function HMSetDialogHelpFromBalloonRsrc( inDialog: DialogRef; inHdlgRsrcID: SInt
  *  Discussion:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    Prior to Mac OS X 10.4, HMDisplayTag does not retain the help
  *    content that is passed to it, nor release it when the tag is
  *    closed. Your application must ensure that the help content
@@ -1611,6 +1930,7 @@ function HMSetDialogHelpFromBalloonRsrc( inDialog: DialogRef; inHdlgRsrcID: SInt
  *    and later, HMDisplayTag makes a copy of the content and releases
  *    the copy when the tag closes, so you can release the content
  *    after HMDisplayTag returns.
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -1624,6 +1944,8 @@ function HMSetDialogHelpFromBalloonRsrc( inDialog: DialogRef; inHdlgRsrcID: SInt
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1639,6 +1961,7 @@ function HMSetDialogHelpFromBalloonRsrc( inDialog: DialogRef; inHdlgRsrcID: SInt
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1646,6 +1969,9 @@ function HMSetDialogHelpFromBalloonRsrc( inDialog: DialogRef; inHdlgRsrcID: SInt
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1669,6 +1995,7 @@ function HMDisplayTag( const (*var*) inContent: HMHelpContentRec ): OSStatus; ex
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.1 and later in Carbon.framework
@@ -1676,6 +2003,9 @@ function HMDisplayTag( const (*var*) inContent: HMHelpContentRec ): OSStatus; ex
 =======
  *    Mac OS X:         in version 10.1 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1685,6 +2015,7 @@ function HMHideTag: OSStatus; external name '_HMHideTag';
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {TARGET_CPU_64}
 
 
@@ -1692,6 +2023,11 @@ function HMHideTag: OSStatus; external name '_HMHideTag';
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {TARGET_CPU_64}
+
+
+>>>>>>> origin/fixes_2.4
 {
  *  Summary:
  *    Values for the inOptions parameter to HMHideTagWithOptions.
@@ -1712,11 +2048,15 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 {
  *  HMHideTagWithOptions()
  *  
@@ -1740,6 +2080,7 @@ const
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -1747,6 +2088,9 @@ const
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
@@ -1756,6 +2100,9 @@ function HMHideTagWithOptions( inOptions: OptionBits ): OSStatus; external name 
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {--------------------------------------------------------------------------------------}
 {  ¥ DEPRECATED                                                                        }
 {  All functions below this point are either deprecated (they continue to function     }
@@ -1807,6 +2154,7 @@ function HMSetDialogHelpFromBalloonRsrc( inDialog: DialogRef; inHdlgRsrcID: SInt
 
 
 {$endc} {TARGET_CPU_64}
+<<<<<<< HEAD
 
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
@@ -1819,7 +2167,15 @@ end.
 end.
 >>>>>>> graemeg/fixes_2_2
 =======
+=======
+>>>>>>> origin/fixes_2.4
 
+{$endc} {TARGET_OS_MAC}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

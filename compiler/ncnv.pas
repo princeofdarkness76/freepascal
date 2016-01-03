@@ -431,6 +431,7 @@ implementation
 >>>>>>> graemeg/cpstrnew
         else
          begin
+<<<<<<< HEAD
            case convtype of
              tct_implicit:
                p:=ctypeconvnode.create(p,def);
@@ -439,6 +440,9 @@ implementation
              tct_internal:
                p:=ctypeconvnode.create_internal(p,def);
            end;
+=======
+           p:=ctypeconvnode.create(p,def);
+>>>>>>> origin/fixes_2.4
            p.fileinfo:=ttypeconvnode(p).left.fileinfo;
            typecheckpass(p);
          end;
@@ -451,6 +455,7 @@ implementation
         do_inserttypeconv(p,def,tct_implicit);
       end;
 
+<<<<<<< HEAD
 
     procedure inserttypeconv_explicit(var p: tnode; def: tdef);
 
@@ -462,6 +467,17 @@ implementation
 
       begin
         do_inserttypeconv(p,def,tct_internal);
+=======
+        { don't insert obsolete type conversions }
+        if equal_defs(p.resultdef,def) then
+          p.resultdef:=def
+        else
+         begin
+           p:=ctypeconvnode.create_internal(p,def);
+           p.fileinfo:=ttypeconvnode(p).left.fileinfo;
+           typecheckpass(p);
+         end;
+>>>>>>> origin/fixes_2.4
       end;
 
 
@@ -609,11 +625,15 @@ implementation
                break;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               oldfilepos:=current_filepos;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+              oldfilepos:=current_filepos;
+>>>>>>> origin/fixes_2.4
               current_filepos:=p2.fileinfo;
               case p2.resultdef.typ of
                  enumdef,

@@ -24,6 +24,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation:  Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, August 2015 }
@@ -39,6 +40,9 @@
 =======
 {	  Pascal Translation:  Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 >>>>>>> origin/cpstrnew
+=======
+{	  Pascal Translation:  Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+>>>>>>> origin/fixes_2.4
 
 {
     Modified for use with Free Pascal
@@ -98,6 +102,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -111,6 +116,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -133,6 +140,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -158,6 +166,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -168,6 +181,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -193,6 +207,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -203,6 +222,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -212,6 +232,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -225,6 +247,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -234,6 +257,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -244,6 +269,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -275,6 +301,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -285,13 +316,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
@@ -333,6 +368,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/fixes_2.4
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -536,6 +575,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAuthorizationPluginInterfaceVersion0 = 0;
 	kAuthorizationPluginInterfaceVersion1 = 1; { new in OS X 10.9 }
 
@@ -552,6 +592,9 @@ const
 =======
 	kAuthorizationPluginInterfaceVersion = 0;
 >>>>>>> origin/cpstrnew
+=======
+	kAuthorizationPluginInterfaceVersion = 0;
+>>>>>>> origin/fixes_2.4
 
 {!
     @enum
@@ -583,6 +626,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	AuthorizationCallbacks0 = record
 =======
 	AuthorizationCallbacks = record
@@ -596,6 +640,9 @@ type
 =======
 	AuthorizationCallbacks = record
 >>>>>>> origin/cpstrnew
+=======
+	AuthorizationCallbacks = record
+>>>>>>> origin/fixes_2.4
 { Engine callback version. }
 		version: UInt32;
 
@@ -642,6 +689,7 @@ type
       						   var outSessionId : AuthorizationSessionId) : OSStatus;
 	end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -714,6 +762,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	AuthorizationCallbacksPtr = ^AuthorizationCallbacks;
 
 {!

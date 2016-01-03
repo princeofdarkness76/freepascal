@@ -123,7 +123,10 @@ implementation
       symconst,symdef,symsym,symcpu,symtable,paramgr,defutil,symbase,
       pass_1,
       ncal,ncon,ncnv,nadd,nld,nbas,nflw,nmem,nmat,nutils,
+<<<<<<< HEAD
       nobjc,objcdef,
+=======
+>>>>>>> origin/fixes_2.4
       cgbase,procinfo
       ;
 
@@ -5266,6 +5269,7 @@ implementation
                 begin
                   set_varstate(tcallparanode(left).left,vs_read,[vsf_must_be_valid]);
                   set_varstate(tcallparanode(tcallparanode(left).right).left,vs_read,[vsf_must_be_valid]);
+<<<<<<< HEAD
                   set_varstate(tcallparanode(tcallparanode(tcallparanode(left).right).right).left,vs_read,[vsf_must_be_valid]);
                   resultdef:=tcallparanode(left).left.resultdef;
                 end;
@@ -5277,6 +5281,10 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+                  resultdef:=tcallparanode(tcallparanode(left).right).left.resultdef;
+                end;
+>>>>>>> origin/fixes_2.4
               else
                 internalerror(8);
             end;

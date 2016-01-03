@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Resourcestring
   SNoCommandLine        = 'Cannot execute empty command-line';
@@ -19,6 +20,8 @@ Resourcestring
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {
   prevent compilation error for the versions mentioned below
 } 

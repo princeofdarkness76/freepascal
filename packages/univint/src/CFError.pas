@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 2006-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -12,12 +13,15 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	Copyright (c) 2006-2007, Apple Inc. All rights reserved.
 }
 
 {	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -28,6 +32,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {
     Modified for use with Free Pascal
     Version 308
@@ -86,6 +92,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -99,6 +106,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -121,6 +130,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -146,6 +156,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -156,6 +171,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -181,6 +197,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -191,6 +212,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -200,6 +222,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -213,6 +237,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -222,6 +247,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -232,6 +259,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -263,6 +291,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -273,13 +306,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
@@ -321,6 +358,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/fixes_2.4
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -401,6 +442,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFErrorRef = ^__CFError; { an opaque type }
 	__CFError = record end;
 =======
@@ -415,6 +457,9 @@ type
 =======
 	CFErrorRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	CFErrorRef = ^SInt32; { an opaque type }
+>>>>>>> origin/fixes_2.4
 	CFErrorRefPtr = ^CFErrorRef;
 
 {!
@@ -422,6 +467,7 @@ type
 	    Returns the type identifier of all CFError instances.
 }
 function CFErrorGetTypeID: CFTypeID; external name '_CFErrorGetTypeID';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -439,10 +485,14 @@ function CFErrorGetTypeID: CFTypeID; external name '_CFErrorGetTypeID';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 // Predefined domains; value of "code" will correspond to preexisting values in these domains.
 var kCFErrorDomainPOSIX: CFStringRef; external name '_kCFErrorDomainPOSIX'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -481,6 +531,8 @@ var kCFErrorFilePathKey: CFStringRef; external name '_kCFErrorFilePathKey'; (* a
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 var kCFErrorDomainOSStatus: CFStringRef; external name '_kCFErrorDomainOSStatus'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -507,6 +559,7 @@ var kCFErrorUnderlyingErrorKey: CFStringRef; external name '_kCFErrorUnderlyingE
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -514,6 +567,8 @@ var kCFErrorUnderlyingErrorKey: CFStringRef; external name '_kCFErrorUnderlyingE
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -532,6 +587,7 @@ function CFErrorCreate( allocator: CFAllocatorRef; domain: CFStringRef; code: CF
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -545,6 +601,9 @@ function CFErrorCreate( allocator: CFAllocatorRef; domain: CFStringRef; code: CF
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 {!
 	@function CFErrorCreateWithUserInfoKeysAndValues
@@ -563,6 +622,7 @@ function CFErrorCreateWithUserInfoKeysAndValues( allocator: CFAllocatorRef; doma
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -576,6 +636,9 @@ function CFErrorCreateWithUserInfoKeysAndValues( allocator: CFAllocatorRef; doma
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 {!
 	@function CFErrorGetDomain
@@ -588,6 +651,7 @@ function CFErrorGetDomain( err: CFErrorRef ): CFStringRef; external name '_CFErr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -601,6 +665,9 @@ function CFErrorGetDomain( err: CFErrorRef ): CFStringRef; external name '_CFErr
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 {!
 	@function CFErrorGetCode
@@ -613,6 +680,7 @@ function CFErrorGetCode( err: CFErrorRef ): CFIndex; external name '_CFErrorGetC
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -626,6 +694,9 @@ function CFErrorGetCode( err: CFErrorRef ): CFIndex; external name '_CFErrorGetC
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 {!
 	@function CFErrorCopyUserInfo
@@ -639,6 +710,7 @@ function CFErrorCopyUserInfo( err: CFErrorRef ): CFDictionaryRef; external name 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -652,6 +724,9 @@ function CFErrorCopyUserInfo( err: CFErrorRef ): CFDictionaryRef; external name 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 {!
 	@function CFErrorCopyDescription
@@ -669,6 +744,7 @@ function CFErrorCopyDescription( err: CFErrorRef ): CFStringRef; external name '
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -682,6 +758,9 @@ function CFErrorCopyDescription( err: CFErrorRef ): CFStringRef; external name '
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 {!
 	@function CFErrorCopyFailureReason
@@ -697,6 +776,7 @@ function CFErrorCopyFailureReason( err: CFErrorRef ): CFStringRef; external name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -710,6 +790,9 @@ function CFErrorCopyFailureReason( err: CFErrorRef ): CFStringRef; external name
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 {!
 	@function CFErrorCopyRecoverySuggestion
@@ -725,6 +808,7 @@ function CFErrorCopyRecoverySuggestion( err: CFErrorRef ): CFStringRef; external
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -738,6 +822,9 @@ function CFErrorCopyRecoverySuggestion( err: CFErrorRef ): CFStringRef; external
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

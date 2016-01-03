@@ -1941,6 +1941,7 @@ implementation
         current_asmdata.asmlists[al_globals].concat(Tai_const.Createname(intf_get_vtbl_name(AImplIntf.VtblImplIntf),0));
         { IOffset field }
         case AImplIntf.VtblImplIntf.IType of
+<<<<<<< HEAD
           etFieldValue, etFieldValueClass,
           etStandard:
             current_asmdata.asmlists[al_globals].concat(Tai_const.Create_pint(AImplIntf.VtblImplIntf.IOffset));
@@ -1954,6 +1955,14 @@ implementation
               pd := tprocdef(tpropertysym(AImplIntf.ImplementsGetter).propaccesslist[palt_read].procdef);
               current_asmdata.asmlists[al_globals].concat(Tai_const.Create_pint(tobjectdef(pd.struct).vmtmethodoffset(pd.extnumber)));
             end;
+=======
+          etFieldValue,
+          etStandard:
+            current_asmdata.asmlists[al_globals].concat(Tai_const.Create_pint(AImplIntf.VtblImplIntf.IOffset));
+          etVirtualMethodResult,
+          etStaticMethodResult:
+            current_asmdata.asmlists[al_globals].concat(Tai_const.Create_pint(0));
+>>>>>>> origin/fixes_2.4
           else
             internalerror(200802162);
         end;

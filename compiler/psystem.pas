@@ -155,6 +155,7 @@ implementation
         systemunit.insert(tsyssym.create('Get_Frame',in_get_frame));
 {$endif defined(x86) or defined(arm)}
         systemunit.insert(tsyssym.create('Unaligned',in_unaligned_x));
+<<<<<<< HEAD
         systemunit.insert(tsyssym.create('ObjCSelector',in_objc_selector_x)); { objc only }
         systemunit.insert(tsyssym.create('ObjCEncode',in_objc_encode_x)); { objc only }
 <<<<<<< HEAD
@@ -167,6 +168,9 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+{$endif SUPPORT_UNALIGNED}
+>>>>>>> origin/fixes_2.4
       end;
 
 

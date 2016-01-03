@@ -4753,13 +4753,17 @@ begin
                qry := FUpdateQry;
                end;
     ukInsert : begin
-               if not assigned(FInsertQry) and (trim(FInsertSQL.Text)<> '') then
-                 InitialiseModifyQuery(FInsertQry,FInsertSQL.Text)
-               else
-                 InitialiseModifyQuery(FInsertQry,InsertRecQuery);
+               if not assigned(FInsertQry) then
+                 begin
+                 if (trim(FInsertSQL.Text)<> '') then
+                   InitialiseModifyQuery(FInsertQry,FInsertSQL.Text)
+                 else
+                   InitialiseModifyQuery(FInsertQry,InsertRecQuery);
+                 end;
                qry := FInsertQry;
                end;
     ukDelete : begin
+<<<<<<< HEAD
                if not assigned(FDeleteQry) and (trim(FDeleteSQL.Text)<> '') then
                  InitialiseModifyQuery(FDeleteQry,FDeleteSQL.Text)
                else
@@ -4768,6 +4772,15 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+               if not assigned(FDeleteQry) then
+                 begin
+                 if (trim(FDeleteSQL.Text)<> '') then
+                   InitialiseModifyQuery(FDeleteQry,FDeleteSQL.Text)
+                 else
+                   InitialiseModifyQuery(FDeleteQry,DeleteRecQuery);
+                 end;
+>>>>>>> origin/fixes_2.4
                qry := FDeleteQry;
                end;
   end;

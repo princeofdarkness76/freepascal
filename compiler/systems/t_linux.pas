@@ -630,6 +630,7 @@ begin
        begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          { crti.o must come first }
          if librarysearchpath.FindFile('crti.o',false,s) then
 <<<<<<< HEAD
@@ -697,6 +698,12 @@ begin
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+         { crti.o must come first }
+         if librarysearchpath.FindFile('crti.o',false,s) then
+           AddFileName(s);
+         { then the crtbegin* }
+>>>>>>> origin/fixes_2.4
          { x86_64 requires this to use entry/exit code with pic,
            see also issue #8210 regarding a discussion
            no idea about the other non i386 CPUs (FK)
@@ -709,14 +716,20 @@ begin
            end
          else
 {$endif x86_64}
-           if librarysearchpath.FindFile('crtbegin.o',false,s) then
+           if (cs_link_staticflag in current_settings.globalswitches) and
+              librarysearchpath.FindFile('crtbeginT.o',false,s) then
+             AddFileName(s)
+           else if librarysearchpath.FindFile('crtbegin.o',false,s) then
              AddFileName(s);
+<<<<<<< HEAD
          if librarysearchpath.FindFile('crti.o',false,s) then
            AddFileName(s);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
        end;
       { main objectfiles }
       while not ObjectFiles.Empty do
@@ -778,6 +791,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   linklibc:=true;
               end;
 =======
@@ -796,6 +810,10 @@ begin
                    linklibc:=true;
                  end;
 >>>>>>> origin/cpstrnew
+=======
+                   linklibc:=true;
+                 end;
+>>>>>>> origin/fixes_2.4
               end;
              Add(')');
            end

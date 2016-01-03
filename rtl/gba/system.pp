@@ -25,6 +25,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$i libch.inc}
 
 
@@ -34,6 +35,11 @@ interface
 =======
 {$i systemh.inc}
 >>>>>>> origin/fixes_2_2
+=======
+{$i libch.inc}
+
+
+>>>>>>> origin/fixes_2.4
 
 {$define fpc_softfpu_interface}
   {$i softfpu.pp}
@@ -62,6 +68,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  sLineBreak = LineEnding;
 =======
 =======
@@ -76,6 +83,8 @@ const
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  sLineBreak : string[1] = LineEnding;
 >>>>>>> graemeg/cpstrnew
  DefaultTextLineBreakStyle : TTextLineBreakStyle = tlbsCRLF;
@@ -93,6 +102,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -100,6 +110,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 var
   argc: LongInt = 0;
   argv: PPChar;
@@ -109,6 +121,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 //  errno: integer;
 >>>>>>> graemeg/cpstrnew
@@ -121,6 +134,9 @@ var
 =======
 //  errno: integer;
 >>>>>>> origin/cpstrnew
+=======
+//  errno: integer;
+>>>>>>> origin/fixes_2.4
   fake_heap_end: ^byte; cvar; external;
 
 
@@ -267,6 +283,9 @@ begin
   StackBottom := StackTop - StackLength;
 { OS specific startup }
 >>>>>>> origin/fixes_2_2
+
+{ Set up signals handlers }
+  fpc_cpucodeinit;
 
 { Setup heap }
   InitHeap;

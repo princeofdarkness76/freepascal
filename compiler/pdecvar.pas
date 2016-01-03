@@ -1352,6 +1352,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        { this must be done in a more robust way. Can't read the
                          fieldvarsym's fieldoffset yet, because it may not yet
                          be set }
@@ -1372,6 +1373,10 @@ implementation
                        { this must be done more sophisticated, here is also probably the wrong place }
                        ImplIntf.IOffset:=tfieldvarsym(p.propaccesslist[palt_read].firstsym^.sym).fieldoffset;
 >>>>>>> origin/cpstrnew
+=======
+                       { this must be done more sophisticated, here is also probably the wrong place }
+                       ImplIntf.IOffset:=tfieldvarsym(p.propaccesslist[palt_read].firstsym^.sym).fieldoffset;
+>>>>>>> origin/fixes_2.4
                      end
                    else
                      internalerror(200802161);
@@ -1820,6 +1825,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           {$if defined(i386) or defined(i8086)}
           tmpaddr : int64;
           {$endif defined(i386) or defined(i8086)}
@@ -1843,6 +1849,11 @@ implementation
           tmpaddr : int64;
           {$endif}
 >>>>>>> origin/cpstrnew
+=======
+          {$ifdef i386}
+          tmpaddr : int64;
+          {$endif}
+>>>>>>> origin/fixes_2.4
         begin
           abssym:=nil;
           { only allowed for one var }
@@ -1896,6 +1907,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       {$if defined(i8086)}
                         tcpuabsolutevarsym(abssym).addrsegment:=abssym.addroffset;
                         tmpaddr:=tordconstnode(pt).value.svalue;
@@ -1920,6 +1932,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
                       tmpaddr:=abssym.addroffset shl 4+tordconstnode(pt).value.svalue;
                       if (tmpaddr<int64(low(abssym.addroffset))) or
                          (tmpaddr>int64(high(abssym.addroffset))) then

@@ -2945,6 +2945,7 @@ Type
      TPM_VCENTERALIGN= $10;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      TPM_BOTTOMALIGN = $20;
 =======
      TPM_BOOTOMALIGN = $20;
@@ -2952,6 +2953,9 @@ Type
 =======
      TPM_BOOTOMALIGN = $20;
 >>>>>>> origin/fixes_2_2
+=======
+     TPM_BOTTOMALIGN = $20;
+>>>>>>> origin/fixes_2.4
      TPM_NONOTIFY    = $80;
      TPM_RETURNCMD   = $100;
      TPM_RECURSE         = $0001;

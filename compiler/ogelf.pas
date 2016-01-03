@@ -908,6 +908,7 @@ implementation
 
     function TElfObjData.sectionname(atype:TAsmSectiontype;const aname:string;aorder:TAsmSectionOrder):string;
       const
+<<<<<<< HEAD
         secnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -921,6 +922,9 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+        secnames : array[TAsmSectiontype] of string[13] = ('',
+>>>>>>> origin/fixes_2.4
 {$ifdef userodata}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -947,6 +951,7 @@ implementation
           '.fpc',
           '.toc',
           '.init',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           '.fini',
@@ -1006,6 +1011,11 @@ implementation
 >>>>>>> origin/fixes_2_2
         );
         secnames_pic : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
+=======
+          '.fini'
+        );
+        secnames_pic : array[TAsmSectiontype] of string[17] = ('',
+>>>>>>> origin/fixes_2.4
           '.text',
           '.data.rel',
           '.data.rel',
@@ -1026,6 +1036,7 @@ implementation
           '.fpc',
           '.toc',
           '.init',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           '.fini',
@@ -1079,6 +1090,9 @@ implementation
 =======
           '.fini'
 >>>>>>> origin/fixes_2_2
+=======
+          '.fini'
+>>>>>>> origin/fixes_2.4
         );
       var
         sep : string[3];

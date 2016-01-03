@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2009-2014 by the Free Pascal development team
 =======
     Copyright (c) 2009 by the Free Pascal development team
@@ -17,6 +18,9 @@
 =======
     Copyright (c) 2009 by the Free Pascal development team
 >>>>>>> origin/cpstrnew
+=======
+    Copyright (c) 2009 by the Free Pascal development team
+>>>>>>> origin/fixes_2.4
 
     Implements a SHA-1 digest algorithm (RFC 3174)
 
@@ -29,6 +33,7 @@
 
  **********************************************************************}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -48,6 +53,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 unit sha1;
 {$mode objfpc}{$h+}
 
@@ -55,6 +62,7 @@ interface
 
 type
   TSHA1Digest = array[0..19] of Byte;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -72,6 +80,9 @@ type
 =======
   
 >>>>>>> origin/cpstrnew
+=======
+  
+>>>>>>> origin/fixes_2.4
   TSHA1Context = record
     State: array[0..4] of Cardinal;
     Buffer: array[0..63] of Byte;
@@ -79,6 +90,7 @@ type
     Length: QWord;     { total count of bytes processed }
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -99,6 +111,12 @@ type
 procedure SHA1Init(out ctx: TSHA1Context);
 procedure SHA1Update(var ctx: TSHA1Context; const Buf; BufLen: PtrUInt);
 procedure SHA1Final(var ctx: TSHA1Context; out Digest: TSHA1Digest);
+=======
+{ core }  
+procedure SHA1Init(var ctx: TSHA1Context);
+procedure SHA1Update(var ctx: TSHA1Context; const Buf; BufLen: PtrUInt);
+procedure SHA1Final(var ctx: TSHA1Context; var Digest: TSHA1Digest);
+>>>>>>> origin/fixes_2.4
 
 { auxiliary }
 function SHA1String(const S: String): TSHA1Digest;
@@ -128,7 +146,11 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure SHA1Init(out ctx: TSHA1Context);
+=======
+procedure SHA1Init(var ctx: TSHA1Context);
+>>>>>>> origin/fixes_2.4
 begin
   FillChar(ctx, sizeof(TSHA1Context), 0);
   ctx.State[0] := $67452301;
@@ -143,6 +165,7 @@ const
   K40 = $6ED9EBA1;
   K60 = $8F1BBCDC;
   K80 = $CA62C1D6;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -166,6 +189,9 @@ const
 =======
   
 >>>>>>> origin/cpstrnew
+=======
+  
+>>>>>>> origin/fixes_2.4
 procedure SHA1Transform(var ctx: TSHA1Context; Buf: Pointer);
 var
   A, B, C, D, E, T: Cardinal;
@@ -195,6 +221,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -208,6 +235,9 @@ begin
 =======
   
 >>>>>>> origin/cpstrnew
+=======
+  
+>>>>>>> origin/fixes_2.4
   repeat
     T := (B xor C xor D) + K40 + E;
     E := D;
@@ -222,6 +252,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -235,6 +266,9 @@ begin
 =======
   
 >>>>>>> origin/cpstrnew
+=======
+  
+>>>>>>> origin/fixes_2.4
   repeat
     T := (B and C) or (B and D) or (C and D) + K60 + E;
     E := D;
@@ -244,6 +278,7 @@ begin
     A := T + roldword(A, 5) + Data[i and 15];
     Data[i and 15] := roldword(Data[i and 15] xor Data[(i+2) and 15] xor Data[(i+8) and 15] xor Data[(i+13) and 15], 1);
     Inc(i);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -266,6 +301,10 @@ begin
   until i > 59;  
   
 >>>>>>> origin/cpstrnew
+=======
+  until i > 59;  
+  
+>>>>>>> origin/fixes_2.4
   repeat
     T := (B xor C xor D) + K80 + E;
     E := D;
@@ -275,6 +314,7 @@ begin
     A := T + roldword(A, 5) + Data[i and 15];
     Data[i and 15] := roldword(Data[i and 15] xor Data[(i+2) and 15] xor Data[(i+8) and 15] xor Data[(i+13) and 15], 1);
     Inc(i);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -292,6 +332,9 @@ begin
 =======
   until i > 79;  
 >>>>>>> origin/cpstrnew
+=======
+  until i > 79;  
+>>>>>>> origin/fixes_2.4
 
   Inc(ctx.State[0], A);
   Inc(ctx.State[1], B);
@@ -305,6 +348,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -314,6 +358,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 procedure SHA1Update(var ctx: TSHA1Context; const Buf; BufLen: PtrUInt);
 var
@@ -368,6 +414,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   PADDING: array[0..63] of Byte =
 =======
   PADDING: array[0..63] of Byte = 
@@ -381,13 +428,20 @@ const
 =======
   PADDING: array[0..63] of Byte = 
 >>>>>>> origin/cpstrnew
+=======
+  PADDING: array[0..63] of Byte = 
+>>>>>>> origin/fixes_2.4
     ($80,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
     );
 
+<<<<<<< HEAD
 procedure SHA1Final(var ctx: TSHA1Context; out Digest: TSHA1Digest);
+=======
+procedure SHA1Final(var ctx: TSHA1Context; var Digest: TSHA1Digest);
+>>>>>>> origin/fixes_2.4
 var
   Length: QWord;
   Pads: Cardinal;
@@ -412,6 +466,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FillChar(ctx, sizeof(TSHA1Context), 0);
 =======
   FillChar(ctx, sizeof(TSHA1Context), 0);  
@@ -425,6 +480,9 @@ begin
 =======
   FillChar(ctx, sizeof(TSHA1Context), 0);  
 >>>>>>> origin/cpstrnew
+=======
+  FillChar(ctx, sizeof(TSHA1Context), 0);  
+>>>>>>> origin/fixes_2.4
 end;
 
 function SHA1String(const S: String): TSHA1Digest;
@@ -460,6 +518,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$push}{$i-}
   ofm := FileMode;
   FileMode := 0;
@@ -472,11 +531,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
   {$i-}
   ofm := FileMode;
   FileMode := 0;
   Reset(F, 1);
   {$i+}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -487,6 +549,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
   if IOResult = 0 then
   begin
@@ -531,6 +595,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}
 {$B+}
   Result := (A[0] = B[0]) and (A[1] = B[1]) and (A[2] = B[2]) and (A[3] = B[3]) and (A[4] = B[4]);
@@ -546,10 +611,13 @@ k
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
   Result := (A[0] = B[0]) and (A[1] = B[1]) and (A[2] = B[2]) and (A[3] = B[3]) and (A[4] = B[4]);
 end;
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -560,3 +628,5 @@ end.
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4

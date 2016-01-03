@@ -47,6 +47,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 //procedure SystemSleep(); cdecl; external;
 procedure ledBlink(bm: cint); cdecl; external;
@@ -58,11 +59,14 @@ procedure ledBlink(bm: cint); cdecl; external;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 var
   __dsimode: cbool; cvar; external;
 
 {$ifdef ARM9}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -90,6 +94,11 @@ procedure powerOn(bits: cint); cdecl; external;
 procedure powerOff(bits: cint); cdecl; external;
 procedure ledBlink(bm: cint); cdecl; external;
 >>>>>>> origin/cpstrnew
+=======
+procedure powerOn(bits: cint); cdecl; external;
+procedure powerOff(bits: cint); cdecl; external;
+procedure ledBlink(bm: cint); cdecl; external;
+>>>>>>> origin/fixes_2.4
 
 procedure systemMsgHandler(bytes: cint; user_data: pointer); cdecl; external;
 procedure systemValueHandler(value: cuint32; data: pointer); cdecl; external;
@@ -177,6 +186,7 @@ function writePowerManagement(reg, command: cint): cint; cdecl; external;
 
 function readPowerManagement(reg: cint): cint; inline; 
 
+<<<<<<< HEAD
 procedure powerOn(bits: cint); inline;
 procedure powerOff(bits: cint); inline;
 procedure readUserSettings(); cdecl; external;
@@ -334,6 +344,11 @@ const
   POWER_SOUND  = (1 shl 0);
   POWER_UNKNOWN  = (1 shl 1);
 {$endif DOXYGEN}
+=======
+procedure powerOn(bits: PM_Bits); inline;
+procedure powerOff(bits: PM_Bits); inline;
+procedure systemShutDown(); inline;
+>>>>>>> origin/fixes_2.4
 procedure readUserSettings(); cdecl; external;
 {$endif NDS_INTERFACE}
 {$endif ARM7}
@@ -431,7 +446,7 @@ type
 >>>>>>> origin/fixes_2_2
   REG_KEYINPUT	: pcuint16 = pointer($04000130);
   REG_KEYCNT		: pcuint16 = pointer($04000132);
-  PersonalData  : PPERSONAL_DATA = pointer($27FFC80);
+  PersonalData  : PPERSONAL_DATA = pointer($2FFFC80);
 
 
 type 
@@ -460,6 +475,7 @@ type
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   __system_argv: Pargv = pointer($02FFFE70);
 
 const
@@ -481,6 +497,11 @@ const
   BOOTSIG = $62757473746F6F62; // ULL?
 >>>>>>> origin/cpstrnew
 
+=======
+  __system_argv: Pargv = pointer($02FFFE70);
+  ARGV_MAGIC = $5f617267;
+  
+>>>>>>> origin/fixes_2.4
 
 type
   __bootstub = packed record      // packed ?
@@ -492,6 +513,7 @@ type
 
 
 {$ifdef ARM9}
+<<<<<<< HEAD
 //procedure memCached(address: pointer); cdecl; external;
 function memCached(address: pointer): pointer; cdecl; external;
 //procedure memUncached(address: pointer); cdecl; external;
@@ -502,6 +524,12 @@ procedure resetARM7(address: cuint32); cdecl; external;
 {$ifdef ARM7}
 procedure resetARM9(address: cuint32); cdecl; external;
 {$endif ARM7}
+=======
+procedure memCached(address: pointer); cdecl; external;
+procedure memUncached(address: pointer); cdecl; external;
+{$endif ARM9}
+
+>>>>>>> origin/fixes_2.4
 
 {$endif NDS_INTERFACE}
 
@@ -558,6 +586,11 @@ end;
 procedure powerOff(bits: cint); inline;
 begin
 	REG_POWERCNT^ := REG_POWERCNT^ and not bits;
+end;
+
+procedure systemShutDown(); inline;
+begin
+  powerOn(PM_SYSTEM_PWR);
 end;
 {$endif ARM7}
 

@@ -983,6 +983,7 @@ package=rtl.source.zip[rtlsrc.zip],Run time library sources
 # Source 4
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 package=ide.source.zip[idesrc.zip],IDE sources
 =======
 package=units-graph.source.zip[ugrphsrc.zip],Unit Graph
@@ -990,6 +991,9 @@ package=units-graph.source.zip[ugrphsrc.zip],Unit Graph
 =======
 package=units-graph.source.zip[ugrphsrc.zip],Unit Graph
 >>>>>>> origin/fixes_2_2
+=======
+package=ide.source.zip[idesrc.zip],IDE sources
+>>>>>>> origin/fixes_2.4
 # Source 5
 package=utils.source.zip[utilssrc.zip],~U~tils sources
 # Source 6
@@ -1059,6 +1063,7 @@ package=units-gdbint.source.zip[ugdbsrc.zip],GDB interface units
 package=units-postgres.source.zip[upgrsrc.zip],PostGreSQL interface units
 # Source 16
 package=units-graph.source.zip[ugrphsrc.zip],Unit Graph
+<<<<<<< HEAD
 # Source 17
 package=units-hermes.source.zip[uhermsrc.zip],Port of Hermes graphics library
 <<<<<<< HEAD
@@ -1071,6 +1076,8 @@ package=units-hermes.source.zip[uhermsrc.zip],Port of Hermes graphics library
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 #
 # Source packages 2nd part

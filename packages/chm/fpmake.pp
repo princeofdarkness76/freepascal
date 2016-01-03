@@ -78,6 +78,7 @@ begin
       with T.Dependencies do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        begin
 =======
         begin
@@ -85,6 +86,9 @@ begin
 =======
         begin
 >>>>>>> origin/fixes_2_2
+=======
+       begin
+>>>>>>> origin/fixes_2.4
           AddUnit('chmbase');
         end;
     T:=P.Targets.AddUnit('htmlindexer.pas');
@@ -133,6 +137,11 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+        end;
+    T:=P.Targets.AddUnit('lzxcompressthread');
+      with T.Dependencies do
+        begin
+          AddUnit('paslzxcomp');
         end;
     T:=P.Targets.AddUnit('fasthtmlparser.pas');
     T:=P.Targets.AddUnit('htmlutil.pas');

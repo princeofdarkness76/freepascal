@@ -77,6 +77,7 @@ Function Length(A : DynArrayType) : Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function Power(Base:double;expon:double):double;
 Function Power(Base:Longint;expon:Longint):Longint;
 =======
@@ -87,10 +88,13 @@ Function Power(Base:Longint;expon:Longint):Longint;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 Procedure WriteStr(Out S : String; Args : Arguments);
 Procedure ReadStr(Const S : String; Args : Arguments);
 Procedure Pack(Const A : UnpackedArrayType; StartIndex : TIndexType; Out Z : PackedArrayType);
 Procedure UnPack(Const Z : PackedArrayType; Out A : UnpackedArrayType; StartIndex : TIndexType);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -121,3 +125,6 @@ Var
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2.4

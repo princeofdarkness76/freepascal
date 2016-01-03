@@ -187,11 +187,15 @@ begin
            begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifndef cpu64bitaddr}
              { Set the size of the page at address zero to 64kb, so nothing
                is loaded below that address. This avoids problems with the
                strange Windows-compatible resource handling that assumes
                that addresses below 64kb do not exist.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -272,10 +276,18 @@ begin
                ExeCmd[1]:='ld $PRTOBJ $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -multiply_defined suppress -L. -o $EXE `cat $RES`';
              if not(cs_gdb_valgrind in current_settings.globalswitches) then
                ExeCmd[1]:=ExeCmd[1]+' -pagezero_size 0x10000';
+=======
+               
+               On 64bit systems, page zero is 4GB by default, so no problems
+               there.
+             }
+             ExeCmd[1]:='ld $PRTOBJ $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -pagezero_size 0x10000 -multiply_defined suppress -L. -o $EXE `cat $RES`';
+>>>>>>> origin/fixes_2.4
 {$else ndef cpu64bitaddr}
              ExeCmd[1]:='ld $PRTOBJ $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -multiply_defined suppress -L. -o $EXE `cat $RES`';
 {$endif ndef cpu64bitaddr}
              if (apptype<>app_bundle) then
+<<<<<<< HEAD
                DllCmd[1]:='ld $PRTOBJ $OPT $GCSECTIONS -dynamic -dylib -multiply_defined suppress -L. -o $EXE `cat $RES`'
              else
                DllCmd[1]:='ld $PRTOBJ $OPT $GCSECTIONS -dynamic -bundle -multiply_defined suppress -L. -o $EXE `cat $RES`'
@@ -292,6 +304,11 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+               DllCmd[1]:='ld $PRTOBJ $OPT -dynamic -dylib -multiply_defined suppress -L. -o $EXE `cat $RES`'
+             else
+               DllCmd[1]:='ld $PRTOBJ $OPT -dynamic -bundle -multiply_defined suppress -L. -o $EXE `cat $RES`'
+>>>>>>> origin/fixes_2.4
            end
        end
      else
@@ -540,7 +557,10 @@ end;
             result:='/usr/lib/bundle1.o'
         end
       else
-        result:=''
+        begin
+          if not librarysearchpath.FindFile('dylib1.o',false,result) then
+            result:='/usr/lib/dylib1.o'
+        end;
     end;
 end;    
 <<<<<<< HEAD
@@ -966,6 +986,7 @@ var
   GCSectionsStr,
   StaticStr,
 <<<<<<< HEAD
+<<<<<<< HEAD
   StripStr   : string[63];
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -984,6 +1005,9 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
   StripStr   : string[40];
+=======
+  StripStr   : string[63];
+>>>>>>> origin/fixes_2.4
   success : boolean;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1035,12 +1059,16 @@ begin
     else
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       GCSectionsStr:='-dead_strip -no_dead_strip_inits_and_terms';
 =======
 =======
 >>>>>>> origin/fixes_2_2
       GCSectionsStr:='-dead_strip';
 >>>>>>> graemeg/fixes_2_2
+=======
+      GCSectionsStr:='-dead_strip -no_dead_strip_inits_and_terms';
+>>>>>>> origin/fixes_2.4
 
    if(not(target_info.system in systems_darwin) and
       (cs_profile in current_settings.moduleswitches)) or

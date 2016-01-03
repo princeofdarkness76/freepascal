@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     Copyright (c) 2009 by Jonas Maebe
 
@@ -120,3 +121,5 @@ begin
   cobjcselectornode:=tcgobjcselectornode;
   cobjcprotocolnode:=tcgobjcprotocolnode;
 end.
+=======
+>>>>>>> origin/fixes_2.4

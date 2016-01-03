@@ -1133,6 +1133,7 @@ begin
              (ObjValue is TComponent) then
           begin
             //writeln('TWriter.WriteProperty AncestorObj=',TComponent(AncestorObj).Name,' OwnerFit=',TComponent(AncestorObj).Owner = FRootAncestor,' ',TComponent(ObjValue).Name,' OwnerFit=',TComponent(ObjValue).Owner = Root);
+<<<<<<< HEAD
             if (AncestorObj<> ObjValue) and
              (TComponent(AncestorObj).Owner = FRootAncestor) and
              (TComponent(ObjValue).Owner = Root) and
@@ -1141,6 +1142,13 @@ begin
               // different components, but with the same name
               // treat it like an override
               AncestorObj := ObjValue;
+=======
+            if (TComponent(AncestorObj).Owner <> FRootAncestor) or
+             (TComponent(ObjValue).Owner <> Root) or
+             (UpperCase(TComponent(AncestorObj).Name) <> UpperCase(TComponent(ObjValue).Name)) then
+            begin
+              AncestorObj := nil;
+>>>>>>> origin/fixes_2.4
             end;
           end;
         end else

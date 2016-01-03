@@ -26,13 +26,17 @@
 =======
 >>>>>>> origin/fixes_2_2
  
-     Version:    CarbonCore-654.0.85~1
+     Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
      Copyright:  © 1993-2005 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     Copyright:  © 1993-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -41,6 +45,7 @@
  
 }
 {      Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, November 2005 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {      Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
@@ -64,16 +69,23 @@
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{      Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/fixes_2.4
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -82,6 +94,7 @@
 
 unit MachineExceptions;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -94,6 +107,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -108,6 +125,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -115,21 +133,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -137,6 +164,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -147,6 +177,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -164,6 +195,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -171,10 +204,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -182,6 +218,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -413,18 +450,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/fixes_2.4
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -452,12 +546,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -467,6 +564,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes;
@@ -500,13 +598,20 @@ uses MacTypes,MixedMode;
 >>>>>>> graemeg/fixes_2_2
 =======
 uses MacTypes,MixedMode;
+=======
+uses MacTypes;
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 
 >>>>>>> origin/fixes_2_2
+
+{$ifc TARGET_OS_MAC}
 
 {$ALIGN POWER}
 
 { Some basic declarations used throughout the kernel }
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -533,6 +638,9 @@ type
 =======
 	AreaID = ^SInt32; { an opaque 32-bit type }
 >>>>>>> origin/fixes_2_2
+=======
+	AreaID = ^SInt32; { an opaque type }
+>>>>>>> origin/fixes_2.4
 	AreaIDPtr = ^AreaID;
 { Machine Dependent types for PowerPC: }
 
@@ -547,12 +655,16 @@ type
 		PC: UnsignedWide;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 		CRRegister: UNSIGNEDLONG;             {    changed from CR since some folks had a #define CR  13 in their source code}
 		XER: UNSIGNEDLONG;
 		MSR: UNSIGNEDLONG;
 		MQ: UNSIGNEDLONG;
 		ExceptKind: UNSIGNEDLONG;
 		DSISR: UNSIGNEDLONG;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -566,6 +678,8 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 		DAR: UnsignedWide;
 		Reserved: UnsignedWide;
 	end;
@@ -611,6 +725,7 @@ type
 		Registers: array [0..31] of UnsignedWide;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		FPSCR: UNSIGNEDLONG;
 		Reserved: UNSIGNEDLONG;
 =======
@@ -621,12 +736,17 @@ type
 		FPSCR: UInt32;
 		Reserved: UInt32;
 >>>>>>> origin/fixes_2_2
+=======
+		FPSCR: UNSIGNEDLONG;
+		Reserved: UNSIGNEDLONG;
+>>>>>>> origin/fixes_2.4
 	end;
 type
 	Vector128Ptr = ^Vector128;
 	Vector128 = record
 		case SInt16 of
 		0: (
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 			l: array [0..3] of UInt32;
@@ -640,16 +760,23 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 			l:					array [0..3] of UInt32;
+=======
+			l: array [0..3] of UInt32;
+>>>>>>> origin/fixes_2.4
 			);
 		1: (
-			s:					array [0..7] of UInt16;
+			s: array [0..7] of UInt16;
 			);
 		2: (
+<<<<<<< HEAD
 			c:					packed array [0..15] of UInt8;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+			c: packed array [0..15] of UInt8;
+>>>>>>> origin/fixes_2.4
 			);
 	end;
 type
@@ -672,6 +799,7 @@ const
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	MemoryReferenceKind = UNSIGNEDLONG;
 =======
 	MemoryReferenceKind = UInt32;
@@ -679,6 +807,9 @@ type
 =======
 	MemoryReferenceKind = UInt32;
 >>>>>>> origin/fixes_2_2
+=======
+	MemoryReferenceKind = UNSIGNEDLONG;
+>>>>>>> origin/fixes_2.4
 	MemoryExceptionInformationPtr = ^MemoryExceptionInformation;
 	MemoryExceptionInformation = record
 		theArea: AreaID;                { The area related to the execption, same as MPAreaID.}
@@ -732,6 +863,7 @@ const
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ExceptionKind = UNSIGNEDLONG;
 =======
 	ExceptionKind = UInt32;
@@ -739,6 +871,9 @@ type
 =======
 	ExceptionKind = UInt32;
 >>>>>>> origin/fixes_2_2
+=======
+	ExceptionKind = UNSIGNEDLONG;
+>>>>>>> origin/fixes_2.4
 	ExceptionInfoPtr = ^ExceptionInfo;
 	ExceptionInfo = record
 		case SInt16 of
@@ -758,6 +893,7 @@ type
 	end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc TARGET_CPU_PPC or TARGET_CPU_PPC64}
 =======
 {$ifc TARGET_CPU_PPC OR TARGET_CPU_68K}
@@ -765,6 +901,9 @@ type
 =======
 {$ifc TARGET_CPU_PPC OR TARGET_CPU_68K}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc TARGET_CPU_PPC or TARGET_CPU_PPC64}
+>>>>>>> origin/fixes_2.4
 type
 	ExceptionInformation = ExceptionInformationPowerPC;
 	MachineInformation = MachineInformationPowerPC;
@@ -780,6 +919,9 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc TARGET_CPU_X86 or TARGET_CPU_X86_64}
 type
   Vector128intel = record
@@ -801,16 +943,22 @@ type
 	end;
 {$endc}  { TARGET_CPU_X86 or TARGET_CPU_X86_64 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc TARGET_CPU_X86}
 type
 	MachineInformationIntelPtr = ^MachineInformationIntel;
 	MachineInformationIntel = record
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 		CS: UNSIGNEDLONG;
 		DS: UNSIGNEDLONG;
 		SS: UNSIGNEDLONG;
@@ -822,6 +970,7 @@ type
 		ExceptTrap: UNSIGNEDLONG;
 		ExceptErr: UNSIGNEDLONG;
 		ExceptAddr: UNSIGNEDLONG;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -837,12 +986,17 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 	end;
 type
 	RegisterInformationIntelPtr = ^RegisterInformationIntel;
 	RegisterInformationIntel = record
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 		EAX: UNSIGNEDLONG;
 		EBX: UNSIGNEDLONG;
 		ECX: UNSIGNEDLONG;
@@ -851,6 +1005,7 @@ type
 		EDI: UNSIGNEDLONG;
 		EBP: UNSIGNEDLONG;
 		ESP: UNSIGNEDLONG;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -866,6 +1021,8 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 	end;
 
 type
@@ -883,6 +1040,7 @@ type
 	end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 type
 	VectorInformationIntel = record
@@ -893,17 +1051,23 @@ type
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2.4
 type
 	VectorInformationIntel = record
-		Registers: array[0..7] of UnsignedWide;
+		Registers: array[0..7] of Vector128Intel;
 	end;
 
 type
+<<<<<<< HEAD
 	ExceptionInformationPtr = ^ExceptionInformation;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 	MachineInformationPtr = ^MachineInformation;
 	RegisterInformationPtr = ^RegisterInformation;
 	FPUInformationPtr = ^FPUInformation;
@@ -914,6 +1078,9 @@ type
 	VectorInformation = VectorInformationIntel;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$endc}  { TARGET_CPU_X86 }
 
 {$ifc TARGET_CPU_X86_64}
@@ -979,10 +1146,13 @@ type
 {$ifc TARGET_CPU_X86 or TARGET_CPU_X86_64}
 type
 	ExceptionInformationPtr = ^ExceptionInformation;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 	ExceptionInformation = record
 		theKind: ExceptionKind;
 		machineState: MachineInformationPtr;
@@ -993,6 +1163,7 @@ type
 	end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} { TARGET_CPU_X86 || TARGET_CPU_X86_64 }
 =======
 {$endc}
@@ -1000,6 +1171,9 @@ type
 =======
 {$endc}
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} { TARGET_CPU_X86 || TARGET_CPU_X86_64 }
+>>>>>>> origin/fixes_2.4
 
 { 
     Note:   An ExceptionHandler is NOT a UniversalProcPtr, except in Carbon.
@@ -1059,6 +1233,7 @@ procedure DisposeExceptionHandlerUPP( userUPP: ExceptionHandlerUPP ); external n
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function InvokeExceptionHandlerUPP( var theException: ExceptionInformation; userUPP: ExceptionHandlerUPP ): OSStatus; external name '_InvokeExceptionHandlerUPP';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1080,6 +1255,9 @@ function InvokeExceptionHandlerUPP( var theException: ExceptionInformation; user
 >>>>>>> graemeg/fixes_2_2
 =======
 function InvokeExceptionHandlerUPP( var theException: ExceptionInformation; userRoutine: ExceptionHandlerUPP ): OSStatus; external name '_InvokeExceptionHandlerUPP';
+=======
+function InvokeExceptionHandlerUPP( var theException: ExceptionInformation; userUPP: ExceptionHandlerUPP ): OSStatus; external name '_InvokeExceptionHandlerUPP';
+>>>>>>> origin/fixes_2.4
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2_2
 
@@ -1133,10 +1311,15 @@ end.
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
-
+{$endc} {TARGET_OS_MAC}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

@@ -1,6 +1,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %NEEDEDAFTER }
+=======
+>>>>>>> origin/fixes_2.4
 program go32v2_crash;
 
 const
@@ -29,6 +32,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   for i:=0 to MAX_SIZE div SIZE_INC do
     begin
       FreeMem(MemArray[i],Size(i));
@@ -41,11 +45,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
   for i:=1 to MAX_SIZE div SIZE_INC do
     begin
       FreeMem(MemArray[i],Size(i));
     end;
   Writeln(stderr,'Everthing is fine');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -96,3 +103,7 @@ end.
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+end.
+>>>>>>> origin/fixes_2.4

@@ -38,6 +38,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    HRSRC =  TFPResourceHandle deprecated;
 =======
    HRSRC =  TFPResourceHandle {$ifndef ver2_2} deprecated {$endif};
@@ -51,6 +52,9 @@ type
 =======
    HRSRC =  TFPResourceHandle {$ifndef ver2_2} deprecated {$endif};
 >>>>>>> origin/cpstrnew
+=======
+   HRSRC =  TFPResourceHandle {$ifndef ver2_2} deprecated {$endif};
+>>>>>>> origin/fixes_2.4
    TComponentName = string;
    THandle = System.THandle;
 
@@ -1376,6 +1380,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Handle: TFPResourceHGLOBAL;
     procedure Initialize(Instance: TFPResourceHMODULE; Name, ResType: PWideChar; NameIsID: Boolean);
 =======
@@ -1391,6 +1396,8 @@ type
     procedure Initialize(Instance: THandle; Name, ResType: PWideChar; NameIsID: Boolean);
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2.4
     Handle: THandle;
     procedure Initialize(Instance: THandle; Name, ResType: PWideChar; NameIsID: Boolean);
 >>>>>>> origin/cpstrnew
@@ -1407,9 +1414,12 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Handle: TFPResourceHGLOBAL;
     procedure Initialize(Instance: TFPResourceHMODULE; Name, ResType: PChar; NameIsID: Boolean);
 =======
+=======
+>>>>>>> origin/fixes_2.4
     Handle: THandle;
     procedure Initialize(Instance: THandle; Name, ResType: PChar; NameIsID: Boolean);
 >>>>>>> graemeg/cpstrnew
@@ -2001,11 +2011,15 @@ type
     procedure HandleNewLine;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SkipBOM;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    procedure SkipBOM;
+>>>>>>> origin/fixes_2.4
     procedure SkipSpaces;
     procedure SkipWhitespace;
     procedure HandleEof;

@@ -5,6 +5,7 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-437~1
  
      Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
@@ -18,6 +19,11 @@
  
      Copyright:  © 1985-2005 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2_2
+=======
+     Version:    HIToolbox-437~1
+ 
+     Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -56,16 +62,21 @@
  
 }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -74,6 +85,7 @@
 
 unit Scrap;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -86,6 +98,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -100,6 +116,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -107,21 +124,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -129,6 +155,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -139,6 +168,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -156,6 +186,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -163,10 +195,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -174,6 +209,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -410,18 +446,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -449,12 +542,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -467,13 +563,19 @@ interface
 uses MacTypes,CFBase,MixedMode,MacErrors,CFString;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
 
 =======
+=======
+{$endc} {not MACOSALLINCLUDE}
 
+>>>>>>> origin/fixes_2.4
+
+{$ifc TARGET_OS_MAC}
 
 >>>>>>> graemeg/fixes_2_2
 =======
@@ -525,6 +627,7 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 {
  *  LoadScrap()   *** DEPRECATED ***
@@ -539,11 +642,20 @@ const
 {
  *  LoadScrap()
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+{
+ *  LoadScrap()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    LoadScrap does nothing on Mac OS X.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -553,10 +665,14 @@ const
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function LoadScrap: OSStatus; external name '_LoadScrap';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -579,11 +695,22 @@ function LoadScrap: OSStatus; external name '_LoadScrap';
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  UnloadScrap()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    UnloadScrap does nothing on Mac OS X.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -593,10 +720,14 @@ function LoadScrap: OSStatus; external name '_LoadScrap';
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function UnloadScrap: OSStatus; external name '_UnloadScrap';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -649,6 +780,9 @@ function UnloadScrap: OSStatus; external name '_UnloadScrap';
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -669,12 +803,17 @@ function UnloadScrap: OSStatus; external name '_UnloadScrap';
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> origin/fixes_2.4
 const
 	kScrapFlavorSizeUnknown = -1;
 
@@ -726,6 +865,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ScrapRef = ^OpaqueScrapRef; { an opaque type }
 	OpaqueScrapRef = record end;
 =======
@@ -746,6 +886,9 @@ type
 =======
 	ScrapRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> origin/fixes_2_2
+=======
+	ScrapRef = ^SInt32; { an opaque type }
+>>>>>>> origin/fixes_2.4
 {
     kScrapRefNone is guaranteed to be an invalid ScrapRef.  This 
     is convenient when initializing application variables.
@@ -800,6 +943,7 @@ const
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 {
  *  GetScrapByName()   *** DEPRECATED ***
@@ -814,11 +958,20 @@ const
 {
  *  GetScrapByName()
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+{
+ *  GetScrapByName()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    The Scrap Manager is deprecated. Use PasteboardCreate instead.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -828,10 +981,14 @@ const
 =======
  *    Mac OS X:         in version 10.1 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.5 and later
  *    Non-Carbon CFM:   not available
  }
 function GetScrapByName( name: CFStringRef; options: OptionBits; var scrap: ScrapRef ): OSStatus; external name '_GetScrapByName';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -841,6 +998,9 @@ function GetScrapByName( name: CFStringRef; options: OptionBits; var scrap: Scra
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -852,21 +1012,28 @@ function GetScrapByName( name: CFStringRef; options: OptionBits; var scrap: Scra
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *  GetCurrentScrap()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    The Scrap Manager is deprecated. Use PasteboardCreate instead.
+<<<<<<< HEAD
 =======
  *  GetCurrentScrap()
 >>>>>>> graemeg/fixes_2_2
 =======
  *  GetCurrentScrap()
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -876,10 +1043,14 @@ function GetScrapByName( name: CFStringRef; options: OptionBits; var scrap: Scra
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
 function GetCurrentScrap( var scrap: ScrapRef ): OSStatus; external name '_GetCurrentScrap';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -889,6 +1060,9 @@ function GetCurrentScrap( var scrap: ScrapRef ): OSStatus; external name '_GetCu
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -902,22 +1076,29 @@ function GetCurrentScrap( var scrap: ScrapRef ): OSStatus; external name '_GetCu
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *  GetScrapFlavorFlags()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    The Scrap Manager is deprecated. Use PasteboardGetItemFlavorFlags
  *    instead.
+<<<<<<< HEAD
 =======
  *  GetScrapFlavorFlags()
 >>>>>>> graemeg/fixes_2_2
 =======
  *  GetScrapFlavorFlags()
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -927,10 +1108,14 @@ function GetCurrentScrap( var scrap: ScrapRef ): OSStatus; external name '_GetCu
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
 function GetScrapFlavorFlags( scrap: ScrapRef; flavorType: ScrapFlavorType; var flavorFlags: ScrapFlavorFlags ): OSStatus; external name '_GetScrapFlavorFlags';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -940,6 +1125,9 @@ function GetScrapFlavorFlags( scrap: ScrapRef; flavorType: ScrapFlavorType; var 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -952,22 +1140,29 @@ function GetScrapFlavorFlags( scrap: ScrapRef; flavorType: ScrapFlavorType; var 
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *  GetScrapFlavorSize()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    The Scrap Manager is deprecated. Use PasteboardCopyItemFlavorData
  *    instead.
+<<<<<<< HEAD
 =======
  *  GetScrapFlavorSize()
 >>>>>>> graemeg/fixes_2_2
 =======
  *  GetScrapFlavorSize()
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -977,10 +1172,14 @@ function GetScrapFlavorFlags( scrap: ScrapRef; flavorType: ScrapFlavorType; var 
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
 function GetScrapFlavorSize( scrap: ScrapRef; flavorType: ScrapFlavorType; var byteCount: Size ): OSStatus; external name '_GetScrapFlavorSize';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -990,6 +1189,9 @@ function GetScrapFlavorSize( scrap: ScrapRef; flavorType: ScrapFlavorType; var b
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1003,22 +1205,29 @@ function GetScrapFlavorSize( scrap: ScrapRef; flavorType: ScrapFlavorType; var b
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *  GetScrapFlavorData()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    The Scrap Manager is deprecated. Use PasteboardCopyItemFlavorData
  *    instead.
+<<<<<<< HEAD
 =======
  *  GetScrapFlavorData()
 >>>>>>> graemeg/fixes_2_2
 =======
  *  GetScrapFlavorData()
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -1028,10 +1237,14 @@ function GetScrapFlavorSize( scrap: ScrapRef; flavorType: ScrapFlavorType; var b
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
 function GetScrapFlavorData( scrap: ScrapRef; flavorType: ScrapFlavorType; var byteCount: Size; destination: UnivPtr ): OSStatus; external name '_GetScrapFlavorData';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -1041,6 +1254,9 @@ function GetScrapFlavorData( scrap: ScrapRef; flavorType: ScrapFlavorType; var b
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1058,21 +1274,28 @@ function GetScrapFlavorData( scrap: ScrapRef; flavorType: ScrapFlavorType; var b
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *  ClearCurrentScrap()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    The Scrap Manager is deprecated. Use PasteboardClear instead.
+<<<<<<< HEAD
 =======
  *  ClearCurrentScrap()
 >>>>>>> graemeg/fixes_2_2
 =======
  *  ClearCurrentScrap()
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -1082,10 +1305,14 @@ function GetScrapFlavorData( scrap: ScrapRef; flavorType: ScrapFlavorType; var b
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
 function ClearCurrentScrap: OSStatus; external name '_ClearCurrentScrap';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -1095,6 +1322,9 @@ function ClearCurrentScrap: OSStatus; external name '_ClearCurrentScrap';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1109,21 +1339,28 @@ function ClearCurrentScrap: OSStatus; external name '_ClearCurrentScrap';
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *  ClearScrap()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    The Scrap Manager is deprecated. Use PasteboardClear instead.
+<<<<<<< HEAD
 =======
  *  ClearScrap()
 >>>>>>> graemeg/fixes_2_2
 =======
  *  ClearScrap()
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -1133,10 +1370,14 @@ function ClearCurrentScrap: OSStatus; external name '_ClearCurrentScrap';
 =======
  *    Mac OS X:         in version 10.1 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.5 and later
  *    Non-Carbon CFM:   not available
  }
 function ClearScrap( var inOutScrap: ScrapRef ): OSStatus; external name '_ClearScrap';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -1146,6 +1387,9 @@ function ClearScrap( var inOutScrap: ScrapRef ): OSStatus; external name '_Clear
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1179,22 +1423,29 @@ function ClearScrap( var inOutScrap: ScrapRef ): OSStatus; external name '_Clear
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *  PutScrapFlavor()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    The Scrap Manager is deprecated. Use PasteboardPutItemFlavor
  *    instead.
+<<<<<<< HEAD
 =======
  *  PutScrapFlavor()
 >>>>>>> graemeg/fixes_2_2
 =======
  *  PutScrapFlavor()
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -1204,10 +1455,14 @@ function ClearScrap( var inOutScrap: ScrapRef ): OSStatus; external name '_Clear
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
 function PutScrapFlavor( scrap: ScrapRef; flavorType: ScrapFlavorType; flavorFlags: ScrapFlavorFlags; flavorSize: Size; flavorData: {const} UnivPtr { can be NULL } ): OSStatus; external name '_PutScrapFlavor';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -1217,6 +1472,9 @@ function PutScrapFlavor( scrap: ScrapRef; flavorType: ScrapFlavorType; flavorFla
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1228,10 +1486,14 @@ function PutScrapFlavor( scrap: ScrapRef; flavorType: ScrapFlavorType; flavorFla
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$endc} {not TARGET_CPU_64}
 
 type
 	ScrapPromiseKeeperProcPtr = function( scrap: ScrapRef; flavorType: ScrapFlavorType; userData: UnivPtr ): OSStatus;
+<<<<<<< HEAD
 =======
 type
 	ScrapPromiseKeeperProcPtr = function( scrap: ScrapRef; flavorType: ScrapFlavorType; userData: UnivPtr ): OSStatus;
@@ -1242,6 +1504,8 @@ type
 	ScrapPromiseKeeperProcPtr = function( scrap: ScrapRef; flavorType: ScrapFlavorType; userData: UnivPtr ): OSStatus;
 type
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 	ScrapPromiseKeeperUPP = ScrapPromiseKeeperProcPtr;
 {
  *  NewScrapPromiseKeeperUPP()
@@ -1254,6 +1518,7 @@ type
 function NewScrapPromiseKeeperUPP( userRoutine: ScrapPromiseKeeperProcPtr ): ScrapPromiseKeeperUPP; external name '_NewScrapPromiseKeeperUPP';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1261,6 +1526,9 @@ function NewScrapPromiseKeeperUPP( userRoutine: ScrapPromiseKeeperProcPtr ): Scr
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  DisposeScrapPromiseKeeperUPP()
@@ -1273,6 +1541,7 @@ function NewScrapPromiseKeeperUPP( userRoutine: ScrapPromiseKeeperProcPtr ): Scr
 procedure DisposeScrapPromiseKeeperUPP( userUPP: ScrapPromiseKeeperUPP ); external name '_DisposeScrapPromiseKeeperUPP';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1280,6 +1549,9 @@ procedure DisposeScrapPromiseKeeperUPP( userUPP: ScrapPromiseKeeperUPP ); extern
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  InvokeScrapPromiseKeeperUPP()
@@ -1292,6 +1564,7 @@ procedure DisposeScrapPromiseKeeperUPP( userUPP: ScrapPromiseKeeperUPP ); extern
 function InvokeScrapPromiseKeeperUPP( scrap: ScrapRef; flavorType: ScrapFlavorType; userData: UnivPtr; userUPP: ScrapPromiseKeeperUPP ): OSStatus; external name '_InvokeScrapPromiseKeeperUPP';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1299,6 +1572,9 @@ function InvokeScrapPromiseKeeperUPP( scrap: ScrapRef; flavorType: ScrapFlavorTy
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/fixes_2.4
 
 {
     SetScrapPromiseKeeper associates a ScrapPromiseKeeper with a
@@ -1311,6 +1587,7 @@ function InvokeScrapPromiseKeeperUPP( scrap: ScrapRef; flavorType: ScrapFlavorTy
     ScrapPromiseKeeper could use in fabricating one or more
     promised flavors.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
@@ -1328,11 +1605,21 @@ function InvokeScrapPromiseKeeperUPP( scrap: ScrapRef; flavorType: ScrapFlavorTy
 {
  *  SetScrapPromiseKeeper()
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+{
+ *  SetScrapPromiseKeeper()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    The Scrap Manager is deprecated. Use PasteboardSetPromiseKeeper
+ *    instead.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -1342,10 +1629,14 @@ function InvokeScrapPromiseKeeperUPP( scrap: ScrapRef; flavorType: ScrapFlavorTy
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
 function SetScrapPromiseKeeper( scrap: ScrapRef; upp: ScrapPromiseKeeperUPP; userData: {const} UnivPtr ): OSStatus; external name '_SetScrapPromiseKeeper';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -1355,6 +1646,9 @@ function SetScrapPromiseKeeper( scrap: ScrapRef; upp: ScrapPromiseKeeperUPP; use
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1365,22 +1659,29 @@ function SetScrapPromiseKeeper( scrap: ScrapRef; upp: ScrapPromiseKeeperUPP; use
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *  GetScrapFlavorCount()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    The Scrap Manager is deprecated. Use PasteboardCopyItemFlavors
  *    instead.
+<<<<<<< HEAD
 =======
  *  GetScrapFlavorCount()
 >>>>>>> graemeg/fixes_2_2
 =======
  *  GetScrapFlavorCount()
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -1390,10 +1691,14 @@ function SetScrapPromiseKeeper( scrap: ScrapRef; upp: ScrapPromiseKeeperUPP; use
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
 function GetScrapFlavorCount( scrap: ScrapRef; var infoCount: UInt32 ): OSStatus; external name '_GetScrapFlavorCount';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -1403,6 +1708,9 @@ function GetScrapFlavorCount( scrap: ScrapRef; var infoCount: UInt32 ): OSStatus
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1418,22 +1726,29 @@ function GetScrapFlavorCount( scrap: ScrapRef; var infoCount: UInt32 ): OSStatus
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *  GetScrapFlavorInfoList()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    The Scrap Manager is deprecated. Use PasteboardCopyItemFlavors
  *    instead.
+<<<<<<< HEAD
 =======
  *  GetScrapFlavorInfoList()
 >>>>>>> graemeg/fixes_2_2
 =======
  *  GetScrapFlavorInfoList()
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -1443,10 +1758,14 @@ function GetScrapFlavorCount( scrap: ScrapRef; var infoCount: UInt32 ): OSStatus
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
 function GetScrapFlavorInfoList( scrap: ScrapRef; var infoCount: UInt32; info: {variable-size-array} ScrapFlavorInfoPtr ): OSStatus; external name '_GetScrapFlavorInfoList';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -1456,6 +1775,9 @@ function GetScrapFlavorInfoList( scrap: ScrapRef; var infoCount: UInt32; info: {
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1475,22 +1797,29 @@ function GetScrapFlavorInfoList( scrap: ScrapRef; var infoCount: UInt32; info: {
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *  CallInScrapPromises()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    The Scrap Manager is deprecated. Use PasteboardResolvePromises
  *    instead.
+<<<<<<< HEAD
 =======
  *  CallInScrapPromises()
 >>>>>>> graemeg/fixes_2_2
 =======
  *  CallInScrapPromises()
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
@@ -1500,10 +1829,14 @@ function GetScrapFlavorInfoList( scrap: ScrapRef; var infoCount: UInt32; info: {
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
 function CallInScrapPromises: OSStatus; external name '_CallInScrapPromises';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -1520,12 +1853,22 @@ end.
 =======
 >>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/fixes_2.4
 
 
+{$endc} {not TARGET_CPU_64}
 
+{$endc} {TARGET_OS_MAC}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

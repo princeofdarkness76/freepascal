@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -34,6 +35,11 @@
  
      Copyright:  © 2001-2005 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2_2
+=======
+     Version:    HIToolbox-437~1
+ 
+     Copyright:  © 2001-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -85,6 +91,7 @@
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {       Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
 <<<<<<< HEAD
@@ -110,16 +117,24 @@
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+{       Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
+>>>>>>> origin/fixes_2.4
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -128,6 +143,7 @@
 
 unit HIView;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -140,6 +156,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -154,6 +174,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -161,21 +182,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -183,6 +213,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -193,6 +226,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -210,6 +244,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -217,10 +253,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -228,6 +267,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -444,18 +484,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/fixes_2.4
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -483,12 +580,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -498,6 +598,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,CFArray,CFBase,CGBase,CGContext,CGImage,CarbonEventsCore,Drag,Events,QuickdrawTypes,Menus,Appearance,Controls,CarbonEvents,HIGeometry,HIObject,IconsCore,Icons,HIShape,HITheme,CTFont;
@@ -532,14 +633,19 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 uses MacTypes,CFArray,CFBase,CGContext,CGImage,CarbonEventsCore,Drag,Events,Quickdraw,Menus,Appearance,Controls,CarbonEvents,HIGeometry,Icons,HIShape;
+=======
+uses MacTypes,CFArray,CFBase,CGBase,CGContext,CGImage,CarbonEventsCore,Drag,Events,QuickdrawTypes,Menus,Appearance,Controls,CarbonEvents,HIGeometry,HIObject,IconsCore,Icons,HIShape,HITheme,CTFont;
+{$endc} {not MACOSALLINCLUDE}
 
+>>>>>>> origin/fixes_2.4
+
+{$ifc TARGET_OS_MAC}
 
 {$ALIGN MAC68K}
 
 type
-	HIViewRef = ControlRef;
-type
 	HIViewID = ControlID;
+<<<<<<< HEAD
 {
  *  kHIViewWindowContentID
  *  
@@ -601,6 +707,8 @@ var kHIViewWindowGrowBoxID: HIViewID; external name '_kHIViewWindowGrowBoxID'; (
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {
  *  Discussion:
@@ -638,6 +746,7 @@ type
    }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		top: CGFloat;
 =======
 		top: Float32;
@@ -645,10 +754,14 @@ type
 =======
 		top: Float32;
 >>>>>>> origin/fixes_2_2
+=======
+		top: CGFloat;
+>>>>>>> origin/fixes_2.4
 
   {
    * Width of the left of the structure area.
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 		left: CGFloat;
@@ -658,10 +771,14 @@ type
 =======
 		left: Float32;
 >>>>>>> origin/fixes_2_2
+=======
+		left: CGFloat;
+>>>>>>> origin/fixes_2.4
 
   {
    * Height of the bottom of the structure area.
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 		bottom: CGFloat;
@@ -671,10 +788,14 @@ type
 =======
 		bottom: Float32;
 >>>>>>> origin/fixes_2_2
+=======
+		bottom: CGFloat;
+>>>>>>> origin/fixes_2.4
 
   {
    * Width of the right of the structure area.
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 		right: CGFloat;
@@ -684,6 +805,9 @@ type
 =======
 		right: Float32;
 >>>>>>> origin/fixes_2_2
+=======
+		right: CGFloat;
+>>>>>>> origin/fixes_2.4
 	end;
 {==============================================================================}
 {  ATTRIBUTES                                                                  }
@@ -702,10 +826,14 @@ const
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
    * When set, the view will send the command it generates to the user
    * focus and propagate as it would naturally from there. The default
    * is to send the command to itself and then to its parent and so
    * forth.
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -717,16 +845,22 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
    }
 	kHIViewAttributeSendCommandToUserFocus = 1 shl 0;
 
   {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
    * Indicates that a text editing view should behave appropriately for
    * editing fields in a dialog; specifically, the view should ignore
    * the Return, Enter, Escape, and Tab keys, and allow them to be
    * processed by other participants in the event flow. Available on
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -738,6 +872,8 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
    * Mac OS X 10.3 and later.
    }
 	kHIViewAttributeIsFieldEditor = 1 shl 1;
@@ -756,6 +892,9 @@ const
  *    View feature flags are generally determined by the view itself,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    and are not typically changed by clients of the view. 
  *    
  *    Historical note: This list is similar to the list of Control
@@ -765,12 +904,15 @@ const
  *    message. This capability is not required by the HIView Manager,
  *    because an HIView that doesn't support a particular Carbon event
  *    will simply ignore it.
+<<<<<<< HEAD
 =======
  *    and are not typically changed by clients of the view.
 >>>>>>> graemeg/fixes_2_2
 =======
  *    and are not typically changed by clients of the view.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  }
 const
 {
@@ -788,6 +930,7 @@ const
    * If this view is clicked, the keyboard focus should be set to this
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    * view automatically. This is primarily used for edit text views.
 =======
    * view automatically. This is primarily used for edit text controls.
@@ -795,6 +938,9 @@ const
 =======
    * view automatically. This is primarily used for edit text controls.
 >>>>>>> origin/fixes_2_2
+=======
+   * view automatically. This is primarily used for edit text views.
+>>>>>>> origin/fixes_2.4
    }
 	kHIViewFeatureGetsFocusOnClick = 1 shl 8;
 
@@ -830,11 +976,15 @@ const
   {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
    * This tells the Control Manager that the up button part increases
    * the value of the view instead of decreasing it. For example, the
    * Little Arrows (Spinner) view increase its value when the up button
    * is pressed. Scroll bars, on the other hand, decrease the value
    * when their up buttons are pressed.
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -847,6 +997,8 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
    }
 	kHIViewFeatureInvertsUpDownValueMeaning = 1 shl 24;
 
@@ -863,6 +1015,7 @@ const
    * view is actually fully transparent, so invalidating it doesn't
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    * really help things. By telling the Control Manager that the view
 =======
    * really help things. By telling the control manager that the view
@@ -870,6 +1023,9 @@ const
 =======
    * really help things. By telling the control manager that the view
 >>>>>>> origin/fixes_2_2
+=======
+   * really help things. By telling the Control Manager that the view
+>>>>>>> origin/fixes_2.4
    * is transparent and does not do any drawing, we can avoid trying to
    * invalidate it and instead invalidate views behind it.
    }
@@ -888,6 +1044,7 @@ const
    * window dragging). The presence of this bit tells us not to bother
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    * asking the view for the clickable region. A view like the visual
    * separator would set this bit. It's typically used in conjunction
    * with the kHIViewFeatureDoesNotDraw bit.
@@ -901,6 +1058,11 @@ const
    * visual separator would set this bit. It's typically used in
    * conjunction with the kHIViewFeatureDoesNotDraw bit.
 >>>>>>> origin/fixes_2_2
+=======
+   * asking the view for the clickable region. A view like the visual
+   * separator would set this bit. It's typically used in conjunction
+   * with the kHIViewFeatureDoesNotDraw bit.
+>>>>>>> origin/fixes_2.4
    }
 	kHIViewFeatureIgnoresClicks = 1 shl 29;
 
@@ -967,6 +1129,7 @@ const
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  HIView meta-parts
  *  
  *  Summary:
@@ -998,33 +1161,59 @@ const
 =======
 >>>>>>> origin/fixes_2_2
  *  HIView Meta-Parts
+=======
+ *  HIView meta-parts
+>>>>>>> origin/fixes_2.4
  *  
  *  Summary:
  *    A meta-part is a part used in a call to the HIViewCopyShape API.
- *    These parts are parts that might be defined by a view. They
- *    define a region of a view. Along with these parts, you can also
- *    pass in normal part codes to get the regions of those parts. Not
- *    all views fully support this feature.
+ *    These parts might be defined by a view, but should not be
+ *    returned from calls such as HIViewGetPartHit. They define a
+ *    region of a view. 
+ *    
+ *    Along with these parts, you can also pass in normal part codes to
+ *    get the regions of those parts. Not all views fully support this
+ *    feature.
  }
 const
 {
+<<<<<<< HEAD
    * The structure region is the total area over which the view draws.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+   * The entire area that the view will draw into. When a composited
+   * view is drawn, the HIView Manager clips the view's drawing to the
+   * structure area. This area may extend beyond the bounds of the view
+   * (for example, if the view draws a focus ring outside of its
+   * bounds). You may return a superset of the drawn area if this is
+   * computationally easier to construct. This area is used to
+   * determine the area of a window that should be invalidated and
+   * redrawn when a view is invalidated. It is not necessary for a view
+   * to return a shape that precisely describes the structure area; for
+   * example, a view whose structure is an oval may simply return the
+   * oval's bounding rectangle. The default handler for the
+   * kEventControlGetPartRegion event will return the view's bounds
+   * when this part is requested.
+>>>>>>> origin/fixes_2.4
    }
 	kHIViewStructureMetaPart = -1;
 
   {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
    * The area of the view in which embedded views should be positioned.
    * This part is only defined for views that can contain other views
    * (for example, the group box). This area is largely informational
    * and is not used by the HIView Manager itself. The default handler
    * for the kEventControlGetPartRegion event will return
    * errInvalidPartCode when this part is requested.
+<<<<<<< HEAD
 =======
    * The content region is only defined by views that can embed other
    * views. It is the area that embedded content can live.
@@ -1033,12 +1222,17 @@ const
    * The content region is only defined by views that can embed other
    * views. It is the area that embedded content can live.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
    }
 	kHIViewContentMetaPart = -2;
 
   {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
    * The area of the view that, when drawn, is filled with opaque
    * pixels. You may also return a subset of the opaque area if this is
    * computationally easier to construct. If a view is contained in a
@@ -1050,18 +1244,24 @@ const
    * default handler for the kEventControlGetPartRegion event will
    * return an empty area when this part is requested. This meta-part
    * is available in Mac OS X 10.2 or later.
+<<<<<<< HEAD
 =======
    * Mac OS X 10.2 or later
 >>>>>>> graemeg/fixes_2_2
 =======
    * Mac OS X 10.2 or later
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
    }
 	kHIViewOpaqueMetaPart = -3;
 
   {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
    * The area of the view that causes a mouse event to be captured by
    * that view. If a mouse event falls inside the view bounds but
    * outside of this area, then the Control Manager will allow the
@@ -1078,6 +1278,7 @@ const
    * kEventControlGetPartRegion event will return the view's bounds
    * when this part is requested. This meta-part is available in Mac OS
    * X 10.3 or later.
+<<<<<<< HEAD
 =======
    * Mac OS X 10.3 or later, only used for async window dragging.
    * Default is structure region.
@@ -1086,6 +1287,8 @@ const
    * Mac OS X 10.3 or later, only used for async window dragging.
    * Default is structure region.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
    }
 	kHIViewClickableMetaPart = -4;
 
@@ -1117,6 +1320,7 @@ type
 	HIViewImageContentType = ControlContentType;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	HIViewImageContentInfo = ControlImageContentInfo;
 =======
 type
@@ -1128,11 +1332,15 @@ type
 	HIViewImageContentInfo = ControlImageContentInfo;
 type
 >>>>>>> origin/fixes_2_2
+=======
+	HIViewImageContentInfo = ControlImageContentInfo;
+>>>>>>> origin/fixes_2.4
 	HIViewContentType = SInt16;
 
 {
  *  HIViewContentTypes
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Summary:
@@ -1152,6 +1360,14 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  Summary:
+ *    HIView image content types.
+ }
+const
+{
+   * The view has no content other than text.
+>>>>>>> origin/fixes_2.4
    }
 	kHIViewContentTextOnly = 0;
 
@@ -1163,6 +1379,7 @@ const
   {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    * The view's content is an IconSuiteRef. The icon suite handle
    * should be placed in HIViewContentInfo.u.iconSuite.
 =======
@@ -1171,10 +1388,15 @@ const
 =======
    * The view's content is an IconSuiteRef.
 >>>>>>> origin/fixes_2_2
+=======
+   * The view's content is an IconSuiteRef. The icon suite handle
+   * should be placed in HIViewContentInfo.u.iconSuite.
+>>>>>>> origin/fixes_2.4
    }
 	kHIViewContentIconSuiteRef = 129;
 
   {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    * The view's content is an IconRef. The IconRef should be placed in
@@ -1185,10 +1407,15 @@ const
 =======
    * The view's content is an IconRef.
 >>>>>>> origin/fixes_2_2
+=======
+   * The view's content is an IconRef. The IconRef should be placed in
+   * HIViewContentInfo.u.iconRef.
+>>>>>>> origin/fixes_2.4
    }
 	kHIViewContentIconRef = 132;
 
   {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    * The view's content is a CGImageRef. The CGImageRef should be
@@ -1291,16 +1518,111 @@ type
 =======
 >>>>>>> origin/fixes_2_2
    * The view's content is a CGImageRef.
+=======
+   * The view's content is a CGImageRef. The CGImageRef should be
+   * placed in HIViewContentInfo.u.imageRef. Available in Mac OS X 10.4
+   * and later.
+>>>>>>> origin/fixes_2.4
    }
 	kHIViewContentCGImageRef = 134;
 
+  {
+   * The view's content is an image file in the main bundle's Resources
+   * directory. The CFStringRef of the full name of the image file
+   * should be placed in HIViewContentInfo.u.imageResource. Available
+   * in Mac OS X 10.5 and later.
+   }
+	kHIViewContentImageResource = 135;
+
+  {
+   * The view's content is an image file at an arbitrary location. The
+   * CFURLRef identifying the image file should be placed in
+   * HIViewContentInfo.u.imageFile. Available in Mac OS X 10.5 and
+   * later.
+   }
+	kHIViewContentImageFile = 136;
+
+  {
+   * The view's content is an IconRef, specified by an icon type and
+   * creator. The type and creator should be placed in
+   * HIViewContentInfo.u.iconTypeAndCreator. Available in Mac OS X 10.5
+   * and later.
+   }
+	kHIViewContentIconTypeAndCreator = 137;
+
+  {
+   * The view's content is a Note, Caution, or Stop icon, specified by
+   * the corresponding icon type (kAlertNoteIcon, kAlertCautionIcon, or
+   * kAlertStopIcon). When the icon is drawn, it may be modified to
+   * correspond to the current Mac OS X user interface guidelines. The
+   * type should be placed in
+   * HIViewContentInfo.u.iconTypeAndCreator.type. The creator field of
+   * the iconTypeAndCreator field is ignored in this case. Available in
+   * Mac OS X 10.5 and later.
+   }
+	kHIViewContentAlertIconType = 138;
+
+  {
+   * The view's content is a reference to an NSImage. The NSImage*
+   * should be placed in HIViewContentInfo.u.nsImage. Available in Mac
+   * OS X 10.5 and later.
+   }
+	kHIViewContentNSImage = 139;
+
+
+{
+ *  HITypeAndCreator
+ *  
+ *  Summary:
+ *    A type/creator pair used to identify an IconRef.
+ }
+type
+	HITypeAndCreator = record
+{
+   * The icon type.
+   }
+		typ: OSType;
+
+  {
+   * The icon creator.
+   }
+		creator: OSType;
+	end;
 
 {
  *  HIViewContentInfo
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  
+ *  Summary:
+ *    Defines the image content of a view.
+ *  
+ *  Discussion:
+ *    This structure is the HIView equivalent of the
+ *    ControlImageContentInfo structure. On Mac OS X 10.5 and later,
+ *    you should use this structure with the HIViewSetImageContent and
+ *    HIViewCopyImageContent APIs to set or retrieve the image content
+ *    of a view. 
+ *    
+ *    Prior to Mac OS X 10.5, you may pass this structure to
+ *    GetControlData and SetControlData with the kControlContentTag
+ *    constant. Note, however, that the size of this structure as
+ *    declared in the Mac OS X 10.5 headers is different (and larger)
+ *    than the size of this structure as declared in the Mac OS X 10.4
+ *    headers, and the Mac OS X 10.5 version is larger than the size of
+ *    the ControlImageContentInfo structure. The view implementations
+ *    prior to Mac OS X 10.5 only support Get/SetControlData requests
+ *    if the specified data size matches the size of
+ *    ControlImageContentInfo. Therefore, if you need to use
+ *    Get/SetControlData with this structure prior to Mac OS X 10.5,
+ *    you should pass sizeof(ControlImageContentInfo) rather than
+ *    sizeof(HIViewContentInfo) as the size of the incoming/outgoing
+ *    data buffer.
+>>>>>>> origin/fixes_2.4
  }
 type
 	HIViewContentInfo = record
@@ -1309,6 +1631,7 @@ type
    }
 		contentType: HIViewContentType;
 		case SInt16 of
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
@@ -1326,10 +1649,18 @@ type
 			iconSuite: IconSuiteRef;
 			);
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+		0: (
+			iconSuite: IconSuiteRef;
+			);
+{$endc} {not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 		1: (
 			iconRef: IconRef_fix;
 			);
 		2: (
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 			imagiconTypeAndCreatoreRef: HITypeAndCreator;
@@ -1351,6 +1682,19 @@ type
 			imageRef: CGImageRef;
 			);
 >>>>>>> origin/fixes_2_2
+=======
+			imagiconTypeAndCreatoreRef: HITypeAndCreator;
+			);
+		3: (
+			imageRef: CGImageRef;
+			);
+		4: (
+			imageResource: CFStringRef;
+			);
+		5: (
+			imageFile: CFURLRef;
+			);
+>>>>>>> origin/fixes_2.4
 	end;
 type
 	HIViewContentInfoPtr = ^HIViewContentInfo;
@@ -1390,11 +1734,15 @@ const
 {==============================================================================}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 {
  *  HIViewGetRoot()
  *  
@@ -1416,6 +1764,7 @@ const
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -1423,6 +1772,9 @@ const
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1442,17 +1794,23 @@ function HIViewGetRoot( inWindow: WindowRef ): HIViewRef; external name '_HIView
  *    exist. All views in a window will be released automatically when
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    the window is destroyed. 
  *    
  *    Note that you should not use this API to transfer a window's
  *    content view from one window to another. A window's content view
  *    should always be left in its original window.
+<<<<<<< HEAD
 =======
  *    the window is destroyed.
 >>>>>>> graemeg/fixes_2_2
 =======
  *    the window is destroyed.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1474,6 +1832,7 @@ function HIViewGetRoot( inWindow: WindowRef ): HIViewRef; external name '_HIView
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -1481,6 +1840,9 @@ function HIViewGetRoot( inWindow: WindowRef ): HIViewRef; external name '_HIView
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1510,6 +1872,7 @@ function HIViewAddSubview( inParent: HIViewRef; inNewChild: HIViewRef ): OSStatu
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -1517,6 +1880,9 @@ function HIViewAddSubview( inParent: HIViewRef; inNewChild: HIViewRef ): OSStatu
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1545,6 +1911,7 @@ function HIViewRemoveFromSuperview( inView: HIViewRef ): OSStatus; external name
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -1552,6 +1919,9 @@ function HIViewRemoveFromSuperview( inView: HIViewRef ): OSStatus; external name
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1581,6 +1951,7 @@ function HIViewGetSuperview( inView: HIViewRef ): HIViewRef; external name '_HIV
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -1588,6 +1959,9 @@ function HIViewGetSuperview( inView: HIViewRef ): HIViewRef; external name '_HIV
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1617,6 +1991,7 @@ function HIViewGetFirstSubview( inView: HIViewRef ): HIViewRef; external name '_
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -1624,6 +1999,9 @@ function HIViewGetFirstSubview( inView: HIViewRef ): HIViewRef; external name '_
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1652,6 +2030,7 @@ function HIViewGetLastSubview( inView: HIViewRef ): HIViewRef; external name '_H
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -1659,6 +2038,9 @@ function HIViewGetLastSubview( inView: HIViewRef ): HIViewRef; external name '_H
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1687,6 +2069,7 @@ function HIViewGetNextView( inView: HIViewRef ): HIViewRef; external name '_HIVi
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -1694,6 +2077,9 @@ function HIViewGetNextView( inView: HIViewRef ): HIViewRef; external name '_HIVi
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1723,6 +2109,7 @@ function HIViewGetPreviousView( inView: HIViewRef ): HIViewRef; external name '_
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -1730,6 +2117,9 @@ function HIViewGetPreviousView( inView: HIViewRef ): HIViewRef; external name '_
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1768,6 +2158,7 @@ function HIViewCountSubviews( inView: HIViewRef ): CFIndex; external name '_HIVi
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -1775,6 +2166,9 @@ function HIViewCountSubviews( inView: HIViewRef ): CFIndex; external name '_HIVi
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1812,6 +2206,7 @@ function HIViewGetIndexedSubview( inView: HIViewRef; inSubviewIndex: CFIndex; va
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -1819,6 +2214,9 @@ function HIViewGetIndexedSubview( inView: HIViewRef; inSubviewIndex: CFIndex; va
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1831,12 +2229,17 @@ function HIViewSetZOrder( inView: HIViewRef; inOp: HIViewZOrderOp; inOther: HIVi
 {==============================================================================}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> origin/fixes_2.4
 
 {
  *  HIViewKind
@@ -1868,11 +2271,15 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 {
  *  HIViewSetVisible()
  *  
@@ -1898,6 +2305,7 @@ const
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -1905,6 +2313,9 @@ const
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1941,6 +2352,7 @@ function HIViewSetVisible( inView: HIViewRef; inVisible: Boolean ): OSStatus; ex
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -1948,6 +2360,9 @@ function HIViewSetVisible( inView: HIViewRef; inVisible: Boolean ): OSStatus; ex
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1981,6 +2396,7 @@ function HIViewIsVisible( inView: HIViewRef ): Boolean; external name '_HIViewIs
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -1988,6 +2404,9 @@ function HIViewIsVisible( inView: HIViewRef ): Boolean; external name '_HIViewIs
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2018,6 +2437,7 @@ function HIViewIsLatentlyVisible( inView: HIViewRef ): Boolean; external name '_
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2025,6 +2445,9 @@ function HIViewIsLatentlyVisible( inView: HIViewRef ): Boolean; external name '_
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2064,6 +2487,7 @@ function HIViewSetHilite( inView: HIViewRef; inHilitePart: HIViewPartCode ): OSS
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2071,6 +2495,9 @@ function HIViewSetHilite( inView: HIViewRef; inHilitePart: HIViewPartCode ): OSS
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2104,6 +2531,7 @@ function HIViewIsActive( inView: HIViewRef; outIsLatentActive: BooleanPtr { can 
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2111,6 +2539,9 @@ function HIViewIsActive( inView: HIViewRef; outIsLatentActive: BooleanPtr { can 
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2150,6 +2581,7 @@ function HIViewSetActivated( inView: HIViewRef; inSetActivated: Boolean ): OSSta
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2157,6 +2589,9 @@ function HIViewSetActivated( inView: HIViewRef; inSetActivated: Boolean ): OSSta
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2189,6 +2624,7 @@ function HIViewIsEnabled( inView: HIViewRef; outIsLatentEnabled: BooleanPtr { ca
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2196,6 +2632,9 @@ function HIViewIsEnabled( inView: HIViewRef; outIsLatentEnabled: BooleanPtr { ca
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2231,6 +2670,7 @@ function HIViewSetEnabled( inView: HIViewRef; inSetEnabled: Boolean ): OSStatus;
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2238,6 +2678,9 @@ function HIViewSetEnabled( inView: HIViewRef; inSetEnabled: Boolean ): OSStatus;
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2276,6 +2719,7 @@ function HIViewIsCompositingEnabled( inView: HIViewRef ): Boolean; external name
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2283,6 +2727,9 @@ function HIViewIsCompositingEnabled( inView: HIViewRef ): Boolean; external name
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2318,6 +2765,7 @@ function HIViewSetText( inView: HIViewRef; inText: CFStringRef ): OSStatus; exte
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2325,6 +2773,9 @@ function HIViewSetText( inView: HIViewRef; inText: CFStringRef ): OSStatus; exte
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2352,6 +2803,7 @@ function HIViewCopyText( inView: HIViewRef ): CFStringRef; external name '_HIVie
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2359,6 +2811,9 @@ function HIViewCopyText( inView: HIViewRef ): CFStringRef; external name '_HIVie
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2389,6 +2844,7 @@ function HIViewGetValue( inView: HIViewRef ): SInt32; external name '_HIViewGetV
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2396,6 +2852,9 @@ function HIViewGetValue( inView: HIViewRef ): SInt32; external name '_HIViewGetV
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2423,6 +2882,7 @@ function HIViewSetValue( inView: HIViewRef; inValue: SInt32 ): OSStatus; externa
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2430,6 +2890,9 @@ function HIViewSetValue( inView: HIViewRef; inValue: SInt32 ): OSStatus; externa
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2460,6 +2923,7 @@ function HIViewGetMinimum( inView: HIViewRef ): SInt32; external name '_HIViewGe
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2467,6 +2931,9 @@ function HIViewGetMinimum( inView: HIViewRef ): SInt32; external name '_HIViewGe
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2494,6 +2961,7 @@ function HIViewSetMinimum( inView: HIViewRef; inMinimum: SInt32 ): OSStatus; ext
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2501,6 +2969,9 @@ function HIViewSetMinimum( inView: HIViewRef; inMinimum: SInt32 ): OSStatus; ext
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2531,6 +3002,7 @@ function HIViewGetMaximum( inView: HIViewRef ): SInt32; external name '_HIViewGe
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2538,6 +3010,9 @@ function HIViewGetMaximum( inView: HIViewRef ): SInt32; external name '_HIViewGe
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2570,6 +3045,7 @@ function HIViewSetMaximum( inView: HIViewRef; inMaximum: SInt32 ): OSStatus; ext
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2577,6 +3053,9 @@ function HIViewSetMaximum( inView: HIViewRef; inMaximum: SInt32 ): OSStatus; ext
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2612,6 +3091,7 @@ function HIViewGetViewSize( inView: HIViewRef ): SInt32; external name '_HIViewG
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2619,6 +3099,9 @@ function HIViewGetViewSize( inView: HIViewRef ): SInt32; external name '_HIViewG
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2648,6 +3131,7 @@ function HIViewSetViewSize( inView: HIViewRef; inViewSize: SInt32 ): OSStatus; e
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2655,6 +3139,9 @@ function HIViewSetViewSize( inView: HIViewRef; inViewSize: SInt32 ): OSStatus; e
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2685,6 +3172,7 @@ function HIViewIsValid( inView: HIViewRef ): Boolean; external name '_HIViewIsVa
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2692,6 +3180,9 @@ function HIViewIsValid( inView: HIViewRef ): Boolean; external name '_HIViewIsVa
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2722,6 +3213,7 @@ function HIViewSetID( inView: HIViewRef; inID: HIViewID ): OSStatus; external na
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2729,6 +3221,9 @@ function HIViewSetID( inView: HIViewRef; inID: HIViewID ): OSStatus; external na
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2759,6 +3254,7 @@ function HIViewGetID( inView: HIViewRef; var outID: HIViewID ): OSStatus; extern
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2766,6 +3262,9 @@ function HIViewGetID( inView: HIViewRef; var outID: HIViewID ): OSStatus; extern
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2796,6 +3295,7 @@ function HIViewSetCommandID( inView: HIViewRef; inCommandID: UInt32 ): OSStatus;
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2803,6 +3303,9 @@ function HIViewSetCommandID( inView: HIViewRef; inCommandID: UInt32 ): OSStatus;
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2832,6 +3335,7 @@ function HIViewGetCommandID( inView: HIViewRef; var outCommandID: UInt32 ): OSSt
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -2839,6 +3343,9 @@ function HIViewGetCommandID( inView: HIViewRef; var outCommandID: UInt32 ): OSSt
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2876,6 +3383,7 @@ function HIViewGetKind( inView: HIViewRef; var outViewKind: HIViewKind ): OSStat
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -2883,6 +3391,9 @@ function HIViewGetKind( inView: HIViewRef; var outViewKind: HIViewKind ): OSStat
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2914,6 +3425,7 @@ function HIViewGetBounds( inView: HIViewRef; var outRect: HIRect ): OSStatus; ex
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -2921,6 +3433,9 @@ function HIViewGetBounds( inView: HIViewRef; var outRect: HIRect ): OSStatus; ex
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2953,6 +3468,7 @@ function HIViewGetFrame( inView: HIViewRef; var outRect: HIRect ): OSStatus; ext
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -2960,6 +3476,9 @@ function HIViewGetFrame( inView: HIViewRef; var outRect: HIRect ): OSStatus; ext
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2996,6 +3515,7 @@ function HIViewSetFrame( inView: HIViewRef; const (*var*) inRect: HIRect ): OSSt
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
@@ -3013,6 +3533,13 @@ function HIViewMoveBy( inView: HIViewRef; inDX: Float32; inDY: Float32 ): OSStat
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewMoveBy( inView: HIViewRef; inDX: CGFloat; inDY: CGFloat ): OSStatus; external name '_HIViewMoveBy';
+>>>>>>> origin/fixes_2.4
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
@@ -3044,6 +3571,7 @@ function HIViewMoveBy( inView: HIViewRef; inDX: Float32; inDY: Float32 ): OSStat
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
@@ -3061,6 +3589,13 @@ function HIViewPlaceInSuperviewAt( inView: HIViewRef; inX: Float32; inY: Float32
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewPlaceInSuperviewAt( inView: HIViewRef; inX: CGFloat; inY: CGFloat ): OSStatus; external name '_HIViewPlaceInSuperviewAt';
+>>>>>>> origin/fixes_2.4
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
@@ -3087,6 +3622,7 @@ function HIViewPlaceInSuperviewAt( inView: HIViewRef; inX: Float32; inY: Float32
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -3094,6 +3630,9 @@ function HIViewPlaceInSuperviewAt( inView: HIViewRef; inX: Float32; inY: Float32
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3133,6 +3672,7 @@ function HIViewReshapeStructure( inView: HIViewRef ): OSStatus; external name '_
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
@@ -3140,6 +3680,9 @@ function HIViewReshapeStructure( inView: HIViewRef ): OSStatus; external name '_
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3175,6 +3718,7 @@ function HIViewRegionChanged( inView: HIViewRef; inRegionCode: HIViewPartCode ):
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -3182,6 +3726,9 @@ function HIViewRegionChanged( inView: HIViewRef; inRegionCode: HIViewPartCode ):
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3217,6 +3764,7 @@ function HIViewCopyShape( inView: HIViewRef; inPart: HIViewPartCode; var outShap
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
@@ -3234,12 +3782,22 @@ function HIViewGetOptimalBounds( inView: HIViewRef; outBounds: HIRectPtr { can b
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewGetOptimalBounds( inView: HIViewRef; outBounds: HIRectPtr { can be NULL }; outBaseLineOffset: CGFloatPtr { can be NULL } ): OSStatus; external name '_HIViewGetOptimalBounds';
+>>>>>>> origin/fixes_2.4
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 
 {==============================================================================}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+{  TEXT AND FONT SUPPORT                                                       }
+=======
 {  TEXT AND FONT SUPPORT                                                       }
 {==============================================================================}
 {
@@ -3305,6 +3863,206 @@ function HIViewSetTextFont( inView: HIViewRef; inPart: HIViewPartCode; inFont: C
  *  Availability:
  *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewSetTextHorizontalFlush( inView: HIViewRef; inPart: HIViewPartCode; inHFlush: HIThemeTextHorizontalFlush ): OSStatus; external name '_HIViewSetTextHorizontalFlush';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  HIViewSetTextVerticalFlush()
+ *  
+ *  Summary:
+ *    Set the vertical flushness of the view's text.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The view whose flushness is to be modified.
+ *    
+ *    inPart:
+ *      The part whose flushness is to be modified.
+ *    
+ *    inVFlush:
+ *      The vertical flush that the view's text will be drawn with.
+ *      kHIThemeTextVerticalFlushDefault will revert to the default
+ *      flush for the view.
+ *  
+ *  Result:
+ *    An operating system status code.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewSetTextVerticalFlush( inView: HIViewRef; inPart: HIViewPartCode; inVFlush: HIThemeTextVerticalFlush ): OSStatus; external name '_HIViewSetTextVerticalFlush';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  HIViewSetTextTruncation()
+ *  
+ *  Summary:
+ *    Sets how the view's text will truncate.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The view whose truncation is to be modified.
+ *    
+ *    inPart:
+ *      The part whose truncation is to be modified.
+ *    
+ *    inTrunc:
+ *      How the view's text will be truncated if it doesn't fit within
+ *      the available label space. kHIThemeTextTruncationDefault will
+ *      revert to the default truncation for the view.
+ *  
+ *  Result:
+ *    An operating system status code.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewSetTextTruncation( inView: HIViewRef; inPart: HIViewPartCode; inTrunc: HIThemeTextTruncation ): OSStatus; external name '_HIViewSetTextTruncation';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  HIViewGetThemeTextInfo()
+ *  
+ *  Summary:
+ *    Gets the HIThemeTextInfo structure that is used to draw the
+ *    view's text.
+ *  
+ *  Discussion:
+ *    This function returns the HIThemeTextInfo structure that will be
+ *    used for drawing the view's text. All of the fields will be
+ *    concrete values, they will not contain constants of the form
+ *    HIThemeTextFooDefault. You will be unable to determine if the
+ *    view is using the default values using this API. This API is
+ *    useful if you need to draw a text item using the same font and
+ *    attributes that the view's text is drawing with.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The view whose text information is to be queried.
+ *    
+ *    inPart:
+ *      The part whose text information is to be queried.
+ *    
+ *    inVersion:
+ *      The version of the HIThemeTextInfo structure that is being
+ *      passed in. This is important for future compatibility with
+ *      different versions of the HIThemeTextInfo structure. Currently
+ *      this must be version 1.
+ *    
+ *    outTextInfo:
+ *      A pointer to an HIThemeTextInfo structure whose version is
+ *      given in the inVersion parameter.
+ *  
+ *  Result:
+ *    An operating system status code.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewGetThemeTextInfo( inView: HIViewRef; inPart: HIViewPartCode; inVersion: UInt32; var outTextInfo: HIThemeTextInfo ): OSStatus; external name '_HIViewGetThemeTextInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{==============================================================================}
+{  HIT TESTING/EVENT HANDLING                                                  }
+>>>>>>> origin/fixes_2.4
+{==============================================================================}
+{
+ *  HIViewSetTextFont()
+ *  
+ *  Summary:
+ *    Set the font that the control will use. NULL will specify the
+ *    default value.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The view whose font is to be modified.
+ *    
+ *    inPart:
+ *      The part whose font is to be modified.
+ *    
+ *    inFont:
+ *      The font that the view should use to draw its text. The font
+ *      will be retained by the view. If NULL, the view will revert to
+ *      the default font.
+ *  
+ *  Result:
+ *    An operating system status code.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+>>>>>>> origin/fixes_2.4
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewSetTextFont( inView: HIViewRef; inPart: HIViewPartCode; inFont: CTFontRef { can be NULL } ): OSStatus; external name '_HIViewSetTextFont';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  HIViewSetTextHorizontalFlush()
+ *  
+ *  Summary:
+ *    Set the horizontal flushness of the view's text.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The view whose flushness is to be modified.
+ *    
+ *    inPart:
+ *      The part whose flushness is to be modified.
+ *    
+ *    inHFlush:
+ *      The horizontal flush that the view's text will be drawn with.
+ *      kHIThemeTextHorizontalFlushDefault will revert to the default
+ *      flush for the view.
+ *  
+ *  Result:
+ *    An operating system status code.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+>>>>>>> origin/fixes_2.4
  *    Non-Carbon CFM:   not available
  }
 function HIViewSetTextHorizontalFlush( inView: HIViewRef; inPart: HIViewPartCode; inHFlush: HIThemeTextHorizontalFlush ): OSStatus; external name '_HIViewSetTextHorizontalFlush';
@@ -3559,6 +4317,7 @@ function HIViewClick( inView: HIViewRef; inEvent: EventRef ): OSStatus; external
  *    outPartClicked:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      The part that was hit, can be kHIViewNoPart if no action
 =======
  *      The part that was hit, can be kControlNoPart if no action
@@ -3566,12 +4325,16 @@ function HIViewClick( inView: HIViewRef; inEvent: EventRef ): OSStatus; external
 =======
  *      The part that was hit, can be kControlNoPart if no action
 >>>>>>> origin/fixes_2_2
+=======
+ *      The part that was hit, can be kHIViewNoPart if no action
+>>>>>>> origin/fixes_2.4
  *      occurred. May be NULL if you don't need the part code returned.
  *  
  *  Result:
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
@@ -3581,6 +4344,9 @@ function HIViewClick( inView: HIViewRef; inEvent: EventRef ): OSStatus; external
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3615,6 +4381,7 @@ function HIViewSimulateClick( inView: HIViewRef; inPartToClick: HIViewPartCode; 
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -3622,6 +4389,9 @@ function HIViewSimulateClick( inView: HIViewRef; inPartToClick: HIViewPartCode; 
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3662,6 +4432,7 @@ function HIViewGetPartHit( inView: HIViewRef; const (*var*) inPoint: HIPoint; va
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -3669,6 +4440,9 @@ function HIViewGetPartHit( inView: HIViewRef; const (*var*) inPoint: HIPoint; va
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3676,6 +4450,7 @@ function HIViewGetSubviewHit( inView: HIViewRef; const (*var*) inPoint: HIPoint;
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3703,6 +4478,104 @@ function HIViewGetSubviewHit( inView: HIViewRef; const (*var*) inPoint: HIPoint;
  *    inView:
  *      The HIViewRef in whose coordinate space to return the mouse
  *      position.
+ *    
+ *    inOptions:
+ *      Pass kTrackMouseLocationOptionDontConsumeMouseUp to indicate
+ *      that the toolbox should leave mouse-up events in the queue.
+ *      Pass kTrackMouseLocationOptionIncludeScrollWheel to indicate
+ *      that the tracking loop should terminate when a
+ *      kEventMouseWheelMoved or kEventMouseScroll event is received.
+ *    
+ *    inTimeout:
+ *      The amount of time to wait for an event. If no events arrive
+ *      within this time, kMouseTrackingTimedOut is returned in
+ *      outResult. Pass kEventDurationForever to wait indefinitely for
+ *      the next event.
+ *    
+ *    inClientEventCount:
+ *      Number of caller-supplied EventTypeSpecs in the
+ *      inClientEventList parameter. Pass 0 if you do not want any
+ *      custom event types to end the tracking loop.
+ *    
+ *    inClientEventList:
+ *      Array of caller-supplied EventTypeSpecs that the caller wants
+ *      to end the tracking loop. Pass NULL if you do not want any
+ *      custom event types to end the tracking loop.
+ *    
+ *    outWhere:
+ *      On exit, this parameter receives the mouse location from the
+ *      last mouse event that caused this function to exit. If a
+ *      timeout or key modifiers changed event caused this function to
+ *      exit, the current mouse position at the time is returned. The
+ *      mouse position will be returned in the coordinate space of the
+ *      specifed HIView.
+ *    
+ *    outModifiers:
+ *      On exit, this parameter receives the most recent state of the
+ *      keyboard modifiers. If a timeout caused this function to exit,
+ *      the current keyboard modifiers at the time are returned. You
+ *      may pass NULL if you don't need this information.
+ *    
+ *    outEvent:
+ *      On exit, this parameter receives the EventRef that caused the
+ *      function to exit. You may pass NULL if you don't need this
+ *      information. The event will be NULL for mouse-tracking results
+ *      that don't involve events, such as the timeout expiring. If the
+ *      event is not NULL, you must release the event when you're done
+ *      with it.
+ *    
+ *    outResult:
+ *      On exit, this parameter receives a value representing what kind
+ *      of event was received that cause the function to exit, such as
+ *      kMouseTrackingMouseUp. If a caller-supplied EventTypeSpec ended
+ *      the loop, kMouseTrackingClientEvent is returned.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewTrackMouseLocation( inView: HIViewRef; inOptions: OptionBits; inTimeout: EventTimeout; inClientEventCount: ItemCount; inClientEventList: EventTypeSpecPtr { can be NULL }; var outWhere: HIPoint; outModifiers: UInt32Ptr { can be NULL }; outEvent: EventRefPtr { can be NULL }; var outResult: MouseTrackingResult ): OSStatus; external name '_HIViewTrackMouseLocation';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  HIViewTrackMouseShape()
+ *  
+ *  Summary:
+ *    An HIView-based version of TrackMouseRegion.
+ *  
+ *  Discussion:
+ *    This routine is similar to TrackMouseRegion described in
+ *    CarbonEvents.i. Please read the notes on that function as well.
+ *    HIViewTrackMouseShape optionally returns the EventRef that ended
+ *    the tracking loop, and the caller may extend the list of events
+ *    that end the loop.
+=======
+{
+ *  HIViewTrackMouseLocation()
+ *  
+ *  Summary:
+ *    An HIView-based version of TrackMouseLocationWithOptions.
+ *  
+ *  Discussion:
+ *    This routine is similar to TrackMouseLocationWithOptions
+ *    described in CarbonEvents.i. Please read the notes on that
+ *    function as well. HIViewTrackMouseLocation optionally returns the
+ *    EventRef that ended the tracking loop, and the caller may extend
+ *    the list of events that end the loop.
+>>>>>>> origin/fixes_2.4
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The HIViewRef in whose coordinate space to return the mouse
+ *      position.
+<<<<<<< HEAD
+=======
  *    
  *    inOptions:
  *      Pass kTrackMouseLocationOptionDontConsumeMouseUp to indicate
@@ -3861,6 +4734,113 @@ function HIViewTrackMouseShape( inView: HIViewRef; inShape: HIShapeRef; var ioWa
 {$endc} {not TARGET_CPU_64}
 
 type
+	HIViewTrackingAreaRef = ^SInt32; { an opaque type }
+	HIViewTrackingAreaRefPtr = ^HIViewTrackingAreaRef;
+const
+	kEventParamHIViewTrackingArea = FourCharCode('ctra'); { typeHIViewTrackingAreaRef}
+	typeHIViewTrackingAreaRef = FourCharCode('ctra');
+
+{
+ *  kEventClassControl / kEventControlTrackingAreaEntered
+ *  
+ *  Summary:
+ *    The mouse has entered a tracking area owned by your control.
+ *  
+ *  Discussion:
+ *    If you have installed a mouse tracking area in your view, you
+ *    will receive this event when the mouse enters that area. The
+ *    tracking area reference is sent with the event. This event is
+ *    sent only to the view, and is not propagated past it.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeControlRef)
+ *          The control that owns the tracking area and is receiving
+ *          the event. This parameter is available on Mac OS X 10.5 and
+ *          later.
+ *    
+ *    --> kEventParamHIViewTrackingArea (in, typeHIViewTrackingAreaRef)
+ *          The tracking area that was entered.
+>>>>>>> origin/fixes_2.4
+ *    
+ *    inShape:
+ *      The shape to observe. This shape should be in the coordinates
+ *      of the view specified in the inView parameter.
+ *    
+ *    ioWasInShape:
+ *      On entry, this parameter should be set to true if the mouse is
+ *      currently inside the shape passed in inShape, or false if the
+ *      mouse is currently outside the shape. On exit, this parameter
+ *      is updated to reflect the current reality; e.g., if the
+ *      outResult parameter returns kMouseTrackingMouseExited,
+ *      ioWasInShape will be set to false when this function exits.
+ *      Because it is updated from within, you should only need to set
+ *      this yourself before the first call to this function in your
+ *      tracking loop. Typically, you should set this value to false
+ *      initially, and HIViewTrackMouseShape will return immediately
+ *      with kMouseTrackingMouseEntered if your guess was wrong.
+ *    
+ *    inOptions:
+ *      Pass kTrackMouseLocationOptionDontConsumeMouseUp to indicate
+ *      that the toolbox should leave mouse-up events in the queue.
+ *      Pass kTrackMouseLocationOptionIncludeScrollWheel to indicate
+ *      that the tracking loop should terminate when a
+ *      kEventMouseWheelMoved or kEventMouseScroll event is received.
+ *    
+ *    inTimeout:
+ *      The amount of time to wait for an event. If no events arrive
+ *      within this time, kMouseTrackingTimedOut is returned in
+ *      outResult. Pass kEventDurationForever to wait indefinitely for
+ *      the next event.
+ *    
+ *    inClientEventCount:
+ *      Number of caller-supplied EventTypeSpecs in the
+ *      inClientEventList parameter. Pass 0 if you do not want any
+ *      custom event types to end the tracking loop.
+ *    
+ *    inClientEventList:
+ *      Array of caller-supplied EventTypeSpecs that the caller wants
+ *      to end the tracking loop. Pass NULL if you do not want any
+ *      custom event types to end the tracking loop.
+ *    
+ *    outModifiers:
+ *      On exit, this parameter receives the most recent state of the
+ *      keyboard modifiers. If a timeout caused this function to exit,
+ *      the current keyboard modifiers at the time are returned. You
+ *      may pass NULL if you don't need this information.
+ *    
+ *    outEvent:
+ *      On exit, this parameter receives the EventRef that caused the
+ *      function to exit. You may pass NULL if you don't need this
+ *      information. The event will be NULL for mouse-tracking results
+ *      that don't involve events, such as the timeout expiring. If the
+ *      event is not NULL, you must release the event when you're done
+ *      with it.
+ *    
+ *    outResult:
+ *      On exit, this parameter receives a value representing what kind
+ *      of event was received that cause the function to exit, such as
+ *      kMouseTrackingMouseUp. If a caller-supplied EventTypeSpec ended
+ *      the loop, kMouseTrackingClientEvent is returned.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewTrackMouseShape( inView: HIViewRef; inShape: HIShapeRef; var ioWasInShape: Boolean; inOptions: OptionBits; inTimeout: EventTimeout; inClientEventCount: ItemCount; inClientEventList: EventTypeSpecPtr { can be NULL }; outModifiers: UInt32Ptr { can be NULL }; outEvent: EventRefPtr { can be NULL }; var outResult: MouseTrackingResult ): OSStatus; external name '_HIViewTrackMouseShape';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{==============================================================================}
+{  HIView-based tracking areas                                                 }
+{==============================================================================}
+{$endc} {not TARGET_CPU_64}
+
+type
 	HIViewTrackingAreaRef = ^OpaqueHIViewTrackingAreaRef; { an opaque type }
 	OpaqueHIViewTrackingAreaRef = record end;
 	HIViewTrackingAreaRefPtr = ^HIViewTrackingAreaRef;
@@ -3879,6 +4859,7 @@ const
  *  Discussion:
 <<<<<<< HEAD
  *    If you have installed a mouse tracking area in your view, you
+<<<<<<< HEAD
  *    will receive this event when the mouse enters that area. The
  *    tracking area reference is sent with the event. This event is
  *    sent only to the view, and is not propagated past it.
@@ -3889,6 +4870,11 @@ const
  *    EventRef that ended the tracking loop, and the caller may extend
  *    the list of events that end the loop.
 >>>>>>> graemeg/cpstrnew
+=======
+ *    will receive this event when the mouse leaves that area. The
+ *    tracking area reference is sent with the event. This event is
+ *    sent only to the view, and is not propagated past it.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -3896,10 +4882,24 @@ const
  *  Parameters:
  *    
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  *    inView:
  *      The HIViewRef in whose coordinate space to return the mouse
  *      position.
+=======
+ *    --> kEventParamDirectObject (in, typeControlRef)
+ *          The control that owns the tracking area and is receiving
+ *          the event. This parameter is available on Mac OS X 10.5 and
+ *          later.
+ *    
+ *    --> kEventParamHIViewTrackingArea (in, typeHIViewTrackingAreaRef)
+ *          The tracking area that was entered.
+ *    
+ *    --> kEventParamKeyModifiers (in, typeUInt32)
+ *          The keyboard modifiers that were in effect when the mouse
+ *          left.
+>>>>>>> origin/fixes_2.4
  *    
  *    inOptions:
  *      Pass kTrackMouseLocationOptionDontConsumeMouseUp to indicate
@@ -3961,6 +4961,13 @@ function HIViewTrackMouseLocation( inView: HIViewRef; inOptions: OptionBits; inT
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 
+<<<<<<< HEAD
+=======
+type
+	HIViewTrackingAreaID = UInt64;
+	HIViewTrackingAreaIDPtr = ^HIViewTrackingAreaID;
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 {
  *  HIViewTrackMouseShape()
  *  
@@ -4825,6 +5832,9 @@ type
  *    outRef:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *      A reference to the newly created tracking area. This reference
  *      is NOT refcounted. The tracking area will be automatically
  *      destroyed when the view is destroyed; you do not need to
@@ -4832,6 +5842,7 @@ type
  *      from the view before the view is destroyed. This parameter can
  *      be NULL in Mac OS X 10.5 or later if you don't need this
  *      information.
+<<<<<<< HEAD
 =======
  *      A reference to the newly created tracking area. This references
  *      is NOT refcounted.
@@ -5059,6 +6070,8 @@ function HIViewGetNeedsDisplay( inView: HIViewRef ): Boolean; external name '_HI
  *    inNeedsDisplay:
  *      A boolean which indicates whether inView needs to be redrawn or
  *      not.
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Result:
  *    An operating system result code.
@@ -5125,6 +6138,7 @@ function HIViewSetNeedsDisplay( inView: HIViewRef; inNeedsDisplay: Boolean ): OS
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -5136,6 +6150,13 @@ function HIViewSetNeedsDisplay( inView: HIViewRef; inNeedsDisplay: Boolean ): OS
  *    Non-Carbon CFM:   not available
  }
 function HIViewSetNeedsDisplayInRect( inView: HIViewRef; const (*var*) inRect: HIRect; inNeedsDisplay: Boolean ): OSStatus; external name '_HIViewSetNeedsDisplayInRect';
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewNewTrackingArea( inView: HIViewRef; inShape: HIShapeRef { can be NULL }; inID: HIViewTrackingAreaID; outRef: HIViewTrackingAreaRefPtr { can be NULL } ): OSStatus; external name '_HIViewNewTrackingArea';
+>>>>>>> origin/fixes_2.4
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 
@@ -5194,6 +6215,7 @@ function HIViewSetNeedsDisplayInRect( inView: HIViewRef; const (*var*) inRect: H
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -5201,6 +6223,9 @@ function HIViewSetNeedsDisplayInRect( inView: HIViewRef; const (*var*) inRect: H
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -5319,6 +6344,7 @@ function HIViewSetNeedsDisplayInRegion( inView: HIViewRef; inRgn: RgnHandle; inN
  *    An operating system result code.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -5461,6 +6487,10 @@ function HIViewFlashDirtyArea( inWindow: WindowRef ): OSStatus; external name '_
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
+>>>>>>> origin/fixes_2.4
  *    Non-Carbon CFM:   not available
  }
 function HIViewGetSizeConstraints( inView: HIViewRef; outMinSize: HISizePtr { can be NULL }; outMaxSize: HISizePtr { can be NULL } ): OSStatus; external name '_HIViewGetSizeConstraints';
@@ -5473,9 +6503,17 @@ function HIViewGetSizeConstraints( inView: HIViewRef; outMinSize: HISizePtr { ca
 {
  *  HIViewConvertPoint()
  *  
+<<<<<<< HEAD
  *  Discussion:
  *    Converts a point from one view to another. Both views must have a
  *    common ancestor, i.e. they must both be in the same window.
+=======
+ *  Summary:
+ *    Disposes an existing tracking area. The reference is considered
+ *    to be invalid after calling this function. Note that all tracking
+ *    areas attached to a view are automatically destroyed when the
+ *    view is destroyed.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -5501,6 +6539,7 @@ function HIViewGetSizeConstraints( inView: HIViewRef; outMinSize: HISizePtr { ca
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -5509,6 +6548,10 @@ function HIViewGetSizeConstraints( inView: HIViewRef; outMinSize: HISizePtr { ca
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
+>>>>>>> origin/fixes_2.4
  *    Non-Carbon CFM:   not available
  }
 function HIViewConvertPoint( var ioPoint: HIPoint; inSourceView: HIViewRef; inDestView: HIViewRef ): OSStatus; external name '_HIViewConvertPoint';
@@ -5546,6 +6589,7 @@ function HIViewConvertPoint( var ioPoint: HIPoint; inSourceView: HIViewRef; inDe
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -5553,6 +6597,9 @@ function HIViewConvertPoint( var ioPoint: HIPoint; inSourceView: HIViewRef; inDe
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -5564,8 +6611,20 @@ function HIViewConvertRect( var ioRect: HIRect; inSourceView: HIViewRef; inDestV
  *  HIViewConvertRegion()
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    Converts a region from one view to another. Both views must have
  *    a common ancestor, i.e. they must both be in the same window.
+=======
+ *    Marks a view as needing to be completely redrawn, or completely
+ *    valid. If the view is not visible, or is obscured completely by
+ *    other views, no action is taken. 
+ *    
+ *    Note that this API does not affect the state of subviews of this
+ *    view. If you need to modify subview state, you should use either
+ *    HIViewSetSubviewsNeedDisplayInShape on Mac OS X 10.5 and later,
+ *    or iterate over subviews with HIViewGetFirstSubview and
+ *    HIViewGetNextView.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -5591,6 +6650,7 @@ function HIViewConvertRect( var ioRect: HIRect; inSourceView: HIViewRef; inDestV
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -5598,6 +6658,9 @@ function HIViewConvertRect( var ioRect: HIRect; inSourceView: HIViewRef; inDestV
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -5609,6 +6672,7 @@ function HIViewConvertRegion( ioRgn: RgnHandle; inSourceView: HIViewRef; inDestV
  *  HIViewSetDrawingEnabled()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Turns view drawing on or off. You can use this to ensure that no
@@ -5626,6 +6690,19 @@ function HIViewConvertRegion( ioRgn: RgnHandle; inSourceView: HIViewRef; inDestV
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Marks a portion of a view as needing to be redrawn, or valid. If
+ *    the view is not visible, or is obscured completely by other
+ *    views, no action is taken. The rectangle passed is effectively
+ *    intersected with the view's visible region. It should be in
+ *    view-relative coordinates. 
+ *    
+ *    Note that this API does not affect the state of subviews of this
+ *    view. If you need to modify subview state, you should use either
+ *    HIViewSetSubviewsNeedDisplayInShape on Mac OS X 10.5 and later,
+ *    or iterate over subviews with HIViewGetFirstSubview and
+ *    HIViewGetNextView.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -5645,6 +6722,7 @@ function HIViewConvertRegion( ioRgn: RgnHandle; inSourceView: HIViewRef; inDestV
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -5653,6 +6731,10 @@ function HIViewConvertRegion( ioRgn: RgnHandle; inSourceView: HIViewRef; inDestV
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
+>>>>>>> origin/fixes_2.4
  *    Non-Carbon CFM:   not available
  }
 function HIViewSetDrawingEnabled( inView: HIViewRef; inEnabled: Boolean ): OSStatus; external name '_HIViewSetDrawingEnabled';
@@ -5665,6 +6747,7 @@ function HIViewSetDrawingEnabled( inView: HIViewRef; inEnabled: Boolean ): OSSta
  *  Discussion:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Determines if drawing is currently enabled for a view.
 =======
  *    Determines if drawing is currently enabled for a control.
@@ -5672,6 +6755,19 @@ function HIViewSetDrawingEnabled( inView: HIViewRef; inEnabled: Boolean ): OSSta
 =======
  *    Determines if drawing is currently enabled for a control.
 >>>>>>> origin/fixes_2_2
+=======
+ *    Marks a portion of a view as needing to be redrawn, or valid. If
+ *    the view is not visible, or is obscured completely by other
+ *    views, no action is taken. The shape passed is effectively
+ *    intersected with the view's visible region. It should be in
+ *    view-relative coordinates. 
+ *    
+ *    Note that this API does not affect the state of subviews of this
+ *    view. If you need to modify subview state, you should use either
+ *    HIViewSetSubviewsNeedDisplayInShape on Mac OS X 10.5 and later,
+ *    or iterate over subviews with HIViewGetFirstSubview and
+ *    HIViewGetNextView.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -5679,13 +6775,27 @@ function HIViewSetDrawingEnabled( inView: HIViewRef; inEnabled: Boolean ): OSSta
  *  Parameters:
  *    
  *    inView:
+<<<<<<< HEAD
  *      The view to get the drawing state for.
+=======
+ *      The view to mark dirty.
+ *    
+ *    inArea:
+ *      The area to mark dirty or clean, in the coordinate system of
+ *      the view. This parameter may be NULL in Mac OS X 10.5 and later
+ *      to indicate that the entire view should be affected.
+ *    
+ *    inNeedsDisplay:
+ *      A boolean which indicates whether or not inArea should be added
+ *      to the invalid region or removed from it.
+>>>>>>> origin/fixes_2.4
  *  
  *  Result:
  *    A boolean value indicating whether drawing is on (true) or off
  *    (false).
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
@@ -5696,6 +6806,10 @@ function HIViewSetDrawingEnabled( inView: HIViewRef; inEnabled: Boolean ): OSSta
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
+>>>>>>> origin/fixes_2.4
  *    Non-Carbon CFM:   not available
  }
 function HIViewIsDrawingEnabled( inView: HIViewRef ): Boolean; external name '_HIViewIsDrawingEnabled';
@@ -5706,6 +6820,7 @@ function HIViewIsDrawingEnabled( inView: HIViewRef ): Boolean; external name '_H
  *  HIViewScrollRect()
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    Scrolls a view's contents, or a portion thereof. A view's
  *    contents are the pixels that it or any of its descendent views
  *    has drawn into. This will actually blit the contents of the view
@@ -5713,6 +6828,19 @@ function HIViewIsDrawingEnabled( inView: HIViewRef ): Boolean; external name '_H
  *    which need to be redrawn. Be warned that this is a raw bit
  *    scroll. Anything that might overlap the target view will get
  *    thrashed as well.
+=======
+ *    Marks a portion of a view as needing to be redrawn, or valid. If
+ *    the view is not visible, or is obscured completely by other
+ *    views, no action is taken. The region passed is effectively
+ *    intersected with the view's visible region. It should be in
+ *    view-relative coordinates. 
+ *    
+ *    Note that this API does not affect the state of subviews of this
+ *    view. If you need to modify subview state, you should use either
+ *    HIViewSetSubviewsNeedDisplayInShape on Mac OS X 10.5 and later,
+ *    or iterate over subviews with HIViewGetFirstSubview and
+ *    HIViewGetNextView.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -5742,6 +6870,7 @@ function HIViewIsDrawingEnabled( inView: HIViewRef ): Boolean; external name '_H
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
@@ -5751,6 +6880,9 @@ function HIViewScrollRect( inView: HIViewRef; {const} inRect: HIRectPtr { can be
 =======
 >>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -5763,7 +6895,69 @@ function HIViewScrollRect( inView: HIViewRef; {const} inRect: HIRectPtr { can be
 
 
 {
+<<<<<<< HEAD
  *  HIViewSetBoundsOrigin()
+=======
+ *  HIViewSetSubviewsNeedDisplayInShape()
+ *  
+ *  Summary:
+ *    Validates or invalidates a portion of a view and all of its
+ *    subviews.
+ *  
+ *  Discussion:
+ *    Marks a portion of a view as needing to be redrawn, or valid, and
+ *    then does the same for each subview of the view. If the view or a
+ *    subview is not visible, or is obscured completely by other views,
+ *    no action is taken for that view. The shape passed is effectively
+ *    intersected with each view's visible region. The shape should be
+ *    in view-relative coordinates. 
+ *    
+ *    Note! It is very rare that an application truly needs to
+ *    invalidate a view and all of its subviews. Normally, when a view
+ *    is invalidated, its subviews will be automatically redrawn by the
+ *    HIView Manager after the parent view is redrawn, so it is not
+ *    necessary to explicitly invalidate the subviews. (The only
+ *    exception occurs when the parent view uses
+ *    kHIViewFeatureDoesNotDraw; in that case, invalidating the parent
+ *    view does nothing, and subviews are not invalidated or redrawn.)
+ *    In most cases, if you think you need to use this API, you should
+ *    probably consider whether all of the subviews need to redraw, or
+ *    just some of them, and explicitly invalidate only those subviews
+ *    that need to redraw. That will give you better performance than
+ *    invalidating and redrawing every subview.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The view to mark dirty.
+ *    
+ *    inArea:
+ *      The area to mark dirty or clean, in the coordinate system of
+ *      the view. This parameter may be NULL to indicate that the
+ *      entire view should be affected.
+ *    
+ *    inNeedsDisplay:
+ *      A boolean which indicates whether or not inArea should be added
+ *      to the invalid region or removed from it.
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewSetSubviewsNeedDisplayInShape( inView: HIViewRef; inArea: HIShapeRef; inNeedsDisplay: Boolean ): OSStatus; external name '_HIViewSetSubviewsNeedDisplayInShape';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  HIViewRender()
+>>>>>>> origin/fixes_2.4
  *  
  *  Discussion:
  *    This API sets the origin of the view. This effectively also moves
@@ -5803,8 +6997,13 @@ function HIViewScrollRect( inView: HIViewRef; {const} inRect: HIRectPtr { can be
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
+>>>>>>> origin/fixes_2.4
  *    Non-Carbon CFM:   not available
  }
 function HIViewSetBoundsOrigin( inView: HIViewRef; inX: CGFloat; inY: CGFloat ): OSStatus; external name '_HIViewSetBoundsOrigin';
@@ -5872,6 +7071,7 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 {
+<<<<<<< HEAD
  *  HIViewAdvanceFocus()
  *  
  *  Discussion:
@@ -5943,6 +7143,497 @@ function HIViewAdvanceFocus( inRootForFocus: HIViewRef; inModifiers: EventModifi
  *    This API has the same default behavior as HIViewAdvanceFocus, but
  *    the options parameter allows you to control some aspects of the
  *    focus behavior.
+=======
+ *  HIViewGetSizeConstraints()
+ *  
+ *  Discussion:
+ *    Return the minimum and maximum size for a view. A view must
+ *    respond to this protocol to get meaningful results. These sizes
+ *    can be used to help autoposition subviews, for example.
+>>>>>>> origin/fixes_2.4
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inRootForFocus:
+ *      The root of the view hierarchy in which focusing will occur.
+ *      Typically, this will be the content view of a window, but you
+ *      may pass in other subviews as well to further constrain the
+ *      focus.
+ *    
+ *    inModifiers:
+ *      The event modifiers that the user pressed. If the Shift
+ *      modifier is set, focus will move to the previous view;
+ *      otherwise, it will move to the next view.
+ *    
+ *    inOptions:
+ *      Options to further customize the focusing behavior. See
+ *      kHIViewFocus constants.
+ *  
+ *  Result:
+ *    An operating system result code, including errCouldntSetFocus if
+ *    the focus could not be set.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+>>>>>>> origin/fixes_2.4
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewAdvanceFocusWithOptions( inRootForFocus: HIViewRef; inModifiers: UInt32; inOptions: OptionBits ): OSStatus; external name '_HIViewAdvanceFocusWithOptions';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+=======
+>>>>>>> graemeg/fixes_2_2
+ *  HIViewGetFocusPart()
+ *  
+ *  Discussion:
+ *    Returns the currently focused part of the given view.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The view to inquire about.
+ *    
+ *    outFocusPart:
+ *      The part currently focused.
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewGetFocusPart( inView: HIViewRef; var outFocusPart: HIViewPartCode ): OSStatus; external name '_HIViewGetFocusPart';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  HIViewSubtreeContainsFocus()
+ *  
+ *  Discussion:
+ *    Given a view, this function checks to see if it or any of its
+ *    children currently are the keyboard focus. If so, true is
+ *    returned as the function result.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inSubtreeStart:
+ *      The view to start searching at.
+ *  
+ *  Result:
+ *    A boolean result.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewSubtreeContainsFocus( inSubtreeStart: HIViewRef ): Boolean; external name '_HIViewSubtreeContainsFocus';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  HIViewSetNextFocus()
+ *  
+ *  Discussion:
+ *    This function hard-wires the next sibling view to shift focus to
+ *    whenever the keyboard focus is advanced.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The view to set the next focus view for. This parameter and the
+ *      inNextFocus parameter must both have the same parent view.
+ *    
+ *    inNextFocus:
+ *      The view to set focus to next. This parameter and the inView
+ *      parameter must both have the same parent view. Pass NULL to
+ *      tell the view system to use the default rules.
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewSetNextFocus( inView: HIViewRef; inNextFocus: HIViewRef { can be NULL } ): OSStatus; external name '_HIViewSetNextFocus';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  HIViewSetFirstSubViewFocus()
+ *  
+ *  Discussion:
+<<<<<<< HEAD
+ *    This function hard-wires the first subview to shift focus to
+ *    whenever the keyboard focus is advanced and the container view is
+ *    entered.
+=======
+ *    Turns view drawing on or off. You can use this to ensure that no
+ *    drawing events are sent to the view. Even Draw1Control will not
+ *    draw! HIViewSetNeedsDisplay is also rendered useless when drawing
+ *    is off.
+>>>>>>> origin/fixes_2.4
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inParent:
+ *      The parent view.
+ *    
+ *    inSubView:
+ *      The first child which should receive focus. Pass NULL to tell
+ *      the view system to use the default rules.
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+>>>>>>> graemeg/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewSetFirstSubViewFocus( inParent: HIViewRef; inSubView: HIViewRef { can be NULL } ): OSStatus; external name '_HIViewSetFirstSubViewFocus';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> graemeg/cpstrnew
+{
+ *  HIViewSetFocus()
+ *  
+ *  Summary:
+ *    Sets the focused view in a window.
+ *  
+ *  Discussion:
+<<<<<<< HEAD
+ *    This API is a replacement for the SetKeyboardFocus API.
+=======
+ *    Determines if drawing is currently enabled for a view.
+>>>>>>> origin/fixes_2.4
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The view that should be focused. The window is implicitly
+ *      specified by this view.
+ *    
+ *    inPart:
+ *      The view part that should be focused. This parameter may be
+ *      kHIViewNoPart to remove focus from the view (and the window).
+ *    
+ *    inOptions:
+ *      Options to further customize the focusing behavior. Only
+ *      kHIViewFocusOnAnyControl and kHIViewFocusTraditionally are
+ *      currently allowed.
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+>>>>>>> origin/fixes_2.4
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewSetFocus( inView: HIViewRef; inPart: HIViewPartCode; inOptions: OptionBits ): OSStatus; external name '_HIViewSetFocus';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  HIViewGetFocus()
+ *  
+ *  Summary:
+ *    Retrieves the focused view in a window.
+ *  
+ *  Discussion:
+ *    This API is a replacement for the GetKeyboardFocus API.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inWindow:
+ *      The window whose focused view to retrieve.
+ *    
+ *    outView:
+ *      On exit, contains the window's focused view.
+ *    
+ *    outPart:
+ *      On exit, contains the focused part of the focused view. This
+ *      parameter may be NULL if you don't need this information. You
+ *      can also get the focused part by calling HIViewGetFocusPart on
+ *      the focused view.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewGetFocus( inWindow: WindowRef; var outView: HIViewRef; outPart: HIViewPartCodePtr { can be NULL } ): OSStatus; external name '_HIViewGetFocus';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewScrollRect( inView: HIViewRef; {const} inRect: HIRectPtr { can be NULL }; inDX: CGFloat; inDY: CGFloat ): OSStatus; external name '_HIViewScrollRect';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> origin/fixes_2.4
+
+
+{
+ *  HIViewShowsFocus()
+ *  
+ *  Summary:
+ *    Indicates whether a view should show focus indicators, such as
+ *    focus rings.
+ *  
+ *  Discussion:
+<<<<<<< HEAD
+ *    There are several factors that control whether a view should show
+ *    focus indicators, including: 
+ *    
+ *    - does the view have a focused part? 
+ *    - is the view active? 
+ *    - is the view enabled? 
+ *    - is the view contained in a window that shows focus indicators?
+ *    
+ *    
+ *    This API encapsulates checking for all of these factors.
+ *    Typically, a view will call this API in its kEventControlDraw
+ *    handler to determine whether it should draw focus indicators in
+ *    addition to its normal drawing.
+=======
+ *    This API sets the origin of the view. This effectively also moves
+ *    all subviews of a view as well. This call will NOT invalidate the
+ *    view. This is because you might want to move the contents with
+ *    HIViewScrollRect instead of redrawing the complete content.
+>>>>>>> origin/fixes_2.4
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The view whose state to examine.
+ *    
+ *    inPart:
+ *      A view part code. If this value is kHIViewNoPart, the API
+ *      returns true if any part of the view is focused. If this value
+ *      is not kHIViewNoPart, the API returns true if that specific
+ *      part is focused.
+ *  
+ *  Result:
+ *    Whether the view should draw focus indicators.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewShowsFocus( inView: HIViewRef; inPart: HIViewPartCode ): Boolean; external name '_HIViewShowsFocus';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewSetBoundsOrigin( inView: HIViewRef; inX: CGFloat; inY: CGFloat ): OSStatus; external name '_HIViewSetBoundsOrigin';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> origin/fixes_2.4
+
+
+<<<<<<< HEAD
+{==============================================================================}
+<<<<<<< HEAD
+{  LAYOUT                                                                      }
+{  Mac OS X 10.3 provides a layout engine for HIViews that allows applications }
+{  to specify the layout relationships between multiple views. The layout      }
+{  engine will automatically reposition and resize views that have layout      }
+{  information when necessary.                                                 }
+=======
+{  KEYBOARD FOCUS                                                              }
+>>>>>>> origin/fixes_2.4
+{==============================================================================}
+{$endc} {not TARGET_CPU_64}
+
+
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
+{
+ *  HIViewSetFocus()
+ *  
+ *  Summary:
+ *    Sets the focused view in a window.
+ *  
+ *  Discussion:
+ *    This API is a replacement for the SetKeyboardFocus API.
+=======
+=======
+{
+ *  Summary:
+ *    Option bits for use with HIViewAdvanceFocusWithOptions and
+ *    HIViewSetFocus.
+ }
+const
+{
+   * Explicitly requests "focus on everything" mode. All controls will
+   * be considered focusable, regardless of the user's current
+   * preferences. If this option is not specified, then setting or
+   * advancing focus will obey the user's current preferences for
+   * focusing traditionally or focusing on any control.
+   }
+	kHIViewFocusOnAnyControl = 1 shl 0;
+
+  {
+   * Explicitly requests "traditional focus" mode. Only traditionally
+   * focusable controls (text and lists) will be considered focusable,
+   * regardless of the user's current preference. If this option is not
+   * specified, then setting or advancing focus will obey the user's
+   * current preferences for focusing traditionally or focusing on any
+   * control.
+   }
+	kHIViewFocusTraditionally = 1 shl 1;
+
+  {
+   * If advancing the focus would wrap around to the beginning or end
+   * of the focus root, then errCouldntSetFocus is returned. If this
+   * option is not specified, then advancing (or reversing) the focus
+   * will wrap around to the first (or last) focusable child of the
+   * focus root. This option is only valid for the
+   * HIViewAdvanceFocusWithOptions API.
+   }
+	kHIViewFocusWithoutWrapping = 1 shl 2;
+
+{$ifc not TARGET_CPU_64}
+{
+ *  HIViewAdvanceFocus()
+ *  
+ *  Discussion:
+ *    Advances the focus to the next most appropriate view. Unless
+ *    overridden in some fashion (either by overriding certain carbon
+ *    events or using the HIViewSetNextFocus API), the Toolbox will use
+ *    a spacially determinant method of focusing, attempting to focus
+ *    left to right, top to bottom in a window, taking groups of views
+ *    into account.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inRootForFocus:
+ *      The subtree to manipulate. The focus will never leave
+ *      inRootToFocus. Typically you would pass the content of the
+ *      window, or the root. If focused on the toolbar, for example,
+ *      the focus is limited to the toolbar only. In this case, the
+ *      Toolbox passes the toolbar view in as the focus root for
+ *      example.
+ *    
+>>>>>>> origin/fixes_2.4
+ *    inModifiers:
+ *      The EventModifiers of the keyboard event that ultimately caused
+ *      the call to HIViewAdvanceFocus. These modifiers are used to
+ *      determine the focus direction as well as other alternate
+ *      focusing behaviors.
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewAdvanceFocus( inRootForFocus: HIViewRef; inModifiers: EventModifiers ): OSStatus; external name '_HIViewAdvanceFocus';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  HIViewAdvanceFocusWithOptions()
+ *  
+ *  Summary:
+ *    Changes the focus in a window to the next or previous view.
+ *  
+ *  Discussion:
+ *    This API has the same default behavior as HIViewAdvanceFocus, but
+ *    the options parameter allows you to control some aspects of the
+ *    focus behavior.
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -5978,316 +7669,6 @@ function HIViewAdvanceFocusWithOptions( inRootForFocus: HIViewRef; inModifiers: 
 
 
 {
-=======
->>>>>>> graemeg/fixes_2_2
- *  HIViewGetFocusPart()
- *  
- *  Discussion:
- *    Returns the currently focused part of the given view.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    inView:
- *      The view to inquire about.
- *    
- *    outFocusPart:
- *      The part currently focused.
- *  
- *  Result:
- *    An operating system result code.
- *  
- *  Availability:
-<<<<<<< HEAD
- *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
-=======
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
->>>>>>> graemeg/fixes_2_2
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
- *    Non-Carbon CFM:   not available
- }
-function HIViewGetFocusPart( inView: HIViewRef; var outFocusPart: HIViewPartCode ): OSStatus; external name '_HIViewGetFocusPart';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-{
- *  HIViewSubtreeContainsFocus()
- *  
- *  Discussion:
- *    Given a view, this function checks to see if it or any of its
- *    children currently are the keyboard focus. If so, true is
- *    returned as the function result.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    inSubtreeStart:
- *      The view to start searching at.
- *  
- *  Result:
- *    A boolean result.
- *  
- *  Availability:
-<<<<<<< HEAD
- *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
-=======
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
->>>>>>> graemeg/fixes_2_2
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
- *    Non-Carbon CFM:   not available
- }
-function HIViewSubtreeContainsFocus( inSubtreeStart: HIViewRef ): Boolean; external name '_HIViewSubtreeContainsFocus';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-{
- *  HIViewSetNextFocus()
- *  
- *  Discussion:
- *    This function hard-wires the next sibling view to shift focus to
- *    whenever the keyboard focus is advanced.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    inView:
- *      The view to set the next focus view for. This parameter and the
- *      inNextFocus parameter must both have the same parent view.
- *    
- *    inNextFocus:
- *      The view to set focus to next. This parameter and the inView
- *      parameter must both have the same parent view. Pass NULL to
- *      tell the view system to use the default rules.
- *  
- *  Result:
- *    An operating system result code.
- *  
- *  Availability:
-<<<<<<< HEAD
- *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
-=======
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
->>>>>>> graemeg/fixes_2_2
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
- *    Non-Carbon CFM:   not available
- }
-function HIViewSetNextFocus( inView: HIViewRef; inNextFocus: HIViewRef { can be NULL } ): OSStatus; external name '_HIViewSetNextFocus';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-{
- *  HIViewSetFirstSubViewFocus()
- *  
- *  Discussion:
- *    This function hard-wires the first subview to shift focus to
- *    whenever the keyboard focus is advanced and the container view is
- *    entered.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    inParent:
- *      The parent view.
- *    
- *    inSubView:
- *      The first child which should receive focus. Pass NULL to tell
- *      the view system to use the default rules.
- *  
- *  Result:
- *    An operating system result code.
- *  
- *  Availability:
-<<<<<<< HEAD
- *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
-=======
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
->>>>>>> graemeg/fixes_2_2
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
- *    Non-Carbon CFM:   not available
- }
-function HIViewSetFirstSubViewFocus( inParent: HIViewRef; inSubView: HIViewRef { can be NULL } ): OSStatus; external name '_HIViewSetFirstSubViewFocus';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> graemeg/cpstrnew
-{
- *  HIViewSetFocus()
- *  
- *  Summary:
- *    Sets the focused view in a window.
- *  
- *  Discussion:
- *    This API is a replacement for the SetKeyboardFocus API.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    inView:
- *      The view that should be focused. The window is implicitly
- *      specified by this view.
- *    
- *    inPart:
- *      The view part that should be focused. This parameter may be
- *      kHIViewNoPart to remove focus from the view (and the window).
- *    
- *    inOptions:
- *      Options to further customize the focusing behavior. Only
- *      kHIViewFocusOnAnyControl and kHIViewFocusTraditionally are
- *      currently allowed.
- *  
- *  Result:
- *    An operating system result code.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- }
-function HIViewSetFocus( inView: HIViewRef; inPart: HIViewPartCode; inOptions: OptionBits ): OSStatus; external name '_HIViewSetFocus';
-(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
-
-
-{
- *  HIViewGetFocus()
- *  
- *  Summary:
- *    Retrieves the focused view in a window.
- *  
- *  Discussion:
- *    This API is a replacement for the GetKeyboardFocus API.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    inWindow:
- *      The window whose focused view to retrieve.
- *    
- *    outView:
- *      On exit, contains the window's focused view.
- *    
- *    outPart:
- *      On exit, contains the focused part of the focused view. This
- *      parameter may be NULL if you don't need this information. You
- *      can also get the focused part by calling HIViewGetFocusPart on
- *      the focused view.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- }
-function HIViewGetFocus( inWindow: WindowRef; var outView: HIViewRef; outPart: HIViewPartCodePtr { can be NULL } ): OSStatus; external name '_HIViewGetFocus';
-(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
-
-
-{
- *  HIViewShowsFocus()
- *  
- *  Summary:
- *    Indicates whether a view should show focus indicators, such as
- *    focus rings.
- *  
- *  Discussion:
- *    There are several factors that control whether a view should show
- *    focus indicators, including: 
- *    
- *    - does the view have a focused part? 
- *    - is the view active? 
- *    - is the view enabled? 
- *    - is the view contained in a window that shows focus indicators?
- *    
- *    
- *    This API encapsulates checking for all of these factors.
- *    Typically, a view will call this API in its kEventControlDraw
- *    handler to determine whether it should draw focus indicators in
- *    addition to its normal drawing.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    inView:
- *      The view whose state to examine.
- *    
- *    inPart:
- *      A view part code. If this value is kHIViewNoPart, the API
- *      returns true if any part of the view is focused. If this value
- *      is not kHIViewNoPart, the API returns true if that specific
- *      part is focused.
- *  
- *  Result:
- *    Whether the view should draw focus indicators.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- }
-function HIViewShowsFocus( inView: HIViewRef; inPart: HIViewPartCode ): Boolean; external name '_HIViewShowsFocus';
-(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
-
-
-<<<<<<< HEAD
-{==============================================================================}
-{  LAYOUT                                                                      }
-{  Mac OS X 10.3 provides a layout engine for HIViews that allows applications }
-{  to specify the layout relationships between multiple views. The layout      }
-{  engine will automatically reposition and resize views that have layout      }
-{  information when necessary.                                                 }
-{==============================================================================}
-{$endc} {not TARGET_CPU_64}
-
-
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> origin/cpstrnew
-{
- *  HIViewSetFocus()
- *  
- *  Summary:
- *    Sets the focused view in a window.
- *  
- *  Discussion:
- *    This API is a replacement for the SetKeyboardFocus API.
-=======
- *    inModifiers:
- *      The EventModifiers of the keyboard event that ultimately caused
- *      the call to HIViewAdvanceFocus. These modifiers are used to
- *      determine the focus direction as well as other alternate
- *      focusing behaviors.
- *  
- *  Result:
- *    An operating system result code.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
- *    Non-Carbon CFM:   not available
- }
-function HIViewAdvanceFocus( inRootForFocus: HIViewRef; inModifiers: EventModifiers ): OSStatus; external name '_HIViewAdvanceFocus';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-{
  *  HIViewGetFocusPart()
  *  
  *  Discussion:
@@ -6324,6 +7705,7 @@ function HIViewAdvanceFocus( inRootForFocus: HIViewRef; inModifiers: EventModifi
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -6342,6 +7724,9 @@ function HIViewSetFocus( inView: HIViewRef; inPart: HIViewPartCode; inOptions: O
  *    This API is a replacement for the GetKeyboardFocus API.
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6414,7 +7799,7 @@ function HIViewGetFocus( inWindow: WindowRef; var outView: HIViewRef; outPart: H
  *    A boolean result.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6607,7 +7992,7 @@ type
  *    An operating system result code.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6639,7 +8024,7 @@ function HIViewSetNextFocus( inView: HIViewRef; inNextFocus: HIViewRef { can be 
  *    An operating system result code.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6647,7 +8032,132 @@ function HIViewSetFirstSubViewFocus( inParent: HIViewRef; inSubView: HIViewRef {
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
+=======
+{
+ *  HIViewSetFocus()
+ *  
+ *  Summary:
+ *    Sets the focused view in a window.
+ *  
+ *  Discussion:
+ *    This API is a replacement for the SetKeyboardFocus API.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The view that should be focused. The window is implicitly
+ *      specified by this view.
+ *    
+ *    inPart:
+ *      The view part that should be focused. This parameter may be
+ *      kHIViewNoPart to remove focus from the view (and the window).
+ *    
+ *    inOptions:
+ *      Options to further customize the focusing behavior. Only
+ *      kHIViewFocusOnAnyControl and kHIViewFocusTraditionally are
+ *      currently allowed.
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewSetFocus( inView: HIViewRef; inPart: HIViewPartCode; inOptions: OptionBits ): OSStatus; external name '_HIViewSetFocus';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  HIViewGetFocus()
+ *  
+ *  Summary:
+ *    Retrieves the focused view in a window.
+ *  
+ *  Discussion:
+ *    This API is a replacement for the GetKeyboardFocus API.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inWindow:
+ *      The window whose focused view to retrieve.
+ *    
+ *    outView:
+ *      On exit, contains the window's focused view.
+ *    
+ *    outPart:
+ *      On exit, contains the focused part of the focused view. This
+ *      parameter may be NULL if you don't need this information. You
+ *      can also get the focused part by calling HIViewGetFocusPart on
+ *      the focused view.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewGetFocus( inWindow: WindowRef; var outView: HIViewRef; outPart: HIViewPartCodePtr { can be NULL } ): OSStatus; external name '_HIViewGetFocus';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  HIViewShowsFocus()
+ *  
+ *  Summary:
+ *    Indicates whether a view should show focus indicators, such as
+ *    focus rings.
+ *  
+ *  Discussion:
+ *    There are several factors that control whether a view should show
+ *    focus indicators, including: 
+ *    
+ *    - does the view have a focused part? 
+ *    - is the view active? 
+ *    - is the view enabled? 
+ *    - is the view contained in a window that shows focus indicators?
+ *    
+ *    
+ *    This API encapsulates checking for all of these factors.
+ *    Typically, a view will call this API in its kEventControlDraw
+ *    handler to determine whether it should draw focus indicators in
+ *    addition to its normal drawing.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The view whose state to examine.
+ *    
+ *    inPart:
+ *      A view part code. If this value is kHIViewNoPart, the API
+ *      returns true if any part of the view is focused. If this value
+ *      is not kHIViewNoPart, the API returns true if that specific
+ *      part is focused.
+ *  
+ *  Result:
+ *    Whether the view should draw focus indicators.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewShowsFocus( inView: HIViewRef; inPart: HIViewPartCode ): Boolean; external name '_HIViewShowsFocus';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+>>>>>>> origin/fixes_2.4
 {==============================================================================}
 {  LAYOUT                                                                      }
 {  Mac OS X 10.3 provides a layout engine for HIViews that allows applications }
@@ -6655,6 +8165,8 @@ function HIViewSetFirstSubViewFocus( inParent: HIViewRef; inSubView: HIViewRef {
 {  engine will automatically reposition and resize views that have layout      }
 {  information when necessary.                                                 }
 {==============================================================================}
+{$endc} {not TARGET_CPU_64}
+
 
 {
  *  Summary:
@@ -6722,11 +8234,8 @@ type
   {
    * Not currently used. Must be set to 0.
    }
-		offset: Float32;
+		offset: CGFloat;
 	end;
-{
-    const HISideBinding kHISideNoBinding = ( NULL, kHILayoutBindNone );
-}
 
 {
  *  HIBinding
@@ -6756,9 +8265,6 @@ type
    }
 		right: HISideBinding;
 	end;
-{
-    const HIBinding kHINoBinding = ( kHISideNoBinding, kHISideNoBinding, kHISideNoBinding, kHISideNoBinding );
-}
 
 {
  *  Discussion:
@@ -6798,6 +8304,7 @@ type
    * Currently, this field can't be anything other than
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    * kHILayoutScaleAbsolute.
 =======
    * kScalingAbsolute.
@@ -6805,10 +8312,14 @@ type
 =======
    * kScalingAbsolute.
 >>>>>>> origin/fixes_2_2
+=======
+   * kHILayoutScaleAbsolute.
+>>>>>>> origin/fixes_2.4
    }
 		kind: HIScaleKind;
 
   {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    * A CGFloat indicating how much to scale the HIView. 0 indicates no
@@ -6828,6 +8339,13 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+   * A CGFloat indicating how much to scale the HIView. 0 indicates no
+   * scaling. A value of 1 indicates that the view is to always have
+   * the same axial size.
+   }
+		ratio: CGFloat;
+>>>>>>> origin/fixes_2.4
 	end;
 
 {
@@ -6844,14 +8362,20 @@ type
 		x: HIAxisScale;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 
   {
    * An HIAxisScale describing the vertical scaling for an HIView.
    }
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 		y: HIAxisScale;
 	end;
 
@@ -6928,6 +8452,7 @@ type
    }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		offset: CGFloat;
 =======
 		offset: Float32;
@@ -6935,6 +8460,9 @@ type
 =======
 		offset: Float32;
 >>>>>>> origin/fixes_2_2
+=======
+		offset: CGFloat;
+>>>>>>> origin/fixes_2.4
 	end;
 
 {
@@ -6963,6 +8491,9 @@ type
  *    The different layout transformations are applied sequentially to
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    the HIView. 
  *    
  *    First, the bindings are applied. Note that the bindings are
@@ -6974,6 +8505,7 @@ type
  *    some of the previously applied bindings). Then the positioning is
  *    applied (which could potentially override some of the previously
  *    applied scaling and bindings).
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -6988,6 +8520,8 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  }
 type
 	HILayoutInfo = record
@@ -7000,6 +8534,7 @@ type
   {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    * An HIBinding structure describing the bindings to apply to the
    * sides of an HIView.
 =======
@@ -7010,6 +8545,10 @@ type
    * An HIBinding structure describing the kinds of bindings to apply
    * to the sides of an HIView.
 >>>>>>> origin/fixes_2_2
+=======
+   * An HIBinding structure describing the bindings to apply to the
+   * sides of an HIView.
+>>>>>>> origin/fixes_2.4
    }
 		binding: HIBinding;
 
@@ -7022,6 +8561,7 @@ type
   {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    * An HIPositioning structure describing the positioning to apply to
    * an HIView.
 =======
@@ -7030,12 +8570,17 @@ type
 =======
    * An HIPositioning structure positioning to apply to an HIView.
 >>>>>>> origin/fixes_2_2
+=======
+   * An HIPositioning structure describing the positioning to apply to
+   * an HIView.
+>>>>>>> origin/fixes_2.4
    }
 		position: HIPositioning;
 	end;
 const
 	kHILayoutInfoVersionZero = 0;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
@@ -7055,6 +8600,9 @@ const HILayoutInfo kHILayoutInfoNone = (
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 {
  *  HIViewGetLayoutInfo()
  *  
@@ -7080,6 +8628,7 @@ const HILayoutInfo kHILayoutInfoNone = (
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
@@ -7087,6 +8636,9 @@ const HILayoutInfo kHILayoutInfoNone = (
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7108,6 +8660,7 @@ function HIViewGetLayoutInfo( inView: HIViewRef; var outLayoutInfo: HILayoutInfo
  *    inView:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      The HIView whose layout info is to be set.
  *    
  *    inLayoutInfo:
@@ -7125,11 +8678,19 @@ function HIViewGetLayoutInfo( inView: HIViewRef; var outLayoutInfo: HILayoutInfo
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *      The HIView whose layout info is to be set.
+ *    
+ *    inLayoutInfo:
+ *      A pointer to an HILayoutInfo record containing the layout
+ *      values to be set.
+>>>>>>> origin/fixes_2.4
  *  
  *  Result:
  *    An operating system status code.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
@@ -7139,6 +8700,9 @@ function HIViewGetLayoutInfo( inView: HIViewRef; var outLayoutInfo: HILayoutInfo
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7166,6 +8730,7 @@ function HIViewSetLayoutInfo( inView: HIViewRef; const (*var*) inLayoutInfo: HIL
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
@@ -7173,6 +8738,9 @@ function HIViewSetLayoutInfo( inView: HIViewRef; const (*var*) inLayoutInfo: HIL
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7200,6 +8768,7 @@ function HIViewSuspendLayout( inView: HIViewRef ): OSStatus; external name '_HIV
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
@@ -7207,6 +8776,9 @@ function HIViewSuspendLayout( inView: HIViewRef ): OSStatus; external name '_HIV
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7245,6 +8817,7 @@ function HIViewResumeLayout( inView: HIViewRef ): OSStatus; external name '_HIVi
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
@@ -7252,6 +8825,9 @@ function HIViewResumeLayout( inView: HIViewRef ): OSStatus; external name '_HIVi
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7284,6 +8860,7 @@ function HIViewIsLayoutActive( inView: HIViewRef ): Boolean; external name '_HIV
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
@@ -7291,6 +8868,9 @@ function HIViewIsLayoutActive( inView: HIViewRef ): Boolean; external name '_HIV
 =======
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7320,6 +8900,7 @@ function HIViewIsLayoutLatentlyActive( inView: HIViewRef ): Boolean; external na
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
@@ -7327,6 +8908,9 @@ function HIViewIsLayoutLatentlyActive( inView: HIViewRef ): Boolean; external na
 =======
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7335,6 +8919,7 @@ function HIViewApplyLayout( inView: HIViewRef ): OSStatus; external name '_HIVie
 
 
 {==============================================================================}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {  IMAGE CONTENT MANAGEMENT                                                    }
@@ -7359,6 +8944,158 @@ function HIViewApplyLayout( inView: HIViewRef ): OSStatus; external name '_HIVie
 =======
 =======
 >>>>>>> origin/fixes_2_2
+{  MISCELLANEOUS                                                               }
+=======
+{  IMAGE CONTENT MANAGEMENT                                                    }
+>>>>>>> origin/fixes_2.4
+{==============================================================================}
+{
+ *  HIViewSetImageContent()
+ *  
+ *  Summary:
+ *    Sets the content of a view to a particular image.
+ *  
+ *  Discussion:
+ *    This API attempts to set the view's image content using
+ *    SetControlData and the kControlContentTag constant.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The view whose image content to set.
+ *    
+ *    inPart:
+ *      The view part whose image content to set. For most views, you
+ *      should pass kHIViewEntireView. Some views, such as the
+ *      segmented view, allow you to pass a specific partcode here to
+ *      indicate a particular part of the view.
+ *    
+ *    inContent:
+ *      The image content to set. You may pass NULL to remove content
+ *      from the view.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewSetImageContent( inView: HIViewRef; inPart: HIViewPartCode; {const} inContent: HIViewContentInfoPtr { can be NULL } ): OSStatus; external name '_HIViewSetImageContent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  HIViewCopyImageContentWithSize()
+ *  
+ *  Summary:
+ *    Retrieves the image content of a view.
+ *  
+ *  Discussion:
+ *    This API attempts to get the view's image content using
+ *    GetControlData and the kControlContentTag constant. If
+ *    successful, it calls HIViewRetainImageContent.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The view whose image content to retrieve.
+ *    
+ *    inPart:
+ *      The view part whose image content to retrieve. For most views,
+ *      you should pass kHIViewEntireView. Some views, such as the
+ *      segmented view, allow you to pass a specific partcode here to
+ *      indicate a particular part of the view.
+ *    
+ *    inContentSize:
+ *      The size in bytes of the HIViewContentInfo structure that you
+ *      are passing to the API. At most this many bytes will be written
+ *      to your HIViewContentInfo structure.
+ *    
+ *    outContent:
+ *      On exit, contains the view's image content. For image content
+ *      types that support a refcount, the content has been retained
+ *      before being returned; such content should be released by the
+ *      caller. For image content that does not support a refcount, the
+ *      actual content reference used by the view is returned; this
+ *      content should not be released. You may use
+ *      HIViewReleaseImageContent to release the content returned by
+ *      this API.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewCopyImageContentWithSize( inView: HIViewRef; inPart: HIViewPartCode; inContentSize: ByteCount; var outContent: HIViewContentInfo ): OSStatus; external name '_HIViewCopyImageContentWithSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  HIViewRetainImageContent()
+ *  
+ *  Summary:
+ *    Retains refcountable content contained in an HIViewContentInfo
+ *    structure.
+ *  
+ *  Discussion:
+ *    For image content data types that are refcountable, the image
+ *    content retain count is incremented. Non-refcountable image
+ *    content is ignored.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inContent:
+ *      The image content to retain.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+procedure HIViewRetainImageContent( const (*var*) inContent: HIViewContentInfo ); external name '_HIViewRetainImageContent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  HIViewReleaseImageContent()
+ *  
+ *  Summary:
+ *    Releases refcountable content contained in an HIViewContentInfo
+ *    structure.
+ *  
+ *  Discussion:
+ *    For image content data types that are refcountable, the image
+ *    content retain count is decremented. Non-refcountable image
+ *    content is ignored; it is _not_ freed. You must explicitly free
+ *    non-refcountable image content yourself.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    ioContent:
+ *      The image content to release. On exit, ioContent->contentType
+ *      is set to kHIViewContentNone.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+procedure HIViewReleaseImageContent( var ioContent: HIViewContentInfo ); external name '_HIViewReleaseImageContent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{==============================================================================}
 {  MISCELLANEOUS                                                               }
 {==============================================================================}
 {
@@ -7425,7 +9162,7 @@ function HIViewSetImageContent( inView: HIViewRef; inPart: HIViewPartCode; {cons
  *    A window reference.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.3 and later in Carbon.framework
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7437,12 +9174,17 @@ function HIViewGetWindow( inView: HIViewRef ): WindowRef; external name '_HIView
  *  HIViewFindByID()
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    Allows you to find a particular view by its ID. Currently, this
  *    call uses the ControlID type as its IDs.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Allows you to find a particular view by its ID. The HIViewID type
+ *    used by this API is identical to the older ControlID type.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -7504,18 +9246,18 @@ function HIViewCopyImageContentWithSize( inView: HIViewRef; inPart: HIViewPartCo
  *    inID:
  *      The ID of the view you are looking for.
  *    
- *    outControl:
- *      Receives the control if found.
+ *    outView:
+ *      Receives the view if found.
  *  
  *  Result:
  *    An operating system result code.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
-function HIViewFindByID( inStartView: HIViewRef; inID: HIViewID; var outControl: HIViewRef ): OSStatus; external name '_HIViewFindByID';
+function HIViewFindByID( inStartView: HIViewRef; inID: HIViewID; var outView: HIViewRef ): OSStatus; external name '_HIViewFindByID';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
@@ -7573,7 +9315,7 @@ procedure HIViewRetainImageContent( const (*var*) inContent: HIViewContentInfo )
  *    An operating system result code.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7606,7 +9348,7 @@ function HIViewGetAttributes( inView: HIViewRef; var outAttrs: OptionBits ): OSS
  *    An operating system result code.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7619,7 +9361,14 @@ function HIViewChangeAttributes( inView: HIViewRef; inAttrsToSet: OptionBits; in
  *  
  *  Discussion:
  *    Creates an CGImageRef for the view passed in. The view and any
- *    children it has are rendered in the resultant image.
+ *    children it has are rendered in the resultant image. 
+ *    
+ *    Note that prior to Mac OS X 10.5, we do not recommend passing the
+ *    root view of a window (returned by HIViewGetRoot) to this API.
+ *    The API implementation in earlier versions of Mac OS X contained
+ *    a bug that would corrupt the root view state, such that
+ *    subsequent QuickDraw drawing in subviews of the root view would
+ *    not appear in the root view's containing window.
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -7636,8 +9385,8 @@ function HIViewChangeAttributes( inView: HIViewRef; inAttrsToSet: OptionBits; in
  *      The frame of the view within the resultant image. It is in the
  *      coordinate system of the image, where 0,0 is the top left
  *      corner of the image. This is so you can know exactly where the
- *      control lives in the image when the control draws outside its
- *      bounds for things such as shadows.
+ *      view lives in the image when the view draws outside its bounds
+ *      for things such as shadows.
  *    
  *    outImage:
  *      The image of the view, including anything that would be drawn
@@ -7647,7 +9396,7 @@ function HIViewChangeAttributes( inView: HIViewRef; inAttrsToSet: OptionBits; in
  *    An operating system status code.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7685,7 +9434,7 @@ function HIViewCreateOffscreenImage( inView: HIViewRef; inOptions: OptionBits; o
  *    An operating system status code.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7693,6 +9442,10 @@ function HIViewDrawCGImage( inContext: CGContextRef; const (*var*) inBounds: HIR
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+{$endc} {not TARGET_CPU_64}
+
+
+{$ifc not TARGET_CPU_64}
 {
  *  HIViewGetFeatures()
  *  
@@ -7716,7 +9469,7 @@ function HIViewDrawCGImage( inContext: CGContextRef; const (*var*) inBounds: HIR
  *    An operating system status code.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.3 and later in Carbon.framework
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7730,12 +9483,24 @@ function HIViewGetFeatures( inView: HIViewRef; var outFeatures: HIViewFeatures )
  *  Discussion:
  *    Allows you to change a view's features on the fly. Typically,
  *    this is up to the view itself to control. For example, it might
- *    decide that under some situations it is opaque and other others
- *    it is transparent. In general entities outside of the view itself
+ *    decide that under some situations it is opaque and in others it
+ *    is transparent. In general entities outside of the view itself
  *    should not call this function. The only exception might be UI
  *    building tools, where it would want to make sure a view always
  *    responds to clicks, for example, so it could override mouse
- *    tracking to drag items around.
+ *    tracking to drag items around. 
+ *    
+ *    When implementing a custom HIView, it is common to use
+ *    HIViewChangeFeatures in the view's kEventHIObjectInitialize
+ *    function to set up the view's initial feature bits. If your view
+ *    needs to run on Mac OS X 10.2, however, where
+ *    HIViewChangeFeatures is not available, you can set the view's
+ *    initial feature bits by handling kEventControlInitialize and
+ *    returning the appropriate feature flags in the
+ *    kEventParamControlFeatures parameter. Note that in this case, you
+ *    can only return feature flag constants starting with "kControl"
+ *    from the Control Feature Bits enumeration in Controls.h; you
+ *    cannot return kHIViewFeature constants.
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -7755,12 +9520,15 @@ function HIViewGetFeatures( inView: HIViewRef; var outFeatures: HIViewFeatures )
  *    An operating system status code.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.3 and later in Carbon.framework
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
 function HIViewChangeFeatures( inView: HIViewRef; inFeaturesToSet: HIViewFeatures; inFeaturesToClear: HIViewFeatures ): OSStatus; external name '_HIViewChangeFeatures';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{$endc} {not TARGET_CPU_64}
 
 
 {
@@ -7785,6 +9553,7 @@ const
    }
 	kHITransformSelected = $4000;
 
+{$ifc not TARGET_CPU_64}
 {
  *  HICreateTransformedCGImage()
  *  
@@ -7807,7 +9576,7 @@ const
  *      The new image. This image should be released by the caller.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.4 and later in Carbon.framework
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7835,7 +9604,7 @@ function HICreateTransformedCGImage( inImage: CGImageRef; inTransform: OptionBit
  *    An EventTargetRef.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.4 and later in Carbon.framework
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -7843,346 +9612,47 @@ function HIViewGetEventTarget( inView: HIViewRef ): EventTargetRef; external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 
-{==============================================================================}
-{ HIGrowBoxView                                                                }
-{ The grow box view is a new view starting in Mac OS 10.2. It can be used in   }
-{ both the new compositing mode, as well as the traditional control manager    }
-{ mode. Like all new HIFoo views, this view is created invisibly. You must     }
-{ show the view after creation if you want to, like, see it and stuff.         }
-{==============================================================================}
-{ The HIObject class ID for the HIGrowBoxView class. }
-{$ifc USE_CFSTR_CONSTANT_MACROS}
-{$definec kHIGrowBoxViewClassID CFSTRP('com.apple.higrowboxview')}
-{$endc}
-{ Control Kind}
-const
-	kControlKindHIGrowBoxView = FourCharCode('grow');
-
-{ Currently there is no direct creation API for the grow box, so you must use  }
-{ HIObjectCreate if you wish to create one directly. Normally, a window will   }
-{ create one for you, so you should generally never need to do this.           }
 {
- *  HIGrowBoxViewSetTransparent()
+ *  HIViewSetUpTextColor()
+ *  
+ *  Summary:
+ *    Applies the proper text color for the given view to the current
+ *    context.
  *  
  *  Discussion:
- *    Sets a grow box view as transparent, meaning it will draw the
- *    grow box lines over any content below it. When not transparent,
- *    it's an opaque white square with the grow lines.
+ *    An embedding-savvy view which draws text must ensure that its
+ *    text color properly contrasts the background on which it draws.
+ *    This routine sends kEventControlApplyTextColor to each superview
+ *    in the view hierarchy to determine and apply the proper text
+ *    color to the given context until the event is handled. If no
+ *    superview handles the event, HIView chooses a text color which
+ *    contrasts any ThemeBrush which has been associated with the
+ *    owning window (see SetThemeWindowBackground).
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
- *    inGrowBoxView:
- *      The grow box view reference.
+ *    inView:
+ *      The HIViewRef that wants to draw text.
  *    
- *    inTransparent:
- *      Pass true to make the grow view use its transparent look, false
- *      to give it the opaque look.
+ *    inContext:
+ *      The context into which drawing will take place.
  *  
  *  Result:
- *    An operating system result code.
+ *    An OSStatus code indicating success or failure. The most likely
+ *    error is a controlHandleInvalidErr, resulting from a bad
+ *    HIViewRef. Any non-noErr result indicates that the color set up
+ *    failed, and that the caller should probably give up its attempt
+ *    to draw.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
-function HIGrowBoxViewSetTransparent( inGrowBoxView: HIViewRef; inTransparent: Boolean ): OSStatus; external name '_HIGrowBoxViewSetTransparent';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-{
- *  HIGrowBoxViewIsTransparent()
- *  
- *  Discussion:
- *    Returns true if a grow box view is set to be transparent.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    inGrowBoxView:
- *      The grow box view reference.
- *  
- *  Result:
- *    A boolean result.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
- *    Non-Carbon CFM:   not available
- }
-function HIGrowBoxViewIsTransparent( inGrowBoxView: HIViewRef ): Boolean; external name '_HIGrowBoxViewIsTransparent';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-{==============================================================================}
-{  HIScrollView                                                                }
-{ The scroll view is a new view starting in Mac OS 10.2. It can be used in     }
-{ the new compositing mode ONLY due to the nature of how it works. Like all    }
-{ new HIFoo views, this view is created invisibly. You must show the view      }
-{ after creation if you want to, like, see it and stuff.                       }
-{ The HIScrollView will set the frame of the contained view when its bounds    }
-{ change, so it is not necessary to set up the layout of the embedded view.    }
-{ Using an HIScrollView requires a few steps:                                  }
-{ 1. Install your scrollable content view into the HIScrollView instance using }
-{    HIViewAddSubview.                                                         }
-{ 2. If the scrollable content view doesn't already handle the                 }
-{    kEventScrollableGetInfo and kEventScrollableScrollTo events, you must     }
-{    install handlers on your scrollable content view and handle those events  }
-{    manually. More details on those events can be found below.                }
-{ 3. If the scrollable content view doesn't already send out the               }
-{    kEventScrollableInfoChanged event to its parent view, you must send this  }
-{    event to the HIScrollView instance whenever your scrollable content       }
-{    view's size or origin changes. More details on this even can be found     }
-{    below.                                                                    }
-{==============================================================================}
-{ The HIObject class ID for the HIScrollView class. }
-{$ifc USE_CFSTR_CONSTANT_MACROS}
-{$definec kHIScrollViewClassID CFSTRP('com.apple.HIScrollView')}
-{$endc}
-{ Control Kind}
-const
-	kControlKindHIScrollView = FourCharCode('scrl');
-
-{
-    kEventClassScrollable quick reference:
-    
-    kEventScrollableGetInfo         = 1,
-    kEventScrollableInfoChanged     = 2,
-%%  kEventScrollableEmbedded        = 3,
-%%  kEventScrollableRemoved         = 4,
-    kEventScrollableScrollTo        = 10
-}
-const
-	kEventClassScrollable = FourCharCode('scrl');
-
-const
-	kEventParamImageSize = FourCharCode('imsz'); { typeHISize}
-	kEventParamViewSize = FourCharCode('vwsz'); { typeHISize}
-	kEventParamLineSize = FourCharCode('lnsz'); { typeHISize}
-	kEventParamOrigin = FourCharCode('orgn'); { typeHIPoint}
-
-{
- *  kEventClassScrollable / kEventScrollableGetInfo
- *  
- *  Summary:
- *    Requests information from an HIScrollView’s scrollable view about
- *    its size and origin.
- *  
- *  Discussion:
- *    This event is sent by an HIScrollView to its scrollable view to
- *    determine the current size and origin of the scrollable view. A
- *    scrollable view must implement this event in order to scroll
- *    properly inside an HIScrollView.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    <-- kEventParamImageSize (out, typeHISize)
- *          On exit, contains the size of the entire scrollable view.
- *    
- *    <-- kEventParamViewSize (out, typeHISize)
- *          On exit, contains the amount of the scrollable view that is
- *          visible.
- *    
- *    <-- kEventParamLineSize (out, typeHISize)
- *          On exit, contains the amount that should be scrolled in
- *          response to a single click on a scrollbar arrow.
- *    
- *    <-- kEventParamOrigin (out, typeHIPoint)
- *          On exit, contains the scrollable view’s current origin (the
- *          view-relative coordinate that is drawn at the top left
- *          corner of its frame). These coordinates should always be
- *          greater than or equal to zero. They should be less than or
- *          equal to the view’s image size minus its view size.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventScrollableGetInfo = 1;
-
-{
- *  kEventClassScrollable / kEventScrollableInfoChanged
- *  
- *  Summary:
- *    Notification that the size or origin of an HIScrollView’s
- *    scrollable view has changed.
- *  
- *  Discussion:
- *    This event is not sent by HIScrollView itself; rather, it may be
- *    sent to an instance of HIScrollView to notify the scroll view
- *    that the size or origin of its scrollable view have changed. The
- *    HIScrollView responds to this event by sending a
- *    kEventScrollableGetInfo to its scrollable view. It then updates
- *    the scroll bars appropriately to reflect the new reality of the
- *    scrollable view. It does NOT move the origin of the scrollable
- *    view at all. It is just a notification to allow the scroll view
- *    to sync up with its scrollable view.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventScrollableInfoChanged = 2;
-
-{
- *  kEventClassScrollable / kEventScrollableScrollTo
- *  
- *  Summary:
- *    Requests that an HIScrollView’s scrollable view should scroll to
- *    a particular origin.
- *  
- *  Discussion:
- *    This event is sent by an HIScrollView to its scrollable view to
- *    request that the scrollable view update its current origin and
- *    redraw. Typically, a scrollable view will record its current
- *    origin in its own instance data; it should update the origin in
- *    response to this event. A scrollable view should also use either
- *    HIViewScrollRect to scroll its content, or HIViewSetNeedsDisplay
- *    to cause itself to redraw using the new origin point. A
- *    scrollable view must implement this event in order to scroll
- *    properly inside an HIScrollView.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    --> kEventParamOrigin (in, typeHIPoint)
- *          The new origin for the scrollable view. The origin
- *          coordinates will vary from (0,0) to scrollable view’s image
- *          size minus its view size.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventScrollableScrollTo = 10;
-
-
-{
- *  Summary:
- *    HIScrollView options
- }
-const
-{
-   * This indicates that a vertical scroll bar is desired.
-   }
-	kHIScrollViewOptionsVertScroll = 1 shl 0;
-
-  {
-   * This indicates that a horizontal scroll bar is desired.
-   }
-	kHIScrollViewOptionsHorizScroll = 1 shl 1;
-
-  {
-   * This indicates that space for a grow box should be taken into
-   * account when laying out scroll bars. On Mac OS X 10.3 and earlier,
-   * if both the horizontal and vertical scroll bars are requested,
-   * this attribute is assumed. On Mac OS X 10.4 and later, this
-   * attribute is *NOT* assumed; this allows the scroll view to support
-   * auto-hiding of the two scroll bars independently on Mac OS X 10.4
-   * and later. If you want to preserve space for the grow box on all
-   * systems, specify this option bit.
-   }
-	kHIScrollViewOptionsAllowGrow = 1 shl 2;
-	kHIScrollViewValidOptions = kHIScrollViewOptionsVertScroll or kHIScrollViewOptionsHorizScroll or kHIScrollViewOptionsAllowGrow;
-
-
-{
- *  HIScrollViewAction
- *  
- *  Summary:
- *    HIScrollView navigation actions. See HIScrollViewNavigate for
- *    more information.
- }
-type
-	HIScrollViewAction = UInt32;
-const
-{
-   * The scroll view should move to the top of the content.
-   }
-	kHIScrollViewScrollToTop = 1 shl 0;
-
-  {
-   * The scroll view should move to the bottom of the content.
-   }
-	kHIScrollViewScrollToBottom = 1 shl 1;
-
-  {
-   * The scroll view should move to the left of the content.
-   }
-	kHIScrollViewScrollToLeft = 1 shl 2;
-
-  {
-   * The scroll view should move to the right of the content.
-   }
-	kHIScrollViewScrollToRight = 1 shl 3;
-
-  {
-   * The scroll view should page up.
-   }
-	kHIScrollViewPageUp = 1 shl 4;
-
-  {
-   * The scroll view should page down.
-   }
-	kHIScrollViewPageDown = 1 shl 5;
-
-  {
-   * The scroll view should page left.
-   }
-	kHIScrollViewPageLeft = 1 shl 6;
-
-  {
-   * The scroll view should page right.
-   }
-	kHIScrollViewPageRight = 1 shl 7;
-
-{
- *  HIScrollViewCreate()
- *  
- *  Discussion:
- *    Creates a scroll view. This view has 3 parts, essentially. It can
- *    have one or two scroll bars (horizontal/vertical), and a view to
- *    be scrolled. The view to be scrolled is merely added via
- *    HIViewAddSubview. The scroll view will automatically connect it
- *    up appropriately. **** THIS MAY CHANGE
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    inOptions:
- *      Options for our scroll view. You must specify either a
- *      horizontal or a vertical scroll bar. If neither is passed, an
- *      error is returned.
- *    
- *    outView:
- *      The new scroll view.
- *  
- *  Result:
- *    An operating system result code.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
- *    Non-Carbon CFM:   not available
- }
+<<<<<<< HEAD
 function HIScrollViewCreate( inOptions: OptionBits; var outView: HIViewRef ): OSStatus; external name '_HIScrollViewCreate';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
@@ -12192,12 +13662,23 @@ end.
  }
 const
 	kEventClockDateOrTimeChanged = 1;
+=======
+function HIViewSetUpTextColor( inView: HIViewRef; inContext: CGContextRef ): OSStatus; external name '_HIViewSetUpTextColor';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
+{$endc} {not TARGET_CPU_64}
 
+{$endc} {TARGET_OS_MAC}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

@@ -17,6 +17,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function  FpLink (const existing : RawByteString; const newone : RawByteString): cInt; {$ifdef VER2_0}inline;{$endif}
 var
   SystemExistingFileName, SystemNewOneFileName: RawByteString;
@@ -27,6 +28,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$I textrec.inc}
 {$I filerec.inc}
 

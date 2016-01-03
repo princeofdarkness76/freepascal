@@ -18,7 +18,11 @@ unit extras;
 interface
 
 uses
+<<<<<<< HEAD
   SysUtils, Classes, DOM, xmlread, xmlwrite, domunit, testregistry;
+=======
+  SysUtils, Classes, DOM, xmlread, domunit, testregistry;
+>>>>>>> origin/fixes_2.4
 
 implementation
 
@@ -29,6 +33,7 @@ type
     procedure attr_ownership02;
     procedure attr_ownership03;
     procedure attr_ownership04;
+<<<<<<< HEAD
     procedure attr_ownership05;
     procedure replacesamechild;
 <<<<<<< HEAD
@@ -47,6 +52,8 @@ type
     procedure nsFixup1;
     procedure nsFixup2;
     procedure nsFixup3;
+=======
+>>>>>>> origin/fixes_2.4
   end;
 
 { TDOMTestExtra }
@@ -132,6 +139,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 // verify that Element.removeAttributeNode() resets ownerElement
 // of the attribute being removed
 procedure TDOMTestExtra.attr_ownership05;
@@ -449,6 +457,8 @@ begin
   assertEquals('attr_nodeName', 'a:attr', attr.nodeName);
 >>>>>>> origin/cpstrnew
 end;
+=======
+>>>>>>> origin/fixes_2.4
 
 
 initialization

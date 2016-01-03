@@ -3102,11 +3102,15 @@ type
     procedure RemoveTransactions;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SetParams(AValue: TStrings);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    procedure SetParams(AValue: TStrings);
+>>>>>>> origin/fixes_2.4
   protected
     Procedure CheckConnected;
     Procedure CheckDisConnected;
@@ -3135,6 +3139,7 @@ type
     property KeepConnection: Boolean read FKeepConnection write FKeepConnection;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property Params : TStrings read FParams Write SetParams;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3147,6 +3152,9 @@ type
 =======
     property Params : TStrings read FParams Write FParams;
 >>>>>>> origin/fixes_2_2
+=======
+    property Params : TStrings read FParams Write SetParams;
+>>>>>>> origin/fixes_2.4
   end;
 
 

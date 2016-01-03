@@ -543,6 +543,7 @@ begin
     pointer(PQexecPrepared) := GetProcedureAddress(Postgres3LibraryHandle,'PQexecPrepared');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     pointer(PQPrepare) := GetProcedureAddress(Postgres3LibraryHandle,'PQprepare');
 =======
     pointer(PQPrepare) := GetProcedureAddress(Postgres3LibraryHandle,'PQPrepare');
@@ -550,6 +551,9 @@ begin
 =======
     pointer(PQPrepare) := GetProcedureAddress(Postgres3LibraryHandle,'PQPrepare');
 >>>>>>> origin/fixes_2_2
+=======
+    pointer(PQPrepare) := GetProcedureAddress(Postgres3LibraryHandle,'PQprepare');
+>>>>>>> origin/fixes_2.4
     pointer(PQsendQuery) := GetProcedureAddress(Postgres3LibraryHandle,'PQsendQuery');
     pointer(PQsendQueryParams) := GetProcedureAddress(Postgres3LibraryHandle,'PQsendQueryParams');
     pointer(PQsendQueryPrepared) := GetProcedureAddress(Postgres3LibraryHandle,'PQsendQueryPrepared');

@@ -4050,6 +4050,7 @@ link_e_com_program_uses_segment_relocations=09207_E_Cannot create a .COM file, b
 #
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 10062 is the last used one
 =======
 # 10060 is the last used one
@@ -4057,6 +4058,9 @@ link_e_com_program_uses_segment_relocations=09207_E_Cannot create a .COM file, b
 =======
 # 10060 is the last used one
 >>>>>>> origin/fixes_2_2
+=======
+# 10062 is the last used one
+>>>>>>> origin/fixes_2.4
 #
 # BeginOfTeX
 % \section{Unit loading messages.}
@@ -4271,6 +4275,7 @@ unit_u_indirect_crc_changed=10062_U_Indirect interface (objects/classes) CRC cha
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 unit_u_ppu_invalid_memory_model=10063_U_PPU is compiled for another i8086 memory model
 % This unit file was compiled for a different i8086 memory model and
 % cannot be read.
@@ -4286,6 +4291,8 @@ unit_u_ppu_invalid_memory_model=10063_U_PPU is compiled for another i8086 memory
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 % \end{description}
 # EndOfTeX
 
@@ -4480,6 +4487,7 @@ option_dwarf_smartlink_creation=11049_N_DWARF debug information cannot be used w
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 option_invalid_macosx_deployment_target=11050_E_Invalid value for MACOSX_DEPLOYMENT_TARGET environment variable: $1
 option_invalid_iphoneos_deployment_target=11051_E_Invalid value for IPHONEOS_DEPLOYMENT_TARGET environment variable: $1
 % On Mac OS X, the MACOSX\_DEPLOYMENT\_TARGET/IPHONEOS\_DEPLOYMENT\_TARGET environment variable can be
@@ -4526,6 +4534,11 @@ option_debug_external_unsupported=11048_W_Disabling external debug information b
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+option_ignored_target=11047_W_Option "$1" is ignored for the current target platform.
+% Not all options are supported or implemented for all target platforms. This message informs you that a chosen
+% option is ignored for the currently selected target platform.
+>>>>>>> origin/fixes_2.4
 %\end{description}
 # EndOfTeX
 
@@ -4973,6 +4986,9 @@ J*2Cv_Var/out parameter copy-out checking
 *g2go<x>_Set debug information options
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 *g3godwarfsets_ Enable DWARF 'set' type debug information (breaks gdb < 6.5)
 *g3gostabsabsincludes_ Store absolute/full include file paths in Stabs
 *g3godwarfmethodclassprefix_ Prefix method names in DWARF with class name

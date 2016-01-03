@@ -16,6 +16,7 @@ unit xmlutils;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef fpc}{$mode objfpc}{$endif}
 {$H+}
 {$ifopt Q+}{$define overflow_check}{$endif}
@@ -25,6 +26,9 @@ unit xmlutils;
 >>>>>>> graemeg/fixes_2_2
 =======
 {$mode objfpc}
+=======
+{$ifdef fpc}{$mode objfpc}{$endif}
+>>>>>>> origin/fixes_2.4
 {$H+}
 >>>>>>> origin/fixes_2_2
 
@@ -138,6 +142,7 @@ function Hash(InitValue: LongWord; Key: PWideChar; KeyLen: Integer): LongWord;
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef fpc}
   PtrInt = LongInt;
   TFPList = TList;
@@ -166,6 +171,12 @@ type
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifndef fpc}
+  PtrInt = LongInt;
+{$endif}  
+
+>>>>>>> origin/fixes_2.4
   PPHashItem = ^PHashItem;
   PHashItem = ^THashItem;
   THashItem = record
@@ -178,6 +189,7 @@ type
     Next: PHashItem;
     Data: TObject;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -206,6 +218,10 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  THashItemArray = array[0..0] of PHashItem;
+  PHashItemArray = ^THashItemArray;
+>>>>>>> origin/fixes_2.4
 
   THashForEach = function(Entry: PHashItem; arg: Pointer): Boolean;
 
@@ -213,6 +229,7 @@ type
   private
     FCount: LongWord;
     FBucketCount: LongWord;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     FBucket: PHashItemArray;
@@ -228,6 +245,11 @@ type
     FOwnsObjects: Boolean;
     function Lookup(Key: PWideChar; KeyLength: Integer; var Found: Boolean; CanCreate: Boolean): PHashItem;
 >>>>>>> origin/fixes_2_2
+=======
+    FBucket: PHashItemArray;
+    FOwnsObjects: Boolean;
+    function Lookup(Key: PWideChar; KeyLength: Integer; out Found: Boolean; CanCreate: Boolean): PHashItem;
+>>>>>>> origin/fixes_2.4
     procedure Resize(NewCapacity: LongWord);
   public
     constructor Create(InitSize: Integer; OwnObjects: Boolean);
@@ -269,6 +291,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPU16}
   TExpHashEntryArray = array[0..MaxSmallInt div sizeof(TExpHashEntry)-1] of TExpHashEntry;
 {$else CPU16}
@@ -286,6 +309,9 @@ type
 =======
   TExpHashEntryArray = array[0..MaxInt div sizeof(TExpHashEntry)-1] of TExpHashEntry;
 >>>>>>> origin/cpstrnew
+=======
+  TExpHashEntryArray = array[0..0] of TExpHashEntry;
+>>>>>>> origin/fixes_2.4
   PExpHashEntryArray = ^TExpHashEntryArray;
 
   TDblHashArray = class(TObject)
@@ -293,6 +319,7 @@ type
     FSizeLog: Integer;
     FRevision: LongWord;
     FData: PExpHashEntryArray;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -305,6 +332,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
   public  
 >>>>>>> graemeg/cpstrnew
     procedure Init(NumSlots: Integer);
@@ -702,6 +731,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IsXmlName(Value: PWideChar; Len: Integer; Xml11: Boolean = False): Boolean;
 var
   I: Integer;
@@ -714,6 +744,9 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
 function IsXmlName(Value: PWideChar; Len: Integer; Xml11: Boolean = False): Boolean; overload;
+=======
+function IsXmlName(Value: PWideChar; Len: Integer; Xml11: Boolean = False): Boolean;
+>>>>>>> origin/fixes_2.4
 var
   Pages: PByteArray;
   I: Integer;
@@ -1110,8 +1143,15 @@ begin
 =======
 function KeyCompare(const Key1: WideString; Key2: Pointer; Key2Len: Integer): Boolean;
 begin
+{$IFDEF FPC}
   Result := (Length(Key1)=Key2Len) and (CompareWord(Pointer(Key1)^, Key2^, Key2Len) = 0);
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
+=======
+{$ELSE}
+  Result := (Length(Key1)=Key2Len) and CompareMem(Pointer(Key1), Key2, Key2Len*2);
+{$ENDIF}
+>>>>>>> origin/fixes_2.4
 end;
 
 { THashTable }
@@ -1144,6 +1184,7 @@ begin
   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     item := FBucket^[I];
 =======
     item := FBucket[I];
@@ -1151,6 +1192,9 @@ begin
 =======
     item := FBucket[I];
 >>>>>>> origin/fixes_2_2
+=======
+    item := FBucket^[I];
+>>>>>>> origin/fixes_2.4
     while Assigned(item) do
     begin
       next := item^.Next;
@@ -1159,6 +1203,7 @@ begin
       Dispose(item);
       item := next;
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     FBucket^[I] := nil;
@@ -1171,6 +1216,10 @@ begin
   end;
   FillChar(FBucket^, FBucketCount * sizeof(PHashItem), 0);
 >>>>>>> origin/fixes_2_2
+=======
+    FBucket^[I] := nil;
+  end;
+>>>>>>> origin/fixes_2.4
 end;
 
 function THashTable.Find(Key: PWideChar; KeyLen: Integer): PHashItem;
@@ -1229,11 +1278,15 @@ function THashTable.Lookup(Key: PWideChar; KeyLength: Integer;
 end;
 
 function THashTable.Lookup(Key: PWideChar; KeyLength: Integer;
+<<<<<<< HEAD
   var Found: Boolean; CanCreate: Boolean): PHashItem;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  out Found: Boolean; CanCreate: Boolean): PHashItem;
+>>>>>>> origin/fixes_2.4
 var
   Entry: PPHashItem;
   h: LongWord;
@@ -1287,6 +1340,7 @@ procedure THashTable.Resize(NewCapacity: LongWord);
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   p: PHashItemArray;
   chain: PPHashItem;
 =======
@@ -1295,12 +1349,17 @@ var
 =======
   p, chain: PPHashItem;
 >>>>>>> origin/fixes_2_2
+=======
+  p: PHashItemArray;
+  chain: PPHashItem;
+>>>>>>> origin/fixes_2.4
   i: Integer;
   e, n: PHashItem;
 begin
   p := AllocMem(NewCapacity * sizeof(PHashItem));
   for i := 0 to FBucketCount-1 do
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     e := FBucket^[i];
@@ -1311,6 +1370,9 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
     e := FBucket[i];
+=======
+    e := FBucket^[i];
+>>>>>>> origin/fixes_2.4
     while Assigned(e) do
     begin
       chain := @p[e^.HashValue mod NewCapacity];
@@ -1401,6 +1463,7 @@ begin
   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     e := FBucket^[i];
 =======
     e := FBucket[i];
@@ -1408,6 +1471,9 @@ begin
 =======
     e := FBucket[i];
 >>>>>>> origin/fixes_2_2
+=======
+    e := FBucket^[i];
+>>>>>>> origin/fixes_2.4
     while Assigned(e) do
     begin
       if not proc(e, arg) then
@@ -1467,6 +1533,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (HashValue = FData^[idx].hash) and (FData^[idx].uriPtr = uri) and
 =======
     if (HashValue = FData^[idx].hash) and (FData^[idx].uriPtr^ = uri^) and
@@ -1480,6 +1547,9 @@ begin
 =======
     if (HashValue = FData^[idx].hash) and (FData^[idx].uriPtr^ = uri^) and
 >>>>>>> origin/cpstrnew
+=======
+    if (HashValue = FData^[idx].hash) and (FData^[idx].uriPtr^ = uri^) and
+>>>>>>> origin/fixes_2.4
       (FData^[idx].lnameLen = localLength) and
        CompareMem(FData^[idx].lname, localName, localLength * sizeof(WideChar)) then
       Exit;

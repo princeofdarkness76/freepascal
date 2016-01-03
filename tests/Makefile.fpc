@@ -627,8 +627,12 @@ endif
 %.elg : %.pp
 	$(call QECHO,"  EXECUTE $<")
 	$(Q)$(DOTEST) $(DOTESTOPT) -e $<
+<<<<<<< HEAD
 
 >>>>>>> graemeg/fixes_2_2
+=======
+endif
+>>>>>>> origin/fixes_2.4
 
 ################################
 # Compile tests

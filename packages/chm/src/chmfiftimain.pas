@@ -77,11 +77,15 @@ type
     ParentNode: TFIftiNode;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     OwnsParentNode : boolean;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    OwnsParentNode : boolean;
+>>>>>>> origin/fixes_2.4
     function  AdjustedWord(AWord: String; out AOffset: Byte; AOldWord: String): String;
     procedure ChildIsFull(AWord: String; ANodeOffset: DWord); virtual; abstract;
     function  GuessIfCanHold(AWord: String): Boolean; virtual; abstract;
@@ -122,7 +126,11 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
     constructor Create(AStream: TStream; AWordList: TIndexedWordList);
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
+=======
+    destructor Destroy; override;
+>>>>>>> origin/fixes_2.4
   end;
 
   { TChmSearchReader }
@@ -324,6 +332,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TChmSearchWriter.GetHasData: Boolean;
 begin
   Result := FWordList.IndexedFileCount > 0;
@@ -334,6 +343,9 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2.4
 procedure TChmSearchWriter.WriteHeader ( IsPlaceHolder: Boolean ) ;
 var
   TmpNode: TFIftiNode;
@@ -437,11 +449,15 @@ end;
 procedure TChmSearchWriter.WriteAWord ( AWord: TIndexedWord ) ;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2.4
 begin
   if FActiveLeafNode = nil then
   begin
@@ -470,12 +486,15 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 procedure TChmSearchWriter.WriteToStream;
 begin
   WriteHeader(True);
@@ -490,16 +509,25 @@ begin
   FWordList := AWordList;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FActiveLeafNode:=NIL; 
 end;
 
 destructor TChmSearchWriter.Destroy;
 
+=======
+  FActiveLeafNode:=NIL; 
+end;
+
+destructor TChmSearchWriter.Destroy;
+
+>>>>>>> origin/fixes_2.4
 begin
  freeandnil(FActiveLeafNode);
 end;
 
 
+<<<<<<< HEAD
 =======
 
 end;
@@ -510,6 +538,8 @@ end;
 end;
 
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 { TLeafNode }
 
 function TFIftiNode.RemainingSpace: DWord;
@@ -524,11 +554,15 @@ begin
   FBlockStream := TMemoryStream.Create;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   OwnsParentNode :=false;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  OwnsParentNode :=false;
+>>>>>>> origin/fixes_2.4
 end;
 
 destructor TFIftiNode.Destroy;
@@ -536,11 +570,15 @@ begin
   FBlockStream.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if OwnsParentNode then ParentNode.Free;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  if OwnsParentNode then ParentNode.Free;
+>>>>>>> origin/fixes_2.4
   inherited Destroy;
 end;
 
@@ -633,10 +671,14 @@ begin
     if ParentNode = nil then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
       begin
         ParentNode := TIndexNode.Create(FWriteStream);
         OwnsParentNode:=True;
       end;
+<<<<<<< HEAD
 =======
       ParentNode := TIndexNode.Create(FWriteStream);
 
@@ -645,6 +687,8 @@ begin
       ParentNode := TIndexNode.Create(FWriteStream);
 
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
     ParentNode.ChildIsFull(FLastWord, FLastNodeStart);
     if (NewBlockNeeded = False) then
       ParentNode.Flush(False);
@@ -897,16 +941,22 @@ begin
     if ParentNode = nil then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
       begin
         ParentNode := TIndexNode.Create(FWriteStream);
         OwnsParentNode:=True;
       end;
+<<<<<<< HEAD
 =======
       ParentNode := TIndexNode.Create(FWriteStream);
 >>>>>>> graemeg/fixes_2_2
 =======
       ParentNode := TIndexNode.Create(FWriteStream);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
   end;
 
   if ParentNode <> nil then

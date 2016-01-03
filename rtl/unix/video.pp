@@ -642,6 +642,7 @@ var
             converted:=convert_lowascii_to_UTF8[c];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           #127..#255:
 =======
           #128..#255:
@@ -649,6 +650,9 @@ var
 =======
           #128..#255:
 >>>>>>> origin/fixes_2_2
+=======
+          #127..#255:
+>>>>>>> origin/fixes_2.4
             converted:=convert_cp437_to_UTF8[c];
           else
           begin
@@ -1019,9 +1023,6 @@ begin
          437 in the hope that the actual font has similarity to codepage 437.}
         internal_codepage:=cp437;
   end;
-  {$ifdef BEOS}
-  convert := cv_cp437_to_UTF8;  
-  {$endif}
 end;
 
 
@@ -1127,6 +1128,7 @@ begin
          cur_term_strings:=terminal_data[i];
     if cur_term_strings=@term_codes_xterm then
     begin
+<<<<<<< HEAD
       {$ifdef haiku}
       TerminalSupportsBold := true;
       TerminalSupportsHighIntensityColors := false;
@@ -1134,17 +1136,24 @@ begin
       TerminalSupportsBold := false;
       TerminalSupportsHighIntensityColors := true;
       {$endif}
+=======
+      TerminalSupportsBold := false;
+      TerminalSupportsHighIntensityColors := true;
+>>>>>>> origin/fixes_2.4
     end
     else
     begin
       TerminalSupportsBold := true;
       TerminalSupportsHighIntensityColors := false;
     end;
+<<<<<<< HEAD
     if cur_term_strings=@term_codes_beos then
     begin
       TerminalSupportsBold := false;
       TerminalSupportsHighIntensityColors := false;      
     end;  
+=======
+>>>>>>> origin/fixes_2.4
     if cur_term_strings=@term_codes_freebsd then
       console:=ttyFreeBSD;
 {$ifdef linux}

@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
    { Keep Track of open files }
    const
       max_files = 50;
@@ -43,6 +46,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_erase(p : pchar; pchangeable: boolean);
 var
   regs : trealregs;
@@ -57,11 +61,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 procedure do_erase(p : pchar);
 var
   regs : trealregs;
 begin
   DoDirSeparators(p);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -72,6 +79,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
   syscopytodos(longint(p),strlen(p)+1);
   regs.realedx:=tb_offset;
   regs.realds:=tb_segment;
@@ -84,6 +93,7 @@ begin
   sysrealintr($21,regs);
   if (regs.realflags and carryflag) <> 0 then
    GetInOutRes(lo(regs.realeax));
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -108,6 +118,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 end;
 
 procedure do_rename(p1,p2 : pchar);
@@ -119,6 +131,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -126,6 +139,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
   if strlen(p1)+strlen(p2)+3>tb_size then
    HandleError(217);
   sysseg_move(get_ds,sizeuint(p2),dos_selector,tb,strlen(p2)+1);
@@ -146,6 +161,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if p1<>oldp1 then
     freemem(p1);
   if p2<>oldp2 then
@@ -158,6 +174,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 end;
 
 function do_write(h:longint;addr:pointer;len : longint) : longint;
@@ -344,6 +362,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_open(var f;p:pchar;flags:longint; pchangeable: boolean);
 =======
 procedure do_open(var f;p:pchar;flags:longint);
@@ -357,6 +376,9 @@ procedure do_open(var f;p:pchar;flags:longint);
 =======
 procedure do_open(var f;p:pchar;flags:longint);
 >>>>>>> origin/cpstrnew
+=======
+procedure do_open(var f;p:pchar;flags:longint);
+>>>>>>> origin/fixes_2.4
 {
   filerec and textrec have both handle and mode as the first items so
   they could use the same routine for opening/creating.
@@ -368,6 +390,7 @@ var
   regs   : trealregs;
   action : longint;
   Avoid6c00 : boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -390,6 +413,10 @@ begin
 begin
   DoDirSeparators(p);
 >>>>>>> origin/cpstrnew
+=======
+begin
+  DoDirSeparators(p);
+>>>>>>> origin/fixes_2.4
 { check if Extended Open/Create API is safe to use }
   Avoid6c00 := lo(dos_version) < 7;
 { close first if opened }
@@ -437,6 +464,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   oldp:=p;
   DoDirSeparators(p,pchangeable);
 =======
@@ -447,6 +475,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 { real dos call }
   syscopytodos(longint(p),strlen(p)+1);
 {$ifndef RTLLITE}
@@ -513,6 +543,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       FileRec(f).mode:=fmclosed;
       if oldp<>p then
         freemem(p);
@@ -524,6 +555,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
       exit;
     end
   else
@@ -562,6 +595,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if oldp<>p then
     freemem(p);
 =======
@@ -572,6 +606,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 end;
 
 function do_isdevice(handle:THandle):boolean;
@@ -586,6 +622,7 @@ begin
    GetInOutRes(lo(regs.realeax));
 end;
 
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -1022,3 +1059,5 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4

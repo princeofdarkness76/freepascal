@@ -501,6 +501,7 @@ type
     po_kylixlocal,
     po_dispid,
     { weakly linked (i.e., may or may not exist at run time) }
+<<<<<<< HEAD
     po_weakexternal,
     { Objective-C method }
     po_objc,
@@ -556,6 +557,9 @@ type
 =======
     po_delphi_nested_cc
 >>>>>>> origin/cpstrnew
+=======
+    po_weakexternal
+>>>>>>> origin/fixes_2.4
   );
   tprocoptions=set of tprocoption;
 

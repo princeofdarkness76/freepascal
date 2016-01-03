@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -39,18 +40,26 @@
 =======
 >>>>>>> origin/fixes_2_2
 	Copyright (c) 1998-2005, Apple, Inc. All rights reserved.
+=======
+	Copyright (c) 1998-2009, Apple, Inc. All rights reserved.
+>>>>>>> origin/fixes_2.4
 }
 {   Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
+{   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -59,6 +68,7 @@
 
 unit CFSet;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -71,6 +81,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -85,6 +99,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -92,21 +107,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -114,6 +138,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -124,6 +151,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -141,6 +169,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -148,10 +178,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -159,6 +192,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -197,6 +231,9 @@ interface
 =======
 =======
 =======
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -206,6 +243,7 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+<<<<<<< HEAD
 >>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -395,18 +433,65 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -434,12 +519,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -452,12 +540,17 @@ interface
 uses MacTypes,CFBase;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/fixes_2.4
 {$ALIGN POWER}
 
 {!
@@ -587,6 +680,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFSetRef = ^__CFSet; { an opaque type }
 	__CFSet = record end;
 =======
@@ -607,6 +701,9 @@ type
 =======
 	CFSetRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> origin/fixes_2_2
+=======
+	CFSetRef = ^SInt32; { an opaque type }
+>>>>>>> origin/fixes_2.4
 	CFSetRefPtr = ^CFSetRef;
 
 {!
@@ -701,11 +798,15 @@ function CFSetCreateCopy( allocator: CFAllocatorRef; theSet: CFSetRef ): CFSetRe
 		CFAllocator, the behavior is undefined.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+#if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
+>>>>>>> origin/fixes_2.4
 	@param capacity The maximum number of values that can be contained
 		by the CFSet. The set starts empty, and can grow to this
 		number of values (and it can have less). If this parameter
@@ -715,6 +816,9 @@ function CFSetCreateCopy( allocator: CFAllocatorRef; theSet: CFSetRef ): CFSetRe
 		undefined.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 #else
   @param capacity A hint about the number of values that will be held
     by the CFSet. Pass 0 for no hint. The implementation may
@@ -723,10 +827,13 @@ function CFSetCreateCopy( allocator: CFAllocatorRef; theSet: CFSetRef ): CFSetRe
     address space and available memory constraints). If this 
     parameter is negative, the behavior is undefined.
 #endif
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 	@param callBacks A C pointer to a CFSetCallBacks structure
 		initialized with the callbacks for the set to use on each
 		value in the set. A copy of the contents of the
@@ -768,6 +875,7 @@ function CFSetCreateMutable( allocator: CFAllocatorRef; capacity: CFIndex; {cons
 		CFAllocator, the behavior is undefined.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 	@param capacity The maximum number of values that can be contained
 		by the CFSet. The set starts with the same values as the
@@ -803,6 +911,28 @@ function CFSetCreateMutable( allocator: CFAllocatorRef; capacity: CFIndex; {cons
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+#if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
+	@param capacity The maximum number of values that can be contained
+		by the CFSet. The set starts with the same values as the
+    set to be copied, and can grow to this number of values.
+    If this parameter is 0, the set's maximum capacity is 
+    unlimited (or rather, only limited by address space and 
+    available memory constraints). This parameter must be 
+    greater than or equal to the count of the set which is to
+    be copied, or the behavior is undefined.
+#else
+  @param capacity A hint about the number of values that will be held
+    by the CFSet. Pass 0 for no hint. The implementation may
+    ignore this hint, or may use it to optimize various
+    operations. A set's actual capacity is only limited by
+    address space and available memory constraints). 
+    This parameter must be greater than or equal
+    to the count of the set which is to be copied, or the
+    behavior is undefined. If this parameter is negative, the
+    behavior is undefined.
+#endif
+>>>>>>> origin/fixes_2.4
 	@param theSet The set which is to be copied. The values from the
 		set are copied as pointers into the new set (that is,
 		the values themselves are copied, not that which the values
@@ -948,6 +1078,7 @@ procedure CFSetApplyFunction( theSet: CFSetRef; applier: CFSetApplierFunction; c
 		parameter is not a valid mutable CFSet, the behavior is
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		undefined.
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 		If the set is a fixed-capacity set and it
@@ -961,6 +1092,13 @@ procedure CFSetApplyFunction( theSet: CFSetRef; applier: CFSetApplierFunction; c
 		undefined. If the set is a fixed-capacity set and it
 		is full before this operation, the behavior is undefined.
 >>>>>>> origin/fixes_2_2
+=======
+		undefined.
+#if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
+		If the set is a fixed-capacity set and it
+		is full before this operation, the behavior is undefined.
+#endif
+>>>>>>> origin/fixes_2.4
 	@param value The value to add to the set. The value is retained by
 		the set using the retain callback provided when the set
 		was created. If the value is not of the sort expected by the
@@ -1031,6 +1169,7 @@ procedure CFSetRemoveAllValues( theSet: CFMutableSetRef ); external name '_CFSet
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
@@ -1043,3 +1182,9 @@ end.
 
 end.
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+
+end.
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

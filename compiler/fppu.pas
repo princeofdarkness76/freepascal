@@ -70,6 +70,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           procedure end_of_parsing;override;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -79,6 +80,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
        private
          { Each time a unit's defs are (re)created, its defsgeneration is
            set to the value of a global counter, and the global counter is
@@ -87,7 +90,10 @@ interface
            avoid endless resolving loops in case of cyclic dependencies. }
           defsgeneration : longint;
 
+<<<<<<< HEAD
           function  search_unit_files(onlysource:boolean):boolean;
+=======
+>>>>>>> origin/fixes_2.4
           function  search_unit(onlysource,shortname:boolean):boolean;
           procedure load_interface;
           procedure load_implementation;
@@ -1629,6 +1635,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tppumodule.end_of_parsing;
       begin
         { module is now compiled }
@@ -1652,6 +1659,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
     procedure tppumodule.loadppu;
       const
@@ -1844,6 +1853,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1851,6 +1861,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
               setdefgeneration;
             end
            else

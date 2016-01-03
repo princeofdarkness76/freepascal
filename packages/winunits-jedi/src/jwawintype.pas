@@ -1143,6 +1143,7 @@ type
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   INT_PTR = PtrInt;
   {$EXTERNALSYM INT_PTR}
   PINT_PTR = ^INT_PTR;
@@ -1160,14 +1161,17 @@ type
 =======
 >>>>>>> origin/fixes_2_2
   INT_PTR = Integer;
+=======
+  INT_PTR = PtrInt;
+>>>>>>> origin/fixes_2.4
   {$EXTERNALSYM INT_PTR}
   PINT_PTR = ^INT_PTR;
   {$EXTERNALSYM PINT_PTR}
-  UINT_PTR = Longword;
+  UINT_PTR = PtrUint;
   {$EXTERNALSYM UINT_PTR}
   PUINT_PTR = ^UINT_PTR;
   {$EXTERNALSYM PUINT_PTR}
-  LONG_PTR = Longint;
+  LONG_PTR = PtrInt;
   {$EXTERNALSYM LONG_PTR}
   PLONG_PTR = ^LONG_PTR;
   {$EXTERNALSYM PLONG_PTR}

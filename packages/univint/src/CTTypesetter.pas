@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *	Copyright (c) 2003-2012 Apple Inc. All rights reserved.
  *
  }
@@ -19,10 +20,13 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
  *	Copyright (c) 2003-2008 Apple Inc. All rights reserved.
  *
  }
 {       Initial Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -33,6 +37,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {
     Modified for use with Free Pascal
     Version 308
@@ -91,6 +97,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -104,6 +111,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -126,6 +135,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -151,6 +161,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -161,6 +176,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -186,6 +202,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -196,6 +217,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -205,6 +227,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -218,6 +242,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -227,6 +252,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -237,6 +264,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -268,6 +296,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -278,13 +311,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
@@ -326,6 +363,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/fixes_2.4
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -375,6 +416,7 @@ uses MacTypes,CTLine,CFBase,CFDictionary,CFAttributedString;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifc TARGET_OS_MAC}
 
@@ -391,6 +433,10 @@ uses MacTypes,CTLine,CFBase,CFDictionary,CFAttributedString;
 {$ifc TARGET_OS_MAC}
 
 >>>>>>> origin/cpstrnew
+=======
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> origin/fixes_2.4
 {$ALIGN POWER}
 
 
@@ -412,6 +458,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CTTypesetterRef = ^__CTTypesetter; { an opaque type }
 	__CTTypesetter = record end;
 =======
@@ -426,6 +473,9 @@ type
 =======
 	CTTypesetterRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	CTTypesetterRef = ^SInt32; { an opaque type }
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -434,6 +484,7 @@ type
 }
 
 function CTTypesetterGetTypeID: CFTypeID; external name '_CTTypesetterGetTypeID';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -451,6 +502,9 @@ function CTTypesetterGetTypeID: CFTypeID; external name '_CTTypesetterGetTypeID'
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 { --------------------------------------------------------------------------- }
@@ -472,6 +526,7 @@ var kCTTypesetterOptionDisableBidiProcessing: CFStringRef; external name '_kCTTy
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_BUT_DEPRECATED( __MAC_10_5, __MAC_10_8, __IPHONE_3_2, __IPHONE_6_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -485,6 +540,9 @@ var kCTTypesetterOptionDisableBidiProcessing: CFStringRef; external name '_kCTTy
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 {!
 	@const		kCTTypesetterOptionForcedEmbeddingLevel
@@ -496,6 +554,7 @@ var kCTTypesetterOptionDisableBidiProcessing: CFStringRef; external name '_kCTTy
 }
 
 var kCTTypesetterOptionForcedEmbeddingLevel: CFStringRef; external name '_kCTTypesetterOptionForcedEmbeddingLevel'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -513,6 +572,9 @@ var kCTTypesetterOptionForcedEmbeddingLevel: CFStringRef; external name '_kCTTyp
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 { --------------------------------------------------------------------------- }
@@ -541,6 +603,7 @@ function CTTypesetterCreateWithAttributedString( strng: CFAttributedStringRef ):
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -554,6 +617,9 @@ function CTTypesetterCreateWithAttributedString( strng: CFAttributedStringRef ):
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -581,6 +647,7 @@ function CTTypesetterCreateWithAttributedStringAndOptions( strng: CFAttributedSt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -594,6 +661,9 @@ function CTTypesetterCreateWithAttributedStringAndOptions( strng: CFAttributedSt
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 { --------------------------------------------------------------------------- }
@@ -601,6 +671,7 @@ function CTTypesetterCreateWithAttributedStringAndOptions( strng: CFAttributedSt
 { --------------------------------------------------------------------------- }
 
 {!
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -618,6 +689,9 @@ function CTTypesetterCreateWithAttributedStringAndOptions( strng: CFAttributedSt
 =======
 	@function	CTTypesetterCreateLine
 >>>>>>> origin/cpstrnew
+=======
+	@function	CTTypesetterCreateLine
+>>>>>>> origin/fixes_2.4
 	@abstract	Creates an immutable line from the typesetter.
 
 	@discussion The resultant line will consist of glyphs in the correct visual
@@ -632,6 +706,7 @@ function CTTypesetterCreateWithAttributedStringAndOptions( strng: CFAttributedSt
 				portion of range is set to 0, then the typesetter will continue
 				to add glyphs to the line until it runs out of characters in the
 				string. The location and length of the range must be within the
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -652,11 +727,15 @@ function CTTypesetterCreateWithAttributedStringAndOptions( strng: CFAttributedSt
 =======
 				bounds of the string, othewise the call will fail.
 >>>>>>> origin/cpstrnew
+=======
+				bounds of the string, othewise the call will fail.
+>>>>>>> origin/fixes_2.4
 
 	@result		This function will return a reference to a CTLine if the call was
 				successful. Otherwise, it will return NULL.
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -687,6 +766,10 @@ function CTTypesetterCreateLine( typesetter: CTTypesetterRef; stringRange: CFRan
 function CTTypesetterCreateLine( typesetter: CTTypesetterRef; stringRange: CFRange ): CTLineRef; external name '_CTTypesetterCreateLine';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+function CTTypesetterCreateLine( typesetter: CTTypesetterRef; stringRange: CFRange ): CTLineRef; external name '_CTTypesetterCreateLine';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 { --------------------------------------------------------------------------- }
@@ -694,6 +777,7 @@ function CTTypesetterCreateLine( typesetter: CTTypesetterRef; stringRange: CFRan
 { --------------------------------------------------------------------------- }
 
 {!
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -711,6 +795,9 @@ function CTTypesetterCreateLine( typesetter: CTTypesetterRef; stringRange: CFRan
 =======
 	@function	CTTypesetterSuggestLineBreak
 >>>>>>> origin/cpstrnew
+=======
+	@function	CTTypesetterSuggestLineBreak
+>>>>>>> origin/fixes_2.4
 	@abstract	Suggests a contextual line break point based on the width
 				provided.
 
@@ -732,6 +819,7 @@ function CTTypesetterCreateLine( typesetter: CTTypesetterRef; stringRange: CFRan
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@param		offset
 				The line position offset.
 
@@ -743,11 +831,14 @@ function CTTypesetterCreateLine( typesetter: CTTypesetterRef; stringRange: CFRan
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	@result		The value returned is a count of the characters from startIndex
 				that would cause the line break. This value returned can be used
 				to construct a character range for CTTypesetterCreateLine.
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -773,12 +864,15 @@ function CTTypesetterSuggestLineBreak( typesetter: CTTypesetterRef; startIndex: 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 function CTTypesetterSuggestLineBreak( typesetter: CTTypesetterRef; startIndex: CFIndex; width: Float64 ): CFIndex; external name '_CTTypesetterSuggestLineBreak';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 
 {!
 	@function	CTTypesetterSuggestClusterBreak
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -789,6 +883,8 @@ function CTTypesetterSuggestLineBreak( typesetter: CTTypesetterRef; startIndex: 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	@abstract	Suggests a cluster line break point based on the width provided.
 
 	@discussion Suggests a typographic cluster line break point based on the width
@@ -815,6 +911,7 @@ function CTTypesetterSuggestLineBreak( typesetter: CTTypesetterRef; startIndex: 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@param		offset
 				The line position offset.
 
@@ -826,11 +923,14 @@ function CTTypesetterSuggestLineBreak( typesetter: CTTypesetterRef; startIndex: 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	@result		The value returned is a count of the characters from startIndex
 				that would cause the cluster break. This value returned can be
 				used to construct a character range for CTTypesetterCreateLine.
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -854,10 +954,13 @@ function CTTypesetterSuggestClusterBreak( typesetter: CTTypesetterRef; startInde
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 function CTTypesetterSuggestClusterBreak( typesetter: CTTypesetterRef; startIndex: CFIndex; width: Float64 ): CFIndex; external name '_CTTypesetterSuggestClusterBreak';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 {$endc} {TARGET_OS_MAC}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -868,6 +971,8 @@ function CTTypesetterSuggestClusterBreak( typesetter: CTTypesetterRef; startInde
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

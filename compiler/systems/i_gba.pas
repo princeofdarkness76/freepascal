@@ -35,6 +35,7 @@ unit i_gba;
             name         : 'GameBoy Advance';
             shortname    : 'gba';
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_needs_symbol_size,tf_files_case_sensitive,
                             tf_requires_proper_alignment,tf_smartlink_sections];
 =======
@@ -44,6 +45,10 @@ unit i_gba;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+            flags        : [tf_needs_symbol_size,tf_files_case_sensitive,
+                            tf_use_function_relative_addresses,tf_requires_proper_alignment,tf_smartlink_sections];
+>>>>>>> origin/fixes_2.4
             cpu          : cpu_arm;
             unit_env     : '';
             extradefines : '';
@@ -100,6 +105,7 @@ unit i_gba;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             stackalign   : 8;
             abi : abi_eabi;
             llvmdatalayout : 'todo';
@@ -115,6 +121,9 @@ unit i_gba;
 =======
             abi : abi_eabi
 >>>>>>> origin/cpstrnew
+=======
+            abi : abi_eabi
+>>>>>>> origin/fixes_2.4
           );
 
   implementation

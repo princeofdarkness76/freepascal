@@ -137,12 +137,20 @@ const
   Dll_Thread_Detach_Hook : TDLL_Entry_Hook = nil;
 
 Const
+<<<<<<< HEAD
   { it can be discussed whether fmShareDenyNone means read and write or read, write and delete, see
+=======
+  { it can be discussed whether fmShareDenyNone means read and write or read, write and delete, see 
+>>>>>>> origin/fixes_2.4
     also http://bugs.freepascal.org/view.php?id=8898, this allows users to configure the used
 	value
   }
   fmShareDenyNoneFlags : DWord = 3;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> origin/fixes_2.4
 implementation
 
 var

@@ -1,6 +1,7 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CommonPanels/NSL.h
  
      Contains:   Interface to API for using the NSL User Interface
@@ -12,17 +13,23 @@
 =======
 >>>>>>> origin/fixes_2_2
      File:       NSL.p
+=======
+     File:       CommonPanels/NSL.h
+>>>>>>> origin/fixes_2.4
  
      Contains:   Interface to API for using the NSL User Interface
  
-     Version:    Technology: Mac OS X
-                 Release:    Universal Interfaces 3.4.2
+     Version:    CommonPanels-91~177
  
+<<<<<<< HEAD
      Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     Copyright:  © 1997-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -46,18 +53,21 @@
                      http://www.freepascal.org/bugs.html
  
 }
-
-
+{  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -66,6 +76,7 @@
 
 unit NSL;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -78,6 +89,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -92,6 +107,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -99,21 +115,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -121,6 +146,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -131,6 +159,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -148,6 +177,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -155,10 +186,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -166,6 +200,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -417,18 +452,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/fixes_2.4
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -456,12 +548,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -474,19 +569,26 @@ interface
 uses MacTypes,Events,NSLCore;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ALIGN MAC68K}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	NSLDialogOptionFlags = UInt32;
@@ -508,6 +610,14 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	NSLDialogOptionFlags = UInt32;
+const
+	kNSLDefaultNSLDlogOptions = $00000000; { use defaults for all the options }
+	kNSLNoURLTEField = $00000001; { don't show url text field for manual entry }
+	kNSLAddServiceTypes = $00000002; { add the service type if a user enters an incomplete URL }
+	kNSLClientHandlesRecents = $00000004; { Stops NSLStandardGetURL from adding the selection to the recent items folder }
+>>>>>>> origin/fixes_2.4
 
 
 type
@@ -515,12 +625,16 @@ type
 	NSLDialogOptions = record
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 		version: UInt16;
 		dialogOptionFlags: NSLDialogOptionFlags;    { option flags for affecting the dialog's behavior }
 		windowTitle: Str255;
 		actionButtonLabel: Str255;      { label of the default button (or null string for default) }
 		cancelButtonLabel: Str255;      { label of the cancel button (or null string for default) }
 		message: Str255;                { custom message prompt (or null string for default) }
+<<<<<<< HEAD
 	end;
 type
 	NSLURLFilterProcPtr = function( url: CStringPtr; var displayString: Str255 ): Boolean;
@@ -549,8 +663,28 @@ function NewNSLURLFilterUPP( userRoutine: NSLURLFilterProcPtr ): NSLURLFilterUPP
 		actionButtonLabel:		Str255;									{  label of the default button (or null string for default)  }
 		cancelButtonLabel:		Str255;									{  label of the cancel button (or null string for default)  }
 		message:				Str255;									{  custom message prompt (or null string for default)  }
+=======
+>>>>>>> origin/fixes_2.4
 	end;
+type
+	NSLURLFilterProcPtr = function( url: CStringPtr; var displayString: Str255 ): Boolean;
+{ you can provide for calls to NSLStandardGetURL}
+type
+	NSLEventProcPtr = procedure( var newEvent: EventRecord; userContext: UnivPtr );
+	NSLURLFilterUPP = NSLURLFilterProcPtr;
+	NSLEventUPP = NSLEventProcPtr;
+{
+ *  NewNSLURLFilterUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewNSLURLFilterUPP( userRoutine: NSLURLFilterProcPtr ): NSLURLFilterUPP; external name '_NewNSLURLFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
 {$ifc TYPED_FUNCTION_POINTERS}
 	NSLURLFilterProcPtr = function(url: CStringPtr; var displayString: Str255): boolean;
 {$elsec}
@@ -591,10 +725,13 @@ function NewNSLURLFilterUPP(userRoutine: NSLURLFilterProcPtr): NSLURLFilterUPP; 
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {
  *  NewNSLEventUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -608,18 +745,28 @@ function NewNSLEventUPP( userRoutine: NSLEventProcPtr ): NSLEventUPP; external n
 =======
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 function NewNSLEventUPP(userRoutine: NSLEventProcPtr): NSLEventUPP; external name '_NewNSLEventUPP'; { old name was NewNSLEventProc }
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function NewNSLEventUPP( userRoutine: NSLEventProcPtr ): NSLEventUPP; external name '_NewNSLEventUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 {
  *  DisposeNSLURLFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -633,18 +780,28 @@ procedure DisposeNSLURLFilterUPP( userUPP: NSLURLFilterUPP ); external name '_Di
 =======
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 procedure DisposeNSLURLFilterUPP(userUPP: NSLURLFilterUPP); external name '_DisposeNSLURLFilterUPP';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure DisposeNSLURLFilterUPP( userUPP: NSLURLFilterUPP ); external name '_DisposeNSLURLFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 {
  *  DisposeNSLEventUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -658,18 +815,28 @@ procedure DisposeNSLEventUPP( userUPP: NSLEventUPP ); external name '_DisposeNSL
 =======
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 procedure DisposeNSLEventUPP(userUPP: NSLEventUPP); external name '_DisposeNSLEventUPP';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure DisposeNSLEventUPP( userUPP: NSLEventUPP ); external name '_DisposeNSLEventUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 {
  *  InvokeNSLURLFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -683,18 +850,28 @@ function InvokeNSLURLFilterUPP( url: CStringPtr; var displayString: Str255; user
 =======
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 function InvokeNSLURLFilterUPP(url: CStringPtr; var displayString: Str255; userRoutine: NSLURLFilterUPP): boolean; external name '_InvokeNSLURLFilterUPP'; { old name was CallNSLURLFilterProc }
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function InvokeNSLURLFilterUPP( url: CStringPtr; var displayString: Str255; userUPP: NSLURLFilterUPP ): Boolean; external name '_InvokeNSLURLFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 {
  *  InvokeNSLEventUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -708,14 +885,23 @@ procedure InvokeNSLEventUPP( var newEvent: EventRecord; userContext: UnivPtr; us
 =======
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   available as macro/inline
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 procedure InvokeNSLEventUPP(var newEvent: EventRecord; userContext: UnivPtr; userRoutine: NSLEventUPP); external name '_InvokeNSLEventUPP'; { old name was CallNSLEventProc }
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure InvokeNSLEventUPP( var newEvent: EventRecord; userContext: UnivPtr; userUPP: NSLEventUPP ); external name '_InvokeNSLEventUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 { <--- function returns OSStatus of the operation.  noErr will be returned if valid, kNSLUserCanceled will be returned if the user cancels }
 { ---> dialogOptions }
 { ---> eventProc }
@@ -738,6 +924,7 @@ procedure InvokeNSLEventUPP(var newEvent: EventRecord; userContext: UnivPtr; use
 { void* eventProcContextPtr }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { you can provide a pointer to some contextual data that you want to have sent to your eventProc filter}
 =======
 {  you can provide a pointer to some contextual data that you want to have sent to your eventProc filter }
@@ -745,6 +932,9 @@ procedure InvokeNSLEventUPP(var newEvent: EventRecord; userContext: UnivPtr; use
 =======
 {  you can provide a pointer to some contextual data that you want to have sent to your eventProc filter }
 >>>>>>> origin/fixes_2_2
+=======
+{ you can provide a pointer to some contextual data that you want to have sent to your eventProc filter}
+>>>>>>> origin/fixes_2.4
 { NSLURLFilterProcPtr filterProc }
 {
    the filter param is a callback NSLURLFilterUPP that
@@ -809,6 +999,7 @@ procedure InvokeNSLEventUPP(var newEvent: EventRecord; userContext: UnivPtr; use
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in NSLPPCLib 1.1 and later
@@ -820,19 +1011,29 @@ function NSLStandardGetURL( dialogOptions: NSLDialogOptionsPtr { can be NULL }; 
 =======
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in NSLPPCLib 1.1 and later
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in NSLPPCLib 1.1 and later
  }
+<<<<<<< HEAD
 function NSLStandardGetURL(dialogOptions: NSLDialogOptionsPtr; eventProc: NSLEventUPP; eventProcContextPtr: UnivPtr; filterProc: NSLURLFilterUPP; serviceTypeList: CStringPtr; var userSelectedURL: CStringPtr): OSStatus; external name '_NSLStandardGetURL';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function NSLStandardGetURL( dialogOptions: NSLDialogOptionsPtr { can be NULL }; eventProc: NSLEventUPP { can be NULL }; eventProcContextPtr: UnivPtr { can be NULL }; filterProc: NSLURLFilterUPP { can be NULL }; serviceTypeList: CStringPtr; var userSelectedURL: CStringPtr ): OSStatus; external name '_NSLStandardGetURL';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 {
  *  NSLGetDefaultDialogOptions()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -846,14 +1047,23 @@ function NSLGetDefaultDialogOptions( var dialogOptions: NSLDialogOptions ): OSSt
 =======
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in NSLPPCLib 1.1 and later
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in NSLPPCLib 1.1 and later
  }
+<<<<<<< HEAD
 function NSLGetDefaultDialogOptions(var dialogOptions: NSLDialogOptions): OSStatus; external name '_NSLGetDefaultDialogOptions';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function NSLGetDefaultDialogOptions( var dialogOptions: NSLDialogOptions ): OSStatus; external name '_NSLGetDefaultDialogOptions';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 { <--- function returns null (useful for setting variable at same time as freeing it }
 { ---> url is memory created by a call to NSLStandardGetURL }
@@ -861,6 +1071,7 @@ function NSLGetDefaultDialogOptions(var dialogOptions: NSLDialogOptions): OSStat
  *  NSLFreeURL()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -874,14 +1085,23 @@ function NSLFreeURL( url: CStringPtr ): CStringPtr; external name '_NSLFreeURL';
 =======
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in NSLPPCLib 1.1 and later
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in NSLPPCLib 1.1 and later
  }
+<<<<<<< HEAD
 function NSLFreeURL(url: CStringPtr): CStringPtr; external name '_NSLFreeURL';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function NSLFreeURL( url: CStringPtr ): CStringPtr; external name '_NSLFreeURL';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 { <--- function returns kNSLErrNullPtrError, file mgr errors, or resource mgr errors }
 { ---> folderSelectorType is one of the well-known folders defined in Folders.h }
@@ -891,6 +1111,7 @@ function NSLFreeURL(url: CStringPtr): CStringPtr; external name '_NSLFreeURL';
  *  NSLSaveURLAliasToFolder()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -911,17 +1132,26 @@ end.
 =======
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in NSLPPCLib 1.1 and later
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in NSLPPCLib 1.1 and later
  }
-function NSLSaveURLAliasToFolder(folderSelectorType: OSType; url: ConstCStringPtr; userFriendlyName: ConstCStringPtr): OSErr; external name '_NSLSaveURLAliasToFolder';
+function NSLSaveURLAliasToFolder( folderSelectorType: OSType; url: ConstCStringPtr; userFriendlyName: ConstCStringPtr ): OSErr; external name '_NSLSaveURLAliasToFolder';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
-{$ALIGN MAC68K}
+{$endc} {TARGET_OS_MAC}
 
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

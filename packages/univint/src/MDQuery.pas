@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
  { Pascal Translation: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
@@ -25,6 +26,11 @@
  { Pascal Translation: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 
 >>>>>>> origin/cpstrnew
+=======
+
+ { Pascal Translation: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+
+>>>>>>> origin/fixes_2.4
 {
     Modified for use with Free Pascal
     Version 308
@@ -83,6 +89,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -96,6 +103,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -118,6 +127,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -143,6 +153,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -153,6 +168,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -178,6 +194,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -188,6 +209,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -197,6 +219,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -210,6 +234,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -219,6 +244,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -229,6 +256,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -260,12 +288,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -277,10 +311,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -318,6 +355,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/fixes_2.4
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -363,6 +404,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,CFBase,CFString,CFDictionary,CFArray,MDItem,MacOSXPosix;
 =======
 uses MacTypes,CFBase,CFString,CFDictionary,CFArray,MDItem;
@@ -376,6 +418,9 @@ uses MacTypes,CFBase,CFString,CFDictionary,CFArray,MDItem;
 =======
 uses MacTypes,CFBase,CFString,CFDictionary,CFArray,MDItem;
 >>>>>>> origin/cpstrnew
+=======
+uses MacTypes,CFBase,CFString,CFDictionary,CFArray,MDItem;
+>>>>>>> origin/fixes_2.4
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -453,6 +498,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	MDQueryRef = ^__MDQuery; { an opaque type }
 	__MDQuery = record end;
 =======
@@ -467,10 +513,14 @@ type
 =======
 	MDQueryRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	MDQueryRef = ^SInt32; { an opaque type }
+>>>>>>> origin/fixes_2.4
 
 const
 	kMDQuerySynchronous = 1;
 	kMDQueryWantsUpdates = 4;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -488,6 +538,9 @@ const
 =======
 	
 >>>>>>> origin/cpstrnew
+=======
+	
+>>>>>>> origin/fixes_2.4
 type
 	MDQueryOptionFlags = SIGNEDLONG;
 
@@ -605,6 +658,7 @@ function MDQueryCreateSubset( allocator: CFAllocatorRef; query: MDQueryRef; quer
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  @function MDQueryCreateForItems
  Creates a new query with the given query expression.
  @param allocator The CFAllocator which should be used to allocate
@@ -653,6 +707,8 @@ function MDQueryCreateForItems( allocator: CFAllocatorRef; queryString: CFString
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
         @function MDQueryCopyQueryString
         Returns the query string of the query.
         @param query The query to be interrogated.
@@ -950,6 +1006,7 @@ procedure MDQuerySetCreateValueFunction( query: MDQueryRef; func: MDQueryCreateV
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@function MDQuerySetDispatchQueue
 	Set the dispatch queue on which query results will be delivered
 				by MDQueryExecute. It is not advisable to change set 
@@ -972,6 +1029,8 @@ procedure MDQuerySetDispatchQueue( query: MDQueryRef; queue: dispatch_queue_t );
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
         @function MDQueryExecute
         Run the query, and populate the query with the results. Queries
                 only gather results or process updates while the current
@@ -1046,6 +1105,7 @@ procedure MDQueryStop( query: MDQueryRef ); external name '_MDQueryStop';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		@result The generation number of the query. This changes each time the query's 
 				result set has changed.
 =======
@@ -1056,6 +1116,8 @@ procedure MDQueryStop( query: MDQueryRef ); external name '_MDQueryStop';
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 }
 procedure MDQueryDisableUpdates( query: MDQueryRef ); external name '_MDQueryDisableUpdates';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -1199,6 +1261,7 @@ function MDQueryGetCountOfResultsWithAttributeValue( query: MDQueryRef; name: CF
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  @function MDQuerySetSortOrder
  Sets the sort order for a query.
  @param query The query for which the sort order is to be set.
@@ -1255,6 +1318,8 @@ function MDQueryGetSortOptionFlagsForAttribute( query: MDQueryRef; fieldName: CF
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
         @typedef MDQuerySortComparatorFunction
         Type of the callback function used to sort the results of an
                 MDQuery.
@@ -1322,6 +1387,7 @@ procedure MDQuerySetSortComparator( query: MDQueryRef; comparator: MDQuerySortCo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {!
         @function MDQuerySetSortComparatorBlock
         Sets the block used to sort the results of an MDQuery. You
@@ -1352,6 +1418,8 @@ procedure MDQuerySetSortComparator( query: MDQueryRef; comparator: MDQuerySortCo
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {!
         @constant kMDQueryProgressNotification
@@ -1529,6 +1597,7 @@ var kMDQueryScopeNetwork: CFStringRef; external name '_kMDQueryScopeNetwork'; (*
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  @constant kMDQueryScopeAllIndexed
  A constant, which can be passed in the scopeDirectories array, to specify
  that the search should be restricted to indexed, locally mounted volumes and
@@ -1563,6 +1632,8 @@ var kMDQueryScopeNetworkIndexed: CFStringRef; external name '_kMDQueryScopeNetwo
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
  @function MDQuerySetMaxCount
  @discussion Use MDQuerySetMaxCount to limit the number of results
  returned by the query engine.  This must be called before the query is executed.

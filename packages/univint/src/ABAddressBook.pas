@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
 //  ABAddressBookC.h
 //  AddressBook Framework
@@ -22,25 +23,33 @@
 =======
 >>>>>>> origin/fixes_2_2
 //
+=======
+{
+>>>>>>> origin/fixes_2.4
 //  ABAddressBookC.h
 //  AddressBook Framework
 //
-//  Copyright (c) 2002-2003 Apple Computer. All rights reserved.
+//  Copyright (c) 2003-2007 Apple Inc.  All rights reserved.
 //
-
+//
+}
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
-
+{	  Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, November 2009 }
 
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -49,6 +58,7 @@
 
 unit ABAddressBook;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -61,6 +71,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -75,6 +89,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -82,21 +97,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -104,6 +128,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -114,6 +141,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -131,6 +159,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -138,10 +168,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -149,6 +182,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -381,18 +415,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/fixes_2.4
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -420,12 +511,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -438,6 +532,9 @@ interface
 uses MacTypes,ABTypedefs,ABGlobals,CFBase,CFArray,CFDictionary,CFData;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -446,6 +543,7 @@ uses MacTypes,ABTypedefs,ABGlobals,CFBase,CFArray,CFDictionary,CFData;
 {$ALIGN POWER}
 
 
+<<<<<<< HEAD
 
 type
 	ABRecordRef = UnivPtr;
@@ -477,6 +575,22 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+type
+	ABRecordRef = UnivPtr;
+	ABPersonRef = ^__ABPerson; { an opaque type }
+	__ABPerson = record end;
+	ABGroupRef = ^__ABGroup; { an opaque type }
+	__ABGroup = record end;
+	ABSearchElementRef = ^__ABSearchElementRef; { an opaque type }
+	__ABSearchElementRef = record end;
+	ABAddressBookRef = ^__ABAddressBookRef; { an opaque type }
+	__ABAddressBookRef = record end;
+	ABMultiValueRef = ^__ABMultiValue; { an opaque type }
+	__ABMultiValue = record end;
+	ABMutableMultiValueRef = ^__ABMultiValue; { an opaque type }
+>>>>>>> origin/fixes_2.4
 
 // --------------------------------------------------------------------------------
 //	LSOpenCFURLRef support
@@ -517,6 +631,7 @@ function ABCopyArrayOfMatchingRecords( addressBook: ABAddressBookRef; search: AB
     // --- Saving
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function ABSave( addressBook: ABAddressBookRef ): CBool; external name '_ABSave';
 function ABHasUnsavedChanges( addressBook: ABAddressBookRef ): CBool; external name '_ABHasUnsavedChanges';
 =======
@@ -527,12 +642,17 @@ function ABHasUnsavedChanges( addressBook: ABAddressBookRef ): Boolean; external
 function ABSave( addressBook: ABAddressBookRef ): Boolean; external name '_ABSave';
 function ABHasUnsavedChanges( addressBook: ABAddressBookRef ): Boolean; external name '_ABHasUnsavedChanges';
 >>>>>>> origin/fixes_2_2
+=======
+function ABSave( addressBook: ABAddressBookRef ): CBool; external name '_ABSave';
+function ABHasUnsavedChanges( addressBook: ABAddressBookRef ): CBool; external name '_ABHasUnsavedChanges';
+>>>>>>> origin/fixes_2.4
 
     // --- Me
 function ABGetMe( addressBook: ABAddressBookRef ): ABPersonRef; external name '_ABGetMe'; // Not retain???
 procedure ABSetMe( addressBook: ABAddressBookRef; moi: ABPersonRef ); external name '_ABSetMe';
 
     // Returns the record class Name for a particular uniqueId
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function ABCopyRecordTypeFromUniqueId( addressBook: ABAddressBookRef; uniqueId: CFStringRef ): CFStringRef; external name '_ABCopyRecordTypeFromUniqueId';
@@ -546,21 +666,30 @@ function ABRemoveProperties( addressBook: ABAddressBookRef; recordType: CFString
 =======
 >>>>>>> origin/fixes_2_2
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+=======
+>>>>>>> origin/fixes_2.4
 function ABCopyRecordTypeFromUniqueId( addressBook: ABAddressBookRef; uniqueId: CFStringRef ): CFStringRef; external name '_ABCopyRecordTypeFromUniqueId';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
     // --- Properties
     // Property names must be unique for a record type
+<<<<<<< HEAD
 function ABAddPropertiesAndTypes( addressBook: ABAddressBookRef; recordType: CFStringRef; propertiesAnTypes: CFDictionaryRef ): SInt32; external name '_ABAddPropertiesAndTypes';
 function ABRemoveProperties( addressBook: ABAddressBookRef; recordType: CFStringRef; properties: CFArrayRef ): SInt32; external name '_ABRemoveProperties';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function ABAddPropertiesAndTypes( addressBook: ABAddressBookRef; recordType: CFStringRef; propertiesAnTypes: CFDictionaryRef ): CFIndex; external name '_ABAddPropertiesAndTypes';
+function ABRemoveProperties( addressBook: ABAddressBookRef; recordType: CFStringRef; properties: CFArrayRef ): CFIndex; external name '_ABRemoveProperties';
+>>>>>>> origin/fixes_2.4
 function ABCopyArrayOfPropertiesForRecordType( addressBook: ABAddressBookRef; recordType: CFStringRef ): CFArrayRef; external name '_ABCopyArrayOfPropertiesForRecordType';
 function ABTypeOfProperty( addressBook: ABAddressBookRef; recordType: CFStringRef; proprty: CFStringRef ): ABPropertyType; external name '_ABTypeOfProperty';
 
     // --- Records (Person, Group)
 function ABCopyRecordForUniqueId( addressBook: ABAddressBookRef; uniqueId: CFStringRef ): ABRecordRef; external name '_ABCopyRecordForUniqueId';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function ABAddRecord( addressBook: ABAddressBookRef; recrd: ABRecordRef ): CBool; external name '_ABAddRecord';
@@ -573,6 +702,10 @@ function ABRemoveRecord( addressBook: ABAddressBookRef; recrd: ABRecordRef ): Bo
 function ABAddRecord( addressBook: ABAddressBookRef; recrd: ABRecordRef ): Boolean; external name '_ABAddRecord';
 function ABRemoveRecord( addressBook: ABAddressBookRef; recrd: ABRecordRef ): Boolean; external name '_ABRemoveRecord';
 >>>>>>> origin/fixes_2_2
+=======
+function ABAddRecord( addressBook: ABAddressBookRef; recrd: ABRecordRef ): CBool; external name '_ABAddRecord';
+function ABRemoveRecord( addressBook: ABAddressBookRef; recrd: ABRecordRef ): CBool; external name '_ABRemoveRecord';
+>>>>>>> origin/fixes_2.4
 
     // --- People
 function ABCopyArrayOfAllPeople( addressBook: ABAddressBookRef ): CFArrayRef; external name '_ABCopyArrayOfAllPeople';                  // Array of ABPerson
@@ -586,6 +719,7 @@ function ABCopyArrayOfAllGroups( addressBook: ABAddressBookRef ): CFArrayRef; ex
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function ABRecordCreateCopy( recrd: ABRecordRef ): ABRecordRef; external name '_ABRecordCreateCopy';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
@@ -593,11 +727,17 @@ function ABRecordCreateCopy( recrd: ABRecordRef ): ABRecordRef; external name '_
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function ABRecordCreateCopy( recrd: ABRecordRef ): ABRecordRef; external name '_ABRecordCreateCopy';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 function ABRecordCopyRecordType( recrd: ABRecordRef ): CFStringRef; external name '_ABRecordCopyRecordType';
 
     // --- Property value
 function ABRecordCopyValue( recrd: ABRecordRef; proprty: CFStringRef ): CFTypeRef; external name '_ABRecordCopyValue';
     // returns a CFDictionary for multi-value properties
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function ABRecordSetValue( recrd: ABRecordRef; proprty: CFStringRef; value: CFTypeRef ): CBool; external name '_ABRecordSetValue';
@@ -616,6 +756,14 @@ function ABRecordSetValue( recrd: ABRecordRef; proprty: CFStringRef; value: CFTy
     // takes a CFDictionary for multi-value properties
 function ABRecordRemoveValue( recrd: ABRecordRef; proprty: CFStringRef ): Boolean; external name '_ABRecordRemoveValue';
 >>>>>>> origin/fixes_2_2
+=======
+function ABRecordSetValue( recrd: ABRecordRef; proprty: CFStringRef; value: CFTypeRef ): CBool; external name '_ABRecordSetValue';
+    // takes a CFDictionary for multi-value properties
+function ABRecordRemoveValue( recrd: ABRecordRef; proprty: CFStringRef ): CBool; external name '_ABRecordRemoveValue';
+   // is the record read only
+function ABRecordIsReadOnly( recrd: ABRecordRef ): CBool; external name '_ABRecordIsReadOnly';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
     // ---- Unique ID access convenience
 function ABRecordCopyUniqueId( recrd: ABRecordRef ): CFStringRef; external name '_ABRecordCopyUniqueId';
@@ -644,6 +792,7 @@ function ABGroupCreate: ABGroupRef; external name '_ABGroupCreate';
 function ABGroupCopyArrayOfAllMembers( group: ABGroupRef ): CFArrayRef; external name '_ABGroupCopyArrayOfAllMembers';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function ABGroupAddMember( group: ABGroupRef; personToAdd: ABPersonRef ): CBool; external name '_ABGroupAddMember';
 function ABGroupRemoveMember( group: ABGroupRef; personToRemove: ABPersonRef ): CBool; external name '_ABGroupRemoveMember';
 
@@ -662,21 +811,29 @@ function ABGroupSetDistributionIdentifier( group: ABGroupRef; person: ABPersonRe
 >>>>>>> origin/fixes_2_2
 function ABGroupAddMember( group: ABGroupRef; personToAdd: ABPersonRef ): Boolean; external name '_ABGroupAddMember';
 function ABGroupRemoveMember( group: ABGroupRef; personToRemove: ABPersonRef ): Boolean; external name '_ABGroupRemoveMember';
+=======
+function ABGroupAddMember( group: ABGroupRef; personToAdd: ABPersonRef ): CBool; external name '_ABGroupAddMember';
+function ABGroupRemoveMember( group: ABGroupRef; personToRemove: ABPersonRef ): CBool; external name '_ABGroupRemoveMember';
+>>>>>>> origin/fixes_2.4
 
     // --- Dealing with Groups
 function ABGroupCopyArrayOfAllSubgroups( group: ABGroupRef ): CFArrayRef; external name '_ABGroupCopyArrayOfAllSubgroups';
-function ABGroupAddGroup( group: ABGroupRef; groupToAdd: ABGroupRef ): Boolean; external name '_ABGroupAddGroup';
-function ABGroupRemoveGroup( group: ABGroupRef; groupToRemove: ABGroupRef ): Boolean; external name '_ABGroupRemoveGroup';
+function ABGroupAddGroup( group: ABGroupRef; groupToAdd: ABGroupRef ): CBool; external name '_ABGroupAddGroup';
+function ABGroupRemoveGroup( group: ABGroupRef; groupToRemove: ABGroupRef ): CBool; external name '_ABGroupRemoveGroup';
 
-    // --- Dealong with Parents
+    // --- Dealing with Parents
 function ABGroupCopyParentGroups( group: ABGroupRef ): CFArrayRef; external name '_ABGroupCopyParentGroups';
 
     // --- Distribution list
+<<<<<<< HEAD
 function ABGroupSetDistributionIdentifier( group: ABGroupRef; person: ABPersonRef; proprty: CFStringRef; identifier: CFStringRef ): Boolean; external name '_ABGroupSetDistributionIdentifier';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function ABGroupSetDistributionIdentifier( group: ABGroupRef; person: ABPersonRef; proprty: CFStringRef; identifier: CFStringRef ): CBool; external name '_ABGroupSetDistributionIdentifier';
+>>>>>>> origin/fixes_2.4
 function ABGroupCopyDistributionIdentifier( group: ABGroupRef; person: ABPersonRef; proprty: CFStringRef ): CFStringRef; external name '_ABGroupCopyDistributionIdentifier';
 
     // --- Search elements
@@ -690,6 +847,7 @@ function ABSearchElementCreateWithConjunction( conjunction: ABSearchConjunction;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function ABSearchElementMatchesRecord( searchElement: ABSearchElementRef; recrd: ABRecordRef ): CBool; external name '_ABSearchElementMatchesRecord';
 =======
 function ABSearchElementMatchesRecord( searchElement: ABSearchElementRef; recrd: ABRecordRef ): Boolean; external name '_ABSearchElementMatchesRecord';
@@ -697,12 +855,16 @@ function ABSearchElementMatchesRecord( searchElement: ABSearchElementRef; recrd:
 =======
 function ABSearchElementMatchesRecord( searchElement: ABSearchElementRef; recrd: ABRecordRef ): Boolean; external name '_ABSearchElementMatchesRecord';
 >>>>>>> origin/fixes_2_2
+=======
+function ABSearchElementMatchesRecord( searchElement: ABSearchElementRef; recrd: ABRecordRef ): CBool; external name '_ABSearchElementMatchesRecord';
+>>>>>>> origin/fixes_2.4
 
 // --------------------------------------------------------------------------------
 //      ABMultiValue
 // --------------------------------------------------------------------------------
 
 function ABMultiValueCreate: ABMultiValueRef; external name '_ABMultiValueCreate';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function ABMultiValueCount( multiValue: ABMultiValueRef ): CFIndex; external name '_ABMultiValueCount';
@@ -724,6 +886,14 @@ function ABMultiValueCopyIdentifierAtIndex( multiValue: ABMultiValueRef; index: 
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function ABMultiValueCount( multiValue: ABMultiValueRef ): CFIndex; external name '_ABMultiValueCount';
+function ABMultiValueCopyValueAtIndex( multiValue: ABMultiValueRef; index: CFIndex ): CFTypeRef; external name '_ABMultiValueCopyValueAtIndex';
+function ABMultiValueCopyLabelAtIndex( multiValue: ABMultiValueRef; index: CFIndex ): CFStringRef; external name '_ABMultiValueCopyLabelAtIndex';
+function ABMultiValueCopyPrimaryIdentifier( multiValue: ABMultiValueRef ): CFStringRef; external name '_ABMultiValueCopyPrimaryIdentifier';
+function ABMultiValueIndexForIdentifier( multiValue: ABMultiValueRef; identifier: CFStringRef ): CFIndex; external name '_ABMultiValueIndexForIdentifier';
+function ABMultiValueCopyIdentifierAtIndex( multiValue: ABMultiValueRef; index: CFIndex ): CFStringRef; external name '_ABMultiValueCopyIdentifierAtIndex';
+>>>>>>> origin/fixes_2.4
 function ABMultiValuePropertyType( multiValue: ABMultiValueRef ): ABPropertyType; external name '_ABMultiValuePropertyType';
 function ABMultiValueCreateCopy( multiValue: ABMultiValueRef ): ABMultiValueRef; external name '_ABMultiValueCreateCopy';
 
@@ -734,12 +904,16 @@ function ABMultiValueCreateCopy( multiValue: ABMultiValueRef ): ABMultiValueRef;
 function ABMultiValueCreateMutable: ABMutableMultiValueRef; external name '_ABMultiValueCreateMutable';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 function ABMultiValueAdd( multiValue: ABMutableMultiValueRef; value: CFTypeRef; labl: CFStringRef; var outIdentifier: CFStringRef ): CBool; external name '_ABMultiValueAdd';
 function ABMultiValueInsert( multiValue: ABMutableMultiValueRef; value: CFTypeRef; labl: CFStringRef; index: CFIndex; var outIdentifier: CFStringRef ): CBool; external name '_ABMultiValueInsert';
 function ABMultiValueRemove( multiValue: ABMutableMultiValueRef; index: CFIndex ): CBool; external name '_ABMultiValueRemove';
 function ABMultiValueReplaceValue( multiValue: ABMutableMultiValueRef; value: CFTypeRef; index: CFIndex ): CBool; external name '_ABMultiValueReplaceValue';
 function ABMultiValueReplaceLabel( multiValue: ABMutableMultiValueRef; labl: CFStringRef; index: CFIndex ): CBool; external name '_ABMultiValueReplaceLabel';
 function ABMultiValueSetPrimaryIdentifier( multiValue: ABMutableMultiValueRef; identifier: CFStringRef ): CBool; external name '_ABMultiValueSetPrimaryIdentifier';
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -753,6 +927,8 @@ function ABMultiValueSetPrimaryIdentifier( multiValue: ABMutableMultiValueRef; i
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 function ABMultiValueCreateMutableCopy( multiValue: ABMultiValueRef ): ABMutableMultiValueRef; external name '_ABMultiValueCreateMutableCopy';
 
 // --------------------------------------------------------------------------------
@@ -764,6 +940,7 @@ function ABCopyLocalizedPropertyOrLabel( labelOrProperty: CFStringRef ): CFStrin
 // --- Address formatting
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function ABCreateFormattedAddressFromDictionary( addressBook: ABAddressBookRef; address: CFDictionaryRef ): CFStringRef; external name '_ABCreateFormattedAddressFromDictionary';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 function ABCopyDefaultCountryCode( addressBook: ABAddressBookRef ): CFStringRef; external name '_ABCopyDefaultCountryCode';
@@ -772,18 +949,25 @@ function ABCopyDefaultCountryCode( addressBook: ABAddressBookRef ): CFStringRef;
 =======
 >>>>>>> origin/fixes_2_2
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+=======
+>>>>>>> origin/fixes_2.4
 function ABCreateFormattedAddressFromDictionary( addressBook: ABAddressBookRef; address: CFDictionaryRef ): CFStringRef; external name '_ABCreateFormattedAddressFromDictionary';
-// AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 function ABCopyDefaultCountryCode( addressBook: ABAddressBookRef ): CFStringRef; external name '_ABCopyDefaultCountryCode';
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 // --------------------------------------------------------------------------------
 //      Person Image Loading
 // --------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function ABPersonSetImageData( person: ABPersonRef; imageData: CFDataRef ): CBool; external name '_ABPersonSetImageData';
@@ -804,15 +988,26 @@ end.
 =======
 >>>>>>> origin/fixes_2_2
 function ABPersonSetImageData( person: ABPersonRef; imageData: CFDataRef ): Boolean; external name '_ABPersonSetImageData';
+=======
+function ABPersonSetImageData( person: ABPersonRef; imageData: CFDataRef ): CBool; external name '_ABPersonSetImageData';
+>>>>>>> origin/fixes_2.4
 function ABPersonCopyImageData( person: ABPersonRef ): CFDataRef; external name '_ABPersonCopyImageData';
 
-type ABImageClientCallback = procedure ( imageData: CFDataRef; tag: SInt32; refcon: UnivPtr );
+type
+	ABImageClientCallback = procedure( imageData: CFDataRef; tag: CFIndex; refcon: UnivPtr );
 
-function ABBeginLoadingImageDataForClient( person: ABPersonRef; callback: ABImageClientCallback; refcon: UnivPtr ): SInt32; external name '_ABBeginLoadingImageDataForClient';
-procedure ABCancelLoadingImageDataForTag( tag: SInt32 ); external name '_ABCancelLoadingImageDataForTag';
+function ABBeginLoadingImageDataForClient( person: ABPersonRef; callback: ABImageClientCallback; refcon: UnivPtr ): CFIndex; external name '_ABBeginLoadingImageDataForClient';
+procedure ABCancelLoadingImageDataForTag( tag: CFIndex ); external name '_ABCancelLoadingImageDataForTag';
+
+{$endc} {TARGET_OS_MAC}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

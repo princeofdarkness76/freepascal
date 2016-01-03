@@ -98,8 +98,12 @@ const
 
 Implementation
 
+<<<<<<< HEAD
 //or defined(windows)
 {$if defined(macos) or defined(shell_implemented) or defined(go32v2)}
+=======
+{$if defined(macos) or defined(windows) or defined(shell_implemented) or defined(go32v2)}
+>>>>>>> origin/fixes_2.4
 {$define usedos}
 {$endif}
 

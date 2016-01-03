@@ -26,12 +26,15 @@ Uses
   BaseUnix,UnixType;
 
 {$i osdefs.inc}       { Compile time defines }
+<<<<<<< HEAD
 =======
 Uses BaseUnix,UnixType;
 >>>>>>> graemeg/fixes_2_2
 =======
 Uses BaseUnix,UnixType;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 { ----------------------------------------------------------------------
   General IPC stuff

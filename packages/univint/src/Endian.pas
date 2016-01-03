@@ -27,13 +27,17 @@
 =======
 >>>>>>> origin/fixes_2_2
  
-     Version:    CarbonCore-654.0.85~1
+     Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
      Copyright:  © 1997-2005 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     Copyright:  © 1997-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -42,6 +46,7 @@
  
 }
 {   Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, November 2005 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
@@ -65,16 +70,23 @@
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/fixes_2.4
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -83,6 +95,7 @@
 
 unit Endian;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -95,6 +108,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -109,6 +126,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -116,21 +134,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -138,6 +165,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -148,6 +178,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -165,6 +196,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -172,10 +205,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -183,6 +219,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -387,18 +424,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/fixes_2.4
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -426,12 +520,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -444,12 +541,17 @@ interface
 uses MacTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/fixes_2.4
 
 
 {$ALIGN MAC68K}
@@ -597,10 +699,14 @@ function EndianU64_BtoL( arg: UInt64 ): UInt64; inline;
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 	BigEndianUInt32 = record
 		bigEndianValue: UInt32;
 	end;
 type
+<<<<<<< HEAD
 	BigEndianLong = record
 		bigEndianValue: SIGNEDLONG;
 	end;
@@ -628,34 +734,40 @@ type
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 	BigEndianLong = record
-		bigEndianValue: SInt32;
+		bigEndianValue: SIGNEDLONG;
 	end;
-
+type
 	BigEndianUnsignedLong = record
-		bigEndianValue: UInt32;
+		bigEndianValue: UNSIGNEDLONG;
 	end;
-
+type
 	BigEndianShort = record
 		bigEndianValue: SInt16;
 	end;
-
+type
 	BigEndianUnsignedShort = record
 		bigEndianValue: UInt16;
 	end;
-
+type
 	BigEndianFixed = record
 		bigEndianValue: Fixed;
 	end;
-
+type
 	BigEndianUnsignedFixed = record
 		bigEndianValue: UnsignedFixed;
 	end;
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+type
+>>>>>>> origin/fixes_2.4
 	BigEndianOSType = record
 		bigEndianValue: OSType;
 	end;
@@ -665,6 +777,9 @@ type
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 	BigEndianUInt32 = UInt32;
 	BigEndianLong = SIGNEDLONG;
 	BigEndianUnsignedLong = UNSIGNEDLONG;
@@ -673,6 +788,7 @@ type
 	BigEndianFixed = Fixed;
 	BigEndianUnsignedFixed = UnsignedFixed;
 	BigEndianOSType = OSType;
+<<<<<<< HEAD
 {$endc}  {TARGET_RT_LITTLE_ENDIAN}
 
 type
@@ -694,6 +810,12 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc}  {TARGET_RT_LITTLE_ENDIAN}
+
+type
+	BigEndianUInt32Ptr = ^BigEndianUInt32;
+>>>>>>> origin/fixes_2.4
 	BigEndianLongPtr = ^BigEndianLong;
 	BigEndianUnsignedLongPtr = ^BigEndianUnsignedLong;
 	BigEndianShortPtr = ^BigEndianShort;
@@ -704,11 +826,15 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc TARGET_API_MAC_OSX}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc TARGET_API_MAC_OSX}
+>>>>>>> origin/fixes_2.4
 {
         CoreEndian flipping API.
 
@@ -771,6 +897,7 @@ const
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CoreEndianFlipProc = function( dataDomain: OSType; dataType: OSType; id: SInt16; dataPtr: UnivPtr; dataSize: ByteCount; currentlyNative: Boolean; refcon: UnivPtr ): OSStatus;
 =======
 	CoreEndianFlipProc = function( dataDomain: OSType; dataType: OSType; id: SInt16; dataPtr: UnivPtr; dataSize: UInt32; currentlyNative: Boolean; refcon: UnivPtr ): OSStatus;
@@ -778,6 +905,9 @@ type
 =======
 	CoreEndianFlipProc = function( dataDomain: OSType; dataType: OSType; id: SInt16; dataPtr: UnivPtr; dataSize: UInt32; currentlyNative: Boolean; refcon: UnivPtr ): OSStatus;
 >>>>>>> origin/fixes_2_2
+=======
+	CoreEndianFlipProc = function( dataDomain: OSType; dataType: OSType; id: SInt16; dataPtr: UnivPtr; dataSize: ByteCount; currentlyNative: Boolean; refcon: UnivPtr ): OSStatus;
+>>>>>>> origin/fixes_2.4
 {
  * Install a flipper for this application
  }
@@ -912,6 +1042,7 @@ function CoreEndianGetFlipper( dataDomain: OSType; dataType: OSType; var proc: C
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CoreEndianFlipData( dataDomain: OSType; dataType: OSType; id: SInt16; data: UnivPtr; dataLen: ByteCount; currentlyNative: Boolean ): OSStatus; external name '_CoreEndianFlipData';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -948,14 +1079,22 @@ function CoreEndianFlipData( dataDomain: OSType; dataType: OSType; id: SInt16; d
 =======
 >>>>>>> origin/fixes_2_2
 function CoreEndianFlipData( dataDomain: OSType; dataType: OSType; id: SInt16; data: UnivPtr; dataLen: UInt32; currentlyNative: Boolean ): OSStatus; external name '_CoreEndianFlipData';
+=======
+function CoreEndianFlipData( dataDomain: OSType; dataType: OSType; id: SInt16; data: UnivPtr; dataLen: ByteCount; currentlyNative: Boolean ): OSStatus; external name '_CoreEndianFlipData';
+>>>>>>> origin/fixes_2.4
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
+{$endc} {TARGET_API_MAC_OSX}
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 implementation
 
 {$R-}
@@ -994,6 +1133,7 @@ function EndianS64_Swap( arg: SInt64 ): SInt64; inline;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EndianS64_Swap := (SInt64( Endian32_Swap( arg and $FFFFFFFF ) ) shl 32) or Endian32_Swap( (arg shr 32) and $FFFFFFFF );
 =======
 	EndianS64_Swap := (Endian32_Swap( arg and $FFFFFFFF ) shl 32) or Endian32_Swap( (arg shr 32) and $FFFFFFFF );
@@ -1001,6 +1141,9 @@ begin
 =======
 	EndianS64_Swap := (Endian32_Swap( arg and $FFFFFFFF ) shl 32) or Endian32_Swap( (arg shr 32) and $FFFFFFFF );
 >>>>>>> origin/fixes_2_2
+=======
+	EndianS64_Swap := (SInt64( Endian32_Swap( arg and $FFFFFFFF ) ) shl 32) or Endian32_Swap( (arg shr 32) and $FFFFFFFF );
+>>>>>>> origin/fixes_2.4
 end;
 
 {$ifc TARGET_RT_BIG_ENDIAN}
@@ -1251,6 +1394,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 function EndianS16_LtoB( arg: SInt16 ): SInt16; inline;
 begin
   EndianS16_LtoB:=EndianS16_Swap(arg);
@@ -1312,6 +1458,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 
 end.
 
@@ -1324,3 +1471,9 @@ end.
 
 end.
 >>>>>>> origin/fixes_2_2
+=======
+
+end.
+
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

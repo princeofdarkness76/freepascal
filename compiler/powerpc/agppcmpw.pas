@@ -80,6 +80,7 @@ interface
         'csect', {read only data - no relocations}
         'csect', {bss} 'csect', '',
 <<<<<<< HEAD
+<<<<<<< HEAD
         'csect','csect','csect','csect','csect',
         'csect','csect','csect',
          '','','','','','','','','','','','','','',
@@ -138,6 +139,10 @@ interface
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        'csect','csect','csect','csect',
+         '','','','','','','','','','','','','',''
+>>>>>>> origin/fixes_2.4
       );
 
     type

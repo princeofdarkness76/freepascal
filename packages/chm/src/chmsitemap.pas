@@ -125,11 +125,15 @@ type
   private
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FInternalData: Dword;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    FInternalData: Dword;
+>>>>>>> origin/fixes_2.4
     FList: TList;
     FOwner: TChmSiteMap;
     FParentItem: TChmSiteMapItem;
@@ -151,11 +155,15 @@ type
     property Owner: TChmSiteMap read FOwner;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property InternalData: Dword read FInternalData write FInternalData;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    property InternalData: Dword read FInternalData write FInternalData;
+>>>>>>> origin/fixes_2.4
   end;
   
 
@@ -284,6 +292,7 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  if not (smtHTML in FSiteMapTags) then begin
     if (TagName = 'HTML') or (TagName = '/HTML') then Include(FSiteMapTags, smtHTML);
   end
@@ -297,16 +306,24 @@ begin
 >>>>>>> origin/fixes_2_2
   if not (smtHTML in FSiteMapTags) then begin
     if TagName = 'HTML' then Include(FSiteMapTags, smtHTML);
+=======
+{  if not (smtHTML in FSiteMapTags) then begin
+    if (TagName = 'HTML') or (TagName = '/HTML') then Include(FSiteMapTags, smtHTML);
+>>>>>>> origin/fixes_2.4
   end
   else begin // looking for /HTML
     if TagName = '/HTML' then Exclude(FSiteMapTags, smtHTML);
-  end;
+  end;}
   
+<<<<<<< HEAD
   if (smtHTML in FSiteMapTags) then begin
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  //if (smtHTML in FSiteMapTags) then begin
+>>>>>>> origin/fixes_2.4
      if not (smtBODY in FSiteMapTags) then begin
        if TagName = 'BODY' then Include(FSiteMapTags, smtBODY);
      end
@@ -499,11 +516,15 @@ begin
          end;
        end;
      end;
+<<<<<<< HEAD
   end
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  //end
+>>>>>>> origin/fixes_2.4
 end;
 
 procedure TChmSiteMap.FoundText(AText: string);
@@ -769,11 +790,15 @@ begin
   FOwner := AOwner;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FInternalData := maxLongint;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  FInternalData := maxLongint;
+>>>>>>> origin/fixes_2.4
 end;
 
 destructor TChmSiteMapItems.Destroy;

@@ -33,6 +33,9 @@ uses
 {$define NDS_INTERFACE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 { $include fathelper.inc}
 {$include ../nds/disc_io.inc}
 =======
@@ -46,6 +49,9 @@ implementation
 {$define NDS_IMPLEMENTATION}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 { $include fathelper.inc}
 {$include ../nds/disc_io.inc}
 {$include fat.inc}

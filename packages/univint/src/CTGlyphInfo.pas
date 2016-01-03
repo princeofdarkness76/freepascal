@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *	Copyright (c) 2006-2012 Apple Inc. All rights reserved.
  *
  }
@@ -19,10 +20,13 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
  *	Copyright (c) 2006-2008 Apple Inc. All rights reserved.
  *
  }
 {       Initial Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -33,6 +37,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {
     Modified for use with Free Pascal
     Version 308
@@ -91,6 +97,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -104,6 +111,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -126,6 +135,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -151,6 +161,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -161,6 +176,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -186,6 +202,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -196,6 +217,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -205,6 +227,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -218,6 +242,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -227,6 +252,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -237,6 +264,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -268,12 +296,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -301,10 +335,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
@@ -326,6 +363,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/fixes_2.4
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -375,6 +416,7 @@ uses MacTypes,CTFont,CFBase,CGFont;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifc TARGET_OS_MAC}
 
@@ -391,6 +433,10 @@ uses MacTypes,CTFont,CFBase,CGFont;
 {$ifc TARGET_OS_MAC}
 
 >>>>>>> origin/cpstrnew
+=======
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> origin/fixes_2.4
 {$ALIGN POWER}
 
 
@@ -412,6 +458,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CTGlyphInfoRef = ^__CTGlyphInfo; { an opaque type }
 	__CTGlyphInfo = record end;
 =======
@@ -426,6 +473,9 @@ type
 =======
 	CTGlyphInfoRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	CTGlyphInfoRef = ^SInt32; { an opaque type }
+>>>>>>> origin/fixes_2.4
 	CTGlyphInfoRefPtr = ^CTGlyphInfoRef;
 
 {!
@@ -434,6 +484,7 @@ type
 }
 
 function CTGlyphInfoGetTypeID: CFTypeID; external name '_CTGlyphInfoGetTypeID';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -451,6 +502,9 @@ function CTGlyphInfoGetTypeID: CFTypeID; external name '_CTGlyphInfoGetTypeID';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 { --------------------------------------------------------------------------- }
@@ -461,6 +515,7 @@ function CTGlyphInfoGetTypeID: CFTypeID; external name '_CTGlyphInfoGetTypeID';
 	@enum		CTCharacterCollection
 	@abstract	These constants specify character collections.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -489,6 +544,8 @@ function CTGlyphInfoGetTypeID: CFTypeID; external name '_CTGlyphInfoGetTypeID';
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	@constant	kCTIdentityMappingCharacterCollection
 				Indicates that the character identifier is equal to the CGGlyph
 				glyph index.
@@ -509,6 +566,7 @@ function CTGlyphInfoGetTypeID: CFTypeID; external name '_CTGlyphInfoGetTypeID';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -516,10 +574,13 @@ function CTGlyphInfoGetTypeID: CFTypeID; external name '_CTGlyphInfoGetTypeID';
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 				Indicates the Adobe-Korea1 mapping.
 }
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -544,12 +605,15 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	kCTIdentityMappingCharacterCollection = 0;
 	kCTAdobeCNS1CharacterCollection = 1;
 	kCTAdobeGB1CharacterCollection = 2;
 	kCTAdobeJapan1CharacterCollection = 3;
 	kCTAdobeJapan2CharacterCollection = 4;
 	kCTAdobeKorea1CharacterCollection = 5;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -560,6 +624,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 type
 	CTCharacterCollection = UInt16;
 
@@ -595,6 +661,7 @@ function CTGlyphInfoCreateWithGlyphName( glyphName: CFStringRef; font: CTFontRef
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -608,6 +675,9 @@ function CTGlyphInfoCreateWithGlyphName( glyphName: CFStringRef; font: CTFontRef
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -637,6 +707,7 @@ function CTGlyphInfoCreateWithGlyph( glyph: CGGlyph; font: CTFontRef; baseString
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -650,6 +721,9 @@ function CTGlyphInfoCreateWithGlyph( glyph: CGGlyph; font: CTFontRef; baseString
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -679,6 +753,7 @@ function CTGlyphInfoCreateWithCharacterIdentifier( cid: CGFontIndex; collection:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -692,6 +767,9 @@ function CTGlyphInfoCreateWithCharacterIdentifier( cid: CGFontIndex; collection:
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 { --------------------------------------------------------------------------- }
@@ -717,6 +795,7 @@ function CTGlyphInfoGetGlyphName( glyphInfo: CTGlyphInfoRef ): CFStringRef; exte
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -730,6 +809,9 @@ function CTGlyphInfoGetGlyphName( glyphInfo: CTGlyphInfoRef ): CFStringRef; exte
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -751,6 +833,7 @@ function CTGlyphInfoGetCharacterIdentifier( glyphInfo: CTGlyphInfoRef ): CGFontI
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -764,6 +847,9 @@ function CTGlyphInfoGetCharacterIdentifier( glyphInfo: CTGlyphInfoRef ): CGFontI
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -788,6 +874,7 @@ function CTGlyphInfoGetCharacterCollection( glyphInfo: CTGlyphInfoRef ): CTChara
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 
 =======
@@ -810,6 +897,11 @@ function CTGlyphInfoGetCharacterCollection( glyphInfo: CTGlyphInfoRef ): CTChara
 
 {$endc} {TARGET_OS_MAC}
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+{$endc} {TARGET_OS_MAC}
+>>>>>>> origin/fixes_2.4
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

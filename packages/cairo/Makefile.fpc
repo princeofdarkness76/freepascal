@@ -26,9 +26,14 @@ packages_haiku=x11
 packages=fcl-image
 #packages_win32=
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+packages_beos=x11
+packages_haiku=x11
+>>>>>>> origin/fixes_2.4
 packages_linux=x11
 packages_freebsd=x11
 packages_netbsd=x11
@@ -59,12 +64,17 @@ units=cairo cairoft
 units_win32=cairowin32
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units_beos=cairoxlib
 units_haiku=cairoxlib
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+units_beos=cairoxlib
+units_haiku=cairoxlib
+>>>>>>> origin/fixes_2.4
 units_linux=cairoxlib
 units_freebsd=cairoxlib
 units_netbsd=cairoxlib

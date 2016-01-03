@@ -428,6 +428,7 @@ override PACKAGE_NAME=fpc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 override PACKAGE_VERSION=3.1.1
 REQUIREDVERSION=2.6.4
 REQUIREDVERSION2=3.0.0
@@ -449,6 +450,9 @@ override PACKAGE_VERSION=2.2.5
 =======
 override PACKAGE_VERSION=2.2.5
 >>>>>>> origin/fixes_2_2
+=======
+override PACKAGE_VERSION=2.4.1
+>>>>>>> origin/fixes_2.4
 ifndef inOS2
 override FPCDIR:=$(BASEDIR)
 export FPCDIR

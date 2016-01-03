@@ -1121,11 +1121,16 @@ Var
         TheStream : TFileStream;
 begin
   TheStream:=TFileStream.Create(FileName,fmOpenRead or fmShareDenyWrite);
+<<<<<<< HEAD
   try
     LoadFromStream(TheStream);
   finally
     TheStream.Free;
   end;
+=======
+  LoadFromStream(TheStream);
+  TheStream.Free;
+>>>>>>> origin/fixes_2.4
 end;
 
 

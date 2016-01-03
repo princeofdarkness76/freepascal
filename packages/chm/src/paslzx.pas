@@ -603,6 +603,7 @@ begin
         end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         pState^.intel_filesize := LongInt((i shl 16) or j); ///* or 0 if not encoded */
 =======
         pState^.intel_filesize := (i shl 16) or j; ///* or 0 if not encoded */
@@ -610,6 +611,9 @@ begin
 =======
         pState^.intel_filesize := (i shl 16) or j; ///* or 0 if not encoded */
 >>>>>>> origin/fixes_2_2
+=======
+        pState^.intel_filesize := LongInt((i shl 16) or j); ///* or 0 if not encoded */
+>>>>>>> origin/fixes_2.4
         pState^.header_read := 1;
     end;
 

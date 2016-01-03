@@ -34,6 +34,7 @@ interface
        release_nr = '1';
 =======
        version_nr = '2';
+<<<<<<< HEAD
        release_nr = '5';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -45,6 +46,9 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+       release_nr = '4';
+>>>>>>> origin/fixes_2.4
        patch_nr   = '1';
        minorpatch = '-cps';
 =======

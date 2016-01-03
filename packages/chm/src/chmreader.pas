@@ -38,6 +38,7 @@ interface
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, Contnrs, chmbase, paslzx, chmFIftiMain, chmsitemap;
 
 type
@@ -48,6 +49,9 @@ type
 =======
 >>>>>>> origin/fixes_2_2
   Classes, SysUtils, chmbase, paslzx, chmFIftiMain;
+=======
+  Classes, SysUtils, chmbase, paslzx, chmFIftiMain, chmsitemap;
+>>>>>>> origin/fixes_2.4
   
 type
 
@@ -223,6 +227,7 @@ type
     procedure ReadCommonData;
     function  ReadStringsEntry(APosition: DWord): String;
     function  ReadURLSTR(APosition: DWord): String;
+    function  CheckCommonStreams: Boolean;
   public
     constructor Create(AStream: TStream; FreeStreamOnDestroy: Boolean); override;
     destructor Destroy; override;
@@ -230,9 +235,14 @@ type
     function GetContextUrl(Context: THelpContext): String;
     function LookupTopicByID(ATopicID: Integer; out ATitle: String): String; // returns a url
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    function GetTOCSitemap(ForceXML:boolean=false): TChmSiteMap;
+    function GetIndexSitemap(ForceXML:boolean=false): TChmSiteMap;
+>>>>>>> origin/fixes_2.4
     function HasContextList: Boolean;
     property DefaultPage: String read fDefaultPage;
     property IndexFile: String read fIndexFile;
@@ -318,9 +328,13 @@ uses ChmTypes;
 
 implementation
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+uses ChmTypes;
+>>>>>>> origin/fixes_2.4
 
 function ChmErrorToStr(Error: Integer): String;
 begin
@@ -789,6 +803,9 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
   if not CheckCommonStreams then
     Exit;
 
@@ -799,21 +816,29 @@ begin
   fURLSTRStream.ReadDWord;
   fURLSTRStream.ReadDWord;
   if fURLSTRStream.Position < fURLSTRStream.Size-1 then
+<<<<<<< HEAD
     Result := PChar(fURLSTRStream.Memory+fURLSTRStream.Position);
+=======
+    Result := '/'+PChar(fURLSTRStream.Memory+fURLSTRStream.Position);
+>>>>>>> origin/fixes_2.4
 end;
 
 function TChmReader.CheckCommonStreams: Boolean;
 begin
   if fTOPICSStream = nil then
     fTOPICSStream := GetObject('/#TOPICS');
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
   if fURLSTRStream = nil then
     fURLSTRStream := GetObject('/#URLSTR');
   if fURLTBLStream = nil then
     fURLTBLStream := GetObject('/#URLTBL');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -908,6 +933,12 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+  Result :=     (fTOPICSStream <> nil)
+            and (fURLSTRStream <> nil)
+            and (fURLTBLStream <> nil);
+>>>>>>> origin/fixes_2.4
 end;
 
 constructor TChmReader.Create(AStream: TStream; FreeStreamOnDestroy: Boolean);
@@ -1491,6 +1522,7 @@ begin
   //WriteLn('Getting topic# ',ATopicID);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not CheckCommonStreams then
 =======
   if fTOPICSStream = nil then
@@ -1502,6 +1534,9 @@ begin
     fTOPICSStream := GetObject('/#TOPICS');
   if fTOPICSStream = nil then
 >>>>>>> origin/fixes_2_2
+=======
+  if not CheckCommonStreams then
+>>>>>>> origin/fixes_2.4
     Exit;
   fTOPICSStream.Position := ATopicID * 16;
   if fTOPICSStream.Position = ATopicID * 16 then
@@ -1518,6 +1553,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 const DefBlockSize = 2048;
 
 function LoadBtreeHeader(m:TMemoryStream;var btreehdr:TBtreeHeader):boolean;
@@ -1568,7 +1606,11 @@ function TChmReader.GetIndexSitemap(ForceXML:boolean=false): TChmSiteMap;
 var Index   : TMemoryStream;
     sitemap : TChmSiteMap;
     Item    : TChmSiteMapItem;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/fixes_2.4
 function  AbortAndTryTextual:tchmsitemap;
 
 begin
@@ -1619,6 +1661,7 @@ begin
          litem.local:=topic;
          litem.text :=Title; // recursively split this? No examples.
        end;
+<<<<<<< HEAD
    end;
 end;
 
@@ -1673,6 +1716,15 @@ var hdr:PBTreeBlockHeader;
     head,tail : pbyte;
     isseealso,
 >>>>>>> origin/cpstrnew
+=======
+   end;  
+end;
+
+procedure parselistingblock(p:pbyte);
+var hdr:PBTreeBlockHeader;
+    head,tail : pbyte;
+    isseealso,
+>>>>>>> origin/fixes_2.4
     nrpairs : Integer;
     i : integer;
     PE : PBtreeBlockEntry;
@@ -1682,6 +1734,7 @@ var hdr:PBTreeBlockHeader;
     seealsostr,
     topic,
     Name : AnsiString;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1704,6 +1757,10 @@ begin
     item : TChmSiteMapItem;
 begin
 >>>>>>> origin/cpstrnew
+=======
+    item : TChmSiteMapItem;
+begin
+>>>>>>> origin/fixes_2.4
   hdr:=PBTreeBlockHeader(p);
   hdr^.Length          :=LEToN(hdr^.Length);
   hdr^.NumberOfEntries :=LEToN(hdr^.NumberOfEntries);
@@ -1712,6 +1769,7 @@ begin
 
   tail:=p+(2048-hdr^.length);
   head:=p+sizeof(TBtreeBlockHeader);
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1726,10 +1784,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  
+>>>>>>> origin/fixes_2.4
   {$ifdef binindex}
   writeln('previndex  : ',hdr^.IndexOfPrevBlock);
   writeln('nextindex  : ',hdr^.IndexOfNextBlock);
   {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1743,6 +1805,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
   while head<tail do
     begin
       if not ReadWCharString(Head,Tail,Name) Then
@@ -1755,6 +1819,7 @@ begin
       PE :=PBtreeBlockEntry(head);
       NrPairs  :=LEToN(PE^.nrpairs);
       IsSeealso:=LEToN(PE^.isseealso);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1774,6 +1839,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
       CharIndex:=LEToN(PE^.CharIndex);
       {$ifdef binindex}
         Writeln('seealso:     ',IsSeeAlso);
@@ -1784,6 +1851,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1791,6 +1859,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
       {$endif}
 
       inc(head,sizeof(TBtreeBlockEntry));
@@ -1799,6 +1869,7 @@ begin
           if not ReadWCharString(Head,Tail,SeeAlsoStr) Then
             Break;
           // have to figure out first what to do with it.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1818,10 +1889,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
         end
       else
         begin
          if NrPairs>0 Then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1839,6 +1913,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
             for i:=0 to nrpairs-1 do
               begin
                 if head<tail Then
@@ -1857,6 +1933,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          end;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1866,6 +1943,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
       if nrpairs<>0 Then
         createentry(Name,CharIndex,Topic,Title);
       inc(head,4); // always 1
@@ -1879,6 +1958,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ItemStack.Free;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1888,6 +1968,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 end;
 
 var TryTextual : boolean;
@@ -1909,6 +1991,7 @@ begin
      Exit;
    end;
    SiteMap:=TChmSitemap.Create(StIndex);
+<<<<<<< HEAD
    Item   :=Nil;  // cached last created item, in case we need to make
                   // a child.
 <<<<<<< HEAD
@@ -1940,6 +2023,14 @@ begin
    if LoadBtreeHeader(index,BHdr) and (BHdr.LastLstBlock>0) Then
 >>>>>>> origin/cpstrnew
     begin
+=======
+   Item   :=Nil;  // cached last created item, in case we need to make 
+                  // a child.
+   TryTextual:=True;
+   BHdr.LastLstBlock:=0;
+   if LoadBtreeHeader(index,BHdr) and (BHdr.LastLstBlock>0) Then
+    begin 
+>>>>>>> origin/fixes_2.4
        if BHdr.BlockSize=defblocksize then
          begin
            for i:=0 to BHdr.lastlstblock do
@@ -1951,13 +2042,19 @@ begin
                 end;
              end;
             trytextual:=false;
+<<<<<<< HEAD
             result:=sitemap;
           end;
+=======
+            result:=sitemap; 
+          end;   
+>>>>>>> origin/fixes_2.4
     end;
   if trytextual then
     begin
       sitemap.free;
       Result:=AbortAndTryTextual;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1976,6 +2073,9 @@ begin
 =======
     end;
 >>>>>>> origin/cpstrnew
+=======
+    end;
+>>>>>>> origin/fixes_2.4
 end;
 
 function TChmReader.GetTOCSitemap(ForceXML:boolean=false): TChmSiteMap;
@@ -2055,6 +2155,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      // Binary Toc Exists
 =======
    // Binary Toc Exists
@@ -2068,6 +2169,9 @@ begin
 =======
    // Binary Toc Exists
 >>>>>>> origin/cpstrnew
+=======
+   // Binary Toc Exists
+>>>>>>> origin/fixes_2.4
    Result := TChmSiteMap.Create(stTOC);
 
    EntryInfoOffset := NtoLE(TOC.ReadDWord);
@@ -2075,6 +2179,7 @@ begin
    EntryCount      := NtoLE(TOC.ReadDWord);
    TOPICSOffset    := NtoLE(TOC.ReadDWord);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2093,10 +2198,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
    NextItem := EntryInfoOffset;
    repeat
      NextItem := AddTOCItem(Toc, NextItem, Result.Items);
    until NextItem = 0;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2116,6 +2224,10 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+end;
+
+>>>>>>> origin/fixes_2.4
 function TChmReader.HasContextList: Boolean;
 begin
   Result := fContextList.Count > 0;
@@ -2254,6 +2366,7 @@ begin
     // if FirstBlock is odd (1,3,5,7 etc) we have to read the even block before it first.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if FirstBlock and 1 = 1 then begin
 =======
     if (FirstBlock <> 0) and (FirstBlock mod 2 > 0) then begin
@@ -2261,6 +2374,9 @@ begin
 =======
     if (FirstBlock <> 0) and (FirstBlock mod 2 > 0) then begin
 >>>>>>> origin/fixes_2_2
+=======
+    if FirstBlock and 1 = 1 then begin
+>>>>>>> origin/fixes_2.4
       fStream.Position := fHeaderSuffix.Offset + fCachedEntry.ContentOffset + (ResetTable[FirstBLock-1]);
       ReadCount := ResetTable[FirstBlock] - ResetTable[FirstBlock-1];
       BlockWriteLength:=BlockSize;
@@ -2324,6 +2440,7 @@ begin
 =======
       
       // if the next block is an even numbered block we have to reset the decompressor state
+<<<<<<< HEAD
       if (X < LastBlock) and (X mod 2 > 0) then LZXreset(LZXState);
 >>>>>>> graemeg/fixes_2_2
 =======
@@ -2331,6 +2448,9 @@ begin
       // if the next block is an even numbered block we have to reset the decompressor state
       if (X < LastBlock) and (X mod 2 > 0) then LZXreset(LZXState);
 >>>>>>> origin/fixes_2_2
+=======
+      if (X < LastBlock) and (X and 1 = 1) then LZXreset(LZXState);
+>>>>>>> origin/fixes_2.4
 
     end;
     FreeMem(OutBuf);
@@ -2443,6 +2563,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AStream := TFileStream.Create(AFileName, fmOpenRead or fmShareDenyWrite);
 =======
   AStream := TFileStream.Create(AFileName, fmOpenRead, fmShareDenyWrite);
@@ -2462,6 +2583,9 @@ begin
 =======
   AStream := TFileStream.Create(AFileName, fmOpenRead);
 >>>>>>> origin/fixes_2_2
+=======
+  AStream := TFileStream.Create(AFileName, fmOpenRead, fmShareDenyWrite);
+>>>>>>> origin/fixes_2.4
   AChm := TChmReader.Create(AStream, True);
   AIndex := AddObject(AFileName, AChm);
   fLastChm := AChm;

@@ -641,6 +641,7 @@ begin
                if useunicodefunctions then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  LineBuf[BufCounter].UniCodeChar := Widechar(mapcp850[WordRec(VideoBuf^[BufCounter]).One].unicode)
                else
                  LineBuf[BufCounter].UniCodeChar := Widechar(WordRec(VideoBuf^[BufCounter]).One);
@@ -650,11 +651,15 @@ begin
                LineBuf[BufCounter].Attributes := WordRec(VideoBuf^[BufCounter]).Two;
 =======
                  LineBuf^[BufCounter].UniCodeChar := Widechar(mapcp850[WordRec(VideoBuf^[BufCounter]).One].unicode)
+=======
+                 LineBuf[BufCounter].UniCodeChar := Widechar(mapcp850[WordRec(VideoBuf^[BufCounter]).One].unicode)
+>>>>>>> origin/fixes_2.4
                else
-                 LineBuf^[BufCounter].UniCodeChar := Widechar(WordRec(VideoBuf^[BufCounter]).One);
+                 LineBuf[BufCounter].UniCodeChar := Widechar(WordRec(VideoBuf^[BufCounter]).One);
                { If (WordRec(VideoBuf^[BufCounter]).Two and $80)<>0 then
                  LineBuf^[BufCounter].Attributes := $100+WordRec(VideoBuf^[BufCounter]).Two
                else }
+<<<<<<< HEAD
                LineBuf^[BufCounter].Attributes := WordRec(VideoBuf^[BufCounter]).Two;
 >>>>>>> graemeg/fixes_2_2
 =======
@@ -666,6 +671,9 @@ begin
                else }
                LineBuf^[BufCounter].Attributes := WordRec(VideoBuf^[BufCounter]).Two;
 >>>>>>> origin/fixes_2_2
+=======
+               LineBuf[BufCounter].Attributes := WordRec(VideoBuf^[BufCounter]).Two;
+>>>>>>> origin/fixes_2.4
 
                Inc(BufCounter);
              end; { for }
@@ -703,6 +711,7 @@ begin
       if useunicodefunctions then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         WriteConsoleOutputW(TextRec(Output).Handle, @LineBuf, BufSize, BufCoord, WriteRegion)
       else
         WriteConsoleOutput(TextRec(Output).Handle, @LineBuf, BufSize, BufCoord, WriteRegion);
@@ -714,6 +723,11 @@ begin
         WriteConsoleOutput(TextRec(Output).Handle, LineBuf, BufSize, BufCoord, WriteRegion);
       Dispose(LineBuf);
 >>>>>>> graemeg/fixes_2_2
+=======
+        WriteConsoleOutputW(TextRec(Output).Handle, @LineBuf, BufSize, BufCoord, WriteRegion)
+      else
+        WriteConsoleOutput(TextRec(Output).Handle, @LineBuf, BufSize, BufCoord, WriteRegion);
+>>>>>>> origin/fixes_2.4
 
       move(VideoBuf^,OldVideoBuf^,VideoBufSize);
    end;

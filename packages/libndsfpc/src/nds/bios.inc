@@ -95,6 +95,7 @@ procedure swiDelay(duration: cuint32); cdecl; external;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function swiDivide(numerator, divisor: cint): cint; cdecl; external;
 function swiRemainder(numerator, divisor: cint): cint; cdecl; external;
 procedure swiDivMod(numerator, divisor: cint; var result, remainder: cint); cdecl; external;
@@ -105,6 +106,8 @@ procedure swiIntrWait(waitForSet: cint; flags: cuint32); cdecl; external;
 
 procedure swiWaitForVBlank(); cdecl; external;
 
+=======
+>>>>>>> origin/fixes_2.4
 function swiDivide(numerator, divisor: cint): cint; cdecl; external;
 function swiRemainder(numerator, divisor: cint): cint; cdecl; external;
 procedure swiDivMod(numerator, divisor: cint; result, remainder: pcint); cdecl; external;

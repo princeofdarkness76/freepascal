@@ -233,7 +233,6 @@ interface
        tglobalswitch = (cs_globalnone,
          { parameter switches }
          cs_check_unit_name,cs_constructor_name,cs_support_exceptions,
-         cs_support_c_objectivepas,
          { units }
          cs_load_objpas_unit,
          cs_load_gpc_unit,
@@ -363,6 +362,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          f_processes,f_stackcheck,f_dynlibs,f_softfpu,f_objectivec1,f_resources,
          f_unicodestring
 =======
@@ -383,6 +383,9 @@ interface
 =======
          f_processes,f_stackcheck,f_dynlibs
 >>>>>>> origin/fixes_2_2
+=======
+         f_processes,f_stackcheck,f_dynlibs,f_softfpu
+>>>>>>> origin/fixes_2.4
        );
        tfeatures = set of tfeature;
 
@@ -447,6 +450,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
        TargetSwitchStr : array[ttargetswitch] of ttargetswitchinfo = (
          (name: '';                    hasvalue: false; isglobal: true ; define: ''),
@@ -475,6 +479,8 @@ interface
 
        DebugSwitchStr : array[tdebugswitch] of string[9] = ('',
          'DWARFSETS');
+=======
+>>>>>>> origin/fixes_2.4
 
        { switches being applied to all CPUs at the given level }
        genericlevel1optimizerswitches = [cs_opt_level1,cs_opt_peephole];
@@ -491,6 +497,7 @@ interface
          'HEAP','INITFINAL','RTTI','CLASSES','EXCEPTIONS','EXITCODE',
          'ANSISTRINGS','WIDESTRINGS','TEXTIO','CONSOLEIO','FILEIO',
          'RANDOM','VARIANTS','OBJECTS','DYNARRAYS','THREADING','COMMANDARGS',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -517,6 +524,9 @@ interface
 =======
          'PROCESSES','STACKCHECK','DYNLIBS'
 >>>>>>> origin/fixes_2_2
+=======
+         'PROCESSES','STACKCHECK','DYNLIBS','SOFTFPU'
+>>>>>>> origin/fixes_2.4
        );
 
     type
@@ -562,6 +572,7 @@ interface
          m_duplicate_names,     { allow locals/paras to have duplicate names of globals }
          m_property,            { allow properties }
          m_default_inline,      { allow inline proc directive }
+<<<<<<< HEAD
          m_except,              { allow exception-related keywords }
          m_objectivec1,         { support interfacing with Objective-C (1.0) }
          m_objectivec2,         { support interfacing with Objective-C (2.0) }
@@ -597,6 +608,9 @@ interface
 =======
          m_advanced_records     { advanced record syntax with visibility sections, methods and properties }
 >>>>>>> origin/cpstrnew
+=======
+         m_except               { allow exception-related keywords }
+>>>>>>> origin/fixes_2.4
        );
        tmodeswitches = set of tmodeswitch;
 
@@ -775,6 +789,7 @@ interface
          'DUPLICATELOCALS',
          'PROPERTIES',
          'ALLOWINLINE',
+<<<<<<< HEAD
          'EXCEPTIONS',
          'OBJECTIVEC1',
          'OBJECTIVEC2',
@@ -807,6 +822,9 @@ interface
 =======
          'ADVANCEDRECORDS');
 >>>>>>> origin/cpstrnew
+=======
+         'EXCEPTIONS');
+>>>>>>> origin/fixes_2.4
 
 
      type

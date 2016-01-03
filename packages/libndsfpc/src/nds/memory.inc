@@ -242,6 +242,7 @@ type
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   __NDSHeader : pNDSHeader = pointer($02FFFE00);
 =======
   NDSHeader : pNDSHeader = pointer($027FFE00);
@@ -249,6 +250,9 @@ const
 =======
   NDSHeader : pNDSHeader = pointer($027FFE00);
 >>>>>>> origin/fixes_2_2
+=======
+  __NDSHeader : pNDSHeader = pointer($02FFFE00);
+>>>>>>> origin/fixes_2.4
 
 
 type
@@ -312,6 +316,7 @@ procedure sysSetBusOwners(arm9rom, arm9card: cbool); inline;
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   val1, val2: cuint;
 begin
   val1 := 0;
@@ -333,20 +338,22 @@ end;
 >>>>>>> origin/fixes_2_2
   pattern: cuint16;
   a9r, a9c: cint;
+=======
+  val1, val2: cuint;
+>>>>>>> origin/fixes_2.4
 begin
-  pattern := REG_EXMEMCNT^ and not (ARM7_OWNS_CARD or ARM7_OWNS_ROM);
-  if arm9card then
-    a9c := 0 
-  else
-    a9c := ARM7_OWNS_CARD;
-  if arm9rom then
-    a9r := 0 
-  else
-    a9r := ARM7_OWNS_ROM;
-
-  pattern := pattern or (a9c) or (a9r);
-  REG_EXMEMCNT^ := pattern;
+  val1 := 0;
+  val2 := 0;
+  if not arm9card then
+    val1 := ARM7_OWNS_CARD; 
+  
+  if not arm9rom then
+    val2 := ARM7_OWNS_ROM ;
+    
+  REG_EXMEMCNT^ := (REG_EXMEMCNT^ and not(ARM7_OWNS_CARD or ARM7_OWNS_ROM)) or val1 or val2;
 end;
+
+
 {$endif NDS_IMPLEMENTATION}
 {$endif ARM9}
 

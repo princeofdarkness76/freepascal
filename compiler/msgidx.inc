@@ -1147,6 +1147,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   unit_u_ppu_invalid_memory_model=10063;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1160,6 +1161,8 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
   option_usage=11000;
   option_only_one_source_support=11001;
   option_def_only_for_os2=11002;
@@ -1205,6 +1208,7 @@ const
   option_unsupported_target_for_feature=11045;
   option_dwarf_smart_linking=11046;
   option_ignored_target=11047;
+<<<<<<< HEAD
   option_debug_external_unsupported=11048;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1227,6 +1231,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
   wpo_cant_find_file=12000;
   wpo_begin_processing=12001;
   wpo_end_processing=12002;
@@ -1255,6 +1261,7 @@ const
   option_info=11024;
   option_help_pages=11025;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1306,4 +1313,11 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  MsgTxtSize = 51811;
+
+  MsgIdxMax : array[1..20] of longint=(
+    24,87,253,88,65,50,108,22,202,63,
+    48,20,1,1,1,1,1,1,1,1
+>>>>>>> origin/fixes_2.4
   );

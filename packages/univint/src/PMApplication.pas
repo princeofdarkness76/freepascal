@@ -1,6 +1,7 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       Print/PMApplication.h
  
      Contains:   Carbon Printing Manager Interfaces.
@@ -21,6 +22,13 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     File:       Print/PMApplication.h
+ 
+     Contains:   Carbon Printing Manager Interfaces.
+ 
+     Copyright  (c) 1998-2008 Apple Inc. All Rights Reserved.
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -61,18 +69,21 @@
                      http://www.freepascal.org/bugs.html
  
 }
-
-
+{    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -81,6 +92,7 @@
 
 unit PMApplication;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -93,6 +105,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -107,6 +123,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -114,21 +131,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -136,6 +162,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -146,6 +175,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -163,6 +193,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -170,10 +202,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -181,6 +216,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -422,18 +458,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -461,12 +554,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -476,6 +572,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,Dialogs,QuickdrawTypes,PMDefinitions,CFBase;
@@ -676,176 +773,63 @@ function PMSessionBeginCGDocument( printSession: PMPrintSession; printSettings: 
 =======
 >>>>>>> origin/fixes_2_2
 uses MacTypes,Quickdraw,PMDefinitions,PMCore,Dialogs;
+=======
+uses MacTypes,Dialogs,QuickdrawTypes,PMDefinitions,CFBase;
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 
 
-{$ALIGN MAC68K}
+{$ifc TARGET_OS_MAC}
+
+{$ALIGN POWER}
+
+{$ifc not TARGET_CPU_64}
 
 { Callbacks }
 
 type
-{$ifc TYPED_FUNCTION_POINTERS}
-	PMItemProcPtr = procedure(theDialog: DialogRef; item: SInt16);
-{$elsec}
-	PMItemProcPtr = ProcPtr;
-{$endc}
+	PMSheetDoneProcPtr = procedure( printSession: PMPrintSession; documentWindow: WindowRef; accepted: Boolean );
+	PMSheetDoneUPP = PMSheetDoneProcPtr;
 
-{$ifc TYPED_FUNCTION_POINTERS}
-	PMPrintDialogInitProcPtr = procedure(printSettings: PMPrintSettings; var theDialog: PMDialog);
-{$elsec}
-	PMPrintDialogInitProcPtr = ProcPtr;
-{$endc}
-
-{$ifc TYPED_FUNCTION_POINTERS}
-	PMPageSetupDialogInitProcPtr = procedure(pageFormat: PMPageFormat; var theDialog: PMDialog);
-{$elsec}
-	PMPageSetupDialogInitProcPtr = ProcPtr;
-{$endc}
-
-{$ifc TYPED_FUNCTION_POINTERS}
-	PMSheetDoneProcPtr = procedure(printSession: PMPrintSession; documentWindow: WindowRef; accepted: boolean);
-{$elsec}
-	PMSheetDoneProcPtr = ProcPtr;
-{$endc}
-
-{$ifc OPAQUE_UPP_TYPES}
-	PMItemUPP = ^SInt32; { an opaque UPP }
-{$elsec}
-	PMItemUPP = UniversalProcPtr;
-{$endc}	
-{$ifc OPAQUE_UPP_TYPES}
-	PMPrintDialogInitUPP = ^SInt32; { an opaque UPP }
-{$elsec}
-	PMPrintDialogInitUPP = UniversalProcPtr;
-{$endc}	
-{$ifc OPAQUE_UPP_TYPES}
-	PMPageSetupDialogInitUPP = ^SInt32; { an opaque UPP }
-{$elsec}
-	PMPageSetupDialogInitUPP = UniversalProcPtr;
-{$endc}	
-{$ifc OPAQUE_UPP_TYPES}
-	PMSheetDoneUPP = ^SInt32; { an opaque UPP }
-{$elsec}
-	PMSheetDoneUPP = UniversalProcPtr;
-{$endc}	
-
-const
-	uppPMItemProcInfo = $000002C0;
-	uppPMPrintDialogInitProcInfo = $000003C0;
-	uppPMPageSetupDialogInitProcInfo = $000003C0;
-	uppPMSheetDoneProcInfo = $000007C0;
-	{
-	 *  NewPMItemUPP()
-	 *  
-	 *  Availability:
-	 *    Non-Carbon CFM:   not available
-	 *    CarbonLib:        in CarbonLib 1.0 and later
-	 *    Mac OS X:         in version 10.0 and later
-	 	}
-function NewPMItemUPP(userRoutine: PMItemProcPtr): PMItemUPP; external name '_NewPMItemUPP';
-{
- *  NewPMPrintDialogInitUPP()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function NewPMPrintDialogInitUPP(userRoutine: PMPrintDialogInitProcPtr): PMPrintDialogInitUPP; external name '_NewPMPrintDialogInitUPP';
-{
- *  NewPMPageSetupDialogInitUPP()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function NewPMPageSetupDialogInitUPP(userRoutine: PMPageSetupDialogInitProcPtr): PMPageSetupDialogInitUPP; external name '_NewPMPageSetupDialogInitUPP';
 {
  *  NewPMSheetDoneUPP()
  *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function NewPMSheetDoneUPP(userRoutine: PMSheetDoneProcPtr): PMSheetDoneUPP; external name '_NewPMSheetDoneUPP';
-{
- *  DisposePMItemUPP()
- *  
- *  Availability:
  *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
  }
-procedure DisposePMItemUPP(userUPP: PMItemUPP); external name '_DisposePMItemUPP';
-{
- *  DisposePMPrintDialogInitUPP()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-procedure DisposePMPrintDialogInitUPP(userUPP: PMPrintDialogInitUPP); external name '_DisposePMPrintDialogInitUPP';
-{
- *  DisposePMPageSetupDialogInitUPP()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-procedure DisposePMPageSetupDialogInitUPP(userUPP: PMPageSetupDialogInitUPP); external name '_DisposePMPageSetupDialogInitUPP';
+function NewPMSheetDoneUPP( userRoutine: PMSheetDoneProcPtr ): PMSheetDoneUPP; external name '_NewPMSheetDoneUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
 {
  *  DisposePMSheetDoneUPP()
  *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework  [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
- }
-procedure DisposePMSheetDoneUPP(userUPP: PMSheetDoneUPP); external name '_DisposePMSheetDoneUPP';
-{
- *  InvokePMItemUPP()
- *  
- *  Availability:
  *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
  }
-procedure InvokePMItemUPP(theDialog: DialogRef; item: SInt16; userRoutine: PMItemUPP); external name '_InvokePMItemUPP';
-{
- *  InvokePMPrintDialogInitUPP()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-procedure InvokePMPrintDialogInitUPP(printSettings: PMPrintSettings; var theDialog: PMDialog; userRoutine: PMPrintDialogInitUPP); external name '_InvokePMPrintDialogInitUPP';
-{
- *  InvokePMPageSetupDialogInitUPP()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-procedure InvokePMPageSetupDialogInitUPP(pageFormat: PMPageFormat; var theDialog: PMDialog; userRoutine: PMPageSetupDialogInitUPP); external name '_InvokePMPageSetupDialogInitUPP';
+procedure DisposePMSheetDoneUPP( userUPP: PMSheetDoneUPP ); external name '_DisposePMSheetDoneUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
 {
  *  InvokePMSheetDoneUPP()
  *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework  [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
-procedure InvokePMSheetDoneUPP(printSession: PMPrintSession; documentWindow: WindowRef; accepted: boolean; userRoutine: PMSheetDoneUPP); external name '_InvokePMSheetDoneUPP';
+procedure InvokePMSheetDoneUPP( printSession: PMPrintSession; documentWindow: WindowRef; accepted: Boolean; userUPP: PMSheetDoneUPP ); external name '_InvokePMSheetDoneUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
 {$ifc PM_USE_SESSION_APIS}
 { Print loop }
 {
- *  PMSessionBeginDocument()
+ *  PMSessionBeginCGDocument()
  *  
+<<<<<<< HEAD
  *  Availability:
  *    Non-Carbon CFM:   not available
  *    CarbonLib:        in CarbonLib 1.1 and later
@@ -902,20 +886,37 @@ function PMSessionEndDocument(printSession: PMPrintSession): OSStatus; external 
 
 {
  *  PMSessionBeginPage()
+=======
+ *  Summary:
+ *    Begin a new print job that uses only drawing to a CoreGraphics
+ *    context.
+ *  
+ *  Discussion:
+ *    This is an updated version of the function
+ *    PMSessionBeginDocument. The functionality is identical to
+ *    PMSessionBeginDocument except that during a print job, the caller
+ *    cannot obtain a Quickdraw grafPort for the printing context but
+ *    can only obtain a Quartz graphics context (CGContextRef). This
+ *    function should be used in conjunction with
+ *    PMSessionGetCGGraphicsContext instead of
+ *    PMSessionGetGraphicsContext.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework  [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
  }
-function PMSessionBeginPage(printSession: PMPrintSession; pageFormat: PMPageFormat; pageFrame: PMRectPtr): OSStatus; external name '_PMSessionBeginPage';
+function PMSessionBeginCGDocument( printSession: PMPrintSession; printSettings: PMPrintSettings; pageFormat: PMPageFormat ): OSStatus; external name '_PMSessionBeginCGDocument';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 {
- *  PMSessionEndPage()
+ *  PMSessionEndDocument()
  *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework  [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  }
 function PMSessionEndPage(printSession: PMPrintSession): OSStatus; external name '_PMSessionEndPage';
@@ -1355,290 +1356,180 @@ end.
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
  }
-function PMSessionPageSetupDialog(printSession: PMPrintSession; pageFormat: PMPageFormat; var accepted: boolean): OSStatus; external name '_PMSessionPageSetupDialog';
+function PMSessionEndDocument( printSession: PMPrintSession ): OSStatus; external name '_PMSessionEndDocument';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  PMSessionBeginPage()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework  [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+function PMSessionBeginPage( printSession: PMPrintSession; pageFormat: PMPageFormat; pageFrame: PMRectPtr ): OSStatus; external name '_PMSessionBeginPage';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  PMSessionEndPage()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework  [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+function PMSessionEndPage( printSession: PMPrintSession ): OSStatus; external name '_PMSessionEndPage';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+(*
+#pragma mark
+#pragma mark Dialogs
+#pragma mark
+*)
+
+{
+ *  PMSessionPageSetupDialog()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework  [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+function PMSessionPageSetupDialog( printSession: PMPrintSession; pageFormat: PMPageFormat; var accepted: Boolean ): OSStatus; external name '_PMSessionPageSetupDialog';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
 
 {
  *  PMSessionPrintDialog()
  *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework  [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMSessionPrintDialog(printSession: PMPrintSession; printSettings: PMPrintSettings; constPageFormat: PMPageFormat; var accepted: boolean): OSStatus; external name '_PMSessionPrintDialog';
-
-{
- *  PMSessionPageSetupDialogInit()
- *  
- *  Availability:
  *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
  }
-function PMSessionPageSetupDialogInit(printSession: PMPrintSession; pageFormat: PMPageFormat; var newDialog: PMDialog): OSStatus; external name '_PMSessionPageSetupDialogInit';
+function PMSessionPrintDialog( printSession: PMPrintSession; printSettings: PMPrintSettings; constPageFormat: PMPageFormat; var accepted: Boolean ): OSStatus; external name '_PMSessionPrintDialog';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
-{
- *  PMSessionPrintDialogInit()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMSessionPrintDialogInit(printSession: PMPrintSession; printSettings: PMPrintSettings; constPageFormat: PMPageFormat; var newDialog: PMDialog): OSStatus; external name '_PMSessionPrintDialogInit';
 
-{
- *  PMSessionPrintDialogMain()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMSessionPrintDialogMain(printSession: PMPrintSession; printSettings: PMPrintSettings; constPageFormat: PMPageFormat; var accepted: boolean; myInitProc: PMPrintDialogInitUPP): OSStatus; external name '_PMSessionPrintDialogMain';
-
-{
- *  PMSessionPageSetupDialogMain()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMSessionPageSetupDialogMain(printSession: PMPrintSession; pageFormat: PMPageFormat; var accepted: boolean; myInitProc: PMPageSetupDialogInitUPP): OSStatus; external name '_PMSessionPageSetupDialogMain';
-
-{**********************}
-{  Sheets are not available on classic. }
-{**********************}
 {
  *  PMSessionUseSheets()
  *  
+ *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework  [32-bit only]
  *    CarbonLib:        in CarbonLib 1.2 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMSessionUseSheets(printSession: PMPrintSession; documentWindow: WindowRef; sheetDoneProc: PMSheetDoneUPP): OSStatus; external name '_PMSessionUseSheets';
-
-{$elsec}
-{ Print loop }
-{
- *  PMBeginDocument()
- *  
- *  Availability:
  *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
  }
-function PMBeginDocument(printSettings: PMPrintSettings; pageFormat: PMPageFormat; var printContext: PMPrintContext): OSStatus; external name '_PMBeginDocument';
+function PMSessionUseSheets( printSession: PMPrintSession; documentWindow: WindowRef; sheetDoneProc: PMSheetDoneUPP ): OSStatus; external name '_PMSessionUseSheets';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 {
- *  PMEndDocument()
+ *  PMShowPageSetupDialogAsSheet()
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework  [32-bit only]
+ *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
  }
-function PMEndDocument(printContext: PMPrintContext): OSStatus; external name '_PMEndDocument';
+function PMShowPageSetupDialogAsSheet( printSession: PMPrintSession; pageFormat: PMPageFormat; documentWindow: WindowRef; sheetDoneProc: PMSheetDoneUPP ): OSStatus; external name '_PMShowPageSetupDialogAsSheet';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
 
 {
- *  PMBeginPage()
+ *  PMShowPrintDialogWithOptions()
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework  [32-bit only]
+ *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
  }
-function PMBeginPage(printContext: PMPrintContext; const (*var*) pageFrame: PMRect): OSStatus; external name '_PMBeginPage';
+function PMShowPrintDialogWithOptions( printSession: PMPrintSession; printSettings: PMPrintSettings; pageFormat: PMPageFormat; printDialogOptions: PMPrintDialogOptionFlags; var accepted: Boolean ): OSStatus; external name '_PMShowPrintDialogWithOptions';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 {
- *  PMEndPage()
+ *  PMShowPrintDialogWithOptionsAsSheet()
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework  [32-bit only]
+ *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
  }
-function PMEndPage(printContext: PMPrintContext): OSStatus; external name '_PMEndPage';
+function PMShowPrintDialogWithOptionsAsSheet( printSession: PMPrintSession; printSettings: PMPrintSettings; pageFormat: PMPageFormat; printDialogOptions: PMPrintDialogOptionFlags; documentWindow: WindowRef; sheetDoneProc: PMSheetDoneUPP ): OSStatus; external name '_PMShowPrintDialogWithOptionsAsSheet';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
-{ Printing Dialogs }
-{
- *  PMPageSetupDialog()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMPageSetupDialog(pageFormat: PMPageFormat; var accepted: boolean): OSStatus; external name '_PMPageSetupDialog';
+(*
+#pragma mark
+#pragma mark Presets
+#pragma mark
+*)
 
+{ Presets }
 {
- *  PMPrintDialog()
+ *  PMSessionEnablePrinterPresets()
+ *  
+ *  Summary:
+ *    Enable the use of printer presets in the print dialog.
+ *  
+ *  Discussion:
+ *    Displaying the print dialog on a session after making this call
+ *    will show the presets available for the specified graphics type.
+ *  
+ *  Parameters:
+ *    
+ *    session:
+ *      The session that will be used to present the print dialog.
+ *    
+ *    graphicsType:
+ *      The printer presets in the dialog should be suitable for
+ *      rendering this type of graphic. Currently defined graphics
+ *      types are: "Photo"
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework  [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
  }
-function PMPrintDialog(printSettings: PMPrintSettings; constPageFormat: PMPageFormat; var accepted: boolean): OSStatus; external name '_PMPrintDialog';
-
-{
- *  PMPageSetupDialogInit()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMPageSetupDialogInit(pageFormat: PMPageFormat; var newDialog: PMDialog): OSStatus; external name '_PMPageSetupDialogInit';
-
-{**********************}
-{  PMPrintDialogInit is not recommended. You should instead use }
-{  PMPrintDialogInitWithPageFormat or PMSessionPrintDialogInit }
-{**********************}
-{
- *  PMPrintDialogInit()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMPrintDialogInit(printSettings: PMPrintSettings; var newDialog: PMDialog): OSStatus; external name '_PMPrintDialogInit';
+function PMSessionEnablePrinterPresets( session: PMPrintSession; graphicsType: CFStringRef ): OSStatus; external name '_PMSessionEnablePrinterPresets';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 {
- *  PMPrintDialogInitWithPageFormat()
+ *  PMSessionDisablePrinterPresets()
+ *  
+ *  Summary:
+ *    Disable the use of printer presets in the print dialog.
+ *  
+ *  Parameters:
+ *    
+ *    session:
+ *      The session that will be used to present the print dialog.
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework  [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
  }
-function PMPrintDialogInitWithPageFormat(printSettings: PMPrintSettings; constPageFormat: PMPageFormat; var newDialog: PMDialog): OSStatus; external name '_PMPrintDialogInitWithPageFormat';
+function PMSessionDisablePrinterPresets( session: PMPrintSession ): OSStatus; external name '_PMSessionDisablePrinterPresets';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
-{
- *  PMPrintDialogMain()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMPrintDialogMain(printSettings: PMPrintSettings; constPageFormat: PMPageFormat; var accepted: boolean; myInitProc: PMPrintDialogInitUPP): OSStatus; external name '_PMPrintDialogMain';
+{$endc} {PM_USE_SESSION_APIS}
 
-{
- *  PMPageSetupDialogMain()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMPageSetupDialogMain(pageFormat: PMPageFormat; var accepted: boolean; myInitProc: PMPageSetupDialogInitUPP): OSStatus; external name '_PMPageSetupDialogMain';
+{$endc} {not TARGET_CPU_64}
 
-{$endc}  {PM_USE_SESSION_APIS}
-
-{ Printing Dialog accessors }
-{
- *  PMGetDialogPtr()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMGetDialogPtr(pmDialog_: PMDialog; var theDialog: DialogRef): OSStatus; external name '_PMGetDialogPtr';
-
-{
- *  PMGetModalFilterProc()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMGetModalFilterProc(pmDialog_: PMDialog; var filterProc: ModalFilterUPP): OSStatus; external name '_PMGetModalFilterProc';
-
-{
- *  PMSetModalFilterProc()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMSetModalFilterProc(pmDialog_: PMDialog; filterProc: ModalFilterUPP): OSStatus; external name '_PMSetModalFilterProc';
-
-{
- *  PMGetItemProc()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMGetItemProc(pmDialog_: PMDialog; var itemProc: PMItemUPP): OSStatus; external name '_PMGetItemProc';
-
-{
- *  PMSetItemProc()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMSetItemProc(pmDialog_: PMDialog; itemProc: PMItemUPP): OSStatus; external name '_PMSetItemProc';
-
-{
- *  PMGetDialogAccepted()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMGetDialogAccepted(pmDialog_: PMDialog; var process: boolean): OSStatus; external name '_PMGetDialogAccepted';
-
-{
- *  PMSetDialogAccepted()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMSetDialogAccepted(pmDialog_: PMDialog; process: boolean): OSStatus; external name '_PMSetDialogAccepted';
-
-{
- *  PMGetDialogDone()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMGetDialogDone(pmDialog_: PMDialog; var done: boolean): OSStatus; external name '_PMGetDialogDone';
-
-{
- *  PMSetDialogDone()
- *  
- *  Availability:
- *    Non-Carbon CFM:   not available
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function PMSetDialogDone(pmDialog_: PMDialog; done: boolean): OSStatus; external name '_PMSetDialogDone';
-
-{$ALIGN MAC68K}
-
+{$endc} {TARGET_OS_MAC}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

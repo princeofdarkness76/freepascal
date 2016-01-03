@@ -262,6 +262,7 @@ implementation
          ltvTable.Free;
       end;
 
+<<<<<<< HEAD
     procedure InsertWideInits;
       var
         s: string;
@@ -421,6 +422,29 @@ implementation
         lwiTables.free;
 >>>>>>> graemeg/cpstrnew
       end;
+=======
+
+    Function CheckResourcesUsed : boolean;
+    var
+      hp           : tused_unit;
+      found        : Boolean;
+    begin
+      CheckResourcesUsed:=tf_has_winlike_resources in target_info.flags;
+      if not CheckResourcesUsed then exit;
+
+      hp:=tused_unit(usedunits.first);
+      found:=((current_module.flags and uf_has_resourcefiles)=uf_has_resourcefiles);
+      If not found then
+        While Assigned(hp) and not found do
+          begin
+          Found:=((hp.u.flags and uf_has_resourcefiles)=uf_has_resourcefiles);
+          hp:=tused_unit(hp.next);
+          end;
+      CheckResourcesUsed:=found;
+    end;
+
+    Procedure InsertResourceInfo(ResourcesUsed : boolean);
+>>>>>>> origin/fixes_2.4
 
     procedure InsertWideInitsTablesTable;
       var
@@ -876,6 +900,7 @@ implementation
         { Macpas unit? }
         if m_mac in current_settings.modeswitches then
           AddUnit('macpas');
+<<<<<<< HEAD
 
         if m_iso in current_settings.modeswitches then
           AddUnit('iso7185');
@@ -928,6 +953,8 @@ implementation
         if m_mac in current_settings.modeswitches then
           AddUnit('macpas');
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
         { Profile unit? Needed for go32v2 only }
         if (cs_profile in current_settings.moduleswitches) and
            (target_info.system in [system_i386_go32v2,system_i386_watcom]) then
@@ -1500,6 +1527,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1507,6 +1535,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
          s1,s2  : ^string; {Saves stack space}
          init_procinfo : tcgprocinfo;
          unitname : ansistring;
@@ -1674,6 +1704,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          { consume the semicolon after maps have been updated else conditional compiling expressions
            might cause internal errors, see tw8611 }
          if consume_semicolon_after_uses then
@@ -1687,6 +1718,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
          { create whole program optimisation information (may already be
            updated in the interface, e.g., in case of classrefdef typed
            constants }
@@ -2024,9 +2057,12 @@ type
             exit;
           end;
 
+<<<<<<< HEAD
          { if an Objective-C module, generate rtti and module info }
          MaybeGenerateObjectiveCImageInfo(current_module.globalsymtable,current_module.localsymtable);
 
+=======
+>>>>>>> origin/fixes_2.4
          { do we need to add the variants unit? }
          maybeloadvariantsunit;
 
@@ -2131,6 +2167,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                Message1(unit_u_interface_crc_changed,current_module.ppufilename);
              if store_indirect_crc<>current_module.indirect_crc then
                Message1(unit_u_indirect_crc_changed,current_module.ppufilename);
@@ -2154,6 +2191,11 @@ type
              if store_indirect_crc<>current_module.indirect_crc then
                Message1(unit_u_indirect_crc_changed,current_module.ppufilename^);
 >>>>>>> origin/cpstrnew
+=======
+               Message1(unit_u_interface_crc_changed,current_module.ppufilename^);
+             if store_indirect_crc<>current_module.indirect_crc then
+               Message1(unit_u_indirect_crc_changed,current_module.ppufilename^);
+>>>>>>> origin/fixes_2.4
            end;
 {$ifdef EXTDEBUG}
          if not(cs_compilesystem in current_settings.moduleswitches) then

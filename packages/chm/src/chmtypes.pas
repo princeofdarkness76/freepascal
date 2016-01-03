@@ -35,6 +35,7 @@ interface
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils,xmlcfg;
 
 type
@@ -47,15 +48,23 @@ type
 >>>>>>> origin/fixes_2_2
   Classes, SysUtils; 
   
+=======
+  Classes, SysUtils;
+
+>>>>>>> origin/fixes_2.4
 type
   TSectionName = (snMSCompressed, snUnCompressed);
-  
+
   TSectionNames = set of TSectionName;
+<<<<<<< HEAD
   
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2.4
    { TDirectoryChunk }
 
   TDirectoryChunk = class(TObject)
@@ -78,6 +87,7 @@ type
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -85,6 +95,9 @@ type
 =======
   
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2.4
   { TPMGIDirectoryChunk }
 
   TPMGIDirectoryChunk = class(TDirectoryChunk)
@@ -123,6 +136,7 @@ type
 
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   TValidWindowFieldsEnum = (valid_Unknown1 {:=1},
@@ -176,6 +190,8 @@ type
                 end;
 
 
+=======
+>>>>>>> origin/fixes_2.4
   TTOCIdxHeader = record
     BlockSize: DWord; // 4096
     EntriesOffset: DWord;
@@ -277,6 +293,7 @@ function PageBookInfoRecordSize(ARecord: PTOCEntryPageBookInfo): Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Const defvalidflags = [valid_Navigation_pane_style,valid_Window_style_flags,valid_Initial_window_position,valid_Navigation_pane_width,valid_Buttons,valid_Tab_position];
 =======
@@ -291,12 +308,17 @@ Const defvalidflags = [valid_Navigation_pane_style,valid_Window_style_flags,vali
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 implementation
 uses chmbase;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 function PageBookInfoRecordSize(ARecord: PTOCEntryPageBookInfo): Integer;
 begin
   if (TOC_ENTRY_HAS_CHILDREN and ARecord^.Props) > 0 then
@@ -305,10 +327,13 @@ begin
     Result := 20;
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 { TDirectoryChunk }
 
 function TDirectoryChunk.CanHold(ASize: Integer): Boolean;
@@ -345,6 +370,9 @@ begin
   Inc(FItemCount);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 
   // now put a quickref entry if needed
   if ItemCount mod 5 = 0 then begin
@@ -521,6 +549,7 @@ begin
   Inc(FChunkLevelCount);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -528,6 +557,9 @@ begin
 =======
   
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2.4
   if Final and (ChunkLevelCount < 2) then begin
     FParentChunk.Free;
     FParentChunk := nil;
@@ -549,6 +581,7 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -556,6 +589,9 @@ begin
 =======
   
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2.4
   FParentChunk.WriteEntry(WriteSize, @NewBuffer[0]);
   if Final then FinishBlock;
   //WriteLn(ChunkLevelCount);

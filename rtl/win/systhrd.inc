@@ -98,8 +98,11 @@ var
 
     const
       TLSKey : DWord = $ffffffff;
+<<<<<<< HEAD
     var
       MainThreadIdWin32 : DWORD;
+=======
+>>>>>>> origin/fixes_2.4
 
     procedure SysInitThreadvar(var offset : dword;size : dword);
       begin
@@ -205,6 +208,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       begin
 =======
 =======
@@ -234,10 +238,15 @@ var
 =======
 >>>>>>> origin/fixes_2_2
       begin
+=======
+      begin	    
+>>>>>>> origin/fixes_2.4
 {$ifdef dummy}
-        { I've no clue why this doesn't read dataindex, imo it should (FK) }
+        { it least in the on windows 7 x64, this still doesn't not work, fs:(0x2c) is
+          self referencing on this system (FK) }
         asm
           movl TLSKey,%edx
+<<<<<<< HEAD
           movl $0x2c,%eax
           movl %fs:(%eax),%eax
           movl (%eax,%edx,4),%eax
@@ -245,6 +254,18 @@ var
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+          movl %fs:(0x2c),%eax
+          orl  %eax,%eax
+          jnz  .LAddressInEAX
+		  { this works on Windows 7, but I don't know if it works on other OSes (FK) }
+          movl %fs:(0x18),%eax
+          movl 0xe10(%eax,%edx,4),%eax
+          jmp  .LToDataIndex
+          .LAddressInEAX:
+           movl (%eax,%edx,4),%eax
+          .LToDataIndex:
+>>>>>>> origin/fixes_2.4
           movl %eax,dataindex
         end;
         if DataIndex=nil then
@@ -347,6 +368,32 @@ var
 {$endif FPC_USE_WIN64_SEH or FPC_USE_WIN32_SEH}
       end;
 
+<<<<<<< HEAD
+=======
+    procedure SysInitMultithreading;
+      begin
+        { do not check IsMultiThread, as program could have altered it, out of Delphi habit }
+        
+        { the thread attach/detach code uses locks to avoid multiple calls of this }
+        if TLSKey=$ffffffff then
+         begin
+           { We're still running in single thread mode, setup the TLS }
+           TLSKey:=TlsAlloc;
+           InitThreadVars(@SysRelocateThreadvar);
+		   { allocate the thread vars for the main thread }
+           IsMultiThread:=true;
+         end;
+      end;
+
+    procedure SysFiniMultithreading;
+      begin
+        if IsMultiThread then
+          begin
+            TlsFree(TLSKey);
+            TLSKey:=$ffffffff;
+          end;
+      end;
+>>>>>>> origin/fixes_2.4
 
     function SysBeginThread(sa : Pointer;stacksize : ptruint;
                          ThreadFunction : tthreadfunc;p : pointer;

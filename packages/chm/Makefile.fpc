@@ -39,6 +39,7 @@ units=fasthtmlparser htmlutil paslzx paslzxcomp paslznonslide chmbase chmtypes \
       chmspecialfiles chmsitemap chmwriter chmfilewriter chmreader htmlindexer \
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       chmfiftimain lzxcompressthread itolitlstypes itsftransform itolitlsreader
 programs=chmcmd chmls
 examples=
@@ -50,6 +51,9 @@ packages=rtl fpmkunit
 =======
 >>>>>>> origin/fixes_2_2
       chmfiftimain
+=======
+      chmfiftimain lzxcompressthread
+>>>>>>> origin/fixes_2.4
 programs=chmcmd chmls
 examples=
 

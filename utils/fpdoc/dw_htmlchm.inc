@@ -28,9 +28,14 @@ type
     FCSSFile: String;
     FMakeSearchable,
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    FNoBinToc,
+    FNoBinIndex,
+>>>>>>> origin/fixes_2.4
     FAutoTOC,
     FAutoIndex: Boolean;
     FOtherFiles: String;
@@ -81,6 +86,7 @@ begin
   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if not FileExists(FCSSFile) Then
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -94,10 +100,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+    if not FileExists(FCSSFile) Then
+>>>>>>> origin/fixes_2.4
       begin
         Writeln(stderr,'Can''t find CSS file "',FCSSFILE,'"');
         halt(1);
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -112,6 +122,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
     TempStream := TMemoryStream.Create;
     TempStream.LoadFromFile(FCSSFile);
     TempStream.Position := 0;
@@ -323,6 +335,7 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   if not fnobintoc then
     fchm.AppendBinaryTOCFromSiteMap(Toc);  
@@ -332,6 +345,11 @@ begin
 =======
   
 >>>>>>> origin/fixes_2_2
+=======
+
+  if not fnobintoc then
+    fchm.AppendBinaryTOCFromSiteMap(Toc);  
+>>>>>>> origin/fixes_2.4
   TOC.SaveToStream(Stream);
   TOC.Free;
 
@@ -537,12 +555,17 @@ begin
     Index.SaveToStream(Stream);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if not fnobinindex then
       fchm.AppendBinaryindexFromSitemap(index,false);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    if not fnobinindex then
+      fchm.AppendBinaryindexFromSitemap(index,false);
+>>>>>>> origin/fixes_2.4
     Index.Free;
     Stream.Position :=0 ;
     FChm.AppendIndex(Stream);
@@ -617,11 +640,16 @@ begin
   FChm.TempRawStream := FTempUncompressed;
   FChm.OnGetFileData := @RetrieveOtherFiles;
   FChm.OnLastFile := @LastFileAdded;
+<<<<<<< HEAD
   
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  fchm.hasbinarytoc:=not fnobintoc;;
+  fchm.hasbinaryindex:=not fnobinindex;
+>>>>>>> origin/fixes_2.4
   ProcessOptions;
 
   FileStream := TMemoryStream.Create;
@@ -698,12 +726,17 @@ begin
   Result:=True;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FNoBinToc:=False;
   FnoBinIndex:=False;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  FNoBinToc:=False;
+  FnoBinIndex:=False;
+>>>>>>> origin/fixes_2.4
   if Cmd = '--toc-file' then
     FTOCName := arg
   else if Cmd = '--index-file' then
@@ -728,6 +761,9 @@ begin
     FAutoTOC := True
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
   else if Cmd = '--no-bintoc' then
     FNoBinToc := True
   else if Cmd = '--no-binindex' then

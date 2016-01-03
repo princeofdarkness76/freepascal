@@ -4806,6 +4806,10 @@ implementation
       begin
          result:=true;
       end;
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/fixes_2.4
 
 
 <<<<<<< HEAD
@@ -6577,6 +6581,7 @@ implementation
             sym : ttypesym;
             i : longint;
           begin
+<<<<<<< HEAD
             { we want at least enough space for an ellipsis }
             if maxlength<3 then
               internalerror(2014121203);
@@ -6615,6 +6620,19 @@ implementation
                 fullparas:=fullparas+paramname;
               end;
             result:=fullparas;
+=======
+            inlininginfo^.code.derefimpl;
+            { funcretsym, this is always located in the localst }
+            funcretsym:=tsym(funcretsymderef.resolve);
+          end
+        else
+          begin
+            { safety }
+            { Not safe! A unit may be reresolved after its interface has been
+              parsed but before its implementation has been parsed, and in that
+              case the funcretsym is still required!
+            funcretsym:=nil; }
+>>>>>>> origin/fixes_2.4
           end;
 
       var
@@ -11535,6 +11553,7 @@ implementation
 
 <<<<<<< HEAD
 
+<<<<<<< HEAD
     function tobjectdef.members_need_inittable : boolean;
 >>>>>>> graemeg/cpstrnew
       begin
@@ -11543,6 +11562,58 @@ implementation
 =======
          if df_copied_def in defoptions then
            ppufile.putderef(cloneddefderef);
+=======
+    procedure tobjectdef.ppuwrite(ppufile:tcompilerppufile);
+      var
+         i : longint;
+         vmtentry : pvmtentry;
+         ImplIntf : TImplementedInterface;
+         old_do_indirect_crc: boolean;
+      begin
+         { if class1 in unit A changes, and class2 in unit B inherits from it
+           (so unit B uses unit A), then unit B with class2 will be recompiled.
+           However, if there is also a class3 in unit C that only depends on
+           unit B, then unit C will not be recompiled because nothing changed
+           to the interface of unit B. Nevertheless, unit C can indirectly
+           depend on unit A via derefs, and these must be updated -> the
+           indirect crc keeps track of such changes. }
+         old_do_indirect_crc:=ppufile.do_indirect_crc;
+         ppufile.do_indirect_crc:=true;
+         inherited ppuwrite(ppufile);
+         ppufile.putbyte(byte(objecttype));
+         ppufile.putstring(objrealname^);
+         ppufile.putaint(tObjectSymtable(symtable).datasize);
+         ppufile.putbyte(tObjectSymtable(symtable).fieldalignment);
+         ppufile.putbyte(tObjectSymtable(symtable).recordalignment);
+         ppufile.putlongint(vmt_offset);
+         ppufile.putderef(childofderef);
+         ppufile.putsmallset(objectoptions);
+         if objecttype in [odt_interfacecom,odt_interfacecorba,odt_dispinterface] then
+           begin
+              ppufile.putguid(iidguid^);
+              ppufile.putstring(iidstr^);
+           end;
+
+         ppufile.putlongint(vmtentries.count);
+         for i:=0 to vmtentries.count-1 do
+           begin
+             vmtentry:=pvmtentry(vmtentries[i]);
+             ppufile.putderef(vmtentry^.procdefderef);
+             ppufile.putbyte(byte(vmtentry^.visibility));
+           end;
+
+
+         if assigned(ImplementedInterfaces) then
+           begin
+             ppufile.putlongint(ImplementedInterfaces.Count);
+             for i:=0 to ImplementedInterfaces.Count-1 do
+               begin
+                 ImplIntf:=TImplementedInterface(ImplementedInterfaces[i]);
+                 ppufile.putderef(ImplIntf.intfdefderef);
+                 ppufile.putlongint(ImplIntf.Ioffset);
+               end;
+           end;
+>>>>>>> origin/fixes_2.4
 
          if df_copied_def in defoptions then
            ppufile.putderef(cloneddefderef);
@@ -11552,9 +11623,14 @@ implementation
          if not(df_copied_def in defoptions) then
            tObjectSymtable(symtable).ppuwrite(ppufile);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+         ppufile.do_indirect_crc:=old_do_indirect_crc;
+>>>>>>> origin/fixes_2.4
       end;
 
     function tobjectdef.search_enumerator_get: tprocdef;
@@ -12144,7 +12220,11 @@ implementation
       begin
         result:=false;
         { interfaces being implemented through delegation are not mergable (FK) }
+<<<<<<< HEAD
         if (IType<>etStandard) or (MergingIntf.IType<>etStandard) or not(assigned(ProcDefs)) or not(assigned(MergingIntf.ProcDefs)) then
+=======
+        if (IType<>etStandard) or (MergingIntf.IType<>etStandard) or not(assigned(ProcDefs)) then
+>>>>>>> origin/fixes_2.4
           exit;
         weight:=0;
         { empty interface is mergeable }

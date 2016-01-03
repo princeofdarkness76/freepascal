@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       LSOpen.h
  
      Contains:   Public interfaces for LaunchServices.framework
@@ -15,6 +16,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
      File:       LaunchServices/LSOpen.h
  
      Contains:   Public interfaces for LaunchServices.framework
@@ -25,6 +28,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -32,10 +36,13 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -49,10 +56,13 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
                      http://www.freepascal.org/bugs.html
  
 }
 {	 Pascal Translation: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -63,6 +73,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -123,6 +135,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -136,6 +149,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -158,6 +173,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -183,6 +199,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -193,6 +214,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -218,6 +240,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -228,6 +255,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -237,6 +265,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -250,6 +280,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -259,6 +290,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -269,6 +302,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -300,6 +334,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -310,15 +349,19 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
@@ -358,6 +401,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/fixes_2.4
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -436,6 +483,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kLSLaunchHasUntrustedContents = $00400000;  { Mark items to be opened as untrusted}
 =======
 	kLSLaunchHasUntrustedContents = $00400000; { Mark items to be opened as untrusted}
@@ -449,6 +497,9 @@ const
 =======
 	kLSLaunchHasUntrustedContents = $00400000; { Mark items to be opened as untrusted}
 >>>>>>> origin/cpstrnew
+=======
+	kLSLaunchHasUntrustedContents = $00400000; { Mark items to be opened as untrusted}
+>>>>>>> origin/fixes_2.4
 
 type
 	LSLaunchFSRefSpec = record
@@ -505,6 +556,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -518,10 +570,14 @@ type
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSOpenFSRef( const (*var*) inRef: FSRef; outLaunchedRef: FSRefPtr { can be NULL } ): OSStatus; external name '_LSOpenFSRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -539,6 +595,9 @@ function LSOpenFSRef( const (*var*) inRef: FSRef; outLaunchedRef: FSRefPtr { can
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -574,6 +633,7 @@ function LSOpenFSRef( const (*var*) inRef: FSRef; outLaunchedRef: FSRefPtr { can
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -587,10 +647,14 @@ function LSOpenFSRef( const (*var*) inRef: FSRef; outLaunchedRef: FSRefPtr { can
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSOpenCFURLRef( inURL: CFURLRef; outLaunchedURL: CFURLRefPtr { can be NULL } ): OSStatus; external name '_LSOpenCFURLRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -608,6 +672,9 @@ function LSOpenCFURLRef( inURL: CFURLRef; outLaunchedURL: CFURLRefPtr { can be N
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -637,6 +704,7 @@ function LSOpenCFURLRef( inURL: CFURLRef; outLaunchedURL: CFURLRefPtr { can be N
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -650,10 +718,14 @@ function LSOpenCFURLRef( inURL: CFURLRef; outLaunchedURL: CFURLRefPtr { can be N
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSOpenFromRefSpec( const (*var*) inLaunchSpec: LSLaunchFSRefSpec; outLaunchedRef: FSRefPtr { can be NULL } ): OSStatus; external name '_LSOpenFromRefSpec';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -671,6 +743,9 @@ function LSOpenFromRefSpec( const (*var*) inLaunchSpec: LSLaunchFSRefSpec; outLa
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -702,6 +777,7 @@ function LSOpenFromRefSpec( const (*var*) inLaunchSpec: LSLaunchFSRefSpec; outLa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -715,10 +791,14 @@ function LSOpenFromRefSpec( const (*var*) inLaunchSpec: LSLaunchFSRefSpec; outLa
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSOpenFromURLSpec( const (*var*) inLaunchSpec: LSLaunchURLSpec; outLaunchedURL: CFURLRefPtr { can be NULL } ): OSStatus; external name '_LSOpenFromURLSpec';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -736,6 +816,9 @@ function LSOpenFromURLSpec( const (*var*) inLaunchSpec: LSLaunchURLSpec; outLaun
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 { ================================================================================== }
@@ -794,6 +877,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -807,10 +891,14 @@ type
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/cpstrnew
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSOpenApplication( const (*var*) appParams: LSApplicationParameters; outPSN: ProcessSerialNumberPtr { can be NULL } ): OSStatus; external name '_LSOpenApplication';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -828,6 +916,9 @@ function LSOpenApplication( const (*var*) appParams: LSApplicationParameters; ou
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -868,6 +959,7 @@ function LSOpenApplication( const (*var*) appParams: LSApplicationParameters; ou
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -881,10 +973,14 @@ function LSOpenApplication( const (*var*) appParams: LSApplicationParameters; ou
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/cpstrnew
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSOpenItemsWithRole( const (*var*) inItems: FSRef; inItemCount: CFIndex; inRole: LSRolesMask; {const} inAEParam: AEKeyDescPtr { can be NULL }; {const} inAppParams: LSApplicationParametersPtr { can be NULL }; outPSNs: ProcessSerialNumberPtr { can be NULL }; inMaxPSNCount: CFIndex ): OSStatus; external name '_LSOpenItemsWithRole';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -902,6 +998,9 @@ function LSOpenItemsWithRole( const (*var*) inItems: FSRef; inItemCount: CFIndex
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -945,6 +1044,7 @@ function LSOpenItemsWithRole( const (*var*) inItems: FSRef; inItemCount: CFIndex
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -958,10 +1058,14 @@ function LSOpenItemsWithRole( const (*var*) inItems: FSRef; inItemCount: CFIndex
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/cpstrnew
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSOpenURLsWithRole( inURLs: CFArrayRef; inRole: LSRolesMask; {const} inAEParam: AEKeyDescPtr { can be NULL }; {const} inAppParams: LSApplicationParametersPtr { can be NULL }; outPSNs: ProcessSerialNumberPtr { can be NULL }; inMaxPSNCount: CFIndex ): OSStatus; external name '_LSOpenURLsWithRole';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -979,6 +1083,9 @@ function LSOpenURLsWithRole( inURLs: CFArrayRef; inRole: LSRolesMask; {const} in
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {$endc} {TARGET_OS_MAC}

@@ -1194,6 +1194,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   case State of
     dsCalcFields, dsInternalCalc:
       FieldRow := PPDataRecord(CalcBuffer)^^.Row[FieldOffset];
@@ -1209,6 +1210,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
   if not (State in [dsCalcFields, dsInternalCalc]) then
     FieldRow := PPDataRecord(ActiveBuffer)^^.Row[FieldOffset]
   else
@@ -2139,15 +2142,20 @@ var
   TempItem: PDataRecord;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SaveState: TDataSetState;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  SaveState: TDataSetState;
+>>>>>>> origin/fixes_2.4
 begin
   CheckBrowseMode;
   TempItem := FindRecordItem(FBeginItem^.Next, KeyFields, KeyValues, [], False);
   if TempItem <> nil then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   begin
@@ -2175,6 +2183,13 @@ begin
       CalculateFields(PChar(@TempItem));
       Result := FieldByName(ResultFields).Value;
 >>>>>>> origin/cpstrnew
+=======
+  begin
+    SaveState := SetTempState(dsInternalCalc);
+    try
+      CalculateFields(PChar(@TempItem));
+      Result := FieldByName(ResultFields).Value;
+>>>>>>> origin/fixes_2.4
     finally
       RestoreState(SaveState);
     end;

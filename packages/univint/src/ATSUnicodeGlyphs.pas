@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    Quickdraw-285~150
 =======
      Version:    Quickdraw-262~1
@@ -34,6 +35,11 @@
  
      Copyright:  © 2003 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2_2
+=======
+     Version:    Quickdraw-262~1
+ 
+     Copyright:  © 2003-2008 by Apple Inc. all rights reserved.
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -74,18 +80,21 @@
  
 }
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
-
-
+{	  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -94,6 +103,7 @@
 
 unit ATSUnicodeGlyphs;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -106,6 +116,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -120,6 +134,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -127,21 +142,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -149,6 +173,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -159,6 +186,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -176,6 +204,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -183,10 +213,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -194,6 +227,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -432,18 +466,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -471,12 +562,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -489,12 +583,16 @@ interface
 uses MacTypes,ATSUnicodeTypes,TextCommon,ATSTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
 
 {$ALIGN POWER}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -514,12 +612,15 @@ uses MacTypes,ATSUnicodeTypes,TextCommon,ATSTypes;
 =======
 {$ALIGN MAC68K}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 { ---------------------------------------------------------------------------- }
 { ATSUI glyph metrics                                                          }
 { ---------------------------------------------------------------------------- }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
@@ -539,6 +640,17 @@ uses MacTypes,ATSUnicodeTypes,TextCommon,ATSTypes;
 {
  *  ATSUGlyphGetIdealMetrics()
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+{
+ *  ATSUGlyphGetIdealMetrics()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use CTFontGetGlyphWithName,
+ *    CTFontGetVerticalTranslationsForGlyphs,
+ *    CTFontGetBoundingRectsForGlyphs, or CTFontGetAdvancesForGlyphs
+ *    instead.
+>>>>>>> origin/fixes_2.4
  *  
  *  Summary:
  *    Obtains resolution-independent font metric information for glyphs
@@ -594,6 +706,7 @@ uses MacTypes,ATSUnicodeTypes,TextCommon,ATSTypes;
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 9.1 and later
@@ -613,19 +726,31 @@ function ATSUGlyphGetIdealMetrics( iATSUStyle: ATSUStyle; iNumOfGlyphs: ItemCoun
 =======
 >>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 9.1 and later
  }
-// AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
-function ATSUGlyphGetIdealMetrics( iATSUStyle: ATSUStyle; iNumOfGlyphs: ItemCount; iGlyphIDs: GlyphIDPtr; iInputOffset: ByteOffset; oIdealMetrics: ATSGlyphIdealMetricsPtr ): OSStatus; external name '_ATSUGlyphGetIdealMetrics';
+function ATSUGlyphGetIdealMetrics( iATSUStyle: ATSUStyle; iNumOfGlyphs: ItemCount; iGlyphIDs: {variable-size-array} GlyphIDPtr; iInputOffset: ByteOffset; oIdealMetrics: {variable-size-array} ATSGlyphIdealMetricsPtr ): OSStatus; external name '_ATSUGlyphGetIdealMetrics';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 
 
 {
+<<<<<<< HEAD
  *  ATSUGlyphGetScreenMetrics()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  ATSUGlyphGetScreenMetrics()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use CTFontGetBoundingBox, CTFontGetUnderlinePosition,
+ *    CTFontGetUnderlineThickness, CTFontGetSlantAngle,
+ *    CTFontGetCapHeight, or CTFontGetXHeight iinstead.
+>>>>>>> origin/fixes_2.4
  *  
  *  Summary:
  *    Obtains device-adjusted font metric information for glyphs
@@ -681,6 +806,7 @@ function ATSUGlyphGetIdealMetrics( iATSUStyle: ATSUStyle; iNumOfGlyphs: ItemCoun
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 9.1 and later
@@ -700,6 +826,14 @@ function ATSUGlyphGetScreenMetrics( iATSUStyle: ATSUStyle; iNumOfGlyphs: ItemCou
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in ATSUnicodeLib 9.1 and later
+ }
+function ATSUGlyphGetScreenMetrics( iATSUStyle: ATSUStyle; iNumOfGlyphs: ItemCount; iGlyphIDs: {variable-size-array} GlyphIDPtr; iInputOffset: ByteOffset; iForcingAntiAlias: Boolean; iAntiAliasSwitch: Boolean; oScreenMetrics: {variable-size-array} ATSGlyphScreenMetricsPtr ): OSStatus; external name '_ATSUGlyphGetScreenMetrics';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 
 { ---------------------------------------------------------------------------- }
@@ -708,16 +842,22 @@ function ATSUGlyphGetScreenMetrics( iATSUStyle: ATSUStyle; iNumOfGlyphs: ItemCou
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *  ATSUGetNativeCurveType()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTFontCreatePathForGlyph instead.
+<<<<<<< HEAD
 =======
  *  ATSUGetNativeCurveType()
 >>>>>>> graemeg/fixes_2_2
 =======
  *  ATSUGetNativeCurveType()
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Summary:
  *    Returns the native curve format for a specific font.
@@ -750,6 +890,7 @@ function ATSUGlyphGetScreenMetrics( iATSUStyle: ATSUStyle; iNumOfGlyphs: ItemCou
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 9.1 and later
@@ -763,15 +904,24 @@ function ATSUGetNativeCurveType( iATSUStyle: ATSUStyle; var oCurveType: ATSCurve
 =======
 >>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 9.1 and later
  }
-// AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function ATSUGetNativeCurveType( iATSUStyle: ATSUStyle; var oCurveType: ATSCurveType ): OSStatus; external name '_ATSUGetNativeCurveType';
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+
+{$endc} {not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -797,6 +947,7 @@ function ATSUGetNativeCurveType( iATSUStyle: ATSUStyle; var oCurveType: ATSCurve
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	ATSQuadraticNewPathProcPtr = function( callBackDataPtr: UnivPtr ): OSStatus;
 	ATSQuadraticNewPathUPP = ATSQuadraticNewPathProcPtr;
@@ -812,6 +963,11 @@ type ATSQuadraticNewPathUPP = Ptr;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+type
+	ATSQuadraticNewPathProcPtr = function( callBackDataPtr: UnivPtr ): OSStatus;
+	ATSQuadraticNewPathUPP = ATSQuadraticNewPathProcPtr;
+>>>>>>> origin/fixes_2.4
 {
  *  NewATSQuadraticNewPathUPP()
  *  
@@ -820,6 +976,7 @@ type ATSQuadraticNewPathUPP = Ptr;
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function NewATSQuadraticNewPathUPP( userRoutine: ATSQuadraticNewPathProcPtr ): ATSQuadraticNewPathUPP; external name '_NewATSQuadraticNewPathUPP';
@@ -832,6 +989,10 @@ function NewATSQuadraticNewPathUPP( userRoutine: ATSQuadraticNewPathProcPtr ): A
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function NewATSQuadraticNewPathUPP( userRoutine: ATSQuadraticNewPathProcPtr ): ATSQuadraticNewPathUPP; external name '_NewATSQuadraticNewPathUPP';
 >>>>>>> origin/fixes_2_2
+=======
+function NewATSQuadraticNewPathUPP( userRoutine: ATSQuadraticNewPathProcPtr ): ATSQuadraticNewPathUPP; external name '_NewATSQuadraticNewPathUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  DisposeATSQuadraticNewPathUPP()
@@ -843,6 +1004,7 @@ function NewATSQuadraticNewPathUPP( userRoutine: ATSQuadraticNewPathProcPtr ): A
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure DisposeATSQuadraticNewPathUPP( userUPP: ATSQuadraticNewPathUPP ); external name '_DisposeATSQuadraticNewPathUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
@@ -853,6 +1015,10 @@ procedure DisposeATSQuadraticNewPathUPP( userUPP: ATSQuadraticNewPathUPP ); exte
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 procedure DisposeATSQuadraticNewPathUPP( userUPP: ATSQuadraticNewPathUPP ); external name '_DisposeATSQuadraticNewPathUPP';
 >>>>>>> origin/fixes_2_2
+=======
+procedure DisposeATSQuadraticNewPathUPP( userUPP: ATSQuadraticNewPathUPP ); external name '_DisposeATSQuadraticNewPathUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  InvokeATSQuadraticNewPathUPP()
@@ -864,6 +1030,7 @@ procedure DisposeATSQuadraticNewPathUPP( userUPP: ATSQuadraticNewPathUPP ); exte
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function InvokeATSQuadraticNewPathUPP( callBackDataPtr: UnivPtr; userUPP: ATSQuadraticNewPathUPP ): OSStatus; external name '_InvokeATSQuadraticNewPathUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
@@ -876,6 +1043,10 @@ function InvokeATSQuadraticNewPathUPP( callBackDataPtr: UnivPtr; userUPP: ATSQua
 function InvokeATSQuadraticNewPathUPP( callBackDataPtr: UnivPtr; userUPP: ATSQuadraticNewPathUPP ): OSStatus; external name '_InvokeATSQuadraticNewPathUPP';
 
 >>>>>>> origin/fixes_2_2
+=======
+function InvokeATSQuadraticNewPathUPP( callBackDataPtr: UnivPtr; userUPP: ATSQuadraticNewPathUPP ): OSStatus; external name '_InvokeATSQuadraticNewPathUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  ATSQuadraticLineProcPtr
@@ -906,6 +1077,7 @@ function InvokeATSQuadraticNewPathUPP( callBackDataPtr: UnivPtr; userUPP: ATSQua
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	ATSQuadraticLineProcPtr = function( const (*var*) pt1: Float32Point; const (*var*) pt2: Float32Point; callBackDataPtr: UnivPtr ): OSStatus;
 	ATSQuadraticLineUPP = ATSQuadraticLineProcPtr;
@@ -920,6 +1092,11 @@ type ATSQuadraticLineUPP = Ptr;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+type
+	ATSQuadraticLineProcPtr = function( const (*var*) pt1: Float32Point; const (*var*) pt2: Float32Point; callBackDataPtr: UnivPtr ): OSStatus;
+	ATSQuadraticLineUPP = ATSQuadraticLineProcPtr;
+>>>>>>> origin/fixes_2.4
 {
  *  NewATSQuadraticLineUPP()
  *  
@@ -928,6 +1105,7 @@ type ATSQuadraticLineUPP = Ptr;
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function NewATSQuadraticLineUPP( userRoutine: ATSQuadraticLineProcPtr ): ATSQuadraticLineUPP; external name '_NewATSQuadraticLineUPP';
@@ -940,6 +1118,10 @@ function NewATSQuadraticLineUPP( userRoutine: ATSQuadraticLineProcPtr ): ATSQuad
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function NewATSQuadraticLineUPP( userRoutine: ATSQuadraticLineProcPtr ): ATSQuadraticLineUPP; external name '_NewATSQuadraticLineUPP';
 >>>>>>> origin/fixes_2_2
+=======
+function NewATSQuadraticLineUPP( userRoutine: ATSQuadraticLineProcPtr ): ATSQuadraticLineUPP; external name '_NewATSQuadraticLineUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  DisposeATSQuadraticLineUPP()
@@ -951,6 +1133,7 @@ function NewATSQuadraticLineUPP( userRoutine: ATSQuadraticLineProcPtr ): ATSQuad
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure DisposeATSQuadraticLineUPP( userUPP: ATSQuadraticLineUPP ); external name '_DisposeATSQuadraticLineUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
@@ -961,6 +1144,10 @@ procedure DisposeATSQuadraticLineUPP( userUPP: ATSQuadraticLineUPP ); external n
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 procedure DisposeATSQuadraticLineUPP( userUPP: ATSQuadraticLineUPP ); external name '_DisposeATSQuadraticLineUPP';
 >>>>>>> origin/fixes_2_2
+=======
+procedure DisposeATSQuadraticLineUPP( userUPP: ATSQuadraticLineUPP ); external name '_DisposeATSQuadraticLineUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  InvokeATSQuadraticLineUPP()
@@ -970,6 +1157,7 @@ procedure DisposeATSQuadraticLineUPP( userUPP: ATSQuadraticLineUPP ); external n
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function InvokeATSQuadraticLineUPP( const (*var*) pt1: Float32Point; const (*var*) pt2: Float32Point; callBackDataPtr: UnivPtr; userUPP: ATSQuadraticLineUPP ): OSStatus; external name '_InvokeATSQuadraticLineUPP';
@@ -984,6 +1172,10 @@ function InvokeATSQuadraticLineUPP( const (*var*) pt1, pt2: Float32Point; callBa
 function InvokeATSQuadraticLineUPP( const (*var*) pt1, pt2: Float32Point; callBackDataPtr: UnivPtr; userUPP: ATSQuadraticLineUPP ): OSStatus; external name '_InvokeATSQuadraticLineUPP';
 
 >>>>>>> origin/fixes_2_2
+=======
+function InvokeATSQuadraticLineUPP( const (*var*) pt1: Float32Point; const (*var*) pt2: Float32Point; callBackDataPtr: UnivPtr; userUPP: ATSQuadraticLineUPP ): OSStatus; external name '_InvokeATSQuadraticLineUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  ATSQuadraticCurveProcPtr
@@ -1019,6 +1211,7 @@ function InvokeATSQuadraticLineUPP( const (*var*) pt1, pt2: Float32Point; callBa
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	ATSQuadraticCurveProcPtr = function( const (*var*) pt1: Float32Point; const (*var*) controlPt: Float32Point; const (*var*) pt2: Float32Point; callBackDataPtr: UnivPtr ): OSStatus;
 	ATSQuadraticCurveUPP = ATSQuadraticCurveProcPtr;
@@ -1033,6 +1226,11 @@ type ATSQuadraticCurveUPP = Ptr;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+type
+	ATSQuadraticCurveProcPtr = function( const (*var*) pt1: Float32Point; const (*var*) controlPt: Float32Point; const (*var*) pt2: Float32Point; callBackDataPtr: UnivPtr ): OSStatus;
+	ATSQuadraticCurveUPP = ATSQuadraticCurveProcPtr;
+>>>>>>> origin/fixes_2.4
 {
  *  NewATSQuadraticCurveUPP()
  *  
@@ -1041,6 +1239,7 @@ type ATSQuadraticCurveUPP = Ptr;
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function NewATSQuadraticCurveUPP( userRoutine: ATSQuadraticCurveProcPtr ): ATSQuadraticCurveUPP; external name '_NewATSQuadraticCurveUPP';
@@ -1053,6 +1252,10 @@ function NewATSQuadraticCurveUPP( userRoutine: ATSQuadraticCurveProcPtr ): ATSQu
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function NewATSQuadraticCurveUPP( userRoutine: ATSQuadraticCurveProcPtr ): ATSQuadraticCurveUPP; external name '_NewATSQuadraticCurveUPP';
 >>>>>>> origin/fixes_2_2
+=======
+function NewATSQuadraticCurveUPP( userRoutine: ATSQuadraticCurveProcPtr ): ATSQuadraticCurveUPP; external name '_NewATSQuadraticCurveUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  DisposeATSQuadraticCurveUPP()
@@ -1064,6 +1267,7 @@ function NewATSQuadraticCurveUPP( userRoutine: ATSQuadraticCurveProcPtr ): ATSQu
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure DisposeATSQuadraticCurveUPP( userUPP: ATSQuadraticCurveUPP ); external name '_DisposeATSQuadraticCurveUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
@@ -1074,6 +1278,10 @@ procedure DisposeATSQuadraticCurveUPP( userUPP: ATSQuadraticCurveUPP ); external
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 procedure DisposeATSQuadraticCurveUPP( userUPP: ATSQuadraticCurveUPP ); external name '_DisposeATSQuadraticCurveUPP';
 >>>>>>> origin/fixes_2_2
+=======
+procedure DisposeATSQuadraticCurveUPP( userUPP: ATSQuadraticCurveUPP ); external name '_DisposeATSQuadraticCurveUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  InvokeATSQuadraticCurveUPP()
@@ -1083,6 +1291,7 @@ procedure DisposeATSQuadraticCurveUPP( userUPP: ATSQuadraticCurveUPP ); external
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function InvokeATSQuadraticCurveUPP( const (*var*) pt1: Float32Point; const (*var*) controlPt: Float32Point; const (*var*) pt2: Float32Point; callBackDataPtr: UnivPtr; userUPP: ATSQuadraticCurveUPP ): OSStatus; external name '_InvokeATSQuadraticCurveUPP';
@@ -1097,6 +1306,10 @@ function InvokeATSQuadraticCurveUPP( const (*var*) pt1, controlPt, pt2: Float32P
 function InvokeATSQuadraticCurveUPP( const (*var*) pt1, controlPt, pt2: Float32Point; callBackDataPtr: UnivPtr; userUPP: ATSQuadraticCurveUPP ): OSStatus; external name '_InvokeATSQuadraticCurveUPP';
 
 >>>>>>> origin/fixes_2_2
+=======
+function InvokeATSQuadraticCurveUPP( const (*var*) pt1: Float32Point; const (*var*) controlPt: Float32Point; const (*var*) pt2: Float32Point; callBackDataPtr: UnivPtr; userUPP: ATSQuadraticCurveUPP ): OSStatus; external name '_InvokeATSQuadraticCurveUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  ATSQuadraticClosePathProcPtr
@@ -1121,6 +1334,7 @@ function InvokeATSQuadraticCurveUPP( const (*var*) pt1, controlPt, pt2: Float32P
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	ATSQuadraticClosePathProcPtr = function( callBackDataPtr: UnivPtr ): OSStatus;
 	ATSQuadraticClosePathUPP = ATSQuadraticClosePathProcPtr;
@@ -1135,6 +1349,11 @@ type ATSQuadraticClosePathUPP = Ptr;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+type
+	ATSQuadraticClosePathProcPtr = function( callBackDataPtr: UnivPtr ): OSStatus;
+	ATSQuadraticClosePathUPP = ATSQuadraticClosePathProcPtr;
+>>>>>>> origin/fixes_2.4
 {
  *  NewATSQuadraticClosePathUPP()
  *  
@@ -1143,6 +1362,7 @@ type ATSQuadraticClosePathUPP = Ptr;
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function NewATSQuadraticClosePathUPP( userRoutine: ATSQuadraticClosePathProcPtr ): ATSQuadraticClosePathUPP; external name '_NewATSQuadraticClosePathUPP';
@@ -1155,6 +1375,10 @@ function NewATSQuadraticClosePathUPP( userRoutine: ATSQuadraticClosePathProcPtr 
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function NewATSQuadraticClosePathUPP( userRoutine: ATSQuadraticClosePathProcPtr ): ATSQuadraticClosePathUPP; external name '_NewATSQuadraticClosePathUPP';
 >>>>>>> origin/fixes_2_2
+=======
+function NewATSQuadraticClosePathUPP( userRoutine: ATSQuadraticClosePathProcPtr ): ATSQuadraticClosePathUPP; external name '_NewATSQuadraticClosePathUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  DisposeATSQuadraticClosePathUPP()
@@ -1166,6 +1390,7 @@ function NewATSQuadraticClosePathUPP( userRoutine: ATSQuadraticClosePathProcPtr 
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure DisposeATSQuadraticClosePathUPP( userUPP: ATSQuadraticClosePathUPP ); external name '_DisposeATSQuadraticClosePathUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
@@ -1176,6 +1401,10 @@ procedure DisposeATSQuadraticClosePathUPP( userUPP: ATSQuadraticClosePathUPP ); 
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 procedure DisposeATSQuadraticClosePathUPP( userUPP: ATSQuadraticClosePathUPP ); external name '_DisposeATSQuadraticClosePathUPP';
 >>>>>>> origin/fixes_2_2
+=======
+procedure DisposeATSQuadraticClosePathUPP( userUPP: ATSQuadraticClosePathUPP ); external name '_DisposeATSQuadraticClosePathUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  InvokeATSQuadraticClosePathUPP()
@@ -1185,6 +1414,7 @@ procedure DisposeATSQuadraticClosePathUPP( userUPP: ATSQuadraticClosePathUPP ); 
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function InvokeATSQuadraticClosePathUPP( callBackDataPtr: UnivPtr; userUPP: ATSQuadraticClosePathUPP ): OSStatus; external name '_InvokeATSQuadraticClosePathUPP';
@@ -1200,14 +1430,25 @@ function InvokeATSQuadraticClosePathUPP( callBackDataPtr: UnivPtr; userUPP: ATSQ
 =======
 >>>>>>> origin/fixes_2_2
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
+=======
+>>>>>>> origin/fixes_2.4
 function InvokeATSQuadraticClosePathUPP( callBackDataPtr: UnivPtr; userUPP: ATSQuadraticClosePathUPP ): OSStatus; external name '_InvokeATSQuadraticClosePathUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 
+{$ifc not TARGET_CPU_64}
 {
+<<<<<<< HEAD
  *  ATSUGlyphGetQuadraticPaths()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  ATSUGlyphGetQuadraticPaths()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use CTFontCreatePathForGlyph instead.
+>>>>>>> origin/fixes_2.4
  *  
  *  Summary:
  *    Uses a callback mechanism to obtain a set of Quadratic outlines
@@ -1278,6 +1519,7 @@ function InvokeATSQuadraticClosePathUPP( callBackDataPtr: UnivPtr; userUPP: ATSQ
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 9.1 and later
@@ -1291,15 +1533,24 @@ function ATSUGlyphGetQuadraticPaths( iATSUStyle: ATSUStyle; iGlyphID: GlyphID; i
 =======
 >>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 9.1 and later
  }
-// AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function ATSUGlyphGetQuadraticPaths( iATSUStyle: ATSUStyle; iGlyphID: GlyphID; iNewPathProc: ATSQuadraticNewPathUPP; iLineProc: ATSQuadraticLineUPP; iCurveProc: ATSQuadraticCurveUPP; iClosePathProc: ATSQuadraticClosePathUPP; iCallbackDataPtr: UnivPtr; var oCallbackResult: OSStatus ): OSStatus; external name '_ATSUGlyphGetQuadraticPaths';
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+
+{$endc} {not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1328,6 +1579,7 @@ function ATSUGlyphGetQuadraticPaths( iATSUStyle: ATSUStyle; iGlyphID: GlyphID; i
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	ATSCubicMoveToProcPtr = function( const (*var*) pt: Float32Point; callBackDataPtr: UnivPtr ): OSStatus;
 	ATSCubicMoveToUPP = ATSCubicMoveToProcPtr;
@@ -1342,6 +1594,11 @@ type ATSCubicMoveToUPP = Ptr;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+type
+	ATSCubicMoveToProcPtr = function( const (*var*) pt: Float32Point; callBackDataPtr: UnivPtr ): OSStatus;
+	ATSCubicMoveToUPP = ATSCubicMoveToProcPtr;
+>>>>>>> origin/fixes_2.4
 {
  *  NewATSCubicMoveToUPP()
  *  
@@ -1350,6 +1607,7 @@ type ATSCubicMoveToUPP = Ptr;
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function NewATSCubicMoveToUPP( userRoutine: ATSCubicMoveToProcPtr ): ATSCubicMoveToUPP; external name '_NewATSCubicMoveToUPP';
@@ -1362,6 +1620,10 @@ function NewATSCubicMoveToUPP( userRoutine: ATSCubicMoveToProcPtr ): ATSCubicMov
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function NewATSCubicMoveToUPP( userRoutine: ATSCubicMoveToProcPtr ): ATSCubicMoveToUPP; external name '_NewATSCubicMoveToUPP';
 >>>>>>> origin/fixes_2_2
+=======
+function NewATSCubicMoveToUPP( userRoutine: ATSCubicMoveToProcPtr ): ATSCubicMoveToUPP; external name '_NewATSCubicMoveToUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  DisposeATSCubicMoveToUPP()
@@ -1373,6 +1635,7 @@ function NewATSCubicMoveToUPP( userRoutine: ATSCubicMoveToProcPtr ): ATSCubicMov
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure DisposeATSCubicMoveToUPP( userUPP: ATSCubicMoveToUPP ); external name '_DisposeATSCubicMoveToUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
@@ -1383,6 +1646,10 @@ procedure DisposeATSCubicMoveToUPP( userUPP: ATSCubicMoveToUPP ); external name 
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 procedure DisposeATSCubicMoveToUPP( userUPP: ATSCubicMoveToUPP ); external name '_DisposeATSCubicMoveToUPP';
 >>>>>>> origin/fixes_2_2
+=======
+procedure DisposeATSCubicMoveToUPP( userUPP: ATSCubicMoveToUPP ); external name '_DisposeATSCubicMoveToUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  InvokeATSCubicMoveToUPP()
@@ -1394,6 +1661,7 @@ procedure DisposeATSCubicMoveToUPP( userUPP: ATSCubicMoveToUPP ); external name 
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function InvokeATSCubicMoveToUPP( const (*var*) pt: Float32Point; callBackDataPtr: UnivPtr; userUPP: ATSCubicMoveToUPP ): OSStatus; external name '_InvokeATSCubicMoveToUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
@@ -1406,6 +1674,10 @@ function InvokeATSCubicMoveToUPP( const (*var*) pt: Float32Point; callBackDataPt
 function InvokeATSCubicMoveToUPP( const (*var*) pt: Float32Point; callBackDataPtr: UnivPtr; userUPP: ATSCubicMoveToUPP ): OSStatus; external name '_InvokeATSCubicMoveToUPP';
 
 >>>>>>> origin/fixes_2_2
+=======
+function InvokeATSCubicMoveToUPP( const (*var*) pt: Float32Point; callBackDataPtr: UnivPtr; userUPP: ATSCubicMoveToUPP ): OSStatus; external name '_InvokeATSCubicMoveToUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  ATSCubicLineToProcPtr
@@ -1434,6 +1706,7 @@ function InvokeATSCubicMoveToUPP( const (*var*) pt: Float32Point; callBackDataPt
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	ATSCubicLineToProcPtr = function( const (*var*) pt: Float32Point; callBackDataPtr: UnivPtr ): OSStatus;
 	ATSCubicLineToUPP = ATSCubicLineToProcPtr;
@@ -1448,6 +1721,11 @@ type ATSCubicLineToUPP = Ptr;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+type
+	ATSCubicLineToProcPtr = function( const (*var*) pt: Float32Point; callBackDataPtr: UnivPtr ): OSStatus;
+	ATSCubicLineToUPP = ATSCubicLineToProcPtr;
+>>>>>>> origin/fixes_2.4
 {
  *  NewATSCubicLineToUPP()
  *  
@@ -1456,6 +1734,7 @@ type ATSCubicLineToUPP = Ptr;
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function NewATSCubicLineToUPP( userRoutine: ATSCubicLineToProcPtr ): ATSCubicLineToUPP; external name '_NewATSCubicLineToUPP';
@@ -1468,6 +1747,10 @@ function NewATSCubicLineToUPP( userRoutine: ATSCubicLineToProcPtr ): ATSCubicLin
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function NewATSCubicLineToUPP( userRoutine: ATSCubicLineToProcPtr ): ATSCubicLineToUPP; external name '_NewATSCubicLineToUPP';
 >>>>>>> origin/fixes_2_2
+=======
+function NewATSCubicLineToUPP( userRoutine: ATSCubicLineToProcPtr ): ATSCubicLineToUPP; external name '_NewATSCubicLineToUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  DisposeATSCubicLineToUPP()
@@ -1479,6 +1762,7 @@ function NewATSCubicLineToUPP( userRoutine: ATSCubicLineToProcPtr ): ATSCubicLin
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure DisposeATSCubicLineToUPP( userUPP: ATSCubicLineToUPP ); external name '_DisposeATSCubicLineToUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
@@ -1489,6 +1773,10 @@ procedure DisposeATSCubicLineToUPP( userUPP: ATSCubicLineToUPP ); external name 
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 procedure DisposeATSCubicLineToUPP( userUPP: ATSCubicLineToUPP ); external name '_DisposeATSCubicLineToUPP';
 >>>>>>> origin/fixes_2_2
+=======
+procedure DisposeATSCubicLineToUPP( userUPP: ATSCubicLineToUPP ); external name '_DisposeATSCubicLineToUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  InvokeATSCubicLineToUPP()
@@ -1500,6 +1788,7 @@ procedure DisposeATSCubicLineToUPP( userUPP: ATSCubicLineToUPP ); external name 
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function InvokeATSCubicLineToUPP( const (*var*) pt: Float32Point; callBackDataPtr: UnivPtr; userUPP: ATSCubicLineToUPP ): OSStatus; external name '_InvokeATSCubicLineToUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
@@ -1512,6 +1801,10 @@ function InvokeATSCubicLineToUPP( const (*var*) pt: Float32Point; callBackDataPt
 function InvokeATSCubicLineToUPP( const (*var*) pt: Float32Point; callBackDataPtr: UnivPtr; userUPP: ATSCubicLineToUPP ): OSStatus; external name '_InvokeATSCubicLineToUPP';
 
 >>>>>>> origin/fixes_2_2
+=======
+function InvokeATSCubicLineToUPP( const (*var*) pt: Float32Point; callBackDataPtr: UnivPtr; userUPP: ATSCubicLineToUPP ): OSStatus; external name '_InvokeATSCubicLineToUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  ATSCubicCurveToProcPtr
@@ -1547,6 +1840,7 @@ function InvokeATSCubicLineToUPP( const (*var*) pt: Float32Point; callBackDataPt
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	ATSCubicCurveToProcPtr = function( const (*var*) pt1: Float32Point; const (*var*) pt2: Float32Point; const (*var*) pt3: Float32Point; callBackDataPtr: UnivPtr ): OSStatus;
 	ATSCubicCurveToUPP = ATSCubicCurveToProcPtr;
@@ -1561,6 +1855,11 @@ type ATSCubicCurveToUPP = Ptr;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+type
+	ATSCubicCurveToProcPtr = function( const (*var*) pt1: Float32Point; const (*var*) pt2: Float32Point; const (*var*) pt3: Float32Point; callBackDataPtr: UnivPtr ): OSStatus;
+	ATSCubicCurveToUPP = ATSCubicCurveToProcPtr;
+>>>>>>> origin/fixes_2.4
 {
  *  NewATSCubicCurveToUPP()
  *  
@@ -1569,6 +1868,7 @@ type ATSCubicCurveToUPP = Ptr;
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function NewATSCubicCurveToUPP( userRoutine: ATSCubicCurveToProcPtr ): ATSCubicCurveToUPP; external name '_NewATSCubicCurveToUPP';
@@ -1581,6 +1881,10 @@ function NewATSCubicCurveToUPP( userRoutine: ATSCubicCurveToProcPtr ): ATSCubicC
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function NewATSCubicCurveToUPP( userRoutine: ATSCubicCurveToProcPtr ): ATSCubicCurveToUPP; external name '_NewATSCubicCurveToUPP';
 >>>>>>> origin/fixes_2_2
+=======
+function NewATSCubicCurveToUPP( userRoutine: ATSCubicCurveToProcPtr ): ATSCubicCurveToUPP; external name '_NewATSCubicCurveToUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  DisposeATSCubicCurveToUPP()
@@ -1592,6 +1896,7 @@ function NewATSCubicCurveToUPP( userRoutine: ATSCubicCurveToProcPtr ): ATSCubicC
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure DisposeATSCubicCurveToUPP( userUPP: ATSCubicCurveToUPP ); external name '_DisposeATSCubicCurveToUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
@@ -1602,6 +1907,10 @@ procedure DisposeATSCubicCurveToUPP( userUPP: ATSCubicCurveToUPP ); external nam
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 procedure DisposeATSCubicCurveToUPP( userUPP: ATSCubicCurveToUPP ); external name '_DisposeATSCubicCurveToUPP';
 >>>>>>> origin/fixes_2_2
+=======
+procedure DisposeATSCubicCurveToUPP( userUPP: ATSCubicCurveToUPP ); external name '_DisposeATSCubicCurveToUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  InvokeATSCubicCurveToUPP()
@@ -1611,6 +1920,7 @@ procedure DisposeATSCubicCurveToUPP( userUPP: ATSCubicCurveToUPP ); external nam
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function InvokeATSCubicCurveToUPP( const (*var*) pt1: Float32Point; const (*var*) pt2: Float32Point; const (*var*) pt3: Float32Point; callBackDataPtr: UnivPtr; userUPP: ATSCubicCurveToUPP ): OSStatus; external name '_InvokeATSCubicCurveToUPP';
@@ -1625,6 +1935,10 @@ function InvokeATSCubicCurveToUPP( const (*var*) pt, pt2, pt3: Float32Point; cal
 function InvokeATSCubicCurveToUPP( const (*var*) pt, pt2, pt3: Float32Point; callBackDataPtr: UnivPtr; userUPP: ATSCubicCurveToUPP ): OSStatus; external name '_InvokeATSCubicCurveToUPP';
 
 >>>>>>> origin/fixes_2_2
+=======
+function InvokeATSCubicCurveToUPP( const (*var*) pt1: Float32Point; const (*var*) pt2: Float32Point; const (*var*) pt3: Float32Point; callBackDataPtr: UnivPtr; userUPP: ATSCubicCurveToUPP ): OSStatus; external name '_InvokeATSCubicCurveToUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  ATSCubicClosePathProcPtr
@@ -1649,6 +1963,7 @@ function InvokeATSCubicCurveToUPP( const (*var*) pt, pt2, pt3: Float32Point; cal
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	ATSCubicClosePathProcPtr = function( callBackDataPtr: UnivPtr ): OSStatus;
 	ATSCubicClosePathUPP = ATSCubicClosePathProcPtr;
@@ -1663,6 +1978,11 @@ type ATSCubicClosePathUPP = Ptr;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+type
+	ATSCubicClosePathProcPtr = function( callBackDataPtr: UnivPtr ): OSStatus;
+	ATSCubicClosePathUPP = ATSCubicClosePathProcPtr;
+>>>>>>> origin/fixes_2.4
 {
  *  NewATSCubicClosePathUPP()
  *  
@@ -1671,6 +1991,7 @@ type ATSCubicClosePathUPP = Ptr;
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function NewATSCubicClosePathUPP( userRoutine: ATSCubicClosePathProcPtr ): ATSCubicClosePathUPP; external name '_NewATSCubicClosePathUPP';
@@ -1683,6 +2004,10 @@ function NewATSCubicClosePathUPP( userRoutine: ATSCubicClosePathProcPtr ): ATSCu
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function NewATSCubicClosePathUPP( userRoutine: ATSCubicClosePathProcPtr ): ATSCubicClosePathUPP; external name '_NewATSCubicClosePathUPP';
 >>>>>>> origin/fixes_2_2
+=======
+function NewATSCubicClosePathUPP( userRoutine: ATSCubicClosePathProcPtr ): ATSCubicClosePathUPP; external name '_NewATSCubicClosePathUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  DisposeATSCubicClosePathUPP()
@@ -1694,6 +2019,7 @@ function NewATSCubicClosePathUPP( userRoutine: ATSCubicClosePathProcPtr ): ATSCu
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure DisposeATSCubicClosePathUPP( userUPP: ATSCubicClosePathUPP ); external name '_DisposeATSCubicClosePathUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 =======
@@ -1704,6 +2030,10 @@ procedure DisposeATSCubicClosePathUPP( userUPP: ATSCubicClosePathUPP ); external
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 procedure DisposeATSCubicClosePathUPP( userUPP: ATSCubicClosePathUPP ); external name '_DisposeATSCubicClosePathUPP';
 >>>>>>> origin/fixes_2_2
+=======
+procedure DisposeATSCubicClosePathUPP( userUPP: ATSCubicClosePathUPP ); external name '_DisposeATSCubicClosePathUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 {
  *  InvokeATSCubicClosePathUPP()
@@ -1713,6 +2043,7 @@ procedure DisposeATSCubicClosePathUPP( userUPP: ATSCubicClosePathUPP ); external
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function InvokeATSCubicClosePathUPP( callBackDataPtr: UnivPtr; userUPP: ATSCubicClosePathUPP ): OSStatus; external name '_InvokeATSCubicClosePathUPP';
@@ -1728,14 +2059,25 @@ function InvokeATSCubicClosePathUPP( callBackDataPtr: UnivPtr; userUPP: ATSCubic
 =======
 >>>>>>> origin/fixes_2_2
 // AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
+=======
+>>>>>>> origin/fixes_2.4
 function InvokeATSCubicClosePathUPP( callBackDataPtr: UnivPtr; userUPP: ATSCubicClosePathUPP ): OSStatus; external name '_InvokeATSCubicClosePathUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 
+{$ifc not TARGET_CPU_64}
 {
+<<<<<<< HEAD
  *  ATSUGlyphGetCubicPaths()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  ATSUGlyphGetCubicPaths()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use CTFontCreatePathForGlyph instead.
+>>>>>>> origin/fixes_2.4
  *  
  *  Summary:
  *    Uses a callback mechanism to obtain a set of Cubic outlines for a
@@ -1795,6 +2137,7 @@ function InvokeATSCubicClosePathUPP( callBackDataPtr: UnivPtr; userUPP: ATSCubic
  *      Any valid pointer. Any application specific data you wish to
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      pass to your callbacks may be sent through this parameter.
 =======
  *      pass to your callbacks may be sent through this parameter. can be NULL
@@ -1802,6 +2145,9 @@ function InvokeATSCubicClosePathUPP( callBackDataPtr: UnivPtr; userUPP: ATSCubic
 =======
  *      pass to your callbacks may be sent through this parameter. can be NULL
 >>>>>>> origin/fixes_2_2
+=======
+ *      pass to your callbacks may be sent through this parameter.
+>>>>>>> origin/fixes_2.4
  *    
  *    oCallbackResult:
  *      On return, status returned by callback functions. If an error
@@ -1812,6 +2158,7 @@ function InvokeATSCubicClosePathUPP( callBackDataPtr: UnivPtr; userUPP: ATSCubic
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
@@ -1831,19 +2178,29 @@ function ATSUGlyphGetCubicPaths( iATSUStyle: ATSUStyle; iGlyphID: GlyphID; iMove
 =======
 >>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 9.1 and later
  }
-// AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
-function ATSUGlyphGetCubicPaths( iATSUStyle: ATSUStyle; iGlyphID: GlyphID; iMoveToProc: ATSCubicMoveToUPP; iLineToProc: ATSCubicLineToUPP; iCurveToProc: ATSCubicCurveToUPP; iClosePathProc: ATSCubicClosePathUPP; iCallbackDataPtr: UnivPtr; var oCallbackResult: OSStatus ): OSStatus; external name '_ATSUGlyphGetCubicPaths';
+function ATSUGlyphGetCubicPaths( iATSUStyle: ATSUStyle; iGlyphID: GlyphID; iMoveToProc: ATSCubicMoveToUPP; iLineToProc: ATSCubicLineToUPP; iCurveToProc: ATSCubicCurveToUPP; iClosePathProc: ATSCubicClosePathUPP; iCallbackDataPtr: UnivPtr { can be NULL }; var oCallbackResult: OSStatus ): OSStatus; external name '_ATSUGlyphGetCubicPaths';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 
 
 {
+<<<<<<< HEAD
  *  ATSUGlyphGetCurvePaths()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  ATSUGlyphGetCurvePaths()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use CTFontCreatePathForGlyph instead.
+>>>>>>> origin/fixes_2.4
  *  
  *  Summary:
  *    Obtains glyph curve data without the use of callbacks.
@@ -1887,6 +2244,7 @@ function ATSUGlyphGetCubicPaths( iATSUStyle: ATSUStyle; iGlyphID: GlyphID; iMove
  *      information. See ATSTypes.h for a definition of this data
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      structure.
 =======
  *      structure. can be NULL
@@ -1894,12 +2252,16 @@ function ATSUGlyphGetCubicPaths( iATSUStyle: ATSUStyle; iGlyphID: GlyphID; iMove
 =======
  *      structure. can be NULL
 >>>>>>> origin/fixes_2_2
+=======
+ *      structure.
+>>>>>>> origin/fixes_2.4
  *  
  *  Result:
  *    On success, noErr is returned. See MacErrors.h for possible error
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
@@ -1921,6 +2283,14 @@ function ATSUGlyphGetCurvePaths( iATSUStyle: ATSUStyle; iGlyphID: GlyphID; ioBuf
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in ATSUnicodeLib 9.1 and later
+ }
+function ATSUGlyphGetCurvePaths( iATSUStyle: ATSUStyle; iGlyphID: GlyphID; ioBufferSize: ByteCountPtr; oPaths: ATSUCurvePathsPtr { can be NULL } ): OSStatus; external name '_ATSUGlyphGetCurvePaths';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/fixes_2.4
 
 
 { Functions listed beyond this point are either deprecated or not recommended }
@@ -1931,18 +2301,24 @@ function ATSUGlyphGetCurvePaths( iATSUStyle: ATSUStyle; iGlyphID: GlyphID; ioBuf
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *  ATSUGetGlyphInfo()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTRunGetGlyphsPtr,CTRunGetGlyphs, CTRunGetPositionsPtr,
  *    CTRunGetPositions, CTRunGetStringIndicesPtr,
  *    CTRunGetStringIndices, CTRunGetStringRange instead.
+<<<<<<< HEAD
 =======
  *  ATSUGetGlyphInfo()
 >>>>>>> graemeg/fixes_2_2
 =======
  *  ATSUGetGlyphInfo()
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Summary:
  *    Obtains a copy of the style and layout information for each glyph
@@ -1952,6 +2328,7 @@ function ATSUGlyphGetCurvePaths( iATSUStyle: ATSUStyle; iGlyphID: GlyphID; ioBuf
  *    Please see ATSUnicodeDirectAccess.h for replacement functions.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
@@ -1973,19 +2350,31 @@ function ATSUGetGlyphInfo( iTextLayout: ATSUTextLayout; iLineStart: UniCharArray
 =======
 >>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 9.1 and later
  }
-// AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function ATSUGetGlyphInfo( iTextLayout: ATSUTextLayout; iLineStart: UniCharArrayOffset; iLineLength: UniCharCount; ioBufferSize: ByteCountPtr; oGlyphInfoPtr: ATSUGlyphInfoArrayPtr ): OSStatus; external name '_ATSUGetGlyphInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 
 
 {
+<<<<<<< HEAD
  *  ATSUDrawGlyphInfo()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  ATSUDrawGlyphInfo()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use CTRunGetGlyphsPtr,CTRunGetGlyphs, CTRunGetPositionsPtr,
+ *    CTRunGetPositions, CTRunGetStringIndicesPtr,
+ *    CTRunGetStringIndices, CTRunGetStringRange instead.
+>>>>>>> origin/fixes_2.4
  *  
  *  Summary:
  *    Draws glyphs at the specified location, based on style and layout
@@ -1995,6 +2384,7 @@ function ATSUGetGlyphInfo( iTextLayout: ATSUTextLayout; iLineStart: UniCharArray
  *    Please see ATSUnicodeDirectAccess.h for replacement functions.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
@@ -2016,14 +2406,27 @@ end.
 =======
 >>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 9.1 and later
  }
-// AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
 function ATSUDrawGlyphInfo( iGlyphInfoArray: ATSUGlyphInfoArrayPtr; iLocation: Float32Point ): OSStatus; external name '_ATSUDrawGlyphInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+{$endc} {TARGET_OS_MAC}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

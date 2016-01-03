@@ -193,6 +193,10 @@ const
                         + [system_i386_freebsd]
                         + [system_i386_netbsd]
                         + [system_i386_wdosx];
+                        
+  suppported_targets_x_smallr = system_linux
+                             + [system_i386_haiku]
+                             + [system_i386_beos];
 
   suppported_targets_x_smallr = systems_linux + systems_solaris
                              + [system_i386_haiku]
@@ -864,6 +868,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure toption.IgnoredPara(const opt: TCmdStr);
 =======
 procedure toption.IgnoredPara(const opt: string);
@@ -877,6 +882,9 @@ procedure toption.IgnoredPara(const opt: string);
 =======
 procedure toption.IgnoredPara(const opt: string);
 >>>>>>> origin/cpstrnew
+=======
+procedure toption.IgnoredPara(const opt: string);
+>>>>>>> origin/fixes_2.4
 begin
   Message1(option_ignored_target,opt);
 end;
@@ -2788,6 +2796,7 @@ begin
                         else
                           IgnoredPara('-Xr');
                         more:='';
+<<<<<<< HEAD
                       end;
                     'R' :
                       begin
@@ -2800,6 +2809,8 @@ begin
                         sysrootpath:=copy(more,2,length(more)-1);
                         defaultreplacements(sysrootpath);
                         more:='';
+=======
+>>>>>>> origin/fixes_2.4
                       end;
                     'R' :
                       begin

@@ -199,6 +199,9 @@ Implementation
 function TCustomApplication.GetExeName: string;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$if defined(darwin)}
 var
   mainBundle: CFBundleRef;
@@ -960,6 +963,7 @@ begin
           begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           HaveArg:=(I<ParamCount) and (Length(ParamStr(I+1))>0) and (ParamStr(I+1)[1]<>FOptionChar);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -980,6 +984,9 @@ begin
 =======
           HaveArg:=(I<ParamCount) and (Length(ParamStr(I+1))>0) and (ParamStr(I+1)[i]<>FOptionChar);
 >>>>>>> origin/fixes_2_2
+=======
+          HaveArg:=(I<ParamCount) and (Length(ParamStr(I+1))>0) and (ParamStr(I+1)[1]<>FOptionChar);
+>>>>>>> origin/fixes_2.4
           If HaveArg then
             OV:=Paramstr(I+1);
           If Not CaseSensitiveOptions then

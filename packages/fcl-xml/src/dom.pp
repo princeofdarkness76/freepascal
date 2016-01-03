@@ -118,6 +118,7 @@ type
   TDOMAttrDef = class;
   TNodePool = class;
   PNodePoolArray = ^TNodePoolArray;
+<<<<<<< HEAD
   TNodePoolArray = array[0..MaxInt div sizeof(Pointer)-1] of TNodePool;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -129,6 +130,9 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  TNodePoolArray = array[0..0] of TNodePool;
+>>>>>>> origin/fixes_2.4
 
 {$ifndef fpc}
   TFPList = TList;
@@ -588,6 +592,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FXmlStandalone: Boolean;
     FStdUri_xml: PHashItem;
     FStdUri_xmlns: PHashItem;
@@ -599,6 +604,9 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+    FDocumentURI: DOMString;
+>>>>>>> origin/fixes_2.4
     function GetDocumentElement: TDOMElement;
     function GetDocType: TDOMDocumentType;
     function GetNodeType: Integer; override;
@@ -3227,7 +3235,11 @@ constructor TDOMDocument.Create;
 begin
   inherited Create(nil);
   FOwnerDocument := Self;
+<<<<<<< HEAD
   FMaxPoolSize := (TDOMEntity.InstanceSize + sizeof(Pointer)-1) and not (sizeof(Pointer)-1) + sizeof(Pointer);
+=======
+  FMaxPoolSize := (TDOMAttr.InstanceSize + sizeof(Pointer)-1) and not (sizeof(Pointer)-1) + sizeof(Pointer);
+>>>>>>> origin/fixes_2.4
   FPools := AllocMem(FMaxPoolSize);
   FNames := THashTable.Create(256, True);
   SetLength(FNamespaces, 3);
@@ -5443,7 +5455,11 @@ var
   ext: PExtent;
 begin
   Assert((FCurrExtent = nil) or
+<<<<<<< HEAD
     (PAnsiChar(FCurrBlock) < PAnsiChar(FCurrExtent) + sizeof(TExtent)));
+=======
+    (PAnsiChar(FCurrBlock) = PAnsiChar(FCurrExtent) + sizeof(TExtent)));
+>>>>>>> origin/fixes_2.4
   Assert(AElemCount > 0);
 
   GetMem(ext, sizeof(TExtent) + AElemCount * FElementSize);
@@ -5463,7 +5479,11 @@ begin
   end
   else
   begin
+<<<<<<< HEAD
     if PAnsiChar(FCurrBlock) < PAnsiChar(FCurrExtent) + sizeof(TExtent) then
+=======
+    if PAnsiChar(FCurrBlock) = PAnsiChar(FCurrExtent) + sizeof(TExtent) then
+>>>>>>> origin/fixes_2.4
       AddExtent(FCurrExtentSize * 2);
     Result := FCurrBlock;
     Dec(PAnsiChar(FCurrBlock), FElementSize);

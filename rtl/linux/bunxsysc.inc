@@ -373,6 +373,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(generic_linux_syscalls)}
 =======
 {$ifndef NO_SYSCALL_UTIME}
@@ -400,12 +401,18 @@ end;
 =======
 {$ifndef NO_SYSCALL_UTIME}
 >>>>>>> origin/cpstrnew
+=======
+{$ifndef NO_SYSCALL_UTIME}
+>>>>>>> origin/fixes_2.4
 
 Function fpUtime(path:pchar;times:putimbuf):cint;
 
 begin
   fputime:=do_syscall(syscall_nr_utime,TSysParam(path),TSysParam(times));
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 end;
 
 {$else}
@@ -417,11 +424,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
   tva[0].tv_sec := times^.actime;
   tva[0].tv_usec := 0;
   tva[1].tv_sec := times^.modtime;
   tva[1].tv_usec := 0;
   fputime:=do_syscall(syscall_nr_utimes,TSysParam(path),TSysParam(@tva));
+<<<<<<< HEAD
 end;
 
 =======
@@ -457,6 +468,10 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+end;
+
+>>>>>>> origin/fixes_2.4
 {$endif}
 
 

@@ -19,12 +19,16 @@ unit XMLWrite;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef fpc}{$MODE objfpc}{$endif}
 =======
 =======
 >>>>>>> origin/fixes_2_2
 {$MODE objfpc}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifdef fpc}{$MODE objfpc}{$endif}
+>>>>>>> origin/fixes_2.4
 {$H+}
 
 interface

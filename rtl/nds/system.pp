@@ -480,12 +480,16 @@ begin
 { OS specific startup }
 
 { Set up signals handlers }
+<<<<<<< HEAD
   if IsARM9 then
     fpc_cpucodeinit;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  fpc_cpucodeinit;
+>>>>>>> origin/fixes_2.4
 
 { Setup heap }
   InitHeap;

@@ -3,6 +3,7 @@
  * 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @APPLE_LICENSE_HEADER_START@
  * 
  * This file contains Original Code and/or Modifications of Original Code
@@ -57,32 +58,43 @@
  * You may not use this file except in compliance with the License. Please obtain
  * a copy of the License at http://www.apple.com/publicsource and read it before
  * using this file.
+=======
+ * @APPLE_LICENSE_HEADER_START@
+>>>>>>> origin/fixes_2.4
  * 
- * This Original Code and all software distributed under the License are
- * distributed on an 'AS IS' basis, WITHOUT WARRANTY of ANY KIND, EITHER EXPRESS
- * OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES, INCLUDING WITHOUT
- * LIMITATION, ANY WARRANTIES of MERCHANTABILITY, FITNESS FOR A PARTICULAR
- * PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT. Please see the License for the
- * specific language governing rights and limitations under the License.
+ * This file contains Original Code and/or Modifications of Original Code
+ * as defined in and that are subject to the Apple Public Source License
+ * Version 2.0 (the 'License'). You may not use this file except in
+ * compliance with the License. Please obtain a copy of the License at
+ * http://www.opensource.apple.com/apsl/ and read it before using this
+ * file.
+ * 
+ * The Original Code and all software distributed under the License are
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
+ * Please see the License for the specific language governing rights and
+ * limitations under the License.
+ * 
+ * @APPLE_LICENSE_HEADER_END@
  }
-{	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
-
-{
- *  AuthorizationDB.h -- APIs for managing the authorization policy database
- *  and daemons.
- }
-
+{	  Pascal Translation:  Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -91,6 +103,7 @@
 
 unit AuthorizationDB;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -103,6 +116,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -117,6 +134,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -124,21 +142,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -146,6 +173,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -156,6 +186,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -173,6 +204,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -180,10 +213,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -191,6 +227,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -446,18 +483,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -485,12 +579,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -503,6 +600,9 @@ interface
 uses MacTypes,Authorization,CFBase,CFDictionary,CFString,CFBundle;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -518,18 +618,22 @@ uses MacTypes,Authorization,CFBase,CFDictionary,CFString,CFBundle;
  }
 
 
+<<<<<<< HEAD
 =======
 {$ALIGN MAC68K}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$ALIGN MAC68K}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {!
 	@header AuthorizationDB
 	Version 1.0
 
 	This API allows for any programs to get, modify, delete and add new right definitions to the policy database.  Meta-rights specify whether and what authorization is required to make these modifications.
 	
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	AuthorizationRightSet(authRef, "com.ifoo.ifax.send", CFSTR(kRuleIsAdmin), CFSTR("You must authenticate to send a fax."), NULL, NULL)
@@ -545,18 +649,25 @@ uses MacTypes,Authorization,CFBase,CFDictionary,CFString,CFBundle;
 =======
 >>>>>>> origin/fixes_2_2
 	AuthorizationRightSet(NULL, "com.ifoo.ifax.send", CFSTR(kRuleIsAdmin), CFSTR("You must authenticate to send a fax."), NULL, NULL)
+=======
+	AuthorizationRightSet(authRef, "com.ifoo.ifax.send", CFSTR(kRuleIsAdmin), CFSTR("You must authenticate to send a fax."), NULL, NULL)
+>>>>>>> origin/fixes_2.4
 
 	add a rule for letting admins send faxes using a canned rule, delegating to a pre-specified rule that authorizes everyone who is an admin.
 	
-	AuthorizationRightSet(NULL, "com.ifoo.ifax.send", [[CFSTR(kRightRule), CFSTR(kRuleIsAdmin)], [CFSTR(kRightComment), CFSTR("authorizes sending of 1 fax message")]], CFSTR("Authorize sending of a fax"), NULL, NULL)
+	AuthorizationRightSet(authRef, "com.ifoo.ifax.send", [[CFSTR(kRightRule), CFSTR(kRuleIsAdmin)], [CFSTR(kRightComment), CFSTR("authorizes sending of 1 fax message")]], CFSTR("Authorize sending of a fax"), NULL, NULL)
 
 	add identical rule, but specify additional attributes this time.
 
+<<<<<<< HEAD
 	Keep in mind while specifying a comment to be specific about what you need to authorize for (1 fax), in terms of a general message for user.  The means of proof required for kRuleIsAdmin (enter username/password for example) should not be included here, since it could be configured differently.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	Keep in mind while specifying a comment to be specific about what you need to authorize for (1 fax), in terms of a general message for user.  The means of proof required for kRuleIsAdmin (enter username/password for example) should not be included here, since it could be configured differently.  Also note that the "authRef" variable used in each of the above examples must be a vaild AuthorizationRef obtained from AuthorizationCreate().
+>>>>>>> origin/fixes_2.4
 
 }
 
@@ -564,6 +675,7 @@ uses MacTypes,Authorization,CFBase,CFDictionary,CFString,CFBundle;
 	rule delegation key.  Instead of specifying exact behavior some canned rules
    are shipped that may be switched by configurable security.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 const
@@ -574,10 +686,15 @@ const kAuthorizationRightRule					= 'rule';
 =======
 const kAuthorizationRightRule					= 'rule';
 >>>>>>> origin/fixes_2_2
+=======
+const
+	kAuthorizationRightRule = 'rule';
+>>>>>>> origin/fixes_2.4
 
 {! @defined kRuleIsAdmin
 	canned rule values for use with rule delegation definitions: require user to be an admin.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 const
@@ -588,10 +705,15 @@ const kAuthorizationRuleIsAdmin				= 'is-admin';
 =======
 const kAuthorizationRuleIsAdmin				= 'is-admin';
 >>>>>>> origin/fixes_2_2
+=======
+const
+	kAuthorizationRuleIsAdmin = 'is-admin';
+>>>>>>> origin/fixes_2.4
 
 {! @defined kRuleAuthenticateAsSessionUser
 	canned rule value for use with rule delegation definitions: require user to authenticate as the session owner (logged-in user).
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 const
@@ -602,10 +724,15 @@ const kAuthorizationRuleAuthenticateAsSessionUser= 'authenticate-session-user';
 =======
 const kAuthorizationRuleAuthenticateAsSessionUser= 'authenticate-session-user';
 >>>>>>> origin/fixes_2_2
+=======
+const
+	kAuthorizationRuleAuthenticateAsSessionUser = 'authenticate-session-owner';
+>>>>>>> origin/fixes_2.4
 
 {! @defined kRuleAuthenticateAsAdmin
 	Canned rule value for use with rule delegation definitions: require user to authenticate as admin.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 const
@@ -616,10 +743,15 @@ const kAuthorizationRuleAuthenticateAsAdmin	= 'authenticate-admin';
 =======
 const kAuthorizationRuleAuthenticateAsAdmin	= 'authenticate-admin';
 >>>>>>> origin/fixes_2_2
+=======
+const
+	kAuthorizationRuleAuthenticateAsAdmin = 'authenticate-admin';
+>>>>>>> origin/fixes_2.4
 
 {! @defined kAuthorizationRuleClassAllow
 	Class that allows anything.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 const
@@ -630,10 +762,15 @@ const kAuthorizationRuleClassAllow		= 'allow';
 =======
 const kAuthorizationRuleClassAllow		= 'allow';
 >>>>>>> origin/fixes_2_2
+=======
+const
+	kAuthorizationRuleClassAllow = 'allow';
+>>>>>>> origin/fixes_2.4
 
 {! @defined kAuthorizationRuleClassDeny
 	Class that denies anything. 
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 const
@@ -644,11 +781,16 @@ const kAuthorizationRuleClassDeny			= 'deny';
 =======
 const kAuthorizationRuleClassDeny			= 'deny';
 >>>>>>> origin/fixes_2_2
+=======
+const
+	kAuthorizationRuleClassDeny = 'deny';
+>>>>>>> origin/fixes_2.4
 
 {! @defined kAuthorizationComment
     comments for the administrator on what is being customized here;
    as opposed to (localized) descriptions presented to the user.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 const
@@ -659,6 +801,10 @@ const kAuthorizationComment = 'comment';
 =======
 const kAuthorizationComment = 'comment';
 >>>>>>> origin/fixes_2_2
+=======
+const
+	kAuthorizationComment = 'comment';
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -677,12 +823,15 @@ const kAuthorizationComment = 'comment';
 function AuthorizationRightGet( rightName: ConstCStringPtr; rightDefinition: CFDictionaryRefPtr ): OSStatus; external name '_AuthorizationRightGet';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 // attribute(weak_import);
 >>>>>>> graemeg/fixes_2_2
 =======
 // attribute(weak_import);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {!
 	@function AuthorizationRightSet
@@ -707,6 +856,7 @@ function AuthorizationRightGet( rightName: ConstCStringPtr; rightDefinition: CFD
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function AuthorizationRightSet( authRef: AuthorizationRef; rightName: ConstCStringPtr; rightDefinition: CFTypeRef; descriptionKey: CFStringRef; bundle: CFBundleRef; localeTableName: CFStringRef ): OSStatus; external name '_AuthorizationRightSet';
 =======
 function AuthorizationRightSet(authRef: AuthorizationRef; rightName: ConstCStringPtr; rightDefinition: CFTypeRef; descriptionKey: CFStringRef; bundle: CFBundleRef; localeTableName: CFStringRef): OSStatus; external name '_AuthorizationRightSet';
@@ -716,6 +866,9 @@ function AuthorizationRightSet(authRef: AuthorizationRef; rightName: ConstCStrin
 function AuthorizationRightSet(authRef: AuthorizationRef; rightName: ConstCStringPtr; rightDefinition: CFTypeRef; descriptionKey: CFStringRef; bundle: CFBundleRef; localeTableName: CFStringRef): OSStatus; external name '_AuthorizationRightSet';
 // attribute(weak_import);
 >>>>>>> origin/fixes_2_2
+=======
+function AuthorizationRightSet( authRef: AuthorizationRef; rightName: ConstCStringPtr; rightDefinition: CFTypeRef; descriptionKey: CFStringRef; bundle: CFBundleRef; localeTableName: CFStringRef ): OSStatus; external name '_AuthorizationRightSet';
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -729,10 +882,14 @@ function AuthorizationRightSet(authRef: AuthorizationRef; rightName: ConstCStrin
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 function AuthorizationRightRemove( authRef: AuthorizationRef; rightName: ConstCStringPtr ): OSStatus; external name '_AuthorizationRightRemove';
 
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+<<<<<<< HEAD
 
 end.
 {$endc} {not MACOSALLINCLUDE}
@@ -746,3 +903,8 @@ function AuthorizationRightRemove(authRef: AuthorizationRef; rightName: ConstCSt
 
 end.
 >>>>>>> origin/fixes_2_2
+=======
+
+end.
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

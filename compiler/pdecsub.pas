@@ -285,6 +285,7 @@ implementation
             current_tokenpos:=tprocdef(pd).fileinfo;
 
 {$if defined(i386)}
+<<<<<<< HEAD
            { For left to right add it at the end to be delphi compatible.
              In the case of safecalls with safecal-exceptions support the
              funcret-para is (from the 'c'-point of view) a normal parameter
@@ -296,6 +297,18 @@ implementation
            else
 {$elseif defined(x86) or defined(arm)}
            if (target_info.system in systems_all_windows) and
+=======
+           { For left to right add it at the end to be delphi compatible }
+           if (target_info.system in system_all_windows) and
+              (pd.proccalloption in (pushleftright_pocalls+[pocall_safecall])) then
+             paranr:=paranr_result_leftright
+           else
+{$elseif defined(x86) or defined(arm)}
+           { other platforms don't have a "safecall" convention,
+             and never reverse the parameter pushing order
+           }
+           if (target_info.system in system_all_windows) and
+>>>>>>> origin/fixes_2.4
               (pd.proccalloption = pocall_safecall)  then
              paranr:=paranr_result_leftright
            else
@@ -3731,6 +3744,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if is_objectpascal_helper(tprocdef(pd).struct) then
     begin
       if m_objfpc in current_settings.modeswitches then
@@ -3750,6 +3764,9 @@ begin
 >>>>>>> origin/cpstrnew
   if not(is_class_or_interface_or_object(tprocdef(pd).struct)) and
      not(is_objccategory(tprocdef(pd).struct)) then
+=======
+  if not(is_class_or_interface_or_object(tprocdef(pd)._class)) then
+>>>>>>> origin/fixes_2.4
     Message(parser_e_no_object_reintroduce);
 >>>>>>> graemeg/cpstrnew
 end;

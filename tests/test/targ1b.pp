@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {%skiptarget=wince}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -14,6 +15,9 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+{%skiptarget=wince}
+>>>>>>> origin/fixes_2.4
 
 { This file is to check if there is some memory corruption
   due to startup code with argument loading
@@ -54,6 +58,7 @@ uses
   dos;
 
 const
+<<<<<<< HEAD
   Prefix =
 {$ifdef Unix}
   './'
@@ -61,6 +66,8 @@ const
   ''
 {$endif}
   ;
+=======
+>>>>>>> origin/fixes_2.4
   ExeSuffix =
 {$ifdef HasExeSuffix}
   '.exe'
@@ -82,7 +89,11 @@ var
 const
   Everything_ok : boolean = true;
 begin
+<<<<<<< HEAD
   cmd:=Prefix+'targ1a'+ExeSuffix;
+=======
+  cmd:='targ1a'+ExeSuffix;
+>>>>>>> origin/fixes_2.4
   arg:='';
   first_wrong:=-1;
   for i:=0 to MAX do
@@ -92,8 +103,12 @@ begin
       Exec(cmd,arg);
       if (DosExitCode<>0) or (DosError<>0) then
         begin
+<<<<<<< HEAD
           Writeln(stderr,'Crash detected, DosError=', DosError);
           Writeln(stderr,'DosExitCode=',DosExitCode);
+=======
+          Writeln(stderr,'Crash detected');
+>>>>>>> origin/fixes_2.4
           if first_wrong=-1 then
             first_wrong:=i;
           Everything_ok := false;
@@ -115,6 +130,7 @@ begin
     end;
 end.
 
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -216,3 +232,5 @@ end.
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4

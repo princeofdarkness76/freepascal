@@ -18,6 +18,7 @@ Uses baseunix,UnixType;
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$i osdefs.inc}       { Compile time defines }
 
 {$if 
@@ -31,6 +32,10 @@ Uses baseunix,UnixType;
 Type 
  TSockLen = BaseUnix.TSocklen;
 =======
+=======
+{$i osdefs.inc}       { Compile time defines }
+
+>>>>>>> origin/fixes_2.4
 {$ifdef FreeBSD}
 {$DEFINE SOCK_HAS_SINLEN}               // BSD definition of socketaddr
 {$endif}

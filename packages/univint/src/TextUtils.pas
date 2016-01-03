@@ -1,6 +1,7 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/TextUtils.h
  
      Contains:   Text Utilities Interfaces.
@@ -34,17 +35,23 @@
 =======
 >>>>>>> origin/fixes_2_2
      File:       TextUtils.p
+=======
+     File:       CarbonCore/TextUtils.h
+>>>>>>> origin/fixes_2.4
  
      Contains:   Text Utilities Interfaces.
  
-     Version:    Technology: Mac OS 8
-                 Release:    Universal Interfaces 3.4.2
+     Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
      Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     Copyright:  © 1985-2008 Apple Inc. All rights reserved.
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -83,18 +90,21 @@
                      http://www.freepascal.org/bugs.html
  
 }
-
-
+{      Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -103,6 +113,7 @@
 
 unit TextUtils;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -115,6 +126,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -129,6 +144,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -136,21 +152,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -158,6 +183,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -168,6 +196,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -185,6 +214,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -192,10 +223,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -203,6 +237,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -459,18 +494,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/fixes_2.4
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -498,12 +590,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -515,17 +610,23 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 uses MacTypes,IntlResources;
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
+<<<<<<< HEAD
 =======
 uses MacTypes,IntlResources,NumberFormatting,StringCompare,DateTimeUtils;
 >>>>>>> graemeg/fixes_2_2
 =======
 uses MacTypes,IntlResources,NumberFormatting,StringCompare,DateTimeUtils;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 
 {$ALIGN MAC68K}
@@ -559,6 +660,7 @@ uses MacTypes,IntlResources,NumberFormatting,StringCompare,DateTimeUtils;
 }
 
 { TruncCode, StyledLineBreakCode, and truncation constants moved to QuickDrawText.i }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
@@ -1034,145 +1136,315 @@ function FindScriptRun( textPtr: Ptr; textLen: SIGNEDLONG; var lenUsed: SIGNEDLO
 =======
 >>>>>>> origin/fixes_2_2
 
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 type
 	ScriptRunStatusPtr = ^ScriptRunStatus;
 	ScriptRunStatus = record
-		script:					SInt8;
-		runVariant:				SInt8;
+		script: SInt8;
+		runVariant: SInt8;
 	end;
-
-	BreakTablePtr = ^BreakTable;
+type
 	BreakTable = record
-		charTypes:				packed array [0..255] of char;
-		tripleLength:			SInt16;
-		triples:				array [0..0] of SInt16;
+		charTypes: packed array [0..255] of char;
+		tripleLength: SInt16;
+		triples: array [0..0] of SInt16;
 	end;
-
-	NBreakTablePtr = ^NBreakTable;
+	BreakTablePtr = ^BreakTable;
+type
 	NBreakTable = record
-		flags1:					SInt8;
-		flags2:					SInt8;
-		version:				SInt16;
-		classTableOff:			SInt16;
-		auxCTableOff:			SInt16;
-		backwdTableOff:			SInt16;
-		forwdTableOff:			SInt16;
-		doBackup:				SInt16;
-		length:					SInt16;								{  length of NBreakTable  }
-		charTypes:				packed array [0..255] of char;
-		tables:					array [0..0] of SInt16;
+		flags1: SInt8;
+		flags2: SInt8;
+		version: SInt16;
+		classTableOff: SInt16;
+		auxCTableOff: SInt16;
+		backwdTableOff: SInt16;
+		forwdTableOff: SInt16;
+		doBackup: SInt16;
+		length: SInt16;                 { length of NBreakTable }
+		charTypes: packed array [0..255] of char;
+		tables: array [0..0] of SInt16;
 	end;
+	NBreakTablePtr = ^NBreakTable;
+{$endc} {not TARGET_CPU_64}
 
-	{  The following functions are new names that work on 68k and PowerPC }
-	{
-	 *  Munger()
-	 *  
-	 *  Availability:
-	 *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
-	 *    CarbonLib:        in CarbonLib 1.0 and later
-	 *    Mac OS X:         in version 10.0 and later
-	 	}
-function Munger(h: Handle; offset: SInt32; ptr1: UnivPtr; len1: SInt32; ptr2: UnivPtr; len2: SInt32): SInt32; external name '_Munger';
-{
- *  NewString()
- *  
- *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function NewString(const (*var*) theString: Str255): StringHandle; external name '_NewString';
-{
- *  SetString()
- *  
- *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-procedure SetString(theString: StringHandle; const (*var*) strNew: Str255); external name '_SetString';
-{
- *  GetString()
- *  
- *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-function GetString(stringID: SInt16): StringHandle; external name '_GetString';
-{
- *  GetIndString()
- *  
- *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-procedure GetIndString(var theString: Str255; strListID: SInt16; index: SInt16); external name '_GetIndString';
+{ The following functions are new names that work on 68k and PowerPC}
 
 {
- *  FindWordBreaks()
+ *  Munger()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use CFStringFindAndReplace or CFDataFind plus CFDataReplaceBytes
+ *    (or strstr plus memmove), depending on usage; see discussion.
+ *  
+ *  Discussion:
+ *    For text operations performed with Munger, use
+ *    CFStringFindAndReplace instead. 
+ *    
+ *    For operations on arbitrary bytes performed with Munger, use
+ *    CFDataFind plus CFDataReplaceBytes instead (Another option is to
+ *    use strstr plus memmove).
  *  
  *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-procedure FindWordBreaks(textPtr: Ptr; textLength: SInt16; offset: SInt16; leadingEdge: boolean; breaks: BreakTablePtr; var offsets: OffsetTable; script: ScriptCode); external name '_FindWordBreaks';
+function Munger( h: Handle; offset: SIGNEDLONG; ptr1: {const} UnivPtr; len1: SIGNEDLONG; ptr2: {const} UnivPtr; len2: SIGNEDLONG ): SIGNEDLONG; external name '_Munger';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+
+{$ifc not TARGET_CPU_64}
 {
- *  LowercaseText()
+ *  NewString()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFStringCreateCopy instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFStringCreateCopy instead.
  *  
  *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-procedure LowercaseText(textPtr: Ptr; len: SInt16; script: ScriptCode); external name '_LowercaseText';
+function NewString( const (*var*) theString: Str255 ): StringHandle; external name '_NewString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
 {
- *  UppercaseText()
+ *  SetString()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFStringCreateWithPascalString and CFStringReplaceAll instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFStringCreateWithPascalString and CFStringReplaceAll instead.
  *  
  *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-procedure UppercaseText(textPtr: Ptr; len: SInt16; script: ScriptCode); external name '_UppercaseText';
+procedure SetString( theString: StringHandle; const (*var*) strNew: Str255 ); external name '_SetString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
 {
- *  StripDiacritics()
+ *  GetString()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFBundleCopyLocalizedString instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFBundleCopyLocalizedString instead.
  *  
  *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-procedure StripDiacritics(textPtr: Ptr; len: SInt16; script: ScriptCode); external name '_StripDiacritics';
+function GetString( stringID: SInt16 ): StringHandle; external name '_GetString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+{$ifc not TARGET_CPU_64}
 {
- *  UppercaseStripDiacritics()
+ *  GetIndString()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFBundleCopyLocalizedString instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFBundleCopyLocalizedString instead.
  *  
  *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-procedure UppercaseStripDiacritics(textPtr: Ptr; len: SInt16; script: ScriptCode); external name '_UppercaseStripDiacritics';
+procedure GetIndString( var theString: Str255; strListID: SInt16; itemIndex: SInt16 ); external name '_GetIndString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{$endc} {not TARGET_CPU_64}
+
 {
- *  FindScriptRun()
+ *  setstring()
  *  
  *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
  }
+
+
+{$ifc not TARGET_CPU_64}
+{
+ *  newstring()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFStringCreateCopy instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFStringCreateCopy instead.
+ *  
+ *  Availability:
+ *    Mac OS X:         not available [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+{$endc} {not TARGET_CPU_64}
+
+{
+ *  getindstring()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+{$ifc not TARGET_CPU_64}
+{
+ *  FindWordBreaks()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use UCFindTextBreak instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    UCFindTextBreak instead.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure FindWordBreaks( textPtr: Ptr; textLength: SInt16; offset: SInt16; leadingEdge: Boolean; breaks: BreakTablePtr; var offsets: OffsetTable; script: ScriptCode ); external name '_FindWordBreaks';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LowercaseText()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFStringLowercase instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFStringLowercase instead.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LowercaseText( textPtr: Ptr; len: SInt16; script: ScriptCode ); external name '_LowercaseText';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  UppercaseText()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFStringUppercase instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFStringUppercase instead.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure UppercaseText( textPtr: Ptr; len: SInt16; script: ScriptCode ); external name '_UppercaseText';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  StripDiacritics()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFStringTransform instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFStringTransform instead.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure StripDiacritics( textPtr: Ptr; len: SInt16; script: ScriptCode ); external name '_StripDiacritics';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  UppercaseStripDiacritics()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFStringTransform instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFStringTransform instead.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure UppercaseStripDiacritics( textPtr: Ptr; len: SInt16; script: ScriptCode ); external name '_UppercaseStripDiacritics';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  FindScriptRun()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    No longer needed on MacOS X.
+ *  
+ *  Discussion:
+ *    This function is obsolate.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
 function FindScriptRun(textPtr: Ptr; textLen: SInt32; var lenUsed: SInt32): ScriptRunStatus; external name '_FindScriptRun';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function FindScriptRun( textPtr: Ptr; textLen: SIGNEDLONG; var lenUsed: SIGNEDLONG ): ScriptRunStatus; external name '_FindScriptRun';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+>>>>>>> origin/fixes_2.4
 {
     The following functions are old names, but are required for PowerPC builds
     because InterfaceLib exports these names, instead of the new ones.
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
@@ -1183,12 +1455,17 @@ function FindScriptRun(textPtr: Ptr; textLen: SInt32; var lenUsed: SInt32): Scri
 =======
 {$ifc CALL_NOT_IN_CARBON}
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> origin/fixes_2.4
 {
  *  FindWord()
  *  
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -1200,19 +1477,29 @@ function FindScriptRun(textPtr: Ptr; textLen: SInt32; var lenUsed: SInt32): Scri
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
+=======
+>>>>>>> origin/fixes_2.4
  *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 procedure FindWord(textPtr: Ptr; textLength: SInt16; offset: SInt16; leadingEdge: boolean; breaks: BreakTablePtr; var offsets: OffsetTable); external name '_FindWord';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+
+>>>>>>> origin/fixes_2.4
 {
  *  NFindWord()
  *  
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -1224,13 +1511,22 @@ procedure FindWord(textPtr: Ptr; textLength: SInt16; offset: SInt16; leadingEdge
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
+=======
+>>>>>>> origin/fixes_2.4
  *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 procedure NFindWord(textPtr: Ptr; textLength: SInt16; offset: SInt16; leadingEdge: boolean; nbreaks: NBreakTablePtr; var offsets: OffsetTable); external name '_NFindWord';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+
+>>>>>>> origin/fixes_2.4
 {
    On 68K machines, LwrText, LowerText, StripText, UpperText and StripUpperText
    return an error code in register D0, but System 7 PowerMacs do not emulate
@@ -1243,6 +1539,7 @@ procedure NFindWord(textPtr: Ptr; textLength: SInt16; offset: SInt16; leadingEdg
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -1254,19 +1551,29 @@ procedure NFindWord(textPtr: Ptr; textLength: SInt16; offset: SInt16; leadingEdg
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
+=======
+>>>>>>> origin/fixes_2.4
  *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 procedure LwrText(textPtr: Ptr; len: SInt16); external name '_LwrText';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+
+>>>>>>> origin/fixes_2.4
 {
  *  LowerText()
  *  
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -1278,19 +1585,29 @@ procedure LwrText(textPtr: Ptr; len: SInt16); external name '_LwrText';
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
+=======
+>>>>>>> origin/fixes_2.4
  *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 procedure LowerText(textPtr: Ptr; len: SInt16); external name '_LowerText';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+
+>>>>>>> origin/fixes_2.4
 {
  *  StripText()
  *  
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -1302,19 +1619,29 @@ procedure LowerText(textPtr: Ptr; len: SInt16); external name '_LowerText';
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
+=======
+>>>>>>> origin/fixes_2.4
  *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 procedure StripText(textPtr: Ptr; len: SInt16); external name '_StripText';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+
+>>>>>>> origin/fixes_2.4
 {
  *  UpperText()
  *  
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -1326,17 +1653,27 @@ procedure StripText(textPtr: Ptr; len: SInt16); external name '_StripText';
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
+=======
+>>>>>>> origin/fixes_2.4
  *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 procedure UpperText(textPtr: Ptr; len: SInt16); external name '_UpperText';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+
+>>>>>>> origin/fixes_2.4
 {
  *  StripUpperText()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
@@ -1440,33 +1777,78 @@ procedure upperstring( theString: CStringPtr; diacSensitive: Boolean ); external
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
+=======
+>>>>>>> origin/fixes_2.4
  *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-procedure StripUpperText(textPtr: Ptr; len: SInt16); external name '_StripUpperText';
-{  The following are new names which are exported by InterfaceLib }
 
-{$endc}  {CALL_NOT_IN_CARBON}
 
+{ The following are new names which are exported by InterfaceLib}
+
+{$ifc not TARGET_CPU_64}
 {
- *  UpperString()
+ *  UpperString()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFStringUppercase instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFStringUppercase instead.
  *  
  *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-procedure UpperString(var theString: Str255; diacSensitive: boolean); external name '_UpperString';
+procedure UpperString( var theString: Str255; diacSensitive: Boolean ); external name '_UpperString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
+
+{$endc} {not TARGET_CPU_64}
+
+{$ifc not TARGET_CPU_64}
+{
+ *  upperstring()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFStringUppercase instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFStringUppercase instead.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+(*
+  overloading not available
+procedure upperstring( theString: CStringPtr; diacSensitive: Boolean ); external name '_upperstring';
+*)
+// AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4;
+
+{$endc} {not TARGET_CPU_64}
+
+<<<<<<< HEAD
 {  Old routine name but no new names are mapped to it: }
 {$ifc CALL_NOT_IN_CARBON}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+{ Old routine name but no new names are mapped to it:}
+>>>>>>> origin/fixes_2.4
 {
  *  UprText()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         not available
@@ -1479,14 +1861,22 @@ procedure UpperString(var theString: Str255; diacSensitive: boolean); external n
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
+=======
+>>>>>>> origin/fixes_2.4
  *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 procedure UprText(textPtr: Ptr; len: SInt16); external name '_UprText';
 {$endc}  {CALL_NOT_IN_CARBON}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2.4
 
 {
     Functions for converting between C and Pascal Strings
@@ -1505,6 +1895,7 @@ procedure UprText(textPtr: Ptr; len: SInt16); external name '_UprText';
           then they are available as a macro.
     
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
@@ -1763,95 +2154,152 @@ end.
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 {
- *  c2pstrcpy()
+ *  c2pstrcpy()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFString instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use CFString
+ *    instead.
  *  
  *  Availability:
- *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
- }
-procedure c2pstrcpy(var dst: Str255; src: ConstCStringPtr); external name '_c2pstrcpy';
-
-{
- *  p2cstrcpy()
- *  
- *  Availability:
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
  }
-procedure p2cstrcpy(dst: CStringPtr; const (*var*) src: Str255); external name '_p2cstrcpy';
+procedure c2pstrcpy( var dst: Str255; src: ConstCStringPtr ); external name '_c2pstrcpy';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
 
 {
- *  CopyPascalStringToC()
+ *  p2cstrcpy()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFString instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use CFString
+ *    instead.
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
  }
-procedure CopyPascalStringToC(const (*var*) src: Str255; dst: CStringPtr); external name '_CopyPascalStringToC';
+procedure p2cstrcpy( dst: CStringPtr; const (*var*) src: Str255 ); external name '_p2cstrcpy';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
 
 {
- *  CopyCStringToPascal()
+ *  CopyPascalStringToC()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFString instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use CFString
+ *    instead.
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
+ }
+procedure CopyPascalStringToC( const (*var*) src: Str255; dst: CStringPtr ); external name '_CopyPascalStringToC';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  CopyCStringToPascal()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFString instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use CFString
+ *    instead.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
  }
-procedure CopyCStringToPascal(src: ConstCStringPtr; var dst: Str255); external name '_CopyCStringToPascal';
+procedure CopyCStringToPascal( src: ConstCStringPtr; var dst: Str255 ); external name '_CopyCStringToPascal';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
-{$ifc CALL_NOT_IN_CARBON}
+
+{$endc} {not TARGET_CPU_64}
+
+{$ifc not TARGET_CPU_64}
 {
- *  C2PStrProc()
+ *  c2pstr()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.4 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        not available
- *    Mac OS X:         not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-procedure C2PStrProc(aStr: UnivPtr); external name '_C2PStrProc';
+(*
+  overloading not available
+function c2pstr( aStr: CStringPtr ): StringPtr; external name '_c2pstr';
+*)
+//AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER_BUT_DEPRECATED;
+
 
 {
- *  P2CStrProc()
+ *  C2PStr()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.4 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        not available
- *    Mac OS X:         not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-procedure P2CStrProc(aStr: StringPtr); external name '_P2CStrProc';
+function C2PStr( cString: UnivPtr ): StringPtr; external name '_C2PStr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER_BUT_DEPRECATED *)
 
 {
- *  C2PStr()
+ *  p2cstr()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        not available
- *    Mac OS X:         not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-function C2PStr(cString: UnivPtr): StringPtr; external name '_C2PStr';
+(*
+  overloading based on result type not possible
+function p2cstr( aStr: StringPtr ): CStringPtr; external name '_p2cstr';
+*)
+//AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4;
+
 
 {
- *  P2CStr()
+ *  P2CStr()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        not available
- *    Mac OS X:         not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-function P2CStr(pString: StringPtr): Ptr; external name '_P2CStr';
+function P2CStr( pString: StringPtr ): Ptr; external name '_P2CStr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
-{$endc}  {CALL_NOT_IN_CARBON}
+{$endc} {not TARGET_CPU_64}
 
 
-{$ALIGN MAC68K}
-
+{$endc} {TARGET_OS_MAC}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

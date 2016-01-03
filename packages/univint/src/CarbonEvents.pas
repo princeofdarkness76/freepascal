@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -34,6 +35,11 @@
  
      Copyright:  © 1999-2005 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2_2
+=======
+     Version:    HIToolbox-437~1
+ 
+     Copyright:  © 1999-2008 by Apple Inc., all rights reserved.
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -72,16 +78,21 @@
  
 }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -90,6 +101,7 @@
 
 unit CarbonEvents;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -102,6 +114,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -116,6 +132,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -123,21 +140,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -145,6 +171,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -155,6 +184,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -172,6 +202,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -179,10 +211,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -190,6 +225,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -406,18 +442,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/fixes_2.4
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -445,12 +538,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -460,6 +556,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,CFBase,QuickdrawTypes,CFArray,HIObject,Events,Menus,AERegistry,CarbonEventsCore,HIGeometry;
@@ -488,6 +585,13 @@ uses MacTypes,CFBase,CGContext,Quickdraw,AXUIElement,Drag,CFArray,HIObjectCore,E
 uses MacTypes,CFBase,CGContext,Quickdraw,AXUIElement,Drag,CFArray,HIObjectCore,Events,Menus,Controls,CFString,AERegistry,AEDataModel,CarbonEventsCore,HIGeometry;
 
 >>>>>>> origin/fixes_2_2
+=======
+uses MacTypes,CFBase,QuickdrawTypes,CFArray,HIObject,Events,Menus,AERegistry,CarbonEventsCore,HIGeometry;
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+>>>>>>> origin/fixes_2.4
 
 {$ALIGN MAC68K}
 
@@ -503,6 +607,9 @@ const
    * EventTargetRef contained in this parameter and send the event
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
    * directly to that event target. 
    * 
    * Note that it is your application's responsibility to ensure that
@@ -516,6 +623,7 @@ const
    * will send the event to a suitable target, or to the application
    * target if no more specific target is appropriate. Available in
    * CarbonLib 1.3.1 and later, and Mac OS X.
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -527,6 +635,8 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
    }
 	kEventParamPostTarget = FourCharCode('ptrg'); { typeEventTargetRef}
 
@@ -537,6 +647,9 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
   {
    * This event parameter may be added to any event that is posted to
    * the main event queue. When the event is removed from the queue and
@@ -553,10 +666,13 @@ const
 	kEventParamPostOptions = FourCharCode('popt'); { typeEventTargetOptions}
 	typeEventTargetOptions = FourCharCode('etop'); { OptionBits}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 { Generic toolbox parameters and types}
 
 {
@@ -566,6 +682,9 @@ const
    type conversions are automatic:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
     Mac OS X 10.1 and later:
         typeQDPoint                             <-->    typeHIPoint
     Mac OS X 10.2 and later:
@@ -595,6 +714,7 @@ const
         typeCGFloat                             <-->    typeCGFloat72DPIGlobal, typeCGFloatScreenPixel
     Also, any registered AppleEvent coercion handlers will be called to coerce data types
     that are otherwise not convertable.
+<<<<<<< HEAD
 }
 
 =======
@@ -611,6 +731,10 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+}
+
+>>>>>>> origin/fixes_2.4
 const
 	kEventParamWindowRef = FourCharCode('wind'); { typeWindowRef}
 	kEventParamGrafPort = FourCharCode('graf'); { typeGrafPtr}
@@ -627,6 +751,7 @@ const
 	kEventParamCGContextRef = FourCharCode('cntx'); { typeCGContextRef}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kEventParamCGImageRef = FourCharCode('cgim'); { typeCGImageRef}
 	kEventParamDeviceDepth = FourCharCode('devd'); { typeSInt16}
 =======
@@ -635,6 +760,10 @@ const
 =======
 	kEventParamDeviceDepth = FourCharCode('devd'); { typeShortInteger}
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamCGImageRef = FourCharCode('cgim'); { typeCGImageRef}
+	kEventParamDeviceDepth = FourCharCode('devd'); { typeSInt16}
+>>>>>>> origin/fixes_2.4
 	kEventParamDeviceColor = FourCharCode('devc'); { typeBoolean}
 	kEventParamMutableArray = FourCharCode('marr'); { typeCFMutableArrayRef}
 	kEventParamResult = FourCharCode('ansr'); { any type - depends on event like direct object}
@@ -645,6 +774,7 @@ const
 	kEventParamTransactionID = FourCharCode('trns'); { typeUInt32}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kEventParamDisplayDevice = FourCharCode('gdev'); { typeCGDisplayID or typeGDHandle}
 	kEventParamGDevice = kEventParamDisplayDevice;
 =======
@@ -653,6 +783,10 @@ const
 =======
 	kEventParamGDevice = FourCharCode('gdev'); { typeGDHandle}
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamDisplayDevice = FourCharCode('gdev'); { typeCGDisplayID or typeGDHandle}
+	kEventParamGDevice = kEventParamDisplayDevice;
+>>>>>>> origin/fixes_2.4
 	kEventParamIndex = FourCharCode('indx'); { typeCFIndex}
 	kEventParamUserData = FourCharCode('usrd'); { typeVoidPtr}
 	kEventParamShape = FourCharCode('shap'); { typeHIShapeRef}
@@ -668,15 +802,20 @@ const
 	typeCGContextRef = FourCharCode('cntx'); { CGContextRef}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	typeCGImageRef = FourCharCode('cgim'); { CGImageRef}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	typeCGImageRef = FourCharCode('cgim'); { CGImageRef}
+>>>>>>> origin/fixes_2.4
 	typeHIPoint = FourCharCode('hipt'); { HIPoint}
 	typeHISize = FourCharCode('hisz'); { HISize}
 	typeHIRect = FourCharCode('hirc'); { HIRect}
 	typeHIShapeRef = FourCharCode('shap'); { HIShapeRef}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	typeVoidPtr = FourCharCode('void'); { void *}
@@ -823,6 +962,144 @@ type
 	typeVoidPtr = FourCharCode('void'); { void * (used for HIObject fun)}
 	typeGDHandle = FourCharCode('gdev'); { GDHandle}
 >>>>>>> origin/fixes_2_2
+=======
+	typeVoidPtr = FourCharCode('void'); { void *}
+	typeGDHandle = FourCharCode('gdev'); { GDHandle}
+	typeCGDisplayID = FourCharCode('cgid'); { CGDirectDisplayID}
+	typeCGFloat = FourCharCode('cgfl'); { CGFloat}
+	typeHIPoint72DPIGlobal = FourCharCode('hipg'); { HIPoint}
+	typeHIPointScreenPixel = FourCharCode('hips'); { HIPoint}
+	typeHISize72DPIGlobal = FourCharCode('hisg'); { HISize}
+	typeHISizeScreenPixel = FourCharCode('hiss'); { HISize}
+	typeHIRect72DPIGlobal = FourCharCode('hirg'); { HIRect}
+	typeHIRectScreenPixel = FourCharCode('hirs'); { HIRect}
+	typeCGFloat72DPIGlobal = FourCharCode('hifg'); { CGFloat}
+	typeCGFloatScreenPixel = FourCharCode('hifs'); { CGFloat}
+	kEventParamDisplayChangeFlags = FourCharCode('cgdp'); { typeCGDisplayChangeFlags}
+	typeCGDisplayChangeFlags = FourCharCode('cgdf'); { CGDisplayChangeSummaryFlags    }
+
+{
+    Event parameter changes for 64-bit applications
+    
+    With the introduction of 64-bit support in the Carbon Event Manager, four kinds of event parameters
+    require changes to their underlying data types. The parameters that have changed are used to pass
+    refcon data, byte counts, byte offsets, and graphics devices.
+    
+    In the case of refcon data, byte counts, and byte offsets, these parameters used typeSInt32 or
+    typeUInt32 as the event parameter type prior to Mac OS X 10.5. Unfortunately, typeSInt32 and typeUInt32
+    specify a 32-bit value, and on Mac OS X 10.5, these parameters must be 64 bits wide when
+    compiling for the 64-bit API so that 64-bit pointers, byte counts, and byte offsets may be passed
+    without truncation.
+    
+    We have defined three new event parameter types to provide source compatibility between 32-bit and
+    64-bit applications: typeRefCon, typeByteCount, and typeByteOffset. Use of these types by 32-bit
+    applications is optional; the toolbox provides automatic coercion between the old types and the new
+    types where needed (typeRefCon), so existing apps will continue to run, and you may recompile an
+    existing 32-bit app on Mac OS X 10.5 without modification to use these types. However, you must use
+    these new types in order to work properly with the 64-bit API.
+    
+    The actual value of these constants is dependent on whether you are compiling for a 32-bit or 64-bit
+    target, and in the case of typeRefCon, on the value of the preprocessor macro
+    MAC_OS_X_VERSION_MIN_REQUIRED, which specifies the minimum Mac OS X system version on which your
+    application will run.
+    
+    typeRefCon is always equal to typeVoidPtr for 64-bit targets. It is also equal to typeVoidPtr when
+    compiling 32-bit targets for Mac OS X 10.5 and later, but is equal to typeSInt32 when compiling for
+    earlier versions of Mac OS X. The Carbon Event Manager in Mac OS X 10.5 and later will automatically
+    convert between typeVoidPtr and typeSInt32 for 32-bit apps (but not for 64-bit apps).
+    
+    typeByteCount and typeByteOffset use typeUInt64 for 64-bit targets, and typeUInt32 for 32-bit targets.
+    The parameters that have changed to use these types formerly used typeSInt32 (typeLongInteger), not
+    typeUInt32, but in practice they always refer to positive values which the toolbox will convert
+    automatically to/from typeUInt32, so no binary compatibility problem is introduced by using the new
+    types in an application compiled on Mac OS X 10.5 and run on prior systems.
+    
+    When compiling your code using the Mac OS X 10.5 header files, if you don't care about 64-bit
+    compilation, you may continue to use typeSInt32 or typeLongInteger to extract refcon, byte count,
+    and byte offset parameters; the coercion handlers provided by the toolbox will convert event parameter
+    data using typeVoidPtr, typeByteCount, or typeByteOffset to your requested data type. If you want
+    code that will run cleanly on both 32-bit and 64-bit targets, you should modify your calls to
+    GetEventParameter to use typeRefCon, typeByteCount, or typeByteOffset instead of typeSInt32 or
+    typeLongInteger. Using these preferred types will allow your 32-bit application to run on both pre-10.5
+    and 10.5 systems, and will allow your 64-bit application to run on 10.5 and later.
+    
+    Note that when extracting data from an event parameter of typeRefCon, the data type of the variable to
+    which the parameter data is written should always be pointer-sized; i.e., use void* or SRefCon/URefCon/
+    PRefCon, not SInt32. Using a 32-bit variable will fail on 64-bit targets. Similarly, when extracting data
+    from an event parameter of typeByteCount or typeByteOffset, always use the corresponding basic data type
+    (ByteCount or ByteOffset), and use sizeof(ByteCount) or sizeof(ByteOffset), not sizeof(SInt32) or
+    sizeof(UInt32), to specify the amount of data that you need.
+
+    typeRefCon is currently used by the following events:
+    
+        kEventTSMDocumentAccessGetLength
+        kEventTSMDocumentAccessGetSelectedRange
+        kEventTSMDocumentAccessGetCharactersPtr
+        kEventTSMDocumentAccessGetCharactersPtrForLargestBuffer
+        kEventTSMDocumentAccessGetCharacters
+        kEventTSMDocumentAccessGetFont
+        kEventTSMDocumentAccessGetGlyphInfo
+        kEventTSMDocumentAccessGetFirstRectForRange
+        kEventTSMDocumentAccessLockDocument
+        kEventTSMDocumentAccessUnlockDocument
+        kEventTextInputUpdateActiveInputArea
+        kEventTextInputUnicodeForKeyEvent
+        kEventTextInputOffsetToPos
+        kEventTextInputPosToOffset
+        kEventTextInputShowHideBottomWindow
+        kEventTextInputGetSelectedText
+        kEventTextInputFilterText
+        kEventAppLaunchNotification
+        kEventControlArbitraryMessage
+        
+    typeByteCount is currently used by the following events:
+    
+        kEventControlSetData
+        kEventControlGetData
+
+    typeByteOffset is currently used by the following events:
+    
+        kEventTextInputPosToOffset
+
+    In the case of graphics devices, some event parameters used typeGDHandle prior to Mac OS X 10.5.
+    However, the GDHandle type is not available in 64-bit mode, and on Mac OS X 10.5, these parameters
+    contain CGDirectDisplayIDs instead.
+    
+    We have defined a new event parameter type, typeCGDisplayID, to indicate that the data type of a
+    graphics device event parameter is a CGDirectDisplayID instead of a GDHandle. We are not providing
+    a generic type that changes its value based on the ABI or minimum required system version, because
+    you will need to explicitly choose in your code which type of graphics device identifier you need.
+    Use of typeCGDisplayID by 32-bit applications is optional; the toolbox provides automatic coercion
+    between typeCGDisplayID and typeGDHandle, so existing apps will continue to run, and you may recompile
+    an existing 32-bit app on Mac OS X 10.5 without modification to typeCGDisplayID. However, you must use
+    typeCGDisplayID in order to work properly with the 64-bit API.
+    
+    typeCGDisplayID is currently used by the following events:
+    
+        kEventAppAvailableWindowBoundsChanged
+        kEventWindowConstrain
+        kEventMenuGetFrameBounds
+}
+
+type
+	typeRefCon = UnivPtr;      // PRefCon
+
+
+{$ifc TARGET_CPU_64}
+type
+	typeByteCount = UInt64;           // ByteCount
+	typeByteOffset = UInt64;           // ByteOffset
+	typeSignedByteCount = SInt64;           // Size
+	typeSignedByteOffset = SInt64;            // Size
+{$elsec} {TARGET_CPU_64}
+type
+	typeByteCount = UInt32;          // ByteCount
+	typeByteOffset = UInt32;          // ByteOffset
+	typeSignedByteCount = SInt32;          // Size
+	typeSignedByteOffset = SInt32;           // Size
+{$endc} {TARGET_CPU_64}
+
+>>>>>>> origin/fixes_2.4
 
 { Mouse event parameters and types}
 
@@ -835,12 +1112,17 @@ const
 	kEventParamMouseWheelDelta = FourCharCode('mwdl'); { typeSInt32}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kEventParamMouseWheelSmoothVerticalDelta = FourCharCode('saxy'); { typeSInt32}
 	kEventParamMouseWheelSmoothHorizontalDelta = FourCharCode('saxx'); { typeSInt32}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamMouseWheelSmoothVerticalDelta = FourCharCode('saxy'); { typeSInt32}
+	kEventParamMouseWheelSmoothHorizontalDelta = FourCharCode('saxx'); { typeSInt32}
+>>>>>>> origin/fixes_2.4
 	kEventParamMouseDelta = FourCharCode('mdta'); { typeHIPoint (10.2 or later) or typeQDPoint}
 	kEventParamMouseChord = FourCharCode('chor'); { typeUInt32}
 	kEventParamTabletEventType = FourCharCode('tblt'); { typeUInt32}
@@ -851,6 +1133,9 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 { Gesture event parameters}
 
 const
@@ -858,14 +1143,18 @@ const
 	kEventParamRotationAmount = FourCharCode('rota'); { typeCGFloat}
 	kEventParamSwipeDirection = FourCharCode('swip'); { typeHIPoint}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 { Keyboard event parameter and types}
 
 const
 	kEventParamKeyCode = FourCharCode('kcod'); { typeUInt32}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	kEventParamKeyMacCharCodes = FourCharCode('kchr'); { typeChar  (DEPRECATED for 64bit on Mac OS X 10.6 and later.)}
@@ -875,6 +1164,9 @@ const
 =======
 	kEventParamKeyMacCharCodes = FourCharCode('kchr'); { typeChar}
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamKeyMacCharCodes = FourCharCode('kchr'); { typeChar  (DEPRECATED for 64bit on Mac OS X 10.6 and later.)}
+>>>>>>> origin/fixes_2.4
 	kEventParamKeyModifiers = FourCharCode('kmod'); { typeUInt32}
 	kEventParamKeyUnicodes = FourCharCode('kuni'); { typeUnicodeText}
 	kEventParamKeyboardType = FourCharCode('kbdt'); { typeUInt32}
@@ -885,6 +1177,7 @@ const
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kEventParamTSMSendRefCon = FourCharCode('tsrc'); {    typeRefCon}
 =======
 	kEventParamTSMSendRefCon = FourCharCode('tsrc'); {    typeLongInteger}
@@ -892,11 +1185,15 @@ const
 =======
 	kEventParamTSMSendRefCon = FourCharCode('tsrc'); {    typeLongInteger}
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamTSMSendRefCon = FourCharCode('tsrc'); {    typeRefCon}
+>>>>>>> origin/fixes_2.4
 	kEventParamTSMSendComponentInstance = FourCharCode('tsci'); {    typeComponentInstance}
 
 { TextInput event parameters}
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	kEventParamTextInputSendRefCon = kEventParamTSMSendRefCon; {    typeRefCon}
@@ -906,11 +1203,15 @@ const
 =======
 	kEventParamTextInputSendRefCon = kEventParamTSMSendRefCon; {    typeLongInteger}
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamTextInputSendRefCon = kEventParamTSMSendRefCon; {    typeRefCon}
+>>>>>>> origin/fixes_2.4
 	kEventParamTextInputSendComponentInstance = kEventParamTSMSendComponentInstance; {    typeComponentInstance}
 	kEventParamTextInputSendSLRec = FourCharCode('tssl'); {    typeIntlWritingCode}
 	kEventParamTextInputReplySLRec = FourCharCode('trsl'); {    typeIntlWritingCode}
 	kEventParamTextInputSendText = FourCharCode('tstx'); {    typeUnicodeText (if TSMDocument is Unicode), otherwise typeChar}
 	kEventParamTextInputReplyText = FourCharCode('trtx'); {    typeUnicodeText (if TSMDocument is Unicode), otherwise typeChar}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	kEventParamTextInputSendAttributedString = FourCharCode('tsas'); {    typeCFAttributedStringRef}
@@ -919,10 +1220,15 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamTextInputSendAttributedString = FourCharCode('tsas'); {    typeCFAttributedStringRef}
+	kEventParamTextInputReplyAttributedString = FourCharCode('tras'); {    typeCFAttributedStringRef}
+>>>>>>> origin/fixes_2.4
 	kEventParamTextInputSendUpdateRng = FourCharCode('tsup'); {    typeTextRangeArray}
 	kEventParamTextInputSendHiliteRng = FourCharCode('tshi'); {    typeTextRangeArray}
 	kEventParamTextInputSendClauseRng = FourCharCode('tscl'); {    typeOffsetArray}
 	kEventParamTextInputSendPinRng = FourCharCode('tspn'); {    typeTextRange}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	kEventParamTextInputSendFixLen = FourCharCode('tsfx'); {    typeSignedByteCount}
@@ -945,16 +1251,20 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 	kEventParamTextInputSendFixLen = FourCharCode('tsfx'); {    typeLongInteger}
+=======
+	kEventParamTextInputSendFixLen = FourCharCode('tsfx'); {    typeSignedByteCount}
+>>>>>>> origin/fixes_2.4
 	kEventParamTextInputSendLeadingEdge = FourCharCode('tsle'); {    typeBoolean}
 	kEventParamTextInputReplyLeadingEdge = FourCharCode('trle'); {    typeBoolean}
-	kEventParamTextInputSendTextOffset = FourCharCode('tsto'); {    typeLongInteger}
-	kEventParamTextInputReplyTextOffset = FourCharCode('trto'); {    typeLongInteger}
-	kEventParamTextInputReplyRegionClass = FourCharCode('trrg'); {    typeLongInteger}
-	kEventParamTextInputSendCurrentPoint = FourCharCode('tscp'); {    typeQDPoint}
+	kEventParamTextInputSendTextOffset = FourCharCode('tsto'); {    typeSignedByteOffset}
+	kEventParamTextInputReplyTextOffset = FourCharCode('trto'); {    typeByteOffset}
+	kEventParamTextInputReplyRegionClass = FourCharCode('trrg'); {    typeSInt32}
+	kEventParamTextInputSendCurrentPoint = FourCharCode('tscp'); {    typeHIPoint}
 	kEventParamTextInputSendDraggingMode = FourCharCode('tsdm'); {    typeBoolean}
-	kEventParamTextInputReplyPoint = FourCharCode('trpt'); {    typeQDPoint}
-	kEventParamTextInputReplyFont = FourCharCode('trft'); {    typeLongInteger}
+	kEventParamTextInputReplyPoint = FourCharCode('trpt'); {    typeHIPoint}
+	kEventParamTextInputReplyFont = FourCharCode('trft'); {    typeSInt32}
 	kEventParamTextInputReplyFMFont = FourCharCode('trfm'); {    typeUInt32}
+<<<<<<< HEAD
 	kEventParamTextInputReplyPointSize = FourCharCode('trpz'); {    typeFixed}
 	kEventParamTextInputReplyLineHeight = FourCharCode('trlh'); {    typeShortInteger}
 	kEventParamTextInputReplyLineAscent = FourCharCode('trla'); {    typeShortInteger}
@@ -962,6 +1272,13 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamTextInputReplyPointSize = FourCharCode('trpz'); {    typeCGFloat (originally typeFixed)}
+	kEventParamTextInputReplyLineHeight = FourCharCode('trlh'); {    typeCGFloat (originally typeSInt16)}
+	kEventParamTextInputReplyLineAscent = FourCharCode('trla'); {    typeCGFloat (originally typeSInt16)}
+	kEventParamTextInputReplyCTFontRef = FourCharCode('trcf'); {    typeCTFontRef}
+	kEventParamTextInputReplyATSFont = FourCharCode('traf'); {    typeATSFontRef}
+>>>>>>> origin/fixes_2.4
 	kEventParamTextInputReplyTextAngle = FourCharCode('trta'); {    typeFixed}
 	kEventParamTextInputSendShowHide = FourCharCode('tssh'); {    typeBoolean}
 	kEventParamTextInputReplyShowHide = FourCharCode('trsh'); {    typeBoolean}
@@ -975,15 +1292,20 @@ const
 	kEventParamTextInputSendReplaceRange = FourCharCode('tsrp'); {    typeCFRange}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kEventParamTextInputSendMouseEvent = FourCharCode('tsme'); {    typeEventRef}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamTextInputSendMouseEvent = FourCharCode('tsme'); {    typeEventRef}
+>>>>>>> origin/fixes_2.4
 
 { TSMDocumentAccess event parameters and types}
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	kEventParamTSMDocAccessSendRefCon = kEventParamTSMSendRefCon; {    typeRefCon}
@@ -993,6 +1315,9 @@ const
 =======
 	kEventParamTSMDocAccessSendRefCon = kEventParamTSMSendRefCon; {    typeLongInteger}
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamTSMDocAccessSendRefCon = kEventParamTSMSendRefCon; {    typeRefCon}
+>>>>>>> origin/fixes_2.4
 	kEventParamTSMDocAccessSendComponentInstance = kEventParamTSMSendComponentInstance; {    typeComponentInstance}
 	kEventParamTSMDocAccessCharacterCount = FourCharCode('tdct'); {    typeCFIndex}
 	kEventParamTSMDocAccessReplyCharacterRange = FourCharCode('tdrr'); {    typeCFRange}
@@ -1001,6 +1326,7 @@ const
 	kEventParamTSMDocAccessSendCharacterRange = FourCharCode('tdsr'); {    typeCFRange}
 	kEventParamTSMDocAccessSendCharactersPtr = FourCharCode('tdsp'); {    typePtr}
 	kEventParamTSMDocAccessRequestedCharacterAttributes = FourCharCode('tdca'); {    typeUInt32}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	kEventParamTSMDocAccessReplyCTFontRef = FourCharCode('tdcf'); {    typeCTFontRef}
@@ -1015,16 +1341,25 @@ const
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamTSMDocAccessReplyCTFontRef = FourCharCode('tdcf'); {    typeCTFontRef}
+>>>>>>> origin/fixes_2.4
 	kEventParamTSMDocAccessReplyATSFont = FourCharCode('tdaf'); {    typeATSFontRef}
-	kEventParamTSMDocAccessReplyFontSize = FourCharCode('tdrs'); {    typeFloat}
+	kEventParamTSMDocAccessReplyFontSize = FourCharCode('tdrs'); {    typeCGFloat (originally typeFloat)}
 	kEventParamTSMDocAccessEffectiveRange = FourCharCode('tder'); {    typeRange}
+	kEventParamTSMDocAccessReplyCTGlyphInfoRef = FourCharCode('tdri'); {    typeCTGlyphInfoRef}
 	kEventParamTSMDocAccessReplyATSUGlyphSelector = FourCharCode('tdrg'); {    typeGlyphSelector}
 	kEventParamTSMDocAccessLockCount = FourCharCode('tdlc'); {    typeCFIndex}
+<<<<<<< HEAD
 	kEventParamTSMDocAccessLineBounds = FourCharCode('tdlb'); {  typeCFMutableArrayRef}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamTSMDocAccessLineBounds = FourCharCode('tdlb'); {  typeHIRect}
+	kEventParamTSMDocAccessBaselineDelta = FourCharCode('tdbd'); {    typeCGFloat}
+>>>>>>> origin/fixes_2.4
 	typeATSFontRef = FourCharCode('atsf'); {    ATSFontRef}
 	typeGlyphSelector = FourCharCode('glfs'); {    ATSUGlyphSelector}
 
@@ -1047,11 +1382,15 @@ const
 	kEventParamWindowRegionCode = FourCharCode('wshp'); { typeWindowRegionCode}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kEventParamWindowContentBounds = FourCharCode('wcbn'); { typeQDRectangle}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamWindowContentBounds = FourCharCode('wcbn'); { typeQDRectangle}
+>>>>>>> origin/fixes_2.4
 	kEventParamWindowDragHiliteFlag = FourCharCode('wdhf'); { typeBoolean}
 	kEventParamWindowModifiedFlag = FourCharCode('wmff'); { typeBoolean}
 	kEventParamWindowProxyGWorldPtr = FourCharCode('wpgw'); { typeGWorldPtr}
@@ -1062,6 +1401,7 @@ const
 	kEventParamWindowTitleTextWidth = FourCharCode('wttw'); { typeSInt16}
 	kEventParamWindowGrowRect = FourCharCode('grct'); { typeQDRectangle}
 	kEventParamPreviousDockRect = FourCharCode('pdrc'); { typeHIRect}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	kEventParamPreviousDockDevice = FourCharCode('pdgd'); { typeGDHandle (10.3 and later), typeCGDisplayID (10.5 and later)}
@@ -1077,6 +1417,11 @@ const
 	kEventParamCurrentDockRect = FourCharCode('cdrc'); { typeHIRect}
 	kEventParamCurrentDockDevice = FourCharCode('cdgd'); { typeGDHandle}
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamPreviousDockDevice = FourCharCode('pdgd'); { typeGDHandle (10.3 and later), typeCGDisplayID (10.5 and later)}
+	kEventParamCurrentDockRect = FourCharCode('cdrc'); { typeHIRect}
+	kEventParamCurrentDockDevice = FourCharCode('cdgd'); { typeGDHandle (10.3 and later), typeCGDisplayID (10.5 and later)}
+>>>>>>> origin/fixes_2.4
 	kEventParamWindowTransitionAction = FourCharCode('wtac'); { typeWindowTransitionAction}
 	kEventParamWindowTransitionEffect = FourCharCode('wtef'); { typeWindowTransitionEffect}
 	typeWindowRegionCode = FourCharCode('wshp'); { WindowRegionCode}
@@ -1093,6 +1438,7 @@ const
 	kEventParamInitCollection = FourCharCode('icol'); { typeCollection}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kEventParamControlMessage = FourCharCode('cmsg'); { typeSInt16}
 	kEventParamControlParam = FourCharCode('cprm'); { typeRefCon}
 	kEventParamControlResult = FourCharCode('crsl'); { typeSInt32}
@@ -1106,6 +1452,11 @@ const
 	kEventParamControlParam = FourCharCode('cprm'); { typeLongInteger}
 	kEventParamControlResult = FourCharCode('crsl'); { typeLongInteger}
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamControlMessage = FourCharCode('cmsg'); { typeSInt16}
+	kEventParamControlParam = FourCharCode('cprm'); { typeRefCon}
+	kEventParamControlResult = FourCharCode('crsl'); { typeSInt32}
+>>>>>>> origin/fixes_2.4
 	kEventParamControlRegion = FourCharCode('crgn'); { typeQDRgnHandle}
 	kEventParamControlAction = FourCharCode('caup'); { typeControlActionUPP}
 	kEventParamControlIndicatorDragConstraint = FourCharCode('cidc'); { typeIndicatorDragConstraint}
@@ -1115,6 +1466,7 @@ const
 	kEventParamControlClickActivationResult = FourCharCode('ccar'); { typeClickActivationResult}
 	kEventParamControlSubControl = FourCharCode('csub'); { typeControlRef}
 	kEventParamControlOptimalBounds = FourCharCode('cobn'); { typeQDRectangle}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	kEventParamControlOptimalBaselineOffset = FourCharCode('cobo'); { typeSInt16}
@@ -1128,15 +1480,22 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 	kEventParamControlOptimalBaselineOffset = FourCharCode('cobo'); { typeShortInteger}
+=======
+	kEventParamControlOptimalBaselineOffset = FourCharCode('cobo'); { typeSInt16}
+>>>>>>> origin/fixes_2.4
 	kEventParamControlDataTag = FourCharCode('cdtg'); { typeEnumeration}
 	kEventParamControlDataBuffer = FourCharCode('cdbf'); { typePtr}
-	kEventParamControlDataBufferSize = FourCharCode('cdbs'); { typeLongInteger}
-	kEventParamControlDrawDepth = FourCharCode('cddp'); { typeShortInteger}
+	kEventParamControlDataBufferSize = FourCharCode('cdbs'); { typeByteCount}
+	kEventParamControlDrawDepth = FourCharCode('cddp'); { typeSInt16}
 	kEventParamControlDrawInColor = FourCharCode('cdic'); { typeBoolean}
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamControlDrawEngraved = FourCharCode('cden'); { typeBoolean}
+>>>>>>> origin/fixes_2.4
 	kEventParamControlFeatures = FourCharCode('cftr'); { typeUInt32}
 	kEventParamControlPartBounds = FourCharCode('cpbd'); { typeQDRectangle}
 	kEventParamControlOriginalOwningWindow = FourCharCode('coow'); { typeWindowRef}
@@ -1150,6 +1509,7 @@ const
 	kEventParamControlInvalRgn = FourCharCode('civr'); { typeQDRgnHandle}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kEventParamControlValue = FourCharCode('cval'); { typeSInt32}
 =======
 	kEventParamControlValue = FourCharCode('cval'); { typeLongInteger}
@@ -1157,6 +1517,9 @@ const
 =======
 	kEventParamControlValue = FourCharCode('cval'); { typeLongInteger}
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamControlValue = FourCharCode('cval'); { typeSInt32}
+>>>>>>> origin/fixes_2.4
 	kEventParamControlHit = FourCharCode('chit'); { typeBoolean}
 	kEventParamControlPartAutoRepeats = FourCharCode('caur'); { typeBoolean}
 	kEventParamControlFrameMetrics = FourCharCode('cfmt'); { typeControlFrameMetrics}
@@ -1185,6 +1548,7 @@ const
 	kEventParamMenuTextBounds = FourCharCode('mtxb'); { typeQDRectangle}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kEventParamMenuTextBaseline = FourCharCode('mtbl'); { typeSInt16}
 	kEventParamMenuCommandKeyBounds = FourCharCode('mcmb'); { typeQDRectangle}
 	kEventParamMenuVirtualTop = FourCharCode('mvrt'); { typeSInt32}
@@ -1197,17 +1561,25 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 	kEventParamMenuTextBaseline = FourCharCode('mtbl'); { typeShortInteger}
+=======
+	kEventParamMenuTextBaseline = FourCharCode('mtbl'); { typeSInt16}
+>>>>>>> origin/fixes_2.4
 	kEventParamMenuCommandKeyBounds = FourCharCode('mcmb'); { typeQDRectangle}
-	kEventParamMenuVirtualTop = FourCharCode('mvrt'); { typeLongInteger}
-	kEventParamMenuVirtualBottom = FourCharCode('mvrb'); { typeLongInteger}
+	kEventParamMenuVirtualTop = FourCharCode('mvrt'); { typeSInt32}
+	kEventParamMenuVirtualBottom = FourCharCode('mvrb'); { typeSInt32}
 	kEventParamMenuDrawState = FourCharCode('mdrs'); { typeThemeMenuState}
 	kEventParamMenuItemType = FourCharCode('mitp'); { typeThemeMenuItemType}
+<<<<<<< HEAD
 	kEventParamMenuItemWidth = FourCharCode('mitw'); { typeShortInteger}
 	kEventParamMenuItemHeight = FourCharCode('mith'); { typeShortInteger}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamMenuItemWidth = FourCharCode('mitw'); { typeSInt16}
+	kEventParamMenuItemHeight = FourCharCode('mith'); { typeSInt16}
+>>>>>>> origin/fixes_2.4
 	kEventParamMenuFrameView = FourCharCode('mfrv'); { typeControlRef}
 	kEventParamMenuType = FourCharCode('mtyp'); { typeThemeMenuType}
 	kEventParamMenuIsPopup = FourCharCode('mpop'); { typeBoolean}
@@ -1217,11 +1589,15 @@ const
 	kEventParamMenuPopupItem = FourCharCode('mpit'); { typeMenuItemIndex}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kEventParamMenuContextHeight = FourCharCode('mcht'); { typeCGFloat}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamMenuContextHeight = FourCharCode('mcht'); { typeCGFloat}
+>>>>>>> origin/fixes_2.4
 	typeMenuItemIndex = FourCharCode('midx'); { MenuItemIndex}
 	typeMenuCommand = FourCharCode('mcmd'); { MenuCommand}
 	typeMenuTrackingMode = FourCharCode('mtmd'); { MenuTrackingMode}
@@ -1235,6 +1611,7 @@ const
 
 const
 	kEventParamProcessID = FourCharCode('psn '); { typeProcessSerialNumber}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	kEventParamLaunchRefCon = FourCharCode('lref'); { typeRefCon}
@@ -1251,6 +1628,12 @@ const
 	kEventParamLaunchErr = FourCharCode('err '); { typeOSStatus}
 	kEventParamSystemUIMode = FourCharCode('uimd'); { typeUInt32}
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamLaunchRefCon = FourCharCode('lref'); { typeRefCon}
+	kEventParamLaunchErr = FourCharCode('err '); { typeOSStatus}
+	kEventParamSystemUIMode = FourCharCode('uimd'); { typeUInt32}
+	kEventParamSystemUIOptions = FourCharCode('uiop'); { typeUInt32}
+>>>>>>> origin/fixes_2.4
 	kEventParamIsInInstantMouser = FourCharCode('imou'); { typeBoolean}
 	kEventParamPreviousWindow = FourCharCode('prvw'); { typeWindowRef}
 	kEventParamCurrentWindow = FourCharCode('curw'); { typeWindowRef}
@@ -1268,6 +1651,7 @@ const
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kEventParamNewScrollBarVariant = FourCharCode('nsbv'); { typeSInt16}
 =======
 	kEventParamNewScrollBarVariant = FourCharCode('nsbv'); { typeShortInteger}
@@ -1275,6 +1659,9 @@ const
 =======
 	kEventParamNewScrollBarVariant = FourCharCode('nsbv'); { typeShortInteger}
 >>>>>>> origin/fixes_2_2
+=======
+	kEventParamNewScrollBarVariant = FourCharCode('nsbv'); { typeSInt16}
+>>>>>>> origin/fixes_2.4
 
 { Service event parameters}
 
@@ -1310,6 +1697,9 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 { AppleEvent event parameters}
 
 const
@@ -1317,15 +1707,19 @@ const
 	kEventParamAppleEventReply = FourCharCode('aerp'); { typeAppleEvent}
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {--------------------------------------------------------------------------------------}
 {  ¥ Helpful utilities                                                                 }
 {--------------------------------------------------------------------------------------}
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  MouseTrackingResult
@@ -1501,39 +1895,165 @@ function CheckEventQueueForUserCancel: Boolean; external name '_CheckEventQueueF
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  MouseTrackingResult
+ *  
+>>>>>>> origin/fixes_2.4
  *  Discussion:
- *    These are returned from calls to TrackMouseLocation and
- *    TrackMouseRegion. Those routines are designed as replacements to
- *    calls such as StillDown and WaitMouseUp. The advantage over those
- *    routines is that TrackMouseLocation and TrackMouseRegion will
- *    block if the user is not moving the mouse, whereas mouse tracking
- *    loops based on StillDown and WaitMouseUp will spin, chewing up
- *    valuable CPU time that could be better spent elsewhere. It is
- *    highly recommended that any tracking loops in your application
- *    stop using StillDown and WaitMouseUp and start using
- *    TrackMouseLocation/Region. See the notes on those routines for
+ *    These constants are returned from calls to TrackMouseLocation,
+ *    TrackMouseLocationWithOptions, TrackMouseRegion,
+ *    HIViewTrackMouseLocation, and HIViewTrackMouseShape. Those
+ *    routines are designed as replacements to calls such as StillDown
+ *    and WaitMouseUp. The advantage over those routines is that the
+ *    tracking APIs will block if the user is not moving the mouse,
+ *    whereas mouse tracking loops based on StillDown and WaitMouseUp
+ *    will spin, chewing up valuable CPU time that could be better
+ *    spent elsewhere. It is highly recommended that any tracking loops
+ *    in your application stop using StillDown and WaitMouseUp and
+ *    start using a tracking API. See the notes on those routines for
  *    more information.
  }
-const
-	kTrackMouseLocationOptionDontConsumeMouseUp = 1 shl 0;
-
 type
 	MouseTrackingResult = UInt16;
 const
+{
+   * kMouseTrackingMouseDown is returned when the user presses any
+   * mouse button.
+   }
 	kMouseTrackingMouseDown = 1;
+
+  {
+   * kMouseTrackingMouseUp is returned when the user releases a mouse
+   * button. Typically you would look for this result in a mouse
+   * tracking loop to know when to exit the loop.
+   }
 	kMouseTrackingMouseUp = 2;
+
+  {
+   * kMouseTrackingMouseExited is returned when the user moves the
+   * mouse out of the specified region. This value is only returned
+   * from TrackMouseRegion and HIViewTrackMouseShape.
+   }
 	kMouseTrackingMouseExited = 3;
+
+  {
+   * kMouseTrackingMouseEntered is returned when the user moves the
+   * mouse into the specified region. This value is only returned from
+   * TrackMouseRegion and HIViewTrackMouseShape.
+   }
 	kMouseTrackingMouseEntered = 4;
+
+  {
+   * kMouseTrackingMouseDragged is returned when the user moves the
+   * mouse while holding down a mouse button. This value is not
+   * returned by TrackMouseRegion or HIViewTrackMouseShape; instead,
+   * when the mouse moves, those APIs check if the mouse has moved into
+   * or out of the specified region, and return
+   * kMouseTrackingMouseEntered/Exited.
+   }
 	kMouseTrackingMouseDragged = 5;
+
+  {
+   * kMouseTrackingKeyModifiersChanged is returned when the user
+   * changes the keyboard modifiers. This value is not returned by
+   * TrackMouseRegion. It is returned by all other tracking APIs.
+   }
 	kMouseTrackingKeyModifiersChanged = 6;
+
+  {
+   * kMouseTrackingUserCancelled is returned if the user presses the
+   * escape or cmd-period keys during mouse tracking. This value is
+   * returned by TrackMouseRegion in Mac OS X 10.2 and CarbonLib 1.6
+   * and later, and by all versions of all other tracking APIs.
+   }
 	kMouseTrackingUserCancelled = 7;
+
+  {
+   * kMouseTrackingTimedOut is returned if the timeout expires. This
+   * value is only returned by APIs that take a timeout parameter.
+   }
 	kMouseTrackingTimedOut = 8;
+
+  {
+   * kMouseTrackingMouseMoved is returned when the user moves the mouse
+   * while no mouse button is pressed. It is not returned by
+   * TrackMouseRegion or HIViewTrackMouseShape; instead, when the mouse
+   * moves, those APIs check if the mouse has moved into or out of the
+   * specified region, and return kMouseTrackingMouseEntered/Exited.
+   * Available in Mac OS X 10.2 and CarbonLib 1.6 and later.
+   }
 	kMouseTrackingMouseMoved = 9;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  {
+   * kMouseTrackingClientEvent is returned when a caller-specified
+   * event was received during mouse tracking. This value is only
+   * returned by APIs that take a client- specified list of event
+   * parameters. Available in Mac OS X 10.5 and later.
+   }
+	kMouseTrackingClientEvent = 10;
+
+  {
+   * kMouseTrackingScrollWheel is returned when the user scrolls a
+   * mouse wheel. This value is only returned when the
+   * kTrackMouseLocationOptionIncludeScrollWheel option bit is
+   * specified in a call to TrackMouseLocationWithOptions,
+   * HIViewTrackMouseLocation, or HIViewTrackMouseShape. Available in
+   * Mac OS X 10.5 and later.
+   }
+	kMouseTrackingScrollWheel = 11;
+
+
+{
+ *  Summary:
+ *    Constants for use with the OptionBits parameter to
+ *    TrackMouseLocationWithOptions, HIViewTrackMouseLocation, and
+ *    HIViewTrackMouseShape.
+ }
+const
+{
+   * Indicates that mouse-up events should be left in the queue.
+   }
+	kTrackMouseLocationOptionDontConsumeMouseUp = 1 shl 0;
+
+  {
+   * Indicates that kEventMouseWheelMoved and kEventMouseScroll events
+   * should cause `                       the tracking API to stop
+   * tracking and return kMouseTrackingScrollWheel.
+   }
+	kTrackMouseLocationOptionIncludeScrollWheel = 1 shl 3;
+
+{
+ *  CheckEventQueueForUserCancel()
+ *  
+ *  Summary:
+ *    Determines if there is a cancel event in the main thread's event
+ *    queue.
+ *  
+ *  Discussion:
+ *    This API supports two cancel events: Escape and Cmd-Period. The
+ *    cancel event itself, as well as mouse or keyboard events in front
+ *    of the cancel event in the event queue, will be removed from the
+ *    queue.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function CheckEventQueueForUserCancel: Boolean; external name '_CheckEventQueueForUserCancel';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/fixes_2.4
 {
  *  IsUserCancelEventRef()
  *  
@@ -1560,11 +2080,15 @@ function IsUserCancelEventRef( event: EventRef ): Boolean; external name '_IsUse
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 {
  *  TrackMouseLocation()
  *  
@@ -1592,16 +2116,22 @@ function IsUserCancelEventRef( event: EventRef ): Boolean; external name '_IsUse
  *    kMouseTrackingMouseEntered/Exited if the mouse moves into or out
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    of the specified region while no button is pressed. 
  *    
  *    For mouse tracking within an HIView, also see
  *    HIViewTrackMouseLocation.
+<<<<<<< HEAD
 =======
  *    of the specified region while no button is pressed.
 >>>>>>> graemeg/fixes_2_2
 =======
  *    of the specified region while no button is pressed.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1631,6 +2161,7 @@ function IsUserCancelEventRef( event: EventRef ): Boolean; external name '_IsUse
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1638,6 +2169,9 @@ function IsUserCancelEventRef( event: EventRef ): Boolean; external name '_IsUse
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1656,14 +2190,20 @@ function TrackMouseLocation( inPort: GrafPtr { can be NULL }; var outPt: Point; 
  *    and retrieving the current mouse position and keyboard modifiers.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    
  *    
  *    For mouse tracking within an HIView, also see
  *    HIViewTrackMouseLocation.
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1691,6 +2231,7 @@ function TrackMouseLocation( inPort: GrafPtr { can be NULL }; var outPt: Point; 
  *      within this time, kMouseTrackingTimedOut is returned in
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      outResult. Pass kEventDurationForever to wait indefinitely for
  *      the next event.
 =======
@@ -1699,6 +2240,10 @@ function TrackMouseLocation( inPort: GrafPtr { can be NULL }; var outPt: Point; 
 =======
  *      outResult.
 >>>>>>> origin/fixes_2_2
+=======
+ *      outResult. Pass kEventDurationForever to wait indefinitely for
+ *      the next event.
+>>>>>>> origin/fixes_2.4
  *    
  *    outPt:
  *      On exit, this parameter receives the mouse location from the
@@ -1722,6 +2267,7 @@ function TrackMouseLocation( inPort: GrafPtr { can be NULL }; var outPt: Point; 
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1729,6 +2275,9 @@ function TrackMouseLocation( inPort: GrafPtr { can be NULL }; var outPt: Point; 
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1749,16 +2298,22 @@ function TrackMouseLocationWithOptions( inPort: GrafPtr { can be NULL }; inOptio
  *    intermediate mouse events, but rather just if the mouse enters or
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    leaves an area. 
  *    
  *    For mouse tracking within an HIView, also see
  *    HIViewTrackMouseShape.
+<<<<<<< HEAD
 =======
  *    leaves an area.
 >>>>>>> graemeg/fixes_2_2
 =======
  *    leaves an area.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1783,6 +2338,7 @@ function TrackMouseLocationWithOptions( inPort: GrafPtr { can be NULL }; inOptio
  *      mouse is currently outside the region. On exit, this parameter
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      is updated to reflect the current reality; e.g., if the
 =======
  *      is updated to reflect the current reality; e.g. if the
@@ -1790,10 +2346,14 @@ function TrackMouseLocationWithOptions( inPort: GrafPtr { can be NULL }; inOptio
 =======
  *      is updated to reflect the current reality; e.g. if the
 >>>>>>> origin/fixes_2_2
+=======
+ *      is updated to reflect the current reality; e.g., if the
+>>>>>>> origin/fixes_2.4
  *      outResult parameter returns kMouseTrackingMouseExited,
  *      ioWasInRgn will be set to false when this function exits.
  *      Because it is updated from within, you should only need to set
  *      this yourself before the first call to this function in your
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *      tracking loop. Typically, you should set this value to false
@@ -1805,6 +2365,11 @@ function TrackMouseLocationWithOptions( inPort: GrafPtr { can be NULL }; inOptio
 =======
  *      tracking loop.
 >>>>>>> origin/fixes_2_2
+=======
+ *      tracking loop. Typically, you should set this value to false
+ *      initially, and TrackMouseRegion will return immediately with
+ *      kMouseTrackingMouseEntered if your guess was wrong.
+>>>>>>> origin/fixes_2.4
  *    
  *    outResult:
  *      On exit, this parameter receives a value representing what kind
@@ -1817,6 +2382,7 @@ function TrackMouseLocationWithOptions( inPort: GrafPtr { can be NULL }; inOptio
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1824,6 +2390,9 @@ function TrackMouseLocationWithOptions( inPort: GrafPtr { can be NULL }; inOptio
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1833,6 +2402,7 @@ function TrackMouseRegion( inPort: GrafPtr { can be NULL }; inRegion: RgnHandle;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 
@@ -1840,6 +2410,11 @@ function TrackMouseRegion( inPort: GrafPtr { can be NULL }; inRegion: RgnHandle;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not TARGET_CPU_64}
+
+
+>>>>>>> origin/fixes_2.4
 {
  *  Summary:
  *    Mouse tracking info selectors for HIMouseTrackingGetParameters.
@@ -1857,6 +2432,9 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
   {
    * Requests the time and distance for initiating the drag of a
    * window's proxy icon. After a mouse-down on a proxy icon, if the
@@ -1892,10 +2470,13 @@ const
    }
 	kMouseParamsDragInitiation = FourCharCode('drag');
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {
  *  HIMouseTrackingGetParameters()
  *  
@@ -1907,6 +2488,7 @@ const
  *    distances to determine their behavior. This API provides a
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    generic service for requesting this information.
 =======
  *    generic service for requesting this information. Currently, the
@@ -1916,6 +2498,9 @@ const
  *    generic service for requesting this information. Currently, the
  *    only supported selector is kMouseParamsSticky.
 >>>>>>> origin/fixes_2_2
+=======
+ *    generic service for requesting this information.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1948,11 +2533,15 @@ function HIMouseTrackingGetParameters( inSelector: OSType; outTime: EventTimePtr
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 {
  *  ConvertEventRefToEventRecord()
  *  
@@ -1998,6 +2587,7 @@ function HIMouseTrackingGetParameters( inSelector: OSType; outTime: EventTimePtr
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2005,6 +2595,9 @@ function HIMouseTrackingGetParameters( inSelector: OSType; outTime: EventTimePtr
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2040,6 +2633,7 @@ function ConvertEventRefToEventRecord( inEvent: EventRef; var outEvent: EventRec
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2047,6 +2641,9 @@ function ConvertEventRefToEventRecord( inEvent: EventRef; var outEvent: EventRec
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2063,6 +2660,7 @@ function IsEventInMask( inEvent: EventRef; inMask: EventMask ): Boolean; externa
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2070,6 +2668,9 @@ function IsEventInMask( inEvent: EventRef; inMask: EventMask ): Boolean; externa
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2099,6 +2700,7 @@ function GetLastUserEventTime: EventTime; external name '_GetLastUserEventTime';
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.1 and later in Carbon.framework
@@ -2106,6 +2708,9 @@ function GetLastUserEventTime: EventTime; external name '_GetLastUserEventTime';
 =======
  *    Mac OS X:         in version 10.1 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2142,6 +2747,7 @@ function IsMouseCoalescingEnabled: Boolean; external name '_IsMouseCoalescingEna
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.1 and later in Carbon.framework
@@ -2149,6 +2755,9 @@ function IsMouseCoalescingEnabled: Boolean; external name '_IsMouseCoalescingEna
 =======
  *    Mac OS X:         in version 10.1 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2161,12 +2770,17 @@ function SetMouseCoalescingEnabled( inNewState: Boolean; outOldState: BooleanPtr
 {======================================================================================}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> origin/fixes_2.4
 
 {
  *  Summary:
@@ -2272,15 +2886,21 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
   {
    * Events related to gestures: magnify, swipe, rotate.
    }
 	kEventClassGesture = FourCharCode('gest');
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {--------------------------------------------------------------------------------------}
 { Mouse Events                                                                         }
 {--------------------------------------------------------------------------------------}
@@ -2295,6 +2915,7 @@ const
     kEventMouseExited               = 9,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     kEventMouseWheelMoved           = 10,
     kEventMouseScroll               = 11
 =======
@@ -2303,6 +2924,10 @@ const
 =======
     kEventMouseWheelMoved           = 10
 >>>>>>> origin/fixes_2_2
+=======
+    kEventMouseWheelMoved           = 10,
+    kEventMouseScroll               = 11
+>>>>>>> origin/fixes_2.4
 
     NOTE: As of Mac OS X 10.1, mouse events carry more information which allow you
           to do less work and gain accuracy of hit testing. First, there is the
@@ -2673,6 +3298,7 @@ const
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -2680,6 +3306,9 @@ const
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available
  }
 const
@@ -2717,6 +3346,7 @@ const
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -2724,6 +3354,9 @@ const
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available
  }
 const
@@ -2737,6 +3370,9 @@ const
  *  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *  Discussion:
  *    This event is sent to the window or view underneath the mouse.
  *    The window or view does not need to be active to receive this
@@ -2746,10 +3382,13 @@ const
  *    the view, the standard window event handler will send the event
  *    to the view under the mouse.
  *  
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -2785,6 +3424,7 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    --> kEventParamMouseWheelDelta (in, typeSInt32)
 =======
  *    --> kEventParamMouseWheelDelta (in, typeLongInteger)
@@ -2792,6 +3432,9 @@ const
 =======
  *    --> kEventParamMouseWheelDelta (in, typeLongInteger)
 >>>>>>> origin/fixes_2_2
+=======
+ *    --> kEventParamMouseWheelDelta (in, typeSInt32)
+>>>>>>> origin/fixes_2.4
  *          The amount of change in the wheel position. Generally, a
  *          positive change should be interpreted as an upward scroll
  *          (equivalent to a click in the up arrow of a scrollbar); a
@@ -2822,6 +3465,7 @@ const
 const
 	kEventMouseWheelMoved = 10;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {
@@ -2905,25 +3549,39 @@ const
     The text engine is entirely free to deny a request for a text pointer for these or any other
     implementation specific reason.
 }
+=======
+>>>>>>> origin/fixes_2.4
 {
- *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessGetLength
+ *  kEventClassMouse / kEventMouseScroll
  *  
  *  Summary:
- *    Returns the number of 16-bit Unicode characters in the document.
+ *    The user wants to scroll the object underneath the given mouse
+ *    location by the specified number of pixels.
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    This event is equivalent to calling CFStringGetLength() on the
  *    app's document.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    This event is sent to the window or view underneath the mouse.
+ *    The window or view does not need to be active to receive this
+ *    event, but it must be in the active application; this event is
+ *    not sent to windows or views in inactive applications. The event
+ *    is sent first to the window, and if the window does not handle
+ *    the view, the standard window event handler will send the event
+ *    to the view under the mouse.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    --> kEventParamMouseLocation (in, typeHIPoint)
@@ -3111,39 +3769,108 @@ const
  *    --> kEventParamTSMDocAccessSendComponentInstance (in, typeComponentInstance)
  *          This parameter is provided by the input method originating
  *          the event. (Required parameter)
+=======
+ *    --> kEventParamMouseLocation (in, typeHIPoint)
+ *          The mouse location, in global coordinates.
+>>>>>>> origin/fixes_2.4
  *    
- *    --> kEventParamTSMDocAccessSendRefCon (in, typeLongInteger)
- *          TSM's SendTextInputEvent, called by an input method,
- *          inserts this parameter before dispatching the event to the
- *          user focus.  (Required Parameter)
+ *    --> kEventParamWindowRef (in, typeWindowRef)
+ *          The window under the mouse.
  *    
- *    <-- kEventParamTSMDocAccessCharacterCount (out, typeCFIndex)
- *          The size of the document in UniChar. Required reply
- *          parameter.
+ *    --> kEventParamWindowMouseLocation (in, typeHIPoint)
+ *          The window-relative position of the mouse in the window
+ *          given in the kEventParamWindowRef parameter. 0,0 is at the
+ *          top left of the structure of the window.
+ *    
+ *    --> kEventParamWindowPartCode (in, typeWindowPartCode)
+ *          The part code that the mouse location hit in the window.
+ *          This parameter only exists if the WindowRef parameter
+ *          exists. This saves you the trouble of calling FindWindow,
+ *          which is expensive on Mac OS X as it needs to call the
+ *          Window Server.
+ *    
+ *    --> kEventParamKeyModifiers (in, typeUInt32)
+ *          The keyboard modifiers that were pressed when the event was
+ *          generated.
+ *    
+ *    --> kEventParamMouseWheelSmoothVerticalDelta (in, typeSInt32)
+ *          A typeSInt32 indicating how many pixels to scroll
+ *          vertically. Do not multiply this by your line height the
+ *          same way you would for the kEventParamMouseWheelDelta
+ *          parameter of a kEventMouseWheelMoved event. Both this and
+ *          the equivalent Horizontal parameter may be present in an
+ *          event, but are not guaranteed to be present. If both are
+ *          present, you should scroll both horizontally and vertically
+ *          if you can. You should be prepared for this parameter to be
+ *          missing, however.
+ *    
+ *    --> kEventParamMouseWheelSmoothHorizontalDelta (in, typeSInt32)
+ *          A typeSInt32 indicating how many pixels to scroll
+ *          horizontally. Do not multiply this by your line height the
+ *          same way you would for the kEventParamMouseWheelDelta
+ *          parameter of a kEventMouseWheelMoved event. Both this and
+ *          the equivalent Vertical parameter may be present in an
+ *          event, but are not guaranteed to be present. If both are
+ *          present, you should scroll both horizontally and vertically
+ *          if you can. You should be prepared for this parameter to be
+ *          missing, however.
+ *    
+ *    --> kEventParamEventRef (in, typeEventRef)
+ *          A typeEventRef of a compatibility kEventMouseWheelMoved
+ *          event that corresponds to this event. This parameter may
+ *          not always be present. This parameter is used by the event
+ *          dispatching mechanism to make sure that objects which don't
+ *          register for kEventMouseScroll events can see
+ *          kEventMouseWheelMoved events instead. You may extract this
+ *          event and examine its contents if your code requires a
+ *          kEventMouseWheelMoved event.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available
  }
 const
-	kEventTSMDocumentAccessGetLength = 1;
+	kEventMouseScroll = 11;
 
+{--------------------------------------------------------------------------------------}
+{ Gesture Events                                                                       }
+{--------------------------------------------------------------------------------------}
 {
- *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessGetSelectedRange
+    kEventClassGesture quick reference:
+    
+    kEventGestureStarted                = 1,
+    kEventGestureEnded                  = 2,
+    
+    kEventGestureMagnify                = 4,
+    kEventGestureSwipe                  = 5,
+    kEventGestureRotate                 = 6,
+}
+{
+ *  kEventClassGesture / kEventGestureStarted
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Returns the selection range in the document.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  Discussion:
+ *    Sent when a gesture has started.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    --> kEventParamMouseLocation (in, typeHIPoint)
@@ -3234,32 +3961,42 @@ const
  *    --> kEventParamTSMDocAccessSendComponentInstance (in, typeComponentInstance)
  *          This parameter is provided by the input method originating
  *          the event. (Required parameter)
+=======
+ *    --> kEventParamMouseLocation (in, typeHIPoint)
+ *          The mouse location, in global coordinates.
+>>>>>>> origin/fixes_2.4
  *    
- *    --> kEventParamTSMDocAccessSendRefCon (in, typeLongInteger)
- *          TSM's SendTextInputEvent, called by an input method,
- *          inserts this parameter before dispatching the event to the
- *          user focus.  (Required Parameter)
+ *    --> kEventParamWindowRef (in, typeWindowRef)
+ *          The window under the mouse.
  *    
- *    <-- kEventParamTSMDocAccessReplyCharacterRange (out, typeCFRange)
- *          The selection range as a CFRange in UniChar.  If the
- *          selection is empty, the range identifies the insertion
- *          point and the range will specify a length of 0. Required
- *          reply parameter.
+ *    --> kEventParamWindowMouseLocation (in, typeHIPoint)
+ *          The window-relative position of the mouse in the window
+ *          given in the kEventParamWindowRef parameter. 0,0 is at the
+ *          top left of the structure of the window.
+ *    
+ *    --> kEventParamWindowPartCode (in, typeWindowPartCode)
+ *          The part code that the mouse location hit in the window.
+ *          This parameter only exists if the WindowRef parameter
+ *          exists. This saves you the trouble of calling FindWindow,
+ *          which is expensive on Mac OS X as it needs to call the
+ *          Window Server.
+ *    
+ *    --> kEventParamKeyModifiers (in, typeUInt32)
+ *          The keyboard modifiers that were pressed when the event was
+ *          generated.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.3 and later in Carbon.framework
+ *    Mac OS X:         in version 10.6 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventTSMDocumentAccessGetSelectedRange = 2;
+	kEventGestureStarted = 1;
 
 {
- *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessGetCharactersPtr
- *  
- *  Summary:
- *    Returns a Unicode pointer to the entire document content.
+ *  kEventClassGesture / kEventGestureEnded
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    This event is equivalent to calling CFStringGetCharactersPtr() on
  *    the app's document treated as a CFString. Some text engines may
  *    not support this event for reasons that are implementation
@@ -3280,12 +4017,16 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Sent when a gesture has ended.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    --> kEventParamMouseLocation (in, typeHIPoint)
@@ -3366,30 +4107,42 @@ const
  *    --> kEventParamTSMDocAccessSendComponentInstance (in, typeComponentInstance)
  *          This parameter is provided by the input method originating
  *          the event. (Required parameter)
+=======
+ *    --> kEventParamMouseLocation (in, typeHIPoint)
+ *          The mouse location, in global coordinates.
+>>>>>>> origin/fixes_2.4
  *    
- *    --> kEventParamTSMDocAccessSendRefCon (in, typeLongInteger)
- *          TSM's SendTextInputEvent, called by an input method,
- *          inserts this parameter before dispatching the event to the
- *          user focus.  (Required Parameter)
+ *    --> kEventParamWindowRef (in, typeWindowRef)
+ *          The window under the mouse.
  *    
- *    <-- kEventParamTSMDocAccessReplyCharactersPtr (out, typePtr)
- *          The UniChar pointer to the document. Required reply
- *          parameter, if the event is supported.
+ *    --> kEventParamWindowMouseLocation (in, typeHIPoint)
+ *          The window-relative position of the mouse in the window
+ *          given in the kEventParamWindowRef parameter. 0,0 is at the
+ *          top left of the structure of the window.
+ *    
+ *    --> kEventParamWindowPartCode (in, typeWindowPartCode)
+ *          The part code that the mouse location hit in the window.
+ *          This parameter only exists if the WindowRef parameter
+ *          exists. This saves you the trouble of calling FindWindow,
+ *          which is expensive on Mac OS X as it needs to call the
+ *          Window Server.
+ *    
+ *    --> kEventParamKeyModifiers (in, typeUInt32)
+ *          The keyboard modifiers that were pressed when the event was
+ *          generated.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.3 and later in Carbon.framework
+ *    Mac OS X:         in version 10.6 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventTSMDocumentAccessGetCharactersPtr = 3;
+	kEventGestureEnded = 2;
 
 {
- *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessGetCharactersPtrForLargestBuffer
- *  
- *  Summary:
- *    Returns a Unicode pointer to a portion of the document.
+ *  kEventClassGesture / kEventGestureMagnify
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    This event is similar to calling CFStringGetCharactersPtr() on a
  *    portion of the app's document treated as a CFString, except that
  *    the substring is determined by the text engine. Some text engines
@@ -3411,12 +4164,17 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Sent when the user performs a magnify gesture, otherwise known as
+ *    a zoom gesture, or a pinch.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    --> kEventParamMouseLocation (in, typeHIPoint)
@@ -3522,55 +4280,62 @@ const
  *    --> kEventParamTSMDocAccessSendComponentInstance (in, typeComponentInstance)
  *          This parameter is provided by the input method originating
  *          the event. (Required parameter)
+=======
+ *    --> kEventParamMouseLocation (in, typeHIPoint)
+ *          The mouse location, in global coordinates.
+>>>>>>> origin/fixes_2.4
  *    
- *    --> kEventParamTSMDocAccessSendRefCon (in, typeLongInteger)
- *          TSM's SendTextInputEvent, called by an input method,
- *          inserts this parameter before dispatching the event to the
- *          user focus.  (Required Parameter)
+ *    --> kEventParamWindowRef (in, typeWindowRef)
+ *          The window under the mouse.
  *    
- *    --> kEventParamTSMDocAccessSendCharacterIndex (in, typeCFIndex)
- *          The location in the document for which the caller would
- *          like a pointer to a buffer of text that includes that
- *          location.    This buffer could be available from a cache
- *          due to recent interaction near that location, such as the
- *          insertion point. Required parameter.
+ *    --> kEventParamWindowMouseLocation (in, typeHIPoint)
+ *          The window-relative position of the mouse in the window
+ *          given in the kEventParamWindowRef parameter. 0,0 is at the
+ *          top left of the structure of the window.
  *    
- *    <-- kEventParamTSMDocAccessReplyCharactersPtr (out, typePtr)
- *          The UniChar pointer to a portion of the document text.
- *          Required reply parameter, if the event is handled.
+ *    --> kEventParamWindowPartCode (in, typeWindowPartCode)
+ *          The part code that the mouse location hit in the window.
+ *          This parameter only exists if the WindowRef parameter
+ *          exists. This saves you the trouble of calling FindWindow,
+ *          which is expensive on Mac OS X as it needs to call the
+ *          Window Server.
  *    
- *    <-- kEventParamTSMDocAccessReplyCharacterRange (out, typeCFRange)
- *          The document-relative range of text represented by the
- *          returned text pointer. Required reply parameter, if the
- *          event is handled.
+ *    --> kEventParamKeyModifiers (in, typeUInt32)
+ *          The keyboard modifiers that were pressed when the event was
+ *          generated.
+ *    
+ *    --> kEventParamMagnificationAmount (in, typeCGFloat)
+ *          The desired magnification percentage based on the user's
+ *          gesture.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.3 and later in Carbon.framework
+ *    Mac OS X:         in version 10.6 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventTSMDocumentAccessGetCharactersPtrForLargestBuffer = 4;
+	kEventGestureMagnify = 4;
 
 {
- *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessGetCharacters
- *  
- *  Summary:
- *    Fills caller provided buffer with Unicode characters in the
- *    specified range.
+ *  kEventClassGesture / kEventGestureSwipe
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    This event is equivalent to calling CFStringGetCharacters() on
  *    the app's document treated as a CFString.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Sent when the user performs a swipe gesture.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    --> kEventParamMouseLocation (in, typeHIPoint)
@@ -3673,82 +4438,50 @@ const
  *    --> kEventParamTSMDocAccessSendComponentInstance (in, typeComponentInstance)
  *          This parameter is provided by the input method originating
  *          the event. (Required parameter)
+=======
+ *    --> kEventParamMouseLocation (in, typeHIPoint)
+ *          The mouse location, in global coordinates.
+>>>>>>> origin/fixes_2.4
  *    
- *    --> kEventParamTSMDocAccessSendRefCon (in, typeLongInteger)
- *          TSM's SendTextInputEvent, called by an input method,
- *          inserts this parameter before dispatching the event to the
- *          user focus.  (Required Parameter)
+ *    --> kEventParamWindowRef (in, typeWindowRef)
+ *          The window under the mouse.
  *    
- *    --> kEventParamTSMDocAccessSendCharacterRange (in, typeCFRange)
- *          The range of text that should be copied into the buffer
- *          provided by the caller. Required parameter.
+ *    --> kEventParamWindowMouseLocation (in, typeHIPoint)
+ *          The window-relative position of the mouse in the window
+ *          given in the kEventParamWindowRef parameter. 0,0 is at the
+ *          top left of the structure of the window.
  *    
- *    --> kEventParamTSMDocAccessSendCharactersPtr (in, typePtr)
- *          A buffer provided by the caller to contain the specified
- *          range of UniChars.  This buffer is identical in usage to
- *          that of CFStringGetCharacters(). Required parameter.
+ *    --> kEventParamWindowPartCode (in, typeWindowPartCode)
+ *          The part code that the mouse location hit in the window.
+ *          This parameter only exists if the WindowRef parameter
+ *          exists. This saves you the trouble of calling FindWindow,
+ *          which is expensive on Mac OS X as it needs to call the
+ *          Window Server.
+ *    
+ *    --> kEventParamKeyModifiers (in, typeUInt32)
+ *          The keyboard modifiers that were pressed when the event was
+ *          generated.
+ *    
+ *    --> kEventParamSwipeDirection (in, typeHIPoint)
+ *          A point describing the direction to move the content in
+ *          respond to the user's gesture. If the y coordinate is -1,
+ *          move the content up. If the y coordinate is 1, move the
+ *          content down. If the x coordinate is -1, move the content
+ *          to the left. If the x coordinate is 1, move the content to
+ *          the right.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.3 and later in Carbon.framework
+ *    Mac OS X:         in version 10.6 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventTSMDocumentAccessGetCharacters = 5;
+	kEventGestureSwipe = 5;
 
 {
-
-    ** Document Access Attribute events **
-
-    The following Text Attribute events define how a text service can obtain certain attributes
-    at text locations throughout an application's document.
-
-    Currently, the only attributes supported by these events are font (and font size)
-    via kEventTSMDocumentAccessGetFont and glyphID/CID info via kEventTSMDocumentAccessGetGlyphInfo.
-    
-    Where these attributes span multiple characters, effective ranges (over which
-    the attribute is constant) are returned by the text engine.
-}
-
-{
- *  Summary:
- *    Values used TSMDocAccessAttributes bit field
+ *  kEventClassGesture / kEventGestureRotate
  *  
  *  Discussion:
- *    The following bit assignments are used for TSMDocAccessAttributes
- *    parameters. This parameter is used to specify desired (optional)
- *    attributes in the kEventTSMDocumentAccessGetFont and
- *    kEventTSMDocumentAccessGetGlyphInfo events. They are specified in
- *    the kEventParamTSMDocAccessRequestedCharacterAttributes parameter.
- }
-const
-{
-   * Font size information is desired.  Used in
-   * kEventTSMDocumentAccessGetFont event.
-   }
-	kTSMDocAccessFontSizeAttributeBit = 0;
-
-  {
-   * Effective Range information is desired.  Used in
-   * kEventTSMDocumentAccessGetFont and
-   * kEventTSMDocumentAccessGetGlyphInfo events.
-   }
-	kTSMDocAccessEffectiveRangeAttributeBit = 1;
-
-type
-	TSMDocAccessAttributes = UInt32;
-const
-	kTSMDocAccessFontSizeAttribute = 1 shl kTSMDocAccessFontSizeAttributeBit;
-	kTSMDocAccessEffectiveRangeAttribute = 1 shl kTSMDocAccessEffectiveRangeAttributeBit; { More attributes may be added in the future}
-
-
-{
- *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessGetFont
- *  
- *  Summary:
- *    Returns font, font size, and the range over which these
- *    attributes are constant.
- *  
- *  Discussion:
+<<<<<<< HEAD
  *    Where the font/font size attributes span multiple characters, an
  *    effective range (over which requested attributes are constant) is
  *    returned by the text engine.
@@ -3756,12 +4489,16 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Sent when the user performs a rotate gesture.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    --> kEventParamMouseLocation (in, typeHIPoint)
@@ -3786,10 +4523,19 @@ const
  *          The window under the mouse.
  *    
 >>>>>>> graemeg/cpstrnew
+=======
+ *    --> kEventParamMouseLocation (in, typeHIPoint)
+ *          The mouse location, in global coordinates.
+ *    
+ *    --> kEventParamWindowRef (in, typeWindowRef)
+ *          The window under the mouse.
+ *    
+>>>>>>> origin/fixes_2.4
  *    --> kEventParamWindowMouseLocation (in, typeHIPoint)
  *          The window-relative position of the mouse in the window
  *          given in the kEventParamWindowRef parameter. 0,0 is at the
  *          top left of the structure of the window.
+<<<<<<< HEAD
  *    
  *    --> kEventParamWindowPartCode (in, typeWindowPartCode)
  *          The part code that the mouse location hit in the window.
@@ -3986,48 +4732,104 @@ const
  *    <-- kEventParamTSMDocAccessReplyATSFont (out, typeATSFontRef)
  *          The ATSFontRef for the location specified  by the caller.
  *          Required reply parameter.
+=======
+>>>>>>> origin/fixes_2.4
  *    
- *    <-- kEventParamTSMDocAccessReplyFontSize (out, typeFloat)
- *          The font size for the requested location. Optional reply
- *          parameter. Return this information if
- *          kTSMDocAccessFontSizeAttribute is specified in the bit
- *          field passed as the
- *          kEventParamTSMDocAccessRequestedCharacterAttributes
- *          parameter.
+ *    --> kEventParamWindowPartCode (in, typeWindowPartCode)
+ *          The part code that the mouse location hit in the window.
+ *          This parameter only exists if the WindowRef parameter
+ *          exists. This saves you the trouble of calling FindWindow,
+ *          which is expensive on Mac OS X as it needs to call the
+ *          Window Server.
  *    
- *    --> kEventParamTSMDocAccessSendCharacterRange (in, typeCFRange)
- *          The maximum range of text the caller cares about.  This is
- *          used to "clip" the area of interest to the caller so the
- *          text engine doesn't need to process a style run all the way
- *          back to, say, the beginning of a line or a document, in
- *          order to return an effective range. Required parameter.
+ *    --> kEventParamKeyModifiers (in, typeUInt32)
+ *          The keyboard modifiers that were pressed when the event was
+ *          generated.
  *    
- *    <-- kEventParamTSMDocAccessEffectiveRange (out, typeCFRange)
- *          The range of text over which both font and size are
- *          constant, within the bounds of the
- *          kEventParamTSMDocAccessSendCharacterRange parameter.
- *          Optional reply parameter. Return this information if
- *          kTSMDocAccessEffectiveRangeAttribute is specified in the
- *          bit field passed as the
- *          kEventParamTSMDocAccessRequestedCharacterAttributes
- *          parameter.
+ *    --> kEventParamRotationAmount (in, typeCGFloat)
+ *          The desired rotation amount, in degrees in polar
+ *          coordinates.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.3 and later in Carbon.framework
+ *    Mac OS X:         in version 10.6 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventTSMDocumentAccessGetFont = 6;
+	kEventGestureRotate = 6;
 
+{--------------------------------------------------------------------------------------}
+{ TSM Document Access Events                                                           }
+{--------------------------------------------------------------------------------------}
 {
- *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessGetGlyphInfo
+    kEventClassTSMDocumentAccess quick reference:
+    
+    ** Text Access **
+    kEventTSMDocumentAccessGetLength                        = 1,
+    kEventTSMDocumentAccessGetSelectedRange                 = 2,
+    kEventTSMDocumentAccessGetCharactersPtr                 = 3,
+    kEventTSMDocumentAccessGetCharactersPtrForLargestBuffer = 4,
+    kEventTSMDocumentAccessGetCharacters                    = 5,
+        
+    ** Text Attribute Access **
+    kEventTSMDocumentAccessGetFont                          = 6,
+    kEventTSMDocumentAccessGetGlyphInfo                     = 7,
+    kEventTSMDocumentAccessGetFirstRectForRange             = 11,
+    
+    ** Transaction control **
+    kEventTSMDocumentAccessLockDocument                     = 8,
+    kEventTSMDocumentAccessUnlockDocument                   = 9
+    
+    These events allow access to a document's content.  They are grouped in the following
+    categories: text access, text attribute, and transaction related events.
+    
+    NOTE:  TSM dispatches events of the TSMDocumentAccess class only as Carbon events.  These
+            are not converted for TSM clients that still install AppleEvent handlers for TSM events.
+    NOTE:  Text Services dispatch these Carbon events through TSM's SendTextInputEvent API.
+            Normally only used for TextInput class TSM events, but this SendTextInputEvent is a bit
+            of a misnomer.  You should use it for TSMDocumentAccess class events as well.
+}
+{
+
+    ** Document Access Text events **
+
+    The following Text Access events are very similar in design to the CFString API.
+    The entire document can be conceived as a flattened Unicode string, and the
+    events in this interface can access any portion of it.  The GetSelectedRange() method
+    allow a text service to obtain text near the insertion point (or selection), but access
+    is by no means restricted to this vicinity.  Use the GetLength() method to obtain the
+    size of the document.
+    
+    Supporting these events effectively provide hooks into the text engine, but it is
+    understood that access to a document in this way is to be strictly Read-Only.  Where
+    direct access to a document's content cannot be provided through a pointer, the requested
+    text can be copied instead.  Situations where a pointer may not be available from the
+    text engine include the following:
+    
+        -A pointer would require conversion of text in Mac encodings to Unicode
+        -A pointer would require sparse Unicode text blocks to be flattened into a single
+         buffer.
+
+    The idea is to minimize copying and converting text encodings where possible.  The text
+    service will typically begin by asking for a document pointer via
+    kEventTSMDocumentAccessGetCharactersPtr.  If this fails, it will typically fallback to
+    kEventTSMDocumentAccessGetCharactersPtrForLargestBuffer, specifying a location of interest.
+    If this fails, it will fallback to kEventTSMDocumentAccessGetCharacters, specifying a range
+    of interest.  Of course, when requesting small amounts of data such a few characters on either
+    side of the insertion point, there is no obligation to optimize in this way.  It's valid to
+    simply use kEventTSMDocumentAccessGetCharacters.
+    
+    The text engine is entirely free to deny a request for a text pointer for these or any other
+    implementation specific reason.
+}
+{
+ *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessGetLength
  *  
  *  Summary:
- *    Returns glyph info and the range covered by that glyph.
+ *    Returns the number of 16-bit Unicode characters in the document.
  *  
  *  Discussion:
- *    Where a glyph spans multiple characters, the effective range,
- *    represented by the glyph, is returned by the app.
+ *    This event is equivalent to calling CFStringGetLength() on the
+ *    app's document.
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -4036,12 +4838,16 @@ const
  *    
 >>>>>>> origin/fixes_2_2
  *    --> kEventParamTSMDocAccessSendComponentInstance (in, typeComponentInstance)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
  *          This parameter is provided by the input method originating
  *          the event. (Required parameter)
  *    
- *    --> kEventParamTSMDocAccessSendRefCon (in, typeLongInteger)
+ *    --> kEventParamTSMDocAccessSendRefCon (in, typeRefCon)
  *          TSM's SendTextInputEvent, called by an input method,
  *          inserts this parameter before dispatching the event to the
+<<<<<<< HEAD
  *          user focus.  (Required Parameter)
  *    
  *    --> kEventParamTSMDocAccessSendCharacterIndex (in, typeCFIndex)
@@ -4105,6 +4911,20 @@ const
  *          kTSMDocAccessEffectiveRangeAttribute is specified in the
  *          bit field passed as the
  *          kEventParamTSMDocAccessRequestedCharacterAttributes
+=======
+ *          user focus. (Required Parameter) 
+ *          
+ *          On Mac OS X 10.4 and earlier, this parameter uses
+ *          typeSInt32, and you must retrieve it using that constant.
+ *          On Mac OS X 10.5 and later, to support 64-bit refcon
+ *          values, this parameter uses typeRefCon. For 64-bit
+ *          compatibility, you must use typeRefCon when retrieving this
+ *          parameter; for 32-bit targets, however, you may continue to
+ *          use typeSInt32 if you wish, or switch to typeRefCon.
+ *    
+ *    <-- kEventParamTSMDocAccessCharacterCount (out, typeCFIndex)
+ *          The size of the document in UniChar. Required reply
+>>>>>>> origin/fixes_2.4
  *          parameter.
  *  
  *  Availability:
@@ -4112,6 +4932,7 @@ const
  *    CarbonLib:        not available
  }
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kEventTSMDocumentAccessGetFont = 6;
 
@@ -4131,12 +4952,15 @@ const
 {
 
     ** Document Access Lock/Unlock events **
+=======
+	kEventTSMDocumentAccessGetLength = 1;
+>>>>>>> origin/fixes_2.4
 
-}
 {
- *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessLockDocument
+ *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessGetSelectedRange
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Notifies the app that it should not change its document's text
  *    content (on its own) while a text service is involved in a
  *    transaction.  The app should not allow changes, for example, by
@@ -4173,6 +4997,9 @@ const
  *    implicitly lock/unlock the document around delivery of events to
  *    input methods, if the app supports it.
 >>>>>>> origin/fixes_2_2
+=======
+ *    Returns the selection range in the document.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -4240,7 +5067,11 @@ const
  *    --> kEventParamTSMDocAccessSendRefCon (in, typeRefCon)
  *          TSM's SendTextInputEvent, called by an input method,
  *          inserts this parameter before dispatching the event to the
+<<<<<<< HEAD
  *          user focus. (Required Parameter) 
+=======
+ *          user focus.  (Required Parameter) 
+>>>>>>> origin/fixes_2.4
  *          
  *          On Mac OS X 10.4 and earlier, this parameter uses
  *          typeSInt32, and you must retrieve it using that constant.
@@ -4250,10 +5081,18 @@ const
  *          parameter; for 32-bit targets, however, you may continue to
  *          use typeSInt32 if you wish, or switch to typeRefCon.
  *    
+<<<<<<< HEAD
  *    <-- kEventParamTSMDocAccessCharacterCount (out, typeCFIndex)
  *          The size of the document in UniChar. Required reply
  *          parameter.
 >>>>>>> graemeg/cpstrnew
+=======
+ *    <-- kEventParamTSMDocAccessReplyCharacterRange (out, typeCFRange)
+ *          The selection range as a CFRange in UniChar.  If the
+ *          selection is empty, the range identifies the insertion
+ *          point and the range will specify a length of 0. Required
+ *          reply parameter.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.6 and later in Carbon.framework
@@ -4263,12 +5102,17 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kEventGestureRotate = 6;
+=======
+	kEventTSMDocumentAccessGetSelectedRange = 2;
+>>>>>>> origin/fixes_2.4
 
 {--------------------------------------------------------------------------------------}
 { TSM Document Access Events                                                           }
 {--------------------------------------------------------------------------------------}
 {
+<<<<<<< HEAD
     kEventClassTSMDocumentAccess quick reference:
     
     ** Text Access **
@@ -4449,6 +5293,30 @@ const
  *    implicitly lock/unlock the document around delivery of events to
  *    input methods, if the app supports it.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessGetCharactersPtr
+ *  
+ *  Summary:
+ *    Returns a Unicode pointer to the entire document content.
+ *  
+ *  Discussion:
+ *    This event is equivalent to calling CFStringGetCharactersPtr() on
+ *    the app's document treated as a CFString. Some text engines may
+ *    not support this event for reasons that are implementation
+ *    dependent. For example, a text engine's backing store may consist
+ *    of legacy encoding runs.  It may also consist of unflattened
+ *    Unicode, stored as a B-tree of text blocks.  For such reasons, a
+ *    text engine may reject a request for a pointer to a flattened
+ *    Unicode buffer. It is also understood that text access through
+ *    this pointer is to be strictly READ-ONLY.  Any changes to the
+ *    document should be made through TSM TextInput events, such as
+ *    kEventTextInputUpdateActiveInputArea or
+ *    kEventTextInputUnicodeText. NOTE:  This pointer is valid only
+ *    during a transaction surrounded by document lock/unlock events,
+ *    or until an event causes the document to change, such as
+ *    dispatching kEventTextInputUpdateActiveInputArea or
+ *    kEventTextInputUnicodeText events, whichever occurs first.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -4456,6 +5324,7 @@ const
  *  Parameters:
  *    
  *    --> kEventParamTSMDocAccessSendComponentInstance (in, typeComponentInstance)
+<<<<<<< HEAD
 <<<<<<< HEAD
  *          This event parameter is DEPRECATED on Mac OS X 10.5 and
  *          later.
@@ -4512,24 +5381,44 @@ const
 =======
 >>>>>>> origin/cpstrnew
 =======
+=======
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+>>>>>>> origin/fixes_2.4
  *          This parameter is provided by the input method originating
  *          the event. (Required parameter)
  *    
- *    --> kEventParamTSMDocAccessSendRefCon (in, typeLongInteger)
+ *    --> kEventParamTSMDocAccessSendRefCon (in, typeRefCon)
  *          TSM's SendTextInputEvent, called by an input method,
  *          inserts this parameter before dispatching the event to the
- *          user focus.  (Required Parameter)
+ *          user focus.  (Required Parameter) 
+ *          
+ *          On Mac OS X 10.4 and earlier, this parameter uses
+ *          typeSInt32, and you must retrieve it using that constant.
+ *          On Mac OS X 10.5 and later, to support 64-bit refcon
+ *          values, this parameter uses typeRefCon. For 64-bit
+ *          compatibility, you must use typeRefCon when retrieving this
+ *          parameter; for 32-bit targets, however, you may continue to
+ *          use typeSInt32 if you wish, or switch to typeRefCon.
  *    
+<<<<<<< HEAD
  *    <-- kEventParamTSMDocAccessLockCount (out, typeCFIndex)
  *          The resulting refCount of locks on the document. Required
  *          reply parameter, if the event is handled.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    <-- kEventParamTSMDocAccessReplyCharactersPtr (out, typePtr)
+ *          The UniChar pointer to the document. Required reply
+ *          parameter, if the event is supported.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4580,6 +5469,34 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	kEventTSMDocumentAccessGetCharactersPtr = 3;
+
+{
+ *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessGetCharactersPtrForLargestBuffer
+ *  
+ *  Summary:
+ *    Returns a Unicode pointer to a portion of the document.
+ *  
+ *  Discussion:
+ *    This event is similar to calling CFStringGetCharactersPtr() on a
+ *    portion of the app's document treated as a CFString, except that
+ *    the substring is determined by the text engine. Some text engines
+ *    may keep text in unflattened Unicode, stored as a B-tree of text
+ *    blocks, for example.  In some cases, especially near locations
+ *    such as the insertion point, the text engine may have cached a
+ *    good chunk of text to which it can readily provide a pointer. A
+ *    text engine may reject a request for such a pointer. It is also
+ *    understood that text access through this pointer is to be
+ *    strictly READ-ONLY.  Any changes to the document should be made
+ *    through TSM TextInput events, such as
+ *    kEventTextInputUpdateActiveInputArea or
+ *    kEventTextInputUnicodeText. NOTE:  This pointer is valid only
+ *    during a transaction surrounded by document lock/unlock, or until
+ *    an event causes the document to change, such as dispatching
+ *    kEventTextInputUpdateActiveInputArea or
+ *    kEventTextInputUnicodeText events.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -4589,6 +5506,9 @@ const
  *    --> kEventParamTSMDocAccessSendComponentInstance (in, typeComponentInstance)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *          This event parameter is DEPRECATED on Mac OS X 10.5 and
  *          later.
  *          
@@ -4607,6 +5527,7 @@ const
  *          compatibility, you must use typeRefCon when retrieving this
  *          parameter; for 32-bit targets, however, you may continue to
  *          use typeSInt32 if you wish, or switch to typeRefCon.
+<<<<<<< HEAD
  *    
  *    <-- kEventParamTSMDocAccessReplyCharacterRange (out, typeCFRange)
  *          The selection range as a CFRange in UniChar.  If the
@@ -4895,91 +5816,41 @@ const
  *          ScriptLanguage record associated with the input method
  *          component. This parameter is optional and may not be
  *          present in all instances of this event.
+=======
+>>>>>>> origin/fixes_2.4
  *    
- *    --> kEventParamTextInputSendTextServiceMacEncoding (in, typeUInt32)
- *          The Mac encoding (variant) associated with the text sent by
- *          an input method. On Mac OS X, this parameter is needed by
- *          TSM to convert input method produced Unicodes to a Mac
- *          encoding when the application that has focus is not
- *          Unicode-savvy in the TSM sense... i.e. the current
- *          TSMDocument is not of type kUnicodeDocument. This parameter
- *          can also be useful if a Unicode-savvy handler should need
- *          to convert from Unicode. This parameter is optional and may
- *          not be present in all instances of this event.
+ *    --> kEventParamTSMDocAccessSendCharacterIndex (in, typeCFIndex)
+ *          The location in the document for which the caller would
+ *          like a pointer to a buffer of text that includes that
+ *          location.    This buffer could be available from a cache
+ *          due to recent interaction near that location, such as the
+ *          insertion point. Required parameter.
  *    
- *    --> kEventParamTextInputSendGlyphInfoArray (in, typeGlyphInfoArray)
- *          A TSMGlyphInfoArray structure in which an input method can
- *          associate unencoded glyphs IDs and/or fonts with
- *          (sub)ranges of text it produces.  The array elements
- *          identify non-overlapping ranges of text and the glyph ID
- *          (character collection is 0) such as in an OpenType font, or
- *          the CID (collection is non-zero) such as in TrueType fonts.
- *           If the glyphID itself is 0, only the font specified is to
- *          be applied to the text range.  This is useful for
- *          characters in Unicode private use area, such as Windings,
- *          but note that this capability should be used with care
- *          because changing the font of an input text stream can lead
- *          to a confusing user interface. An input method will only
- *          include this parameter if the text engine has indicated it
- *          supports this feature via the
- *          kTSMDocumentSupportGlyphInfoPropertyTag TSMDocumentProperty
- *          tag. For more information, see the Glyph Access protocol
- *          described in Technote TN2079. This parameter is optional
- *          and may not be present in all instances of this event.
+ *    <-- kEventParamTSMDocAccessReplyCharactersPtr (out, typePtr)
+ *          The UniChar pointer to a portion of the document text.
+ *          Required reply parameter, if the event is handled.
  *    
- *    --> kEventParamTextInputSendReplaceRange (in, typeCFRange)
- *          The CFRange in the application's document that should be
- *          replaced by the contents of the inline input session
- *          defined by other parameters in this event.  The text
- *          service will have obtained and calculated this range by
- *          accessing the document's text via events of the
- *          TSMDocumentAccess class.  This CFRange parameter refers to
- *          text in flat Unicode space (UniChar) offsets, and its
- *          location is document relative, not relative to the
- *          insertion point or any inline session. A text service may
- *          include this parameter only if the text engine has
- *          indicated it supports this feature via the
- *          kTSMDocumentSupportDocumentAccessPropertyTag
- *          TSMDocumentProperty tag. This parameter is optional and may
- *          not be present in all instances of this event. NOTE:  This
- *          parameter is supported by the TSM Carbon event only, not by
- *          TSM's kUpdateActiveInputArea AppleEvent.  If a text engine
- *          developer wishes to support this parameter, it must
- *          implement a Carbon event handler for this event and set the
- *          kTSMDocumentSupportDocumentAccessPropertyTag property tag.
- *          NOTE:  Care must be exercised by the app when there is an
- *          active inline input session. A text service that sends an a
- *          UpdateActiveInputArea event specifying this parameter
- *          should not be the same text service that owns the inline
- *          input session, since the text engine would need to call
- *          FixTSMDocument().  This, in turn, would cause recursion
- *          through that same text service via FixTextService().
- *          However, the app should be prepared for recursion
- *          regardless of which text service owns the inline input
- *          session because it will call FixTSMDocument() to confirm
- *          the inline input session, and "somebody" will likely send
- *          an UpdateActiveInputArea event as a result. Therefore,
- *          document state obtained before the call to FixTSMDocument()
- *          may not be valid after this call completes.
+ *    <-- kEventParamTSMDocAccessReplyCharacterRange (out, typeCFRange)
+ *          The document-relative range of text represented by the
+ *          returned text pointer. Required reply parameter, if the
+ *          event is handled.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
- *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+ *    CarbonLib:        not available
  }
 const
-	kEventTextInputUpdateActiveInputArea = 1;
+	kEventTSMDocumentAccessGetCharactersPtrForLargestBuffer = 4;
 
 {
- *  kEventClassTextInput / kEventTextInputUnicodeForKeyEvent
+ *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessGetCharacters
  *  
  *  Summary:
- *    Provides Unicode text input resulting from either a key event
- *    (TSM originates the event in this case) or from a
- *    kEventTextInputUnicodeText event produced by an input method,
- *    such as a Character Palette class input method, or a HandWriting
- *    input method.
+ *    Fills caller provided buffer with Unicode characters in the
+ *    specified range.
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    This is the primary event by which applications should receive
  *    text input on Mac OS X. Apple recommends that applications use
  *    this event rather than the kEventRawKeyDown event to handle text
@@ -5006,6 +5877,10 @@ const
  *    the user focus target, which sends it to the focused control in
  *    the focused window.
 >>>>>>> origin/fixes_2_2
+=======
+ *    This event is equivalent to calling CFStringGetCharacters() on
+ *    the app's document treated as a CFString.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -5013,10 +5888,14 @@ const
  *  Parameters:
  *    
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    --> kEventParamTSMDocAccessSendComponentInstance (in, typeComponentInstance)
  *          This event parameter is DEPRECATED on Mac OS X 10.5 and
  *          later.
  *          
+<<<<<<< HEAD
  *          This parameter is provided by the input method originating
  *          the event. (Required parameter)
  *    
@@ -5082,81 +5961,113 @@ const
 >>>>>>> origin/cpstrnew
 =======
  *    --> kEventParamTextInputSendComponentInstance (in, typeComponentInstance)
+=======
+>>>>>>> origin/fixes_2.4
  *          This parameter is provided by the input method originating
  *          the event. (Required parameter)
  *    
- *    --> kEventParamTextInputSendRefCon (in, typeLongInteger)
+ *    --> kEventParamTSMDocAccessSendRefCon (in, typeRefCon)
  *          TSM's SendTextInputEvent, called by an input method,
  *          inserts this parameter before dispatching the event to the
- *          user focus.  (Required Parameter)
- *    
- *    --> kEventParamTextInputSendSLRec (in, typeIntlWritingCode)
- *          The ScriptLanguageRecord associated with the text contained
- *          in the event. This parameter is normally provided by the
- *          input method originating the event.  TSM's
- *          SendTextInputEvent will construct this parameter from
- *          current script information as a result of a key event, or
- *          using input method provided information when TSM receives a
- *          kEventTextInputUnicodeText event.  (Required Parameter)
- *    
- *    --> kEventParamTextInputSendText (in, typeUnicodeText)
- *          The Unicode characters that were entered by the user.
- *    
- *    --> kEventParamTextInputSendKeyboardEvent (in, typeEventRef)
- *          This parameter is the original raw keyboard event that
- *          produced the text. It enables access to
- *          kEventParamKeyModifiers and kEventParamKeyCode parameters.
- *          Note that when contents of TSMÕs bottom-line input window
- *          are confirmed (i.e., during typing of Chinese, Korean, or
- *          Japanese), the raw keyboard eventÕs keyCode and modifiers
- *          are set to default values. 
+ *          user focus.  (Required Parameter) 
  *          
- *          You can also extract from the RawKeyDown event either
- *          Unicodes or Mac encoding characters as follows:
- *          
- *          kEventParamKeyUnicodes      typeUnicodeText
- *           kEventParamKeyMacCharCodes  typeChar (if available)
- *           
- *          The kEventParamKeyUnicodes parameter of the raw keyboard
- *          event is identical to the TextInput eventÕs
- *          kEventParamTextInputSendText parameter.
+ *          On Mac OS X 10.4 and earlier, this parameter uses
+ *          typeSInt32, and you must retrieve it using that constant.
+ *          On Mac OS X 10.5 and later, to support 64-bit refcon
+ *          values, this parameter uses typeRefCon. For 64-bit
+ *          compatibility, you must use typeRefCon when retrieving this
+ *          parameter; for 32-bit targets, however, you may continue to
+ *          use typeSInt32 if you wish, or switch to typeRefCon.
  *    
- *    --> kEventParamTextInputSendGlyphInfoArray (in, typeGlyphInfoArray)
- *          A TSMGlyphInfoArray structure in which an input method can
- *          associate unencoded glyphs IDs and/or fonts with
- *          (sub)ranges of text it produces.  The array elements
- *          identify non-overlapping ranges of text and the glyph ID
- *          (character collection is 0) such as in an OpenType font, or
- *          the CID (collection is non-zero) such as in TrueType fonts.
- *           If the glyphID itself is 0, only the font specified is to
- *          be applied to the text range.  This is useful for
- *          characters in Unicode private use area, such as Windings,
- *          but note that this capability should be used with care
- *          because changing the font of an input text stream can lead
- *          to a confusing user interface. For more information, see
- *          the Glyph Access protocol described in Technote TN2079.
- *          This parameter is optional and may not be present in all
- *          instances of this event.
+ *    --> kEventParamTSMDocAccessSendCharacterRange (in, typeCFRange)
+ *          The range of text that should be copied into the buffer
+ *          provided by the caller. Required parameter.
+ *    
+ *    --> kEventParamTSMDocAccessSendCharactersPtr (in, typePtr)
+ *          A buffer provided by the caller to contain the specified
+ *          range of UniChars.  This buffer is identical in usage to
+ *          that of CFStringGetCharacters(). Required parameter.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
- *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+ *    CarbonLib:        not available
  }
 const
-	kEventTextInputUnicodeForKeyEvent = 2;
+	kEventTSMDocumentAccessGetCharacters = 5;
 
 {
- *  kEventClassTextInput / kEventTextInputOffsetToPos
- *  
+
+    ** Document Access Attribute events **
+
+    The following Text Attribute events define how a text service can obtain certain attributes
+    at text locations throughout an application's document.
+
+    Currently, the only attributes supported by these events are font (and font size)
+    via kEventTSMDocumentAccessGetFont and glyphID/CID info via kEventTSMDocumentAccessGetGlyphInfo.
+    
+    Where these attributes span multiple characters, effective ranges (over which
+    the attribute is constant) are returned by the text engine.
+}
+
+{
  *  Summary:
- *    Requests conversion from inline session text offset to global QD
- *    coordinate.
+ *    Values used TSMDocAccessAttributes bit field
  *  
  *  Discussion:
+ *    The following bit assignments are used for TSMDocAccessAttributes
+ *    parameters. This parameter is used to specify desired (optional)
+ *    attributes in the kEventTSMDocumentAccessGetFont and
+ *    kEventTSMDocumentAccessGetGlyphInfo events. They are specified in
+ *    the kEventParamTSMDocAccessRequestedCharacterAttributes parameter.
+ }
+const
+{
+   * Font size information is desired.
+   * On Mac OS 10.5 and later, this attribute is DEPRECATED in favor of
+   * CTFontRef information contained in the
+   * kEventParamTSMDocAccessReplyCTFontRef parameter.  Font size is
+   * accessed through the CTFontRef itself.
+   * Note:  Text Services Manager will always set this attribute when
+   * dispatching the kEventTSMDocumentAccessGetFont event to the
+   * application.  This allows a more meaningful CTFontRef to be
+   * constructed for the benefit of requesting input methods should the
+   * application return only compatibility data in the form of
+   * ATSFontRef and font size.
+   }
+	kTSMDocAccessFontSizeAttributeBit = 0;
+
+  {
+   * Effective Range information is desired.  Used in
+   * kEventTSMDocumentAccessGetFont and
+   * kEventTSMDocumentAccessGetGlyphInfo events.
+   }
+	kTSMDocAccessEffectiveRangeAttributeBit = 1;
+
+type
+	TSMDocAccessAttributes = UInt32;
+const
+	kTSMDocAccessFontSizeAttribute = 1 shl kTSMDocAccessFontSizeAttributeBit;
+	kTSMDocAccessEffectiveRangeAttribute = 1 shl kTSMDocAccessEffectiveRangeAttributeBit; { More attributes may be added in the future}
+
+
+{
+ *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessGetFont
+ *  
+ *  Summary:
+ *    Returns font, font size, and the range over which these
+ *    attributes are constant.
+ *  
+ *  Discussion:
+<<<<<<< HEAD
  *    This event is typically produced by an input method so that it
  *    can best position a palette near the text being edited by the
  *    user.
 >>>>>>> origin/fixes_2_2
+=======
+ *    Where the font/font size attributes span multiple characters, an
+ *    effective range (over which requested attributes are constant) is
+ *    returned by the text engine.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -5164,6 +6075,9 @@ const
  *  Parameters:
  *    
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    --> kEventParamTSMDocAccessSendComponentInstance (in, typeComponentInstance)
  *          This event parameter is DEPRECATED on Mac OS X 10.5 and
  *          later.
@@ -5174,6 +6088,7 @@ const
  *    --> kEventParamTSMDocAccessSendRefCon (in, typeRefCon)
  *          TSM's SendTextInputEvent, called by an input method,
  *          inserts this parameter before dispatching the event to the
+<<<<<<< HEAD
  *          user focus.  (Required Parameter) 
  *          
  *          On Mac OS X 10.4 and earlier, this parameter uses
@@ -5431,87 +6346,8 @@ const
  *          allows the handler to return an FMFont when a FMFontFamily
  *          or FOND would be inconvenient to compute. This parameter is
  *          optional and may not be returned to the caller.
- *    
- *    <-- kEventParamTextInputReplyFMFont (out, typeUInt32)
- *          The point size associated with the text at the offset
- *          specified in the event, either the point size of the active
- *          input area if one exists, or of the text at the specified
- *          offset.  At a style run boundary where point size changes,
- *          the leadingEdge parameter determines which point size
- *          should be returned. This parameter is optional and may not
- *          be returned to the caller.
- *    
- *    <-- kEventParamTextInputReplyPointSize (out, typeFixed)
- *          The line height associated with the text at the offset
- *          specified in the event, either the line height of the
- *          active input area if one exists, or of the text at the
- *          specified offset.  At a style run boundary where point size
- *          changes, the leadingEdge parameter determines which line
- *          height should be returned. This parameter is optional and
- *          may not be returned to the caller.
- *    
- *    <-- kEventParamTextInputReplyLineHeight (out, typeShortInteger)
- *          The line ascent associated with the text at the offset
- *          specified in the event, either the line ascent of the
- *          active input area if one exists, or of the text at the
- *          specified offset.  At a style run boundary where point size
- *          changes, the leadingEdge parameter determines which line
- *          ascent should be returned. This parameter is optional and
- *          may not be returned to the caller.
- *    
- *    <-- kEventParamTextInputReplyLineAscent (out, typeShortInteger)
- *          The orientation associated with the text at the offset
- *          specified in the event, either the orientation of the
- *          active input area if one exists, or of the text at the
- *          specified offset.  At a style run boundary where
- *          orientation changes, the leadingEdge parameter determines
- *          which orientation should be returned.  The value 90
- *          specifies a horizontal line direction and 180 specifies a
- *          vertical line direction. This parameter is optional and may
- *          not be returned to the caller.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
- *    CarbonLib:        in CarbonLib 1.1 and later
- }
-const
-	kEventTextInputOffsetToPos = 3;
-
-{
- *  kEventClassTextInput / kEventTextInputPosToOffset
- *  
- *  Summary:
- *    Requests conversion from global QD coordinate to a byte offset in
- *    text.
- *  
- *  Discussion:
- *    This event is used for mouse tracking.  An input method typically
- *    produces this event to perform proper cursor management as the
- *    cursor moves over various subranges, or clauses of text (or the
- *    boundaries between these) in an inline input session, or moves
- *    between an inline input session to the main text body, or even
- *    outside of the main text body.
->>>>>>> origin/fixes_2_2
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
-<<<<<<< HEAD
- *    --> kEventParamTSMDocAccessSendComponentInstance (in, typeComponentInstance)
- *          This event parameter is DEPRECATED on Mac OS X 10.5 and
- *          later.
- *          
- *          This parameter is provided by the input method originating
- *          the event. (Required parameter)
- *    
- *    --> kEventParamTSMDocAccessSendRefCon (in, typeRefCon)
- *          TSM's SendTextInputEvent, called by an input method,
- *          inserts this parameter before dispatching the event to the
-<<<<<<< HEAD
-<<<<<<< HEAD
- *          user focus.  (Required Parameter) 
+=======
+ *          user focus.  (Required Parameter)
  *          
  *          On Mac OS X 10.4 and earlier, this parameter uses
  *          typeSInt32, and you must retrieve it using that constant.
@@ -5520,6 +6356,194 @@ const
  *          compatibility, you must use typeRefCon when retrieving this
  *          parameter; for 32-bit targets, however, you may continue to
  *          use typeSInt32 if you wish, or switch to typeRefCon.
+ *    
+ *    --> kEventParamTSMDocAccessSendCharacterIndex (in, typeCFIndex)
+ *          The location in the document for which the caller would
+ *          like font information.<BR> Required parameter.
+ *    
+ *    --> kEventParamTSMDocAccessRequestedCharacterAttributes (in, typeUInt32)
+ *          A TSMDocAccessAttributes bit field filled out with the
+ *          attributes desired.
+ *          Applicable values for this event are:
+ *          
+ *          kTSMDocAccessFontSizeAttribute
+ *          This attribute requests font size information through the
+ *          kEventParamTSMDocAccessReplyFontSize parameter (only if an
+ *          ATSFontRef is being returned via
+ *          kEventParamTSMDocAccessReplyATSFont).
+ *          
+ *          Note:  On Mac OS X 10.5 and later, Text Services Manager
+ *          will always set this attribute when dispatching the
+ *          kEventTSMDocumentAccessGetFont event to the application. 
+ *          This allows a more meaningful CTFontRef to be constructed
+ *          for the benefit of requesting input methods should the
+ *          application return only compatibility data in the form of
+ *          ATSFontRef and font size.
+ *          
+ *          kTSMDocAccessEffectiveRangeAttribute
+ *          This attribute requests the text range over which font or
+ *          font/size is constant.<BR> <BR> Required parameter.
+ *    
+ *    <-- kEventParamTSMDocAccessReplyCTFontRef (out, typeCTFontRef)
+ *          The CTFontRef for the location specified  by the caller. 
+ *          This is the PREFERRED method of accessing font info on Mac
+ *          OS X 10.5 and later.
+ *          
+ *          Note:  For compatibility with applications that have not
+ *          yet adopted the CTFont API, the toolbox will automatically
+ *          coerce this parameter, if not present, from
+ *          kEventParamTSMDocAccessReplyATSFont and the font size
+ *          parameter kEventParamTSMDocAccessReplyFontSize.
+ *          
+ *          Note2:  This parameter is particularly important for input
+ *          methods to adopt, because it will allow them to reproduce
+ *          application text with much higher fidelity in its own UI
+ *          when the application also adopts CTFont.
+ *          
+ *          Optional reply parameter if
+ *          kEventParamTSMDocAccessReplyATSFont and
+ *          kEventParamTSMDocAccessReplyFontSize are provided.
+>>>>>>> origin/fixes_2.4
+ *    
+ *    <-- kEventParamTSMDocAccessReplyATSFont (out, typeATSFontRef)
+ *          The ATSFontRef for the location specified  by the
+ *          caller.
+ *          
+ *          On Mac OS X 10.5 and later, this parameter is part of the
+ *          compatibility parameter set, and will be deprecated in the
+ *          future.  For compatibility with existing input methods, if
+ *          the application returns a CTFontRef (via
+ *          kEventParamTSMDocAccessReplyCTFontRef), TSM will coerce the
+ *          CTFontRef to this ATSFontRef parameter and the font size
+ *          kEventParamTSMDocAccessReplyFontSize parameter.
+ *          Please use kEventParamTSMDocAccessReplyCTFontRef if at all
+ *          possible.
+ *          
+ *          Optional reply parameter if
+ *          kEventParamTSMDocAccessReplyCTFontRef is provided.
+ *    
+ *    <-- kEventParamTSMDocAccessReplyFontSize (out, typeCGFloat)
+ *          The font size for the requested location if an ATSFontRef
+ *          is being returned via kEventParamTSMDocAccessReplyATSFont
+ *          and kTSMDocAccessFontSizeAttribute is specified in the bit
+ *          field passed as the
+ *          kEventParamTSMDocAccessRequestedCharacterAttributes
+ *          parameter.
+ *          Note:  This parameter is not normally used if a CTFontRef
+ *          is being returned via kEventParamTSMDocAccessReplyCTFontRef
+ *          (Mac OS X 10.5 and later), but could be helpful if the
+ *          application is using an affine transform in conjunction
+ *          with the ATSFontRef and the ideal font size differs enough
+ *          from the font size that would be derived from the
+ *          CTFontRef.  However, see comment under
+ *          kEventParamTSMDocAccessReplyCTFontRef pertaining to the
+ *          importance of input method adoption of CTFont API.
+ *           Note2:  This event parameter was originally typed as
+ *          typeFloat which is also typeIEEE64BitFloatingPoint.
+ *          However, a 'float' (see MacTypes.h) is really a 32 bit IEEE
+ *          float.  Clients of this parameter have made the assumption
+ *          that these types correspond with oneanother, and as long as
+ *          the same assumption was made everywhere, this caused no
+ *          problem.
+ *          In Mac OS X 10.5 and later, this parameter has been
+ *          re-typed as typeCGFloat, which references a Float32 on
+ *          32-bit, and a double on 64-bit.  For compatibility, TSM
+ *          will assume that when data of typeFloat is used in
+ *          conjunction with this parameter, the data actually contains
+ *          a 32-bit IEEE float, and will coerce this data accordingly
+ *          when converting to/from typeCGFloat.
+ *          NOTE2:  The above special-case coercion to/from typeFloat
+ *          exists only on 32-bit.  Always use typeCGFloat on
+ *          64-bit.
+ *          
+ *          Optional reply parameter if
+ *          kEventParamTSMDocAccessReplyCTFontRef is provided.
+ *    
+ *    --> kEventParamTSMDocAccessSendCharacterRange (in, typeCFRange)
+ *          The maximum range of text the caller cares about.  This is
+ *          used to "clip" the area of interest to the caller so the
+ *          text engine doesn't need to process a style run all the way
+ *          back to, say, the beginning of a line or a document, in
+ *          order to return an effective range.<BR> Required parameter.
+ *    
+ *    <-- kEventParamTSMDocAccessEffectiveRange (out, typeCFRange)
+ *          Optional reply parameter.
+ *          The range of text over which both font and size are
+ *          constant, within the bounds of the
+ *          kEventParamTSMDocAccessSendCharacterRange parameter.
+ *           Return this information if
+ *          kTSMDocAccessEffectiveRangeAttribute is specified in the
+ *          bit field passed as the
+ *          kEventParamTSMDocAccessRequestedCharacterAttributes
+ *          parameter.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventTSMDocumentAccessGetFont = 6;
+
+{
+ *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessGetGlyphInfo
+ *  
+ *  Summary:
+ *    Returns glyph info and the range covered by that glyph.
+ *  
+ *  Discussion:
+<<<<<<< HEAD
+ *    This event is used for mouse tracking.  An input method typically
+ *    produces this event to perform proper cursor management as the
+ *    cursor moves over various subranges, or clauses of text (or the
+ *    boundaries between these) in an inline input session, or moves
+ *    between an inline input session to the main text body, or even
+ *    outside of the main text body.
+>>>>>>> origin/fixes_2_2
+=======
+ *    Where a glyph spans multiple characters, the effective range,
+ *    represented by the glyph, is returned by the app.
+>>>>>>> origin/fixes_2.4
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
+ *    --> kEventParamTSMDocAccessSendComponentInstance (in, typeComponentInstance)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          This parameter is provided by the input method originating
+<<<<<<< HEAD
+ *          the event. (Required parameter)
+=======
+ *          the event.<BR> Required parameter.
+>>>>>>> origin/fixes_2.4
+ *    
+ *    --> kEventParamTSMDocAccessSendRefCon (in, typeRefCon)
+ *          TSM's SendTextInputEvent, called by an input method,
+ *          inserts this parameter before dispatching the event to the
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *          user focus.  (Required Parameter) 
+=======
+ *          user focus.
+ *          Required Parameter.
+>>>>>>> origin/fixes_2.4
+ *          
+ *          On Mac OS X 10.4 and earlier, this parameter uses
+ *          typeSInt32, and you must retrieve it using that constant.
+ *          On Mac OS X 10.5 and later, to support 64-bit refcon
+ *          values, this parameter uses typeRefCon. For 64-bit
+ *          compatibility, you must use typeRefCon when retrieving this
+ *          parameter; for 32-bit targets, however, you may continue to
+ *          use typeSInt32 if you wish, or switch to typeRefCon.
+<<<<<<< HEAD
  *    
  *    --> kEventParamTSMDocAccessSendCharacterRange (in, typeCFRange)
  *          The range of text that should be copied into the buffer
@@ -5689,20 +6713,75 @@ const
  *          constant, within the bounds of the
  *          kEventParamTSMDocAccessSendCharacterRange parameter.
  *           Return this information if
+=======
+ *    
+ *    --> kEventParamTSMDocAccessSendCharacterIndex (in, typeCFIndex)
+ *          The location in the document for which the caller would
+ *          like glyph information.<BR> Required parameter.
+ *    
+ *    --> kEventParamTSMDocAccessRequestedCharacterAttributes (in, typeUInt32)
+ *          A TSMDocAccessAttributes bit field filled out with the
+ *          information desired.
+ *          Applicable values for this event are :
+ *          kTSMDocAccessEffectiveRangeAttribute which requests the
+ *          text range represented by a glyph.<BR> Required parameter.
+ *    
+ *    <-- kEventParamTSMDocAccessReplyCTGlyphInfoRef (out, typeCTGlyphInfoRef)
+ *          The CTGlyphInfoRef for the glyph used to display the range
+ *          of text returned in the
+ *          kEventParamTSMDocAccessEffectiveRange parameter.  If the
+ *          glyph used is the one that would normally be derived, this
+ *          parameter can be omitted.
+ *          This is the PREFERRED method of accessing glyph info on Mac
+ *          OS X 10.5 and later.
+ *          
+ *          For compatibility purposes, this parameter may be requested
+ *          by an input method even when the application returns glyph
+ *          information as a ATSUGlyphSelector via the
+ *          kEventParamTSMDocAccessReplyATSUGlyphSelector event
+ *          parameter.  The toolbox provides automatic coercion between
+ *          these two parameters.<BR> <BR> Optional reply parameter.
+ *    
+ *    <-- kEventParamTSMDocAccessReplyATSUGlyphSelector (out, typeGlyphSelector)
+ *          The ATSUGlyphSelector for the glyph used to display the
+ *          range of text returned in the
+ *          kEventParamTSMDocAccessEffectiveRange parameter.  If the
+ *          glyph used is the one that ATSUI would normally derive,
+ *          this parameter can be omitted.  This is the NON PREFERRED
+ *          way of accessing glyph info on Mac OS X 10.5 and later, and
+ *          this parameter will be deprecated in the future.  Use
+ *          kEventParamTSMDocAccessReplyCTGlyphInfoRef instead.
+ *           
+ *          For compatibility purposes, this parameter may still be
+ *          requested even when the application returns glyph
+ *          information via the CTGlyphInfoRef parameter
+ *          kEventParamTSMDocAccessReplyCTGlyphInfoRef.  The toolbox
+ *          provides automatic coercion between these two
+ *          parameters.<BR> <BR> Optional reply parameter.
+ *    
+ *    <-- kEventParamTSMDocAccessEffectiveRange (out, typeCFRange)
+ *          The range of text displayed as a glyph ID or CID.
+ *           Optional reply parameter.
+ *          Return this information if
+>>>>>>> origin/fixes_2.4
  *          kTSMDocAccessEffectiveRangeAttribute is specified in the
  *          bit field passed as the
  *          kEventParamTSMDocAccessRequestedCharacterAttributes
  *          parameter.
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	kEventTSMDocumentAccessGetCharacters = 5;
@@ -5784,10 +6863,43 @@ const
 
 {
  *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessGetGlyphInfo
+=======
+	kEventTSMDocumentAccessGetGlyphInfo = 7;
+
+{
+ *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessGetFirstRectForRange
+ *  
+ *  Summary:
+ *    Returns a bounding rectangle on the screen for a specified
+ *    character range.
+ *    Where the character range would best be described by multiple
+ *    logical rectangles, this event should return the first such
+ *    rectangle and the corresponding character subrange
+ *  
+ *  Discussion:
+ *    Input methods have a need to locate the on-screen position of a
+ *    character range in a document.Ê The goal may be toÊcall attention
+ *    to the user about a range of text by using its bounding rectangle
+ *    or byÊoverlaying some text with different font/attributes.
+ *     The handler of this event should return aÊrectangle for the
+ *    largest character subrange of text, starting from the range
+ *    beginning, that is drawn on a single line usingÊsimilar font,
+ *    size, and style.
+ *    If text overlay is desired, the CTFontRef(s) used over the
+ *    character range can be obtained via
+ *    theÊkEventTSMDocumentAccessGetFont event.Ê The baseline to be
+ *    used for drawing is determined by applying the returned
+ *    BaselineDelta parameter to the bounding rectangle's origin.
+ *     When the bounding rectangle returned corresponds to only a
+ *    proper subset of the requested character range, the subrange is
+ *    specified in the EffectiveRange parameter, allowing the client to
+ *    iterate over the character range of interest.
+>>>>>>> origin/fixes_2.4
  *  
  *  Summary:
  *    Returns glyph info and the range covered by that glyph.
  *  
+<<<<<<< HEAD
  *  Discussion:
  *    Where a glyph spans multiple characters, the effective range,
  *    represented by the glyph, is returned by the app.
@@ -5811,10 +6923,16 @@ const
  *          the event. (Required parameter)
  *    
  *    --> kEventParamTextInputSendRefCon (in, typeLongInteger)
+=======
+ *  Parameters:
+ *    
+ *    --> kEventParamTSMDocAccessSendRefCon (in, typeRefCon)
+>>>>>>> origin/fixes_2.4
  *          TSM's SendTextInputEvent, called by an input method,
  *          inserts this parameter before dispatching the event to the
  *          user focus.  (Required Parameter)
  *    
+<<<<<<< HEAD
  *    --> kEventParamTextInputSendCurrentPoint (in, typeQDPoint)
  *          The point whose text offset (and classification) the input
  *          method is requesting. This point is usually the current
@@ -5866,12 +6984,42 @@ const
  *          character at the returned text offset and leading/trailing
  *          edge value. This parameter is optional and may not be
  *          returned to the caller.
+=======
+ *    --> kEventParamTSMDocAccessSendCharacterRange (in, typeCFRange)
+ *          The range of text for which a bounding rectangle is
+ *          requested.  (Required Parameter)
+ *    
+ *    <-- kEventParamTSMDocAccessEffectiveRange (out, typeCFRange)
+ *          Required reply parameter.
+ *          The subrange of text, within the bounds of the
+ *          kEventParamTSMDocAccessSendCharacterRange parameter, over
+ *          which font/size/style of text are similar and displayed on
+ *          a single line.
+ *    
+ *    <-- kEventParamTSMDocAccessLineBounds (out, typeHIRect)
+ *          Required reply parameter.
+ *          This parameter contains an HIRect of the visible line area
+ *          for the text subrange returned in the EffectiveRange
+ *          parameter.
+ *          ThisÊHIRect can be accessed using the default typeHIRect to
+ *          obtain values in global coordinates, or 72dpi virtual
+ *          coordinate space, or can be accessedÊwith other parameter
+ *          types that specify the coordinate space of interest, such
+ *          as typeHIRectScreenPixel.
+ *    
+ *    <-- kEventParamTSMDocAccessBaselineDelta (out, typeCGFloat)
+ *          Required reply parameter.
+ *          This parameter specifies the delta between the bounding
+ *          rectangle's origin and the text baseline at the first
+ *          character in the returned EffectiveRange parameter.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
- *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework
+ *    CarbonLib:        not available
  }
 const
+<<<<<<< HEAD
 	kEventTextInputPosToOffset = 4;
 
 {
@@ -5885,6 +7033,55 @@ const
  *    Services Manager bottom-line input window, and is not normally
  *    handled by an application.
 >>>>>>> origin/fixes_2_2
+=======
+	kEventTSMDocumentAccessGetFirstRectForRange = 11;
+
+
+{
+
+    ** Document Access Lock/Unlock events **
+
+}
+{
+ *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessLockDocument
+ *  
+ *  Summary:
+ *    Notifies the app that it should not change its document's text
+ *    content (on its own) while a text service is involved in a
+ *    transaction.  The app should not allow changes, for example, by
+ *    its secondary threads.
+ *  
+ *  Discussion:
+ *    These events define how a text service can obtain access to a
+ *    document in a way that ensures data integrity during its
+ *    transaction.  The primary motivation of these events is to
+ *    prevent the application from letting its secondary threads modify
+ *    the document while a text service is busy servicing an event,
+ *    such as a key event, or some user interaction with text service
+ *    provided UI such as a menu selection. Also, while the document is
+ *    locked, a text service is free to request pointer access to the
+ *    document's text content (if this is supported by the app's text
+ *    engine.) These lock-related events should be implemented using a
+ *    ref counting scheme. Most apps will not support this kind of
+ *    threading, so implementation of these events in the text engine
+ *    will be optional.   In most text engines, the implementation of
+ *    these events should be trivial, i.e. just maintain a simple
+ *    semaphore.  TSM itself will implicitly lock/unlock around normal
+ *    entry points into a text service, such as when it delivers key
+ *    events to an input method, but there may be times when document
+ *    changes can be driven by an input method without TSM involvement,
+ *    such as the Carbon events involved when the user interacts with
+ *    some UI.  In this case, the input method must manage locking, if
+ *    the app supports it.  However, the logic in an input method
+ *    should not have to care whether TSM is in the call chain or
+ *    not... and TSM should not have to care whether an input method
+ *    will do the right thing. This is why the lock mechanism needs to
+ *    be some kind of refcounting scheme instead of a simple on/off
+ *    mechanism. This document lock support is completely optional on
+ *    the part of the text engine (if it is not threaded).  TSM will
+ *    implicitly lock/unlock the document around delivery of events to
+ *    input methods, if the app supports it.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -5892,6 +7089,9 @@ const
  *  Parameters:
  *    
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    --> kEventParamTSMDocAccessSendComponentInstance (in, typeComponentInstance)
  *          This event parameter is DEPRECATED on Mac OS X 10.5 and
  *          later.
@@ -5900,16 +7100,20 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
  *          the event. (Required parameter)
+<<<<<<< HEAD
 =======
  *          the event.<BR> Required parameter.
 >>>>>>> graemeg/cpstrnew
 =======
  *          the event.<BR> Required parameter.
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
  *    
  *    --> kEventParamTSMDocAccessSendRefCon (in, typeRefCon)
  *          TSM's SendTextInputEvent, called by an input method,
  *          inserts this parameter before dispatching the event to the
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5928,6 +7132,9 @@ const
  *          user focus.
  *          Required Parameter.
 >>>>>>> origin/cpstrnew
+=======
+ *          user focus.  (Required Parameter) 
+>>>>>>> origin/fixes_2.4
  *          
  *          On Mac OS X 10.4 and earlier, this parameter uses
  *          typeSInt32, and you must retrieve it using that constant.
@@ -5936,6 +7143,7 @@ const
  *          compatibility, you must use typeRefCon when retrieving this
  *          parameter; for 32-bit targets, however, you may continue to
  *          use typeSInt32 if you wish, or switch to typeRefCon.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    
@@ -7960,10 +9168,13 @@ const
  *          reply parameter, if the event is handled.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2.4
  *    
  *    <-- kEventParamTSMDocAccessLockCount (out, typeCFIndex)
  *          The resulting refCount of locks on the document. Required
  *          reply parameter, if the event is handled.
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
  *    
@@ -19649,6 +20860,8 @@ const
 =======
  *          The window that was deactivated.
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
@@ -19656,10 +20869,16 @@ const
  }
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kEventWindowTransitionCompleted = 89;
+=======
+	kEventTSMDocumentAccessLockDocument = 8;
+
+>>>>>>> origin/fixes_2.4
 
 {$ifc not TARGET_CPU_64}
 {
+<<<<<<< HEAD
  *  kEventClassWindow / kEventWindowClickDragRgn
  *  
  *  Summary:
@@ -19730,12 +20949,23 @@ const
  *    You have the option of overriding the behavior to support
  *    click-through or select-and-click.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *  kEventClassTSMDocumentAccess / kEventTSMDocumentAccessUnlockDocument
+ *  
+ *  Summary:
+ *    Unlock the document so the app's text engine is free to initiate
+ *    changes again.
+ *  
+ *  Discussion:
+ *    (see kEventTSMDocumentAccessLockDocument)
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
  *    --> kEventParamDirectObject (in, typeWindowRef)
  *          The window that was clicked.
  *    
@@ -19955,12 +21185,79 @@ const
  *    of course, entirely ignore window z-order or modality, and
  *    determine modality in any way it deems necessary.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    --> kEventParamTSMDocAccessSendComponentInstance (in, typeComponentInstance)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          This parameter is provided by the input method originating
+ *          the event. (Required parameter)
+ *    
+ *    --> kEventParamTSMDocAccessSendRefCon (in, typeRefCon)
+ *          TSM's SendTextInputEvent, called by an input method,
+ *          inserts this parameter before dispatching the event to the
+ *          user focus.  (Required Parameter) 
+ *          
+ *          On Mac OS X 10.4 and earlier, this parameter uses
+ *          typeSInt32, and you must retrieve it using that constant.
+ *          On Mac OS X 10.5 and later, to support 64-bit refcon
+ *          values, this parameter uses typeRefCon. For 64-bit
+ *          compatibility, you must use typeRefCon when retrieving this
+ *          parameter; for 32-bit targets, however, you may continue to
+ *          use typeSInt32 if you wish, or switch to typeRefCon.
+ *    
+ *    <-- kEventParamTSMDocAccessLockCount (out, typeCFIndex)
+ *          The resulting refCount of locks on the document. Required
+ *          reply parameter, if the event is handled.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventTSMDocumentAccessUnlockDocument = 9;
+
+
+{--------------------------------------------------------------------------------------}
+{ Text Input Events                                                                    }
+{--------------------------------------------------------------------------------------}
+{
+    kEventClassTextInput quick reference:
+    
+    kEventTextInputUpdateActiveInputArea    = 1,
+    kEventTextInputUnicodeForKeyEvent       = 2,
+    kEventTextInputOffsetToPos              = 3,
+    kEventTextInputPosToOffset              = 4,
+    kEventTextInputShowHideBottomWindow     = 5,
+    kEventTextInputGetSelectedText          = 6,
+    kEventTextInputUnicodeText              = 7,
+    kEventTextInputFilterText               = 14,
+    kEventTextInputIsMouseEventInInlineInputArea = 16
+    
+    The following TextInput events (UpdateActiveInputArea thru GetSelectedText) reimplement
+    the AppleEvents defined in Inside Mac Text: Text Services Manager, and provide the benefits
+    of Carbon Event targeting, dispatching, and propagation to applications that have formerly
+    handled the TSM suite of AppleEvents.
+    
+    TextInput handlers may be installed on controls, windows, or the application event target
+    (equivalent to AppleEvent-based handling). In all cases, if a given TextInput handler is
+    not installed, TSM will convert that TextInput to an AppleEvent and redispatch via AESend
+    to the current process, making adoption as gradual as is desired.
+}
+{
+ *  kEventClassTextInput / kEventTextInputUpdateActiveInputArea
+ *  
+ *  Summary:
+ *    Tells the application/text engine to initiate/terminate or manage
+ *    the content of an inline input session.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
  *    --> kEventParamDirectObject (in, typeWindowRef)
  *          The window that was clicked.
  *    
@@ -20068,12 +21365,262 @@ const
 =======
  *          kHIModalClickIsModal.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    --> kEventParamTextInputSendComponentInstance (in, typeComponentInstance)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          This parameter is provided by the input method originating
+ *          the event.  If an invalid value is specified, tsmUnknownErr
+ *          will be returned.  (Required parameter)
+ *    
+ *    --> kEventParamTextInputSendRefCon (in, typeRefCon)
+ *          TSM's SendTextInputEvent, called by an input method,
+ *          inserts this parameter before dispatching the event to the
+ *          user focus.  (Required Parameter) 
+ *          
+ *          On Mac OS X 10.4 and earlier, this parameter uses
+ *          typeSInt32, and you must retrieve it using that constant.
+ *          On Mac OS X 10.5 and later, to support 64-bit refcon
+ *          values, this parameter uses typeRefCon. For 64-bit
+ *          compatibility, you must use typeRefCon when retrieving this
+ *          parameter; for 32-bit targets, however, you may continue to
+ *          use typeSInt32 if you wish, or switch to typeRefCon.
+ *    
+ *    --> kEventParamTextInputSendSLRec (in, typeIntlWritingCode)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          The ScriptLanguageRecord associated with the contents of an
+ *          inline input session.  This parameter is normally provided
+ *          by the input method originating the event.  TSM's
+ *          SendTextInputEvent will construct this parameter, when
+ *          missing, based on the input method component description. 
+ *          (Required Parameter)
+ *    
+ *    --> kEventParamTextInputSendFixLen (in, typeSignedByteCount)
+ *          This parameter specifies a (signed) byte count of how much
+ *          text, if any, of the inline input session is being
+ *          confirmed (or commited) to the application.  A value of -1
+ *          indicates the entire inline session is being confirmed.  A
+ *          value of 0 indicates that none of the text is being
+ *          confirmed (yet), although there may still be some change to
+ *          the contents of the inline input session.  This parameter
+ *          is provided by the input method originating the event. 
+ *          (Required Parameter) 
+ *          
+ *          On Mac OS X 10.5 and later, this parameter is typed as
+ *          typeSignedByteCount.  For all 32bit targets, whether for
+ *          Mac OS X 10.5 or earlier, you can freely use this new
+ *          type.
+ *          For 64bit on Mac OS X 10.5 and later, in order to support
+ *          64-bit text lengths, you must use typeSignedByteCount.
+ *    
+ *    --> kEventParamTextInputSendAttributedString (in, typeCFAttributedStringRef)
+ *          The attributed string to be added to the inline input
+ *          session.  This is the preferred event parameter on Mac OS X
+ *          10.5 and later.  The attributes are those defined in
+ *          CTStringAttributes.h.
+ *          On Mac OS X 10.5, TSM supports the font attribute and the
+ *          glyph info attribute. TSM does not (yet) define or support
+ *          attributes for UpdateRng, HiliteRng, ClauseRng, and PinRng,
+ *          although this is the intended direction in the future.
+ *           NOTE:  When a glyph info attribute is set for a particular
+ *          text range, it is expected that a font attribute covers at
+ *          least that same text range.  This is also important to
+ *          allow TSM to coerce attributes to compatibility data
+ *          structures, such as the
+ *          kEventParamTextInputSendGlyphInfoArray event parameter.
+ *           NOTE2:  If this event parameter is missing and requested,
+ *          it is coerced from the compatibility parameters provided in
+ *          this event, in particular, kEventParamTextInputSendText and
+ *          kEventParamTextInputSendGlyphInfoArray.
+ *          NOTE3:  Even when this parameter is provided by an input
+ *          method, the kEventParamTextInputSendTextServiceMacEncoding
+ *          is still needed if the current TSMDocument (as returned by
+ *          TSMGetActiveDocument) is not of type
+ *          kUnicodeDocumentInterfaceType and the encoding needed for
+ *          conversion is a Mac encoding variant.
+ *          
+ *          Required Parameter if kEventParamTextInputSendText is not
+ *          provided.
+ *    
+ *    --> kEventParamTextInputSendText (in, typeUnicodeText)
+ *          The text to be added to the inline input session. The data
+ *          type of this parameter actually depends on the TSMDocument
+ *          type created via NewTSMDocument: it will be typeChar for
+ *          kTextService documents, or typeUnicodeText for
+ *          kUnicodeDocument documents.
+ *          Required Parameter if
+ *          kEventParamTextInputSendAttributedString is not provided.
+ *    
+ *    --> kEventParamTextInputSendUpdateRng (in, typeTextRangeArray)
+ *          An array of text-range records (see TextRangeArray) that
+ *          indicates how to update (a subrange of) the active input
+ *          area (aka. inline input session).  The TextRange structures
+ *          occur in pairs, the first of which identifies a subrange of
+ *          the existing active input area (in the app's backing store,
+ *          resulting from a previous UpdateActiveInputArea event) to
+ *          be replaced by a new subrange of text, identified by the
+ *          second TextRange in the pair.  The new text subrange is
+ *          obtained from the contents of the
+ *          kEventParamTextInputSendText parameter.  In general, the
+ *          Nth array element, where N is even, specifies the range of
+ *          old text to be updated and array element N+1 specifies the
+ *          range of new text to replace the corresponding old text. 
+ *          The fHiliteStyle field of the TextRange records is ignored
+ *          in this parameter. NOTE:  There are some "loose ends" in
+ *          the TSM event protocol that were never clearly defined, but
+ *          which have been introduced over the years by input methods
+ *          themselves, probably through some trial and error.  The
+ *          conventions regarding this optional parameter seem to be as
+ *          follows: If the UpdateRng parameter is missing from the
+ *          event, the input method is requesting that the entire
+ *          contents of the existing inline input session (if there is
+ *          one) is to be replaced "wholesale" by the new text
+ *          contained in the kEventParamTextInputSendText parameter. If
+ *          the UpdateRng parameter exists, but contains no ranges
+ *          (i.e. fNumOfRanges == 0), this seems to be hint from the
+ *          input method that no text in the active input area is
+ *          changing.  It may be that the existing active input area is
+ *          being confirmed "as is", or that the input method is
+ *          modifying its highlite attributes in some way, due to some
+ *          user action, such as changing the selected clause or
+ *          highlited subrange of text in the active input area, or
+ *          that the input method is changing the caret position in the
+ *          active input area (if it uses the kTSMHiliteCaretPosition
+ *          hilite style). Depending on how your text engine draws
+ *          hilite styles supported in the
+ *          kEventParamTextInputSendHiliteRng parameter, you may or may
+ *          not need to redraw the text itself, simply change the
+ *          hilite. This parameter is optional and may not be present
+ *          in all instances of this event.
+ *    
+ *    --> kEventParamTextInputSendHiliteRng (in, typeTextRangeArray)
+ *          An array of text-range records (see TextRangeArray) that
+ *          specifies how various subranges of the active input area
+ *          are to be highlited, and possibly specifies caret position
+ *          within the active input area. NOTE:  The text offsets used
+ *          in the HiliteRng parameter are relative to the beginning of
+ *          the active input area AFTER all text has been updated (per
+ *          the SendUpdateRng parameter) and any (subrange of) text has
+ *          been confirmed.  Specifically, if the entire text is being
+ *          confirmed, it is clear that any contents of this parameter
+ *          should be ignored, especially non-zero values
+ *          kTSMHiliteCaretPosition. This parameter is optional and may
+ *          not be present in all instances of this event.
+ *    
+ *    --> kEventParamTextInputSendClauseRng (in, typeOffsetArray)
+ *          An array of offsets (see OffsetArray) used by an input
+ *          method to specify word or clause boundaries in the
+ *          resulting active input area.  Offsets are relative to the
+ *          start of the resulting active input area. This parameter is
+ *          optional and may not be present in all instances of this
+ *          event.
+ *    
+ *    --> kEventParamTextInputSendPinRng (in, typeTextRange)
+ *          A TextRange record that specifies a start offset and an end
+ *          offset that should be scrolled into view if the text
+ *          specified by these offsets is not already in view. The
+ *          fHiliteStyle field of the TextRange records is ignored in
+ *          this parameter. This parameter is optional and may not be
+ *          present in all instances of this event.
+ *    
+ *    --> kEventParamTextInputSendTextServiceEncoding (in, typeUInt32)
+ *          The encoding associated with the text sent by an input
+ *          method. On MacOS X, this parameter is not commonly used
+ *          because all TSM input methods produce Unicode, but TSM will
+ *          respect a Unicode encoding variant here, if specified. In
+ *          CarbonLib, this parameter identifies the Mac encoding
+ *          (usually an encoding variant) of the text produced by the
+ *          input method on MacOS, where it is not a requirement that
+ *          input methods be Unicode-savvy.  On this platform, TSM
+ *          needs the information to convert text to Unicode from a Mac
+ *          encoding variant which cannot be derived from the
+ *          ScriptLanguage record associated with the input method
+ *          component. This parameter is optional and may not be
+ *          present in all instances of this event.
+ *    
+ *    --> kEventParamTextInputSendTextServiceMacEncoding (in, typeUInt32)
+ *          The Mac encoding (variant) associated with the text sent by
+ *          an input method. On Mac OS X, this parameter is needed by
+ *          TSM to convert input method produced Unicodes to a Mac
+ *          encoding when the application that has focus is not
+ *          Unicode-savvy in the TSM sense... i.e. the current
+ *          TSMDocument (as returned by TSMGetActiveDocument) is not of
+ *          type kUnicodeDocument.  This parameter can also be useful
+ *          if a Unicode-savvy handler should need to convert from
+ *          Unicode.
+ *          This parameter is optional and may not be present in all
+ *          instances of this event.
+ *    
+ *    --> kEventParamTextInputSendGlyphInfoArray (in, typeGlyphInfoArray)
+ *          A TSMGlyphInfoArray structure in which an input method can
+ *          associate unencoded glyphs IDs and/or fonts with
+ *          (sub)ranges of text it produces.  The array elements
+ *          identify non-overlapping ranges of text and the glyph ID
+ *          (character collection is 0) such as in an OpenType font, or
+ *          the CID (collection is non-zero) such as in TrueType fonts.
+ *           If the glyphID itself is 0, only the font specified is to
+ *          be applied to the text range.  This is useful for
+ *          characters in Unicode private use area, such as Windings,
+ *          but note that this capability should be used with care
+ *          because changing the font of an input text stream can lead
+ *          to a confusing user interface. An input method will only
+ *          include this parameter if the text engine has indicated it
+ *          supports this feature via the
+ *          kTSMDocumentSupportGlyphInfoPropertyTag TSMDocumentProperty
+ *          tag. For more information, see the Glyph Access protocol
+ *          described in Technote TN2079. This parameter is optional
+ *          and may not be present in all instances of this event.
+ *    
+ *    --> kEventParamTextInputSendReplaceRange (in, typeCFRange)
+ *          The CFRange in the application's document that should be
+ *          replaced by the contents of the inline input session
+ *          defined by other parameters in this event.  The text
+ *          service will have obtained and calculated this range by
+ *          accessing the document's text via events of the
+ *          TSMDocumentAccess class.  This CFRange parameter refers to
+ *          text in flat Unicode space (UniChar) offsets, and its
+ *          location is document relative, not relative to the
+ *          insertion point or any inline session. A text service may
+ *          include this parameter only if the text engine has
+ *          indicated it supports this feature via the
+ *          kTSMDocumentSupportDocumentAccessPropertyTag
+ *          TSMDocumentProperty tag. This parameter is optional and may
+ *          not be present in all instances of this event. NOTE:  This
+ *          parameter is supported by the TSM Carbon event only, not by
+ *          TSM's kUpdateActiveInputArea AppleEvent.  If a text engine
+ *          developer wishes to support this parameter, it must
+ *          implement a Carbon event handler for this event and set the
+ *          kTSMDocumentSupportDocumentAccessPropertyTag property tag.
+ *          NOTE:  Care must be exercised by the app when there is an
+ *          active inline input session. A text service that sends an a
+ *          UpdateActiveInputArea event specifying this parameter
+ *          should not be the same text service that owns the inline
+ *          input session, since the text engine would need to call
+ *          FixTSMDocument().  This, in turn, would cause recursion
+ *          through that same text service via FixTextService().
+ *          However, the app should be prepared for recursion
+ *          regardless of which text service owns the inline input
+ *          session because it will call FixTSMDocument() to confirm
+ *          the inline input session, and "somebody" will likely send
+ *          an UpdateActiveInputArea event as a result. Therefore,
+ *          document state obtained before the call to FixTSMDocument()
+ *          may not be valid after this call completes.
+ *  
+ *  Result:
+ *    TSM will return tsmUnknownErr if the input method has specified
+ *    an invalid component instance for this event's
+ *    kEventParamTextInputSendComponentInstance parameter.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
+<<<<<<< HEAD
 	kEventWindowGetClickModality = 8;
 
 
@@ -20082,12 +21629,152 @@ const
  *    Window bounds change event attributes
 <<<<<<< HEAD
 >>>>>>> origin/cpstrnew
+=======
+	kEventTextInputUpdateActiveInputArea = 1;
+
+{
+ *  kEventClassTextInput / kEventTextInputUnicodeForKeyEvent
+ *  
+ *  Summary:
+ *    Provides Unicode text input resulting from either a key event
+ *    (TSM originates the event in this case) or from a
+ *    kEventTextInputUnicodeText event produced by an input method,
+ *    such as a Character Palette class input method, or a HandWriting
+ *    input method.
+ *  
+ *  Discussion:
+ *    This is the primary event by which applications should receive
+ *    text input on Mac OS X. Apple recommends that applications use
+ *    this event rather than the kEventRawKeyDown event to handle text
+ *    input. 
+ *    
+ *    A client need not be fully TSM-aware to process or receive this
+ *    event. You can also get Mac encoding characters from the raw
+ *    keyboard event contained in this event. If no UnicodeForKeyEvent
+ *    handler is installed, and no kUnicodeNotFromInputMethod
+ *    AppleEvent handler is installed (or the application has not
+ *    created a Unicode TSMDocument), the Mac encoding charCodes (if
+ *    these can be converted from the Unicodes) are provided to
+ *    WaitNextEvent. 
+ *    
+ *    This event is generated automatically by TSM when a
+ *    kEventRawKeyDown event is sent to the application event target.
+ *    The typical keyboard event flow begins with a kEventRawKeyDown
+ *    event posted to the event queue. This event is dequeued during
+ *    WaitNextEvent or RunApplicationEventLoop, and sent to the event
+ *    dispatcher target. If the keydown event reaches the application
+ *    target, it is handled by TSM, which generates a
+ *    kEventTextInputUnicodeForKeyEvent and sends it to the event
+ *    dispatcher target. The event dispatcher will resend the event to
+ *    the user focus target, which sends it to the focused control in
+ *    the focused window.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamTextInputSendComponentInstance (in, typeComponentInstance)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          This parameter is provided by the input method originating
+ *          the event. (Required parameter)
+ *    
+ *    --> kEventParamTextInputSendRefCon (in, typeRefCon)
+ *          TSM's SendTextInputEvent, called by an input method,
+ *          inserts this parameter before dispatching the event to the
+ *          user focus.  (Required Parameter) 
+ *          
+ *          On Mac OS X 10.4 and earlier, this parameter uses
+ *          typeSInt32, and you must retrieve it using that constant.
+ *          On Mac OS X 10.5 and later, to support 64-bit refcon
+ *          values, this parameter uses typeRefCon. For 64-bit
+ *          compatibility, you must use typeRefCon when retrieving this
+ *          parameter; for 32-bit targets, however, you may continue to
+ *          use typeSInt32 if you wish, or switch to typeRefCon.
+ *    
+ *    --> kEventParamTextInputSendSLRec (in, typeIntlWritingCode)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          The ScriptLanguageRecord associated with the text contained
+ *          in the event. This parameter is normally provided by the
+ *          input method originating the event.  TSM's
+ *          SendTextInputEvent will construct this parameter from
+ *          current script information as a result of a key event, or
+ *          using input method provided information when TSM receives a
+ *          kEventTextInputUnicodeText event.  (Required Parameter)
+ *    
+ *    --> kEventParamTextInputSendAttributedString (in, typeCFAttributedStringRef)
+ *          The attributed string entered by the user.  This is the
+ *          preferred event parameter on Mac OS X 10.5 and later.  The
+ *          attributes are those defined in CTStringAttributes.h.
+ *           On Mac OS X 10.5, TSM supports the font attribute and the
+ *          glyph info attribute.
+ *          NOTE:  When a glyph info attribute is set for a particular
+ *          text range, it is expected that a font attribute covers at
+ *          least that same text range.  This is also important to
+ *          allow TSM to coerce attributes to compatibility data
+ *          structures, such as the
+ *          kEventParamTextInputSendGlyphInfoArray event parameter.
+ *           NOTE2:  If this event parameter is missing and requested,
+ *          it is coerced from the compatibility parameters provided in
+ *          this event, in particular, kEventParamTextInputSendText and
+ *          kEventParamTextInputSendGlyphInfoArray.
+ *          
+ *          Required Parameter if kEventParamTextInputSendText is not
+ *          provided.
+ *    
+ *    --> kEventParamTextInputSendText (in, typeUnicodeText)
+ *          The Unicode characters that entered by the user.
+ *           Required Parameter if
+ *          kEventParamTextInputSendAttributedString is not provided.
+ *    
+ *    --> kEventParamTextInputSendKeyboardEvent (in, typeEventRef)
+ *          This parameter is the original raw keyboard event that
+ *          produced the text. It enables access to
+ *          kEventParamKeyModifiers and kEventParamKeyCode parameters.
+ *          Note that when contents of TSMÕs bottom-line input window
+ *          are confirmed (i.e., during typing of Chinese, Korean, or
+ *          Japanese), the raw keyboard eventÕs keyCode and modifiers
+ *          are set to default values. 
+ *          
+ *          You can also extract from the RawKeyDown event either
+ *          Unicodes or Mac encoding characters as follows:
+ *          
+ *          kEventParamKeyUnicodes      typeUnicodeText
+ *           kEventParamKeyMacCharCodes  typeChar (if available)
+ *           (DEPRECATED for 64bit on Mac OS X 10.6 and later.)
+ *           
+ *          The kEventParamKeyUnicodes parameter of the raw keyboard
+ *          event is identical to the TextInput eventÕs
+ *          kEventParamTextInputSendText parameter.
+ *    
+ *    --> kEventParamTextInputSendGlyphInfoArray (in, typeGlyphInfoArray)
+ *          A TSMGlyphInfoArray structure in which an input method can
+ *          associate unencoded glyphs IDs and/or fonts with
+ *          (sub)ranges of text it produces.  The array elements
+ *          identify non-overlapping ranges of text and the glyph ID
+ *          (character collection is 0) such as in an OpenType font, or
+ *          the CID (collection is non-zero) such as in TrueType fonts.
+ *           If the glyphID itself is 0, only the font specified is to
+ *          be applied to the text range.  This is useful for
+ *          characters in Unicode private use area, such as Windings,
+ *          but note that this capability should be used with care
+ *          because changing the font of an input text stream can lead
+ *          to a confusing user interface. For more information, see
+ *          the Glyph Access protocol described in Technote TN2079.
+ *          This parameter is optional and may not be present in all
+ *          instances of this event.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  }
 const
+<<<<<<< HEAD
 	kEventWindowClickResizeRgn = 33;
 
 {
@@ -20140,6 +21827,1167 @@ const
    * The top left corner (origin) of the window content is changing.
    }
 	kWindowBoundsChangeOriginChanged = 1 shl 3;
+=======
+	kEventTextInputUnicodeForKeyEvent = 2;
+
+{
+ *  kEventClassTextInput / kEventTextInputOffsetToPos
+ *  
+ *  Summary:
+ *    Requests conversion from inline session text offset to global
+ *    coordinate.
+ *  
+ *  Discussion:
+ *    This event is typically produced by an input method so that it
+ *    can best position a palette near the text being edited by the
+ *    user.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamTextInputSendComponentInstance (in, typeComponentInstance)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          This parameter is provided by the input method originating
+ *          the event. (Required parameter)
+ *    
+ *    --> kEventParamTextInputSendRefCon (in, typeRefCon)
+ *          TSM's SendTextInputEvent, called by an input method,
+ *          inserts this parameter before dispatching the event to the
+ *          user focus.  (Required Parameter)
+ *          
+ *          On Mac OS X 10.4 and earlier, this parameter uses
+ *          typeSInt32, and you must retrieve it using that constant.
+ *          On Mac OS X 10.5 and later, to support 64-bit refcon
+ *          values, this parameter uses typeRefCon. For 64-bit
+ *          compatibility, you must use typeRefCon when retrieving this
+ *          parameter; for 32-bit targets, however, you may continue to
+ *          use typeSInt32 if you wish, or switch to typeRefCon.
+ *    
+ *    --> kEventParamTextInputSendTextOffset (in, typeSignedByteOffset)
+ *          Specifies a (signed) byte offset in an active input area
+ *          for which the global position is desired.  Because an
+ *          inline input session always begins at the insertion point,
+ *          the offset is always considered relative to the insertion
+ *          point, even when there is no active input area.  (Required
+ *          Parameter) 
+ *          
+ *          On Mac OS X 10.5 and later, this parameter is typed as
+ *          typeSignedByteOffset.  For all 32bit targets, whether for
+ *          Mac OS X 10.5 or earlier, you can freely use this new
+ *          type.
+ *          For 64bit on Mac OS X 10.5 and later, in order to support
+ *          64-bit text lengths, you must use typeSignedByteOffset.
+ *          
+ *          If an offset is outside the bounds of the document text,
+ *          errOffsetInvalid should be returned.  Negative offsets are
+ *          not valid when an inline input session exists, but are
+ *          valid when none exists, to allow query of offsets before
+ *          the insertion point.
+ *          
+ *          NOTE:  Non-zero offsets in the absence of an active input
+ *          area can only be specified when the originator of the event
+ *          is certain that the character encoding used by the target
+ *          (the current TSMDocument) is the same as its own encoding. 
+ *          When there is no active input area, TSM is unable to
+ *          convert offsets between different encodings that might be
+ *          used by the app and an input method (as it normally does)
+ *          since TSM does not have access to the document text. 
+ *          Practically, this means that both the originator and event
+ *          target must be Unicode-savvy, i.e. the current TSMDocument
+ *          was created with kUnicodeDocumentInterfaceType.
+ *          
+ *          NOTE:  Insertion point relative offsets when there is no
+ *          active input area is contrary to the original definition of
+ *          this parameter in IM-Text 7-74 which states that the offset
+ *          is "relative to the start of the current text body" in this
+ *          case.  However, most applications and text engines have
+ *          already implemented the case offset = 0 as being the
+ *          insertion point.  This allows an input method to display
+ *          some UI near the the insertion point even before typing
+ *          takes place.
+ *    
+ *    --> kEventParamTextInputSendLeadingEdge (in, typeBoolean)
+ *          Specifies which glyph on either side of the supplied text
+ *          offset that should be used to compute the on-screen
+ *          position returned.  This value is similar to the
+ *          leadingEdge parameter of the QuickDraw PixelToChar
+ *          function.  If this parameter is true, the location of the
+ *          character (or characters if the glyph is represented by
+ *          multiple characters) at the specified text offset is
+ *          returned.  If this parameter is false, the on-screen
+ *          position returned should be the trailing edge of the glyph
+ *          represented by the character (or characters) immediately
+ *          preceding (in memory order) the supplied text offset.
+ *           Note also that while the on-screen position for a given
+ *          offset and leading/trailing edge value is affected by this
+ *          parameter, it also affects what should be returned for the
+ *          other optional parameters at style run boundaries, such as
+ *          script and font information.
+ *          This parameter is optional and may not be present in all
+ *          instances of this event.
+ *          The default value for this parameter is 'true'.
+ *    
+ *    <-- kEventParamTextInputReplyPoint (out, typeHIPoint)
+ *          The position on screen of the requested text offset and
+ *          leading/trailing edge value.
+ *          By default, this HIPoint is accessed in global coordinates,
+ *          or 72dpi virtual coordinate Space, but can be accessed as
+ *          any other type that specifies the desired coordinate
+ *          space.
+ *          This parameter was originally typed as typeQDPoint, but on
+ *          Mac OS X 10.5 and later, it should be accessed as
+ *          typeHIPoint.  The toolbox provides automatic type coercion
+ *          between these two types.<BR> Required parameter.
+ *    
+ *    <-- kEventParamTextInputReplySLRec (out, typeIntlWritingCode)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          The ScriptLanguageRecord associated with the text at the
+ *          offset specified in the event, either the
+ *          ScriptLanguageRecord of the active input area if one
+ *          exists, or of the text at the specified offset and
+ *          specified leading/ trailing edge value.  At a script run
+ *          boundary, such as where a Japanese text run ends, and a
+ *          Roman begins, a leading edge value of 'true' should return
+ *          the Roman script/language while a leading edge value of
+ *          'false' should return the Japanese script/language.
+ *           This parameter is optional and may not be returned to the
+ *          caller.
+ *    
+ *    <-- kEventParamTextInputReplyCTFontRef (out, typeCTFontRef)
+ *          The CTFontRef associated with the text at the offset
+ *          specified in the event.  This is the PREFERRED method of
+ *          accessing font info on Mac OS X 10.5 and later. Use
+ *          typeCTFontRef as the data type to retrieve this event
+ *          parameter.
+ *          
+ *          This is either the font of the active input area if one
+ *          exists, or of the text at the specified offset and
+ *          specified leading/trailing edge value.  At a font run
+ *          boundary, such as where a Japanese text run ends, and a
+ *          Roman begins, a leading edge value of 'true' should return
+ *          the font of the Roman text run while a leading edge value
+ *          of 'false' should return the Japanese font.
+ *          
+ *          Note:  For compatibility with applications that have not
+ *          yet adopted the CTFont API, the toolbox will automatically
+ *          coerce this parameter, if not present, from
+ *          kEventParamTextInputReplyATSFont (or on 32-bit:
+ *          kEventParamTextInputReplyFMFont or
+ *          kEventParamTextInputReplyFont) and the font size parameter
+ *          kEventParamTextInputReplyPointSize.
+ *          
+ *          Note2:  This parameter is particularly important for input
+ *          methods to adopt, because it will allow them to reproduce
+ *          application text with much higher fidelity in its own UI
+ *          when the application also adopts CTFont. If the ATSFont and
+ *          FontSize info do not allow enough fidelity for your needs,
+ *          that's a sign that your input method should adopt CTFontRef
+ *          parameters in TSM events.
+ *          
+ *          If this CTFontRef parameter is provided, the following
+ *          event parameters are not needed (but see note under
+ *          kEventParamTextInputReplyPointSize):
+ *          
+ *          kEventParamTextInputReplyPointSize
+ *           kEventParamTextInputReplyLineHeight
+ *           kEventParamTextInputReplyLineAscent
+ *          
+ *          Optional reply parameter if
+ *          kEventParamTextInputReplyATSFont (or on 32-bit:
+ *          kEventParamTextInputReplyFMFont or
+ *          kEventParamTextInputReplyFont) and
+ *          kEventParamTextInputReplyPointSize are provided.
+ *    
+ *    <-- kEventParamTextInputReplyATSFont (out, typeATSFontRef)
+ *          The ATSFontRef associated with the text at the offset
+ *          specified in the event. This is either the font of the
+ *          active input area if one exists, or of the text at the
+ *          specified offset and specified leading/trailing edge value.
+ *           At a font run boundary, such as where a Japanese text run
+ *          ends, and a Roman begins, a leading edge value of 'true'
+ *          should return the font of the Roman text run while a
+ *          leading edge value of 'false' should return the Japanese
+ *          font.
+ *          
+ *          This is the recommended "compatibility" method of accessing
+ *          font info on Mac OS X 10.5 and later.  The QD font and
+ *          FMFont parameters (see kEventParamTextInputReplyFMFont and
+ *          kEventParamTextInputReplyFont) are deprecated in all cases,
+ *          and not supported on 64-bit.
+ *          Note:  For compatibility with applications that have not
+ *          yet adopted the CTFont API, the toolbox will automatically
+ *          coerce this parameter, if not present, from
+ *          kEventParamTextInputReplyCTFontRef (or on 32-bit, from
+ *          kEventParamTextInputReplyFMFont or
+ *          kEventParamTextInputReplyFont).
+ *          
+ *          If this ATSFontRef parameter is provided, the following
+ *          event parameters should be provided as typeCGFloat (see
+ *          note under kEventParamTextInputReplyPointSize):
+ *          
+ *          kEventParamTextInputReplyPointSize
+ *           kEventParamTextInputReplyLineHeight
+ *           kEventParamTextInputReplyLineAscent
+ *          
+ *          Optional reply parameter if
+ *          kEventParamTextInputReplyCTFontRef (or on 32-bit:
+ *          kEventParamTextInputReplyFMFont or
+ *          kEventParamTextInputReplyFont) and
+ *          kEventParamTextInputReplyPointSize are provided.
+ *    
+ *    <-- kEventParamTextInputReplyFMFont (out, typeUInt32)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          The FMFont associated with the text at the offset specified
+ *          in the event, either the FMFont of the active input area if
+ *          one exists, or of the text at the specified offset and
+ *          specified leading/ trailing edge value.  At a font run
+ *          boundary, such as where a Japanese text run ends, and a
+ *          Roman begins, a leading edge value of 'true' should return
+ *          the font of the Roman text run while a leading edge value
+ *          of 'false' should return the Japanese font.
+ *          This parameter allows the handler to return an FMFont when
+ *          a FMFontFamily or FOND would be inconvenient to
+ *          compute.
+ *          This parameter is NOT SUPPORTED on 64-bit.
+ *          This parameter is optional and may not be returned to the
+ *          caller.
+ *    
+ *    <-- kEventParamTextInputReplyFont (out, typeSInt32)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          The QD Font associated with the text at the offset
+ *          specified in the event, either the QD Font of the active
+ *          input area if one exists, or of the text at the specified
+ *          offset and specified leading/ trailing edge value.  At a
+ *          font run boundary, such as where a Japanese text run ends,
+ *          and a Roman begins, a leading edge value of 'true' should
+ *          return the font of the Roman text run while a leading edge
+ *          value of 'false' should return the Japanese font.
+ *          This parameter is NOT SUPPORTED on 64-bit.
+ *          This parameter is optional and may not be returned to the
+ *          caller.
+ *    
+ *    <-- kEventParamTextInputReplyPointSize (out, typeCGFloat)
+ *          If the kEventParamTextInputReplyCTFontRef parameter is
+ *          accessed using typeCTFontRef, this parameter is not used
+ *          (Mac OS X 10.5 and later).
+ *          
+ *          The point size associated with the text at the offset
+ *          specified in the event, either the point size of the active
+ *          input area if one exists, or of the text at the specified
+ *          offset.  At a style run boundary where point size changes,
+ *          the leadingEdge parameter determines which point size
+ *          should be returned.
+ *          
+ *          Note:  This parameter is not normally used if a CTFontRef
+ *          is being returned via kEventParamTextInputReplyCTFontRef
+ *          (Mac OS X 10.5 and later), but could be helpful if the
+ *          context in which the ATSFontRef is used (such as the use of
+ *          an affine transform) would produce a font size different
+ *          from the font size that would be derived from the
+ *          CTFontRef.  However, see comment under
+ *          kEventParamTextInputReplyCTFontRef pertaining to the
+ *          importance of input method adoption of CTFont API.
+ *          
+ *          Note2:  This parameter was originally typed as typeFixed
+ *          for QD font and FMFont, but should be inserted as
+ *          typeCGFloat when an ATSFontRef is returned via
+ *          kEventParamTextInputReplyATSFont.    The toolbox provides
+ *          automatic type coercion between typeFixed and typeCGFloat
+ *          on 32-bit.  Always use typeCGFloat on 64-bit.
+ *          This parameter is optional and may not be returned to the
+ *          caller.
+ *    
+ *    <-- kEventParamTextInputReplyLineHeight (out, typeCGFloat)
+ *          If the kEventParamTextInputReplyCTFontRef parameter is
+ *          accessed using typeCTFontRef, this parameter is not used
+ *          (Mac OS X 10.5 and later).
+ *          
+ *          The line height associated with the text at the offset
+ *          specified in the event, either the line height of the
+ *          active input area if one exists, or of the text at the
+ *          specified offset. At a style run boundary where point size
+ *          changes, the leadingEdge parameter determines which line
+ *          height should be returned.
+ *          By default, this value is accessed in global coordinate
+ *          space, or 72dpi virtual coordinate Space, but can be
+ *          accessed as any other type that specifies the desired
+ *          coordinate space, i.e. in Screen Pixel space.
+ *          
+ *          NOTE:  This parameter was originally typed as typeSInt16
+ *          for QD font and FMFont, but should be inserted as
+ *          typeCGFloat when an ATSFontRef is returned via
+ *          kEventParamTextInputReplyATSFont.  The toolbox provides
+ *          automatic type coercion between typeSInt16 and typeCGFloat
+ *          on 32-bit.  Always use typeCGFloat on 64-bit.
+ *          This parameter is optional and may not be returned to the
+ *          caller.
+ *    
+ *    <-- kEventParamTextInputReplyLineAscent (out, typeCGFloat)
+ *          If the kEventParamTextInputReplyCTFontRef parameter is
+ *          accessed using typeCTFontRef, this parameter is not used
+ *          (Mac OS X 10.5 and later).
+ *          
+ *          The line ascent associated with the text at the offset
+ *          specified in the event, either the line ascent of the
+ *          active input area if one exists, or of the text at the
+ *          specified offset.  At a style run boundary where point size
+ *          changes, the leadingEdge parameter determines which line
+ *          ascent should be returned.
+ *          By default, this value is accessed in global coordinate
+ *          space, or 72dpi virtual coordinate Space, but can be
+ *          accessed as any other type that specifies the desired
+ *          coordinate space, i.e. in Screen Pixel space.
+ *          
+ *          NOTE:  This parameter was originally typed as typeSInt16
+ *          for QD font and FMFont, but should be inserted as
+ *          typeCGFloat when an ATSFontRef is returned via
+ *          kEventParamTextInputReplyATSFont.  The toolbox provides
+ *          automatic type coercion between typeSInt16 and typeCGFloat
+ *          on 32-bit.  Always use typeCGFloat on 64-bit.
+ *          This parameter is optional and may not be returned to the
+ *          caller.
+ *    
+ *    <-- kEventParamTextInputReplyTextAngle (out, typeFixed)
+ *          The orientation associated with the text at the offset
+ *          specified in the event, either the orientation of the
+ *          active input area if one exists, or of the text at the
+ *          specified offset.  At a style run boundary where
+ *          orientation changes, the leadingEdge parameter determines
+ *          which orientation should be returned.  The value 90
+ *          specifies a horizontal line direction and 180 specifies a
+ *          vertical line direction. This parameter is optional and may
+ *          not be returned to the caller.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ }
+const
+	kEventTextInputOffsetToPos = 3;
+
+{
+ *  kEventClassTextInput / kEventTextInputPosToOffset
+ *  
+ *  Summary:
+ *    Requests conversion from global coordinate to a byte offset in
+ *    text.
+ *  
+ *  Discussion:
+ *    This event is used for mouse tracking.  An input method typically
+ *    produces this event to perform proper cursor management as the
+ *    cursor moves over various subranges, or clauses of text (or the
+ *    boundaries between these) in an inline input session, or moves
+ *    between an inline input session to the main text body, or even
+ *    outside of the main text body.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamTextInputSendComponentInstance (in, typeComponentInstance)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          This parameter is provided by the input method originating
+ *          the event. (Required parameter)
+ *    
+ *    --> kEventParamTextInputSendRefCon (in, typeRefCon)
+ *          TSM's SendTextInputEvent, called by an input method,
+ *          inserts this parameter before dispatching the event to the
+ *          user focus.  (Required Parameter)
+ *          
+ *          On Mac OS X 10.4 and earlier, this parameter uses
+ *          typeSInt32, and you must retrieve it using that constant.
+ *          On Mac OS X 10.5 and later, to support 64-bit refcon
+ *          values, this parameter uses typeRefCon. For 64-bit
+ *          compatibility, you must use typeRefCon when retrieving this
+ *          parameter; for 32-bit targets, however, you may continue to
+ *          use typeSInt32 if you wish, or switch to typeRefCon.
+ *    
+ *    --> kEventParamTextInputSendCurrentPoint (in, typeHIPoint)
+ *          The point whose text offset (and classification) the input
+ *          method is requesting. This point is usually the current
+ *          mouse position.
+ *          Text offset classifications are defined by
+ *          kEventParamTextInputReplyRegionClass.
+ *          By default, this point is accessed in global coordinate
+ *          space, or 72dpi virtual coordinate Space, but can be
+ *          accessed as any other type that specifies the desired
+ *          coordinate space.
+ *          This parameter was originally typed as typeQDPoint, but on
+ *          Mac OS X 10.5 and later, it should be accessed as
+ *          typeHIPoint.  The toolbox provides automatic type coercion
+ *          between these two types.<BR> <BR> Required parameter.
+ *    
+ *    --> kEventParamTextInputSendDraggingMode (in, typeBoolean)
+ *          A Boolean value that indicates whether the input method is
+ *          currently tracking the mouse -- that is, whether the user
+ *          is dragging the current selection. If it is TRUE, the
+ *          application should pin the cursor to the limits of the
+ *          active input area (to avoid highlighting beyond the limits
+ *          of the active input area).
+ *          This parameter is optional and may not be present in all
+ *          instances of this event.
+ *    
+ *    <-- kEventParamTextInputReplyTextOffset (out, typeByteOffset)
+ *          The text offset (ByteOffset) corresponding to the supplied
+ *          point. If the click is within the limits of the active
+ *          input area, the offset is relative to the start of the
+ *          active input area. Otherwise, the offset is relative to the
+ *          start of the application's text body.  This offset is
+ *          always a positive value. (Required reply parameter)
+ *           
+ *          On Mac OS X 10.4 and earlier, this parameter uses
+ *          typeSInt32, and you must retrieve it using that constant.
+ *          On Mac OS X 10.5 and later, to support 64-bit offset
+ *          values, this parameter uses typeByteOffset. For 64-bit
+ *          compatibility, you must use typeByteOffset when retrieving
+ *          this parameter; for 32-bit targets, however, you may
+ *          continue to use typeSInt32 if you wish, or switch to
+ *          typeByteOffset which is really typeUInt32 to which the
+ *          toolbox will automatically convert because this parameter
+ *          always contains positive values.
+ *    
+ *    <-- kEventParamTextInputReplyRegionClass (out, typeSInt32)
+ *          The classification of the offset parameter.  The values
+ *          kTSMOutsideOfBody and kTSMInsideOfBody means that the
+ *          position is outside or inside of the text body,
+ *          respectively.  A value of kTSMInsideOfActiveInputArea means
+ *          that the position is inside of the active input area. 
+ *          (Required reply parameter)
+ *    
+ *    <-- kEventParamTextInputReplyLeadingEdge (out, typeBoolean)
+ *          Specifies whether the point supplied corresponds to the
+ *          leading edge (true) or trailing edge (false) of a glyph. 
+ *          This value is similar to the leadingEdge parameter of the
+ *          QuickDraw PixelToChar function.
+ *          If the supplied point is on the leading edge of a glyph,
+ *          this parameter contains the text offset of the character
+ *          whose glyph is at the pixel location.  (If the glyph
+ *          represents multiple characters, it returns the text offset
+ *          of the first of these characters in memory.)  If the
+ *          supplied point is on the trailing edge of a glyph, this
+ *          parameter returns the text offset of the first character in
+ *          memory following the character or characters represented by
+ *          the glyph.
+ *          This parameter is optional and may not be returned to the
+ *          caller.
+ *    
+ *    <-- kEventParamTextInputReplySLRec (out, typeIntlWritingCode)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          The ScriptLanguageRecord of the script run containing the
+ *          character at the returned text offset and leading/trailing
+ *          edge value.
+ *          This parameter is optional and may not be returned to the
+ *          caller.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ }
+const
+	kEventTextInputPosToOffset = 4;
+
+{
+ *  kEventClassTextInput / kEventTextInputShowHideBottomWindow
+ *  
+ *  Summary:
+ *    Show or hide the bottom-line input window.
+ *  
+ *  Discussion:
+ *    This event is produced by input methods to control the Text
+ *    Services Manager bottom-line input window, and is not normally
+ *    handled by an application.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamTextInputSendComponentInstance (in, typeComponentInstance)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          This parameter is provided by the input method originating
+ *          the event.<BR> Required parameter.
+ *    
+ *    --> kEventParamTextInputSendRefCon (in, typeRefCon)
+ *          TSM's SendTextInputEvent, called by an input method,
+ *          inserts this parameter before dispatching the event to the
+ *          user focus.  (Required Parameter)
+ *          
+ *          On Mac OS X 10.4 and earlier, this parameter uses
+ *          typeSInt32, and you must retrieve it using that constant.
+ *          On Mac OS X 10.5 and later, to support 64-bit refcon
+ *          values, this parameter uses typeRefCon. For 64-bit
+ *          compatibility, you must use typeRefCon when retrieving this
+ *          parameter; for 32-bit targets, however, you may continue to
+ *          use typeSInt32 if you wish, or switch to typeRefCon.
+ *    
+ *    --> kEventParamTextInputSendShowHide (in, typeBoolean)
+ *          If true, the bottomline input window should be shown; if
+ *          false, it should be hidden. This parameter is not needed if
+ *          the input method is simply inquiring about the state of the
+ *          input window.
+ *          This parameter is optional and may not be present in all
+ *          instances of this event.
+ *    
+ *    <-- kEventParamTextInputReplyShowHide (out, typeBoolean)
+ *          The current state of the input window: true if the window
+ *          is shown; false if it is hidden. If the optional parameter
+ *          kEventParamTextInputSendShowHide is included, this return
+ *          parameter should show the state of the window before it was
+ *          set to the state requested in the optional parameter.
+ *           This parameter is optional and may not be returned to the
+ *          caller.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ }
+const
+	kEventTextInputShowHideBottomWindow = 5;
+
+{
+ *  kEventClassTextInput / kEventTextInputGetSelectedText
+ *  
+ *  Summary:
+ *    Get the selected text (or the character before or after the
+ *    insertion point, based on the leadingEdge parameter) from the
+ *    applicationÕs text engine.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamTextInputSendComponentInstance (in, typeComponentInstance)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          This parameter is provided by the input method originating
+ *          the event.  If an invalid value is specified, tsmUnknownErr
+ *          will be returned. (Required parameter)
+ *    
+ *    --> kEventParamTextInputSendRefCon (in, typeRefCon)
+ *          TSM's SendTextInputEvent, called by an input method,
+ *          inserts this parameter before dispatching the event to the
+ *          user focus.  (Required Parameter) 
+ *          
+ *          On Mac OS X 10.4 and earlier, this parameter uses
+ *          typeSInt32, and you must retrieve it using that constant.
+ *          On Mac OS X 10.5 and later, to support 64-bit refcon
+ *          values, this parameter uses typeRefCon. For 64-bit
+ *          compatibility, you must use typeRefCon when retrieving this
+ *          parameter; for 32-bit targets, however, you may continue to
+ *          use typeSInt32 if you wish, or switch to typeRefCon.
+ *    
+ *    --> kEventParamTextInputSendLeadingEdge (in, typeBoolean)
+ *          If there is a non-empty selection, this parameter should be
+ *          ignored.  When the current selection is empty, i.e. an
+ *          insertion point, and this parameter is NOT supplied, no
+ *          text should be returned. If the current selection is empty
+ *          and this parameter is supplied, return the character (or
+ *          characters) representing the glyph on the side of the
+ *          insertion point indicated by this leadingEdge parameter.
+ *          This value is similar to the leadingEdge parameter of the
+ *          QuickDraw PixelToChar function.  If this parameter is true,
+ *          the character (or characters) at the insertion point is
+ *          returned.  If this parameter is false, the character (or
+ *          characters) immediately preceding (in memory order) the
+ *          insertion point should be returned. This parameter is
+ *          optional and may not be present in all instances of this
+ *          event. This parameter has no default value and no text
+ *          should be returned when this parameter is ommited and there
+ *          is no selected text.
+ *    
+ *    --> kEventParamTextInputSendTextServiceEncoding (in, typeUInt32)
+ *          The encoding associated with the text sent by an input
+ *          method. On MacOS X, this parameter is not commonly used
+ *          because all TSM input methods produce (and request)
+ *          Unicode, but if specified, this may be a Unicode variant
+ *          encoding. In CarbonLib on MacOS, this parameter identifies
+ *          the Mac encoding (usually an encoding variant) of the text
+ *          produced by the input method on MacOS, where it is not a
+ *          requirement that input methods be Unicode-savvy.  On this
+ *          platform, TSM needs the information to convert text to
+ *          Unicode from a Mac encoding variant which cannot be derived
+ *          from the ScriptLanguage record associated with the input
+ *          method component. This parameter is optional and may not be
+ *          present in all instances of this event.
+ *    
+ *    --> kEventParamTextInputReplyAttributedString (in, typeCFAttributedStringRef)
+ *          The attributed string for the text selection.  This is the
+ *          preferred event parameter on Mac OS X 10.5 and later.  The
+ *          attributes are those defined in CTStringAttributes.h.
+ *           On Mac OS X 10.5, TSM supports the font attribute and the
+ *          glyph info attribute.
+ *          NOTE:  When a glyph info attribute is set for a particular
+ *          text range, it is expected that a font attribute covers at
+ *          least that same text range.  This is also important to
+ *          allow TSM to coerce attributes to compatibility data
+ *          structures, such as the kEventParamTextInputGlyphInfoArray
+ *          event parameter.
+ *          NOTE2:  If this event parameter is missing and requested,
+ *          it is coerced from the compatibility parameters provided in
+ *          this event, in particular, kEventParamTextInputReplyText
+ *          and kEventParamTextInputGlyphInfoArray.
+ *          
+ *          This parameter is optional and may not be returned to the
+ *          caller.
+ *    
+ *    <-- kEventParamTextInputReplyText (out, typeUnicodeText)
+ *          The data type of this parameter actually depends on the
+ *          TSMDocument type created via NewTSMDocument: it should be
+ *          typeChar for kTextService documents, or typeUnicodeText for
+ *          kUnicodeDocument documents.
+ *          This parameter has been deprecated in favor of
+ *          kEventParamTextInputReplyAttributedString on Mac OS X 10.5
+ *          and later.
+ *          This parameter is optional and may not be returned to the
+ *          caller.
+ *    
+ *    <-- kEventParamTextInputReplySLRec (out, typeIntlWritingCode)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          The ScriptLanguageRecord of the script run containing the
+ *          text being returned to an input method. This parameter is
+ *          optional and may not be returned to the caller.
+ *    
+ *    <-- kEventParamTextInputReplyMacEncoding (out, typeUInt32)
+ *          The Mac encoding (variant) associated with the text
+ *          returned to the input method. On Mac OS X, this parameter
+ *          may needed by TSM to convert application produced text from
+ *          a Mac encoding to Unicodes returned to the input method.
+ *          This parameter is optional and may not be returned to the
+ *          caller.
+ *    
+ *    <-- kEventParamTextInputGlyphInfoArray (out, typeGlyphInfoArray)
+ *          A TSMGlyphInfoArray structure in which the event handler
+ *          can associate unencoded glyphs IDs and/or fonts with
+ *          (sub)ranges of text it returns.  The array elements
+ *          identify non-overlapping ranges of text and the glyph ID
+ *          (character collection is 0) such as in an OpenType font, or
+ *          the CID (collection is non-zero) such as in TrueType fonts.
+ *           If the glyphID itself is 0, only the font specified is to
+ *          be applied to the text range.  This is useful for
+ *          characters in Unicode private use area. For more
+ *          information, see the Glyph Access protocol described in
+ *          Technote TN2079. This parameter is optional and may not be
+ *          returned to the caller. NOTE:  This parameter should really
+ *          have been kEventParamTextInputReplyGlyphInfoArray, which
+ *          was introduced after glyphInfo support was added to this
+ *          event, but we can't change it now without breaking binary
+ *          compatibility.
+ *  
+ *  Result:
+ *    TSM will return tsmUnknownErr if the input method has specified
+ *    an invalid component instance for this event's
+ *    kEventParamTextInputSendComponentInstance parameter.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ }
+const
+	kEventTextInputGetSelectedText = 6;
+
+{
+ *  kEventClassTextInput / kEventTextInputUnicodeText
+ *  
+ *  Summary:
+ *    Used by input methods to provide original input text to the Text
+ *    Services Manager.
+ *  
+ *  Discussion:
+ *    This Unicode text event is produced only by input methods or
+ *    other text services, and is delivered to TSM via
+ *    SendTextInputEvent(). TSM never dispatches this event to the user
+ *    focus, so application handlers should NOT install handlers for
+ *    this event. Instead, TSM chains this event into any active
+ *    keyboard input method in order to prevent interference with
+ *    existing inline input sessions. The keyboard input method can
+ *    either insert the text into the inline session, or it may confirm
+ *    its session and return the UnicodeText event to TSM unhandled, in
+ *    which case TSM will convert the event into a UnicodeForKey event
+ *    (converting the Unicodes to Mac charCodes and synthesizing
+ *    information where needed) and finally dispatch the resulting
+ *    event to the user focus as usual.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamTextInputSendComponentInstance (in, typeComponentInstance)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          This parameter is provided by the input method originating
+ *          the event. (Required parameter)
+ *    
+ *    --> kEventParamTextInputSendSLRec (in, typeIntlWritingCode)
+ *          This event parameter is DEPRECATED on Mac OS X 10.5 and
+ *          later.
+ *          
+ *          The ScriptLanguageRecord associated with the text contained
+ *          in the event. This parameter is provided by the input
+ *          method originating the event. This parameter is optional
+ *          and may not be present in all instances of this event.
+ *    
+ *    --> kEventParamTextInputSendAttributedString (in, typeCFAttributedStringRef)
+ *          The attributed string produced by an input method.  This is
+ *          the preferred event parameter on Mac OS X 10.5 and later. 
+ *          The attributes are those defined in
+ *          CTStringAttributes.h.
+ *          On Mac OS X 10.5, TSM supports the font attribute and the
+ *          glyph info attribute.
+ *          NOTE:  When a glyph info attribute is set for a particular
+ *          text range, it is expected that a font attribute covers at
+ *          least that same text range.  This is also important to
+ *          allow TSM to coerce attributes to compatibility data
+ *          structures, such as the
+ *          kEventParamTextInputSendGlyphInfoArray event parameter.
+ *           NOTE2:  If this event parameter is missing and requested,
+ *          it is coerced from the compatibility parameters provided in
+ *          this event, in particular, kEventParamTextInputSendText and
+ *          kEventParamTextInputSendGlyphInfoArray.
+ *          
+ *          Required Parameter if kEventParamTextInputSendText is not
+ *          provided.
+ *    
+ *    --> kEventParamTextInputSendText (in, typeUnicodeText)
+ *          The Unicode characters produced by an input method.
+ *           Required Parameter if
+ *          kEventParamTextInputSendAttributedString is not provided.
+ *    
+ *    --> kEventParamTextInputSendTextServiceEncoding (in, typeUInt32)
+ *          The encoding associated with the text sent by an input
+ *          method. On MacOS X, this parameter is not commonly used
+ *          because all TSM input methods produce (and request)
+ *          Unicode, but if specified, this may be a Unicode variant
+ *          encoding. This parameter is optional and may not be present
+ *          in all instances of this event.
+ *    
+ *    --> kEventParamTextInputSendTextServiceMacEncoding (in, typeUInt32)
+ *          The Mac encoding (variant) associated with the text sent by
+ *          an input method, should TSM or an event handler need to
+ *          convert the Unicodes. This parameter is optional and may
+ *          not be present in all instances of this event.
+ *    
+ *    --> kEventParamTextInputSendGlyphInfoArray (in, typeGlyphInfoArray)
+ *          A TSMGlyphInfoArray structure in which an input method can
+ *          associate unencoded glyphs IDs and/or fonts with
+ *          (sub)ranges of text it produces.  The array elements
+ *          identify non-overlapping ranges of text and the glyph ID
+ *          (character collection is 0) such as in an OpenType font, or
+ *          the CID (collection is non-zero) such as in TrueType fonts.
+ *           If the glyphID itself is 0, only the font specified is to
+ *          be applied to the text range.  This is useful for
+ *          characters in Unicode private use area, such as Windings,
+ *          but note that this capability should be used with care
+ *          because changing the font of an input text stream can lead
+ *          to a confusing user interface. For more information, see
+ *          the Glyph Access protocol described in Technote TN2079.
+ *          This parameter is optional and may not be present in all
+ *          instances of this event.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventTextInputUnicodeText = 7;
+
+
+{
+ *  kEventClassTextInput / kEventTextInputFilterText
+ *  
+ *  Summary:
+ *    Send text about to be inserted into the user focus to be filtered
+ *    first.
+ *  
+ *  Discussion:
+ *    Sent before any final-form text is sent to the user focus.  Final
+ *    form text includes text produced by a keyboard layout, Ink input
+ *    method, Character palette or any other TSM text service, and any
+ *    text being "confirmed" (or commited) from an inline input
+ *    session.  In the case of text confirmed from an inline input
+ *    session, TSM will take the resulting text buffer filtered by the
+ *    event handler and adjust all parameters in the
+ *    UpdateActiveInputArea event produced by the input method. The
+ *    text filtering action will thus be transparent to both the app's
+ *    UpdateActiveInputArea handler and the input method confirming the
+ *    text.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamTextInputSendRefCon (in, typeRefCon)
+ *          TSM's SendTextInputEvent, called by an input method,
+ *          inserts this parameter before dispatching the event to the
+ *          user focus.  (Required Parameter)
+ *          
+ *          On Mac OS X 10.4 and earlier, this parameter uses
+ *          typeSInt32, and you must retrieve it using that constant.
+ *          On Mac OS X 10.5 and later, to support 64-bit refcon
+ *          values, this parameter uses typeRefCon. For 64-bit
+ *          compatibility, you must use typeRefCon when retrieving this
+ *          parameter; for 32-bit targets, however, you may continue to
+ *          use typeSInt32 if you wish, or switch to typeRefCon.
+ *    
+ *    --> kEventParamTextInputSendText (in, typeUnicodeText)
+ *          The Unicode characters that are about to be sent to the
+ *          user focus, and need to be filtered.  (Required Parameter)
+ *    
+ *    <-- kEventParamTextInputReplyText (out, typeUnicodeText)
+ *          The filtered Unicode characters... may be a zero-size
+ *          parameter.  (Required Parameter)
+ *  
+ *  Result:
+ *    Return noErr to indicate that the text needing filtering has been
+ *    changed, otherwise return eventNotHandledErr.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventTextInputFilterText = 14;
+
+
+{
+ *  kEventClassTextInput / kEventTextInputIsMouseEventInInlineInputArea
+ *  
+ *  Summary:
+ *    Test whether the mouse event's point intersects the on-screen
+ *    area used for the current inline input session.
+ *  
+ *  Discussion:
+ *    When there is a currently active TSMDocument (as returned by
+ *    TSMGetActiveDocument), and only when there is an active inline
+ *    input session, TSM will dispatch this event to the event
+ *    dispatcher target, which sends it to the user focus event target.
+ *     The intent of this event is to ask the owner of the TSMDocument
+ *    whether the mouse event specified should be considered to
+ *    intersect the area (bounds) occupied by the inline input
+ *    session.
+ *    
+ *    This event is dispatched for any kEventClassMouse event except
+ *    kEventMouseEntered and kEventMouseExited.  The entire mouse event
+ *    is included instead of only the point, in order to allow the
+ *    event handler to be as light-weight as possible, i.e. leverage
+ *    the additional content of mouse events, such as
+ *    kEventParamWindowRef and kEventParamWindowMouseLocation, but it
+ *    is understood that the mouse event itself will in no way be
+ *    modified in the event handler.  Because this event is dispatched
+ *    for kEventMouseMoved events, it should do as little work as
+ *    possible, such as a call to HIShapeContainsPoint().
+ *    
+ *    If the owner of the current TSMDocument does not respond to this
+ *    event, TSM will hit-test the mouse event against the content
+ *    region of the key focus window (as returned by
+ *    GetUserFocusWindow).
+ *    
+ *    When the owner of the current TSMDocument indicates that the
+ *    mouse event does intersect the inline input session (or the event
+ *    is not handled and the mouse event intersects the key focus
+ *    window's content region), the mouse event is delivered to the
+ *    input method.
+ *    
+ *    Note:  kEventMouseMoved events are promoted to
+ *    kEventWindowCursorChange events before being delivered to the
+ *    input method.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamTextInputSendRefCon (in, typeRefCon)
+ *          This RefCon property of the active TSMDocument.
+ *    
+ *    --> kEventParamTextInputSendMouseEvent (in, typeEventRef)
+ *          The mouse event being hit-tested against the inline input
+ *          session.
+ *    
+ *    <-- kEventParamResult (out, typeBoolean)
+ *          Whether the mouse event's point intersects the area
+ *          occupied by the inline input session.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventTextInputIsMouseEventInInlineInputArea = 16;
+
+
+{--------------------------------------------------------------------------------------}
+{ Raw Keyboard Events                                                                  }
+{--------------------------------------------------------------------------------------}
+{
+    kEventClassKeyboard quick reference:
+    
+    kEventRawKeyDown                = 1,
+    kEventRawKeyRepeat              = 2,
+    kEventRawKeyUp                  = 3,
+    kEventRawKeyModifiersChanged    = 4,
+    kEventHotKeyPressed             = 5,
+    kEventHotKeyReleased            = 6
+);
+
+|*!
+    @event          kEventRawKeyDown
+    @abstract       A key was pressed.
+    
+    @discussion     This is the lowest-level keyboard input event. When this event is sent, the keyboard
+                    input has not yet been processed by the Text Services Manager or passed to input methods.
+                    Usually, you should not handle this event, because doing so may interfere with input
+                    methods; instead, you should handle the kEventTextInputUnicodeForKeyEvent event, which
+                    is sent after input methods have handled the raw key event, and contains both Unicode
+                    and the original keyboard event.
+                    
+                    This event has a default handler on the application event target. The default handler
+                    calls the Text Services Manager to pass the event through to input methods. The default
+                    handler also implements certain standard keyboard equivalents, such as cmd-` for intra-
+                    process window rotation and the universal keyboard access equivalents for interprocess
+                    window rotation and document, floating, toolbar, and menubar keyboard focus.
+                    
+    @param          kEventParamKeyUnicodes
+                        The Unicode(s) generated by the key that was pressed.<BR>
+                        This parameter is preferred for obtaining text for a key press and should be
+                        used instead of kEventParamKeyMacCharCodes, in particular in 64bit.
+                        
+    @param          kEventParamKeyMacCharCodes
+                        This event parameter is DEPRECATED for 64bit on Mac OS X 10.6 and later.<BR>
+                        <BR>
+                        The character generated by the key that was pressed. The characterÕs encoding
+                        is determined by the current keyboard script.
+                        
+    @param          kEventParamKeyCode
+                        The virtual keycode of the key that was pressed.
+                        
+    @param          kEventParamKeyModifiers
+                        The keyboard modifiers that were down when the key was pressed.
+                        
+    @param          kEventParamKeyboardType
+                        The type of keyboard on which the key was pressed.
+}
+{
+ *  kEventClassKeyboard / kEventRawKeyDown
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ }
+const
+	kEventRawKeyDown = 1;
+
+{
+ *  kEventClassKeyboard / kEventRawKeyRepeat
+ *  
+ *  Summary:
+ *    Sent periodically as a key is held down by the user.
+ *  
+ *  Discussion:
+ *    Usually, you should not handle this event, because doing so may
+ *    interfere with input methods; instead, you should handle the
+ *    kEventTextInputUnicodeForKeyEvent event, which is sent after
+ *    input methods have handled the raw key event, and contains both
+ *    Unicode and the original keyboard event.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamKeyUnicodes (in, typeUnicodeText)
+ *          The Unicode(s) generated by the key that was pressed.
+ *           This parameter is preferred for obtaining text for a key
+ *          press and should be used instead of
+ *          kEventParamKeyMacCharCodes, in particular in 64bit.
+ *    
+ *    --> kEventParamKeyMacCharCodes (in, typeChar)
+ *          This event parameter is DEPRECATED for 64bit on Mac OS X
+ *          10.6 and later.
+ *          
+ *          The character generated by the key that was pressed. The
+ *          characterÕs encoding is determined by the current keyboard
+ *          script.
+ *    
+ *    --> kEventParamKeyCode (in, typeUInt32)
+ *          The virtual keycode of the key that was pressed.
+ *    
+ *    --> kEventParamKeyModifiers (in, typeUInt32)
+ *          The keyboard modifiers that were down when the key was
+ *          pressed.
+ *    
+ *    --> kEventParamKeyboardType (in, typeUInt32)
+ *          The type of keyboard on which the key was pressed.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ }
+const
+	kEventRawKeyRepeat = 2;
+
+{
+ *  kEventClassKeyboard / kEventRawKeyUp
+ *  
+ *  Summary:
+ *    A key was released.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamKeyUnicodes (in, typeUnicodeText)
+ *          The Unicode(s) generated by the key that was released.
+ *           This parameter is preferred for obtaining text for a key
+ *          press and should be used instead of
+ *          kEventParamKeyMacCharCodes, in particular in 64bit.
+ *    
+ *    --> kEventParamKeyMacCharCodes (in, typeChar)
+ *          This event parameter is DEPRECATED for 64bit on Mac OS X
+ *          10.6 and later.
+ *          
+ *          The character generated by the key that was released. The
+ *          characterÕs encoding is determined by the current keyboard
+ *          script.
+ *    
+ *    --> kEventParamKeyCode (in, typeUInt32)
+ *          The virtual keycode of the key that was released.
+ *    
+ *    --> kEventParamKeyModifiers (in, typeUInt32)
+ *          The keyboard modifiers that were down when the key was
+ *          released.
+ *    
+ *    --> kEventParamKeyboardType (in, typeUInt32)
+ *          The type of keyboard on which the key was released.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ }
+const
+	kEventRawKeyUp = 3;
+
+{
+ *  kEventClassKeyboard / kEventRawKeyModifiersChanged
+ *  
+ *  Summary:
+ *    The keyboard modifiers have changed.
+ *  
+ *  Discussion:
+ *    This event is sent to all handlers registered for it.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamKeyModifiers (in, typeUInt32)
+ *          The keyboard modifiers that are now pressed. This is the
+ *          current state of the modifiers, not a delta state; it
+ *          includes modifiers that were pressed before the latest
+ *          change to modifier state.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ }
+const
+	kEventRawKeyModifiersChanged = 4;
+
+{
+ *  kEventClassKeyboard / kEventHotKeyPressed
+ *  
+ *  Summary:
+ *    A registered hot key was pressed.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeEventHotKeyID)
+ *          The ID of the hot key that was pressed.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ }
+const
+	kEventHotKeyPressed = 5;
+
+{
+ *  kEventClassKeyboard / kEventHotKeyReleased
+ *  
+ *  Summary:
+ *    A registered hot key was released.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeEventHotKeyID)
+ *          The ID of the hot key that was released.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ }
+const
+	kEventHotKeyReleased = 6;
+
+
+{
+ *  Summary:
+ *    Key modifier change event bits and masks
+ *  
+ *  Discussion:
+ *    From bit 8, cmdKeyBit, to bit 15, rightControlKeyBit, are
+ *    compatible with Event Manager modifiers.
+ }
+const
+{
+   * Indicates that this keyboard event was generated either on the
+   * numeric keypad, or in the numeric section of an iBook or PowerBook
+   * keyboard with the NumLock key pressed. This state bit does not
+   * provide an indication of the NumLock state on non-portable
+   * keyboards. This bit is only set on Mac OS X.
+   }
+	kEventKeyModifierNumLockBit = 16;
+
+  {
+   * Indicates that the Fn key was pressed when this keyboard event was
+   * generated. This bit is only set on Mac OS X.
+   }
+	kEventKeyModifierFnBit = 17;
+>>>>>>> origin/fixes_2.4
 
   {
    * The bounds is changing because ZoomWindow or ZoomWindowIdeal was
@@ -20253,11 +23101,16 @@ const
     
     -- window focus events --
     
+<<<<<<< HEAD
     kEventWindowFocusAcquired           = 200,
     kEventWindowFocusRelinquish         = 201,
     kEventWindowFocusContent            = 202,
     kEventWindowFocusToolbar            = 203,
     kEventWindowFocusDrawer             = 204,
+=======
+    kEventAppGetDockTileMenu                = 20,
+    kEventAppUpdateDockTile                 = 21,
+>>>>>>> origin/fixes_2.4
     
     -- sheet events --
     
@@ -20485,11 +23338,25 @@ const
  *          Which other mouse buttons were pressed when the event was
  *          generated. Available on Mac OS X only.
  *    
+<<<<<<< HEAD
  *    --> kEventParamTabletEventType (in, typeUInt32)
  *          The type of tablet event which generated this mouse event;
  *          contains either kEventTabletPoint or kEventTabletProximity.
  *          Only present if the event was generated from a tablet.
  *          Available in Mac OS X 10.1 and CarbonLib 1.5, and later.
+=======
+ *    --> kEventParamLaunchRefCon (in, typeRefCon)
+ *          Contains the value in the asyncRefCon field of the LSLaunch
+ *          structure that was used to launch the process. 
+ *          
+ *          On Mac OS X 10.4 and earlier, this parameter uses
+ *          typeUInt32, and you must retrieve it using that constant.
+ *          On Mac OS X 10.5 and later, to support 64-bit refcon
+ *          values, this parameter uses typeRefCon. For 64-bit
+ *          compatibility, you must use typeRefCon when retrieving this
+ *          parameter; for 32-bit targets, however, you may continue to
+ *          use typeUInt32 if you wish, or switch to typeRefCon.
+>>>>>>> origin/fixes_2.4
  *    
  *    --> kEventParamTabletPointRec (in, typeTabletPointRec)
  *          Further information about the tablet event which generated
@@ -20589,6 +23456,7 @@ const
  *  kEventClassWindow / kEventWindowHandleDeactivate
  *  
  *  Summary:
+<<<<<<< HEAD
  *    The window has received a kEventWindowDeactivated event, and its
  *    contents should become inactive.
  *  
@@ -20599,15 +23467,37 @@ const
  *    standard window handler responds to this event by calling
  *    DeactivateControl on the window's root control.
 >>>>>>> origin/fixes_2_2
+=======
+ *    The system UI mode or options of the frontmost application have
+ *    changed.
+ *  
+ *  Discussion:
+ *    On Mac OS X 10.6 and later, this event is sent if the UI options
+ *    of the frontmost application change, even if the mode remains the
+ *    same. Prior to Mac OS X 10.6, this event is only sent if the UI
+ *    mode changes. This event is sent to all handlers registered for
+ *    it.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
  *    --> kEventParamDirectObject (in, typeWindowRef)
 <<<<<<< HEAD
  *          The window being hidden.
+=======
+ *    --> kEventParamSystemUIMode (in, typeUInt32)
+ *          The new system UI mode. Contains a kUIMode constant from
+ *          MacApplication.h.
+ *    
+ *    --> kEventParamSystemUIOptions (in, typeUInt32)
+ *          The new system UI options. Contains a bitmask of kUIOption
+ *          constants from MacApplication.h. This parameter is
+ *          available on Mac OS X 10.6 and later.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -20624,9 +23514,100 @@ const
  *  
  *  Discussion:
  *    This event is sent to all handlers registered for it.
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
  *          The window that was deactivated.
+=======
+ *    
+ *    This event is currently sent in two circumstances: when the Dock
+ *    has changed position or size, and when the display configuration
+ *    has changed. A separate copy of this event is sent to each
+ *    affected GDevice.
+ *    
+ *    All applications have a default handler installed on the
+ *    application target that responds to this event by sending
+ *    kEventWindowConstrain events to each window on the specified
+ *    device. It is not possible to prevent this handler from running,
+ *    since this event is sent to all registered handlers. However,
+ *    applications that would like to do their own window layout may
+ *    install a handler for this event, and also set the
+ *    kWindowNoConstrainAttribute on their windows, which will cause
+ *    the basic window handler to ignore kEventWindowConstrain. An
+ *    application may also install its own kEventWindowConstrain
+ *    handler and selectively return a value other than
+ *    eventNotHandledErr, which will prevent the event from being sent
+ *    to the basic window handler.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDisplayDevice (in, typeCGDisplayID)
+ *          The display device whose available positioning bounds have
+ *          changed. On Mac OS X 10.3 and later, this parameter is
+ *          available as a GDHandle using typeGDHandle; on Mac OS X
+ *          10.5 and later, this parameter is also available as a
+ *          CGDirectDisplayID using typeCGDisplayID.
+ *    
+ *    --> kEventParamReason (in, typeUInt32)
+ *          The reasons why the available positioning bounds have
+ *          changed. This parameter contains one or more of the
+ *          kAvailBoundsChangedFor constants.
+ *    
+ *    --> kEventParamTransactionID (in, typeUInt32)
+ *          An integer which is the same for all instances of this
+ *          event that are produced by the same configuration change.
+ *          For example, if multiple displays are attached, then this
+ *          event is sent once for each display after a display
+ *          configuration change; however, the transaction ID parameter
+ *          will the same for each event, so a handler for this event
+ *          can choose to ignore all but the first event by correlating
+ *          the the transaction IDs.
+ *    
+ *    --> kEventParamPreviousDockRect (in, typeHIRect)
+ *          The DockÕs previous bounds, in global coordinates. This
+ *          parameter is optional and may not be present in all
+ *          instances of this event. It is present in events with a
+ *          kEventParamReason parameter containing
+ *          kAvailBoundsChangedForDock.
+ *    
+ *    --> kEventParamPreviousDockDevice (in, typeCGDisplayID)
+ *          The display device on which the Dock was previously
+ *          positioned. This parameter is optional and may not be
+ *          present in all instances of this event. It is present in
+ *          events with a kEventParamReason parameter containing
+ *          kAvailBoundsChangedForDock. On Mac OS X 10.3 and later,
+ *          this parameter is available as a GDHandle using
+ *          typeGDHandle; on Mac OS X 10.5 and later, this parameter is
+ *          also available as a CGDirectDisplayID using typeCGDisplayID.
+ *    
+ *    --> kEventParamCurrentDockRect (in, typeHIRect)
+ *          The DockÕs current bounds, in global coordinates. This
+ *          parameter is optional and may not be present in all
+ *          instances of this event. It is present in events with a
+ *          kEventParamReason parameter containing
+ *          kAvailBoundsChangedForDock.
+ *    
+ *    --> kEventParamCurrentDockDevice (in, typeCGDisplayID)
+ *          The display device on which the Dock is currently
+ *          positioned. This parameter is optional and may not be
+ *          present in all instances of this event. It is present in
+ *          events with a kEventParamReason parameter containing
+ *          kAvailBoundsChangedForDock. On Mac OS X 10.3 and later,
+ *          this parameter is available as a GDHandle using
+ *          typeGDHandle; on Mac OS X 10.5 and later, this parameter is
+ *          also available as a CGDirectDisplayID using typeCGDisplayID.
+ *    
+ *    --> kEventParamRgnHandle (in, typeQDRgnHandle)
+ *          The GrayRgn before the configuration change. This parameter
+ *          is optional and may not be present in all instances of this
+ *          event. It is present in events with a kEventParamReason
+ *          parameter containing kAvailBoundsChangedForDisplay. To get
+ *          the GrayRgn after the configuration change, just call the
+ *          GetGrayRgn API.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
@@ -20775,7 +23756,55 @@ const
 	kEventWindowShown = 24;
 
 {
+<<<<<<< HEAD
  *  kEventClassWindow / kEventWindowHidden
+=======
+ *  kEventClassApplication / kEventAppUpdateDockTile
+ *  
+ *  Summary:
+ *    Indicates that your application should redraw its custom
+ *    application Dock tile, if appropriate.
+ *  
+ *  Discussion:
+ *    This event is sent when your application has customized either
+ *    its application Dock tile or a collapsed window Dock tile. If
+ *    your app customizes its application Dock tile appearance using
+ *    SetApplicationDockTileImage, OverlayApplicationDockTileImage,
+ *    BeginCGContextForApplicationDockTile,
+ *    BeginQDContextForApplicationDockTile, or
+ *    HIApplicationCreateDockTileContext, then your application should
+ *    redraw its Dock tile in response to this event. This event is not
+ *    sent if your application has not customized any of its Dock
+ *    tiles. 
+ *    
+ *    This event is currently sent in two cases: when the Dock tile
+ *    changes size (typically in response to a change in the user
+ *    interface scale factor), or when the Dock process is restarted.
+ *    In either case, any customization that your application has
+ *    previously performed is lost. 
+ *    
+ *    If your application only customizes its collapsed window Dock
+ *    tiles, but not its application Dock tile, then you can ignore
+ *    this event. 
+ *    
+ *    This event is sent to all handlers registered for it on the
+ *    application event target. The default application event handler
+ *    for this event sends kEventWindowUpdateDockTile events to any
+ *    collapsed windows that have customized their Dock tiles.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventAppUpdateDockTile = 21;
+
+{
+ *  kEventClassApplication / kEventAppFocusMenuBar
+>>>>>>> origin/fixes_2.4
  *  
  *  Summary:
  *    Notification that a window has been hidden.
@@ -21148,8 +24177,36 @@ const
  *    Notification that a window is being shown.
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    This event is sent to all handlers registered for it.
 >>>>>>> origin/fixes_2_2
+=======
+ *    The RunApplicationEventLoop API installs a default handler on the
+ *    application target for this event while the event loop is
+ *    running. The handler is removed before RunApplicationEventLoop
+ *    returns.
+ *    
+ *    The handler installed by RunApplicationEventLoop will call
+ *    AEProcessAppleEvent.
+ *    
+ *    It is not possible to get the AppleEvent itself from this Carbon
+ *    event; only its event class and kind are available. To inspect
+ *    the AppleEvent parameters, the event must actually be dispatched
+ *    using AEProcessAppleEvent.
+ *    
+ *    If you need to handle this Carbon event yourself, on Mac OS X
+ *    10.5 and later you may simply call the AEProcessEvent API. On Mac
+ *    OS X 10.4 and earlier, the necessary steps are: (1) remove the
+ *    Carbon event from the queue. The AppleEvent requires some special
+ *    preparation before it can be processed, and this preparation only
+ *    occurs when the event is dequeued. You may choose to ignore the
+ *    return value from RemoveEventFromQueue, since in some cases the
+ *    event will have already been removed from the queue. In those
+ *    cases, calling RemoveEventFromQueue is unnecessary, and will
+ *    return an error, but is also harmless. (2) Use
+ *    ConvertEventRefToEventRecord to get an EventRecord from the
+ *    Carbon event. (3) Call AEProcessAppleEvent on the EventRecord.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -21263,6 +24320,104 @@ const
 const
 	kEventWindowShowing = 22;
 
+<<<<<<< HEAD
+=======
+    -- window action events --
+    
+    kEventWindowCollapse                = 66,
+    (kEventWindowCollapsed              = 67)
+    kEventWindowCollapseAll             = 68,
+    kEventWindowExpand                  = 69,
+    (kEventWindowExpanded               = 70)
+    kEventWindowExpandAll               = 71,
+    kEventWindowClose                   = 72,
+    (kEventWindowClosed                 = 73)
+    kEventWindowCloseAll                = 74,
+    kEventWindowZoom                    = 75,
+    (kEventWindowZoomed                 = 76)
+    kEventWindowZoomAll                 = 77,
+    kEventWindowContextualMenuSelect    = 78,
+    kEventWindowPathSelect              = 79,
+    kEventWindowGetIdealSize            = 80,
+    kEventWindowGetMinimumSize          = 81,
+    kEventWindowGetMaximumSize          = 82,
+    kEventWindowConstrain               = 83,
+    kEventWindowRestoreFromDock         = 84,
+    kEventWindowHandleContentClick      = 85,
+    (kEventWindowCollapsing             = 86)
+    (kEventWindowExpanding              = 87)
+    (kEventWindowTransitionStarted      = 88)
+    (kEventWindowTransitionCompleted    = 89)
+    kEventWindowGetDockTileMenu         = 90,
+    (kEventWindowHandleActivate         = 91)
+    (kEventWindowHandleDeactivate       = 92)
+    kEventWindowGetIdealStandardState   = 93,
+    kEventWindowUpdateDockTile          = 94,
+    kEventWindowProxyBeginDrag          = 128,
+    kEventWindowProxyEndDrag            = 129,
+    kEventWindowToolbarSwitchMode       = 150,
+    
+    -- window focus events --
+    
+    kEventWindowFocusAcquired           = 200,
+    kEventWindowFocusRelinquish         = 201,
+    kEventWindowFocusContent            = 202,
+    kEventWindowFocusToolbar            = 203,
+    kEventWindowFocusDrawer             = 204,
+    kEventWindowFocusLost               = 205,
+    kEventWindowFocusRestored           = 206,
+    
+    -- sheet events --
+    
+    kEventWindowSheetOpening,           = 210,
+    kEventWindowSheetOpened             = 211,
+    kEventWindowSheetClosing            = 212,
+    kEventWindowSheetClosed             = 213,
+    
+    -- drawer events --
+    
+    kEventWindowDrawerOpening           = 220,
+    kEventWindowDrawerOpened            = 221,
+    kEventWindowDrawerClosing           = 222,
+    kEventWindowDrawerClosed            = 223,
+    
+    -- window definition events --
+    
+    kEventWindowDrawFrame               = 1000,
+    kEventWindowDrawPart                = 1001,
+    kEventWindowGetRegion               = 1002,
+    kEventWindowHitTest                 = 1003,
+    kEventWindowInit                    = 1004,
+    kEventWindowDispose                 = 1005,
+    kEventWindowDragHilite              = 1006,
+    kEventWindowModified                = 1007,
+    kEventWindowSetupProxyDragImage     = 1008,
+    kEventWindowStateChanged            = 1009,
+    kEventWindowMeasureTitle            = 1010,
+    kEventWindowDrawGrowBox             = 1011,
+    kEventWindowGetGrowImageRegion      = 1012,
+    kEventWindowPaint                   = 1013,
+    kEventWindowAttributesChanged       = 1019,
+    kEventWindowTitleChanged            = 1020
+    
+    On window handlers:
+    
+    All windows have a handler installed called the Òbasic window handler.Ó This handler provides certain
+    basic services for all windows; for example, it handles clicks in the collapse and toolbar buttons,
+    since these buttons were handled automatically for WaitNextEvent-based applications in the classic
+    Mac OS toolbox, and so are still be handled automatically in Carbon by the basic window handler. The
+    basic window handler also implements the HICommands that are sent by the standard window menu to minimize,
+    maximize, or zoom a window (kHICommandMinimize/Maximize/ZoomWindow), and the window-class events that are
+    generated by those commands (kEventWindowCollapse/Expand/Zoom).
+    
+    When the window is created with, or has added, the kWindowStandardHandlerAttribute, the window also has
+    installed the Òstandard window handler.Ó The standard handler provides much more advanced behavior than
+    the basic window handler; a window using the standard handler generally requires no other extra handlers
+    to move, resize, redraw, or track user clicks in controls. Applications will generally add extra handlers
+    to respond to command events generated by controls in the window.
+}
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 {
  *  kEventClassWindow / kEventWindowHiding
  *  
@@ -21270,7 +24425,27 @@ const
  *    Notification that a window is being hidden.
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    This event is sent to all handlers registered for it.
+=======
+ *    Posted to the event queue for any window that needs updating
+ *    regardless of whether the window has the standard handler
+ *    installed. The standard window handler responds to this event by
+ *    calling BeginUpdate and SetPort, sending a
+ *    kEventWindowDrawContent event, and calling EndUpdate. An
+ *    application handler for this event that does not call through to
+ *    the standard handler must itself call BeginUpdate and
+ *    EndUpdate.
+ *    
+ *    If all handlers for this event return eventNotHandledErr, and the
+ *    application is calling WaitNextEvent or GetNextEvent, then a
+ *    kEventWindowUpdate event will be returned as a classic updateEvt.
+ *    
+ *    
+ *    This event is only sent to non-compositing windows. To draw the
+ *    contents of a compositing window, use a kEventControlDraw handler
+ *    on an HIView in the window.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -21281,7 +24456,7 @@ const
  *          The window being hidden.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  }
 const
@@ -21295,7 +24470,29 @@ const
 >>>>>>> origin/fixes_2_2
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    This event is sent to all handlers registered for it.
+=======
+ *    This event is sent by the standard window handler when it
+ *    receives a kEventWindowUpdate event. BeginUpdate, SetPort, and
+ *    EndUpdate are called by the standard handler inside its
+ *    kEventWindowUpdate handler; your handler for the
+ *    kEventWindowDrawContent event only needs to draw into the current
+ *    port. 
+ *    
+ *    The standard window handler responds to this event by calling
+ *    UpdateControls. 
+ *    
+ *    Regardless of whether the window uses the standard window event
+ *    handler, you will also receive this event right before a window
+ *    is made visible, to allow you to draw the windowÕs initial
+ *    contents; you can implement this event to avoid flicker when the
+ *    window is first shown. 
+ *    
+ *    This event is only sent to non-compositing windows. To draw the
+ *    contents of a compositing window, use a kEventControlDraw handler
+ *    on an HIView in the window.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -21310,12 +24507,14 @@ const
 >>>>>>> origin/fixes_2_2
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  }
 const
 <<<<<<< HEAD
 	kEventWindowCollapsed = 67;
+
+{$endc} {not TARGET_CPU_64}
 
 {
  *  kEventClassWindow / kEventWindowExpanding
@@ -21601,6 +24800,7 @@ const
  *    Notification that a window has been successfully zoomed.
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    This event is sent to all handlers registered for it. In
  *    CarbonLib 1.1 through CarbonLib 1.4, and Mac OS X 10.0 and 10.1,
  *    this event is only sent by the standard window event handler
@@ -21608,6 +24808,30 @@ const
  *    Mac OS X 10.2, this event is sent by ZoomWindow and
  *    ZoomWindowIdeal.
 >>>>>>> graemeg/fixes_2_2
+=======
+ *    This event is sent when a click occurs in a window that is not
+ *    frontmost in its window group. 
+ *    
+ *    For all windows, it is sent to a clicked window when the window's
+ *    process is inactive. For windows that use the standard window
+ *    event handler, this event is also sent to clicked windows when
+ *    the window's process is active. 
+ *    
+ *    A handler for this event can determine whether the window is
+ *    activated and whether the click is handled or ignored by setting
+ *    the kEventParamClickActivation parameter to one of the
+ *    ClickActivationResult constants in Controls.h. 
+ *    
+ *    The default behavior varies according to the window state and the
+ *    click location:
+ *    - if the click falls on the window widgets in the window
+ *    structure, then the default window event handler usually returns
+ *    kDoNotActivateAndHandleClick.
+ *    - otherwise, the standard window event handler returns
+ *    kActivateAndIgnoreClick.
+ *    You have the option of overriding the behavior to support
+ *    click-through or select-and-click.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -21685,6 +24909,7 @@ const
  *  kEventClassWindow / kEventWindowCursorChange
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Sent when the mouse is moving over the content region of a window.
  *  
  *  Discussion:
@@ -21697,6 +24922,49 @@ const
 =======
 =======
 	kEventWindowCollapsed = 67;
+=======
+ *    Responses to the kEventWindowGetClickModality event.
+ }
+const
+{
+   * Indicates whether a modal window prevents the mouse event from
+   * being passed to the clicked window. If this bit is set, the
+   * kEventParamModalWindow and kEventParamWindowModality parameters
+   * should be set before the event handler returns. If this bit is
+   * clear, normal event handling will occur; the clicked window will
+   * typically be z-ordered to the top of its window group, activated,
+   * become the user focus window, and receive the mouse event for
+   * further processing.
+   }
+	kHIModalClickIsModal = 1 shl 0;
+
+  {
+   * If kHIModalClickIsModal is set, this flag indicates whether the
+   * click event should be allowed to pass to the clicked window. If
+   * kHIModalClickIsModal is not set, this flag is ignored.
+   }
+	kHIModalClickAllowEvent = 1 shl 1;
+
+  {
+   * If kHIModalClickIsModal is set and kHIModalClickAllowEvent is not
+   * set, this flag indicates whether the caller should announce that
+   * the click has been blocked by a modal window using appropriate UI
+   * (typically, by calling AudioServicesPlayAlertSound). If
+   * kHIModalClickIsModal is not set, or if kHIModalClickAllowEvent is
+   * set, this flag is ignored.
+   }
+	kHIModalClickAnnounce = 1 shl 2;
+
+  {
+   * If both kHIModalClickIsModal and kHIModalClickAllowEvent are set,
+   * this flag indicates whether the clicked window should be z-ordered
+   * to the top of its window group. The window will not, however, be
+   * activated or become the user focus window. If either of
+   * kHIModalClickIsModal or kHIModalClickAllowEvent is not set, this
+   * flag is ignored.
+   }
+	kHIModalClickRaiseWindow = 1 shl 3;
+>>>>>>> origin/fixes_2.4
 
 {
  *  kEventClassWindow / kEventWindowExpanding
@@ -21737,7 +25005,54 @@ const
  *  Parameters:
  *    
  *    --> kEventParamDirectObject (in, typeWindowRef)
+<<<<<<< HEAD
  *          The window that was expanded.
+=======
+ *          The window that was clicked.
+ *    
+ *    --> kEventParamWindowPartCode (in, typeWindowPartCode)
+ *          The window part that was clicked.
+ *    
+ *    --> kEventParamKeyModifiers (in, typeUInt32)
+ *          The keyboard modifiers that were pressed when the mouse
+ *          button was pressed.
+ *    
+ *    --> kEventParamEventRef (in, typeEventRef)
+ *          The original mouse event. This parameter is optional and
+ *          may not be present in all instances of this event. If this
+ *          parameter is not present, the handler should assume that
+ *          the click was a single click, with the window part and
+ *          keyboard modifiers specified by the other parameters in the
+ *          kEventWindowGetClickModality event.
+ *    
+ *    <-- kEventParamModalClickResult (out, typeModalClickResult)
+ *          On exit, this parameter should contain an
+ *          HIModalClickResult value indicating how the click should be
+ *          handled.
+ *    
+ *    <-- kEventParamModalWindow (out, typeWindowRef)
+ *          On exit, this parameter should contain the modal window
+ *          that caused the click to be blocked, if any. The sender of
+ *          this event uses this information to determine which window
+ *          should be activated if the application is inactive.
+ *          
+ *          
+ *          This parameter is only required if the
+ *          kEventParamModalClickResult parameter contains
+ *          kHIModalClickIsModal. If an event handler wants to report
+ *          that a click has been blocked by modality, but cannot
+ *          determine which window blocked the click, it is acceptable
+ *          to either not add this parameter to the event, or to set
+ *          the parameter to a NULL WindowRef.
+ *    
+ *    <-- kEventParamWindowModality (out, typeWindowModality)
+ *          On exit, this parameter should contain the modality of the
+ *          modal window that is in front of the clicked window, if
+ *          any. This parameter is only required if the
+ *          kEventParamModalClickResult parameter contains
+ *          kHIModalClickIsModal. The modality values you may add here
+ *          are from the WindowModality enumeration in MacWindows.h.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -22762,6 +26077,7 @@ const
 const
 	kEventWindowGetIdealSize = 80;
 
+{$ifc not TARGET_CPU_64}
 {
  *  kEventClassWindow / kEventWindowGetIdealStandardState
  *  
@@ -22864,7 +26180,7 @@ const
  *          CarbonLib 1.5, and later.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  }
 const
@@ -22960,7 +26276,7 @@ const
 >>>>>>> origin/fixes_2_2
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  }
 const
@@ -23135,7 +26451,7 @@ const
  *          CarbonLib 1.5, and later.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  }
 const
@@ -23401,7 +26717,7 @@ const
  *          CarbonLib 1.5, and later.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  }
 const
@@ -23488,7 +26804,7 @@ const
  *          CarbonLib 1.5, and later.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  }
 const
@@ -23504,11 +26820,15 @@ const
  *    The standard window handler responds to this event by checking if
  *    the click should display a contextual menu; if so, and if the
  *    click was in an enabled control, it calls
+<<<<<<< HEAD
  *    HandleControlContextualMenuSelect. If the click was not in a
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    HandleControlContextualMenuClick. If the click was not in a
+>>>>>>> origin/fixes_2.4
  *    control, or if the control does not display a contextual menu,
  *    the standard window handler sends a
  *    kEventWindowContextualMenuSelect event to the window. 
@@ -23796,6 +27116,7 @@ const
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.3.1 and later
 =======
@@ -23822,6 +27143,9 @@ const
  *    handler for this event.
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  }
 const
@@ -23973,7 +27297,7 @@ const
  *          CarbonLib 1.5, and later.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.1 and later
  }
 const
@@ -24091,7 +27415,7 @@ const
  *          CarbonLib 1.5, and later.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available
  }
 const
@@ -24268,7 +27592,7 @@ const
 >>>>>>> origin/fixes_2_2
  *  
  *  Availability:
- *    Mac OS X:         in version 10.1 and later in Carbon.framework
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        not available
  }
 const
@@ -24298,6 +27622,7 @@ const
 >>>>>>> origin/fixes_2_2
 	kEventWindowClickStructureRgn = 42;
 
+{$endc} {not TARGET_CPU_64}
 
 {
  *  kEventClassWindow / kEventWindowCursorChange
@@ -24699,7 +28024,7 @@ const
  *  
  *  Discussion:
  *    For all windows, the basic window handler responds to this event
- *    by sending a kEventWindowIdealSize event to get the windowÕs
+ *    by sending a kEventWindowGetIdealSize event to get the windowÕs
  *    ideal size, and then calling ZoomWindowIdeal. This event is
  *    generated by the standard window handler in response to a click
  *    in the windowÕs zoom button. It is also generated by the basic
@@ -25151,6 +28476,56 @@ const
 	kEventWindowGetIdealSize = 80;
 
 {
+ *  kEventClassWindow / kEventWindowGetIdealStandardState
+ *  
+ *  Summary:
+ *    Calculates the ideal standard state of a window, given its ideal
+ *    size.
+ *  
+ *  Discussion:
+ *    This event is generated by IsWindowInStandardState and
+ *    ZoomWindowIdeal. The bounding rect returned by the event handler
+ *    is, respectively, compared against the window's current bounds to
+ *    determine if the window is in its standard state, and used as the
+ *    new window bounds when zooming out. 
+ *    
+ *    The basic window event handler implements this event by computing
+ *    an ideal window bounds that fits the window onscreen, given the
+ *    desired ideal size. 
+ *    
+ *    An application might handle this event in order to customize the
+ *    standard state bounds of a window. For example, if the
+ *    application has tool palettes around the edges of a display, it
+ *    could handle this event and calculate its own standard state
+ *    bounds for a window that prevents the window from zooming under
+ *    the tool palettes.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeWindowRef)
+ *          The window whose ideal standard state to return.
+ *    
+ *    --> kEventParamDimensions (in, typeHISize)
+ *          The window's ideal content size. This is the size that was
+ *          passed by the caller to IsWindowInStandardState or
+ *          ZoomWindowIdeal.
+ *    
+ *    <-- kEventParamBounds (out, typeHIRect)
+ *          On exit, contains the content bounds for the window's ideal
+ *          standard state.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventWindowGetIdealStandardState = 93;
+
+
+{
  *  kEventClassWindow / kEventWindowGetMinimumSize
  *  
  *  Summary:
@@ -25313,6 +28688,7 @@ const
  *  
  *  Discussion:
  *    The basic window handler responds to this event by calling
+<<<<<<< HEAD
  *    ConstrainWindowToScreen. This event is generated in two
  *    situations: changes in graphics device configuration, and changes
  *    to Dock size. In either case, a window which was previously
@@ -25323,6 +28699,15 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    ConstrainWindowToScreen. This event is generated in three
+ *    situations: changes in graphics device configuration, changes to
+ *    Dock size, and (in Mac OS X 10.6 and later) after a window has
+ *    been dragged. In each of these cases, a window which was
+ *    previously visible onscreen may become obscured or be totally
+ *    offscreen, and should be repositioned back inside the available
+ *    window positioning bounds. 
+>>>>>>> origin/fixes_2.4
  *    
  *    The behavior of the basic window handler may be customized by
  *    modifying the parameters to the event and then allowing the event
@@ -25372,17 +28757,23 @@ const
 >>>>>>> origin/fixes_2_2
  *          The window being constrained.
  *    
- *    --> kEventParamAvailableBounds (in, typeQDRectangle)
+ *    --> kEventParamReason (in, typeUInt32)
  *          The reasons why the window is being constrained. This
  *          parameter contains one or more of the
  *          kAvailBoundsChangedFor constants. This parameter is
- *          available only on Mac OS X 10.3 and later.
+ *          available only on Mac OS X 10.3 and later. This parameter
+ *          is not present on Mac OS X 10.6 and later if the event is
+ *          being sent after a window drag.
  *    
+<<<<<<< HEAD
  *    --> kEventParamAttributes (in, typeUInt32)
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    --> kEventParamTransactionID (in, typeUInt32)
+>>>>>>> origin/fixes_2.4
  *          An integer which is the same for all instances of this
  *          event that are produced by the same configuration change.
  *          For example, if multiple displays are attached, then this
@@ -25395,6 +28786,7 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    --> kEventParamAvailableBounds (in, typeQDRectangle)
 =======
  *    --> kEventParamWindowRegionCode (in, typeWindowRegionCode)
@@ -25402,6 +28794,9 @@ const
 =======
  *    --> kEventParamWindowRegionCode (in, typeWindowRegionCode)
 >>>>>>> origin/fixes_2_2
+=======
+ *    --> kEventParamAvailableBounds (in, typeQDRectangle)
+>>>>>>> origin/fixes_2.4
  *          The available window positioning bounds in which the window
  *          should be positioned. Event handlers may change the value
  *          in this parameter and then return eventNotHandledErr to
@@ -25416,6 +28811,7 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    --> kEventParamAttributes (in, typeUInt32)
 =======
  *    --> kEventParamRgnHandle (in, typeQDRgnHandle)
@@ -25423,6 +28819,9 @@ const
 =======
  *    --> kEventParamRgnHandle (in, typeQDRgnHandle)
 >>>>>>> origin/fixes_2_2
+=======
+ *    --> kEventParamAttributes (in, typeUInt32)
+>>>>>>> origin/fixes_2.4
  *          Window constraint options that should be passed to
  *          ConstrainWindowToScreen. This parameter is optional and may
  *          not be present in all instances of this event. If present,
@@ -25439,6 +28838,7 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    --> kEventParamWindowRegionCode (in, typeWindowRegionCode)
 =======
  *    --> kEventParamPreviousDockRect (in, typeHIRect)
@@ -25446,6 +28846,9 @@ const
 =======
  *    --> kEventParamPreviousDockRect (in, typeHIRect)
 >>>>>>> origin/fixes_2_2
+=======
+ *    --> kEventParamWindowRegionCode (in, typeWindowRegionCode)
+>>>>>>> origin/fixes_2.4
  *          A WindowRegionCode that should be passed to
  *          ConstrainWindowToScreen. This parameter is optional and may
  *          not be present in all instances of this event. 
@@ -25457,6 +28860,7 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    --> kEventParamRgnHandle (in, typeQDRgnHandle)
 =======
  *    --> kEventParamPreviousDockDevice (in, typeGDHandle)
@@ -25464,6 +28868,9 @@ const
 =======
  *    --> kEventParamPreviousDockDevice (in, typeGDHandle)
 >>>>>>> origin/fixes_2_2
+=======
+ *    --> kEventParamRgnHandle (in, typeQDRgnHandle)
+>>>>>>> origin/fixes_2.4
  *          The GrayRgn before a graphics device configuration change.
  *          This parameter is optional and may not be present in all
  *          instances of this event. It is present in events generated
@@ -25476,6 +28883,7 @@ const
  *          that were not onscreen before the device configuration
  *          change.
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    --> kEventParamPreviousDockRect (in, typeHIRect)
@@ -25805,6 +29213,39 @@ const
  *          parameter is optional and may not be present in all
  *          instances of this event. It is present in events generated
  *          on Mac OS X 10.3 and later.
+=======
+ *    --> kEventParamPreviousDockRect (in, typeHIRect)
+ *          The Dock bounding rect before a Dock size change. This
+ *          parameter is optional and may not be present in all
+ *          instances of this event. It is present in events in events
+ *          generated on Mac OS X 10.2 and later.
+ *    
+ *    --> kEventParamPreviousDockDevice (in, typeCGDisplayID)
+ *          The display device on which the Dock was previously
+ *          positioned. This parameter is optional and may not be
+ *          present in all instances of this event. It is present in
+ *          events generated on Mac OS X 10.3 and later. On Mac OS X
+ *          10.3 and later, this parameter is available as a GDHandle
+ *          using typeGDHandle; on Mac OS X 10.5 and later, this
+ *          parameter is also available as a CGDirectDisplayID using
+ *          typeCGDisplayID.
+ *    
+ *    --> kEventParamCurrentDockRect (in, typeHIRect)
+ *          The Dock bounding rect after a Dock size change. This
+ *          parameter is optional and may not be present in all
+ *          instances of this event. It is present in events in events
+ *          generated on Mac OS X 10.2 and later.
+ *    
+ *    --> kEventParamCurrentDockDevice (in, typeCGDisplayID)
+ *          The display device on which the Dock is currently
+ *          positioned. This parameter is optional and may not be
+ *          present in all instances of this event. It is present in
+ *          events generated on Mac OS X 10.3 and later. On Mac OS X
+ *          10.3 and later, this parameter is available as a GDHandle
+ *          using typeGDHandle; on Mac OS X 10.5 and later, this
+ *          parameter is also available as a CGDirectDisplayID using
+ *          typeCGDisplayID.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -25812,6 +29253,40 @@ const
  }
 const
 	kEventWindowConstrain = 83;
+
+{
+ *  kEventClassWindow / kEventWindowRestoreFromDock
+ *  
+ *  Summary:
+ *    Requests that a collapsed window be restored from the Dock.
+ *  
+ *  Discussion:
+ *    The basic window handler responds to this event by calling
+ *    SelectWindow or CollapseWindow(false), depending on whether the
+ *    window should be made active. Your application may handle this
+ *    event to be notified before a window is restored from the Dock. A
+ *    handler for this event should generally either return noErr to
+ *    prevent a window from being restored from the Dock, or
+ *    eventNotHandledErr to allow the basic handler to restore the
+ *    window from the Dock. 
+ *    
+ *    This event is sent only to the window, and is not propagated past
+ *    it.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeWindowRef)
+ *          The window to be restored from the Dock.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventWindowRestoreFromDock = 84;
 
 {
  *  kEventClassWindow / kEventWindowProxyBeginDrag
@@ -25951,6 +29426,7 @@ const
 const
 	kEventWindowProxyEndDrag = 129;
 
+{$ifc not TARGET_CPU_64}
 {
  *  kEventClassWindow / kEventWindowHandleContentClick
  *  
@@ -25964,11 +29440,22 @@ const
  *    response to a kEventWindowClickContentRgn event. An application
  *    may handle this event by checking if the mouse click was on a
  *    portion of its own user interface, and responding appropriately
+<<<<<<< HEAD
  *    if so.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    if so. 
+ *    
+ *    Note that this event is not sent for composited windows; all
+ *    mouse-downs in a composited window are handled by a view, and
+ *    there is no Ócontent regionÓ in a composited window. To intercept
+ *    a content region click in a composited window, install a
+ *    kEventControlClick handler on the windowÕs content view, or
+ *    provide your own HIView subclass.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -26246,11 +29733,18 @@ const
  *          The window to draw.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.3.1 and later
+>>>>>>> origin/fixes_2.4
  }
 const
 	kEventWindowDrawFrame = 1000;
+
+{$endc} {not TARGET_CPU_64}
 
 {
  *  kEventClassWindow / kEventWindowDrawPart
@@ -26315,7 +29809,73 @@ const
 	kEventWindowFocusLost = 205;
 
 {
+<<<<<<< HEAD
  *  kEventClassWindow / kEventWindowFocusRestored
+=======
+ *  kEventClassWindow / kEventWindowUpdateDockTile
+ *  
+ *  Summary:
+ *    Indicates that your application should redraw its custom
+ *    collapsed window Dock tile.
+ *  
+ *  Discussion:
+ *    This event is sent when your application has customized a
+ *    collapsed window Dock tile. If your app customizes its window
+ *    Dock tile appearance using
+ *    CreateQDContextForCollapsedWindowDockTile or
+ *    HIWindowCreateCollapsedDockTileContext, then your application
+ *    should redraw its window Dock tile in response to this event.
+ *    This event is not sent if your application has not customized a
+ *    window's Dock tile. 
+ *    
+ *    This event is currently sent in two cases: when the Dock tile
+ *    changes size (typically in response to a change in the user
+ *    interface scale factor), or when the Dock process is restarted.
+ *    In either case, any customization that your application has
+ *    previously performed is lost.
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeWindowRef)
+ *          The window whose Dock tile should be updated.
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ }
+const
+	kEventWindowUpdateDockTile = 94;
+
+{
+ *  kEventClassWindow / kEventWindowColorSpaceChanged
+ *  
+ *  Summary:
+ *    Notification that the color space of the window has changed.
+ *  
+ *  Discussion:
+ *    When the kHIWindowBitAutoCalibration attribute is set, this event
+ *    is sent when the window's colorspace is changed by the Window
+ *    Manager. The standard window handler's response is to paint the
+ *    entire window.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeWindowRef)
+ *          The window with the updated color space.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.6 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventWindowColorSpaceChanged = 95;
+
+{
+ *  kEventClassWindow / kEventWindowToolbarSwitchMode
+>>>>>>> origin/fixes_2.4
  *  
  *  Summary:
  *    Notification that a window has regained focus due to a change in
@@ -26376,57 +29936,72 @@ const
  *    
  *    --> kEventParamWindowRef (in, typeWindowRef)
  *          The window under the mouse. Available in Mac OS X 10.1 and
- *          later.
+ *          later. This parameter may not be present in all instances
+ *          of this event, even on Mac OS X 10.1 and later.
  *    
  *    --> kEventParamWindowMouseLocation (in, typeHIPoint)
  *          The window-relative position of the mouse in the window
  *          given in the kEventParamWindowRef parameter. 0,0 is at the
  *          top left of the structure of the window. Available in Mac
- *          OS X 10.1 and later.
+ *          OS X 10.1 and later. This parameter may not be present in
+ *          all instances of this event, even on Mac OS X 10.1 and
+ *          later.
  *    
  *    --> kEventParamWindowPartCode (in, typeWindowPartCode)
  *          The part code that the mouse location hit in the window.
- *          This parameter only exists if the WindowRef parameter
- *          exists. This saves you the trouble of calling FindWindow,
+ *          This parameter may not be present in all instances of this
+ *          event. This saves you the trouble of calling FindWindow,
  *          which is expensive on Mac OS X as it needs to call the
- *          Window Server. Available in Mac OS X 10.3 and later.
+ *          Window Server. Available in Mac OS X 10.3 and later. This
+ *          parameter may not be present in all instances of this
+ *          event, even on Mac OS X 10.3 and later.
  *    
  *    --> kEventParamKeyModifiers (in, typeUInt32)
  *          The keyboard modifiers that were pressed when the event was
  *          generated.
  *    
  *    --> kEventParamMouseButton (in, typeMouseButton)
- *          Which mouse button was pressed.
+ *          Which mouse button was pressed. This parameter may not be
+ *          present in all instances of this event.
  *    
  *    --> kEventParamClickCount (in, typeUInt32)
- *          Whether this is a single click, double click, etc.
+ *          Whether this is a single click, double click, etc. This
+ *          parameter may not be present in all instances of this event.
  *    
  *    --> kEventParamMouseChord (in, typeUInt32)
  *          Which other mouse buttons were pressed when the event was
- *          generated. Available on Mac OS X only.
+ *          generated. Available on Mac OS X only. This parameter may
+ *          not be present in all instances of this event, even on Mac
+ *          OS X.
  *    
  *    --> kEventParamTabletEventType (in, typeUInt32)
  *          The type of tablet event which generated this mouse event;
  *          contains either kEventTabletPoint or kEventTabletProximity.
  *          Only present if the event was generated from a tablet.
  *          Available in Mac OS X 10.1 and CarbonLib 1.5, and later.
+ *          This parameter may not be present in all instances of this
+ *          event, even on the previously mentioned platforms.
  *    
  *    --> kEventParamTabletPointRec (in, typeTabletPointRec)
  *          Further information about the tablet event which generated
  *          this mouse event. Present if the the
  *          kEventParamTabletEventType parameter contains
  *          kEventTabletPoint. Available on Mac OS X 10.1 and CarbonLib
- *          1.5, and later.
+ *          1.5, and later. This parameter may not be present in all
+ *          instances of this event, even on the previously mentioned
+ *          platforms.
  *    
  *    --> kEventParamTabletProximityRec (in, typeTabletProximityRec)
  *          Further information about the tablet event which generated
  *          this mouse event. Present if the the
  *          kEventParamTabletEventType parameter contains
  *          kEventTabletProximity. Available on Mac OS X 10.1 and
- *          CarbonLib 1.5, and later.
+ *          CarbonLib 1.5, and later. This parameter may not be present
+ *          in all instances of this event, even on the previously
+ *          mentioned platforms.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
@@ -26589,6 +30164,76 @@ const
 const
 >>>>>>> origin/fixes_2_2
 	kEventWindowFocusRelinquish = 201;
+
+
+{
+ *  kEventClassWindow / kEventWindowFocusLost
+ *  
+ *  Summary:
+ *    Notification that a focused window has lost focus due to a change
+ *    in the modal focus stack.
+ *  
+ *  Discussion:
+ *    This event is sent to a focused window when another window is
+ *    pushed onto the modal focus stack. When this happens, the pushed
+ *    window becomes the effective focus, and this window ceases to
+ *    have the focus. 
+ *    
+ *    This event is sent to all handlers registered for it on the
+ *    window. The basic window handler automatically sends this event
+ *    to the focused view in the window. The basic view handler
+ *    automatically invalidates a view when it receives this event.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeWindowRef)
+ *          The window that is losing focus.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventWindowFocusLost = 205;
+
+{
+ *  kEventClassWindow / kEventWindowFocusRestored
+ *  
+ *  Summary:
+ *    Notification that a window has regained focus due to a change in
+ *    the modal focus stack.
+ *  
+ *  Discussion:
+ *    This event is sent to a window (window A) when the removal of
+ *    another window (window B) from the modal focus stack causes
+ *    window A to become the effective focus. Typically, window A is
+ *    either the modeless focus (the window that was most recently
+ *    passed to SetUserFocusWindow), or another window in the modal
+ *    focus stack that was underneath window B, and is now topmost on
+ *    the stack. 
+ *    
+ *    This event is sent to all handlers registered for it on the
+ *    window. The basic window handler automatically sends this event
+ *    to the focused view in the window. The basic view handler
+ *    automatically invalidates a view when it receives this event.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeWindowRef)
+ *          The window that is regaining focus.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventWindowFocusRestored = 206;
 
 {
  *  kEventClassWindow / kEventWindowFocusContent
@@ -27580,6 +31225,13 @@ const
 =======
 >>>>>>> origin/fixes_2_2
  *  
+ *  Discussion:
+ *    Note that the Window Manager caches a window's structure and
+ *    content region once they have been calculated. If your window's
+ *    structure or content region changes without the window size
+ *    changing, you should use ReshapeCustomWindow to force the Window
+ *    Manager to request the new structure and content regions.
+ *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -27655,9 +31307,28 @@ const
  *    --> kEventParamWindowRegionCode (in, typeWindowRegionCode)
  *          The region to return.
  *    
+ *    --> kEventParamWindowContentBounds (in, typeQDRectangle)
+ *          The global bounds of the window's content area. Available
+ *          in Mac OS X 10.1 and later. An event handler can use this
+ *          parameter to calculate the requested region. Alternately, a
+ *          handler can call GetWindowBounds( window,
+ *          kWindowGlobalPortRgn ), and work from that rectangle.
+ *    
  *    --> kEventParamRgnHandle (in, typeQDRgnHandle)
  *          On entry, contains a valid but empty RgnHandle; you should
- *          place the window region in this RgnHandle.
+ *          place the window region in this RgnHandle. 
+ *          
+ *          The window region should be in either global coordinates or
+ *          window coordinates, depending on whether the window uses a
+ *          WindowDefProcPtr or HIView to draw its window frame. Prior
+ *          to Mac OS X 10.2, all windows used WindowDefProcPtrs. In
+ *          Mac OS X 10.2 and later, you can determine at runtime
+ *          whether a particular window uses a WindowDefProcPtr-based
+ *          window frame by calling HIViewGetKind on the window's root
+ *          view (returned by HIViewGetRoot). If the kind field of the
+ *          HIViewKind is 'cont', then the window uses a
+ *          WindowDefProcPtr to draw its window frame; otherwise, the
+ *          window uses an HIView.
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -28046,7 +31717,25 @@ const
  *    
  *    <-- kEventParamWindowProxyGWorldPtr (out, typeGWorldPtr)
  *          On exit, contains a GWorld you allocate which contains the
- *          drag image.
+ *          drag image. This parameter is required on Mac OS X 10.0 and
+ *          Mac OS X 10.1. On Mac OS X 10.2 and later, you may
+ *          optionally omit this parameter and instead provide a drag
+ *          image using a CGImageRef stored in the
+ *          kEventParamCGImageRef parameter. If both parameters are
+ *          provided, the contents of kEventParamCGImageRef will
+ *          override this parameter. If this parameter is provided, the
+ *          toolbox will free the GWorld inside EndWindowProxyDrag.
+ *    
+ *    <-- kEventParamCGImageRef (out, typeCGImageRef)
+ *          On exit, contains a CGImageRef you allocate which contains
+ *          the drag image. This parameter is supported on Mac OS X
+ *          10.2 and later. You may optionally omit this parameter and
+ *          instead provide a drag image using a GWorld stored in the
+ *          kEventParamWindowProxyGWorldPtr parameter. If both
+ *          parameters are provided, this parameter will override the
+ *          contents of kEventParamWindowProxyGWorldPtr. If this
+ *          parameter is provided, the toolbox will free the CGImageRef
+ *          inside EndWindowProxyDrag.
  *    
  *    --> kEventParamWindowProxyImageRgn (in, typeQDRgnHandle)
  *          The region you modify to contain the clip region for the
@@ -28367,6 +32056,69 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 
+{
+ *  kEventClassWindow / kEventWindowAttributesChanged
+ *  
+ *  Summary:
+ *    Sent by the Window Manager when a windowÕs attributes have
+ *    changed.
+ *  
+ *  Discussion:
+ *    This event is only sent to windows that use an HIView-based
+ *    window frame. It is not sent to windows that use a WDEF-based
+ *    window frame. At the time that the event is sent, the window's
+ *    attributes have already been changed, so an event hander for this
+ *    event can simply call GetWindowAttributes to get the new
+ *    attributes. This event is sent to all handlers registered for it
+ *    on the window event target. It does not propagate past the window.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeWindowRef)
+ *          The window whose attributes have changed.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventWindowAttributesChanged = 1019;
+
+{
+ *  kEventClassWindow / kEventWindowTitleChanged
+ *  
+ *  Summary:
+ *    Sent by the Window Manager when a windowÕs title changes.
+ *  
+ *  Discussion:
+ *    In Mac OS X 10.2 through 10.4, this event is only sent to windows
+ *    that use an HIView to draw their window frames. Windows that use
+ *    a WDEF to draw their frames do not receive this event on those
+ *    versions of Mac OS X. In Mac OS X 10.5 and later, this event is
+ *    always sent when a windowÕs title changes, regardless of whether
+ *    the window uses an HIView or WDEF to draw its frame. This event
+ *    is sent to all handlers registered for it on the window event
+ *    target. It does not propagate past the window.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeWindowRef)
+ *          The window whose title was changed.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventWindowTitleChanged = 1020;
+
+
 {--------------------------------------------------------------------------------------}
 {  Menu Events                                                                         }
 {--------------------------------------------------------------------------------------}
@@ -28407,6 +32159,7 @@ const
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  Menu context location flags
  *  
  *  Discussion:
@@ -28435,25 +32188,41 @@ const
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  Menu context location flags
+ *  
+>>>>>>> origin/fixes_2.4
  *  Discussion:
- *    Menu context flags indicate the context or usage of a
+ *    Menu context location flags indicate the location of a menu in a
  *    menu-related Carbon event.
  }
 const
-{ menu location}
-
-  {
+{
    * Indicates that this menu is inserted in the menubar, or is a
    * (directly or indirectly) a submenu of a menu that is inserted in
-   * the menubar.
+   * the menubar. If this flag is not set, the menu is a popup menu or
+   * submenu of a popup.
    }
-	kMenuContextMenuBar = 1 shl 0; { menu type}
+	kMenuContextMenuBar = 1 shl 0;
 
+<<<<<<< HEAD
   {
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+{
+ *  Menu context type flags
+ *  
+ *  Discussion:
+ *    Menu context type flags indicate the type of a menu in a
+ *    menu-related Carbon event.
+ }
+const
+{
+>>>>>>> origin/fixes_2.4
    * Indicates that this menu is a pull-down menu inserted in the
    * menubar.
    }
@@ -28469,6 +32238,7 @@ const
    * Indicates that this menu is a submenu of some other pull-down or
    * popup menu.
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	kMenuContextSubmenu = 1 shl 10;
@@ -28493,6 +32263,20 @@ const
 
   {
 >>>>>>> origin/fixes_2_2
+=======
+	kMenuContextSubmenu = 1 shl 10;
+
+
+{
+ *  Menu context usage flags
+ *  
+ *  Discussion:
+ *    Menu context usage flags indicate the reason why a menu-related
+ *    Carbon event is being sent.
+ }
+const
+{
+>>>>>>> origin/fixes_2.4
    * Indicates that this Carbon event has been sent during a menubar
    * tracking session.
    }
@@ -28500,6 +32284,7 @@ const
 
   {
    * Indicates that this Carbon event has been sent during a popup menu
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    * tracking session. In Mac OS X 10.6 and later,
@@ -28511,11 +32296,17 @@ const
 =======
    * tracking session.
 >>>>>>> origin/fixes_2_2
+=======
+   * tracking session. In Mac OS X 10.6 and later,
+   * kMenuContextContextualMenu may also be set if the popup menu is a
+   * contextual menu.
+>>>>>>> origin/fixes_2.4
    }
 	kMenuContextPopUpTracking = 1 shl 17;
 
   {
    * Indicates that this Carbon event has been sent during command key
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    * matching. When this context flag is set, an event handler only
@@ -28527,6 +32318,11 @@ const
 =======
    * matching.
 >>>>>>> origin/fixes_2_2
+=======
+   * matching. When this context flag is set, an event handler only
+   * needs to update the command keys and enable state of its menu
+   * items; it does not need to update menu item text or icons.
+>>>>>>> origin/fixes_2.4
    }
 	kMenuContextKeyMatching = 1 shl 18;
 
@@ -28545,6 +32341,7 @@ const
    * CountMenuItemsWithCommandID or GetIndMenuItemWithCommandID APIs.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    * When this context flag is set, an event handler only needs to
    * update the command IDs of its menu items; it does not need to
    * update menu item text, command keys, icons, or enable state.
@@ -28552,12 +32349,20 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+   * When this context flag is set, an event handler only needs to
+   * update the command IDs of its menu items; it does not need to
+   * update menu item text, command keys, icons, or enable state.
+>>>>>>> origin/fixes_2.4
    * Available on Mac OS X 10.2 and CarbonLib 1.6.
    }
 	kMenuContextCommandIDSearch = 1 shl 20;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
   {
    * Indicates that this Carbon event has been sent prior to inspection
    * of the menu contents. When this context flag is set, the menu is
@@ -28620,10 +32425,13 @@ const
    }
 	kMenuContextDontUpdateEnabled = 1 shl 27;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {
  *  Summary:
@@ -28732,6 +32540,9 @@ const
  *          This parameter is available on Mac OS X 10.3 and later.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    
  *    --> kEventParamEventRef (in, typeEventRef)
  *          Contains the event that caused the menu tracking session to
@@ -28740,10 +32551,13 @@ const
  *          OS X 10.5 and later, but is not guaranteed to be present in
  *          all cases; check your return value from GetEventParameter,
  *          and do not assume that the parameter is always available.
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -29175,6 +32989,7 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    <-- kEventParamMenuItemWidth (out, typeSInt16)
 =======
  *    <-- kEventParamMenuItemWidth (out, typeShortInteger)
@@ -29182,6 +32997,9 @@ const
 =======
  *    <-- kEventParamMenuItemWidth (out, typeShortInteger)
 >>>>>>> origin/fixes_2_2
+=======
+ *    <-- kEventParamMenuItemWidth (out, typeSInt16)
+>>>>>>> origin/fixes_2.4
  *          On exit, contains the menu item width.
  *  
  *  Availability:
@@ -29219,6 +33037,7 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    <-- kEventParamMenuItemHeight (out, typeSInt16)
 =======
  *    <-- kEventParamMenuItemHeight (out, typeShortInteger)
@@ -29226,6 +33045,9 @@ const
 =======
  *    <-- kEventParamMenuItemHeight (out, typeShortInteger)
 >>>>>>> origin/fixes_2_2
+=======
+ *    <-- kEventParamMenuItemHeight (out, typeSInt16)
+>>>>>>> origin/fixes_2.4
  *          On exit, contains the menu item height.
  *  
  *  Availability:
@@ -29273,6 +33095,7 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    --> kEventParamMenuVirtualTop (in, typeSInt32)
  *          The virtual top coordinate of the menu, in global
  *          coordinates.
@@ -29290,6 +33113,13 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    --> kEventParamMenuVirtualTop (in, typeSInt32)
+ *          The virtual top coordinate of the menu, in global
+ *          coordinates.
+ *    
+ *    --> kEventParamMenuVirtualBottom (in, typeSInt32)
+>>>>>>> origin/fixes_2.4
  *          The virtual bottom coordinate of the menu, in global
  *          coordinates.
  *    
@@ -29307,6 +33137,9 @@ const
  *          align the context coordinates with the item bounds, use the
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *          value stored in the kEventParamMenuContextHeight parameter
  *          (if available), or else the height of the current port to
  *          flip the context with CGContextTranslateCTM( context, 0,
@@ -29318,6 +33151,7 @@ const
  *          orientation of the context, or to adjust the coordinates of
  *          the rectangle parameters in this event. This parameter is
  *          available on Mac OS X 10.5 and later.
+<<<<<<< HEAD
 =======
  *          height of the current port to flip the context with
  *          CGContextTranslateCTM( context, 0, height ) and
@@ -29328,6 +33162,8 @@ const
  *          CGContextTranslateCTM( context, 0, height ) and
  *          CGContextScaleCTM( context, 1, -1 ).
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *    
  *    <-- kEventParamMenuMarkBounds (out, typeQDRectangle)
  *          On exit, contains the bounds of the menu item mark
@@ -29348,6 +33184,7 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    <-- kEventParamMenuTextBaseline (out, typeSInt16)
 =======
  *    <-- kEventParamMenuTextBaseline (out, typeShortInteger)
@@ -29355,6 +33192,9 @@ const
 =======
  *    <-- kEventParamMenuTextBaseline (out, typeShortInteger)
 >>>>>>> origin/fixes_2_2
+=======
+ *    <-- kEventParamMenuTextBaseline (out, typeSInt16)
+>>>>>>> origin/fixes_2.4
  *          On exit, contains the baseline of the menu itemÕs text.
  *          Added to the event by the standard menu definitionÕs
  *          handler, if the event is allowed to pass through.
@@ -29418,6 +33258,7 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    --> kEventParamDeviceDepth (in, typeSInt16)
 =======
  *    --> kEventParamDeviceDepth (in, typeShortInteger)
@@ -29425,6 +33266,9 @@ const
 =======
  *    --> kEventParamDeviceDepth (in, typeShortInteger)
 >>>>>>> origin/fixes_2_2
+=======
+ *    --> kEventParamDeviceDepth (in, typeSInt16)
+>>>>>>> origin/fixes_2.4
  *          The bit depth of the GDevice on which the menu is being
  *          drawn.
  *    
@@ -29440,6 +33284,9 @@ const
  *          align the context coordinates with the item bounds, use the
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *          value stored in the kEventParamMenuContextHeight parameter
  *          (if available), or else the height of the current port to
  *          flip the context with CGContextTranslateCTM( context, 0,
@@ -29451,6 +33298,7 @@ const
  *          orientation of the context, or to adjust the coordinates of
  *          the rectangle parameters in this event. This parameter is
  *          available on Mac OS X 10.5 and later.
+<<<<<<< HEAD
 =======
  *          height of the current port to flip the context with
  *          CGContextTranslateCTM( context, 0, height ) and
@@ -29461,6 +33309,8 @@ const
  *          CGContextTranslateCTM( context, 0, height ) and
  *          CGContextScaleCTM( context, 1, -1 ).
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *    
  *    <-- kEventParamMenuMarkBounds (out, typeQDRectangle)
  *          On exit, contains the bounds of the menu item mark
@@ -29481,6 +33331,7 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    <-- kEventParamMenuTextBaseline (out, typeSInt16)
 =======
  *    <-- kEventParamMenuTextBaseline (out, typeShortInteger)
@@ -29488,6 +33339,9 @@ const
 =======
  *    <-- kEventParamMenuTextBaseline (out, typeShortInteger)
 >>>>>>> origin/fixes_2_2
+=======
+ *    <-- kEventParamMenuTextBaseline (out, typeSInt16)
+>>>>>>> origin/fixes_2.4
  *          On exit, contains the baseline of the menu itemÕs text.
  *          Added to the event by the standard menu definitionÕs
  *          handler, if the event is allowed to pass through.
@@ -29664,12 +33518,16 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    --> kEventParamDisplayDevice (in, typeCGDisplayID)
  *          The display device on which the menu should be displayed.
  *          On Mac OS X 10.3 and later, this parameter is available as
  *          a GDHandle using typeGDHandle; on Mac OS X 10.5 and later,
  *          this parameter is also available as a CGDirectDisplayID
  *          using typeCGDisplayID.
+<<<<<<< HEAD
 =======
  *    --> kEventParamGDevice (in, typeGDHandle)
  *          The GDevice on which the menu should be displayed.
@@ -29678,6 +33536,8 @@ const
  *    --> kEventParamGDevice (in, typeGDHandle)
  *          The GDevice on which the menu should be displayed.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *    
  *    --> kEventParamAvailableBounds (in, typeHIRect)
  *          The available bounds, in global coordinates, inside which
@@ -30178,6 +34038,9 @@ const
    * handler will respond to this event automatically; your application
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
    * does not need to handle it. 
    * 
    * This event is not always sent to the window being selected. When a
@@ -30192,12 +34055,15 @@ const
    * fields of the HICommand structure. This item will have a property
    * of kHIWindowMenuCreator/kHIWindowMenuWindowTag containing the
    * window that will be selected.
+<<<<<<< HEAD
 =======
    * does not need to handle it.
 >>>>>>> graemeg/fixes_2_2
 =======
    * does not need to handle it.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
    }
 	kHICommandSelectWindow = FourCharCode('swin');
 
@@ -30290,6 +34156,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    * All active windows should be closed. The default application
    * handler responds to this command by sending a kEventWindowCloseAll
    * event to the frontmost document window. A "Close All" menu item
@@ -30312,6 +34179,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
    * The file relating to the active window should be closed. This
    * command would typically be used by applications that allow opening
    * multiple windows for the same file. There is no default behavior
@@ -30320,10 +34189,13 @@ const
 	kHICommandCloseFile = FourCharCode('clof');
 
   {
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
    * The active document should be saved.
    }
 	kHICommandSave = FourCharCode('save');
@@ -30408,6 +34280,7 @@ const
    }
 	kHICommandLearnWord = FourCharCode('lrwd');
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -30787,15 +34660,16 @@ type
  }
 const
 	kEventControlClick = 13;
+=======
+>>>>>>> origin/fixes_2.4
 
 {
- *  kEventClassControl / kEventControlHit
- *  
  *  Summary:
- *    Sent by TrackControl and HandleControlClick after handling a
- *    click in a control.
+ *    Values for the attributes field of the HICommand and
+ *    HICommandExtended structures.
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    This event indicates that a control has been manipulated by the
  *    user and that the user released the mouse button over some part
  *    of the control. It is sent automatically by the Control Manager
@@ -30844,64 +34718,39 @@ const
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
+=======
+ *    These bit masks are mutually exclusive; only one should be set at
+ *    any given time. Some HICommand and HICommandExtended structures
+ *    will have an attributes value of zero; in this case, there is no
+ *    information available about the source of the command.
+>>>>>>> origin/fixes_2.4
  }
 const
-	kEventControlHit = 1;
-
 {
- *  kEventClassControl / kEventControlInitialize
- *  
- *  Summary:
- *    Allows the control to initialize private data.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    --> kEventParamDirectObject (in, typeControlRef)
- *          The control that is being created.
- *    
- *    --> kEventParamInitCollection (in, typeCollection)
- *          Initialization data supplied to CreateCustomControl.
- *    
- *    <-- kEventParamControlFeatures (out, typeUInt32)
- *          On exit, your event handler should supply the control
- *          features flags. NOTE: On Mac OS X 10.3 and later, this is
- *          deprecated in favor of using the HIViewChangeFeatures API.
- *          Instead of supplying this parameter, just call
- *          HIViewChangeFeatures. Also, this parameter can only be used
- *          to supply features for the original kControlFoo features,
- *          not the new kHIViewFoo features.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventControlInitialize = 1000;
+   * Indicates that the command originates from a menu item. The
+   * HICommand.menu and HICommandExtended.source.menu fields are valid.
+   * This bit is set for commands generated from menu items in all
+   * versions of CarbonLib and Mac OS X.
+   }
+	kHICommandFromMenu = 1 shl 0;
 
-{
- *  kEventClassControl / kEventControlDispose
- *  
- *  Summary:
- *    Allows the control to dispose of private data.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    --> kEventParamDirectObject (in, typeControlRef)
- *          The control that is being destroyed.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventControlDispose = 1001;
+  {
+   * Indicates that the command originates from a control. The
+   * HICommandExtended.source.control field is valid. This bit was
+   * introduced in Mac OS X 10.2 and CarbonLib 1.6. It is never set in
+   * earlier versions of Mac OS X or CarbonLib.
+   }
+	kHICommandFromControl = 1 shl 1;
 
+  {
+   * Indicates that the command originates from a window. The
+   * HICommandExtended.source.window field is valid. This bit was
+   * introduced in Mac OS X 10.2 and CarbonLib 1.6. It is never set in
+   * earlier versions of Mac OS X or CarbonLib.
+   }
+	kHICommandFromWindow = 1 shl 2;
+
+<<<<<<< HEAD
 {
  *  kEventClassControl / kEventControlGetOptimalBounds
  *  
@@ -30980,12 +34829,678 @@ const
 =======
 >>>>>>> origin/fixes_2_2
  *  kEventClassControl / kEventControlSimulateHit
+=======
+
+{
+ *  HICommand
+>>>>>>> origin/fixes_2.4
+ *  
+ *  Summary:
+ *    Information about a command dispatched from a menu.
+ *  
+ *  Discussion:
+ *    The HICommand structure was introduced in CarbonLib 1.1 and Mac
+ *    OS X 10.0. It is provided as the direct object of
+ *    kEventClassCommand events. Command events are typically generated
+ *    by either a control/view object or a menu item.
+ }
+type
+	HICommand = record
+{
+   * Flags indicating what other fields of the structure are valid.
+   }
+		attributes: UInt32;
+
+  {
+   * The command ID that was generated.
+   }
+		commandID: UInt32;
+	  menuRef: MenuRef_fix;
+	  menuItemIndex: MenuItemIndex_fix;
+	end;
+	HICommandPtr = ^HICommand;
+
+{
+ *  HICommandExtended
+ *  
+ *  Summary:
+ *    Information about a command dispatched from a menu, control, or
+ *    window.
+ *  
+ *  Discussion:
+ *    The HICommandExtended structure was introduced in Mac OS X 10.2
+ *    and CarbonLib 1.6. However, because the HICommand and
+ *    HICommandExtended structures are exactly the same size and have
+ *    the same fields at the same offsets, you may use an
+ *    HICommandExtended structure at runtime while running on any
+ *    version of CarbonLib or Mac OS X. The only difference is that the
+ *    Extended structure has a union that allows you to get type-safe
+ *    access to the source object. The originator of the command
+ *    determines whether the structure actually contains a ControlRef,
+ *    WindowRef, MenuRef, or nothing at all; you can determine what's
+ *    in the command by checking the attributes field. 
+ *    
+ *    For example, on Mac OS X 10.2 and later, when a pushbutton is
+ *    clicked, the Control Manager will send a command event containing
+ *    the pushbutton's command ID, and will also set the
+ *    kHICommandFromControl bit in the attributes field and store the
+ *    button's ControlRef in the source.control field. On Mac OS X 10.0
+ *    and 10.1, the same command event would be sent, but the
+ *    kHICommandFromControl attribute would not be set, and the
+ *    source.control field would be uninitialized. Your code can use an
+ *    HICommandExtended structure when running on 10.0 or 10.1, as long
+ *    as it first checks for kHICommandFromControl before accessing the
+ *    source.control field.
+ }
+type
+	HICommandExtended = record
+{
+   * Flags indicating what other fields of the structure are valid.
+   }
+		attributes: UInt32;
+
+  {
+   * The command ID that was generated.
+   }
+		commandID: UInt32;
+		case SInt16 of
+			0: (
+				control: ControlRef;
+			);
+			1: (
+				window: WindowRef;
+			);
+			2: (menuRef: MenuRef_fix;
+					menuItemIndex: MenuItemIndex_fix;
+			);
+	end;
+	HICommandExtendedPtr = ^HICommandExtended;
+{--------------------------------------------------------------------------------------}
+{  Control Events                                                                      }
+{--------------------------------------------------------------------------------------}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+{$ifc not TARGET_CPU_64}
+=======
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+{
+    kEventClassControl quick reference:
+  
+    // lifespan
+    kEventControlInitialize                     = 1000,
+    kEventControlDispose                        = 1001,
+    kEventControlGetOptimalBounds               = 1003,
+    kEventControlOptimalBoundsChanged           = 1004,
+    kEventControlDefInitialize                  = kEventControlInitialize,
+    kEventControlDefDispose                     = kEventControlDispose,
+    
+    // event handling
+    kEventControlHit                            = 1,
+    kEventControlSimulateHit                    = 2,
+    kEventControlHitTest                        = 3,
+    kEventControlDraw                           = 4,
+    kEventControlApplyBackground                = 5,
+    kEventControlApplyTextColor                 = 6,
+    kEventControlSetFocusPart                   = 7,
+    kEventControlGetFocusPart                   = 8,
+    kEventControlActivate                       = 9,
+    kEventControlDeactivate                     = 10,
+    kEventControlSetCursor                      = 11,
+    kEventControlContextualMenuClick            = 12,
+    kEventControlClick                          = 13,
+    kEventControlGetNextFocusCandidate          = 14,
+    kEventControlGetAutoToggleValue             = 15,
+    kEventControlInterceptSubviewClick          = 16,
+    kEventControlGetClickActivation             = 17,
+    kEventControlDragEnter                      = 18,
+    kEventControlDragWithin                     = 19,
+    kEventControlDragLeave                      = 20,
+    kEventControlDragReceive                    = 21,
+    kEventControlInvalidateForSizeChange        = 22,
+    kEventControlTrackingAreaEntered            = 23,   // in HIView.h
+    kEventControlTrackingAreaExited             = 24,   // in HIView.h
+
+    // tracking
+    kEventControlTrack                          = 51,
+    kEventControlGetScrollToHereStartPoint      = 52,
+    kEventControlGetIndicatorDragConstraint     = 53,
+    kEventControlIndicatorMoved                 = 54,
+    kEventControlGhostingFinished               = 55,
+    kEventControlGetActionProcPart              = 56,
+    
+    // accessors
+    kEventControlGetPartRegion                  = 101,
+    kEventControlGetPartBounds                  = 102,
+    kEventControlSetData                        = 103,
+    kEventControlGetData                        = 104,
+    kEventControlGetSizeConstraints             = 105,
+    kEventControlGetFrameMetrics                = 106,
+    
+    // notification
+    kEventControlValueFieldChanged              = 151,
+    kEventControlAddedSubControl                = 152,
+    kEventControlRemovingSubControl             = 153,
+    kEventControlBoundsChanged                  = 154,
+    kEventControlVisibilityChanged              = 157,
+    kEventControlTitleChanged                   = 158,
+    kEventControlOwningWindowChanged            = 159,  
+    kEventControlHiliteChanged                  = 160,
+    kEventControlEnabledStateChanged            = 161,
+    kEventControlLayoutInfoChanged              = 162,
+    kEventControlFocusPartChanged               = 164,
+    
+    // miscellaneous
+    kEventControlArbitraryMessage               = 201
+}
+
+{
+ *  kEventClassControl / kEventControlClick
+ *  
+ *  Summary:
+ *    A mouse down event occurred over a control.
+ *  
+ *  Discussion:
+ *    This event is sent when a non-contextual-menu click occurs over a
+ *    control; a contextual menu click generates
+ *    kEventControlContextualMenuClick instead.
+ *    
+ *    The handler of this event is responsible for two things: first,
+ *    the handler must set the keyboard focus to the control if the
+ *    control takes focus on clicks; look for the
+ *    kControlGetsFocusOnClick feature bit and call an API such as
+ *    SetKeyboardFocus. Second, the handler must call one of the
+ *    control tracking APIs: HIViewClick, HandleControlClick, or
+ *    TrackControl. The standard window handler does both of these
+ *    things.
+ *    
+ *    Warning: Beware of handling kEventControlClick events! This is
+ *    usually NOT the event you really want to handle.
+ *    kEventControlClick is a request to "please click this control,"
+ *    not "allow a control definition to track the mouse." If you are
+ *    implementing or overriding a control definitionÕs or HIViewÕs
+ *    support for tracking the mouse, you should handle
+ *    kEventControlTrack instead.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeControlRef)
+ *          The control that was clicked.
+ *    
+ *    --> kEventParamMouseLocation (in, typeHIPoint)
+ *          The mouse location, in global coordinates.
+ *    
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    --> kEventParamControlDrawDepth (in, typeSInt16)
+=======
+ *    --> kEventParamControlDrawDepth (in, typeShortInteger)
+>>>>>>> graemeg/fixes_2_2
+=======
+ *    --> kEventParamControlDrawDepth (in, typeShortInteger)
+>>>>>>> origin/fixes_2_2
+ *          The bit depth of the GDevice on which the subcontrol will
+ *          be drawn.
+=======
+ *    --> kEventParamWindowRef (in, typeWindowRef)
+ *          The window under the mouse.
+>>>>>>> origin/fixes_2.4
+ *    
+ *    --> kEventParamWindowMouseLocation (in, typeHIPoint)
+ *          The window-relative position of the mouse in the window
+ *          given in the kEventParamWindowRef parameter. 0,0 is at the
+ *          top left of the structure of the window.
+ *    
+<<<<<<< HEAD
+ *    --> kEventParamGrafPort (in, typeGrafPtr)
+ *          The port to which the background color or pattern should be
+ *          applied. This parameter is optional and may not be present
+ *          in all instances of this event. Apply the background to the
+ *          current port if this parameter is not present.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventControlApplyBackground = 5;
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+{$endc} {not TARGET_CPU_64}
+
+=======
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+{
+ *  kEventClassControl / kEventControlApplyTextColor
+ *  
+ *  Summary:
+ *    Sent when your control should apply a color or pattern to the
+ *    specified port and context so a subcontrol can draw text which
+ *    looks appropriate for your controlÕs background.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+=======
+ *    --> kEventParamWindowPartCode (in, typeWindowPartCode)
+ *          The part code that the mouse location hit in the window.
+ *          This parameter only exists if the WindowRef parameter
+ *          exists. This saves you the trouble of calling FindWindow,
+ *          which is expensive on Mac OS X as it needs to call the
+ *          Window Server. Available in Mac OS X 10.3 and later.
+>>>>>>> origin/fixes_2.4
+ *    
+ *    --> kEventParamKeyModifiers (in, typeUInt32)
+ *          The keyboard modifiers that were pressed when the event was
+ *          generated.
+ *    
+ *    --> kEventParamMouseButton (in, typeMouseButton)
+ *          Which mouse button was pressed.
+ *    
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    --> kEventParamControlDrawDepth (in, typeSInt16)
+=======
+ *    --> kEventParamControlDrawDepth (in, typeShortInteger)
+>>>>>>> graemeg/fixes_2_2
+=======
+ *    --> kEventParamControlDrawDepth (in, typeShortInteger)
+>>>>>>> origin/fixes_2_2
+ *          The bit depth of the GDevice on which the subcontrol will
+ *          be drawn.
+=======
+ *    --> kEventParamClickCount (in, typeUInt32)
+ *          Whether this is a single click, double click, etc.
+>>>>>>> origin/fixes_2.4
+ *    
+ *    --> kEventParamMouseChord (in, typeUInt32)
+ *          Which other mouse buttons were pressed when the event was
+ *          generated. Available on Mac OS X only.
+ *    
+ *    --> kEventParamTabletEventType (in, typeUInt32)
+ *          The type of tablet event which generated this mouse event;
+ *          contains either kEventTabletPoint or kEventTabletProximity.
+ *          Only present if the event was generated from a tablet.
+ *    
+ *    --> kEventParamTabletPointRec (in, typeTabletPointRec)
+ *          Further information about the tablet event which generated
+ *          this mouse event. Present if the the
+ *          kEventParamTabletEventType parameter contains
+ *          kEventTabletPoint.
+ *    
+<<<<<<< HEAD
+ *    --> kEventParamGrafPort (in, typeGrafPtr)
+ *          The GrafPort to which the text color should be applied.
+ *          This parameter is optional and may not be present in all
+ *          instances of this event. Apply to the current port if this
+ *          parameter is not present.
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    
+ *    <-- kEventParamControlDrawEngraved (out, typeBoolean)
+ *          On exit, contains a Boolean indicating whether your control
+ *          wants the subcontrol to draw its text engraved. If your
+ *          control does not want the subcontrol to draw engraved text,
+ *          you may leave this parameter empty.
+=======
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+=======
+ *    --> kEventParamTabletProximityRec (in, typeTabletProximityRec)
+ *          Further information about the tablet event which generated
+ *          this mouse event. Present if the the
+ *          kEventParamTabletEventType parameter contains
+ *          kEventTabletProximity.
+>>>>>>> origin/fixes_2.4
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.3.1 and later
+ }
+const
+	kEventControlClick = 13;
+
+{
+ *  kEventClassControl / kEventControlHit
+ *  
+ *  Summary:
+ *    Sent by TrackControl and HandleControlClick after handling a
+ *    click in a control.
+ *  
+ *  Discussion:
+ *    This event indicates that a control has been manipulated by the
+ *    user and that the user released the mouse button over some part
+ *    of the control. It is sent automatically by the Control Manager
+ *    when the control tracking code returns a non-zero part
+ *    code.
+ *    
+ *    You might want to handle this event in a custom control
+ *    definition if your control definition has special behavior after
+ *    the control has been tracked. You can also handle this event in
+ *    application code, to be notified after a control has been
+ *    tracked; however, from the application level, it is generally
+ *    preferred to provide a command ID for the control and handle
+ *    kEventCommandProcess instead of kEventControlHit. Handling
+ *    kEventCommandProcess is more generic and allows the same code to
+ *    handle events from both controls and menu items.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+ *    --> kEventParamDirectObject (in, typeControlRef)
+ *          The control that was tracked.
+ *    
+>>>>>>> graemeg/fixes_2_2
+=======
+ *    --> kEventParamDirectObject (in, typeControlRef)
+ *          The control which should customize the focus order.
+ *    
+>>>>>>> origin/fixes_2_2
+ *    --> kEventParamControlPart (in, typeControlPartCode)
+ *          The control part that the mouse was over when it was
+ *          released.
+ *    
+<<<<<<< HEAD
+ *    --> kEventParamStartControl (in, typeControlRef)
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/fixes_2_2
+ *          On exit, should contain the next or previous subcontrol; if
+ *          there is no next subcontrol in the given focusing
+ *          direction, the recipient must either exclude the
+ *          kEventParamNextControl parameter or set it to NULL
+ *    
+ *    <-- kEventParamNextControl (out, typeControlRef)
+<<<<<<< HEAD
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+ *          The starting point from which to search for the next or
+ *          previous control. This parameter is optional and may not be
+ *          present in all instances of this event. Find the first
+ *          subcontrol in the appropriate focusing direction if this
+ *          parameter is not present or if it contains NULL.
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    
+ *    <-- kEventParamNextControl (out, typeControlRef)
+ *          On exit, should contain the next or previous subcontrol; if
+ *          there is no next subcontrol in the given focusing
+ *          direction, the recipient must either exclude the
+ *          kEventParamNextControl parameter or set it to NULL
+=======
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+=======
+ *    --> kEventParamKeyModifiers (in, typeUInt32)
+ *          The keyboard modifiers that were pressed when the mouse was
+ *          released.
+ *    
+ *    --> kEventParamClickCount (in, typeUInt32)
+ *          Whether the original mouse-down on the control was a single
+ *          click, double click, etc. This parameter is optional and
+ *          may not be present in all instances of this event. Assume a
+ *          click count of 1 if this parameter is not present.
+ *          Available in Mac OS X 10.5 and later.
+>>>>>>> origin/fixes_2.4
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ }
+const
+	kEventControlHit = 1;
+
+{
+ *  kEventClassControl / kEventControlInitialize
+ *  
+ *  Summary:
+ *    Allows the control to initialize private data.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeControlRef)
+ *          The control that is being created.
+ *    
+ *    --> kEventParamInitCollection (in, typeCollection)
+ *          Initialization data supplied to CreateCustomControl.
+ *    
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    <-- kEventParamControlValue (out, typeSInt32)
+=======
+ *    <-- kEventParamControlValue (out, typeLongInteger)
+>>>>>>> graemeg/fixes_2_2
+=======
+ *    <-- kEventParamControlValue (out, typeLongInteger)
+>>>>>>> origin/fixes_2_2
+ *          On exit, contains the new control value.
+=======
+ *    <-- kEventParamControlFeatures (out, typeUInt32)
+ *          On exit, your event handler should supply the control
+ *          features flags. NOTE: On Mac OS X 10.3 and later, this is
+ *          deprecated in favor of using the HIViewChangeFeatures API.
+ *          Instead of supplying this parameter, just call
+ *          HIViewChangeFeatures. Also, this parameter can only be used
+ *          to supply features for the original kControlFoo features,
+ *          not the new kHIViewFoo features.
+>>>>>>> origin/fixes_2.4
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventControlInitialize = 1000;
+
+{
+ *  kEventClassControl / kEventControlDispose
+ *  
+ *  Summary:
+<<<<<<< HEAD
+ *    This is sent when the HIViewGetViewForMouseEvent API is called,
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    to allow embedding controls to intercept clicks in their embedded
+ *    controls.
+=======
+ *    to allow embedding controls to intercept clicks in the their
+ *    embedded controls.
+>>>>>>> graemeg/fixes_2_2
+=======
+ *    to allow embedding controls to intercept clicks in the their
+ *    embedded controls.
+>>>>>>> origin/fixes_2_2
+ *  
+ *  Discussion:
+ *    The Control Manager sends this event before descending into any
+ *    subviews. Controls can override this to intercept clicks which
+ *    would normally be destined for their children. For example, the
+ *    HIToolbar control intercepts cmd-clicks to handle dragging its
+ *    children. To accomplish this, it overrides this event, looking
+ *    for the command key modifier. When the command key is pressed,
+ *    the view just returns noErr as the result from its event handler.
+ *    This tells the Control Manager to stop descending and return the
+ *    view that it called as the mouse event destination.
+=======
+ *    Allows the control to dispose of private data.
+>>>>>>> origin/fixes_2.4
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeControlRef)
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *          The control that is being given a chance to intercept a
+ *          click. This parameter is only available in Mac OS X 10.5
+ *          and later.
+ *    
+ *    --> kEventParamEventRef (in, typeEventRef)
+=======
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+ *          The mouse-down event to intercept.
+ *  
+ *  Result:
+ *    An operating system result code. Return noErr to indicate that
+ *    this view intercepted the click, or eventNotHandledErr to allow
+ *    subviews of this view to take the click.
+=======
+ *          The control that is being destroyed.
+>>>>>>> origin/fixes_2.4
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventControlDispose = 1001;
+
+{
+ *  kEventClassControl / kEventControlGetOptimalBounds
+ *  
+ *  Summary:
+ *    Allows the control to report its best size and its text baseline
+ *    based on its current settings.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeControlRef)
+ *          The control whose optimal bounds to return.
+ *    
+ *    <-- kEventParamControlOptimalBounds (out, typeHIRect)
+ *          On exit, contains the controlÕs optimal bounds.
+ *    
+ *    <-- kEventParamControlOptimalBaselineOffset (out, typeSInt16)
+ *          On exit, contains the controlÕs optimal baseline offset:
+ *          the distance from the top of the controlÕs optimal bounds
+ *          to the baseline of the control text, if any. This parameter
+ *          is optional and does not need to be provided if it doesnÕt
+ *          apply for your control.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventControlGetOptimalBounds = 1003;
+
+{
+ *  kEventClassControl / kEventControlOptimalBoundsChanged
+ *  
+ *  Summary:
+ *    Sent by a view to itself (and thence to its superviews) to
+ *    indicate that its optimal bounds have changed. Superviews may use
+ *    this event as notification that they should relayout their
+ *    subviews (but handling this event is completely optional).
+ *  
+ *  Discussion:
+<<<<<<< HEAD
+ *    If you at all wish to handle the drag, you must return true in
+ *    the kEventParamControlWouldAcceptDrop parameter from your event
+ *    handler in response to this event. If you return
+ *    eventNotHandledErr, do not supply a
+ *    kEventParamControlWouldAcceptDrop parameter, or set its value to
+ *    false, you will not receive 'within' or 'leave' messages, nor
+ *    will you be eligible to receive the drop. This is done to try to
+ *    be as efficient as possible when sending events during the drag
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    operation. 
+ *    
+ *    Note that in order to receive this event, you must first call the
+ *    SetAutomaticControlDragTrackingEnabledForWindow API, passing true
+ *    for the inTracks parameter, and then call the
+ *    SetControlDragTrackingEnabled API, again passing true for the
+ *    inTracks parameter.
+=======
+ *    operation.
+>>>>>>> graemeg/fixes_2_2
+=======
+ *    operation.
+>>>>>>> origin/fixes_2_2
+=======
+ *    This event is created and sent by a view itself; it is not sent
+ *    by HIToolbox. The event must be sent using
+ *    SendEventToEventTargetWithOptions, passing
+ *    kEventTargetSendToAllHandlers.
+>>>>>>> origin/fixes_2.4
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeControlRef)
+ *          The view whose optimal bounds has changed.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventControlOptimalBoundsChanged = 1004;
+
+{
+ *  kEventClassControl / kEventControlSimulateHit
  *  
  *  Summary:
  *    Sent when your control should simulate a click in response to
  *    some other action, such as a return key for a default button.
  *  
  *  Discussion:
+<<<<<<< HEAD
+ *    Your control will typically respond to this event by drawing its
+ *    drag highlight. If the user moves into a subcontrol, it becomes
+ *    the target of the drag and your control will not receive 'within'
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    messages any longer. 
+ *    
+ *    Note that in order to receive this event, you must first call the
+ *    SetAutomaticControlDragTrackingEnabledForWindow API, passing true
+ *    for the inTracks parameter, and then call the
+ *    SetControlDragTrackingEnabled API, again passing true for the
+ *    inTracks parameter.
+=======
+ *    messages any longer.
+>>>>>>> graemeg/fixes_2_2
+=======
+ *    messages any longer.
+>>>>>>> origin/fixes_2_2
+=======
  *    Note that this event is solely meant to provide visual feedback
  *    that a control was clicked. For example, the push button control
  *    hilites itself briefly in response to this event. This event does
@@ -30995,6 +35510,7 @@ const
  *    API, which sends a kEventControlSimulateHit event and also sends
  *    the kEventControlHit and kEventCommandProcess events that would
  *    normally result from a click on a control.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -31025,8 +35541,30 @@ const
  *  kEventClassControl / kEventControlHitTest
  *  
  *  Summary:
+<<<<<<< HEAD
+ *    A drag is leaving your view.
+ *  
+ *  Discussion:
+ *    Your control will typically respond to this event by removing its
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    drag highlight. 
+ *    
+ *    Note that in order to receive this event, you must first call the
+ *    SetAutomaticControlDragTrackingEnabledForWindow API, passing true
+ *    for the inTracks parameter, and then call the
+ *    SetControlDragTrackingEnabled API, again passing true for the
+ *    inTracks parameter.
+=======
+ *    drag highlight.
+>>>>>>> graemeg/fixes_2_2
+=======
+ *    drag highlight.
+>>>>>>> origin/fixes_2_2
+=======
  *    Sent when someone wants to find out what part of your control is
  *    at a given point in local coordinates.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -31061,6 +35599,19 @@ const
  *    optionally contain a port in which to draw and a part to
  *    constrain drawing to.
  *  
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *  Discussion:
+ *    Note that in order to receive this event, you must first call the
+ *    SetAutomaticControlDragTrackingEnabledForWindow API, passing true
+ *    for the inTracks parameter, and then call the
+ *    SetControlDragTrackingEnabled API, again passing true for the
+ *    inTracks parameter.
+ *  
+=======
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -31115,13 +35666,7 @@ const
 const
 	kEventControlDraw = 4;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
-=======
->>>>>>> graemeg/fixes_2_2
-=======
->>>>>>> origin/fixes_2_2
 {
  *  kEventClassControl / kEventControlApplyBackground
  *  
@@ -31159,15 +35704,7 @@ const
  *    --> kEventParamControlSubControl (in, typeControlRef)
  *          The subcontrol that is about to draw.
  *    
-<<<<<<< HEAD
-<<<<<<< HEAD
  *    --> kEventParamControlDrawDepth (in, typeSInt16)
-=======
- *    --> kEventParamControlDrawDepth (in, typeShortInteger)
->>>>>>> graemeg/fixes_2_2
-=======
- *    --> kEventParamControlDrawDepth (in, typeShortInteger)
->>>>>>> origin/fixes_2_2
  *          The bit depth of the GDevice on which the subcontrol will
  *          be drawn.
  *    
@@ -31188,14 +35725,8 @@ const
 const
 	kEventControlApplyBackground = 5;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
-=======
->>>>>>> graemeg/fixes_2_2
-=======
->>>>>>> origin/fixes_2_2
 {
  *  kEventClassControl / kEventControlApplyTextColor
  *  
@@ -31215,15 +35746,7 @@ const
  *    --> kEventParamControlSubControl (in, typeControlRef)
  *          The subcontrol that is about to draw.
  *    
-<<<<<<< HEAD
-<<<<<<< HEAD
  *    --> kEventParamControlDrawDepth (in, typeSInt16)
-=======
- *    --> kEventParamControlDrawDepth (in, typeShortInteger)
->>>>>>> graemeg/fixes_2_2
-=======
- *    --> kEventParamControlDrawDepth (in, typeShortInteger)
->>>>>>> origin/fixes_2_2
  *          The bit depth of the GDevice on which the subcontrol will
  *          be drawn.
  *    
@@ -31241,18 +35764,12 @@ const
  *          This parameter is optional and may not be present in all
  *          instances of this event. Apply to the current port if this
  *          parameter is not present.
-<<<<<<< HEAD
-<<<<<<< HEAD
  *    
  *    <-- kEventParamControlDrawEngraved (out, typeBoolean)
  *          On exit, contains a Boolean indicating whether your control
  *          wants the subcontrol to draw its text engraved. If your
  *          control does not want the subcontrol to draw engraved text,
  *          you may leave this parameter empty.
-=======
->>>>>>> graemeg/fixes_2_2
-=======
->>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -31280,55 +35797,22 @@ const
  *  
  *  Parameters:
  *    
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
- *    --> kEventParamDirectObject (in, typeControlRef)
- *          The control which should customize the focus order.
- *    
->>>>>>> graemeg/fixes_2_2
-=======
- *    --> kEventParamDirectObject (in, typeControlRef)
- *          The control which should customize the focus order.
- *    
->>>>>>> origin/fixes_2_2
  *    --> kEventParamControlPart (in, typeControlPartCode)
  *          A focusing meta-part code, either kControlFocusNextPart or
  *          kControlFocusPrevPart.
  *    
  *    --> kEventParamStartControl (in, typeControlRef)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/fixes_2_2
- *          On exit, should contain the next or previous subcontrol; if
- *          there is no next subcontrol in the given focusing
- *          direction, the recipient must either exclude the
- *          kEventParamNextControl parameter or set it to NULL
- *    
- *    <-- kEventParamNextControl (out, typeControlRef)
-<<<<<<< HEAD
->>>>>>> graemeg/fixes_2_2
-=======
->>>>>>> origin/fixes_2_2
  *          The starting point from which to search for the next or
  *          previous control. This parameter is optional and may not be
  *          present in all instances of this event. Find the first
  *          subcontrol in the appropriate focusing direction if this
  *          parameter is not present or if it contains NULL.
-<<<<<<< HEAD
-<<<<<<< HEAD
  *    
  *    <-- kEventParamNextControl (out, typeControlRef)
  *          On exit, should contain the next or previous subcontrol; if
  *          there is no next subcontrol in the given focusing
  *          direction, the recipient must either exclude the
  *          kEventParamNextControl parameter or set it to NULL
-=======
->>>>>>> graemeg/fixes_2_2
-=======
->>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -31363,15 +35847,7 @@ const
  *    --> kEventParamControlPart (in, typeControlPartCode)
  *          The control part that is being toggled.
  *    
-<<<<<<< HEAD
-<<<<<<< HEAD
  *    <-- kEventParamControlValue (out, typeSInt32)
-=======
- *    <-- kEventParamControlValue (out, typeLongInteger)
->>>>>>> graemeg/fixes_2_2
-=======
- *    <-- kEventParamControlValue (out, typeLongInteger)
->>>>>>> origin/fixes_2_2
  *          On exit, contains the new control value.
  *  
  *  Availability:
@@ -31386,18 +35862,8 @@ const
  *  
  *  Summary:
  *    This is sent when the HIViewGetViewForMouseEvent API is called,
-<<<<<<< HEAD
-<<<<<<< HEAD
  *    to allow embedding controls to intercept clicks in their embedded
  *    controls.
-=======
- *    to allow embedding controls to intercept clicks in the their
- *    embedded controls.
->>>>>>> graemeg/fixes_2_2
-=======
- *    to allow embedding controls to intercept clicks in the their
- *    embedded controls.
->>>>>>> origin/fixes_2_2
  *  
  *  Discussion:
  *    The Control Manager sends this event before descending into any
@@ -31416,17 +35882,11 @@ const
  *  Parameters:
  *    
  *    --> kEventParamDirectObject (in, typeControlRef)
-<<<<<<< HEAD
-<<<<<<< HEAD
  *          The control that is being given a chance to intercept a
  *          click. This parameter is only available in Mac OS X 10.5
  *          and later.
  *    
  *    --> kEventParamEventRef (in, typeEventRef)
-=======
->>>>>>> graemeg/fixes_2_2
-=======
->>>>>>> origin/fixes_2_2
  *          The mouse-down event to intercept.
  *  
  *  Result:
@@ -31539,6 +35999,43 @@ const
  *    A drag has entered your control.
  *  
  *  Discussion:
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    This event is only sent to controls that return a non-zero
+ *    control part code from kEventControlHitTest. If you are
+ *    implementing a custom HIView and you need to receive this event,
+ *    you must also handle kEventControlHitTest and place a valid
+ *    control part code into the parameter, and return noErr. 
+ *    
+ *    This event is sent from within HIViewClick and
+=======
+ *    In fact, this event is actually sent from within HIViewClick and
+>>>>>>> graemeg/fixes_2_2
+=======
+ *    In fact, this event is actually sent from within HIViewClick and
+>>>>>>> origin/fixes_2_2
+ *    HandleControlClick. The default handling of this event is the
+ *    Control ManagerÕs normal tracking logic; this is good enough for
+ *    simple controls (such as push buttons) and controls with simple
+ *    indicators (such as scroll bars and sliders). You should only
+ *    need to handle or override this event if you are trying to do
+ *    more complex tracking, such as displaying a menu in the middle of
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    tracking. 
+ *    
+ *    In Mac OS X 10.4 and later, when this event is sent in response
+ *    to a click in a compositing window, the event will include all of
+ *    the fields of the kEventControlClick event, including
+ *    kEventParamMouseButton, kEventParamClickCount, and so on.
+=======
+ *    tracking.
+>>>>>>> graemeg/fixes_2_2
+=======
+ *    tracking.
+>>>>>>> origin/fixes_2_2
+=======
  *    If you at all wish to handle the drag, you must return true in
  *    the kEventParamControlWouldAcceptDrop parameter from your event
  *    handler in response to this event. If you return
@@ -31547,8 +36044,6 @@ const
  *    false, you will not receive 'within' or 'leave' messages, nor
  *    will you be eligible to receive the drop. This is done to try to
  *    be as efficient as possible when sending events during the drag
-<<<<<<< HEAD
-<<<<<<< HEAD
  *    operation. 
  *    
  *    Note that in order to receive this event, you must first call the
@@ -31556,12 +36051,7 @@ const
  *    for the inTracks parameter, and then call the
  *    SetControlDragTrackingEnabled API, again passing true for the
  *    inTracks parameter.
-=======
- *    operation.
->>>>>>> graemeg/fixes_2_2
-=======
- *    operation.
->>>>>>> origin/fixes_2_2
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -31569,15 +36059,135 @@ const
  *  Parameters:
  *    
  *    --> kEventParamDirectObject (in, typeControlRef)
+<<<<<<< HEAD
+ *          The control to track.
+ *    
+ *    --> kEventParamMouseLocation (in, typeQDPoint)
+ *          The mouse location, in view-local coordinates if the
+ *          controlÕs owning window is composited, or port-local
+ *          coordinates if not.
+ *    
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    <-> kEventParamKeyModifiers (in/out, typeUInt32)
+ *          The current keyboard modifiers. On exit, the event handler
+ *          may update this parameter with the modifiers that were
+ *          pressed when tracking ended; these modifiers will be
+ *          included in the kEventCommandProcess event that is sent by
+ *          the Control Manager.
+ *    
+ *    --> kEventParamControlAction (in, typeControlActionUPP)
+ *          The control action proc that should be called by the
+ *          control during tracking.
+ *    
+ *    <-- kEventParamControlPart (out, typeControlPartCode)
+ *          On exit, contains the part code of the control part that
+ *          was selected when tracking ended, or kControlNoPart if no
+ *          part was selected. If the part code is non-zero, the
+ *          Control Manager will automatically send kEventControlHit
+ *          and kEventCommandProcess events.
+ *    
+ *    --> kEventParamWindowRef (in, typeWindowRef)
+ *          The window under the mouse. This parameter is only
+ *          available in Mac OS X 10.4 and later, and is only included
+ *          for clicks in a compositing window or if the application
+ *          calls HIViewClick itself.
+ *    
+ *    --> kEventParamWindowMouseLocation (in, typeHIPoint)
+ *          The window-relative position of the mouse in the window
+ *          given in the kEventParamWindowRef parameter. 0,0 is at the
+ *          top left of the structure of the window. This parameter is
+ *          only available in Mac OS X 10.4 and later, and is only
+ *          included for clicks in a compositing window or if the
+ *          application calls HIViewClick itself.
+ *    
+ *    --> kEventParamWindowPartCode (in, typeWindowPartCode)
+ *          The part code that the mouse location hit in the window.
+ *          This parameter only exists if the WindowRef parameter
+ *          exists. This saves you the trouble of calling FindWindow,
+ *          which is expensive on Mac OS X as it needs to call the
+ *          Window Server. This parameter is only available in Mac OS X
+ *          10.4 and later, and is only included for clicks in a
+ *          compositing window or if the application calls HIViewClick
+ *          itself.
+ *    
+ *    --> kEventParamMouseButton (in, typeMouseButton)
+ *          Which mouse button was pressed. This parameter is only
+ *          available in Mac OS X 10.4 and later, and is only included
+ *          for clicks in a compositing window or if the application
+ *          calls HIViewClick itself.
+ *    
+ *    --> kEventParamClickCount (in, typeUInt32)
+ *          Whether this is a single click, double click, etc. This
+ *          parameter is only available in Mac OS X 10.4 and later, and
+ *          is only included for clicks in a compositing window or if
+ *          the application calls HIViewClick itself.
+ *    
+ *    --> kEventParamMouseChord (in, typeUInt32)
+ *          Which other mouse buttons were pressed when the event was
+ *          generated. This parameter is only available in Mac OS X
+ *          10.4 and later, and is only included for clicks in a
+ *          compositing window or if the application calls HIViewClick
+ *          itself.
+ *    
+ *    --> kEventParamTabletEventType (in, typeUInt32)
+ *          The type of tablet event which generated this mouse event;
+ *          contains either kEventTabletPoint or kEventTabletProximity.
+ *          Only present if the event was generated from a tablet. This
+ *          parameter is only available in Mac OS X 10.4 and later, and
+ *          is only included for clicks in a compositing window or if
+ *          the application calls HIViewClick itself.
+ *    
+ *    --> kEventParamTabletPointRec (in, typeTabletPointRec)
+ *          Further information about the tablet event which generated
+ *          this mouse event. Present if the the
+ *          kEventParamTabletEventType parameter contains
+ *          kEventTabletPoint. This parameter is only available in Mac
+ *          OS X 10.4 and later, and is only included for clicks in a
+ *          compositing window or if the application calls HIViewClick
+ *          itself.
+ *    
+ *    --> kEventParamTabletProximityRec (in, typeTabletProximityRec)
+ *          Further information about the tablet event which generated
+ *          this mouse event. Present if the the
+ *          kEventParamTabletEventType parameter contains
+ *          kEventTabletProximity. This parameter is only available in
+ *          Mac OS X 10.4 and later, and is only included for clicks in
+ *          a compositing window or if the application calls
+ *          HIViewClick itself.
+=======
+=======
+>>>>>>> origin/fixes_2_2
+ *    <-> kEventParamKeyModifiers (in/out, typeUInt32)
+ *          The current keyboard modifiers. On exit, the event handler
+ *          may update this parameter with the modifiers that were
+ *          pressed when tracking ended; these modifiers will be
+ *          included in the kEventCommandProcess event that is sent by
+ *          the Control Manager.
+=======
  *          The control that is the drag target.
+>>>>>>> origin/fixes_2.4
  *    
  *    --> kEventParamDragRef (in, typeDragRef)
  *          The DragRef for the drag.
  *    
+<<<<<<< HEAD
+ *    <-- kEventParamControlPart (out, typeControlPartCode)
+ *          On exit, contains the part code of the control part that
+ *          was selected when tracking ended, or kControlNoPart if no
+ *          part was selected. If the part code is non-zero, the
+ *          Control Manager will automatically send kEventControlHit
+ *          and kEventCommandProcess events.
+<<<<<<< HEAD
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+=======
  *    <-- kEventParamControlWouldAcceptDrop (out, typeBoolean)
  *          The control would accept the drop. Return true in this
  *          parameter if your view wants to track and possibly receive
  *          this drag.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
@@ -31596,8 +36206,6 @@ const
  *    Your control will typically respond to this event by drawing its
  *    drag highlight. If the user moves into a subcontrol, it becomes
  *    the target of the drag and your control will not receive 'within'
-<<<<<<< HEAD
-<<<<<<< HEAD
  *    messages any longer. 
  *    
  *    Note that in order to receive this event, you must first call the
@@ -31605,12 +36213,6 @@ const
  *    for the inTracks parameter, and then call the
  *    SetControlDragTrackingEnabled API, again passing true for the
  *    inTracks parameter.
-=======
- *    messages any longer.
->>>>>>> graemeg/fixes_2_2
-=======
- *    messages any longer.
->>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -31638,8 +36240,6 @@ const
  *  
  *  Discussion:
  *    Your control will typically respond to this event by removing its
-<<<<<<< HEAD
-<<<<<<< HEAD
  *    drag highlight. 
  *    
  *    Note that in order to receive this event, you must first call the
@@ -31647,12 +36247,6 @@ const
  *    for the inTracks parameter, and then call the
  *    SetControlDragTrackingEnabled API, again passing true for the
  *    inTracks parameter.
-=======
- *    drag highlight.
->>>>>>> graemeg/fixes_2_2
-=======
- *    drag highlight.
->>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -31678,8 +36272,6 @@ const
  *  Summary:
  *    Congratulations, you are the lucky recipient of a drag. Enjoy it.
  *  
-<<<<<<< HEAD
-<<<<<<< HEAD
  *  Discussion:
  *    Note that in order to receive this event, you must first call the
  *    SetAutomaticControlDragTrackingEnabledForWindow API, passing true
@@ -31687,10 +36279,6 @@ const
  *    SetControlDragTrackingEnabled API, again passing true for the
  *    inTracks parameter.
  *  
-=======
->>>>>>> graemeg/fixes_2_2
-=======
->>>>>>> origin/fixes_2_2
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -31723,6 +36311,27 @@ const
  *    --> kEventParamDirectObject (in, typeControlRef)
  *          The control that is gaining, losing, or changing focus.
  *    
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    --> kEventParamControlIndicatorRegion (in, typeQDRgnHandle)
+ *          The new indicator region.
+ *    
+ *    --> kEventParamControlIsGhosting (in, typeBoolean)
+=======
+=======
+>>>>>>> origin/fixes_2_2
+ *    --> kEventParamDirectObject (in, typeControlRef)
+ *          The new indicator region.
+ *    
+ *    --> kEventParamControlIndicatorRegion (in, typeQDRgnHandle)
+<<<<<<< HEAD
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+ *          Indicates whether the control is using non-live-tracking
+ *          (true) or live tracking (false).
+=======
  *    --> kEventParamControlFocusEverything (in, typeBoolean)
  *          Indicates whether to allowing focusing on a part that
  *          doesnÕt accept general keyboard input, such as a push
@@ -31744,6 +36353,7 @@ const
  *          actual part code that was focused into this parameter. Your
  *          control must always allow the focus to be removed (when
  *          this parameter is kControlFocusNoPart on entry).
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -31825,7 +36435,24 @@ const
  *    CarbonLib:        not available
  }
 const
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+	kEventControlGetPartRegion = 101;
+
+{
+ *  kEventClassControl / kEventControlGetPartBounds
+ *  
+ *  Summary:
+ *    Sent when a client wants to get a particular rectangle of your
+ *    control when it may be more efficient than asking for a region.
+=======
+=======
+>>>>>>> origin/fixes_2_2
+	kEventControlGetPartRegion = 101;
+=======
 	kEventControlDeactivate = 10;
+>>>>>>> origin/fixes_2.4
 
 {
  *  kEventClassControl / kEventControlSetCursor
@@ -31953,8 +36580,6 @@ const
  *    to a call to HIViewClick, HandleControlClick, etc.
  *  
  *  Discussion:
-<<<<<<< HEAD
-<<<<<<< HEAD
  *    This event is only sent to controls that return a non-zero
  *    control part code from kEventControlHitTest. If you are
  *    implementing a custom HIView and you need to receive this event,
@@ -31962,32 +36587,18 @@ const
  *    control part code into the parameter, and return noErr. 
  *    
  *    This event is sent from within HIViewClick and
-=======
- *    In fact, this event is actually sent from within HIViewClick and
->>>>>>> graemeg/fixes_2_2
-=======
- *    In fact, this event is actually sent from within HIViewClick and
->>>>>>> origin/fixes_2_2
  *    HandleControlClick. The default handling of this event is the
  *    Control ManagerÕs normal tracking logic; this is good enough for
  *    simple controls (such as push buttons) and controls with simple
  *    indicators (such as scroll bars and sliders). You should only
  *    need to handle or override this event if you are trying to do
  *    more complex tracking, such as displaying a menu in the middle of
-<<<<<<< HEAD
-<<<<<<< HEAD
  *    tracking. 
  *    
  *    In Mac OS X 10.4 and later, when this event is sent in response
  *    to a click in a compositing window, the event will include all of
  *    the fields of the kEventControlClick event, including
  *    kEventParamMouseButton, kEventParamClickCount, and so on.
-=======
- *    tracking.
->>>>>>> graemeg/fixes_2_2
-=======
- *    tracking.
->>>>>>> origin/fixes_2_2
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -32002,8 +36613,6 @@ const
  *          controlÕs owning window is composited, or port-local
  *          coordinates if not.
  *    
-<<<<<<< HEAD
-<<<<<<< HEAD
  *    <-> kEventParamKeyModifiers (in/out, typeUInt32)
  *          The current keyboard modifiers. On exit, the event handler
  *          may update this parameter with the modifiers that were
@@ -32090,30 +36699,6 @@ const
  *          Mac OS X 10.4 and later, and is only included for clicks in
  *          a compositing window or if the application calls
  *          HIViewClick itself.
-=======
-=======
->>>>>>> origin/fixes_2_2
- *    <-> kEventParamKeyModifiers (in/out, typeUInt32)
- *          The current keyboard modifiers. On exit, the event handler
- *          may update this parameter with the modifiers that were
- *          pressed when tracking ended; these modifiers will be
- *          included in the kEventCommandProcess event that is sent by
- *          the Control Manager.
- *    
- *    --> kEventParamControlAction (in, typeControlActionUPP)
- *          The control action proc that should be called by the
- *          control during tracking.
- *    
- *    <-- kEventParamControlPart (out, typeControlPartCode)
- *          On exit, contains the part code of the control part that
- *          was selected when tracking ended, or kControlNoPart if no
- *          part was selected. If the part code is non-zero, the
- *          Control Manager will automatically send kEventControlHit
- *          and kEventCommandProcess events.
-<<<<<<< HEAD
->>>>>>> graemeg/fixes_2_2
-=======
->>>>>>> origin/fixes_2_2
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -32207,23 +36792,10 @@ const
  *    --> kEventParamDirectObject (in, typeControlRef)
  *          The control that is being tracked.
  *    
-<<<<<<< HEAD
-<<<<<<< HEAD
  *    --> kEventParamControlIndicatorRegion (in, typeQDRgnHandle)
  *          The new indicator region.
  *    
  *    --> kEventParamControlIsGhosting (in, typeBoolean)
-=======
-=======
->>>>>>> origin/fixes_2_2
- *    --> kEventParamDirectObject (in, typeControlRef)
- *          The new indicator region.
- *    
- *    --> kEventParamControlIndicatorRegion (in, typeQDRgnHandle)
-<<<<<<< HEAD
->>>>>>> graemeg/fixes_2_2
-=======
->>>>>>> origin/fixes_2_2
  *          Indicates whether the control is using non-live-tracking
  *          (true) or live tracking (false).
  *  
@@ -32308,6 +36880,15 @@ const
  *    your control.
  *  
  *  Discussion:
+<<<<<<< HEAD
+ *    If you want to generate an efficient invalid region in response
+ *    to a size change, you need to handle
+ *    kEventControlInvalidateForSizeChange.
+<<<<<<< HEAD
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+=======
  *    This event is sent to your handler in order to fetch both regions
  *    and shapes from your view. Shapes will only be requested on Mac
  *    OS X 10.4 and later. There are two strategies for handling this
@@ -32341,6 +36922,7 @@ const
  *    kEventParamControlPrefersShape parameter being preserved across
  *    the call to CallNextEventHandler. This event may dynamically
  *    modify itself depending on how any given handler acts upon it.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -32348,7 +36930,23 @@ const
  *  Parameters:
  *    
  *    --> kEventParamDirectObject (in, typeControlRef)
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *          The control whose bounds to return.
+ *    
+ *    --> kEventParamControlPart (in, typeControlPartCode)
+ *          The control part whose bounds to return.
+ *    
+ *    <-- kEventParamControlPartBounds (out, typeHIRect)
+ *          On exit, contains the bounds of the specified part.
+=======
+=======
+>>>>>>> origin/fixes_2_2
+ *          The control whose bounds have changed.
+=======
  *          The control whose region/shape to return.
+>>>>>>> origin/fixes_2.4
  *    
  *    --> kEventParamControlPart (in, typeControlPartCode)
  *          The control part code whose region/shape to return.
@@ -32389,315 +36987,7 @@ const
  *          is destroyed. If your handler gets or modifies the
  *          kEventParamControlRegion parameter, it must not set this
  *          parameter.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
 <<<<<<< HEAD
-<<<<<<< HEAD
-	kEventControlGetPartRegion = 101;
-
-{
- *  kEventClassControl / kEventControlGetPartBounds
- *  
- *  Summary:
- *    Sent when a client wants to get a particular rectangle of your
- *    control when it may be more efficient than asking for a region.
-=======
-=======
->>>>>>> origin/fixes_2_2
-	kEventControlGetPartRegion = 101;
-
-{
- *  kEventClassControl / kEventControlGetPartBounds
- *  
- *  Summary:
- *    Sent when a client wants to get a particular rectangle of your
- *    control when it may be more efficient than asking for a region.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    --> kEventParamDirectObject (in, typeControlRef)
- *          The control whose bounds to return.
- *    
- *    --> kEventParamControlPart (in, typeControlPartCode)
- *          The control part whose bounds to return.
- *    
- *    <-- kEventParamControlPartBounds (out, typeHIRect)
- *          On exit, contains the bounds of the specified part.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventControlGetPartBounds = 102;
-
-{
- *  kEventClassControl / kEventControlSetData
- *  
- *  Summary:
- *    Sent by the SetControlData API when a client wants to change an
- *    arbitrary setting of your control.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    --> kEventParamDirectObject (in, typeControlRef)
- *          The control for which to set data.
- *    
- *    --> kEventParamControlPart (in, typeControlPartCode)
- *          The control part for which to set data.
- *    
- *    --> kEventParamControlDataTag (in, typeEnumeration)
- *          The type of data to set.
- *    
- *    --> kEventParamControlDataBuffer (in, typePtr)
- *          A pointer to the data.
- *    
- *    --> kEventParamControlDataBufferSize (in, typeLongInteger)
- *          The size of the data.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventControlSetData = 103;
-
-{
- *  kEventClassControl / kEventControlGetData
- *  
- *  Summary:
- *    Sent by the GetControlData API when a client wants to get an
- *    arbitrary setting of your control.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    --> kEventParamDirectObject (in, typeControlRef)
- *          The control from which to get data.
- *    
- *    --> kEventParamControlPart (in, typeControlPartCode)
- *          The control part for which to get data.
- *    
- *    --> kEventParamControlDataTag (in, typeEnumeration)
- *          The type of data to get.
- *    
- *    --> kEventParamControlDataBuffer (in, typePtr)
- *          A buffer in which to write the data.
- *    
- *    <-> kEventParamControlDataBufferSize (in/out, typeLongInteger)
- *          On entry, the size of the data buffer. On exit, the amount
- *          of data that was available.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventControlGetData = 104;
-
-{
- *  kEventClassControl / kEventControlGetSizeConstraints
- *  
- *  Summary:
- *    Sent by the HIViewGetSizeConstraints API to allow your custom
- *    control/view to specify its minimum and maximum size.
- *  
- *  Discussion:
- *    This is different from the optimal size event above. The optimal
- *    size might be larger than a viewÕs minimum size. A parent view
- *    can use this information to help it lay out subviews. The toolbar
- *    control uses this information to help lay out toolbar items, for
- *    example.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    --> kEventParamDirectObject (in, typeControlRef)
- *          The control for which to get size constraints.
- *    
- *    <-- kEventParamMinimumSize (out, typeHISize)
- *          On exit, contains the controlÕs minimum size.
- *    
- *    <-- kEventParamMaximumSize (out, typeHISize)
- *          On exit, contains the controlÕs maximum size.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventControlGetSizeConstraints = 105;
-
-{
- *  kEventClassControl / kEventControlGetFrameMetrics
- *  
- *  Summary:
- *    Sent when a control client needs to determine the width of the
- *    controlÕs structure region.
- *  
- *  Discussion:
- *    This event is not sent automatically by the Control Manager at
- *    any time, but may be sent by control clients during various
- *    layout operations. For example, the Window Manager will send this
- *    event to a window frame HIView to determine the window structure
- *    widths, and the Menu Manager will send this event to a menu
- *    content view to determine the content structure widths.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    --> kEventParamDirectObject (in, typeControlRef)
- *          The control for which to get frame metrics.
- *    
- *    <-- kEventParamControlFrameMetrics (out, typeControlFrameMetrics)
- *          On exit, contains the controlÕs frame metrics.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.3 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventControlGetFrameMetrics = 106;
-
-{
- *  kEventClassControl / kEventControlValueFieldChanged
- *  
- *  Summary:
- *    Sent when your controlÕs value, min, max, or view size has
- *    changed. Useful so other entities can watch for changes to your
- *    controlÕs value.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    --> kEventParamDirectObject (in, typeControlRef)
- *          The control whose value, min, max, or view size has changed.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventControlValueFieldChanged = 151;
-
-{
- *  kEventClassControl / kEventControlAddedSubControl
- *  
- *  Summary:
- *    Sent when a control was embedded within your control.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    --> kEventParamDirectObject (in, typeControlRef)
- *          The control that gained a new subcontrol.
- *    
- *    --> kEventParamControlSubControl (in, typeControlRef)
- *          The subcontrol that was added.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventControlAddedSubControl = 152;
-
-{
- *  kEventClassControl / kEventControlRemovingSubControl
- *  
- *  Summary:
- *    Sent when one of your child controls will be removed from your
- *    control.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    --> kEventParamDirectObject (in, typeControlRef)
- *          The control that will be losing a subcontrol.
- *    
- *    --> kEventParamControlSubControl (in, typeControlRef)
- *          The subcontrol that will be removed.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventControlRemovingSubControl = 153;
-
-{
- *  kEventClassControl / kEventControlBoundsChanged
- *  
- *  Summary:
- *    Sent when your controlÕs bounding rectangle has changed.
- *  
- *  Discussion:
- *    If you want to generate an efficient invalid region in response
- *    to a size change, you need to handle
- *    kEventControlInvalidateForSizeChange.
-<<<<<<< HEAD
->>>>>>> graemeg/fixes_2_2
-=======
->>>>>>> origin/fixes_2_2
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    --> kEventParamDirectObject (in, typeControlRef)
-<<<<<<< HEAD
-<<<<<<< HEAD
- *          The control whose bounds to return.
- *    
- *    --> kEventParamControlPart (in, typeControlPartCode)
- *          The control part whose bounds to return.
- *    
- *    <-- kEventParamControlPartBounds (out, typeHIRect)
- *          On exit, contains the bounds of the specified part.
-=======
-=======
->>>>>>> origin/fixes_2_2
- *          The control whose bounds have changed.
- *    
- *    --> kEventParamAttributes (in, typeUInt32)
- *          Flags indicating how the bounds changed, including
- *          kControlBoundsChangeSizeChanged and
- *          kControlBoundsChangePositionChanged.
- *    
- *    --> kEventParamOriginalBounds (in, typeQDRectangle)
- *          The controlÕs bounds before the change. This is the
- *          controlÕs frame bounds; for a compositing view, this
- *          bounding rect is in the parent viewÕs coordinate system,
- *          and for a non-compositing view, it is in local GrafPort
- *          coordinates.
- *    
- *    --> kEventParamPreviousBounds (in, typeQDRectangle)
- *          The controlÕs bounds before the change. This parameter
- *          always has the same value as the kEventParamOriginalBounds
- *          parameter.
  *    
  *    --> kEventParamCurrentBounds (in, typeQDRectangle)
  *          The controlÕs new bounds. This is the controlÕs frame
@@ -32708,12 +36998,15 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	kEventControlGetPartBounds = 102;
@@ -32728,11 +37021,15 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 	kEventControlBoundsChanged = 154;
+=======
+	kEventControlGetPartRegion = 101;
+>>>>>>> origin/fixes_2.4
 
 {
- *  kEventClassControl / kEventControlInvalidateForSizeChange
+ *  kEventClassControl / kEventControlGetPartBounds
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Sent when a control's size changes so it can invalidate the area
  *    of itself that needs to be redrawn.
  *  
@@ -32793,6 +37090,10 @@ const
  *    region that properly reflects the area of your control that needs
  *    to be redrawn after a size change. The default handler for this
  *    event will invalidate the entire control.
+=======
+ *    Sent when a client wants to get a particular rectangle of your
+ *    control when it may be more efficient than asking for a region.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -32800,26 +37101,31 @@ const
  *  Parameters:
  *    
  *    --> kEventParamDirectObject (in, typeControlRef)
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
  *          The control whose size has changed.
+=======
+ *          The control whose bounds to return.
+>>>>>>> origin/fixes_2.4
  *    
- *    --> kEventParamOriginalBounds (in, typeQDRectangle)
- *          The controlÕs bounds before the change.
+ *    --> kEventParamControlPart (in, typeControlPartCode)
+ *          The control part whose bounds to return.
  *    
- *    --> kEventParamCurrentBounds (in, typeQDRectangle)
- *          The controlÕs new bounds.
+ *    <-- kEventParamControlPartBounds (out, typeHIRect)
+ *          On exit, contains the bounds of the specified part.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.3 and later in Carbon.framework
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventControlInvalidateForSizeChange = 22;
+	kEventControlGetPartBounds = 102;
 
 {
- *  kEventClassControl / kEventControlVisibilityChanged
+ *  kEventClassControl / kEventControlSetData
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Sent when a control is hidden or shown. This is here to support
  *    custom views/controls which need to update information when the
  *    visibility changes.
@@ -32827,6 +37133,10 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Sent by the SetControlData API when a client wants to change an
+ *    arbitrary setting of your control.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -32834,6 +37144,7 @@ const
  *  Parameters:
  *    
  *    --> kEventParamDirectObject (in, typeControlRef)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *          The control from which to get data.
@@ -32850,6 +37161,21 @@ const
  *    <-> kEventParamControlDataBufferSize (in/out, typeByteCount)
  *          On entry, the size of the data buffer. On exit, the amount
  *          of data that was available. 
+=======
+ *          The control for which to set data.
+ *    
+ *    --> kEventParamControlPart (in, typeControlPartCode)
+ *          The control part for which to set data.
+ *    
+ *    --> kEventParamControlDataTag (in, typeEnumeration)
+ *          The type of data to set.
+ *    
+ *    --> kEventParamControlDataBuffer (in, typePtr)
+ *          A pointer to the data.
+ *    
+ *    --> kEventParamControlDataBufferSize (in, typeByteCount)
+ *          The size of the data. 
+>>>>>>> origin/fixes_2.4
  *          
  *          On Mac OS X 10.4 and earlier, this parameter uses
  *          typeSInt32, and you must retrieve it using that constant.
@@ -32859,25 +37185,27 @@ const
  *          this parameter; for 32-bit targets, however, you may
  *          continue to use typeSInt32 if you wish, or switch to
  *          typeByteCount.
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
  *          The control whose visibility has changed.
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventControlVisibilityChanged = 157;
+	kEventControlSetData = 103;
 
 {
- *  kEventClassControl / kEventControlOwningWindowChanged
+ *  kEventClassControl / kEventControlGetData
  *  
  *  Summary:
- *    Sent when your controlÕs owning window has changed. Useful to
- *    udpate any dependencies that your control has on its owning 
- *    window.
+ *    Sent by the GetControlData API when a client wants to get an
+ *    arbitrary setting of your control.
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -32885,26 +37213,45 @@ const
  *  Parameters:
  *    
  *    --> kEventParamDirectObject (in, typeControlRef)
- *          The control whose owning window has changed.
+ *          The control from which to get data.
  *    
- *    --> kEventParamAttributes (in, typeUInt32)
- *          Currently unused.
+ *    --> kEventParamControlPart (in, typeControlPartCode)
+ *          The control part for which to get data.
  *    
- *    --> kEventParamControlOriginalOwningWindow (in, typeWindowRef)
- *          The controlÕs original owning window.
+ *    --> kEventParamControlDataTag (in, typeEnumeration)
+ *          The type of data to get.
  *    
+<<<<<<< HEAD
  *    --> kEventParamControlCurrentOwningWindow (in, typeWindowRef)
  *          The controlÕs new owning window.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    --> kEventParamControlDataBuffer (in, typePtr)
+ *          A buffer in which to write the data.
+ *    
+ *    <-> kEventParamControlDataBufferSize (in/out, typeByteCount)
+ *          On entry, the size of the data buffer. On exit, the amount
+ *          of data that was available. 
+ *          
+ *          On Mac OS X 10.4 and earlier, this parameter uses
+ *          typeSInt32, and you must retrieve it using that constant.
+ *          On Mac OS X 10.5 and later, to support 64-bit data sizes,
+ *          this parameter uses typeByteCount. For 64-bit
+ *          compatibility, you must use typeByteCount when retrieving
+ *          this parameter; for 32-bit targets, however, you may
+ *          continue to use typeSInt32 if you wish, or switch to
+ *          typeByteCount.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	kEventControlGetData = 104;
@@ -32926,16 +37273,31 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 	kEventControlOwningWindowChanged = 159;
+=======
+	kEventControlGetData = 104;
+>>>>>>> origin/fixes_2.4
 
 {
- *  kEventClassControl / kEventControlTitleChanged
+ *  kEventClassControl / kEventControlGetSizeConstraints
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Sent when the title of your control changes.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Sent by the HIViewGetSizeConstraints API to allow your custom
+ *    control/view to specify its minimum and maximum size.
+ *  
+ *  Discussion:
+ *    This is different from the optimal size event above. The optimal
+ *    size might be larger than a viewÕs minimum size. A parent view
+ *    can use this information to help it lay out subviews. The toolbar
+ *    control uses this information to help lay out toolbar items, for
+ *    example.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -32945,6 +37307,9 @@ const
  *    --> kEventParamDirectObject (in, typeControlRef)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *          The control for which to get size constraints.
  *    
  *    <-- kEventParamMinimumSize (out, typeHISize)
@@ -32952,18 +37317,22 @@ const
  *    
  *    <-- kEventParamMaximumSize (out, typeHISize)
  *          On exit, contains the controlÕs maximum size.
+<<<<<<< HEAD
 =======
  *          The control whose title has changed.
 >>>>>>> graemeg/fixes_2_2
 =======
  *          The control whose title has changed.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.2 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	kEventControlGetSizeConstraints = 105;
@@ -32986,11 +37355,15 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 	kEventControlTitleChanged = 158;
+=======
+	kEventControlGetSizeConstraints = 105;
+>>>>>>> origin/fixes_2.4
 
 {
- *  kEventClassControl / kEventControlHiliteChanged
+ *  kEventClassControl / kEventControlGetFrameMetrics
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Sent when the hilite state changes in a control. This is here to
  *    support custom views/controls which need to update information
  *    when the hilite state changes.
@@ -32998,6 +37371,18 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Sent when a control client needs to determine the width of the
+ *    controlÕs structure region.
+ *  
+ *  Discussion:
+ *    This event is not sent automatically by the Control Manager at
+ *    any time, but may be sent by control clients during various
+ *    layout operations. For example, the Window Manager will send this
+ *    event to a window frame HIView to determine the window structure
+ *    widths, and the Menu Manager will send this event to a menu
+ *    content view to determine the content structure widths.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -33005,6 +37390,7 @@ const
  *  Parameters:
  *    
  *    --> kEventParamDirectObject (in, typeControlRef)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *          The control for which to get frame metrics.
@@ -33033,21 +37419,25 @@ const
  *    
  *    --> kEventParamControlPreviousPart (in, typeControlPartCode)
  *          The previously hilited part.
+=======
+ *          The control for which to get frame metrics.
+>>>>>>> origin/fixes_2.4
  *    
- *    --> kEventParamControlCurrentPart (in, typeControlPartCode)
- *          The newly hilited part.
+ *    <-- kEventParamControlFrameMetrics (out, typeControlFrameMetrics)
+ *          On exit, contains the controlÕs frame metrics.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventControlHiliteChanged = 160;
+	kEventControlGetFrameMetrics = 106;
 
 {
- *  kEventClassControl / kEventControlEnabledStateChanged
+ *  kEventClassControl / kEventControlValueFieldChanged
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Sent when the enabled state changes in a control. This is here to
  *    support custom views/controls which need to update information
  *    when the enabled state changes.
@@ -33055,6 +37445,11 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Sent when your controlÕs value, min, max, or view size has
+ *    changed. Useful so other entities can watch for changes to your
+ *    controlÕs value.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -33062,6 +37457,7 @@ const
  *  Parameters:
  *    
  *    --> kEventParamDirectObject (in, typeControlRef)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *          The control whose value, min, max, or view size has changed.
@@ -33082,23 +37478,30 @@ const
 =======
 >>>>>>> origin/fixes_2_2
  *          The control whose enabled state has changed.
+=======
+ *          The control whose value, min, max, or view size has changed.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventControlEnabledStateChanged = 161;
+	kEventControlValueFieldChanged = 151;
 
 {
- *  kEventClassControl / kEventControlLayoutInfoChanged
+ *  kEventClassControl / kEventControlAddedSubControl
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Sent when the layout info changes in a control.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Sent when a control was embedded within your control.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -33108,10 +37511,14 @@ const
  *    --> kEventParamDirectObject (in, typeControlRef)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *          The control that gained a new subcontrol.
  *    
  *    --> kEventParamControlSubControl (in, typeControlRef)
  *          The subcontrol that was added.
+<<<<<<< HEAD
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -33130,24 +37537,31 @@ const
 =======
 >>>>>>> origin/fixes_2_2
  *          The control whose enabled state has changed.
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventControlLayoutInfoChanged = 162;
+	kEventControlAddedSubControl = 152;
 
 {
- *  kEventClassControl / kEventControlArbitraryMessage
+ *  kEventClassControl / kEventControlRemovingSubControl
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Sent by the SendControlMessage API when someone is trying to send
  *    an old-style CDEF message to your control.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Sent when one of your child controls will be removed from your
+ *    control.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -33155,6 +37569,7 @@ const
  *  Parameters:
  *    
  *    --> kEventParamDirectObject (in, typeControlRef)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *          The control that will be losing a subcontrol.
@@ -33179,12 +37594,19 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *          The control that will be losing a subcontrol.
+ *    
+ *    --> kEventParamControlSubControl (in, typeControlRef)
+ *          The subcontrol that will be removed.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	kEventControlRemovingSubControl = 153;
@@ -33225,28 +37647,28 @@ const
    * The top left corner (position) changed.
    }
 	kControlBoundsChangePositionChanged = 1 shl 3;
+=======
+	kEventControlRemovingSubControl = 153;
+>>>>>>> origin/fixes_2.4
 
-{--------------------------------------------------------------------------------------}
-{  Tablet Events (and tablet data in mouse events)                                     }
-{--------------------------------------------------------------------------------------}
 {
-    kEventClassTablet quick reference:
-  
-    kEventTabletPoint                   = 1,
-    kEventTabletProximity               = 2,
-}
-{
- *  kEventClassTablet / kEventTabletPoint
+ *  kEventClassControl / kEventControlBoundsChanged
  *  
  *  Summary:
- *    Indicates that the pen has moved on or near a tablet.
+ *    Sent when your controlÕs bounding rectangle has changed.
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    Same as deprecated kEventTabletPointer.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    If you want to generate an efficient invalid region in response
+ *    to a size change, you need to handle
+ *    kEventControlInvalidateForSizeChange.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -33255,6 +37677,9 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    --> kEventParamDirectObject (in, typeControlRef)
  *          The control whose bounds have changed.
  *    
@@ -33280,6 +37705,7 @@ const
  *          bounds; for a compositing view, this bounding rect is in
  *          the parent viewÕs coordinate system, and for a
  *          non-compositing view, it is in local GrafPort coordinates.
+<<<<<<< HEAD
 =======
  *    --> kEventParamTabletPointRec (in, typeTabletPointRec)
  *          Tablet information for the event.
@@ -33288,12 +37714,15 @@ const
  *    --> kEventParamTabletPointRec (in, typeTabletPointRec)
  *          Tablet information for the event.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	kEventControlBoundsChanged = 154;
@@ -33314,17 +37743,31 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 	kEventTabletPoint = 1;
+=======
+	kEventControlBoundsChanged = 154;
+>>>>>>> origin/fixes_2.4
 
 {
- *  kEventClassTablet / kEventTabletProximity
+ *  kEventClassControl / kEventControlInvalidateForSizeChange
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Indicates that the pen has entered or exited proximity of a
  *    tablet.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Sent when a control's size changes so it can invalidate the area
+ *    of itself that needs to be redrawn.
+ *  
+ *  Discussion:
+ *    Handle this event by calling HIViewSetNeedsDisplayInRegion with a
+ *    region that properly reflects the area of your control that needs
+ *    to be redrawn after a size change. The default handler for this
+ *    event will invalidate the entire control.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -33333,6 +37776,9 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    --> kEventParamDirectObject (in, typeControlRef)
  *          The control whose size has changed.
  *    
@@ -33341,6 +37787,7 @@ const
  *    
  *    --> kEventParamCurrentBounds (in, typeQDRectangle)
  *          The controlÕs new bounds.
+<<<<<<< HEAD
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in Carbon.framework
@@ -33361,66 +37808,21 @@ const
 >>>>>>> origin/fixes_2_2
  *    --> kEventParamTabletProximityRec (in, typeTabletProximityRec)
  *          Tablet information for the event.
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventTabletProximity = 2;
-
-type
-	TabletPointRecPtr = ^TabletPointRec;
-	TabletPointRec = record
-		absX: SInt32;                   { absolute x coordinate in tablet space at full tablet resolution }
-		absY: SInt32;                   { absolute y coordinate in tablet space at full tablet resolution }
-		absZ: SInt32;                   { absolute z coordinate in tablet space at full tablet resolution }
-		buttons: UInt16;                { one bit per button - bit 0 is first button - 1 = closed }
-		pressure: UInt16;               { scaled pressure value; MAXPRESSURE=(2^16)-1, MINPRESSURE=0 }
-		tiltX: SInt16;                  { scaled tilt x value; range is -((2^15)-1) to (2^15)-1 (-32767 to 32767) }
-		tiltY: SInt16;                  { scaled tilt y value; range is -((2^15)-1) to (2^15)-1 (-32767 to 32767) }
-		rotation: UInt16;               { Fixed-point representation of device rotation in a 10.6 format }
-		tangentialPressure: SInt16;     { tangential pressure on the device; range same as tilt }
-		deviceID: UInt16;               { system-assigned unique device ID - matches to deviceID field in proximity event }
-		vendor1: SInt16;                { vendor-defined signed 16-bit integer }
-		vendor2: SInt16;                { vendor-defined signed 16-bit integer }
-		vendor3: SInt16;                { vendor-defined signed 16-bit integer }
-	end;
-type
-	TabletPointerRec = TabletPointRec;
-	TabletPointerRecPtr = ^TabletPointerRec;
-	TabletProximityRecPtr = ^TabletProximityRec;
-	TabletProximityRec = record
-		vendorID: UInt16;               { vendor-defined ID - typically will be USB vendor ID }
-		tabletID: UInt16;               { vendor-defined tablet ID - typically will be USB product ID for the tablet }
-		pointerID: UInt16;              { vendor-defined ID of the specific pointing device }
-		deviceID: UInt16;               { system-assigned unique device ID - matches to deviceID field in tablet event }
-		systemTabletID: UInt16;         { system-assigned unique tablet ID }
-		vendorPointerType: UInt16;      { vendor-defined pointer type }
-		pointerSerialNumber: UInt32;    { vendor-defined serial number of the specific pointing device }
-		uniqueID: UInt64;               { vendor-defined unique ID for this pointer }
-		capabilityMask: UInt32;         { mask representing the capabilities of the device. }
-                                              { capability bits are defined in the tablet capability }
-                                              { masks section of <IOKit/hidsystem/IOLLEvent.h> }
-		pointerType: SInt8;            { type of pointing device - enum to be defined }
-		enterProximity: SInt8;         { non-zero = entering; zero = leaving }
-	end;
-{--------------------------------------------------------------------------------------}
-{ Volume Events                                                                        }
-{--------------------------------------------------------------------------------------}
-{
-    kEventClassVolume quick reference:
-
-    kEventVolumeMounted             = 1,        // new volume mounted
-    kEventVolumeUnmounted           = 2         // volume has been ejected or unmounted
-}
-const
-	typeFSVolumeRefNum = FourCharCode('voln'); { FSVolumeRefNum}
+	kEventControlInvalidateForSizeChange = 22;
 
 {
- *  kEventClassVolume / kEventVolumeMounted
+ *  kEventClassControl / kEventControlVisibilityChanged
  *  
  *  Summary:
+<<<<<<< HEAD
  *    A new volume has been mounted (or new media inserted).
  *  
  *  Discussion:
@@ -33429,12 +37831,18 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Sent when a control is hidden or shown. This is here to support
+ *    custom views/controls which need to update information when the
+ *    visibility changes.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    --> kEventParamDirectObject (in, typeControlRef)
@@ -33459,18 +37867,23 @@ const
 >>>>>>> origin/fixes_2_2
  *    --> kEventParamDirectObject (in, typeFSVolumeRefNum)
  *          The volume refnum of the volume that was mounted.
+=======
+ *    --> kEventParamDirectObject (in, typeControlRef)
+ *          The control whose visibility has changed.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework
- *    CarbonLib:        in CarbonLib 1.3.1 and later
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    CarbonLib:        not available
  }
 const
-	kEventVolumeMounted = 1;
+	kEventControlVisibilityChanged = 157;
 
 {
- *  kEventClassVolume / kEventVolumeUnmounted
+ *  kEventClassControl / kEventControlOwningWindowChanged
  *  
  *  Summary:
+<<<<<<< HEAD
  *    An existing volume has been unmounted (or media ejected).
  *  
  *  Discussion:
@@ -33479,6 +37892,11 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Sent when your controlÕs owning window has changed. Useful to
+ *    udpate any dependencies that your control has on its owning 
+ *    window.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -33487,6 +37905,9 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    --> kEventParamDirectObject (in, typeControlRef)
  *          The control whose owning window has changed.
  *    
@@ -33498,6 +37919,7 @@ const
  *    
  *    --> kEventParamControlCurrentOwningWindow (in, typeWindowRef)
  *          The controlÕs new owning window.
+<<<<<<< HEAD
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -33520,26 +37942,21 @@ const
  *          volume refnum, and cannot be passed to any File Manager
  *          API; it is useful only for comparison with cached volume
  *          refnums in your own data structures.
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
- *    CarbonLib:        in CarbonLib 1.3.1 and later
+ *    CarbonLib:        not available
  }
 const
-	kEventVolumeUnmounted = 2;
+	kEventControlOwningWindowChanged = 159;
 
-{--------------------------------------------------------------------------------------}
-{ Appearance Events                                                                    }
-{--------------------------------------------------------------------------------------}
 {
-    kEventClassAppearance quick reference:
-
-    kEventAppearanceScrollBarVariantChanged = 1
-}
-{
- *  kEventClassAppearance / kEventAppearanceScrollBarVariantChanged
+ *  kEventClassControl / kEventControlTitleChanged
  *  
  *  Summary:
+<<<<<<< HEAD
  *    The scroll bar variant has changed. Available on Mac OS X 10.1
  *    and later.
  *  
@@ -33574,50 +37991,36 @@ const
  *    when the hilite state changes.
 =======
 =======
+=======
+ *    Sent when the title of your control changes.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
  *    --> kEventParamNewScrollBarVariant (in, typeShortInteger)
  *          The new scroll bar variant.
+=======
+ *    --> kEventParamDirectObject (in, typeControlRef)
+ *          The control whose title has changed.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
- *    Mac OS X:         in version 10.1 and later in Carbon.framework
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventAppearanceScrollBarVariantChanged = 1;
+	kEventControlTitleChanged = 158;
 
-{--------------------------------------------------------------------------------------}
-{  Services Events                                                                     }
-{--------------------------------------------------------------------------------------}
 {
-    kEventClassService quick reference:
-    
-    Services are a feature by which applications can communicate with
-    one another to request and provide services. This communication
-    happens either through the Pasteboard or Scrap Manager. When an event is sent that 
-    requires communication for processing or servicing a request, 
-    you will need to use the pasteboard or scrap given in the kEventParamPasteboardRef and
-    kEventParamScrapRef parameters of the event in order to communicate.
-    When your app requests a service, it is usually acting on data that is 
-    currently selected or in focus. Therefore all of the Services events 
-    are sent to the UserFocus event target.
-    <BR><BR>
-    Service events are available on Mac OS X 10.1 and later.
-    
-    kEventServiceCopy           = 1,
-    kEventServicePaste          = 2,
-    kEventServiceGetTypes       = 3,
-    kEventServicePerform        = 4
-}
-{
- *  kEventClassService / kEventServiceCopy
+ *  kEventClassControl / kEventControlHiliteChanged
  *  
  *  Summary:
+<<<<<<< HEAD
  *    The user has invoked a service that requires the application to
  *    update the given pasteboard or scrap in the
  *    kEventParamPasteboardRef and kEventParamScrapRef parameters with
@@ -33668,10 +38071,16 @@ const
  *    support custom views/controls which need to update information
  *    when the enabled state changes.
 <<<<<<< HEAD
+=======
+ *    Sent when the hilite state changes in a control. This is here to
+ *    support custom views/controls which need to update information
+ *    when the hilite state changes.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 =======
 =======
 =======
@@ -33680,22 +38089,31 @@ const
  *          Data from the current selection should be placed into this
  *          pasteboard. This parameter is provided on Mac OS X 10.3 and
  *          later.
+=======
+ *  Parameters:
  *    
- *    --> kEventParamScrapRef (in, typeScrapRef)
- *          Data from the current selection should be placed into this
- *          scrap.
+ *    --> kEventParamDirectObject (in, typeControlRef)
+ *          The control whose hilite has changed.
+>>>>>>> origin/fixes_2.4
+ *    
+ *    --> kEventParamControlPreviousPart (in, typeControlPartCode)
+ *          The previously hilited part.
+ *    
+ *    --> kEventParamControlCurrentPart (in, typeControlPartCode)
+ *          The newly hilited part.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.1 and later in Carbon.framework
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventServiceCopy = 1;
+	kEventControlHiliteChanged = 160;
 
 {
- *  kEventClassService / kEventServicePaste
+ *  kEventClassControl / kEventControlEnabledStateChanged
  *  
  *  Summary:
+<<<<<<< HEAD
  *    The user has invoked a service that requires the application to
  *    update the current focus with data from the pasteboard or scrap
  *    given in the kEventParamPasteboardRef and kEventParamScrapRef
@@ -33714,6 +38132,11 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Sent when the enabled state changes in a control. This is here to
+ *    support custom views/controls which need to update information
+ *    when the enabled state changes.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -33743,26 +38166,21 @@ const
 >>>>>>> origin/fixes_2_2
  *  Parameters:
  *    
- *    --> kEventParamPasteboardRef (in, typePasteboardRef)
- *          The current selection should be replaced by data from this
- *          pasteboard. This parameter is provided on Mac OS X 10.3 and
- *          later.
- *    
- *    --> kEventParamScrapRef (in, typeScrapRef)
- *          The current selection should be replaced by data from this
- *          scrap.
+ *    --> kEventParamDirectObject (in, typeControlRef)
+ *          The control whose enabled state has changed.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.1 and later in Carbon.framework
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventServicePaste = 2;
+	kEventControlEnabledStateChanged = 161;
 
 {
- *  kEventClassService / kEventServiceGetTypes
+ *  kEventClassControl / kEventControlLayoutInfoChanged
  *  
  *  Summary:
+<<<<<<< HEAD
  *    The Services Manager needs to know what types of data the
  *    application can copy and paste to and from the pasteboard or
  *    scrap in order to update the Services menu to enable items that
@@ -33779,12 +38197,16 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Sent when the layout info changes in a control.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    --> kEventParamDirectObject (in, typeControlRef)
@@ -33817,18 +38239,23 @@ const
  *          Add CFStringRefs to this array to report the types that can
  *          be pasted into the currently focused object. These strings
  *          will be released automatically after the event is handled.
+=======
+ *    --> kEventParamDirectObject (in, typeControlRef)
+ *          The control whose layout info has changed.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
- *    Mac OS X:         in version 10.1 and later in Carbon.framework
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventServiceGetTypes = 3;
+	kEventControlLayoutInfoChanged = 162;
 
 {
- *  kEventClassService / kEventServicePerform
+ *  kEventClassControl / kEventControlFocusPartChanged
  *  
  *  Summary:
+<<<<<<< HEAD
  *    If the application is a service provider, this event will get
  *    sent when a service is requested of the app.
  *  
@@ -33842,12 +38269,19 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Sent when the focused part changes in a control. 
+ *    
+ *    This event is sent only to the control, and is not propagated
+ *    past it.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    --> kEventParamDirectObject (in, typeControlRef)
@@ -33886,24 +38320,31 @@ const
  *    --> kEventParamScrapRef (in, typeScrapRef)
  *          The scrap that should be used to send and receive data from
  *          the requester.
+=======
+ *    --> kEventParamDirectObject (in, typeControlRef)
+ *          The control whose focused part has changed.
+>>>>>>> origin/fixes_2.4
  *    
- *    --> kEventParamServiceMessageName (in, typeCFStringRef)
- *          A string with the name of the advertised service that was
- *          invoked.
+ *    --> kEventParamControlPreviousPart (in, typeControlPartCode)
+ *          The previously focused part. This value will be zero when
+ *          the control is gaining focus.
  *    
- *    --> kEventParamServiceUserData (in, typeCFStringRef)
- *          Extra data provided by the requestor.
+ *    --> kEventParamControlCurrentPart (in, typeControlPartCode)
+ *          The newly focused part. This value will be zero when the
+ *          control is losing focus.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.1 and later in Carbon.framework
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventServicePerform = 4;
+	kEventControlFocusPartChanged = 164;
 
+{$ifc not TARGET_CPU_64}
 {
- *  CreateTypeStringWithOSType()
+ *  kEventClassControl / kEventControlArbitraryMessage
  *  
+<<<<<<< HEAD
  *  Discussion:
  *    This routine is used to convert an OSType to a CFStringRef that
  *    services will understand.
@@ -33987,12 +38428,18 @@ const
  *    Same as deprecated kEventTabletPointer.
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  Summary:
+ *    Sent by the SendControlMessage API when someone is trying to send
+ *    an old-style CDEF message to your control.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    --> kEventParamTabletPointRec (in, typeTabletPointRec)
  *          Tablet information for the event.
@@ -34022,32 +38469,45 @@ const
  *    will return NULL for failure, and because it is a "Create"
  *    function you will need to CFRelease this string when it is no
  *    longer needed.
+=======
+ *    --> kEventParamDirectObject (in, typeControlRef)
+ *          The control that is receiving the message.
+ *    
+ *    --> kEventParamControlMessage (in, typeSInt16)
+ *          The message.
+ *    
+ *    --> kEventParamControlParam (in, typeRefCon)
+ *          The inParam parameter from SendControlMessage. 
+ *          
+ *          On Mac OS X 10.4 and earlier, this parameter uses
+ *          typeSInt32, and you must retrieve it using that constant.
+ *          On Mac OS X 10.5 and later, to support 64-bit refcon
+ *          values, this parameter uses typeRefCon. For 64-bit
+ *          compatibility, you must use typeRefCon when retrieving this
+ *          parameter; for 32-bit targets, however, you may continue to
+ *          use typeSInt32 if you wish, or switch to typeRefCon.
+ *    
+ *    <-- kEventParamControlResult (out, typeSInt32)
+ *          On exit, contains the result that should be returned from
+ *          SendControlMessage.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
- *    Mac OS X:         in version 10.1 and later in Carbon.framework
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        not available
  }
-function CreateTypeStringWithOSType( inType: OSType ): CFStringRef; external name '_CreateTypeStringWithOSType';
-(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+const
+	kEventControlArbitraryMessage = 201;
+
+{$endc} {not TARGET_CPU_64}
 
 
 {
- *  kHIServicesMenuProviderName
+ *  Summary:
+ *    Control bounds change event attributes
  *  
  *  Discussion:
- *    A CFDictionaryRef key in a dictionary returned by
- *    CopyServicesMenuCommandKeys. The value for this key is the name
- *    of the service provider represented as a CFString.
- }
-{$ifc USE_CFSTR_CONSTANT_MACROS}
-{$definec kHIServicesMenuProviderName CFSTRP('kHIServicesMenuProviderName')}
-{$endc}
-
-{
- *  kHIServicesMenuItemName
- *  
- *  Discussion:
+<<<<<<< HEAD
  *    A CFDictionaryRef key in a dictionary returned by
  *    CopyServicesMenuCommandKeys. The value for this key is the name
  *    of the menu item represented as a CFString.
@@ -34177,54 +38637,48 @@ const
 =======
 {$endc}
 
-{
- *  kHIServicesMenuCharCode
- *  
- *  Discussion:
- *    A CFDictionaryRef key in a dictionary returned by
- *    CopyServicesMenuCommandKeys. The value for this key is the
- *    character code of the menu item shortcut, represented as a
- *    CFString.
+=======
+ *    When the toolbox sends out a kEventControlBoundsChanged event, it
+ *    also sends along a parameter containing attributes of the event.
+ *    These attributes can be used to determine what aspect of the
+ *    control changed (position, size, or both).
  }
-{$ifc USE_CFSTR_CONSTANT_MACROS}
-{$definec kHIServicesMenuCharCode CFSTRP('kHIServicesMenuCharCode')}
-{$endc}
+const
+>>>>>>> origin/fixes_2.4
+{
+   * The dimensions of the control (width and height) changed.
+   }
+	kControlBoundsChangeSizeChanged = 1 shl 2;
 
+  {
+   * The top left corner (position) changed.
+   }
+	kControlBoundsChangePositionChanged = 1 shl 3;
+
+{--------------------------------------------------------------------------------------}
+{  Tablet Events (and tablet data in mouse events)                                     }
+{--------------------------------------------------------------------------------------}
 {
- *  kHIServicesMenuKeyModifiers
- *  
- *  Discussion:
- *    A CFDictionaryRef key in a dictionary returned by
- *    CopyServicesMenuCommandKeys. The value for this key is the
- *    keyboard modifiers of the menu item shortcut in Menu Manager
- *    modifiers format, represented as a CFNumber.
- }
-{$ifc USE_CFSTR_CONSTANT_MACROS}
-{$definec kHIServicesMenuKeyModifiers CFSTRP('kHIServicesMenuKeyModifiers')}
-{$endc}
+    kEventClassTablet quick reference:
+  
+    kEventTabletPoint                   = 1,
+    kEventTabletProximity               = 2,
+}
 {
- *  CopyServicesMenuCommandKeys()
+ *  kEventClassTablet / kEventTabletPoint
  *  
  *  Summary:
- *    Returns an array of CFDictionaryRefs containing information about
- *    the command-key short cuts for items in the application services
- *    menu.
+ *    Indicates that the pen has moved on or near a tablet.
  *  
  *  Discussion:
- *    Each array entry is a CFDictionaryRef, and each dictionary
- *    contains information about a single command key shortcut for
- *    items in the application's Services menu. Each dictionary
- *    contains the following keys: kHIServicesMenuProviderName,
- *    kHIServicesMenuItemName, kHIServicesMenuCharCode, and
- *    kHIServicesMenuKeyModifiers. The array must be released by the
- *    caller; the dictionaries do not need to be released (they will be
- *    auto-released when the array is released).
+ *    Same as deprecated kEventTabletPointer.
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
  *    outCommandKeyArray:
  *      On exit, contains an array of the values of the Services menu
@@ -34232,42 +38686,96 @@ const
  *  
  *  Result:
  *    An operating system status code.
+=======
+ *    --> kEventParamTabletPointRec (in, typeTabletPointRec)
+ *          Tablet information for the event.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
- *    Mac OS X:         in version 10.4 and later in Carbon.framework
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        not available
  }
-function CopyServicesMenuCommandKeys( var outCommandKeyArray: CFArrayRef ): OSStatus; external name '_CopyServicesMenuCommandKeys';
-(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+const
+	kEventTabletPoint = 1;
 
-
-{--------------------------------------------------------------------------------------}
-{  Accessibility Events                                                                }
-{--------------------------------------------------------------------------------------}
 {
-    kEventClassAccessibility quick reference:
-    
-    kEventAccessibleGetChildAtPoint                     =   1,
-    kEventAccessibleGetFocusedChild                     =   2,
-    
-    kEventAccessibleGetAllAttributeNames                =   21,
-    kEventAccessibleGetAllParameterizedAttributeNames   =   25,
-    kEventAccessibleGetNamedAttribute                   =   22,
-    kEventAccessibleSetNamedAttribute                   =   23,
-    kEventAccessibleIsNamedAttributeSettable            =   24,
-    
-    kEventAccessibleGetAllActionNames                   =   41,
-    kEventAccessiblePerformNamedAction                  =   42,
-    kEventAccessibleGetNamedActionDescription           =   44
-}
-{
- *  kEventClassAccessibility / kEventAccessibleGetChildAtPoint
+ *  kEventClassTablet / kEventTabletProximity
  *  
  *  Summary:
- *    Finds the child of an accessible object at a given point.
+ *    Indicates that the pen has entered or exited proximity of a
+ *    tablet.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamTabletProximityRec (in, typeTabletProximityRec)
+ *          Tablet information for the event.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventTabletProximity = 2;
+
+type
+	TabletPointRecPtr = ^TabletPointRec;
+	TabletPointRec = record
+		absX: SInt32;                   { absolute x coordinate in tablet space at full tablet resolution }
+		absY: SInt32;                   { absolute y coordinate in tablet space at full tablet resolution }
+		absZ: SInt32;                   { absolute z coordinate in tablet space at full tablet resolution }
+		buttons: UInt16;                { one bit per button - bit 0 is first button - 1 = closed }
+		pressure: UInt16;               { scaled pressure value; MAXPRESSURE=(2^16)-1, MINPRESSURE=0 }
+		tiltX: SInt16;                  { scaled tilt x value; range is -((2^15)-1) to (2^15)-1 (-32767 to 32767) }
+		tiltY: SInt16;                  { scaled tilt y value; range is -((2^15)-1) to (2^15)-1 (-32767 to 32767) }
+		rotation: UInt16;               { Fixed-point representation of device rotation in a 10.6 format }
+		tangentialPressure: SInt16;     { tangential pressure on the device; range same as tilt }
+		deviceID: UInt16;               { system-assigned unique device ID - matches to deviceID field in proximity event }
+		vendor1: SInt16;                { vendor-defined signed 16-bit integer }
+		vendor2: SInt16;                { vendor-defined signed 16-bit integer }
+		vendor3: SInt16;                { vendor-defined signed 16-bit integer }
+	end;
+type
+	TabletPointerRec = TabletPointRec;
+	TabletPointerRecPtr = ^TabletPointerRec;
+	TabletProximityRecPtr = ^TabletProximityRec;
+	TabletProximityRec = record
+		vendorID: UInt16;               { vendor-defined ID - typically will be USB vendor ID }
+		tabletID: UInt16;               { vendor-defined tablet ID - typically will be USB product ID for the tablet }
+		pointerID: UInt16;              { vendor-defined ID of the specific pointing device }
+		deviceID: UInt16;               { system-assigned unique device ID - matches to deviceID field in tablet event }
+		systemTabletID: UInt16;         { system-assigned unique tablet ID }
+		vendorPointerType: UInt16;      { vendor-defined pointer type }
+		pointerSerialNumber: UInt32;    { vendor-defined serial number of the specific pointing device }
+		uniqueID: UInt64;               { vendor-defined unique ID for this pointer }
+		capabilityMask: UInt32;         { mask representing the capabilities of the device. }
+                                              { capability bits are defined in the tablet capability }
+                                              { masks section of <IOKit/hidsystem/IOLLEvent.h> }
+		pointerType: UInt8;            { type of pointing device - enum to be defined }
+		enterProximity: UInt8;         { non-zero = entering; zero = leaving }
+	end;
+{--------------------------------------------------------------------------------------}
+{ Volume Events                                                                        }
+{--------------------------------------------------------------------------------------}
+{
+    kEventClassVolume quick reference:
+
+    kEventVolumeMounted             = 1,        // new volume mounted
+    kEventVolumeUnmounted           = 2         // volume has been ejected or unmounted
+}
+const
+	typeFSVolumeRefNum = FourCharCode('voln'); { FSVolumeRefNum}
+
+{
+ *  kEventClassVolume / kEventVolumeMounted
+ *  
+ *  Summary:
+ *    A new volume has been mounted (or new media inserted).
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    The kEventParamMouseLocation parameter will contain a global
  *    point. Your handler for this event should find the child of
  *    yourself which is underneath that point and return it in the
@@ -34276,12 +38784,16 @@ function CopyServicesMenuCommandKeys( var outCommandKeyArray: CFArrayRef ): OSSt
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    This event is sent to all handlers registered for it.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    --> kEventParamDirectObject (in, typeFSVolumeRefNum)
@@ -34318,21 +38830,26 @@ const
  *          noErr, but leave the parameter empty (do not call
  *          SetEventParameter). Only return immediate children; do not
  *          return grandchildren of yourself.
+=======
+ *    --> kEventParamDirectObject (in, typeFSVolumeRefNum)
+ *          The volume refnum of the volume that was mounted.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.3.1 and later
  }
 const
-	kEventAccessibleGetChildAtPoint = 1;
+	kEventVolumeMounted = 1;
 
 {
- *  kEventClassAccessibility / kEventAccessibleGetFocusedChild
+ *  kEventClassVolume / kEventVolumeUnmounted
  *  
  *  Summary:
- *    Finds the focused child of an accessible object.
+ *    An existing volume has been unmounted (or media ejected).
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    Your handler for this event should find the child of itself which
  *    is part of the focus chain and return it in the
  *    kEventParamAccessibleChild parameter.
@@ -34340,6 +38857,9 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    This event is sent to all handlers registered for it.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -34348,12 +38868,16 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    --> kEventParamDirectObject (in, typeFSVolumeRefNum)
  *          The volume refnum of the volume that was unmounted. At the
  *          point when this event is sent, this is no longer a valid
  *          volume refnum, and cannot be passed to any File Manager
  *          API; it is useful only for comparison with cached volume
  *          refnums in your own data structures.
+<<<<<<< HEAD
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -34393,18 +38917,29 @@ const
  *          but leave the parameter empty (do not call
  *          SetEventParameter). Only return immediate children; do not
  *          return grandchildren of yourself.
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.3.1 and later
  }
 const
-	kEventAccessibleGetFocusedChild = 2;
+	kEventVolumeUnmounted = 2;
 
+{--------------------------------------------------------------------------------------}
+{ Appearance Events                                                                    }
+{--------------------------------------------------------------------------------------}
 {
- *  kEventClassAccessibility / kEventAccessibleGetAllAttributeNames
+    kEventClassAppearance quick reference:
+
+    kEventAppearanceScrollBarVariantChanged = 1
+}
+{
+ *  kEventClassAppearance / kEventAppearanceScrollBarVariantChanged
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Returns the attributes supported by an accessible object. You
  *    must only return the names of your regular (non-parameterized)
  *    attributes via this event. If you support parameterized
@@ -34414,12 +38949,21 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    The scroll bar variant has changed. Available on Mac OS X 10.1
+ *    and later.
+ *  
+ *  Discussion:
+ *    This event is sent to all handlers registered for it on Mac OS X
+ *    10.3 and later.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    --> kEventParamNewScrollBarVariant (in, typeSInt16)
@@ -34483,18 +39027,46 @@ const
  *          Add each of the regular (non-parameterized) attribute names
  *          supported by the accessible object to this array, as
  *          CFStringRefs.
+=======
+ *    --> kEventParamNewScrollBarVariant (in, typeSInt16)
+ *          The new scroll bar variant.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventAccessibleGetAllAttributeNames = 21;
+	kEventAppearanceScrollBarVariantChanged = 1;
 
+{--------------------------------------------------------------------------------------}
+{  Services Events                                                                     }
+{--------------------------------------------------------------------------------------}
 {
- *  kEventClassAccessibility / kEventAccessibleGetAllParameterizedAttributeNames
+    kEventClassService quick reference:
+    
+    Services are a feature by which applications can communicate with
+    one another to request and provide services. This communication
+    happens either through the Pasteboard or Scrap Manager. When an event is sent that 
+    requires communication for processing or servicing a request, 
+    you will need to use the pasteboard or scrap given in the kEventParamPasteboardRef and
+    kEventParamScrapRef parameters of the event in order to communicate.
+    When your app requests a service, it is usually acting on data that is 
+    currently selected or in focus. Therefore all of the Services events 
+    are sent to the UserFocus event target.
+    <BR><BR>
+    Service events are available on Mac OS X 10.1 and later.
+    
+    kEventServiceCopy           = 1,
+    kEventServicePaste          = 2,
+    kEventServiceGetTypes       = 3,
+    kEventServicePerform        = 4
+}
+{
+ *  kEventClassService / kEventServiceCopy
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Returns the parameterized attributes supported by an accessible
  *    object. You must not return the names of your regular
  *    (non-parameterized) attributes via this event. If you support
@@ -34505,6 +39077,22 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    The user has invoked a service that requires the application to
+ *    update the given pasteboard or scrap in the
+ *    kEventParamPasteboardRef and kEventParamScrapRef parameters with
+ *    appropriate data from the focus.
+ *  
+ *  Discussion:
+ *    On Mac OS X 10.3 and later, this event includes both a
+ *    PasteboardRef and a ScrapRef. A handler for this event should
+ *    provide its data using either Pasteboard or Scrap Manager APIs,
+ *    and the corresponding pasteboard or scrap reference, depending on
+ *    which is more convenient or appropriate. Data only needs to be
+ *    placed on one of the pasteboard or scrap; it does not need to be
+ *    placed on both. Data written to the pasteboard will also be
+ *    available on the scrap, and vice versa.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -34513,10 +39101,14 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    --> kEventParamPasteboardRef (in, typePasteboardRef)
  *          Data from the current selection should be placed into this
  *          pasteboard. This parameter is provided on Mac OS X 10.3 and
  *          later.
+<<<<<<< HEAD
  *    
  *    --> kEventParamScrapRef (in, typeScrapRef)
  *          Data from the current selection should be placed into this
@@ -34552,25 +39144,31 @@ const
 >>>>>>> origin/fixes_2_2
  *    --> kEventParamAccessibleObject (in, typeCFTypeRef)
  *          The accessible object, in the form of an AXUIElementRef.
+=======
+>>>>>>> origin/fixes_2.4
  *    
- *    <-> kEventParamAccessibleAttributeNames (in/out, typeCFMutableArrayRef)
- *          Add each of the parameterized attribute names supported by
- *          the accessible object to this array, as CFStringRefs.
+ *    --> kEventParamScrapRef (in, typeScrapRef)
+ *          Data from the current selection should be placed into this
+ *          scrap.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.3 and later in Carbon.framework
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventAccessibleGetAllParameterizedAttributeNames = 25;
+	kEventServiceCopy = 1;
 
 {
- *  kEventClassAccessibility / kEventAccessibleGetNamedAttribute
+ *  kEventClassService / kEventServicePaste
  *  
  *  Summary:
- *    Returns the value of an attribute of an accessible object.
+ *    The user has invoked a service that requires the application to
+ *    update the current focus with data from the pasteboard or scrap
+ *    given in the kEventParamPasteboardRef and kEventParamScrapRef
+ *    parameters.
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    The kEventParamAccessibleAttributeName parameter will contain an
  *    attribute name in the form of a CFStringRef. If you support the
  *    named attribute, return the attributeÕs value in the
@@ -34579,6 +39177,16 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    On Mac OS X 10.3 and later, this event includes both a
+ *    PasteboardRef and a ScrapRef. A handler for this event should
+ *    retrieve its data using either Pasteboard or Scrap Manager APIs,
+ *    and the corresponding pasteboard or scrap reference, depending on
+ *    which is more convenient or appropriate. Data only needs to be
+ *    read from one of the pasteboard or scrap; it does not need to be
+ *    read from both. Data available on the pasteboard will also be
+ *    available on the scrap, and vice versa.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -34587,10 +39195,14 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    --> kEventParamPasteboardRef (in, typePasteboardRef)
  *          The current selection should be replaced by data from this
  *          pasteboard. This parameter is provided on Mac OS X 10.3 and
  *          later.
+<<<<<<< HEAD
  *    
  *    --> kEventParamScrapRef (in, typeScrapRef)
  *          The current selection should be replaced by data from this
@@ -34707,61 +39319,77 @@ const
  *          typically be typeCFStringRef (for a textual attribute),
  *          typeBoolean (for a boolean attribute), or typeSInt32 (for
  *          an integer-valued attribute).
+=======
+ *    
+ *    --> kEventParamScrapRef (in, typeScrapRef)
+ *          The current selection should be replaced by data from this
+ *          scrap.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventAccessibleGetNamedAttribute = 22;
+	kEventServicePaste = 2;
 
 {
- *  kEventClassAccessibility / kEventAccessibleSetNamedAttribute
+ *  kEventClassService / kEventServiceGetTypes
  *  
  *  Summary:
- *    Sets the value of an attribute of an accessible object.
+ *    The Services Manager needs to know what types of data the
+ *    application can copy and paste to and from the pasteboard or
+ *    scrap in order to update the Services menu to enable items that
+ *    the user can select.
  *  
  *  Discussion:
- *    The kEventParamAccessibleAttributeName parameter will contain an
- *    attribute name in the form of a CFStringRef. The
- *    kEventParamAccessibleAttributeValue parameter will contain data
- *    in an arbitrary format. If you support the named attribute, set
- *    the named attributeÕs value to the data provided in the event.
+ *    This event sends two CFMutableArrayRefs for the application to
+ *    add the types to: the kEventParamServiceCopyTypes and the
+ *    kEventParamServicePasteTypes parameters. The types that are added
+ *    are CFStringRefs. There is a convenience function,
+ *    CreateTypeStringWithOSType, which takes an OSType and will create
+ *    a CFStringRef that you can add to the array(s).
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
  *    --> kEventParamAccessibleObject (in, typeCFTypeRef)
  *          The accessible object, in the form of an AXUIElementRef.
  *    
  *    --> kEventParamAccessibleAttributeName (in, typeCFStringRef)
  *          The name of the requested attribute.
+=======
+ *    --> kEventParamServiceCopyTypes (in, typeCFMutableArrayRef)
+ *          Add CFStringRefs to this array to report the types that can
+ *          be copied from the current selection. These strings will be
+ *          released automatically after the event is handled.
+>>>>>>> origin/fixes_2.4
  *    
- *    --> kEventParamAccessibleAttributeValue (in, typeCFTypeRef)
- *          The new value of the attribute. The type of this parameter
- *          varies according to the attribute; it might typically be
- *          typeCFStringRef (for a textual attribute), typeBoolean (for
- *          a boolean attribute), or typeSInt32 (for an integer-valued
- *          attribute).
+ *    --> kEventParamServicePasteTypes (in, typeCFMutableArrayRef)
+ *          Add CFStringRefs to this array to report the types that can
+ *          be pasted into the currently focused object. These strings
+ *          will be released automatically after the event is handled.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
-	kEventAccessibleSetNamedAttribute = 23;
+	kEventServiceGetTypes = 3;
 
 {
- *  kEventClassAccessibility / kEventAccessibleIsNamedAttributeSettable
+ *  kEventClassService / kEventServicePerform
  *  
  *  Summary:
- *    Determines whether an attribute of an accessible object can be
- *    modified.
+ *    If the application is a service provider, this event will get
+ *    sent when a service is requested of the app.
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    The kEventParamAccessibleAttributeName parameter will contain an
  *    attribute name in the form of a CFStringRef. If you support the
  *    named attribute, set the kEventParamAccessibleAttributeSettable
@@ -34795,6 +39423,53 @@ const
  *    
  *    --> kEventParamServiceUserData (in, typeCFStringRef)
  *          Extra data provided by the requestor.
+=======
+ *    On Mac OS X 10.3 and later, this event includes both a
+ *    PasteboardRef and a ScrapRef. A handler for this event may
+ *    provide its data using either Pasteboard or Scrap Manager APIs,
+ *    and the corresponding pasteboard or scrap reference, depending on
+ *    which is more convenient or appropriate.
+>>>>>>> origin/fixes_2.4
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventServicePerform = 4;
+
+{$ifc not TARGET_CPU_64}
+{
+ *  CreateTypeStringWithOSType()
+ *  
+<<<<<<< HEAD
+ *  Discussion:
+ *    This routine is used to convert an OSType to a CFStringRef that
+ *    services will understand.
+=======
+=======
+>>>>>>> origin/fixes_2_2
+ *    --> kEventParamAccessibleObject (in, typeCFTypeRef)
+ *          The accessible object, in the form of an AXUIElementRef.
+=======
+ *  Parameters:
+ *    
+ *    --> kEventParamPasteboardRef (in, typePasteboardRef)
+ *          The pasteboard that should be used to send and receive data
+ *          from the requester. This parameter is only provided on Mac
+ *          OS X 10.3 and later.
+ *    
+ *    --> kEventParamScrapRef (in, typeScrapRef)
+ *          The scrap that should be used to send and receive data from
+ *          the requester.
+>>>>>>> origin/fixes_2.4
+ *    
+ *    --> kEventParamServiceMessageName (in, typeCFStringRef)
+ *          A string with the name of the advertised service that was
+ *          invoked.
+ *    
+ *    --> kEventParamServiceUserData (in, typeCFStringRef)
+ *          Extra data provided by the requestor.
  *  
  *  Availability:
  *    Mac OS X:         in version 10.1 and later in Carbon.framework
@@ -34808,34 +39483,7 @@ const
  *  CreateTypeStringWithOSType()
  *  
  *  Discussion:
- *    This routine is used to convert an OSType to a CFStringRef that
- *    services will understand.
-=======
-=======
->>>>>>> origin/fixes_2_2
- *    --> kEventParamAccessibleObject (in, typeCFTypeRef)
- *          The accessible object, in the form of an AXUIElementRef.
- *    
- *    --> kEventParamAccessibleAttributeName (in, typeCFStringRef)
- *          The name of the requested attribute.
- *    
- *    <-- kEventParamAccessibleAttributeSettable (out, typeBoolean)
- *          On exit, indicates whether the attribute may be modified.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventAccessibleIsNamedAttributeSettable = 24;
-
-{
- *  kEventClassAccessibility / kEventAccessibleGetAllActionNames
- *  
- *  Summary:
- *    Returns the actions supported by an accessible object.
- *  
- *  Discussion:
+<<<<<<< HEAD
  *    The kEventParamAccessibleActionNames parameter will contain a
  *    CFMutableArrayRef. Add each of the action names you support to
  *    this array in the form of a CFStringRef.
@@ -34843,6 +39491,10 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    This routine is used to convert an OSType to a CFStringRef that
+ *    services will understand.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -34851,6 +39503,9 @@ const
  *    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *    inType:
  *      The OSType that needs to be converted to a CFString.
  *  
@@ -34860,6 +39515,7 @@ const
  *    will return NULL for failure, and because it is a "Create"
  *    function you will need to CFRelease this string when it is no
  *    longer needed.
+<<<<<<< HEAD
  *  
  *  Availability:
  *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
@@ -34949,164 +39605,104 @@ function CreateTypeStringWithOSType( inType: OSType ): CFStringRef; external nam
  *    <-> kEventParamAccessibleActionNames (in/out, typeCFMutableArrayRef)
  *          Add each of the actions supported by the accessible object
  *          to this array, as CFStringRefs.
+=======
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventAccessibleGetAllActionNames = 41;
-
-{
- *  kEventClassAccessibility / kEventAccessiblePerformNamedAction
- *  
- *  Summary:
- *    Requests that a specific action be performed by an accessible
- *    object.
- *  
- *  Discussion:
- *    The kEventParamAccessibleActionName parameter will contain an
- *    attribute name in the form of a CFStringRef. If you support the
- *    named action, perform the action. There are times, however, when
- *    performing an action causes an accessible object to call a
- *    routine which may not return immediately, such as StandardAlert
- *    or PopUpMenuSelect. You should only call such routines when you
- *    receive an action request that was queued; if you call such a
- *    routine when processing an event that was directly dispatched,
- *    you will probably cause the assistive app to receive a timeout
- *    error. On Mac OS X 10.3 and later, the
- *    kEventParamAccessibilityEventQueued parameter will indicate
- *    whether the event was queued. If so, process the request
- *    normally. If not, you can request that the event be posted to the
- *    queue and sent to you later by returning
- *    eventDeferAccessibilityEventErr from your handler. On Mac OS X
- *    10.2, the parameter will not exist, the event will always be
- *    directly dispatched, and there is no way to request that it be
- *    posted to the queue; in this case, you should perform the action
- *    even if it will cause the assistive app to receive a timeout
- *    error.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    --> kEventParamAccessibleObject (in, typeCFTypeRef)
- *          The accessible object, in the form of an AXUIElementRef.
- *    
- *    --> kEventParamAccessibleActionName (in, typeCFStringRef)
- *          The name of the requested action.
- *    
- *    --> kEventParamAccessibilityEventQueued (in, typeBoolean)
- *          An indication of whether this event was delivered to you
- *          via the main event queue. This parameter only exists on Mac
- *          OS X 10.3 and later. See the discussion for more details.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventAccessiblePerformNamedAction = 42;
-
-{
- *  kEventClassAccessibility / kEventAccessibleGetNamedActionDescription
- *  
- *  Summary:
- *    Returns a human-language description of an action supported by an
- *    accessible object.
- *  
- *  Discussion:
- *    The kEventParamAccessibleActionName parameter will contain an
- *    attribute name in the form of a CFStringRef. The
- *    kEventParamAccessibleActionDescription parameter will contain a
- *    CFMutableStringRef. If you support the named action, alter the
- *    mutable string to contain a textual description of the actionÕs
- *    significance.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    --> kEventParamAccessibleObject (in, typeCFTypeRef)
- *          The accessible object, in the form of an AXUIElementRef.
- *    
- *    --> kEventParamAccessibleActionName (in, typeCFStringRef)
- *          The name of the requested action.
- *    
- *    <-> kEventParamAccessibleActionDescription (in/out, typeCFMutableStringRef)
- *          If you support the action, extract this parameter from the
- *          event and set the contents of the mutable string to contain
- *          a description of the action. Do not set this event
- *          parameter to a CFStringRef of your own creation; you must
- *          modify the preexisting mutable string stored in the event
- *          parameter.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available
- }
-const
-	kEventAccessibleGetNamedActionDescription = 44;
-
-{
- *  AXUIElementCreateWithHIObjectAndIdentifier()
- *  
- *  Discussion:
- *    This routine creates an AXUIElementRef to represent an accessible
- *    object for a Carbon application. A Carbon accessible object is
- *    comprised of an HIObjectRef and a 64-bit identifier. The
- *    resulting AXUIElementRef is a CFTypeRef, and must be managed as
- *    such. You can create a new AXUIElementRef every time you need
- *    one. Even though the actual hex values of two AXUIElementRefs
- *    might be different, they may represent the same accessible
- *    object; because AXUIElementRefs are Core Foundation objects, you
- *    can use CFEqual to compare them.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    inHIObject:
- *      The HIObjectRef of the accessible object.
- *    
- *    inIdentifier:
- *      The 64-bit identifier of the accessible object.
- *  
- *  Result:
- *    An AXUIElementRef that represents the Carbon accessible object
- *    identified by the given HIObjectRef and 64-bit identifier. This
- *    follows CoreFoundation semantics in that it will return NULL for
- *    failure, and because it is a "Create" function you will need to
- *    CFRelease() this AXUIElementRef when it is no longer needed.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
  *    Non-Carbon CFM:   not available
  }
-function AXUIElementCreateWithHIObjectAndIdentifier( inHIObject: HIObjectRef; inIdentifier: UInt64 ): AXUIElementRef; external name '_AXUIElementCreateWithHIObjectAndIdentifier';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+function CreateTypeStringWithOSType( inType: OSType ): CFStringRef; external name '_CreateTypeStringWithOSType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+
+
+{$endc} {not TARGET_CPU_64}
 
 
 {
- *  AXUIElementGetHIObject()
+ *  kHIServicesMenuProviderName
  *  
  *  Discussion:
+ *    A CFDictionaryRef key in a dictionary returned by
+ *    CopyServicesMenuCommandKeys. The value for this key is the name
+ *    of the service provider represented as a CFString.
+ }
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+{$definec kHIServicesMenuProviderName CFSTRP('kHIServicesMenuProviderName')}
+{$endc}
+
+{
+ *  kHIServicesMenuItemName
+ *  
+ *  Discussion:
+ *    A CFDictionaryRef key in a dictionary returned by
+ *    CopyServicesMenuCommandKeys. The value for this key is the name
+ *    of the menu item represented as a CFString.
+ }
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+{$definec kHIServicesMenuItemName CFSTRP('kHIServicesMenuItemName')}
+{$endc}
+
+{
+ *  kHIServicesMenuCharCode
+ *  
+ *  Discussion:
+ *    A CFDictionaryRef key in a dictionary returned by
+ *    CopyServicesMenuCommandKeys. The value for this key is the
+ *    character code of the menu item shortcut, represented as a
+ *    CFString.
+ }
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+{$definec kHIServicesMenuCharCode CFSTRP('kHIServicesMenuCharCode')}
+{$endc}
+
+{
+ *  kHIServicesMenuKeyModifiers
+ *  
+ *  Discussion:
+ *    A CFDictionaryRef key in a dictionary returned by
+ *    CopyServicesMenuCommandKeys. The value for this key is the
+ *    keyboard modifiers of the menu item shortcut in Menu Manager
+ *    modifiers format, represented as a CFNumber.
+ }
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+{$definec kHIServicesMenuKeyModifiers CFSTRP('kHIServicesMenuKeyModifiers')}
+{$endc}
+{$ifc not TARGET_CPU_64}
+{
+ *  CopyServicesMenuCommandKeys()
+ *  
+ *  Summary:
+ *    Returns an array of CFDictionaryRefs containing information about
+ *    the command-key short cuts for items in the application services
+ *    menu.
+ *  
+ *  Discussion:
+<<<<<<< HEAD
  *    If the incoming AXUIElementRef is a Carbon accessible object,
  *    this routine will return the HIObjectRef of the accessible object.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    Each array entry is a CFDictionaryRef, and each dictionary
+ *    contains information about a single command key shortcut for
+ *    items in the application's Services menu. Each dictionary
+ *    contains the following keys: kHIServicesMenuProviderName,
+ *    kHIServicesMenuItemName, kHIServicesMenuCharCode, and
+ *    kHIServicesMenuKeyModifiers. The array must be released by the
+ *    caller; the dictionaries do not need to be released (they will be
+ *    auto-released when the array is released).
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    outCommandKeyArray:
@@ -35153,59 +39749,46 @@ function CopyServicesMenuCommandKeys( var outCommandKeyArray: CFArrayRef ): OSSt
 >>>>>>> origin/fixes_2_2
  *    inUIElement:
  *      The AXUIElementRef of whom you'd like to get the HIObjectRef.
+=======
+ *    outCommandKeyArray:
+ *      On exit, contains an array of the values of the Services menu
+ *      items that have command key shortcuts associated with them.
+>>>>>>> origin/fixes_2.4
  *  
  *  Result:
- *    The HIObjectRef of the AXUIElementRef. If the incoming
- *    AXUIElementRef is not a Carbon accessible object, this routine
- *    will return NULL.
+ *    An operating system status code.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
  *    Non-Carbon CFM:   not available
  }
-function AXUIElementGetHIObject( inUIElement: AXUIElementRef ): HIObjectRef; external name '_AXUIElementGetHIObject';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+function CopyServicesMenuCommandKeys( var outCommandKeyArray: CFArrayRef ): OSStatus; external name '_CopyServicesMenuCommandKeys';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 
-{
- *  AXUIElementGetIdentifier()
- *  
- *  Discussion:
- *    If the incoming AXUIElementRef is a Carbon accessible object,
- *    this routine will pass back the 64-bit identifier of the
- *    accessible object.
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Parameters:
- *    
- *    inUIElement:
- *      The AXUIElementRef of whom you'd like to get the 64-bit
- *      identifier.
- *    
- *    outIdentifier:
- *      The 64-bit identifier of the AXUIElementRef. If the incoming
- *      AXUIElementRef is not a Carbon accessible object, this routine
- *      will pass back zero. Note that zero is often a legal value for
- *      Carbon accessible object, so do not assume that the accessible
- *      object is not a Carbon accessible object just because you get a
- *      result of zero.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
- *    Non-Carbon CFM:   not available
- }
-procedure AXUIElementGetIdentifier( inUIElement: AXUIElementRef; var outIdentifier: UInt64 ); external name '_AXUIElementGetIdentifier';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
+{--------------------------------------------------------------------------------------}
+{  System Events                                                                       }
+{--------------------------------------------------------------------------------------}
 
 {
- *  AXNotificationHIObjectNotify()
+    kEventClassSystem quick reference:
+
+    kEventSystemTimeDateChanged             = 2,
+    kEventSystemDisplaysAsleep              = 3,
+    kEventSystemDisplaysAwake               = 4,
+    kEventSystemDisplayReconfigured         = 6,
+    kEventSystemUserSessionActivated        = 10,
+    kEventSystemUserSessionDeactivated      = 11
+}
+{
+ *  kEventClassSystem / kEventSystemTimeDateChanged
+ *  
+ *  Summary:
+ *    The system time and/or date has changed via the preferences panel.
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    Posts a notification for the given pseudo-AXUIElementRef. Though
  *    an actual AXUIElementRef is not actually passed in to this
  *    function, its component parts are. This saves the implementation
@@ -35215,10 +39798,15 @@ procedure AXUIElementGetIdentifier( inUIElement: AXUIElementRef; var outIdentifi
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    This event is sent to all handlers registered for it on the
+ *    application event target.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
@@ -35255,23 +39843,25 @@ const
  *      The 64-bit identifier component of the AXUIElementRef to whom
  *      the notification applies.
  *  
+=======
+>>>>>>> origin/fixes_2.4
  *  Availability:
- *    Mac OS X:         in version 10.2 and later in Carbon.framework
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework
+ *    CarbonLib:        not available
  }
-procedure AXNotificationHIObjectNotify( inNotification: CFStringRef; inHIObject: HIObjectRef; inIdentifier: UInt64 ); external name '_AXNotificationHIObjectNotify';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+{$endc} {not TARGET_CPU_64}
 
+const
+	kEventSystemTimeDateChanged = 2;
 
 {
- *  HICopyAccessibilityRoleDescription()
+ *  kEventClassSystem / kEventSystemDisplaysAsleep
  *  
  *  Summary:
- *    Returns the role description string for a standard role or a
- *    standard role-subrole pair.
+ *    All connected displays have gone to sleep.
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    This routine is useful if you are implementing an accessible
  *    object that has a standard role or role-subrole pair and you want
  *    to make sure your object provides the same role description
@@ -35291,10 +39881,15 @@ procedure AXNotificationHIObjectNotify( inNotification: CFStringRef; inHIObject:
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    This event is sent to all handlers registered for it on the
+ *    application event target.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
@@ -35337,23 +39932,23 @@ const
  *    If you pass either an unknown role or an unknown subrole, this
  *    routine will return NULL.
  *  
+=======
+>>>>>>> origin/fixes_2.4
  *  Availability:
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
- *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available
  }
-function HICopyAccessibilityRoleDescription( inRole: CFStringRef; inSubrole: CFStringRef { can be NULL } ): CFStringRef; external name '_HICopyAccessibilityRoleDescription';
-(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
-
+const
+	kEventSystemDisplaysAsleep = 3;
 
 {
- *  HICopyAccessibilityActionDescription()
+ *  kEventClassSystem / kEventSystemDisplaysAwake
  *  
  *  Summary:
- *    Returns the action description string for a standard
- *    accessibility action.
+ *    All connected displays have awoken.
  *  
  *  Discussion:
+<<<<<<< HEAD
  *    This routine is useful if you are implementing an accessible
  *    object that implements a standard action and you want to make
  *    sure your object provides the same role action string that the a
@@ -35368,10 +39963,15 @@ function HICopyAccessibilityRoleDescription( inRole: CFStringRef; inSubrole: CFS
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    This event is sent to all handlers registered for it on the
+ *    application event target.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
@@ -35408,45 +40008,43 @@ const
  *    you pass an unsupported action to this routine, the behavior is
  *    undefined.
  *  
+=======
+>>>>>>> origin/fixes_2.4
  *  Availability:
  *    Mac OS X:         in version 10.4 and later in Carbon.framework
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
- *    Non-Carbon CFM:   not available
+ *    CarbonLib:        not available
  }
-function HICopyAccessibilityActionDescription( inAction: CFStringRef ): CFStringRef; external name '_HICopyAccessibilityActionDescription';
-(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
-
-
-{--------------------------------------------------------------------------------------}
-{  System Events                                                                       }
-{--------------------------------------------------------------------------------------}
+const
+	kEventSystemDisplaysAwake = 4;
 
 {
-    kEventClassSystem quick reference:
-
-    kEventSystemTimeDateChanged         = 2,
-    kEventSystemUserSessionActivated    = 10,
-    kEventSystemUserSessionDeactivated  = 11
-}
-{
- *  kEventClassSystem / kEventSystemTimeDateChanged
+ *  kEventClassSystem / kEventSystemDisplayReconfigured
  *  
  *  Summary:
- *    The system time and/or date has changed via the preferences panel.
+ *    Notification that the Display configuration has changed
  *  
  *  Discussion:
  *    This event is sent to all handlers registered for it on the
+<<<<<<< HEAD
  *    application event target.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    application event target. When this event is received,
+ *    applications may wish to update geometry and color depth usage or
+ *    perform a redraw based on the new configuration.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  *  Parameters:
  *    
  *    --> kEventParamDisplayChangeFlags (in, typeCGDisplayChangeFlags)
@@ -35455,6 +40053,7 @@ function HICopyAccessibilityActionDescription( inAction: CFStringRef ): CFString
  *          CoreGraphics/CGDisplayConfiguration.h for more information
  *          on these flags.
  *  
+<<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.5 and later in Carbon.framework
  *    CarbonLib:        not available
@@ -35464,16 +40063,22 @@ const
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
  *  Availability:
- *    Mac OS X:         in version 10.3 and later in Carbon.framework
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework
  *    CarbonLib:        not available
  }
 const
+<<<<<<< HEAD
 	kEventSystemTimeDateChanged = 2;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	kEventSystemDisplayReconfigured = 6;
+>>>>>>> origin/fixes_2.4
 
 {
  *  kEventClassSystem / kEventSystemUserSessionActivated
@@ -35524,11 +40129,15 @@ const
 {--------------------------------------------------------------------------------------}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 {
  *  GetWindowEventTarget()
  *  
@@ -35551,6 +40160,7 @@ const
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -35558,6 +40168,9 @@ const
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
@@ -35587,6 +40200,7 @@ function GetWindowEventTarget( inWindow: WindowRef ): EventTargetRef; external n
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -35594,6 +40208,9 @@ function GetWindowEventTarget( inWindow: WindowRef ): EventTargetRef; external n
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
@@ -35623,6 +40240,7 @@ function GetControlEventTarget( inControl: ControlRef ): EventTargetRef; externa
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -35630,6 +40248,9 @@ function GetControlEventTarget( inControl: ControlRef ): EventTargetRef; externa
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
@@ -35639,12 +40260,17 @@ function GetMenuEventTarget( inMenu: MenuRef ): EventTargetRef; external name '_
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> origin/fixes_2.4
 {
  *  GetApplicationEventTarget()
  *  
@@ -35670,11 +40296,15 @@ function GetApplicationEventTarget: EventTargetRef; external name '_GetApplicati
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 {
  *  GetUserFocusEventTarget()
  *  
@@ -35700,6 +40330,7 @@ function GetApplicationEventTarget: EventTargetRef; external name '_GetApplicati
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -35707,6 +40338,9 @@ function GetApplicationEventTarget: EventTargetRef; external name '_GetApplicati
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
@@ -35716,12 +40350,17 @@ function GetUserFocusEventTarget: EventTargetRef; external name '_GetUserFocusEv
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> origin/fixes_2.4
 {
  *  GetEventDispatcherTarget()
  *  
@@ -35909,11 +40548,15 @@ function ProcessHICommand( const (*var*) inCommand: HICommand ): OSStatus; exter
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 {
  *  RunApplicationEventLoop()
  *  
@@ -35929,6 +40572,7 @@ function ProcessHICommand( const (*var*) inCommand: HICommand ): OSStatus; exter
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -35936,6 +40580,9 @@ function ProcessHICommand( const (*var*) inCommand: HICommand ): OSStatus; exter
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
@@ -35956,6 +40603,7 @@ procedure RunApplicationEventLoop; external name '_RunApplicationEventLoop';
  *    the event loop exits, it should intercept either the
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    kHICommandQuit menu command, or the kEventAppQuit event.
 =======
  *    kHICommandQuit menu command, or the kEventApplicationQuit event.
@@ -35963,11 +40611,15 @@ procedure RunApplicationEventLoop; external name '_RunApplicationEventLoop';
 =======
  *    kHICommandQuit menu command, or the kEventApplicationQuit event.
 >>>>>>> origin/fixes_2_2
+=======
+ *    kHICommandQuit menu command, or the kEventAppQuit event.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
@@ -35977,6 +40629,9 @@ procedure RunApplicationEventLoop; external name '_RunApplicationEventLoop';
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
@@ -36020,6 +40675,7 @@ procedure QuitApplicationEventLoop; external name '_QuitApplicationEventLoop';
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -36027,6 +40683,9 @@ procedure QuitApplicationEventLoop; external name '_QuitApplicationEventLoop';
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -36058,6 +40717,7 @@ function RunAppModalLoopForWindow( inWindow: WindowRef ): OSStatus; external nam
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -36065,6 +40725,9 @@ function RunAppModalLoopForWindow( inWindow: WindowRef ): OSStatus; external nam
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -36105,6 +40768,7 @@ function QuitAppModalLoopForWindow( inWindow: WindowRef ): OSStatus; external na
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -36112,6 +40776,9 @@ function QuitAppModalLoopForWindow( inWindow: WindowRef ): OSStatus; external na
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -36140,6 +40807,7 @@ function BeginAppModalStateForWindow( inWindow: WindowRef ): OSStatus; external 
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -36147,6 +40815,9 @@ function BeginAppModalStateForWindow( inWindow: WindowRef ): OSStatus; external 
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -36155,6 +40826,7 @@ function EndAppModalStateForWindow( inWindow: WindowRef ): OSStatus; external na
 
 
 {--------------------------------------------------------------------------------------}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {  ¥ Global HotKey API                                                                 }
@@ -36290,6 +40962,12 @@ function GetWindowCancelButton( inWindow: WindowRef; var outControl: ControlRef 
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{  ¥ Global HotKey API                                                                 }
+{--------------------------------------------------------------------------------------}
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> origin/fixes_2.4
 type
 	EventHotKeyIDPtr = ^EventHotKeyID;
 	EventHotKeyID = record
@@ -36297,6 +40975,7 @@ type
 		id: UInt32;
 	end;
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -36317,6 +40996,9 @@ type
 =======
 	EventHotKeyRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	EventHotKeyRef = ^SInt32; { an opaque type }
+>>>>>>> origin/fixes_2.4
 
 {
  *  HotKeyOptions
@@ -36352,12 +41034,15 @@ const
    }
 	kEventHotKeyExclusive = 1 shl 0;
 
+<<<<<<< HEAD
 =======
 	EventHotKeyRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> graemeg/fixes_2_2
 =======
 	EventHotKeyRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {
  *  RegisterEventHotKey()
  *  
@@ -36371,6 +41056,7 @@ const
  *    potentially be notified when a particular hot key is requested.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    In Mac OS X 10.5 and later, you can request exclusive
  *    registration for your process only by passing
  *    kEventHotKeyExclusive for the inOptions parameter.
@@ -36382,6 +41068,11 @@ const
  *    This might not necessarily be desirable, but it is how it works
  *    at present.
 >>>>>>> origin/fixes_2_2
+=======
+ *    In Mac OS X 10.5 and later, you can request exclusive
+ *    registration for your process only by passing
+ *    kEventHotKeyExclusive for the inOptions parameter.
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -36407,6 +41098,7 @@ const
  *    inOptions:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      In Mac OS X 10.5 and later, you may pass either zero or
  *      kEventHotKeyExclusive. Prior to Mac OS X 10.5, you must pass
  *      zero.
@@ -36424,17 +41116,29 @@ const
 =======
 >>>>>>> origin/fixes_2_2
  *      Currently unused. Pass 0 or face the consequences.
+=======
+ *      In Mac OS X 10.5 and later, you may pass either zero or
+ *      kEventHotKeyExclusive. Prior to Mac OS X 10.5, you must pass
+ *      zero.
+>>>>>>> origin/fixes_2.4
  *    
  *    outRef:
- *      The EventHotKeyRef that represents your new, shiny hot key. You
- *      need this if you later wish to unregister it.
+ *      The EventHotKeyRef that represents your new hot key. You need
+ *      this if you later wish to unregister it.
  *  
  *  Result:
+<<<<<<< HEAD
  *    An operating system status code.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *    An operating system status code. eventHotKeyExistsErr is returned
+ *    if an attempt is made to register a hotkey using the
+ *    kEventHotKeyExclusive option when another process has already
+ *    registered the same hotkey using the kEventHotKeyExclusive option.
+>>>>>>> origin/fixes_2.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -36453,6 +41157,7 @@ function RegisterEventHotKey( inHotKeyCode: UInt32; inHotKeyModifiers: UInt32; i
  *    the RegisterEventHotKey API. You do not need to unregister a hot
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    key when your application terminates; the system will take care
 =======
  *    key when your application terminates, the system will take care
@@ -36460,6 +41165,9 @@ function RegisterEventHotKey( inHotKeyCode: UInt32; inHotKeyModifiers: UInt32; i
 =======
  *    key when your application terminates, the system will take care
 >>>>>>> origin/fixes_2_2
+=======
+ *    key when your application terminates; the system will take care
+>>>>>>> origin/fixes_2.4
  *    of that for you. This would be used if the user changes a hot key
  *    for something in your application - you would unregister the
  *    previous key and register your new key.
@@ -36573,6 +41281,7 @@ function CopySymbolicHotKeys( var outHotKeyArray: CFArrayRef ): OSStatus; extern
  *  Summary:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Parameters to the PushSymbolicHotKeyMode API.
 =======
  *    Parameters to the PushSymbolicHotKeyMode SPI.
@@ -36580,6 +41289,9 @@ function CopySymbolicHotKeys( var outHotKeyArray: CFArrayRef ): OSStatus; extern
 =======
  *    Parameters to the PushSymbolicHotKeyMode SPI.
 >>>>>>> origin/fixes_2_2
+=======
+ *    Parameters to the PushSymbolicHotKeyMode API.
+>>>>>>> origin/fixes_2.4
  }
 const
 {
@@ -36826,6 +41538,7 @@ const
 {--------------------------------------------------------------------------------------}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 
@@ -36833,6 +41546,9 @@ const
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 {--------------------------------------------------------------------------------------}
 {  ¥ MouseTrackingRegions                                                              }
 {--------------------------------------------------------------------------------------}
@@ -36885,6 +41601,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	MouseTrackingRef = ^OpaqueMouseTrackingRef; { an opaque type }
 	OpaqueMouseTrackingRef = record end;
 =======
@@ -36905,6 +41622,9 @@ type
 =======
 	MouseTrackingRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> origin/fixes_2_2
+=======
+	MouseTrackingRef = ^SInt32; { an opaque type }
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -36953,6 +41673,7 @@ type
 	end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 { Creation}
@@ -36965,6 +41686,12 @@ type
 { Creation}
 
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not TARGET_CPU_64}
+
+{ Creation}
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 {
  *  CreateMouseTrackingRegion()   *** DEPRECATED ***
  *  
@@ -37028,6 +41755,7 @@ type
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
@@ -37035,6 +41763,9 @@ type
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -37066,6 +41797,7 @@ function CreateMouseTrackingRegion( inWindow: WindowRef; inRegion: RgnHandle; in
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
@@ -37073,6 +41805,9 @@ function CreateMouseTrackingRegion( inWindow: WindowRef; inRegion: RgnHandle; in
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -37107,6 +41842,7 @@ function RetainMouseTrackingRegion( inMouseRef: MouseTrackingRef ): OSStatus; ex
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
@@ -37114,6 +41850,9 @@ function RetainMouseTrackingRegion( inMouseRef: MouseTrackingRef ): OSStatus; ex
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -37153,6 +41892,7 @@ function ReleaseMouseTrackingRegion( inMouseRef: MouseTrackingRef ): OSStatus; e
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
@@ -37160,6 +41900,9 @@ function ReleaseMouseTrackingRegion( inMouseRef: MouseTrackingRef ): OSStatus; e
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -37197,6 +41940,7 @@ function ChangeMouseTrackingRegion( inMouseRef: MouseTrackingRef; inRegion: RgnH
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
@@ -37204,6 +41948,9 @@ function ChangeMouseTrackingRegion( inMouseRef: MouseTrackingRef; inRegion: RgnH
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -37244,6 +41991,7 @@ function ClipMouseTrackingRegion( inMouseRef: MouseTrackingRef; inRegion: RgnHan
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
@@ -37251,6 +41999,9 @@ function ClipMouseTrackingRegion( inMouseRef: MouseTrackingRef; inRegion: RgnHan
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -37286,6 +42037,7 @@ function GetMouseTrackingRegionID( inMouseRef: MouseTrackingRef; var outID: Mous
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
@@ -37293,6 +42045,9 @@ function GetMouseTrackingRegionID( inMouseRef: MouseTrackingRef; var outID: Mous
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -37337,6 +42092,7 @@ function GetMouseTrackingRegionRefCon( inMouseRef: MouseTrackingRef; var outRefC
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
@@ -37344,6 +42100,9 @@ function GetMouseTrackingRegionRefCon( inMouseRef: MouseTrackingRef; var outRefC
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -37381,6 +42140,7 @@ function MoveMouseTrackingRegion( inMouseRef: MouseTrackingRef; deltaH: SInt16; 
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
@@ -37388,6 +42148,9 @@ function MoveMouseTrackingRegion( inMouseRef: MouseTrackingRef; deltaH: SInt16; 
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -37434,6 +42197,7 @@ function SetMouseTrackingRegionEnabled( inMouseRef: MouseTrackingRef; inEnabled:
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
@@ -37441,6 +42205,9 @@ function SetMouseTrackingRegionEnabled( inMouseRef: MouseTrackingRef; inEnabled:
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -37489,6 +42256,7 @@ function ClipWindowMouseTrackingRegions( inWindow: WindowRef; inSignature: OSTyp
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
@@ -37496,6 +42264,9 @@ function ClipWindowMouseTrackingRegions( inWindow: WindowRef; inSignature: OSTyp
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -37537,6 +42308,7 @@ function MoveWindowMouseTrackingRegions( inWindow: WindowRef; inSignature: OSTyp
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
@@ -37544,6 +42316,9 @@ function MoveWindowMouseTrackingRegions( inWindow: WindowRef; inSignature: OSTyp
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -37578,6 +42353,7 @@ function SetWindowMouseTrackingRegionsEnabled( inWindow: WindowRef; inSignature:
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
@@ -37585,6 +42361,9 @@ function SetWindowMouseTrackingRegionsEnabled( inWindow: WindowRef; inSignature:
 =======
  *    Mac OS X:         in version 10.2 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -37604,6 +42383,7 @@ function ReleaseWindowMouseTrackingRegions( inWindow: WindowRef; inSignature: OS
 {  HIObjectRegisterSubclass rather than RegisterToolboxObjectClass. This API is        }
 {  considered deprecated on Mac OS X 10.2 and later.                                   }
 {======================================================================================}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
@@ -37632,19 +42412,28 @@ type
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
 type
-	ToolboxObjectClassRef = ^SInt32; { an opaque 32-bit type }
+	ToolboxObjectClassRef = ^SInt32; { an opaque type }
+{$ifc not TARGET_CPU_64}
 {
+<<<<<<< HEAD
  *  RegisterToolboxObjectClass()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  RegisterToolboxObjectClass()   *** DEPRECATED ***
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
@@ -37661,24 +42450,32 @@ function RegisterToolboxObjectClass( inClassID: CFStringRef; inBaseClass: Toolbo
 =======
 >>>>>>> origin/fixes_2_2
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
-function RegisterToolboxObjectClass( inClassID: CFStringRef; inBaseClass: ToolboxObjectClassRef { can be NULL }; inNumEvents: UInt32; {const} inEventList: {variable-size-array} EventTypeSpecPtr; inEventHandler: EventHandlerUPP; inEventHandlerData: UnivPtr; var outClassRef: ToolboxObjectClassRef ): OSStatus; external name '_RegisterToolboxObjectClass';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+function RegisterToolboxObjectClass( inClassID: CFStringRef; inBaseClass: ToolboxObjectClassRef { can be NULL }; inNumEvents: ItemCount; {const} inEventList: {variable-size-array} EventTypeSpecPtr; inEventHandler: EventHandlerUPP; inEventHandlerData: UnivPtr; var outClassRef: ToolboxObjectClassRef ): OSStatus; external name '_RegisterToolboxObjectClass';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  UnregisterToolboxObjectClass()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  UnregisterToolboxObjectClass()   *** DEPRECATED ***
+>>>>>>> origin/fixes_2.4
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
@@ -37688,10 +42485,14 @@ function RegisterToolboxObjectClass( inClassID: CFStringRef; inBaseClass: Toolbo
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2_2
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/fixes_2.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
 function UnregisterToolboxObjectClass( inClassRef: ToolboxObjectClassRef ): OSStatus; external name '_UnregisterToolboxObjectClass';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -37701,11 +42502,15 @@ function UnregisterToolboxObjectClass( inClassRef: ToolboxObjectClassRef ): OSSt
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/fixes_2.4
 
 
 {--------------------------------------------------------------------------------------}
 { Obsolete constant names - use the new ones.                                          }
 {--------------------------------------------------------------------------------------}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
@@ -37714,6 +42519,10 @@ function UnregisterToolboxObjectClass( inClassRef: ToolboxObjectClassRef ): OSSt
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> origin/fixes_2.4
 const
 	kEventParamTabletPointerRec = FourCharCode('tbrc'); { typeTabletPointerRec      -- deprecated, for compatibility only}
 	typeTabletPointerRec = FourCharCode('tbrc'); { kEventParamTabletPointerRec    -- deprecated, for compatibility only}
@@ -37758,6 +42567,7 @@ type
 	EventClassID = UInt32;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EventClass = UInt32;
 =======
 type
@@ -37769,6 +42579,9 @@ type
 	EventClass = UInt32;
 type
 >>>>>>> origin/fixes_2_2
+=======
+	EventClass = UInt32;
+>>>>>>> origin/fixes_2.4
 	EventType = UInt32;
 { OBSOLETE CONSTANTS}
 const
@@ -37779,6 +42592,7 @@ const
 	kEventControlGetSubviewForMouseEvent = kEventControlInterceptSubviewClick;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
@@ -37796,3 +42610,10 @@ end.
 
 end.
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {TARGET_OS_MAC}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+
+end.
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

@@ -62,6 +62,7 @@ Var
   Win32MinorVersion,
   Win32BuildNumber   : dword;
   Win32CSDVersion    : ShortString;   // CSD record is 128 bytes only?
+<<<<<<< HEAD
 
 const
   MaxEraCount = 7;
@@ -69,6 +70,8 @@ const
 var
   EraNames: array [1..MaxEraCount] of String;
   EraYearOffsets: array [1..MaxEraCount] of Integer;
+=======
+>>>>>>> origin/fixes_2.4
 
 { Compatibility with Delphi }
 function Win32Check(res:boolean):boolean;inline;

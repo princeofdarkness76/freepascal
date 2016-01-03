@@ -1,6 +1,7 @@
 { CoreGraphics - CGColor.h
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2003-2008 Apple Inc.
  * All rights reserved. }
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -32,17 +33,26 @@
  * Copyright (c) 2003 Apple Computer, Inc.
  * All rights reserved.
  }
+=======
+ * Copyright (c) 2003-2008 Apple Inc.
+ * All rights reserved. }
+>>>>>>> origin/fixes_2.4
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -51,6 +61,7 @@
 
 unit CGColor;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -63,6 +74,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -77,6 +92,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -84,21 +100,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -106,6 +131,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -116,6 +144,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -133,6 +162,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -140,10 +171,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -151,6 +185,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -418,18 +453,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -457,12 +549,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -475,18 +570,24 @@ interface
 uses MacTypes,CFBase,CGBase,CGColorSpace;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/fixes_2.4
 {$ALIGN POWER}
 
 
 // CGColorRef defined in CGBase
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 { Create a color in the color space `space' with color components
@@ -815,19 +916,41 @@ end.
 =======
 >>>>>>> origin/fixes_2_2
 { Return the CFTypeID for CGColors. }
+=======
+{ Create a color in the color space `space' with color components
+   (including alpha) specified by `components'. `space' may be any color
+   space except a pattern color space. }
+>>>>>>> origin/fixes_2.4
 
-function CGColorGetTypeID: CFTypeID; external name '_CGColorGetTypeID'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+function CGColorCreate( space: CGColorSpaceRef; {const} components: {variable-size-array} CGFloatPtr ): CGColorRef; external name '_CGColorCreate'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
-{ Create a color in colorspace `colorspace' with color components
- * (including alpha) specified by `components'.  `colorspace' may be any
- * colorspace except a pattern colorspace. }
+{$ifc TARGET_OS_MAC}
+{ Create a color in the "Generic" gray color space. }
 
-function CGColorCreate( colorspace: CGColorSpaceRef; {const} components: {variable-size-array} Float32Ptr ): CGColorRef; external name '_CGColorCreate'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+function CGColorCreateGenericGray(gray: CGFloat; alpha: CGFloat): CGColorRef; external name '_CGColorCreateGenericGray'; (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+{ Create a color in the "Generic" RGB color space. }
+
+function CGColorCreateGenericRGB(red: CGFloat; green: CGFloat; blue: CGFloat; alpha: CGFloat): CGColorRef; external name '_CGColorCreateGenericRGB'; (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+{ Create a color in the "Generic" CMYK color space. }
+
+function CGColorCreateGenericCMYK(cyan: CGFloat; magenta: CGFloat; yellow: CGFloat; black: CGFloat; alpha: CGFloat): CGColorRef; external name '_CGColorCreateGenericCMYK'; (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{$endc}
+
+{ Return a constant color. As `CGColorGetConstantColor' is not a "Copy" or
+   "Create" function, it does not necessarily return a new reference each
+   time it's called. As a consequence, you should not release the returned
+   value. However, colors returned from `CGColorGetConstantColor' can be
+   retained and released in a properly nested fashion, just like any other
+   CF type. }
+
+function CGColorGetConstantColor(colorName: CFStringRef): CGColorRef; external name '_CGColorGetConstantColor'; (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 { Create a color in colorspace `colorspace' with pattern `pattern' and
  * components `components'.  `colorspace' must be a pattern colorspace. }
 
-function CGColorCreateWithPattern( colorspace: CGColorSpaceRef; pattern: CGPatternRef; {const} components: {variable-size-array} Float32Ptr ): CGColorRef; external name '_CGColorCreateWithPattern'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+function CGColorCreateWithPattern( colorspace: CGColorSpaceRef; pattern: CGPatternRef; {const} components: {variable-size-array} CGFloatPtr ): CGColorRef; external name '_CGColorCreateWithPattern'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
 { Create a copy of `color'. }
 
@@ -835,7 +958,7 @@ function CGColorCreateCopy( color: CGColorRef ): CGColorRef; external name '_CGC
 
 { Create a copy of `color' with alpha set to `alpha'. }
 
-function CGColorCreateCopyWithAlpha( color: CGColorRef; alpha: Float32 ): CGColorRef; external name '_CGColorCreateCopyWithAlpha'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+function CGColorCreateCopyWithAlpha( color: CGColorRef; alpha: CGFloat ): CGColorRef; external name '_CGColorCreateCopyWithAlpha'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
 { Equivalent to `CFRetain(color)', except it doesn't crash (as CFRetain
  * does) if `color' is NULL. }
@@ -859,11 +982,11 @@ function CGColorGetNumberOfComponents( color: CGColorRef ): size_t; external nam
 { Return the color components (including alpha) associated with
  * `color'. }
 
-function CGColorGetComponents( color: CGColorRef ): Float32Ptr; external name '_CGColorGetComponents'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+function CGColorGetComponents( color: CGColorRef ): CGFloatPtr; external name '_CGColorGetComponents'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
 { Return the alpha component associated with `color'. }
 
-function CGColorGetAlpha( color: CGColorRef ): Float32; external name '_CGColorGetAlpha'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+function CGColorGetAlpha( color: CGColorRef ): CGFloat; external name '_CGColorGetAlpha'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
 { Return the colorspace associated with `color'. }
 
@@ -874,9 +997,30 @@ function CGColorGetColorSpace( color: CGColorRef ): CGColorSpaceRef; external na
 
 function CGColorGetPattern( color: CGColorRef ): CGPatternRef; external name '_CGColorGetPattern'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
+{ Return the CFTypeID for CGColors. }
+
+function CGColorGetTypeID: CFTypeID; external name '_CGColorGetTypeID'; (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{$ifc TARGET_OS_MAC}
+{** Names of colors for use with `CGColorGetConstantColor'. **}
+
+{ Colors in the "Generic" gray color space. }
+
+var kCGColorWhite: CFStringRef; external name '_kCGColorWhite'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var  kCGColorBlack: CFStringRef; external name '_kCGColorBlack'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kCGColorClear: CFStringRef; external name '_kCGColorClear'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{$endc}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

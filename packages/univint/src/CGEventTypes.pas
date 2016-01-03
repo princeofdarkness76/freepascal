@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { CoreGraphics - CGEventTypes.h
    Copyright (c) 2004-2008 Apple Inc.
    All rights reserved. }
@@ -36,17 +37,27 @@
 *  Copyright (c) 2004 Apple Computer, Inc. All rights reserved.
 *
 }
+=======
+{ CoreGraphics - CGEventTypes.h
+   Copyright (c) 2004-2008 Apple Inc.
+   All rights reserved. }
+>>>>>>> origin/fixes_2.4
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -55,6 +66,7 @@
 
 unit CGEventTypes;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -67,6 +79,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -81,6 +97,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -88,21 +105,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -110,6 +136,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -120,6 +149,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -137,6 +167,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -144,10 +176,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -155,6 +190,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -421,18 +457,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -460,12 +553,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -476,6 +572,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,MacOSXPosix,CGRemoteOperation,CGBase;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
@@ -540,26 +637,42 @@ type
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/fixes_2.4
 {$ALIGN POWER}
 
 
-{
- * The CGEventRef object may be created or copied, retained, released, and
- * modified.  The object provides an opaque representation of one low level
- * hardware event.
- }
-type
-	CGEventRef = ^SInt32; { an opaque 32-bit type }
+{ An opaque type that represents a low-level hardware event.
 
-{
- * Types common to both CGEvent.h and CGEventSource.h
- }
+   Low-level hardware events of this type are referred to as Quartz events.
+   A typical event in Mac OS X originates when the user manipulates an input
+   device such as a mouse or a keyboard. The device driver associated with
+   that device, through the I/O Kit, creates a low-level event, puts it in
+   the window server’s event queue, and notifies the window server. The
+   window server creates a Quartz event, annotates the event, and dispatches
+   the event to the appropriate run-loop port of the target process. There
+   the event is picked up by the Carbon Event Manager and forwarded to the
+   event-handling mechanism appropriate to the application environment. You
+   can use event taps to gain access to Quartz events at several different
+   steps in this process.
+
+   This opaque type is derived from `CFType' and inherits the properties
+   that all Core Foundation types have in common. }
+
 type
+<<<<<<< HEAD
 	_CGMouseButton = SInt32;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	CGEventRef = ^SInt32; { an opaque type }
+
+{ Constants that specify buttons on a one, two, or three-button mouse. }
+>>>>>>> origin/fixes_2.4
 const
 	kCGMouseButtonLeft = 0;
 	kCGMouseButtonRight = 1;
@@ -569,10 +682,14 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 { Constants that specify the unit of measurement for a scrolling event. }
 const
 	kCGScrollEventUnitPixel = 0;
 	kCGScrollEventUnitLine = 1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -646,6 +763,15 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+type
+	CGScrollEventUnit = UInt32;
+
+{ Constants that indicate the modifier key state at the time an event is
+   created, as well as other event-related states.
+
+   Any bits not specified are reserved for future use. }
+>>>>>>> origin/fixes_2.4
 (*
 Uncomment when IOKit is translated
 
@@ -665,6 +791,7 @@ const { Masks for the bits in event flags }
 	kCGEventFlagMaskAlternate = NX_ALTERNATEMASK;
 	kCGEventFlagMaskCommand = NX_COMMANDMASK;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   { Special key identifiers. }
@@ -692,19 +819,23 @@ type
 =======
 >>>>>>> origin/fixes_2_2
     { Special key identifiers }
+=======
+  { Special key identifiers. }
+>>>>>>> origin/fixes_2.4
 	kCGEventFlagMaskHelp = NX_HELPMASK;
 	kCGEventFlagMaskSecondaryFn = NX_SECONDARYFNMASK;
 
-    { Identifies key events from numeric keypad area on extended keyboards }
+  { Identifies key events from numeric keypad area on extended keyboards. }
 	kCGEventFlagMaskNumericPad = NX_NUMERICPADMASK;
 
-    { Indicates if mouse/pen movement events are not being coalesced }
+  { Indicates if mouse/pen movement events are not being coalesced }
 	kCGEventFlagMaskNonCoalesced = NX_NONCOALSESCEDMASK;
 *)
 type
 	CGEventFlags = UInt64;	    { Flags for events }
 
 
+<<<<<<< HEAD
 {
  *
  * The following enumeration describes all event types currently presented
@@ -721,6 +852,9 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{ Constants that specify the different types of input events. }
+>>>>>>> origin/fixes_2.4
 
 { Event types }
 type
@@ -764,6 +898,7 @@ const
 type
 	CGEventType = UInt32;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 { Event timestamp; roughly, nanoseconds since startup. }
@@ -1075,167 +1210,246 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 
+=======
+{ Event timestamp; roughly, nanoseconds since startup. }
+>>>>>>> origin/fixes_2.4
 type
-	CGEventTimestamp = UInt64;  { Event timestamp, roughly, nanoseconds since startup }
+	CGEventTimestamp = UInt64;
 
-{
- * Low level functions provide access to specialized fields of the events
- * The fields are identified by tokens defined in this enumeration.
- }
-type
-	_CGEventField = SInt32;
+{ Constants used as keys to access specialized fields in low-level events. }
 const
-{ Additional keys and values found in mouse events, including the OtherMouse events: }
-
+{ Key to access an integer field that contains the mouse button event
+     number. Matching mouse-down and mouse-up events will have the same
+     event number. }
 	kCGMouseEventNumber = 0;
-    { Key associated with an integer encoding the mouse button event number as an integer.  Matching mouse-down and mouse-up events will have the same event number. }
 
+  { Key to access an integer field that contains the mouse button click
+  state. A click state of 1 represents a single click. A click state of 2
+  represents a double-click. A click state of 3 represents a
+  triple-click. }
 	kCGMouseEventClickState = 1;
-    { Key associated with an integer encoding the mouse button clickState as an integer.  A clickState of 1 represents a single click.  A clickState of 2 represents a double-click.  A clickState of 3 represents a triple-click. }
 
+  { Key to access a double field that contains the mouse button pressure.
+     The pressure value may range from 0 to 1, with 0 representing the mouse
+     being up. This value is commonly set by tablet pens mimicking a
+     mouse. }
 	kCGMouseEventPressure = 2;
-    { Key associated with a double encoding the mouse button pressurr.  The pressure value may range from 0 to 1.0, with 0 representing the mouse being up.  This value is commonly set by tablet pens mimicing a mouse. }
 
+  { Key to access an integer field that contains the mouse button
+     number. }
 	kCGMouseEventButtonNumber = 3;
-    { Key associated with an integer representing the mouse button number.  The left mouse button reports as button 0.  A right mouse button reports as button 1.  A middle button reports as button 2, and additional buttons report as the appropriate USB button. }
 
+  { Key to access an integer field that contains the horizontal mouse delta
+     since the last mouse movement event. }
 	kCGMouseEventDeltaX = 4;
+
+  { Key to access an integer field that contains the vertical mouse delta
+     since the last mouse movement event. }
 	kCGMouseEventDeltaY = 5;
-    { Key associated with an integer encoding the mouse delta since the last mouse movement event. }
 
+  { Key to access an integer field. The value is non-zero if the event
+     should be ignored by the Inkwell subsystem. }
 	kCGMouseEventInstantMouser = 6;
-    { Key associated with an integer value, non-zero if the event should be ignored by the Inkwell subsystem. }
 
+  { Key to access an integer field that encodes the mouse event subtype as
+     a `kCFNumberIntType'. }
 	kCGMouseEventSubtype = 7;
-    {
-     * Key associated with an integer encoding the mouse event subtype as a kCFNumberIntType.
-     *
-     * Tablets may generate specially annotated mouse events,
-     * which will contain additional keys and values.
-     *
-     * Mouse events of subtype kCGEventMouseSubtypeTabletPoint may also use the tablet  accessor keys.
-     * Mouse events of subtype kCGEventMouseSubtypeTabletProximity may also use the tablet  proximity accessor keys.
-     }
 
-    { Additional keys and values found in keyboard events:	}
-
+  { Key to access an integer field, non-zero when this is an autorepeat of
+     a key-down, and zero otherwise. }
 	kCGKeyboardEventAutorepeat = 8;
-    { Key associated with an integer, non-zero when when this is an autorepeat of a key-down, and zero otherwise. }
 
+  { Key to access an integer field that contains the virtual keycode of the
+     key-down or key-up event. }
 	kCGKeyboardEventKeycode = 9;
-    { Key associated with the integer virtual keycode of the key-down or key-up event. }
 
+  { Key to access an integer field that contains the keyboard type
+     identifier. }
 	kCGKeyboardEventKeyboardType = 10;
-    { Key associated with the integer representing the keyboard type identifier. }
 
-
-    { Additional keys and values found in scroll wheel events:	}
-
+  { Key to access an integer field that contains scrolling data. This field
+     typically contains the change in vertical position since the last
+     scrolling event from a Mighty Mouse scroller or a single-wheel mouse
+     scroller. }
 	kCGScrollWheelEventDeltaAxis1 = 11;
+
+  { Key to access an integer field that contains scrolling data. This field
+     typically contains the change in horizontal position since the last
+     scrolling event from a Mighty Mouse scroller. }
 	kCGScrollWheelEventDeltaAxis2 = 12;
+
+  { This field is not used. }
 	kCGScrollWheelEventDeltaAxis3 = 13;
-    { Key associated with an integer value representing a change in scrollwheel position. }
 
+  { Key to access a field that contains scrolling data. The scrolling data
+     represents a line-based or pixel-based change in vertical position
+     since the last scrolling event from a Mighty Mouse scroller or a
+     single-wheel mouse scroller. The scrolling data uses a fixed-point
+     16.16 signed integer format. If this key is passed to
+     `CGEventGetDoubleValueField', the fixed-point value is converted to a
+     double value. }
+	kCGScrollWheelEventFixedPtDeltaAxis1 = 93;
+
+  { Key to access a field that contains scrolling data. The scrolling data
+     represents a line-based or pixel-based change in horizontal position
+     since the last scrolling event from a Mighty Mouse scroller. The
+     scrolling data uses a fixed-point 16.16 signed integer format. If this
+     key is passed to `CGEventGetDoubleValueField', the fixed-point value is
+     converted to a double value. }
+	kCGScrollWheelEventFixedPtDeltaAxis2 = 94;
+
+  { This field is not used. }
+	kCGScrollWheelEventFixedPtDeltaAxis3 = 95;
+
+  { Key to access an integer field that contains pixel-based scrolling
+     data. The scrolling data represents the change in vertical position
+     since the last scrolling event from a Mighty Mouse scroller or a
+     single-wheel mouse scroller. }
+	kCGScrollWheelEventPointDeltaAxis1 = 96;
+
+  { Key to access an integer field that contains pixel-based scrolling
+     data. The scrolling data represents the change in horizontal position
+     since the last scrolling event from a Mighty Mouse scroller. }
+	kCGScrollWheelEventPointDeltaAxis2 = 97;
+
+  { This field is not used. }
+	kCGScrollWheelEventPointDeltaAxis3 = 98;
+
+  { Key to access an integer field that indicates whether the event should
+     be ignored by the Inkwell subsystem. If the value is non-zero, the
+     event should be ignored. }
 	kCGScrollWheelEventInstantMouser = 14;
-    { Key associated with an integer value, non-zero if the event should be ignored by the Inkwell subsystem. }
 
-
-    {
-     * Additional keys and values found in tablet pointer events,
-     * and in mouse events containing embedded tablet event data:
-     }
-
+  { Key to access an integer field that contains the absolute X coordinate
+     in tablet space at full tablet resolution. }
 	kCGTabletEventPointX = 15;
+
+  { Key to access an integer field that contains the absolute Y coordinate
+     in tablet space at full tablet resolution. }
 	kCGTabletEventPointY = 16;
+
+  { Key to access an integer field that contains the absolute Z coordinate
+     in tablet space at full tablet resolution. }
 	kCGTabletEventPointZ = 17;
-    { Key associated with an integer encoding the absolute X, Y, or Z tablet coordinate in tablet space at full tablet resolution. }
 
+  { Key to access an integer field that contains the tablet button state.
+     Bit 0 is the first button, and a set bit represents a closed or pressed
+     button. Up to 16 buttons are supported. }
 	kCGTabletEventPointButtons = 18;
-    { Key associated with an integer encoding the tablet button state. Bit 0 is the first button, and a set bit represents a closed or pressed button. Up to 16 buttons are supported. }
 
+  { Key to access a double field that contains the tablet pen pressure. A
+     value of 0.0 represents no pressure, and 1.0 represents maximum
+     pressure. }
 	kCGTabletEventPointPressure = 19;
-    { Key associated with a double encoding the tablet pen pressure.  0 represents no pressure, and 1.0 represents maximum pressure. }
 
+  { Key to access a double field that contains the horizontal tablet pen
+     tilt. A value of 0 represents no tilt, and 1 represents maximum tilt. }
 	kCGTabletEventTiltX = 20;
+
+  { Key to access a double field that contains the vertical tablet pen
+     tilt. A value of 0 represents no tilt, and 1 represents maximum tilt. }
 	kCGTabletEventTiltY = 21;
-    { Key associated with a double encoding the tablet pen tilt.  0 represents no tilt, and 1.0 represents maximum tilt. } 
 
+  { Key to access a double field that contains the tablet pen rotation. }
 	kCGTabletEventRotation = 22;
-    { Key associated with a double encoding the tablet pen rotation. }
 
+  { Key to access a double field that contains the tangential pressure on
+     the device. A value of 0.0 represents no pressure, and 1.0 represents
+     maximum pressure. }
 	kCGTabletEventTangentialPressure = 23;
-    { Key associated with a double encoding the tangential pressure on the device. 0 represents no pressure, and 1.0 represents maximum pressure.  }
 
+  { Key to access an integer field that contains the system-assigned unique
+     device ID. }
 	kCGTabletEventDeviceID = 24;
-    { Key associated with an integer encoding the system-assigned unique device ID. }
 
+  { Key to access an integer field that contains a vendor-specified value. }
 	kCGTabletEventVendor1 = 25;
+
+  { Key to access an integer field that contains a vendor-specified value. }
 	kCGTabletEventVendor2 = 26;
+
+  { Key to access an integer field that contains a vendor-specified value. }
 	kCGTabletEventVendor3 = 27;
-    { Key associated with an integer containing vendor-specified values.}
 
-
-    {
-     * Additional keys and values found in tablet proximity events,
-     * and in mouse events containing embedded tablet proximity data:
-     }
-
+  { Key to access an integer field that contains the vendor-defined ID,
+     typically the USB vendor ID. }
 	kCGTabletProximityEventVendorID = 28;
-    { Key associated with an integer encoding the vendor-defined ID, typically the USB vendor ID. }
 
+  { Key to access an integer field that contains the vendor-defined tablet
+     ID, typically the USB product ID. }
 	kCGTabletProximityEventTabletID = 29;
-    { Key associated with an integer encoding the vendor-defined tablet ID, typically the USB product ID. }
 
+  { Key to access an integer field that contains the vendor-defined ID of
+     the pointing device. }
 	kCGTabletProximityEventPointerID = 30;
-    { Key associated with an integer encoding the vendor-defined ID of the pointing device. }
 
+  { Key to access an integer field that contains the system-assigned device
+     ID. }
 	kCGTabletProximityEventDeviceID = 31;
-    { Key associated with an integer encoding the system-assigned device ID. }
 
+  { Key to access an integer field that contains the system-assigned unique
+     tablet ID. }
 	kCGTabletProximityEventSystemTabletID = 32;
-    { Key associated with an integer encoding the system-assigned unique tablet ID. }
 
+  { Key to access an integer field that contains the vendor-assigned
+     pointer type. }
 	kCGTabletProximityEventVendorPointerType = 33;
-    { Key associated with an integer encoding the vendor-assigned pointer type. }
 
+  { Key to access an integer field that contains the vendor-defined pointer
+     serial number. }
 	kCGTabletProximityEventVendorPointerSerialNumber = 34;
-    { Key associated with an integer encoding the vendor-defined pointer serial number. }
 
+  { Key to access an integer field that contains the vendor-defined unique
+     ID. }
 	kCGTabletProximityEventVendorUniqueID = 35;
-    { Key associated with an integer encoding the vendor-defined unique ID. }
 
+  { Key to access an integer field that contains the device capabilities
+     mask. }
 	kCGTabletProximityEventCapabilityMask = 36;
-    { Key associated with an integer encoding the device capabilities mask. }
 
+  { Key to access an integer field that contains the pointer type. }
 	kCGTabletProximityEventPointerType = 37;
-    { Key associated with an integer encoding the pointer type. }
 
+  { Key to access an integer field that indicates whether the pen is in
+     proximity to the tablet. The value is non-zero if the pen is in
+     proximity to the tablet and zero when leaving the tablet. }
 	kCGTabletProximityEventEnterProximity = 38;
-    { Key associated with an integer, non-zero when pen is in proximity to the tablet, and zero when leaving the tablet. }
 
+  { Key to access a field that contains the event target process serial
+     number. The value is a 64-bit value. }
 	kCGEventTargetProcessSerialNumber = 39;
-    { Key for the event target process serial number as a 64 bit longword. }
 
+  { Key to access a field that contains the event target Unix process ID. }
 	kCGEventTargetUnixProcessID = 40;
-    { Key for the event target Unix process ID }
 
+  { Key to access a field that contains the event source Unix process ID. }
 	kCGEventSourceUnixProcessID = 41;
-    { Key for the event source, or poster's Unix process ID }
 
+  { Key to access a field that contains the event source user-supplied
+     data, up to 64 bits. }
 	kCGEventSourceUserData = 42;
-    { Key for the event source user-supplied data, up to 64 bits }
 
+  { Key to access a field that contains the event source Unix effective
+     UID. }
 	kCGEventSourceUserID = 43;
-    { Key for the event source Unix effective UID }
 
+  { Key to access a field that contains the event source Unix effective
+     GID. }
 	kCGEventSourceGroupID = 44;
-    { Key for the event source Unix effective GID }
-    
+
+  { Key to access a field that contains the event source state ID used to
+     create this event. }
 	kCGEventSourceStateID = 45;
-    { Key for the event source state ID used to create this event }
+    
+  { Key to access an integer field that indicates whether a scrolling event
+     contains continuous, pixel-based scrolling data. The value is non-zero
+     when the scrolling data is pixel-based and zero when the scrolling data
+     is line-based. }
+	kCGScrollWheelEventIsContinuous = 88;
 type
 	CGEventField = UInt32;
 
+<<<<<<< HEAD
 { Values used with the kCGMouseEventSubtype }
 type
 	_CGEventMouseSubtype = SInt32;
@@ -1243,6 +1457,9 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{ Constants used with the `kCGMouseEventSubtype' event field. }
+>>>>>>> origin/fixes_2.4
 const
 	kCGEventMouseSubtypeDefault = 0;
 	kCGEventMouseSubtypeTabletPoint = 1;
@@ -1250,6 +1467,7 @@ const
 type
 	CGEventMouseSubtype = UInt32;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 { Constants that specify possible tapping points for events. }
@@ -1299,6 +1517,9 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{ Constants that specify possible tapping points for events. }
+>>>>>>> origin/fixes_2.4
 const
 	kCGHIDEventTap = 0;
 	kCGSessionEventTap = 1;
@@ -1306,6 +1527,7 @@ const
 type
 	CGEventTapLocation = UInt32;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 { Constants that specify where a new event tap is inserted into the list of
@@ -1318,12 +1540,17 @@ type
 type
 	_CGEventTapPlacement = SInt32;
 >>>>>>> origin/fixes_2_2
+=======
+{ Constants that specify where a new event tap is inserted into the list of
+   active event taps. }
+>>>>>>> origin/fixes_2.4
 const
 	kCGHeadInsertEventTap = 0;
 	kCGTailAppendEventTap = 1;
 type
 	CGEventTapPlacement = UInt32;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 { Constants that specify whether a new event tap is an active filter or a
@@ -1340,10 +1567,17 @@ type
 	_CGEventTapOptions = SInt32;
 const
 >>>>>>> origin/fixes_2_2
+=======
+{ Constants that specify whether a new event tap is an active filter or a
+   passive listener. }
+const
+	kCGEventTapOptionDefault = $00000000;
+>>>>>>> origin/fixes_2.4
 	kCGEventTapOptionListenOnly = $00000001;
 type
 	CGEventTapOptions = UInt32;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 { A mask that identifies the set of Quartz events to be observed in an
@@ -1493,31 +1727,48 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 
+=======
+{ A mask that identifies the set of Quartz events to be observed in an
+   event tap. }
+>>>>>>> origin/fixes_2.4
 type
 	CGEventMask = UInt64;
 {
+Generate an event mask for a single type of event.
 #define CGEventMaskBit(eventType)	((CGEventMask)1 << (eventType))
+
+An event mask that represents all event types.
+#define kCGEventMaskForAllEvents	(~(CGEventMask)0)
 }
 
+
+{ An opaque type that represents state within the client application that’s
+   associated with an event tap. }
 type
-	CGEventTapProxy = ^SInt32; { an opaque 32-bit type }
+	CGEventTapProxy = ^SInt32; { an opaque type }
 
-{
- * The callback is passed a proxy for the tap, the event type, the incoming event,
- * and the refcon the callback was registered with.
- * The function should return the (possibly modified) passed in event,
- * a newly constructed event, or NULL if the event is to be deleted.
- *
- * The CGEventRef passed into the callback is retained by the calling code, and is
- * released after the callback returns and the data is passed back to the event
- * system.  If a different event is returned by the callback function, then that
- * event will be released by the calling code along with the original event, after
- * the event data has been passed back to the event system.
- }
+{ A client-supplied callback function that’s invoked whenever an associated
+   event tap receives a Quartz event.
+
+   The callback is passed a proxy for the tap, the event type, the incoming
+   event, and the user-defined data specified when the event tap was
+   created. The function should return the (possibly modified) passed-in
+   event, a newly constructed event, or NULL if the event is to be deleted.
+
+   The event passed to the callback is retained by the calling code, and is
+   released after the callback returns and the data is passed back to the
+   event system. If a different event is returned by the callback function,
+   then that event will be released by the calling code along with the
+   original event, after the event data has been passed back to the event
+   system. }
+
 type
-	CGEventTapCallBack = function( proxy: CGEventTapProxy; typ: CGEventType; event: CGEventRef; refcon: UnivPtr ): CGEventRef;
+	CGEventTapCallBack = function( proxy: CGEventTapProxy; typ: CGEventType; event: CGEventRef; userInfo: UnivPtr ): CGEventRef;
 
+{ When an event tap is installed or released, a notification is posted. See
+   notify(3) and notify.h for details. }
 
+<<<<<<< HEAD
 {
  * When an event tap is installed or released, a notification
  * is posted via the notify_post() API.  See notify (3) and
@@ -1527,6 +1778,8 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 const
 	kCGNotifyEventTapAdded = 'com.apple.coregraphics.eventTapAdded';
 const
@@ -1553,16 +1806,22 @@ type
 		tapPoint: CGEventTapLocation;		{ HID, session, annotated session }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 		options: CGEventTapOptions;		{ Listener, filter }
 {$ifc TARGET_CPU_64}
     __alignment_dummy: UInt32;
 {$endc}
+<<<<<<< HEAD
 =======
 		options: CGEventTapOptions;		{ Listener, Filter }
 >>>>>>> graemeg/fixes_2_2
 =======
 		options: CGEventTapOptions;		{ Listener, Filter }
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 		eventsOfInterest: CGEventMask;	{ Mask of events being tapped }
 		tappingProcess: pid_t;		{ Process that is tapping events }
 		processBeingTapped: pid_t;	{ Zero if not a per-process tap }
@@ -1610,22 +1869,20 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 
-
-{
- * The CGEventSourceRef is an opaque representation of the source of an event.
- *
- * API is provided to obtain the CGEventSource from an event, and to create
- * a new event with a CGEventSourceRef.
- }
+{ An opaque type that represents the source of a Quartz event. }
 type
-	CGEventSourceRef = ^SInt32; { an opaque 32-bit type }
+	CGEventSourceRef = ^SInt32; { an opaque type }
 
 type
 	CGEventSourceStateID = UInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{ Constants that specify the possible source states of an event source. }
+>>>>>>> origin/fixes_2.4
 const
 	kCGEventSourceStatePrivate = -1;
 	kCGEventSourceStateCombinedSessionState = 0;
@@ -1668,15 +1925,24 @@ end.
 =======
 >>>>>>> origin/fixes_2_2
 
+
+{ A code that represents the type of keyboard used with a specified event
+   source. }
 type
 	CGEventSourceKeyboardType = UInt32;
 
+{ A constant specifying any input event type }
 const
 	kCGAnyInputEventType = $FFFFFFFF;
 
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

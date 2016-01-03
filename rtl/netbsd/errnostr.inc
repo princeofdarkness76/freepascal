@@ -17,6 +17,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Checked using ../unix/scipts/check_errnostr.sh  }
 const
   sys_errn=97;
@@ -40,12 +41,18 @@ const
 const
   sys_errn=93;
 >>>>>>> origin/cpstrnew
+=======
+{$warning FIX ME, I'am from FreeBSD }
+const
+  sys_errn=93;
+>>>>>>> origin/fixes_2.4
   sys_errlist:array[0..sys_errn-1] of pchar = (
         'Success',                              { 0 }
         'Operation not permitted',              { EPERM }
         'No such file or directory',            { ENOENT }
         'No such process',                      { ESRCH }
         'Interrupted system call',              { EINTR }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -79,6 +86,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
         'I/O error',                            { EIO }
         'No such device or address',            { ENXIO }
         'Arg list too long',                    { E2BIG }
@@ -104,6 +113,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -111,6 +121,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
                                                     a pure procedure (shared text) file which was
                                                     open for writing by another process, or file
                                                     which was open for writing by another process,
@@ -123,6 +135,7 @@ const
         'Read-only file system',                { EROFS }
         'Too many links',                       { EMLINK }
         'Broken pipe',                          { EPIPE }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -201,6 +214,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
         'Math argument out of domain of func',  { EDOM }
         'Math result not representable',        { ERANGE }
         'Resource temporarily unavailable',        { EAGAIN }
@@ -267,6 +282,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -274,5 +290,7 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 );
 

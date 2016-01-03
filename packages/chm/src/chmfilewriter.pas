@@ -48,10 +48,10 @@ type
 =======
 >>>>>>> origin/fixes_2_2
   Classes, SysUtils, chmwriter;
-  
+
 type
   TChmProject = class;
-  
+
   TChmProgressCB = procedure (Project: TChmProject; CurrentFile: String) of object;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -67,6 +67,7 @@ type
     FDefaultPage: String;
     FFiles: TStrings;
     FIndexFileName: String;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     FMakeBinaryTOC: Boolean;
@@ -166,6 +167,10 @@ type
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    FMakeBinaryTOC: Boolean;
+    FMakeBinaryIndex: Boolean;
+>>>>>>> origin/fixes_2.4
     FMakeSearchable: Boolean;
     FFileName: String;
     FOnProgress: TChmProgressCB;
@@ -202,17 +207,23 @@ type
     property Files: TStrings read FFiles write FFiles;
     property AutoFollowLinks: Boolean read FAutoFollowLinks write FAutoFollowLinks;
     property TableOfContentsFileName: String read FTableOfContentsFileName write FTableOfContentsFileName;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
     property Files: TStrings read FFiles write FFiles;
     property AutoFollowLinks: Boolean read FAutoFollowLinks write FAutoFollowLinks;
     property TableOfContentsFileName: String read FTableOfContentsFileName write FTableOfContentsFileName;
 >>>>>>> origin/fixes_2_2
+=======
+    property MakeBinaryTOC: Boolean read FMakeBinaryTOC write FMakeBinaryTOC;
+    property MakeBinaryIndex: Boolean read FMakeBinaryIndex write FMakeBinaryIndex;
+>>>>>>> origin/fixes_2.4
     property Title: String read FTitle write FTitle;
     property IndexFileName: String read FIndexFileName write FIndexFileName;
     property MakeSearchable: Boolean read FMakeSearchable write FMakeSearchable;
     property DefaultPage: String read FDefaultPage write FDefaultPage;
     property DefaultFont: String read FDefaultFont write FDefaultFont;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     property Windows :TObjectList read FWindows write FWindows;
@@ -289,16 +300,23 @@ end;
 =======
 >>>>>>> origin/fixes_2_2
     
+=======
+
+>>>>>>> origin/fixes_2.4
     property OnProgress: TChmProgressCB read FOnProgress write FOnProgress;
   end;
 
 implementation
 
+<<<<<<< HEAD
 uses XmlCfg;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+uses XmlCfg, chmsitemap;
+>>>>>>> origin/fixes_2.4
 
 { TChmProject }
 
@@ -313,6 +331,7 @@ begin
   FileName := StringReplace(FileName, '//', '/', [rfReplaceAll]);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -320,6 +339,9 @@ begin
 =======
   
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/fixes_2.4
   PathInChm := '/'+ExtractFilePath(DataName);
   if Assigned(FOnProgress) then FOnProgress(Self, DataName);
 end;
@@ -407,16 +429,35 @@ begin
   IndexStream: TFileStream;
   TOCStream: TFileStream;
   Writer: TChmWriter;
+  TOCSitemap  : TChmSiteMap;
+  IndexSiteMap: TChmSiteMap;
 begin
   // Assign the TOC and index files
   Writer := TChmWriter(Sender);
+  {$ifdef chmindex}
+    Writeln('binindex filename ',IndexFileName);
+  {$endif}
   if (IndexFileName <> '') and FileExists(IndexFileName) then begin
     IndexStream := TFileStream.Create(IndexFileName, fmOpenRead);
     Writer.AppendIndex(IndexStream);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    if MakeBinaryIndex then
+    begin
+      {$ifdef chmindex}
+        Writeln('into binindex ');
+      {$endif}
+      IndexStream.Position := 0;
+      IndexSitemap := TChmSiteMap.Create(stIndex);
+      indexSitemap.LoadFromStream(IndexStream);
+      Writer.AppendBinaryIndexFromSiteMap(IndexSitemap,False);
+      IndexSitemap.Free;	
+    end;
+>>>>>>> origin/fixes_2.4
     IndexStream.Free;
   end;
   if (TableOfContentsFileName <> '') and FileExists(TableOfContentsFileName) then begin
@@ -424,6 +465,9 @@ begin
     Writer.AppendTOC(TOCStream);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
     if MakeBinaryTOC then
     begin
       TOCStream.Position := 0;
@@ -432,12 +476,15 @@ begin
       Writer.AppendBinaryTOCFromSiteMap(TOCSitemap);
       TOCSitemap.Free;
     end;
+<<<<<<< HEAD
     TOCStream.Free;
 >>>>>>> graemeg/cpstrnew
   end;
   if not assigned(sender) then
     Writer.Free;
 =======
+=======
+>>>>>>> origin/fixes_2.4
     TOCStream.Free;
   end;
 
@@ -636,6 +683,7 @@ begin
   FileName := AFileName;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FBasePath:=extractfilepath(expandfilename(afilename));
 
   Files.Clear;
@@ -697,6 +745,9 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
   
+=======
+
+>>>>>>> origin/fixes_2.4
   Files.Clear;
   FileCount := Cfg.GetValue('Files/Count/Value', 0);
   for I := 0 to FileCount-1 do begin
@@ -704,11 +755,17 @@ begin
   end;
   IndexFileName := Cfg.GetValue('Files/IndexFile/Value','');
   TableOfContentsFileName := Cfg.GetValue('Files/TOCFile/Value','');
+<<<<<<< HEAD
   
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  // For chm file merging, bintoc must be false and binindex true. Change defaults in time?
+  MakeBinaryTOC := Cfg.GetValue('Files/MakeBinaryTOC/Value', True);
+  MakeBinaryIndex:= Cfg.GetValue('Files/MakeBinaryIndex/Value', False);
+>>>>>>> origin/fixes_2.4
   AutoFollowLinks := Cfg.GetValue('Settings/AutoFollowLinks/Value', False);
   MakeSearchable := Cfg.GetValue('Settings/MakeSearchable/Value', False);
   DefaultPage := Cfg.GetValue('Settings/DefaultPage/Value', '');
@@ -1078,10 +1135,15 @@ begin
   Cfg.SetValue('Files/IndexFile/Value', IndexFileName);
   Cfg.SetValue('Files/TOCFile/Value', TableOfContentsFileName);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 
+=======
+  Cfg.SetValue('Files/MakeBinaryTOC/Value',MakeBinaryTOC);
+  Cfg.SetValue('Files/MakeBinaryIndex/Value',MakeBinaryIndex);
+>>>>>>> origin/fixes_2.4
   Cfg.SetValue('Settings/AutoFollowLinks/Value', AutoFollowLinks);
   Cfg.SetValue('Settings/MakeSearchable/Value', MakeSearchable);
   Cfg.SetValue('Settings/DefaultPage/Value', DefaultPage);
@@ -1824,6 +1886,7 @@ var
   Writer: TChmWriter;
   TOCStream,
   IndexStream: TFileStream;
+
 begin
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1839,6 +1902,7 @@ begin
   Writer.OnLastFile    := @LastFileAdded;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   // give it the list of html files
   Writer.FilesToCompress.AddStrings(Files);
@@ -1851,6 +1915,9 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
   
+=======
+
+>>>>>>> origin/fixes_2.4
   // give it the list of files
   Writer.FilesToCompress.AddStrings(Files);
 
@@ -1863,6 +1930,7 @@ begin
   Writer.Title := Title;
   Writer.DefaultFont := DefaultFont;
   Writer.FullTextSearch := MakeSearchable;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   Writer.HasBinaryTOC := MakeBinaryTOC;
@@ -2010,9 +2078,14 @@ end;
 =======
 >>>>>>> origin/fixes_2_2
   
+=======
+  Writer.HasBinaryTOC := MakeBinaryTOC;
+  Writer.HasBinaryIndex := MakeBinaryIndex;
+
+>>>>>>> origin/fixes_2.4
   // and write!
   Writer.Execute;
-  
+
   if Assigned(TOCStream) then TOCStream.Free;
   if Assigned(IndexStream) then IndexStream.Free;
 end;

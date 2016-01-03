@@ -537,18 +537,27 @@ end;
 
 procedure oamSetMosaic(dx, dy: cuint); inline;
 begin
+<<<<<<< HEAD
   sassert((dx < 16) and (dy < 16), 'Mosaic range must be 0 to 15');
+=======
+  sassert((dx < 16) and (dy < 16), 'Mosaic range is 0 to 15');
+>>>>>>> origin/fixes_2.4
   mosaicShadow := ( mosaicShadow and $00ff) or (dx shl 8) or (dy shl 12);
   REG_MOSAIC^ := mosaicShadow;
 end;
 
 procedure oamSetMosaicSub(dx, dy: cuint); inline;
 begin
+<<<<<<< HEAD
   sassert((dx < 16) and (dy < 16), 'Mosaic range must be 0 to 15');
+=======
+  sassert((dx < 16) and (dy < 16), 'Mosaic range is 0 to 15');
+>>>>>>> origin/fixes_2.4
   mosaicShadowSub := (mosaicShadowSub and $00ff) or (dx shl 8) or (dy shl 12);
   REG_MOSAIC_SUB^ := mosaicShadowSub;
 end;
 
+<<<<<<< HEAD
 procedure oamClearSprite(var oam: OamState; index: cint); inline;
 begin
   sassert( (index >= 0) and (index < SPRITE_COUNT), 'oamClearSprite() index is out of bounds, must be 0-127');
@@ -562,6 +571,15 @@ begin
   oam.oamRotationMemory[rotId].vdx := vdx;
   oam.oamRotationMemory[rotId].hdy := hdy;
   oam.oamRotationMemory[rotId].vdy := vdy;
+=======
+procedure oamAffineTransformation(var oam: OamState; rotId, hdx, hdy, vdx, vdy: cint); inline;
+begin
+  sassert((rotId >= 0) and (rotId < 32), 'oamAffineTransformation() rotId is out of bounds, must be 0-31');
+  oam.oamRotationMemory[rotId].hdx := hdx shr 12;
+  oam.oamRotationMemory[rotId].hdy := hdy shr 12;
+  oam.oamRotationMemory[rotId].vdx := vdx shr 12;
+  oam.oamRotationMemory[rotId].vdy := vdy shr 12;
+>>>>>>> origin/fixes_2.4
 end;
 
 

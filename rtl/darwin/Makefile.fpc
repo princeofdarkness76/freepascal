@@ -44,6 +44,7 @@ units=$(SYSTEMUNIT) unixtype ctypes objpas macpas iso7185 \
       errors ipc terminfo termio video crt mouse keyboard  \
       variants dateutils convutils stdconvs \
       sysconst cthreads strutils rtlconsts cwstring bsd fmtbcd \
+<<<<<<< HEAD
       fpintres fpextres clocale objc objcbase
 =======
       errors terminfo termio video crt mouse keyboard console \
@@ -54,6 +55,9 @@ units=$(SYSTEMUNIT) unixtype ctypes objpas macpas iso7185 \
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      fpintres fpextres clocale
+>>>>>>> origin/fixes_2.4
 implicitunits=exeinfo
 
 rsts=math varutils typinfo classes variants dateutils sysconst rtlconsts
@@ -201,6 +205,7 @@ strings$(PPUEXT) : $(SYSTEMUNIT)$(PPUEXT) $(INC)/strings.pp $(INC)/stringsi.inc\
                    $(PROCINC)/strings.inc $(PROCINC)/stringss.inc\
                    $(SYSTEMUNIT)$(PPUEXT)
 
+<<<<<<< HEAD
 objc$(PPUEXT) : $(SYSTEMUNIT)$(PPUEXT) ctypes$(PPUEXT) unixtype$(PPUEXT) $(INC)/objc.pp $(INC)/objc1.inc $(INC)/objcnf.inc
 
 objcbase$(PPUEXT) : $(SYSTEMUNIT)$(PPUEXT) $(INC)/objcbase.pp objc$(PPUEXT)
@@ -219,6 +224,8 @@ blockrtl$(PPUEXT) : $(SYSTEMUNIT)$(PPUEXT) objpas$(PPUEXT) initc$(PPUEXT) ctypes
 =======
 >>>>>>> origin/cpstrnew
 
+=======
+>>>>>>> origin/fixes_2.4
 #
 # System Dependent Units
 #

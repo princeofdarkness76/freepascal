@@ -41,8 +41,13 @@ type
         SundPlay: record
           _type: cuint16;
           data: pointer;
+<<<<<<< HEAD
           dataSize: cuint16;
           loopPoint: cuint16;
+=======
+          loopPoint: cuint16;
+          dataSize: cuint16;
+>>>>>>> origin/fixes_2.4
           freq: cuint16;
           volume: cuint8;
           pan: cuint8;
@@ -56,7 +61,10 @@ type
           dutyCycle: cuint8;
           volume: cuint8;
           pan: cuint8;
+<<<<<<< HEAD
           channel: cuint8;
+=======
+>>>>>>> origin/fixes_2.4
         end;
       );
       2: (
@@ -79,6 +87,7 @@ type
           keys: cuint16;
         end;
       );
+<<<<<<< HEAD
       5: (
         sdParams: record
           buffer: pointer;
@@ -106,6 +115,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
   end;
   TFifoMessage = FifoMessage;
   PFifoMessage = ^FifoMessage;

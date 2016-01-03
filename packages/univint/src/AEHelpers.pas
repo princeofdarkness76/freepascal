@@ -1,6 +1,7 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       AE/AEHelpers.h
  
      Contains:   AEPrint, AEBuild and AEStream for Carbon
@@ -28,17 +29,23 @@
 =======
 >>>>>>> origin/fixes_2_2
      File:       AEHelpers.p
+=======
+     File:       AE/AEHelpers.h
+>>>>>>> origin/fixes_2.4
  
      Contains:   AEPrint, AEBuild and AEStream for Carbon
  
-     Version:    Technology: Mac OS X, CarbonLib
-                 Release:    Universal Interfaces 3.4.2
+     Version:    AppleEvents-496~1
  
+<<<<<<< HEAD
      Copyright:  © 1999-2002 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -77,21 +84,21 @@
                      http://www.freepascal.org/bugs.html
  
 }
-{
- * Originally from AEGIzmos by Jens Alfke, circa 1992.
- }
-
-
+{  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -100,6 +107,7 @@
 
 unit AEHelpers;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -112,6 +120,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -126,6 +138,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -133,21 +146,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -155,6 +177,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -165,6 +190,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -182,6 +208,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -189,10 +217,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -200,6 +231,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -237,6 +269,9 @@ interface
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 =======
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -246,6 +281,7 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -451,18 +487,65 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -490,12 +573,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -508,6 +594,9 @@ interface
 uses MacTypes,AppleEvents,AEDataModel;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -517,16 +606,22 @@ uses MacTypes,AppleEvents,AEDataModel;
  * Originally from AEGIzmos by Jens Alfke, circa 1992.
  }
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ALIGN MAC68K}
 
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  * AEBuild:
  *
  * AEBuild provides a very high level abstraction for building
@@ -540,6 +635,7 @@ uses MacTypes,AppleEvents,AEDataModel;
  *     <http://developer.apple.com/technotes/tn/tn2045.html>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  }
 { Syntax Error Codes: }
 type
@@ -731,6 +827,8 @@ function AEBuildAppleEvent( theClass: AEEventClass; theID: AEEventID; addressTyp
 =======
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
  }
 { Syntax Error Codes: }
 type
@@ -843,6 +941,7 @@ function AEBuildParameters( var event: AppleEvent; error: AEBuildErrorPtr { can 
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
+<<<<<<< HEAD
  }
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
@@ -883,6 +982,29 @@ function AEBuildAppleEvent( theClass: AEEventClass; theID: AEEventID; addressTyp
  * AEBuild is only available for C programmers.
  }
 >>>>>>> origin/fixes_2_2
+=======
+ }
+function AEBuildAppleEvent( theClass: AEEventClass; theID: AEEventID; addressType: DescType; addressData: {const} UnivPtr; addressLength: Size; returnID: SInt16; transactionID: SInt32; var result: AppleEvent; error: AEBuildErrorPtr { can be NULL }; paramsFmt: ConstCStringPtr; ... ): OSStatus; external name '_AEBuildAppleEvent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ varargs version of AEBuildAppleEvent}
+{
+ *  vAEBuildAppleEvent()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+// function vAEBuildAppleEvent( theClass: AEEventClass; theID: AEEventID; addressType: DescType; addressData: {const} UnivPtr; addressLength: Size; returnID: SInt16; transactionID: SInt32; var resultEvt: AppleEvent; error: AEBuildErrorPtr { can be NULL }; paramsFmt: ConstCStringPtr; args: va_list ): OSStatus;
+// AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
+
+>>>>>>> origin/fixes_2.4
 {
  * AEPrintDescToHandle
  *
@@ -895,6 +1017,7 @@ function AEBuildAppleEvent( theClass: AEEventClass; theID: AEEventID; addressTyp
 {
  *  AEPrintDescToHandle()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
@@ -927,16 +1050,27 @@ function AEPrintDescToHandle( const (*var*) desc: AEDesc; var result: Handle ): 
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
+>>>>>>> origin/fixes_2.4
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function AEPrintDescToHandle(const (*var*) desc: AEDesc; var result: Handle): OSStatus; external name '_AEPrintDescToHandle';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function AEPrintDescToHandle( const (*var*) desc: AEDesc; var result: Handle ): OSStatus; external name '_AEPrintDescToHandle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 {
  * AEStream:
@@ -948,6 +1082,7 @@ function AEPrintDescToHandle(const (*var*) desc: AEDesc; var result: Handle): OS
  * AEDesc, which may be partially complete, or may be a complete
  * AppleEvent.
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 type
@@ -1007,26 +1142,35 @@ function AEStreamOpen: AEStreamRef; external name '_AEStreamOpen';
 =======
 >>>>>>> origin/fixes_2_2
 
+=======
+>>>>>>> origin/fixes_2.4
 type
-	AEStreamRef    = ^SInt32; { an opaque 32-bit type }
-	AEStreamRefPtr = ^AEStreamRef;  { when a var xx:AEStreamRef parameter can be nil, it is changed to xx: AEStreamRefPtr }
-	{
-	   Create and return an AEStreamRef
-	   Returns NULL on memory allocation failure
-	}
-	{
-	 *  AEStreamOpen()
-	 *  
-	 *  Availability:
-	 *    Non-Carbon CFM:   not available
-	 *    CarbonLib:        in CarbonLib 1.1 and later
-	 *    Mac OS X:         in version 10.0 and later
-	 	}
+	AEStreamRef = ^SInt32; { an opaque type }
+{
+   Create and return an AEStreamRef
+   Returns NULL on memory allocation failure
+}
+{
+ *  AEStreamOpen()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   not available
+ }
 function AEStreamOpen: AEStreamRef; external name '_AEStreamOpen';
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 {
    Closes and disposes of an AEStreamRef, producing
@@ -1036,6 +1180,7 @@ function AEStreamOpen: AEStreamRef; external name '_AEStreamOpen';
 {
  *  AEStreamClose()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
@@ -1068,16 +1213,27 @@ function AEStreamClose( ref: AEStreamRef; var desc: AEDesc ): OSStatus; external
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
+>>>>>>> origin/fixes_2.4
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function AEStreamClose(ref: AEStreamRef; var desc: AEDesc): OSStatus; external name '_AEStreamClose';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function AEStreamClose( ref: AEStreamRef; var desc: AEDesc ): OSStatus; external name '_AEStreamClose';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 {
    Prepares an AEStreamRef for appending data to a newly created desc.
@@ -1086,6 +1242,7 @@ function AEStreamClose(ref: AEStreamRef; var desc: AEDesc): OSStatus; external n
 {
  *  AEStreamOpenDesc()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
@@ -1158,27 +1315,43 @@ function AEStreamWriteData( ref: AEStreamRef; data: {const} UnivPtr; length: Siz
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
+>>>>>>> origin/fixes_2.4
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
-function AEStreamOpenDesc(ref: AEStreamRef; newType: DescType): OSStatus; external name '_AEStreamOpenDesc';
+function AEStreamOpenDesc( ref: AEStreamRef; newType: DescType ): OSStatus; external name '_AEStreamOpenDesc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
-{  Append data to the previously opened desc. }
+
+{ Append data to the previously opened desc.}
 {
  *  AEStreamWriteData()
  *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function AEStreamWriteData(ref: AEStreamRef; data: UnivPtr; length: Size): OSStatus; external name '_AEStreamWriteData';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function AEStreamWriteData( ref: AEStreamRef; data: {const} UnivPtr; length: Size ): OSStatus; external name '_AEStreamWriteData';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 {
    Finish a desc.  After this, you can close the stream, or adding new
@@ -1187,6 +1360,7 @@ function AEStreamWriteData(ref: AEStreamRef; data: UnivPtr; length: Size): OSSta
 {
  *  AEStreamCloseDesc()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
@@ -1295,38 +1469,59 @@ function AEStreamWriteAEDesc( ref: AEStreamRef; const (*var*) desc: AEDesc ): OS
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
+>>>>>>> origin/fixes_2.4
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
-function AEStreamCloseDesc(ref: AEStreamRef): OSStatus; external name '_AEStreamCloseDesc';
+function AEStreamCloseDesc( ref: AEStreamRef ): OSStatus; external name '_AEStreamCloseDesc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
-{  Write data as a desc to the stream }
+
+{ Write data as a desc to the stream}
 {
  *  AEStreamWriteDesc()
  *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
-function AEStreamWriteDesc(ref: AEStreamRef; newType: DescType; data: UnivPtr; length: Size): OSStatus; external name '_AEStreamWriteDesc';
+function AEStreamWriteDesc( ref: AEStreamRef; newType: DescType; data: {const} UnivPtr; length: Size ): OSStatus; external name '_AEStreamWriteDesc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
-{  Write an entire desc to the stream }
+
+{ Write an entire desc to the stream}
 {
  *  AEStreamWriteAEDesc()
  *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function AEStreamWriteAEDesc(ref: AEStreamRef; const (*var*) desc: AEDesc): OSStatus; external name '_AEStreamWriteAEDesc';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function AEStreamWriteAEDesc( ref: AEStreamRef; const (*var*) desc: AEDesc ): OSStatus; external name '_AEStreamWriteAEDesc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 {
    Begin a list.  You can then append to the list by doing
@@ -1335,6 +1530,7 @@ function AEStreamWriteAEDesc(ref: AEStreamRef; const (*var*) desc: AEDesc): OSSt
 {
  *  AEStreamOpenList()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
@@ -1407,27 +1603,43 @@ function AEStreamCloseList( ref: AEStreamRef ): OSStatus; external name '_AEStre
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
+>>>>>>> origin/fixes_2.4
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
-function AEStreamOpenList(ref: AEStreamRef): OSStatus; external name '_AEStreamOpenList';
+function AEStreamOpenList( ref: AEStreamRef ): OSStatus; external name '_AEStreamOpenList';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
-{  Finish a list. }
+
+{ Finish a list.}
 {
  *  AEStreamCloseList()
  *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function AEStreamCloseList(ref: AEStreamRef): OSStatus; external name '_AEStreamCloseList';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function AEStreamCloseList( ref: AEStreamRef ): OSStatus; external name '_AEStreamCloseList';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 {
    Begin a record.  A record usually has type 'reco', however, this is
@@ -1436,6 +1648,7 @@ function AEStreamCloseList(ref: AEStreamRef): OSStatus; external name '_AEStream
 {
  *  AEStreamOpenRecord()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
@@ -1538,38 +1751,59 @@ function AEStreamCloseRecord( ref: AEStreamRef ): OSStatus; external name '_AESt
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
+>>>>>>> origin/fixes_2.4
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
-function AEStreamOpenRecord(ref: AEStreamRef; newType: DescType): OSStatus; external name '_AEStreamOpenRecord';
+function AEStreamOpenRecord( ref: AEStreamRef; newType: DescType ): OSStatus; external name '_AEStreamOpenRecord';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
-{  Change the type of a record. }
+
+{ Change the type of a record.}
 {
  *  AEStreamSetRecordType()
  *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
-function AEStreamSetRecordType(ref: AEStreamRef; newType: DescType): OSStatus; external name '_AEStreamSetRecordType';
+function AEStreamSetRecordType( ref: AEStreamRef; newType: DescType ): OSStatus; external name '_AEStreamSetRecordType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
-{  Finish a record }
+
+{ Finish a record}
 {
  *  AEStreamCloseRecord()
  *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function AEStreamCloseRecord(ref: AEStreamRef): OSStatus; external name '_AEStreamCloseRecord';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function AEStreamCloseRecord( ref: AEStreamRef ): OSStatus; external name '_AEStreamCloseRecord';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 {
    Add a keyed descriptor to a record.  This is analogous to AEPutParamDesc.
@@ -1578,6 +1812,7 @@ function AEStreamCloseRecord(ref: AEStreamRef): OSStatus; external name '_AEStre
 {
  *  AEStreamWriteKeyDesc()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
@@ -1613,24 +1848,36 @@ function AEStreamWriteKeyDesc( ref: AEStreamRef; key: AEKeyword; newType: DescTy
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
+>>>>>>> origin/fixes_2.4
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
-function AEStreamWriteKeyDesc(ref: AEStreamRef; key: AEKeyword; newType: DescType; data: UnivPtr; length: Size): OSStatus; external name '_AEStreamWriteKeyDesc';
+function AEStreamWriteKeyDesc( ref: AEStreamRef; key: AEKeyword; newType: DescType; data: {const} UnivPtr; length: Size ): OSStatus; external name '_AEStreamWriteKeyDesc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
 
 {
+<<<<<<< HEAD
    OpenDesc for a keyed record entry.  You can youse AEStreamWriteData
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+   OpenDesc for a keyed record entry.  You can use AEStreamWriteData
+>>>>>>> origin/fixes_2.4
    after opening a keyed desc.
 }
 {
  *  AEStreamOpenKeyDesc()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
@@ -1697,27 +1944,43 @@ function AEStreamWriteKey( ref: AEStreamRef; key: AEKeyword ): OSStatus; externa
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
+>>>>>>> origin/fixes_2.4
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
-function AEStreamOpenKeyDesc(ref: AEStreamRef; key: AEKeyword; newType: DescType): OSStatus; external name '_AEStreamOpenKeyDesc';
+function AEStreamOpenKeyDesc( ref: AEStreamRef; key: AEKeyword; newType: DescType ): OSStatus; external name '_AEStreamOpenKeyDesc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
-{  Write a key to the stream - you can follow this with an AEWriteDesc. }
+
+{ Write a key to the stream - you can follow this with an AEWriteDesc.}
 {
  *  AEStreamWriteKey()
  *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function AEStreamWriteKey(ref: AEStreamRef; key: AEKeyword): OSStatus; external name '_AEStreamWriteKey';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function AEStreamWriteKey( ref: AEStreamRef; key: AEKeyword ): OSStatus; external name '_AEStreamWriteKey';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 {
    Create a complete AppleEvent.  This creates and returns a new stream.
@@ -1727,6 +1990,7 @@ function AEStreamWriteKey(ref: AEStreamRef; key: AEKeyword): OSStatus; external 
 {
  *  AEStreamCreateEvent()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
@@ -1759,16 +2023,27 @@ function AEStreamCreateEvent( clazz: AEEventClass; id: AEEventID; targetType: De
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
+>>>>>>> origin/fixes_2.4
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function AEStreamCreateEvent(clazz: AEEventClass; id: AEEventID; targetType: DescType; targetData: UnivPtr; targetLength: SInt32; returnID: SInt16; transactionID: SInt32): AEStreamRef; external name '_AEStreamCreateEvent';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function AEStreamCreateEvent( clazz: AEEventClass; id: AEEventID; targetType: DescType; targetData: {const} UnivPtr; targetLength: Size; returnID: SInt16; transactionID: SInt32 ): AEStreamRef; external name '_AEStreamCreateEvent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 {
    This call lets you augment an existing AppleEvent using the stream
@@ -1781,6 +2056,7 @@ function AEStreamCreateEvent(clazz: AEEventClass; id: AEEventID; targetType: Des
 {
  *  AEStreamOpenEvent()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
@@ -1860,29 +2136,45 @@ end.
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
+>>>>>>> origin/fixes_2.4
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
-function AEStreamOpenEvent(var event: AppleEvent): AEStreamRef; external name '_AEStreamOpenEvent';
+function AEStreamOpenEvent( var event: AppleEvent ): AEStreamRef; external name '_AEStreamOpenEvent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
-{  Mark a keyword as being an optional parameter. }
+
+{ Mark a keyword as being an optional parameter.}
 {
  *  AEStreamOptionalParam()
  *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
  *  Availability:
- *    Non-Carbon CFM:   not available
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
-function AEStreamOptionalParam(ref: AEStreamRef; key: AEKeyword): OSStatus; external name '_AEStreamOptionalParam';
+function AEStreamOptionalParam( ref: AEStreamRef; key: AEKeyword ): OSStatus; external name '_AEStreamOptionalParam';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
-{$ALIGN MAC68K}
 
+{$endc} {TARGET_OS_MAC}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

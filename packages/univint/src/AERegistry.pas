@@ -1,6 +1,7 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       AE/AERegistry.h
  
      Contains:   AppleEvents Registry Interface.
@@ -28,17 +29,23 @@
 =======
 >>>>>>> origin/fixes_2_2
      File:       AERegistry.p
+=======
+     File:       AE/AERegistry.h
+>>>>>>> origin/fixes_2.4
  
      Contains:   AppleEvents Registry Interface.
  
-     Version:    Technology: Mac OS 8.5
-                 Release:    Universal Interfaces 3.4.2
+     Version:    AppleEvents-496~1
  
+<<<<<<< HEAD
      Copyright:  © 1993-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     Copyright:  © 1993-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -77,18 +84,21 @@
                      http://www.freepascal.org/bugs.html
  
 }
-
-
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -97,6 +107,7 @@
 
 unit AERegistry;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -109,6 +120,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -123,6 +138,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -130,21 +146,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -152,6 +177,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -162,6 +190,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -179,6 +208,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -186,10 +217,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -197,6 +231,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -452,18 +487,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/fixes_2.4
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -491,12 +583,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -506,6 +601,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,ATSTypes,MacErrors,AppleEvents,AEDataModel;
@@ -535,6 +631,10 @@ uses MacTypes,ATSTypes,MacErrors,AppleEvents,AEDataModel;
 {$ifc TARGET_OS_MAC}
 =======
 uses MacTypes,ATSTypes,MacErrors,AppleEvents;
+=======
+uses MacTypes,ATSTypes,MacErrors,AppleEvents,AEDataModel;
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 
 >>>>>>> graemeg/fixes_2_2
 =======
@@ -542,12 +642,17 @@ uses MacTypes,ATSTypes,MacErrors,AppleEvents;
 
 >>>>>>> origin/fixes_2_2
 
+{$ifc TARGET_OS_MAC}
+
 {$ALIGN MAC68K}
 
 
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 	cAEList = FourCharCode('list'); {  0x6c697374  }
 	cApplication = FourCharCode('capp'); {  0x63617070  }
 	cArc = FourCharCode('carc'); {  0x63617263  }
@@ -591,6 +696,9 @@ const
 	cOpenableObject = FourCharCode('coob'); {  0x636f6f62  }
 	cOval = FourCharCode('covl'); {  0x636f766c  }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 
 const
 	cParagraph = FourCharCode('cpar'); {  0x63706172  }
@@ -701,6 +809,9 @@ const
 	kAENo = FourCharCode('no  '); {  0x6e6f2020  }
 	kAENoArrow = FourCharCode('arno'); {  0x61726e6f  }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 
 const
 	kAENonmodifiable = FourCharCode('nmod'); {  0x6e6d6f64  }
@@ -800,6 +911,9 @@ const
 	kAEScrapEvent = FourCharCode('scrp');
 	kAEHighLevel = FourCharCode('high');
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 
 const
 	keyAEAngle = FourCharCode('kang'); {  0x6b616e67  }
@@ -1081,6 +1195,9 @@ const
 	kAEResized = FourCharCode('rsiz');
 	kAEPromise = FourCharCode('prom');
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 
 const
 	keyMenuID = FourCharCode('mid ');
@@ -1089,6 +1206,7 @@ const
 	keyOriginalBounds = FourCharCode('obnd');
 	keyNewBounds = FourCharCode('nbnd');
 	keyLocalWhere = FourCharCode('lwhr');
+<<<<<<< HEAD
 
 const
 =======
@@ -2994,53 +3112,126 @@ const
 
 	kNextBody					= 1;
 	kPreviousBody				= 2;
-
-
-type
-	TextRangePtr = ^TextRange;
-	TextRange = record
-		fStart:					SInt32;
-		fEnd:					SInt32;
-		fHiliteStyle:			SInt16;
-	end;
-
-	TextRangeHandle						= ^TextRangePtr;
-	TextRangeArrayPtr = ^TextRangeArray;
-	TextRangeArray = record
-		fNumOfRanges:			SInt16;								{  specify the size of the fRange array  }
-		fRange:					array [0..0] of TextRange;				{  when fNumOfRanges > 1, the size of this array has to be calculated  }
-	end;
-
-	TextRangeArrayHandle				= ^TextRangeArrayPtr;
-	OffsetArrayPtr = ^OffsetArray;
-	OffsetArray = record
-		fNumOfOffsets:			SInt16;								{  specify the size of the fOffset array  }
-		fOffset:				array [0..0] of SInt32;				{  when fNumOfOffsets > 1, the size of this array has to be calculated  }
-	end;
-
-	OffsetArrayHandle					= ^OffsetArrayPtr;
-	WritingCodePtr = ^WritingCode;
-	WritingCode = record
-		theScriptCode:			ScriptCode;
-		theLangCode:			LangCode;
-	end;
-
-	IntlTextPtr = ^IntlText;
-	IntlText = record
-		theScriptCode:			ScriptCode;
-		theLangCode:			LangCode;
-		theText:				SInt8;									{  variable length data  }
-	end;
-
-
-	{	 Hilite styles 	}
+=======
+>>>>>>> origin/fixes_2.4
 
 const
-	kTSMHiliteCaretPosition     = 1;    { specify caret position }
-	kTSMHiliteRawText           = 2;    { specify range of raw text }
-	kTSMHiliteSelectedRawText   = 3;    { specify range of selected raw text }
-	kTSMHiliteConvertedText     = 4;    { specify range of converted text }
+	typeHIMenu = FourCharCode('mobj');
+	typeHIWindow = FourCharCode('wobj');
+
+const
+	kAEQuitReason = FourCharCode('why?'); { in a kAEQuitApplication event, this property if present is the reason the quit is being sent.  The possible values are kAEQuitAll, kAEShutDown, kAERestart, kAEReallyLogOut }
+
+const
+	kBySmallIcon = 0;
+	kByIconView = 1;
+	kByNameView = 2;
+	kByDateView = 3;
+	kBySizeView = 4;
+	kByKindView = 5;
+	kByCommentView = 6;
+	kByLabelView = 7;
+	kByVersionView = 8;
+
+const
+	kAEInfo = 11;
+	kAEMain = 0;
+	kAESharing = 13;
+
+const
+	kAEZoomIn = 7;
+	kAEZoomOut = 8;
+
+const
+	kTextServiceClass = FourCharCode('tsvc');
+	kUpdateActiveInputArea = FourCharCode('updt'); { update the active input area }
+	kShowHideInputWindow = FourCharCode('shiw'); { show or hide the input window }
+	kPos2Offset = FourCharCode('p2st'); { converting global coordinates to char position }
+	kOffset2Pos = FourCharCode('st2p'); { converting char position to global coordinates }
+	kUnicodeNotFromInputMethod = FourCharCode('unim'); { Unicode text when event not handled by Input Method or no Input Method }
+	kGetSelectedText = FourCharCode('gtxt'); { Get text for current selection }
+	keyAETSMDocumentRefcon = FourCharCode('refc'); { TSM document refcon, typeLongInteger }
+	keyAEServerInstance = FourCharCode('srvi'); { component instance }
+	keyAETheData = FourCharCode('kdat'); { typeText }
+	keyAEFixLength = FourCharCode('fixl'); { fix len }
+	keyAEUpdateRange = FourCharCode('udng'); { typeTextRangeArray }
+	keyAECurrentPoint = FourCharCode('cpos'); { current point }
+	keyAEBufferSize = FourCharCode('buff'); { buffer size to get the text }
+	keyAEMoveView = FourCharCode('mvvw'); { move view flag }
+	keyAENextBody = FourCharCode('nxbd'); { next or previous body }
+	keyAETSMScriptTag = FourCharCode('sclg');
+	keyAETSMTextFont = FourCharCode('ktxf'); { FMFontFamily or FOND ID }
+	keyAETSMTextFMFont = FourCharCode('ktxm'); { FMFont }
+	keyAETSMTextPointSize = FourCharCode('ktps');
+	keyAETSMEventRecord = FourCharCode('tevt'); { Low level Event Record, typeLowLevelEventRecord }
+	keyAETSMEventRef = FourCharCode('tevr'); { Carbon EventRef, typeEventRef }
+	keyAETextServiceEncoding = FourCharCode('tsen'); { Text Service encoding, mac or Unicode in UpdateActiveInputArea or GetSelectedText events. }
+	keyAETextServiceMacEncoding = FourCharCode('tmen'); { Target mac encoding for TSM conversion of text from Unicode text service. }
+	keyAETSMGlyphInfoArray = FourCharCode('tgia'); { typeGlyphInfoArray }
+	typeTextRange = FourCharCode('txrn'); { TextRange }
+	typeComponentInstance = FourCharCode('cmpi'); { server instance }
+	typeOffsetArray = FourCharCode('ofay'); { offset array }
+	typeTextRangeArray = FourCharCode('tray');
+	typeLowLevelEventRecord = FourCharCode('evtr'); { Low Level Event Record }
+	typeGlyphInfoArray = FourCharCode('glia'); { Glyph/FMFont info array for sub ranges of Unicode text.  See GlyphInfoArray in TextServices.h  }
+	typeEventRef = FourCharCode('evrf'); { Carbon EventRef }
+	typeText = typeChar; { Plain text }
+
+
+{ Desc type constants }
+const
+	kTSMOutsideOfBody = 1;
+	kTSMInsideOfBody = 2;
+	kTSMInsideOfActiveInputArea = 3;
+
+const
+	kNextBody = 1;
+	kPreviousBody = 2;
+
+type
+	TextRange = record
+		fStart: SInt32;
+		fEnd: SInt32;
+		fHiliteStyle: SInt16;
+	end;
+	TextRangePtr = ^TextRange;
+type
+	TextRangeHandle = ^TextRangePtr;
+	TextRangeArray = record
+		fNumOfRanges: SInt16;           { specify the size of the fRange array }
+		fRange: array [0..0] of TextRange;              { when fNumOfRanges > 1, the size of this array has to be calculated }
+	end;
+	TextRangeArrayPtr = ^TextRangeArray;
+type
+	TextRangeArrayHandle = ^TextRangeArrayPtr;
+	OffsetArray = record
+		fNumOfOffsets: SInt16;          { specify the size of the fOffset array }
+		fOffset: array [0..0] of SInt32;             { when fNumOfOffsets > 1, the size of this array has to be calculated }
+	end;
+	OffsetArrayPtr = ^OffsetArray;
+type
+	OffsetArrayHandle = ^OffsetArrayPtr;
+	WritingCode = record
+		theScriptCode: ScriptCode;
+		theLangCode: LangCode;
+	end;
+	WritingCodePtr = ^WritingCode;
+type
+	IntlText = record
+		theScriptCode: ScriptCode;
+		theLangCode: LangCode;
+		theText: SInt8;             { variable length data }
+	end;
+	IntlTextPtr = ^IntlText;
+
+{ Hilite styles }
+const
+	kTSMHiliteCaretPosition = 1;    { specify caret position }
+	kTSMHiliteRawText = 2;    { specify range of raw text }
+	kTSMHiliteSelectedRawText = 3;    { specify range of selected raw text }
+	kTSMHiliteConvertedText = 4;    { specify range of converted text }
 	kTSMHiliteSelectedConvertedText = 5;  { specify range of selected converted text }
+<<<<<<< HEAD
 	kTSMHiliteBlockFillText     = 6;    { Block Fill hilite style }
 	kTSMHiliteOutlineText       = 7;    { Outline hilite style }
 	kTSMHiliteSelectedText      = 8;    { Selected hilite style }
@@ -3049,12 +3240,22 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	kTSMHiliteBlockFillText = 6;    { Block Fill hilite style }
+	kTSMHiliteOutlineText = 7;    { Outline hilite style }
+	kTSMHiliteSelectedText = 8;    { Selected hilite style }
+	kTSMHiliteNoHilite = 9;     { specify range of non-hilited text }
+
+>>>>>>> origin/fixes_2.4
 
 {$ifc OLDROUTINENAMES}
 { Hilite styles }
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 	kCaretPosition = kTSMHiliteCaretPosition;
 	kRawText = kTSMHiliteRawText;
 	kSelectedRawText = kTSMHiliteSelectedRawText;
@@ -3063,6 +3264,7 @@ const
 	kBlockFillText = kTSMHiliteBlockFillText;
 	kOutlineText = kTSMHiliteOutlineText;
 	kSelectedText = kTSMHiliteSelectedText;
+<<<<<<< HEAD
 
 {$endc}  {OLDROUTINENAMES}
 
@@ -3369,299 +3571,307 @@ end.
 	kBlockFillText             = kTSMHiliteBlockFillText;
 	kOutlineText               = kTSMHiliteOutlineText;
 	kSelectedText              = kTSMHiliteSelectedText;
+=======
+>>>>>>> origin/fixes_2.4
 
 {$endc}  {OLDROUTINENAMES}
 
-
-	keyAEHiliteRange			= FourCharCode('hrng');						{  typeTextRangeArray for System 7, typeHiliteRangeArray for System 8  }
-	keyAEPinRange				= FourCharCode('pnrg');						{  typeTextRange for System 7, typeTextRegionRange for System 8    }
-	keyAEClauseOffsets			= FourCharCode('clau');						{  typeOffsetArray for System 7, typeClauseOffsetArray for System 8  }
-	keyAEOffset					= FourCharCode('ofst');						{  typeLongInteger for System 7, typeByteOffset for System 8   }
-	keyAEPoint					= FourCharCode('gpos');						{  typePoint for System 7, typeQDPoint for System 8  }
-	keyAELeftSide				= FourCharCode('klef');						{  typeBoolean  }
-	keyAERegionClass			= FourCharCode('rgnc');						{  typeShortInteger for System 7, typeRegionClass for System 8  }
-	keyAEDragging				= FourCharCode('bool');						{  typeBoolean  }
+const
+	keyAEHiliteRange = FourCharCode('hrng'); { typeTextRangeArray for System 7, typeHiliteRangeArray for System 8 }
+	keyAEPinRange = FourCharCode('pnrg'); { typeTextRange for System 7, typeTextRegionRange for System 8   }
+	keyAEClauseOffsets = FourCharCode('clau'); { typeOffsetArray for System 7, typeClauseOffsetArray for System 8 }
+	keyAEOffset = FourCharCode('ofst'); { typeLongInteger for System 7, typeByteOffset for System 8  }
+	keyAEPoint = FourCharCode('gpos'); { typePoint for System 7, typeQDPoint for System 8 }
+	keyAELeftSide = FourCharCode('klef'); { typeBoolean }
+	keyAERegionClass = FourCharCode('rgnc'); { typeShortInteger for System 7, typeRegionClass for System 8 }
+	keyAEDragging = FourCharCode('bool'); { typeBoolean }
 
 
 {$ifc OLDROUTINENAMES}
-	keyAELeadingEdge			= FourCharCode('klef');
+const
+	keyAELeadingEdge = keyAELeftSide;
 
 {$endc}  {OLDROUTINENAMES}
 
-																{  AppleScript 1.3: New Text types  }
-{
- * The following descriptor types are deprecated due to their lack of
- * explicit encoding or byte order definition.  Please use
- * typeUTF16ExternalRepresentation or typeUTF8Text instead. }
+const
+{ AppleScript 1.3: Unit types }
+	typeMeters = FourCharCode('metr'); { Base Unit }
+	typeInches = FourCharCode('inch');
+	typeFeet = FourCharCode('feet');
+	typeYards = FourCharCode('yard');
+	typeMiles = FourCharCode('mile');
+	typeKilometers = FourCharCode('kmtr');
+	typeCentimeters = FourCharCode('cmtr');
+	typeSquareMeters = FourCharCode('sqrm'); { Base Unit }
+	typeSquareFeet = FourCharCode('sqft');
+	typeSquareYards = FourCharCode('sqyd');
+	typeSquareMiles = FourCharCode('sqmi');
+	typeSquareKilometers = FourCharCode('sqkm');
+	typeLiters = FourCharCode('litr'); { Base Unit }
+	typeQuarts = FourCharCode('qrts');
+	typeGallons = FourCharCode('galn');
+	typeCubicMeters = FourCharCode('cmet'); { Base Unit }
+	typeCubicFeet = FourCharCode('cfet');
+	typeCubicInches = FourCharCode('cuin');
+	typeCubicCentimeter = FourCharCode('ccmt');
+	typeCubicYards = FourCharCode('cyrd');
+	typeKilograms = FourCharCode('kgrm'); { Base Unit }
+	typeGrams = FourCharCode('gram');
+	typeOunces = FourCharCode('ozs ');
+	typePounds = FourCharCode('lbs ');
+	typeDegreesC = FourCharCode('degc'); { Base Unit }
+	typeDegreesF = FourCharCode('degf');
+	typeDegreesK = FourCharCode('degk');
 
-	typeUnicodeText				= FourCharCode('utxt'); { native byte ordering, optional BOM 
-	typeStyledUnicodeText		= FourCharCode('sutx'); { Not implemented }
-	typeEncodedString			= FourCharCode('encs'); { Not implemented }
-	typeCString					= FourCharCode('cstr'); { MacRoman characters followed by a NULL byte }
-	typePString					= FourCharCode('pstr'); { Unsigned length byte followed by MacRoman characters }
+const
+{ AppleScript 1.3: Folder Actions }
+	kFAServerApp = FourCharCode('ssrv'); { Creator code for Folder Actions Server}
+	kDoFolderActionEvent = FourCharCode('fola'); { Event the Finder sends to the Folder Actions FBA}
+	kFolderActionCode = FourCharCode('actn'); { Parameter that contains the Folder Action}
+	kFolderOpenedEvent = FourCharCode('fopn'); { Value of kFolderActionCode parameter; sent to script as event}
+	kFolderClosedEvent = FourCharCode('fclo');
+	kFolderWindowMovedEvent = FourCharCode('fsiz');
+	kFolderItemsAddedEvent = FourCharCode('fget');
+	kFolderItemsRemovedEvent = FourCharCode('flos');
+	kItemList = FourCharCode('flst'); { List parameter for added and removed items}
+	kNewSizeParameter = FourCharCode('fnsz'); { Parameter for moved window}
+	kFASuiteCode = FourCharCode('faco'); { Suite code for the following events}
+	kFAAttachCommand = FourCharCode('atfa'); { Attach event id}
+	kFARemoveCommand = FourCharCode('rmfa'); { Remove event id}
+	kFAEditCommand = FourCharCode('edfa'); { Edit event id}
+	kFAFileParam = FourCharCode('faal'); { Key for file parameter for Attach}
+	kFAIndexParam = FourCharCode('indx'); { Key for index (0-based) parameter for Remove and Edit}
 
-																{  AppleScript 1.3: Unit types  }
-	typeMeters					= FourCharCode('metr');						{  Base Unit  }
-	typeInches					= FourCharCode('inch');
-	typeFeet					= FourCharCode('feet');
-	typeYards					= FourCharCode('yard');
-	typeMiles					= FourCharCode('mile');
-	typeKilometers				= FourCharCode('kmtr');
-	typeCentimeters				= FourCharCode('cmtr');
-	typeSquareMeters			= FourCharCode('sqrm');						{  Base Unit  }
-	typeSquareFeet				= FourCharCode('sqft');
-	typeSquareYards				= FourCharCode('sqyd');
-	typeSquareMiles				= FourCharCode('sqmi');
-	typeSquareKilometers		= FourCharCode('sqkm');
-	typeLiters					= FourCharCode('litr');						{  Base Unit  }
-	typeQuarts					= FourCharCode('qrts');
-	typeGallons					= FourCharCode('galn');
-	typeCubicMeters				= FourCharCode('cmet');						{  Base Unit  }
-	typeCubicFeet				= FourCharCode('cfet');
-	typeCubicInches				= FourCharCode('cuin');
-	typeCubicCentimeter			= FourCharCode('ccmt');
-	typeCubicYards				= FourCharCode('cyrd');
-	typeKilograms				= FourCharCode('kgrm');						{  Base Unit  }
-	typeGrams					= FourCharCode('gram');
-	typeOunces					= FourCharCode('ozs ');
-	typePounds					= FourCharCode('lbs ');
-	typeDegreesC				= FourCharCode('degc');						{  Base Unit  }
-	typeDegreesF				= FourCharCode('degf');
-	typeDegreesK				= FourCharCode('degk');
+{ AppleScript 1.3 Internet Suite }
+const
+{ Suite code }
+	kAEInternetSuite = FourCharCode('gurl');
+	kAEISWebStarSuite = $575757BD;
 
-																{  AppleScript 1.3: Folder Actions  }
-	kFAServerApp				= FourCharCode('ssrv');						{  Creator code for Folder Actions Server }
-	kDoFolderActionEvent		= FourCharCode('fola');						{  Event the Finder sends to the Folder Actions FBA }
-	kFolderActionCode			= FourCharCode('actn');						{  Parameter that contains the Folder Action }
-	kFolderOpenedEvent			= FourCharCode('fopn');						{  Value of kFolderActionCode parameter; sent to script as event }
-	kFolderClosedEvent			= FourCharCode('fclo');
-	kFolderWindowMovedEvent		= FourCharCode('fsiz');
-	kFolderItemsAddedEvent		= FourCharCode('fget');
-	kFolderItemsRemovedEvent	= FourCharCode('flos');
-	kItemList					= FourCharCode('flst');						{  List parameter for added and removed items }
-	kNewSizeParameter			= FourCharCode('fnsz');						{  Parameter for moved window }
-	kFASuiteCode				= FourCharCode('faco');						{  Suite code for the following events }
-	kFAAttachCommand			= FourCharCode('atfa');						{  Attach event id }
-	kFARemoveCommand			= FourCharCode('rmfa');						{  Remove event id }
-	kFAEditCommand				= FourCharCode('edfa');						{  Edit event id }
-	kFAFileParam				= FourCharCode('faal');						{  Key for file parameter for Attach }
-	kFAIndexParam				= FourCharCode('indx');						{  Key for index (0-based) parameter for Remove and Edit }
+const
+{ Events }
+	kAEISGetURL = FourCharCode('gurl');
+	KAEISHandleCGI = FourCharCode('sdoc');
 
-	{	 AppleScript 1.3 Internet Suite 	}
-																{  Suite code  }
-	kAEInternetSuite			= FourCharCode('gurl');
-	kAEISWebStarSuite			= FourCharCode('WWW½');
+const
+{ Classes }
+	cURL = FourCharCode('url ');
+	cInternetAddress = FourCharCode('IPAD');
+	cHTML = FourCharCode('html');
+	cFTPItem = FourCharCode('ftp ');
 
-																{  Events  }
-	kAEISGetURL					= FourCharCode('gurl');
-	KAEISHandleCGI				= FourCharCode('sdoc');
+const
+{ Parameters }
+	kAEISHTTPSearchArgs = FourCharCode('kfor');
+	kAEISPostArgs = FourCharCode('post');
+	kAEISMethod = FourCharCode('meth');
+	kAEISClientAddress = FourCharCode('addr');
+	kAEISUserName = FourCharCode('user');
+	kAEISPassword = FourCharCode('pass');
+	kAEISFromUser = FourCharCode('frmu');
+	kAEISServerName = FourCharCode('svnm');
+	kAEISServerPort = FourCharCode('svpt');
+	kAEISScriptName = FourCharCode('scnm');
+	kAEISContentType = FourCharCode('ctyp');
+	kAEISReferrer = FourCharCode('refr');
+	kAEISUserAgent = FourCharCode('Agnt');
+	kAEISAction = FourCharCode('Kact');
+	kAEISActionPath = FourCharCode('Kapt');
+	kAEISClientIP = FourCharCode('Kcip');
+	kAEISFullRequest = FourCharCode('Kfrq');
 
-																{  Classes  }
-	cURL						= FourCharCode('url ');
-	cInternetAddress			= FourCharCode('IPAD');
-	cHTML						= FourCharCode('html');
-	cFTPItem					= FourCharCode('ftp ');
+const
+{ Properties }
+	pScheme = FourCharCode('pusc');
+	pHost = FourCharCode('HOST');
+	pPath = FourCharCode('FTPc');
+	pUserName = FourCharCode('RAun');
+	pUserPassword = FourCharCode('RApw');
+	pDNSForm = FourCharCode('pDNS');
+	pURL = FourCharCode('pURL');
+	pTextEncoding = FourCharCode('ptxe');
+	pFTPKind = FourCharCode('kind');
 
-																{  Parameters  }
-	kAEISHTTPSearchArgs			= FourCharCode('kfor');
-	kAEISPostArgs				= FourCharCode('post');
-	kAEISMethod					= FourCharCode('meth');
-	kAEISClientAddress			= FourCharCode('addr');
-	kAEISUserName				= FourCharCode('user');
-	kAEISPassword				= FourCharCode('pass');
-	kAEISFromUser				= FourCharCode('frmu');
-	kAEISServerName				= FourCharCode('svnm');
-	kAEISServerPort				= FourCharCode('svpt');
-	kAEISScriptName				= FourCharCode('scnm');
-	kAEISContentType			= FourCharCode('ctyp');
-	kAEISReferrer				= FourCharCode('refr');
-	kAEISUserAgent				= FourCharCode('Agnt');
-	kAEISAction					= FourCharCode('Kact');
-	kAEISActionPath				= FourCharCode('Kapt');
-	kAEISClientIP				= FourCharCode('Kcip');
-	kAEISFullRequest			= FourCharCode('Kfrq');
+const
+{ Scheme enumerations }
+	eScheme = FourCharCode('esch');
+	eurlHTTP = FourCharCode('http'); { RFC 2068 }
+	eurlHTTPS = FourCharCode('htps');
+	eurlFTP = FourCharCode('ftp '); { RFC 1738 }
+	eurlMail = FourCharCode('mail'); { RFC 2638 }
+	eurlFile = FourCharCode('file'); { RFC 1738 }
+	eurlGopher = FourCharCode('gphr'); { RFC 1738 }
+	eurlTelnet = FourCharCode('tlnt'); { RFC 1738 }
+	eurlNews = FourCharCode('news'); { RFC 1738 }
+	eurlSNews = FourCharCode('snws');
+	eurlNNTP = FourCharCode('nntp'); { RFC 1738 }
+	eurlMessage = FourCharCode('mess');
+	eurlMailbox = FourCharCode('mbox');
+	eurlMulti = FourCharCode('mult');
+	eurlLaunch = FourCharCode('laun');
+	eurlAFP = FourCharCode('afp ');
+	eurlAT = FourCharCode('at  ');
+	eurlEPPC = FourCharCode('eppc');
+	eurlRTSP = FourCharCode('rtsp'); { RFC 2326 }
+	eurlIMAP = FourCharCode('imap'); { RFC 2192 }
+	eurlNFS = FourCharCode('unfs'); { RFC 2224 }
+	eurlPOP = FourCharCode('upop'); { RFC 2384 }
+	eurlLDAP = FourCharCode('uldp'); { RFC 2255 }
+	eurlUnknown = FourCharCode('url?');
 
-																{  Properties  }
-	pScheme						= FourCharCode('pusc');
-	pHost						= FourCharCode('HOST');
-	pPath						= FourCharCode('FTPc');
-	pUserName					= FourCharCode('RAun');
-	pUserPassword				= FourCharCode('RApw');
-	pDNSForm					= FourCharCode('pDNS');
-	pURL						= FourCharCode('pURL');
-	pTextEncoding				= FourCharCode('ptxe');
-	pFTPKind					= FourCharCode('kind');
+const
+{ AppleScript 1.3: Connectivity Suite in aeut }
+	kConnSuite = FourCharCode('macc');
+	cDevSpec = FourCharCode('cdev');
+	cAddressSpec = FourCharCode('cadr');
+	cADBAddress = FourCharCode('cadb');
+	cAppleTalkAddress = FourCharCode('cat ');
+	cBusAddress = FourCharCode('cbus');
+	cEthernetAddress = FourCharCode('cen ');
+	cFireWireAddress = FourCharCode('cfw ');
+	cIPAddress = FourCharCode('cip ');
+	cLocalTalkAddress = FourCharCode('clt ');
+	cSCSIAddress = FourCharCode('cscs');
+	cTokenRingAddress = FourCharCode('ctok');
+	cUSBAddress = FourCharCode('cusb'); { }
+                                        { Properties }
+	pDeviceType = FourCharCode('pdvt');
+	pDeviceAddress = FourCharCode('pdva');
+	pConduit = FourCharCode('pcon');
+	pProtocol = FourCharCode('pprt'); { cde 4/27/98 was 'ppro' conflicted with DB suite }
+	pATMachine = FourCharCode('patm');
+	pATZone = FourCharCode('patz');
+	pATType = FourCharCode('patt');
+	pDottedDecimal = FourCharCode('pipd');
+	pDNS = FourCharCode('pdns');
+	pPort = FourCharCode('ppor');
+	pNetwork = FourCharCode('pnet');
+	pNode = FourCharCode('pnod');
+	pSocket = FourCharCode('psoc');
+	pSCSIBus = FourCharCode('pscb');
+	pSCSILUN = FourCharCode('pslu'); { cde 5/22/98 per WWDC developer request }
+                                        { Enumerations and enumerators }
+	eDeviceType = FourCharCode('edvt');
+	eAddressSpec = FourCharCode('eads');
+	eConduit = FourCharCode('econ');
+	eProtocol = FourCharCode('epro');
+	eADB = FourCharCode('eadb');
+	eAnalogAudio = FourCharCode('epau');
+	eAppleTalk = FourCharCode('epat');
+	eAudioLineIn = FourCharCode('ecai');
+	eAudioLineOut = FourCharCode('ecal'); { cde 4/24/98 changed from 'ecao' to not conflict }
+	eAudioOut = FourCharCode('ecao');
+	eBus = FourCharCode('ebus');
+	eCDROM = FourCharCode('ecd ');
+	eCommSlot = FourCharCode('eccm');
+	eDigitalAudio = FourCharCode('epda');
+	eDisplay = FourCharCode('edds');
+	eDVD = FourCharCode('edvd');
+	eEthernet = FourCharCode('ecen');
+	eFireWire = FourCharCode('ecfw');
+	eFloppy = FourCharCode('efd ');
+	eHD = FourCharCode('ehd ');
+	eInfrared = FourCharCode('ecir');
+	eIP = FourCharCode('epip');
+	eIrDA = FourCharCode('epir');
+	eIRTalk = FourCharCode('epit');
+	eKeyboard = FourCharCode('ekbd');
+	eLCD = FourCharCode('edlc');
+	eLocalTalk = FourCharCode('eclt');
+	eMacIP = FourCharCode('epmi');
+	eMacVideo = FourCharCode('epmv');
+	eMicrophone = FourCharCode('ecmi');
+	eModemPort = FourCharCode('ecmp');
+	eModemPrinterPort = FourCharCode('empp');
+	eModem = FourCharCode('edmm');
+	eMonitorOut = FourCharCode('ecmn');
+	eMouse = FourCharCode('emou');
+	eNuBusCard = FourCharCode('ednb');
+	eNuBus = FourCharCode('enub');
+	ePCcard = FourCharCode('ecpc');
+	ePCIbus = FourCharCode('ecpi');
+	ePCIcard = FourCharCode('edpi');
+	ePDSslot = FourCharCode('ecpd');
+	ePDScard = FourCharCode('epds');
+	ePointingDevice = FourCharCode('edpd');
+	ePostScript = FourCharCode('epps');
+	ePPP = FourCharCode('eppp');
+	ePrinterPort = FourCharCode('ecpp');
+	ePrinter = FourCharCode('edpr');
+	eSvideo = FourCharCode('epsv');
+	eSCSI = FourCharCode('ecsc');
+	eSerial = FourCharCode('epsr');
+	eSpeakers = FourCharCode('edsp');
+	eStorageDevice = FourCharCode('edst');
+	eSVGA = FourCharCode('epsg');
+	eTokenRing = FourCharCode('etok');
+	eTrackball = FourCharCode('etrk');
+	eTrackpad = FourCharCode('edtp');
+	eUSB = FourCharCode('ecus');
+	eVideoIn = FourCharCode('ecvi');
+	eVideoMonitor = FourCharCode('edvm');
+	eVideoOut = FourCharCode('ecvo');
 
-																{  Scheme enumerations  }
-	eScheme						= FourCharCode('esch');
-	eurlHTTP					= FourCharCode('http');						{  RFC 2068  }
-	eurlHTTPS					= FourCharCode('htps');
-	eurlFTP						= FourCharCode('ftp ');						{  RFC 1738  }
-	eurlMail					= FourCharCode('mail');						{  RFC 2638  }
-	eurlFile					= FourCharCode('file');						{  RFC 1738  }
-	eurlGopher					= FourCharCode('gphr');						{  RFC 1738  }
-	eurlTelnet					= FourCharCode('tlnt');						{  RFC 1738  }
-	eurlNews					= FourCharCode('news');						{  RFC 1738  }
-	eurlSNews					= FourCharCode('snws');
-	eurlNNTP					= FourCharCode('nntp');						{  RFC 1738  }
-	eurlMessage					= FourCharCode('mess');
-	eurlMailbox					= FourCharCode('mbox');
-	eurlMulti					= FourCharCode('mult');
-	eurlLaunch					= FourCharCode('laun');
-	eurlAFP						= FourCharCode('afp ');
-	eurlAT						= FourCharCode('at  ');
-	eurlEPPC					= FourCharCode('eppc');
-	eurlRTSP					= FourCharCode('rtsp');						{  RFC 2326  }
-	eurlIMAP					= FourCharCode('imap');						{  RFC 2192  }
-	eurlNFS						= FourCharCode('unfs');						{  RFC 2224  }
-	eurlPOP						= FourCharCode('upop');						{  RFC 2384  }
-	eurlLDAP					= FourCharCode('uldp');						{  RFC 2255  }
-	eurlUnknown					= FourCharCode('url?');
+const
+{ AppleScript 1.3: Keystroke class }
+	cKeystroke = FourCharCode('kprs');
+	pKeystrokeKey = FourCharCode('kMsg');
+	pModifiers = FourCharCode('kMod');
+	pKeyKind = FourCharCode('kknd');
+	eModifiers = FourCharCode('eMds');
+	eOptionDown = FourCharCode('Kopt');
+	eCommandDown = FourCharCode('Kcmd');
+	eControlDown = FourCharCode('Kctl');
+	eShiftDown = FourCharCode('Ksft');
+	eCapsLockDown = FourCharCode('Kclk');
+	eKeyKind = FourCharCode('ekst'); { }
+                                        { Special keys all start with 'ks' }
+	eEscapeKey = $6B733500; { Third byte is virtual key code byte        }
+	eDeleteKey = $6B733300; { (see IM Mac Toolbox Essentials, pp. 2-43) }
+	eTabKey = $6B733000;
+	eReturnKey = $6B732400;
+	eClearKey = $6B734700;
+	eEnterKey = $6B734C00;
+	eUpArrowKey = $6B737E00;
+	eDownArrowKey = $6B737D00;
+	eLeftArrowKey = $6B737B00;
+	eRightArrowKey = $6B737C00;
+	eHelpKey = $6B737200;
+	eHomeKey = $6B737300;
+	ePageUpKey = $6B737400;
+	ePageDownKey = $6B737900;
+	eForwardDelKey = $6B737500;
+	eEndKey = $6B737700;
+	eF1Key = $6B737A00;
+	eF2Key = $6B737800;
+	eF3Key = $6B736300;
+	eF4Key = $6B737600;
+	eF5Key = $6B736000;
+	eF6Key = $6B736100;
+	eF7Key = $6B736200;
+	eF8Key = $6B736400;
+	eF9Key = $6B736500;
+	eF10Key = $6B736D00;
+	eF11Key = $6B736700;
+	eF12Key = $6B736F00;
+	eF13Key = $6B736900;
+	eF14Key = $6B736B00;
+	eF15Key = $6B737100;
 
-																{  AppleScript 1.3: Connectivity Suite in aeut  }
-	kConnSuite					= FourCharCode('macc');
-	cDevSpec					= FourCharCode('cdev');
-	cAddressSpec				= FourCharCode('cadr');
-	cADBAddress					= FourCharCode('cadb');
-	cAppleTalkAddress			= FourCharCode('cat ');
-	cBusAddress					= FourCharCode('cbus');
-	cEthernetAddress			= FourCharCode('cen ');
-	cFireWireAddress			= FourCharCode('cfw ');
-	cIPAddress					= FourCharCode('cip ');
-	cLocalTalkAddress			= FourCharCode('clt ');
-	cSCSIAddress				= FourCharCode('cscs');
-	cTokenRingAddress			= FourCharCode('ctok');
-	cUSBAddress					= FourCharCode('cusb');						{   }
-																{  Properties  }
-	pDeviceType					= FourCharCode('pdvt');
-	pDeviceAddress				= FourCharCode('pdva');
-	pConduit					= FourCharCode('pcon');
-	pProtocol					= FourCharCode('pprt');						{  cde 4/27/98 was 'ppro' conflicted with DB suite  }
-	pATMachine					= FourCharCode('patm');
-	pATZone						= FourCharCode('patz');
-	pATType						= FourCharCode('patt');
-	pDottedDecimal				= FourCharCode('pipd');
-	pDNS						= FourCharCode('pdns');
-	pPort						= FourCharCode('ppor');
-	pNetwork					= FourCharCode('pnet');
-	pNode						= FourCharCode('pnod');
-	pSocket						= FourCharCode('psoc');
-	pSCSIBus					= FourCharCode('pscb');
-	pSCSILUN					= FourCharCode('pslu');						{  cde 5/22/98 per WWDC developer request  }
-																{  Enumerations and enumerators  }
-	eDeviceType					= FourCharCode('edvt');
-	eAddressSpec				= FourCharCode('eads');
-	eConduit					= FourCharCode('econ');
-	eProtocol					= FourCharCode('epro');
-	eADB						= FourCharCode('eadb');
-	eAnalogAudio				= FourCharCode('epau');
-	eAppleTalk					= FourCharCode('epat');
-	eAudioLineIn				= FourCharCode('ecai');
-	eAudioLineOut				= FourCharCode('ecal');						{  cde 4/24/98 changed from 'ecao' to not conflict  }
-	eAudioOut					= FourCharCode('ecao');
-	eBus						= FourCharCode('ebus');
-	eCDROM						= FourCharCode('ecd ');
-	eCommSlot					= FourCharCode('eccm');
-	eDigitalAudio				= FourCharCode('epda');
-	eDisplay					= FourCharCode('edds');
-	eDVD						= FourCharCode('edvd');
-	eEthernet					= FourCharCode('ecen');
-	eFireWire					= FourCharCode('ecfw');
-	eFloppy						= FourCharCode('efd ');
-	eHD							= FourCharCode('ehd ');
-	eInfrared					= FourCharCode('ecir');
-	eIP							= FourCharCode('epip');
-	eIrDA						= FourCharCode('epir');
-	eIRTalk						= FourCharCode('epit');
-	eKeyboard					= FourCharCode('ekbd');
-	eLCD						= FourCharCode('edlc');
-	eLocalTalk					= FourCharCode('eclt');
-	eMacIP						= FourCharCode('epmi');
-	eMacVideo					= FourCharCode('epmv');
-	eMicrophone					= FourCharCode('ecmi');
-	eModemPort					= FourCharCode('ecmp');
-	eModemPrinterPort			= FourCharCode('empp');
-	eModem						= FourCharCode('edmm');
-	eMonitorOut					= FourCharCode('ecmn');
-	eMouse						= FourCharCode('emou');
-	eNuBusCard					= FourCharCode('ednb');
-	eNuBus						= FourCharCode('enub');
-	ePCcard						= FourCharCode('ecpc');
-	ePCIbus						= FourCharCode('ecpi');
-	ePCIcard					= FourCharCode('edpi');
-	ePDSslot					= FourCharCode('ecpd');
-	ePDScard					= FourCharCode('epds');
-	ePointingDevice				= FourCharCode('edpd');
-	ePostScript					= FourCharCode('epps');
-	ePPP						= FourCharCode('eppp');
-	ePrinterPort				= FourCharCode('ecpp');
-	ePrinter					= FourCharCode('edpr');
-	eSvideo						= FourCharCode('epsv');
-	eSCSI						= FourCharCode('ecsc');
-	eSerial						= FourCharCode('epsr');
-	eSpeakers					= FourCharCode('edsp');
-	eStorageDevice				= FourCharCode('edst');
-	eSVGA						= FourCharCode('epsg');
-	eTokenRing					= FourCharCode('etok');
-	eTrackball					= FourCharCode('etrk');
-	eTrackpad					= FourCharCode('edtp');
-	eUSB						= FourCharCode('ecus');
-	eVideoIn					= FourCharCode('ecvi');
-	eVideoMonitor				= FourCharCode('edvm');
-	eVideoOut					= FourCharCode('ecvo');
+const
+	keyAELaunchedAsLogInItem = FourCharCode('lgit'); { If present in a kAEOpenApplication event, application was launched as a login item and probably shouldn't open up untitled documents, etc. Mac OS X 10.4 and later. }
+	keyAELaunchedAsServiceItem = FourCharCode('svit'); { If present in a kAEOpenApplication event, application was launched as a service item and probably shouldn't open up untitled documents, etc. Mac OS X 10.4 and later. }
 
-																{  AppleScript 1.3: Keystroke class  }
-	cKeystroke					= FourCharCode('kprs');
-	pKeystrokeKey				= FourCharCode('kMsg');
-	pModifiers					= FourCharCode('kMod');
-	pKeyKind					= FourCharCode('kknd');
-	eModifiers					= FourCharCode('eMds');
-	eOptionDown					= FourCharCode('Kopt');
-	eCommandDown				= FourCharCode('Kcmd');
-	eControlDown				= FourCharCode('Kctl');
-	eShiftDown					= FourCharCode('Ksft');
-	eCapsLockDown				= FourCharCode('Kclk');
-	eKeyKind					= FourCharCode('ekst');						{   }
-																{  Special keys all start with 'ks'  }
-	eEscapeKey					= $6B733500;					{  Third byte is virtual key code byte         }
-	eDeleteKey					= $6B733300;					{  (see IM Mac Toolbox Essentials, pp. 2-43)  }
-	eTabKey						= $6B733000;
-	eReturnKey					= $6B732400;
-	eClearKey					= $6B734700;
-	eEnterKey					= $6B734C00;
-	eUpArrowKey					= $6B737E00;
-	eDownArrowKey				= $6B737D00;
-	eLeftArrowKey				= $6B737B00;
-	eRightArrowKey				= $6B737C00;
-	eHelpKey					= $6B737200;
-	eHomeKey					= $6B737300;
-	ePageUpKey					= $6B737400;
-	ePageDownKey				= $6B737900;
-	eForwardDelKey				= $6B737500;
-	eEndKey						= $6B737700;
-	eF1Key						= $6B737A00;
-	eF2Key						= $6B737800;
-	eF3Key						= $6B736300;
-	eF4Key						= $6B737600;
-	eF5Key						= $6B736000;
-	eF6Key						= $6B736100;
-	eF7Key						= $6B736200;
-	eF8Key						= $6B736400;
-	eF9Key						= $6B736500;
-	eF10Key						= $6B736D00;
-	eF11Key						= $6B736700;
-	eF12Key						= $6B736F00;
-	eF13Key						= $6B736900;
-	eF14Key						= $6B736B00;
-	eF15Key						= $6B737100;
 
-	keyAEQuitWithoutUI          = FourCharCode('noui'); { If present in a kAEQuitApplication event, autosave any documents with uncommitted changes and quit }
-
-{$ALIGN MAC68K}
-
+{$endc} {TARGET_OS_MAC}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *	Copyright (c) 2004-2012 Apple Inc. All rights reserved.
  *
  }
@@ -19,10 +20,13 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
  *	Copyright (c) 2004-2008 Apple Inc. All rights reserved.
  *
  }
 {       Initial Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -33,6 +37,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {
     Modified for use with Free Pascal
     Version 308
@@ -91,6 +97,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -104,6 +111,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -126,6 +135,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -151,6 +161,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -161,6 +176,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -186,6 +202,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -196,6 +217,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -205,6 +227,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -218,6 +242,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -227,6 +252,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -237,6 +264,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -268,12 +296,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -301,10 +335,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
@@ -326,6 +363,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/fixes_2.4
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -375,6 +416,7 @@ uses MacTypes,CFBase,CFDictionary,CGBase,CGAffineTransforms,CGContext,CGFont,CGG
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifc TARGET_OS_MAC}
 
@@ -391,6 +433,10 @@ uses MacTypes,CFBase,CFDictionary,CGBase,CGAffineTransforms,CGContext,CGFont,CGG
 {$ifc TARGET_OS_MAC}
 
 >>>>>>> origin/cpstrnew
+=======
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> origin/fixes_2.4
 {$ALIGN POWER}
 
 
@@ -412,6 +458,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CTRunRef = ^__CTRun; { an opaque type }
 	__CTRun = record end;
 =======
@@ -426,6 +473,9 @@ type
 =======
 	CTRunRef = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	CTRunRef = ^SInt32; { an opaque type }
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -469,6 +519,7 @@ function CTRunGetTypeID: CFTypeID; external name '_CTRunGetTypeID';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -482,6 +533,9 @@ function CTRunGetTypeID: CFTypeID; external name '_CTRunGetTypeID';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 { --------------------------------------------------------------------------- }
@@ -505,6 +559,7 @@ function CTRunGetGlyphCount( run: CTRunRef ): CFIndex; external name '_CTRunGetG
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -518,6 +573,9 @@ function CTRunGetGlyphCount( run: CTRunRef ): CFIndex; external name '_CTRunGetG
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -542,6 +600,7 @@ function CTRunGetAttributes( run: CTRunRef ): CFDictionaryRef; external name '_C
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -555,6 +614,9 @@ function CTRunGetAttributes( run: CTRunRef ): CFDictionaryRef; external name '_C
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -580,6 +642,7 @@ function CTRunGetStatus( run: CTRunRef ): CTRunStatus; external name '_CTRunGetS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -593,6 +656,9 @@ function CTRunGetStatus( run: CTRunRef ): CTRunStatus; external name '_CTRunGetS
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -617,6 +683,7 @@ function CTRunGetGlyphsPtr( run: CTRunRef ): CGGlyphPtr; external name '_CTRunGe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -630,6 +697,9 @@ function CTRunGetGlyphsPtr( run: CTRunRef ): CGGlyphPtr; external name '_CTRunGe
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -654,6 +724,7 @@ procedure CTRunGetGlyphs( run: CTRunRef; range: CFRange; buffer: {variable-size-
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -667,6 +738,9 @@ procedure CTRunGetGlyphs( run: CTRunRef; range: CFRange; buffer: {variable-size-
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -693,6 +767,7 @@ function CTRunGetPositionsPtr( run: CTRunRef ): CGPointPtr; external name '_CTRu
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -706,6 +781,9 @@ function CTRunGetPositionsPtr( run: CTRunRef ): CGPointPtr; external name '_CTRu
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -734,6 +812,7 @@ procedure CTRunGetPositions( run: CTRunRef; range: CFRange; buffer: {variable-si
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -747,6 +826,9 @@ procedure CTRunGetPositions( run: CTRunRef; range: CFRange; buffer: {variable-si
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -775,6 +857,7 @@ function CTRunGetAdvancesPtr( run: CTRunRef ): CGSizePtr; external name '_CTRunG
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -788,6 +871,9 @@ function CTRunGetAdvancesPtr( run: CTRunRef ): CGSizePtr; external name '_CTRunG
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -813,6 +899,7 @@ procedure CTRunGetAdvances( run: CTRunRef; range: CFRange; buffer: {variable-siz
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -826,6 +913,9 @@ procedure CTRunGetAdvances( run: CTRunRef; range: CFRange; buffer: {variable-siz
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -853,6 +943,7 @@ function CTRunGetStringIndicesPtr( run: CTRunRef ): CFIndexPtr; external name '_
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -866,6 +957,9 @@ function CTRunGetStringIndicesPtr( run: CTRunRef ): CFIndexPtr; external name '_
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -895,6 +989,7 @@ procedure CTRunGetStringIndices( run: CTRunRef; range: CFRange; buffer: {variabl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -908,6 +1003,9 @@ procedure CTRunGetStringIndices( run: CTRunRef; range: CFRange; buffer: {variabl
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -927,6 +1025,7 @@ function CTRunGetStringRange( run: CTRunRef ): CFRange; external name '_CTRunGet
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -940,6 +1039,9 @@ function CTRunGetStringRange( run: CTRunRef ): CFRange; external name '_CTRunGet
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -975,6 +1077,7 @@ function CTRunGetTypographicBounds( run: CTRunRef; range: CFRange; ascent: CGFlo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -988,12 +1091,16 @@ function CTRunGetTypographicBounds( run: CTRunRef; range: CFRange; ascent: CGFlo
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
 	@function	CTRunGetImageBounds
 	@abstract	Calculates the image bounds for a glyph range.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1013,10 +1120,13 @@ function CTRunGetTypographicBounds( run: CTRunRef; range: CFRange; ascent: CGFlo
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	@param		run
 				The run that you want to calculate the image bounds for.
 
 	@param		context
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1043,6 +1153,11 @@ function CTRunGetTypographicBounds( run: CTRunRef; range: CFRange; ascent: CGFlo
 				is required because the context could have settings in it that
 				can cause changes in the image bounds.
 >>>>>>> origin/cpstrnew
+=======
+				The context which the image bounds will be calculated for. This
+				is required because the context could have settings in it that
+				can cause changes in the image bounds.
+>>>>>>> origin/fixes_2.4
 
 	@param		range
 				The portion of the run which to measure. If the length of the
@@ -1052,6 +1167,7 @@ function CTRunGetTypographicBounds( run: CTRunRef; range: CFRange; ascent: CGFlo
 	@result		A rect that tightly encloses the paths of the run's glyphs. The
 				rect origin will match the drawn position of the requested range;
 				that is, it will be translated by the supplied context's text
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1071,12 +1187,15 @@ function CTRunGetImageBounds( run: CTRunRef; context: CGContextRef; range: CFRan
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 				position and the positions of the individual glyphs. If the run,
 				context, or range is invalid, CGRectNull will be returned.
 }
 
 function CTRunGetImageBounds( run: CTRunRef; context: CGContextRef; range: CFRange ): CGRect; external name '_CTRunGetImageBounds';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1087,6 +1206,8 @@ function CTRunGetImageBounds( run: CTRunRef; context: CGContextRef; range: CFRan
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -1108,6 +1229,7 @@ function CTRunGetTextMatrix( run: CTRunRef ): CGAffineTransform; external name '
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1121,6 +1243,9 @@ function CTRunGetTextMatrix( run: CTRunRef ): CGAffineTransform; external name '
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {!
@@ -1152,6 +1277,7 @@ procedure CTRunDraw( run: CTRunRef; context: CGContextRef; range: CFRange ); ext
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 
 =======
@@ -1174,6 +1300,11 @@ procedure CTRunDraw( run: CTRunRef; context: CGContextRef; range: CFRange ); ext
 
 {$endc} {TARGET_OS_MAC}
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+{$endc} {TARGET_OS_MAC}
+>>>>>>> origin/fixes_2.4
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

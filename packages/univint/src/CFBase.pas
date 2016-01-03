@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -41,18 +42,28 @@
 =======
 >>>>>>> origin/fixes_2_2
 	Copyright (c) 1998-2005, Apple, Inc. All rights reserved.
+=======
+	Copyright (c) 1998-2009, Apple, Inc. All rights reserved.
+>>>>>>> origin/fixes_2.4
 }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+{ 		Pascal Translation Updated: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -61,6 +72,7 @@
 
 unit CFBase;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -73,6 +85,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -87,6 +103,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -94,21 +111,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -116,6 +142,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -126,6 +155,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -143,6 +173,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -150,10 +182,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -161,6 +196,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -408,18 +444,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/fixes_2.4
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -447,12 +540,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -463,6 +559,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
@@ -784,59 +881,153 @@ type
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/fixes_2.4
 {$ALIGN POWER}
 
+type
+  { type moved here to avoid circular dependency between Files and CFURL }
+	CFURLRef = ^SInt32; { an opaque 32-bit type }
+	CFURLRefPtr = ^CFURLRef;
 
 var kCFCoreFoundationVersionNumber: Float64; external name '_kCFCoreFoundationVersionNumber'; (* attribute const *)
 
+{$ifc TARGET_OS_MAC}
 const
-	kCFCoreFoundationVersionNumber10_0 = 196.4;
+	kCFCoreFoundationVersionNumber10_0 = 196.40;
 const
-	kCFCoreFoundationVersionNumber10_0_3 = 196.5;
+	kCFCoreFoundationVersionNumber10_0_3 = 196.50;
 const
-	kCFCoreFoundationVersionNumber10_1 = 226.0;
-{ Note the next two do not follow the usual numbering policy from the base release }
+	kCFCoreFoundationVersionNumber10_1 = 226.00;
 const
-	kCFCoreFoundationVersionNumber10_1_2 = 227.2;
+	kCFCoreFoundationVersionNumber10_1_1 = 226.00;
+{ Note the next three do not follow the usual numbering policy from the base release }
 const
-	kCFCoreFoundationVersionNumber10_1_4 = 227.3;
+	kCFCoreFoundationVersionNumber10_1_2 = 227.20;
 const
-	kCFCoreFoundationVersionNumber10_2 = 263.0;
+	kCFCoreFoundationVersionNumber10_1_3 = 227.20;
 const
-	kCFCoreFoundationVersionNumber10_3 = 299.0;
+	kCFCoreFoundationVersionNumber10_1_4 = 227.30;
 const
-	kCFCoreFoundationVersionNumber10_3_3 = 299.3;
+	kCFCoreFoundationVersionNumber10_2 = 263.00;
+const
+	kCFCoreFoundationVersionNumber10_2_1 = 263.10;
+const
+	kCFCoreFoundationVersionNumber10_2_2 = 263.10;
+const
+	kCFCoreFoundationVersionNumber10_2_3 = 263.30;
+const
+	kCFCoreFoundationVersionNumber10_2_4 = 263.30;
+const
+	kCFCoreFoundationVersionNumber10_2_5 = 263.50;
+const
+	kCFCoreFoundationVersionNumber10_2_6 = 263.50;
+const
+	kCFCoreFoundationVersionNumber10_2_7 = 263.50;
+const
+	kCFCoreFoundationVersionNumber10_2_8 = 263.50;
+const
+	kCFCoreFoundationVersionNumber10_3 = 299.00;
+const
+	kCFCoreFoundationVersionNumber10_3_1 = 299.00;
+const
+	kCFCoreFoundationVersionNumber10_3_2 = 299.00;
+const
+	kCFCoreFoundationVersionNumber10_3_3 = 299.30;
 const
 	kCFCoreFoundationVersionNumber10_3_4 = 299.31;
-
-{$ifc TARGET_CPU_PPC_64}
-type
-	CFTypeID = UInt32;
-	CFOptionFlags = UInt64;
-	CFHashCode = UInt32;
-	CFIndex = SInt64;
-	CFIndexPtr = ^CFIndex;
-{$elsec}
-type
-	CFTypeID = UInt32;
-	CFOptionFlags = UInt32;
-	CFHashCode = UInt32;
-	CFIndex = SInt32;
-	CFIndexPtr = ^CFIndex;
+const
+	kCFCoreFoundationVersionNumber10_3_5 = 299.31;
+const
+	kCFCoreFoundationVersionNumber10_3_6 = 299.32;
+const
+	kCFCoreFoundationVersionNumber10_3_7 = 299.33;
+const
+	kCFCoreFoundationVersionNumber10_3_8 = 299.33;
+const
+	kCFCoreFoundationVersionNumber10_3_9 = 299.35;
+const
+	kCFCoreFoundationVersionNumber10_4 = 368.00;
+const
+	kCFCoreFoundationVersionNumber10_4_1 = 368.10;
+const
+	kCFCoreFoundationVersionNumber10_4_2 = 368.11;
+const
+	kCFCoreFoundationVersionNumber10_4_3 = 368.18;
+const
+	kCFCoreFoundationVersionNumber10_4_4_Intel = 368.26;
+const
+	kCFCoreFoundationVersionNumber10_4_4_PowerPC = 368.25;
+const
+	kCFCoreFoundationVersionNumber10_4_5_Intel = 368.26;
+const
+	kCFCoreFoundationVersionNumber10_4_5_PowerPC = 368.25;
+const
+	kCFCoreFoundationVersionNumber10_4_6_Intel = 368.26;
+const
+	kCFCoreFoundationVersionNumber10_4_6_PowerPC = 368.25;
+const
+	kCFCoreFoundationVersionNumber10_4_7 = 368.27;
+const
+	kCFCoreFoundationVersionNumber10_4_8 = 368.27;
+const
+	kCFCoreFoundationVersionNumber10_4_9 = 368.28;
+const
+	kCFCoreFoundationVersionNumber10_4_10 = 368.28;
+const
+	kCFCoreFoundationVersionNumber10_4_11 = 368.31;
+const
+	kCFCoreFoundationVersionNumber10_5 = 476.00;
+const
+	kCFCoreFoundationVersionNumber10_5_1 = 476.00;
+const
+	kCFCoreFoundationVersionNumber10_5_2 = 476.10;
+const
+	kCFCoreFoundationVersionNumber10_5_3 = 476.13;
+const
+	kCFCoreFoundationVersionNumber10_5_4 = 476.14;
+const
+	kCFCoreFoundationVersionNumber10_5_5 = 476.15;
+const
+	kCFCoreFoundationVersionNumber10_5_6 = 476.17;
 {$endc}
+
+{$ifc TARGET_OS_IPHONE}
+const
+	kCFCoreFoundationVersionNumber_iPhoneOS_2_0 = 478.23;
+const
+	kCFCoreFoundationVersionNumber_iPhoneOS_2_1 = 478.26;
+const
+	kCFCoreFoundationVersionNumber_iPhoneOS_2_2 = 478.29;
+{$endc}
+
+type
+	CFTypeID = UNSIGNEDLONG;
+	CFOptionFlags = UNSIGNEDLONG;
+	CFHashCode = UNSIGNEDLONG;
+	CFIndex = SIGNEDLONG;
+	CFIndexPtr = ^CFIndex;
 
 { Base "type" of all "CF objects", and polymorphic functions on them }
 type
-	CFTypeRef = ^SInt32; { an opaque 32-bit type }
-
+	CFTypeRef = ^SInt32; { an opaque type }
+	
+{ GK: We need it for passing open arrays of CFTypes in MDQuery.pas }
+	CFTypeRefPtr = ^CFTypeRef;
 type
-	CFStringRef = ^SInt32; { an opaque 32-bit type }
+	CFStringRef = ^SInt32; { an opaque type }
 	CFStringRefPtr = ^CFStringRef;
+<<<<<<< HEAD
 	CFMutableStringRef = ^SInt32; { an opaque 32-bit type }
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	CFMutableStringRef = ^SInt32; { an opaque type }
+>>>>>>> origin/fixes_2.4
 	CFMutableStringRefPtr = ^CFMutableStringRef;
 
 {
@@ -1052,6 +1243,7 @@ function CFGetAllocator( cf: CFTypeRef ): CFAllocatorRef; external name '_CFGetA
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // This function is unavailable in ARC mode. Use CFBridgingRelease instead.
 { CF_AUTOMATED_REFCOUNT_UNAVAILABLE }
 function CFMakeCollectable( cf: CFTypeRef ): CFTypeRef; external name '_CFMakeCollectable';
@@ -1077,3 +1269,9 @@ end.
 
 end.
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+
+end.
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

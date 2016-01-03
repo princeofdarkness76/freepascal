@@ -45,6 +45,7 @@ units=buildwinutilsbase
 implicitunits=flatsb winver mmsystem comobj comconst commdlg commctrl ole2 activex shellapi shlobj oleserver \
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	shfolder richedit imagehlp wininet uxtheme dwmapi multimon htmlhelp winutils comserv winspool imm imm_dyn nb30
 =======
                shfolder richedit imagehlp wininet
@@ -52,6 +53,9 @@ implicitunits=flatsb winver mmsystem comobj comconst commdlg commctrl ole2 activ
 =======
                shfolder richedit imagehlp wininet
 >>>>>>> origin/fixes_2_2
+=======
+               shfolder richedit imagehlp wininet uxtheme dwmapi multimon htmlhelp winutils
+>>>>>>> origin/fixes_2.4
 
 examples=examples
 

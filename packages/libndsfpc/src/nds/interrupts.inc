@@ -215,6 +215,7 @@ procedure irqInitHandler(handler: pointer); cdecl; external;
 procedure irqEnable(irq: cuint32); cdecl; external;
 procedure irqEnableAUX(irq: cuint32); cdecl; external;
 procedure irqDisable(irq: cuint32); cdecl; external;
+<<<<<<< HEAD
 procedure irqDisableAUX(irq: cuint32); cdecl; external;
 
 procedure swiIntrWait(waitForSet: cuint32; flags: cuint32); cdecl; external;
@@ -222,6 +223,11 @@ procedure swiWaitForVBlank(); cdecl; external;
 
 function setPowerButtonCB(CB: TVoidFn): TVoidFn; cdecl; external;
 
+=======
+
+procedure swiIntrWait(waitForSet: cint; flags: cuint32); cdecl; external;
+procedure swiWaitForVBlank(); cdecl; external;
+>>>>>>> origin/fixes_2.4
 function enterCriticalSection(): cint; inline;
 procedure leaveCriticalSection(oldIME: cint); inline;
 {$endif NDS_INTERFACE}

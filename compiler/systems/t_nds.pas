@@ -760,6 +760,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename,'.map'));
 =======
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
@@ -773,6 +774,9 @@ begin
 =======
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
 >>>>>>> origin/cpstrnew
+=======
+   StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
+>>>>>>> origin/fixes_2.4
   if create_smartlink_sections then
    GCSectionsStr:='--gc-sections';
   if not(cs_link_nolink in current_settings.globalswitches) then
@@ -800,11 +804,15 @@ begin
   Replace(cmdstr,'$GCSECTIONS',GCSectionsStr);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Replace(cmdstr,'$MAP',MapStr);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  Replace(cmdstr,'$MAP',MapStr);
+>>>>>>> origin/fixes_2.4
   Replace(cmdstr,'$DYNLINK',DynLinkStr);
   
   success:=DoExec(FindUtil(utilsprefix+BinStr),cmdstr,true,false);

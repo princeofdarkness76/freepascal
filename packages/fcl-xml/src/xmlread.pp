@@ -1604,17 +1604,23 @@ end;
 
 function TXMLDecodingSource.Reload: Boolean;
 var
+<<<<<<< HEAD
   c: WideChar;
   r: Integer;
+=======
+  Remainder: PtrInt;
+  r, inLeft: Cardinal;
+  rslt: Integer;
+>>>>>>> origin/fixes_2.4
 begin
   if DTDSubsetType = dsInternal then
     FReader.DTDReloadHook;
-  r := FBufEnd - FBuf;
-  if r > 0 then
-    Move(FBuf^, FBufStart^, r * sizeof(WideChar));
+  Remainder := FBufEnd - FBuf;
+  if Remainder > 0 then
+    Move(FBuf^, FBufStart^, Remainder * sizeof(WideChar));
   Dec(LFPos, FBuf-FBufStart);
   FBuf := FBufStart;
-  FBufEnd := FBufStart + r;
+  FBufEnd := FBufStart + Remainder;
 
   while FBufEnd < FBufStart + FBufSize do
   begin
@@ -10553,8 +10559,14 @@ end;
               Inc(IgnoreLevel)
             else if CheckForChar(']') and CheckForChar(']') and CheckForChar('>') then
               Dec(IgnoreLevel)
+<<<<<<< HEAD
             else GetChar;
           until (IgnoreLevel=0) or (FCurChar = #0);
+=======
+            else if wc <> #0 then
+              FSource.NextChar;
+          until (IgnoreLevel=0) or (wc = #0);
+>>>>>>> origin/fixes_2.4
 // Since PE's are not recognized in ignore sections, reaching EOF is fatal.
           if FCurChar = #0 then
             Break;

@@ -3247,6 +3247,7 @@ implementation
 ****************************************************************************}
 
 
+<<<<<<< HEAD
     constructor ttypesym.create(const n : string;def:tdef;doregister:boolean);
 
       begin
@@ -3267,6 +3268,10 @@ implementation
 =======
         inherited create(typesym,n);
 >>>>>>> origin/cpstrnew
+=======
+      begin
+        inherited create(typesym,n);
+>>>>>>> origin/fixes_2.4
         typedef:=def;
         { register the typesym for the definition }
         if assigned(typedef) and

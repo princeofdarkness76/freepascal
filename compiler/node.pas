@@ -117,6 +117,7 @@ interface
           guidconstn,       { A GUID COM Interface constant }
           rttin,            { Rtti information so they can be accessed in result/firstpass}
           loadparentfpn,    { Load the framepointer of the parent for nested procedures }
+<<<<<<< HEAD
           dataconstn,       { node storing some binary data }
           objcselectorn,    { node for an Objective-C message selector }
 <<<<<<< HEAD
@@ -137,6 +138,9 @@ interface
 =======
           objcprotocoln     { node for an Objective-C @protocol() expression (returns metaclass associated with protocol) }
 >>>>>>> origin/cpstrnew
+=======
+          dataconstn        { node storing some binary data }
+>>>>>>> origin/fixes_2.4
        );
 
        tnodetypeset = set of tnodetype;
@@ -218,6 +222,7 @@ interface
           'guidconstn',
           'rttin',
           'loadparentfpn',
+<<<<<<< HEAD
           'dataconstn',
           'objcselectorn',
 <<<<<<< HEAD
@@ -246,6 +251,9 @@ interface
 =======
           'objcprotocoln');
 >>>>>>> origin/cpstrnew
+=======
+          'dataconstn');
+>>>>>>> origin/fixes_2.4
 
     type
        { all boolean field of ttree are now collected in flags }

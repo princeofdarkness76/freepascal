@@ -343,6 +343,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     change_endian    : boolean; { Used in ppudump util }
 =======
 >>>>>>> graemeg/cpstrnew
@@ -352,6 +353,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
     { crc for the entire unit }
     crc,
     { crc for the interface definitions in this unit }
@@ -606,11 +609,15 @@ begin
   header.interface_checksum := swapendian(header.interface_checksum);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   header.indirect_checksum := swapendian(header.indirect_checksum);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  header.indirect_checksum := swapendian(header.indirect_checksum);
+>>>>>>> origin/fixes_2.4
   header.deflistsize:=swapendian(header.deflistsize);
   header.symlistsize:=swapendian(header.symlistsize);
 {$ENDIF}
@@ -1370,11 +1377,15 @@ begin
   interface_crc:=0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   indirect_crc:=0;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  indirect_crc:=0;
+>>>>>>> origin/fixes_2.4
   do_interface_crc:=true;
   do_indirect_crc:=false;
   Error:=false;
@@ -1412,11 +1423,15 @@ begin
     header.interface_checksum := swapendian(header.interface_checksum);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     header.indirect_checksum := swapendian(header.indirect_checksum);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    header.indirect_checksum := swapendian(header.indirect_checksum);
+>>>>>>> origin/fixes_2.4
     header.deflistsize:=swapendian(header.deflistsize);
     header.symlistsize:=swapendian(header.symlistsize);
 {$endif not FPC_BIG_ENDIAN}

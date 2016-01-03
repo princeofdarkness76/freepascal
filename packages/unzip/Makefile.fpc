@@ -39,11 +39,15 @@ units=ziptypes unzip51g
 version=2.2.5
 
 [target]
+<<<<<<< HEAD
 units=ziptypes unzip
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+units=ziptypes unzip51g
+>>>>>>> origin/fixes_2.4
 units_emx=unzipdll
 units_os2=unzipdll
 

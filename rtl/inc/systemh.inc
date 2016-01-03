@@ -80,12 +80,15 @@
 {$define FPC_HAS_FEATURE_DYNLIBS}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$define FPC_HAS_FEATURE_OBJECTIVEC1}
 {$define FPC_HAS_FEATURE_UNICODESTRINGS}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$endif FPC_HAS_FEATURE_SUPPORT}
 
 <<<<<<< HEAD

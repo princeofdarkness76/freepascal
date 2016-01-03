@@ -719,6 +719,7 @@ begin
     SetCapacity(NewCount);
   if NewCount > FCount then
 <<<<<<< HEAD
+<<<<<<< HEAD
     FillByte(InternalItems[FCount]^, (NewCount-FCount) * FItemSize, 0)
   else if NewCount < FCount then
     Deref(NewCount, FCount-1);
@@ -732,6 +733,11 @@ begin
       Deref(NewCount, FCount-1);
   end;
 >>>>>>> graemeg/fixes_2_2
+=======
+    FillByte(InternalItems[FCount]^, (NewCount-FCount) * FItemSize, 0)
+  else if NewCount < FCount then
+    Deref(NewCount, FCount-1);
+>>>>>>> origin/fixes_2.4
   FCount := NewCount;
 end;
 

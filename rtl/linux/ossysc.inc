@@ -720,8 +720,13 @@ begin
  fpgettimeofday:=do_syscall(syscall_nr_gettimeofday,TSysParam(tp),TSysParam(tzp));
 end;
 
+<<<<<<< HEAD
 
 function FpGetRLimit(resource : cInt; rlim : PRLimit) : cInt; [public, alias : 'FPC_SYSC_GETRLIMIT'];
+=======
+{$ifndef NO_SYSCALL_GETRLIMIT}
+function FpGetRLimit(resource : cInt; rlim : PRLimit) : cInt;
+>>>>>>> origin/fixes_2.4
 begin
 {$ifndef NO_SYSCALL_GETRLIMIT}
   FpGetRLimit := do_syscall(syscall_nr_getrlimit,
@@ -731,6 +736,7 @@ begin
     TSysParam(resource), TSysParam(rlim));
 {$endif}
 end;
+{$endif}
 
 
 {$ifdef HAS_UGETRLIMIT}

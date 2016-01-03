@@ -99,6 +99,7 @@ type
    BSTR	               = POLESTR;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    TOleDate	       = DATE;
    POleDate	       = ^TOleDate;	
 <<<<<<< HEAD
@@ -251,6 +252,10 @@ CONST
    IID_IOleItemContainer : TGUID = '{0000011C-0000-0000-C000-000000000046}';
 
 =======
+=======
+   TOleDate	       = DATE;
+   POleDate	       = ^TOleDate;	
+>>>>>>> origin/fixes_2.4
 
 CONST
    GUID_NULL  : TGUID =  '{00000000-0000-0000-0000-000000000000}';
@@ -1644,6 +1649,7 @@ TYPE
    PBind_Opts                   = ^TBind_Opts;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    TBindOpts		        = tagBIND_OPTS;
    PBindOpts			= ^TBindOpts;
    Bind_Opts			= tagBind_opts;
@@ -1651,6 +1657,11 @@ TYPE
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+   TBindOpts		        = tagBIND_OPTS;
+   PBindOpts			= ^TBindOpts;
+   Bind_Opts			= tagBind_opts;
+>>>>>>> origin/fixes_2.4
 
    tagBIND_OPTS2_CPP            = Record
                                     dwTrackFlags,
@@ -2212,11 +2223,15 @@ TYPE
   LPTYPEATTR                     = ^TYPEATTR;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   PTYPEAttr			 = LPTYPEATTR;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  PTYPEAttr			 = LPTYPEATTR;
+>>>>>>> origin/fixes_2.4
 
   tagTLIBATTR                    = Record
                                      GUID        : guid;

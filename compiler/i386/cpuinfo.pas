@@ -168,6 +168,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -177,6 +178,9 @@ Const
 >>>>>>> origin/cpstrnew
    level2optimizerswitches = genericlevel2optimizerswitches + level1optimizerswitches +
      [cs_opt_regvar,cs_opt_stackframe,cs_opt_tailrecursion,cs_opt_nodecse];
+=======
+   level2optimizerswitches = genericlevel2optimizerswitches + level1optimizerswitches + [cs_opt_regvar,cs_opt_stackframe,cs_opt_tailrecursion];
+>>>>>>> origin/fixes_2.4
    level3optimizerswitches = genericlevel3optimizerswitches + level2optimizerswitches + [{,cs_opt_loopunroll}];
    level4optimizerswitches = genericlevel4optimizerswitches + level3optimizerswitches + [cs_useebp];
 

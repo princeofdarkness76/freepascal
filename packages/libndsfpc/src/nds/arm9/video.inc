@@ -462,6 +462,7 @@ var
   VRAM_F_EXT_PALETTE : P_ext_palette absolute VRAM_F;
   VRAM_G_EXT_PALETTE : P_ext_palette absolute VRAM_G;
   VRAM_H_EXT_PALETTE : P_ext_palette absolute VRAM_H;
+<<<<<<< HEAD
 
 function vramSetPrimaryBanks(a: VRAM_A_TYPE; b: VRAM_B_TYPE; c: VRAM_C_TYPE; d: VRAM_D_TYPE): cuint32; cdecl; external; 
 function vramSetMainBanks(a: VRAM_A_TYPE; b: VRAM_B_TYPE; c: VRAM_C_TYPE; d: VRAM_D_TYPE): cuint32; cdecl; external; deprecated;
@@ -499,6 +500,8 @@ var
   VRAM_F_EXT_PALETTE : PExtPalette absolute VRAM_F;
   VRAM_G_EXT_PALETTE : PExtPalette absolute VRAM_G;
   VRAM_H_EXT_PALETTE : PExtPalette absolute VRAM_H;
+=======
+>>>>>>> origin/fixes_2.4
 
 function vramSetMainBanks(a: VRAM_A_TYPE; b: VRAM_B_TYPE; c: VRAM_C_TYPE; d: VRAM_D_TYPE): cuint32; cdecl; external;
 procedure vramRestoreMainBanks(vramTemp: cuint32); cdecl; external;
@@ -931,6 +934,9 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
   REG_MOSAIC     : pcuint16 = pointer($0400004C);
   REG_MOSAIC_SUB : pcuint16 = pointer($0400104C);
 

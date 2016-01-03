@@ -41,19 +41,22 @@
  * Copyright (c) 2004 Apple Computer, Inc. All rights reserved.
  *
  }
-
 {	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
-
+{	 Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -62,6 +65,7 @@
 
 unit CGImageSource;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -74,6 +78,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -88,6 +96,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -95,21 +104,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -117,6 +135,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -127,6 +148,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -144,6 +166,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -151,10 +175,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -164,10 +191,14 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -382,18 +413,71 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -421,12 +505,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -462,14 +549,23 @@ uses MacTypes, CFArray, CFBase, CFData, CFDictionary, CFURL, CGDataProvider, CGI
 >>>>>>> origin/cpstrnew
 =======
 uses MacTypes, CFArray, CFBase, CFData, CFDictionary, CFURL, CGDataProvider, CGImage;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 uses MacTypes, CFArray, CFBase, CFData, CFDictionary, CFURL, CGDataProvider, CGImage;
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> origin/fixes_2.4
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -496,6 +592,9 @@ type
 =======
 	CGImageSourceRef = ^SInt32; { an opaque 32-bit type }
 >>>>>>> origin/fixes_2_2
+=======
+	CGImageSourceRef = ^SInt32; { an opaque type }
+>>>>>>> origin/fixes_2.4
 
 
 type
@@ -522,6 +621,7 @@ var kCGImageSourceTypeIdentifierHint: CFStringRef; external name '_kCGImageSourc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -541,6 +641,9 @@ var kCGImageSourceTypeIdentifierHint: CFStringRef; external name '_kCGImageSourc
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 {* Keys for the options dictionary of "CGImageSourceCopyPropertiesAtIndex"
  ** and "CGImageSourceCreateImageAtIndex". *}
@@ -556,6 +659,7 @@ var kCGImageSourceShouldCache: CFStringRef; external name '_kCGImageSourceShould
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -575,6 +679,9 @@ var kCGImageSourceShouldCache: CFStringRef; external name '_kCGImageSourceShould
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Specifies whether the image should be returned as a floating
  * point CGImageRef if supported by the file format. Extended
@@ -589,6 +696,7 @@ var kCGImageSourceShouldAllowFloat: CFStringRef; external name '_kCGImageSourceS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -608,6 +716,9 @@ var kCGImageSourceShouldAllowFloat: CFStringRef; external name '_kCGImageSourceS
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 
 {* Keys for the options dictionary of
@@ -628,6 +739,7 @@ var kCGImageSourceCreateThumbnailFromImageIfAbsent: CFStringRef; external name '
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -647,6 +759,9 @@ var kCGImageSourceCreateThumbnailFromImageIfAbsent: CFStringRef; external name '
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Specifies whether a thumbnail should be created from the full image even
  * if a thumbnail is present in the image source file. The thumbnail will
@@ -663,6 +778,7 @@ var kCGImageSourceCreateThumbnailFromImageAlways: CFStringRef; external name '_k
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -682,6 +798,9 @@ var kCGImageSourceCreateThumbnailFromImageAlways: CFStringRef; external name '_k
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Specifies the maximum width and height in pixels of a thumbnail.  If
  * this this key is not specified, the width and height of a thumbnail is
@@ -695,6 +814,7 @@ var kCGImageSourceThumbnailMaxPixelSize: CFStringRef; external name '_kCGImageSo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -714,6 +834,9 @@ var kCGImageSourceThumbnailMaxPixelSize: CFStringRef; external name '_kCGImageSo
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Specifies whether the thumbnail should be rotated and scaled according
  * to the orientation and pixel aspect ratio of the full image. The value
@@ -727,6 +850,7 @@ var kCGImageSourceCreateThumbnailWithTransform: CFStringRef; external name '_kCG
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -746,6 +870,9 @@ var kCGImageSourceCreateThumbnailWithTransform: CFStringRef; external name '_kCG
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 
 { Return the CFTypeID for CGImageSources. }
@@ -757,6 +884,7 @@ function CGImageSourceGetTypeID: CFTypeID; external name '_CGImageSourceGetTypeI
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -776,6 +904,9 @@ function CGImageSourceGetTypeID: CFTypeID; external name '_CGImageSourceGetTypeI
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Return an array of supported type identifiers. }
 
@@ -786,6 +917,7 @@ function CGImageSourceCopyTypeIdentifiers: CFArrayRef; external name '_CGImageSo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -805,6 +937,9 @@ function CGImageSourceCopyTypeIdentifiers: CFArrayRef; external name '_CGImageSo
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Create an image source reading from the data provider `provider'. The
  * `options' dictionary may be used to request additional creation options;
@@ -817,6 +952,7 @@ function CGImageSourceCreateWithDataProvider( provider: CGDataProviderRef; optio
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -836,6 +972,9 @@ function CGImageSourceCreateWithDataProvider( provider: CGDataProviderRef; optio
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Create an image source reading from `data'.  The `options' dictionary
  * may be used to request additional creation options; see the list of keys
@@ -848,6 +987,7 @@ function CGImageSourceCreateWithData( data: CFDataRef; options: CFDictionaryRef 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -867,6 +1007,9 @@ function CGImageSourceCreateWithData( data: CFDataRef; options: CFDictionaryRef 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Create an image source reading from `url'. The `options' dictionary may
  * be used to request additional creation options; see the list of keys
@@ -879,6 +1022,7 @@ function CGImageSourceCreateWithURL( url: CFURLRef; options: CFDictionaryRef ): 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -898,6 +1042,9 @@ function CGImageSourceCreateWithURL( url: CFURLRef; options: CFDictionaryRef ): 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Return the type identifier of the image source `isrc'.  This type is the
  * type of the source "container", which is not necessarily the type of the
@@ -911,6 +1058,7 @@ function CGImageSourceGetType( isrc: CGImageSourceRef ): CFStringRef; external n
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -930,6 +1078,9 @@ function CGImageSourceGetType( isrc: CGImageSourceRef ): CFStringRef; external n
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Return the number of images (not including thumbnails) in the image
  * source `isrc'. }
@@ -941,6 +1092,7 @@ function CGImageSourceGetCount( isrc: CGImageSourceRef ): size_t; external name 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -960,6 +1112,9 @@ function CGImageSourceGetCount( isrc: CGImageSourceRef ): size_t; external name 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Return the properties of the image source `isrc'.  These properties
  * apply to the container in general but not necessarily to any individual
@@ -972,6 +1127,7 @@ function CGImageSourceCopyProperties( isrc: CGImageSourceRef; options: CFDiction
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -991,6 +1147,9 @@ function CGImageSourceCopyProperties( isrc: CGImageSourceRef; options: CFDiction
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Return the properties of the image at `index' in the image source
  * `isrc'.  The index is zero-based. The `options' dictionary may be used
@@ -998,6 +1157,7 @@ function CGImageSourceCopyProperties( isrc: CGImageSourceRef; options: CFDiction
  * information. }
 
 function CGImageSourceCopyPropertiesAtIndex( isrc: CGImageSourceRef; index: size_t; options: CFDictionaryRef ): CFDictionaryRef; external name '_CGImageSourceCopyPropertiesAtIndex';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1032,12 +1192,16 @@ function CGImageSourceCopyMetadataAtIndex( isrc: CGImageSourceRef; index: size_t
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Return the image at `index' in the image source `isrc'.  The index is
  * zero-based. The `options' dictionary may be used to request additional
  * creation options; see the list of keys above for more information. }
 
 function CGImageSourceCreateImageAtIndex( isrc: CGImageSourceRef; index: size_t; options: CFDictionaryRef ): CGImageRef; external name '_CGImageSourceCreateImageAtIndex';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1063,6 +1227,9 @@ function CGImageSourceCreateImageAtIndex( isrc: CGImageSourceRef; index: size_t;
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Return the thumbnail of the image at `index' in the image source `isrc'.
  * The index is zero-based. The `options' dictionary may be used to request
@@ -1076,6 +1243,7 @@ function CGImageSourceCreateThumbnailAtIndex( isrc: CGImageSourceRef; index: siz
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -1095,6 +1263,9 @@ function CGImageSourceCreateThumbnailAtIndex( isrc: CGImageSourceRef; index: siz
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Create an incremental image source. No data is provided at creation
  * time; it is assumed that data will eventually be provided using
@@ -1109,6 +1280,7 @@ function CGImageSourceCreateIncremental( options: CFDictionaryRef ): CGImageSour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -1128,6 +1300,9 @@ function CGImageSourceCreateIncremental( options: CFDictionaryRef ): CGImageSour
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Update the incremental image source `isrc' with new data.  The new data
  * must include all the previous data plus any additional new data. The
@@ -1141,6 +1316,7 @@ procedure CGImageSourceUpdateData( isrc: CGImageSourceRef; data: CFDataRef; fina
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -1160,6 +1336,9 @@ procedure CGImageSourceUpdateData( isrc: CGImageSourceRef; data: CFDataRef; fina
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Update the incremental image source `isrc' with a new data provider.
  * The new data provider must provide all the previous data plus any
@@ -1173,6 +1352,7 @@ procedure CGImageSourceUpdateDataProvider( isrc: CGImageSourceRef; provider: CGD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -1192,6 +1372,9 @@ procedure CGImageSourceUpdateDataProvider( isrc: CGImageSourceRef; provider: CGD
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Return the overall status of the image source `isrc'.  The status is
  * particularly informative for incremental image sources, but may be used
@@ -1204,6 +1387,7 @@ function CGImageSourceGetStatus( isrc: CGImageSourceRef ): CGImageSourceStatus; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -1223,6 +1407,9 @@ function CGImageSourceGetStatus( isrc: CGImageSourceRef ): CGImageSourceStatus; 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/fixes_2.4
 
 { Return the current status of the image at `index' in the image source
  * `isrc'. The index is zero-based. The returned status is particularly
@@ -1230,6 +1417,7 @@ function CGImageSourceGetStatus( isrc: CGImageSourceRef ): CGImageSourceStatus; 
  * providing non-incremental data as well. }
 
 function CGImageSourceGetStatusAtIndex( isrc: CGImageSourceRef; index: size_t ): CGImageSourceStatus; external name '_CGImageSourceGetStatusAtIndex';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1267,10 +1455,20 @@ end.
 =======
 >>>>>>> origin/fixes_2_2
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 
+>>>>>>> origin/fixes_2.4
+
+{$endc} {TARGET_OS_MAC}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

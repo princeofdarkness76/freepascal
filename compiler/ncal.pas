@@ -1884,6 +1884,7 @@ implementation
                        ((left.nodetype=stringconstn) and
                         (tstringdef(parasym.vardef).len<tstringconstnode(left).len))))) then
                    begin
+<<<<<<< HEAD
                      block:=internalstatements(statements);
                      { temp for the new string }
                      temp:=ctempcreatenode.create(parasym.vardef,parasym.vardef.size,
@@ -1897,6 +1898,9 @@ implementation
                      addstatement(statements,ctemprefnode.create(temp));
                      typecheckpass(block);
                      left:=block;
+=======
+                     CGMessagePos(left.fileinfo,type_e_strict_var_string_violation);
+>>>>>>> origin/fixes_2.4
                    end;
 
                 { truncate shortstring value parameters at the caller side if }

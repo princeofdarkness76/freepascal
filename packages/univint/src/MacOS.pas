@@ -36,11 +36,15 @@ uses
   ATSUnicodeTypes,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
   AUComponent,
   AVLTree,
   AXActionConstants,
   AXAttributeConstants,
   AXConstants,
+<<<<<<< HEAD
 =======
   AVLTree,
   AXActionConstants,
@@ -51,6 +55,8 @@ uses
   AXActionConstants,
   AXAttributeConstants,
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
   AXErrors,
   AXNotificationConstants,
   AXRoleConstants,
@@ -60,17 +66,22 @@ uses
   AXValueConstants,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Accessibility,
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  Accessibility,
+>>>>>>> origin/fixes_2.4
   Aliases,
   Appearance,
   AppleDiskPartitions,
   AppleEvents,
   AppleHelp,
   AppleScript,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   AudioCodecs,
@@ -103,15 +114,28 @@ uses
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  AudioCodecs,
+  AudioComponents,
+>>>>>>> origin/fixes_2.4
   AudioHardware,
+  AudioOutputUnit,
+  AudioUnitCarbonViews,
+  AudioUnitParameters,
+  AudioUnitProperties,
   AuthSession,
   Authorization,
   AuthorizationDB,
+  AuthorizationPlugin,
   AuthorizationTags,
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  BackupCore,
+>>>>>>> origin/fixes_2.4
   CFArray,
   CFAttributedString,
   CFBag,
@@ -126,6 +150,7 @@ uses
   CFDate,
   CFDateFormatter,
   CFDictionary,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   CFError,
@@ -151,12 +176,18 @@ uses
 =======
   CFFTPStream,
 >>>>>>> origin/fixes_2_2
+=======
+  CFError,
+  CFFTPStream,
+  CFHTTPAuthentication,
+>>>>>>> origin/fixes_2.4
   CFHTTPMessage,
   CFHTTPStream,
   CFHost,
   CFLocale,
   CFMachPort,
   CFMessagePort,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   CFNetDiagnostics,
@@ -168,6 +199,11 @@ uses
 =======
   CFNetServices,
 >>>>>>> origin/fixes_2_2
+=======
+  CFNetDiagnostics,
+  CFNetServices,
+  CFNetworkErrorss,
+>>>>>>> origin/fixes_2.4
   CFNotificationCenter,
   CFNumber,
   CFNumberFormatter,
@@ -177,11 +213,15 @@ uses
   CFPropertyList,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CFProxySupport,
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  CFProxySupport,
+>>>>>>> origin/fixes_2.4
   CFRunLoop,
   CFSet,
   CFSocket,
@@ -233,6 +273,9 @@ uses
   CGGeometry,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
   CGGradient,
   CGImage,
   CGImageDestination,
@@ -244,6 +287,7 @@ uses
   CGLProfiler,
   CGLProfilerFunctionEnums,
   CGLRenderers,
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -255,6 +299,8 @@ uses
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
   CGLTypes,
   CGLayer,
   CGPDFArray,
@@ -274,6 +320,7 @@ uses
   CGRemoteOperation,
   CGSession,
   CGShading,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   CGWindow,
@@ -313,9 +360,12 @@ uses
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  CGWindow,
+>>>>>>> origin/fixes_2.4
   CGWindowLevels,
-  CMApplication,
   CMCalibrator,
+<<<<<<< HEAD
   CMDeviceIntegration,
   CMICCProfile,
   CMMComponent,
@@ -326,6 +376,26 @@ uses
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  CSIdentity,
+  CSIdentityAuthority,
+  CSIdentityQuery,
+  CTFont,
+  CTFontCollection,
+  CTFontDescriptor,
+  CTFontManager,
+  CTFontManagerErrors,
+  CTFontTraits,
+  CTFrame,
+  CTFramesetter,
+  CTGlyphInfo,
+  CTLine,
+  CTParagraphStyle,
+  CTRun,
+  CTStringAttributes,
+  CTTextTab,
+  CTTypesetter,
+>>>>>>> origin/fixes_2.4
   CVBase,
   CVBuffer,
   CVDisplayLink,
@@ -333,10 +403,14 @@ uses
   CVImageBuffer,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
   CVOpenGLBuffer,
   CVOpenGLBufferPool,
   CVOpenGLTexture,
   CVOpenGLTextureCache,
+<<<<<<< HEAD
   CVPixelBuffer,
   CVPixelBufferIOSurface,
   CVPixelBufferPool,
@@ -344,6 +418,8 @@ uses
   CVReturns,
   CaptiveNetwork,
 =======
+=======
+>>>>>>> origin/fixes_2.4
   CVPixelBuffer,
   CVPixelBufferPool,
   CVPixelFormatDescription,
@@ -362,15 +438,21 @@ uses
   ColorPicker,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
   ColorSyncCMM,
   ColorSyncDeprecated,
   ColorSyncDevice,
   ColorSyncProfile,
   ColorSyncTransform,
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
   Components,
   ConditionalMacros,
   ControlDefinitions,
@@ -378,6 +460,7 @@ uses
   CoreAudioTypes,
   CoreFoundation,
   CoreGraphics,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   CoreText,
@@ -415,27 +498,35 @@ uses
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  CoreText,
+  DADisk,
+  DASession,
+>>>>>>> origin/fixes_2.4
   DHCPClientPreferences,
   DateTimeUtils,
   Debugging,
-  Devices,
   Dialogs,
   Dictionary,
+  DigitalHubRegistry,
   Displays,
   Drag,
   DrawSprocket,
-  DriverFamilyMatching,
-  DriverGestalt,
+  DriverServices,
   DriverSynchronization,
   Endian,
   Events,
+  FSEvents,
   FileTypesAndCreators,
   Files,
+<<<<<<< HEAD
   FindByContent,
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
   Finder,
   FinderRegistry,
   FixMath,
@@ -443,6 +534,7 @@ uses
   FontPanel,
   FontSync,
   Fonts,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   GestaltEqu,
@@ -484,29 +576,57 @@ uses
 =======
 >>>>>>> origin/fixes_2_2
   GXTypes,
+=======
+>>>>>>> origin/fixes_2.4
   GestaltEqu,
   HFSVolumes,
+  HIAccessibility,
   HIArchive,
+  HIButtonViews,
+  HIClockView,
+  HIComboBox,
+  HIContainerViews,
+  HIDataBrowser,
+  HIDisclosureViews,
   HIGeometry,
+  HIImageViews,
+  HILittleArrows,
+  HIMenuView,
   HIMovieView,
   HIObject,
-  HIObjectCore,
+  HIPopupButton,
+  HIProgressViews,
+  HIRelevanceBar,
+  HIScrollView,
+  HISearchField,
+  HISegmentedView,
+  HISeparator,
   HIShape,
+  HISlider,
+  HITabbedView,
+  HITextLengthFilter,
   HITextUtils,
+  HITextViews,
   HITheme,
   HIToolbar,
   HIToolbox,
+  HIToolboxDebugging,
   HIView,
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  HIWindowViews,
+>>>>>>> origin/fixes_2.4
   HTMLRendering,
   HostTime,
   IBCarbonRuntime,
   ICAApplication,
   ICACamera,
   ICADevice,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   IOKitReturn,
@@ -520,6 +640,11 @@ uses
 =======
   Icons,
 >>>>>>> origin/fixes_2_2
+=======
+  IconStorage,
+  Icons,
+  IconsCore,
+>>>>>>> origin/fixes_2.4
   ImageCodec,
   ImageCompression,
   InternetConfig,
@@ -527,6 +652,7 @@ uses
   Keyboards,
   KeychainCore,
   KeychainHI,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -545,10 +671,14 @@ uses
 =======
   KeyEvents,
 >>>>>>> origin/cpstrnew
+=======
+  KeyEvents,
+>>>>>>> origin/fixes_2.4
   LSInfo,
   LSOpen,
   LSQuarantine,
   LSSharedFileList,
+<<<<<<< HEAD
   LanguageAnalysis,
   Lists,
   LowMem,
@@ -565,14 +695,28 @@ uses
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
   LanguageAnalysis,
-  LaunchServices,
   Lists,
   LowMem,
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  MDExternalDatastore,
+  MDImporter,
+  MDItem,
+  MDLineage,
+  MDQuery,
+  MDSchema,
+  MIDIDriver,
+  MIDIServices,
+  MIDISetup,
+  MIDIThruConnection,
+>>>>>>> origin/fixes_2.4
   MacApplication,
   MacErrors,
   MacHelp,
@@ -581,11 +725,15 @@ uses
   MacOSXPosix,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   MacOpenGL,
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  MacOpenGL,
+>>>>>>> origin/fixes_2.4
   MacTextEditor,
   MacTypes,
   MacWindows,
@@ -598,6 +746,7 @@ uses
   MoviesFormat,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   MultiProcessingInfo,
   Multiprocessing,
   MusicDevice,
@@ -606,14 +755,21 @@ uses
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  MultiProcessingInfo,
+>>>>>>> origin/fixes_2.4
   Multiprocessing,
+  MusicDevice,
   NSL,
   NSLCore,
+<<<<<<< HEAD
   NameRegistry,
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
   Navigation,
   Notification,
   NumberFormatting,
@@ -630,6 +786,7 @@ uses
   PMApplication,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   PMApplicationDeprecated,
   PMCore,
   PMCoreDeprecated,
@@ -640,17 +797,30 @@ uses
   PMPrintSettingsKeys,
   PMPrintingDialogExtensions,
 =======
+=======
+  PMApplicationDeprecated,
+>>>>>>> origin/fixes_2.4
   PMCore,
+  PMCoreDeprecated,
   PMDefinitions,
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
   PMCore,
   PMDefinitions,
 >>>>>>> origin/fixes_2_2
+=======
+  PMDefinitionsDeprecated,
+  PMErrors,
+  PMPrintAETypes,
+  PMPrintSettingsKeys,
+  PMPrintingDialogExtensions,
+>>>>>>> origin/fixes_2.4
   Palettes,
   Pasteboard,
   PictUtils,
   Power,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   Processes,
@@ -677,17 +847,27 @@ uses
 =======
 >>>>>>> origin/fixes_2_2
   Printing,
+=======
+>>>>>>> origin/fixes_2.4
   Processes,
+  QDCMCommon,
   QDOffscreen,
   QDPictToCGContext,
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  QLBase,
+  QLGenerator,
+  QLThumbnailImage,
+>>>>>>> origin/fixes_2.4
   QTML,
   QTSMovie,
   QTStreamingComponents,
   QuickTimeComponents,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   QuickTimeErrors,
@@ -695,6 +875,9 @@ uses
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  QuickTimeErrors,
+>>>>>>> origin/fixes_2.4
   QuickTimeMusic,
   QuickTimeStreaming,
   QuickTimeVR,
@@ -703,11 +886,15 @@ uses
   QuickdrawText,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   QuickdrawTypes,
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  QuickdrawTypes,
+>>>>>>> origin/fixes_2.4
   Resources,
   SCDynamicStore,
   SCDynamicStoreCopyDHCPInfos,
@@ -716,11 +903,15 @@ uses
   SCNetwork,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SCNetworkConfiguration,
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  SCNetworkConfiguration,
+>>>>>>> origin/fixes_2.4
   SCNetworkConnection,
   SCNetworkReachability,
   SCPreferences,
@@ -730,6 +921,7 @@ uses
   SCSchemaDefinitions,
   SFNTLayoutTypes,
   SFNTTypes,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -749,10 +941,13 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
   ScalerStreamTypes,
   Scrap,
   Script,
   SecBase,
+<<<<<<< HEAD
   SecTrust,
 =======
   Scrap,
@@ -762,6 +957,8 @@ uses
   Scrap,
   Script,
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
   Sound,
   SpeechRecognition,
   SpeechSynthesis,
@@ -775,11 +972,15 @@ uses
   TextEncodingPlugin,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TextInputSources,
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  TextInputSources,
+>>>>>>> origin/fixes_2.4
   TextServices,
   TextUtils,
   Threads,
@@ -792,12 +993,15 @@ uses
   URLAccess,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   USB,
 >>>>>>> graemeg/fixes_2_2
 =======
   USB,
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
   UTCUtils,
   UTCoreTypes,
   UTType,
@@ -805,6 +1009,7 @@ uses
   UnicodeUtilities,
   UniversalAccess,
   Video,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   WSMethodInvocation,
@@ -847,8 +1052,20 @@ uses
 =======
 >>>>>>> origin/fixes_2_2
   WorldScript,
+=======
+  WSMethodInvocation,
+  WSProtocolHandler,
+  WSTypes,
+  cblas,
+>>>>>>> origin/fixes_2.4
   fenv,
   fp,
+  gliContexts,
+  gliDispatch,
+  gluContext,
+  macgl,
+  macglext,
+  macglu,
   vBLAS,
   vDSP,
 <<<<<<< HEAD

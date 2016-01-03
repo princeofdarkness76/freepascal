@@ -95,6 +95,7 @@ implementation
         '',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         '',
         '',
         '',
@@ -164,6 +165,8 @@ implementation
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
         ''
       );
 
@@ -184,6 +187,7 @@ implementation
         '',
         '',
         '',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         '',
@@ -238,6 +242,8 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
         ''
       );
 

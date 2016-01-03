@@ -113,6 +113,7 @@ const
       {$linklib atk-1.0.0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       {$linklib gthread-2.0}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -131,6 +132,9 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      {$linklib gthread-2.0}
+>>>>>>> origin/fixes_2.4
     {$else}
       {$ifdef UseCustomLibs}
       gtklib = '';

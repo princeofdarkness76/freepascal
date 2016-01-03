@@ -175,6 +175,9 @@ const
   
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
   MOSAIC_CR = REG_MOSAIC;
 
   BLEND_CR = REG_BLDCNT;
@@ -292,6 +295,7 @@ const
   REG_WININ_SUB		: pcuint16 = pointer($4001048);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   REG_WINOUT_SUB	: pcuint16 = pointer($400104A);
   
   SUB_MOSAIC_CR = REG_MOSAIC_SUB;
@@ -311,6 +315,13 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  REG_WINOUT_SUB	: pcuint16 = pointer($400104A);
+  
+  SUB_MOSAIC_CR = REG_MOSAIC_SUB;
+  
+  REG_BLDMOD_SUB: pcuint16 = pointer($4001050);
+>>>>>>> origin/fixes_2.4
   REG_COLV_SUB	: pcuint16 = pointer($4001052);
   REG_COLY_SUB	: pcuint16 = pointer($4001054);
   

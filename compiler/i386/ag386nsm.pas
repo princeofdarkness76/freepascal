@@ -464,7 +464,11 @@ interface
 
     procedure T386NasmAssembler.WriteSection(atype:TAsmSectiontype;const aname:string);
       const
+<<<<<<< HEAD
         secnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
+=======
+        secnames : array[TAsmSectiontype] of string[17] = ('',
+>>>>>>> origin/fixes_2.4
           '.text',
           '.data',
           '.data',
@@ -481,6 +485,7 @@ interface
           '.fpc',
           '',
           '.init',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           '.fini',
@@ -524,6 +529,9 @@ interface
 =======
           '.fini'
 >>>>>>> origin/fixes_2_2
+=======
+          '.fini'
+>>>>>>> origin/fixes_2.4
         );
       begin
         AsmLn;

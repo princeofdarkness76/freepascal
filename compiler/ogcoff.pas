@@ -567,6 +567,7 @@ implementation
           '.init',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           '.fini',
           '.objc_class',
           '.objc_meta_class',
@@ -626,6 +627,9 @@ implementation
 =======
           '.fini'
 >>>>>>> origin/fixes_2_2
+=======
+          '.fini'
+>>>>>>> origin/fixes_2.4
         );
 
 const go32v2stub : array[0..2047] of byte=(

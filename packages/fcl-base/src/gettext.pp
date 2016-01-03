@@ -268,20 +268,27 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
   if AHash = $FFFFFFFF then
   begin
     Result := '';
     exit;
   end;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
   idx := AHash mod HashTableSize;
   incr := 1 + (AHash mod (HashTableSize - 2));
   while True do
   begin
     nstr := HashTable^[idx];
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     if (nstr = 0) or (nstr > StringCount) then
@@ -291,6 +298,9 @@ begin
 =======
     if nstr = 0 then
 >>>>>>> origin/fixes_2_2
+=======
+    if (nstr = 0) or (nstr > StringCount) then
+>>>>>>> origin/fixes_2.4
     begin
       Result := '';
       exit;

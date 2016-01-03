@@ -227,7 +227,11 @@ implementation
 
     function TGNUAssembler.sectionname(atype:TAsmSectiontype;const aname:string;aorder:TAsmSectionOrder):string;
       const
+<<<<<<< HEAD
         secnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
+=======
+        secnames : array[TAsmSectiontype] of string[17] = ('',
+>>>>>>> origin/fixes_2.4
           '.text',
           '.data',
 { why doesn't .rodata work? (FK) }
@@ -281,6 +285,7 @@ implementation
           '.fpc',
           '.toc',
           '.init',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           '.fini',
@@ -344,6 +349,11 @@ implementation
 >>>>>>> origin/fixes_2_2
         );
         secnames_pic : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
+=======
+          '.fini'
+        );
+        secnames_pic : array[TAsmSectiontype] of string[17] = ('',
+>>>>>>> origin/fixes_2.4
           '.text',
           '.data.rel',
           '.data.rel',
@@ -364,6 +374,7 @@ implementation
           '.fpc',
           '.toc',
           '.init',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           '.fini',
@@ -425,6 +436,9 @@ implementation
 =======
           '.fini'
 >>>>>>> origin/fixes_2_2
+=======
+          '.fini'
+>>>>>>> origin/fixes_2.4
         );
       var
         sep     : string[3];
@@ -2312,6 +2326,7 @@ implementation
               end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             sec_data_nonlazy:
               begin
                 result:='.section __DATA, __nl_symbol_ptr,non_lazy_symbol_pointers';
@@ -2491,6 +2506,8 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
           end;
         result := inherited sectionname(atype,aname,aorder);
       end;
@@ -2547,6 +2564,7 @@ implementation
          { Table of contents section }
          sec_code (* sec_toc *),
          sec_code (* sec_init *),
+<<<<<<< HEAD
          sec_code (* sec_fini *),
          sec_none (* sec_objc_class *),
          sec_none (* sec_objc_meta_class *),
@@ -2693,6 +2711,8 @@ implementation
          { Table of contents section }
          sec_code (* sec_toc *),
          sec_code (* sec_init *),
+=======
+>>>>>>> origin/fixes_2.4
          sec_code (* sec_fini *)
         );
       begin

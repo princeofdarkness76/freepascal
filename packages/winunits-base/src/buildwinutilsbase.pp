@@ -35,6 +35,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
     ole2, activex, shellapi, shlobj, oleserver,  shfolder, richedit,
+<<<<<<< HEAD
     imagehlp, wininet, uxtheme, dwmapi, multimon, htmlhelp, winutils,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -61,6 +62,9 @@ uses
 =======
     ole2, activex, shellapi, shlobj, oleserver,  shfolder, richedit,imagehlp,wininet;
 >>>>>>> origin/fixes_2_2
+=======
+    imagehlp, wininet, uxtheme, dwmapi, multimon, htmlhelp, winutils;
+>>>>>>> origin/fixes_2.4
 
 implementation
 

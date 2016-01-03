@@ -34,6 +34,7 @@
    pgssize  = ^gssize;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    gssize   = SizeInt;
    pgsize   = ^gsize;
    gsize    = SizeUInt;
@@ -47,6 +48,11 @@
    pgsize   = ^gsize;
    gsize    = dword;
 >>>>>>> origin/fixes_2_2
+=======
+   gssize   = SizeInt;
+   pgsize   = ^gsize;
+   gsize    = SizeUInt;
+>>>>>>> origin/fixes_2.4
 
 {$ENDIF read_forward_definitions}
 

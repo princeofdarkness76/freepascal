@@ -4037,6 +4037,7 @@ begin
    begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      ITryToOpenFile(Bounds,dir+srec.name,CurX,CurY,tryexts,true,false);
 =======
      ITryToOpenFile(Bounds,dir+srec.name,CurX,CurY,tryexts,true,false);    
@@ -4044,6 +4045,9 @@ begin
 =======
      ITryToOpenFile(Bounds,dir+srec.name,CurX,CurY,tryexts,true,false);    
 >>>>>>> origin/fixes_2_2
+=======
+     ITryToOpenFile(Bounds,dir+srec.name,CurX,CurY,tryexts,true,false);
+>>>>>>> origin/fixes_2.4
      FindNext(srec);
    end;
   FindClose(srec);
@@ -4312,6 +4316,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Insert(New(PStaticText, Init(R2, ^C'Copyright (C) 1998-2014 by')));
 =======
   Insert(New(PStaticText, Init(R2, ^C'Copyright (C) 1998-2009 by')));
@@ -4331,6 +4336,9 @@ begin
 =======
   Insert(New(PStaticText, Init(R2, ^C'Copyright (C) 1998-2008 by')));
 >>>>>>> origin/fixes_2_2
+=======
+  Insert(New(PStaticText, Init(R2, ^C'Copyright (C) 1998-2009 by')));
+>>>>>>> origin/fixes_2.4
   R2.Move(0,2);
   Insert(New(PStaticText, Init(R2, ^C'B‚rczi G bor')));
   R2.Move(0,1);

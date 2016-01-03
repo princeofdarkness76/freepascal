@@ -126,6 +126,7 @@ procedure integerToBCD(var data: cuint8; length: cuint32); cdecl; external;
 
 procedure initClockIRQ(); cdecl; external;
 procedure resyncClock(); cdecl; external;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -137,4 +138,6 @@ procedure initClockIRQ(); cdecl; external;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$endif NDS_INTERFACE}

@@ -147,16 +147,22 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 procedure TDatabase.SetParams(AValue: TStrings);
 begin
   if AValue<>nil then
     FParams.Assign(AValue);
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 Function TDatabase.GetDataSetCount : Longint;
 
 begin

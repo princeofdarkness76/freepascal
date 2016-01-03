@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const msgtxt : array[0..000318] of string[240]=(
 {$else Delphi}
 const msgtxt : array[0..000318,1..240] of char=(
@@ -38,6 +39,11 @@ const msgtxt : array[0..000192] of string[240]=(
 {$else Delphi}
 const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> origin/fixes_2_2
+=======
+const msgtxt : array[0..000215] of string[240]=(
+{$else Delphi}
+const msgtxt : array[0..000215,1..240] of char=(
+>>>>>>> origin/fixes_2.4
 {$endif Delphi}
   '01000_T_Compiler: $1'#000+
   '01001_D_Compiler OS: $1'#000+
@@ -4149,6 +4155,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   '10046_U_Implementation CRC changed for unit $1'#000+
   '10047_U_Finished compiling unit $1'#000+
   '10048_U_Adding dependency: $1 depends on $2'#000+
+<<<<<<< HEAD
   '10049_U_No reload, is caller: $1'#000+
   '10050_U_No reload, already in second compile: $1'#000+
   '10051_U_Flag for ','reload: $1'#000+
@@ -4205,6 +4212,10 @@ const msgtxt : array[0..000192,1..240] of char=(
   '10048_','U_Adding dependency: $1 depends on $2'#000+
   '10049_U_No reload, is caller: $1'#000+
   '10050_U_No reload, already in second compile: $1'#000+
+=======
+  '10049_U_No reload, is caller: $1'#000+
+  '10050_U_No reload, alre','ady in second compile: $1'#000+
+>>>>>>> origin/fixes_2.4
   '10051_U_Flag for reload: $1'#000+
 >>>>>>> graemeg/cpstrnew
   '10052_U_Forced reloading'#000+
@@ -4214,6 +4225,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   '10054_U_Already compiling $1, sett','ing second compile'#000+
   '10055_U_Loading unit $1'#000+
   '10056_U_Finished loading unit $1'#000+
+<<<<<<< HEAD
   '10057_U_Registering new unit $1'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4238,6 +4250,9 @@ const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  '10057_U_Registerin','g new unit $1'#000+
+>>>>>>> origin/fixes_2.4
   '10058_U_Re-resolving unit $1'#000+
 >>>>>>> graemeg/cpstrnew
   '10059_U_Skipping re-resolving unit $1, still loading used units'#000+
@@ -4245,6 +4260,7 @@ const msgtxt : array[0..000192,1..240] of char=(
 <<<<<<< HEAD
   '10060_U_Unloading resource unit $1 (not',' needed)'#000+
   '10061_E_Unit $1 was compiled using a different whole program optimizat'+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4301,6 +4317,18 @@ const msgtxt : array[0..000192,1..240] of char=(
   '11004_F_No source file',' name in command line'#000+
   '11005_N_No option inside $1 config file'#000+
 >>>>>>> graemeg/fixes_2_2
+=======
+  'ion feedback in','put ($2, $3); recompile it without wpo or use the sam'+
+  'e wpo feedback input file for this compilation invocation'#000+
+  '10062_U_Indirect interface (objects/classes) CRC changed for unit $1'#000+
+  '11000_O_$1 [options] <inputfile> [options]'#000+
+  '11001_W_Only one ','source file supported, changing source file to comp'+
+  'ile from "$1" into "$2"'#000+
+  '11002_W_DEF file can be created only for OS/2'#000+
+  '11003_E_nested response files are not supported'#000+
+  '11004_F_No source file name in command line'#000+
+  '11005_N_No option inside $1',' config file'#000+
+>>>>>>> origin/fixes_2.4
   '11006_E_Illegal parameter: $1'#000+
   '11007_H_-? writes help pages'#000+
   '11008_F_Too many config files nested'#000+
@@ -4309,6 +4337,7 @@ const msgtxt : array[0..000192,1..240] of char=(
 <<<<<<< HEAD
   '11010_','D_Reading further options from $1'#000+
   '11011_W_Target is already set to: $1'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
   '11012_W_Sha','red libs not supported on DOS platform, reverting to stat'+
   'ic'#000+
@@ -4333,6 +4362,15 @@ const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  '11012_W_Shared libs not',' supported on DOS platform, reverting to stat'+
+  'ic'#000+
+  '11013_F_In options file $1 at line $2 too many \var{\#IF(N)DEFs} encou'+
+  'ntered'#000+
+  '11014_F_In options file $1 at line $2 unexpected \var{\#ENDIFs} encoun'+
+  'tered'#000+
+  '11015_F_Open conditional at the end of ','the options file'#000+
+>>>>>>> origin/fixes_2.4
   '11016_W_Debug information generation is not supported by this executab'+
   'le'#000+
   '11017_H_Try recompiling with -dGDB'#000+
@@ -4342,7 +4380,11 @@ const msgtxt : array[0..000192,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '11020_N_Swit','ching assembler to default source writing assembler'#000+
+=======
+  '11020_N_Sw','itching assembler to default source writing assembler'#000+
+>>>>>>> origin/fixes_2.4
   '11021_W_Assembler output selected "$1" is not compatible with "$2"'#000+
   '11022_W_"$1" assembler use forced'#000+
 =======
@@ -4367,12 +4409,17 @@ const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> origin/cpstrnew
   '11026_T_Reading options from file $1'#000+
   '11027_T_Reading options from environment $1'#000+
+<<<<<<< HEAD
   '11028_','D_Handling option "$1"'#000+
+=======
+  '1102','8_D_Handling option "$1"'#000+
+>>>>>>> origin/fixes_2.4
   '11029_O_*** press enter ***'#000+
   '11030_H_Start of reading config file $1'#000+
   '11031_H_End of reading config file $1'#000+
   '11032_D_interpr','eting option "$1"'#000+
   '11036_D_interpreting firstpass option "$1"'#000+
+<<<<<<< HEAD
   '11033_D_interpreting file option "$','1"'#000+
 =======
   '11010_D_Reading further options from $1'#000+
@@ -4457,20 +4504,52 @@ const msgtxt : array[0..000192,1..240] of char=(
   '12000_F_Cannot open whole program optimization feedback file "$1"'#000+
   '12001_D_Processing whole program optimization informat','ion in wpo fee'+
   'dback file "$1"'#000+
+=======
+  '11033_D_interpreting file option ','"$1"'#000+
+  '11034_D_Reading config file "$1"'#000+
+  '11035_D_found source file name "$1"'#000+
+  '11039_E_Unknown code page'#000+
+  '11040_F_Config file $1 is a directory'#000+
+  '11041_W_Assembler output selected "$1" cannot generate debug info, deb'+
+  'ugging disabled'#000+
+  '11042_W_Use of p','pc386.cfg is deprecated, please use fpc.cfg instead'#000+
+  '11043_F_In options file $1 at line $2 \var{\#ELSE} directive without \'+
+  'var{\#IF(N)DEF} found'#000+
+  '11044_F_Option "$1" is not, or not yet, supported on the current targe'+
+  't platform'#000+
+  '11045_F_The fea','ture "$1" is not, or not yet, supported on the select'+
+  'ed target platform'#000+
+  '11046_N_DWARF debug information cannot be used with smart linking on t'+
+  'his target, switching to static linking'#000+
+  '11047_W_Option "$1" is ignored for the current target plat','form.'#000+
+  '12000_F_Cannot open whole program optimization feedback file "$1"'#000+
+  '12001_D_Processing whole program optimization information in wpo feedb'+
+  'ack file "$1"'#000+
+>>>>>>> origin/fixes_2.4
   '12002_D_Finished processing the whole program optimization information'+
-  ' in wpo feedback file "$1"'#000+
+  ' in wpo feedba','ck file "$1"'#000+
   '12003_E_Expected section header, but got "$2" at line $1 of wpo feedba'+
   'ck file'#000+
+<<<<<<< HEAD
   '12004_W_No handler registered for w','hole program optimization section'+
   ' "$2" at line $1 of wpo feedback file, ignoring'#000+
   '12005_D_Found whole program optimization section "$1" with information'+
   ' about "$2"'#000+
   '12006_F_The selected whole program optimizations require a previously '+
   'generat','ed feedback file (use -Fw to specify)'#000+
+=======
+  '12004_W_No handler registered for whole program optimization section "'+
+  '$2" at line $1 of wpo feedback file, ignoring'#000+
+  '12005_D_Found whole program optim','ization section "$1" with informati'+
+  'on about "$2"'#000+
+  '12006_F_The selected whole program optimizations require a previously '+
+  'generated feedback file (use -Fw to specify)'#000+
+>>>>>>> origin/fixes_2.4
   '12007_E_No collected information necessary to perform "$1" whole progr'+
-  'am optimization found'#000+
+  'am opt','imization found'#000+
   '12008_F_Specify a whole program optimization feedback file to store th'+
   'e generated info in (using -FW)'#000+
+<<<<<<< HEAD
   '12009_E_','Not generating any whole program optimization information, y'+
   'et a feedback file was specified (using -FW)'#000+
   '12010_E_Not performing any whole program optimizations, yet an input f'+
@@ -4690,10 +4769,31 @@ const msgtxt : array[0..000192,1..240] of char=(
   '$1"'#000+
   '12017_F_Error executing "$1" (exitcode: $2) to extract symbol informat'+
   'ion',' from linked program'#000+
+=======
+  '12009_E_Not generating any whole program optimization information, yet'+
+  ' a feedback file was specified (using -FW)'#000+
+  '12010_E_N','ot performing any whole program optimizations, yet an input'+
+  ' feedback file was specified (using -Fw)'#000+
+  '12011_D_Skipping whole program optimization section "$1", because not '+
+  'needed by the requested optimizations'#000+
+  '12012_W_Overriding previously re','ad information for "$1" from feedbac'+
+  'k input file using information in section "$2"'#000+
+  '12013_E_Cannot extract symbol liveness information from program when s'+
+  'tripping symbols, use -Xs-'#000+
+  '12014_E_Cannot extract symbol liveness information from prog','ram when'+
+  ' when not linking'#000+
+  '12015_F_Cannot find "$1" or "$2" to extract symbol liveness informatio'+
+  'n from linked program'#000+
+  '12016_E_Error during reading symbol liveness information produced by "'+
+  '$1"'#000+
+  '12017_F_Error executing "$1" (exitcode: $2) to e','xtract symbol inform'+
+  'ation from linked program'#000+
+>>>>>>> origin/fixes_2.4
   '12018_E_Collection of symbol liveness information can only help when u'+
   'sing smart linking, use -CX -XX'#000+
   '12019_E_Cannot create specified whole program optimisation feedback fi'+
   'le "$1"'#000+
+<<<<<<< HEAD
 >>>>>>> origin/cpstrnew
   '11023_Free Pascal Compiler version $FPC','FULLVERSION [$FPCDATE] for $F'+
   'PCCPU'#010+
@@ -4724,13 +4824,24 @@ const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  '11023_Free Pas','cal Compiler version $FPCFULLVERSION [$FPCDATE] for $F'+
+  'PCCPU'#010+
+  'Copyright (c) 1993-2009 by Florian Klaempfl'#000+
+  '11024_Free Pascal Compiler version $FPCVERSION'#010+
+>>>>>>> origin/fixes_2.4
   #010+
   'Compiler date      : $FPCDATE'#010+
   'Compiler CPU target: $FPCCPU'#010+
   #010+
+<<<<<<< HEAD
   'Supported targets (targets marked with '#039'{*}'#039' are under develop'+
   'ment):'#010+
   '  $OSTARGETS'#010+
+=======
+  'Supported targets:'#010+
+  '  $OSTARG','ETS'#010+
+>>>>>>> origin/fixes_2.4
   #010+
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4766,6 +4877,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   #010+
   'Supported W','hole Program Optimizations:'#010+
   '  All'#010+
+<<<<<<< HEAD
   '  $WPOPTIMIZATIO','NS'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4775,6 +4887,9 @@ const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  '  ','$WPOPTIMIZATIONS'#010+
+>>>>>>> origin/fixes_2.4
   #010+
   'Supported Microcontroller types:'#010+
   '  $CONTROLLERTYPES'#010+
@@ -4782,6 +4897,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   #010+
   'Supported Microcontroller types:$\n  $CONTROLLERTYPES$\n'#010+
   'This program comes under the GNU General Public Licence'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4822,6 +4938,12 @@ const msgtxt : array[0..000192,1..240] of char=(
   '**2ao_Add an extra option to external assembler call (ignored for inte',
   'rnal)'#010+
 =======
+=======
+  'For more information read COPYING.FPC'#010+
+  #010+
+  'Report bugs, suggestions, etc. to:'#010+
+  '                 http://bugs.freepascal','.org'#010+
+>>>>>>> origin/fixes_2.4
   'or'#010+
   '      ','           bugs@freepascal.org'#000+
 =======
@@ -4841,6 +4963,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   '**2al_List sourcecode lines in assembler file'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '**2an_List node info in ','assembler file'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4858,10 +4981,14 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '**2an_List node info in assembler file',#010+
 >>>>>>> origin/fixes_2_2
+=======
+  '**2an_List',' node info in assembler file'#010+
+>>>>>>> origin/fixes_2.4
   '*L2ap_Use pipes instead of creating temporary assembler files'#010+
   '**2ar_List register allocation/release info in assembler file'#010+
   '**2at_List temp allocation/release info in assembler file'#010+
   '**1A<x>_Output format:'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4963,34 +5090,51 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
 >>>>>>> origin/fixes_2_2
   '**2Adefault_Use default assembler'#010,
+=======
+  '**2Ade','fault_Use default assembler'#010+
+>>>>>>> origin/fixes_2.4
   '3*2Aas_Assemble using GNU AS'#010+
   '3*2Anasmcoff_COFF (Go32v2) file using Nasm'#010+
   '3*2Anasmelf_ELF32 (Linux) file using Nasm'#010+
   '3*2Anasmwin32_Win32 object file using Nasm'#010+
   '3*2Anasmwdosx_Win32/WDOSX object file using Nasm'#010+
+<<<<<<< HEAD
   '3*2Awasm_Obj file using Wasm (Watc','om)'#010+
+=======
+  '3*2Awa','sm_Obj file using Wasm (Watcom)'#010+
+>>>>>>> origin/fixes_2.4
   '3*2Anasmobj_Obj file using Nasm'#010+
   '3*2Amasm_Obj file using Masm (Microsoft)'#010+
   '3*2Atasm_Obj file using Tasm (Borland)'#010+
   '3*2Aelf_ELF (Linux) using internal writer'#010+
   '3*2Acoff_COFF (Go32v2) using internal writer'#010+
+<<<<<<< HEAD
   '3*2Apecoff_PE-COFF (Win32) using inte','rnal writer'#010+
+=======
+  '3*2Apecof','f_PE-COFF (Win32) using internal writer'#010+
+>>>>>>> origin/fixes_2.4
   '4*2Aas_Assemble using GNU AS'#010+
   '6*2Aas_Unix o-file using GNU AS'#010+
   '6*2Agas_GNU Motorola assembler'#010+
   '6*2Amit_MIT Syntax (old GAS)'#010+
   '6*2Amot_Standard Motorola assembler'#010+
   'A*2Aas_Assemble using GNU AS'#010+
+<<<<<<< HEAD
   'P*2Aas_Assemble using GNU AS'#010+
   'S*2Aas_Assemb','le using GNU AS'#010+
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  'P*2Aas_Assembl','e using GNU AS'#010+
+  'S*2Aas_Assemble using GNU AS'#010+
+>>>>>>> origin/fixes_2.4
   '**1b_Generate browser info'#010+
   '**2bl_Generate local symbol info'#010+
   '**1B_Build all modules'#010+
   '**1C<x>_Code generation options:'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5014,10 +5158,13 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
 >>>>>>> origin/cpstrnew
   '**2C3<x>_Turn on ieee error chec','king for constants'#010+
+=======
+>>>>>>> origin/fixes_2.4
   '**2Ca<x>_Select ABI, see fpc -i for possible values'#010+
-  '**2Cb_Generate big-endian code'#010+
+  '**2Cb_Generate big-endian co','de'#010+
   '**2Cc<x>_Set default calling convention to <x>'#010+
   '**2CD_Create also dynamic library (not supported)'#010+
+<<<<<<< HEAD
   '**2Ce_Compilation with emulated floating ','point opcodes'#010+
   '**2Cf<x>_Select fpu instruction set to use, see fpc -i for possible va'+
   'lues'#010+
@@ -5163,9 +5310,31 @@ const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  '**2Ce_Compilation with emulated floating point opcodes'#010+
+  '**2Cf<x>_Select fpu instruction set to use, see fpc -i for possible va'+
+  'lues'#010+
+  '**2CF<x>_M','inimal floating point constant precision (default, 32, 64)'+
+  #010+
+  '**2Cg_Generate PIC code'#010+
+  '**2Ch<n>_<n> bytes heap (between 1023 and 67107840)'#010+
+  '**2Ci_IO-checking'#010+
+  '**2Cn_Omit linking stage'#010+
+  '**2Co_Check overflow of integer operations'#010+
+  '**2CO_Check for pos','sible overflow of integer operations'#010+
+  '**2Cp<x>_Select instruction set, see fpc -i for possible values'#010+
+  '**2CP<x>=<y>_ packing settings'#010+
+  '**3CPPACKSET=<y>_ <y> set allocation: 0, 1 or DEFAULT or NORMAL, 2, 4 '+
+  'and 8'#010+
+  '**2Cr_Range checking'#010+
+  '**2CR_Verif','y object method call validity'#010+
+  '**2Cs<n>_Set stack checking size to <n>'#010+
+  '**2Ct_Stack checking (for testing only, see manual)'#010+
+  '**2CX_Create also smartlinked library'#010+
+>>>>>>> origin/fixes_2.4
   '**1d<x>_Defines the symbol <x>'#010+
   '**1D_Generate a DEF file'#010+
-  '**2Dd<x>_Set description to <x>'#010+
+  '**2Dd<x>_Set description',' to <x>'#010+
   '**2Dv<x>_Set DLL version to <x>'#010+
   '*O2Dw_PM application'#010+
 <<<<<<< HEAD
@@ -5173,6 +5342,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   '**1e<x>','_Set path to executable'#010+
   '**1E_Same as -Cn'#010+
   '**1fPIC_Same as -Cg'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5257,10 +5427,32 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '**2Fu<x>_Add',' <x> to unit path'#010+
 >>>>>>> origin/cpstrnew
+=======
+  '**1F<x>_Set file names and paths:'#010+
+  '**2Fa<x>[,y]_(for a program) load units <x> and [y] before uses is par'+
+  'sed'#010+
+  '**2','Fc<x>_Set input codepage to <x>'#010+
+  '**2FC<x>_Set RC compiler binary name to <x>'#010+
+  '**2Fd_Disable the compiler'#039's internal directory cache'#010+
+  '**2FD<x>_Set the directory where to search for compiler utilities'#010+
+  '**2Fe<x>_Redirect error output to <x>'#010+
+  '**2Ff<','x>_Add <x> to framework path (Darwin only)'#010+
+  '**2FE<x>_Set exe/unit output path to <x>'#010+
+  '**2Fi<x>_Add <x> to include path'#010+
+  '**2Fl<x>_Add <x> to library path'#010+
+  '**2FL<x>_Use <x> as dynamic linker'#010+
+  '**2Fm<x>_Load unicode conversion table from <x>.txt in ','the compiler '+
+  'dir'#010+
+  '**2Fo<x>_Add <x> to object path'#010+
+  '**2Fr<x>_Load error message file <x>'#010+
+  '**2FR<x>_Set resource (.res) linker to <x>'#010+
+  '**2Fu<x>_Add <x> to unit path'#010+
+>>>>>>> origin/fixes_2.4
   '**2FU<x>_Set unit output path to <x>, overrides -FE'#010+
   '**2FW<x>_Store generated whol','e-program optimization feedback in <x>'#010+
   '**2Fw<x>_Load previously stored whole-program optimization feedback fr'+
   'om <x>'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5278,6 +5470,9 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '*g1g_Generate debug infor','mation (default format for target)'#010+
 >>>>>>> origin/cpstrnew
+=======
+  '*g1g_Generate debug information (default format for target)'#010+
+>>>>>>> origin/fixes_2.4
   '*g2gc_Generate checks for pointers'#010+
   '*g2gh_Use heaptrace unit (for',' memory leak/corruption debugging)'#010+
   '*g2gl_Use line info unit (show more info with backtraces)'#010+
@@ -5286,6 +5481,9 @@ const msgtxt : array[0..000192,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
   '*g3godwarfsets_ Enable DWARF '#039'set'#039' type debug information (bre'+
   'aks gdb < 6.5)'#010+
   '*g3gostabsabsincludes_ Store ab','solute/full include file paths in Sta'+
@@ -5294,8 +5492,12 @@ const msgtxt : array[0..000192,1..240] of char=(
   'ame'#010+
   '*g2gp_Preserve case in stabs symbol names'#010+
   '*g2gs_Generate Stabs debug information'#010+
+<<<<<<< HEAD
   '*g2gt_Trash local variables (to detect uninit','ialized uses; multiple '+
   #039't'#039' changes the trashing value)'#010+
+=======
+  '*g2gt_Trash local variables (to detect uninit','ialized uses)'#010+
+>>>>>>> origin/fixes_2.4
   '*g2gv_Generates programs traceable with Valgrind'#010+
   '*g2gw_Generate DWARFv2 debug information (same as -gw2)'#010+
   '*g2gw2_Generate DWARFv2 debug information'#010+
@@ -5421,13 +5623,18 @@ const msgtxt : array[0..000192,1..240] of char=(
   '*g2gw3_Generate DWARFv3 debug information'#010+
   '*g2gw4_Generate DWARFv4 debug information (experimental)'#010+
   '**1i_Information'#010+
+<<<<<<< HEAD
   '**2iD_Return compiler date'#010+
+=======
+  '**2iD_Return compile','r date'#010+
+>>>>>>> origin/fixes_2.4
   '**2iV_Return short compiler version'#010+
   '**2iW_Return full compiler version'#010+
   '**2iSO','_Return compiler OS'#010+
   '**2iSP_Return compiler host processor'#010+
   '**2iTO_Return target OS'#010+
   '**2iTP_Return target processor'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5440,6 +5647,10 @@ const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> origin/cpstrnew
   '**1I<x>_Add <x> to include path'#010+
   '**1k<x>_Pass <x> to the linker'#010+
+=======
+  '**1I<x>_Add <x> to include path'#010+
+  '**1k<x>_Pas','s <x> to the linker'#010+
+>>>>>>> origin/fixes_2.4
   '**1l_Write logo'#010+
   '**1M<x>_Set language mode to <x>'#010+
   '**2Mfpc_Free Pa','scal dialect (default)'#010+
@@ -5448,9 +5659,15 @@ const msgtxt : array[0..000192,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '**2Mdelphi_De','lphi 7 compatibility mode'#010+
   '**2Mtp_TP/BP 7.0 compatibility mode'#010+
   '**2Mmacpas_Macintosh Pascal dialects compatibility mode'#010+
+=======
+  '**2Mdelphi_Delphi 7 compatibility mode'#010+
+  '**2Mtp_TP/BP 7.0 compatibility mode'#010+
+  '**2Mmacpas_','Macintosh Pascal dialects compatibility mode'#010+
+>>>>>>> origin/fixes_2.4
   '**1n_Do not read the default config files'#010+
   '**1o<x>_Change the name of the executable produced to <x>'#010+
   '**1O<x>_Optimizations:',#010+
@@ -5481,6 +5698,7 @@ const msgtxt : array[0..000192,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -5489,6 +5707,9 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
 >>>>>>> origin/cpstrnew
   '**2O-_Disable optimizations'#010+
+=======
+  '**2O-_Disable optimiz','ations'#010+
+>>>>>>> origin/fixes_2.4
   '**2O1_Level 1 optimizations (quick and debugger friendly)'#010+
   '**2O2_Level 2 optim','izations (-O1 + quick optimizations)'#010+
   '**2O3_Level 3 optimizations (-O2 + slow optimizations)'#010+
@@ -5669,6 +5890,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   '**2O2_Level 2 optimizations (-O1 + quick optimizations)'#010+
   '**2O3_Level 3 optimizations (-O2 + slow optimizations)'#010+
   '**2Oa<x>=<y>_Set alignment'#010+
+<<<<<<< HEAD
   '**2Oo[NO]<x>_Enable or disable optimizations, see fpc -i fo','r possibl'+
   'e values'#010+
   '**2Op<x>_Set target cpu for optimizing, see fpc -i for possible values'+
@@ -5678,11 +5900,27 @@ const msgtxt : array[0..000192,1..240] of char=(
   '**1R<x>_Assembler reading style:'#010+
   '**2Rdefault_Use ','default assembler for target'#010+
   '3*2Ratt_Read AT&T style assembler'#010+
+=======
+  '**2Oo[NO]<x>_Enable or disable optimi','zations, see fpc -i for possibl'+
+  'e values'#010+
+  '**2Op<x>_Set target cpu for optimizing, see fpc -i for possible values'+
+  #010+
+  '**2OW<x>_Generate whole-program optimization feedback for optimization'+
+  ' <x>, see fpc -i for possible values'#010+
+  '**2Ow<x>_Perform whole','-program optimization <x>, see fpc -i for poss'+
+  'ible values'#010+
+  '**2Os_Optimize for size rather than speed'#010+
+  '**1pg_Generate profile code for gprof (defines FPC_PROFILE)'#010+
+  '**1R<x>_Assembler reading style:'#010+
+  '**2Rdefault_Use default assembler for target'#010+
+  '3*','2Ratt_Read AT&T style assembler'#010+
+>>>>>>> origin/fixes_2.4
   '3*2Rintel_Read Intel style assembler'#010+
   '6*2RMOT_Read motorola style assembler'#010+
   '**1S<x>_Syntax options:'#010+
   '**2S2_Same as -Mobjfpc'#010+
   '**2Sc_Support operators like C (*=,+=,/= and -=)'#010+
+<<<<<<< HEAD
   '**2Sa_','Turn on assertions'#010+
   '**2Sd_Same as -Mdelphi'#010+
   '**2Se<x>_Error options. <x> is a combination of the following:'#010+
@@ -5695,12 +5933,31 @@ const msgtxt : array[0..000192,1..240] of char=(
   '**2Si_Turn on inlining of procedures/functions declared as "inline"'#010+
   '**2','Sk_Load fpcylix unit'#010+
   '**2SI<x>_Set interface style to <x>'#010+
+=======
+  '**2Sa_Turn on assertions'#010+
+  '**2Sd_Same a','s -Mdelphi'#010+
+  '**2Se<x>_Error options. <x> is a combination of the following:'#010+
+  '**3*_<n> : Compiler halts after the <n> errors (default is 1)'#010+
+  '**3*_w : Compiler also halts after warnings'#010+
+  '**3*_n : Compiler also halts after notes'#010+
+  '**3*_h : Compiler a','lso halts after hints'#010+
+  '**2Sg_Enable LABEL and GOTO (default in -Mtp and -Mdelphi)'#010+
+  '**2Sh_Use ansistrings by default instead of shortstrings'#010+
+  '**2Si_Turn on inlining of procedures/functions declared as "inline"'#010+
+  '**2Sk_Load fpcylix unit'#010+
+  '**2SI<x>_S','et interface style to <x>'#010+
+>>>>>>> origin/fixes_2.4
   '**3SIcom_COM compatible interface (default)'#010+
   '**3SIcorba_CORBA compatible interface'#010+
   '**2Sm_Support macros like C (global)'#010+
   '**2So_Same as -Mtp'#010+
+<<<<<<< HEAD
   '**2Ss_Constructor name must be init (destruct','or must be done)'#010+
   '**2St_Allow static keyword in objects'#010+
+=======
+  '**2Ss_Constructor name must be init (destructor must be done)'#010+
+  '**2St_Allow st','atic keyword in objects'#010+
+>>>>>>> origin/fixes_2.4
   '**2Sx_Enable exception keywords (default in Delphi/ObjFPC modes)'#010+
   '**1s_Do not call assembler and linker'#010+
 <<<<<<< HEAD
@@ -5709,7 +5966,11 @@ const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> origin/fixes_2_2
   '**2sh_Generate script to link on host'#010+
   '**2st_Generate script to link on target'#010+
+<<<<<<< HEAD
   '**2s','r_Skip register allocation phase (use with -alr)'#010+
+=======
+  '**2sr_Skip register allocation phas','e (use with -alr)'#010+
+>>>>>>> origin/fixes_2.4
   '**1T<x>_Target operating system:'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5740,6 +6001,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   '3*2Tnetbsd_NetBSD'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '3*2Tnetware_Novell Netware Module (clib)'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5751,6 +6013,9 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '3*2Tne','tware_Novell Netware Module (clib)'#010+
 >>>>>>> origin/fixes_2_2
+=======
+  '3*2Tnetware_Novell Netware Module (cl','ib)'#010+
+>>>>>>> origin/fixes_2.4
   '3*2Tnetwlibc_Novell Netware Module (libc)'#010+
 =======
   '3*2Tnetwlibc_No','vell Netware Module (libc)'#010+
@@ -5780,6 +6045,7 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
 >>>>>>> origin/fixes_2_2
   '3*2Twatcom_Watcom compatible DOS extender'#010+
+<<<<<<< HEAD
   '3*2Twdosx_WDOSX DOS extende','r'#010+
   '3*2Twin32_Windows 32 Bit'#010+
   '3*2Twince_Windows CE'#010+
@@ -5824,6 +6090,11 @@ const msgtxt : array[0..000192,1..240] of char=(
   '3*2Twin32_Windows 32 Bit'#010+
   '3*2','Twince_Windows CE'#010+
   '4*2Tdarwin_Darwin/Mac OS X'#010+
+=======
+  '3*2Twdosx_WDOSX DOS extender'#010+
+  '3*2Twin32_Windows 32 Bit'#010+
+  '3*2T','wince_Windows CE'#010+
+>>>>>>> origin/fixes_2.4
   '4*2Tlinux_Linux'#010+
 >>>>>>> origin/cpstrnew
   '4*2Twin64_Win64 (64 bit Windows systems)'#010+
@@ -5853,6 +6124,7 @@ const msgtxt : array[0..000192,1..240] of char=(
   'A*2Tnds_Nintendo DS'#010+
   'A*2Tsymbian_Symbian'#010+
   'A*2Twince_Windows CE'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   'J*2Tandroid_Android'#010+
@@ -5886,6 +6158,12 @@ const msgtxt : array[0..000192,1..240] of char=(
   'P*2Tdarwin_Darwin/Mac OS X'#010+
   'P*2Tlinux_Linux'#010+
   'P*2Tmacos_Mac OS (classic)'#010+
+=======
+  'P*2Tamiga_AmigaOS on PowerPC'#010+
+  'P*2Tdarwi','n_Darwin and Mac OS X on PowerPC'#010+
+  'P*2Tlinux_Linux on PowerPC'#010+
+  'P*2Tmacos_Mac OS (classic) on PowerPC'#010+
+>>>>>>> origin/fixes_2.4
   'P*2Tmorphos_MorphOS'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5917,6 +6195,7 @@ const msgtxt : array[0..000192,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '**2Un_Do not check where the unit name matches the file name'#010+
 =======
   '**2Un_Do not check where the',' unit name matches the file name'#010+
@@ -5930,9 +6209,13 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
   '**2Un_Do not check where the',' unit name matches the file name'#010+
 >>>>>>> origin/cpstrnew
+=======
+  '**2Un_Do not check where the unit name matches the fil','e name'#010+
+>>>>>>> origin/fixes_2.4
   '**2Ur_Generate release unit files (never automatically recompiled)'#010+
   '**2Us_Compile a ','system unit'#010+
   '**1v<x>_Be verbose. <x> is a combination of the following letters:'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5990,10 +6273,28 @@ const msgtxt : array[0..000192,1..240] of char=(
   '**2*_                                    lots of debugging info'#010+
   '**2*_m<x>,<y> : Don'#039't show messages numbered <x> and <y>'#010,
   '3*1W<x>_Target-specific options (targets)'#010+
+=======
+  '**2*_e : Show errors (default)       0 : Show nothing (except errors)'#010+
+  '*','*2*_w : Show warnings               u : Show unit info'#010+
+  '**2*_n : Show notes                  t : Show tried/used files'#010+
+  '**2*_h : Show hints                  c : Show conditionals'#010+
+  '**2*_i : Show general info           d : Show debug info'#010+
+  '**2*_l',' : Show linenumbers            r : Rhide/GCC compatibility mod'+
+  'e'#010+
+  '**2*_s : Show time stamps            q : Show message numbers'#010+
+  '**2*_a : Show everything             x : Executable info (Win32 only)'#010+
+  '**2*_b : Write file names messages   p : Wri','te tree.log with parse t'+
+  'ree'#010+
+  '**2*_    with full path              v : Write fpcdebug.txt with'#010+
+  '**2*_                                    lots of debugging info'#010+
+  '**2*_m<x>,<y> : Don'#039't show messages numbered <x> and <y>'#010+
+  '3*1W<x>_Target-specific op','tions (targets)'#010+
+>>>>>>> origin/fixes_2.4
   'A*1W<x>_Target-specific options (targets)'#010+
   'P*1W<x>_Target-specific options (targets)'#010+
   'p*1W<x>_Target-specific options (targets)'#010+
   '3*2Wb_Create a bundle instead of a library (Darwin)'#010+
+<<<<<<< HEAD
   'P*2Wb_Create a bundl','e instead of a library (Darwin)'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6005,6 +6306,9 @@ const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  'P*2Wb_Create a bundle instead of a library (Da','rwin)'#010+
+>>>>>>> origin/fixes_2.4
   'p*2Wb_Create a bundle instead of a library (Darwin)'#010+
   'a*2Wb_Create a bundle instead of a library (Darwin)'#010+
   'A*2Wb_Create a bundle instead of a library (Darwin)'#010+
@@ -6020,6 +6324,7 @@ const msgtxt : array[0..000192,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '4*2WC_Specify console type application (Windows)'#010+
   'A*2WC_Specify console type application (Windows)'#010+
   'P*2WC_Specify console type application (Classic Mac OS)'#010,
@@ -6031,11 +6336,15 @@ const msgtxt : array[0..000192,1..240] of char=(
 =======
 >>>>>>> origin/cpstrnew
   'A','*2WC_Specify console type application (Windows)'#010+
+=======
+  'A*2WC_Specify console type ','application (Windows)'#010+
+>>>>>>> origin/fixes_2.4
   'P*2WC_Specify console type application (Classic Mac OS)'#010+
 >>>>>>> graemeg/cpstrnew
   '3*2WD_Use DEFFILE to export functions of DLL or EXE (Windows)'#010+
   '4*2WD_Use DEFFILE to export functions of DLL or EXE (Windows)'#010+
   'A*2WD_Use DEFFILE to export functions of DLL or EXE (Windows)'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6082,6 +6391,14 @@ const msgtxt : array[0..000192,1..240] of char=(
   '3*2WG_S','pecify graphic type application (EMX, OS/2, Windows)'#010+
 >>>>>>> origin/cpstrnew
   'A*2WG_Specify graphic type application (Windows)'#010+
+=======
+  '3*2We_Use external resources (Darwin)'#010,
+  'P*2We_Use external resources (Darwin)'#010+
+  'p*2We_Use external resources (Darwin)'#010+
+  '3*2WF_Specify full-screen type application (EMX, OS/2)'#010+
+  '3*2WG_Specify graphic type application (EMX, OS/2, Windows)'#010+
+  'A*2WG_Specify graphic type application (Windows)'#010,
+>>>>>>> origin/fixes_2.4
   'P*2WG_Specify graphic type application (Classic Mac OS)'#010+
   '3*2Wi_Use internal resources (Darwin)',#010+
   '4*2Wi_Use internal resources (Darwin)'#010+
@@ -6093,6 +6410,7 @@ const msgtxt : array[0..000192,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
   'p*2Wi_Use internal resources (Darwin)'#010+
+<<<<<<< HEAD
   '3*2WI_Turn on/off the usage of import sections (W','indows)'#010+
   '4*2WI_Turn on/off the usage of import sections (Windows)'#010+
   'A*2WI_Turn on/off the usage of import sections (Windows)'#010+
@@ -6130,6 +6448,9 @@ const msgtxt : array[0..000192,1..240] of char=(
   'p*2Wi_','Use internal resources (Darwin)'#010+
   '3*2WN_Do not generate relocation code, needed for debugging (Windows)'#010+
 >>>>>>> origin/cpstrnew
+=======
+  '3*2WN_Do not generate relocation code, needed for debugging (Windows)'#010,
+>>>>>>> origin/fixes_2.4
   'A*2WN_Do not generate relocation code, needed for debugging (Windows)'#010+
   'A*2Wp<x>_Specify the controller type; see fpc -i or fpc -iu for possib'+
   'le values'#010+
@@ -6174,7 +6495,11 @@ const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> origin/cpstrnew
   'A*2WR_Generate relocation c','ode (Windows)'#010+
   'P*2WT_Specify MPW tool type application (Classic Mac OS)'#010+
+<<<<<<< HEAD
   '3*2WX_Enable executable stack (Linux)'#010+
+=======
+  '3*2WX_Enable executable stack (','Linux)'#010+
+>>>>>>> origin/fixes_2.4
   'A*2WX_Enable executable stack (Linux)'#010+
   'p*2WX_Enable executable stack (Linux)'#010+
   'P*2WX_Enable executable stack (Linux)'#010+
@@ -6254,6 +6579,7 @@ const msgtxt : array[0..000192,1..240] of char=(
 >>>>>>> origin/fixes_2_2
   '**2Xc_Pass --shared/-dynamic to the linker (BeOS, Darwin, FreeBSD, Lin'+
   'ux)'#010+
+<<<<<<< HEAD
   '**2Xd_Do not use standard library search path (needed for cross compil'+
   'e)'#010+
 <<<<<<< HEAD
@@ -6293,6 +6619,26 @@ const msgtxt : array[0..000192,1..240] of char=(
   ', Linux, Mac OS, Solaris)'#010+
   '**2Xs_Strip all symbols from executable'#010+
   '**2XS_Try to link units statically (default, defines FPC_LINK_STATIC)'#010+
+=======
+  '**2Xd_Do not use sta','ndard library search path (needed for cross comp'+
+  'ile)'#010+
+  '**2Xe_Use external linker'#010+
+  '**2Xg_Create debuginfo in a separate file and add a debuglink section '+
+  'to executable'#010+
+  '**2XD_Try to link units dynamically      (defines FPC_LINK_DYNAMIC)'#010+
+  '**2Xi_Use',' internal linker'#010+
+  '**2Xm_Generate link map'#010+
+  '**2XM<x>_Set the name of the '#039'main'#039' program routine (default i'+
+  's '#039'main'#039')'#010+
+  '**2XP<x>_Prepend the binutils names with the prefix <x>'#010+
+  '**2Xr<x>_Set the linker'#039's rlink-path to <x> (needed for cross comp'+
+  'ile, ','see the ld manual for more information) (BeOS, Linux)'#010+
+  '**2XR<x>_Prepend <x> to all linker search paths (BeOS, Darwin, FreeBSD'+
+  ', Linux, Mac OS, Solaris)'#010+
+  '**2Xs_Strip all symbols from executable'#010+
+  '**2XS_Try to link units statically (default, defin','es FPC_LINK_STATIC'+
+  ')'#010+
+>>>>>>> origin/fixes_2.4
   '**2Xt_Link with static libraries (-static is passed to linker)'#010+
   '**2Xv_Generate table for Virtual Entry ca','lls'#010+
   '**2XV_Use VLink as external linker       (default on Amiga, MorphOS)'#010+

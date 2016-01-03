@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  (c) 2002-2008 by Apple, Inc., all rights reserved.
 =======
      Copyright:  (c) 2002-2008 by Apple Inc., all rights reserved.
@@ -20,10 +21,14 @@
 =======
      Copyright:  (c) 2002-2008 by Apple Inc., all rights reserved.
 >>>>>>> origin/cpstrnew
+=======
+     Copyright:  (c) 2002-2008 by Apple Inc., all rights reserved.
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -40,10 +45,13 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
                      http://www.freepascal.org/bugs.html
  
 }
 {	  Pascal Translation:  Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -54,6 +62,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {
     Modified for use with Free Pascal
@@ -113,6 +123,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -126,6 +137,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -148,6 +161,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -173,6 +187,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -183,6 +202,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -208,6 +228,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -218,6 +243,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -227,6 +253,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -240,6 +268,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -249,6 +278,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -259,6 +290,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -290,6 +322,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -300,15 +337,19 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
@@ -348,6 +389,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/fixes_2.4
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -401,6 +446,7 @@ uses MacTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 //#if !TARGET_OS_IPHONE
 {$ifc not TARGET_OS_IPHONE}
@@ -417,6 +463,10 @@ uses MacTypes;
 //#if !TARGET_OS_IPHONE
 {$ifc not TARGET_OS_IPHONE}
 >>>>>>> origin/cpstrnew
+=======
+//#if !TARGET_OS_IPHONE
+{$ifc not TARGET_OS_IPHONE}
+>>>>>>> origin/fixes_2.4
 { ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The following specifies the equivalent parameterID's for the Group scope for standard
 MIDI Controllers. This list is not exhaustive. It represents the parameters, and their corresponding 
@@ -431,6 +481,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAUGroupParameterID_Sostenuto = 66; 	// value 0-63 (off), 64-127 (on)
 =======
 >>>>>>> graemeg/cpstrnew
@@ -440,6 +491,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	kAUGroupParameterID_AllNotesOff = 123;	// value ignored
 	kAUGroupParameterID_ModWheel = 1;	// value 0 < 128
 	kAUGroupParameterID_PitchBend = $E0;	// value -8192 - 8191
@@ -465,6 +518,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
@@ -481,6 +535,10 @@ const
 
 
 >>>>>>> origin/cpstrnew
+=======
+
+
+>>>>>>> origin/fixes_2.4
 { ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Supporting the kAUGroupParameterID_KeyPressure parameter indicates to hosts that your audio unit
 supports polyphonic "aftertouch" key pressure. 
@@ -493,6 +551,7 @@ key number plus 256. For example, the aftertouch parameter ID for MIDI key #60 (
 	60 + kAUGroupParameterID_KeyPressure_FirstKey = 316
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -537,6 +596,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 // Parameters for all Panner AudioUnits
 const
 	kPannerParam_Gain = 0;			// 0 .. 1
@@ -552,6 +613,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -559,6 +621,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 //#pragma mark Apple Specific
 
@@ -567,6 +631,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 // only some of these parameters are available in the embedded implementation of this AU
 >>>>>>> graemeg/cpstrnew
@@ -579,6 +644,9 @@ const
 =======
 // only some of these parameters are available in the embedded implementation of this AU
 >>>>>>> origin/cpstrnew
+=======
+// only some of these parameters are available in the embedded implementation of this AU
+>>>>>>> origin/fixes_2.4
 const
 // Input, Degrees, -180->180, 0
 	k3DMixerParam_Azimuth = 0;
@@ -586,6 +654,7 @@ const
 		// Input, Degrees, -90->90, 0
 	k3DMixerParam_Elevation = 1;
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -603,6 +672,9 @@ const
 =======
 		// Input, Metres, 0->10000, 1
 >>>>>>> origin/cpstrnew
+=======
+		// Input, Metres, 0->10000, 1
+>>>>>>> origin/fixes_2.4
 	k3DMixerParam_Distance = 2;
         
 		// Input/Output, dB, -120->20, 0
@@ -611,6 +683,7 @@ const
 		// Input, rate scaler	0.5 -> 2.0
 	k3DMixerParam_PlaybackRate = 4;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -625,6 +698,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 // Parameters for the AUMultiChannelMixer unit
 const
 	kMultiChannelMixerParam_Volume = 0;
@@ -658,6 +733,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -665,6 +741,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 // Input, Dry/Wet equal-power blend, %	  0.0 -> 100.0
 	k3DMixerParam_ReverbBlend = 5;
 
@@ -672,6 +750,7 @@ const
 	k3DMixerParam_GlobalReverbGain = 6;
 	
 		// Input, Lowpass filter attenuation at 5KHz :		decibels -100.0dB -> 0.0dB
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -698,6 +777,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 		// smaller values make sound more muffled; a value of 0.0 indicates no filtering
 	k3DMixerParam_OcclusionAttenuation = 7;
 	
@@ -708,6 +789,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -715,6 +797,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 		// read-only
 		//
 		// For each of the following, use the parameter ID plus the channel number
@@ -727,6 +811,7 @@ const
 	k3DMixerParam_PostPeakHoldLevel = 4000;
 {$endc} { not TARGET_OS_IPHONE }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -795,6 +880,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 //#pragma mark Apple Specific - Desktop
 
 //#if !TARGET_OS_IPHONE
@@ -816,6 +903,7 @@ get the parameter information from the audio unit itself.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -823,6 +911,8 @@ get the parameter information from the audio unit itself.
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 // Effect units
 // The values for some effect unit parameters depend on the audio unit's sample rate.
@@ -841,6 +931,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
@@ -848,6 +939,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 // Some parameters for the AUGraphicEQ unit
 const
 // Global, Indexed, currently either 10 or 31
@@ -856,6 +949,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -863,6 +957,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 // Parameters for the AUHipass unit
 const
 // Global, Hz, 10->(SampleRate/2), 6900
@@ -906,6 +1002,7 @@ const
 		// Global, dB, -20->20, 0
 	kParametricEQParam_Gain = 2;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1015,6 +1112,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 // Parameters for the AUMatrixReverb unit
 const
 // Global, EqPow CrossFade, 0->100, 100
@@ -1082,6 +1181,7 @@ const
 		// Global, Hz, 10->(SampleRate/2), 15000
 	kDelayParam_LopassCutoff = 3;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1197,6 +1297,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 // Parameters for the AUPeakLimiter unit
 const
 // Global, Secs, 0.001->0.03, 0.012
@@ -1298,6 +1400,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1305,6 +1408,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	kMultibandFilter_HighGain = 14;
 
 // Mixer Units
@@ -1352,6 +1457,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Global, indexed, 0 -> 5, read only
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1361,6 +1467,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	kAUNetReceiveParam_Status = 0;
 	kAUNetReceiveParam_NumParameters = 1;
 
@@ -1370,6 +1478,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Global, indexed, 0 -> 5, read only
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1379,6 +1488,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	kAUNetSendParam_Status = 0;
 	kAUNetSendParam_NumParameters = 1;
 
@@ -1392,6 +1503,7 @@ const
 	kAUNetStatus_Connecting = 4;
 	kAUNetStatus_Listening = 5;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1418,6 +1530,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 // Parameters for the Distortion unit 
 const
 	kDistortionParam_Delay = 0;
@@ -1448,6 +1562,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1455,6 +1570,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	kRogerBeepParam_RogerGain = 6;
 
 // Music Device
@@ -1498,6 +1615,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Parameters for the AURoundTripAACParam unit
 const
 // Global, indexed : AAC, AAC HE, AAC HEv2, AAC ELD
@@ -1527,6 +1645,9 @@ const
 =======
 {$endc} { not TARGET_OS_IPHONE }
 >>>>>>> origin/cpstrnew
+=======
+{$endc} { not TARGET_OS_IPHONE }
+>>>>>>> origin/fixes_2.4
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

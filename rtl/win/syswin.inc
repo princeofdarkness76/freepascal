@@ -355,6 +355,12 @@ end;
 Var
   DLLInitState : Longint = -1;
   DLLBuf : Jmp_buf;
+<<<<<<< HEAD
+=======
+  MainThreadIdWin32 : DWORD;
+  AttachingThread : TRTLCriticalSection;
+
+>>>>>>> origin/fixes_2.4
 
 function Dll_entry{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}(const info : TEntryInformation){$endif FPC_HAS_INDIRECT_MAIN_INFORMATION} : longbool; [public,alias:'_FPC_DLL_Entry'];
   begin
@@ -367,6 +373,7 @@ function Dll_entry{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}(const info : TEntry
      case DLLreason of
        DLL_PROCESS_ATTACH :
          begin
+           WinInitCriticalSection(AttachingThread);
            MainThreadIdWin32 := Win32GetCurrentThreadId;
 
            If SetJmp(DLLBuf) = 0 then
@@ -383,6 +390,7 @@ function Dll_entry{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}(const info : TEntry
          end;
        DLL_THREAD_ATTACH :
          begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -406,6 +414,12 @@ function Dll_entry{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}(const info : TEntry
 =======
 >>>>>>> origin/cpstrnew
            if Win32GetCurrentThreadId <> MainThreadIdWin32 then
+=======
+           inclocked(Thread_count);
+           
+           WinEnterCriticalSection(AttachingThread);
+           if (Win32GetCurrentThreadId <> MainThreadIdWin32) then
+>>>>>>> origin/fixes_2.4
            begin
              { Allocate Threadvars  }
              SysAllocateThreadVars;
@@ -421,6 +435,7 @@ function Dll_entry{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}(const info : TEntry
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -428,12 +443,16 @@ function Dll_entry{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}(const info : TEntry
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+           WinLeaveCriticalSection(AttachingThread);
+>>>>>>> origin/fixes_2.4
         end;
        DLL_THREAD_DETACH :
          begin
            if assigned(Dll_Thread_Detach_Hook) then
              Dll_Thread_Detach_Hook(DllParam);
            { Release Threadvars }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -451,6 +470,9 @@ function Dll_entry{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}(const info : TEntry
 =======
            if Win32GetCurrentThreadId<>MainThreadIdWin32 then
 >>>>>>> origin/cpstrnew
+=======
+           if (Win32GetCurrentThreadId<>MainThreadIdWin32) then
+>>>>>>> origin/fixes_2.4
              DoneThread; { Assume everything is idempotent there }
          end;
        DLL_PROCESS_DETACH :
@@ -499,6 +521,7 @@ function Dll_entry{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}(const info : TEntry
            DoneThread;
            { Free TLS resources used by ThreadVars }
            SysFiniMultiThreading;
+<<<<<<< HEAD
 		   MainThreadIDWin32:=0;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -510,6 +533,9 @@ function Dll_entry{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}(const info : TEntry
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+           WinDoneCriticalSection(AttachingThread);
+>>>>>>> origin/fixes_2.4
          end;
      end;
      DllInitState:=-1;

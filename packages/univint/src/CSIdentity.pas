@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  (c) 2006-2011 Apple Inc. All rights reserved.
 =======
      Version:    OSServices-352~2
@@ -28,10 +29,16 @@
  
      Copyright:  © 2006-2008 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/cpstrnew
+=======
+     Version:    OSServices-352~2
+ 
+     Copyright:  © 2006-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -46,10 +53,13 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
                      http://www.freepascal.org/bugs.html
  
 }
 {      Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -60,6 +70,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {
     Modified for use with Free Pascal
     Version 308
@@ -118,6 +130,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -131,6 +144,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -153,6 +168,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -178,6 +194,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -188,6 +209,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -213,6 +235,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -223,6 +250,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -232,6 +260,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -245,6 +275,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -254,6 +285,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -264,6 +297,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -295,12 +329,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/fixes_2.4
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -327,10 +367,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -353,6 +396,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/fixes_2.4
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -398,6 +445,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,MacOSXPosix,CSIdentityAuthority,SecBase,CSIdentityBase,Authorization,CFBase,CFArray,CFData,CFError,CFRunLoop,CFUUID;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -409,11 +457,14 @@ uses MacTypes,MacOSXPosix,CSIdentityAuthority,SecBase,CSIdentityBase,Authorizati
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 uses MacTypes,MacOSXPosix,CSIdentityAuthority,SecBase,Authorization,CFBase,CFArray,CFData,CFError,CFRunLoop,CFUUID;
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -424,6 +475,8 @@ uses MacTypes,MacOSXPosix,CSIdentityAuthority,SecBase,Authorization,CFBase,CFArr
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ALIGN MAC68K}
 
@@ -433,6 +486,7 @@ uses MacTypes,MacOSXPosix,CSIdentityAuthority,SecBase,Authorization,CFBase,CFArr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
@@ -440,6 +494,8 @@ uses MacTypes,MacOSXPosix,CSIdentityAuthority,SecBase,Authorization,CFBase,CFArr
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
     The error domain of all CFErrors reported by Identity Services 
 }
 {
@@ -506,6 +562,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -513,6 +570,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
     CSIdentity
 
     A CSIdentity object represents a user or group entity known to the system. An
@@ -561,6 +620,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifc not TARGET_OS_IPHONE and not TARGET_IPHONE_SIMULATOR}
 =======
@@ -571,6 +631,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {
     kCSIdentityGeneratePosixName
     Passing this constant as the Posix name when creating an indentity
@@ -586,6 +648,7 @@ type
  *    Non-Carbon CFM:   not available
  }
 var kCSIdentityGeneratePosixName: CFStringRef; external name '_kCSIdentityGeneratePosixName'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -608,6 +671,10 @@ var kCSIdentityGeneratePosixName: CFStringRef; external name '_kCSIdentityGenera
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 {
  *  CSIdentityClass
@@ -674,6 +741,7 @@ function CSIdentityGetTypeID: CFTypeID; external name '_CSIdentityGetTypeID';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_5_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -687,6 +755,9 @@ function CSIdentityGetTypeID: CFTypeID; external name '_CSIdentityGetTypeID';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -694,6 +765,7 @@ function CSIdentityGetTypeID: CFTypeID; external name '_CSIdentityGetTypeID';
  *  Creating Identities
  *
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -707,6 +779,8 @@ function CSIdentityGetTypeID: CFTypeID; external name '_CSIdentityGetTypeID';
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {
  *  CSIdentityCreate()
  *  
@@ -764,6 +838,7 @@ function CSIdentityCreate( allocator: CFAllocatorRef; identityClass: CSIdentityC
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 {$endc} {!TARGET_OS_IPHONE && !TARGET_IPHONE_SIMULATOR}
 
@@ -788,6 +863,11 @@ function CSIdentityCreate( allocator: CFAllocatorRef; identityClass: CSIdentityC
 
 
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+>>>>>>> origin/fixes_2.4
 {
  *  CSIdentityCreateCopy()
  *  
@@ -819,6 +899,7 @@ function CSIdentityCreateCopy( allocator: CFAllocatorRef; identity: CSIdentityRe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_5_0) *)
 {$endc} {!TARGET_OS_IPHONE && !TARGET_IPHONE_SIMULATOR}
 =======
@@ -837,6 +918,10 @@ function CSIdentityCreateCopy( allocator: CFAllocatorRef; identity: CSIdentityRe
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 {
  *
@@ -870,6 +955,7 @@ function CSIdentityGetClass( identity: CSIdentityRef ): CSIdentityClass; externa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_5_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -883,6 +969,9 @@ function CSIdentityGetClass( identity: CSIdentityRef ): CSIdentityClass; externa
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -912,6 +1001,7 @@ function CSIdentityGetAuthority( identity: CSIdentityRef ): CSIdentityAuthorityR
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_5_0) *)
 
 
@@ -936,6 +1026,11 @@ function CSIdentityGetAuthority( identity: CSIdentityRef ): CSIdentityAuthorityR
 
 
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+>>>>>>> origin/fixes_2.4
 {
  *  CSIdentityGetUUID()
  *  
@@ -964,6 +1059,7 @@ function CSIdentityGetUUID( identity: CSIdentityRef ): CFUUIDRef; external name 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 {$endc} {!TARGET_OS_IPHONE && !TARGET_IPHONE_SIMULATOR}
 =======
@@ -982,6 +1078,10 @@ function CSIdentityGetUUID( identity: CSIdentityRef ): CFUUIDRef; external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 {
  *  CSIdentityGetFullName()
@@ -1015,6 +1115,7 @@ function CSIdentityGetFullName( identity: CSIdentityRef ): CFStringRef; external
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_5_0) *)
 
 {$ifc not TARGET_OS_IPHONE and not TARGET_IPHONE_SIMULATOR}
@@ -1038,6 +1139,11 @@ function CSIdentityGetFullName( identity: CSIdentityRef ): CFStringRef; external
 
 
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+>>>>>>> origin/fixes_2.4
 {
  *  CSIdentityGetPosixID()
  *  
@@ -1065,6 +1171,7 @@ function CSIdentityGetPosixID( identity: CSIdentityRef ): id_t; external name '_
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 {$endc} {!TARGET_OS_IPHONE && !TARGET_IPHONE_SIMULATOR}
 =======
@@ -1083,6 +1190,10 @@ function CSIdentityGetPosixID( identity: CSIdentityRef ): id_t; external name '_
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 {
  *  CSIdentityGetPosixName()
@@ -1117,6 +1228,7 @@ function CSIdentityGetPosixName( identity: CSIdentityRef ): CFStringRef; externa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_5_0) *)
 
 
@@ -1141,6 +1253,11 @@ function CSIdentityGetPosixName( identity: CSIdentityRef ): CFStringRef; externa
 
 
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+>>>>>>> origin/fixes_2.4
 {
  *  CSIdentityGetEmailAddress()
  *  
@@ -1170,6 +1287,7 @@ function CSIdentityGetEmailAddress( identity: CSIdentityRef ): CFStringRef; exte
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1183,6 +1301,9 @@ function CSIdentityGetEmailAddress( identity: CSIdentityRef ): CFStringRef; exte
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1215,6 +1336,7 @@ function CSIdentityGetImageURL( identity: CSIdentityRef ): CFURLRef; external na
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1228,6 +1350,9 @@ function CSIdentityGetImageURL( identity: CSIdentityRef ): CFURLRef; external na
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1259,6 +1384,7 @@ function CSIdentityGetImageData( identity: CSIdentityRef ): CFDataRef; external 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1272,6 +1398,9 @@ function CSIdentityGetImageData( identity: CSIdentityRef ): CFDataRef; external 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1303,6 +1432,7 @@ function CSIdentityGetImageDataType( identity: CSIdentityRef ): CFStringRef; ext
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1316,6 +1446,9 @@ function CSIdentityGetImageDataType( identity: CSIdentityRef ): CFStringRef; ext
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1353,6 +1486,7 @@ function CSIdentityGetAliases( identity: CSIdentityRef ): CFArrayRef; external n
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1366,6 +1500,9 @@ function CSIdentityGetAliases( identity: CSIdentityRef ): CFArrayRef; external n
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1399,6 +1536,7 @@ function CSIdentityIsMemberOfGroup( identity: CSIdentityRef; group: CSIdentityRe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1412,6 +1550,9 @@ function CSIdentityIsMemberOfGroup( identity: CSIdentityRef; group: CSIdentityRe
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1441,6 +1582,7 @@ function CSIdentityIsHidden( identity: CSIdentityRef ): Boolean; external name '
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 {$endc} {!TARGET_OS_IPHONE && !TARGET_IPHONE_SIMULATOR}
 =======
@@ -1459,6 +1601,10 @@ function CSIdentityIsHidden( identity: CSIdentityRef ): Boolean; external name '
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 {
  *  CSIdentityCreatePersistentReference()
@@ -1503,6 +1649,7 @@ function CSIdentityCreatePersistentReference( allocator: CFAllocatorRef; identit
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_5_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1516,6 +1663,9 @@ function CSIdentityCreatePersistentReference( allocator: CFAllocatorRef; identit
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1524,6 +1674,7 @@ function CSIdentityCreatePersistentReference( allocator: CFAllocatorRef; identit
  *
  }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1537,6 +1688,8 @@ function CSIdentityCreatePersistentReference( allocator: CFAllocatorRef; identit
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {
  *  CSIdentityIsEnabled()
  *  
@@ -1570,6 +1723,7 @@ function CSIdentityIsEnabled( user: CSIdentityRef ): Boolean; external name '_CS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1583,6 +1737,9 @@ function CSIdentityIsEnabled( user: CSIdentityRef ): Boolean; external name '_CS
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1615,6 +1772,7 @@ function CSIdentityAuthenticateUsingPassword( user: CSIdentityRef; password: CFS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1628,6 +1786,9 @@ function CSIdentityAuthenticateUsingPassword( user: CSIdentityRef; password: CFS
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1663,6 +1824,7 @@ function CSIdentityGetCertificate( user: CSIdentityRef ): SecCertificateRef; ext
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1676,6 +1838,9 @@ function CSIdentityGetCertificate( user: CSIdentityRef ): SecCertificateRef; ext
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1719,6 +1884,7 @@ function CSIdentityCreateGroupMembershipQuery( allocator: CFAllocatorRef; group:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1732,6 +1898,9 @@ function CSIdentityCreateGroupMembershipQuery( allocator: CFAllocatorRef; group:
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1770,6 +1939,7 @@ procedure CSIdentitySetFullName( identity: CSIdentityRef; fullName: CFStringRef 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1783,6 +1953,9 @@ procedure CSIdentitySetFullName( identity: CSIdentityRef; fullName: CFStringRef 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1816,6 +1989,7 @@ procedure CSIdentitySetEmailAddress( identity: CSIdentityRef; emailAddress: CFSt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1829,6 +2003,9 @@ procedure CSIdentitySetEmailAddress( identity: CSIdentityRef; emailAddress: CFSt
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1862,6 +2039,7 @@ procedure CSIdentitySetImageURL( identity: CSIdentityRef; url: CFURLRef { can be
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1875,6 +2053,9 @@ procedure CSIdentitySetImageURL( identity: CSIdentityRef; url: CFURLRef { can be
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1911,6 +2092,7 @@ procedure CSIdentitySetImageData( identity: CSIdentityRef; imageData: CFDataRef 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1924,6 +2106,9 @@ procedure CSIdentitySetImageData( identity: CSIdentityRef; imageData: CFDataRef 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -1956,6 +2141,7 @@ procedure CSIdentityAddAlias( identity: CSIdentityRef; alias: CFStringRef ); ext
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1969,6 +2155,9 @@ procedure CSIdentityAddAlias( identity: CSIdentityRef; alias: CFStringRef ); ext
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -2001,6 +2190,7 @@ procedure CSIdentityRemoveAlias( identity: CSIdentityRef; alias: CFStringRef ); 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -2014,6 +2204,9 @@ procedure CSIdentityRemoveAlias( identity: CSIdentityRef; alias: CFStringRef ); 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -2053,6 +2246,7 @@ procedure CSIdentityAddMember( group: CSIdentityRef; member: CSIdentityRef ); ex
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -2066,6 +2260,9 @@ procedure CSIdentityAddMember( group: CSIdentityRef; member: CSIdentityRef ); ex
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -2098,6 +2295,7 @@ procedure CSIdentityRemoveMember( group: CSIdentityRef; member: CSIdentityRef );
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -2111,6 +2309,9 @@ procedure CSIdentityRemoveMember( group: CSIdentityRef; member: CSIdentityRef );
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 { 
@@ -2153,6 +2354,7 @@ procedure CSIdentitySetIsEnabled( user: CSIdentityRef; isEnabled: Boolean ); ext
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -2166,6 +2368,9 @@ procedure CSIdentitySetIsEnabled( user: CSIdentityRef; isEnabled: Boolean ); ext
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -2202,6 +2407,7 @@ procedure CSIdentitySetPassword( user: CSIdentityRef; password: CFStringRef { ca
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -2215,6 +2421,9 @@ procedure CSIdentitySetPassword( user: CSIdentityRef; password: CFStringRef { ca
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -2251,6 +2460,7 @@ procedure CSIdentitySetCertificate( user: CSIdentityRef; certificate: SecCertifi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -2264,6 +2474,9 @@ procedure CSIdentitySetCertificate( user: CSIdentityRef; certificate: SecCertifi
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -2298,6 +2511,7 @@ procedure CSIdentityDelete( identity: CSIdentityRef ); external name '_CSIdentit
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 {$endc} {!TARGET_OS_IPHONE && !TARGET_IPHONE_SIMULATOR}
 =======
@@ -2316,6 +2530,10 @@ procedure CSIdentityDelete( identity: CSIdentityRef ); external name '_CSIdentit
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
 
 {
  *
@@ -2324,6 +2542,7 @@ procedure CSIdentityDelete( identity: CSIdentityRef ); external name '_CSIdentit
  *
  }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2337,6 +2556,8 @@ procedure CSIdentityDelete( identity: CSIdentityRef ); external name '_CSIdentit
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {
  *  CSIdentityCommit()
  *  
@@ -2377,6 +2598,7 @@ function CSIdentityCommit( identity: CSIdentityRef; authorization: Authorization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 	
 {$endc} {!TARGET_OS_IPHONE && !TARGET_IPHONE_SIMULATOR}
@@ -2392,6 +2614,9 @@ function CSIdentityCommit( identity: CSIdentityRef; authorization: Authorization
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -2461,6 +2686,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 {$ifc not TARGET_OS_IPHONE and not TARGET_IPHONE_SIMULATOR}
@@ -2472,6 +2698,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 {
  *  CSIdentityCommitAsynchronously()
  *  
@@ -2521,6 +2749,7 @@ function CSIdentityCommitAsynchronously( identity: CSIdentityRef; const (*var*) 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 {$endc} {!TARGET_OS_IPHONE && !TARGET_IPHONE_SIMULATOR}
 
@@ -2546,6 +2775,11 @@ function CSIdentityCommitAsynchronously( identity: CSIdentityRef; const (*var*) 
 
 
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+>>>>>>> origin/fixes_2.4
 {
  *  CSIdentityIsCommitting()
  *  
@@ -2573,6 +2807,7 @@ function CSIdentityIsCommitting( identity: CSIdentityRef ): Boolean; external na
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -2586,6 +2821,9 @@ function CSIdentityIsCommitting( identity: CSIdentityRef ): Boolean; external na
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/fixes_2.4
 
 
 {
@@ -2619,6 +2857,7 @@ procedure CSIdentityRemoveClient( identity: CSIdentityRef ); external name '_CSI
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
 {$endc} {!TARGET_OS_IPHONE && !TARGET_IPHONE_SIMULATOR}
 =======
@@ -2628,10 +2867,13 @@ procedure CSIdentityRemoveClient( identity: CSIdentityRef ); external name '_CSI
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 
 {$endc} {TARGET_OS_MAC}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2642,6 +2884,8 @@ procedure CSIdentityRemoveClient( identity: CSIdentityRef ); external name '_CSI
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 

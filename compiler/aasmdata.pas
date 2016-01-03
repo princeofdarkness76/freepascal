@@ -65,11 +65,14 @@ interface
         al_picdata,
         al_indirectpicdata,
         al_resourcestrings,
+<<<<<<< HEAD
         { Objective-C related sections }
         al_objc_data,
         { keep pool data separate, so we can generate new pool entries
           while emitting other data }
         al_objc_pools,
+=======
+>>>>>>> origin/fixes_2.4
         al_end
       );
 
@@ -83,6 +86,7 @@ interface
          sp_longstr,
          sp_ansistr,
          sp_widestr,
+<<<<<<< HEAD
          sp_unicodestr,
          sp_objcclassnamerefs,
          sp_varnamerefs,
@@ -109,6 +113,9 @@ interface
 =======
          sp_objcprotocolrefs
 >>>>>>> origin/cpstrnew
+=======
+         sp_unicodestr
+>>>>>>> origin/fixes_2.4
       );
       
     const
@@ -133,8 +140,11 @@ interface
         'al_picdata',
         'al_indirectpicdata',
         'al_resourcestrings',
+<<<<<<< HEAD
         'al_objc_data',
         'al_objc_pools',
+=======
+>>>>>>> origin/fixes_2.4
         'al_end'
       );
 

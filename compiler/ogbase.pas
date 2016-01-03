@@ -1265,7 +1265,11 @@ implementation
 =======
     function TObjData.sectionname(atype:TAsmSectiontype;const aname:string;aorder:TAsmSectionOrder):string;
       const
+<<<<<<< HEAD
         secnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
+=======
+        secnames : array[TAsmSectiontype] of string[16] = ('',
+>>>>>>> origin/fixes_2.4
           'code',
           'Data',
           'Data',
@@ -1285,6 +1289,7 @@ implementation
           'fpc',
           'toc',
           'init',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           'fini',
@@ -1328,6 +1333,9 @@ implementation
 =======
           'fini'
 >>>>>>> origin/fixes_2_2
+=======
+          'fini'
+>>>>>>> origin/fixes_2.4
         );
       var
         sep : string[3];
@@ -1411,6 +1419,7 @@ implementation
           {iData6} [oso_Data,oso_load,oso_write],
           {iData7} [oso_Data,oso_load,oso_write],
 <<<<<<< HEAD
+<<<<<<< HEAD
           {eData} [oso_Data,oso_load],
           {eh_frame} [oso_Data,oso_load],
           {debug_frame} [oso_Data,oso_debug],
@@ -1474,6 +1483,8 @@ implementation
           {sec_objc_protolist'} [oso_data,oso_load]
 >>>>>>> origin/cpstrnew
 =======
+=======
+>>>>>>> origin/fixes_2.4
           {eData} [oso_Data,oso_load,oso_readonly],
           {eh_frame} [oso_Data,oso_load,oso_readonly],
           {debug_frame} [oso_Data,oso_noload,oso_debug],
@@ -1485,9 +1496,12 @@ implementation
           {init} [oso_Data,oso_load,oso_readonly,oso_executable,oso_keep],
           {fini} [oso_Data,oso_load,oso_readonly,oso_executable,oso_keep]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
         );
       begin
         result:=secoptions[atype];

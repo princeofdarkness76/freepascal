@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 1993-2011 by Apple Inc.. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
@@ -44,17 +45,23 @@
 =======
 >>>>>>> origin/fixes_2_2
      File:       ConditionalMacros.p
+=======
+     File:       CarbonCore/ConditionalMacros.h
+>>>>>>> origin/fixes_2.4
  
      Contains:   Set up for compiler independent conditionals
  
-     Version:    Technology: Universal Interface Files
-                 Release:    Universal Interfaces 3.4.2
+     Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
      Copyright:  © 1993-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     Copyright:  © 1993-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/fixes_2.4
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -62,6 +69,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
@@ -87,16 +95,23 @@
 >>>>>>> origin/fixes_2_2
 
 
+=======
+{    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/fixes_2.4
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -105,6 +120,7 @@
 
 unit ConditionalMacros;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
@@ -117,6 +133,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> origin/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/fixes_2.4
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -131,6 +151,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -138,21 +159,30 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/fixes_2.4
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -160,6 +190,9 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -170,6 +203,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -187,6 +221,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -194,10 +230,13 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -205,6 +244,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -457,18 +497,75 @@ interface
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -496,12 +593,15 @@ interface
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -511,6 +611,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
@@ -548,11 +649,16 @@ interface
 =======
 {$ALIGN MAC68K}
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+{$ALIGN POWER}
+>>>>>>> origin/fixes_2.4
 
 {***************************************************************************************************
     UNIVERSAL_INTERFACES_VERSION
     
         0x0400 --> version 4.0 (Mac OS X only)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         0x0335 --> version 3.4 
@@ -564,6 +670,9 @@ interface
         0x0341 --> version 3.4.1 
         0x0340 --> version 3.4 
 >>>>>>> origin/fixes_2_2
+=======
+        0x0335 --> version 3.4 
+>>>>>>> origin/fixes_2.4
         0x0331 --> version 3.3.1
         0x0330 --> version 3.3
         0x0320 --> version 3.2
@@ -573,6 +682,7 @@ interface
         0x0210 --> version 2.1
         This conditional did not exist prior to version 2.1
 ***************************************************************************************************}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 // defined in the conversion script as a macro }
@@ -623,59 +733,29 @@ interface
 >>>>>>> origin/fixes_2_2
 
 
+=======
+// defined in the conversion script as a macro }
+// const
+//   UNIVERSAL_INTERFACES_VERSION = $0400;
+>>>>>>> origin/fixes_2.4
 {***************************************************************************************************
 
-    TARGET_CPU_Å    
-    These conditionals specify which microprocessor instruction set is being
-    generated.  At most one of these is true, the rest are false.
+    All TARGET_* condtionals are set up by TargetConditionals.h
 
-        TARGET_CPU_PPC          - Compiler is generating PowerPC instructions
-        TARGET_CPU_68K          - Compiler is generating 680x0 instructions
-        TARGET_CPU_X86          - Compiler is generating x86 instructions
-        TARGET_CPU_MIPS         - Compiler is generating MIPS instructions
-        TARGET_CPU_SPARC        - Compiler is generating Sparc instructions
-        TARGET_CPU_ALPHA        - Compiler is generating Dec Alpha instructions
+***************************************************************************************************}
 
 
-    TARGET_OS_Å 
-    These conditionals specify in which Operating System the generated code will
-    run. At most one of the these is true, the rest are false.
+{***************************************************************************************************
 
-        TARGET_OS_MAC           - Generate code will run under Mac OS
-        TARGET_OS_WIN32         - Generate code will run under 32-bit Windows
-        TARGET_OS_UNIX          - Generate code will run under some unix 
-
-
-    TARGET_RT_Å 
-    These conditionals specify in which runtime the generated code will
-    run. This is needed when the OS and CPU support more than one runtime
-    (e.g. MacOS on 68K supports CFM68K and Classic 68k).
-
-        TARGET_RT_LITTLE_ENDIAN - Generated code uses little endian format for integers
-        TARGET_RT_BIG_ENDIAN    - Generated code uses big endian format for integers    
-        TARGET_RT_MAC_CFM       - TARGET_OS_MAC is true and CFM68K or PowerPC CFM (TVectors) are used
-        TARGET_RT_MAC_MACHO     - TARGET_OS_MAC is true and Mach-O style runtime
-        TARGET_RT_MAC_68881     - TARGET_OS_MAC is true and 68881 floating point instructions used  
-
-
-    TARGET__API_Å_Å 
-    These conditionals are used to differentiate between sets of API's on the same
-    processor under the same OS.  The first section after _API_ is the OS.  The
-    second section is the API set.  Unlike TARGET_OS_ and TARGET_CPU_, these
-    conditionals are not mutally exclusive. This file will attempt to auto-configure
-    all TARGET_API_Å_Å values, but will often need a TARGET_API_Å_Å value predefined
-    in order to disambiguate.
-    
-        TARGET_API_MAC_OS8      - Code is being compiled to run on System 7 through Mac OS 8.x
-        TARGET_API_MAC_CARBON   - Code is being compiled to run on Mac OS 8 and Mac OS X via CarbonLib
-        TARGET_API_MAC_OSX      - Code is being compiled to run on Mac OS X
-
-
+<<<<<<< HEAD
     PRAGMA_Å
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    PRAGMA_*
+>>>>>>> origin/fixes_2.4
     These conditionals specify whether the compiler supports particular #pragma's
     
         PRAGMA_IMPORT           - Compiler supports: #pragma import on/off/reset
@@ -691,6 +771,7 @@ interface
     FOUR_CHAR_CODE
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     This conditional is deprecated.  It was used to work around a bug in one obscure compiler that did not pack multiple characters in single quotes rationally.
     It was never intended for endian swapping.
 =======
@@ -701,10 +782,15 @@ interface
     This conditional does the proper byte swapping to assue that a four character code (e.g. 'TEXT')
     is compiled down to the correct value on all compilers.
 >>>>>>> origin/fixes_2_2
+=======
+    This conditional is deprecated.  It was used to work around a bug in one obscure compiler that did not pack multiple characters in single quotes rationally.
+    It was never intended for endian swapping.
+>>>>>>> origin/fixes_2.4
 
         FourCharCode('abcd')  - Convert a four-char-code to the correct 32-bit value
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     TYPE_*
@@ -714,6 +800,9 @@ interface
 =======
     TYPE_Å
 >>>>>>> origin/fixes_2_2
+=======
+    TYPE_*
+>>>>>>> origin/fixes_2.4
     These conditionals specify whether the compiler supports particular types.
 
         TYPE_LONGLONG               - Compiler supports "long long" 64-bit integers
@@ -724,6 +813,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FUNCTION_*
 =======
     FUNCTION_Å
@@ -731,6 +821,9 @@ interface
 =======
     FUNCTION_Å
 >>>>>>> origin/fixes_2_2
+=======
+    FUNCTION_*
+>>>>>>> origin/fixes_2.4
     These conditionals specify whether the compiler supports particular language extensions
     to function prototypes and definitions.
 
@@ -742,6 +835,9 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {***************************************************************************************************
 
     Under MacOS, the classic 68k runtime has two calling conventions: pascal or C
@@ -749,6 +845,7 @@ interface
     Headers and implementation files can use the following macros to make their
     source more portable by hiding the calling convention details:
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -766,6 +863,9 @@ interface
 =======
     EXTERN_APIÅ 
 >>>>>>> origin/cpstrnew
+=======
+    EXTERN_APIÅ 
+>>>>>>> origin/fixes_2.4
     These macros are used to specify the calling convention on a function prototype.
 
         EXTERN_API              - Classic 68k: pascal, Win32: __cdecl
@@ -774,6 +874,7 @@ interface
         EXTERN_API_C_STDCALL    - Classic 68k: C,      Win32: __stdcall
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -791,6 +892,9 @@ interface
 =======
     DEFINE_APIÅ 
 >>>>>>> origin/cpstrnew
+=======
+    DEFINE_APIÅ 
+>>>>>>> origin/fixes_2.4
     These macros are used to specify the calling convention on a function definition.
 
         DEFINE_API              - Classic 68k: pascal, Win32: __cdecl
@@ -799,6 +903,7 @@ interface
         DEFINE_API_C_STDCALL    - Classic 68k: C,      Win32: __stdcall
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -816,6 +921,9 @@ interface
 =======
     CALLBACK_APIÅ   
 >>>>>>> origin/cpstrnew
+=======
+    CALLBACK_APIÅ   
+>>>>>>> origin/fixes_2.4
     These macros are used to specify the calling convention of a function pointer.
 
         CALLBACK_API            - Classic 68k: pascal, Win32: __stdcall
@@ -827,6 +935,7 @@ interface
 
 {***************************************************************************************************
     
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -850,6 +959,11 @@ interface
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    Set up TARGET_API_Å_Å values
+
+***************************************************************************************************}
+>>>>>>> origin/fixes_2.4
 
 {***************************************************************************************************
     Backward compatibility for clients expecting 2.x version on ConditionalMacros.h
@@ -885,6 +999,9 @@ interface
 {***************************************************************************************************
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
  The following macros isolate the use of 68K inlines in function prototypes.
     On the Mac OS under the Classic 68K runtime, function prototypes were followed
  by a list of 68K opcodes which the compiler inserted in the generated code instead
@@ -898,10 +1015,13 @@ interface
 ***************************************************************************************************}
 
 {***************************************************************************************************
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
 
     TARGET_CARBON                   - default: false. Switches all of the above as described.  Overrides all others
                                     - NOTE: If you set TARGET_CARBON to 1, then the other switches will be setup by
@@ -925,11 +1045,15 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {
      * It's possible to have ACCESSOR_CALLS_ARE_FUNCTIONS set to true and OPAQUE_TOOLBOX_STRUCTS
      * set to false, but not the other way around, so make sure the defines are not set this way.
      }
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+<<<<<<< HEAD
 
 end.
 {$endc} {not MACOSALLINCLUDE}
@@ -941,3 +1065,8 @@ end.
 
 end.
 >>>>>>> origin/fixes_2_2
+=======
+
+end.
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/fixes_2.4

@@ -129,6 +129,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          procedure writetoken(t: ttoken);
          function readtoken : ttoken;
 =======
@@ -139,6 +140,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
        public
           inputfile    : tinputfile;  { current inputfile list }
           inputfilecount : longint;
@@ -160,6 +163,10 @@ interface
           oldcurrent_tokenpos : tfileposinfo;
 
 
+<<<<<<< HEAD
+=======
+          replaysavetoken : ttoken;
+>>>>>>> origin/fixes_2.4
           replaytokenbuf,
           recordtokenbuf : tdynamicarray;
 
@@ -741,6 +748,7 @@ implementation
         for i:=m_class to high(tmodeswitch) do
           if s=modeswitchstr[i] then
             begin
+<<<<<<< HEAD
               { Objective-C is currently only supported for Darwin targets }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -782,6 +790,8 @@ implementation
                   break;
                 end;
 
+=======
+>>>>>>> origin/fixes_2.4
               if changeInit then
                 current_settings.modeswitches:=init_settings.modeswitches;
               Result:=true;
@@ -810,7 +820,6 @@ implementation
 
               if changeInit then
                 init_settings.modeswitches:=current_settings.modeswitches;
-
               break;
             end;
       end;
@@ -4214,13 +4223,18 @@ type
                 nextfile;
                 tempopeninputfile;
               { status }
+<<<<<<< HEAD
                 Message1(scan_t_back_in,inputfile.name);
+=======
+                Message1(scan_t_back_in,inputfile.name^);
+>>>>>>> origin/fixes_2.4
               end;
            { load next char }
              c:=inputpointer^;
              inc(inputpointer);
            until c<>#0; { if also end, then reload again }
          end;
+<<<<<<< HEAD
       end;
 
 
@@ -4371,11 +4385,14 @@ type
         oldlasttokenpos:=lasttokenpos;
         oldcurrent_filepos:=current_filepos;
         oldcurrent_tokenpos:=current_tokenpos;
+=======
+>>>>>>> origin/fixes_2.4
       end;
 
 
     procedure tscannerfile.restoretokenpos;
       begin
+<<<<<<< HEAD
         lasttokenpos:=oldlasttokenpos;
         current_filepos:=oldcurrent_filepos;
         current_tokenpos:=oldcurrent_tokenpos;
@@ -4414,6 +4431,50 @@ type
         lasttokenpos:=oldlasttokenpos;
         current_filepos:=oldcurrent_filepos;
         current_tokenpos:=oldcurrent_tokenpos;
+=======
+        { save old postion }
+        dec(inputpointer);
+        tempcloseinputfile;
+      { create macro 'file' }
+        { use special name to dispose after !! }
+        hp:=do_openinputfile('_Macro_.'+macname);
+        addfile(hp);
+        with inputfile do
+         begin
+           setmacro(p,len);
+         { local buffer }
+           inputbuffer:=buf;
+           inputpointer:=buf;
+           inputstart:=bufstart;
+           ref_index:=fileindex;
+         end;
+      { reset line }
+        line_no:=line;
+        lastlinepos:=0;
+        lasttokenpos:=0;
+        nexttokenpos:=0;
+      { load new c }
+        c:=inputpointer^;
+        inc(inputpointer);
+      end;
+
+
+    procedure tscannerfile.do_gettokenpos(out tokenpos: longint; out filepos: tfileposinfo);
+      begin
+        tokenpos:=inputstart+(inputpointer-inputbuffer);
+        filepos.line:=line_no;
+        filepos.column:=tokenpos-lastlinepos;
+        filepos.fileindex:=inputfile.ref_index;
+        filepos.moduleindex:=current_module.unit_index;
+      end;
+
+
+    procedure tscannerfile.gettokenpos;
+    { load the values of tokenpos and lasttokenpos }
+      begin
+        do_gettokenpos(lasttokenpos,current_tokenpos);
+        current_filepos:=current_tokenpos;
+>>>>>>> origin/fixes_2.4
       end;
 
 
@@ -4642,6 +4703,7 @@ type
       end;
 
 
+<<<<<<< HEAD
     procedure tscannerfile.popreplaystack;
       var
         hp : treplaystack;
@@ -4682,6 +4744,10 @@ type
 >>>>>>> origin/cpstrnew
     procedure tscannerfile.handleconditional(p:tdirectiveitem);
       begin
+=======
+    procedure tscannerfile.handleconditional(p:tdirectiveitem);
+      begin
+>>>>>>> origin/fixes_2.4
         savetokenpos;
         repeat
           current_scanner.gettokenpos;
@@ -5568,6 +5634,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         { does really an identifier follow? }
                         if not (c in ['_','A'..'Z','a'..'z']) then
                           message2(scan_f_syn_expected,tokeninfo^[_ID].str,c);
@@ -5579,6 +5646,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
                         readstring;
                         token:=_ID;
                         idtoken:=_ID;

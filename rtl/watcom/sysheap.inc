@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/fixes_2.4
 {*****************************************************************************
       OS Memory allocation / deallocation
  ****************************************************************************}
@@ -30,6 +33,7 @@ procedure SysOSFree(p: pointer; size: ptrint);
 begin
 end;
 
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -67,3 +71,5 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4

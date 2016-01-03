@@ -1340,6 +1340,7 @@ begin
   while assigned(pcurr) and (iter>0) do
   begin
     if (pcurr^.size>=size) then
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -1356,6 +1357,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/fixes_2.4
     begin
       if not assigned(pbest) or (pcurr^.size<pbest^.size) then
       begin

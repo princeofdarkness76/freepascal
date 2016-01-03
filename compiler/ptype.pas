@@ -216,6 +216,7 @@ implementation
                         inc(ttypesym(srsym).refs);
                         { we need a class type for classrefdef }
                         if (def.typ=classrefdef) and
+<<<<<<< HEAD
                            not(is_class(ttypesym(srsym).typedef)) and
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -261,6 +262,10 @@ implementation
                            not(is_objcclass(ttypesym(srsym).typedef)) then
                           MessagePos1(def.typesym.fileinfo,type_e_class_type_expected,ttypesym(srsym).typedef.typename);
 >>>>>>> origin/cpstrnew
+=======
+                           not(is_class(ttypesym(srsym).typedef)) then
+                          MessagePos1(def.typesym.fileinfo,type_e_class_type_expected,ttypesym(srsym).typedef.typename);
+>>>>>>> origin/fixes_2.4
                       end
                      else
                       begin

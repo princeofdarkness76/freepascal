@@ -5,6 +5,7 @@ program sha1test;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses SysUtils, sha1;
 
 function performTest: cardinal;
@@ -17,10 +18,13 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 uses sha1;
 
 var
   code: cardinal;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -31,11 +35,14 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
   s, sdig: string;
   i: integer;
   ctx: TSHA1Context;
   d: TSHA1Digest;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -55,6 +62,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
   code := 0;
   sdig := SHA1Print(SHA1String('abc'));
   if sdig <> 'a9993e364706816aba3e25717850c26c9cd0d89d' then
@@ -66,6 +75,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -73,6 +83,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
 
   // SHA-1 of a million 'a' symbols
   SetLength(s, 1000);
@@ -83,6 +95,7 @@ begin
   SHA1Final(ctx, d);
   sdig := SHA1Print(d);
   if sdig <> '34aa973cd4c4daa4f61eeb2bdbad27316534016f' then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -108,10 +121,14 @@ begin
 =======
     code := code or 4;
 >>>>>>> origin/cpstrnew
+=======
+    code := code or 4;
+>>>>>>> origin/fixes_2.4
 
   if code = 0 then
     writeln('Basic SHA-1 tests passed')
   else
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -141,3 +158,8 @@ end.
   Halt(code);
 end.
 >>>>>>> origin/cpstrnew
+=======
+    writeln('SHA-1 tests failed: ', code);
+  Halt(code);
+end.
+>>>>>>> origin/fixes_2.4

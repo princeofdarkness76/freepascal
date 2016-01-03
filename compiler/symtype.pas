@@ -131,6 +131,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          { size of fileinfo is 10 bytes, so if a >word aligned type would follow,
            two bytes of memory would be wasted, so we put two one byte fields over here }
          visibility : tvisibility;
@@ -165,10 +166,17 @@ interface
          visibility : tvisibility;
          { deprecated optionally can have a message }
          deprecatedmsg: pshortstring;
+=======
+         symoptions : tsymoptions;
+         refs       : longint;
+         reflist    : TLinkedList;
+         visibility : tvisibility;
+>>>>>>> origin/fixes_2.4
          isdbgwritten : boolean;
          constructor create(st:tsymtyp;const aname:string);
          destructor  destroy;override;
          function  mangledname:string; virtual;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -179,6 +187,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/fixes_2.4
          function  prettyname:string; virtual;
          procedure buildderef;virtual;
          procedure deref;virtual;

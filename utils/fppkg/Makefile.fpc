@@ -17,6 +17,7 @@ version=2.5.1
 
 [target]
 programs=fppkg
+<<<<<<< HEAD
 
 units=fprepos fpxmlrep pkgoptions pkgglobals pkgmessages pkghandler pkgmkconv pkgdownload pkgfpmake pkgcommands pkgrepos
 units_linux=pkgwget  pkglnet
@@ -42,6 +43,9 @@ version=2.2.5
 [target]
 programs=fppkg
 >>>>>>> origin/fixes_2_2
+=======
+units=buildfppkg
+>>>>>>> origin/fixes_2.4
 implicitunits=fprepos fpxmlrep pkgoptions pkgglobals pkgmessages pkghandler pkgmkconv pkgdownload pkgfpmake pkgcommands pkgrepos
 implicitunits_linux=pkgwget  pkglnet
 implicitunits_beos=pkgwget pkglnet
